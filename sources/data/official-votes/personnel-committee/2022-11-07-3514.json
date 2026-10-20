@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-11-07",
  "docid": "3514",
@@ -12,23 +12,165 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the September 12, 2022 meeting",
+   "motion": "Accept and approve the minutes of the September 12, 2022 meeting as presented.",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta to accept and approve the minutes of the september 12, 2022 meeting as presented second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by j. bilotta to accept and approve the minutes of the september 12, 2022 meeting as presented"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:37pm.",
    "moved_by": "W. Bertrand",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 6:37pm by w. bertrand second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 6:37pm by w. bertrand"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Discrepancy in minutes: section header states \"Minutes of the September 26, 2022 meeting\" but the motion text specifies \"September 12, 2022 meeting.\" The motion itself is recorded as stated.",
- "cost_usd": 0.1038405
+ "note": "Text is extracted from a document with spacing artifacts (e.g. 'n eed', 'com pensation', 'a ttended'); quotes were taken from the cleanest passages. Votes are recorded only as 'All in Favor' with no numeric count, so outcomes are 'passed' not a tally. The item approves minutes 'of the September 12, 2022 meeting', but the Approval of Minutes section says the September 26, 2022 minutes were presented; the minutes do not reconcile which set was approved. Attendance was by Zoom, but the minutes do not mark individual attendees as remote. Public comment has no named speakers. The funding and consultant proposal are reported by staff, not voted on.",
+ "cost_usd": 0.014117010000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Eric Arnold",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, joanna bilotta, wendy bertrand"
+  },
+  {
+   "name": "Susan Andrews",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, joanna bilotta, wendy bertrand"
+  },
+  {
+   "name": "Donna Fortune",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, joanna bilotta, wendy bertrand"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, joanna bilotta, wendy bertrand"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "status": "present",
+   "quote": "eric arnold, susan andrews, donna fortune, joanna bilotta, wendy bertrand"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, mary beth bernard, hr consultant, barbara lefebvre,"
+  },
+  {
+   "name": "Mary Beth Bernard",
+   "role": "HR Consultant",
+   "status": "present",
+   "quote": "mary beth bernard, hr consultant, barbara lefebvre,"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "mary beth bernard, hr consultant, barbara lefebvre,"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "pauline roy, coa outreach coordinator, nancy forest, payroll and benefits/risk manager"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll and Benefits/Risk Manager",
+   "status": "present",
+   "quote": "pauline roy, coa outreach coordinator, nancy forest, payroll and benefits/risk manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting is set as needed, with a regular meeting on December 5, 2022 at 6pm.",
+   "quote": "as needed and regular meeting december 5, 2022 6pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Classification and Compensation Study funding",
+   "what_was_recorded": "Funding of $9,300 was located within the current fiscal budget to cover the project, removing the need to take the request to Special Town Meeting; the consultant's proposal was accepted.",
+   "figures_as_printed": [
+    "$9,300"
+   ],
+   "quote": "had located funding ($9,300) within the current fiscal budget to cover the cost of"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there were no comments from the committee or public"
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "approval"
+   ],
+   "quote": "motion by j. bilotta to accept and approve the minutes of the september 12, 2022 meeting as presented"
+  },
+  {
+   "topic": "Classification and Compensation Study",
+   "resolution": "update received; consultant timeline presented; no vote",
+   "tags": [
+    "classification",
+    "compensation",
+    "HR consultant",
+    "timeline"
+   ],
+   "quote": "j. belliveau updated the group on the classification and compensation study project."
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there were no comments from the committee or the public."
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "as needed and regular meeting december 5, 2022 6pm"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:37pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion by to adjourn meeting at 6:37pm by w. bertrand"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "classification and compensation study",
+  "human resources",
+  "municipal compensation",
+  "HR consultant",
+  "Special Town Meeting",
+  "minutes approval",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

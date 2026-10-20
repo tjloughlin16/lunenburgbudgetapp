@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2022-08-25",
  "docid": "1992",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Motion to adjourn the meeting.",
    "moved_by": "Jean Dupre",
    "seconded_by": "Ana Lockwood",
    "outcome": "not stated",
@@ -21,6 +21,154 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote recorded. The minutes document a motion to adjourn but do not explicitly state the outcome (no \"so voted,\" \"passed,\" vote count, or similar language).",
- "cost_usd": 0.07694949999999999
+ "note": "No dollar figures appear in the minutes, so budget_items and transfers are empty. The only motion recorded is the motion to adjourn, and its result is not printed. Attendance comes from the roll-call line; the minutes do not separately mark anyone absent. The minutes call the Facebook item a 'committee interest' and record no decision on it. The public comment section's first entry reads 'No comment.' and is not recorded as a comment. The LUFA Farm comment has no named speaker. The document list has no heading, so documents_list.printed is false.",
+ "cost_usd": 0.01365418,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cathy Clark",
+   "role": "Economic Development Chair",
+   "status": "present",
+   "quote": "cathy clark (economic development chair)"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney (land use director)"
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Lunenburg Business Association",
+   "status": "present",
+   "quote": "joeci gilchrest (lunenburg business association)"
+  },
+  {
+   "name": "Jean Dupre",
+   "role": "Economic Development Member",
+   "status": "present",
+   "quote": "jean dupre (economic development member)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commission",
+   "status": "present",
+   "quote": "ana lockwood (parks commission)"
+  },
+  {
+   "name": "Maryrae Holman",
+   "role": "Agriculture Commission",
+   "status": "present",
+   "quote": "maryrae holman (agriculture commission)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Adam Burney will research what the selectboard's social media policies are, as the committee considers a Facebook page/group.",
+   "quote": "adam will research what the selectboard social medial policies are."
+  },
+  {
+   "decision": "Cathy Clark will bring a list of empty business spaces to the next meeting.",
+   "quote": "cathy will bring a list of empty business spaces to the next meeting."
+  },
+  {
+   "decision": "The committee will look into other towns' mission statements to promote project goals and support growth.",
+   "quote": "committee will be looking into other mission statements from local towns."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "LUFA Farm and the farmer's market",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "lufa farm is interested in partaking in the farmer's market before the end of the season."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Potential meeting with the LBA",
+   "resolution": "discussed; meeting scheduled for September 22",
+   "tags": [
+    "LBA",
+    "events",
+    "meetings"
+   ],
+   "quote": "economic committee and lba are scheduled to meet on september 22nd at 4 pm."
+  },
+  {
+   "topic": "Business updates (LUFA Farms, Lunenburg Central, Uma Flowers)",
+   "resolution": "informational, no action recorded",
+   "tags": [
+    "business development",
+    "cannabis",
+    "construction"
+   ],
+   "quote": "uma flowers- as of monday, august 22nd the planning board has approved uma flowers."
+  },
+  {
+   "topic": "Promoting empty business spaces",
+   "resolution": "Cathy Clark to bring a list to next meeting",
+   "tags": [
+    "vacancies",
+    "marketing"
+   ],
+   "quote": "the commission wants to promote and advertise the empty business spaces for sale/rent."
+  },
+  {
+   "topic": "EDC mission statement",
+   "resolution": "continued; committee to research other towns' statements",
+   "tags": [
+    "mission statement"
+   ],
+   "quote": "committee will be looking into other mission statements from local towns."
+  },
+  {
+   "topic": "Committee discussion: Facebook page/group",
+   "resolution": "Adam Burney to research selectboard social media policies",
+   "tags": [
+    "social media",
+    "communications"
+   ],
+   "quote": "the committee is interested in making a facebook page/group. adam will research what the selectboard social medial policies are."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted: next meeting September 22 at 4 pm with LBA attending",
+   "tags": [
+    "meetings"
+   ],
+   "quote": "september 22nd at 4 pm - lba will be in attendance."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Winter- Welcome to Lunenburg Document (anticipated; lists phone numbers, businesses, resources, events and attractions)",
+   "where": "text",
+   "quote": "winter- welcome to lunenburg document is anticipated to be released."
+  },
+  {
+   "name": "Selectboard social media policies",
+   "where": "text",
+   "quote": "adam will research what the selectboard social medial policies are."
+  }
+ ],
+ "tags": [
+  "economic development",
+  "Lunenburg Business Association",
+  "business vacancies",
+  "cannabis licensing",
+  "social media",
+  "mission statement",
+  "farmers market",
+  "community events",
+  "Marshall Park"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

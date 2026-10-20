@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-03-16",
  "docid": "3354",
@@ -12,15 +12,342 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:22 pm.",
    "moved_by": "C. Sullivan",
    "seconded_by": "D. Passios",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "c. sullivan motioned and d. passios seconded to adjourn at 10:22 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes document extensive discussion of two Marshall Park design alternatives and show \"Majority of the Commission like Design #2, P. Hakey prefers Design #1,\" but no formal motion or vote on the designs is recorded—only discussion of preferences. The only recorded vote is the adjournment motion at the end.",
- "cost_usd": 0.0665164
+ "note": "The minutes record one motion (adjournment) with no result printed, so it is listed with outcome \"not stated\". No dollar figures appear anywhere in the text. The design presentation is a discussion item with no vote. The presenter's name is printed as \"Kathryn Ostermier\" once and \"Ms. Ostermeyer\" elsewhere; both are kept as printed. \"Pamela Porter\" also appears as \"Pam Porter\", and \"Dan Proctor\" appears twice in the public comment section. Rob Thompson and the Town Manager are named only as people the Commission will ask to attend, so they are not listed as attendees. The text is a plain-text extraction, not a scan.",
+ "cost_usd": 0.01684068,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Kathryn Ostermier",
+   "role": "landscape architect, Wright Ostermier Landscape Architects (presenter)",
+   "status": "present",
+   "quote": "kathryn ostermier from wright ostermier landscape architects discussed the presentation for marshall park."
+  },
+  {
+   "name": "Nick Betts",
+   "role": "Meridian Associates",
+   "status": "present",
+   "quote": "nick betts from meridian associates indicated the baseball field has been designed based on the miaa standards"
+  },
+  {
+   "name": "R. Delaney",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "r. delaney expressed his concern with the drainage on the little league field"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "greg roy, 105 chestnut street, noted he like design #2 but had concerns about the parking being too close to"
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "marianne mascari, 54 chestnut st., asked that the sun be taken into consideration when selecting the orientation of the fields."
+  },
+  {
+   "name": "Joe Ruth",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "joe ruth stated there is a lack of outfield dimension requirement, the infields are very specific."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "dan proctor, 1529 massachusetts ave., voiced his concerns about the need for the design to reflect a concession stand"
+  },
+  {
+   "name": "Pamela Porter",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "pamela porter, 114 chestnut street, stated she likes design #1 and the foliage buffer."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "dave rogers, 82 highland street, voiced his dislike of incorporating the dog park and asked for some clarification on the parking."
+  },
+  {
+   "name": "David King",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "david king, 3 gabes place, had concerns with the relocation of the t-ball field."
+  },
+  {
+   "name": "Chris Martins",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "chris martins, 981 northfield road, had concerns about the t-ball field being relocated."
+  },
+  {
+   "name": "John Fortune",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "john fortune, 50 hemlock drive, expressed his concern about the parking and direction of traffic on design #2."
+  },
+  {
+   "name": "Pat Flaherty",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "pat flaherty, 298 highland street, noted he would like to see the basketball court be a multi-sports court."
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "tim murphy, 97 island road, stated he like design #2."
+  },
+  {
+   "name": "RJ Thibault",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "rj thibault, 19 whitetail crossing, stated the registration numbers that were quoted were not accurate."
+  },
+  {
+   "name": "Kathy Lowe",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "kathy lowe, 99 fairview road favors design #2 and the multi-generational use of the park."
+  },
+  {
+   "name": "Chris Begley",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "chris begley, 4 whitetail crossing, asked if it were possibly to keep the orientation of the baseball field as-is."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission will put the T-ball/Marshall Park topic on its next agenda and officially request the presence of the Town Manager and Rob Thompson, Recreation Director (regarding the beach house).",
+   "quote": "the commission will put this topic on their next agenda and officially request the presence of the town manager and rob thompson, recreation director."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park funding sources",
+   "what_was_recorded": "D. Passios said he would like to see the project funded with ARPA funds, earmarks and grants. No amount was stated.",
+   "quote": "d. passios would like to see this project funded with arpa funds, earmarks and grants.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Marshall Park cost estimates",
+   "what_was_recorded": "A resident asked when cost estimates would be available; the designer said they were still being worked on and would be provided the following week. No amount was stated.",
+   "quote": "g. roy asked when the cost estimates would be available.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Costs excluded from Marshall Park project",
+   "what_was_recorded": "The chair stated that Reservoir and Fitzgerald Fields studies were not included in the cost of the Marshall Park project. No amount was stated.",
+   "quote": "k. menard stated those are not included in the cost of this project.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Drainage and reorientation on little league field",
+   "speaker": "R. Delaney",
+   "stated_role": "",
+   "quote": "r. delaney expressed his concern with the drainage on the little league field"
+  },
+  {
+   "topic": "Parking near wetlands, cost estimates timing",
+   "speaker": "Greg Roy",
+   "stated_role": "105 Chestnut Street",
+   "quote": "greg roy, 105 chestnut street, noted he like design #2 but had concerns about the parking being too close to"
+  },
+  {
+   "topic": "Sun orientation of fields",
+   "speaker": "Marianne Mascari",
+   "stated_role": "54 Chestnut St.",
+   "quote": "marianne mascari, 54 chestnut st., asked that the sun be taken into consideration when selecting the orientation of the fields."
+  },
+  {
+   "topic": "Outfield dimensions and netting or fencing",
+   "speaker": "Joe Ruth",
+   "stated_role": "",
+   "quote": "joe ruth stated there is a lack of outfield dimension requirement, the infields are very specific."
+  },
+  {
+   "topic": "Concession stand cooking and field dimensions, memorials",
+   "speaker": "Dan Proctor",
+   "stated_role": "1529 Massachusetts Ave.",
+   "quote": "dan proctor, 1529 massachusetts ave., voiced his concerns about the need for the design to reflect a concession stand"
+  },
+  {
+   "topic": "Design #1, foliage buffer, walking trail length",
+   "speaker": "Pamela Porter",
+   "stated_role": "114 Chestnut Street",
+   "quote": "pamela porter, 114 chestnut street, stated she likes design #1 and the foliage buffer."
+  },
+  {
+   "topic": "Dog park and parking clarification",
+   "speaker": "Dave Rogers",
+   "stated_role": "82 Highland Street",
+   "quote": "dave rogers, 82 highland street, voiced his dislike of incorporating the dog park and asked for some clarification on the parking."
+  },
+  {
+   "topic": "Relocation of T-ball field",
+   "speaker": "David King",
+   "stated_role": "3 Gabes Place",
+   "quote": "david king, 3 gabes place, had concerns with the relocation of the t-ball field."
+  },
+  {
+   "topic": "Relocation of T-ball field",
+   "speaker": "Chris Martins",
+   "stated_role": "981 Northfield Road",
+   "quote": "chris martins, 981 northfield road, had concerns about the t-ball field being relocated."
+  },
+  {
+   "topic": "Parking and traffic direction on Design #2",
+   "speaker": "John Fortune",
+   "stated_role": "50 Hemlock Drive",
+   "quote": "john fortune, 50 hemlock drive, expressed his concern about the parking and direction of traffic on design #2."
+  },
+  {
+   "topic": "Multi-sports basketball court",
+   "speaker": "Pat Flaherty",
+   "stated_role": "298 Highland Street",
+   "quote": "pat flaherty, 298 highland street, noted he would like to see the basketball court be a multi-sports court."
+  },
+  {
+   "topic": "Support for Design #2, T-ball",
+   "speaker": "Tim Murphy",
+   "stated_role": "97 Island Road",
+   "quote": "tim murphy, 97 island road, stated he like design #2."
+  },
+  {
+   "topic": "Registration numbers quoted",
+   "speaker": "RJ Thibault",
+   "stated_role": "19 Whitetail Crossing",
+   "quote": "rj thibault, 19 whitetail crossing, stated the registration numbers that were quoted were not accurate."
+  },
+  {
+   "topic": "Support for Design #2, multi-generational use",
+   "speaker": "Kathy Lowe",
+   "stated_role": "99 Fairview Road",
+   "quote": "kathy lowe, 99 fairview road favors design #2 and the multi-generational use of the park."
+  },
+  {
+   "topic": "Keeping baseball field orientation",
+   "speaker": "Chris Begley",
+   "stated_role": "4 Whitetail Crossing",
+   "quote": "chris begley, 4 whitetail crossing, asked if it were possibly to keep the orientation of the baseball field as-is."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "no action",
+   "quote": "first item on the agenda, board and public comment, none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Marshall Park design alternatives presentation",
+   "resolution": "discussed; no design selected",
+   "quote": "next item on the agenda, presentation of two marshall park design alternatives by wola landscape architects.",
+   "tags": [
+    "Marshall Park",
+    "park design",
+    "parking",
+    "T-ball field",
+    "dog park",
+    "design alternatives"
+   ]
+  },
+  {
+   "topic": "Other Business: beach house condition",
+   "resolution": "continued to next agenda",
+   "quote": "k. menard informed the commission she had been to the beach house and took pictures.",
+   "tags": [
+    "beach house",
+    "building safety"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Presentation of two Marshall Park design alternatives by WOLA Landscape Architects (Design Alternative #1 and #2)",
+   "where": "text",
+   "quote": "next item on the agenda, presentation of two marshall park design alternatives by wola landscape architects."
+  },
+  {
+   "name": "Open Space Plan",
+   "where": "text",
+   "quote": "k. menard referred to the open space plan that currently shows approximately 60 spots."
+  },
+  {
+   "name": "Email from the school (received by the Commission)",
+   "where": "text",
+   "quote": "c. sullivan confirmed an email was received."
+  }
+ ],
+ "tags": [
+  "parks",
+  "Marshall Park",
+  "park design",
+  "design alternatives",
+  "parking",
+  "T-ball field",
+  "public comment",
+  "beach house",
+  "ARPA funding",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

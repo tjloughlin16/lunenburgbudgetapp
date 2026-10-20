@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-06-06",
  "docid": "3496",
@@ -12,23 +12,199 @@
  },
  "votes": [
   {
-   "motion": "accept and approve the minutes of May 2, 2022",
+   "motion": "Accept and approve the minutes of the May 2, 2022 meeting as presented.",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by w. bertrand to accept and approve the minutes of the may 2, 2022 meeting as presented second: d. fortune roll call vote: all in favor with s. andrews abstaining as she was not at meeting."
+   "quote": "motion by w. bertrand to accept and approve the minutes of the may 2, 2022 meeting as presented"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:34pm.",
    "moved_by": "D. Fortune",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 7:34pm by d. fortune second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 7:34pm by d. fortune"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0880025
+ "note": "Text is complete and legible; no scan issues. Two roll-call votes are recorded with no printed count: the minutes vote notes S. Andrews abstaining (not at meeting), so outcome is recorded as \"passed\" rather than a tally. The adjournment motion reads \"Motion by to adjourn meeting at 7:34pm by D. Fortune\"; the mover is taken as D. Fortune from that wording. The opening public comment has no named speaker. No dollar figures are printed in the minutes.",
+ "cost_usd": 0.015326880000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrews",
+   "role": "member",
+   "status": "absent",
+   "quote": "s. andrews abstaining as she was not at meeting"
+  },
+  {
+   "name": "Eric Arnold",
+   "status": "present",
+   "quote": "e. arnold opened the meeting at 6:33pm with members noted in attendance"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "member",
+   "status": "present",
+   "quote": "motion by w. bertrand to accept and approve the minutes of the may 2, 2022 meeting as presented"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "member",
+   "status": "present",
+   "quote": "susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits/Risk Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager, pauline roy, senior center"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "Senior Center",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager, pauline roy, senior center"
+  },
+  {
+   "name": "Deborah A.H. Christe n",
+   "role": "resident",
+   "status": "present",
+   "quote": "deborah a.h. christe n, resident"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Selectperson",
+   "status": "present",
+   "quote": "t. alonzo came to address the committee and other attendees"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Agreed to meet again on Monday, July 11, 2022, at 6:30pm in person.",
+   "quote": "the group agreed to meet again monday july 11, 2022, at 6:30pm in person."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Outside consultant for job description and grade review",
+   "what_was_recorded": "A review of SAP job descriptions and grades may require an outside consultant, and any funding would need town meeting approval. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a review like this may require an outside consultant. any funding would need town meeting approval."
+  },
+  {
+   "topic": "Percentage increase to the SAP level grid",
+   "what_was_recorded": "The committee asked which recommendations on the percentage increase to the SAP level grid would be acceptable to the Town; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "recommendations that would be acceptable to the town regarding the percentage increase to the sap level grid"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Distribution of SAP refresh submissions",
+   "quote": "their was a recommendation that in the future submissions like the one we just did with the sap"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "received; one comment on distribution timing for the SAP refresh submission",
+   "quote": "their was a recommendation that in the future submissions like the one we just did with the sap",
+   "tags": [
+    "public comment",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, May 2, 2022",
+   "resolution": "approved",
+   "quote": "motion by w. bertrand to accept and approve the minutes of the may 2, 2022 meeting as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "SAP approvals at Town Meeting (Select Board comments)",
+   "resolution": "discussed; no action",
+   "quote": "t. alonzo came to address the committee and other attendees",
+   "tags": [
+    "SAP",
+    "town meeting",
+    "select board"
+   ]
+  },
+  {
+   "topic": "SAP job descriptions and grade review",
+   "resolution": "discussed; no action",
+   "quote": "a review like this may require an outside consultant. any funding would need town meeting approval.",
+   "tags": [
+    "job descriptions",
+    "pay grades",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "SAP level grid percentage increase",
+   "resolution": "discussed; no action; 2024 and 2025 not addressed",
+   "quote": "we would not need to address 2024 and 2025",
+   "tags": [
+    "SAP",
+    "pay grades"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "scheduled for July 11, 2022",
+   "quote": "the group agreed to meet again monday july 11, 2022, at 6:30pm in person.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:34pm",
+   "quote": "motion by to adjourn meeting at 7:34pm by d. fortune",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo received by Select Board members (undated) on how the SAP approvals at Town Meeting were managed",
+   "where": "text",
+   "quote": "after reading the memo that select board members received that represented some disagreement with how the sap approvals"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP compensation plan",
+  "job descriptions",
+  "pay grades",
+  "town meeting",
+  "select board",
+  "public comment",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

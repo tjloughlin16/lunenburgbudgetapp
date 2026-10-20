@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-11-17",
  "docid": "3340",
@@ -12,15 +12,233 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 9:50.",
    "moved_by": "Ana",
    "seconded_by": "Chris",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ana made to motion to adjourn at 9:50, chris seconded ana-aye chris-aye dave-aye karin-aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0666674
+ "dropped_unquoted": 1,
+ "note": "Plain text extraction, not a scan. Only one recorded motion (adjournment, tallied by name as Aye). No vote was recorded on selecting a firm; the minutes say the final decision will be by vote, at a later meeting. Header lists Susanna Jewell as Secretary, but she does not appear in the attendance line, so she is not listed. Dave Passios is 'Member' in the header and 'Vice Chair' in the attendance line; the attendance line is used. The firm names listed under Warner Larson (Millonig, Hay, Wilkings) are named as presenting but their individual roles are not stated. Dawn Pavone signs as minutes secretary and is not listed as a participant. No proposal documents or fee figures appear in the minutes.",
+ "cost_usd": 0.0173278,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in attendance was karin menard (chair), dave passios (vice chair), chris sullivan (member), ana lockwood (member), rob oliver (dpw), julie belliveau (assist. town manager)"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "in attendance was karin menard (chair), dave passios (vice chair), chris sullivan (member), ana lockwood (member), rob oliver (dpw), julie belliveau (assist. town manager)"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "member",
+   "status": "present",
+   "quote": "in attendance was karin menard (chair), dave passios (vice chair), chris sullivan (member), ana lockwood (member), rob oliver (dpw), julie belliveau (assist. town manager)"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "member",
+   "status": "present",
+   "quote": "in attendance was karin menard (chair), dave passios (vice chair), chris sullivan (member), ana lockwood (member), rob oliver (dpw), julie belliveau (assist. town manager)"
+  },
+  {
+   "name": "Rob Oliver",
+   "role": "DPW",
+   "status": "present",
+   "quote": "in attendance was karin menard (chair), dave passios (vice chair), chris sullivan (member), ana lockwood (member), rob oliver (dpw), julie belliveau (assist. town manager)"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assist. Town Manager",
+   "status": "present",
+   "quote": "j. belliveau said the commissioners should rate the interviews and will meet on monday to discuss and decide on one."
+  },
+  {
+   "name": "Katherine Ostermier",
+   "role": "representing Wright Ostermier Landscape Architects",
+   "status": "present",
+   "quote": "first interview is with katherine ostermier, emily wright, and nicholas betts from wright ostermier"
+  },
+  {
+   "name": "Emily Wright",
+   "role": "representing Wright Ostermier Landscape Architects",
+   "status": "present",
+   "quote": "first interview is with katherine ostermier, emily wright, and nicholas betts from wright ostermier"
+  },
+  {
+   "name": "Nicholas Betts",
+   "role": "representing Wright Ostermier Landscape Architects",
+   "status": "present",
+   "quote": "first interview is with katherine ostermier, emily wright, and nicholas betts from wright ostermier"
+  },
+  {
+   "name": "David Warner",
+   "role": "representing Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "second interview is with warner larson landscape architects. david warner, sameen bhoite, josh millonig, charles hay, and charlie wilkings"
+  },
+  {
+   "name": "Sameen Bhoite",
+   "role": "representing Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "second interview is with warner larson landscape architects. david warner, sameen bhoite, josh millonig, charles hay, and charlie wilkings"
+  },
+  {
+   "name": "Josh Millonig",
+   "role": "representing Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "second interview is with warner larson landscape architects. david warner, sameen bhoite, josh millonig, charles hay, and charlie wilkings"
+  },
+  {
+   "name": "Charles Hay",
+   "role": "representing Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "second interview is with warner larson landscape architects. david warner, sameen bhoite, josh millonig, charles hay, and charlie wilkings"
+  },
+  {
+   "name": "Charlie Wilkings",
+   "role": "representing Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "second interview is with warner larson landscape architects. david warner, sameen bhoite, josh millonig, charles hay, and charlie wilkings"
+  },
+  {
+   "name": "Emily Hunt",
+   "role": "representing Warner Larson Landscape Architects",
+   "status": "present",
+   "quote": "warner larson landscape architects. david warner, sameen bhoite, josh millonig, charles hay, and charlie wilkings and emily hunt was representing the"
+  },
+  {
+   "name": "Ray Dunetz",
+   "role": "Landscape Architect",
+   "status": "present",
+   "quote": "the third interview is with ray dunetz landscape architect. ray dunetz in attendance."
+  },
+  {
+   "name": "Brandon Kunkel",
+   "role": "representing Weston and Sampson",
+   "status": "present",
+   "quote": "fourth interview was with weston and sampson. representing was brandon kunkel, cheri ruane and amanda gaal."
+  },
+  {
+   "name": "Cheri Ruane",
+   "role": "representing Weston and Sampson",
+   "status": "present",
+   "quote": "fourth interview was with weston and sampson. representing was brandon kunkel, cheri ruane and amanda gaal."
+  },
+  {
+   "name": "Amanda Gaal",
+   "role": "representing Weston and Sampson",
+   "status": "present",
+   "quote": "fourth interview was with weston and sampson. representing was brandon kunkel, cheri ruane and amanda gaal."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners to rate the four interviews and meet Monday to discuss and decide on one firm, as directed by Julie Belliveau.",
+   "quote": "j. belliveau said the commissioners should rate the interviews and will meet on monday to discuss and decide on one."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget for the Master Plan and the actual project",
+   "what_was_recorded": "The board discussed the budget for the Master Plan and the budget of the actual project; no figures are printed.",
+   "figures_as_printed": [],
+   "quote": "discussion on budget for the master plan and the budget of the actual project"
+  },
+  {
+   "topic": "Skate park funding",
+   "what_was_recorded": "A member said the skate park for Marshall Park is already financed; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood mentioned that the skate park is already"
+  },
+  {
+   "topic": "Funding help from design firms",
+   "what_was_recorded": "A firm said it could help with funding through the Land and Conservation fund and Community Development; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "c. sullivan asked about funding help to which d. warner replied that they could through the land and conservation fund and community development."
+  },
+  {
+   "topic": "Overextending funds on events",
+   "what_was_recorded": "A member commented on the facilities, overextending funds on events, and portable toilets when needed; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "d. passios commented on the facilities and overextending funds on events, portable toilets when needed."
+  },
+  {
+   "topic": "Phases of funding for the project",
+   "what_was_recorded": "A firm said the project would proceed in phases of funding once the key pieces are identified; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "c. ruane answered that there are phases of funding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Marshall Park design-firm interviews (four firms)",
+   "resolution": "Four interviews held; commissioners to rate them and decide on one at a Monday meeting",
+   "quote": "first interview is with katherine ostermier, emily wright, and nicholas betts from wright ostermier",
+   "tags": [
+    "Marshall Park",
+    "interviews",
+    "landscape architects",
+    "ADA",
+    "parking",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Budget and method of final decision",
+   "resolution": "Discussed; the final decision is by vote",
+   "quote": "discussion on budget for the master plan and the budget of the actual project",
+   "tags": [
+    "budget",
+    "Master Plan",
+    "funding",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned at 9:50",
+   "quote": "ana made to motion to adjourn at 9:50, chris seconded ana-aye chris-aye dave-aye karin-aye",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sudbury design (parking accommodation design shown by Wright Ostermier)",
+   "where": "text",
+   "quote": "k. ostermier shared the sudbury design to show the way to accommodate parking."
+  }
+ ],
+ "tags": [
+  "Marshall Park",
+  "park design",
+  "landscape architect firms",
+  "interviews",
+  "Master Plan",
+  "ADA accessibility",
+  "parking",
+  "funding",
+  "skate park",
+  "Parks Commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-11-15",
  "docid": "4110",
@@ -12,87 +12,404 @@
  },
  "votes": [
   {
-   "motion": "Grant waiver from topographical plan requirement for 431 Chase Road",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Grant a waiver from the topographical plan requirement for the parcel at 431 Chase Road.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
    "quote": "p. bertram made motion to grant a request for waiver from the topographical plan requirement for the parcel at 431 chase road, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Approve the ANR Plan for 431 Chase Road",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Approve the ANR Plan as submitted for 431 Chase Road.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan as submitted for 431 chase road, m. allison seconded, passed unanimously."
+   "quote": "made motion to approve the anr plan as submitted for 431 chase road, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Approve the ANR Plan for 346 Electric Avenue",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Approve the ANR Plan for 346 Electric Avenue.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan for 34 6 electric avenue, m. allison seconded, passed unanimously."
+   "quote": "made motion to approve the anr plan for 34 6 electric avenue, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Approve the ANR Plan for 101 Pleasant Street",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Approve the ANR Plan for 101 Pleasant Street.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan for 101 pleasant street, m. allison seconded, passed unanimously."
+   "quote": "motion to approve the anr plan for 101 pleasant street, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Approve the ANR Plan for 111 Mulpus Road",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Approve the ANR Plan for 111 Mulpus Road.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan for 111 mulpus road, m. allison seconded, passed unanimously."
+   "quote": "motion to approve the anr plan for 111 mulpus road, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Approve the ANR Plan for 215 Sunset Lane",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Approve the ANR Plan for 215 Sunset Lane.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr plan for 215 sunset lane, m. allison seconded, passed unanimously."
+   "quote": "motion to approve the anr plan for 215 sunset lane, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Approve the ANR Plan for 733 Massachusetts Avenue",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Approve the ANR for 733 Massachusetts Avenue.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the anr for 733 massachusetts avenue, m. allison seconded, passed unanimously."
+   "quote": "motion to approve the anr for 733 massachusetts avenue, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Accept withdrawal of the subdivision application for 101 Pleasant Street",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Accept the withdrawal of the subdivision application for 101 Pleasant Street.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to accept the withdrawal of the subdivision application for 101 pleasant street, m. allison seconded, passed unanimously."
+   "quote": "motion to accept the withdrawal of the subdivision application for 101 pleasant street, m. allison seconded, passed unanimously."
   },
   {
-   "motion": "Appoint Jeanne Dupre to the Economic Development Committee",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
+   "motion": "Appoint Jeanne Dupre to the Economic Development Committee as member at large.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion to appoint jeanne dupre to the economic development committee, m. allison seconded, passed unanimously."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "p. bertram made motion to appoint jeanne dupre to the economic development committee, m. allison seconded, passed unanimously."
-  },
-  {
-   "motion": "Adjourn",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. allison seconded, passed unanimously."
+   "quote": "motion to adjourn, m. allison seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and legible. Note: the minutes indicate that approval of prior minutes from 10/25/2021 was overlooked and no vote was recorded. The Board also neglected to take a vote on the Right of First Refusal matter for the 5 Holman Street/Northfield Road parcels.",
- "cost_usd": 0.08834349999999999
+ "note": "Text is a machine extraction with split words (e.g. \"applica tion\", \"Str eet\", \"34 6\", \"neglec ted\"); quotes keep those splits verbatim. Votes are recorded as \"passed unanimously\" with no tally, so outcomes are \"passed\". Minutes approval and Committee Representation are marked \"Overlooked by the Board\" with no motion. The Right of First Refusal item says the Board neglected to take a vote, so no vote is recorded for it. The STM warrant article has no motion; the pass-over is recorded only as the majority's opinion. The 101 Pleasant Street ANR was taken out of order. Some committee reports are blank, and the 475 Leominster hearing is in separate minutes not in this text.",
+ "cost_usd": 0.02277828,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: matthew brenner, erik torgersen"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: matthew brenner, erik torgersen"
+  },
+  {
+   "name": "Andrea Adams",
+   "role": "",
+   "status": "present",
+   "quote": "andrea adams inquired as to the current status of the 101 pleasant street project"
+  },
+  {
+   "name": "Daniel Pierce",
+   "role": "Property owner",
+   "status": "present",
+   "quote": "property owner daniel pierce presented an anr plan to create parcel h consisting of 2.93 acres"
+  },
+  {
+   "name": "Seth Donohoe",
+   "role": "Dillis & Roy, presented on behalf of John Goguen, Trustee; also presented 111 Mulpus Road on behalf of property owner James Warrick",
+   "status": "present",
+   "quote": "seth donohoe, dillis & roy, presented on behalf of john goguen, trustee."
+  },
+  {
+   "name": "Trevor Fletcher",
+   "role": "GRAZ Engineering, presenting on behalf of property owner Danny Gardner d/b/a MA Pleasant LLC",
+   "status": "present",
+   "quote": "trevor fletcher, graz engineering, presented on behalf of property owner danny gardner"
+  },
+  {
+   "name": "Kevin Conover",
+   "role": "David E. Ross Associates, presenting on behalf of property owners Larry Coffren and Marsha Beers",
+   "status": "present",
+   "quote": "kevin conover, david e. ross associates, presented on behalf of property owners larry coffren and marsha beers."
+  },
+  {
+   "name": "Tuan Dao",
+   "role": "Property owner",
+   "status": "present",
+   "quote": "presented by property owner tuan dao would create parcel a"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Applicant for vacant member-at-large seat, Economic Development Committee",
+   "status": "not stated",
+   "quote": "jeanne dupre, 727 lancaster avenue expressed interest in the vacant member -at-large position."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 475 Leominster Shirley Road draft decision is to be edited for content and brought back for review and possible approval at the Board's November 22 meeting.",
+   "quote": "the draft decision would be edited for content and available for review and possible approval at"
+  },
+  {
+   "decision": "Adam Burney directed to research the ownership of 236 and 240 Summer Street, which the Assessor Maps did not reflect.",
+   "quote": "a. burney to research."
+  },
+  {
+   "decision": "Majority of the Board chose to pass over both the STM map amendment and the proposed Water Supply Protection District bylaw changes; no vote recorded.",
+   "quote": "the o pinion of the majority of the board was t o pass over both the map amendment and the proposed bylaw changes.",
+   "quote_taken_from_text": true
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Open space gift from BrightFarms",
+   "what_was_recorded": "Noted in the Open Space Ad Hoc Committee report that BrightFarms gifted money to the Town for open space.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "it was noted that brightfarms gifted $10,000 to the town for open space."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Andrea Adams",
+   "topic": "Status of 101 Pleasant Street project",
+   "quote": "andrea adams inquired as to the current status of the 101 pleasant street project"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action recorded",
+   "quote": "andrea adams inquired as to the current status of the 101 pleasant street project",
+   "tags": [
+    "public comment",
+    "101 Pleasant Street"
+   ]
+  },
+  {
+   "topic": "ANR Plans (six properties)",
+   "resolution": "approved: 431 Chase Road, 346 Electric Avenue, 101 Pleasant Street, 111 Mulpus Road, 215 Sunset Lane, 733 Massachusetts Avenue; waiver granted for 431 Chase Road",
+   "quote": "property owner daniel pierce presented an anr plan to create parcel h consisting of 2.93 acres",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Chapter 61A"
+   ]
+  },
+  {
+   "topic": "234 Summer Street appointment (de minimis fence change)",
+   "resolution": "continued; staff to research ownership of 236 and 240 Summer Street",
+   "quote": "they are requesting a de minimis change to remove the fence from between 234 and 236 and reinstall it along the frontage of 240.",
+   "tags": [
+    "de minimis",
+    "fence",
+    "ownership"
+   ]
+  },
+  {
+   "topic": "Public hearing: 475 Leominster Shirley Road",
+   "resolution": "referred to separate minutes",
+   "quote": "see separate minutes.",
+   "tags": [
+    "public hearing",
+    "decision"
+   ]
+  },
+  {
+   "topic": "Public hearing: 101 Pleasant Street subdivision withdrawal",
+   "resolution": "withdrawal accepted",
+   "quote": "requested to withdraw the subdivision application for 101 pleasant street.",
+   "tags": [
+    "subdivision",
+    "withdrawal"
+   ]
+  },
+  {
+   "topic": "Decisions: 475 Leominster Shirley Road",
+   "resolution": "draft decision deferred to November 22 meeting",
+   "quote": "the draft decision would be edited for content and available for review and possible approval at",
+   "tags": [
+    "decision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "overlooked by the Board; no action",
+   "quote": "minutes approval: overlooked by the board.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Open Space Ad Hoc)",
+   "resolution": "reported; no action recorded",
+   "quote": "it was noted that brightfarms gifted $10,000 to the town for open space.",
+   "tags": [
+    "open space",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Director's items: appoint member at large, Economic Development Committee",
+   "resolution": "approved",
+   "quote": "expressed interest in the vacant member -at-large position.",
+   "tags": [
+    "appointments",
+    "Economic Development Committee"
+   ]
+  },
+  {
+   "topic": "Right of First Refusal, Holman Street & Northfield Road",
+   "resolution": "no vote taken; acreage correction resubmitted",
+   "quote": "the board neglec ted to take a vote.",
+   "tags": [
+    "right of first refusal",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Warrant article for STM: Water Supply Protection District",
+   "resolution": "passed over (majority opinion; no vote recorded)",
+   "quote": "the o pinion of the majority of the board was t o pass over both the map amendment and the proposed bylaw changes.",
+   "tags": [
+    "warrant article",
+    "Water Supply Protection District",
+    "DEP"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "november 16, special town meeting- 7:00 p.m.",
+   "tags": [
+    "schedule",
+    "hybrid meeting"
+   ]
+  },
+  {
+   "topic": "Ongoing items: Pond View Commons",
+   "resolution": "no report",
+   "quote": "pond view commons, llc- no report",
+   "tags": [
+    "ongoing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:38 p.m.",
+   "quote": "motion to adjourn, m. allison seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan - 431 Chase Road",
+   "where": "list",
+   "quote": "anr plans: 431 chase road 346 electric avenue 101 pleasant street 111 mulpus road 215 sunset lane 733 massachusetts avenue"
+  },
+  {
+   "name": "ANR Plan - 346 Electric Avenue",
+   "where": "list",
+   "quote": "anr plans: 431 chase road 346 electric avenue 101 pleasant street 111 mulpus road 215 sunset lane 733 massachusetts avenue"
+  },
+  {
+   "name": "ANR Plan - 101 Pleasant Street",
+   "where": "list",
+   "quote": "anr plans: 431 chase road 346 electric avenue 101 pleasant street 111 mulpus road 215 sunset lane 733 massachusetts avenue"
+  },
+  {
+   "name": "ANR Plan - 111 Mulpus Road",
+   "where": "list",
+   "quote": "anr plans: 431 chase road 346 electric avenue 101 pleasant street 111 mulpus road 215 sunset lane 733 massachusetts avenue"
+  },
+  {
+   "name": "ANR Plan - 215 Sunset Lane",
+   "where": "list",
+   "quote": "anr plans: 431 chase road 346 electric avenue 101 pleasant street 111 mulpus road 215 sunset lane 733 massachusetts avenue"
+  },
+  {
+   "name": "ANR Plan - 733 Massachusetts Avenue",
+   "where": "list",
+   "quote": "anr plans: 431 chase road 346 electric avenue 101 pleasant street 111 mulpus road 215 sunset lane 733 massachusetts avenue"
+  },
+  {
+   "name": "234 Summer Street, Request for De Minimis Change",
+   "where": "list",
+   "quote": "234 summer street, request for de minimis change"
+  },
+  {
+   "name": "DRAFT Decision - 475 Leominster Shirley Road",
+   "where": "list",
+   "quote": "draft decisions 475 leominster shirley road"
+  },
+  {
+   "name": "Right of First Refusal, Holman Street & Northfield Road",
+   "where": "list",
+   "quote": "right of first refusal, holman street & northfield road"
+  },
+  {
+   "name": "Assessor Maps",
+   "where": "text",
+   "quote": "as the assessor maps did not reflect the miller"
+  },
+  {
+   "name": "Warrant Article for STM (Water Supply Protection District map amendment and bylaw changes)",
+   "where": "text",
+   "quote": "warrant article for stm - dep contacted a. burney regarding the water supply protection district."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "subdivision",
+  "public hearing",
+  "101 Pleasant Street",
+  "warrant article",
+  "Water Supply Protection District",
+  "appointments",
+  "open space",
+  "hybrid meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

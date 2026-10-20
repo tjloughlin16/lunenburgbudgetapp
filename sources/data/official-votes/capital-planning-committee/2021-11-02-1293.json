@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2021-11-02",
  "docid": "1293",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "To accept the minutes of 10/19 and 10/26 with corrections",
+   "motion": "Accept the minutes of 1 0/19 and of 10/26, with the typo corrections noted in the item.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "Dave Passios",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "tom alonzo made a motion to accept the minutes of 1 0/19 with the correction of a typo in item 4 'comec' should be 'comes' and the minutes of 10/26 with the correction of the last page before public comment \"a the\" should be either \"a\" or \"the\". motion seconded by dave passios. motion passed unanimously."
+   "quote": "tom alonzo made a motion to accept the minutes of 1 0/19 with the correction of a typo in"
   },
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting at 6:42 p.m.",
    "moved_by": "Tom Alonzo",
    "seconded_by": "George Martin",
    "outcome": "passed unanimously",
@@ -29,6 +29,227 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07825850000000001
+ "note": "Plain-text extraction; no vote tallies printed, only \"passed unanimously\". The Chair is not named in the minutes. Public comment was \"None\" at both points; parents' questions about school closure during heat (page 2) occurred within discussion, not public comment, so they are not recorded as public comment. Some source typos kept as printed (\"1 0/19\", \"Fy29\", \"George Martine\"). No dollar figures were printed for the air conditioning or vehicle purchases themselves.",
+ "cost_usd": 0.018038480000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "member",
+   "status": "present",
+   "quote": "the capital planning committee met in the ritter building as scheduled with the following members present"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member",
+   "status": "present",
+   "quote": "dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "George Martin",
+   "role": "member",
+   "status": "present",
+   "quote": "dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member; recorder of the minutes",
+   "status": "present",
+   "quote": "respectfully submitted: paula bertram"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "member",
+   "status": "present",
+   "quote": "dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux was also in attendance."
+  },
+  {
+   "name": "John Murphy",
+   "role": "new Facilities and Ground Director",
+   "status": "present",
+   "quote": "john murphy, new facilities and ground director, and superintendent burnham presented the capital plan"
+  },
+  {
+   "name": "Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "john murphy, new facilities and ground director, and superintendent burnham presented the capital plan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Superintendent Burnham and Mr. Murphy will return to the Committee with answers to three questions: students with heat-sensitivity needs, average days over the heat threshold, and estimated cost to run and maintain the system.",
+   "quote": "superintendent burnham and mr. murphy will get back to the committee on the following questions"
+  },
+  {
+   "decision": "Brian Lehtinen will put the possibility of a police vehicle rotation on next month's agenda.",
+   "quote": "brian will put the possibility of police vehicle rotation for next month"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Out-of-district placement cost if the school cannot meet a student's health-plan environment",
+   "what_was_recorded": "Superintendent Burnham said a student's out-of-district placement could cost $80,000 for one student.",
+   "quote": "lunenburg could be looking at out of district placement which could be $80,000 for one student.",
+   "figures_as_printed": [
+    "$80,000"
+   ]
+  },
+  {
+   "topic": "Turkey Hill capital requests, FY29 to FY31",
+   "what_was_recorded": "Tom Alonzo noted the Town will be looking at 12 million in capital requests for Turkey Hill in FY29 to FY31.",
+   "quote": "the town will be looking at 12 million in capital requests for turkey hill",
+   "figures_as_printed": [
+    "12 million"
+   ]
+  },
+  {
+   "topic": "Air conditioning project pricing",
+   "what_was_recorded": "Asked whether the proposed pricing includes a separate panel; Mr. Murphy said it does not and that the figure is a paired-down number.",
+   "quote": "tom alonzo questioned if the pricing proposed is with a separate panel?",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Operating cost of the air conditioning system",
+   "what_was_recorded": "Mr. Martin asked the cost to run the equipment; Mr. Murphy said he will investigate and provide that information.",
+   "quote": "mr. martin questioned the cost to run the equipment?",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MSBA funding for the Turkey Hill project",
+   "what_was_recorded": "The Town's capital plan carries the Town's portion; the School Committee would seek MSBA funding, which requires a ten-year commitment to use the building as a school.",
+   "quote": "school committee would be seeking funding from msba",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Alarm system funding",
+   "what_was_recorded": "The alarm system project was funded through the school department budget, with work planned over Christmas break.",
+   "quote": "this project was funded through the school department budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Green Communities grants",
+   "what_was_recorded": "Discussion that Green Communities Task Force grants may benefit the Town; no amount printed.",
+   "quote": "some of these grants may be beneficial to the town",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 5:36 p.m.",
+   "quote": "chair called the meeting to order at 5:36 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment (open)",
+   "resolution": "none",
+   "quote": "comment from the committee, comment from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved (passed unanimously)",
+   "quote": "tom alonzo made a motion to accept the minutes of 1 0/19",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review Capital Requests Submitted by the School Department",
+   "resolution": "discussed; school officials to return with answers on heat sensitivity, heat threshold days and running cost",
+   "quote": "john murphy, new facilities and ground director, and superintendent burnham presented the capital plan",
+   "tags": [
+    "school capital",
+    "air conditioning",
+    "HVAC",
+    "dump truck",
+    "mower",
+    "alarm system",
+    "Turkey Hill",
+    "MSBA",
+    "solar",
+    "enrollment",
+    "Green Communities"
+   ]
+  },
+  {
+   "topic": "Action and Agenda Items for Future Meetings",
+   "resolution": "police vehicle rotation to be added to next month's agenda",
+   "quote": "brian will put the possibility of police vehicle rotation for next month",
+   "tags": [
+    "agenda",
+    "police vehicles"
+   ]
+  },
+  {
+   "topic": "Public Comment (close)",
+   "resolution": "none",
+   "quote": "comment from the public, comment from the committee - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:42 p.m. (passed unanimously)",
+   "quote": "at 6:42 p.m. tom alonzo made a motion to adjourn",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital plan approved by the School Committee",
+   "where": "list",
+   "quote": "john murphy, new facilities and ground director, and superintendent burnham presented the capital plan that was approved by the school committee."
+  },
+  {
+   "name": "10-year forecast (prepared last year from MSBA-available data)",
+   "where": "text",
+   "quote": "superintendent burnham responded that last year a 10-year forecast was done"
+  },
+  {
+   "name": "Planning Board population study",
+   "where": "text",
+   "quote": "paula commented that the planning board has just done a population study"
+  },
+  {
+   "name": "Report on Green Communities grant, due November 19, 2021",
+   "where": "text",
+   "quote": "he is currently working on a report which must be submitted by november 19, 2021"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "school capital requests",
+  "air conditioning",
+  "HVAC",
+  "Turkey Hill school",
+  "MSBA",
+  "vehicles",
+  "school facilities",
+  "solar",
+  "enrollment",
+  "Green Communities"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "john murphy, new facilities and ground director, and superintendent burnham presented the capital plan"
+ },
+ "dropped_unquoted_by_field": {}
 }

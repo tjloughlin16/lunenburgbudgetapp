@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2022-02-15",
  "docid": "2680",
@@ -12,15 +12,207 @@
  },
  "votes": [
   {
-   "motion": "Approve previous minutes",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Accept the previous meeting's minutes, as read by the Secretary.",
    "moved_by": "",
    "seconded_by": "",
-   "quote": "secretary jennifer sanderson read previous minutes with a unanimous vote to accept."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "read previous minutes with a unanimous vote to accept."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "next meeting march 8th. motion to adjourn."
   }
  ],
  "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0734825
+ "note": "Minutes name a quorum but no roster; only Jennifer Sanderson is shown taking part in an action. No vote counts beyond the word unanimous; the adjournment motion has no mover or result. No dollar figures are printed. No public comment. No documents list heading is printed.",
+ "cost_usd": 0.013388480000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "secretary jennifer sanderson read previous minutes with a unanimous vote to accept."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "not stated",
+   "quote": "chairman richard mcgrath has submitted our annual report, and will be forwarding"
+  },
+  {
+   "name": "Megan",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "megan will reach out to the fitchburg historical society regarding african american history in"
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "bill lakso will make inquiries to the mass historical society in hopes of getting an estimate."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission will review the town by-laws in March and determine whether wording changes or updates are required.",
+   "quote": "in march the commission will review the town by-laws and will determine whether any changes in"
+  },
+  {
+   "decision": "Megan will contact the Fitchburg Historical Society about African American history in Lunenburg.",
+   "quote": "megan will reach out to the fitchburg historical society regarding african american history in"
+  },
+  {
+   "decision": "Bill Lakso will ask the Mass Historical Society for an estimate on the K House survey work.",
+   "quote": "bill lakso will make inquiries to the mass historical society in hopes of getting an estimate."
+  },
+  {
+   "decision": "A list of endangered properties in the district, including 30 School St., the Brooks House, 53 Lancaster, the Old Methodist Steeple, and the Town Pound, will be made public.",
+   "quote": "a list of endangered properties in the district will be made public, including 30 school st., the brooks house, 53 lancaster, the old methodist steeple, and the town pound."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "K House survey cost estimate",
+   "what_was_recorded": "The K House survey needs a ten-page attachment on every building done professionally for 24 buildings; the commission sought an estimate from the Mass Historical Society. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "bill lakso will make inquiries to the mass historical society in hopes of getting an estimate."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of previous minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "read previous minutes with a unanimous vote to accept."
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "no new correspondence."
+  },
+  {
+   "topic": "Annual report",
+   "resolution": "reported; copies to be forwarded to members",
+   "tags": [
+    "annual report"
+   ],
+   "quote": "chairman richard mcgrath has submitted our annual report, and will be forwarding"
+  },
+  {
+   "topic": "By-law revisions",
+   "resolution": "awaiting Attorney General approval; review in March",
+   "tags": [
+    "by-laws"
+   ],
+   "quote": "the attorney general has received our by-law revisions, and we are waiting for approval."
+  },
+  {
+   "topic": "African American history research (Savage Family)",
+   "resolution": "continued; outreach planned",
+   "tags": [
+    "history",
+    "research"
+   ],
+   "quote": "megan will reach out to the fitchburg historical society regarding african american history in"
+  },
+  {
+   "topic": "Litch Memorial restoration",
+   "resolution": "reported; work pending ground thaw",
+   "tags": [
+    "monument",
+    "restoration"
+   ],
+   "quote": "once the ground thaws in (hopefully) april/ curbing will be placed at the litch memorial."
+  },
+  {
+   "topic": "30 School St. demolition",
+   "resolution": "reported; public hearing scheduled 3/10",
+   "tags": [
+    "demolition",
+    "30 School St."
+   ],
+   "quote": "regarding 30 school st., plans remain in effect to demolish said structure."
+  },
+  {
+   "topic": "APDC Facebook page and endangered properties list",
+   "resolution": "reported; list to be made public",
+   "tags": [
+    "outreach",
+    "endangered properties"
+   ],
+   "quote": "the facebook page of the apdc is going well."
+  },
+  {
+   "topic": "K House survey",
+   "resolution": "continued; estimate being sought",
+   "tags": [
+    "survey",
+    "K House"
+   ],
+   "quote": "in regards to the k house survey, a ten page attachment on every building needs to be professionally"
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "adjournment motion made; result not stated",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "next meeting march 8th. motion to adjourn."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual report (submitted by Chairman Richard McGrath)",
+   "where": "text",
+   "quote": "chairman richard mcgrath has submitted our annual report, and will be forwarding"
+  },
+  {
+   "name": "By-law revisions (with the Attorney General)",
+   "where": "text",
+   "quote": "the attorney general has received our by-law revisions, and we are waiting for approval."
+  },
+  {
+   "name": "List of endangered properties in the district",
+   "where": "text",
+   "quote": "a list of endangered properties in the district will be made public, including 30 school st."
+  },
+  {
+   "name": "K House survey ten-page attachment",
+   "where": "text",
+   "quote": "a ten page attachment on every building needs to be professionally done."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "annual report",
+  "by-laws",
+  "Litch Memorial",
+  "30 School St.",
+  "demolition",
+  "endangered properties",
+  "K House survey",
+  "APDC",
+  "historic preservation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

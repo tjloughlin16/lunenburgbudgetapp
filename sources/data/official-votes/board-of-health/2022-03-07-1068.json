@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2022-03-07",
  "docid": "1068",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Grant the variance for offset to groundwater from 5 feet to 3 feet at 71 Pleasant Street",
+   "motion": "Grant the requested variance (offset to groundwater reduced from 5 feet to 3 feet) for 71 Pleasant Street.",
    "moved_by": "Jewell",
    "seconded_by": "Normandin",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "after discussion and on motion by jewell and second by normandin, the variance was granted. all in favor."
   },
   {
-   "motion": "Grant the variances for 236 Cross Road (offset to groundwater from 4 feet to 2 feet, reduction in inlet and outlet tees, and use of sieve analysis)",
+   "motion": "Grant the variances for 236 Cross Road (offset to groundwater, inlet and outlet tees, and sieve analysis in lieu of perc test).",
    "moved_by": "Normandin",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "after discussion and on motion by normandin and second by fortin, the variances were granted. all in favor."
   },
   {
-   "motion": "Approve the amended floor plan for 72 Hemlock",
+   "motion": "Approve the amended floor plan for 72 Hemlock.",
    "moved_by": "Normandin",
    "seconded_by": "Fortin",
    "outcome": "passed",
@@ -36,15 +36,185 @@
    "quote": "after discussion and on motion by normandin and second by fortin, the board approved the amended floor plan. all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:35 pm.",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": true,
-   "quote": "having no further matters before the board and on motion fortin and seconded by jewell, the meeting was adjourned at 8:35 pm, all in favor."
+   "quote": "on motion fortin and seconded by jewell, the meeting was adjourned at 8:35 pm, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0839765
+ "note": "The minutes print a 'MINUTES APPROVED' heading with no motion, second or result, so it is not recorded as a vote or a topic. Vote results are printed only as 'All in favor' with no tally. No public comment period is printed; the three representatives and the Nashoba presenter appear as applicants or presenters and are listed as attendees. The Stella's owner is printed as 'Allan Souza' and later as 'Mr. Sousa'; the name is kept as first printed. Food Service Inspector Bridgette Braley is named as having advised the owner but is not recorded as attending. No dollar figures or money discussion appear in the text. No documents list is printed; the Title 5 report and amended floor plan are named only in discussion.",
+ "cost_usd": 0.01500458,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and lisa normandin. agent jim garreffi was also present."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and lisa normandin. agent jim garreffi was also present."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and lisa normandin. agent jim garreffi was also present."
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "Board member (Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and lisa normandin. agent jim garreffi was also present."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin and lisa normandin. agent jim garreffi was also present."
+  },
+  {
+   "name": "Jenna Montgomery",
+   "role": "Public Health Educator/Communications Specialist",
+   "status": "present",
+   "quote": "jenna montgomery, public health educator/communications specialist , met with the board."
+  },
+  {
+   "name": "Bob Proctor",
+   "role": "representing the owner (71 Pleasant Street; 236 Cross Road)",
+   "status": "present",
+   "quote": "bob proctor met with the board of behalf of the owner."
+  },
+  {
+   "name": "Allan Souza",
+   "role": "owner of Stella's (spelled Mr. Sousa later in the minutes)",
+   "status": "present",
+   "quote": "allan souza, owner of stella's met with the board."
+  },
+  {
+   "name": "Courtney Zivojinovic",
+   "role": "representing the owner (72 Hemlock)",
+   "status": "present",
+   "quote": "courtney zivojinovic met with the board on behalf of the owner."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No action on the 1432 Lancaster Avenue Title 5 report until the next meeting, because the report has not yet been submitted.",
+   "quote": "in as much as the title 5 report has not yet been submitted, no action will be taken until our next meeting."
+  },
+  {
+   "decision": "Continue the Stella's food-manager certification discussion to March 21, 2022, with the understanding that the food service license could face suspension if the certification is not submitted to Nashoba.",
+   "quote": "the board continued this discussion until their next meeting on march 21, 2022"
+  },
+  {
+   "decision": "Welcome Jenna Montgomery to the board.",
+   "quote": "the board welcomed ms. montgomery."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Jenna Montgomery, Nashoba public health education and newsletter",
+   "resolution": "welcomed; no action recorded",
+   "quote": "the board welcomed ms. montgomery.",
+   "tags": [
+    "Nashoba",
+    "public health",
+    "newsletter",
+    "grant"
+   ]
+  },
+  {
+   "topic": "1432 Lancaster Avenue Title 5 report, nitrate level",
+   "resolution": "no action; deferred to next meeting",
+   "quote": "in as much as the title 5 report has not yet been submitted, no action will be taken until our next meeting.",
+   "tags": [
+    "Title 5",
+    "well water",
+    "nitrate",
+    "sale of property"
+   ]
+  },
+  {
+   "topic": "71 Pleasant Street variance (failed system, Presby)",
+   "resolution": "variance granted",
+   "quote": "after discussion and on motion by jewell and second by normandin, the variance was granted. all in favor.",
+   "tags": [
+    "septic",
+    "variance",
+    "Title 5",
+    "groundwater"
+   ]
+  },
+  {
+   "topic": "236 Cross Road variances (failed system, Presby)",
+   "resolution": "variances granted",
+   "quote": "after discussion and on motion by normandin and second by fortin, the variances were granted. all in favor.",
+   "tags": [
+    "septic",
+    "variance",
+    "bedrooms",
+    "sieve analysis"
+   ]
+  },
+  {
+   "topic": "Stella's food managers certification",
+   "resolution": "continued to March 21, 2022",
+   "quote": "the board continued this discussion until their next meeting on march 21, 2022",
+   "tags": [
+    "food service",
+    "certification",
+    "license suspension"
+   ]
+  },
+  {
+   "topic": "72 Hemlock amended floor plan (septic capacity)",
+   "resolution": "amended floor plan approved",
+   "quote": "the board approved the amended floor plan. all in favor.",
+   "tags": [
+    "septic",
+    "floor plan",
+    "bedrooms",
+    "building permit"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 report for 1432 Lancaster Avenue (completed to prepare for the sale of the property; not yet submitted)",
+   "where": "text",
+   "quote": "as part of a title 5 report that was completed to prepare for the sale of this property, a wate r test was required"
+  },
+  {
+   "name": "Amended proposed floor plan for 72 Hemlock",
+   "where": "text",
+   "quote": "mr. zivojinovic is before the board with an amended proposed floor plan that has reduced the number of additional rooms"
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "variance",
+  "Title 5",
+  "well water nitrate",
+  "food service",
+  "Nashoba",
+  "public health education",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

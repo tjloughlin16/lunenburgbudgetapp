@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2021-10-22",
  "docid": "1414",
@@ -12,19 +12,135 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from August 5, 2021 and September 3, 2021",
+   "motion": "Approve the minutes of August 5, 2021 and September 3, 2021.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to approve minutes from august 5, 2021 and september 3, 2021 approved and passed by chairman tyler and commissioners yasko and dorren."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn the meeting and was seconded and affirmed by roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0894285
+ "note": "Single-page minutes. Votes are recorded only as 'approved and passed' or 'affirmed by roll call vote' with no counts and no mover or seconder printed, so outcomes are recorded as 'passed'. The header gives 3:30 pm but the meeting is recorded as opened at 3:44pm. Public attendance is recorded as none. No document list or exhibit is printed. Superintendent Todd Holman and Bolac Brothers Landscaping are named only as discussed, not as taking part, so they are not listed as attendees.",
+ "cost_usd": 0.01399158,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was opened at 3:44pm by chairman tyler"
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "commissioners yasko and dorren were present along with dpw director oliva."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "commissioners yasko and dorren were present along with dpw director oliva."
+  },
+  {
+   "name": "Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "commissioners yasko and dorren were present along with dpw director oliva."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "It was decided to check with area towns on their pricing before any change to the North and South Cemetery fees and charges.",
+   "quote": "it was decided to check with the area towns on their pricing."
+  },
+  {
+   "decision": "Commissioner Yasko will check with the area towns on fees and report back at the next meeting.",
+   "quote": "commissioner yasko will check with the area towns and report back to the cemetery commission at their next meeting."
+  },
+  {
+   "decision": "DPW Director Oliva will talk to Bolac Brothers Landscaping for an estimate on the North Cemetery hedges, with work on the first part of the hedges on Holman Street to the South Ave. Entrance depending on the estimate.",
+   "quote": "he will talk to bolac brothers landscaping for an estimate."
+  },
+  {
+   "decision": "DPW Director Oliva will talk to Todd Holman about doing the excavation for the South Cemetery monument to reduce costs.",
+   "quote": "dpw director oliva to talk to todd."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revolutionary War Monument, South Cemetery",
+   "what_was_recorded": "The estimated cost of the monument was reported.",
+   "figures_as_printed": [
+    "$16,000"
+   ],
+   "quote": "estimated cost is $16,000."
+  },
+  {
+   "topic": "Monument excavation cost reduction",
+   "what_was_recorded": "Discussed using Superintendent Todd Holman to do the excavation to reduce costs; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "to reduce the costs topic was brought up regarding superintendent todd holman doing the excavation for the monument."
+  },
+  {
+   "topic": "North Cemetery hedges",
+   "what_was_recorded": "The DPW Director discussed the budget for the hedges; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "dpw director oliva discussed the budget."
+  },
+  {
+   "topic": "North and South Cemetery fees and charges",
+   "what_was_recorded": "An increase in fees and charges was discussed; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "next topic for discussion was the increase in fee's and charges for the north and south cemeteries."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Hedges at the North Cemetery",
+   "resolution": "no vote; DPW Director to seek landscaping estimate",
+   "quote": "chairman tyler opened the meeting with a discussion of the hedges at the north cemetery."
+  },
+  {
+   "topic": "Revolutionary War Monument, South Cemetery",
+   "resolution": "no vote; DPW Director to talk to Todd Holman about excavation",
+   "quote": "chairman tyler discussed the revolutionary war monument for the south cemetery."
+  },
+  {
+   "topic": "Approval of minutes, August 5 and September 3, 2021",
+   "resolution": "approved",
+   "quote": "motion to approve minutes from august 5, 2021 and september 3, 2021 approved and passed by chairman tyler and commissioners yasko and dorren."
+  },
+  {
+   "topic": "Increase in North and South Cemetery fees and charges",
+   "resolution": "deferred; Commissioner Yasko to check area towns' pricing and report back",
+   "quote": "next topic for discussion was the increase in fee's and charges for the north and south cemeteries."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery",
+  "North Cemetery hedges",
+  "South Cemetery monument",
+  "cemetery fees",
+  "DPW",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-05-17",
  "docid": "5303",
@@ -12,47 +12,377 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager appointments as presented",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys to ratify the town manager appointments as presented 2id: l. franco vote: all in favor"
-  },
-  {
-   "motion": "Ratify the Police Department appointments as presented",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys to ratify the town manger appointments as presented 2': l. franco vote: all in favor"
-  },
-  {
-   "motion": "Approve the minutes of April 5, 2022 as presented",
-   "moved_by": "L. Franco",
-   "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: l. franco to approve the minutes of april 5, 2022 as presented 2\": m. jeffreys vote: all in favor"
-  },
-  {
-   "motion": "Authorize the Chair of the Select Board and the Town Manager to review and approve the letter of support for the Montachusett Regional Planning Commission planning assistance grant for MBTA community compliance",
+   "motion": "Ratify the Town Manager appointments as presented (annual appointments with terms to expire June 30, 2023).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2'd: l. franco for the chair of the select board and the town manager to have the authority to review and approve the letter of support for the mrpc grant for the planning assistance grant for the mbta community compliance vote: all in favor"
+   "quote": "to ratify the town manager appointments as presented 2id: l. franco vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Ratify the police department and civilian traffic member appointments as presented.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the town manger appointments as presented 2': l. franco vote: all in favor"
+  },
+  {
+   "motion": "Approve the minutes of April 5, 2022 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco to adjourn the meeting the meeting adjourned at 8:05 pm. respectfully submitted, elaiie m. peterson elaine m. peterson executive assistant to the town manager 2'd: m. jeffreys vote: all in favor"
+   "quote": "to approve the minutes of april 5, 2022 as presented 2\": m. jeffreys vote: all in favor"
+  },
+  {
+   "motion": "For the Chair of the Select Board and the Town Manager to have the authority to review and approve the letter of support for the MRPC grant for the planning assistance grant for the MBTA community compliance.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "for the chair of the select board and the town manager to have the authority to review and approve the letter of support for the mrpc grant"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "L. Franco",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motion: l. franco to adjourn the meeting the meeting adjourned at 8:05 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned text with formatting artifacts. The adjournment vote quote includes signature block text that appears between the motion and vote record in the OCR output (likely a page layout artifact).",
- "cost_usd": 0.150903
+ "note": "Scanned minutes read by OCR (macOS Vision); spelling and punctuation garbled, and seconds appear as \"2id\", \"2'd\", \"2'\" and \"2\":. Vote results are printed only as \"All in Favor\" with no counts or roll call, so outcomes are recorded as \"passed\". The page 1 public comment heading is followed by Ms. Lemieux's election reminder, which is a staff announcement and is not recorded as public comment. Ms. Lemieux's title is not printed in these minutes. Mr. McCormack is discussed in the minutes and it is not clear he attended. No attendance roll is printed. Page 5 opens mid-item, so its topic title is not printed; it is labelled here from the text.",
+ "cost_usd": 0.02032238,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "burney, land use director"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux presented her list of appointments with terms to expire june 30, 2023."
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "status": "present",
+   "quote": "mr. jeffreys noted he was emailed by some residents about funding available from mass development."
+  },
+  {
+   "name": "Mr. Franco",
+   "status": "present",
+   "quote": "mr. franco reported he had asked the school committee a couple of weeks ago about their policy for naming buildings and structures."
+  },
+  {
+   "name": "Ms. Menard",
+   "status": "remote",
+   "quote": "ms. menard via zoom reported the parks commission is meeting tomorrow night"
+  },
+  {
+   "name": "Mr. McCormack",
+   "status": "not stated",
+   "quote": "mr. mccormack has received a time extension from his senior advisor"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Two pole petitions scheduled for the evening are rescheduled because the proper abutters were not notified.",
+   "quote": "the two pole petitions scheduled for this evening will be rescheduled due to failure to notify the proper abutters."
+  },
+  {
+   "decision": "The Town Manager composite performance evaluation is to be read at the next board meeting for finalization; members send any changes only to Mr. Alonzo.",
+   "quote": "he will read it at the next board meeting for finalization."
+  },
+  {
+   "decision": "Ms. Lemieux will forward the School Committee's building-naming policy to board members.",
+   "quote": "ms. lemieux stated she had received it. she will forward it to the board members."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "30 School Street asbestos abatement",
+   "what_was_recorded": "Asbestos abatement funded by a state payment is complete; remaining hazardous materials abatement is next before demolition.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the asbestos abatement project that was undertaken with the $50,000 we received from the state is now complete."
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "what_was_recorded": "The Board signed an Accounts Payable warrant for the amount stated.",
+   "figures_as_printed": [
+    "$334,176.53"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $334,176.53."
+  },
+  {
+   "topic": "30 School Street demolition cost",
+   "what_was_recorded": "Preserving bricks for reuse or resale would increase the overall cost of demolition; no figure given.",
+   "figures_as_printed": [],
+   "quote": "this will inevitably increase the overall cost of demolition in the attempt to preserve a certain quantity of bricks."
+  },
+  {
+   "topic": "MRPC planning assistance grant",
+   "what_was_recorded": "A state planning assistance grant for MBTA communities zoning compliance was discussed; grant amount not stated.",
+   "figures_as_printed": [],
+   "quote": "the grant is due this friday and would go through the end of fiscal year 2024."
+  },
+  {
+   "topic": "Mass Development funding",
+   "what_was_recorded": "Residents raised funding from Mass Development (land bank, low-cost financing, rehabilitation grants); no amounts given.",
+   "figures_as_printed": [],
+   "quote": "mr. jeffreys noted he was emailed by some residents about funding available from mass development."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "No public comment",
+   "quote": "public comment: there was none this evening."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and recording notice",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "opening",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Town Manager annual appointments",
+   "resolution": "ratified",
+   "quote": "ms. lemieux presented her list of appointments with terms to expire june 30, 2023.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Police and civilian traffic appointments",
+   "resolution": "ratified",
+   "quote": "ms. lemieux moved on to the police department appointments with terms to expire june 30, 2023:",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Two pole petitions",
+   "resolution": "rescheduled",
+   "quote": "the two pole petitions scheduled for this evening will be rescheduled due to failure to notify the proper abutters.",
+   "tags": [
+    "pole petitions",
+    "abutters"
+   ]
+  },
+  {
+   "topic": "Parks Commission requests (McCormack)",
+   "resolution": "discussed; Parks Commission approval reported",
+   "quote": "mr. mccormack reached out to the parks commission chair and she approved those requests in advance of their meeting tomorrow night.",
+   "tags": [
+    "parks",
+    "stop signs"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational, no action",
+   "quote": "announcement on existing vacancies",
+   "tags": [
+    "vacancies",
+    "employment",
+    "30 School Street",
+    "records",
+    "email"
+   ]
+  },
+  {
+   "topic": "Update on public records retention",
+   "resolution": "no action",
+   "quote": "update on public records retention project",
+   "tags": [
+    "public records",
+    "storage"
+   ]
+  },
+  {
+   "topic": "Email migration project",
+   "resolution": "informational, no action",
+   "quote": "about 40% of the staff has been migrated to the new email platform and the remaining staff will all be migrated by june 3rd",
+   "tags": [
+    "email",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "informational, no action",
+   "quote": "absentee ballots are now available at the town clerk's office for the annual town election on may 21st.",
+   "tags": [
+    "election",
+    "yard waste",
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Town Manager performance evaluation",
+   "resolution": "continued to next meeting for finalization",
+   "quote": "mr. alonzo presented the draft composite of the town manager performance evaluation.",
+   "tags": [
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of April 5, 2022",
+   "resolution": "approved",
+   "quote": "approval of minutes of april 5, 2022",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $334,176.53.",
+   "tags": [
+    "warrant",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Whalom rotary crosswalks",
+   "resolution": "discussed; no action",
+   "quote": "mr. alonzo noted that as he went around the whalom rotary recently there still remains nowhere for a person to cross.",
+   "tags": [
+    "crosswalks",
+    "safety",
+    "complete streets"
+   ]
+  },
+  {
+   "topic": "Committee reports (municipal building design, school naming policy)",
+   "resolution": "informational",
+   "quote": "mir. jeffreys reported the municipal building design committee met yesterday",
+   "tags": [
+    "municipal building",
+    "school committee",
+    "storage"
+   ]
+  },
+  {
+   "topic": "MRPC planning assistance grant letter of support",
+   "resolution": "approved authority for Chair and Town Manager to approve letter",
+   "quote": "mr. burney reported that a few months ago he came before the board about the new mbta communities zoning requirement",
+   "tags": [
+    "MBTA zoning",
+    "grant",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Mass Development funding",
+   "resolution": "discussed",
+   "quote": "mr. jeffreys noted he was emailed by some residents about funding available from mass development.",
+   "tags": [
+    "economic development",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none received",
+   "quote": "public comment: there was none this evening.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:05 PM",
+   "quote": "the meeting adjourned at 8:05 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft composite Town Manager performance evaluation (undated)",
+   "where": "text",
+   "quote": "mr. alonzo presented the draft composite of the town manager performance evaluation."
+  },
+  {
+   "name": "Ms. Lemieux's list of Town Manager annual appointments (terms to expire June 30, 2023)",
+   "where": "text",
+   "quote": "ms. lemieux presented her list of appointments with terms to expire june 30, 2023."
+  },
+  {
+   "name": "Accounts Payable warrant, $334,176.53",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $334,176.53."
+  },
+  {
+   "name": "Letter of Support to Montachusett Regional Planning Commission for Planning Assistance Grant",
+   "where": "text",
+   "quote": "letter of support to montachusett regional planning commission for planning assistance grant"
+  },
+  {
+   "name": "Preservation Restriction Agreement (Town Hall)",
+   "where": "text",
+   "quote": "the town hall building has a preservation restriction agreement in place"
+  },
+  {
+   "name": "Complete Streets plan",
+   "where": "text",
+   "quote": "ms. lemieux suggested revisiting the complete streets plan and reprioritizing."
+  },
+  {
+   "name": "School Committee policy for naming buildings and structures",
+   "where": "text",
+   "quote": "asked the school committee a couple of weeks ago about their policy for naming buildings and structures"
+  },
+  {
+   "name": "Minutes of April 5, 2022",
+   "where": "text",
+   "quote": "to approve the minutes of april 5, 2022 as presented"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town manager",
+  "appointments",
+  "public records retention",
+  "email migration",
+  "MBTA zoning",
+  "MRPC grant",
+  "30 School Street",
+  "Whalom rotary crosswalks",
+  "Mass Development",
+  "town election"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. alonzo presented the draft composite of the town manager performance evaluation"
+ },
+ "dropped_unquoted_by_field": {}
 }

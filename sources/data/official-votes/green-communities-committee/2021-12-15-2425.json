@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "green-communities-committee",
  "meeting_date": "2021-12-15",
  "docid": "2425",
@@ -12,23 +12,171 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes with amendments to change date to Sept 9 and capitalize names",
-   "moved_by": "D.P",
-   "seconded_by": "M.S.",
+   "motion": "Approve the minutes with the requested amendments (change date to Sept 9 and capitalize names).",
+   "moved_by": "David Passios",
+   "seconded_by": "Matt Snyder",
    "outcome": "passed",
    "procedural": true,
    "quote": "d.p motion to approve minutes with the amendments, m.s. second, all approved."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "M.S",
-   "seconded_by": "L.M.",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Matt Snyder",
+   "seconded_by": "Liz Murphy",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "m.s motion to adjourn, l.m. secondadjourn at 6:31."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1003185
+ "note": "Text is a two-page extract with no printed vote tallies (votes recorded as 'all approved' and with no result for the adjournment). The header reads 'Approved 2.16.22' and the attendee roles are not printed. 'Dave' in the action items is not identified; it may be David Blatt or David Passios. Kelly (state), the school's new facilities director and the Town Manager are mentioned but did not attend per the minutes. Public comment is recorded only as 'No Public comments'. The amendment to the earlier minutes does not name which meeting's minutes were approved.",
+ "cost_usd": 0.01475678,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Blatt",
+   "status": "present",
+   "quote": "present:david blatt, david passios, liz murphy, matt snyder",
+   "role": "not stated"
+  },
+  {
+   "name": "David Passios",
+   "status": "present",
+   "quote": "present:david blatt, david passios, liz murphy, matt snyder",
+   "role": "not stated"
+  },
+  {
+   "name": "Liz Murphy",
+   "status": "present",
+   "quote": "present:david blatt, david passios, liz murphy, matt snyder",
+   "role": "not stated"
+  },
+  {
+   "name": "Matt Snyder",
+   "status": "present",
+   "quote": "present:david blatt, david passios, liz murphy, matt snyder",
+   "role": "not stated"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed that the RFP must be reviewed closely to replace references to National Grid with Unitil, with overall review by the Town Manager.",
+   "quote": "rfp needs close review to make sure to replace instances of \"national grid\" with \"unitil\""
+  },
+  {
+   "decision": "Board agreed to reach out to DPW about possible savings from shutting down irrigation systems when not needed (wording: 'should').",
+   "quote": "we should reach out todpw regarding possible savings there."
+  },
+  {
+   "decision": "Board agreed that a chosen designer should evaluate whether higher wattage bulbs such as the 400 watt bulbs are needed in each area.",
+   "quote": "when a designer is chosen, we need to be sure that they evaluate whether higher wattage"
+  },
+  {
+   "decision": "D.B. assigned to insert the light inventory spreadsheet (street address and pole number) into the RFP document.",
+   "quote": "insert the spreadsheet of our light inventory with street address and polenumber into the rfp document."
+  },
+  {
+   "decision": "Dave assigned to ask Kelly from the state to meet with the committee at the next meeting. The minutes do not say which Dave.",
+   "quote": "dave will ask kelly from the state to meet with us at our next meeting."
+  },
+  {
+   "decision": "D.B. assigned to reach out to the new school facilities director and invite them to meetings, at the earliest late Jan/early Feb.",
+   "quote": "d.b. will reach out to new facilities director at school and invite to meetings"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Grant funding spent and returned",
+   "what_was_recorded": "Committee reported $64,361 spent in grant funding and a $4360 return of grant funds that had been set aside for operations training.",
+   "figures_as_printed": [
+    "$64,361",
+    "$4360"
+   ],
+   "quote": "we've spent $64,361 in grant funding, and had to return a $4360 in grant funds"
+  },
+  {
+   "topic": "Projected annual savings from completed projects",
+   "what_was_recorded": "Projected annual savings of the completed improvements were reported at $10,080.",
+   "figures_as_printed": [
+    "$10,080"
+   ],
+   "quote": "the projected annual savings of the improvements are $10,080."
+  },
+  {
+   "topic": "Savings from replacing vehicles outside criteria",
+   "what_was_recorded": "Four vehicles not already within the criteria were reported as expected to save $52k a year.",
+   "figures_as_printed": [
+    "$52k"
+   ],
+   "quote": "we only have 4 vehicles not already within the criteria, and will save $52k a year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved with amendments",
+   "quote": "review of minutes,request to amend minutes to change date to sept 9 and capitalize names.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Project updates",
+   "resolution": "reported, no action recorded",
+   "quote": "project updates:d.b shared his screen showing spreadsheet report of projects completed.",
+   "tags": [
+    "grant funding",
+    "energy savings",
+    "Town Council",
+    "sale price"
+   ]
+  },
+  {
+   "topic": "LED conversion: design services RFP",
+   "resolution": "discussed; follow-up tasks assigned",
+   "quote": "d.b. marked up a draft of ayer's rfp for design services.",
+   "tags": [
+    "LED conversion",
+    "RFP",
+    "design services",
+    "Unitil",
+    "street lighting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Spreadsheet report of projects completed",
+   "where": "text",
+   "quote": "d.b shared his screen showing spreadsheet report of projects completed."
+  },
+  {
+   "name": "Draft of Ayer’s RFP for design services",
+   "where": "text",
+   "quote": "d.b. marked up a draft of ayer's rfp for design services."
+  },
+  {
+   "name": "Spreadsheet of light inventory with street address and pole number",
+   "where": "text",
+   "quote": "insert the spreadsheet of our light inventory with street address and polenumber into the rfp document."
+  }
+ ],
+ "tags": [
+  "Green Communities",
+  "LED street lighting conversion",
+  "Unitil",
+  "grant funding",
+  "energy savings",
+  "RFP for design services",
+  "Town Council sale price negotiation",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "d.b shared his screen showing spreadsheet report of projects completed"
+ },
+ "dropped_unquoted_by_field": {}
 }

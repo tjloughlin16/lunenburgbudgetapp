@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-11-09",
  "docid": "5690",
@@ -12,23 +12,322 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes for 10/12/21",
+   "motion": "To approve the minutes of 10/12/21.",
    "moved_by": "Mike D.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: mike d. to approve the minutes for 10/12/21. second: brett r. roll call vote: brett-aye, mike d.-aye, and john-aye."
   },
   {
-   "motion": "adjourn at 6:42pm",
+   "motion": "To adjourn at 6:42pm.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: john r. to adjourn at 6:42pm second: mike d. roll call vote: mike d.-aye, john-aye, and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract from macOS Vision. Two procedural votes recorded.",
- "cost_usd": 0.0790545
+ "note": "OCR text from macOS Vision of a Zoom meeting (header: 'via Zoom (Video Conference)'); individual remote status is not stated, so attendees are marked present. Quotes are taken from the OCR text and may carry OCR errors (e.g. '16'h', 'I/l'). Roll-call votes list individual ayes with no printed tally, so outcome is 'passed'. Public comment is recorded as 'none' at the opening; the later 'Public Comment' heading holds the Chair's remarks, not a public speaker. One sentence near the end is garbled by OCR and was not used. Tax-bill and transfer items have no printed dollar figure. The minutes clerk signature line has no name beyond the attendance list.",
+ "cost_usd": 0.01959668,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member- mike deveikis,"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member- mike deveikis,"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member- mike deveikis,"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member- mike deveikis,"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member (absent)",
+   "status": "absent",
+   "quote": "absent: mike nault dave opened the meeting at 6:17 pm."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Add the infrastructure project list requested by the state-side contact to the December agenda.",
+   "quote": "dave asked to add it to the december agenda."
+  },
+  {
+   "decision": "Rob to send Barb the informal proposal request so she can forward it to the Commissioners, along with the proposals received.",
+   "quote": "dave asked rob to send barb the proposal request so she can send it to the commissioners"
+  },
+  {
+   "decision": "Rob to forward all engineering proposals to the Commission once the Woodard & Curran price is received.",
+   "quote": "he is still waiting for a price from woodard & curran and will forward them all to the commission when he has received all."
+  },
+  {
+   "decision": "The Commission agreed with the Fitchburg usage invoice.",
+   "quote": "the commission agreed with invoice."
+  },
+  {
+   "decision": "Barb to meet Counsel and press for the complete review of the Fitchburg materials Jeff Murawski sent out.",
+   "quote": "barb will be meeting with counsel soon and will press him for the complete review of what jeff had sent out."
+  },
+  {
+   "decision": "Lunenburg Diner told to complete an external grease trap pump-out as soon as possible, or the landlord must show the pump-out occurred.",
+   "quote": "she told lunenburg diner they need to do an external pump-out asap, or the landlord will need to show"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Upland/Eastern Ave/White Street engineering proposals",
+   "what_was_recorded": "Three preliminary design and cost estimating proposals were received, ranging from Wright Pierce to Weston & Sampson; a Woodard & Curran price was still pending.",
+   "figures_as_printed": [
+    "$13,200",
+    "$19,800",
+    "$42K"
+   ],
+   "quote": "ranging from wright pierce @ $13,200, tate & howard @ $19,800 to weston & sampson @ $42k."
+  },
+  {
+   "topic": "Fitchburg usage invoice",
+   "what_was_recorded": "The Fitchburg usage invoice was reported as one of the highest; the next invoice was expected to fall back.",
+   "figures_as_printed": [
+    "$19,030.75",
+    "$15K"
+   ],
+   "quote": "invoices- fitchburg usage for $19,030.75."
+  },
+  {
+   "topic": "FY22 year-to-date budget",
+   "what_was_recorded": "The business manager said the sewer budget is doing as well as planned; an update is due at the next meeting. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "barb will have an update for the fy22 ytd budget for the next meeting and she noted they are doing as well as planned with the budget."
+  },
+  {
+   "topic": "Outstanding prior-year amounts placed on tax bills",
+   "what_was_recorded": "Anyone with outstanding amounts from the fiscal year ended June 30 will have them placed on tax bills; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "they will be put on the tax bills very soon, so it is important to pay them quickly."
+  },
+  {
+   "topic": "American Rescue Plan Act funds",
+   "what_was_recorded": "The town is waiting on the state and federal government to decide how ARPA money will be divided among town agencies; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "rob stated they are still waiting for an update from the state and how the money will be divided amongst the town agencies."
+  },
+  {
+   "topic": "Grants discussion with Leominster",
+   "what_was_recorded": "The Chair wants to meet with Leominster to discuss grants; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "dave added he still wants to meet with leominster to discuss grants."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfers of delinquent prior-year sewer amounts to the tax bills",
+   "amount_as_printed": "not printed",
+   "outcome": "not stated (in progress; Barb working on billing and transfers)",
+   "quote": "barb stated she is working on billing, and they will be working on transfers for delinquent amounts to the tax bills."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements (Special Fall Town Meeting, delinquent amounts)",
+   "resolution": "reminders given; no action",
+   "quote": "announcements - dave reminded all the special fall town meeting will be november 16'h",
+   "tags": [
+    "town meeting",
+    "delinquent accounts"
+   ]
+  },
+  {
+   "topic": "Elizabeth Street inflow/infiltration remediation",
+   "resolution": "reported; grout report awaited",
+   "quote": "elizabeth street inflow/infiltration remediation -rob reported green mountain pipeline came in to address the",
+   "tags": [
+    "inflow and infiltration",
+    "sewer main",
+    "contractor"
+   ]
+  },
+  {
+   "topic": "Upland/Eastern Ave/White Street extensions",
+   "resolution": "proposals gathered; Wright Pierce favored; Woodard & Curran pending",
+   "quote": "upland/eastern ave/white street extensions - rob reported he put together an informal rfp for preliminary",
+   "tags": [
+    "engineering",
+    "RFP",
+    "sewer extension"
+   ]
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance",
+   "resolution": "continued; awaiting counsel and new contact",
+   "quote": "fitchburg sewer use ordinance-barb has not received any updates back from counsel.",
+   "tags": [
+    "intermunicipal agreement",
+    "Fitchburg",
+    "counsel"
+   ]
+  },
+  {
+   "topic": "American Rescue Plan Act (ARPA) funds",
+   "resolution": "awaiting state; infrastructure list requested for December agenda",
+   "quote": "american rescue plan act (arpa) funds- rob stated they are still waiting for an update from the state and",
+   "tags": [
+    "ARPA",
+    "federal funds",
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/12/21",
+   "resolution": "approved",
+   "quote": "motion: mike d. to approve the minutes for 10/12/21.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: grease program, invoices, conflict-of-interest certificates",
+   "resolution": "reported; invoice agreed",
+   "quote": "business manager report - grease program- barb reported there is a new food establishment - lunenburg",
+   "tags": [
+    "grease program",
+    "invoices",
+    "conflict of interest"
+   ]
+  },
+  {
+   "topic": "Action items: Pond View Commons 40B",
+   "resolution": "no update from town manager",
+   "quote": "action items- dave asked for an update on the pond view commons 40b project and rob replied the town",
+   "tags": [
+    "40B",
+    "Pond View Commons",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Public comment (none from the public; Chair remarks)",
+   "resolution": "no public comment; remarks only",
+   "quote": "public comment - dave invited all to the pancake breakfast at the senior center on 11/10",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "listed",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:42pm",
+   "quote": "motion: john r. to adjourn at 6:42pm second: mike d. roll call vote: mike d.-aye, john-aye, and dave-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Weston Sampson report (sewer main identified, 600 feet)",
+   "where": "text",
+   "quote": "600' of sewer main identified in the weston sampson report."
+  },
+  {
+   "name": "Informal RFP for preliminary design and cost estimating (Upland, Eastern Ave, White St., Maple Parkway)",
+   "where": "text",
+   "quote": "rob reported he put together an informal rfp for preliminary design and cost estimating for upland"
+  },
+  {
+   "name": "Engineering proposals from Wright Pierce, Tate & Howard, Weston & Sampson (Woodard & Curran pending)",
+   "where": "text",
+   "quote": "ranging from wright pierce @ $13,200, tate & howard @ $19,800 to weston & sampson @ $42k."
+  },
+  {
+   "name": "Fitchburg usage invoice",
+   "where": "text",
+   "quote": "invoices- fitchburg usage for $19,030.75."
+  },
+  {
+   "name": "Fitchburg Sewer Use Ordinance review materials sent by Jeff Murawski",
+   "where": "text",
+   "quote": "will press him for the complete review of what jeff had sent out."
+  },
+  {
+   "name": "Lunenburg Diner grease program information packet (due 11/15)",
+   "where": "text",
+   "quote": "she has sent out the information packet to them, which is due back by 11/15."
+  },
+  {
+   "name": "Conflict-of-Interest Certificates for the Commissioners",
+   "where": "text",
+   "quote": "the conflict-of-interest certificates for the commissioners have all been submitted to the town clerk's office."
+  },
+  {
+   "name": "FY22 YTD Budget update",
+   "where": "text",
+   "quote": "barb will have an update for the fy22 ytd budget for the next meeting"
+  },
+  {
+   "name": "Minutes of 10/12/21",
+   "where": "text",
+   "quote": "to approve the minutes for 10/12/21."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "inflow and infiltration",
+  "engineering proposals",
+  "Fitchburg intermunicipal",
+  "ARPA",
+  "grease program",
+  "invoices",
+  "town meeting",
+  "delinquent accounts",
+  "40B housing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

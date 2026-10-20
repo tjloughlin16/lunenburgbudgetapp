@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2021-11-18",
  "docid": "501",
@@ -12,15 +12,125 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Stober",
    "seconded_by": "M. Holman",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "r. stober moved to adjourn, m. holman 2nd. rollcall, all aye."
+   "quote": "r. stober moved to adjourn, m. holman 2nd. rollcall, all aye. adjourned at 8:29pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07714649999999999
+ "note": "Single-page minutes. Attendance and the signature block were read; names only in the signature block (Greg Burns, Jorge Marzuca, Stephanie Schofield) are not stated as present or absent. The Farmers Market Managers listed in the signature area (Yanina Fusaro, Mike Fontaine) are not stated to have taken part and are omitted. One roll-call motion (adjournment) is recorded with \"all aye\" and no numeric count. No vote on reorganization is recorded; it was tabled. No dollar figures, transfers, public comment, or documents are recorded.",
+ "cost_usd": 0.012918800000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, m. holman, k. mcclellan"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Vice-Chair (per signature block: Ryan Stober, Vice-Chair)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, m. holman, k. mcclellan"
+  },
+  {
+   "name": "M. Holman",
+   "role": "Member (per signature block: Maryrae Holman, Member)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, m. holman, k. mcclellan"
+  },
+  {
+   "name": "K. McClellan",
+   "role": "Alternate (per signature block: Kira McClellan, Alternate)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, m. holman, k. mcclellan"
+  },
+  {
+   "name": "Greg Burns",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "ryan stober, vice-chair greg burns, clerk"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "jorge marzuca, member maryrae holman, member kira mcclellan, alternate stephanie schofield, alternate"
+  },
+  {
+   "name": "Stephanie Schofield",
+   "role": "Alternate",
+   "status": "not stated",
+   "quote": "kira mcclellan, alternate stephanie schofield, alternate"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Reorganization of the commission was tabled again, due to lack of membership present.",
+   "quote": "reorganization was tabled again due to lack of membership present."
+  },
+  {
+   "decision": "Next meeting set for December 16, 2021.",
+   "quote": "next meeting set for december 16, 2021."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "General discussion",
+   "resolution": "no action",
+   "tags": [
+    "local farms",
+    "fall festivals",
+    "events"
+   ],
+   "quote": "general discussion: included local farms and farmers, fall festivals, the grand opening of low places ranch, a bbq at meadow brook orchard, and other activities at davis farm."
+  },
+  {
+   "topic": "Reorganization",
+   "resolution": "tabled",
+   "tags": [
+    "membership",
+    "quorum"
+   ],
+   "quote": "reorganization was tabled again due to lack of membership present."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for December 16, 2021",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "next meeting set for december 16, 2021."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:29pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "r. stober moved to adjourn, m. holman 2nd. rollcall, all aye. adjourned at 8:29pm."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "agricultural commission",
+  "farms",
+  "farmers market",
+  "reorganization",
+  "membership",
+  "fall festivals"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

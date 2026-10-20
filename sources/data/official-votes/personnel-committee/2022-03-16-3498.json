@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-03-16",
  "docid": "3498",
@@ -12,55 +12,271 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the March 9, 2022 meeting",
+   "motion": "Approve the minutes of the March 9, 2022 meeting as presented",
    "moved_by": "J. Bilotta",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta to accept and approve the minutes of the march 9, 2022 meeting as presented, second: e. arnold roll call vote: all in favor"
+   "quote": "motion by j. bilotta to accept and approve the minutes of the march 9, 2022 meeting as presented,"
   },
   {
-   "motion": "Accept the recommendation of the HR Director to hire a candidate as Board Clerk/Secretary in Grade 6 Step 2",
+   "motion": "Accept the HR Director's recommendation to hire a Board Clerk/Secretary at Grade 6 Step 2",
    "moved_by": "S. Andrews",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation of the hr director to hire this candidate in grade 6 step 2. second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the recommendation of the hr director to hire this candidate"
   },
   {
-   "motion": "Reinstate the entire Section 27 Discipline into the SAP by-laws as previously represented, with the word Probation in Paragraph B removed and replaced with waiting period",
+   "motion": "Reinstate the entire Section 27 Discipline into the SAP bylaws, with the word Probation in Paragraph B removed, leaving the words waiting period",
    "moved_by": "E. Arnold",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by e. arnold to reinstate the entire section 27 discipline, into the sap by laws, as it was previously represented, with one change, that the word probation in paragraph b be removed, leaving the words \"waiting period\". second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by e. arnold to reinstate the entire section 27 discipline, into the sap by laws, as it was previously represented, with one change"
   },
   {
-   "motion": "Accept the proposed warrant language for the first two Personnel Committee warrant items outlining new positions and new Salary Schedule for FY23, FY24, and FY25",
+   "motion": "Accept the proposed warrant language for the first two Personnel Committee articles (new positions, and the replacement Salary Schedule for FY23, FY24 and FY25)",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by j. bilotta to accept the proposed language submitted for the first two warrant items from the personnel committee that outline new positions, and the new salary schedule for the next three fiscal periods. second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by j. bilotta to accept the proposed language submitted for the first two warrant items from"
   },
   {
-   "motion": "Amend the third paragraph of the recommended warrant article to remove the reference to various sub-sections",
+   "motion": "Amend the third paragraph of the recommended warrant article to remove the reference to the various sub-sections",
    "moved_by": "J. Bilotta",
    "seconded_by": "F. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by j. bilotta to amend the third paragraph of the recommended warrant article to remove the reference to the various sub-sections. second: f. fortune roll call vote: all in favor"
+   "quote": "motion by j. bilotta to amend the third paragraph of the recommended warrant article to remove"
   },
   {
-   "motion": "Adjourn the meeting at 9:23 pm",
+   "motion": "Adjourn the meeting at 9:23pm",
    "moved_by": "W. Bertrand",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by w. bertrand to adjourn meeting at 9:23pm second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by w. bertrand to adjourn meeting at 9:23pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes show some internal date inconsistency: header lists \"March 16, 2021\" but body repeatedly references \"March 9, 2022\" meeting and meeting is clearly from 2022. All votes recorded with \"All in Favor\" outcomes.",
- "cost_usd": 0.08619550000000001
+ "note": "The minutes header reads \"March 16, 2021\" but the body refers to March 9, 2022 and March 21, 2022 and the meeting date supplied is 2022-03-16; I treated the header year as a printed typo. The meeting was held on Zoom and was not recorded. Roll-call votes are recorded only as \"All in Favor\" with no counts, so outcomes are \"passed\". One seconder is printed as \"F. Fortune\", presumed to be Donna Fortune but not confirmed by the minutes. One public comment speaker is not named. The second public comment line (\"There was no additional public comment\") is not treated as a comment. The minutes have no documents list or heading; documents are named only in passing in the discussion, so printed is false.",
+ "cost_usd": 0.01726928,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna Bilotta",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Eric Arnold",
+   "role": "Committee Chair (presiding)",
+   "status": "present",
+   "quote": "meeting began at 7:14 pm with all attendees present, e. arnold committee chair presiding"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager, barbara lefebvre, sewer business manager, pauline roy, coa outreach coordinator"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits/Risk Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager, barbara lefebvre, sewer business manager, pauline roy, coa outreach coordinator"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager, barbara lefebvre, sewer business manager, pauline roy, coa outreach coordinator"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "COA Outreach Coordinator",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager, barbara lefebvre, sewer business manager, pauline roy, coa outreach coordinator"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group agreed that the state minimum wage changes should also apply to municipalities like Lunenburg, though not a state compliance requirement.",
+   "quote": "all agreed that the minimum wage changes that the state had incorporated should also apply to municipalities like lunenburg"
+  },
+  {
+   "decision": "E. Arnold to continue examining and mapping out salary grid options and share them with the group before the next meeting.",
+   "quote": "e. arnold agreed to continue to examine and map out options that might be considered"
+  },
+  {
+   "decision": "J. Belliveau and N. Forest to assist with additional financial information for a full budget assessment.",
+   "quote": "j. belliveau and n. forest agreed to assist him with additional financial information that would allow of full budget assessment."
+  },
+  {
+   "decision": "Examination of the number of salary grades postponed to later in the year because of limited time before Town Meeting.",
+   "quote": "the work to examine the number of grades would be postponed to later this year."
+  },
+  {
+   "decision": "J. Belliveau to provide the final amended SAP bylaws for full and final review before Town Meeting.",
+   "quote": "j. belliveau will provide the group with the final amended version for a full and final review"
+  },
+  {
+   "decision": "Next meeting set for Monday March 21, 2022, virtual, at 5pm.",
+   "quote": "the group agreed to meet again monday march 21, 2022 for a virtual meeting at 5pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Minimum wage and the salary grid",
+   "what_was_recorded": "The state minimum wage is currently $14.25 per hour and rises to $15.00 next year; the change would be quite dramatic to Grades 1 through 3, and the cost of any change was to be reviewed.",
+   "figures_as_printed": [
+    "$14.25ph",
+    "$15.00"
+   ],
+   "quote": "that rate is currently $14.25ph and will go up again next year to $15.00."
+  },
+  {
+   "topic": "Cost of salary grid options",
+   "what_was_recorded": "Several options were discussed and the cost of each reviewed; the group said the town's budget implications had to be considered.",
+   "figures_as_printed": [],
+   "quote": "several options were discussed and the impact the cost of any change reviewed."
+  },
+  {
+   "topic": "New hire salary placement",
+   "what_was_recorded": "A Board Clerk/Secretary hire was placed at Grade 6 Step 2 because candidates with experience need to be placed at a higher step.",
+   "figures_as_printed": [],
+   "quote": "candidates with experience need to be brought in at a step higher in the salary grade"
+  },
+  {
+   "topic": "Replacement salary schedule warrant article",
+   "what_was_recorded": "The warrant language covered approval of a replacement Salary Schedule for FY23, FY24 and FY25.",
+   "figures_as_printed": [],
+   "quote": "the approval of the replacement salary schedule for fy23, fy24 and fy25."
+  },
+  {
+   "topic": "Budget assessment support",
+   "what_was_recorded": "Staff agreed to provide financial information needed for a full budget assessment of salary options; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "j. belliveau and n. forest agreed to assist him with additional financial information that would allow of full budget assessment."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Corrected SAP version",
+   "quote": "public comment questioned if the corrected version of the sap was available."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of minutes (March 9, 2022)",
+   "resolution": "approved",
+   "quote": "motion by j. bilotta to accept and approve the minutes of the march 9, 2022 meeting as presented,",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New hire: Board Clerk/Secretary",
+   "resolution": "approved at Grade 6 Step 2",
+   "quote": "although out of order, the group reviewed a new hire form that j. belliveau submitted",
+   "tags": [
+    "new hire",
+    "salary grade"
+   ]
+  },
+  {
+   "topic": "SAP bylaws review",
+   "resolution": "approved: Section 27 Discipline reinstated",
+   "quote": "j. belliveau placed the updated sap sections that the group worked on previously",
+   "tags": [
+    "SAP bylaws",
+    "discipline"
+   ]
+  },
+  {
+   "topic": "Town Warrant articles for Town Meeting",
+   "resolution": "approved; third article amended",
+   "quote": "j. belliveau presented a proposed draft of the items that would be needed to be presented at the",
+   "tags": [
+    "town warrant",
+    "Town Meeting",
+    "salary schedule"
+   ]
+  },
+  {
+   "topic": "Proposed salary grid",
+   "resolution": "continued; grade-count review postponed",
+   "quote": "the group began a review of what were options to changes to the current sap salary grid.",
+   "tags": [
+    "salary grid",
+    "minimum wage"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of the March 9, 2022 meeting (displayed, not posted)",
+   "where": "text",
+   "quote": "the minutes from the march 9, 2022 meeting were not posted, but are being displayed in this"
+  },
+  {
+   "name": "Corrected version of the SAP (public comment question)",
+   "where": "text",
+   "quote": "public comment questioned if the corrected version of the sap was available."
+  },
+  {
+   "name": "New Hire Form for Board Clerk/Secretary",
+   "where": "text",
+   "quote": "a new hire form that j. belliveau submitted for a new hire as a board clerk/secretary"
+  },
+  {
+   "name": "Updated SAP by-law sections",
+   "where": "text",
+   "quote": "j. belliveau placed the updated sap sections that the group worked on previously"
+  },
+  {
+   "name": "Town Charter (discipline section)",
+   "where": "text",
+   "quote": "fully covered in the towns charter so did not need to be in the sap."
+  },
+  {
+   "name": "Draft warrant article covering Section 70 of the Code of Lunenburg",
+   "where": "text",
+   "quote": "covered the update section 70 of the code of lunenburg, which outlines the sap by laws."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "salary grid",
+  "SAP bylaws",
+  "town warrant",
+  "minimum wage",
+  "new hire",
+  "Town Meeting",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

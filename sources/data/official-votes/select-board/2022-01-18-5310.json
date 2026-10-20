@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-01-18",
  "docid": "5310",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of November 23, 2021",
+   "motion": "To approve the minutes of November 23, 2021 as presented (minutes of November 23, December 7 and December 14, 2021 listed under the item).",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
@@ -20,7 +20,7 @@
    "quote": "motion: l. franco to approve the minutes of november 23, 2021 as presented"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 4-0",
@@ -29,6 +29,448 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, January 18, 2022 Select Board meeting. Two votes recorded: approval of minutes (outcome not explicitly stated) and motion to adjourn (passed 4-0). The minutes mention approval of warrants but record no explicit motion or vote on them. The landscape design workshop, capital plan presentation, and committee reports were discussed but no votes were taken on those items.",
- "cost_usd": 0.14903919999999998
+ "note": "Text is macOS Vision OCR of a scan. The FY2023-FY2026 capital plan table and the funding table are garbled, so only figures stated in running prose are recorded as totals. Page 14 begins mid-item: the vote result on the minutes approval and the full payables warrant item are not printed. The concept sheets (pages 16-17) are image-only attachments read only from their labels, so no figures are taken from them. The opening public comment is recorded as 'there was none'; public comment also appears in the workshop and in a later section. No transfers are recorded. Dollar figures are as printed (OCR may misread characters, e.g. '$893.407.66' and '$1.45M').",
+ "cost_usd": 0.02937368,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; ray dunetz of ray dunetz landscape architecture inc."
+  },
+  {
+   "name": "Ray Dunetz",
+   "role": "of Ray Dunetz Landscape Architecture Inc.",
+   "status": "present",
+   "quote": "mr. dunetz stated he was hoping to get a lot of input today."
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "status": "present",
+   "quote": "vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Dwyer",
+   "status": "present",
+   "quote": "vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Franco",
+   "status": "present",
+   "quote": "vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "via ZOOM",
+   "status": "remote",
+   "quote": "peter beardmore via zoom, advocated for more parking."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "82 Highland Street, via Zoom",
+   "status": "remote",
+   "quote": "dave rodgers, 82 highland street, via zoom, requested that any presentations broadcast be"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Dunetz to take the workshop comments, prepare another sketch, a cost estimate and a three-dimensional model, and bring them back to the Select Board.",
+   "quote": "mr. dunetz will take the comments and do another sketch and bring it back before to the select board."
+  },
+  {
+   "decision": "The Board stated it would like to place a warrant article on the May town meeting for the cost of the Old Primary School project.",
+   "quote": "mr. alonzo stated this board would like to place a warrant article on this may's town meeting for the cost of the project."
+  },
+  {
+   "decision": "Presentations would be made available on the town website for better viewing.",
+   "quote": "mr. alonzo stated it is difficult with the size of the screen to view some presentations but they would make it available on the website for better viewing."
+  },
+  {
+   "decision": "Town Manager would look into rubberized undercoatings for DPW trucks.",
+   "quote": "he asked if rubberized undercoatings for dpw trucks is something we can look into? ms. lemieux stated she would"
+  },
+  {
+   "decision": "The senior tax relief goal would be carried forward and placed on a special town meeting, not this year's Annual Town Meeting warrant.",
+   "quote": "the goal will be carried forward and placed on a special town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Old Primary School landscape design cost estimate",
+   "what_was_recorded": "The landscape designer was to prepare cost estimates for the two concept plans; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "to present two conceptual plans and their cost estimates"
+  },
+  {
+   "topic": "Public Safety Building chiller replacement bids",
+   "what_was_recorded": "Two bids were received; the low bid was from Riverdale Plumbing & Heating, against a total FY22 capital appropriation for the project.",
+   "figures_as_printed": [
+    "$125,000",
+    "$150,000"
+   ],
+   "quote": "the low bid of $125,000 from riverdale plumbing & heating. the total appropriation of $150,000 for this project in the fy22 capital plan"
+  },
+  {
+   "topic": "ARPA earmark from the State",
+   "what_was_recorded": "A required form was submitted to the state agency overseeing the $50,000 earmark received under an ARPA funding bill.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the $50,000 earmark we received as part of an arpa funding bill the state passed."
+  },
+  {
+   "topic": "Lunenburg Central project tax revenue",
+   "what_was_recorded": "The project is expected to add tax revenue and jobs with a low service impact on the town; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "this project is expected to bring in between 200-300 jobs and has a low service impact on the town and will bring in additional tax revenue."
+  },
+  {
+   "topic": "Capital expenditure threshold",
+   "what_was_recorded": "The Town's capital policy defines capital projects as items costing $20,000 or more with a useful life of three years or longer.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "capital projects as items that cost $20,000 or more and have a useful life of three years or longer."
+  },
+  {
+   "topic": "FY2023 capital requests total",
+   "what_was_recorded": "The 30 remaining FY2023 capital requests (after removing Town Beach Building) total the amount printed.",
+   "figures_as_printed": [
+    "$4,043,049"
+   ],
+   "quote": "the remaining 30 capital requests total $4,043,049 for fy"
+  },
+  {
+   "topic": "Individual capital requests: 10-wheel truck and Master Plan",
+   "what_was_recorded": "Project costs printed for the 10-wheel truck (Priority #2) and the Master Plan (Priority #5).",
+   "figures_as_printed": [
+    "$250,000",
+    "$110,000"
+   ],
+   "quote": "project title: gg22-01 master plan - priority #5 project cost: $110,000"
+  },
+  {
+   "topic": "Police K9 replacement cost",
+   "what_was_recorded": "Cost of a new K9 and of training and equipment for the canine replacement.",
+   "figures_as_printed": [
+    "$8,500",
+    "$15,750"
+   ],
+   "quote": "the cost of a new k9 is $8,500 and the cost for the training and equipment is $15,750."
+  },
+  {
+   "topic": "Capital projects not funded in the current plan",
+   "what_was_recorded": "Total cost of projects not funded in the current plan.",
+   "figures_as_printed": [
+    "$2,303,000"
+   ],
+   "quote": "the total cost of projects not funded in the current plan is $2,303,000."
+  },
+  {
+   "topic": "Two dump truck quotes",
+   "what_was_recorded": "A Board member asked why two dump truck quotes differed; the Town Manager said they were independent quotes.",
+   "figures_as_printed": [
+    "$800",
+    "$830"
+   ],
+   "quote": "mr. dwyer asked why two dump trucks had a difference of $800 and $830 in quotes."
+  },
+  {
+   "topic": "Available funding: free cash and stabilization",
+   "what_was_recorded": "The Board member noted the plan total against about $2.3 million certified free cash; the Town Manager said $2.6 million is available but is also used for OPEB, Regular Stabilization and possible warrant articles.",
+   "figures_as_printed": [
+    "$1.7 million",
+    "$2.3 million",
+    "$2.6 million"
+   ],
+   "quote": "mr. jeffreys to ms. lemieux noted the total comes to $1.7 million but he thought we had about $2.3 million and certified free cash."
+  },
+  {
+   "topic": "Special Purpose Stabilization balance",
+   "what_was_recorded": "The current balance of the Special Purpose Stabilization fund was described as approximately the amount printed.",
+   "figures_as_printed": [
+    "$1.45M"
+   ],
+   "quote": "current balance of sps approx. $1.45m."
+  },
+  {
+   "topic": "Capital plan funding foundations (slide)",
+   "what_was_recorded": "The slide assumes a Raise and Appropriate foundation increasing 2.5% a year and a Free Cash foundation each year.",
+   "figures_as_printed": [
+    "$700.00",
+    "$500,000"
+   ],
+   "quote": "this slide demonstrates using the foundation of $700.00 from raise and appropriate increasing at 2.5% each year, a foundation of $500,000 from free cash each year"
+  },
+  {
+   "topic": "Legislators' FY2023 fiscal priorities",
+   "what_was_recorded": "The top priorities presented to legislators: Flat Hill Road culvert, hazardous materials abatement and demolition of the old Primary School, 925 Mass Avenue redevelopment, and Senior Center improvements.",
+   "figures_as_printed": [
+    "$330,000",
+    "$428,500",
+    "$750,000",
+    "$371,000",
+    "$300,000",
+    "$100,000"
+   ],
+   "quote": "we currently have $428,500 approved through the fy22 capital plan but the last projected construction cost due to escalation factors in june 2021 was $750,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street, via Zoom",
+   "topic": "presentation visibility; old Primary School site",
+   "quote": "dave rodgers, 82 highland street, via zoom, requested that any presentations broadcast be"
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "via ZOOM",
+   "topic": "more parking at the old Primary School site",
+   "quote": "peter beardmore via zoom, advocated for more parking."
+  },
+  {
+   "topic": "design comments at the old Primary School workshop (unnamed Zoom participant)",
+   "quote": "another comment via zoom noted the pavilion could be used for a skating rink in the winter."
+  },
+  {
+   "speaker": "Peter Beardmore",
+   "topic": "senior tax relief status",
+   "quote": "peter beardmore wanted to know where the board is regarding senior tax relief as this would"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening and announcements",
+   "resolution": "no action",
+   "quote": "ms. lemieux announced trash hauler el harvey posted that trash and recycling pickup would",
+   "tags": [
+    "announcements",
+    "COVID-19",
+    "trash pickup"
+   ]
+  },
+  {
+   "topic": "Workshop: Old Primary School landscape design, Community Meeting #2",
+   "resolution": "continued; designer to revise concepts and cost estimate",
+   "quote": "community meeting #2 on landscape design for 30 school street with ray dunetz",
+   "tags": [
+    "Old Primary School",
+    "landscape design",
+    "30 School Street",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Town Manager report: bids, Woodruff Property, dispatch, ARPA, infrastructure, Lunenburg Central, streetlights",
+   "resolution": "no action",
+   "quote": "the public safety building chiller replacement project bids were received on january 11th.",
+   "tags": [
+    "bids",
+    "ARPA",
+    "Woodruff Property",
+    "Nashoba dispatch",
+    "streetlights",
+    "Lunenburg Central"
+   ]
+  },
+  {
+   "topic": "Meetings, events and other announcements",
+   "resolution": "no action",
+   "quote": "the warrant to submit articles for the annual town meeting is open for submission of articles until",
+   "tags": [
+    "Annual Town Meeting",
+    "warrant articles",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager presentation of capital plan (FY2023)",
+   "resolution": "discussed; no vote",
+   "quote": "the cpc prioritized 31 capital project requests for fy23 and provided the prioritized list",
+   "tags": [
+    "capital plan",
+    "FY2023",
+    "Capital Planning Committee",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Current business: Annual Town Meeting warrant articles",
+   "resolution": "no action",
+   "quote": "discussion on annual town meeting warrant articles- there was nothing to discuss",
+   "tags": [
+    "Annual Town Meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of November 23, December 7, December 14, 2021",
+   "resolution": "motion made; result not printed",
+   "quote": "motion: l. franco to approve the minutes of november 23, 2021 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current business: payables and payroll warrants",
+   "resolution": "not stated; minutes break off mid-item",
+   "quote": "warrant in the amount of $893.407.66; a payroll deductions warrant in the amount of",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "no action",
+   "quote": "4. action items -there were none this evening",
+   "tags": [
+    "action items"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "mr. jeffreys reported the municipal building design committee will be meeting next",
+   "tags": [
+    "committees",
+    "Council on Aging",
+    "Stormwater Task Force",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "Old business: legislators' fiscal priorities for FY2023",
+   "resolution": "discussed; no action recorded",
+   "quote": "request from legislators for fiscal priorities for fy 2023",
+   "tags": [
+    "fiscal priorities",
+    "legislators",
+    "FY2023",
+    "Flat Hill Road culvert"
+   ]
+  },
+  {
+   "topic": "Public comment: senior tax relief",
+   "resolution": "carried forward to a special town meeting",
+   "quote": "the goal will be carried forward and placed on a special town meeting.",
+   "tags": [
+    "senior tax relief",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed 4-0",
+   "quote": "motion: l. franco to adjourn the meeting vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Concept plan, Option A (30 School Street, Ray Dunetz, January 18, 2022)",
+   "where": "list",
+   "quote": "mr. dunetz presented option a which had a parking area, a 40 x 70 foot covered pavilion for the"
+  },
+  {
+   "name": "Concept plan, Option B (30 School Street, Ray Dunetz, January 18, 2022)",
+   "where": "list",
+   "quote": "concepts option b new benches existing wall"
+  },
+  {
+   "name": "FY 2023 capital requests table, capital plan recommendation and project request sheets (Capital Planning Committee)",
+   "where": "list",
+   "quote": "there were 31 capital requests. one project (town beach building) was removed due to"
+  },
+  {
+   "name": "Capital Plan Program table, FY2023 to FY2026 projected (slide)",
+   "where": "list",
+   "quote": "this slide demonstrates using the foundation of $700.00 from raise and appropriate increasing at 2.5% each year"
+  },
+  {
+   "name": "Financial Policy Section 3.02, Town's Policy on Capital Expenditures",
+   "where": "text",
+   "quote": "the town's policy on capital expenditures (financial policy section 3.02) defines"
+  },
+  {
+   "name": "Vertex Property Condition Assessment",
+   "where": "text",
+   "quote": "this project was identified in the vertex property condition assessment to be done in years 0-1 (2018)"
+  },
+  {
+   "name": "Request from legislators for fiscal priorities for FY 2023",
+   "where": "text",
+   "quote": "request from legislators for fiscal priorities for fy 2023"
+  },
+  {
+   "name": "Board of Health weekly COVID-19 update (as of January 8)",
+   "where": "text",
+   "quote": "the weekly update from the board of health on the total number of new cases reported as of january 8th was 265 and the positivity rate was 22.49%."
+  },
+  {
+   "name": "Public Safety Building Chiller Replacement project bids (received January 11, 2022)",
+   "where": "text",
+   "quote": "the public safety building chiller replacement project bids were received on january 11th."
+  },
+  {
+   "name": "Notice of Intent, 104 Fairview Road (Woodruff Property), to MassDEP and Conservation Agent",
+   "where": "text",
+   "quote": "a notice of intent for 104 fairview road was submitted to massdep and the conservation agent"
+  },
+  {
+   "name": "Town of Townsend Notice of Withdrawal from the Nashoba Valley Regional Dispatch District",
+   "where": "text",
+   "quote": "at the december 7, 2021 select board meeting i reported that the town of townsend has submitted"
+  },
+  {
+   "name": "Site Plan and Stormwater Permit, Lunenburg Central (Planning Board)",
+   "where": "text",
+   "quote": "since the planning board approved the site plan and stormwater permit for the lunenburg central project on leominster shirley road"
+  },
+  {
+   "name": "Minutes of November 23, December 7 and December 14, 2021",
+   "where": "text",
+   "quote": "2. approval of minutes of november 23, december 7, december 14, 2021"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Old Primary School",
+  "landscape design",
+  "capital plan",
+  "FY2023",
+  "ARPA",
+  "COVID-19",
+  "streetlights",
+  "Woodruff Property",
+  "Nashoba dispatch",
+  "senior tax relief",
+  "Annual Town Meeting",
+  "warrant articles",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "concepts option a"
+ },
+ "dropped_unquoted_by_field": {}
 }

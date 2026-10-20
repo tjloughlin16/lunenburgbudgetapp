@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-08-09",
  "docid": "5724",
@@ -12,24 +12,313 @@
  },
  "votes": [
   {
-   "motion": "Accept the sewer extension at 4 Kimball St, pending the assignment of a contractor",
+   "motion": "Accept the sewer extension at 4 Kimball St, pending the assignment of a contractor.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: brett r. second: mike n. to accept the sewer extension at 4 kimball st, pending the assignment of a contractor. discussion: barb said she received an inquiry from a",
-   "quote_taken_from_text": true
+   "quote": "to accept the sewer extension at 4 kimball st, pending the assignment of a contractor."
   },
   {
-   "motion": "Adjourn at 7:01pm",
+   "motion": "Abate the past due bills for 24 John St. prior to the 3/30 declaration of bankruptcy, per Order of Discharge as approved by the court.",
+   "moved_by": "Brett R.",
+   "seconded_by": "Mike N.",
+   "outcome": "passed 3-0",
+   "procedural": false,
+   "quote": "to abate the past due bills for 24 john st. prior to 3/30 declaration of bankruptcy per order of discharge as approved"
+  },
+  {
+   "motion": "Adjourn the meeting at 7:01pm.",
    "moved_by": "Brett",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: brett to adjourn at 7:01pm. second: mike n. roll call vote: mike n.-aye, brett- aye and john-aye."
+   "quote": "to adjourn at 7:01pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan; one minor formatting error where \"by the court\" appears on a separate line in the OCR output before the second motion, but this phrase clearly belongs to the preceding sentence about Order of Discharge.",
- "cost_usd": 0.11010249999999999
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision), not a scan with no readable votes. Three roll-call votes are readable. OCR artifacts: the first line of page 1 is cut off (the applicant's full name is not printed, only 'DeStetano'); the abatement motion's text is split by an interleaved fragment 'by the court.', so the motion is reconstructed from the continuous line. The minutes print no attendance roster, so attendance is taken from speakers and roll-call names; the minutes do not state who was absent. Roles for Bill B., Greg, Nicole and DeStetano are not printed. The minutes do not print dollar figures for the connection fee moratorium or the abatement amount.",
+ "cost_usd": 0.01953018,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike N.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "mike n. stated he was ok with the plan."
+  },
+  {
+   "name": "Brett R.",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "brett suggested the pipe be the required in-street size to handle a future extension to all of kimball st."
+  },
+  {
+   "name": "John",
+   "role": "Commissioner",
+   "status": "present",
+   "quote": "john asked to clarify that the stub will be a sp3, which would accommodate the 10 houses up kimball street."
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "barb noted the house to the east of 4 kimball st is known as 480 hollis rd."
+  },
+  {
+   "name": "Bill B.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "bill b. said the plan looks good but kimball and prospect streets were paved within the"
+  },
+  {
+   "name": "Greg",
+   "role": "not stated",
+   "status": "present",
+   "quote": "greg did not find an as-built for the sewer but has copies of the proposed plans"
+  },
+  {
+   "name": "Nicole",
+   "role": "not stated",
+   "status": "present",
+   "quote": "nicole said she plans on using danny proctor as the contractor, but she does not have a quote yet."
+  },
+  {
+   "name": "DeStetano",
+   "role": "not stated",
+   "status": "present",
+   "quote": "destetano who would like to connect 4 kimball st. to town sewer with a short extension from prospect st."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jacie Nicoll (Smokestack Roasters) non-compliance discussion postponed to the next meeting.",
+   "quote": "jacie nicoll (smokestack roasters) - non-compliance discussion-postponed to next meeting."
+  },
+  {
+   "decision": "Minutes of 6/14 and 7/12 tabled to the next meeting because not all Commissioners were present.",
+   "quote": "minutes of 6/14 and 7/12 - were tabled to the next meeting because not all commissioners were present."
+  },
+  {
+   "decision": "John asked Barb to send the 400 Sunnyhill Rd. parties a request to attend the next meeting.",
+   "quote": "john asked barb to send them a request to attend the next meeting."
+  },
+  {
+   "decision": "John asked Bill to put together a request to the Town Manager for ARPA money for sewer upgrades.",
+   "quote": "john asked bill to put together a request to the town manager for the money."
+  },
+  {
+   "decision": "Billing system progress to be added to the next meeting agenda.",
+   "quote": "barb will add it to the agenda for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA request for sewer manhole repairs",
+   "what_was_recorded": "Bill suggested asking for $200K for manhole repairs from the town's ARPA money, and Mike N. later proposed $200K for manholes.",
+   "figures_as_printed": [
+    "$200K"
+   ],
+   "quote": "suggested asking for $200k for manhole repairs."
+  },
+  {
+   "topic": "ARPA request for manholes and pump station upgrades",
+   "what_was_recorded": "Mike N. suggested requesting $200K for the manholes and $200K for the pump station upgrades; John asked about pump station money.",
+   "figures_as_printed": [
+    "$200K"
+   ],
+   "quote": "mike suggested requesting $200k for the manholes and $200k for the pump station upgrades."
+  },
+  {
+   "topic": "Invoices from Mead, Talerman and Fitchburg",
+   "what_was_recorded": "Invoices were listed: Mead and Talerman for July, and Fitchburg for the period 5/26-6/25/22.",
+   "figures_as_printed": [
+    "$1,273.00",
+    "$15,223.07"
+   ],
+   "quote": "invoices- mead, talerman- $1,273.00 for july and fitchburg - $15,223.07 (5/26-6/25/22)"
+  },
+  {
+   "topic": "Town Counsel charge for connection fee question",
+   "what_was_recorded": "The Commission was charged nearly the full monthly flat fee for a connection fee question and a question on remote meetings.",
+   "figures_as_printed": [
+    "$1,273"
+   ],
+   "quote": "the commission was thus charged for nearly the full monthly flat fee of $1,273 for 2.3 hours for the connection fee question"
+  },
+  {
+   "topic": "Upland extension connection fee moratorium",
+   "what_was_recorded": "Counsel was asked to pursue a connection fee moratorium to help with the high price of the Upland/Eastern extension; no figure printed for the fee.",
+   "figures_as_printed": [],
+   "quote": "offering a connection fee moratorium to help with the high price for the extension."
+  },
+  {
+   "topic": "Abatement of past due bills, 24 John St.",
+   "what_was_recorded": "The Commission abated past due sewer bills for 24 John St. after a bankruptcy discharge; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "to abate the past due bills for 24 john st. prior to 3/30 declaration of bankruptcy"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Congratulations to Barb on retirement",
+   "speaker": "Mike",
+   "stated_role": "not stated",
+   "quote": "public comment - mike congratulated barb on her retirement."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Sewer extension request, 4 Kimball St",
+   "resolution": "approved 3-0, pending assignment of a licensed drain layer contractor",
+   "quote": "destetano who would like to connect 4 kimball st. to town sewer with a short extension from prospect st.",
+   "tags": [
+    "sewer extension",
+    "Kimball St",
+    "permits",
+    "contractor"
+   ]
+  },
+  {
+   "topic": "Non-compliance, Jacie Nicoll (Smokestack Roasters)",
+   "resolution": "postponed to next meeting",
+   "quote": "jacie nicoll (smokestack roasters) - non-compliance discussion-postponed to next meeting.",
+   "tags": [
+    "non-compliance"
+   ]
+  },
+  {
+   "topic": "Illegal connection, 400 Sunnyhill Rd.",
+   "resolution": "continued; request to attend next meeting",
+   "quote": "illegal connection- 400 sunnyhill rd. - john talked to casey (building inspector) and he is not concerned that they have",
+   "tags": [
+    "illegal connection",
+    "water meter",
+    "drain layer",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "ARPA spending, DPW Director's proposals",
+   "resolution": "Bill to prepare request to Town Manager for manhole and pump station money",
+   "quote": "arpa spending- dpw director's proposals - bill said that the town has some arpa money that could be used for",
+   "tags": [
+    "ARPA",
+    "manholes",
+    "pump stations",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Abatement, 24 John St.",
+   "resolution": "approved 3-0",
+   "quote": "to abate the past due bills for 24 john st. prior to 3/30 declaration of bankruptcy per order of discharge as approved",
+   "tags": [
+    "abatement",
+    "bankruptcy",
+    "past due bills"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/14 and 7/12",
+   "resolution": "tabled to next meeting",
+   "quote": "minutes of 6/14 and 7/12 - were tabled to the next meeting because not all commissioners were present.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "reported; no action recorded",
+   "quote": "business manager report - upland/eastern extension status- barb reported there have been no repercussions since they",
+   "tags": [
+    "Upland extension",
+    "connection fee",
+    "invoices",
+    "grease trap permits",
+    "website",
+    "counsel hours",
+    "retirement"
+   ]
+  },
+  {
+   "topic": "Action items, new billing system",
+   "resolution": "to next agenda",
+   "quote": "action items- brett asked if there is any progress with new billing system.",
+   "tags": [
+    "billing system",
+    "Muni-Link"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment - mike congratulated barb on her retirement.",
+   "tags": [
+    "retirement"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "quote": "august 30, 2022 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:01pm, 3-0",
+   "quote": "to adjourn at 7:01pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plan for the property near Prospect and Kimball St. (4 Kimball St.), screen-shared at the meeting",
+   "where": "text",
+   "quote": "he screen-shared the plan for the property which is near the intersection of prospect and kimball st."
+  },
+  {
+   "name": "Copies of the proposed plans showing a sewer stub on Prospect St.",
+   "where": "text",
+   "quote": "greg did not find an as-built for the sewer but has copies of the proposed plans with a"
+  },
+  {
+   "name": "Order of Discharge (bankruptcy, 24 John St.)",
+   "where": "text",
+   "quote": "to abate the past due bills for 24 john st. prior to 3/30 declaration of bankruptcy per order of discharge as approved"
+  },
+  {
+   "name": "Invoices from Mead, Talerman and Fitchburg (5/26-6/25/22)",
+   "where": "text",
+   "quote": "invoices- mead, talerman- $1,273.00 for july and fitchburg - $15,223.07 (5/26-6/25/22)"
+  },
+  {
+   "name": "Upland sewer extension request (posted on the website)",
+   "where": "text",
+   "quote": "and the upland sewer extension request."
+  }
+ ],
+ "tags": [
+  "sewer extension",
+  "illegal connection",
+  "ARPA",
+  "abatement",
+  "billing system",
+  "grease trap permits",
+  "staff retirement",
+  "minutes approval tabled",
+  "Kimball St",
+  "Sunnyhill Rd"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he screen-shared the plan for the property"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-04-20",
  "docid": "6317",
@@ -12,15 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Continue the Nazarenko public hearing (160 Sunset Lane) to May 4, 2022",
+   "motion": "Continue the Nazarenko Notice of Intent hearing (160 Sunset Lane) to May 4, 2022.",
    "moved_by": "JR",
    "seconded_by": "ML",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "the meeting was continued to the meeting of may 4, 2022 by a motion of jr and a second by ml with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Issue a negative determination for Michael Cool's pool and decking proposal at 8 Butterfly Lane",
+   "motion": "Continue the Welton Request for Determination hearing (205 Sunset Lane) to May 4, 2022.",
+   "moved_by": "ML",
+   "seconded_by": "PA",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "meeting was continued to the may 4, 2022 meeting by a motion of ml and a second by pa with a unanimous roll call vote to approve the motion"
+  },
+  {
+   "motion": "Issue a negative determination for the Cool Request for Determination (pool and decking, 8 Butterfly Lane).",
    "moved_by": "ML",
    "seconded_by": "JR",
    "outcome": "passed unanimously",
@@ -28,47 +36,347 @@
    "quote": "ml moved to issue a negative determination. jr seconded and the commission approved the motion by unanimous vote."
   },
   {
-   "motion": "Continue the Blatt public hearing (411 Goodrich Street) to May 4, 2022",
-   "moved_by": "ML",
-   "seconded_by": "PA",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "ml motioned to continue to may 4, 2022 with a second by pa and a unanimous roll call vote to approve the motion."
-  },
-  {
-   "motion": "Continue the Vail public hearing (92 Wilder Rd) to May 4, 2022",
-   "moved_by": "ML",
-   "seconded_by": "PA",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "continued at the request by applicant by a motion of ml and a second by pa and a unanimous vote to approve the motion"
-  },
-  {
-   "motion": "Continue the Katurnia public hearing (192 Townsend Harbor Road) to May 4, 2022",
-   "moved_by": "JR",
-   "seconded_by": "PA",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the meeting was continued to may 4, 2022 by a motion of jr and a second by pa with a unanimous vote by roll call to approve the motion."
-  },
-  {
-   "motion": "Approve plantings in the amount of $310.00 at Hollis Road residence",
+   "motion": "Continue the Blatt Request for Determination hearing (411 Goodrich Street) to May 4, 2022.",
    "moved_by": "ML",
    "seconded_by": "PA",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "gini albertson had the commission approve plantings in the amount of $310.00 by a motion of ml and a second by pa and a unanimous vote of the commission to approve the motion by roll call vote."
+   "quote": "ml motioned to continue to may 4, 2022 with a second by pa and a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Continue the Vail Request for Determination hearing (92 Wilder Rd) to May 4, 2022 at the applicant's request.",
+   "moved_by": "ML",
+   "seconded_by": "PA",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "continued at the request by applicant by a motion of ml and a second by pa and a unanimous vote to approve the motion"
+  },
+  {
+   "motion": "Continue the Katurnia Request for Determination hearing (192 Townsend Harbor Road) to May 4, 2022.",
+   "moved_by": "JR",
+   "seconded_by": "PA",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "the meeting was continued to may 4, 2022 by a motion of jr and a second by pa with a unanimous vote by roll call to approve the motion."
+  },
+  {
+   "motion": "Approve plantings in the amount of $310.00 for the Hollis Road residence maintenance work (Gini Albertson).",
+   "moved_by": "ML",
+   "seconded_by": "PA",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "by a motion of ml and a second by pa and a unanimous vote of the commission to approve the motion by roll call vote."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:50 PM.",
    "moved_by": "CC",
    "seconded_by": "ML",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "the meeting adjourned at 8:50 pm by a motion of cc and a second by ml with a unanimous vote to approve the motion by roll call vote."
+   "quote": "the meeting adjourned at 8:50 pm by a motion of cc and a second by ml with a unanimous vote"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.08508349999999999
+ "dropped_unquoted": 0,
+ "note": "Text is a clean digital extraction, not a scan. Initials (RB, JR, ML, CC, PA, MM) are mapped to names by me from the header and the attendance line; the minutes print only initials. MM is taken to be Matthew S. Marro (Conservation Administrator), but no attendance line confirms that, so his status is 'not stated'. Bob Pease is listed as Chair while Richard Bursch acted as chair; whether Pease was absent is not stated. Associates and Viviano appear only in the header, with no attendance recorded. The minutes heading for the April 6, 2022 minutes shows no motion or vote. Several agenda headings (trails grant, certificates of compliance, committee reports, administrator's reports, open space, communications) have no recorded content. Continuance motions are marked procedural: false; only adjournment is marked procedural: true.",
+ "cost_usd": 0.018941680000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair (acting as chair)",
+   "status": "present",
+   "quote": "call to order called to order at 7 pm by rb acting as chair."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member (initials JR)",
+   "status": "present",
+   "quote": "also present were jr, ml cc and pa"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Member (initials ML)",
+   "status": "present",
+   "quote": "also present were jr, ml cc and pa"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Member (initials CC)",
+   "status": "present",
+   "quote": "also present were jr, ml cc and pa"
+  },
+  {
+   "name": "Patricia Adams",
+   "role": "Member (initials PA)",
+   "status": "present",
+   "quote": "also present were jr, ml cc and pa"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "not stated",
+   "quote": "bob pease, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "not stated",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Conservation Administrator (header listing)",
+   "status": "not stated",
+   "quote": "jeffrey viviano conservation administrator"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Associate",
+   "status": "not stated",
+   "quote": "richard tremblay, associate"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Associate",
+   "status": "not stated",
+   "quote": "mary wilson ,associate"
+  },
+  {
+   "name": "Matthew Nazarenko",
+   "role": "applicant, represented himself",
+   "status": "present",
+   "quote": "matthew nazarenko represented himself and narrated the project to the commission."
+  },
+  {
+   "name": "Tara Nazarenko",
+   "role": "co-applicant (named in hearing notice)",
+   "status": "not stated",
+   "quote": "by matthew and tara nazarenko for the construction of stairs"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "not stated",
+   "status": "present",
+   "quote": "carl luck expressed concerns."
+  },
+  {
+   "name": "John Welton",
+   "role": "applicant",
+   "status": "present",
+   "quote": "john welton was present to review the proposed work."
+  },
+  {
+   "name": "Michael Cool",
+   "role": "applicant, represented himself",
+   "status": "present",
+   "quote": "mr. cool appeared to represent himself."
+  },
+  {
+   "name": "David Blatt",
+   "role": "applicant, represented himself",
+   "status": "present",
+   "quote": "david blatt was there to represent himself."
+  },
+  {
+   "name": "Jack Katurnia",
+   "role": "applicant, appeared for himself",
+   "status": "present",
+   "quote": "jack katurnia appeared for himself and explained the remedial project."
+  },
+  {
+   "name": "Gini Albertson",
+   "role": "not stated (Hollis Road maintenance work)",
+   "status": "not stated",
+   "quote": "gini albertson had the commission approve plantings"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Nazarenko applicant to add the specific information the chair identified to the plans before the continued hearing.",
+   "quote": "rb noted the specific information that would need to be added to the plans."
+  },
+  {
+   "decision": "The commission will re-inspect the Welton site on April 30, 2022 around 9 AM, and the applicant is asked to show proposed tree removal locations on the plan.",
+   "quote": "the commission would rei-inspect on april 30, 2022 around 9 am"
+  },
+  {
+   "decision": "Commission to be on site at Blatt property on April 30, 2022; Mr. Blatt and MM to meet offline between meetings to review the wetland line and GIS maps.",
+   "quote": "rb noted that mr blatt and mm can meet offline in-between meetings."
+  },
+  {
+   "decision": "MM to visit the Katurnia site and review the limits of work before the continued hearing.",
+   "quote": "mm will visit the site and review the limits of work."
+  },
+  {
+   "decision": "Chair requested that erosion protection be placed prior to construction at the Cool property.",
+   "quote": "rb requested that erosion protection be paced prior to construction."
+  },
+  {
+   "decision": "MM referred the 190 Peninsula Drive violation to an arborist.",
+   "quote": "190 peninsula drive- mm refereed them to an arborist"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road residence maintenance plantings",
+   "what_was_recorded": "The commission approved plantings for the Hollis Road residence maintenance work at a stated cost.",
+   "quote": "gini albertson had the commission approve plantings in the amount of",
+   "figures_as_printed": [
+    "$310.00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Nazarenko Notice of Intent, 160 Sunset Lane (prior approvals near the steps and dock)",
+   "quote": "carl luck expressed concerns. he reviewed prior approvals in the general area.",
+   "speaker": "Carl Luck",
+   "stated_role": ""
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "call to order called to order at 7 pm by rb acting as chair."
+  },
+  {
+   "topic": "Minutes of previous meetings, April 6, 2022",
+   "resolution": "no action recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of previous meetings - april 6, 2022"
+  },
+  {
+   "topic": "Nazarenko Notice of Intent, 160 Sunset Lane",
+   "resolution": "continued to May 4, 2022",
+   "tags": [
+    "public hearing",
+    "notice of intent",
+    "buffer zone",
+    "dock"
+   ],
+   "quote": "a notice of intent by matthew and tara nazarenko for the construction of stairs, a landing and a dock"
+  },
+  {
+   "topic": "Welton Request for Determination, 205 Sunset Lane",
+   "resolution": "continued to May 4, 2022",
+   "tags": [
+    "public hearing",
+    "request for determination",
+    "tree removal",
+    "dock"
+   ],
+   "quote": "by john welton for the construction of stairs, a landing and a dock"
+  },
+  {
+   "topic": "Cool Request for Determination, 8 Butterfly Lane",
+   "resolution": "negative determination issued",
+   "tags": [
+    "public hearing",
+    "request for determination",
+    "pool",
+    "buffer zone"
+   ],
+   "quote": "a request for a determination by michael cool for the construction of a pool and decking"
+  },
+  {
+   "topic": "Blatt Request for Determination, 411 Goodrich Street",
+   "resolution": "continued to May 4, 2022",
+   "tags": [
+    "public hearing",
+    "request for determination",
+    "tree removal",
+    "wetland line"
+   ],
+   "quote": "by david blatt for the removal of trees at 411 goodrich street"
+  },
+  {
+   "topic": "Vail Request for Determination, 92 Wilder Rd",
+   "resolution": "continued to May 4, 2022 at applicant request",
+   "tags": [
+    "public hearing",
+    "request for determination",
+    "tree removal"
+   ],
+   "quote": "by patricia vail for the removal of trees within the 100 foot buffer zone at 92 wilder rd"
+  },
+  {
+   "topic": "Katurnia Request for Determination, 192 Townsend Harbor Road (continued)",
+   "resolution": "continued to May 4, 2022",
+   "tags": [
+    "public hearing",
+    "request for determination",
+    "impervious materials",
+    "buffer zone"
+   ],
+   "quote": "jack katurnia for the removal of impervious materials within the buffer"
+  },
+  {
+   "topic": "Tax lien sale list properties",
+   "resolution": "no action recorded (heading only)",
+   "tags": [
+    "tax lien"
+   ],
+   "quote": "discussion of properties on the tax lien sale list"
+  },
+  {
+   "topic": "Old business: encroachments and Hollis Road plantings",
+   "resolution": "plantings approved ($310.00); encroachment items listed without recorded action",
+   "tags": [
+    "encroachment",
+    "plantings",
+    "Hollis Road"
+   ],
+   "quote": "update on encroachment issues at"
+  },
+  {
+   "topic": "Enforcement violations",
+   "resolution": "status updates, no votes recorded",
+   "tags": [
+    "enforcement",
+    "violations",
+    "planting plan"
+   ],
+   "quote": "violations (enforcement actions and administrative hearings)."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:50 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting adjourned at 8:50 pm by a motion of cc and a second by ml"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GIS maps",
+   "where": "text",
+   "quote": "mr. blatt asked the commission to show the gis maps"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearing",
+  "notice of intent",
+  "request for determination",
+  "buffer zone",
+  "tree removal",
+  "enforcement",
+  "tax lien",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2022-10-17",
  "docid": "1513",
@@ -12,15 +12,257 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Brenner",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "at 7:17 p.m. mr. beardmore motioned to adjourn. mr. brenner seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are from the Capital Planning Committee, not the By Law Committee as indicated in the header. One retroactive approval note (\"Unanimously approved by Capital Planning Committee at 11/21/2022 meeting\") appears on page 1 but refers to a vote at a different meeting (11/21/2022) and is not included.",
- "cost_usd": 0.0763535
+ "note": "The minutes are headed Lunenburg Capital Planning Committee; the requested board label was By Law Committee. The text has three pages; page 3 is blank. No scan. One line appears after the Facilities list: 'Unanimously approved by Capital Planning Committee at 11/21/2022 meeting.' That date is after this 10/17/2022 meeting and no motion is recorded here, so it is not listed as a vote. Only one vote is recorded (adjournment), with no mover-stated count. The 29-item request list is inline numbered text, not a labelled document list.",
+ "cost_usd": 0.01645588,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "George Martin",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg resident rhonda lissio"
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Lunenburg resident",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg resident rhonda lissio"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux will look for more details on some requests moving forward.",
+   "quote": "ms. lemieux will be looking for more details on some requests moving forward."
+  },
+  {
+   "decision": "Ms. Lemieux will recode project numbers and possibly change some project titles.",
+   "quote": "ms. lemieux will also be recoding project numbers, and possibly changing some titles"
+  },
+  {
+   "decision": "The School Department will present on October 26, 2022 at 6:00 p.m. at the Ritter Building.",
+   "quote": "school department will make their presentation on october 26, 2022 at 6:00 at the ritter building."
+  },
+  {
+   "decision": "Subsequent CPC meetings confirmed for October 26, November 7 and November 9, 2022, at 6:00 at the Ritter Building.",
+   "quote": "monday, november 7, 2022 at 6:00 at the ritter building"
+  },
+  {
+   "decision": "Next meeting's action item: review capital plan requests.",
+   "quote": "action items for next meeting: review capital plan requests"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Total cost of all FY24 capital plan projects",
+   "what_was_recorded": "Ms. Lemieux reported the total cost of all projects for FY24.",
+   "quote": "the total cost of all projects for fy24 is $3,140,110.",
+   "figures_as_printed": [
+    "$3,140,110"
+   ]
+  },
+  {
+   "topic": "Fire Department rescue replacement request",
+   "what_was_recorded": "A request to replace Rescue 1 was read into the record.",
+   "quote": "16. replacement rescue 1: $506,000",
+   "figures_as_printed": [
+    "$506,000"
+   ]
+  },
+  {
+   "topic": "Public Works 6-wheel dump/spreader/plow truck request",
+   "what_was_recorded": "A request for a 6-wheel dump/spreader/plow truck was read into the record.",
+   "quote": "18. 6 wheel dump/spreader/plow truck 2: $240,000",
+   "figures_as_printed": [
+    "$240,000"
+   ]
+  },
+  {
+   "topic": "Flat Hill Road drainage request",
+   "what_was_recorded": "A request for Flat Hill Road drainage construction was read into the record.",
+   "quote": "21. flat hill road drainage construction: $240,000",
+   "figures_as_printed": [
+    "$240,000"
+   ]
+  },
+  {
+   "topic": "THES fire alarm upgrade request",
+   "what_was_recorded": "A school request to upgrade the THES fire alarm system was read into the record.",
+   "quote": "25. thes upgrade fire alarm system: $287,000",
+   "figures_as_printed": [
+    "$287,000"
+   ]
+  },
+  {
+   "topic": "Eagle House parking lot request",
+   "what_was_recorded": "A facilities request for the Eagle House parking lot was read into the record.",
+   "quote": "eagle house parking lot: : $150,000",
+   "figures_as_printed": [
+    "$150,000"
+   ]
+  },
+  {
+   "topic": "ARPA funding eligibility of requests",
+   "what_was_recorded": "Mr. Passios asked that requests eligible for ARPA funding be noted; no dollar figure was printed.",
+   "quote": "mr. passios commented that requests eligible for arpa funding should be notated.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Scoring criteria including grant funding",
+   "what_was_recorded": "The scoring criteria include cost and whether a request could be funded with grant money; no dollar figure was printed.",
+   "quote": "whether requests could be funded with grant money",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lissio",
+   "stated_role": "Lunenburg Resident",
+   "topic": "public questions after presentations",
+   "quote": "lunenburg resident rhonda lissio asked if questions from the public will be allowed after capital plan request presentations."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "no action",
+   "quote": "chairperson tom alonzo called meeting to order at 6:03 p.m., and read a statement regarding the",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Review scoring criteria for capital plan requests",
+   "resolution": "discussed, no action",
+   "quote": "review scoring criteria for all capital plan requests: ms. lemieux explained the categories for the scoring criteria",
+   "tags": [
+    "scoring criteria",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Introduce all submitted capital plan requests",
+   "resolution": "presented, no action",
+   "quote": "ms. lemieux informed the committee that there are 164 projects on the capital plan including the latest 29 requests from department heads.",
+   "tags": [
+    "capital plan",
+    "department requests"
+   ]
+  },
+  {
+   "topic": "Read-through of requests 1-29",
+   "resolution": "read into record, no action",
+   "quote": "mr. alonzo read the requests as follows:",
+   "tags": [
+    "facilities",
+    "fire",
+    "public works",
+    "school department"
+   ]
+  },
+  {
+   "topic": "Plan department presentation schedule",
+   "resolution": "school presentation scheduled",
+   "quote": "school department will make their presentation on october 26, 2022 at 6:00 at the ritter building.",
+   "tags": [
+    "presentation schedule",
+    "school department"
+   ]
+  },
+  {
+   "topic": "Confirm subsequent CPC meeting dates",
+   "resolution": "confirmed",
+   "quote": "monday, november 7, 2022 at 6:00 at the ritter building",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Action items for next meeting",
+   "resolution": "review capital plan requests",
+   "quote": "action items for next meeting: review capital plan requests",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Public comment on questions after presentations",
+   "resolution": "raised, no action",
+   "quote": "lunenburg resident rhonda lissio asked if questions from the public will be allowed after capital plan request presentations.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:17 p.m.",
+   "quote": "at 7:17 p.m. mr. beardmore motioned to adjourn. mr. brenner seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital plan (FY24), 164 projects",
+   "where": "text",
+   "quote": "there are 164 projects on the capital plan including the latest 29 requests from department heads."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "capital plan FY24",
+  "scoring criteria",
+  "school department",
+  "public works",
+  "fire department",
+  "facilities",
+  "public comment",
+  "ARPA"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

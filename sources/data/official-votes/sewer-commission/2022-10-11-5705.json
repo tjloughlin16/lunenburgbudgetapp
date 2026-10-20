@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-10-11",
  "docid": "5705",
@@ -12,20 +12,20 @@
  },
  "votes": [
   {
-   "motion": "Accept the conditions and give Marc Bernstein the waiver per requested",
+   "motion": "Grant Marc Bernstein the waiver under Section 10 of the Lunenburg Sewer Bylaw for 44 Northfield Road, per the requested conditions",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to accept the conditions and give marc bernstein the waiver per requested."
+   "quote": "to accept the conditions and give marc bernstein the waiver per requested."
   },
   {
-   "motion": "Pro-rate the bill for 136 Leominster Road",
+   "motion": "Pro-rate the sewer bill for 136 Leominster Road",
    "moved_by": "Dave M.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to pro-rate the bill for 136 leominster road."
+   "quote": "to pro-rate the bill for 136 leominster road."
   },
   {
    "motion": "Accept the minutes of 9/13/22",
@@ -33,7 +33,7 @@
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r to accept the minutes of 9/13/22. second: mike n."
+   "quote": "to accept the minutes of 9/13/22."
   },
   {
    "motion": "Accept the minutes of 9/27/22",
@@ -41,18 +41,297 @@
    "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: mike n. second: dave m. to accept the minutes of 9/27/22."
+   "quote": "to accept the minutes of 9/27/22."
   },
   {
-   "motion": "Adjourn at 6:50pm",
+   "motion": "Adjourn the meeting at 6:50pm",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. to adjourn at 6:50pm. second: mike n."
+   "quote": "to adjourn at 6:50pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1142625
+ "note": "OCR text from a scanned original (macOS Vision). Figures and names are read from OCR and may carry errors: '$9OK' is probably $90K and 'I! Forno' is as printed. Quotes were checked against the OCR text. Dave MacDonald entered during the public hearing. Brett Ramsden did not attend for the 9/27/22 minutes vote (3-0). The 4-0 and 3-0 counts come from the roll calls as printed. No reserve or line-item transfers were recorded.",
+ "cost_usd": 0.01940968,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: clerk- mike deveikis"
+  },
+  {
+   "name": "Marc Bernstein",
+   "role": "Guest (44 Northfield Road), applicant for the waiver",
+   "status": "present",
+   "quote": "guests: marc bernstein (44 northfield road)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners discussed and agreed with the 44 Northfield Road easement; John noted it as a good example of the recent by-law change (formal action was the later waiver vote)",
+   "quote": "the commissioners discussed and agreed with the easement. john noted this was a good example of the recent by-law change."
+  },
+  {
+   "decision": "Staff to talk with Town Counsel before any camera inspection of the sewer lines",
+   "quote": "dave asked whether they had permission to camera the lines and barb replied she will talk to counsel first."
+  },
+  {
+   "decision": "Staff to obtain an estimate of average costs for replacing clay pipes in the Whalom area, since Counsel said a sale-time requirement would be hard to enforce",
+   "quote": "they will need to look at other options and for now get an estimate of average costs for replacing the clay pipes in the whalom area."
+  },
+  {
+   "decision": "Staff to get pumping-time reports from Al (CTE) for the Whalom area and review the billing algorithm again",
+   "quote": "she will need to get reports from al (cte) for pumping times in the whalom area and review it again."
+  },
+  {
+   "decision": "Staff to update the Commission on the Muni-Link progress",
+   "quote": "barb will update the commission on progress."
+  },
+  {
+   "decision": "Staff to consult Counsel on the 1155 Mass Ave tiny-house sewer connection inquiry",
+   "quote": "barb received an inquiry for connecting a tiny house to sewer and she will need to talk to counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pro-rated bill, 136 Leominster Road (new owners)",
+   "what_was_recorded": "The full minimum quarterly charge was billed to new owners; the Commission agreed to pro-rate the bill, reducing it.",
+   "figures_as_printed": [
+    "$115",
+    "$38.33"
+   ],
+   "quote": "the commission discussed and agreed to pro-rate the bill, reducing the bill from $115 to $38.33."
+  },
+  {
+   "topic": "ARPA proposals from DPW",
+   "what_was_recorded": "Bill submitted ARPA proposals for manholes, pump stations and a mobile generator; the Select Board will discuss all three on 11/1.",
+   "figures_as_printed": [
+    "$200K",
+    "$300K",
+    "$90K"
+   ],
+   "quote": "john reported bill submitted his proposal for $200k for manholes, $300k for pump stations and $90k for a mobile generator."
+  },
+  {
+   "topic": "Mobile generator cost comparison",
+   "what_was_recorded": "Bill said the DPW bought a generator of the same size four years ago for around the amount printed; the OCR text reads it as '$9OK', probably $90K.",
+   "figures_as_printed": [
+    "$9OK"
+   ],
+   "quote": "he had purchased one of the same size 4 years ago for around $9ok."
+  },
+  {
+   "topic": "Legal invoice for the 44 Northfield easement",
+   "what_was_recorded": "An invoice from Mead and Talerman for work on the 44 Northfield easement was listed for payment.",
+   "figures_as_printed": [
+    "$381.67"
+   ],
+   "quote": "invoices- mead, talerman - $381.67 (re. 44 northfield easement for 1.8 hrs)"
+  },
+  {
+   "topic": "Cost of replacing clay sewer pipes",
+   "what_was_recorded": "Counsel and the Commission discussed the cost of replacing clay pipes at sale; no figure was printed and an estimate was to be obtained.",
+   "figures_as_printed": [],
+   "quote": "they will need to look at other options and for now get an estimate of average costs for replacing the clay pipes in the whalom area."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "40B hearing reminder and pancake breakfast",
+   "speaker": "Dave MacDonald",
+   "quote": "public comment - dave reminded all to attend the 40b hearing at the zba meeting on 10/12. also there will be a pancake breakfast on 10/12 at senior center from 8-11am."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: sewer easement waiver, 44 Northfield Road",
+   "resolution": "approved, waiver granted 4-0; hearing closed",
+   "tags": [
+    "easement",
+    "waiver",
+    "public hearing"
+   ],
+   "quote": "john declared the motion approved and closed the public hearing of 10/11/22 at 6:12pm."
+  },
+  {
+   "topic": "Invoice for new ownership, 136 Leominster Road",
+   "resolution": "bill pro-rated, approved 4-0",
+   "tags": [
+    "billing",
+    "pro-rating",
+    "policy"
+   ],
+   "quote": "the commission discussed and agreed to pro-rate the bill, reducing the bill from $115 to $38.33."
+  },
+  {
+   "topic": "Pond View 40B discussion",
+   "resolution": "discussed, no action",
+   "tags": [
+    "40B",
+    "ZBA",
+    "water district",
+    "sewer"
+   ],
+   "quote": "john stated the zba hearing for the 40b project will be held 10/12 and will be broadcast live"
+  },
+  {
+   "topic": "ARPA proposals",
+   "resolution": "reported, no action",
+   "tags": [
+    "ARPA",
+    "capital",
+    "generator"
+   ],
+   "quote": "john reported bill submitted his proposal for $200k for manholes, $300k for pump stations and $90k for a mobile generator."
+  },
+  {
+   "topic": "Minutes of 9/13/22 and 9/27/22",
+   "resolution": "approved (9/13 4-0; 9/27 3-0)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes of 9/13/22."
+  },
+  {
+   "topic": "Business Manager report: counsel hours, Muni-Link, change-of-use inquiries",
+   "resolution": "reported; staff directed to follow up",
+   "tags": [
+    "counsel",
+    "clay pipes",
+    "Muni-Link",
+    "change of use",
+    "Munis"
+   ],
+   "quote": "business manager report -counsel hours discussion- barb and john attended counsel hours to discuss pond"
+  },
+  {
+   "topic": "Action items: Il Forno, billing algorithm, 419 Whalom Rd",
+   "resolution": "discussed, no action",
+   "tags": [
+    "Woodard & Curran",
+    "planning board",
+    "billing algorithm"
+   ],
+   "quote": "action items- dave noted i! forno is going before the planning board in regard to expanding their restaurant."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "reminders read; no comment from the public",
+   "tags": [
+    "40B",
+    "public comment"
+   ],
+   "quote": "public comment - dave reminded all to attend the 40b hearing at the zba meeting on 10/12."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "october 25, 2022 @ 6pm-regular meeting, remote participation (john will not be attending- brett will chair)."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:50pm, 4-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 6:50pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fitchburg City Code Ch. 147-7, section C",
+   "where": "list",
+   "quote": "handouts - read aloud in the meeting: fitchburg city code ch. 147-7, section c 34 & 44 northfield rd. sewer easement approval email from ed mcsweeney"
+  },
+  {
+   "name": "34 & 44 Northfield Rd. Sewer Easement Approval email from Ed McSweeney",
+   "where": "list",
+   "quote": "handouts - read aloud in the meeting: fitchburg city code ch. 147-7, section c 34 & 44 northfield rd. sewer easement approval email from ed mcsweeney"
+  },
+  {
+   "name": "Easement plan for 34 and 44 Northfield Road, with documents received 9/22",
+   "where": "text",
+   "quote": "the office received the easement plan and documents on 9/22 and the meeting was posted on 9/30."
+  },
+  {
+   "name": "Letter from Mr. O'Brien's attorney (Pond View 40B)",
+   "where": "text",
+   "quote": "the commission had received the letter from mr. o'brien's attorney and the lunenburg water district."
+  },
+  {
+   "name": "Woodard & Curran billing algorithm report",
+   "where": "text",
+   "quote": "dave asked about the billing algorithm from the woodard & curran report."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "easement",
+  "public hearing",
+  "waiver",
+  "billing",
+  "pro-rating",
+  "40B",
+  "ARPA",
+  "Pond View",
+  "Muni-Link",
+  "change of use",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts - read aloud in the meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

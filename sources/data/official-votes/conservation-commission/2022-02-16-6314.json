@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-02-16",
  "docid": "6314",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Issue an Order of Conditions for the removal of the Old Dump site in Municipal Conservation land",
+   "motion": "Issue an Order of Conditions on the Notice of Intent by the Town of Lunenburg for removal of an Old Dump site at 104 Fairview Ave (continued hearing).",
    "moved_by": "PV",
    "seconded_by": "ML",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "pv moved to issue an order of conditions. ml seconded and the commission approved the motion unanimously by roll call vote."
   },
   {
-   "motion": "Issue an order of conditions for the 4-lot residential subdivision at 711 Massachusetts Ave",
+   "motion": "Issue an order of conditions on the Notice of Intent by Eric Fowler for a 4 lot residential subdivision at 711 Massachusetts Ave.",
    "moved_by": "RB",
    "seconded_by": "ML",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "rb moved to issue an order of conditions ml seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue the hearing on William Emkey's Notice of Intent to March 2, 2022",
+   "motion": "Continue the hearing on the Notice of Intent by William Emkey for work at 445 Townsend Harbor Road to March 2, 2022.",
    "moved_by": "RB",
    "seconded_by": "PA",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "rb moved to continue to march 2. 2022. pa seconded and the commission voted unanimously to approve."
   },
   {
-   "motion": "Continue the hearing on Zachery Taylor's Notice of Intent to March 2, 2022",
+   "motion": "Continue the hearing on the Notice of Intent by Zachery Taylor for a new duplex home at 123 Chase Road to March 2, 2022.",
    "moved_by": "RB",
    "seconded_by": "ML",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "rb moved to continue to march 2. 2022. ml seconded and the commission voted unanimously to approve."
   },
   {
-   "motion": "Approve a purchase order not to exceed $250 to Aldrich Autobody charged to the timber rights fund",
+   "motion": "Approve a purchase order not to exceed $250 to Aldrich Autobody, charged to the Timber Rights Fund, for moving gates to the DPW yard.",
    "moved_by": "RB",
    "seconded_by": "ML",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion by rb, ml seconded, voted unanimously to approve a po not to exceed $250 to aldrich autobody charged to the timber rights fund"
   },
   {
-   "motion": "Issue a Certificate of Compliance for 30 Laurel Lane",
+   "motion": "Issue Certificate of Compliance for 30 Laurel Lane.",
    "moved_by": "RB",
    "seconded_by": "OA",
    "outcome": "passed",
@@ -60,15 +60,302 @@
    "quote": "rb moved to issue the certificate. oa seconded and the commission voted unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "RB",
    "seconded_by": "PA",
    "outcome": "passed",
    "procedural": true,
-   "quote": "rb motioned to adjourn at 815 pm pa seconded and the commission voted unanimously to approve the motion ."
+   "quote": "rb motioned to adjourn at 815 pm pa seconded and the commission voted unanimously to approve the motion"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Attendee initials in two votes do not match the list of members present at the meeting (BP, RB, PA, ML): 'PV' appears as mover in vote 1, and 'OA' appears as seconder in vote 6. These may be transcription errors.",
- "cost_usd": 0.12380250000000001
+ "note": "Text is extracted, not a scan; all votes were readable. The header prints 7:00 PM but the chair's call to order is recorded at 7:30 PM, and adjournment is printed as \"815 PM\" (read as 8:15 PM). Several initials used in the minutes (\"PV\", \"OA\", \"MM\", \"BP\", \"RB\", \"ML\", \"PA\") do not match the printed roster exactly; \"PV\" and \"OA\" are recorded as printed, and \"MM\" is read as Matthew S. Marro only by inference from \"Matt\" in the Old Business section. Attendance of applicants and presenters other than Wes Flis is not stated. No public comment speakers are recorded. Vote outcomes are recorded as \"passed\" from the minutes' \"unanimously\" language; no numeric tally is printed.",
+ "cost_usd": 0.01792728,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present were bp, rb, pa, ml"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present were bp, rb, pa, ml"
+  },
+  {
+   "name": "Patricia Adams",
+   "status": "present",
+   "quote": "present were bp, rb, pa, ml"
+  },
+  {
+   "name": "Michael Larouche",
+   "status": "present",
+   "quote": "present were bp, rb, pa, ml"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "status": "absent",
+   "quote": "absent was jr, cc, jv"
+  },
+  {
+   "name": "Catie Childs",
+   "status": "absent",
+   "quote": "absent was jr, cc, jv"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "status": "absent",
+   "quote": "absent was jr, cc, jv"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "not stated",
+   "quote": "matt will reach out to the dpw director for assistance in identifying a contractor who could be hired"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Associate",
+   "status": "not stated",
+   "quote": "richard tremblay, associate"
+  },
+  {
+   "name": "Wes Flis",
+   "status": "present",
+   "quote": "wes flis reviewed the financial analysis that was requested at the last meeting."
+  },
+  {
+   "name": "Mark Popham",
+   "status": "not stated",
+   "quote": "bp reviewed the changes mark popham made."
+  },
+  {
+   "name": "Eric Fowler",
+   "status": "not stated",
+   "quote": "notice of intent by eric fowler for the development of a 4 lot"
+  },
+  {
+   "name": "William Emkey",
+   "status": "not stated",
+   "quote": "notice of intent by william emkey for work at 445 townsend harbor"
+  },
+  {
+   "name": "Zachery Taylor",
+   "status": "not stated",
+   "quote": "notice of intent by zachery taylor for the construction of a new duplex"
+  },
+  {
+   "name": "Jack Maloney",
+   "status": "not stated",
+   "quote": "jack maloney is completing plan for mm to review."
+  },
+  {
+   "name": "Gary Gouldrup",
+   "status": "not stated",
+   "quote": "bp noted that gary gouldrup"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tax lien properties (101 Pleasant Street, 250 Hollis Road, 56 Carr Ave, 356 Hollis Road): the chair will ask what taxes are owed, the estimated cost for the town to acquire each parcel at auction, and the estimated cost to remove the Lake Lodge; to be discussed again at the next meeting.",
+   "quote": "the chair will ask the amount of taxes is owed on each property"
+  },
+  {
+   "decision": "Conservation Administrator to contact the DPW Director for help identifying a contractor to develop a scope of work for the Hollis Road maintenance procurement.",
+   "quote": "matt will reach out to the dpw director for assistance in identifying a contractor who could be hired"
+  },
+  {
+   "decision": "Chair to continue reaching out to Gary Gouldrup about the Northfield Road graveling plans.",
+   "quote": "bp will continue to reach him"
+  },
+  {
+   "decision": "Next meeting set for March 2, 2022 at 7:00 PM by Zoom.",
+   "quote": "next meeting is march 2, 2022at 7:00 pm by zoom platform"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Timber Rights Fund purchase order for gates at DPW yard",
+   "what_was_recorded": "The commission approved a purchase order not to exceed $250 to Aldrich Autobody, charged to the timber rights fund.",
+   "figures_as_printed": [
+    "$250"
+   ],
+   "quote": "a po not to exceed $250 to aldrich autobody charged to the timber rights fund"
+  },
+  {
+   "topic": "Tax lien sale properties",
+   "what_was_recorded": "The commission discussed unpaid taxes, the estimated cost for the town to acquire parcels at auction, and the estimated cost to remove the Lake Lodge; no figures were printed and the item was carried to the next meeting.",
+   "figures_as_printed": [],
+   "quote": "the chair will ask the amount of taxes is owed on each property"
+  },
+  {
+   "topic": "Financial analysis for 711 Massachusetts Ave subdivision",
+   "what_was_recorded": "Wes Flis reviewed a financial analysis citing overhead costs, inflation, supply chain issues and market conditions; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "he reviewed the various factors such as overhead costs due to inflation and supply chain issues"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of previous meetings (February 2, 2021)",
+   "resolution": "no action",
+   "quote": "minutes of previous meetings - february 2, 2021 no action",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Continued hearing: Old Dump site removal, 104 Fairview Ave",
+   "resolution": "order of conditions issued",
+   "quote": "a notice of intent by the town of lunenburg removal of an old dump site",
+   "tags": [
+    "wetlands",
+    "conservation land",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Hearing: Eric Fowler 4 lot subdivision, 711 Massachusetts Ave",
+   "resolution": "order of conditions issued",
+   "quote": "notice of intent by eric fowler for the development of a 4 lot",
+   "tags": [
+    "wetlands",
+    "subdivision",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Hearing: William Emkey, 445 Townsend Harbor Road",
+   "resolution": "continued to March 2, 2022",
+   "quote": "notice of intent by william emkey for work at 445 townsend harbor",
+   "tags": [
+    "wetlands",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Hearing: Zachery Taylor, 123 Chase Road",
+   "resolution": "continued to March 2, 2022",
+   "quote": "notice of intent by zachery taylor for the construction of a new duplex",
+   "tags": [
+    "wetlands",
+    "notice of intent"
+   ]
+  },
+  {
+   "topic": "Timber Rights Fund expenditure for DPW yard gates",
+   "resolution": "approved PO not to exceed $250",
+   "quote": "approval of expenditure from timber rights fund to move gates to dpw yard.",
+   "tags": [
+    "timber rights fund",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Tax lien sale list properties",
+   "resolution": "discussed; carried to next meeting",
+   "quote": "the commission discussed the recommendation of the open space committee that the tax leins not be sold",
+   "tags": [
+    "tax lien",
+    "open space",
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Old business and enforcement updates",
+   "resolution": "no action",
+   "quote": "update on maintenance work at hollis road residence.",
+   "tags": [
+    "enforcement",
+    "encroachment",
+    "bylaw review"
+   ]
+  },
+  {
+   "topic": "Certificate of compliance, 30 Laurel Lane",
+   "resolution": "certificate issued",
+   "quote": "mm reviewed the documents and the site and recommended the certificate be issued.",
+   "tags": [
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Communications and trails update",
+   "resolution": "no action",
+   "quote": "bp noted that march 21 mrpc trail meeting for a greenway trail between lunenburg and shirley.",
+   "tags": [
+    "trails",
+    "open space",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "rb motioned to adjourn at 815 pm pa seconded",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Financial analysis requested at the last meeting (presented by Wes Flis)",
+   "where": "text",
+   "quote": "wes flis reviewed the financial analysis that was requested at the last meeting."
+  },
+  {
+   "name": "Notice of Intent by The Town of Lunenburg, removal of an Old Dump site, 104 Fairview Ave",
+   "where": "text",
+   "quote": "a notice of intent by the town of lunenburg removal of an old dump site"
+  },
+  {
+   "name": "Notice of Intent by Eric Fowler, 4 lot residential subdivision, 711 Massachusetts Ave",
+   "where": "text",
+   "quote": "notice of intent by eric fowler for the development of a 4 lot"
+  },
+  {
+   "name": "Notice of Intent by William Emkey, 445 Townsend Harbor Road",
+   "where": "text",
+   "quote": "notice of intent by william emkey for work at 445 townsend harbor"
+  },
+  {
+   "name": "Notice of Intent by Zachery Taylor, 123 Chase Road",
+   "where": "text",
+   "quote": "notice of intent by zachery taylor for the construction of a new duplex"
+  },
+  {
+   "name": "Certificate of Compliance, 30 Laurel Lane",
+   "where": "text",
+   "quote": "certificates of compliance 30 laurel lane mm reviewed the documents and the site"
+  },
+  {
+   "name": "Existing Wetlands Bylaw (review for possible future amendments)",
+   "where": "text",
+   "quote": "review of existing wetlands bylaw for possible future amendments"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "order of conditions",
+  "certificate of compliance",
+  "tax lien",
+  "timber rights fund",
+  "trails",
+  "enforcement",
+  "open space"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

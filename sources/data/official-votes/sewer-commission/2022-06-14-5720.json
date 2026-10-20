@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-06-14",
  "docid": "5720",
@@ -15,44 +15,360 @@
    "motion": "Accept the project plan reviews for 711 Mass. Ave.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to accept the project plan reviews for 711 mass. ave."
+   "quote": "to accept the project plan reviews for 711 mass. ave."
   },
   {
    "motion": "Approve the Privilege Fee Assessment of $11,551.47 for 17 Highland St.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to approve the privilege fee assessment of $ 11,551.47 for 17 highland st. roll call vote: mike n.-aye, dave-aye and john-aye."
+   "quote": "to approve the privilege fee assessment of $ 11,551.47 for 17 highland st."
   },
   {
-   "motion": "Accept the minutes for 5/31/22",
+   "motion": "Accept the minutes for 5/31/22.",
    "moved_by": "Mike N.",
    "seconded_by": "Dave M.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. to accept the minutes for 5/31/22. second: dave m. roll call vote: mike n.-aye, dave-aye and john-aye."
+   "quote": "to accept the minutes for 5/31/22."
   },
   {
-   "motion": "Approve the CTE Contract with an increase of approximately $1,200, to the bond amount of $42,721.72",
+   "motion": "Approve the CTE Contract with an increase of approximately $1,200, to the bond amount of $42,721.72.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to approve the cte contract with an increase of approximately $1,200, to the bond amount of $42,721.72 roll call vote: mike n.-aye, dave-aye and john-aye."
+   "quote": "to approve the cte contract with an increase of approximately $1,200, to the bond amount of $42,721.72"
   },
   {
-   "motion": "Adjourn at 6:42 pm",
+   "motion": "Adjourn the meeting at 6:42 pm.",
    "moved_by": "Mike N.",
    "seconded_by": "Dave M.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. to adjourn at 6:42 pm. second: dave m. roll call vote: dave-aye, mike n.-aye and john-aye."
+   "quote": "to adjourn at 6:42 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "===OCR macOS Vision===",
- "cost_usd": 0.1424775
+ "note": "Text is macOS Vision OCR of a scan; the closing signature line is garbled and was not used. Roll calls are printed as individual ayes with no totals, so outcomes are recorded as \"passed\" rather than a count. John Reynolds briefly lost signal and rejoined to restore quorum, as the minutes state. The CTE bond figures as printed ($42,721.72 vs $41,053.02) differ by $1,668.70, by our arithmetic, while the motion describes the increase as approximately $1,200; the minutes do not reconcile these. The Jaime Rheault name is printed as Jaime in the text and Jaime Rheault in the guest list.",
+ "cost_usd": 0.01849328,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, members: dave macdonald and mike nault, business manager-barb lefebvre,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, members: dave macdonald and mike nault, business manager-barb lefebvre,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, members: dave macdonald and mike nault, business manager-barb lefebvre,"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, members: dave macdonald and mike nault, business manager-barb lefebvre,"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: vice-chair- brett ramsden, clerk- mike deveikis"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: vice-chair- brett ramsden, clerk- mike deveikis"
+  },
+  {
+   "name": "Jaime Rheault",
+   "role": "Guest (Haley Ward for 711 Mass. Ave)",
+   "status": "present",
+   "quote": "guests: jaime rheault (haley ward for 711 mass. ave)"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "not stated",
+   "quote": "the dpw director (bill bernard) reviewed them."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission members agreed to keep Zoom for the 6/28 meeting; John favoured Zoom for a little longer.",
+   "quote": "dave and mike agreed to stay with zoom for the 6/28 meeting."
+  },
+  {
+   "decision": "Dave suggested inviting the new DPW Director to the next meeting to discuss Fiscal 2023 Maintenance Plan projects; Barb will add it to the agenda.",
+   "quote": "dave suggested having the new dpw director at the next meeting to discuss the maintenance plan projects for fiscal 2023 and barb will add it to the agenda."
+  },
+  {
+   "decision": "Barb will give a budget update for the end of fiscal year at the next meeting.",
+   "quote": "barb will have a budget update for the end of fiscal year at the next meeting."
+  },
+  {
+   "decision": "Paula will send the annual grease trap renewal letters next month, billing only the non-compliant accounts.",
+   "quote": "paula will be working on sending out the annual renewal letters next month and confirmed that they will just be billing the non-compliant accounts."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Privilege fee assessment, 17 Highland St.",
+   "what_was_recorded": "The Commission assessed a privilege fee for a connection at 17 Highland St., to be sent to the Assessors for billing; the owner has 30 days to pay in full or have it added to the tax bill.",
+   "figures_as_printed": [
+    "$11,551.47",
+    "30 days"
+   ],
+   "quote": "the commission will need to sign off on the assessment of $11,551.47, which"
+  },
+  {
+   "topic": "CTE Contract bond amount",
+   "what_was_recorded": "The Business Manager reported a small change to the CTE Contract bond amount, from a prior figure to a new figure, and the motion described the increase as approximately $1,200.",
+   "figures_as_printed": [
+    "$42,721.72",
+    "$41,053.02",
+    "$1,200"
+   ],
+   "quote": "barb had a small change of the bond amount to $42,721.72, from the prior amount of $41,053.02."
+  },
+  {
+   "topic": "Upland/Eastern/White/Maple extension funding",
+   "what_was_recorded": "The Business Manager and staff discussed applying for SRF funding to reduce the project price; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "barb and paula discussed going to srf funding to try to reduce the price."
+  },
+  {
+   "topic": "Budget status at fiscal year close",
+   "what_was_recorded": "The Business Manager said the budget closes out 7/1 and still looks good; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "barb noted the budget closes out 7/1 and it still looks good."
+  },
+  {
+   "topic": "Capital improvement projects",
+   "what_was_recorded": "Projects going through as Capital Improvements were discussed, including a new water pump and injection pump for the Weld generator; no costs were printed.",
+   "figures_as_printed": [],
+   "quote": "there are a couple projects going through as capital improvements- weld generator"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "candlelight vigil thanks",
+   "quote": "dave thanked everyone who participated in the candlelight vigil on 6/10 for"
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "congratulating the new chair",
+   "quote": "dave congratulated john on his first meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment- dave thanked everyone who participated in the candlelight vigil on 6/10",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements (new officers)",
+   "resolution": "no action",
+   "quote": "announcements - barb noted this was the first meeting for the new officers",
+   "tags": [
+    "officers"
+   ]
+  },
+  {
+   "topic": "711 Mass Ave project plan review",
+   "resolution": "approved",
+   "quote": "john asked for a motion to accept them.",
+   "tags": [
+    "711 Mass Ave",
+    "plan review",
+    "flows to Leominster"
+   ]
+  },
+  {
+   "topic": "Privilege fee assessment, 17 Highland St.",
+   "resolution": "approved",
+   "quote": "privilege fee assessment 17 highland st.-barb stated that this is for a connection",
+   "tags": [
+    "privilege fee",
+    "assessment"
+   ]
+  },
+  {
+   "topic": "Upland/Eastern/White/Maple extension project mailing",
+   "resolution": "no action",
+   "quote": "upland/eastern/white/maple extension project mailing- barb reported 64 letters went out on 6/1",
+   "tags": [
+    "extension project",
+    "residents",
+    "SRF funding"
+   ]
+  },
+  {
+   "topic": "Meetings format (Zoom)",
+   "resolution": "agreed to stay with Zoom for 6/28",
+   "quote": "meetings format- 6/28 - john said he would prefer zoom meetings for a little longer.",
+   "tags": [
+    "meeting format",
+    "Zoom"
+   ]
+  },
+  {
+   "topic": "Minutes for 5/31/22",
+   "resolution": "approved",
+   "quote": "to accept the minutes for 5/31/22.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: CTE Contract",
+   "resolution": "approved",
+   "quote": "business manager report - cte contract- barb had a small change of the bond amount",
+   "tags": [
+    "CTE contract",
+    "bond"
+   ]
+  },
+  {
+   "topic": "I Forno project status (permanent detached structure)",
+   "resolution": "no action",
+   "quote": "i forno project status (permanent detached structure)- dave reported that he watched the 6/13 public hearing",
+   "tags": [
+    "I Forno",
+    "seating",
+    "parking",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Tour of pump stations",
+   "resolution": "noted",
+   "quote": "tour of pump stations- barb noted al packard will give a tour of 2 stations on 6/15 at 8:30am",
+   "tags": [
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Grease trap program status",
+   "resolution": "noted",
+   "quote": "grease trap program status- barb reported everyone is on schedule for external pump outs",
+   "tags": [
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "quote": "public comment - dave congratulated john on his first meeting.",
+   "tags": [
+    "budget",
+    "capital improvements",
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "june 28, 2022 @ 6pm - regular meeting, remote participation via zoom.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "quote": "to adjourn at 6:42 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Full-size plans for 711 Mass. Ave. project (project plan reviews)",
+   "where": "text",
+   "quote": "john reported they received the full-size plans and the dpw director (bill bernard) reviewed them."
+  },
+  {
+   "name": "Graves Review (711 Mass. Ave. plan review)",
+   "where": "text",
+   "quote": "barb replied bill approved the graves review and rob oliva's past comments."
+  },
+  {
+   "name": "Curb cut permit application to Mass Highway (711 Mass. Ave.)",
+   "where": "text",
+   "quote": "they have applied to mass highway for the curb cut permit"
+  },
+  {
+   "name": "Upland/Eastern/White/Maple extension project letters (64 letters sent 6/1)",
+   "where": "text",
+   "quote": "barb reported 64 letters went out on 6/1 and they have"
+  },
+  {
+   "name": "CTE Contract (bond amount)",
+   "where": "text",
+   "quote": "to approve the cte contract with an increase of approximately $1,200, to the bond amount of $42,721.72"
+  },
+  {
+   "name": "Minutes of 5/31/22",
+   "where": "text",
+   "quote": "to accept the minutes for 5/31/22."
+  },
+  {
+   "name": "Maintenance Plan projects for Fiscal 2023",
+   "where": "text",
+   "quote": "to discuss the maintenance plan projects for fiscal 2023"
+  },
+  {
+   "name": "Annual grease trap renewal letters",
+   "where": "text",
+   "quote": "paula will be working on sending out the annual renewal letters next month"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "711 Mass Ave",
+  "privilege fee",
+  "17 Highland St",
+  "CTE contract",
+  "extension project",
+  "meeting format",
+  "grease traps",
+  "pump stations",
+  "capital improvements",
+  "officers"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

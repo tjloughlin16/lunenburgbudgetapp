@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2022-02-24",
  "docid": "2911",
@@ -12,56 +12,350 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the January 20, 2022 meeting",
+   "motion": "Accept and approve the minutes of the January 20, 2022 meeting.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "linda mcdonald made a motion to accept and approve the minutes of the january 20, 2022 meeting. deborah christen seconded, with all in favor the minutes were accepted and approved by a 3 to 0 vote."
+   "quote": "deborah christen seconded, with all in favor the minutes were accepted and approved by a 3 to 0 vote."
   },
   {
-   "motion": "Accept and approve the FYE 12/31/2021 financial report",
+   "motion": "Accept and approve the FYE 12/31/2021 financial report as presented by Sue Honeycutt.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "linda mcdonald moved to accept and approve t he fye 12/30/2021 financial report as presented by sue honeycutt; deborah christen seconded. with roll call vote of linda mcdonald -yes, wayne caron-yes, deborah christen-yes; the motion was passed with 3 in favor; 0 opposed",
-   "quote_taken_from_text": true
+   "outcome": "passed, 3 in favor; 0 opposed",
+   "procedural": false,
+   "quote": "with roll call vote of linda mcdonald -yes, wayne caron-yes, deborah christen-yes; the motion was passed with 3 in favor; 0 opposed."
   },
   {
-   "motion": "Accept the January 31, 2022 financial report",
+   "motion": "Accept the January 31, 2022 financial report as presented.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Wayne Caron",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "linda mcdonald moved to accept the january 31, 2022 financial report as presented . wayne caron seconded and the january 2022 financial report was accepted with all in favor."
+   "procedural": false,
+   "quote": "wayne caron seconded and the january 2022 financial report was accepted with all in favor."
   },
   {
-   "motion": "Approve and certify the FY2021 year-end certifications (Resolution 2022-2)",
+   "motion": "Approve and certify the FY2021 year-end certifications (Resolution 2022-2).",
    "moved_by": "Wayne Caron",
    "seconded_by": "Linda McDonald",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion to approve and certify the fy2021 year -end certifications made by wayne caron; linda mcdonald seconded. roll call vote was linda mcdonald -yes, wayne caron -yes, deborah christen-yes with the motion passed with 3; 0 opposed."
+   "procedural": false,
+   "quote": "motion to approve and certify the fy2021 year -end certifications made by wayne caron; linda mcdonald seconded."
   },
   {
-   "motion": "Authorize signing the DHCD CFA 5001 Amendment #11 contract (Resolution 2022-3)",
+   "motion": "Authorize signing the standard contract amendment form (Resolution 2022-3, DHCD CFA 5001 Amendment #11, FY2025 Formula Funding Award).",
    "moved_by": "Linda McDonald",
    "seconded_by": "Wayne Caron",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "linda mcdonald moved to authorize signing the standard contract amendment form. wayne caron seconded and upon roll call vote of linda mcdonald -aye, wayne caron-aye, deborah christen-aye; motion passed with 3 in favor; 0 opposed."
+   "outcome": "passed, 3 in favor; 0 opposed",
+   "procedural": false,
+   "quote": "wayne caron seconded and upon roll call vote of linda mcdonald -aye, wayne caron-aye, deborah christen-aye; motion passed with 3 in favor; 0 opposed."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:25 p.m.",
    "moved_by": "Wayne Caron",
    "seconded_by": "Linda McDonald",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": true,
    "quote": "wayne caron made a motion to adjourn the meeting at 2:25 p.m.; linda mcdonald seconded. with all in favor the meeting adjourned."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded and clearly stated in the minutes.",
- "cost_usd": 0.1068105
+ "note": "Minutes are the authority's own, remote meeting. The 2021 financial report is headed 12/31/2021 but the motion text prints 'FYE 12/30/2021'; recorded as printed in the motion's sense only. Denise Ivaldi is 'Recording Secretary' in the header and 'Administrative Assistant' in the text. Item 9, Board Commissioners' Comments, is printed with no content. No dollar figure is printed for the Compliance Reserves request. Votes are from the minutes text only; no separate roll-call tallies beyond those quoted.",
+ "cost_usd": 0.01884578,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "linda mcdonald-present, wayne caron -present, deborah christen -present, catherine clark -absent."
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "linda mcdonald-present, wayne caron -present, deborah christen -present, catherine clark -absent."
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "linda mcdonald-present, wayne caron -present, deborah christen -present, catherine clark -absent."
+  },
+  {
+   "name": "Catherine Clark",
+   "role": "Assistant Treasurer",
+   "status": "absent",
+   "quote": "linda mcdonald-present, wayne caron -present, deborah christen -present, catherine clark -absent."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie, sue honeycutt/fenton & ewald and denise ivaldi, administrative assistant."
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie, sue honeycutt/fenton & ewald and denise ivaldi, administrative assistant."
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "Fenton & Ewald",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie, sue honeycutt/fenton & ewald and denise ivaldi, administrative assistant."
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie, sue honeycutt/fenton & ewald and denise ivaldi, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Executive Director to keep an eye on contract costs, following the high January spending.",
+   "quote": "mr. gold noted they will keep an eye on contract costs."
+  },
+  {
+   "decision": "Next regular meeting scheduled for March 17, 2022.",
+   "quote": "next meeting scheduled for march 17, 2022."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FYE 12/31/2021 year-end result",
+   "what_was_recorded": "The year ended with a net income surplus before non-routine items and including subsidy.",
+   "figures_as_printed": [
+    "$37,697"
+   ],
+   "quote": "we ended the year with a net income surplus of $37,697 before non-routine and including subsidy."
+  },
+  {
+   "topic": "Non-routine expenses in 2021",
+   "what_was_recorded": "Non-routine expenses were close to $60,000, including $39,995 of expenses and $19,715 for a truck/plow, appliances and an on-site camera.",
+   "figures_as_printed": [
+    "almost $60,000",
+    "$39,995",
+    "$19,715"
+   ],
+   "quote": "there were expenses of $39,995 with another $19,715 for a truck/plow purchased from leominster, appliances, and on -site camera."
+  },
+  {
+   "topic": "Reserves draw for non-routine costs",
+   "what_was_recorded": "The negative result from non-routine costs came from Reserves; some costs were covered by State COVID funds.",
+   "figures_as_printed": [
+    "$22,014"
+   ],
+   "quote": "the negative $22,014 came from our reserves."
+  },
+  {
+   "topic": "Reserve level against DHCD minimum",
+   "what_was_recorded": "Reserves stood at a percentage of the DHCD minimum, which is 35%, with no subsidy if over 100%.",
+   "figures_as_printed": [
+    "$128,583",
+    "86.15%",
+    "35%",
+    "100%"
+   ],
+   "quote": "reserves are at $128,583 (86.15%); minimum required by dhcd of 35% with no subsidy if we go over 100%."
+  },
+  {
+   "topic": "January 2022 surplus",
+   "what_was_recorded": "The January 2022 monthly report showed a surplus, with contract costs the significant item.",
+   "figures_as_printed": [
+    "$4,047"
+   ],
+   "quote": "we are at a surplus of $4,047 so we are moving in the right direction."
+  },
+  {
+   "topic": "Contract costs, January 2022",
+   "what_was_recorded": "Contract costs were the only significant item; spending in January was high.",
+   "figures_as_printed": [],
+   "quote": "the only significant item is contract costs; we spent a lot in january."
+  },
+  {
+   "topic": "DHCD funding for asbestos abatement at Community Room Generator",
+   "what_was_recorded": "The authority is seeking DHCD Compliance Reserves funding so it does not use its Formula Funding.",
+   "figures_as_printed": [],
+   "quote": "we are seeking additional funding from dhcd using their compliance reserves to help pay"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reserves covering the negative result from non-routine costs in 2021",
+   "amount_as_printed": "$22,014",
+   "outcome": "Reported as drawn from Reserves; no vote recorded",
+   "quote": "the negative $22,014 came from our reserves."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "A resident",
+   "stated_role": "resident",
+   "topic": "Robo call system, maintenance staff, and an unresolved item",
+   "quote": "she wanted to congratulate moe and cathy on the robo call system; it is very useful for anything tenants need to know."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened 2:01 p.m.",
+   "tags": [
+    "procedure",
+    "quorum"
+   ],
+   "quote": "vice chair deborah christen asked for a roll call of members present"
+  },
+  {
+   "topic": "Opportunity for public comment",
+   "resolution": "received; resident comments on Robo Call and maintenance",
+   "tags": [
+    "public comment",
+    "tenants"
+   ],
+   "quote": "opportunity for public comment - a resident had a few comments for the board:"
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "received; year-end financials taken up next",
+   "tags": [
+    "staff report",
+    "DHCD"
+   ],
+   "quote": "welcome wayne caron to the board. hopefully next month we will meet in person."
+  },
+  {
+   "topic": "Financial report, year-end 2021 and January 2022",
+   "resolution": "year-end and January 2022 reports accepted",
+   "tags": [
+    "finance",
+    "reserves",
+    "year-end"
+   ],
+   "quote": "financial report - 12/31/2021 year-end and january 2022 reports"
+  },
+  {
+   "topic": "Administration: modernization and work orders",
+   "resolution": "reports received; no vote recorded",
+   "tags": [
+    "modernization",
+    "work orders",
+    "occupancy"
+   ],
+   "quote": "modernization/work order report - adam gautie"
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "tags": [],
+   "quote": "unfinished business - none"
+  },
+  {
+   "topic": "New business: Resolutions 2022-2 and 2022-3",
+   "resolution": "both resolutions approved, 3-0",
+   "tags": [
+    "resolutions",
+    "DHCD",
+    "year-end certification"
+   ],
+   "quote": "resolution 2022-2 approval and execution of fy2021 financial year-end certification."
+  },
+  {
+   "topic": "Other correspondence from DHCD",
+   "resolution": "reviewed by the Executive Director; no action recorded",
+   "tags": [
+    "DHCD",
+    "COVID-19",
+    "fair housing"
+   ],
+   "quote": "other correspondence - the executive director reviewed"
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "tags": [],
+   "quote": "resident participation - none requested"
+  },
+  {
+   "topic": "Motion to adjourn",
+   "resolution": "adjourned at 2:25 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "wayne caron made a motion to adjourn the meeting at 2:25 p.m.; linda mcdonald seconded."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DHCD PHN 2022-01 COVID-19 Omicron Variant and State-Aided Public Housing",
+   "where": "list",
+   "quote": "dhcd phn 2022-01 covid-19 omicron variant and state-aided public housing"
+  },
+  {
+   "name": "DHCD PHN 2022-02 Local Housing Authority Executive Director Salary and Qualifications Schedule",
+   "where": "list",
+   "quote": "dhcd phn 2022 -02 local housing authority executive director salary and qualifications schedule",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "DHCD PHN 2022-03 Fair Housing Marketing Plan",
+   "where": "list",
+   "quote": "dhcd phn 2022-03 fair housing marketing plan"
+  },
+  {
+   "name": "DHCD Letter, Budget Approval FYE 12/31/2022",
+   "where": "text",
+   "quote": "dhcd letter, budget approval fye 12/31/2022"
+  },
+  {
+   "name": "Resolution 2022-2 Approval and Execution of FY2021 Financial Year-End Certification",
+   "where": "text",
+   "quote": "resolution 2022-2 approval and execution of fy2021 financial year-end certification."
+  },
+  {
+   "name": "Resolution 2022-3 Approval of DHCD CFA 5001 Amendment #11, FY2025 Formula Funding Award",
+   "where": "text",
+   "quote": "resolution 2022 -3 approval of dhcd cfa 5001 amendment #11, fy2025 formula funding award."
+  },
+  {
+   "name": "Modernization/Work Order Report (Adam Gautie)",
+   "where": "text",
+   "quote": "modernization/work order report - adam gautie"
+  },
+  {
+   "name": "State-Aided Housing Report (Ben Gold)",
+   "where": "text",
+   "quote": "state-aided housing report - ben gold"
+  },
+  {
+   "name": "12/31/2021 year-end financial report (Sue Honeycutt, Fenton & Ewald)",
+   "where": "text",
+   "quote": "sue honeycutt, fenton & ewald, presented and reviewed the 12/31/2021 year-end financial report."
+  },
+  {
+   "name": "January 2022 monthly financial report",
+   "where": "text",
+   "quote": "sue honeycutt next reviewed the january 2022 monthly financial report with the board."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "year-end financials",
+  "reserves",
+  "DHCD",
+  "resolutions",
+  "public comment",
+  "remote meeting",
+  "contract costs",
+  "modernization"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence - the executive director reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

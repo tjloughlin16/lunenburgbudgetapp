@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2022-03-17",
  "docid": "2912",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the February 24, 2022 meeting",
+   "motion": "Accept and approve the minutes of the February 24, 2022 meeting.",
    "moved_by": "Wayne Caron",
    "seconded_by": "Deborah Christen",
    "outcome": "passed 3-0",
@@ -20,15 +20,15 @@
    "quote": "wayne caron made a motion to accept and approve the minutes of the february 24, 2022 meeting. deborah christen seconded, with all in favor the minutes were accepted and approved by a 3 to 0 vote."
   },
   {
-   "motion": "Accept and approve the February 2022 financial report as presented",
+   "motion": "Accept and approve the February 2022 financial report as presented.",
    "moved_by": "Wayne Caron",
    "seconded_by": "Catherine Clark",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "wayne caron moved to accept and approve the february 2022 financial report as presented; catherine clark seconded and the february 2022 financial report was accepted with all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:38 p.m.",
    "moved_by": "Catherine Clark",
    "seconded_by": "Wayne Caron",
    "outcome": "passed",
@@ -37,6 +37,266 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0773905
+ "note": "Text covers pages 1 and 2 of the minutes, both readable; no scan. Three motions recorded, each with a result. The minutes name no dollar-voted items. Public comment recorded as none. The Modernization/Work Order Report and State-Aided Housing Report are referenced in the text but not set out as attachments.",
+ "cost_usd": 0.01623058,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah christen-present, catherine clark-present, wayne caron-present, linda mcdonald-absent."
+  },
+  {
+   "name": "Catherine Clark",
+   "role": "Assistant Treasurer",
+   "status": "present",
+   "quote": "deborah christen-present, catherine clark-present, wayne caron-present, linda mcdonald-absent."
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "deborah christen-present, catherine clark-present, wayne caron-present, linda mcdonald-absent."
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Treasurer",
+   "status": "absent",
+   "quote": "deborah christen-present, catherine clark-present, wayne caron-present, linda mcdonald-absent."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie and denise ivaldi, administrative assistant/recording secretary."
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie and denise ivaldi, administrative assistant/recording secretary."
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold, assistant executive director adam gautie and denise ivaldi, administrative assistant/recording secretary."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves reported at a healthy percentage in the February 2022 financial report.",
+   "quote": "reserves are at a healthy 68.4%.",
+   "figures_as_printed": [
+    "68.4%"
+   ]
+  },
+  {
+   "topic": "Rents",
+   "what_was_recorded": "Rents reported two months into the year as running ahead of budget.",
+   "quote": "two months in, everything looks good with rents at $3,000 to the good.",
+   "figures_as_printed": [
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "Ordinary maintenance",
+   "what_was_recorded": "Ordinary maintenance reported over budget for February 2022.",
+   "quote": "ordinary maintenance is over by $7,791.",
+   "figures_as_printed": [
+    "$7,791"
+   ]
+  },
+  {
+   "topic": "Maintenance",
+   "what_was_recorded": "Maintenance reported over budget for February 2022.",
+   "quote": "maintenance over by $1,182.",
+   "figures_as_printed": [
+    "$1,182"
+   ]
+  },
+  {
+   "topic": "Utilities",
+   "what_was_recorded": "Gas utility costs reported as a little high; no dollar figure printed.",
+   "quote": "utilities show gas a little high.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Construction costs",
+   "what_was_recorded": "Construction costs higher due to a snow contract, described as a one-time charge; no dollar figure printed.",
+   "quote": "construction costs higher due to snow contract; no concern as a one -time charge.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Non-routine maintenance",
+   "what_was_recorded": "Non-routine/extraordinary maintenance reported over for tree removal; no dollar figure printed.",
+   "quote": "non-routine/extraordinary maintenance over for tree removal.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Community Room Generator asbestos abatement",
+   "what_was_recorded": "Asbestos found in joint compound; abatement will cost more money; no dollar figure printed.",
+   "quote": "asbestos in joint compound, have to do abatement which will cost more money.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "called to order; quorum declared present",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 2:08 p.m.",
+   "tags": [
+    "procedure",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Approval of February 24, 2022 minutes",
+   "resolution": "approved 3-0",
+   "quote": "wayne caron made a motion to accept and approve the minutes of the february 24, 2022 meeting. deborah christen seconded, with all in favor the minutes were accepted and approved by a 3 to 0 vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "opportunity for public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "received, no action",
+   "quote": "we are back to in -person meetings.",
+   "tags": [
+    "COVID",
+    "PMR",
+    "legislative day",
+    "conference"
+   ]
+  },
+  {
+   "topic": "Financial Report, February 2022",
+   "resolution": "accepted",
+   "quote": "wayne caron moved to accept and approve the february 2022 financial report as presented; catherine clark seconded and the february 2022 financial report was accepted with all in favor.",
+   "tags": [
+    "finance",
+    "reserves",
+    "maintenance",
+    "rents"
+   ]
+  },
+  {
+   "topic": "Administration: modernization and work orders",
+   "resolution": "received, no action",
+   "quote": "a. modernization/work order report - adam gautie",
+   "tags": [
+    "modernization",
+    "work orders",
+    "DHCD",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "received, no action",
+   "quote": "we received nine standard applications in february; six elderly/young disabled and three family.",
+   "tags": [
+    "waiting list",
+    "applications",
+    "occupancy"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "none",
+   "quote": "unfinished business - none",
+   "tags": [
+    "none"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "none",
+   "quote": "6. new business - none",
+   "tags": [
+    "none"
+   ]
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "reviewed, no action",
+   "quote": "7. other correspondence - the executive director reviewed",
+   "tags": [
+    "DHCD",
+    "guidance",
+    "rent determinations"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 2:38 p.m.",
+   "quote": "catherine clark made a motion to adjourn the meeting at 2:38 p.m.; wayne caron seconded. with all in favor the meeting adjourned.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DHCD PHN 2022 -04 Guidance on Income Exclusions from Rent Determinations in State - Aided Public Housing",
+   "where": "list",
+   "quote": "dhcd phn 2022 -04 guidance on income exclusions from rent determinations in state - aided public housing"
+  },
+  {
+   "name": "DHCD PHN 2022-05 Guidance to LTO Officers who also serve as Housing Authority Board Members and Tenant Board Members",
+   "where": "list",
+   "quote": "dhcd phn 2022-05 guidance to lto officers who also serve as housing authority board members and tenant board members"
+  },
+  {
+   "name": "Modernization/Work Order Report",
+   "where": "text",
+   "quote": "a. modernization/work order report - adam gautie"
+  },
+  {
+   "name": "State-Aided Housing Report",
+   "where": "text",
+   "quote": "b. state-aided housing report - ben gold"
+  },
+  {
+   "name": "Listing of work orders called in last month",
+   "where": "text",
+   "quote": "also included is the listing of work orders called in last month."
+  },
+  {
+   "name": "Financial Report – February 2022",
+   "where": "text",
+   "quote": "3. financial report - february 2022"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "minutes",
+  "financial report",
+  "maintenance",
+  "state-aided housing",
+  "waiting list",
+  "DHCD",
+  "COVID",
+  "tree removal",
+  "asbestos"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence - the executive director reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

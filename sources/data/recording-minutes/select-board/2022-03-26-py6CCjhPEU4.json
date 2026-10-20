@@ -1,0 +1,286 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board - Site Flat Hill",
+ "meeting_date": "2022-03-26",
+ "video_id": "py6CCjhPEU4",
+ "video_url": "https://www.youtube.com/watch?v=py6CCjhPEU4",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-03-26-py6CCjhPEU4.json",
+  "sha256": "f0c86c30511e142af5fa55689f0f04a8ca55ad01465626edd541f784e8ce34ca",
+  "caption_lines": 169,
+  "segments": 1640
+ },
+ "recording": {
+  "duration_s": 3546,
+  "duration": "0:59",
+  "spoken_chars": 48667,
+  "words_approx": 8111
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03262022-5320",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-03-26-agenda-5320.txt",
+   "path": "sources/meetings/select-board/2022-03-26-agenda-5320.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T19:50:11Z",
+  "cost_usd": 0.3301257
+ },
+ "minutes": {
+  "headline": "Select Board held a site visit on Flat Hill Road drainage; no vote, engineer will review the 1990s plans next.",
+  "summary": "The Select Board met on site at Flat Hill Road and Cortland Circle to see flooding and drainage problems firsthand. Residents described decades of water issues, and the town's consulting engineer explained that very high groundwater limits stormwater fixes along the road shoulders. The engineer will obtain and review the original development drainage plans and precipitation data before proposing a fix; nothing was voted.",
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "selectmen",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr marchetti",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Matt Allison",
+    "role": "member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 207,
+    "topic": "Resident and planning board member describes history of flooding since the condo development began in the 1990s, including basin changes and failed fixes.",
+    "speaker_as_heard": "matt allison"
+   },
+   {
+    "t": 496,
+    "topic": "Resident at 49 Cortland Circle describes flooding since 2005, landscaping drains and the septic system changing flow.",
+    "speaker_as_heard": "eric holt"
+   },
+   {
+    "t": 640,
+    "topic": "Residents at 268 describe water coming from behind their property and basement flooding.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 682,
+    "topic": "Resident worried that piping water down to Flat Hill and Beaver Brook would worsen conditions on Page Street culverts and high water table.",
+    "speaker_as_heard": "chris menard 672 page street"
+   },
+   {
+    "t": 848,
+    "topic": "Resident says sump pump runs almost constantly and water level has risen since 2004.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 972,
+    "topic": "Resident with private pond concerned about town directing water to the farm and notification of abutters.",
+    "speaker_as_heard": "john laundry 668 page street"
+   },
+   {
+    "t": 1252,
+    "topic": "Resident notes road repaved in 2018 has a long longitudinal crack where water enters and exits.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 1543,
+    "topic": "Resident concerned about water toward neighbors' houses and a bus stop icing in winter.",
+    "stated_role": "resident"
+   }
+  ],
+  "tags": [
+   "facilities",
+   "planning-and-zoning",
+   "public-comment",
+   "roads-and-dpw",
+   "water-sewer"
+  ],
+  "votes": [],
+  "budget_items": [
+   {
+    "t": 124,
+    "topic": "Stormwater BMPs on Flat Hill Road shoulders",
+    "what_was_said": "The engineer said the effort and cost of installing stormwater practices in the shoulders would far outweigh the benefit given high groundwater.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2331,
+    "topic": "Cost of roadside ponds / drainage fix",
+    "what_was_said": "The engineer said roadside ponds would not appease anyone and would cost the town a lot of money.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 82,
+    "topic": "Survey of Flat Hill Road",
+    "what_was_said": "The DPW director authorized a survey of the road to Beaver Brook before any design work.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2025,
+    "decision": "The engineer will obtain electronic copies of the original development drainage plans and review them, along with precipitation data, before recommending a fix."
+   },
+   {
+    "t": 2433,
+    "decision": "No further survey is needed now; further investigation of the plans and groundwater is the next step."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 207,
+    "topic": "Engineer's background on drainage study, survey and test pits",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 207,
+    "t_end": 1012,
+    "topic": "Residents describe flooding history and impacts",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 1012,
+    "t_end": 2000,
+    "topic": "Walking tour of the site, water sources and basin",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2000,
+    "t_end": 2500,
+    "topic": "Engineer's assessment, next steps and review of plans",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2500,
+    "t_end": 3544,
+    "topic": "Inspection of detention basin and outlet; groundwater and maintenance discussion",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "water-sewer"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Meeting date in captions begins garbled ('806. 26.'); several speakers unidentified.",
+   "Stretches around 1206-1440 and 3432-3544 garbled or low-audio."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "documents_mentioned": [
+   {
+    "t": 1736,
+    "name_as_heard": "pre-development drainage plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "we've got the pre-development um drainage plane that shows the two areas there's seven catchment areas on it",
+    "shown": true
+   },
+   {
+    "t": 2025,
+    "name_as_heard": "original development plans (electronic copies)",
+    "kind": "plan or drawing",
+    "words_as_heard": "adam says he's got electronic copies available",
+    "shown": false
+   },
+   {
+    "t": 1299,
+    "name_as_heard": "aerial photo from the 1990s",
+    "kind": "other",
+    "words_as_heard": "i'll show you on my ipad i've got an aerial photo from the early mid 90s",
+    "shown": true
+   },
+   {
+    "t": 2784,
+    "name_as_heard": "documentation by Ross on basin enlargement",
+    "kind": "report",
+    "words_as_heard": "this is um documentation by by ross about that",
+    "shown": true
+   },
+   {
+    "t": 2129,
+    "name_as_heard": "Atlas 14 extreme precipitation data",
+    "kind": "report",
+    "words_as_heard": "it's called the atlas 4 14 extreme precipitation data",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "flat-hill-drainage",
+    "title": "Flat Hill drainage",
+    "question": "What would it cost the town to fix the Flat Hill Road and Cortland Circle drainage, and who is responsible for the detention basin?",
+    "t": 2331,
+    "words_as_heard": "it's going to cost a lot of money for the town to do it",
+    "data_in_play": [
+     "survey",
+     "test pits",
+     "groundwater 12 to 18 inches"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board held a site visit on Flat Hill Road and Cortland Circle to see flooding and drainage problems firsthand; no vote was taken.",
+    "t": 1
+   },
+   {
+    "line": "Residents described flooding that they said goes back to the 1990s development, including basement water, constantly running sump pumps and failed earlier fixes.",
+    "t": 207
+   },
+   {
+    "line": "The town's consulting engineer said high groundwater limits stormwater fixes on the road shoulders, and that the cost would far outweigh the benefit.",
+    "t": 124
+   },
+   {
+    "line": "The engineer will get electronic copies of the original development drainage plans and review them with precipitation data before recommending a fix.",
+    "t": 2025
+   },
+   {
+    "line": "No further survey is needed now; investigating the plans and groundwater comes next.",
+    "t": 2433
+   }
+  ],
+  "why_it_matters": [
+   "Neighbors on Flat Hill Road and Cortland Circle have no fix yet, and any drainage work the town later proposes would be a public works cost that could come before voters as a budget item.",
+   "Residents elsewhere along the Beaver Brook and Page Street drainage path raised concern that moving water downstream could worsen conditions for them, so a fix may affect more than the streets visited."
+  ],
+  "watch_next": [
+   "The engineer's review of the original drainage plans and precipitation data, and the recommendation that follows."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T19:50:20Z",
+   "cost_usd": 0.22526770000000002
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-01-20",
  "docid": "3362",
@@ -12,31 +12,417 @@
  },
  "votes": [
   {
-   "motion": "Accept the listed minutes submitted excluding 1/4/22 (1/6/22)",
+   "motion": "Accept the listed minutes submitted, excluding 1/4/22 (1/6/22).",
    "moved_by": "C Sullivan",
    "seconded_by": "A Lockwood",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion by c sullivan, seconded by a lockwood to accept the listed minutes submitted excluding 1/4/22(1/6/22) roll call, c sullivan- aye, a lockwood-aye, d passios-aye, k menard- aye."
+   "quote": "motion by c sullivan, seconded by a lockwood to accept the listed minutes submitted excluding"
   },
   {
-   "motion": "Pass along to Town Manager to our Legislative Delegation for the restroom facility improvement $150,000, the Northfield Park Master Plan and Survey $75,000, and the Marshall Park Survey $25,000",
+   "motion": "Pass along to the Town Manager for the Legislative Delegation: restroom facility improvements -$150.000, Northfield Park Master Plan and Survey $75,000, and Marshall Park Survey $25,000.",
    "moved_by": "C Sullivan",
    "seconded_by": "D Passios",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion made by c sullivan to pass along to town manager to our legislative delegation for the restroom facility improvement -$150.000, the northﬁeld park master plan and survey-$75,000, and the marshall park survey-$25,000 d passios seconded. roll call c sullivan-aye, a lockwood- aye, d passios-aye, k menard- aye."
+   "quote": "motion made by c sullivan to pass along to town manager to our legislative delegation for the restroom"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 10:35.",
    "moved_by": "D Passios",
    "seconded_by": "C Sullivan",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion to adjourn at 10:35 by d passios, seconded by c sullivan, roll call a lockwood-aye, c sullivan-aye, d passios-aye, k menard-aye"
+   "quote": "motion to adjourn at 10:35 by d passios, seconded by c sullivan, roll call a lockwood-aye, c"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0859364
+ "note": "Minutes are a text extraction with no vote-by-vote count beyond the roll calls named in the text. The skate park, WOLA and Marshall Park designs were presented but no design documents are attached to the minutes. D Passios's motion was withdrawn and no vote was taken. Atty Costa and K Ostermier appear only as named in the text; their roles are not printed. The public speaker named \"Corrine\" in item 4 is treated as Corrine Scouten named in item 8; the minutes do not state this directly. The item-8 speaker is named \"Corrine Scouten\" only once. The text carries ligature characters (ﬁ) that were avoided in quotes.",
+ "cost_usd": 0.022987880000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: karin menard, chris sullivan, dave passios, ana lockwood."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: karin menard, chris sullivan, dave passios, ana lockwood."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: karin menard, chris sullivan, dave passios, ana lockwood."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: karin menard, chris sullivan, dave passios, ana lockwood."
+  },
+  {
+   "name": "Rob Thompson",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "also in attendance, rob thompson recreation director"
+  },
+  {
+   "name": "K Ostermier",
+   "role": "presenter (role not stated)",
+   "status": "present",
+   "quote": "two concept designs (option 1 & option 2) were screen shared by k ostermier."
+  },
+  {
+   "name": "Nick Betts",
+   "role": "representing Meridian Associates (civil)",
+   "status": "present",
+   "quote": "nick betts from meridian associates stated he was available to answer any of the civil questions"
+  },
+  {
+   "name": "Atty Costa",
+   "role": "Atty (role not stated)",
+   "status": "not stated",
+   "quote": "atty costa suggested rephrasing in the question of what can be done to ensure the project gets done"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "anthony caiozzo addressed the location of the skatepark shifting and the parking on chestnut"
+  },
+  {
+   "name": "Chris Begley",
+   "role": "public speaker",
+   "status": "present",
+   "quote": "c begley stated that the existing snack shack is run by the little league and asked"
+  },
+  {
+   "name": "RJ Thibeault",
+   "role": "of 19 Whitetail Crossing",
+   "status": "present",
+   "quote": "rj thibeault of 19 whitetail crossing asked about the timeline and logistics"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "of 105 Chestnut St.",
+   "status": "present",
+   "quote": "greg roy of 105 chestnut st. mentioned that he is available to share information regarding the septic design"
+  },
+  {
+   "name": "Amy King",
+   "role": "of 3 Gabe’s Place",
+   "status": "present",
+   "quote": "echoed the statements about the loss of a softball"
+  },
+  {
+   "name": "Corrine Scouten",
+   "role": "public speaker (named as Corrine in item 4)",
+   "status": "present",
+   "quote": "she suggest the skate group have a public comment meeting."
+  },
+  {
+   "name": "Dawn Pavone",
+   "role": "Minutes Secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted dawn pavone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "D Passios's motion that the two designs not be released that evening was withdrawn; no vote was taken on it.",
+   "quote": "d passios withdrew his motion"
+  },
+  {
+   "decision": "Designers to take Design 2 and return with two options from it, with cost estimates, after feedback; no decision on the WOLA design at this meeting.",
+   "quote": "k ostermier answered that they could take design 2 if the commissions wants, they will come back with two options taken just from design 2."
+  },
+  {
+   "decision": "K Menard to send member questions on the skate park to Town Counsel and the Town Manager and take them up at the next meeting.",
+   "quote": "k menard asked the members to send her via email any questions"
+  },
+  {
+   "decision": "K Menard to try to have a revolving account discussed with the Town staff member named Karen Brochu.",
+   "quote": "k menard asked him to try to have a revolving account discussed with karen"
+  },
+  {
+   "decision": "D Passios asked K Menard to have a conversation about Fitzgerald with the CONCOM.",
+   "quote": "d passios asked k menard to have a conversation about fitzgerald with the concom."
+  },
+  {
+   "decision": "No vote on the Marshall Park Survey RFP at this meeting; the timeline was discussed.",
+   "quote": "no vote at this time."
+  },
+  {
+   "decision": "Portable toilets for the parks for the 2023 season to be added as an agenda item for the next meeting.",
+   "quote": "d passios wants to add an agenda item for next meeting is portable toilets for the parks for the 2023 season."
+  },
+  {
+   "decision": "Next meeting set for February 17 at 7pm.",
+   "quote": "next meeting is february 17th at 7pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Legislative funding requests (FY23)",
+   "what_was_recorded": "K Menard listed three potential funding projects for the legislative delegation, with the amounts the commission had in mind.",
+   "figures_as_printed": [
+    "$25, 000",
+    "$50- 75,000",
+    "$100-150,000"
+   ],
+   "quote": "k menard listed the three potential funding projects, marshall park is $25, 000"
+  },
+  {
+   "topic": "Marshall Park bathroom building cost",
+   "what_was_recorded": "D Passios said the Marshall Park bathroom building would cost around the figure printed, and asked for a restroom request.",
+   "figures_as_printed": [
+    "$100,000-150,000"
+   ],
+   "quote": "the bathroom building at marshall park will cost around $100,000-150,000"
+  },
+  {
+   "topic": "Amounts in the legislative funding motion",
+   "what_was_recorded": "The motion to pass the requests to the Town Manager printed three amounts: restroom improvements, Northfield master plan and survey, and Marshall Park survey.",
+   "figures_as_printed": [
+    "-$150.000",
+    "$75,000",
+    "$25,000"
+   ],
+   "quote": "pass along to town manager to our legislative delegation for the restroom facility improvement -$150.000"
+  },
+  {
+   "topic": "Skate park funding",
+   "what_was_recorded": "A Lockwood said she would not support the skate park going forward without full funding; Atty Costa said the project is a private gift, so prevailing wage would not apply. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "unless they have either a hundred percent funding"
+  },
+  {
+   "topic": "WOLA design cost estimates",
+   "what_was_recorded": "Designers said they would return with cost estimates for each option. No figures were printed.",
+   "figures_as_printed": [],
+   "quote": "to the commission and the public in two to three weeks with some cost estimates for each option"
+  },
+  {
+   "topic": "Septic rehab funding",
+   "what_was_recorded": "K Menard said the Board of Health has money for septic rehab, which is why the plan does not connect to town sewer. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the boh has money available for the rehab of the septic"
+  },
+  {
+   "topic": "ARPA funding",
+   "what_was_recorded": "Marshall Park was said to be on the list to be funded under ARPA; a consultant presentation was planned. No figure was printed.",
+   "figures_as_printed": [],
+   "quote": "marshall park is on the list to be funded and the prior list will be mentioned."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Skatepark location and Chestnut St parking",
+   "speaker": "Anthony Caiozzo",
+   "stated_role": "",
+   "quote": "anthony caiozzo addressed the location of the skatepark shifting and the parking on chestnut"
+  },
+  {
+   "topic": "Little League snack shack and batting cages",
+   "speaker": "Chris Begley",
+   "stated_role": "",
+   "quote": "c begley stated that the existing snack shack is run by the little league and asked"
+  },
+  {
+   "topic": "Timeline and logistics for softball fields",
+   "speaker": "RJ Thibeault",
+   "stated_role": "of 19 Whitetail Crossing",
+   "quote": "rj thibeault of 19 whitetail crossing asked about the timeline and logistics"
+  },
+  {
+   "topic": "Septic design and Chestnut St parking",
+   "speaker": "Greg Roy",
+   "stated_role": "of 105 Chestnut St.",
+   "quote": "greg roy of 105 chestnut st. mentioned that he is available to share information regarding the septic design"
+  },
+  {
+   "topic": "Loss of a softball field and Fitzgerald",
+   "speaker": "Amy King",
+   "stated_role": "of 3 Gabe’s Place",
+   "quote": "echoed the statements about the loss of a softball"
+  },
+  {
+   "topic": "Baseball layout, sewer connection and parking",
+   "speaker": "Corrine",
+   "stated_role": "",
+   "quote": "corrine stated she liked the baseball set up on the"
+  },
+  {
+   "topic": "Public comment meeting for the skate park",
+   "speaker": "Corrine Scouten",
+   "stated_role": "",
+   "quote": "she suggest the skate group have a public comment meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "opened via zoom at 7:00pm",
+   "quote": "k menard opened the meeting via zoom at 7:00pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public and board comment",
+   "resolution": "statement by D Passios; no action",
+   "quote": "d passios made the statement that with the review that he has done on the two",
+   "tags": [
+    "Marshall Park",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved, excluding 1/4/22 (1/6/22)",
+   "quote": "motion by c sullivan, seconded by a lockwood to accept the listed minutes submitted excluding",
+   "tags": [
+    "procedure",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "WOLA-2 Marshall Park preliminary designs",
+   "resolution": "feedback taken; no decision; two options to return in two to three weeks",
+   "quote": "k ostermier stated they will take the feedback from the night and per contract will be presenting two options",
+   "tags": [
+    "Marshall Park",
+    "design",
+    "WOLA",
+    "fields",
+    "skatepark",
+    "parking"
+   ]
+  },
+  {
+   "topic": "DPW, Town Manager and Recreation Director updates",
+   "resolution": "update; no action",
+   "quote": "r thompson stated that there was progress on the munis administrative work",
+   "tags": [
+    "beach",
+    "Munis",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "FY23 budget priorities to legislative delegation",
+   "resolution": "approved request, passed 4-0",
+   "quote": "k menard read a request from the town manager to see if the commission has any items to submit",
+   "tags": [
+    "budget",
+    "legislative funding",
+    "Marshall Park",
+    "Northfield"
+   ]
+  },
+  {
+   "topic": "ARPA discussion",
+   "resolution": "update; consultant presentation planned February 1",
+   "quote": "k menard spoke with the town manager about the town hiring a consultant",
+   "tags": [
+    "ARPA",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Skate park construction approval process",
+   "resolution": "discussed; questions to Town Counsel and Town Manager",
+   "quote": "because it is a private project the group would be able to avoid the prevailing wage",
+   "tags": [
+    "skate park",
+    "funding",
+    "process"
+   ]
+  },
+  {
+   "topic": "Marshall Park survey RFP",
+   "resolution": "no vote; timeline discussed",
+   "quote": "no vote at this time.",
+   "tags": [
+    "Marshall Park",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "portable toilets added as a future agenda item; open board seat noted",
+   "quote": "d passios wants to add an agenda item for next meeting is portable toilets for the parks for the 2023 season.",
+   "tags": [
+    "parks",
+    "portable toilets"
+   ]
+  },
+  {
+   "topic": "Next meeting date and agenda",
+   "resolution": "set for February 17 at 7pm",
+   "quote": "next meeting is february 17th at 7pm.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 10:35, passed 4-0",
+   "quote": "motion to adjourn at 10:35 by d passios, seconded by c sullivan, roll call a lockwood-aye, c",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Two Concept designs (Option 1 & Option 2) for Marshall Park (WOLA-2 preliminary designs)",
+   "where": "list",
+   "quote": "two concept designs (option 1 & option 2) were screen shared by k ostermier."
+  },
+  {
+   "name": "Google folder with the preliminary designs",
+   "where": "text",
+   "quote": "k menard gave the link for the viewers at home of a google folder with the preliminary designs"
+  },
+  {
+   "name": "Two proposals distributed to the board for review",
+   "where": "text",
+   "quote": "the two proposals that were distributed to the board for review"
+  },
+  {
+   "name": "Request for Proposal (RFP) for the project",
+   "where": "text",
+   "quote": "the rfp for this project was for 28 acres of land and the design only covers 20 acres"
+  },
+  {
+   "name": "Capital Plan",
+   "where": "text",
+   "quote": "marshall park survey is currently #14 on the capital plan"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "WOLA design",
+  "skate park",
+  "legislative funding",
+  "FY23 budget",
+  "ARPA",
+  "softball and baseball fields",
+  "public comment",
+  "zoom meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "two concept designs (option 1 & option 2) were screen shared"
+ },
+ "dropped_unquoted_by_field": {}
 }

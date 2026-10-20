@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-08-15",
  "docid": "3508",
@@ -12,31 +12,189 @@
  },
  "votes": [
   {
-   "motion": "Accept the HR Director's recommendation and hire the Facilities Director candidate at Grade 16 Step 6",
+   "motion": "Accept the recommendation of the HR Director and hire the candidate for the new Facilities Director role at Grade 16 step 6.",
    "moved_by": "S. Andrews",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation of the hr director and hire the candidate at grade 16 step 6. second: e. arnold roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the recommendation of the hr director and hire the candidate at grade 16 step 6."
   },
   {
-   "motion": "Move forward with the Classification and Compensation Study project plan, acquiring references and exploring budget options",
+   "motion": "Move forward with the classification and compensation study project plan, acquiring references and exploring budget options.",
    "moved_by": "E. Arnold",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by e. arnold to move forward with project plan, acquiring references and exploring budget options. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by e. arnold to move forward with project plan, acquiring references and exploring budget options."
   },
   {
-   "motion": "Adjourn the meeting at 6:45pm",
+   "motion": "Adjourn the meeting at 6:45pm.",
    "moved_by": "S.Andrews",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 6:45pm by s.andrews second: e. arnold roll call vote: all in favor"
+   "quote": "motion by to adjourn meeting at 6:45pm by s.andrews"
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes text is clear and readable. Note: the adjournment motion has unusual phrasing in the original (\"Motion by to adjourn...\") but the intent is unambiguous.",
- "cost_usd": 0.0977665
+ "note": "Votes are recorded only as 'All in Favor' on roll call, with no numeric count, so outcomes are given as 'passed'. The July 25, 2022 minutes were not available for review and no vote approving them is recorded. Public comment was recorded as 'no comments' with no speakers named. W. Bertrand is recorded as opening the meeting; no title is printed for her. The next-meeting proposal has no recorded vote. No documents or exhibits are named.",
+ "cost_usd": 0.01481768,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Erik Arnold",
+   "status": "present",
+   "quote": "erik arnold, susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "status": "present",
+   "quote": "erik arnold, susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "status": "present",
+   "quote": "w. bertrand opened the meeting at 6:33pm with members noted in attendance"
+  },
+  {
+   "name": "Donna Fortune",
+   "status": "present",
+   "quote": "erik arnold, susan andrews, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, heather lemieux, town manager,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, heather lemieux, town manager,"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager,"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "status": "absent",
+   "quote": "absent: joanna bilotta"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee supported the consultant's proposal for the Classification and Compensation Study, without a recorded vote.",
+   "quote": "the outline was reviewed and the committee support ed the proposal."
+  },
+  {
+   "decision": "J. Belliveau will continue to examine the consultant's references.",
+   "quote": "will continue to examine her references."
+  },
+  {
+   "decision": "H. Lemieux and J. Belliveau agreed to explore whether the $9,300 study cost could be funded from existing town accounts; if not, Town Meeting approval would be needed.",
+   "quote": "agreed they would explore the town's budget to see if the $9,300"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Classification and Compensation Study cost",
+   "what_was_recorded": "The study is estimated at $9,300; the officials agreed to check whether existing accounts could fund it, and otherwise Town Meeting approval would be needed.",
+   "figures_as_printed": [
+    "$9,300"
+   ],
+   "quote": "agreed they would explore the town's budget to see if the $9,300"
+  },
+  {
+   "topic": "Facilities Director pay grade",
+   "what_was_recorded": "The recommended hire is at Grade 16 Step 6 for a new Facilities Director role, which the minutes say was approved at Town Meeting; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the recommendation is to offer grade 16 step 6, to support his extensive background."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments recorded",
+   "quote": "there were no comments from committee, nor from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "not approved; July 25, 2022 minutes not available for review",
+   "quote": "minutes of the july 25, 2022 meeting were not available for review.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Facilities Director new hire",
+   "resolution": "approved (hire at Grade 16 step 6)",
+   "quote": "the recommendation is to offer grade 16 step 6, to support his extensive background.",
+   "tags": [
+    "hiring",
+    "facilities director",
+    "pay grade"
+   ]
+  },
+  {
+   "topic": "Classification and Compensation Study",
+   "resolution": "approved to move forward with project plan; references and budget options to be explored",
+   "quote": "there was only one proposal submitted to her from outside consultants.",
+   "tags": [
+    "compensation study",
+    "consultant",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "proposed September 12 at 6:30pm; no vote recorded",
+   "quote": "proposed the next scheduled meeting be september 12th",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no comments recorded",
+   "quote": "there were no comments from committee, nor from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:45pm",
+   "quote": "motion by to adjourn meeting at 6:45pm by s.andrews",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "personnel",
+  "hiring",
+  "facilities director",
+  "compensation study",
+  "HR",
+  "town manager",
+  "sewer",
+  "budget",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

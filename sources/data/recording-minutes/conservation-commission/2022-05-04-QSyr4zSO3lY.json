@@ -1,0 +1,823 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2022-05-04",
+ "video_id": "QSyr4zSO3lY",
+ "video_url": "https://www.youtube.com/watch?v=QSyr4zSO3lY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2022-05-04-QSyr4zSO3lY.json",
+  "sha256": "f6021f9955fabc010cd31bf7806cf1d11e3eeed67ebc981603d428af2e56c21a",
+  "caption_lines": 787,
+  "segments": 7164
+ },
+ "recording": {
+  "duration_s": 16521,
+  "duration": "4:35",
+  "spoken_chars": 196132,
+  "words_approx": 32688
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05042022-6300",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2022-05-04-agenda-6300.txt",
+   "path": "sources/meetings/conservation-commission/2022-05-04-agenda-6300.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05042022-6300",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2022-05-04-minutes-6300.txt",
+   "path": "sources/meetings/conservation-commission/2022-05-04-minutes-6300.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T17:29:10Z",
+  "cost_usd": 0.6307636
+ },
+ "minutes": {
+  "headline": "Commission continued most hearings and split on a Hickory Hills lake deck, which an agent check on habitat left pending.",
+  "summary": "The Conservation Commission heard eleven public hearings, mostly lakefront stairs, landings and docks at Hickory Hills and Sunset Lane, plus a large warehouse proposal and a culvert replacement. It approved a field change and several negative determinations, required six replacement maples at one property, and continued several matters to May 18. A cease work order at a private property stayed in place pending review, and the agent's retirement prompted talk of applicant-funded peer review.",
+  "attendees": [
+   {
+    "name_as_heard": "Bob Pease",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Jeff Viviano",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Katie Childs",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mike Laroche",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jack Rabbit",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Rich Burst/Bursch",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Matt Murrow",
+    "role": "conservation agent/administrator"
+   },
+   {
+    "name_as_heard": "Mary Wilson",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 387,
+    "topic": "Thanked the departing agent for his service to the commission and town.",
+    "stated_role": "resident/consultant"
+   },
+   {
+    "t": 8861,
+    "topic": "Abutter concerned about water flow, liability and the accuracy of property lines near 379 Townsend Harbor Road."
+   },
+   {
+    "t": 10326,
+    "topic": "Abutter said notification named a different lot (17 Watt Street) than 71 Watt Street.",
+    "speaker_as_heard": "susan whalen"
+   },
+   {
+    "t": 12254,
+    "topic": "Asked whether a project could be voted without meeting priority habitat guidelines."
+   },
+   {
+    "t": 13560,
+    "topic": "Supported the neighbor's dock access, noting parking would be arranged off the street."
+   },
+   {
+    "t": 15624,
+    "topic": "Owner asked that matter be earlier on future agendas, and that site visits be by appointment."
+   }
+  ],
+  "tags": [
+   "planning-and-zoning",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 1140,
+    "motion": "Approve the 398 Sunset Lane house footprint change as a field change.",
+    "moved_by": "Mike Laroche",
+    "outcome": "passed (roll call; ayes heard, no dissent heard)",
+    "procedural": false
+   },
+   {
+    "t": 3390,
+    "motion": "Approve plan at 411 Townsend Harbor Road with six replacement maples within 30 feet.",
+    "moved_by": "Jack Rabbit",
+    "outcome": "passed (roll call)",
+    "procedural": false
+   },
+   {
+    "t": 4066,
+    "motion": "Negative determination on the fence at 141 Hemlock Drive.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": false
+   },
+   {
+    "t": 5505,
+    "motion": "Positive determination on the 205 Sunset Lane (Harrison) deck and landing request.",
+    "moved_by": "Jack Rabbit",
+    "outcome": "passed (roll call ayes)",
+    "procedural": false
+   },
+   {
+    "t": 6898,
+    "motion": "Continue the 160 Mass Ave culvert hearing to May 18.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": true
+   },
+   {
+    "t": 7944,
+    "motion": "Continue the 260 Fahlula Road warehouse hearing to May 18.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": true
+   },
+   {
+    "t": 9807,
+    "motion": "Continue the 379 Townsend Harbor Road hearing to May 18.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": true
+   },
+   {
+    "t": 10517,
+    "motion": "Approve the 71 Watt Street notice of intent with a condition that the owner maintain the rain garden.",
+    "moved_by": "Jack Rabbit",
+    "outcome": "passed (roll call ayes)",
+    "procedural": false
+   },
+   {
+    "t": 10728,
+    "motion": "Continue the 411 Goodrich Street hearing to May 18.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": true
+   },
+   {
+    "t": 12192,
+    "motion": "Approve the Nazarenko stairs, landing and dock plan as submitted.",
+    "outcome": "passed (two members voted no; chair stated yes; remaining votes partly audible)",
+    "procedural": false
+   },
+   {
+    "t": 14019,
+    "motion": "Continue the 205 Sunset Lane (Walton) hearing to May 18.",
+    "outcome": "passed (one member abstained; others aye)",
+    "procedural": true
+   },
+   {
+    "t": 14330,
+    "motion": "Approve certificate of compliance for 70 Oak Ridge Road.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": false
+   },
+   {
+    "t": 16086,
+    "motion": "Approve administrator's determination to remove five dead trees at 165 Townsend Harbor Road, without stump removal.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": false
+   },
+   {
+    "t": 16274,
+    "motion": "Extend prior determination at 365 Sunset to remove the remaining rotted tree clump.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": false
+   },
+   {
+    "t": 16440,
+    "motion": "Adjourn.",
+    "outcome": "passed (roll call ayes)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 7944,
+    "topic": "Peer review of warehouse project",
+    "what_was_said": "Applicant's representative said they are willing to fund a peer review of the site during construction, given the agent's retirement.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6733,
+    "topic": "DEP filing fee for culvert project",
+    "what_was_said": "The commission advised sending an image of the cancelled check to DEP so a file number is issued.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 15372,
+    "topic": "Cost of bridge crossing if resized",
+    "what_was_said": "Owner said tearing out the crossing would be very costly.",
+    "figures_as_heard": [
+     "four hundred thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 9888,
+    "decision": "Applicant at 379 Townsend Harbor Road may begin limited front-yard regrading outside the 50-foot zone while the rest is continued."
+   },
+   {
+    "t": 15474,
+    "decision": "Cease work order stays in place at the 430 property; no driveway work until commission reviews plans; site visits by appointment."
+   },
+   {
+    "t": 12355,
+    "decision": "Agent to consult town counsel before the Nazarenko approval is signed."
+   },
+   {
+    "t": 16314,
+    "decision": "Pollinator group may attach flyers to the edges of town kiosks."
+   },
+   {
+    "t": 16376,
+    "decision": "Girl Scouts may donate a bench for conservation land."
+   },
+   {
+    "t": 7860,
+    "decision": "Applicant to be asked about funding peer review during construction because the agent is retiring."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 91,
+    "t_end": 475,
+    "topic": "Opening, roll call, announcements, thanks to volunteers and departing agent",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 499,
+    "t_end": 787,
+    "topic": "Earth Day event report",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 787,
+    "t_end": 1200,
+    "topic": "398 Sunset Lane field change",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1201,
+    "t_end": 3930,
+    "topic": "411 Townsend Harbor Road amendment: wall, tree removal and replanting",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3957,
+    "t_end": 4120,
+    "topic": "141 Hemlock Drive fence request",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 4127,
+    "t_end": 5690,
+    "topic": "205 Sunset Lane (Harrison) deck request",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5694,
+    "t_end": 6950,
+    "topic": "160 Mass Ave culvert replacement",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 6960,
+    "t_end": 8000,
+    "topic": "260 Fahlula Road warehouse",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 8009,
+    "t_end": 9930,
+    "topic": "379 Townsend Harbor Road driveway, yard and garage",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 9929,
+    "t_end": 10580,
+    "topic": "71 Watt Street house driveway",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 10584,
+    "t_end": 10770,
+    "topic": "92 Wilder Road and 411 Goodrich Street tree removal",
+    "resolution": "withdrawn / continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 10768,
+    "t_end": 12420,
+    "topic": "Nazarenko stairs, landing and dock",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 12419,
+    "t_end": 14100,
+    "topic": "205 Sunset Lane (Walton) stairs and dock",
+    "resolution": "continued",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 14102,
+    "t_end": 14400,
+    "topic": "Septic work and certificate of compliance for 70 Oak Ridge Road",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 14391,
+    "t_end": 15720,
+    "topic": "430 cease work order review",
+    "resolution": "no change, review in two weeks",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 15724,
+    "t_end": 16300,
+    "topic": "Administrator's determinations on dead tree removal",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 16300,
+    "t_end": 16500,
+    "topic": "Kiosk flyers, Girl Scout bench, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Several vote counts were only partly audible; individual roll-call responses are not fully captured",
+   "Some speaker identities and names are garbled in the captions"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1940,
+    "about": "Applicant objected to replanting requirements at the lakefront and threatened to leave the wall and trees as they were.",
+    "sides": "applicant against commissioners and the chair",
+    "words_as_heard": "i'm not planting all these trees you guys are telling me",
+    "kind": "public criticism"
+   },
+   {
+    "t": 11824,
+    "about": "Whether the proposed 120 square foot platform is consistent with the regulations and prior treatment of similar lake projects.",
+    "sides": "two members against approval, others in favor",
+    "words_as_heard": "our regulations don't allow this now",
+    "kind": "members disagree"
+   },
+   {
+    "t": 12130,
+    "about": "Applicant and a commissioner clashed over a site visit.",
+    "sides": "applicant against a commissioner",
+    "words_as_heard": "you declined the opportunity",
+    "kind": "public criticism"
+   },
+   {
+    "t": 15372,
+    "about": "Owner under a cease work order pressed to resume work; commissioners refused until review.",
+    "sides": "property owner against two members",
+    "words_as_heard": "i'll go to court",
+    "kind": "public criticism"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 869,
+    "name_as_heard": "overlay plan for 398 Sunset Lane",
+    "kind": "plan or drawing",
+    "words_as_heard": "we've put together an overlay plan that you can see before you",
+    "shown": true
+   },
+   {
+    "t": 1501,
+    "name_as_heard": "planting schedule",
+    "kind": "plan or drawing",
+    "words_as_heard": "there's the planting schedule",
+    "shown": true
+   },
+   {
+    "t": 3265,
+    "name_as_heard": "2019 aerial photo",
+    "kind": "other",
+    "words_as_heard": "this is a 2019 aerial of the property",
+    "shown": true
+   },
+   {
+    "t": 5797,
+    "name_as_heard": "Mackenzie structural plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "a plan from mckenzie engineering",
+    "shown": true
+   },
+   {
+    "t": 7083,
+    "name_as_heard": "previous order of conditions (Tango)",
+    "kind": "application or permit",
+    "words_as_heard": "previous order of conditions that was issued by the commission",
+    "shown": false
+   },
+   {
+    "t": 14247,
+    "name_as_heard": "White as-built plan and engineer's letter",
+    "kind": "plan or drawing",
+    "words_as_heard": "a white as built plan a white engineers letter a white form eight a",
+    "shown": true
+   },
+   {
+    "t": 11392,
+    "name_as_heard": "MESA regulations",
+    "kind": "other",
+    "words_as_heard": "this is the mesa regulations these are the exemptions from review",
+    "shown": true
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Conservation Commission approved a plan for the Nazarenko stairs, landing and dock as submitted, over two no votes, with the agent to consult town counsel before it is signed.",
+    "t": 12192
+   },
+   {
+    "line": "A cease work order at the 430 property stays in place, with no driveway work until the commission reviews plans.",
+    "t": 15474
+   },
+   {
+    "line": "The commission continued the 160 Mass Ave culvert, 260 Fahlula Road warehouse, 379 Townsend Harbor Road and 205 Sunset Lane (Walton) dock matters.",
+    "t": 6960
+   },
+   {
+    "line": "The warehouse applicant's representative said they would consider funding a peer review during construction because the agent is retiring.",
+    "t": 7944
+   },
+   {
+    "line": "The commission approved six replacement maples at 411 Townsend Harbor Road and a field change at 398 Sunset Lane.",
+    "t": 3390
+   }
+  ],
+  "why_it_matters": [
+   "Lakefront stairs and docks at Hickory Hills and Sunset Lane were decided here, and a resident asked whether a project could be voted without meeting priority habitat guidelines, a question the minutes do not show answered.",
+   "With the agent retiring, review of the large warehouse project may rely on an applicant-funded outside reviewer, so who pays for oversight during construction is still undecided."
+  ],
+  "watch_next": [
+   "Continued hearings return on May 18, including the warehouse and culvert matters.",
+   "The commission's review of plans at the 430 property, expected in about two weeks."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T17:29:22Z",
+   "cost_usd": 0.2292657
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05042022-6300",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2022-05-04-minutes-6300.txt",
+   "path": "sources/meetings/conservation-commission/2022-05-04-minutes-6300.pdf"
+  },
+  "official_sha256": "02b63b6f1de8eff828249319fe2509430be3531e85d747d27510c14caeaa8542",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on most shared votes and decisions, and attendee differences are mostly name spellings. The main differences are the 411 Townsend Harbor Road vote (5-1 with a dissent officially, no dissent in ours), the 165 Townsend Harbor Road tree decision (removal in ours, replanting in the official), the Oak Ridge certificate vote that only ours records, and the five continuation votes that only the official records.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 5,
+   "discrepancy": 6,
+   "only_in_ours": 2,
+   "only_in_official": 8
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "398 Sunset Lane field change vote",
+    "ours": "Approve the 398 Sunset Lane house footprint change as a field change. — passed (roll call; ayes heard, no dissent heard)",
+    "official": "a motion by ml was made to approve the filed change. jv seconded and the commission voted unanimously to approve the motion.",
+    "note": "Same motion, same outcome, no dissent in either record.",
+    "t": 1140
+   },
+   {
+    "kind": "discrepancy",
+    "about": "411 Townsend Harbor Road vote count",
+    "ours": "Approve plan at 411 Townsend Harbor Road with six replacement maples within 30 feet. — passed (roll call)",
+    "official": "the motion was approved by a 5 to 1 vote with jv dissenting.",
+    "note": "Official records a 5-1 vote with JV dissenting; ours records no dissent. Also ours puts all six maples within 30 feet, the official splits them three and three. Check the recording around t=3390 for the dissent and the maple placement.",
+    "t": 3390
+   },
+   {
+    "kind": "agree",
+    "about": "141 Hemlock Drive fence negative determination",
+    "ours": "Negative determination on the fence at 141 Hemlock Drive. — passed (roll call ayes)",
+    "official": "a motion was made for a negative determination by rb with a second by cc with a unanimous vote to approve the motion by roll call vote.",
+    "note": "Same determination and outcome.",
+    "t": 4066
+   },
+   {
+    "kind": "agree",
+    "about": "205 Sunset Lane (Harrison) positive determination",
+    "ours": "Positive determination on the 205 Sunset Lane (Harrison) deck and landing request. — passed (roll call ayes)",
+    "official": "a motion was made by rb for a positive determination with a second by jr with a unanimous vote by roll call to approve the motion.",
+    "note": "Same determination and outcome.",
+    "t": 5505
+   },
+   {
+    "kind": "agree",
+    "about": "71 Watt Street approval with maintenance condition",
+    "ours": "Approve the 71 Watt Street notice of intent with a condition that the owner maintain the rain garden. — passed (roll call ayes)",
+    "official": "ml seconded and the commission vote unanimously by roll call vote to approve the motion.",
+    "note": "Same item and unanimous outcome. Ours names a rain garden, the official says perpetual maintenance by the homeowner; consistent but worth a glance at the condition wording.",
+    "t": 10517
+   },
+   {
+    "kind": "agree",
+    "about": "Nazarenko stairs, landing and dock vote",
+    "ours": "Approve the Nazarenko stairs, landing and dock plan as submitted. — passed (two members voted no; chair stated yes; remaining votes partly audible)",
+    "official": "jv moved to issue an order of conditions. cc seconded and the motion was approved by a vote of 3 for (bp, jc and cc).",
+    "note": "Two no votes in ours matches the official 3-2 split; ours says 'as submitted' where the official says an order of conditions.",
+    "t": 12192
+   },
+   {
+    "kind": "discrepancy",
+    "about": "70 Oak Ridge Road certificate of compliance vote",
+    "ours": "Approve certificate of compliance for 70 Oak Ridge Road. — passed (roll call ayes)",
+    "official": "",
+    "note": "Ours records a vote the official minutes do not mention at all. Check the official minutes and the recording at t=14330.",
+    "t": 14330
+   },
+   {
+    "kind": "discrepancy",
+    "about": "165 Townsend Harbor Road tree decision",
+    "ours": "Approve administrator's determination to remove five dead trees at 165 Townsend Harbor Road, without stump removal. — passed (roll call ayes)",
+    "official": "a motion of jr and a second by ml with a unanimous vote to approve by roll call vote",
+    "note": "Ours says remove five dead trees; official says the determination is to replant trees. Check the recording at t=16086 for what was approved (removal, replanting, or both).",
+    "t": 16086
+   },
+   {
+    "kind": "agree",
+    "about": "365 Sunset rotted tree",
+    "ours": "Extend prior determination at 365 Sunset to remove the remaining rotted tree clump. — passed (roll call ayes)",
+    "official": "this was approved by a motion of jr and a second by ml with a unanimous vote to approve by roll call vote.",
+    "note": "Same item and unanimous outcome; the official also mentions one replanted tree, which ours omits.",
+    "t": 16274
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Continuations to May 18 (Maki, Fitchburg Land, Zirkle, Blatt)",
+    "ours": "",
+    "official": "rb moved to continue to may 18 with a second by cc and a unanimous vote to approve",
+    "note": "Official records four unanimous votes to continue hearings to May 18 (160 Massachusetts Ave, 260 Fahlulah Road, 379 Townsend Harbor Road, 411 Goodrich Street); ours records none. Check whether the recording has these motions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "John Welton 205 Sunset Lane continuation, 4-1",
+    "ours": "",
+    "official": "the motion passed by a vote of 4 to 1 ( ml abstaining)",
+    "note": "Official records a 4-1 vote with an abstention; ours has no such vote. Check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bridge crossing cost if resized",
+    "ours": "Cost of bridge crossing if resized: four hundred thousand dollars",
+    "official": "",
+    "note": "The official minutes print no bridge crossing figure; verify the $400,000 against the recording at t=15372, as captions may have misheard it.",
+    "t": 15372
+   },
+   {
+    "kind": "agree",
+    "about": "Zirkle front-yard regrading",
+    "ours": "Applicant at 379 Townsend Harbor Road may begin limited front-yard regrading outside the 50-foot zone while the rest is continued.",
+    "official": "mr zirkle, based on no objections by the commission can start that work.",
+    "note": "Same decision: front yard work outside the 50 foot zone may start.",
+    "t": 9888
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cease/stop work order property",
+    "ours": "Cease work order stays in place at the 430 property; no driveway work until commission reviews plans; site visits by appointment.",
+    "official": "due to a lack of support by a majority of the commission, to lift it, the stop work order remained in place.",
+    "note": "Same decision (order stays), but ours says 430 property and the official says 238 Fire Road. Confirm the address on the recording at t=15474; driveway and appointment details are not in the official.",
+    "t": 15474
+   },
+   {
+    "kind": "agree",
+    "about": "Consult town counsel on Nazarenko",
+    "ours": "Agent to consult town counsel before the Nazarenko approval is signed.",
+    "official": "bp asked mm to speak to town counsel concerning the regulation.",
+    "note": "Same direction to the administrator to consult town counsel.",
+    "t": 12355
+   },
+   {
+    "kind": "agree",
+    "about": "Pollinator flyers at kiosks",
+    "ours": "Pollinator group may attach flyers to the edges of town kiosks.",
+    "official": "bp pollinator habitat wanted to place flyer at the kiosks at the edge of the kiosks. there was no objection by the commission",
+    "note": "Same decision.",
+    "t": 16314
+   },
+   {
+    "kind": "agree",
+    "about": "Girl Scouts bench",
+    "ours": "Girl Scouts may donate a bench for conservation land.",
+    "official": "there was no objection by the commission..",
+    "note": "Same decision.",
+    "t": 16376
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Peer review funding and retiring agent",
+    "ours": "Applicant to be asked about funding peer review during construction because the agent is retiring.",
+    "official": "",
+    "note": "Possibly the third-party inspector discussion for the Fitchburg project, but the official does not mention a retiring agent or an ask to fund peer review.",
+    "t": 7860
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Third-party inspector, Fitchburg Land",
+    "ours": "",
+    "official": "rb asked if the commission could consider potentially hiring a third party inspector.",
+    "note": "Official records the inspector discussion; check whether it is the same item as ours at t=7860."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fitchburg invasive species remediation",
+    "ours": "",
+    "official": "rb requested that that an area of invasive species be remediated and the applicant agreed to do so.",
+    "note": "Decision in the official minutes only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "NHESP check at 205 Sunset Lane",
+    "ours": "",
+    "official": "he will check with the endangered species program",
+    "note": "Action item in the official minutes only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Eaton septic deck removal",
+    "ours": "",
+    "official": "mm noted that it was part of the original order so it is ok to complete.",
+    "note": "Administrator determination in the official minutes only."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "92 Wilder Rd withdrawal",
+    "ours": "",
+    "official": "92 wilder ; mm noted that the applicant has withdrawn.",
+    "note": "Withdrawal appears only in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Bob Pease (chair)",
+    "ours": "Bob Pease (chair)",
+    "official": "bob pease, chair tel: (978) 582-4146",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Katie/Catie Childs",
+    "ours": "Katie Childs (member)",
+    "official": "catie childs jack rabbitt matthew s. marro,",
+    "note": "Spelling of the same member's first name.",
+    "official_reading": "Catie Childs"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Mike Laroche",
+    "ours": "Mike Laroche (member)",
+    "official": "michael larouche richard tremblay, associate",
+    "note": "Same member, name spelled differently.",
+    "official_reading": "Michael Larouche"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Jack Rabbit",
+    "ours": "Jack Rabbit (member)",
+    "official": "jack rabbitt matthew s. marro,",
+    "note": "Spelling only.",
+    "official_reading": "Jack Rabbitt"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Rich Burst/Bursch",
+    "ours": "Rich Burst/Bursch (member)",
+    "official": "richard bursch, vice chair 960 massachusetts ave.",
+    "note": "Same member; official gives vice chair.",
+    "official_reading": "Richard Bursch"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Matt Murrow, conservation agent",
+    "ours": "Matt Murrow (conservation agent/administrator)",
+    "official": "jack rabbitt matthew s. marro,",
+    "note": "Same administrator (MM in the official); name misheard.",
+    "official_reading": "Matthew S. Marro"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Jeff Viviano",
+    "ours": "Jeff Viviano (member)",
+    "official": "jeffrey viviano conservation administrator",
+    "note": "Same member (the official's trailing words are a title line artifact)."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Mary Wilson",
+    "ours": "Mary Wilson (presenter)",
+    "official": "mary wilson made a presentation of the earth day activities from sunday april 24, 2022.",
+    "note": "Same person presenting; official lists her as Associate."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Patricia Adams",
+    "ours": "",
+    "official": "all members present except pa",
+    "note": "Official records PA absent; ours does not mention it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Associate Richard Tremblay",
+    "ours": "",
+    "official": "richard tremblay, associate",
+    "note": "Associate member listed only in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants, abutters and public speakers",
+    "ours": "",
+    "official": "robin jacobs outlined that she had sent a video to the commission and wanted to ask",
+    "note": "Official names many applicants, representatives and public commenters (Jacobs, Walen, Ellowitz, Magurn, Zirkle, Nazarenko, Welton and others); ours lists none."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T17:31:49Z",
+   "cost_usd": 0.2909077
+  }
+ }
+}

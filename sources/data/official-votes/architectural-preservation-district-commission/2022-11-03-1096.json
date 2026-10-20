@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2022-11-03",
  "docid": "1096",
@@ -12,15 +12,173 @@
  },
  "votes": [
   {
-   "motion": "Pass over the APD bylaw revision article at the Special Town Meeting and present a better revision at the Annual Town Meeting in spring 2023",
-   "moved_by": "Dwyer",
-   "seconded_by": "",
-   "outcome": "failed 2-1",
-   "procedural": true,
+   "motion": "Pass over the bylaw article at the Special Town Meeting and present a better revision at the Annual Town Meeting in spring 2023 (Dwyer's proposal).",
+   "moved_by": "Cullen Dwyer",
+   "outcome": "failed (2-to-1 against)",
+   "procedural": false,
    "quote": "after discussion, the apdc voted against the proposal 2-to-1, with dwyer in favor and mcgrath & sculimbrene against."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0803369
+ "note": "Text extraction of a short, clean minutes page; no scan. One recorded vote (the bylaw proposal, 2-to-1). No motion to approve prior minutes or to adjourn is printed: the review of minutes was forestalled, and the close is recorded only as 9:26PM. William Lloyd's absence is not stated outright; the minutes name only three members present. The Ritter Building window figures are as quoted, not verified. Lemieux and Burlingame are named but their attendance is not stated.",
+ "cost_usd": 0.01446121,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "call to order: at 7:30 with mcgrath, dwyer, and sculimbrene present."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "call to order: at 7:30 with mcgrath, dwyer, and sculimbrene present."
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Member",
+   "status": "present",
+   "quote": "call to order: at 7:30 with mcgrath, dwyer, and sculimbrene present."
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "william lloyd, member."
+  },
+  {
+   "name": "Visconti",
+   "role": "Facilities Manager",
+   "status": "present",
+   "quote": "facilities manager visconti was present to share price quotes from contractors"
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager lemieux was interested to know if the apdc would revise its decision regarding refusal of the cta."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "present",
+   "quote": "ana lockwood requested that the apdc meeting be recorded and made available on the internet."
+  },
+  {
+   "name": "Burlingame",
+   "role": "building Commissioner",
+   "status": "not stated",
+   "quote": "building commissioner burlingame had contacted him regarding unsanctioned construction work in the district."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The review of minutes was forestalled until the next meeting.",
+   "quote": "review of minutes: forestalled until next meeting"
+  },
+  {
+   "decision": "The commissioners felt the information presented on the Ritter Building windows was insufficient to change their decision on the CTA refusal; a change would require proof that replacement was needed and restoration not feasible. No motion was made.",
+   "quote": "the commissioners present felt that the information presented was insufficient to make them change their minds."
+  },
+  {
+   "decision": "Dwyer will follow up with Burlingame on enforcement procedures for unsanctioned work in the district (33 Lancaster windows).",
+   "quote": "after discussion, it was decided that dwyer would follow up with burlingame on enforcement procedures."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ritter Building window restoration quote",
+   "what_was_recorded": "Raven's quote for historic restoration of the Ritter Building windows was reported at over $225K.",
+   "figures_as_printed": [
+    "$225K"
+   ],
+   "quote": "the restoration project by raven was quoted at over $225k."
+  },
+  {
+   "topic": "Ritter Building Pella replacement window quote",
+   "what_was_recorded": "Pella replacement windows were quoted at less than $54K, but the quote covered only materials for the windows themselves.",
+   "figures_as_printed": [
+    "$54K"
+   ],
+   "quote": "pella windows quoted less than $54k, but the quote only included materials for the replacement windows themselves."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "",
+   "topic": "Recording the meeting; Ritter Building decision",
+   "quote": "ana lockwood requested that the apdc meeting be recorded and made available on the internet."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening public comment",
+   "resolution": "heard",
+   "tags": [
+    "public comment",
+    "recording",
+    "bylaw"
+   ],
+   "quote": "ana lockwood requested that the apdc meeting be recorded and made available on the internet."
+  },
+  {
+   "topic": "Review of minutes",
+   "resolution": "forestalled to next meeting",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review of minutes: forestalled until next meeting"
+  },
+  {
+   "topic": "Ritter Building renovations (windows)",
+   "resolution": "no change to CTA refusal; no motion",
+   "tags": [
+    "Ritter Building",
+    "windows",
+    "CTA",
+    "cost"
+   ],
+   "quote": "no motion was made to that effect."
+  },
+  {
+   "topic": "Ballot measure to revise APD bylaw",
+   "resolution": "proposal to pass over article failed 2-to-1",
+   "tags": [
+    "bylaw",
+    "Special Town Meeting",
+    "Annual Town Meeting",
+    "Select Board"
+   ],
+   "quote": "dwyer proposed that the apdc pass over the article at the special town meeting and plan to present a better revision at the annual town meeting in the spring of 2023."
+  },
+  {
+   "topic": "Unsanctioned construction at 33 Lancaster",
+   "resolution": "Dwyer to follow up on enforcement",
+   "tags": [
+    "enforcement",
+    "windows",
+    "building permit",
+    "CTA"
+   ],
+   "quote": "windows had been replaced at 33 lancaster without a building permit or cta."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "Ritter Building",
+  "windows",
+  "CTA",
+  "APD bylaw",
+  "Special Town Meeting",
+  "enforcement",
+  "public comment",
+  "Village District"
+ ],
+ "dropped_unquoted_by_field": {}
 }

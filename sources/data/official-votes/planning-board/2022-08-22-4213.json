@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-08-22",
  "docid": "4213",
@@ -12,15 +12,122 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing for 43 Summer Street",
+   "motion": "Close the public hearing for 43 Summer Street.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "m. brenner made motion to close the hearing for 43 summer street, a. reid seconded, roll call vote - a. reid, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye. vote passed 4-0."
+   "quote": "m. brenner made motion to close the hearing for 43 summer street, a. reid seconded, roll call vote - a. reid, aye; m. brenner, aye; e. torgersen, aye; m. allison, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear text, no scan issues. Single vote recorded: motion to close hearing on marijuana facility application.",
- "cost_usd": 0.0866635
+ "note": "Minutes of a continued public hearing. The only motion recorded is to close the hearing (4-0). The minutes record no vote or decision on the site plan approval or permits themselves, so none is recorded here. Erik Torgersen's remote participation is stated under the OML Simple Extension Legislation. Attendance for the applicant's attorney is marked present because he is shown addressing the board (interjecting); the minutes do not say whether he attended in person or remotely. No adjournment motion is recorded; the minutes say only that the hearing was adjourned at 6:20 p.m.",
+ "cost_usd": 0.013736080000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "erik torgersen participated remotely under the oml simple extension legislation"
+  },
+  {
+   "name": "Valerio Romano",
+   "role": "Attorney, representing the applicant",
+   "status": "present",
+   "quote": "the applicant, uma flowers, was represented by attorney valerio romano."
+  },
+  {
+   "name": "Priyanka Patel",
+   "role": "Co-founder of Uma Flowers",
+   "status": "remote",
+   "quote": "also attending remotely were co-founders of uma flowers, priyanka patel and tejal patel"
+  },
+  {
+   "name": "Tejal Patel",
+   "role": "Co-founder of Uma Flowers",
+   "status": "remote",
+   "quote": "also attending remotely were co-founders of uma flowers, priyanka patel and tejal patel"
+  },
+  {
+   "name": "Ian Ainslie",
+   "role": "Project engineer, Meisner Brem Corporation (MBC)",
+   "status": "remote",
+   "quote": "project engineer ian ainslie, meisner brem corporation (mbc) ;"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continued public hearing: site plan approval and permits, 43 Summer Street, adult-use marijuana retail facility (Uma Flowers)",
+   "resolution": "hearing closed; no decision recorded",
+   "quote": "the applicant, uma flowers, was represented by attorney valerio romano.",
+   "tags": [
+    "zoning",
+    "site plan approval",
+    "marijuana facility",
+    "public hearing",
+    "43 Summer Street"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Order of Conditions (issued by the Conservation Commission)",
+   "where": "text",
+   "quote": "an order of conditions had been issued by the conservation commission."
+  },
+  {
+   "name": "Security Plan (approved by the Police Chief)",
+   "where": "text",
+   "quote": "the security plan had been approved by the police chief."
+  },
+  {
+   "name": "Host Community Agreement (signed with the Select Board)",
+   "where": "text",
+   "quote": "had a signed host community agreement with the select board."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "adult-use marijuana",
+  "43 Summer Street",
+  "remote participation",
+  "zoning"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

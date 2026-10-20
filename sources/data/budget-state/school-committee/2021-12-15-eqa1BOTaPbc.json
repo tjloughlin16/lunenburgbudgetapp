@@ -1,0 +1,94 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2021-12-15",
+ "source": {
+  "sha256": "0ba9406e6f65b4502ff06e1c4d743f00107da42c25f4df979abeac43d052dc47",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2021-12-15-eqa1BOTaPbc.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "143 000",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Transportation option one (expand to all with no fee, a bus and a half added) carries an increased cost.",
+    "status": "proposed",
+    "t": 5985,
+    "who": "the business manager"
+   },
+   {
+    "amount_as_heard": "38 475 dollars",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Projected increase for the new transportation contract under no change, already in bargaining assumptions.",
+    "status": "announced",
+    "t": 6152,
+    "who": "the business manager"
+   },
+   {
+    "amount_as_heard": "92 975",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Option two (expand with a fee) projected cost.",
+    "status": "proposed",
+    "t": 6130,
+    "who": "the business manager"
+   },
+   {
+    "amount_as_heard": "38 475 dollars",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Committee voted option three, no change to transportation policy.",
+    "status": "voted",
+    "t": 7718,
+    "who": "the committee"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "transportation expansion",
+    "condition": "if the committee adopts option one or two",
+    "fiscal_year": 2023,
+    "prediction": "Options one and two are not sustainable without drastic cuts, likely staff reductions and expense line reductions.",
+    "scope": "school",
+    "t": 6529,
+    "who": "the business manager"
+   },
+   {
+    "about": "health insurance",
+    "condition": null,
+    "fiscal_year": 2023,
+    "prediction": "Insurance will not decrease next year as it did this year; some increase expected.",
+    "scope": "school",
+    "t": 6592,
+    "who": "the business manager"
+   },
+   {
+    "about": "five-year staffing plan",
+    "condition": "unless grants or other funding become available",
+    "fiscal_year": 2023,
+    "prediction": "Most identified-needs positions cannot be funded through the local budget and are listed in case other funding becomes available.",
+    "scope": "school",
+    "t": 2647,
+    "who": "the business manager and superintendent"
+   }
+  ]
+ },
+ "video_id": "eqa1BOTaPbc",
+ "video_url": "https://www.youtube.com/watch?v=eqa1BOTaPbc",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-17T01:07:50Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

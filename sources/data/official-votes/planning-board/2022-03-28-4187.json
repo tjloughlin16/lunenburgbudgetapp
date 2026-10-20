@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-03-28",
  "docid": "4187",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "approve the scenic road application for 780 Northfield Road as presented",
+   "motion": "Approve the scenic road application for 780 Northfield Road as presented.",
    "moved_by": "M. Allison",
    "seconded_by": "P. Bertram",
-   "outcome": "passed unanimously",
+   "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "m. allison made motion to approve the scenic road application for 780 northfield road as presented, p. bertram seconded, roll call vote - m. brenner, aye; p. bertram, aye; m. allison, aye; e. torgersen, aye; t. cole, aye. passed unanimously."
+   "quote": "m. allison made motion to approve the scenic road application for 780 northfield road as presented, p. bertram seconded, roll call vote"
   },
   {
-   "motion": "approve all minutes listed below",
+   "motion": "Approve all minutes listed below (3/14/22 minutes for five matters).",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously; M. Brenner abstained",
    "procedural": true,
-   "quote": "p. bertram made motion to approve all minutes listed below, m. allison seconded, roll call vote- m. brenner, abstained; p. bertram, aye; m. allison, aye; e. torgersen, aye; t. cole, aye. passed unanimously."
+   "quote": "p. bertram made motion to approve all minutes listed below, m. allison seconded, roll call vote- m. brenner, abstained; p. bertram, aye;"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
@@ -37,6 +37,269 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1276855
+ "note": "Clean text extraction. Only three motions carry recorded votes. Dollar figures are not printed; budget items record money discussed without figures. The 40B discussion produced no vote. Public comment section records a board member's remarks.",
+ "cost_usd": 0.01747438,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) matthew brenner, adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram (arrived 6:05 p.m.) matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) matthew brenner, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "erik torgersen participated remotely under the act relative to extending certain covid-19 measures adopted during the state of emergency."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board reviewed, edited, and endorsed the Decision for 1255 Lancaster Avenue (no recorded vote).",
+   "quote": "1255 lancaster avenue- the board reviewed, edited, and endorsed the decision."
+  },
+  {
+   "decision": "The Board reviewed, edited, and endorsed the Decision for Unitil (no recorded vote).",
+   "quote": "unitil- the board reviewed, edited, and endorsed the decision."
+  },
+  {
+   "decision": "A draft Decision for 225 & 259 Leominster Shirley Road would be prepared for the next Board meeting after the hearing closed.",
+   "quote": "a draft decision would be prepared for the next board meeting."
+  },
+  {
+   "decision": "A. Burney would remove the condition requiring installation of a drainage system prior to construction from the 225 & 259 Leominster Shirley Road draft.",
+   "quote": "a. burney noted he would remove the condition specifying installation of drainage system prior to construction"
+  },
+  {
+   "decision": "The Board would wait to see whether the State approved or denied the 40B before continuing discussion of the Howard Street water and sewer extension.",
+   "quote": "the board would wait to see whether the state approved or denied the 40b."
+  },
+  {
+   "decision": "A. Burney recommended the Town work towards MBTA Communities zoning compliance; he and the Town Manager would explore the financial impact of the grant programs at risk.",
+   "quote": "a. burney recommended the town work towards compliance"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MBTA Communities grant eligibility",
+   "what_was_recorded": "Non-compliance with the MBTA Communities law would make Lunenburg ineligible for named state infrastructure and housing funding, and the Town Manager and A. Burney would explore the financial impact.",
+   "figures_as_printed": [],
+   "quote": "would no longer be eligible for funding from the housing choice initiative"
+  },
+  {
+   "topic": "Sewer line extension financing for proposed 40B",
+   "what_was_recorded": "Discussion of whether the financial obligation for extending water and sewer for the proposed 40B would fall to the developer or the Town, depending on whether the line is private or public; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "the financial obligation would fall to the town"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "M. Allison",
+   "stated_role": "",
+   "topic": "Select Board site walk on drainage",
+   "quote": "the select board held a site walk at the village at flat hill concerning the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Select Board site walk",
+   "resolution": "noted, no action",
+   "tags": [
+    "drainage",
+    "site walk"
+   ],
+   "quote": "the select board held a site walk at the village at flat hill concerning the"
+  },
+  {
+   "topic": "Public hearing: 225 & 259 Leominster Shirley Road",
+   "resolution": "hearing closed; draft decision to follow",
+   "tags": [
+    "hearing",
+    "decision"
+   ],
+   "quote": "a draft decision would be prepared for the next board meeting."
+  },
+  {
+   "topic": "Public hearing: 780 Northfield Road scenic road",
+   "resolution": "approved 5-0",
+   "tags": [
+    "scenic road",
+    "hearing"
+   ],
+   "quote": "m. allison made motion to approve the scenic road application for 780 northfield road as presented"
+  },
+  {
+   "topic": "Decisions: 1255 Lancaster Avenue and Unitil",
+   "resolution": "endorsed",
+   "tags": [
+    "decision"
+   ],
+   "quote": "the board reviewed, edited, and endorsed the decision."
+  },
+  {
+   "topic": "Zoning, infrastructure and master plan: Howard Street 40B",
+   "resolution": "no action; await State decision on 40B",
+   "tags": [
+    "40B",
+    "sewer",
+    "water"
+   ],
+   "quote": "he inquired as to the status of the proposed 40b on howard street."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "p. bertram made motion to approve all minutes listed below"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "tags": [
+    "committees",
+    "agricultural market"
+   ],
+   "quote": "the committee hoped to meet every other monday."
+  },
+  {
+   "topic": "Director's items: Annual Town Meeting warrant articles",
+   "resolution": "noted",
+   "tags": [
+    "warrant articles",
+    "town meeting"
+   ],
+   "quote": "the three proposed board articles were submitted to the town manager."
+  },
+  {
+   "topic": "Director's items: MBTA Communities zoning",
+   "resolution": "compliance recommended; financial impact to be explored",
+   "tags": [
+    "MBTA communities",
+    "zoning",
+    "housing"
+   ],
+   "quote": "a. burney recommended the town work towards compliance"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "april 11- hearing for board warrant articles."
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "listed, no action",
+   "tags": [
+    "Pond View Commons",
+    "master plan"
+   ],
+   "quote": "pond view commons, llc"
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "tags": [
+    "board membership"
+   ],
+   "quote": "m. brenner expressed his thanks to the board for the coverage it supplied while he was battling health issues."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:02 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "p. bertram made motion to adjourn, m. allison seconded, passed unanimously."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Decision, 1255 Lancaster Avenue",
+   "where": "list",
+   "quote": "documents used at meeting: decision, 1255 lancaster avenue"
+  },
+  {
+   "name": "Decision, Unitil",
+   "where": "list",
+   "quote": "decision, unitil minutes:"
+  },
+  {
+   "name": "Minutes 3/14/22, 225 & 259 Leominster Shirley Road",
+   "where": "list",
+   "quote": "3/14/22, 225 & 259 leominster shirley road"
+  },
+  {
+   "name": "Minutes 3/14/22, 780 Northfield Road",
+   "where": "list",
+   "quote": "3/14/22, 780 northfield road"
+  },
+  {
+   "name": "Minutes 3/14/22, 1255 Lancaster Avenue",
+   "where": "list",
+   "quote": "3/14/22, 1255 lancaster avenue"
+  },
+  {
+   "name": "Minutes 3/14/22, Unitil Reliability Project",
+   "where": "list",
+   "quote": "3/14/22, unitil reliability project"
+  },
+  {
+   "name": "MBTA Community Multi-Family Housing Law",
+   "where": "list",
+   "quote": "mbta community multi-family housing law"
+  },
+  {
+   "name": "DHCD Compliance Guidelines for MBTA Multi-Family Housing Law",
+   "where": "list",
+   "quote": "dhcd compliance guidelines for mbta multi-family housing law"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "MBTA communities",
+  "40B",
+  "sewer extension",
+  "scenic road",
+  "decisions",
+  "minutes",
+  "warrant articles",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-12-21",
  "docid": "5693",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept Rob Oliva's recommendation to use Wright Pierce for preliminary sewer design",
+   "motion": "Accept Rob Oliva's recommendation to use Wright Pierce for the preliminary design.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "motion: brett r. second: mike n. to accept rob oliva's recommendation to use wright pierce for the preliminary design."
   },
   {
-   "motion": "Accept the Q2 Commitment for $266,302.46",
+   "motion": "Accept the Q2 Commitment for $266,302.46 (verbal approval requested by the Business Manager).",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -28,15 +28,430 @@
    "quote": "motion: john r. second: brett r. to accept the q2 commitment for $ 266,302.46."
   },
   {
-   "motion": "Send formal memo to Asst. Town Manager/HR to have all applicants for Assistant position reviewed by Rob Oliva and Barb Lefebvre",
+   "motion": "Have the formal memo sent to the Asst. Town Manager/HR so that all applicants for the Assistant position are reviewed by Rob Oliva and Barb Lefebvre.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. to have the formal memo sent to the asst. town manager/ hr to have all the applicants for the assistant position be reviewed by rob oliva and barb lefebvre."
+   "quote": "to have the formal memo sent to the asst. town manager/ hr to have all the applicants for the assistant position be reviewed by rob oliva and barb lefebvre."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1241505
+ "note": "Text is OCR (macOS Vision) of a scanned minutes document; some words may be misread. The minutes spell the consultant 'Tatum & Howard' once and 'Tate & Howard' elsewhere; both are recorded as printed where quoted. 'I/l' is read as I/I. The 'PUBLIC COMMENT' heading contains only Commission and staff remarks; no member of the public is recorded speaking, so public_comment is empty. Attendees are marked 'remote' because the header says the meeting was via Zoom; the minutes do not state each person's status separately. The delinquency transfer is a receivable move and no vote is recorded for it. No motion to adjourn is recorded. The Leominster 2020 comparison's rainy-summer explanation is Barb's stated reason, not a measurement.",
+ "cost_usd": 0.021502880000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member-mike nault, dpw"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member-mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member-mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "remote",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member-mike nault, dpw"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "remote",
+   "quote": "director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: mike deveikis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to discuss the grease traps at a future meeting.",
+   "quote": "the commission agreed to discuss the grease traps at a future meeting."
+  },
+  {
+   "decision": "The Commission agreed with paying the Fitchburg and Leominster flow-meter-based invoices.",
+   "quote": "all invoices are based on flow meter readings and the commission agreed with paying them."
+  },
+  {
+   "decision": "The Grease Trap Policy is to be added to the list of policies for the same public hearings as the Fitchburg Chapter 147 changes.",
+   "quote": "will add the grease trap policy to the list so that all can be taken care of in the same public hearings."
+  },
+  {
+   "decision": "The Business Manager is to add compiling an ARPA funds wish list to the January agenda.",
+   "quote": "dave asked barb to add compiling an arpa funds wish list to the january agenda."
+  },
+  {
+   "decision": "The Commission (Rob Oliva agreeing) will go back to the I/I studies for suggestions and recommendations rather than commission new studies.",
+   "quote": "rob agreed they can go back to the studies for suggestions/recommendations."
+  },
+  {
+   "decision": "The 11/9 meeting minutes are carried to the next agenda for review and approval.",
+   "quote": "minutes of 11/9 meeting review/approval- will be put on the next agenda."
+  },
+  {
+   "decision": "The budget is to be discussed at the 1/25 meeting.",
+   "quote": "action items: dave said they will discuss the budget at 1/25 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Preliminary sewer design bids (Upland/Eastern Ave and White St.)",
+   "what_was_recorded": "Four proposals for preliminary design were compared; Wright Pierce, the low bidder, was recommended and approved, and the cost would be included in the project if it goes forward.",
+   "quote": "wright pierce bid $13,200, tate & howard bid $19,800, weston & sampson bid $42,000 and woodard & curran bid $15,000.",
+   "figures_as_printed": [
+    "$13,200",
+    "$19,800",
+    "$42,000",
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Q2 Commitment",
+   "what_was_recorded": "The Commission approved the Q2 Commitment by verbal vote.",
+   "quote": "q2 commitment of $266,302.46 - barb asked for a verbal approval for the q2 commitment.",
+   "figures_as_printed": [
+    "$266,302.46"
+   ]
+  },
+  {
+   "topic": "Delinquent back payments from prior fiscal year",
+   "what_was_recorded": "Back payments due from the prior fiscal year total $30,000, less than in previous years.",
+   "quote": "barb replied there is $30,000 in back payments due, which was less than previous years.",
+   "figures_as_printed": [
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Annual grease trap fees",
+   "what_was_recorded": "Annual grease trap fees were stated for the record, differing by trap type and compliance; the Business Manager confirmed fees had been waived for the last 2 years.",
+   "quote": "internal trap - $150 if compliant, $ 350 if non-compliant, external interceptor - $450 if compliant, $ 650 if non-compliant.",
+   "figures_as_printed": [
+    "$150",
+    "$ 350",
+    "$450",
+    "$ 650"
+   ]
+  },
+  {
+   "topic": "Grease trap fee waiver",
+   "what_was_recorded": "All grease trap fees had been waived by the Commission for the last two years, per the Business Manager.",
+   "quote": "barb confirmed that all fees have been waived for the last 2 years by the commission.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Transfer of FY21 sewer delinquencies to FY22 Real Estate tax bills",
+   "what_was_recorded": "FY21 sewer delinquencies were moved to the FY22 Real Estate Tax bills, with the transfer figure printed.",
+   "quote": "transfers to delinquent on fy22 real estate taxes $30,593.35 - barb noted she worked with the assessor's and",
+   "figures_as_printed": [
+    "$30,593.35"
+   ]
+  },
+  {
+   "topic": "Fitchburg and Leominster sewer invoices",
+   "what_was_recorded": "Two Fitchburg invoices and one Leominster invoice, based on flow meter readings, were reported; the Commission agreed to pay them.",
+   "quote": "business manager report - invoices- fitchburg: $15,498.33 (9/26-10/25/21) and $ 18,978.61 (10/26-11/25/21)",
+   "figures_as_printed": [
+    "$15,498.33",
+    "$ 18,978.61",
+    "$119,387.06"
+   ]
+  },
+  {
+   "topic": "Leominster billing comparison, same period 2020",
+   "what_was_recorded": "Leominster billing for the same period in 2020 was reported as $74,265, which the Business Manager attributed in part to a very rainy summer (her explanation, not verified).",
+   "quote": "she added that leominster billing for the same period in 2020 was $74,265",
+   "figures_as_printed": [
+    "$74,265"
+   ]
+  },
+  {
+   "topic": "FY22 year-to-date budget",
+   "what_was_recorded": "Revenues were reported ahead of budget by 54 percent and expenses on target; no dollar figures printed.",
+   "quote": "revenues are ahead (54%) and expenses are right where they should be.",
+   "figures_as_printed": [
+    "54%"
+   ]
+  },
+  {
+   "topic": "ARPA funds",
+   "what_was_recorded": "Federal government approved ARPA (Coronavirus Local Fiscal Recovery Fund) funds, pending state action; pump stations were named as the biggest need. No dollar figures printed.",
+   "quote": "american rescue plan act (arpa) funds (coronavirus local fiscal recovery fund) - barb reported the federal government has approved funds",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Special Town Meeting sewer budget articles",
+   "what_was_recorded": "Three sewer-related articles passed at the 11/16 Special Town Meeting, including a budget article to increase hours for the Assistant position. No dollar figures printed.",
+   "quote": "barb reported that all 3 sewer-related articles were passed at the special town meeting on 11/16.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cost of preliminary design within the project",
+   "what_was_recorded": "The Business Manager said the preliminary design cost would be included in the project cost if the project goes forward. No dollar figures printed.",
+   "quote": "barb replied it would be included in the cost, as long as the project goes forward.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer of FY21 sewer delinquencies to the FY22 Real Estate Tax bills (a receivable move, not a reserve-fund or line-item transfer).",
+   "amount_as_printed": "$30,593.35",
+   "outcome": "Reported as worked through with the Assessor's and Collector's offices; no vote recorded.",
+   "quote": "transfers to delinquent on fy22 real estate taxes $30,593.35 - barb noted she worked with the assessor's and"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "dave opened the meeting at 6:05 pm. and did a roll call of attendees.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements: bills, delinquencies, Special Town Meeting articles",
+   "resolution": "no action",
+   "quote": "announcements - barb noted the bills that were sent out in november were due on 12/13.",
+   "tags": [
+    "bills",
+    "delinquencies",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment: Marshall Park update",
+   "resolution": "no action; Parks Commission review pending",
+   "quote": "public comment- dave asked rob for an update on marshall park and rob replied a landscape architect firm",
+   "tags": [
+    "Marshall Park",
+    "parks"
+   ]
+  },
+  {
+   "topic": "DPW Director report: preliminary design, Elizabeth St. I/I, 384 Mass Ave",
+   "resolution": "Wright Pierce approved for preliminary design (4-0)",
+   "quote": "dpw director report- rob noted that the commission was sent the rfp for preliminary sewer design",
+   "tags": [
+    "engineering",
+    "Upland/Eastern Ave",
+    "White St",
+    "I/I",
+    "Mass DOT"
+   ]
+  },
+  {
+   "topic": "American Rescue Plan Act (ARPA) funds",
+   "resolution": "discussed; wish list to January agenda",
+   "quote": "american rescue plan act (arpa) funds (coronavirus local fiscal recovery fund) - barb reported the federal government has approved funds",
+   "tags": [
+    "ARPA",
+    "pump stations",
+    "flow meters"
+   ]
+  },
+  {
+   "topic": "Grease Trap Policy",
+   "resolution": "deferred to a future meeting",
+   "quote": "grease trap policy- dave noted he talked to the new lunenburg diner owner about the grease trap fees",
+   "tags": [
+    "grease traps",
+    "fees",
+    "inspections",
+    "Lunenburg Diner"
+   ]
+  },
+  {
+   "topic": "Victuallers licensing with Select Board",
+   "resolution": "no action; awaiting pump-out report",
+   "quote": "victuallers licensing with select board- barb has communicated with the select board that all are compliant",
+   "tags": [
+    "licensing",
+    "Select Board"
+   ]
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance",
+   "resolution": "awaiting Town Counsel recommendations",
+   "quote": "fitchburg sewer use ordinance-barb noted that rob mentioned jeff murawski has left fitchburg",
+   "tags": [
+    "Fitchburg",
+    "ordinance",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Q2 Commitment",
+   "resolution": "approved 4-0",
+   "quote": "q2 commitment of $266,302.46 - barb asked for a verbal approval for the q2 commitment.",
+   "tags": [
+    "commitment",
+    "budget"
+   ]
+  },
+  {
+   "topic": "FY22 YTD budget",
+   "resolution": "reported on target",
+   "quote": "fy22 ytd budget - barb sent out the budget for review and noted they are right on target.",
+   "tags": [
+    "FY22 budget"
+   ]
+  },
+  {
+   "topic": "Transfer of FY21 delinquencies to FY22 tax bills",
+   "resolution": "reported; no vote recorded",
+   "quote": "transfers to delinquent on fy22 real estate taxes $30,593.35 - barb noted she worked with the assessor's and",
+   "tags": [
+    "delinquencies",
+    "tax bills"
+   ]
+  },
+  {
+   "topic": "Minutes of 11/9 meeting",
+   "resolution": "continued to next agenda",
+   "quote": "minutes of 11/9 meeting review/approval- will be put on the next agenda.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: invoices",
+   "resolution": "Commission agreed to pay invoices",
+   "quote": "business manager report - invoices- fitchburg: $15,498.33 (9/26-10/25/21) and $ 18,978.61 (10/26-11/25/21)",
+   "tags": [
+    "invoices",
+    "Fitchburg",
+    "Leominster",
+    "flow meters"
+   ]
+  },
+  {
+   "topic": "FY23 budget and FinCom appointment",
+   "resolution": "budget work set for mid-January; FinCom date tentative",
+   "quote": "fy23 budget and tentative 3/24/22 fincom appointment- barb received a tentative date from heather",
+   "tags": [
+    "FY23 budget",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "Assistant to Business Manager position",
+   "resolution": "approved memo 4-0",
+   "quote": "to have the formal memo sent to the asst. town manager/ hr to have all the applicants for the assistant position be reviewed by rob oliva and barb lefebvre.",
+   "tags": [
+    "hiring",
+    "Assistant position",
+    "HR"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "budget to be discussed at 1/25 meeting",
+   "quote": "action items: dave said they will discuss the budget at 1/25 meeting.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Upcoming schedule and adjournment",
+   "resolution": "adjourned at 7:09pm; no adjournment vote recorded",
+   "quote": "the meeting was adjourned at 7:09pm.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft memo from the Commission to Asst. Town Manager re. Sewer Assistant position applicants",
+   "where": "list",
+   "quote": "handouts: draft memo from the commission to asst. town manager re. sewer assistant position applicants."
+  },
+  {
+   "name": "RFP for preliminary sewer design, Upland/Eastern Ave and White St.",
+   "where": "text",
+   "quote": "rob noted that the commission was sent the rfp for preliminary sewer design for upland/eastern ave, and white st."
+  },
+  {
+   "name": "Preliminary design proposals from Wright Pierce, Tate & Howard, Weston & Sampson and Woodard & Curran",
+   "where": "text",
+   "quote": "he received proposals from wright pierce, tate & howard, weston & sampson and woodard & curran."
+  },
+  {
+   "name": "Wright Pierce proposal for soil exploration with 21 probes",
+   "where": "text",
+   "quote": "based on wright pierce's proposal for soil exploration with 21 probes to search for ledge on upland & eastern"
+  },
+  {
+   "name": "As-built for 384 Mass Ave.",
+   "where": "text",
+   "quote": "rob reported that he received the as-built for 384 mass ave. and had submitted it to mass dot."
+  },
+  {
+   "name": "Fitchburg Sewer Use Ordinance",
+   "where": "text",
+   "quote": "fitchburg sewer use ordinance-barb noted that rob mentioned jeff murawski has left fitchburg"
+  },
+  {
+   "name": "1st Tuesday report (November logs)",
+   "where": "text",
+   "quote": "1st tuesday report-all logs are in for november."
+  },
+  {
+   "name": "Minutes of 11/9 meeting",
+   "where": "text",
+   "quote": "minutes of 11/9 meeting review/approval- will be put on the next agenda."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "wastewater",
+  "DPW",
+  "engineering",
+  "preliminary design",
+  "ARPA",
+  "grease traps",
+  "FY22 budget",
+  "FY23 budget",
+  "Fitchburg",
+  "Leominster",
+  "inflow and infiltration",
+  "Assistant position hiring",
+  "Marshall Park",
+  "delinquencies",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

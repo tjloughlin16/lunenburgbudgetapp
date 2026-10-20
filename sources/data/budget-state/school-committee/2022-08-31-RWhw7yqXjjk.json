@@ -1,0 +1,44 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2022-08-31",
+ "source": {
+  "sha256": "772aba839a606b05e665d324f182b9e27b51d7c866f05e5052f2f6258603c2a6",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2022-08-31-RWhw7yqXjjk.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [],
+  "warnings": [
+   {
+    "about": "programs or teachers cut to fund a bus",
+    "condition": "if an additional bus is needed",
+    "fiscal_year": 2024,
+    "prediction": "If another bus is needed, it would have to be paid from the existing school budget, so programs or staff would be cut.",
+    "scope": "school",
+    "t": 7437,
+    "who": "a member"
+   },
+   {
+    "about": "funding for recent hires",
+    "condition": null,
+    "fiscal_year": null,
+    "prediction": "Money spent on some recent hires will end in two years, making a five-year budget hard to sustain.",
+    "scope": "school",
+    "t": 8860,
+    "who": "a resident"
+   }
+  ]
+ },
+ "video_id": "RWhw7yqXjjk",
+ "video_url": "https://www.youtube.com/watch?v=RWhw7yqXjjk",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-16T08:42:23Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

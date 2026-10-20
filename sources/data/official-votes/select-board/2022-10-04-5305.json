@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-10-04",
  "docid": "5305",
@@ -12,80 +12,676 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager appointment of Matt Lubao as heavy equipment operator",
+   "motion": "Ratify the Town Manager's appointment of Matt Lubao as heavy equipment operator.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: l. franco to ratify the town manager appointment of matt lubao as heavy equipment operator vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of matt lubao as heavy equipment operator vote: all in favor"
   },
   {
-   "motion": "Accept the MGL c. 32 § 4(2)(b) article as presented and place it on the Special Town Meeting warrant",
+   "motion": "Accept Article E (M.G.L. c. 32 § 4(2)(b), reserve and call firefighter credited service) as presented and place it on the Special Town Meeting warrant.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to accept the article as presented and place it on the special town meeting warrant 21d: t. dwyer vote: all in favor"
+   "procedural": false,
+   "quote": "to accept the article as presented and place it on the special town meeting warrant"
   },
   {
-   "motion": "Include the Planning Board article changing Motel use in the STM warrant",
+   "motion": "Include the Planning Board article (Use Table, Motel in the Commercial District from Y to SP-Z) in the Special Town Meeting warrant.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to include the planning board article in the stm warrant 2°°: l. franco vote: all in favor"
+   "procedural": false,
+   "quote": "to include the planning board article in the stm warrant"
   },
   {
-   "motion": "Include the Parks Commission article for Marshall Park engineering in the Special Town Meeting warrant",
+   "motion": "Include the Parks Commission article (Marshall Park engineering and design) in the Special Town Meeting warrant.",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: h. sroka to include the parks commission article in the special town meeting warrant ===page 4=== vote:",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to include the parks commission article in the special town meeting warrant"
   },
   {
-   "motion": "Adopt the 300th Anniversary Committee charge",
+   "motion": "Adopt the 300th Anniversary Committee charge as read by Mr. Franco.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"': t. dwyer to adopt the 300\" anniversary committee charge as eloquently read and written by mr. franco vote: all in favor"
+   "quote": "to adopt the 300\" anniversary committee charge as eloquently read and written by mr. franco"
   },
   {
-   "motion": "Approve the Bond Anticipation Note for the Saliba property and ladder truck",
+   "motion": "Approve the bond anticipation note (BAN) for the Saliba property and ladder truck as presented by the Town Manager.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: t. dwyer to approve the ban for the saliba property and ladder truck as presented by town manager vote: all in favor"
+   "quote": "to approve the ban for the saliba property and ladder truck as presented by town manager"
   },
   {
-   "motion": "Approve the minutes of September 6 and September 13, 2022 as presented",
+   "motion": "Approve the minutes of September 6 and September 13, 2022 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco to approve the minutes of september 6 and september 13, 2022 as presented 2\"d. t. alonzo vote: all in favor"
+   "quote": "to approve the minutes of september 6 and september 13, 2022 as presented"
   },
   {
-   "motion": "Release the executive session minutes from March 24, 2015; April 21, 2015; May 12, 2015; December 15, 2015; and January 5, 2016",
+   "motion": "Release the executive session minutes of March 24, 2015; April 21, 2015; May 12, 2015; December 15, 2015; and January 5, 2016.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to release the executive session minutes as listed"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to release the executive session minutes as listed 2\"d: l. franco vote: all in favor"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting the meeting adjourned at 9:56 pm 2'': l. franco vote: all in favor"
+   "quote": "to adjourn the meeting the meeting adjourned at 9:56 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document with clear votes recorded. Some OCR artifacts in seconded-by notation (2\"d, 21d, 2°°, 2\"', 2'')",
- "cost_usd": 0.1118685
+ "note": "Source is OCR text (macOS Vision) of a scanned set of minutes. Several passages are garbled and were copied as printed (for example '$10OK', '$1800.000', 'Mi. Jeffreys', 'Nashua' for Nashoba). Motion seconders on two votes read as '21d' and '2°°' and are attributed from the surrounding text. Every vote is recorded as 'All in Favor' with no tally, so outcomes are 'passed' rather than a count. The heading of the Article E section says 'MGL c. 32B' while the article text says 'c. 32 § 4(2)(b)'; the article text was used. Public comment includes two Select Board members' reports under that heading; the minutes close with 'Public Comment- there was none'. The Also Present line names unidentified Park Commissioners. The Recorder (Blaine M. Peterson) is not listed as a participant. The ARPA request list is treated as the documents list (judgement call). No reserve-fund or line-item transfers are recorded.",
+ "cost_usd": 0.031331979999999995,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "member (as listed under Members present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "member (as listed under Members present)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; lt. christos lekaditis, adam burney, land use director via zoom"
+  },
+  {
+   "name": "Christos Lekaditis",
+   "role": "Lt. (Fire); also President of the Lunenburg Professional Firefighters",
+   "status": "present",
+   "quote": "lt lekaditis introduced himself adding he was also president of the lunenburg professional"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "remote",
+   "quote": "lt. christos lekaditis, adam burney, land use director via zoom"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commissioners Chair",
+   "status": "present",
+   "quote": "parks commissioners chair ana lockwood was present and karin menard was via zoom."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Park Commissioner",
+   "status": "remote",
+   "quote": "parks commissioners chair ana lockwood was present and karin menard was via zoom."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Chair, Architectural Preservation District Commission (APDC)",
+   "status": "present",
+   "quote": "chair cullen dwyer stated the article cleans up the language of the apd bylaw"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Alonzo will adapt the Capital Plan process for the ARPA requests and have it ready for the first meeting in November.",
+   "quote": "mr. alonzo will take the capital plan process and try to adapt it for this process and have it ready for the first meeting in november."
+  },
+  {
+   "decision": "Board members were asked to send Mr. Alonzo ideas on how to prioritize the ARPA requests.",
+   "quote": "mr. alonzo asked the other members to send ideas on how to prioritize the requests."
+  },
+  {
+   "decision": "The ARPA funding requests are to be reviewed again in November; this meeting was for questions only.",
+   "quote": "the intent tonight is to ask any questions regarding the requests and we will review again in november"
+  },
+  {
+   "decision": "The next step for the 300th Anniversary Committee is to advertise for membership.",
+   "quote": "mr. jeffreys noted the next step is to advertise for the membership."
+  },
+  {
+   "decision": "Mr. Jeffreys will bring a letter on donation bins to the next meeting (for Brixmor and the managers at Hannaford's and Walmart).",
+   "quote": "mr. jeffreys had a letter composed for brixmor and the managers at hannaford's and walmart that he will bring to the next meeting."
+  },
+  {
+   "decision": "Mr. Jeffreys will discuss customer service satisfaction tracking further with the Town Manager.",
+   "quote": "mr. jeffreys stated he would discuss this further with her."
+  },
+  {
+   "decision": "The Green Communities Committee will look into solar panels on the old landfill, using ARPA funding as a possible model.",
+   "quote": "the green communities committee is going to look into this."
+  },
+  {
+   "decision": "The Police Union agreement (final MLA) is to be voted on at a future Select Board meeting.",
+   "quote": "the police union agreement will be need to be voted on the final mla at a future select board meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park engineering cost (Parks Commission STM article)",
+   "what_was_recorded": "The Parks Commission chair said engineering cost starts at $165,000, with a possible range of $300,000 to $400,000 at about seven and a half percent; no final number was set.",
+   "figures_as_printed": [
+    "$165,000",
+    "$300,000 - $400,000"
+   ],
+   "quote": "when asked what amount of money was needed, ms. lockwood replied the engineering cost starts at $165,000."
+  },
+  {
+   "topic": "Architectural Preservation / Certificate to Alter (prior-year invoices)",
+   "what_was_recorded": "Prior-year invoices for the AC project total about $1800.000 across two invoices, as printed in the minutes.",
+   "figures_as_printed": [
+    "$1800.000"
+   ],
+   "quote": "the prior year invoices total about $1800.000 (there are two invoices) for that"
+  },
+  {
+   "topic": "Bond anticipation note, Saliba property and ladder truck",
+   "what_was_recorded": "A BAN of $304,998 at 3.75% interest was up for renewal, to be paid off in five years or early.",
+   "figures_as_printed": [
+    "$304,998",
+    "3.75%"
+   ],
+   "quote": "it is for $304,998 with an interest rate of 3.75%."
+  },
+  {
+   "topic": "Flat Hill Road drainage study consultant",
+   "what_was_recorded": "McCarty Companies was contracted on August 1, 2022 for an estimated cost of $4,803.00 to review the Flat Hill subdivision drainage design.",
+   "figures_as_printed": [
+    "$4,803.00"
+   ],
+   "quote": "we contracted with mccarty companies to provide consulting services with an estimated cost of $4,803.00 to conduct a review of the approved design"
+  },
+  {
+   "topic": "Page Street culvert project funding",
+   "what_was_recorded": "There is $150,000 in FY 2023 Capital Funds for the Page Street culvert project.",
+   "figures_as_printed": [
+    "$150,000"
+   ],
+   "quote": "there is $150,000 in fy 2023 capital funds to pay for this project."
+  },
+  {
+   "topic": "DPW workplace safety grant",
+   "what_was_recorded": "The DPW Director is applying for a Workplace Safety Grant; the maximum award is $25,000.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "the maximum grant award is $25,000."
+  },
+  {
+   "topic": "COA ADA patio check from Senator Cronin",
+   "what_was_recorded": "A $100K check for the ADA patio from Senator Cronin is to be presented at the COA Volunteer Recognition program.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "presenting of $100k check for the ada patio from senator cronin."
+  },
+  {
+   "topic": "ARPA funding available and requests",
+   "what_was_recorded": "The Town received $5.2 M in ARPA requests against $3.6 M available.",
+   "figures_as_printed": [
+    "$5.2 M",
+    "$3.6 M"
+   ],
+   "quote": "we received $5.2 m in requests and we have $3.6 m funding available."
+  },
+  {
+   "topic": "ARPA request 1: COA recreation area patio",
+   "what_was_recorded": "Estimated cost $400,000; $100K local appropriation and $10OK state earmark, with grants sought.",
+   "figures_as_printed": [
+    "$400,000",
+    "$100K",
+    "$10OK"
+   ],
+   "quote": "estimated cost $400,000. have $100k local appropriation, $10ok state earmark, and"
+  },
+  {
+   "topic": "ARPA request 2: Police mental health co-response clinician",
+   "what_was_recorded": "Total project cost $150,679.58, shared with Lancaster; Lunenburg's estimated cost $75,339.79.",
+   "figures_as_printed": [
+    "$150,679.58",
+    "$75,339.79"
+   ],
+   "quote": "total cost of the project is $150,679.58, which is being shared by lancaster. lunenburg's estimated cost $75,339.79."
+  },
+  {
+   "topic": "ARPA request 3: Public Access Cable communications improvements",
+   "what_was_recorded": "Request of $67,590 for communication and media equipment.",
+   "figures_as_printed": [
+    "$67,590"
+   ],
+   "quote": "the town will benefit from all improvements. $67,590"
+  },
+  {
+   "topic": "ARPA request 4: Fire ambulance replacement (Rescue 1)",
+   "what_was_recorded": "Request of $460,000 to replace the 2014 Rescue 1 ambulance.",
+   "figures_as_printed": [
+    "$460,000"
+   ],
+   "quote": "request for $460,000 to replace rescue 1 (2014 ambulance). this unit would become the primary"
+  },
+  {
+   "topic": "ARPA request 5: Hazard pay for front-facing staff",
+   "what_was_recorded": "One-time $1000 payment for front-facing staff during the first pandemic year, estimated at $82,006.",
+   "figures_as_printed": [
+    "$1000",
+    "$82,006"
+   ],
+   "quote": "one-time payment of $1000 for all front facing staff"
+  },
+  {
+   "topic": "ARPA request 6: Public safety communications infrastructure",
+   "what_was_recorded": "Request of $485,020 to replace UHF repeater/receiver systems and upgrade to simulcast.",
+   "figures_as_printed": [
+    "$485,020"
+   ],
+   "quote": "in areas of town where radio coverage is poor: $485,020"
+  },
+  {
+   "topic": "ARPA request 7: Sewer pump station upgrades",
+   "what_was_recorded": "Request of $300,000 for pump station controls, pumps and standby generators.",
+   "figures_as_printed": [
+    "$300,000"
+   ],
+   "quote": "standby generators. $300,000"
+  },
+  {
+   "topic": "ARPA request 8: Sewer manhole repairs",
+   "what_was_recorded": "Estimated project cost of $200,000 for manhole repairs.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "the estimated cost of the project is $200,000."
+  },
+  {
+   "topic": "ARPA request 9: School Committee sidewalk expansion",
+   "what_was_recorded": "Request of $101,640 for sidewalks near the middle-high school and Turkey Hill Elementary.",
+   "figures_as_printed": [
+    "$101,640"
+   ],
+   "quote": "$101,640 northfield rd. to turkey hill rd, turkey hill rd. to oak ave."
+  },
+  {
+   "topic": "ARPA request 10: Regional Business Investment Fund",
+   "what_was_recorded": "Request of $50,000 to support a regional business investment fund.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "within the one north central business development plan service area. $50,000"
+  },
+  {
+   "topic": "ARPA request 11: Financial consulting and audit services",
+   "what_was_recorded": "Request of $60,000 for ARPA reporting and special annual audit.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "until completion as part of this requirement. $60,000"
+  },
+  {
+   "topic": "ARPA request 12: Sewer mobile generator",
+   "what_was_recorded": "Request of $90,000 for a towable mobile generator for the 10 pump stations.",
+   "figures_as_printed": [
+    "$90,000"
+   ],
+   "quote": "it will be stored at the dpw. $90,000"
+  },
+  {
+   "topic": "ARPA request 13: COVID-related expenses",
+   "what_was_recorded": "Request of $50,000 for COVID-related administration, including BOH and remote meetings.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "including but not limited to boh and remote meetings $50,000"
+  },
+  {
+   "topic": "ARPA request 14: Marshall Park engineering and schematic design",
+   "what_was_recorded": "Request of $500,000 for engineering and schematic design so the project is bid ready.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "so the project will be bid ready. $500,000"
+  },
+  {
+   "topic": "ARPA request 15: Marshall Park construction",
+   "what_was_recorded": "Seeking $2,000,000 of ARPA funds toward Marshall Park construction; total project cost $5,131,584.",
+   "figures_as_printed": [
+    "$2,000,000",
+    "$5,131,584"
+   ],
+   "quote": "we are seeking $2,000,000 of arpa funds to be used towards part of the construction of marshall park master plan - the total cost of the project is $5,131,584."
+  },
+  {
+   "topic": "ARPA request 16: Communications tower",
+   "what_was_recorded": "Request of $500,000 for a communications tower providing coverage and a revenue stream.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "a revenue stream with cell providers.$500,000"
+  },
+  {
+   "topic": "ARPA request 17: Food Pantry assistance",
+   "what_was_recorded": "Request of $50,000 to help the Food Pantry with equipment or resources.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "promote food security. $50,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Vice Chairman",
+   "topic": "Pond View Commons 40B hearing and sewer/water districts",
+   "quote": "mr. alonzo reported the zoning board of appeals is hearing a 40b housing development"
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "Chairman",
+   "topic": "Condolences to Cheryl Lauziere",
+   "quote": "expressed condolences to cheryl lauziere who lost her life partner, linda betti."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Vice Chairman",
+   "topic": "Condolences on passing of Bill Gustus",
+   "quote": "mr. alonzo reported that bill gustus, the town's first cafo after the town adopted the charter"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; member reports and condolences",
+   "quote": "mr. alonzo reported the zoning board of appeals is hearing a 40b housing development",
+   "tags": [
+    "public comment",
+    "zoning",
+    "40B",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "Ratification of Matt Lubao appointment",
+   "resolution": "approved (ratified)",
+   "quote": "ratification of the town manager's appointment of heavy equipment operator matt lubao",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Resignation of Conservation Administrator",
+   "resolution": "announced; no action",
+   "quote": "ms. lemieux announced the resignation of nadia madden as conservation administrator.",
+   "tags": [
+    "personnel",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Review of Special Town Meeting warrant articles (c. 32 acceptance, Motel use, Marshall Park, APDC)",
+   "resolution": "Articles E (c.32), Planning Board (Motel) and Parks (Marshall Park) placed on STM warrant; APDC article continued to 11th or 18th",
+   "quote": "review of special town meeting warrant articles with representatives from article",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "zoning",
+    "retirement",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Town Manager report (vacancies, jobs, bids, department updates, projects)",
+   "resolution": "no action; reports received",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "town manager",
+    "projects",
+    "vacancies",
+    "DPW",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Member remarks on Pratt Street Title V and customer service tracking",
+   "resolution": "no action; Chair to follow up with Town Manager",
+   "quote": "mr. jeffreys reported he is working with a longtime homeowner on pratt street who is trying to",
+   "tags": [
+    "health",
+    "Title V",
+    "customer service"
+   ]
+  },
+  {
+   "topic": "300th Anniversary Committee charge",
+   "resolution": "approved",
+   "quote": "discussion and vote on 300th anniversary committee charge",
+   "tags": [
+    "300th anniversary",
+    "charge"
+   ]
+  },
+  {
+   "topic": "Donation bins at Walmart",
+   "resolution": "no action; letter to be brought to next meeting",
+   "quote": "when asked, ms. sroka stated the area had been cleaned up again but stuff continued to",
+   "tags": [
+    "donation bins",
+    "Walmart"
+   ]
+  },
+  {
+   "topic": "Status update on Town Manager and Select Board goals",
+   "resolution": "no action; progress reported",
+   "quote": "status update on town manager and select board goals",
+   "tags": [
+    "goals",
+    "30 School Street",
+    "senior tax exemption",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant review (funding amendments, order of articles)",
+   "resolution": "continued; no final figures",
+   "quote": "ms. lemieux noted some changes; the wording on the capital plan amendment for the ac",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "ARPA funding requests",
+   "resolution": "continued to November; questions only",
+   "quote": "review american rescue plan act (arpa) funding requests",
+   "tags": [
+    "ARPA",
+    "budget",
+    "requests"
+   ]
+  },
+  {
+   "topic": "Renewal of BAN for Saliba property and ladder truck",
+   "resolution": "approved",
+   "quote": "renewal of ban for saliba property & ladder truck",
+   "tags": [
+    "borrowing",
+    "BAN",
+    "fire"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of September 6 and 13, 2022",
+   "resolution": "approved",
+   "quote": "approval of minutes of september 6, september 13, 2022",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Release of executive session minutes (2015-2016)",
+   "resolution": "approved",
+   "quote": "vote to release the following executive session minutes: march 24, 2015",
+   "tags": [
+    "executive session",
+    "records"
+   ]
+  },
+  {
+   "topic": "Committee reports (School Committee, Capital Planning, Green Communities, Municipal Building Design, school walk)",
+   "resolution": "no action; reports received",
+   "quote": "ms. sroka reported the school committee met two weeks ago.",
+   "tags": [
+    "committees",
+    "schools",
+    "sidewalks",
+    "solar",
+    "municipal building"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "no decision on a November 22 meeting",
+   "quote": "discussion ensued about whether to meet on november 22",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:56 PM",
+   "quote": "the meeting adjourned at 9:56 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant Article E (M.G.L. c. 32 § 4(2)(b), retirement credit for reserve and call firefighters), submitted by the Town Manager",
+   "where": "list",
+   "quote": "e. to see if the town will accept the provision contained within m.g.l. c. 32 § 4(2)(b) written as such:"
+  },
+  {
+   "name": "Special Town Meeting warrant article L (Code of Lunenburg Section 250-4.1G Use Table, Motel), submitted by the Planning Board",
+   "where": "list",
+   "quote": "l. to see if the town will vote to amend the code of lunenburg, section 250-4.1g"
+  },
+  {
+   "name": "Special Town Meeting warrant article E (Marshall Park engineering and design), submitted by the Park Commission",
+   "where": "list",
+   "quote": "e. to see if the town will vote to raise and appropriate or transfer from available funds a sum of money"
+  },
+  {
+   "name": "Lunenburg 300th Anniversary Committee charge (most updated version, read aloud by Mr. Franco)",
+   "where": "list",
+   "quote": "mr. franco read the most updated version aloud:"
+  },
+  {
+   "name": "ARPA funding requests (17 requests, undated)",
+   "where": "list",
+   "quote": "the requests are as follows:"
+  },
+  {
+   "name": "Architectural Preservation District Commission bylaw amendments and APDC guidelines",
+   "where": "text",
+   "quote": "the next article discussed was the architectural preservation district commission's."
+  },
+  {
+   "name": "Bond anticipation note for Saliba property and ladder truck",
+   "where": "text",
+   "quote": "ms. lemieux reported a bond anticipation note is up for renewal."
+  },
+  {
+   "name": "Capital Plan Amendment for the AC project (article wording)",
+   "where": "text",
+   "quote": "the wording on the capital plan amendment for the ac"
+  },
+  {
+   "name": "Executive session minutes of March 24, April 21, May 12, December 15 2015 and January 5 2016",
+   "where": "text",
+   "quote": "vote to release the following executive session minutes: march 24, 2015"
+  },
+  {
+   "name": "Minutes of September 6 and September 13, 2022",
+   "where": "text",
+   "quote": "approval of minutes of september 6, september 13, 2022"
+  },
+  {
+   "name": "Pond View Commons 40B comprehensive permit application (ZBA hearing October 12)",
+   "where": "text",
+   "quote": "pond view commons 40b comprehensive permit application on october 12th at 7 pm"
+  },
+  {
+   "name": "Municipal Building Design Committee three option/concepts",
+   "where": "text",
+   "quote": "we went over the three option/concepts and the key points in all three concepts."
+  },
+  {
+   "name": "Invitation for Bids: IFB for Assessors Data Collection Services",
+   "where": "text",
+   "quote": "ifb for assessors data collection services: due october 11th"
+  },
+  {
+   "name": "Police Union agreement (final MLA)",
+   "where": "text",
+   "quote": "the police union agreement will be need to be voted on the final mla"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting warrant",
+  "ARPA",
+  "300th anniversary",
+  "zoning",
+  "40B housing",
+  "Marshall Park",
+  "budget",
+  "appointments",
+  "sewer",
+  "schools sidewalks",
+  "public safety",
+  "fire retirement",
+  "executive session records"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the requests are as follows:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2022-01-20",
  "docid": "2888",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of December 15, 2021 as amended",
+   "motion": "Accept the minutes of December 15, 2021, as amended.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dick made a motion to accept the minutes of december 15, 2021 as amended. seconded by laura. the motion passed unanimously."
+   "quote": "dick made a motion to accept the minutes of december 15, 2021 as amended."
   },
   {
-   "motion": "Approve a one-time payment of $2258.97 for the director's contract",
+   "motion": "Approve a one-time payment of $2258.97 under the Director's redrafted contract.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dick made a motion to approve this one-time payment of $2258.97, seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
    "outcome": "passed",
@@ -37,6 +37,260 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08000550000000001
+ "note": "Only pages 1 and 2 carry text. Pages 3 to 9 are blank in the extract. The five attached documents are listed but not included. No roll-call vote is recorded; attendance is taken from the Attending line. Public comment: none. Several budget figures are percentages or contract amounts with no total, so no dollar total is stated.",
+ "cost_usd": 0.01618788,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "Trustee (as listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "Trustee (as listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:49 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "Trustee (as listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "Trustee (as listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "Trustee (as listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "Trustee (as listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Trustee (as listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Following a discussion with the Director and the Children's librarian, the Chair told a patron by email that the children's book would be removed from circulation. The patron complaint was handled through the challenge form.",
+   "quote": "informed him that after a discussion with the director and the children's librarian the book would be removed from circulation."
+  },
+  {
+   "decision": "The policy sub-committee will meet to review the by-laws and present suggestions to the board.",
+   "quote": "policy sub-committee will meet to review and present some suggestions for the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Director's contract one-time payment",
+   "what_was_recorded": "The Director's redrafted contract, starting July 1, 2022, included a one-time payment covering the salary increase differential for the first six months of 2022; the board approved the payment by motion.",
+   "figures_as_printed": [
+    "$2258.97"
+   ],
+   "quote": "the contract included a one-time payment to cover the salary increase differential for the first 6 months of 2022."
+  },
+  {
+   "topic": "Library materials funding",
+   "what_was_recorded": "A requested increase for library materials; the minutes say the budget needs to be 16% of the municipally appropriated amount.",
+   "figures_as_printed": [
+    "16%"
+   ],
+   "quote": "the budget needs to be 16% of the municipally appropriated amount."
+  },
+  {
+   "topic": "Library requests to the town manager (utilities)",
+   "what_was_recorded": "Requests to the town manager include a 9% increase for utilities; a trustee asked whether that figure was too low, and the Director said additional hours equal an 11% increase in hours.",
+   "figures_as_printed": [
+    "9%",
+    "11%"
+   ],
+   "quote": "corrected director's salary, 9% increase for utilities and additional money for programs."
+  },
+  {
+   "topic": "CWMARS membership assessment",
+   "what_was_recorded": "An increase in the CWMARS network membership assessment is expected as the library moves to full membership over three years; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there will be an increase in the membership assessment for the cwmars network."
+  },
+  {
+   "topic": "Technology purchase funding",
+   "what_was_recorded": "A request for funding to purchase technology; priorities named were the phone system, the server, and the public access computers. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there is a request for funding to purchase technology."
+  },
+  {
+   "topic": "Heating costs",
+   "what_was_recorded": "Heating costs were reported as still low; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "heating costs are still low."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "quote": "• no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "dick made a motion to accept the minutes of december 15, 2021 as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed; one-time payment approved; patron complaint handled",
+   "quote": "we are in the 7th month. there have been no major issues. heating costs are still low.",
+   "tags": [
+    "director",
+    "budget",
+    "staffing",
+    "collection"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "discussed, no action",
+   "quote": "muir covered the chapter 6 review - personnel.",
+   "tags": [
+    "trustee handbook",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "By-Laws Review Discussion",
+   "resolution": "sub-committee to review; no action",
+   "quote": "muir suggested we emulate the lancaster public libraries by-laws.",
+   "tags": [
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Town Caucus and Election Information",
+   "resolution": "no action",
+   "quote": "the town caucus will be held on march 14th, 2022. two trustees are up for re-election: dick and donna.",
+   "tags": [
+    "town caucus",
+    "election"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "the friends had a short meeting. fund-raising continues to go well.",
+   "tags": [
+    "friends of the library"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "kate asked about possible friday hours, would it be half days?",
+   "tags": [
+    "hours",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:27 p.m.",
+   "quote": "motion to adjourn by dick seconded by donna. meeting was adjourned at 8:27 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "January 20, 2022 Agenda",
+   "where": "list",
+   "quote": "january 20, 2022 agenda"
+  },
+  {
+   "name": "January 2022 Director’s Report",
+   "where": "list",
+   "quote": "january 2022 director's report"
+  },
+  {
+   "name": "January 2022 Adult Services Report",
+   "where": "list",
+   "quote": "january 2022 adult services report"
+  },
+  {
+   "name": "January 2022 Youth Services Report",
+   "where": "list",
+   "quote": "january 2022 youth services report"
+  },
+  {
+   "name": "January 2022 Teen Services Report",
+   "where": "list",
+   "quote": "january 2022 teen services report"
+  },
+  {
+   "name": "FY23 target budget (from the town manager)",
+   "where": "text",
+   "quote": "muir received the fy23 target budget from the town manager"
+  },
+  {
+   "name": "Lancaster public libraries by-laws",
+   "where": "text",
+   "quote": "muir suggested we emulate the lancaster public libraries by-laws."
+  },
+  {
+   "name": "Patron challenge form",
+   "where": "text",
+   "quote": "muir gave the patron the challenge form."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "library budget",
+  "director",
+  "staffing",
+  "collection challenge",
+  "bylaws",
+  "town caucus",
+  "friends of the library",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

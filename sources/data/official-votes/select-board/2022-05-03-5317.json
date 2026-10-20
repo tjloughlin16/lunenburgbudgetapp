@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-05-03",
  "docid": "5317",
@@ -12,87 +12,663 @@
  },
  "votes": [
   {
-   "motion": "Approve the Class II auto dealer license for Jose Iris de Oliviera Jr. and Sidney Fernandes De Souza, d/b/a Maxi Auto Inc. at 40 Summer Street",
+   "motion": "Approve the Class II auto dealer license for Jose Iris De Oliveira Jr. and Sidney Fernandes De Souza, d/b/a Maxi Auto Inc. at 40 Summer Street.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: l. franco to approve the class ii auto dealer license for jose iris de oliviera jr. and sidney fernandes de souza, d/b/a maxi auto inc. at 40 summer street vote: all in favor"
+   "quote": "to approve the class ii auto dealer license for jose iris de oliviera jr. and sidney fernandes de souza, d/b/a maxi auto inc. at 40 summer street"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of John Hazelrigg as Civilian Traffic Unit member",
+   "motion": "Ratify the Town Manager's appointment of Paul C. Theodoulou as Reserve Police Officer (the minutes print the vote but not the motion text).",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "vote: all in favor chief gammel moved on to the next appointment."
+  },
+  {
+   "motion": "Ratify the Town Manager's appointment of John Hazelrigg as Civilian Traffic Unit member.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\"d: t. dwyer to ratify the town manager's appointment of john hazelrigg as civilian traffic unit member vote: all in favor"
+   "quote": "to ratify the town manager's appointment of john hazelrigg as civilian traffic unit member vote: all in favor"
   },
   {
-   "motion": "Appoint William Lloyd to the APDC with a term to expire June 30, 2025",
+   "motion": "Appoint William Lloyd to the APDC with a term to expire June 30, 2025.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\": t. dwyer to appoint william lloyd to the apdc with a term to expire june 30, 2025 vote: all in favor"
+   "quote": "to appoint william lloyd to the apdc with a term to expire june 30, 2025 vote: all in favor"
   },
   {
-   "motion": "Recommend approval of Article 21 (Salary Schedule)",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "motion: m. jeffreys to recommend approval of article 21 2\"': l. franco vote: all in favor"
-  },
-  {
-   "motion": "Approve the tailings policy as presented",
+   "motion": "Approve the tailings policy as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco to approve the tailings policy as presented 2\": t. dwyer vote: all in favor"
+   "quote": "motion: l. franco to approve the tailings policy as presented"
   },
   {
-   "motion": "Add a requirement for liability coverage for one day liquor licenses and add the Town as an additional insured in the amount of $250,000 per event and $500,000 aggregate",
+   "motion": "Add a requirement for liability coverage for one day liquor licenses and add the Town as an additional insured in the amount of $250,000 per event and $500,000 aggregate.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: l. franco to add a requirement for liability coverage for one day liquor licenses and to add the town as an additional insured in the amount of $250,000 per event and $500,000 aggregate vote: all in favor"
+   "quote": "to add a requirement for liability coverage for one day liquor licenses and to add the town as an additional insured in the amount of $250,000 per event and $500,000 aggregate"
   },
   {
-   "motion": "Approve the Election Day Exception wording for the Sign Policy as amended this evening",
+   "motion": "Approve the Election Day Exception wording for the Sign Policy as amended this evening.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2'd: m. jeffreys to approve the election day exception wording for the sign policy as amended this evening vote: all in favor"
+   "quote": "to approve the election day exception wording for the sign policy as amended this evening"
   },
   {
-   "motion": "Recommend approval of Article 24 (Bylaw amendments)",
+   "motion": "Recommend approval of Article 21 (Salary Schedule replacement, Personnel Committee).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys to recommend approval of article 24 2nd: l. franco vote: all in favor"
+   "quote": "motion: m. jeffreys to recommend approval of article 21"
   },
   {
-   "motion": "Approve the Minutes of March 22, 2022 as presented",
+   "motion": "Recommend approval of Article 24 (General By-laws amendments, Bylaw Review Committee).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: m. jeffreys to recommend approval of article 24"
+  },
+  {
+   "motion": "Approve the Minutes of March 22, 2022 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 in favor, 1 abstain (Alonzo)",
    "procedural": true,
-   "quote": "motion: l. franco 2nd: t. dwyer to approve the minutes of march 22, 2022 as presented vote: 3 in favor, 1 abstain (alonzo)"
+   "quote": "to approve the minutes of march 22, 2022 as presented vote: 3 in favor, 1 abstain (alonzo)"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer to adjourn the meeting 2nd: l. franco vote: all in favor"
+   "quote": "motion: t. dwyer to adjourn the meeting"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-scanned minutes with minor OCR artifacts in some motion records (e.g., '2\\\"d' for '2nd', '2\\\"':', etc.) preserved verbatim in quotes. One vote (Paul Theodoulou Reserve Officer appointment) had outcome stated ('Vote: All in Favor') but no motion/second formally recorded in minutes, so not included per instructions.\"",
- "cost_usd": 0.1736707
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR; quotes were copied from the OCR text, with line breaks collapsed to single spaces. Known OCR damage: the public hearing notice is truncated mid-address ('Lowell & AM to 5:00 PM'); the Article D21 heading reads 'ARTIC D21'; some words are run together (e.g. 'Schoolreceived'). The Class II applicant's address appears three ways in the minutes (69 Plain Street in the notice, 36 Summer Street in the remarks, 40 Summer Street in the motion); recorded as printed. The Theodoulou ratification shows 'Vote: All in Favor' with no motion or mover printed, so no moved_by/seconded_by. No roll call is printed, so attendance status is 'not stated' except where the minutes show a person acting or speaking. The Sewer Commission discussion and the Article 28 map discussion record no vote. Article 22 was deferred at the Chair's request, not by vote.",
+ "cost_usd": 0.02549138,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman, Select Board",
+   "status": "present",
+   "quote": "tom alonzo, chairman, select board/licensing authority"
+  },
+  {
+   "name": "M. Jeffreys",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. jeffreys read aloud the following proposed amendment to the sign policy:"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. dwyer asked when paving on the property would occur."
+  },
+  {
+   "name": "L. Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: l. franco to approve the tailings policy as presented"
+  },
+  {
+   "name": "Ms. Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "ms. brochu began her report with revenues:"
+  },
+  {
+   "name": "Chief Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief gammel read aloud his letter to the town manager:"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux stated this is notification to the select board of these resignations."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "188 Flat Hill Road, via ZOOM",
+   "status": "remote",
+   "quote": "matthew allison, 188 flat hill road, via zoom, asked if the board would be taking public comment during"
+  },
+  {
+   "name": "Dave Macdonald",
+   "role": "Commissioner, Sewer Commission",
+   "status": "present",
+   "quote": "commissioner dave macdonald and business mgr. lefevbre presented the proposed changes to the bylaw:"
+  },
+  {
+   "name": "Lefevbre",
+   "role": "Business Mgr., Sewer Commission",
+   "status": "present",
+   "quote": "commissioner dave macdonald and business mgr. lefevbre presented the proposed changes to the bylaw:"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "appointee to the APDC",
+   "status": "present",
+   "quote": "mr. lloyd thanked the board and exited the meeting."
+  },
+  {
+   "name": "Jose Iris De Oliveira Jr.",
+   "role": "applicant, Class II auto dealer license",
+   "status": "present",
+   "quote": "mr. de oliviera jr. stated he also owned lunenburg auto center located at 36 summer street."
+  },
+  {
+   "name": "Sidney Fernandes De Souza",
+   "role": "co-applicant, d/b/a Maxi Auto Inc.",
+   "status": "not stated",
+   "quote": "sidney fernandes de souza, d/b/a maxi auto inc. at 40 summer street"
+  },
+  {
+   "name": "Paul C. Theodoulou",
+   "role": "Reserve Police Officer candidate",
+   "status": "not stated",
+   "quote": "i am pleased to recommend paul c. theodoulou to an appointment as reserve police officer."
+  },
+  {
+   "name": "John Hazelrigg",
+   "role": "Civilian Traffic Unit candidate",
+   "status": "not stated",
+   "quote": "the candidate is john hazelrigg, who is a retired ma state trooper."
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "HR Director/Assistant Town Manager",
+   "status": "not stated",
+   "quote": "the assistant town manager julie belliveau submitted all the reimbursement requests for town employee expenses"
+  },
+  {
+   "name": "Penney Borneman",
+   "role": "School Business Office Administrative Secretary",
+   "status": "not stated",
+   "quote": "administrative secretary penney borneman submitted the reimbursement requests for school employee expenses."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Chair, Finance Committee",
+   "status": "not stated",
+   "quote": "chair peter beardmore, finance committee member dave passios and myself met with attorney costa"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "not stated",
+   "quote": "chair peter beardmore, finance committee member dave passios and myself met with attorney costa"
+  },
+  {
+   "name": "Attorney Costa",
+   "role": "Town Counsel (as referenced)",
+   "status": "not stated",
+   "quote": "chair peter beardmore, finance committee member dave passios and myself met with attorney costa"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Article 22 (amendments to the Salary Administration Plan bylaw) deferred to Town Meeting at the Chair's request.",
+   "quote": "mir. alonzo had questions about this article so requested to defer until town meeting."
+  },
+  {
+   "decision": "No action taken on the Planning Board's non-medical marijuana establishments article until the presentation at town meeting.",
+   "quote": "the board took no action on this article until the presentation is made at town meeting."
+  },
+  {
+   "decision": "Suggested that the Sign Policy amendment be forwarded to the School Committee for any comments.",
+   "quote": "suggestion was made to forward this to the school committee for any comments."
+  },
+  {
+   "decision": "Board to invite the School Committee and Superintendent to its next meeting after Town Meeting (stated by Mr. Jeffreys).",
+   "quote": "we are going to invite them to our next meeting to get to an answer that we know the schools don't want to provide."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Third-quarter revenue collections",
+   "what_was_recorded": "Total FY22 collections to 3/31/22 were 81.0% of estimates.",
+   "quote": "total collections to date are $36,549,685.90, or 81.0% of fy22 estimates through 3/31/22.",
+   "figures_as_printed": [
+    "$36,549,685.90",
+    "81.0%"
+   ]
+  },
+  {
+   "topic": "Local receipts",
+   "what_was_recorded": "Local receipts collected through 3/31/2022 stood at 108% of the FY22 estimate.",
+   "quote": "we have collected $3,369,784.81 or 108% of that estimate through 3/31/2022.",
+   "figures_as_printed": [
+    "$3,114,990.50",
+    "$3,369,784.81",
+    "108%"
+   ]
+  },
+  {
+   "topic": "Tax levy and tax lien revenue",
+   "what_was_recorded": "Tax levy collected at 78% and tax lien revenue received.",
+   "quote": "we have also received $560,411.43 in tax lien revenue.",
+   "figures_as_printed": [
+    "$29,833,387.33",
+    "$22,677,389.69",
+    "78%",
+    "$560,411.43"
+   ]
+  },
+  {
+   "topic": "State aid",
+   "what_was_recorded": "State aid received was 76% of the FY2022 Cherry Sheet estimate.",
+   "quote": "we have received $7,034,737.87 (76%) of our state aid estimate.",
+   "figures_as_printed": [
+    "$9,242,812.00",
+    "$7,034,737.87",
+    "76%"
+   ]
+  },
+  {
+   "topic": "FY22 expenditures",
+   "what_was_recorded": "Expended or encumbered 74% of the FY22 budgeted expenditures as of 3/31/22.",
+   "quote": "the total budgeted expenditures for fy22 are $45,098,551.93.",
+   "figures_as_printed": [
+    "$45,098,551.93",
+    "$33,490,078.23",
+    "74%"
+   ]
+  },
+  {
+   "topic": "Reserve Fund",
+   "what_was_recorded": "No draw on the Reserve Fund to date against a budgeted amount.",
+   "quote": "reserve fund - to date there has been no draw on the reserve fund. the budgeted amount is $75,000.",
+   "figures_as_printed": [
+    "$75,000"
+   ]
+  },
+  {
+   "topic": "Snow removal deficit",
+   "what_was_recorded": "Snow removal shows a deficit to be eliminated by appropriation transfers at annual town meeting.",
+   "quote": "the deficit in snow removal based on actual expenditures as of 3/31/22 is $127,930.97.",
+   "figures_as_printed": [
+    "$127,930.97"
+   ]
+  },
+  {
+   "topic": "Health insurance surplus",
+   "what_was_recorded": "A health insurance surplus is anticipated, part of which will cover an expected Medicare Expense overage; no dollar figure printed.",
+   "quote": "we anticipate a surplus in our health insurance line due to unfilled positions",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School state grant",
+   "what_was_recorded": "The school received a one-time state grant for pandemic-related enrollment disruptions.",
+   "quote": "an $18,000 grant from the state for one time assistance",
+   "figures_as_printed": [
+    "$18,000"
+   ]
+  },
+  {
+   "topic": "Winter Recovery Assistance Program",
+   "what_was_recorded": "Lunenburg's share of new state roadway funding, not retroactive, to be spent by June 30, 2023.",
+   "quote": "$272,678.78, which is based on our local miles.",
+   "figures_as_printed": [
+    "$272,678.78"
+   ]
+  },
+  {
+   "topic": "Green Communities reimbursement for employee expenses",
+   "what_was_recorded": "Reimbursement requests for employee expenses up to a stated per-employee cap, received as general fund receipt.",
+   "quote": "that businesses and towns could submit reimbursement requests up to $850/employee.",
+   "figures_as_printed": [
+    "$850/employee"
+   ]
+  },
+  {
+   "topic": "Flat Hill culvert construction funding",
+   "what_was_recorded": "Culvert construction is on hold pending additional funding; grant applications made.",
+   "quote": "on hold foradditional funding; applied for small bridge grant and for federal",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Personnel classification review cost",
+   "what_was_recorded": "Total FY23 impact of the salary schedule change, approved by the Personnel Committee.",
+   "quote": "the total impact of this for fy23 is $33,018.",
+   "figures_as_printed": [
+    "$33,018"
+   ]
+  },
+  {
+   "topic": "One day liquor license liability insurance",
+   "what_was_recorded": "Required insurance limits for one day liquor license holders, with the Town as additional insured.",
+   "quote": "in the amount of $250,000 per event and $500,000 aggregate",
+   "figures_as_printed": [
+    "$250,000 per event",
+    "$500,000 aggregate"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Snow removal deficit to be eliminated with appropriation transfers at the upcoming annual town meeting.",
+   "amount_as_printed": "$127,930.97",
+   "outcome": "planned for annual town meeting; no transfer voted at this meeting",
+   "quote": "this deficit will be eliminated with appropriation transfers at the upcoming annual town meeting"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Matthew Allison",
+   "stated_role": "188 Flat Hill Road, via ZOOM",
+   "topic": "whether the board would take public comment at the Sewer Commission meeting",
+   "quote": "matthew allison, 188 flat hill road, via zoom, asked if the board would be taking public comment during"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action; Allison question answered",
+   "quote": "mr. alonzo reminded all the annual town meeting is this saturday at 9:00 am.",
+   "tags": [
+    "town meeting",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "3rd Quarter Financial Report",
+   "resolution": "received, informational",
+   "quote": "3rd quarter financial report from finance director",
+   "tags": [
+    "finance",
+    "revenue",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "Public hearing: Class II auto dealer license",
+   "resolution": "approved",
+   "quote": "the licensing authority will hold a public hearing on tuesday, may 3, 2022 at 7:15 p.m.",
+   "tags": [
+    "licensing",
+    "auto dealer"
+   ]
+  },
+  {
+   "topic": "Ratification of Reserve Officer appointment (Paul Theodoulou)",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of reserve officer- paul theodoulou",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Civilian Traffic Unit appointment (John Hazelrigg)",
+   "resolution": "ratified",
+   "quote": "to ratify the town manager's appointment of john hazelrigg as civilian traffic unit member",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Sewer bylaw Article 25 with Sewer Commission",
+   "resolution": "presented and discussed; no vote recorded",
+   "quote": "meeting with sewer commission representative on article 25 sewer bylaw amendment",
+   "tags": [
+    "sewer",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "APDC appointment (William Lloyd)",
+   "resolution": "appointed",
+   "quote": "to appoint william lloyd to the apdc with a term to expire june 30, 2025",
+   "tags": [
+    "appointments",
+    "historic district"
+   ]
+  },
+  {
+   "topic": "Resignations notification",
+   "resolution": "noted",
+   "quote": "resignation of reserve officer brian watson and heavy equipment operator jarrett ober",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Tailings policy",
+   "resolution": "approved",
+   "quote": "motion: l. franco to approve the tailings policy as presented",
+   "tags": [
+    "policy"
+   ]
+  },
+  {
+   "topic": "One Day Liquor License insurance requirement",
+   "resolution": "approved",
+   "quote": "discussion on one day liquor license policy to include insurance requirement",
+   "tags": [
+    "licensing",
+    "insurance"
+   ]
+  },
+  {
+   "topic": "Sign policy at polling places",
+   "resolution": "approved as amended; forwarded to School Committee for comment",
+   "quote": "review sign policy re: signs at polling places during elections",
+   "tags": [
+    "elections",
+    "sign policy"
+   ]
+  },
+  {
+   "topic": "Article 21 (Salary Schedule)",
+   "resolution": "recommended for approval",
+   "quote": "article 21, to see if the town will vote to replace the current salary schedule",
+   "tags": [
+    "personnel",
+    "salary",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Article 22 (Salary Administration Plan bylaw)",
+   "resolution": "deferred to Town Meeting",
+   "quote": "mir. alonzo had questions about this article so requested to defer until town meeting.",
+   "tags": [
+    "personnel",
+    "salary",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Article 24 (General By-laws amendments)",
+   "resolution": "recommended for approval",
+   "quote": "article 24. to see if the town will vote to amend the general by-laws of the town of lunenburg as follows:",
+   "tags": [
+    "bylaws",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Planning Board marijuana article (Section 4.15)",
+   "resolution": "no action until town meeting presentation",
+   "quote": "the board took no action on this article until the presentation is made at town meeting.",
+   "tags": [
+    "zoning",
+    "cannabis",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Article D21 Water Supply Protection District",
+   "resolution": "no action recorded",
+   "quote": "artic d21. to see if the town will vote to amend the code of lunenburg, section 250-4.9",
+   "tags": [
+    "zoning",
+    "water supply",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Article 28 zoning map",
+   "resolution": "discussed; no recommendation made",
+   "quote": "discussion ensued on the impact of the changing of zones and how the residents of those areas feel about it. no recommendation was made.",
+   "tags": [
+    "zoning",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Approve minutes of March 22, 2022",
+   "resolution": "approved, 3 in favor, 1 abstain",
+   "quote": "to approve the minutes of march 22, 2022 as presented vote: 3 in favor, 1 abstain (alonzo)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Board liaison and committee reports",
+   "resolution": "informational; Town Meeting prep",
+   "quote": "mr. alonzo reported the finance committee met and reviewed some of the warrant articles they",
+   "tags": [
+    "town meeting",
+    "capital plan",
+    "memorial day"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "quote": "our next meetings are may 10, may 17, and may 24.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing public comment and adjournment",
+   "resolution": "adjourned 9:19 PM",
+   "quote": "the meeting adjourned at 9:19 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public hearing notice, Licensing Authority, Class II auto dealer license (May 3, 2022)",
+   "where": "text",
+   "quote": "mr. alonzo read the public hearing notice aloud:"
+  },
+  {
+   "name": "Letter from Chief Gammel to the Town Manager recommending Paul C. Theodoulou as Reserve Police Officer",
+   "where": "text",
+   "quote": "chief gammel read aloud his letter to the town manager:"
+  },
+  {
+   "name": "MBTA Communities Information form",
+   "where": "text",
+   "quote": "the town was required to submit the mbta communities information form by may 2nd."
+  },
+  {
+   "name": "Article 25 sewer bylaw revision",
+   "where": "text",
+   "quote": "article 25 is to revise the current sewer bylaw including:"
+  },
+  {
+   "name": "Amendments to the Salary Administration Plan Bylaw (Article 22)",
+   "where": "text",
+   "quote": "mir. alonzo had questions about this article so requested to defer until town meeting."
+  },
+  {
+   "name": "Article 21, replacement Salary Schedule (Personnel Committee)",
+   "where": "text",
+   "quote": "article 21, to see if the town will vote to replace the current salary schedule"
+  },
+  {
+   "name": "Article 24, General By-laws amendments (Bylaw Review Committee)",
+   "where": "text",
+   "quote": "article 24. to see if the town will vote to amend the general by-laws of the town of lunenburg as follows:"
+  },
+  {
+   "name": "Planning Board article on Protective Bylaw Section 4.15 (non-medical marijuana establishments)",
+   "where": "text",
+   "quote": "the board took no action on this article until the presentation is made at town meeting."
+  },
+  {
+   "name": "Section 250-4.9 Water Supply Protection District Updates 2022 (Article D21, Planning Board)",
+   "where": "text",
+   "quote": "as shown on a document entitled \"section 250-4.9 water supply protection district updates 2022\""
+  },
+  {
+   "name": "Revised zoning map dated May 7, 2022 (Article 28, Planning Board)",
+   "where": "text",
+   "quote": "a copy of which is on file with the town clerk"
+  },
+  {
+   "name": "Proposed amendment to the Sign Policy (Election Day Exception)",
+   "where": "text",
+   "quote": "mr. jeffreys read aloud the following proposed amendment to the sign policy:"
+  },
+  {
+   "name": "One Day Liquor License Policy (insurance requirement)",
+   "where": "text",
+   "quote": "discussion on one day liquor license policy to include insurance requirement"
+  },
+  {
+   "name": "Tailings policy",
+   "where": "text",
+   "quote": "motion: l. franco to approve the tailings policy as presented"
+  },
+  {
+   "name": "Town Counsel opinion on the Capital Plan amendment",
+   "where": "text",
+   "quote": "we saw the opinion from town counsel and the chair of the finance committee was not in agreement with it."
+  },
+  {
+   "name": "Minutes of March 22, 2022",
+   "where": "text",
+   "quote": "to approve the minutes of march 22, 2022 as presented vote: 3 in favor, 1 abstain (alonzo)"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting",
+  "finance",
+  "third quarter",
+  "licensing",
+  "appointments",
+  "police",
+  "sewer bylaw",
+  "zoning",
+  "personnel",
+  "sign policy",
+  "elections",
+  "capital plan"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

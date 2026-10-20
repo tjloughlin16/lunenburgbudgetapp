@@ -1,0 +1,577 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2022-06-21",
+ "video_id": "CVkZMcWM58k",
+ "video_url": "https://www.youtube.com/watch?v=CVkZMcWM58k",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-06-21-CVkZMcWM58k.json",
+  "sha256": "b70138aaced6040ecc9b99b1d436e8033baf120347857f600d8993d77c2872b4",
+  "caption_lines": 212,
+  "segments": 1977
+ },
+ "recording": {
+  "duration_s": 4396,
+  "duration": "1:13",
+  "spoken_chars": 59362,
+  "words_approx": 9893
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06212022-5321",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-06-21-agenda-5321.txt",
+   "path": "sources/meetings/select-board/2022-06-21-agenda-5321.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06212022-5321",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-06-21-minutes-5321.txt",
+   "path": "sources/meetings/select-board/2022-06-21-minutes-5321.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T13:24:46Z",
+  "cost_usd": 0.3484217
+ },
+ "minutes": {
+  "headline": "Select Board waived insurance and approved a Pride event license, reappointed a COA member, and paid out the manager's 5 vacation days.",
+  "summary": "A short Select Board meeting with only three members present. It held a public hearing on a Pride event, interviewed and appointed a Council on Aging member, and heard an update from the Historical Commission and APDC chair. The board approved a vacation payout for the town manager, rescheduled its workshop, and went into executive session on police union bargaining.",
+  "attendees": [
+   {
+    "name_as_heard": "Michael Ray Jeffries",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Tom Alonzo",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Heather Sroka (select woman)",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ms. Lemieux (Heather)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member (absent)"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member (absent)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 49,
+    "topic": "Chair asked for public comment at the start; none was offered."
+   },
+   {
+    "t": 4299,
+    "topic": "Public comment asked again at the end; none was offered."
+   }
+  ],
+  "tags": [
+   "contracts-and-unions",
+   "executive-session",
+   "grants",
+   "hiring",
+   "library",
+   "msba",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "recreation",
+   "seniors",
+   "town-departments",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 547,
+    "motion": "Waive the liability insurance requirement for the special event license",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 590,
+    "motion": "Approve the special event license for the Pride event on July 13 at 4 pm on the Ritter building lawn",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1190,
+    "motion": "Appoint James McGuigan to the Council on Aging for a term expiring June 30, 2024",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3574,
+    "motion": "Approve payout of five unused vacation days for the town manager, FY22",
+    "outcome": "passed (aye, no opposed)",
+    "procedural": false
+   },
+   {
+    "t": 4320,
+    "motion": "Enter executive session under c.30A s.21 para 3 on collective bargaining (police union), to adjourn afterward",
+    "outcome": "passed by roll call, all three members aye",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 3429,
+    "topic": "Town manager vacation balance",
+    "what_was_said": "The town manager had a balance of unused vacation days at year end; the board chose a payout over carryover.",
+    "figures_as_heard": [
+     "five uh vacation days"
+    ]
+   },
+   {
+    "t": 3244,
+    "topic": "MRPC planning assistance grant",
+    "what_was_said": "The town was awarded a planning assistance grant for MRPC staff to help with MBTA zoning compliance, to be completed by June 30, 2024.",
+    "figures_as_heard": [
+     "june 30th of 2024"
+    ]
+   },
+   {
+    "t": 3637,
+    "topic": "Warrants",
+    "what_was_said": "Several accounts payable and payroll warrants were read, including a school payroll warrant.",
+    "figures_as_heard": [
+     "two hundred fifteen thousand seventy eight dollars and thirteen cents",
+     "605 287.99",
+     "483 and 239.12 cents",
+     "937 240 dollars and 42 cents",
+     "311 175 dollars and 51 cents"
+    ]
+   },
+   {
+    "t": 3020,
+    "topic": "APDC operating budget",
+    "what_was_said": "The APDC chair said it wants a budget next fiscal year for educational items like plaques; the board suggested presenting a request in the fall before the manager's budget process.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4096,
+    "topic": "Library trust funds",
+    "what_was_said": "Library trustees discussed investing about a hundred thousand dollars of trust funds in a more diverse pool, with language concerns between town meeting and legislature.",
+    "figures_as_heard": [
+     "a little shy of a hundred thousand dollars",
+     "about 80 000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3368,
+    "decision": "Workshop postponed; articles one and two of the policies move to the July 12 meeting, and four, five and six to the second August meeting."
+   },
+   {
+    "t": 3388,
+    "decision": "Town manager goals and select board goals deferred until a full board is present."
+   },
+   {
+    "t": 3040,
+    "decision": "Board advised the APDC to prepare a budget request this fall before the town manager's budget process."
+   },
+   {
+    "t": 4259,
+    "decision": "July 5 meeting may be cancelled; July 12 is a workshop and July 19 a regular meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 4,
+    "t_end": 115,
+    "topic": "Call to order, pledge, announcements, Parks joint meeting",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 115,
+    "t_end": 755,
+    "topic": "Public hearing: Pride event special event license",
+    "resolution": "voted",
+    "tags": [
+     "recreation",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 755,
+    "t_end": 1252,
+    "topic": "Council on Aging appointment of James McGuigan",
+    "resolution": "voted",
+    "tags": [
+     "seniors",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1252,
+    "t_end": 3080,
+    "topic": "Historical Commission and APDC update",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 3080,
+    "t_end": 3348,
+    "topic": "Town manager report: vacancies, jobs, MBTA planning grant",
+    "resolution": "informational",
+    "tags": [
+     "hiring",
+     "grants",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3348,
+    "t_end": 3408,
+    "topic": "Workshop and goals rescheduled",
+    "resolution": "referred",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3408,
+    "t_end": 3615,
+    "topic": "Town manager vacation payout",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3615,
+    "t_end": 3705,
+    "topic": "Minutes, warrants, action items",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 3705,
+    "t_end": 4299,
+    "topic": "Committee reports: School Committee, Turkey Hill, finance committee, library trust funds",
+    "resolution": "informational",
+    "tags": [
+     "turkey-hill",
+     "msba",
+     "library"
+    ]
+   },
+   {
+    "t_start": 4299,
+    "t_end": 4385,
+    "topic": "Executive session on police union bargaining",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Exact voice vote count on the vacation payout motion, only 'the eyes have it'.",
+   "Some warrant figures are rendered inconsistently by the captions."
+  ],
+  "confidence": "high",
+  "contention": [],
+  "documents_mentioned": [
+   {
+    "t": 1292,
+    "name_as_heard": "old home week booklet from 1903",
+    "kind": "other",
+    "words_as_heard": "excerpts from the old holmes week booklet from 1903"
+   },
+   {
+    "t": 3408,
+    "name_as_heard": "HR benefit balance sheet",
+    "kind": "memo",
+    "words_as_heard": "hrl benefit val benefit balance that just identifies that heather's"
+   },
+   {
+    "t": 404,
+    "name_as_heard": "letter from the police chief",
+    "kind": "letter or email",
+    "words_as_heard": "we have a letter from the police chief that just acknowledges"
+   },
+   {
+    "t": 404,
+    "name_as_heard": "email exchange with use director",
+    "kind": "letter or email",
+    "words_as_heard": "the email exchange from with mr bernie"
+   },
+   {
+    "t": 4279,
+    "name_as_heard": "select board policies and procedures",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "articles one and two of the select board policies policies and procedures"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "turkey-hill-capital-needs",
+    "title": "Turkey Hill capital needs",
+    "question": "What would a Turkey Hill rebuild cost and how would the town's debt policy and MSBA process handle it?",
+    "t": 3746,
+    "words_as_heard": "they're focused on turkey hill the turkey hill building right now and they clearly stated that they believe that we need a new building a rebuild",
+    "data_in_play": [
+     "debt policy",
+     "MSBA list"
+    ],
+    "existing": "thread:turkey-hill-rebuild"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved a payout of the town manager's unused FY22 vacation days instead of carrying them over; the vote had no opposition.",
+    "t": 3574
+   },
+   {
+    "line": "The board waived the liability insurance requirement and then approved the special event license for a Pride event on July 13 on the Ritter building lawn, both unanimously.",
+    "t": 590
+   },
+   {
+    "line": "The board appointed James McGuigan to the Council on Aging for a term expiring June 30, 2024, unanimously.",
+    "t": 1190
+   },
+   {
+    "line": "The town was awarded a planning assistance grant for regional planning staff to help with MBTA zoning compliance, due to be completed by June 30, 2024.",
+    "t": 3244
+   },
+   {
+    "line": "With only three members present, the board postponed its policy workshop and deferred town manager and board goals until a full board is seated.",
+    "t": 3388
+   }
+  ],
+  "why_it_matters": [
+   "The vacation payout is a cost to the town budget, which is mostly taxes, and the board chose it over carrying the days forward.",
+   "The MBTA zoning grant bears on a rule the town must meet by mid-2024, and it may lead to a zoning vote at a later Town Meeting.",
+   "The board postponed its goals and policy workshop, so the priorities that guide the next budget cycle are not yet set."
+  ],
+  "watch_next": [
+   "July 12 workshop on policy articles one and two, and a regular meeting on July 19; the July 5 meeting may be cancelled.",
+   "Whether the Historical Commission and APDC bring a budget request to the board this fall, before the town manager's budget process."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T13:24:57Z",
+   "cost_usd": 0.2267577
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06212022-5321",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-06-21-minutes-5321.txt",
+   "path": "sources/meetings/select-board/2022-06-21-minutes-5321.pdf"
+  },
+  "official_sha256": "fd926113024240879d7d16c962cb3d4699857c04118c0f3940543d8e469652c4",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the insurance waiver, the McGuigan appointment, the vacation payout and the warrant amounts. They differ on when the policy workshop moved to, and the official minutes do not clearly record the vote approving the Pride license. Ours also has several decisions and the two absences that the official minutes omit.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 6,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: waive liability insurance for Pride special event license",
+    "ours": "Waive the liability insurance requirement for the special event license — passed unanimously",
+    "official": "motion: t. alonzo to waive the liability insurance requirement for the gathering 2nd: h. sroka vote: all in favor",
+    "note": "Same motion, same outcome (unanimous).",
+    "t": 547
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: approve the Pride special event license",
+    "ours": "Approve the special event license for the Pride event on July 13 at 4 pm on the Ritter building lawn — passed unanimously",
+    "official": "awareness event doesn't require a lot of setup and safety issues; we should be able to evaluate that to make this more streamlined. vote: all in favor",
+    "note": "The official text shows a vote line but no stated motion to approve the license, so check the minutes and the video at about t=590 to confirm that this vote is the approval.",
+    "t": 590
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: appoint James McGuigan to Council on Aging, term to June 30, 2024",
+    "ours": "Appoint James McGuigan to the Council on Aging for a term expiring June 30, 2024 — passed unanimously",
+    "official": "to appoint james mcguigan to the council on aging with a term to expire june 30, 2024 vote: all in favor",
+    "note": "Same appointment, term and outcome.",
+    "t": 1190
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: payout of five unused vacation days, town manager FY22",
+    "ours": "Approve payout of five unused vacation days for the town manager, FY22 — passed (aye, no opposed)",
+    "official": "to approve payout of five unused vacation days from fy22 to ms. lemieux vote: all in favor",
+    "note": "Same payout, same count of days, and the vote passed in both.",
+    "t": 3574
+   },
+   {
+    "kind": "agree",
+    "about": "Vacation balance: five days",
+    "ours": "Town manager vacation balance: five uh vacation days",
+    "official": "it was suggested to allot a payout due to her not having time to take all her vacation days.",
+    "note": "Both give five days; the official minutes print no dollar amount.",
+    "t": 3429
+   },
+   {
+    "kind": "agree",
+    "about": "Warrant amounts",
+    "ours": "two hundred fifteen thousand seventy eight dollars and thirteen cents, 605 287.99, 483 and 239.12 cents, 937 240 dollars and 42 cents, 311 175 dollars and 51 cents",
+    "official": "warrants: the board signed an accounts payable warrant in the amount of $483,239.12, a payroll warrant in the amount of $937,240.42",
+    "note": "All five amounts match the official list: $215,078.13, $605,287.99, $483,239.12, $937,240.42 and $311,175.51.",
+    "t": 3637
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant amount rendered '483 and 239.12 cents'",
+    "ours": "483 and 239.12 cents",
+    "official": "warrants: the board signed an accounts payable warrant in the amount of $483,239.12, a payroll warrant in the amount of $937,240.42",
+    "note": "Captions garbled the digit grouping of the accounts payable warrant.",
+    "official_reading": "$483,239.12",
+    "t": 3637
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "MRPC grant date June 30, 2024",
+    "ours": "MRPC planning assistance grant: june 30th of 2024",
+    "official": "",
+    "note": "The official minutes describe the MRPC grant but give no date or amount. June 30, 2024 appears there only as the McGuigan term end.",
+    "t": 3244
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Library trust funds amount",
+    "ours": "Library trust funds: a little shy of a hundred thousand dollars, about 80 000",
+    "official": "",
+    "note": "The official minutes cover the trust fund discussion with no amount, and our caption figures are inconsistent with each other (near 100,000 versus about 80,000).",
+    "t": 4096
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Policy workshop postponement",
+    "ours": "Workshop postponed; articles one and two of the policies move to the July 12 meeting, and four, five and six to the second August meeting.",
+    "official": "this agenda item was postponed until the august 12' meeting.",
+    "note": "Ours moves articles 1-2 to July 12 and 4-6 to a second August meeting. The official minutes give a single 'august 12' date for Articles I & II. Check the video and the agenda for the dates.",
+    "t": 3368
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager and select board goals deferred",
+    "ours": "Town manager goals and select board goals deferred until a full board is present.",
+    "official": "",
+    "note": "The official minutes record no deferral of the goals items.",
+    "t": 3388
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "APDC advised to prepare budget request",
+    "ours": "Board advised the APDC to prepare a budget request this fall before the town manager's budget process.",
+    "official": "",
+    "note": "The official minutes list the APD Chair as present but record no advice about a budget request.",
+    "t": 3040
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "July meeting schedule",
+    "ours": "July 5 meeting may be cancelled; July 12 is a workshop and July 19 a regular meeting.",
+    "official": "",
+    "note": "The official minutes do not record the July schedule.",
+    "t": 4259
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Microphone power supply follow-up",
+    "ours": "",
+    "official": "advised her to check with the town manager's office for follow up on the power supply for the microphone.",
+    "note": "Our minutes do not record this advice to Ms. Prokowiew."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sroka feedback to School Committee chair",
+    "ours": "",
+    "official": "ms. sroka was encouraged to give feedback to the school committee chair.",
+    "note": "Our minutes do not record this."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pride event raffle for GSA Link",
+    "ours": "",
+    "official": "her plan is to gather donations for a raffle and the proceeds will go to gsa link.",
+    "note": "Our minutes do not mention the raffle."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Historical Commission memorial funding",
+    "ours": "",
+    "official": "the commission bought the granite base stones in which the marble stones were to be set",
+    "note": "Our minutes do not mention this item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Turkey Hill debt policy question",
+    "ours": "",
+    "official": "about the town debt policy related to future turkey hill elementary improvements or a rebuild.",
+    "note": "Our minutes do not mention this School Committee question."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Michael Ray Jeffries (chair)",
+    "official": "chairman jeffreys called the meeting to order at 7:03 p.m.",
+    "note": "Different spelling of the chair's surname; the official minutes give Jeffreys.",
+    "official_reading": "Jeffreys"
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees present: Alonzo, Sroka, Lemieux",
+    "ours": "Tom Alonzo (vice chair); Heather Sroka (member); Ms. Lemieux (Heather) (town manager)",
+    "official": "ms. sroka thanked him for all the information.",
+    "note": "Both records show Alonzo, Sroka and Ms. Lemieux (town manager) at the meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Absent members Franco and Dwyer",
+    "ours": "Mr. Franco (member (absent)); Mr. Dwyer (member (absent))",
+    "official": "",
+    "note": "The official minutes list no absences."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees: McGrath, Prokowiew, McGuigan",
+    "ours": "",
+    "official": "mr. mcgrath, 22 cushing lane, greeted the board members and read an excerpt from a 1903 old homes week booklet relevant to lunenburg",
+    "note": "The official minutes name Richard McGrath, Chloe Prokowiew and James McGuigan as present. Our attendee list covers board members only."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T13:26:40Z",
+   "cost_usd": 0.2658797
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2021-11-18",
  "docid": "2885",
@@ -12,40 +12,285 @@
  },
  "votes": [
   {
-   "motion": "accept the minutes of October 21, 2021 as presented",
+   "motion": "Accept the minutes of October 21, 2021 as presented.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dick made a motion to accept the minutes of october 21, 2021 as presented. seconded by donna. the motion passed unanimously."
+   "quote": "dick made a motion to accept the minutes of october 21, 2021 as presented."
   },
   {
-   "motion": "accept the FY23 Action Plan for LSTA Grant",
+   "motion": "Accept the FY23 action plan for the LSTA grant.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "dick made a motion to accept the action plan. this was seconded by kate. the motion passed unanimously."
+   "quote": "dick made a motion to accept the action plan. this was seconded by kate."
   },
   {
-   "motion": "change the December meeting date from the 16th to the 15th",
+   "motion": "Change the December meeting date from the 16th to the 15th.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "dick made a motion to change the december meeting date from the 16 th to the 15th. seconded by laura. the motion passed unanimously",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "dick made a motion to change the december meeting date from the 16 th to the 15th."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn by dick seconded by laura. meeting was adjourned at 8:45 p.m."
+   "quote": "motion to adjourn by dick seconded by laura."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0936285
+ "note": "Pages 3 through 12 of the text are blank; the substantive minutes are on pages 1 and 2. Votes are recorded as 'passed unanimously' with no vote count, so outcome is 'passed'. The minutes print no dollar transfers and no public comment speakers ('No public comment.').",
+ "cost_usd": 0.0156582,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:58 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "absent",
+   "quote": "laura boussom absent: maia wentrup"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of chapter 4 of the Trustee Handbook deferred (Chair's suggestion).",
+   "quote": "harry suggested we defer discussion of chapter 4 in the trustee handbook."
+  },
+  {
+   "decision": "Director to meet with the Town Manager after submitting budget requests.",
+   "quote": "muir will meet with the town manager after submitting requests."
+  },
+  {
+   "decision": "Personnel subcommittee to meet the next day to review and compile the Board's comments on the director evaluation.",
+   "quote": "the personnel subcommittee will be meeting tomorrow to review and compile the board's comments and input."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget expenditure to date (Director's Report)",
+   "what_was_recorded": "The Director reported the budget is 37% expended in the fifth month of the fiscal year.",
+   "figures_as_printed": [
+    "37%"
+   ],
+   "quote": "we are in the 5th month of the fiscal year and the budget is 37% expended."
+  },
+  {
+   "topic": "Friends of LPL pop-up book sales",
+   "what_was_recorded": "Three November pop-up book sales netted about $400 each week.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "there were three pop-up book sales in november which netted about $400 each week."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved (October 21, 2021 minutes)",
+   "quote": "dick made a motion to accept the minutes of october 21, 2021 as presented.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action; budget 37% expended, FY2023 budget process begun, IT and cleaning issues reported",
+   "quote": "we are in the 5th month of the fiscal year and the budget is 37% expended.",
+   "tags": [
+    "budget",
+    "staffing",
+    "IT",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "deferred chapter 4",
+   "quote": "harry suggested we defer discussion of chapter 4 in the trustee handbook.",
+   "tags": [
+    "trustee handbook"
+   ]
+  },
+  {
+   "topic": "By-Laws Review Discussion",
+   "resolution": "no action; no current bylaws document, MBLC templates available",
+   "quote": "the bot has no current bylaws document. mblc has a number of examples to use as templates.",
+   "tags": [
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Directors Evaluation Discussion",
+   "resolution": "no action; personnel subcommittee to compile comments",
+   "quote": "the personnel subcommittee will be meeting tomorrow to review and compile the board's comments and input.",
+   "tags": [
+    "personnel",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "no action; state legislature order to be read, in process",
+   "quote": "the last action by the state legislature was on august 16 th and was an order to be read",
+   "tags": [
+    "trust fund",
+    "state legislature"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action; book sales and skate park partnership discussed",
+   "quote": "there were three pop-up book sales in november which netted about $400 each week.",
+   "tags": [
+    "Friends of LPL",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Fine Free Policy",
+   "resolution": "no action; borrowing policy updated, auto renewals reviewed",
+   "quote": "the borrowing policy has been updated to include the new fine-free policy.",
+   "tags": [
+    "fines",
+    "borrowing policy"
+   ]
+  },
+  {
+   "topic": "FY23 Action Plan for LSTA Grant",
+   "resolution": "approved",
+   "quote": "dick made a motion to accept the action plan. this was seconded by kate.",
+   "tags": [
+    "grant",
+    "LSTA",
+    "Friday hours"
+   ]
+  },
+  {
+   "topic": "Discussion of changing December meeting date",
+   "resolution": "approved (moved from December 16 to December 15)",
+   "quote": "dick made a motion to change the december meeting date from the 16 th to the 15th.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action; none",
+   "quote": "board comments o none",
+   "tags": []
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:45 p.m.",
+   "quote": "motion to adjourn by dick seconded by laura.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "November 18, 2021 Agenda",
+   "where": "list",
+   "quote": "november 18, 2021 agenda"
+  },
+  {
+   "name": "November 2021 Director’s Report",
+   "where": "list",
+   "quote": "november 2021 director's report"
+  },
+  {
+   "name": "November Adult Services Report",
+   "where": "list",
+   "quote": "november adult services report"
+  },
+  {
+   "name": "November 2021 Youth Services Report",
+   "where": "list",
+   "quote": "november 2021 youth services report"
+  },
+  {
+   "name": "November 2021 Teen Services Report",
+   "where": "list",
+   "quote": "november 2021 teen services report"
+  },
+  {
+   "name": "Borrowing Policies",
+   "where": "list",
+   "quote": "borrowing policies o action plan year 2"
+  },
+  {
+   "name": "Action Plan Year 2",
+   "where": "list",
+   "quote": "borrowing policies o action plan year 2"
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "grants",
+  "LSTA",
+  "trustee handbook",
+  "bylaws",
+  "IT",
+  "staffing",
+  "director evaluation",
+  "fines policy",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

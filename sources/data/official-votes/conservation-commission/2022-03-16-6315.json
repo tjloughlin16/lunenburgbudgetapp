@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-03-16",
  "docid": "6315",
@@ -12,21 +12,21 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing on Notice of Intent to April 6, 2022",
+   "motion": "Continue the public hearing on the Notice of Intent by William Emkey for 445 Townsend Harbor Road to the April 6, 2022 meeting.",
    "moved_by": "ML",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "this was continued to the april 6, 2022 meeting by a motion of ml and a second by cc with a unanimous vote to approve the motion to continue."
   },
   {
-   "motion": "Ratify the bid by King Brothers for forestry work",
+   "motion": "Ratify the bid by King Brothers for Hollis Road work.",
    "outcome": "not stated",
    "procedural": false,
    "quote": "there was motion to ratify the bid by king brothers."
   },
   {
-   "motion": "Issue a cease and desist if work is outside the specification of the existing enforcement order",
+   "motion": "Issue a cease and desist at 238 Fire Road 16 if work is outside the specification of the existing EO.",
    "moved_by": "JR",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
@@ -34,7 +34,7 @@
    "quote": "jr moved to issue a cease and desist if they are outside the specification of the existing eo. cc seconded and the commission voted unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "ML",
    "seconded_by": "CC",
    "outcome": "passed unanimously",
@@ -43,6 +43,296 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1190045
+ "note": "Extracted text of a Zoom meeting. Attendance is printed only as initials (RB, ML, CC, JR); the body's MM is mapped to Matthew S. Marro, Conservation Administrator, by inference from the header, not by the minutes. Header roster members not named in the body are not listed as attendees. Only the continuance, the Hollis Road bid ratification (no mover, second or result), the cease and desist, and adjournment are recorded as motions. The Hollis Road text names King Farm as the high bid while the motion names King Brothers, as printed. No dollar figures appear in the text. Page 3 headings have no content. Header reads 'MIUNUTES'. Minutes of March 2, 2022 were not acted on.",
+ "cost_usd": 0.02045628,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "RB",
+   "role": "acting as Chair",
+   "status": "present",
+   "quote": "the meeting was called to order by rb acting as chair at 7pm"
+  },
+  {
+   "name": "ML",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance was rb ml cc jr"
+  },
+  {
+   "name": "CC",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance was rb ml cc jr"
+  },
+  {
+   "name": "JR",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance was rb ml cc jr"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator (identified as MM in the body)",
+   "status": "present",
+   "quote": "jr also asked mm about his retirement upcoming. mm noted he is retiring on may 31"
+  },
+  {
+   "name": "Jack Katurnia",
+   "role": "appeared before the commission re 192 Townsend harbor Road",
+   "status": "present",
+   "quote": "jack katurnia appeared before the commission to note that he will"
+  },
+  {
+   "name": "Nick Eaton",
+   "role": "appeared re 441 Townsend Harbor Road",
+   "status": "present",
+   "quote": "nick eaton appeared and he was instructed as"
+  },
+  {
+   "name": "Lia Ellowitz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lia ellowitz expressed concerns about ongoing work in violation along the peninsula."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Minutes of the March 2, 2022 meeting were not acted on at this meeting.",
+   "quote": "minutes of previous meetings - march 2, 2022 not acted on."
+  },
+  {
+   "decision": "Jack Katurnia (192 Townsend Harbor Road) was instructed to file a request for a determination with the commission to memorialize removal of the pavement and materials.",
+   "quote": "he was instructed to file with the commission for a request for a determination to memorialize the removal."
+  },
+  {
+   "decision": "MM will follow up on the 214 Townsend Harbor Road response on May 3, 2022.",
+   "quote": "mm will follow up on may 3rd."
+  },
+  {
+   "decision": "Nick Eaton (441 Townsend Harbor Road) was instructed on the procedure for an Amendment to the OOC.",
+   "quote": "he was instructed as to the procedure for the amendment to the ooc."
+  },
+  {
+   "decision": "MM will review the peninsula area raised in public comment.",
+   "quote": "mm will review the area."
+  },
+  {
+   "decision": "MM will contact the homeowner at 23 Cove Road.",
+   "quote": "non 23 cove road - mm will contact the homeowner"
+  },
+  {
+   "decision": "190 Peninsula Drive is scheduled to appear before the commission on April 6, 2022.",
+   "quote": "190 peninsula drive- will appear aril 6, 2022"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road forestry bids",
+   "what_was_recorded": "Three bids were received for forestry work on the Hollis Road property; the high bid was from King Farm and work is to start in May or June. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "rb noted that the commission received three bids on the hollis road property for the forestry and the high bid was from king farm"
+  },
+  {
+   "topic": "Ratification of King Brothers bid",
+   "what_was_recorded": "A motion to ratify the bid by King Brothers is recorded with no mover, second, or result, and no amount.",
+   "figures_as_printed": [],
+   "quote": "there was motion to ratify the bid by king brothers."
+  },
+  {
+   "topic": "Trails grant",
+   "what_was_recorded": "An update on the trails grant was on the agenda as a status report, if any; none is recorded. No grant amount is printed.",
+   "figures_as_printed": [],
+   "quote": "update on trails grant - status report, if any."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "JR",
+   "topic": "Reappointment and Conservation Administrator's retirement",
+   "quote": "jr under public comment noted that he was placing his name in for reappointment."
+  },
+  {
+   "speaker": "Lia Ellowitz",
+   "topic": "Ongoing work in violation along the peninsula",
+   "quote": "lia ellowitz expressed concerns about ongoing work in violation along the peninsula."
+  },
+  {
+   "speaker": "JR",
+   "topic": "Upcoming storm water meeting and MS4 compliance",
+   "quote": "jr noted that there is an upcoming storm water meeting and the consultant"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "called to order at 7 PM by RB acting as Chair",
+   "quote": "the meeting was called to order by rb acting as chair at 7pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "noted; reappointment and a retirement raised, no action",
+   "quote": "jr under public comment noted that he was placing his name in for reappointment.",
+   "tags": [
+    "reappointment",
+    "personnel",
+    "open space liaison"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings",
+   "resolution": "not acted on (March 2, 2022 minutes)",
+   "quote": "minutes of previous meetings - march 2, 2022 not acted on.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Continued public hearing: Notice of Intent, 445 Townsend Harbor Road",
+   "resolution": "continued to April 6, 2022",
+   "quote": "this was continued to the april 6, 2022 meeting by a motion of ml and a second by cc with a unanimous vote to approve the motion to continue.",
+   "tags": [
+    "notice of intent",
+    "wetlands",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Discussion of properties on the tax lien sale list (new business)",
+   "resolution": "listed on agenda; no discussion or action recorded",
+   "quote": "discussion of properties on the tax lien sale list",
+   "tags": [
+    "tax lien"
+   ]
+  },
+  {
+   "topic": "Old business: encroachment issues",
+   "resolution": "follow-ups assigned for several properties; no final action recorded",
+   "quote": "192 townsend harbor road- jack katurnia appeared before the commission to note that he will",
+   "tags": [
+    "encroachment",
+    "wetlands",
+    "Townsend Harbor Road",
+    "Woodland Drive"
+   ]
+  },
+  {
+   "topic": "Hollis Road maintenance work",
+   "resolution": "bids discussed; ratification motion recorded with no result",
+   "quote": "there was motion to ratify the bid by king brothers.",
+   "tags": [
+    "Hollis Road",
+    "forestry",
+    "bids",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and administrative hearings",
+   "resolution": "cease and desist voted unanimously if work is outside existing EO; other properties continued or follow-up",
+   "quote": "jr moved to issue a cease and desist if they are outside the specification of the existing eo. cc seconded and the commission voted unanimously.",
+   "tags": [
+    "enforcement",
+    "cease and desist",
+    "238 Fire Road",
+    "Peninsula Drive",
+    "Cove Road"
+   ]
+  },
+  {
+   "topic": "Update on trails grant",
+   "resolution": "no status report recorded",
+   "quote": "update on trails grant - status report, if any.",
+   "tags": [
+    "trails grant"
+   ]
+  },
+  {
+   "topic": "Standing items: certificates, extension permits, committee and administrator reports, open space and trail use",
+   "resolution": "headings only; no content recorded",
+   "quote": "committee reports - any update",
+   "tags": [
+    "administrator reports",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Communications and public comment: storm water",
+   "resolution": "noted; no action",
+   "quote": "jr noted that there is an upcoming storm water meeting and the consultant",
+   "tags": [
+    "stormwater",
+    "MS4"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:45 PM, unanimous",
+   "quote": "the meeting was adjourned by a motion of ml and a second by cc with a unanimous vote to approve the motion.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent by William Emkey, 445 Townsend Harbor Road (replacement of railroad tie steps and timber retaining wall)",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent by william emkey for work at 445 townsend harbor road"
+  },
+  {
+   "name": "Enforcement order (EO), 238 Fire Road 16",
+   "where": "text",
+   "quote": "mm issued an eo for cutting in areas not allowed."
+  },
+  {
+   "name": "Amendment to the Order of Conditions (OOC), 441 Townsend Harbor Road",
+   "where": "text",
+   "quote": "he was instructed as to the procedure for the amendment to the ooc."
+  },
+  {
+   "name": "Request for a determination, 192 Townsend Harbor Road",
+   "where": "text",
+   "quote": "he was instructed to file with the commission for a request for a determination to memorialize the removal."
+  },
+  {
+   "name": "Cease and desist form, Section C, 238 Fire Road 16",
+   "where": "text",
+   "quote": "section c had the cease and desist checked off on the form for the areas that were in violation."
+  },
+  {
+   "name": "Three bids for Hollis Road forestry work",
+   "where": "text",
+   "quote": "rb noted that the commission received three bids on the hollis road property for the forestry"
+  },
+  {
+   "name": "MS4 permitting compliance review (consultant)",
+   "where": "text",
+   "quote": "the consultant is reviewing the compliance with ms4 permitting and the website."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "enforcement",
+  "encroachment",
+  "Hollis Road",
+  "forestry",
+  "bids",
+  "tax lien",
+  "stormwater",
+  "reappointment",
+  "zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

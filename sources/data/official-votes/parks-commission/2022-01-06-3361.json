@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-01-06",
  "docid": "3361",
@@ -12,31 +12,456 @@
  },
  "votes": [
   {
-   "motion": "Support the DPW Director's FY23 budget",
+   "motion": "Support the DPW Director's FY23 Budget for the Park.",
    "moved_by": "D Passios",
    "seconded_by": "C Sullivan",
-   "outcome": "unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "motion made by d passios to support the dpw director's fy23 budget seconded by c sullivan. vote was unanimous."
   },
   {
-   "motion": "Temporarily adjourn until 7:00pm",
+   "motion": "Temporarily adjourn the meeting until 7:00pm.",
    "moved_by": "C Sullivan",
    "seconded_by": "D Passios",
-   "outcome": "unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "motion made by c sullivan to temporarily adjourn the meeting until 7:00pm, seconded by d passios. vote was unanimous"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:48pm.",
    "moved_by": "D Passios",
    "seconded_by": "C Sullivan",
-   "outcome": "unanimous",
+   "outcome": "passed (unanimous)",
    "procedural": true,
    "quote": "d passios motioned to adjourn at 8:48pm c sullivan seconded. vote was unanimous"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11041240000000002
+ "note": "Text extraction of the minutes; no page images. The Commission took a vote on design styles in person and by Zoom, but the minutes record no motion or count, so it is not listed as a vote. Two Menards appear (Chair Karin Menard and Chris Menard of the Finance Committee), and the minutes print both Kristin and Kirsten Tuttle; names are kept as printed. Dollar figures for the budget are as printed, and the total park budget is printed without a dollar sign.",
+ "cost_usd": 0.02015708,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in attendance was karin menard, dave passios, chris sullivan, ana lockwood."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "in attendance was karin menard, dave passios, chris sullivan, ana lockwood."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "in attendance was karin menard, dave passios, chris sullivan, ana lockwood."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "in attendance was karin menard, dave passios, chris sullivan, ana lockwood."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also in attendance was dpw director rob oliva."
+  },
+  {
+   "name": "Kathryn Ostermier",
+   "role": "WOLA",
+   "status": "present",
+   "quote": "kathryn ostermier from wola welcomed everyone and gave an agenda for the meeting."
+  },
+  {
+   "name": "Emily Wright",
+   "role": "Meridian Associates",
+   "status": "present",
+   "quote": "also there from wola was emily wright, allison fairweather, and nick betts from meridian associates."
+  },
+  {
+   "name": "Allison Fairweather",
+   "role": "Meridian Associates",
+   "status": "present",
+   "quote": "also there from wola was emily wright, allison fairweather, and nick betts from meridian associates."
+  },
+  {
+   "name": "Nick Betts",
+   "role": "Meridian Associates",
+   "status": "present",
+   "quote": "also there from wola was emily wright, allison fairweather, and nick betts from meridian associates."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "resident, 1529 Mass Ave",
+   "status": "present",
+   "quote": "dan proctor of 1529 mass ave asked about the status of marshall park septic system."
+  },
+  {
+   "name": "Kristin Tuttle",
+   "role": "resident, 45 Chestnut St",
+   "status": "present",
+   "quote": "kristin tuttle of 45 chestnut st asked if wola looked into how pedestrians are going to access the park."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "public",
+   "status": "present",
+   "quote": "anthony caiozzo asked with regards to the buffer zone that goes around and understands that it can't be leveled"
+  },
+  {
+   "name": "Cliff Worthley",
+   "role": "resident, 53 Woodland Ave",
+   "status": "present",
+   "quote": "cliff worthley 53 woodland ave asked what bpw on the map was"
+  },
+  {
+   "name": "Corrine Scouten",
+   "role": "resident, 830 Mass Ave",
+   "status": "present",
+   "quote": "corrine scouten 830 mass ave asked if the talk of putting parking where the old bath house was has been scrapped."
+  },
+  {
+   "name": "Marianne Mascari",
+   "role": "resident, 54 Chestnut St",
+   "status": "present",
+   "quote": "marianne mascari of 54 chestnut st mentioned that 3 to 4 months of the year when there's baseball games it becomes a one way street"
+  },
+  {
+   "name": "Chris Martin",
+   "role": "resident, 981 Northwood Rd",
+   "status": "present",
+   "quote": "chris martin of 981 northwood rd clarified that there are trash receptacles and a dumpster in the park during baseball season."
+  },
+  {
+   "name": "Kirsten Tuttle",
+   "role": "public",
+   "status": "present",
+   "quote": "kirsten tuttle commented that accessing it is important from pedestrians to cars"
+  },
+  {
+   "name": "Allison Melvin",
+   "role": "public",
+   "status": "present",
+   "quote": "allison melvin commented that there are features in need of repair."
+  },
+  {
+   "name": "Dave King",
+   "role": "public",
+   "status": "present",
+   "quote": "dave king was concerned with neglect."
+  },
+  {
+   "name": "John Fortune",
+   "role": "resident, 50 Hemlock Dr.",
+   "status": "present",
+   "quote": "john fortune 50 hemlock dr. mentioned that he walked through the park recently and feels it's in tough shape."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "resident, 105 Chestnut St",
+   "status": "present",
+   "quote": "greg roy 105 chestnut st would like to see the park to be vital again and be a hub for folks to use"
+  },
+  {
+   "name": "Tim Murphy",
+   "role": "resident, 97 Island Rd",
+   "status": "present",
+   "quote": "tim murphy 97 island rd asked what will be done with the pond, if there would be an area where people could fish"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "672 Page St, also on the Finance Committee",
+   "status": "present",
+   "quote": "chris menard 672 page st, also on the finance committee, stated that they are tracking a lot of federal grants"
+  },
+  {
+   "name": "Dawn Johnson",
+   "role": "resident, 357 Lancaster Rd",
+   "status": "present",
+   "quote": "dawn johnson 357 lancaster rd voiced her concerns about just hearing where the skate park is going"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Rob Oliva will look into the basis of the Department expenses (some went to Truck and Treat), with no vote recorded.",
+   "quote": "r oliva answered that he will look into that, some went to truck and treat"
+  },
+  {
+   "decision": "The in-person and Zoom votes on the three park design styles will be tallied and the results taken into account; no motion or count is recorded.",
+   "quote": "the votes will be tallied and results taken in account."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 park budget: line items presented by DPW Director",
+   "what_was_recorded": "Rob Oliva presented the Park's FY23 line items, including a park supervisor salary, Town Beach salaries, and a requested amount that reflected last year's budget going over.",
+   "figures_as_printed": [
+    "$24,581",
+    "$20,000",
+    "$26,000"
+   ],
+   "quote": "items were a park supervisor salary of $24,581, town beach salaries of $20,000"
+  },
+  {
+   "topic": "FY23 personnel total",
+   "what_was_recorded": "The personnel total for the FY23 park budget was stated.",
+   "figures_as_printed": [
+    "$44,581.44"
+   ],
+   "quote": "personnel totaled $44,581.44."
+  },
+  {
+   "topic": "FY23 purchase of service and department expenses",
+   "what_was_recorded": "Purchase of service and department expenses were stated, with a combined total.",
+   "figures_as_printed": [
+    "$46,498.00",
+    "$6,400",
+    "$52,898.00"
+   ],
+   "quote": "purchase of service was $46,498.00 and department expenses were $6,400"
+  },
+  {
+   "topic": "FY23 total park budget",
+   "what_was_recorded": "The total park budget was stated (no dollar sign printed in the minutes).",
+   "figures_as_printed": [
+    "97,479.44"
+   ],
+   "quote": "total park budget is 97,479.44."
+  },
+  {
+   "topic": "Revolving account for overages and Town Beach salaries",
+   "what_was_recorded": "Discussion that any overages be taken from the Park's revolving account, and that the chair wanted to use revolving account money to pay some Town Beach salaries; no figure printed and no plan adopted.",
+   "figures_as_printed": [],
+   "quote": "discussed that any overages be taken from the park's revolving account"
+  },
+  {
+   "topic": "Year-end surplus returning to free cash",
+   "what_was_recorded": "Discussion of whether money remaining at fiscal year end would go back to free cash, and a request for a plan to use any overages; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the commission has money to go back to free cash"
+  },
+  {
+   "topic": "Grounds contract invoicing and money returned to general fund",
+   "what_was_recorded": "Discussion of invoicing for the grounds contract and of park money that had gone back to the general fund over the years; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "he told of the monies that have gone back to general fund over the years that could have been used to maintain the parks."
+  },
+  {
+   "topic": "Grants for Marshall Park improvements",
+   "what_was_recorded": "Finance Committee member said federal grants are being tracked for park improvements; the Master Plan helps place grants. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "they are tracking a lot of federal grants to be earmarked towards improvements of parks"
+  },
+  {
+   "topic": "Skate park funding",
+   "what_was_recorded": "Statement that the skate park does not have a vote to move forward until all the funding is in place; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the skate park does not have a vote to move forward until all the funding is in place"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dan Proctor",
+   "stated_role": "of 1529 Mass Ave",
+   "topic": "Marshall Park septic system; existing conditions plan",
+   "quote": "dan proctor of 1529 mass ave asked about the status of marshall park septic system."
+  },
+  {
+   "speaker": "Kristin Tuttle",
+   "stated_role": "of 45 Chestnut St",
+   "topic": "pedestrian access to the park",
+   "quote": "kristin tuttle of 45 chestnut st asked if wola looked into how pedestrians are going to access the park."
+  },
+  {
+   "speaker": "Anthony Caiozzo",
+   "stated_role": "",
+   "topic": "buffer zone and multi-use trails; skate park location",
+   "quote": "anthony caiozzo asked with regards to the buffer zone that goes around and understands that it can't be leveled"
+  },
+  {
+   "speaker": "Cliff Worthley",
+   "stated_role": "53 Woodland Ave",
+   "topic": "wetland map and unused areas",
+   "quote": "cliff worthley 53 woodland ave asked what bpw on the map was"
+  },
+  {
+   "speaker": "Corrine Scouten",
+   "stated_role": "830 Mass Ave",
+   "topic": "parking where the old bath house was",
+   "quote": "corrine scouten 830 mass ave asked if the talk of putting parking where the old bath house was has been scrapped."
+  },
+  {
+   "speaker": "Marianne Mascari",
+   "stated_role": "of 54 Chestnut St",
+   "topic": "Chestnut St parking and traffic during baseball; garbage pickup",
+   "quote": "marianne mascari of 54 chestnut st mentioned that 3 to 4 months of the year when there's baseball games it becomes a one way street"
+  },
+  {
+   "speaker": "Chris Martin",
+   "stated_role": "of 981 Northwood Rd",
+   "topic": "trash receptacles; other properties considered",
+   "quote": "chris martin of 981 northwood rd clarified that there are trash receptacles and a dumpster in the park during baseball season."
+  },
+  {
+   "speaker": "Kirsten Tuttle",
+   "stated_role": "",
+   "topic": "access from pedestrians and cars; walking bridge",
+   "quote": "kirsten tuttle commented that accessing it is important from pedestrians to cars"
+  },
+  {
+   "speaker": "Allison Melvin",
+   "stated_role": "",
+   "topic": "features in need of repair",
+   "quote": "allison melvin commented that there are features in need of repair."
+  },
+  {
+   "speaker": "Dave King",
+   "stated_role": "",
+   "topic": "concern about neglect",
+   "quote": "dave king was concerned with neglect."
+  },
+  {
+   "speaker": "John Fortune",
+   "stated_role": "50 Hemlock Dr.",
+   "topic": "park condition; pickleball and tennis; restrooms and parking for seniors",
+   "quote": "john fortune 50 hemlock dr. mentioned that he walked through the park recently and feels it's in tough shape."
+  },
+  {
+   "speaker": "Greg Roy",
+   "stated_role": "105 Chestnut St",
+   "topic": "park as a hub with walking access",
+   "quote": "greg roy 105 chestnut st would like to see the park to be vital again and be a hub for folks to use"
+  },
+  {
+   "speaker": "Tim Murphy",
+   "stated_role": "97 Island Rd",
+   "topic": "pond cleaning, fishing and skating; maintenance",
+   "quote": "tim murphy 97 island rd asked what will be done with the pond, if there would be an area where people could fish"
+  },
+  {
+   "speaker": "Chris Menard",
+   "stated_role": "672 Page St, also on the Finance Committee",
+   "topic": "federal grants for park improvements",
+   "quote": "chris menard 672 page st, also on the finance committee, stated that they are tracking a lot of federal grants"
+  },
+  {
+   "speaker": "Dawn Johnson",
+   "stated_role": "357 Lancaster Rd",
+   "topic": "skate park location decided before the plan",
+   "quote": "dawn johnson 357 lancaster rd voiced her concerns about just hearing where the skate park is going"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "opened at 6:31pm",
+   "quote": "1. open meeting-6:31 in attendance was karin menard, dave passios, chris sullivan, ana lockwood.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public and board comment",
+   "resolution": "no action; comment on Marshall Park misinformation and the Master Plan",
+   "quote": "2. public and board comment- d passios commented on the misinformation about the marshall",
+   "tags": [
+    "Marshall Park",
+    "Master Plan"
+   ]
+  },
+  {
+   "topic": "FY23 budget presentation and discussion",
+   "resolution": "approved: motion to support the DPW Director's FY23 Budget passed unanimously",
+   "quote": "3. budget presentation and discussions-rob oliva presented the park's budget and went through",
+   "tags": [
+    "FY23 budget",
+    "revolving account"
+   ]
+  },
+  {
+   "topic": "7 PM public forum with WOLA: site analysis and community input",
+   "resolution": "no action; WOLA presented site analysis and collected public input; survey and design styles presented",
+   "quote": "4. 7 pm public forum with wola to present site analysis and collect community input-k",
+   "tags": [
+    "Marshall Park",
+    "WOLA",
+    "public input",
+    "skate park"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "none",
+   "quote": "5. other business-none",
+   "tags": []
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:48pm",
+   "quote": "6. adjourn d passios motioned to adjourn at 8:48pm c sullivan seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Master Plan (Marshall Park)",
+   "where": "text",
+   "quote": "c sullivan stated that this is a master plan, the intent is to make the park better by improving on its"
+  },
+  {
+   "name": "Mass GIS analysis of Marshall Park (WOLA)",
+   "where": "text",
+   "quote": "they undertook a mass gis analysis of the park and their goal is to share their understanding of the park"
+  },
+  {
+   "name": "Land Cover map of Marshall Park",
+   "where": "text",
+   "quote": "she then showed the land cover, both manmade and natural, of the park and the regulated areas"
+  },
+  {
+   "name": "Community survey results (431 responses)",
+   "where": "text",
+   "quote": "k ostermier went over the survey results with 431 responses"
+  },
+  {
+   "name": "Slide of three aesthetic styles (Rows A, B, C)",
+   "where": "text",
+   "quote": "a slide was shown of three different aesthetic styles:"
+  },
+  {
+   "name": "Existing conditions plan (requested by resident)",
+   "where": "text",
+   "quote": "dan proctor asked if he could get an existing conditions plan"
+  },
+  {
+   "name": "Capital Project List (Marshall Park survey item)",
+   "where": "text",
+   "quote": "it is on the capital project list to be brought forward for the fy23"
+  }
+ ],
+ "tags": [
+  "Marshall Park",
+  "Master Plan",
+  "WOLA",
+  "FY23 budget",
+  "revolving account",
+  "skate park",
+  "Chestnut Street parking",
+  "public comment",
+  "park design survey"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-06-27",
  "docid": "4172",
@@ -12,39 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Approve the Site Plan Approval for 494 Electric Avenue with Standard and Special Conditions",
+   "motion": "Approve the Site Plan Approval for 494 Electric Avenue with Standard and Special Conditions as listed.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the site plan approval for 494 electric avenue with standard and special conditions as listed, a. reid seconded, roll call vote- a. reid, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4-0."
+   "quote": "m. brenner made motion to approve the site plan approval for 494 electric avenue with standard and special conditions as listed, a. reid seconded"
   },
   {
-   "motion": "Approve all minutes from 6/13/22 and 6/13/22 for 494 Electric Avenue",
-   "moved_by": "M. Brenner",
-   "seconded_by": "A. Reid",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "m. brenner made motion to approve all minutes listed below, a. reid seconded, roll call vote- a. reid, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4 -0."
-  },
-  {
-   "motion": "Approve the appointment of Ana Lockwood to the Economic Development Committee as the Open Space representative",
+   "motion": "Approve the appointment of Ana Lockwood to the EDC as the Open Space representative.",
    "moved_by": "T. Cole",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "t. cole made motion to approve the appointment of ana lockwood to the edc as the open space representative, m. brenner s econded, roll call vote - a. reid, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4-0."
+   "quote": "t. cole made motion to approve the appointment of ana lockwood to the edc as the open space representative,"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve all minutes listed below (6/13/22 and 6/13/22, 494 Electric Avenue).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote- a. reid, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4-0."
+   "quote": "m. brenner made motion to approve all minutes listed below, a. reid seconded, roll call vote-"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote-"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0918185
+ "note": "Text extract of the minutes, no scan issues noted. Public comment: none recorded. No dollar figures are printed; the only money reference is an unquantified MRPC planning grant. The separate minutes for the 494 Electric Avenue, Northfield Road/Holman Street and 43 Summer Street hearings are referenced but not included in this text, so their votes, if any, are not recorded here. Attendance is taken from the Present/Absent lines and the Chair's remote participation.",
+ "cost_usd": 0.01797048,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "tanner cole participated remotely under the act relative to extending certain covid -19 measures"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen tanner cole participated remotely under the act"
+  },
+  {
+   "name": "Uma Flowers",
+   "role": "",
+   "status": "not stated",
+   "quote": "43 summer street, uma flowers- see separate minutes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Special Conditions were added to the 494 Electric Avenue decision: a silt sack in the first catch basin on Electric Avenue, Dark Sky Compliant lighting, a solid fence adjacent to the rear of 15 Kirby Avenue, and seating capacity not to exceed 134.",
+   "quote": "special conditions were added to include a silt sack in the f irst catch basin"
+  },
+  {
+   "decision": "A. Burney to check with surrounding communities for examples of common-driveway bylaw wording, for Board perusal, as a July 25th agenda item.",
+   "quote": "a. burney would check with surrounding communities for examples for board perusal."
+  },
+  {
+   "decision": "Hearing continuations scheduled for July 11 for 260 Falulah Road, 43 Summer Street, and 245 Holman Street.",
+   "quote": "july 11- hearing continuations for 260 falulah road, 43 summer street, and 245 holman street."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MBTA Communities zoning planning assistance grant",
+   "what_was_recorded": "The town received a planning assistance grant through MRPC for zoning work under MBTA Communities; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "zoning for mbta communities - the town received a planning assistance"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "494 Electric Avenue (Il Forno) site plan",
+   "resolution": "approved 4-0 with standard and special conditions",
+   "quote": "m. brenner made motion to approve the site plan approval for 494 electric avenue with standard and special conditions as listed, a. reid seconded",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Northfield Road & Holman Street (245 Holman Street)",
+   "resolution": "see separate minutes; continuation scheduled July 11",
+   "quote": "northfield road & holman street (aka 245 holman street)- see separate minutes.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "43 Summer Street",
+   "resolution": "see separate minutes; continuation scheduled July 11",
+   "quote": "43 summer street, uma flowers- see separate minutes.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 4-0",
+   "quote": "m. brenner made motion to approve all minutes listed below, a. reid seconded, roll call vote-",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; Open Space and Agricultural Commission reports received",
+   "quote": "the committee would be working with the town manager regarding title work for",
+   "tags": [
+    "committees",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Economic Development Committee appointment",
+   "resolution": "approved 4-0",
+   "quote": "t. cole made motion to approve the appointment of ana lockwood to the edc as the open space representative,",
+   "tags": [
+    "appointments",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Pond View Commons LLC, Howard Street",
+   "resolution": "no action; joint discussion proposed with other boards",
+   "quote": "a. burney had reached out to various boards, committees, commissions to propose a joint discussion.",
+   "tags": [
+    "joint discussion",
+    "Howard Street"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "hearing continuations set for July 11",
+   "quote": "july 11- hearing continuations for 260 falulah road, 43 summer street, and 245 holman street.",
+   "tags": [
+    "hearings schedule"
+   ]
+  },
+  {
+   "topic": "Zoning for MBTA Communities",
+   "resolution": "no action; MRPC finalizing paperwork with the state",
+   "quote": "mrpc was finalizing its paperwork with the state in order to begin its work with the planning board.",
+   "tags": [
+    "zoning",
+    "MBTA communities",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Board comment: common driveway bylaw",
+   "resolution": "no action; A. Burney to research examples for July 25 agenda",
+   "quote": "m. brenner noted improvement was needed for the bylaw wording surrounding common driveways.",
+   "tags": [
+    "bylaw",
+    "common driveways"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:30 p.m., 4-0",
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote-",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of 6/13/22",
+   "where": "list",
+   "quote": "minutes: 6/13/22 6/13/22, 494 electric avenue"
+  },
+  {
+   "name": "Minutes of 6/13/22, 494 Electric Avenue",
+   "where": "list",
+   "quote": "6/13/22, 494 electric avenue"
+  },
+  {
+   "name": "Draft Decision, 494 Electric Avenue",
+   "where": "text",
+   "quote": "the board reviewed the draft decision."
+  },
+  {
+   "name": "Separate minutes, Northfield Road & Holman Street (aka 245 Holman Street)",
+   "where": "text",
+   "quote": "northfield road & holman street (aka 245 holman street)- see separate minutes."
+  },
+  {
+   "name": "Separate minutes, 43 Summer Street, Uma Flowers",
+   "where": "text",
+   "quote": "43 summer street, uma flowers- see separate minutes."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan approval",
+  "public hearings",
+  "zoning",
+  "MBTA communities",
+  "appointments",
+  "minutes approval",
+  "common driveways",
+  "MRPC grant"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

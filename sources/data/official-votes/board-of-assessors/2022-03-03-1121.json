@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2022-03-03",
  "docid": "1121",
@@ -12,15 +12,105 @@
  },
  "votes": [
   {
-   "motion": "to ratify the appointment of Christopher Carroll as the new Principal Assessor",
+   "motion": "Ratify the appointment of the new Principal Assessor to Christopher Carroll.",
    "moved_by": "Chris",
    "seconded_by": "Kevin",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "chris made a motion to ratify the appointment of the new principal assessor to christopher carroll. kevin seconded the motion. all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text from macOS Vision; one vote recorded. The adjournment statement does not record a vote—it merely states the meeting adjourned at 10:11 am with no motion mentioned.",
- "cost_usd": 0.0940215
+ "note": "Source is a one-page OCR (macOS Vision) of the minutes, so names and words are garbled in places: the attendance line reads 'vembers present: harman' (the leading word is unclear), 'anc' and 'Assessina' are OCR errors, and the Town Manager line begins 'Iso present'. Quotes are taken from the OCR text as printed. The mover is printed only as 'Chris'; the minutes do not give a surname, so it is not assigned to Christine Higdon or any other member. No vote count is printed ('All in favor' only). The minutes record no public comment section and no documents list. The adjournment at 10:11 am is recorded without a motion, so it is not counted as a vote.",
+ "cost_usd": 0.013639380000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard H. Letarte",
+   "role": "Board Members (as printed; chair not stated)",
+   "status": "present",
+   "quote": "richard h. letarte, board members, christine higdon, kevin fish anc"
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Members (as printed)",
+   "status": "present",
+   "quote": "richard h. letarte, board members, christine higdon, kevin fish anc"
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Members (as printed)",
+   "status": "present",
+   "quote": "richard h. letarte, board members, christine higdon, kevin fish anc"
+  },
+  {
+   "name": "Rena Swezev",
+   "role": "Principal Assessor (Interim)",
+   "status": "present",
+   "quote": "principal assessor (interim) rena swezev and administrative assessina assistant. sheila craider"
+  },
+  {
+   "name": "Sheila Craider",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "principal assessor (interim) rena swezev and administrative assessina assistant. sheila craider"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager, heather lemieux, assistant town manager/hr director julie belliveau anc"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "town manager, heather lemieux, assistant town manager/hr director julie belliveau anc"
+  },
+  {
+   "name": "Christopher Carroll",
+   "role": "appointee (ratified as Principal Assessor); role as printed not stated",
+   "status": "present",
+   "quote": "julie introduced christopher carroll. the boa had a few questions."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open Meeting: appointment of Principal Assessor",
+   "resolution": "ratified appointment of Christopher Carroll as Principal Assessor",
+   "quote": "chris made a motion to ratify the appointment of the new principal assessor to christopher carroll. kevin seconded the motion. all in favor.",
+   "tags": [
+    "appointment",
+    "principal assessor",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "meeting adjourned at 10:11 am; no motion recorded",
+   "quote": "meeting adjourned at 10:11 am",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "appointment",
+  "principal assessor",
+  "personnel",
+  "ratification",
+  "zoom meeting",
+  "board of assessors"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

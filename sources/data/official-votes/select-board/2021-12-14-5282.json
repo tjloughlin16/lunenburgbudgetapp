@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-12-14",
  "docid": "5282",
@@ -12,20 +12,20 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's Appointments of Police Lieutenant Jeffrey Thibodeau, Police Sergeant Joshua Mathieu and Full Time Police Officer Jeffrey Hill (effective April 25, 2021)",
+   "motion": "Revote to ratify the Town Manager's appointments of Police Lieutenant Jeffrey Thibodeau, Police Sergeant Joshua Mathieu and Full Time Police Officer Jeffrey Hill (effective April 25, 2021)",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2°°: t. dwyer to ratify the town manager's appointments of police lieutenant jeffrey thibodeau, police sergeant joshua mathieu and full time police officer jeffrey hill (effective april 25, 2021 vote: ms. adams- aye, mr. dwyer-aye, mr. marino- aye, mr. jeffreys -aye, mr. alonzo-aye"
+   "procedural": false,
+   "quote": "to ratify the town manager's appointments of police lieutenant jeffrey thibodeau,"
   },
   {
    "motion": "Approve the renewal of the common victualler license for Conrad's Drive In Inc. d/b/a Conrad's, 835 Massachusetts Avenue",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
    "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: k. adams 2nd; j. marino to approve the renewal of the common victualler license for for conrad's drive in inc. d/b/a conrad's, 835 massachusetts avenue vote: ms. adams-aye, mr. dwyer-aye, mir. marino-aye, mr. jeffreys -aye, mr. alonzo-aye"
+   "procedural": false,
+   "quote": "to approve the renewal of the common victualler license for for conrad's drive in inc."
   },
   {
    "motion": "Approve the October 31, 2020 Minutes as presented",
@@ -33,10 +33,329 @@
    "seconded_by": "K. Adams",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: j. marino 2nd: k. adams to approve the october 31, 2020 minutes as presented vote: ms. adams- aye, mr. dwyer-aye, mr. marino- aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to approve the october 31, 2020 minutes as presented"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan of meeting minutes; all three votes passed unanimously 5-0. Text marked ===OCR macOS Vision=== indicates OCR-sourced text. One minor OCR artifact: \"2°°\" in first vote (appears to be OCR error for \"2nd\"); \"Mir.\" in second vote (likely OCR error for \"Mr.\"); \"for for\" appears twice in motion text as printed.",
- "cost_usd": 0.1317445
+ "note": "Text is macOS Vision OCR with broken spacing and garbled words (e.g. 'Mir. Jeffreys', 'int Jery' for the CP Building Design Committee report, 'Unitilasof'); quotes are copied as printed with line breaks collapsed. The Chapter 61 Holman Street/Northfield Road item is cut off at a page break and no outcome is printed on page 2; the 671 West Street item continues on page 4 and its no-bids statement is not quoted verbatim, so it is not recorded as a decision. Page 5 holds only the signature. The meeting was conducted remotely per the minutes, and members and the Town Manager are listed as present. The date supplied (2021-12-14) does not match the minutes' internal dates: the minutes refer to December 2020 events and upcoming meetings on January 5, 12 and 19, 2021, so the meeting may be December 14, 2020; the record was not altered. The second motion's printed line 'Motion: K. Adams 2nd; J. Marino' is read as mover K. Adams, seconder J. Marino. Vote tallies are read from the printed 'aye' lists, all five members. Elaine M. Peterson signed the minutes and is not listed as an attendee. No documents list heading is printed.",
+ "cost_usd": 0.01998118,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No action taken on the request to issue a proclamation recognizing January 24-30, 2021 as School Choice Week.",
+   "quote": "after some discussion, it was decided to take no action."
+  },
+  {
+   "decision": "Town facilities closed to the public, open by appointment only, effective December 14, as a precautionary measure responding to rising COVID-19 cases; to remain in effect until further notice.",
+   "quote": "town facilities are closed to the public and are open by appointment only, this was done as a"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the Chairman",
+   "what_was_recorded": "The Chairman reported signing an Accounts Payable Warrant and two payroll warrants, each with a printed amount.",
+   "figures_as_printed": [
+    "$531,746.32",
+    "$594,135.92",
+    "$899,626.01"
+   ],
+   "quote": "accounts payable warrant #26 21, dated 12/8/2020, in the amount of $531,746.32"
+  },
+  {
+   "topic": "Unitil street lighting asset value",
+   "what_was_recorded": "Unitil's updated value of the town's street lighting assets as of November 30, 2020, which may change until title transfer and be trued up later; the town pays or receives any difference.",
+   "figures_as_printed": [
+    "$89,161.56"
+   ],
+   "quote": "from unitilasof november 30, 2020. the valueis $89,161.56."
+  },
+  {
+   "topic": "State earmark for Primary School fire alarm",
+   "what_was_recorded": "Lunenburg was notified it received a state earmark for upgrading the fire alarm system at the Primary School.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "recipient of one earmark for $25,000 towards upgrading the fire alarm system at the primary school."
+  },
+  {
+   "topic": "Bond bill for Primary School fire alarm",
+   "what_was_recorded": "A fire alarm upgrade at the Primary School was previously included in a bond bill, Chapter 151 of the Acts of 2020.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "$100,000 for a fire alarm upgrade at the primary school was included in a bond bill of chapter 151 of the acts of 2020."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Window boxes at Town Hall",
+   "speaker": "Ms. Adams",
+   "quote": "ms. adams had noticed the town hall front window boxes and thanked whoever filled and decorated them for the season."
+  },
+  {
+   "topic": "Announced limited attendance",
+   "speaker": "Mr. Jeffreys",
+   "quote": "mir. jeffreys announced he would only be attending the meeting until 8:00 p.m."
+  },
+  {
+   "topic": "Salvation Army tollbooth fundraiser",
+   "speaker": "Mr. Alonzo",
+   "quote": "mr. alonzo commended the salvation army on their very successful tollbooth fundraiser last saturday"
+  },
+  {
+   "topic": "Town offices closed to public",
+   "speaker": "Ms. Lemieux",
+   "quote": "ms. lemieux noted town offices are closed effective yesterday, to the public except by appointment."
+  },
+  {
+   "topic": "Holiday greetings",
+   "speaker": "Ms. Adams",
+   "quote": "ms. adams gave a merry christmas and happy new year shout out to everyone."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, remote meeting notice and public comment",
+   "resolution": "no action; comments noted",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "opening",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Revote on ratification of police appointments",
+   "resolution": "approved 5-0",
+   "quote": "ms. lemieux noted this is being voted on again as the appointments were not posted",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Conrad's common victualler license renewal",
+   "resolution": "approved 5-0",
+   "quote": "mr. alonzo stated conrad's drive-in was renewing their common victualler license for 2021.",
+   "tags": [
+    "licenses"
+   ]
+  },
+  {
+   "topic": "School Choice Week proclamation request",
+   "resolution": "no action",
+   "quote": "after some discussion, it was decided to take no action.",
+   "tags": [
+    "proclamation"
+   ]
+  },
+  {
+   "topic": "Future agenda topics",
+   "resolution": "noted for future agendas",
+   "quote": "ms. adams requested discussing maintenance of town building envelopes (roofing and facades)",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Approval of October 31, 2020 minutes",
+   "resolution": "approved 5-0",
+   "quote": "to approve the october 31, 2020 minutes as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed by the Chairman; reported",
+   "quote": "mr. alonzo reported he signed the following warrants last week;",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Action item: Chapter 61 property, Holman Street and Northfield Road",
+   "resolution": "discussed; no vote recorded in the text",
+   "quote": "mr. alonzo stated the board had waived the right of first refusal on chapter 61 property",
+   "tags": [
+    "property",
+    "chapter 61"
+   ]
+  },
+  {
+   "topic": "Committee and department reports, including CP Building Design Committee and Library Trustees",
+   "resolution": "reported",
+   "quote": "library trustees will be meeting thursday at",
+   "tags": [
+    "committees",
+    "library"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "reported",
+   "quote": "town manager report and covid-19 update",
+   "tags": [
+    "town manager",
+    "covid-19"
+   ]
+  },
+  {
+   "topic": "Committee vacancies",
+   "resolution": "announced",
+   "quote": "interested persons can find application forms on the town website and completed forms can be",
+   "tags": [
+    "appointments",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Purchase of streetlights from Unitil",
+   "resolution": "reported",
+   "quote": "purchase of streetlights from unitil:",
+   "tags": [
+    "streetlights",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "925 Mass Ave. grant application",
+   "resolution": "reported; not funded, to resubmit",
+   "quote": "925 mass ave. (tm goal #1)",
+   "tags": [
+    "property",
+    "grants"
+   ]
+  },
+  {
+   "topic": "FY2021 state budget and earmark",
+   "resolution": "reported",
+   "quote": "we were notified by rep. sena's office that lunenburg was the",
+   "tags": [
+    "state aid",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Chapter 61 property at 671 West Street",
+   "resolution": "no bids received; town will not proceed further",
+   "quote": "at 671 west street. this was advertised in the local newspaper",
+   "tags": [
+    "property"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements, including old Primary School grounds CAD drawing",
+   "resolution": "reported",
+   "quote": "ms. lemieux wanted to thank mr. marino and chief gammel's spouse who connected them to",
+   "tags": [
+    "events",
+    "schools"
+   ]
+  },
+  {
+   "topic": "COVID-19 in Lunenburg",
+   "resolution": "reported; town facilities closed to public",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed",
+   "tags": [
+    "covid-19"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "announced",
+   "quote": "the board meets again on january 5, 12 and 19, 2021.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Closing public comment",
+   "resolution": "no action",
+   "quote": "ms. adams gave a merry christmas and happy new year shout out to everyone.",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Andrew Campanella, President of National School Choice Week, requesting a proclamation",
+   "where": "text",
+   "quote": "this request was sent via email to mr. alonzo from andrew campanella, president of national"
+  },
+  {
+   "name": "Accounts Payable Warrant #26 21, dated 12/8/2020",
+   "where": "text",
+   "quote": "accounts payable warrant #26 21, dated 12/8/2020, in the amount of $531,746.32"
+  },
+  {
+   "name": "Payroll Deduction Warrant #27 21, dated 12/9/2020",
+   "where": "text",
+   "quote": "payroll deduction warrant #27 21, dated 12/9/2020, in the amount of $594,135.92"
+  },
+  {
+   "name": "Payroll Warrant #12P21, dated 12/10/2020",
+   "where": "text",
+   "quote": "payroll warrant #12p21, dated 12/10/2020, in the amount of $899,626.01"
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "licenses",
+  "warrants",
+  "streetlights",
+  "state aid",
+  "covid-19",
+  "property disposition",
+  "chapter 61",
+  "town facilities",
+  "school choice"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-04-14",
  "docid": "2072",
@@ -12,23 +12,331 @@
  },
  "votes": [
   {
-   "motion": "close the public hearing",
-   "outcome": "passed",
+   "motion": "Close the public hearing.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Evan Watters",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Watters",
    "quote": "mr. passios motioned to close the public hearing, mr. watters seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Evan Watters",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Watters",
    "quote": "mr. passios motioned to adjourn, mr. watters seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0825205
+ "note": "Minutes text ends on a letterhead page (page 6); no roll-call votes recorded beyond the two unanimous motions. Item 11 defers voting on minutes, so no approval vote is recorded. Adam J. Costa is the author of an appendix opinion and is not recorded as attending. Attendee statuses for members are inferred from the Present line, which records late arrivals but no absences.",
+ "cost_usd": 0.0212917,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, dave passios, tom gray, evan watters (arrived late), tom balish (arrived late)",
+   "role": "Chairperson"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, dave passios, tom gray, evan watters (arrived late), tom balish (arrived late)",
+   "role": ""
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, dave passios, tom gray, evan watters (arrived late), tom balish (arrived late)",
+   "role": ""
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, dave passios, tom gray, evan watters (arrived late), tom balish (arrived late)",
+   "role": ""
+  },
+  {
+   "name": "Evan Watters",
+   "status": "present",
+   "quote": "evan watters (arrived late), tom balish (arrived late)",
+   "role": ""
+  },
+  {
+   "name": "Tom Balish",
+   "status": "present",
+   "quote": "evan watters (arrived late), tom balish (arrived late)",
+   "role": ""
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux",
+   "role": "Town Manager"
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "present",
+   "quote": "lunenburg resident dave rodgers commented on the capital planning process",
+   "role": "Lunenburg resident"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to invite Town Counsel to a future meeting to further discuss the capital plan role question.",
+   "quote": "the present committee members agreed to invite town counsel to a future meeting to further discuss the matter."
+  },
+  {
+   "decision": "The committee agreed to table the re-vote on deferred Annual Town Meeting articles, since voting on them is not necessary.",
+   "quote": "the committee agreed to table the topic."
+  },
+  {
+   "decision": "The committee decided to table the consent calendar question (articles 9 and 10 on stabilization funds) until it is discussed with the Town Moderator.",
+   "quote": "the committee decided to table the topic until discussed with the town moderator."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fire Department grant for an Automated External Defibrillator",
+   "what_was_recorded": "The Fire Chief was awarded a grant to replace an obsolete defibrillator in one of the trucks.",
+   "figures_as_printed": [
+    "$2,116"
+   ],
+   "quote": "the fire chief was awarded a grant for $2,116 for an automated external defibrillator"
+  },
+  {
+   "topic": "Police grant for exercise equipment",
+   "what_was_recorded": "The Police Chief was awarded a grant for exercise equipment at the police station, funded by MIIA.",
+   "figures_as_printed": [
+    "$7,900"
+   ],
+   "quote": "the police chief was awarded a $7,900 grant for exercise equipment at the police station funded by miia"
+  },
+  {
+   "topic": "Capital plan size and the capital planning process",
+   "what_was_recorded": "A public commenter described the capital plan as a current $2.1 million process of voting on the plan in its entirety.",
+   "figures_as_printed": [
+    "$2.1 million"
+   ],
+   "quote": "the current $2.1 million capital plan process of voting on the plan, in its"
+  },
+  {
+   "topic": "300th Anniversary Committee (Article 23)",
+   "what_was_recorded": "Establishing the committee was proposed at $5,000; committee members had no comment.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "article 23: 300th anniversary committee. $5,000 to establish the committee has been proposed."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Capital planning process",
+   "speaker": "Dave Rodgers",
+   "stated_role": "Lunenburg resident",
+   "quote": "mr. rodgers pointed out that town government is the purest form of democracy"
+  },
+  {
+   "topic": "Frustration with information on capital plan and facilities director articles",
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "quote": "mr. rodgers expressed his frustration about the committee not having pertinent information on articles to be heard at annual town meeting"
+  },
+  {
+   "topic": "Property on West St and Leominster Rd; override analysis",
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "quote": "mr. rodgers asked about property on west st and leominster rd., and added that he has great trepidations on the financial future for everybody"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "mr. beardmore informed the committee that the association of town finance committees is holding a seminar regarding arpa funding on april 30, 2022",
+   "tags": [
+    "ARPA",
+    "training"
+   ]
+  },
+  {
+   "topic": "Public Comment on capital planning",
+   "resolution": "no action",
+   "quote": "mr. rodgers pointed out that town government is the purest form of democracy",
+   "tags": [
+    "public comment",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "noted",
+   "quote": "mr. beardmore prefers to have more committee members present before voting on previously deferred warrant articles.",
+   "tags": [
+    "town meeting",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "noted",
+   "quote": "ms. lemieux met with congresswoman lori trahan",
+   "tags": [
+    "grants",
+    "federal funding"
+   ]
+  },
+  {
+   "topic": "Discussion on Capital Plan Process and Procedures (Role of Finance Committee)",
+   "resolution": "invite Town Counsel to a future meeting",
+   "quote": "the present committee members agreed to invite town counsel to a future meeting to further discuss the matter.",
+   "tags": [
+    "capital plan",
+    "town counsel",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Public Hearing on FY23 Budget, Capital Plan and financial ATM articles",
+   "resolution": "hearing closed by vote; deferred articles reviewed",
+   "quote": "mr. beardmore opened the hearing and informed the committee that six articles have so far been deferred to annual town meeting.",
+   "tags": [
+    "FY23 budget",
+    "warrant articles",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Discuss and Vote/Re-vote on Recommendations on ATM Articles",
+   "resolution": "tabled",
+   "quote": "mr. beardmore commented that the warrant has been printed, and voting on the currently deferred articles is not necessary.",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Consent Calendar",
+   "resolution": "tabled until discussed with Town Moderator",
+   "quote": "the committee decided to table the topic until discussed with the town moderator.",
+   "tags": [
+    "consent calendar",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "the committee will vote on meeting minutes at their next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Public Comment on West St and Leominster Rd property and override",
+   "resolution": "no action",
+   "quote": "mr. rodgers asked about property on west st and leominster rd., and added that he has great trepidations on the financial future for everybody",
+   "tags": [
+    "public comment",
+    "override"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "noted",
+   "quote": "mr. passios informed the committee that he would not be seeking reappointment.",
+   "tags": [
+    "reappointment"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "noted",
+   "quote": "next meetings april 28, atm may 7, may 12.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:53 p.m.",
+   "quote": "at 8:53 p.m. mr. passios motioned to adjourn, mr. watters seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Peter Beardmore to Heather Lemieux requesting an opinion from Town Counsel on the role of the Finance Committee and Town Meeting regarding capital plan articles",
+   "where": "list",
+   "quote": "hi heather, i'd like to formally request an opinion from town counsel as to the role of the finance committee"
+  },
+  {
+   "name": "Town Counsel opinion email from Adam J. Costa (Mead, Talerman & Costa, LLC) to Heather Lemieux",
+   "where": "list",
+   "quote": "i am in receipt of your e-mail below. i am providing advice and an opinion regarding the same, at your request."
+  },
+  {
+   "name": "Facilities Director position description document on the town website",
+   "where": "text",
+   "quote": "there is a document on the town website that describes the proposed position"
+  },
+  {
+   "name": "Community Funding Project Report",
+   "where": "text",
+   "quote": "to talk about the community funding project report"
+  },
+  {
+   "name": "Annual Town Meeting warrant",
+   "where": "text",
+   "quote": "mr. beardmore commented that the warrant has been printed"
+  }
+ ],
+ "tags": [
+  "capital plan",
+  "Annual Town Meeting",
+  "FY23 budget",
+  "warrant articles",
+  "town counsel",
+  "grants",
+  "public comment",
+  "facilities director",
+  "Primary School HVAC",
+  "consent calendar",
+  "stabilization",
+  "override"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "appendix"
+ },
+ "dropped_unquoted_by_field": {}
 }

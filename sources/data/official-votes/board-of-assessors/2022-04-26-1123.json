@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2022-04-26",
  "docid": "1123",
@@ -12,15 +12,180 @@
  },
  "votes": [
   {
-   "motion": "Approve the March 22, 2022 minutes",
+   "motion": "Approve the March 22, 2022 minutes.",
    "moved_by": "Kevin",
    "seconded_by": "Christine",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kevin made a motion to approve the march 22, 2022 minutes. christine seconded. minutes approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. One recorded vote found. The text mentions the BOA \"reviewed and approved\" expense vouchers, payroll, abatements, warrants and commitments, but this is not recorded as a formal motion with a seconder or vote count, so it does not meet the criteria for a recorded vote.",
- "cost_usd": 0.0711485
+ "note": "Text is OCR (macOS Vision) of a scanned page. Only one motion is recorded (approving the March 22, 2022 minutes, passed with no count printed). The approval of vouchers, payroll, abatements, warrants and commitments has no mover and no motion, so it is recorded as a decision. The adjournment has no motion, so it is not a vote. \"Cu\" is printed unexpanded in three bullets and is not matched to a name here. Heather (Town Manager) is mentioned but did not take part in the meeting. No public comment, document list or exhibits are printed.",
+ "cost_usd": 0.014557780000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard H. Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish and"
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish and"
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Members",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish and"
+  },
+  {
+   "name": "CJ Carroll",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor, cj carroll and administrative assessing assistant, sheila craigen"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "principal assessor, cj carroll and administrative assessing assistant, sheila craigen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The BOA will try to meet on the first Wednesday of every month, with afternoons preferred.",
+   "quote": "it was decided the boa will try to meet the first wednesday of every month. afternoons are preferred."
+  },
+  {
+   "decision": "The BOA reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments. No motion is recorded for this approval.",
+   "quote": "the boa reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pending ATB case with Nugen Capital Management",
+   "what_was_recorded": "The pending Appellate Tax Board case was discussed; the assessor's earlier motion to dismiss was denied and the case will probably proceed. No dollar figure is printed.",
+   "quote": "cj previously filed a motion to dismiss which was denied and the atb will probably move forward.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Pilot agreements",
+   "what_was_recorded": "Pilot agreements were discussed. No dollar figure is printed.",
+   "quote": "some discussion on pilot agreements.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "New Senior Tax Relief program",
+   "what_was_recorded": "The town is considering a new senior tax relief program modeled on the Massachusetts Senior Circuit Breaker Tax Credit. No dollar figure is printed.",
+   "quote": "cu stated the town is considering a new program for senior tax relief (in addition to the program already in place).",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Expense vouchers, payroll, abatements, warrants and commitments",
+   "what_was_recorded": "The board reviewed and approved money-related items: expense vouchers, payroll, abatements, warrants and commitments. No dollar figures are printed.",
+   "quote": "the boa reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of March 22, 2022 minutes",
+   "resolution": "approved",
+   "quote": "kevin made a motion to approve the march 22, 2022 minutes. christine seconded. minutes approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Pending ATB case with Nugen Capital Management",
+   "resolution": "no action",
+   "quote": "cu stated he had a meeting with heather (town manager) to discuss the pending atb (appellate tax board) case with nugen capital management.",
+   "tags": [
+    "appeal",
+    "ATB",
+    "abatement"
+   ]
+  },
+  {
+   "topic": "Pilot agreements",
+   "resolution": "no action",
+   "quote": "some discussion on pilot agreements.",
+   "tags": [
+    "pilot agreements"
+   ]
+  },
+  {
+   "topic": "Senior Tax Relief program",
+   "resolution": "no action",
+   "quote": "cu stated the town is considering a new program for senior tax relief (in addition to the program already in place).",
+   "tags": [
+    "senior tax relief"
+   ]
+  },
+  {
+   "topic": "Omitted bills",
+   "resolution": "no action",
+   "quote": "cu stated he will be working on omitted bills soon.",
+   "tags": [
+    "omitted bills"
+   ]
+  },
+  {
+   "topic": "Expense vouchers, payroll, abatements, warrants and commitments",
+   "resolution": "approved",
+   "quote": "the boa reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments.",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "abatements",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "decided to meet first Wednesday monthly, afternoons preferred",
+   "quote": "it was decided the boa will try to meet the first wednesday of every month. afternoons are preferred.",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 3:00 pm",
+   "quote": "meeting adjourned at 3:00 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of March 22, 2022 (Board of Assessors)",
+   "where": "text",
+   "quote": "kevin made a motion to approve the march 22, 2022 minutes."
+  }
+ ],
+ "tags": [
+  "assessing",
+  "tax appeals",
+  "ATB",
+  "senior tax relief",
+  "abatements",
+  "vouchers and warrants",
+  "pilot agreements",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

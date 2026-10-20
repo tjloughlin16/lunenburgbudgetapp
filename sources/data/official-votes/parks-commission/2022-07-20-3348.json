@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-07-20",
  "docid": "3348",
@@ -12,39 +12,366 @@
  },
  "votes": [
   {
-   "motion": "Rescind prior vote on Board of Health funding for septic system and toilet facility at Marshall Park",
-   "moved_by": "K. Menard",
-   "seconded_by": "D. Passios",
+   "motion": "Motion by Karin Menard to rescind the Commission's prior vote on Board of Health funding for the septic system and toilet facility.",
+   "moved_by": "Karin Menard",
+   "seconded_by": "Dave Passios",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k. menard made a motion to rescind the vote taken at the last meeting regarding the boh funding for the septic system and the toilet facility. d. passios seconded. roll call v ote, k. menard - yes c. sullivan - yes d. passios - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "k. menard made a motion to rescind the vote taken at the last meeting regarding the boh funding for the septic system and the toilet facility. d. passios seconded."
   },
   {
-   "motion": "Accept Board of Health offer to fund installation of the septic system and move forward",
-   "moved_by": "D. Passios",
-   "seconded_by": "K. Menard",
+   "motion": "Motion by Dave Passios to accept the Board of Health offer to fund the installation of the septic and move forward.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "d. passios made a motion to accept the boh offer to fund the installation of the septic and move forward. k. menard seconded. roll call v ote, k. menard - yes c. sullivan - yes d. passios - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "d. passios made a motion to accept the boh offer to fund the installation of the septic and move forward."
   },
   {
-   "motion": "Accept Board of Health offer and move forward with planning, funding and construction of septic at Marshall Park with new toilet facility and engineer-modified design plan for Board of Health and Conservation Commission approval",
-   "moved_by": "D. Passios",
-   "seconded_by": "K. Menard",
+   "motion": "Motion by Dave Passios to accept the Board of Health offer and move forward with planning, funding and construction of the septic at Marshall Park, including a new toilet facility, with design modified by an engineer and submitted to the BoH and Conservation Commission.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "d. passios made a motion to accept the boh offer and move forward with the planning, funding and construction of the septic at marshall park as shown on the plan by dylis and roy dated february-----, 2022, to include a new toilet facility at the location on that plan labeled former bathroom location. design plan to be modified to accommodate the bath by an engineer and submitted for approval to the boh and the conservation commission. k. menard seconded. roll call v ote, k. menard - yes c. sullivan - yes d. passios - yes a. lockwood - no all in favor, motion carried."
+   "quote": "d. passios made a motion to accept the boh offer and move forward with the planning, funding"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "C. Sullivan",
-   "seconded_by": "K. Menard",
+   "motion": "Motion by C. Sullivan to adjourn the meeting.",
+   "moved_by": "Christopher Sullivan",
+   "seconded_by": "Karin Menard",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "c. sullivan made a motion to adjourn.k. menard seconded. roll call v ote k. menard - yes c. sullivan - yes a.lockwood - yes all in favor, motion carried."
+   "quote": "c. sullivan made a motion to adjourn.k. menard seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly printed and all votes are recorded with roll call results. D. Passios exited the meeting before the fourth vote (adjourn), so only three members voted on adjournment.",
- "cost_usd": 0.08992639999999999
+ "note": "Meeting date: the body of the minutes reads 'Meeting Minutes July 20, 2022', but every page header reads 'Park Commission Minutes August 2, 2022'; the body date is used here, and the header date is likely the document's own running title or approval date. Vote on the Marshall Park motion is printed as 'All in favor, motion carried' beside a roll call with one 'no' (A. Lockwood); recorded here as passed 3-1 from the roll call. Dave Passios exited during Marshall Park item 2, so the adjournment vote is 3-0. Minutes contain no vote on approving prior minutes (listed as 'none'). Public comment: 'Board and Public Comment, none.' Documents: no list or heading is printed; the plan, Master Plan, draft IFB, Google list, presentation and memo are referenced only within discussion, so documents_list is printed false.",
+ "cost_usd": 0.020900580000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard and christopher sullivan"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard and christopher sullivan"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: patrick hakey."
+  },
+  {
+   "name": "Liz Simeone",
+   "role": "Additional Attendee (gave the Town Beach update)",
+   "status": "present",
+   "quote": "additional attendees: liz simeone, bill bernard and rob thompson"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "additional attendees: liz simeone, bill bernard and rob thompson"
+  },
+  {
+   "name": "Rob Thompson",
+   "role": "Additional Attendee (gave the Recreation Director / DPW Director report/updates)",
+   "status": "present",
+   "quote": "additional attendees: liz simeone, bill bernard and rob thompson"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission decided to remain open for the Labor Day weekend if staffing was available.",
+   "quote": "the commission decided to remain open for the labor day weekend if staffing was available."
+  },
+  {
+   "decision": "Chair stated no septic construction until funding is secured for the entire septic system and toilet facilities.",
+   "quote": "no construction of the septic shall be done until funding is secured for the entire septic system and toilet facilities."
+  },
+  {
+   "decision": "K. Menard will prepare a presentation for the joint meeting with the Select Board.",
+   "quote": "k. menard will put a presentation together for the joint meeting."
+  },
+  {
+   "decision": "K. Menard will put together the request for flagging documentation and information from the Conservation Commission.",
+   "quote": "k. menard will put together the two items, request for the flagging documentation and information from the conservation commission."
+  },
+  {
+   "decision": "R. Thompson will check the end date for the seasonal staff.",
+   "quote": "r. thompson will check on the end date for the seasonal staff."
+  },
+  {
+   "decision": "Chair asked R. Thompson to give an overview of revenue and breakdowns at the end of the season.",
+   "quote": "a. lockwood asked r. thompson to give an overview of revenue and breakdowns at the end of the season."
+  },
+  {
+   "decision": "Treasurer access to My Rec to be added to the next meeting's agenda for further discussion.",
+   "quote": "would like to add to the agenda for the next meeting to discuss further."
+  },
+  {
+   "decision": "Next meetings set for August 2 and 17, 2022 at 7 pm.",
+   "quote": "next meetings are scheduled for august 2, and 17, 2022 at 7 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital Plan eligibility criteria",
+   "what_was_recorded": "Criteria for Capital Plan inclusion were noted: useful life of 3 years or more and a value of $20,000 or greater.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "k. menard noted there was a criteria that had to be met to be on the capital plan,some of those include a useful life of 3 years or more, and the value is $20,000 or greater."
+  },
+  {
+   "topic": "Projects proposed for Capital Plan",
+   "what_was_recorded": "Members named McNally snack shack, the Beach House and a Fitzgerald Park shelter as projects that should be on the Capital Plan; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard noted the following projects should be on the capital plan;"
+  },
+  {
+   "topic": "Board of Health septic and toilet funding",
+   "what_was_recorded": "Discussion of the risk of losing Board of Health funding for the septic and toilet facilities; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "c. sullivan expressed concerns about losing the boh funding."
+  },
+  {
+   "topic": "ARPA funds",
+   "what_was_recorded": "The chair cited use of ARPA Funds as a reason for a joint meeting with the Select Board; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the use of arpa funds and it opens the awareness of what the parks commission is trying to accomplish to a wider audience."
+  },
+  {
+   "topic": "Little League fees",
+   "what_was_recorded": "Little League fees were not fully paid; the Recreation Director wanted them resolved by August 1, 2022; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "r. thompson stated they were not and he would like to have it all resolved by august 1, 2022."
+  },
+  {
+   "topic": "Town Beach revenue",
+   "what_was_recorded": "Chair asked for an end-of-season revenue overview; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood asked r. thompson to give an overview of revenue and breakdowns at the end of the season."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "no comment",
+   "quote": "first item on the agenda, board and public comment, none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "no action (none listed)",
+   "quote": "next item on the agenda, approval of minutes, none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Beach Updates",
+   "resolution": "discussed; no action",
+   "quote": "next item on the agenda, town beach updates",
+   "tags": [
+    "town beach",
+    "swim lessons",
+    "restrooms"
+   ]
+  },
+  {
+   "topic": "Marshall Park septic and toilet facility (BoH funding)",
+   "resolution": "prior vote rescinded and re-voted; Board of Health funding offer accepted 3-1 as recorded",
+   "quote": "1. discussion for clarification and possibly rescind park commission vote on committing installing septic system",
+   "tags": [
+    "marshall park",
+    "septic",
+    "board of health",
+    "toilet facility"
+   ]
+  },
+  {
+   "topic": "Timeline for septic and facilities with BoH funding",
+   "resolution": "discussed; chair stated no construction until full funding secured",
+   "quote": "2. timeline for installation of septic and facilities with boh funding.",
+   "tags": [
+    "marshall park",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Select Board",
+   "resolution": "discussed; presentation assigned to K. Menard",
+   "quote": "next on the agenda, discussion regarding joint meeting with the select board august 2, 2022.",
+   "tags": [
+    "select board",
+    "joint meeting",
+    "arpa"
+   ]
+  },
+  {
+   "topic": "Wetland flagging status",
+   "resolution": "reported; flagging completed",
+   "quote": "next item on the agenda, wetland flagging status",
+   "tags": [
+    "wetlands",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Marshall Park survey IFB draft review",
+   "resolution": "discussed; Menard to assemble requests",
+   "quote": "a. lockwood stated the town manage has the draft and is looking for feedback.",
+   "tags": [
+    "marshall park",
+    "survey",
+    "bid"
+   ]
+  },
+  {
+   "topic": "Capital Planning 2024",
+   "resolution": "discussed; priority list requested",
+   "quote": "next item on the agenda, capital planning 2024",
+   "tags": [
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Capital Planning 10 year outlook",
+   "resolution": "discussed; suggested as a Fall project",
+   "quote": "next item on the agenda, capital planning 10 year outlook.",
+   "tags": [
+    "capital plan",
+    "rectangular fields"
+   ]
+  },
+  {
+   "topic": "Pending park work and Google Docs list",
+   "resolution": "reviewed; list kept as shared tool",
+   "quote": "next item on the agenda, pending work needed to be done in parks and utilization of google docs.",
+   "tags": [
+    "parks maintenance",
+    "shared list"
+   ]
+  },
+  {
+   "topic": "Town Beach closing date",
+   "resolution": "remain open Labor Day weekend if staffing is available",
+   "quote": "the commission decided to remain open for the labor day weekend if staffing was available.",
+   "tags": [
+    "town beach",
+    "staffing",
+    "labor day"
+   ]
+  },
+  {
+   "topic": "Recreation Director / DPW Director report",
+   "resolution": "reported; updates given, no action",
+   "quote": "next item on the agenda, recreation director / dpw director report/updates.",
+   "tags": [
+    "recreation",
+    "dpw",
+    "beach house",
+    "porta-potties",
+    "my rec"
+   ]
+  },
+  {
+   "topic": "Board Comment",
+   "resolution": "asbestos testing noted; Wallis Park courts raised",
+   "quote": "last item on the agenda, board comment",
+   "tags": [
+    "asbestos",
+    "mcnally",
+    "wallis park"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Septic plan by Dylis and Roy dated February-----, 2022",
+   "where": "text",
+   "quote": "as shown on the plan by dylis and roy dated february-----, 2022"
+  },
+  {
+   "name": "Marshall Park Master Plan",
+   "where": "text",
+   "quote": "the entire system does not interfere with anything on the master plan except maybe the edge of the flower garden."
+  },
+  {
+   "name": "Marshall Park Survey IFB draft (held by the Town Manager)",
+   "where": "text",
+   "quote": "a. lockwood stated the town manage has the draft and is looking for feedback."
+  },
+  {
+   "name": "Pending work list kept in Google Docs, shared with B. Bernard",
+   "where": "text",
+   "quote": "the commission reviewed and discussed the list in google, which is shared with b. bernard and using it as a tool for communication."
+  },
+  {
+   "name": "Presentation for the joint meeting with the Select Board",
+   "where": "text",
+   "quote": "k. menard will put a presentation together for the joint meeting."
+  },
+  {
+   "name": "Request for wetland flagging documentation and Conservation Commission information",
+   "where": "text",
+   "quote": "k. menard will put together the two items, request for the flagging documentation and information from the conservation commission."
+  },
+  {
+   "name": "Memo on public urination sent by R. Thompson",
+   "where": "text",
+   "quote": "r. thompson stated he had sent out a memo regarding the public urination, all parties agreed to refrain from doing so."
+  },
+  {
+   "name": "Capital Plan",
+   "where": "text",
+   "quote": "the town manager indicated b. bernard was responsible for the capital plan for the commission."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "marshall park",
+  "septic",
+  "board of health",
+  "town beach",
+  "capital plan",
+  "select board joint meeting",
+  "little league",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

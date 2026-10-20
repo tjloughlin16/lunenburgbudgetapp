@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-03-10",
  "docid": "2054",
@@ -12,15 +12,358 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 7:49 p.m. (carried unanimously)",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Passios",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "at 7:49 p.m. mr. watters motioned to adjourn, mr. passios seconded. on vote, motion carried unanimously."
+   "quote": "mr. watters motioned to adjourn, mr. passios seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "These are OCR-extracted minutes with some scanning artifacts (dollar signs, spacing). Only one motion is recorded with a recorded vote outcome. The DPW budget and capital plan are discussed at length but no vote on them is recorded in these minutes.",
- "cost_usd": 0.0753915
+ "note": "Scanned minutes read by OCR (macOS Vision); the page-2 DPW budget table is OCR-garbled, so its four printed TOTAL figures are recorded as read and their column headings are not legible. The agenda numbering skips item 8 (DPW discussion runs on page 2 with no heading). Item 4 Public Comment lists no speaker. The minutes print no roll call, so attendance status is inferred from who spoke, moved or seconded, and the meeting is described as held remotely. Only one vote is recorded (adjournment); the vote on the minutes is deferred, not taken.",
+ "cost_usd": 0.02044848,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Beardmore",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement concerning the open"
+  },
+  {
+   "name": "Mr. Menard",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mr. menard reminded committee members that town caucus is to be held monday, march 14, 2022."
+  },
+  {
+   "name": "Mr. Passios",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mr. passios concurred."
+  },
+  {
+   "name": "Mr. Watters",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mr. watters motioned to adjourn, mr. passios seconded."
+  },
+  {
+   "name": "Mr. Balish",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mr. balish volunteered to construct the letter if another member would draw up an outline."
+  },
+  {
+   "name": "Mr. Gray",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "mr. gray agreed that facilities and infrastructure are the biggest concerns over the next few years."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated (reported under the \"Town Manager Report\" heading)",
+   "status": "present",
+   "quote": "ms. lemieux reported that meadow woods has paid their balance of back taxes, which"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director rob oliva presented his budget, and informed the committee he is not looking for"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members to send what they think should be included in the warrant letter to Mr. Beardmore and Mr. Menard; Mr. Balish volunteered to write the letter if another member drafts an outline.",
+   "quote": "mr. beardmore requested committee members send what they think should be included into the letter to him and mr. menard."
+  },
+  {
+   "decision": "The vote on the minutes of March 3, 2022 was deferred to the next meeting.",
+   "quote": "committee will vote on minutes from march 3, 2022 at next meeting."
+  },
+  {
+   "decision": "Next meetings set: March 17 for LPS, IT, Admin, Unclassified and Debt Service; Wednesday, March 23 for Monty Tech (Virtual).",
+   "quote": "next meetings march 17: lps, it, admin, unclassified, debt service, wednesday, march 23: monty tech"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW budget request",
+   "what_was_recorded": "The DPW director said he is not seeking any increase except raises for the crew; no dollar figure was printed for this.",
+   "figures_as_printed": [],
+   "quote": "dpw director rob oliva presented his budget, and informed the committee he is not looking for any increases, other than raises in salaries for the crew."
+  },
+  {
+   "topic": "DPW budget table totals",
+   "what_was_recorded": "The page-2 DPW budget table prints four TOTAL figures. The scan is OCR-garbled, so the column each total belongs to is not legible.",
+   "figures_as_printed": [
+    "S 2.634.501.34",
+    "$ 2.721.360.46",
+    "$ 2.731.171.55",
+    "$ 2.806.860.03"
+   ],
+   "quote": "649.013.00 $ 2.806.860.03"
+  },
+  {
+   "topic": "Snow removal overspend",
+   "what_was_recorded": "DPW is over budget in the snow account by approximately $139,000 because of icy weather and salt use; the chair asked whether money could be appropriated in advance.",
+   "figures_as_printed": [
+    "$139,000"
+   ],
+   "quote": "mr. oliva talked about how the dpw is currently over budget in the snow account by approximately $139,000"
+  },
+  {
+   "topic": "Pavement management plan",
+   "what_was_recorded": "$50,000 has been requested to complete the fifth year of the five-year pavement management plan.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "the five-year pavement management plan is in its fifth year, and $50,000 has been requested in"
+  },
+  {
+   "topic": "Debt exclusion balance",
+   "what_was_recorded": "The DPW director stated that $263,276 remains of debt exclusion.",
+   "figures_as_printed": [
+    "$263,276"
+   ],
+   "quote": "mr. oliva stated there is still $263,276 left of debt exclusion."
+  },
+  {
+   "topic": "Town beach retaining wall",
+   "what_was_recorded": "The retaining wall at the town beach is estimated at $21,000 and would be covered under the facilities budget rather than the capital plan.",
+   "figures_as_printed": [
+    "$21,000"
+   ],
+   "quote": "mr. oliva responded that the project should cost $21,000, and will be covered under the facilities budget."
+  },
+  {
+   "topic": "Facilities and grounds director compensation",
+   "what_was_recorded": "An $85,000 increase has been requested to compensate a facilities and grounds director.",
+   "figures_as_printed": [
+    "$85,000"
+   ],
+   "quote": "a $85,000 increase has been requested to compensate a facilities and grounds director."
+  },
+  {
+   "topic": "DPW capital plan request",
+   "what_was_recorded": "The DPW director detailed a $1.31 million capital plan request.",
+   "figures_as_printed": [
+    "$1.31 million"
+   ],
+   "quote": "mr. oliva detailed his $1.31 million capital plan request."
+  },
+  {
+   "topic": "Flat Hill Rd. culvert repair",
+   "what_was_recorded": "A member asked whether $45,000 would fully repair the Flat Hill Rd. culvert without causing drainage problems elsewhere; no answer is recorded.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "mr. menard inquired whether $45,000 would be enough money to fully repair the flat hill rd."
+  },
+  {
+   "topic": "Revised town capital plan",
+   "what_was_recorded": "After actual budget amounts for Monty Tech and regional dispatch were received, the revised capital plan totals $2,162,849, a $423,800 increase on the previous plan.",
+   "figures_as_printed": [
+    "$2,162,849",
+    "$423,800"
+   ],
+   "quote": "the new plan now totals $2,162,849, which is a $423,800"
+  },
+  {
+   "topic": "Woodruff property warrant article",
+   "what_was_recorded": "A $100,000 warrant article to clean the Woodruff property will be proposed at Annual Town Meeting.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "a warrant article in the amount of $100,000 to clean the woodruff property will be proposed at annual town meeting"
+  },
+  {
+   "topic": "Meadow Woods back taxes",
+   "what_was_recorded": "Meadow Woods paid its back-tax balance, which will be closed out and turned over to free cash at year end; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux reported that meadow woods has paid their balance of back taxes, which will close out and be turned over to free cash at the end of the year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Vertex reports",
+   "speaker": "Mr. Passios",
+   "quote": "mr. passios reminded those in attendance that the vertex reports were developed on bringing buildings back to their original use."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened; Open Meeting Law statement read",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement concerning the open",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. menard reminded committee members that town caucus is to be held monday, march 14, 2022.",
+   "tags": [
+    "town caucus",
+    "fundraiser"
+   ]
+  },
+  {
+   "topic": "Public Comment (item 4)",
+   "resolution": "no comment recorded",
+   "quote": "4. public comment: 5. chair report",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "suggestion to consider FY2023 capital plan on a future agenda; no decision recorded",
+   "quote": "mr. beardmore also suggested the committee decide whether to add the fy2023 capital plan to an agenda of an",
+   "tags": [
+    "capital plan",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported; no action",
+   "quote": "ms. lemieux reported that meadow woods has paid their balance of back taxes, which will close out",
+   "tags": [
+    "capital plan",
+    "tax title",
+    "warrant article",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Budget Presentations (DPW), continued on page 2",
+   "resolution": "presented; discussion continued; no vote",
+   "quote": "dpw director rob oliva presented his budget, and informed the committee he is not looking for",
+   "tags": [
+    "DPW budget",
+    "snow removal",
+    "capital plan",
+    "pavement"
+   ]
+  },
+  {
+   "topic": "Warrant Letter Content and Timeline",
+   "resolution": "members to send input; Balish to draft if an outline is provided",
+   "quote": "9. warrant letter content and timeline: mr. beardmore requested committee members send what they think",
+   "tags": [
+    "warrant letter",
+    "town finances"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "10. minutes: committee will vote on minutes from march 3, 2022 at next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no detail recorded",
+   "quote": "11. committee reports: committee members updated each other on their respective committees,",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public Comment (item 12)",
+   "resolution": "remark; no action",
+   "quote": "12. public comment: mr. passios reminded those in attendance that the vertex reports were developed on bringing",
+   "tags": [
+    "public comment",
+    "buildings"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled",
+   "quote": "13. next meetings march 17: lps, it, admin, unclassified, debt service, wednesday, march 23: monty tech",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 7:49 p.m., carried unanimously",
+   "quote": "14. adjourn: at 7:49 p.m. mr. watters motioned to adjourn, mr. passios seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Vertex reports",
+   "where": "text",
+   "quote": "mr. passios reminded those in attendance that the vertex reports were developed on bringing buildings back to their original use."
+  },
+  {
+   "name": "Notice of Intent submitted by the town (Conservation Commission)",
+   "where": "text",
+   "quote": "after the conservation commission approved a notice of intent submitted by the town."
+  },
+  {
+   "name": "Woodruff property warrant article ($100,000)",
+   "where": "text",
+   "quote": "a warrant article in the amount of $100,000 to clean the woodruff property will be proposed at annual town meeting"
+  },
+  {
+   "name": "Revised capital plan (presented to the Select Board)",
+   "where": "text",
+   "quote": "she presented a revised capital plan to the select board."
+  },
+  {
+   "name": "Tax title list",
+   "where": "text",
+   "quote": "removed from the tax title list, and since the list has been distributed, several property owners have paid their back taxes."
+  },
+  {
+   "name": "Five-year pavement management plan",
+   "where": "text",
+   "quote": "the five-year pavement management plan is in its fifth year, and $50,000 has been requested in"
+  },
+  {
+   "name": "Actual spending information (DPW, to be submitted to Town Manager)",
+   "where": "text",
+   "quote": "would submit that information to the town manager for the committee to view."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital plan",
+  "DPW budget",
+  "snow removal",
+  "warrant letter",
+  "tax title",
+  "Monty Tech",
+  "FY2023 budget",
+  "pavement management",
+  "Open Meeting Law",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

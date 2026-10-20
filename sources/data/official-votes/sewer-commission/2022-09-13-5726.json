@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-09-13",
  "docid": "5726",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Defer the waiver proposal until the May 2023 Town Meeting",
+   "motion": "Back-burner Lou Franco's proposed rewording of the waiver criterion until next May's Town Meeting.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
@@ -20,7 +20,7 @@
    "quote": "motion: dave m. second: mike n. to back burner the proposal until next may's town meeting."
   },
   {
-   "motion": "Not impose penalties for Il Forno's non-compliance on grease trap maintenance",
+   "motion": "Impose no penalties on I Forno for its non-compliance, given the circumstances described.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-1",
@@ -28,15 +28,15 @@
    "quote": "motion: dave m. second: mike n. to not impose any penalties for il forno's non-compliance, due to the circumstances described."
   },
   {
-   "motion": "Accept two stabilization transfer articles for the November warrant",
+   "motion": "Accept the two stabilization transfer articles as written to be put into the November 15, 2022 Special Town Meeting warrant.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: brett r. second: mike n. to accept the two articles as written to be put into the warrant."
   },
   {
-   "motion": "Start non-compliance process against A&D Crossroads for late permit payment",
+   "motion": "Send the non-compliance messages to A&D Crossroads per the Business Manager's request.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
@@ -44,23 +44,23 @@
    "quote": "motion: dave m. second: mike n. to send out the messages per the business manager's request to a&d crossroads."
   },
   {
-   "motion": "Allow Barb to retract her retirement request",
+   "motion": "Allow the Business Manager's retraction of her retirement request.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: brett r. second: mike n. to allow barb's retraction of her retirement request."
   },
   {
-   "motion": "Accept the minutes from the August 9, 2022 meeting",
+   "motion": "Accept the minutes of 8/9.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: mike n. to accept the minutes of 8/9. second: brett r."
+   "quote": "motion: mike n. to accept the minutes of 8/9."
   },
   {
-   "motion": "Accept the minutes from the August 30, 2022 meeting",
+   "motion": "Accept the minutes of 8/30.",
    "moved_by": "Brett R.",
    "seconded_by": "Dave M.",
    "outcome": "passed 4-0",
@@ -68,15 +68,507 @@
    "quote": "motion: brett r. second: dave m. to accept the minutes of 8/30."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:56pm.",
    "moved_by": "Mike N.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: mike n. to adjourn at 7:56pm. second: brett r."
+   "quote": "motion: mike n. to adjourn at 7:56pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1403545
+ "note": "Text is macOS Vision OCR and contains transcription errors (e.g. 'I!' for 'Il Forno', 'Loom' for Zoom, 'Jane 1. Pantry' signature). Quotes were taken from the OCR text as printed, with line breaks collapsed to single spaces. Zoom connection was interrupted during the Lou Franco discussion; Paula Bertram left the meeting partway through the Pond View item (time not stated). Minutes-of-8/9 roll call lists three ayes and does not record Dave MacDonald, so no count is given. The section headed 'Public Comment' near the end is a staff report by Bill, not public comment; the only public-comment entry is 'none'. Gary (Grease Trappers) and Jake Fleming (Leominster) are referred to but did not take part. The Il Forno and A&D motions and the minutes approvals are recorded from the minutes text, which prints vote tallies only as roll-call lists.",
+ "cost_usd": 0.02645558,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair-brett ramsden, members: dave macdonald and mike nault, dpw director- bill"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair-brett ramsden, members: dave macdonald and mike nault, dpw director- bill"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair-brett ramsden, members: dave macdonald and mike nault, dpw director- bill"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair-brett ramsden, members: dave macdonald and mike nault, dpw director- bill"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "bill stated heather was asking for more background information as to where the money will be used."
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "bernard, business manager-barb lefebvre, asst. business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Asst. Business Manager",
+   "status": "present",
+   "quote": "bernard, business manager-barb lefebvre, asst. business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "bernard, business manager-barb lefebvre, asst. business manager-paula bertram, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: clerk- mike deveikis"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "guests: lou franco (select board), mike mohamed (i forno)"
+  },
+  {
+   "name": "Mike Mohamed",
+   "role": "I Forno",
+   "status": "present",
+   "quote": "mike mohamed & carlene baily (i forno) - barb noted i! forno is being charged as non-compliant"
+  },
+  {
+   "name": "Carlene Baily",
+   "role": "I Forno",
+   "status": "not stated",
+   "quote": "mike mohamed & carlene baily (i forno) - barb noted i! forno is being charged as non-compliant"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed Bill would submit three separate ARPA projects (Manhole, Pumphouse upgrades, and the Whalom lateral lining), and would determine what to add after Wright Pierce's numbers arrive.",
+   "quote": "the commission discussed and agreed bill submit 3 separate projects-manhole l, pumphouse upgrades and the lateral lining project in the whalom area."
+  },
+  {
+   "decision": "Barb will send out the updated ARPA form.",
+   "quote": "she will send out the updated form."
+  },
+  {
+   "decision": "Brett suggested John make the strong point that the applicant's costs are out of line for sewer alone and work with Wright Pierce on detailed costs; John and Mike N. agreed.",
+   "quote": "brett suggested having john make the strong point that the applicant's costs are dramatically out of line just for sewer alone"
+  },
+  {
+   "decision": "Barb to ask Wright Pierce for the heads-up on possible additional work on the Pond View project; Barb said a price estimate would require a consultant contract.",
+   "quote": "john asked barb to give wright pierce the heads up about possible additional work on this project."
+  },
+  {
+   "decision": "John will check into the cost of water for the Pond View project with the Water District.",
+   "quote": "john stated the cost for water would be very expensive and he will check into it."
+  },
+  {
+   "decision": "John will work with Barb to add a statement on the Pond View costs.",
+   "quote": "john will also work with barb to add a statement on the costs."
+  },
+  {
+   "decision": "Paula and Barb will determine the Committed Capacity for properties bettered but not connected.",
+   "quote": "paula and barb will need to determine the committed capacity for properties bettered but not connected."
+  },
+  {
+   "decision": "Barb will check on past peer review costs and whether the peer review is shared with other departments.",
+   "quote": "barb said she would check on the peer review costs in the past"
+  },
+  {
+   "decision": "Barb will ask Town Counsel about a requirement for clay pipes to be replaced before sale of a property.",
+   "quote": "barb said she would like to ask town counsel about a requirement for clay pipes to be"
+  },
+  {
+   "decision": "Paula is working with the Planning Board to make sure sewer lines are shown on all ANR requests.",
+   "quote": "the anr for #34 did not show sewer lines, so paula is working with the planning board to make sure the sewer lines are put on all anr requests."
+  },
+  {
+   "decision": "On receipt of the 34/44 Northfield Rd sewer waiver request, the Commission will post a public hearing.",
+   "quote": "when the commission receives the waiver request, they will post a public hearing."
+  },
+  {
+   "decision": "The A&D Crossroads permit is given 30 days, after which a $25/day charge applies back to 8/10/22.",
+   "quote": "they will give him 30 days, or he will be charged $25/day going back to 8/10/22 when the permit was due."
+  },
+  {
+   "decision": "Barb or Paula will follow up on the one August grease trap log still outstanding.",
+   "quote": "the august logs are all in except for one and barb or paula will follow up."
+  },
+  {
+   "decision": "If the Ixtapa internal trap report is not received by the 9/27 meeting, Barb will request that the non-compliance process start for them.",
+   "quote": "if not received by the 9/27 meeting, barb will request to start the non-compliance process for"
+  },
+  {
+   "decision": "Mike M. (I Forno) promised to follow up with the pumping company and will not pay them until the town receives the report.",
+   "quote": "he will not pay them until the town gets the report."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pond View applicant cost list",
+   "what_was_recorded": "Paula noted the applicant's listed costs total just over $59M and omit a number of fees.",
+   "quote": "paula noted the applicants list of costs total just over $59m and they did not include a number of fees.",
+   "figures_as_printed": [
+    "$59M"
+   ]
+  },
+  {
+   "topic": "Pond View utilities and sewer extension cost",
+   "what_was_recorded": "Utilities are listed at $4M for sewer, water and electric, and the sewer extension alone is said to exceed $4M.",
+   "quote": "the costs for utilities are noted as $4m to cover sewer, water and electric.",
+   "figures_as_printed": [
+    "$4M"
+   ]
+  },
+  {
+   "topic": "Upland project sewer cost benchmark",
+   "what_was_recorded": "John cited a Wright Pierce estimate of $1.4M per mile for sewer line without pump stations.",
+   "quote": "john noted regarding the upland project, wright pierce estimated the cost would be $1.4m per mile, without any pump stations.",
+   "figures_as_printed": [
+    "$1.4M"
+   ]
+  },
+  {
+   "topic": "Pump station cost benchmarks",
+   "what_was_recorded": "John said a large pump station would cost $1-1.5M and a small one about $750K (the large figure is printed across a line break as '$1-' and '1.5M').",
+   "quote": "and a small pump station about $750k. there are a lot of costs not represented in the project plan.",
+   "figures_as_printed": [
+    "$1-1.5M",
+    "$750K"
+   ]
+  },
+  {
+   "topic": "Pond View consultant allocation",
+   "what_was_recorded": "Paula noted the applicant allocated only $280K for other consultants, which excludes the sewer design peer review.",
+   "quote": "the applicant also only allocated $280k for other consultants, which does not include the peer review of the sewer design and will not be sufficient.",
+   "figures_as_printed": [
+    "$280K"
+   ]
+  },
+  {
+   "topic": "Pond View roads and walkways cost",
+   "what_was_recorded": "Paula noted the $600K for Roads & Walkways does not appear to include repair to town roads.",
+   "quote": "lastly, paula noted the costs for roads & walkways ($600k) does not appear to include",
+   "figures_as_printed": [
+    "$600K"
+   ]
+  },
+  {
+   "topic": "Pond View survey permit and connection fees",
+   "what_was_recorded": "Paula noted survey permit fees of $160K do not include anticipated connection fees of over $2 million.",
+   "quote": "survey permit fees of $160k does not include the anticipated connection fees of over $2",
+   "figures_as_printed": [
+    "$160K",
+    "over $2 million"
+   ]
+  },
+  {
+   "topic": "Pond View connection, sewer bank, reserve and privilege fees",
+   "what_was_recorded": "Paula explained the calculation of connection, sewer bank, reserve capacity and privilege fees, which would total $2,005,127.50; she was unsure how to calculate the 4:1 I/I fee.",
+   "quote": "paula explained the calculation for the connection fees, sewer bank fees, reserve capacity and privilege fees which would total $2,005,127.50.",
+   "figures_as_printed": [
+    "$2,005,127.50"
+   ]
+  },
+  {
+   "topic": "Pond View fees and the Sewer Department budget",
+   "what_was_recorded": "Dave said that if the project proceeds without collecting these fees it will bankrupt the Sewer Department; no figure was printed for the department.",
+   "quote": "dave pointed out if the project goes through without collecting all these fees, it will bankrupt sewer department.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Pond View peer review and resident engineer costs",
+   "what_was_recorded": "A peer review and resident engineer are required, to be paid by the applicant; the fees were not in the application. No dollar figure is printed.",
+   "quote": "a peer review is required and will need to be paid by applicant. these fees were not included in the application.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Wright Pierce consultant contract",
+   "what_was_recorded": "Barb said a price estimate from Wright Pierce would require the Town to set up a consultant contract; no figure printed.",
+   "quote": "barb replied that it would require we set up a consultant contract with them.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Special Town Meeting stabilization transfers",
+   "what_was_recorded": "Two stabilization transfers were presented for the November 15, 2022 Special Town Meeting warrant: $1,645.60 back to the Sewer Reserve Capacity Stabilization Fund and $9,900 to the Sewer I/I Stabilization Fund.",
+   "quote": "article 1 is to transfer back $1,645.60 into the sewer reserve capacity stabilization fund and article 2 is to transfer $9,900 into the sewer i/l stabilization fund.",
+   "figures_as_printed": [
+    "$1,645.60",
+    "$9,900"
+   ]
+  },
+  {
+   "topic": "ARPA proposal and I/I costs",
+   "what_was_recorded": "Dave said the ARPA money could help correct sewer installation problems and that I/I is costing the town a lot of money; no dollar figure is printed.",
+   "quote": "dave pointed out there were problems when the sewer was installed, and the arpa money could help correct things.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "A&D Crossroads grease trap non-compliance fee",
+   "what_was_recorded": "Barb requested a $50 non-compliance fee be invoiced to A&D Crossroads, with $25/day charged after 30 days, going back to 8/10/22.",
+   "quote": "she requested the commission to vote to start the non-compliance process and invoice him $50 non-compliance fee.",
+   "figures_as_printed": [
+    "$50",
+    "$25/day"
+   ]
+  },
+  {
+   "topic": "Control panel invoice, Mass 3 pump station",
+   "what_was_recorded": "An invoice for a control panel at the Mass 3 pump station was noted as encumbered from FY22.",
+   "quote": "invoices - for control panel at mass 3 pump station - $5,984.43 as per quote and was encumbered from fy22.",
+   "figures_as_printed": [
+    "$5,984.43"
+   ]
+  },
+  {
+   "topic": "Grease trap fee paid by other accounts",
+   "what_was_recorded": "Paula noted the other non-compliant accounts have already paid the fee; no figure printed.",
+   "quote": "she noted the other non-compliant accounts have paid the fee already.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer back into the Sewer Reserve Capacity Stabilization Fund, for the Special Town Meeting warrant (Article 1).",
+   "outcome": "Accepted as written into the warrant (motion passed 4-0).",
+   "amount_as_printed": "$1,645.60",
+   "quote": "article 1 is to transfer back $1,645.60 into the sewer reserve capacity stabilization fund and article 2 is to transfer $9,900 into the sewer i/l stabilization fund."
+  },
+  {
+   "description": "Transfer into the Sewer I/I Stabilization Fund, for the Special Town Meeting warrant (Article 2).",
+   "outcome": "Accepted as written into the warrant (motion passed 4-0).",
+   "amount_as_printed": "$9,900",
+   "quote": "article 1 is to transfer back $1,645.60 into the sewer reserve capacity stabilization fund and article 2 is to transfer $9,900 into the sewer i/l stabilization fund."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action (none)",
+   "quote": "public comment- none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements: ZBA hearing on Pond View",
+   "resolution": "noted",
+   "quote": "john announced there will be a zba (zoning board of appeals) public hearing on the pond view",
+   "tags": [
+    "ZBA",
+    "Pond View 40B"
+   ]
+  },
+  {
+   "topic": "Appointment: Lou Franco on waiver criterion (Article 25)",
+   "resolution": "back-burnered until May Town Meeting",
+   "quote": "lou franco, select board member - barb screen-shared the bulletin containing article 25 from the 5/7/22 town meeting, in",
+   "tags": [
+    "waivers",
+    "Town Meeting",
+    "Article 25"
+   ]
+  },
+  {
+   "topic": "Appointment: I Forno grease trap non-compliance",
+   "resolution": "no penalties imposed (3-1)",
+   "quote": "mike mohamed & carlene baily (i forno) - barb noted i! forno is being charged as non-compliant",
+   "tags": [
+    "grease trap",
+    "non-compliance",
+    "I Forno"
+   ]
+  },
+  {
+   "topic": "Current business: Pond View 40B project",
+   "resolution": "discussed; no vote; staff to prepare cost statement and contact Wright Pierce",
+   "quote": "pond view 40b project- john noted a lot of information was provided on this project and the zba will have a public hearing",
+   "tags": [
+    "Pond View 40B",
+    "ZBA",
+    "sewer",
+    "connection fees",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting stabilization transfer articles",
+   "resolution": "approved for warrant",
+   "quote": "special town meeting november 15, 2022 - barb screen-shared the 2 stabilization transfers articles.",
+   "tags": [
+    "Special Town Meeting",
+    "stabilization funds",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "ARPA proposal for manholes and pump stations",
+   "resolution": "Bill to submit three projects",
+   "quote": "arpa proposal- john reported bill put together a proposal for manholes and pump stations.",
+   "tags": [
+    "ARPA",
+    "I/I",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Grease trap program annual permit status",
+   "resolution": "non-compliance process approved for A&D Crossroads",
+   "quote": "grease trap program - annual permit status -barb reported there is 1 outstanding annual permit /payment, which is a&d",
+   "tags": [
+    "grease trap",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Business Manager retirement",
+   "resolution": "retirement request withdrawn (approved)",
+   "quote": "business manager retirement - barb reported she has reconsidered going out on retirement at the first of the year and will",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Minutes of 8/9 and 8/30",
+   "resolution": "approved",
+   "quote": "motion: mike n. to accept the minutes of 8/9.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: 17 Highland St and 34-44 Northfield Rd",
+   "resolution": "informational; waiver request to be heard with public hearing",
+   "quote": "business manager report - in regard to the discussion on 17 highland st. privilege fee at the 8/30/22 meeting, barb",
+   "tags": [
+    "privilege fee",
+    "betterments",
+    "sewer connection",
+    "easement"
+   ]
+  },
+  {
+   "topic": "Muni-Link utility billing and Town Counsel questions",
+   "resolution": "informational; Town Counsel question to be asked",
+   "quote": "muni-link utility billing program- barb reported they have scheduled a presentation of the muni-link program to the town",
+   "tags": [
+    "billing",
+    "Town Counsel",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "FY23 budget and invoices",
+   "resolution": "noted",
+   "quote": "fy23 budget- no update. invoices - for control panel at mass 3 pump station - $5,984.43 as per quote and was encumbered from fy22.",
+   "tags": [
+    "FY23 budget",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "noted",
+   "quote": "action items- brett noted he will not be attending the 9/27 meeting.",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Staff report under the heading Public Comment (OWL conference equipment)",
+   "resolution": "informational",
+   "quote": "bill reported they received an \"owl\" for the conference room which has a speaker and 360-degree camera for meetings",
+   "tags": [
+    "equipment",
+    "remote meetings"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled meetings",
+   "resolution": "noted",
+   "quote": "september 27, 2022 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:56pm",
+   "quote": "motion: mike n. to adjourn at 7:56pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 25 - 5/7/22 Town Meeting",
+   "where": "list",
+   "quote": "article 25 - 5/7/22 town meeting"
+  },
+  {
+   "name": "Pond View Concerns List",
+   "where": "list",
+   "quote": "pond view concerns list"
+  },
+  {
+   "name": "Sewer Commission Articles for November Town Meeting",
+   "where": "list",
+   "quote": "sewer commission articles for november town meeting"
+  },
+  {
+   "name": "Town Manager's AARP Form",
+   "where": "list",
+   "quote": "town manager's aarp form"
+  },
+  {
+   "name": "Town Counsel letter to the HAC",
+   "where": "text",
+   "quote": "paula stated town counsel disagreed in his letter to the hac."
+  },
+  {
+   "name": "Email from Gary (Grease Trappers)",
+   "where": "text",
+   "quote": "gary (grease trappers) just sent an email, stating he takes full responsibility for what happened."
+  },
+  {
+   "name": "Applicant's list of costs (Pond View)",
+   "where": "text",
+   "quote": "paula noted the applicants list of costs total just over $59m and they did not include a number of fees."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "Pond View 40B",
+  "ZBA",
+  "sewer connection fees",
+  "I/I",
+  "grease trap",
+  "ARPA",
+  "stabilization funds",
+  "Special Town Meeting",
+  "waivers",
+  "Zoom",
+  "business manager"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

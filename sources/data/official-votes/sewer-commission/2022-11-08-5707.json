@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-11-08",
  "docid": "5707",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for 10/25/22",
+   "motion": "Approve the minutes of 10/25/22.",
    "moved_by": "Mike N",
    "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
@@ -20,7 +20,7 @@
    "quote": "motion: mike n to approve the minutes for 10/25/22. second: dave m. roll call vote: mike n.-aye, dave- aye and brett-aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:33pm.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
@@ -29,6 +29,331 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.117513
+ "note": "Text is a 2-page macOS Vision OCR of the minutes, not a clean text file. Quotes are copied from the OCR text as it reads, so OCR artifacts are kept (e.g. 'I/l' and 'l/l' for I/I; 'Dave-' spacing). Stray trailing text 'You Party.,' after the adjournment is OCR residue and was ignored. The minutes say the meeting was held via Zoom but do not mark individual attendees as remote, so attendees are recorded as present. Votes are roll-call results as printed, both 3-0. The Invoices and FY23 budget items have no recorded vote. Non-attending people named in the text (Al Packard, Paula, Wright Pierce, Mead, Talerman) are not recorded as attendees.",
+ "cost_usd": 0.019466510000000003,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: vice-chair-brett ramsden, members: dave macdonald and mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: vice-chair-brett ramsden, members: dave macdonald and mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: vice-chair-brett ramsden, members: dave macdonald and mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair-john reynolds, clerk- mike deveikis, and minutes clerk-jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: chair-john reynolds, clerk- mike deveikis, and minutes clerk-jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "absent",
+   "quote": "absent: chair-john reynolds, clerk- mike deveikis, and minutes clerk-jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to have Al Packard (CTE) attend a meeting once Chair John Reynolds is able to attend.",
+   "quote": "and the commission agreed to have him attend when john is able to attend."
+  },
+  {
+   "decision": "Dave suggested starting with a sample of 10 houses for the camera inspection of possible clay pipes, and Brett agreed.",
+   "quote": "dave suggested looking at 10 houses to start and brett agreed."
+  },
+  {
+   "decision": "Dave asked that an update on the DPW Director's action plan be added to the next meeting agenda.",
+   "quote": "dave asked to add an update on the action plan from the dpw director to the next meeting agenda."
+  },
+  {
+   "decision": "Dave asked that the inspection item be added as an action item.",
+   "quote": "dave asked to add it as an action item."
+  },
+  {
+   "decision": "Barb said she will need Town Counsel's help on the right-of-entry form and the protective language for the Commission.",
+   "quote": "barb said she would need town counsel's assistance on the right of entry and the language to use to protect the commission."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pond View 40B peer review (Wright Pierce)",
+   "what_was_recorded": "A new Wright Pierce peer review estimate was described with a $7,500 figure, to be paid by the 40B developer; Dave said it is an hourly estimate rather than a cap.",
+   "figures_as_printed": [
+    "$7,500"
+   ],
+   "quote": "there will be a cap of $7,500 and the developer will be paying for it."
+  },
+  {
+   "topic": "Special Town Meeting transfers to stabilization funds",
+   "what_was_recorded": "Two Sewer Commission warrant articles would transfer unused available funds into stabilization funds: $1,645.60 and $9,900.00.",
+   "figures_as_printed": [
+    "$1,645.60",
+    "$9,900.00"
+   ],
+   "quote": "article 6 is the transfer from available funds $1,645.60 into the sewer reserve capacity stabilization fund and article 7 is the transfer from available funds $9,900.00 into the sewer inflow/infiltration stabilization fund."
+  },
+  {
+   "topic": "Retained earnings",
+   "what_was_recorded": "Business Manager reported retained earnings were certified at $2,232,978.",
+   "figures_as_printed": [
+    "$2,232,978"
+   ],
+   "quote": "barb reported the retained earnings has been certified at $2,232,978."
+  },
+  {
+   "topic": "Maintenance program budget",
+   "what_was_recorded": "Business Manager stated the FY23 maintenance program budget as $64K for infrastructure and $20K for engineering.",
+   "figures_as_printed": [
+    "$64K",
+    "$20K"
+   ],
+   "quote": "dave asked how much has been budgeted for the maintenance program and barb replied $64k for infrastructure and $20k for engineering."
+  },
+  {
+   "topic": "FY23 budget",
+   "what_was_recorded": "The FY23 budget was sent to Commissioners and described as looking good; no dollar total was printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "fy23 budget was sent out to the commissioners, and it is looking good."
+  },
+  {
+   "topic": "September invoices",
+   "what_was_recorded": "Invoices from Mead and Talerman for September services, covering a 44 Northfield waiver and 40B Pond View assessment fees, were listed; no approval was recorded.",
+   "figures_as_printed": [
+    "$261.64"
+   ],
+   "quote": "invoices- mead, talerman for $261.64 for september services (44 northfield waiver and 40b pond view assessment fees)."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 6: transfer from available funds into the Sewer Reserve Capacity Stabilization Fund (unused funds from FY22, now closed).",
+   "amount_as_printed": "$1,645.60",
+   "outcome": "Warrant article for Special Town Meeting on 11/15 at 7pm; not yet voted.",
+   "quote": "article 6 is the transfer from available funds $1,645.60 into the sewer reserve capacity stabilization fund"
+  },
+  {
+   "description": "Article 7: transfer from available funds into the Sewer Inflow/Infiltration Stabilization Fund (unused funds from FY22, now closed).",
+   "amount_as_printed": "$9,900.00",
+   "outcome": "Warrant article for Special Town Meeting on 11/15 at 7pm; not yet voted.",
+   "quote": "article 7 is the transfer from available funds $9,900.00 into the sewer inflow/infiltration stabilization fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Member",
+   "topic": "voting reminder",
+   "quote": "public comment- dave reminded all to go vote if they have not already. polls close at 8pm."
+  },
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Member",
+   "topic": "community events announcements",
+   "quote": "dave announced the pancake breakfast at the senior center on 11/9 and the lion's club will have a meat raffle bingo on 11/12 at the monoosnock country club."
+  },
+  {
+   "speaker": "Brett Ramsden",
+   "stated_role": "Vice-Chair",
+   "topic": "wishes for Chair's recovery",
+   "quote": "public comment - brett said he hopes john heals quickly from his surgery."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "brett r. opened the meeting at 6:00 pm. and noted john reynolds is still recovering from surgery.",
+   "tags": [
+    "procedure",
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Opening public comment",
+   "resolution": "no action",
+   "quote": "public comment- dave reminded all to go vote if they have not already. polls close at 8pm.",
+   "tags": [
+    "public comment",
+    "election"
+   ]
+  },
+  {
+   "topic": "Announcements: email migration",
+   "resolution": "reported; no action",
+   "quote": "barb stated that all the commissioners' emails have been migrated over to 'lunenburgma.gov'",
+   "tags": [
+    "email",
+    "administration"
+   ]
+  },
+  {
+   "topic": "Pond View 40B discussion",
+   "resolution": "discussed; no action recorded",
+   "quote": "pond view 40b discussion- brett noted there will be a zba hearing on 11/9 at 7pm, in person or by zoom.",
+   "tags": [
+    "40B",
+    "Pond View",
+    "peer review",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting 11/15 articles",
+   "resolution": "reported; Articles 6 and 7 pending",
+   "quote": "special town meeting on 11/15 at 7pm - brett stated there will be 2 articles for the sewer commission.",
+   "tags": [
+    "special town meeting",
+    "stabilization funds",
+    "transfers"
+   ]
+  },
+  {
+   "topic": "Retained earnings and FY23 recap",
+   "resolution": "reported",
+   "quote": "retained earnings and fy23 recap- barb reported the retained earnings has been certified at $2,232,978.",
+   "tags": [
+    "retained earnings",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Business Manager retirement",
+   "resolution": "announced; Commissioners wished her well",
+   "quote": "business manager retirement - barb announced she will be retiring effective 4/3/23.",
+   "tags": [
+    "personnel",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/25/22",
+   "resolution": "approved 3-0",
+   "quote": "motion: mike n to approve the minutes for 10/25/22. second: dave m. roll call vote: mike n.-aye, dave- aye and brett-aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: grease trap program",
+   "resolution": "reported",
+   "quote": "business manager report - grease trap program- all the 1st tuesday reports are in for october, within the 7-day window.",
+   "tags": [
+    "grease trap",
+    "reporting"
+   ]
+  },
+  {
+   "topic": "Whalom I/I investigation",
+   "resolution": "discussed; policy change and camera inspections proposed; Dave asked for action item",
+   "quote": "whalom i/l investigation- barb reported they discussed different options with town counsel for reducing the l/l.",
+   "tags": [
+    "inflow and infiltration",
+    "sewer regulations",
+    "town counsel",
+    "inspections"
+   ]
+  },
+  {
+   "topic": "Billing upgrade",
+   "resolution": "reported; test planned with Q3 billing",
+   "quote": "billing upgrade - barb stated that paula has been working very hard on a program to automate a lot of the manual checking during this billing(q2).",
+   "tags": [
+    "billing",
+    "meter reads",
+    "software"
+   ]
+  },
+  {
+   "topic": "FY23 budget",
+   "resolution": "discussed",
+   "quote": "fy23 budget was sent out to the commissioners, and it is looking good.",
+   "tags": [
+    "budget",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "DPW wet wells, jetting and pump stations",
+   "resolution": "reported; Al Packard to attend a future meeting",
+   "quote": "barb noted bill has been talking to al packard (cte) about wet wells cleaning and has a contractor lined up.",
+   "tags": [
+    "pump stations",
+    "wet wells",
+    "generators",
+    "contractors"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "listed; no approval recorded",
+   "quote": "invoices- mead, talerman for $261.64 for september services (44 northfield waiver and 40b pond view assessment fees).",
+   "tags": [
+    "invoices",
+    "40B"
+   ]
+  },
+  {
+   "topic": "Action items: right to inspect piping",
+   "resolution": "discussed; no action recorded",
+   "quote": "action items- dave inquired if the commission has a policy stating they have the right to inspect the piping.",
+   "tags": [
+    "inspections",
+    "sewer regulations"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "listed",
+   "quote": "november 29, 2022 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "Pond View 40B",
+  "peer review",
+  "special town meeting",
+  "stabilization funds",
+  "inflow and infiltration",
+  "billing",
+  "FY23 budget",
+  "retained earnings",
+  "personnel",
+  "pump stations",
+  "Zoom meeting"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-10-11",
  "docid": "5290",
@@ -12,55 +12,586 @@
  },
  "votes": [
   {
-   "motion": "To ratify the appointment of Paul Theodoulou as full-time officer effective October 12",
+   "motion": "Ratify the Town Manager's appointment of Paul Theodoulou as full-time police officer effective October 12, 2022.",
    "moved_by": "Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: , alonzo 2nd': l. franco to ratify the appointment of paul theodoulou as full-time officer effective october 12, vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointment of paul theodoulou as full-time officer effective october 12, vote: all in favor"
   },
   {
-   "motion": "To ratify the Town Manager appointment of George Tibbetts to Reserve Police officer effective October 12, 2022",
+   "motion": "Ratify the Town Manager appointment of George Tibbetts to Reserve Police Officer effective October 12, 2022.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo to ratify the town manager appointment of george tibbetts to reserve police officer effective october 12, 2022 2\"d: l. franco vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of george tibbetts to reserve police officer effective october 12, 2022"
   },
   {
-   "motion": "To approve the request from the Lunenburg Boys & Girls Club to hold the Haunted House event as discussed on October 29",
+   "motion": "Approve the request from the Lunenburg Boys & Girls Club to hold the Haunted House event as discussed on October 29.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed, 4 in favor, 1 abstention (Jeffreys)",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"': t. dwyer to approve the request from the lunenburg boys & girls club to hold the haunted house event as discussed on october 29 vote: 4 in favor, 1 abstention (jeffreys)"
+   "quote": "to approve the request from the lunenburg boys & girls club to hold the haunted house event as discussed on october 29 vote: 4 in favor, 1 abstention"
   },
   {
-   "motion": "To recommend approval of the warrant article submitted by the Personnel Committee",
+   "motion": "Recommend approval of the warrant article submitted by the Personnel Committee (amendment to the Salary Administration Plan).",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2\": t. dwyer to recommend approval of the warrant article submitted by the personnel committee vote: all in favor"
+   "procedural": false,
+   "quote": "to recommend approval of the warrant article submitted by the personnel committee vote: all in favor"
   },
   {
-   "motion": "To approve the minutes of September 20, 2022",
+   "motion": "Approve the minutes of September 20, 2022.",
    "moved_by": "T. Dwyer",
    "seconded_by": "H. Sroka",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed, 4 in favor; 1 abstention (Alonzo)",
    "procedural": true,
-   "quote": "motion: t. dwyer to approve the minutes of september 20, 2022 vote: 4 in favor; 1 abstention 2\"': h. sroka (alonzo)"
+   "quote": "to approve the minutes of september 20, 2022 vote: 4 in favor; 1 abstention"
   },
   {
-   "motion": "To adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo 2\"d: t. dwyer to adjourn the meeting vote: all in favor"
+   "quote": "to adjourn the meeting vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcription from macOS Vision; some OCR errors visible in special characters, particularly in seconding notation where '2nd:' is rendered variously as '2nd':', '2\"d:', '2\\\":', etc.",
- "cost_usd": 0.1604915
+ "note": "Machine-read (macOS Vision OCR) text, not clean text. Known garbling: the FY23 omnibus adjustments table is largely unreadable, so only the two totals legible as printed are recorded; the first motion reads 'Motion: , Alonzo' and is recorded as moved by Alonzo; page 5 begins mid-sentence and the APD bylaw discussion is partly cut off; several names are OCR-garbled (e.g. 'Mr. Jeffieys', 'Elaire M. Pelerson'). The minutes name the Municipal Building Design Committee variously as MBDC, MDBC and LMDC. Most votes are recorded as 'All in Favor' with no roll call. The document list has no heading, so documents are recorded from passing mentions only.",
+ "cost_usd": 0.027878180000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "mr. alonzo clarified this club event is in its fourth or fifth year"
+  },
+  {
+   "name": "L. Franco",
+   "role": "",
+   "status": "present",
+   "quote": "mr. franco announced the lions club pancake breakfast is tomorrow morning at eagle"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "",
+   "status": "present",
+   "quote": "ms. lemieux reminded all the special town meeting is november 15'"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "motion: t. dwyer to approve the minutes of september 20, 2022 vote: 4 in favor; 1 abstention"
+  },
+  {
+   "name": "H. Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "ms. sroka reported the school committee met last week"
+  },
+  {
+   "name": "Chief Gammel",
+   "role": "Chief",
+   "status": "present",
+   "quote": "chief gammel thanked officer marino for his time in lunenburg"
+  },
+  {
+   "name": "Paul Theodoulou",
+   "role": "Full-time Police Officer (appointee)",
+   "status": "present",
+   "quote": "officer theodoulou stated he got here and fell in love with the position immediately"
+  },
+  {
+   "name": "George E. Tibbetts (Trey)",
+   "role": "Reserve Police Officer (appointee)",
+   "status": "present",
+   "quote": "officer tibbetts thanked chief gammel for all his comments"
+  },
+  {
+   "name": "Erik Arnold",
+   "role": "Personnel Committee Chair",
+   "status": "present",
+   "quote": "erik arnold, personnel committee chair was up first regarding the amendment to the salary administration plan."
+  },
+  {
+   "name": "Dr. Burnham",
+   "role": "",
+   "status": "present",
+   "quote": "dr. burnham and school committee chair carol archambault presented for the article."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "dr. burnham and school committee chair carol archambault presented for the article."
+  },
+  {
+   "name": "Michael Chapdelaine",
+   "role": "Citizen Petitioner for 199 Mass Ave (agenda heading)",
+   "status": "present",
+   "quote": "michael chapdelaine, 208 leominster road, and mark chapdelaine, 616 northfield road, stated this request arose when they closed their auto dealership"
+  },
+  {
+   "name": "Mark Chapdelaine",
+   "role": "Citizen Petitioner for 199 Mass Ave (agenda heading)",
+   "status": "present",
+   "quote": "michael chapdelaine, 208 leominster road, and mark chapdelaine, 616 northfield road, stated this request arose when they closed their auto dealership"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Acting Chair, Municipal Building Design Committee",
+   "status": "present",
+   "quote": "noted other members present: greg roy, tom gray and brian lehtinen via zoom"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member, Municipal Building Design Committee",
+   "status": "present",
+   "quote": "noted other members present: greg roy, tom gray and brian lehtinen via zoom"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member, Municipal Building Design Committee",
+   "status": "remote",
+   "quote": "noted other members present: greg roy, tom gray and brian lehtinen via zoom"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "APD",
+   "status": "present",
+   "quote": "mr. sculimbrene stated the apd appreciated the opportunity to participate."
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "",
+   "status": "not stated",
+   "quote": "anthony sculimbrene, greg roy, tom gray, brian lehtinen via zoom, dave blatt"
+  },
+  {
+   "name": "Mr. Geneau",
+   "role": "Boys & Girls Club request presenter",
+   "status": "present",
+   "quote": "mr. geneau and ms. foreman thanked the board and exited the meeting."
+  },
+  {
+   "name": "Ms. Foreman",
+   "role": "Boys & Girls Club request presenter",
+   "status": "present",
+   "quote": "mr. geneau and ms. foreman thanked the board and exited the meeting."
+  },
+  {
+   "name": "Deb Christen",
+   "role": "Citizens petition contact (Annual Town Meeting dates)",
+   "status": "absent",
+   "quote": "the citizens petition contact, deb christen, was unable to attend but sent"
+  },
+  {
+   "name": "Rhonda Lizio",
+   "role": "Resident, 181 Reservoir Road (public comment)",
+   "status": "not stated",
+   "quote": "rhonda lizio, 181 reservoir road, stated the public could not read the concepts presented by the mdbc earlier this evening."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minutes signatory)",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Majority of the board favored printing the condensed version of the APD bylaw warrant article; no vote recorded.",
+   "quote": "after some discussion it was evident the majority of the board were in favor of printing the condensed version."
+  },
+  {
+   "decision": "Board did not go into Executive Session at this meeting.",
+   "quote": "mr. jeffreys announced the board would not be going into executive session tonight."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the board",
+   "what_was_recorded": "The board signed three warrants: payroll deductions, accounts payable and payroll.",
+   "figures_as_printed": [
+    "$651,576.63",
+    "$1,449,216.52",
+    "$976,463.21"
+   ],
+   "quote": "the board signed a payroll deductions warrant in the amount of $651,576.63"
+  },
+  {
+   "topic": "FY23 omnibus budget adjustments and current surplus available",
+   "what_was_recorded": "A garbled OCR table of FY23 omnibus adjustments and current surplus available; two totals are legible as printed.",
+   "figures_as_printed": [
+    "41,568,744.92",
+    "41,661,244.92",
+    "168,636.38"
+   ],
+   "quote": "total revenue adjustments current surplus available"
+  },
+  {
+   "topic": "Historical Commission funding",
+   "what_was_recorded": "Budget adjustment of funding for the Historical Commission, its 50% grant match.",
+   "figures_as_printed": [
+    "$12,500"
+   ],
+   "quote": "the adjustments include historical commission funding of $12,500 because they're looking"
+  },
+  {
+   "topic": "Town Manager climate survey line",
+   "what_was_recorded": "A $15,000 line was put in for a climate survey; no actual estimate was available.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "put in $15,000 for funding into that line."
+  },
+  {
+   "topic": "Assessor data collection for revaluation",
+   "what_was_recorded": "Unanticipated data collection expense for revaluation; high estimate given, better number expected that week.",
+   "figures_as_printed": [
+    "$60,000"
+   ],
+   "quote": "the high estimate is $60,000, but i'll know a better number this week."
+  },
+  {
+   "topic": "Planning Board (APDC) administrative expense",
+   "what_was_recorded": "Missed budget line for APDC administrative expenses, totalling $92,500 against available funds.",
+   "figures_as_printed": [
+    "$92,500",
+    "$262,500"
+   ],
+   "quote": "that totals $92,500 out of an available $262,500."
+  },
+  {
+   "topic": "Prior year expenses",
+   "what_was_recorded": "Prior year expenses to be placed on the second Town Meeting warrant article, drawn from the amount available to appropriate.",
+   "figures_as_printed": [
+    "$1804.54",
+    "$262,500"
+   ],
+   "quote": "prior year expenses in the amount of $1804.54 will be on the second town meeting warrant article"
+  },
+  {
+   "topic": "Remaining available money and Special Purpose Stabilization recommendation",
+   "what_was_recorded": "Remaining balance available to appropriate after prior-year expenses; recommendation to place it in a Special Purpose Stabilization account via another warrant article.",
+   "figures_as_printed": [
+    "$168,636.38"
+   ],
+   "quote": "leaving a balance of $168,636.38 of available money to appropriate."
+  },
+  {
+   "topic": "Primary School air conditioning",
+   "what_was_recorded": "Partial cooling and dehumidifying option came in at a little over $1.7 million against $232,800 funded at town meeting; alternate mini-split plan proposed.",
+   "figures_as_printed": [
+    "$1.7 million",
+    "$232,800"
+   ],
+   "quote": "the funding secured at town meeting was $232,800 so clearly we cannot proceed"
+  },
+  {
+   "topic": "Mini-split cost",
+   "what_was_recorded": "No cost was available for the mini-split alternative; discussed as proposed earlier that day.",
+   "figures_as_printed": [],
+   "quote": "when asked, dr. burnham did not have a cost of the mini-split because it was just discussed earlier today."
+  },
+  {
+   "topic": "Town Clerk annual salary",
+   "what_was_recorded": "Chair asked whether the Town Clerk's salary, which seemed low, had been reviewed; Personnel Committee is seeking a consultant review of comparable towns.",
+   "figures_as_printed": [
+    "$52,000"
+   ],
+   "quote": "town clerk's annual salary of $52,000 recently as it seemed low."
+  },
+  {
+   "topic": "Town Hall and Ritter Building concepts cost",
+   "what_was_recorded": "Concept evaluation cited the $30/40 million price tag for the TCP building renovation or new build.",
+   "figures_as_printed": [
+    "$30/40 million"
+   ],
+   "quote": "especially in light of the $30/40 million price tag for the tcp building renovation/new build."
+  },
+  {
+   "topic": "Costs per square footage of concepts",
+   "what_was_recorded": "Discussion of cost per square footage compared with costs a year earlier; no figures printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about costs per square footage ensued."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Franco",
+   "stated_role": "",
+   "topic": "Lions Club pancake breakfast announcement",
+   "quote": "mr. franco announced the lions club pancake breakfast is tomorrow morning at eagle house senior/community center on memorial drive from 8-10 a.m."
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "stated_role": "",
+   "topic": "Special Town Meeting date reminder",
+   "quote": "ms. lemieux reminded all the special town meeting is november 15' at the middle/high school auditorium at 7:00 p.m."
+  },
+  {
+   "speaker": "Rhonda Lizio",
+   "stated_role": "Resident, 181 Reservoir Road",
+   "topic": "Concepts not readable by public",
+   "quote": "rhonda lizio, 181 reservoir road, stated the public could not read the concepts presented by the mdbc earlier this evening."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "meeting",
+    "recording"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "mr. franco announced the lions club pancake breakfast is tomorrow morning at eagle",
+   "tags": [
+    "public comment",
+    "events"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "noted; to be discussed at a later time",
+   "quote": "mr. jeffreys reported a communication from the conservation commission regarding the property at 35 leominster road being up for sale.",
+   "tags": [
+    "conservation",
+    "property"
+   ]
+  },
+  {
+   "topic": "Police resignation and appointments",
+   "resolution": "resignation noted; two appointments ratified",
+   "quote": "resignation of full-time police officer nicholas marino effective october 12, 2022",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club Haunted House request",
+   "resolution": "approved, 4 in favor, 1 abstention",
+   "quote": "to approve the request from the lunenburg boys & girls club to hold the haunted house event as discussed on october 29",
+   "tags": [
+    "events",
+    "road closure",
+    "Memorial Drive"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles review",
+   "resolution": "Personnel article recommended; School article withdrawn; citizen petition discussed",
+   "quote": "mr. jeffreys reported this is a continuation of the review of the special town meeting articles.",
+   "tags": [
+    "warrant articles",
+    "special town meeting",
+    "salary",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Primary School air conditioning article",
+   "resolution": "sponsors requested withdrawal; no vote recorded",
+   "quote": "after more discussion, dr. burnham and ms. archambault requested to withdraw the warrant article.",
+   "tags": [
+    "schools",
+    "capital",
+    "primary school"
+   ]
+  },
+  {
+   "topic": "199 Massachusetts Avenue zoning citizen petition",
+   "resolution": "discussed; suggested to approach Planning Board first; no vote recorded",
+   "quote": "it was suggested to approach the planning board about their proposal in advance of town meeting.",
+   "tags": [
+    "zoning",
+    "Massachusetts Avenue",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "APD bylaw warrant article",
+   "resolution": "majority favored condensed version; no vote recorded",
+   "quote": "after some discussion it was evident the majority of the board were in favor of printing the condensed version.",
+   "tags": [
+    "bylaws",
+    "APD",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Municipal Building Design Committee",
+   "resolution": "concept feedback taken; no vote recorded",
+   "quote": "mr. roy reported the committee has drafted three concepts for how the tcp",
+   "tags": [
+    "town hall",
+    "municipal building",
+    "ritter building",
+    "brooks house",
+    "space needs"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting and election date change petition",
+   "resolution": "discussed; no vote recorded",
+   "quote": "ms. lemieux noted the citizens petition contact, deb christen, was unable to attend",
+   "tags": [
+    "annual town meeting",
+    "elections",
+    "citizen petition"
+   ]
+  },
+  {
+   "topic": "FY23 omnibus budget adjustments and Special Purpose Stabilization",
+   "resolution": "presented; recommendation made; no vote recorded",
+   "quote": "her recommendation would be to put in a special purpose stabilization account which is another warrant article.",
+   "tags": [
+    "budget",
+    "stabilization",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of September 20, 2022",
+   "resolution": "approved, 4 in favor, 1 abstention",
+   "quote": "to approve the minutes of september 20, 2022 vote: 4 in favor; 1 abstention",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and correspondence",
+   "resolution": "warrants signed; letter read",
+   "quote": "the board signed a payroll deductions warrant in the amount of $651,576.63",
+   "tags": [
+    "warrants",
+    "salvation army",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Action items: Town Hall weathervane",
+   "resolution": "no action; repair first, bid not yet out",
+   "quote": "ms. lemieux stated the tower needs to be repaired before the weathervane can be placed",
+   "tags": [
+    "town hall",
+    "repairs"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports received",
+   "quote": "ms. sroka reported the school committee met last week",
+   "tags": [
+    "school committee",
+    "council on aging",
+    "APD"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and executive session",
+   "resolution": "no executive session",
+   "quote": "mr. jeffreys announced the board would not be going into executive session tonight.",
+   "tags": [
+    "meetings",
+    "executive session"
+   ]
+  },
+  {
+   "topic": "Closing public comment and adjournment",
+   "resolution": "adjourned at 10:20 P.M.",
+   "quote": "the meeting adjourned at 10:20 p.m.",
+   "tags": [
+    "public comment",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Personnel Committee warrant article: amend Code of Lunenburg Chapter 70, Section 70-8.A, Salary Administration Plan, Schedule A",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the code of lunenburg, chapter 70, section 70-8.a, entitled"
+  },
+  {
+   "name": "School Committee warrant article: Primary School Air Conditioning (#LPS 19-3-B)",
+   "where": "text",
+   "quote": "to see if the town will vote to raise and appropriate, or transfer from available funds, a sum of"
+  },
+  {
+   "name": "Citizen petition warrant article: rezone part of 199 Massachusetts Avenue",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the zoning map by rezoning a portion of the land located at"
+  },
+  {
+   "name": "Citizen petition warrant article: change Annual Town Meeting/Election dates, with reasoning letter from Deb Christen",
+   "where": "text",
+   "quote": "deb christen, was unable to attend but sent the following reasoning for the article to change annual town meeting/election dates"
+  },
+  {
+   "name": "Three MBDC concepts for the TCP Building, Town Hall, Ritter Building and Brooks House",
+   "where": "text",
+   "quote": "the committee has drafted three concepts for how the tcp building, town hall, ritter building and brooks house could potentially be used."
+  },
+  {
+   "name": "Conservation Commission communication regarding 35 Leominster Road",
+   "where": "text",
+   "quote": "mr. jeffreys reported a communication from the conservation commission regarding the property at 35 leominster road being up for sale."
+  },
+  {
+   "name": "Letter from Salvation Army envoy Lynnette Valentine",
+   "where": "text",
+   "quote": "mr. franco read aloud a letter from the salvation army envoy, lynnette valentine,"
+  },
+  {
+   "name": "Warrants: payroll deductions, accounts payable and payroll",
+   "where": "text",
+   "quote": "the board signed a payroll deductions warrant in the amount of $651,576.63"
+  },
+  {
+   "name": "Past and new engineering estimates for the Primary School air conditioning",
+   "where": "text",
+   "quote": "discussion occurred about the past estimate provided and how this new estimate from a new engineering firm was arrived at"
+  }
+ ],
+ "tags": [
+  "select board",
+  "special town meeting",
+  "warrant articles",
+  "appointments",
+  "police",
+  "primary school",
+  "municipal building design",
+  "town hall",
+  "zoning",
+  "budget adjustments",
+  "annual town meeting",
+  "public comment",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

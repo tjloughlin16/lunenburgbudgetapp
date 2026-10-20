@@ -1,0 +1,583 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2022-02-08",
+ "video_id": "UVgPlymArew",
+ "video_url": "https://www.youtube.com/watch?v=UVgPlymArew",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-02-08-UVgPlymArew.json",
+  "sha256": "a878da10d7481f338a590248d1470fa6c2d6b0d99050a8d093016353c74cf397",
+  "caption_lines": 246,
+  "segments": 2242
+ },
+ "recording": {
+  "duration_s": 5079,
+  "duration": "1:24",
+  "spoken_chars": 67224,
+  "words_approx": 11204
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02082022-5308",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-02-08-agenda-5308.txt",
+   "path": "sources/meetings/select-board/2022-02-08-agenda-5308.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02082022-5308",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-02-08-minutes-5308.txt",
+   "path": "sources/meetings/select-board/2022-02-08-minutes-5308.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T22:30:48Z",
+  "cost_usd": 0.36132169999999997
+ },
+ "minutes": {
+  "headline": "Select Board backed three MRPC traffic study requests and approved a $14,896.15 water commitment; no budget decisions.",
+  "summary": "The remote Select Board meeting, chaired by the vice chair, opened with a long stormwater task force update on the MS4 permit, costs and public engagement. The board then voted a prioritized list of three traffic studies for MRPC, ratified a videographer appointment, approved the third quarter water commitment and prior minutes. The school's air conditioning request was acknowledged, with a response promised in a few weeks.",
+  "attendees": [
+   {
+    "name_as_heard": "Todd Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Lou Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the vice chair (acting chair)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather Lemieux",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Jack Rabbit",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Rob Oliver",
+    "role": "DPW director"
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "fire chief"
+   },
+   {
+    "name_as_heard": "Adam Bernie",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "capital",
+   "chapter-70",
+   "fees",
+   "grants",
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "primary-school",
+   "public-safety",
+   "roads-and-dpw",
+   "state-aid",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 3444,
+    "motion": "Submit prioritized list to MRPC for traffic studies: Leominster-Shirley Road corridor, Chase Road/Northfield Road intersection, West Street/Electric Avenue intersection",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3977,
+    "motion": "Appoint Patrick McGuane as public access videographer per town manager's recommendation",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4380,
+    "motion": "Approve third quarter water commitment",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4423,
+    "motion": "Approve minutes of January 18, 2022",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 5033,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 805,
+    "topic": "Stormwater costs / DPW budget",
+    "what_was_said": "The DPW submitted a budget to the town manager and the task force wants a way to account for stormwater costs separate from general DPW work.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 990,
+    "topic": "Stormwater grants",
+    "what_was_said": "The task force said stormwater compliance will take a lot of money and is pursuing grants to minimize the financial impact on the town.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2038,
+    "topic": "Stormwater utility",
+    "what_was_said": "Other towns have created stormwater utilities; Lunenburg wants to understand its current costs first.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2409,
+    "topic": "DPW tractor",
+    "what_was_said": "A board member asked whether equipment now being bought could help with storm drain cleaning.",
+    "figures_as_heard": [
+     "the hundred and seventy thousand dollars"
+    ]
+   },
+   {
+    "t": 2701,
+    "topic": "Catch basin cleaning resources",
+    "what_was_said": "The DPW director said current staff and equipment suffice for now but he may later ask for equipment or funds.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4148,
+    "topic": "Third quarter water commitment",
+    "what_was_said": "Board approved the commitment after a confusion over a figure from the prior year's document.",
+    "figures_as_heard": [
+     "fourteen thousand dollars eight hundred ninety six and fifteen cents",
+     "nine thousand four hundred twelve dollars and ninety cents"
+    ]
+   },
+   {
+    "t": 4805,
+    "topic": "School air conditioning request",
+    "what_was_said": "The board will acknowledge the school's request and respond within weeks; added Chapter 70 funding may change things.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3424,
+    "decision": "Priority order for MRPC studies: Leominster-Shirley Road first, Chase/Northfield second, West Street/Electric Ave third."
+   },
+   {
+    "t": 4656,
+    "decision": "Invite the APDC to next week's meeting on the 30 School Street topic."
+   },
+   {
+    "t": 4825,
+    "decision": "Town manager to send the school committee an acknowledgement and promise a response within a few weeks."
+   },
+   {
+    "t": 3856,
+    "decision": "Board to review the emergency management plan and vote to ratify in about a month."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 81,
+    "topic": "Opening, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 81,
+    "t_end": 2804,
+    "topic": "Stormwater task force update",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "roads-and-dpw",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 2804,
+    "t_end": 3520,
+    "topic": "MRPC traffic study requests",
+    "resolution": "voted",
+    "tags": [
+     "roads-and-dpw",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3566,
+    "t_end": 3896,
+    "topic": "Emergency management plan",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 3896,
+    "t_end": 4128,
+    "topic": "Videographer appointment, vacancies",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 4148,
+    "t_end": 4444,
+    "topic": "Third quarter water commitment",
+    "resolution": "voted",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 4423,
+    "t_end": 4510,
+    "topic": "Minutes and warrants",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 4510,
+    "t_end": 4784,
+    "topic": "Action items and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "housing"
+    ]
+   },
+   {
+    "t_start": 4784,
+    "t_end": 4912,
+    "topic": "School AC request",
+    "resolution": "referred",
+    "tags": [
+     "capital",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 4912,
+    "t_end": 5074,
+    "topic": "Schedule, comments, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Adjournment roll call result not fully captured",
+   "Some captions garbled names (e.g., speaker names, 'michael ray')"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4189,
+    "about": "Confusion over a water commitment figure that differed between the agenda and a document a member had open",
+    "sides": "one member versus the town manager and other members",
+    "words_as_heard": "we don't want to be in polite but what is he talking about",
+    "kind": "members disagree"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 225,
+    "name_as_heard": "select storm water presentation",
+    "kind": "presentation",
+    "words_as_heard": "select storm water presentation and approval i think it's my rev c or d",
+    "shown": true
+   },
+   {
+    "t": 2844,
+    "name_as_heard": "MRPC letter on unified planning work program",
+    "kind": "letter or email",
+    "words_as_heard": "the letter is asking us to prioritize the projects",
+    "shown": true
+   },
+   {
+    "t": 3588,
+    "name_as_heard": "comprehensive emergency management plan",
+    "kind": "report",
+    "words_as_heard": "an update of the town's comprehensive emergency management plan",
+    "shown": true
+   },
+   {
+    "t": 4299,
+    "name_as_heard": "water billing third quarter commitment form",
+    "kind": "other",
+    "words_as_heard": "the third water commitment to accountant that pdf",
+    "shown": true
+   },
+   {
+    "t": 4423,
+    "name_as_heard": "minutes of January 18, 2022",
+    "kind": "prior minutes",
+    "words_as_heard": "approval of minutes for january the 18th",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "stormwater-program-costs",
+    "title": "Stormwater program costs",
+    "question": "What does the town spend on stormwater, and what might MS4 compliance add?",
+    "t": 805,
+    "words_as_heard": "we're just understanding what our current costs are",
+    "data_in_play": [
+     "900 outfalls",
+     "catch basin cleaning 80 to 120 a year"
+    ],
+    "existing": "thread:stormwater-fee"
+   },
+   {
+    "slug": "primary-school-air-conditioning",
+    "title": "Primary school air conditioning",
+    "question": "What would the school's AC request cost and how could the capital plan absorb it?",
+    "t": 4805,
+    "words_as_heard": "a request from the schools with regard to the ac system",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to submit a ranked list of three traffic study requests to MRPC, with the Leominster-Shirley Road corridor first.",
+    "t": 3444
+   },
+   {
+    "line": "The board approved the third quarter water commitment after a confusion over a figure from the prior year's document was sorted out.",
+    "t": 4380
+   },
+   {
+    "line": "The board appointed a public access videographer on the town manager's recommendation.",
+    "t": 3977
+   },
+   {
+    "line": "The meeting opened with a long stormwater task force update on the permit, how to track stormwater costs separately, and grants.",
+    "t": 805
+   },
+   {
+    "line": "The school's air conditioning request was acknowledged, with a written response promised within a few weeks.",
+    "t": 4825
+   }
+  ],
+  "why_it_matters": [
+   "The traffic study list sets which roads and intersections MRPC may study first, which can shape later road and safety projects the town is asked to fund.",
+   "Stormwater permit compliance is expected to need substantial money, so a separate stormwater cost line or utility could reach a future budget or a tax or fee vote.",
+   "The school air conditioning request is not yet decided, and it is a possible future capital or budget item."
+  ],
+  "watch_next": [
+   "The board's vote to ratify the emergency management plan, expected in about a month.",
+   "The town manager's response to the school committee on air conditioning, promised within a few weeks."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T22:30:57Z",
+   "cost_usd": 0.2256977
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02082022-5308",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-02-08-minutes-5308.txt",
+   "path": "sources/meetings/select-board/2022-02-08-minutes-5308.pdf"
+  },
+  "official_sha256": "ea0b352ee83601c34825a29f9b40124af7b58fe679907b3115e9964c089dfd89",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on the MRPC priorities vote, the water commitment ($14,896.15) and the core attendees. They differ on one vote and one decision.\nOur minutes record a passed vote appointing Patrick McGuane as videographer that the official minutes lack. They also describe a ratification vote on the emergency plan in about a month, where the official minutes say only that members will send questions.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "MRPC traffic study priority vote",
+    "ours": "Submit prioritized list to MRPC for traffic studies: Leominster-Shirley Road corridor, Chase Road/Northfield Road intersection, West Street/Electric Avenue intersection — passed",
+    "official": "to submit our list of priorities to mrc in the following order; #1 leominster-shirley road, #2 chase road and northfield road and #3 electric ave and west st.",
+    "note": "Same vote, same passed outcome, same priority order.",
+    "t": 3444
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Appointment of Patrick McGuane as public access videographer",
+    "ours": "Appoint Patrick McGuane as public access videographer per town manager's recommendation — passed",
+    "official": "",
+    "note": "Our minutes record a passed vote that the official minutes do not contain; check the recording near t=3977 and whether the official minutes omitted the appointment.",
+    "t": 3977
+   },
+   {
+    "kind": "agree",
+    "about": "Third quarter water commitment vote",
+    "ours": "Approve third quarter water commitment — passed",
+    "official": "to approve the 3'd quarter water commitment in the amount of $14,896.15 vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye",
+    "note": "Same vote and outcome, 3-0.",
+    "t": 4380
+   },
+   {
+    "kind": "agree",
+    "about": "Water commitment amount",
+    "ours": "fourteen thousand dollars eight hundred ninety six and fifteen cents",
+    "official": "to approve the 3'd quarter water commitment in the amount of $14,896.15 vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye",
+    "note": "Spoken words equal $14,896.15.",
+    "t": 4148
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Second water figure $9,412.90",
+    "ours": "nine thousand four hundred twelve dollars and ninety cents",
+    "official": "",
+    "note": "Extra figure heard near the water commitment that the official minutes do not print; may be a different item or a partial amount.",
+    "t": 4148
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "DPW tractor $170,000",
+    "ours": "DPW tractor: the hundred and seventy thousand dollars",
+    "official": "",
+    "note": "Official minutes print no tractor figure.",
+    "t": 2409
+   },
+   {
+    "kind": "agree",
+    "about": "MRPC priority order decision",
+    "ours": "Priority order for MRPC studies: Leominster-Shirley Road first, Chase/Northfield second, West Street/Electric Ave third.",
+    "official": "to submit our list of priorities to mrc in the following order; #1 leominster-shirley road, #2 chase road and northfield road and #3 electric ave and west st.",
+    "note": "Same order.",
+    "t": 3424
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Invite APDC to next week's meeting on 30 School Street",
+    "ours": "Invite the APDC to next week's meeting on the 30 School Street topic.",
+    "official": "",
+    "note": "Official minutes do not mention the APDC invitation or 30 School Street.",
+    "t": 4656
+   },
+   {
+    "kind": "agree",
+    "about": "Response to School Committee",
+    "ours": "Town manager to send the school committee an acknowledgement and promise a response within a few weeks.",
+    "official": "it was suggested to respond to the school committee that the sb would be getting back to them regarding their request.",
+    "note": "Both say the board will respond later; 'few weeks' timing appears only in ours.",
+    "t": 4825
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Emergency management plan next step",
+    "ours": "Board to review the emergency management plan and vote to ratify in about a month.",
+    "official": "the board will review it and send any questions to the town manager.",
+    "note": "Ours says a ratification vote in about a month; official only says review and send questions. Check the recording near t=3856.",
+    "t": 3856
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Todd Dwyer",
+    "ours": "Todd Dwyer (member)",
+    "official": "vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye",
+    "note": "Present in both.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Lou Franco",
+    "ours": "Lou Franco (member)",
+    "official": "vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye",
+    "note": "Present in both.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Vice chair presiding",
+    "ours": "the vice chair (acting chair) (chair)",
+    "official": "vice chairman jeffreys called the meeting to order at 7:00 p.m. and stated the meeting is being conducted remotely.",
+    "note": "Ours is unnamed; official names Jeffreys.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Heather Lemieux",
+    "ours": "Heather Lemieux (town manager)",
+    "official": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief",
+    "note": "Same.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter name Jack Rabbit",
+    "ours": "Jack Rabbit (presenter)",
+    "official": "jack rabbitt had a power point presentation outlining the task force's work.",
+    "official_reading": "Jack Rabbitt",
+    "note": "Spelling of the same person.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Presenter name Adam Bernie",
+    "ours": "Adam Bernie (presenter)",
+    "official": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief",
+    "official_reading": "Adam Burney",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "DPW director name",
+    "ours": "Rob Oliver (DPW director)",
+    "official": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief",
+    "official_reading": "Rob Oliva",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Fire chief",
+    "ours": "Chief Sullivan (fire chief)",
+    "official": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Primary School air conditioning letter",
+    "ours": "",
+    "official": "mr. jeffreys reported a letter was received from the school committee asking the air conditioning for the primary school be reconsidered in the capital plan.",
+    "note": "Our minutes only mention a generic acknowledgement to the school committee, not the air conditioning request.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T22:32:33Z",
+   "cost_usd": 0.30415729999999996
+  }
+ }
+}

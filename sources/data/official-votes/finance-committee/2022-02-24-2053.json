@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-02-24",
  "docid": "2053",
@@ -12,15 +12,304 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Simeone",
+   "motion": "To adjourn the meeting.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Jay Simeone",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. menard motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one vote recorded: adjournment at end of meeting. All other items were presentations and discussions with no recorded votes.",
- "cost_usd": 0.0784835
+ "note": "Text extraction, not a scan. The minutes record exactly one motion (adjournment), with a mover, seconder and unanimous result; no other votes are recorded, so no budget item was voted on. Public comment and the Announcements, Chair's Report, Town Manager/Finance Director's Report and Warrant Updates headings each read \"none\" and are not listed as topics. Budget figures are the department requests and the Town Manager's preliminary figures as the minutes print them; none are adopted amounts. Assistant Town Manager Julie Belliveau and DPW Director Rob Oliva are named only as people referenced, not as participants, and are excluded from attendees. Carol Archambault appears only in the guest line, so her attendance is not stated.",
+ "cost_usd": 0.017431679999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, evan watters, dave passios, tom balish, jay simeone, all via zoom."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, evan watters, dave passios, tom balish, jay simeone, all via zoom."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, evan watters, dave passios, tom balish, jay simeone, all via zoom."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, evan watters, dave passios, tom balish, jay simeone, all via zoom."
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, evan watters, dave passios, tom balish, jay simeone, all via zoom."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, evan watters, dave passios, tom balish, jay simeone, all via zoom."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "guests: finance director karen brochu, council on aging director susan doherty, library director muir haman, land use director adam burney, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "guests: finance director karen brochu, council on aging director susan doherty, library director muir haman, land use director adam burney, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "guests: finance director karen brochu, council on aging director susan doherty, library director muir haman, land use director adam burney, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "guests: finance director karen brochu, council on aging director susan doherty, library director muir haman, land use director adam burney, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "not stated",
+   "quote": "guests: finance director karen brochu, council on aging director susan doherty, library director muir haman, land use director adam burney, school committee chairperson carol archambault."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meetings set for March 3, 2022 (Police and Fire Departments) and March 10, 2022 (Monty Tech, DPW).",
+   "quote": "next meetings march 3, 2022 (police and fire departments), march 10, 2022 (monty tech, dpw)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging budget request",
+   "what_was_recorded": "The COA director requested an increase bringing the total request to a stated figure.",
+   "figures_as_printed": [
+    "$11,344.01",
+    "$183,629.08"
+   ],
+   "quote": "has requested an $11,344.01 increase, bringing the total request to $183,629.08."
+  },
+  {
+   "topic": "Council on Aging office supplies",
+   "what_was_recorded": "A $2,000 increase in office supplies is sought; the office supply line has not risen from $600 in twenty years.",
+   "figures_as_printed": [
+    "$2,000",
+    "$600"
+   ],
+   "quote": "she is seeking a $2,000 increase in office supplies and explained that the office supply line budget has not increased from $600 within the past twenty years."
+  },
+  {
+   "topic": "Council on Aging non-benefitted positions",
+   "what_was_recorded": "Two non-benefitted kitchen positions require a stated increase.",
+   "figures_as_printed": [
+    "$9,344.01"
+   ],
+   "quote": "require a $9,344.01 increase."
+  },
+  {
+   "topic": "Council on Aging state formula grant",
+   "what_was_recorded": "Formula Grant income from the state is expected to be a stated amount, based on $12 per elder, unchanged for FY23.",
+   "figures_as_printed": [
+    "$25,272",
+    "$12"
+   ],
+   "quote": "which comes in at $25,272, and is formulated by the number of people in town age 60 and over multiplied by a dollar amount."
+  },
+  {
+   "topic": "Council on Aging outdoor recreation grants and commitments",
+   "what_was_recorded": "A grant already awarded covers plan costs; the 501c3 committed a stated minimum; a stated ARPA request is planned.",
+   "figures_as_printed": [
+    "$7,500",
+    "$5,000",
+    "$100,000"
+   ],
+   "quote": "a $7,500 grant to cover the cost of plans for the project has already been awarded by the"
+  },
+  {
+   "topic": "Council on Aging outdoor recreation capital request",
+   "what_was_recorded": "DPW director put in a capital request for the senior center outdoor recreation project.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "put in a request for $100,000 from the fy23 capital plan for the senior center outdoor recreation area project."
+  },
+  {
+   "topic": "Library FY23 budget",
+   "what_was_recorded": "Library originally requested one figure for FY23; the Town Manager's preliminary budget includes a lower figure, a stated increase from FY22.",
+   "figures_as_printed": [
+    "$502,984",
+    "$492,984",
+    "$53,390"
+   ],
+   "quote": "originally requested $502,984 for fy23, and the town manager has included $492,984 in her preliminary budget"
+  },
+  {
+   "topic": "Library additional staff",
+   "what_was_recorded": "Two additional non-benefitted library assistants would cost a stated amount to extend hours.",
+   "figures_as_printed": [
+    "$30,984"
+   ],
+   "quote": "whose salaries would amount to $30,984."
+  },
+  {
+   "topic": "Library state-required contribution",
+   "what_was_recorded": "The state requires the town to contribute a stated amount to the library.",
+   "figures_as_printed": [
+    "$428,256"
+   ],
+   "quote": "mr. haman informed the committee that the state requires the town to contribute $428,256."
+  },
+  {
+   "topic": "Library materials spending requirement",
+   "what_was_recorded": "The library is required to spend a share of its budget on library materials, including C/W Mars membership.",
+   "figures_as_printed": [
+    "16 percent"
+   ],
+   "quote": "the library is required to spend 16 percent of its budget on library materials"
+  },
+  {
+   "topic": "Library technology request omitted from preliminary budget",
+   "what_was_recorded": "An $8,000 technology request was not in the Town Manager's preliminary budget; whether IT could absorb it was unresolved.",
+   "figures_as_printed": [
+    "$8,000"
+   ],
+   "quote": "the town manager did not include mr. haman's $8,000 technology request in her preliminary budget"
+  },
+  {
+   "topic": "Land Use capital request for Master Plan",
+   "what_was_recorded": "Land Use sought a capital request to fund an update of the town's Master Plan.",
+   "figures_as_printed": [
+    "$110,000"
+   ],
+   "quote": "his capital plan request for $110,000 to fund the town's master plan"
+  },
+  {
+   "topic": "Land Use part-time employee funding",
+   "what_was_recorded": "Land Use is seeking additional funds for a part-time non-benefitted employee for minute taking and payment processing; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "seeking additional funds to employ a part time non-benefitted employee to handle minute taking, payment processing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order; Open Meeting Law statement read; no action",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement",
+   "tags": [
+    "procedure",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Budget Presentations (Council on Aging, Library, Land Use)",
+   "resolution": "reviewed; no vote recorded",
+   "quote": "committee members have yet to receive a copy of the town manager's line item budget for any department.",
+   "tags": [
+    "budget",
+    "FY23",
+    "council on aging",
+    "library",
+    "land use",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "members updated each other; no action",
+   "quote": "committee members updated each other on their respective assignments.",
+   "tags": [
+    "committee"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "suggestions noted; no action recorded",
+   "quote": "mr. beardmore suggested inviting the board of health to the march 24 meeting.",
+   "tags": [
+    "future agenda",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled March 3 and March 10, 2022",
+   "quote": "next meetings march 3, 2022 (police and fire departments), march 10, 2022 (monty tech, dpw)",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:52 p.m., unanimous",
+   "quote": "mr. menard motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager's line item budget",
+   "where": "text",
+   "quote": "committee members have yet to receive a copy of the town manager's line item budget for any department."
+  },
+  {
+   "name": "Town Manager's preliminary budget",
+   "where": "text",
+   "quote": "the town manager has included $492,984 in her preliminary budget"
+  },
+  {
+   "name": "FY23 Capital Plan",
+   "where": "text",
+   "quote": "put in a request for $100,000 from the fy23 capital plan for the senior center outdoor recreation area project."
+  },
+  {
+   "name": "Master Plan",
+   "where": "text",
+   "quote": "his capital plan request for $110,000 to fund the town's master plan"
+  },
+  {
+   "name": "ClearGov",
+   "where": "text",
+   "quote": "ms. brochu discovered, by looking at cleargov , that the town manager"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY23 budget",
+  "council on aging",
+  "library",
+  "land use",
+  "capital plan",
+  "remote meeting",
+  "zoom",
+  "budget presentations"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2022-05-10",
  "docid": "1934",
@@ -12,31 +12,303 @@
  },
  "votes": [
   {
-   "motion": "Amend the April 12, 2022 minutes to correct the members' attendance, and to read Ms. Sullivan's motion as a one-time temporary appointment for two years for one seat",
+   "motion": "Amend the April 12, 2022 minutes to correct the members' attendance and to read Ms. Sullivan's motion as a one-time temporary appointment for two years for one seat; minutes approved as amended.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
-   "outcome": "carried unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. lincoln moved to amend the april 12, 2022 minutes to correct the members' attendance, and also to read ms. sullivan's motion as a one-time temporary appointment for two years for one seat. ms. digiacomo seconded. on vote, motion carried unanimously."
+   "quote": "mr. lincoln moved to amend the april 12, 2022 minutes to correct the members' attendance, and also to read ms. sullivan's motion as a one-time temporary appointment for two years for one seat."
   },
   {
-   "motion": "Elect Ms. Lincoln as Chairperson and Jane Rabbitt as Vice Chairperson for FY23",
+   "motion": "Approval of these May 10, 2022 minutes, recorded as unanimously approved at the June 14, 2022 meeting.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "approved unanimously by coa at june 14, 2022 meeting."
+  },
+  {
+   "motion": "Nominate Deb Lincoln as Chairperson and Jane Rabbitt as Vice Chairperson for FY23.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Nowd",
-   "outcome": "carried unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. lincoln nominated ms. lincoln to serve as chairperson, and jane rabbitt as vice chairperson for fy23, ms. nowd seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ms. Dwyer",
    "seconded_by": "Ms. DiGiacomo",
-   "outcome": "carried unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. dwyer motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously."
+   "quote": "at 11:30 ms. dwyer motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.091291
+ "dropped_unquoted": 1,
+ "note": "Single-page-set text with a stamp mid-page reading 'Approved unanimously by COA at June 14, 2022 meeting.' that is recorded here as a procedural approval of these minutes. Attribution risks: 'Mr. Lincoln' and 'Ms. Lincoln' are not disambiguated in the text; Peter Lincoln (Mr.) and Deb Lincoln (Ms., Chairperson) are inferred from the attendance list and the nomination wording. 'Ms. Sullivan' is not identified in the minutes. Jane Rabbitt is listed absent but was nominated as Vice Chairperson; acceptance is not recorded. The Select Board 4-4-3 approval is reported second-hand and is not recorded as a board decision. The upcoming meeting line reads 'Tuesday June 14, 2020' as printed, against a 2022 meeting. Votes and figures are as printed; the vote on the officers lists 'motion carried unanimously' with no count.",
+ "cost_usd": 0.01879668,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Peter Lincoln",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "status": "present",
+   "quote": "present: director sue doherty, chairperson deb lincoln, betty digiacomo, diane nowd, peter lincoln, judy tarbell, barbara brown, jacquelyn dwyer"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, jane rabbitt, susan o'sullivan, john pesenti"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, jane rabbitt, susan o'sullivan, john pesenti"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, jane rabbitt, susan o'sullivan, john pesenti"
+  },
+  {
+   "name": "John Pesenti",
+   "status": "absent",
+   "quote": "absent: cheryl moisan, jane rabbitt, susan o'sullivan, john pesenti"
+  },
+  {
+   "name": "Pat Kennedy",
+   "role": "COA Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: coa liaison to the eagle house supporters pat kennedy"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lincoln will look into plaques that store 100 names (orientation package; plaque order discussed).",
+   "quote": "ms. lincoln will look into plaques that store 100 names."
+  },
+  {
+   "decision": "Council on Aging 55th celebration plan: police and fire members run the grill, Ms. Doherty rents tents and supplies tables and chairs, an ice cream truck and live music, Supporters to hold a fundraiser, Ms. Lincoln and a Select Board member to speak, and Ms. Doherty to invite the state delegation.",
+   "quote": "members of the police and fire departments will run the grill, ms. doherty will rent tents, and supply tables and chairs."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Council on Aging 55th celebration: use of patio grant",
+   "what_was_recorded": "Ms. Doherty will ask Supporters whether some of the patio grant can be used for the party instead.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "ms. doherty will ask supporters if she can use some of the $5,000 granted for the patio for the party instead."
+  },
+  {
+   "topic": "FY23 Formula Grant",
+   "what_was_recorded": "An unofficial 2020 Census figure of 2,700 is reported; the minutes say it should boost formula grant funding by $7,000, and the Census numbers are not finalized.",
+   "figures_as_printed": [
+    "$7,000"
+   ],
+   "quote": "ms. doherty reported that 2020 census numbers have not been finalized, but an unofficial source comes in at 2,700, which should boost funding by $7,000."
+  },
+  {
+   "topic": "Supporters fundraiser",
+   "what_was_recorded": "The Hannaford spare change fundraiser run by the Supporters brought in a reported amount.",
+   "figures_as_printed": [
+    "$254"
+   ],
+   "quote": "the hannaford spare change fundraiser brought in $254."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (April 12, 2022)",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. lincoln moved to amend the april 12, 2022 minutes to correct the members' attendance, and also to read ms. sullivan's motion as a one-time temporary appointment for two years for one seat."
+  },
+  {
+   "topic": "New COA Board Member Orientation Package",
+   "resolution": "no action; Ms. Lincoln to look into plaques",
+   "tags": [
+    "board membership",
+    "plaques"
+   ],
+   "quote": "board members also discussed the order of names to be displayed on the plaques."
+  },
+  {
+   "topic": "FY23 COA Board Member terms",
+   "resolution": "informational; reappointment forms received",
+   "tags": [
+    "board membership",
+    "reappointment"
+   ],
+   "quote": "ms. lincoln informed the board that the select board office has received reappointment forms from ms. rabbitt, ms. o'sullivan, mr. lincoln, and ms. tarbell."
+  },
+  {
+   "topic": "FY23 COA Board Officers",
+   "resolution": "approved: Chairperson Deb Lincoln, Vice Chairperson Jane Rabbitt",
+   "tags": [
+    "officers",
+    "elections"
+   ],
+   "quote": "mr. lincoln nominated ms. lincoln to serve as chairperson, and jane rabbitt as vice chairperson for fy23, ms. nowd seconded. on vote, motion carried unanimously."
+  },
+  {
+   "topic": "FY23 New Board Member Recruitment",
+   "resolution": "no action; members to suggest candidates",
+   "tags": [
+    "board membership",
+    "recruitment"
+   ],
+   "quote": "ms. tarbell said she has someone in mind that would be a good fit."
+  },
+  {
+   "topic": "Director's Report: van driver",
+   "resolution": "reported",
+   "tags": [
+    "staffing",
+    "transportation"
+   ],
+   "quote": "ms. doherty reported the new van driver started may 5, and so far everything is working out."
+  },
+  {
+   "topic": "Council on Aging 55th celebration",
+   "resolution": "planning reported; no vote",
+   "tags": [
+    "celebration",
+    "grants"
+   ],
+   "quote": "ms. doherty will ask supporters if she can use some of the $5,000 granted for the patio for the party instead."
+  },
+  {
+   "topic": "FY23 Formula Grant",
+   "resolution": "reported; no action",
+   "tags": [
+    "grants",
+    "census"
+   ],
+   "quote": "ms. doherty reported that 2020 census numbers have not been finalized, but an unofficial source comes in at 2,700, which should boost funding by $7,000."
+  },
+  {
+   "topic": "Covid-19 Report",
+   "resolution": "no report",
+   "tags": [
+    "covid"
+   ],
+   "quote": "covid-19 report: no report"
+  },
+  {
+   "topic": "Building and Grounds Report",
+   "resolution": "reported; no action",
+   "tags": [
+    "buildings and grounds"
+   ],
+   "quote": "ms. doherty informed the board that high school national honor society students have helped clean up the grounds and also spread mulch."
+  },
+  {
+   "topic": "Upcoming Events",
+   "resolution": "reported",
+   "tags": [
+    "events"
+   ],
+   "quote": "memorial day ceremony, monday may 30, 10:00 a.m. at veterans memorial park."
+  },
+  {
+   "topic": "Supporters Report",
+   "resolution": "reported",
+   "tags": [
+    "supporters",
+    "fundraising"
+   ],
+   "quote": "ms. kennedy reported that supporters board members will be stuffing envelopes for their membership campaign"
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "tags": [],
+   "quote": "notices and communications: none"
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "tags": [],
+   "quote": "ms. dwyer thanked the board for welcoming her back."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:30",
+   "tags": [],
+   "quote": "at 11:30 ms. dwyer motioned to adjourn, ms. digiacomo seconded. on vote, motion carried unanimously."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "April 12, 2022 minutes",
+   "where": "text",
+   "quote": "mr. lincoln moved to amend the april 12, 2022 minutes to correct the members' attendance"
+  },
+  {
+   "name": "Reappointment forms (Ms. Rabbitt, Ms. O’Sullivan, Mr. Lincoln, Ms. Tarbell)",
+   "where": "text",
+   "quote": "ms. lincoln informed the board that the select board office has received reappointment forms from ms. rabbitt, ms. o'sullivan, mr. lincoln, and ms. tarbell."
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "officers",
+  "board membership",
+  "minutes approval",
+  "grants",
+  "census",
+  "55th anniversary celebration",
+  "Supporters",
+  "buildings and grounds",
+  "events",
+  "senior services"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

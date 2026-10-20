@@ -1,0 +1,642 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2022-07-19",
+ "video_id": "VthUISAvgac",
+ "video_url": "https://www.youtube.com/watch?v=VthUISAvgac",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-07-19-VthUISAvgac.json",
+  "sha256": "ef28a19caad780c6945f0577edeac5a9186d5506bac99d651085c9a34c73ec25",
+  "caption_lines": 292,
+  "segments": 2825
+ },
+ "recording": {
+  "duration_s": 6040,
+  "duration": "1:40",
+  "spoken_chars": 82521,
+  "words_approx": 13753
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_07192022-5323",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-07-19-agenda-5323.txt",
+   "path": "sources/meetings/select-board/2022-07-19-agenda-5323.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07192022-5323",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-07-19-minutes-5323.txt",
+   "path": "sources/meetings/select-board/2022-07-19-minutes-5323.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T12:19:18Z",
+  "cost_usd": 0.4453349
+ },
+ "minutes": {
+  "headline": "Select Board and School Committee jointly appointed Peter Beardmore to the school committee, he must leave Fincom by Sept 30.",
+  "summary": "A joint session with the School Committee interviewed the sole applicant for a school committee vacancy at length, focusing on the conflict of serving on both Finance Committee and School Committee. The appointment was made with a commitment to resign from Fincom by end of September. The board also heard about the streetlight purchase agreements, appointed an agricultural commission member, and received the town manager's report before entering executive session on police union bargaining.",
+  "attendees": [
+   {
+    "name_as_heard": "Heather Lemieux",
+    "role": "town manager",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "chair, Select Board",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Alonso",
+    "role": "vice chair, Select Board",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member, Select Board",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member, Select Board",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Ms. Archambault",
+    "role": "chair, School Committee",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Leighton",
+    "role": "vice chair, School Committee",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mrs. Scolombrini",
+    "role": "member, School Committee",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Elizabeth (town counsel)",
+    "role": "presenter",
+    "remote": false
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "executive-session",
+   "facilities",
+   "grants",
+   "hiring",
+   "personnel",
+   "policy",
+   "public-safety",
+   "roads-and-dpw",
+   "state-aid",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 3610,
+    "motion": "Appoint Peter Beardmore to the school committee until next May, with commitment to resign from Finance Committee no later than September 30, 2022",
+    "moved_by": "Mr. Jeffries",
+    "outcome": "passed (roll call; one abstention, Mr. Franco)",
+    "procedural": false
+   },
+   {
+    "t": 4607,
+    "motion": "Appoint Jennifer Duffy to the Agricultural Commission for a term to expire June 30, 2023",
+    "outcome": "passed (ayes, no opposed)",
+    "procedural": false
+   },
+   {
+    "t": 5409,
+    "motion": "Approve minutes of May 24th and June 7th as presented",
+    "outcome": "passed (ayes, no opposed)",
+    "procedural": true
+   },
+   {
+    "t": 5953,
+    "motion": "Enter executive session under MGL c.30A s.21 para 3 re collective bargaining, police union, and adjourn after exiting",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 4114,
+    "topic": "Street light purchase price",
+    "what_was_said": "Purchase price in the purchase and sale agreement; a true-up after signing could raise or lower it. Original informal estimate was lower.",
+    "figures_as_heard": [
+     "eighty nine thousand eight thirty four ninety six",
+     "eighty seven thousand six hundred and forty six eighty four"
+    ]
+   },
+   {
+    "t": 4220,
+    "topic": "Street light appropriation",
+    "what_was_said": "Town manager said the town meeting appropriation covers the purchase.",
+    "figures_as_heard": [
+     "260 000",
+     "265 thousand dollars",
+     "around 90 000"
+    ]
+   },
+   {
+    "t": 4261,
+    "topic": "Street light license agreement",
+    "what_was_said": "License to attach lights to poles has no recurring fee; costs only for moving facilities.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4894,
+    "topic": "Flat Hill Road culvert grant",
+    "what_was_said": "MassDOT small bridge program awarded the maximum grant to supplement culvert project funding.",
+    "figures_as_heard": [
+     "500 000"
+    ]
+   },
+   {
+    "t": 4956,
+    "topic": "FY23 state budget cherry sheet",
+    "what_was_said": "Final cherry sheet figures are a net increase over estimates used at annual town meeting.",
+    "figures_as_heard": [
+     "fifty four thousand four hundred and seventeen dollars"
+    ]
+   },
+   {
+    "t": 4997,
+    "topic": "Fraud risk assessment",
+    "what_was_said": "Paid from risk management reward credits through the insurance program, resolving the last audit management letter comment.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 5451,
+    "topic": "Warrants",
+    "what_was_said": "Warrants presented for deductions, accounts payable and payroll.",
+    "figures_as_heard": [
+     "753 932 uh dollars and 17 cents",
+     "1 million 571 852.57",
+     "728 704 and 54 cents"
+    ]
+   },
+   {
+    "t": 641,
+    "topic": "Anticipated school budget pressure",
+    "what_was_said": "Candidate predicted tough budget times by FY25 as COVID funds end and costs catch up with inflation.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2924,
+    "decision": "Beardmore committed to resign from the Finance Committee no later than end of September."
+   },
+   {
+    "t": 4587,
+    "decision": "Agricultural Commission term date to be confirmed and modified at a later meeting if needed."
+   },
+   {
+    "t": 5698,
+    "decision": "Board will put a remote-meeting legislation proposal on a later agenda, ahead of the March deadline, and meet with the state delegation around end of January."
+   },
+   {
+    "t": 5888,
+    "decision": "Minutes to record in more detail the rationale and reservations for the school committee appointment."
+   },
+   {
+    "t": 5307,
+    "decision": "300th anniversary committee charge discussion deferred to next meeting for members to bring notes."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 186,
+    "topic": "Opening, announcements, cooling center",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 186,
+    "t_end": 3740,
+    "topic": "Joint appointment to school committee vacancy: interview of Peter Beardmore",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "hiring",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3740,
+    "t_end": 4362,
+    "topic": "Street light purchase and license agreements",
+    "resolution": "informational",
+    "tags": [
+     "contracts-and-unions",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4362,
+    "t_end": 4648,
+    "topic": "Agricultural Commission appointment",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4648,
+    "t_end": 5205,
+    "topic": "Town manager's report",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "state-aid",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 5205,
+    "t_end": 5409,
+    "topic": "300th anniversary committee charge",
+    "resolution": "referred",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5409,
+    "t_end": 5782,
+    "topic": "Minutes, warrants, remote meeting law",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5782,
+    "t_end": 6038,
+    "topic": "Public comments and executive session",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions",
+     "public-safety"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call votes on the Beardmore appointment: only some members' responses are captioned.",
+   "Exact warrant and price figures may be mis-transcribed."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1445,
+    "about": "Candidate disagreed with School Committee protocols and whether the committee represents children or taxpayers.",
+    "sides": "Candidate against school committee chair's view of operating protocols and constituency",
+    "words_as_heard": "turn and i'm using hyperbole here but the school committee into an omerta or uh cabal of unity",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3672,
+    "about": "A Select Board member abstained over precedent of dual service.",
+    "sides": "One member abstained; others voted in favor",
+    "words_as_heard": "i can't support the concept or be party setting the precedent",
+    "kind": "members disagree"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 4072,
+    "name_as_heard": "purchase and sale agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "the first step is to execute the purchase and sale",
+    "shown": true
+   },
+   {
+    "t": 3925,
+    "name_as_heard": "license agreement",
+    "kind": "contract or agreement",
+    "words_as_heard": "the second agreement is the license agreement",
+    "shown": true
+   },
+   {
+    "t": 5226,
+    "name_as_heard": "300th anniversary committee charges from other towns",
+    "kind": "report",
+    "words_as_heard": "elaine did reach out to a couple different communities to secure what their charges were",
+    "shown": true
+   },
+   {
+    "t": 5409,
+    "name_as_heard": "minutes of May 24th and June 7th",
+    "kind": "prior minutes",
+    "words_as_heard": "we do have two sets of minutes from may the 24th and june the 7th",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "street-light-led-conversion",
+    "title": "Street light purchase",
+    "question": "What did the town pay to buy the street lights and what does it cost to own them?",
+    "t": 3760,
+    "words_as_heard": "purchase street lights",
+    "data_in_play": [
+     "eighty nine thousand eight thirty four ninety six",
+     "eighty seven thousand six hundred and forty six eighty four",
+     "265 thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board and School Committee jointly appointed Peter Beardmore, the sole applicant, to the school committee until next May; one board member abstained.",
+    "t": 3610
+   },
+   {
+    "line": "The appointment came with a commitment to resign from the Finance Committee no later than September 30, 2022.",
+    "t": 2924
+   },
+   {
+    "line": "The board appointed Jennifer Duffy to the Agricultural Commission for a term expiring June 30, 2023; the term date may be modified later.",
+    "t": 4607
+   },
+   {
+    "line": "The board heard that the street light purchase price could change after signing through a true-up, and that the license to attach lights to poles has no recurring fee.",
+    "t": 4114
+   },
+   {
+    "line": "Members will put a remote-meeting legislation proposal on a later agenda ahead of the March deadline, and the 300th anniversary committee charge was deferred.",
+    "t": 5698
+   }
+  ],
+  "why_it_matters": [
+   "The appointment fills a school committee seat that votes on the school budget, and it moves a Finance Committee member, who reviews that budget, off the committee that reviews it.",
+   "The street light purchase price can change after signing, so the final cost to the town may differ from the appropriation voted at town meeting."
+  ],
+  "watch_next": [
+   "The Finance Committee resignation deadline of September 30, 2022.",
+   "A later agenda item on remote-meeting legislation, ahead of the March deadline."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T12:19:29Z",
+   "cost_usd": 0.2261057
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_07192022-5323",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-07-19-minutes-5323.txt",
+   "path": "sources/meetings/select-board/2022-07-19-minutes-5323.pdf"
+  },
+  "official_sha256": "643e945067aed8096295bf5bdae8d902d3ad85832dd008b17649e23b9aca6b97",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both appointments (including Mr. Franco's abstention), the Flat Hill culvert grant, the cherry sheet change and the warrant totals, once caption misreadings are set aside. The main differences are a street light appropriation figure and a request for fuller minutes that only we record, several discussion items that only the official minutes record, and the attendee lists, where the official minutes name Heather Sroka as absent.",
+  "counts": {
+   "agree": 9,
+   "caption_error": 7,
+   "discrepancy": 3,
+   "only_in_ours": 2,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: appoint Peter Beardmore to School Committee, Franco abstaining",
+    "ours": "Appoint Peter Beardmore to the school committee until next May, with commitment to resign from Finance Committee no later than September 30, 2022 — passed (roll call; one abstention, Mr. Franco)",
+    "official": "to appoint mr. beardmore to the school committee until the next election with the express",
+    "note": "Same vote, outcome and abstention; term wording differs (\"until next May\" vs \"until the next election\"), which a person may want to confirm but is likely the same term.",
+    "t": 3610
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: appoint Jennifer Duffy to Agricultural Commission, term to June 30, 2023",
+    "ours": "Appoint Jennifer Duffy to the Agricultural Commission for a term to expire June 30, 2023 — passed (ayes, no opposed)",
+    "official": "to appoint jennifer duffy to the agricultural commission with a term to expire june 30,",
+    "note": "Same appointment, term and outcome in both records.",
+    "t": 4607
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Agricultural Commission term date",
+    "ours": "Agricultural Commission term date to be confirmed and modified at a later meeting if needed.",
+    "official": "the term date was incorrect on the agenda so it will need to be clarified at a later time.",
+    "note": "Both records say the term date is to be revisited, yet both also record the vote as June 30, 2023; check the recording to see whether the vote fixed that date or left it open.",
+    "t": 4587
+   },
+   {
+    "kind": "agree",
+    "about": "Beardmore commitment to resign from Finance Committee",
+    "ours": "Beardmore committed to resign from the Finance Committee no later than end of September.",
+    "official": "to appoint mr. beardmore to the school committee until the next election with the express",
+    "note": "The official vote text carries the same commitment to resign from Finance Committee by September 30.",
+    "t": 2924
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street light purchase price",
+    "ours": "eighty nine thousand eight thirty four ninety six",
+    "official": "the cost listed in the agreement is $89,834.96.",
+    "note": "Spoken figure matches $89,834.96 once the words are normalized.",
+    "official_reading": "$89,834.96",
+    "t": 4114
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street light original informal estimate",
+    "ours": "eighty seven thousand six hundred and forty six eighty four",
+    "official": "estimate was $87,646.84 and that was",
+    "note": "Same figure, $87,646.84, rendered in words by the captions.",
+    "official_reading": "$87,646.84",
+    "t": 4114
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Street light appropriation figures (260,000 / 265 thousand / around 90,000)",
+    "ours": "Street light appropriation: 260 000, 265 thousand dollars, around 90 000",
+    "official": "",
+    "note": "The official minutes print no appropriation figure for the street lights; check the recording for what was said.",
+    "t": 4220
+   },
+   {
+    "kind": "agree",
+    "about": "Flat Hill Road culvert grant",
+    "ours": "Flat Hill Road culvert grant: 500 000",
+    "official": "were awarded t h e maximum g r a n t amount of $500,000.",
+    "note": "Same $500,000 grant.",
+    "t": 4894
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY23 state cherry sheet figure",
+    "ours": "fifty four thousand four hundred and seventeen dollars",
+    "official": "overall increase of $54,417 from",
+    "note": "Same figure, $54,417; ours omits that it was an increase over the town meeting estimate.",
+    "official_reading": "$54,417",
+    "t": 4956
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrants totals",
+    "ours": "753 932 uh dollars and 17 cents, 1 million 571 852.57, 728 704 and 54 cents",
+    "official": "in the amount of $1,571,852.57; a payroll warrant",
+    "note": "Amounts $753,932.17, $1,571,852.57 and $728,704.54 match the official figures once the digits are normalized.",
+    "official_reading": "$1,571,852.57, $728,704.54, $753,932.17",
+    "t": 5451
+   },
+   {
+    "kind": "agree",
+    "about": "Remote-meeting legislation to a later agenda",
+    "ours": "Board will put a remote-meeting legislation proposal on a later agenda, ahead of the March deadline, and meet with the state delegation around end of January.",
+    "official": "mr. jeffreys will schedule it for a later agenda.",
+    "note": "Both record scheduling a later agenda item; the March deadline and end-of-January delegation meeting appear only in ours.",
+    "t": 5698
+   },
+   {
+    "kind": "agree",
+    "about": "300th anniversary committee charge deferred",
+    "ours": "300th anniversary committee charge discussion deferred to next meeting for members to bring notes.",
+    "official": "it was suggested to review the sample charges provided from other towns",
+    "note": "Both defer the charge; the official minutes say to return with suggestions when a full board is present.",
+    "t": 5307
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Minutes to record rationale and reservations for school committee appointment",
+    "ours": "Minutes to record in more detail the rationale and reservations for the school committee appointment.",
+    "official": "",
+    "note": "The official minutes record no such request; it is a procedural instruction for the minutes themselves.",
+    "t": 5888
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Streetlight license fees question",
+    "ours": "",
+    "official": "mr. alonzo asked are we paying for the licensing fees year after",
+    "note": "Q&A about annual licensing fees appears only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Fraud risk assessment funded by MIIA credits",
+    "ours": "",
+    "official": "amount, w e will be able t o do this w o r k this fiscal year.",
+    "note": "Fraud risk assessment item is absent from our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "More than half the budget goes to schools",
+    "ours": "",
+    "official": "because more than half the budget goes to schools",
+    "note": "Remark by Mr. Jeffreys appears only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Select Board member Heather Sroka",
+    "ours": "",
+    "official": "member not present: heather sroka",
+    "note": "Official lists Heather Sroka as an absent member; ours lists only four members and does not mention her absence.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Lou Franco role and School Committee member name",
+    "ours": "Mrs. Scolombrini (member, School Committee)",
+    "official": "mr. sculimbrene asked if mr. beardmore had any preferences",
+    "note": "Our name \"Scolombrini\" is a misheard version of Anthony Sculimbrene, and the official gives Mr., not Mrs.; confirm.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: School Committee vice chair",
+    "ours": "Mr. Leighton (vice chair, School Committee)",
+    "official": "vice chair brian lehtinen asked",
+    "note": "Misheard surname; the official gives Brian Lehtinen.",
+    "official_reading": "Brian Lehtinen",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Vice chair of Select Board",
+    "ours": "Mr. Alonso (vice chair, Select Board)",
+    "official": "tom alonzo , vice chairman;",
+    "note": "Spelling difference only; the official gives Tom Alonzo.",
+    "official_reading": "Tom Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Select Board chair",
+    "ours": "Mr. Jeffries (chair, Select Board)",
+    "official": "michael-ray jeffreys , chairman;",
+    "note": "Spelling difference only; the official gives Michael-Ray Jeffreys.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Town Manager Heather Lemieux",
+    "ours": "Heather Lemieux (town manager)",
+    "official": "heather lemieux, town manager via zoom",
+    "note": "Same person; the official notes she attended remotely.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Town counsel Elizabeth",
+    "ours": "Elizabeth (town counsel) (presenter)",
+    "official": "elizabeth lydon of mead, talerman & costa",
+    "note": "Same person; the official gives the full name Elizabeth Lydon, attending via Zoom.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: School Committee chair",
+    "ours": "Ms. Archambault (chair, School Committee)",
+    "official": "carol archambault, chair;",
+    "note": "Same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Superintendent Burnham and applicants",
+    "ours": "",
+    "official": "burnham, school superintendent",
+    "note": "The official lists the superintendent, applicant Peter Beardmore and applicant Jennifer Duffy; ours does not list them as attendees.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T12:21:35Z",
+   "cost_usd": 0.2591057
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2022-05-02",
  "docid": "4725",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to have available an extra budget info slide available for town meeting",
+   "motion": "Move to have an extra budget info slide available for town meeting.",
    "moved_by": "S.Archambault",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion (s.archambault, 2nd p.lincoln), to have available an extra budget info slide available for town meeting. (passed)"
   },
   {
-   "motion": "to approve the April minutes",
+   "motion": "Approve the April minutes.",
    "moved_by": "P.Lincoln",
    "seconded_by": "F.Beall",
    "outcome": "passed",
@@ -28,15 +28,165 @@
    "quote": "april minutes approved (p.lincoln, 2nd f.beall)."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P.Lincoln",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
    "procedural": true,
-   "quote": "(motion - p.lincoln, 2nd s.archambault, passed)"
+   "quote": "(motion - p.lincoln, 2nd s.archambault, passed)."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0909695
+ "note": "Flat text extraction with no page headings. Three recorded votes (one substantive, two procedural). The minutes print the Jo McLaughlin name variants 'J.Mclaughlin' and 'J.McLaughlin' inconsistently; she is recorded here as printed on the roll call. The minutes say 'no February minutes' and cite no document numbers. No public comment speakers.",
+ "cost_usd": 0.014494180000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, peter lincoln, steve archambault."
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, peter lincoln, steve archambault."
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, peter lincoln, steve archambault."
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member, attending via Zoom",
+   "status": "remote",
+   "quote": "b. faith beall - via zoom."
+  },
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "excused - jeff bajko"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member, listed at roll call",
+   "status": "not stated",
+   "quote": "non-members: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "S.Walker will contact J.Bajko by phone to request that a notice of resignation be sent to the Select Board.",
+   "quote": "s.walker will contact j.bajko via phone to request a notice of resignation be sent to the select board."
+  },
+  {
+   "decision": "P.Lincoln will check on the current renewal status of the committee.",
+   "quote": "p.lincoln will check on the current renewal status of the committee."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PACC budget as listed in the Town Warrant",
+   "what_was_recorded": "The warrant lists the PACC budget lower than the actual figure; the difference is attributed to indirect costs listed under a different category.",
+   "figures_as_printed": [
+    "$163,576.00",
+    "$220,866.00"
+   ],
+   "quote": "warrant lists pacc budget at $163,576.00 but is actually $220,866.00."
+  },
+  {
+   "topic": "Budget report, March ending balance",
+   "what_was_recorded": "The committee's budget report showed a March ending balance.",
+   "figures_as_printed": [
+    "$880,913.07"
+   ],
+   "quote": "budget report march ending balance - $880,913.07"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Committee comments: status of J. Bajko's resignation",
+   "resolution": "discussed; no action recorded",
+   "quote": "p.lincoln asked for the current status of j.bajko's resignation.",
+   "tags": [
+    "membership",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Communications: resignation follow-up, vacancies, and warrant budget",
+   "resolution": "discussed; extra budget slide motion passed",
+   "quote": "s.walker followed up on the email sent by j.bajko requesting information on how to step down from the committee.",
+   "tags": [
+    "membership",
+    "vacancies",
+    "town warrant",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Review and approval of minutes",
+   "resolution": "April minutes approved; no February minutes exist",
+   "quote": "april minutes approved (p.lincoln, 2nd f.beall).",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received",
+   "quote": "updated trust and lighting was installed and a training session was held.",
+   "tags": [
+    "studio",
+    "equipment",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Future studio space",
+   "resolution": "discussed; future still uncertain",
+   "quote": "p.lincoln discussed with mr. chapdelaine the possible use of the chapdelaine dealership building.",
+   "tags": [
+    "studio space"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:07 PM",
+   "quote": "meeting adjourned at 6:07 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Warrant (copy received in the mail)",
+   "where": "text",
+   "quote": "s.walker received a copy of the town warrents in the mail and had questions concerning the final budget listed."
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "PACC",
+  "studio",
+  "town meeting",
+  "budget",
+  "town warrant",
+  "committee vacancies",
+  "future studio space",
+  "Zoom attendance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

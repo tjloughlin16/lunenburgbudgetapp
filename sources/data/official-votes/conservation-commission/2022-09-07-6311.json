@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-09-07",
  "docid": "6311",
@@ -12,135 +12,664 @@
  },
  "votes": [
   {
-   "motion": "Approve the permit application for Owl Prowl event as submitted",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Owl Prowl funded organization permit application as submitted (waiver of insurance requirement requested by applicant).",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous (4 for; RT abstained due to technical difficulties)",
    "procedural": false,
-   "quote": "jv/cc m/s to approve the permit application as submitted. roll call vote, unanimous to approve"
+   "quote": "jv/cc m/s to approve the permit application as submitted. roll call vote, unanimous to approve (4 for, rt abstained due to technical difficulties)"
   },
   {
-   "motion": "Approve the minutes of August 17, 2022",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the August 17, 2022 meeting.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "jv/cc m/s to approve the minutes. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve the Eagle Scout project on Clark's Hill",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve the volunteer project on Clark Hill proposed by Sean Patrick Terry.",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/cc m/s to approve the project on clarks hill. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve the sewer extension project at 4 Kimball Street with a negative #3 determination",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative #3 determination on the Request for Determination of Applicability by Gregory S. Roy for a sewer extension at 4 Kimball Street.",
+   "moved_by": "ML",
+   "seconded_by": "RT",
+   "outcome": "passed, unanimous (CC recused)",
    "procedural": false,
-   "quote": "ml/rt m/s to approve the project with a negative #3 determination. roll call vote, unanimous to approve."
+   "quote": "ml/rt m/s to approve the project with a negative #3 determination. roll call vote, unanimous to approve. (cc recused)."
   },
   {
-   "motion": "Continue the hearing for the demolition and construction at 127 Chase Road to September 21",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Notice of Intent hearing by Christian and Allison Martin for 127 Chase Road to September 21.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/jv m/s to continue the meeting to sept 21. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue the hearing for the project at 451 Townsend Harbor Road until September 21",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Notice of Intent hearing by Ryan Proctor for 451 Townsend Harbor Road until September 21.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous (ML recused)",
    "procedural": false,
-   "quote": "jv/cc m/s to continue until september 21. roll call vote, unanimous to approve"
+   "quote": "jv/cc m/s to continue until september 21. roll call vote, unanimous to approve (ml recused)"
   },
   {
-   "motion": "Make a negative determination #3 for the retaining wall project at 362 Townsend Harbor Road",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Make a negative #3 determination for the Request for Determination of Applicability by Andrew Leblanc at 362 Townsend Harbor Road.",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "jv/ml moved to make a negative determination #3 for the project. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue the hearing for the reseeding project at 408 Electric Avenue to September 21st",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Request for Determination of Applicability by Nicholas Pirro at 408 Electric Avenue to September 21st.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/jv m/s to continue to september 21st. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue the hearing for the driveway paving at 509 Townsend Harbor Road to September 21st",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Request for Determination of Applicability by Brian Haas at 509 Townsend Harbor Road to September 21st.",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/cc m/s to continue to september 21st. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve the septic system replacement and recharge trench project at 37 Spring Street as designed with standard order of conditions",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Notice of Intent by Marsden Engineering at 37 Spring Street as designed, with a standard order of conditions.",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "jv/ml m/s to approve the project as designed with a standard order of conditions. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue the hearing for the warehouse and distribution facility at 260 Fahlulah Road to October 5th",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Notice of Intent by Fitchburg Land property Owner LLC at 260 Fahlulah Road to October 5th.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/jv m/s to continue to october 5th. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Have applicants pay advertising fees directly to the papers",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Require applicants to pay advertising fees directly to the newspapers.",
+   "moved_by": "CC",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "cc/ml m/s to have applicants pay advertising fees directly to the papers. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve $100 to purchase a used water tank for the pollinator habitat and $20 for 8 cinderblocks for the water tank",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Approve $100 to purchase a used water tank for the pollinator habitat and $20 for 8 cinderblocks for the water tank.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/jv m/s to approve $100 to purchase a used water tank for the pollinator habitat and $20 for 8 cinderblocks for the water tank. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve the $495 Ransford Environmental quote for pest control services",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Richard Tremblay",
-   "outcome": "passed unanimously",
+   "motion": "Approve the $495 Ransford Environmental quote for an exterminator at 123 Hollis Road.",
+   "moved_by": "ML",
+   "seconded_by": "RT",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/rt moved to approve the $495 ransford quote. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve a $700 purchase order for signs from SmartSign from the Timber Rights Revolving Fund",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve a $700 purchase order for signs from SmartSign, paid from the Timber Rights Revolving Fund.",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml/cc m/s to approve a $700 purchase order for signs from smartsign from the timber rights revolving fund. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "jv/ml m/s to adjourn the meeting. roll call vote, unanimous to approve."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1319655
+ "note": "Text extraction of the minutes, not a scan; no page is marked missing. Most members, staff and applicants appear by initials or first name only, so attendance is taken from the Present and Absent lines. The Owl Prowl vote was printed as 4 for with RT abstaining. The minutes print no document list heading; plans and filings are named only in the running text.",
+ "cost_usd": 0.02510168,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "MW",
+   "role": "acting chair",
+   "status": "present",
+   "quote": "present: mw (acting chair), ml, rt, jv, cc"
+  },
+  {
+   "name": "ML",
+   "status": "present",
+   "quote": "present: mw (acting chair), ml, rt, jv, cc"
+  },
+  {
+   "name": "RT",
+   "status": "present",
+   "quote": "present: mw (acting chair), ml, rt, jv, cc"
+  },
+  {
+   "name": "JV",
+   "status": "present",
+   "quote": "present: mw (acting chair), ml, rt, jv, cc"
+  },
+  {
+   "name": "CC",
+   "status": "present",
+   "quote": "present: mw (acting chair), ml, rt, jv, cc"
+  },
+  {
+   "name": "BP",
+   "status": "absent",
+   "quote": "absent: bp, rb"
+  },
+  {
+   "name": "RB",
+   "status": "absent",
+   "quote": "absent: bp, rb"
+  },
+  {
+   "name": "NM",
+   "role": "administrator",
+   "status": "present",
+   "quote": "also present: nm (administrator)"
+  },
+  {
+   "name": "Peter Cowley",
+   "role": "from 72 Peninsula",
+   "status": "present",
+   "quote": "peter cowley from 72 peninsula presented their request for a funded organization permit for owl prowl"
+  },
+  {
+   "name": "Sam Welch",
+   "role": "new volunteer",
+   "status": "not stated",
+   "quote": "sam welch is a new volunteer for the conservation commission."
+  },
+  {
+   "name": "Sean Patrick Terry",
+   "role": "Eagle Scout",
+   "status": "present",
+   "quote": "sp said he would be happy to install the signs or other work needed by the commission."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representative for the property owners, Dillis and Roy",
+   "status": "present",
+   "quote": "greg roy from dillis and roy introduced himself as the representative for the property owners."
+  },
+  {
+   "name": "Caitie Childs",
+   "role": "abutter",
+   "status": "present",
+   "quote": "caitie childs asked to recuse herself as she is an abutter to the property."
+  },
+  {
+   "name": "David Sadowski",
+   "role": "representing the property owners",
+   "status": "present",
+   "quote": "david sadowski is representing the property owners, the house is being demolished and replaced."
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "applicant (property owner)",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by ryan proctor for the demolition and construction of a single family home and driveway"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "stone wall installer",
+   "status": "present",
+   "quote": "brett ramsden is a stone wall installer and he said that new walls are occasionally added to the shoreline"
+  },
+  {
+   "name": "Andrew Leblanc",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "by andrew leblanc for repair and construction of retaining walls on hickory hills lake at 362 townsend harbor road."
+  },
+  {
+   "name": "Nicholas Pirro",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "request for determination of applicability by nicholas pirro for reseeding and associated grading within a wetlands area at 408 electric avenue."
+  },
+  {
+   "name": "Brian Haas",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "request for determination of applicability by brian haas for the paving of a driveway at 509 townsend harbor road."
+  },
+  {
+   "name": "Sue Patrelia",
+   "role": "abutter",
+   "status": "present",
+   "quote": "abutter sue patrelia asked why the plan was not ready, as the survey has been completed."
+  },
+  {
+   "name": "Steve Marsden",
+   "role": "Marsden Engineering",
+   "status": "present",
+   "quote": "steve marsden shared his updated plan including the drainage swale."
+  },
+  {
+   "name": "Fitchburg Land property Owner LLC",
+   "role": "applicant",
+   "status": "not stated",
+   "quote": "a notice of intent (dep # 208-1265) by fitchburg land property owner llc to construct a 367,000 square foot warehouse"
+  },
+  {
+   "name": "Christian and Allison Martin",
+   "role": "applicants",
+   "status": "not stated",
+   "quote": "a public hearing on a notice of intent by christian and allison martin for the demolition and construction of a single family home and garage at 127 chase road."
+  },
+  {
+   "name": "David Blatt",
+   "role": "property owner with planned submission (EO 411 Goodrich St)",
+   "status": "not stated",
+   "quote": "eo 411 goodrich st - david blatt is putting together a plan to submit to the commission"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MW asked NM to research whether a member recently employed by the town may work on the Martin project before the next meeting.",
+   "quote": "mw asked nm to research this before the next meeting."
+  },
+  {
+   "decision": "NM to look up the correct name of the ACEC at the Pond View Commons site; ML noted the information should go to the ZBA.",
+   "quote": "ml noted that the site is on an acec (nm to look up the correct name)"
+  },
+  {
+   "decision": "Parcel III Sunny Hill Road right of first refusal deferred to the next meeting, when Bob and Rich are present.",
+   "quote": "will discuss at next meeting when bob and rich are present."
+  },
+  {
+   "decision": "NM to ask the 205 Sunset, Beers lot owners to attend the 9/21 meeting.",
+   "quote": "nm to reach out and ask them to attend the next conscomm meeting on 9/21."
+  },
+  {
+   "decision": "Goodrich Street plan to be submitted by David Blatt, at MW's request through NM.",
+   "quote": "mw requested that nm have him give a submission"
+  },
+  {
+   "decision": "RT volunteered as the LCC representative on the Stormwater Committee; NM to inform the committee.",
+   "quote": "nm to inform the committee and have them reach out to rt about their meetings."
+  },
+  {
+   "decision": "ML to obtain fencing quotes from online vendors and MAKI for the pollinator habitat.",
+   "quote": "ml will provide quotes from online vendors, and also from maki."
+  },
+  {
+   "decision": "NM to check whether the exterminator work at 123 Hollis Road needs a contract or a bid process.",
+   "quote": "nm to see if there are any issues with setting up a contract or if a bid process is needed at this level."
+  },
+  {
+   "decision": "Site walk for the 100 Woodland Drive encroachment set for 9/17/22.",
+   "quote": "reply from 100 woodland drive, site walk will be on 9/17/22."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Owl Prowl voluntary donations",
+   "what_was_recorded": "The funded organization event will ask for voluntary donations of $10 for the walk.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "which will ask for voluntary donations of $10 for the walk."
+  },
+  {
+   "topic": "Pollinator habitat water tank quote",
+   "what_was_recorded": "A quote was reported for a used water tank and cinderblocks.",
+   "figures_as_printed": [
+    "$100",
+    "$20"
+   ],
+   "quote": "there is a quote for $100 for a used tank from facebook marketplace and $20 for cinderblocks."
+  },
+  {
+   "topic": "Water tank and cinderblocks approval",
+   "what_was_recorded": "The Commission approved purchase of the used water tank and cinderblocks.",
+   "figures_as_printed": [
+    "$100",
+    "$20",
+    "8"
+   ],
+   "quote": "ml/jv m/s to approve $100 to purchase a used water tank for the pollinator habitat and $20 for 8 cinderblocks for the water tank."
+  },
+  {
+   "topic": "Pollinator habitat deer fencing",
+   "what_was_recorded": "The pollinator habitat requested about $900 of fencing; quotes were to be gathered.",
+   "figures_as_printed": [
+    "$900"
+   ],
+   "quote": "requesting approximately $900 of fencing for posts and ties to protect bushes and trees"
+  },
+  {
+   "topic": "Exterminator at 123 Hollis Road",
+   "what_was_recorded": "Ransford Environmental quoted a one-year plan at a stated price plus a per-treatment price.",
+   "figures_as_printed": [
+    "$495",
+    "$160"
+   ],
+   "quote": "ransford environmental has quoted a 1 year plan for $495, $160 per treatment."
+  },
+  {
+   "topic": "Exterminator quote approval",
+   "what_was_recorded": "The Commission approved the $495 Ransford quote.",
+   "figures_as_printed": [
+    "$495"
+   ],
+   "quote": "ml/rt moved to approve the $495 ransford quote."
+  },
+  {
+   "topic": "SmartSign trail signs purchase order",
+   "what_was_recorded": "A $700 purchase order to SmartSign was requested and approved, paid from the Timber Rights Revolving Fund.",
+   "figures_as_printed": [
+    "$700"
+   ],
+   "quote": "request for approval of $700 purchase order to smartsign from timber rights fund."
+  },
+  {
+   "topic": "Advertising fees for applicants",
+   "what_was_recorded": "The Commission decided applicants pay advertising fees directly to the papers; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "cc/ml m/s to have applicants pay advertising fees directly to the papers."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Owl Prowl funded organization permit",
+   "speaker": "Peter Cowley",
+   "stated_role": "from 72 Peninsula",
+   "quote": "peter cowley from 72 peninsula presented their request for a funded organization permit for owl prowl"
+  },
+  {
+   "topic": "Clark Hill project schedule and abutter plan question at Marsden/Patrelia hearing",
+   "speaker": "Sue Patrelia",
+   "stated_role": "Abutter",
+   "quote": "abutter sue patrelia asked why the plan was not ready, as the survey has been completed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: Owl Prowl permit",
+   "resolution": "approved (4 for, RT abstained)",
+   "quote": "peter cowley from 72 peninsula presented their request for a funded organization permit for owl prowl",
+   "tags": [
+    "permits",
+    "events"
+   ]
+  },
+  {
+   "topic": "Minutes of August 17, 2022",
+   "resolution": "approved",
+   "quote": "minutes of previous meetings - august 17, 2022",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Volunteers and Clark Hill project",
+   "resolution": "Clark Hill project approved",
+   "quote": "sean patrick terry is an eagle scout proposing to restore and clean up clark hill.",
+   "tags": [
+    "volunteers",
+    "trails"
+   ]
+  },
+  {
+   "topic": "RDA, 4 Kimball Street (sewer extension)",
+   "resolution": "negative #3 determination approved; CC recused",
+   "quote": "request for determination of applicability by gregory s. roy for a sewer extension at 4 kimball street.",
+   "tags": [
+    "wetlands",
+    "sewer"
+   ]
+  },
+  {
+   "topic": "NOI hearing, 127 Chase Road (demolition and rebuild)",
+   "resolution": "continued to September 21",
+   "quote": "a public hearing on a notice of intent by christian and allison martin for the demolition and construction of a single family home and garage at 127 chase road.",
+   "tags": [
+    "wetlands",
+    "house"
+   ]
+  },
+  {
+   "topic": "NOI hearing, 451 Townsend Harbor Road (house, dock, retaining wall)",
+   "resolution": "continued to September 21; ML recused",
+   "quote": "a public hearing on a notice of intent by ryan proctor for the demolition and construction of a single family home and driveway",
+   "tags": [
+    "wetlands",
+    "shoreline"
+   ]
+  },
+  {
+   "topic": "Continued RDA, 362 Townsend Harbor Road (retaining walls)",
+   "resolution": "negative #3 determination",
+   "quote": "by andrew leblanc for repair and construction of retaining walls on hickory hills lake at 362 townsend harbor road.",
+   "tags": [
+    "wetlands",
+    "shoreline"
+   ]
+  },
+  {
+   "topic": "RDA, 408 Electric Avenue (reseeding and grading)",
+   "resolution": "continued to September 21st",
+   "quote": "request for determination of applicability by nicholas pirro for reseeding and associated grading within a wetlands area at 408 electric avenue.",
+   "tags": [
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "RDA, 509 Townsend Harbor Road (driveway paving)",
+   "resolution": "continued to September 21st",
+   "quote": "request for determination of applicability by brian haas for the paving of a driveway at 509 townsend harbor road.",
+   "tags": [
+    "wetlands",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "NOI, 37 Spring Street (septic replacement)",
+   "resolution": "approved as designed, standard order of conditions",
+   "quote": "a public hearing on a notice of intent by marsden engineering for replacement of a septic system and installation of a recharge trench",
+   "tags": [
+    "wetlands",
+    "septic"
+   ]
+  },
+  {
+   "topic": "NOI, 260 Fahlulah Road (warehouse)",
+   "resolution": "continued to October 5th",
+   "quote": "a notice of intent (dep # 208-1265) by fitchburg land property owner llc to construct a 367,000 square foot warehouse",
+   "tags": [
+    "wetlands",
+    "commercial"
+   ]
+  },
+  {
+   "topic": "New business: advertising fees",
+   "resolution": "approved; applicants pay fees directly to papers",
+   "quote": "cc/ml m/s to have applicants pay advertising fees directly to the papers.",
+   "tags": [
+    "fees",
+    "process"
+   ]
+  },
+  {
+   "topic": "ZBA comments, Pond View Commons 40B",
+   "resolution": "no comments from the Commission; ACEC noted",
+   "quote": "zba-comments on pond view commons 40b. no comments from the conservation commission.",
+   "tags": [
+    "ZBA",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Parcel III Sunny Hill Road",
+   "resolution": "deferred to next meeting",
+   "quote": "parcel iii sunny hill road: discussed right of first refusal.",
+   "tags": [
+    "land"
+   ]
+  },
+  {
+   "topic": "Old business: encroachment updates",
+   "resolution": "update noted; site walk scheduled",
+   "quote": "reply from 100 woodland drive, site walk will be on 9/17/22.",
+   "tags": [
+    "enforcement",
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence (pollinator habitat, exterminator)",
+   "resolution": "water tank and $495 exterminator approved; fencing quotes pending",
+   "quote": "ml/rt moved to approve the $495 ransford quote.",
+   "tags": [
+    "town property",
+    "pollinator habitat",
+    "pest control"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and administrative hearings",
+   "resolution": "no vote; follow-up assigned",
+   "quote": "non 205 sunset, beers lot. nm to reach out and ask them to attend the next conscomm meeting on 9/21.",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Open space: Howard Street driveway, trails grant, SmartSign order",
+   "resolution": "$700 purchase order approved",
+   "quote": "ml/cc m/s to approve a $700 purchase order for signs from smartsign from the timber rights revolving fund.",
+   "tags": [
+    "open space",
+    "trails",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Committee reports: Stormwater Committee",
+   "resolution": "RT volunteered as LCC representative",
+   "quote": "rt volunteered to join the stormwater committee as the lcc representative",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:08 pm",
+   "quote": "adjourned at 10:08 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Funded organization permit application for Owl Prowl (walk on 9/8, Lane property)",
+   "where": "text",
+   "quote": "peter cowley from 72 peninsula presented their request for a funded organization permit for owl prowl"
+  },
+  {
+   "name": "Request for Determination of Applicability by Gregory S. Roy, 4 Kimball Street",
+   "where": "text",
+   "quote": "request for determination of applicability by gregory s. roy for a sewer extension at 4 kimball street."
+  },
+  {
+   "name": "Notice of Intent by Christian and Allison Martin, 127 Chase Road",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent by christian and allison martin for the demolition and construction of a single family home and garage at 127 chase road."
+  },
+  {
+   "name": "Notice of Intent by Ryan Proctor, 451 Townsend Harbor Road",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent by ryan proctor for the demolition and construction of a single family home and driveway"
+  },
+  {
+   "name": "Undated plan with 30 and 50 foot buffers, Andrew Leblanc RDA, 362 Townsend Harbor Road",
+   "where": "text",
+   "quote": "brett ramsden presented an undated plan with the 30' and 50' buffer from the lake"
+  },
+  {
+   "name": "Updated plan with drainage swale, Marsden Engineering, 37 Spring Street",
+   "where": "text",
+   "quote": "steve marsden shared his updated plan including the drainage swale."
+  },
+  {
+   "name": "DEP file #208-1270 (issued for 37 Spring Street)",
+   "where": "text",
+   "quote": "the dep has issued a file #208-1270."
+  },
+  {
+   "name": "Notice of Intent (DEP # 208-1265), Fitchburg Land property Owner LLC, 260 Fahlulah Road",
+   "where": "text",
+   "quote": "a notice of intent (dep # 208-1265) by fitchburg land property owner llc to construct a 367,000 square foot warehouse"
+  },
+  {
+   "name": "Ransford Environmental quote, 1 year exterminator plan, 123 Hollis Road",
+   "where": "text",
+   "quote": "ransford environmental has quoted a 1 year plan for $495, $160 per treatment."
+  },
+  {
+   "name": "SmartSign purchase order, Timber Rights Fund",
+   "where": "text",
+   "quote": "request for approval of $700 purchase order to smartsign from timber rights fund."
+  },
+  {
+   "name": "Trails grant paperwork",
+   "where": "text",
+   "quote": "update on trails grant - all grant paperwork completed."
+  },
+  {
+   "name": "Pond View Commons 40B, ZBA comments",
+   "where": "text",
+   "quote": "zba-comments on pond view commons 40b."
+  },
+  {
+   "name": "Plan by David Blatt, EO 411 Goodrich St",
+   "where": "text",
+   "quote": "david blatt is putting together a plan to submit to the commission"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notices of intent",
+  "requests for determination",
+  "permits",
+  "Zoom meeting",
+  "enforcement",
+  "pollinator habitat",
+  "small purchases",
+  "volunteers",
+  "Clark Hill",
+  "Hollis Road",
+  "sewer",
+  "septic"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

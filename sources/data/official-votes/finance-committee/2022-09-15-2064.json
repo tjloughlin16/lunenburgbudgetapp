@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-09-15",
  "docid": "2064",
@@ -12,23 +12,251 @@
  },
  "votes": [
   {
-   "motion": "submit the bylaw proposal to the Town Manager to go on the Special Town Meeting Warrant",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Balish",
+   "motion": "Submit the proposed capital plan bylaw to the Town Manager to go on the Special Town Meeting Warrant.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Tom Balish",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "mr. menard motioned to submit the bylaw proposal to the town manager to go on the special town meeting warrant, mr. balish seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Gray",
+   "motion": "Adjourn the meeting at 7:53 p.m.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Tom Gray",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. menard motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously."
+   "quote": "at 7:53 p.m. mr. menard motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0750715
+ "note": "Text is a clean digital extract with no scan or missing pages, and no vote tallies beyond 'unanimously'. Mr. Beardmore is named as the author of the proposed bylaw and preparer of a statement but is not recorded as attending, so he is not listed as an attendee. The Public Comment item (section 10) is given by a committee member, Chris Menard. Attendance for Menard, Gray and Balish is printed without a role.",
+ "cost_usd": 0.014680780000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish, jay simeone (remote)"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish, jay simeone (remote)"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish, jay simeone (remote)"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish, jay simeone (remote)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "remote",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, tom balish, jay simeone (remote)"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "guests: town accountant karen brochu"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members agreed they would like to see a range of scenarios for borrowing for future projects, to settle on a plan for municipal and school building projects the town can afford.",
+   "quote": "committee members agreed they'd like to see a range of scenarios for borrowing for future projects in order to settle on a plan for municipal building projects"
+  },
+  {
+   "decision": "Committee members agreed they have no desire to change the current fiscal policy regarding debt capacity.",
+   "quote": "committee members also agreed that they have no desire to change the current fiscal policy regarding debt capacity."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DPW purchases over capital appropriations",
+   "what_was_recorded": "Three DPW purchases (a 6-wheel truck, a 10-wheel truck and a tractor mower) cost more than their capital appropriations, to be paid from the current year's operating budget.",
+   "quote": "the three purchases cost $1,140 over the capital appropriations, and funds will come from the current year's operating budget.",
+   "figures_as_printed": [
+    "$1,140"
+   ]
+  },
+  {
+   "topic": "Council on Aging formula grant",
+   "what_was_recorded": "The COA will receive a per-elder amount from the FY23 Formula Grant fund, based on a population count.",
+   "quote": "the coa will receive $12 per elder in the fy23 formula grant fund.",
+   "figures_as_printed": [
+    "$12"
+   ]
+  },
+  {
+   "topic": "ADA patio at the senior center",
+   "what_was_recorded": "The FY23 capital plan request for the ADA patio at the senior center was reported as insufficient to fund the project.",
+   "quote": "the $100,000 fy23 capital plan request for the ada patio at the senior center will not be enough money to fund the project.",
+   "figures_as_printed": [
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Financial policy debt limits",
+   "what_was_recorded": "The town's financial policy sets excludable debt at 11 percent, regular debt at 4 percent, and total allowable debt at 14 percent of the total tax levy.",
+   "quote": "the policy is written so excludable debt is 11 percent, while regular debt is 4 percent, but the total allowable debt is 14 percent of the total tax levy.",
+   "figures_as_printed": [
+    "11 percent",
+    "4 percent",
+    "14 percent"
+   ]
+  },
+  {
+   "topic": "Anticipated legal fees on 40B project",
+   "what_was_recorded": "A committee member anticipates legal fees regarding the proposed 40B project; no amount was printed.",
+   "quote": "anticipates legal fees regarding the matter.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chris Menard",
+   "stated_role": "",
+   "topic": "ZBA hearing on proposed 40B project",
+   "quote": "mr. menard commented that he watched the zba meeting/public hearing on the proposed 40b project, and anticipates legal fees regarding the matter."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "mr. watters called the meeting to order at 7:00 p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "open meeting law",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director report",
+   "resolution": "reported, no action",
+   "quote": "mr. watters read an email from the town manager reporting that the dpw has ordered a 6-wheel truck funded from the fy22 capital plan",
+   "tags": [
+    "capital plan",
+    "DPW",
+    "police cruisers",
+    "senior center",
+    "Monty Tech",
+    "Woodruff property"
+   ]
+  },
+  {
+   "topic": "Joint Select Board meeting planning: debt capacity",
+   "resolution": "agreed to see borrowing scenarios; no change to fiscal policy",
+   "quote": "committee members agreed they'd like to see a range of scenarios for borrowing for future projects",
+   "tags": [
+    "debt capacity",
+    "borrowing",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Joint Select Board meeting planning: financial policy",
+   "resolution": "discussed, no action",
+   "quote": "ms. brochu explained that the policy is written so excludable debt is 11 percent",
+   "tags": [
+    "financial policy",
+    "debt limits",
+    "tax levy"
+   ]
+  },
+  {
+   "topic": "Capital plan process: proposed bylaw",
+   "resolution": "approved to submit to Town Manager for Special Town Meeting warrant",
+   "quote": "mr. watters read mr. beardmore's proposed bylaw regarding town meeting and the capital plan.",
+   "tags": [
+    "bylaw",
+    "capital plan",
+    "Town Meeting",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "9. committee reports none",
+   "tags": []
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one comment, no action",
+   "quote": "mr. menard commented that he watched the zba meeting/public hearing on",
+   "tags": [
+    "40B",
+    "ZBA",
+    "legal fees"
+   ]
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "listed, no action",
+   "quote": "school committee pre-budget meetup, esser funding update",
+   "tags": [
+    "school budget",
+    "ESSER"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted, no action",
+   "quote": "9/20 joint meeting with select board, 9/22, 10/13 board of assessors, 10/27 public hearing regarding town warrant.",
+   "tags": [
+    "schedule",
+    "town warrant"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 7:53 p.m.",
+   "quote": "at 7:53 p.m. mr. menard motioned to adjourn, mr. gray seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from the Town Manager (undated in minutes)",
+   "where": "text",
+   "quote": "mr. watters read an email from the town manager reporting that the dpw has ordered a 6-wheel truck funded from the fy22 capital plan"
+  },
+  {
+   "name": "Mr. Beardmore's proposed bylaw regarding Town Meeting and the Capital Plan (\"§ 81-11 Amending capital appropriations\")",
+   "where": "text",
+   "quote": "mr. watters read mr. beardmore's proposed bylaw regarding town meeting and the capital plan."
+  }
+ ],
+ "tags": [
+  "capital plan",
+  "debt capacity",
+  "financial policy",
+  "Special Town Meeting",
+  "bylaw",
+  "DPW",
+  "senior center",
+  "40B",
+  "school budget",
+  "ESSER",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. watters read an email from the town manager"
+ },
+ "dropped_unquoted_by_field": {}
 }

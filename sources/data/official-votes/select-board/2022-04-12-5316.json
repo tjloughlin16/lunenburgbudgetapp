@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-04-12",
  "docid": "5316",
@@ -12,40 +12,572 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of John Morreale as Police Sergeant",
+   "motion": "Ratify the Town Manager's appointment of John Morreale as Police Sergeant.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2'': l. franco to ratify the town manager's appointment of john morreale as police sergeant vote: all in favor"
+   "quote": "to ratify the town manager's appointment of john morreale as police sergeant vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Jim Donison as DPW Director",
-   "moved_by": "L. Franco",
-   "seconded_by": "M. Jeffreys",
+   "motion": "Ratify the Town Manager's appointment of Jim Donison as DPW Director.",
+   "moved_by": "Mr. Franco",
+   "seconded_by": "Mr. Jeffreys",
    "outcome": "passed",
    "procedural": false,
    "quote": "mr. franco motioned to ratify the town manager's appointment of jim donison as dpw director. mr. jeffreys seconded the motion. vote: all in favor"
   },
   {
-   "motion": "Approve the Public Employee Agreement as presented by Town Manager and effective July 1, 2022",
+   "motion": "Appoint Anthony Sculimbrene to the APDC (Resident Representative) with a term to expire June 30, 2025.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Doryer",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint anthony sculimbrene to the apdc (resident representative) with a term to expire june 30, 2025 vote: all in favor"
+  },
+  {
+   "motion": "Approve the Public Employee Agreement as presented by the Town Manager, effective July 1, 2022.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\"d:t. dwyer to approve the public employee agreement as presented by town manager and effective july 1, 2022 discussion: mr. je",
-   "quote_taken_from_text": true
+   "quote": "to approve the public employee agreement as presented by town manager and effective july 1, 2022"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer to adjourn the meeting 2\": m. jeffreys vote: all in favor"
+   "quote": "to adjourn the meeting 2\": m. jeffreys vote: all in favor"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR-scanned document. Minutes record five votes taken, including one motion on foreclosed properties that was withdrawn before vote. All recorded votes passed unanimously.",
- "cost_usd": 0.1393275
+ "dropped_unquoted": 0,
+ "note": "Scanned minutes read by macOS Vision OCR; quotes were checked against that OCR text. OCR artifacts: the seconder for the Sculimbrene motion reads \"T. Doryer\" (likely T. Dwyer) and is recorded as printed; \"2''\" seconder markers were not transcribed; the $ sign is missing from the streetlight figure \"5,000\", recorded as printed. The minutes print no vote counts, only \"All in Favor\", so outcomes are recorded as \"passed\". The foreclosed-property motion was withdrawn before any vote and is recorded as a decision, not a vote. The public hearing and the consent-calendar and commemorative-policy discussions had no motions. Warrant articles listed for consent were proposals and were not voted. Attendance status is not stated for several people beyond \"Also Present\"; the minutes list ZOOM only for some. The documents_list heading is a judgement: no list heading is printed, but a sentence names the consent-calendar list of warrant articles, so it is recorded as printed.",
+ "cost_usd": 0.027494380000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "also present: heather lemieux, town manager, via zoom"
+  },
+  {
+   "name": "Police Chief Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, via zoom; police chief gammel, officer"
+  },
+  {
+   "name": "John Morreale",
+   "role": "Officer (ratified as Police Sergeant)",
+   "status": "present",
+   "quote": "police chief gammel, officer john morreale, jim donison, elise wiley, dave passios, bob pease via zoom"
+  },
+  {
+   "name": "Jim Donison",
+   "role": "DPW Director (ratified appointment)",
+   "status": "present",
+   "quote": "police chief gammel, officer john morreale, jim donison, elise wiley, dave passios, bob pease via zoom"
+  },
+  {
+   "name": "Elise Wiley",
+   "role": "Cultural Council member",
+   "status": "present",
+   "quote": "update from the cultural council (elise wiley)"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, inquired about the chain of command."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commission Chair",
+   "status": "remote",
+   "quote": "conservation commission chair bob pease joined the meeting via zoom."
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Applicant, APDC (Resident) appointment",
+   "status": "present",
+   "quote": "mr. sculimbrene stated he goes by tony as his son of the same first name was recently appointed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Foreclosed-property transfer (Braeburn Circle, 867 Rear Leominster Road, 408 Lancaster Avenue) withdrawn from the table and returned to the next meeting; the motion and second were withdrawn, so no vote was taken.",
+   "quote": "mr. alonzo requesting rescinding the motion and second and returning to the issue at the next meeting."
+  },
+  {
+   "decision": "Town Manager to add Article 17 (cemetery funds) to the consent list and forward it to the Finance Committee.",
+   "quote": "ms. lemieux will add article 17 to the list and forward it to the finance committee."
+  },
+  {
+   "decision": "Board members to submit any amendments to the draft Commemorative Policy in writing to the Town Manager.",
+   "quote": "requested the board members submit any amendments in writing to ms. lemieux"
+  },
+  {
+   "decision": "Chair announced there would be no meeting on April 19; the next meetings were scheduled.",
+   "quote": "mr. alonzo announced there would be no meeting april"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Indirect cost change, public access and Sewer Enterprise",
+   "what_was_recorded": "The Town Manager reported a slight change in indirect costs of about $100.",
+   "figures_as_printed": [
+    "$100"
+   ],
+   "quote": "there was a slight change in some of the indirect costs of public access and sewer enterprise but it was only around $100."
+  },
+  {
+   "topic": "Community Project Funding requests to Rep. Lori Trahan",
+   "what_was_recorded": "Requests were capped at $3M and must show a town match; the Flat Hill Culvert project already has an appropriation.",
+   "figures_as_printed": [
+    "$3M",
+    "$428,500"
+   ],
+   "quote": "needed to no more than $3m and show that the town has matched a portion of the project"
+  },
+  {
+   "topic": "Flat Hill Culvert appropriation",
+   "what_was_recorded": "The Town has already appropriated $428,500 for the Flat Hill Culvert project, submitted as a CPF request.",
+   "figures_as_printed": [
+    "$428,500"
+   ],
+   "quote": "the town has already appropriated $428,500 for this project"
+  },
+  {
+   "topic": "Fire Department AED grant",
+   "what_was_recorded": "The Fire Chief was awarded a grant for an automated external defibrillator.",
+   "figures_as_printed": [
+    "$2,116.91"
+   ],
+   "quote": "in the amount of $2,116.91 for an automated external defibrillator"
+  },
+  {
+   "topic": "Police exercise equipment wellness grant",
+   "what_was_recorded": "The Police Chief was awarded a grant under the insurance carrier's Wellness Grant for exercise equipment.",
+   "figures_as_printed": [
+    "$7,900"
+   ],
+   "quote": "a grant in the amount of $7,900 towards the cost of new exercise equipment"
+  },
+  {
+   "topic": "Streetlight purchase and Police Cruiser capital item",
+   "what_was_recorded": "The streetlight purchase price with Unitil was settled but not stated; the only other project for the Green Communities application is a Police Cruiser item in the FY23 Capital Plan.",
+   "figures_as_printed": [
+    "5,000"
+   ],
+   "quote": "the only other project that will be submitted will be 5,000 towards the police cruiser"
+  },
+  {
+   "topic": "Streetlight purchase price",
+   "what_was_recorded": "A purchase price for the streetlights was settled with Unitil; the figure is not printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "now that we have settled on a purchase price for the streetlights with unitil"
+  },
+  {
+   "topic": "Medicare Part B reimbursement change",
+   "what_was_recorded": "The change to a flat dollar Medicare Part B reimbursement is 60% of the impact, about $102 per individual, described as a saving for the Town.",
+   "figures_as_printed": [
+    "60%",
+    "$102"
+   ],
+   "quote": "is 60% so we pay about $102 per individual; it will be a savings for the town."
+  },
+  {
+   "topic": "Consent-calendar appropriations for enterprise funds (Articles 12, 14, 15, 16)",
+   "what_was_recorded": "Proposed Annual Town Meeting appropriations for the Sewer, Solid Waste, Water and PEG Access enterprise funds, plus indirect cost allocations.",
+   "figures_as_printed": [
+    "$1,213,182.00",
+    "$853,112.53",
+    "$793,968.47",
+    "$302,000",
+    "$25,000",
+    "$163,567.00",
+    "$47,808.00"
+   ],
+   "quote": "the sum of $302,000 to operate the solid waste disposal program."
+  },
+  {
+   "topic": "Cemetery care appropriation (proposed Article 17)",
+   "what_was_recorded": "A suggestion was made to add an article appropriating $10,000 from the Sale of Cemetery Lots account for cemetery care.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "suggestion was made to add article 17 for appropriating $10,000 from the sale of cemetery lots account"
+  },
+  {
+   "topic": "Warrants signed by the Board",
+   "what_was_recorded": "The Board signed five warrants: school utility, accounts payable, school employee payroll, payroll deductions and payroll.",
+   "figures_as_printed": [
+    "$24,731.71",
+    "$587,303.04",
+    "$2909.96",
+    "$610,246.39",
+    "$900,872.36"
+   ],
+   "quote": "the board signed a school utility warrant in the amount of $24,731.71; an accounts payable warrant in the amount of $587,303.04"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Article 3: transfer from Free Cash for payment of prior year expenses (proposed Annual Town Meeting article)",
+   "amount_as_printed": "$500",
+   "outcome": "Listed for consent calendar discussion; not voted at this meeting.",
+   "quote": "article 3. that the town vote to transfer the sum of $500 from free cash for payment of prior year expenses."
+  },
+  {
+   "description": "Article 9: transfer from Free Cash to the Stabilization Fund (proposed Annual Town Meeting article)",
+   "amount_as_printed": "$100,000",
+   "outcome": "Listed for consent calendar discussion; not voted at this meeting.",
+   "quote": "article 9. that the town vote to transfer from free cash the sum of $100,000 to the stabilization fund."
+  },
+  {
+   "description": "Article 10: transfer from Free Cash to the Special Purpose Stabilization Fund (proposed Annual Town Meeting article)",
+   "amount_as_printed": "$450,000",
+   "outcome": "Listed for consent calendar discussion; not voted at this meeting.",
+   "quote": "article 10. that the town vote to transfer from free cash the sum of $450,000 to the special purpose stabilization fund."
+  },
+  {
+   "description": "Article 11: transfer from Free Cash and from Sewer Enterprise Retained Earnings to the OPEB Trust Fund (proposed Annual Town Meeting article)",
+   "amount_as_printed": "$266,696 and $656.00",
+   "outcome": "Listed for consent calendar discussion; not voted at this meeting.",
+   "quote": "the sum of $266,696, and transfer from sewer enterprise retained earnings the sum of $656.00 to the opeb trust fund"
+  },
+  {
+   "description": "Article 12: transfers from the Sewer Capital Reserve Stabilization Fund and Sewer Reserve Capacity Fund into the Sewer Enterprise appropriation (proposed Annual Town Meeting article)",
+   "amount_as_printed": "$20,000.00 and $20,962.00",
+   "outcome": "Listed for consent calendar discussion; not voted at this meeting.",
+   "quote": "transfer from the sewer capital reserve stabilization fund the sum of $20,000.00; transfer from the sewer reserve capacity fund the sum of $20,962.00;"
+  },
+  {
+   "description": "Article 13: transfer from Sewer Enterprise Retained Earnings into the Sewer Capital Reserve Stabilization Fund (proposed Annual Town Meeting article)",
+   "amount_as_printed": "$35,548.86",
+   "outcome": "Listed for consent calendar discussion; not voted at this meeting.",
+   "quote": "the sum of $35,548.86 into the sewer capital reserve stabilization fund"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Facilities Director chain of command",
+   "quote": "dave passios, 56 whiting street, inquired about the chain of command."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Finance Committee and Marshall Park meetings",
+   "quote": "dave passios noted the finance committee will be meeting thursday to review the town"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Ratification of Police Sergeant appointment (John Morreale)",
+   "resolution": "approved (ratified)",
+   "quote": "ratification of the town manager's appointment of police sergeant- john morreale",
+   "tags": [
+    "police",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Ratification of DPW Director appointment (Jim Donison)",
+   "resolution": "approved (ratified)",
+   "quote": "ratification of the town manager's appointment of dpw director- jim donison",
+   "tags": [
+    "DPW",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Cultural Council update",
+   "resolution": "no action",
+   "quote": "update from the cultural council (elise wiley)",
+   "tags": [
+    "cultural council",
+    "grants"
+   ]
+  },
+  {
+   "topic": "APDC resident appointment (Anthony Sculimbrene)",
+   "resolution": "approved",
+   "quote": "appointment to apdc (resident)- anthony sculimbrene-5 valley road- term to expire",
+   "tags": [
+    "appointments",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Public hearing on Facilities Director organization plan",
+   "resolution": "hearing closed; no vote taken",
+   "quote": "public hearing on administrative organization plan per town charter for facilities",
+   "tags": [
+    "public hearing",
+    "facilities director",
+    "town charter"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, jobs, Earth Day",
+   "resolution": "no action",
+   "quote": "announcement on existing vacancies",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "employment"
+   ]
+  },
+  {
+   "topic": "Community Funding Project requests to Rep. Lori Trahan",
+   "resolution": "no action",
+   "quote": "community funding project requests to us representative lori trahan",
+   "tags": [
+    "federal funding",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Grants awarded to Fire and Police",
+   "resolution": "no action",
+   "quote": "the police chief submitted and was awarded a grant in the amount of $7,900",
+   "tags": [
+    "grants",
+    "fire",
+    "police"
+   ]
+  },
+  {
+   "topic": "Streetlight purchase and LED conversion",
+   "resolution": "no action",
+   "quote": "now that we have settled on a purchase price for the streetlights with unitil",
+   "tags": [
+    "streetlights",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "no action",
+   "quote": "the weekly update from the board of health on the total number of new cases reported as of april 2nd was 6 and the positivity rate was 1.03%.",
+   "tags": [
+    "COVID-19",
+    "public health"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "no action",
+   "quote": "yard waste collection days at youngs road will begin saturdays starting april 16th until",
+   "tags": [
+    "announcements",
+    "events"
+   ]
+  },
+  {
+   "topic": "FY2023 budget, capital plan, forecast and warrant articles (old business)",
+   "resolution": "discussed; Article 17 added to list",
+   "quote": "ms. lemieux reported there was a slight change in some of the indirect costs of public access",
+   "tags": [
+    "budget",
+    "annual town meeting",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Consent calendar for Annual Town Meeting warrant articles",
+   "resolution": "discussed; no vote",
+   "quote": "ms. lemieux had created a list of warrant articles that could be placed on the consent calendar without causing debate.",
+   "tags": [
+    "annual town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Foreclosed properties requested by Conservation Commission",
+   "resolution": "motion withdrawn; returned to next meeting",
+   "quote": "mr. alonzo requesting rescinding the motion and second and returning to the issue at the next meeting.",
+   "tags": [
+    "conservation",
+    "foreclosed properties",
+    "town meeting vote"
+   ]
+  },
+  {
+   "topic": "Draft Commemorative Policy",
+   "resolution": "discussed; amendments requested in writing",
+   "quote": "discussion on draft commemorative policy",
+   "tags": [
+    "commemorative policy",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Public Employee Committee health insurance agreement",
+   "resolution": "approved",
+   "quote": "discussion and vote on public employee committee agreement",
+   "tags": [
+    "health insurance",
+    "employees",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "resolution": "signed",
+   "quote": "the board signed a school utility warrant in the amount of $24,731.71",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "announced; April 19 meeting cancelled",
+   "quote": "mr. alonzo announced there would be no meeting april",
+   "tags": [
+    "schedule",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Closing public comment and announcements",
+   "resolution": "no action",
+   "quote": "dave passios noted the finance committee will be meeting thursday to review the town",
+   "tags": [
+    "public comment",
+    "finance committee",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:09 PM",
+   "quote": "the meeting adjourned at 9:09 pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public Hearing Notice, Facilities Director organization plan (posted in the Lunenburg Ledger on April 1)",
+   "where": "list",
+   "quote": "noted the public hearing notice was posted in the lunenburg ledger on april 1st and read the hearing notice aloud."
+  },
+  {
+   "name": "Administrative Organizational Plan creating a Director of Facilities and Grounds, presented by the Town Manager",
+   "where": "text",
+   "quote": "review the administrative: organizational plan presented by the town manager"
+  },
+  {
+   "name": "Chief Gammel's letter recommending Officer John Morreale for promotion to Sergeant",
+   "where": "list",
+   "quote": "chief gammel read his letter for this appointment."
+  },
+  {
+   "name": "Email from Chairman McGrath recommending Tony Sculimbrene for APDC",
+   "where": "list",
+   "quote": "mr. alonzo read an email from chairman mcgrath regarding the appointment"
+  },
+  {
+   "name": "Draft Commemorative Policy (Town of Lunenburg)",
+   "where": "list",
+   "quote": "town of lunenburg commemorative policy"
+  },
+  {
+   "name": "Public Employee Committee agreement (health insurance, effective July 1, 2022)",
+   "where": "text",
+   "quote": "the new agreement starts july 1 and provides another health insurance plan option (blue cross select)."
+  },
+  {
+   "name": "Annual Town Meeting warrant articles list for consent calendar",
+   "where": "list",
+   "quote": "ms. lemieux had created a list of warrant articles that could be placed on the consent calendar without causing debate."
+  },
+  {
+   "name": "Purchase and Sale Agreement for streetlights with Unitil",
+   "where": "text",
+   "quote": "told to move forward with finalizing the purchase and sale agreement"
+  },
+  {
+   "name": "Collective Bargaining Agreement between the Town of Lunenburg and I.B.P.O. Local 353",
+   "where": "text",
+   "quote": "the collective bargaining agreement (cba) between the town of lunenburg and i.b.p.o. local 353, article xxx, promotions"
+  },
+  {
+   "name": "Green Communities grant application (due April 22)",
+   "where": "text",
+   "quote": "the grant application that is due on april 22nd"
+  },
+  {
+   "name": "Community Project Funding request, Flat Hill Culvert project",
+   "where": "text",
+   "quote": "i submitted the flat hill culvert project as one"
+  },
+  {
+   "name": "Fiscal Year 2023 Budget, Capital Plan, Financial Forecast and Annual Town Meeting Warrant articles",
+   "where": "text",
+   "quote": "discussion on fiscal year 2023 budget, capital plan, financial forecast, and annual"
+  },
+  {
+   "name": "APD bylaw and APDC charge",
+   "where": "text",
+   "quote": "is familiar with the apd bylaw and with the apdc's charge"
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "police department",
+  "DPW",
+  "public hearing",
+  "facilities director",
+  "conservation commission",
+  "commemorative policy",
+  "health insurance",
+  "annual town meeting",
+  "warrant articles",
+  "grants",
+  "streetlights",
+  "COVID-19",
+  "warrants",
+  "cemetery",
+  "community funding"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux had created a list of warrant articles"
+ },
+ "dropped_unquoted_by_field": {}
 }

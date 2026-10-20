@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-05-19",
  "docid": "2059",
@@ -12,23 +12,332 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from the March 31, April 14, and April 28, 2022 meetings",
+   "motion": "Approve the minutes of the March 31, April 14, and April 28, 2022 meetings.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Watters",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "mr. menard motioned to approve the minutes from the march 31, april 14, and april 28, 2022 meetings. mr. watters seconded. on vote, motion carried. (4-0-1)"
+   "quote": "mr. menard motioned to approve the minutes from the march 31, april 14, and april 28, 2022 meetings. mr. watters seconded."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 8:44 p.m.",
    "moved_by": "Mr. Passios",
    "seconded_by": "Mr. Menard",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "at 8:44 p.m., mr. passios motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously."
+   "quote": "mr. passios motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0758335
+ "note": "Text is complete extracted minutes (pages 1-2), not a scan. Vote 4-0-1 is printed without naming the abstainer. Public Comment item 12 reads 'none'; the one item under the Public Comment heading (item 4) is the chair speaking. Summer-topics and workshop items are recorded as agreements without a motion. No documents list or attachments are printed; warrant articles and the Capital Plan are named only in discussion.",
+ "cost_usd": 0.01855578,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson peter beardmore, chris menard, dave passios, attended in person."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson peter beardmore, chris menard, dave passios, attended in person."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson peter beardmore, chris menard, dave passios, attended in person."
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "remote",
+   "quote": "attended in person. jay simeone,"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "",
+   "status": "remote",
+   "quote": "and evan watters attended remotely."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "guests: town manager heather lemieux attended remotely."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that it would like to see the actual budget of the departments that come before it.",
+   "quote": "the committee agreed that they'd like to see the actual budget of the departments that come before them."
+  },
+  {
+   "decision": "The committee agreed to hold workshops over the summer to develop its goals and procedures for FY23.",
+   "quote": "the committee agreed to hold workshops over the summer to develop their goals and procedures for fy23."
+  },
+  {
+   "decision": "The committee agreed that it is in favor of the new electronic voting procedure.",
+   "quote": "the committee agreed that they are in favor of the new electronic voting procedure."
+  },
+  {
+   "decision": "Summer topics set: Role of Finance Committee in Capital Planning process; Policies and Procedures; Budget Presentations; Debt and Debt Capacity.",
+   "quote": "role of finance committee in capital planning process"
+  },
+  {
+   "decision": "Next meetings listed as June 9 (remote) and June 23 (maybe).",
+   "quote": "next meetings: june 9 -remote, june 23 (maybe)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Green Communities grant",
+   "what_was_recorded": "The Town Manager reported a Green Communities grant had been submitted.",
+   "quote": "the green communities grant for $187,000 has been submitted",
+   "figures_as_printed": [
+    "$187,000"
+   ]
+  },
+  {
+   "topic": "Emergency Paid Sick Leave reimbursement",
+   "what_was_recorded": "The town received a state reimbursement for Emergency Paid Sick Leave.",
+   "quote": "the town has received $68,000 from the state in reimbursement for emergency paid sick leave",
+   "figures_as_printed": [
+    "$68,000"
+   ]
+  },
+  {
+   "topic": "High school score board grant",
+   "what_was_recorded": "The town received a grant for the high school score board.",
+   "quote": "the town has received a $18,000 grant for the high school score board",
+   "figures_as_printed": [
+    "$18,000"
+   ]
+  },
+  {
+   "topic": "Winter Recovery Assistance Program grant",
+   "what_was_recorded": "A grant was received, to be spent on roadways and sidewalks by June 2023.",
+   "quote": "winter recovery assistance program grant in the amount of $262,678, which is to be spent on roadways and sidewalks by june 2023",
+   "figures_as_printed": [
+    "$262,678"
+   ]
+  },
+  {
+   "topic": "Flat Hill Rd Culvert federal funding",
+   "what_was_recorded": "The town will not receive federal funding toward the Flat Hill Rd Culvert project; no figure printed.",
+   "quote": "the town will not receive federal funding toward the flat hill rd culvert project, according to ms. lemieux.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY23 Capital Plan cost",
+   "what_was_recorded": "Chair said the FY23 Capital Plan is the most expensive capital plan to date; no figure printed.",
+   "quote": "the fy23 capital plan is the most expensive capital plan to date",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital project estimates",
+   "what_was_recorded": "Members said capital projects were inadequately scoped and cost estimates were inaccurate; no figure printed.",
+   "quote": "projects on the plan were inadequately scoped, and that estimates were inaccurate",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Chapter 70 and education spending",
+   "what_was_recorded": "Committee said the Chapter 70 discussion showed how much more Lunenburg spends on education than municipal peers; no figure printed.",
+   "quote": "how much more money lunenburg spends on education in general",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Beardmore",
+   "stated_role": "Chairperson",
+   "topic": "reappointment announcement",
+   "quote": "mr. beardmore informed the board and the audience that he will seek reappointment to his seat on the finance committee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 p.m.; Open Meeting Law statement read",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "Memorial Day Ceremony announced",
+   "quote": "mr. beardmore announced the memorial day ceremony to be held at veterans memorial park on memorial day, may 30, 2022 at 10:00 a.m.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public Comment (chair reappointment)",
+   "resolution": "chair announced he will seek reappointment",
+   "quote": "mr. beardmore informed the board and the audience that he will seek reappointment to his seat on the finance committee.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "members asked to propose summer topics and convening plan",
+   "quote": "mr. beardmore asked members to think about topics for discussion and how the committee should convene over the summer.",
+   "tags": [
+    "chair report"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "reported grants, reimbursements and project status; no vote",
+   "quote": "ms. lemieux reported that the green communities grant for $187,000 has been submitted",
+   "tags": [
+    "grants",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Town Meeting Review",
+   "resolution": "discussed Articles 6 and 19; Salary Administration Plan article needed more time; favored electronic voting",
+   "quote": "the salary administration plan article needed more time before it was presented at town meeting",
+   "tags": [
+    "town meeting",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Review of FY22 Goals and Procedures",
+   "resolution": "workshops to be held over the summer for FY23 goals",
+   "quote": "the committee agreed to hold workshops over the summer to develop their goals and procedures for fy23.",
+   "tags": [
+    "goals",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "Topics and Goals for Summer",
+   "resolution": "four summer topics listed",
+   "quote": "role of finance committee in capital planning process",
+   "tags": [
+    "summer agenda"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved 4-0-1",
+   "quote": "mr. menard motioned to approve the minutes from the march 31, april 14, and april 28, 2022 meetings. mr. watters seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "members updated each other on liaison assignments; no action",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "quote": "12. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "Primary School and Turkey Hill building concern raised",
+   "quote": "mr. passios expressed his concern over the primary school and turkey hill elementary school",
+   "tags": [
+    "school buildings"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "June 9 remote; June 23 maybe",
+   "quote": "next meetings: june 9 -remote, june 23 (maybe)",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:44 p.m., passed unanimously",
+   "quote": "mr. passios motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 6 (Capital Plan), Town Meeting warrant",
+   "where": "text",
+   "quote": "the way article 6 (capital plan) and article 19 (30 school st) were decided"
+  },
+  {
+   "name": "Article 19 (30 School St), Town Meeting warrant",
+   "where": "text",
+   "quote": "on article 19, concerning 30 school st., mr. beardmore pointed out that with the article's amendment"
+  },
+  {
+   "name": "Salary Administration Plan article",
+   "where": "text",
+   "quote": "the salary administration plan article needed more time before it was presented at town meeting"
+  },
+  {
+   "name": "FY23 Capital Plan",
+   "where": "text",
+   "quote": "the fy23 capital plan is the most expensive capital plan to date"
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "mr. passios added the town charter, m.g.l.s, and the town's fiscal policies are inconsistent in regard to the capital plan."
+  },
+  {
+   "name": "M.G.L.s (Massachusetts General Laws)",
+   "where": "text",
+   "quote": "mr. passios added the town charter, m.g.l.s, and the town's fiscal policies are inconsistent in regard to the capital plan."
+  },
+  {
+   "name": "Town fiscal policies",
+   "where": "text",
+   "quote": "mr. passios added the town charter, m.g.l.s, and the town's fiscal policies are inconsistent in regard to the capital plan."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "capital planning",
+  "town meeting review",
+  "grants",
+  "FY23 budget",
+  "Chapter 70",
+  "Monty Tech",
+  "remote meeting",
+  "summer workshops",
+  "minutes approval",
+  "school buildings"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

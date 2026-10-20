@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-08-18",
  "docid": "2397",
@@ -12,23 +12,255 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the July 28, 2022 meeting as amended",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Simeone",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the July 28, 2022 meeting as amended",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Jay Simeone",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. beardmore motioned to approve the minutes from the july 28, 2022 meeting as amended, mr. simeone seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Gray",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Tom Gray",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. menard motioned to adjourn, mr. gray seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0857901
+ "note": "Only two votes are recorded, both procedural (approve minutes, adjourn); the bylaw and ARPA items were discussed with no motion. No dollar figure is printed anywhere in these minutes, so budget_items carry no figures. The transfer amounts are not printed. Public comment was 'none' both times. The footer says these minutes were approved at the August 25, 2022 meeting. The adjournment time is printed as '819 p.m.', copied as printed. No list of documents is printed; the two documents named are referenced only in the discussion.",
+ "cost_usd": 0.016479880000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, tom gray, jay simeone, peter beardmore"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson (guest)",
+   "status": "present",
+   "quote": "guests: school committee chairperson carol archambault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee deferred the FY22 end-of-year departmental transfers to its next meeting so the Town Manager or Finance Director could be present.",
+   "quote": "the committee decided to wait until their next meeting to discuss the transfers while the town manager or finance director was present."
+  },
+  {
+   "decision": "New Finance Committee member orientation and onboarding was tabled until the August 25, 2022 meeting.",
+   "quote": "new finance committee member orientation and onboarding: tabled until august 25, 2022 meeting."
+  },
+  {
+   "decision": "Committee agreed it would prefer to know how much the town could afford to spend on upcoming projects before choosing methods to meet the town's goals.",
+   "quote": "the committee agreed they'd prefer to know the amount of money the town could afford to spend on upcoming projects"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY22 end-of-year departmental budget transfers",
+   "what_was_recorded": "FY22 budget transfers were presented for approval and deferred to the next meeting; no amounts are printed.",
+   "figures_as_printed": [],
+   "quote": "mr. watters had fy22 budget transfers to be approved."
+  },
+  {
+   "topic": "ARPA funding",
+   "what_was_recorded": "The Select Board invited the Finance Committee to a September 20, 2022 meeting to discuss ARPA funding; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the select board has invited the finance committee to a meeting to discuss arpa funding"
+  },
+  {
+   "topic": "Debt limit and upcoming building projects",
+   "what_was_recorded": "The Select Board's concern about the debt limit for upcoming building projects was reported; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "is concerned about the debt limit regarding upcoming building projects"
+  },
+  {
+   "topic": "Capital plan appropriation bylaw",
+   "what_was_recorded": "A proposed bylaw on Town Meeting's power to amend capital appropriations was discussed, with a suggestion to cap Town Meeting recommendations at the original capital plan amount; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. watters suggested adding that recommendations on the capital plan at town meeting cannot exceed the original amount of the capital plan."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY22 end-of-year departmental budget transfers",
+   "amount_as_printed": "",
+   "outcome": "deferred to the next meeting",
+   "quote": "the committee decided to wait until their next meeting to discuss the transfers while the town manager or finance director was present."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:01 p.m.",
+   "quote": "mr. watters called the meeting to order at 7:01 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "quote": "4. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "reported Special Town Meeting dates, warrant window, and Select Board ARPA invitation; Select Board fiscal policy concern discussed; committee wants borrowing capacity figures",
+   "quote": "mr. watters informed the committee that special town meeting is scheduled for",
+   "tags": [
+    "town meeting",
+    "ARPA",
+    "debt",
+    "fiscal policy"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "none",
+   "quote": "6. town manager/finance director report: none",
+   "tags": [
+    "town manager"
+   ]
+  },
+  {
+   "topic": "End of Year Departmental Transfers",
+   "resolution": "deferred to next meeting",
+   "quote": "end of year departmental transfers: mr. watters had fy22 budget transfers to be approved.",
+   "tags": [
+    "budget transfers",
+    "FY22"
+   ]
+  },
+  {
+   "topic": "New Member Orientation and Onboarding",
+   "resolution": "tabled to August 25, 2022",
+   "quote": "new finance committee member orientation and onboarding: tabled until august 25, 2022 meeting.",
+   "tags": [
+    "onboarding"
+   ]
+  },
+  {
+   "topic": "Bylaw Proposal: Amending Capital Plan and Monetary Appropriation",
+   "resolution": "discussed; wording suggested; no vote recorded",
+   "quote": "bylaw proposal -amending capital plan and monetary appropriation: mr. beardmore heard",
+   "tags": [
+    "bylaw",
+    "capital plan",
+    "town meeting",
+    "Select Board",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved as amended",
+   "quote": "mr. beardmore motioned to approve the minutes from the july 28, 2022 meeting as amended",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reports given; no action",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "none",
+   "quote": "12. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "listed for next agenda",
+   "quote": "items for future meetings fy22 budget transfers, new member onboarding orientation, fiscal policy",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled",
+   "quote": "next meetings august 25, 2022, september 8, 2022",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned; time printed as 819 p.m.",
+   "quote": "adjourn at 819 p.m. mr. menard motioned to adjourn, mr. gray seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Peter Beardmore to the Town Manager about the bylaw proposal (undated in minutes; discussed at the Select Board's August 2, 2022 meeting)",
+   "where": "text",
+   "quote": "mr. beardmore heard the select board discuss an email he sent to the town manager about the bylaw proposal"
+  },
+  {
+   "name": "Section 81-11 Amending Financial Appropriation Articles (proposed bylaw text, quoted)",
+   "where": "text",
+   "quote": "section 81-11 amending financial appropriation articles for capital appropriation"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "FY22 budget transfers",
+  "ARPA funding",
+  "capital plan bylaw",
+  "town meeting",
+  "debt limit",
+  "fiscal policy",
+  "Select Board relations",
+  "onboarding",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

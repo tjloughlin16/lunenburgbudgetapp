@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2022-03-21",
  "docid": "1069",
@@ -12,64 +12,197 @@
  },
  "votes": [
   {
-   "motion": "Approve the February 14, 2022 minutes",
+   "motion": "Approve the minutes of February 14, 2022.",
    "moved_by": "Fortin",
    "seconded_by": "Watters",
-   "outcome": "All in favor",
+   "outcome": "passed",
    "procedural": true,
    "quote": "on motion by fortin and second by watters, the above minutes were approved. all in favor."
   },
   {
-   "motion": "Approve the requested variances for the septic system at Marshall Park (100 Chestnut Street)",
+   "motion": "Approve the requested variances for the replacement septic system at Marshall Park (100 Chestnut Street): offset to wetlands from 100 feet to 58 feet, groundwater offset from 4 feet to 3 feet, less than 4 feet of pervious material to 2.33 feet, and inlet and outlet tees less than 12 inches to 4 inches.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
-   "outcome": "All in favor",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by watters, the board unanimously approved the requested variances. all in favor."
+   "quote": "after discussion and on motion by jewell and second by watters, the board unanimously approved the requested variances. all in favor."
   },
   {
-   "motion": "Approve the extension for the Restaurant Managers Certification",
+   "motion": "Approve the extension requested by Stella's (the minutes do not say what the extension covers).",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
-   "outcome": "All in favor",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by watters , the board voted to approve the extension. all in favor."
+   "quote": "the board voted to approve the extension. all in favor."
   },
   {
-   "motion": "Approve the one year extension for the septic permit at 1 Valley Road until February 14, 2023",
+   "motion": "Approve a one year extension of the septic permit at 1 Valley Road until February 14, 2023.",
    "moved_by": "Watters",
    "seconded_by": "Fortin",
-   "outcome": "All in favor",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by watters and second by fortin, the board voted to approve the request for a one year extension until february 14, 2023. all in favor."
+   "quote": "the board voted to approve the request for a one year extension until february 14, 2023."
   },
   {
-   "motion": "Pass the Title 5 report for 1432 Lancaster Avenue with conditions: yearly well water testing (coliform bacteria, nitrates, nitrites, ammonia) and making the septic tank under the deck accessible",
+   "motion": "Pass the Title 5 report for 1432 Lancaster Avenue on the condition that the well water be tested yearly (coliform bacteria, nitrates, nitrites and ammonia) and that the septic tank under the deck be made accessible.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
-   "outcome": "All in favor",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the boar d voted to pass the title 5 report with the conditio n that the well water be tested yearly. well testing to include, but not be limited to, coliform bacteri a, nitrates, nitrites and ammonia . in addition, the septic tank that is under the deck must be ma de accessible. all in favor."
+   "quote": "after much discussion and on motion by jewell and second by fortin, the boar d voted to pass the title 5 report"
   },
   {
-   "motion": "Extend the septic permits for 441 Country Road and 205 Sunset Lane for one year until March 21, 2023",
+   "motion": "Extend the septic permits for 441 Country Road and 205 Sunset Lane for one year from the date of the meeting, until March 21, 2023.",
    "moved_by": "Watters",
    "seconded_by": "Fortin",
-   "outcome": "All in favor",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion by watters and second by fortin, the board voted to approve the request for a one year extension until february 14, 2023. all in favor. 1432 lancaster a",
-   "quote_taken_from_text": true
+   "quote": "after discussion and motion by watters and second by fortin, the above septic permits were extended for one year"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
-   "outcome": "all in favor",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "on motion fortin and seconded by jewell, the meeting was adjourned at 8:35 pm, all in favor."
+   "quote": "and seconded by jewell, the meeting was adjourned at 8:35 pm, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded with verbatim quotes. The Title 5 report vote quote exceeds 200 characters due to detailed conditions stated in the motion.",
- "cost_usd": 0.1280675
+ "note": "Minutes record votes as \"All in favor\" or \"unanimously approved\" with no roll-call tally, so outcomes are recorded as passed rather than as counts. No public comment period is printed; the people listed are presenters and an agent who appeared before the board. No dollar figures appear. The Stella's extension is recorded without saying what it extends. Some words in the source are split by odd spacing (\"Boar d\", \"conditio n\"); quotes keep the printed text.",
+ "cost_usd": 0.01438578,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and evan watters."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and evan watters."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "member (listed under Members Present)",
+   "status": "present",
+   "quote": "george emond, perry jewell, paul fortin and evan watters."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the Lunenburg Parks Commission",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the lunenburg parks commission."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent jim garreffi stated that he doesn't have any issues with the requests"
+  },
+  {
+   "name": "Allan Souza",
+   "role": "owner",
+   "status": "present",
+   "quote": "the owner, allan souza met with the board."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approved (February 14, 2022)",
+   "resolution": "approved",
+   "quote": "on motion by fortin and second by watters, the above minutes were approved.",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "100 Chestnut Street (Marshall Park septic replacement)",
+   "resolution": "variances approved",
+   "quote": "chris mackenzie met with the board on behalf of the lunenburg parks commission.",
+   "tags": [
+    "septic",
+    "variance",
+    "parks",
+    "title 5"
+   ]
+  },
+  {
+   "topic": "Stella's (restaurant manager certification)",
+   "resolution": "extension approved",
+   "quote": "the owner, allan souza met with the board.",
+   "tags": [
+    "restaurant",
+    "certification"
+   ]
+  },
+  {
+   "topic": "1 Valley Road (septic permit extension)",
+   "resolution": "one-year extension approved",
+   "quote": "the septic permit for this property expired in april of 2021, during covid.",
+   "tags": [
+    "septic",
+    "permit",
+    "covid"
+   ]
+  },
+  {
+   "topic": "1432 Lancaster Avenue (Title 5 report)",
+   "resolution": "Title 5 report passed with well-testing condition",
+   "quote": "this is a continuation from board of health meeting on march 7, 2021.",
+   "tags": [
+    "title 5",
+    "well water",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Permit extensions: 441 Country Road and 205 Sunset Lane",
+   "resolution": "extended to March 21, 2023",
+   "quote": "after discussion and motion by watters and second by fortin, the above septic permits were extended for one year",
+   "tags": [
+    "septic",
+    "permit",
+    "covid",
+    "emergency legislation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Title 5 report for 1432 Lancaster Avenue",
+   "where": "text",
+   "quote": "the board is now in receipt of the title 5 report for this property."
+  }
+ ],
+ "tags": [
+  "board of health",
+  "septic",
+  "title 5",
+  "variances",
+  "permit extensions",
+  "parks",
+  "restaurant certification",
+  "well water"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

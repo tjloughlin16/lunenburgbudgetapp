@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-10-28",
  "docid": "2097",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the October 14, 2021 meeting",
+   "motion": "Accept the minutes of the October 14, 2021 meeting.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Menard",
    "outcome": "passed 6-0-1",
@@ -20,7 +20,7 @@
    "quote": "mr. watters motioned to accept the minutes from the october 14, 2021 meeting, mr. menard seconded. mr. passios abstained. motion carried: 6-0-1"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Passios",
    "outcome": "passed unanimously",
@@ -29,6 +29,294 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0811215
+ "note": "Two votes are recorded, both procedural (minutes approval 6-0-1 and adjournment, passed unanimously); the Chapter 70 presentation involved no motion. The guest list spells the Select Board member 'Michael-Ray Jeffreys' while item 7a prints 'Michael Ray Jeffreys'; recorded as printed in the guest list. Attendance for Finance Committee members is taken from the Present line only; no roll call is printed. The school committee's own proceedings (its adjournment at 8:25 p.m.) are not votes of this board. The minutes state no dollar figures for any decision.",
+ "cost_usd": 0.01687938,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson (Finance Committee)",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, jay simeone, tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee member (listed under Present)",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, jay simeone, tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member (listed under Present)",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, jay simeone, tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member (listed under Present)",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, jay simeone, tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Finance Committee member (listed under Present)",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, jay simeone, tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Finance Committee member (listed under Present)",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, jay simeone, tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Committee member (listed under Present)",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, jay simeone, tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Tracy O’Connell Novick",
+   "role": "Massachusetts Association of School Committees Field Director",
+   "status": "present",
+   "quote": "guests: massachusetts association of school committees field director tracy o'connell novick, town"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux, lunenburg public schools superintendent dr. kate burnham, school committee chairperson carol archambault"
+  },
+  {
+   "name": "Kate Burnham",
+   "role": "Lunenburg Public Schools Superintendent",
+   "status": "present",
+   "quote": "town manager heather lemieux, lunenburg public schools superintendent dr. kate burnham, school committee chairperson carol archambault"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "present",
+   "quote": "town manager heather lemieux, lunenburg public schools superintendent dr. kate burnham, school committee chairperson carol archambault"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "school committee member brian lehtinen, school committee member sophie shapiro via zoom"
+  },
+  {
+   "name": "Sophie Shapiro",
+   "role": "School Committee member",
+   "status": "remote",
+   "quote": "school committee member sophie shapiro via zoom, lunenburg public schools business/hr manager michael cassidy"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Lunenburg Public Schools Business/HR Manager",
+   "status": "present",
+   "quote": "lunenburg public schools business/hr manager michael cassidy, town accountant karen brochu"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "lunenburg public schools business/hr manager michael cassidy, town accountant karen brochu"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board Member",
+   "status": "remote",
+   "quote": "select board member lou franco via zoom, select board member michael-ray jeffreys via zoom"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Select Board member",
+   "status": "remote",
+   "quote": "select board member michael-ray jeffreys via zoom"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Resident",
+   "status": "remote",
+   "quote": "resident dave rodgers called in and said he found the chapter 70 talk enlightening"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to use the actual article numbers listed in the warrant, not the letters used in the warrant's draft form.",
+   "quote": "the committee agreed to use the actual article numbers listed in the warrant as opposed to the letters they used when the warrant was in draft form."
+  },
+  {
+   "decision": "Topics set for the next regular meeting (Dec. 9, 2021): the Green Communities Committee street light project, follow-up on Chapter 70 with state representatives, and ARPA funds.",
+   "quote": "topics to discuss include the green communities committee street light project, follow up on chapter 70 discussion with state representatives, and arpa funds."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State share of foundation budget and town contribution, FY22",
+   "what_was_recorded": "Ms. Novick reported the state's FY22 determination of the town's required contribution and the Chapter 70 amount.",
+   "figures_as_printed": [
+    "$10,908,378",
+    "$7,500,000"
+   ],
+   "quote": "the state determined the town's contribution to be $10,908,378, with chapter 70 funds coming in at $7,500,000"
+  },
+  {
+   "topic": "Municipal and Commonwealth shares of the foundation budget",
+   "what_was_recorded": "Ms. Novick explained that municipalities fund 59 percent of the foundation budget and the Commonwealth 41 percent.",
+   "figures_as_printed": [
+    "59 percent",
+    "41 percent"
+   ],
+   "quote": "municipalities are obligated to fund 59 percent of that foundation budget, while the commonwealth provides 41 percent."
+  },
+  {
+   "topic": "School budget growth versus Chapter 70 funds",
+   "what_was_recorded": "Mr. Beardmore said the committee noticed school budgets rising while Chapter 70 funds have not, and the meeting aimed to find routes to improve the town's standing.",
+   "figures_as_printed": [],
+   "quote": "the finance committee has noticed that as the school's budget has risen, chapter 70 funds have not"
+  },
+  {
+   "topic": "Charter school reimbursement changes",
+   "what_was_recorded": "Ms. Archambault asked about charter school reimbursement changes; Ms. Novick said they would be addressed when the Student Opportunity Act takes effect. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "ms. archambault asked about charter school reimbursement changes."
+  },
+  {
+   "topic": "Transportation reimbursement through the circuit breaker",
+   "what_was_recorded": "Ms. Novick said the state plans to eventually reimburse all transportation funds, returned in phases. No figures printed.",
+   "figures_as_printed": [],
+   "quote": "the state plans to eventually reimburse all funds for transportation, but the amount would come back in phases."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "Resident",
+   "topic": "Chapter 70 presentation; state treatment of municipalities",
+   "quote": "resident dave rodgers called in and said he found the chapter 70 talk enlightening, and opined that the cards are stacked against lunenburg because the state house does not care about municipalities beyond route 128."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, joint meeting with School Committee",
+   "resolution": "joint meeting held",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement",
+   "tags": [
+    "joint meeting",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Announcements: purpose of joint meeting",
+   "resolution": "no action",
+   "quote": "this joint meeting of the school committee and finance committee was to provide an opportunity for both committees to learn more",
+   "tags": [
+    "Chapter 70",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (first)",
+   "resolution": "no action",
+   "quote": "4. public comment: none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chapter 70 presentation and discussion",
+   "resolution": "presented and discussed; no motion",
+   "quote": "ms. archambault introduced ms. novick who complimented both committees for getting together to learn more and discuss chapter 70 funding.",
+   "tags": [
+    "Chapter 70",
+    "state aid",
+    "circuit breaker",
+    "Student Opportunity Act",
+    "enrollment"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "no action",
+   "quote": "resident dave rodgers called in and said he found the chapter 70 talk enlightening",
+   "tags": [
+    "public comment",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Public hearing conduct, Nov. 4",
+   "resolution": "agreed on article numbering",
+   "quote": "the committee agreed to use the actual article numbers listed in the warrant as opposed to the letters they used when the warrant was in draft form.",
+   "tags": [
+    "public hearing",
+    "warrant",
+    "Article 7",
+    "Article 8"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting, Nov. 16",
+   "resolution": "no action",
+   "quote": "ms. lemieux had no new items to discuss.",
+   "tags": [
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Minutes of October 14, 2021",
+   "resolution": "approved 6-0-1",
+   "quote": "mr. watters motioned to accept the minutes from the october 14, 2021 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports and future agenda items",
+   "resolution": "topics listed for next meeting",
+   "quote": "topics to discuss include the green communities committee street light project, follow up on chapter 70 discussion with state representatives, and arpa funds.",
+   "tags": [
+    "ARPA",
+    "Green Communities",
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned unanimously",
+   "quote": "mr. menard motioned to adjourn, mr. passios seconded. on vote, motion passes unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant (Articles 3, 7 and 8, draft and final article numbering)",
+   "where": "text",
+   "quote": "the actual article numbers listed in the warrant as opposed to the letters they used when the warrant was in draft form."
+  }
+ ],
+ "tags": [
+  "Chapter 70",
+  "school funding",
+  "joint meeting",
+  "school committee",
+  "circuit breaker",
+  "Student Opportunity Act",
+  "state aid",
+  "Special Town Meeting",
+  "public hearing",
+  "ARPA",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

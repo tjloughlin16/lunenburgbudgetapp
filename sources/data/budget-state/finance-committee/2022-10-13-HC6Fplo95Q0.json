@@ -1,0 +1,56 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2022-10-13",
+ "source": {
+  "sha256": "21dad2caf3453b79c2329dfe5b540a1c3ca94a0ad98e3eba980fbd40017f14a0",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2022-10-13-HC6Fplo95Q0.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "261 664.92",
+    "fiscal_year": 2023,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "The finance director estimated this much is available to appropriate at the special town meeting, subject to final new growth.",
+    "status": "announced",
+    "t": 783,
+    "who": "the finance director"
+   },
+   {
+    "amount_as_heard": "77 500",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Known FY2023 budget adjustments total roughly this amount, to be taken up at town meeting.",
+    "status": "announced",
+    "t": 503,
+    "who": "the finance director"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "annual town meeting date and budget accuracy",
+    "condition": "if Article 15 passes",
+    "fiscal_year": 2024,
+    "prediction": "Moving town meeting to April would compress budget work and leave state aid unknown, making the budget less accurate.",
+    "scope": "town",
+    "t": 4335,
+    "who": "the finance director and members"
+   }
+  ]
+ },
+ "video_id": "HC6Fplo95Q0",
+ "video_url": "https://www.youtube.com/watch?v=HC6Fplo95Q0",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-16T01:08:15Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

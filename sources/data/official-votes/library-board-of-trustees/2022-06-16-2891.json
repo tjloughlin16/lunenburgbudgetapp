@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2022-06-16",
  "docid": "2891",
@@ -12,48 +12,342 @@
  },
  "votes": [
   {
-   "motion": "Keep the current slate of officers and add Donna as Treasurer",
+   "motion": "Keep the current slate of officers and add Donna as Treasurer.",
    "moved_by": "Maia",
    "seconded_by": "Kate",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "maia made a motion, seconded by kate, to keep the current slate of officers and add donna as treasurer. the motion passed unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "maia made a motion, seconded by kate, to keep the current slate of officers and add donna as treasurer."
   },
   {
-   "motion": "Accept the subcommittees as amended",
+   "motion": "Accept the Board of Trustees subcommittees as amended.",
    "moved_by": "Kate",
    "seconded_by": "Laura",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "kate made a motion, seconded by laura, to accept these subcommittees as amended. the motion passed unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "kate made a motion, seconded by laura, to accept these subcommittees as amended."
   },
   {
-   "motion": "Accept the minutes of May 19, 2022 as amended",
+   "motion": "Accept the minutes of May 19, 2022 as amended.",
    "moved_by": "Dick",
    "seconded_by": "Maia",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dick made a motion to accept the minutes of may 19, 2022 as amended. seconded by maia. the motion passed unanimously."
+   "quote": "dick made a motion to accept the minutes of may 19, 2022 as amended."
   },
   {
-   "motion": "Table the by-laws review discussion until the September meeting",
+   "motion": "Table the By-Laws Review discussion until the September meeting.",
    "moved_by": "Maia",
    "seconded_by": "Dick",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "maia made a motion to table this until our september meeting, seconded by dick. the motion pa ssed unanimously",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "maia made a motion to table this until our september meeting, seconded by dick."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Kate",
    "seconded_by": "Dick",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by kate by seconded by dick. meeting was adjourned at 9:17 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09193710000000001
+ "note": "Text is complete for pages 1-2; pages 3-11 are blank in the extract, so nothing after the Attached Documents list is read. No roll call is printed; attendance is taken from the Attending line and no absences are stated. The adjournment motion has no recorded result. Public comment was 'No public comment' with no speaker named. Trust Fund and investment items discuss money but print no dollar figures.",
+ "cost_usd": 0.01781838,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "muir haman - director lpl"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "laura boussom, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "laura boussom, maia wentrup"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "BOS",
+   "status": "present",
+   "quote": "michael-ray expressed some concern about the language in the legislative change for the library trust funds."
+  },
+  {
+   "name": "Nicole Groskreutz",
+   "role": "Edward Jones",
+   "status": "present",
+   "quote": "nicole groskreutz gave us a short introduction to edward jones and what they could do for us."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Strategic Plan Subcommittee was dropped as no longer needed.",
+   "quote": "the strategic plan subcommittee was dropped as it is no longer needed."
+  },
+  {
+   "decision": "The board agreed there was little to discuss on Trustee Handbook Chapter 11.",
+   "quote": "we agreed that there was really not much to discuss about this chapter."
+  },
+  {
+   "decision": "Michael-Ray will investigate the trust fund legislative language further and seek a side-agreement with the Town.",
+   "quote": "ray will investigate this further and hopefully come up with a side-agreement between the library trustees and the town of lunenburg"
+  },
+  {
+   "decision": "The Director will explore sign design ideas, and trustees were asked to bring ideas to the September meeting.",
+   "quote": "he said he would explore design ideas and asked that we bring ideas to our next meeting in september."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Investment advisory accounts (Edward Jones)",
+   "what_was_recorded": "Discussion of how the trust investments depend on the board's timelines and risk tolerance, and of monthly reviews; no figures printed.",
+   "quote": "our investments depend on the timelines and needs of the board and our risk tolerance.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fiscal year spending position",
+   "what_was_recorded": "Utility charges were 83% and 84% expended and expected to reach close to 100% by year end.",
+   "quote": "utility charges are 83% and 84% respectively but will be expended close to 100% by the end of the fiscal year.",
+   "figures_as_printed": [
+    "83%",
+    "84%",
+    "100%"
+   ]
+  },
+  {
+   "topic": "Office supplies spending",
+   "what_was_recorded": "Office supplies were at 49% of budget, which the Director said is conservative spending made up at year end.",
+   "quote": "kate asked why office supplies are so low (49%).",
+   "figures_as_printed": [
+    "49%"
+   ]
+  },
+  {
+   "topic": "Excess salary funds",
+   "what_was_recorded": "Excess salary funds will be redirected to office supplies and library materials; no dollar figure printed.",
+   "quote": "excess salary funds will be redirected to office supplies and library materials.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Staff bonuses",
+   "what_was_recorded": "A trustee asked whether staff could receive bonuses; the Director said there is no mechanism for it.",
+   "quote": "maia asked if the staff could get bonuses.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town IT budget for equipment",
+   "what_was_recorded": "Discussion of whether a broken printer falls under the town IT budget; the Director said unexpected items are hard to fund from it.",
+   "quote": "harry asked if a printer breaks isn't that part of the town it budget?",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Friends book sale proceeds",
+   "what_was_recorded": "The Friends' book sale raised about $1500, including $300 from the Friday night pre-sale for members.",
+   "quote": "the book sale raised about $1500, with $300 raised on the friday night pre -sale for members.",
+   "figures_as_printed": [
+    "$1500",
+    "$300"
+   ]
+  },
+  {
+   "topic": "Spring plant sale 2023 funds",
+   "what_was_recorded": "Money for the Spring 2023 plant sale has been allocated; no figure printed.",
+   "quote": "the money for the spring plant sale in 2023 has been allocated.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library trust funds and town treasurer control",
+   "what_was_recorded": "Concern that the legislative change may leave the town treasurer in control of trust funds and whether the trustees can direct investment and reinvestment.",
+   "quote": "this brings up the question of whether we can direct the investment of the funds and will we have the option to reinvest the funds",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Excess salary funds redirected to office supplies and library materials.",
+   "amount_as_printed": "not stated",
+   "outcome": "stated as planned by the Director; no vote recorded",
+   "quote": "excess salary funds will be redirected to office supplies and library materials."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Meet and Greet with Edward Jones",
+   "resolution": "no action; presentation",
+   "quote": "nicole groskreutz gave us a short introduction to edward jones and what they could do for us.",
+   "tags": [
+    "investments",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Board of Trustees Reorganization",
+   "resolution": "approved: officers kept, Donna added as Treasurer; subcommittees accepted as amended",
+   "quote": "maia made a motion, seconded by kate, to keep the current slate of officers and add donna as treasurer.",
+   "tags": [
+    "officers",
+    "subcommittees"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended (May 19, 2022)",
+   "quote": "dick made a motion to accept the minutes of may 19, 2022 as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "quote": "we are 98% of the way through the fiscal year.",
+   "tags": [
+    "budget",
+    "staffing",
+    "website"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "no action; agreed little to discuss",
+   "quote": "we agreed that there was really not much to discuss about this chapter.",
+   "tags": [
+    "handbook"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "continued; Michael-Ray to investigate",
+   "quote": "michael-ray expressed some concern about the language in the legislative change for the library trust funds.",
+   "tags": [
+    "trust funds",
+    "legal"
+   ]
+  },
+  {
+   "topic": "By-Laws Review",
+   "resolution": "tabled to September meeting",
+   "quote": "maia made a motion to table this until our september meeting, seconded by dick.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "the book sale raised about $1500, with $300 raised on the friday night pre -sale for members.",
+   "tags": [
+    "Friends of the Library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action; sign mock-up to return in September",
+   "quote": "muir showed us a quick mock-up of a possible new sign for the building",
+   "tags": [
+    "signage",
+    "building"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:17 p.m.",
+   "quote": "motion to adjourn by kate by seconded by dick. meeting was adjourned at 9:17 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "June 16, 2022 Agenda",
+   "where": "list",
+   "quote": "attached documents o june 16, 2022 agenda o june 2022 director's report o june 2022 adult services report"
+  },
+  {
+   "name": "June 2022 Director’s Report",
+   "where": "list",
+   "quote": "attached documents o june 16, 2022 agenda o june 2022 director's report o june 2022 adult services report"
+  },
+  {
+   "name": "June 2022 Adult Services Report",
+   "where": "list",
+   "quote": "attached documents o june 16, 2022 agenda o june 2022 director's report o june 2022 adult services report"
+  },
+  {
+   "name": "June 2022 Teen Services Report",
+   "where": "list",
+   "quote": "june 2022 teen services report o june 2022 youth services report o lpl bot subcommittees 2022"
+  },
+  {
+   "name": "June 2022 Youth Services Report",
+   "where": "list",
+   "quote": "june 2022 teen services report o june 2022 youth services report o lpl bot subcommittees 2022"
+  },
+  {
+   "name": "LPL BOT Subcommittees 2022",
+   "where": "list",
+   "quote": "june 2022 teen services report o june 2022 youth services report o lpl bot subcommittees 2022"
+  },
+  {
+   "name": "Trustee Handbook, Chapter 11: Beyond Your Library: Resources and Support",
+   "where": "text",
+   "quote": "chapter 11: beyond your library: resources and support."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "investments",
+  "trust funds",
+  "budget",
+  "officers",
+  "subcommittees",
+  "by-laws",
+  "Friends of the Library",
+  "signage",
+  "staffing",
+  "director's report"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

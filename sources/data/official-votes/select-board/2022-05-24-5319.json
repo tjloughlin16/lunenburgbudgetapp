@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-05-24",
  "docid": "5319",
@@ -12,71 +12,275 @@
  },
  "votes": [
   {
-   "motion": "Approve exemption under MGL c. 268A, § 20(f) to allow firefighters to serve as civilian traffic members",
+   "motion": "Approve the exemption under MGL c. 268A, §20(f) to allow Lunenburg firefighters to serve as Civilian Traffic members.",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: l. franco 2nd: m. jeffreys to approve the exemption of c. 268a, §20(f) to allow firefighters to serve as civilian traffic members vote: all in favor"
+   "procedural": false,
+   "quote": "motion: l. franco 2nd: m. jeffreys to approve the exemption of c. 268a"
   },
   {
-   "motion": "Ratify the appointments of Firefighters Christos Lekaditis, James Ricci, Melissa Buchanan, and Olivia Hayes as Civilian Traffic members",
+   "motion": "Ratify the appointments of Firefighters Christos Lekaditis, James Ricci, Melissa Buchanan, and Olivia Hayes as Civilian Traffic members.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2\"d: l. franco to ratify the appointments of firefighters christos lekaditis, james ricci, melissa buchanan, and olivia hayes as civilian traffic members vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointments of firefighters christos lekaditis, james ricci, melissa buchanan, and olivia hayes as civilian traffic members"
   },
   {
-   "motion": "Appoint Paul Sarapsas to the Public Access Cable Committee with a term to expire June 30, 2023",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Appoint Paul Sarapsas to the Public Access Cable Committee with a term to expire June 30, 2023.",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "to appoint paul sarapsas to the public access cable committee with a term to expire june 30, 2023 vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint paul sarapsas to the public access cable committee with a term to expire june 30,"
   },
   {
-   "motion": "Accept the composite Town Manager evaluation as a public record",
+   "motion": "Accept the composite Town Manager evaluation as a public record.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2'd: l. franco to accept the composite town manager evaluation as a public record vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye, ms. sroka-abstain"
+   "procedural": false,
+   "quote": "to accept the composite town manager evaluation as a public record vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye"
   },
   {
-   "motion": "Nominate Mr. Jeffreys as Chairman",
+   "motion": "Nominate Mr. Jeffreys as Chairman.",
    "moved_by": "T Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "motion: t alonzo to nominate mr. jeffreys as chairman 2'': l. franco vote: 4 in favor; 1 abstained (jeffreys)"
+   "outcome": "passed, 4 in favor, 1 abstained",
+   "procedural": false,
+   "quote": "to nominate mr. jeffreys as chairman"
   },
   {
-   "motion": "Nominate Mr. Alonzo as Vice Chairman",
+   "motion": "Nominate Mr. Alonzo as Vice Chairman.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "motion: l. franco to nominate mr. alonzo as vice chairman 2': t. dwyer vote: 4 in favor; 1 abstained (alonzo)"
+   "outcome": "passed, 4 in favor, 1 abstained",
+   "procedural": false,
+   "quote": "to nominate mr. alonzo as vice chairman"
   },
   {
-   "motion": "Nominate Lou Franco as Clerk",
+   "motion": "Nominate Lou Franco as Clerk.",
    "moved_by": "T. Dwyer",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "motion: t. dwyer to nominate lou franco as clerk 2nd: t. alonzo vote: 4 in favor; 1 abstain (franco)"
+   "outcome": "passed, 4 in favor, 1 abstained",
+   "procedural": false,
+   "quote": "to nominate lou franco as clerk"
   },
   {
-   "motion": "Approve the minutes of April 12, 2022 as presented",
+   "motion": "Approve the minutes of April 12, 2022 as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed, 4 in favor, 1 abstain",
    "procedural": true,
-   "quote": "motion: t. alonzo 2'd: l. franco to approve the minutes of april 12, 2022 as presented vote: 4 in favor, 1 abstain (sroka)"
+   "quote": "to approve the minutes of april 12, 2022 as presented vote: 4 in favor, 1 abstain (sroka)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Extracted from OCR scan of Select Board minutes. All votes recorded as procedural matters (appointments, elections, administrative approvals, and approval of prior minutes). The document contains OCR artifacts in the \"seconded by\" notation (2\"d, 2'', 2') which have been preserved as they appear in the source.",
- "cost_usd": 0.1279715
+ "note": "Minutes are OCR text (macOS Vision) with garbled tokens (e.g. 2\"d, 2'd, Mr. Jeffieys); quotes avoid those passages. Unanimous motions are recorded only as 'All in Favor' or 'Vote: All in Favor', so no count is printed for them. The mover of the Sarapsas appointment is not printed. Under the PUBLIC COMMENT heading only Board members spoke; no members of the public are recorded. Warrant figure '$3031. 60' is printed with a space and is reproduced as printed. Adjournment at 8:06 PM is recorded with no motion or vote.",
+ "cost_usd": 0.02185028,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:01 p.m."
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "",
+   "status": "present",
+   "quote": "mr. franco reported the school committee on may 18"
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "mr. jeffreys read a prepared statement following the election:"
+  },
+  {
+   "name": "Mr. Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye, ms. sroka-abstain"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "ms. sroka thanked everyone for electing her and hoped she could contribute to the discussions and"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; paul sarapsas"
+  },
+  {
+   "name": "Paul Sarapsas",
+   "role": "",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; paul sarapsas"
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "PACC Chair",
+   "status": "remote",
+   "quote": "it was noted that pacc chair steve weaver sent a message via zoom that the committee was very"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee designees and liaison assignments were deferred: members were asked to send choices to the Chairman by email, with final decisions at the next meeting.",
+   "quote": "it was suggested for members to send their choices via email to the chairman. the final decisions will be made next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed one Accounts Payable warrant and three Payroll and payroll-deduction warrants, with the amounts printed.",
+   "figures_as_printed": [
+    "$876,803.74",
+    "$3031. 60",
+    "$999,464.02",
+    "$211,991.09"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $876,803.74; a payroll warrant in the amount of $3031. 60, a payroll warrant in the amount of $999,464.02 and a payroll deductions warrant"
+  },
+  {
+   "topic": "Senior tax relief program",
+   "what_was_recorded": "The Chair reported the senior tax relief group's work on eligibility and whether the abatement needs a cap; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "we want to make sure the right people benefit from the program and we have to determine if there is a cap on the amount abated."
+  },
+  {
+   "topic": "FY22 purchase orders and encumbrances",
+   "what_was_recorded": "The Finance Director will notify departments of the last date to open FY22 purchase orders and of outstanding invoices to be encumbered; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "departments will be notified shortly about the last date to open purchase orders"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "",
+   "topic": "prepared statement after the election",
+   "quote": "mr. jeffreys read a prepared statement following the election:"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "welcome"
+   ],
+   "quote": "chairman alonzo called the meeting to order at 7:01 p.m. and asked everyone to stand for the pledge of"
+  },
+  {
+   "topic": "Interviews, appointments and resignations",
+   "resolution": "approved exemption and appointments; resignations noted",
+   "tags": [
+    "appointments",
+    "firefighters",
+    "civilian traffic",
+    "public access committee"
+   ],
+   "quote": "mr. alonzo noted the resignation of ryan stober from the agricultural commission."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "tags": [
+    "vacancies",
+    "employment",
+    "department updates",
+    "announcements"
+   ],
+   "quote": "interested persons can find application forms on the town website and completed forms can be sent to the select"
+  },
+  {
+   "topic": "Old business: Town Manager evaluation",
+   "resolution": "composite accepted as public record, 4-0-1",
+   "tags": [
+    "town manager",
+    "evaluation"
+   ],
+   "quote": "last meeting mr. alonzo presented the draft composite of the ms. lemieux's performance evaluation."
+  },
+  {
+   "topic": "Current business: reorganization of the Select Board",
+   "resolution": "officers nominated; committee designees deferred to next meeting",
+   "tags": [
+    "reorganization",
+    "liaisons",
+    "committees"
+   ],
+   "quote": "after some discussion the following nominations were made."
+  },
+  {
+   "topic": "Approval of April 12 minutes",
+   "resolution": "approved, 4 in favor, 1 abstain",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes of april 12, 2022 as presented vote: 4 in favor, 1 abstain (sroka)"
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "tags": [
+    "warrants",
+    "payroll",
+    "accounts payable"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $876,803.74"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "tags": [
+    "committees",
+    "senior tax relief",
+    "trust funds"
+   ],
+   "quote": "mr. franco reported the school committee on may 18"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Police Chief memo to the Town Clerk requesting exemption for four firefighters as Civilian Traffic members (undated)",
+   "where": "list",
+   "quote": "in a memo to the town clerk:"
+  },
+  {
+   "name": "Town Manager performance evaluation composite (draft presented at the previous meeting)",
+   "where": "text",
+   "quote": "last meeting mr. alonzo presented the draft composite of the ms. lemieux's performance evaluation."
+  },
+  {
+   "name": "Select Board Representatives/Liaisons 2021-2022",
+   "where": "text",
+   "quote": "select board representatives/liaisons 2021-2022"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "reorganization",
+  "Town Manager evaluation",
+  "firefighters",
+  "civilian traffic details",
+  "public access committee",
+  "appointments",
+  "warrants",
+  "senior tax relief",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "in a memo to the town clerk:"
+ },
+ "dropped_unquoted_by_field": {}
 }

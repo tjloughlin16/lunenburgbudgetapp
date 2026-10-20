@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2022-04-21",
  "docid": "2917",
@@ -12,31 +12,281 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the March 17, 2022 meeting",
+   "motion": "Accept and approve the minutes of the March 17, 2022 meeting.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Catherine Clark",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "linda mcdonald made a motion to accept and approve the minutes of the march 17, 2022 meeting. catherine clark seconded, with all in favor the minutes were accepted and approved."
   },
   {
-   "motion": "Accept and approve the March 2022 financial report as presented",
+   "motion": "Accept and approve the March 2022 financial report as presented.",
    "moved_by": "Catherine Clark",
    "seconded_by": "Wayne Caron",
-   "outcome": "approved",
+   "outcome": "passed",
    "procedural": false,
    "quote": "catherine clark moved to accept and approve the march 2022 financial report as presented; wayne caron seconded and the march 2022 financial report was accepted with all in favor."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:35 p.m.",
    "moved_by": "Wayne Caron",
    "seconded_by": "Linda McDonald",
-   "outcome": "adjourned",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "wayne caron made a motion to adjourn the meeting at 2:35 p.m.; linda mcdonald seconded. with all in favor the meeting adjourned."
+   "quote": "wayne caron made a motion to adjourn the meeting at 2:35 p.m.; linda mcdonald seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07571950000000001
+ "note": "Minutes are a two-page text. Votes are recorded as 'all in favor' with no numeric count, so outcomes are 'passed'. The Gautie attendance is inferred only from the report heading; no role or status is printed. The minutes name no dollar amounts for the smoking area, the gazebo, or the change machine. The sewer/smoking-table relocation was an Executive Director action, not a board decision, so it is not listed as a decision.",
+ "cost_usd": 0.01649858,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "linda mcdonald-present, deborah christen-present, wayne caron-present, catherine clark-present, dale proulx-present."
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "linda mcdonald-present, deborah christen-present, wayne caron-present, catherine clark-present, dale proulx-present."
+  },
+  {
+   "name": "Catherine Clark",
+   "role": "Assistant Treasurer",
+   "status": "present",
+   "quote": "linda mcdonald-present, deborah christen-present, wayne caron-present, catherine clark-present, dale proulx-present."
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "linda mcdonald-present, deborah christen-present, wayne caron-present, catherine clark-present, dale proulx-present."
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "linda mcdonald-present, deborah christen-present, wayne caron-present, catherine clark-present, dale proulx-present."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present were executive director benjamin gold and denise ivaldi, administrative assistant/recording"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "named under Modernization/Work Order Report (role not printed)",
+   "status": "not stated",
+   "quote": "modernization/work order report - adam gautie"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Shelter rent revenue, three months in",
+   "what_was_recorded": "Shelter rents were reported above the budgeted figure after three months.",
+   "quote": "three months in, shelter rents are at $67,680; budgeted at $62,890.",
+   "figures_as_printed": [
+    "$67,680",
+    "$62,890"
+   ]
+  },
+  {
+   "topic": "Bottom line, March 2022",
+   "what_was_recorded": "The Executive Director reported the bottom line as ten thousand dollars to the good.",
+   "quote": "bottom line we are $10,000 to the good.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Reserves",
+   "what_was_recorded": "Reserves were reported as a percentage, against a State minimum of 35% with no subsidy if lower.",
+   "quote": "reserves are at 71.84%.",
+   "figures_as_printed": [
+    "71.84%",
+    "35%"
+   ]
+  },
+  {
+   "topic": "Utilities and State reimbursement",
+   "what_was_recorded": "Gas utilities ran a little higher; the State pays dollar for dollar on utilities. No dollar figure printed.",
+   "quote": "utilities show a little higher on gas; state pays dollar for dollar on utilities",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA funds from the State",
+   "what_was_recorded": "The Authority will receive more ARPA funds from the State, matching the previous year. No dollar figure printed.",
+   "quote": "we are receiving more funds from the state; will match previous year's funds.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Smoking area location",
+   "speaker": "Tenants",
+   "stated_role": "tenants present",
+   "quote": "tenants stated they wanted the smoking area right in the middle out behind the community room"
+  },
+  {
+   "topic": "Raised flower beds",
+   "speaker": "Tenant",
+   "stated_role": "",
+   "quote": "tenant asked if flower beds could be raised a little higher, some residents can't bend that low."
+  },
+  {
+   "topic": "Laundry room change machine",
+   "speaker": "Another tenant",
+   "stated_role": "",
+   "quote": "another tenant asked about a change machine for the laundry room"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared, meeting opened",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 2:14 p.m.",
+   "tags": [
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Approval of March 17, 2022 minutes",
+   "resolution": "approved",
+   "quote": "catherine clark seconded, with all in favor the minutes were accepted and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment: smoking area survey and tenant concerns",
+   "resolution": "discussed; staff to follow up on change machine",
+   "quote": "discussion with tenants present on concerns with the smoking survey options:",
+   "tags": [
+    "smoking policy",
+    "tenants",
+    "grounds",
+    "laundry"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "informational",
+   "quote": "welcome to dale proulx, our newest board member.",
+   "tags": [
+    "COVID",
+    "conference",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Financial Report, March 2022",
+   "resolution": "approved",
+   "quote": "catherine clark moved to accept and approve the march 2022 financial report as presented",
+   "tags": [
+    "finance",
+    "reserves",
+    "shelter rent"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "informational",
+   "quote": "667-1 intercom system (fish #162041) - this project is now in the design phase.",
+   "tags": [
+    "modernization",
+    "work orders",
+    "asbestos"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "informational",
+   "quote": "we received eight standard applications in march; six elderly/young disabled and two family.",
+   "tags": [
+    "waiting list",
+    "leasing"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "New business",
+   "resolution": "none",
+   "quote": "6. new business - none",
+   "tags": []
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "reviewed",
+   "quote": "other correspondence - the executive director reviewed",
+   "tags": [
+    "DHCD",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 2:35 p.m.; next meeting May 19, 2022",
+   "quote": "next meeting scheduled for may 19, 2022.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DHCD PHN 2022-06 Calendar of Submissions and Certifications",
+   "where": "list",
+   "quote": "a. dhcd phn 2022-06 calendar of submissions and certifications"
+  },
+  {
+   "name": "DHCD PHN 2022-07 Local Housing Authority Requirements to Post Key Information and",
+   "where": "list",
+   "quote": "b. dhcd phn 2022-07 local housing authority requirements to post key information and"
+  },
+  {
+   "name": "Smoking survey (tenant survey on smoking area options)",
+   "where": "text",
+   "quote": "this is why we included tenants with the survey."
+  },
+  {
+   "name": "March 2022 financial report",
+   "where": "text",
+   "quote": "catherine clark moved to accept and approve the march 2022 financial report as presented"
+  }
+ ],
+ "tags": [
+  "public housing",
+  "tenant concerns",
+  "smoking area",
+  "financial report",
+  "reserves",
+  "modernization",
+  "state-aided housing",
+  "DHCD",
+  "ARPA"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence - the executive director reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

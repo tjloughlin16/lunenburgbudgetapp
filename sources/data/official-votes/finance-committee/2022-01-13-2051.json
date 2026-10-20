@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-01-13",
  "docid": "2051",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of October 28, 2021, November 4, 2021, November 16, 2021, and December 9, 2021",
+   "motion": "Approve the minutes of the October 28, 2021, November 4, 2021, November 16, 2021, and December 9, 2021 meetings.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Menard",
    "outcome": "passed 4-0-1",
@@ -20,7 +20,7 @@
    "quote": "mr. watters motioned to approve the minutes of the october 28, 2021, november 4, 2021, november 16, 2021, and december 9, 2021 meetings. mr. menard seconded. vote passes 4, 0, 1."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting (at 9:26 p.m.).",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Menard",
    "outcome": "passed unanimously",
@@ -29,6 +29,332 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07981350000000001
+ "note": "Text extract, readable throughout; no scan issues. Two motions recorded, both procedural (minutes approval 4-0-1 and adjournment, unanimous). The minutes do not say which member abstained on the minutes vote. Dave Passios attended by Zoom for only a portion of the meeting, with no times given. Several passages discuss money without printing a figure; those are recorded with empty figure lists. The Police Reform Act and capital plan are discussed without dollar figures beyond those listed. The minutes name no documents-used list; the only document named is the letter read at item 6.",
+ "cost_usd": 0.02013018,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, even watters, thomas balish, jay simeone via zoom, dave passios via zoom (for a portion of the meeting)"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, even watters, thomas balish, jay simeone via zoom, dave passios via zoom (for a portion of the meeting)"
+  },
+  {
+   "name": "Even Watters",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, even watters, thomas balish, jay simeone via zoom, dave passios via zoom (for a portion of the meeting)"
+  },
+  {
+   "name": "Thomas Balish",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, even watters, thomas balish, jay simeone via zoom, dave passios via zoom (for a portion of the meeting)"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "member",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, even watters, thomas balish, jay simeone via zoom, dave passios via zoom (for a portion of the meeting)"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member",
+   "status": "remote",
+   "quote": "dave passios via zoom (for a portion of the meeting)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, state senator john cronin, state representatives mike kushmerek, and dan sena, school committee chairperson carol archambault."
+  },
+  {
+   "name": "John Cronin",
+   "role": "State Senator",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, state senator john cronin, state representatives mike kushmerek, and dan sena, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Mike Kushmerek",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, state senator john cronin, state representatives mike kushmerek, and dan sena, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Dan Sena",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, state senator john cronin, state representatives mike kushmerek, and dan sena, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, state senator john cronin, state representatives mike kushmerek, and dan sena, school committee chairperson carol archambault."
+  },
+  {
+   "name": "David Rodgers",
+   "role": "Lunenburg resident",
+   "status": "remote",
+   "quote": "lunenburg resident david rodgers phoned in to say that the issue of busing students needs to be addressed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Next meetings are scheduled for Jan. 27 and Feb. 17 (2022).",
+   "quote": "next meetings: jan. 27, feb. 17"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY22 legislative request: fire alarm upgrade, Lunenburg Primary School",
+   "what_was_recorded": "The town requested $127,000 for a fire alarm upgrade at the Lunenburg Primary School and received $25,000.",
+   "quote": "the town requested $127,000 for a fire alarm upgrade at the lunenburg primary school, and received $25,000",
+   "figures_as_printed": [
+    "$127,000",
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "FY22 legislative request: LED lighting at the library",
+   "what_was_recorded": "The town requested $40,000 for LED lighting at the library and received $40,000 from the state.",
+   "quote": "and requested $40,000 for led lighting at the library, and received $40,000 from the state.",
+   "figures_as_printed": [
+    "$40,000"
+   ]
+  },
+  {
+   "topic": "Firefighter turnout gear",
+   "what_was_recorded": "Turnout gear was funded by the FY22 capital plan and the fire department's annual budget.",
+   "quote": "$180,000 for firefighter turnout gear was funded by the fy22 capital plan and the fire department's annual budget",
+   "figures_as_printed": [
+    "$180,000"
+   ]
+  },
+  {
+   "topic": "Hazardous material abatement, Old Primary School",
+   "what_was_recorded": "$355,000 was requested for hazardous material abatement at the Old Primary School; the updated cost is recorded as $371,000.",
+   "quote": "and $355,000 was requested for hazardous material abatement at the old primary school.",
+   "figures_as_printed": [
+    "$355,000",
+    "$371,000"
+   ]
+  },
+  {
+   "topic": "Projects the Select Board was asked to pursue outside bond bills",
+   "what_was_recorded": "Town Manager asked the Select Board to go for projects not funded by bond bills, with the costs listed.",
+   "quote": "such as $330,000 for the flat hill rd culvert, $371,000 (updated cost) for hazardous material abatement at the old primary school",
+   "figures_as_printed": [
+    "$330,000",
+    "$371,000",
+    "$300,000",
+    "$100,000",
+    "$250,000",
+    "$450,000"
+   ]
+  },
+  {
+   "topic": "ARPA funds for the town",
+   "what_was_recorded": "Senator Cronin said the town would have a lot of flexibility in spending the ARPA money and suggested a committee recommend how it is spent.",
+   "quote": "on arpa funding, senator cronin said the town would have a lot of flexibility in spending the $3 million",
+   "figures_as_printed": [
+    "$3 million"
+   ]
+  },
+  {
+   "topic": "Town capital spending and capital plan",
+   "what_was_recorded": "Chairperson Beardmore said the town spent more available funds on capital than ever before and that this year's plan intends to spend even more. No dollar figure is printed in this passage.",
+   "quote": "pointed out that last year the town spent more available funds on capital than ever before",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Regional technical school per-pupil cost",
+   "what_was_recorded": "Mr. Menard said Lunenburg pays substantially more per student than any other municipality in the region. No dollar figure is printed.",
+   "quote": "lunenburg pays substantially more per student than any other municipality in the region",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Chapter 70 and the school funding formula",
+   "what_was_recorded": "Discussion of Chapter 70 aid to neighboring communities and to Lunenburg; no dollar figure printed.",
+   "quote": "senator cronin drew attention to neighboring communities that do benefit from chapter 70",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Property tax increase",
+   "what_was_recorded": "Rep. Sena mentioned the discussion to consider an increase in property taxes. No figure printed.",
+   "quote": "mentioned the discussion to consider an increase in property taxes",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Police Reform Act cost",
+   "what_was_recorded": "Rep. Sena said the Police Reform Act is expensive. No dollar figure is printed.",
+   "quote": "rep sena said that he realizes the police reform act is expensive.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Student Opportunity Act funding challenges",
+   "speaker": "Ms. Archambault",
+   "stated_role": "School Committee Chairperson",
+   "quote": "ms. archambault thanked senator cronin, and state representatives kushmerek and sena for attending the meeting, and highlighted that the student opportunity act has created funding challenges for towns like lunenburg."
+  },
+  {
+   "topic": "Busing students; prioritizing town issues",
+   "speaker": "David Rodgers",
+   "stated_role": "Lunenburg resident",
+   "quote": "lunenburg resident david rodgers phoned in to say that the issue of busing students needs to be addressed"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "noted; meeting recorded and remote",
+   "tags": [
+    "open meeting law",
+    "remote"
+   ],
+   "quote": "peter beardmore called the meeting to order at 7:00 p.m. and read a statement concerning the open meeting law"
+  },
+  {
+   "topic": "Public comment on the capital plan",
+   "resolution": "no action",
+   "tags": [
+    "capital plan",
+    "school projects"
+   ],
+   "quote": "mr. beardmore expressed his concern about the town's capital plan"
+  },
+  {
+   "topic": "Town Manager legislative budget priorities",
+   "resolution": "no action",
+   "tags": [
+    "legislative budget",
+    "capital",
+    "ARPA"
+   ],
+   "quote": "ms. lemieux explained that she and the select board discussed last year's legislative budget requests on january 4, 2022."
+  },
+  {
+   "topic": "Discussion with legislative delegation",
+   "resolution": "discussed; no action",
+   "tags": [
+    "state aid",
+    "Chapter 70",
+    "Police Reform Act",
+    "ARPA"
+   ],
+   "quote": "mr. beardmore read a letter he wrote to members of the legislative delegation"
+  },
+  {
+   "topic": "Town Manager and Finance Director reports",
+   "resolution": "received",
+   "tags": [
+    "municipal buildings",
+    "ARPA",
+    "30 School St"
+   ],
+   "quote": "ms. lemieux reported that the ritter building and town hall envelope projects will be going before the architecture preservation district committee"
+  },
+  {
+   "topic": "Annual Town Meeting warrant",
+   "resolution": "noted",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ],
+   "quote": "ms. lemieux informed the board that town warrant closes march 21, 2022."
+  },
+  {
+   "topic": "New Municipal Building Design Committee charge",
+   "resolution": "no action; revisit suggested",
+   "tags": [
+    "municipal buildings"
+   ],
+   "quote": "mr. beardmore suggested formerly revisiting who should serve as the finance committee representative"
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved 4-0-1",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. watters motioned to approve the minutes of the october 28, 2021, november 4, 2021, november 16, 2021, and december 9, 2021 meetings."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; members updated each other",
+   "tags": [
+    "liaisons"
+   ],
+   "quote": "committee members updated each other on their respective liaison assignments."
+  },
+  {
+   "topic": "Public comment on busing and town priorities",
+   "resolution": "received",
+   "tags": [
+    "busing",
+    "public comment"
+   ],
+   "quote": "lunenburg resident david rodgers phoned in to say that the issue of busing students needs to be addressed"
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "noted; priority list for Rep Sena, Green Communities Committee",
+   "tags": [
+    "green communities"
+   ],
+   "quote": "items for future meetings: priority list for rep sena, green communities committee."
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meetings: jan. 27, feb. 17"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:26 p.m., unanimous",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjourn: at 9:26 p.m. mr. watters motioned to adjourn"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Peter Beardmore to members of the legislative delegation (undated)",
+   "where": "text",
+   "quote": "mr. beardmore read a letter he wrote to members of the legislative delegation listing the finance committee's major concerns"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "state aid",
+  "Chapter 70",
+  "ARPA",
+  "capital plan",
+  "legislative delegation",
+  "Police Reform Act",
+  "municipal buildings",
+  "Student Opportunity Act",
+  "busing",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

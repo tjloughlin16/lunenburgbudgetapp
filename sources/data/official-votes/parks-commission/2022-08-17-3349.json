@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-08-17",
  "docid": "3349",
@@ -12,23 +12,313 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of June 15, 2022 as presented",
+   "motion": "Approve the minutes of June 15, 2022 as presented.",
    "moved_by": "K. Menard",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "k. menard made a motion to approve the minutes of june 15, 2022 as presented. c. sullivan seconded. roll call vote, k. menard - yes c. sullivan - yes d. passios - yes p . hackey - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "k. menard made a motion to approve the minutes of june 15, 2022 as presented. c. sullivan seconded."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "K. Menard",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "K.Menard",
    "seconded_by": "D. Passios",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "k.menard made a motion to adjourn. d. passios seconded. roll call vote k. menard - yes c. sullivan - yes a. lockwood - yes d. passios - yes p . hackey - yes all in favor, motion carried."
+   "quote": "k.menard made a motion to adjourn. d. passios seconded. roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded: approval of prior minutes and adjournment. The minutes document discusses capital planning priorities, facility updates, and operational matters but records no other formal votes.",
- "cost_usd": 0.0685244
+ "note": "Two votes recorded, both procedural (approve June 15, 2022 minutes; adjourn). No substantive motions. No public comment speakers recorded. Bill Bernard and Matt Marro are named as having submitted or discussed material but are not shown as present. The minutes print no dollar transfers.",
+ "cost_usd": 0.01883388,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard, patrick hakey and christopher sullivan"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard, patrick hakey and christopher sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard, patrick hakey and christopher sullivan"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard, patrick hakey and christopher sullivan"
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present:ana lockwood, dave passios, karin menard, patrick hakey and christopher sullivan"
+  },
+  {
+   "name": "Rob Thompson",
+   "role": "Additional Attendee (gave Recreation Director updates)",
+   "status": "present",
+   "quote": "additional attendees: rob thompson"
+  },
+  {
+   "name": "J. Bowser",
+   "role": "Beach Director (per agenda heading 'Beach Director Updates')",
+   "status": "present",
+   "quote": "j. bowser stated the second session on swim lessons went well"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "bill bernard submitted a spreadsheet with updates."
+  },
+  {
+   "name": "Matt Marro",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "d. passios discussed the wetland flagging with matt marro."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair to add Fitzgerald and Veteran's Park to the DPW care and maintenance spreadsheet.",
+   "quote": "a. lockwood will add fitzgerald and veteran"
+  },
+  {
+   "decision": "Vice Chair to send an email with the Commission's concerns on the Marshall Park bid documents.",
+   "quote": "d. passios will send an email with the commission"
+  },
+  {
+   "decision": "Chair to meet with the Town Manager about the Marshall Park bid concerns.",
+   "quote": "a. lockwood will meet with the town manager"
+  },
+  {
+   "decision": "Recreation Director to send an audit report on swim lesson sales.",
+   "quote": "r. thompson will send a report."
+  },
+  {
+   "decision": "Chair asked for a letter to be sent to the Little League about the softball field use.",
+   "quote": "a. lockwood asked for a letter to be sent to the little league."
+  },
+  {
+   "decision": "Next Commission meeting scheduled for September 14, 2022 at 7 pm.",
+   "quote": "next meetings are scheduled for september 14, 2022 at 7 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beach pass revenue to date",
+   "what_was_recorded": "The Recreation Director gave the beach pass revenue to date.",
+   "quote": "total revenue to date $17,979.",
+   "figures_as_printed": [
+    "$17,979"
+   ]
+  },
+  {
+   "topic": "Capital Plan threshold for McNally Park survey and conceptual design",
+   "what_was_recorded": "Vice Chair agreed to combining the McNally Park conceptual design and survey only if they reach the $20,000 requirement.",
+   "quote": "d. passios agreed with combining the two as long as they reach the $20,000 requirement.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Little League payment",
+   "what_was_recorded": "A Little League payment was returned in the mail and will be resent; no amount printed.",
+   "quote": "little league sent a payment but it got returned in the mail, will resend.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Swim lesson fee discrepancies",
+   "what_was_recorded": "Discussion of swim lesson fee discrepancies and a request for an audit report of sales; no figures printed.",
+   "quote": "there was discussion on swim lesson fees discrepancies.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Outside funding (ARPA and grants)",
+   "what_was_recorded": "The Commission wants funding from sources other than Lunenburg taxpayers, such as ARPA and grants; no figures printed.",
+   "quote": "a. lockwood indicated the parks commission would like to get funding outside of lunenburg taxpayer money such as arpa and grants.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Federal Rural Development program for septic and sewer",
+   "what_was_recorded": "Possible use of a federally funded Rural Development program for septic, toilet and sewer hook-ups at Marshall and McNally Parks; no figures printed.",
+   "quote": "there is potential to use this program for the septic system and toilet or the sewer and toilet hook-up at marshall and mcnally parks.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Engineering budget and Marshall Park funding",
+   "what_was_recorded": "The Engineering budget and Marshall Park next phase funding were discussed for the Town Meeting Warrant; no figures printed.",
+   "quote": "the engineering budget and marshall park next phase funding were discussed.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "announcement only, no action",
+   "quote": "first item on the agenda, board and public comment.",
+   "tags": [
+    "announcement",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved (June 15, 2022 minutes)",
+   "quote": "next item on the agenda, approval of minutes.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "DPW Director Updates",
+   "resolution": "reviewed, no action",
+   "quote": "bill bernard submitted a spreadsheet with updates.",
+   "tags": [
+    "DPW",
+    "spreadsheet"
+   ]
+  },
+  {
+   "topic": "Recreation Director Updates",
+   "resolution": "discussed, no action",
+   "quote": "next on the agenda, recreation director updates",
+   "tags": [
+    "programs",
+    "beach passes",
+    "camp",
+    "Little League"
+   ]
+  },
+  {
+   "topic": "Beach Director Updates",
+   "resolution": "discussed, no action",
+   "quote": "next on the agenda, beach director updates",
+   "tags": [
+    "beach",
+    "swim lessons",
+    "boat race"
+   ]
+  },
+  {
+   "topic": "Capital Planning Request for FY24",
+   "resolution": "discussed, priorities listed, no action",
+   "quote": "next item on the agenda, capital planning request for fy24",
+   "tags": [
+    "capital plan",
+    "McNally Park",
+    "Veterans Park",
+    "Fitzgerald Field",
+    "Northfield",
+    "Town Beach"
+   ]
+  },
+  {
+   "topic": "Town Meeting Warrant (potential Park Commission articles)",
+   "resolution": "discussed, no action",
+   "quote": "next item on the agenda, town meeting warrant - discussion on potential park commission articles",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "ARPA",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Marshall Park Survey Invitation for Bid recommendations",
+   "resolution": "discussed, edits to be sent to Town Manager",
+   "quote": "marshall park survey invitation for bid recommendations.",
+   "tags": [
+    "Marshall Park",
+    "survey",
+    "bid",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Other Business and Correspondence",
+   "resolution": "discussed, no action",
+   "quote": "next item on the agenda, other business",
+   "tags": [
+    "ARPA",
+    "Open Space",
+    "Stump Cove",
+    "Rural Development"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:57 pm",
+   "quote": "k.menard made a motion to adjourn. d. passios seconded. roll call vote",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DPW Director updates spreadsheet (submitted by Bill Bernard, undated)",
+   "where": "list",
+   "quote": "bill bernard submitted a spreadsheet with updates."
+  },
+  {
+   "name": "DPW care & maintenance spreadsheet",
+   "where": "text",
+   "quote": "a. lockwood will add fitzgerald and veteran"
+  },
+  {
+   "name": "Town Meeting notice (warrant closing September 20, 2022)",
+   "where": "text",
+   "quote": "a. lockwood read the town meeting notice which indicated the warrant will close on tuesday, september 20, 2022 at 5 pm."
+  },
+  {
+   "name": "Marshall Park Survey Invitation for Bid (draft)",
+   "where": "text",
+   "quote": "marshall park survey invitation for bid recommendations."
+  },
+  {
+   "name": "ARPA list put together by the Select Board",
+   "where": "text",
+   "quote": "d. passios noted the beach house is on the arpa list that the select board put together."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach",
+  "recreation",
+  "capital plan",
+  "Marshall Park",
+  "McNally Park",
+  "Fitzgerald Field",
+  "ARPA",
+  "town meeting warrant",
+  "programs",
+  "Little League",
+  "wetlands",
+  "swim lessons"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "bill bernard submitted a spreadsheet with updates."
+ },
+ "dropped_unquoted_by_field": {}
 }

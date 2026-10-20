@@ -12,134 +12,254 @@
  },
  "votes": [
   {
-   "motion": "Approve the May and June meeting minutes",
-   "outcome": "approved unanimously",
+   "motion": "Approve the May and June meeting minutes.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "moved_by": "not stated",
-   "seconded_by": "not stated",
-   "quote": "a motion was made to approve the may and june meeting minutes. the motion was seconded, approved unanimously, and carried,"
+   "quote": "a motion was made to approve the may and june meeting minutes. the motion was seconded, approved unanimously, and carried"
   },
   {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "moved_by": "not stated",
-   "seconded_by": "not stated",
-   "quote": "a motion to adjourn was made and seconded. the motlon passed unanimously,"
+   "quote": "a motion to adjourn was made and seconded. the motlon passed unanimously, and the meeting adjourned at 10:25 a.m."
   }
  ],
- "dropped_unquoted": 13,
- "note": "OCR'd from scan using macOS Vision with one minor OCR error: 'motlon' (should be 'motion') in the adjournment vote. All meeting content is legible and complete across four pages.\"",
- "cost_usd": 0.13456859999999998,
- "schema": 2,
+ "dropped_unquoted": 0,
+ "note": "OCR text, with visible errors: the header reads \"july 14, 4060\" (the date is taken from the board and meeting date given); \"motlon\" and \"tò\" are OCR spellings kept verbatim; the roll call says \"James McGulgan\" while the notices say \"Mr. McGuigan\", and I did not reconcile them. Page 2 begins mid-sentence and the New Business list numbering restarts, so some items may be cut off. The minutes name no mover or seconder for either motion, so those fields are blank. Page 4 contains only the name \"Michele Beauvals\" with no context, and I did not record her as an attendee. Heather Goodsell is thanked for helping staff but her role is not stated, so I did not list her. Public comment reads \"None.\" and so has no speakers. The minutes print no list of documents or exhibits.",
+ "cost_usd": 0.01583278,
+ "schema": 3,
  "model": "haiku",
- "attendees": [],
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), lou franco, cathy beale, elena christopher, james mcgulgan, susan o'sullivan,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "member",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), lou franco, cathy beale, elena christopher, james mcgulgan, susan o'sullivan,"
+  },
+  {
+   "name": "Cathy Beale",
+   "role": "member",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), lou franco, cathy beale, elena christopher, james mcgulgan, susan o'sullivan,"
+  },
+  {
+   "name": "Elena Christopher",
+   "role": "member",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), lou franco, cathy beale, elena christopher, james mcgulgan, susan o'sullivan,"
+  },
+  {
+   "name": "James McGulgan",
+   "role": "member",
+   "status": "present",
+   "quote": "deb lincoln (chairperson), lou franco, cathy beale, elena christopher, james mcgulgan, susan o'sullivan,"
+  },
+  {
+   "name": "Susan O'Sullivan",
+   "role": "member",
+   "status": "present",
+   "quote": "susan o'sullivan, chris johnson, and pauline roy"
+  },
+  {
+   "name": "Chris Johnson",
+   "role": "member",
+   "status": "present",
+   "quote": "susan o'sullivan, chris johnson, and pauline roy"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "member",
+   "status": "present",
+   "quote": "susan o'sullivan, chris johnson, and pauline roy"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member",
+   "status": "absent",
+   "quote": "jack rabbitt, jane rabbitt, ana lockwood"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "member",
+   "status": "absent",
+   "quote": "jack rabbitt, jane rabbitt, ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "member",
+   "status": "absent",
+   "quote": "jack rabbitt, jane rabbitt, ana lockwood"
+  },
+  {
+   "name": "Glenn McLeod",
+   "role": "Lunenburg Select Board Member",
+   "status": "present",
+   "quote": "lunenburg select board member glenn mcleod"
+  },
+  {
+   "name": "Barbara Coulombe",
+   "role": "Eagle House Supporters Vice President",
+   "status": "present",
+   "quote": "eagle house supporters vice president barbara coulombe"
+  },
+  {
+   "name": "Ms. Goodsell",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "ms. lincoln will prepare the monthly agenda with ms. goodsell's approval."
+  }
+ ],
  "decisions": [
   {
-   "decision": "Ms. Lincoln will prepare the monthly agenda with Ms. Goodsell's approval",
+   "decision": "The Chair will prepare the monthly agenda, with Ms. Goodsell's approval.",
    "quote": "ms. lincoln will prepare the monthly agenda with ms. goodsell's approval."
+  },
+  {
+   "decision": "Microsoft Publisher will no longer be used for the monthly newsletter; the Center will move to Canva for newsletter production.",
+   "quote": "microsoft publisher will no longer be used for the monthly newsletter. the center will transition tò canva for future newsletter production."
   }
  ],
  "budget_items": [
   {
-   "topic": "Veterans Breakfast program fee",
-   "what_was_recorded": "Fee charged for non-veterans participating in the free veterans breakfast",
+   "topic": "Council on Aging Gift Fund",
+   "what_was_recorded": "The Gift Fund was reviewed; funds collected go to the Town for disbursement to the Lunenburg Adult Activity Center. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the council on aging gift fund was reviewed, funds collected are turned over to the town for disbursement"
+  },
+  {
+   "topic": "Veterans Breakfast fee",
+   "what_was_recorded": "The Veterans Breakfast is free for veterans and charges non-veterans a fee.",
    "figures_as_printed": [
     "$4"
    ],
-   "quote": "a fee of $4 is charged for non-veterans."
+   "quote": "the veterans breakfast continues to be free for all veterans. a fee of $4 is charged for non-veterans."
   },
   {
-   "topic": "Inn at East Hill Farm senior trip",
-   "what_was_recorded": "Ticket price for upcoming Eagle House Supporters trip including lunch and entertainment",
+   "topic": "Eagle House trip ticket price",
+   "what_was_recorded": "Tickets for the September 23, 2026 trip to the Inn at East Hill Farm, including transportation, are priced per person.",
    "figures_as_printed": [
     "$75"
    ],
-   "quote": "tickets are $75 per person, including transportation"
+   "quote": "tickets are $75 per person, including transportation:"
   },
   {
-   "topic": "Council on Aging fiscal year budget",
-   "what_was_recorded": "No spending during new fiscal year; prior year funds reverted to Town; budget comprises salaries and miscellaneous supplies",
+   "topic": "Council on Aging budget and spending",
+   "what_was_recorded": "No spending has occurred in the new fiscal year; prior-year remaining funds reverted to the Town. The budget mainly consists of salaries and miscellaneous supplies. No amount is printed.",
    "figures_as_printed": [],
-   "quote": "there has been no spending during the new fiscal year. any remaining funds from the previous fiscal year reverted to the town. the council on aging budget primarily consists of salaries and miscellaneous supplies."
+   "quote": "there has been no spending during the new fiscal year. any remaining funds from the previous fiscal year reverted to the town."
   }
  ],
  "transfers": [],
  "public_comment": [],
  "topics": [
   {
-   "topic": "Approval of prior meeting minutes",
-   "resolution": "approved unanimously",
+   "topic": "Call to order and roll",
+   "resolution": "no action",
+   "quote": "deb lincoln (chairperson), lou franco, cathy beale, elena christopher, james mcgulgan, susan o'sullivan,",
    "tags": [
-    "procedural",
-    "minutes"
-   ],
-   "quote": "a motion was made to approve the may and june meeting minutes. the motion was seconded, approved unanimously, and carried,"
+    "roll call",
+    "attendance"
+   ]
   },
   {
-   "topic": "Welcome new board members",
-   "resolution": "welcomed",
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "the annual tea party will be held on october 26, 2026. this year's theme is \"america the beautiful.\"",
+   "tags": [
+    "tea party",
+    "events"
+   ]
+  },
+  {
+   "topic": "Public and board comment",
+   "resolution": "none offered",
+   "quote": "public comment none. board comment none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "a motion was made to approve the may and june meeting minutes. the motion was seconded, approved unanimously, and carried",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "noted",
+   "quote": "the board welcomed new members chris johnson and pauline roy.",
    "tags": [
     "membership",
-    "board"
-   ],
-   "quote": "the board welcomed new members chris johnson and pauline roy."
+    "activities",
+    "newsletter",
+    "trips"
+   ]
   },
   {
-   "topic": "Annual Tea Party announcement",
-   "resolution": "announced",
-   "tags": [
-    "events",
-    "community"
-   ],
-   "quote": "the annual tea party will be held on october 26, 2026. this year's theme is \"america the beautiful.\""
-  },
-  {
-   "topic": "Adult Activity Center and senior programs",
-   "resolution": "reviewed",
-   "tags": [
-    "programs",
-    "facilities",
-    "aging-services"
-   ],
-   "quote": "the council on aging gift fund was reviewed, funds collected are turned over to the town for disbursement to the lunenburg adult activity center:"
-  },
-  {
-   "topic": "Veterans Breakfast and senior trips",
-   "resolution": "ongoing",
-   "tags": [
-    "programs",
-    "veterans"
-   ],
-   "quote": "the veterans breakfast continues to be free for all veterans. a fee of $4 is charged for non-veterans."
-  },
-  {
-   "topic": "Budget status report",
-   "resolution": "no spending",
+   "topic": "Old business",
+   "resolution": "no action",
+   "quote": "there has been no spending during the new fiscal year. any remaining funds from the previous fiscal year reverted to the town.",
    "tags": [
     "budget",
-    "fiscal"
-   ],
-   "quote": "there has been no spending during the new fiscal year. any remaining funds from the previous fiscal year reverted to the town."
+    "bylaws",
+    "outreach",
+    "volunteers"
+   ]
   },
   {
-   "topic": "Eagle House Supporters activities and planning",
-   "resolution": "reported",
+   "topic": "Eagle House Supporters report",
+   "resolution": "received",
+   "quote": "the eagle house supporters recently sponsored a successful trip to boston to view the tall ships.",
    "tags": [
+    "trips",
     "fundraising",
-    "community-partners"
-   ],
-   "quote": "the eagle house supporters recently sponsored a successful trip to boston to view the tall ships."
+    "festival of trees"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "noted",
+   "quote": "a thank-you card from diane now was read.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:25 a.m.",
+   "quote": "a motion to adjourn was made and seconded.",
+   "tags": [
+    "procedure"
+   ]
   }
  ],
+ "documents_and_exhibits": [],
  "tags": [
-  "council-on-aging",
-  "aging-services",
-  "senior-programs",
-  "community-outreach",
-  "lunenburg"
+  "council on aging",
+  "senior services",
+  "adult activity center",
+  "Eagle House Supporters",
+  "minutes approval",
+  "gift fund",
+  "trips",
+  "volunteers",
+  "newsletter"
  ],
- "dropped_unquoted_by_field": {
-  "attendees": 13
- }
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

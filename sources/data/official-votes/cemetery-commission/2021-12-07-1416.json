@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2021-12-07",
  "docid": "1416",
@@ -12,62 +12,250 @@
  },
  "votes": [
   {
-   "motion": "Send email/letter to DPW Rob Oliva regarding the department's work on the cemeteries",
+   "motion": "Send an email or letter to DPW Rob Oliva thanking him and his department for their work on the Cemeteries this year.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "commissioner dorren suggested the cemetery commission send an email / letter to dpw rob oliva regarding the great work he and his department have done for the cemeteries this year. motion to approve 3-0"
+   "quote": "motion to approve 3-0"
   },
   {
-   "motion": "Accept minutes from October 20, 2021",
+   "motion": "Accept the minutes of October 20, 2021.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "minutes from october 20, 2021 were read. motion to accept minutes approved 3-0"
+   "quote": "motion to accept minutes approved 3-0"
   },
   {
-   "motion": "Not increase burial rates for Lunenburg",
+   "motion": "Not to increase (raise) Burial Rates for Lunenburg.",
+   "moved_by": "Chairman Tyler",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "moved_by": "William Tyler",
-   "quote": "made a motion to not increase the rates for lunenburg. commissioner yasko stated that with covid getting worse and people struggling, she also suggested to hold off. commissioner dorren agreed. motion to not to raise burial rates approved 3-0."
+   "quote": "motion to not to raise burial rates approved 3-0."
   },
   {
-   "motion": "Approve arrangement for planting flowers at cemetery entrances for $575 annually",
+   "motion": "Accept the arrangements for planting flowers at the North and South Cemetery entrances in 2022, including Helen Balcom's watering invoice of $575 for the year.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "helen's invoice will be for $300 for watering in the spring and $275 for watering in the fall, totaling $575 for the year. the invoice for the flowers for both the spring and the fall will come from dicks farm stand, which is separate from helen's invoice. motion to accept 3-0."
+   "quote": "motion to accept 3-0."
   },
   {
-   "motion": "Postpone Rainmaker update until next meeting",
+   "motion": "Postpone the Rainmaker update until the next meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "commissioner tyler recommended the rainmaker update be postponed till the next meeting. motioned carried 3-0"
+   "quote": "motioned carried 3-0"
   },
   {
-   "motion": "Buy back lots 778-1 and 778-2 at North Cemetery for $250",
+   "motion": "Buy back cemetery lots 778-1 and 778-2 at the North Cemetery for $250.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "current owner paid $350 for the lots but there were perpetual costs of $100 so the buyback would be for $250. motion to buy back approved by vote 3-0"
+   "quote": "motion to buy back approved by vote 3-0"
   },
   {
-   "motion": "Purchase 2 motion-activated battery-operated cameras, one for North Cemetery and one for South Cemetery",
+   "motion": "Approve the purchase of two motion-activated, battery-operated cameras, one for the North Cemetery and one for the South Cemetery.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "the camera's will be motion activated and battery operated. motion was made to approve the cameras by vote of 3-0"
+   "quote": "motion was made to approve the cameras by vote of 3-0"
   },
   {
-   "motion": "Post Cemetery Regulations, Information and No Dumping Policies on Facebook and social media",
+   "motion": "Post the Cemetery Regulations, Information and No Dumping Policies on Facebook and other social media.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "comment made to post on facebook and other social media the cemetery regulations, information and no dumping policies. motion accepted 3-0."
+   "quote": "motion accepted 3-0."
   },
   {
-   "motion": "Adjourn meeting at 7:25 p.m.",
+   "motion": "Adjourn the meeting at 7:25pm.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion to adjourn at 7:25pm accepted 3-0"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly printed and readable. All nine votes are recorded with outcomes stated. One possible error noted: vote 5 attributes recommendation to \"Commissioner Tyler\" but header lists only Chairman William Tyler, Vice-Chairman Nancy Foss-Yasko, and Clerk David Dorren—no Commissioner Tyler listed.",
- "cost_usd": 0.1259035
+ "note": "Text extraction only, no scan. Votes are recorded as tallies (3-0); the minutes name a mover only for the burial rates motion, so seconders and other movers are left blank. The Rainmaker vote's quote is the tally line alone. Public comment: none recorded. No documents list or exhibits are printed.",
+ "cost_usd": 0.01642318,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman tyler and commissioners yasko and dorren."
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "chairman tyler and commissioners yasko and dorren."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "chairman tyler and commissioners yasko and dorren."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent was dpw director oliva."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioner Dorren was directed to convey the Commission's approval to Helen Balcom and work out arrangements with her for the Spring and Fall plantings.",
+   "quote": "commissioner dorren to convey approval to helen balcom and work arrangements out with her for the spring and fall."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Burial rates",
+   "what_was_recorded": "The Commission compared burial rates with surrounding towns and voted not to raise Lunenburg's rates; no dollar rates are printed.",
+   "figures_as_printed": [],
+   "quote": "made a motion to not increase the rates for lunenburg."
+  },
+  {
+   "topic": "2022 flower planting and watering invoice",
+   "what_was_recorded": "Helen Balcom's watering invoice for the Spring and Fall of 2022 is printed at $300 and $275, totaling $575; flower purchases come from a separate invoice from Dicks Farm Stand with no amount printed.",
+   "figures_as_printed": [
+    "$300",
+    "$275",
+    "$575"
+   ],
+   "quote": "helen's invoice will be for $300 for watering in the spring and $275 for watering in the fall, totaling $575 for the year."
+  },
+  {
+   "topic": "Buyback of cemetery lots 778-1 and 778-2",
+   "what_was_recorded": "The previous owner paid $350 for the lots, perpetual costs of $100 were owed, and the buyback is set at $250.",
+   "figures_as_printed": [
+    "$350",
+    "$100",
+    "$250"
+   ],
+   "quote": "current owner paid $350 for the lots but there were perpetual costs of $100 so"
+  },
+  {
+   "topic": "Security cameras for the cemeteries",
+   "what_was_recorded": "The Commission approved buying two battery-operated, motion-activated cameras after a mattress and rubbish were left at the South Cemetery; no price is printed.",
+   "figures_as_printed": [],
+   "quote": "request was made by chairman tyler to purchase 2 cameras, 1 for the north"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "DPW update on Cemetery clean-up",
+   "resolution": "approved letter of thanks to DPW (3-0)",
+   "quote": "chairman tyler presented the commission on the dpw's update.",
+   "tags": [
+    "DPW",
+    "cemetery maintenance",
+    "winter"
+   ]
+  },
+  {
+   "topic": "Minutes of October 20, 2021",
+   "resolution": "approved 3-0",
+   "quote": "minutes from october 20, 2021 were read. motion to accept minutes approved 3-0",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Burial rates",
+   "resolution": "not raised (3-0)",
+   "quote": "chairman tyler opened the topic of burial rates",
+   "tags": [
+    "burial rates",
+    "covid"
+   ]
+  },
+  {
+   "topic": "2022 flower planting at cemetery entrances",
+   "resolution": "accepted 3-0; Commissioner Dorren to arrange with Helen Balcom",
+   "quote": "chairman tyler discussed the planting of flowers at the entrance of the north and",
+   "tags": [
+    "flowers",
+    "contractor",
+    "watering"
+   ]
+  },
+  {
+   "topic": "Rainmaker update",
+   "resolution": "postponed to next meeting (3-0)",
+   "quote": "commissioner tyler recommended the rainmaker update be postponed till the",
+   "tags": [
+    "rainmaker"
+   ]
+  },
+  {
+   "topic": "Buyback of lots 778-1 and 778-2",
+   "resolution": "approved 3-0",
+   "quote": "the commission discussed to buy back lots 778-1 and 778-2 at the north",
+   "tags": [
+    "lots",
+    "buyback",
+    "north cemetery"
+   ]
+  },
+  {
+   "topic": "Cameras for North and South Cemeteries",
+   "resolution": "approved 3-0",
+   "quote": "request was made by chairman tyler to purchase 2 cameras, 1 for the north",
+   "tags": [
+    "cameras",
+    "vandalism",
+    "security"
+   ]
+  },
+  {
+   "topic": "Facebook posting of regulations and no-dumping policy",
+   "resolution": "accepted 3-0",
+   "quote": "comment made to post on facebook and other social media the cemetery regulations, information and no dumping policies.",
+   "tags": [
+    "social media",
+    "regulations",
+    "dumping"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:25pm (3-0)",
+   "quote": "motion to adjourn at 7:25pm accepted 3-0",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery",
+  "burial rates",
+  "DPW",
+  "flowers",
+  "security cameras",
+  "lot buyback",
+  "regulations",
+  "social media"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

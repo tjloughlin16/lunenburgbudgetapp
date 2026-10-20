@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-03-14",
  "docid": "4219",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
+   "motion": "To close the public hearing on the request to relocate a driveway at 1255 Lancaster Avenue.",
    "moved_by": "M. Allison",
    "seconded_by": "E. Torgersen",
    "outcome": "passed unanimously",
@@ -21,6 +21,98 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1026315
+ "note": "Hearing on a request to relocate a driveway at 1255 Lancaster Avenue by removing one tree and 40 feet of stone wall. The only recorded vote is the motion to close the hearing; no vote or decision on the application itself is recorded in these minutes. No public comment section is printed. No dollar figures appear. The minutes text has extraction spacing artifacts (for example \"o peration\", \"eg ress\", \"M ember\"); quotes were collapsed to single spaces. The header lists Marjorie J. Boggio as Administrative Assistant but she is not recorded as attending, so she is omitted.",
+ "cost_usd": 0.01364998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, adam burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "paula bertram and erik torgersen participated remotely under the act"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "paula bertram and erik torgersen participated remotely under the act"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: matthew brenner"
+  },
+  {
+   "name": "J. Lattanzi",
+   "role": "owner/applicant",
+   "status": "present",
+   "quote": "j. lattanzi recently purchased this property after leasing it for the past 10 years"
+  },
+  {
+   "name": "Allison Lattanzi",
+   "role": "owner/applicant",
+   "status": "not stated",
+   "quote": "owner/applicants were james and allison lattanzi, 331 marshall road, fitchburg, ma 01420."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: scenic road and shade tree request, 1255 Lancaster Avenue",
+   "resolution": "hearing closed; no decision recorded in the minutes",
+   "quote": "hearing closed 7:37 p.m.",
+   "tags": [
+    "public hearing",
+    "scenic road",
+    "tree removal",
+    "driveway",
+    "stone wall"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scenic Road Application",
+   "where": "list",
+   "quote": "documents used at meeting: scenic road application"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "scenic road",
+  "shade tree",
+  "driveway relocation",
+  "stone wall",
+  "Lancaster Avenue",
+  "remote participation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

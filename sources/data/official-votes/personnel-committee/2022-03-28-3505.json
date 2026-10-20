@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-03-28",
  "docid": "3505",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the March 21, 2022 meeting with corrections to administrative errors",
+   "motion": "Approve the minutes of the March 21, 2022 meeting, amending the administrative errors noted",
    "moved_by": "W. Bertrand",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion by w. bertrand to accept and approve the minutes of the march 21, 2022 meeting, amending the administrative errors noted."
   },
   {
-   "motion": "Hire COA van driver at Grade 4 Step 3, $15.26/hour",
+   "motion": "Accept the COA Director's recommendation and hire a COA van driver at Grade 4 step 3",
    "moved_by": "S. Andrews",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion by s. andrews to accept the recommendation of the director of coa and supported by the hr director and hire this van driver at grade 4 step 3."
   },
   {
-   "motion": "Return paragraph E in Section 17 Paid Vacations to original status, allowing employees summer vacation",
+   "motion": "Return paragraph E in Section 17 Paid Vacations to its original status, supporting that employees should be allowed a summer vacation",
    "moved_by": "E. Arnold",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion by e. arnold to return paragraph e in section 17 paid vacations, back to its original status, supporting that employees should be allowed a summer vacation."
   },
   {
-   "motion": "Note in Section 21 FMLA that a copy of the FMLA Policy is available on the town website",
+   "motion": "Note in Section 21 FMLA that a copy of the FMLA Policy is available on the Towns website",
    "moved_by": "S. Andrews",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion by s. andrews that we just note in section 21 fmla, that a copy of the fmla policy is available on the towns website."
   },
   {
-   "motion": "Accept completed SAP bylaw amendments and submit for approval at Town Meeting",
+   "motion": "Accept the completed SAP by-law amendments as noted and submit the document for final approval at the upcoming Town Meeting",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion by j. bilotta to accept the completed sap by law amendments as noted, and submit the document for final approval at the upcoming town meeting."
   },
   {
-   "motion": "Adjourn meeting",
+   "motion": "Adjourn the meeting at 6:21pm",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
@@ -61,6 +61,151 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0825955
+ "note": "Zoom meeting. The minutes record every vote as \"All in Favor\" or \"Roll Call Vote: All in Favor\" with no vote count and no individual member votes; outcomes are recorded as passed. Legal counsel is referred to but not named. The public comment entry is an unnamed expression of thanks, not a named speaker. The minutes give no dollar figure other than the hourly rate.",
+ "cost_usd": 0.01517598,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna Bilotta",
+   "role": "member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Eric Arnold",
+   "role": "member; opened the meeting",
+   "status": "present",
+   "quote": "e. arnold opened the meeting at 5:10pm with all members in attendance"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits/Risk Manager",
+   "status": "present",
+   "quote": "nancy forest, payroll & benefits/risk"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "sue doherty presented a request to hire a new coa van driver at a higher step in grade 4."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The group decided, on re-examining paragraph E of Section 17, that the reference to summer vacation had value and clarity and should remain as in the original version.",
+   "quote": "the group discussed this again this evening and decided that the reference had value and provided clarity so should remain as it was noted in the original version."
+  },
+  {
+   "decision": "The group followed legal counsel's advice and deleted the Section 21 FMLA provision from its amendments.",
+   "quote": "the group had taken this advice and deleted the section in our amendments."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "New hire wage, COA van driver",
+   "what_was_recorded": "The recommended starting rate for the part-time COA van driver is Grade 4 step 3, stated as an hourly rate.",
+   "figures_as_printed": [
+    "$15.26ph"
+   ],
+   "quote": "bring the candidate in as a grade 4 step 3 $15.26ph."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Thanks for the SAP bylaw update",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "the committee members and the public expressed thanks for the effort the committee made in updating this document."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of minutes, March 21, 2022",
+   "resolution": "approved as amended for two administrative errors",
+   "quote": "minutes of the march 21, 2022 meeting were reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New hire form, COA van driver",
+   "resolution": "approved: hire at Grade 4 step 3",
+   "quote": "sue doherty presented a request to hire a new coa van driver at a higher step in grade 4.",
+   "tags": [
+    "hiring",
+    "COA",
+    "wages"
+   ]
+  },
+  {
+   "topic": "Review of SAP revisions",
+   "resolution": "approved: Section 17 paragraph E restored, Section 21 FMLA noted by reference, bylaws sent to Town Meeting",
+   "quote": "the committee did a final review of the revisions of the sap bylaws.",
+   "tags": [
+    "SAP bylaws",
+    "paid vacation",
+    "FMLA",
+    "Town Meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "SAP bylaws (revisions under review)",
+   "where": "text",
+   "quote": "the committee did a final review of the revisions of the sap bylaws."
+  },
+  {
+   "name": "FMLA Policy",
+   "where": "text",
+   "quote": "a copy of the fmla policy is available on the towns website."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP bylaws",
+  "hiring",
+  "COA",
+  "paid vacation",
+  "FMLA",
+  "Town Meeting",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

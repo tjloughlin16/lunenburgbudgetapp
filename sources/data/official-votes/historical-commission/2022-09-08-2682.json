@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2022-09-08",
  "docid": "2682",
@@ -12,15 +12,127 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the June meeting",
-   "outcome": "passed unanimously",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of the June meeting.",
    "procedural": true,
+   "outcome": "passed (unanimous)",
    "quote": "minutes of the june meeting were read and unanimously voted approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded. No other motions were formally voted on; discussions of the Community Preservation Act, the town's K-houses survey, and burial ground work are recorded as discussions or reports, not votes.",
- "cost_usd": 0.0728815
+ "note": "Only one motion is recorded: approval of the June minutes, by unanimous vote with no mover or seconder printed. The minutes record no vote on adjournment (they state only that the meeting was adjourned at 7:20 P.M.). Only the Chairman is named; other members are not named and no roll is printed, so attendance beyond the chair is not stated. The minutes name no documents or exhibits.",
+ "cost_usd": 0.01336618,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman richard mcgrath called the meeting to order at 7:06 p.m. with a quorum present."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "not printed (signs the minutes)",
+   "status": "not stated",
+   "quote": "the meeting was adjourned at 7:20 p.m. jennifer sanderson"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Commission budget",
+   "what_was_recorded": "The Commission's budget was discussed, with a suggestion that part or all of it might be designated toward the town's support of the K-houses survey.",
+   "figures_as_printed": [
+    "$3,000.00"
+   ],
+   "quote": "the commission's budget of $3,000.00 was discussed, including a suggestion that part or all of"
+  },
+  {
+   "topic": "K-houses survey cost and reimbursement",
+   "what_was_recorded": "The K-houses survey costs $25,000.00, of which $12,500.00 would be reimbursed upon completion.",
+   "figures_as_printed": [
+    "$12,500.00",
+    "$25,000.00"
+   ],
+   "quote": "where $12,500.00 of the $25,000.00 cost would be reimbursed upon completion."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of June minutes",
+   "resolution": "approved unanimously",
+   "quote": "minutes of the june meeting were read and unanimously voted approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence and public comment",
+   "resolution": "no action; none received",
+   "quote": "there was no correspondence or public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Community Preservation Act outreach",
+   "resolution": "discussed; no action recorded",
+   "quote": "looking to the future activities of the commission, mr. mcgrath plans to draft notes to present to other chairpersons of commissions and committees",
+   "tags": [
+    "Community Preservation Act"
+   ]
+  },
+  {
+   "topic": "Commission budget and K-houses survey",
+   "resolution": "discussed; no action recorded",
+   "quote": "the commission's budget of $3,000.00 was discussed, including a suggestion that part or all of",
+   "tags": [
+    "budget",
+    "K-houses"
+   ]
+  },
+  {
+   "topic": "Possible grant from Freedom's Way",
+   "resolution": "raised as a question; no action recorded",
+   "quote": "on the same subject, mr. mcgrath introduced the question if freedom's way might be approached for a grant.",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Arnold-Litch burial ground",
+   "resolution": "reported; memorial to be relocated",
+   "quote": "the director of the dpw has taken an interest in the arnold-litch burial ground, and arranged a ground penetrating radar procedure",
+   "tags": [
+    "burial grounds",
+    "GPR"
+   ]
+  },
+  {
+   "topic": "Goodrich burial site",
+   "resolution": "reported; memorial possible in future",
+   "quote": "the goodrich burial site was also surveyed by gpr, locating six unmarked graves.",
+   "tags": [
+    "burial grounds",
+    "GPR"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "burial grounds",
+  "ground penetrating radar",
+  "Community Preservation Act",
+  "K-houses survey",
+  "budget",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

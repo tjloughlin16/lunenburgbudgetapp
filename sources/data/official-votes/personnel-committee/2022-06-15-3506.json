@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-06-15",
  "docid": "3506",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept the Facilities Director position description and grade level recommendation",
+   "motion": "Accept the HR Director's recommendation on the Facilities Director position description, placing the role at grade 16 in the SAP.",
    "moved_by": "S. Andrews",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by s. andrews to accept the recommendation of the hr director. second: w. bertrand roll call vote: all in favor"
   },
   {
-   "motion": "Accept the Administrative Assistant position description and grade level recommendation",
+   "motion": "Accept the HR Director's recommendation on the Administrative Assistant position description.",
    "moved_by": "S. Andrews",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion by s. andrews to accept the recommendation of the hr director. second w. bertrand roll call vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:10pm.",
    "moved_by": "W. Bertrand",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
@@ -37,6 +37,153 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is clear text, all votes recorded with outcomes. Minor OCR artifact in adjournment motion (\"Motion by to adjourn\") preserved verbatim.",
- "cost_usd": 0.07894849999999999
+ "note": "Short minutes (two pages). Both position-description motions are recorded as 'All in Favor' on a roll call with no counts, so outcome is 'passed' as the minutes' own wording implies; no count is printed. The adjournment line reads 'Motion by to adjourn meeting at 5:10pm by W. Bertrand', so the mover is taken from the trailing 'by W. Bertrand' and is not clearly printed as a mover. Minutes approval was not taken because the prior minutes were not available. Position descriptions were presented in the discussion and not listed as attachments, so no documents list is printed.",
+ "cost_usd": 0.014921980000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrews",
+   "role": "committee member",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "committee member",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, joanna bilotta"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "committee member; opened the meeting",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:01pm with members noted in attendance"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, heather lemieux, town manager"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, heather lemieux, town manager"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Facilities Director role funding",
+   "what_was_recorded": "The minutes say the new Facilities Director role was approved in the fiscal budget and would carve facilities, grounds and recreation out of the DPW. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "this new role was approved in the fiscal budget and would carve out facilities, grounds and recreation from the dpw with the role reporting to the town manager."
+  },
+  {
+   "topic": "Pay grade for Facilities Director",
+   "what_was_recorded": "The HR Director recommended placing the Facilities Director at grade 16 in the SAP. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "her recommendation was to place this new role as a grade 16 in the sap, which would make it comparable to other directors"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments",
+   "quote": "there were no comments from committee, nor from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no action; minutes from last meeting not available",
+   "quote": "minutes from last meeting not available",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Facilities Director position description",
+   "resolution": "approved",
+   "quote": "j. belliveau presented a new position description for facilities director.",
+   "tags": [
+    "position description",
+    "facilities director",
+    "grade 16",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Administrative Assistant position description",
+   "resolution": "approved",
+   "quote": "j. belliveau presented a position description for a n administrative assistant.",
+   "tags": [
+    "position description",
+    "administrative assistant",
+    "grade 8",
+    "SAP",
+    "classification"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no additional comment",
+   "quote": "there was no additional public comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting",
+   "resolution": "not discussed",
+   "quote": "not discussed, previously noted it would be july 11, 2022.",
+   "tags": [
+    "next meeting"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:10pm",
+   "quote": "motion by to adjourn meeting at 5:10pm by w. bertrand",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Facilities Director position description (new role)",
+   "where": "text",
+   "quote": "j. belliveau presented a new position description for facilities director."
+  },
+  {
+   "name": "Administrative Assistant position description",
+   "where": "text",
+   "quote": "j. belliveau presented a position description for a n administrative assistant."
+  },
+  {
+   "name": "Clerical union Administrative Assistant job description",
+   "where": "text",
+   "quote": "there was a clerical union administrative assistant job description, but not one in the sap"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "position descriptions",
+  "facilities director",
+  "administrative assistant",
+  "SAP salary grades",
+  "HR",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

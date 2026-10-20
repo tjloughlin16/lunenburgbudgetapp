@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-18",
+ "generated": "2026-10-19",
  "origins": [
   {
    "id": "school",
@@ -60,7 +60,7 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 53 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 67 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 54 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 67 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
@@ -2151,6 +2151,19 @@
      "bytes": 36799,
      "url": "/docs/town-ledgers/account-details/account-details-fy2026-trial-balance-fund1300.xlsx",
      "textUrl": "/docs/town-ledgers/account-details/account-details-fy2026-trial-balance-fund1300.xlsx"
+    },
+    {
+     "path": "town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+     "title": "Where the school journal report came from, and why the Town’s copy stays private (our provenance note)",
+     "stars": 1,
+     "what": "The Town Manager’s 18 October 2026 email answering part 2 of our 4 September request: a 1,744-page MUNIS journal report, redacted by the Town but not completely, so it is held private and only our redacted reading is published. Records the redaction log and the spreadsheet still to come.",
+     "byRequest": true,
+     "kind": "Notes",
+     "bytes": 5635,
+     "url": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+     "count": 93,
+     "unit": "lines",
+     "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md"
     }
    ]
   },
@@ -3257,7 +3270,7 @@
      "stars": 2,
      "what": "Written by us, by `build_job_postings.py`, from the snapshots of the town’s own job board (lunenburgma.gov/Jobs.aspx) that `fetch_town_job_postings.py` takes daily, one row per posting keyed on the town’s job id. The posted date and the closing terms (`Open Until Filled`) are the town’s; `department_as_printed` is read from the town’s own summary line. `first_seen`, `last_seen` and `removed_seen` ARE OURS, the days we looked. A REMOVAL IS NOT A HIRE.",
      "kind": "Data",
-     "bytes": 1469,
+     "bytes": 1471,
      "url": "/docs/data/town-job-postings.csv",
      "count": 4,
      "unit": "rows",
@@ -5045,9 +5058,21 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 43433984,
+     "bytes": 57114624,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
+    },
+    {
+     "path": "data/munis-school-journal.csv",
+     "title": "The school department, every posting, FY2023 to FY2026",
+     "stars": 3,
+     "what": "Every journal line behind every school account -- general fund and every school special fund -- from July 2022 to the FY2026 close: date, journal, source, amount, vendor, invoice or purchase order, description and check number. Our redacted reading of the Town’s 1,744-page MUNIS journal report, which stays private because the Town’s own redaction missed a child’s name. People paid as vendors read individual (redacted); a child or a person named in a description reads [redacted]. Built by scripts/extract_munis_school_journal.py, which refuses to write unless every account, every printed total and the grand total close to the cent.",
+     "kind": "Data",
+     "bytes": 12450333,
+     "url": "/docs/data/munis-school-journal.csv",
+     "count": 49043,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-school-journal.csv"
     },
     {
      "path": "data/meeting-register.csv",
@@ -6149,9 +6174,9 @@
      "stars": 2,
      "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
      "kind": "Data",
-     "bytes": 86916,
+     "bytes": 90869,
      "url": "/docs/data/refresh-runs.csv",
-     "count": 26,
+     "count": 27,
      "unit": "rows",
      "textUrl": "/docs/data/refresh-runs.csv"
     },
@@ -6619,9 +6644,9 @@
      "stars": 2,
      "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1141,
+     "bytes": 1172,
      "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 34,
+     "count": 35,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
@@ -6722,6 +6747,18 @@
      "textUrl": "/docs/data/caption-corrections.csv"
     },
     {
+     "path": "data/munis-school-journal-accounts.csv",
+     "title": "The school department’s 3,356 accounts, FY2026 as the journal report prints them",
+     "stars": 1,
+     "what": "One row per account in the same journal report: fund, org, the FY2026 original appropriation, transfers, revised budget, actual, encumbrances and available it prints, and how many journal lines sit under it.",
+     "kind": "Data",
+     "bytes": 558146,
+     "url": "/docs/data/munis-school-journal-accounts.csv",
+     "count": 3356,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-school-journal-accounts.csv"
+    },
+    {
      "path": "data/athletics-venue-geocache.csv",
      "title": "Where each away venue address geocodes to",
      "stars": 1,
@@ -6792,6 +6829,18 @@
      "count": 102,
      "unit": "rows",
      "textUrl": "/docs/data/munis-trial-balance-journal.csv"
+    },
+    {
+     "path": "data/munis-school-journal-image-pages.csv",
+     "title": "Three pages of the school journal report, read by eye",
+     "stars": 1,
+     "what": "Written by us. The Town flattened pages 34, 643 and 1080 of the journal report to pictures; this is our reading of their 141 journal lines, with every child and private person already masked. The extractor proves it: the three accounts those pages fall in close to the cent only with these lines.",
+     "kind": "Data",
+     "bytes": 15494,
+     "url": "/docs/data/munis-school-journal-image-pages.csv",
+     "count": 141,
+     "unit": "rows",
+     "textUrl": "/docs/data/munis-school-journal-image-pages.csv"
     },
     {
      "path": "data/department-budgets-fincom-fy27-vs-town-budget-fy27.csv",
@@ -55654,10 +55703,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4984,
+  "documents": 4988,
   "groups": 27,
-  "bytes": 6423436269,
-  "loadBearing": 191
+  "bytes": 6450150503,
+  "loadBearing": 192
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 53 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 54 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

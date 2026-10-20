@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-02-15",
  "docid": "5721",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn at 7:09pm",
+   "motion": "To adjourn the meeting at 7:09pm.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
@@ -21,6 +21,430 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text. One procedural vote recorded (adjourn). Budget discussion was extensive but no formal motions were voted on; rate increase scenarios (3%, 5%, 6%, 8%) were discussed but Commission agreed to continue the discussion at the next meeting (2/22) after Barb ran additional numbers. No votes taken on budget items, only on adjournment.",
- "cost_usd": 0.07927150000000001
+ "note": "Text is machine OCR (macOS Vision) of a scanned minutes page; figures, names and spellings may carry OCR error (e.g. 'transterred', the closing signature 'TeneR. Parley'). Only one recorded motion (adjournment, 5-0 by roll call). The FY23 budget acceptance, the 8% consensus and the direction to run 6% and 8% figures were recorded without a vote. Attendance is by Zoom, per the minutes header; no separate absent list appears. The minutes record 'PUBLIC COMMENT- none'.",
+ "cost_usd": 0.05966673,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "status": "remote",
+   "role": "Chair",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "John Reynolds",
+   "status": "remote",
+   "role": "Vice-Chair",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "Brett Ramsden",
+   "status": "remote",
+   "role": "Clerk",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "Mike Deveikis",
+   "status": "remote",
+   "role": "Member",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "Mike Nault",
+   "status": "remote",
+   "role": "Member",
+   "quote": "and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Rob Oliva",
+   "status": "remote",
+   "role": "DPW Director",
+   "quote": "and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "status": "remote",
+   "role": "Business Manager",
+   "quote": "and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "status": "remote",
+   "role": "Minutes Clerk",
+   "quote": "and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission discussed the FY23 budget and was okay with it. No vote was recorded.",
+   "quote": "the commission discussed and were okay with the fy23 budget."
+  },
+  {
+   "decision": "The Commission agreed there needs to be a rate increase. No vote was recorded.",
+   "quote": "the commission agreed there needs to be an increase and dave suggested adding a policy for automatic yearly increases."
+  },
+  {
+   "decision": "The Commission's consensus was 8%, recorded without a vote.",
+   "quote": "the commission continued to discuss the increase, and all agreed with 8%."
+  },
+  {
+   "decision": "Barb to run the numbers for the next meeting at a 6% and 8% increase.",
+   "quote": "dave asked barb to run the numbers for the next meeting at a 6% and 8% increase."
+  },
+  {
+   "decision": "The Commission to discuss the increase again on 2/22.",
+   "quote": "barb will run the numbers and the commission will discuss it again on 2/22."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "User charges (revenue)",
+   "what_was_recorded": "User charges budgeted at $1,022,550.00, based on current and expected new customers, including the annual irrigation meter fee.",
+   "figures_as_printed": [
+    "$1,022,550.00"
+   ],
+   "quote": "user charges are $1,022,550.00 which is based on current"
+  },
+  {
+   "topic": "Proposed rate increase",
+   "what_was_recorded": "Barb added a 3% increase for consideration; she noted 3% would add $30,600 and 5% would add $51,600.",
+   "figures_as_printed": [
+    "$30,600",
+    "$51,600"
+   ],
+   "quote": "barb noted a 3% increase would add $30,600 and 5% would add $51,600."
+  },
+  {
+   "topic": "Capital Reserve transfer for infrastructure",
+   "what_was_recorded": "Barb pointed out that $20k will be transferred from the Capital Reserve for infrastructure.",
+   "figures_as_printed": [
+    "$20k"
+   ],
+   "quote": "pointed out $20k will be transterred from the capital reserve, for infrastructure."
+  },
+  {
+   "topic": "Capital Reserve Stabilization Fund balance",
+   "what_was_recorded": "Balance in the Capital Reserve Stabilization Fund stated as $123K.",
+   "figures_as_printed": [
+    "$123K"
+   ],
+   "quote": "currently, there is $123k in the capital reserve stabilization fund."
+  },
+  {
+   "topic": "Part-time salary",
+   "what_was_recorded": "Salaries include a part-time employee at 24 hours a week at $22 an hour.",
+   "figures_as_printed": [
+    "$22/hr"
+   ],
+   "quote": "salaries includes part time employee of 24hrs/week @ $22/hr."
+  },
+  {
+   "topic": "Infrastructure purchase of service",
+   "what_was_recorded": "Infrastructure line includes pump station repairs, jetting, manhole repairs, and meter program licensing, at $64,700.",
+   "figures_as_printed": [
+    "$64,700"
+   ],
+   "quote": "flow meter equipment lease and meter program licensing for $64,700."
+  },
+  {
+   "topic": "I/I remediation",
+   "what_was_recorded": "I/I remediation budgeted at $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "i/i remediation - is at $10,000."
+  },
+  {
+   "topic": "Outsourcing",
+   "what_was_recorded": "Outsourcing budgeted at $96,414, mostly the Year 3 pump station contract with CTE.",
+   "figures_as_printed": [
+    "$96,414"
+   ],
+   "quote": "outsourcing - $96,414 - barb noted the majority of this expense is for the year 3 pump station contract with cte."
+  },
+  {
+   "topic": "CTE Year 3 contract increase",
+   "what_was_recorded": "CTE had an increase of $3K for the Year 3 contract.",
+   "figures_as_printed": [
+    "$3K"
+   ],
+   "quote": "cte had an increase of $3k for the year 3 contract."
+  },
+  {
+   "topic": "FY21 infrastructure budget versus spending",
+   "what_was_recorded": "FY21 infrastructure budget was originally $50,000 and was raised to cover $68,500 spent.",
+   "figures_as_printed": [
+    "$50,000",
+    "$ 68,500"
+   ],
+   "quote": "the fy21 budget was originally $50,000 for infrastructure, but it was bumped up to cover the $ 68,500 spent."
+  },
+  {
+   "topic": "Engineering services",
+   "what_was_recorded": "Engineering services category increased in FY23 to $30K for Upland/Eastern Ave. design, pump station evaluation and ARPA projects.",
+   "figures_as_printed": [
+    "$30K"
+   ],
+   "quote": "this category was increased in fy23 to $30k, to cover the upland/eastern ave. design"
+  },
+  {
+   "topic": "FY22 engineering actuals",
+   "what_was_recorded": "FY22 actuals are $10K for Flow Assessment and $13,200 for Wright Pierce.",
+   "figures_as_printed": [
+    "$10K",
+    "$13,200"
+   ],
+   "quote": "barb stated the actuals for fy22 are $10k for flow assessment and $13,200 for wright pierce."
+  },
+  {
+   "topic": "Capital expenditures",
+   "what_was_recorded": "Capital expenditures budgeted at $50K; Dave suggested $25K instead, and the Commission discussed other figures.",
+   "figures_as_printed": [
+    "$50K",
+    "$25K"
+   ],
+   "quote": "capital expenditures - budgeted at $50k."
+  },
+  {
+   "topic": "Leominster debt service",
+   "what_was_recorded": "Leominster debt service figure of $38K for FY22 was raised to $41K for FY23.",
+   "figures_as_printed": [
+    "$38K",
+    "$41K"
+   ],
+   "quote": "barb received a figure of $38k from leominster for fy 22 and bumped it up to $41k for fy23."
+  },
+  {
+   "topic": "Fitchburg debt service",
+   "what_was_recorded": "Fitchburg debt service is $20,962, funded from the Highfields payment on account until used up.",
+   "figures_as_printed": [
+    "$20,962"
+   ],
+   "quote": "fitchburg debt service is $20,962 which is the same amount"
+  },
+  {
+   "topic": "Leominster usage",
+   "what_was_recorded": "Leominster usage budgeted at $520K, raised for more customers and weather dependence.",
+   "figures_as_printed": [
+    "$520K"
+   ],
+   "quote": "leominster usage ($520k) was bumped up for an increase in customers and is"
+  },
+  {
+   "topic": "Fitchburg usage",
+   "what_was_recorded": "Fitchburg usage budgeted at $220K, increased for more customers and the rate increase.",
+   "figures_as_printed": [
+    "$220K"
+   ],
+   "quote": "fitchburg usage ($220k) was also increased due to more customers and the rate increase."
+  },
+  {
+   "topic": "Connection fee",
+   "what_was_recorded": "Connection fee is $2,250 for a 3-bedroom, higher for more bedrooms.",
+   "figures_as_printed": [
+    "$2,250"
+   ],
+   "quote": "the connection fee is $2,250 for a 3 bedroom and higher for more bedrooms."
+  },
+  {
+   "topic": "Indirect costs",
+   "what_was_recorded": "Indirect costs of $106, 165 are the Town Accountant's estimate, including health insurance and other benefits.",
+   "figures_as_printed": [
+    "$106, 165"
+   ],
+   "quote": "indirect costs of $106, 165 is the estimate from karen (town accountant) which includes health insurance and other benefits."
+  },
+  {
+   "topic": "Budgeted totals FY23",
+   "what_was_recorded": "Budgeted expenses, revenues and deficit for FY23 as printed.",
+   "figures_as_printed": [
+    "$1,319,347.82",
+    "$1, 133,962.00",
+    "$185,385.82"
+   ],
+   "quote": "expenses-$1,319,347.82, revenues -$1, 133,962.00 and deficit-$185,385.82."
+  },
+  {
+   "topic": "Current FY22 deficit",
+   "what_was_recorded": "Current FY22 deficit is $216K, with only 50% of quarterly billing received.",
+   "figures_as_printed": [
+    "$216K"
+   ],
+   "quote": "barb replied it is now $216k because alot of the yearly expenses have been entered"
+  },
+  {
+   "topic": "Sewer betterment debt service FY23",
+   "what_was_recorded": "FY23 debt service of $687,992 against anticipated betterment revenues of $503,081 leaves a budgeted deficit of $184,911.",
+   "figures_as_printed": [
+    "$687,992",
+    "$503,081",
+    "$184,911"
+   ],
+   "quote": "we will owe $687,992 and the anticipated betterment revenues are $503,081, which leaves a budgeted deficit of $184,911"
+  },
+  {
+   "topic": "FY25 betterment surplus projection",
+   "what_was_recorded": "Barb said FY25 debt service drops and a surplus of about $90K-100K in betterment revenues over debt service is expected.",
+   "figures_as_printed": [
+    "$90K-100K"
+   ],
+   "quote": "they will be looking at a surplus of about $90k-100k in betterment revenues over debt service."
+  },
+  {
+   "topic": "Total combined FY23 deficit",
+   "what_was_recorded": "Total combined FY23 deficit of $370,297 will hit Retained Earnings, before the 3% capital reserve transfer.",
+   "figures_as_printed": [
+    "$370,297"
+   ],
+   "quote": "for fy23, the total combined deficit will be $370,297, which will hit retained earnings."
+  },
+  {
+   "topic": "3% transfer to Capital Reserve",
+   "what_was_recorded": "The 3% transfer to Capital Reserve for major expenses is $34,018, excluded from the combined deficit.",
+   "figures_as_printed": [
+    "$34,018"
+   ],
+   "quote": "this doesn't include the 3% transfer to capital reserve of $34,018 for major expenses."
+  },
+  {
+   "topic": "OPEB transfer",
+   "what_was_recorded": "OPEB transfer is $656.00, the same as past years.",
+   "figures_as_printed": [
+    "$656.00"
+   ],
+   "quote": "the opeb (the town's state retirement funding) transfer is $656.00- same as past years."
+  },
+  {
+   "topic": "Net FY23 Retained Earnings deficit",
+   "what_was_recorded": "Net FY23 Retained Earnings deficit would be $404,972.",
+   "figures_as_printed": [
+    "$404,972"
+   ],
+   "quote": "the net/net fy 23 retained earnings deficit would be $404,972."
+  },
+  {
+   "topic": "FY21 betterments actual versus budget",
+   "what_was_recorded": "FY21 betterments actually received were $731,129 against a budgeted estimate of $ 610,748.",
+   "figures_as_printed": [
+    "$731,129",
+    "$ 610,748"
+   ],
+   "quote": "they actually received total betterments of $731,129 instead of the budgeted estimate of $ 610,748."
+  },
+  {
+   "topic": "FY21 Retained Earnings balance",
+   "what_was_recorded": "Retained Earnings balance at end of FY21 is $1,828,706; about $400K would be taken out.",
+   "figures_as_printed": [
+    "$1,828,706",
+    "$400K"
+   ],
+   "quote": "the retained earnings balance for the end of fy21 is $1,828,706 and that they would taking out approximately $400k."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the Capital Reserve for infrastructure.",
+   "amount_as_printed": "$20k",
+   "outcome": "Described as to be transferred; no vote recorded.",
+   "quote": "pointed out $20k will be transterred from the capital reserve, for infrastructure."
+  },
+  {
+   "description": "3% of revenues transfer to Capital Reserve for major expenses.",
+   "amount_as_printed": "$34,018",
+   "outcome": "Left to the Commission; no decision recorded.",
+   "quote": "barb added that it is up to the commission if they want to do the 3% of revenues transfer that was instituted several years ago."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY23 budget: revenues",
+   "resolution": "discussed; rate increase left open",
+   "quote": "barb went over the figures for fy23. user charges are $1,022,550.00 which is based on current",
+   "tags": [
+    "FY23 budget",
+    "revenues",
+    "rate increase"
+   ]
+  },
+  {
+   "topic": "FY23 budget: expenses",
+   "resolution": "discussed; some items still to be discussed",
+   "quote": "expenses- salaries includes part time employee of 24hrs/week @ $22/hr.",
+   "tags": [
+    "FY23 budget",
+    "expenses"
+   ]
+  },
+  {
+   "topic": "Capital expenditures and advertising",
+   "resolution": "discussed; no figure set",
+   "quote": "dave suggested budgeting $25k instead of $50k and the commission discussed other figures.",
+   "tags": [
+    "capital expenditures",
+    "advertising"
+   ]
+  },
+  {
+   "topic": "Sewer betterment and debt service",
+   "resolution": "discussed; budgeted deficit noted",
+   "quote": "sewer betterment account - fy23 sewer betterment debt service -we will owe $687,992",
+   "tags": [
+    "betterments",
+    "debt service",
+    "retained earnings"
+   ]
+  },
+  {
+   "topic": "Rate increase",
+   "resolution": "consensus on 8%; 6% and 8% numbers to be run; continued to 2/22",
+   "quote": "the commission continued to discuss the increase, and all agreed with 8%.",
+   "tags": [
+    "sewer rates",
+    "rate increase"
+   ]
+  },
+  {
+   "topic": "Connection fees",
+   "resolution": "discussed; no change recorded",
+   "quote": "dave asked when the last time connection fees were raised.",
+   "tags": [
+    "connection fees"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and adjournment",
+   "resolution": "adjourned at 7:09pm",
+   "quote": "february 22, 2022 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from the Town Manager stating the Zoom meetings will continue to July",
+   "where": "text",
+   "quote": "dave noted the town manager sent an email stating the zoom meetings will continue to july."
+  }
+ ],
+ "tags": [
+  "FY23 budget",
+  "sewer rates",
+  "betterments",
+  "debt service",
+  "retained earnings",
+  "capital reserve",
+  "Leominster",
+  "Fitchburg",
+  "Zoom meeting",
+  "special budget meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

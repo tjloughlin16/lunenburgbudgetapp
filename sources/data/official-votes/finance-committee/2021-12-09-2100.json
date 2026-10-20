@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-12-09",
  "docid": "2100",
@@ -12,15 +12,306 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
-   "seconded_by": "Ethan Watters",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "at 8:09 p.m., mr. menard motioned to adjourn. mr. watters seconded. on vote, motion carried unanimously."
+   "quote": "mr. menard motioned to adjourn. mr. watters seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Ethan Watters"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1039515
+ "note": "Complete text, not a scan. Only one vote is recorded (adjournment, unanimous); the minutes record no motions on other items, so none are invented. Minutes approval was deferred without a vote. No transfers were recorded. The minutes print no documents list; the only document-type reference is the capital plan.",
+ "cost_usd": 0.01652188,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, thomas gray, ethan watters, jay simeone via zoom"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, thomas gray, ethan watters, jay simeone via zoom"
+  },
+  {
+   "name": "Thomas Gray",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, thomas gray, ethan watters, jay simeone via zoom"
+  },
+  {
+   "name": "Ethan Watters",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, thomas gray, ethan watters, jay simeone via zoom"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "present: chairperson peter beardmore, chris menard, thomas gray, ethan watters, jay simeone via zoom"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager (guest)",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant (guest)",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu"
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Lunenburg resident (public comment)",
+   "status": "present",
+   "quote": "lunenburg resident rhonda lissio informed the committee that she attended a capital planning meeting, 3 days earlier"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee members agreed that discussion with state legislative representatives at the January 13, 2022 meeting should cover police reform training costs, prevailing wage, records management, and grants for preserving historical buildings.",
+   "quote": "committee members agreed that discussing other topics with representatives should include: police reform training costs, prevailing wage, records management, grants for preserving historical buildings."
+  },
+  {
+   "decision": "Town Manager Heather Lemieux assured the board she would discuss the Flat Hill Rd culvert cost with the engineer so the town is prepared to fund the project at Annual Town Meeting if the grant decision is not clear by then.",
+   "quote": "ms. lemieux assured the board she'd discuss the cost with the engineer in order to be prepared to fund the project going into annual town meeting"
+  },
+  {
+   "decision": "The minutes of this meeting were deferred to the next meeting for discussion.",
+   "quote": "minutes to be discussed at next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY22 tax rate certified",
+   "what_was_recorded": "The Town Accountant reported the FY22 tax rate was certified lower than FY21.",
+   "quote": "the tax rate for fy22 has been certified at $17.19, down from $17.74 in fy21.",
+   "figures_as_printed": [
+    "$17.19",
+    "$17.74"
+   ]
+  },
+  {
+   "topic": "Hazardous abatement project requested by DPW",
+   "what_was_recorded": "A resident reported a hazardous abatement project requested by DPW at a Capital Planning meeting, and suggested demolition costs in a debt exclusion would cost the same as paying outright.",
+   "quote": "where she learned of a $755,500 hazardous abatement project requested by the dpw",
+   "figures_as_printed": [
+    "$755,500"
+   ]
+  },
+  {
+   "topic": "Flat Hill Rd culvert appropriation",
+   "what_was_recorded": "About $428,000 has already been appropriated for the Flat Hill Rd culvert project, which may seek a Small Bridge Grant.",
+   "quote": "about $428,000 has already been appropriated for the project.",
+   "figures_as_printed": [
+    "$428,000"
+   ]
+  },
+  {
+   "topic": "Recycling dividend grant",
+   "what_was_recorded": "A recycling dividend grant was reported to the committee.",
+   "quote": "a recycling dividend grant in the amount of $6,000",
+   "figures_as_printed": [
+    "$6,000"
+   ]
+  },
+  {
+   "topic": "Old Primary School hazardous material abatement grant",
+   "what_was_recorded": "A grant for hazardous material abatement at the Old Primary School was reported.",
+   "quote": "a $50,000 grant for hazardous material abatement for the old primary school",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "MIIA Risk Management grant for Microsoft 365",
+   "what_was_recorded": "A MIIA Risk Management grant was reported to purchase Microsoft 365 licenses.",
+   "quote": "a miia risk management grant for $10,000 to purchase licenses for microsoft 365",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Community compact IT grant denied",
+   "what_was_recorded": "The town was denied the community compact IT grant and will have to pay for infrastructure as DPW file migration begins.",
+   "quote": "the town has been denied the community compact it grant, and the town will have to pay $52,000 to purchase infrastructure.",
+   "figures_as_printed": [
+    "$52,000"
+   ]
+  },
+  {
+   "topic": "Chapter 70 state funds",
+   "what_was_recorded": "The chair reported the town has little ability to increase Chapter 70 funds, and that rising costs will make affording them harder. No figure was printed.",
+   "quote": "that there is not much the town can do to receive an increase in those funds.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Custodian pay for interdepartmental building use",
+   "what_was_recorded": "An account exists for paying custodians for time in buildings during town recreational programs; no transfers via warrant were recalled. No figure was printed.",
+   "quote": "there is an account for custodians who need to be paid for their time in the buildings during those programs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "TC Passios building borrowing and tax burden",
+   "what_was_recorded": "The committee's role in the TC Passios building project was described as covering borrowing capacity, credit rating, and tax burden. No figure was printed.",
+   "quote": "as well as considering the burden to the tax payers",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lissio",
+   "stated_role": "Lunenburg resident",
+   "topic": "Hazardous abatement project, debt exclusion, and committee member duties",
+   "quote": "lunenburg resident rhonda lissio informed the committee that she attended a capital planning meeting, 3 days earlier"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "peter beardmore called the meeting to order at 7:00 p.m. and read a statement concerning",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": []
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "3. announcements: none",
+   "tags": []
+  },
+  {
+   "topic": "Public Comment (hazardous abatement, committee duties)",
+   "resolution": "no action",
+   "quote": "lunenburg resident rhonda lissio informed the committee that she attended a capital planning meeting, 3 days earlier",
+   "tags": [
+    "public comment",
+    "capital planning",
+    "hazardous abatement"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "no action",
+   "quote": "ms. brochu informed the committee that the tax rate for fy22 has been certified at $17.19, down from $17.74 in fy21.",
+   "tags": [
+    "tax rate",
+    "grants",
+    "ARPA",
+    "Flat Hill Rd culvert",
+    "IT infrastructure"
+   ]
+  },
+  {
+   "topic": "Budget Calendar",
+   "resolution": "no action",
+   "quote": "ms. lemieux has a tentative schedule for department heads to meet with the finance committee to present their budgets.",
+   "tags": [
+    "budget calendar",
+    "interdepartmental ledger"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting: TC Passios building",
+   "resolution": "no action",
+   "quote": "mr. beardmore pointed out that there was a lack of financial guardrails when it came to defining the tasks of the tc passios design committee",
+   "tags": [
+    "TC Passios building",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Chapter 70",
+   "resolution": "discussed; legislators to be invited to January 13, 2022 meeting",
+   "quote": "mr. beardmore hopes to have state legislative representatives at the january 13, 2022 meeting to talk more about chapter 70 funds.",
+   "tags": [
+    "Chapter 70",
+    "state aid",
+    "legislators"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": []
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "continued to next meeting",
+   "quote": "minutes to be discussed at next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comment (second period)",
+   "resolution": "no action",
+   "quote": "11. public comment none",
+   "tags": []
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "noted; Green Communities Committee",
+   "quote": "items for future meetings green communities committee",
+   "tags": [
+    "Green Communities"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled",
+   "quote": "next meetings jan. 13, 2022, jan. 20, 2022 (five-year forecast) jan. 27, 2022",
+   "tags": [
+    "five-year forecast"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "approved, unanimous",
+   "quote": "mr. menard motioned to adjourn. mr. watters seconded. on vote, motion carried unanimously.",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "capital plan",
+   "where": "text",
+   "quote": "they weren't aware of items presented in the capital plan."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "tax rate",
+  "capital planning",
+  "hazardous abatement",
+  "TC Passios building",
+  "Chapter 70",
+  "grants",
+  "budget calendar",
+  "public comment",
+  "IT infrastructure",
+  "Special Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

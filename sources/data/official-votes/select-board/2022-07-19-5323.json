@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-07-19",
  "docid": "5323",
@@ -12,31 +12,375 @@
  },
  "votes": [
   {
-   "motion": "Appoint Peter Beardmore to the School Committee until the next election with the express commitment to resign from Finance Committee no later than September 30",
+   "motion": "Appoint Peter Beardmore to the School Committee until the next election, with his commitment to resign from the Finance Committee no later than September 30. The minutes record the abstention of Mr. Franco.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2 nd : t. dwyer to appoint mr. beardmore to the school committee until the next election with the express commitment of mr. beardmore to resign from finance committee no later than september 30 th vote: mr. sculimbrene-aye, mr. lehtinen-aye, ms. archambault-aye, mr. dwyer-aye, mr. franco stated he could support mr. beardmore, but could not support the concept or be party to setting a precedent, but wanted him to have a mandate and would not stand in the way of unanimity so abstained; mr. alonzo-aye, mr. jeffreys-aye"
+   "quote": "to appoint mr. beardmore to the school committee until the next election with the express"
   },
   {
-   "motion": "Approve the minutes of May 27 and June 7, 2022 as written",
+   "motion": "Appoint Jennifer Duffy to the Agricultural Commission with a term to expire June 30, 2023.",
+   "moved_by": "T. Dwyer",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to appoint jennifer duffy to the agricultural commission with a term to expire june 30,"
+  },
+  {
+   "motion": "Approve the minutes of May 27 and June 7, 2022 as written.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer 2 nd : l. franco to approve the minutes of may 27 and june 7, 2022 as written vote: all in favor"
+   "quote": "to approve the minutes of may 27 and june 7, 2022 as written"
   },
   {
-   "motion": "Enter into Executive Session and adjourn after exiting Executive Session to discuss strategy with respect to collective bargaining regarding police union negotiations",
+   "motion": "Enter Executive Session under MGL c. 30, Section 21, Paragraph 3 (collective bargaining, Police Union), and adjourn after exiting Executive Session.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: l. franco 2 nd : t. alonzo t o enter into executive session and to adjourn after exiting executive session: pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining if any open meeting may have a detrimental effect on the bargaining position of the public body and the chair so declares. (police union) vote: mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+   "quote": "vote: mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All votes in these minutes are recorded with clear outcomes. The Beardmore appointment vote shows 6 ayes and 1 abstain (Franco), recorded on pages 8-9. The Duffy Agricultural Commission appointment is on page 9. The minutes approval is on page 12. The executive session motion is on page 13.",
- "cost_usd": 0.1089595
+ "dropped_unquoted": 0,
+ "note": "Digital text extraction, not a scan. Several passages are letter-spaced in the source (for example 'T he', 'w  e', 'Mr . '); quotes collapse those spaces where a verbatim copy would otherwise fail, and a few quotes keep the printed double spacing. The minutes print no vote count for the joint School Committee appointment; the outcome is read from the recorded roll (six aye, Mr. Franco abstaining) and marked 'passed'. The Duffy and minutes motions are recorded as 'All in Favor'; the exec-session vote is printed as four ayes. Public comment: the first heading says there was none; the second 'PUBLIC COMMENT' heading carries Town Manager Lemieux's remarks, which are staff, so no public speaker is recorded. The minutes show two inconsistent dates for the prior minutes (May 24 in the agenda item title, May 27 in the motion); recorded as printed. The Agricultural Commission term was printed as June 30, 2020 in the agenda heading and June 30, 2023 in the motion. No documents-used list heading is printed; documents are named only in the discussion. The streetlight purchase item shows no motion or vote. Attendance for Dr. Kate Burnham is not stated beyond the 'Also Present' line.",
+ "cost_usd": 0.027008780000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "michael-ray jeffreys , chairman;"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "tom alonzo , vice chairman;"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "mr. franco stated he could support mr. beardmore, but could not support the concept"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "mr. dwyer asked if mr. beardmore could speak about a time"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "absent",
+   "quote": "member not present: heather sroka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "remote",
+   "quote": "heather lemieux, town manager via zoom"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "applicant for School Committee vacancy",
+   "status": "present",
+   "quote": "one applicant for the school committee vacancy, peter beardmore of 282 pleasant street."
+  },
+  {
+   "name": "Dr. Kate Burnham",
+   "role": "School Superintendent",
+   "status": "not stated",
+   "quote": "burnham, school superintendent"
+  },
+  {
+   "name": "Elizabeth Lydon",
+   "role": "Mead, Talerman & Costa (Town counsel, via ZOOM)",
+   "status": "remote",
+   "quote": "elizabeth lydon of mead, talerman & costa"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "Chair (School Committee)",
+   "status": "present",
+   "quote": "carol archambault, chair;"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Vice Chair (School Committee)",
+   "status": "present",
+   "quote": "vice chair brian lehtinen asked"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "School Committee member",
+   "status": "present",
+   "quote": "mr. sculimbrene asked if mr. beardmore had any preferences"
+  },
+  {
+   "name": "Jennifer Duffy",
+   "role": "applicant, Agricultural Commission",
+   "status": "present",
+   "quote": "jennifer duffy, 684 flat hill road"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The term date on the Agricultural Commission appointment was incorrect on the agenda and will be clarified at a later time.",
+   "quote": "the term date was incorrect on the agenda so it will need to be clarified at a later time."
+  },
+  {
+   "decision": "Review the sample 300th Anniversary Committee charges from other towns and return with suggestions for a charge when a full board is present.",
+   "quote": "it was suggested to review the sample charges provided from other towns"
+  },
+  {
+   "decision": "Mr. Jeffreys to schedule a later agenda item on a proposed revised remote meeting legislation position to relay to the state delegation.",
+   "quote": "mr. jeffreys will schedule it for a later agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Streetlight purchase price",
+   "what_was_recorded": "The purchase price for the street lights listed in the purchase and sale agreement, described as formulaic under the DPU-approved tariff and not negotiable.",
+   "figures_as_printed": [
+    "$89,834.96"
+   ],
+   "quote": "the cost listed in the agreement is $89,834.96."
+  },
+  {
+   "topic": "Streetlight original informal estimate",
+   "what_was_recorded": "The original informal estimate, which was below the final agreement price.",
+   "figures_as_printed": [
+    "$87,646.84"
+   ],
+   "quote": "estimate was $87,646.84 and that was"
+  },
+  {
+   "topic": "Flat Hill Road culvert MassDOT grant",
+   "what_was_recorded": "The Town was awarded the maximum Small Bridge Program grant amount for the Flat Hill Road culvert project.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "were awarded t h e maximum g r a n t amount of $500,000."
+  },
+  {
+   "topic": "FY23 state cherry sheet",
+   "what_was_recorded": "The final FY23 state budget cherry sheet figures show an overall increase over the amounts included as estimates at Annual Town Meeting.",
+   "figures_as_printed": [
+    "$54,417"
+   ],
+   "quote": "overall increase of $54,417 from"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed an accounts payable warrant, a payroll warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$1,571,852.57",
+    "$728,704.54",
+    "$753,932.17"
+   ],
+   "quote": "in the amount of $1,571,852.57; a payroll warrant"
+  },
+  {
+   "topic": "Streetlight license fees",
+   "what_was_recorded": "A member asked whether the Town pays licensing fees each year for the streetlight attachments; the answer was that the only costs would be for moving facilities on request or at the Town's own doing.",
+   "figures_as_printed": [],
+   "quote": "mr. alonzo asked are we paying for the licensing fees year after"
+  },
+  {
+   "topic": "Fraud risk assessment",
+   "what_was_recorded": "An updated quote was received for a fraud risk assessment; the amount is within funds available from MIIA risk management reward credits, so the work will be done this fiscal year. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "amount, w e will be able t o do this w o r k this fiscal year."
+  },
+  {
+   "topic": "School funding share of the budget",
+   "what_was_recorded": "Mr. Jeffreys noted that more than half the town budget goes to schools, so a large amount of taxpayer money passes through the School Committee.",
+   "figures_as_printed": [],
+   "quote": "because more than half the budget goes to schools"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, public comment, announcements",
+   "resolution": "no public comment; announcements heard",
+   "tags": [
+    "announcements",
+    "public comment"
+   ],
+   "quote": "public comment - there was none at this time."
+  },
+  {
+   "topic": "Joint appointment to School Committee vacancy",
+   "resolution": "appointed, with commitment to resign from Finance Committee by September 30",
+   "tags": [
+    "school committee appointment",
+    "finance committee conflict"
+   ],
+   "quote": "was one applicant for the school committee vacancy, peter beardmore of 282 pleasant street."
+  },
+  {
+   "topic": "Streetlight purchase and license agreements with Town Counsel",
+   "resolution": "discussed; no vote recorded",
+   "tags": [
+    "streetlights purchase",
+    "Unitil",
+    "town counsel"
+   ],
+   "quote": "attorney elizabeth lydon from mead, talerman & costa who was"
+  },
+  {
+   "topic": "Agricultural Commission appointment",
+   "resolution": "appointed; term date to be clarified",
+   "tags": [
+    "agricultural commission",
+    "appointment"
+   ],
+   "quote": "jennifer duffy, 684 flat hill road"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action recorded",
+   "tags": [
+    "vacancies",
+    "remote meetings",
+    "Flat Hill Road culvert",
+    "state budget",
+    "fraud risk"
+   ],
+   "quote": "the following is a list of current vacancies on the following committees:"
+  },
+  {
+   "topic": "300th Anniversary Committee charge",
+   "resolution": "continued to a full board",
+   "tags": [
+    "300th anniversary"
+   ],
+   "quote": "it was suggested to review the sample charges provided from other towns"
+  },
+  {
+   "topic": "Approve minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes of may 27 and june 7, 2022 as written"
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "tags": [
+    "warrants",
+    "payroll"
+   ],
+   "quote": "in the amount of $1,571,852.57; a payroll warrant"
+  },
+  {
+   "topic": "Action items",
+   "resolution": "no action",
+   "tags": [
+    "action items"
+   ],
+   "quote": "action items -there were none"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "tags": [
+    "committee reports"
+   ],
+   "quote": "it was noted that finance committee and stormwater task force are holding meetings this thursday."
+  },
+  {
+   "topic": "Remote meeting legislation (state)",
+   "resolution": "to be scheduled for a later agenda",
+   "tags": [
+    "remote meetings",
+    "state delegation",
+    "open meeting law"
+   ],
+   "quote": "mr. jeffreys will schedule it for a later agenda."
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "mr. jeffreys stated their next meeting"
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; adjourned at 8:41 P.M.",
+   "tags": [
+    "executive session",
+    "police union"
+   ],
+   "quote": "mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Streetlight purchase and sale agreement",
+   "where": "text",
+   "quote": "to execute the purchase and sale"
+  },
+  {
+   "name": "Streetlight license agreement",
+   "where": "text",
+   "quote": "the license agreement that lays out the terms"
+  },
+  {
+   "name": "Bill of sale (attachment to the purchase and sale agreement)",
+   "where": "text",
+   "quote": "the bill of sale that's included as an attachment"
+  },
+  {
+   "name": "Informal streetlight price proposal (original estimate)",
+   "where": "text",
+   "quote": "estimate was $87,646.84 and that was"
+  },
+  {
+   "name": "Small Bridge Program application to MassDOT (March 2022)",
+   "where": "text",
+   "quote": "a s m a ll bridge p r o g r a m application"
+  },
+  {
+   "name": "Financial management letter (auditors)",
+   "where": "text",
+   "quote": "financial management letter comment on fraud risk assessment"
+  },
+  {
+   "name": "School Committee operating principles document for new members",
+   "where": "text",
+   "quote": "the operating principles in a document for"
+  }
+ ],
+ "tags": [
+  "select board",
+  "school committee appointment",
+  "finance committee",
+  "streetlights purchase",
+  "Unitil",
+  "agricultural commission appointment",
+  "remote meetings",
+  "Flat Hill Road culvert",
+  "state budget",
+  "fraud risk assessment",
+  "warrants",
+  "executive session",
+  "police union"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

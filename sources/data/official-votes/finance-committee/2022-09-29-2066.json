@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-09-29",
  "docid": "2066",
@@ -12,15 +12,285 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Menard",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting at 8:51 p.m.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Chris Menard",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. beardmore motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "The Finance Committee did not vote on any substantive matters at this meeting. The warrant articles reviewed (items A–P) were discussed in draft form only; the minutes note that article A was \"Approved by Finance Committee at November 10, 2022 meeting,\" indicating votes on these articles occurred at a later meeting, not this one.",
- "cost_usd": 0.0731435
+ "dropped_unquoted": 1,
+ "note": "Pages 1-3 of text only; no attachments. No dollar figures are printed anywhere in the minutes, so figures_as_printed is empty throughout. Only one vote is recorded (adjournment). The 'Public Comment' at item 4 is blank, so no entry was made for it. The item 10 'Public Comment' is remarks by sitting member Peter Beardmore and is recorded as public comment only because the minutes label it so. Item numbering repeats '7' (warrant review and pre-budget workshop). Page 1 carries the footer 'Approved by Finance Committee at November 10, 2022 meeting.' Guests were listed as attendees; David Eisenthal and Christos Lekaditis are mentioned but not recorded as present, so they are not listed as attendees.",
+ "cost_usd": 0.023361100000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, peter beardmore, tom gray"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, peter beardmore, tom gray"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, peter beardmore, tom gray"
+  },
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, peter beardmore, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, peter beardmore, tom gray"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair scheduled the Board of Assessors, the new DPW Director and the Superintendent of Schools to present to the committee at the pre-budget season workshop.",
+   "quote": "mr. watters has scheduled the board of assessors, new dpw director, and the superintendent of schools to come before the committee"
+  },
+  {
+   "decision": "Financial advisor David Eisenthal to draw up scenarios requested by the Finance Committee; listed under items for future meetings.",
+   "quote": "he will draw up some scenarios requested by the finance committee"
+  },
+  {
+   "decision": "Finance Committee to make a recommendation on the special town meeting articles at its next meeting, which is a public hearing.",
+   "quote": "the finance committee will need to make a recommendation on the articles at the next finance committee meeting, which will be a public hearing"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Prior year expenses",
+   "what_was_recorded": "Town Manager reported two outstanding bills, both described as of nominal amounts; no figure printed.",
+   "quote": "ms. lemieux reported there are two outstanding bills of nominal amounts."
+  },
+  {
+   "topic": "Article A, FY2023 budget amendments and APDC/assessor funding",
+   "what_was_recorded": "Town Manager has no full assessment of amendments; APDC requested operational funds and the assessor's cyclical inspections will need funds, pending new growth numbers.",
+   "quote": "the apdc has requested funds for an operational budget, and funds will be needed for the cyclical inspections for the assessor's office."
+  },
+  {
+   "topic": "Article C, police collective bargaining agreement",
+   "what_was_recorded": "A Memorandum of Agreement was signed with the police union; no dollar amount is known.",
+   "quote": "a memorandum of agreement has been signed with the police union, and there is no dollar amount known at this time"
+  },
+  {
+   "topic": "Article E, reserve and on-call retirement credit",
+   "what_was_recorded": "Financial impact of the retirement credit article is unknown.",
+   "quote": "ms. lemieux commented that it is unknown whether this article will have a financial impact."
+  },
+  {
+   "topic": "Articles G and H, sewer reserve and I/I stabilization funds",
+   "what_was_recorded": "Standard articles moving money received in the prior fiscal year into stabilization funds; no figure printed.",
+   "quote": "standard sewer article (money rec'd in prior fiscal year to be deposited in the stabilization fund"
+  },
+  {
+   "topic": "Article I, Primary School HVAC project",
+   "what_was_recorded": "Dollar amount unknown; Free Cash could be a funding source but is not certified and is typically not appropriated at a Fall Town Meeting.",
+   "quote": "free cash could be a funding source, but has not been certified, and is typically not appropriated at a fall town meeting, according to ms. brochu."
+  },
+  {
+   "topic": "Article L, Ritter Building storm windows",
+   "what_was_recorded": "Member asked whether the town knows the cost of new windows, current heating costs, or potential savings; none are recorded as known.",
+   "quote": "mr. beardmore asked if the town knows the cost of new windows, or what heating costs are, or what could be saved with new windows."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "farewell remarks on Finance Committee service",
+   "quote": "mr. beardmore expressed that serving on the finance committee has been a rewarding experience, and pointed out that it has brought him closer to people."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "no action",
+   "quote": "mr. watters called the meeting to order at 7:02 p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Announcements: ATFC annual meeting",
+   "resolution": "no action",
+   "quote": "the annual association of town finance committees (atfc) will take place november 5, 2022",
+   "tags": [
+    "ATFC"
+   ]
+  },
+  {
+   "topic": "Chair report",
+   "resolution": "no action",
+   "quote": "mr. watters is planning to attend the annual meeting of the atfc.",
+   "tags": [
+    "ATFC"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director report",
+   "resolution": "no action; financial advisor scenarios and fraud risk assessment noted",
+   "quote": "ms. lemieux reported that the streetlights are now owned by the town, and the dpw should be contacted if there are any issues with the lights.",
+   "tags": [
+    "streetlights",
+    "ARPA",
+    "capital planning",
+    "fraud risk"
+   ]
+  },
+  {
+   "topic": "Draft Special Town Meeting warrant articles review",
+   "resolution": "reviewed; no vote, articles to return at future meetings",
+   "quote": "7. review draft of special town meeting warrant articles",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "stabilization",
+    "police contract",
+    "HVAC",
+    "Ritter Building",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Pre-budget season workshop scheduling",
+   "resolution": "presenters scheduled; no vote",
+   "quote": "mr. watters has scheduled the board of assessors, new dpw director, and the superintendent of schools to come before the committee",
+   "tags": [
+    "pre-budget",
+    "budget presentations"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "none to review",
+   "quote": "8. minutes none to review",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; liaison assignments updated",
+   "quote": "committee members updated each other on respective liaison assignments.",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Public comment and farewell to Peter Beardmore",
+   "resolution": "no action",
+   "quote": "mr. beardmore expressed that serving on the finance committee has been a rewarding experience, and pointed out that it has brought him closer to people.",
+   "tags": [
+    "public comment",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "financial advisor scenarios listed",
+   "quote": "items for future meetings financial advisor's scenarios",
+   "tags": [
+    "financial advisor"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled",
+   "quote": "next meetings 10/13 public hearing, 10/27, 11/10, 11/15 (special town meeting)",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:51 p.m., passed unanimously",
+   "quote": "mr. beardmore motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Special Town Meeting Warrant Articles",
+   "where": "list",
+   "quote": "7. review draft of special town meeting warrant articles"
+  },
+  {
+   "name": "Article 8 of the May 7, 2022 Town Meeting (FY 2023 Budget)",
+   "where": "text",
+   "quote": "amend the amounts voted for the town's fy 2023 budget, under article 8 of the may 7, 2022 town meeting"
+  },
+  {
+   "name": "FY 23, FY 24, and FY 25 Lunenburg Police Officers Collective Bargaining Agreement dated July 1, 2022–June 30, 2025",
+   "where": "text",
+   "quote": "fy 23, fy 24, and fy 25 lunenburg police officers collective bargaining agreement dated july 1, 2022-june 30, 2025"
+  },
+  {
+   "name": "Memorandum of Agreement with the police union",
+   "where": "text",
+   "quote": "a memorandum of agreement has been signed with the police union"
+  },
+  {
+   "name": "Financial advisor's scenarios (David Eisenthal)",
+   "where": "text",
+   "quote": "he will draw up some scenarios requested by the finance committee"
+  },
+  {
+   "name": "Fraud risk assessment forms",
+   "where": "text",
+   "quote": "department heads will be filling out forms distributed by the fraud risk assessment team."
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "pre-budget",
+  "police contract",
+  "ARPA",
+  "capital planning",
+  "stabilization",
+  "sewer",
+  "school HVAC",
+  "Ritter Building",
+  "public comment",
+  "financial advisor"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "review draft of special town meeting warrant articles"
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

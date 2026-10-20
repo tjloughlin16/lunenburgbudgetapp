@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2022-10-06",
  "docid": "1101",
@@ -12,23 +12,181 @@
  },
  "votes": [
   {
-   "motion": "to use the condensed version of the article",
+   "motion": "Vote on using the condensed version of the town warrant article (bylaw); members called to vote.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "vote on using the condensed version of the article 1. mbr sculimbrene call to vote (mbr d, s, m, l all for for)"
+   "quote": "mbr sculimbrene call to vote (mbr d, s, m, l all for for)"
   },
   {
-   "motion": "to use the condensed version pending resolution of the Select board's power to use full bylaw",
+   "motion": "Vote on using the condensed version of the article, pending resolution of whether the Select Board has power to use the full bylaw.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "vote on using the condensed version pending resolution of if select board's power to use full bylaw (mbr sculimbrene call to vote: mbr d, m l for / mbr s nay)"
+   "quote": "mbr sculimbrene call to vote: mbr d, m l for / mbr s nay"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1068605
+ "note": "Typed minutes, not a scan; all text read directly. Nicastro is listed as a member in the header but not in the Present line, and is not recorded as absent; status left as not stated. The first vote records only 'all for for' with no count printed and no motion wording or mover; outcome recorded as passed on that basis. The 94 Main St approval has no recorded motion or vote. Budget discussion has no dollar figures. Minutes do not expand the abbreviation CTA.",
+ "cost_usd": 0.0176151,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cullen Dwyer",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd,"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd,"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd,"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd,"
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "anthony nicastro, member"
+  },
+  {
+   "name": "Michael Batson",
+   "role": "Applicant",
+   "status": "present",
+   "quote": "approved cta for 94 main st, michael batson applicant was present"
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager, facilities manager and selectman alonzo present for debate"
+  },
+  {
+   "name": "Facilities Manager",
+   "role": "Facilities Manager",
+   "status": "present",
+   "quote": "town manager, facilities manager and selectman alonzo present for debate"
+  },
+  {
+   "name": "Alonzo",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "town manager, facilities manager and selectman alonzo present for debate"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approved a CTA (as printed) for 94 Main St, applicant Michael Batson; no motion or vote count is recorded.",
+   "quote": "approved cta for 94 main st, michael batson applicant was present"
+  },
+  {
+   "decision": "Town Manager agreed that the clock should start at the point of a finalized proposal.",
+   "quote": "town manager agrees that clock should start at point of finalized proposal."
+  },
+  {
+   "decision": "Town Manager to look at the process for removing the town clerk from it.",
+   "quote": "town manager - will look at process"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ritter Building windows, investment and new estimates",
+   "what_was_recorded": "Discussion of replacement windows and the need for the town to see value and investment in infrastructure; new estimates were requested, with no dollar figure printed.",
+   "quote": "town needs to see value and investment into the infrastructure."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order; review of minutes",
+   "resolution": "no action (review of minutes not conducted)",
+   "quote": "review of minutes: not conducted -",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action (mailbox checked, none received)",
+   "quote": "1) none - mailbox was checked",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "New Business: CTA for 94 Main St",
+   "resolution": "approved",
+   "quote": "approved cta for 94 main st, michael batson applicant was present",
+   "tags": [
+    "certificate",
+    "94 Main St"
+   ]
+  },
+  {
+   "topic": "Old Business: Ritter Building",
+   "resolution": "discussed; no action recorded",
+   "quote": "concern of what will be found when project starts demo and repairs.",
+   "tags": [
+    "Ritter Building",
+    "windows",
+    "climate control",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Warrant Article",
+   "resolution": "votes on using the condensed version of the article; debate continued",
+   "quote": "2) town warrant article - town manager, facilities manager and selectman alonzo present for debate",
+   "tags": [
+    "warrant article",
+    "bylaw",
+    "demolition review timing"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no action (none)",
+   "quote": "other business: none",
+   "tags": [
+    "other"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Warrant Article (bylaw article, condensed and full versions)",
+   "where": "text",
+   "quote": "2) town warrant article - town manager, facilities manager and selectman alonzo present for debate"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "Ritter Building",
+  "windows",
+  "town warrant article",
+  "bylaw",
+  "certificate of appropriateness",
+  "94 Main St"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

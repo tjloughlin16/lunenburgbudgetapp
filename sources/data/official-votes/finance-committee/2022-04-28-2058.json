@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-04-28",
  "docid": "2058",
@@ -12,71 +12,318 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 4, Budget amendment",
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Menard",
+   "motion": "Recommend approval of Article 4, Budget amendment.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Chris Menard",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. passios motioned to recommend approval, mr. menard seconded. on vote, motion carried unanimously."
+   "quote": "article 4: budget amendment. mr. passios motioned to recommend approval, mr. menard seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 6, Capital Plan",
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Balish",
+   "motion": "Recommend approval of Article 6, Capital Plan.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Tom Balish",
    "outcome": "passed 6-1",
    "procedural": false,
    "quote": "mr. passios motioned to recommend approval, mr. balish seconded. on vote motion carried. (6-1 mr. beardmore dissented)"
   },
   {
-   "motion": "Recommend approval of Article 7, Administrative Organization Plan",
-   "moved_by": "Mr. Watters",
-   "seconded_by": "Mr. Gray",
+   "motion": "Recommend approval of Article 7, Administrative Organization Plan.",
+   "moved_by": "Evan Watters",
+   "seconded_by": "Tom Gray",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. watters motioned to recommend approval, mr. gray seconded. on vote, motion carried unanimously."
+   "quote": "article 7: administrative organization plan: mr. watters motioned to recommend approval, mr. gray seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 22, Salary Administration Plan",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Passios",
+   "motion": "Recommend approval of Article 22, Salary Administration Plan.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Dave Passios",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. menard motioned to recommend approval, mr. passios seconded. on vote, motion carried unanimously."
+   "quote": "article 22: salary administration plan. mr. menard motioned to recommend approval, mr. passios seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of Article 23, 300th Anniversary Committee, $5,000",
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Menard",
+   "motion": "Recommend approval of Article 23, 300th Anniversary Committee, $5,000.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Chris Menard",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. passios motioned to recommend approval, mr. menard seconded. on vote, motion carried unanimously."
+   "quote": "article 23: 300th anniversary committee, $5,000. mr. passios motioned to recommend approval, mr. menard seconded."
   },
   {
-   "motion": "Motion that Article 24, Bylaw Review, has no financial impact",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Passios",
+   "motion": "Finding of no financial impact on Article 24, Bylaw Review.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Dave Passios",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "mr. menard motioned no financial impact, mr. passios seconded. on vote, motion carried unanimously."
+   "quote": "article 24: bylaw review. mr. menard motioned no financial impact, mr. passios seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend approval of the Annual Town Meeting Consent Calendar",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Balish",
+   "motion": "Recommend approval on the Annual Town Meeting consent calendar.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Tom Balish",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "mr. menard motioned to recommend approval on the consent calendar, mr. balish seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Menard",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Chris Menard",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. passios motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10515250000000001
+ "dropped_unquoted": 1,
+ "note": "Single meeting, in person at Town Hall with a Zoom broadcast. Seven votes on Annual Town Meeting articles and consent calendar, plus adjournment. Only Article 6 has a printed count (6-1); the others are recorded as carried unanimously. Article 9's proposal to pull the stabilization articles from the consent calendar has no separate vote; the consent calendar motion covers it. Select Board Chairperson Tom Alonzo is named as attending a separate meeting with Town Counsel, not this one, so he is not listed as an attendee. Minutes print no document list; the warrant articles named are listed as text references.",
+ "cost_usd": 0.01794588,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish, tom gray"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish, tom gray"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish, tom gray"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish, tom gray"
+  },
+  {
+   "name": "Evan Watters",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish, tom gray"
+  },
+  {
+   "name": "Tom Balish",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish, tom gray"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to defer Article 25 (Sewer Bylaw) and keep its original stance, pending more information at Town Meeting.",
+   "quote": "article 25: sewer bylaw. committee members agreed there is still more information to be learned at town meeting, and decided to keep their original stance to defer this article."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 23, 300th Anniversary Committee",
+   "what_was_recorded": "The committee voted to recommend approval of a $5,000 article for the 300th Anniversary Committee.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "article 23: 300th anniversary committee, $5,000. mr. passios motioned to recommend approval, mr. menard seconded."
+  },
+  {
+   "topic": "Article 24, Bylaw Review",
+   "what_was_recorded": "The committee voted a finding that Article 24 has no financial impact.",
+   "figures_as_printed": [],
+   "quote": "article 24: bylaw review. mr. menard motioned no financial impact, mr. passios seconded."
+  },
+  {
+   "topic": "Stabilization fund articles in the consent calendar",
+   "what_was_recorded": "Mr. Beardmore raised concern that voting on financial articles outside the consent calendar could affect the stabilization fund articles inside it, and proposed removing those articles from the consent calendar; no separate vote on that proposal is recorded.",
+   "figures_as_printed": [],
+   "quote": "mr. beardmore raised his concern regarding voting on financial articles outside of the consent calendar having a potential effect on the stabilization fund articles"
+  },
+  {
+   "topic": "Capital plan article",
+   "what_was_recorded": "Discussion of whether the capital plan article asks Town Meeting to appropriate money or to change the plan; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the way the capital plan article is written, is to see if the town will appropriate the money, not to see if they'll change the plan"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "meeting opened at 7:00 p.m.",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. passios announced that little league opening day is scheduled for saturday, april 30, at marshall park.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no comment",
+   "quote": "4. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "no action; chair to test voting devices for Town Meeting",
+   "quote": "he will be attending a meeting at the high school to test out the new handheld voting devices to be used at annual town meeting.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "no report",
+   "quote": "6. town manager/finance director's report: none",
+   "tags": [
+    "reports"
+   ]
+  },
+  {
+   "topic": "Capital Plan Process",
+   "resolution": "discussed; chair to raise with Town Moderator; no vote",
+   "quote": "mr. beardmore does intend to discuss the situation with the town moderator.",
+   "tags": [
+    "capital plan",
+    "town counsel",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Articles (re-vote)",
+   "resolution": "recommendations voted on Articles 4, 6, 7, 22, 23, 24; Article 25 deferred",
+   "quote": "at their last meeting the committee deferred on articles 4, 6, 7, 22, 23, 24, and 25.",
+   "tags": [
+    "annual town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Consent Calendar",
+   "resolution": "approved recommendation on consent calendar",
+   "quote": "mr. menard motioned to recommend approval on the consent calendar, mr. balish seconded.",
+   "tags": [
+    "consent calendar",
+    "stabilization fund"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action; liaison updates",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "none",
+   "quote": "12. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "listed for later",
+   "quote": "town meeting recap, agenda topics for off season",
+   "tags": [
+    "future agenda"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "Annual Town Meeting dates listed",
+   "quote": "annual town meeting may 7, may, 12, may 26",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:35 p.m.",
+   "quote": "at 8:35 p.m. mr. passios motioned to adjourn, mr. menard seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 4: Budget amendment (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 4: budget amendment. mr. passios motioned to recommend approval, mr. menard seconded."
+  },
+  {
+   "name": "Article 6: Capital Plan (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 6: capital plan: mr. passios motioned to recommend approval, mr. balish seconded."
+  },
+  {
+   "name": "Article 7: Administrative Organization Plan (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 7: administrative organization plan: mr. watters motioned to recommend approval, mr. gray seconded."
+  },
+  {
+   "name": "Article 22: Salary Administration Plan (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 22: salary administration plan. mr. menard motioned to recommend approval, mr. passios seconded."
+  },
+  {
+   "name": "Article 23: 300th Anniversary Committee, $5,000 (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 23: 300th anniversary committee, $5,000. mr. passios motioned to recommend approval, mr. menard seconded."
+  },
+  {
+   "name": "Article 24: Bylaw Review (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 24: bylaw review. mr. menard motioned no financial impact, mr. passios seconded."
+  },
+  {
+   "name": "Article 25: Sewer Bylaw (Annual Town Meeting warrant article)",
+   "where": "text",
+   "quote": "article 25: sewer bylaw. committee members agreed there is still more information to be learned at town meeting"
+  }
+ ],
+ "tags": [
+  "annual town meeting",
+  "warrant articles",
+  "capital plan",
+  "consent calendar",
+  "stabilization fund",
+  "bylaws",
+  "town charter",
+  "sewer bylaw",
+  "300th anniversary"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-01-24",
  "docid": "3515",
@@ -12,43 +12,238 @@
  },
  "votes": [
   {
-   "motion": "accept minutes of the December 13, 2021 meeting with addition of indicating D. Fortune as absence",
+   "motion": "Accept the minutes of the December 13, 2021 meeting as presented, with the addition of indicating D. Fortune as absent.",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta made a motion to accept minutes as presented, with the addition of indicating d. fortune as absence. second: w. bertrand roll call vote: donna fortune abstained as she had not been present at that meeting, all other members voted in favor of acceptance. ",
-   "quote_taken_from_text": true
+   "quote": "motion by j. bilotta made a motion to accept minutes as presented, with the addition of indicating d. fortune as absence."
   },
   {
-   "motion": "accept proposed job description changes to current Meal Site Manager including new SAP grade level of Grade 6 and submit at annual Town Meeting for Final Approval",
+   "motion": "Accept the proposed job description changes to the current Meal Site Manager, including the new SAP grade level of Grade 6; submit at the annual Town Meeting for Final Approval.",
    "moved_by": "E. Arnold",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by e. arnold to accept the proposed job description changes to the current meal site manager including the new sap grade level of grade 6 ; submit at the annual town meeting for final approval. second: j. bilotta roll call vote: all in favor ",
-   "quote_taken_from_text": true
+   "quote": "motion by e. arnold to accept the proposed job description changes to the current meal site manager including the new sap grade level of grade 6"
   },
   {
-   "motion": "accept proposed new job description for an Assistant Meal Site Manager as a Grade 3 and submit at annual Town Meeting for Final Approval",
+   "motion": "Accept the proposed new job description for an Assistant Meal Site Manager as a Grade 3; submit at the annual Town Meeting for Final Approval.",
    "moved_by": "W. Bertrand",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by w. bertrand to accept the proposed new job description for an assistant meal site manager as a grade 3; submit at the annual town meeting for final approval. second: s. andrews roll call vote: all in favor ",
-   "quote_taken_from_text": true
+   "quote": "motion by w. bertrand to accept the proposed new job description for an assistant meal site manager as a grade 3"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:18 pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta to adjourn the meeting at 7:18 pm second: d. fortune roll call vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "motion by j. bilotta to adjourn the meeting at 7:18 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0870055
+ "note": "Text is a plain extraction with broken word spacing in places (e.g. 'Assistan t', 'SA P', 'p articipate', 'Manage r'); quotes avoid those spans. Votes are recorded as roll call 'All in favor' with no tally printed, so outcomes are 'passed' without a count. Donna Fortune abstained on the minutes motion, per the minutes. No dollar figures appear in the minutes.",
+ "cost_usd": 0.01644888,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand; donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand; donna fortune"
+  },
+  {
+   "name": "Eric Arnold",
+   "role": "Committee Chair",
+   "status": "present",
+   "quote": "meeting began at 5:04 pm with all attendees present, e. arnold committee chair presiding"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand; donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand; donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director; atty. marc terry, town of lunenburg, labor counsel"
+  },
+  {
+   "name": "Marc Terry",
+   "role": "Town of Lunenburg, Labor Counsel",
+   "status": "present",
+   "quote": "atty. marc terry, town of lunenburg, labor counsel"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "susan doherty, coa director; heather lemieux, town manager"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager, robert oliva, dpw director;"
+  },
+  {
+   "name": "Robert Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "heather lemieux, town manager, robert oliva, dpw director;"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager;"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits/Risk Manager",
+   "status": "present",
+   "quote": "nancy forest, payroll & benefits/risk manager; pauline roy, outreach coordinator"
+  },
+  {
+   "name": "Pauline Roy",
+   "role": "Outreach Coordinator",
+   "status": "present",
+   "quote": "nancy forest, payroll & benefits/risk manager; pauline roy, outreach coordinator"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair proposed that members review the SAP material and note the areas needing more thorough review, so the committee can examine the most significant changes at the next meeting. The minutes record no vote or response to this proposal.",
+   "quote": "eric proposed that with so many issues to be addressed that the committee members review the material"
+  },
+  {
+   "decision": "Julie Belliveau will continue work on amending the salary grid and present it at future meetings.",
+   "quote": "she will continue work on amending the grid, to be presented at future meetings."
+  },
+  {
+   "decision": "The committee agreed on the importance of continuing to meet regularly to finish the SAP update and the compensation analysis for Town Meeting. Next meeting set for Monday January 31, 2022 at 5:00 via Zoom.",
+   "quote": "the group identified the importance of continuing to meet regularly to complete the work of"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Salary grid restructuring",
+   "what_was_recorded": "Julie Belliveau reviewed a proposal to start the salary grid at minimum wage and condense the 20 grades; she is requesting pay data from comparable communities. No dollar figures were printed.",
+   "quote": "the personnel committee had previously discussed starting the grid at minimum wage and condensing the 20 grades into a more reasonable pay grid.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Budget timing for job description changes",
+   "what_was_recorded": "The Meal Site Manager job description changes would take effect as the budgets for the new year are presented for approval. No dollar figures were printed.",
+   "quote": "these changes would take place as the budgets for the new year would be presented for approval.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Visitors",
+   "stated_role": "",
+   "topic": "Thanks for participating in discussions",
+   "quote": "visitors expressed gratitude for being able to"
+  },
+  {
+   "speaker": "Donna Fortune",
+   "stated_role": "",
+   "topic": "Thanks to Dave MacDonald for long service",
+   "quote": "donna fortune expressed thanks for the long years of service dave macdonald provided for this committee."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "minutes of the december 13, 2021 meeting reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Changes to SAP (Salary Administration Plan)",
+   "resolution": "discussed; members to review; no action",
+   "quote": "marc terry was introduced to committee and he outlined the work that had been undertaken to",
+   "tags": [
+    "SAP",
+    "by-law",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Review timetable for SAP compensation review",
+   "resolution": "continued",
+   "quote": "she will continue work on amending the grid, to be presented at future meetings.",
+   "tags": [
+    "compensation",
+    "salary grid"
+   ]
+  },
+  {
+   "topic": "New position and amended current position (Meal Site Manager / Assistant Meal Site Manager)",
+   "resolution": "approved two job descriptions for Town Meeting",
+   "quote": "the new role better defined what the old work was of the meal site manager.",
+   "tags": [
+    "job description",
+    "COA",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "the group identified the importance of continuing to meet regularly to complete the work of",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Salary Administration Plan (SAP) by-law, as updated",
+   "where": "text",
+   "quote": "update the salary administration plan by-law."
+  },
+  {
+   "name": "Draft of proposed SAP changes and the reasons for those changes",
+   "where": "text",
+   "quote": "the town manager and hr director had met with the sap employees with the draft of proposed changes and the reasons for those changes."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "salary administration plan",
+  "compensation",
+  "job descriptions",
+  "council on aging",
+  "meal site",
+  "town meeting",
+  "zoom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-04-12",
  "docid": "5716",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn at 7:24 pm",
+   "motion": "To adjourn the meeting at 7:24 pm.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -21,6 +21,357 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document scanned and OCR'd by macOS Vision. Only one vote recorded in these minutes: the motion to adjourn. The roll call vote shows all four members present voted aye (John R., Mike N., Brett R., and Dave).",
- "cost_usd": 0.0844435
+ "note": "OCR text (macOS Vision). Page 1 opens mid-sentence (\"the New York subway.\") and page 2 and page 3 break mid-sentence, so some context is missing. The minutes print no attendance roll call; attendance is inferred from speaking and from the adjournment roll call (John, Mike N., Brett, Dave). Only one vote is recorded (adjournment, roll call 4 ayes). Business items were discussed with no motion. \"Dave M.\" and \"Dave Passios\" are both printed and the text does not say whether they are the same person; the roll-call \"Dave\" is not identified. The clerk line is OCR-garbled (\"Mnutes Clerk\", stray characters). The \"Public Comment\" heading contains only a Commission remark with no named speaker. Kevin Olson's and Jamie Rheault's roles are taken from their printed affiliations. The Solar item and the Wright Pierce memo are cross-referenced to handouts, not reproduced.",
+ "cost_usd": 0.02251548,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb reported her new assistant, paula, was in an accident after leaving work today."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb informed dave passios that the commission would need to put it off until the next run."
+  },
+  {
+   "name": "Dave M.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave m. suggested setting up an appointment with al packard for tours of the pump stations"
+  },
+  {
+   "name": "Mike N.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike said he likes the gravity option, with significantly lower upfront costs."
+  },
+  {
+   "name": "Brett R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "brett asked if it was necessary to go 5'to 6' deep."
+  },
+  {
+   "name": "John R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john replied there are internal or external pumps."
+  },
+  {
+   "name": "Matt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "matt replied that they just bid on a project with cost of $13k for a grinder pump, with installation."
+  },
+  {
+   "name": "Kevin Olson",
+   "role": "Wright Pierce",
+   "status": "present",
+   "quote": "kevin olson, wright pierce-upland/eastern/white/maple parkway extension discussion- barb screen-shared the memo provided by wright pierce."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham",
+   "status": "present",
+   "quote": "jamie rheault, whitman & bingham- 711 mass ave condo project- jamie reported that he had submitted their application to barb"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Mnutes Clerk",
+   "status": "not stated",
+   "quote": "jane l. ranley carly mnutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to present the Upland/Eastern and White/Maple Parkway sewer extension to residents as one total project covering both areas (discussed, no vote recorded).",
+   "quote": "the commission discussed and agreed to present it as a total project for both areas."
+  },
+  {
+   "decision": "The solar panel proposal (Green Community request) was put off until the next run, because there was not enough time to pull a proposal together.",
+   "quote": "barb informed dave passios that the commission would need to put it off until the next run."
+  },
+  {
+   "decision": "Barb will contact Graves to tell them the revised 711 Mass Ave plans are coming for peer review.",
+   "quote": "barb will contact graves to let them know the plans are coming."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Upland/Eastern and White/Maple Parkway sewer extension betterments",
+   "what_was_recorded": "Wright Pierce's preliminary estimates: a gravity sewer would be a betterment of $57K and a low-pressure system $40K, both paid over 20 years; private grinder pump costs fall on residents.",
+   "figures_as_printed": [
+    "$57K",
+    "$40K",
+    "20 years"
+   ],
+   "quote": "the gravity sewer would be a $57k betterment and the low-pressure system would be a $40k betterment- both paid out over 20 years."
+  },
+  {
+   "topic": "Average septic system cost",
+   "what_was_recorded": "Kevin Olson estimated the average septic system costs about $30K, a comparison point for residents facing the sewer extension.",
+   "figures_as_printed": [
+    "$30K"
+   ],
+   "quote": "kevin estimated the average septic system costs about $30k"
+  },
+  {
+   "topic": "E-1 internal pump installation cost",
+   "what_was_recorded": "John estimated an internal E-1 pump where there is ledge at $7K plus $500 for the electrical hookup.",
+   "figures_as_printed": [
+    "$7K",
+    "$500"
+   ],
+   "quote": "where there is ledge, the internal pump is the better option and costs $7k plus $500 for the electrical hookup."
+  },
+  {
+   "topic": "Gravity versus low-pressure system upfront cost",
+   "what_was_recorded": "Dave said a gravity system would cost a few thousand dollars more upfront than the low-pressure option but could be paid over 20 years as a betterment; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "dave stated for few thousand more, they can go with a gravity system and pay over 20 years as a betterment."
+  },
+  {
+   "topic": "Grinder pump project bid",
+   "what_was_recorded": "Matt reported a recent bid on a grinder pump project with installation at $13K.",
+   "figures_as_printed": [
+    "$13K"
+   ],
+   "quote": "matt replied that they just bid on a project with cost of $13k for a grinder pump, with installation."
+  },
+  {
+   "topic": "CIPP lining cost per linear foot",
+   "what_was_recorded": "Matt gave cured-in-place pipe (CIPP) lining cost estimates for the clay pipes, ranging from $40-70 per linear foot to possibly $100 per linear foot.",
+   "figures_as_printed": [
+    "$40-70/ l.ft.",
+    "$100/l.ft."
+   ],
+   "quote": "brett asked kevin if he had cost estimates for cipp and matt replied $40-70/ l.ft. to possibly $100/l.ft."
+  },
+  {
+   "topic": "Sewer Maintenance program funding",
+   "what_was_recorded": "Dave reported the Commission previously gave $100K to Sewer Maintenance program projects with Rob Oliva.",
+   "figures_as_printed": [
+    "$100K"
+   ],
+   "quote": "dave said they worked with rob on the sewer maintenance program and gave $100k to those projects."
+  },
+  {
+   "topic": "ARPA funding for pump stations and capital work",
+   "what_was_recorded": "Kevin reported a discussion with Rob Oliva about using ARPA funding, suggesting pump stations; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "kevin reported that he had a conversation with rob oliva concerning the use of arpa funding."
+  },
+  {
+   "topic": "Build Back America funding",
+   "what_was_recorded": "Dave noted that money should be coming from Build Back America funding; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "dave noted that there should be money coming from build back america funding."
+  },
+  {
+   "topic": "Past-due payments and betterments",
+   "what_was_recorded": "Meadowwoods and others paid past-due bills, betterments and tax-lien amounts; no dollar figure was printed for these payments.",
+   "figures_as_printed": [],
+   "quote": "meadowwoods made a payment on past due bills and betterments, along with others who paid amounts on tax liens."
+  },
+  {
+   "topic": "Retained Earnings from betterments",
+   "what_was_recorded": "Barb reported that $225K will go to Retained Earnings when the betterments are applied.",
+   "figures_as_printed": [
+    "$225K"
+   ],
+   "quote": "there will be $225k going to retained earnings when the betterments are applied."
+  },
+  {
+   "topic": "Sewer rate increase",
+   "what_was_recorded": "Barb updated the website with a new rate increase, to be approved with the FY23 budget at Town Meeting; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "new rate increase (to be approved with the fy23 budget at town meeting)"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Commission's good wishes to Barb before her vacation",
+   "quote": "public comment - the commission wished barb a good vacation."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action (informational)",
+   "tags": [
+    "staffing",
+    "DPW Director"
+   ],
+   "quote": "announcements - barb reported her new assistant, paula, was in an accident after leaving work today."
+  },
+  {
+   "topic": "Upland/Eastern and White/Maple Parkway sewer extension (Wright Pierce)",
+   "resolution": "discussed; agreed to present as one total project for both areas",
+   "tags": [
+    "sewer extension",
+    "betterments",
+    "low-pressure sewer",
+    "gravity sewer",
+    "ledge"
+   ],
+   "quote": "the commission discussed and agreed to present it as a total project for both areas."
+  },
+  {
+   "topic": "ARPA funding, pump stations and clay-pipe lining",
+   "resolution": "discussed; information to be sent to Commission",
+   "tags": [
+    "ARPA",
+    "pump stations",
+    "CIPP",
+    "clay pipes",
+    "capital improvements"
+   ],
+   "quote": "kevin reported that he had a conversation with rob oliva concerning the use of arpa funding."
+  },
+  {
+   "topic": "711 Mass Ave condo project (Whitman & Bingham)",
+   "resolution": "continued; revised plan to go to peer review",
+   "tags": [
+    "711 Mass Ave",
+    "condo",
+    "peer review",
+    "flow"
+   ],
+   "quote": "barb asked jamie for a new plan to submit for the peer review, which he will drop off."
+  },
+  {
+   "topic": "Solar panel proposal (Green Community request)",
+   "resolution": "postponed to next run",
+   "tags": [
+    "solar",
+    "Green Community"
+   ],
+   "quote": "barb informed dave passios that the commission would need to put it off until the next run."
+  },
+  {
+   "topic": "Pond View Commons 40B",
+   "resolution": "informational; Select Board and Town Counsel to respond",
+   "tags": [
+    "40B",
+    "Mass Housing",
+    "Zoning Board of Appeals"
+   ],
+   "quote": "barb sent the commission the notice of the approval by mass housing."
+  },
+  {
+   "topic": "Billing, grease traps, IT and website update",
+   "resolution": "informational",
+   "tags": [
+    "billing",
+    "retained earnings",
+    "grease traps",
+    "IT",
+    "website"
+   ],
+   "quote": "there will be $225k going to retained earnings when the betterments are applied."
+  },
+  {
+   "topic": "Action items and public comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "action items-none public comment - the commission wished barb a good vacation."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "informational",
+   "tags": [
+    "schedule",
+    "Town Meeting"
+   ],
+   "quote": "april 26, 2022 @ 6pm - regular meeting, remote participation"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:24 pm, passed 4-0",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion: john r. to adjourn at 7:24 pm. second: brett r. roll call vote- john-aye, mike n.-aye, brett-aye and dave aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo from Wright Pierce for Upland/Eastern/White/Maple Parkway potential extension",
+   "where": "list",
+   "quote": "memo from wright pierce for upland/eastern/white/maple parkway potential extension"
+  },
+  {
+   "name": "Whitman & Bingham Engineering Plans for 711 Mass. Ave. condo project",
+   "where": "list",
+   "quote": "whitman & bingham engineering plans for 711 mass. ave. condo project"
+  },
+  {
+   "name": "Rob Oliva's list of comments on the 711 Mass. Ave. plans",
+   "where": "list",
+   "quote": "rob oliva's list of comments on the 711 mass. ave. plans"
+  },
+  {
+   "name": "FY22 YTD Budget",
+   "where": "list",
+   "quote": "rob oliva's list of comments on the 711 mass. ave. plans fy22 ytd budget"
+  },
+  {
+   "name": "Notice of approval by Mass Housing (Pond View Commons 40B)",
+   "where": "text",
+   "quote": "barb sent the commission the notice of the approval by mass housing."
+  },
+  {
+   "name": "Application for 711 Mass Ave condo project",
+   "where": "text",
+   "quote": "jamie reported that he had submitted their application to barb"
+  },
+  {
+   "name": "Maintenance Plan (capital improvements listed)",
+   "where": "text",
+   "quote": "noted the maintenance plan had capital improvements listed."
+  },
+  {
+   "name": "Draft of pipe inspection findings from four years ago",
+   "where": "text",
+   "quote": "he could send the commission a draft of what they saw when they inspected them 4 years ago"
+  },
+  {
+   "name": "Certified letter to A&D Crossroads (grease traps)",
+   "where": "text",
+   "quote": "barb sent out a certified letter to a&d crossroads and they are waiting for the pump out report."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "betterments",
+  "sewer extension",
+  "low-pressure sewer",
+  "gravity sewer",
+  "ARPA",
+  "CIPP",
+  "clay pipes",
+  "711 Mass Ave",
+  "condo",
+  "Pond View Commons 40B",
+  "solar",
+  "grease traps",
+  "staffing",
+  "DPW Director",
+  "billing",
+  "retained earnings",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts - screen shared by barb"
+ },
+ "dropped_unquoted_by_field": {}
 }

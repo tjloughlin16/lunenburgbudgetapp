@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-10-15",
  "docid": "5291",
@@ -12,6 +12,111 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "These are minutes of a Select Board site visit meeting (October 15, 2022). The minutes describe property walk-throughs and note that \"The Board decided not to visit 247 Highland Street,\" but this decision is recorded narratively without formal motion language, movers, seconders, or voting outcomes. No votes are formally recorded.",
- "cost_usd": 0.0719745
+ "note": "Scanned minutes read by macOS Vision OCR. No motion or vote is recorded: the meeting was a set of site walks, and the 11:03 a.m. adjournment appears without a motion. The Chairman's name is spelled Jeffieys in the attendance line and Jeffreys in the body text. Public comment section absent.",
+ "cost_usd": 0.01385618,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffieys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffieys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffieys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: michael-ray jeffieys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Board member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffieys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Board member",
+   "status": "absent",
+   "quote": "member not present: heather sroka"
+  },
+  {
+   "name": "Connor Fisher",
+   "role": "senior at Lunenburg Public High School; joined the walk-throughs for a school project",
+   "status": "present",
+   "quote": "also present was connor fisher, a senior at lunenburg public high school"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board decided not to visit 247 Highland Street, and the meeting was adjourned at 11:03 a.m. (decided without a recorded motion or vote)",
+   "quote": "the board decided not to visit 247 highland street and the meeting was therefore adjourned at 11:03 a.m."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Site walk: 104 Fairview Road",
+   "resolution": "site walk held; no action recorded",
+   "quote": "the walk started at 10:09 a.m. the frontage along fairview road through which the town has",
+   "tags": [
+    "town property",
+    "site walk",
+    "land",
+    "Fairview Road"
+   ]
+  },
+  {
+   "topic": "Site walk: 1249 Massachusetts Avenue",
+   "resolution": "site walk held; no action recorded",
+   "quote": "this parcel is landlocked and lacks frontage along mass.",
+   "tags": [
+    "town property",
+    "site walk",
+    "land",
+    "Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "Site walk: 247 Highland Street",
+   "resolution": "not visited; the Board decided not to visit",
+   "quote": "the board decided not to visit 247 highland street and the meeting was therefore adjourned at 11:03 a.m.",
+   "tags": [
+    "town property",
+    "site walk",
+    "Highland Street"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Maps provided to each member of the Board (parcels 1 and 45, Fairview Road area; no date or author given)",
+   "where": "text",
+   "quote": "with reference to maps provided to each member of the board, whether the town has an easement"
+  }
+ ],
+ "tags": [
+  "town property",
+  "site walks",
+  "land",
+  "Select Board",
+  "Saturday meeting",
+  "Fairview Road",
+  "Massachusetts Avenue",
+  "Highland Street"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "with reference to maps provided to each member of the board"
+ },
+ "dropped_unquoted_by_field": {}
 }

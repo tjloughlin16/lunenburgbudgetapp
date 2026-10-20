@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2022-08-11",
  "docid": "3206",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from June 9, 2022",
+   "motion": "Approve the minutes of 6.9.2022.",
    "moved_by": "A. Lockwood",
    "seconded_by": "M. Toohill",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "moved by a. lockwood, seconded by m. toohill. approved unanimously."
   },
   {
-   "motion": "authorize town manager to expend $500 from BrightFarm Trust Fund to conduct title examination and certification of Stump Cove property",
+   "motion": "Authorize the town manager to expend $500 from the BrightFarm Trust Fund for a title examination and certification of the Stump Cove property.",
    "moved_by": "B. Kibbe",
    "seconded_by": "A. Lockwood",
    "outcome": "passed",
@@ -29,6 +29,168 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0861455
+ "note": "Two motions are recorded with a result (the minutes approval and the $500 Stump Cove authorization), both passed unanimously as printed; the minutes print 'Approved unanimously' without a tally count. No motion or vote is recorded for adjournment, so the adjournment is listed as a topic only. Public comment reads 'None reported', so no speakers are listed. The minutes name no documents under a list heading. The page 2 text is only the signature line 'Respectfully submitted, Brandon Kibbe'. Minutes of 3.11.22 were noted as still needing review and approval, but no vote on them is recorded.",
+ "cost_usd": 0.014793380000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mike Toohill",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman mike toohill, brandon kibbe, ana lockwood, mary wilson"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairman mike toohill, brandon kibbe, ana lockwood, mary wilson"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairman mike toohill, brandon kibbe, ana lockwood, mary wilson"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Member (Conservation Commission appointee)",
+   "status": "present",
+   "quote": "introduce and welcome new committee member mary wilson, conservation commission appointee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "M. Toohill will work with the Town Manager and Town Counsel to contract the title work on the Stump Cove parcel.",
+   "quote": "m. toohill will work with town manager and town counsel to contract the work."
+  },
+  {
+   "decision": "M. Toohill and M. Wilson will give a more detailed update on the Shawn H. Kelley bequest to the Conservation Commission at the next meeting.",
+   "quote": "m. toohill and m. wilson will provide a more detailed update of the shawn h. kelley bequest to conservation commission at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Stump Cove title examination estimate",
+   "what_was_recorded": "An examiner familiar to Town Counsel estimated the title examination and certification at $500, and the committee authorized that amount from the BrightFarm Trust Fund.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "estimate for title examination and certification of $500 from examiner familiar to town counsel."
+  },
+  {
+   "topic": "Marshall Park grant funding",
+   "what_was_recorded": "The Selectmen voted to support seeking grant funding for the Marshall Park planning process. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "selectmen voted unanimously supported seeking grant funding."
+  },
+  {
+   "topic": "Trail upgrade grant",
+   "what_was_recorded": "M. Wilson gave an update on a trail upgrade grant covering kiosks, gravel and trail maintenance. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "m. wilson provided update on trail upgrade grant."
+  },
+  {
+   "topic": "Shawn H. Kelley bequest",
+   "what_was_recorded": "M. Toohill and M. Wilson will give a more detailed update on the Shawn H. Kelley bequest to the Conservation Commission. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "m. toohill and m. wilson will provide a more detailed update of the shawn h. kelley bequest to conservation commission at the next meeting."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Expenditure from the BrightFarm Trust Fund for the Stump Cove title examination and certification",
+   "amount_as_printed": "$500",
+   "outcome": "authorized, passed unanimously",
+   "quote": "b. kibbe moved, a. lockwood seconded, to authorize town manager to expend $500 from brightfarm trust fund to conduct title examination and certification of stump cove property. approved unanimously."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes review and approval (6.9.2022)",
+   "resolution": "approved unanimously",
+   "quote": "ii. minutes: review & approve 6.9.2022 a. moved by a. lockwood, seconded by m. toohill. approved unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee composition",
+   "resolution": "noted; Planning Board to appoint replacement; M. Toohill to follow up on at-large seat",
+   "quote": "a. tanner cole has resigned from planning board will no longer serve as the pb appointee.",
+   "tags": [
+    "membership",
+    "planning board"
+   ]
+  },
+  {
+   "topic": "Stump Cove parcel title follow-up",
+   "resolution": "approved $500 for title examination",
+   "quote": "b. b. kibbe moved, a. lockwood seconded, to authorize town manager to expend $500 from brightfarm trust fund",
+   "tags": [
+    "stump cove",
+    "title",
+    "brightfarm trust fund"
+   ]
+  },
+  {
+   "topic": "Committee comments and concerns",
+   "resolution": "discussed; updates to follow at next meeting",
+   "quote": "a. a. lockwood reports that marshall park planning process is moving ahead.",
+   "tags": [
+    "marshall park",
+    "grants",
+    "bequest",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment reported",
+   "quote": "vi. public comment a. none reported.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "next meetings set for 9/8/22 and 10/20/22",
+   "quote": "next meetings scheduled for 9/8/22 and 10/20/22, 7:30pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15pm; no motion recorded",
+   "quote": "meeting adjourned at 8:15pm",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Estimate for title examination and certification from an examiner familiar to Town Counsel ($500)",
+   "where": "text",
+   "quote": "estimate for title examination and certification of $500 from examiner familiar to town counsel."
+  }
+ ],
+ "tags": [
+  "open space",
+  "conservation commission",
+  "stump cove",
+  "title examination",
+  "marshall park",
+  "trail grants",
+  "bequest",
+  "committee composition",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-01-27",
  "docid": "2052",
@@ -12,23 +12,373 @@
  },
  "votes": [
   {
-   "motion": "Appoint Mr. Beardmore to represent the Finance Committee on the Municipal Building Design Committee",
-   "moved_by": "Mr. Balish",
-   "seconded_by": "Mr. Gray",
+   "motion": "Appoint Peter Beardmore to represent the Finance Committee on the Municipal Building Design Committee.",
+   "moved_by": "Tom Balish",
+   "seconded_by": "Tom Gray",
    "outcome": "passed 4-1",
    "procedural": false,
    "quote": "mr. balish moved to appoint mr. beardmore to represent the finance committee on the municipal building design committee, mr. gray seconded. on vote, motion passes 4-1."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. Watters",
-   "seconded_by": "Mr. Balish",
-   "outcome": "carried unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Evan Watters",
+   "seconded_by": "Tom Balish",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. watters motioned to adjourn, mr. balish seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0823885
+ "note": "Two recorded motions, both listed: a 4-1 appointment and an adjournment carried unanimously. The minutes give no vote on the capital plan or the forecast. Dave Passios's attendance is printed as 'via Zoom (for first hour of meeting)' on the line after his name, so he is recorded as remote; the text does not say which member that applies to with certainty. Item 12 (Minutes) reads 'none', so no prior minutes were approved. No dollar transfers recorded. The minutes print no cost for the streetlight conversion or the 40B priority.",
+ "cost_usd": 0.01894238,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, evan watters, tom balish, tom gray, dave passios"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, evan watters, tom balish, tom gray, dave passios"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, evan watters, tom balish, tom gray, dave passios"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, evan watters, tom balish, tom gray, dave passios"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, jay simeone, evan watters, tom balish, tom gray, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "remote",
+   "quote": "tom gray, dave passios via zoom (for first hour of meeting)"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to include Chapter 40B on its list of legislative priorities, along with possible state aid or grant opportunities for 30 School St.",
+   "quote": "the committee agreed to include 40b on their list of priorities as well as possible state aid or grant opportunities for 30 school st."
+  },
+  {
+   "decision": "The committee decided to bring a more proactive financial approach to the representative's new charge on the Municipal Building Design Committee.",
+   "quote": "and decided to bring a more proactive financial approach with the new charge."
+  },
+  {
+   "decision": "Department heads are to present their budgets at a future meeting.",
+   "quote": "items for future meetings department heads will present their budgets"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Governor's cherry sheet state aid proposal",
+   "what_was_recorded": "The Governor's proposal came in $983,000 more from state aid, including an 11 percent increase in Chapter 70 funds.",
+   "figures_as_printed": [
+    "$983,000",
+    "11 percent"
+   ],
+   "quote": "governor baker's proposal on the cherry sheet, which came in at $983,000 more from state aid, including an 11 percent increase in chapter 70 funds."
+  },
+  {
+   "topic": "FY23 capital requests total",
+   "what_was_recorded": "The 30 remaining capital requests for FY 2023 total the amount printed.",
+   "figures_as_printed": [
+    "$4,043,049"
+   ],
+   "quote": "the remaining 30 capital requests total $4,043,049 for fy 2023"
+  },
+  {
+   "topic": "Capital requests and town facilities share",
+   "what_was_recorded": "Ms. Lemieux put the capital requests at $4 million, 66 percent of which concerned town facilities from the past Vertex studies.",
+   "figures_as_printed": [
+    "$4 million",
+    "66 percent"
+   ],
+   "quote": "there was $4 million in requests, 66 percent of which had to do with town facilities"
+  },
+  {
+   "topic": "ARPA eligibility for Primary School air conditioning",
+   "what_was_recorded": "The school committee asked whether the Primary School air conditioning project could be eligible for ARPA funds. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "inquired whether the project could be eligible for arpa funds"
+  },
+  {
+   "topic": "Health insurance cost increase and stabilization fund",
+   "what_was_recorded": "Discussion of the FY23 health insurance cost increase and whether the Health Insurance Stabilization Fund would cover it. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. watters inquired about the increase in health insurance costs for fy23, and whether the health insurance stabilization fund would account for that increase."
+  },
+  {
+   "topic": "School staffing plan and grant funding",
+   "what_was_recorded": "Some school expenses are covered by grant money; a staffing plan funds them when grant funding ends. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "some expenses are covered via grant money, but the plan has been put in place to fund those expenses when grant funding dries up."
+  },
+  {
+   "topic": "Comcast fees supporting public access channel",
+   "what_was_recorded": "Legislation on Comcast fees that support the public access channel could reduce those fees as cable subscriptions fall. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "legislation that's been filed on fees paid by comcast which support the town's public access channel"
+  },
+  {
+   "topic": "Townsend withdrawal from regional dispatch",
+   "what_was_recorded": "Townsend is withdrawing from the regional dispatch program; the town has been assured of no financial impact for FY23 or FY24. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "has been assured that the town will not see a financial impact for fy23 or fy24"
+  },
+  {
+   "topic": "925 Mass Ave gas station cleanup funding",
+   "what_was_recorded": "The town anticipates federal infrastructure bill funds in the summer for cleanup of the gas station property, with EPA assistance. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "anticipates funds from a federal infrastructure bill in the summer"
+  },
+  {
+   "topic": "Projected deficits and Prop 2 1/2 override (public comment)",
+   "what_was_recorded": "A resident raised concern about projected town deficits and a possible Proposition 2 1/2 override. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "lunenburg resident david rogers phoned in to express his concern over the town projecting deficits, and the possibility of an override of prop 2 ½."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Primary School air conditioning and FY23 capital plan",
+   "speaker": "Ms. Archambault",
+   "stated_role": "School Committee Chairperson",
+   "quote": "ms. archambault expressed the school committee's disappointment in the capital planning committee's capital plan for fy23"
+  },
+  {
+   "topic": "Projected deficits and possible Prop 2 1/2 override",
+   "speaker": "David Rogers",
+   "stated_role": "Lunenburg resident",
+   "quote": "lunenburg resident david rogers phoned in to express his concern over the town projecting deficits"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "a consultant from capital strategic solutions will give a special presentation concerning arpa funds at the february 1, 2022 select board meeting",
+   "tags": [
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Public Comment (school committee on capital plan)",
+   "resolution": "discussed, no action",
+   "quote": "ms. archambault expressed the school committee's disappointment in the capital planning committee's capital plan for fy23",
+   "tags": [
+    "capital plan",
+    "school"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "informational",
+   "quote": "ms. lemieux also informed the committee on governor baker's proposal on the cherry sheet",
+   "tags": [
+    "state aid",
+    "gas station",
+    "regional dispatch"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting Updates",
+   "resolution": "none",
+   "quote": "annual town meeting updates: none",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Streetlights LED project",
+   "resolution": "update, no action",
+   "quote": "ms. lemieux informed the committee of her last discussion with the select board concerning the conversion of street lights to led.",
+   "tags": [
+    "streetlights"
+   ]
+  },
+  {
+   "topic": "Legislative priorities and follow-up",
+   "resolution": "agreed to add 40B to priorities",
+   "quote": "the committee agreed to include 40b on their list of priorities",
+   "tags": [
+    "40B",
+    "legislation",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Capital Plan presentation and discussion",
+   "resolution": "discussed, no action",
+   "quote": "ms. lemieux talked about how the capital plan is created, and what is on the plan.",
+   "tags": [
+    "capital plan",
+    "town facilities",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Five-Year Financial Forecast",
+   "resolution": "discussed, no action",
+   "quote": "ms. lemieux described the required five-year financial forecast, which is a living document, subject to change as more information becomes available.",
+   "tags": [
+    "forecast",
+    "health insurance",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Municipal Building Design Committee representative",
+   "resolution": "Beardmore appointed, passed 4-1",
+   "quote": "mr. balish moved to appoint mr. beardmore to represent the finance committee on the municipal building design committee, mr. gray seconded. on vote, motion passes 4-1.",
+   "tags": [
+    "municipal buildings"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "none",
+   "quote": "12. minutes none 13. committee reports",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "informational",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public Comment (deficits and Prop 2 1/2)",
+   "resolution": "no action",
+   "quote": "lunenburg resident david rogers phoned in to express his concern over the town projecting deficits",
+   "tags": [
+    "deficits",
+    "override"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "department budgets to be presented",
+   "quote": "items for future meetings department heads will present their budgets",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "next meeting Feb 17",
+   "quote": "16. next meetings feb 17",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 9:54 p.m., passed",
+   "quote": "17. adjourn at 9:54 p.m. mr. watters motioned to adjourn, mr. balish seconded.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Five-Year Financial Forecast presentation (FY 2023-FY 2027 financial forecast)",
+   "where": "list",
+   "quote": "both the five -year financial forecast and the fy2023 capital plan recommendation presentations can be found at lunenburg town hall in the town manager's office"
+  },
+  {
+   "name": "FY2023 Capital Plan Recommendation presentation",
+   "where": "list",
+   "quote": "both the five -year financial forecast and the fy2023 capital plan recommendation presentations can be found at lunenburg town hall in the town manager's office"
+  },
+  {
+   "name": "Governor Baker's cherry sheet proposal",
+   "where": "text",
+   "quote": "governor baker's proposal on the cherry sheet, which came in at $983,000 more from state aid"
+  },
+  {
+   "name": "Vertex studies",
+   "where": "text",
+   "quote": "66 percent of which had to do with town facilities as a result of the past vertex studies"
+  },
+  {
+   "name": "Legislation filed on Comcast fees",
+   "where": "text",
+   "quote": "legislation that's been filed on fees paid by comcast which support the town's public access channel"
+  }
+ ],
+ "tags": [
+  "capital plan",
+  "ARPA",
+  "state aid",
+  "Chapter 70",
+  "health insurance",
+  "municipal buildings",
+  "public access channel",
+  "five-year forecast",
+  "streetlights",
+  "Prop 2 1/2",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "both the five -year financial forecast and the fy2023 capital plan recommendation presentations can be found at"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-10-24",
  "docid": "4207",
@@ -12,24 +12,95 @@
  },
  "votes": [
   {
-   "motion": "Approve the four requested waivers for 260 Falulah Road",
+   "motion": "Approve the four requested waivers for 260 Falulah Road (two from Board Rules and Regulations, two from the Zoning Bylaw).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the four requested waivers for 260 falulah road, a. reid sec onded, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the four requested waivers for 260 falulah road, a. reid sec onded, passed unanimously."
   },
   {
-   "motion": "Continue the hearing to November 14, 2022, 6:05 p.m.",
+   "motion": "Continue the public hearing to November 14, 2022, 6:05 p.m.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "m. brenner made motion to continue the hearing to november 14, 2022, 6:05 p.m., a. reid seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0764165
+ "note": "Text-only extraction, two pages, no scan. This is a continued public hearing: the minutes record two motions, each recorded as passed unanimously with no vote count printed. No decision on the site plan or stormwater permit is recorded; the hearing was continued. The minutes print no dollar figures, no transfers, and no public comment section; Christopher Anderson's presentation is an applicant's representative, not public comment. Adam Burney's title comes from the letterhead, not the attendance line. Marjorie J. Boggio appears only in the letterhead and is not recorded as attending, so she is omitted. The minutes do not say who presided, and the Graves Engineering review was not yet received, per the minutes.",
+ "cost_usd": 0.013637630000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Christopher Anderson",
+   "role": "representing the applicant (Hannigan Engineering)",
+   "status": "present",
+   "quote": "christopher anderson, hannigan engineering, represented the applicant."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continued public hearing: 260 Falulah Road, site plan approval and stormwater management permit (warehouse and distribution building, Airport Road/Crawford, Fitchburg, with a portion in Lunenburg)",
+   "resolution": "four waivers approved; hearing continued to November 14, 2022, 6:05 p.m.",
+   "quote": "for construction of a 367,000 sq.ft. warehouse and distribution building on airport road/crawford in fitchburg, ma",
+   "tags": [
+    "site plan approval",
+    "stormwater permit",
+    "public hearing",
+    "waivers",
+    "warehouse",
+    "Fitchburg",
+    "Falulah Road"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "stormwater",
+  "warehouse development",
+  "waivers",
+  "continued hearing",
+  "Fitchburg",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

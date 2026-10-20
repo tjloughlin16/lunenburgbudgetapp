@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2022-10-13",
  "docid": "1102",
@@ -12,25 +12,184 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from September 1, 2022",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of September 1, 2022.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "review of minutes from september 1, 2022; accepted by all present"
   },
   {
-   "motion": "Accept the minutes from October 6, 2022",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of October 6, 2022.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "review of minutes from october 6, 2022; accepted by all present"
   },
   {
-   "motion": "Approve changes to the Architectural Preservation District by-laws",
+   "motion": "Approve all changes to the by-laws listed in the approved summary of changes, as the final summary of submitted changes.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "vote on all approved changes - mbr mcgrath call to vote: (mbr dwyer, sculimbrene, mcgrath, lloyd, nicastro all for)"
+   "quote": "call to vote: (mbr dwyer, sculimbrene, mcgrath, lloyd, nicastro all for)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0999545
+ "note": "Minutes are a short text with no dollar figures, no public comment and no printed list of documents. One vote is recorded (by-law summary, 5-0); the two minutes approvals are recorded as accepted by all present with no count, so they are marked procedural with outcome passed. No motion or mover is printed for any vote. Adjournment at 8:48 PM is recorded with no motion. Document mentions are in the text only.",
+ "cost_usd": 0.01448848,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Cullen Dwyer",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, nicastro, lloyd,"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, nicastro, lloyd,"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, nicastro, lloyd,"
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, nicastro, lloyd,"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, nicastro, lloyd,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The commission will keep the by-law wording as 'shall' rather than 'must'.",
+   "quote": "will stay with the verbiage of shall vs must."
+  },
+  {
+   "decision": "The commission agreed the town application needs changing because it is too confusing and intimidating to the submitter.",
+   "quote": "b. changes to the application is needed, too confusing and intimidating to the submitter."
+  },
+  {
+   "decision": "The commission agreed to change the by-law wording from 'Day-4-day extension' to 'any extension'.",
+   "quote": "\"day-4-day extension\" to \"any extension\""
+  },
+  {
+   "decision": "On the application's submission to the town clerk (113-8C), the town clerk is to give the final determination as stated in 113-10.",
+   "quote": "town clerk gets final determination as stated in 113-10"
+  },
+  {
+   "decision": "The Chair will follow up with the Facilities Manager on the Ritter Building windows.",
+   "quote": "b. chair will follow up with facilities manger"
+  },
+  {
+   "decision": "The commission will wait to see whether Town Council overrides its ruling on the Ritter Building windows or resubmits if not.",
+   "quote": "wait to see if town council will override our ruling or will resubmit if not."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved (minutes of Sept 1 and Oct 6, 2022)",
+   "quote": "review of minutes from september 1, 2022; accepted by all present",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment: no public comment (none in attendance)",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Correspondences",
+   "resolution": "no correspondence; mailbox checked",
+   "quote": "1) none - mailbox was checked",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "New Business",
+   "resolution": "no new business",
+   "quote": "new business: 1) none",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Warrant Article (by-law changes)",
+   "resolution": "approved by 5-0 vote; awaiting town meeting final vote",
+   "quote": "call to vote: (mbr dwyer, sculimbrene, mcgrath, lloyd, nicastro all for)",
+   "tags": [
+    "by-laws",
+    "town warrant",
+    "design review",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Old Business: Ritter Building Windows",
+   "resolution": "continued; Chair to follow up with Facilities Manager; awaiting Town Council",
+   "quote": "2) ritter building windows",
+   "tags": [
+    "Ritter Building",
+    "windows",
+    "preservation contractors"
+   ]
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no other business",
+   "quote": "other business: none",
+   "tags": [
+    "other business"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Summary of changes to by-laws",
+   "where": "text",
+   "quote": "mbr sculimbrene reads updated summary of changes to by-laws"
+  },
+  {
+   "name": "Town Warrant Article (new warrant content)",
+   "where": "text",
+   "quote": "awaiting the final vote if they accept new warrant content with the summary of changes vs entire by-law."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "by-laws",
+  "town warrant",
+  "design review application",
+  "Ritter Building",
+  "windows",
+  "town clerk",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

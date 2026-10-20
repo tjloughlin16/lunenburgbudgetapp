@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2021-10-21",
  "docid": "3019",
@@ -12,41 +12,305 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the September 23, 2021 meeting",
+   "motion": "Approve the minutes of the September 23, 2021 meeting.",
    "moved_by": "Deborah Christen",
-   "seconded_by": "Linda McDonald",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3 to 0",
    "procedural": true,
-   "quote": "deborah christen made a motion to accept and approve t he minutes of the september 23, 2021 meeting. linda mcdonald seconded and upon roll call vote with jon hogue-aye, linda mcdonald- aye, deborah christen-aye and the minutes were accepted and approved by a 3 to 0 vot",
-   "quote_taken_from_text": true
+   "quote": "deborah christen made a motion to accept and approve t he minutes of the september 23, 2021 meeting.",
+   "seconded_by": "Linda McDonald"
   },
   {
-   "motion": "Approve and accept the September 2021 financial report",
+   "motion": "Approve and accept the September 2021 financial report.",
    "moved_by": "Linda McDonald",
-   "seconded_by": "Deborah Christen",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3 to 0",
    "procedural": false,
-   "quote": "motion to approve and accept the september 2021 financial report made by linda mcdonald; deborah christen seconded. linda mcdonald-aye, deborah christen-aye, jon hogue-aye, and financials were accepted and approved with a vote of 3 to 0."
+   "quote": "motion to approve and accept the september 2021 financial report made by linda mcdonald; deborah christen seconded.",
+   "seconded_by": "Deborah Christen"
   },
   {
-   "motion": "Approve the no-smoking policy (Resolution 2021-18)",
+   "motion": "Approve Resolution 2021-18, the revised No-Smoking Policy.",
    "moved_by": "Deborah Christen",
-   "seconded_by": "Linda McDonald",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3 to 0",
    "procedural": false,
-   "quote": "motion made by deborah christen to approve the no -smoking policy ; linda mcdonald seconded. deborah christen-aye, linda mcdonald-aye, jon hogue-aye, and motion passed with a 3 to 0 vote in favo",
-   "quote_taken_from_text": true
+   "quote": "deborah christen-aye, linda mcdonald-aye, jon hogue-aye, and motion passed with a 3 to 0 vote in favor.",
+   "seconded_by": "Linda McDonald"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:27 p.m.",
    "moved_by": "Linda McDonald",
-   "seconded_by": "Deborah Christen",
    "outcome": "passed",
    "procedural": true,
-   "quote": "linda mcdonald made a motion to adjourn the meeting at 2:27 p.m.; deborah christen seconded. with all in favor the meeting adjourned."
+   "quote": "linda mcdonald made a motion to adjourn the meeting at 2:27 p.m.; deborah christen seconded.",
+   "seconded_by": "Deborah Christen"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0837705
+ "note": "Text extract of a typed minutes document, not a scan. Four motions recorded, all with outcomes printed. The header lists Denise Ivaldi as Recording Secretary but item 1a calls her Administrative Assistant; the header role is used. Gerson Cintron, Jim Turner, Representative Danillo Sena, Senator John Cronin and Representative Michael Kushmerek are named only as meeting or tour contacts outside this session, so they are not listed as attendees. The Chair's opening public comment call recorded no callers; the one tenant who spoke is recorded later in New Business.",
+ "cost_usd": 0.01968398,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jon Hogue",
+   "role": "Chair",
+   "status": "present",
+   "quote": "deborah christen -present, linda mcdonald-present, jon hogue-present, catherine clark-absent."
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah christen -present, linda mcdonald-present, jon hogue-present, catherine clark-absent."
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "deborah christen -present, linda mcdonald-present, jon hogue-present, catherine clark-absent."
+  },
+  {
+   "name": "Catherine Clark",
+   "role": "Assistant Treasurer",
+   "status": "absent",
+   "quote": "deborah christen -present, linda mcdonald-present, jon hogue-present, catherine clark-absent."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Staff will proceed with the Kohler generator rather than the Generac option, once DHCD activates the modernization project.",
+   "quote": "we will move forward with the kohler."
+  },
+  {
+   "decision": "Staff will discuss the laundry 'add value' card cost further with the vendor.",
+   "quote": "we will discuss further with the vendor."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves level and planned draw-down",
+   "what_was_recorded": "Reserves were reported at 101.5%, described as too high, with expected draws for power washing, sidewalk repairs, a tractor purchase and a smoking gazebo; reserves are expected to come down by year end.",
+   "figures_as_printed": [
+    "101.5%"
+   ],
+   "quote": "reserves are at 101.5% which is too high"
+  },
+  {
+   "topic": "September 2021 bottom line",
+   "what_was_recorded": "The bottom line was reported as favorable to budget by $17,316.",
+   "figures_as_printed": [
+    "$17,316"
+   ],
+   "quote": "we are $17,316 favorable which is good news"
+  },
+  {
+   "topic": "Planned reserve expenses",
+   "what_was_recorded": "Expenses to come out of reserves were listed, without amounts.",
+   "figures_as_printed": [],
+   "quote": "we have a lot of expenses that will come out of reserves including power washing at the family units"
+  },
+  {
+   "topic": "Generator modernization funding",
+   "what_was_recorded": "The generator is a modernization project to be funded by DHCD once the Annual Plan is approved and DHCD activates it; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "dhcd will then activate the project and we will receive funding"
+  },
+  {
+   "topic": "ARPA funds for housing authorities",
+   "what_was_recorded": "All housing authorities were seeking ARPA funds; advocacy letters and a legislative site tour were held; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "all housing authorities are looking to gain arpa (american rescue plan act) funds."
+  },
+  {
+   "topic": "FY2022 budget guidelines",
+   "what_was_recorded": "The DHCD budget guidelines PHN discussed a 4% increase in ANUEL for 2022.",
+   "figures_as_printed": [
+    "4%"
+   ],
+   "quote": "the 4% increase in anuel for 2022"
+  },
+  {
+   "topic": "Laundry pricing",
+   "what_was_recorded": "Moving to an add-value card may raise laundry costs at Pearl Brook; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the cost of laundry may go up with the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Air conditioner BTU limit and laundry payment method",
+   "stated_role": "tenant",
+   "quote": "at this time a tenant called in; the board allowed the tenant to speak."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and quorum",
+   "resolution": "called to order; quorum present",
+   "tags": [
+    "call to order",
+    "quorum"
+   ],
+   "quote": "the chair declared a quorum present and opened the meeting at 2:02 p.m."
+  },
+  {
+   "topic": "Minutes of September 23, 2021 meeting",
+   "resolution": "approved 3 to 0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "deborah christen made a motion to accept and approve t he minutes of the september 23, 2021 meeting."
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no callers",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "opportunity for public comment - for the record there were no callers."
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "received; Chair Hogue's resignation noted; tenant seat vacancy",
+   "tags": [
+    "executive director",
+    "board vacancy",
+    "ARPA funding"
+   ],
+   "quote": "town appointed tenant member seat is available, encourage everyone to apply."
+  },
+  {
+   "topic": "Financial report, September 2021",
+   "resolution": "approved 3 to 0",
+   "tags": [
+    "financial report",
+    "reserves"
+   ],
+   "quote": "reserves are at 101.5% which is too high"
+  },
+  {
+   "topic": "Administration: modernization, work orders, state-aided housing",
+   "resolution": "received; generator vendor chosen",
+   "tags": [
+    "work orders",
+    "generator",
+    "state-aided housing",
+    "waiting list"
+   ],
+   "quote": "45 routine work orders received, 33 completed; 10 emergency work orders, all completed."
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "tags": [
+    "unfinished business"
+   ],
+   "quote": "unfinished business - none"
+  },
+  {
+   "topic": "Revised No-Smoking Policy (Resolution 2021-18)",
+   "resolution": "approved 3 to 0",
+   "tags": [
+    "no-smoking policy",
+    "resident survey"
+   ],
+   "quote": "the new policy will reflect no smoking in the unit or on the porches."
+  },
+  {
+   "topic": "Other correspondence: FY2022 budget guidelines",
+   "resolution": "reviewed",
+   "tags": [
+    "budget guidelines",
+    "DHCD"
+   ],
+   "quote": "phn 2021-20 fy2022 local housing authority budget guidelines."
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "tags": [
+    "resident participation"
+   ],
+   "quote": "resident participation - none requested"
+  },
+  {
+   "topic": "Board commissioners' comments",
+   "resolution": "comments; no action",
+   "tags": [
+    "board vacancy"
+   ],
+   "quote": "jon hogue said he would miss working with everyone."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:27 p.m.; next meeting November 18, 2021",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "linda mcdonald made a motion to adjourn the meeting at 2:27 p.m.; deborah christen seconded."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2021-20 FY2022 Local Housing Authority Budget Guidelines",
+   "where": "list",
+   "quote": "phn 2021-20 fy2022 local housing authority budget guidelines."
+  },
+  {
+   "name": "Smoking survey results in the Board’s packet",
+   "where": "text",
+   "quote": "the results were provided in the board's packet"
+  },
+  {
+   "name": "Revised No-Smoking Policy (Resolution 2021-18)",
+   "where": "text",
+   "quote": "the new policy will reflect no smoking in the unit or on the porches."
+  },
+  {
+   "name": "Annual Plan (generator modernization, submitted to DHCD)",
+   "where": "text",
+   "quote": "this will be a modernization project once the annual plan is finalized and submitted to dhcd"
+  },
+  {
+   "name": "Modernization/Work Order Report",
+   "where": "text",
+   "quote": "45 routine work orders received, 33 completed; 10 emergency work orders, all completed."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "financial report",
+  "reserves",
+  "no-smoking policy",
+  "generator modernization",
+  "work orders",
+  "state-aided housing",
+  "ARPA funding",
+  "board vacancy",
+  "tenant comment",
+  "budget guidelines"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence - the executive director reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

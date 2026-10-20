@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-11-14",
  "docid": "4208",
@@ -12,15 +12,110 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing for 260 Falulah Road",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
+   "motion": "Close the public hearing for 260 Falulah Road.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "m. brenner made motion to close the hearing for 260 falulah road, a. reid seconded, roll call vote - a. reid, aye; m. brenner, aye; m. allison, aye. passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07925750000000001
+ "note": "Clean digital text, not a scan. This is a continuation public hearing and the text does not include its opening or any earlier session. Only one motion is recorded: a roll-call vote to close the hearing, printed as passed unanimously. No vote on the site plan or stormwater permit appears, and no decision is recorded. No dollar figures are printed; the 367,000 sq.ft. figure is floor area. The minutes do not include a public comment section. Adam Burney is also cited as A. Burney, and Christopher Anderson as Chris Anderson. Titles for Allison, Brenner, Reid, Torgersen and Burney come from the letterhead, not the attendance line.",
+ "cost_usd": 0.014213910000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Christopher Anderson",
+   "role": "Hannigan Engineering, represented the applicant",
+   "status": "present",
+   "quote": "christopher anderson, hannigan engineering, represented the appli cant."
+  },
+  {
+   "name": "Hayley Palazola",
+   "role": "on behalf of the applicant",
+   "status": "present",
+   "quote": "hayley palazola, on behalf of the applicant"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continued public hearing: 260 Falulah Road site plan and stormwater permit",
+   "resolution": "hearing closed on motion; no decision recorded",
+   "quote": "the hearing continuation was to hear and review application s for site plan approval and stormwater management permit",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "public hearing",
+    "warehouse",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Leominster traffic impact analysis",
+   "resolution": "discussed; no action recorded",
+   "quote": "a. burney noted to both the board and the applicant that he received a traffic impact analysis from the city of leominster.",
+   "tags": [
+    "traffic",
+    "Leominster",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Engineering review and inspections",
+   "resolution": "discussed; no action recorded",
+   "quote": "the board was in re ceipt of a final review from graves engineering, inc. there were no outstanding issues.",
+   "tags": [
+    "engineering review",
+    "stormwater",
+    "inspections"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "stormwater",
+  "warehouse",
+  "Fitchburg",
+  "Leominster traffic",
+  "Falulah Road"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-11-04",
  "docid": "2099",
@@ -12,55 +12,365 @@
  },
  "votes": [
   {
-   "motion": "Close the public hearing",
-   "moved_by": "Watters",
-   "seconded_by": "Passios",
-   "outcome": "passed unanimously",
+   "motion": "Close the public hearing on Special Town Meeting Articles 3, 7 and 8.",
+   "moved_by": "Mr. Watters",
+   "seconded_by": "Mr. Passios",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. watters motioned to close the public hearing. mr. passios seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend disapproval of Article 7",
-   "moved_by": "Menard",
-   "seconded_by": "Gray",
+   "motion": "Recommend disapproval of Special Town Meeting Article 7.",
+   "moved_by": "Mr. Menard",
+   "seconded_by": "Mr. Gray",
    "outcome": "passed 3-2",
    "procedural": false,
    "quote": "mr. menard moved to recommend disapproval of article 7, mr. gray seconded. motion passes, 3-2."
   },
   {
-   "motion": "Recommend disapproval of Article 8",
-   "moved_by": "Menard",
-   "seconded_by": "Balish",
-   "outcome": "passed unanimously",
+   "motion": "Recommend disapproval of Special Town Meeting Article 8.",
+   "moved_by": "Mr. Menard",
+   "seconded_by": "Mr. Balish",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. menard moved to recommend disapproval of article 8, mr. balish seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Recommend the Finance Committee as a whole pass over Articles 7 and 8",
-   "moved_by": "Menard",
-   "seconded_by": "Beardmore",
-   "outcome": "failed 4-2",
+   "motion": "Recommend that the Finance Committee, as a whole, pass over Articles 7 and 8.",
+   "moved_by": "Mr. Menard",
+   "seconded_by": "Mr. Beardmore",
+   "outcome": "failed, 4 no, 2 aye",
    "procedural": false,
    "quote": "mr. menard moved to recommend the finance committee, as a whole, pass over articles 7 and 8, mr. beardmore seconded. motion failed. 4 no, 2 aye."
   },
   {
-   "motion": "Recommend agreement with the Select Board on the consent calendar (Articles 5, 9, 10, 11, 12, 13)",
-   "moved_by": "Menard",
-   "seconded_by": "Balish",
-   "outcome": "passed unanimously",
+   "motion": "Recommend agreement with the Select Board on the Special Town Meeting consent calendar.",
+   "moved_by": "Mr. Menard",
+   "seconded_by": "Mr. Balish",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. menard moved to recommend agreement with the select board on the consent calendar, mr. balish seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Watters",
-   "seconded_by": "Passios",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 9:54 p.m.",
+   "moved_by": "Mr. Watters",
+   "seconded_by": "Mr. Passios",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. watters motioned to adjourn, mr. passios seconded. on vote, motion carried unanimously"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. Note at end of adjourn vote indicates camera position made it difficult to confirm who moved and seconded the adjournment motion, but the names are stated in the text.",
- "cost_usd": 0.08584050000000001
+ "note": "Minutes are a summary of an in-person meeting broadcast on Zoom; no separate motion text is printed beyond the quoted lines. The adjournment motion carries a bracketed note in the minutes saying the mover and seconder are uncertain (the camera was on the Town Manager); names are recorded as printed but are unverified. The 3-2 Article 7 vote is recorded with named individual votes. No dollar figures are verified against any source document; all figures are as the minutes print them, and several are speakers' own estimates.",
+ "cost_usd": 0.01799908,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, evan watters, thomas balish, thomas gray"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, evan watters, thomas balish, thomas gray"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, evan watters, thomas balish, thomas gray"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, evan watters, thomas balish, thomas gray"
+  },
+  {
+   "name": "Thomas Balish",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, evan watters, thomas balish, thomas gray"
+  },
+  {
+   "name": "Thomas Gray",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, dave passios, evan watters, thomas balish, thomas gray"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: jay simeone"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, t.c. passios building design committee chairman greg roy,"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "T.C. Passios Building Design Committee Chairman",
+   "status": "not stated",
+   "quote": "guests: town manager heather lemieux, t.c. passios building design committee chairman greg roy,"
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "select board member michael ray jeffreys, town accountant karen brochu, lunenburg resident"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "not stated",
+   "quote": "select board member michael ray jeffreys, town accountant karen brochu, lunenburg resident"
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Lunenburg Resident",
+   "status": "present",
+   "quote": "ms. lissio commented that she disagrees with the tasks the t.c. passios building design committee were charged with"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Lunenburg Resident",
+   "status": "remote",
+   "quote": "mr. rodgers called into the meeting and recognized that the town faces a complex situation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to meet at 6:00 p.m. on November 16, 2021, an hour before Special Town Meeting, to address any new information regarding Article 3.",
+   "quote": "the committee agreed to meet at 6:00 p.m. on november 16, 2021, an hour before special town meeting is scheduled to start"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "T.C. Passios renovation cost (Article 7)",
+   "what_was_recorded": "The renovation cost was $22,592,000 when the design committee was charged in 2019 and has risen to $28,967,640.",
+   "quote": "when the committee was tasked with its charge in 2019 the cost of renovation would be $22,592,000, and as it",
+   "figures_as_printed": [
+    "$22,592,000",
+    "$28,967,640"
+   ]
+  },
+  {
+   "topic": "New building conceptual design",
+   "what_was_recorded": "A conceptual design for a completely new building was proposed at $39,637,229.",
+   "quote": "mr. jeffreys also proposed a conceptual design for a completely new building for $39,637,229",
+   "figures_as_printed": [
+    "$39,637,229"
+   ]
+  },
+  {
+   "topic": "Design advance funding (Article 8)",
+   "what_was_recorded": "Article 8 requests $350,000 to advance the design of the proposed new building.",
+   "quote": "article 8, which requests $350,000 to advance the design of the proposed new building, if the town",
+   "figures_as_printed": [
+    "$350,000"
+   ]
+  },
+  {
+   "topic": "Per-property annual cost estimate",
+   "what_was_recorded": "Mr. Beardmore estimated the average property owner would pay $341 more per year at $28.9 million and $467 more per year at $39.6 million.",
+   "quote": "mr. beardmore calculated that the average property owner could expect to pay $341 more per year at the $28.9 million price tag, and $467 more per year with the $39.6 million price tag.",
+   "figures_as_printed": [
+    "$341",
+    "$28.9 million",
+    "$467",
+    "$39.6 million"
+   ]
+  },
+  {
+   "topic": "Possible future cost escalation",
+   "what_was_recorded": "Mr. Gray said that if prices kept rising the project could reach $50 million.",
+   "quote": "if the prices keep rising, and they go up to $50 million",
+   "figures_as_printed": [
+    "$50 million"
+   ]
+  },
+  {
+   "topic": "Town appropriations for T.C. Passios building",
+   "what_was_recorded": "The town does not currently appropriate funds for the T.C. Passios building; current tenant rent keeps it operating.",
+   "quote": "the town does not currently appropriate any funds for the t.c. passios building",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cost of not building",
+   "what_was_recorded": "Mr. Jeffreys suggested not investing in a new building would cost the town millions of dollars a year.",
+   "quote": "not investing in a new building will cost the town millions of dollars a year",
+   "figures_as_printed": [
+    "millions of dollars a year"
+   ]
+  },
+  {
+   "topic": "Costs of housing existing programs",
+   "what_was_recorded": "Ms. Lissio objected to passing the costs of housing existing programs onto taxpayers.",
+   "quote": "ms. lissio stated that she disagrees with passing the costs of housing the existing programs onto the tax payer.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lissio",
+   "stated_role": "Lunenburg Resident",
+   "topic": "Building purpose and cost of existing programs",
+   "quote": "ms. lissio commented that she disagrees with the tasks the t.c. passios building design committee were charged with"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "Lunenburg Resident",
+   "topic": "Project cost uncertainty (by phone)",
+   "quote": "mr. rodgers called into the meeting and recognized that the town faces a complex situation with prices being a moving target"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "no action",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement",
+   "tags": [
+    "procedure",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Announcements and Town Manager reports",
+   "resolution": "no action",
+   "quote": "3. announcements: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public hearing on Special Town Meeting Articles 3, 7 and 8",
+   "resolution": "hearing held and closed",
+   "quote": "mr. beardmore opened the public hearing.",
+   "tags": [
+    "public hearing",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Article 3 (collective bargaining, Fire Fighters)",
+   "resolution": "continued to 6 p.m. meeting on November 16",
+   "quote": "article 3: though ms. lemieux anticipated the collective bargaining agreement with the",
+   "tags": [
+    "Article 3",
+    "collective bargaining"
+   ]
+  },
+  {
+   "topic": "Articles 7 and 8 (T.C. Passios building renovation and new building design)",
+   "resolution": "recommended disapproval of Article 7 (3-2) and Article 8 (unanimous); pass-over motion failed",
+   "quote": "mr. menard moved to recommend disapproval of article 7, mr. gray seconded. motion passes, 3-2.",
+   "tags": [
+    "Article 7",
+    "Article 8",
+    "T.C. Passios building",
+    "capital project",
+    "recommendation"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting consent calendar",
+   "resolution": "recommended agreement with Select Board",
+   "quote": "mr. menard moved to recommend agreement with the select board on the consent calendar",
+   "tags": [
+    "consent calendar",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no action (none to review)",
+   "quote": "9. minutes: no minutes to review.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "10. committee reports: committee members updated each other on their respective liaison",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public comment (committee section)",
+   "resolution": "no action",
+   "quote": "mr. passios informed those in attendance that the t.c. passios building design committee",
+   "tags": [
+    "public comment",
+    "public forum"
+   ]
+  },
+  {
+   "topic": "Items for future meetings and next meetings",
+   "resolution": "scheduled next meetings",
+   "quote": "13. next meetings november 16, 2021 at 6 p.m. at lunenburg middle high school",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:54 p.m.",
+   "quote": "14. adjourn at 9:54 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting Warrant Articles 3, 7 and 8",
+   "where": "text",
+   "quote": "public hearing on special town meeting warrant articles 3, 7, and 8: mr. beardmore opened"
+  },
+  {
+   "name": "Facilities study (2016)",
+   "where": "text",
+   "quote": "a study was done on all town facilities in 2016"
+  },
+  {
+   "name": "Library master plan (newest)",
+   "where": "text",
+   "quote": "the library's newest master plan featuring the library as a community space"
+  },
+  {
+   "name": "Presentations by Michael Ray Jeffreys on Articles 7 and 8",
+   "where": "text",
+   "quote": "mr. menard requested of mr. jeffreys copies of the presentations he gave at the finance committee meeting"
+  }
+ ],
+ "tags": [
+  "Special Town Meeting",
+  "T.C. Passios building",
+  "Article 7",
+  "Article 8",
+  "Article 3",
+  "renovation cost",
+  "new building",
+  "public hearing",
+  "warrant articles",
+  "Extended Day Program",
+  "town facilities",
+  "recommendations",
+  "consent calendar"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

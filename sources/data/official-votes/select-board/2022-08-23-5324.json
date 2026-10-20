@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-08-23",
  "docid": "5324",
@@ -12,48 +12,363 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager appointment of Paul Visconti as Facilities Manager",
+   "motion": "To ratify the Town Manager appointment of Paul Visconti as Facilities Manager.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco to ratify the town manager appointment of paul visconti as facilities manager 2\"d: t. alonzo vote: all in favor"
+   "quote": "motion: l. franco to ratify the town manager appointment of paul visconti as facilities manager"
   },
   {
-   "motion": "Approve the request for the tollbooth fundraiser and the use of the Ritter parking lot on Saturday, September 24 from 8:00 am to Noon",
+   "motion": "To approve the request of the Turkey Hill Lions Club for the tollbooth fundraiser and the use of the Ritter parking lot on Saturday, September 24 from 8:00 am to Noon.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: t. dwyer to approve the request for the tollbooth fundraiser and the use of the ritter parking lot on saturday, september 24t from 8:00 am to noon vote: all in favor"
+   "quote": "to approve the request for the tollbooth fundraiser and the use of the ritter parking lot on saturday, september 24t from 8:00 am to noon"
   },
   {
-   "motion": "Approve the Nugen PILOT agreement as presented and the settlement agreement with the ATB litigation as presented",
+   "motion": "To approve the Nugen PILOT agreement as presented and the settlement agreement with the ATB litigation as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"d: l. franco to approve the nugen pilot agreement as presented and the settlement agreement with the atb litigation as presented vote: all in favor"
+   "quote": "to approve the nugen pilot agreement as presented and the settlement agreement with the atb litigation as presented"
   },
   {
-   "motion": "Approve the Minutes of July 19, 2022 and August 2, 2022 as written",
+   "motion": "To approve the Minutes of July 19, 2022 and August 2, 2022 as written.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco 2\": t. alonzo to approve the minutes of july 19, 2022 and august 2, 2022 as written vote: all in favor"
+   "quote": "to approve the minutes of july 19, 2022 and august 2, 2022 as written"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting the meeting adjourned at 9:21 p.",
-   "quote_taken_from_text": true
+   "quote": "motion: t. alonzo to adjourn the meeting"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Extracted from OCR of scanned minutes. All votes passed unanimously (All in Favor).",
- "cost_usd": 0.0916505
+ "note": "Text is OCR of a scanned set of minutes (macOS Vision); some words are garbled (e.g. 'Jeffieys', 'colaboration') and were not corrected. Board members' attendance is not printed as a roll; they are listed as present because they moved, seconded and voted. Votes are recorded only as 'All in Favor' with no tally. Public comment is recorded as 'none at this time', so no public_comment entries. The minutes print no documents list heading.",
+ "cost_usd": 0.01994428,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "Select Board member (as printed in motions and votes)",
+   "status": "present",
+   "quote": "mr. alonzo thanked him and stated he looked forward working with him as well."
+  },
+  {
+   "name": "L. Franco",
+   "role": "Select Board member (as printed in motions and votes)",
+   "status": "present",
+   "quote": "mr. dwyer and mr. franco had no questions but welcomed him and looked forward to"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Select Board member (as printed in motions and votes)",
+   "status": "present",
+   "quote": "mr. dwyer and mr. franco had no questions but welcomed him and looked forward to"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; paul visconti, sue doherty, coa director;"
+  },
+  {
+   "name": "Paul Visconti",
+   "role": "Facilities Director",
+   "status": "present",
+   "quote": "ratification of the town manager's appointment of facilities director paul visconti"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "ms. doherty and ms. rabbitt presented an update on the prior fiscal year for the council on aging."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "COA member",
+   "status": "present",
+   "quote": "jane rabbitt, coa member, corrine scouten, ginny albertson"
+  },
+  {
+   "name": "Corrine Scouten",
+   "role": "President of the Turkey Hill Lions Club",
+   "status": "present",
+   "quote": "corrine scouten, 830 massachusetts avenue, introduced herself as president of the turkey hill lions club"
+  },
+  {
+   "name": "Ginny Albertson",
+   "role": "presenter on pollinator habitats",
+   "status": "present",
+   "quote": "ms. albertson, 50 upland ave. appreciated coming in to talk about pollinators."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Franco to amend the draft charge for the Tricentennial committee with the minor revisions, for the next discussion with a full board present.",
+   "quote": "mr. jeffreys requested mr. franco amend the draft with the minor revisions for the next discussion with a full board present."
+  },
+  {
+   "decision": "The board agreed to rediscuss 30 School Street after hearing from the Municipal Building Design Committee and with a full board, sometime in October.",
+   "quote": "mr. jeffreys suggested rediscussing after they hear from the municipal building design committee and with a full board, sometime in october."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA volunteer hours valued if paid",
+   "what_was_recorded": "Ms. Doherty said the volunteer hours, if paid, would have amounted to a stated dollar value.",
+   "figures_as_printed": [
+    "$16,861.32"
+   ],
+   "quote": "she noted the volunteer hours, if paid, would have amounted to $16,861.32."
+  },
+  {
+   "topic": "30 School Street hazardous materials abatement and demolition funding",
+   "what_was_recorded": "Funding for abatement and demolition at 30 School Street was included in an economic development bill but not passed; the bill is on hold.",
+   "figures_as_printed": [],
+   "quote": "ms. lemieux reported the funding for 30 school street for the hazardous materials abatement and demolition that was included in the economic development bill but was not passed."
+  },
+  {
+   "topic": "Park project cost at 30 School Street",
+   "what_was_recorded": "Board members said town meeting had no interest in a multi-million dollar park project at 30 School Street; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. dwyer believed town meeting did not have interest in a several million dollar park"
+  },
+  {
+   "topic": "Nugen PILOT and ATB litigation settlement",
+   "what_was_recorded": "The PILOT addresses personal property depreciation that past assessments did not allow; the minutes print no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "mr. jeffreys explained to those viewing that the past assessments did not allow for depreciation of the personal property so this pilot is to address that."
+  },
+  {
+   "topic": "Finance Committee debt policy discussion",
+   "what_was_recorded": "A joint meeting with the Finance Committee was proposed to discuss debt policy; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "we are looking to have a joint meeting on september 20t; they would like to discuss debt policy."
+  },
+  {
+   "topic": "ARPA funding",
+   "what_was_recorded": "Further discussion of ARPA funding was deferred to a later date; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "there will be additional discussion on the arpa funding at a later date."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. jeffreys reported the board members have been invited to the north central",
+   "tags": [
+    "announcements",
+    "chamber of commerce",
+    "school busing"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "no action; joint meeting with Finance Committee proposed",
+   "quote": "we are looking to have a joint meeting on september 20t; they would like to discuss debt policy.",
+   "tags": [
+    "finance committee",
+    "debt policy",
+    "financial policies"
+   ]
+  },
+  {
+   "topic": "Ratification of Facilities Director appointment",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of facilities director paul visconti",
+   "tags": [
+    "appointment",
+    "facilities",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "FY22 Council on Aging report",
+   "resolution": "presented; received",
+   "quote": "fy22 council on aging report- coa director sue doherty and coa representative",
+   "tags": [
+    "council on aging",
+    "seniors",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Turkey Hill Lions Club tollbooth fundraiser request",
+   "resolution": "approved",
+   "quote": "corrine scouten, 830 massachusetts avenue, introduced herself as president of the turkey hill lions club",
+   "tags": [
+    "fundraiser",
+    "event permit",
+    "food collection"
+   ]
+  },
+  {
+   "topic": "Pollinator habitats presentation",
+   "resolution": "presented; no action",
+   "quote": "ginny albertson presentation on pollinator habitats",
+   "tags": [
+    "pollinators",
+    "native plants",
+    "environment"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reviewed; no action",
+   "quote": "town manager report- there was no report this evening but ms. lemieux reviewed",
+   "tags": [
+    "vacancies",
+    "employment",
+    "special town meeting",
+    "30 School Street"
+   ]
+  },
+  {
+   "topic": "Tricentennial committee charge",
+   "resolution": "draft to be amended; continued to full board",
+   "quote": "mr. alonzo thanked mr. franco as it captured everything we want to include as a charge.",
+   "tags": [
+    "tricentennial",
+    "committee charge",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "265 Pleasant Street Solar PILOT",
+   "resolution": "approved",
+   "quote": "ms. lemieux reported this solar field was constructed around 2014 and went online in 2015.",
+   "tags": [
+    "PILOT",
+    "solar",
+    "assessing",
+    "ATB litigation"
+   ]
+  },
+  {
+   "topic": "30 School Street project path ahead",
+   "resolution": "discussed; continued to October with full board",
+   "quote": "review 30 school street project and discuss path ahead",
+   "tags": [
+    "30 School Street",
+    "park",
+    "demolition",
+    "municipal building design"
+   ]
+  },
+  {
+   "topic": "Approve minutes of July 19 and August 2, 2022",
+   "resolution": "approved",
+   "quote": "approve minutes of july 19, 2022 and august 2, 2022",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and action items",
+   "resolution": "no action; none this evening",
+   "quote": "warrants/action items - there were none this evening",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "mr. alonzo reported the finance committee meets this thursday.",
+   "tags": [
+    "finance committee",
+    "school committee",
+    "busing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:21 p.m.",
+   "quote": "the meeting adjourned at 9:21 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY22 Council on Aging Report",
+   "where": "text",
+   "quote": "fy22 council on aging report- coa director sue doherty and coa representative"
+  },
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "ms. lemieux announced the special town meeting warrant is open from august 23rd until 5 pm on september 20th"
+  },
+  {
+   "name": "Financial Policies",
+   "where": "text",
+   "quote": "i have encouraged them to opine on our financial policies which we reviewed recently as well."
+  },
+  {
+   "name": "Nugen PILOT agreement and ATB litigation settlement agreement",
+   "where": "text",
+   "quote": "to approve the nugen pilot agreement as presented and the settlement agreement with the atb litigation as presented"
+  },
+  {
+   "name": "Town meeting article (Tricentennial committee)",
+   "where": "text",
+   "quote": "after looking up the town meeting article, ms. lemieux noted 11 members made up the committee."
+  },
+  {
+   "name": "Draft Tricentennial committee charge",
+   "where": "text",
+   "quote": "mr. jeffreys requested mr. franco amend the draft with the minor revisions for the next discussion with a full board present."
+  },
+  {
+   "name": "Bringing Nature Home (Douglas Tallemy)",
+   "where": "text",
+   "quote": "she referred to bringing nature home written by entomologist douglas tallemy"
+  }
+ ],
+ "tags": [
+  "select board",
+  "council on aging",
+  "facilities",
+  "appointment",
+  "PILOT",
+  "30 School Street",
+  "pollinators",
+  "special town meeting",
+  "tricentennial",
+  "fundraiser",
+  "2022"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

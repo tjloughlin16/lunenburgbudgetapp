@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2022-10-10",
  "docid": "1938",
@@ -12,23 +12,274 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from the September 13, 2022 meeting",
-   "moved_by": "Peter Lincoln",
-   "seconded_by": "Susan O'Sullivan",
-   "outcome": "passed unanimously",
+   "motion": "Accept the minutes of the September 13, 2022 meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. O’Sullivan",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln motioned to accept minutes from the september 13, 2022 meeting. ms. o'sullivan seconded. on vote motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Peter Lincoln",
-   "seconded_by": "Betty DiGiacomo",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting (at 11:45 AM).",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. DiGiacomo",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "at 11:45 am, mr. lincoln motioned to adjourn the meeting. ms. digiacomo seconded. on vote, motion carried unanimously."
+   "quote": "motioned to adjourn the meeting. ms. digiacomo seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes show two votes only: approval of prior minutes and adjournment, both procedural.",
- "cost_usd": 0.0732735
+ "note": "Header reads 'October 11, 2022'; the meeting date supplied is 2022-10-10. A stray line 'Unanimously approved at November 8, 2022 COA meeting' sits mid-item in the Director's Report; treated as a footer, not a vote. 'Mr. Lincoln' is not disambiguated between Deb Lincoln (Chairperson) and Peter Lincoln; attributed as printed. The minutes name Senator Cronin and Representative Cronin for the same person; both printed. Double spaces in the source were collapsed in quotes. No votes were recorded on the orientation packet or the logo item.",
+ "cost_usd": 0.01655888,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "member",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "member",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "member",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "member",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "member",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice Chairperson",
+   "status": "present",
+   "quote": "present: director susan doherty, chairperson deb lincoln, barbara brown, jim mcguigan, susan o'sullivan, diane nowd, peter lincoln, betty digiacomo, jane rabbitt, vice chairperson."
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "lou franco select board member, marilyn talley eagle house supporters"
+  },
+  {
+   "name": "Marilyn Talley",
+   "role": "Eagle House Supporters",
+   "status": "present",
+   "quote": "lou franco select board member, marilyn talley eagle house supporters"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "member",
+   "status": "absent",
+   "quote": "absent: judy tarbell, cheryl moisan, jacquelyn dwyer."
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "member",
+   "status": "absent",
+   "quote": "absent: judy tarbell, cheryl moisan, jacquelyn dwyer."
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "member",
+   "status": "absent",
+   "quote": "absent: judy tarbell, cheryl moisan, jacquelyn dwyer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The COA will vote on accepting the new Board Member Orientation packet at its next meeting, so the packet is deferred.",
+   "quote": "we will vote on accepting the packet at the next coa meeting."
+  },
+  {
+   "decision": "The Lunenburg Business Association will assist the COA in developing a new logo for the Eagle House Senior Community Center.",
+   "quote": "the lunenburg business association will assist the coa with developing a new logo for the eagle house senior community center."
+  },
+  {
+   "decision": "Catering will be tried for the Volunteer/Legislative Breakfast this year.",
+   "quote": "catering the breakfast will be tried this year."
+  },
+  {
+   "decision": "Selectman Franco will report to the COA on progress toward the Senior Tax Relief goal.",
+   "quote": "selectman franco will report to coa on progress toward this goal."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 State Formula Grant Funds",
+   "what_was_recorded": "Ms. Doherty reported the FY23 State Formula Grant Funds, including the FY22 surplus, as a balance.",
+   "figures_as_printed": [
+    "$42,306.31"
+   ],
+   "quote": "the fy23 state formula grant funds including fy22 surplus is $42,306.31."
+  },
+  {
+   "topic": "New patio funding from the state",
+   "what_was_recorded": "Representative Cronin secured state funding for the patio construction.",
+   "figures_as_printed": [
+    "$100,000.00"
+   ],
+   "quote": "representative cronin secured $100,000.00 from the state for construction of this patio."
+  },
+  {
+   "topic": "New patio in the Capital Plan",
+   "what_was_recorded": "The same $100,000.00 was included in the Capital Plan for the patio project.",
+   "figures_as_printed": [
+    "$100,000.00"
+   ],
+   "quote": "$100,000.00 has also been included in the capital plan for this project."
+  },
+  {
+   "topic": "Patio check presentation at the breakfast",
+   "what_was_recorded": "A $100,000.00 check for the patio is to be presented by Senator Cronin at the Volunteer/Legislative Breakfast.",
+   "figures_as_printed": [
+    "$100,000.00"
+   ],
+   "quote": "the $100,000.00 check for the new patio and recreation area will be presented there by senator cronin."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements: no announcements.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Minutes approval (September 13, 2022)",
+   "resolution": "approved",
+   "quote": "mr. lincoln motioned to accept minutes from the september 13, 2022 meeting. ms. o'sullivan seconded. on vote motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current business",
+   "resolution": "discussed; seven items noted, orientation packet vote deferred",
+   "quote": "the lunenburg business association will assist the coa with developing a new logo for the eagle house senior community center.",
+   "tags": [
+    "logo",
+    "volunteers",
+    "veterans",
+    "events",
+    "orientation"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "finance update and capital plan presented; events listed",
+   "quote": "ms. doherty presented the council on aging finance update.",
+   "tags": [
+    "finance",
+    "capital plan",
+    "patio",
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "fundraiser postponed; fundraising subcommittee proposed",
+   "quote": "ms. talley reported that the eagle house supporters fundraiser with the epilepsy foundation has been postponed until next april.",
+   "tags": [
+    "fundraising",
+    "eagle house"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "notices and communications: none.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Board comment: Senior Tax Relief",
+   "resolution": "no action; Selectman Franco to report on progress",
+   "quote": "mr. lincoln questioned whether we should publish information regarding senior tax relief as the tax relief proposal is in its early stages.",
+   "tags": [
+    "senior tax relief"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:45 AM",
+   "quote": "at 11:45 am, mr. lincoln motioned to adjourn the meeting.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA Board Member Orientation packet",
+   "where": "text",
+   "quote": "members of the coa were asked to do a final review of the new coa board member orientation packet."
+  },
+  {
+   "name": "Council on Aging Finance Update",
+   "where": "text",
+   "quote": "ms. doherty presented the council on aging finance update."
+  },
+  {
+   "name": "Plan for the new patio",
+   "where": "text",
+   "quote": "the plan for the new patio was presented."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "eagle house",
+  "senior services",
+  "capital plan",
+  "patio",
+  "state grants",
+  "volunteers",
+  "senior tax relief",
+  "fundraising",
+  "veterans",
+  "events"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

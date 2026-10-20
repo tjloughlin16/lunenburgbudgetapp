@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-09-20",
  "docid": "5327",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of August 23, 2022 as written",
+   "motion": "To approve the minutes of August 23, 2022 as written.",
    "moved_by": "H. Sroka",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -20,15 +20,364 @@
    "quote": "motion: h. sroka to approve the minutes of august 23, 2022 as written 2': t. dwyer vote: all in favor"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion: l. franco to adjourn the meeting 2nd: t. dwyer vote: all in favor"
+  },
+  {
+   "motion": "Finance Committee voted unanimously to accept or adopt the language proposed by Mr. Beardmore for the proposed bylaw amending capital appropriations, as reported by Mr. Watters. Reported second-hand; not a Select Board vote.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. watters stated the members voted unanimously to accept or adopt the language that was proposed by mr. beardmore"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR document. Finance Committee held a joint meeting but no votes were recorded as taken at this September 20 meeting (the text notes they had voted previously). Only the two procedural votes at the Select Board level are recorded with outcomes.",
- "cost_usd": 0.0960065
+ "note": "OCR scan (macOS Vision) of the minutes; OCR errors such as \"2':\" and \"Ill\" are reproduced as printed. Page 4 begins mid-sentence and page 5 is garbled in places. Only two votes are recorded at this meeting (minutes approval and adjournment), both procedural. The warrant-article discussion and joint-meeting items have no recorded vote. The Finance Committee vote on the capital-appropriations language is reported second-hand by Mr. Watters and is not a vote of this board. Select Board members' attendance is inferred from their motions and remarks, since the minutes do not print a roll call. The Park Commission letter is listed under communications, not public comment. Adjournment is recorded as 9:39 P.M.",
+ "cost_usd": 0.024082280000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Park Commission Chair",
+   "status": "present",
+   "quote": "ana lockwood, 91 main street, park commission chair, read aloud a letter on behalf"
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "ms. sroka reported the school committee meets tomorrow."
+  },
+  {
+   "name": "Mr. Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "mr. dwyer reported the storm water task force met and reorganized after welcoming three new members."
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "",
+   "status": "present",
+   "quote": "motion: l. franco to adjourn the meeting"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee Members present",
+   "status": "present",
+   "quote": "finance committee members present: peter beardmore, evan watters, tom balish, tom gray, jay simeone"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Chair (Finance Committee)",
+   "status": "present",
+   "quote": "chair watters called the finance committee meeting to order at 7:10 p.m."
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Finance Committee Members present",
+   "status": "present",
+   "quote": "finance committee members present: peter beardmore, evan watters, tom balish, tom gray, jay simeone"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Finance Committee Members present",
+   "status": "present",
+   "quote": "finance committee members present: peter beardmore, evan watters, tom balish, tom gray, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee Members present",
+   "status": "present",
+   "quote": "finance committee members present: peter beardmore, evan watters, tom balish, tom gray, jay simeone"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Chair of the Lunenburg Water Commission",
+   "status": "present",
+   "quote": "mark bursch, 20 buttonwood place, chair of the lunenburg water commission, reported"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "speaking on behalf of the Historical Society",
+   "status": "present",
+   "quote": "bill tyler, 5 graham street, speaking on behalf of the historical society, announced this"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed that conversations with the Finance Committee should be held more often (annually, and watching budget-season meetings).",
+   "quote": "the select board agreed these conversations should be more often."
+  },
+  {
+   "decision": "Board members agreed to send a communication to the Planning Board about endorsing the Park Commission's concept for the 361 Mass Ave / Northfield Road park access.",
+   "quote": "mr. jeffreys asked if the board members was comfortable sending a communication to the planning board members about endorsing the concept. they concurred."
+  },
+  {
+   "decision": "Environmental Policies and Old Business were tabled due to the lateness of the evening.",
+   "quote": "due to the lateness of the evening, environmental policies was tabled as well as old business."
+  },
+  {
+   "decision": "Approval of the Executive Session minutes was passed over to the next meeting so members can read them.",
+   "quote": "executive session minutes approval was passed over until the next meeting to allow everyone to read them."
+  },
+  {
+   "decision": "Mr. Jeffreys will revise the draft Volunteer Application and Reappointment Application forms and send them to the Town Manager, who will recirculate them to board members.",
+   "quote": "mr. jeffreys will make some revisions and send them to the town manager and she will send them back out to the board members for future discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Water Commission study and Hickory Hills Lake well",
+   "what_was_recorded": "The Water Commission chair announced a special meeting on a vote to spend $360,000 to study water treatment and reopen the Hickory Hills Lake well.",
+   "quote": "voting to spend $360,000 to study water treatment and reopening of the hickory hills lake well",
+   "figures_as_printed": [
+    "$360,000"
+   ]
+  },
+  {
+   "topic": "Capital plan amendment scale",
+   "what_was_recorded": "Mr. Jeffreys said Town Meeting debating individual capital items would mean debating a range of spending from $750,000 to $2.8 million.",
+   "quote": "one way to disinterest a huge group of people is by discussing for hours how we're going to spend",
+   "figures_as_printed": [
+    "$750,000",
+    "$2.8 million"
+   ]
+  },
+  {
+   "topic": "Capital Plan funding and project count",
+   "what_was_recorded": "The Town Manager said the Town has added funds to the Capital Plan annually, and the project count has risen (fifteen projects in FY22, 23 the year before).",
+   "quote": "we have spent additional funds annually on the capital plan due to available funding, so the number of projects has increased",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital requests cycle",
+   "what_was_recorded": "Departments were sent the information to submit capital requests for fiscal years 2024 to 2033, due October 13.",
+   "quote": "submissions are due back on october 13th.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Debt capacity",
+   "what_was_recorded": "Discussion of debt capacity: school projects use most of it and the Middle/High School debt runs to 2045.",
+   "quote": "mr. jeffreys noted the majority of our debt capacity are school renovations or new schools and after that there isn't much left.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital project cost overruns",
+   "what_was_recorded": "Mr. Dwyer said projects start with a budget number that comes out higher after design.",
+   "quote": "when these projects are undertaken we have a budget number already and it goes through the design process",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Municipal Building Design scenarios",
+   "what_was_recorded": "The Municipal Building Design Committee reviewed three scenarios including their monetary implications.",
+   "quote": "and the pros and cons of each, the monetary implications etc.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Streetlights purchase from Unitil",
+   "what_was_recorded": "The Town closed on the purchase of the streetlights from Unitil and is now the owner of the fixtures. No price was recorded.",
+   "quote": "the closing for the purchase of the streetlights from unitil was last thursday and the town is now the",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "State tax relief legislation (Chapter 62F)",
+   "what_was_recorded": "The Town Manager described the legislature revisiting the Economic Development Bill and tax relief returning more than $2.9 billion to taxpayers.",
+   "quote": "which will return more than $2.9 billion back to taxpayers via checks and direct deposits.",
+   "figures_as_printed": [
+    "$2.9 billion"
+   ]
+  },
+  {
+   "topic": "Historical Society raffle",
+   "what_was_recorded": "The Historical Society's raffle ticket sale for the Whalom Park bench was to offset some of their expenses. No amount was given.",
+   "quote": "this will help offset some of their expenses.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mark Bursch",
+   "stated_role": "Chair of the Lunenburg Water Commission",
+   "topic": "Water Commission special meeting on $360,000 water study",
+   "quote": "mark bursch, 20 buttonwood place, chair of the lunenburg water commission, reported"
+  },
+  {
+   "speaker": "Bill Tyler",
+   "stated_role": "speaking on behalf of the Historical Society",
+   "topic": "Whalom Park bench raffle",
+   "quote": "bill tyler, 5 graham street, speaking on behalf of the historical society, announced this"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; no action",
+   "quote": "mark bursch, 20 buttonwood place, chair of the lunenburg water commission, reported",
+   "tags": [
+    "public comment",
+    "water"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; no action",
+   "quote": "ms. lemieux announced former chief administrative and financial officer for the town, bill",
+   "tags": [
+    "announcement"
+   ]
+  },
+  {
+   "topic": "Communications from other boards (Park Commission letter)",
+   "resolution": "board agreed to send a communication to the Planning Board",
+   "quote": "mr. jeffreys asked if the board members was comfortable sending a communication to the planning board members about endorsing the concept.",
+   "tags": [
+    "park commission",
+    "planning board",
+    "easement",
+    "361 Mass Ave",
+    "Luffa Farms"
+   ]
+  },
+  {
+   "topic": "Joint meeting with Finance Committee",
+   "resolution": "discussed; Finance Committee adjourned 8:39 p.m.; no Select Board vote recorded",
+   "quote": "chair watters called the finance committee meeting to order at 7:10 p.m.",
+   "tags": [
+    "finance committee",
+    "debt capacity",
+    "capital planning",
+    "town meeting",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments and resignations",
+   "resolution": "noted resignation; vacancy on ad hoc Open Space Committee",
+   "quote": "ms. lemieux reported sarah cammer has resigned from the ad hoc open space committee.",
+   "tags": [
+    "appointments",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "the finance director and i had our kickoff meeting last week with the firm that will conduct the",
+   "tags": [
+    "town manager",
+    "fraud risk",
+    "streetlights",
+    "vacancies",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Workshop: Select Board policies and procedures",
+   "resolution": "reviewed; Environmental Policies tabled",
+   "quote": "mr. jeffreys read aloud each section/title and asked for comments or suggestions.",
+   "tags": [
+    "policies",
+    "workshop",
+    "appointments",
+    "volunteer forms"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of August 23, 2022",
+   "resolution": "approved",
+   "quote": "to approve the minutes of august 23, 2022 as written",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "ms. sroka reported the school committee meets tomorrow.",
+   "tags": [
+    "school committee",
+    "storm water",
+    "zoning board",
+    "municipal building design"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:39 p.m.",
+   "quote": "the meeting adjourned at 9:39 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed warrant article: amend Code of Lunenburg Chapter 81 by adding §81-11 \"Amending capital appropriations\" (submitted by the Finance Committee)",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the code of lunenburg, chapter 81 by adding a new section"
+  },
+  {
+   "name": "Park Commission letter on behalf of the commissioners (Luffa Farms, 361 Mass Ave, 961 Northfield Road park access), read aloud by Ana Lockwood",
+   "where": "text",
+   "quote": "ana lockwood, 91 main street, park commission chair, read aloud a letter on behalf"
+  },
+  {
+   "name": "Draft Volunteer Application and Reappointment Application forms",
+   "where": "text",
+   "quote": "mr. jeffreys directed the members to the draft volunteer application and the reappointment application forms."
+  },
+  {
+   "name": "Select Board Policies & Procedures, Article IV Regulatory (Section 4.04 Earth Removal Permits)",
+   "where": "text",
+   "quote": "review select board policies & procedures, article iv regulatory"
+  },
+  {
+   "name": "House Bill 3727 (Library Trust Funds)",
+   "where": "text",
+   "quote": "i reached out to representative kushmerek's office regarding house bill 3727 on the library trust"
+  },
+  {
+   "name": "Economic Development Bill (legislature revisiting)",
+   "where": "text",
+   "quote": "the legislature is revisiting the economic development bill now that the 1986 tax relief law known as"
+  }
+ ],
+ "tags": [
+  "select board",
+  "finance committee",
+  "capital planning",
+  "debt capacity",
+  "town meeting bylaw",
+  "water commission",
+  "park commission",
+  "policy workshop",
+  "appointments",
+  "state legislation",
+  "streetlights",
+  "fraud risk assessment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2022-07-07",
  "docid": "1093",
@@ -12,15 +12,214 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the June 2, 2022 meeting",
+   "motion": "Accept the minutes of June 2, 2022 (Dwyer abstained).",
    "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "review of minutes from june 2, 2022; accepted by all present (dwyer abstained)"
+   "quote": "review of minutes from june 2, 2022; accepted by all present (dwyer abstained)",
+   "seconded_by": ""
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. One procedural vote recorded (prior minutes acceptance). No other motions explicitly voted on in this document.",
- "cost_usd": 0.0781545
+ "note": "OCR text (macOS Vision), so spelling and punctuation may carry errors (e.g., 'contactors', '4,2022'). The Present line calls the chair 'Chairman Dwyer', but the letterhead lists Richard McGrath as Chairman and Cullen Dwyer as Vice Chair; not resolved. Minutes say the June 2, 2022 minutes were accepted but not who moved or seconded. No adjournment motion is printed (adjourned 9:03 PM). Other old business was skipped for time and is not in the text. Page 2 is partly redacted by the note '*Skipped over other old business*'.",
+ "cost_usd": 0.015289480000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dwyer",
+   "role": "Chairman (as printed in the Present line; letterhead lists Cullen Dwyer as Vice Chair)",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd, nicastro"
+  },
+  {
+   "name": "McGrath",
+   "role": "Chairman (letterhead: Richard McGrath, Chairman)",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd, nicastro"
+  },
+  {
+   "name": "Sculimbrene",
+   "role": "member (letterhead: Anthony Sculimbrene, member)",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd, nicastro"
+  },
+  {
+   "name": "Lloyd",
+   "role": "member (letterhead: William Lloyd, member)",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd, nicastro"
+  },
+  {
+   "name": "Nicastro",
+   "role": "Member (letterhead: Anthony Nicastro, Member)",
+   "status": "present",
+   "quote": "present: chairman dwyer, mcgrath, sculimbrene, lloyd, nicastro"
+  },
+  {
+   "name": "Mr. Rogers",
+   "role": "public commenter (Highland St)",
+   "status": "present",
+   "quote": "mr. rogers (highland st) had several issues he wanted to make known to the committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair will review the proposed $5,000 operating budget, which is to fund a survey and evaluation, a brochure and a resource guide.",
+   "quote": "operating budget ($5,000 proposed), chair will review - will be used for survey & eval, brochure and resource"
+  },
+  {
+   "decision": "A member will inquire about Article 32 rules in the guidance (bylaw review follow-up; the member is not named).",
+   "quote": "b) will inquire about article 32 rules in guidance"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Operating budget",
+   "what_was_recorded": "The committee's operating budget is shown as a $5,000 proposal, to be used for a survey and evaluation, a brochure and a resource guide; the Chair will review it.",
+   "quote": "operating budget ($5,000 proposed), chair will review - will be used for survey & eval, brochure and resource",
+   "figures_as_printed": [
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Application fee",
+   "what_was_recorded": "Bylaw review asks whether the application fee is fair for smaller projects. No dollar amount is printed.",
+   "quote": "c) is application fee fair for smaller projects?",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Rogers",
+   "stated_role": "(Highland St)",
+   "topic": "Agenda order, Primary School review, printed agendas, town hall and Ritter Building preservation",
+   "quote": "mr. rogers (highland st) had several issues he wanted to make known to the committee. 1. move public comment to the end of meeting agenda"
+  },
+  {
+   "speaker": "Mr. Rogers",
+   "stated_role": "(Highland St)",
+   "topic": "Talking directly to contractors; material lists",
+   "quote": "2nd public comment - mr. rogers (highland st) asked about talking directly to contactors for advice,"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review of minutes (June 2, 2022)",
+   "resolution": "accepted by all present; Dwyer abstained",
+   "quote": "review of minutes from june 2, 2022; accepted by all present (dwyer abstained)",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action",
+   "quote": "mr. rogers (highland st) had several issues he wanted to make known to the committee.",
+   "tags": [
+    "public comment",
+    "agenda",
+    "town hall",
+    "Ritter Building"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "none; mail procedures discussed",
+   "quote": "1) none - discussed mail procedures and where the box is located for new members insight",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Bylaw review",
+   "resolution": "proposed edits discussed; no action taken",
+   "quote": "bylaw review - proposed edits discussed",
+   "tags": [
+    "bylaws",
+    "guidelines",
+    "application fee",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Reuse of town-owned properties in the APD",
+   "resolution": "informed committee; discussed",
+   "quote": "sculimbrene informed committee about discussion of the reuse of town-owned properties in the apd (town hall,",
+   "tags": [
+    "town-owned property",
+    "Town Hall",
+    "Ritter Building",
+    "Brooks House",
+    "Memorial Drive"
+   ]
+  },
+  {
+   "topic": "Operating budget (old business)",
+   "resolution": "Chair to review",
+   "quote": "operating budget ($5,000 proposed), chair will review",
+   "tags": [
+    "operating budget",
+    "survey",
+    "brochure"
+   ]
+  },
+  {
+   "topic": "Other business: second public comment",
+   "resolution": "heard; no action",
+   "quote": "2nd public comment - mr. rogers (highland st) asked about talking directly to contactors for advice,",
+   "tags": [
+    "public comment",
+    "contractors"
+   ]
+  },
+  {
+   "topic": "Next meeting schedule",
+   "resolution": "August and September dates listed",
+   "quote": "next meeting: meeting schedule: thursday, august 4,2022 thursday, september 8, 2022",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Guideline, page 24 (clarify red line requirement)",
+   "where": "text",
+   "quote": "e) guideline pg 24; clarify red line requirement"
+  },
+  {
+   "name": "Guideline, page 26 (flow chart must match wording in guidance)",
+   "where": "text",
+   "quote": "f) guideline pg 26; flow chart must match wording in guidance"
+  },
+  {
+   "name": "By-Laws (run committee by Guidelines)",
+   "where": "text",
+   "quote": "g) solidify by-laws → run committee by guidelines"
+  },
+  {
+   "name": "CTA Application",
+   "where": "text",
+   "quote": "h) cta application (change terms; received by apdc & submitted to town hall)"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "bylaws",
+  "town-owned properties",
+  "Ritter Building",
+  "Town Hall",
+  "public comment",
+  "operating budget",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

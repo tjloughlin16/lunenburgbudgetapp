@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-05-03",
  "docid": "5717",
@@ -12,15 +12,202 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 6:44pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike D.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: brett r. to adjourn at 6:44pm. second: mike d. roll call vote: mike n.-aye, mike d.-aye, brett-aye and dave- aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. The motion to adjourn is the only recorded vote; the lengthy discussion of Article 25 (sewer bylaw changes) did not conclude with a vote during this meeting.",
- "cost_usd": 0.0825865
+ "note": "OCR text (macOS Vision) of a scanned minutes document, so some words and names may be misread; the signature reads 'ane L. Ranley' / 'Panley' and is printed here as Jane Ranley from the attendee line. John Reynolds is listed as an attendee but does not appear in the roll-call vote; his status is recorded as present from the attendee line. The only recorded vote is the procedural motion to adjourn. No dollar figures appear in the text. The Article 25 discussion has no vote recorded.",
+ "cost_usd": 0.01647548,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "and mike nault, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "and mike nault, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "and mike nault, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board Chair (284 Lancaster Ave)",
+   "status": "present",
+   "quote": "tom alonzo(284 lancaster ave, and select board chair) noted dave would also be attending the 5/3 select board meeting later to answer questions."
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Whiting St.",
+   "status": "present",
+   "quote": "mary wilson(whiting st.) asked if there are checks and balances in place or is it just at the"
+  },
+  {
+   "name": "Chris St. Germain",
+   "role": "268 Flat Hill Rd.",
+   "status": "present",
+   "quote": "chris st. germain (268 flat hill rd.) also said he was concerned about large"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "188 Flat Hill and Planning Board",
+   "status": "present",
+   "quote": "matt allison (188 flat hill and planning board) agreed with the previous speakers."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission will take the proposed 'or a portion of the property' wording in Section (i) to Town Counsel to change or define it.",
+   "quote": "dave said that they will bring that up to counsel to change it or define it."
+  },
+  {
+   "decision": "Commission agreed that the easement provision is for an easement across one adjoining property under a hardship case, not across multiple properties.",
+   "quote": "dave agreed that it would be an easement going across an adjoining property under a hardship case- not across multiple properties."
+  },
+  {
+   "decision": "Commission will discuss with Counsel, at the Town Meeting on 5/7, making clear in the Bylaw that waivers are not for new construction.",
+   "quote": "dave agreed and said they will discuss it with counsel at the town meeting on 5/7."
+  },
+  {
+   "decision": "Commission will develop verbiage addressing undeveloped parcels, so that it does not do easements across town; the goal stated is to serve those paying betterments.",
+   "quote": "dave suggested coming up with verbiage to address this and they do not want to do easements all over town."
+  },
+  {
+   "decision": "Article 25 will be presented as written, with amendments to be voted on from the floor at Town Meeting.",
+   "quote": "barb added that the article will be presented as is, but they can vote on amendments on the floor."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Budget articles on the consent calendar",
+   "what_was_recorded": "Barb noted that the three budget articles at Town Meeting will be part of the consent calendar. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "barb noted that the 3 budget articles will be part of the consent calendar."
+  },
+  {
+   "topic": "Betterment payment and sewer access",
+   "what_was_recorded": "Dave gave the example of a resident who had paid a betterment and has access to Mass Ave but cannot bring a utility across another owner's driveway. No dollar figures are printed.",
+   "figures_as_printed": [],
+   "quote": "an example is a resident who had paid his betterment and has access to mass ave but cannot bring a utility from mass ave"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mary Wilson",
+   "stated_role": "Whiting St.",
+   "topic": "Checks and balances on the waiver process",
+   "quote": "mary wilson(whiting st.) asked if there are checks and balances in place or is it just at the"
+  },
+  {
+   "speaker": "Chris St. Germain",
+   "stated_role": "268 Flat Hill Rd.",
+   "topic": "Large parcels and waiver wording; asked how to vote yes without changes",
+   "quote": "chris st. germain (268 flat hill rd.) also said he was concerned about large"
+  },
+  {
+   "speaker": "Matt Allison",
+   "stated_role": "188 Flat Hill and Planning Board",
+   "topic": "Waivers should be clearly limited to existing lots, not new construction",
+   "quote": "matt allison (188 flat hill and planning board) agreed with the previous speakers."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Select Board Chair",
+   "topic": "Hardship waivers, super majority, and public hearing for waivers",
+   "quote": "tom alonzo(284 lancaster ave, and select board chair) noted dave would also be attending the 5/3 select board meeting later to answer questions."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements at opening",
+   "resolution": "no action",
+   "quote": "public comment- none announcements - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Article 25 bylaw revision on sewer easements and waivers (Annual Town Meeting)",
+   "resolution": "discussed; no vote; to be taken up with Town Counsel before Town Meeting",
+   "quote": "articles for annual town meeting - discussion on article 25. - barb stated this article is to revise the bylaw and",
+   "tags": [
+    "Article 25",
+    "bylaw",
+    "easements",
+    "waivers",
+    "sewer service area",
+    "Annual Town Meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 25 from the 5/7/22 Lunenburg Town Meeting Warrant",
+   "where": "list",
+   "quote": "handouts: article 25 from the 5/7/22 lunenburg town meeting warrant summary of article 25 for by-law changes"
+  },
+  {
+   "name": "Summary of Article 25 for By-Law changes",
+   "where": "list",
+   "quote": "handouts: article 25 from the 5/7/22 lunenburg town meeting warrant summary of article 25 for by-law changes"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "bylaw",
+  "Article 25",
+  "easements",
+  "sewer service area",
+  "waivers",
+  "hardship",
+  "betterments",
+  "Annual Town Meeting",
+  "Select Board",
+  "public comment",
+  "zoom"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

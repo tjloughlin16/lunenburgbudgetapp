@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-09-12",
  "docid": "4190",
@@ -12,42 +12,274 @@
  },
  "votes": [
   {
-   "motion": "Approve the Site Plan Approval for 3 Lancaster Avenue",
+   "motion": "Approve the Site Plan Approval for 3 Lancaster Avenue.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the site plan approval for 3 lancaster avenue, a. reid seconded, roll call vote- e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye ",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the site plan approval for 3 lancaster avenue, a. reid seconded, roll call vote- e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye"
   },
   {
-   "motion": "Put forward a warrant article to change Use Table regarding motels to require special permit from Zoning Board of Appeals",
+   "motion": "Approve the scenic road application for 235 Leominster Road.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "E. Torgersen",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "e. torgersen seconded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
+  },
+  {
+   "motion": "Put forward a warrant article for fall special town meeting changing the Use Table so that motels require a special permit from the Zoning Board of Appeals rather than being allowable by right in the Commercial District.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "m. brenner made motion to put forward a warrant article with the discussed c hange to the use table, a. reid seconded, roll call vote- e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye",
-   "quote_taken_from_text": true
+   "quote": "a. reid seconded, roll call vote- e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
   },
   {
-   "motion": "Approve minutes of 8/22/22 and 8/22/22, 43 Summer Street",
+   "motion": "Approve the minutes of 8/22/22 and 8/22/22, 43 Summer Street.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "m. brenner made motion to approve minutes of 8/22/22 and 8/22/22, 43 summer street, a. reid seconded, roll call vote- e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
+   "quote": "minutes of 8/22/22 and 8/22/22, 43 summer street, a. reid seconded"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "m. brenner made motion to adjourn, a. reid s econded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to adjourn, a. reid"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All five votes were unanimous (4-0, with Erik Torgersen participating remotely under OML Simple Extension Legislation). The separate minutes referenced for site plan reviews at 3 Lancaster Avenue and 235 Leominster Road were not provided in the text.",
- "cost_usd": 0.0817875
+ "dropped_unquoted": 0,
+ "note": "Minutes read as extracted text. Several words are split by stray spaces in the source (e.g. \"s cenic\", \"Z oning\", \"S econded\"), so quotes were chosen to avoid those spans. No public comment section is recorded. The 3 Lancaster Avenue and 235 Leominster Road hearings are in separate minutes not included here. No dollar figures are printed. Administrative Assistant Marjorie J. Boggio appears only in the letterhead and is not recorded as taking part, so she is omitted. D. Proctor is mentioned but not recorded as present.",
+ "cost_usd": 0.019299379999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "erik torgersen participated remotely under the oml simple extension legislation ."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Karen Chapman",
+   "role": "MRPC",
+   "status": "present",
+   "quote": "appointment: karen chapman, mrpc - with the assistance of mrpc, lunenburg had applied for a grant through the state"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members will review the Pond View Commons, LLC comprehensive permit application for continued discussion at the next meeting.",
+   "quote": "members will review the application for continued discussion at the next meeting."
+  },
+  {
+   "decision": "Board discussion of Section 250-6.4, Driveways & Entrances, continues at future Board meetings.",
+   "quote": "discussion would continue at future board meetings."
+  },
+  {
+   "decision": "A. Burney will submit comments to the LMBDC on the records storage memo by the requested date.",
+   "quote": "a. burney would submit comments to the lmbdc by the requested date."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Records storage digitization (LMBDC memo)",
+   "what_was_recorded": "The memo on digitizing records was framed as a way to minimize the cost of building long-term record storage space; no dollar figure was printed.",
+   "quote": "to minimize the cost of constructing space",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "MBTA Communities zoning appointment (MRPC)",
+   "resolution": "presentation received; no action",
+   "quote": "karen chapman, mrpc - with the assistance of mrpc, lunenburg had applied for a grant through the state",
+   "tags": [
+    "zoning",
+    "MBTA Communities",
+    "housing"
+   ]
+  },
+  {
+   "topic": "3 Lancaster Avenue site plan (public hearing)",
+   "resolution": "approved 4-0",
+   "quote": "m. brenner made motion to approve the site plan approval for 3 lancaster avenue",
+   "tags": [
+    "site plan approval",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "235 Leominster Road scenic road application (public hearing)",
+   "resolution": "approved 4-0",
+   "quote": "e. torgersen seconded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye.",
+   "tags": [
+    "scenic road",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Pond View Commons comprehensive permit, Howard Street",
+   "resolution": "continued to next meeting",
+   "quote": "members will review the application for continued discussion at the next meeting.",
+   "tags": [
+    "comprehensive permit",
+    "housing",
+    "Howard Street"
+   ]
+  },
+  {
+   "topic": "Driveways and entrances, Section 250-6.4",
+   "resolution": "continued",
+   "quote": "discussion would continue at future board meetings.",
+   "tags": [
+    "zoning",
+    "driveways"
+   ]
+  },
+  {
+   "topic": "Use Table, motels (Section 250-4.1)",
+   "resolution": "warrant article put forward for fall special town meeting, 4-0",
+   "quote": "change motels from being allowable by right in the commercial district",
+   "tags": [
+    "zoning",
+    "warrant article",
+    "motels"
+   ]
+  },
+  {
+   "topic": "Records storage memo from LMBDC",
+   "resolution": "Board member to submit comments",
+   "quote": "a. burney would submit comments to the lmbdc by the requested date.",
+   "tags": [
+    "records storage",
+    "digitization",
+    "municipal building"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 8/22/22",
+   "resolution": "approved 4-0",
+   "quote": "minutes of 8/22/22 and 8/22/22, 43 summer street, a. reid seconded",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports received",
+   "quote": "farmers' market continues for two more weeks.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Ongoing items and meeting schedule",
+   "resolution": "no action; schedule noted",
+   "quote": "special town meeting, november 15th",
+   "tags": [
+    "schedule",
+    "zoning",
+    "Pond View Commons"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:53 p.m., 4-0",
+   "quote": "m. brenner made motion to adjourn, a. reid",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DHCD Compliance Guidelines",
+   "where": "list",
+   "quote": "documents used at meeting: dhcd compliance guidelines"
+  },
+  {
+   "name": "Records Storage Memo, LMBDC",
+   "where": "list",
+   "quote": "records storage memo, lmbdc"
+  },
+  {
+   "name": "Minutes of 8/22/22",
+   "where": "list",
+   "quote": "minutes: 8/22/22 8/22/22, 43 summer street"
+  },
+  {
+   "name": "Minutes of 8/22/22, 43 Summer Street",
+   "where": "list",
+   "quote": "8/22/22, 43 summer street"
+  },
+  {
+   "name": "Comprehensive Permit Application, Howard Street",
+   "where": "list",
+   "quote": "comprehensive permit application, howard street"
+  },
+  {
+   "name": "Draft model bylaw on the MHP (MassHousing Partnership) website",
+   "where": "text",
+   "quote": "there is also a draft model bylaw on the mhp (masshousing partnership) website."
+  },
+  {
+   "name": "RFP for Zoning, Infrastructure and Master Plan",
+   "where": "text",
+   "quote": "a. burney was finishing up the rfp to go to the assistant town manager."
+  },
+  {
+   "name": "Separate minutes for 235 Leominster Road hearing",
+   "where": "text",
+   "quote": "235 leominster road- see separate minutes."
+  }
+ ],
+ "tags": [
+  "zoning",
+  "MBTA Communities",
+  "site plan approval",
+  "scenic road",
+  "comprehensive permit",
+  "driveways",
+  "warrant article",
+  "motels",
+  "records storage",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

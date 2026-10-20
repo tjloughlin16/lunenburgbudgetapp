@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-04-13",
  "docid": "3365",
@@ -12,43 +12,264 @@
  },
  "votes": [
   {
-   "motion": "to have the sign located near 2A and meet with the bylaw requirements",
+   "motion": "Move to have the skate park fundraising sign located near 2A and meet the bylaw requirements.",
    "moved_by": "D. Passios",
-   "seconded_by": "P. Hakey",
-   "outcome": "passed 5-0",
+   "seconded_by": "P . Hakey",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "d. passios made a motion to have the sign located near 2a and meet with the bylaw requirements. p . hakey seconded. roll call vote, k. menard - yes c. sullivan - yes d. passios - yes a.lockwood - yes p . hakey - yes all in favor, motion carrie",
-   "quote_taken_from_text": true
+   "quote": "d. passios made a motion to have the sign located near 2a and meet with the bylaw requirements. p . hakey seconded."
   },
   {
-   "motion": "to recommend the hiring and send it to the Town Manager for approval",
+   "motion": "Recommend the hiring of the two returning lifeguard applicants (Mason Bowser and Ean Laundree) and send it to the Town Manager for approval.",
    "moved_by": "C. Sullivan",
    "seconded_by": "D. Passios",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "c. sullivan made a motion to recommend the hiring and send it to the town manager for approval. d. passios seconded. roll call vote, ===page 3=== park commission april 13, 2022 minutes page of 43 k. menard - yes c. sullivan - yes d. passios - ye",
-   "quote_taken_from_text": true
+   "quote": "c. sullivan made a motion to recommend the hiring and send it to the town manager for approval. d. passios seconded."
   },
   {
-   "motion": "to authorize R. Thompson to contract with the vendor of his choice for 3 portable toilets and up to 5 if needed, with preferred location at the far end of the beach with a gate to be installed, and alternate location the fenced area where the playground used to be",
+   "motion": "Authorize R. Thompson to contract with the vendor of his choice for 3 portable toilets and up to 5 if needed, preferred location at the far end of the beach with a gate, alternate the fenced area where the playground used to be.",
    "moved_by": "D. Passios",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "d. passios made a motion to authorize r. thompson to contract with the vendor of his choice for 3 portable toilets and up to 5 if needed. the preferred location to be at the far end of the beach with a gate to be installed. the alternate location to be the fenced area where the playground use to be.c. sullivan seconded. roll call vote, k. menard - yes c. sullivan - yes d. passios - yes a.lockwood - yes p . hakey - yes all in favor, motion carried",
-   "quote_taken_from_text": true
+   "quote": "d. passios made a motion to authorize r. thompson to contract with the vendor of his choice for 3 portable toilets and up to 5 if needed."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "D. Passios",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "d. passios made a motion to adjourn. c. sullivan seconded. roll call vote ===page 4=== park commission april 13, 2022 minutes page of 44 k. menard - yes c. sullivan - yes d. passios - ye",
-   "quote_taken_from_text": true
+   "quote": "d. passios made a motion to adjourn. c. sullivan seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09554340000000001
+ "dropped_unquoted": 2,
+ "note": "Scanned-style text with OCR artifacts: page headers read 'Page  of 41/42/43/44' with no page numbers, and some words are split or ligature-broken (e.g. 'P . Hakey', 'conﬁrmed'). Quotes were copied from the text as extracted. Names appear in more than one form (Christopher/Chris Sullivan, Patrick/Pat Hakey, Ana/A. Lockwood); the full form is taken from the attendance line and header. The roll call lists a yes for each member but prints no tally, and outcomes are recorded as 'passed' because the minutes say 'motion carried'. The swim-lesson line says 'told Rob', which is not attributed by surname; it is not treated as a separate person. Attendance for the clerk is not stated.",
+ "cost_usd": 0.017877380000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Kathryn Ostermier",
+   "role": "presenter, from WOLA",
+   "status": "present",
+   "quote": "kathryn ostermier from wola gave a brief background of the steps taken to get to this phase of the project."
+  },
+  {
+   "name": "R. Thompson",
+   "role": "Recreation Director (agenda item heading)",
+   "status": "present",
+   "quote": "r. thompson indicated viking sports will be returning to run sports clinics, as well as another company."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the minutes was tabled to a later meeting; no approval vote was taken.",
+   "quote": "next item on the agenda, approval of minutes - tabled"
+  },
+  {
+   "decision": "Commission asked that R. Thompson send an email setting out his goals and objectives for the upcoming season.",
+   "quote": "a. lockwood requested an email be sent from r. thompson indicating his goals and objectives for the upcoming season."
+  },
+  {
+   "decision": "Swim lesson fees ($25 per student, $75 per family per session last year) to be revisited; R. Thompson told to come back to the Commission at the May meeting if adjustments are needed.",
+   "quote": "told rob if any adjustments needed to be made to come back to us at the may meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Jersey barrier option for portable toilets",
+   "what_was_recorded": "R. Thompson reported a Jersey barrier option at the old playground area, with six units and a delivery charge, which would use DPW and lose parking spaces.",
+   "quote": "each jersey barrier would cost $300.00/ 10' unit and 6 would be needed plus a $250 delivery charge.",
+   "figures_as_printed": [
+    "$300.00",
+    "$250"
+   ]
+  },
+  {
+   "topic": "Gate option for portable toilets at far end of beach",
+   "what_was_recorded": "The second option placed toilets at the far end of the beach with an additional gate at approximately the stated cost.",
+   "quote": "the second option would allow for the toilets to be placed at the far end of the beach and require an additional gate at approximately $800.00.",
+   "figures_as_printed": [
+    "$800.00"
+   ]
+  },
+  {
+   "topic": "Sheldon portable toilet quote",
+   "what_was_recorded": "Vendor quote for ADA and non-ADA toilets on a 28 day cycle with weekly cleaning, plus a fee for additional cleanings.",
+   "quote": "sheldon quote: ada compliant toilet $450.00 for a 28 day cycle with weekly cleaning.",
+   "figures_as_printed": [
+    "$450.00",
+    "$200.00",
+    "$50.00"
+   ]
+  },
+  {
+   "topic": "Other portable toilet quote",
+   "what_was_recorded": "Second vendor quote for ADA and non-ADA toilets on a 28 day cycle with weekly cleaning, plus a fee for a sink.",
+   "quote": "other quote ada compliant toilet $627.00 for a 28 day cycle with weekly cleaning.",
+   "figures_as_printed": [
+    "$627.00",
+    "$397.00",
+    "$214.00"
+   ]
+  },
+  {
+   "topic": "Swim lesson fees",
+   "what_was_recorded": "Chair noted last year's swim lesson fees, to be revisited at the May meeting.",
+   "quote": "k. menard indicated that last year swim lesson were $25 per student and $75 per family per session",
+   "figures_as_printed": [
+    "$25",
+    "$75"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "no action; none offered",
+   "quote": "first item on the agenda, board and public comment, none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "WOLA Presentation (Marshall Park plan)",
+   "resolution": "presented; no action",
+   "quote": "kathryn ostermier from wola gave a brief background of the steps taken to get to this phase of the project.",
+   "tags": [
+    "Marshall Park",
+    "WOLA plan"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "tabled",
+   "quote": "next item on the agenda, approval of minutes - tabled",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Recreation Director update",
+   "resolution": "discussion; no action; Little League fees, outside field use, Board of Health toilet removal and snack shack concerns raised",
+   "quote": "next item on the agenda, recreation director update.",
+   "tags": [
+    "recreation programs",
+    "Little League",
+    "portable toilets",
+    "snack shack"
+   ]
+  },
+  {
+   "topic": "Skate Park fundraising sign",
+   "resolution": "approved (motion carried)",
+   "quote": "next on the agenda, skate park request to move the fundraising sign to marshall park.",
+   "tags": [
+    "skate park",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Wallis Park Basketball Court",
+   "resolution": "discussed; no action",
+   "quote": "next item on the agenda, wallis park basketball court.",
+   "tags": [
+    "Wallis Park",
+    "basketball court"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised plan, Alternate One option for Marshall Park (presented at the March 16, 2022 meeting)",
+   "where": "list",
+   "quote": "she reviewed the revised plan from the alternate one option that was presented at the march 16, 2022 meeting"
+  },
+  {
+   "name": "Two portable-facility quotes received by R. Thompson",
+   "where": "text",
+   "quote": "r. thompson presented 2 quotes he had received."
+  },
+  {
+   "name": "Sheldon quote (portable toilets)",
+   "where": "text",
+   "quote": "sheldon quote: ada compliant toilet $450.00 for a 28 day cycle with weekly cleaning."
+  },
+  {
+   "name": "Other portable toilet quote",
+   "where": "text",
+   "quote": "other quote ada compliant toilet $627.00 for a 28 day cycle with weekly cleaning."
+  },
+  {
+   "name": "Two additional lifeguard applications",
+   "where": "text",
+   "quote": "k. menard indicated there were 2 additional applications for lifeguards submitted."
+  },
+  {
+   "name": "High School baseball schedule",
+   "where": "text",
+   "quote": "r. thompson stated he has received a schedule from the high school"
+  }
+ ],
+ "tags": [
+  "parks",
+  "beach season",
+  "lifeguards",
+  "portable toilets",
+  "skate park",
+  "Marshall Park",
+  "WOLA plan",
+  "recreation programs",
+  "Little League",
+  "Wallis Park",
+  "Board of Health",
+  "swim lessons"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "she reviewed the revised plan from the alternate one option"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 2
+ }
 }

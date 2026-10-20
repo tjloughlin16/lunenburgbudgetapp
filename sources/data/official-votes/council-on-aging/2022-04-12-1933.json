@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2022-04-12",
  "docid": "1933",
@@ -12,39 +12,261 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the March 8, 2022 meeting",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Ms. O'Sullivan",
-   "outcome": "carried",
+   "motion": "Approve the minutes of the March 8, 2022 meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. O’Sullivan",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln motioned to accept the minutes from the march 8, 2022 meeting, ms. o'sullivan seconded. on vote, motion carried."
   },
   {
-   "motion": "Recommend a one-time temporary appointment for two years for one seat, and the remaining three seats will be three-year terms",
-   "moved_by": "Ms. O'Sullivan",
+   "motion": "Recommend a one-time temporary appointment for two years for one seat, with the remaining three seats as three-year terms.",
+   "moved_by": "Ms. O’Sullivan",
    "seconded_by": "Ms. Nowd",
-   "outcome": "carried unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ms. o'sullivan motioned to recommend a one-time temporary appointment for two years, for one seat, and the remaining three seats will be three-year terms. ms. nowd seconded. upon discussion, board members agreed to have mr. lincoln occupy mr. pesenti's seat, while ms. rabbitt, ms. o'sullivan, and ms. tarbell's terms will remain three years long. on vote, motion carried unanimously."
+   "quote": "ms. o'sullivan motioned to recommend a one-time temporary appointment for two years, for one seat, and the remaining three seats will be three-year terms. ms. nowd seconded."
   },
   {
-   "motion": "Support the reappointment of Ms. Tarbell, Ms. O'Sullivan, Ms. Rabbitt, and Mr. Lincoln",
+   "motion": "Support the reappointment of Ms. Tarbell, Ms. O’Sullivan, Ms. Rabbitt, and Mr. Lincoln.",
    "moved_by": "Ms. Rabbit",
    "seconded_by": "Ms. Moisan",
-   "outcome": "carried unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ms. rabbit motioned to support the reappointment of ms. tarbell, ms. o'sullivan, ms. rabbitt, and mr. lincoln. ms. moisan seconded. on vote, motion carried unanimously."
+   "quote": "ms. rabbit motioned to support the reappointment of ms. tarbell, ms. o'sullivan, ms. rabbitt, and mr. lincoln. ms. moisan seconded."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Pete Lincoln",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Moisan",
-   "outcome": "carried",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "at 10:50 a.m. mr. lincoln motioned to adjourn, ms. moisan seconded. on vote, motion carried."
+   "quote": "mr. lincoln motioned to adjourn, ms. moisan seconded. on vote, motion carried."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. One item—the Council on Aging 55th birthday celebration—is marked \"Approved as amended unanimously by COA at May 10, 2022 meeting,\" indicating approval at a *later* meeting, not at this April 12 session, and no motion is recorded for April 12, so it is not included.",
- "cost_usd": 0.0816905
+ "note": "Text-only minutes, no scan. Name ambiguities: \"Mr. Lincoln\" is not labelled as Pete or Deb Lincoln; Pete Lincoln is inferred from the roll, not stated in the motions. \"Ms. Rabbit\" and \"Ms. Rabbitt\" appear for the same board member as printed. Ms. O’Sullivan moves and seconds motions but is absent from the roll. The line \"Approved as amended unanimously by COA at May 10, 2022 meeting\" is printed after Item 3 with no subject and is not recorded as a vote at this meeting. Public comment is recorded as \"none\".",
+ "cost_usd": 0.01748548,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "board member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "board member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "board member",
+   "status": "present",
+   "quote": "director sue doherty, chairperson deb lincoln, cheryl moisan, diane nowd, jane rabbitt,"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "board member (referred to as Mr. Lincoln)",
+   "status": "present",
+   "quote": "pete lincoln, judy tarbell, barbara brown,"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "board member",
+   "status": "present",
+   "quote": "pete lincoln, judy tarbell, barbara brown,"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "board member",
+   "status": "present",
+   "quote": "pete lincoln, judy tarbell, barbara brown,"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "status": "absent",
+   "quote": "jacquelyn dwyer, john pesenti, betty digiacomo,"
+  },
+  {
+   "name": "John Pesenti",
+   "status": "absent",
+   "quote": "jacquelyn dwyer, john pesenti, betty digiacomo,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "absent",
+   "quote": "jacquelyn dwyer, john pesenti, betty digiacomo,"
+  },
+  {
+   "name": "Ms. O’Sullivan",
+   "status": "not stated",
+   "quote": "ms. o'sullivan motioned to recommend a one-time temporary appointment for two years"
+  },
+  {
+   "name": "Ms. Kennedy",
+   "status": "absent",
+   "quote": "in ms. kennedy's absence, ms. lincoln informed the board that"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to add all former and present COA board members to the packet and to denote the chairs of the board (no vote recorded).",
+   "quote": "the board agreed to add all former and present coa board members to the packet, and to denote the chairs of the board."
+  },
+  {
+   "decision": "Board members agreed to have Mr. Lincoln occupy Mr. Pesenti’s seat, and Ms. Rabbitt, Ms. O’Sullivan and Ms. Tarbell’s terms remain three years (agreed in discussion, before the recorded motions).",
+   "quote": "upon discussion, board members agreed to have mr. lincoln occupy mr. pesenti's seat, while ms. rabbitt, ms. o'sullivan, and ms. tarbell's terms will remain three years long."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lunenburg Elder Connect grant application",
+   "what_was_recorded": "Ms. Doherty applied for a grant to buy a My Senior Center account for police, fire, Nashoba Nursing and the Eagle House office.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "ms. doherty reported that she has applied for a grant for $10,000 to purchase a my senior center account"
+  },
+  {
+   "topic": "Eagle House Supporters Hannaford fundraiser",
+   "what_was_recorded": "The Supporters reported that the Hannaford fundraiser brought in a sum.",
+   "figures_as_printed": [
+    "$254"
+   ],
+   "quote": "the hannaford fundraiser brought in $254."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; informational",
+   "quote": "ms. lincoln informed the board that she spoke with town manager heather lemieux, and the outdoor recreation project has been put back into the town's capital plan.",
+   "tags": [
+    "capital plan",
+    "outdoor recreation"
+   ]
+  },
+  {
+   "topic": "Minutes approval (March 8, 2022)",
+   "resolution": "approved",
+   "quote": "mr. lincoln motioned to accept the minutes from the march 8, 2022 meeting, ms. o'sullivan seconded. on vote, motion carried.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "FY23 Board Member Terms",
+   "resolution": "appointment and reappointment motions passed",
+   "quote": "fy23 board member terms: ms. lincoln reported that she has consulted with the town manager's executive assistant",
+   "tags": [
+    "appointments",
+    "terms",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "New Council on Aging Board Member Packet",
+   "resolution": "agreed to add members and denote chairs; draft history by July",
+   "quote": "the board agreed to add all former and present coa board members to the packet, and to denote the chairs of the board.",
+   "tags": [
+    "board packet",
+    "history"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported; no votes",
+   "quote": "council on aging turns 55 celebration: ms. doherty informed the board that",
+   "tags": [
+    "55th anniversary",
+    "grants",
+    "Elder Connect",
+    "buildings and grounds",
+    "events"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters Report",
+   "resolution": "reported; informational",
+   "quote": "the hannaford fundraiser brought in $254.",
+   "tags": [
+    "Eagle House",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "none",
+   "quote": "notices and communications: none",
+   "tags": []
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action; informational",
+   "quote": "mr. lincoln asked ms. doherty if she'd talk to the town clerk about the next",
+   "tags": [
+    "Boston Cane",
+    "Art in Bloom"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment none adjournment at 10:50 a.m.",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:50 a.m.",
+   "quote": "adjournment at 10:50 a.m. mr. lincoln motioned to adjourn, ms. moisan seconded. on vote, motion carried.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Talent Bank Form (from former board member Jacqueline Dwyer)",
+   "where": "text",
+   "quote": "received a talent bank form from former board member jacqueline dwyer"
+  },
+  {
+   "name": "New Council on Aging Board Member Packet",
+   "where": "text",
+   "quote": "new council on aging board member packet: the board agreed to add all former and present coa board members to the packet"
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "board appointments",
+  "board terms",
+  "grants",
+  "Eagle House",
+  "55th anniversary celebration",
+  "senior services",
+  "fundraising"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

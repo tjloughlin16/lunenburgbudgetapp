@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2021-12-14",
  "docid": "2673",
@@ -12,15 +12,148 @@
  },
  "votes": [
   {
-   "motion": "Procure a cast bronze plaque listing names of sponsors of the memorial at the Arnold/Litch burial ground site, following Mr. McGrath's determination of the cost",
-   "outcome": "passed unanimously",
-   "moved_by": "not stated",
-   "seconded_by": "not stated",
+   "motion": "Procure a cast bronze plaque listing sponsors of the memorial at the Arnold/Litch burial ground site, following Mr. McGraths determination of the cost.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "one motion was made and seconded, it was unanimously voted to procure a cast bronze plaque following mr. mcgraths determination of the cost."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clearly legible. One motion recorded and voted on.",
- "cost_usd": 0.0725625
+ "note": "Minutes record one motion (the plaque), with no mover, seconder or vote count stated beyond 'unanimously voted'; outcome recorded as passed. Public comment section absent. Adjournment at 7:30 PM is recorded without a motion. No documents list or exhibits are printed. The 'African Americans in Lunenburg project' item notes no update because both members were absent, with no further detail. Minutes were prepared by Bill Lakso and edited by Kevin Boussom; neither is recorded as present.",
+ "cost_usd": 0.013757580000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman richard mcgrath opened the meeting at 7:00 p.m. with a quorum present."
+  },
+  {
+   "name": "Sanderson",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members sanderson and lordan were absent"
+  },
+  {
+   "name": "Lordan",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members sanderson and lordan were absent"
+  },
+  {
+   "name": "Bill Lakso",
+   "role": "Prepared by (named as taking an action item)",
+   "status": "not stated",
+   "quote": "prepared by bill lakso"
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "Edited by",
+   "status": "not stated",
+   "quote": "edited by kevin boussom"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission opinions given to the town manager on repairs: repair of shutters for the Ritter building not required; town hall chimneys should remain; town hall ventilator to be removed. No vote recorded.",
+   "quote": "resulted in the following: 1. repair of shutters for the ritter building - not required"
+  },
+  {
+   "decision": "Reading of the minutes of November 9 deferred to the January meeting.",
+   "quote": "reading of the minutes of november 9 was deferred to the january meeting."
+  },
+  {
+   "decision": "Mr. Lakso to contact the town manager on finalizing the language of bylaw amendments approved at town meeting and whether attorney general approval is required.",
+   "quote": "mr. lakso will contact the town manager relative to finalizing the language of bylaw amendments approved at town meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Commission budget balance",
+   "what_was_recorded": "Mr. McGrath reported the commission has funds available as its budget until July.",
+   "figures_as_printed": [
+    "$3,000.00"
+   ],
+   "quote": "mr. mcgrath reported funds of $3,000.00 are available as the commission's budget until july."
+  },
+  {
+   "topic": "Commemorative bronze plaque cost",
+   "what_was_recorded": "The plaque was approved for procurement, with its cost to be set by Mr. McGrath; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "procure a cast bronze plaque following mr. mcgraths determination of the cost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Town manager request on Ritter building and town hall repairs",
+   "resolution": "opinions given",
+   "quote": "a request of the town manager seeking opinions related to repairs to the ritter memorial building and town hall resulted in the following:",
+   "tags": [
+    "repairs",
+    "Ritter Memorial Building",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Commemorative plaque at Arnold/Litch burial ground",
+   "resolution": "approved",
+   "quote": "a commemorative plaque listing names of sponsors of the memorial at the arnold/litch burial ground site was discussed.",
+   "tags": [
+    "plaque",
+    "Arnold/Litch burial ground",
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Bylaw amendments approved at town meeting",
+   "resolution": "action assigned to Mr. Lakso",
+   "quote": "mr. lakso will contact the town manager relative to finalizing the language of bylaw amendments approved at town meeting",
+   "tags": [
+    "bylaws",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Granite curbs and preservation district sign",
+   "resolution": "no action; status reported",
+   "quote": "mr. mcgrath reported that due to lack of manpower, there is a delay in installing granite curbs at the arnold/litch burial site memorial.",
+   "tags": [
+    "granite curbs",
+    "Arnold/Litch burial ground",
+    "architectural preservation district"
+   ]
+  },
+  {
+   "topic": "Primary school preservation",
+   "resolution": "no action; status reported",
+   "quote": "entry has been denied by the town manager due to the existence of black mold.",
+   "tags": [
+    "primary school",
+    "preservation",
+    "black mold"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "historical commission",
+  "Ritter Memorial Building",
+  "town hall",
+  "Arnold/Litch burial ground",
+  "commemorative plaque",
+  "bylaws",
+  "primary school preservation",
+  "architectural preservation district"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-06-14",
  "docid": "5301",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the ambulance billing collection procedure and hardship policy as presented",
+   "motion": "Approve the ambulance billing collection procedure and hardship policy as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: t. alonzo 2°: t. dwyer to approve the ambulance billing collection procedure and hardship policy as presented vote: all in favor"
   },
   {
-   "motion": "Ratify the appointment of Kevin Babin to Heavy Equipment Operator",
+   "motion": "Ratify the Town Manager's appointment of Kevin Babin to Heavy Equipment Operator.",
    "moved_by": "T. Dwyer",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -28,16 +28,15 @@
    "quote": "motion: t. dwyer 2': t. alonzo to ratify the appointment of kevin babin to heavy equipment operator vote: all in favor"
   },
   {
-   "motion": "Appoint Richard McGrath to the APD as a Historical Commission representative with term expiring June 30, 2024",
+   "motion": "Appoint Richard McGrath to the APD as a Historical Commission representative with a term expiring June 30, 2024.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 3-1",
+   "outcome": "passed, 3 in Favor, 1 opposed (Jeffreys)",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\": t. dwyer to appoint richard mcgrath to the apd as a historical commission representative with a term expiring june 30, 2024 discussion: mr. alonzo wanted to thank",
-   "quote_taken_from_text": true
+   "quote": "motion: t. alonzo 2\": t. dwyer to appoint richard mcgrath to the apd as a historical commission representative with a term expiring june 30, 2024"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -45,7 +44,478 @@
    "quote": "motion: t. alonzo to adjourn the meeting 2': t. dwyer vote: all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR'd from scan. Name variant noted: Town Manager introduced the candidate as 'Keith Babin' but the motion record shows 'Kevin Babin' for the Heavy Equipment Operator appointment.",
- "cost_usd": 0.12033650000000001
+ "dropped_unquoted": 1,
+ "note": "OCR text (macOS Vision) of a scanned minutes document; several words are misread (e.g. 'Mi. Alonzo', 'Uperators', 'PROCEDURDS'). Pages 6 to 7 break mid-item: the Rescission of Joel Ortega item and the Rossi reappointment have no recorded motion in this text, so no vote is recorded for either. The net pension figure is cut off at '$19.8' with no unit. The Heavy Equipment Operator item names 'Keith Babin' in the heading and 'Kevin Babin' in the motion, printed as such. Ms. Sroka and Mr. Dwyer are not stated to be present in attendance lines; their presence is inferred from speaking or moving in the text. Ambulance procedure numbering skips from item 3 to item 5 in the text. The FY21 audit figures are presenter statements, not votes.",
+ "cost_usd": 0.02349388,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo thanked everyone who attended the candlelight vigil this past friday."
+  },
+  {
+   "name": "T. Dwyer",
+   "status": "present",
+   "quote": "mr. dwyer concurred."
+  },
+  {
+   "name": "Ms. Sroka",
+   "status": "present",
+   "quote": "ms. sroka wished mr. dwyer a happy birthday."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; frank serreti, ben adsit, karen brochu, finance director; patrick sullivan, fire chief"
+  },
+  {
+   "name": "Frank Serreti",
+   "role": "presenter, FY21 Audit Review by Powers & Sullivan",
+   "status": "present",
+   "quote": "frank serreti thanked the board for having himself and ben adsit here to present the results of the fiscal year 2021 audit."
+  },
+  {
+   "name": "Ben Adsit",
+   "role": "presenter, FY21 Audit Review by Powers & Sullivan",
+   "status": "present",
+   "quote": "frank serreti thanked the board for having himself and ben adsit here to present the results of the fiscal year 2021 audit."
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "ms. brochu and chief sullivan thanked the board and exited the meeting."
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "ms. brochu and chief sullivan thanked the board and exited the meeting."
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios, 81 whiting street, welcomed ms. sroka to the select board. he asked for clarification about the apdc appointment later this evening."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chairman Jeffreys to revise the wording of the FY2022 goal action items; board members to send suggestions to him during the week.",
+   "quote": "mr. jeffreys will work on the wording and the board members should send any suggestions to him during the week as well."
+  },
+  {
+   "decision": "The board will revisit its goals once the Chairman has revised the wording.",
+   "quote": "the board will revisit their goals once mr. jeffreys has worked on the wording."
+  },
+  {
+   "decision": "Chairman Jeffreys to speak with Mr. Franco about drafting an amendment to the liquor license policy on how applications are reviewed.",
+   "quote": "mr. jeffreys will speak to mr. franco about creating a draft."
+  },
+  {
+   "decision": "Board asked to review the Select Board Policies and Procedures, Articles I & II, ahead of a workshop.",
+   "quote": "he requested the board review the select board policies and procedures, articles i & ii, as it will include a workshop on this."
+  },
+  {
+   "decision": "Town Manager to report back to the Board once a revised Flat Hill Road drainage proposal covering the full scope is received.",
+   "quote": "i will provide an update to the board when i receive a revised proposal that covers the full scope of the project."
+  },
+  {
+   "decision": "PILOT terms for 265 Pleasant Street to be presented to the Board once a valuation method is set.",
+   "quote": "once a valuation method is determined to come up with payment terms that is fair, this will be presented to the board."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 General Fund unassigned fund balance",
+   "what_was_recorded": "The auditors reported the unassigned fund balance at $7.2 million, about 16% of budget, up from $1.6 million in 2013.",
+   "figures_as_printed": [
+    "$7.2 million",
+    "16%",
+    "$1.6 million",
+    "6%"
+   ],
+   "quote": "that left you with a general fund unassigned fund balance of $7.2 million dollars which is about 16% of your budget"
+  },
+  {
+   "topic": "Stabilization funds",
+   "what_was_recorded": "General stabilization totaled $2.5 million; zoning stabilization $230,000; vehicle equipment stabilization $1.2 million, about a $250,000 increase.",
+   "figures_as_printed": [
+    "$2.5 million",
+    "$230,000",
+    "$1.2 million",
+    "$250,000"
+   ],
+   "quote": "your general stabilization fund totaled $2.5 million. that has steadily increased since 2013 when it was a million dollars"
+  },
+  {
+   "topic": "FY21 general fund results and free cash",
+   "what_was_recorded": "General fund balance rose $872,000 on a $966,000 revenue surplus; expenditures came in $1.4 million under budget; $858,000 of Free Cash was used to balance FY21 and encumbrances fell $522,000.",
+   "figures_as_printed": [
+    "$872,000",
+    "$966,000",
+    "$1.4 million",
+    "$858,000",
+    "$522,000"
+   ],
+   "quote": "the general fund balance increased by $872,000 and that was mainly due to a revenue surplus of $966,000"
+  },
+  {
+   "topic": "Enterprise funds",
+   "what_was_recorded": "Sewer fund balance $1.6 million (up about $227,000); solid waste recycling $134,000 (up about $123,000); cable television enterprise fund $857,000.",
+   "figures_as_printed": [
+    "$1.6 million",
+    "$227,000",
+    "$134,000",
+    "$123,000",
+    "$857,000",
+    "$107,000"
+   ],
+   "quote": "your enterprise funds, sewer fund balance totaled $1.6 million, about a $227,000 increase from the prior year."
+  },
+  {
+   "topic": "OPEB liability and trust",
+   "what_was_recorded": "Town contributed $111,000 to the OPEB trust; trust balance $589,000 at year end; net OPEB liability $65.6 million, up about $9.8 million.",
+   "figures_as_printed": [
+    "$111,000",
+    "$589,000",
+    "$104,000",
+    "$65.6 million",
+    "$9.8 million"
+   ],
+   "quote": "next is the opeb liability; the town contributed an additional $111,000 to the opeb trust fund."
+  },
+  {
+   "topic": "Net pension liability (Worcester Regional Retirement System)",
+   "what_was_recorded": "The Town's liability associated with the Worcester Regional Retirement System was stated, but the figure is cut off at the page break.",
+   "figures_as_printed": [
+    "$19.8"
+   ],
+   "quote": "your liability associated with that is $19.8"
+  },
+  {
+   "topic": "Debt outstanding",
+   "what_was_recorded": "$610,000 of short-term debt; no new long-term governmental debt issued; $37.6 million governmental and $4.5 million sewer long-term debt outstanding.",
+   "figures_as_printed": [
+    "$610,000",
+    "$37.6 million",
+    "$4.5 million"
+   ],
+   "quote": "you had $37.6 million outstanding and for your sewer activities you had $4.5 million outstanding."
+  },
+  {
+   "topic": "Federal awards expenditure",
+   "what_was_recorded": "The Town expended $1.9 million in federal funds, including $338,000 for school lunch and $702,000 for the Coronavirus relief grant; the single-audit threshold is $750,000.",
+   "figures_as_printed": [
+    "$1.9 million",
+    "$338,000",
+    "$702,000",
+    "$200,000",
+    "$663,000",
+    "$750,000"
+   ],
+   "quote": "the town expended $1.9 million, of that $338,000 was related to school lunch, $702,000 related to the coronavirus refund grant."
+  },
+  {
+   "topic": "Outstanding checks (management letter)",
+   "what_was_recorded": "Old outstanding checks balance fell from $61,000 at end of 2020 to $9,000.",
+   "figures_as_printed": [
+    "$61,000",
+    "$9,000"
+   ],
+   "quote": "the balance at the end of 2020 was $61,000, now down to $9,000."
+  },
+  {
+   "topic": "Ambulance receivables",
+   "what_was_recorded": "Ambulance receivables totaled $622,000 at year end, of which $552,000 was over 180 days old.",
+   "figures_as_printed": [
+    "$622,000",
+    "$552,000"
+   ],
+   "quote": "the ambulance receivables balance at the end of the year totaled $622,000 and $552,000 of that was over 180 days old."
+  },
+  {
+   "topic": "Ambulance hardship write-off thresholds",
+   "what_was_recorded": "Balances of $50.00 or less with proof of hardship are written off; Fire Chief may recommend waivers up to $250.00.",
+   "figures_as_printed": [
+    "$50.00",
+    "$250.00"
+   ],
+   "quote": "amounts due of $50.00 or less to which patient returns the bill proving hardship with supporting documentation will be written off."
+  },
+  {
+   "topic": "Accounts payable warrant",
+   "what_was_recorded": "The board signed an accounts payable warrant in the amount of $939,717.33.",
+   "figures_as_printed": [
+    "$939,717.33"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $939,717.33."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Sroka",
+   "topic": "birthday greeting",
+   "quote": "ms. sroka wished mr. dwyer a happy birthday."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "candlelight vigil and resolution signing",
+   "quote": "mr. alonzo thanked everyone who attended the candlelight vigil this past friday."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "81 Whiting Street (address as printed)",
+   "topic": "APDC appointment clarification",
+   "quote": "dave passios, 81 whiting street, welcomed ms. sroka to the select board. he asked for clarification about the apdc appointment later this evening."
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "topic": "Council on Aging anniversary and Volunteer Appreciation Reception",
+   "quote": "mr. jeffreys noted the council on aging/senior center celebrated their 55' anniversary earlier today."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, announcements and public comment",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Communications from other boards",
+   "resolution": "no action",
+   "quote": "from the parks commission chair: the town beach will be opening this saturday the 18th",
+   "tags": [
+    "parks"
+   ]
+  },
+  {
+   "topic": "FY21 Audit Review by Powers & Sullivan",
+   "resolution": "presented, received",
+   "quote": "frank serreti thanked the board for having himself and ben adsit here to present the results of the fiscal year 2021 audit.",
+   "tags": [
+    "audit",
+    "finance",
+    "free cash",
+    "OPEB",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Ambulance billing collection and hardship policy",
+   "resolution": "approved",
+   "quote": "meeting with finance director and fire chief to present ambulance abatement, collection and hardship policy",
+   "tags": [
+    "ambulance billing",
+    "hardship waivers",
+    "fire department",
+    "receivables"
+   ]
+  },
+  {
+   "topic": "Ratification of heavy equipment operator appointment",
+   "resolution": "ratified",
+   "quote": "ratification of town manager's appointment of heavy equipment operator-keith babin",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Rescission of police officer appointment and reappointment (Rossi)",
+   "resolution": "no vote recorded in this text (cut at page break)",
+   "quote": "rescission of appointment of full time police officer joel ortega and return of",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Annual appointment to APDC (Richard McGrath)",
+   "resolution": "approved 3-1",
+   "quote": "annual appointment- apdc - richard mcgrath- historical commission rep-term to",
+   "tags": [
+    "APDC",
+    "historical commission",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, pavement, Flat Hill Road, PILOT, PAYT, test kits",
+   "resolution": "informational, no action",
+   "quote": "pavement management plan update",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "pavement",
+    "drainage",
+    "PILOT",
+    "solid waste",
+    "COVID"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "no action",
+   "quote": "dueto the new state/federal holiday of juneteenth, town buildings will be closed on monday, june 20th",
+   "tags": [
+    "events"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Workshop: Select Board and Town Manager goals FY2023",
+   "resolution": "continued; chair to revise wording",
+   "quote": "select board and town manager goals for fiscal year 2023",
+   "tags": [
+    "goals",
+    "volunteerism",
+    "senior tax exemption",
+    "925 Mass Ave",
+    "long term planning"
+   ]
+  },
+  {
+   "topic": "Liquor license policy Section 4.01 amendment",
+   "resolution": "continued; chair to draft",
+   "quote": "discussion and amendment of liquor license policy section 4.01, 1.21 applications and fees",
+   "tags": [
+    "liquor license",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "warrant signed",
+   "quote": "warrants: the board signed an accounts payable warrant in the amount of $939,717.33.",
+   "tags": [
+    "warrants",
+    "accounts payable"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "no action",
+   "quote": "upcoming meeting/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "discussion, no action",
+   "quote": "discussion ensued about the library clerk positions and who should apply for them.",
+   "tags": [
+    "library",
+    "hiring"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:22 PM",
+   "quote": "the meeting adjourned at 9:22 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ambulance Billing Collection Procedure (draft, Ambulance Abatement, Collection and Hardship Policy)",
+   "where": "list",
+   "quote": "the following draft is being presented this evening: ambulance billing collection procedure purpose: the purpose of this procedure"
+  },
+  {
+   "name": "FY21 audit report and management letter (Powers & Sullivan)",
+   "where": "text",
+   "quote": "the last report is the management letter. these are prior year comments that have been there and being worked on"
+  },
+  {
+   "name": "Report on Federal Awards (FY21)",
+   "where": "text",
+   "quote": "the report on federal awards is required for any municipality that spends more than $750,000 a year in federal funds."
+  },
+  {
+   "name": "Select Board Policies and Procedures, Articles I & II",
+   "where": "text",
+   "quote": "he requested the board review the select board policies and procedures, articles i & ii, as it will include a workshop on this."
+  },
+  {
+   "name": "FY2022 Lunenburg Select Board Goals",
+   "where": "text",
+   "quote": "fy2022 lunenburg select board goals objective 1:"
+  },
+  {
+   "name": "Town Manager Goals and Objectives, Fiscal Year 2023",
+   "where": "text",
+   "quote": "town manager goals and objectives fiscal year 2023"
+  },
+  {
+   "name": "Liquor License Policy Section 4.01, 1.21 Applications and Fees",
+   "where": "text",
+   "quote": "discussion and amendment of liquor license policy section 4.01, 1.21 applications and fees"
+  },
+  {
+   "name": "Architectural Preservation District Commission by-law composition",
+   "where": "text",
+   "quote": "ms. lemieux read aloud the composition of the apd membership:"
+  },
+  {
+   "name": "Pavement Management Plan update proposal request (LiDAR)",
+   "where": "text",
+   "quote": "we requested a proposal that would use lidar (light detection and ranging) technology"
+  },
+  {
+   "name": "Flat Hill Road Drainage Study proposal (McCarty Engineering, Brian Marchetti)",
+   "where": "text",
+   "quote": "brian marchetti of mccarty engineering provided a proposal related to the fy23 capital planning project"
+  },
+  {
+   "name": "Accounts payable warrant",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $939,717.33."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "FY21 audit",
+  "free cash",
+  "OPEB",
+  "debt",
+  "ambulance billing",
+  "hardship waivers",
+  "appointments",
+  "APDC",
+  "select board goals",
+  "town manager goals",
+  "liquor license",
+  "warrants",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the following draft is being presented this evening"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

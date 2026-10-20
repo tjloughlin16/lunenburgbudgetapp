@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-05-18",
  "docid": "3355",
@@ -12,39 +12,345 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from March 16 and 29, 2022 with correction of the spelling of Kathryn's last name to Ostermier",
+   "motion": "Accept the minutes of March 16 and 29, 2022, with a spelling correction to Kathryn's last name to read Ostermier.",
    "moved_by": "C. Sullivan",
    "seconded_by": "D. Passios",
    "outcome": "passed",
    "procedural": true,
-   "quote": "c. sullivan made a motion to accept the minutes with the amendment of the correct to the spelling of kathryn's last name to read ostermier. d. passios seconded. roll call vote, k. menard - yes c. sullivan - yes d. passios - yes a.lockwood - yes all in favor, motion carried."
+   "quote": "c. sullivan made a motion to accept the minutes with the amendment of the correct to the spelling of kathryn's last name to read ostermier."
   },
   {
-   "motion": "Allow Geocache placement at Veteran's Memorial Park and Town Pound, not on the Historical features of the parks",
+   "motion": "Allow the Geocache placement at Veteran's Memorial Park and Town Pound, not on the Historical feature of the Park.",
    "moved_by": "A.Lockwood",
    "seconded_by": "C. Sullivan",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a.lockwood made a motion to allow the geocache placement at the veteran's memorial park and town pound, not on the historical feature of the park. c. sullivan seconded. d. passion stated a note to be added to the geocache that this is a historic site and please respect that. roll call vote, k. menard - yes c. sullivan - yes d. passios - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "a.lockwood made a motion to allow the geocache placement at the veteran's memorial park and town pound, not on the historical feature of the park."
   },
   {
-   "motion": "Open the beach on June 18, 2022",
+   "motion": "Open the beach June 18, 2022.",
    "moved_by": "K. Menard",
    "seconded_by": "D. Passios",
    "outcome": "passed",
    "procedural": false,
-   "quote": "k. menard made a motion to open the beach june 18, 2022. d. passios seconded. roll call vote, k. menard - yes c. sullivan - yes d. passios - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "k. menard made a motion to open the beach june 18, 2022."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "D. Passios",
    "outcome": "passed",
    "procedural": true,
-   "quote": "ana lockwood made a motion to adjourn. d. passios seconded. roll call vote k. menard - yes c. sullivan - yes d. passios - yes a.lockwood - yes all in favor, motion carried."
+   "quote": "ana lockwood made a motion to adjourn. d. passios seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1449084
+ "note": "Text is extracted from a PDF with page headers ('Page of 41' etc.); a few ligatures and typos are reproduced as printed. No vote tallies are printed; the four roll calls each list four yes votes, so outcomes are recorded as 'passed' rather than a count. The minutes name 'Patrick Hakey' in the attendance line and 'Pat Hakey' in the letterhead; the attendance line is used. Anthony Caiozzo's role is not printed. Andrea Mastrototoro signs as Board Secretary; attendance is not stated for her. No public comment was recorded. Persons mentioned only in passing (Paul Mumby, Greg Roy, K. Ostermier, Peter Hennessey, John McCormick, Matt Marro) are not listed as attendees.",
+ "cost_usd": 0.01860428,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Rob Thompson",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "additional attendees: rob thompson, recreation director."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "anthony caiozzo explained the items which they have been working on as:"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "K. Menard will reach out to the Town Manager and the Select Board regarding Marshall Park funding and goals (directed action, no vote recorded).",
+   "quote": "k. menard will reach out to the town manager and the select board."
+  },
+  {
+   "decision": "K. Menard will walk the Northfield Park debris field site (no vote recorded).",
+   "quote": "k. menard will walk the site."
+  },
+  {
+   "decision": "K. Menard suggested R. Thompson review the trash policies and forward the information to the proper parties (directive, no vote recorded).",
+   "quote": "k. menard suggested r. thompson review the policies and forward the information to the proper parties."
+  },
+  {
+   "decision": "K. Menard will emphasize that the geocache tube is not to be placed on the wall or the gate (no vote recorded).",
+   "quote": "k. menard will emphasis the tube not be place on the wall or the gate."
+  },
+  {
+   "decision": "Next meetings scheduled for June 15, and July 20, 2022 at 7 pm.",
+   "quote": "next meetings are scheduled for june 15, and july 20, 2022 at 7 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Skate park fundraising",
+   "what_was_recorded": "Skate park group reported fundraising of $180,000 achieved to date.",
+   "figures_as_printed": [
+    "$180,000"
+   ],
+   "quote": "1. fundraising, of which $180,000 has been achieved."
+  },
+  {
+   "topic": "Marshall Park survey funding",
+   "what_was_recorded": "Reappropriation of $20,000 from the track behind the school to pay for the Marshall Pond survey; WOLA balance not yet submitted.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "d. passios noted $20,000 was reappropriated at town meeting from the track behind the school to pay for the survey."
+  },
+  {
+   "topic": "Little League arrears",
+   "what_was_recorded": "Little League was in arrears from the previous fall season and had emailed that it would resolve them; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "r. thompson stated they were in arrears from the fall of the previous season."
+  },
+  {
+   "topic": "Summer field usage fees",
+   "what_was_recorded": "Commission noted summer usage is not covered by the spring season usage fees; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "k. menard noted the summer season is not covered by the spring season usage fees."
+  },
+  {
+   "topic": "McNally/Water Dept property sewer",
+   "what_was_recorded": "Sewer betterment was paid on the Water Department parcel, which never hooked into sewer; cost of tying in was raised with the Sewer Commission; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "d. passios noted the sewer betterment was paid but the property never hooked into the sewer."
+  },
+  {
+   "topic": "Fitzgerald Field spending",
+   "what_was_recorded": "Commissioner stated he does not want to put money into Fitzgerald Field; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "d. passios noted he does not want to put money into fitzgerald field"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Reappropriation from the track behind the school to pay for the Marshall Pond survey, reported as approved at Town Meeting.",
+   "amount_as_printed": "$20,000",
+   "outcome": "reported as reappropriated at Town Meeting; no vote by the Commission",
+   "quote": "d. passios noted $20,000 was reappropriated at town meeting from the track behind the school to pay for the survey."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board and public comment",
+   "resolution": "no comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "first item on the agenda, board and public comment, none."
+  },
+  {
+   "topic": "Approval of minutes, March 16 and 29, 2022",
+   "resolution": "approved with spelling amendment",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "next item on the agenda, approval of minutes, march 16 and 29, 2022"
+  },
+  {
+   "topic": "DPW, Town Manager and Recreation Director updates; summer/fall programming",
+   "resolution": "discussion, no action",
+   "tags": [
+    "recreation programming",
+    "DPW",
+    "mowing"
+   ],
+   "quote": "next item on the agenda, dpw, town manager and recreation director updates with discussion."
+  },
+  {
+   "topic": "Skate park updates",
+   "resolution": "update received, no action",
+   "tags": [
+    "skate park",
+    "fundraising",
+    "construction timeline"
+   ],
+   "quote": "next on the agenda, skate park updates."
+  },
+  {
+   "topic": "2022 spring usage compliance",
+   "resolution": "discussion, no action",
+   "tags": [
+    "field use",
+    "portable toilets",
+    "dumpsters",
+    "trash policy",
+    "Little League"
+   ],
+   "quote": "next item on the agenda, 2022 spring usage compliance"
+  },
+  {
+   "topic": "Wallis Basketball Court updates",
+   "resolution": "no update",
+   "tags": [
+    "basketball court",
+    "repairs"
+   ],
+   "quote": "k. menard noted there were no updates on the repairs."
+  },
+  {
+   "topic": "Geocache placements, LHS senior project",
+   "resolution": "approved placements at Veteran's Memorial Park and Town Pound",
+   "tags": [
+    "geocache",
+    "Veteran's Memorial Park",
+    "Town Pound"
+   ],
+   "quote": "next item on the ageda, geocache placements - lhs senior project."
+  },
+  {
+   "topic": "Beach season",
+   "resolution": "beach opening set for June 18, 2022",
+   "tags": [
+    "beach",
+    "toilets",
+    "gate",
+    "Board of Health"
+   ],
+   "quote": "next on the agenda, beach season"
+  },
+  {
+   "topic": "Marshall Park next steps",
+   "resolution": "continued; actions assigned",
+   "tags": [
+    "Marshall Park",
+    "WOLA",
+    "grants",
+    "survey"
+   ],
+   "quote": "next item, marshall park - next steps"
+  },
+  {
+   "topic": "McNally Field and Snack Shack",
+   "resolution": "discussion, no action",
+   "tags": [
+    "McNally Field",
+    "snack shack",
+    "water department property",
+    "sewer"
+   ],
+   "quote": "next item on the agenda, mcnally field and snack shack"
+  },
+  {
+   "topic": "Northfield Park debris field",
+   "resolution": "chair to walk the site",
+   "tags": [
+    "Northfield Park",
+    "debris"
+   ],
+   "quote": "k. menard will walk the site."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:55 pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "ana lockwood made a motion to adjourn. d. passios seconded."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Trash policy (carry-in carry-out)",
+   "where": "text",
+   "quote": "d. passios requested the trash policy be sent to the high school basketball and softball teams."
+  },
+  {
+   "name": "Grant information sent by K. Ostermier",
+   "where": "text",
+   "quote": "k. menard noted k. ostermier had sent over some grant information."
+  },
+  {
+   "name": "Phases presented by WOLA and members list of priorities",
+   "where": "text",
+   "quote": "d. passios suggested forwarding the phases presented by wola and the members list of priorities."
+  },
+  {
+   "name": "Scope of work extension for WOLA schematic design, Marshall Pond",
+   "where": "text",
+   "quote": "d. passios spoke with the town manager to write an extend to the scope of work for wola to do the schematic design for marshall pond."
+  },
+  {
+   "name": "Skate park timeline chart",
+   "where": "text",
+   "quote": "anthony caiozzo has created a chart for the timeline, hoping for approval by thanskgiving then site work to start."
+  },
+  {
+   "name": "Peter Hennessey's application",
+   "where": "text",
+   "quote": "k. menard asked if peter hennessey's application had been submitted."
+  },
+  {
+   "name": "Paperwork submitted to the Board of Health (beach toilets)",
+   "where": "text",
+   "quote": "r. thompson noted he has submitted the paperwork to the board of health."
+  },
+  {
+   "name": "Little League email on resolving arrears",
+   "where": "text",
+   "quote": "he had received an email stated the little league will be resolving the arrears."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "skate park",
+  "beach season",
+  "geocache",
+  "Marshall Park",
+  "McNally Field",
+  "Northfield Park",
+  "recreation programming",
+  "field usage",
+  "Little League",
+  "trash policy",
+  "sewer betterment",
+  "Town Meeting reappropriation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

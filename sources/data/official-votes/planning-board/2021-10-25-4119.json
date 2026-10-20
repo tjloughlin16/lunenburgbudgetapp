@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-10-25",
  "docid": "4119",
@@ -12,15 +12,140 @@
  },
  "votes": [
   {
-   "motion": "to close the public hearing for warrant articles",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Close the public hearing on the warrant articles.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "p. bertram made motion to close the public hearing for warrant articles, m. allison seconded, vote passed 4 -0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "This was a public hearing on Special Town Meeting Warrant Articles (zoning changes). Only one vote is recorded in the minutes: the vote to close the hearing. The warrant articles themselves are presented and explained but no votes on their merits are recorded in these planning board minutes.",
- "cost_usd": 0.08957949999999999
+ "note": "Minutes name no public commenter and record no vote on the articles themselves, only the motion to close the hearing. Marjorie J. Boggio appears in the letterhead only and is not recorded as taking part, so she is not listed as an attendee. Adam Burney's 'Land Use Director' title is from the letterhead, not the attendance line. The minutes print 'Erik Torgers en' in the letterhead and 'Erik Torgersen' in the attendance line; the attendance spelling is used.",
+ "cost_usd": 0.01725528,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, erik torgersen, adam burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, erik torgersen, adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, erik torgersen, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, erik torgersen, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, erik torgersen, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: matthew brenner"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing on Special Town Meeting warrant articles",
+   "resolution": "hearing held and closed 7:31 p.m.; no vote on the articles recorded",
+   "quote": "the hearing was to make alterations to code of the town of lunenburg, ma, chapter 250, zoning, article iv use regulations,",
+   "tags": [
+    "public hearing",
+    "special town meeting",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Article XX: Types of Districts (§250-3.1)",
+   "resolution": "hearing held; Retail Commercial District removed and Village Center District listed",
+   "quote": "the retail commercial district has not existed since 2017.",
+   "tags": [
+    "zoning",
+    "village center district"
+   ]
+  },
+  {
+   "topic": "Article XX: Water Supply Protection District (§250-4.9)",
+   "resolution": "hearing held; 2009 aquifer map replaced by July 2021 map",
+   "quote": "the above article took the map of 2009 and replaced it with the current map of july 2021.",
+   "tags": [
+    "water supply protection",
+    "aquifer",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Article XX: Location of Districts (§250-3.2)",
+   "resolution": "hearing held; official zoning map changed to November 16, 2021 date",
+   "quote": "the above article removed the may 3, 2008 zoning map as the official zoning map and replaced it with an official zoning map dated november 16, 2021.",
+   "tags": [
+    "zoning map",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Article XX: Lot Area (§250-5.1)",
+   "resolution": "hearing held; Limited Business/Residential lot area and width defined",
+   "quote": "limited business/residential was added along with a required lot area of 40,000 sq. ft.",
+   "tags": [
+    "lot area",
+    "dimensional regulations",
+    "zoning"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DRAFT Planning Board Warrant Articles",
+   "where": "list",
+   "quote": "documents used at meeting: draft planning board warrant articles"
+  },
+  {
+   "name": "Revised Protective Bylaw Map of the Town of Lunenburg, Massachusetts (zoning map dated November 16, 2021)",
+   "where": "text",
+   "quote": "the above article removed the may 3, 2008 zoning map as the official zoning map and replaced it with an official zoning map dated november 16, 2021."
+  },
+  {
+   "name": "LUNENBURG WATER DISTRICT AQUIFER PROTECTION ZONES, dated July 2021",
+   "where": "text",
+   "quote": "the above article took the map of 2009 and replaced it with the current map of july 2021."
+  }
+ ],
+ "tags": [
+  "zoning",
+  "water supply protection",
+  "village center district",
+  "lot area",
+  "special town meeting",
+  "public hearing",
+  "warrant articles"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2022-10-20",
  "docid": "2907",
@@ -12,39 +12,331 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of September 2022",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Linda McDonald",
+   "motion": "Approve the minutes of the September 2022 meeting.",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": true,
    "quote": "tenant board member made a motion to approve the minutes. treasurer seconded and the minutes were approved with all in favor."
   },
   {
-   "motion": "accept the September financial reports as presented",
-   "moved_by": "Linda McDonald",
-   "seconded_by": "Wayne Caron",
+   "motion": "Accept the September financial reports as presented.",
+   "moved_by": "Treasurer",
+   "seconded_by": "Tenant Board Member",
    "outcome": "passed",
    "procedural": false,
    "quote": "treasurer made a motion to accept the september financial reports as presented; tenant board member seconded, with all in favor."
   },
   {
-   "motion": "approve the regional Resident Service Coordinator (RSC) grant application for Lunenburg, Sterling and West Boylston Housing Authorities",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Linda McDonald",
+   "motion": "Approve Resolution 2022-9, the regional Resident Service Coordinator (RSC) grant application for the Lunenburg, Sterling and West Boylston Housing Authorities.",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion made by tenant board member to approve the regional resident service coordinator (rsc) grant application for the lunenburg, sterling and west boylston housing authorities through this dhcd funding initiative; treasurer seconded the motion, with all in favor."
+   "quote": "motion made by tenant board member to approve the regional resident service coordinator (rsc) grant application for the lunenburg, sterling and west boylston housing authorities"
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Wayne Caron",
-   "seconded_by": "Linda McDonald",
+   "motion": "Adjourn the meeting at 2:23p.m.",
+   "moved_by": "Tenant Board Member",
+   "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": true,
    "quote": "tenant board member made a motion to adjourn the meeting at 2:23p.m. treasurer seconded the motion; all were in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1398325
+ "note": "Motions are printed by role (Tenant Board Member, Treasurer), not by name, and results are printed as 'all in favor' with no count. Figures and quotes are taken from the minutes text as extracted; the running header shows September 15th, 2022 on each page and the meeting date is October 20th, 2022.",
+ "cost_usd": 0.025057000000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Board Member",
+   "status": "absent",
+   "quote": "board member dale proulx was absent."
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "linda mcdonald, treasurer"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "jade tavares, administrative assistance/special projects"
+  },
+  {
+   "name": "Moises Ramos",
+   "role": "Off-Site Housing Manager",
+   "status": "present",
+   "quote": "moises ramos, off-site housing manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 667-1 Community Room Generator project was tabled because of excessive cost of bids received.",
+   "quote": "this project was tables due to excessive cost of bids received."
+  },
+  {
+   "decision": "The Executive Director asked the tenant with the open work order to leave her information so the Director of Maintenance could follow up.",
+   "quote": "executive director asked for the tenant to leave her information, so the director of maintenance could follow up."
+  },
+  {
+   "decision": "Staff will bid the walkway repairs over the winter for spring 2023 construction.",
+   "quote": "we will be bidding this project over the winter for spring 2023 construction."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial report: reserve and net assets",
+   "what_was_recorded": "The Executive Director reviewed the financials, reporting the Reserve as healthy at 68.12% and Net Assets ahead, with a possible need to budget more for administration expenses.",
+   "figures_as_printed": [
+    "$4,177.31"
+   ],
+   "quote": "we are $4,177.31 to the good for net assets."
+  },
+  {
+   "topic": "Regional Resident Service Coordinator (RSC) grant",
+   "what_was_recorded": "The regional RSC grant application, led by Leominster Housing Authority, was described with salary and flexible-fund amounts for the period June 30, 2022 to July 1, 2026.",
+   "figures_as_printed": [
+    "$50,000",
+    "$10,000"
+   ],
+   "quote": "for the amount of $50,000 for salary costs and $10,000 flexible funds from june 30, 2022 to july 1, 2026"
+  },
+  {
+   "topic": "Community Room Generator project",
+   "what_was_recorded": "The generator project was tabled due to excessive cost of bids received; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "this project was tables due to excessive cost of bids received."
+  },
+  {
+   "topic": "Intercom and electric panel projects (ARPA award)",
+   "what_was_recorded": "DHCD combined the intercom project with the electric panel replacement, which is an ARPA targeted award; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "an arpa targeted award, to be more cost effective."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Notice of meeting dates to tenants",
+   "speaker": "Tenants",
+   "stated_role": "Tenants",
+   "quote": "tenants discussed not knowing about when the board meetings are schedule."
+  },
+  {
+   "topic": "Parking",
+   "speaker": "Tenants",
+   "stated_role": "Tenants",
+   "quote": "tenants asked about parking."
+  },
+  {
+   "topic": "Open work order count",
+   "speaker": "Tenant",
+   "stated_role": "Tenant",
+   "quote": "tenant stated the open number of work orders was not correct, as she still had one work order that should be open."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Meeting called to order and roll call",
+   "resolution": "quorum declared; meeting opened 2:00p.m.",
+   "tags": [
+    "roll call",
+    "quorum"
+   ],
+   "quote": "the vice chair declared a quorum present and opened the meeting at 2:00p.m."
+  },
+  {
+   "topic": "Approval of September 2022 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "the minutes were approved with all in favor"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action recorded",
+   "tags": [
+    "tenants",
+    "notice",
+    "parking"
+   ],
+   "quote": "tenants requested to have flyers sent out or robo calls made to inform them of the date/time of meetings."
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "received",
+   "tags": [
+    "conference",
+    "trees",
+    "maintenance"
+   ],
+   "quote": "lunenburg conservation commission approved, on 10/19, the administration determination for the removal of 3 dead trees"
+  },
+  {
+   "topic": "Financial report",
+   "resolution": "accepted by motion",
+   "tags": [
+    "finance",
+    "reserve"
+   ],
+   "quote": "treasurer made a motion to accept the september financial reports as presented"
+  },
+  {
+   "topic": "Administration: modernization, work orders, state-aided housing",
+   "resolution": "received",
+   "tags": [
+    "capital projects",
+    "work orders",
+    "waiting list",
+    "occupancy"
+   ],
+   "quote": "we received 12 standard applications (7 elderly/young disabled and 5 family)."
+  },
+  {
+   "topic": "Unfinished business: tree removal",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "conservation commission",
+    "trees"
+   ],
+   "quote": "a discussion was held about the conservation committee regarding the trees."
+  },
+  {
+   "topic": "New business: Resolution 2022-9 RSC grant",
+   "resolution": "approved",
+   "tags": [
+    "grant",
+    "resident services",
+    "DHCD"
+   ],
+   "quote": "resolution 2022-9 approval of regional resident service coordinator (rsc) grant application."
+  },
+  {
+   "topic": "Other correspondence from DHCD",
+   "resolution": "received",
+   "tags": [
+    "DHCD",
+    "notices of funding"
+   ],
+   "quote": "dhcd phn 2022 -14 resident service coordinators notice of funding availability"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 2:23p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "there being no further business, tenant board member made a motion to adjourn the meeting"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DHCD PHN 2022-14 Resident Service Coordinators Notice of Funding Availability (NOFA)",
+   "where": "list",
+   "quote": "dhcd phn 2022 -14 resident service coordinators notice of funding availability"
+  },
+  {
+   "name": "DHCD PHN 2022-15 Vacancy Waiver Policy Update",
+   "where": "list",
+   "quote": "dhcd phn 2022-15 vacancy waiver policy update"
+  },
+  {
+   "name": "DHCD PHN 2022-16 FY 2023 Budget Guidelines",
+   "where": "list",
+   "quote": "dhcd phn 2022-16 fy 2023 budget guidelines"
+  },
+  {
+   "name": "DHCD PHN 2022-17 Fire Alarm Testing and Maintenance Requirements",
+   "where": "list",
+   "quote": "dhcd phn 2022-17 fire alarm testing and maintenance requirements"
+  },
+  {
+   "name": "DHCD PHN 2022-18 State Units Federalization Notice of Funding Availability (NOFA)",
+   "where": "list",
+   "quote": "dhcd phn 2022-18 state units federalization notice of funding availability"
+  },
+  {
+   "name": "DHCD PHN 2022-19 NCSR Recapitalization Notice of Funding Availability (NOFA)",
+   "where": "list",
+   "quote": "dhcd phn 2022-19 ncsr recapitalization notice of funding availability"
+  },
+  {
+   "name": "DHCD PHN 2022-20 705 Repositioning Notice of Funding Availability (NOFA)",
+   "where": "list",
+   "quote": "dhcd phn 2022-20 705 repositioning notice of funding availability"
+  },
+  {
+   "name": "Work Order Reports from September",
+   "where": "text",
+   "quote": "work order reports from september:"
+  },
+  {
+   "name": "State-Aided Housing Report (Executive Director)",
+   "where": "text",
+   "quote": "state-aided housing report - executive director"
+  },
+  {
+   "name": "Modernization/Work Order Report (Assistant Director)",
+   "where": "text",
+   "quote": "modernization/work order report - assistant director"
+  },
+  {
+   "name": "Resolution 2022-9 Approval of Regional Resident Service Coordinator (RSC) Grant Application",
+   "where": "text",
+   "quote": "resolution 2022-9 approval of regional resident service coordinator (rsc) grant application."
+  },
+  {
+   "name": "September financial reports",
+   "where": "text",
+   "quote": "accept the september financial reports as presented"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "tenants",
+  "public housing",
+  "budget",
+  "grants",
+  "maintenance",
+  "work orders",
+  "DHCD",
+  "trees",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence"
+ },
+ "dropped_unquoted_by_field": {}
 }

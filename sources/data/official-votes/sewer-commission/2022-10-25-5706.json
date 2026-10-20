@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-10-25",
  "docid": "5706",
@@ -12,56 +12,337 @@
  },
  "votes": [
   {
-   "motion": "Put forward Wright Pierce for the Pond View 40B project peer review",
+   "motion": "Put forward Wright Pierce for the Pond View 40B project peer review.",
    "moved_by": "Mike N.",
    "seconded_by": "Dave M.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike n. second: dave m. to put forward wright pierce for the pond view 40b project peer review. discussion: dave asked for bill and barb's opinion. bi",
-   "quote_taken_from_text": true
+   "quote": "motion: mike n. second: dave m. to put forward wright pierce for the pond view 40b project peer review."
   },
   {
-   "motion": "Forbid a single line from the Pond View project to the Leominster hook-up and request full connections along the way",
+   "motion": "The board forbids a single line from the Pond View project to the Leominster hook-up, and requests full connections along the way.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. this board forbids a single line from the project to the leominster hook-up, and we are requesting full connections along the way. roll call vote: mike n.-aye, dave-aye, and brett -aye"
+   "quote": "motion: dave m. second: mike n. this board forbids a single line from the project to the leominster hook-up, and we are requesting full connections along the way."
   },
   {
-   "motion": "Assess $11,551.47 privilege fee for 34 Northfield Road, connected on 10/9/22",
+   "motion": "Assess an $11,551.47 privilege fee for 34 Northfield Road, connected on 10/9/22.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to assess $11,551.47 privilege fee for 34 northfield road, connected on 10/9/22. roll call vote: dave-aye, mike n.-aye and brett-aye."
+   "quote": "motion: dave m. second: mike n. to assess $11,551.47 privilege fee for 34 northfield road, connected on 10/9/22."
   },
   {
-   "motion": "Assess the extension privilege fee for 4 Kimball St. of $6,998.74",
+   "motion": "Assess the extension privilege fee for 4 Kimball St. of $6,998.74.",
    "moved_by": "Mike N.",
    "seconded_by": "Dave M.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike n. second: dave m. to assess the extension privilege fee for 4 kimball st. of $6,998.74 roll call vote: mike n.-aye, dave-aye, and brett -aye."
+   "quote": "motion: mike n. second: dave m. to assess the extension privilege fee for 4 kimball st. of $6,998.74"
   },
   {
-   "motion": "Approve the minutes for 10/11/22",
+   "motion": "Approve the minutes for 10/11/22.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: dave m. second: mike n. to approve the minutes for 10/11/22. roll call vote: dave-aye, mike n.-aye and brett-aye."
+   "quote": "motion: dave m. second: mike n. to approve the minutes for 10/11/22."
   },
   {
-   "motion": "Adjourn at 6:48pm",
+   "motion": "Adjourn the meeting at 6:48pm.",
    "moved_by": "Dave M.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: dave m. to adjourn at 6:48pm. second: mike n. roll call vote: mike n.-aye, dave-aye, and brett -aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; all six votes are recorded with roll-call results and all are unanimous 3-0 votes (Brett, Dave, and Mike).",
- "cost_usd": 0.09503249999999999
+ "note": "The text is macOS Vision OCR of a scanned minutes page (marked ===OCR macOS Vision===), so figures and names may carry OCR errors; a trailing line ('You kiloney,') is unreadable and was not used. Roll call votes are recorded as lists of ayes, with no printed count, so outcomes are given as 'passed' rather than a derived count. Two members (John Reynolds, Mike Deveikis) are printed as absent. Kevin Olson and Matt Corbin are named only as Wright Pierce staff in discussion and did not appear, so they are not listed as attendees.",
+ "cost_usd": 0.016886329999999998,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Members",
+   "status": "present",
+   "quote": "vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Members",
+   "status": "present",
+   "quote": "vice-chair- brett ramsden, members: dave macdonald and mike nault, dpw director- bill bernard,"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- john reynolds, clerk- mike deveikis"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: chair- john reynolds, clerk- mike deveikis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will submit a formal memo to the ZBA stating that the applicant's $4M estimate for running sewer and water was grossly underestimated.",
+   "quote": "she will submit a formal memo to the zba stating that. brett asked how long the zba will be having hearings on pond view"
+  },
+  {
+   "decision": "Barb will discuss the Pond View maintenance cost with Town Counsel.",
+   "quote": "she will discuss this with town counsel."
+  },
+  {
+   "decision": "Barb will ask Town Counsel whether the IMA could be revised to allow an increase in flows from Fitchburg and Leominster.",
+   "quote": "they could propose revising the ima and she will ask counsel."
+  },
+  {
+   "decision": "Barb will have an update on the FY23 budget for the next meeting.",
+   "quote": "fy23 budget- barb reported it is going well and she will have an update for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pond View 40B peer review estimate",
+   "what_was_recorded": "The Commission discussed a Wright Pierce estimate of $2.8M per mile to run sewer, noting that costs have risen.",
+   "figures_as_printed": [
+    "$2.8M/mile"
+   ],
+   "quote": "the commission discussed wright pierce's estimate of $2.8m/mile to run sewer, noting that"
+  },
+  {
+   "topic": "Applicant's sewer and water cost estimate",
+   "what_was_recorded": "Barb said the Wright Pierce estimate was obtained to show the applicant's $4M estimate for sewer and water was grossly underestimated.",
+   "figures_as_printed": [
+    "$4M"
+   ],
+   "quote": "show the applicant's estimate of $4m for running sewer and water was grossly underestimated"
+  },
+  {
+   "topic": "Pond View pump station maintenance",
+   "what_was_recorded": "Barb guessed annual maintenance of a Pond View pump station may be about $10K per year.",
+   "figures_as_printed": [
+    "$10K/year"
+   ],
+   "quote": "barb noted the cost of maintenance was included in the list of concerns and guessed it may be $10k/year."
+  },
+  {
+   "topic": "Privilege fee, 34 Northfield Rd.",
+   "what_was_recorded": "A privilege fee of $11,551.47 was assessed for a property connected on 10/9/22 that was not originally bettered.",
+   "figures_as_printed": [
+    "$11,551.47"
+   ],
+   "quote": "privilege fee assessments - 34 northfield rd. - $11,551.47 for the property connected on 10/9/22."
+  },
+  {
+   "topic": "Extension privilege fee, 4 Kimball St.",
+   "what_was_recorded": "The extension fee of $6,998.74 is 50% of the most recent betterment, which was about $13K for the SRF project; the owners pre-paid it.",
+   "figures_as_printed": [
+    "$6,998.74",
+    "50%",
+    "$13K"
+   ],
+   "quote": "extensions are assessed 50% of the most recent betterment which was about $13k for the srf project"
+  },
+  {
+   "topic": "Fitchburg usage invoice",
+   "what_was_recorded": "An invoice for Fitchburg usage was reported, which included $6 interest due to a late payment.",
+   "figures_as_printed": [
+    "17,671.58",
+    "$6"
+   ],
+   "quote": "invoices- fitchburg usage- 17,671.58, which included $6 interest due to a late payment"
+  },
+  {
+   "topic": "FY23 budget",
+   "what_was_recorded": "Barb reported the FY23 budget is going well; budget discussion is usually held in December. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "dave asked when they will start discussing the budget and barb replied usually in december."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "topic": "Water District vote; Nov. 8 election turnout",
+   "quote": "public comment- dave thanked everyone who came out and voted at the water district meeting. he urged all to come out to vote at the nov. 8th election."
+  },
+  {
+   "speaker": "Dave",
+   "topic": "Prayers for the Chair's recovery; praise for Vice-Chair",
+   "quote": "public comment - dave asked to send prayers to john for a quick recovery from surgery and said brett did a great job as chair."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment- dave thanked everyone who came out and voted at the water district meeting.",
+   "tags": [
+    "public comment",
+    "election"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements - none",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Pond View 40B peer review",
+   "resolution": "approved: Wright Pierce selected as peer reviewer",
+   "quote": "pond view 40b discussion- peer review discussion for zba hearing on 10/26 at 7:30pm",
+   "tags": [
+    "Pond View 40B",
+    "peer review",
+    "Wright Pierce",
+    "ZBA"
+   ]
+  },
+  {
+   "topic": "Pond View connections along the Fitchburg and Leominster lines",
+   "resolution": "approved: no single line to Leominster; full connections requested along the way",
+   "quote": "dave suggested the commission vote that they would not accept a single line from pond view to leominster.",
+   "tags": [
+    "Pond View 40B",
+    "Leominster",
+    "Fitchburg",
+    "IMA",
+    "capacity"
+   ]
+  },
+  {
+   "topic": "Pond View operating and maintenance costs",
+   "resolution": "continued; Barb to consult Town Counsel",
+   "quote": "she will discuss this with town counsel.",
+   "tags": [
+    "Pond View 40B",
+    "pump station",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Privilege fee, 34 Northfield Rd.",
+   "resolution": "approved",
+   "quote": "privilege fee assessments - 34 northfield rd. - $11,551.47 for the property connected on 10/9/22.",
+   "tags": [
+    "privilege fee",
+    "betterment",
+    "connection"
+   ]
+  },
+  {
+   "topic": "Extension privilege fee, 4 Kimball St.",
+   "resolution": "approved",
+   "quote": "4 kimball st. extension for $6,998.74 - barb stated the commission had previously voted to approve an extension",
+   "tags": [
+    "privilege fee",
+    "extension"
+   ]
+  },
+  {
+   "topic": "Minutes of 10/11/22",
+   "resolution": "approved",
+   "quote": "minutes of 10/11/22- a typo on page 2 was corrected.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "no action; FY23 budget update to follow at next meeting",
+   "quote": "business manager report - 400 sunnyhill rd. status- barb reported they have submitted all paperwork",
+   "tags": [
+    "400 Sunnyhill Rd",
+    "grease trap",
+    "fraud risk assessment",
+    "FY23 budget",
+    "invoices",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Action items: budget timing",
+   "resolution": "no action",
+   "quote": "dave asked when they will start discussing the budget and barb replied usually in december.",
+   "tags": [
+    "budget",
+    "FY23"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; prayers for the Chair's recovery",
+   "quote": "public comment - dave asked to send prayers to john for a quick recovery from surgery and said brett did a great job as chair.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "no action",
+   "quote": "november 8, 2022 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved at 6:48pm",
+   "quote": "motion: dave m. to adjourn at 6:48pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "sewer",
+  "Pond View 40B",
+  "peer review",
+  "Wright Pierce",
+  "Leominster",
+  "Fitchburg",
+  "privilege fee",
+  "betterment",
+  "budget FY23",
+  "minutes approval",
+  "Zoom meeting",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

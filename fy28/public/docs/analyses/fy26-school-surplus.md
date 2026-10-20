@@ -22,7 +22,7 @@
 
 **The circuit breaker paid 21.7% of FY26 out-of-district tuition; in FY23 it paid 61.9%.** Over the same years the general fund's tuition bill went from $304,748 to $1,202,771.
 
-**Supplies and services were voted above what they spent in all 4 years, $375,175 in all.** Building upkeep's vote rose 96.4% from FY23 to FY26; FY26 spent $156,984 less than voted.
+**Supplies and services were voted above what they spent in all 4 years, $390,770 in all.** Building upkeep's vote rose 96.4% from FY23 to FY26; FY26 spent $156,984 less than voted.
 
 **A $98,784 psychologist line paid nobody in FY26; FY27 budgets the line at $102,227.** Kindergarten aides went the other way: $99,064 paid against no budget, and FY27 budgets none.
 
@@ -134,10 +134,10 @@ Spent and committed, both funds. Measured: tuition from the two funds together r
 
 | fiscal year | supplies & services voted | spent and committed | voted − spent | building upkeep voted | spent and committed | voted − spent |
 |---|---:|---:|---:|---:|---:|---:|
-| FY2023 | $734,753 | $697,059 | $37,694 | $332,016 | $348,533 | -$16,517 |
-| FY2024 | $767,189 | $695,520 | $71,669 | $406,910 | $391,355 | $15,555 |
-| FY2025 | $858,905 | $685,939 | $172,966 | $517,358 | $515,876 | $1,482 |
-| FY2026 | $745,084 | $652,238 | $92,846 | $652,033 | $495,049 | $156,984 |
+| FY2023 | $570,753 | $552,433 | $18,320 | $332,016 | $348,533 | -$16,517 |
+| FY2024 | $619,189 | $539,024 | $80,165 | $406,910 | $391,355 | $15,555 |
+| FY2025 | $700,905 | $474,862 | $226,043 | $517,358 | $515,876 | $1,482 |
+| FY2026 | $495,734 | $429,493 | $66,241 | $652,033 | $495,049 | $156,984 |
 
 These are the categories of *Why there was money left over* below, measured against what was VOTED rather than the revised budget. A line left under its vote every year reads as budgeted high as much as run lean.
 
@@ -161,11 +161,11 @@ These are the categories of *Why there was money left over* below, measured agai
 
 ## Why there was money left over
 
-![Where the FY2026 school surplus was left, by category: Building & grounds upkeep $195,934; Counselors & psychologists $191,162; Teachers & substitutes $167,992; Health insurance & benefits $107,003; Supplies, services & everything else $96,363; Out-of-district tuition $88,522; Nurses, coaches & other staff $25,700; Custodians $11,352; Administrators & office staff $4,087; Equipment & technology -$8,305; Heat, electricity & utilities -$21,792; Transportation -$67,555; Special-ed contracted services -$100,262; Paraprofessionals -$208,082.](charts/fy26-school-surplus-causes.svg)
+![Where the FY2026 school surplus was left, by category: Building & grounds upkeep $195,934; Counselors & psychologists $191,162; Teachers & substitutes $167,992; Health insurance & benefits $107,003; Out-of-district tuition $88,522; Supplies, services & everything else $71,861; Coaches & activity advisors $33,020; Athletics & activities expenses $18,885; Legal services $14,030; Custodians $11,352; Administrators & office staff $4,087; Nurses & other staff -$7,321; Equipment & technology -$8,305; Professional development -$8,413; Heat, electricity & utilities -$21,792; Transportation -$67,555; Special-ed contracted services -$100,262; Paraprofessionals -$208,082.](charts/fy26-school-surplus-causes.svg)
 
 **Where it came from. Three categories left the most:** building & grounds upkeep, $195,934 (28.4% of its budget); counselors & psychologists, $191,162 (18.1% of its budget); teachers & substitutes, $167,992 (1.5% of its budget). Accounts that ended over budget used $1,201,434 of what the rest left, led by paraprofessionals, $208,082 over and special-ed contracted services, $100,262 over.
 
-**Was it thrift? $283,991 of it (59%) sat in discretionary lines — supplies, upkeep and equipment, the part a decision to spend less could explain.** The other $198,127 sat in salaries, benefits, tuition and other lines that follow staffing, placements and prices. The split of lines into the two groups is ours; see *Was it thrift?* below.
+**Was it thrift? $283,991 of it (59%) sat in discretionary lines — supplies, upkeep, equipment, athletics expenses, professional development and legal, the part a decision to spend less could explain.** The other $198,127 sat in salaries, benefits, tuition and other lines that follow staffing, placements and prices. The split of lines into the two groups is ours; see *Was it thrift?* below.
 
 ![Each category’s FY2026 revised budget split into what was spent, what is still committed to open purchase orders, and what was left.](charts/fy26-school-surplus-budget-vs-spent.svg)
 
@@ -177,12 +177,16 @@ Every one of the 415 accounts is put in exactly one category by its DESE functio
 | Counselors & psychologists | $1,056,014 | $864,852 | — | **$191,162** | 18.1% | $235,145 | -$43,983 |
 | Teachers & substitutes | $11,009,404 | $10,841,411 | — | **$167,992** | 1.5% | $255,765 | -$87,772 |
 | Health insurance & benefits | $3,752,258 | $3,645,255 | — | **$107,003** | 2.9% | $107,003 | — |
-| Supplies, services & everything else | $748,601 | $606,165 | $46,073 | **$96,363** | 12.9% | $142,550 | -$46,187 |
 | Out-of-district tuition | $1,291,293 | $1,144,063 | $58,708 | **$88,522** | 6.9% | $522,629 | -$434,108 |
-| Nurses, coaches & other staff | $664,889 | $639,190 | — | **$25,700** | 3.9% | $37,491 | -$11,791 |
+| Supplies, services & everything else | $501,354 | $415,705 | $13,787 | **$71,861** | 14.3% | $107,835 | -$35,974 |
+| Coaches & activity advisors | $359,632 | $326,612 | — | **$33,020** | 9.2% | $36,678 | -$3,658 |
+| Athletics & activities expenses | $170,036 | $127,627 | $23,524 | **$18,885** | 11.1% | $18,885 | — |
+| Legal services | $35,411 | $13,094 | $8,288 | **$14,030** | 39.6% | $14,030 | — |
 | Custodians | $778,560 | $767,208 | — | **$11,352** | 1.5% | $17,930 | -$6,577 |
 | Administrators & office staff | $2,194,387 | $2,190,300 | — | **$4,087** | 0.2% | $49,008 | -$44,921 |
+| Nurses & other staff | $305,257 | $312,578 | — | **-$7,321** | -2.4% | $812 | -$8,133 |
 | Equipment & technology | $493,854 | $496,723 | $5,437 | **-$8,305** | -1.7% | $29,293 | -$37,599 |
+| Professional development | $41,800 | $49,738 | $475 | **-$8,413** | -20.1% | $1,800 | -$10,213 |
 | Heat, electricity & utilities | $565,980 | $499,743 | $88,029 | **-$21,792** | -3.9% | $88,546 | -$110,338 |
 | Transportation | $1,542,235 | $1,596,525 | $13,265 | **-$67,555** | -4.4% | — | -$67,555 |
 | Special-ed contracted services | $126,658 | $219,734 | $7,186 | **-$100,262** | -79.2% | $258 | -$100,520 |
@@ -226,10 +230,6 @@ For each category that moved by at least $25,000: first what the ledger shows (m
 
 *Possible causes, not established by any document here (a hypothesis):* more children needing contracted therapy or evaluation than budgeted, or contractors covering for vacant staff posts. *Would settle it:* the contracted-service invoices by service type.
 
-**Supplies, services & everything else.** Supplies, services & everything else left $96,363 of $748,601 (12.9% of its budget). Inside it, accounts under budget left $142,550 and accounts over budget used $46,187. $46,073 more is still committed to open orders. It ended under budget in 4 of the 4 closed years held (FY2023–FY2026). Other funds also paid on the same lines: fund 1301 “CHAPTER 658 REVOLVING FU”, $116,398; fund 2640 “SPECIAL ED CIRCUIT BREAK”, $4,005; fund 2681 “COMP SCHOOL HEALTH SERV”, $3,585; fund 1308 “SCHOOL CHOICE REVOLVING”, $2,655.
-
-*Possible causes, not established by any document here (a hypothesis):* a deliberate hold on purchasing, or purchases made from grants and revolving funds instead. *Would settle it:* the general-fund journal detail by month.
-
 **Out-of-district tuition.** Out-of-district tuition left $88,522 of $1,291,293 (6.9% of its budget). Inside it, accounts under budget left $522,629 and accounts over budget used $434,108. $58,708 more is still committed to open orders. It ended under budget in 3 of the 4 closed years held (FY2023–FY2026). Other funds also paid on the same lines: fund 2640 “SPECIAL ED CIRCUIT BREAK”, $333,495.
 
 *On the record — evidence of what was said, not a test of it:*
@@ -237,6 +237,10 @@ For each category that moved by at least $25,000: first what the ledger shows (m
 - *School Committee minutes, 4 February 2026 (page 2):* “we have also had students move into the district that require out of district placements”. [Our copy](https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2026-02-04-minutes-7634.txt) · [the Town’s](https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02042026-7634). It does not say which tuition line those placements were charged to.
 
 *What the record does not establish:* how much of the figure above it accounts for. Other causes that fit: fewer children placed than budgeted, placements starting later, a placement paid from the circuit breaker fund instead, or a placement billed to a different tuition line. *Would settle it:* the placement list by setting, with start dates and the tuition invoice for each.
+
+**Supplies, services & everything else.** Supplies, services & everything else left $71,861 of $501,354 (14.3% of its budget). Inside it, accounts under budget left $107,835 and accounts over budget used $35,974. $13,787 more is still committed to open orders. It ended under budget in 4 of the 4 closed years held (FY2023–FY2026). Other funds also paid on the same lines: fund 2640 “SPECIAL ED CIRCUIT BREAK”, $4,005; fund 2681 “COMP SCHOOL HEALTH SERV”, $3,585; fund 1308 “SCHOOL CHOICE REVOLVING”, $2,655.
+
+*Possible causes, not established by any document here (a hypothesis):* a deliberate hold on purchasing, or purchases made from grants and revolving funds instead. *Would settle it:* the general-fund journal detail by month.
 
 **Transportation.** Transportation ran $67,555 over a budget of $1,542,235. $13,265 more is still committed to open orders. It ended under budget in 1 of the 4 closed years held (FY2023–FY2026).
 
@@ -247,9 +251,9 @@ For each category that moved by at least $25,000: first what the ledger shows (m
 
 *What the record does not establish:* how much of the figure above it accounts for. Other causes that fit: route or contract prices above budget, or special-education routes added mid-year. *Would settle it:* the transportation contract and the route list by month.
 
-**Nurses, coaches & other staff.** Nurses, coaches & other staff left $25,700 of $664,889 (3.9% of its budget). Inside it, accounts under budget left $37,491 and accounts over budget used $11,791. It ended under budget in 2 of the 4 closed years held (FY2023–FY2026). Other funds also paid on the same lines: fund 1301 “CHAPTER 658 REVOLVING FU”, $30,514; fund 2681 “COMP SCHOOL HEALTH SERV”, $8,331.
+**Coaches & activity advisors.** Coaches & activity advisors left $33,020 of $359,632 (9.2% of its budget). Inside it, accounts under budget left $36,678 and accounts over budget used $3,658. It ended under budget in 3 of the 4 closed years held (FY2023–FY2026). Other funds also paid on the same lines: fund 1301 “CHAPTER 658 REVOLVING FU”, $30,514.
 
-*Possible causes, not established by any document here (a hypothesis):* stipends not paid for seasons or programs that did not run, or a nurse post vacant for part of the year. *Would settle it:* the stipend and nursing payroll by month.
+*Possible causes, not established by any document here (a hypothesis):* stipends not paid for seasons or programs that did not run, or coaches paid from the athletic fee fund instead. *Would settle it:* the coaching and advisor stipend payroll by season.
 
 **Heat, electricity & utilities.** Heat, electricity & utilities ran $21,792 over a budget of $565,980. Inside it, accounts under budget left $88,546 and accounts over budget used $110,338. $88,029 more is still committed to open orders. It ended under budget in 1 of the 4 closed years held (FY2023–FY2026).
 
@@ -297,24 +301,28 @@ A statement that the district was careful is evidence that it was said, not of w
 | Counselors & psychologists | circumstantial | $10,960 | $116,294 | $2,695 | $191,162 | 4 of 4 |
 | Teachers & substitutes | circumstantial | $210,173 | $122,858 | $11,529 | $167,992 | 4 of 4 |
 | Health insurance & benefits | circumstantial | -$197,227 | -$123,307 | $5,629 | $107,003 | 2 of 4 |
-| Supplies, services & everything else | discretionary | $43,031 | $53,200 | $125,192 | $96,363 | 4 of 4 |
 | Out-of-district tuition | circumstantial | $185,170 | -$87,269 | $29,946 | $88,522 | 3 of 4 |
-| Nurses, coaches & other staff | circumstantial | -$441 | -$29,772 | $5,192 | $25,700 | 2 of 4 |
+| Supplies, services & everything else | discretionary | $13,651 | $58,152 | $108,930 | $71,861 | 4 of 4 |
+| Coaches & activity advisors | circumstantial | $8,921 | -$58,984 | $3,177 | $33,020 | 3 of 4 |
+| Athletics & activities expenses | discretionary | $1,127 | $3,561 | $11,673 | $18,885 | 4 of 4 |
+| Legal services | discretionary | $18,412 | -$7,018 | $2,514 | $14,030 | 3 of 4 |
 | Custodians | circumstantial | $14,716 | $155,826 | $113,829 | $11,352 | 4 of 4 |
 | Administrators & office staff | circumstantial | -$62,156 | -$40,674 | $9,502 | $4,087 | 2 of 4 |
+| Nurses & other staff | circumstantial | -$9,363 | $29,212 | $2,015 | -$7,321 | 2 of 4 |
 | Equipment & technology | discretionary | -$106,662 | -$27,388 | $64,748 | -$8,305 | 1 of 4 |
+| Professional development | discretionary | $9,840 | -$1,495 | $2,075 | -$8,413 | 2 of 4 |
 | Heat, electricity & utilities | circumstantial | -$5,962 | -$30,918 | $63,570 | -$21,792 | 1 of 4 |
 | Transportation | circumstantial | -$23,809 | -$112,490 | $10,406 | -$67,555 | 1 of 4 |
 | Special-ed contracted services | circumstantial | -$8,833 | $4,795 | $13,408 | -$100,262 | 2 of 4 |
 | Paraprofessionals | circumstantial | $47,427 | $195,970 | $121,294 | -$208,082 | 3 of 4 |
 
-2 of the 3 discretionary categories ended under budget in all 4 years (building & grounds upkeep, supplies, services & everything else).
+3 of the 6 discretionary categories ended under budget in all 4 years (building & grounds upkeep, supplies, services & everything else, athletics & activities expenses).
 
 **3. Budget moves during the year.** What was voted, what moved, and what the budget became, by category — slack moved from one line to cover another is not saving.
 
 | category | voted | moved during the year | revised |
 |---|---:|---:|---:|
-| Nurses, coaches & other staff | $753,145 | -$88,256 | $664,889 |
+| Nurses & other staff | $396,027 | -$90,770 | $305,257 |
 | Paraprofessionals | $1,344,373 | $73,077 | $1,417,449 |
 | Building & grounds upkeep | $652,033 | $38,950 | $690,983 |
 | Teachers & substitutes | $11,047,726 | -$38,323 | $11,009,404 |
@@ -323,17 +331,20 @@ A statement that the district was careful is evidence that it was said, not of w
 | Heat, electricity & utilities | $548,450 | $17,530 | $565,980 |
 | Transportation | $1,531,234 | $11,001 | $1,542,235 |
 | Special-ed contracted services | $118,000 | $8,658 | $126,658 |
-| Supplies, services & everything else | $745,084 | $3,517 | $748,601 |
+| Supplies, services & everything else | $495,734 | $5,620 | $501,354 |
+| Coaches & activity advisors | $357,118 | $2,514 | $359,632 |
+| Athletics & activities expenses | $172,550 | -$2,514 | $170,036 |
 | Equipment & technology | $491,630 | $2,224 | $493,854 |
+| Legal services | $35,000 | $411 | $35,411 |
 
 **4. Other funds paying.** The school’s special funds (grants, revolving funds, the circuit breaker) spent on the same DESE function as these categories:
 
 - Out-of-district tuition: fund 2640 “SPECIAL ED CIRCUIT BREAK” spent $333,495.
 - Health insurance & benefits: fund 2200 “SCHOOL LUNCH REVOLVING” spent $124,298.
-- Supplies, services & everything else: fund 1301 “CHAPTER 658 REVOLVING FU” spent $116,398.
+- Athletics & activities expenses: fund 1301 “CHAPTER 658 REVOLVING FU” spent $116,398.
 - Health insurance & benefits: fund 1312 “EXTENDED DAY REVOLVING F” spent $55,689.
-- Nurses, coaches & other staff: fund 1301 “CHAPTER 658 REVOLVING FU” spent $30,514.
-- Nurses, coaches & other staff: fund 2681 “COMP SCHOOL HEALTH SERV” spent $8,331.
+- Coaches & activity advisors: fund 1301 “CHAPTER 658 REVOLVING FU” spent $30,514.
+- Nurses & other staff: fund 2681 “COMP SCHOOL HEALTH SERV” spent $8,331.
 - Supplies, services & everything else: fund 2640 “SPECIAL ED CIRCUIT BREAK” spent $4,005.
 - Supplies, services & everything else: fund 2681 “COMP SCHOOL HEALTH SERV” spent $3,585.
 - Supplies, services & everything else: fund 1308 “SCHOOL CHOICE REVOLVING” spent $2,655.
@@ -479,7 +490,8 @@ One table in `scripts/build_school_surplus.py` (`CATEGORIES`), first match wins.
 | Paraprofessionals | circumstantial | salary lines, function 2330 |
 | Administrators & office staff | circumstantial | salary lines, functions 1000–2299 (central office, directors, principals, secretaries) |
 | Custodians | circumstantial | salary lines, functions 4000–4999 |
-| Nurses, coaches & other staff | circumstantial | every other salary line (nurses, athletics, advisors, reserves) |
+| Coaches & activity advisors | circumstantial | salary lines, functions 3510 and 3520 (athletic director, coaches, after-school advisors) |
+| Nurses & other staff | circumstantial | every other salary line (nurses, special details, crossing guards, reserves) |
 | Out-of-district tuition | circumstantial | functions 9000 and up (private and collaborative special-education tuition) |
 | Special-ed contracted services | circumstantial | non-salary lines, functions 2310 and 2320 (contracted therapists, evaluations, tutoring) |
 | Transportation | circumstantial | non-salary lines, function 3300 (regular and special-education buses) |
@@ -487,7 +499,10 @@ One table in `scripts/build_school_surplus.py` (`CATEGORIES`), first match wins.
 | Health insurance & benefits | circumstantial | functions 5000–5999 (health insurance, Medicare, unemployment) |
 | Building & grounds upkeep | discretionary | every other non-salary line in functions 4000–4999 (repairs, contracted maintenance, custodial and grounds supplies) |
 | Equipment & technology | discretionary | functions 7000–7999, and 2451 (furniture, equipment, computers and their leases) |
-| Supplies, services & everything else | discretionary | every remaining non-salary line (classroom supplies, textbooks, professional development, legal, dues, athletics expenses, office services) |
+| Athletics & activities expenses | discretionary | non-salary lines, functions 3510 and 3520 (athletic buses, officials, equipment, supplies, dues) |
+| Professional development | discretionary | non-salary lines, functions 2350–2359 (courses, conferences, workshops) |
+| Legal services | discretionary | non-salary lines, function 1430 (legal services for the School Committee) |
+| Supplies, services & everything else | discretionary | every remaining non-salary line (classroom supplies, textbooks, dues, office and contracted services) |
 
 ---
 

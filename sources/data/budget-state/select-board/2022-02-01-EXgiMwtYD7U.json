@@ -1,0 +1,105 @@
+{
+ "board": "Selec tBoard",
+ "board_slug": "select-board",
+ "meeting_date": "2022-02-01",
+ "source": {
+  "sha256": "a52920cac1b973c063383a5cf7161904a7c83b8324e01ccee75a522571b99b84",
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-02-01-EXgiMwtYD7U.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "about approximately nine hundred thousand dollars",
+    "fiscal_year": 2023,
+    "kind": "state_aid",
+    "scope": "both",
+    "statement": "Senator said the governor's budget increases Chapter 70 funds for the town.",
+    "status": "announced",
+    "t": 393,
+    "who": "a state senator"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2023,
+    "kind": "state_aid",
+    "scope": "town",
+    "statement": "Forecast level-funds state aid for FY23 and assumes a 2.5 percent increase later, prepared before the governor's proposal.",
+    "status": "announced",
+    "t": 7971,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "66 574",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Forecast shows an FY23 surplus, with deficits in later years mainly because free cash is not projected.",
+    "status": "announced",
+    "t": 8771,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "one million six hundred and six sixteen thousand six hundred ninety two dollars",
+    "fiscal_year": 2023,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Certified free cash would fund capital, stabilization, special purpose stabilization and OPEB.",
+    "status": "proposed",
+    "t": 8054,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": "365 521 dollars",
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Five-year LPS staffing plan adds an incremental amount over the base in FY23.",
+    "status": "announced",
+    "t": 8853,
+    "who": "the town manager"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2023,
+    "kind": "other",
+    "scope": "town",
+    "statement": "Preliminary budget to be presented February 15; annual town meeting May 7.",
+    "status": "announced",
+    "t": 9067,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "outyear deficits",
+    "condition": "because free cash is not projected",
+    "fiscal_year": 2024,
+    "prediction": "Forecast shows deficits in FY24 through FY27, attributed to not assuming free cash.",
+    "scope": "town",
+    "t": 8944,
+    "who": "the town manager"
+   },
+   {
+    "about": "state bond bills",
+    "condition": null,
+    "fiscal_year": null,
+    "prediction": "State bond bill funding should be assumed never to arrive.",
+    "scope": "town",
+    "t": 4109,
+    "who": "a state senator"
+   }
+  ]
+ },
+ "video_id": "EXgiMwtYD7U",
+ "video_url": "https://www.youtube.com/watch?v=EXgiMwtYD7U",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-16T22:58:23Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

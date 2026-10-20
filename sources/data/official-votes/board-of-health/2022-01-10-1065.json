@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2022-01-10",
  "docid": "1065",
@@ -12,39 +12,39 @@
  },
  "votes": [
   {
-   "motion": "Approve December 20, 2021 meeting minutes",
+   "motion": "Approve the minutes of December 20, 2021.",
    "moved_by": "Jewell",
    "seconded_by": "Normandin",
    "outcome": "passed",
    "procedural": true,
-   "quote": "on motion by jewell and second by normandin, the above minutes were approved. all in favor."
+   "quote": "on motion by jewell and second by normandin, the above minutes were approved."
   },
   {
-   "motion": "Approve groundwater variance from 4 feet to 3 feet for 138 Howard Street",
+   "motion": "Approve the requested groundwater variance (4 feet to 3 feet) for 138 Howard Street.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the board unanimously approved the requested variance. all in favor."
+   "quote": "after discussion and on motion by jewell and second by fortin, the board unanimously approved the requested variance."
   },
   {
-   "motion": "Extend the permit for 390 NW Townsend Road for a period of one year or until January 10, 2023",
+   "motion": "Extend the permit for 390 NW Townsend Road for one year, until January 10, 2023.",
    "moved_by": "Normandin",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by normandin and second by jewell, the board voted to extend this permit for a period of one year or until january 10, 2023. all in favor."
+   "quote": "on motion by normandin and second by jewell, the board voted to extend this permit for a period of one year or until january 10, 2023."
   },
   {
-   "motion": "Approve request for installation of a 3,000 gallon tight tank at 1078 Lancaster Avenue with 2 bedroom deed restriction, maintenance agreement, and completion by May 15, 2022",
+   "motion": "Approve the variance for a 3,000 gallon tight tank at 1078 Lancaster Avenue, with a 2 bedroom deed restriction, a maintenance agreement, and completion by May 15, 2022.",
    "moved_by": "Watters",
    "seconded_by": "Normandin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by watters and second by normandin, the board voted t o approve the request for the installation of a tight tank with the condition of a 2 bedroom deed restriction and a maintenance agreement in place."
+   "quote": "after discussion, and on motion by watters and second by normandin, the board voted t o approve the request for the installation of a tight tank"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:35 pm.",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
    "outcome": "passed",
@@ -53,6 +53,148 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0789185
+ "note": "Clean digital text across two pages; no scan. Five motions are recorded with movers, seconders and results; the Flat Hill Orchard and COVID items have no motion. The minutes print no dollar figures, transfers, or public comment section, and no chair is named. Applicants and their representatives appeared as agenda items, so they are listed as attendees, not as public comment. The Flat Hill Orchard agent request for readable test results is a request by staff, not a board decision, so it is not recorded as a decision. No documents list is printed.",
+ "cost_usd": 0.01372748,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Board member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin , lisa normandin and evan watters ."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Board member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin , lisa normandin and evan watters ."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Board member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin , lisa normandin and evan watters ."
+  },
+  {
+   "name": "Lisa Normandin",
+   "role": "Board member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin , lisa normandin and evan watters ."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Board member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: george emond, perry jewell, paul fortin , lisa normandin and evan watters ."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent jim garreffi was also present."
+  },
+  {
+   "name": "Kimberly Murphy",
+   "role": "owner",
+   "status": "present",
+   "quote": "kimberly murphy, owner met with the board ."
+  },
+  {
+   "name": "Mark Malbag",
+   "role": "Engineer",
+   "status": "present",
+   "quote": "engineer mark malbag met with the board on behalf of the owner, jeff laundry, who was also present."
+  },
+  {
+   "name": "Jeff Laundry",
+   "role": "owner",
+   "status": "present",
+   "quote": "engineer mark malbag met with the board on behalf of the owner, jeff laundry, who was also present."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval, December 20, 2021",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "on motion by jewell and second by normandin, the above minutes were approved."
+  },
+  {
+   "topic": "138 Howard Street",
+   "resolution": "groundwater variance approved (4 ft to 3 ft)",
+   "tags": [
+    "septic",
+    "variance",
+    "Presby system",
+    "public water"
+   ],
+   "quote": "this is a failed system on public water."
+  },
+  {
+   "topic": "390 NW Townsend Road",
+   "resolution": "permit extended one year, to January 10, 2023",
+   "tags": [
+    "permit extension",
+    "new construction",
+    "Covid emergency extension"
+   ],
+   "quote": "the permit on the above property has expired."
+  },
+  {
+   "topic": "1078 Lancaster Avenue",
+   "resolution": "tight tank variance approved with conditions",
+   "tags": [
+    "variance",
+    "tight tank",
+    "Massapoag Pond",
+    "deed restriction"
+   ],
+   "quote": "this an old camp built in 1953 by the current owner's grandfather."
+  },
+  {
+   "topic": "Flat Hill Orchard – Matson",
+   "resolution": "no action",
+   "tags": [
+    "soil testing",
+    "orchard pesticides",
+    "wells",
+    "subdivision"
+   ],
+   "quote": "jim garreffi was present to speak with the board with regard to this matter."
+  },
+  {
+   "topic": "COVID update",
+   "resolution": "no action",
+   "tags": [
+    "Covid-19",
+    "contact tracing",
+    "vaccines",
+    "Nashoba"
+   ],
+   "quote": "agent jim garreffi reported that there were 148 cases of covid last week."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "septic",
+  "variances",
+  "tight tank",
+  "permit extension",
+  "soil contamination",
+  "Covid-19",
+  "Nashoba Associated Boards of Health",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

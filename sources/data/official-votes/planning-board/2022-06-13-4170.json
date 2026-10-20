@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-06-13",
  "docid": "4170",
@@ -12,57 +12,280 @@
  },
  "votes": [
   {
-   "motion": "Extend the Site Plan Approval expiration date to July 23, 2023 for North End Subaru",
+   "motion": "Extend the expiration date of the Site Plan Approval for North End Subaru to July 23, 2023.",
    "moved_by": "Matthew Brenner",
    "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. brenner made motion to extend the expiration date of the site plan approval to j uly 23, 2023, a. reid seconded, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to extend the expiration date of the site plan approval to j uly 23, 2023, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve de minimis changes for Lunenburg Central on Leominster Shirley Road",
+   "motion": "Approve the requested de minimis changes for Lunenburg Central, Leominster Shirley Road.",
    "moved_by": "Matthew Brenner",
    "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "m. brenner made motion to approve the requested de minimis changes for lunenburg central, leominster shirley road, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Continue the Northfield Road and Holman Street hearing to June 27 at 6:05 p.m.",
+   "motion": "Continue the Northfield Road and Holman Street hearing to June 27, 6:05 p.m., at the applicant's request.",
    "moved_by": "Matthew Brenner",
    "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "outcome": "passed",
+   "procedural": false,
    "quote": "m. brenner made motion to continue the northfield road and holman street hearing to june 27, 6:05 p.m., a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Continue the Uma Flowers hearing to June 27 at 6:05 p.m.",
+   "motion": "Continue the 43 Summer Street (Uma Flowers) hearing to June 27, 6:05 p.m. without opening it.",
    "moved_by": "Matthew Brenner",
    "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "m. brenner made motion to continue the hearing to june 27 th, 6:05 p.m., a. reid seconded, passed unanimously",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "m. brenner made motion to continue the hearing to june 27 th, 6:05 p.m., a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve minutes from 5/23/22, 5/23/22 (245 Holman Street), and 5/23/22 (260 Falulah Road)",
+   "motion": "Approve all minutes listed below (5/23/22; 5/23/22, 245 Holman Street; 5/23/22, 260 Falulah Road).",
    "moved_by": "Matthew Brenner",
    "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "m. brenner made motion to approve all minutes listed below, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Matthew Brenner",
    "seconded_by": "Amanda Reid",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "m. brenner made motion to adjourn, a. reid seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0830505
+ "note": "Clean text extraction, two pages. Every vote is recorded as \"passed unanimously\" with no count printed, so outcomes are \"passed\". Absent: Tanner Cole and Erik Torgersen. The Il Forno (494 Electric Avenue) hearing is referred to separate minutes not included here. No public comment is recorded. The 43 Summer Street hearing was continued because only three Board members attended.",
+ "cost_usd": 0.01838288,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: tanner cole, erik torgersen"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: tanner cole, erik torgersen"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, amanda reid, matthew brenner, adam burney"
+  },
+  {
+   "name": "James Almonte",
+   "role": "representing the applicant (Land Design Collaborative), North End Subaru",
+   "status": "not stated",
+   "quote": "the owner was represented by james almonte, land design collaborative."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "representing the applicant (Hannigan Engineering), Lunenburg Central",
+   "status": "not stated",
+   "quote": "the owner was represented by chris anderson, hannigan engineering."
+  },
+  {
+   "name": "Jeffrey Walsh",
+   "role": "Graves Engineering, Inc. (reviewed the de minimis changes)",
+   "status": "not stated",
+   "quote": "both requested changes were reviewed and approved by jeffrey walsh, graves engineering, inc."
+  },
+  {
+   "name": "Valerio Romano",
+   "role": "Attorney, on behalf of Uma Flowers",
+   "status": "present",
+   "quote": "attorney valerio romano, on behalf of uma flowers, requested that the hearing for uma flowers not be opened"
+  },
+  {
+   "name": "Uma Flowers",
+   "role": "applicant, 43 Summer Street hearing",
+   "status": "not stated",
+   "quote": "43 summer street, uma flowers- as there were only three board members in attendance"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Request for extension, North End Subaru, Chase Road",
+   "resolution": "approved (extension to July 23, 2023)",
+   "quote": "request for extension: north end subaru, chase road - the owner was represented by james almonte, land design collaborative.",
+   "tags": [
+    "site plan",
+    "extension"
+   ]
+  },
+  {
+   "topic": "Request for de minimis change, Lunenburg Central, Leominster Shirley Road",
+   "resolution": "approved",
+   "quote": "request for de minimis change: lunenburg central, leominster -shirley road- the owner was represented by chris anderson, hannigan engineering.",
+   "tags": [
+    "stormwater",
+    "de minimis change"
+   ]
+  },
+  {
+   "topic": "494 Electric Avenue, Il Forno hearing",
+   "resolution": "see separate minutes",
+   "quote": "494 electric avenue, il forno- see separate minutes.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Northfield Road and Holman Street (245 Holman Street) hearing",
+   "resolution": "continued to June 27",
+   "quote": "at the applicant's request, m. brenner made motion to continue the northfield road and holman street hearing to june 27, 6:05 p.m.",
+   "tags": [
+    "public hearing",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "43 Summer Street, Uma Flowers hearing",
+   "resolution": "continued to June 27, not opened",
+   "quote": "43 summer street, uma flowers- as there were only three board members in attendance, attorney valerio romano, on behalf of uma flowers, requested",
+   "tags": [
+    "public hearing",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved (5/23/22 minutes)",
+   "quote": "minutes approval: m. brenner made motion to approve all minutes listed below, a. reid seconded, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; no reports affecting Lunenburg",
+   "quote": "open space ad hoc committee- no report.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "information only",
+   "quote": "a. burney made board members aware that the open space committee was possibly in the process of recommending a representative",
+   "tags": [
+    "committees",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "meeting schedule: june 27 july 11- hearing continuation for 260 falulah road",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Ongoing items: zoning for MBTA Communities",
+   "resolution": "no action; grant application noted",
+   "quote": "zoning for mbta communities- the town has applied for the zoning grant through mrpc.",
+   "tags": [
+    "zoning",
+    "MBTA communities"
+   ]
+  },
+  {
+   "topic": "Board comment: Emerald Place at Lake Whalom",
+   "resolution": "discussion only",
+   "quote": "m. allison believed that emerald place at lake w halom was under new ownership.",
+   "tags": [
+    "board comment",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:52 p.m.",
+   "quote": "adjournment: m. brenner made motion to adjourn, a. reid seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 5/23/22",
+   "where": "list",
+   "quote": "minutes: 5/23/22 5/23/22, 245 holman street"
+  },
+  {
+   "name": "Minutes 5/23/22, 245 Holman Street",
+   "where": "list",
+   "quote": "5/23/22, 245 holman street"
+  },
+  {
+   "name": "Minutes 5/23/22, 260 Falulah Road",
+   "where": "list",
+   "quote": "5/23/22, 260 falulah road"
+  },
+  {
+   "name": "Request for Extension, North End Subaru",
+   "where": "list",
+   "quote": "request for extension, north end subaru"
+  },
+  {
+   "name": "Request for De Minimis Change, Lunenburg Central",
+   "where": "list",
+   "quote": "request for de minimis change, lunenburg central"
+  },
+  {
+   "name": "Site Plan Approval (filed with the Town Clerk July 13, 2021)",
+   "where": "text",
+   "quote": "a one-year extension was requested to the site plan approva l that was filed with the town clerk on july 13, 2021."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan extension",
+  "de minimis change",
+  "public hearing continuance",
+  "zoning",
+  "MBTA communities",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

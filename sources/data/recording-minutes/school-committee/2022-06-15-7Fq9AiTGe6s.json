@@ -1,0 +1,591 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "video_title": "School Committee",
+ "meeting_date": "2022-06-15",
+ "video_id": "7Fq9AiTGe6s",
+ "video_url": "https://www.youtube.com/watch?v=7Fq9AiTGe6s",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2022-06-15-7Fq9AiTGe6s.json",
+  "sha256": "2d4c520438b41045c72dcade4f360b523434d36b7903c44f113459c911443d1a",
+  "caption_lines": 281,
+  "segments": 2484
+ },
+ "recording": {
+  "duration_s": 6507,
+  "duration": "1:48",
+  "spoken_chars": 65259,
+  "words_approx": 10876
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06152022-4457",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2022-06-15-agenda-4457.txt",
+   "path": "sources/meetings/school-committee/2022-06-15-agenda-4457.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06152022-4463",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/school-committee/2022-06-15-agenda-4463.txt",
+   "path": "sources/meetings/school-committee/2022-06-15-agenda-4463.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T13:28:57Z",
+  "cost_usd": 0.4443776
+ },
+ "minutes": {
+  "headline": "Committee approved Juneteenth holiday, FY23 facility rates, a lunch price rise and a secretarial contract; Turkey Hill left for fall.",
+  "summary": "The School Committee voted on Juneteenth contract amendments, a class donation, the employee handbook, facility rental rates, higher school lunch prices and a three-year secretarial contract. It heard the town manager on debt capacity for Turkey Hill and leaned toward a new build without voting, deferring to the fall. A member announced her resignation at the end of the school year.",
+  "attendees": [
+   {
+    "name_as_heard": "Dr. Burnham",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Mrs. Carol Ashambo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Brian Leighton",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "Mrs. Laura Kelly",
+    "role": "secretary"
+   },
+   {
+    "name_as_heard": "Ms. Sophie Shapiro",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Anthony Scholambrini",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ms. Susan Summers",
+    "role": "recording secretary"
+   },
+   {
+    "name_as_heard": "Mr. Michael Cassidy",
+    "role": "business manager"
+   },
+   {
+    "name_as_heard": "Mrs. Lemieux",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Ms. Lorenzen",
+    "role": "food service director"
+   },
+   {
+    "name_as_heard": "Mr. Scott",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 928,
+    "topic": "First public comment period: none offered."
+   },
+   {
+    "t": 5875,
+    "speaker_as_heard": "Sophie Shapiro",
+    "stated_role": "school committee member",
+    "topic": "Announced resignation from the School Committee effective at the close of the school year to focus on her studies."
+   }
+  ],
+  "tags": [
+   "athletics",
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "curriculum",
+   "debt",
+   "esser",
+   "executive-session",
+   "facilities",
+   "fees",
+   "personnel",
+   "policy",
+   "public-comment",
+   "superintendent-report",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 319,
+    "motion": "Go into executive session at 6:35",
+    "moved_by": "Mrs. Kelly",
+    "outcome": "passed (roll call, four yes heard)",
+    "procedural": true
+   },
+   {
+    "t": 1292,
+    "motion": "Amend custodial agreement to add Juneteenth as a paid holiday",
+    "moved_by": "Mrs. Kelly",
+    "outcome": "passed (roll call, four yes)",
+    "procedural": false
+   },
+   {
+    "t": 1336,
+    "motion": "Amend secretary and clerk agreement to add Juneteenth",
+    "moved_by": "Mrs. Kelly",
+    "outcome": "passed (roll call, four yes)",
+    "procedural": false
+   },
+   {
+    "t": 1356,
+    "motion": "Amend unaffiliated staff agreement to add Juneteenth",
+    "moved_by": "Mrs. Kelly",
+    "outcome": "passed (roll call, four yes)",
+    "procedural": false
+   },
+   {
+    "t": 1418,
+    "motion": "Accept class of 2022 donation toward turf field scoreboard",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 1481,
+    "motion": "Approve the district employee handbook",
+    "moved_by": "Ms. Shapiro",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 2092,
+    "motion": "Approve FY23 facility rental rates",
+    "moved_by": "Ms. Shapiro",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 2430,
+    "motion": "Draft a letter to state legislators supporting free school meals",
+    "moved_by": "Mr. Leighton",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 2493,
+    "motion": "Approve the school lunch price increase",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 2855,
+    "motion": "Table the AT&T antenna item until after the Turkey Hill discussion",
+    "moved_by": "Mr. Leighton",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 3030,
+    "motion": "Ratify and approve the CBA with the secretarial union",
+    "moved_by": "Mr. Leighton",
+    "outcome": "passed (roll call, five yes plus town manager)",
+    "procedural": false
+   },
+   {
+    "t": 4104,
+    "motion": "Approve the amended school calendar adding seniors' last day",
+    "moved_by": "Mr. Leighton",
+    "outcome": "passed (roll call, yes votes heard)",
+    "procedural": false
+   },
+   {
+    "t": 4190,
+    "motion": "Approve up to an additional 20 donated sick days for an employee",
+    "moved_by": "Mrs. Kelly",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 4277,
+    "motion": "Approve the Keystone Collaborative update",
+    "moved_by": "Ms. Shapiro",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": false
+   },
+   {
+    "t": 6399,
+    "motion": "Go into executive session and adjourn",
+    "moved_by": "Mr. Leighton",
+    "outcome": "passed (roll call, five yes)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1397,
+    "topic": "Class of 2022 donation",
+    "what_was_said": "Seniors donate toward replacing the turf field scoreboard.",
+    "figures_as_heard": [
+     "three thousand dollars"
+    ]
+   },
+   {
+    "t": 1546,
+    "topic": "Facility rental fees",
+    "what_was_said": "Rates updated for the first time since 2019 to cover higher custodial and kitchen salaries; new sites added.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1858,
+    "topic": "Concession stand monitor",
+    "what_was_said": "New hourly charge for a monitor if the renting group lacks a safe-food certified person.",
+    "figures_as_heard": [
+     "50 an hour",
+     "fifty dollars an hour"
+    ]
+   },
+   {
+    "t": 2050,
+    "topic": "Facility rate changes",
+    "what_was_said": "Chair recited hourly changes for custodian, kitchen and field monitor.",
+    "figures_as_heard": [
+     "two dollars",
+     "one dollar per hour",
+     "five dollars per hour"
+    ]
+   },
+   {
+    "t": 2156,
+    "topic": "School lunch prices",
+    "what_was_said": "Student lunch up across the district; adult prices raised as free meal waivers end.",
+    "figures_as_heard": [
+     "50 cents",
+     "three dollars",
+     "five dollars",
+     "a dollar 75"
+    ]
+   },
+   {
+    "t": 2960,
+    "topic": "Secretarial union contract",
+    "what_was_said": "Three-year contract with raises and estimated value.",
+    "figures_as_heard": [
+     "two and a half",
+     "two and a quarter",
+     "two percent",
+     "fifty eight thousand dollars"
+    ]
+   },
+   {
+    "t": 4780,
+    "topic": "Town debt capacity",
+    "what_was_said": "Town manager outlined debt policy limits and capacity for new debt; Turkey Hill could fit about the stated amount within regular debt.",
+    "figures_as_heard": [
+     "four percent",
+     "778 000",
+     "200 000",
+     "5 million",
+     "14"
+    ]
+   },
+   {
+    "t": 5059,
+    "topic": "Turkey Hill roof",
+    "what_was_said": "Roof project carried in capital plan at an old estimate that is likely higher now.",
+    "figures_as_heard": [
+     "500 000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2472,
+    "decision": "A letter on free school meals will be drafted from a template and brought to the June 29 meeting."
+   },
+   {
+    "t": 672,
+    "decision": "Presentations will be pre-recorded and posted ahead of meetings on a trial basis."
+   },
+   {
+    "t": 4694,
+    "decision": "Insecticide bill discussion deferred until a facilities director is hired."
+   },
+   {
+    "t": 5834,
+    "decision": "Turkey Hill direction returns in the fall, with capital planning to include all known costs."
+   },
+   {
+    "t": 1691,
+    "decision": "Concession stand operational costs to return at the August 31 meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 21,
+    "t_end": 298,
+    "topic": "Roll call, ground rules, chair's report including ESSER",
+    "resolution": "informational",
+    "tags": [
+     "esser"
+    ]
+   },
+   {
+    "t_start": 298,
+    "t_end": 888,
+    "topic": "Executive session",
+    "resolution": "voted",
+    "tags": [
+     "executive-session"
+    ]
+   },
+   {
+    "t_start": 888,
+    "t_end": 952,
+    "topic": "Public comment and agenda housekeeping",
+    "resolution": "none offered",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 952,
+    "t_end": 1165,
+    "topic": "Superintendent's report",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 1165,
+    "t_end": 1376,
+    "topic": "Juneteenth holiday amendments",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 1376,
+    "t_end": 1546,
+    "topic": "Class donation and employee handbook",
+    "resolution": "voted",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 1546,
+    "t_end": 2133,
+    "topic": "Facility rental fees",
+    "resolution": "voted",
+    "tags": [
+     "fees",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 2133,
+    "t_end": 2538,
+    "topic": "School lunch prices",
+    "resolution": "voted",
+    "tags": [
+     "fees",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 2538,
+    "t_end": 2875,
+    "topic": "AT&T antenna at turf field",
+    "resolution": "tabled",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 2875,
+    "t_end": 3071,
+    "topic": "Secretarial union CBA",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 3071,
+    "t_end": 4000,
+    "topic": "Middle school SWOT and curriculum report",
+    "resolution": "informational",
+    "tags": [
+     "curriculum",
+     "middle-school"
+    ]
+   },
+   {
+    "t_start": 4000,
+    "t_end": 4341,
+    "topic": "Calendar, donated sick days, Keystone update",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 4341,
+    "t_end": 4694,
+    "topic": "Pesticide protection bill",
+    "resolution": "deferred",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4694,
+    "t_end": 5854,
+    "topic": "Future of Turkey Hill and debt capacity",
+    "resolution": "no vote; return in fall",
+    "tags": [
+     "turkey-hill",
+     "debt",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5854,
+    "t_end": 6044,
+    "topic": "Public comment: member resignation",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 6044,
+    "t_end": 6441,
+    "topic": "Committee reports and adjournment to executive session",
+    "resolution": "voted",
+    "tags": [
+     "athletics"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Vote on the amended school calendar: only some yes votes captured",
+   "Nothing captured of the executive session from about 340 to 888",
+   "The AT&T antenna item was not returned to in the captions"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2409,
+    "about": "Point of order that a member's motion for a legislative letter had not been put before the committee.",
+    "sides": "one member raising a point of order against the chair moving to another motion",
+    "words_as_heard": "point of order didn't brian place the motion before the committee",
+    "kind": "procedural fight"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1546,
+    "name_as_heard": "updated facility rental fee structure",
+    "kind": "memo",
+    "words_as_heard": "you have before you an updated facility rental fee structure",
+    "shown": true
+   },
+   {
+    "t": 2050,
+    "name_as_heard": "meeting documents posted on website",
+    "kind": "other",
+    "words_as_heard": "these documents were posted with all of the documents for tonight's meeting",
+    "shown": true
+   },
+   {
+    "t": 3071,
+    "name_as_heard": "middle school SWOT analysis",
+    "kind": "report",
+    "words_as_heard": "you have information from the swot analysis",
+    "shown": true
+   },
+   {
+    "t": 4780,
+    "name_as_heard": "debt schedule and debt policy",
+    "kind": "budget document",
+    "words_as_heard": "the debt schedule and the our debt policy",
+    "shown": true
+   },
+   {
+    "t": 2982,
+    "name_as_heard": "secretarial union CBA",
+    "kind": "contract or agreement",
+    "words_as_heard": "a copy of the uh the mla is uh in the shared folder",
+    "shown": true
+   },
+   {
+    "t": 4361,
+    "name_as_heard": "House Bill 926",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "massachusetts school children pesticide protection act house bill 926",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "turkey-hill-capital-needs",
+    "title": "Turkey Hill capital needs",
+    "question": "What would Turkey Hill repairs cost and fit within the town's debt limits compared with a new build?",
+    "t": 4780,
+    "words_as_heard": "within our regular debt schedule we could probably take on around 5 million",
+    "data_in_play": [
+     "778 000",
+     "5 million",
+     "500 000",
+     "four percent"
+    ],
+    "existing": "thread:turkey-hill-rebuild"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The School Committee voted to add Juneteenth as a paid holiday in three staff agreements: custodial, secretary and clerk, and unaffiliated staff.",
+    "t": 1292
+   },
+   {
+    "line": "It approved new facility rental rates, the first update since 2019, and a school lunch price increase, each by roll call.",
+    "t": 2092
+   },
+   {
+    "line": "It ratified a three-year contract with the secretarial union, with the town manager voting along with the committee.",
+    "t": 3030
+   },
+   {
+    "line": "It heard the town manager on debt capacity for Turkey Hill and took no vote; direction on the project returns in the fall.",
+    "t": 5834
+   },
+   {
+    "line": "It voted to draft a letter to state legislators supporting free school meals, to be brought to the June 29 meeting, and a member announced her resignation.",
+    "t": 2472
+   }
+  ],
+  "why_it_matters": [
+   "Facility rental rates and school lunch prices change what groups using school buildings and families buying school lunch pay, and the new secretarial contract adds to the district's labor costs.",
+   "The Turkey Hill decision is deferred to the fall, so how the project is financed, and any effect on the town's debt and tax bills, is still undecided."
+  ],
+  "watch_next": [
+   "June 29 meeting: the draft letter on free school meals is due back to the committee.",
+   "August 31 meeting: concession stand operating costs return; the Turkey Hill direction returns in the fall."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T13:29:06Z",
+   "cost_usd": 0.2283717
+  }
+ }
+}

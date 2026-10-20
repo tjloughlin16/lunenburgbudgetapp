@@ -1,0 +1,621 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2022-01-10",
+ "video_id": "T25y_9dbQYE",
+ "video_url": "https://www.youtube.com/watch?v=T25y_9dbQYE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2022-01-10-T25y_9dbQYE.json",
+  "sha256": "90dc9ab1872d2d1e9cdf53caec4fa1735cb6d102726b2395dfb698d73db58322",
+  "caption_lines": 181,
+  "segments": 1593
+ },
+ "recording": {
+  "duration_s": 3848,
+  "duration": "1:04",
+  "spoken_chars": 44437,
+  "words_approx": 7406
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01102022-4186",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-01-10-agenda-4186.txt",
+   "path": "sources/meetings/planning-board/2022-01-10-agenda-4186.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01102022-4214",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-01-10-agenda-4214.txt",
+   "path": "sources/meetings/planning-board/2022-01-10-agenda-4214.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01102022-4186",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-01-10-minutes-4186.txt",
+   "path": "sources/meetings/planning-board/2022-01-10-minutes-4186.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01102022-4214",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-01-10-minutes-4214.txt",
+   "path": "sources/meetings/planning-board/2022-01-10-minutes-4214.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-17T00:11:51Z",
+  "cost_usd": 0.3387283
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "acting chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mrs. Bertram",
+    "role": "member (remote)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Mr. Torgerson",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Adam",
+    "role": "town planner / staff"
+   },
+   {
+    "name_as_heard": "Jeff Walsh",
+    "role": "review engineer (Graves Engineering), discussed not present"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2584,
+    "topic": "Capital planning priorities",
+    "what_was_said": "Capital planning committee ranked 31 requests; the master plan ranked fifth. Funding availability from the town manager is not yet known, so how many can be funded is undetermined.",
+    "figures_as_heard": [
+     "31 requests",
+     "number five"
+    ]
+   },
+   {
+    "t": 2893,
+    "topic": "MRPC GIS hours",
+    "what_was_said": "The board allocated its annual professional GIS hours from MRPC to the Conservation Commission for its trail mapping grant work.",
+    "figures_as_heard": [
+     "eight hours",
+     "ten"
+    ]
+   },
+   {
+    "t": 3309,
+    "topic": "Prior GIS hours use",
+    "what_was_said": "Staff said the board has used only a small amount of the hours since he arrived, for a map several years ago.",
+    "figures_as_heard": [
+     "1.25 hours"
+    ]
+   },
+   {
+    "t": 2769,
+    "topic": "Municipal building design committee charge",
+    "what_was_said": "New charge asks the committee to explore design options at different estimated budget tiers and fit town financial policies and ten-year capital projections.",
+    "figures_as_heard": [
+     "next 10 years"
+    ]
+   }
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 155,
+    "about": "A speaker objected to wearing masks at the meeting and said they would not return under a mask requirement.",
+    "sides": "one speaker/member against the mask requirement",
+    "words_as_heard": "this is ridiculous i do not intend to ever come back here and wear a goddamn mask",
+    "kind": "charged language"
+   },
+   {
+    "t": 752,
+    "about": "Member reacted to the MBTA's setback restrictions extending onto adjoining private land.",
+    "sides": "a member critical of MBTA restriction; applicant's representative said it must be adhered to",
+    "words_as_heard": "that's ridiculous",
+    "kind": "charged language"
+   },
+   {
+    "t": 1145,
+    "about": "Members pressed for the engineer's formal review of the de minimis plan, citing differing plan versions, while the applicant sought approval contingent on that review.",
+    "sides": "members wanting formal review first vs applicant wanting contingent approval",
+    "words_as_heard": "we're not signing a concept",
+    "kind": "members disagree"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1335,
+    "decision": "Applicant's representative will have the review engineer review the revised plan and invite him to the next meeting."
+   },
+   {
+    "t": 3329,
+    "decision": "GIS hours granted to Conservation Commission without specifying a number; one member to check with DPW first."
+   },
+   {
+    "t": 3626,
+    "decision": "Next meetings set for Jan 24 and two in February (14th and 28th); remote participation allowed through April."
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "kind": "plan or drawing",
+    "name_as_heard": "de minimis change plan dated January 6",
+    "t": 625,
+    "words_as_heard": "i sent you over a de minimis change plan that was updated from this one this one's dated december 13th",
+    "shown": true
+   },
+   {
+    "kind": "plan or drawing",
+    "name_as_heard": "grading plan with retaining wall",
+    "t": 582,
+    "words_as_heard": "we did a a grading plan basically to get the grading to conform to that requirement",
+    "shown": true
+   },
+   {
+    "kind": "letter or email",
+    "name_as_heard": "Graves Engineering final comment letter, Jan 4",
+    "t": 1842,
+    "words_as_heard": "the final graves engineering letter",
+    "shown": true
+   },
+   {
+    "kind": "draft policy or bylaw",
+    "name_as_heard": "draft decision for Cross Street",
+    "t": 1863,
+    "words_as_heard": "a copy of the draft decision",
+    "shown": false
+   },
+   {
+    "kind": "report",
+    "name_as_heard": "stormwater report operation and maintenance plan",
+    "t": 1992,
+    "words_as_heard": "it's within the dependencies of the stormwater report",
+    "shown": true
+   },
+   {
+    "kind": "prior minutes",
+    "name_as_heard": "minutes of 12/13/2021",
+    "t": 2437,
+    "words_as_heard": "minutes from 12 13",
+    "shown": false
+   },
+   {
+    "kind": "draft policy or bylaw",
+    "name_as_heard": "municipal building design committee charge",
+    "t": 2748,
+    "words_as_heard": "they gave us a new charge",
+    "shown": false
+   },
+   {
+    "kind": "plan or drawing",
+    "name_as_heard": "ANR plan for 44 Northfield Road",
+    "t": 265,
+    "words_as_heard": "does paul have her packet",
+    "shown": true
+   }
+  ],
+  "headline": "Planning Board approved a Lunenburg Central plan change contingent on engineer review and approved a four-lot Cross Street stormwater permit.",
+  "not_audible": [
+   "Exact number of GIS hours (eight or ten) was uncertain",
+   "Some roll-call votes are given only as two ayes plus the chair; the chair's name was not stated",
+   "Street addresses and some names were garbled in captions",
+   "Closing date of the property sale given loosely"
+  ],
+  "public_comment": [
+   {
+    "t": 155,
+    "topic": "A speaker objected to the mask requirement and said they would not return while masks are required."
+   },
+   {
+    "t": 3689,
+    "topic": "Second call for public comment; no one spoke, someone connecting by audio did not speak."
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "ten-year-capital-plan",
+    "title": "Ten-year capital plan",
+    "question": "Which of the 31 capital requests can the town fund, and in what priority order?",
+    "t": 2584,
+    "words_as_heard": "we prioritized all of the requests ... total we had 31 requests and they were all prioritized",
+    "data_in_play": [
+     "31 requests",
+     "master plan number five"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "town-building-concepts",
+    "title": "Town building concepts",
+    "question": "What space needs and budget tiers will the municipal building design committee evaluate?",
+    "t": 2769,
+    "words_as_heard": "explore a variety of design permutations at different estimated budget tiers",
+    "data_in_play": [
+     "next 10 years"
+    ],
+    "existing": "thread:tc-passios-site"
+   }
+  ],
+  "summary": "The Planning Board approved an ANR for 44 Northfield Road, re-signed a prior ANR for Reservoir Road, and approved a de minimis change for Lunenburg Central contingent on peer engineer review. It closed the hearing and approved the Cross Street/Mopus Road stormwater permit, approved minutes, granted GIS hours to Conservation, and heard committee reports including capital planning priorities and a new building design committee charge.",
+  "tags": [
+   "capital",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments"
+  ],
+  "topics": [
+   {
+    "t_start": 3,
+    "t_end": 155,
+    "topic": "Call to order and Open Meeting Law notice",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 155,
+    "t_end": 179,
+    "topic": "Public comment on masks",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 179,
+    "t_end": 367,
+    "topic": "ANR for 44 Northfield Road",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 367,
+    "t_end": 500,
+    "topic": "Re-sign ANR for Reservoir Road",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 500,
+    "t_end": 1711,
+    "topic": "Lunenburg Central de minimis change and tree cutting follow-up",
+    "resolution": "voted, contingent on engineer review",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1711,
+    "t_end": 2377,
+    "topic": "Cross Street/Mopus Road stormwater public hearing",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2377,
+    "t_end": 2480,
+    "topic": "Plan endorsement and minutes approval",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 2480,
+    "t_end": 2893,
+    "topic": "Committee reports including capital planning and building design charge",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2893,
+    "t_end": 3497,
+    "topic": "MRPC GIS hours for Conservation Commission",
+    "resolution": "voted",
+    "tags": [
+     "town-departments",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 3497,
+    "t_end": 3689,
+    "topic": "Meeting schedule and remote participation",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 3689,
+    "t_end": 3833,
+    "topic": "Public comment, board comments, start time, adjournment",
+    "resolution": "voted to adjourn",
+    "tags": []
+   }
+  ],
+  "transfers": [],
+  "votes": [
+   {
+    "t": 337,
+    "motion": "Approve the ANR for 44 Northfield Road",
+    "moved_by": "Paula",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 476,
+    "motion": "Re-sign the approved plan for Reservoir Road",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 1667,
+    "motion": "Approve the de minimis change contingent on peer review engineer review",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 2294,
+    "motion": "Close the public hearing for Cross Street/Mopus Road",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 2336,
+    "motion": "Approve the stormwater permit decision as drafted for Cross Street/Mopus Road",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 2459,
+    "motion": "Approve minutes of 12/13/2021",
+    "moved_by": "Paula",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": true
+   },
+   {
+    "t": 3413,
+    "motion": "Approve GIS hours for the Conservation Commission",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": false
+   },
+   {
+    "t": 3813,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call, all ayes heard)",
+    "procedural": true
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board approved a de minimis change to the Lunenburg Central plan, contingent on review by its peer review engineer.",
+    "t": 1667
+   },
+   {
+    "line": "The board closed the Cross Street/Mopus Road hearing and approved the stormwater permit decision as drafted.",
+    "t": 2336
+   },
+   {
+    "line": "The board approved an ANR for 44 Northfield Road and re-signed the approved plan for Reservoir Road.",
+    "t": 337
+   },
+   {
+    "line": "The board granted its annual MRPC GIS hours to the Conservation Commission for trail mapping grant work, without setting a number of hours.",
+    "t": 3413
+   },
+   {
+    "line": "Committee reports said the capital planning committee ranked the master plan fifth of its requests, and that funding availability is not yet known.",
+    "t": 2584
+   }
+  ],
+  "why_it_matters": [
+   "The Lunenburg Central approval is conditional, so the engineer's review of the revised plan decides whether the change stands, and it will come back to the board.",
+   "The stormwater permit decision is final for the Cross Street/Mopus Road project, which affects neighbors there.",
+   "Whether the master plan is funded depends on how much money the town manager makes available for capital requests, a figure not yet known."
+  ],
+  "watch_next": [
+   "The applicant's representative is to invite the review engineer to the next Planning Board meeting, set for January 24.",
+   "The town manager's funding availability for capital requests, which decides how many of the ranked requests can be funded."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-17T00:11:59Z",
+   "cost_usd": 0.2267797
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01102022-4186",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-01-10-minutes-4186.txt",
+   "path": "sources/meetings/planning-board/2022-01-10-minutes-4186.pdf"
+  },
+  "official_sha256": "566e5ff077d71bf1c3bec188c5cc1c9fa9bb95889e5547c8934a91bef387d470",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the ANR, the Reservoir Road re-sign, the de minimis change and the GIS-hours motion. They differ on the public hearing closing, on what the review-engineer and GIS-hours decisions said, and on which meeting business each recorded. The thing to know: our minutes record a separate vote to close the Cross Street/Mopus Road hearing that the official minutes do not mention.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: approve ANR for 44 Northfield Road",
+    "ours": "Approve the ANR for 44 Northfield Road — passed (roll call, all ayes heard)",
+    "official": "p. bertram made motion to approve the anr plan for 44 northfield road, e. torgersen seconded, passed unanimously.",
+    "note": "Same motion and outcome (passed; unanimous in the official minutes).",
+    "t": 337
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: re-sign Reservoir Road plan",
+    "ours": "Re-sign the approved plan for Reservoir Road — passed (roll call, all ayes heard)",
+    "official": "p. bertram made motion to re-sign the plan for reservoir road, e. torgersen seconded, passed unanimously.",
+    "note": "Same motion and outcome.",
+    "t": 476
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: de minimis change contingent on peer review",
+    "ours": "Approve the de minimis change contingent on peer review engineer review — passed (roll call, all ayes heard)",
+    "official": "p. bertram made motion to approve the de minimis change s contingent on a peer engineering review",
+    "note": "Same motion and outcome; the official quote is cut off before the vote result, but its structured entry says passed.",
+    "t": 1667
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote to close public hearing, Cross Street/Mopus Road",
+    "ours": "Close the public hearing for Cross Street/Mopus Road — passed (roll call, all ayes heard)",
+    "official": "",
+    "note": "The official minutes record no vote to close the hearing; check the recording at this timestamp and the official minutes for whether the vote was taken and omitted.",
+    "t": 2294
+   },
+   {
+    "kind": "caption_error",
+    "about": "Cross Street/Mopus Road decision vote and road name",
+    "ours": "Approve the stormwater permit decision as drafted for Cross Street/Mopus Road — passed (roll call, all ayes heard)",
+    "official": "p. bertram made motion to approve the decision for 97 cross street, 125 cross street, 430 mulpus road and 440 mulpus road, e. torgersen seconded, passed unanimously.",
+    "official_reading": "Mulpus Road",
+    "note": "Same decision vote and outcome; the captions misheard the road name as Mopus.",
+    "t": 2336
+   },
+   {
+    "kind": "discrepancy",
+    "about": "GIS hours for Conservation Commission: amount",
+    "ours": "GIS hours granted to Conservation Commission without specifying a number; one member to check with DPW first.",
+    "official": "e. torgersen made motion to approve the gis hours for the conservation commission, p. bertram seconded.",
+    "note": "The official vote description gives about 8 hours from MRPC, while ours says no number was specified. The official quote also does not show the outcome. Check the recording for whether a number was stated and whether the vote passed.",
+    "t": 3329
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: MRPC GIS hours and prior use",
+    "ours": "MRPC GIS hours: eight hours, ten; Prior GIS hours use: 1.25 hours",
+    "official": "",
+    "note": "The official minutes give only 'about 8 hours'; the 'ten' and the 1.25 hours of prior use are not in them.",
+    "t": 2893
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital planning priorities and building committee charge",
+    "ours": "Capital planning priorities: 31 requests, number five; Municipal building design committee charge: next 10 years",
+    "official": "",
+    "note": "The official minutes record neither the capital request count nor the building committee charge discussion.",
+    "t": 2584
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Review engineer review of the de minimis plan",
+    "ours": "Applicant's representative will have the review engineer review the revised plan and invite him to the next meeting.",
+    "official": "the board requested a formal review from graves e ngineering, inc. prior to taking a vote to approve the de minimis changes.",
+    "note": "Ours has the applicant's representative arranging the review; the official minutes have the Board requesting a formal Graves Engineering review. Check who was tasked. Our minutes also have no mention of an invitation to the next meeting in the official version.",
+    "t": 1335
+   },
+   {
+    "kind": "agree",
+    "about": "Check with DPW about GIS hours",
+    "ours": "one member to check with DPW first",
+    "official": "p. bertram requested a. burney check with the dp w director to see if he would have the",
+    "note": "Both record a request to check with DPW; the official names Bertram asking Burney.",
+    "t": 3329
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meeting dates and remote participation",
+    "ours": "Next meetings set for Jan 24 and two in February (14th and 28th); remote participation allowed through April.",
+    "official": "",
+    "note": "The official minutes record neither the meeting dates nor the remote participation extension.",
+    "t": 3626
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Start time consensus",
+    "ours": "",
+    "official": "board consensus was to go with a 6:00 p.m. start time",
+    "note": "Our minutes do not record the 6:00 p.m. start time consensus."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Sewer tie-in for 44 Northfield Road",
+    "ours": "",
+    "official": "that is something that would be taken up with the sewer commission",
+    "note": "Our minutes do not record that the sewer tie-in question was referred to the Sewer Commission."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Erik Torgersen",
+    "ours": "Mr. Torgerson (member)",
+    "official": "present: matthew allison, erik torgersen, adam burney",
+    "official_reading": "Erik Torgersen",
+    "note": "Same member; the captions misspelled the surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Paula Bertram remote",
+    "ours": "Mrs. Bertram (member (remote))",
+    "official": "paula bertram participated remotely under the act relative to extending certain covid -19 measures adopted during the state of emergency.",
+    "note": "Both record her as participating remotely."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Adam Burney, staff",
+    "ours": "Adam (town planner / staff)",
+    "official": "present: matthew allison, erik torgersen, adam burney",
+    "note": "Same person; the official title is Land Use Director."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Chair and Vice Chair",
+    "ours": "acting chair (chair)",
+    "official": "absent: tanner cole, matthew brenner",
+    "note": "The official minutes list Chair Tanner Cole absent and Vice Chair Matthew Allison present, which probably means the acting chair was Allison. Our minutes do not name them; check the recording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee: Jeff Walsh, review engineer",
+    "ours": "Jeff Walsh (review engineer (Graves Engineering), discussed not present)",
+    "official": "",
+    "note": "Ours lists him as discussed but not present. The official minutes name Graves Engineering only as the firm asked for the review."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants and presenters present",
+    "ours": "",
+    "official": "the plan was present ed by applicants john harrison, lunenburg, ma, and tim sullivan, lyndeborough, nh.",
+    "note": "Our minutes do not list the applicants, Brian Marchetti (McCarty Engineering) or William Hannigan (Hannigan Engineering) as attendees."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-17T00:13:42Z",
+   "cost_usd": 0.2629137
+  }
+ }
+}

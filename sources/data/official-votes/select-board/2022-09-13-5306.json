@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-09-13",
  "docid": "5306",
@@ -12,39 +12,531 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Max Anderson as heavy equipment operator",
+   "motion": "To ratify the Town Manager's appointment of Max Anderson as heavy equipment operator.",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to ratify the town manager's appointment of max anderson as heavy equipment operator 2\"': h. sroka vote: all in favor"
+   "quote": "motion: t. alonzo to ratify the town manager's appointment of max anderson as heavy equipment operator"
   },
   {
-   "motion": "Authorize the Town Manager to file the Asset Management Grant application and execute related agreement with Mass/DEP",
+   "motion": "Pilot study for the Hickory Hills well, Option 3 (the motion text is not printed; the minutes record only the discussion and the vote).",
+   "moved_by": "not stated",
+   "seconded_by": "not stated",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. alonzo clarified at this point he was only in support of the pilot study. vote: all in favor"
+  },
+  {
+   "motion": "To authorize the Town Manager to file the Asset Management Grant application and execute related agreement with Mass/DEP.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to authorize the town manager to file the asset management grant application and execute related agreement with mass/dep vote: all in favor"
+   "quote": "motion: t. alonzo 2nd: l. franco to authorize the town manager to file the asset management grant application and execute related agreement with mass/dep"
   },
   {
-   "motion": "Approve the Minutes of August 16, 2022 as written",
+   "motion": "To approve the Minutes of August 16, 2022 as written.",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to approve the minutes of august 16, 2022 as written 2\": h. sroka vote: all in favor"
+   "quote": "to approve the minutes of august 16, 2022 as written"
   },
   {
-   "motion": "Enter into Executive Session and adjourn after exiting Executive Session pursuant to MGL c. 30, Section 21, Paragraph 3, to discuss strategy with respect to collective bargaining if any open meeting may have a detrimental effect on the bargaining position of the public body (Police Union)",
+   "motion": "To enter Executive Session and to adjourn after exiting Executive Session pursuant to MGL c. 30, Section 21, Paragraph 3, to discuss collective bargaining strategy (Police Union).",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco 2': t. alonzo to enter into executive session and to adjourn after exiting executive session pursuant to mgl c. 30, section 21, paragraph 3, to discuss strategy with respect to collective bargaining if any open meeting may have a detrimental effect on the bargaining position of the public body and the chair so declares. (police union) vote: ms. sroka-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys- aye"
+   "quote": "to enter into executive session and to adjourn after exiting executive session pursuant to mgl c. 30, section 21, paragraph 3"
   }
  ],
  "dropped_unquoted": 0,
- "note": "===OCR=== . A vote on pilot study Option 3 for the Hickory Hills well was recorded (\"Vote: All in Favor\") but the minutes do not contain a clear motion statement preceding the vote, so it was not extracted per the rule against inventing votes from discussion.",
- "cost_usd": 0.19411699999999998
+ "note": "Text is macOS Vision OCR with errors (e.g., 'Elaire' for Elaine, 'ypical avage', 'Sorraco' and 'Soracco', broken words); quotes were copied from the OCR text as printed. Votes are recorded as 'All in Favor' or as an aye list with no printed count. The Hickory Hills pilot-study 'Vote: All in Favor' has no motion text, so the motion is described from the discussion. The Zoom qualifier in the 'Also Present' line is ambiguous for several names; Derek Belanger is marked remote, and Archambault, McNamara, Mahanna and Soracco are marked present because they presented or spoke. The electricity aggregation discussion starts on page 14 with no printed heading. Executive session minutes are separate and not in this text. Certain figures (the $143,000 bus cost and the warrant amounts) come from OCR and were checked only against the text shown.",
+ "cost_usd": 0.017104440000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. alonzo clarified at this point he was only in support of the pilot study."
+  },
+  {
+   "name": "L. Franco",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. franco announced the pancake breakfast at the eagle house senior center tomorrow morning from 8 a.m. to 10 a.m."
+  },
+  {
+   "name": "H. Sroka",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. sroka had received a photo of the donation bins area at the walmart plaza and they looked horrific."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager;"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chair",
+   "status": "present",
+   "quote": "ms. archambault stated we have a 3 prong approach to transportation that we thought we"
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "Superintendent (Lunenburg Water District, as printed)",
+   "status": "present",
+   "quote": "mr. mcnamara, superintendent, noted that lunenburg is in the nashua river watershed."
+  },
+  {
+   "name": "Tom Mahanna",
+   "role": "Tighe & Bond, engineering consulting firm",
+   "status": "present",
+   "quote": "mr. mahanna and mr. sorraco of tighe & bond, an engineering consulting firm, gave a"
+  },
+  {
+   "name": "Louis Soracco",
+   "role": "Tighe & Bond, engineering consulting firm (printed as Mr. Sorraco)",
+   "status": "present",
+   "quote": "mr. mahanna and mr. sorraco of tighe & bond, an engineering consulting firm, gave a"
+  },
+  {
+   "name": "Derek Belanger",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "derek belanger via zoom"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "board member of the HHL Association",
+   "status": "remote",
+   "quote": "paula bertram, john fortune, dave rodgers, via zoom;"
+  },
+  {
+   "name": "John Fortune",
+   "role": "board member of the HHL Association",
+   "status": "remote",
+   "quote": "paula bertram, john fortune, dave rodgers, via zoom;"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "dave rodgers, highland street, via zoom, recommended reexamining the intermunicipal agreement"
+  },
+  {
+   "name": "Marc Terry",
+   "role": "Town Labor Counsel",
+   "status": "present",
+   "quote": "marc terry, town labor counsel"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minutes author)",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Franco will send the amendments to the 300th Anniversary Committee charge to the Town Manager, who will distribute them before the next meeting.",
+   "quote": "mr. franco will send the amendments to the town manager to distribute before the next meeting."
+  },
+  {
+   "decision": "The Town Manager will follow up with Standard Recycling after the donation bin cameras are installed, to see whether they made a difference.",
+   "quote": "i will reach out to him after they are installed to see if they made a difference."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "School bus cost per added bus",
+   "what_was_recorded": "The School Committee Chair said another bus costs an additional amount per bus, and the district does not have that money.",
+   "figures_as_printed": [
+    "$143,000"
+   ],
+   "quote": "another bus costs an additional $143,000 (per bus)"
+  },
+  {
+   "topic": "Hickory Hills pilot study, Option 1 budget",
+   "what_was_recorded": "Tighe & Bond gave the approximate total budget for the biological filtration pilot study only.",
+   "figures_as_printed": [
+    "$160,000"
+   ],
+   "quote": "total budget for this option is approximately $160,000"
+  },
+  {
+   "topic": "Hickory Hills pilot study, Option 2 budget",
+   "what_was_recorded": "Tighe & Bond gave the estimated total budget for biological filtration plus PFAS bench-scale testing.",
+   "figures_as_printed": [
+    "$210,000"
+   ],
+   "quote": "total estimated budget for this option is approximately $210,000"
+  },
+  {
+   "topic": "Hickory Hills pilot study, Option 3 budget",
+   "what_was_recorded": "Tighe & Bond gave the estimated total budget for the Option 3 pilot study, the option the Water District is looking at.",
+   "figures_as_printed": [
+    "$360,000"
+   ],
+   "quote": "total estimated budget for this option is approximately $360,000"
+  },
+  {
+   "topic": "Hickory Hills pilot study, Option 4 budget range",
+   "what_was_recorded": "Tighe & Bond gave a preliminary budget range for the full-scale demonstration pilot study.",
+   "figures_as_printed": [
+    "$2M - $4M"
+   ],
+   "quote": "preliminary estimated budget range for this option is $2m - $4m."
+  },
+  {
+   "topic": "PFAS full-scale treatment estimate",
+   "what_was_recorded": "Tighe & Bond gave an estimated cost for pilot or full-scale PFAS treatment.",
+   "figures_as_printed": [
+    "$2M-$4M"
+   ],
+   "quote": "estimated cost $2m-$4m"
+  },
+  {
+   "topic": "Municipal electricity aggregation rate",
+   "what_was_recorded": "The aggregation program would raise the town and school rate from 11.21 to 11.732 cents per kilowatt hour, about a half-penny increase, against the Unitil basic service rate.",
+   "figures_as_printed": [
+    "11.21 cents per kilowatt",
+    "11.732 cents per kilowatt"
+   ],
+   "quote": "this would increase that rate from 11.21 cents per kilowatt to 11.732 cents per kilowatt"
+  },
+  {
+   "topic": "Unitil basic service rate",
+   "what_was_recorded": "The current Unitil basic service rate was given for reference; a significant winter rise was expected.",
+   "figures_as_printed": [
+    "13.436 cents/kilowatt"
+   ],
+   "quote": "the current basic service rate with unitil is 13.436 cents/kilowatt and that's their current rate."
+  },
+  {
+   "topic": "Formula grant funds for elders",
+   "what_was_recorded": "The Town will receive a formula grant based on the over-60 population at a stated rate per elder, an increase over FY22.",
+   "figures_as_printed": [
+    "$12/elder",
+    "$37,860",
+    "$12,588"
+   ],
+   "quote": "the town willreceive$37,860 in formula grant funds, an increaseof $12,588 overfy22."
+  },
+  {
+   "topic": "ADA patio project estimate",
+   "what_was_recorded": "The original $100,000 estimate for the ADA patio appears insufficient; a firmer estimate is pending.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the original estimate of $100,000 for this project appears it will not be sufficient."
+  },
+  {
+   "topic": "DPW capital purchases over appropriation",
+   "what_was_recorded": "Three DPW purchases combined exceed the capital appropriations by a stated amount.",
+   "figures_as_printed": [
+    "$1,140"
+   ],
+   "quote": "all three purchases combined are $1,140 over the capital appropriations."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed four warrants, two payroll and one payroll deductions, and one accounts payable.",
+   "figures_as_printed": [
+    "$1,245.08",
+    "$457, 483.39",
+    "$23,509.31",
+    "$922,583.86"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $1,245.08; an accounts payable warrant in the amount of $457, 483.39; a payroll deductions warrant in the amount of $23,509.31 and another payroll warrant in the amount of $922,583.86."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Sroka",
+   "stated_role": "",
+   "topic": "donation bins at Walmart Plaza",
+   "quote": "ms. sroka had received a photo of the donation bins area at the walmart plaza and they looked horrific."
+  },
+  {
+   "speaker": "Mr. Franco",
+   "stated_role": "",
+   "topic": "pancake breakfast announcement",
+   "quote": "mr. franco announced the pancake breakfast at the eagle house senior center tomorrow morning from 8 a.m. to 10 a.m."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "topic": "ZBA hearing on Pond View Commons 40B",
+   "quote": "mr. alonzo announced tomorrow at 7 p.m. the zoning board of appeals will be holding a public hearing on the 40b proposal"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "stated_role": "board member of the HHL Association",
+   "topic": "concerns about impact to the lake from the Hickory Hills well",
+   "quote": "paula bertram, townsend harbor road, and john fortune, hemlock drive, board members of the hhl association, expressed concerns about the impact to the lake."
+  },
+  {
+   "speaker": "John Fortune",
+   "stated_role": "board member of the HHL Association",
+   "topic": "concerns about impact to the lake from the Hickory Hills well",
+   "quote": "paula bertram, townsend harbor road, and john fortune, hemlock drive, board members of the hhl association, expressed concerns about the impact to the lake."
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "topic": "reexamine Fitchburg water supply agreement as fallback",
+   "quote": "dave rodgers, highland street, via zoom, recommended reexamining the intermunicipal agreement with the city of fitchburg for supply of water as a fallback measure."
+  },
+  {
+   "speaker": "Ms. Sroka",
+   "stated_role": "",
+   "topic": "publish Town Manager and Select Board goals",
+   "quote": "ms. sroka suggested showing the goals of the town manager and select board to the public when they are updating them on a monthly check-in."
+  },
+  {
+   "speaker": "Mr. Franco",
+   "stated_role": "",
+   "topic": "sewer bylaw change proposal",
+   "quote": "mr. franco had discussed a proposal for a bylaw change with the sewer commission and although it was well received, they did not want to see this on the special town meeting warrant."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "heard; donation bins item moved to Current Business",
+   "quote": "ms. sroka had received a photo of the donation bins area at the walmart plaza and they looked horrific.",
+   "tags": [
+    "public comment",
+    "donation bins"
+   ]
+  },
+  {
+   "topic": "Communications from other boards: School Committee sidewalk letter",
+   "resolution": "read into the record; discussed; no action recorded",
+   "quote": "the lunenburg school committee respectfully requests the town of lunenburg use appropriate funding, including arpa funds, to increase the safety and walkability of",
+   "tags": [
+    "sidewalks",
+    "school bus policy",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Presentation: Hickory Hills well reactivation (Water District and Tighe & Bond)",
+   "resolution": "pilot study, Option 3, voted all in favor; DEP approval to be sought",
+   "quote": "presentation from the lunenburg water district and tighe & bond on re-activation of hickory hills well",
+   "tags": [
+    "water district",
+    "Hickory Hills well",
+    "PFAS",
+    "pilot study"
+   ]
+  },
+  {
+   "topic": "Interviews, appointments and resignations",
+   "resolution": "ratified Town Manager's appointment of Max Anderson",
+   "quote": "ratification of the town manager's appointment of heavy equipment",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; vacancies and department updates reported",
+   "quote": "announcement on existing vacancies",
+   "tags": [
+    "vacancies",
+    "departments",
+    "grants",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "300th Anniversary Committee charge",
+   "resolution": "discussed; amendments to be sent to Town Manager",
+   "quote": "discussion of 300th anniversary committee charge",
+   "tags": [
+    "300th anniversary"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "discussed; no action recorded",
+   "quote": "two more articles have been added to the warrant totaling five.",
+   "tags": [
+    "Special Town Meeting",
+    "pension credit"
+   ]
+  },
+  {
+   "topic": "Status update on Town Manager and Select Board goals",
+   "resolution": "reported; no action recorded",
+   "quote": "status update on town manager and select board goals",
+   "tags": [
+    "goals",
+    "30 School Street"
+   ]
+  },
+  {
+   "topic": "Donation bins at Walmart",
+   "resolution": "cameras to be installed by Standard Recycling; Town Manager to follow up",
+   "quote": "as stated earlier in public comment, ms. sroka reported she spoke with standard recycling",
+   "tags": [
+    "donation bins"
+   ]
+  },
+  {
+   "topic": "Municipal electricity aggregation (heading not printed)",
+   "resolution": "discussed; no action recorded",
+   "quote": "our municipal aggregation program contract is through november 2024.",
+   "tags": [
+    "electricity aggregation",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Asset Management Grant application (MassDEP)",
+   "resolution": "approved",
+   "quote": "authorization for town manager to file asset management grant application and execute related agreement with massdep",
+   "tags": [
+    "grants",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Site visits to Town properties",
+   "resolution": "discussed; no vote recorded",
+   "quote": "discuss site visit to town properties",
+   "tags": [
+    "town properties"
+   ]
+  },
+  {
+   "topic": "Approve minutes of August 16, 2022",
+   "resolution": "approved",
+   "quote": "to approve the minutes of august 16, 2022 as written",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed a payroll warrant in the amount of $1,245.08",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and public comment",
+   "resolution": "executive session entered; adjourned 9:39 PM",
+   "quote": "the meeting adjourned at 9:39 pm",
+   "tags": [
+    "executive session",
+    "police union"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School Committee letter to the Select Board (sidewalks and transportation)",
+   "where": "text",
+   "quote": "school committee chair carol archambault, 662 page street, read aloud a letter sent to the select board from the school committee."
+  },
+  {
+   "name": "Water Management Act Permit (MassDEP) and Water District Table 3, maximum daily withdrawal rates",
+   "where": "text",
+   "quote": "water district must operate their water supply under the conditions of their water management act permit which is issued by massdep."
+  },
+  {
+   "name": "Tighe & Bond pilot study options presentation (Options 1-4)",
+   "where": "text",
+   "quote": "biological filtration pilot and pfas bench scale testing"
+  },
+  {
+   "name": "Hickory Hills Well PFAS Samples table",
+   "where": "text",
+   "quote": "hickory hills well pfas samples"
+  },
+  {
+   "name": "Potential Health Effects for Manganese table (MassDEP Office of Research and Standards Guideline)",
+   "where": "text",
+   "quote": "potential health effects for manganese"
+  },
+  {
+   "name": "1994 pumping report",
+   "where": "text",
+   "quote": "ms. bertram stated their concerns stem from the 1994 pumping report."
+  },
+  {
+   "name": "Pond View Commons 40B comprehensive permit (on Town website)",
+   "where": "text",
+   "quote": "ms. lemieux noted the comprehensive permit for this development is on the town website."
+  },
+  {
+   "name": "Special Town Meeting warrant (November 15, 2022)",
+   "where": "text",
+   "quote": "the special town meeting warrant is open for submission of articles until 5 pm on september 20th"
+  },
+  {
+   "name": "300th Anniversary Committee charge, second draft with tracked changes",
+   "where": "text",
+   "quote": "mr. franco presented the second draft of the committee charge with tracked changes."
+  },
+  {
+   "name": "Warrant article on M.G.L. c. 32 § 4(2)(b) provision",
+   "where": "text",
+   "quote": "to see if the town will accept the provision contained within m.g.l. c. 32 § 4(2)(b) written as"
+  },
+  {
+   "name": "Asset Management Grant application and agreement with MassDEP",
+   "where": "text",
+   "quote": "authorization for town manager to file asset management grant application and execute related agreement with massdep"
+  },
+  {
+   "name": "Municipal aggregation program contract (through November 2024)",
+   "where": "text",
+   "quote": "our municipal aggregation program contract is through november 2024."
+  },
+  {
+   "name": "Intermunicipal agreement with the City of Fitchburg for water supply",
+   "where": "text",
+   "quote": "recommended reexamining the intermunicipal agreement with the city of fitchburg for supply of water as a fallback measure"
+  }
+ ],
+ "tags": [
+  "water district",
+  "Hickory Hills well",
+  "PFAS",
+  "pilot study",
+  "school bus policy",
+  "sidewalks",
+  "40B housing",
+  "Special Town Meeting",
+  "grants",
+  "electricity aggregation",
+  "donation bins",
+  "town properties",
+  "executive session",
+  "300th anniversary",
+  "appointments"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. franco presented the second draft of the committee charge with tracked changes"
+ },
+ "dropped_unquoted_by_field": {}
 }

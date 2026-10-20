@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2022-02-08",
  "docid": "3213",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the 12/14/21 minutes",
+   "motion": "Approve the 12/14/21 minutes.",
    "moved_by": "Bob Pease",
    "seconded_by": "Brandon Kibbe",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "bob pease made a motion to approve the 12/14/21 minutes, seconded by brandon kibbe, passed unanimously by roll call vote."
   },
   {
-   "motion": "Approve the 11/19/21 minutes with the stipulation that the date on the footer be corrected",
+   "motion": "Approve the minutes of 11/19/21 with the stipulation that the date on the footer be corrected.",
    "moved_by": "Bob Pease",
    "seconded_by": "Brandon Kibbe",
    "outcome": "passed unanimously",
@@ -28,15 +28,15 @@
    "quote": "bob pease made a motion to approve the minutes of 11/19/21 with the stipulation that the date on the footer be corrected, seconded by brandon kibbe, passed unanimously by roll call vote."
   },
   {
-   "motion": "Approve the annual report as drafted",
+   "motion": "Approve the Annual Report as drafted.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Bob Pease",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "paula bertram made a motion to approve the report as drafted, bob pease seconded. motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Recommend that the Board of Selectmen remove 356 Hollis, 250 Hollis, 56 Carr and 101 Pleasant from the tax lien sale",
+   "motion": "Recommend that the Board of Selectmen remove 356 Hollis, 250 Hollis, 56 Carr and 101 Pleasant from the tax lien sale.",
    "moved_by": "Bob Pease",
    "seconded_by": "Paula Bertram",
    "outcome": "passed unanimously",
@@ -44,15 +44,15 @@
    "quote": "bob pease made a motion to recommend that the board of selectmen remove 356 hollis, 250 hollis, 56 carr and 101 pleasant from the tax lien sale. paula bertram seconded. passed unanimously by roll call vote."
   },
   {
-   "motion": "Nominate Mike Toohill as chair",
+   "motion": "Nominate Mike Toohill as chair.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Brandon Kibbe",
    "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "paula bertram thanked brandon for serving as the chairman for many years and all of the work he has done, then made a motion to nominate mike toohill as chair, seconded by brandon kibbe. passed unanimously by roll call vote."
+   "procedural": false,
+   "quote": "then made a motion to nominate mike toohill as chair, seconded by brandon kibbe. passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:56.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Brandon Kibbe",
    "outcome": "passed unanimously",
@@ -61,6 +61,175 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.14755049999999997
+ "note": "Text is clean and readable; no scan. Public Comment section contains only member Bob Pease's reports; no public speaker is recorded. Agenda item 2 heading reads '12/14/2022, 11/9/2022' but the motions approve the '12/14/21' and '11/19/21' minutes; recorded as the motions state them. Motions show 'passed unanimously by roll call vote' with no numeric count. Budget section includes the Chair's remark that funds were confirmed by the Town Manager and Town Accountant, which is recorded as stated and not verified. No reserve fund or line-item transfers recorded.",
+ "cost_usd": 0.01724858,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Eric Hinds",
+   "role": "member",
+   "status": "present",
+   "quote": "following members were present: eric hinds, brandon, kibbe, paula bertram, bob pease and mike toohill."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "member; previously Chairman",
+   "status": "present",
+   "quote": "paula bertram thanked brandon for serving as the chairman for many years"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member; recorded the minutes",
+   "status": "present",
+   "quote": "following members were present: eric hinds, brandon, kibbe, paula bertram, bob pease and mike toohill."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "present",
+   "quote": "following members were present: eric hinds, brandon, kibbe, paula bertram, bob pease and mike toohill."
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "member; nominated as chair",
+   "status": "present",
+   "quote": "then made a motion to nominate mike toohill as chair, seconded by brandon kibbe."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Bob Pease asked that classification of the Pleasant Street and West Street parcels be placed on a future agenda.",
+   "quote": "bob requested that classification of the pleasant street and west street parcels be on a future agenda."
+  },
+  {
+   "decision": "Paula Bertram to check with the Town Clerk for the plans referenced in the 0 Shirley Reservoir title review (assignment; no vote recorded).",
+   "quote": "paula will check with town clerk for the plans."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "0 Shirley Reservoir title search",
+   "what_was_recorded": "Title work on the 0 Shirley Reservoir parcel could cost between $300 and $1,500 depending on whether it is simple (in-house) or complex (outsourced); the Town Manager may have a cheaper contact.",
+   "figures_as_printed": [
+    "$300-$1500"
+   ],
+   "quote": "cost could range from $300-$1500."
+  },
+  {
+   "topic": "Bright Farms donation for open space",
+   "what_was_recorded": "The Committee holds $10,000 donated by Bright Farms that could fund the title search; the Chair said the funds are allocated to open space in an account confirmed by the Town Manager and Town Accountant.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "the open space committee does have the $10,000 donated by bright farms that could be used for this purpose."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:36 p.m.",
+   "quote": "chairman called the meeting to order at 7:36 p.m. and read the meeting notice.",
+   "tags": [
+    "procedural"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved 12/14/21 minutes and 11/19/21 minutes (with footer date correction)",
+   "quote": "bob pease made a motion to approve the 12/14/21 minutes, seconded by brandon kibbe, passed unanimously by roll call vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review and approve Annual Report",
+   "resolution": "approved as drafted",
+   "quote": "paula bertram made a motion to approve the report as drafted, bob pease seconded.",
+   "tags": [
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Tax foreclosure list and open space recommendations",
+   "resolution": "recommended removing 356 Hollis, 250 Hollis, 56 Carr and 101 Pleasant from the tax lien sale",
+   "quote": "bob pease made a motion to recommend that the board of selectmen remove 356 hollis, 250 hollis, 56 carr and 101 pleasant from the tax lien sale.",
+   "tags": [
+    "tax title",
+    "tax lien sale",
+    "land acquisition"
+   ]
+  },
+  {
+   "topic": "Committee reorganization and chair selection",
+   "resolution": "Mike Toohill nominated and passed as chair",
+   "quote": "then made a motion to nominate mike toohill as chair, seconded by brandon kibbe. passed unanimously by roll call vote.",
+   "tags": [
+    "chair election"
+   ]
+  },
+  {
+   "topic": "Public comment and conservation land updates",
+   "resolution": "no action; member reports only",
+   "quote": "bob pease informed the committee that he is working on acquiring several parcels through the tax title process",
+   "tags": [
+    "conservation land",
+    "trails",
+    "tax title",
+    "shirley reservoir",
+    "bright farms donation"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:56 p.m.",
+   "quote": "paula bertram made a motion to adjourn at 8:56, seconded by brandon kibbe. voted unanimously by roll call vote.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Annual Report",
+   "where": "text",
+   "quote": "brandon kibbe read the draft of the annual report to the committee."
+  },
+  {
+   "name": "Tax lien sale list (from the Tax Collector)",
+   "where": "text",
+   "quote": "committee reviewed the tax lien sale from the tax collector as requested by the town manager."
+  },
+  {
+   "name": "Meeting notice",
+   "where": "text",
+   "quote": "chairman called the meeting to order at 7:36 p.m. and read the meeting notice."
+  },
+  {
+   "name": "Plans referenced in various deeds (Town Clerk records)",
+   "where": "text",
+   "quote": "paula will check with town clerk for the plans."
+  }
+ ],
+ "tags": [
+  "open space",
+  "tax title",
+  "tax lien sale",
+  "conservation land",
+  "land acquisition",
+  "trails",
+  "chair election",
+  "minutes approval",
+  "annual report",
+  "bright farms donation",
+  "shirley reservoir",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

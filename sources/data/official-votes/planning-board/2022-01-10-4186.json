@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-01-10",
  "docid": "4186",
@@ -12,64 +12,335 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR Plan for 44 Northfield Road",
+   "motion": "Approve the ANR Plan for 44 Northfield Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "p. bertram made motion to approve the anr plan for 44 northfield road, e. torgersen seconded, passed unanimously."
   },
   {
-   "motion": "Re-sign the ANR Plan for 41 & 47 Reservoir Road",
+   "motion": "Re-sign the ANR Plan for Reservoir Road (Lots 9A and 10) for recording at the Registry of Deeds.",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "p. bertram made motion to re-sign the plan for reservoir road, e. torgersen seconded, passed unanimously."
   },
   {
-   "motion": "Approve the De Minimis changes for Lunenburg Central contingent on peer engineering review",
+   "motion": "Approve the De Minimis change for Lunenburg Central, contingent on a peer engineering review.",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the de minimis change s contingent on a peer engineering review to ensure compliance with sound engineering practices, e. torgersen seconded, passed unanimously."
+   "quote": "p. bertram made motion to approve the de minimis change s contingent on a peer engineering review"
   },
   {
-   "motion": "Approve the Decision for 97 Cross Street, 125 Cross Street, 430 Mulpus Road and 440 Mulpus Road",
+   "motion": "Approve the Decision for 97 Cross Street, 125 Cross Street, 430 Mulpus Road and 440 Mulpus Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "p. bertram made motion to approve the decision for 97 cross street, 125 cross street, 430 mulpus road and 440 mulpus road, e. torgersen seconded, passed unanimously."
   },
   {
-   "motion": "Approve prior minutes",
+   "motion": "Approve the minutes listed below (12/13/2021; 12/13/2021 for 324 Flat Hill Road; 12/13/2021 for 97 Cross Street et al.).",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "p. bertram made motion to approve minutes listed below, e. torgersen seconded, passed unanimously."
   },
   {
-   "motion": "Approve the GIS hours for the Conservation Commission",
+   "motion": "Approve the GIS hours (about 8 hours from MRPC) for the Conservation Commission.",
    "moved_by": "E. Torgersen",
    "seconded_by": "P. Bertram",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "e. torgersen made motion to approve the gis hours for the conservation commission, p. bertram seconded. discussion: p. bertram requested a. burney check with the dp w director to see if he would have the need of any gis hours for identification of stormwater structures. passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "e. torgersen made motion to approve the gis hours for the conservation commission, p. bertram seconded."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "p. bertram made motion to adjourn, e. torgersen seconded, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1316235
+ "note": "Text extracted from a typed minutes document, not a scan; all votes readable. Vote outcomes are printed as \"passed unanimously\" and recorded as \"passed\". No public comment section and no dollar figures are printed. The GIS hours item says \"free\" but no sum is printed, so no budget item is recorded.",
+ "cost_usd": 0.018906779999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: tanner cole, matthew brenner"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, erik torgersen, adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "paula bertram participated remotely under the act relative to extending certain covid -19 measures adopted during the state of emergency."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: tanner cole, matthew brenner"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, erik torgersen, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, erik torgersen, adam burney"
+  },
+  {
+   "name": "John Harrison",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the plan was present ed by applicants john harrison, lunenburg, ma, and tim sullivan, lyndeborough, nh."
+  },
+  {
+   "name": "Tim Sullivan",
+   "role": "applicant",
+   "status": "present",
+   "quote": "the plan was present ed by applicants john harrison, lunenburg, ma, and tim sullivan, lyndeborough, nh."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing the applicant (McCarty Engineering, Inc.)",
+   "status": "present",
+   "quote": "the applicant was represented by brian marchetti, mccarty engineering, inc."
+  },
+  {
+   "name": "William Hannigan",
+   "role": "presenter (Hannigan Engineering, Inc.)",
+   "status": "present",
+   "quote": "appointments: lunenburg central- presentation by william hannigan, hannigan engineering, inc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board directed that the sewer tie-in question for 44 Northfield Road be taken up with the Sewer Commission, separate from the ANR endorsement.",
+   "quote": "that is something that would be taken up with the sewer commission"
+  },
+  {
+   "decision": "The Board requested a formal peer review from Graves Engineering, Inc. before voting on the De Minimis changes.",
+   "quote": "the board requested a formal review from graves e ngineering, inc. prior to taking a vote to approve the de minimis changes."
+  },
+  {
+   "decision": "P. Bertram asked A. Burney to check with the DPW Director whether he would need GIS hours for identifying stormwater structures.",
+   "quote": "p. bertram requested a. burney check with the dp w director to see if he would have the"
+  },
+  {
+   "decision": "Board consensus to keep a 6:00 p.m. start time at least through the winter months.",
+   "quote": "board consensus was to go with a 6:00 p.m. start time"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plans",
+   "resolution": "44 Northfield Road approved; 41 & 47 Reservoir Road plan re-signed for recording",
+   "quote": "41 & 47 reservoir road - the applicant was represented by brian marchetti, mccarty engineering, inc.",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "endorsement"
+   ]
+  },
+  {
+   "topic": "Lunenburg Central De Minimis Change",
+   "resolution": "approved, contingent on peer engineering review by Graves Engineering",
+   "quote": "request for de minimis change - the applicant submitted a request for a de minimis change to the site plan approved by the",
+   "tags": [
+    "site plan",
+    "de minimis",
+    "MBTA",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "Tree Cutting follow-up",
+   "resolution": "no action; board viewed photos showing work completed per decision",
+   "quote": "tree cutting- follow-up- the board viewed photographs showing that the tree cutting at the reservoir road intersection had been completed per the board's decision.",
+   "tags": [
+    "tree cutting",
+    "decision compliance"
+   ]
+  },
+  {
+   "topic": "Public hearing, 97/125 Cross Street, 430/440 Mulpus Road",
+   "resolution": "see separate minutes",
+   "quote": "public hearing: 97 cross street, 125 cross street, 430 mulpus road & 440 mulpus road - see separate minutes.",
+   "tags": [
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Decision, Cross Street and Mulpus Road parcels",
+   "resolution": "approved",
+   "quote": "decision: review & possible vote to approve - p. bertram made motion to approve the decision",
+   "tags": [
+    "decision"
+   ]
+  },
+  {
+   "topic": "Plan endorsement, 324 Flat Hill Road",
+   "resolution": "Stormwater Management Plan endorsed",
+   "quote": "plan endorsement: 324 flat hill road- stormwater management plan endorsed.",
+   "tags": [
+    "stormwater",
+    "plan endorsement"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved three sets of minutes",
+   "quote": "minutes approval: p. bertram made motion to approve minutes listed below, e. torgersen seconded, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted; Capital Planning prioritized the Board's Master Plan request in the top ten",
+   "quote": "capital planning committee- all requests were prioritized. the board's master plan request was in the top ten.",
+   "tags": [
+    "committee reports",
+    "master plan",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Director's items: GIS hours",
+   "resolution": "approved GIS hours for Conservation Commission",
+   "quote": "director's items: gis hours - the planning board receives approximately 8 hours annually for free gis services from mrpc.",
+   "tags": [
+    "GIS",
+    "conservation commission",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "discussed; no action recorded",
+   "quote": "meeting schedule: due to the rise of covid -19 cases in town, masks are once again required in any town building",
+   "tags": [
+    "meeting schedule",
+    "COVID-19",
+    "remote meetings",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "no update on Pond View Commons; Master Plan update via Capital Planning; §250-4.9 draft expected next meeting",
+   "quote": "§250-4.9 water supply protection district- a. burney expects to have a draft available for the next board meeting.",
+   "tags": [
+    "water supply protection",
+    "master plan",
+    "Pond View Commons"
+   ]
+  },
+  {
+   "topic": "Board comment: meeting start time",
+   "resolution": "consensus on 6:00 p.m. start through winter",
+   "quote": "board comment: discussion of meeting start time - board consensus was to go with a 6:00 p.m. start time",
+   "tags": [
+    "meeting schedule",
+    "start time"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:04 p.m.",
+   "quote": "adjournment: p. bertram made motion to adjourn, e. torgersen seconded, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 44 Northfield Road",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 44 northfield road anr plan, 41 & 47 reservoir road"
+  },
+  {
+   "name": "ANR Plan, 41 & 47 Reservoir Road",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 44 northfield road anr plan, 41 & 47 reservoir road"
+  },
+  {
+   "name": "Lunenburg Central, Request for De Minimis Change",
+   "where": "list",
+   "quote": "lunenburg central, request for de minimis change lunenburg central, tree cutting photographs"
+  },
+  {
+   "name": "Lunenburg Central, Tree Cutting Photographs",
+   "where": "list",
+   "quote": "lunenburg central, request for de minimis change lunenburg central, tree cutting photographs"
+  },
+  {
+   "name": "Decision, 97 Cross Street, 125 Cross Street, 430 Mulpus Road and 440 Mulpus Road",
+   "where": "list",
+   "quote": "decision, 97 cross street, 125 cross street, 430 mulpus road and 440 mulpus road stormwater management plans, 324 flat hill road"
+  },
+  {
+   "name": "Stormwater Management Plans, 324 Flat Hill Road",
+   "where": "list",
+   "quote": "decision, 97 cross street, 125 cross street, 430 mulpus road and 440 mulpus road stormwater management plans, 324 flat hill road"
+  },
+  {
+   "name": "Minutes, 12/13/2021",
+   "where": "list",
+   "quote": "minutes, 12/13/2021 minutes, 12/13/2021, 324 flat hill road"
+  },
+  {
+   "name": "Minutes, 12/13/2021, 324 Flat Hill Road",
+   "where": "list",
+   "quote": "minutes, 12/13/2021, 324 flat hill road minutes, 97 cross street, 125 cross street, 430 mulpus road and 440 mulpus road"
+  },
+  {
+   "name": "Minutes, 97 Cross Street, 125 Cross Street, 430 Mulpus Road and 440 Mulpus Road",
+   "where": "list",
+   "quote": "minutes, 12/13/2021, 324 flat hill road minutes, 97 cross street, 125 cross street, 430 mulpus road and 440 mulpus road"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "de minimis change",
+  "site plan",
+  "stormwater",
+  "plan endorsement",
+  "meeting schedule",
+  "remote participation",
+  "minutes approval",
+  "GIS services"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

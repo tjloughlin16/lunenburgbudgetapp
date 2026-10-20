@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2022-06-13",
  "docid": "1941",
@@ -10,8 +10,305 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06132022-1941",
   "doc_url": "/docs/meetings/cultural-council/2022-06-13-minutes-1941.txt"
  },
- "votes": [],
- "dropped_unquoted": 9,
- "note": "Minutes are clear and readable. One name (Karen) appears in votes but is not listed in the attendees. Text transcription shows minor OCR artifacts but vote records are discernible.",
- "cost_usd": 0.1391795
+ "votes": [
+  {
+   "motion": "Approve the minutes from the previous meeting.",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Elise Wiley",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "danielburnsmadeamotiontoapproveminutesfrompreviousmeeting,secondedbyelisewiley"
+  },
+  {
+   "motion": "Approve last year's minutes.",
+   "moved_by": "Elise",
+   "seconded_by": "Daniel Burns",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "elisemadeamotiontoapprovelastyearsminutes,secondedbydanielburnsapprovedunanimous"
+  },
+  {
+   "motion": "Approve all grants, amended as needed.",
+   "moved_by": "DB",
+   "seconded_by": "Elise",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "dbmotiontoapproveallgrantsamendedasneeded.elisesecondedunanimouslyapprovedtotalrequests$15,285"
+  },
+  {
+   "motion": "Not to fund the Whipple and Morales zoom concert ($875).",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Diane",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "whippleandmoralesinconcert-zoomconcert$875danielburnsmotionednottofundsecondedbydiane-notfunded"
+  },
+  {
+   "motion": "Not to fund the Cycle of Memory documentary request ($2000).",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Karen",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "danielburnsmotionednottofundkarensecondeddonnamotionedpartialfundingat$250"
+  },
+  {
+   "motion": "Partial funding of the Cycle of Memory request at $250.",
+   "moved_by": "Donna",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "donnamotionedpartialfundingat$250donna-passesunanimously"
+  },
+  {
+   "motion": "Overfund the Howard Newman in-person concert request by $500.",
+   "moved_by": "Karen",
+   "seconded_by": "",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "karenmotiontooverfund$500-passedunanimously"
+  },
+  {
+   "motion": "Not to fund The Caterpillar Lab request ($970).",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Karen",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "thecaterpillarlab- $970lpl-danielmotionnottofund-karensecond-unanimousnotfunded"
+  },
+  {
+   "motion": "Not to fund the Bonnie Cochran No Words YouTube request ($1300).",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Diane",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "daniel-motiontonotfund-secondeddianevotedunanimouslynottofund"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Daniel",
+   "seconded_by": "Elise",
+   "outcome": "passed unanimously",
+   "procedural": true,
+   "quote": "motiontoadjourn-danieleliseseconded-unanimous"
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "The minutes text is run together with spaces collapsed, so quotes reproduce it as extracted. The first motion (approve minutes from previous meeting) has no printed result; 'approved unanimous' follows the second motion, so it is recorded as not stated. Two grant motions have no printed result: the Cycle of Memory motion by Daniel Burns (superseded by Donna's partial-funding motion) and the one listed as 'not fund' with no separate tally. 'Karen' appears in several votes and is not in the attendance list. The attendance list has no roles printed. No public comment section is printed.",
+ "cost_usd": 0.017599580000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Elise Wiley",
+   "status": "present",
+   "quote": "attendeeselisewileydanielburnsdianebeaudoinjuditernstdonnasaiiakirstensnape",
+   "role": ""
+  },
+  {
+   "name": "Daniel Burns",
+   "status": "present",
+   "quote": "attendeeselisewileydanielburnsdianebeaudoinjuditernstdonnasaiiakirstensnape",
+   "role": ""
+  },
+  {
+   "name": "Diane Beaudoin",
+   "status": "present",
+   "quote": "attendeeselisewileydanielburnsdianebeaudoinjuditernstdonnasaiiakirstensnape",
+   "role": ""
+  },
+  {
+   "name": "Judit Ernst",
+   "status": "present",
+   "quote": "attendeeselisewileydanielburnsdianebeaudoinjuditernstdonnasaiiakirstensnape",
+   "role": ""
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attendeeselisewileydanielburnsdianebeaudoinjuditernstdonnasaiiakirstensnape",
+   "role": ""
+  },
+  {
+   "name": "Kirsten Snape",
+   "status": "present",
+   "quote": "attendeeselisewileydanielburnsdianebeaudoinjuditernstdonnasaiiakirstensnape",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Elise Wiley will follow up with the grantees.",
+   "quote": "elisewillfollowupwithgrantees"
+  },
+  {
+   "decision": "Elise will follow up with an email proposing meeting dates for mid-July to meet as a council, and to schedule an August meeting for the town.",
+   "quote": "elisewillfollowupwithanemailtoproposemeetingdatesformid-julytomeetasacouncilandscheduleanaugustmeetingfortown"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Treasurer's report: current-year and rolled-over balances",
+   "what_was_recorded": "The treasurer reported the current-year amount, the carried-forward balances, the amount approved, paid and open, and the amount with no payment request yet.",
+   "quote": "currentyearamount$7,700outof2020balancegoingforward$7626,2021goingforward$7000approved$5paidour$3400open$1930havenotreceivedrequestforpayment.",
+   "figures_as_printed": [
+    "$7,700",
+    "$7626",
+    "$7000",
+    "$5",
+    "$3400",
+    "$1930"
+   ]
+  },
+  {
+   "topic": "Funds available to keep past season",
+   "what_was_recorded": "The board was told the $1930 could be kept available to the end of the season if the council votes to do so; no vote was recorded.",
+   "quote": "wecanvotetokeepthat$1930availableuntiltheendofthisseason.",
+   "figures_as_printed": [
+    "$1930"
+   ]
+  },
+  {
+   "topic": "Payment to TCP for outstanding invoice",
+   "what_was_recorded": "A payment was made to TCP for an outstanding invoice.",
+   "quote": "$109.29paidtotcpforoutstandinginvoice",
+   "figures_as_printed": [
+    "$109.29"
+   ]
+  },
+  {
+   "topic": "Outstanding approvals from last year",
+   "what_was_recorded": "Six awards from last year were listed as still outstanding, with their amounts.",
+   "quote": "outstandingapprovalsfromlastyearwinchendon$500st.bernards$250clearpathforveterans$500healinggarden$500fitchburgartmuseum$400seniorhiphop$280",
+   "figures_as_printed": [
+    "$500",
+    "$250",
+    "$500",
+    "$500",
+    "$400",
+    "$280"
+   ]
+  },
+  {
+   "topic": "Grant requests total",
+   "what_was_recorded": "Total grant requests for the round were printed, noted as able to overfund.",
+   "quote": "dbmotiontoapproveallgrantsamendedasneeded.elisesecondedunanimouslyapprovedtotalrequests$15,285",
+   "figures_as_printed": [
+    "$15,285"
+   ]
+  },
+  {
+   "topic": "Grant round totals and balance",
+   "what_was_recorded": "The grant round totals were printed: a total, the balance remaining, and the amount still outstanding.",
+   "quote": "total$11640balanceof$5356with$1930outstanding",
+   "figures_as_printed": [
+    "$11640",
+    "$5356",
+    "$1930"
+   ]
+  },
+  {
+   "topic": "Cycle of Memory documentary request",
+   "what_was_recorded": "A $2000 request for a documentary on Alzheimer's was discussed; a partial award of $250 was approved.",
+   "quote": "cycleofmemory-documentaryonalzheimer's$2000toviewthemovietokeepscreeningsfree",
+   "figures_as_printed": [
+    "$2000",
+    "$250"
+   ]
+  },
+  {
+   "topic": "Whipple and Morales zoom concert request",
+   "what_was_recorded": "An $875 zoom concert request was not funded.",
+   "quote": "whippleandmoralesinconcert-zoomconcert$875",
+   "figures_as_printed": [
+    "$875"
+   ]
+  },
+  {
+   "topic": "Caterpillar Lab request",
+   "what_was_recorded": "A $970 request was not funded.",
+   "quote": "thecaterpillarlab- $970lpl-danielmotionnottofund-karensecond-unanimousnotfunded",
+   "figures_as_printed": [
+    "$970"
+   ]
+  },
+  {
+   "topic": "Bonnie Cochran No Words YouTube request",
+   "what_was_recorded": "A $1300 request was not funded.",
+   "quote": "bonniecochran-nowords$1300youtube",
+   "figures_as_printed": [
+    "$1300"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approve previous minutes",
+   "resolution": "approved",
+   "quote": "danielburnsmadeamotiontoapproveminutesfrompreviousmeeting,secondedbyelisewiley",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Treasurer's report",
+   "resolution": "discussed; no vote recorded",
+   "quote": "discussionoftheamountavailablethatrolledoverfrompreviousyears.",
+   "tags": [
+    "treasurer",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Outstanding approvals from last year",
+   "resolution": "listed; no action recorded",
+   "quote": "outstandingapprovalsfromlastyearwinchendon$500st.bernards$250",
+   "tags": [
+    "grants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Grant approvals",
+   "resolution": "approved; individual requests funded or not funded",
+   "quote": "grantapprovalsgrantssubmittedinoctoberforfollowingcalendaryear",
+   "tags": [
+    "grants",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Next agenda and follow-ups",
+   "resolution": "carried forward; no action recorded",
+   "quote": "talkaboutuseofemptybuildings-useofspace-culturalcouncilfunds?",
+   "tags": [
+    "planning",
+    "town space"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "approved unanimously",
+   "quote": "motiontoadjourn-danieleliseseconded-unanimous",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cultural council",
+  "grants",
+  "treasurer report",
+  "budget",
+  "minutes approval",
+  "arts funding",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

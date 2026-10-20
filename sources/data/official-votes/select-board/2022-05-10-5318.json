@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-05-10",
  "docid": "5318",
@@ -12,39 +12,342 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of DPW Director William Bernard",
+   "motion": "Ratify the Town Manager's appointment of DPW Director William Bernard.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2\": t. dwyer to ratify the town manager's appointment of dpw director william bernard vote: all in favor"
+   "quote": "to ratify the town manager's appointment of dpw director william bernard vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Nadia Madden as Conservation Administrator",
+   "motion": "Ratify the Town Manager's appointment of Nadia Madden as Conservation Administrator.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2\"d: m. jeffreys to ratify the town manager's appointment of nadia madden as conservation administrator vote: all in favor"
+   "quote": "to ratify the town manager's appointment of nadia madden as conservation administrator vote: all in favor"
   },
   {
-   "motion": "Approve the request from John McCormack to install four geocaches in the town center on town property contingent upon approval from the DPW and Police Chief",
+   "motion": "Approve the request from John McCormack to install four geocaches in the town center on town property, contingent upon approval from the DPW and Police Chief.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\": t. dwyer to approve the request from john mccormack to install four geocaches in the town center on town property contingent upon approval from the dpw and police chief vote: all in favor"
+   "quote": "to approve the request from john mccormack to install four geocaches in the town center on town property contingent upon approval from the dpw and police chief vote: all in favor"
   },
   {
-   "motion": "Approve the FY22 4th Quarter Water Commitment in the amount of $11,630.73",
+   "motion": "Approve the FY22 4th Quarter Water Commitment in the amount of $11,630.73.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2'd: l. franco to approve the fy22 4t' quarter water commitment in the amount of $11,630.73 vote: all in favor"
+   "quote": "to approve the fy22 4t' quarter water commitment in the amount of $11,630.73 vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; minutes show four votes, all passed unanimously. One procedural item (Town Manager Performance Evaluation) was tabled but no explicit motion and vote are recorded in the minutes.",
- "cost_usd": 0.1024755
+ "note": "OCR text from macOS Vision, with garbling: the header reads 'ZOOM, John McCormick' while the body says McCormack; 'APPOINTMENIS'; '2\": T. Dwyer' and '2'd' for 'Second'; the page 6 heading for the Town Manager performance evaluation is unreadable and was identified only from its tabling. No roll call, attendance list, adjournment or vote counts appear, so no procedural votes are recorded and attendance statuses for members are inferred from moving and seconding motions and from reports they gave. Text ends on page 7 with the preparer's signature (Elaine M. Peterson, not treated as a participant).",
+ "cost_usd": 0.01975878,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux noted she had been updating the board and continued on with her goals to date."
+  },
+  {
+   "name": "L. Franco",
+   "status": "present",
+   "quote": "mr. franco announced the lion's club pancake breakfast tomorrow at eagle house senior/community"
+  },
+  {
+   "name": "T. Dwyer",
+   "status": "present",
+   "quote": "mr. dwyer reported mjtc meets tomorrow at 2:30 pm; he will be unable to attend."
+  },
+  {
+   "name": "M. Jeffreys",
+   "status": "present",
+   "quote": "mr. jeffreys reported the lunenburg municipal building design committee will be meeting next monday at 6:00 pm"
+  },
+  {
+   "name": "William Bernard",
+   "status": "present",
+   "quote": "mr. bernard came forward and stated he was looking forward to working in lunenburg."
+  },
+  {
+   "name": "Nadia Madden",
+   "status": "remote",
+   "quote": "ms. lemieux introduced ms. madden via zoom."
+  },
+  {
+   "name": "John McCormack",
+   "status": "present",
+   "quote": "john mccormack, a senior at lunenburg high school, presented his project request to the select board."
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "status": "present",
+   "quote": "noted he has attended three town meetings since moving here from ohio and finds them of great value."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Tabled the Town Manager performance evaluation to the next meeting.",
+   "quote": "this was tabled until the next meeting."
+  },
+  {
+   "decision": "Mr. McCormack to contact the Police Chief about regulations for placing items on stop signs.",
+   "quote": "mr. mccormack will contact the police chief about the stop signs."
+  },
+  {
+   "decision": "Mr. McCormack advised to contact the Select Board office for the department contact emails he needs.",
+   "quote": "he was advised to contact the select board office in the morning to get"
+  },
+  {
+   "decision": "Town to update the pavement management plan on the town website with the new DPW Director.",
+   "quote": "the pavement management plan on the town website is out of date and we will be working with the new dpw director to update it."
+  },
+  {
+   "decision": "Town will seek another location for a replacement memorial tree.",
+   "quote": "we have not forgotten and will be seeking another location for another tree to be planted."
+  },
+  {
+   "decision": "Ms. Lemieux to check whether the School Committee gave feedback on the draft sign policy amendment wording.",
+   "quote": "ms. lemieux will have to check on that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY22 4th Quarter Water Commitment",
+   "what_was_recorded": "The board approved the FY22 4th Quarter Water Commitment in a stated amount.",
+   "quote": "to approve the fy22 4t' quarter water commitment in the amount of $11,630.73 vote: all in favor",
+   "figures_as_printed": [
+    "$11,630.73"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed a payroll warrant, a payroll deductions warrant and an accounts payable warrant.",
+   "quote": "there were no minutes for approval this evening. the board signed a payroll warrant in the amount of $951,234.74",
+   "figures_as_printed": [
+    "$951,234.74",
+    "$607,055.89",
+    "$2,115,570.04"
+   ]
+  },
+  {
+   "topic": "Flat Hill Road Culvert funding",
+   "what_was_recorded": "A federal supplemental funding request was not advanced to the Appropriations Committee, so it has no potential of being funded this year; a MassDOT Small Bridge Program grant application is pending. No dollar figure is printed.",
+   "quote": "we also have a small bridge program grant application pending before massdot for this project",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA funding for housing",
+   "what_was_recorded": "A Leominster non-profit sought ARPA funding for housing from surrounding communities; discussion to continue until the town has an ARPA spending plan. No dollar figure is printed.",
+   "quote": "had contacted her about seeking arpa funding for additional housing from the surrounding communities, including lunenburg",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "925 Mass Ave cleanup funding",
+   "what_was_recorded": "Federal stimulus funding became available for remediation of the blighted property; the minutes print no dollar figure.",
+   "quote": "federal funding became available through the stimulus bill",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Senior property tax exemption financial impact",
+   "what_was_recorded": "The Finance Director and Principal Assessor were to assess the financial impact of a reduced residential tax rate for seniors. No dollar figure is printed.",
+   "quote": "work with the finance director and principal assessor on the financial impact of implementing a reduced residential tax rate for seniors.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Annual Town Meeting experience and concerns",
+   "speaker": "Anthony Sculimbrene",
+   "stated_role": "",
+   "quote": "noted he has attended three town meetings since moving here from ohio and finds them of great value."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, recording notice, notices",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "notices",
+    "liquor license",
+    "annual election"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one speaker, no action",
+   "quote": "anthony sculimbrene, 5 valley road, noted he has attended three town meetings since moving here",
+   "tags": [
+    "public comment",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Appointments: Tollbooth fundraiser request",
+   "resolution": "listed; no action recorded",
+   "quote": "tollbooth fundraiser request for may 21, 9 am to 1 pm lunenburg boys & girls club",
+   "tags": [
+    "fundraiser",
+    "events"
+   ]
+  },
+  {
+   "topic": "Ratification: DPW Director William Bernard",
+   "resolution": "ratified",
+   "quote": "to ratify the town manager's appointment of dpw director william bernard vote: all in favor",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Ratification: Conservation Administrator Nadia Madden",
+   "resolution": "ratified",
+   "quote": "to ratify the town manager's appointment of nadia madden as conservation administrator vote: all in favor",
+   "tags": [
+    "appointments",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, departments, Flat Hill Road culvert",
+   "resolution": "no action (report)",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "departments",
+    "culvert"
+   ]
+  },
+  {
+   "topic": "Senior project request: geocaches",
+   "resolution": "approved, contingent on DPW and Police Chief",
+   "quote": "john mccormack, a senior at lunenburg high school, presented his project request to the select board.",
+   "tags": [
+    "geocaching",
+    "senior project",
+    "permits"
+   ]
+  },
+  {
+   "topic": "FY2022 Town Manager goals report",
+   "resolution": "no action (report)",
+   "quote": "ms. lemieux noted she had been updating the board and continued on with her goals to date.",
+   "tags": [
+    "town manager goals",
+    "925 Mass Ave",
+    "facilities",
+    "senior tax"
+   ]
+  },
+  {
+   "topic": "Town Manager performance evaluation",
+   "resolution": "tabled",
+   "quote": "this was tabled until the next meeting.",
+   "tags": [
+    "town manager",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "ARPA spending",
+   "resolution": "discussion, continued",
+   "quote": "had contacted her about seeking arpa funding for additional housing from the surrounding communities, including lunenburg",
+   "tags": [
+    "ARPA",
+    "housing"
+   ]
+  },
+  {
+   "topic": "FY22 4th Quarter Water Commitment",
+   "resolution": "approved",
+   "quote": "to approve the fy22 4t' quarter water commitment in the amount of $11,630.73 vote: all in favor",
+   "tags": [
+    "water",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "no minutes; warrants signed; action items noted",
+   "quote": "there were no minutes for approval this evening. the board signed a payroll warrant in the amount of $951,234.74",
+   "tags": [
+    "warrants",
+    "pavement plan",
+    "memorial tree",
+    "sign policy"
+   ]
+  },
+  {
+   "topic": "Committee reports and announcements",
+   "resolution": "no action",
+   "quote": "mr. alonzo stated this board's next meetings are may 17 and may 24 at 7:00 pm.",
+   "tags": [
+    "committees",
+    "announcements"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Report on FY 2022 Town Manager Goals",
+   "where": "text",
+   "quote": "report on fy 2022 town manager goals"
+  },
+  {
+   "name": "Administrative Organization Plan",
+   "where": "text",
+   "quote": "formulate the administrative organization plan, that is required per the town charter."
+  },
+  {
+   "name": "Wakefield's Home Rule Petition for a Senior Discount Program",
+   "where": "text",
+   "quote": "i had previously provided wakefield's home rule petition for a senior discount program"
+  },
+  {
+   "name": "Draft sign policy amendment",
+   "where": "text",
+   "quote": "following up on the draft sign policy amendment from last meeting"
+  },
+  {
+   "name": "Pavement management plan (town website)",
+   "where": "text",
+   "quote": "the pavement management plan on the town website is out of date"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "appointments",
+  "ratification",
+  "DPW",
+  "conservation",
+  "geocaching",
+  "water commitment",
+  "warrants",
+  "ARPA",
+  "town manager goals",
+  "Flat Hill Road culvert",
+  "annual town election",
+  "pavement plan",
+  "sign policy"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

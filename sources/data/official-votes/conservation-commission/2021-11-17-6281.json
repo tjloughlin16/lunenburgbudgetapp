@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-11-17",
  "docid": "6281",
@@ -12,95 +12,542 @@
  },
  "votes": [
   {
-   "motion": "Approve an order of conditions with enhanced erosion control for tight tank installation at 1078 Lancaster Ave.",
+   "motion": "Approve an order of conditions for the Landry Notice of Intent (1078 Lancaster Ave), with added erosion-control conditions.",
    "moved_by": "JR",
    "seconded_by": "ML",
    "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made to approve an order of conditions with added conditions concerning the enhanced the erosion control. the motion was made by jr and seconded by ml. the motion was approved by a role call vote"
+   "quote": "a motion was made to approve an order of conditions with added conditions concerning the enhanced the erosion control. the motion was made by jr and seconded by ml."
   },
   {
-   "motion": "Continue the public hearing for 41 Country Lane single family home to December 1st at 7:00 PM",
+   "motion": "Continue the Kevin Hill hearing (41 Country Lane) to the December 1st meeting at 7:00 PM.",
    "moved_by": "CC",
    "seconded_by": "JR",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "outcome": "passed",
+   "procedural": true,
    "quote": "the meeting was continued to the december 1st meeting at 7:00 pm by a motion of cc with a second by jr and a unanimous vote of the commission to approve the motion"
   },
   {
-   "motion": "Continue the hearing for shed placement at 188 Whalom Road to December 1, 2021",
+   "motion": "Continue the Matthew Butterworth hearing (188 Whalom Road) to December 1, 2021.",
    "moved_by": "CC",
    "seconded_by": "JR",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "it was continued to the december 1, 2021 meeting by a motion of cc and a second by jr with a unanimous vote by roll call to approve the motion"
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "it was continued to the december 1, 2021 meeting by a motion of cc and a second by jr with a unanimous vote by roll call to approve the motion."
   },
   {
-   "motion": "Issue a negative determination for shed placement at 1390 Lancaster Ave.",
+   "motion": "Issue a negative determination for the Leblanc Request for a Determination (1390 Lancaster Ave), shed in buffer zone.",
    "moved_by": "CC",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "emotion was made to issue a negative determination by cc with a second by ml. the motion was approved unanimously by a roll call vote"
   },
   {
-   "motion": "Approve rehabilitation of existing screened in porch and deny the proposed addition at 35 Peninsula Drive",
+   "motion": "Approve only the rehabilitation of the existing screened-in porch at 35 Peninsula Drive; the proposed addition is denied and removed from consideration.",
    "moved_by": "ML",
    "seconded_by": "JR",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made to approve only the rehabilitation of the existing screened in porch with the proposed addition being denied and removed from consideration by ml with a second from jr. the motion was approved by a unanimous roll call vote."
+   "quote": "a motion was made to approve only the rehabilitation of the existing screened in porch with the proposed addition being denied and removed from consideration by ml with a second from jr."
   },
   {
-   "motion": "Issue negative determination and require removal of wall, regrading, removal of walkway section, and relocation of shed at 37 Pearl Street",
+   "motion": "Negative determination for 37 Pearl Street: remove the wall, regrade, remove the side walkway section, and move the shed.",
    "moved_by": "ML",
    "seconded_by": "JV",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion was made for a negative determination to remove the wall re grade the area where the wall was and remove the side section of walkway that was going to the screen house. moving of the shed was also included as part of the motion by ml with a second by jv. the motion was approved unanimously by roll call vote."
+   "quote": "moving of the shed was also included as part of the motion by ml with a second by jv. the motion was approved unanimously by roll call vote."
   },
   {
-   "motion": "Continue the hearing for six lot subdivision at 101 Pleasant Street to December 1st",
+   "motion": "Continue the 101 Pleasant Street Notice of Intent (MA Pleasant LLC) to December 1st, with the applicant's consent.",
    "moved_by": "JR",
    "seconded_by": "JV",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "with consent to the applicant the meeting was continued to december 1st by a motion of jr and a second by jv. the motion was approved by a unanimous roll call vote of the commission."
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "with consent to the applicant the meeting was continued to december 1st by a motion of jr and a second by jv."
   },
   {
-   "motion": "Allow release of 5 parcels at Holman St. & Northfield Road for purchase",
+   "motion": "Allow the release of the Holman St. and Northfield Road parcels (61A release request) for purchase.",
    "moved_by": "JR",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "motion was made to allow the release of the property by jr and seconded by cc with a unanimous vote to approve the motion by roll call vote."
   },
   {
-   "motion": "Approve $600 for pest control and $800 for two septic system pumpings at 123 Hollis Road",
+   "motion": "Approve payment of $600 for pest control and $800 for two septic pumpings at 123 Hollis Road.",
    "moved_by": "JR",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made to approve the amounts by jr with a second by cc. the motion was approved by a unanimous roll call vote."
   },
   {
-   "motion": "Approve administrator's determination for removal of 2 dead trees at 135 Flynn Rd",
+   "motion": "Approve the administrator's determination to remove two dead trees at 135 Flynn Rd.",
    "moved_by": "JR",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the commission approved the administrator's determination with the motion by jr and a second by cc with a unanimous roll call vote approving the motion."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "JR",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "the meeting was adjourned at 10:13 pm with a motion from jr and the second from ml with a unanimous roll call vote to approve the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in the minutes include roll call votes. No votes on approval of previous minutes are explicitly recorded. The initials used are: JR = Jack Rabbitt, ML = Michael Larouche, CC = Catie Childs, JV = Jeffrey Viviano.",
- "cost_usd": 0.0967665
+ "note": "Zoom meeting; the minutes record the attendance line only by initials (RB, CC, JV, ML, JR) and do not map initials to the member names in the letterhead, so members are recorded as printed. MM appears in the body without a surname; the letterhead lists Matthew S. Marro, Conservation Administrator, but the minutes do not say MM is him. Several passages contain typos or OCR-like errors (e.g. \"emotion was made\", \"role call\", \"Mulpus\"); quotes are copied as printed. Roll-call votes are recorded mostly as \"unanimous\" with no tally, so outcomes are \"passed\". Continuance motions are marked procedural. The minutes list \"Minutes of previous meetings – October 20\" but record no vote on them. The \"Public Comment\" heading records no speakers. No document list is printed; documents listed are those named in the text.",
+ "cost_usd": 0.02361638,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "RB",
+   "status": "present",
+   "role": "acting chair (as printed)",
+   "quote": "meeting called to order with rb acting as chair. in attendance - rb, cc, jv,ml,jr"
+  },
+  {
+   "name": "CC",
+   "status": "present",
+   "role": "member (initials only; role not stated)",
+   "quote": "meeting called to order with rb acting as chair. in attendance - rb, cc, jv,ml,jr"
+  },
+  {
+   "name": "JV",
+   "status": "present",
+   "role": "member (initials only; role not stated)",
+   "quote": "meeting called to order with rb acting as chair. in attendance - rb, cc, jv,ml,jr"
+  },
+  {
+   "name": "ML",
+   "status": "present",
+   "role": "member (initials only; role not stated)",
+   "quote": "meeting called to order with rb acting as chair. in attendance - rb, cc, jv,ml,jr"
+  },
+  {
+   "name": "JR",
+   "status": "present",
+   "role": "member (initials only; role not stated)",
+   "quote": "meeting called to order with rb acting as chair. in attendance - rb, cc, jv,ml,jr"
+  },
+  {
+   "name": "MM",
+   "status": "present",
+   "role": "not stated in body (initials only; header lists Conservation Administrator)",
+   "quote": "mm presented the commission with photographs of three trees that need to be removed."
+  },
+  {
+   "name": "Mark Elbag",
+   "status": "present",
+   "role": "represented (applicant side, Landry hearing)",
+   "quote": "mark elbag represented."
+  },
+  {
+   "name": "Jeffery Landry",
+   "status": "not stated",
+   "role": "applicant",
+   "quote": "a notice of intent by jeffery landry the installation of a tight tank at 1078 lancaster ave."
+  },
+  {
+   "name": "Wesley Flis",
+   "status": "present",
+   "role": "present to represent the commission (as printed)",
+   "quote": "wesley flis was present to represent the commission."
+  },
+  {
+   "name": "Kevin Hill",
+   "status": "not stated",
+   "role": "applicant",
+   "quote": "a notice of intent by kevin hill the construction of a single family home at 41 country lane"
+  },
+  {
+   "name": "Matthew Butterworth",
+   "status": "absent",
+   "role": "applicant",
+   "quote": "no one showed for the hearing"
+  },
+  {
+   "name": "Randy and Jacqueline Leblanc",
+   "status": "not stated",
+   "role": "applicants",
+   "quote": "a request for a determination by randy and jacqueline leblanc for the placement of a shed within the buffer zone"
+  },
+  {
+   "name": "Bryan miner",
+   "status": "not stated",
+   "role": "applicant",
+   "quote": "a request for a determination by bryan miner for the demolition of a screened in section of a single family home"
+  },
+  {
+   "name": "Ray Clouthier",
+   "status": "present",
+   "role": "represented himself",
+   "quote": "ray clouthier was present to represent himself."
+  },
+  {
+   "name": "Paul Grasewicz",
+   "status": "present",
+   "role": "represented the applicant",
+   "quote": "paul grasewicz was present to represent the applicant."
+  },
+  {
+   "name": "Andrea Adams",
+   "status": "present",
+   "role": "not stated (public speaker)",
+   "quote": "andrea adams noted that the size of the house could be changed due to planning or zoning board of appeals regulations."
+  },
+  {
+   "name": "Allan Foster",
+   "status": "present",
+   "role": "abutter (as printed: \"the abutter Alan foster\")",
+   "quote": "allan foster appeared before the commission and reviewed the history of the property."
+  },
+  {
+   "name": "Jeremy Eithier",
+   "status": "present",
+   "role": "represented the owner (Nick Eaton)",
+   "quote": "jeremy eithier, was present to represent the owner (nick eaton)"
+  },
+  {
+   "name": "Nick Eaton",
+   "status": "not stated",
+   "role": "owner (441 Townsend Harbor Road)",
+   "quote": "present to represent the owner (nick eaton)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "MM ordered the landowner at 615 Townsend Street to install a wood shavings berm to prevent further erosion.",
+   "quote": "mm ordered the landowner to install a wood shavings berm in order to prevent further erosion"
+  },
+  {
+   "decision": "MM will send the 615 Townsend Street owner a notice that erosion protection must be added or fines can commence.",
+   "quote": "mm will send a notice to the owner that there must be erosion protection added or fines can commence if more silt goes into the pond."
+  },
+  {
+   "decision": "MM will investigate 615 Townsend Street with the building commissioner on whether the agricultural exemption was violated and permitting is needed.",
+   "quote": "mm is going to investigate the area with the building commissioner to determine whether the exemption has been violated and permitting is now necessary."
+  },
+  {
+   "decision": "The Commission agreed to hold a site walk at 441 Townsend Harbor Road during the next Saturday round before the next meeting.",
+   "quote": "the commission agreed to do a site walk during the next saturday round prior to the next meeting."
+  },
+  {
+   "decision": "The Commission requested documentation from a structural engineer on the roof overhang at 441 Townsend Harbor Road be added to the file.",
+   "quote": "the commission did request documentation from a structural engineer be added to the file to address the disposition of the roofs overhang."
+  },
+  {
+   "decision": "The applicant at 101 Pleasant Street was asked to stake out the replication area for a future inspection.",
+   "quote": "the applicant was asked to stake out the replication area so it could be examined on a future inspection."
+  },
+  {
+   "decision": "RB requested that the 37 Pearl Street plan be dated and signed.",
+   "quote": "rb requested that the plan be dated and signed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Repairs to 123 Hollis Road residence: bills approved for payment",
+   "what_was_recorded": "MM asked the Commission to approve two bills, $600 for pest control and $800 for two septic pumpings, so they could be paid; the motion approving them is recorded under votes.",
+   "figures_as_printed": [
+    "$600",
+    "$800"
+   ],
+   "quote": "mm asked for a vote of $600 for pest control and $800 for two pumping's of the septic system to be approved by the commission to allow the bills to be paid."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Andrea Adams",
+   "stated_role": "not stated",
+   "topic": "Country Lane house size and garage placement",
+   "quote": "andrea adams noted that the size of the house could be changed due to planning or zoning board of appeals regulations."
+  },
+  {
+   "speaker": "Andrea Adams",
+   "stated_role": "not stated",
+   "topic": "101 Pleasant Street wetland replication (written letter)",
+   "quote": "andrea adams referred to a previous letter that she had written in commentary concerning this development"
+  },
+  {
+   "speaker": "Allan Foster",
+   "stated_role": "abutter (as printed: \"the abutter Alan foster\")",
+   "topic": "615 Townsend Street silt and earthwork",
+   "quote": "allan foster appeared before the commission and reviewed the history of the property."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "called to order by RB as acting chair; no action",
+   "tags": [
+    "call to order"
+   ],
+   "quote": "meeting called to order with rb acting as chair."
+  },
+  {
+   "topic": "Public comment (agenda heading)",
+   "resolution": "no speakers recorded under the heading; speakers recorded within hearings",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment comments are to be limited to 3 minutes and on a subject matter under the direct jurisdiction of the commission."
+  },
+  {
+   "topic": "Minutes of previous meetings – October 20",
+   "resolution": "listed on agenda; no action recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of previous meetings - october 20"
+  },
+  {
+   "topic": "1078 Lancaster Ave tight tank (Landry Notice of Intent)",
+   "resolution": "approved with added erosion-control conditions",
+   "tags": [
+    "notice of intent",
+    "erosion",
+    "wetlands"
+   ],
+   "quote": "a notice of intent by jeffery landry the installation of a tight tank at 1078 lancaster ave."
+  },
+  {
+   "topic": "41 Country Lane house (Kevin Hill Notice of Intent)",
+   "resolution": "continued to December 1, 2021",
+   "tags": [
+    "notice of intent",
+    "riverfront",
+    "buffer zone"
+   ],
+   "quote": "a notice of intent by kevin hill the construction of a single family home at 41 country lane"
+  },
+  {
+   "topic": "188 Whalom Road shed (Butterworth Request for Determination)",
+   "resolution": "continued to December 1, 2021; no applicant appeared",
+   "tags": [
+    "request for determination",
+    "buffer zone"
+   ],
+   "quote": "no one showed for the hearing, it was continued to the december 1, 2021 meeting"
+  },
+  {
+   "topic": "1390 Lancaster Ave shed (Leblanc Request for Determination)",
+   "resolution": "negative determination",
+   "tags": [
+    "request for determination",
+    "buffer zone"
+   ],
+   "quote": "a request for a determination by randy and jacqueline leblanc for the placement of a shed within the buffer zone"
+  },
+  {
+   "topic": "35 Peninsula Drive porch and addition (Miner Request for Determination)",
+   "resolution": "rehabilitation of existing porch approved; addition denied",
+   "tags": [
+    "request for determination",
+    "buffer zone",
+    "shoreline"
+   ],
+   "quote": "a request for a determination by bryan miner for the demolition of a screened in section of a single family home"
+  },
+  {
+   "topic": "37 Pearl Street path, screen house and shed (Clouthier Request for Determination)",
+   "resolution": "negative determination with conditions",
+   "tags": [
+    "request for determination",
+    "buffer zone"
+   ],
+   "quote": "ray clouthier was present to represent himself."
+  },
+  {
+   "topic": "203 Fire Road 16 retaining walls (Proctor Masonry)",
+   "resolution": "removed from agenda; approved at a prior meeting",
+   "tags": [
+    "notice of intent",
+    "retaining wall"
+   ],
+   "quote": "removed from agenda as it was approved at a prior meeting"
+  },
+  {
+   "topic": "101 Pleasant Street six-lot subdivision (MA Pleasant LLC Notice of Intent)",
+   "resolution": "continued to December 1st with applicant's consent",
+   "tags": [
+    "notice of intent",
+    "subdivision",
+    "wetland replication"
+   ],
+   "quote": "a notice of intent by ma pleasant llc will be held. work proposed is construction of a six lot subdivision"
+  },
+  {
+   "topic": "61A release request, Holman St. and Northfield Road",
+   "resolution": "released for purchase",
+   "tags": [
+    "chapter 61A",
+    "open space"
+   ],
+   "quote": "as it does not meet with conservation commission goals and objectives regarding open space."
+  },
+  {
+   "topic": "By-law review committee communication",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "bylaw"
+   ],
+   "quote": "by law review committee communication."
+  },
+  {
+   "topic": "Trail planning at 260 Howard Street",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "trails"
+   ],
+   "quote": "trail planning at 260 howard street."
+  },
+  {
+   "topic": "Repairs to 123 Hollis Road residence",
+   "resolution": "approved payment of $600 and $800 bills",
+   "tags": [
+    "septic",
+    "repairs"
+   ],
+   "quote": "mm asked for a vote of $600 for pest control and $800 for two pumping's"
+  },
+  {
+   "topic": "615 Townsend Street enforcement",
+   "resolution": "erosion berm ordered; permit review and notice to follow; no vote",
+   "tags": [
+    "enforcement",
+    "erosion",
+    "silt",
+    "Pages Pond"
+   ],
+   "quote": "mm ordered the landowner to install a wood shavings berm in order to prevent further erosion"
+  },
+  {
+   "topic": "441 Townsend Harbor Road remediation",
+   "resolution": "site walk agreed; engineer documentation requested; no vote",
+   "tags": [
+    "enforcement",
+    "tree removal",
+    "drainage"
+   ],
+   "quote": "the commission agreed to do a site walk during the next saturday round prior to the next meeting."
+  },
+  {
+   "topic": "Leominster Road, NON/EO and other enforcement items",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "enforcement",
+    "illegal dumping"
+   ],
+   "quote": "leominster road- illegal dumping activity"
+  },
+  {
+   "topic": "Trails grant status",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "trails",
+    "grant"
+   ],
+   "quote": "update on trails grant - status report, if any."
+  },
+  {
+   "topic": "135 Flynn Road dead-tree removal (administrator's determination)",
+   "resolution": "approved",
+   "tags": [
+    "administrator's determination",
+    "trees"
+   ],
+   "quote": "administrators determination- 135 flynn rd removal of 2 dead trees"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:13 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting was adjourned at 10:13 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Notice of Intent by Jeffery Landry, installation of a tight tank at 1078 Lancaster Ave.",
+   "where": "text",
+   "quote": "a notice of intent by jeffery landry the installation of a tight tank at 1078 lancaster ave."
+  },
+  {
+   "name": "Notice of Intent by Kevin Hill, single family home at 41 Country Lane",
+   "where": "text",
+   "quote": "a notice of intent by kevin hill the construction of a single family home at 41 country lane"
+  },
+  {
+   "name": "Request for a Determination by Matthew Butterworth, shed at 188 Whalom Road",
+   "where": "text",
+   "quote": "a request for a determination by matthew butterworth for the placement of a shed within the buffer zone at 188 whalom road."
+  },
+  {
+   "name": "Request for a Determination by Randy and Jacqueline Leblanc, shed at 1390 Lancaster Ave.",
+   "where": "text",
+   "quote": "a request for a determination by randy and jacqueline leblanc for the placement of a shed within the buffer zone"
+  },
+  {
+   "name": "Request for a Determination by Bryan miner, 35 Peninsula Drive",
+   "where": "text",
+   "quote": "a request for a determination by bryan miner for the demolition of a screened in section of a single family home"
+  },
+  {
+   "name": "Request for a Determination by Ray Clouthier, 37 Pearl Street",
+   "where": "text",
+   "quote": "a request for a determination by ray clouthier"
+  },
+  {
+   "name": "Notice of Intent by Proctor Masonry, 203 Fire Road 16",
+   "where": "text",
+   "quote": "a request for a notice of intent by proctor masonry for work at 203 fire"
+  },
+  {
+   "name": "Notice of Intent by MA Pleasant LLC, 101 Pleasant Street",
+   "where": "text",
+   "quote": "a notice of intent by ma pleasant llc will be held. work proposed is construction of a six lot subdivision"
+  },
+  {
+   "name": "Letter by Andrea Adams on the 101 Pleasant Street development",
+   "where": "text",
+   "quote": "andrea adams referred to a previous letter that she had written in commentary concerning this development"
+  },
+  {
+   "name": "Photographs of three trees to be removed (presented by MM)",
+   "where": "text",
+   "quote": "mm presented the commission with photographs of three trees that need to be removed."
+  },
+  {
+   "name": "Picture provided by JV showing the original walkway (37 Pearl Street)",
+   "where": "text",
+   "quote": "rb also showed the picture that jv provided showing the original walkway."
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "public hearing",
+  "notice of intent",
+  "request for determination",
+  "enforcement",
+  "erosion and silt",
+  "chapter 61A",
+  "trails",
+  "septic repairs",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-04-25",
  "docid": "4220",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing",
+   "motion": "Close the public hearing.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 5-0",
@@ -21,6 +21,165 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "This is a public hearing on warrant articles. The minutes record the presentation of Articles 26, 27, and 28 (all zoning/bylaw amendments for Town Meeting) and public comment, but only one vote is recorded: the Planning Board's procedural motion to close the hearing at 7:04 p.m. The warrant articles themselves were not voted on by the Planning Board at this hearing—they are presented for Town Meeting action.",
- "cost_usd": 0.0900975
+ "note": "Extracted text, not a scan. The only recorded vote is the procedural motion to close the hearing; no motion to recommend Articles 26, 27 or 28 appears, so none is recorded. A. Burney's statement is recorded as a staff recommendation in discussion, not as a board decision. The bylaw text shows edits (e.g. \"2009 June 2020\", \"20% 15%\", \"250 220\") with no markup, so the deleted and inserted wording cannot be told apart here. Marjorie J. Boggio appears only in the letterhead and is not recorded as taking part, so she is omitted.",
+ "cost_usd": 0.01906068,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "erik torgersen participated remotely under the act relative to extending certain covid -19 measures"
+  },
+  {
+   "name": "Fran McNamara",
+   "role": "Water District Superintendent",
+   "status": "present",
+   "quote": "the water district articles were presented by fran mcnamara, water district superintendent."
+  },
+  {
+   "name": "Darryel Plante",
+   "role": "",
+   "status": "present",
+   "quote": "darryel plante, 490 lancaster avenue - he felt that as a property affected by the change, he should have received a notification"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Darryel Plante",
+   "stated_role": "",
+   "topic": "Mailed notice to affected property owners and compensation",
+   "quote": "darryel plante, 490 lancaster avenue - he felt that as a property affected by the change, he should have received a notification"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing on Town Meeting warrant articles 26, 27 and 28",
+   "resolution": "hearing closed 7:04 p.m. on a 5-0 roll call; no recommendation vote recorded",
+   "quote": "p. bertram made motion to close the hearing, m. brenner seconded, roll call vote - m. brenner -aye; p. bertram-aye; m. allison-aye; e. torgersen-aye; t. cole-aye. the motion passed.",
+   "tags": [
+    "public hearing",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Water Supply Protection District bylaw (Article 27)",
+   "resolution": "presented and heard; public comment taken; no vote recorded",
+   "quote": "the water district articles were presented by fran mcnamara, water district superintendent.",
+   "tags": [
+    "water supply",
+    "aquifer",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Zoning map update (Article 28)",
+   "resolution": "heard; A. Burney recommended passing over the map update if the Water District bylaw fails; no vote recorded",
+   "quote": "a. burney recommended if the water district bylaw did not pass at town meeting, the board should pass over the zoning map update",
+   "tags": [
+    "zoning map",
+    "water supply"
+   ]
+  },
+  {
+   "topic": "Non-medical marijuana establishments special permit (Article 26)",
+   "resolution": "heard; no vote recorded",
+   "quote": "the above article was prepared by town counsel and clarified the permitting process.",
+   "tags": [
+    "marijuana",
+    "special permit"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 27, amendment to Section 250-4.9 Water Supply Protection District",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the code of lunenburg, section 250 -4.9, which is a"
+  },
+  {
+   "name": "Article 28, amendment to Section 250-3.2 Location of Districts and zoning map update",
+   "where": "text",
+   "quote": "article 28. to see if the town will vote to amend the code of lunenburg, section 250 -3.2, which is a"
+  },
+  {
+   "name": "Article 26, amendment to Section 4.15 Subsection K, non-medical marijuana special permit procedure",
+   "where": "text",
+   "quote": "the above article was prepared by town counsel and clarified the permitting process."
+  },
+  {
+   "name": "Map 1, Water Protection District",
+   "where": "text",
+   "quote": "according to map 1, entitled \"water protection district, revised october, 2009 june 2020.\""
+  },
+  {
+   "name": "Revised Protective Bylaw Map of the Town of Lunenburg, Massachusetts (dated May 7, 2022)",
+   "where": "text",
+   "quote": "\"revised protective bylaw map of the town of lunenburg, massachusetts,\" dated may 3, 2008 may 7, 2022, signed by the planning board and filed with the town clerk"
+  },
+  {
+   "name": "Planning Board Rules and Regulations for Site Plan Approval and Special Permits",
+   "where": "text",
+   "quote": "shall conform to the planning board rules and regulations for site plan approval and special permits, as amended."
+  },
+  {
+   "name": "Guidelines and Policies for Public Water Systems, DEQE Division of Water Supply, Revised May 1, 1991",
+   "where": "text",
+   "quote": "guidelines and policies for public water systems, department of environmental quality engineering, division of water supply, revised may 1, 1991"
+  },
+  {
+   "name": "Guidelines for Soil and Water Conservation in Urbanizing Areas of Massachusetts, 1977 (U.S. Soil Conservation Service)",
+   "where": "text",
+   "quote": "\"guidelines for soil and water conservation in urbanizing areas of massachusetts,\" 1977"
+  }
+ ],
+ "tags": [
+  "zoning",
+  "water supply protection district",
+  "aquifer protection",
+  "zoning map",
+  "marijuana establishments",
+  "town meeting warrant articles",
+  "public hearing",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,673 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2022-05-17",
+ "video_id": "FWOyhXL_bHQ",
+ "video_url": "https://www.youtube.com/watch?v=FWOyhXL_bHQ",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-05-17-FWOyhXL_bHQ.json",
+  "sha256": "0fd883770361c20c0ec31420dc14eabc45bcfc840f545d62f5ac4fc891eaea20",
+  "caption_lines": 184,
+  "segments": 1725
+ },
+ "recording": {
+  "duration_s": 3850,
+  "duration": "1:04",
+  "spoken_chars": 50307,
+  "words_approx": 8384
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05172022-5303",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-05-17-agenda-5303.txt",
+   "path": "sources/meetings/select-board/2022-05-17-agenda-5303.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05172022-5303",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-05-17-minutes-5303.txt",
+   "path": "sources/meetings/select-board/2022-05-17-minutes-5303.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T16:54:36Z",
+  "cost_usd": 0.3424897
+ },
+ "minutes": {
+  "headline": "Select Board delegated approval of a letter backing an MBTA Communities planning grant; no budget decisions made.",
+  "summary": "The Select Board ratified annual town manager and police appointments, approved prior minutes and a warrant, and heard a long town manager report on 30 School Street, Ritter and Town Hall alterations, records retention and email migration. A student's geocaching project was settled, a draft town manager evaluation was entered, and the board authorized the chair and town manager to approve a letter of support for an MBTA Communities planning assistance grant. A member also reported on the municipal building design committee's joint meeting with the School Committee.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "assistant manager Peterson",
+    "role": "assistant town manager"
+   },
+   {
+    "name_as_heard": "Mr. Bernie",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Karen Menard",
+    "role": "presenter, chair of the Park Commission (remote)",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 179,
+    "topic": "Chair asked for public comment at opening; none from the public."
+   },
+   {
+    "t": 2534,
+    "topic": "Park Commission chair, by Zoom, said the geocaching locations at Veterans Park and the town pound are fine to place before the commission's meeting.",
+    "stated_role": "chair of the park commission",
+    "speaker_as_heard": "karen menard"
+   },
+   {
+    "t": 3797,
+    "topic": "Final public comment requested; none."
+   }
+  ],
+  "tags": [
+   "capital",
+   "economic-development",
+   "facilities",
+   "grants",
+   "hiring",
+   "housing",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 454,
+    "motion": "Ratify the town manager's list of annual appointments",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 584,
+    "motion": "Ratify the list of police officers for reappointment effective July 1, 2022",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1511,
+    "motion": "Accept the minutes of April 5, 2022 as presented",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 1532,
+    "motion": "Accounts payable warrant",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 3113,
+    "motion": "Delegate to the chair and town manager authority to review and approve the letter of support for the MRPC planning assistance grant for MBTA Communities compliance",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3817,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 715,
+    "topic": "30 School Street asbestos project",
+    "what_was_said": "A state-funded asbestos project is complete; remaining hazardous materials abatement and a demolition estimate follow, with brick preservation affecting cost.",
+    "figures_as_heard": [
+     "50 000"
+    ]
+   },
+   {
+    "t": 1532,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "The board considered an accounts payable warrant.",
+    "figures_as_heard": [
+     "334 176.53"
+    ]
+   },
+   {
+    "t": 1745,
+    "topic": "Storage space in building plans",
+    "what_was_said": "The design committee's plan included storage space whose cost per square foot reaches into the millions, so digitizing records could reduce cost.",
+    "figures_as_heard": [
+     "5 000",
+     "400 to 4 500 a square foot"
+    ]
+   },
+   {
+    "t": 2884,
+    "topic": "MBTA Communities planning assistance grant",
+    "what_was_said": "A free state-funded grant would run through the end of fiscal year 24 and not obligate the town to adopt zoning.",
+    "figures_as_heard": [
+     "fiscal year 24"
+    ]
+   },
+   {
+    "t": 3508,
+    "topic": "MassDevelopment funding for Lunenburg",
+    "what_was_said": "Lunenburg is considered wealthy by the state's standards, so MassDevelopment funding is limited to design dollars.",
+    "figures_as_heard": [
+     "two hundred thousand dollars"
+    ]
+   },
+   {
+    "t": 780,
+    "topic": "Ritter and Town Hall alterations",
+    "what_was_said": "Work was in the fiscal 22 capital plan; a records retention project was in the fiscal 23 capital plan.",
+    "figures_as_heard": [
+     "fiscal 22",
+     "fiscal 23"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2309,
+    "decision": "Board agreed that the town manager may approve the final geocache location without another board meeting."
+   },
+   {
+    "t": 1322,
+    "decision": "Draft town manager evaluation entered as a draft; members to send changes to the chair; finalization next week."
+   },
+   {
+    "t": 3756,
+    "decision": "Chair and town manager to discuss a replacement tree location with the new DPW director once he is settled."
+   },
+   {
+    "t": 3675,
+    "decision": "Volunteer appreciation event penciled in for June 16 at the Eagle House."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 15,
+    "t_end": 179,
+    "topic": "Opening, pledge, meeting notices",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 179,
+    "t_end": 306,
+    "topic": "Announcements; postponed pole hearings",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 306,
+    "t_end": 633,
+    "topic": "Annual town manager and police appointments",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 633,
+    "t_end": 1193,
+    "topic": "Town manager report: vacancies, 30 School Street, Ritter/Town Hall, records retention, email",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "capital",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1193,
+    "t_end": 1302,
+    "topic": "Senior project request",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 1302,
+    "t_end": 1489,
+    "topic": "Town manager performance evaluation draft",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1489,
+    "t_end": 1582,
+    "topic": "Minutes and warrant",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 1582,
+    "t_end": 1684,
+    "topic": "Action items: crosswalk at rotary",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 1684,
+    "t_end": 2121,
+    "topic": "Municipal building design committee report",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 2121,
+    "t_end": 2722,
+    "topic": "Geocaching project locations",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 2722,
+    "t_end": 3297,
+    "topic": "MBTA Communities planning assistance grant letter",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "housing",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 3297,
+    "t_end": 3611,
+    "topic": "Groundbreaking and MassDevelopment funding",
+    "resolution": "informational",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 3611,
+    "t_end": 3837,
+    "topic": "Upcoming meetings, tree replacement, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Vote on the accounts payable warrant: the captions give no result.",
+   "The count on the police list vote was garbled by a speaking error.",
+   "Some speakers were not identified."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3007,
+    "about": "A member criticized being asked to support a grant letter only days before the deadline.",
+    "sides": "One member against the late timing of requests; the planning director and town manager explained the timeline.",
+    "words_as_heard": "it just seems like it's always under the wire it's always like race race race",
+    "kind": "public criticism"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1302,
+    "name_as_heard": "composite town manager performance evaluation",
+    "kind": "report",
+    "words_as_heard": "review the composite town manager performance evaluation so i've given everybody a written printed copy",
+    "shown": true
+   },
+   {
+    "t": 780,
+    "name_as_heard": "certificate to alter applications",
+    "kind": "application or permit",
+    "words_as_heard": "the ritter certificate to alter application was filed with a planning board on april 4th",
+    "shown": false
+   },
+   {
+    "t": 2740,
+    "name_as_heard": "letter of support",
+    "kind": "letter or email",
+    "words_as_heard": "letter of support to the massachusetts regional planning commission for planning assistance grants",
+    "shown": false
+   },
+   {
+    "t": 2640,
+    "name_as_heard": "School Committee naming policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "their naming policy for buildings and structures",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "mbta-communities-compliance",
+    "title": "MBTA Communities compliance",
+    "question": "What does the MBTA Communities law require of Lunenburg and what does the planning grant cover?",
+    "t": 2722,
+    "words_as_heard": "the state is offering a planning assistance grant to start looking at locations and densities",
+    "data_in_play": [
+     "fiscal year 24",
+     "50-acre zoning district"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "records-storage-costs",
+    "title": "Records storage costs",
+    "question": "What would digitizing town records save in storage space and building cost?",
+    "t": 863,
+    "words_as_heard": "digitization of what records we can eliminate paper copies of will reduce our overall square foot needs for storage",
+    "data_in_play": [
+     "5 000 square feet",
+     "400 to 4 500 a square foot"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "town-building-concepts",
+    "title": "Town building concepts",
+    "question": "What space and cost options are being weighed for town offices and the Ritter building?",
+    "t": 1684,
+    "words_as_heard": "prioritization criteria that we have all the space needs",
+    "data_in_play": [
+     "5 000 square feet"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to let the chair and town manager approve a letter supporting a regional planning grant for MBTA Communities compliance.",
+    "t": 3113
+   },
+   {
+    "line": "The board ratified the town manager's annual appointments and the list of police officers for reappointment effective July 1, 2022; both passed.",
+    "t": 454
+   },
+   {
+    "line": "The town manager reported on 30 School Street, where a state-funded asbestos project is complete and further abatement and a demolition estimate follow.",
+    "t": 715
+   },
+   {
+    "line": "The board entered a draft town manager evaluation, with members to send changes to the chair and finalization planned for next week.",
+    "t": 1322
+   },
+   {
+    "line": "The board considered an accounts payable warrant; the vote outcome is not audible in the recording.",
+    "t": 1532
+   }
+  ],
+  "why_it_matters": [
+   "The grant is described as free and state-funded through fiscal year 24 and as not obliging the town to adopt zoning, so it bears on how Lunenburg plans for MBTA Communities rules without a town appropriation.",
+   "The 30 School Street work and the records retention plan are capital items that could shape future capital requests and the cost of building space."
+  ],
+  "watch_next": [
+   "Finalization of the town manager evaluation, expected at the board's next week meeting.",
+   "The estimate for demolition and remaining hazardous materials abatement at 30 School Street."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T16:54:49Z",
+   "cost_usd": 0.2267257
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05172022-5303",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-05-17-minutes-5303.txt",
+   "path": "sources/meetings/select-board/2022-05-17-minutes-5303.pdf"
+  },
+  "official_sha256": "11464589755676df6c8d6c45fd2c6b356cf63801eb2c78e98aa270d4f73fbd82",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the main votes (annual appointments, police reappointments, MRPC grant letter) and on the $50,000 and $334,176.53 figures. They differ on the accounts payable warrant, which ours lists as an inaudible vote and the town records as the Board signing it. Ours also holds several items the official text lacks (geocache, tree, volunteer event, $200,000 MassDevelopment figure, storage space), and the official text has the pole petitions and the building-naming policy.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 6,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: ratify town manager's annual appointments",
+    "ours": "Ratify the town manager's list of annual appointments — passed",
+    "official": "to ratify the town manager appointments as presented 2id: l. franco vote: all in favor",
+    "note": "Both record the ratification as passing.",
+    "t": 454
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: police officer reappointments",
+    "ours": "Ratify the list of police officers for reappointment effective July 1, 2022 — passed",
+    "official": "to ratify the town manger appointments as presented 2': l. franco vote: all in favor",
+    "note": "Both record a passed ratification of police appointments; the official quote's wording is garbled (it says 'town manger'), but the structured item describes police and civilian traffic appointments.",
+    "t": 584
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: letter of support for MRPC planning assistance grant",
+    "ours": "Delegate to the chair and town manager authority to review and approve the letter of support for the MRPC planning assistance grant for MBTA Communities compliance — passed",
+    "official": "for the chair of the select board and the town manager to have the authority to review and approve the letter of support for the mrpc grant",
+    "note": "Same delegation in both records, recorded as passing.",
+    "t": 3113
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Accounts payable warrant: vote or signing",
+    "ours": "Accounts payable warrant — not audible",
+    "official": "the board signed an accounts payable warrant in the amount of $334,176.53.",
+    "note": "Ours lists a vote whose outcome could not be heard; the official minutes record a signing and no vote. Check the recording to see whether a vote was taken.",
+    "t": 1532
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrant amount",
+    "ours": "Accounts payable warrant: 334 176.53",
+    "official": "the board signed an accounts payable warrant in the amount of $334,176.53.",
+    "note": "Same amount.",
+    "t": 1532
+   },
+   {
+    "kind": "agree",
+    "about": "30 School Street asbestos project amount",
+    "ours": "30 School Street asbestos project: 50 000",
+    "official": "the asbestos abatement project that was undertaken with the $50,000 we received from the state is now complete.",
+    "note": "Same $50,000 figure.",
+    "t": 715
+   },
+   {
+    "kind": "agree",
+    "about": "MBTA Communities planning assistance grant term",
+    "ours": "MBTA Communities planning assistance grant: fiscal year 24",
+    "official": "the grant is due this friday and would go through the end of fiscal year 2024.",
+    "note": "Both give fiscal year 2024.",
+    "t": 2884
+   },
+   {
+    "kind": "discrepancy",
+    "about": "MassDevelopment funding amount",
+    "ours": "MassDevelopment funding for Lunenburg: two hundred thousand dollars",
+    "official": "mr. jeffreys noted he was emailed by some residents about funding available from mass development.",
+    "note": "Ours records a $200,000 figure; the official minutes state no amounts for this item. Check the recording at this time to see whether the figure was spoken and what it referred to.",
+    "t": 3508
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Storage space in building plans",
+    "ours": "Storage space in building plans: 5 000, 400 to 4 500 a square foot",
+    "official": "",
+    "note": "The official minutes do not mention the storage space figures; the captions are also unclear here, so check the recording.",
+    "t": 1745
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Ritter and Town Hall alterations",
+    "ours": "Ritter and Town Hall alterations: fiscal 22, fiscal 23",
+    "official": "",
+    "note": "The official minutes have no matching item.",
+    "t": 780
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Geocache location approval",
+    "ours": "Board agreed that the town manager may approve the final geocache location without another board meeting.",
+    "official": "",
+    "note": "Not in the official minutes; this is a delegation of authority, so check whether the town recorded it.",
+    "t": 2309
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager evaluation finalization",
+    "ours": "Draft town manager evaluation entered as a draft; members to send changes to the chair; finalization next week.",
+    "official": "he will read it at the next board meeting for finalization.",
+    "note": "Both say the evaluation is finalized at the next meeting; members send changes to the chair (Mr. Alonzo).",
+    "t": 1322
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Replacement tree location",
+    "ours": "Chair and town manager to discuss a replacement tree location with the new DPW director once he is settled.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3756
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Volunteer appreciation event",
+    "ours": "Volunteer appreciation event penciled in for June 16 at the Eagle House.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3675
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pole petitions rescheduled",
+    "ours": "",
+    "official": "the two pole petitions scheduled for this evening will be rescheduled due to failure to notify the proper abutters.",
+    "note": "Our minutes do not mention the pole petitions.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Building-naming policy forwarded",
+    "ours": "",
+    "official": "ms. lemieux stated she had received it. she will forward it to the board members.",
+    "note": "Our minutes do not mention the School Committee's building-naming policy.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "mr. jeffreys noted he was emailed by some residents about funding available from mass development.",
+    "note": "Same member; the captions misspelled the name.",
+    "official_reading": "Mr. Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Bernie, presenter",
+    "ours": "Mr. Bernie (presenter)",
+    "official": "burney, land use director",
+    "note": "Same presenter; the captions misheard 'Burney' (Land Use Director).",
+    "official_reading": "Burney",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Chair Alonzo",
+    "ours": "Mr. Alonzo (chair)",
+    "official": "chairman alonzo called the meeting to order at 7:00 p.m.",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mr. Franco",
+    "ours": "Mr. Franco (member)",
+    "official": "mr. franco reported he had asked the school committee a couple of weeks ago about their policy for naming buildings and structures.",
+    "note": "Present in both.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Karen Menard, remote",
+    "ours": "Karen Menard (presenter, chair of the Park Commission (remote))",
+    "official": "ms. menard via zoom reported the parks commission is meeting tomorrow night",
+    "note": "Both have her attending remotely.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager name",
+    "ours": "the town manager (town manager)",
+    "official": "ms. lemieux presented her list of appointments with terms to expire june 30, 2023.",
+    "note": "Ours does not name the town manager; the official minutes name Ms. Lemieux as presenting the appointments, which is probably the same person. The identity is inferred, so check it.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Peterson's title",
+    "ours": "assistant manager Peterson (assistant town manager)",
+    "official": "executive assistant to the town manager",
+    "note": "Ours gives her title as assistant town manager; the official minutes list Elaine M. Peterson as Executive Assistant to the Town Manager. Check which title is correct.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendee: Mr. McCormack",
+    "ours": "",
+    "official": "mr. mccormack has received a time extension from his senior advisor",
+    "note": "The official minutes name Mr. McCormack with a status of 'not stated'; our minutes do not list him.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T16:56:28Z",
+   "cost_usd": 0.2617117
+  }
+ }
+}

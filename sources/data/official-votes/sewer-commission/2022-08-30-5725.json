@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-08-30",
  "docid": "5725",
@@ -12,63 +12,519 @@
  },
  "votes": [
   {
-   "motion": "Postpone decision on I! Forno grease trap compliance for 2 weeks to allow time to obtain pumping records",
-   "moved_by": "Dave MacDonald",
-   "seconded_by": "Brett Ramsden",
+   "motion": "To postpone a decision for 2 weeks on I! Forno's grease trap reports and give its owner a chance to call the pumping company.",
+   "moved_by": "Dave M.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to postpone a decision for 2 weeks and give i! forno's owner a chance to call his pumping company to get them back online."
+   "quote": "motion: dave m. second: brett r. to postpone a decision for 2 weeks and give i! forno's owner a chance to call his pumping company to get"
   },
   {
-   "motion": "Approve change of use at 3 Lancaster Ave to office space with requirement to discontinue grease trap",
-   "moved_by": "Dave MacDonald",
-   "seconded_by": "Mike Nault",
+   "motion": "To approve the change of use for 3 Lancaster Ave, with the speculation they will discontinue the grease trap and send certification to the Sewer Office.",
+   "moved_by": "Dave M.",
+   "seconded_by": "Mike N.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: dave m. second: mike n. to approve the change of use for 3 lancaster ave, with the speculation they will discontinue the grease trap and send certification to the sewer office."
+   "quote": "motion: dave m. second: mike n. to approve the change of use for 3 lancaster ave, with the speculation they will discontinue the grease trap"
   },
   {
-   "motion": "Accept minutes from June 14, 2022 meeting",
-   "moved_by": "Dave MacDonald",
-   "seconded_by": "Mike Nault",
+   "motion": "To accept the minutes for 6/14/22.",
+   "moved_by": "Dave M.",
+   "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion: dave m. to accept the minutes for 6/14/22. second: mike n. roll call vote: dave- aye, mike n.-aye and john-aye."
   },
   {
-   "motion": "Accept minutes from July 12, 2022 meeting",
-   "moved_by": "Brett Ramsden",
-   "seconded_by": "Dave MacDonald",
+   "motion": "To accept the minutes for 7/12/22.",
+   "moved_by": "Brett R.",
+   "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion: brett r. to accept the minutes for 7/12/22. second: dave m. roll call vote: dave-aye, brett-aye and john-aye."
   },
   {
-   "motion": "Accept Q1 FY2023 Sewer Commission commitment of $305,865.68 or less",
-   "moved_by": "Brett Ramsden",
-   "seconded_by": "Dave MacDonald",
+   "motion": "To accept the Q1FY23 Commitment of $305,865.68 or less.",
+   "moved_by": "Brett R",
+   "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion: brett r second: dave m. to accept the q1fy23 commitment of $305,865.68 or less. roll call vote: dave-aye, brett-aye and john-aye."
   },
   {
-   "motion": "Accept apportionment of sewer privilege fee assessment of $11,551.47 for 17 Highland Street",
-   "moved_by": "Dave MacDonald",
-   "seconded_by": "Brett Ramsden",
+   "motion": "To accept the apportionment of the Privilege Fee of $11,551.47 for 17 Highland St.",
+   "moved_by": "Dave M.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: dave m. second: brett r. to accept the apportionment of the privilege fee of $11,551.47 for 17 highland st. roll call vote: dave- aye, brett-aye and john-aye."
+   "quote": "motion: dave m. second: brett r. to accept the apportionment of the privilege fee of $11,551.47 for 17 highland st."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Brett Ramsden",
-   "seconded_by": "Dave MacDonald",
+   "motion": "To adjourn at 7:06pm.",
+   "moved_by": "Brett R.",
+   "seconded_by": "Dave M.",
    "outcome": "passed 3-0",
    "procedural": true,
    "quote": "motion: brett r. to adjourn: 7:06pm. second: dave m. roll call vote: brett-aye, dave- aye and john-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd text from macOS Vision; minor spacing inconsistencies preserved from source (e.g., \"Dave-aye\" vs \"Dave- aye\" across different roll calls, missing period after \"Brett R\" in vote 5).",
- "cost_usd": 0.1121455
+ "note": "Text is macOS Vision OCR of a scanned or converted document, so some names and figures may be misread (for example \"I! Forno\", \"filling fees\", \"vane Ranley\"); the signature block is garbled and not used. Several roll calls list only three members (6/14 and 7/12 minutes omit Brett; Mike Nault left after the 8/09 minutes postponement), recorded as printed. No motion is recorded on the Pondview waiver request, the FY22 indirect costs, or the Business Manager's resignation. The minutes contain no transfers. No document list heading is printed; the documents below are named inline in the text.",
+ "cost_usd": 0.021442380000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault,"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault,"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair-john reynolds, vice-chair- brett ramsden, members: dave macdonald and mike nault,"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Assistant Business Manager",
+   "status": "present",
+   "quote": "assistant business manager-paula bertram, minutes clerk-vane ranley"
+  },
+  {
+   "name": "vane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "assistant business manager-paula bertram, minutes clerk-vane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "absent",
+   "quote": "absent: business manager-barb lefebvre, clerk- mike deveikis and dpw director- bill bernard"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: business manager-barb lefebvre, clerk- mike deveikis and dpw director- bill bernard"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent: business manager-barb lefebvre, clerk- mike deveikis and dpw director- bill bernard"
+  },
+  {
+   "name": "Mike Mohamed",
+   "role": "Guest, representing I! Forno",
+   "status": "present",
+   "quote": "guests: mike mohamed (i forno), ryan proctor (dillis & roy)"
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "Guest, representing the applicant (Dillis & Roy)",
+   "status": "present",
+   "quote": "ryan stated that he is representing the applicant for a change of use at 3 lancaster ave to convert the existing space"
+  },
+  {
+   "name": "Mark Moscinski",
+   "role": "Applicant, 400 Sunnyhill Rd.",
+   "status": "absent",
+   "quote": "mark moscinski- 400 sunnyhill rd. -did not attend."
+  },
+  {
+   "name": "Jacie Nicoll",
+   "role": "Applicant, Smokestack Roasters",
+   "status": "not stated",
+   "quote": "jacie nicoll (smokestack roasters) - appointment cancelled and they withdrew their request for a hearing."
+  },
+  {
+   "name": "Jane",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jane asked the chair if the commission can vote on minutes before mike nault needs to leave the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula will add the I! Forno discussion to the next meeting agenda.",
+   "quote": "paula will add the discussion to the next meeting agenda"
+  },
+  {
+   "decision": "John asked Paula to find out when the ZBA will have the Pondview waiver on its agenda and add it to the next Sewer Commission agenda.",
+   "quote": "john asked paula to find out when the zba will have this on their agenda and also add it to the next agenda for discussion."
+  },
+  {
+   "decision": "Paula will send Commissioners a copy of the Sewer Commission's concerns for the Pondview project.",
+   "quote": "paula will also send commissioners a copy of the sewer commission's concerns for this project."
+  },
+  {
+   "decision": "Grease trap non-compliance for Conrad's and A&D Crossroads to go on the next agenda; John agreed to have them put on the next agenda.",
+   "quote": "john agreed to have them put on the next agenda."
+  },
+  {
+   "decision": "The FY22 indirect costs credit was taken offline; John will call the Town Manager regarding the issue.",
+   "quote": "but the commission decided to take it offline and john will call the town manager regarding the issue."
+  },
+  {
+   "decision": "Acceptance of the Business Manager's resignation held over to the next meeting, on Dave's recommendation (no vote recorded).",
+   "quote": "business manager's resignation- dave recommended holding off accepting the resignation until the next meeting."
+  },
+  {
+   "decision": "Paula will talk to the DPW Director about the ARPA proposal; John to discuss it with the DPW Director and the Selectmen.",
+   "quote": "paula said she will talk to bill, but suggested john also discuss it with bill and the selectmen."
+  },
+  {
+   "decision": "John asked the Commissioners to stop at the DPW building to sign items.",
+   "quote": "john asked the commissioners to stop at the dpw building to sign items."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pondview Commons 40B filing fee and waiver request",
+   "what_was_recorded": "The applicant sent a $1,000 check seeking a waiver of the ZBA filing fees, which are $86,000; the applicant's attorneys call that unreasonable and offered a peer review at proposal cost.",
+   "figures_as_printed": [
+    "$1,000",
+    "$86,000"
+   ],
+   "quote": "sent a check for $1,000. the filling fees required are $86,000, but their attorneys say this is unreasonable and not"
+  },
+  {
+   "topic": "ARPA proposal from Sewer Commission",
+   "what_was_recorded": "The DPW Director submitted Sewer Commission ideas to the Town Manager for $200k for manholes and $300K for pump stations.",
+   "figures_as_printed": [
+    "$200k",
+    "$300K"
+   ],
+   "quote": "submitted the sewer commission's ideas to the town manager for $200k (manholes) and $300k (pump stations)."
+  },
+  {
+   "topic": "Q1FY23 sewer commitment",
+   "what_was_recorded": "Q1 bills went out 8/16 for $305,865.68, with adjustments expected to reduce it; the Commission accepted the commitment of that amount or less.",
+   "figures_as_printed": [
+    "$305,865.68"
+   ],
+   "quote": "the bills went out on 8/16 for $305,865.68 but there will be adjustments to"
+  },
+  {
+   "topic": "Privilege fee order, 17 Highland St.",
+   "what_was_recorded": "Owner chose to apportion the betterment over 20 years; the sewer privilege fee assessment is $11,551.47, plus a $105 recording fee paid by the owner.",
+   "figures_as_printed": [
+    "$11,551.47",
+    "$105"
+   ],
+   "quote": "the sewer commission needed to vote and issue an order of sewer privilege fee assessment of $11,551.47."
+  },
+  {
+   "topic": "Grease trap program non-compliance fees",
+   "what_was_recorded": "Fees were issued totalling $4,350 to businesses that were non-compliant.",
+   "figures_as_printed": [
+    "$4,350"
+   ],
+   "quote": "they issued fees in the amount of $4,350 for businesses that were non-compliant."
+  },
+  {
+   "topic": "FY22 indirect costs adjustment",
+   "what_was_recorded": "The Commission was charged about $900 in benefits during a two-month period without a DPW Director; a credit was sought.",
+   "figures_as_printed": [
+    "$900"
+   ],
+   "quote": "the commission was charged for benefits of about $900."
+  },
+  {
+   "topic": "FY23 budget status",
+   "what_was_recorded": "Expenses to date were reported at $39,531.41 and revenues at $347,461.97; the budget was described as fine.",
+   "figures_as_printed": [
+    "$39,531.41",
+    "$347,461.97"
+   ],
+   "quote": "paula noted currently the expenses are $39,531.41 and revenues are $347,461.97."
+  },
+  {
+   "topic": "Invoices for signature",
+   "what_was_recorded": "Invoices were presented: Fitchburg $14,154.55, Leominster usage $112,146.74, and Mead, Talerman $81.34 for a bankruptcy order of discharge.",
+   "figures_as_printed": [
+    "$14,154.55",
+    "$112,146.74",
+    "$81.34"
+   ],
+   "quote": "invoices- fitchburg (6/26-7/25) - $14,154.55, leominster usage - $112,146.74 and mead, talerman -$ 81.34"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave",
+   "stated_role": "on behalf of the Lion's Club",
+   "topic": "food drive at Hickory Hills",
+   "quote": "public comment- dave, on behalf of the lion's club, thanked all who came out to support the food drive at"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: Q1 sewer bills",
+   "resolution": "no action",
+   "quote": "announcements - john reported the q1 sewer bills were sent out on 8/16.",
+   "tags": [
+    "sewer bills"
+   ]
+  },
+  {
+   "topic": "Appointments: Jacie Nicoll and Mark Moscinski",
+   "resolution": "Nicoll withdrew; Moscinski did not attend (see later item)",
+   "quote": "mark moscinski- 400 sunnyhill rd. -did not attend.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Pondview Commons 40B comprehensive permit",
+   "resolution": "no action; staff to report to ZBA and add to next agenda",
+   "quote": "pondview commons 40b comprehensive permit application- john noted the sewer dept. received a large binder for this application",
+   "tags": [
+    "40B",
+    "Pondview",
+    "ZBA",
+    "filing fees",
+    "SSA"
+   ]
+  },
+  {
+   "topic": "Appointment: I! Forno grease traps",
+   "resolution": "postponed two weeks",
+   "quote": "mike mohamed i forno restaurant) - mike explained that grease trapper was taking care of their grease traps.",
+   "tags": [
+    "grease trap",
+    "I! Forno",
+    "non-compliance"
+   ]
+  },
+  {
+   "topic": "Change of use, 3 Lancaster Ave",
+   "resolution": "approved, conditioned on discontinuing grease trap",
+   "quote": "ryan proctor (dillis & roy) - re. 3 lancaster ave. change of use - ryan stated that he is representing the",
+   "tags": [
+    "change of use",
+    "Title V",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Minutes 6/14/22, 7/12/22, 8/09/22",
+   "resolution": "6/14 and 7/12 accepted; 8/09 postponed",
+   "quote": "minutes for 8/09/22 - were postponed to the next meeting (mike n. left the meeting)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "ARPA proposal",
+   "resolution": "no action; discuss with DPW Director and Selectmen",
+   "quote": "arpa proposal- john reported bill (dpw director) submitted the sewer commission's ideas to the town manager",
+   "tags": [
+    "ARPA",
+    "manholes",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant, Nov 15 2022",
+   "resolution": "no action; stabilization transfer article to be worked on",
+   "quote": "special town meeting warrant for november 15, 2022- john reported the warrant opened on 8/23 and articles",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Q1FY23 commitment",
+   "resolution": "accepted",
+   "quote": "q1fy23 commitment-paula reported the bills went out on 8/16 for $305,865.68 but there will be adjustments to",
+   "tags": [
+    "commitment",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Privilege fee order, 17 Highland St.",
+   "resolution": "apportionment accepted",
+   "quote": "privilege fee order- 17 highland st.- paula reported the owner of the property has chosen to apportion the",
+   "tags": [
+    "privilege fee",
+    "betterment"
+   ]
+  },
+  {
+   "topic": "Grease trap program: permits and reports",
+   "resolution": "no action; non-compliance process to start next meeting if still outstanding",
+   "quote": "grease trap program- annual permits outstanding - paula noted that they issued fees in the amount of $4,350",
+   "tags": [
+    "grease trap",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Business Manager report: Muni-Link",
+   "resolution": "no action; meeting with Finance, Accountant, Tax Collector, Town Manager planned",
+   "quote": "business manager report - muni-link update- paula stated that after going through the billing, it is clear they",
+   "tags": [
+    "Muni-Link",
+    "Munis",
+    "billing"
+   ]
+  },
+  {
+   "topic": "FY22 indirect costs adjustment",
+   "resolution": "taken offline; Chair to call Town Manager",
+   "quote": "fy22 indirect costs adjustment- john noted there was a 2-month period of not having a dpw director and the",
+   "tags": [
+    "indirect costs",
+    "benefits",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "FY23 budget",
+   "resolution": "no action; budget looked fine",
+   "quote": "fy23 budget- john and paula agreed the budget looks fine. paula noted currently the expenses are $39,531.41",
+   "tags": [
+    "FY23 budget",
+    "waivers",
+    "watering"
+   ]
+  },
+  {
+   "topic": "Invoices and signatures",
+   "resolution": "no action; Commissioners to sign at DPW office",
+   "quote": "invoices- fitchburg (6/26-7/25) - $14,154.55, leominster usage - $112,146.74 and mead, talerman",
+   "tags": [
+    "invoices",
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Business Manager's resignation",
+   "resolution": "held to next meeting",
+   "quote": "business manager's resignation- dave recommended holding off accepting the resignation until the next meeting.",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Mark Moscinski, 400 Sunnyhill Rd.",
+   "resolution": "no action; Commission to monitor possible illegal connection",
+   "quote": "mark moscinski-re. 400 sunnyhill rd. -he had a 6:45 appointment this evening but did not attend.",
+   "tags": [
+    "illegal connection",
+    "drain layers",
+    "400 Sunnyhill"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one speaker (Lion's Club); none further",
+   "quote": "public comment - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Action items: Whalom District pipes",
+   "resolution": "suggested; no vote",
+   "quote": "dave suggested sitting down with leominster to discuss coating or lining the pipes in the whalom district",
+   "tags": [
+    "Whalom",
+    "Leominster",
+    "Fitchburg",
+    "pipe lining"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:06pm",
+   "quote": "motion: brett r. to adjourn: 7:06pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pondview Commons 40B Comprehensive Permit Application (binder, received Aug. 25)",
+   "where": "text",
+   "quote": "john noted the sewer dept. received a large binder for this application and he briefly looked at it."
+  },
+  {
+   "name": "List of requested waivers for Pondview Commons 40B",
+   "where": "text",
+   "quote": "she had sent the commission a list of the requested waivers which includes a waiver for requiring the project be inside the ssa"
+  },
+  {
+   "name": "Two items included in the package sent out (Pondview)",
+   "where": "text",
+   "quote": "john encouraged the commissioners to read the 2 items that were included in the package sent out"
+  },
+  {
+   "name": "Grease trap permit application checklist",
+   "where": "text",
+   "quote": "on the grease trap permit application checklist, it states the owner is responsible for submitting the reports"
+  },
+  {
+   "name": "Special Town Meeting Warrant for November 15, 2022",
+   "where": "text",
+   "quote": "special town meeting warrant for november 15, 2022- john reported the warrant opened on 8/23 and articles"
+  },
+  {
+   "name": "Q1FY23 Commitment paperwork",
+   "where": "text",
+   "quote": "she has the commitment paperwork for the commissioners to sign."
+  },
+  {
+   "name": "Order of sewer privilege fee assessment, 17 Highland St.",
+   "where": "text",
+   "quote": "the sewer commission needed to vote and issue an order of sewer privilege fee assessment of $11,551.47."
+  },
+  {
+   "name": "Drain layers application (400 Sunnyhill Rd.)",
+   "where": "text",
+   "quote": "we received the drain layers application for a drain layers license, but have not received an application to connect"
+  },
+  {
+   "name": "Engineered plan from Whitman & Bingham (400 Sunnyhill Rd.)",
+   "where": "text",
+   "quote": "the contractor is in contact with whitman & bingham for an engineered plan that rob (oliva)"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "grease trap",
+  "Pondview Commons 40B",
+  "ARPA",
+  "sewer commitment",
+  "privilege fee",
+  "FY23 budget",
+  "Muni-Link",
+  "change of use",
+  "minutes approval",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "she had sent the commission a list of the requested waivers"
+ },
+ "dropped_unquoted_by_field": {}
 }

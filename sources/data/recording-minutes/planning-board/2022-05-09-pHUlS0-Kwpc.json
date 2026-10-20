@@ -1,0 +1,382 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2022-05-09",
+ "video_id": "pHUlS0-Kwpc",
+ "video_url": "https://www.youtube.com/watch?v=pHUlS0-Kwpc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2022-05-09-pHUlS0-Kwpc.json",
+  "sha256": "eca6981d5d6bde97c0875678f5a5e2d6443bbfb8774ce788f918077afb6a9ca7",
+  "caption_lines": 53,
+  "segments": 478
+ },
+ "recording": {
+  "duration_s": 1293,
+  "duration": "0:21",
+  "spoken_chars": 12814,
+  "words_approx": 2135
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05092022-4167",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-05-09-agenda-4167.txt",
+   "path": "sources/meetings/planning-board/2022-05-09-agenda-4167.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05092022-4167",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-05-09-minutes-4167.txt",
+   "path": "sources/meetings/planning-board/2022-05-09-minutes-4167.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T17:25:35Z",
+  "cost_usd": 0.2821203
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Allison",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Brenner",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mrs. Bertram",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "planning director",
+    "role": "presenter"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 564,
+    "topic": "State planning assistance grant for MBTA Communities compliance",
+    "what_was_said": "The director described a state planning assistance grant due soon, requiring a match that can be met partly with in-kind services. It would fund a consultant for early compliance work.",
+    "figures_as_heard": [
+     "fifty thousand dollars",
+     "twenty five percent match"
+    ]
+   },
+   {
+    "t": 271,
+    "topic": "Master plan funding",
+    "what_was_said": "The director said the money for the master plan was obtained at town meeting and he is drafting the RFP.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 768,
+    "topic": "Financial implications of MBTA zoning for the town",
+    "what_was_said": "A member worried that the planning board opposing the process could cost the town money for DPW funds and other select board priorities.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1079,
+    "topic": "Back taxes on Chapter land conveyance",
+    "what_was_said": "The director explained that back taxes would be calculated on the actual area conveyed and the town gets the three-year penalty either way.",
+    "figures_as_heard": [
+     "three-year penalty"
+    ]
+   }
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 893,
+    "about": "A member questioned the timing of the director bringing a grant for MBTA compliance right after the board said it did not want to pursue it.",
+    "sides": "One member skeptical of the director's timing; the director and another member responding that state programs work that way",
+    "words_as_heard": "it's the meeting after we said that we didn't want to do this and we didn't care about the grants",
+    "kind": "members disagree"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 292,
+    "decision": "Director to have the master plan RFP drafted by end of June for board review, then to procurement, aiming for the central register in August."
+   },
+   {
+    "t": 379,
+    "decision": "Director to follow up with groups invited to the joint meeting; only the water district has replied so far."
+   },
+   {
+    "t": 1099,
+    "decision": "Director to confirm before the May 23 meeting that the select board step on the land conveyance was executed."
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "name_as_heard": "MBTA Communities questionnaire",
+    "kind": "application or permit",
+    "words_as_heard": "i submitted the paperwork and i can get you guys a copy of it it's a questionnaire more than anything",
+    "shown": false,
+    "t": 564
+   },
+   {
+    "name_as_heard": "master plan RFP",
+    "kind": "other",
+    "words_as_heard": "i've started working on crafting the rfp",
+    "shown": false,
+    "t": 271
+   },
+   {
+    "name_as_heard": "Compliance plan for MBTA zoning",
+    "kind": "report",
+    "words_as_heard": "put together a plan for compliance which would be due i think it's december of of 2023",
+    "shown": false,
+    "t": 831
+   }
+  ],
+  "headline": "Planning Board split on whether to pursue a state grant to study MBTA Communities zoning compliance.",
+  "not_audible": [
+   "The first minutes of the meeting before the captions begin, including the roll call.",
+   "Name of the previous sewer commission chair."
+  ],
+  "public_comment": [],
+  "suggested_reports": [
+   {
+    "slug": "mbta-communities-compliance",
+    "title": "MBTA Communities compliance",
+    "question": "What does MBTA Communities zoning require of Lunenburg and what grant money is available to plan for it?",
+    "t": 503,
+    "words_as_heard": "there is a planning assistance grant from the state that is due in the near future it's up to fifty thousand dollars with a twenty five percent match",
+    "data_in_play": [
+     "fifty thousand dollars",
+     "twenty five percent match",
+     "december of 2023"
+    ],
+    "existing": ""
+   }
+  ],
+  "summary": "A short Planning Board meeting dominated by the director's report. The main discussion was whether to apply for a state planning grant tied to MBTA Communities zoning compliance, with members divided on the tone. No formal votes were taken beyond adjournment.",
+  "tags": [
+   "economic-development",
+   "grants",
+   "housing",
+   "planning-and-zoning",
+   "public-comment",
+   "town-meeting"
+  ],
+  "topics": [
+   {
+    "t_start": 210,
+    "t_end": 250,
+    "topic": "Business community and cultural council events",
+    "resolution": "informational",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 250,
+    "t_end": 503,
+    "topic": "Director's items: town meeting results, master plan RFP, 40B workshop, joint meeting outreach",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "planning-and-zoning",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 503,
+    "t_end": 956,
+    "topic": "MBTA Communities zoning and planning assistance grant",
+    "resolution": "no resolution",
+    "tags": [
+     "planning-and-zoning",
+     "housing",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 956,
+    "t_end": 1224,
+    "topic": "Next meeting hearings: Northfield land, Fahlula warehouse, cannabis retail",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1224,
+    "t_end": 1290,
+    "topic": "Public comment, groundbreaking RSVP, adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "transfers": [],
+  "votes": [
+   {
+    "t": 1266,
+    "motion": "Adjourn the meeting",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board took no votes beyond adjournment and left a state planning grant for MBTA Communities zoning compliance unresolved.",
+    "t": 503
+   },
+   {
+    "line": "Members were divided on the tone to take toward MBTA zoning, and one worried that opposing the process could put other town funding at risk.",
+    "t": 768
+   },
+   {
+    "line": "The director described a grant that needs a match, which can be met partly with in-kind services, and would fund a consultant for early compliance work.",
+    "t": 564
+   },
+   {
+    "line": "The director is drafting the master plan RFP for board review by end of June, aiming for the state central register in August.",
+    "t": 292
+   },
+   {
+    "line": "The director is to confirm that the select board step on a Chapter land conveyance was executed, with back taxes figured on the area actually conveyed.",
+    "t": 1099
+   }
+  ],
+  "why_it_matters": [
+   "Whether the town applies for the grant decides if it has outside help meeting MBTA Communities zoning rules, which a member linked to other state money the town may seek.",
+   "The master plan RFP is the next step in spending the money town meeting provided, and it will shape what residents are later asked to vote on."
+  ],
+  "watch_next": [
+   "The May 23 Planning Board meeting, where the director is to confirm the land conveyance step and hearings on the Northfield land, the warehouse and cannabis retail are expected.",
+   "The draft master plan RFP, due to the board by the end of June."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T17:25:48Z",
+   "cost_usd": 0.2243777
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05092022-4167",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2022-05-09-minutes-4167.txt",
+   "path": "sources/meetings/planning-board/2022-05-09-minutes-4167.pdf"
+  },
+  "official_sha256": "bc6f32010ef723a6b4ba442e003d2f4b24c93137d3cc2c28e0125c229326752a",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree that there were no votes or transfers and on the $50,000 grant with a 25% match. They differ in which items each covers and in who attended. The main difference is attendance: our captions place Mrs. Bertram at the meeting and never mention Chair Tanner Cole, while the official minutes record her absent and him present.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote, and neither has a transfer.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "State planning assistance grant for MBTA Communities, $50,000 with 25% match",
+    "ours": "State planning assistance grant for MBTA Communities compliance: fifty thousand dollars, twenty five percent match",
+    "official": "a. burney noted an upcoming planning assistance grant from the state up to $50,000 with a 25% match.",
+    "note": "The amount and the match percentage are the same in both records.",
+    "t": 564
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY2023 Capital Plan funding for Master Plan update",
+    "ours": "",
+    "official": "the fy2023 capital plan passed, which included $110,000 for updating of the master plan.",
+    "note": "Our minutes do not have the $110,000 figure. Our minutes do have a director item about the master plan RFP.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Back taxes on Chapter land conveyance, three-year penalty",
+    "ours": "Back taxes on Chapter land conveyance: three-year penalty",
+    "official": "",
+    "note": "The official minutes do not mention the Chapter land conveyance or the penalty.",
+    "t": 1079
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Director to have master plan RFP drafted by end of June",
+    "ours": "Director to have the master plan RFP drafted by end of June for board review, then to procurement, aiming for the central register in August.",
+    "official": "",
+    "note": "This is a staff follow-up, not a vote. The official minutes list no decisions.",
+    "t": 292
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Follow-up with groups invited to the joint meeting",
+    "ours": "Director to follow up with groups invited to the joint meeting; only the water district has replied so far.",
+    "official": "",
+    "note": "The official minutes do not mention the joint meeting invitations.",
+    "t": 379
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Confirm select board step on land conveyance was executed",
+    "ours": "Director to confirm before the May 23 meeting that the select board step on the land conveyance was executed.",
+    "official": "",
+    "note": "The official minutes do not mention this item. A person should check whether it was omitted from the official record.",
+    "t": 1099
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendance of Paula Bertram",
+    "ours": "Mrs. Bertram (member)",
+    "official": "absent: paula bertram, erik torgersen",
+    "note": "Our captions list Mrs. Bertram as a member present, while the official minutes record her as absent. Check the recording to see whether someone else was speaking, or whether the attendance record is wrong.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Tanner Cole present",
+    "ours": "",
+    "official": "present: tanner cole, matthew allison, matthew brenner, adam burney",
+    "note": "Our attendee list has no Tanner Cole. The official minutes show him present as Chair. Check whether the captions missed him or he was misnamed as Bertram.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Erik Torgersen absent",
+    "ours": "",
+    "official": "absent: paula bertram, erik torgersen",
+    "note": "The official minutes record Torgersen as absent. Our list does not mention him, which is consistent with absence.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees Allison, Brenner, and the director",
+    "ours": "Mr. Allison (member); Mr. Brenner (member); planning director (presenter)",
+    "official": "present: tanner cole, matthew allison, matthew brenner, adam burney",
+    "note": "Allison, Brenner and the director (Adam Burney, Land Use Director) are present in both records.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T17:26:37Z",
+   "cost_usd": 0.305138
+  }
+ }
+}

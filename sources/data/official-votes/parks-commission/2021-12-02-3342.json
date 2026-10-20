@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-12-02",
  "docid": "3342",
@@ -12,15 +12,233 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 9:23 pm.",
    "moved_by": "D Passios",
    "seconded_by": "C Sullivan",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mocon to adjourn at 9:23 made by d passios, seconded by c sullivan"
+   "quote": "adjourn-mocon to adjourn at 9:23 made by d passios, seconded by c sullivan"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes contain OCR artifacts (e.g. \"MoCon\" for \"Motion\", \"a,endance\" for \"attendance\") but are legible and do not affect vote recording.",
- "cost_usd": 0.0738234
+ "note": "OCR-style text: ligatures and some letters are garbled (e.g., \"meeCng\" = meeting, \"a,endance\" = attendance, \"@\" = ti, \"draQ\" = draft); quotes reproduce these exactly as printed. \"Nick Be,s\" is printed as such and is probably Nick Betts, but that is not confirmed in the minutes. The minutes contain no recorded motions other than adjournment, and the adjournment is recorded as roll call with four ayes; no explicit count is printed, so outcome is \"passed\". The minutes name \"C Menard, Vice Chair of the FINCOM\" in Other Business, and the public commenter \"Chris Menard, from 672 Page St.\"; the minutes do not say whether these are the same person, so they are kept separate. The minutes print no dollar figures at all. Dawn Pavone (Minutes Secretary, who signed the minutes) and Susanna Jewell (Secretary, listed in the letterhead only) are not recorded as taking part and are omitted from attendees. Rob Thompson and Rob Oliva are mentioned but not recorded as present.",
+ "cost_usd": 0.01688698,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in a,endance is karin menard, ana lockwood, chris sullivan and dave passios."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "in a,endance is karin menard, ana lockwood, chris sullivan and dave passios."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "in a,endance is karin menard, ana lockwood, chris sullivan and dave passios."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "in a,endance is karin menard, ana lockwood, chris sullivan and dave passios."
+  },
+  {
+   "name": "Kathryn Ostermier",
+   "role": "representative from WOLA",
+   "status": "present",
+   "quote": "also in a,endance are the representacve from wola kathryn ostermier, emily wright and nick be,s from meridian engineering."
+  },
+  {
+   "name": "Emily Wright",
+   "role": "not stated (listed with WOLA in the attendance line)",
+   "status": "present",
+   "quote": "also in a,endance are the representacve from wola kathryn ostermier, emily wright and nick be,s from meridian engineering."
+  },
+  {
+   "name": "Nick Be,s",
+   "role": "from Meridian Engineering",
+   "status": "present",
+   "quote": "also in a,endance are the representacve from wola kathryn ostermier, emily wright and nick be,s from meridian engineering."
+  },
+  {
+   "name": "Dave Rogers",
+   "role": "a resident of Highland St",
+   "status": "present",
+   "quote": "dave rogers a resident of highland st"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "A resident from town, from 672 Page St.",
+   "status": "present",
+   "quote": "a resident from town, chris menard, from 672 page st."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair asked Rob Thompson to come pull League registration forms and verify dates.",
+   "quote": "k menard has asked rob thompson to come sit to pull league registracon forms and verify dates."
+  },
+  {
+   "decision": "Next public participation meeting set for January 6, 2022; a February 2 meeting is the fallback if the room is available.",
+   "quote": "k menard added that the next meecng for the public parccipacon will be january 6, 2022."
+  },
+  {
+   "decision": "WOLA to circulate a draft of the site analysis presentation for board comment and reach out to DPW Director Rob Oliva.",
+   "quote": "k ostermier will have a draq of the site analysis presentacon for any comments from the board"
+  },
+  {
+   "decision": "Next meeting date set for January 6th.",
+   "quote": "next mee@ng date/agenda january 6th next meecng"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Open Space grant funds",
+   "what_was_recorded": "Discussion of Open Space funds available and possible grant-funded projects, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "open space funds that are available"
+  },
+  {
+   "topic": "Facilities usage fees",
+   "what_was_recorded": "Chair voiced concern about increasing league usage fees, which she believed had already been set; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "she has concerns with increasing fees"
+  },
+  {
+   "topic": "DPW budget presentation to Parks",
+   "what_was_recorded": "FINCOM Vice Chair asked the DPW Director to present his budget to Parks for the Jan/Feb timeline; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "has asked the dpw director to present his budget to parks"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rogers",
+   "stated_role": "a resident of Highland St",
+   "topic": "Marshall Park memorials, safety and pond",
+   "quote": "he voiced that nothing should be done to marshall pond to keep it small town."
+  },
+  {
+   "speaker": "Chris Menard",
+   "stated_role": "A resident from town, from 672 Page St.",
+   "topic": "baseball fields planning and lacrosse",
+   "quote": "a resident from town, chris menard, from 672 page st. has concerns that the baseball issues should be"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public and board comment",
+   "resolution": "no action (none)",
+   "quote": "2. public and board comment-none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Marshall Park landscape architect WOLA discussion forum",
+   "resolution": "listening session held; no action",
+   "quote": "marshall park- landscape architect wola discussion forum- presentacon was led by kathryn ostermier",
+   "tags": [
+    "marshall park",
+    "WOLA",
+    "public participation",
+    "baseball fields",
+    "pond"
+   ]
+  },
+  {
+   "topic": "Open Space grant ideas",
+   "resolution": "discussed; no action",
+   "quote": "open space- brief discussion regarding potencal ideas to be submi,ed for grant consideracon.",
+   "tags": [
+    "open space",
+    "grants",
+    "dog exercise",
+    "beach"
+   ]
+  },
+  {
+   "topic": "Other business: school facilities use and League registration",
+   "resolution": "discussed; chair to have League forms pulled and dates verified",
+   "quote": "the school has reopened their policy on their facilices uses",
+   "tags": [
+    "school facilities",
+    "youth sports",
+    "league registration",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Next meeting date and agenda",
+   "resolution": "set for January 6, 2022",
+   "quote": "next mee@ng date/agenda january 6th next meecng",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "approved 9:23 pm",
+   "quote": "adjourn-mocon to adjourn at 9:23 made by d passios, seconded by c sullivan",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft site analysis presentation (WOLA)",
+   "where": "text",
+   "quote": "k ostermier will have a draq of the site analysis presentacon for any comments from the board"
+  },
+  {
+   "name": "Drawing of a suggested potential pavilion area (D Passios)",
+   "where": "text",
+   "quote": "d passios had a drawing of a suggested potencal pavilion area."
+  },
+  {
+   "name": "Reciprocal use agreement (school facilities)",
+   "where": "text",
+   "quote": "discussion followed from the commission about their raconale for the priorices and the reciprocal use agreement."
+  },
+  {
+   "name": "League registration forms",
+   "where": "text",
+   "quote": "k menard has asked rob thompson to come sit to pull league registracon forms and verify dates."
+  },
+  {
+   "name": "Community survey (Marshall Park)",
+   "where": "text",
+   "quote": "from the survey an ice skacng rink was menconed frequently."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "marshall park",
+  "WOLA design",
+  "public participation",
+  "open space",
+  "youth sports",
+  "school facilities",
+  "league registration",
+  "baseball fields",
+  "pond",
+  "memorials",
+  "dog exercise",
+  "beach"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

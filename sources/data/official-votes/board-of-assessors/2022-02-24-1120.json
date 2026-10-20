@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2022-02-24",
  "docid": "1120",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the January 20, 2022 minutes",
+   "motion": "Approve the January 20, 2022 minutes.",
    "moved_by": "Kevin",
    "seconded_by": "Rich",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "kevin made a motion to approve the january 20, 2022 minutes. rich seconded. all in favor."
   },
   {
-   "motion": "adjourn the meeting at 11:29 am",
+   "motion": "Adjourn the meeting at 11:29 am.",
    "moved_by": "Kevin",
    "seconded_by": "Christine",
    "outcome": "passed",
@@ -29,6 +29,130 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR-scanned and readable. The minutes describe abatement applications approved/denied and expense items reviewed, but these lack explicit motion language, seconders, and formal vote outcomes, so they are not recorded as votes per the instructions.",
- "cost_usd": 0.08459249999999999
+ "note": "Scanned minutes read by OCR (macOS Vision); the closing lines are garbled in the text (\"Respectily Syried.\"). No roll call or vote tallies beyond \"All in favor\". Abatement and voucher approvals are recorded as the board's actions without a stated motion, so they are logged as decisions, not votes. No dollar figures, no public comment section, and no documents list appear in the text.",
+ "cost_usd": 0.01310508,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard H. Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Principal Assessor (Interim)",
+   "status": "present",
+   "quote": "also present principal assessor (interim), rena swezey and administrative assessing assistant, sheila"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "sheila craigen administrative assessing assistant office of the board of assessors"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Assistant Town Manager/HR Director",
+   "status": "present",
+   "quote": "at the request of the boa, julie belliveau, assistant town manager/hr director, made an appearance"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approved 14 residential real estate abatement applications and denied 2 residential applications. No motion or tally is recorded.",
+   "quote": "the boa ultimately approved 14 (fourteen) and denied 2 (two) residential applications"
+  },
+  {
+   "decision": "Denied 5 commercial abatement applications and approved 1. No motion or tally is recorded.",
+   "quote": "ultimately 5 (five) were denied and 1 (one) approved."
+  },
+  {
+   "decision": "Reviewed and approved current expense vouchers, abatements, warrants and commitments. No motion or tally is recorded.",
+   "quote": "boa reviewed and approved current expense vouchers, abatements, warrants and commitments."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "opened",
+   "quote": "rich opened the meeting at 10:01 am",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Approval of January 20, 2022 minutes",
+   "resolution": "approved",
+   "quote": "kevin made a motion to approve the january 20, 2022 minutes. rich seconded. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Real estate abatement applications",
+   "resolution": "approved 14 and denied 2 residential; denied 5 and approved 1 commercial",
+   "quote": "the boa ultimately approved 14 (fourteen) and denied 2 (two) residential applications",
+   "tags": [
+    "abatements",
+    "real estate"
+   ]
+  },
+  {
+   "topic": "Principal Assessor position",
+   "resolution": "no action; offer reported as made and accepted",
+   "quote": "julie stated an offer has been made and accepted for the position of the principal assessor.",
+   "tags": [
+    "hiring",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Expense vouchers, abatements, warrants and commitments",
+   "resolution": "approved",
+   "quote": "boa reviewed and approved current expense vouchers, abatements, warrants and commitments.",
+   "tags": [
+    "warrants",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:29 am",
+   "quote": "kevin made a motion to adjourn the meeting at 11:29 am. christine seconded, all in favor.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "board of assessors",
+  "abatements",
+  "real estate",
+  "principal assessor hiring",
+  "warrants and commitments",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

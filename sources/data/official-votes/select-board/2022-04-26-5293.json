@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-04-26",
  "docid": "5293",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointments of seasonal lifeguards Ean Laundree and Mason Bowser",
+   "motion": "Ratify the Town Manager's appointments of seasonal lifeguards Ean Laundree and Mason Bowser.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: t. dwyer to ratify the town manager's appointments as listed 2': m. jeffreys vote: all in favor"
   },
   {
-   "motion": "Approve the Commemorative Policy as presented with amendment of 25 years for expected life cycle",
+   "motion": "Approve the Commemorative Policy as presented, with the amendment of 25 years for the expected life cycle.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion: m. jeffreys 2\": t. dwyer to approve the commemorative policy as presented and with the amendment of 25 years vote: all in favor"
   },
   {
-   "motion": "Approve the Minutes of March 15, 2022 as written",
+   "motion": "Approve the Minutes of March 15, 2022 as written.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion: l. franco to approve the minutes of march 15, 2022 as written 2\": t. dwyer vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -45,6 +45,346 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan; some second-hand notations show \\\"2\\\": instead of standard \\\"2nd:\\\" format (OCR artifact). All votes recorded with \\\"All in Favor\\\" outcomes.\"",
- "cost_usd": 0.1118355
+ "note": "OCR text (macOS Vision). Page 1 header is garbled (the recording/broadcast sentence is cut). Page 5 opens mid-item with a bare figure ($845,815.21); the item it belongs to and agenda items 6-7 are not in the text. The minutes record only 'All in Favor' with no vote counts, so outcomes are 'passed'. No roll call is printed; board members are marked present because they moved or seconded motions. Board member roles are inferred from the Select Board name, not printed. Elaine M. Peterson signs the minutes as recorder and is not listed as an attendee. The Finance Committee's vote to defer the Capital Plan is a vote by another body, so it is not in votes. OCR artifacts such as '2':' for '2nd:' and 'Drait' for 'Draft' are kept as printed in quotes. The minutes print no documents list.",
+ "cost_usd": 0.02093108,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, finance committee member, stated the committee is"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "motion: t. dwyer to ratify the town manager's appointments as listed 2': m. jeffreys vote: all in favor"
+  },
+  {
+   "name": "M. Jeffreys",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "motion: m. jeffreys 2\": t. dwyer to approve the commemorative policy as presented and with the amendment of 25 years"
+  },
+  {
+   "name": "L. Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "motion: l. franco to approve the minutes of march 15, 2022 as written"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commemorative Policy: Mr. Franco to contact the School Committee about its policy.",
+   "quote": "mr. franco will contact the school committee about their policy."
+  },
+  {
+   "decision": "Foreclosed properties (Braeburn Circle, 867 Rear Leominster Road, 408 Lancaster Avenue): passed over until the board reviews all town properties; town meeting approval is required so the board has until November.",
+   "quote": "this was passed over until a review of all of the town properties is done by this board."
+  },
+  {
+   "decision": "Draft Tailings Policy: the board will review it and vote at a later date.",
+   "quote": "the board will review the policy and vote on it at a later date."
+  },
+  {
+   "decision": "One Day Liquor License insurance requirement: sample language from other towns and a list of one-day license applicants over five years requested; deferred to a future meeting.",
+   "quote": "this will be discussed at a future meeting."
+  },
+  {
+   "decision": "Sign Policy at polling places: Mr. Jeffreys to draft wording for the board to review.",
+   "quote": "mr. jeffreys will work on a draft to bring back for the board to review."
+  },
+  {
+   "decision": "Capital Plan / Town Counsel: Chair to attend the Finance Committee's consultation with Town Counsel and report back at the next meeting.",
+   "quote": "he will be attending that meeting and will report back at the next meeting"
+  },
+  {
+   "decision": "Volunteerism: Chair requested that the volunteer appreciation event at the Senior Center be resurrected.",
+   "quote": "mr. alonzo requested resurrecting the volunteer appreciation event at the senior center."
+  },
+  {
+   "decision": "Town Manager annual evaluation: board members to meet with the Town Manager and forward their evaluations to the Chair.",
+   "quote": "mr. alonzo reminded the board members to meet with town manager regarding her annual performance evaluation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Storm water / MS4 permit line item",
+   "what_was_recorded": "The Town Manager reported the line item budget for the MS4 work, most of which is consultant work on MS4 requirements.",
+   "quote": "ms. lemieux reported our line item budget is $104,000 but most of that is for the consultant work on the ms4",
+   "figures_as_printed": [
+    "$104,000"
+   ]
+  },
+  {
+   "topic": "Unidentified dollar figure at the start of page 5",
+   "what_was_recorded": "A dollar figure appears at the top of page 5 with no item named before it; the text it belongs to is missing from the extract.",
+   "quote": "$845,815.21. mr. alonzo reminded the board members to meet with town manager regarding her annual",
+   "figures_as_printed": [
+    "$845,815.21"
+   ]
+  },
+  {
+   "topic": "FY2023 Capital Plan and budget",
+   "what_was_recorded": "The Capital Plan was discussed; the Finance Committee voted to defer it to town meeting; the Chair said town meeting could adjust the dollar amount of the budget but not direct spending on particular items. No dollar figure is printed.",
+   "quote": "the town meeting could make an adjustment to the dollar amount of the budget, but in his opinion they couldn't",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "30 School Street demolition and engineering",
+   "what_was_recorded": "A warrant article for demolition and engineering costs for the 30 School Street project is referenced; no amount is printed.",
+   "quote": "we have a warrant article for demolition and engineering costs for the project.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Little League opening day, parade, Marshall Park and skate park sign",
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "quote": "dave passios announced the opening day of little league and the parade on saturday april 30th"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements and road closures",
+   "resolution": "no action",
+   "quote": "ms. lemieux reminded all of the upcoming annual town meeting on may 7 at 9:00 a.m. at",
+   "tags": [
+    "town meeting",
+    "announcements",
+    "roads"
+   ]
+  },
+  {
+   "topic": "Appointments: seasonal lifeguard ratification and openings",
+   "resolution": "ratified; openings read aloud",
+   "quote": "ms. lemieux reported these two individuals worked for the town last year and she is asking for",
+   "tags": [
+    "appointments",
+    "lifeguards",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Draft Commemorative Policy",
+   "resolution": "approved with 25-year life cycle",
+   "quote": "the board had reviewed this at a previous meeting. mr. alonzo asked if there were any",
+   "tags": [
+    "policy",
+    "commemorative naming"
+   ]
+  },
+  {
+   "topic": "Foreclosed properties requested by Conservation Commission",
+   "resolution": "passed over",
+   "quote": "this was passed over until a review of all of the town properties is done by this board.",
+   "tags": [
+    "property",
+    "conservation",
+    "foreclosure"
+   ]
+  },
+  {
+   "topic": "FY2023 budget, Capital Plan, forecast and town meeting warrant",
+   "resolution": "deferred to town meeting; Chair to report back",
+   "quote": "mr. alonzo noted the capital plan has been discussed extensively at the finance committee",
+   "tags": [
+    "budget",
+    "capital plan",
+    "town meeting",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Citizen's petition on state flag",
+   "resolution": "no action; no follow-up since the email",
+   "quote": "asked if they had any more information about the citizen's petition article about the state flag",
+   "tags": [
+    "petition",
+    "state flag"
+   ]
+  },
+  {
+   "topic": "Volunteerism policy goal",
+   "resolution": "discussed; no action",
+   "quote": "mr. alonzo noted their first goal was for 30 school street, which is in progress and we have a",
+   "tags": [
+    "volunteers",
+    "goals",
+    "earth day"
+   ]
+  },
+  {
+   "topic": "Draft Tailings Policy (uncashed checks)",
+   "resolution": "continued; board to vote later",
+   "quote": "ms. lemieux reported this addresses uncashed checks issued by the town.",
+   "tags": [
+    "policy",
+    "uncashed checks",
+    "audit",
+    "finance"
+   ]
+  },
+  {
+   "topic": "One Day Liquor License insurance requirement",
+   "resolution": "continued to a future meeting",
+   "quote": "ms. lemieux noted the current policy does not require liability insurance coverage.",
+   "tags": [
+    "liquor license",
+    "insurance",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Sign policy at polling places",
+   "resolution": "draft to be prepared",
+   "quote": "ms. lemieux reported the current policy does not address signs at polling locations.",
+   "tags": [
+    "signs",
+    "elections",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of March 15, 2022",
+   "resolution": "approved as written",
+   "quote": "to approve the minutes of march 15, 2022 as written",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Town Manager annual performance evaluation",
+   "resolution": "no action",
+   "quote": "mr. alonzo reminded the board members to meet with town manager regarding her annual performance evaluation",
+   "tags": [
+    "personnel",
+    "evaluation"
+   ]
+  },
+  {
+   "topic": "Committee reports: Storm Water Task Force and MS4",
+   "resolution": "reported; no action",
+   "quote": "mr. dwyer reported the storm water task force met with nick christofor of comprehensive",
+   "tags": [
+    "stormwater",
+    "MS4",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "no action",
+   "quote": "mr. alonzo noted the upcoming meetings: select board meeting on may 3 and 10th and the",
+   "tags": [
+    "schedule",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public comment (Passios)",
+   "resolution": "heard",
+   "quote": "dave passios announced the opening day of little league and the parade on saturday april 30th",
+   "tags": [
+    "public comment",
+    "little league",
+    "marshall park"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:18 PM",
+   "quote": "the meeting adjourned at 8:18 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Commemorative Policy (printed 'Drait')",
+   "where": "text",
+   "quote": "discussion on drait commemorative policy"
+  },
+  {
+   "name": "Draft Tailings Policy",
+   "where": "text",
+   "quote": "draft tailings policy ms. lemieux reported this addresses uncashed checks issued by the town."
+  },
+  {
+   "name": "Amend One Day Liquor License Policy to include Insurance Requirement",
+   "where": "text",
+   "quote": "amend one day liquor license policy to include insurance requirement"
+  },
+  {
+   "name": "Review Sign Policy re: Signs at Polling Places during Elections",
+   "where": "text",
+   "quote": "review sign policy re: signs at polling places during elections"
+  },
+  {
+   "name": "Fiscal Year 2023 Budget, Capital Plan, Financial Forecast, and Annual Town Meeting Warrant articles",
+   "where": "text",
+   "quote": "financial forecast, and annual town meeting warrant articles"
+  },
+  {
+   "name": "Citizen's petition article about the state flag",
+   "where": "text",
+   "quote": "asked if they had any more information about the citizen's petition article about the state flag"
+  },
+  {
+   "name": "Talent bank form",
+   "where": "text",
+   "quote": "submit a talent bank form to the select board"
+  },
+  {
+   "name": "MS4 permit",
+   "where": "text",
+   "quote": "environmental inc. and reviewed the ms4 permit."
+  },
+  {
+   "name": "Economic Development Committee survey results",
+   "where": "text",
+   "quote": "the results of the survey by the economic development committee are on the town website."
+  },
+  {
+   "name": "Minutes of March 15, 2022",
+   "where": "text",
+   "quote": "to approve the minutes of march 15, 2022 as written"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town meeting",
+  "budget",
+  "capital plan",
+  "policy",
+  "liquor license",
+  "appointments",
+  "stormwater MS4",
+  "uncashed checks",
+  "elections",
+  "public comment",
+  "OCR minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

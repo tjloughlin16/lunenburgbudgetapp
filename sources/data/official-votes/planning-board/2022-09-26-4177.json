@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-09-26",
  "docid": "4177",
@@ -12,39 +12,311 @@
  },
  "votes": [
   {
-   "motion": "Approve the ANR Plan for 245 Holman Street, Lots 3 and 4",
+   "motion": "Approve the ANR Plan for 245 Holman Street, Lots 3 and 4.",
    "moved_by": "M. Brenner",
    "seconded_by": "E. Torgersen",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the anr plan for 245 holman street, lots 3 and 4, e. torgersen seconded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
+   "quote": "motion to approve the anr plan for 245 holman street, lots 3 and 4, e. torgersen seconded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
   },
   {
-   "motion": "Approve the Stormwater Permit Modification incorporating all Conditions from the Stormwater Permit",
+   "motion": "Approve the Stormwater Permit Modification, incorporating all Conditions from the Stormwater Permit (dated July 25, 2022) for 245 Holman Street.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the stormwater permit modific ation, incorporating all conditions from the stormwater permit, a. reid, seconded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
+   "quote": "incorporating all conditions from the stormwater permit, a. reid, seconded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
   },
   {
-   "motion": "Direct Land Use Director Adam Burney to write a memorandum to the ZBA containing salient points discussed, with two Board members to review and approve prior to sending",
+   "motion": "Direct Land Use Director Adam Burney to write a memorandum to the ZBA containing all salient points the Board discussed, with two Board members to review and approve it before it is sent.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "m. brenner made motion for land use director adam burney to write a memorandum to the zba containing all salient points the board discussed and prior to sending to the zba, two board members would review and approve, a. reid seco nded, roll call vote- a. reid, aye; m. brenner, aye; m. allison, aye."
+   "quote": "m. brenner made motion for land use director adam burney to write a memorandum to the zba containing all salient points the board discussed"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": true,
    "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote - a. reid, aye; m. brenner, aye; a. reid, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Adjournment vote contains apparent transcription error: Amanda Reid's name (A. Reid) listed twice in roll call, making the actual vote count ambiguous.",
- "cost_usd": 0.1034755
+ "note": "Text is a scan-extracted minutes document with spacing and hyphenation artifacts (e.g. \"Modific ation\", \"Seco nded\"); quotes were collapsed to single spaces and avoid broken words. Roll-call votes list ayes by name but print no tally or result word, so outcome \"passed\" is read from the recorded ayes and no count is asserted. Erik Torgersen departed 9:53 p.m. and the minutes do not say which votes came after that time. The adjournment roll call lists \"A. Reid, aye\" twice and no other member, so its tally cannot be read cleanly. No dollar figures are printed in the minutes. The Pond View Commons 40B discussion produced a directed memorandum by motion, but no separate vote on the waivers. Ana Lockwood and Cullen Dwyer letters were read or referenced, not spoken; Lockwood is not recorded as attending.",
+ "cost_usd": 0.02122428,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "amanda reid and erik torgersen (departed 9:53 p.m.) participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "amanda reid and erik torgersen (departed 9:53 p.m.) participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Ed McSweeney",
+   "role": "Presenter of ANR plan for Bray Ave 9, LLC",
+   "status": "present",
+   "quote": "plan presented by ed mcsweeney, bray ave 9, llc."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Chair, Architectural Preservation District Commission (APDC)",
+   "status": "present",
+   "quote": "chair cullen dwyer arrived at the end of the discussion and reiterated what r. sculimbrene had stated."
+  },
+  {
+   "name": "Tony Sculimbrene",
+   "role": "speaking on behalf of the APDC",
+   "status": "present",
+   "quote": "tony sculimbrene, speaking on behalf of the apdc, noted that the apdc viewed the brooks house on massachusetts avenue"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Endorsed 3 Lancaster Avenue (Review and Endorsement) and 235 Leominster Road (Review and Endorsement), recorded without a motion.",
+   "quote": "3 lancaster avenue, review and endorsement- endorsed 235 leominster road, review and endorsement- endorsed"
+  },
+  {
+   "decision": "Board consensus that A. Reid and M. Brenner would review the Pond View Commons memorandum to the ZBA.",
+   "quote": "board consensus was that a. reid and m. brenner would review the memorandum."
+  },
+  {
+   "decision": "A. Burney to clarify with town counsel that the Pond View Commons waivers apply only to the nineteen acres within the 40B application.",
+   "quote": "a. burney would clarify with town counsel that the waivers were applicable to only the nineteen acres contained within the 40b application."
+  },
+  {
+   "decision": "A. Burney to put the Northfield Road easement proposal to a Lufa Farms project representative.",
+   "quote": "a. burney would put the proposal forth to a project representative."
+  },
+  {
+   "decision": "A. Burney to respond to the APDC's letter on Brooks House, providing options from a zoning perspective.",
+   "quote": "a. burney would respond to the apdc"
+  },
+  {
+   "decision": "Section 250-6.4, Driveways & Entrances, tabled.",
+   "quote": "section 250-6.4., driveways & entrances- tabled"
+  },
+  {
+   "decision": "All minutes of 9/12/22 (including 3 Lancaster Avenue and 235 Leominster Road) tabled.",
+   "quote": "minutes approval: all minutes tabled 9/12/22- 9/12/22, 3 lancaster avenue-"
+  },
+  {
+   "decision": "All committee reports tabled.",
+   "quote": "committee reports: all committee reports tabled."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Subdivision road surety and lot releases (Pond View Commons 40B)",
+   "what_was_recorded": "Discussion of surety and lot releases needed to obtain building permits and financing for lots under the 40B; no dollar figure printed.",
+   "quote": "a. burney was under the impression the applicant was asking to skip the placement of surety and get the lot releases",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Brooks House options (APDC inquiry)",
+   "speaker": "Tony Sculimbrene",
+   "stated_role": "speaking on behalf of the APDC",
+   "quote": "tony sculimbrene, speaking on behalf of the apdc, noted that the apdc viewed the brooks house on massachusetts avenue"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "ANR Plan, 245 Holman Street, Lots 3 and 4",
+   "resolution": "approved (roll call)",
+   "quote": "anr plan: 245 holman street, lots 3 and 4 - plan presented by ed mcsweeney, bray ave 9, llc.",
+   "tags": [
+    "ANR plan",
+    "subdivision",
+    "Holman Street"
+   ]
+  },
+  {
+   "topic": "Public hearing, 245 Holman Street stormwater permit modification",
+   "resolution": "approved (roll call)",
+   "quote": "public hearings: 245 holman street - see separate minutes.",
+   "tags": [
+    "stormwater",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "260 Falulah Road",
+   "resolution": "continued to October 26, 2022 at applicant's request",
+   "quote": "260 falulah road- the applicant requested a continuance to october 26, 2022.",
+   "tags": [
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Pond View Commons, LLC comprehensive permit (40B), Howard Street",
+   "resolution": "reviewed; memorandum to ZBA directed",
+   "quote": "comprehensive permit application: pond view commons, llc, howard street - the board reviewed the comprehensive permit (40b) application",
+   "tags": [
+    "40B",
+    "comprehensive permit",
+    "Pond View Commons",
+    "zoning waivers",
+    "subdivision conditions",
+    "building height",
+    "parking"
+   ]
+  },
+  {
+   "topic": "Section 250-6.4, Driveways & Entrances",
+   "resolution": "tabled",
+   "quote": "section 250-6.4., driveways & entrances- tabled",
+   "tags": [
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Northfield Road, Parks Commission property (easement from 361 Massachusetts Avenue)",
+   "resolution": "no action; staff to put proposal to project representative",
+   "quote": "the park commission would like the planning board to negotiate for an easement access from 361 massachusetts avenue to 961 northfield road",
+   "tags": [
+    "Parks Commission",
+    "easement",
+    "Lufa Farms"
+   ]
+  },
+  {
+   "topic": "Brooks House, APDC inquiry (Massachusetts Avenue)",
+   "resolution": "no action; staff to respond to APDC letter",
+   "quote": "brooks house, apdc inquiry - the board was in receipt of correspondence from cullen dwyer, chair of the architectural",
+   "tags": [
+    "Architectural Preservation District",
+    "historic",
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Decisions: 3 Lancaster Avenue and 235 Leominster Road",
+   "resolution": "endorsed",
+   "quote": "3 lancaster avenue, review and endorsement- endorsed 235 leominster road, review and endorsement- endorsed",
+   "tags": [
+    "review and endorsement"
+   ]
+  },
+  {
+   "topic": "Minutes approval (9/12/22 and two endorsed items)",
+   "resolution": "tabled",
+   "quote": "minutes approval: all minutes tabled 9/12/22-",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "tabled",
+   "quote": "committee reports: all committee reports tabled.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and ongoing items",
+   "resolution": "noted",
+   "quote": "meeting schedule: october 10- no meeting. columbus day/indigenous peoples' day",
+   "tags": [
+    "schedule",
+    "Special Town Meeting",
+    "zoning articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:23 p.m.",
+   "quote": "adjournment: m. brenner made motion to adjourn, a. reid seconded",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Park Commission Memo re Northfield Road Property",
+   "where": "list",
+   "quote": "documents used at meeting: park commission memo re northfield road property apdc memo re brooks house"
+  },
+  {
+   "name": "APDC Memo re Brooks House",
+   "where": "list",
+   "quote": "park commission memo re northfield road property apdc memo re brooks house comprehensive permit application, howard street"
+  },
+  {
+   "name": "Comprehensive Permit Application, Howard Street",
+   "where": "list",
+   "quote": "apdc memo re brooks house comprehensive permit application, howard street"
+  },
+  {
+   "name": "Stormwater Permit dated July 25, 2022",
+   "where": "text",
+   "quote": "would incorporate the conditions from the stormwater permit dated july 25, 2022."
+  },
+  {
+   "name": "ANR Plan endorsed August 14, 2020 (filed Registry Book 531, Page 20)",
+   "where": "text",
+   "quote": "lots 3 and 4 were created by anr plan endorsed by the board august 14, 2020"
+  },
+  {
+   "name": "2019 Board-approved Subdivision plans",
+   "where": "text",
+   "quote": "as they pertained to the 2019 board-approved subdivision plans"
+  },
+  {
+   "name": "Board of Health letter (subsurface soil absorption systems and potable water)",
+   "where": "text",
+   "quote": "condition 20 referred to a board of healt h letter, which stated the developer would be required to hav",
+   "quote_taken_from_text": true
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "stormwater permit",
+  "40B comprehensive permit",
+  "Pond View Commons",
+  "zoning waivers",
+  "subdivision conditions",
+  "Brooks House",
+  "Architectural Preservation District",
+  "Parks easement",
+  "remote participation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

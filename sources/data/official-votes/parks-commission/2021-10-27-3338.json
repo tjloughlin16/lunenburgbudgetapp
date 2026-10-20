@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-10-27",
  "docid": "3338",
@@ -12,42 +12,389 @@
  },
  "votes": [
   {
-   "motion": "Abide by November 30th for field usage and extend port-a-potty and dumpster policies",
-   "moved_by": "K Menard",
+   "motion": "Motion by C Sullivan to abide by the data in the form S Chow signed for this season, as amended by K Menard to abide by the November 30th date for field usage and extend it to the port-a-potty and dumpster policies.",
+   "moved_by": "C Sullivan",
    "seconded_by": "A Lockwood",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "k menard moioned to amend the moion to abide by the date of november 30th for ﬁeld usage and extend it to the port-a-pomy and dumpster policies. seconded by a lockwood roll call, d passios-aye, a lockwood-aye, k menard-aye and c sullivan- aye."
+   "quote": "moion made by c sullivan to abide by the data in the form that s chow signed for this season."
   },
   {
-   "motion": "Rescind the previous vote limiting the park size to 5,000 square feet",
+   "motion": "Motion by D Passios to rescind the previous vote of a prior meeting that limited the park size to 5,000 square feet.",
    "moved_by": "D Passios",
    "seconded_by": "K Menard",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "moion made by d passios to rescind the previous vote of a prior meeing that the commission supported to limit the park size to 5,000 square feet. seconded by k menard. roll call vote: a lockwood-aye k menard-aye d passios-aye c sullivan- aye. k ",
-   "quote_taken_from_text": true
+   "quote": "moion made by d passios to rescind the previous vote of a prior meeing that the commission supported to limit the park size to 5,000 square feet."
   },
   {
-   "motion": "Accept the date changes and completion date of 5/1/22 for the Marshall Park Master Plan RFP",
+   "motion": "Motion by C Sullivan to accept the Marshall Park RFP date changes and the addition of a completion date of 5/1/22.",
    "moved_by": "C Sullivan",
    "seconded_by": "D Passios",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "moion made by c sullivan to accept those date changes and addiion of compleion date of 5/1/22 seconded by d passios. roll call vote: k menard - aye a lockwood-aye d passios-aye c sullivan-aye. k ",
-   "quote_taken_from_text": true
+   "quote": "moion made by c sullivan to accept those date changes and addiion of compleion date of 5/1/22 seconded by d passios."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Motion to adjourn at 10:29pm.",
    "moved_by": "D Passios",
    "seconded_by": "K Menard",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "moion made to adjourn at 10:29pm by d passios seconded by k menard, roll call, a lockwood- aye, d passios-aye, k menard-aye, c sullivan-ay",
-   "quote_taken_from_text": true
+   "quote": "moion made to adjourn at 10:29pm by d passios seconded by k menard, roll call"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with artifact characters (e.g., \"MoIon\" for Motion, \"ﬁeld\" for field, \"poMy\" for potty). All votes recorded are unanimous 4-0.",
- "cost_usd": 0.11324640000000001
+ "note": "Text is OCR of a scan-like PDF: 'I' stands in for 't' and ligatures are garbled (e.g. 'meeIng' = meeting). Quotes are copied as printed. Karin Menard is listed as arriving at 8pm, yet she speaks in item 4 and votes in the item 5 roll call; her status is recorded as present from the minutes. Item numbering repeats ('11' appears twice). Susanna Jewell appears only in the header and is not recorded as taking part. Steve Archambault and J Belliveau are mentioned only, not as attendees. Public comment: item 2 reads 'No Public Comments'; no speakers recorded. The minutes contain no documents list heading; documents are referenced only in passing. Motion of 4 is adjournment (procedural). Amendment in vote 1 was moved by K Menard and seconded by A Lockwood per the text.",
+ "cost_usd": 0.023877380000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "k. menard arrived at 8pm."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "in amendance was d passios, a lockwood, and chris sullivan."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "in amendance was d passios, a lockwood, and chris sullivan."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "in amendance was d passios, a lockwood, and chris sullivan."
+  },
+  {
+   "name": "Rob Thompson",
+   "role": "Acting Recreation Director",
+   "status": "present",
+   "quote": "also in amendance was acing recreaion director rob thompson, town"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "manager heather lemieux, jared bowser and genevieve nass from the town beach"
+  },
+  {
+   "name": "Jared Bowser",
+   "role": "Town Beach",
+   "status": "present",
+   "quote": "jared bowser commented that from the lifeguard's standpoint the summer went well with just a couple hiccups."
+  },
+  {
+   "name": "Genevieve Nass",
+   "role": "Town Beach Director",
+   "status": "present",
+   "quote": "the town beach director, genevieve nass gave an overview of the season"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the Skate Park Committee",
+   "status": "present",
+   "quote": "a caiozzo and g roy represented the skate park commimee."
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "representing the Skate Park Committee",
+   "status": "present",
+   "quote": "greg roy and anthony caiozzo from the skate park."
+  },
+  {
+   "name": "Stephen Chow",
+   "role": "President of Lunenburg Little League",
+   "status": "present",
+   "quote": "stephen chow, president of lunenburg limle league joined the"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "part of the Babe Ruth League and was coaching",
+   "status": "present",
+   "quote": "dan proctor joined the meeing. he stated he was part of the babe ruth league and was coaching."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "not stated",
+   "quote": "school commimee chairperson carol archambault stated that the school commimee policy has to go back"
+  },
+  {
+   "name": "Dawn Pavone",
+   "role": "Minutes secretary",
+   "status": "not stated",
+   "quote": "respecmully submimed dawn pavone"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "R Thompson will provide a comparison report of beach data from prior years as soon as possible, at A Lockwood's request for a database.",
+   "quote": "r thompson will provide that as soon as possible."
+  },
+  {
+   "decision": "The Skate Park will be put on an upcoming agenda on 11/22/2021, and the final plan of location will follow completion of engineering.",
+   "quote": "k menard and g roy discussed a ime to put the skate park on an upcoming agenda and decided on 11/22/2021."
+  },
+  {
+   "decision": "K Menard will look into the override of Town and State By-Laws, consulting Town Counsel or the Town Manager.",
+   "quote": "k menard will look into the override of town and state by-laws"
+  },
+  {
+   "decision": "K Menard was to double check the November cutoff date for parks use.",
+   "quote": "was going to double check that date"
+  },
+  {
+   "decision": "R Thompson will start conversations with Little League about more baseball opportunities returning to Lunenburg.",
+   "quote": "r thompson stated that he would deﬁnitely start those conversaions about limle league"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Skate Park fundraising raised to date",
+   "what_was_recorded": "Skate Park committee reported funds raised and expected before year end.",
+   "figures_as_printed": [
+    "$130,000",
+    "$25- 30,000"
+   ],
+   "quote": "they've raised so fair $130,000 and another $25- 30,000 is coming before the end of the year"
+  },
+  {
+   "topic": "Skate Park in-kind donations",
+   "what_was_recorded": "Committee said it is securing in-kind donations of materials and equipment.",
+   "figures_as_printed": [
+    "$90,000"
+   ],
+   "quote": "they are securing about $90,000 in-kind donaions."
+  },
+  {
+   "topic": "Skate Park funding gap and total needed",
+   "what_was_recorded": "Remaining gap to full funding was stated, and a commissioner's estimate of total cost was given.",
+   "figures_as_printed": [
+    "$25 and $50,000",
+    "$250,000"
+   ],
+   "quote": "they are between $25 and $50,000 away from having enough money to build the park."
+  },
+  {
+   "topic": "Marshall Park completer survey request in Capital Plan",
+   "what_was_recorded": "A Capital Planning Committee report noted a request for the survey; nothing prioritized yet.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "there is a $25,000 request for the completer"
+  },
+  {
+   "topic": "Town Beach building repairs cost",
+   "what_was_recorded": "Repairs to the Town Beach building were to be determined by cost for a Capital Plan line item; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the repairs of the town beach building and will determine by cost whether it is a budget line item"
+  },
+  {
+   "topic": "Red Cross certification reimbursement",
+   "what_was_recorded": "Beach staff paying out of pocket for Red Cross certification and awaiting reimbursement; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "paying out of pocket for the red cross ceriﬁcaion for swim lessons"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and attendance",
+   "resolution": "noted",
+   "quote": "c sullivan opened the meeing at 7:00pm via zoom.",
+   "tags": [
+    "attendance"
+   ]
+  },
+  {
+   "topic": "Public and board comment",
+   "resolution": "no action; no public comments recorded",
+   "quote": "c sullivan spoke of soccer staring the past weekend",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "DPW, Town Manager and Recreation Director updates",
+   "resolution": "no action",
+   "quote": "r thompson menioned that the trunk or treat is happening rain or shine.",
+   "tags": [
+    "trunk or treat",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Beach season review",
+   "resolution": "discussed; comparison data requested",
+   "quote": "jared bowser commented that from the lifeguard's standpoint the summer went well with just a couple hiccups.",
+   "tags": [
+    "beach",
+    "passes",
+    "swim lessons"
+   ]
+  },
+  {
+   "topic": "Discussion with Lunenburg Little League",
+   "resolution": "discussed; maintenance and field use raised",
+   "quote": "discussion with lunenburg limle league-stephen chow, president of lunenburg limle league joined the",
+   "tags": [
+    "little league",
+    "fields",
+    "vandalism"
+   ]
+  },
+  {
+   "topic": "Marshall Park septic system",
+   "resolution": "discussed; BOH to set design flow",
+   "quote": "g roy updated that they have been engaged by the town to design a repair sepic system",
+   "tags": [
+    "septic",
+    "marshall park",
+    "BOH"
+   ]
+  },
+  {
+   "topic": "Skate Park discussion including park size",
+   "resolution": "prior 5,000 sq ft motion rescinded 4-0; Skate Park on 11/22/2021 agenda",
+   "quote": "a caiozzo and g roy represented the skate park commimee.",
+   "tags": [
+    "skate park",
+    "marshall park",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Bylaw review",
+   "resolution": "no vote; Chair to look into by-law override",
+   "quote": "k menard stated that steve archambault a member of the by-law",
+   "tags": [
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Marshall Park master planning and RFP dates",
+   "resolution": "date changes accepted 4-0",
+   "quote": "c sullivan and k menard went to the assistant town manager to get an overview of the rfp process",
+   "tags": [
+    "marshall park",
+    "RFP",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Lunenburg Public Schools reciprocal field use",
+   "resolution": "discussed; School Committee policy still in revision",
+   "quote": "school commimee chairperson carol archambault stated that the school commimee policy has to go back",
+   "tags": [
+    "reciprocal field use",
+    "school committee"
+   ]
+  },
+  {
+   "topic": "Other business, correspondence and Capital Planning report",
+   "resolution": "no action",
+   "quote": "other business mamers that may legally come before the board not known at the ime of posing - none",
+   "tags": [
+    "capital plan",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Next meeting date and agenda",
+   "resolution": "scheduled for November 17 and November 22",
+   "quote": "next meeing date/agenda-next meeing is november 17th at 7pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:29pm, 4-0",
+   "quote": "moion made to adjourn at 10:29pm by d passios seconded by k menard, roll call",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Form signed by S Chow (vendor/parks usage form)",
+   "where": "text",
+   "quote": "but showed a form that said closing was november 30th"
+  },
+  {
+   "name": "Little League slides on maintenance",
+   "where": "text",
+   "quote": "presented slides on maintenance, inﬁeld drags (done 8x) for playing surface safety"
+  },
+  {
+   "name": "Septic system plans for Marshall Park",
+   "where": "text",
+   "quote": "he then showed some plans and menioned that no design"
+  },
+  {
+   "name": "Skate Park initial site plan",
+   "where": "text",
+   "quote": "he was hoping to have an iniial site plan for tonight's meeing"
+  },
+  {
+   "name": "Marshall Park RFP",
+   "where": "text",
+   "quote": "on page 3 of the rfp and being reviewed by"
+  },
+  {
+   "name": "Grading rubric for Marshall Park RFP",
+   "where": "text",
+   "quote": "the rubric that the commissioner's would be using to grade"
+  },
+  {
+   "name": "School Committee policy on reciprocal field use",
+   "where": "text",
+   "quote": "the school commimee policy has to go back to the subcommimee for edits"
+  },
+  {
+   "name": "Warrant article on sewer or septic capacity",
+   "where": "text",
+   "quote": "having a warrant aricle in place is the right direcion for future"
+  },
+  {
+   "name": "Capital Plan proposals from department heads",
+   "where": "text",
+   "quote": "the proposals for the capital plan have been submimed by"
+  },
+  {
+   "name": "Email from Steve Archambault on By-Law review",
+   "where": "text",
+   "quote": "sent an email to the commission to look at their secion"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach season",
+  "little league",
+  "skate park",
+  "marshall park",
+  "master plan",
+  "RFP",
+  "septic system",
+  "reciprocal field use",
+  "bylaws",
+  "capital plan",
+  "recreation department"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

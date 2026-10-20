@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2021-12-06",
  "docid": "4709",
@@ -12,29 +12,189 @@
  },
  "votes": [
   {
-   "motion": "approve Nov. minutes as amended",
+   "motion": "Approve the November minutes as amended.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "reviewed and approved nov. minutes as amended."
   },
   {
-   "motion": "hire a studio expert to assist the TCP Architect in planning specific studio details not to exceed $10,000",
-   "moved_by": "Faith",
+   "motion": "Hire a studio expert to assist the TCP Architect in planning specific studio details, not to exceed $10,000.",
+   "moved_by": "Faith Beall",
    "seconded_by": "Steve A",
    "outcome": "passed",
    "procedural": false,
    "quote": "faith made a motion, steve a seconded, to hire a studio expert to assist the tcp architect in planning specific studio details not to exceed $10,000. motion passed."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Pete",
    "seconded_by": "Faith",
    "outcome": "passed",
    "procedural": true,
-   "quote": "meeting adjourned at 7:00pm. (motion pete, seconded faith - passed)"
+   "quote": "(motion pete, seconded faith - passed)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1105545
+ "note": "Minutes record vote approval without tallies (no counts printed), so outcomes are \"passed\" as stated. The minutes approving November minutes records no motion or mover. The signature reads 12/7/2020 while the meeting date given is 2021-12-06; the minutes' own date is not reconciled here. The manager's update lists items without recorded votes. No documents are named in the text.",
+ "cost_usd": 0.014192980000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC members",
+   "status": "present",
+   "quote": "pacc members present were steve walker, faith beall, peter lincoln, steve archambault"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC members",
+   "status": "present",
+   "quote": "pacc members present were steve walker, faith beall, peter lincoln, steve archambault"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC members",
+   "status": "present",
+   "quote": "pacc members present were steve walker, faith beall, peter lincoln, steve archambault"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC members",
+   "status": "present",
+   "quote": "pacc members present were steve walker, faith beall, peter lincoln, steve archambault"
+  },
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC members",
+   "status": "absent",
+   "quote": "excused jeff bajko"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-members",
+   "status": "present",
+   "quote": "non-members: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "PACC will meet with the TCP Architect over the next few weeks.",
+   "quote": "pacc will meet with architect over the next few weeks."
+  },
+  {
+   "decision": "Order a PC for the videographer to use in production.",
+   "quote": "order pc for videographer to use in production. cost falls under the cares act."
+  },
+  {
+   "decision": "Next meeting set for January 4.",
+   "quote": "next meeting is jan. 4th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Studio expert for TCP Architect planning",
+   "what_was_recorded": "The committee authorized hiring a studio expert to assist the TCP Architect, with a cap on the cost.",
+   "quote": "to hire a studio expert to assist the tcp architect in planning specific studio details not to exceed $10,000.",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  },
+  {
+   "topic": "Videographer PC funding",
+   "what_was_recorded": "A PC for the videographer is to be ordered, with its cost falling under the Cares Act.",
+   "quote": "cost falls under the cares act.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "November expenses and income",
+   "what_was_recorded": "The manager reported on November expenses and income; no figures are printed in the minutes.",
+   "quote": "report on november expenses & income.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no comments",
+   "quote": "public comments: 1. none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "approved as amended",
+   "quote": "reviewed and approved nov. minutes as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "reported, no action recorded",
+   "quote": "order pc for videographer to use in production. cost falls under the cares act.",
+   "tags": [
+    "studio",
+    "equipment",
+    "Cares Act",
+    "athletics recording"
+   ]
+  },
+  {
+   "topic": "TCP Architect",
+   "resolution": "studio expert hired, not to exceed $10,000",
+   "quote": "committee made a presentation at town meeting.",
+   "tags": [
+    "TCP",
+    "architect",
+    "studio design"
+   ]
+  },
+  {
+   "topic": "Studio visit: Dracut",
+   "resolution": "visit reported",
+   "quote": "had a nice visit, very informative. impressed with signage, placement of monitors, cabling & great lighting.",
+   "tags": [
+    "site visit",
+    "studio"
+   ]
+  },
+  {
+   "topic": "Royalty free music",
+   "resolution": "covered in manager's report",
+   "quote": "covered in manager's report.",
+   "tags": [
+    "music"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:00pm",
+   "quote": "next meeting is jan. 4th.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access TV",
+  "studio",
+  "TCP architect",
+  "Cares Act",
+  "equipment",
+  "budget",
+  "athletics recording",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-03-29",
  "docid": "5715",
@@ -12,40 +12,311 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes for 2/22/22",
-   "outcome": "passed 3-0",
-   "procedural": true,
+   "motion": "Accept the minutes for 2/22/22.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion: john r. to accept the minutes for 2/22/22. second: brett r. roll call vote: brett-aye, john-aye and dave- aye."
   },
   {
-   "motion": "Accept the minutes for 3/8/22",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "Accept the minutes for 3/8/22.",
    "moved_by": "Brett R.",
    "seconded_by": "John",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion: brett r. second: john to accept the minutes for 3/8/22. roll call vote: brett-aye, mike n.- aye, john-aye and dave- aye."
   },
   {
-   "motion": "Allow Barb to send out the non-compliance letter to Il Forno",
-   "outcome": "passed 4-0",
-   "procedural": false,
+   "motion": "Allow Barb to send out the non-compliance letter to Il Forno.",
    "moved_by": "Dave M.",
    "seconded_by": "John R.",
-   "quote": "motion: dave m. second: john r. to allow barb to send out the non-compliance letter to il forno. discussion: mike n. asked for clarification if they are waiting ",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: dave m. second: john r. to allow barb to send out the non-compliance letter to il forno."
   },
   {
-   "motion": "Adjourn at 6:38pm",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "Adjourn at 6:38pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike N.",
+   "outcome": "passed",
+   "procedural": true,
    "quote": "motion: brett r. to adjourn at 6:38pm. second: mike n. roll call vote: brett-aye, mike n.- aye, john-aye and dave- aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes; all votes clearly recorded with roll call votes.",
- "cost_usd": 0.1062195
+ "note": "Scanned minutes read by macOS Vision OCR (header '===OCR macOS Vision==='); quotes are copied from the OCR text, which contains errors (e.g. 'May 7h'). Page 2 begins mid-sentence, so the lead-in to the Il Forno motion is missing. No vote totals are printed, so outcomes are recorded as 'passed' from the roll-call ayes. Attendance is inferred from roll-call lines and speaking parts; no attendance line for this meeting. 'Mike N.' is printed only as an abbreviation; the announcements name Mike Nault as a Town Election nominee, but the minutes do not say they are the same person. 'Dave M.' in the Il Forno motion is assumed to be the same Dave as 'Dave'. The minutes clerk is unnamed.",
+ "cost_usd": 0.018682980000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Barb",
+   "role": "",
+   "status": "present",
+   "quote": "barb reviewed the invoices with the commission: fitchburg-$20,073.53 (based on flows) and mead, talerman - $988.02"
+  },
+  {
+   "name": "Dave",
+   "role": "",
+   "status": "present",
+   "quote": "dave asked if they would be coming before the commission prior to town meeting."
+  },
+  {
+   "name": "John R.",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: brett-aye, mike n.- aye, john-aye and dave- aye."
+  },
+  {
+   "name": "Brett R.",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: brett-aye, mike n.- aye, john-aye and dave- aye."
+  },
+  {
+   "name": "Mike N.",
+   "role": "",
+   "status": "present",
+   "quote": "roll call vote: brett-aye, mike n.- aye, john-aye and dave- aye."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed the FY23 draft sewer budget (FY22 budget update and FinCom presentation) looked good.",
+   "quote": "the commission agreed it all looked good."
+  },
+  {
+   "decision": "The Commission agreed the Chestnut Street project does not need to come back before Town Meeting if it remains as previously presented.",
+   "quote": "the commission discussed and agreed they did not need to come back before town meeting as long as the project is what they presented previously."
+  },
+  {
+   "decision": "John will contact the E-One representative for updated pricing.",
+   "quote": "john offered to contact the e-one representative to get updated pricing and the commission agreed."
+  },
+  {
+   "decision": "Barb will contact 5 Chestnut Street for any project updates.",
+   "quote": "barb will contact them to see if they have any updates."
+  },
+  {
+   "decision": "Barb to ask Kevin Olson (Wright Pierce) to attend the next meeting.",
+   "quote": "dave asked barb to see if he could come to the next meeting."
+  },
+  {
+   "decision": "Barb will wait until the following Monday before sending the Il Forno non-compliance letter.",
+   "quote": "barb said she will wait until the next monday before sending the letter."
+  },
+  {
+   "decision": "Barb will inform Dave Passios that the Green Committee will get more information on solar and SCADA options.",
+   "quote": "barb said that she will let dave passios know that they will get more information."
+  },
+  {
+   "decision": "Barb will check with Adam on the 40B development and add it to the next agenda.",
+   "quote": "she will check with adam and add it to the next agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 Draft Sewer Budget",
+   "what_was_recorded": "FY22 budget update and FinCom presentation sent to all; the minutes print no dollar figure for the FY23 draft.",
+   "quote": "fy23 draft sewer budget - barb sent out the fy22 budget update and a copy of the fincom presentation to all.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Upland/White St. extension: gravity vs low-pressure cost",
+   "what_was_recorded": "Burying gravity lines on the proposal costs $273K versus $7,800 for the low-pressure alternative; Barb asked Wright Pierce to clarify.",
+   "quote": "barb added that the cost for burying the gravity lines on the proposal was $273k but only $7,800 for the low-pressure alternative.",
+   "figures_as_printed": [
+    "$273K",
+    "$7,800"
+   ]
+  },
+  {
+   "topic": "E-One pump installation cost",
+   "what_was_recorded": "John said residents need to know the cost of installing an E-One system; deeper digging, ledge and a doughnut base add cost. No figure printed.",
+   "quote": "john stated that they need to make sure everyone knows what it cost to put an e-one system in.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Invoices",
+   "what_was_recorded": "Barb reviewed two invoices with the Commission and will proceed with payment if the Commission is okay with them.",
+   "quote": "fitchburg-$20,073.53 (based on flows) and mead, talerman - $988.02",
+   "figures_as_printed": [
+    "$20,073.53",
+    "$988.02"
+   ]
+  },
+  {
+   "topic": "Green Community Grant",
+   "what_was_recorded": "Possible grant projects discussed: LED streetlight conversion as the Green Committee's main focus, and solar panels and SCADA for pump stations; no figure printed.",
+   "quote": "barb noted that she'd received an email from dave passios (green committee) regarding any projects appropriate for a green community grant.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "announcements - barb announced the town caucus was 3/14.",
+   "tags": [
+    "caucus",
+    "town election"
+   ]
+  },
+  {
+   "topic": "FY23 Draft Sewer Budget",
+   "resolution": "Commission agreed it looked good; no vote",
+   "quote": "the commission agreed it all looked good.",
+   "tags": [
+    "budget",
+    "FY23"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles",
+   "resolution": "noted; no vote; Chestnut Street article on warrant",
+   "quote": "barb reported the 4 warrant articles were submitted and accepted by the select board office.",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "petition"
+   ]
+  },
+  {
+   "topic": "Upland/White St. extension exploration",
+   "resolution": "discussed; E-One pricing update agreed; Wright Pierce invited to next meeting",
+   "quote": "upland/white st. extension exploration project- barb noted that the quote for gravity sewer was pricey and wright pierce",
+   "tags": [
+    "sewer extension",
+    "low-pressure sewer",
+    "E-One pumps",
+    "Wright Pierce"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 2/22/22 and 3/8/22",
+   "resolution": "approved",
+   "quote": "minutes for 2/22/22 (brett, john and dave were present)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Il Forno non-compliance letter",
+   "resolution": "approved by roll call",
+   "quote": "to allow barb to send out the non-compliance letter to il forno.",
+   "tags": [
+    "enforcement",
+    "pump-out"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "reviewed; Barb to proceed with payment if Commission agrees",
+   "quote": "invoices: barb reviewed the invoices with the commission: fitchburg-$20,073.53 (based on flows)",
+   "tags": [
+    "invoices",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Green Community Grant",
+   "resolution": "Barb to tell Green Committee more information is coming",
+   "quote": "barb noted that she'd received an email from dave passios (green committee) regarding any projects appropriate for a green community grant.",
+   "tags": [
+    "grant",
+    "LED streetlights",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Action items: 40B development",
+   "resolution": "no update; to next agenda",
+   "quote": "dave asked for update on the 40b development.",
+   "tags": [
+    "40B",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment- none upcoming scheduled sewer commission activities:",
+   "tags": [
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY22 Budget update",
+   "where": "list",
+   "quote": "barb sent out the fy22 budget update and a copy of the fincom presentation to all."
+  },
+  {
+   "name": "FinCom presentation",
+   "where": "list",
+   "quote": "barb sent out the fy22 budget update and a copy of the fincom presentation to all."
+  },
+  {
+   "name": "Annual Town Meeting Warrant articles (4 articles)",
+   "where": "text",
+   "quote": "barb reported the 4 warrant articles were submitted and accepted by the select board office."
+  },
+  {
+   "name": "5 Chestnut Street Citizens Petition",
+   "where": "text",
+   "quote": "that the 5 chestnut street citizens petition was filed requesting expansion of the sewer service area to encompass their entire parcel."
+  },
+  {
+   "name": "Wright Pierce quote and proposal (gravity sewer and low-pressure alternative)",
+   "where": "text",
+   "quote": "barb noted that the quote for gravity sewer was pricey and wright pierce also proposed the low-pressure system as an alternative."
+  },
+  {
+   "name": "Invoices (Fitchburg; Mead, Talerman)",
+   "where": "text",
+   "quote": "fitchburg-$20,073.53 (based on flows) and mead, talerman - $988.02 (bylaws & regulations in late feb/march)"
+  },
+  {
+   "name": "Email from Dave Passios (Green Committee) on Green Community Grant projects",
+   "where": "text",
+   "quote": "barb noted that she'd received an email from dave passios (green committee) regarding any projects appropriate for a green community grant."
+  },
+  {
+   "name": "Minutes for 2/22/22",
+   "where": "text",
+   "quote": "minutes for 2/22/22 (brett, john and dave were present)"
+  },
+  {
+   "name": "Minutes for 3/8/22",
+   "where": "text",
+   "quote": "minutes for 3/8/22 (all present)"
+  },
+  {
+   "name": "Non-compliance letter to Il Forno",
+   "where": "text",
+   "quote": "to allow barb to send out the non-compliance letter to il forno."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "budget",
+  "town meeting",
+  "sewer extension",
+  "low-pressure sewer",
+  "E-One pumps",
+  "invoices",
+  "Green Community grant",
+  "40B",
+  "minutes approval",
+  "non-compliance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb sent out the fy22 budget update"
+ },
+ "dropped_unquoted_by_field": {}
 }

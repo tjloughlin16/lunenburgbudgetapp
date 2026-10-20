@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2022-05-26",
  "docid": "1426",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes of March 1st and April 20th",
+   "motion": "Approve the minutes of March 1st and April 20th.",
    "moved_by": "Commissioner Dorren",
    "seconded_by": "VP Yasko",
    "outcome": "passed 3-0",
@@ -20,22 +20,146 @@
    "quote": "commissioner dorren made the motion to approve said minutes. vp yasko seconded the motion. minutes were approved 3-0"
   },
   {
-   "motion": "to pursue grant funding for cemetery improvements by consulting with the Town Manager about grant writing and obtaining cost information from Tanner Cole",
+   "motion": "Pursue grants to raise money for Cemetery Commission projects (old mausoleum, stone walls, turf, headstones, roadways, cameras), as discussed.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "vp yasko also suggested talking to tanner cole about the cost of redoing the turf and the shrubs. motion was passed 3 -0. ",
-   "quote_taken_from_text": true
+   "quote": "motion was passed 3 -0."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chairperson Tyler",
    "seconded_by": "VP Yasko",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "motion was made to adjourn by chairperson tyler and seconded by vp yasko . meeting was adjourned at 3:50 pm"
+   "quote": "motion was made to adjourn by chairperson tyler and seconded by vp yasko"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. The second vote (grants) does not name who moved and seconded it; the minutes record the suggestions and simply state \"Motion was passed 3-0\" without attributing the motion to a specific member.",
- "cost_usd": 0.14327250000000002
+ "note": "Header prints 2:30 PM; the minutes record the meeting called to order at 2:35pm. No public comment recorded. The grant motion records no mover or seconder. The adjournment motion records no result, though the minutes give an adjournment time of 3:50 pm. The Chapter 310-2 change and the petroleum-odor point of contact were decided without a recorded vote. The minutes name Town Manager Heather R. Lemieux, Tanner Cole and Chief Sullivan but do not record them as taking part, so they are not listed as attendees.",
+ "cost_usd": 0.015823379999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "in attendance was chairperson william tyler"
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairperson",
+   "status": "present",
+   "quote": "nancy foss-yasko, vice-chairperson"
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "commissioner dorren made the motion to approve said minutes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chapter 310-2 of the Cemetery Rules and Regulations: leave all paragraphs in place except paragraph 3, which would be moved to section 310-1. No vote recorded.",
+   "quote": "it was decided to leave all paragraphs in place except for paragraph 3 which would be moved to section 310-1."
+  },
+  {
+   "decision": "Vice-Chairperson Yasko became the point of contact with Chief Sullivan and the DEP on the North Cemetery petroleum odor, reporting back regularly. No vote recorded.",
+   "quote": "ms. yasko has volunteered to be the point of contact with chief sullivan and the dep."
+  },
+  {
+   "decision": "Commissioner Dorren was suggested to initiate a conversation with Town Manager Heather R. Lemieux about grant writing. Suggestion only; no vote recorded.",
+   "quote": "it was suggested that commissioner dorren initiate a conversation with heather r. lemieux , town manager since she has had experience in grant writing"
+  },
+  {
+   "decision": "VP Yasko was suggested to talk to Tanner Cole about the cost of redoing the turf and shrubs. Suggestion only; no vote recorded.",
+   "quote": "vp yasko also suggested talking to tanner cole about the cost of redoing the turf and the shrubs."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Saturday full, cremation burial and columbarium interment fees (Chapter 310-2, paragraph 3)",
+   "what_was_recorded": "The minutes print the existing Saturday fee paragraph, which was to be moved to section 310-1 rather than changed.",
+   "figures_as_printed": [
+    "$500.00",
+    "$500.00"
+   ],
+   "quote": "full and cremation burials and columbarium interments on saturday are $500.00 for the first 4 hours and $500.00 for the next 4 hours."
+  },
+  {
+   "topic": "Cost of redoing turf and shrubs",
+   "what_was_recorded": "A suggestion to talk to Tanner Cole about the cost of redoing the turf and shrubs; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "vp yasko also suggested talking to tanner cole about the cost of redoing the turf and the shrubs."
+  },
+  {
+   "topic": "Raising money through grants",
+   "what_was_recorded": "Discussion of seeking grant money for a list of Cemetery Commission projects; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "commissioner dorren brought up the topic of raising more money in the form of grants"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes, March 1st and April 20th",
+   "resolution": "approved 3-0",
+   "quote": "first topic of discussion was to approve the minutes of march 1st and april 20th.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Raising grant money for Cemetery Commission",
+   "resolution": "motion passed 3-0; Dorren to contact Town Manager, Yasko to talk to Tanner Cole",
+   "quote": "commissioner dorren brought up the topic of raising more money in the form of grants",
+   "tags": [
+    "grants",
+    "funding",
+    "cemetery projects"
+   ]
+  },
+  {
+   "topic": "Petroleum odor at North Cemetery",
+   "resolution": "no vote; Yasko named point of contact with Chief Sullivan and DEP",
+   "quote": "the topic of a petroleum odor at the north cemetery was discussed.",
+   "tags": [
+    "environmental",
+    "DEP",
+    "North Cemetery"
+   ]
+  },
+  {
+   "topic": "Cemetery Rules, Chapter 310-2",
+   "resolution": "decided without vote: paragraph 3 moved to section 310-1",
+   "quote": "chapter 310-2 of the cemetery rules and regulations were discussed.",
+   "tags": [
+    "rules and regulations",
+    "fees"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Cemetery Rules and Regulations, Chapter 310-2",
+   "where": "text",
+   "quote": "chapter 310-2 of the cemetery rules and regulations were discussed."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "grants",
+  "petroleum odor",
+  "environmental",
+  "cemetery rules and regulations",
+  "burial fees",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

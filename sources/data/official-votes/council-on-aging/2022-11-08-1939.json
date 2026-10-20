@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2022-11-08",
  "docid": "1939",
@@ -12,23 +12,294 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the October 11, 2022 meeting",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Betty DiGiacomo",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the October 11, 2022 meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. DiGiacomo",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln motioned to approve the minutes from the october 11, 2022 meeting. ms. digiacomo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Diane Nowd",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 11:36 a.m.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. Nowd",
+   "outcome": "passed",
    "procedural": true,
    "quote": "at 11:36 a.m. mr. lincoln motioned to adjourn. ms. nowd seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0740505
+ "note": "Two-page text, readable; no scan problem. Two votes recorded, both procedural (minutes approval and adjournment), both carried unanimously; no vote is recorded on any substantive item. The line 'Unanimously approved by COA at December 13, 2022 meeting' records approval of these minutes at a later meeting and is not counted here. Public comment and board comment are printed as 'none'. No dollar figures appear anywhere in the minutes; budget items are discussion of grant funds, staff hours and fundraising without amounts. Paul Visconti did not attend his scheduled appearance. Cheryl Moisan is absent. Jacquelyn Dwyer and Sarah Grant are mentioned only in the resignation notice and are not recorded as attending.",
+ "cost_usd": 0.01799141,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "director sue doherty, chairperson debbie lincoln, vice chairperson jane rabbitt, betty digiacomo"
+  },
+  {
+   "name": "Debbie Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "director sue doherty, chairperson debbie lincoln, vice chairperson jane rabbitt, betty digiacomo"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "Vice chairperson",
+   "status": "present",
+   "quote": "director sue doherty, chairperson debbie lincoln, vice chairperson jane rabbitt, betty digiacomo"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "status": "present",
+   "quote": "director sue doherty, chairperson debbie lincoln, vice chairperson jane rabbitt, betty digiacomo"
+  },
+  {
+   "name": "Pete Lincoln",
+   "status": "present",
+   "quote": "digiacomo, pete lincoln, barbara brown, jim mcguigan, judy tarbell, susan o'sullivan, diane nowd"
+  },
+  {
+   "name": "Barbara Brown",
+   "status": "present",
+   "quote": "digiacomo, pete lincoln, barbara brown, jim mcguigan, judy tarbell, susan o'sullivan, diane nowd"
+  },
+  {
+   "name": "Jim McGuigan",
+   "status": "present",
+   "quote": "digiacomo, pete lincoln, barbara brown, jim mcguigan, judy tarbell, susan o'sullivan, diane nowd"
+  },
+  {
+   "name": "Judy Tarbell",
+   "status": "present",
+   "quote": "digiacomo, pete lincoln, barbara brown, jim mcguigan, judy tarbell, susan o'sullivan, diane nowd"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "status": "present",
+   "quote": "digiacomo, pete lincoln, barbara brown, jim mcguigan, judy tarbell, susan o'sullivan, diane nowd"
+  },
+  {
+   "name": "Diane Nowd",
+   "status": "present",
+   "quote": "digiacomo, pete lincoln, barbara brown, jim mcguigan, judy tarbell, susan o'sullivan, diane nowd"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "status": "absent",
+   "quote": "absent: cheryl moisan"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "select board member lou franco, coa liaison to the eagle house supporters marilyn talley"
+  },
+  {
+   "name": "Marilyn Talley",
+   "role": "COA Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "select board member lou franco, coa liaison to the eagle house supporters marilyn talley"
+  },
+  {
+   "name": "Paul Visconti",
+   "role": "Town of Lunenburg Building Facilities Manager",
+   "status": "absent",
+   "quote": "mr. visconti was scheduled to appear before the coa, but he did not attend the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Celebrate the holiday season at the next meeting (Holiday Party).",
+   "quote": "the board agreed to celebrate the holiday season at the next meeting."
+  },
+  {
+   "decision": "Sign the latest copy of the policies and procedures document, and wait until the MCOA and EOEA finalize their discussions on COA board member guidance.",
+   "quote": "decided to sign the latest copy of the document, and agreed to wait until the mcoa and eoea finalize their discussions on coa board member guidance."
+  },
+  {
+   "decision": "Board members to review the orientation packet and return to the next meeting with constructive feedback.",
+   "quote": "ms. lincoln asked board members to take a look at the packet, and come back to the next meeting with constructive feedback."
+  },
+  {
+   "decision": "Continue looking at new logos for the Senior Center.",
+   "quote": "the board will continue to look at new logos"
+  },
+  {
+   "decision": "Board members to think on how to attract more interest in the volunteer/legislature breakfast event.",
+   "quote": "board members agreed to think on how to attract more interest in the event."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "COA finance update: Formula Grant funds",
+   "what_was_recorded": "Director reported Formula Grant funds exceeded her expectations; no amount printed.",
+   "quote": "ms. doherty reported that formula grant funds exceeded her expectations.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Staff hours at Annual Town Meeting",
+   "what_was_recorded": "Director said she will seek more hours at Annual Town Meeting for the Administrative Assistant and Outreach Coordinator, and a new part-time Outreach position; no amounts printed.",
+   "quote": "ms. doherty informed the board that she will be seeking more hours at annual town meeting for the administrative assistant position",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Assistant Meal Site Manager funding shift",
+   "what_was_recorded": "Director intends to move the Assistant Meal Site Manager hours to the municipal budget and keep kitchen aide positions under the Formula Grant; no amounts printed.",
+   "quote": "ms. doherty explained she intends to move all the hours for the assistant meal site manager over to the municipal budget, and keep kitchen aide positions funded under the formula grant.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Tea party fundraising",
+   "what_was_recorded": "Chair reported this year's tea party has raised the most money to date; no amount printed.",
+   "quote": "ms. lincoln reported that the this year's tea party has raised the most money to date.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: COA vacancy",
+   "resolution": "noted; vacancy announced",
+   "quote": "ms. lincoln announced that there is a vacancy on the council on aging.",
+   "tags": [
+    "membership",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Minutes approval (October 11, 2022)",
+   "resolution": "approved",
+   "quote": "mr. lincoln motioned to approve the minutes from the october 11, 2022 meeting. ms. digiacomo seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Building facilities and capital plan (parking lot)",
+   "resolution": "reported; no action; presenter absent",
+   "quote": "ms. doherty informed the board that the parking lot project would go out for bid in january with hopes of breaking ground in spring of 2023.",
+   "tags": [
+    "facilities",
+    "capital plan",
+    "parking lot"
+   ]
+  },
+  {
+   "topic": "Holiday party",
+   "resolution": "deferred to next meeting",
+   "quote": "the board agreed to celebrate the holiday season at the next meeting.",
+   "tags": [
+    "holiday party",
+    "social"
+   ]
+  },
+  {
+   "topic": "Vision for FY23 / Senior Center logo",
+   "resolution": "continued",
+   "quote": "the board will continue to look at new logos",
+   "tags": [
+    "logo",
+    "branding"
+   ]
+  },
+  {
+   "topic": "Board member orientation package",
+   "resolution": "continued; feedback requested",
+   "quote": "board members found several errors in the first draft of the packet.",
+   "tags": [
+    "orientation",
+    "policies"
+   ]
+  },
+  {
+   "topic": "Boston Post Cane",
+   "resolution": "ceremony scheduled",
+   "quote": "ceremony scheduled for monday, december 12, 2022 at 3:00 p.m. at the eagle house.",
+   "tags": [
+    "ceremony",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Volunteer/Legislature breakfast",
+   "resolution": "reported; members to consider attracting interest",
+   "quote": "all coa members attended the breakfast.",
+   "tags": [
+    "events",
+    "legislature"
+   ]
+  },
+  {
+   "topic": "Tea party report",
+   "resolution": "reported",
+   "quote": "ms. lincoln reported that the this year's tea party has raised the most money to date.",
+   "tags": [
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "reported",
+   "quote": "ms. doherty thanked the eagle house supporters for paying to put new felt on the pool table.",
+   "tags": [
+    "director",
+    "age-friendly",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "COA finance update",
+   "resolution": "reported",
+   "quote": "ms. doherty reported that formula grant funds exceeded her expectations.",
+   "tags": [
+    "finance",
+    "formula grant"
+   ]
+  },
+  {
+   "topic": "Supporters report",
+   "resolution": "reported",
+   "quote": "ms. talley reported that the epilepsy fundraiser will start in december.",
+   "tags": [
+    "fundraising",
+    "Eagle House"
+   ]
+  },
+  {
+   "topic": "Notices and communications: resignation",
+   "resolution": "letter received",
+   "quote": "ms. lincoln received a letter of resignation from jacquelyn dwyer",
+   "tags": [
+    "membership",
+    "resignation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:36 a.m.",
+   "quote": "at 11:36 a.m. mr. lincoln motioned to adjourn. ms. nowd seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "Council on Aging",
+  "senior center",
+  "Eagle House",
+  "formula grant",
+  "staffing",
+  "orientation packet",
+  "volunteers",
+  "Boston Post Cane",
+  "membership vacancy",
+  "facilities",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

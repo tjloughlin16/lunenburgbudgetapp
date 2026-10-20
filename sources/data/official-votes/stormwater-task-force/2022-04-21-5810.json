@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2022-04-21",
  "docid": "5810",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:27.",
    "moved_by": "Todd Dwyer",
    "seconded_by": "Matt Proctor",
    "outcome": "not stated",
@@ -21,6 +21,263 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Section 4 discusses \"Vote on Additional Membership\" but records no formal motion or vote outcome—only that Jack wanted to take a vote to increase membership. Danielle Marr being listed as new clerk/secretary may reflect an outcome, but no motion, second, or vote result is explicitly recorded.",
- "cost_usd": 0.07680150000000001
+ "note": "Text is a clean digital extraction, not a scan. The only recorded vote is the motion to adjourn, with no result printed. The task force membership vote (5 to 7 members) was proposed but no vote is recorded. No approval of prior minutes is recorded. The header gives a 7:02PM start, but the joint AGCom session began at 7:00PM and the regular meeting is recorded as starting at 7:45PM; both are as printed. The next meeting (May 19th at 7PM) is printed across a page break and so is not quoted as a topic. 'Jack' is named by first name only and is not matched to the attendance list. Paula Bertram and Heather are named but did not take part, so they are not listed as attendees. The minutes name no document list; documents are referenced only in passing, so printed is false.",
+ "cost_usd": 0.019330180000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Rabbitt",
+   "role": "Conservation",
+   "status": "present",
+   "quote": "in attendance were john rabbitt (conservation), matt proctor (resident contractor), adam burney (land use director), todd dwyer (selectman), john beale via zoom (resident engineer), perry jewel (liason), danielle marr (secretary)."
+  },
+  {
+   "name": "Matt Proctor",
+   "role": "Resident Contractor",
+   "status": "present",
+   "quote": "in attendance were john rabbitt (conservation), matt proctor (resident contractor), adam burney (land use director), todd dwyer (selectman), john beale via zoom (resident engineer), perry jewel (liason), danielle marr (secretary)."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "in attendance were john rabbitt (conservation), matt proctor (resident contractor), adam burney (land use director), todd dwyer (selectman), john beale via zoom (resident engineer), perry jewel (liason), danielle marr (secretary)."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Selectman",
+   "status": "present",
+   "quote": "in attendance were john rabbitt (conservation), matt proctor (resident contractor), adam burney (land use director), todd dwyer (selectman), john beale via zoom (resident engineer), perry jewel (liason), danielle marr (secretary)."
+  },
+  {
+   "name": "John Beale",
+   "role": "Resident Engineer",
+   "status": "remote",
+   "quote": "john beale via zoom (resident engineer), perry jewel (liason), danielle marr (secretary)."
+  },
+  {
+   "name": "Perry Jewel",
+   "role": "liason",
+   "status": "present",
+   "quote": "in attendance were john rabbitt (conservation), matt proctor (resident contractor), adam burney (land use director), todd dwyer (selectman), john beale via zoom (resident engineer), perry jewel (liason), danielle marr (secretary)."
+  },
+  {
+   "name": "Danielle Marr",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "in attendance were john rabbitt (conservation), matt proctor (resident contractor), adam burney (land use director), todd dwyer (selectman), john beale via zoom (resident engineer), perry jewel (liason), danielle marr (secretary)."
+  },
+  {
+   "name": "Nick Cristofori",
+   "role": "Town Storm Water Consultant (CEI)",
+   "status": "present",
+   "quote": "ms4 presentation by nick cristofori from cei… (town storm water consultant)"
+  },
+  {
+   "name": "Janet H. Morrison, Esq.",
+   "role": "Guest speaker",
+   "status": "present",
+   "quote": "7:00pm ritter memorial basement- joint meeting with agcom - guest speaker janet h. morrison, esq."
+  },
+  {
+   "name": "Jack",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "question by jack in regards to idde training program."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Website discussion deferred to a later meeting, Paula being absent.",
+   "quote": "paula was not at meeting- will discuss at later meeting."
+  },
+  {
+   "decision": "Possible items for the next meeting's agenda identified (stonewall utility, additional training, town engineer or consultant for assessment and soil borings, storyboard for public awareness on MS4).",
+   "quote": "identify possible next meeting agenda items."
+  },
+  {
+   "decision": "Jack to look into additional training options (an individual undertaking as minuted, not a recorded board vote).",
+   "quote": "jack wants more emphasis on training and will look into additional training options."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Rain barrel and compost bin sales by the stormwater group",
+   "what_was_recorded": "The stormwater group is selling a rain barrel and compost bin pair, with residents told to call DPW.",
+   "figures_as_printed": [
+    "$80"
+   ],
+   "quote": "$80 for the pair. call dpw if interested."
+  },
+  {
+   "topic": "Grants for stormwater practices in flood areas",
+   "what_was_recorded": "Fund-raising for stormwater practices is available through grants that are not town money; a grant writer would be needed.",
+   "figures_as_printed": [],
+   "quote": "fundings and massworks grants are available that are not town money."
+  },
+  {
+   "topic": "Asset management grant",
+   "what_was_recorded": "The town is finalizing an asset management grant covering pipe, invert, outlet, rim and sump data.",
+   "figures_as_printed": [],
+   "quote": "currently town is finalizing asset management grant which will include size of pipe, elevation of invert, outlet, rim, and sump."
+  },
+  {
+   "topic": "Catch basin cleaning: vac truck versus outside vendor",
+   "what_was_recorded": "Discussion of buying an expensive vac truck, with its maintenance cost, against hiring an outside vendor for catch basin cleaning.",
+   "figures_as_printed": [],
+   "quote": "more realistic to have outside vendor to do the cleaning as opposed to buying expensive vac truck."
+  },
+  {
+   "topic": "Free stormwater training for DPW employees",
+   "what_was_recorded": "Two DPW employees attended a free regional stormwater training in the past few years.",
+   "figures_as_printed": [],
+   "quote": "2 dpw employees attended the central mass regional stormwater coalition free training."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Joint meeting with AGCom: RCPP presentation",
+   "resolution": "presented by Janet H. Morrison, Esq., 7:00 to 7:24PM",
+   "quote": "presentation of \"regional conservation partnership program\" (rcpp) 2014.",
+   "tags": [
+    "conservation",
+    "farmland",
+    "RCPP",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Open meeting and roll call",
+   "resolution": "roll call taken",
+   "quote": "1. stormwater open meeting & roll call town hall",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Member and public comment",
+   "resolution": "rain barrel sale and Earth Day events noted",
+   "quote": "upcoming earth day activities/events",
+   "tags": [
+    "outreach",
+    "earth day",
+    "rain barrels"
+   ]
+  },
+  {
+   "topic": "MS4 presentation by CEI",
+   "resolution": "discussed; no action recorded",
+   "quote": "ms4 presentation by nick cristofori from cei… (town storm water consultant)",
+   "tags": [
+    "MS4",
+    "IDDE training",
+    "catch basins",
+    "outfalls",
+    "inspections",
+    "street sweeping"
+   ]
+  },
+  {
+   "topic": "Task force membership",
+   "resolution": "discussed; vote to increase membership proposed but not recorded",
+   "quote": "jack wants to take a vote to increase members from 5 to 7.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Website",
+   "resolution": "deferred to a later meeting",
+   "quote": "paula was not at meeting- will discuss at later meeting.",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Who receives storm water emails",
+   "resolution": "information given; no action recorded",
+   "quote": "emails go to everyone on the committee, town manager, dpw director, adam burney.",
+   "tags": [
+    "communications"
+   ]
+  },
+  {
+   "topic": "Possible next meeting agenda items",
+   "resolution": "items identified",
+   "quote": "create storyboard in order to gain public awareness and involvement in regards to ms4.",
+   "tags": [
+    "agenda",
+    "public awareness"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "9. public comment no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee member comment",
+   "resolution": "none",
+   "quote": "none. meeting meet expectation based on agenda.",
+   "tags": [
+    "wrap-up"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Regional Conservation Partnership Program (RCPP) 2014 presentation",
+   "where": "text",
+   "quote": "presentation of \"regional conservation partnership program\" (rcpp) 2014."
+  },
+  {
+   "name": "Agenda, slide 36 (outfall locations)",
+   "where": "text",
+   "quote": "slide 36 of agenda shows outfalls- per permits need to be inspected all outfalls or dry"
+  },
+  {
+   "name": "Draft of potential stormwater BMP locations on municipal properties",
+   "where": "text",
+   "quote": "draft provided with potential stormwater bmp locations on municipal properties may be a good opportunity to look into further."
+  },
+  {
+   "name": "Stormwater bylaw (passed November 2020, effective May 2021)",
+   "where": "text",
+   "quote": "in november 2020, bylaw was passed and effective may 2021."
+  },
+  {
+   "name": "Stormwater inspection report",
+   "where": "text",
+   "quote": "stormwater inspection report - general concern about red flag locations"
+  },
+  {
+   "name": "BMP condition evaluation checklist",
+   "where": "text",
+   "quote": "evaluation checklist can be provided to group as requested."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "IDDE training",
+  "catch basins",
+  "outfalls",
+  "street sweeping",
+  "task force membership",
+  "website",
+  "conservation",
+  "farmland",
+  "joint meeting with AGCom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

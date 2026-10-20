@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-11-08",
  "docid": "5307",
@@ -12,33 +12,482 @@
  },
  "votes": [
   {
-   "motion": "Pass over Article 8 from the November 15, 2022 Special Town Meeting warrant",
-   "moved_by": "T. Dwyer",
-   "seconded_by": "H. Sroka",
-   "outcome": "passed 3-2",
-   "procedural": true,
-   "quote": "motion: t. dwyer 2nd: h. sroka to pass over article 8 at special town meeting vote: 3 in favor, 2 opposed"
-  },
-  {
-   "motion": "Approve the minutes of October 4, 2022 as presented",
+   "motion": "Approve the minutes of October 4, 2022 as presented.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer to approve the minutes of october 4, 2022 as presented 2\"d: l. franco vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to approve the minutes of october 4, 2022 as presented 2\"d: l. franco vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Accept the recommendation of the Principal Assessor and adopt a single rate tax levy.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "that the town accepts the recommendation of the principal assessor and adopt a single rate tax levy vote: all in favor"
+  },
+  {
+   "motion": "Approve the request to access Town property for removal of a prior and installation of a new septic system at 51 Parmenter Road, with caveats on fence removal and drainage pipe liability.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "that we approve the request to access town property for the removal of a prior and installation of a new septic system as presented"
+  },
+  {
+   "motion": "Ratify the Town Manager's appointment of Anna Petrie as Conservation Administrator.",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Dwyer",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "motion: l. franco 2\"': t. dwyer"
+  },
+  {
+   "motion": "Pass over Article 8 at the Special Town Meeting.",
+   "moved_by": "T. Dwyer",
+   "seconded_by": "H. Sroka",
+   "outcome": "passed 3-2",
+   "procedural": false,
+   "quote": "to pass over article 8 at special town meeting vote: 3 in favor, 2 opposed (alonzo, jeffreys)"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. alonzo to adjourn the meeting 2\"': t. dwyer vote: all in favor",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting 2\"': t. dwyer vote: all in favor"
   }
  ],
- "dropped_unquoted": 3,
- "note": "These are OCR'd minutes marked as extracted by macOS Vision. The quotes have been cleaned of OCR artifacts (e.g., 2nd instead of scanning errors like 2\" or 2') for readability and verification purposes. The Conservation Administrator appointment (vote 3) has no recorded vote outcome in the minutes.\"",
- "cost_usd": 0.166258
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision), so figures and words may be misread. Quotes were copied as printed, including OCR errors such as '2\"d', 'Jeffieys', '$ 30,869176.82' and '6th' printed as 6'h. Page 1's attendance line is cut off, so Brochu's and others' attendance status is not stated. The Petrie ratification shows a motion (L. Franco, seconded T. Dwyer) with no recorded vote or result. The minutes approval motion says October 4, 2022 but the agenda heading says October 11, 2022. The text at the top of page 11 is cut off and its topic is unknown. The upcoming meetings block is unreadable. Mr. Franco and Mr. Alonzo appear under PUBLIC COMMENT, and the text does not say whether they were speaking as board members. Ms. Lemieux's role is not printed in the minutes. The tax figures on pages 2 to 4 are OCR and some may be misaligned, so they are quoted as printed rather than totalled.",
+ "cost_usd": 0.027193210000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo reported capital planning met yesterday and we had a presentation from the facilities director."
+  },
+  {
+   "name": "L. Franco",
+   "status": "present",
+   "quote": "mr. franco added townsend harbor road is particularly dangerous when foggy."
+  },
+  {
+   "name": "T. Dwyer",
+   "status": "present",
+   "quote": "mr. dwyer, regarding the public safety engineering design for drainage project, noted we had an exceptionally dry year"
+  },
+  {
+   "name": "H. Sroka",
+   "status": "present",
+   "quote": "ms. sroka reported the school committee met last week and discussed the three options presented by the municipal building committee."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux requested the board ratify her appointment of anna petrie as conservation administrator"
+  },
+  {
+   "name": "Christopher (C.J.) Carroll",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "mr. carroll read from his presentation:"
+  },
+  {
+   "name": "Jason Martin",
+   "role": "applicant",
+   "status": "present",
+   "quote": "mr. martin stated the fence was there when they purchased the property five years ago."
+  },
+  {
+   "name": "Kathleen Martin",
+   "role": "applicant, of 45 Parmenter Road",
+   "status": "not stated",
+   "quote": "request from jason and kathleen martin of 45 parmenter road to use town"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "excavating contractor for the property owner",
+   "status": "present",
+   "quote": "dan proctor, excavating contractor for the property owner, reported the martins have a failed septic system."
+  },
+  {
+   "name": "Ana Lockwood",
+   "status": "present",
+   "quote": "ms. lockwood stated that she was on the open space committee and the adjacent town"
+  },
+  {
+   "name": "Brochu",
+   "role": "Finance Director",
+   "status": "not stated",
+   "quote": "brochu, finance director; dan proctor, jason martin"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, claire in. peterson elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board accepted the Principal Assessor's presentation; the entire presentation will be posted on the town website under the Assessors' Page.",
+   "quote": "the entire presentation will be posted on the town website under the assessors' page."
+  },
+  {
+   "decision": "Ms. Lemieux advised that a Right of Entry agreement be drafted for the Martin septic work on town property.",
+   "quote": "she also advised that a right of entry agreement be drafted."
+  },
+  {
+   "decision": "The board will sign the right of entry agreement at the December 6th meeting.",
+   "quote": "the board will sign the right of entry agreement at the december 6'h meeting."
+  },
+  {
+   "decision": "Ms. Lemieux will notify Mr. Bursch that Mr. Dwyer will be the board's representative in Hickory Hills well discussions with the Water District Commission.",
+   "quote": "ms. lemieux will notify mr. bursch that mr. dwyer will be the representative."
+  },
+  {
+   "decision": "Mr. Jeffreys will draft a process for American Rescue Plan Act funding requests and return it to the Select Board for review.",
+   "quote": "mr. jeffieys will take the criteria and draft a process and return to the sb to review."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Tax levy maximum",
+   "what_was_recorded": "The FY2023 maximum allowable levy is printed as $30,875,656.",
+   "figures_as_printed": [
+    "$30,875,656"
+   ],
+   "quote": "maximum allowable levy $30,875,656"
+  },
+  {
+   "topic": "Tax levy estimate",
+   "what_was_recorded": "The estimated tax levy is printed as $ 30,869,178.82.",
+   "figures_as_printed": [
+    "$ 30,869,178.82"
+   ],
+   "quote": "tax levy estimate $ 30,869,178.82"
+  },
+  {
+   "topic": "Excess levy capacity",
+   "what_was_recorded": "Maximum allowable levy, estimated tax levy and excess levy capacity are printed; excess levy capacity is $6,477.18 (OCR prints the estimate with a missing decimal point).",
+   "figures_as_printed": [
+    "$ 30,875,656",
+    "$ 30,869176.82",
+    "$ 6,477.18"
+   ],
+   "quote": "$ 30,875,656 $ 30,869176.82 $ 6,477.18"
+  },
+  {
+   "topic": "Residential and CIP tax shift",
+   "what_was_recorded": "The assessor said a maximum CIP shift would save residential bills about 3.9% and raise CIP bills by 50%; the board's Historically Lunenburg single-rate approach is described alongside.",
+   "figures_as_printed": [],
+   "quote": "(if the maximum cip % was used, residential bills would see approximately 3.9% in savings, while that shift would increase cip tax bills by 50%)"
+  },
+  {
+   "topic": "Tax rate",
+   "what_was_recorded": "Five-year tax rate history is printed with the proposed FY2023 rate of 14.62 (subject to DOR approval).",
+   "figures_as_printed": [
+    "14.62*"
+   ],
+   "quote": "tax rate 18.68 18.12 17.74 17.19 14.62*"
+  },
+  {
+   "topic": "Average single family home value",
+   "what_was_recorded": "The average single family home value rose over the past five years.",
+   "figures_as_printed": [
+    "$161,200.00"
+   ],
+   "quote": "the average single family home value has increased $161,200.00 or about 52% over the past 5 years."
+  },
+  {
+   "topic": "Average single family home tax bill",
+   "what_was_recorded": "The average single family home tax bill rose over the past five years.",
+   "figures_as_printed": [
+    "$1103.55"
+   ],
+   "quote": "the average single family home tax bill has increased $1103.55 or about 19.12% over the past 5 years."
+  },
+  {
+   "topic": "Free cash and taxing to the full levy",
+   "what_was_recorded": "Discussion of taxing to the full 2.5% and how much free cash might offset that; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued about taxing to the full 2.5% and the amount of available free cash that might offset taxing to the full amount allowed."
+  },
+  {
+   "topic": "Economic development earmark",
+   "what_was_recorded": "The town received a $100,000 earmark toward the abatement for the old Primary School project.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "$100,000 earmarktowardstheabatement fortheold primary school project."
+  },
+  {
+   "topic": "FY2022 capital plan total",
+   "what_was_recorded": "The FY2022 capital plan table prints a figure of 1,597,825.00 labelled as the total capital plan.",
+   "figures_as_printed": [
+    "1,597,825.00"
+   ],
+   "quote": "48,000.00 1,597,825.00 balance 2,594.98"
+  },
+  {
+   "topic": "Police vest order",
+   "what_was_recorded": "One additional vest for an officer needs ordering at a cost noted in the status column.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "need to order 1 more vest for additional officer. $1000"
+  },
+  {
+   "topic": "FY2023 capital plan total",
+   "what_was_recorded": "A figure of $ 1,561,729.50 is printed after the FY23 capital plan table; the table's label is not in the text.",
+   "figures_as_printed": [
+    "$ 1,561,729.50"
+   ],
+   "quote": "$ 1,561,729.50 mr. dwyer, regarding the public safety engineering design for drainage project, noted we had"
+  },
+  {
+   "topic": "On-call firefighter buyback",
+   "what_was_recorded": "Discussion of a warrant article on buying back on-call firefighter time, and of making a decision without financial impact to the Town; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion ensued about having to make make a decision without financial impact to the town."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Franco",
+   "topic": "pancake breakfast",
+   "quote": "mr. franco noted the pancake breakfast is tomorrow at eagle house senior center from 8-10 a.m."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "state election voting deadline",
+   "quote": "mr. alonzo reminded all that there was still one hour remaining to vote in the state"
+  },
+  {
+   "speaker": "Ana Lockwood",
+   "stated_role": "91 Main Street",
+   "topic": "Architectural Preservation District bylaw history",
+   "quote": "ana lockwood, 91 main street, gave a brief history of the town center and spoke about the"
+  },
+  {
+   "speaker": "Mr. Jeffreys",
+   "topic": "Recycle Your Reusables event",
+   "quote": "mr. jeffreys reminded all about the recycle your reusables event this saturday from 9:30"
+  },
+  {
+   "speaker": "Ms. Lemieux",
+   "topic": "Special Town Meeting reminder",
+   "quote": "ms. lemieux reminded all about the special town meeting on november 15'h at 7:00 p.m. at"
+  },
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "182 Highland Street",
+   "topic": "McNally Park name and Whalom history",
+   "quote": "dave rodgers, 182 highland street, watched last night's facility director's capital planning presentation and was very impressed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and recording notice",
+   "resolution": "no action",
+   "tags": [
+    "open meeting",
+    "recording"
+   ],
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "announcements"
+   ],
+   "quote": "mr. franco noted the pancake breakfast is tomorrow at eagle house senior center from 8-10 a.m."
+  },
+  {
+   "topic": "Tax classification public hearing",
+   "resolution": "approved single rate tax levy",
+   "tags": [
+    "tax classification",
+    "single tax rate",
+    "residential factor"
+   ],
+   "quote": "tax classification public hearing: presentation from principal assessor"
+  },
+  {
+   "topic": "Martin septic work on town property",
+   "resolution": "approved with caveats; right of entry to be signed December 6",
+   "tags": [
+    "septic",
+    "town property",
+    "right of entry",
+    "Parmenter Road"
+   ],
+   "quote": "request from jason and kathleen martin of 45 parmenter road to use town"
+  },
+  {
+   "topic": "Hickory Hills well discussions",
+   "resolution": "representative designated (Mr. Dwyer)",
+   "tags": [
+    "water district",
+    "Hickory Hills",
+    "well"
+   ],
+   "quote": "ms. lemieux reported the water district commission chair was requesting a representative"
+  },
+  {
+   "topic": "Ratify Conservation Administrator appointment",
+   "resolution": "motion made, no result recorded",
+   "tags": [
+    "appointments",
+    "conservation",
+    "hiring"
+   ],
+   "quote": "ms. lemieux requested the board ratify her appointment of anna petrie as conservation administrator"
+  },
+  {
+   "topic": "Volunteer vacancies, job postings, clothing drive, email migration, earmark",
+   "resolution": "no action",
+   "tags": [
+    "vacancies",
+    "employment",
+    "email migration",
+    "earmark"
+   ],
+   "quote": "historical commission (2 vacancies)"
+  },
+  {
+   "topic": "FY22 and FY23 capital plan projects",
+   "resolution": "reviewed; no action",
+   "tags": [
+    "capital plan",
+    "projects",
+    "delays"
+   ],
+   "quote": "ms. lemieux reviewed the chart with the board."
+  },
+  {
+   "topic": "ARPA funding requests and process",
+   "resolution": "process to be drafted by Mr. Jeffreys",
+   "tags": [
+    "ARPA",
+    "American Rescue Plan Act",
+    "criteria"
+   ],
+   "quote": "mr. jeffreys stated the board was given the rating criteria last week to look over and suggested going section by section."
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "Article 8 passed over 3-2",
+   "tags": [
+    "Special Town Meeting",
+    "warrant articles",
+    "on-call firefighters",
+    "consent calendar"
+   ],
+   "quote": "ms. lemieux noted the select board already voted on articles 2, 6, 7 and 9 (part of the consent calendar)"
+  },
+  {
+   "topic": "Architectural Preservation District windows and article",
+   "resolution": "no action; APDC decisions reported",
+   "tags": [
+    "APDC",
+    "windows",
+    "bylaw",
+    "historic"
+   ],
+   "quote": "apdc voted not to rescind their prior decision regarding the windows"
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes of october 4, 2022 as presented"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports; no action",
+   "tags": [
+    "School Committee",
+    "Capital Planning",
+    "Finance Committee",
+    "Municipal Building Committee"
+   ],
+   "quote": "ms. sroka reported the school committee met last week and discussed the three options presented by the municipal building committee."
+  },
+  {
+   "topic": "Age-friendly and dementia-friendly planning",
+   "resolution": "no action; survey planned with MRPC",
+   "tags": [
+    "age friendly",
+    "dementia friendly",
+    "MRPC",
+    "survey"
+   ],
+   "quote": "ms. lemieux reported she is working with mrpc."
+  },
+  {
+   "topic": "Upcoming meetings and events schedule",
+   "resolution": "not readable in the OCR text",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming meeting/events schedule"
+  },
+  {
+   "topic": "Public comment on McNally Park and capital planning",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "McNally Park",
+    "capital planning"
+   ],
+   "quote": "dave rodgers, 182 highland street, watched last night's facility director's capital planning presentation and was very impressed."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:13 P.M.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting adjourned at 10:13 p.m."
+  }
+ ],
+ "tags": [
+  "tax classification",
+  "single tax rate",
+  "residential factor",
+  "town property easement",
+  "septic",
+  "Parmenter Road",
+  "Hickory Hills well",
+  "Water District",
+  "appointments",
+  "Conservation Administrator",
+  "capital plan",
+  "ARPA",
+  "Special Town Meeting",
+  "warrant articles",
+  "Architectural Preservation District",
+  "public comment",
+  "email migration",
+  "economic development earmark",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

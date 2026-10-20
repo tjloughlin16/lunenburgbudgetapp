@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2021-12-15",
  "docid": "2886",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of November 18, 2021 as amended",
+   "motion": "Accept the minutes of November 18, 2021 as amended.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "dick made a motion to accept the minutes of november 18, 2021 as amended. seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Accept the minutes of November 19, 2021 as presented",
+   "motion": "Accept the minutes of November 19, 2021 as presented.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "dick made a motion to accept the minutes of november 19, 2021 as presented. seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Accept the Collection Policy as presented",
+   "motion": "Accept the Collection Policy as presented.",
    "moved_by": "Dick",
    "seconded_by": "Maia",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "dick made a motion to accept the collection policy as presented. seconded by maia. the motion passed unanimously."
   },
   {
-   "motion": "Accept the director's review as amended",
+   "motion": "Accept the director's evaluation review as amended.",
    "moved_by": "Kate",
    "seconded_by": "Donna",
    "outcome": "passed unanimously",
@@ -44,7 +44,7 @@
    "quote": "kate made a motion to accept the review as amended. seconded by donna. the motion passed unanimously."
   },
   {
-   "motion": "Offer Muir a 3-year contract, extended from the previous 1 year",
+   "motion": "Offer Muir a 3-year contract, extended from the previous 1 year.",
    "moved_by": "Harry",
    "seconded_by": "Bob",
    "outcome": "passed unanimously",
@@ -52,15 +52,251 @@
    "quote": "harry made a motion to offer muir a 3-year contract, extended from the previous 1 year. seconded by bob. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick seconded by kate. meeting was adjourned at 8:52 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0790045
+ "note": "Text is complete for the meeting body (pages 1-2); pages 3-8 are blank. Votes are recorded as 'passed unanimously' with no roll call or counts. The adjournment motion records no result, so its outcome is 'not stated'. No dollar amounts were voted on; the only printed figure is $872 from the Friends sale. Attendance is from the 'Attending:' line; no roles are printed for most trustees.",
+ "cost_usd": 0.01567658,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:48 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The job description for the staff vacancy is to be rewritten and added to the agenda for the next meeting.",
+   "quote": "it was suggested that the job description should be rewritten. this will be added to the agenda for the next meeting."
+  },
+  {
+   "decision": "The Director agreed to compile a bylaws document, after reviewing sample bylaws from area libraries.",
+   "quote": "harry asked how we would go about creating a bylaw document. muir said he would be happy to compile one."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friends of LPL book and puzzle sale",
+   "what_was_recorded": "The Friends took in a sum from their December 11th book and puzzle sale.",
+   "figures_as_printed": [
+    "$872"
+   ],
+   "quote": "the friends had an excellent book and puzzle sale on december 11th. they took in $872."
+  },
+  {
+   "topic": "Director's report on finances",
+   "what_was_recorded": "The Director reported salaries slightly behind schedule, heating expenses reasonable, financials good, and heavy library materials spending that month; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "salaries are slightly behind schedule. heating expenses are still reasonable. the financials look good."
+  },
+  {
+   "topic": "LED light replacement quote",
+   "what_was_recorded": "A quote was received from Piper Electric for the LED light replacement project; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "a quote has been received from piper electric for the led light replacement project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "dick made a motion to accept the minutes of november 18, 2021 as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received, no action",
+   "quote": "the action plan has been successfully submitted to the state.",
+   "tags": [
+    "director",
+    "programming",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook discussion",
+   "resolution": "discussed, no action",
+   "quote": "we discussed chapter 5 in the handbook which covers planning.",
+   "tags": [
+    "governance",
+    "handbook"
+   ]
+  },
+  {
+   "topic": "By-Laws review discussion",
+   "resolution": "continued to next meeting",
+   "quote": "muir gathered some sample bylaws documents from some area libraries.",
+   "tags": [
+    "bylaws",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Collection Policy review",
+   "resolution": "approved",
+   "quote": "dick made a motion to accept the collection policy as presented.",
+   "tags": [
+    "collection policy"
+   ]
+  },
+  {
+   "topic": "Trust Fund update",
+   "resolution": "no action",
+   "quote": "the approval by the state legislative committee should be very soon.",
+   "tags": [
+    "trust fund"
+   ]
+  },
+  {
+   "topic": "Friends of LPL update",
+   "resolution": "no action",
+   "quote": "the friends had an excellent book and puzzle sale on december 11th.",
+   "tags": [
+    "friends of the library",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Director's evaluation and contract",
+   "resolution": "review approved as amended; 3-year contract offered",
+   "quote": "harry made a motion to offer muir a 3-year contract, extended from the previous 1 year.",
+   "tags": [
+    "personnel",
+    "contract",
+    "director evaluation"
+   ]
+  },
+  {
+   "topic": "Board comments",
+   "resolution": "no action",
+   "quote": "harry contacted main st. bank and connected them with muir to investigate opportunities for the bank to support library programs.",
+   "tags": [
+    "partnerships"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:52 p.m.",
+   "quote": "meeting was adjourned at 8:52 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "December 15, 2021 Agenda",
+   "where": "list",
+   "quote": "december 15, 2021 agenda o december 2021 director's report o collection development policy"
+  },
+  {
+   "name": "December 2021 Director's Report",
+   "where": "list",
+   "quote": "december 15, 2021 agenda o december 2021 director's report o collection development policy"
+  },
+  {
+   "name": "Collection Development Policy",
+   "where": "list",
+   "quote": "december 15, 2021 agenda o december 2021 director's report o collection development policy"
+  },
+  {
+   "name": "Action Plan (submitted to the state)",
+   "where": "text",
+   "quote": "the action plan has been successfully submitted to the state."
+  },
+  {
+   "name": "Trustee Handbook, chapter 5 (Planning)",
+   "where": "text",
+   "quote": "we discussed chapter 5 in the handbook which covers planning."
+  },
+  {
+   "name": "Sample Bylaws documents from area libraries",
+   "where": "text",
+   "quote": "muir gathered some sample bylaws documents from some area libraries."
+  },
+  {
+   "name": "Piper Electric quote for LED light replacement",
+   "where": "text",
+   "quote": "a quote has been received from piper electric for the led light replacement project."
+  },
+  {
+   "name": "Final draft of Director's review",
+   "where": "text",
+   "quote": "after a short discussion of the final draft of muir's review kate made a motion to accept the review as amended."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "collection policy",
+  "director evaluation",
+  "director contract",
+  "bylaws",
+  "trustee handbook",
+  "trust fund",
+  "friends of the library",
+  "facilities",
+  "budget",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

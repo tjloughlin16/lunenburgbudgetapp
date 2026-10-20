@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2022-01-11",
  "docid": "1931",
@@ -12,23 +12,336 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes as amended from the December 14, 2021 meeting",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Susan O'Sullivan",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the December 14, 2021 meeting as amended.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Susan O’Sullivan",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln moved to approve the minutes as amended from the december 14, 2021 meeting. susan o'sullivan seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Pete Lincoln",
-   "seconded_by": "Susan O'Sullivan",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Mr. Lincoln",
+   "seconded_by": "Ms. O’Sullivan",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln moved to adjourn the meeting. ms. o'sullivan seconded it. on vote, this motion was carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0819975
+ "note": "Minutes header reads 'Minutes Approved at March 8, 2022 COA Meeting'. The Select Board's vote on the Memorial Drive boulders is reported second-hand and is not recorded as a vote of this board. Two procedural votes are recorded (approval of minutes, adjournment); the minutes name no other motions. No public comment section is printed. Only the Select Board representative appears as a guest. Some items name other staff or residents (van driver, Eagle House vacancies) and were not treated as attendees. The minutes print no documents list heading.",
+ "cost_usd": 0.01748918,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "COA Board member",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "present",
+   "quote": "present: director: sue doherty, chairperson: deb lincoln, jane rabbitt, susan o'sullivan, barbara brown, pete lincoln, diane nowd, betty digiacomo, cheryl moisan, judy tarbell"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board representative",
+   "status": "present",
+   "quote": "guests: lou franco: select board representative."
+  },
+  {
+   "name": "Sarah Grant",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: sarah grant, john pesenti, and administrative assistant, amanda koeck"
+  },
+  {
+   "name": "John Pesenti",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: sarah grant, john pesenti, and administrative assistant, amanda koeck"
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "Administrative Assistant",
+   "status": "absent",
+   "quote": "absent: sarah grant, john pesenti, and administrative assistant, amanda koeck"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The review of the COA By-laws is tabled until the Lunenburg town By-laws are reviewed.",
+   "quote": "the review of our by-laws is tabled at this time until lunenburg town by-laws are reviewed."
+  },
+  {
+   "decision": "Lou Franco will look into the procedure for COA members who want to continue serving.",
+   "quote": "ms. lincoln asked mr. franco what the procedure is for coa members who would like to continue serving on the coa. he will look into this."
+  },
+  {
+   "decision": "COA history for the orientation packet is to be completed by Barbara Brown, Peter Lincoln, Judy Tarbell and Director Sue Doherty.",
+   "quote": "this will be completed by coa board member barbara brown, peter lincoln, judy tarbell and director sue doherty."
+  },
+  {
+   "decision": "It was suggested that Lou Franco announce the two Eagle House Supporter's Board vacancies at the next Select Board meeting.",
+   "quote": "it was suggested that lou franco announce these vacancies at the next select board meeting when reporting on this meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 COA budget increase amendment in December 14, 2021 minutes",
+   "what_was_recorded": "The Director asked that the FY23 COA budget increase recorded in the December 14, 2021 minutes be amended from $26,000 to $17,000, and the minutes were approved as amended.",
+   "figures_as_printed": [
+    "$26,000",
+    "$17,000"
+   ],
+   "quote": "ms. doherty requested that the amount of $26,000 that was recorded in the december 14, 2021 minutes for the fy23 coa budget increase be amended to $17,000."
+  },
+  {
+   "topic": "Zumba class fee",
+   "what_was_recorded": "A six-week Zumba class is listed in the Director's report at a fee to participants.",
+   "figures_as_printed": [
+    "$25.00"
+   ],
+   "quote": "zumba with amy leblanc. this is a six week class for $25.00 fridays at 1 pm, beginning on january 14th, 2022."
+  },
+  {
+   "topic": "Finance Committee budget review",
+   "what_was_recorded": "The Finance Committee budget review date is noted; no dollar figure is printed for it.",
+   "figures_as_printed": [],
+   "quote": "the lunenburg finance committee meeting/budget review takes place on 2/24/22 at 7 pm."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (December 14, 2021)",
+   "resolution": "approved as amended",
+   "quote": "mr. lincoln moved to approve the minutes as amended from the december 14, 2021 meeting.",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "deb thanked all for coming out on this frigid morning and for complying with the reinstated mask mandate.",
+   "tags": [
+    "covid-19"
+   ]
+  },
+  {
+   "topic": "New COA Board Member Orientation",
+   "resolution": "continued; COA history still to be completed",
+   "quote": "the orientation packet is complete with the exception of coa history.",
+   "tags": [
+    "orientation",
+    "governance"
+   ]
+  },
+  {
+   "topic": "By-laws review",
+   "resolution": "tabled",
+   "quote": "the review of our by-laws is tabled at this time until lunenburg town by-laws are reviewed.",
+   "tags": [
+    "by-laws",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Procedure for continuing to serve on the COA",
+   "resolution": "Lou Franco to look into it",
+   "quote": "ms. lincoln asked mr. franco what the procedure is for coa members who would like to continue serving on the coa.",
+   "tags": [
+    "governance",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Finance Committee budget review",
+   "resolution": "noted; scheduled 2/24/22",
+   "quote": "the lunenburg finance committee meeting/budget review takes place on 2/24/22 at 7 pm.",
+   "tags": [
+    "budget"
+   ]
+  },
+  {
+   "topic": "Executive Office of Elder Affairs annual report",
+   "resolution": "noted; reports an unofficial count of residents over 60",
+   "quote": "sue reported that the \"unofficial\" number of residents over age 60 is app. 3300.",
+   "tags": [
+    "state",
+    "census",
+    "elder affairs"
+   ]
+  },
+  {
+   "topic": "Van driver hire",
+   "resolution": "noted",
+   "quote": "a new van driver has been hired. benjamin mcginnis.",
+   "tags": [
+    "staffing",
+    "transportation"
+   ]
+  },
+  {
+   "topic": "Personnel committee meeting on meal site manager positions",
+   "resolution": "cancelled",
+   "quote": "the personnel committee meeting regarding the assistant meal site manager/meal site manager positions was cancelled.",
+   "tags": [
+    "staffing",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Memorial Drive boulders",
+   "resolution": "noted; Select Board chose court-order option",
+   "quote": "the select board voted for the second option as there were concerns regarding town ===page 2=",
+   "tags": [
+    "memorial drive",
+    "select board",
+    "liability"
+   ],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Director's report (COVID-19, grounds, upcoming events)",
+   "resolution": "noted",
+   "quote": "the mask mandate has been re-instituted town wide by the town manager.",
+   "tags": [
+    "covid-19",
+    "programs",
+    "grounds"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporter's Board report",
+   "resolution": "noted; one member added, two vacancies remain",
+   "quote": "elaine murphy was added to the eagle house supporter's board.",
+   "tags": [
+    "eagle house",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "quote": "notices & communications: none.",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned, carried unanimously",
+   "quote": "mr. lincoln moved to adjourn the meeting.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA Orientation manual (updated table of contents)",
+   "where": "text",
+   "quote": "susan o'sullivan re-wrote the table of contents for our updated coa orientation manual."
+  },
+  {
+   "name": "COA contact list",
+   "where": "text",
+   "quote": "amanda updated the coa contact list."
+  },
+  {
+   "name": "Acronyms list (Alphabet Soup)",
+   "where": "text",
+   "quote": "ms. doherty updated the acronyms list (alphabet soup)."
+  },
+  {
+   "name": "Executive Office of Elder Affairs Annual Report",
+   "where": "text",
+   "quote": "executive office of elder affairs annual report. the state continues to use results from the 2010 census as the 2020 census has not yet been completed."
+  },
+  {
+   "name": "COA By-laws",
+   "where": "text",
+   "quote": "the review of our by-laws is tabled at this time until lunenburg town by-laws are reviewed."
+  },
+  {
+   "name": "Lunenburg town By-laws",
+   "where": "text",
+   "quote": "the review of our by-laws is tabled at this time until lunenburg town by-laws are reviewed."
+  },
+  {
+   "name": "Town survey (Memorial Drive boulders)",
+   "where": "text",
+   "quote": "the town survey was completed and it was determined that the boulders on memorial drive were over the town line."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "minutes",
+  "by-laws",
+  "orientation",
+  "budget",
+  "covid-19",
+  "eagle house",
+  "memorial drive boulders",
+  "senior programs",
+  "select board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

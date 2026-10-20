@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2022-02-17",
  "docid": "1108",
@@ -12,15 +12,188 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Stober",
-   "seconded_by": "K. McClellen",
+   "seconded_by": "K. McClellan",
    "outcome": "passed",
    "procedural": true,
-   "quote": "r. stober moved to adjourn, k. mcclellen 2nd. rollcall, all aye."
+   "quote": "r. stober moved to adjourn, k. mcclellen 2nd. rollcall, all aye. adjourned at 8:01pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One procedural vote recorded: motion to adjourn. No other motions with recorded votes are present in these minutes. Discussions occurred on several topics (avian flu, farmers market, membership expansion, existing regulations) but no formal votes were taken on those items.",
- "cost_usd": 0.0973715
+ "note": "Text extraction of a single page. The only recorded vote is adjournment, by roll call, printed as \"all aye\" with no count. No vote approving these minutes is recorded. The second-named seconder is printed as \"K. McClellen\" in the motion and \"K. McClellan\" in the attendance line; the name is kept as printed. Signature-block names (Greg Burns, Jorge Marzuca, Maryrae Holman, Stephanie Schofield, Yanina Fusaro) are not listed as taking part and are omitted from attendees. No dollar figures appear.",
+ "cost_usd": 0.01482378,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair (signature block: Matthew Allison, Chair)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, k. mcclellan, m. fontaine, thomas jordan, sharon jordan"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Vice-Chair (signature block: Ryan Stober, Vice-Chair)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, k. mcclellan, m. fontaine, thomas jordan, sharon jordan"
+  },
+  {
+   "name": "K. McClellan",
+   "role": "Alternate (signature block: Kira McClellan, Alternate)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, k. mcclellan, m. fontaine, thomas jordan, sharon jordan"
+  },
+  {
+   "name": "M. Fontaine",
+   "role": "Farmers Market Manager",
+   "status": "present",
+   "quote": "farmers market managers: yanina fusaro mike fontaine"
+  },
+  {
+   "name": "Thomas Jordan",
+   "role": "talent bank applicant (new talent bank form)",
+   "status": "present",
+   "quote": "the chair announced receipt of a new talent bank form and introduced thomas jordan."
+  },
+  {
+   "name": "Sharon Jordan",
+   "role": "not stated (public; address printed as 77 Burrage Street)",
+   "status": "present",
+   "quote": "sharon jordan, 77 burrage street, asked about the status of the open space plan and farms"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members allowed the market managers to publish an updated digital application, to be finalized and approved at the next meeting, due to time constraints.",
+   "quote": "due to time constraints the members present felt it appropriate to allow the market managers to publish an updated digital application that we can finalize and approve at our next meeting."
+  },
+  {
+   "decision": "Management team directed to poll vendors on the proposed market changes and report back at the next meeting.",
+   "quote": "members present requested the management team poll vendors on the changes and report back at our next meeting."
+  },
+  {
+   "decision": "The issue of expanding membership from 5 to 7 members was moved to old business.",
+   "quote": "as numerous meetings recently had not been held due to not having quorum, members felt we should move the issue to old business."
+  },
+  {
+   "decision": "Next meeting set for March 17, 2022.",
+   "quote": "next meeting set for march 17, 2022."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Sharon Jordan",
+   "stated_role": "not stated",
+   "topic": "Open Space Plan and what counts as a farm",
+   "quote": "sharon jordan, 77 burrage street, asked about the status of the open space plan and farms, specifically, what is a farm?"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "General discussion: avian flu update",
+   "resolution": "no action (update given)",
+   "quote": "general discussion: k. mcclellan gave an update on the avian flu.",
+   "tags": [
+    "avian flu",
+    "update"
+   ]
+  },
+  {
+   "topic": "Upcoming farmers market",
+   "resolution": "deferred; managers to publish updated application for approval next meeting",
+   "quote": "m. fontaine updated the commission on the upcoming market.",
+   "tags": [
+    "farmers market",
+    "application"
+   ]
+  },
+  {
+   "topic": "New talent bank form (Thomas Jordan)",
+   "resolution": "received",
+   "quote": "the chair announced receipt of a new talent bank form and introduced thomas jordan.",
+   "tags": [
+    "talent bank",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Expanding membership from 5 to 7 members",
+   "resolution": "moved to old business",
+   "quote": "discussion on expanding membership from 5 to 7 members was focused on the increase from 3 to 4 members for a quorum.",
+   "tags": [
+    "membership",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Existing regulations and clarification letter",
+   "resolution": "no action; no response to letter received to date",
+   "quote": "discussion on existing regulations focused on the letter prepared by the commission last year asking for clarification.",
+   "tags": [
+    "regulations",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Proposed farmers market changes",
+   "resolution": "management team to poll vendors and report back",
+   "quote": "the proposed changes were much more involved than initially reported.",
+   "tags": [
+    "farmers market",
+    "vendors"
+   ]
+  },
+  {
+   "topic": "Open Space Plan and farms (public question)",
+   "resolution": "discussed; no action",
+   "quote": "m. allison gave his understanding of the activity of farming, which is protected by right-to-farm, versus a parcel of land called a farm enrolled in chapter 61.",
+   "tags": [
+    "open space plan",
+    "right-to-farm",
+    "chapter 61"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Commission letter asking for regulatory clarification (emailed May 2021)",
+   "where": "text",
+   "quote": "the chair emailed the letter may 2021 to the building commissioner, animal control officer"
+  },
+  {
+   "name": "New talent bank form",
+   "where": "text",
+   "quote": "the chair announced receipt of a new talent bank form"
+  },
+  {
+   "name": "Updated digital farmers market application",
+   "where": "text",
+   "quote": "allow the market managers to publish an updated digital application"
+  },
+  {
+   "name": "Open Space Plan",
+   "where": "text",
+   "quote": "asked about the status of the open space plan and farms"
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farmers market",
+  "talent bank",
+  "membership and quorum",
+  "avian flu",
+  "right-to-farm",
+  "chapter 61",
+  "open space plan",
+  "regulations",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

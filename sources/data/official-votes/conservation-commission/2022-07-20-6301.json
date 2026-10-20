@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-07-20",
  "docid": "6301",
@@ -12,143 +12,716 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from June 15th meeting",
-   "moved_by": "Michael Larouche",
+   "motion": "Approve the minutes of the June 15 meeting.",
+   "moved_by": "ML",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "ml moved/ seconded to approve minutes for june 15th meeting. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve 2023 treatment plan for Lake Shirley",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve the 2023 treatment plan for Lake Shirley.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "jv moved/ cc seconded to approve 2023 treatment plan for lake shirley. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Issue DOA approving the floating dock at 238 Fire Road #16",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Issue a DOA approving the floating dock (RDA by Arthur Magurn, Lake Shirley).",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "jv moved/ cc seconded to issue doa approving the floating dock. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Issue negative determination with condition that erosion controls be moved to outside the 30' no disturb buffer",
+   "motion": "Issue a negative determination for the Daisy Joanne LLC septic repair, with the condition that erosion controls be moved outside the 30 ft no-disturb buffer.",
    "moved_by": "M",
-   "seconded_by": "Mary Wilson",
-   "outcome": "passed unanimously",
+   "seconded_by": "MW",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "m moved/mw seconded to issue negative determination with the condition that the erosion controls be moved to outside the 30' no disturb buffer. roll call vote, unanimous to approve."
+   "quote": "m moved/mw seconded to issue negative determination with the condition that the erosion"
   },
   {
-   "motion": "Continue hearing for Ed McSweeney construction at Lot 5 Northfield Road to August 3rd",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Lot 5 Northfield Road NOI hearing (DEP # 208-1261) to August 3.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml moved/jv seconded to continue to august 3rd. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue hearing for Ed McSweeney single family home at lot 3 Holman St to August 3rd",
-   "moved_by": "Patricia Adams",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Lot 3 Holman St NOI hearing (DEP # 208-1262) to August 3.",
+   "moved_by": "PA",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "pa moved/cc seconded to continue to august 3rd. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue hearing for Ed McSweeney well and water line at Lot A Northfield Road to August 3rd",
-   "moved_by": "Mary Wilson",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Lot A Northfield Road NOI hearing (DEP # 208-1263) to August 3.",
+   "moved_by": "MW",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "mw moved/ jv seconded to continue to august 3rd. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue hearing for Ed McSweeney single family home at lot 4 Holman St to August 3rd",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Patricia Adams",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Lot 4 Holman St NOI hearing (DEP # 208-1264) to August 3.",
+   "moved_by": "ML",
+   "seconded_by": "PA",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml moved/pa seconded to continue to august 3rd. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue public meeting for Brian Haas driveway paving at 509 Townsend Harbor Road to August 17th",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the 509 Townsend Harbor Road RDA (Brian Haas) public meeting to August 17.",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml moved/ cc seconded to continue the public meeting to august 17th. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue hearing for Matthew Proctor permeable paver patio at 172 Peninsula Drive to August 3rd",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the 172 Peninsula Drive NOI hearing (Matthew Proctor patio) to August 3.",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml moved/cc seconded to continue to august 3rd. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue hearing for Matthew Proctor retaining wall replacement at 207 Fire Road 16 to August 3rd",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the 207 Fire Road 16 NOI hearing (Matthew Proctor retaining wall, DEP # 208-1267) to August 3.",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
-   "quote": "ml moved/cc seconded to continue to august 3rd. roll call vote, unanimous to approve."
+   "quote": "mp asked to work with conservation administrator to submit the additional data requested by dep. ml moved/cc seconded to continue to august 3rd."
   },
   {
-   "motion": "Issue order of conditions for Hickory Hills Lake as revised during the meeting",
-   "moved_by": "Patricia Adams",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Issue order of conditions for Hickory Hills Lake, as revised during the meeting.",
+   "moved_by": "PA",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "pa moved/cc seconded to issue order of conditions for hickory hills lake as revised during the meeting. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve treatment per recommendations by ESS at Little Hickory Lake for Robbins Pondweed",
-   "moved_by": "Patricia Adams",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve treatment at Little Hickory lake per the ESS recommendations.",
+   "moved_by": "PA",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "pa moved/cc seconded to approve treatment per recommendations by ess at little hickory lake. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Ask the Select Board to consider litigation on the encroachment",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Patricia Adams",
+   "motion": "Ask the Select Board to consider litigation on the encroachment at 192 Townsend Harbor Road and 104 and 116 Woodland Drive.",
+   "moved_by": "CC",
+   "seconded_by": "PA",
    "outcome": "not stated",
    "procedural": false,
    "quote": "cc moved/pa seconded to ask the select board to consider litigation on the encroachment on these two properties"
   },
   {
-   "motion": "Issue Certificate of Compliance for 68 Laurel Lane (DEP #208-0812)",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Issue a Certificate of Compliance for 68 Laurel Lane (DEP #208-0812).",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml moved/cc seconded to issue certificate of compliance. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Ratify administrative determination for cutting dead and lightning-split trees on Lizard Island",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Ratify the administrative determination for cutting 8 dead trees and 1 live tree on Lizard Island.",
+   "moved_by": "ML",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "ml moved/cc seconded to ratify administrative determination. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Patricia Adams",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 11:04 pm.",
+   "moved_by": "PA",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous",
    "procedural": true,
-   "quote": "pa/cc m/s to adjourn at 11:04 pm. roll call vote, unanimous to approve."
+   "quote": "pa/cc m/s to adjourn at 11:04 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One motion to reject a field change request (238 Fire Road #16) was stated as rejected by the Commission but recorded without a formal motion vote, so it was not included. All other recorded votes are listed above.",
- "cost_usd": 0.1017945
+ "note": "Minutes are a single text with no public-comment speakers recorded in the general public comment period. The motion to approve the Daisy Joanne negative determination names the mover only as \"M\"; it is recorded as printed. The encroachment litigation motion has no printed result. The field-change rejection and the officer election deferral are recorded without a motion and are listed as decisions. The minutes spell the applicant \"Brian Hass\" in text and \"Haas\" in the agenda heading; recorded as printed. Documents list is derived from sentences describing items presented or shared; no list heading is printed.",
+ "cost_usd": 0.02690178,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: bp, jv, pa, cc, ml, mw absent: rb"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "present: bp, jv, pa, cc, ml, mw absent: rb"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: bp, jv, pa, cc, ml, mw absent: rb"
+  },
+  {
+   "name": "Patricia Adams",
+   "status": "present",
+   "quote": "present: bp, jv, pa, cc, ml, mw absent: rb"
+  },
+  {
+   "name": "Catie Childs",
+   "status": "present",
+   "quote": "present: bp, jv, pa, cc, ml, mw absent: rb"
+  },
+  {
+   "name": "Michael Larouche",
+   "status": "present",
+   "quote": "present: bp, jv, pa, cc, ml, mw absent: rb"
+  },
+  {
+   "name": "Mary Wilson",
+   "status": "present",
+   "quote": "present: bp, jv, pa, cc, ml, mw absent: rb"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Associate",
+   "status": "present",
+   "quote": "also present: rt (associate), nm (administrator)"
+  },
+  {
+   "name": "Nadia Madden",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "also present: rt (associate), nm (administrator)"
+  },
+  {
+   "name": "Dominic Meringolo",
+   "role": "from Solitude Lake Management",
+   "status": "present",
+   "quote": "dominic meringolo from solitude lake management presented the lake shirley pre-treatment survey"
+  },
+  {
+   "name": "John Fortune",
+   "role": "50 Hemlock Drive; represented Hickory Hills Landonwers, Inc (HHLI)",
+   "status": "present",
+   "quote": "john fortune, 50 hemlock drive asked if notifications have gone out to residents yet."
+  },
+  {
+   "name": "Joanna Bilotta",
+   "status": "present",
+   "quote": "joanna bilotta said lsic has put it on the website"
+  },
+  {
+   "name": "Butch Magurn",
+   "status": "present",
+   "quote": "butch magurn explained that the dep asked the lcc to consider an rda to approve the floating dock"
+  },
+  {
+   "name": "Doug Smith",
+   "role": "representing the applicant (Soilsmith)",
+   "status": "present",
+   "quote": "doug smith from soilsmith and maryann dipinto from three oaks environmental were both present"
+  },
+  {
+   "name": "Maryann DiPinto",
+   "role": "representing the applicant (Three Oaks Environmental)",
+   "status": "present",
+   "quote": "doug smith from soilsmith and maryann dipinto from three oaks environmental were both present"
+  },
+  {
+   "name": "Angel Lehtonen",
+   "role": "Northland Engineers, representing the applicant",
+   "status": "present",
+   "quote": "angel lehtonen from northland engineers was here representing the applicant."
+  },
+  {
+   "name": "Matt Proctor",
+   "role": "M Proctor Masonry, represented the property owner",
+   "status": "present",
+   "quote": "matt proctor from m proctor masonry represented the property owner"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "represented Hickory Hills Landonwers, Inc (HHLI)",
+   "status": "present",
+   "quote": "paula bertram and john fortune represented hickory hills landonwers, inc (hhli)."
+  },
+  {
+   "name": "Nicole Waters",
+   "role": "abutter from 80 Horizon Island",
+   "status": "present",
+   "quote": "nicole waters, abutter from 80 horizon island, asked why the staggered drawdown is not a goal."
+  },
+  {
+   "name": "Brian Hass",
+   "status": "present",
+   "quote": "brian hass presented the additional measurements, before photos"
+  },
+  {
+   "name": "Sue Petralia",
+   "role": "Abutter",
+   "status": "present",
+   "quote": "sp said that the driveway bumpout currently extends into her lawn"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Attorney",
+   "status": "present",
+   "quote": "town attorney adam costa said the next step would be litigation"
+  },
+  {
+   "name": "David Blatt",
+   "role": "property owner, 411 Goodrich St",
+   "status": "present",
+   "quote": "eo 411 goodrich st - david blatt, property owner, received enforcement order."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission rejected the request for a field change at 238 Fire Road #16 (clover sod in replacement area C). No motion is recorded.",
+   "quote": "commission rejected request for field change."
+  },
+  {
+   "decision": "Election of officers deferred until all members are participating.",
+   "quote": "bp recommended that waiting to vote on this item"
+  },
+  {
+   "decision": "Chair recommended discussing the 360 New West Townsend Road donation with Land Use Director Adam Burney first.",
+   "quote": "bp recommended that we discuss this proposal with the land use director adam burney first."
+  },
+  {
+   "decision": "Chair asked the applicant to come in with more detailed wetlands notes and methodology at the next meeting (Lot A Northfield Road).",
+   "quote": "bp asked that the applicant come in with more detailed notes and methodology for wetlands at the next meeting."
+  },
+  {
+   "decision": "Chair asked the Conservation Administrator to share the draft order of conditions for Hickory Hills Lake with the applicants.",
+   "quote": "bp asked nm to share the draft order of conditions for discussion with the applicants."
+  },
+  {
+   "decision": "Chair asked that the Conservation Administrator ensure a commissioner-related applicant can come before the Commission under state ethics rules.",
+   "quote": "bp asked that al ensure that mm can come before the commission per state ethics rules."
+  },
+  {
+   "decision": "Conservation Administrator to visit 23 Cove Road, review existing enforcement orders and determine next steps.",
+   "quote": "eo 23 cove road - nm to visit site and review existing enforcement orders and determine next steps."
+  },
+  {
+   "decision": "Site visit for 411 Goodrich St to be scheduled, timing to be determined outside the meeting.",
+   "quote": "timing of the visit is to be determined outside the meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revolving fund budgets",
+   "what_was_recorded": "The Treasurer asked the Commission to create budgets for the revolving funds so the Conservation office can handle expenses more independently.",
+   "figures_as_printed": [],
+   "quote": "nm noted that the treasurer has asked the conscomm to create budgets for the revolving funds"
+  },
+  {
+   "topic": "Hollis Road residence window and door reimbursement",
+   "what_was_recorded": "Work on windows and a sliding glass door at the Hollis Road residence was being pursued for tenant reimbursement to meet town accounting requirements. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "he is still working with the tenant for reimbursement so that it meets town accounting"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "John Fortune",
+   "stated_role": "50 Hemlock Drive",
+   "topic": "Lake Shirley resident notifications",
+   "quote": "john fortune, 50 hemlock drive asked if notifications have gone out to residents yet."
+  },
+  {
+   "speaker": "Joanna Bilotta",
+   "stated_role": "",
+   "topic": "Lake Shirley website notice",
+   "quote": "joanna bilotta said lsic has put it on the website"
+  },
+  {
+   "speaker": "Nicole Waters",
+   "stated_role": "abutter from 80 Horizon Island",
+   "topic": "Hickory Hills staggered drawdown",
+   "quote": "nicole waters, abutter from 80 horizon island, asked why the staggered drawdown is not a goal."
+  },
+  {
+   "speaker": "Sue Petralia",
+   "stated_role": "Abutter",
+   "topic": "549 Townsend Harbor Road driveway impact",
+   "quote": "sp said that the driveway bumpout currently extends into her lawn"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of June 15 meeting",
+   "resolution": "approved",
+   "quote": "ml moved/ seconded to approve minutes for june 15th meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lake Shirley survey and treatment plan",
+   "resolution": "2023 treatment plan approved",
+   "quote": "dominic meringolo from solitude lake management presented the lake shirley pre-treatment",
+   "tags": [
+    "lake management",
+    "Lake Shirley"
+   ]
+  },
+  {
+   "topic": "RDA, floating dock, 238 Fire Road #16 (Arthur Magurn)",
+   "resolution": "DOA issued",
+   "quote": "butch magurn explained that the dep asked the lcc to consider an rda to approve the floating dock",
+   "tags": [
+    "wetlands",
+    "RDA"
+   ]
+  },
+  {
+   "topic": "RDA, septic repair, 55 Maple Parkway (Daisy Joanne LLC)",
+   "resolution": "negative determination issued with condition",
+   "quote": "doug smith from soilsmith and maryann dipinto from three oaks environmental were both present",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "septic"
+   ]
+  },
+  {
+   "topic": "NOI, Lot 5 Northfield Road (DEP # 208-1261)",
+   "resolution": "continued to August 3",
+   "quote": "a public hearing on a notice of intent (dep # 208-1261) by ed mcsweeney for the",
+   "tags": [
+    "wetlands",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "NOI, Lot 3 Holman St (DEP # 208-1262)",
+   "resolution": "continued to August 3",
+   "quote": "a public hearing on a notice of intent (dep # 208-1262) by ed mcsweeney for the",
+   "tags": [
+    "wetlands",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "NOI, Lot A Northfield Road (DEP # 208-1263)",
+   "resolution": "continued to August 3",
+   "quote": "a public hearing on a notice of intent (dep # 208-1263) by ed mcsweeney for the",
+   "tags": [
+    "wetlands",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "NOI, Lot 4 Holman St (DEP # 208-1264)",
+   "resolution": "continued to August 3",
+   "quote": "a public hearing on a notice of intent (dep # 208-1264) by ed mcsweeney for the",
+   "tags": [
+    "wetlands",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "Continued RDA, driveway paving, 509 Townsend Harbor Road (Brian Haas)",
+   "resolution": "continued to August 17",
+   "quote": "a public meeting on a request for determination of applicability by brian haas for",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "NOI, permeable paver patio, 172 Peninsula Drive (Matthew Proctor)",
+   "resolution": "continued to August 3",
+   "quote": "a public hearing on a notice of intent by matthew proctor for the construction of a",
+   "tags": [
+    "wetlands",
+    "NOI"
+   ]
+  },
+  {
+   "topic": "NOI, retaining wall, 207 Fire Road 16 (DEP # 208-1267)",
+   "resolution": "continued to August 3",
+   "quote": "a public hearing on a notice of intent by matthew proctor for the replacement of a",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "shoreline"
+   ]
+  },
+  {
+   "topic": "NOI, whole lake management plan, Hickory Hills Lake",
+   "resolution": "order of conditions issued as revised",
+   "quote": "a public hearing on a notice of intent by hickory hills association for the approval of a whole",
+   "tags": [
+    "wetlands",
+    "lake management"
+   ]
+  },
+  {
+   "topic": "Little Hickory lake treatment",
+   "resolution": "approved per ESS recommendations",
+   "quote": "pb shared the 2022 plant survey and treatment recommendations from ess for little hickory",
+   "tags": [
+    "lake management"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "deferred until all members present",
+   "quote": "election of officers (if all members participating).",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Field change request, 238 Fire Road #16",
+   "resolution": "rejected",
+   "quote": "commission rejected request for field change.",
+   "tags": [
+    "wetlands",
+    "field change"
+   ]
+  },
+  {
+   "topic": "Donation offer, 360 New West Townsend Road",
+   "resolution": "discussed; referred to Land Use Director",
+   "quote": "the property owner has offered to donate the back 4 acres to the conservation commission.",
+   "tags": [
+    "land",
+    "donation"
+   ]
+  },
+  {
+   "topic": "Encroachment, 192 Townsend Harbor Road and 104 and 116 Woodland Drive",
+   "resolution": "motion to ask Select Board to consider litigation; result not printed",
+   "quote": "bp said the owners have not responded to the letters from the town attorney.",
+   "tags": [
+    "enforcement",
+    "encroachment",
+    "litigation"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence",
+   "resolution": "update; no action recorded",
+   "quote": "ml has an appointment this saturday with a window installer to replace windows and a sliding glass door.",
+   "tags": [
+    "town property",
+    "revolving fund"
+   ]
+  },
+  {
+   "topic": "Certificate of compliance, 68 Laurel Lane",
+   "resolution": "issued",
+   "quote": "68 laurel lane (dep #208-0812)",
+   "tags": [
+    "wetlands",
+    "certificate"
+   ]
+  },
+  {
+   "topic": "Administrative determination, Lizard Island",
+   "resolution": "ratified",
+   "quote": "nm recommended an administrative determination for cutting 8 dead trees",
+   "tags": [
+    "tree removal",
+    "Hickory Hills Lake"
+   ]
+  },
+  {
+   "topic": "Enforcement, 411 Goodrich St and 23 Cove Road",
+   "resolution": "site visits to be arranged",
+   "quote": "eo 411 goodrich st - david blatt, property owner, received enforcement order.",
+   "tags": [
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Open space and land use, trails grant",
+   "resolution": "status update; no action recorded",
+   "quote": "bp trying to close out trails grant",
+   "tags": [
+    "open space",
+    "trails"
+   ]
+  },
+  {
+   "topic": "Stormwater Committee representative",
+   "resolution": "no volunteers; no action",
+   "quote": "no volunteers at this time",
+   "tags": [
+    "committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:04 pm",
+   "quote": "pa/cc m/s to adjourn at 11:04 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Lake Shirley pre-treatment survey, survey map and treatment plan, revised July 18th",
+   "where": "list",
+   "quote": "dominic meringolo from solitude lake management presented the lake shirley pre-treatment survey, survey map and treatment plan, revised on july 18th."
+  },
+  {
+   "name": "DEP comments on the 207 Fire Road 16 filing (DEP # 208-1267)",
+   "where": "list",
+   "quote": "dep comments were shared for this filing:"
+  },
+  {
+   "name": "2022 plant survey and treatment recommendations from ESS for Little Hickory",
+   "where": "list",
+   "quote": "pb shared the 2022 plant survey and treatment recommendations from ess for little hickory"
+  },
+  {
+   "name": "Additional measurements and before photos (509 Townsend Harbor Road)",
+   "where": "list",
+   "quote": "brian hass presented the additional measurements, before photos"
+  },
+  {
+   "name": "Photos from abutter Sue Petralia, 549 Townsend Harbor Road",
+   "where": "list",
+   "quote": "photos from abutter sue petralia for 549 townsend harbor road were also shared."
+  },
+  {
+   "name": "2023 treatment plan for Lake Shirley",
+   "where": "text",
+   "quote": "approve 2023 treatment plan for lake shirley"
+  },
+  {
+   "name": "Request for Determination of Applicability by Arthur Magurn, floating dock, 238 Fire Road #16",
+   "where": "text",
+   "quote": "a public meeting on a request for determination of applicability by arthur magurn for the installation of a floating dock"
+  },
+  {
+   "name": "Request for Determination of Applicability by Daisy Joanne LLC, septic repair, 55 Maple Parkway",
+   "where": "text",
+   "quote": "a public meeting on a request for determination of applicability by daisy joanne llc for septic system repair"
+  },
+  {
+   "name": "Notice of Intent DEP # 208-1261, Lot 5 Northfield Road (Ed McSweeney)",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent (dep # 208-1261) by ed mcsweeney for the"
+  },
+  {
+   "name": "Notice of Intent DEP # 208-1262, Lot 3 Holman St (Ed McSweeney)",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent (dep # 208-1262) by ed mcsweeney for the"
+  },
+  {
+   "name": "Notice of Intent DEP # 208-1263, Lot A Northfield Road (Ed McSweeney)",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent (dep # 208-1263) by ed mcsweeney for the"
+  },
+  {
+   "name": "Notice of Intent DEP # 208-1264, Lot 4 Holman St (Ed McSweeney)",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent (dep # 208-1264) by ed mcsweeney for the"
+  },
+  {
+   "name": "Request for Determination of Applicability by Brian Haas, driveway paving, 509 Townsend Harbor Road",
+   "where": "text",
+   "quote": "a public meeting on a request for determination of applicability by brian haas for"
+  },
+  {
+   "name": "Notice of Intent by Matthew Proctor, permeable paver patio, 172 Peninsula Drive",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent by matthew proctor for the construction of a"
+  },
+  {
+   "name": "Notice of Intent by Matthew Proctor, retaining wall, 207 Fire Road 16 (DEP # 208-1267)",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent by matthew proctor for the replacement of a"
+  },
+  {
+   "name": "Notice of Intent by Hickory Hills Association, whole lake management plan, Hickory Hills Lake",
+   "where": "text",
+   "quote": "a public hearing on a notice of intent by hickory hills association for the approval of a whole"
+  },
+  {
+   "name": "Draft order of conditions, Hickory Hills Lake",
+   "where": "text",
+   "quote": "bp asked nm to share the draft order of conditions for discussion with the applicants."
+  },
+  {
+   "name": "Ross Plan L-14083",
+   "where": "text",
+   "quote": "in replacement area c (see ross plan l-14083)."
+  },
+  {
+   "name": "MassDEP GEIR (drawdown guidance)",
+   "where": "text",
+   "quote": "nm noted that the geir recommends a maximum of 3 feet of drawdown"
+  },
+  {
+   "name": "HHLI drawdown monitoring plan",
+   "where": "text",
+   "quote": "asked if that condition could be changed to be more in line with hhli drawdown monitoring plan."
+  },
+  {
+   "name": "Letters from the town attorney to encroachment property owners",
+   "where": "text",
+   "quote": "bp said the owners have not responded to the letters from the town attorney."
+  },
+  {
+   "name": "Additional plans from Hannigan Engineering, 509 Townsend Harbor Road",
+   "where": "text",
+   "quote": "bh said he will work with hannigan engineering to submit additional plans by august 17th."
+  },
+  {
+   "name": "Request for field change, 238 Fire Road #16 Order of Conditions (DEP SOC # 208-1189)",
+   "where": "text",
+   "quote": "request for field change - 238 fire road #16 order of conditions under the lunenburg wetlands bylaw (dep soc # 208-1189)."
+  },
+  {
+   "name": "Enforcement order, 411 Goodrich St (David Blatt)",
+   "where": "text",
+   "quote": "eo 411 goodrich st - david blatt, property owner, received enforcement order."
+  },
+  {
+   "name": "Enforcement order, 23 Cove Road",
+   "where": "text",
+   "quote": "eo 23 cove road - nm to visit site and review existing enforcement orders"
+  },
+  {
+   "name": "Certificate of Compliance, 68 Laurel Lane (DEP #208-0812)",
+   "where": "text",
+   "quote": "68 laurel lane (dep #208-0812)"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "conservation commission",
+  "lake management",
+  "Lake Shirley",
+  "Hickory Hills Lake",
+  "public hearings",
+  "enforcement",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dominic meringolo from solitude lake management presented the lake shirley pre-treatment survey"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-05-31",
  "docid": "5719",
@@ -12,72 +12,462 @@
  },
  "votes": [
   {
-   "motion": "John Reynolds elected as Chair",
-   "moved_by": "Mike Nault",
-   "seconded_by": "Mike Deveikis",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "mike n. nominated john r. and mike d. seconded. roll call vote: mike d.-aye, mike n.-aye, brett-aye, and dave-aye."
+   "motion": "Elect John Reynolds as Chair (nominated by Mike N.)",
+   "moved_by": "Mike N.",
+   "seconded_by": "Mike D.",
+   "outcome": "passed 4-0-1",
+   "procedural": false,
+   "quote": "chair: mike n. nominated john r. and mike d. seconded. roll call vote: mike d.-aye, mike n.-aye, brett-aye, and dave-aye. (john abstained.)"
   },
   {
-   "motion": "Brett Ramsden elected as Vice-Chair",
-   "moved_by": "Dave MacDonald",
-   "seconded_by": "Mike Nault",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "dave nominated brett r. and mike n. seconded. roll call vote: mike d.-aye, mike n.-aye, john-aye, and dave-aye."
+   "motion": "Elect Brett Ramsden as Vice-Chair (nominated by Dave)",
+   "moved_by": "Dave",
+   "seconded_by": "Mike N.",
+   "outcome": "passed 4-0-1",
+   "procedural": false,
+   "quote": "vice chair: dave nominated brett r. and mike n. seconded. roll call vote: mike d.-aye, mike n.-aye, john-aye, and dave-aye. (brett abstained.)"
   },
   {
-   "motion": "Mike Deveikis elected as Clerk",
-   "moved_by": "Dave MacDonald",
-   "seconded_by": "Mike Nault",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "dave nominated mike d. and mike n. seconded. roll call vote: mike n.-aye, john-aye, brett-aye, and dave-aye."
+   "motion": "Elect Mike Deveikis as Clerk (nominated by Dave)",
+   "moved_by": "Dave",
+   "seconded_by": "Mike N.",
+   "outcome": "passed 4-0-1",
+   "procedural": false,
+   "quote": "clerk: dave nominated mike d. and mike n. seconded. roll call vote: mike n.-aye, john-aye, brett-aye, and dave-aye. (mike n. abstained.)"
   },
   {
-   "motion": "Approve the Year 3 O&M contract with CTE for $85,443.44",
-   "moved_by": "John Reynolds",
-   "seconded_by": "Brett Ramsden",
+   "motion": "Approve the Year 3 O&M contract with CTE",
+   "moved_by": "John R.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. to approve the minutes from 5/3/22. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye. minutes ",
-   "quote_taken_from_text": true
+   "quote": "to approve the year 3 o&m contract with cte. roll call vote: mike n.-aye, brett-aye, john-aye, mike d.-aye and dave-aye."
   },
   {
    "motion": "Accept the Q4 Commitment for $275,803.50",
-   "moved_by": "John Reynolds",
-   "seconded_by": "Brett Ramsden",
+   "moved_by": "John R.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. to accept the q4 commitment for $275,803.50. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
+   "quote": "to accept the q4 commitment for $275,803.50. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
   },
   {
-   "motion": "Approve the minutes from 5/3/22",
-   "moved_by": "John Reynolds",
-   "seconded_by": "Brett Ramsden",
+   "motion": "Approve the minutes of 5/3/22",
+   "moved_by": "John R.",
+   "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: john r. second: brett r. to approve the minutes from 5/3/22. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
+   "quote": "to approve the minutes from 5/3/22. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
   },
   {
-   "motion": "Approve the minutes from 5/10/22",
-   "moved_by": "Brett Ramsden",
-   "seconded_by": "John Reynolds",
+   "motion": "Approve the minutes of 5/10/22",
+   "moved_by": "Brett R.",
+   "seconded_by": "John R.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: john r. to approve the minutes from 5/10/22. roll call vote: mike n.-aye, john-aye, brett-aye and dave-aye."
+   "quote": "to approve the minutes from 5/10/22. roll call vote: mike n.-aye, john-aye, brett-aye and dave-aye. (mike d. did not vote as he did not attend)"
   },
   {
-   "motion": "Adjourn at 7:03 pm",
-   "moved_by": "Brett Ramsden",
-   "seconded_by": "John Reynolds",
+   "motion": "Adjourn the meeting at 7:03pm",
+   "moved_by": "Brett R.",
+   "seconded_by": "John R.",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: brett r. to adjourn at 7:03pm second: john r. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
+   "quote": "to adjourn at 7:03pm second: john r. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from a scanned document. All votes are clearly recorded with name spellings and dollar amounts exact to the minutes.",
- "cost_usd": 0.0976055
+ "note": "OCR text (macOS Vision) of a scanned minutes document; quotes come from the OCR and may carry OCR errors (e.g. 'l Forno', '0& M'). Brett Ramsden is listed in attendance and the minutes say he joined partway through (no time given). The 5/10/22 minutes vote records Mike Deveikis as not voting because he did not attend that meeting. Election votes show abstentions and are recorded as passed 4-0-1. The closing signature reads 'You h. Pandey' in the OCR, which does not match the Minutes Clerk named in the attendance list (Jane Ranley); not resolved here. Invoice figures are recorded as printed.",
+ "cost_usd": 0.021776880000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- bill bernard, business manager-barb lefebvre, minutes clerk- jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb to set up a tour of the pump stations; Commissioners to tell Barb if they want to attend.",
+   "quote": "dave asked barb to set up a tour of the pump stations and asked commissioners to let barb know if they want to attend."
+  },
+  {
+   "decision": "Barb to have ID cards made for the new officers.",
+   "quote": "he also asked barb to have id cards made for new officers."
+  },
+  {
+   "decision": "Barb to take the 5 Chestnut betterment/bisecting question back to Bill for review.",
+   "quote": "dave asked barb to go over the issue with bill and they could look at it again."
+  },
+  {
+   "decision": "Barb to send Counsel's input on the 5 Chestnut question to the Commission.",
+   "quote": "dave suggested meeting with counsel and barb said she would send out counsel's input on the question."
+  },
+  {
+   "decision": "Paula to look into ARPA funds or Build Back Better money for work on Whalom (suggested by Dave).",
+   "quote": "dave thought that it would be good to have paula look into arpa funds or build back better money."
+  },
+  {
+   "decision": "Dave wants to hear from the Building Inspector (Casey) on the IL Forno seating and what 'permanent structure' means.",
+   "quote": "dave said that he wants to hear what casey has to say and clarification on what they mean by a permanent structure."
+  },
+  {
+   "decision": "The Commission agreed to pay the listed invoices (Fitchburg, Leominster, Mead Talerman).",
+   "quote": "the commission agreed to pay them."
+  },
+  {
+   "decision": "The June 14 meeting will be held by Zoom; the 6/28 meeting format to be discussed at the next meeting.",
+   "quote": "the june 14th will be a zoom meeting and they will discuss the 6/28 at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Year 3 CTE O&M contract",
+   "what_was_recorded": "A one-year CTE operations and maintenance contract starting 7/1/22, approved by the Commission.",
+   "figures_as_printed": [
+    "$85,443.44"
+   ],
+   "quote": "the 1-year contract is for $85,443.44 and starts 7/1/22."
+  },
+  {
+   "topic": "Q4 sewer bills and commitment",
+   "what_was_recorded": "Q4 bills went out on 5/19 for a total commitment that the Commission accepted.",
+   "figures_as_printed": [
+    "$275,803.50"
+   ],
+   "quote": "barb reported the q4 bills went out on 5/19 for a total of $275,803.50."
+  },
+  {
+   "topic": "FY22 budget outcome and Retained Earnings",
+   "what_was_recorded": "A FY22 loss was anticipated, but a surplus is reported, a gain of about $600K for Retained Earnings; back betterments from Meadowwoods will boost Retained Earnings; another loss year is expected from debt expense.",
+   "figures_as_printed": [
+    "$343K",
+    "$288K",
+    "about $600K"
+   ],
+   "quote": "they anticipated a loss of $343k but have a surplus of $288k, which is a gain of about $600k for retained earnings."
+  },
+  {
+   "topic": "Extension project betterment",
+   "what_was_recorded": "The Upland/Eastern and White/Maple Parkway extension betterment figure remains the engineers' estimate.",
+   "figures_as_printed": [
+    "$57K"
+   ],
+   "quote": "the betterment figure will still be $57k."
+  },
+  {
+   "topic": "Invoices paid (Fitchburg, Leominster, Mead Talerman)",
+   "what_was_recorded": "Monthly Fitchburg usage, Q4 Leominster usage (about $20K higher than the prior Q4), and Wright Pierce and Sewer Bylaw work invoices were presented; the Commission agreed to pay them.",
+   "figures_as_printed": [
+    "$19,174.13",
+    "$138,839.20",
+    "$20K",
+    "$775.75"
+   ],
+   "quote": "invoices- fitchburg usage - $19,174.13 (monthly), leominster-$138,839.20 (q4-12/26-3/25)- which was about $20k higher than the last q4 figure"
+  },
+  {
+   "topic": "Whalom work funding and rate increase",
+   "what_was_recorded": "Discussion of the availability of money for Whalom work and a suggestion to consider ARPA or Build Back Better funds; a suggestion to consider a flat annual rate increase to cover Fitchburg and Leominster cost increases. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "followed regarding availability of money to work on whalom."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Candlelight vigil invitation for school safety",
+   "speaker": "Dave MacDonald",
+   "stated_role": "Chair",
+   "quote": "public comment- dave asked barb to screen-share an invitation to a candlelight vigil for school safety on 6/10 at 6:30pm (passios campus)."
+  },
+  {
+   "topic": "Praise for Water Department and DPW",
+   "speaker": "Dave MacDonald",
+   "stated_role": "Chair",
+   "quote": "public comment - dave noted the water department did an excellent job in fixing the water main break at hickory hills and also said the dpw is doing a great job on the roads."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and introduction of new DPW Director",
+   "resolution": "noted; no action",
+   "tags": [
+    "roll call",
+    "DPW"
+   ],
+   "quote": "dave introduced the new dpw director, bill bernard and thanked him for attending the meeting."
+  },
+  {
+   "topic": "Public comment: vigil invitation",
+   "resolution": "invitation shared; no action",
+   "tags": [
+    "public comment",
+    "school safety"
+   ],
+   "quote": "public comment- dave asked barb to screen-share an invitation to a candlelight vigil for school safety on 6/10 at"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; no action",
+   "tags": [
+    "announcements",
+    "elections"
+   ],
+   "quote": "announcements - barb congratulated john reynolds and mike nault for being elected to new 3-year terms."
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "approved: John Reynolds Chair, Brett Ramsden Vice-Chair, Mike Deveikis Clerk",
+   "tags": [
+    "elections",
+    "officers"
+   ],
+   "quote": "election of officers- dave stated he has been honored to be the chair for the past 2 years."
+  },
+  {
+   "topic": "5 Chestnut parcel bisecting and sewer service",
+   "resolution": "discussed; Counsel input to be sent; revisit with DPW Director",
+   "tags": [
+    "5 Chestnut",
+    "sewer service area",
+    "betterments",
+    "counsel"
+   ],
+   "quote": "5 chestnut discussion-barb talked to counsel about the bisecting of the parcel, and counsel said the bylaws allow"
+  },
+  {
+   "topic": "Year 3 CTE O&M contract",
+   "resolution": "approved 5-0",
+   "tags": [
+    "CTE contract",
+    "contracts"
+   ],
+   "quote": "year 3 cte 0& m contract- barb sent the year 3 contract to the commissioners."
+  },
+  {
+   "topic": "Q4 Commitment",
+   "resolution": "accepted 5-0",
+   "tags": [
+    "commitment",
+    "billing"
+   ],
+   "quote": "q4 commitment- barb reported the q4 bills went out on 5/19 for a total of $275,803.50."
+  },
+  {
+   "topic": "Approval of minutes of 5/3/22 and 5/10/22",
+   "resolution": "approved (5/3 5-0; 5/10 4-0)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes from 5/3/22. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "topic": "Business Manager report: FY22 budget",
+   "resolution": "reported; no action",
+   "tags": [
+    "budget",
+    "retained earnings"
+   ],
+   "quote": "business manager report - fy22 budget- barb reported the fy22 budget has 1 month left and it is looking good,"
+  },
+  {
+   "topic": "Extension project mailing",
+   "resolution": "reported; no action",
+   "tags": [
+    "extension project",
+    "betterments",
+    "survey"
+   ],
+   "quote": "extension project mailing- barb reported they have been working with wright pierce and the board of health"
+  },
+  {
+   "topic": "711 Mass Ave project status",
+   "resolution": "reported; plans to DPW Director",
+   "tags": [
+    "711 Mass Ave",
+    "engineering"
+   ],
+   "quote": "711 mass ave project status- barb reported that the engineers have updated the plan based on peer review"
+  },
+  {
+   "topic": "IL Forno update",
+   "resolution": "reported; Building Inspector to be heard",
+   "tags": [
+    "IL Forno",
+    "building inspector"
+   ],
+   "quote": "il forno update- barb talked to mike at l forno who said that the seating capacity will be the same as the tent"
+  },
+  {
+   "topic": "Wright Pierce contract for SSO plan",
+   "resolution": "reported; update at next meeting",
+   "tags": [
+    "SSO",
+    "Wright Pierce",
+    "state requirement"
+   ],
+   "quote": "wright pierce contract for sso plan-barb stated the sso (sanitary sewer overflow) notification plan is required"
+  },
+  {
+   "topic": "Grease traps",
+   "resolution": "reported; no action",
+   "tags": [
+    "grease traps"
+   ],
+   "quote": "grease traps- barb reported the april logs all in and paula has been working on those who are due for pump outs."
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "agreed to pay",
+   "tags": [
+    "invoices",
+    "Fitchburg",
+    "Leominster"
+   ],
+   "quote": "invoices- fitchburg usage - $19,174.13 (monthly), leominster-$138,839.20"
+  },
+  {
+   "topic": "Website updates",
+   "resolution": "reported; no action",
+   "tags": [
+    "website"
+   ],
+   "quote": "website- barb will be doing updates on the website about bills going out and results of town meeting."
+  },
+  {
+   "topic": "Meeting format",
+   "resolution": "discussed; June 14 by Zoom",
+   "tags": [
+    "hybrid meetings",
+    "remote participation",
+    "zoom"
+   ],
+   "quote": "meeting format discussion- dave suggested having hybrid meetings."
+  },
+  {
+   "topic": "Public comment: Water Department and DPW",
+   "resolution": "noted; no action",
+   "tags": [
+    "public comment",
+    "water main"
+   ],
+   "quote": "public comment - dave noted the water department did an excellent job in fixing the water main break at hickory"
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted; no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "june 14, 2022 @ 6pm - regular meeting, remote participation via zoom"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:03pm, 5-0",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 7:03pm second: john r. roll call vote: mike d.-aye, mike n.-aye, john-aye, brett-aye and dave-aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School Safety Candlelight Vigil Invitation for 6/10",
+   "where": "list",
+   "quote": "school safety candlelight vigil invitation for 6/10 screen-shared by barb."
+  },
+  {
+   "name": "Year 3 CTE O&M contract",
+   "where": "text",
+   "quote": "barb sent the year 3 contract to the commissioners."
+  },
+  {
+   "name": "Q4 Commitment",
+   "where": "text",
+   "quote": "vote to accept and come in to sign the commitment."
+  },
+  {
+   "name": "Article to amend the Sewer Service Area (Town Meeting)",
+   "where": "text",
+   "quote": "the article to amend the sewer service area was passed over at town meeting."
+  },
+  {
+   "name": "Remote Participation policy",
+   "where": "text",
+   "quote": "the prior remote participation policy required a quorum and the chair in house."
+  },
+  {
+   "name": "SSO (Sanitary Sewer Overflow) notification plan",
+   "where": "text",
+   "quote": "the sso (sanitary sewer overflow) notification plan is required by the state by 7/1."
+  },
+  {
+   "name": "711 Mass Ave plans",
+   "where": "text",
+   "quote": "jamie will be bringing in the plans for bill bernard to review"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "officer elections",
+  "CTE contract",
+  "Q4 commitment",
+  "invoices",
+  "betterments",
+  "FY22 budget",
+  "5 Chestnut",
+  "hybrid meetings",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

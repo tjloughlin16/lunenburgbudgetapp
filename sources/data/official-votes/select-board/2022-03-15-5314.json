@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-03-15",
  "docid": "5314",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the all alcoholic liquor license and change of manager for Genghis Inc. d/b/a Jaxx Country Variety at 1353 Massachusetts Avenue",
+   "motion": "Approve the all alcohol liquor license and change of manager for Jaxx Country Variety at 1353 Massachusetts Avenue.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion: t. dwyer 2nd: l. franco to approve the all alcohol liquor license and the change of manager for jaxx country variety at 1353 massachusetts avenue vote: all in favor"
   },
   {
-   "motion": "Approve the pole petition for Kilburn Street, Plan 971-L dated February 2, 2022",
+   "motion": "Approve the pole petition for Kilburn Street, Plan 971-L dated February 2, 2022.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion: m. jeffreys 2': t. dwyer to approve the pole petition for kilburn street, plan 971-l dated february 2, 2022 vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager's appointment of Jesse Reed as a full-time police officer effective April 4, 2022",
+   "motion": "Ratify the Town Manager appointment of Jesse Reed to full-time Police officer effective April 4, 2022.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion: m. jeffreys to ratify the town manager appointment of jesse reed to full-time police officer effective april 4, 2022 2nd: l. franco vote: all in favor"
   },
   {
-   "motion": "Reappoint Shirley McBride to the Board of Registrars for a term from April 1, 2022 to March 31, 2025",
+   "motion": "Reappoint Shirley McBride to the Board of Registrars from April 1, 2022 to March 31, 2025.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion: m. jeffreys 2nd: t. dwyer to reappoint shirley mcbride to the board of registrars from april 1, 2022- march 31, 2025 vote: all in favor"
   },
   {
-   "motion": "Appoint Judit Ernst to the Cultural Council for a term expiring June 30, 2025",
+   "motion": "Appoint Judit Ernst to the Cultural Council with a term to expire June 30, 2025.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -52,16 +52,396 @@
    "quote": "motion: l. franco 2\": t. dwyer to appoint judit ernst to the cultural council with a term to expire june 30, 2025 vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer to adjourn the meeting the meeting adjourned at 8:36 p.m",
-   "quote_taken_from_text": true
+   "quote": "motion: t. dwyer to adjourn the meeting the meeting adjourned at 8:36 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is an OCR scan (macOS Vision). OCR artifacts present: vote 2 shows \"2':\" instead of \"2nd:\"; vote 5 shows \"2\\\":\" instead of \"2nd:\". Vote 6 (adjournment) has OCR-inserted signature lines between motion and vote outcome in the transcription.",
- "cost_usd": 0.13910250000000002
+ "note": "Text is OCR (macOS Vision). Two passages are garbled and were not relied on: the commendation paragraph on page 2 and the BETA Group/EPA paragraph on page 3. The minutes print no roll call, so board members' attendance is recorded as not stated. Votes are printed only as 'All in Favor' with no counts, so outcomes are recorded as passed. The vote quote for the Jaxx license is verbatim across the page break. The adjournment vote's result line sits after the signature block, so its quote covers the motion only. The minutes print no documents list heading.",
+ "cost_usd": 0.022439680000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; john kimball, unitil representative, alan"
+  },
+  {
+   "name": "John Kimball",
+   "role": "Unitil Representative",
+   "status": "present",
+   "quote": "unitil representative john kimball returned for their project to connect leominster road"
+  },
+  {
+   "name": "Alan Wernick",
+   "role": "Owner, Jaxx Country Variety (presented for the application)",
+   "status": "present",
+   "quote": "owner alan wernick presented for the application for the license and noted he did not plan"
+  },
+  {
+   "name": "Aaron Wernick",
+   "role": "Proposed change of manager, Jaxx Country Variety",
+   "status": "present",
+   "quote": "the wernicks thanked the select board and exited the meeting."
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "chief gammel was pleased to recommend jesse reed as a full-time police officer."
+  },
+  {
+   "name": "Jesse Reed",
+   "role": "Police officer appointee",
+   "status": "present",
+   "quote": "here and happy to meet everyone. he stated lunenburg is the town he wanted to work for"
+  },
+  {
+   "name": "Judit Ernst",
+   "role": "Cultural Council appointee",
+   "status": "remote",
+   "quote": "ms. ernst, via zoom, stated she has lived in town for 25 years and is a piano teacher."
+  },
+  {
+   "name": "Joe McLoughlin",
+   "role": "BETA Group Inc.",
+   "status": "remote",
+   "quote": "joe mcloughlin of beta group inc. via zoom, stated under a grant that montachusett"
+  },
+  {
+   "name": "Shirley McBride",
+   "role": "Board of Registrars reappointment candidate",
+   "status": "absent",
+   "quote": "mrs. mcbride was not present as she does not drive at night but she has served on the bor for"
+  },
+  {
+   "name": "M. Jeffreys",
+   "role": "Select Board member",
+   "status": "not stated",
+   "quote": "mr. alonzo noted this board's next meeting is march 22, and mr. jeffreys will chair as mr."
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Select Board member",
+   "status": "not stated",
+   "quote": "motion: t. dwyer 2nd: l. franco to approve the all alcohol liquor license"
+  },
+  {
+   "name": "L. Franco",
+   "role": "Select Board member",
+   "status": "not stated",
+   "quote": "motion: t. dwyer 2nd: l. franco to approve the all alcohol liquor license"
+  },
+  {
+   "name": "Ann Penney",
+   "role": "",
+   "status": "present",
+   "quote": "ann penney, 1361 mass. ave., stated her driveway is right next to the store."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "not stated",
+   "quote": "dave passios, 56 whiting street, wanted to remind the public that tomorrow night at 7:00 pm"
+  },
+  {
+   "name": "Officer Mathieu",
+   "role": "Police officer (recognized)",
+   "status": "present",
+   "quote": "the second recognition is for two officers, one who is here tonight. officer mathieu and lt."
+  },
+  {
+   "name": "Lt. Thibodeau",
+   "role": "Police lieutenant (recognized)",
+   "status": "not stated",
+   "quote": "officer mathieu and lt. thibodeau have been dealing with an elderly resident for well-being checks"
+  },
+  {
+   "name": "Nick Marino",
+   "role": "Police officer (commendation)",
+   "status": "not stated",
+   "quote": "chief gammel announced that he has issued a letter of commendation to officer nick marino."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The APD bylaw deficiencies article will be worked on before fall Town Meeting, with the APD and Town Counsel; it is not expected to make the Annual Town Meeting.",
+   "quote": "this will be worked on in anticipation of fall town meeting with the apd and town counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Payroll and accounts payable warrants signed",
+   "what_was_recorded": "The board signed three warrants: a payroll warrant, an accounts payable warrant and a payroll deductions warrant.",
+   "figures_as_printed": [
+    "$917,564.43",
+    "$526,790.49",
+    "$615,349.44"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $917,564.43; an accounts payable warrant in the amount of $526,790.49 and a payroll deductions warrant in the amount of $615,349.44."
+  },
+  {
+   "topic": "Two marked police cruisers capital balance",
+   "what_was_recorded": "The completed cruiser project has a remaining balance that can be added to unexpended FY23 capital funding.",
+   "figures_as_printed": [
+    "$13,593"
+   ],
+   "quote": "complete and balance of $13,593 can be added to unexpended capital funding available for the fy23 capital plan"
+  },
+  {
+   "topic": "THES exterior envelope repairs unexpended funds",
+   "what_was_recorded": "The completed THES envelope repairs left unexpended funds going toward FY23 Capital.",
+   "figures_as_printed": [
+    "$7,100"
+   ],
+   "quote": "thes ext envelope repairs: complete; unexpended $7,100 going towards fy23"
+  },
+  {
+   "topic": "Cleaning services contract bid",
+   "what_was_recorded": "Cleaning services were put out to bid and awarded to the lowest responsible bidder; the minutes say the contract price is within the budgeted amount, with no figure printed.",
+   "figures_as_printed": [],
+   "quote": "assistant town manager belliveau put the cleaning services out to bid and we received 5 bids."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Marshall Park design proposals reminder",
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "quote": "dave passios, 56 whiting street, wanted to remind the public that tomorrow night at 7:00 pm at town hall the parks commission will be reviewing two design proposals"
+  },
+  {
+   "topic": "Trash from Jaxx Country Variety on abutting driveway",
+   "speaker": "Ann Penney",
+   "stated_role": "",
+   "quote": "ann penney, 1361 mass. ave., stated her driveway is right next to the store."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "heard; warrant article deadline noted",
+   "quote": "warrant articles for the annual town meeting are due by march 215 at 4:00 p.m. to the select board office.",
+   "tags": [
+    "public comment",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Liquor license hearing, Jaxx Country Variety",
+   "resolution": "approved",
+   "quote": "hearing for all alcoholic liquor license and change of manager for genghis inc. d/b/a jaxx country variety, 1353 massachusetts avenue",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Pole petition continuation, Kilburn Street",
+   "resolution": "approved",
+   "quote": "continuation of pole petition hearing-kilburn street - plan 971-l dated 2/2/2022",
+   "tags": [
+    "utilities",
+    "pole petition"
+   ]
+  },
+  {
+   "topic": "Police commendations",
+   "resolution": "recognized; no vote",
+   "quote": "chief gammel announced that he has issued a letter of commendation to officer nick marino.",
+   "tags": [
+    "police"
+   ]
+  },
+  {
+   "topic": "Ratification of police officer appointment, Jesse Reed",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of jesse reed effective april 4, 2022",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Reserve officer resignation",
+   "resolution": "noted",
+   "quote": "chief gammel announced reserve officer bonilla-perez is resigning effective april 4, 2022",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Board of Registrars reappointment, Shirley McBride",
+   "resolution": "reappointed",
+   "quote": "board of registrars- shirley mcbride, 159 hollis road - term runs april 1, 2022 - march",
+   "tags": [
+    "appointments",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Cultural Council appointment, Judit Ernst",
+   "resolution": "appointed",
+   "quote": "appointment of member to the cultural council-judit ernst-568 flat hill road-term to expire june 30, 2025",
+   "tags": [
+    "appointments",
+    "cultural council"
+   ]
+  },
+  {
+   "topic": "Environmental consultant on 925 Mass. Ave",
+   "resolution": "discussed; no vote",
+   "quote": "meeting with environmental consultant on next steps for 925 mass. ave (old gas station)",
+   "tags": [
+    "environmental",
+    "contamination",
+    "925 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Public comment on the liquor hearing",
+   "resolution": "heard",
+   "quote": "mr. alonzo asked for any public comment related to the earlier public hearing scheduled at 7:05",
+   "tags": [
+    "public comment",
+    "liquor license"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, employment, capital projects, bids",
+   "resolution": "informational",
+   "quote": "town manager report announcement on existing vacancies",
+   "tags": [
+    "town manager",
+    "capital plan",
+    "vacancies",
+    "procurement"
+   ]
+  },
+  {
+   "topic": "APDC certificate to alter, 30 School Street",
+   "resolution": "update only; APDC hearing continued",
+   "quote": "discussion on architectural preservation district commission (apdc) certificate to alter filing for 30 school street",
+   "tags": [
+    "historic district",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "resolution": "signed",
+   "quote": "the board signed a payroll warrant in the amount of $917,564.43",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Conrad's Drive-In license non-renewal",
+   "resolution": "update; hearing April 5 unless payment arrangement made",
+   "quote": "update on cease & desist and non-renewal of common victualler license for conrad's drive-in",
+   "tags": [
+    "licensing",
+    "delinquent taxes"
+   ]
+  },
+  {
+   "topic": "Article on APD bylaw deficiencies",
+   "resolution": "to be worked on before fall Town Meeting",
+   "quote": "discussion on article to address deficiencies in apd bylaw",
+   "tags": [
+    "historic district",
+    "bylaws"
+   ]
+  },
+  {
+   "topic": "Planning Board and other warrant articles",
+   "resolution": "discussed; Land Use clarification requested",
+   "quote": "ms. lemieux moved on to three planning board articles which;",
+   "tags": [
+    "warrant articles",
+    "zoning",
+    "water supply"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "informational",
+   "quote": "upcoming meeting/events schedule mr. alonzo noted this board's next meeting is march 22",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Daylight saving time legislation",
+   "resolution": "noted",
+   "quote": "mr. alonzo noted that state senator markey has introduced legislation keeping daylight savings",
+   "tags": [
+    "state legislation"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:36 p.m.",
+   "quote": "motion: t. dwyer to adjourn the meeting the meeting adjourned at 8:36 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Hearing notice, Lunenburg Licensing Authority (Jaxx Country Variety)",
+   "where": "text",
+   "quote": "mr. alonzo read the hearing notice aloud."
+  },
+  {
+   "name": "Application by Genghis Inc. d/b/a Jaxx Country Variety for a license change and change of manager",
+   "where": "text",
+   "quote": "on the application submitted by genghis inc. d/b/a jaxx country variety"
+  },
+  {
+   "name": "Pole petition Plan 971-L dated 2/2/2022 (Kilburn Street)",
+   "where": "text",
+   "quote": "continuation of pole petition hearing-kilburn street - plan 971-l dated 2/2/2022"
+  }
+ ],
+ "tags": [
+  "liquor license",
+  "pole petition",
+  "appointments",
+  "police",
+  "environmental remediation",
+  "capital plan",
+  "warrant articles",
+  "historic district",
+  "public comment",
+  "warrants",
+  "Town Manager report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-11-15",
  "docid": "4146",
@@ -12,15 +12,179 @@
  },
  "votes": [
   {
-   "motion": "Motion to close the public hearing for 475 Leominster Shirley Road",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Close the public hearing for 475 Leominster Shirley Road.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "p. bertram made motion to close the hearing for 475 leominster shirley road , m. allison secon ded, passed unanimously. all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0816335
+ "note": "Continuation of a public hearing; the minutes record a single vote, to close the hearing. No vote on the decision itself is recorded, and the draft decision is listed but not voted on. No public comment section appears in the minutes. No dollar figures are printed; the money discussion is qualitative. Several named representatives of other firms (The Brennan Group, John M. Corcoran & Co., Greenman-Pedersen, MDM) appear only as organisations, with no individual names, so they are not listed as attendees. Source text has broken words and stray spacing (for example \"Secon ded\", \"f rom\"); quotes were chosen to avoid them.",
+ "cost_usd": 0.01601848,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, adam r. burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: matthew brenner, erik torgersen"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: matthew brenner, erik torgersen"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Project Engineer, Hannigan Engineering",
+   "status": "present",
+   "quote": "bill hannigan, project engineer, hannigan engineering believed that a"
+  },
+  {
+   "name": "Heather Monticup",
+   "role": "Greenman-Pedersen, Inc. (hereinafter GPI)",
+   "status": "present",
+   "quote": "heather monticup, greenman-pedersen, inc. (hereinafter gpi) brought the board up to date"
+  },
+  {
+   "name": "Dan Dumais",
+   "role": "Senior Project Manager, MDM Transportation",
+   "status": "present",
+   "quote": "dan dumais, senior project manager, mdm transportation, stated that mdm did a sensitivity analysis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Initial traffic-mitigation timeline set at 3 months after occupancy, then at 100% occupancy.",
+   "quote": "it was determined that the initial timeline would be at 3 months, then at 100%."
+  },
+  {
+   "decision": "The last bullet under Phase II is to be reworded to tie additional mitigation to proportional traffic impact, with the form of contribution set between the Planning Board and DPW Director.",
+   "quote": "the last bullet point under phase ii would be edited to read"
+  },
+  {
+   "decision": "Construction hours set at 7 a.m. to 5 p.m. Monday through Friday, 8 a.m. to 3 p.m. Saturday, with no Sundays or holidays.",
+   "quote": "hours of construction would be 7 a.m. to 5 p.m. monday through friday, 8 a.m. through 3 p.m. saturday, no sundays or"
+  },
+  {
+   "decision": "Appendix B to become part of the Conditions in the Decision.",
+   "quote": "appendix b would become part of the conditions in the decision."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of traffic improvements and Town financial exposure",
+   "what_was_recorded": "P. Bertram raised concern that, if a grant were not received, the cost of intersection improvements would fall on Lunenburg; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "p. bertram raised concerns that in the event the town was unable to receive a grant, the cost of improvements would be"
+  },
+  {
+   "topic": "Tax revenue from the project",
+   "what_was_recorded": "T. Cole said the project's tax revenue would help pay for the improvements; no dollar figure was given.",
+   "figures_as_printed": [],
+   "quote": "t. cole emphasized the beneficial tax revenue to the town, which would help pay for the improvements."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Continued public hearing, 475 Leominster Shirley Road (warehouse site plan and stormwater permit)",
+   "resolution": "hearing closed by vote",
+   "quote": "the hearing continuation was to hear and review applications for site plan approval and stormwater management permit",
+   "tags": [
+    "public hearing",
+    "site plan approval",
+    "stormwater permit",
+    "warehouse"
+   ]
+  },
+  {
+   "topic": "Traffic mitigation package and cost sharing",
+   "resolution": "discussed; timeline and conditions set without a vote on the decision",
+   "quote": "mitigation commitments from gpi included:",
+   "tags": [
+    "traffic mitigation",
+    "Leominster Shirley Road",
+    "Fort Pond Road",
+    "cost sharing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft Decision",
+   "where": "list",
+   "quote": "documents used at meeting: draft decision"
+  },
+  {
+   "name": "MDM Transportation Consultants review letter, October 18, 2021",
+   "where": "text",
+   "quote": "noting an october 18, 2021 review"
+  },
+  {
+   "name": "MDM Transportation supplemental review letter",
+   "where": "text",
+   "quote": "a supplemental review letter was provided by mdm."
+  },
+  {
+   "name": "GPI traffic volume and trip generation letter, July 15, 2021",
+   "where": "text",
+   "quote": "traffic volume and trip generation letter dated july 15, 2021"
+  },
+  {
+   "name": "Appendix B (conditions appendix)",
+   "where": "text",
+   "quote": "appendix b would become part of the conditions in the decision."
+  },
+  {
+   "name": "10% design submission",
+   "where": "text",
+   "quote": "as outlined in the 10% design submission"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "public hearing",
+  "site plan approval",
+  "stormwater",
+  "warehouse",
+  "traffic mitigation",
+  "Leominster Shirley Road",
+  "Fort Pond Road",
+  "conditions of approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting"
+ },
+ "dropped_unquoted_by_field": {}
 }

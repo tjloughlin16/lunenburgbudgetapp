@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-07-21",
  "docid": "2062",
@@ -12,55 +12,393 @@
  },
  "votes": [
   {
-   "motion": "Nominate Evan Watters as Chairperson",
+   "motion": "Nominate Evan Watters as Chairperson.",
    "moved_by": "Chris Menard",
-   "seconded_by": "Tom Balish",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "mr. menard moved to nominate mr. watters as chairperson, mr. balish seconded. on vote, motion carried unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. menard moved to nominate mr. watters as chairperson, mr. balish seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Tom Balish"
   },
   {
-   "motion": "Nominate Chris Menard as Vice Chair",
+   "motion": "Nominate Chris Menard as Vice Chair.",
    "moved_by": "Tom Balish",
-   "seconded_by": "Tom Gray",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "mr. balish moved to nominate mr. menard as vice chair, mr. gray seconded. on vote, motion carried unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. balish moved to nominate mr. menard as vice chair, mr. gray seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Tom Gray"
   },
   {
-   "motion": "Nominate Tom Balish as Clerk",
+   "motion": "Nominate Tom Balish as Clerk.",
    "moved_by": "Chris Menard",
-   "seconded_by": "Tom Gray",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "mr. menard motioned to nominate mr. balish as clerk, mr. gray seconded. on vote, motion carried unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. menard motioned to nominate mr. balish as clerk, mr. gray seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Tom Gray"
   },
   {
-   "motion": "Appoint Tom Gray to serve as finance committee appointee to the Municipal Building Design Committee",
+   "motion": "Appoint Tom Gray as finance committee appointee to the Municipal Building Design Committee.",
    "moved_by": "Evan Watters",
-   "seconded_by": "Chris Menard",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "mr. watters motioned to appoint mr. gray to serve as finance committee appointee to the municipal building design committee, mr. menard seconded. on vote, motion carried unanimously."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "mr. watters motioned to appoint mr. gray to serve as finance committee appointee to the municipal building design committee, mr. menard seconded. on vote, motion carried unanimously.",
+   "seconded_by": "Chris Menard"
   },
   {
-   "motion": "Approve the minutes from the May 19 and June 9, 2022 meetings",
+   "motion": "Approve the minutes of the May 19, 2022 and June 9, 2022 meetings.",
    "moved_by": "Tom Gray",
-   "seconded_by": "Chris Menard",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "mr. gray moved to approve the minutes from the may 19, and june 9, 2022 meetings. mr. menard seconded. on vote, motion carried. (4-0-1)"
+   "quote": "mr. gray moved to approve the minutes from the may 19, and june 9, 2022 meetings. mr. menard seconded. on vote, motion carried. (4-0-1)",
+   "seconded_by": "Chris Menard"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
-   "seconded_by": "Tom Gray",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. menard motioned to adjourn. mr. gray seconded. on vote motion carried unanimously."
+   "quote": "mr. menard motioned to adjourn. mr. gray seconded. on vote motion carried unanimously.",
+   "seconded_by": "Tom Gray"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0830875
+ "note": "Text is complete, pages 1-4 with no scan or missing pages. Vote tallies are printed for minutes only (4-0-1); the other motions are recorded as carried unanimously. The minutes state they were approved at the July 28, 2022 meeting, which is not itself a vote in this record. Mr. Simeone is mentioned but did not take part, so he is not listed as an attendee.",
+ "cost_usd": 0.018042080000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson peter beardmore, chris menard, in person."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson peter beardmore, chris menard, in person."
+  },
+  {
+   "name": "Tom Gray",
+   "role": "",
+   "status": "remote",
+   "quote": "attending remotely: tom gray, tom balish, evan watters"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "",
+   "status": "remote",
+   "quote": "attending remotely: tom gray, tom balish, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "",
+   "status": "remote",
+   "quote": "attending remotely: tom gray, tom balish, evan watters"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dave passios"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, finance director karen brochu, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "commenting as a member of the public",
+   "status": "present",
+   "quote": "mr. passios, commenting as a member of the public, informed the committee that though his term as a member of the finance committee was up at the end of june 2022"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to request an overview of department heads' FY24 budget presentations, covering current-year operations, budget requests, and first-half FY23 spending.",
+   "quote": "the committee agreed they'd request an overview of department heads' fy24 budget presentations to include"
+  },
+  {
+   "decision": "Mr. Menard and Mr. Watters agreed the capital planning process needs to be more transparent and that its meetings should be recorded.",
+   "quote": "mr. menard and mr. watters agreed that the capital planning process needs to be more transparent, and that meetings should be recorded."
+  },
+  {
+   "decision": "Liaison assignments were not formally decided; members volunteered individually for some roles, and the School Committee, Council on Aging and Green Communities Committee were left without a liaison.",
+   "quote": "the committee did not formally decide on who would serve as liaison to the following committees"
+  },
+  {
+   "decision": "The committee agreed there should be budgeting guidelines established for municipal building design projects.",
+   "quote": "the committee agrees that there should be budgeting guidelines established when it comes municipal building design projects."
+  },
+  {
+   "decision": "Mr. Beardmore will seek town counsel's guidance on the capital plan article language and hopes to place the item on the Select Board agenda in September 2022.",
+   "quote": "mr. beardmore will seek town counsel's guidance, and hopes to get the item on the select board's agenda in september 2022"
+  },
+  {
+   "decision": "Mr. Balish will meet with the Town Manager and consult the Massachusetts Association of Finance Committees, and report at the August 18, 2022 meeting on new member on-boarding.",
+   "quote": "mr. balish plans to meet with the town manager, and consult the massachusetts association of finance committees, and will be ready to report at the august 18, 2022 meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Small bridge grant for Flat Hill Rd culvert",
+   "what_was_recorded": "The town was awarded a grant to fund the Flat Hill Rd culvert project.",
+   "quote": "the town has been awarded a $500,000 small bridge grant to fund the flat hill rd culvert project.",
+   "figures_as_printed": [
+    "$500,000"
+   ]
+  },
+  {
+   "topic": "Assessor's budget and prior-year invoice in potential fall Special Town Meeting articles",
+   "what_was_recorded": "Potential warrant articles include additional assessor's budget funding for cyclical data inspections and a prior year FY21 invoice.",
+   "quote": "additional funding for assessor's budget for cyclical data inspections estimated at $35,000, and a prior year invoice from fy21.",
+   "figures_as_printed": [
+    "$35,000"
+   ]
+  },
+  {
+   "topic": "Road materials cost increase",
+   "what_was_recorded": "Road materials for FY23 rose against the FY20 contract.",
+   "quote": "road materials for fy23 has increased between 20-40 percent from the fy20 contract.",
+   "figures_as_printed": [
+    "20-40 percent"
+   ]
+  },
+  {
+   "topic": "State aid above original estimate",
+   "what_was_recorded": "The town will receive more state aid than originally anticipated after the state passed its budget.",
+   "quote": "the town will receive $54,417 more in state aid than originally anticipated.",
+   "figures_as_printed": [
+    "$54,417"
+   ]
+  },
+  {
+   "topic": "Town beach building bid",
+   "what_was_recorded": "The one bid received for the town beach building project was much higher than expected, and the plan may change.",
+   "quote": "the town has received one bid on the town beach building project, and it was much higher than expected.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "EPA funding for underground gas tank and soil removal",
+   "what_was_recorded": "The EPA will fund removal of underground gas tanks and hazardous soil at 925 Massachusetts Ave; prior owners have one year to take ownership and pay back taxes.",
+   "quote": "ms. lemieux reported that the epa will fund the safe removal of underground gas tanks, and hazardous soil from 925 massachusetts ave.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Loofah Farms tax incentives",
+   "what_was_recorded": "Loofah Farms will seek tax incentives from the town for agricultural business at 361 Massachusetts Ave.",
+   "quote": "the farm will seek tax incentives from the town.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Borrowing capacity for building projects",
+   "what_was_recorded": "Discussion that the town must know a project's cost before determining how much can be borrowed under fiscal policy; no figure printed.",
+   "quote": "ms. brochu suggested the town would need to know how much money a project would cost in order to determine how much money could be borrowed.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Passios",
+   "stated_role": "commenting as a member of the public",
+   "topic": "Term on Capital Planning Committee",
+   "quote": "mr. passios, commenting as a member of the public, informed the committee that though his term as a member of the finance committee was up at the end of june 2022, his term on the capital planning committee"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "mr. beardmore called the meeting to order at 7:06 p.m.",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": []
+  },
+  {
+   "topic": "Public comment (Passios)",
+   "resolution": "no action",
+   "quote": "mr. passios, commenting as a member of the public, informed the committee that though his term",
+   "tags": [
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Chair report",
+   "resolution": "no action",
+   "quote": "mr. beardmore was recently appointed to the school committee and will have to resign from the finance committee at the end of september.",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "Board reorganization and upcoming calendar",
+   "resolution": "continued to focus on appointments",
+   "quote": "mr. beardmore pointed out that with his resignation in september, the committee could be operating with only five members",
+   "tags": [
+    "membership",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Officer reorganization",
+   "resolution": "approved (chair, vice chair, clerk elected)",
+   "quote": "mr. menard moved to nominate mr. watters as chairperson, mr. balish seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "officers",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Committee appointments and liaisons",
+   "resolution": "approved (Gray to MBDC); liaisons not formally decided",
+   "quote": "mr. watters motioned to appoint mr. gray to serve as finance committee appointee to the municipal building design committee",
+   "tags": [
+    "appointments",
+    "liaisons",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director report",
+   "resolution": "no action",
+   "quote": "ms. lemieux reported that the epa will fund the safe removal of underground gas tanks",
+   "tags": [
+    "grants",
+    "state aid",
+    "warrant articles",
+    "beach",
+    "roads"
+   ]
+  },
+  {
+   "topic": "FY23 goals and operating principles",
+   "resolution": "agreed to request department head overviews",
+   "quote": "the committee agreed they'd request an overview of department heads' fy24 budget presentations",
+   "tags": [
+    "budget process"
+   ]
+  },
+  {
+   "topic": "Fiscal policy and debt planning timing",
+   "resolution": "no action; discussed",
+   "quote": "the select board will discuss fiscal policies on august 23, 2022.",
+   "tags": [
+    "fiscal policy",
+    "borrowing"
+   ]
+  },
+  {
+   "topic": "Town Meeting amendments to capital plan articles",
+   "resolution": "continued; town counsel guidance sought",
+   "quote": "mr. beardmore will seek town counsel's guidance, and hopes to get the item on the select board's agenda in september 2022",
+   "tags": [
+    "capital planning",
+    "town meeting",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "New member on-boarding plan",
+   "resolution": "continued to August 18 meeting",
+   "quote": "mr. balish plans to meet with the town manager, and consult the massachusetts association of finance committees",
+   "tags": [
+    "onboarding"
+   ]
+  },
+  {
+   "topic": "Approval of prior minutes",
+   "resolution": "approved 4-0-1",
+   "quote": "mr. gray moved to approve the minutes from the may 19, and june 9, 2022 meetings.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "committee reports no reports",
+   "tags": []
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "no action",
+   "quote": "next meetings july 28, august 18, august 25",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:07 p.m.",
+   "quote": "mr. menard motioned to adjourn. mr. gray seconded. on vote motion carried unanimously.",
+   "tags": [
+    "adjourn"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of May 19, 2022 and June 9, 2022 meetings",
+   "where": "text",
+   "quote": "mr. gray moved to approve the minutes from the may 19, and june 9, 2022 meetings."
+  },
+  {
+   "name": "Potential warrant articles for fall Special Town Meeting",
+   "where": "text",
+   "quote": "potential warrant articles for fall special town meeting (date tbd)"
+  },
+  {
+   "name": "FY22 Q4 report",
+   "where": "text",
+   "quote": "fy22 q4 report will be presented to the select board on august 23, 2022."
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "ms. lemieux has met with the dpw director to update the pavement management plan as several roads have been addressed."
+  },
+  {
+   "name": "Purchase and sales agreement on the street lights",
+   "where": "text",
+   "quote": "a purchase and sales agreement on the street lights should be ready by the august 2, 2022 select board meeting."
+  },
+  {
+   "name": "Financial management letter comment on fraud risk assessment",
+   "where": "text",
+   "quote": "the financial management letter comment on fraud risk assessment will be addressed in fy23"
+  },
+  {
+   "name": "Notice of Intent from Loofah Farms (361 Massachusetts Ave)",
+   "where": "text",
+   "quote": "the town has received a notice of intent from loofah farms to do agricultural business at 361 massachusetts ave."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "officer elections",
+  "reorganization",
+  "committee appointments",
+  "capital planning",
+  "town meeting",
+  "state aid",
+  "grants",
+  "fiscal policy",
+  "borrowing",
+  "minutes approval",
+  "open meeting law"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

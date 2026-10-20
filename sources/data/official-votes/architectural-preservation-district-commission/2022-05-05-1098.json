@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2022-05-05",
  "docid": "1098",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from April 14, 2022",
-   "moved_by": "Dwyer",
+   "motion": "Accept the minutes of April 14, 2022.",
+   "moved_by": "D wyer",
    "seconded_by": "Nicastro",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed; Sculimbrene abstained",
    "procedural": true,
    "quote": "motion to accept the minutes from april 14, 2022, by d wyer, seconded by nicastro; accepted by all present at meeting of april 14, 2022; sculimbrene abstained"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Nicastro",
    "seconded_by": "Dwyer",
    "outcome": "passed",
@@ -29,6 +29,144 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. A third discussion item—sending CTA for Town Hall to Binding Review—records a \"decision made\" but no motion, second, or explicit vote, so it is not counted per the rules.",
- "cost_usd": 0.0826325
+ "note": "Single-page text, cleanly extracted. Only two motions are recorded (accept minutes; adjourn), both with results. The CTA Town Hall routing is recorded as a decision with no vote. William Lloyd appears in the header but not in the Present line, so attendance is recorded as not stated. The minutes print 'D wyer' (sic) for Dwyer, kept as printed. No public comment section and no dollar figures appear in the text.",
+ "cost_usd": 0.01417988,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, dwyer, nicastro, sculimbrene"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: chairman mcgrath, dwyer, nicastro, sculimbrene"
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, dwyer, nicastro, sculimbrene"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, dwyer, nicastro, sculimbrene"
+  },
+  {
+   "name": "William Lloyd",
+   "role": "member",
+   "status": "not stated",
+   "quote": "william lloyd, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Send the CTA for Town Hall to Binding Review (no recorded vote).",
+   "quote": "discussion and decision made to send cta for town hall to binding review;"
+  },
+  {
+   "decision": "Commission members to send letters to the Selectboard regarding the reappointment of Richard McGrath; the Chair requested that no letter be sent on his behalf.",
+   "quote": "chair mcgrath requests that no letter be sent on his behalf"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town maintenance of buildings and cost to taxpayers (Old Business, Town Meeting item)",
+   "what_was_recorded": "Discussion that the Town is not maintaining buildings properly and that this is costing taxpayers money; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion that town is not maintaining buildings properly and that is costing the taxpayers money"
+  },
+  {
+   "topic": "CTA Town Hall windows and historic value versus strict cost",
+   "what_was_recorded": "Discussion of historic value versus strict cost in the Town Hall CTA; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "discussion about historic value position vs strict cost and getting facility director to attend apdc meetings as contact person"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved (April 14, 2022 minutes accepted; Sculimbrene abstained)",
+   "quote": "motion to accept the minutes from april 14, 2022, by d wyer, seconded by nicastro;",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "noted; reappointment letter request and public hearing notice",
+   "quote": "lunenburg leger: public hearing for cta ritter building for may 19, 2022at 7:30 pm",
+   "tags": [
+    "correspondence",
+    "reappointment",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "CTA Town Hall",
+   "resolution": "sent to Binding Review (decision, no recorded vote)",
+   "quote": "discussion and decision made to send cta for town hall to binding review;",
+   "tags": [
+    "Town Hall",
+    "CTA",
+    "windows",
+    "binding review"
+   ]
+  },
+  {
+   "topic": "Old Business: Town Meeting, loss of the Old Primary School",
+   "resolution": "discussed; no action recorded",
+   "quote": "town meeting: loss of the old primary school negatively affects the apd",
+   "tags": [
+    "Old Primary School",
+    "demolition",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Old Business: Brook's House",
+   "resolution": "discussed; no action recorded",
+   "quote": "brook's house is endangered; original farmhouse that goes with the school land",
+   "tags": [
+    "Brook's House",
+    "relocation",
+    "purchase"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Elaine Peterson - reappointment of Richard McGrath (correspondence)",
+   "where": "list",
+   "quote": "elaine peterson - reappointment of richard mcgrath"
+  },
+  {
+   "name": "Lunenburg Leger: Public Hearing notice for CTA Ritter Building, May 19, 2022 at 7:30 PM",
+   "where": "list",
+   "quote": "lunenburg leger: public hearing for cta ritter building for may 19, 2022at 7:30 pm"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "Town Hall",
+  "windows",
+  "Ritter Building",
+  "Old Primary School",
+  "Brook's House",
+  "binding review",
+  "reappointment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondences:"
+ },
+ "dropped_unquoted_by_field": {}
 }

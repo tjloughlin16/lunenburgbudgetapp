@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2022-08-09",
  "docid": "1937",
@@ -12,23 +12,301 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the July 19, 2022 meeting.",
-   "moved_by": "Betty DiGiacomo",
-   "seconded_by": "Pete Lincoln",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of the July 19, 2022 meeting.",
+   "moved_by": "Ms. DiGiacomo",
+   "seconded_by": "Mr. Lincoln",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. digiacomo motioned to approve the minutes from the july 19, 2022 meeting, mr. lincoln seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting.",
-   "moved_by": "Betty DiGiacomo",
-   "seconded_by": "Pete Lincoln",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting at 11:00 a.m.",
+   "moved_by": "Ms. DiGiacomo",
+   "seconded_by": "Mr. Lincoln",
+   "outcome": "passed",
    "procedural": true,
    "quote": "ms. digiacomo motioned to adjourn, mr. lincoln seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0754905
+ "note": "Scanned/extracted text only; no scan. Two votes recorded (minutes approval and adjournment), both passed unanimously per the minutes. The footer 'Minutes unanimously approved by the COA at September 13, 2022 meeting' refers to a later meeting and is not a vote at this one, so it was not recorded as a vote. Two members are named Lincoln (Chairperson Deb Lincoln and Mr. Lincoln, presumed Pete Lincoln); the minutes say 'Ms. Lincoln' and 'Mr. Lincoln' without linking them to a first name, so speakers are recorded as printed. Seconder 'Mr. Lincoln' is not assigned to a first name. Document distribution (orientation packet, logo examples, letter) is mentioned only in prose, not in a list, so documents_list is recorded as not printed.",
+ "cost_usd": 0.01740918,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "member",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "member",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "member",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director sue doherty, cheryl moisan, betty digiacomo, diane nowd,"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "member",
+   "status": "present",
+   "quote": "diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, susan o'sullivan"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "member",
+   "status": "present",
+   "quote": "diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, susan o'sullivan"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "member",
+   "status": "present",
+   "quote": "diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, susan o'sullivan"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "member",
+   "status": "present",
+   "quote": "diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, susan o'sullivan"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "member",
+   "status": "present",
+   "quote": "diane nowd, jane rabbitt, pete lincoln, judy tarbell, barbara brown, susan o'sullivan"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "member",
+   "status": "absent",
+   "quote": "jacquelyn dwyer, jim mcguigan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "member",
+   "status": "absent",
+   "quote": "jacquelyn dwyer, jim mcguigan"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board Liaison",
+   "status": "present",
+   "quote": "guests: select board liaison lou franco, coa liaison to the eagle house supporters marilyn talley"
+  },
+  {
+   "name": "Marilyn Talley",
+   "role": "COA Liaison to the Eagle House Supporters",
+   "status": "present",
+   "quote": "guests: select board liaison lou franco, coa liaison to the eagle house supporters marilyn talley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed to create a column in the Lunenburg Ledger to publicize the Eagle House; Mr. Lincoln volunteered to write submissions periodically.",
+   "quote": "to help draw attention to the eagle house, board members agreed to create a column in the lunenburg ledger."
+  },
+  {
+   "decision": "Board members agreed that Lunenburg 50+ or Lunenburg Adult Activity Center is an improvement on the name Eagle House Senior Community Center for the senior center logo.",
+   "quote": "board members agreed that lunenburg 50+ or lunenburg adult activity center is an improvement from eagle house senior community center."
+  },
+  {
+   "decision": "The board orientation packet was carried to the next meeting for discussion (continued).",
+   "quote": "the packet will be discussed at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House Supporters Woo Sox ticket raffle",
+   "what_was_recorded": "The Eagle House Supporters reported the Woo Sox ticket raffle brought in a stated amount.",
+   "quote": "ms. talley reported that the woo sox ticket raffle brought in $620.",
+   "figures_as_printed": [
+    "$620"
+   ]
+  },
+  {
+   "topic": "FY23 Formula Grant and town funding for the Eagle House",
+   "what_was_recorded": "Ms. Lincoln suggested the Town contribute more funding so the Director relies less on grant funding, especially for employee compensation. No figure was given.",
+   "quote": "ms. lincoln suggested the town should contribute more funding to the eagle house so ms. doherty wouldn't have to rely so heavily on grant funding, especially for employee compensation.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Eagle House Supporters finances",
+   "what_was_recorded": "The Supporters said they will go over their finances at their August 16, 2022 meeting. No figure was given.",
+   "quote": "the supporters will be going over their finances at the meeting.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Lunenburg tax relief for seniors",
+   "what_was_recorded": "Discussion of a senior tax relief concept being developed by a town group; the minutes state no dollar figure and no amount was decided.",
+   "quote": "ms. doherty spoke with principal assessor cj carroll who informed her that establishing tax relief for seniors is not a fast process",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Franco",
+   "stated_role": "Select Board Liaison",
+   "topic": "update on COA at Select Board",
+   "quote": "mr. franco said he'd give an update on the coa at the select board meeting."
+  },
+  {
+   "speaker": "Mr. Lincoln",
+   "stated_role": "",
+   "topic": "Boston Post Cane recipient selection",
+   "quote": "mr. lincoln commented that in the past, the select board were in charge of choosing the boston post cane recipient"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Approval of July 19, 2022 minutes",
+   "resolution": "approved",
+   "quote": "ms. digiacomo motioned to approve the minutes from the july 19, 2022 meeting, mr. lincoln seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Current Business 1: Lunenburg Tax Relief",
+   "resolution": "no action",
+   "quote": "lunenburg tax relief: ms. doherty spoke with principal assessor cj carroll who informed her",
+   "tags": [
+    "tax relief",
+    "seniors"
+   ]
+  },
+  {
+   "topic": "Current Business 2: Board member orientation packet",
+   "resolution": "continued",
+   "quote": "new council on aging board member orientation packet: ms. brown had copies of the packet printed",
+   "tags": [
+    "orientation",
+    "board"
+   ]
+  },
+  {
+   "topic": "Current Business 3: Vision for FY23 / senior center logo",
+   "resolution": "agreed on name direction",
+   "quote": "vision for fy23/senior center logo: ms. doherty distributed several examples of new logos",
+   "tags": [
+    "logo",
+    "branding"
+   ]
+  },
+  {
+   "topic": "Current Business 4: Publicity for senior center",
+   "resolution": "agreed to create newspaper column",
+   "quote": "to help draw attention to the eagle house, board members agreed to create a column in the lunenburg ledger.",
+   "tags": [
+    "publicity",
+    "Lunenburg Ledger"
+   ]
+  },
+  {
+   "topic": "Current Business 5: Boston Post Cane",
+   "resolution": "no action",
+   "quote": "boston post cane: ms. doherty reported the last letter she sent out was to another resident born in 2022, not 1922.",
+   "tags": [
+    "Boston Post Cane"
+   ]
+  },
+  {
+   "topic": "Director's report",
+   "resolution": "no action",
+   "quote": "fy22 coa report: ms. doherty is scheduled to give a presentation to the select board on august 23, 2022.",
+   "tags": [
+    "FY22 report",
+    "grant",
+    "capital plan",
+    "building"
+   ]
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "no action",
+   "quote": "eagle house supporters report: board members welcomed ms. talley, and introduced themselves.",
+   "tags": [
+    "Eagle House Supporters",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Notices and communications; board comment",
+   "resolution": "no action",
+   "quote": "notices and communications: none board comment: none",
+   "tags": []
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment mr. franco said he'd give an update on the coa at the select board meeting.",
+   "tags": [
+    "Select Board",
+    "Boston Post Cane"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:00 a.m.",
+   "quote": "adjournment at 11:00 a.m. ms. digiacomo motioned to adjourn",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "New Council on Aging Board Member Orientation Packet (copies printed by Ms. Brown and distributed to board members to edit)",
+   "where": "text",
+   "quote": "ms. brown had copies of the packet printed, and distributed it to board members to edit."
+  },
+  {
+   "name": "Examples of new logos for the senior center (distributed by Ms. Doherty)",
+   "where": "text",
+   "quote": "ms. doherty distributed several examples of new logos for the senior center"
+  },
+  {
+   "name": "FY22 COA Report presentation to the Select Board (August 23, 2022)",
+   "where": "text",
+   "quote": "fy22 coa report: ms. doherty is scheduled to give a presentation to the select board on august 23, 2022."
+  },
+  {
+   "name": "Letter sent by Ms. Doherty for the Boston Post Cane",
+   "where": "text",
+   "quote": "ms. doherty reported the last letter she sent out was to another resident born in 2022, not 1922."
+  }
+ ],
+ "tags": [
+  "council on aging",
+  "senior center",
+  "Eagle House",
+  "tax relief",
+  "Boston Post Cane",
+  "logo",
+  "publicity",
+  "grant funding",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

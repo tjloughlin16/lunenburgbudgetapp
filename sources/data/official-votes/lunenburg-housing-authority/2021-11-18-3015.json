@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2021-11-18",
  "docid": "3015",
@@ -12,31 +12,269 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the October 21, 2021 meeting",
+   "motion": "Approve the minutes of the October 21, 2021 meeting.",
    "moved_by": "Catherine Clark",
    "seconded_by": "Linda McDonald",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3 to 0",
    "procedural": true,
-   "quote": "catherine clark made a motion to accept and approve the minutes of the october 21, 2021 meeting. linda mcdonald seconded and upon roll call vote with linda mcdonald-aye, catherine clark-aye, deborah christen-aye and the minutes were accepted and approved by a 3 to 0 vote."
+   "quote": "catherine clark made a motion to accept and approve the minutes of the october 21, 2021 meeting."
   },
   {
-   "motion": "Approve and accept the October 2021 financial report",
+   "motion": "Approve and accept the October 2021 financial report.",
    "moved_by": "Catherine Clark",
    "seconded_by": "Linda McDonald",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion to approve and accept the october 2021 financial repor t made by catherine clark ; linda mcdonald seconded. linda mcdonald-aye, catherine clark-aye, deborah christen-aye and financials were accepted and approved with a vote of 3 to 0."
+   "outcome": "passed 3 to 0",
+   "procedural": false,
+   "quote": "were accepted and approved with a vote of 3 to 0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 2:20 p.m.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Catherine Clark",
    "outcome": "passed",
    "procedural": true,
-   "quote": "linda mcdonald made a motion to adjourn the meeting at 2:20 p.m.; catherine clark seconded. with all in favor the meeting adjourned."
+   "quote": "linda mcdonald made a motion to adjourn the meeting at 2:20 p.m.; catherine clark seconded."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11980350000000001
+ "dropped_unquoted": 1,
+ "note": "Two-page extracted text, no scan. Minutes are for a REMOTE regular meeting. The roll-call line reads 'Vice Chair Jon Deborah Christen' in the extraction; the name is taken as Deborah A.H. Christen from the header. Denise Ivaldi is 'Recording Secretary' in the header and 'Administrative Assistant' in the body. The minutes name no attachments beyond the Other Correspondence items; the work order list is referenced but not named.",
+ "cost_usd": 0.01720497,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 2:06 p.m."
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "linda mcdonald made a motion to adjourn the meeting at 2:20 p.m.; catherine clark seconded."
+  },
+  {
+   "name": "Catherine Clark",
+   "role": "Assistant Treasurer",
+   "status": "present",
+   "quote": "catherine clark made a motion to accept and approve the minutes of the october 21, 2021 meeting."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present were benjamin gold, executive director; adam gautie, assistant executive director and denise ivaldi, administrative assistant."
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "also present were benjamin gold, executive director; adam gautie, assistant executive director and denise ivaldi, administrative assistant."
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "also present were benjamin gold, executive director; adam gautie, assistant executive director and denise ivaldi, administrative assistant."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Adam Gautie will start adding modernization project information to future resident newsletters so residents know the status of any construction.",
+   "quote": "adam will start adding mod project info in future newsletters to let residents know status of any construction."
+  },
+  {
+   "decision": "The work order list from the previous month will be included in the report and continued every month going forward.",
+   "quote": "we have included a list of work orders from last month and will continue to add this every month going forward."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves level",
+   "what_was_recorded": "Reserves were reported at 91.54% and described as healthy.",
+   "quote": "reserves are at 91.54%, healthy.",
+   "figures_as_printed": [
+    "91.54%"
+   ]
+  },
+  {
+   "topic": "Administrative Other line",
+   "what_was_recorded": "Administrative Other is $2,000 behind; staff are looking into why and awaiting an answer.",
+   "quote": "administrative other; we are looking into why we are $2,000 behind and awaiting an answer.",
+   "figures_as_printed": [
+    "$2,000"
+   ]
+  },
+  {
+   "topic": "Maintenance labor and total maintenance",
+   "what_was_recorded": "Maintenance labor is ahead, and total maintenance is ahead by $15,000.",
+   "quote": "maintenance labor is ahead; total maintenance is ahead by $15,000.",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Bottom line versus budget",
+   "what_was_recorded": "The budget planned a loss of $10,000; at ten months the loss was $5,000, described as no concern.",
+   "quote": "when we look at the bottom line, we budgeted to lose $10,000",
+   "figures_as_printed": [
+    "$10,000",
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Reserves for temporary smoking area",
+   "what_was_recorded": "Some reserves may be used for a temporary smoking area with a picnic table and umbrella; no amount was stated.",
+   "quote": "we may use some reserves for a temporary smoking area with a picnic table and umbrella.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened 2:06 p.m.",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 2:06 p.m.",
+   "tags": [
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Approval of October 21, 2021 minutes",
+   "resolution": "approved 3 to 0",
+   "quote": "catherine clark made a motion to accept and approve the minutes of the october 21, 2021 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no callers",
+   "quote": "for the record there were no callers.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "no action; vaccine booster clinic announced",
+   "quote": "we will have another vaccine booster clinic on december 1st",
+   "tags": [
+    "vaccines",
+    "clinic"
+   ]
+  },
+  {
+   "topic": "Financial report, October 2021",
+   "resolution": "accepted and approved 3 to 0",
+   "quote": "were accepted and approved with a vote of 3 to 0.",
+   "tags": [
+    "finances",
+    "reserves",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "no action; information received",
+   "quote": "667-1 community room decking and handrail replacement (fish #162036) - the project should be",
+   "tags": [
+    "maintenance",
+    "work orders",
+    "modernization"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "no action; information received",
+   "quote": "we received 5 standard applications in october",
+   "tags": [
+    "waiting list",
+    "occupancy",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "reviewed; no action recorded",
+   "quote": "the executive director reviewed",
+   "tags": [
+    "correspondence",
+    "newsletter",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "resident participation - none requested",
+   "tags": [
+    "residents"
+   ]
+  },
+  {
+   "topic": "Board commissioners comments",
+   "resolution": "no comments recorded",
+   "quote": "board commissioners' comments",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 2:20 p.m.",
+   "quote": "linda mcdonald made a motion to adjourn the meeting at 2:20 p.m.; catherine clark seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2021-21 Language Access Plan",
+   "where": "list",
+   "quote": "phn 2021-21 language access plan"
+  },
+  {
+   "name": "Resident Fall Newsletter 2021",
+   "where": "list",
+   "quote": "resident fall newsletter 2021 - reminders to the residents; we try to keep it positive."
+  },
+  {
+   "name": "DHCD Resident Survey Chapter 667 Housing, Fall 2019",
+   "where": "list",
+   "quote": "surveys were sent to 48 units."
+  },
+  {
+   "name": "List of work orders from last month",
+   "where": "text",
+   "quote": "we have included a list of work orders from last month and will continue to add this every month going forward."
+  }
+ ],
+ "tags": [
+  "public housing",
+  "housing authority",
+  "remote meeting",
+  "financial report",
+  "reserves",
+  "maintenance",
+  "work orders",
+  "waiting list",
+  "vaccines",
+  "resident newsletter"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence - the executive director reviewed"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

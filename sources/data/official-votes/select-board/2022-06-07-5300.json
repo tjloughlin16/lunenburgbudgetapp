@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-06-07",
  "docid": "5300",
@@ -12,103 +12,491 @@
  },
  "votes": [
   {
-   "motion": "Approve the pole petition for 65 Watt Street, Plan 973-L, dated April 14, 2022",
+   "motion": "Approve the pole petition from Fitchburg Gas and Electric for 65 Watt Street, Plan 973-L, dated April 14, 2022.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco to approve the pole petition for 65 watt street, plan 973-l, dated april 14, 2022 2'd: t. alonzo vote: all in favor"
+   "quote": "motion: l. franco to approve the pole petition for 65 watt street, plan 973-l, dated april 14, 2022"
   },
   {
-   "motion": "Permit the 5K road race on June 18 at 10:30 AM",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "T. Dwyer",
-   "outcome": "not stated",
-   "procedural": false,
-   "quote": "motion: t. alonzo 2nd: t. dwyer"
-  },
-  {
-   "motion": "Appoint Chris Holden to the Green Communities Committee with a term to expire June 30, 2024",
+   "motion": "Appoint Chris Holden to the Green Communities Committee, term to expire June 30, 2024.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: l. franco to appoint chris holden to the green communities committee with a term to expire june 30, 2024 vote: all in favor"
+   "quote": "to appoint chris holden to the green communities committee with a term to expire june 30, 2024"
   },
   {
-   "motion": "Appoint Mary Wilson to the Conservation Commission with a term to expire June 30, 2025",
+   "motion": "Reappoint Bob Pease to the Conservation Commission, term to expire June 30, 2025.",
+   "moved_by": "T. Dwyer",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to reappoint bob pease to the conservation commission with a term to expire june 30, 2025"
+  },
+  {
+   "motion": "Appoint Mary Wilson to the Conservation Commission, term to expire June 30, 2025.",
    "moved_by": "H. Sroka",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: h. sroka 2'd: t. dwyer to appoint mary wilson to the conservation commission with a term to expire june 30, 2025 vote: all in favor"
+   "quote": "to appoint mary wilson to the conservation commission with a term to expire june 30, 2025"
   },
   {
-   "motion": "Reappoint Jeffrey Viviano to the Conservation Commission with a term to expire June 30, 2025",
+   "motion": "Reappoint Jeffrey Viviano to the Conservation Commission, term to expire June 30, 2025.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 3-2",
+   "outcome": "passed, 3 in favor; 2 opposed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: t. dwyer to reappoint jeffrey viviano to the conservation commission with a term to expire june 30, 2025 vote: 3 in favor; 2 opposed"
+   "quote": "to reappoint jeffrey viviano to the conservation commission with a term to expire june 30, 2025"
   },
   {
-   "motion": "Reappoint Matthew Allison, Greg Burns, and Maryrae Holman to the Agricultural Commission with terms to expire June 30, 2025",
+   "motion": "Reappoint Matthew Allison, Greg Burns and Maryrae Holman to the Agricultural Commission, term to expire June 30, 2025.",
    "moved_by": "H. Sroka",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: h. sroka 2'': t. dwyer to reappoint matthew allison, greg burns, maryrae holman to the agricultural commission with a term"
+   "quote": "to reappoint matthew allison, greg burns, maryrae holman to the agricultural commission with a term"
   },
   {
-   "motion": "Reappoint Pete Lincoln, Susan O'Sullivan, Jane Rabbitt, and Judith Tarbell to a term to expire June 30, 2025 and appoint James McGuigan to a term to expire June 30, 2024",
+   "motion": "Reappoint Pete Lincoln, Susan O'Sullivan, Jane Rabbitt and Judith Tarbell to terms to expire June 30, 2025, and appoint James McGuigan to a term to expire June 30, 2024.",
    "moved_by": "H. Sroka",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: h. sroka 2™: t. dwyer to reappoint pete lincoln, susan o'sullivan, jane rabbitt, judith tarbell to a term to expire june 30, 2025 and appoint james mcguigan to a term to expire june 30, 2024 vote: all in favor"
+   "quote": "and appoint james mcguigan to a term to expire june 30, 2024 vote: all in favor"
   },
   {
-   "motion": "Reappoint Matt Synder to Green Communities Committee with a term to expire June 30, 2025",
+   "motion": "Reappoint Matt Synder to the Green Communities Committee, term to expire June 30, 2025.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to reappoint matt synder to green communities committee with a term to expire june 30, 2025 2\"d: l. franco vote: all in favor"
+   "quote": "to reappoint matt synder to green communities committee with a term to expire june 30, 2025"
   },
   {
-   "motion": "Reappoint Wendy Bertrand and Joanna Bilotta-Simeone to the Personnel Committee with a term to expire June 30, 2025",
+   "motion": "Reappoint Wendy Bertrand and Joanna Bilotta-Simeone to the Personnel Committee, term to expire June 30, 2025.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: t. dwyer to reappoint wendy bertrand and joanna bilotta-simeone to the personnel committee with a term to expire june 30, 2025 vote: all in favor"
+   "quote": "to reappoint wendy bertrand and joanna bilotta-simeone to the personnel committee with a term"
   },
   {
-   "motion": "Reappoint Patrick Callahan and Dave Blatt to the ZBA with terms to expire June 30, 2027",
+   "motion": "Reappoint Patrick Callahan and Dave Blatt to the ZBA, terms to expire June 30, 2027.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2nd. t. alonzo to reappoint patrick callahan and dave blatt to the zba with terms to expire june 30, 2027 vote: all in favor"
+   "quote": "to reappoint patrick callahan and dave blatt to the zba with terms to expire june 30, 2027"
   },
   {
-   "motion": "Appoint Anthony Nicastro to ZBA Associate Member with a term to expire June 30, 2025",
-   "moved_by": "T. Alonzo",
-   "seconded_by": "T. Dwyer",
-   "outcome": "not stated",
-   "procedural": false,
-   "quote": "motion: t. alonzo 2™: t. dwyer"
-  },
-  {
-   "motion": "Approve the minutes of April 26, 2022 as presented",
+   "motion": "Approve the minutes of April 26, 2022 as presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
-   "outcome": "passed 4-1",
+   "outcome": "passed, 4 in favor, 1 abstain (Sroka)",
    "procedural": true,
-   "quote": "motion: t. alonzo to approve the minutes of april 26, 2022 as presented 2\"d: l. franco vote: 4 in favor, 1 abstain (sroka)"
+   "quote": "to approve the minutes of april 26, 2022 as presented"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn the meeting the meeting adjourned at 10:20 pm."
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan from macOS Vision. Three votes have incomplete information due to page breaks in the OCR: the 5K Road Race motion (vote 2) is missing motion content and result; the Agricultural Commission reappointment (vote 7) is missing the vote result; and the ZBA Associate appointment (vote 12) is missing both the complete motion content and vote result. All other votes are complete.",
- "cost_usd": 0.1506705
+ "dropped_unquoted": 0,
+ "note": "Text is an OCR (macOS Vision) read of a scan; quotes are verbatim against that OCR text, which garbles some words (e.g. 'own Manager', 'Kepresentative', '2'd:'). Votes are recorded only where the minutes print a motion with a result. Three motions have no recorded result: the 5K road race motion (T. Alonzo / T. Dwyer, no wording or vote), the first Agricultural Commission reappointment (Allison, Burns, Holman; recorded as not stated), and the ZBA associate motion (T. Alonzo / T. Dwyer, no wording or vote). Attendance for Select Board members is inferred from their motions, votes and remarks; the minutes give no explicit roll call. Attendees listed as remote are those under the 'Via ZOOM' line. The Town Manager report is a list of announcements, not votes. Page 9 and the designee table are OCR-garbled; liaison names were not transcribed into decisions.",
+ "cost_usd": 0.0300505,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "T. Alonzo",
+   "role": "",
+   "status": "present",
+   "quote": "mr. alonzo announced that a lunenburg artist bridie wolejko is exhibiting her work in an exhibition"
+  },
+  {
+   "name": "L. Franco",
+   "role": "",
+   "status": "present",
+   "quote": "motion: l. franco to approve the pole petition for 65 watt street, plan 973-l, dated april 14, 2022"
+  },
+  {
+   "name": "H. Sroka",
+   "role": "",
+   "status": "present",
+   "quote": "vote: 4 in favor, 1 abstain (sroka)"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "mr. dwyer spoke positively of mr. viviano having served with him on the commission."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "own Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, own manager; john kimball, unitil kepresentative, betsy daigneault"
+  },
+  {
+   "name": "John Kimball",
+   "role": "Unitil Kepresentative",
+   "status": "present",
+   "quote": "mr. kimball thanked the board and exited the meeting."
+  },
+  {
+   "name": "Betsy Daigneault",
+   "role": "",
+   "status": "present",
+   "quote": "betsy daigneault thanked the town manager for expediting their request."
+  },
+  {
+   "name": "Chris Holden",
+   "role": "",
+   "status": "remote",
+   "quote": "via zoom, chris holden, dave macdonald, timothy murphy, paul sarapsas, ana lockwood"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "resident",
+   "status": "remote",
+   "quote": "mr. jeffreys reported that a resident, dave macdonald had requested to hold a vigil"
+  },
+  {
+   "name": "Timothy Murphy",
+   "role": "",
+   "status": "remote",
+   "quote": "via zoom, chris holden, dave macdonald, timothy murphy, paul sarapsas, ana lockwood"
+  },
+  {
+   "name": "Paul Sarapsas",
+   "role": "",
+   "status": "remote",
+   "quote": "via zoom, chris holden, dave macdonald, timothy murphy, paul sarapsas, ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "",
+   "status": "remote",
+   "quote": "via zoom, chris holden, dave macdonald, timothy murphy, paul sarapsas, ana lockwood"
+  },
+  {
+   "name": "Matt Nazarenko",
+   "role": "",
+   "status": "remote",
+   "quote": "matt nazarenko, 79 robbs hill road, via zoom, regarding the conservation commission"
+  },
+  {
+   "name": "Paul Luria",
+   "role": "",
+   "status": "present",
+   "quote": "paul luria, 63 pratt street, related a problem he was having with his septic system records"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Curator of the Historical Society",
+   "status": "present",
+   "quote": "bill tyler, 5 graham street, speaking as curator of the historical society, reported they are"
+  },
+  {
+   "name": "Richard Trembley",
+   "role": "",
+   "status": "present",
+   "quote": "first up was richard trembley, 386 sunset lane,"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "",
+   "status": "present",
+   "quote": "mary wilson, 138 whiting street, stated i'm really interested in the conservation commission."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "",
+   "status": "present",
+   "quote": "mr. pease's answer was administrative support in the office for the administrator."
+  },
+  {
+   "name": "John (Jack) Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "john (jack) rabbitt, 314 townsend harbor road, stated he has been on the commission for eight years"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "",
+   "status": "absent",
+   "quote": "jeffrey viviano, 338 sunset lane, was unable to attend this evening but submitted a letter;"
+  },
+  {
+   "name": "Anthony Bovenzi",
+   "role": "",
+   "status": "absent",
+   "quote": "there was no one present for the request. mr. jeffreys noted anthony bovenzi was recovering from"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Select Board liaison and committee assignments for 2022-2023 were determined after discussion (no separate vote recorded).",
+   "quote": "after some discussion the following assignments were determined:"
+  },
+  {
+   "decision": "The NOWOCO flag-raising request, with no one present, is to be rescheduled to another agenda.",
+   "quote": "this will be rescheduled to another agenda."
+  },
+  {
+   "decision": "Chair directed that a letter of thanks be sent to Brigadier General Nori from the Select Board for his Memorial Day participation.",
+   "quote": "mr. jeffreys requested sending a letter of thanks to brigadier general nori from the select board"
+  },
+  {
+   "decision": "Chair requested an Executive Session at the end of the next meeting.",
+   "quote": "mr. jeffreys requested an executive session at the end of their next meeting."
+  },
+  {
+   "decision": "Town Hall Building Envelope Repairs hearing postponed to the re-advertised date of June 27th.",
+   "quote": "this will be postponed until the re-advertised date of june 27th."
+  },
+  {
+   "decision": "Town Manager's office asked for the resident's contact information on the Lancaster Ave. street lights to follow up.",
+   "quote": "ms. lemieux requested the person's contact information to follow up."
+  },
+  {
+   "decision": "Chair asked for Paul Luria's contact information so the Town Clerk could follow up on his septic records question.",
+   "quote": "mr. jeffreys asked for his contact information so the town clerk could get back to him."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed two Accounts Payable warrants and two payroll warrants, with the amounts printed.",
+   "quote": "the board signed an accounts payable warrant in the amount of $879,438.71; another accounts payable warrant in the amount of $2000.00; a payroll deductions warrant in the amount of $38,231.91 and a payroll warrant in the amount of $1,062,698.72.",
+   "figures_as_printed": [
+    "$879,438.71",
+    "$2000.00",
+    "$38,231.91",
+    "$1,062,698.72"
+   ]
+  },
+  {
+   "topic": "State aid (Unrestricted General Government Aid and minimum aid)",
+   "what_was_recorded": "The Town Manager reported a state proposal including a 5.4% increase in Unrestricted General Government Aid and $60/student for minimum aid.",
+   "quote": "unrestricted general government aid for a 5.4% increase and includes $60/student for",
+   "figures_as_printed": [
+    "5.4%",
+    "$60/student"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Artist exhibition announcement",
+   "speaker": "Mr. Alonzo",
+   "stated_role": "",
+   "quote": "mr. alonzo announced that a lunenburg artist bridie wolejko is exhibiting her work in an exhibition"
+  },
+  {
+   "topic": "Memorial Day program and announcements",
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "Chairman",
+   "quote": "mr. jeffreys announced the memorial day program went well and thanked everyone who participated"
+  },
+  {
+   "topic": "Septic system electrical permit records",
+   "speaker": "Paul Luria",
+   "stated_role": "",
+   "quote": "paul luria, 63 pratt street, related a problem he was having with his septic system records"
+  },
+  {
+   "topic": "Conservation Commission reappointment (Jack Rabbitt)",
+   "speaker": "Matt Nazarenko",
+   "stated_role": "",
+   "quote": "matt nazarenko, 79 robbs hill road, via zoom, regarding the conservation commission"
+  },
+  {
+   "topic": "Historical Society Sunday open hours",
+   "speaker": "Bill Tyler",
+   "stated_role": "Curator of the Historical Society",
+   "quote": "bill tyler, 5 graham street, speaking as curator of the historical society, reported they are"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening, announcements and public comment",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Fitchburg Gas and Electric pole petition, 65 Watt Street",
+   "resolution": "approved",
+   "quote": "to approve the pole petition for 65 watt street, plan 973-l, dated april 14, 2022",
+   "tags": [
+    "pole petition",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "NOWOCO flag raising request",
+   "resolution": "rescheduled, no one present",
+   "quote": "this will be rescheduled to another agenda.",
+   "tags": [
+    "event request"
+   ]
+  },
+  {
+   "topic": "5K road race request (Betsy Daigneault, June 18)",
+   "resolution": "motion made, no result recorded",
+   "quote": "betsy daigneault thanked the town manager for expediting their request.",
+   "tags": [
+    "event request",
+    "road race"
+   ]
+  },
+  {
+   "topic": "Green Communities Committee appointment, Chris Holden",
+   "resolution": "appointed",
+   "quote": "to appoint chris holden to the green communities committee with a term to expire june 30, 2024",
+   "tags": [
+    "appointments",
+    "green communities"
+   ]
+  },
+  {
+   "topic": "Annual appointments: Conservation Commission interviews",
+   "resolution": "Pease reappointed, Wilson appointed, Viviano reappointed 3-2; Rabbitt not reappointed",
+   "quote": "he thanked everyone for coming forward and volunteering.",
+   "tags": [
+    "appointments",
+    "conservation commission"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "no action",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "capital plan",
+    "information technology"
+   ]
+  },
+  {
+   "topic": "Candlelight vigil and community resolution request",
+   "resolution": "discussed, no vote recorded",
+   "quote": "what is being asked tonight is to have permission to hold the vigil on town property.",
+   "tags": [
+    "vigil",
+    "town property"
+   ]
+  },
+  {
+   "topic": "Select Board liaison and committee designees 2022-2023",
+   "resolution": "assignments determined",
+   "quote": "after some discussion the following assignments were determined:",
+   "tags": [
+    "liaisons",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Annual appointments (continued): Agricultural, Green Communities, Personnel, ZBA",
+   "resolution": "reappointments and one appointment approved; one Agricultural motion without recorded result",
+   "quote": "the board reviewed the following requests for appointments and reappointments.",
+   "tags": [
+    "appointments",
+    "agricultural commission",
+    "personnel committee",
+    "zoning board of appeals"
+   ]
+  },
+  {
+   "topic": "Approval of April 26, 2022 minutes",
+   "resolution": "approved 4-0-1",
+   "quote": "to approve the minutes of april 26, 2022 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "the board signed an accounts payable warrant in the amount of $879,438.71",
+   "tags": [
+    "warrants",
+    "payables",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Action items and committee reports",
+   "resolution": "no vote; directives given",
+   "quote": "mr. jeffreys requested sending a letter of thanks to brigadier general nori from the select board",
+   "tags": [
+    "action items",
+    "municipal building design committee",
+    "personnel committee"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:20 PM",
+   "quote": "to adjourn the meeting the meeting adjourned at 10:20 pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fitchburg Gas and Electric pole petition, Plan 973-L, dated 4/14/2022",
+   "where": "text",
+   "quote": "flat hill road as shown on plan 973-l, dated 4/14/2022"
+  },
+  {
+   "name": "Letter from Jeffrey Viviano (submitted in his absence)",
+   "where": "text",
+   "quote": "jeffrey viviano, 338 sunset lane, was unable to attend this evening but submitted a letter;"
+  },
+  {
+   "name": "Nashoba Regional Dispatch District original Intermunicipal Agreement",
+   "where": "text",
+   "quote": "has been reviewing our original intermunicipal agreement that we signed upon regionalizing."
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "conservation commission",
+  "green communities",
+  "pole petition",
+  "warrants",
+  "town manager report",
+  "vigil request",
+  "liaisons",
+  "public comment",
+  "budget state aid",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

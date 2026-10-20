@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-07-11",
  "docid": "3501",
@@ -12,23 +12,172 @@
  },
  "votes": [
   {
-   "motion": "Hire new Library Assistant at Grade 5 step 3",
+   "motion": "Accept the HR Director's recommendation to hire a new Library Assistant at Grade 5 step 3.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation of the hr director and hire the candidate at grade 5 step 3 second: d. fortune roll call vote: all in favor, w. bertrand abstaining"
+   "quote": "motion by s. andrews to accept the recommendation of the hr director and hire the candidate at grade 5 step 3"
   },
   {
-   "motion": "Adjourn meeting",
+   "motion": "Adjourn the meeting at 5:14pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion by to adjourn meeting at 5:14pm by s. andrews second: d. fortune roll call vote: all in favor, w. bertrand abstaining"
+   "quote": "motion by to adjourn meeting at 5:14pm by s. andrews"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10104049999999999
+ "note": "Clean digital text, not a scan. Two motions are recorded with roll-call results printed as 'All in Favor, W. Bertrand abstaining' and no tally, so outcomes are recorded as 'passed'. No vote is recorded on approving the June 6, 2022 minutes. Member roles other than the three staff are not printed beyond 'members' and the opening of the meeting.",
+ "cost_usd": 0.01614248,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Susan Andrews",
+   "role": "member",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "member (not yet sworn in; abstained from votes)",
+   "status": "present",
+   "quote": "w. bertrand was unable to vote as she had not been formally sworn in"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "member (opened the meeting)",
+   "status": "present",
+   "quote": "j. bilotta opened the meeting at 5:02pm with members noted in attendance"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "member",
+   "status": "present",
+   "quote": "susan andrews, wendy bertrand, joanna bilotta, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, muir haman, director, library, barbara lefebvre, sewer business manager"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director, Library",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, muir haman, director, library, barbara lefebvre, sewer business manager"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, muir haman, director, library, barbara lefebvre, sewer business manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the June 15, 2022 minutes postponed to the next meeting, because W. Bertrand had not been sworn in and could not vote.",
+   "quote": "approval of the june 15th minutes were postponed to next meeting"
+  },
+  {
+   "decision": "Next meeting proposed for the second Monday of the month, August 15th, starting at 6:30pm; the minutes record a proposal, not a vote.",
+   "quote": "proposed the second monday of the month, august 15th, with meeting beginning at 6:30pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library Assistant hire",
+   "what_was_recorded": "New Library Assistant hired at Grade 5 step 3 for 19 hours weekly, due to the candidate's experience; the minutes print no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "j. belliveau proposed the hire be made at a grade 5 step 3"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "B. Lefebvre",
+   "stated_role": "Sewer Business Manager",
+   "topic": "job description project update",
+   "quote": "b. lefebvre asked for an update on the job description project."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comments",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "there were no comments from committee, nor from the public"
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "postponed; June 15 minutes to next meeting",
+   "tags": [
+    "minutes approval"
+   ],
+   "quote": "the minutes of the previous two meetings, june 6, 20 22 and june 15, 2022 were presented and reviewed."
+  },
+  {
+   "topic": "New hire: Library Assistant",
+   "resolution": "approved at Grade 5 step 3",
+   "tags": [
+    "hiring",
+    "library"
+   ],
+   "quote": "motion by s. andrews to accept the recommendation of the hr director and hire the candidate at grade 5 step 3"
+  },
+  {
+   "topic": "Job description project update",
+   "resolution": "no action; consultants had not given formal input",
+   "tags": [
+    "job descriptions"
+   ],
+   "quote": "b. lefebvre asked for an update on the job description project."
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "proposed; no vote recorded",
+   "tags": [
+    "scheduling"
+   ],
+   "quote": "proposed the second monday of the month, august 15th, with meeting beginning at 6:30pm"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:14pm",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion by to adjourn meeting at 5:14pm by s. andrews"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of June 6, 2022 meeting (printed 'June 6, 20 22')",
+   "where": "list",
+   "quote": "the minutes of the previous two meetings, june 6, 20 22 and june 15, 2022 were presented and reviewed."
+  },
+  {
+   "name": "Minutes of June 15, 2022 meeting",
+   "where": "list",
+   "quote": "the minutes of the previous two meetings, june 6, 20 22 and june 15, 2022 were presented and reviewed."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "hiring",
+  "library",
+  "job descriptions",
+  "minutes approval",
+  "Personnel Committee"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the minutes of the previous two meetings"
+ },
+ "dropped_unquoted_by_field": {}
 }

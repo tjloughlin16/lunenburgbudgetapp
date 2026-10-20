@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-09-26",
  "docid": "4178",
@@ -12,15 +12,97 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing for 245 Holman Street",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Amanda Reid",
-   "outcome": "passed 4-0",
+   "motion": "Close the public hearing for 245 Holman Street.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "A. Reid",
+   "outcome": "passed",
    "procedural": true,
    "quote": "m. brenner made motion to close the hearing for 245 holman street , a. reid seconded, roll call vote - e. torgersen, aye; a. reid, aye; m. brenner, aye; m. allison, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0716655
+ "note": "The minutes record a roll-call vote only to close the hearing. No vote or decision on the stormwater permit modification itself is recorded. No public comment section is printed. Jeff Walsh (peer reviewer) is named only as having sent an email, so he is listed under documents, not as an attendee. Vote outcome is given as 'passed' because the minutes print four ayes but no count.\"",
+ "cost_usd": 0.013120580000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "amanda reid and erik torgersen participated remotely under the oml simple extension legislation"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "amanda reid and erik torgersen participated remotely under the oml simple extension legislation"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing the applicant (McCarty Engineering)",
+   "status": "present",
+   "quote": "application presented by brian marchetti , mccarty engineering."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: stormwater permit modification, 245 Holman Street (Lots 3 and 4)",
+   "resolution": "hearing closed; no decision recorded in these minutes",
+   "quote": "the hearing was for a modification to a stormwater permit under chapter 204 of the code of the town of lunenburg for lots 3 and 4, 245 holman street",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "driveway",
+    "Chapter 204",
+    "245 Holman Street"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Modification to a Stormwater Permit dtd 9.1.22.",
+   "where": "list",
+   "quote": "application for modification to a stormwater permit dtd 9.1.22."
+  },
+  {
+   "name": "Electronic mail from peer reviewer Jeff Walsh (no issue with the proposed change)",
+   "where": "text",
+   "quote": "peer reviewer jeff walsh indicated via electronic mail that he did not have any issue with the proposed change."
+  }
+ ],
+ "tags": [
+  "stormwater permit",
+  "public hearing",
+  "245 Holman Street",
+  "driveway modification",
+  "remote participation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

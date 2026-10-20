@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2022-05-19",
  "docid": "2898",
@@ -12,39 +12,277 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of April 21, 2022 as amended",
-   "moved_by": "Dick Mailloux",
-   "seconded_by": "Kate McCarron",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of April 21, 2022, as amended.",
+   "moved_by": "Dick",
+   "seconded_by": "Kate",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dick made a motion to accept the minutes of april 21, 2022 as amended. seconded by kate. the motion passed unanimously."
+   "quote": "dick made a motion to accept the minutes of april 21, 2022 as amended."
   },
   {
-   "motion": "Agree to go forward with Edward Jones and meet with their representative",
-   "moved_by": "Dick Mailloux",
-   "seconded_by": "Harry Kubetz",
-   "outcome": "passed unanimously",
+   "motion": "Agree to go forward with Edward Jones and meet with their rep.",
+   "moved_by": "Dick",
+   "seconded_by": "Harry",
+   "outcome": "passed",
    "procedural": false,
    "quote": "dick made a motion, seconded by harry, to agree to go forward with edward jones and meet with their rep. motion passed unanimously."
   },
   {
-   "motion": "Postpone the vote to accept the By-Laws until the June meeting",
-   "moved_by": "Dick Mailloux",
-   "seconded_by": "Harry Kubetz",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Postpone the vote to accept the By-Laws until the June meeting.",
+   "moved_by": "Dick",
+   "seconded_by": "Harry",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "dick made a motion, seconded by harry, to postpone the vote to accept the by-laws until the june meeting. motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Dick Mailloux",
-   "seconded_by": "Kate McCarron",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dick",
+   "seconded_by": "Kate",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by dick by seconded by kate. meeting was adjourned at 8:45 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded, all passed unanimously or approved. Text is clean and readable.",
- "cost_usd": 0.0702561
+ "note": "Text extraction only; no scan. Public comment: minutes state 'No public comment.' so no speakers recorded. Votes recorded only as 'passed unanimously' or 'Motion passed', with no tally; outcomes entered as 'passed'. The adjournment result is inferred from 'Meeting was adjourned at 8:45 p.m.' and marked passed. The minutes name Michael-Ray, Susan, Heidi, Robin and Francesco Buccella only in passing, so they are not listed as attendees. Pages 3-6 are blank in the extract. The Attached Documents list names three items, none of which is in the extracted text.",
+ "cost_usd": 0.01675218,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 7:03 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "maia asked who other libraries use. muir said he would check."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Skip chapter 10 (Building a Library) of the Trustee Handbook as not applicable.",
+   "quote": "decided to skip chapter 10 - building a library, as it is not applicable."
+  },
+  {
+   "decision": "Michael-Ray to look into the tax status of the trust funds.",
+   "quote": "we thought not, but michael-ray will look into the tax status."
+  },
+  {
+   "decision": "Muir to check which other libraries use (in the trust fund matter).",
+   "quote": "maia asked who other libraries use. muir said he would check."
+  },
+  {
+   "decision": "Muir to meet with Main Street Bank about summer reading funding.",
+   "quote": "muir said he will be meeting with them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 library budget and new Friday hours",
+   "what_was_recorded": "The Director said the FY23 budget is $492k and will fund two new positions for Friday opening hours.",
+   "figures_as_printed": [
+    "$492k"
+   ],
+   "quote": "the fy23 budget is $492k and will include two new positions for friday opening."
+  },
+  {
+   "topic": "Unspent money at year end",
+   "what_was_recorded": "Asked what happens to unspent money, the Director said it goes back to free cash for next year. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "harry asked what happens to any unspent money."
+  },
+  {
+   "topic": "Library materials budget line",
+   "what_was_recorded": "The materials budget line is short but expected to be spent before year end. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the library materials budget line is still short but the funds will be expended before the end of the year."
+  },
+  {
+   "topic": "Retroactive pay for union employees",
+   "what_was_recorded": "Union employees will receive retroactive pay for the past 11 months to match the new bargaining agreement. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the union employees will be getting retroactive pay for the past 11 months to match the new bargaining agreement."
+  },
+  {
+   "topic": "LSTA grant",
+   "what_was_recorded": "The LSTA grant is awaiting a vote; the Director said it looks good. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the lsta grant is waiting to be voted on but it looks good."
+  },
+  {
+   "topic": "Trust fund taxability",
+   "what_was_recorded": "A question was raised whether the trust funds should be taxable; the board thought not, pending the tax-status check. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "there was a question about whether these funds should be taxable."
+  },
+  {
+   "topic": "Summer reading funding from Main Street Bank",
+   "what_was_recorded": "Harry asked whether the Director had approached Main Street Bank for funding; the Director said he will meet with them. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "harry asked muir if he had reached out to main street bank for some funding"
+  },
+  {
+   "topic": "Trust fund management by Edward Jones",
+   "what_was_recorded": "The board voted to go forward with Edward Jones and meet their representative. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "dick made a motion, seconded by harry, to agree to go forward with edward jones and meet with their rep."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended (April 21, 2022 minutes)",
+   "quote": "dick made a motion to accept the minutes of april 21, 2022 as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action; informational",
+   "quote": "we are in the final month, 91% of the way through the fiscal year.",
+   "tags": [
+    "budget",
+    "staffing",
+    "director"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "chapter 10 skipped",
+   "quote": "decided to skip chapter 10 - building a library, as it is not applicable.",
+   "tags": [
+    "handbook"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "Edward Jones motion passed; tax status and treasurer question left open",
+   "quote": "we had some discussion on appointing a treasurer to manage this process.",
+   "tags": [
+    "trust fund",
+    "investments",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "By-Laws Review Discussion",
+   "resolution": "vote on By-Laws postponed to June meeting",
+   "quote": "discussed adding the treasurer role under 'officers of the board'.",
+   "tags": [
+    "by-laws",
+    "treasurer"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action; informational",
+   "quote": "the book sale will be held on saturday june 4th.",
+   "tags": [
+    "friends of the library",
+    "book sale"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action; suggestion noted",
+   "quote": "he recommended that we get him to give a presentation in lunenburg, possibly in coordination with the schools.",
+   "tags": [
+    "programming"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:45 p.m.",
+   "quote": "meeting was adjourned at 8:45 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "May 19, 2022 Agenda",
+   "where": "list",
+   "quote": "o may 19, 2022 agenda o may 2022 director's report o may 2022 teen services report"
+  },
+  {
+   "name": "May 2022 Director’s Report",
+   "where": "list",
+   "quote": "may 2022 director's report"
+  },
+  {
+   "name": "May 2022 Teen Services Report",
+   "where": "list",
+   "quote": "may 2022 teen services report"
+  },
+  {
+   "name": "Trustee Handbook",
+   "where": "text",
+   "quote": "trustee handbook discussion"
+  },
+  {
+   "name": "new By-Laws document",
+   "where": "text",
+   "quote": "dick suggested that the treasurer role should be added to the new by-laws document."
+  }
+ ],
+ "tags": [
+  "library board",
+  "trust fund",
+  "by-laws",
+  "FY23 budget",
+  "director's report",
+  "friends of the library",
+  "staffing",
+  "LSTA grant"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

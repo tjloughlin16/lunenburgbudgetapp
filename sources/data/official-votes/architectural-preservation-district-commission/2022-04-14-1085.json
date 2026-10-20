@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2022-04-14",
  "docid": "1085",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to accept the Minutes from March 2, 2022",
+   "motion": "Accept the minutes of March 2, 2022.",
    "moved_by": "Dwyer",
    "seconded_by": "Nicastro",
    "outcome": "passed",
@@ -20,8 +20,7 @@
    "quote": "motion to accept the minutes frommarch 2, 2022, by dwyer, seconded by nicastro; accepted 7:42 pm"
   },
   {
-   "motion": "to move forward to find an option for reuse of the building at 30 School Street",
-   "moved_by": "Dwyer",
+   "motion": "Move forward to find an option for reuse of the 30 School Street building.",
    "seconded_by": "Nicasto",
    "outcome": "not stated",
    "procedural": false,
@@ -29,6 +28,176 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record one procedural motion (approval of prior minutes) with outcome, and one substantive motion regarding 30 School Street with no voting outcome stated.",
- "cost_usd": 0.0833585
+ "note": "Single-page minutes. No roll-call or vote tallies are printed for the minutes approval. One motion (30 School Street, Dwyer/Nicasto) is recorded with no result, so it is marked not stated and is not treated as a passed vote. No adjournment vote is recorded (adjourned 8:48 PM). Sculimbrene is named as a member but is not in the Present line, so his status is not stated. The 67-63 figure refers to a Town Meeting nonbinding resolution, not a board vote. No dollar figures are printed. No public comment section appears. No documents list is printed.",
+ "cost_usd": 0.01466558,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "present: chairman mcgrath, dwyer, nicastro"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: chairman mcgrath, dwyer, nicastro"
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: chairman mcgrath, dwyer, nicastro"
+  },
+  {
+   "name": "Anthony Sculimbrene",
+   "role": "member",
+   "status": "not stated",
+   "quote": "anthony sculimbrene, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board decided to view the Ritter Building during the day, review the plans at home, and meet April 21, 2022 at 7:30 PM to determine whether the proposed plans are a major alteration.",
+   "quote": "decision made to view the building during the day, review the plans at home, and meet on thurs, april 21, 2022 at 7:30 pm"
+  },
+  {
+   "decision": "Board will not approve incomplete CTAs going forward.",
+   "quote": "moving forward will not approve incomplete ctas"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved (March 2, 2022 minutes accepted)",
+   "quote": "motion to accept the minutes frommarch 2, 2022, by dwyer, seconded by nicastro; accepted 7:42 pm",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Talent Bank applicant forms",
+   "resolution": "discussed, no action recorded",
+   "quote": "discussion of talent bank applicant forms: william lloyd and anthony sculimbrene",
+   "tags": [
+    "appointments",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "CTA for Ritter Memorial",
+   "resolution": "continued to site visit and April 21, 2022 meeting to decide whether major alteration",
+   "quote": "cta for ritter memorial- application is complete- discussion about plans",
+   "tags": [
+    "CTA",
+    "Ritter Building"
+   ]
+  },
+  {
+   "topic": "30 School Street",
+   "resolution": "discussed; a motion was made with no result recorded",
+   "quote": "30 school street: discussion on timeline of events and neglect",
+   "tags": [
+    "30 School Street",
+    "demolition delay"
+   ]
+  },
+  {
+   "topic": "Brookes House",
+   "resolution": "no news; RFP discussed",
+   "quote": "brookes house: no news- discussion of rfp to move the house",
+   "tags": [
+    "Brookes House",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Facebook post for Ritter Building",
+   "resolution": "no action recorded",
+   "quote": "facebook: post cta for ritter building",
+   "tags": [
+    "outreach"
+   ]
+  },
+  {
+   "topic": "APD Brochure",
+   "resolution": "no advancement",
+   "quote": "apd brochure: no advancement at this time",
+   "tags": [
+    "APD",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Wisdom in the Bylaws and creation of the APD",
+   "resolution": "no action recorded (Other Business)",
+   "quote": "wisdom in the bylaws and the creation of the apd",
+   "tags": [
+    "bylaws",
+    "APD"
+   ]
+  },
+  {
+   "topic": "Approval of incomplete CTAs",
+   "resolution": "board stated it will not approve incomplete CTAs",
+   "quote": "moving forward will not approve incomplete ctas",
+   "tags": [
+    "CTA",
+    "policy"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Talent Bank applicant forms (William Lloyd, Anthony Sculimbrene)",
+   "where": "text",
+   "quote": "discussion of talent bank applicant forms: william lloyd and anthony sculimbrene"
+  },
+  {
+   "name": "CTA application for Ritter Memorial",
+   "where": "text",
+   "quote": "cta for ritter memorial- application is complete- discussion about plans"
+  },
+  {
+   "name": "Historical Commission Demo Delay Form (original CTA, October 2021)",
+   "where": "text",
+   "quote": "original cta sent to historical commission via historical commission demo delay form in oct, 2021"
+  },
+  {
+   "name": "RFP to move the Brookes House",
+   "where": "text",
+   "quote": "discussion of rfp to move the house, including but not limited to moving to private lot"
+  },
+  {
+   "name": "APD Brochure",
+   "where": "text",
+   "quote": "apd brochure: no advancement at this time"
+  },
+  {
+   "name": "Nonbinding Resolution at Town Meeting (67-63 vote)",
+   "where": "text",
+   "quote": "concern that nonbinding resolution at town meeting was 67-63 vote"
+  }
+ ],
+ "tags": [
+  "architectural preservation",
+  "Ritter Building",
+  "30 School Street",
+  "Brookes House",
+  "CTA",
+  "certificate of appropriateness",
+  "Talent Bank",
+  "APD brochure",
+  "bylaws"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

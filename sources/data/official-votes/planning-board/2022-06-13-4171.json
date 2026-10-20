@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-06-13",
  "docid": "4171",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "approve waiver requests for Impact Reports, 40 scale plan, utilities, significant trees, traffic, photometric and architectural",
+   "motion": "Approve waiver requests from the Board Rules and Regulations for Impact Reports, 40 scale plan, utilities, significant trees, traffic, photometric and architectural",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve waiver requests for impact reports, 40 scale plan, utilities, significant trees, traffic, photometric and architectural, a. reid seconded, passed unanimously."
+   "quote": "m. brenner made motion to approve waiver requests for impact reports, 40 scale plan, utilities, significant trees, traffic, photometric and architectural, a. reid seconded, passed unanimously"
   },
   {
-   "motion": "waive peer review",
+   "motion": "Waive peer review",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to waive peer review, a. reid seconded, passed unanimou sly",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to waive peer review, a. reid seconded, passed unanimou sly."
   },
   {
-   "motion": "approve waiver for the horizontal datum being Massachusetts State Plane, North American Datum 1983 and the vertical datum being North American Vertical Datum 1988",
+   "motion": "Approve waiver from the horizontal datum (Massachusetts State Plane, NAD 1983) and vertical datum (NAVD 1988) requirement",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -37,7 +36,7 @@
    "quote": "m. brenner made motion to approve waiver, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "continue the hearing to June 27, 2022 at 6:05 p.m.",
+   "motion": "Continue the hearing to June 27, 6:05 p.m.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -46,6 +45,185 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0853765
+ "note": "Public hearing minutes. Three motions to approve waivers and one motion to continue the hearing are recorded with unanimous results, and the continuance is marked procedural. No dollar figures appear, so budget_items and transfers are empty. The Sewer Commission recommendation to condition approval on 134 seats was a recommendation, not a recorded decision, so it is not listed under decisions. The minutes print several words with stray internal spaces (for example 'unanimou sly', 'recei ved'); quotes are copied as printed. The recess time (7:30 p.m.) is recorded in the minutes but the 6:17 p.m. start is also stated, with no stated end time.",
+ "cost_usd": 0.015899879999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "tanner cole, erik torgersen"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "tanner cole, erik torgersen"
+  },
+  {
+   "name": "Christopher Anderson",
+   "role": "representing the applicant (Hannigan Engineering)",
+   "status": "present",
+   "quote": "the applicant was represented by christopher anderson, hannigan engineering."
+  },
+  {
+   "name": "Michael Mohamed",
+   "role": "494 Electric Avenue (Il Forno)",
+   "status": "present",
+   "quote": "michael mohamed, 494 electric avenue (il forno) - he stated that he did not have the authority to tell individuals"
+  },
+  {
+   "name": "Linda Perenzin",
+   "role": "20 Pierce Avenue",
+   "status": "present",
+   "quote": "she was aware that the property didn't belong to her, but stressed that neither did it belong to d&a lunenburg llc."
+  },
+  {
+   "name": "David Rodgers",
+   "role": "84 Highland Street",
+   "status": "present",
+   "quote": "david rodgers, 84 highland street- spoke in favor of the application."
+  },
+  {
+   "name": "Michael R. and Tammy D. Lovewell",
+   "role": "abutters (letter read into record)",
+   "status": "absent",
+   "quote": "we are unable to attend tonight's lunenburg planning board meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to waive the requirement for construction details and erosion and sedimentation controls.",
+   "quote": "board consensus was to waive requirement for construction details and erosion and sedimentation controls."
+  },
+  {
+   "decision": "The Board requested the applicant provide a site plan showing the proposed permanent structure and offsets to the property line and existing building.",
+   "quote": "the board requested the applicant provide a site plan showing the proposed permanent structure and offsets to the property"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Linda Perenzin",
+   "stated_role": "20 Pierce Avenue",
+   "topic": "overflow parking into residential area",
+   "quote": "she was aware that the property didn't belong to her, but stressed that neither did it belong to d&a lunenburg llc."
+  },
+  {
+   "speaker": "Michael Mohamed",
+   "stated_role": "494 Electric Avenue (Il Forno)",
+   "topic": "parking authority and No Parking signs",
+   "quote": "he stated that he did not have the authority to tell individuals they could not park on piece avenue."
+  },
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "84 Highland Street",
+   "topic": "support for the application",
+   "quote": "david rodgers, 84 highland street- spoke in favor of the application."
+  },
+  {
+   "speaker": "Michael R. and Tammy D. Lovewell",
+   "stated_role": "abutters (letter read into record)",
+   "topic": "written support for permanent structure",
+   "quote": "we are in support of mr. mohamed's application."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Site plan hearing, 494 Electric Avenue (outside seating structure)",
+   "resolution": "continued to June 27",
+   "quote": "to hear and review an application for site plan approval under chapter 250 of the code of the town of",
+   "tags": [
+    "site plan",
+    "public hearing",
+    "restaurant",
+    "494 Electric Avenue"
+   ]
+  },
+  {
+   "topic": "Waiver requests from Board Rules and Regulations",
+   "resolution": "approved",
+   "quote": "m. brenner made motion to approve waiver requests for impact reports, 40 scale plan, utilities, significant trees, traffic, photometric and architectural",
+   "tags": [
+    "waivers",
+    "site plan",
+    "peer review",
+    "datum"
+   ]
+  },
+  {
+   "topic": "Parking overflow and off-street parking requirement",
+   "resolution": "no action; applicant asked for revised plan",
+   "quote": "code of the town of lunenburg, section 250-6.1. off-street parking and loading areas",
+   "tags": [
+    "parking",
+    "zoning bylaw",
+    "public ways"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Application for Site Plan Approval dtd May 5, 2022",
+   "where": "list",
+   "quote": "application for site plan approval dtd may 5, 2022"
+  },
+  {
+   "name": "Letter from Michael R. and Tammy D. Lovewell (abutters), read into record",
+   "where": "text",
+   "quote": "the following letter was received and read into record."
+  },
+  {
+   "name": "Board Rules and Regulations for Site Plan Approval & Special Permits",
+   "where": "text",
+   "quote": "board rules and regulations for site plan approval & special permits"
+  },
+  {
+   "name": "Code of the Town of Lunenburg, Section 250-6.1 (Off-street parking and loading areas)",
+   "where": "text",
+   "quote": "code of the town of lunenburg, section 250-6.1. off-street parking and loading areas"
+  }
+ ],
+ "tags": [
+  "site plan review",
+  "public hearing",
+  "restaurant",
+  "parking",
+  "waivers",
+  "494 Electric Avenue",
+  "zoning",
+  "abutters"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

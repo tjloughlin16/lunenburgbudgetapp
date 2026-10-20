@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2022-09-15",
  "docid": "2892",
@@ -12,23 +12,252 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of June 16, 2022 as presented",
+   "motion": "Accept the minutes of June 16, 2022 as presented.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "dick made a motion to accept the minutes of june 16, 2022 as presented, seconded by kate. the motion passed unanimously by role call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Maia",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick. seconded by maia. meeting was adjourned at 8:38 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two procedural votes recorded. The By-Laws Review section mentions deferring to the next meeting but records no motion or vote, only a suggestion.",
- "cost_usd": 0.0702631
+ "note": "Text covers pages 1-2 only; pages 3-10 are blank. The minutes print 'No public comment.', so no speakers are recorded. The approval vote was by role call and is recorded as passed, with no count printed. The adjournment motion has no result printed, only the time it was adjourned. The by-laws item was deferred on a suggestion with no motion. The attached documents are listed by title only; their contents are not in the text. Attendance for Bob Conroy and Donna Saiia is printed as remote. Roles for most attendees are not printed.",
+ "cost_usd": 0.0155934,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:48 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy-remote, harry kubetz, dick mailloux, donna saiia- remote, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: kate mccarron, bob conroy-remote, harry kubetz, dick mailloux, donna saiia- remote, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy-remote, harry kubetz, dick mailloux, donna saiia- remote, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: kate mccarron, bob conroy-remote, harry kubetz, dick mailloux, donna saiia- remote, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy-remote, harry kubetz, dick mailloux, donna saiia- remote, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy-remote, harry kubetz, dick mailloux, donna saiia- remote, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy-remote, harry kubetz, dick mailloux, donna saiia- remote, muir haman - director lpl, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Rob Bowen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob bowen came to talk about incorporation for the friends."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Review of the By-Laws deferred to the next meeting, on Dick's suggestion. No motion or vote is recorded.",
+   "quote": "dick suggested we defer to next meeting."
+  },
+  {
+   "decision": "Muir Haman will reach out to Johnson Roberts, the original architects, for possible ideas on the library sign. No vote recorded.",
+   "quote": "muir will reach out to johnson roberts, the original architects, for possible ideas."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town allocation from the Commonwealth",
+   "what_was_recorded": "The town received $3.5M from the Commonwealth; the town manager is working with a consulting firm on eligible uses, with proposals due Sept. 30th.",
+   "quote": "the town received $3.5m from the commonwealth of massachusetts. the town manager is working with a consulting firm for eligible uses of the funds and will be accepting proposals.",
+   "figures_as_printed": [
+    "$3.5M"
+   ]
+  },
+  {
+   "topic": "LSTA grant for STEM learning",
+   "what_was_recorded": "An LSTA grant of $12,970 is noted for a STEM learning program for kids.",
+   "quote": "there is a lsta grant of $12,970 for stem learning and we will have a stem program for kids.",
+   "figures_as_printed": [
+    "$12,970"
+   ]
+  },
+  {
+   "topic": "Budget expenditure status",
+   "what_was_recorded": "The FY22 budget is reported as fully expended and the FY23 budget as 21% expended; the office supplies line is higher because technology items were rolled into it.",
+   "quote": "the fy22 budget is 100% expended.",
+   "figures_as_printed": [
+    "100%",
+    "21%"
+   ]
+  },
+  {
+   "topic": "Salary surplus used for blinds",
+   "what_was_recorded": "Some of the salary surplus was used to pay for new blinds; no dollar figure is printed.",
+   "quote": "some of the salary surplus paid for the blinds.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Trust fund legislation and treasurer management",
+   "what_was_recorded": "Discussion of a bill that lets the town treasurer manage library trust funds independently; no dollar figure is printed.",
+   "quote": "the final bill enables the town treasurer to manage the library funds independently from other town funds.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved",
+   "quote": "dick made a motion to accept the minutes of june 16, 2022 as presented, seconded by kate. the motion passed unanimously by role call vote.",
+   "tags": [
+    "minutes",
+    "votes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "quote": "the fy22 budget is 100% expended.",
+   "tags": [
+    "director",
+    "budget",
+    "circulation",
+    "staffing",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "no action",
+   "quote": "the bill did not get acted on during the normal session.",
+   "tags": [
+    "trust funds",
+    "treasurer",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Library Sign Discussion",
+   "resolution": "no action; director to contact original architects",
+   "quote": "there was some discussion on the placement, font, and lettering.",
+   "tags": [
+    "library sign",
+    "building"
+   ]
+  },
+  {
+   "topic": "By-Laws Review, Discussion, and vote",
+   "resolution": "deferred to next meeting",
+   "quote": "dick suggested we defer to next meeting.",
+   "tags": [
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "rob bowen came to talk about incorporation for the friends.",
+   "tags": [
+    "friends group",
+    "fundraising",
+    "membership"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "dick asked muir if he could update the bot on his activities during the year",
+   "tags": [
+    "director review"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:38 p.m.",
+   "quote": "meeting was adjourned at 8:38 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "September 15, 2022 Agenda",
+   "where": "list",
+   "quote": "september 15, 2022 agenda"
+  },
+  {
+   "name": "September 2022 Director’s Report",
+   "where": "list",
+   "quote": "september 2022 director's report"
+  },
+  {
+   "name": "August 2022 Youth Services Report",
+   "where": "list",
+   "quote": "august 2022 youth services report"
+  },
+  {
+   "name": "September 2022 Youth Services Report",
+   "where": "list",
+   "quote": "september 2022 youth services report"
+  },
+  {
+   "name": "Library sign pics from Johnson Roberts Associates",
+   "where": "list",
+   "quote": "library sign pics from johnson roberts associates"
+  }
+ ],
+ "tags": [
+  "library",
+  "trust funds",
+  "library sign",
+  "friends of the library",
+  "by-laws",
+  "director's report",
+  "budget",
+  "grants",
+  "summer reading",
+  "circulation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

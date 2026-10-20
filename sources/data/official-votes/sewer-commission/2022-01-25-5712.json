@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-01-25",
  "docid": "5712",
@@ -12,23 +12,339 @@
  },
  "votes": [
   {
-   "motion": "Approve the Wright Pierce contract for $13,200 for engineering design of the Upland/Eastern Ave/White Street/Maple Parkway extension",
+   "motion": "Approve the Wright Pierce contract for $13,200 for engineering design of the Upland/Eastern Ave/White Street/Maple Parkway extension.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. to approve the wright pierce contract for $13,200"
+   "quote": "to approve the wright pierce contract for $13,200 for work on engineering design of the upland/eastern ave/ white street/ maple parkway extension."
   },
   {
-   "motion": "Accept the minutes of 1/11/22",
+   "motion": "Accept Counsel's changes to Sections 4-3 (Discharge Documents) and 6-3 (Criminal Penalties) of the Fitchburg Chapter 147 regulations.",
+   "moved_by": "Mike N.",
+   "seconded_by": "Brett R.",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "to accept sections 4-3 (discharge documents) and 6-3 (criminal penalties), as counsel has recommended by the fitchburg chapter 147 regulations."
+  },
+  {
+   "motion": "Accept the minutes of 1/11/22.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0-1",
    "procedural": true,
-   "quote": "motion: john r. second: brett r. to accept the minutes for 1/11/22"
+   "quote": "to accept the minutes for 1/11/22. roll call vote: john-aye, mike n.-aye and brett-aye. dave-abstained."
+  },
+  {
+   "motion": "A motion whose wording the minutes do not record, placed after the list of upcoming meetings (procedural nature not stated).",
+   "moved_by": "John R.",
+   "seconded_by": "Brett R.",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "motion: john r. second: brett r. roll call vote: john-aye, mike n.-aye, brett-aye and dave- aye."
   }
  ],
  "dropped_unquoted": 1,
- "note": "OCR text from macOS Vision. One motion structure appears incomplete (the final \"Upcoming Scheduled Sewer Commission Activities\" vote has no stated subject), and is not included. One agreement to pay invoices is noted as informal consensus, not a formal vote.",
- "cost_usd": 0.10348049999999999
+ "note": "Text is macOS Vision OCR of a scanned-looking minutes file; quotes are taken from the OCR text as printed. The fourth roll call (after the upcoming-meetings list) has no recorded motion wording, so its motion and its procedural status are not stated in the minutes; it is recorded with the wording unknown and procedural set to false. Mike Nault's role line reads \"Member: Mike Nault, DPW\" with \"Director- Rob Oliva\" on the next line, so Rob Oliva is read as DPW Director. The Brett 'public comment' line is a Commissioner speaking under the PUBLIC COMMENT heading; the second 'Public Comment - none' is not separately recorded. Heather (Town Manager), Greg Roy, Mark (Interim Deputy), and Jeff Murawski are mentioned but not recorded as taking part.",
+ "cost_usd": 0.01898308,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member: mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member: mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member: mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member: mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member: mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member: mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, member: mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: mike deveikis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to discuss easements, reconnection fees, grease traps annual fees, final read invoice proration and whatever else Rob, Barb or the Commission come up with.",
+   "quote": "the commission agreed to discuss easements, reconnection fees, grease traps annual fees, final read invoice proration and"
+  },
+  {
+   "decision": "The Commission agreed to pay the invoices (Fitchburg usage and Mead, Talerman) without a recorded vote.",
+   "quote": "the commission agreed to pay the invoices."
+  },
+  {
+   "decision": "Dave asked the Commission members to send ideas for policy updates to Barb, who will compile a list for the next agenda.",
+   "quote": "dave asked the commission to come up with ideas and send to barb who will put together a list for the next agenda."
+  },
+  {
+   "decision": "Barb will place the Draft Annual Report on the 2/8 meeting agenda.",
+   "quote": "barb will be put on 2/8 meeting agenda."
+  },
+  {
+   "decision": "Dave asked Rob to determine what maintenance funding he would need in FY23.",
+   "quote": "dave asked rob to look at what he would need in fy23."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 draft sewer budget revenues",
+   "what_was_recorded": "FY23 revenues are projected at $1,094,617, an increase of $26K over FY22.",
+   "figures_as_printed": [
+    "$1,094,617",
+    "$26K"
+   ],
+   "quote": "she notes that fy23 revenues are projected as $1,094,617, which is an increase of $26k over fy22."
+  },
+  {
+   "topic": "Assistant position salary in FY23 draft budget",
+   "what_was_recorded": "The Assistant position is budgeted at $25,310, with the hope of filling it before 7/1 so the amount covers a full year.",
+   "figures_as_printed": [
+    "$25,310"
+   ],
+   "quote": "the assistant position is in the budget for $25,310 and she is hopeful the position will be filled before 7/1 so the amount is for a full year."
+  },
+  {
+   "topic": "Cost-of-living increase for payroll",
+   "what_was_recorded": "A COLA increase will go to Town Meeting, and the Accountant recommended an estimated COLA sit in the reserve line until then. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "since barb is at the top of her grade, they will be going to town meeting to ask for a cost-of-living (cola) increase"
+  },
+  {
+   "topic": "Capital plan in Other Expenses",
+   "what_was_recorded": "$50K placed in the draft budget for the capital plan for now, to be discussed.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "barb put in $50k for the capital plan for now but will be a topic of discussion."
+  },
+  {
+   "topic": "Leominster usage",
+   "what_was_recorded": "Leominster usage was estimated at $500K for FY22 and is now projected at about $484K.",
+   "figures_as_printed": [
+    "$500K",
+    "$484K"
+   ],
+   "quote": "leominster usage was estimated at $500k for fy22 and right now it is projected to be about $484k."
+  },
+  {
+   "topic": "Empey (CTE) contract",
+   "what_was_recorded": "The contract enters year 3 with an increase not yet reflected in the FY23 draft. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "in regard to the empey (cte) contract, barb noted they are going into year 3 and there will be an increase,"
+  },
+  {
+   "topic": "Utilities",
+   "what_was_recorded": "Utilities are projected about the same as last year. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "the utilities are about the same as last year."
+  },
+  {
+   "topic": "Wright Pierce engineering design contract",
+   "what_was_recorded": "Commission approved a $13,200 contract for engineering design of the Upland/Eastern Ave/White Street/Maple Parkway extension.",
+   "figures_as_printed": [
+    "$13,200"
+   ],
+   "quote": "to approve the wright pierce contract for $13,200 for work on engineering design of the upland/eastern ave/ white street/ maple parkway extension."
+  },
+  {
+   "topic": "Invoices paid",
+   "what_was_recorded": "Two invoices were presented: Fitchburg usage and Mead, Talerman (for work on Fitchburg regulation changes and the Wright Pierce contract, 6.1 hours). The Commission agreed to pay them.",
+   "figures_as_printed": [
+    "$15,094.25",
+    "$1,082.26"
+   ],
+   "quote": "invoices - fitchburg usage - $15,094.25 and mead, talerman - $1,082.26"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "thanks to Jane for the annual report",
+   "quote": "public comment- brett thanked jane for the nice job on the annual report."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "FY23 Draft Sewer Budget",
+   "resolution": "discussed; Purchase of Service continued to next meeting",
+   "tags": [
+    "budget",
+    "FY23",
+    "revenue"
+   ],
+   "quote": "purchase of service numbers haven't been adjusted from fy22 for the commission to review and discuss at the next meeting."
+  },
+  {
+   "topic": "ARPA funding for sewer project",
+   "resolution": "discussed; a Commissioner to sit in on consultant Zoom",
+   "tags": [
+    "ARPA",
+    "funding",
+    "SRF"
+   ],
+   "quote": "arpa funding- rob reported that the arpa funding for a sewer project would need to be a srf-type project to get high priority."
+  },
+  {
+   "topic": "Upland/Eastern Ave/White Street engineering design contract",
+   "resolution": "approved",
+   "tags": [
+    "contract",
+    "engineering",
+    "Wright Pierce"
+   ],
+   "quote": "to approve the wright pierce contract for $13,200 for work on engineering design of the upland/eastern ave/ white street/ maple parkway extension."
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance (Chapter 147)",
+   "resolution": "Counsel changes to Sections 4-3 and 6-3 accepted; to go to Fitchburg",
+   "tags": [
+    "regulation",
+    "Fitchburg",
+    "ordinance"
+   ],
+   "quote": "fitchburg sewer use ordinance (chapter 147) - barb reported that we'd received notes back from town counsel"
+  },
+  {
+   "topic": "Annual Town Meeting warrant",
+   "resolution": "discussed; articles due 3/21, Town Meeting 5/7",
+   "tags": [
+    "town meeting",
+    "warrant"
+   ],
+   "quote": "annual town meeting warrant - barb noted the warrant is open and articles need to be submitted by 3/21."
+  },
+  {
+   "topic": "Search for Assistant Business Manager",
+   "resolution": "no action; search ongoing",
+   "tags": [
+    "staffing",
+    "hiring"
+   ],
+   "quote": "search for assistant business manager- barb reported the opening was posted with the mass municipal website."
+  },
+  {
+   "topic": "Town Caucus March 2022 and 2022 elections",
+   "resolution": "discussed; no action",
+   "tags": [
+    "election",
+    "caucus"
+   ],
+   "quote": "town caucus march 2022 for town election 5/21/22 openings - john reynolds (june 2020 -may 2022)and mike nault(may 2021-may 2022) are up."
+  },
+  {
+   "topic": "Minutes of 1/11/22",
+   "resolution": "approved 3-0-1",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes for 1/11/22. roll call vote: john-aye, mike n.-aye and brett-aye. dave-abstained."
+  },
+  {
+   "topic": "Business Manager report: invoices and grease trap logs",
+   "resolution": "invoices agreed to be paid",
+   "tags": [
+    "invoices",
+    "grease trap",
+    "payments"
+   ],
+   "quote": "the commission agreed to pay the invoices."
+  },
+  {
+   "topic": "Upcoming Sewer Commission meetings",
+   "resolution": "noted; schedule confirmed",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "february 8, 2022 @ 6pm - regular meeting, remote participation"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fitchburg Review Notes w Counsel recommendations #18-19-31 for 012522",
+   "where": "list",
+   "quote": "handouts: fitchburg review notes w counsel recommendations #18-19-31 for 012522"
+  },
+  {
+   "name": "FY23 Draft Sewer Budget",
+   "where": "text",
+   "quote": "fy23 draft sewer budget- barb reviewed the highlights since the commission had received the draft shortly before the start of the meeting."
+  },
+  {
+   "name": "Wright Pierce contract",
+   "where": "text",
+   "quote": "barb received the wright pierce contract, approved by town counsel."
+  },
+  {
+   "name": "Fitchburg Sewer Use Ordinance (Chapter 147)",
+   "where": "text",
+   "quote": "fitchburg sewer use ordinance (chapter 147) - barb reported that we'd received notes back from town counsel"
+  },
+  {
+   "name": "Annual Town Meeting Warrant",
+   "where": "text",
+   "quote": "annual town meeting warrant - barb noted the warrant is open and articles need to be submitted by 3/21."
+  },
+  {
+   "name": "Draft Annual Report",
+   "where": "text",
+   "quote": "the draft annual report that was done by jane was sent to the commission last minute for their review."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "FY23 budget",
+  "contracts",
+  "Wright Pierce",
+  "Fitchburg regulations",
+  "ARPA",
+  "town meeting",
+  "elections",
+  "staffing",
+  "invoices"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

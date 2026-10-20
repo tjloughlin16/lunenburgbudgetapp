@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-10-24",
  "docid": "4179",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Recommend in favor of citizen petition for zoning change at 199 Massachusetts Avenue",
+   "motion": "Recommend in favor of the citizen petition for zoning change at 199 Massachusetts Avenue (Amend Zoning Map).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "m. brenner made motion to recommend in favor of the citizen petition for zoning change at 199 massachusetts avenue, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve Use Table Article",
+   "motion": "Approve the Use Table zoning article.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -28,7 +28,7 @@
    "quote": "m. brenner made motion to approve the article, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Accept all waivers listed in submitted Project Narrative, Section 4.4",
+   "motion": "Accept all waivers listed in the submitted Project Narrative, Section 4.4, for 88 Massachusetts Avenue.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -36,15 +36,15 @@
    "quote": "m. brenner made motion to accept all waivers listed in the submitted project narrative, section 4.4, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve Site Plan Approval for 88 Massachusetts Avenue with specified construction and snow storage conditions",
+   "motion": "Approve the Site Plan Approval for 88 Massachusetts Avenue with Standard Conditions (construction hours, and a snow storage special condition).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the site plan approval for 88 massachusetts avenue with standard conditions to include construction hours of monday through friday, 7:00 a.m. to 5:00 p.m., saturday 8:00 a.m. to 3 p.m.,"
+   "quote": "m. brenner made motion to approve the site plan approval for 88 massachusetts avenue with standard conditions to include construction hours"
   },
   {
-   "motion": "Recommend the Select Board pass over its Right of First Refusal for Parcel 3, Sunny Hill Road",
+   "motion": "Recommend the Select Board pass over its Right of First Refusal on Parcel 3, Sunny Hill Road.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -52,16 +52,15 @@
    "quote": "m. brenner made motion to recommend the select board pass over its right of first refusal, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve the minutes of 9/12/22, 9/12/22 (3 Lancaster Avenue), 9/12/22 (235 Leominster Road), 9/26/22, and 9/26/22 (245 Holman Street)",
+   "motion": "Approve the minutes of 9/12/22; 9/12/22, 3 Lancaster Avenue; 9/12/22, 235 Leominster Road; 9/26/22; and 9/26/22, 245 Holman Street.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to approve the minutes of 9/12/22; 9/12/22, 3 lanc aster avenue; 9/12/22, 235 leominster road; 9/26/22; and 9/26/22, 245 holman street. a. reid seconded, passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the minutes of 9/12/22; 9/12/22, 3 lanc aster avenue; 9/12/22, 235 leominster road; 9/26/22; and 9/26/22, 245 holman street."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -70,6 +69,211 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1151725
+ "note": "Text is digital extracted minutes, not a scan; all page text was readable. Votes are recorded as \"passed unanimously\" with no vote count printed, so outcomes are recorded as that phrase. Several items say \"See separate minutes\" and their motions are reproduced only where the text prints them here (199 Mass Ave, Use Table, 88 Mass Ave). No public comment section appears in the text. Marjorie J. Boggio appears only in the header and is not recorded as taking part, so she is omitted. The 245 Holman Street endorsement and the Driveways tabling are recorded without a motion. Pond View's stub costs are discussed without any dollar figure.",
+ "cost_usd": 0.01649303,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director (per the header; minutes also call him A. Burney)",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Endorsed the decision for 245 Holman Street (review and endorsement) without a recorded motion.",
+   "quote": "decision endorsed by the board."
+  },
+  {
+   "decision": "Section 250-6.4., Driveways & Entrances was tabled.",
+   "quote": "section 250-6.4., driveways & entrances- tabled"
+  },
+  {
+   "decision": "A. Burney will invite the Chair of the Building Design Committee to the Board’s November 14 meeting for continued discussion of the municipal building concepts.",
+   "quote": "a. burney would invite the chair of the building design committee to the board's november 14 th meeting for continued discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pond View Commons cost of stubs (ZBA comprehensive permit hearing)",
+   "what_was_recorded": "The applicant said he would cover the cost of sewer or water stubs for properties along the three mile extension; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "he would cover the cost of stubs for every property that was along the three mile extension"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: Zoning Map amendment, 199 Massachusetts Avenue",
+   "resolution": "recommended in favor (citizen petition)",
+   "quote": "amend zoning map , 199 massachusetts avenue - see separate minutes.",
+   "tags": [
+    "zoning",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Public hearing: Use Table zoning article",
+   "resolution": "approved",
+   "quote": "use table- see separate minutes.",
+   "tags": [
+    "zoning",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "88 Massachusetts Avenue site plan",
+   "resolution": "waivers accepted; site plan approved with standard and special conditions",
+   "quote": "88 massachusetts avenue- see separate minutes.",
+   "tags": [
+    "site plan",
+    "permitting"
+   ]
+  },
+  {
+   "topic": "260 Falulah Road",
+   "resolution": "see separate minutes",
+   "quote": "260 falulah road- see separate minutes.",
+   "tags": [
+    "permitting"
+   ]
+  },
+  {
+   "topic": "Notice of intent to sell: Right of First Refusal, Parcel 3, Sunny Hill Road",
+   "resolution": "recommended Select Board pass over right of first refusal",
+   "quote": "right of first refusal, parcel 3, sunny hill road",
+   "tags": [
+    "land",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Decision: 245 Holman Street review and endorsement",
+   "resolution": "decision endorsed",
+   "quote": "decision endorsed by the board.",
+   "tags": [
+    "permitting"
+   ]
+  },
+  {
+   "topic": "Comprehensive permit application: Pond View Commons, LLC, Howard Street",
+   "resolution": "no action; Zoning Board of Appeals in hearing process",
+   "quote": "the zoning board of appeals was in the hearing process.",
+   "tags": [
+    "comprehensive permit",
+    "housing",
+    "consultants"
+   ]
+  },
+  {
+   "topic": "Concepts for Lunenburg Municipal Buildings",
+   "resolution": "discussed; Chair of Building Design Committee to be invited to November 14 meeting",
+   "quote": "the board was in receipt of four concepts from the lunenburg municipal building design committee.",
+   "tags": [
+    "municipal buildings",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Section 250-6.4 Driveways & Entrances",
+   "resolution": "tabled",
+   "quote": "section 250-6.4., driveways & entrances- tabled",
+   "tags": [
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Minutes approval (9/12/22 and 9/26/22 minutes)",
+   "resolution": "approved unanimously",
+   "quote": "minutes approval: m. brenner made motion to approve the minutes of 9/12/22",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "storm water task force- cei was working with the task force in preparing its permit for the state.",
+   "tags": [
+    "committees",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "november 15, stm, 7:00 p.m.",
+   "tags": [
+    "schedule",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "listed; no action",
+   "quote": "zoning for mbta communities",
+   "tags": [
+    "zoning",
+    "MBTA communities"
+   ]
+  },
+  {
+   "topic": "Board comment: Pond View Commons and zoning control",
+   "resolution": "discussed; no action",
+   "quote": "m. allison brought up the zoning board of appeals hearing for pond view commons.",
+   "tags": [
+    "comprehensive permit",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:49 p.m.",
+   "quote": "meeting adjourned 8:49 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "site plan",
+  "88 Massachusetts Avenue",
+  "comprehensive permit",
+  "Pond View Commons",
+  "right of first refusal",
+  "municipal buildings",
+  "zoning bylaw",
+  "minutes approval",
+  "town hall"
+ ],
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-06-09",
  "docid": "2060",
@@ -12,23 +12,262 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the May 19, 2022 meeting",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Watters",
+   "motion": "Approve the minutes of the May 19, 2022 meeting.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Evan Watters",
    "outcome": "passed 4-0-1",
    "procedural": true,
    "quote": "mr. menard motioned to approve the minutes from the may 19, 2022 meeting, mr. watters seconded. on vote, motion carried. 4-0-1."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Menard",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Chris Menard",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "at 8:39 p.m. mr. passios motioned to adjourn. mr. menard seconded. on vote, motion carried unanimously."
+   "quote": "mr. passios motioned to adjourn. mr. menard seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0770795
+ "note": "Extracted text with page breaks; votes, attendance and quotes are as printed. Item 3 Public Comment has no recorded speakers. Karen Brochu is listed as a guest with no role or remarks printed. The minutes print no document list, and the only document named in passing is the FinCom 101 deck, which is not yet made.",
+ "cost_usd": 0.01604368,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "members present: chairperson peter beardmore, chris menard, dave passios, tom balish, evan watters"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairperson peter beardmore, chris menard, dave passios, tom balish, evan watters"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairperson peter beardmore, chris menard, dave passios, tom balish, evan watters"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairperson peter beardmore, chris menard, dave passios, tom balish, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: chairperson peter beardmore, chris menard, dave passios, tom balish, evan watters"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, karen brochu"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Guest",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, karen brochu"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed to attempt to discuss seven summer topics (a through g).",
+   "quote": "the committee agreed they'd attempt to discuss seven topics over the summer."
+  },
+  {
+   "decision": "The committee agreed not to meet on June 23, 2022.",
+   "quote": "the committee agreed not to meet june 23, which made this meeting the last finance committee meeting for mr. passios."
+  },
+  {
+   "decision": "New committee liaisons will be assigned and a new Finance Committee member appointed at the July 14 meeting.",
+   "quote": "new committee liaisons will be assigned, and a new finance committee member will be appointed as of the next meeting july 14."
+  },
+  {
+   "decision": "Mr. Balish volunteered to work on a FinCom 101 deck for onboarding new members.",
+   "quote": "mr. balish volunteered to work on a \"fincom 101\" deck"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State FY22 surplus",
+   "what_was_recorded": "The Town Manager reported the state will close FY22 with a surplus of the printed amount.",
+   "figures_as_printed": [
+    "$7 billion"
+   ],
+   "quote": "ms. lemieux reported that the state will be closing fy22 with a $7 billion surplus."
+  },
+  {
+   "topic": "State aid proposal",
+   "what_was_recorded": "The Town Manager reported a Senate proposal for a 5.4 percent increase in general government aid, which she said means a minimum per-pupil student aid figure.",
+   "figures_as_printed": [
+    "$60"
+   ],
+   "quote": "the state senate proposals include a 5.4 percent increase in general government aid, which means $60 minimum per pupil in student aid."
+  },
+  {
+   "topic": "Retirement COLA bill",
+   "what_was_recorded": "A bill would add up to an annual COLA increase to retirement funds; the Town Manager will oppose it because the town would have no control over the unfunded liability assessment, and members asked whether the state or town should bear the cost.",
+   "figures_as_printed": [
+    "5 percent"
+   ],
+   "quote": "there is a bill on the floor that seeks to add up to a 5 percent cola increase annually to retirement funds."
+  },
+  {
+   "topic": "Inflation and FY21 appropriations",
+   "what_was_recorded": "The chair asked how current inflated prices will affect funds appropriated for FY21; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "mr. beardmore inquired how current inflated prices will affect"
+  },
+  {
+   "topic": "Streetlight purchase from Unitil",
+   "what_was_recorded": "Attorneys were still discussing the terms of the purchase of streetlights from Unitil; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "mr. passios asked for an update on the purchase of streetlights from unitil."
+  },
+  {
+   "topic": "Town Beach building project",
+   "what_was_recorded": "End of year funds will contribute to the Town Beach building project, whose construction portion is out to bid; no figures were printed.",
+   "figures_as_printed": [],
+   "quote": "end of year funds will contribute to the town beach building project."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Administrative level for facilities, grounds and DPW",
+   "speaker": "Mr. Passios",
+   "quote": "mr. passios cited the shallow administrative level for the town's facilities and grounds, as well as dpw, and urged committee members, and members of the public, to be aware of what's supposed to be being done"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "Meeting opened at 7:00 p.m., held remotely and recorded",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement",
+   "tags": [
+    "open meeting law",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "No action; tentative appointments committee date and one vacancy noted",
+   "quote": "mr. beardmore announced a tentative finance committee appointments committee june 21.",
+   "tags": [
+    "appointments",
+    "vacancy"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "No action; chair to schedule topics by quarter",
+   "quote": "mr. beardmore said he would like to schedule topics of discussion by quarter after several conversations with select board chairperson michael ray jeffries.",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "Received; state aid, COLA bill, capital plan, IT migration and streetlights discussed",
+   "quote": "ms. lemieux reported that the state will be closing fy22 with a $7 billion surplus.",
+   "tags": [
+    "state aid",
+    "capital plan",
+    "retirement",
+    "streetlights",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Summer calendar and topics of discussion",
+   "resolution": "Seven summer topics agreed; state delegation invitation discussed",
+   "quote": "the committee agreed they'd attempt to discuss seven topics over the summer.",
+   "tags": [
+    "agenda planning",
+    "onboarding",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Minutes of May 19, 2022",
+   "resolution": "Approved 4-0-1",
+   "quote": "mr. menard motioned to approve the minutes from the may 19, 2022 meeting, mr. watters seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "No action; members updated liaison assignments",
+   "quote": "committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "No action; Mr. Passios spoke on facilities administration and DPW",
+   "quote": "mr. passios cited the shallow administrative level for the town's facilities and grounds, as well as dpw",
+   "tags": [
+    "DPW",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "Referred to items a-g from the summer calendar",
+   "quote": "items for future meetings refer to items a-g",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "Next meeting set for July 14",
+   "quote": "next meetings july 14",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "Adjourned at 8:39 p.m., unanimously",
+   "quote": "at 8:39 p.m. mr. passios motioned to adjourn.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FinCom 101 deck",
+   "where": "text",
+   "quote": "mr. balish volunteered to work on a \"fincom 101\" deck"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "state aid",
+  "retirement COLA",
+  "capital plan",
+  "streetlights",
+  "Town Beach",
+  "FY21 appropriations",
+  "committee membership",
+  "remote meeting",
+  "summer agenda"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

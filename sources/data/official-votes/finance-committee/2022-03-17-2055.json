@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-03-17",
  "docid": "2055",
@@ -12,23 +12,455 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the March 3, and March 11, 2022 meetings",
+   "motion": "Approve the minutes of the March 3 and March 11, 2022 meetings.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Menard",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. watters motioned to approve the minutes from the march 3, and march 11, 2022 meetings. mr. menard seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Passios",
    "seconded_by": "Mr. Menard",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "at 10:20 p.m., mr. passios motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously."
+   "quote": "mr. passios motioned to adjourn, mr. menard seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0774445
+ "note": "Text is complete (pages 1-4). Only two votes are recorded, both procedural: approval of minutes and adjournment. No substantive vote on any budget line is recorded. The capital plan project list the minutes say is 'displayed below' is not in the text. Attendance is taken from the 'Present' and 'Guests' lines; the minutes do not say who attended in person versus by Zoom, and do not print a status for the guests who did not speak. Mr. Balish is listed as a member but his question falls under the Public Comment heading (item 12) and is recorded here as that heading prints it.",
+ "cost_usd": 0.01845218,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "",
+   "status": "present",
+   "quote": "present: chairperson peter beardmore, chris menard, jay simeone, dave passios, evan watters, tom balish"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, superintendent dr. kate burnham, lunenburg public school business manager michael cassidy"
+  },
+  {
+   "name": "Kate Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, superintendent dr. kate burnham, lunenburg public school business manager michael cassidy"
+  },
+  {
+   "name": "Michael Cassidy",
+   "role": "Lunenburg Public School Business Manager",
+   "status": "not stated",
+   "quote": "guests: town manager heather lemieux, superintendent dr. kate burnham, lunenburg public school business manager michael cassidy"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "not stated",
+   "quote": "school committee chairperson carol archambault, adam suzor and casey chisholm of suzor it"
+  },
+  {
+   "name": "Adam Suzor",
+   "role": "Suzor IT",
+   "status": "not stated",
+   "quote": "school committee chairperson carol archambault, adam suzor and casey chisholm of suzor it"
+  },
+  {
+   "name": "Casey Chisholm",
+   "role": "Suzor IT",
+   "status": "present",
+   "quote": "ms. chisholm of suzor it"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "Lunenburg resident",
+   "status": "present",
+   "quote": "lunenburg resident dave rodgers asked for the total number in back taxes from the meadow woods trailer park."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Warrant letter tabled to the next meeting.",
+   "quote": "9. warrant letter: tabled to next meeting."
+  },
+  {
+   "decision": "Committee to work with the Town Manager, Finance Director and Superintendent to set out the Finance Committee's expectations for budget season (agreed in discussion, no vote recorded).",
+   "quote": "mr. beardmore also agreed that the committee should work with the town manager, finance director, and superintendent to lay out"
+  },
+  {
+   "decision": "Quarterly report added to the March 23, 2022 agenda.",
+   "quote": "quarterly report will be added to march 23, 2022 agenda."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Schools FY23 budget total and increase",
+   "what_was_recorded": "The schools FY23 budget totals $22,325,309, a 3.11 percent increase from FY22.",
+   "quote": "the schools fy23 budget totals $22,325,309 which is a 3.11 percent increase from fy22.",
+   "figures_as_printed": [
+    "$22,325,309",
+    "3.11 percent"
+   ]
+  },
+  {
+   "topic": "Schools cost breakdown of increase",
+   "what_was_recorded": "Level services cost $212,182, new positions add $193,522, salary reserve $30,000, expenses $232,913; total increase $673,617.",
+   "quote": "it will cost $212,182 to keep services level with fy22, new positions will increase the budget by $193,522",
+   "figures_as_printed": [
+    "$212,182",
+    "$193,522",
+    "$30,000",
+    "$232,913",
+    "$673,617"
+   ]
+  },
+  {
+   "topic": "Chapter 70 share of school budget",
+   "what_was_recorded": "Chapter 70 funds increased with low-income student uptick and make up 39 percent of the school budget.",
+   "quote": "chapter 70 funds, which make up for 39 percent",
+   "figures_as_printed": [
+    "39 percent"
+   ]
+  },
+  {
+   "topic": "School competitive grants",
+   "what_was_recorded": "The schools were awarded several competitive grants covering summer school, after school, IT products and curriculum materials; no dollar figure printed.",
+   "quote": "the schools were awarded several competitive grants that cover costs for summer school, after school, it products, and curriculum materials.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Assistant tax collector and clerical budget lines",
+   "what_was_recorded": "Budget reflects a $4,200 increase for the assistant tax collector, $900 for registration and census salaries and postage, $10,116 clerical assistance for Conservation, and $5,000 for an alternate Building Commissioner.",
+   "quote": "the budget reflects a $4,200 increase for the assistant tax collector",
+   "figures_as_printed": [
+    "$4,200",
+    "$900",
+    "$10,116",
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "IT budget initiatives",
+   "what_was_recorded": "IT budget includes a help desk system, email cloud hosting, network upgrade, VOIP phones, computer upgrades and other lines, with a MIIA grant covering part of email hosting.",
+   "quote": "$12,200 for email cloud hosting (a miia risk management grant has been received and will cover $10,000)",
+   "figures_as_printed": [
+    "$12,200",
+    "$10,000",
+    "$52,000",
+    "$12,000",
+    "$20,000",
+    "$5,697",
+    "$15,118",
+    "$3,400",
+    "$23,545",
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Nashoba Health and Nursing increase",
+   "what_was_recorded": "A 22 percent increase for both Nashoba Health and Nashoba Nursing; a $5,000 increase to the Veterans Administration salary line.",
+   "quote": "a 22 percent increase for both nashoba health and nashoba nursing",
+   "figures_as_printed": [
+    "22 percent",
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Health insurance renewal costs",
+   "what_was_recorded": "Active employee health insurance renewal at a 5.56 percent increase totaling $43,467; retiree increase of five percent at $19,738; school retiree costs rise $57,496.",
+   "quote": "the actual health insurance renewal for active town employees came in at a 5.56 percent increase, which totals $43,467",
+   "figures_as_printed": [
+    "5.56 percent",
+    "$43,467",
+    "$19,738",
+    "$57,496"
+   ]
+  },
+  {
+   "topic": "Medicare and unclassified items",
+   "what_was_recorded": "A 6.6 percent increase ($19,925) in Medicare costs, $450 for Montachusett Planning, $1,800 for Town Band concerts; 5 percent increase for Workers Compensation and Liability.",
+   "quote": "a 6.6 percent increase ($19,925) in medicare costs",
+   "figures_as_printed": [
+    "6.6 percent",
+    "$19,925",
+    "$450",
+    "$1,800",
+    "5 percent"
+   ]
+  },
+  {
+   "topic": "Debt service",
+   "what_was_recorded": "Town debt is decreasing with no new borrowing scheduled; Primary School and Public Safety building debt paid off and dropped in FY23. No dollar figure printed.",
+   "quote": "and no new borrowing has been scheduled. the primary school and public safety building will be paid off",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY23 capital plan total",
+   "what_was_recorded": "Updated FY23 capital plan totals all 29 projects at $3,861,049.",
+   "quote": "bringing the total for all 29 projects to $3,861,049",
+   "figures_as_printed": [
+    "$3,861,049"
+   ]
+  },
+  {
+   "topic": "School St hazardous materials abatement",
+   "what_was_recorded": "State Legislature earmarked $50,000; contract awarded to lowest responsible bidder at $44,650.",
+   "quote": "the state legislature has earmarked $50,000 to fund the school st hazardous materials abatement project",
+   "figures_as_printed": [
+    "$50,000",
+    "$44,650"
+   ]
+  },
+  {
+   "topic": "Contract award for School St abatement",
+   "what_was_recorded": "Contract to Air Quality Experts as lowest, most responsive bidder at $44,650.",
+   "quote": "contract will be awarded to air quality experts, who was the lowest, most responsive bidder at $44,650.",
+   "figures_as_printed": [
+    "$44,650"
+   ]
+  },
+  {
+   "topic": "Street light costs",
+   "what_was_recorded": "Street light costs from Unitil are now approximately $91,300; Green Communities Committee will apply for grants to offset LED conversion.",
+   "quote": "street light costs, which are now approximately $91,300",
+   "figures_as_printed": [
+    "$91,300"
+   ]
+  },
+  {
+   "topic": "Meadow Woods back taxes",
+   "what_was_recorded": "Full back tax amount owed on Meadow Woods property was $733,000 and has been paid in full by new owners.",
+   "quote": "the full amount owed was $733,000 and has been paid in full by new owners of the property",
+   "figures_as_printed": [
+    "$733,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Meadow Woods back taxes and school costs after Covid money",
+   "speaker": "Dave Rodgers",
+   "stated_role": "Lunenburg resident",
+   "quote": "lunenburg resident dave rodgers asked for the total number in back taxes from the meadow woods trailer park."
+  },
+  {
+   "topic": "Financial details of the school budget presentation",
+   "speaker": "Mr. Balish",
+   "stated_role": "",
+   "quote": "mr. balish asked about the financial details of the budget concerning the schools, and pointed out that there were only a few slides"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "no action",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m. and read a statement",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "3. announcements: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment on back taxes and school funding",
+   "resolution": "no action",
+   "quote": "4. public comment: lunenburg resident dave rodgers asked for the total number in back taxes",
+   "tags": [
+    "public comment",
+    "back taxes",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Chair report",
+   "resolution": "reported",
+   "quote": "mr. beardmore reported that the finance director will present the fy22 2nd quarter report",
+   "tags": [
+    "quarterly report",
+    "culvert"
+   ]
+  },
+  {
+   "topic": "Town Manager and Finance Director report on FY23 capital plan",
+   "resolution": "reported",
+   "quote": "ms. lemieux updated the fy23 capital plan, and presented at the select board meeting on march 15, 2022.",
+   "tags": [
+    "capital plan",
+    "senior center",
+    "HVAC",
+    "street lights"
+   ]
+  },
+  {
+   "topic": "Budget presentations: schools, administration, unclassified, debt",
+   "resolution": "presented; discussed",
+   "quote": "a. lunenburg public schools: the schools fy23 budget totals $22,325,309",
+   "tags": [
+    "FY23 budget",
+    "schools",
+    "Chapter 70",
+    "IT",
+    "health insurance",
+    "debt"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant updates",
+   "resolution": "reported",
+   "quote": "ms. lemieux reported another financial article will be added to the warrant concerning the salary admin program pay scale.",
+   "tags": [
+    "warrant",
+    "salary"
+   ]
+  },
+  {
+   "topic": "Warrant letter",
+   "resolution": "tabled",
+   "quote": "9. warrant letter: tabled to next meeting.",
+   "tags": [
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "10. minutes: mr. watters motioned to approve the minutes from the march 3, and march 11, 2022 meetings.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "11. committee reports: committee members updated each other on their respective liaison assignments.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment and committee discussion on school budget presentation",
+   "resolution": "no action; agreed to work with Town Manager and Superintendent",
+   "quote": "12. public comment: mr. balish asked about the financial details of the budget concerning the schools",
+   "tags": [
+    "school budget",
+    "budget season",
+    "HVAC"
+   ]
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "noted; quarterly report added",
+   "quote": "13. items for future meetings: quarterly report will be added to march 23, 2022 agenda.",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "noted",
+   "quote": "14. next meetings: march 23 (remote), march 24, 2022",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:20 p.m.",
+   "quote": "15. adjourn at 10:20 p.m., mr. passios motioned to adjourn",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY23 capital plan (updated; new project lineup displayed below in the original, not in text)",
+   "where": "text",
+   "quote": "ms. lemieux updated the fy23 capital plan, and presented at the select board meeting on march 15, 2022."
+  },
+  {
+   "name": "FY22 2nd Quarter report",
+   "where": "text",
+   "quote": "the finance director will present the fy22 2nd quarter report at the march 23, 2022 meeting"
+  },
+  {
+   "name": "Warrant Letter",
+   "where": "text",
+   "quote": "9. warrant letter: tabled to next meeting."
+  },
+  {
+   "name": "Financial article on the Salary Admin Program pay scale (for the Annual Town Meeting warrant)",
+   "where": "text",
+   "quote": "ms. lemieux reported another financial article will be added to the warrant concerning the salary admin program pay scale."
+  }
+ ],
+ "tags": [
+  "FY23 budget",
+  "schools",
+  "Chapter 70",
+  "capital plan",
+  "health insurance",
+  "debt service",
+  "warrant",
+  "street lights",
+  "back taxes",
+  "public comment",
+  "Finance Committee",
+  "IT budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

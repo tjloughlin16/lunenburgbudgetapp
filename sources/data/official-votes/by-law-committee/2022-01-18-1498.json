@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2022-01-18",
  "docid": "1498",
@@ -12,15 +12,113 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of November 30, 2021 as amended",
+   "motion": "Approve the minutes of 11.30.2021, as amended.",
    "moved_by": "S.Archambault",
    "seconded_by": "K.Herrick",
-   "outcome": "approved as amended",
+   "outcome": "passed",
    "procedural": true,
    "quote": "11.30.2021 - motion - s.archambault, 2nd k.herrick, approved as amended"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes OCR'd from macOS Vision. Only one vote recorded: approval of prior minutes. Remainder of meeting was discussion of bylaw sections with no motions, seconds, or votes recorded.",
- "cost_usd": 0.0798495
+ "note": "Text is macOS Vision OCR and contains a likely header artifact (\"Deborah Christen, Member\" appears under the town address). Only one motion is recorded (approval of the 11.30.2021 minutes); no vote count is printed. Roles for most attendees are not stated. The general discussion lists proposed edits, not recorded decisions, so no votes or decisions are drawn from them. No documents or exhibits are named.",
+ "cost_usd": 0.01277828,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mary Foyle",
+   "role": "not stated (called the meeting to order)",
+   "status": "present",
+   "quote": "called to order by m.foyle at 6:30 pm"
+  },
+  {
+   "name": "Kathy Herrick",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kathy herrick, steve archambault, nancy gray, mary foyle, deborah christen"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kathy herrick, steve archambault, nancy gray, mary foyle, deborah christen"
+  },
+  {
+   "name": "Nancy Gray",
+   "role": "not stated",
+   "status": "present",
+   "quote": "present: kathy herrick, steve archambault, nancy gray, mary foyle, deborah christen"
+  },
+  {
+   "name": "Deborah Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah christen, member"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Section 214-1 (Uber or Lift) was discussed and put aside, without a recorded vote.",
+   "quote": "section 214-1 discussed and put aside need to add uber or lift"
+  },
+  {
+   "decision": "The committee will use the next meeting to finalize the document and organize the town meeting presentation.",
+   "quote": "use next meeting to finalize document and organize town meeting presentation"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dog fees (section 110-1)",
+   "what_was_recorded": "The committee discussed the accuracy of dog fees in section 110-1; no dollar figure is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "section, 110-1 discussed accuracy of dog fees"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes of 11.30.2021",
+   "resolution": "approved as amended",
+   "quote": "11.30.2021 - motion - s.archambault, 2nd k.herrick, approved as amended",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "General discussion of by-law sections",
+   "resolution": "discussed; edits noted, no final action recorded",
+   "quote": "section 174-1 fix spelling of selectmen",
+   "tags": [
+    "by-law review",
+    "wording",
+    "dog fees",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "General procedural discussion and next steps",
+   "resolution": "next meeting set to finalize document and town meeting presentation",
+   "quote": "use next meeting to finalize document and organize town meeting presentation",
+   "tags": [
+    "town meeting",
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "by-law review",
+  "town meeting",
+  "dog fees",
+  "wording and spelling",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

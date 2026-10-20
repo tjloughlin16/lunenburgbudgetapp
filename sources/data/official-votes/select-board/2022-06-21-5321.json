@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-06-21",
  "docid": "5321",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Waive the liability insurance requirement for the gathering",
+   "motion": "Waive the liability insurance requirement for the Pride gathering (Special Event License, Ritter Building lawn)",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
@@ -20,12 +20,20 @@
    "quote": "motion: t. alonzo to waive the liability insurance requirement for the gathering 2nd: h. sroka vote: all in favor"
   },
   {
+   "motion": "Unidentified motion; the extract shows only a vote line following discussion of the special event definition",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "awareness event doesn't require a lot of setup and safety issues; we should be able to evaluate that to make this more streamlined. vote: all in favor"
+  },
+  {
    "motion": "Appoint James McGuigan to the Council on Aging with a term to expire June 30, 2024",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\": h. sroka to appoint james mcguigan to the council on aging with a term to expire june 30, 2024 vote: all in favor"
+   "quote": "to appoint james mcguigan to the council on aging with a term to expire june 30, 2024 vote: all in favor"
   },
   {
    "motion": "Approve payout of five unused vacation days from FY22 to Ms. Lemieux",
@@ -33,10 +41,285 @@
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2\"°: h. sroka to approve payout of five unused vacation days from fy22 to ms. lemieux vote: all in favor"
+   "quote": "to approve payout of five unused vacation days from fy22 to ms. lemieux vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-processed scan. A second \"Vote: All in Favor\" appears on page 2 without a clearly stated corresponding motion and is not included. The document references entering executive session but no motion or vote is recorded for that action.",
- "cost_usd": 0.1245705
+ "note": "OCR of a scanned minutes document. The attendance line on page 1 is garbled (the Town Manager's name and the applicant's first name are not legible); Ms. Lemieux's presence at this meeting is not confirmed by the text (the only sentence about her attending refers to a School Committee meeting). Page 2 contains a 'Vote: All in Favor' line with no motion text in the extract; it is recorded with motion 'unidentified' and outcome 'passed' and may be a continuation of the page 1 vote. Page 2 begins mid-discussion and the Pride event discussion before the vote is partly missing. Public comment is recorded as none at both points. The executive session minutes are separate and not included. Minutes signature names are garbled.",
+ "cost_usd": 0.02151228,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:03 p.m."
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "mr. alonzo did not have any additional questions but fully supported the event."
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "ms. sroka thanked him for all the information."
+  },
+  {
+   "name": "Chloe Prokowiew",
+   "role": "applicant for Special Event License",
+   "status": "present",
+   "quote": "cle prokowiew, james mcguigan,"
+  },
+  {
+   "name": "James McGuigan",
+   "role": "appointee to Council on Aging",
+   "status": "present",
+   "quote": "that he was not interviewed per past practice, so he is here tonight."
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Architectural Preservation District Commission (APD) Chair",
+   "status": "present",
+   "quote": "mr. mcgrath, 22 cushing lane, greeted the board members and read an excerpt from a 1903 old homes week booklet relevant to lunenburg"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "Town Manager (name garbled in the OCR presence line)",
+   "status": "not stated",
+   "quote": "ms. lemieux works while on vacation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board advised Ms. Prokowiew to check with the Town Manager's office for follow-up on the microphone power supply.",
+   "quote": "advised her to check with the town manager's office for follow up on the power supply for the microphone."
+  },
+  {
+   "decision": "Workshop on Select Board policies and procedures, Articles I & II, postponed to the August 12 meeting.",
+   "quote": "this agenda item was postponed until the august 12' meeting."
+  },
+  {
+   "decision": "Ms. Sroka encouraged to give feedback to the School Committee Chair on pre-recorded presentations (encourager not named).",
+   "quote": "ms. sroka was encouraged to give feedback to the school committee chair."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The board signed accounts payable, payroll and deductions warrants at this meeting.",
+   "quote": "warrants: the board signed an accounts payable warrant in the amount of $483,239.12, a payroll warrant in the amount of $937,240.42",
+   "figures_as_printed": [
+    "$483,239.12",
+    "$937,240.42",
+    "$311,175.51",
+    "$605,287.99",
+    "$215,078.13"
+   ]
+  },
+  {
+   "topic": "Vacation payout for Ms. Lemieux",
+   "what_was_recorded": "A payout of five unused FY22 vacation days was approved; no dollar amount is printed.",
+   "quote": "it was suggested to allot a payout due to her not having time to take all her vacation days.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Pride event raffle proceeds",
+   "what_was_recorded": "The applicant planned to gather donations for a raffle with proceeds going to GSA Link; no amount is printed.",
+   "quote": "her plan is to gather donations for a raffle and the proceeds will go to gsa link.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library trust funds and investment options",
+   "what_was_recorded": "Library Trustees discussed having more control over library trust funds and investment pool options; no amount is printed.",
+   "quote": "discussion centered of having more control over library trust funds.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MRPC planning grant",
+   "what_was_recorded": "State grant funding was awarded to MRPC to pay for planning staff to help the Town with MBTA zoning compliance; no grant amount is printed.",
+   "quote": "awarded mrpc the grant funding to pay for planning staff from mrc to assist the town in exploring methods of compliance",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town debt policy for Turkey Hill Elementary",
+   "what_was_recorded": "School Committee asked about the town debt policy for future Turkey Hill Elementary improvements or a rebuild; no amount is printed.",
+   "quote": "about the town debt policy related to future turkey hill elementary improvements or a rebuild.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Historical Commission memorial funding",
+   "what_was_recorded": "The Historical Commission bought granite base stones and the Historical Society paid for equipment for the cemetery memorial; no amounts are printed.",
+   "quote": "the commission bought the granite base stones in which the marble stones were to be set",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and communications from other boards",
+   "resolution": "no action; Parks Commission presentation to be scheduled for August",
+   "quote": "mr. jeffreys reported the parks commission would like to meet with the select board for a presentation",
+   "tags": [
+    "parks",
+    "communications"
+   ]
+  },
+  {
+   "topic": "Special Event License public hearing, Chloe Prokowiew",
+   "resolution": "approved with liability insurance requirement waived",
+   "quote": "public hearing for special event license for chloe prokowiew for july 13th; 4:00 pm on the ritter building lawn",
+   "tags": [
+    "special event license",
+    "pride",
+    "ritter building"
+   ]
+  },
+  {
+   "topic": "Appointment to Council on Aging, James McGuigan",
+   "resolution": "appointed, term to June 30, 2024",
+   "quote": "appointment to council on aging- james mcguigan, 187 leominster road -term to expire june",
+   "tags": [
+    "council on aging",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "APD and Historical Commission activities, Richard McGrath",
+   "resolution": "received; no action",
+   "quote": "meeting with architectural preservation district commission (apd) chair richard mcgrath on historical commission and apdc activities",
+   "tags": [
+    "historic preservation",
+    "apd",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "no action; volunteer vacancies and employment openings listed, MRPC grant noted",
+   "quote": "meetings, events and other announcements",
+   "tags": [
+    "announcements",
+    "volunteers",
+    "employment"
+   ]
+  },
+  {
+   "topic": "Workshop: Select Board policies and procedures, Articles I & II",
+   "resolution": "postponed to August 12 meeting",
+   "quote": "this agenda item was postponed until the august 12' meeting.",
+   "tags": [
+    "policies",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Vacation payout for Ms. Lemieux",
+   "resolution": "approved payout of five unused FY22 vacation days",
+   "quote": "to approve payout of five unused vacation days from fy22 to ms. lemieux vote: all in favor",
+   "tags": [
+    "personnel",
+    "vacation"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed",
+   "quote": "warrants: the board signed an accounts payable warrant in the amount of $483,239.12",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "none",
+   "quote": "action items- there were none this evening.",
+   "tags": [
+    "action items"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "ms. sroka attended the school committee meeting and sadie shapiro has resigned in order to focus on",
+   "tags": [
+    "school committee",
+    "finance committee",
+    "library trustees"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "reviewed; July 5 may be canceled",
+   "quote": "mr: jeffreys reviewed the upcoming meeting schedule for the board; july 5, july 12 and july 19.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive session",
+   "resolution": "Board announced it would enter executive session; minutes separate",
+   "quote": "mr. jeffreys announced the board would be entering executive session pursuant to mgl c. 30,",
+   "tags": [
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Drawing of the memorial for the Arnold and Litch families cemetery (in board packet)",
+   "where": "list",
+   "quote": "he made a drawing of the memorial which is in your packet."
+  },
+  {
+   "name": "1903 Old Homes Week booklet (excerpt read)",
+   "where": "text",
+   "quote": "read an excerpt from a 1903 old homes week booklet relevant to lunenburg"
+  },
+  {
+   "name": "Public hearing notice, Special Event License, June 21, 2022",
+   "where": "text",
+   "quote": "the lunenburg select board will hold a public hearing on june 21, 2022 at 7:10 pm in town"
+  },
+  {
+   "name": "Special Event License application submitted by Chloe Prokowiew",
+   "where": "text",
+   "quote": "on the application submitted by chloe prokowiew for a special event license for use of the ritter building lawn"
+  },
+  {
+   "name": "Accounts payable and payroll warrants",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant in the amount of $483,239.12"
+  },
+  {
+   "name": "Select Board Policies and Procedures, Articles I & II (workshop)",
+   "where": "text",
+   "quote": "workshop: review select board policies and procedures, articles i & ii"
+  }
+ ],
+ "tags": [
+  "select board",
+  "special event license",
+  "pride event",
+  "council on aging appointment",
+  "historic preservation",
+  "architectural preservation district",
+  "historical commission",
+  "vacation payout",
+  "warrants",
+  "grants",
+  "school debt",
+  "library trust funds",
+  "personnel"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he made a drawing of the memorial which is in your packet."
+ },
+ "dropped_unquoted_by_field": {}
 }

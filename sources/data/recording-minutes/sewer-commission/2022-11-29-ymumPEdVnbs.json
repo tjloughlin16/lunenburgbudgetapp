@@ -415,5 +415,270 @@
    "at": "2026-10-14T12:38:26Z",
    "cost_usd": 0.2247649
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11292022-5708",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/sewer-commission/2022-11-29-minutes-5708.txt",
+   "path": "sources/meetings/sewer-commission/2022-11-29-minutes-5708.pdf"
+  },
+  "official_sha256": "b394985edc284986b294f26e227cb4d953cface6959402c096f7b323804f2dba",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the four non-procedural votes and most figures. The official minutes give the 99 Leominster Road and Q2 votes more precisely, and the official minutes name a different street, Whalom Road, for the 47 Whalen Road item. The main thing to check is the 99 Leominster Road credit: our captions give conflicting figures, and the official minutes say the bill was set to 2,000 cu ft at $273.20 and the credit was $903.34.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 9,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: accept change of use, 7 Harris Ave",
+    "ours": "Accept the change of use for 7 Harris Ave — passed (roll call, ayes heard; approved)",
+    "official": "to accept the change of use for 7 harris ave. for jason paquette. roll call vote: dave-aye, mike n.-aye and brett-aye.",
+    "note": "Same motion and outcome; official records 3-0 roll call.",
+    "t": 656
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: 99 Leominster Road bill set to 2,000 cu ft",
+    "ours": "Reduce the bill for 99 Leominster Road to 2,000 cubic feet — passed (roll call; ayes heard)",
+    "official": "to change the bill for 99 leominster road to 2,000 cu ft usage for $273.20. roll call vote: mike n.-aye, dave-aye and brett-aye.",
+    "note": "Same motion and outcome; official words it as 'change' rather than 'reduce' and adds the $273.20 amount.",
+    "t": 1381
+   },
+   {
+    "kind": "caption_error",
+    "about": "Street name 47 Whalen Road vs Whalom Road",
+    "ours": "Reduce the 47 Whalen Road bill to a one-month charge (prorate) — passed (roll call; ayes heard)",
+    "official": "to prorate the bill for 47 whalom road to 1 month.",
+    "note": "Same prorate vote; the captions misheard the street name. The official minutes record no roll call for this vote.",
+    "official_reading": "47 Whalom Road",
+    "t": 1886
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: approve Q2 commitment",
+    "ours": "Approve the Q2 billing commitment — passed (roll call; ayes heard)",
+    "official": "to approve the q2 commitment of $246,015.25.",
+    "note": "Same vote and outcome.",
+    "t": 4927
+   },
+   {
+    "kind": "caption_error",
+    "about": "Q2 commitment amount",
+    "ours": "Q2 billing commitment: 246 000 15.25, 246.015 25",
+    "official": "q2 commitment $246,015.25 -barb reported the bills were sent out 11/10",
+    "note": "The captions garbled $246,015.25; the second rendering is the same figure.",
+    "official_reading": "$246,015.25",
+    "t": 4841
+   },
+   {
+    "kind": "discrepancy",
+    "about": "99 Leominster Road credit and bill amounts",
+    "ours": "Credit amount, 99 Leominster Road: 273.20, 903.34, 273.26; irrigation: 1974 cubic feet, 269.65, 1176.54, 2000 cubic feet",
+    "official": "barb noted the credit on the bill would be for $903.34.",
+    "note": "Our captions carry several figures (273.26, 269.65, 1176.54, 1974 cu ft) that the official minutes do not print; the official minutes give a $903.34 credit and a $273.20 bill. Check the recording at about t=992 to t=1381 to confirm which figure is the credit and which is the new bill, and whether 273.26 is a mishearing of 273.20.",
+    "t": 1339
+   },
+   {
+    "kind": "agree",
+    "about": "Minimum charge 47 Whalom Road",
+    "ours": "Minimum quarterly charge, 47 Whalen Road: 115 dollars",
+    "official": "minimum charge bill of $115 and would like to prorate the bill to one month.",
+    "note": "Same $115 figure; the street name differs only by caption error.",
+    "t": 1534
+   },
+   {
+    "kind": "agree",
+    "about": "Sewer jetting quotes and budget",
+    "ours": "Sewer jetting/cleaning quotes and budget: twenty eight hundred dollars per day, twenty five hundred dollars a day, 64 000",
+    "official": "he contacted 3 jetting companies for quotes -wayne's drains ($2,800/day), rapid flow ($2,500/day) and clean basins (no response yet).",
+    "note": "Same $2,800/day and $2,500/day quotes and $64K budget.",
+    "t": 4299
+   },
+   {
+    "kind": "agree",
+    "about": "Invoices: Fitchburg usage",
+    "ours": "Invoices acknowledged: eighteen thousand eight hundred seventy two dollars and sixty nine cents",
+    "official": "invoices- fitchburg usage- $18,872.69, leominster quarterly (6/26-",
+    "note": "Same figure, $18,872.69.",
+    "t": 5134
+   },
+   {
+    "kind": "caption_error",
+    "about": "Leominster quarterly invoice",
+    "ours": "85 000. 404.49",
+    "official": "invoices- fitchburg usage- $18,872.69, leominster quarterly (6/26-",
+    "official_reading": "$85,404.49",
+    "note": "The captions split $85,404.49 into pieces.",
+    "t": 5134
+   },
+   {
+    "kind": "caption_error",
+    "about": "Mead, Talerman invoice",
+    "ours": "76 dollars and 43 cents",
+    "official": "mead, talerman - $76.43 for october (pond view commons).",
+    "official_reading": "$76.43",
+    "note": "Same figure, spoken form.",
+    "t": 5134
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "7 Harris Ave privilege fee and design flow figures",
+    "ours": "Privilege fee / design flow, 7 Harris Ave: 157 gallons per day, 550, 393 gallons per day",
+    "official": "",
+    "note": "The official minutes say an additional privilege fee is required but print no amount or gallons. Our figures are unconfirmed.",
+    "t": 484
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Receiving-city capacity figures",
+    "ours": "Receiving-city capacity: 83 000 gallons, 222 500 gallons",
+    "official": "",
+    "note": "The official minutes print no capacity figures.",
+    "t": 3175
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: irrigation-meter policy for future agenda",
+    "ours": "Staff to put a policy safeguard for irrigation-meter enrollment on a future agenda.",
+    "official": "dave suggested discussing how to prevent this issue for future homeowners and brett suggested adding it to a future agenda.",
+    "note": "Same decision.",
+    "t": 1298
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: proration policy on agenda",
+    "ours": "Proration policy for final/mid-quarter billing to be put on the next agenda.",
+    "official": "brett asked barb to add the discussion of a new policy on a future agenda.",
+    "note": "Same decision; ours says 'next agenda', official says 'a future agenda'.",
+    "t": 1824
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Pond View 40B / counsel",
+    "ours": "Applicant Kevin O'Brien to be put on the next meeting agenda; commission to seek counsel's view on ZBA authority.",
+    "official": "brett summarized that they need to talk to. town counsel, and they would appreciate a far more detailed plan.",
+    "note": "Both record consulting counsel; the official minutes do not mention a next-agenda item or ZBA authority.",
+    "t": 4111
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fitchburg pipe-maintenance language",
+    "ours": "Staff to copy Fitchburg's pipe-maintenance language into a draft for discussion.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 4758
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Next meetings and Dec 14 ZBA hearing",
+    "ours": "Next meetings Dec 13 via Zoom and Dec 27 (format TBD); commissioners asked to attend the Dec 14 ZBA hearing.",
+    "official": "",
+    "note": "The official minutes record no next-meeting dates or ZBA hearing request.",
+    "t": 5428
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Peer review cannot be requested until a final plan exists",
+    "ours": "",
+    "official": "brett pointed out that they cannot request a peer review until they have a final plan and kevin agreed.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Generator maintenance with contractor",
+    "ours": "",
+    "official": "bill replied he will check with chad empey.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "ARPA funding discussion",
+    "ours": "",
+    "official": "arpa funding- barb reported the select board had arpa funding on their 11/8 agenda.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: vice chair name",
+    "ours": "Brett Branston (vice chair (presiding))",
+    "official": "vice-chair - brett ramsden, members: dave macdonald and mike nault,",
+    "official_reading": "Brett Ramsden",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mike Naughton",
+    "ours": "Mike Naughton (member)",
+    "official": "vice-chair - brett ramsden, members: dave macdonald and mike nault,",
+    "official_reading": "Mike Nault",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Dave McDonald",
+    "ours": "Dave McDonald (member)",
+    "official": "vice-chair - brett ramsden, members: dave macdonald and mike nault,",
+    "official_reading": "Dave MacDonald",
+    "note": "Spelling variant."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Mike Deveikis attendance",
+    "ours": "Mike devakis (member (not present at roll call))",
+    "official": "absent: chair- john reynolds and clerk- mike deveikis",
+    "note": "Name is a caption error, but our record lists him as 'not present at roll call' while the official lists him as absent for the whole meeting and lists the Chair John Reynolds as absent too. Check the recording to see whether he joined late."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Barbara LaFarge",
+    "ours": "Barbara LaFarge (manager / staff)",
+    "official": "dpw director- bill bernard, business manager-barb lefebvre, asst. business manager-paula bertram, and minutes clerk- jane ranley",
+    "official_reading": "Barb Lefebvre",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Jane randlee",
+    "ours": "Jane randlee (staff)",
+    "official": "dpw director- bill bernard, business manager-barb lefebvre, asst. business manager-paula bertram, and minutes clerk- jane ranley",
+    "official_reading": "Jane Ranley",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Bill Bernard, Paula Bertram, Kevin O'Brien",
+    "ours": "Bill Bernard (director / DPW); Paula Bertram (staff); Kevin O'Brien (presenter (40B applicant))",
+    "official": "kevin o'brien- pond view 40b - brett began the discussion by stating",
+    "note": "These attendees appear in both records."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bob (commissioner/staff)",
+    "ours": "Bob (commissioner/staff (referred to as Bob))",
+    "official": "",
+    "note": "No Bob is listed in the official minutes. This may be a misheard Bill, or Brett or Barb."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees not in our minutes",
+    "ours": "",
+    "official": "jason paquette, contractor for 7 harris ave. - barb stated this was a change of use approval",
+    "note": "The official minutes also list Jason Paquette and Kristin Moffat (a resident); our record has neither."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-15T22:48:36Z",
+   "cost_usd": 0.338178
+  }
  }
 }

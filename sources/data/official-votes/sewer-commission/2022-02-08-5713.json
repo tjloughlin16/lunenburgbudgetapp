@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-02-08",
  "docid": "5713",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Schedule a special budget meeting on 2/15 to discuss the FY23 sewer budget",
+   "motion": "To hold a budget meeting on 2/15 to discuss the FY23 draft sewer budget.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 4-0",
@@ -20,55 +20,367 @@
    "quote": "motion: john r. second: mike d. to have a budget meeting on 2/15 to discuss the budget. roll call vote: mike d-aye, mike n.-aye, dave-aye and john-aye."
   },
   {
-   "motion": "Change the re-connection fee from $1,000 to $100",
+   "motion": "To change the re-connection fee from $1,000 to $100.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: john r. second: mike d. to change the re-connection fee from $1,000 to $100. roll call vote: mike n.-aye, john-aye, mike d.-aye and dave-aye."
+   "quote": "to change the re-connection fee from $1,000 to $100. roll call vote: mike n.-aye, john-aye, mike d.-aye and dave-aye."
   },
   {
-   "motion": "Remove section 4.0, paragraph 3 from the Sewer By-laws",
+   "motion": "To remove section 4.0, paragraph 3 from the Sewer By-laws.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: john r. second: mike d. to remove section 4.0, paragraph 3 from the sewer by-laws. roll call vote: mike n.-aye, john-aye, mike d.-aye and dave- aye."
+   "quote": "to remove section 4.0, paragraph 3 from the sewer by-laws. roll call vote: mike n.-aye, john-aye, mike d.-aye and dave- aye."
   },
   {
-   "motion": "Begin non-compliance process for A&D Crossroads",
+   "motion": "To begin the non-compliance process for A&D Crossroads.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: john r. second: mike d. to begin the non-compliance process for a&d crossroads. roll call vote: john-aye, mike n.-aye, mike d.-aye and dave-aye."
+   "quote": "to begin the non-compliance process for a&d crossroads. roll call vote: john-aye, mike n.-aye, mike d.-aye and dave-aye."
   },
   {
-   "motion": "Accept the FY21 Annual Report",
+   "motion": "To accept the FY21 Annual report.",
+   "moved_by": "John R.",
+   "seconded_by": "Mike N.",
+   "outcome": "passed 3-0",
+   "procedural": false,
+   "quote": "to accept the fy21 annual report. second: mike n. roll call vote: mike n.-aye, john-aye and dave- aye."
+  },
+  {
+   "motion": "To accept the minutes for 1/25/22.",
    "moved_by": "John R.",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: john r. to accept the fy21 annual report. second: mike n. roll call vote: mike n.-aye, john-aye and dave- aye."
+   "quote": "to accept the minutes for 1/25. second: mike n. roll call vote: john-aye, mike n.-aye and dave-aye."
   },
   {
-   "motion": "Accept the minutes for 1/25",
-   "moved_by": "John R.",
-   "seconded_by": "Mike N.",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion: john r. to accept the minutes for 1/25. second: mike n. roll call vote: john-aye, mike n.-aye and dave-aye."
-  },
-  {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting at 7:50pm.",
    "moved_by": "John R",
    "seconded_by": "Mike N.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: john r to adjourn: 7:50pm. second: mike n. roll call vote: john-aye, mike n.-aye and dave- aye."
+   "quote": "to adjourn: 7:50pm. second: mike n. roll call vote: john-aye, mike n.-aye and dave- aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1140955
+ "note": "Text is macOS Vision OCR of a scanned minutes document, so quotes are checked against OCR text and may carry OCR errors. Votes are the roll calls as printed; the Mike Deveikis vote on the 1/25/22 minutes and the adjournment is not listed, as printed. Several items were discussed with no motion and are recorded as decisions or budget items only where the minutes state a direction or agreement. People named only in passing (Paul Casey, Kevin Olson, Jake Fleming, Julie) are not recorded as attendees.",
+ "cost_usd": 0.01941888,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- members: mike deveikis and mike nault,"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- members: mike deveikis and mike nault,"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- members: mike deveikis and mike nault,"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "chair- dave macdonald, vice-chair- john reynolds, clerk- members: mike deveikis and mike nault,"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "dpw director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: brett ramsden (clerk)"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Wells policy (about $200 quarterly charge for 9 well users) deferred; the Commission will discuss it again at a future meeting.",
+   "quote": "the commission will discuss the policy again at a future meeting."
+  },
+  {
+   "decision": "Easements to sewer allowed only case-by-case on a hardship basis, with an opinion to be sought from Town Counsel.",
+   "quote": "the commission discussed and agreed it should be on a case-by-case hardship basis. they will also get an opinion from town counsel."
+  },
+  {
+   "decision": "Commission agreed to charge non-compliant grease trap establishments for inspections; Barb to run it by Town Counsel and Rob offered to do the inspections.",
+   "quote": "the commission agreed to charge non-compliant establishments for inspections."
+  },
+  {
+   "decision": "Public hearings on the sewer policy changes to return to posting twice with only one hearing, to streamline the process.",
+   "quote": "the commission discussed the change and agreed it will streamline the process."
+  },
+  {
+   "decision": "Commission will discuss its Annual Town Meeting warrant articles on 2/22.",
+   "quote": "the commission will discuss their articles on 2/22."
+  },
+  {
+   "decision": "Barb directed to confirm whether the DEP requirement still applies to projects over 1,000 feet.",
+   "quote": "barb will confirm if it is still required on projects over 1,000 feet."
+  },
+  {
+   "decision": "Dave asked Barb to take the grease trap inspection charge to Town Counsel.",
+   "quote": "dave asked barb to run it by town counsel."
+  },
+  {
+   "decision": "Rob to seek more information on a performance bond requirement for drain layers for future discussion.",
+   "quote": "rob said he will get more information for future discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 Draft Sewer Budget",
+   "what_was_recorded": "The FY23 draft sewer budget discussion was tabled and a budget meeting set for 2/15; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "fy23 draft sewer budget- dave suggested tabling the discussion and have a special meeting on 2/15 to discuss"
+  },
+  {
+   "topic": "ARPA funds",
+   "what_was_recorded": "Rob reported on American Rescue Plan Act money: a percentage of funds for general use, possibly easier to use, with projects prioritized; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "originally, he thought the money would be just for wastewater projects, but actually the town will be getting a certain percentage of money for general use."
+  },
+  {
+   "topic": "Reconnection fee",
+   "what_was_recorded": "The re-connection fee was reduced from $1,000 to $100, with staff having suggested $50 to $100 for administrative work and inspection.",
+   "figures_as_printed": [
+    "$1,000",
+    "$100",
+    "$50"
+   ],
+   "quote": "rob stated they currently charge $1,000 to re-connect to an existing service"
+  },
+  {
+   "topic": "Minimum bill prorating",
+   "what_was_recorded": "Barb noted the minimum bill is $107; she will check the Water District's prorating policy.",
+   "figures_as_printed": [
+    "$107"
+   ],
+   "quote": "barb noted the minimum is $107."
+  },
+  {
+   "topic": "Well-user quarterly charge",
+   "what_was_recorded": "Nine users on wells pay a set quarterly charge of about $200 each; options for charging by bedrooms, residents or square footage were discussed, and the policy was deferred.",
+   "figures_as_printed": [
+    "$200"
+   ],
+   "quote": "there is a set quarterly charge of approximately $200 for each."
+  },
+  {
+   "topic": "Grease trap non-compliance fees and inspections",
+   "what_was_recorded": "The FY23 budget is said to reflect non-compliance fees; the Commission agreed to charge non-compliant establishments for inspections.",
+   "figures_as_printed": [],
+   "quote": "barb said the fy23 budget reflects non-compliance fees."
+  },
+  {
+   "topic": "Drain layer bond comparison",
+   "what_was_recorded": "Barb noted Fitchburg has drain layers give the City a deposit on account; the figure was cited as a comparison for a possible bond requirement.",
+   "figures_as_printed": [
+    "$5,000"
+   ],
+   "quote": "she noted in fitchburg, drain layers give the city $5,000 on account."
+  },
+  {
+   "topic": "A&D Crossroads non-compliance penalties",
+   "what_was_recorded": "Staff proposed a letter giving A&D Crossroads 30 days to respond or face a $50 charge, then $25 per day; the Commission voted to begin the non-compliance process.",
+   "figures_as_printed": [
+    "$50",
+    "$25/day"
+   ],
+   "quote": "barb would like to start the non-compliance process by sending out a letter stating they have 30 days, or it will be $50. if they don't respond, it will be $25/day."
+  },
+  {
+   "topic": "Flow Assessment meter lease",
+   "what_was_recorded": "Flow Assessment committed to another lease year at the same price; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "rob added flow assessment has committed to another lease year, at the same price."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Senior Center pancake breakfast",
+   "speaker": "Dave",
+   "stated_role": "Chair",
+   "quote": "public comment - dave announced the senior center will be having a pancake breakfast on 2/9 at 8am."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "FY23 Draft Sewer Budget",
+   "resolution": "budget meeting set for 2/15",
+   "tags": [
+    "budget"
+   ],
+   "quote": "fy23 draft sewer budget- dave suggested tabling the discussion and have a special meeting on 2/15 to discuss"
+  },
+  {
+   "topic": "American Rescue Plan Act (ARPA) fund",
+   "resolution": "discussed; no action",
+   "tags": [
+    "ARPA",
+    "inflow and infiltration"
+   ],
+   "quote": "american rescue plan act (arpa) fund- (coronavirus local fiscal recovery fund"
+  },
+  {
+   "topic": "Policy/By-law updates for Town Meeting",
+   "resolution": "reconnection fee changed to $100; other items assigned or deferred",
+   "tags": [
+    "by-laws",
+    "regulations",
+    "town meeting"
+   ],
+   "quote": "policy/by-law updates- dave stated this is an opportunity to update policies for the town meeting."
+  },
+  {
+   "topic": "Change to Bonds process",
+   "resolution": "discussed; Rob to gather information",
+   "tags": [
+    "bonds",
+    "drain layers"
+   ],
+   "quote": "change to bonds process - rob noted they currently only require performance bonds with road openings."
+  },
+  {
+   "topic": "Grease trap policy",
+   "resolution": "agreed to charge non-compliant establishments for inspections; Counsel to review",
+   "tags": [
+    "grease trap",
+    "fees"
+   ],
+   "quote": "11. grease trap policy - discussion on number of establishments that are in compliance."
+  },
+  {
+   "topic": "Annual Town Meeting Warrant",
+   "resolution": "to discuss articles on 2/22",
+   "tags": [
+    "town meeting",
+    "warrant",
+    "budget"
+   ],
+   "quote": "annual town meeting warrant- the commission will discuss their articles on 2/22."
+  },
+  {
+   "topic": "Grease Trap Compliance issue (A&D Crossroads)",
+   "resolution": "voted to begin non-compliance process",
+   "tags": [
+    "grease trap",
+    "enforcement"
+   ],
+   "quote": "grease trap compliance issue (a&d crossroads) - barb reported the interceptor behind the a&d plaza was"
+  },
+  {
+   "topic": "Assistant Business Manager search",
+   "resolution": "discussed; references being checked",
+   "tags": [
+    "staffing"
+   ],
+   "quote": "assistant business manager search - barb reported they had 3 interviews and they were good candidates."
+  },
+  {
+   "topic": "FY21 Annual Report",
+   "resolution": "accepted",
+   "tags": [
+    "reports"
+   ],
+   "quote": "to accept the fy21 annual report. second: mike n. roll call vote: mike n.-aye, john-aye and dave- aye."
+  },
+  {
+   "topic": "Minutes for 1/25/22 meeting",
+   "resolution": "accepted",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to accept the minutes for 1/25. second: mike n. roll call vote: john-aye, mike n.-aye and dave-aye."
+  },
+  {
+   "topic": "Business Manager Report",
+   "resolution": "no action",
+   "tags": [
+    "engineering",
+    "contracts"
+   ],
+   "quote": "business manager report - sewer extension engineering design contract status - barb reported the contract"
+  },
+  {
+   "topic": "Public comment and upcoming activities",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "schedule"
+   ],
+   "quote": "public comment - dave announced the senior center will be having a pancake breakfast on 2/9 at 8am."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Policy-Bylaw and section reference spreadsheet",
+   "where": "list",
+   "quote": "handouts: policy-bylaw and section reference spreadsheet"
+  },
+  {
+   "name": "FY23 Draft Sewer Budget",
+   "where": "text",
+   "quote": "fy23 draft sewer budget- dave suggested tabling the discussion and have a special meeting on 2/15 to discuss"
+  },
+  {
+   "name": "FY21 Annual Report",
+   "where": "text",
+   "quote": "fy21 annual report- dave asked jane for clarification on the wording in the 2nd paragraph"
+  },
+  {
+   "name": "Fitchburg IMA",
+   "where": "text",
+   "quote": "barb wanted to add language to the regulations similar to the fitchburg ima"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "budget",
+  "by-laws",
+  "regulations",
+  "grease trap",
+  "ARPA",
+  "connection fees",
+  "town meeting",
+  "Zoom",
+  "inflow and infiltration",
+  "Wright Pierce"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "economic-development-committee",
  "meeting_date": "2022-11-10",
  "docid": "1994",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Anna Lockwood",
    "seconded_by": "Joeci Gilchrest",
    "outcome": "not stated",
@@ -21,6 +21,165 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07849149999999999
+ "note": "Minutes are unsigned and show no approval status. The roll call lists seven members with no absences marked, so attendance is recorded as present from that list; no absence is stated. No votes were recorded except the adjournment motion, which has no stated result. No dollar figures appear in the text. Spelling varies within the text: 'Adam Burney' and 'Adam Burley' both appear, as do 'Lunenburg Business Associates' and 'Lunenburg Business Association'. The social-media decision quote uses 'Adam Burley', as printed. Public comment entries have no named speakers. Wendy Drennan, Roy Nascimeto and Heather Lemieux are named but not stated to take part, so they are not listed as attendees.",
+ "cost_usd": 0.013362210000000001,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matt Brenner",
+   "role": "Planning Board",
+   "status": "present",
+   "quote": "matt brenner (planning board), adam burney (land use director)"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney (land use director), cathy clark (economic development chair)"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "Economic Development Chair",
+   "status": "present",
+   "quote": "cathy clark (economic development chair), jeanne dupre (economic development member)"
+  },
+  {
+   "name": "Jeanne Dupre",
+   "role": "Economic Development Member",
+   "status": "present",
+   "quote": "jeanne dupre (economic development member), lou franco (select board)"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board",
+   "status": "present",
+   "quote": "lou franco (select board), joeci gilchrest (lunenburg business association)"
+  },
+  {
+   "name": "Joeci Gilchrest",
+   "role": "Lunenburg Business Association",
+   "status": "present",
+   "quote": "joeci gilchrest (lunenburg business association), anna lockwood (open space representative)."
+  },
+  {
+   "name": "Anna Lockwood",
+   "role": "Open Space Representative",
+   "status": "present",
+   "quote": "anna lockwood (open space representative)."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Cathy Clark will type up her draft mission statement and email a rough draft for members to review and add to.",
+   "quote": "cathy clark will type up her statement and provide an email with a rough draft for members to review and add additional information."
+  },
+  {
+   "decision": "A rough draft of the Business Development Guide will be emailed to board members, who will submit feedback to Adam Burney.",
+   "quote": "an email with a rough draft will be sent to board members to review and submit feedback to adam burney."
+  },
+  {
+   "decision": "Cathy Clark will email the North Central Chamber of Commerce economic development plan to members to review before the December meeting.",
+   "quote": "cathy clark will email the economic development plan that was developed by the north central chamber of commerce for members to review prior to meeting."
+  },
+  {
+   "decision": "Adam Burney will speak with Heather Lemieux to confirm endorsement of the committee's social media page.",
+   "quote": "adam burley will speak with heather lemieux to confirm endorsement."
+  },
+  {
+   "decision": "The next meeting is set for December 22 at 6 PM.",
+   "quote": "the next meeting is scheduled for december 22nd at 6 pm."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "reminder of upcoming town meeting",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "there was a reminder of the upcoming town meeting on november 15th."
+  },
+  {
+   "topic": "no public comment at close of meeting",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "there was no public comment."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review of meeting with the LBA",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "LBA",
+    "business",
+    "community events"
+   ],
+   "quote": "joeci gilchrest and adam burney met with wendy drennan from the lunenburg business associates (lba) in october."
+  },
+  {
+   "topic": "EDC mission statement",
+   "resolution": "draft to be circulated by Cathy Clark for review",
+   "tags": [
+    "mission statement",
+    "economic growth"
+   ],
+   "quote": "cathy clark proposed a drafted mission statement to"
+  },
+  {
+   "topic": "Proposed zoning change 199",
+   "resolution": "discussed; no action recorded",
+   "tags": [
+    "zoning",
+    "rezoning",
+    "special permit",
+    "Chapdelaine"
+   ],
+   "quote": "this location is formally the chapdelaine auto dealership."
+  },
+  {
+   "topic": "Business updates (LUFA Farms, Lunenburg Central, 88 Mass Ave.)",
+   "resolution": "received; no action recorded",
+   "tags": [
+    "business",
+    "development",
+    "Leominster Shirley Rd",
+    "Mass Ave"
+   ],
+   "quote": "no additional updates besides the purchase and sales agreement have been signed."
+  },
+  {
+   "topic": "Committee discussion and concerns (primary school, social media, Business Development Guide)",
+   "resolution": "Guide draft to be emailed; social media endorsement to be confirmed",
+   "tags": [
+    "school building",
+    "social media",
+    "business development guide"
+   ],
+   "quote": "the primary school is potentially getting torn down starting in the spring. the bids have been awarded."
+  },
+  {
+   "topic": "Meeting schedule and proposed December presenter",
+   "resolution": "next meeting set; plan to be emailed before December",
+   "tags": [
+    "meeting schedule",
+    "North Central Chamber of Commerce"
+   ],
+   "quote": "the next meeting is scheduled for december 22nd at 6 pm."
+  }
+ ],
+ "tags": [
+  "economic development",
+  "business",
+  "mission statement",
+  "zoning",
+  "Lunenburg Business Association",
+  "community events",
+  "social media",
+  "business development guide",
+  "primary school",
+  "adjournment"
+ ],
+ "dropped_unquoted_by_field": {}
 }

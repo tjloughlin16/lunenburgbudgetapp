@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-07-25",
  "docid": "4173",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept ANR Plan for 101 Pleasant Street",
+   "motion": "Accept the ANR Plan for 101 Pleasant Street.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -20,13 +20,12 @@
    "quote": "m. brenner made motion to accept the anr plan for 101 pleasant street, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve Stormwater Permit for Northfield Road and Holman Street with conditions as written",
+   "motion": "Approve the Stormwater Permit for Northfield Road and Holman Street with Conditions as written.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the stormwater p ermit for northfield road and holman street with conditions a s written, a. reid seconded, passed unanimousl",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the stormwater p ermit for northfield road and holman street with conditions a s written, a. reid seconded, passed unanimously."
   },
   {
    "motion": "Continue the hearing for 43 Summer Street to August 22, 6:05 p.m.",
@@ -37,7 +36,7 @@
    "quote": "m. brenner made mo tion to continue the hearing for 43 summer street to august 22, 6:05 p.m., a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Approve all prior minutes",
+   "motion": "Approve all minutes listed below (6/27/22 sets for four items).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -45,7 +44,7 @@
    "quote": "m. brenner made motion to approve all minutes listed below, a. reid seconded, passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
    "outcome": "passed unanimously",
@@ -54,6 +53,206 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1059335
+ "note": "Text is a clean digital extract of two pages; no scan. All five recorded motions show 'passed unanimously' with no numeric count printed. The Northfield Road and Holman Street hearing is 'See separate minutes', which were not in this text, so the hearing itself is only partly recorded here. Ongoing items and the 361 Massachusetts Avenue and Zoning Infrastructure Committee items have no motion. The minutes print no dollar figures and no public comment section. Several words are split by stray spaces in the source (e.g. 'P ermit', 'a s', 'Mo tion'); quotes are copied as printed.",
+ "cost_usd": 0.02106658,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, amanda reid, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "erik torgersen participated remotely under the oml simple extension legislation"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: tanner cole"
+  },
+  {
+   "name": "Graz Engineering, LLC",
+   "role": "presenter of the ANR plan for 101 Pleasant Street",
+   "status": "present",
+   "quote": "the plan was presented by graz engineering, llc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hours of construction for the Northfield Road and Holman Street project set at 8 a.m. to 5 p.m. Monday through Friday and 8 a.m. to 3 p.m. Saturdays, as the Board viewed them in the draft Decision.",
+   "quote": "hours of construction would be set at 8 a.m. to 5 p.m. monday through friday, and 8 a.m. to 3 p.m. saturdays."
+  },
+  {
+   "decision": "Board members to review the driveway materials (Section 250-6.4) and be prepared to discuss them on August 22.",
+   "quote": "board members would review the materials and be prepared for discussion on august 22."
+  },
+  {
+   "decision": "No Planning Board meeting to be held on August 8 due to absences of A. Burney and M. Brenner.",
+   "quote": "august 8- no meeting would be held due to absences of a. burney and m. brenner."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan: 101 Pleasant Street",
+   "resolution": "approved",
+   "quote": "the plan was presented by graz engineering, llc.",
+   "tags": [
+    "ANR plan",
+    "lot line",
+    "101 Pleasant Street",
+    "wetland"
+   ]
+  },
+  {
+   "topic": "Public hearing: Northfield Road and Holman Street (aka 245 Holman)",
+   "resolution": "stormwater permit approved with conditions",
+   "quote": "northfield road and holman street (aka 245 holman) - see separate minutes.",
+   "tags": [
+    "public hearing",
+    "stormwater permit",
+    "construction hours"
+   ]
+  },
+  {
+   "topic": "43 Summer Street hearing",
+   "resolution": "continued to August 22, 2022",
+   "quote": "the applicant asked for a continuance to august 22, 2022.",
+   "tags": [
+    "public hearing",
+    "continuance",
+    "Mullin Rule"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "m. brenner made motion to approve all minutes listed below, a. reid seconded, passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "capital planning committee- a meeting would possibly be scheduled for august.",
+   "tags": [
+    "committee reports",
+    "MRPC",
+    "MBTA Communities",
+    "MJTC"
+   ]
+  },
+  {
+   "topic": "Director's items: driveways, agricultural use, zoning infrastructure",
+   "resolution": "no action; materials to be reviewed August 22",
+   "quote": "section 250 -6.4., driveways & entrances - materials were available to the board for discussion.",
+   "tags": [
+    "driveways",
+    "zoning bylaw",
+    "agricultural use",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "august 22- hearing continuations for 260 falulah road and 43 summer street.",
+   "tags": [
+    "meeting schedule",
+    "hearing continuations"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan: 101 Pleasant Street",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan: 101 pleasant street"
+  },
+  {
+   "name": "Minutes of 6/27/22",
+   "where": "list",
+   "quote": "6/27/22 6/27/22, 494 electric avenue"
+  },
+  {
+   "name": "Minutes of 6/27/22, 494 Electric Avenue",
+   "where": "list",
+   "quote": "6/27/22, 494 electric avenue"
+  },
+  {
+   "name": "Minutes of 6/27/22, Northfield Rd & Holman St",
+   "where": "list",
+   "quote": "6/27/22, northfield rd & holman st"
+  },
+  {
+   "name": "Minutes of 6/27/22, 43 Summer St",
+   "where": "list",
+   "quote": "6/27/22, 43 summer st"
+  },
+  {
+   "name": "Draft Decision, Northfield Road and Holman Street",
+   "where": "text",
+   "quote": "the board viewed th e draft decision.",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Stormwater Permit for Northfield Road and Holman Street with Conditions",
+   "where": "text",
+   "quote": "approve the stormwater p ermit for northfield road and holman street with conditions a s written"
+  },
+  {
+   "name": "Zoning Bylaw (175 foot lot width requirement)",
+   "where": "text",
+   "quote": "meet the 175 foot lot width requirement of the zoning bylaw"
+  },
+  {
+   "name": "Driveway materials, Section 250-6.4 Driveways & Entrances",
+   "where": "text",
+   "quote": "section 250 -6.4., driveways & entrances - materials were available to the board for discussion."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "public hearing",
+  "stormwater permit",
+  "continuance",
+  "zoning",
+  "driveways",
+  "MBTA Communities",
+  "minutes approval",
+  "remote participation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

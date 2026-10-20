@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2022-08-08",
  "docid": "4721",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to have J.McLaughlin begin the process of requesting air conditioning",
+   "motion": "Have J. McLaughlin begin the process of requesting air conditioning for the PACC room.",
    "moved_by": "P.Lincoln",
    "seconded_by": "S.Sarapas",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion to have j.mclaughlin begin the process of requesting air conditioning. (p.lincoln, 2nd s.sarapas - passed)"
   },
   {
-   "motion": "to approve the July 11th minutes",
+   "motion": "Approve the July 11th minutes.",
    "moved_by": "P.Sarapas",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -28,15 +28,193 @@
    "quote": "july 11th minutes approved (p.sarapas, 2nd p.lincoln), passed"
   },
   {
-   "motion": "to authorize up to $10,000 to purchase apple computer and related hardware to replace current Macbooks",
+   "motion": "Spend up to $10,000 to purchase Apple computers and related hardware to replace current Macbooks.",
    "moved_by": "P.Sarapas",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
    "procedural": false,
    "quote": "motion p.sarapas, 2nd s.archambault up to $10,000 to purchase apple computer and related hardware to replace current macbooks. (passed)"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "S.Archambault",
+   "seconded_by": "P.Lincoln",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "(motion - s.archambault, 2nd p.lincoln - passed)"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1070365
+ "dropped_unquoted": 0,
+ "note": "Text is a single extracted pass with no scan notes. Votes are recorded in the text as motion lines with outcomes. The minutes list no documents, exhibits or attachments and no documents heading. Public comment was \"None\", so no speakers are recorded.",
+ "cost_usd": 0.014279280000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: a. steve walker, steve archambault, paul sarapas, pete lincoln"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: a. steve walker, steve archambault, paul sarapas, pete lincoln"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: a. steve walker, steve archambault, paul sarapas, pete lincoln"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "2. pacc members present: a. steve walker, steve archambault, paul sarapas, pete lincoln"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "3. pacc excused: faith beall,"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "present",
+   "quote": "4. manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "PACC will meet on the 1st Monday of each month; in a holiday or snow event it will meet the next Monday.",
+   "quote": "pacc will meet the 1st monday of each month. in the event of a holiday or a snow event the committee will meet on the next monday."
+  },
+  {
+   "decision": "J. McLaughlin will retrieve the video of the Municipal Building Design Committee meeting from the chairperson.",
+   "quote": "j.mclaughlin will retrieve the video from the chairperson."
+  },
+  {
+   "decision": "S. Archambault will check the availability of the Sudolnik Room at the Lunenburg Town Library to host meetings.",
+   "quote": "s.archambault will check on the availability of the sudolnik room at the lunenburg town library to host meetings."
+  },
+  {
+   "decision": "S. Archambault will collect and create a PACC contact sheet for committee members.",
+   "quote": "p.lincoln requested the committee create a pacc contact sheet for committee members. s.archambault will collect and create."
+  },
+  {
+   "decision": "The September meeting will be held at 6:00 pm in the Sudolnik Conference Room at the Lunenburg Town Library.",
+   "quote": "next meeting is september, time 6:00 pm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ending balance",
+   "what_was_recorded": "The manager reported the ending balance of the PACC account.",
+   "quote": "11. ending balance $933,828.54",
+   "figures_as_printed": [
+    "$933,828.54"
+   ]
+  },
+  {
+   "topic": "Replacement of Macbooks with Apple computers and hardware",
+   "what_was_recorded": "The committee approved spending up to a stated ceiling to replace current Macbooks.",
+   "quote": "motion p.sarapas, 2nd s.archambault up to $10,000 to purchase apple computer and related hardware to replace current macbooks. (passed)",
+   "figures_as_printed": [
+    "$10,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comments",
+   "resolution": "no comments offered",
+   "quote": "public comments: - none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee comments: air conditioning",
+   "resolution": "motion passed to begin requesting air conditioning",
+   "quote": "motion to have j.mclaughlin begin the process of requesting air conditioning. (p.lincoln, 2nd s.sarapas - passed)",
+   "tags": [
+    "facilities",
+    "air conditioning"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "July 11th minutes approved",
+   "quote": "july 11th minutes approved (p.sarapas, 2nd p.lincoln), passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "Macbook replacement up to $10,000 passed; other items reported",
+   "quote": "motion p.sarapas, 2nd s.archambault up to $10,000 to purchase apple computer and related hardware to replace current macbooks. (passed)",
+   "tags": [
+    "manager report",
+    "equipment",
+    "programming"
+   ]
+  },
+  {
+   "topic": "Future studio space",
+   "resolution": "no report; video of Municipal Building Design Committee meeting to be retrieved",
+   "quote": "j.mclaughlin will retrieve the video from the chairperson.",
+   "tags": [
+    "studio",
+    "recording"
+   ]
+  },
+  {
+   "topic": "PACC FY23 meeting times and dates",
+   "resolution": "schedule set: 1st Monday monthly",
+   "quote": "pacc will meet the 1st monday of each month.",
+   "tags": [
+    "schedule",
+    "meeting location"
+   ]
+  },
+  {
+   "topic": "Miscellaneous: contact sheet",
+   "resolution": "S. Archambault to create contact sheet",
+   "quote": "p.lincoln requested the committee create a pacc contact sheet for committee members.",
+   "tags": [
+    "committee administration"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 3:13 pm",
+   "quote": "(motion - s.archambault, 2nd p.lincoln - passed)",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access TV",
+  "cable",
+  "PACC",
+  "air conditioning",
+  "equipment purchase",
+  "Macbooks",
+  "meeting schedule",
+  "studio",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

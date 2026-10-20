@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-08-02",
  "docid": "5294",
@@ -12,39 +12,538 @@
  },
  "votes": [
   {
-   "motion": "To support the master plan as presented by the Park Commissioners",
+   "motion": "To support the master plan for Marshall Park as presented by the Park Commissioners.",
    "moved_by": "T. Dwyer",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2\"'i: h. sroka to support the master plan as presented by the park commissioners vote: all in favor"
+   "quote": "to support the master plan as presented by the park commissioners vote: all in favor"
   },
   {
-   "motion": "To ratify the Town Manager appointment of Rebecca Manley as Conservation Administrative Assistant",
+   "motion": "To ratify the Town Manager's appointment of Rebecca Manley as Conservation Administrative Assistant.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: l. franco to ratity the town manager appointment of rebecca manley as conservation administrative assistant 2nd: t. alonzo vote: all in favor"
+   "procedural": false,
+   "quote": "to ratity the town manager appointment of rebecca manley as conservation"
   },
   {
-   "motion": "To recommend the board sign the end of the year transfer form for FY22 totaling $2,190.28 as presented in the document by the Town Manager",
+   "motion": "To recommend the board sign the end of year transfer form for FY22 totaling $2,190.28 as presented by the Town Manager.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo 2™:t. dwyer to recommend the board sign the end of the year transfer form for fy22 totaling $2,190.28 as presented in the document by the town manager vote: all in favor"
+   "quote": "to recommend the board sign the end of the year transfer form for fy22 totaling $2,190.28"
   },
   {
-   "motion": "To approve the minutes of June 14, 2022 as written",
+   "motion": "To approve the minutes of June 14, 2022 as written.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: t. alonzo to approve the minutes of june 14, 2022 as written 2\": t. dwyer"
+   "quote": "to approve the minutes of june 14, 2022 as written"
+  },
+  {
+   "motion": "Sign the accounts payable, payroll, payroll deductions and payroll void warrants.",
+   "outcome": "passed 4 in favor, 1 abstention (Franco)",
+   "procedural": false,
+   "quote": "vote: 4 in favor, 1 abstention (franco)"
+  },
+  {
+   "motion": "Enter executive session under the purpose and conditions the Chair declared, concerning ATB Case FY21 Docket No. 342747, Town of Lunenburg v. Alleva, and approval of executive session minutes related to these cases.",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR'd minutes (marked ===OCR macOS Vision===). One warrant vote is recorded (4 in favor, 1 abstention from Franco) but without an explicit motion statement in the minutes, so it is not included in the vote list above.",
- "cost_usd": 0.14282250000000002
+ "dropped_unquoted": 0,
+ "note": "Text is OCR of a scanned document with garbled mover/second labels (e.g. '2\"'I: H. Sroka', '2™:T. Dwyer'); quotes are copied as extracted. The Park Commission presentation sits inside these Select Board minutes; the 'Vote: All in Favor' on the master plan is printed in that section and the extract does not say which body cast it, so it is recorded here as a vote with the printed mover and second. The motion opening the executive-session vote is missing from the extract (page 12 starts mid-sentence), so the motion text is partly reconstructed from the printed purpose, and the roll call is the quoted record. The minutes approving June 14 and the warrant vote print no movers for warrants and no result for the minutes motion. Public commenter 'Mr. Alonzo' shares a surname with a board member and no first name or role is printed for him. Ms. Lemieux's role is not printed in these minutes (her office is inferred from context and not recorded as a role). Ms. Wilson is named only as thanked; presence is not stated. No documents-used list heading is printed; documents are named only in passing.",
+ "cost_usd": 0.02781468,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Ms. Sroka",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Mr. Dwyer",
+   "role": "Select Board member (roll call)",
+   "status": "present",
+   "quote": "ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "Select Board member (roll call)",
+   "status": "present",
+   "quote": "ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "Select Board member (roll call)",
+   "status": "present",
+   "quote": "ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "status": "present",
+   "quote": "ms. lemieux asked the board to ratify this appointment."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "park commissioners present: karin menard, ana lockwood, chris sullivan, patrick hakey"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "park commissioners present: karin menard, ana lockwood, chris sullivan, patrick hakey"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "park commissioners present: karin menard, ana lockwood, chris sullivan, patrick hakey"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "park commissioners present: karin menard, ana lockwood, chris sullivan, patrick hakey"
+  },
+  {
+   "name": "Mr. Pease",
+   "role": "Conservation Commission Chair",
+   "status": "present",
+   "quote": "mr. pease noted this was an update for the cowdry conservation area only."
+  },
+  {
+   "name": "Ms. Wilson",
+   "status": "not stated",
+   "quote": "mr. jeffreys thanked mr. pease for the update and ms. wilson for the fresh eyes."
+  },
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, stated that townsend harbor road and in front of town"
+  },
+  {
+   "name": "Mike Clark",
+   "role": "Chair of the Republican Town Committee",
+   "status": "present",
+   "quote": "mike clark, 275 cross road, chair of the republican town committee, stated they were"
+  },
+  {
+   "name": "Karen Chow",
+   "status": "present",
+   "quote": "karen chow, 53 chestnut street, inquired about how to get a 25 mph speed limit sign placed"
+  },
+  {
+   "name": "Kristen Tuttle",
+   "status": "present",
+   "quote": "kristen tuttle, 25 chestnut street, supported the request as her stone wall has been hit twice this year."
+  },
+  {
+   "name": "Mark Diamond",
+   "status": "present",
+   "quote": "mark diamond, 47 highland street, stated his property abuts the pond and park"
+  },
+  {
+   "name": "Greg Roy",
+   "status": "present",
+   "quote": "greg roy, 105 chestnut street, appreciated all the work the parks commissioners have done on"
+  },
+  {
+   "name": "Diane Haglestein",
+   "status": "present",
+   "quote": "diane haglestein, 64 chestnut street, was in favor of the project as it would get the parking off"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Town Manager will forward the request for a 25 MPH speed limit sign on Chestnut Street to the Police Chief.",
+   "quote": "ms. lemieux will forward this request to the police chief."
+  },
+  {
+   "decision": "The Finance Committee may use Town Counsel's resources for a capital plan bylaw proposal, on the condition that it comes with a proposal for Town Counsel to revise and work with.",
+   "quote": "the finance committee is authorized to utilize resources of town counsel with the understanding that they come with a proposal for town counsel to revise and work with them"
+  },
+  {
+   "decision": "The Unitil streetlight purchase and license agreement item was tabled to the next meeting.",
+   "quote": "this will be tabled until the next meeting as the final draft from unitil has not been received."
+  },
+  {
+   "decision": "The CTA and window replacement question following the APDC ruling will be discussed in detail at the next meeting.",
+   "quote": "this will be discussed in detail next meeting."
+  },
+  {
+   "decision": "Chairman invited Ginny Albertson to attend the 16 August meeting to speak about pollinator habitats around Lunenburg.",
+   "quote": "he invited ginny albertson to attend the meeting on the 16"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park master plan funding from Capital Plan",
+   "what_was_recorded": "The May 2021 Capital Plan included $50k for the Marshall Park Master Plan, of which $36,622.84 had been expended to date.",
+   "figures_as_printed": [
+    "$50k",
+    "$36,622.84"
+   ],
+   "quote": "may 2021 - town meeting approval of capital plan that included $50k for marshall park"
+  },
+  {
+   "topic": "Marshall Park next phase cost",
+   "what_was_recorded": "The amount spent to date is $36,000 and the next phase is $160,000, as the Park Commission stated when asked for numbers.",
+   "figures_as_printed": [
+    "$36,000",
+    "$160,000"
+   ],
+   "quote": "the amount spent to date is $36,000 and the next phase is $160,000"
+  },
+  {
+   "topic": "Marshall Park engineering phase estimate",
+   "what_was_recorded": "A ballpark figure of $150,000 to $200,000 was obtained for the engineering phase.",
+   "figures_as_printed": [
+    "$150,000",
+    "$200,000"
+   ],
+   "quote": "ms. lockwood stated she had gotten a ballpark figure of $150,000 to $200,000 for the engineering phase."
+  },
+  {
+   "topic": "Marshall Park total project estimate",
+   "what_was_recorded": "WOLA gave a total estimate of around $5 million for the project; phasing was said to make costs more manageable.",
+   "figures_as_printed": [
+    "$5 million"
+   ],
+   "quote": "wola had given us a total estimate of around $5 million for the project."
+  },
+  {
+   "topic": "Green Communities Competitive Grant award",
+   "what_was_recorded": "The town was awarded the full request under its Competitive Grant application, broken down into streetlight conversion, a hybrid police cruiser, and administrative assistance.",
+   "figures_as_printed": [
+    "$187,140",
+    "$172,140",
+    "$5,000",
+    "$10,000"
+   ],
+   "quote": "i received notification that we were awarded the full request of $187,140"
+  },
+  {
+   "topic": "Conservation boundary survey cost",
+   "what_was_recorded": "The Select Board approved funding a survey of the Cowdry conservation boundary that cost eight thousand dollars.",
+   "figures_as_printed": [
+    "eight thousand dollars"
+   ],
+   "quote": "the select board approved funding the survey and it cost eight thousand dollars."
+  },
+  {
+   "topic": "Accounts payable and payroll warrants signed",
+   "what_was_recorded": "The board signed an accounts payable warrant, a payroll warrant, a payroll deductions warrant and a payroll void warrant.",
+   "figures_as_printed": [
+    "$603,935.78",
+    "$742,833.78",
+    "$26,822.22",
+    "-$1,230"
+   ],
+   "quote": "the board signed an accounts payable warrant in the amount of $603,935.78; a payroll warrant"
+  },
+  {
+   "topic": "FY22 year-end transfer form",
+   "what_was_recorded": "The board recommended signing the FY22 end-of-year transfer form totaling $2,190.28 (Conservation, Weights & Measures and Board of Health adjustments).",
+   "figures_as_printed": [
+    "$2,190.28",
+    "$1,150.00",
+    "$581.42",
+    "$436.88",
+    "$21.98"
+   ],
+   "quote": "to recommend the board sign the end of the year transfer form for fy22 totaling $2,190.28"
+  },
+  {
+   "topic": "Co-response Mental Health Clinician cost (ARPA)",
+   "what_was_recorded": "The Police Chief received a final cost for a Co-response Mental Health Clinician and related costs, shared with Lancaster, to be submitted as an ARPA funds request; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the chief received the final cost for a co-response mental health clinician and related costs that would be shared with the town of lancaster."
+  },
+  {
+   "topic": "Streetlight purchase from Unitil",
+   "what_was_recorded": "A purchase and sales agreement for streetlights from Unitil was tabled; no price is printed.",
+   "figures_as_printed": [],
+   "quote": "this will be tabled until the next meeting as the final draft from unitil has not been received."
+  },
+  {
+   "topic": "Elder Affairs Formula grant funds",
+   "what_was_recorded": "Formula grant funding information is not yet available; the Personnel Committee's new pay schedule affected the budget with a new hire. No figure printed.",
+   "figures_as_printed": [],
+   "quote": "ms. sroka, regarding the elder affairs formula grant, stated the funds information is not"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY22 end-of-year transfers: Conservation Commission $1,150.00 and $581.42 (Conservation Administrator Payroll), Inspector of Weights & Measures $436.88 (supplies), Board of Health $21.98 (BOH Admin. Asst. Payroll); board recommended signing the form.",
+   "amount_as_printed": "$2,190.28",
+   "outcome": "passed (recommended to sign, all in favor)",
+   "quote": "to recommend the board sign the end of the year transfer form for fy22 totaling $2,190.28"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Comeau family and ACO kennel incident",
+   "speaker": "Mr. Alonzo",
+   "quote": "mr. alonzo wished his best to the comeau family following the horrific dog incident"
+  },
+  {
+   "topic": "Line painting on Townsend Harbor Road and in front of Town Hall",
+   "speaker": "Dave MacDonald",
+   "quote": "dave macdonald, 155 island road, stated that townsend harbor road and in front of town"
+  },
+  {
+   "topic": "Signature drives and candidate ballot access",
+   "speaker": "Mike Clark",
+   "stated_role": "Chair of the Republican Town Committee",
+   "quote": "mike clark, 275 cross road, chair of the republican town committee, stated they were"
+  },
+  {
+   "topic": "25 MPH speed limit sign on Chestnut Street",
+   "speaker": "Karen Chow",
+   "quote": "karen chow, 53 chestnut street, inquired about how to get a 25 mph speed limit sign placed"
+  },
+  {
+   "topic": "25 MPH speed limit sign on Chestnut Street",
+   "speaker": "Kristen Tuttle",
+   "quote": "kristen tuttle, 25 chestnut street, supported the request as her stone wall has been hit twice this year."
+  },
+  {
+   "topic": "Marshall Park: pond and lily pads",
+   "speaker": "Mark Diamond",
+   "quote": "mark diamond, 47 highland street, stated his property abuts the pond and park"
+  },
+  {
+   "topic": "Marshall Park: support for revitalization",
+   "speaker": "Greg Roy",
+   "quote": "greg roy, 105 chestnut street, appreciated all the work the parks commissioners have done on"
+  },
+  {
+   "topic": "Marshall Park: volunteer help and support",
+   "speaker": "Dave MacDonald",
+   "quote": "dave macdonald, 155 island road, offered any help he and his wife could offer, as he totally"
+  },
+  {
+   "topic": "Marshall Park: parking on Chestnut Street",
+   "speaker": "Diane Haglestein",
+   "quote": "diane haglestein, 64 chestnut street, was in favor of the project as it would get the parking off"
+  },
+  {
+   "topic": "Marshall Park: funding sources",
+   "speaker": "Karen Chow",
+   "quote": "karen chow thanked the commission for their work and inquired about funding sources."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, public comment and announcements",
+   "resolution": "no action",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Marshall Park master plan (Park Commission presentation)",
+   "resolution": "master plan supported, all in favor",
+   "quote": "to support the master plan as presented by the park commissioners vote: all in favor",
+   "tags": [
+    "parks",
+    "marshall park"
+   ]
+  },
+  {
+   "topic": "Cowdry Conservation land encroachments update",
+   "resolution": "no action (update)",
+   "quote": "mr. pease noted this was an update for the cowdry conservation area only.",
+   "tags": [
+    "conservation",
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Communications from other boards: library trust fund legislation and Capital Plan bylaw",
+   "resolution": "discussed; guidance given to Town Manager, no vote",
+   "quote": "mr. jeffreys was opposed to a bylaw because he did not think it was in the best interest",
+   "tags": [
+    "capital plan",
+    "bylaw",
+    "library trust",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Ratify Conservation administrative assistant appointment",
+   "resolution": "ratified",
+   "quote": "to ratity the town manager appointment of rebecca manley as conservation",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies and department updates",
+   "resolution": "no action",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "vacancies",
+    "departments",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Old business: Unitil streetlight purchase agreement",
+   "resolution": "tabled to next meeting",
+   "quote": "this will be tabled until the next meeting as the final draft from unitil has not been received.",
+   "tags": [
+    "streetlights",
+    "unitil"
+   ]
+  },
+  {
+   "topic": "Current business: FY22 end-of-year transfer form",
+   "resolution": "recommended for signing, all in favor",
+   "quote": "to recommend the board sign the end of the year transfer form for fy22 totaling $2,190.28",
+   "tags": [
+    "transfers",
+    "fy22"
+   ]
+  },
+  {
+   "topic": "Approve minutes of June 14, 2022",
+   "resolution": "motion made; result not printed",
+   "quote": "to approve the minutes of june 14, 2022 as written",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "resolution": "signed, 4 in favor, 1 abstention",
+   "quote": "vote: 4 in favor, 1 abstention (franco)",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action items and committee reports",
+   "resolution": "reports only",
+   "quote": "mr. dwyer reported the storm water task force meeting had to be rescheduled due to an",
+   "tags": [
+    "committee reports",
+    "storm water"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and schedule",
+   "resolution": "no action",
+   "quote": "mr. jeffreys stated this board's next meetings are august 9, 16 and 23.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; meeting adjourned 9:13 P.M.",
+   "quote": "ms. sroka-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye, mr. jeffreys-aye",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Capital Plan (Town Meeting approval, May 2021)",
+   "where": "text",
+   "quote": "may 2021 - town meeting approval of capital plan that included $50k for marshall park"
+  },
+  {
+   "name": "Marshall Park master plan (WOLA design)",
+   "where": "text",
+   "quote": "to support the master plan as presented by the park commissioners"
+  },
+  {
+   "name": "Initial Survey (July 2021, 433 responses)",
+   "where": "text",
+   "quote": "initial survey: july 2021-433 responses"
+  },
+  {
+   "name": "Feedback Survey (January 2022, 121 responses)",
+   "where": "text",
+   "quote": "feedback survey: january 2022 - 121 responses"
+  },
+  {
+   "name": "Skate Park site engineering and geotechnical report",
+   "where": "text",
+   "quote": "the skate park group just completed a site engineering and geotechnical report."
+  },
+  {
+   "name": "Intersection Design Report and 10% design concepts plans (Lunenburg Central project)",
+   "where": "text",
+   "quote": "the intersection design report and 10% design concepts plans that were required for"
+  },
+  {
+   "name": "Competitive Grant application (submitted April 2022)",
+   "where": "text",
+   "quote": "based on the competitive grant application that i submitted in april 2022."
+  },
+  {
+   "name": "McCarty Engineering scope of work proposal (Flat Hill Road drainage study)",
+   "where": "text",
+   "quote": "moving forward with the original scope of work proposal from mccarty engineering"
+  },
+  {
+   "name": "End of Year Transfer Form for FY22",
+   "where": "text",
+   "quote": "sign end of year transfer form for fy22 totaling $2,190.28"
+  },
+  {
+   "name": "Purchase & Sales Agreement and License Agreement with Unitil",
+   "where": "text",
+   "quote": "vote to sign purchase & sales agreement and license agreement with unitil for"
+  },
+  {
+   "name": "Proposed bylaw change to amend the Capital Plan (Finance Committee request)",
+   "where": "text",
+   "quote": "a proposed bylaw change that would ensure town meeting voters can amend the capital plan"
+  },
+  {
+   "name": "CTA resubmission (APDC ruling)",
+   "where": "text",
+   "quote": "i'm looking for guidance from the board on whether we want to resubmit a new cta without the windows"
+  }
+ ],
+ "tags": [
+  "Marshall Park",
+  "Parks Commission",
+  "Conservation encroachment",
+  "Capital Plan bylaw",
+  "Green Communities grant",
+  "streetlights Unitil",
+  "FY22 transfers",
+  "warrants",
+  "public comment",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

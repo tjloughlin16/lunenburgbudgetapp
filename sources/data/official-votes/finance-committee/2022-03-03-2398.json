@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-03-03",
  "docid": "2398",
@@ -12,23 +12,252 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from meetings held on February 17 and February 24, 2022",
+   "motion": "Approve the minutes of the February 17 and February 24, 2022 meetings.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Simeone",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. watters motioned to approve the minutes from meetings held on february 17, and february 24, 2022, mr. simeone seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:20 p.m.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Simeone",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "mr. watters motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously."
+   "quote": "at 9:20 p.m. mr. watters motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR via macOS Vision; full text readable",
- "cost_usd": 0.0863705
+ "note": "OCR text from a scanned document (macOS Vision), so the quotes are read from the OCR output and may carry OCR artifacts; the source itself prints 'Town Manger' and '$419, 940' with a space. Votes are recorded only as 'motion carried unanimously' with no vote count printed. Attendance is not taken by roll call; committee members' presence is inferred from the chair calling the meeting to order and from their recorded motions and seconds.",
+ "cost_usd": 0.01570668,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Mr. Beardmore",
+   "role": "Chair",
+   "status": "present",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Mr. Watters",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "at 9:20 p.m. mr. watters motioned to adjourn, mr. simeone seconded."
+  },
+  {
+   "name": "Mr. Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "mr. watters motioned to adjourn, mr. simeone seconded."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg police chief thomas gammel, public safety coordinator amanda moore, lunenburg fire chief patrick sullivan"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Lunenburg Police Chief",
+   "status": "present",
+   "quote": "chief gammel and public safety coordinator amanda moore presented the police department's budget."
+  },
+  {
+   "name": "Amanda Moore",
+   "role": "Public Safety Coordinator",
+   "status": "present",
+   "quote": "chief gammel and public safety coordinator amanda moore presented the police department's budget."
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Lunenburg Fire Chief",
+   "status": "present",
+   "quote": "fire department: chief sullivan is looking to hire an additional career"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to present an updated capital plan at the March 10, 2022 meeting; committee to discuss a letter for the Annual Town Meeting Warrant at a future meeting.",
+   "quote": "town manager to present updated capital plan at next meeting march 10. committee will discuss letter to be written for annual town meeting warrant."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Monty Tech preliminary FY2023 budget",
+   "what_was_recorded": "Monty Tech distributed its preliminary FY2023 budget, about $2,000 different from the Town Manager's preliminary budget.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "monty tech has distributed their preliminary budget for fy2023, and there is about a $2,000 difference from the town manger's preliminary budget."
+  },
+  {
+   "topic": "Chapter 90 reimbursements",
+   "what_was_recorded": "Chapter 90 funds to be reimbursed were reported as totalling a stated amount.",
+   "figures_as_printed": [
+    "$419, 940"
+   ],
+   "quote": "chapter 90 funds to be reimbursed will total $419, 940."
+  },
+  {
+   "topic": "Nashoba Valley Regional Dispatch budget",
+   "what_was_recorded": "The regional dispatch budget came in below the Town Manager's preliminary budget by a stated amount.",
+   "figures_as_printed": [
+    "$204,606",
+    "$8,519"
+   ],
+   "quote": "the nashoba valley regional dispatch budget has come in at $204,606, which is $8,519 less than the town manager's preliminary budget."
+  },
+  {
+   "topic": "Police department requests (motorcycle lease and K9 officer)",
+   "what_was_recorded": "Police Chief presented a requested increase for a motorcycle lease and a new K9 officer.",
+   "figures_as_printed": [
+    "$5,000",
+    "$8,000"
+   ],
+   "quote": "including a $5,000 increase to lease a motorcycle for the force, and $8,000 for a new k9 officer."
+  },
+  {
+   "topic": "Police part-time clerical position",
+   "what_was_recorded": "Police requested a part-time clerical employee; the FY23 request lists a half-year salary for the position.",
+   "figures_as_printed": [
+    "$8,062"
+   ],
+   "quote": "the fy23 request lists a ½ year salary of $8,062 for the position."
+  },
+  {
+   "topic": "Fire department salaries",
+   "what_was_recorded": "Fire Chief reported salaries for current and anticipated positions and salary increases totalling a stated amount.",
+   "figures_as_printed": [
+    "$1,106,102"
+   ],
+   "quote": "salaries for current and anticipated positions and salary increases come out to $1,106,102."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "mr. beardmore called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "none",
+   "quote": "3. announcements: none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "quote": "4. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "informational",
+   "quote": "mr. beardmore informed the committee that he has accepted an invitation to appear on a cable access show in fitchburg",
+   "tags": [
+    "chair"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "informational",
+   "quote": "chapter 90 funds to be reimbursed will total $419, 940.",
+   "tags": [
+    "Monty Tech",
+    "Chapter 90",
+    "regional dispatch",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Police Department budget presentation",
+   "resolution": "presented",
+   "quote": "chief gammel and public safety coordinator amanda moore presented the police department's budget.",
+   "tags": [
+    "police",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Fire Department budget presentation",
+   "resolution": "presented",
+   "quote": "chief sullivan is looking to hire an additional career",
+   "tags": [
+    "fire",
+    "budget",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "mr. watters motioned to approve the minutes from meetings held on february 17, and february 24, 2022",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "none",
+   "quote": "9. committee reports none",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "directed",
+   "quote": "town manager to present updated capital plan at next meeting march 10.",
+   "tags": [
+    "capital plan",
+    "Annual Town Meeting"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled",
+   "quote": "12. next meetings march 10, 2022 monty tech preliminary budget presentation, dpw budget presentation.",
+   "tags": [
+    "Monty Tech",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:20 p.m.",
+   "quote": "at 9:20 p.m. mr. watters motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "finance committee",
+  "FY2023 budget",
+  "police budget",
+  "fire budget",
+  "Monty Tech",
+  "Chapter 90",
+  "regional dispatch",
+  "capital plan",
+  "Annual Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

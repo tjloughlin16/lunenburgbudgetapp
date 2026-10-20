@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2022-07-11",
  "docid": "4720",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve July 11th minutes",
+   "motion": "Approve the July 11th minutes.",
    "moved_by": "P.Sarapas",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "july 11th minutes approved (p.sarapas, 2nd p.lincoln), passed"
   },
   {
-   "motion": "allow Secretary to cast vote of FY23 slate of officers",
+   "motion": "Allow the Secretary to cast one vote for the FY23 slate of officers (Steve Walker Chair, Pete Lincoln Vice Chair, Steve Archambault Secretary).",
    "moved_by": "S.Walker",
    "seconded_by": "P.Sarapas",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion to allow secretary to cast vote of fy23 slate of officers (s.walker, 2nd p.sarapas - passed)"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "S.Archambault",
    "seconded_by": "P.Sarapas",
    "outcome": "passed",
@@ -36,7 +36,161 @@
    "quote": "(motion - s.archambault, 2nd p.sarapas - passed)"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0884475
+ "dropped_unquoted": 1,
+ "note": "Flat text with no vote tallies: each motion records only names and the word passed, so counts are not stated. The board is written PACC in the header and PAAC in the body; both are kept as printed. Pete Lincoln (officer slate) and Peter Lincoln (roll call) appear to be the same member, not confirmed by the minutes. The 'Communications' heading is treated as a received-correspondence list, which is a judgment call. Minutes name other people (Dan Seminatore, Kayla, General Cornum) only as work items, not as attendees, so they are not listed.",
+ "cost_usd": 0.01525398,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, steve archambault, paul sarapas,"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, steve archambault, paul sarapas,"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, steve archambault, paul sarapas,"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "b. faith beall, peter lincoln"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "b. faith beall, peter lincoln"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "present",
+   "quote": "manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting is set for August 1st at 2:00 pm.",
+   "quote": "next meeting is august 1st, time 2:00 pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Ending balance",
+   "what_was_recorded": "The manager's update reports an ending balance.",
+   "figures_as_printed": [
+    "$935,581.73"
+   ],
+   "quote": "ending balance $935,581.73"
+  },
+  {
+   "topic": "Outstanding June expenses and interest",
+   "what_was_recorded": "Outstanding expenses and interest for June are waiting to be processed; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "outstanding expenses and interest for june waiting to be processed"
+  },
+  {
+   "topic": "FY23 financial spreadsheets",
+   "what_was_recorded": "The manager is working on FY23 financial spreadsheets and line items POs; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "working on fy23 financial spreadsheets and line items pos"
+  },
+  {
+   "topic": "MacBook and camera purchase",
+   "what_was_recorded": "The manager is researching a MacBook and camera purchase; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "researching macbook and camera purchase"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Committee comments and communications",
+   "resolution": "no action",
+   "tags": [
+    "communications",
+    "ACE program",
+    "school"
+   ],
+   "quote": "p.sarapas highlighted letter from school and school committee thanking paac for a positive ace program experience."
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "july 11th minutes approved (p.sarapas, 2nd p.lincoln), passed"
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received",
+   "tags": [
+    "studio operations",
+    "staffing",
+    "programming",
+    "budget"
+   ],
+   "quote": "manager's update: 1. working to get studio keys for videographers"
+  },
+  {
+   "topic": "Future studio space",
+   "resolution": "discussed, no action",
+   "tags": [
+    "studio space",
+    "governance"
+   ],
+   "quote": "staying under the \"town\" umbrella was the best option at that time."
+  },
+  {
+   "topic": "Election of FY23 officers",
+   "resolution": "approved",
+   "tags": [
+    "officers",
+    "elections"
+   ],
+   "quote": "election of fy23 officers: • motion to allow secretary to cast vote of fy23 slate of officers"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from school and school committee thanking PAAC for a positive ACE program experience (undated)",
+   "where": "list",
+   "quote": "received a letter from school and school committee thanking paac for a positive ace program experience."
+  },
+  {
+   "name": "PAAC PowerPoint presentation",
+   "where": "text",
+   "quote": "worked on paac powerpooint presentation"
+  }
+ ],
+ "tags": [
+  "public access TV",
+  "Lunenburg",
+  "PACC",
+  "studio operations",
+  "officers election",
+  "budget balance",
+  "ACE program",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "communications"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

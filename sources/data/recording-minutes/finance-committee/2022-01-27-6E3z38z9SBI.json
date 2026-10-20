@@ -1,0 +1,582 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2022-01-27",
+ "video_id": "6E3z38z9SBI",
+ "video_url": "https://www.youtube.com/watch?v=6E3z38z9SBI",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2022-01-27-6E3z38z9SBI.json",
+  "sha256": "0c56e91cadc92a320e8aaf6d2032aedafb988acb0577738d5917cce2f9a805a1",
+  "caption_lines": 491,
+  "segments": 4456
+ },
+ "recording": {
+  "duration_s": 10273,
+  "duration": "2:51",
+  "spoken_chars": 117928,
+  "words_approx": 19654
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_01272022-2052",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2022-01-27-agenda-2052.txt",
+   "path": "sources/meetings/finance-committee/2022-01-27-agenda-2052.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01272022-2052",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2022-01-27-minutes-2052.txt",
+   "path": "sources/meetings/finance-committee/2022-01-27-minutes-2052.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T23:11:31Z",
+  "cost_usd": 0.49641389999999996
+ },
+ "minutes": {
+  "headline": "Finance Committee appointed its chair to the municipal building design committee, 4-1, after hearing capital plan and forecast.",
+  "summary": "The committee heard the town manager present the FY23 capital plan, with debate over prioritization (primary school air conditioning, vehicles, facilities), and the five-year financial forecast showing deficits in later years. The Governor's cherry sheet showed a large Chapter 70 increase not yet reflected in the forecast. The committee voted by roll call to appoint its chair to the municipal building design committee.",
+  "attendees": [
+   {
+    "name_as_heard": "Peter",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Gray",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Baelish",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Waters",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Simeone",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Pacios",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "finance director"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 260,
+    "topic": "School Committee chair objected to the low priority of primary school air conditioning in the capital plan and asked about ARPA funds.",
+    "stated_role": "chair of the school committee",
+    "speaker_as_heard": "Carol Shambo"
+   },
+   {
+    "t": 9993,
+    "topic": "Resident worried about projected deficits and school staffing needs, urged scrutiny of expenses, said he would not support an override.",
+    "stated_role": "resident"
+   },
+   {
+    "t": 10141,
+    "topic": "Question to the town manager about the snow removal budget."
+   }
+  ],
+  "tags": [
+   "budget",
+   "budget-fy27",
+   "capital",
+   "chapter-70",
+   "debt",
+   "facilities",
+   "free-cash",
+   "health-insurance",
+   "override",
+   "primary-school",
+   "public-comment",
+   "staffing",
+   "state-aid",
+   "town-meeting",
+   "turkey-hill"
+  ],
+  "votes": [
+   {
+    "t": 9519,
+    "motion": "Appoint the chair to represent the Finance Committee on the municipal building design committee.",
+    "outcome": "passed (roll call: Gray yes, Baelish yes, Waters yes, Simeone no, chair yes; two members absent)",
+    "procedural": false
+   },
+   {
+    "t": 10265,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2511,
+    "topic": "FY23 capital plan",
+    "what_was_said": "Thirty requests were totaled; twenty were recommended for funding.",
+    "figures_as_heard": [
+     "4 million 43 049",
+     "1 million 740 1049 dollars"
+    ]
+   },
+   {
+    "t": 3611,
+    "topic": "Capital spending averages and 10-year plan",
+    "what_was_said": "Five- and three-year average spending compared with a ten-year request total; Turkey Hill and TC Passios would likely be debt exclusions.",
+    "figures_as_heard": [
+     "1.3 million",
+     "1.47 million",
+     "28.9 million",
+     "14.7 million",
+     "4.5 million"
+    ]
+   },
+   {
+    "t": 4732,
+    "topic": "Capital funding sources",
+    "what_was_said": "Tax revenue, free cash and unexpended capital fund the FY23 plan; free cash is assumed lower afterward.",
+    "figures_as_heard": [
+     "700 000",
+     "a million from free cash",
+     "500 000"
+    ]
+   },
+   {
+    "t": 1138,
+    "topic": "Governor's cherry sheet",
+    "what_was_said": "Governor's proposal is higher than FY22, with a large Chapter 70 increase.",
+    "figures_as_heard": [
+     "983 000",
+     "11 increase"
+    ]
+   },
+   {
+    "t": 6886,
+    "topic": "Free cash in forecast",
+    "what_was_said": "Forecast uses free cash for capital and reserves in FY23 only.",
+    "figures_as_heard": [
+     "one million six hundred and sixteen thousand six hundred ninety two dollars",
+     "1 million fifty thousand two hundred and seventy dollars"
+    ]
+   },
+   {
+    "t": 7806,
+    "topic": "School long-term staffing plan increments",
+    "what_was_said": "Incremental costs of the school staffing plan listed per year.",
+    "figures_as_heard": [
+     "365 521",
+     "281 785",
+     "987 082",
+     "415 thousand eight hundred four dollars",
+     "123 429"
+    ]
+   },
+   {
+    "t": 888,
+    "topic": "Street light purchase",
+    "what_was_said": "Town voted a price for buying the streetlights; the utility has not given a breakdown of its cost.",
+    "figures_as_heard": [
+     "89 000",
+     "91 000"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 10224,
+    "decision": "Chair to consider reaching out to the capital planning committee for a possible joint meeting; not yet decided."
+   },
+   {
+    "t": 10161,
+    "decision": "Town manager to ask DPW about the snow budget and update the committee."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 23,
+    "t_end": 260,
+    "topic": "Opening, preamble, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 260,
+    "t_end": 590,
+    "topic": "Public comment and chair remarks on capital plan",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "capital",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 593,
+    "t_end": 1620,
+    "topic": "Town manager report: streetlights, cherry sheet, EPA, ARPA",
+    "resolution": "informational",
+    "tags": [
+     "state-aid",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1616,
+    "t_end": 2140,
+    "topic": "Legislative priorities",
+    "resolution": "informational",
+    "tags": [
+     "housing"
+    ]
+   },
+   {
+    "t_start": 2140,
+    "t_end": 6305,
+    "topic": "FY23 capital plan presentation and discussion",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "facilities",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 6305,
+    "t_end": 8900,
+    "topic": "Fiscal forecast",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "state-aid",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 8915,
+    "t_end": 9826,
+    "topic": "Municipal building design committee representative",
+    "resolution": "voted",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 9826,
+    "t_end": 10265,
+    "topic": "Committee reports, public comment, future meetings",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Several capital project figures are garbled.",
+   "Vote on adjournment count not stated."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 5633,
+    "about": "Chair objected to prioritization of vehicles and equipment over primary school air conditioning.",
+    "sides": "chair versus the capital plan prioritization",
+    "words_as_heard": "we're not judging a cheerleading competition we're judging real money here",
+    "kind": "members disagree"
+   },
+   {
+    "t": 10013,
+    "about": "Resident criticized projected deficits and spending needs.",
+    "sides": "a resident against spending plans",
+    "words_as_heard": "i will be damned if i will approve and go along with an override",
+    "kind": "public criticism"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2197,
+    "name_as_heard": "capital plan PowerPoint",
+    "kind": "presentation",
+    "words_as_heard": "we've got your powerpoint"
+   },
+   {
+    "t": 4587,
+    "name_as_heard": "Collins Center rating file",
+    "kind": "spreadsheet",
+    "words_as_heard": "that document that i received from from mr lightning or heather"
+   },
+   {
+    "t": 6364,
+    "name_as_heard": "financial forecast",
+    "kind": "report",
+    "words_as_heard": "what is a financial forecast"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "ten-year-capital-plan",
+    "title": "Ten-year capital plan",
+    "question": "What does the FY23 capital plan fund and what is left unfunded over ten years?",
+    "t": 2511,
+    "words_as_heard": "we will not be funding approximately 14.28 million to 15.98 million in capital requests",
+    "data_in_play": [
+     "4 million 43 049",
+     "1 million 740 1049 dollars",
+     "28.9 million"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "primary-school-air-conditioning",
+    "title": "Primary school air conditioning",
+    "question": "What would air conditioning at the primary school cost and where could it be funded?",
+    "t": 260,
+    "words_as_heard": "the air conditioning project at the primary school",
+    "data_in_play": [
+     "232 800"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "street-light-billing-reconciliation",
+    "title": "Streetlight purchase price",
+    "question": "What is the town paying to buy the streetlights and why did the utility's price change?",
+    "t": 824,
+    "words_as_heard": "they're not providing a complete breakdown",
+    "data_in_play": [
+     "89 000",
+     "91 000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee voted 4-1 by roll call to appoint its chair as its representative on the municipal building design committee.",
+    "t": 9519
+   },
+   {
+    "line": "The town manager presented the FY23 capital plan: thirty requests were totaled and twenty were recommended for funding.",
+    "t": 2511
+   },
+   {
+    "line": "The five-year forecast shows deficits in later years; the Governor's cherry sheet has a large Chapter 70 increase that the forecast does not yet reflect.",
+    "t": 1138
+   },
+   {
+    "line": "Members debated capital priorities, including primary school air conditioning, after the School Committee chair objected to its low ranking and asked about ARPA funds.",
+    "t": 260
+   },
+   {
+    "line": "The town manager is to ask DPW about the snow budget, and the chair may seek a joint meeting with the capital planning committee; neither is decided.",
+    "t": 10161
+   }
+  ],
+  "why_it_matters": [
+   "The capital plan, funded from tax revenue, free cash and unexpended capital, decides which vehicles, buildings and school projects get money next year, and some later projects would likely come to voters as debt exclusions.",
+   "The forecast leaves out the larger state school aid in the Governor's proposal, so the later-year deficits it shows could change once that aid is counted, and that bears on whether an override question is put to voters."
+  ],
+  "watch_next": [
+   "The town manager's update on the snow removal budget from DPW.",
+   "Whether the chair arranges a joint meeting with the capital planning committee."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T23:11:40Z",
+   "cost_usd": 0.2259557
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01272022-2052",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2022-01-27-minutes-2052.txt",
+   "path": "sources/meetings/finance-committee/2022-01-27-minutes-2052.pdf"
+  },
+  "official_sha256": "ef3bfd251a50c5aa796405107143765472aa487c759a82bc21f7fce689ea0671",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the one non-procedural vote (4-1 appointing the chair to the Municipal Building Design Committee) and on the cherry sheet figures. Ours carries many capital and staffing figures and two follow-ups that the official minutes lack, and the official minutes carry three decisions that ours lack. The thing to check is how many members were present: ours says two were absent, while the official minutes list six present, one of them by Zoom for the first hour only.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 8,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote appointing chair to Municipal Building Design Committee",
+    "ours": "Appoint the chair to represent the Finance Committee on the municipal building design committee. — passed (roll call: Gray yes, Baelish yes, Waters yes, Simeone no, chair yes; two members absent)",
+    "official": "mr. balish moved to appoint mr. beardmore to represent the finance committee on the municipal building design committee, mr. gray seconded. on vote, motion passes 4-1.",
+    "note": "Both record the motion passing 4-1; our roll call (four yes, Simeone no) is consistent with that tally.",
+    "t": 9519
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY23 capital requests total",
+    "ours": "FY23 capital plan: 4 million 43 049",
+    "official": "the remaining 30 capital requests total $4,043,049 for fy 2023",
+    "official_reading": "$4,043,049",
+    "note": "Captions split the digits of the same total.",
+    "t": 2511
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Second FY23 capital plan figure",
+    "ours": "1 million 740 1049 dollars",
+    "official": "",
+    "note": "This figure has no counterpart in the official minutes; the digits are also garbled, so check the recording near this point.",
+    "t": 2511
+   },
+   {
+    "kind": "agree",
+    "about": "Governor's cherry sheet state aid",
+    "ours": "Governor's cherry sheet: 983 000, 11 increase",
+    "official": "governor baker's proposal on the cherry sheet, which came in at $983,000 more from state aid, including an 11 percent increase in chapter 70 funds.",
+    "note": "Same $983,000 increase and 11 percent figure.",
+    "t": 1138
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital spending averages and 10-year plan",
+    "ours": "Capital spending averages and 10-year plan: 1.3 million, 1.47 million, 28.9 million, 14.7 million, 4.5 million",
+    "official": "",
+    "note": "The official minutes record none of these capital plan figures.",
+    "t": 3611
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital funding sources",
+    "ours": "Capital funding sources: 700 000, a million from free cash, 500 000",
+    "official": "",
+    "note": "The official minutes print no capital funding source amounts.",
+    "t": 4732
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Free cash in forecast",
+    "ours": "Free cash in forecast: one million six hundred and sixteen thousand six hundred ninety two dollars, 1 million fifty thousand two hundred and seventy dollars",
+    "official": "",
+    "note": "The official minutes have no free cash figures.",
+    "t": 6886
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School long-term staffing plan increments",
+    "ours": "School long-term staffing plan increments: 365 521, 281 785, 987 082, 415 thousand eight hundred four dollars, 123 429",
+    "official": "",
+    "note": "The official minutes mention the staffing plan funding expenses once grants end, but print no amounts.",
+    "t": 7806
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Street light purchase",
+    "ours": "Street light purchase: 89 000, 91 000",
+    "official": "",
+    "note": "The official minutes do not mention the street light purchase.",
+    "t": 888
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair to consider joint meeting with capital planning committee",
+    "ours": "Chair to consider reaching out to the capital planning committee for a possible joint meeting; not yet decided.",
+    "official": "",
+    "note": "Not in the official minutes; ours records it as undecided.",
+    "t": 10224
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager to ask DPW about snow budget",
+    "ours": "Town manager to ask DPW about the snow budget and update the committee.",
+    "official": "",
+    "note": "The official minutes do not mention the snow budget follow-up.",
+    "t": 10161
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chapter 40B legislative priority",
+    "ours": "",
+    "official": "the committee agreed to include 40b on their list of priorities as well as possible state aid or grant opportunities for 30 school st.",
+    "note": "A decision in the official minutes that our minutes do not record; check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "More proactive financial approach on the design committee",
+    "ours": "",
+    "official": "and decided to bring a more proactive financial approach with the new charge.",
+    "note": "Decision recorded only in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Department heads to present budgets",
+    "ours": "",
+    "official": "items for future meetings department heads will present their budgets",
+    "note": "Future agenda item that only the official minutes record.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Members present or absent",
+    "ours": "two members absent (roll call lists Gray, Baelish, Waters, Simeone and chair); attendees list Mr. Pacios as a member",
+    "official": "present: chairperson peter beardmore, jay simeone, evan watters, tom balish, tom gray, dave passios",
+    "note": "Official lists six members present, one by Zoom for the first hour only. Check whether Passios had left by the vote at about t=9519, and whether two members were really absent.",
+    "t": 9519
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name Pacios",
+    "ours": "Mr. Pacios (member)",
+    "official": "tom gray, dave passios via zoom (for first hour of meeting)",
+    "official_reading": "Dave Passios",
+    "note": "Misheard surname of the same member.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Karen's title",
+    "ours": "Karen (finance director)",
+    "official": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault",
+    "note": "Ours calls Karen finance director and the official minutes call her town accountant. Check which title is correct.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Guest Carol Archambault, School Committee chair",
+    "ours": "",
+    "official": "guests: town manager heather lemieux, town accountant karen brochu, school committee chairperson carol archambault",
+    "note": "Our attendee list omits Ms. Archambault and her public comment on the FY23 capital plan.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T23:12:57Z",
+   "cost_usd": 0.2552977
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-02-22",
  "docid": "5727",
@@ -12,63 +12,441 @@
  },
  "votes": [
   {
-   "motion": "Accept an 8% increase to the sewer rate",
+   "motion": "Accept the 8% rate increase in the FY23 draft sewer budget.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion: john r. second: brett r. to accept the 8% increase."
   },
   {
-   "motion": "Drop annual grease trap fees for clients in compliance for FY23",
+   "motion": "Drop the annual grease trap permit fees for accounts in compliance for FY23.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion: john r. second: brett r. to drop the annual grease trap fees for those clients that are in compliance for fy23."
   },
   {
-   "motion": "Charge non-compliant clients $350 for internal and $650 for external grease traps per Lunenburg Grease Trap Regulations for FY23",
+   "motion": "Charge non-compliant accounts $350 for internal grease traps and $650 for external grease traps for FY23, per the Lunenburg Grease Trap Regulations (as amended).",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. for those clients who are not in compliance, the fee will be $350 for internal grease traps and $650 for external grease traps."
+   "quote": "for those clients who are not in compliance, per the lunenburg grease trap regulations, the fee will be"
   },
   {
-   "motion": "Accept all policies except for Change of Specs and Grease Trap Policy",
+   "motion": "Accept all the policies except the Change of Specs and the Grease Trap Policy.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion: john r. second: brett r. to accept all the policies except for the change of specs and the grease trap policy."
   },
   {
-   "motion": "Vote on bringing all 4 bylaw categories as discussed to Counsel",
+   "motion": "Bring all 4 by-law categories discussed to Counsel (as amended by Brett).",
    "moved_by": "Brett R.",
    "seconded_by": "John R.",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion: brett r. second: john r. to vote on all 4 categories as discussed."
   },
   {
-   "motion": "Approve the 3 categories and go forward",
+   "motion": "Approve the 3 categories (Fitchburg Chapter 147, connection policy, grease trap annual permit fee for non-compliant) and move them forward.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": false,
    "quote": "motion: john r. second: brett r. to approve the 3 categories and go forward."
   },
   {
-   "motion": "Adjourn at 7:19 pm",
+   "motion": "Adjourn the meeting at 7:19 pm.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
-   "outcome": "passed",
+   "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: john r. to adjourn at 7:19 pm. second: brett r."
+   "quote": "motion: john r. to adjourn at 7:19 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; all votes recorded with roll call results (all three commissioners voted aye on each motion)",
- "cost_usd": 0.1275925
+ "note": "Text is OCR of a scanned minutes page (macOS Vision), so spellings may carry OCR error; 'Letebvre' is quoted as printed and was not checked against the paper. Votes are read from the 'Roll Call Vote' lines, all recorded as aye for John, Brett and Dave (3-0). The minutes print no document or exhibit list. The FY23 vote's recorded motion and roll call are verbatim; the amended grease trap motion was recorded as passed 3-0 and its 'moved by' reflects the original motion. Rob Oliva is listed as absent and is named in announcements as DPW Director. Public comment: the opening 'PUBLIC COMMENT- none' is the only public-comment statement; the second entry is Dave's remark under the Public Comment heading.",
+ "cost_usd": 0.022616880000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair-john reynolds, clerk- brett ramsden, business manager-barb"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair-john reynolds, clerk- brett ramsden, business manager-barb"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair-john reynolds, clerk- brett ramsden, business manager-barb"
+  },
+  {
+   "name": "Barb Letebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager-barb letebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "business manager-barb letebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Commission member",
+   "status": "absent",
+   "quote": "absent: mike deveikis, mike nault and dpw director- rob oliva"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Commission member",
+   "status": "absent",
+   "quote": "absent: mike deveikis, mike nault and dpw director- rob oliva"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "absent",
+   "quote": "absent: mike deveikis, mike nault and dpw director- rob oliva"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave suggested sending letters to all establishments, stating no fee if compliant and that non-compliant establishments will pay fees; all agreed.",
+   "quote": "dave suggested sending letters to all establishments, noting no fees if compliant and if non-compliant, they will pay fees."
+  },
+  {
+   "decision": "Grease trap policy: Commission agreed to leave the policy as is and discuss it later; the non-compliant fee increase was not made until the policy changes.",
+   "quote": "the commission agreed to leave the policy as is and discuss it later."
+  },
+  {
+   "decision": "Prorating for ownership changes and new connections: a monthly minimum charge, agreed by all.",
+   "quote": "barb suggested a monthly minimum charge, and all agreed."
+  },
+  {
+   "decision": "Wells policy left as is; not written into the regulations.",
+   "quote": "the commission agreed to leave the wells policy as is."
+  },
+  {
+   "decision": "Deduct meter regulation to add that the meter needs to be read in cubic feet.",
+   "quote": "barb asked to add \"the meter needs to be read in cubic feet\" and all agreed."
+  },
+  {
+   "decision": "Drain layers notary stamp requirement to be removed, as long as Counsel agrees; DEP requirement removed.",
+   "quote": "drain layers notary stamp requirement - all agreed to remove it as long as counsel agrees."
+  },
+  {
+   "decision": "Return to one hearing for changes to the Regulations (currently two).",
+   "quote": "barb asked to go back to the standard requirement of holding 1 hearing for changes to the regulations"
+  },
+  {
+   "decision": "Easement by-law: Commission to get Counsel's input.",
+   "quote": "the commission agreed to get counsel's input on the easement by-law."
+  },
+  {
+   "decision": "Sewer Commission power to amend regulations to be added; Barb to get the wording from Counsel.",
+   "quote": "barb will get the verbiage from counsel and all agreed to add it."
+  },
+  {
+   "decision": "Leominster Shirley Road project (outside the Sewer Service Area, connecting to Leominster): Commission agreed with the language.",
+   "quote": "the commission agreed with the language."
+  },
+  {
+   "decision": "Change to Specs (pipe sizes, slope): Rob to provide the information; all agreed to see the wording first.",
+   "quote": "rob will provide this information and all agreed to see the wording first."
+  },
+  {
+   "decision": "Chapter 147 changes and the other forward items to be sent to the By-Law Review Committee.",
+   "quote": "the commission agreed to send them to the by-law review committee."
+  },
+  {
+   "decision": "Dave asked Barb to send out a final budget with the 8% increase, for a vote at the 3/8/22 meeting.",
+   "quote": "dave asked barb to send out a final budget with the 8% increase."
+  },
+  {
+   "decision": "Minutes for 2/8/22 tabled to the next meeting, since there was not a quorum of the 2/8 attendees present.",
+   "quote": "minutes for 2/8/22- were tabled to the next meeting, since there was not a quorum of the 2/8 attendees present."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 Capital Plan and Engineering lines",
+   "what_was_recorded": "Rob was in favor of leaving the Capital Plan and Engineering figures at the amounts discussed; any unspent amount would go back into Retained Earnings.",
+   "figures_as_printed": [
+    "$50K",
+    "$30K"
+   ],
+   "quote": "capital plan ($50k) and engineering ($30k)."
+  },
+  {
+   "topic": "FY23 deficit under 3% and 8% rate increases",
+   "what_was_recorded": "The deficit would be $404K with a 3% increase and would decrease to $353,900 with the 8% increase.",
+   "figures_as_printed": [
+    "$404K",
+    "$353,900"
+   ],
+   "quote": "barb noted the deficit would be $404k with a 3% increase and would decrease to $353,900 with the 8% increase."
+  },
+  {
+   "topic": "Sewer rate and per-quarter bill effect of 8% increase",
+   "what_was_recorded": "The rate would rise from the current figure to a new figure per 100 cubic feet, and the increase would be about a stated amount per quarter for each ratepayer.",
+   "figures_as_printed": [
+    "$12.65",
+    "$13.66",
+    "$10-$15/quarter"
+   ],
+   "quote": "the current rate of $12.65 per 100cf would increase to $13.66."
+  },
+  {
+   "topic": "Annual grease trap permit fees",
+   "what_was_recorded": "The $3,650 figure for grease trap permit fees was based on assessing the annual fee only to non-compliant accounts; the fees set were $350 internal and $650 external.",
+   "figures_as_printed": [
+    "$3,650",
+    "$350",
+    "$650"
+   ],
+   "quote": "the annual fees would be $350 for an internal and $650 for external traps."
+  },
+  {
+   "topic": "Proposed higher non-compliant grease trap fees",
+   "what_was_recorded": "Dave recommended higher non-compliant fees; Barb asked that fees not be increased until the policy changes, and the Commission agreed.",
+   "figures_as_printed": [
+    "$500",
+    "$1,000"
+   ],
+   "quote": "dave recommended increasing the non-compliant fees to $500 internal grease trap and $1,000 for"
+  },
+  {
+   "topic": "Minimum charge for prorated bills",
+   "what_was_recorded": "There is currently no prorating and the minimum charge is stated; a monthly minimum charge was agreed.",
+   "figures_as_printed": [
+    "$107"
+   ],
+   "quote": "currently there is no prorating, and the minimum charge is $107."
+  },
+  {
+   "topic": "Re-connection fee",
+   "what_was_recorded": "The $100 re-connection fee for sewer work needing inspections is in place of the $1,000 reconnection fee; approved 2/8/22 and brought forward.",
+   "figures_as_printed": [
+    "$100",
+    "$1,000"
+   ],
+   "quote": "dave said the re-connection fee of $100 for any sewer work needing inspections is in place of"
+  },
+  {
+   "topic": "Fitchburg and Leominster invoices",
+   "what_was_recorded": "Invoices for Fitchburg monthly usage and Leominster quarterly usage, based on flow metering, were reported.",
+   "figures_as_printed": [
+    "$16,462.90",
+    "$116,648.83"
+   ],
+   "quote": "invoices- fitchburg monthly usage- $16,462.90 and leominster quarterly usage- $116,648.83, which are"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "No public comment at the start of the meeting",
+   "speaker": "",
+   "stated_role": "",
+   "quote": "public comment- none"
+  },
+  {
+   "topic": "Thanks to John and Brett for attending",
+   "speaker": "Dave",
+   "stated_role": "",
+   "quote": "public comment- dave thanked john and brett for attending the meeting and commented they got a lot done."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: DPW Director resignation and bills",
+   "resolution": "noted; position posted",
+   "quote": "barb announced rob oliva (dpw director) has submitted his letter of resignation, effective",
+   "tags": [
+    "staffing",
+    "billing"
+   ]
+  },
+  {
+   "topic": "FY23 draft sewer budget and 8% rate increase",
+   "resolution": "8% increase approved 3-0",
+   "quote": "fy23 draft sewer budget discussion - barb reported she had discussions with rob concerning the figures for the",
+   "tags": [
+    "FY23 budget",
+    "sewer rates"
+   ]
+  },
+  {
+   "topic": "Grease trap annual permit fees",
+   "resolution": "approved: compliant accounts dropped; non-compliant fees set for FY23",
+   "quote": "grease trap annual permit fees -barb stated the figure of $3,650 for grease trap permit fees was based on",
+   "tags": [
+    "grease trap fees"
+   ]
+  },
+  {
+   "topic": "Policies and by-laws for Spring Town Meeting",
+   "resolution": "policies accepted except Change of Specs and Grease Trap Policy; by-law categories sent to Counsel",
+   "quote": "policies/bylaws changes status for spring town meeting- barb reported heather (town manager) requested",
+   "tags": [
+    "regulations and by-laws",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Changes already approved (Fitchburg Chapter 147, connection policy)",
+   "resolution": "three categories approved 3-0 and sent forward",
+   "quote": "fitchburg's chapter 147- barb stated the changes were already approved and have gone through the sewer",
+   "tags": [
+    "Fitchburg",
+    "regulations and by-laws"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant articles (FY23 budget)",
+   "resolution": "to be discussed 3/8; FinCom presentation 3/24",
+   "quote": "annual town meeting warrant articles - fy23 budget- barb said that she will have the town meeting warrant",
+   "tags": [
+    "Town Meeting",
+    "FY23 budget"
+   ]
+  },
+  {
+   "topic": "Town caucus and terms",
+   "resolution": "noted",
+   "quote": "town caucus on 3/14 - john reynolds and mike nault's terms are up this year.",
+   "tags": [
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Assistant Business Manager position",
+   "resolution": "noted; HR awaiting references",
+   "quote": "assistant business manager 24 hr./week position - barb reported hr is waiting on references and will be moving",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Minutes for 2/8/22",
+   "resolution": "tabled to the next meeting",
+   "quote": "minutes for 2/8/22- were tabled to the next meeting, since there was not a quorum of the 2/8 attendees present.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: ARPA",
+   "resolution": "to be discussed 3/8",
+   "quote": "business manager report - arpa- barb has asked rob to provide suggested projects before he leaves",
+   "tags": [
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Upland/Eastern/White/Maple Parkway project",
+   "resolution": "no action; awaiting Wright Pierce report",
+   "quote": "upland/eastern/white/maple parkway project- barb reported the borings were done by wright pierce's",
+   "tags": [
+    "infrastructure"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "reported; no action",
+   "quote": "invoices- fitchburg monthly usage- $16,462.90 and leominster quarterly usage- $116,648.83, which are",
+   "tags": [
+    "billing",
+    "Fitchburg",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Action items and public comment",
+   "resolution": "no action items; Dave's closing remarks",
+   "quote": "public comment- dave thanked john and brett for attending the meeting and commented they got a lot done.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "march 8, 2022 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:19 pm, 3-0",
+   "quote": "motion: john r. to adjourn at 7:19 pm.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY23 Draft Sewer Budget",
+   "where": "text",
+   "quote": "fy23 draft sewer budget discussion - barb reported she had discussions with rob concerning the figures for the"
+  },
+  {
+   "name": "Lunenburg Grease Trap Regulations",
+   "where": "text",
+   "quote": "per the lunenburg grease trap regulations, the fee will be"
+  },
+  {
+   "name": "Fitchburg IMA (intermunicipal agreement) on direct connection",
+   "where": "text",
+   "quote": "she needs to have counsel review the wording from the fitchburg ima regarding connecting directly"
+  },
+  {
+   "name": "Fitchburg Chapter 147 changes",
+   "where": "text",
+   "quote": "fitchburg's chapter 147- barb stated the changes were already approved and have gone through the sewer"
+  },
+  {
+   "name": "Annual Town Meeting Warrant articles (FY23)",
+   "where": "text",
+   "quote": "annual town meeting warrant articles - fy23 budget- barb said that she will have the town meeting warrant"
+  },
+  {
+   "name": "Sewer Use By-Law",
+   "where": "text",
+   "quote": "barb added that one of the bylaws is called sewer use and she would like to get it changed."
+  }
+ ],
+ "tags": [
+  "sewer rates",
+  "FY23 budget",
+  "grease trap fees",
+  "regulations and by-laws",
+  "Spring Town Meeting",
+  "staffing",
+  "ARPA",
+  "Fitchburg",
+  "Leominster",
+  "remote meeting via Zoom"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

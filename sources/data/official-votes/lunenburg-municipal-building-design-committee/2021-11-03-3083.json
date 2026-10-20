@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-11-03",
  "docid": "3083",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "End forum",
+   "motion": "Move to end the public forum.",
    "moved_by": "Greg Roy",
    "seconded_by": "Dave Blatt",
    "outcome": "passed",
@@ -20,8 +20,8 @@
    "quote": "motion to end forum by greg roy, second by dave blatt. all in favor"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Greg Roy",
+   "motion": "Move to adjourn the meeting.",
+   "moved_by": "Dave Passios",
    "seconded_by": "Kristina Masaitis",
    "outcome": "passed",
    "procedural": true,
@@ -29,6 +29,210 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The adjournment motion's quote contains an apparent typographical inconsistency: it states both \"by Greg Roy\" and \"Moved by Dave Passios.\" The motion is attributed to Greg Roy based on the opening phrase structure, which parallels the first vote's clear format (\"Motion to X by Y, Second by Z\").",
- "cost_usd": 0.09754650000000001
+ "note": "Minutes are typed text with no vote counts; both recorded motions say 'All in favor' with no count, so outcome is recorded as 'passed'. No dollar figures are printed anywhere in the minutes; budget items record discussion of money only. Name spellings vary within the minutes (Jeffreys/Jeffries, Beardmore/Beadmore) and are reported as they appear in the attendance and heading lines. Matthew Allison appears only in the letterhead roster and is not recorded as attending, so he is omitted. No documents list is printed.\"",
+ "cost_usd": 0.015597380000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Roy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios,"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios,"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios,"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios,"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios,"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "present",
+   "quote": "kristina masaitis town employees"
+  },
+  {
+   "name": "Megan Lordan",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: megan lordan"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: peter beardmore, chris menard, susan carr"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: peter beardmore, chris menard, susan carr"
+  },
+  {
+   "name": "Susan Carr",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: peter beardmore, chris menard, susan carr"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee will still present its work to the public regardless of whether the selectboard passes over the warrant articles; the committee does not decide that question.",
+   "quote": "the committee has no choice to decide whether or not to pass over them that is the job of the selectboard but the committee has to still present no matter what."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Project cost analysis and how costs were obtained",
+   "what_was_recorded": "The presentation explained the cost analysis, with costs gathered by the architects from subcontractors as real-time costs of projects, labor and materials; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there was an explanation of the cost and how they were retrieved by the architects reaching out to subcontractors and getting real time costs of projects, labor and materials."
+  },
+  {
+   "topic": "Taxpayer share of the project",
+   "what_was_recorded": "The town financial advisor has run a report on the average townsperson's contribution; the speaker described it as funded by taxpayers. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the town financial advisor has run a report on what the average townsperson will be contributed."
+  },
+  {
+   "topic": "Tax increase risk from inflation",
+   "what_was_recorded": "A public commenter said continued inflation could require raising taxes, going beyond the tax levy; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "there is a concern if we stay in this inflationary period then we will have to ask the taxpayers to increase their taxes."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "Public Comment (community guest, 282 Pleasant)",
+   "topic": "Cost, inflation and timing of the project",
+   "quote": "we have been put into a hard space because there is hyper inflation due to the pandemic."
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Board member, Public Comment from the Board",
+   "topic": "Concern about total spending and presentation",
+   "quote": "dave passios has concerns about all the money that they plan to spend in the next few years."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment from the board",
+   "resolution": "no action",
+   "quote": "dave passios has concerns about all the money that they plan to spend in the next few years.",
+   "tags": [
+    "public comment",
+    "spending"
+   ]
+  },
+  {
+   "topic": "Proposed warrant articles and Town Meeting presentation review",
+   "resolution": "discussed, no action",
+   "quote": "discussion of proposed warrant articles/review town meeting presentation:",
+   "tags": [
+    "warrant articles",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Public forum and project presentation",
+   "resolution": "presented; forum ended by motion",
+   "quote": "chairman roy begins to give presentation talking about the reason this project has started and the history",
+   "tags": [
+    "public forum",
+    "presentation",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Article 8 presentation",
+   "resolution": "presented, no action",
+   "quote": "information on article 8 presented by michael-ray jeffries.",
+   "tags": [
+    "warrant articles",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Public comment on the project",
+   "resolution": "no action",
+   "quote": "there is a thought that we need to spend all this money for what the building was set to make",
+   "tags": [
+    "public comment",
+    "cost",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "discussed, no action",
+   "quote": "the ledger will have a brief explanation of the three articles and what the accomplish.",
+   "tags": [
+    "warrant articles",
+    "new business"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned",
+   "quote": "motion to adjourn by greg roy, moved by dave passios second by kristina masaitis. all in favor.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Meeting Presentation",
+   "where": "text",
+   "quote": "discussion of proposed warrant articles/review town meeting presentation:"
+  },
+  {
+   "name": "Article 8 (warrant article)",
+   "where": "text",
+   "quote": "information on article 8 presented by michael-ray jeffries."
+  },
+  {
+   "name": "Ledger explaining the three articles",
+   "where": "text",
+   "quote": "the ledger will have a brief explanation of the three articles and what the accomplish."
+  }
+ ],
+ "tags": [
+  "TCP building",
+  "town hall",
+  "renovation",
+  "cost estimate",
+  "warrant articles",
+  "town meeting",
+  "public forum",
+  "taxes",
+  "inflation"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

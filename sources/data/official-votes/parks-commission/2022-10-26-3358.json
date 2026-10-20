@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-10-26",
  "docid": "3358",
@@ -12,23 +12,260 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for September 19, 2022",
+   "motion": "Approve the minutes of September 19, 2022.",
    "moved_by": "P. Hakey",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "p. hakey made a motion to approve the minutes for september 19, 2022. c. sullivan seconded. roll call vote, c. sullivan - yes p . hackey - yes a. lockwood - yes all in favor, motion carried."
+   "quote": "p. hakey made a motion to approve the minutes for september 19, 2022. c. sullivan seconded."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "K. Menard",
-   "seconded_by": "P. Hakey",
-   "outcome": "passed 4-0",
+   "seconded_by": "P . Hakey",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "k. menard made a motion to adjourn. p . hakey seconded. roll call vote k. menard - yes c. sullivan - yes a. lockwood - yes p . hackey - yes all in favor, motion carried."
+   "quote": "k. menard made a motion to adjourn. p . hakey seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Clear scan; two votes recorded, both procedural motions.",
- "cost_usd": 0.06565140000000001
+ "note": "Text extraction, not a scan. Minutes carry typos in names and wording (\"P . Hackey\", \"Propgram\", \"A. Bernie\" for Lockwood's reference to Lufa Farms contact); names were kept as printed on the attendance line where a full name appears. The minutes approval motion records a roll call for three members only (Sullivan, Hackey, Lockwood); Menard is not listed in that roll call but the motion is recorded as carried. No vote count is printed on either motion, so outcomes are recorded as \"passed\". No public comment section appears in the minutes. Members named only as referenced (Michael St.Germain, Dan Lincoln, Patrick Flaherty, Michael Ray, Genevieve Nass, Katherine of WOLA, Adam Burney) are not recorded as attending.",
+ "cost_usd": 0.01567391,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: ana lockwood, patrick hakey, karin menard and chris sullivan"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "absent",
+   "quote": "absent: dave passios"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, patrick hakey, karin menard and chris sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: ana lockwood, patrick hakey, karin menard and chris sullivan"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: ana lockwood, patrick hakey, karin menard and chris sullivan"
+  },
+  {
+   "name": "Paul Visconti",
+   "role": "Additional Attendees (gave Facilities Director updates)",
+   "status": "present",
+   "quote": "additional attendees: paul visconti"
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "K. Menard, A. Lockwood and P. Hakey will attend the Select Board meeting on November 1, 2022 to acknowledge Genevieve Nass.",
+   "quote": "k. menard, a. lockwood and, p. hakey will attend."
+  },
+  {
+   "decision": "A. Lockwood asked K. Menard to attend a Select Board meeting and make a public comment about the Commission's need for space.",
+   "quote": "a. lockwood asked k. menard to drop into a select board meeting and add a public comment about the need for space."
+  },
+  {
+   "decision": "A. Lockwood will prepare a spreadsheet of available grants showing opening dates, submission closing dates and maximum dollar amounts.",
+   "quote": "a. lockwood stated she would put together a spreadsheet that would reflect all the pertinent information such as when grants open, submission closure dates and, maximum dollar amounts."
+  },
+  {
+   "decision": "K. Menard will verify with the Town Manager who will present the Special Town Meeting Article.",
+   "quote": "k. menard will verify with the town manager on who will be presenting the article."
+  },
+  {
+   "decision": "C. Sullivan will work with A. Lockwood to prepare the Special Town Meeting presentation.",
+   "quote": "c. sullivan stated he would work with a. lockwood to prepare the presentation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park bid award",
+   "what_was_recorded": "P. Visconti said the Marshall Park bid went to Dillis and Roy and that he believed the amount was under $20,000.00, though unsure of the exact figure.",
+   "figures_as_printed": [
+    "$20,000.00"
+   ],
+   "quote": "p. visconti stated he was unsure of the exact amount but believes it is under $20,000.00."
+  },
+  {
+   "topic": "Beach House re-bid",
+   "what_was_recorded": "The Beach House bid will go out again in January; the scope is $35,000, funded from the operation budget.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "the scope of the bid is $35,000 which is funded from the operation budget."
+  },
+  {
+   "topic": "Marshall Park pond and weed control estimate",
+   "what_was_recorded": "Solitude Lake Management gave a temporary cost estimate of $30,000.00 for the beach work.",
+   "figures_as_printed": [
+    "$30,000.00"
+   ],
+   "quote": "temporary cost estimate received from solitude lake management were $30,000.00 for the beach."
+  },
+  {
+   "topic": "Capital plan funding for pond work",
+   "what_was_recorded": "The pond work is on the Capital plan with $30,000 this year and money in 2025 for Marshall Pond.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "this is a on the capital plan with $30,000 in this year, and money in 2025 for marshall pond."
+  },
+  {
+   "topic": "Soccer program fee",
+   "what_was_recorded": "A. Lockwood suggested a $40 fee per person for the proposed soccer program to cover operating costs.",
+   "figures_as_printed": [
+    "$40"
+   ],
+   "quote": "a. lockwood suggested a $40 fee per person to cover operating costs."
+  },
+  {
+   "topic": "PARC grant eligibility and size",
+   "what_was_recorded": "The larger PARC grant was discussed for Marshall Park; K. Menard noted the smaller grant could be sought instead.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "k. menard said if they didn't we could try for the smaller grant up to $100,000."
+  },
+  {
+   "topic": "Marshall Park engineering funding",
+   "what_was_recorded": "P. Visconti and Katherine of WOLA were comfortable with $150-200,000 for the complete engineering phase; the Town Manager said $180,000 was available with about $10,000 left from the previous request.",
+   "figures_as_printed": [
+    "$150-200,000",
+    "$180,000",
+    "$10,000"
+   ],
+   "quote": "a. lockwood stated p. visconti and katherine of wola feel comfortable with the amount of $150-200,000 for the complete engineering phase for marshall park."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of September 19, 2022",
+   "resolution": "approved",
+   "quote": "p. hakey made a motion to approve the minutes for september 19, 2022. c. sullivan seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Updates from Facilities Director",
+   "resolution": "no action",
+   "quote": "next item on the agenda, updates from facilities director",
+   "tags": [
+    "facilities",
+    "Marshall Park",
+    "McNally Park",
+    "Beach House",
+    "recreation director"
+   ]
+  },
+  {
+   "topic": "Chair updates",
+   "resolution": "no action",
+   "quote": "next item on the agenda, chair updates",
+   "tags": [
+    "veterans park",
+    "soccer program",
+    "McNally Park",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Available State grants discussion",
+   "resolution": "no action; spreadsheet of grants to be prepared",
+   "quote": "next item on the agenda, available state grants discussion",
+   "tags": [
+    "grants",
+    "PARC",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Park and Recreation facilities discussion",
+   "resolution": "no action; Commission to request indoor space from Select Board",
+   "quote": "next on the agenda, park & recreation facilities discussion",
+   "tags": [
+    "facilities",
+    "space",
+    "Beach House",
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting Warrant discussion",
+   "resolution": "no action; article presenter to be confirmed",
+   "quote": "next on the agenda, special town meeting warrant discussion",
+   "tags": [
+    "town meeting",
+    "Marshall Park",
+    "engineering"
+   ]
+  },
+  {
+   "topic": "Marshall Park master plan survey",
+   "resolution": "reviewed; survey judged to look good",
+   "quote": "next item on the agenda, marshall park master plan need and desires related to the various engineering phases survey.",
+   "tags": [
+    "Marshall Park",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Board comment",
+   "resolution": "no action",
+   "quote": "next item on the agenda, board comment",
+   "tags": [
+    "Select Board",
+    "Municipal Design",
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "approved",
+   "quote": "k. menard made a motion to adjourn. p . hakey seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park",
+  "grants",
+  "PARC grant",
+  "Beach House",
+  "McNally Park",
+  "Marshall Park pond",
+  "engineering",
+  "town meeting",
+  "recreation director",
+  "facilities",
+  "soccer program",
+  "Select Board"
+ ],
+ "dropped_unquoted_by_field": {}
 }

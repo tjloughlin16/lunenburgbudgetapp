@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2022-09-27",
  "docid": "5704",
@@ -12,15 +12,426 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
+   "motion": "To adjourn the meeting at 6:55pm.",
    "moved_by": "Mike N.",
    "seconded_by": "Mike D.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: mike n. to adjourn at 6:55pm. second: mike d. roll call vote: dave-aye, mike n.-aye, mike d.-aye and john-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text via macOS Vision. One procedural vote (adjournment) recorded with roll call. The text mentions 'all agreed to postpone' the 9/13/22 minutes and an invoice that was 'approved' but neither was recorded as a formal motion with vote.",
- "cost_usd": 0.0773659
+ "note": "Text is OCR of a scanned minutes page (macOS Vision); some words may be misread, e.g. 'I/l' for I/I and 'Kevin Wright Pierce)'. Quotes are copied from the OCR text. Only one motion is recorded (adjournment). The Fitchburg invoice is recorded as approved with no motion or count, so it is listed as a decision, not a vote. The 'Public Comment' line near the end is John Reynolds' remark about his absences, not a public speaker; public comment is recorded as none. No documents list heading is printed.",
+ "cost_usd": 0.01929818,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- john reynolds, clerk- mike deveikis"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "clerk- mike deveikis, members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Member (acting Chair for opening)",
+   "status": "present",
+   "quote": "dave m., as acting chair, opened the meeting at 6:02 pm."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: dave macdonald and mike nault, dpw"
+  },
+  {
+   "name": "Bill Bernard",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "dpw director- bill bernard"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "absent: vice-chair- brett ramsden"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the 9/13/22 minutes postponed to the next meeting by agreement of all present.",
+   "quote": "minutes of 9/13/22 - all agreed to postpone to the next meeting."
+  },
+  {
+   "decision": "Commissioners who want Planning Board agendas to sign up directly; Barb to email instructions for signing up.",
+   "quote": "john suggested anyone interested should sign up directly and all agreed."
+  },
+  {
+   "decision": "Portable or large backup generator to be added to the ARPA request; Bill to add it to the proposal.",
+   "quote": "dave suggested adding a portable generator to the arpa request, which could be used by other departments."
+  },
+  {
+   "decision": "Manhole cover repair near John St. to be done now, before winter, with regular maintenance funds.",
+   "quote": "bill replied that they will go ahead with fixing it now, before winter, with regular maintenance funds."
+  },
+  {
+   "decision": "Barb to meet with Town Counsel on adding two policy updates (verification of extraneous lines; replacement of clay pipes before sale of a house).",
+   "quote": "barb will be meeting with town counsel to discuss adding 2 policy updates"
+  },
+  {
+   "decision": "Barb and Paula directed to write up a list of definitions of the connection fee, I/I fees and other fees.",
+   "quote": "he also requested that at some time barb and paula to write up a list of definitions, explaining the connection fee"
+  },
+  {
+   "decision": "Commissioners directed to review the Pond View proceedings and to talk to Barb, Paula and town counsel if they have questions.",
+   "quote": "dave asked the commissioners to review the proceedings and to talk to barb, paula"
+  },
+  {
+   "decision": "Commission to work on its Pond View presentation at its 10/11 meeting.",
+   "quote": "the commission will work on their presentation at their 10/11 meeting"
+  },
+  {
+   "decision": "Public hearing on the 44 Northfield Rd. waiver request to be held at the 10/11 Sewer Commission meeting.",
+   "quote": "and they will have a public hearing for the waiver request at the 10/11 sewer commission meeting."
+  },
+  {
+   "decision": "Fitchburg Usage invoice approved. No motion, roll call or count is recorded for this approval.",
+   "quote": "invoices- fitchburg usage- $ 15,861.42 (7/26-8/25) approved."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pond View 40B connection costs",
+   "what_was_recorded": "The cost of connections presented at the ZBA hearing was revised downward, and the revised figure was sent to Commissioners and the ZBA.",
+   "quote": "the cost of connections presented at the hearing was revised from $2,005,127.50 to $1,798,664.82",
+   "figures_as_printed": [
+    "$2,005,127.50",
+    "$1,798,664.82"
+   ]
+  },
+  {
+   "topic": "Pond View fee waiver and Sewer Division finances",
+   "what_was_recorded": "The Commission's letter stated that waiving fees could put the Sewer Division into bankruptcy. No figure was printed.",
+   "quote": "if they waive the fees, it could put the sewer division into bankruptcy",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Q1 demand bills and outstanding FY22 balances",
+   "what_was_recorded": "Letters were added to Q1 demand bills for customers with outstanding FY22 balances; unpaid balances may go on the tax bill and become a property lien. No figure was printed.",
+   "quote": "letters were added to those with outstanding balances from fy22",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA proposal: manhole repairs",
+   "what_was_recorded": "The ARPA proposal includes $200K for manhole repairs, based on the Wright Pierce report, with work in FY23 and 24.",
+   "quote": "the $200k proposed for manhole repairs is based on findings from the wright pierce report",
+   "figures_as_printed": [
+    "$200K"
+   ]
+  },
+  {
+   "topic": "ARPA proposal: pump stations and maintenance funds",
+   "what_was_recorded": "Bill said regular maintenance is funded but the department needs money for pump station repairs. No figure was printed.",
+   "quote": "they really need the money for pump station repairs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Lining of laterals to reduce I/I",
+   "what_was_recorded": "Wright Pierce said lining the laterals would be very expensive and did not recommend lining newer pipes. No figure was printed.",
+   "quote": "replied that it would be very expensive and he did not recommend lining the newer pipes",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Grants for sewer work",
+   "what_was_recorded": "Bill found two grants but thought the chances of receiving them were small. No figure was printed.",
+   "quote": "bill replied he found 2 grants but thought the chances were small to get them.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY23 budget and revenue posting",
+   "what_was_recorded": "The updated FY23 budget was sent out, but revenues after 8/15 were not yet posted in Munis, so revenues are not current. No figure was printed.",
+   "quote": "barb sent out the updated budget and noted that revenues after 8/15 have not been posted in munis",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fitchburg usage invoice",
+   "what_was_recorded": "An invoice for Fitchburg usage for 7/26-8/25 was approved.",
+   "quote": "invoices- fitchburg usage- $ 15,861.42 (7/26-8/25) approved.",
+   "figures_as_printed": [
+    "$ 15,861.42"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, roll call, pledge",
+   "resolution": "opened by acting Chair Dave MacDonald; roll called",
+   "quote": "dave m., as acting chair, opened the meeting at 6:02 pm. and did a roll call of attendees.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none received",
+   "quote": "public comment- none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted (deaths of Bill Gustus and Linda Betty); Q1 demand bills sent",
+   "quote": "dave, with a heavy heart, announced that bill gustus passed away.",
+   "tags": [
+    "announcements",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Pond View 40B discussion",
+   "resolution": "discussed; Commission to present at 10/11 meeting; no vote",
+   "quote": "pond view 40b discussion - barb recapped the zba (zoning board of appeals) hearing on 9/14",
+   "tags": [
+    "Pond View 40B",
+    "ZBA",
+    "connection fees"
+   ]
+  },
+  {
+   "topic": "ARPA proposal",
+   "resolution": "discussed; generator to be added; no vote",
+   "quote": "arpa proposal - barb sent out bill's latest draft of proposals.",
+   "tags": [
+    "ARPA",
+    "inflow and infiltration",
+    "pump stations",
+    "manholes"
+   ]
+  },
+  {
+   "topic": "Grease trap program",
+   "resolution": "noted; permit renewals received",
+   "quote": "grease trap program - barb reported that all the annual permit renewals have been received",
+   "tags": [
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "400 Sunny Hill Rd permit",
+   "resolution": "noted; awaiting permit and connection fee payments",
+   "quote": "400 sunny hill rd permit- barb noted bill had received the engineered plan for the project",
+   "tags": [
+    "permits"
+   ]
+  },
+  {
+   "topic": "Minutes of 9/13/22",
+   "resolution": "postponed to next meeting",
+   "quote": "minutes of 9/13/22 - all agreed to postpone to the next meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report: 43 Summer St. approval",
+   "resolution": "noted; grease trap decommission proof to be requested; Planning Board sign-up",
+   "quote": "business manager report - 43 summer st. approval- barb said the marijuana establishment",
+   "tags": [
+    "Planning Board",
+    "grease trap"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting articles",
+   "resolution": "noted; two stabilization articles submitted",
+   "quote": "special town meeting articles- barb reported the 2 articles for stabilization funds have been submitted.",
+   "tags": [
+    "Town Meeting",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "44 Northfield Rd. waiver request",
+   "resolution": "public hearing set for 10/11 meeting",
+   "quote": "44 northfield rd. waiver request- barb stated that they have submitted a request for a waiver",
+   "tags": [
+    "easement",
+    "waiver",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "1325 Mass. Ave. change of use",
+   "resolution": "noted; applicant to be on 10/11 agenda",
+   "quote": "1325 mass. ave. change of use application- barb reported dan proctor is requesting a change of use",
+   "tags": [
+    "change of use",
+    "flows"
+   ]
+  },
+  {
+   "topic": "Muni-Link demonstration",
+   "resolution": "noted; demonstration with Town officials on 9/29",
+   "quote": "muni-link demonstration- barb and paula will meet with town manager-heather",
+   "tags": [
+    "Muni-Link",
+    "billing"
+   ]
+  },
+  {
+   "topic": "FY23 budget",
+   "resolution": "noted; revenues not current in Munis",
+   "quote": "fy23 budget barb sent out the updated budget and noted that revenues after 8/15 have not been posted in munis",
+   "tags": [
+    "budget",
+    "FY23"
+   ]
+  },
+  {
+   "topic": "Invoices",
+   "resolution": "Fitchburg usage invoice approved",
+   "quote": "invoices- fitchburg usage- $ 15,861.42 (7/26-8/25) approved.",
+   "tags": [
+    "invoices",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Website updates",
+   "resolution": "noted",
+   "quote": "website updates have been done by barb -",
+   "tags": [
+    "website"
+   ]
+  },
+  {
+   "topic": "Action items: hybrid conference room equipment",
+   "resolution": "set up; to be tested",
+   "quote": "action items- dave asked if the conference room hybrid equipment has been set up for zoom participation.",
+   "tags": [
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted: 10/11 hearing and meeting, 10/25 meeting",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:55pm, roll call passed",
+   "quote": "motion: mike n. to adjourn at 6:55pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Wright Pierce report (findings on manhole repairs and lining)",
+   "where": "text",
+   "quote": "based on findings from the wright pierce report"
+  },
+  {
+   "name": "Letter from Barb and Paula on the Pond View 40B project",
+   "where": "text",
+   "quote": "barb and paula's letter laid out the concerns well."
+  },
+  {
+   "name": "Bill's latest draft of ARPA proposals",
+   "where": "text",
+   "quote": "barb sent out bill's latest draft of proposals."
+  },
+  {
+   "name": "Revised cost of connections (Pond View)",
+   "where": "text",
+   "quote": "a copy was sent to commissioners and the zba"
+  },
+  {
+   "name": "Development policy on the Sewer Division website",
+   "where": "text",
+   "quote": "added info to the website regarding the development policy"
+  },
+  {
+   "name": "Maintenance Plan",
+   "where": "text",
+   "quote": "dave asked if they are missing anything from the maintenance plan"
+  },
+  {
+   "name": "Engineered plan for 400 Sunny Hill Rd",
+   "where": "text",
+   "quote": "bill had received the engineered plan for the project"
+  },
+  {
+   "name": "Special Town Meeting articles on stabilization funds",
+   "where": "text",
+   "quote": "barb reported the 2 articles for stabilization funds have been submitted."
+  },
+  {
+   "name": "Easement plan and easement document for 34 Northfield Rd",
+   "where": "text",
+   "quote": "barb will send the commissioners the easement plan and the document when available."
+  },
+  {
+   "name": "Hearing notice in the 9/30 Ledger",
+   "where": "text",
+   "quote": "a hearing notice will be posted in the 9/30 ledger"
+  },
+  {
+   "name": "Planning Board agendas",
+   "where": "text",
+   "quote": "barb asked the commissioners if they still want her to forward the planning board agendas."
+  },
+  {
+   "name": "Updated FY23 budget",
+   "where": "text",
+   "quote": "barb sent out the updated budget"
+  },
+  {
+   "name": "Q1 demand bills",
+   "where": "text",
+   "quote": "the demand bills for the q1 billing went out 9/27"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "Pond View 40B",
+  "ARPA",
+  "inflow and infiltration",
+  "grease trap",
+  "permits",
+  "easements",
+  "FY23 budget",
+  "Zoom meeting",
+  "Muni-Link"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

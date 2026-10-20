@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-08-02",
  "docid": "3353",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Support the Marshall Park Master Plan as presented by the Parks Commission",
+   "motion": "Move to support the Marshall Park Master Plan as presented by the Parks Commission.",
    "moved_by": "T. Dwyer",
    "seconded_by": "H. Sroka",
    "outcome": "passed 5-0",
@@ -21,6 +21,175 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes extracted from OCR scan (macOS Vision). One vote recorded: a substantive motion on the Marshall Park Master Plan that passed unanimously 5-0.",
- "cost_usd": 0.0727625
+ "note": "OCR of a scanned, stamped minutes document (approved 9/14/2022; received and filed 15 Sep 2022); typos are printed as read (e.g. \"Marchall\", \"parkling\"). Two different spent-to-date figures appear: \"Just under $37,000\" on page 1 and \"$36,000\" on page 2; both are recorded as printed. One motion was recorded, carried 5-0. The Town Manager is mentioned but not named, so not listed as an attendee. No documents list is printed.",
+ "cost_usd": 0.014722480000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Lockwood",
+   "role": "Park Commission member",
+   "status": "present",
+   "quote": "park commission members present: ana lockwood, karin menard, patrick hakey and chris sullivan"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Park Commission member (presenter)",
+   "status": "present",
+   "quote": "park commission members present: ana lockwood, karin menard, patrick hakey and chris sullivan"
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Park Commission member",
+   "status": "present",
+   "quote": "park commission members present: ana lockwood, karin menard, patrick hakey and chris sullivan"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Park Commission member",
+   "status": "present",
+   "quote": "park commission members present: ana lockwood, karin menard, patrick hakey and chris sullivan"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "select board members present michael-ray jeffreys, tom alonzo, louis j. franco, todd dwyer and heather sroka."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "select board members present michael-ray jeffreys, tom alonzo, louis j. franco, todd dwyer and heather sroka."
+  },
+  {
+   "name": "Louis J. Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "select board members present michael-ray jeffreys, tom alonzo, louis j. franco, todd dwyer and heather sroka."
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "select board members present michael-ray jeffreys, tom alonzo, louis j. franco, todd dwyer and heather sroka."
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "select board members present michael-ray jeffreys, tom alonzo, louis j. franco, todd dwyer and heather sroka."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Marshall Park capital plan appropriation",
+   "what_was_recorded": "The May 2021 Town Meeting capital plan included a sum for the Marshall Park Masterplan, and a portion has been spent.",
+   "figures_as_printed": [
+    "$50,000",
+    "$37,000"
+   ],
+   "quote": "k. menard stated in may 2021 town meeting approved capital plan that included $50,000 for the marchall park"
+  },
+  {
+   "topic": "Marshall Park cost to date and next phase",
+   "what_was_recorded": "Spending to date was reported as $36,000 in one place and just under $37,000 in another; the next phase is estimated at $160,000.",
+   "figures_as_printed": [
+    "$36,000",
+    "$160,000",
+    "$37,000"
+   ],
+   "quote": "k. menard reiterated $36,000 has been expended, the next phase is estimated at $160,000."
+  },
+  {
+   "topic": "Overall project cost estimate",
+   "what_was_recorded": "The overall cost estimate from WOLA, the architect, was stated.",
+   "figures_as_printed": [
+    "$5 million"
+   ],
+   "quote": "k. menard stated the overall cost estimate from wola is $5 million."
+  },
+  {
+   "topic": "Site lighting and utilities line item",
+   "what_was_recorded": "A utilities line item for site lighting, pathways, electrical and power was mentioned; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "c. sullivan indicated there was mention of a utilities line item for site lighting, pathways,"
+  },
+  {
+   "topic": "Board of Health septic funding from the State",
+   "what_was_recorded": "The Board of Health received State funds to assist with septic repairs; no figure was printed. The minutes say this is separate from the Masterplan.",
+   "figures_as_printed": [],
+   "quote": "a. lockwood stated the board of health received the funds from the"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Support for the Marshall Park Masterplan",
+   "quote": "a few residents spoke in support of the marshall park masterplan and applauded the commission for all the work they have done on the project this far."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Marshall Park Master Plan presentation",
+   "resolution": "presented to the Select Board; questions taken",
+   "quote": "k. menard gave a presentation with the background of the project and the final design that has been selected.",
+   "tags": [
+    "marshall park",
+    "master plan",
+    "design"
+   ]
+  },
+  {
+   "topic": "Public comment and Select Board questions",
+   "resolution": "no action; questions answered",
+   "quote": "a few residents spoke in support of the marshall park masterplan and applauded the commission for all the work they have done on the project this far.",
+   "tags": [
+    "public comment",
+    "cost",
+    "parking",
+    "lighting"
+   ]
+  },
+  {
+   "topic": "Motion to support Marshall Park Master Plan",
+   "resolution": "passed 5-0",
+   "quote": "t. dwyer made a motion to support the marshall park master plan as presented by the parks commission. h. sroka seconded. all in favor, motion carried (5-0).",
+   "tags": [
+    "marshall park",
+    "vote",
+    "select board"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Marshall Park Master Plan (as presented by the Parks Commission)",
+   "where": "text",
+   "quote": "a motion to support the marshall park master plan as presented by the parks commission"
+  },
+  {
+   "name": "WOLA design layouts (2 layouts)",
+   "where": "text",
+   "quote": "wola presented 2 different layouts."
+  }
+ ],
+ "tags": [
+  "marshall park",
+  "master plan",
+  "joint meeting",
+  "select board",
+  "parks commission",
+  "capital plan",
+  "cost",
+  "parking",
+  "lighting",
+  "septic"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

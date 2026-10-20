@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2022-11-07",
  "docid": "4726",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "to allow S.Walker, J.McLaughlin and one committee member to meet with Heather and town council to discuss open meeting compliance with regards to videotaping town events",
+   "motion": "Allow S.Walker, J.McLaughlin and one committee member to meet with Heather and town council to discuss open meeting compliance for videotaping town events.",
    "moved_by": "F.Beall",
    "seconded_by": "S.Archambault",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion was made to allow s.walker, j.mclaughlin & one committee member to meet with heather & town council to discuss open meeting compliance with regards to videotaping town events. (motion f.beall, 2nd s.archambault, passed)"
+   "quote": "to discuss open meeting compliance with regards to videotaping town events. (motion f.beall, 2nd s.archambault, passed)"
   },
   {
-   "motion": "to approve the October 3rd minutes",
+   "motion": "Approve the October 3rd minutes.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "october 3rd minutes approved (f.beall, 2nd p.lincoln passed"
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 6:59 pm.",
    "moved_by": "F.Beall",
    "seconded_by": "P.Lincoln",
    "outcome": "passed",
@@ -37,6 +37,136 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1149715
+ "note": "Text extracted from a two-page document with tab-separated spacing (collapsed to single spaces in quotes); not a scan. Votes are recorded only as 'passed' with no tallies, so outcomes are as printed. Public comment and committee comment are recorded as 'None', so no speakers. 'Heather' is named but not identified and is not listed as an attendee. The Manager's update lists a balance but no account name; the budget item is the single printed balance figure. The December 5th next-meeting notice is not recorded as a decision.",
+ "cost_usd": 0.01449831,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Faith Beall",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Paul Sarapas",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present: a. steve walker, pete lincoln, steve archambault, faith beall, paul sarapas"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Manager",
+   "status": "present",
+   "quote": "3. manager: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "P.Sarapas will spearhead a PAC drone policy: J.McLaughlin submits questions to the forum, S.Walker raises the issue with town council, and P.Sarapas drafts a policy for the committee.",
+   "quote": "j.mclaughlin will submit questions to the forum, s.walker will bring up the issue with town council & p.sarapas will create a draft policy to present to the committee."
+  },
+  {
+   "decision": "Staff use of personal equipment tabled for future discussion after concerns about liability and legal ramifications.",
+   "quote": "tabled for future discussion. concerns were raised about liability and legal ramifications."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Account balance",
+   "what_was_recorded": "The Manager reported the balance as of the meeting.",
+   "quote": "there is a balance of $893,760.22",
+   "figures_as_printed": [
+    "$893,760.22"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Communications: videographer language and open meeting compliance",
+   "resolution": "referred to legal counsel; motion to meet with town council passed",
+   "quote": "s.walker raised questions concerning inappropriate language by a videographer during the taping of a meeting.",
+   "tags": [
+    "videographer",
+    "open meeting law",
+    "town council"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "October 3rd minutes approved",
+   "quote": "october 3rd minutes approved (f.beall, 2nd p.lincoln passed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "no action; informational update",
+   "quote": "worked with s.walker to test new transmitters and receivers. issue with battery power.",
+   "tags": [
+    "equipment",
+    "programming",
+    "special town meeting",
+    "balance"
+   ]
+  },
+  {
+   "topic": "Drone policy",
+   "resolution": "assigned to P.Sarapas, S.Walker and J.McLaughlin; draft to come to committee",
+   "quote": "p.sarapas is spearheading a pac drone policy.",
+   "tags": [
+    "drone policy"
+   ]
+  },
+  {
+   "topic": "Staff use of personal equipment",
+   "resolution": "tabled",
+   "quote": "tabled for future discussion. concerns were raised about liability and legal ramifications.",
+   "tags": [
+    "staff equipment",
+    "liability"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:59 pm; next meeting December 5th",
+   "quote": "meeting adjourned at 6:59 pm a. (motion - f.beall, 2nd p.lincoln - passed).",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "public access television",
+  "PACC",
+  "videography",
+  "open meeting law",
+  "drone policy",
+  "staff equipment",
+  "special town meeting",
+  "account balance",
+  "programming"
+ ],
+ "dropped_unquoted_by_field": {}
 }

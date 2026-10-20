@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-02-01",
  "docid": "5311",
@@ -12,63 +12,590 @@
  },
  "votes": [
   {
-   "motion": "Approve the renewal of Class II auto dealer license for Carlos Bismark Terrero d/b/a National Motor Corporation located at 40 Summer Street",
+   "motion": "Approve the renewal of Class II auto dealer license for Carlos Bismark Terrero d/b/a National Motor Corporation at 40 Summer Street.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the renewal of class il auto dealer license for carlos bismark terrero d/b/a national motor corporation located at 40 summer street vote: mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to approve the renewal of class il auto dealer license for carlos bismark terrero d/b/a national motor corporation located at 40 summer street"
   },
   {
-   "motion": "Appoint Joan Pease, Diane Beaudoin, Nancy Heald and Kirsten Snape to the Cultural Council with terms to expire June 30, 2025",
+   "motion": "Appoint Joan Pease, Diane Beaudoin, Nancy Heald and Kirsten Snape to the Cultural Council with terms to expire June 30, 2025.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "to appoint joan pease, diane beaudoin, nancy heald and kirsten snape to the cultural council with terms to expire june 30, 2025 vote: mr. dwyer- aye, mr. jeffreys- aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "to appoint joan pease, diane beaudoin, nancy heald and kirsten snape to the cultural council with terms to expire june 30, 2025"
   },
   {
-   "motion": "Sign the amended license for Ixtapa Cantina as presented",
+   "motion": "Sign the amended Change of Manager license for Ixtapa Cantina as presented.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "to sign the amended license for ixtapa cantina as presented mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to sign the amended license for ixtapa cantina as presented"
   },
   {
-   "motion": "Approve the minutes of January 4, 2022 as presented",
+   "motion": "Approve the minutes of January 4, 2022 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "to approve the minutes of january 4, 2022 as presented mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to approve the minutes of january 4, 2022 as presented"
   },
   {
-   "motion": "Approve the minutes of December 21, 2021 as presented",
+   "motion": "Approve the minutes of December 21, 2021 as presented.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 3-0 (1 abstain)",
+   "outcome": "passed 3-0-1",
    "procedural": true,
-   "quote": "to approve the minute of december 21, 2021 as presented mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye, mr. franco-abstain"
+   "quote": "to approve the minute of december 21, 2021 as presented"
   },
   {
-   "motion": "Approve the list of fiscal priorities for FY23 as enumerated by the Chair",
+   "motion": "Approve the list of fiscal priorities for FY23 as enumerated by the Chair.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "to approve the list of fiscal priorities for fy23 as enumerated by the chair vote: mr. dwyer-aye, mr. jeffreys-aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "to approve the list of fiscal priorities for fy23 as enumerated by the chair"
   },
   {
-   "motion": "Enter Executive Session to discuss strategy with respect to collective bargaining (Clerical and Police Union) and not return to Open Session",
+   "motion": "Enter Executive Session to discuss strategy with respect to collective bargaining (Clerical and Police Union) and not return to Open Session.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "to enter executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public body and the chair so declares, (clerical and police union) and to not return to open session mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to enter executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned document (macOS Vision). All votes extracted and verified against meeting record.",
- "cost_usd": 0.133048
+ "note": "OCR of a scanned minutes packet (macOS Vision); several seconders and some figures are garbled (e.g. '2'' for 2nd, 'Class Il', '$2,646, 861'), so quotes are copied as OCR printed them. The Dec 21, 2021 minutes vote is printed as Dwyer, Jeffreys and Alonzo aye with Franco abstaining; the seconder appears above the motion line and is taken as M. Jeffreys. No motion to adjourn is printed (adjourned 10:43 p.m.), so none is recorded. Five-year forecast tables are largely illegible in the OCR, so no totals are taken from them. Executive session minutes are separate and not in this text. Votes give individual aye lines, not printed tallies, so outcomes are 'passed' except the Dec 21 minutes.",
+ "cost_usd": 0.1470474,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the"
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "L. Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "M. Jeffreys",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; state representative mike kushmerek, state"
+  },
+  {
+   "name": "Mike Kushmerek",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; state representative mike kushmerek, state"
+  },
+  {
+   "name": "John Cronin",
+   "role": "State Senator",
+   "status": "present",
+   "quote": "state senator john cronin, state representative danillo sena, jennifer thompson, nicole figuerito,"
+  },
+  {
+   "name": "Danillo Sena",
+   "role": "State Representative",
+   "status": "present",
+   "quote": "state senator john cronin, state representative danillo sena, jennifer thompson, nicole figuerito,"
+  },
+  {
+   "name": "Jennifer Thompson",
+   "role": "Capital Strategic Solutions presenter",
+   "status": "present",
+   "quote": "ms. thompson and ms. figuerito of capital strategic solutions presented the following:"
+  },
+  {
+   "name": "Nicole Figuerito",
+   "role": "Capital Strategic Solutions presenter",
+   "status": "present",
+   "quote": "ms. thompson and ms. figuerito of capital strategic solutions presented the following:"
+  },
+  {
+   "name": "Carol Archambeault",
+   "role": "School Committee Chair",
+   "status": "remote",
+   "quote": "carol archambeault, 662 page st., school committee chair via zoom, expressed"
+  },
+  {
+   "name": "Joan Pease",
+   "role": "Cultural Council applicant",
+   "status": "remote",
+   "quote": "joan pease, via zoom, 11 wintergreen court, stated she has lived here over a decade"
+  },
+  {
+   "name": "Diane Beaudoin",
+   "role": "Cultural Council applicant",
+   "status": "present",
+   "quote": "diane beaudoin, 32208 carousel lane, has lived in town with her husband for four"
+  },
+  {
+   "name": "Nancy Heald",
+   "role": "Cultural Council applicant",
+   "status": "present",
+   "quote": "nancy heald, 292 mulpus road, has lived here 25 years and would like to volunteer."
+  },
+  {
+   "name": "Kirsten Snape",
+   "role": "Cultural Council applicant",
+   "status": "remote",
+   "quote": "kirsten snape, via zoom, 18 island road, almost a lifelong resident, is a kindergarten"
+  },
+  {
+   "name": "Carlos Bismark Terrero",
+   "role": "Class II auto dealer license renewal applicant",
+   "status": "present",
+   "quote": "mr. terrero stated he got sick in december and then got the flu."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Capital Planning Committee member (speaking as a citizen)",
+   "status": "remote",
+   "quote": "dave passios, 56 whiting street, via zoom and speaking as a citizen but noting he is a member"
+  },
+  {
+   "name": "Ms. Xotyeni",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "mr. alonzo noted ms. xotyeni may have had to leave earlier as the meeting was running late."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Select Board MRC Representative and School Committee liaisons item deferred to another meeting.",
+   "quote": "this item will be taken up at another meeting."
+  },
+  {
+   "decision": "Chair asked the Cultural Council applicant to arrange another time to return to be appointed.",
+   "quote": "he asked her to arrange another time to come back to be appointed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Governor's budget increase for the town and Chapter 70",
+   "what_was_recorded": "Senator Cronin reported an increase for the town and Chapter 70 funds of about $900,000 in the Governor's budget.",
+   "quote": "noting an increase for the town and chapter 70 funds of approximately $900,000",
+   "figures_as_printed": [
+    "$900,000"
+   ]
+  },
+  {
+   "topic": "Federal and state funding available (ARPA, federal infrastructure)",
+   "what_was_recorded": "Senator Cronin cited state ARPA housing funds and federal infrastructure sums.",
+   "quote": "senator cronin responded the state received $5 billion in federal funds in the american rescue plan in 2021.",
+   "figures_as_printed": [
+    "$5 billion",
+    "$630 million"
+   ]
+  },
+  {
+   "topic": "Federal infrastructure bill amounts",
+   "what_was_recorded": "Senator Cronin described the federal infrastructure bill total and highway allocation.",
+   "quote": "and that is $1.2 trillion dollars. $5.3 million is going to highways and bridges, but there are also going to",
+   "figures_as_printed": [
+    "$1.2 trillion",
+    "$5.3 million"
+   ]
+  },
+  {
+   "topic": "ARPA direct allocation to Lunenburg",
+   "what_was_recorded": "Capital Strategic Solutions reported Lunenburg's eligible direct ARPA allocation and its use for revenue loss.",
+   "quote": "lunenburg is eligible to receive $3,507,971 in direct arpa funds, which will",
+   "figures_as_printed": [
+    "$3,507,971"
+   ]
+  },
+  {
+   "topic": "Small Bridge Grant Program limits",
+   "what_was_recorded": "Town Manager reported design and construction application ceilings under the Small Bridge Grant Program.",
+   "quote": "towns can submit an application for design funding up to $100,000 and an application for construction up to $500,000.",
+   "figures_as_printed": [
+    "$100,000",
+    "$500,000"
+   ]
+  },
+  {
+   "topic": "Senior Center and Parks capital requests for FY23 priority list",
+   "what_was_recorded": "The fiscal priority list included a Senior Center improvement and Parks Commission requests.",
+   "quote": "$100,000 for senior center building improvements (combines different fy",
+   "figures_as_printed": [
+    "$100,000",
+    "$150,000",
+    "$25,000",
+    "$75,000"
+   ]
+  },
+  {
+   "topic": "Primary School air conditioning request",
+   "what_was_recorded": "Board added a $232,800 Primary School air conditioning request to the FY23 fiscal priorities.",
+   "quote": "mr: alonzo suggested adding the $232,800 for the air conditioning for the primary school.",
+   "figures_as_printed": [
+    "$232,800"
+   ]
+  },
+  {
+   "topic": "Town Hall/Community Center cost",
+   "what_was_recorded": "A resident's question cited a $40 million price tag for a Town Hall and Community Center.",
+   "quote": "we got a $40 million price tag to build a town hall/community center to just continue the functions we",
+   "figures_as_printed": [
+    "$40 million"
+   ]
+  },
+  {
+   "topic": "Tractor purchase and contractor comparison",
+   "what_was_recorded": "Board discussed a $700,000 tractor purchase; in-house operation estimated at $16,241 versus $45,000 for a contractor.",
+   "quote": "it would cost the town $16,241 to operate versus $45,000 for a contractor.",
+   "figures_as_printed": [
+    "$700,000",
+    "$16,241",
+    "$45,000"
+   ]
+  },
+  {
+   "topic": "One-ton dump truck with plow",
+   "what_was_recorded": "Board asked about a one-ton dump truck with plow priced at $58,000.",
+   "quote": "mr. jeffreys asked about the one ton dump truck with plow for $58,000; do we know how many",
+   "figures_as_printed": [
+    "$58,000"
+   ]
+  },
+  {
+   "topic": "Mower purchase",
+   "what_was_recorded": "Board discussed a mower priced at $48,000 and its repair history.",
+   "quote": "the next item was the mower for $48,000.",
+   "figures_as_printed": [
+    "$48,000"
+   ]
+  },
+  {
+   "topic": "Police F-150 and tow hitch options",
+   "what_was_recorded": "Board asked whether tow hitch attachments at $150 -$600 could replace the F-150 purchase.",
+   "quote": "he asked about tow hitch attachments which range from $150 -$600.",
+   "figures_as_printed": [
+    "$150",
+    "$600"
+   ]
+  },
+  {
+   "topic": "Facilities capital requests FY23",
+   "what_was_recorded": "Total facilities requests, the amount funded and the amount unfunded were reported.",
+   "quote": "our total facilities request for fy23 was $2,646, 861.",
+   "figures_as_printed": [
+    "$2,646, 861",
+    "$576,661",
+    "$2,070,200",
+    "$884,000"
+   ]
+  },
+  {
+   "topic": "Unfunded capital requests",
+   "what_was_recorded": "Board member said about $2 million in capital requests remain unfunded.",
+   "quote": "we are leaving $2 million in unfunded capital requests and we just had a conversation",
+   "figures_as_printed": [
+    "$2 million"
+   ]
+  },
+  {
+   "topic": "Certified free cash use in FY23",
+   "what_was_recorded": "Forecast uses $1,616,692 of certified free cash, with $1,050,270 left in free cash.",
+   "quote": "forecast for fy23 uses $1,616,692 of our certified free cash.",
+   "figures_as_printed": [
+    "$1,616,692",
+    "$1,050,270"
+   ]
+  },
+  {
+   "topic": "Stabilization and OPEB allocations in forecast",
+   "what_was_recorded": "Forecast allocates amounts to the Stabilization Account, Special Purpose Stabilization and OPEB Trust Fund.",
+   "quote": "$100k into the stabilization account, $250k into the special purpose stabilization account and $266k into the",
+   "figures_as_printed": [
+    "$100K",
+    "$250K",
+    "$266K"
+   ]
+  },
+  {
+   "topic": "School staffing plan incremental costs",
+   "what_was_recorded": "Forecast states incremental costs of the LPS five-year staffing plan.",
+   "quote": "an incremental amount of $283,785 in fy24, an incremental amount of $987,082 in fy25, an",
+   "figures_as_printed": [
+    "$283,785",
+    "$987,082",
+    "$415,804",
+    "$123,429"
+   ]
+  },
+  {
+   "topic": "Five-year forecast deficits",
+   "what_was_recorded": "Forecast concludes deficits in FY24-FY27; the dollar totals are not legible in the OCR text.",
+   "quote": "indicates deficits in fiscal years 24-27.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library membership fee increase",
+   "what_was_recorded": "Library Trustees reported a $7,000 increase in the C W Mars membership fee.",
+   "quote": "the library's membership fee for c w mars services will be increasing by $7,000 due to the",
+   "figures_as_printed": [
+    "$7,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Capital Plan prioritization and Primary School air conditioning",
+   "speaker": "Carol Archambeault",
+   "stated_role": "School Committee Chair",
+   "quote": "carol archambeault, 662 page st., school committee chair via zoom, expressed disappointment on behalf of the school committee in the prioritization of the capital plan"
+  },
+  {
+   "topic": "Capital Planning process and Primary School electrical system",
+   "speaker": "Dave Passios",
+   "stated_role": "member of the Capital Planning Committee",
+   "quote": "dave passios, 56 whiting street, via zoom and speaking as a citizen but noting he is a member"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and meeting notices",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the",
+   "tags": [
+    "notices"
+   ]
+  },
+  {
+   "topic": "Public comment on Capital Plan",
+   "resolution": "heard",
+   "quote": "carol archambeault, 662 page st., school committee chair via zoom, expressed disappointment on behalf of the school committee",
+   "tags": [
+    "capital plan",
+    "primary school"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "ms. lemieux announced that the citizen's party caucus is on march 14th at 6:30 p.m. at the",
+   "tags": [
+    "elections"
+   ]
+  },
+  {
+   "topic": "Meeting with state delegation on FY23 priorities",
+   "resolution": "discussed; priorities to be sent to legislators",
+   "quote": "representative sena asked that the town's priorities be sent to all three of the legislators.",
+   "tags": [
+    "state budget",
+    "chapter 70",
+    "special education"
+   ]
+  },
+  {
+   "topic": "ARPA presentation by Capital Strategic Solutions",
+   "resolution": "presented",
+   "quote": "ms. thompson and ms. figuerito of capital strategic solutions presented the following:",
+   "tags": [
+    "ARPA",
+    "community engagement"
+   ]
+  },
+  {
+   "topic": "Class II auto dealer license renewal",
+   "resolution": "approved",
+   "quote": "to approve the renewal of class il auto dealer license for carlos bismark terrero d/b/a",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Cultural Council appointments",
+   "resolution": "approved, four appointed",
+   "quote": "to appoint joan pease, diane beaudoin, nancy heald and kirsten snape to the cultural council",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, jobs, culvert, 925 Mass Ave",
+   "resolution": "informational",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "flat hill road",
+    "brownfields",
+    "employment"
+   ]
+  },
+  {
+   "topic": "Five-year financial forecast presentation",
+   "resolution": "presented; board thanked presenter",
+   "quote": "ms. lemieux presented this to the finance committee meeting last week.",
+   "tags": [
+    "financial forecast",
+    "free cash",
+    "levy"
+   ]
+  },
+  {
+   "topic": "Fiscal priorities request from legislators for FY23",
+   "resolution": "approved",
+   "quote": "to approve the list of fiscal priorities for fy23 as enumerated by the chair",
+   "tags": [
+    "fiscal priorities",
+    "capital"
+   ]
+  },
+  {
+   "topic": "FY23 capital plan, forecast and town meeting warrant articles",
+   "resolution": "discussed; no action",
+   "quote": "mr. jeffreys had questions about some of the capital plan requests.",
+   "tags": [
+    "capital plan",
+    "vehicles",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Certificate to Alter and demolition delay, old Primary School (APDC)",
+   "resolution": "discussed; no vote",
+   "quote": "select board member dwyer stated that his personal opinion on this is after reading through the",
+   "tags": [
+    "APDC",
+    "demolition delay",
+    "historic"
+   ]
+  },
+  {
+   "topic": "Amended Change of Manager license for Ixtapa Cantina",
+   "resolution": "approved",
+   "quote": "to sign the amended license for ixtapa cantina as presented",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "Approval of minutes, Dec 21 2021 and Jan 4 2022",
+   "resolution": "approved",
+   "quote": "to approve the minutes of january 4, 2022 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Select Board MRC and School Committee liaisons",
+   "resolution": "deferred",
+   "quote": "this item will be taken up at another meeting.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reports only",
+   "quote": "mr. dwyer reported the storm water task force met last week and are going to try to be on the",
+   "tags": [
+    "stormwater",
+    "library",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "informational",
+   "quote": "mr. alonzo reported this board's next meetings will be february 8t and 15th",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Executive session, collective bargaining",
+   "resolution": "entered executive session; did not return to open session",
+   "quote": "to enter executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public",
+   "tags": [
+    "collective bargaining",
+    "executive session"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo from Town Manager Heather Lemieux, request from legislators for fiscal priorities for FY 2023 (undated)",
+   "where": "list",
+   "quote": "ms. lemieux presented a memo to the board:"
+  },
+  {
+   "name": "Capital Strategic Solutions presentation on American Rescue Plan Act funding (undated)",
+   "where": "list",
+   "quote": "ms. thompson and ms. figuerito of capital strategic solutions presented the following:"
+  },
+  {
+   "name": "FY2023-FY2027 Financial Forecast",
+   "where": "list",
+   "quote": "the fy2023-fy2027 financial forecast includes the long term staffing plan for police and fire and provides a scenario for staffing"
+  },
+  {
+   "name": "Small Bridge Grant Program (State)",
+   "where": "text",
+   "quote": "the state announced the opening of the small bridge grant program last week."
+  },
+  {
+   "name": "Certificate to Alter (CTA) application, submitted December 30",
+   "where": "text",
+   "quote": "on december 30th we submitted the cta application through the land use office and town clerk office and sent via email to the select board members."
+  },
+  {
+   "name": "Demolition delay permit application, submitted October 27",
+   "where": "text",
+   "quote": "on october 27th we submitted a demolition delay permit application."
+  },
+  {
+   "name": "Amended Change of Manager license, Ixtapa Cantina",
+   "where": "text",
+   "quote": "he presented an amended license for new signatures."
+  }
+ ],
+ "tags": [
+  "ARPA",
+  "state budget",
+  "chapter 70",
+  "FY23 capital plan",
+  "fiscal priorities",
+  "primary school air conditioning",
+  "financial forecast",
+  "free cash",
+  "licenses",
+  "appointments",
+  "APDC demolition delay",
+  "Flat Hill Road culvert",
+  "collective bargaining",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux presented a memo to the board"
+ },
+ "dropped_unquoted_by_field": {}
 }

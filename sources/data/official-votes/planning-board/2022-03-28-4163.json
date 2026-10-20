@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-03-28",
  "docid": "4163",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "close the hearing",
+   "motion": "Close the public hearing on 780 Northfield Road.",
    "moved_by": "M. Allison",
    "seconded_by": "P. Bertram",
    "outcome": "passed unanimously",
@@ -21,6 +21,128 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes record only one vote: the procedural motion to close the public hearing on the scenic road application for 780 Northfield Road. No vote on the application itself is recorded—the hearing was closed without a recorded vote on the merits of the scenic road permit request.",
- "cost_usd": 0.0203601
+ "note": "Public hearing minutes, continuation. The only recorded vote is the procedural motion to close the hearing; no vote on the scenic road or tree-removal request appears in the text. No dollar figures appear. Attendance is taken from the Present line and the header; the applicant's roles come from the minutes' description of owners/applicants. Allison Lattanzi is named as an owner/applicant but is not recorded as speaking.",
+ "cost_usd": 0.00425162,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) , matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) , matthew brenner, adam burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram (arrived 6:05 p.m.) , matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) , matthew brenner, adam burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "erik torgersen participated remotely under the act relative to extending certain covid -19 measures"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram (arrived 6:05 p.m.) , matthew brenner, adam burney"
+  },
+  {
+   "name": "James Lattanzi",
+   "role": "Owner/applicant",
+   "status": "present",
+   "quote": "owner /applicants were james and allison lattanzi, 331 marshall road, fitchburg, ma 01420."
+  },
+  {
+   "name": "Allison Lattanzi",
+   "role": "Owner/applicant",
+   "status": "not stated",
+   "quote": "owner /applicants were james and allison lattanzi, 331 marshall road, fitchburg, ma 01420."
+  },
+  {
+   "name": "Nancy Yasko",
+   "role": "Public commenter, 146 West Townsend Road",
+   "status": "present",
+   "quote": "nancy yasko, 146 west townsend road- she inquired as to the proposed use of the property."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "tom alonzo, 284 lancaster avenue (also a select board member) - due to safety concerns;"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Nancy Yasko",
+   "stated_role": "146 West Townsend Road",
+   "topic": "proposed use of property; past earth removal concerns",
+   "quote": "nancy yasko, 146 west townsend road- she inquired as to the proposed use of the property."
+  },
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Select Board member",
+   "topic": "safety; support for scenic road permit",
+   "quote": "tom alonzo, 284 lancaster avenue (also a select board member) - due to safety concerns;"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: scenic road and shade tree request, 780 Northfield Road",
+   "resolution": "hearing closed; no permit decision recorded in these minutes",
+   "quote": "the hearing continuation was to hear and review a request under m.g.l. ch. 40, section 15c, scenic road designations",
+   "tags": [
+    "scenic road",
+    "shade trees",
+    "stone wall",
+    "driveway",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scenic Road Application",
+   "where": "list",
+   "quote": "documents used at meeting: scenic road application"
+  },
+  {
+   "name": "Updated plan showing proposed driveway location (submitted by J. Lattanzi)",
+   "where": "text",
+   "quote": "j. lattanzi submitted an updated plan showing where the proposed driveway would be located."
+  }
+ ],
+ "tags": [
+  "scenic road",
+  "shade trees",
+  "stone wall",
+  "driveway",
+  "public hearing",
+  "farm access",
+  "conflict of interest",
+  "earth removal"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

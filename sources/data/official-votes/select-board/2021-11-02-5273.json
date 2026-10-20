@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-11-02",
  "docid": "5273",
@@ -12,55 +12,527 @@
  },
  "votes": [
   {
-   "motion": "appoint Wendy Bertrand to the Personnel Committee with a term expiring June 30, 2022",
+   "motion": "Appoint Wendy Bertrand to the Personnel Committee, term to expire June 30, 2022.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2\"d: t. dwyer to appoint wendy bertrand to the personnel committee with a term to expire june 30, 2022 vote: all in favor"
+   "quote": "to appoint wendy bertrand to the personnel committee with a term to expire june 30, 2022 vote: all in favor"
   },
   {
-   "motion": "ratify the appointment of Dawn Pavone as Board/Committee Clerk",
+   "motion": "Ratify the Town Manager's appointment of Dawn Pavone as Board/Committee Clerk.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco to ratify the appointment as presented 2\"i: t. dwyer vote: all in favor"
+   "quote": "to ratify the appointment as presented 2\"i: t. dwyer vote: all in favor"
   },
   {
-   "motion": "approve the sale of Pratt Street parcel 7 property",
+   "motion": "Approve the sale of the Pratt Street parcel 7 property (bid from an abutter of $8,500).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "J. Marino",
-   "outcome": "failed",
+   "outcome": "failed (1 in favor, 3 opposed; Jeffreys in favor)",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\"': j. marino to approve the sale of the pratt street parcel 7 property vote: 3 opposed, 1 in favor (jeffreys)"
+   "quote": "to approve the sale of the pratt street parcel 7 property vote: 3 opposed, 1 in favor (jeffreys)"
   },
   {
-   "motion": "add articles 5, 9, 10, 11, 12, and 13 to the Consent Calendar",
-   "moved_by": "T. Dwyer",
-   "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. dwyer 2\"d: m. jeffreys to add the articles as presented (5, 9, 10, 11, 12, and 13) to the consent calendar as recommended by the town manager vote: all in favor"
-  },
-  {
-   "motion": "award landscape design services to Ray Dunetz Landscape Architecture for design of 30 School Street property",
+   "motion": "Award the landscape design services for 30 School Street to Ray Dunetz Landscape Architecture.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: t. dwyer 2*: l. franco to award the landscape design services to ray dunetz landscape architecture vote: 4 in favor, 1 opposed (jeffreys)"
+   "quote": "to award the landscape design services to ray dunetz landscape architecture vote: 4 in favor, 1 opposed (jeffreys)"
   },
   {
-   "motion": "enter into Executive Session pursuant to MGL c. 30, Section 21, Paragraph 3, to discuss strategy with respect to collective bargaining concerning Fire Union",
+   "motion": "Add Articles 5, 9, 10, 11, 12 and 13 of the November 16, 2021 Special Town Meeting to the Consent Calendar as recommended by the Town Manager.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
+   "procedural": false,
+   "quote": "to add the articles as presented (5, 9, 10, 11, 12, and 13) to the consent calendar as recommended by the town manager vote: all in favor"
+  },
+  {
+   "motion": "Enter Executive Session under MGL c. 30, Section 21, Paragraph 3 to discuss collective bargaining strategy (Fire Union), and adjourn after exiting.",
+   "moved_by": "T. Dwyer",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mir. alonzo-aye"
+   "quote": "to enter into executive session pursuant to mgl c. 30, section 21, paragraph 3, and to adjourn after exiting executive session"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction from scanned document with minor character recognition artifacts (e.g., \"2\"d\" for \"2nd\", \"Mir.\" for \"Mr.\", \"ifan\" for \"if an\").",
- "cost_usd": 0.171472
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR. Quotes are copied from the OCR text, including OCR artifacts (for example \"2\"d\", \"Mi.\", \"Mr, Alonzo\", \"Mir. Alonzo\"). Line breaks in the source are collapsed to single spaces. Discrepancies to check against the source document: the Grey Roy (attendance line) vs Greg Roy (public comment) name; the new-build appropriation is printed $54,000 earlier and $50,000 in the comment on the study. The Pratt Street tally (1 in favor, 3 opposed) totals four of five members; the fifth vote is not printed. The executive session minutes are separate and not in this text. The adjournment at 9:54 p.m. has no recorded motion, so it is not listed as a vote. Discussion about passing over the TCP articles has no recorded motion; the chair said there would be no vote.",
+ "cost_usd": 0.027210580000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Board member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Board member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; lisa leblanc, valerio romano, tajel patel,"
+  },
+  {
+   "name": "Lisa LeBlanc",
+   "role": "presenter on civics curriculum (also printed as Lisa Leblanc, Ms. LeBlanc)",
+   "status": "present",
+   "quote": "ms. leblanc thanked the board for allowing her to come to speak to them about the connections"
+  },
+  {
+   "name": "Valerio Romano",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney romano stated they were here to discuss the host community agreement tonight."
+  },
+  {
+   "name": "Tajel Patel",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; lisa leblanc, valerio romano, tajel patel,"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "TCP Building Design Members",
+   "status": "present",
+   "quote": "tcp building design members: dave passios, grey roy"
+  },
+  {
+   "name": "Grey Roy",
+   "role": "TCP Building Design Members",
+   "status": "present",
+   "quote": "tcp building design members: dave passios, grey roy"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "appointment candidate, Personnel Committee",
+   "status": "present",
+   "quote": "ms. bertrand introduced herself and noted she has been a resident in town for 21 years."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee Chair",
+   "status": "present",
+   "quote": "peter beardmore, 282 pleasant street, commenting as finance committee chair, announced"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed not to vote on the two TCP design articles at this meeting, deferring them to Town Meeting as stated in the warrant.",
+   "quote": "mr. alonzo noted there would not be a vote because we stated in the warrant that we would defer until town meeting."
+  },
+  {
+   "decision": "The Town Manager will check on closed captioning for the PAC station and report back.",
+   "quote": "she will check into it and report back."
+  },
+  {
+   "decision": "The Town Manager will notify Mr. Dunetz of the award of the landscape design contract.",
+   "quote": "ms. lemieux will notify mr. dunetz of the awarding of the contract."
+  },
+  {
+   "decision": "The board will give the UMA Flowers draft host community agreement its full attention after the November 16 Special Town Meeting, and will return to UMA with any amendments.",
+   "quote": "mr. alonzo assured them the board would get back to them with any amendments etc., regarding the draft"
+  },
+  {
+   "decision": "Mr. Alonzo said the board would not vote on the TCP articles and that the Town Manager would report back on captioning; a request to revisit a prior appointment prompted discussion of a written policy, which Mr. Alonzo agreed should exist, but no policy was adopted.",
+   "quote": "mr. alonzo agreed there should be a policy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "TCP building renovation cost",
+   "what_was_recorded": "The renovation figure for the TCP building was originally $23.5 million and has risen about 30% to almost $29 million.",
+   "quote": "the renovation figure was originally $23.5 million, but has increased by 30% to almost $29 million.",
+   "figures_as_printed": [
+    "$23.5 million",
+    "30%",
+    "almost $29 million"
+   ]
+  },
+  {
+   "topic": "Article 8 design funding from free cash",
+   "what_was_recorded": "Article 8 requests $350,000 from certified free cash for design and engineering of a new Town Hall and Community Center.",
+   "quote": "the article for design development requests $350,000 from free cash.",
+   "figures_as_printed": [
+    "$350,000"
+   ]
+  },
+  {
+   "topic": "New build cost estimate",
+   "what_was_recorded": "The estimated cost of the new build is stated as $39,000,637.",
+   "quote": "the cost of the new build is $39,000,637.",
+   "figures_as_printed": [
+    "$39,000,637"
+   ]
+  },
+  {
+   "topic": "Prior appropriation for new-build research",
+   "what_was_recorded": "$54,000 was appropriated at the 2021 Annual Town Meeting to research what a new build would cost.",
+   "quote": "$54,000 was appropriated at the 2021 annual town meeting to research what a new build would cost.",
+   "figures_as_printed": [
+    "$54,000"
+   ]
+  },
+  {
+   "topic": "Free cash history",
+   "what_was_recorded": "Available free cash was presented as ranging from $484,117 in FY15 to $2,666,962 in FY22.",
+   "quote": "he presented a history of past available free cash ranging from $484,117 in fy15 to $2,666,962",
+   "figures_as_printed": [
+    "$484,117",
+    "$2,666,962"
+   ]
+  },
+  {
+   "topic": "Past facility studies and design costs",
+   "what_was_recorded": "Past studies and design work were listed with costs: 2016 Tappe Study $28k; 2018 Vertex Report $53k; 2019 to present TCP Design Committee $265k plus $54k.",
+   "quote": "2016: tappe study- assessment of primary town facilities ($28k)",
+   "figures_as_printed": [
+    "$28k",
+    "$53k",
+    "$265k",
+    "$54k"
+   ]
+  },
+  {
+   "topic": "Tax impact of bond payments per residence",
+   "what_was_recorded": "A public comment estimated the average residential tax bill impact of the bonds at $277 on the original $23.5 million, rising to roughly $341 per residence on the new numbers and $467 per residence for a new construction.",
+   "quote": "these new numbers would bring this to roughly $341 per residence and a new construction would bring us to $467 per residence.",
+   "figures_as_printed": [
+    "$277",
+    "$341",
+    "$467",
+    "$23.5 million"
+   ]
+  },
+  {
+   "topic": "Debt service fiscal policy limit",
+   "what_was_recorded": "A public comment stated fiscal policy caps excludable debt service at 11% of the total tax levy, and that the original $23.5 million number approached that cap by 2025.",
+   "quote": "fiscal policy says we cannot exceed 11% of our total tax levy for excludable debt service",
+   "figures_as_printed": [
+    "11%",
+    "$23.5 million"
+   ]
+  },
+  {
+   "topic": "Cost of the 2021 space study",
+   "what_was_recorded": "A board member said the $50,000 approved at town meeting was worth it; the minutes print $50,000 here but $54,000 for the same appropriation earlier in the meeting.",
+   "quote": "the $50,000 approved at town meeting was worth every single",
+   "figures_as_printed": [
+    "$50,000",
+    "$54,000"
+   ]
+  },
+  {
+   "topic": "Pratt Street parcel sale bid",
+   "what_was_recorded": "The town received one abutter bid of $8,500 for the Pratt Street parcel, against a current assessed value of $12,500.",
+   "quote": "ms. lemieux reported the town had received one bid from an abutter in the amount of $8,500.",
+   "figures_as_printed": [
+    "$8,500",
+    "$12,500"
+   ]
+  },
+  {
+   "topic": "Landscape design proposals for 30 School Street",
+   "what_was_recorded": "Price proposals were Ray Dunetz $19,500, WOLA $27,000 and Landscape Design Collaborative $21,300; the contract was awarded to Ray Dunetz.",
+   "quote": "based on the price proposals, ray dunetz came in at $19,500; wola came in at $27,000 and landscape design collaborative was $21,300.",
+   "figures_as_printed": [
+    "$19,500",
+    "$27,000",
+    "$21,300"
+   ]
+  },
+  {
+   "topic": "Fire Department grants",
+   "what_was_recorded": "The Fire Chief received an EMPG grant of $3,500 for specialized rescue equipment and a Firefighter Safety Equipment grant of $15,000 for turnout gear.",
+   "quote": "the empg grant is for $3,500 and this will be used to purchase specialized rescue equipment.",
+   "figures_as_printed": [
+    "$3,500",
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Tea Party fundraiser",
+   "what_was_recorded": "The COA Tea Party event raised $3,000.",
+   "quote": "the recent tea party event raised $3,000.",
+   "figures_as_printed": [
+    "$3,000"
+   ]
+  },
+  {
+   "topic": "TCP operating costs with no appropriation",
+   "what_was_recorded": "The Town Manager noted there is no appropriation for the TCP building and that added users without revenue raise deficit risk to be addressed in the FY23 budget.",
+   "quote": "i also want to remind everyone that there is no appropriation for this building.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Unitil electricity supply rates",
+   "what_was_recorded": "The DPU approved Unitil's winter rate increase, with a deferred summer increase; a pending submittal would bring the Basic Supply Winter Rate to 15.2 cents per kWh, and the municipal aggregation opt-in rate is 11.2 cents per kWh.",
+   "quote": "the dpu has approved unitil's revised submittal for a winter rate increase of 15.6 cents per kwh",
+   "figures_as_printed": [
+    "15.6 cents per kWh",
+    "4.3 cents per KWh",
+    "15.2 cents per kWh",
+    "11.2 cents per kWh"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Resignation letter of Jim Marino",
+   "speaker": "Mr. Marino",
+   "stated_role": "",
+   "quote": "i will resign from the select board effective november 5, 2021."
+  },
+  {
+   "topic": "Thanks to Jim Marino",
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "quote": "he advocated to the select board to fill the vacant seat left by mr. marino sooner rather than later."
+  },
+  {
+   "topic": "TCP committee response to new estimates",
+   "speaker": "Dave Passios",
+   "stated_role": "TCP Building Design Members",
+   "quote": "dave passios, 56 whiting street, thanked mr. jeffreys for the presentation."
+  },
+  {
+   "topic": "Finance Committee hearing on Articles 7 and 8 and opposition to TCP articles",
+   "speaker": "Peter Beardmore",
+   "stated_role": "Finance Committee Chair",
+   "quote": "commenting as finance committee chair, announced they will be holding a public hearing on articles 7 and 8"
+  },
+  {
+   "topic": "Thanks to Jim Marino",
+   "speaker": "Greg Roy",
+   "stated_role": "",
+   "quote": "greg roy, 105 chestnut street, to mr. marino, stated he was impressed by his service and the"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening): resignation letter",
+   "resolution": "noted; flowers presented to Mr. Marino",
+   "quote": "mr. marino read a letter addressed to the town clerk:",
+   "tags": [
+    "resignation",
+    "board vacancy"
+   ]
+  },
+  {
+   "topic": "Meeting with Lisa LeBlanc on civics curriculum",
+   "resolution": "presentation received; board offered help",
+   "quote": "meeting with lisa leblanc re: civics curriculum and partnership with town government",
+   "tags": [
+    "civics",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Meeting with UMA Flowers on host community agreement",
+   "resolution": "deferred until after the November 16 Special Town Meeting",
+   "quote": "meeting with uma flowers on the host community agreement",
+   "tags": [
+    "cannabis host agreement"
+   ]
+  },
+  {
+   "topic": "Appointment to Personnel Committee: Wendy Bertrand",
+   "resolution": "appointed",
+   "quote": "select board appointment to personnel committee- wendy bertrand, 71 longwood drive-",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Ratification of Board/Committee Clerk Dawn Pavone",
+   "resolution": "ratified",
+   "quote": "ratification of town manager's appointment of board/committee clerk dawn pavone",
+   "tags": [
+    "appointments",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting articles on the TCP building",
+   "resolution": "passed over by statement; no vote, deferred to Town Meeting",
+   "quote": "discussion and presentation on special town meeting articles on the tc passios debt",
+   "tags": [
+    "TCP building",
+    "town hall",
+    "free cash",
+    "debt exclusion"
+   ]
+  },
+  {
+   "topic": "Bid for Pratt Street parcel 7 sale",
+   "resolution": "motion to approve the sale failed",
+   "quote": "bid results from disposition of real property parcel 7 off pratt street",
+   "tags": [
+    "property disposition"
+   ]
+  },
+  {
+   "topic": "Committee reports and action-item revisit",
+   "resolution": "noted; Marino raised a written appointment policy, no policy adopted",
+   "quote": "mr. franco reported economic development committee met and they have finalized their",
+   "tags": [
+    "committees",
+    "appointments policy"
+   ]
+  },
+  {
+   "topic": "Landscape design services for 30 School Street",
+   "resolution": "awarded to Ray Dunetz Landscape Architecture, 4-1",
+   "quote": "discussion and award of landscape design services for the 30 school street",
+   "tags": [
+    "30 School Street",
+    "landscape design"
+   ]
+  },
+  {
+   "topic": "November 16 Special Town Meeting articles and consent calendar",
+   "resolution": "articles 5, 9, 10, 11, 12, 13 added to consent calendar",
+   "quote": "discussion on november 16, 2021 special town meeting warrant articles and",
+   "tags": [
+    "special town meeting",
+    "consent calendar"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "noted",
+   "quote": "upcoming meeting/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "noted; board members commented",
+   "quote": "dave passios thanked mr. marino for many years of service to the town.",
+   "tags": [
+    "resignation",
+    "thanks"
+   ]
+  },
+  {
+   "topic": "Executive session (Fire Union bargaining)",
+   "resolution": "entered executive session; adjourned at 9:54 p.m.",
+   "quote": "announced they would be going into executive session",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "fire union"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Resignation letter of Jim Marino, addressed to the Town Clerk (undated)",
+   "where": "text",
+   "quote": "i will resign from the select board effective november 5, 2021."
+  },
+  {
+   "name": "Standards for History and Social Science Practice, Pre-K-12",
+   "where": "text",
+   "quote": "standards for history and social science practice, pre-k-12*"
+  },
+  {
+   "name": "Session Law Acts of 2018-Act 296",
+   "where": "text",
+   "quote": "session law acts of 2018-act 296"
+  },
+  {
+   "name": "Special Town Meeting Article 8 (design funding for a new Town Hall and Community Center)",
+   "where": "text",
+   "quote": "to see if the town will vote to raise and appropriate or transfer from available funds,"
+  },
+  {
+   "name": "Tappe Study (2016), assessment of primary Town facilities",
+   "where": "text",
+   "quote": "2016: tappe study- assessment of primary town facilities ($28k)"
+  },
+  {
+   "name": "Vertex Report (2018), assessment of TC Passios Building",
+   "where": "text",
+   "quote": "2018: vertex report- detailed assessment of tc passios building ($53k)"
+  },
+  {
+   "name": "DiGiorgio Associates preliminary design and rough cost estimate",
+   "where": "text",
+   "quote": "digiorgio associates were hired to provide a preliminary design and rough cost"
+  },
+  {
+   "name": "2019 survey at Special Town Meeting on uses for 30 School Street",
+   "where": "text",
+   "quote": "2019: survey at special town meeting to identify potential uses for 30 school street:"
+  },
+  {
+   "name": "Facility Framework: The Path Ahead (presented slide)",
+   "where": "text",
+   "quote": "facility framework: the path ahead"
+  },
+  {
+   "name": "Division of Local Services (DLS), MA Department of Revenue, free cash guidance",
+   "where": "text",
+   "quote": "as per the division of local services (dls), ma department of revenue"
+  },
+  {
+   "name": "DPU-approved Unitil revised submittal (winter rate increase)",
+   "where": "text",
+   "quote": "the dpu has approved unitil's revised submittal for a winter rate increase of 15.6 cents per kwh"
+  }
+ ],
+ "tags": [
+  "select board",
+  "town hall",
+  "TCP building",
+  "special town meeting",
+  "free cash",
+  "design funding",
+  "cannabis host agreement",
+  "landscape design",
+  "property disposition",
+  "board appointments",
+  "resignation",
+  "civics curriculum",
+  "fire union"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

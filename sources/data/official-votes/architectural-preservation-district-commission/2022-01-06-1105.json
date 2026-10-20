@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2022-01-06",
  "docid": "1105",
@@ -12,15 +12,13 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of December 9, 2021",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Approve the minutes of December 9, 2021, Ritter Building.",
    "outcome": "passed",
    "procedural": true,
    "quote": "minutes of december 9, 2021, ritter building, reviewed and approved by all members"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:31 PM.",
    "moved_by": "Nicastro",
    "seconded_by": "Dwyer",
    "outcome": "passed",
@@ -29,6 +27,177 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Readable typescript; no scan issues. Minutes record two votes: approval of prior minutes (mover and seconder not stated, though all three members present voted to approve) and motion to adjourn.",
- "cost_usd": 0.0945845
+ "note": "Text extraction, not a scan. No roll call and no attendance statement, so attendee status is inferred from members' recorded statements and is marked present. The minutes approval is recorded as 'approved by all members' with no motion-maker or count; recorded as passed. The adjournment has no printed vote count; recorded as passed from 'Meeting Adjourned'. No dollar figures appear. No public comment.",
+ "cost_usd": 0.014904880000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair mcgrath and commissioner nicastro do not believe it is complete because item 7 was missing"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "vice chair dwyer believes the application is complete"
+  },
+  {
+   "name": "Tony Nicastro",
+   "role": "member",
+   "status": "present",
+   "quote": "commissioner nicastro did not hear back from the planning board for an update regarding lot zoning and will email them again"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair McGrath is to seek advice from Town Council on whether the CTA application for 30 School St was complete.",
+   "quote": "chair mcgrath is to seek advice from town council"
+  },
+  {
+   "decision": "APD Walk Through and Inspection rescheduled to Saturday, Jan 15, 2022, at noon, leaving from the Ritter Building.",
+   "quote": "apd walk through and inspection rescheduled for saturday, jan 15, 2022, at noon leaving from the ritter building"
+  },
+  {
+   "decision": "Commissioner Nicastro will email the Planning Board again about lot zoning for the Brooks House.",
+   "quote": "commissioner nicastro did not hear back from the planning board for an update regarding lot zoning and will email them again"
+  },
+  {
+   "decision": "Members will add content to the FB page.",
+   "quote": "no change since last meeting; members will add content"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review of minutes",
+   "resolution": "approved",
+   "quote": "minutes of december 9, 2021, ritter building, reviewed and approved by all members",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "received; Bylaws review requested by Town Manager's office",
+   "quote": "town requesting that the bylaws be reviewed",
+   "tags": [
+    "bylaws",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "CTA 30 School St application completeness",
+   "resolution": "discussed; Chair to seek advice from Town Council",
+   "quote": "chair mcgrath is to seek advice from town council",
+   "tags": [
+    "30 School Street",
+    "demolition",
+    "APD bylaw"
+   ]
+  },
+  {
+   "topic": "Ongoing violation at 30 School Street (demolition by neglect)",
+   "resolution": "discussed, no action recorded",
+   "quote": "discussion of ongoing violation by the town of lunenburg of the apd bylaw regarding 30 school street",
+   "tags": [
+    "30 School Street",
+    "demolition by neglect",
+    "APD bylaw"
+   ]
+  },
+  {
+   "topic": "APD walk through and inspection",
+   "resolution": "rescheduled to Jan 15, 2022",
+   "quote": "apd walk through and inspection rescheduled for saturday, jan 15, 2022, at noon leaving from the ritter building",
+   "tags": [
+    "inspection"
+   ]
+  },
+  {
+   "topic": "Brooks House",
+   "resolution": "no action; Nicastro to contact Planning Board again",
+   "quote": "commissioner nicastro did not hear back from the planning board for an update regarding lot zoning",
+   "tags": [
+    "Brooks House",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Susan Brown House and Jones House",
+   "resolution": "reported; both restored and on tax rolls",
+   "quote": "historical commission was able to advocate for the sale and reuse of those buildings and both have been restored",
+   "tags": [
+    "Susan Brown House",
+    "Jones House",
+    "Historical Commission"
+   ]
+  },
+  {
+   "topic": "FB page",
+   "resolution": "no change; members to add content",
+   "quote": "no change since last meeting; members will add content",
+   "tags": [
+    "social media"
+   ]
+  },
+  {
+   "topic": "Proposed APD brochure",
+   "resolution": "discussed",
+   "quote": "the proposed apd brochure was discussed",
+   "tags": [
+    "brochure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Email from Town Manager, Heather Lemieux (weathervane to be installed at Town Hall)",
+   "where": "list",
+   "quote": "chair mcgrath received email from town manager, heather lemieux"
+  },
+  {
+   "name": "Email from the Town Manager's office (request that the Bylaws be reviewed)",
+   "where": "list",
+   "quote": "chair mcgrath received email from the town manager's office"
+  },
+  {
+   "name": "CTA application, 30 School St",
+   "where": "text",
+   "quote": "discussion regarding whether or not application was complete"
+  },
+  {
+   "name": "APD Bylaw 113-8(B) (architectural plans for reuse after proposed demolition)",
+   "where": "text",
+   "quote": "architectural plans for reuse after the proposed demolition (apd bylaw 113-8(b))"
+  },
+  {
+   "name": "Proposed APD Brochure",
+   "where": "text",
+   "quote": "the proposed apd brochure was discussed"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "demolition by neglect",
+  "30 School Street",
+  "APD bylaw",
+  "Brooks House",
+  "Susan Brown House",
+  "Jones House",
+  "FB page",
+  "brochure",
+  "zoning",
+  "bylaws"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence"
+ },
+ "dropped_unquoted_by_field": {}
 }

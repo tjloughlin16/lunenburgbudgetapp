@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-07-28",
  "docid": "2061",
@@ -12,31 +12,203 @@
  },
  "votes": [
   {
-   "motion": "Approve the FY23 Goals and Operating Principles document",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Gray",
-   "outcome": "passed unanimously",
+   "motion": "Approve the FY23 Goals and Operating Principles document, as edited.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Tom Gray",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore moved to approve the fy23 goals and operating principles document. mr. gray seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Approve the minutes from the July 21, 2022 meeting",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Balish",
+   "motion": "Approve the minutes of the July 21, 2022 meeting.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Tom Balish",
    "outcome": "passed 4-0-1",
    "procedural": true,
    "quote": "mr. beardmore motioned to approve the minutes from the july 21, 2022 meeting. mr. balish seconded. on vote, motion carried. (4-0-1)"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Mr. Beardmore",
-   "seconded_by": "Mr. Gray",
+   "motion": "Adjourn the meeting at 7:55 p.m.",
+   "moved_by": "Peter Beardmore",
+   "seconded_by": "Tom Gray",
    "outcome": "passed",
    "procedural": true,
    "quote": "mr. beardmore motioned to adjourn, mr. gray seconded. on vote, motion carried."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0781995
+ "dropped_unquoted": 1,
+ "note": "Minutes are a text extraction with no dollar figures printed; the ARPA discussion records money but no amounts. Public comment is recorded as none at both points. The minutes list no documents-used section; the only document named is the FY23 Goals and Operating Principles document.",
+ "cost_usd": 0.014568380000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Chris Menard",
+   "role": "Acting Chairperson",
+   "status": "present",
+   "quote": "present: in person: acting chairperson chris menard, peter beardmore, tom gray."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: in person: acting chairperson chris menard, peter beardmore, tom gray."
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: in person: acting chairperson chris menard, peter beardmore, tom gray."
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "attending remotely: tom balish, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "remote",
+   "quote": "attending remotely: tom balish, jay simeone"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson (guest)",
+   "status": "present",
+   "quote": "guests: school committee chairperson carol archambault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed on the liaison positions discussed at the last meeting and left the School Committee liaison position open.",
+   "quote": "the committee agreed on the positions discussed at the last meeting, and also decided to leave the liaison position for the school committee open."
+  },
+  {
+   "decision": "Committee agreed to write a bylaw that would allow removal of items on the capital plan on the Annual Town Meeting floor.",
+   "quote": "the committee agreed write a bylaw that would allow removal of items on the capital plan on annual town meeting floor."
+  },
+  {
+   "decision": "Mr. Beardmore requested Town Counsel to weigh in on changing the Town Meeting approach to the Capital Plan.",
+   "quote": "mr. beardmore has requested town counsel to weigh in on changing the town meeting approach to the capital plan."
+  },
+  {
+   "decision": "The finance committee will be asked for analysis after the Select Board's fiscal policy workshop discussion takes place.",
+   "quote": "the finance committee will be asked for analysis after that discussion takes place."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA spending planning",
+   "what_was_recorded": "Members discussed how to spend ARPA funds, including parks, sidewalks, infrastructure, broadband and town buildings, with fund deadlines noted; no dollar amount was printed.",
+   "quote": "mr. beardmore opined that having a directional decision regarding the funds, and choosing shovel-ready projects may make the process more efficient.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "mr. menard called the meeting to order at 7:00 p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Reorganization and Liaison Assignments",
+   "resolution": "agreed on positions; School Committee liaison left open",
+   "quote": "the committee agreed on the positions discussed at the last meeting, and also decided to leave the liaison position for the school committee open.",
+   "tags": [
+    "governance",
+    "liaisons"
+   ]
+  },
+  {
+   "topic": "FY23 Goals and Operating Principles",
+   "resolution": "approved",
+   "quote": "mr. balish made a few edits to the document, and the committee approved of the edits.",
+   "tags": [
+    "goals",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Fiscal Policy Review",
+   "resolution": "discussed; no action",
+   "quote": "the finance committee will be asked for analysis after that discussion takes place.",
+   "tags": [
+    "fiscal policy",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Town Meeting Amendments to Capital Plan Article",
+   "resolution": "agreed to draft a bylaw; Town Counsel requested to weigh in",
+   "quote": "the committee agreed write a bylaw that would allow removal of items on the capital plan on annual town meeting floor.",
+   "tags": [
+    "capital plan",
+    "town meeting",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Minutes of July 21, 2022",
+   "resolution": "approved 4-0-1",
+   "quote": "mr. beardmore motioned to approve the minutes from the july 21, 2022 meeting. mr. balish seconded. on vote, motion carried. (4-0-1)",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "capital planning committee will meet august 3, 2022 at 7:00 p.m.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "noted",
+   "quote": "items for future meetings: new board member orientation",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 7:55 p.m.",
+   "quote": "mr. beardmore motioned to adjourn, mr. gray seconded. on vote, motion carried.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY23 Goals and Operating Principles document",
+   "where": "text",
+   "quote": "mr. beardmore moved to approve the fy23 goals and operating principles document."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "ARPA",
+  "capital plan",
+  "Town Meeting",
+  "fiscal policy",
+  "liaisons",
+  "FY23 goals",
+  "minutes approval",
+  "School Committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

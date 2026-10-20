@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2022-03-29",
  "docid": "3364",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the January 6 (as amended), January 20, and March 8, 2022 minutes",
+   "motion": "Accept the January 6 as amended, January 20, and March 8, 2022 minutes.",
    "moved_by": "D. Passios",
    "seconded_by": "A. Lockwood",
    "outcome": "passed 4-0",
@@ -20,31 +20,208 @@
    "quote": "d. passios made a motion to accept the january 6 as amended, january 20, and march 8, 2022 minutes. a. lockwood seconded. roll call vote, all in favor (4-0)."
   },
   {
-   "motion": "Recommend to the Town Manager to move forward with the Select Board on the appointments of Elizabeth Simeone as Beach Coordinator and Ethan Gengler, Paige Gengler, Nicholas Coronella and Jarrod Bowser",
+   "motion": "Recommend to the Town Manager to move forward with the Select Board on the appointments of Elizabeth Simeone as Beach Coordinator and Ethan Gengler, Paige Gengler, Nicholas Coronella and Jarrod Bowser.",
    "moved_by": "D. Passios",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "d. passios made a motion and c. sullivan seconded to recommend to the town manager to move forward with the select board on the appointments of elizabeth simeone as beach coordinator and ethan gengler, paige gengler, nicholas coronella and jarrod bowser. roll call vote: c. sullivan - yes d. passios - yes a.lockwood - yes p . hakey - yes k. menard - yes"
+   "quote": "d. passios made a motion and c. sullivan seconded to recommend to the town manager to move forward with the select board"
   },
   {
-   "motion": "Keep the beach passes at the same rate as last year",
+   "motion": "Keep the beach passes at the same rate as last year.",
    "moved_by": "Ana Lockwood",
    "seconded_by": "C. Sullivan",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ana lockwood made a motion to keep the passes at the same rate as last year. c. sullivan seconded. all in favor. roll call vote: c. sullivan - yes d. passios - yes a.lockwood - yes p . hakey - yes k. menard - yes"
+   "quote": "ana lockwood made a motion to keep the passes at the same rate as last year. c. sullivan seconded. all in favor."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "C. Sullivan",
    "seconded_by": "A. Lockwood",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "c. sullivan made a motion to adjourn. a. lockwood seconded. roll call v ote c. sullivan - yes a.lockwood - yes d. passios - yes k. menard - yes"
+   "quote": "c. sullivan made a motion to adjourn. a. lockwood seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Four votes recorded. Note: Patrick Hakey left the meeting before the adjournment vote, which is why only 4 members voted on the final motion. The first vote records 4-0 despite 5 members being present at that point.",
- "cost_usd": 0.10376140000000002
+ "note": "Minutes are text-extracted; page headers read 'Park Commission March 16, 2022 Minutes' while the meeting is dated March 29, 2022. The text names 'M. Lemieux' once in the beach house passage, apparently meaning H. Lemieux. Patrick Hakey left during the recreation/Marshall Park discussion (quoted 'P. Hakey left the meeting.') and is not on the roll call for the adjournment vote. Vote tallies are as printed; the appointments and fee-rate votes print a roll call without a count, so they are recorded as 'passed'. Public comment: 'none'. No documents list is printed.",
+ "cost_usd": 0.01758228,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Christopher Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Patrick Hakey",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: karin menard, christopher sullivan, dave passios, ana lockwood and patrick hakey."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "additional attendees: heather lemieux, rob thompson"
+  },
+  {
+   "name": "Rob Thompson",
+   "role": "Additional Attendee",
+   "status": "present",
+   "quote": "additional attendees: heather lemieux, rob thompson"
+  },
+  {
+   "name": "C. Begley",
+   "role": "not printed",
+   "status": "not stated",
+   "quote": "c. begley discussed with the commission his thoughts regarding the plans."
+  },
+  {
+   "name": "Andrea Mastrototoro",
+   "role": "Board Clerk, Secretary",
+   "status": "not stated",
+   "quote": "andrea mastrototoro, board clerk, secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission consensus is to proceed with Alternative One for Marshall Park with a few tweaks; no vote was taken.",
+   "quote": "k. menard indicated the general consensus was the commission like alternative one with a few tweaks."
+  },
+  {
+   "decision": "Consensus that T-ball stays in the Marshall Park plan and basketball and pickleball are phased in at some point; no vote was taken.",
+   "quote": "k. menard noted the consensus would be t-ball to stay and the option for basketball & pickleball be phased in at some point."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Beach pass and fee rates",
+   "what_was_recorded": "The chair recalled the 2021 beach pass fees, and the Commission voted to keep the passes at last year's rates.",
+   "figures_as_printed": [
+    "$5/ adult",
+    "$2 per Senior or additional child",
+    "$10 per adult",
+    "$5 per Senior or additional child",
+    "$65",
+    "$80",
+    "$44",
+    "$60",
+    "$25",
+    "$35"
+   ],
+   "quote": "k. menard indicated the fees for 2021 were $5/ adult and included 3 children 15 years and under, seniors were $2 per"
+  },
+  {
+   "topic": "Beach house repair cost estimate",
+   "what_was_recorded": "A cost estimate for beach house repairs was received in March and goes through procurement; no dollar figure is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "the cost estimate was received in march and will be going through the procurement process."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Board and Public Comment",
+   "resolution": "no comment",
+   "quote": "first item on the agenda, board and public comment, none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of January 6 (amended), January 20 and March 8, 2022",
+   "resolution": "approved 4-0",
+   "quote": "next item on the agenda, january 6 amended, january 20, and march 8, 2022",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "2022 Beach Season",
+   "resolution": "discussed; pass rates kept at last year's level; beach staff appointments recommended",
+   "quote": "next item on the agenda, 2022 beach season including but not limited to facility, pass and swim lesson fees and hiring.",
+   "tags": [
+    "beach",
+    "fees",
+    "hiring",
+    "beach house repair"
+   ]
+  },
+  {
+   "topic": "Town Manager, DPW and Recreation Director updates",
+   "resolution": "update given; beach staffing recommended to the Town Manager",
+   "quote": "next item on the agenda, town manager/dpw director/recreation director updates.",
+   "tags": [
+    "recreation",
+    "hiring",
+    "beach"
+   ]
+  },
+  {
+   "topic": "Recreation programs and field usage",
+   "resolution": "discussed; no action",
+   "quote": "r. thompson stated there are summer programs in the works such as basketball, soccer, bike tours and mountain biking as well as",
+   "tags": [
+    "recreation programs",
+    "fields",
+    "Little League"
+   ]
+  },
+  {
+   "topic": "Marshall Park alternative plans (WOLA)",
+   "resolution": "discussed; general preference for Alternative One with changes; no formal vote",
+   "quote": "next item on the agenda, discussion, recommendations and feedback to wola of the 2 alternative plans presented on 3/16/2022",
+   "tags": [
+    "Marshall Park",
+    "capital project",
+    "WOLA"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2 alternative plans presented on 3/16/2022 (Marshall Park, WOLA; Alternative One and Alternative two)",
+   "where": "text",
+   "quote": "discussion, recommendations and feedback to wola of the 2 alternative plans presented on 3/16/2022"
+  }
+ ],
+ "tags": [
+  "Park Commission",
+  "beach season",
+  "beach fees",
+  "beach staff hiring",
+  "beach house repair",
+  "Marshall Park",
+  "recreation programs",
+  "fields",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

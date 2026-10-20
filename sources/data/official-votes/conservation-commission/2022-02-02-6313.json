@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-02-02",
  "docid": "6313",
@@ -12,71 +12,435 @@
  },
  "votes": [
   {
-   "motion": "Approve field change at 168 West Street",
+   "motion": "Approve the field change for 168 West Street (smaller footprint of the proposed addition).",
    "moved_by": "JV",
    "seconded_by": "ML",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jv motioned for approval of the field change. ml seconded and the commission unanimously approved the motion by roll call vote"
   },
   {
-   "motion": "Negative determination with condition that plans be revised to show erosion control at 205 Sunset Lane",
+   "motion": "Issue a negative determination for grading within the buffer zone at 205 Sunset Lane, with the condition that the plans be revised to show erosion control.",
    "moved_by": "RB",
    "seconded_by": "JR",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a negative determination with the condition that the plans be revised to show erosion control was made by rb and a second by jr with a unanimous motion approved by roll call vote"
+   "quote": "a negative determination with the condition that the plans be revised to show erosion control was made by rb and a second by jr with a unanimous motion approved by roll call vote."
   },
   {
-   "motion": "Continue meeting to February 16",
+   "motion": "Continue the Notice of Intent hearing for the removal of an old dump site at 104 Fairview Ave to February 16.",
    "moved_by": "RB",
    "seconded_by": "JV",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "the meeting was continued to february 16 by a motion of rb and a second by jv with a unanimous vote to approve by roll call vote"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the meeting was continued to february 16 by a motion of rb and a second by jv with a unanimous vote to approve by roll call vote."
   },
   {
-   "motion": "Issue Order of Conditions for Notice of Intent by Paul Gosselin at 21 Brookview Terrace",
+   "motion": "Issue an Order of Conditions for the relocation of a drain line at 21 Brookview Terrace (Paul Gosselin).",
    "moved_by": "RB",
    "seconded_by": "JV",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made to issue an order of conditions by rb with a second by jv and a unanimous vote to approve the motion by roll call vote"
   },
   {
-   "motion": "Continue hearing for 711 Massachusetts Ave to February 16",
+   "motion": "Continue the Notice of Intent hearing for the 4-lot subdivision at 711 Massachusetts Ave to February 16.",
    "moved_by": "RB",
    "seconded_by": "JR",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "a motion was made by rb to continue to february 16th with a second by jr and a unanimous vote to approve the motion by roll call vote"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "a motion was made by rb to continue to february 16th with a second by jr and a unanimous vote to approve the motion by roll call vote."
   },
   {
-   "motion": "Negative determination for work at 2 Gabe's Place for removal of trees within buffer zone",
+   "motion": "Issue a negative determination for the removal of trees within the buffer zone at 2 Gabe's Place.",
    "moved_by": "JV",
    "seconded_by": "CC",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "a motion for a negative determination was made by jv with a second by cc"
+   "quote": "mm noted that the mitigation of the violation is satisfactory and recommended a negative determination. the motion was passed unanimously by a roll call vote."
   },
   {
-   "motion": "Continue hearing on 445 Townsend Harbor Road to February 16",
+   "motion": "Continue the Notice of Intent hearing for work at 445 Townsend Harbor Road to February 16.",
    "moved_by": "RB",
    "seconded_by": "JV",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "continued to feb 16 by a motion of rb and second by jv with a unanimous vote to approve the motion"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "continued to feb 16 by a motion of rb and second by jv with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue hearing for 123 Chase Road to February 16",
+   "motion": "Continue the Notice of Intent hearing for a duplex, septic and site grading at 123 Chase Road to February 16.",
    "moved_by": "RB",
    "seconded_by": "JV",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "continued to february 16 by a motion of rb a second by jv and a unanimous vote to approve the roll call vote"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "continued to february 16 by a motion of rb a second by jv and a unanimous vote to approve the roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes passed unanimously by roll call vote. No votes failed or recorded opposition. All continuations were to February 16, 2022 (the next scheduled meeting).",
- "cost_usd": 0.14667449999999999
+ "note": "Text extraction, readable throughout but with typos and garbled words (e.g. 'itesm', 'existi ng', 'Eric Flower' for Eric Fowler). Votes are recorded only as motions with initials; I mapped initials to members using the letterhead roster (RB Richard Bursch, JV Jeffrey Viviano, ML Michael Larouche, JR Jack Rabbitt, BP Bob Pease, MM Matthew Marro, CC Catie Childs). The mapping is mine, not the minutes'. The minutes name no vote on approving prior minutes, no adjournment vote, and no roll-call tally beyond 'unanimous'. The Public Comment and Minutes of previous meetings headings have no content. Attendance is given only as 'all members present'; Richard Tremblay's attendance is not stated. Straw poll on the 711 Massachusetts Ave application is recorded as a poll, not a vote, and is excluded.",
+ "cost_usd": 0.02091138,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair (Chairman Pease; initials BP)",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by chairman pease with all members present"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair (initials RB)",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by chairman pease with all members present"
+  },
+  {
+   "name": "Patricia Adams",
+   "role": "member",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by chairman pease with all members present"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member (initials CC)",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by chairman pease with all members present"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member (initials JR)",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by chairman pease with all members present"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "member (initials JV)",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by chairman pease with all members present"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "member (initials ML)",
+   "status": "present",
+   "quote": "meeting called to order at 7 pm by chairman pease with all members present"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Associate",
+   "status": "not stated",
+   "quote": "richard tremblay, associate"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator (initials MM)",
+   "status": "present",
+   "quote": "mm reviewed the comment from dep and recommended that the documentation changes be completed."
+  },
+  {
+   "name": "Barbara Battle",
+   "role": "appeared before the commission (field change, 168 West Street)",
+   "status": "present",
+   "quote": "barbara battle appeared before the commission and noted the changes in the plan which"
+  },
+  {
+   "name": "Wendy Gendron",
+   "role": "presenter, LSIC annual report",
+   "status": "present",
+   "quote": "wendy gendron appeared before the commission and presented the prior years treatment results."
+  },
+  {
+   "name": "Dominic Meringolo",
+   "role": "participant, LSIC annual report",
+   "status": "present",
+   "quote": "she and dominic meringolo reviewed the successes and itesm to be addressed with the coming"
+  },
+  {
+   "name": "Dan Wolfe",
+   "role": "presenter, 205 Sunset Lane hearing",
+   "status": "present",
+   "quote": "dan wolfe outlined the proposed project to the commission which is on the outer edge of the 100"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "appeared before the commission (104 Fairview Ave NOI)",
+   "status": "present",
+   "quote": "heather lemieux appeared before the commission review of the plans showed the outline of the"
+  },
+  {
+   "name": "Eric Fowler",
+   "role": "applicant, Notice of Intent, 711 Massachusetts Ave",
+   "status": "present",
+   "quote": "wes flis and eric fowler appeared before the commission and reviewed the prior issues from the"
+  },
+  {
+   "name": "Wes Flis",
+   "role": "appeared before the commission (711 Massachusetts Ave; also printed as Wesley Flis)",
+   "status": "present",
+   "quote": "wes flis and eric fowler appeared before the commission and reviewed the prior issues from the"
+  },
+  {
+   "name": "Fran Majovski",
+   "role": "presenter of revised plan, 2 Gabe's Place",
+   "status": "present",
+   "quote": "fran majovski presented the revised plan."
+  },
+  {
+   "name": "Paulo Majovski",
+   "role": "applicant, request for determination, 2 Gabe's Place",
+   "status": "not stated",
+   "quote": "a request for a determination by paulo majovski"
+  },
+  {
+   "name": "Marsha Beers",
+   "role": "applicant, request for determination, 205 Sunset Lane",
+   "status": "not stated",
+   "quote": "a request for a determination by marsha beers for grading to accommodate a septic system"
+  },
+  {
+   "name": "Paul Gosselin",
+   "role": "applicant, Notice of Intent, 21 Brookview Terrace",
+   "status": "not stated",
+   "quote": "by paul gosselin for the relocation of an existi ng drain"
+  },
+  {
+   "name": "William Emkey",
+   "role": "applicant, Notice of Intent, 445 Townsend Harbor Road",
+   "status": "not stated",
+   "quote": "a notice of intent by william emkey for work at 445 townsend"
+  },
+  {
+   "name": "Zachery Taylor",
+   "role": "applicant, Notice of Intent, 123 Chase Road",
+   "status": "not stated",
+   "quote": "a notice of intent by zachery taylor for the construction of a new duplex"
+  },
+  {
+   "name": "Nick",
+   "role": "named in enforcement discussion (441 Townsend Harbor Road); no surname or role printed",
+   "status": "not stated",
+   "quote": "nick asked if he could do the retaining wall at"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant at 711 Massachusetts Ave to provide the requested financial information before the next meeting (RB's request).",
+   "quote": "rb asked that the information be provided prior to the next meeting."
+  },
+  {
+   "decision": "Chair to discuss letters with Town Counsel on the 192 Townsend Harbor Road encroachment and report back once resolved.",
+   "quote": "bp is discussing letters to be issued with town counsel and will come back to the commission after this is resolved."
+  },
+  {
+   "decision": "Field change for the roof at 441 Townsend Harbor Road to be reviewed at the next meeting.",
+   "quote": "this will be reviewed at the next meeting as a field change."
+  },
+  {
+   "decision": "Certificates of Compliance for 30 Laurel Lane held until the next meeting at MM's request.",
+   "quote": "certificates of compliance 30 laurel lane mm requested it be held until the next meeting"
+  },
+  {
+   "decision": "Commission to work with DPW on a bid spec for remedial work at the Hollis Road residence, per permission given by Heather Lemieux.",
+   "quote": "heather lemieux gave permission to allow the commission to work with the dpw to come up with a bid spec for remedial work."
+  },
+  {
+   "decision": "Bylaw review: the Conservation Administrator recommended further discussion of the exemption criteria before any amendment.",
+   "quote": "mm recommended further discussion, due to the differing natures of how the exemptions would be applied."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Subdivision financial viability, 711 Massachusetts Ave",
+   "what_was_recorded": "Discussion of the applicant's profitability, bank profit-margin requirement and rising development costs; no dollar figure is printed.",
+   "quote": "he reviewed the profitability of the subdivision proposal and that the bank would require a minimum profit margin.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Trails grant",
+   "what_was_recorded": "Status of the trails grant was on the agenda; the minutes print no amount.",
+   "quote": "update on trails grant",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Request for field change, 168 West Street",
+   "resolution": "approved unanimously by roll call",
+   "quote": "1. request for field change 168 west street",
+   "tags": [
+    "field change",
+    "residential"
+   ]
+  },
+  {
+   "topic": "LSIC annual report presentation",
+   "resolution": "presented; no action recorded",
+   "quote": "wendy gendron appeared before the commission and presented the prior years treatment results.",
+   "tags": [
+    "presentation",
+    "LSIC"
+   ]
+  },
+  {
+   "topic": "Determination, grading for septic, 205 Sunset Lane",
+   "resolution": "negative determination with condition",
+   "quote": "a negative determination with the condition that the plans be revised to show erosion control was made by rb",
+   "tags": [
+    "buffer zone",
+    "determination",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, old dump removal, 104 Fairview Ave",
+   "resolution": "continued to February 16",
+   "quote": "the meeting was continued to february 16 by a motion of rb and a second by jv",
+   "tags": [
+    "NOI",
+    "municipal land",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Continued hearing, drain relocation, 21 Brookview Terrace",
+   "resolution": "Order of Conditions issued",
+   "quote": "a motion was made to issue an order of conditions by rb",
+   "tags": [
+    "NOI",
+    "drain"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, 4-lot subdivision, 711 Massachusetts Ave",
+   "resolution": "continued to February 16; written financial information requested",
+   "quote": "a motion was made by rb to continue to february 16th",
+   "tags": [
+    "NOI",
+    "subdivision",
+    "alternatives analysis"
+   ]
+  },
+  {
+   "topic": "Request for determination, tree removal, 2 Gabe's Place",
+   "resolution": "negative determination",
+   "quote": "mm noted that the mitigation of the violation is satisfactory and recommended a negative determination.",
+   "tags": [
+    "buffer zone",
+    "tree removal",
+    "violation"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, railroad tie steps, 445 Townsend Harbor Road",
+   "resolution": "continued to February 16",
+   "quote": "continued to feb 16 by a motion of rb and second by jv",
+   "tags": [
+    "NOI",
+    "retaining wall"
+   ]
+  },
+  {
+   "topic": "Notice of Intent, duplex and septic, 123 Chase Road",
+   "resolution": "continued to February 16",
+   "quote": "continued to february 16 by a motion of rb a second by jv",
+   "tags": [
+    "NOI",
+    "duplex",
+    "septic"
+   ]
+  },
+  {
+   "topic": "Old business: encroachment, 192 Townsend Harbor Road",
+   "resolution": "ongoing; letters with Town Counsel",
+   "quote": "192 townsend harbor road- bp is discussing letters to be issued with town counsel",
+   "tags": [
+    "encroachment",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Old business: maintenance, Hollis Road residence",
+   "resolution": "DPW to develop bid spec for remedial work",
+   "quote": "heather lemieux gave permission to allow the commission to work with the dpw",
+   "tags": [
+    "maintenance",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Bylaw review: Wetlands Bylaw",
+   "resolution": "further discussion",
+   "quote": "review of existing wetlands bylaw for possible future amendments",
+   "tags": [
+    "bylaw",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Enforcement: violations and administrative hearings",
+   "resolution": "roof field change carried to next meeting; other items listed",
+   "quote": "this will be reviewed at the next meeting as a field change.",
+   "tags": [
+    "enforcement",
+    "violations"
+   ]
+  },
+  {
+   "topic": "Trails grant status",
+   "resolution": "status reported; no action recorded",
+   "quote": "bp noted signage is being created.",
+   "tags": [
+    "trails",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Certificates of Compliance, 30 Laurel Lane",
+   "resolution": "held until next meeting",
+   "quote": "certificates of compliance 30 laurel lane mm requested it be held until the next meeting",
+   "tags": [
+    "certificate of compliance"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised plan, 2 Gabe's Place (presented by Fran Majovski)",
+   "where": "text",
+   "quote": "fran majovski presented the revised plan."
+  },
+  {
+   "name": "DEP comments, 104 Fairview Ave NOI",
+   "where": "text",
+   "quote": "rb reviewed dep comments which asked for erosion protection to be added to the plan."
+  },
+  {
+   "name": "Prior site assessment (consultant), 104 Fairview Ave",
+   "where": "text",
+   "quote": "heather lemieux reviewed the prior site assessment and the consultant noted there did"
+  },
+  {
+   "name": "Narrative with phasing for roof remediation, 441 Townsend Harbor Road",
+   "where": "text",
+   "quote": "submit a narrative with the phasing for remediation of the roof and have the commission consider it"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "determinations",
+  "buffer zone",
+  "enforcement",
+  "public hearings",
+  "subdivision",
+  "field change",
+  "bylaw review"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

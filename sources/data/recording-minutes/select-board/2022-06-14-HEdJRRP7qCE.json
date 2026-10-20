@@ -1,0 +1,718 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2022-06-14",
+ "video_id": "HEdJRRP7qCE",
+ "video_url": "https://www.youtube.com/watch?v=HEdJRRP7qCE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-06-14-HEdJRRP7qCE.json",
+  "sha256": "101727eaf442ae92175e43e3d04152be9174b32ef2063ea150f1e306a220698e",
+  "caption_lines": 415,
+  "segments": 4007
+ },
+ "recording": {
+  "duration_s": 8561,
+  "duration": "2:22",
+  "spoken_chars": 118472,
+  "words_approx": 19745
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06142022-5301",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-06-14-agenda-5301.txt",
+   "path": "sources/meetings/select-board/2022-06-14-agenda-5301.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06142022-5301",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-06-14-minutes-5301.txt",
+   "path": "sources/meetings/select-board/2022-06-14-minutes-5301.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T13:58:33Z",
+  "cost_usd": 0.4285257
+ },
+ "minutes": {
+  "headline": "Select Board approved an ambulance abatement and hardship policy, heard a clean FY21 audit, and set FY23 goals.",
+  "summary": "The board heard the FY21 audit from the auditors (unmodified opinion, four management letter comments), then approved a new ambulance receivable write-off and hardship policy. It reappointed members to commissions, took the town manager's report, and held a workshop reviewing FY22 goals and drafting FY23 board and town manager goals. The liquor license application policy was deferred for a draft.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (select board chair)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Alonzo",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather (town manager)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Ms. Soroka",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Karen Brochu",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Chief Sullivan",
+    "role": "fire chief"
+   },
+   {
+    "name_as_heard": "Mr. Cerretti (Powers and Sullivan)",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "Ben",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 124,
+    "topic": "Welcomed new board member and asked how the APDC appointment of Richard McGrath is worded relative to the historical commission.",
+    "speaker_as_heard": "mr pacios"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "debt",
+   "executive-session",
+   "free-cash",
+   "hiring",
+   "housing",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-safety",
+   "retirement",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 2725,
+    "motion": "Approve the ambulance abatement collection and hardship policy as presented by the finance director and fire chief.",
+    "outcome": "passed (voice vote, ayes have it)",
+    "procedural": false
+   },
+   {
+    "t": 2849,
+    "motion": "Ratify appointment of heavy equipment operator Keith Babin.",
+    "outcome": "passed 4-0",
+    "procedural": false
+   },
+   {
+    "t": 3222,
+    "motion": "Appoint Richard McGrath to the APDC with term expiring June 30, 2024.",
+    "outcome": "passed (voice vote, ayes have it)",
+    "procedural": false
+   },
+   {
+    "t": 8534,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 704,
+    "topic": "General fund balance FY21",
+    "what_was_said": "Auditors reported the general fund balance, its restricted and assigned parts, and the unassigned share of the budget.",
+    "figures_as_heard": [
+     "9.2 million dollars",
+     "181 000",
+     "1.5 million",
+     "7.2 million dollars",
+     "16 percent"
+    ]
+   },
+   {
+    "t": 765,
+    "topic": "Stabilization funds",
+    "what_was_said": "General, zoning and vehicle/equipment stabilization balances reported, with general stabilization rising since 2013.",
+    "figures_as_heard": [
+     "2.5 million dollars",
+     "230 000",
+     "1.2 million dollars"
+    ]
+   },
+   {
+    "t": 805,
+    "topic": "FY21 budgetary results",
+    "what_was_said": "Fund balance rose on a revenue surplus and expenditures under budget, offset by free cash use.",
+    "figures_as_heard": [
+     "872 000",
+     "966 thousand dollars",
+     "1.4 million dollars",
+     "858 000"
+    ]
+   },
+   {
+    "t": 869,
+    "topic": "Enterprise funds",
+    "what_was_said": "Sewer, solid waste and cable funds all grew their balances.",
+    "figures_as_heard": [
+     "1.6 million",
+     "134 thousand dollars",
+     "857 000"
+    ]
+   },
+   {
+    "t": 933,
+    "topic": "OPEB liability and trust",
+    "what_was_said": "Town added to the OPEB trust; net OPEB liability rose due to assumption changes.",
+    "figures_as_heard": [
+     "111 thousand dollars",
+     "589 000",
+     "65.6 million dollars",
+     "9.8 million dollar"
+    ]
+   },
+   {
+    "t": 1058,
+    "topic": "Pension liability",
+    "what_was_said": "Worcester Regional retirement system liability and funding level reported.",
+    "figures_as_heard": [
+     "19.8 million dollars",
+     "fifty percent"
+    ]
+   },
+   {
+    "t": 1120,
+    "topic": "Capital assets and debt",
+    "what_was_said": "Capital asset additions and outstanding debt reported; debt service about nine percent of appropriations.",
+    "figures_as_heard": [
+     "96.9 million dollars",
+     "4.3 million dollars",
+     "37.6 million",
+     "4.5 million",
+     "610 000"
+    ]
+   },
+   {
+    "t": 1201,
+    "topic": "Federal awards",
+    "what_was_said": "Town spent federal funds subject to single audit, including COVID relief and school lunch.",
+    "figures_as_heard": [
+     "1.9 million",
+     "338 000",
+     "663 000"
+    ]
+   },
+   {
+    "t": 1386,
+    "topic": "Ambulance receivables",
+    "what_was_said": "Most of the ambulance receivable balance was over 180 days old, prompting the write-off policy.",
+    "figures_as_heard": [
+     "six hundred twenty two thousand dollars",
+     "five hundred fifty two thousand"
+    ]
+   },
+   {
+    "t": 1838,
+    "topic": "Fraud risk assessment",
+    "what_was_said": "A consultant proposal for the fraud risk assessment was previously quoted at roughly ten thousand dollars and would need funding.",
+    "figures_as_heard": [
+     "ten thousand dollars",
+     "10 000"
+    ]
+   },
+   {
+    "t": 5329,
+    "topic": "30 School Street design money",
+    "what_was_said": "Design money to get construction documents for the site was removed at town meeting; the approximate amount was mentioned.",
+    "figures_as_heard": [
+     "350 000"
+    ]
+   },
+   {
+    "t": 7670,
+    "topic": "Accounts payable warrant",
+    "what_was_said": "An accounts payable warrant was presented.",
+    "figures_as_heard": [
+     "939 717 and 33 cents"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 5043,
+    "decision": "Board agreed to drop the volunteerism policy goal, continue the senior tax exemption goal, and carry 30 School Street oversight and demolition into FY23 goals."
+   },
+   {
+    "t": 7586,
+    "decision": "Liquor license application review policy to be drafted with legal help before the board acts."
+   },
+   {
+    "t": 7956,
+    "decision": "New council on aging appointee to appear before the board next week to reaffirm appointment."
+   },
+   {
+    "t": 5863,
+    "decision": "Citizen recognition idea not made a goal; may be handled as agenda item or periodic highlight."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 310,
+    "topic": "Opening and public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 310,
+    "t_end": 434,
+    "topic": "Announcements and communications from parks commissioners",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 434,
+    "t_end": 2000,
+    "topic": "FY21 audit review by Powers and Sullivan",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "free-cash",
+     "retirement"
+    ]
+   },
+   {
+    "t_start": 2003,
+    "t_end": 2766,
+    "topic": "Ambulance abatement collection and hardship policy",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "public-safety",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 2766,
+    "t_end": 3326,
+    "topic": "Appointments: heavy equipment operator, ADA commission, APDC",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 3326,
+    "t_end": 4213,
+    "topic": "Town manager's report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "roads-and-dpw",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 4213,
+    "t_end": 6424,
+    "topic": "Workshop: FY22 and FY23 select board goals",
+    "resolution": "no resolution",
+    "tags": [
+     "policy",
+     "town-meeting",
+     "housing"
+    ]
+   },
+   {
+    "t_start": 6424,
+    "t_end": 7335,
+    "topic": "Town manager FY23 goals",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "capital",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 7335,
+    "t_end": 7670,
+    "topic": "Liquor license application policy",
+    "resolution": "referred for draft",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 7670,
+    "t_end": 8534,
+    "topic": "Warrants, committee reports, action items",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 8534,
+    "t_end": 8558,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact vote counts on most motions were not stated beyond voice votes.",
+   "Some speaker identities in discussion are unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3614,
+    "about": "Board member questioned why a solar PILOT agreement is being negotiated while the owner appeals personal property taxes.",
+    "sides": "a member questioning the town manager's approach to the PILOT while the company appeals",
+    "words_as_heard": "why would we stop taking their taxes and go to a lower tax structure for an existing system",
+    "kind": "members disagree"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2024,
+    "name_as_heard": "proposed ambulance abatement collection and hardship policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "can we share the proposed policy with the people at home",
+    "shown": true
+   },
+   {
+    "t": 1284,
+    "name_as_heard": "management letter",
+    "kind": "letter or email",
+    "words_as_heard": "the last report is the management letter",
+    "shown": false
+   },
+   {
+    "t": 434,
+    "name_as_heard": "fiscal year 21 audit",
+    "kind": "report",
+    "words_as_heard": "fiscal year 21 audit review by powers and sullivan",
+    "shown": false
+   },
+   {
+    "t": 3054,
+    "name_as_heard": "APDC bylaw",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "i'll just read from the um bylaw for the composition for the apdc",
+    "shown": false
+   },
+   {
+    "t": 4297,
+    "name_as_heard": "fiscal year 22 select board goals",
+    "kind": "report",
+    "words_as_heard": "we have the goals for um for fiscal year 22",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "ambulance-receivables",
+    "title": "Ambulance receivables",
+    "question": "How large is the ambulance receivable balance and how much is uncollectible?",
+    "t": 1386,
+    "words_as_heard": "the ambulance receivable balance at the end of the year total six hundred twenty two thousand dollars",
+    "data_in_play": [
+     "six hundred twenty two thousand dollars",
+     "five hundred fifty two thousand"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "solar-pilot-agreement",
+    "title": "Solar PILOT agreement",
+    "question": "What would a PILOT for the 265 Pleasant Street solar array replace in personal property taxes?",
+    "t": 3614,
+    "words_as_heard": "a payment in lieu of tax agreement for the solar personal property equipment",
+    "data_in_play": [],
+    "existing": ""
+   },
+   {
+    "slug": "30-school-street-plan",
+    "title": "30 School Street options",
+    "question": "What do the demolition and design costs for the old primary school site look like?",
+    "t": 5329,
+    "words_as_heard": "350 000 where there abouts so for the design to get the construction documents",
+    "data_in_play": [
+     "350 000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board approved a new ambulance receivable write-off and hardship policy by voice vote, as presented by the finance director and fire chief.",
+    "t": 2725
+   },
+   {
+    "line": "The auditors reported on the FY21 audit: an unmodified opinion and four management letter comments.",
+    "t": 434
+   },
+   {
+    "line": "Auditors noted most of the ambulance receivable balance was over 180 days old, which prompted the write-off policy.",
+    "t": 1386
+   },
+   {
+    "line": "In a goals workshop, the board agreed to drop the volunteerism goal, continue the senior tax exemption goal, and carry 30 School Street into FY23.",
+    "t": 5043
+   },
+   {
+    "line": "A liquor license application review policy was held back to be drafted with legal help before the board acts.",
+    "t": 7586
+   }
+  ],
+  "why_it_matters": [
+   "The ambulance policy sets how overdue ambulance bills are collected, written off or eased for residents in hardship, which affects what the town expects to collect.",
+   "The FY23 goals set the board's priorities, including the senior tax exemption and the 30 School Street site, which could reach residents as tax relief or a Town Meeting vote."
+  ],
+  "watch_next": [
+   "A draft liquor license application review policy, to be prepared with legal help before the board acts.",
+   "The new council on aging appointee, who is to appear before the board next week to reaffirm the appointment."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T13:58:44Z",
+   "cost_usd": 0.2270837
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06142022-5301",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-06-14-minutes-5301.txt",
+   "path": "sources/meetings/select-board/2022-06-14-minutes-5301.pdf"
+  },
+  "official_sha256": "cf72821d960ded6d9c002788e0b126982ac86d7fd88e275562e038df39e95547",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the three non-procedural votes' outcomes and most audit figures, but differ on the APDC appointment vote count and on the goals decisions. The one thing to know: the official minutes record the McGrath appointment as 3-1 with Jeffreys opposed, while ours records a voice vote with no dissent.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 4,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Richard McGrath APDC appointment vote",
+    "t": 3222,
+    "ours": "Appoint Richard McGrath to the APDC with term expiring June 30, 2024. — passed (voice vote, ayes have it)",
+    "official": "motion: t. alonzo 2\": t. dwyer to appoint richard mcgrath to the apd as a historical commission representative with a term expiring june 30, 2024",
+    "note": "Official structured record says passed 3 in favor, 1 opposed (Jeffreys); ours says voice vote with no dissent. Check the recording at this point for a 'nay' and the official minutes' vote line.",
+    "official_reading": ""
+   },
+   {
+    "kind": "agree",
+    "about": "Ambulance collection and hardship policy vote",
+    "t": 2725,
+    "ours": "Approve the ambulance abatement collection and hardship policy as presented by the finance director and fire chief. — passed (voice vote, ayes have it)",
+    "official": "motion: t. alonzo 2°: t. dwyer to approve the ambulance billing collection procedure and hardship policy as presented vote: all in favor",
+    "note": "Same vote and outcome; ours says 'abatement collection' where the official says 'billing collection procedure', likely a caption or wording variation."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Heavy equipment operator name",
+    "t": 2849,
+    "ours": "Ratify appointment of heavy equipment operator Keith Babin. — passed 4-0",
+    "official": "motion: t. dwyer 2': t. alonzo to ratify the appointment of kevin babin to heavy equipment operator vote: all in favor",
+    "note": "Same ratification, all in favor; first name misheard as Keith for Kevin.",
+    "official_reading": "Kevin Babin"
+   },
+   {
+    "kind": "caption_error",
+    "about": "General fund unassigned balance FY21",
+    "t": 704,
+    "ours": "General fund balance FY21: 9.2 million dollars, 181 000, 1.5 million, 7.2 million dollars, 16 percent",
+    "official": "that left you with a general fund unassigned fund balance of $7.2 million dollars which is about 16% of your budget",
+    "note": "The $7.2 million and 16% agree; the other captioned figures (9.2 million, 181,000, 1.5 million) are not in the official summary, which cites $1.6 million for 2013.",
+    "official_reading": "$7.2 million, 16%"
+   },
+   {
+    "kind": "agree",
+    "about": "Stabilization funds",
+    "t": 765,
+    "ours": "Stabilization funds: 2.5 million dollars, 230 000, 1.2 million dollars",
+    "official": "your general stabilization fund totaled $2.5 million. that has steadily increased since 2013 when it was a million dollars",
+    "note": "$2.5M, $230,000 and $1.2M match."
+   },
+   {
+    "kind": "agree",
+    "about": "FY21 budgetary results",
+    "t": 805,
+    "ours": "FY21 budgetary results: 872 000, 966 thousand dollars, 1.4 million dollars, 858 000",
+    "official": "the general fund balance increased by $872,000 and that was mainly due to a revenue surplus of $966,000",
+    "note": "$872,000, $966,000, $1.4M and $858,000 all match."
+   },
+   {
+    "kind": "agree",
+    "about": "Enterprise funds",
+    "t": 869,
+    "ours": "Enterprise funds: 1.6 million, 134 thousand dollars, 857 000",
+    "official": "your enterprise funds, sewer fund balance totaled $1.6 million, about a $227,000 increase from the prior year.",
+    "note": "$1.6M, $134,000 and $857,000 match."
+   },
+   {
+    "kind": "agree",
+    "about": "OPEB liability and trust",
+    "t": 933,
+    "ours": "OPEB liability and trust: 111 thousand dollars, 589 000, 65.6 million dollars, 9.8 million dollar",
+    "official": "next is the opeb liability; the town contributed an additional $111,000 to the opeb trust fund.",
+    "note": "$111,000, $589,000, $65.6M and $9.8M match."
+   },
+   {
+    "kind": "agree",
+    "about": "Pension liability",
+    "t": 1058,
+    "ours": "Pension liability: 19.8 million dollars, fifty percent",
+    "official": "your liability associated with that is $19.8",
+    "note": "$19.8 matches; the official text is cut off at the page break, so the unit and the fifty percent are not confirmed."
+   },
+   {
+    "kind": "agree",
+    "about": "Capital assets and debt",
+    "t": 1120,
+    "ours": "Capital assets and debt: 96.9 million dollars, 4.3 million dollars, 37.6 million, 4.5 million, 610 000",
+    "official": "you had $37.6 million outstanding and for your sewer activities you had $4.5 million outstanding.",
+    "note": "$37.6M, $4.5M and $610,000 match; the $96.9M and $4.3M capital asset figures are not in the official summary."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Federal awards",
+    "t": 1201,
+    "ours": "Federal awards: 1.9 million, 338 000, 663 000",
+    "official": "the town expended $1.9 million, of that $338,000 was related to school lunch, $702,000 related to the coronavirus refund grant.",
+    "note": "The official gives $702,000 for the Coronavirus relief grant and also lists $663,000 among its figures; ours has only 663,000. Check the audit presentation to see which figure is the Coronavirus grant and which is another amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Ambulance receivables",
+    "t": 1386,
+    "ours": "Ambulance receivables: six hundred twenty two thousand dollars, five hundred fifty two thousand",
+    "official": "the ambulance receivables balance at the end of the year totaled $622,000 and $552,000 of that was over 180 days old.",
+    "note": "$622,000 and $552,000 match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Fraud risk assessment figures",
+    "t": 1838,
+    "ours": "Fraud risk assessment: ten thousand dollars, 10 000",
+    "official": "",
+    "note": "The official minutes have no fraud risk assessment figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "30 School Street design money",
+    "t": 5329,
+    "ours": "30 School Street design money: 350 000",
+    "official": "",
+    "note": "The $350,000 appears nowhere in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Accounts payable warrant",
+    "t": 7670,
+    "ours": "Accounts payable warrant: 939 717 and 33 cents",
+    "official": "the board signed an accounts payable warrant in the amount of $939,717.33.",
+    "note": "$939,717.33 matches."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Outstanding checks and ambulance write-off thresholds",
+    "ours": "",
+    "official": "the balance at the end of 2020 was $61,000, now down to $9,000.",
+    "note": "The official minutes record outstanding checks ($61,000 down to $9,000) and the hardship write-off thresholds ($50 and $250), which our minutes do not list."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Goals and 30 School Street decisions",
+    "t": 5043,
+    "ours": "Board agreed to drop the volunteerism policy goal, continue the senior tax exemption goal, and carry 30 School Street oversight and demolition into FY23 goals.",
+    "official": "mr. jeffreys will work on the wording and the board members should send any suggestions to him during the week as well.",
+    "note": "Ours records firm goal decisions; the official only says Jeffreys will rework the wording and the board will revisit the goals. Check the recording to see whether the decisions were made that night."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Liquor license application policy",
+    "t": 7586,
+    "ours": "Liquor license application review policy to be drafted with legal help before the board acts.",
+    "official": "mr. jeffreys will speak to mr. franco about creating a draft.",
+    "note": "Both describe a draft liquor policy, but the official names Jeffreys talking to Mr. Franco; ours says legal help. Check who was assigned and in what form."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Council on aging appointee returning",
+    "t": 7956,
+    "ours": "New council on aging appointee to appear before the board next week to reaffirm appointment.",
+    "official": "",
+    "note": "The official minutes do not record this."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Citizen recognition idea",
+    "t": 5863,
+    "ours": "Citizen recognition idea not made a goal; may be handled as agenda item or periodic highlight.",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Flat Hill Road drainage, 265 Pleasant Street PILOT, policy review",
+    "ours": "",
+    "official": "i will provide an update to the board when i receive a revised proposal that covers the full scope of the project.",
+    "note": "The official records the Flat Hill Road drainage follow-up, the 265 Pleasant Street PILOT terms and the Policies and Procedures review. Ours has none of them."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees",
+    "ours": "Mr. Alonzo, Mr. Dwyer, Ms. Soroka, Heather (town manager), Karen Brochu, Chief Sullivan, Mr. Cerretti, Ben",
+    "official": "also present: heather lemieux, town manager; frank serreti, ben adsit, karen brochu, finance director; patrick sullivan, fire chief",
+    "note": "Same people. Ours has the chair unnamed (official: Jeffreys), Soroka for Sroka, and Cerretti for Frank Serreti, which are caption errors."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment speaker Dave Passios",
+    "ours": "",
+    "official": "dave passios, 81 whiting street, welcomed ms. sroka to the select board. he asked for clarification about the apdc appointment later this evening.",
+    "note": "Our minutes do not record this speaker or the APDC question."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T14:00:29Z",
+   "cost_usd": 0.33598399999999995
+  }
+ }
+}

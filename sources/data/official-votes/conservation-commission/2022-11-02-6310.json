@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-11-02",
  "docid": "6310",
@@ -12,119 +12,561 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of October 5, 2022",
+   "motion": "Approve the minutes of the 10/5 meeting.",
    "moved_by": "CC",
    "seconded_by": "RT",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": true,
    "quote": "cc/rt m/s to approve the minutes of 10/5. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Approve negative determination for Dan's Paving LLC project at 691 Chase Road with conditions regarding erosion control notification and septic system review",
+   "motion": "Approve the Request for Determination of Applicability by Dan's Paving LLC with a negative determination, conditioned on the office being notified before construction and on Conservation Commission review of any septic plan changes.",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
-   "quote": "rb/mw m/s to approve with a negative determination with condition that the office be notified prior to construction for inspection of erosion controls, and if there are any changes to the septic system plan it be brought back to the conservation commission for approval. roll call vote, unanimous to approve."
+   "quote": "rb/mw m/s to approve with a negative determination with condition that the office be notified"
   },
   {
-   "motion": "Approve negative determination for Lunenburg Housing Authority tree cutting at 131 White Street with conditions regarding stump retention and vegetation protection",
+   "motion": "Approve the Lunenburg Housing Authority tree-cutting RDA at 131 White Street with a negative determination, conditioned on leaving the stumps and minimizing damage to surrounding vegetation.",
    "moved_by": "RB",
    "seconded_by": "CC",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
-   "quote": "rb/cc m/s to approve with a negative determination with condition that the stumps be left and that damage to the surrounding vegetation be minimized. roll call vote, unanimous to approve."
+   "quote": "rb/cc m/s to approve with a negative determination with condition that the stumps be left and that damage to the surrounding vegetation be minimized."
   },
   {
-   "motion": "Continue hearing on Elaine Normandin retaining wall at 47 Round Road to November 16 meeting",
+   "motion": "Continue the Notice of Intent hearing for Elaine Normandin, 47 Round Road, to the 11/16 meeting.",
    "moved_by": "ML",
    "seconded_by": "CC",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "ml/cc m/s to continue hearing to 11/16 meeting. roll call vote, unanimous to approve."
+   "outcome": "passed, roll call unanimous",
+   "procedural": true,
+   "quote": "ml/cc m/s to continue hearing to 11/16 meeting."
   },
   {
-   "motion": "Continue hearing on Rene Rainville retaining wall at 57 Round Road to November 16 meeting",
+   "motion": "Continue the Notice of Intent hearing for Rene Rainville, 57 Round Road, to the 11/16 meeting.",
    "moved_by": "MW",
    "seconded_by": "RB",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "mw/rb m/s to continue hearing to 11/16 meeting. roll call vote, unanimous to approve."
+   "outcome": "passed, roll call unanimous",
+   "procedural": true,
+   "quote": "mw/rb m/s to continue hearing to 11/16 meeting."
   },
   {
-   "motion": "Continue hearing on Marc Sprague retaining wall at 73 Round Road to November 2 meeting",
+   "motion": "Continue the Notice of Intent hearing for Marc Sprague, 73 Round Road, to the 11/2 meeting.",
    "moved_by": "ML",
    "seconded_by": "RB",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "ml/rb m/s to continue hearing to 11/2 meeting. roll call vote, unanimous to approve."
+   "outcome": "passed, roll call unanimous",
+   "procedural": true,
+   "quote": "ml/rb m/s to continue hearing to 11/2 meeting."
   },
   {
-   "motion": "Approve negative determination for Brian Haas driveway paving at 509 Townsend Harbor Road",
+   "motion": "Approve the Brian Haas Request for Determination of Applicability for driveway paving at 509 Townsend Harbor Road with a negative determination.",
    "moved_by": "RB",
    "seconded_by": "CC",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
    "quote": "rb/cc m/s to approve with a negative determination. roll call vote, unanimous to approve."
   },
   {
-   "motion": "Continue hearing on Fitchburg Land property warehouse at 260 Fahlulah Road to November 16 meeting",
+   "motion": "Continue the Notice of Intent hearing for Fitchburg Land Property Owner LLC, 260 Fahlulah Road, to the 11/16 meeting.",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "rb/mw m/s to continue hearing to 11/16 meeting. roll call vote, unanimous to approve."
+   "outcome": "passed, roll call unanimous",
+   "procedural": true,
+   "quote": "rb/mw m/s to continue hearing to 11/16 meeting."
   },
   {
-   "motion": "Approve that the Conservation Commission has no interest in acquiring Parcel 3 Sunny Hill Road",
+   "motion": "Approve that the Conservation Commission has no interest in acquiring Parcel 3 Sunny Hill Road.",
    "moved_by": "MW",
    "seconded_by": "RB",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
-   "quote": "mw/rb m/s to approve that the conservation commission has no interest in acquiring parcel 3 sunny hill road. roll call vote, unanimous to approve"
+   "quote": "mw/rb m/s to approve that the conservation commission has no interest in acquiring parcel 3 sunny hill road."
   },
   {
-   "motion": "Approve field change to use 9 inch wattle instead of 12 inch wattle",
+   "motion": "Approve a field change to use 9-inch wattles in place of the 12-inch wattles on the plan, requested by Richard Tremblay (who recused).",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": false,
    "quote": "rb/mw m/s for a field change to a 9\" wattle. unanimous to approve."
   },
   {
-   "motion": "Approve overnight camping by the Boy Scouts at Clark Hill",
+   "motion": "Approve overnight camping by the Boy Scouts at Clark Hill for an Eagle Scout project.",
    "moved_by": "RT",
    "seconded_by": "MW",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
-   "quote": "rt/mw m/s to approve overnight camping by the boys scouts at clark hill. roll call vote, unanimous to approve."
+   "quote": "rt/mw m/s to approve overnight camping by the boys scouts at clark hill. roll call vote, unanimous"
   },
   {
-   "motion": "Approve issuance of Certificate of Compliance for 390 New West Townsend Road (DEP# 208-1125)",
+   "motion": "Approve the issuance of a Certificate of Compliance for 390 New West Townsend Rd (DEP# 208-1125).",
    "moved_by": "RB",
    "seconded_by": "MW",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
-   "quote": "rb/ mw m/s to approve the issuance for the certificate of compliance. roll call vote, unanimous to approve."
+   "quote": "rb/ mw m/s to approve the issuance for the certificate of compliance."
   },
   {
-   "motion": "Approve purchase order for $2,000 at Maki for materials and supplies for bridge repairs and putting up signs and gates",
+   "motion": "Approve a $2,000 purchase order at Maki for materials and supplies for bridge repairs and putting up signs and gates.",
    "moved_by": "RB",
    "seconded_by": "RT",
-   "outcome": "passed",
+   "outcome": "passed, roll call unanimous",
    "procedural": false,
-   "quote": "rb/rt m/s for a $2,000 po at maki for materials and supplies for bridge repairs and putting up signs and gates. roll call vote, unanimous to approve"
+   "quote": "rb/rt m/s for a $2,000 po at maki for materials and supplies for bridge repairs and putting up signs and gates."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "MW",
    "seconded_by": "CC",
-   "outcome": "passed",
+   "outcome": "passed, unanimous",
    "procedural": true,
    "quote": "mw/cc m/s adjourn the meeting. roll call vote, unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1013925
+ "note": "Scope: a single text, six pages, read in full; no scan or missing pages noted. Roll calls are recorded only as \"unanimous\"; no per-member tallies are printed, so every outcome is recorded as printed. Votes are coded by member initials (BP, RB, CC, ML, MW, RT); the attendance line maps them to names, and moved_by/seconded_by keep the initials as printed. Initials are ambiguous in places: \"MM\" is used for both Matt Marro and Melissa Magane, and \"BR\" and \"BHann\" are not expanded, so no attribution was assigned from them. The minutes head the previous-minutes item \"October 19, 2022\" but the motion reads \"minutes of 10/5\"; recorded as printed. The Marc Sprague continuance is \"to 11/2 meeting\", which is the meeting date itself, recorded as printed. The agenda spells the applicant \"Brian Haas\" and the minutes \"Brian Hass\"; both kept as printed. No executive session, no transfers, and no budget figures beyond the three listed. Attendance for applicants and abutters is inferred from their speaking; the minutes do not say whether they attended in person or by Zoom.",
+ "cost_usd": 0.023102110000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: bp, rb, cc, ml, mw, rt absent: jv"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: bp, rb, cc, ml, mw, rt absent: jv"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "present: bp, rb, cc, ml, mw, rt absent: jv"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "present: bp, rb, cc, ml, mw, rt absent: jv"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "present: bp, rb, cc, ml, mw, rt absent: jv"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "present: bp, rb, cc, ml, mw, rt absent: jv"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "present: bp, rb, cc, ml, mw, rt absent: jv"
+  },
+  {
+   "name": "Sam Welch",
+   "role": "member of the public, interested in associate membership",
+   "status": "present",
+   "quote": "sam welch noted that he is present at the meeting."
+  },
+  {
+   "name": "Melissa Magane",
+   "role": "presented for Dan's Paving and Excavating",
+   "status": "present",
+   "quote": "melissa magane with dan's paving and excavating presented the proposed plan"
+  },
+  {
+   "name": "Deborah Christen",
+   "role": "LUHA Chairman",
+   "status": "present",
+   "quote": "deborah christen (luha chairman), adam gautie (luha assistant executive director), and dale proul"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "LUHA Assistant Executive Director",
+   "status": "present",
+   "quote": "deborah christen (luha chairman), adam gautie (luha assistant executive director), and dale proul"
+  },
+  {
+   "name": "Dale Proul",
+   "role": "LUHA member",
+   "status": "present",
+   "quote": "deborah christen (luha chairman), adam gautie (luha assistant executive director), and dale proul"
+  },
+  {
+   "name": "Matt Marro",
+   "role": "represented applicants on all three Round Road NOIs",
+   "status": "present",
+   "quote": "matt marro represented applicants on all three nois at round road, as the properties are abutters."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "of Ramsden Walls",
+   "status": "present",
+   "quote": "brett ramsden (of ramsden walls) who will be doing the proposed work was also present."
+  },
+  {
+   "name": "Eric Knapp",
+   "role": "abutter, at 39 Round Road",
+   "status": "present",
+   "quote": "eric knapp (at 39 round road) is an abutter and expressed that he generally supports the project"
+  },
+  {
+   "name": "Brian Hass",
+   "role": "applicant, 509 Townsend Harbor Road (printed as Brian Haas in the agenda heading)",
+   "status": "present",
+   "quote": "brian hass and bill hannigan were both present for the discussion."
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "presented for the 509 Townsend Harbor Road applicant (printed as BHann)",
+   "status": "present",
+   "quote": "brian hass and bill hannigan were both present for the discussion."
+  },
+  {
+   "name": "Susan Petrella",
+   "role": "abutter to project",
+   "status": "present",
+   "quote": "susan petrella (abutter to project) brought up a concern about the project being in compliance"
+  },
+  {
+   "name": "Tracee and Robert Galloni",
+   "role": "property owners at 23 Cove Rd",
+   "status": "present",
+   "quote": "tracee and robert galloni (property owners at 23 cove rd) commented on their eo."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair said EO 23 Cove Road must remain on the agenda until the Conservation Administrator reviews the enforcement order and determines no further action is needed.",
+   "quote": "bp stated that this must remain on the agenda until adam burney or the new conservation administrator reviews the eo and determines no further action is needed."
+  },
+  {
+   "decision": "The Chair directed that the Hollis Road exterminator contract signatory be settled by reaching out to Julie Belliveau.",
+   "quote": "bp said he should reach out to julie belliveau about who should sign it."
+  },
+  {
+   "decision": "Questions and concerns on the draft select board environmental policies are to be sent in, per the Chair's recommendation.",
+   "quote": "bp recommended that questions and concerns be sent it."
+  },
+  {
+   "decision": "The abutter's zoning-bylaw driveway setback concern at 509 Townsend Harbor Road is to be taken up with the building inspector.",
+   "quote": "bp stated this should be brought up with the building inspector."
+  },
+  {
+   "decision": "The Clerk will send Sam Welch any relevant volunteering opportunities.",
+   "quote": "mw stated she will send sw any relevant volunteering opportunities."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Exterminator contract, 123 Hollis Road",
+   "what_was_recorded": "The exterminator contract for 123 Hollis Rd would be a yearly contract of $495, made out to the Town of Lunenburg, and signatures are required.",
+   "figures_as_printed": [
+    "$495"
+   ],
+   "quote": "ml said signatures are required for the exterminator contract on 123 hollis rd, it would be a $495 yearly contract."
+  },
+  {
+   "topic": "Maki purchase order balance",
+   "what_was_recorded": "The existing purchase order for Maki was only $300, and more funds were said to be needed for upcoming expenses.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "bp stated that the po for maki was only $300 but there needs to be more funds to pay for upcoming expenses."
+  },
+  {
+   "topic": "Maki purchase order approval",
+   "what_was_recorded": "The Commission approved a $2,000 purchase order at Maki for bridge repairs and signs and gates.",
+   "figures_as_printed": [
+    "$2,000"
+   ],
+   "quote": "rb/rt m/s for a $2,000 po at maki for materials and supplies for bridge repairs and putting up signs and gates."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Associate membership of the Commission",
+   "speaker": "Sam Welch",
+   "quote": "sam welch stated he was interested in being an associate member of the commission."
+  },
+  {
+   "topic": "Round Road wall replacement, 39 Round Road abutter concerns",
+   "speaker": "Eric Knapp",
+   "stated_role": "abutter (at 39 Round Road)",
+   "quote": "eric knapp (at 39 round road) is an abutter and expressed that he generally supports the project"
+  },
+  {
+   "topic": "Driveway setback bylaw at 509 Townsend Harbor Road",
+   "speaker": "Susan Petrella",
+   "stated_role": "abutter to project",
+   "quote": "susan petrella (abutter to project) brought up a concern about the project being in compliance"
+  },
+  {
+   "topic": "Enforcement order at 23 Cove Road",
+   "speaker": "Tracee and Robert Galloni",
+   "stated_role": "property owners at 23 Cove Rd",
+   "quote": "tracee and robert galloni (property owners at 23 cove rd) commented on their eo."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action; announcements none",
+   "quote": "call to order: 7:00 pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meeting",
+   "resolution": "approved",
+   "quote": "cc/rt m/s to approve the minutes of 10/5. roll call vote, unanimous to approve.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "RDA, Dan's Paving, 691 Chase Road",
+   "resolution": "approved with negative determination and conditions",
+   "quote": "a public meeting on a request for determination of applicability by dan's paving llc for a proposed parking lot",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "RDA, Lunenburg Housing Authority, 131 White Street",
+   "resolution": "approved with negative determination and conditions",
+   "quote": "a public meeting on a request for determination of applicability by the lunenburg housing authority, for tree cutting at 131 white street.",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "tree cutting",
+    "housing"
+   ]
+  },
+  {
+   "topic": "NOI, Elaine Normandin, 47 Round Road",
+   "resolution": "continued to 11/16 meeting",
+   "quote": "a public hearing on a notice of intent by elaine normandin for a proposed replacement of a retaining wall at 47 round road.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "retaining wall",
+    "Round Road"
+   ]
+  },
+  {
+   "topic": "NOI, Rene Rainville, 57 Round Road",
+   "resolution": "continued to 11/16 meeting",
+   "quote": "a public hearing on a notice of intent by rene rainville, for a proposed replacement of a retaining wall at 57 round road.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "retaining wall",
+    "Round Road"
+   ]
+  },
+  {
+   "topic": "NOI, Marc Sprague, 73 Round Road",
+   "resolution": "continued to 11/2 meeting as printed",
+   "quote": "a public hearing on a notice of intent by marc sprague, for a proposed replacement of a retaining wall at 73 round road.",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "retaining wall",
+    "Round Road",
+    "lake"
+   ]
+  },
+  {
+   "topic": "RDA, Brian Haas, 509 Townsend Harbor Road",
+   "resolution": "approved with negative determination",
+   "quote": "a public meeting on a request for determination of applicability by brian haas for the paving of a driveway at 509 townsend harbor road.",
+   "tags": [
+    "wetlands",
+    "RDA",
+    "driveway",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "NOI, Fitchburg Land Property Owner LLC, 260 Fahlulah Road",
+   "resolution": "continued to 11/16 meeting",
+   "quote": "to construct a 367,000 square foot warehouse and distribution facility with parking and storm water controls at 260",
+   "tags": [
+    "wetlands",
+    "NOI",
+    "warehouse",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Questions for Town Counsel",
+   "resolution": "no action; counsel's answer reported",
+   "quote": "he confirmed that in the wetlands act there is a two-year statute of limitations on existing violations",
+   "tags": [
+    "legal",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Draft select board environmental policies",
+   "resolution": "no action; questions and concerns to be sent",
+   "quote": "bp recommended that questions and concerns be sent it.",
+   "tags": [
+    "policy",
+    "enforcement",
+    "ATV"
+   ]
+  },
+  {
+   "topic": "Parcel 3 Sunny Hill Road",
+   "resolution": "approved: no interest in acquiring",
+   "quote": "mw/rb m/s to approve that the conservation commission has no interest in acquiring parcel 3 sunny hill road.",
+   "tags": [
+    "land acquisition",
+    "right of first refusal"
+   ]
+  },
+  {
+   "topic": "Field change, Richard Tremblay",
+   "resolution": "approved 9-inch wattles in place of 12-inch",
+   "quote": "rb/mw m/s for a field change to a 9\" wattle. unanimous to approve.",
+   "tags": [
+    "field change",
+    "erosion control"
+   ]
+  },
+  {
+   "topic": "Overnight camping, Boy Scouts at Clark Hill",
+   "resolution": "approved",
+   "quote": "rt/mw m/s to approve overnight camping by the boys scouts at clark hill. roll call vote, unanimous",
+   "tags": [
+    "camping",
+    "Clark Hill"
+   ]
+  },
+  {
+   "topic": "Encroachment: 192 Townsend Harbor Road, 104 Woodland Drive",
+   "resolution": "no action; 104 Woodland Drive visit unanswered",
+   "quote": "bp went by their place twice, no one answered.",
+   "tags": [
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Hollis Road residence maintenance and exterminator contract",
+   "resolution": "kitchen work to be rescheduled; contract signatory to be confirmed",
+   "quote": "ml said signatures are required for the exterminator contract on 123 hollis rd, it would be a $495 yearly contract.",
+   "tags": [
+    "maintenance",
+    "Hollis Road",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Certificate of Compliance, 390 New West Townsend Rd",
+   "resolution": "approved issuance",
+   "quote": "rb/ mw m/s to approve the issuance for the certificate of compliance.",
+   "tags": [
+    "certificate of compliance",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "Violations: EO 23 Cove Road",
+   "resolution": "remains on agenda pending Conservation Administrator review",
+   "quote": "bp stated that this must remain on the agenda until adam burney or the new conservation administrator reviews the eo",
+   "tags": [
+    "enforcement",
+    "buffer zone",
+    "shed",
+    "Cove Road"
+   ]
+  },
+  {
+   "topic": "Open space and land use, Howard Street driveway",
+   "resolution": "no action; Chair has not yet spoken with Bill Benard",
+   "quote": "bp has not yet talked to bill benard",
+   "tags": [
+    "open space",
+    "Howard Street"
+   ]
+  },
+  {
+   "topic": "Timber sales",
+   "resolution": "informational",
+   "quote": "bp heard from fran mcnamara that pulling lumber out of the back of hollis rd is going well",
+   "tags": [
+    "timber",
+    "Hollis Road"
+   ]
+  },
+  {
+   "topic": "Conservation land improvements at Maki",
+   "resolution": "approved $2,000 purchase order",
+   "quote": "rb/rt m/s for a $2,000 po at maki for materials and supplies for bridge repairs and putting up signs and gates.",
+   "tags": [
+    "conservation land",
+    "bridge",
+    "purchase order"
+   ]
+  },
+  {
+   "topic": "Committee reports: Hickory Hills property",
+   "resolution": "no action; transfer delayed by failed Title V",
+   "quote": "the property failed title v so it will delay the transfer of the estate to the conservation commission.",
+   "tags": [
+    "Hickory Hills",
+    "Title V",
+    "estate transfer"
+   ]
+  },
+  {
+   "topic": "Communications and public comment: associate member",
+   "resolution": "no vote; volunteering opportunities to be sent",
+   "quote": "sam welch stated he was interested in being an associate member of the commission.",
+   "tags": [
+    "membership",
+    "volunteering"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:14 pm",
+   "quote": "mw/cc m/s adjourn the meeting. roll call vote, unanimous.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "request for determination",
+  "public hearings",
+  "enforcement",
+  "conservation land",
+  "purchase orders",
+  "Round Road",
+  "Hollis Road",
+  "exterminator contract",
+  "select board policies",
+  "Lunenburg"
+ ],
+ "dropped_unquoted_by_field": {}
 }

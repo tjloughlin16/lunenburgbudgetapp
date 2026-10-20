@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2022-03-21",
  "docid": "3499",
@@ -12,47 +12,283 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the March 16, 2022 meeting as presented",
+   "motion": "Approve the minutes of the March 16, 2022 meeting as presented.",
    "moved_by": "J. Bilotta",
    "seconded_by": "W. Bertrand",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta to accept and approve the minutes of the march 16, 2022 meeting as presented second: w. bertrand roll call vote: all in favor"
+   "quote": "motion by j. bilotta to accept and approve the minutes of the march 16, 2022 meeting as presented"
   },
   {
-   "motion": "Accept the recommendation of the HR Director and accept the job description as presented and to add it to the SAP with a notation that the pay rate be determined by the Police CBA, to be submitted to the Town Meeting for final approval",
+   "motion": "Accept the HR Director's recommendation and the Civilian Traffic Detail job description as presented, adding it to the SAP with pay rate set by the Police CBA, for submission to Town Meeting.",
    "moved_by": "J. Bilotta",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by j. bilotta to accept the recommendation of the hr director and accept the job description as presented and to add it to the sap with a notation that the pay rate be determined by the police cba. to be submitted to the town meeting for final approval. second e. arnold roll call vote: all in favor"
+   "quote": "motion by j. bilotta to accept the recommendation of the hr director and accept the job description as presented"
   },
   {
-   "motion": "Accept the recommendation of the HR Director to hire this candidate in Grade 6 Step 2",
+   "motion": "Accept the HR Director's recommendation to hire the New Hire candidate as Board Clerk/Secretary in Grade 6 Step 2.",
    "moved_by": "S. Andrews",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept the recommendation of the hr director to hire this candidate in grade 6 step 2. second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept the recommendation of the hr director to hire this candidate"
   },
   {
-   "motion": "Accept the V2 FY23 salary grid as submitted, and complete the cost review so it would be available to send with the FY23 SAP Salary Grid to the Finance Committee for review, to be submitted for review at the Town Meeting",
+   "motion": "Accept the V2 FY23 salary grid as submitted and complete the cost review so it can go with the FY23 SAP Salary Grid to the Finance Committee, then to Town Meeting.",
    "moved_by": "E. Arnold",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by e. arnold to accept the v2 fy23 salary grid as submitted, and complete the cost review so it would be available to send with the fy23 sap salary grid to the finance committee for review. it would then be submitted for review at the town meeting. second: d. fortune roll call vote: all in favor"
+   "quote": "motion by e. arnold to accept the v2 fy23 salary grid as submitted, and complete the cost review"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:52pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta to adjourn meeting at 6:52pm second: s. andrews roll call vote: all in favor"
+   "quote": "motion by j. bilotta to adjourn meeting at 6:52pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0869435
+ "note": "Complete text, not a scan. The minutes print 'Roll Call Vote: All in Favor' for each motion, with no tallies, so outcomes are recorded as 'passed'. The minutes do not name a chair. Members are listed under 'Attendees' without a role, and the opening line says all members were in attendance. The minutes state no public comment, so the public_comment list is empty.",
+ "cost_usd": 0.017580980000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Eric Arnold",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "e. arnold opened the meeting at 5:08pm with all members in attendance"
+  },
+  {
+   "name": "Wendy Bertrand",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "joanna bilotta, susan andrews, eric arnold, wendy bertrand, donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits/Risk Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager, heather lemieux, town manager,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager, heather lemieux, town manager,"
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "thomas gammel, police chief; jeff thibodeau, police lt."
+  },
+  {
+   "name": "Jeff Thibodeau",
+   "role": "Police Lt.",
+   "status": "present",
+   "quote": "thomas gammel, police chief; jeff thibodeau, police lt."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed that the state minimum wage changes should also apply to municipalities like Lunenburg, though not a state compliance requirement.",
+   "quote": "all agreed that the minimum wage changes that the state had incorporated should also apply to municipalities"
+  },
+  {
+   "decision": "Changing the number of grades and/or steps was deferred to a later time; the committee agreed the work needed doing but not now.",
+   "quote": "all agreed that this work needed to be done, but not at this time."
+  },
+  {
+   "decision": "Only one year's SAP salary grid will be submitted to Town Meeting; grade updates and further grids to follow in next year's Town Meeting.",
+   "quote": "we also determined that we would only submit one years sap salary grid for the town meeting."
+  },
+  {
+   "decision": "J. Belliveau will prepare the edited SAP by-laws version for one final committee review; committee edits due by the beginning of Thursday, March 24, 2022.",
+   "quote": "j. belliveau agreed to prepare the edited version for one final review by the committee."
+  },
+  {
+   "decision": "Next meeting set as a virtual meeting on Monday, March 28, 2022 at 5pm.",
+   "quote": "the group agreed to meet again monday march 28, 2022 for a virtual meeting at 5pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "State minimum wage applied to the salary grid",
+   "what_was_recorded": "The current state minimum wage and its scheduled increase, built into each salary grid example.",
+   "figures_as_printed": [
+    "$14.25ph",
+    "$15.00"
+   ],
+   "quote": "that rate is currently $14.25ph and will go up again next year to $15.00."
+  },
+  {
+   "topic": "Salary grid cost review",
+   "what_was_recorded": "The committee examined how each grid option would affect the Town's budget over the three-year design period; no dollar totals are printed.",
+   "figures_as_printed": [],
+   "quote": "the committee examined each and how they impacted the towns budget over the"
+  },
+  {
+   "topic": "Civilian Traffic Detail pay rate",
+   "what_was_recorded": "The salary for the new civilian role is governed partly by the Police CBA rather than the SAP grade levels; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "because the salary is governed somewhat by the cba and not the grade levels of the sap"
+  },
+  {
+   "topic": "New hire salary placement",
+   "what_was_recorded": "The HR Director recommended placing the new Board Clerk/Secretary at a higher step based on experience; the placement is Grade 6, with the committee voting Step 2. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "she recommended that this candidates experience supported their being place in grade 6"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "there was no public comment from the committee or the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes (March 16, 2022)",
+   "resolution": "approved",
+   "quote": "minutes of the march 16, 2022 meeting were reviewed.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New Position: Civilian Traffic Detail",
+   "resolution": "job description approved for SAP, to Town Meeting",
+   "quote": "given that, he developed a new job description for a civilian traffic detail role.",
+   "tags": [
+    "police",
+    "job description",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "New Hire: Board Clerk/Secretary",
+   "resolution": "approved at Grade 6 Step 2",
+   "quote": "a new hire form that j. belliveau submitted for a new hire as a board clerk/secretary that will support the parks commission",
+   "tags": [
+    "hiring",
+    "parks commission",
+    "salary grade"
+   ]
+  },
+  {
+   "topic": "Proposed Salary Grid",
+   "resolution": "V2 FY23 grid accepted; one year's grid to Town Meeting",
+   "quote": "we also determined that we would only submit one years sap salary grid for the town meeting.",
+   "tags": [
+    "salary grid",
+    "minimum wage",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "Update on SAP Revisions",
+   "resolution": "no vote; final review due March 24",
+   "quote": "j. belliveau agreed to prepare the edited version for one final review by the committee.",
+   "tags": [
+    "SAP",
+    "by-laws"
+   ]
+  },
+  {
+   "topic": "Next Meeting",
+   "resolution": "scheduled March 28, 2022",
+   "quote": "the group agreed to meet again monday march 28, 2022 for a virtual meeting at 5pm",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "New Hire Form submitted by J. Belliveau for a Board Clerk/Secretary (supports the Parks Commission)",
+   "where": "list",
+   "quote": "the group reviewed a new hire form that j. belliveau submitted for a new hire as a board clerk/secretary"
+  },
+  {
+   "name": "New job description for a Civilian Traffic Detail role",
+   "where": "text",
+   "quote": "he developed a new job description for a civilian traffic detail role."
+  },
+  {
+   "name": "Various options for changes to the SAP salary grid, sent by E. Arnold",
+   "where": "text",
+   "quote": "e. arnold had sent the committee various options for changes to the sap salary grid."
+  },
+  {
+   "name": "V2 FY23 salary grid",
+   "where": "text",
+   "quote": "motion by e. arnold to accept the v2 fy23 salary grid as submitted, and complete the cost review"
+  },
+  {
+   "name": "FY23 SAP Salary Grid (to be sent to the Finance Committee)",
+   "where": "text",
+   "quote": "so it would be available to send with the fy23 sap salary grid to the finance committee for review."
+  },
+  {
+   "name": "Edited SAP by-laws document, for final committee review",
+   "where": "text",
+   "quote": "j. belliveau agreed to prepare the edited version for one final review by the committee."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "salary grid",
+  "SAP",
+  "Town Meeting",
+  "police",
+  "hiring",
+  "minimum wage",
+  "job description",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the group reviewed a new hire form"
+ },
+ "dropped_unquoted_by_field": {}
 }

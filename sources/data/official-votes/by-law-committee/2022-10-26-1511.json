@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "by-law-committee",
  "meeting_date": "2022-10-26",
  "docid": "1511",
@@ -12,15 +12,351 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Matthew Brenner",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. passios motioned to adjourn, mr. brenner seconded. on vote, motion carried unanimously."
+  },
+  {
+   "motion": "Approve the minutes of this October 26, 2022 meeting (the minutes record this as unanimously approved at a later 11/21/2022 meeting; no mover printed).",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "unanimously approved by capital planning committee at 11/21/2022 meeting."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record one procedural vote (adjournment). The notation at the top (\"Unanimously approved by Capital Planning Committee at 11/21/2022 meeting\") is a record that these minutes were approved at a later meeting, not a vote recorded within this meeting.",
- "cost_usd": 0.0855565
+ "note": "The board field says \"By Law Committee\", but the minutes are headed \"Lunenburg Capital Planning Committee\" and the content is capital planning; the record is extracted as that committee's. Text is digital (not a scan). Page 1 carries a stamp \"Unanimously approved by Capital Planning Committee at 11/21/2022 meeting,\" which is recorded as a vote with no mover printed. Public comment is recorded twice: \"Public Comment: none\" early on, then Ms. Lissio's comments on page 4. The resident's name is spelled \"Lisso\" once in the minutes; I attributed that line to Rhonda Lissio. Attendance is shown as \"Present\" for members, but guest status for Carol Archambault and Brad McNamara is \"not stated\" since they are listed without speaking. The $83,500 and $131,000 figures for item 3 are printed on one line without a stated split. No motions other than adjournment and the approval stamp are recorded.",
+ "cost_usd": 0.01909143,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "George Martin",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Committee member; school committee member (per minutes)",
+   "status": "present",
+   "quote": "mr. beardmore, who is a school committee member, responded that the information"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson tom alonzo, dave passios, george martin, peter beardmore, and matthew brenner."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux, lunenburg schools superintendent dr. kate burnham"
+  },
+  {
+   "name": "Kate Burnham",
+   "role": "Lunenburg Schools Superintendent",
+   "status": "present",
+   "quote": "lunenburg schools superintendent dr. kate burnham"
+  },
+  {
+   "name": "Steve Pusatari",
+   "role": "School Facilities and Grounds",
+   "status": "present",
+   "quote": "school facilities and grounds steve pusatari"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "not stated",
+   "quote": "school committee chairperson carol archambault"
+  },
+  {
+   "name": "Brad McNamara",
+   "role": "School Resource Officer",
+   "status": "not stated",
+   "quote": "school resource officer brad mcnamara"
+  },
+  {
+   "name": "Thomas Gammell",
+   "role": "Lunenburg Police Chief",
+   "status": "present",
+   "quote": "lunenburg police chief thomas gammell"
+  },
+  {
+   "name": "Rhonda Lissio",
+   "role": "Lunenburg Resident",
+   "status": "present",
+   "quote": "lunenburg resident rhonda lissio"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair suggested adding a minutes portion to the next agenda.",
+   "quote": "mr. alonzo suggested adding a minutes portion to the next agenda."
+  },
+  {
+   "decision": "Next meeting set for November 7, with a facilities presentation.",
+   "quote": "next meeting: november 7 -facilities presentation"
+  },
+  {
+   "decision": "Chair ruled that Special Purpose Stabilization and ARPA funding questions are outside the committee's scope and under the Town Manager's discretion.",
+   "quote": "mr. alonzo responded that those topics are out of the scope of the capital planning committee,"
+  },
+  {
+   "decision": "Chair directed that a resident's concerns about school resource officers go to the school committee.",
+   "quote": "that ms. lissio should bring her concerns to the school committee to inquire why they aren't"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Primary school ten-year capital spending",
+   "what_was_recorded": "The primary school seeks a ten-year capital total stated in the minutes.",
+   "quote": "over the next ten years, the primary school seeks $618,500 in capital spending.",
+   "figures_as_printed": [
+    "$618,500"
+   ]
+  },
+  {
+   "topic": "Turkey Hill Elementary ten-year capital request",
+   "what_was_recorded": "THES will seek a capital amount that assumes MSBA contributions.",
+   "quote": "turkey hill elementary school will seek $15,056,822, which assumes contributions from the massachusetts school building authority (msba)",
+   "figures_as_printed": [
+    "$15,056,822"
+   ]
+  },
+  {
+   "topic": "MS/HS turf field, walls and concession stand",
+   "what_was_recorded": "A possible capital amount for the MS/HS turf, walls and concession stand, listed in the same sentence as the THES request.",
+   "quote": "possibly $2,200,000 for the ms/hs to upgrade the turf field, walls, and concession stand.",
+   "figures_as_printed": [
+    "$2,200,000"
+   ]
+  },
+  {
+   "topic": "District-wide ten-year spending (safety film, mower, trucks, plows, van)",
+   "what_was_recorded": "Schools plan ten-year district-wide spending on safety film for windows and other equipment.",
+   "quote": "over the next ten years district-wide, the schools plan to spend $343,923 on safety film for windows",
+   "figures_as_printed": [
+    "$343,923"
+   ]
+  },
+  {
+   "topic": "FY24 priority: Safety Window Film Districtwide",
+   "what_was_recorded": "Priority 1 request for the FY24 capital year.",
+   "quote": "1. safety window film districtwide $160,000",
+   "figures_as_printed": [
+    "$160,000"
+   ]
+  },
+  {
+   "topic": "FY24 priority: Exterior Door Replacement at THES",
+   "what_was_recorded": "Priority 2 request for the FY24 capital year.",
+   "quote": "2. exterior door replacement at thes $160,000",
+   "figures_as_printed": [
+    "$160,000"
+   ]
+  },
+  {
+   "topic": "FY24 priority: Access and Security upgrades at primary school and THES",
+   "what_was_recorded": "Priority 3 request; the minutes print two figures on one line without saying what each covers.",
+   "quote": "3. access and security upgrades at the primary school and thes $83,500, $131,000",
+   "figures_as_printed": [
+    "$83,500",
+    "$131,000"
+   ]
+  },
+  {
+   "topic": "FY24 priority: Upgrade Fire Alarm system at THES",
+   "what_was_recorded": "Priority 4 request for the FY24 capital year.",
+   "quote": "4. upgrade fire alarm system at thes $287,000",
+   "figures_as_printed": [
+    "$287,000"
+   ]
+  },
+  {
+   "topic": "FY24 priority: Athletic Complex feasibility study",
+   "what_was_recorded": "Priority 5 request for the FY24 capital year.",
+   "quote": "5. athletic complex feasibility study $50,000",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "FY24 priority: New pickup truck",
+   "what_was_recorded": "Priority 6 request for the FY24 capital year.",
+   "quote": "6. new pickup truck $68,000",
+   "figures_as_printed": [
+    "$68,000"
+   ]
+  },
+  {
+   "topic": "THES funding and need",
+   "what_was_recorded": "A committee member called the $15 million THES request more needed now than a few years ago.",
+   "quote": "mr. beardmore opined that the $15 million for thes is much more needed today than it was a few years ago.",
+   "figures_as_printed": [
+    "$15 million"
+   ]
+  },
+  {
+   "topic": "State school security funding",
+   "what_was_recorded": "Superintendent said the state is releasing funds spanning pre-school through higher education; distribution unknown.",
+   "quote": "dr. burnham claimed the state is releasing $40 million that spans pre-school through higher education",
+   "figures_as_printed": [
+    "$40 million"
+   ]
+  },
+  {
+   "topic": "Cooling savings from safety film",
+   "what_was_recorded": "Resident asked how much the film would reduce cooling cost; Chair said cooling savings is only a small part of the reasoning.",
+   "quote": "mr. alonzo responded that the cooling savings is only 5 percent of the reasoning behind the safety film",
+   "figures_as_printed": [
+    "5 percent"
+   ]
+  },
+  {
+   "topic": "Price increases in two requests since school committee meeting",
+   "what_was_recorded": "Resident noticed price increases in two requests; a member said the school committee information had been updated with more current quotes. No figures printed.",
+   "quote": "ms. lisso said she also noticed price increases of two requests since the school committee meeting",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital plan shares by department",
+   "what_was_recorded": "Town Manager broke the capital plan down by percentage across departments.",
+   "quote": "she has broken down the capital plan by percentages and that the schools make up 30 percent",
+   "figures_as_printed": [
+    "30 percent",
+    "20 percent",
+    "24 percent",
+    "20 percent"
+   ]
+  },
+  {
+   "topic": "Special Purpose Stabilization and ARPA funding",
+   "what_was_recorded": "Member raised ARPA and Special Purpose Stabilization funding, including an ambulance; Chair said it is outside the committee's scope. No figures printed.",
+   "quote": "action items: mr. beardmore brought up special purpose stabilization and arpa funding",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lissio",
+   "stated_role": "Lunenburg Resident",
+   "topic": "safety film cost, cooling savings, school resource officers",
+   "quote": "ms. lissio also expressed her opposition to funding the safety film for school buildings, and thinks it does not provide a measurable impact on school safety"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law statement",
+   "resolution": "no action",
+   "quote": "chairperson tom alonzo called meeting to order at 6:01 p.m.",
+   "tags": [
+    "open meeting law",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Presentation of Capital Planning Requests: School Department",
+   "resolution": "presented; no vote",
+   "quote": "dr. burnham presented the schools' ten-year plan for capital planning projects.",
+   "tags": [
+    "school department",
+    "capital requests",
+    "ten-year plan"
+   ]
+  },
+  {
+   "topic": "Safety and security requests (window film, doors, access and security, fire alarm)",
+   "resolution": "discussed; no vote",
+   "quote": "safety window film: the school department hopes to prevent, or slow down an intruder with the safety film",
+   "tags": [
+    "school security",
+    "safety film",
+    "doors",
+    "fire alarm",
+    "access control"
+   ]
+  },
+  {
+   "topic": "MS/HS Athletic Complex feasibility study",
+   "resolution": "discussed; no vote",
+   "quote": "ms/hs athletic complex feasibility study: current conditions show sunken",
+   "tags": [
+    "athletic complex",
+    "drainage",
+    "feasibility study"
+   ]
+  },
+  {
+   "topic": "Operations request: pickup truck",
+   "resolution": "discussed; no vote",
+   "quote": "pickup truck: purchase of ¾ ton pickup truck with plow and sander to replace an 11 year-old dump truck.",
+   "tags": [
+    "vehicles",
+    "DPW",
+    "school department"
+   ]
+  },
+  {
+   "topic": "Action items: Special Purpose Stabilization and ARPA funding",
+   "resolution": "out of scope per chair; no action",
+   "quote": "action items: mr. beardmore brought up special purpose stabilization and arpa funding",
+   "tags": [
+    "ARPA",
+    "stabilization",
+    "ambulance",
+    "town manager discretion"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received; no action",
+   "quote": "public comment: ms. lissio asked how much the 3m film would reduce the cost of cooling",
+   "tags": [
+    "public comment",
+    "safety film",
+    "school resource officer"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for November 7; adjourned at 8:02 p.m.",
+   "quote": "next meeting: november 7 -facilities presentation",
+   "tags": [
+    "scheduling",
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "school department",
+  "school security",
+  "safety window film",
+  "school facilities",
+  "athletic complex",
+  "ARPA",
+  "MSBA",
+  "public comment",
+  "budget requests",
+  "FY24 capital"
+ ],
+ "dropped_unquoted_by_field": {}
 }

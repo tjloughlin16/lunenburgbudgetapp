@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-11-14",
  "docid": "4181",
@@ -12,40 +12,273 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for Northfield Road, Lot A and Outlot B",
+   "motion": "Endorse the ANR Plan for Northfield Road, Lot A and Outlot B.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed 3-0",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to endorse the anr plan for northfield road, lot a and outlot b, a. reid seconded, roll call vote- a. reid, aye; m. brenner, aye; m. allison, aye. passed unanimously."
+   "quote": "m. brenner made motion to endorse the anr plan for northfield road, lot a and outlot"
   },
   {
-   "motion": "Approve the stormwater permit and site plan approval for 260 Falulah Road with Conditions as specified in the Decision",
+   "motion": "Approve the stormwater permit and site plan approval for 260 Falulah Road with Conditions as specified in the Decision.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed 3-0",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "m. brenner made motion to approve the stormwater permit and site plan approval for 260 falulah road with conditions as specified in the decision, a. reid, seconded, roll call vote- a. reid, aye; m. brenner, aye; m. allison, aye. passed unanimously."
+   "quote": "m. brenner made motion to approve the stormwater permit and site plan approval for 260 falulah road with conditions as specified in the decision"
   },
   {
-   "motion": "Approve the minutes from 10/24/22 meetings (five items: regular meeting, Use Table Warrant Article, Citizen Petition Warrant Article, 88 Massachusetts Avenue, and 260 Falulah Road)",
+   "motion": "Approve the minutes of 10/24/22 (several items: 10/24/22, Use Table Warrant Article; Citizen Petition Warrant Article; 88 Massachusetts Avenue; 260 Falulah Road).",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed 3-0",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to approve the minutes of 10/24/22, 10/24/22, use table warrant article; 10/24/22, citizen petition warrant article; 10/24/22, 88 massachusetts ave nue; and 10/24/22, 260 falulah road; a. reid seconded, roll call vote- m. brenner, aye; a. reid, aye; m. allison, aye; passed unanimously",
-   "quote_taken_from_text": true
+   "quote": "m. brenner made motion to approve the minutes of 10/24/22, 10/24/22, use table warrant article;"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Brenner",
    "seconded_by": "A. Reid",
-   "outcome": "passed 3-0",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote- m. brenner, aye; a. reid, aye; m. allison, aye; passed unanimously."
+   "quote": "m. brenner made motion to adjourn, a. reid seconded, roll call vote- m. brenner, aye; a. reid, aye;"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1087015
+ "note": "Text is clean, but thin: the 260 Falulah Road public hearing is recorded as 'See separate minutes', which are not in this text, so no hearing discussion or comment is recorded. No public comment section appears. No dollar figures are printed anywhere; the budget items are discussion of money without figures. Quotes collapse double spaces and line breaks to single spaces. The DECISIONS list endorses two items with no recorded motion. Outcomes printed as 'passed unanimously' are kept as printed, not converted to counts.",
+ "cost_usd": 0.016467310000000002,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: matthew allison, matthew brenner, adam burney"
+  },
+  {
+   "name": "Amanda Reid",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "amanda reid participated remotely under the oml simple extension legislation."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Ed McSweeney",
+   "role": "applicant, representing himself",
+   "status": "present",
+   "quote": "the applicant, ed mcsweeney, represented himself."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of municipal buildings and town environmental support policy moved to Ongoing Items because the LMBDC/Select Board chair was unavailable.",
+   "quote": "topics would be moved to \"ongoing items\"."
+  },
+  {
+   "decision": "88 Massachusetts Avenue recorded as endorsed by the Board under DECISIONS (no vote recorded in the text).",
+   "quote": "88 massachusetts avenue- endorsed by board"
+  },
+  {
+   "decision": "260 Falulah Road recorded as endorsed by the Board under DECISIONS (no vote recorded in the text).",
+   "quote": "260 falulah road- endorsed by board"
+  },
+  {
+   "decision": "The Board will be working with a consultant to update the Master Plan.",
+   "quote": "the board would be working with a consultant to update the master plan."
+  },
+  {
+   "decision": "In-depth discussion of the Master Plan RFP to take place at the next meeting on November 28th.",
+   "quote": "in-depth discussion would take place at the next meeting on november 28th."
+  },
+  {
+   "decision": "Future discussion of Section 250-6.4, Driveways & Entrances, scheduled in preparation for spring annual town meeting.",
+   "quote": "in preparation for spring annual town meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pond View Commons sewer connections",
+   "what_was_recorded": "Discussion that the Pond View Commons applicant had said he would provide or pay for sewer connections for residents along the proposed line, which the Board noted were outside the Sewer District.",
+   "figures_as_printed": [],
+   "quote": "provide / pay for connections to all residents along the line he was proposing to be"
+  },
+  {
+   "topic": "Pond View Commons engineering review bids",
+   "what_was_recorded": "Bids were being evaluated for the engineering review of the comprehensive permit application.",
+   "figures_as_printed": [],
+   "quote": "bids were being evaluated for the engineering review."
+  },
+  {
+   "topic": "Municipal Assistance grants (MJTC)",
+   "what_was_recorded": "The MJTC committee discussed available grants; no amounts printed.",
+   "figures_as_printed": [],
+   "quote": "the committee discussed available grants."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR Plan, Northfield Road, Lot A and Outlot B",
+   "resolution": "endorsed, passed unanimously",
+   "quote": "m. brenner made motion to endorse the anr plan for northfield road, lot a and outlot",
+   "tags": [
+    "ANR plan",
+    "land division",
+    "septic setbacks"
+   ]
+  },
+  {
+   "topic": "Appointment with LMBDC and Select Board chairs",
+   "resolution": "not held; moved to Ongoing Items",
+   "quote": "topics would be moved to \"ongoing items\".",
+   "tags": [
+    "municipal buildings",
+    "environmental policy"
+   ]
+  },
+  {
+   "topic": "Public hearing, 260 Falulah Road",
+   "resolution": "stormwater permit and site plan approved with conditions",
+   "quote": "m. brenner made motion to approve the stormwater permit and site plan approval for 260 falulah road",
+   "tags": [
+    "public hearing",
+    "stormwater",
+    "site plan"
+   ]
+  },
+  {
+   "topic": "Decisions endorsed by Board",
+   "resolution": "noted as endorsed",
+   "quote": "88 massachusetts avenue- endorsed by board",
+   "tags": [
+    "decisions"
+   ]
+  },
+  {
+   "topic": "Comprehensive permit, Pond View Commons, LLC, Howard Street",
+   "resolution": "no action; traffic consultant agreed, engineering bids under evaluation",
+   "quote": "the applicant and zoning board of appeals agreed on a traffic consultant.",
+   "tags": [
+    "comprehensive permit",
+    "traffic",
+    "engineering review"
+   ]
+  },
+  {
+   "topic": "Master Plan RFP",
+   "resolution": "Board to review scope and criteria; in-depth discussion at November 28 meeting",
+   "quote": "a. burney recommended the board review for any changes to the scope and",
+   "tags": [
+    "master plan",
+    "RFP"
+   ]
+  },
+  {
+   "topic": "Zoning Changes to Manage Growth",
+   "resolution": "discussed; no action recorded",
+   "quote": "working towards a master plan should be a public process with input from",
+   "tags": [
+    "zoning",
+    "sewer",
+    "growth",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Section 250-6.4, Driveways & Entrances",
+   "resolution": "future discussion scheduled",
+   "quote": "in preparation for spring annual town meeting.",
+   "tags": [
+    "zoning bylaw",
+    "driveways",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved unanimously",
+   "quote": "m. brenner made motion to approve the minutes of 10/24/22, 10/24/22, use table warrant article;",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; Capital Planning ready to rank requests",
+   "quote": "the committee was meeting on a regular basis.",
+   "tags": [
+    "committees",
+    "capital planning",
+    "economic development",
+    "grants"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "november 28- stormwater hearings for 680 reservoir road and 319 highland street.",
+   "tags": [
+    "schedule",
+    "stormwater hearings"
+   ]
+  },
+  {
+   "topic": "Ongoing items",
+   "resolution": "listed; no action recorded",
+   "quote": "special town meeting, november 15th",
+   "tags": [
+    "ongoing items",
+    "MBTA communities"
+   ]
+  },
+  {
+   "topic": "Board comment and concerns",
+   "resolution": "noted; no action",
+   "quote": "m. allison noted the overflowing donation bins at lunenburg crossing.",
+   "tags": [
+    "board comments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:18 p.m.",
+   "quote": "meeting adjourned 7:18 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "public hearing",
+  "stormwater",
+  "site plan",
+  "comprehensive permit",
+  "Pond View Commons",
+  "master plan",
+  "zoning",
+  "sewer",
+  "minutes approval"
+ ],
+ "dropped_unquoted_by_field": {}
 }

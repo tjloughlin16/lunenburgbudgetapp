@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2021-10-26",
  "docid": "1299",
@@ -12,15 +12,216 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
+   "motion": "Motion to adjourn the meeting, which the minutes record as made at 6:19 p.m.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Dave Passios",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "at 6:19 p.m. paula bertram made a motion to adjourn, seconded by dave passios, passed unanimously."
+   "quote": "paula bertram made a motion to adjourn, seconded by dave passios, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The remainder of the meeting consists of discussion and review of capital requests from the Land Use Director and Fire Department, but no motions or votes are recorded for these items.",
- "cost_usd": 0.07579250000000001
+ "note": "Only one recorded vote, the adjournment motion (procedural). No vote on the Master Plan request or the Fire Department schedule. Minutes text has line-break and spacing artifacts (e.g. \"$100,00 0\", \"c ost\", \"Mr. Burne y\"); quotes are collapsed to single spaces and the printed figure \"$100,00 0\" is reproduced as printed. Chief Sullivan's first name is not printed. No documents list is printed.",
+ "cost_usd": 0.01600458,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the capital planning committee met in the ritter building as scheduled with the following members present: tom alonzo,"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "George Martin",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Committee member; also Planning Board member as stated in the discussion",
+   "status": "present",
+   "quote": "tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux was also in attendance."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam burney, land use director, explained that the planning board is requesting funding to complete"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Fire Chief as printed (first name not printed)",
+   "status": "present",
+   "quote": "chief sullivan informed the committee that the fire department does not have anything on the capital"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula Bertram will send out the minutes of the last meeting and of this meeting before the 11/2/2021 meeting, since no minutes were available for approval.",
+   "quote": "no minutes available, paula will send out minutes of last meeting and this meeting before the"
+  },
+  {
+   "decision": "Dave Passios's proposal to move police vehicle replacement into the operating budget will be added to the agenda of a future meeting.",
+   "quote": "this topic will be added to a the agenda of a future meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Planning Board Master Plan funding request",
+   "what_was_recorded": "The Planning Board requested $110,000 in this year's Capital Plan, which with $43,000 remaining from the initial article makes $153,000 for the Master Plan as one project; the original plan had been $100,000.",
+   "figures_as_printed": [
+    "$110,000",
+    "$43,000",
+    "$153,000",
+    "$100,00 0",
+    "$50,000",
+    "$7000"
+   ],
+   "quote": "there is $153,000 available to complete the entire master plan as one project."
+  },
+  {
+   "topic": "Master Plan prior spending and bid results",
+   "what_was_recorded": "Of the first $50,000 article, $7,000 went to a population study; a bid for two chapters received zero responses, and other communities were reported spending between $135,000 and $225,000.",
+   "figures_as_printed": [
+    "$50,000",
+    "$7000",
+    "$135,000-$225,000"
+   ],
+   "quote": "previously the boards strategy was to submit two $50,000 articles in two fiscal years."
+  },
+  {
+   "topic": "Master Plan ramp-up and consultant cost",
+   "what_was_recorded": "The ramp-up and mobilization cost, described as the bulk of the cost, was put in the 65,000 range; a private consultant or planning agency was estimated by Mr. Burney to still cost over $100,000.",
+   "figures_as_printed": [
+    "65,000",
+    "$100,000"
+   ],
+   "quote": "however mr. burney believes that the cost would still be over $100,000"
+  },
+  {
+   "topic": "Fire Department future capital vehicle schedule",
+   "what_was_recorded": "No Fire Department items are in the coming year's Capital Plan; the committee was given estimated costs for future replacements, and the Engine 2 estimate was called hard to pin down. The Engine 5 vehicle was originally bought for $30,000 through an AFG Grant.",
+   "figures_as_printed": [
+    "$115,000",
+    "$200,000+-",
+    "$432,000",
+    "$362,000",
+    "$56,000",
+    "$1,146,000",
+    "$106,000",
+    "$500,000",
+    "$863,000",
+    "$30,000"
+   ],
+   "quote": "squad 3 replacement fy2027 $1,146,000 vehicle is currently a 2008 rescue pumper that serves as the"
+  },
+  {
+   "topic": "Fire turnout gear purchasing",
+   "what_was_recorded": "Turnout gear was budgeted for 5 units per year but, due to cost increases, the department can only purchase 2 per year; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the original budget was based on 5 units per year however due to cost increases the department can only purchase 2 per year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "no minutes available; deferred to next meeting",
+   "quote": "no minutes available, paula will send out minutes of last meeting and this meeting before the",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Land Use Director capital request: Master Plan",
+   "resolution": "discussed; $153,000 total requested, no vote recorded",
+   "quote": "land use director - adam burney, land use director, explained that the planning board is requesting funding to complete",
+   "tags": [
+    "master plan",
+    "planning board",
+    "capital request"
+   ]
+  },
+  {
+   "topic": "Fire Department capital requests",
+   "resolution": "no items this year; future replacement schedule reviewed, no action",
+   "quote": "fire department - chief sullivan informed the committee that the fire department does not have anything on the capital",
+   "tags": [
+    "fire department",
+    "vehicles",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Action and agenda items for next meeting",
+   "resolution": "next meeting 11/2/21 scheduled; police vehicles topic to be added later",
+   "quote": "next meeting 11/2/21, school is coming in",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public or committee comment",
+   "quote": "comment from the public, comment from the committee - none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:19 p.m., passed unanimously",
+   "quote": "at 6:19 p.m. paula bertram made a motion to adjourn, seconded by dave passios, passed unanimously.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Master Plan (Planning Board, 8 elements, existing plan 19 years old)",
+   "where": "text",
+   "quote": "the master plan sets a foundation for policy and for decision making and creates one unified document"
+  },
+  {
+   "name": "Open space plan (OSB/OSP)",
+   "where": "text",
+   "quote": "the existing open space plan (osb) would be incorporated as one of the 8."
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "master plan",
+  "planning board",
+  "fire department",
+  "vehicle replacement",
+  "town manager",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

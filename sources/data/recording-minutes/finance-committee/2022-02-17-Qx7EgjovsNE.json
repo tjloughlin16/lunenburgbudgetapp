@@ -1,0 +1,701 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2022-02-17",
+ "video_id": "Qx7EgjovsNE",
+ "video_url": "https://www.youtube.com/watch?v=Qx7EgjovsNE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2022-02-17-Qx7EgjovsNE.json",
+  "sha256": "f96df9079f6bebd29cf85bd874dcc83c882bb2c6156cf67626b84e0716136511",
+  "caption_lines": 420,
+  "segments": 3903
+ },
+ "recording": {
+  "duration_s": 8751,
+  "duration": "2:25",
+  "spoken_chars": 107066,
+  "words_approx": 17844
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02172022-2070",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2022-02-17-agenda-2070.txt",
+   "path": "sources/meetings/finance-committee/2022-02-17-agenda-2070.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02172022-2070",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2022-02-17-minutes-2070.txt",
+   "path": "sources/meetings/finance-committee/2022-02-17-minutes-2070.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-16T22:03:24Z",
+  "cost_usd": 0.5057088
+ },
+ "minutes": {
+  "headline": "Finance Committee heard the preliminary FY23 town budget; ARPA, a facilities director and stormwater drew debate.",
+  "summary": "The committee discussed how ARPA decisions should line up with the capital plan, then heard the town manager's preliminary FY23 omnibus budget covering revenue, state aid, expenditures and reserves. Members questioned the new facilities director, pavement management, police staffing, health insurance reserves and Monty Tech. They appointed a school committee liaison, approved two sets of minutes, and set the Feb 24 meeting to be remote.",
+  "attendees": [
+   {
+    "name_as_heard": "chair (unnamed)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Chris Menard",
+    "role": "vice chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dave Pacios",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Tom Balish",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tom Gray",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Waters",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jay Simeone",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "capital",
+   "chapter-70",
+   "debt",
+   "esser",
+   "facilities",
+   "free-cash",
+   "grants",
+   "health-insurance",
+   "monty-tech",
+   "msba",
+   "public-safety",
+   "retirement",
+   "roads-and-dpw",
+   "staffing",
+   "state-aid",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "t": 7803,
+    "motion": "Appoint Waters as the committee's school committee liaison",
+    "moved_by": "Chris Menard",
+    "outcome": "passed unanimously by roll call",
+    "procedural": false
+   },
+   {
+    "t": 7888,
+    "motion": "Adopt the minutes of January 13 and January 27",
+    "outcome": "passed (one abstention heard)",
+    "procedural": true
+   },
+   {
+    "t": 8712,
+    "motion": "Adjourn",
+    "moved_by": "Mr. Waters",
+    "outcome": "passed by roll call",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 230,
+    "topic": "Electricity and gas rates",
+    "what_was_said": "Town and school rates were given and contracts expire Nov 30, with bids planned for spring. Electricity is said to be capped by the aggregation option.",
+    "figures_as_heard": [
+     "9.4 cents a kilowatt",
+     "5.19 per deca therm",
+     "11.2 cents per kilowatt"
+    ]
+   },
+   {
+    "t": 332,
+    "topic": "Meadow Woods back taxes",
+    "what_was_said": "A payment agreement brings an initial payment and yearly payments against back taxes and sewer; it flows into free cash.",
+    "figures_as_heard": [
+     "400 000",
+     "a hundred thousand every year"
+    ]
+   },
+   {
+    "t": 2431,
+    "topic": "Free cash uses in FY23 plan",
+    "what_was_said": "Free cash goes to capital, OPEB and both stabilization accounts, none to operations.",
+    "figures_as_heard": [
+     "266 696 dollars",
+     "100 000",
+     "250 000"
+    ]
+   },
+   {
+    "t": 2699,
+    "topic": "Projected FY23 revenues",
+    "what_was_said": "Revenue by category was read out with property tax at 65 percent.",
+    "figures_as_heard": [
+     "thirty million eight hundred and fifty four thousand seven hundred and ninety five dollars",
+     "ten million three hundred and ninety thousand one hundred five dollars",
+     "forty seven million four hundred and eighty eight thousand nine hundred and thirty eight dollars"
+    ]
+   },
+   {
+    "t": 2931,
+    "topic": "State aid and Chapter 70",
+    "what_was_said": "The governor's proposal raises Chapter 70 and unrestricted aid; officials said the higher base should hold barring mid-year cuts.",
+    "figures_as_heard": [
+     "eleven point five percent",
+     "two point seven percent",
+     "8.7 million"
+    ]
+   },
+   {
+    "t": 3441,
+    "topic": "Available funds",
+    "what_was_said": "Certified free cash offsets the capital plan and reserves; MSBA reimbursement expires in FY23.",
+    "figures_as_heard": [
+     "one million six hundred and sixteen thousand six hundred and ninety two dollars",
+     "534 501"
+    ]
+   },
+   {
+    "t": 3676,
+    "topic": "Outside grants and ARPA",
+    "what_was_said": "Grants and ARPA funds sit outside the omnibus; members suggested showing them at Town Meeting.",
+    "figures_as_heard": [
+     "three and a half million",
+     "50 000",
+     "40 000"
+    ]
+   },
+   {
+    "t": 3867,
+    "topic": "ESSER funds and school positions",
+    "what_was_said": "ESSER funding has sunset dates and pays for behavioral health staff, raising a future funding question.",
+    "figures_as_heard": [
+     "331 496 000",
+     "395 314",
+     "726 810"
+    ]
+   },
+   {
+    "t": 4032,
+    "topic": "Target budget cost drivers",
+    "what_was_said": "Dollar impacts of staffing, schools, Monty Tech, retirement and health insurance.",
+    "figures_as_heard": [
+     "541 000",
+     "153 000",
+     "140 000",
+     "22 000"
+    ]
+   },
+   {
+    "t": 4072,
+    "topic": "Health insurance stabilization",
+    "what_was_said": "The balance is not used in the budget and is held against future rate spikes.",
+    "figures_as_heard": [
+     "369 334",
+     "330 000"
+    ]
+   },
+   {
+    "t": 4301,
+    "topic": "Preliminary budget recommendations",
+    "what_was_said": "Retirement, schools and Monty Tech recommendations; recycling reduced on historical spending.",
+    "figures_as_heard": [
+     "10.32 percent",
+     "158 000",
+     "3.11 percent",
+     "673 617",
+     "42 000"
+    ]
+   },
+   {
+    "t": 4512,
+    "topic": "Debt service",
+    "what_was_said": "FY23 debt service stated; MSBA reimbursement treatment in debt ratio questioned.",
+    "figures_as_heard": [
+     "4 million 497 723 dollars",
+     "534 000"
+    ]
+   },
+   {
+    "t": 5160,
+    "topic": "Schools ESSER usage",
+    "what_was_said": "Breakdown of ESSER 2 and 3 use in FY23.",
+    "figures_as_heard": [
+     "331 496",
+     "395 314",
+     "726 810"
+    ]
+   },
+   {
+    "t": 5448,
+    "topic": "Monty Tech minimum contribution",
+    "what_was_said": "Minimum contribution rises with 11 more students.",
+    "figures_as_heard": [
+     "871 685",
+     "one million twelve thousand two eighty two"
+    ]
+   },
+   {
+    "t": 5511,
+    "topic": "Unappropriated balance and free cash left",
+    "what_was_said": "Remaining balances after the preliminary budget.",
+    "figures_as_heard": [
+     "514 000",
+     "1.05 million"
+    ]
+   },
+   {
+    "t": 5661,
+    "topic": "Pavement management",
+    "what_was_said": "Annual addition to pavement management is policy toward a target; a member questioned continuing it.",
+    "figures_as_heard": [
+     "50 000",
+     "1 million dollars",
+     "five hundred thousand"
+    ]
+   },
+   {
+    "t": 5848,
+    "topic": "Stormwater costs",
+    "what_was_said": "Looming stormwater costs and possible enterprise fund discussed for later.",
+    "figures_as_heard": [
+     "hundred thousand dollar increase"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3501,
+    "description": "Transfer from artificial turf revolving fund to pay turf field debt",
+    "amount_as_heard": "42 dollars and 134.70 cents",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 8671,
+    "decision": "The Feb 24 meeting will be fully remote; later meetings decided case by case."
+   },
+   {
+    "t": 8503,
+    "decision": "Chair to invite a Board of Health representative to a future meeting."
+   },
+   {
+    "t": 2203,
+    "decision": "ARPA to return to the agenda once more during budget season."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 188,
+    "topic": "Call to order and preamble",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 188,
+    "t_end": 751,
+    "topic": "Town manager report: energy contracts, Meadow Woods, trash collection",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 751,
+    "t_end": 2224,
+    "topic": "ARPA spending priorities and capital planning",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "debt",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 2244,
+    "t_end": 5637,
+    "topic": "Preliminary FY23 budget presentation",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "state-aid",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 5637,
+    "t_end": 7360,
+    "topic": "Questions on pavement, stormwater, police, facilities director, Monty Tech, inflation",
+    "resolution": "no resolution",
+    "tags": [
+     "budget",
+     "town-departments",
+     "monty-tech"
+    ]
+   },
+   {
+    "t_start": 7363,
+    "t_end": 7574,
+    "topic": "Health insurance base and stabilization",
+    "resolution": "informational",
+    "tags": [
+     "health-insurance"
+    ]
+   },
+   {
+    "t_start": 7574,
+    "t_end": 7741,
+    "topic": "Warrant articles",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 7741,
+    "t_end": 7930,
+    "topic": "Committee assignments and minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 7930,
+    "t_end": 8440,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "turkey-hill"
+    ]
+   },
+   {
+    "t_start": 8441,
+    "t_end": 8760,
+    "topic": "Future meetings and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Some figures were garbled, e.g. the ESSER 2 amount rendered as 331 496 000.",
+   "Individual votes on minutes were partly unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "documents_mentioned": [
+   {
+    "t": 2244,
+    "name_as_heard": "the budget presentation deck",
+    "kind": "presentation",
+    "words_as_heard": "i assume it's the same deck that you presented on tuesday"
+   },
+   {
+    "t": 2369,
+    "name_as_heard": "fiscal 23 capital plan and five year forecast",
+    "kind": "report",
+    "words_as_heard": "i presented the fiscal 23 capital plan and five year forecast in january"
+   },
+   {
+    "t": 7888,
+    "name_as_heard": "minutes from January 13th and January 27th",
+    "kind": "prior minutes",
+    "words_as_heard": "two sets of minutes in the shared drive"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "capital-debt-forecast",
+    "title": "Debt capacity forecast",
+    "question": "How much borrowing capacity does the town have for upcoming building projects?",
+    "t": 1496,
+    "words_as_heard": "we need a debt forecast or a capital forecast that is as rigorous as the fiscal forecast",
+    "data_in_play": [
+     "nine percent debt service",
+     "seven percent"
+    ],
+    "existing": "topic:town-debt-service"
+   },
+   {
+    "slug": "arpa-funds",
+    "title": "ARPA funds",
+    "question": "What are the competing uses for ARPA money and when must it be spent?",
+    "t": 751,
+    "words_as_heard": "3.5 million dollars in arpa funds",
+    "data_in_play": [
+     "3.5 million",
+     "6.7 million dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "health-insurance-stabilization",
+    "title": "Health insurance stabilization",
+    "question": "Should the health insurance stabilization balance be held against rate spikes?",
+    "t": 4072,
+    "words_as_heard": "how much is in the uh appropriate stabilization health insurance account",
+    "data_in_play": [
+     "369 334",
+     "330 000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee heard the town manager's preliminary FY23 omnibus budget, covering revenue, state aid, expenditures and reserves.",
+    "t": 2244
+   },
+   {
+    "line": "Free cash in the FY23 plan goes to capital, OPEB and both stabilization accounts, and none to operations.",
+    "t": 2431
+   },
+   {
+    "line": "Officials said the governor's proposed higher Chapter 70 and unrestricted aid base should hold barring mid-year cuts.",
+    "t": 2931
+   },
+   {
+    "line": "Members raised ESSER funding for school behavioral health staff, which has sunset dates and leaves a future funding question.",
+    "t": 3867
+   },
+   {
+    "line": "The committee voted unanimously by roll call to appoint Waters as its school committee liaison.",
+    "t": 7803
+   }
+  ],
+  "why_it_matters": [
+   "Using free cash for capital and reserves rather than operations, and relying on state aid, shape what the FY23 tax levy must cover and how exposed it is to mid-year aid cuts.",
+   "When ESSER money for school staff ends, the cost can move onto the town budget, mostly taxes, and residents may be asked to fund it at Town Meeting."
+  ],
+  "watch_next": [
+   "The Feb 24 meeting is set to be fully remote, with later meetings decided case by case.",
+   "ARPA is to return to the agenda once more during budget season."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-16T22:03:32Z",
+   "cost_usd": 0.2264197
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02172022-2070",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2022-02-17-minutes-2070.txt",
+   "path": "sources/meetings/finance-committee/2022-02-17-minutes-2070.pdf"
+  },
+  "official_sha256": "a0344f5d18e20414b1e709a7184728873114c499826f2aaeb63b1b0b34e980a5",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the liaison vote, the Feb 24 remote meeting, the Board of Health invitation, and the main revenue and debt-service figures. The main differences are the ARPA amount (three and a half million vs $3 million), the unexplained 400,000 for Meadow Woods, the turf-debt transfer and ARPA agenda item that only our minutes record, and the Municipal Building Design Committee choice that only the official minutes record.",
+  "counts": {
+   "agree": 7,
+   "caption_error": 2,
+   "discrepancy": 2,
+   "only_in_ours": 3,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to appoint school committee liaison",
+    "ours": "Appoint Waters as the committee's school committee liaison — passed unanimously by roll call",
+    "official": "mr. menard moved to appoint mr. watters as liaison to the school committee for the remainder of fy2022. mr. simeone seconded. on vote, motion carried unanimously.",
+    "note": "Same motion and outcome (unanimous); ours says roll call while the official minutes say only 'on vote', which is a minor wording difference.",
+    "t": 7803
+   },
+   {
+    "kind": "caption_error",
+    "about": "Liaison's name",
+    "ours": "Waters",
+    "official": "mr. menard moved to appoint mr. watters as liaison to the school committee for the remainder of fy2022.",
+    "official_reading": "Evan Watters",
+    "note": "Same member, surname misheard by the captions.",
+    "t": 7803
+   },
+   {
+    "kind": "caption_error",
+    "about": "Committee member Dave Pacios",
+    "ours": "Dave Pacios (member)",
+    "official": "dave passios via zoom (for last part of meeting)",
+    "official_reading": "Dave Passios",
+    "note": "Surname misspelled in captions; the official minutes also show him attending remotely for the last part only.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Turf field debt transfer from revolving fund",
+    "ours": "Transfer from artificial turf revolving fund to pay turf field debt — 42 dollars and 134.70 cents (discussed only)",
+    "official": "",
+    "note": "Official minutes list no transfers; ours records a discussed-only transfer of about $42,134.70, and the amount itself may be misheard.",
+    "t": 3501
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Meadow Woods back taxes amount",
+    "ours": "Meadow Woods back taxes: 400 000, a hundred thousand every year",
+    "official": "will begin paying back taxes at $100,000 per year until all back taxes are paid off. close to $1 million is owed.",
+    "note": "The $100,000 per year agrees, but our 400,000 matches nothing in the official minutes, which say close to $1 million is owed; check the recording around t=332 for what 400,000 refers to.",
+    "t": 332
+   },
+   {
+    "kind": "discrepancy",
+    "about": "ARPA amount",
+    "ours": "Outside grants and ARPA: three and a half million, 50 000, 40 000",
+    "official": "lunenburg's $3 million share of arpa funds falls under the \"lost revenue\" category",
+    "note": "Ours says three and a half million while the official minutes say $3 million for the ARPA share; the two may be different items (grants plus ARPA), so check the recording around t=3676.",
+    "t": 3676
+   },
+   {
+    "kind": "agree",
+    "about": "FY23 total revenue estimate",
+    "ours": "forty seven million four hundred and eighty eight thousand nine hundred and thirty eight dollars",
+    "official": "fy2023 revenue estimates come out to $47,488,938, built by 65 percent property tax, 22 percent state aid,",
+    "note": "Same total, $47,488,938.",
+    "t": 2699
+   },
+   {
+    "kind": "agree",
+    "about": "Debt service appropriation",
+    "ours": "Debt service: 4 million 497 723 dollars",
+    "official": "fy2023 preliminary budget expenditures total $43,202,314. total appropriation for debt service is $4,497,723.",
+    "note": "Debt service of $4,497,723 matches.",
+    "t": 4512
+   },
+   {
+    "kind": "agree",
+    "about": "Pavement management set-aside",
+    "ours": "Pavement management: 50 000, 1 million dollars, five hundred thousand",
+    "official": "put away $50,000 per year until the pavement management fund reaches $1 million",
+    "note": "$50,000 per year toward a $1 million target agrees; the five hundred thousand has no counterpart in the official text.",
+    "t": 5661
+   },
+   {
+    "kind": "only_in_official",
+    "about": "FY23 preliminary budget expenditures total",
+    "ours": "",
+    "official": "fy2023 preliminary budget expenditures total $43,202,314. total appropriation for debt service is $4,497,723.",
+    "note": "Our figures do not include the $43,202,314 preliminary expenditure total.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "New growth in target budget",
+    "ours": "",
+    "official": "adding 2 ½ percent to the previous year's levy, $213,523 for new growth, and debt exclusion amounts.",
+    "note": "The $213,523 new growth figure is not in our figures.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Health insurance increase",
+    "ours": "Health insurance stabilization: 369 334, 330 000",
+    "official": "a $124,341 increase to health insurance",
+    "note": "The official minutes give a $124,341 increase and ours give different figures (369,334; 330,000) for the stabilization fund, so the figures are not comparable; check what each refers to.",
+    "t": 4072
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "State aid and Chapter 70 percentages",
+    "ours": "State aid and Chapter 70: eleven point five percent, two point seven percent, 8.7 million",
+    "official": "",
+    "note": "The official minutes give state aid as 22 percent of revenue and do not record these figures.",
+    "t": 2931
+   },
+   {
+    "kind": "agree",
+    "about": "Feb 24 meeting remote",
+    "ours": "The Feb 24 meeting will be fully remote; later meetings decided case by case.",
+    "official": "feb. 24 meeting will be all remote.",
+    "note": "Same decision; the case-by-case detail for later meetings appears only in ours.",
+    "t": 8671
+   },
+   {
+    "kind": "agree",
+    "about": "Board of Health invitation",
+    "ours": "Chair to invite a Board of Health representative to a future meeting.",
+    "official": "board of health will be invited to come before the committee to talk about their requested appropriation.",
+    "note": "Same decision.",
+    "t": 8503
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA return to agenda",
+    "ours": "ARPA to return to the agenda once more during budget season.",
+    "official": "",
+    "note": "This decision does not appear in the official minutes.",
+    "t": 2203
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Municipal Building Design Committee representative",
+    "ours": "",
+    "official": "since the committee decided to choose mr. beardmore to serve on the new municipal building design committee",
+    "note": "The official minutes record the committee choosing Mr. Beardmore for this committee, and our minutes do not; check the recording for whether it was a vote.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair identified",
+    "ours": "chair (unnamed) (chair)",
+    "official": "chairperson peter beardmore, jay simeone, evan watters, tom balish, tom gray, chris menard",
+    "note": "The official minutes name the chair as Peter Beardmore, whom our minutes leave unnamed.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager attendance",
+    "ours": "Heather (town manager)",
+    "official": "guests: town manager heather lemieux, school committee chair carol archambault.",
+    "note": "Same person, with the surname supplied by the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "School Committee Chair guest",
+    "ours": "",
+    "official": "guests: town manager heather lemieux, school committee chair carol archambault.",
+    "note": "Carol Archambault attended as a guest per the official minutes; ours does not list her.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-16T22:04:47Z",
+   "cost_usd": 0.2662577
+  }
+ }
+}

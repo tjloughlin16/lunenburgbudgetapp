@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-12-20",
  "docid": "3343",
@@ -12,31 +12,255 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 5/26/21, 6/30/21, 11/17/21, and 11/22/21",
+   "motion": "Approve the set of four minutes (5/26/21, 6/30/21, 11/17/21, and 11/22/21).",
    "moved_by": "C Sullivan",
    "seconded_by": "D Passios",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion to approve the set of four minutes by c sullivan, seconded by d passios roll call vote: c sullivan-aye a lockwood-aye d passios-aye k menard-aye"
+   "quote": "motion to approve the set of four minutes by c sullivan, seconded by d passios"
   },
   {
-   "motion": "Recommend Rob Thompson to the Recreation Director Position",
+   "motion": "Recommend Rob Thompson to the Recreation Director Position.",
    "moved_by": "C Sullivan",
    "seconded_by": "D Passios",
    "outcome": "passed 3-1",
    "procedural": false,
-   "quote": "c sullivan made a motion to recommend rob thompson to the recreation director position, d passios seconded roll call vote: c sullivan-aye d passios-aye a lockwood-no k menard-aye"
+   "quote": "c sullivan made a motion to recommend rob thompson to the recreation director position, d passios seconded"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:00pm.",
    "moved_by": "C Sullivan",
    "seconded_by": "A Lockwood",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "c sullivan made a motion to adjourn at 8:00pm seconded by a lockwood. roll call c sullivan-aye a lockwood-aye k menard-aye"
+   "quote": "c sullivan made a motion to adjourn at 8:00pm seconded by a lockwood."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.06484240000000001
+ "note": "The minutes are a clean text extract with no scan problems. Vote outcomes are taken from the printed roll calls, with the count derived from them (for example 3-1 for the Recreation Director recommendation); no tally is printed as a number. D Passios left during item 4 and is not in the adjournment roll call. No public comment speakers are recorded; item 2 is board comment only. No dollar figures are printed. Rob Thompson, Katherine of WOLA and R Pease are named but are not recorded as attending.",
+ "cost_usd": 0.01647708,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in attendance was chris sullivan, dave passios, k menard, ana lockwood, town manager heather lemieux and dpw director rob oliva."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "in attendance was chris sullivan, dave passios, k menard, ana lockwood, town manager heather lemieux and dpw director rob oliva."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "in attendance was chris sullivan, dave passios, k menard, ana lockwood, town manager heather lemieux and dpw director rob oliva."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "in attendance was chris sullivan, dave passios, k menard, ana lockwood, town manager heather lemieux and dpw director rob oliva."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "in attendance was chris sullivan, dave passios, k menard, ana lockwood, town manager heather lemieux and dpw director rob oliva."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "in attendance was chris sullivan, dave passios, k menard, ana lockwood, town manager heather lemieux and dpw director rob oliva."
+  },
+  {
+   "name": "Dawn Pavone",
+   "role": "minutes secretary",
+   "status": "not stated",
+   "quote": "respectfully submitted dawn pavone, minutes secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "R Oliva will check on the hockey nets and benches from last season.",
+   "quote": "c sullivan asked r oliva where the hockey nets and benches from last season were. r oliva will check."
+  },
+  {
+   "decision": "R Oliva will ask again about the town beach information.",
+   "quote": "r oliva did request it but didn't get the information but will ask again."
+  },
+  {
+   "decision": "K Menard to talk to R Pease for information on the town beach weed treatment grant process.",
+   "quote": "k menard was going to talk to r pease for information."
+  },
+  {
+   "decision": "Plan to revisit user fees in the summer, for 2023, rather than for the spring.",
+   "quote": "decision was made to plan on the summer to revisit fees for 2023."
+  },
+  {
+   "decision": "January 6 meeting to be a hybrid meeting at Town Hall and via Zoom, with only the WOLA item and public comment on the agenda.",
+   "quote": "january 6th will be the hybrid meeting held at the town hall and via zoom."
+  },
+  {
+   "decision": "K Menard to email Katherine to arrange a further walk-through of the WOLA designs with A Lockwood.",
+   "quote": "k menard will email katherine to get that in motion."
+  },
+  {
+   "decision": "A Lockwood to work with R Thompson on the budget for maintenance of parks and collection of fees.",
+   "quote": "a lockwood volunteered that she would work with r thompson on that."
+  },
+  {
+   "decision": "C Sullivan to email R Thompson about the ice rink at Marshall Park.",
+   "quote": "c sullivan asked about the ice rink for marshall park. he will send r thompson an email regarding that."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Parks maintenance budget and fee collection",
+   "what_was_recorded": "The board discussed the budget for maintenance of parks and the collection of fees collected, and A Lockwood volunteered to work on it with R Thompson.",
+   "figures_as_printed": [],
+   "quote": "discussion on the budget for maintenance of parks and collection of fees collected."
+  },
+  {
+   "topic": "2022 user fees for fields",
+   "what_was_recorded": "2022 user fees were raised; the chair judged it too late for the spring, and the decision was to revisit fees in the summer for 2023.",
+   "figures_as_printed": [],
+   "quote": "decision was made to plan on the summer to revisit fees for 2023."
+  },
+  {
+   "topic": "WOLA contract cost",
+   "what_was_recorded": "Discussion of whether the WOLA contract would include an additional meeting in its contracted cost.",
+   "figures_as_printed": [],
+   "quote": "discussion on if the wola contract will include this meeting in their contracted cost."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Open meeting",
+   "resolution": "opened via Zoom at 7:00pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "k menard opened via zoom at 7:00pm."
+  },
+  {
+   "topic": "Public and Board Comment",
+   "resolution": "no action; hockey nets and benches to be checked, portable toilets topic to be reopened",
+   "tags": [
+    "comment",
+    "equipment"
+   ],
+   "quote": "c sullivan asked r oliva where the hockey nets and benches from last season were."
+  },
+  {
+   "topic": "Approve Minutes 5/26/21, 6/30/21, 11/17/21, and 11/22/21",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to approve the set of four minutes by c sullivan, seconded by d passios"
+  },
+  {
+   "topic": "Town Manager, DPW and Recreation Director updates",
+   "resolution": "no action; Marshall Park gate, beach, light post and weeds reported",
+   "tags": [
+    "parks",
+    "DPW",
+    "beach"
+   ],
+   "quote": "r oliva stated that the gate at marshall park by the softball field got closed"
+  },
+  {
+   "topic": "Recreation Director hiring",
+   "resolution": "recommended Rob Thompson, 3-1",
+   "tags": [
+    "hiring",
+    "recreation"
+   ],
+   "quote": "c sullivan made a motion to recommend rob thompson to the recreation director position"
+  },
+  {
+   "topic": "Field use policy and 2022 fees",
+   "resolution": "no vote; fees deferred to summer; policy date to be corrected",
+   "tags": [
+    "field use",
+    "fees"
+   ],
+   "quote": "decision was made to plan on the summer to revisit fees for 2023."
+  },
+  {
+   "topic": "Upcoming agenda: WOLA design process at Marshall Park",
+   "resolution": "discussed; January meeting schedule set",
+   "tags": [
+    "WOLA",
+    "Marshall Park",
+    "schedule"
+   ],
+   "quote": "january 6th will be the hybrid meeting held at the town hall and via zoom."
+  },
+  {
+   "topic": "Other Business",
+   "resolution": "no items recorded",
+   "tags": [],
+   "quote": "8. other business 9. adjourn"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:00pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "c sullivan made a motion to adjourn at 8:00pm seconded by a lockwood."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School Subcommittee's recommendations on field usage",
+   "where": "text",
+   "quote": "k menard received a copy of the school subcommittee's recommendations"
+  },
+  {
+   "name": "Field use policy draft (listing November 1 as end of fall season)",
+   "where": "text",
+   "quote": "the policy that was drafted doesn't match this date as it listed november 1 as the end of the fall season."
+  },
+  {
+   "name": "Minutes of 5/26/21, 6/30/21, 11/17/21, and 11/22/21",
+   "where": "text",
+   "quote": "approve minutes 5/26/21, 6/30/21, 11/17/21, and 11/22/21."
+  },
+  {
+   "name": "WOLA conceptual designs",
+   "where": "text",
+   "quote": "katherine will be sending 2 conceptual designs to the town manager and the parks commission by january 14th"
+  },
+  {
+   "name": "WOLA contract",
+   "where": "text",
+   "quote": "discussion on if the wola contract will include this meeting in their contracted cost."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "recreation director",
+  "hiring",
+  "field use policy",
+  "fees",
+  "WOLA",
+  "Marshall Park",
+  "town beach",
+  "DPW"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

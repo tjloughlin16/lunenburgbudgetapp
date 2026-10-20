@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-08-16",
  "docid": "5296",
@@ -12,15 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Proceed to sign the purchase and sale agreement and license agreement with Unitil for streetlights, with a closing date of September 15, 2022, and authorize the Town Manager to execute the Bill of Sale for the street lighting",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "T. Alonzo",
-   "outcome": "passed",
-   "procedural": false,
-   "quote": "to proceed to sign the purchase and sale agreement and the license agreement as presented with a closing date of september 15, 2022 and to authorize the town manager to execute the bill of sale for the street lighting vote: all in favor"
-  },
-  {
-   "motion": "Approve the Minutes of June 21, 2022 as written",
+   "motion": "Approve the Minutes of June 21, 2022 as written.",
    "moved_by": "T. Alonzo",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 3-0-2",
@@ -28,7 +20,7 @@
    "quote": "to approve the minutes of june 21, 2022 as written vote: mr. jeffreys-aye, mr. alonzo-aye, ms. sroka-aye, mr. franco-abstain, mr. dwyer-abstain"
   },
   {
-   "motion": "Approve the Minutes of July 12, 2022 as presented",
+   "motion": "Approve the Minutes of July 12, 2022 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
    "outcome": "passed",
@@ -36,15 +28,23 @@
    "quote": "to approve the minutes of july 12, 2022 as presented 2id: t. alonzo vote: all in favor"
   },
   {
-   "motion": "Sign the State Primary Warrant for September 6, 2022",
-   "moved_by": "T. Alonz",
+   "motion": "Sign the September 6, 2022 State Primary Warrant as read.",
+   "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "o sign the state primary warrant as rea vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Proceed to sign the purchase and sale agreement and the license agreement with Unitil for streetlights, with closing September 15, 2022, and authorize the Town Manager to execute the Bill of Sale.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Alonzo",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to proceed to sign the purchase and sale agreement and the license agreement as presented with a closing date of september 15, 2022"
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -52,7 +52,453 @@
    "quote": "to adjourn the meeting vote: all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR text quality issue on page 6: State Primary Warrant motion line shows \"o sign the state primary warrant as rea\" (incomplete/corrupted OCR of \"To sign the state primary warrant as read\"). Payroll and accounts payable warrants listed as signed but no motion/vote recorded for those—listed as completed fact rather than voted action. All five votes listed above are those with explicit motions and recorded votes.",
- "cost_usd": 0.1255485
+ "dropped_unquoted": 1,
+ "note": "OCR of a scanned minutes text (macOS Vision). Garbled items: the State Primary Warrant motion is read as moved by \"T. Alonz\" (recorded here as T. Alonzo, the OCR truncating the name); the second and seconder markings appear as \"2''i\", \"2''I\", \"2id\", \"2\"d\" and are not read as names except where printed. The Unitil motion and the State Primary Warrant and July 12 minutes votes were recorded only as \"All in Favor\" with no count and no roll call. Only the June 21 minutes vote gives a count (3-0-2). The minutes' own \"Mr. Jetfreys\" and \"Mi. Jeffreys\" are read as Jeffreys. The Sroka and Franco/Dwyer abstentions are as printed. No documents heading is printed; memos and plans are referred to within the text only.",
+ "cost_usd": 0.02292548,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou franco, clerk; todd dwyer, heather sroka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director; dave passios, brian lehtinen, peter beardmore"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director; dave passios, brian lehtinen, peter beardmore"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director; dave passios, brian lehtinen, peter beardmore"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director; dave passios, brian lehtinen, peter beardmore"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "peter beardmore, finance committee member, stated we need shovel ready projects and"
+  },
+  {
+   "name": "Dave Rodgers",
+   "status": "remote",
+   "quote": "dave rodgers, 82 highland street, via zoom, suggested putting a tarp on the roof of the tc"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board agreed to send Ms. Lemieux's memo on ARPA funding requests to all departments.",
+   "quote": "agreement with sending out ms. lemieux's memo to all departments regarding the american rescue plan act (arpa) funding requests. they were."
+  },
+  {
+   "decision": "Board reviewed the Financial Policies section by section, with comments noted for a follow-up review at a later meeting.",
+   "quote": "the board reviewed financial policies by section."
+  },
+  {
+   "decision": "Chair noted requests for ARPA project ideas would also be sought from committees, boards and the public.",
+   "quote": "mr. jeffreys noted that requests for ideas would also be requested from committees, boards and the public."
+  },
+  {
+   "decision": "Chair suggested he and the Town Manager attend the next School Committee meeting to express the board's concern about the school bus policy.",
+   "quote": "mr. jeffreys suggested that he and town manager attend the next school committee meeting to express concern on behalf of the board about this policy."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY22 total collections and revenue over estimate",
+   "what_was_recorded": "Finance Director reported FY22 collections and the amount actuals exceeded estimates.",
+   "figures_as_printed": [
+    "$46,695, 138.62",
+    "$1,596,086.69"
+   ],
+   "quote": "total collections for fy22 are $46,695, 138.62. actuals exceeded estimates by 3.54%, or $1,596,086.69."
+  },
+  {
+   "topic": "Local receipts over estimate",
+   "what_was_recorded": "Local receipts exceeded the FY22 estimate by the printed amount.",
+   "figures_as_printed": [
+    "$1,049,137.83"
+   ],
+   "quote": "we exceeded our fy22 local receipt estimate by 33.68%, or $1,049,137.83."
+  },
+  {
+   "topic": "Investment income below estimate",
+   "what_was_recorded": "Investment income was the only local receipt category below estimate.",
+   "figures_as_printed": [
+    "$559.99",
+    "$25,000.00"
+   ],
+   "quote": "the only category of local receipts below estimates was investment income - 2.24%, or $559.99 below the estimate of $25,000.00."
+  },
+  {
+   "topic": "School departmental revenue over estimate",
+   "what_was_recorded": "School departmental revenue exceeded estimate, attributed to a Medicaid reimbursement increase.",
+   "figures_as_printed": [
+    "$138,443.10"
+   ],
+   "quote": "departmental revenue - school exceeded estimates by $138,443.10 - this is"
+  },
+  {
+   "topic": "Licenses and permits over estimate",
+   "what_was_recorded": "Licenses and permits exceeded estimate, attributed to a building permit for Lunenburg Central.",
+   "figures_as_printed": [
+    "$126,106.75"
+   ],
+   "quote": "licenses & permits exceeded estimates by $126,106.75, due to the building permit issued to lunenburg central"
+  },
+  {
+   "topic": "Penalties and interest over estimate",
+   "what_was_recorded": "Penalties and interest exceeded estimate, attributed to tax lien payoffs.",
+   "figures_as_printed": [
+    "$306,518.44"
+   ],
+   "quote": "penalties & interest exceeded estimates by $306,518.44, or 153.25%, due to"
+  },
+  {
+   "topic": "Miscellaneous non-recurring revenue",
+   "what_was_recorded": "Miscellaneous non-recurring revenue exceeded estimate, including sick leave, water betterment and tailings payments.",
+   "figures_as_printed": [
+    "$232,945.39",
+    "$71,453.56",
+    "$121,249.13",
+    "$21,848.81"
+   ],
+   "quote": "miscellaneous non-recurring revenue exceeded estimates by $232,945.39, or 110%, due to payments"
+  },
+  {
+   "topic": "Tax levy and tax lien revenue",
+   "what_was_recorded": "Tax levy received was slightly below estimate; tax lien revenue was received.",
+   "figures_as_printed": [
+    "$29,833,387.33",
+    "$116,992.51",
+    "$585,466.77"
+   ],
+   "quote": "the total tax levy for fy22, net of the overlay, is $29,833,387.33."
+  },
+  {
+   "topic": "State aid over estimate",
+   "what_was_recorded": "State aid exceeded the FY22 estimate, including veterans abatement and homeless transportation reimbursements.",
+   "figures_as_printed": [
+    "$120,946.87",
+    "$83,961",
+    "$41,228.29"
+   ],
+   "quote": "$120,946.87 more in state aid than the fy22 estimate"
+  },
+  {
+   "topic": "FY22 expenditures and balance",
+   "what_was_recorded": "Expended or encumbered amount against the total budgeted expenditures, and the unexpended balance.",
+   "figures_as_printed": [
+    "$45,099,051.93",
+    "$44,384,375.85",
+    "$714,676.08"
+   ],
+   "quote": "the total budgeted expenditures for fy22 are $45,099,051.93."
+  },
+  {
+   "topic": "Omnibus closeout and Free Cash estimate",
+   "what_was_recorded": "Omnibus budget closeout reported, and Free Cash estimated above last year's certification.",
+   "figures_as_printed": [
+    "$ 686,665.20",
+    "$2,820,603",
+    "$2,666,962"
+   ],
+   "quote": "$2,820,603 which is an increase over last year's certification of $2,666,962."
+  },
+  {
+   "topic": "Last year's capital plan project requests",
+   "what_was_recorded": "Chair read last year's capital project requests with their printed amounts.",
+   "figures_as_printed": [
+    "$230,000",
+    "$132,000",
+    "$150,000",
+    "$182,000",
+    "$943,000",
+    "$111,000"
+   ],
+   "quote": "police department-records storage room at the public safety building; $230,000"
+  },
+  {
+   "topic": "ARPA funding available",
+   "what_was_recorded": "Town has ARPA funding available for projects.",
+   "figures_as_printed": [
+    "3.5 million dollars"
+   ],
+   "quote": "mr. jeffreys noted the town has 3.5 million dollars of available arpa funding"
+  },
+  {
+   "topic": "Sewer Commission capital requests",
+   "what_was_recorded": "Sewer Commission requested funds for manhole repairs and pump station upgrades.",
+   "figures_as_printed": [
+    "$200,000",
+    "$300,000"
+   ],
+   "quote": "sewer commission has requested $200,000 for manhole repairs and $300,000 for pump station upgrades."
+  },
+  {
+   "topic": "Lake Shirley water testing",
+   "what_was_recorded": "Chair asked whether the Town should start testing Lake Shirley water, estimated annually.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "start testing lake shirley's water; estimated at $15,000 annually."
+  },
+  {
+   "topic": "FY23 state earmarks",
+   "what_was_recorded": "Senator's office notified a $100,000 earmark for the Senior Center ADA Patio; a second $100,000 earmark for hazardous materials abatement was awaiting verification.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "that we received a $100,000 earmark for the senior center ada patio project"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Board signed payroll, payroll deduction and accounts payable warrants.",
+   "figures_as_printed": [
+    "$722,978.16",
+    "$170,586.17",
+    "$456,366.53"
+   ],
+   "quote": "the board signed a payroll warrant in the amount of $722,978.16; a payroll deduction warrant in the amount of $170,586.17"
+  },
+  {
+   "topic": "Brooks House renovation amount",
+   "what_was_recorded": "Public commenter asked about use of Brooks House if renovated to the printed amount.",
+   "figures_as_printed": [
+    "$225,000"
+   ],
+   "quote": "he asked if the brooks house is renovated to the amount of $225,000 what it would be used for."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Use of ARPA funds, TC Building roof, Brooks House, technology, Marshall Park",
+   "speaker": "Dave Rodgers",
+   "stated_role": "",
+   "quote": "dave rodgers, 82 highland street, via zoom, suggested putting a tarp on the roof of the tc"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "mr. alonzo thanked all involved with the final summer band concert last night."
+  },
+  {
+   "topic": "FY 2022 Q4 financial report",
+   "resolution": "received; board thanked finance team",
+   "tags": [
+    "finance",
+    "FY22 close"
+   ],
+   "quote": "fy 2022 4 quarter financial report from finance director"
+  },
+  {
+   "topic": "Interviews, appointments, resignations",
+   "resolution": "reported; no action",
+   "tags": [
+    "personnel"
+   ],
+   "quote": "ms. lemieux reported lisa melnicki had resigned from the police department for personal reasons."
+  },
+  {
+   "topic": "Workshop: joint meeting with Capital Planning Committee on ARPA funding",
+   "resolution": "discussed; ideas gathered for further input",
+   "tags": [
+    "ARPA",
+    "capital plan"
+   ],
+   "quote": "joint meeting with capital planning committee to discuss available arpa"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational",
+   "tags": [
+    "vacancies",
+    "Lufa Farms",
+    "30 School Street",
+    "DPW"
+   ],
+   "quote": "announcement on existing vacancies"
+  },
+  {
+   "topic": "Review of Select Board Financial Policies",
+   "resolution": "reviewed; follow-up at a later meeting",
+   "tags": [
+    "policy",
+    "financial policies"
+   ],
+   "quote": "mr. jeffreys noted that the board was reviewing all their policies as a goal."
+  },
+  {
+   "topic": "Streetlights purchase with Unitil",
+   "resolution": "approved",
+   "tags": [
+    "streetlights",
+    "Unitil"
+   ],
+   "quote": "vote to sign purchase & sale agreement and license agreement with unitil for"
+  },
+  {
+   "topic": "Current business: minutes, state primary warrant, warrants",
+   "resolution": "approved",
+   "tags": [
+    "minutes",
+    "warrants"
+   ],
+   "quote": "approve minutes of june 21, 2022 and july 12,2022"
+  },
+  {
+   "topic": "Committee reports: school bus policy",
+   "resolution": "discussed; Chair to raise with School Committee",
+   "tags": [
+    "school bus policy",
+    "School Committee"
+   ],
+   "quote": "mr. alonzo did not have a committee report but a comment about the recent school"
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "noted the board's next meeting is august 23rd"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "ARPA"
+   ],
+   "quote": "dave rodgers, 82 highland street, via zoom, suggested putting a tarp on the roof of the tc"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:33 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "the meeting adjourned at 9:33 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Ms. Lemieux's memo to departments regarding the American Rescue Plan Act (ARPA) Funding Requests (undated)",
+   "where": "text",
+   "quote": "sending out ms. lemieux's memo to all departments regarding the american rescue plan act (arpa) funding requests."
+  },
+  {
+   "name": "Capital Plan list from last year (FY23 project requests)",
+   "where": "text",
+   "quote": "directed the group to the capital plan list from last year as no new projects have been submitted yet for fy23."
+  },
+  {
+   "name": "Last year's Capital Plan project requests",
+   "where": "text",
+   "quote": "the following items listed on last year's capital plan project requests:"
+  },
+  {
+   "name": "Purchase & Sale Agreement and License Agreement with Unitil (streetlights)",
+   "where": "text",
+   "quote": "ms. lemieux received the two documents today; there are two revisions from the last draft of the license agreement"
+  },
+  {
+   "name": "Final Rule by the US Treasury (ARPA)",
+   "where": "text",
+   "quote": "the final rule by the us treasury allows recipients to elect a standard allowance of up to $10 million"
+  },
+  {
+   "name": "Vertex building reports",
+   "where": "text",
+   "quote": "many of the larger dollar amounts in the capital plan are from the various vertex building reports"
+  },
+  {
+   "name": "Lufa Farms supplemental application to MOBD",
+   "where": "text",
+   "quote": "lufa farms is working on the required supplemental application, which is due tomorrow"
+  },
+  {
+   "name": "Valuation spreadsheet for Lufa Farms (MOBD)",
+   "where": "text",
+   "quote": "mobd will need a valuation spreadsheet from the ===page 5=== town as part of that re",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Special Town Meeting warrant (November 15, 2022)",
+   "where": "text",
+   "quote": "the special town meeting warrant is open from august 23rd until 5 pm on september"
+  },
+  {
+   "name": "Sign September 6, 2022 State Primary Warrant",
+   "where": "text",
+   "quote": "sign september 6, 2022 state primary warrant"
+  },
+  {
+   "name": "Financial Policies, Article III (Section 3.2 Capital Budget; new Section 3.09 Tailings Policy)",
+   "where": "text",
+   "quote": "section 3.2 capital budget, a. 1. and 2. require updating of the monetary amounts."
+  }
+ ],
+ "tags": [
+  "ARPA",
+  "capital plan",
+  "FY22 year-end finances",
+  "streetlights",
+  "Unitil",
+  "financial policies",
+  "school bus policy",
+  "town vacancies",
+  "Lufa Farms",
+  "30 School Street",
+  "sewer",
+  "Lake Shirley"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-02-15",
  "docid": "5312",
@@ -12,15 +12,504 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: l. franco to adjourn the meeting 2'': t. dwyer vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye. mr. alonzo-aye"
+   "quote": "to adjourn the meeting 2'': t. dwyer vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye. mr. alonzo-aye"
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR-scanned minutes. Only one vote recorded: adjournment at end of meeting. The FY2023 Budget section is titled \"FY2023 Budget Public Hearing and Vote on Recommendations\" but the minutes record discussion only, with no motion or vote documented.",
- "cost_usd": 0.10749149999999999
+ "dropped_unquoted": 1,
+ "note": "OCR of a scanned Select Board minutes text (macOS Vision); the text is noisy and several figures are garbled (e.g. '$10, 390,105', '$200, 425.65', 'Fundto'). The Chapter 70 and revenue tables are not cleanly readable, so only the figures printed legibly in prose or in clean lines are recorded. Exactly one vote is recorded (the motion to adjourn). No other motions appear: the tax lien matter was explicitly left without action, and the minutes state no minutes were approved. The Dave Passios 'via Zoom' attendance is read from the Also Present line. Mr. Alonzo's campaign remark under the second PUBLIC COMMENT heading is a board member, not a public speaker, and is not recorded as public comment.",
+ "cost_usd": 0.1459204,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Franco",
+   "status": "present",
+   "quote": "vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye. mr. alonzo-aye"
+  },
+  {
+   "name": "Dwyer",
+   "status": "present",
+   "quote": "vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye. mr. alonzo-aye"
+  },
+  {
+   "name": "Jeffreys",
+   "status": "present",
+   "quote": "mr. jeffreys asked mr. dunetz if he saw any other areas of opportunities for changes that"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Ray Dunetz",
+   "role": "Ray Dunetz Landscape Architecture",
+   "status": "present",
+   "quote": "ray dunetz, ray dunetz landscape architecture"
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "Open Space Committee Chair",
+   "status": "remote",
+   "quote": "mike toohill, open space committee chair, via zoom, myleen mallari,"
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Collector/Treasurer",
+   "status": "remote",
+   "quote": "myleen mallari, collector/treasurer, via zoom"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "remote",
+   "quote": "karen brochu, town accountant, via zoom"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee Chair",
+   "status": "remote",
+   "quote": "peter beardmore, finance committee chair, via zoom;"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "remote",
+   "quote": "peter beardmore, finance committee chair, via zoom; dave passios via zoom"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux will ask Monty Tech why enrollment increased this year, and will reach out to the school for clarification on the enrollment questions (directed by the Town Manager; no vote recorded).",
+   "quote": "question was asked why there was such an increase this year. ms. lemieux will ask monty tech."
+  },
+  {
+   "decision": "No action on the tax lien list; the board agreed the Open Space and Collector/Accountant positions need further discussion at the next couple of meetings.",
+   "quote": "there needs to be further discussion on these at the next couple of meetings"
+  },
+  {
+   "decision": "The Asst. Town Manager/HR Director will advertise the DPW Director position immediately (announced; no vote recorded).",
+   "quote": "the asst. town manager/hr director will be advertising that position immediately."
+  },
+  {
+   "decision": "Stated by the Town Manager as the plan: place a warrant article for the demolition costs at 30 School Street, with hazmat costs covered under the Capital Plan (stated intention; no vote recorded).",
+   "quote": "lemieux noted placing a warrant article for the demolition costs."
+  },
+  {
+   "decision": "Meadow Woods receivership rescinded and payment agreement entered, as agreed by the Select Board (reported; the agreement is recorded here, not voted at this meeting).",
+   "quote": "as agreed by the select board the town has agreed to rescind the receivership for meadow woods and has entered into a payment agreement with meadow woods mhp llc."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "30 School Street park construction phases",
+   "what_was_recorded": "Ray Dunetz presented four construction phases, with cost per phase, from the estimate with contingencies, permitting and soft costs; the estimator expects 4% a year inflation.",
+   "quote": "phase one 2023 - $778,000 - abatement, demoliton",
+   "figures_as_printed": [
+    "$778,000",
+    "$1.5 M",
+    "$1.4 M",
+    "$750,000",
+    "4%"
+   ]
+  },
+  {
+   "topic": "Inflation assumption for park costs",
+   "what_was_recorded": "The estimator's annual cost-increase assumption for the park project.",
+   "quote": "the estimator expects a 4% increase per annum in costs due to inflation.",
+   "figures_as_printed": [
+    "4%"
+   ]
+  },
+  {
+   "topic": "Electricity and natural gas rates",
+   "what_was_recorded": "Current town/school rates and the broker's ceiling for electricity under municipal aggregation, ahead of bids in March.",
+   "quote": "our current electricity rates for town/school properties is $.09425 kwh and our natural gas rates for town/school properties is $5.19/dth (dekatherm).",
+   "figures_as_printed": [
+    "$.09425 kWh",
+    "$5.19/DTH",
+    "$.112 kWh"
+   ]
+  },
+  {
+   "topic": "Meadow Woods payment agreement",
+   "what_was_recorded": "Initial down payment and annual pay-down amount under the agreement with Meadow Woods MHP LLC.",
+   "quote": "the payment agreement stipulates an initial payment of $400,000 as a down payment to be applied as a partial payment to the delinquent sewer usage bill",
+   "figures_as_printed": [
+    "$400,000",
+    "$100,000"
+   ]
+  },
+  {
+   "topic": "Tax lien properties",
+   "what_was_recorded": "The Town would still collect a tax amount on the listed properties even if they are put on the lien auction.",
+   "quote": "the town would still collect the $323,954 and the current owners will still have the property.",
+   "figures_as_printed": [
+    "$323,954"
+   ]
+  },
+  {
+   "topic": "FY23 maximum allowable tax levy",
+   "what_was_recorded": "The maximum allowable levy for FY2023 in the preliminary budget.",
+   "quote": "maximum allowable tax levy for fy2023-$30,854,795",
+   "figures_as_printed": [
+    "$30,854,795"
+   ]
+  },
+  {
+   "topic": "FY23 State Aid estimate",
+   "what_was_recorded": "The Governor's proposal increased State Aid, with Chapter 70 and Unrestricted General Government Aid components.",
+   "quote": "budget proposal provides for additional $898,610 in chapter 70 funds (11.5% increase)",
+   "figures_as_printed": [
+    "$898,610",
+    "$31,380",
+    "$10, 390,105",
+    "$949,734"
+   ]
+  },
+  {
+   "topic": "Free cash for capital",
+   "what_was_recorded": "The preliminary budget uses Free Cash toward capital items under the financial policies.",
+   "quote": "$1,000,000 free cash towards capital items;",
+   "figures_as_printed": [
+    "$1,000,000"
+   ]
+  },
+  {
+   "topic": "Remaining free cash",
+   "what_was_recorded": "Free cash balance left under the current recommendation.",
+   "quote": "current recommendation leaves a balance of $1.05m of free cash that can be used for financial",
+   "figures_as_printed": [
+    "$1.05M"
+   ]
+  },
+  {
+   "topic": "Unappropriated balance",
+   "what_was_recorded": "The unappropriated balance in the preliminary budget available to backfill unknown increases.",
+   "quote": "preliminary budget leaves an unappropriated balance of $514k that can backfill any unknown",
+   "figures_as_printed": [
+    "$514K"
+   ]
+  },
+  {
+   "topic": "Worcester Regional Retirement assessment",
+   "what_was_recorded": "The assessment came in at a percentage increase and a dollar increase over the prior year.",
+   "quote": "our assessment came in at a 10.32% increase or $158k more than the previous fy.",
+   "figures_as_printed": [
+    "$158K",
+    "10.32%"
+   ]
+  },
+  {
+   "topic": "Health insurance",
+   "what_was_recorded": "Health insurance budget increase, and the portion of health insurance that is for active employees.",
+   "quote": "the active portion is approx. $828k out of the $2.45m.",
+   "figures_as_printed": [
+    "$140K",
+    "$828K",
+    "$2.45M",
+    "$1.2M",
+    "$414K"
+   ]
+  },
+  {
+   "topic": "Lunenburg Public Schools increase",
+   "what_was_recorded": "Target-budget increase for the Lunenburg Public Schools at a 2.5% rate.",
+   "quote": "lunenburg public schools-$541k for a 2.5% increase",
+   "figures_as_printed": [
+    "$541K",
+    "2.5%"
+   ]
+  },
+  {
+   "topic": "Monty Tech assessment",
+   "what_was_recorded": "Montachusett Regional Vocational Technical School assessment increase in the target budget and the preliminary budget's 21% increase.",
+   "quote": "monty tech assessment- $22k for a 2.5% increase",
+   "figures_as_printed": [
+    "$22K",
+    "2.5%",
+    "21%"
+   ]
+  },
+  {
+   "topic": "Fire and police staffing adds",
+   "what_was_recorded": "Target-budget and recommended funding for added fire and police positions.",
+   "quote": "fire - $70k for add'l career firefighter",
+   "figures_as_printed": [
+    "$70k",
+    "$30k"
+   ]
+  },
+  {
+   "topic": "Pavement management",
+   "what_was_recorded": "Additional funding for pavement management in the DPW budget.",
+   "quote": "dpw- $50k for pavement management",
+   "figures_as_printed": [
+    "$50K"
+   ]
+  },
+  {
+   "topic": "Debt service appropriation",
+   "what_was_recorded": "Total FY2023 appropriation for debt service in the preliminary budget.",
+   "quote": "total appropriation for fy2023 debt service = $4,497,723",
+   "figures_as_printed": [
+    "$4,497,723"
+   ]
+  },
+  {
+   "topic": "Overlay and Tax Title",
+   "what_was_recorded": "Overlay Account funding and Tax Title increase.",
+   "quote": "the overlay account is funded at $120k and tax title has increased by $5,000.",
+   "figures_as_printed": [
+    "$120K",
+    "$5,000"
+   ]
+  },
+  {
+   "topic": "Cherry Sheet charges and offsets",
+   "what_was_recorded": "Overall decrease in Cherry Sheet charges and offsets from the prior fiscal year.",
+   "quote": "for an overall decrease of $33,646.",
+   "figures_as_printed": [
+    "$33,646"
+   ]
+  },
+  {
+   "topic": "Federal grants to the schools",
+   "what_was_recorded": "Federal grant total listed for the schools in FY2022.",
+   "quote": "federal grants: $634,978",
+   "figures_as_printed": [
+    "$634,978"
+   ]
+  },
+  {
+   "topic": "Hazardous materials abatement at 30 School Street",
+   "what_was_recorded": "State ARPA funds for hazardous materials abatement at 30 School Street.",
+   "quote": "fy 2022 state arpa funds for $50,000 for hazardous materials abatement at 30 school street",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Chapter 70 required local contribution table",
+   "what_was_recorded": "Total unapportioned required contribution for FY23, shown in the DESE table.",
+   "quote": "fy23 total unapportioned required contribution ('municipal contribution' tab row 19 or 25)",
+   "figures_as_printed": [
+    "12,346,684"
+   ]
+  },
+  {
+   "topic": "Artificial Turf Revolving Fund transfer",
+   "what_was_recorded": "Proposed transfer from the Artificial Turf Revolving Fund to pay the Artificial Turf Field debt in FY23.",
+   "quote": "transfers $42,134.74 from the artificial turf revolving fundto pay the associated costs for the artificial turf field debt for fy23",
+   "figures_as_printed": [
+    "$42,134.74"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Payroll, payroll deduction and accounts payable warrants the board signed.",
+   "quote": "the board signed a payroll warrant in the amount of $902,574.08; a payroll deduction warrant in the amount of $200, 425.65",
+   "figures_as_printed": [
+    "$902,574.08",
+    "$200, 425.65",
+    "$508,183.66"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the Artificial Turf Revolving Fund to pay the Artificial Turf Field debt costs for FY23 (in the preliminary budget).",
+   "amount_as_printed": "$42,134.74",
+   "outcome": "proposed in the FY23 preliminary budget presentation; no vote recorded",
+   "quote": "transfers $42,134.74 from the artificial turf revolving fundto pay the associated costs for the artificial turf field debt for fy23"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Park efficiencies and solar panels on the pavilion",
+   "quote": "dave passios, 56 whiting street, stated the efficiencies are in doing this project all at once."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "informational, no action",
+   "tags": [
+    "caucus",
+    "warrant"
+   ],
+   "quote": "ms. lemieux announced that the citizen's party caucus is on monday, march 14 at 6:30"
+  },
+  {
+   "topic": "Workshop: Old Primary School, 30 School Street park design",
+   "resolution": "presented; discussed; no vote",
+   "tags": [
+    "30 School Street",
+    "park design",
+    "phases"
+   ],
+   "quote": "vil. dunetz noted this is the 3rd community meeting regarding the 30 school street site design."
+  },
+  {
+   "topic": "Resignations",
+   "resolution": "reported",
+   "tags": [
+    "DPW",
+    "staffing"
+   ],
+   "quote": "ms. lemieux reported she received dpw director rob oliva's resignation today."
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; vacancies and employment listed",
+   "tags": [
+    "vacancies",
+    "energy bids",
+    "Meadow Woods",
+    "COVID"
+   ],
+   "quote": "the following is a list of current vacancies on the following committees:"
+  },
+  {
+   "topic": "Current Business 1: 30 School Street Certificate to Alter",
+   "resolution": "informational; hearing set for March 10",
+   "tags": [
+    "Architectural Preservation District",
+    "30 School Street"
+   ],
+   "quote": "mr. alonzo noted that the apd has reversed their determination that the certificate to alter"
+  },
+  {
+   "topic": "Current Business 2: Tax lien sale list and Open Space request",
+   "resolution": "continued; no action taken",
+   "tags": [
+    "tax lien",
+    "Open Space"
+   ],
+   "quote": "there needs to be further discussion on these at the next couple of meetings"
+  },
+  {
+   "topic": "FY23 Preliminary Budget presentation",
+   "resolution": "presented; no vote recorded",
+   "tags": [
+    "FY23 budget",
+    "capital plan",
+    "Chapter 70"
+   ],
+   "quote": "as required by the town charter, the town manager presents a preliminary fy23"
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "no minutes for approval; warrants signed",
+   "tags": [
+    "warrants"
+   ],
+   "quote": "there were no minutes for approval this evening."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "informational",
+   "tags": [
+    "Municipal Design Committee"
+   ],
+   "quote": "mr. jeffreys reported the lunenburg municipal design committee met monday"
+  },
+  {
+   "topic": "Discussion on FY2023 budget, capital plan, forecast and warrant articles",
+   "resolution": "no further discussion; no action",
+   "tags": [
+    "FY23 budget",
+    "Town Meeting"
+   ],
+   "quote": "discussion on fiscal year 2023 budget, capital plan, financial forecast, and"
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "informational",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "mr. alonzo reported their next meeting will be march 1st."
+  },
+  {
+   "topic": "Public comment and adjournment",
+   "resolution": "adjourned 9:18 p.m.",
+   "tags": [
+    "adjournment",
+    "reelection"
+   ],
+   "quote": "the meeting adjourned at 9:18 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tax lien sale properties list (in Select Board packets)",
+   "where": "list",
+   "quote": "ms. lemieux reported the select board has a list of the tax lien sale properties in their packets this evening."
+  },
+  {
+   "name": "Cost estimate for 30 School Street park (distributed by Ray Dunetz)",
+   "where": "list",
+   "quote": "he had distributed the cost estimate to the select board."
+  },
+  {
+   "name": "Application to demolish to the APDC",
+   "where": "text",
+   "quote": "we have an application to demolish in to the apdc and the hazardous materials removal goes with that."
+  },
+  {
+   "name": "Certificate to Alter application, 30 School Street",
+   "where": "text",
+   "quote": "1. discussion on 30 school street and certificate to alter application"
+  },
+  {
+   "name": "FY23 Chapter 70 Apportionment of Local Contribution across School Districts (DESE)",
+   "where": "text",
+   "quote": "fy23 chapter 70 apportionment of local contribution across school districts"
+  },
+  {
+   "name": "Town Manager's FY23 Preliminary Budget Presentation",
+   "where": "text",
+   "quote": "town manager's fy23 preliminary budget presentation"
+  },
+  {
+   "name": "Vertex reports and Tappe Study",
+   "where": "text",
+   "quote": "review the vertex reports and tappe study."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "FY2023 budget",
+  "Old Primary School",
+  "30 School Street park",
+  "tax lien auction",
+  "Open Space",
+  "Meadow Woods",
+  "energy bids",
+  "debt service",
+  "Chapter 70",
+  "Monty Tech",
+  "town employment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux reported the select board has a list of the tax lien sale properties in their packets this evening."
+ },
+ "dropped_unquoted_by_field": {
+  "budget_items": 1
+ }
 }

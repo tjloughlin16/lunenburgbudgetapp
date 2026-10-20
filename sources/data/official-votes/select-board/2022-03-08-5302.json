@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-03-08",
  "docid": "5302",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "To appoint Patrick Hakey to the Parks Commission until the third Saturday in May 2022",
+   "motion": "Appoint Patrick Hakey to the Parks Commission until the third Saturday in May 2022 (joint appointment vote, Parks Commissioners voting with the Select Board).",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. dwyer 2nd: l. franco to appoint patrick hakey to the parks commission until the third saturday in may 202 vote: mr. jeffreys-aye, mr. franco-aye, mr. dwyer-aye, mr. sullivan-aye, mr. passios- aye, ms. longwood-aye, mr. alonzo-ay",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to appoint patrick hakey to the parks commission until the third saturday in may 202 vote: mr. jeffreys-aye, mr. franco-aye, mr. dwyer-aye"
   },
   {
-   "motion": "To approve the pole petition for Lancaster Ave., Plan 972-L dated 2/2/22",
+   "motion": "Approve the pole petition for Lancaster Ave., Plan 972-L dated 2/2/22.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -29,7 +28,7 @@
    "quote": "motion: m. jeffreys 2nd: l. franco to approve the pole petition for lancaster ave., plan 972-l dated 2/2/22 vote: all in favor"
   },
   {
-   "motion": "To approve the pole petition for Kilburn St. at Goodrich St., Plan 970-L dated 2/2/22",
+   "motion": "Approve the pole petition for Kilburn St. at Goodrich St., Plan 970-L dated 2/2/22.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -37,63 +36,535 @@
    "quote": "motion: m. jeffreys 2n: t. dwyer to approve the pole petition for kilburn st. at goodrich st., plan 970-l dated 2/2/22 vote: all in favor"
   },
   {
-   "motion": "To approve the tollbooth fundraiser on May 14 from 10 am to 2 pm in town center",
+   "motion": "Approve the tollbooth fundraiser for the Skate Park group on May 14 from 10 am to 2 pm in town center.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2''': t. dwyer to approve the tollbooth fundraiser on may 14 from 10 am to 2 pm in town center vote: all in favor"
+   "quote": "to approve the tollbooth fundraiser on may 14 from 10 am to 2 pm in town center vote: all in favor"
   },
   {
-   "motion": "To appoint Matt Proctor II to the Storm Water Task Force",
+   "motion": "Appoint Matt Proctor II to the Storm Water Task Force.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys to appoint matt proctor il to the storm water task force 2nd: t. dwyer vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint matt proctor il to the storm water task force 2nd: t. dwyer vote: all in favor"
   },
   {
-   "motion": "To ratify the appointment of Paula Bertram to Asst. to Sewer Business Manager",
+   "motion": "Ratify the Town Manager's appointment of Paula Bertram to Assistant to the Sewer Business Manager.",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: l. franco 2'': m. jeffreys to ratify the appointment of paula bertram to asst. to sewer business manager vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointment of paula bertram to asst. to sewer business manager vote: all in favor"
   },
   {
-   "motion": "To appoint John Beale to the Storm Water Task Force",
-   "moved_by": "L. Franco",
-   "seconded_by": "T. Dwyer",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: l. franco 2\"d; t. dwyer to approving john beale to the storm water task force vote: all in favor"
-  },
-  {
-   "motion": "To draft and send a cease and desist letter to Conrad's Drive In, effective March 15 unless paid in full or acceptable payment arrangements have been made with the Tax Collector",
+   "motion": "Appoint John Beale to the Storm Water Task Force.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2\"d: t. dwyer to draft and send a cease and desist letter to conrad's drive in, effective march 15\" unless paid in full or acceptable payment arrangements"
+   "quote": "to approving john beale to the storm water task force vote: all in favor"
   },
   {
-   "motion": "To approve the minutes of February 8, 2022",
+   "motion": "Draft and send a cease and desist letter to Conrad's Drive In, effective March 15 unless paid in full or acceptable payment arrangements have been made with the Tax Collector.",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "unless paid in full or acceptable payment arrangements have been made with the tax collector vote: all in favor"
+  },
+  {
+   "motion": "Approve the minutes of February 8 and 15, 2022.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: l. franco to approve the minutes of february 8, 2022 vote: 3 in favor, 1 abstention"
+   "quote": "to approve the minutes of february 8 and 15, 2022"
   },
   {
-   "motion": "To remove 250 Hollis Road, 356 Hollis Road, 56 Carr Avenue and 101 Pleasant Street from the tax lien sale list",
+   "motion": "Approve the minutes of February 8, 2022.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed, 3 in favor, 1 abstention",
+   "procedural": true,
+   "quote": "to approve the minutes of february 8, 2022 vote: 3 in favor, 1 abstention (alonzo)"
+  },
+  {
+   "motion": "Remove 250 Hollis Road, 356 Hollis Road, 56 Carr Avenue and 101 Pleasant Street from the tax lien sale list.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2\"'d: l. franco to remove 250 hollis road, 356 hollis road, 56 carr avenue and 101 pleasant street from the tax lien sale list vote: all in favor"
+   "quote": "to remove 250 hollis road, 356 hollis road, 56 carr avenue and 101 pleasant street from the tax lien sale list"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR scan with formatting artifacts in seconding notation (2\"d:, 2N:, 2'', 2''': are likely OCR renderings of \"2nd:\").",
- "cost_usd": 0.1800735
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) of a scanned set of minutes, so quotes are copied as the OCR printed them. Some passages are garbled: the preamble to the John Beale motion, the seconded-by lines (\"2N\", \"2''':\", \"2\"d;\"), and \"Mi.\" for \"Mr.\". The Parks Commission appointment vote was taken with the Parks Commissioners voting alongside the Select Board, and its vote line reads \"Ms. Longwood\" where the attendance line names Ana Lockwood. The agenda lists minutes of February 1, but the motions approve only February 8 and 15. The February 8 approval passed 3 in favor with 1 abstention, and the other approvals were recorded as \"All in Favor\" without a count. No transfers are recorded. No documents-list heading is printed. Adjournment at 9:30 p.m. has no recorded motion.",
+ "cost_usd": 0.03092578,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; patrick hakey, john kimball, unitil representative, keith caribou"
+  },
+  {
+   "name": "Patrick Hakey",
+   "status": "present",
+   "quote": "patrick hakey has lived in town for 31 years."
+  },
+  {
+   "name": "John Kimball",
+   "role": "Unitil Representative",
+   "status": "present",
+   "quote": "john kimball of unitil stated the pole is going to be a support pole for pole #97"
+  },
+  {
+   "name": "Keith Caribou",
+   "role": "Unitil Representative",
+   "status": "present",
+   "quote": "mr. caribou explained that all three pole petitions this evening are tied to one reliability project"
+  },
+  {
+   "name": "Aiden Moore",
+   "status": "present",
+   "quote": "aiden moore, 59 wildwood road, stated since the last update they have been talking to different"
+  },
+  {
+   "name": "Chris Roy",
+   "status": "present",
+   "quote": "chris roy, 105 chestnut street, reported his father, a co-owner at dillis and roy,"
+  },
+  {
+   "name": "Griffin Caiozzo",
+   "status": "present",
+   "quote": "griffin caiozzo, 1091 mass. ave., informed about the upcoming fundraisers in the next couple"
+  },
+  {
+   "name": "Mason Whitcomb",
+   "status": "present",
+   "quote": "mason whitcomb, 110 houghton"
+  },
+  {
+   "name": "Paul Bertram",
+   "status": "remote",
+   "quote": "mason whitcomb, paul bertram via zoom,"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair, Parks Commission",
+   "status": "remote",
+   "quote": "parks commissioners present via zoom: chris sullivan, ana lockwood, dave passios"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Parks Commissioner",
+   "status": "remote",
+   "quote": "parks commissioners present via zoom: chris sullivan, ana lockwood, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Parks Commissioner",
+   "status": "remote",
+   "quote": "parks commissioners present via zoom: chris sullivan, ana lockwood, dave passios"
+  },
+  {
+   "name": "Matt Proctor",
+   "status": "present",
+   "quote": "matt proctor expressed his interest in being appointed to the storm water task force"
+  },
+  {
+   "name": "John Beale",
+   "status": "present",
+   "quote": "john beale, 116 island road, presented for the storm water task force appointment."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Open Space Committee member",
+   "status": "present",
+   "quote": "paula bertram, open space committee member, noted the letter sent to the sb listed the properties"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Kilburn Street Plan 971-L pole petition hearing continued to the March 15 meeting (no vote recorded).",
+   "quote": "the hearing was continued to the march 15 meeting."
+  },
+  {
+   "decision": "Keep the combined demolition and design funding warrant article as one article rather than two.",
+   "quote": "it was decided to keep the article as is."
+  },
+  {
+   "decision": "Chairman directed the Town Manager to research the 25-year-old warrant article and give the 300th anniversary committee a modest budget to start.",
+   "quote": "i asked town manager to research the warrant article from 25 years ago and give"
+  },
+  {
+   "decision": "Try to get an update from the Bylaw Review Committee before taking any action on the bylaws.",
+   "quote": "it was decided to try to get an update from the committee before taking any action on the bylaws."
+  },
+  {
+   "decision": "Town Manager to forward the trash contract to the board.",
+   "quote": "ms. lemieux will forward the contract to the board."
+  },
+  {
+   "decision": "Constructive-approval question on the APDC demolition not to be acted on tonight; to be discussed another time after procedure and policies are reviewed.",
+   "quote": "mr. alonzo noted this is not on tonight's agenda so should not be acted upon."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Meadow Woods back-tax agreement",
+   "what_was_recorded": "Under the signed agreement, a down payment was paid and the company agreed to annual payments of the stated amount until back taxes were paid.",
+   "figures_as_printed": [
+    "$400,000",
+    "$100,000"
+   ],
+   "quote": "a down payment of $400,000 was paid to the town and they agreed to pay $100,000 each year thereafter until the back taxes were paid off."
+  },
+  {
+   "topic": "Meadow Woods back-tax payoff",
+   "what_was_recorded": "Meadow Woods paid the full remaining back-tax balance early, avoiding further interest and fines.",
+   "figures_as_printed": [
+    "$338,341"
+   ],
+   "quote": "they decided to pay off the full amount of the remainder of the back taxes"
+  },
+  {
+   "topic": "Lunenburg Central building permit payment",
+   "what_was_recorded": "The Town received a building permit payment from Lunenburg Central.",
+   "figures_as_printed": [
+    "$187,000"
+   ],
+   "quote": "the town received the building permit and associated payment from lunenburg central last week in the amount of $187,000."
+  },
+  {
+   "topic": "Active health insurance renewal rate",
+   "what_was_recorded": "Renewal rate came in below the preliminary budget assumption.",
+   "figures_as_printed": [
+    "5.56%",
+    "6%"
+   ],
+   "quote": "which will be a 5.56% increase (preliminary budget was 6%)."
+  },
+  {
+   "topic": "Monty Tech FY23 preliminary assessment",
+   "what_was_recorded": "Preliminary FY23 Monty Tech assessment amount received.",
+   "figures_as_printed": [
+    "$1,054,376",
+    "20.3%"
+   ],
+   "quote": "we received the fy 23 preliminary budget assessment amount from monty tech and it was $1,054,376 (20.3% increase)"
+  },
+  {
+   "topic": "Chapter 90 local transportation aid",
+   "what_was_recorded": "MassDOT's FY23 Chapter 90 funding amount, and its change from FY22.",
+   "figures_as_printed": [
+    "$419,940",
+    "$4,974"
+   ],
+   "quote": "will be $419,940. this is $4,974 more than fy22."
+  },
+  {
+   "topic": "Nashoba Dispatch FY23 assessment",
+   "what_was_recorded": "FY23 assessment for Nashoba Dispatch.",
+   "figures_as_printed": [
+    "$204,606",
+    "2.56%"
+   ],
+   "quote": "the fy23 assessment for nashoba dispatch will be $204,606 (2.56% increase)."
+  },
+  {
+   "topic": "FY23 Capital Plan funding sources",
+   "what_was_recorded": "Revised capital plan recommendation: additional amounts from three sources, for a generator, ADA patio and Primary School AC.",
+   "figures_as_printed": [
+    "$422,800",
+    "$155,075",
+    "$267,725"
+   ],
+   "quote": "i am recommending an additional $422,800 be allocated towards the fy23 capital plan with an additional $155,075 from unexpended capital articles and an additional $267,725 from the unappropriated balance from the available tax levy."
+  },
+  {
+   "topic": "FY23 Capital Plan total",
+   "what_was_recorded": "New total recommendation for the FY23 Capital Plan.",
+   "figures_as_printed": [
+    "$2,162,849"
+   ],
+   "quote": "the new total recommendation for the fy23 capital plan is $2,162,849."
+  },
+  {
+   "topic": "Cemetery Commission article",
+   "what_was_recorded": "Proposed warrant article to appropriate money from sale of cemetery lots.",
+   "figures_as_printed": [
+    "$10K"
+   ],
+   "quote": "an article submitted by the cemetery commission to appropriate $10k from the sale of cemetery lots"
+  },
+  {
+   "topic": "300th anniversary committee startup funding",
+   "what_was_recorded": "Suggested startup amount for the anniversary steering committee, compared with the amount approved 25 years earlier.",
+   "figures_as_printed": [
+    "$1000",
+    "$300"
+   ],
+   "quote": "ms. lemieux suggested $1000 as startup funding, as 25 years ago $300 was approved."
+  },
+  {
+   "topic": "Woodruff Property project funding",
+   "what_was_recorded": "Funding for bid specifications to be requested by warrant article unless a grant is found; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "funding for this will be requested through an article at the annual town meeting, unless another state/federal grant becomes available."
+  },
+  {
+   "topic": "925 Mass Ave brownfields application",
+   "what_was_recorded": "EPA Brownfields funding requested to remove tanks and some soil; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "to request funding to remove the tanks and a limited amount of soil at 925 mass avenue."
+  },
+  {
+   "topic": "Demolition and design warrant article",
+   "what_was_recorded": "Draft warrant article to fund demolition of the old Primary School and design of a passive recreation area; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "another draft article added to the warrant reads: to see if the town will vote to raise and"
+  },
+  {
+   "topic": "Conrad's Drive-In payment",
+   "what_was_recorded": "Manager paid part of an amount owed for operating without a license; a balance remains.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "conrad's manager came in today and paid $20,000, but there is still a balance due."
+  },
+  {
+   "topic": "Skate Park fundraising total",
+   "what_was_recorded": "Skate Park group reported total fundraising raised to date.",
+   "figures_as_printed": [
+    "$175,000"
+   ],
+   "quote": "through them they have raised over $175,000."
+  },
+  {
+   "topic": "Miles for Myles donation to Skate Park",
+   "what_was_recorded": "Foundation presented a check; total donated to the group stated.",
+   "figures_as_printed": [
+    "$11,400",
+    "$20,400"
+   ],
+   "quote": "presented a check for $11,400 to the skate park group making the total donated to them $20,400."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Jeffreys",
+   "topic": "APDC hearing and demolition application conduct",
+   "quote": "mr. jeffreys stated on march 10th there is a public hearing with the architectural preservation district commission (apdc) at the ritter building at 7:30 p.m."
+  },
+  {
+   "speaker": "Mr. Alonzo",
+   "topic": "support for Ukraine",
+   "quote": "mr. alonzo wanted to acknowledge the global situation and noted he was wearing the colors"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Open Meeting Law notice",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the pledge of allegiance."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no action",
+   "quote": "mr. jeffreys stated on march 10th there is a public hearing with the architectural preservation"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "ms. lemieux noted the marshall park conceptual design presentation will be on march 16"
+  },
+  {
+   "topic": "Joint appointment to Parks Commission (Patrick Hakey)",
+   "resolution": "approved",
+   "quote": "joint appointment with parks commission to parks commission of patrick hakey, 136"
+  },
+  {
+   "topic": "Pole petition hearings (Lancaster Ave., Kilburn St.)",
+   "resolution": "two approved; Kilburn St. Plan 971-L continued to March 15",
+   "quote": "pole petition hearing-lancaster ave.-plan 972-l dated 2/2/2022"
+  },
+  {
+   "topic": "Skate Park update and tollbooth fundraiser",
+   "resolution": "presented; fundraiser approved; donation check presented",
+   "quote": "aiden moore, 59 wildwood road, stated since the last update they have been talking to different"
+  },
+  {
+   "topic": "Storm Water Task Force appointments",
+   "resolution": "approved (Proctor and Beale)",
+   "quote": "interview and appointment of members to the storm water task force-john beale-"
+  },
+  {
+   "topic": "Ratification of Assistant to Sewer Business Manager",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of assistant to the sewer business"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "announcement on existing vacancies the following is a list of current vacancies"
+  },
+  {
+   "topic": "Trash and town services on private roads",
+   "resolution": "discussed; Town Manager to forward contract",
+   "quote": "trash and town services on private roads discussion ensued around ongoing problems with trash pickup"
+  },
+  {
+   "topic": "Conrad's Drive-In cease and desist",
+   "resolution": "approved",
+   "quote": "conrad's drive-in 835 massachusetts ave. - request to send cease & desist"
+  },
+  {
+   "topic": "Bylaw review relative to the Select Board",
+   "resolution": "no action; update sought from committee",
+   "quote": "ms. lemieux reported she had emailed mary foyle, chair of the bylaw review committee"
+  },
+  {
+   "topic": "Approve minutes",
+   "resolution": "approved",
+   "quote": "approve minutes of february 1, february 8, february 15, 2022"
+  },
+  {
+   "topic": "Action items (School Committee message on Primary School AC)",
+   "resolution": "request raised; no vote recorded",
+   "quote": "mr. jeffreys requested in light of the town manager's report if a message to the school"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "mr. franco reported the economic development committee met and had a presentation from"
+  },
+  {
+   "topic": "Tax lien sale list",
+   "resolution": "four properties removed from list",
+   "quote": "it was noted the list has been reduced since the last meeting."
+  },
+  {
+   "topic": "FY2023 budget, capital plan, forecast and warrant articles",
+   "resolution": "discussed; warrant articles reviewed",
+   "quote": "ms. lemieux presented a draft warrant article for the board to vote on."
+  },
+  {
+   "topic": "Select Board MRC and School Committee liaison",
+   "resolution": "offered; no vote recorded",
+   "quote": "mr. franco offered to be the school committee liaison until the election"
+  },
+  {
+   "topic": "Upcoming meetings and APDC hearing",
+   "resolution": "discussed; constructive-approval question deferred",
+   "quote": "mr. alonzo reported the apdc hearing for the certificate to alter (demolition of the old"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pole petition Plan 972-L dated 2/2/2022 (Lancaster Ave.)",
+   "where": "text",
+   "quote": "pole petition hearing-lancaster ave.-plan 972-l dated 2/2/2022"
+  },
+  {
+   "name": "Pole petition Plan 970-L dated 2/2/2022 (Kilburn St. at Goodrich St.)",
+   "where": "text",
+   "quote": "pole petition hearing-kilburn street @ goodrich st.-plan 970-l dated 2/2/2022"
+  },
+  {
+   "name": "Pole petition Plan 971-L dated 2/2/2022 (Kilburn Street)",
+   "where": "text",
+   "quote": "pole petition hearing-kilburn street - plan 971-l dated 2/2/2022"
+  },
+  {
+   "name": "Draft warrant article, 300th anniversary steering committee",
+   "where": "text",
+   "quote": "to see if the town will vote to create a special committee of not more than 11 members to act as a"
+  },
+  {
+   "name": "Draft warrant article, demolition and design of old Primary School",
+   "where": "text",
+   "quote": "another draft article added to the warrant reads: to see if the town will vote to raise and"
+  },
+  {
+   "name": "EPA Brownfields Targeted Assessment Application (925 Mass Avenue)",
+   "where": "text",
+   "quote": "brownfields targeted assessment application form to request"
+  },
+  {
+   "name": "Open Space Committee letter to the Select Board",
+   "where": "text",
+   "quote": "discussion turned to the open space letter sent to the select board."
+  },
+  {
+   "name": "Vertex reports and Tappe Study (Municipal Building Design Committee)",
+   "where": "text",
+   "quote": "review in detail the vertex reports and tappe study to identify what is needed,"
+  },
+  {
+   "name": "Trash collection contract",
+   "where": "text",
+   "quote": "ms. lemieux will forward the contract to the board."
+  },
+  {
+   "name": "Select Board application to APDC to demolish the old Primary School, 30 School Street",
+   "where": "text",
+   "quote": "application to demolish the old primary school at 30 school street."
+  },
+  {
+   "name": "Certificate to Alter (demolition of the old Primary School)",
+   "where": "text",
+   "quote": "mr. alonzo reported the apdc hearing for the certificate to alter (demolition of the old"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Parks Commission",
+  "pole petitions",
+  "Unitil",
+  "skate park",
+  "APDC",
+  "Primary School demolition",
+  "tax liens",
+  "FY23 budget",
+  "capital plan",
+  "warrant articles",
+  "trash collection",
+  "Storm Water Task Force",
+  "Ukraine"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

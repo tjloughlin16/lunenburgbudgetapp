@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2022-01-24",
  "docid": "4200",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from 1/10/22 and related property meetings",
+   "motion": "Approve the minutes of 1/10/22 and the 1/10/22 minutes for 97 Cross Street, 125 Cross Street, 430 Mulpus Road and 440 Mulpus Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
    "outcome": "passed unanimously",
@@ -20,7 +20,7 @@
    "quote": "p. bertram made motion to approve minutes listed below, e. torgersen seconded. roll call vote- p. bertram, aye; e. torgersen, aye; m. allison, aye. passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "E. Torgersen",
    "outcome": "passed unanimously",
@@ -29,6 +29,204 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0854485
+ "note": "Minutes text is a clean digital extraction with some spacing artifacts (e.g., 'req uested', 'Torgers en' in header); quotes reproduce printed spacing. Roll-call tallies are printed as 3 ayes, recorded as 'passed unanimously'. No public comment section is printed. Marjorie J. Boggio appears only in the letterhead, not as taking part, so omitted. The ANR continuance and the schedule change are recorded as decisions with no vote shown.",
+ "cost_usd": 0.01603668,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: adam burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "remote",
+   "quote": "matthew allison, paula bertram, and erik torgersen participated remotely"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "matthew allison, paula bertram, and erik torgersen participated remotely"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "matthew allison, paula bertram, and erik torgersen participated remotely"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: tanner cole, matthew brenner"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: tanner cole, matthew brenner"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The ANR plan for 64 Arbor Street was continued to the February 28 Board meeting at the owner's request, to address Board of Health issues.",
+   "quote": "64 arbor street - the property owner req uested a continuance to the february 28 th board meeting."
+  },
+  {
+   "decision": "A. Burney was to make amendments to the Water Supply Protection District bylaw citations; the District Superintendent would then be invited to a Board meeting.",
+   "quote": "once a. burney makes the amendments , the district superintendent of the water district will be invited"
+  },
+  {
+   "decision": "A. Burney requested an opinion from Town Counsel on the cannabis special permit licensing question.",
+   "quote": "a. burney requested an opinion from town counsel."
+  },
+  {
+   "decision": "Until further notice the Board would meet remotely, not hybrid; no February 14 meeting, so the only February meeting is the 28th.",
+   "quote": "the board w ould meet remotely, and not hybrid."
+  },
+  {
+   "decision": "Further discussion of a public market bylaw (MGL allowing a public market) to take place at the February 28 meeting.",
+   "quote": "more discussion would take place at the board's february 28th meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Open space gift from BrightFarms",
+   "what_was_recorded": "BrightFarms gifted $10,000 to open space; the Open Space Ad Hoc Committee would investigate how best to use the funds.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "brightfarms had gifted $10,000 to open space; the committee would investigate how best to utilize those funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "ANR plan, 64 Arbor Street",
+   "resolution": "continued to February 28",
+   "quote": "64 arbor street - the property owner req uested a continuance to the february 28 th board meeting.",
+   "tags": [
+    "ANR",
+    "continuance",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved unanimously",
+   "quote": "p. bertram made motion to approve minutes listed below, e. torgersen seconded. roll call vote- p. bertram, aye; e. torgersen, aye; m. allison, aye. passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "storm water task force - a meeting was held january 20 th.",
+   "tags": [
+    "stormwater",
+    "open space",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Water Supply Protection District bylaw citations",
+   "resolution": "Burney to amend bylaw; Water District superintendent to be invited later",
+   "quote": "once a. burney makes the amendments , the district superintendent of the water district will be invited",
+   "tags": [
+    "zoning bylaw",
+    "water supply",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "Non-medical marijuana bylaw update",
+   "resolution": "no action; Town Counsel drafting language",
+   "quote": "was working on language for that portion of the bylaw called into question",
+   "tags": [
+    "cannabis",
+    "zoning bylaw",
+    "special permit"
+   ]
+  },
+  {
+   "topic": "Warrant for Annual Town Meeting",
+   "resolution": "noted",
+   "quote": "warrant open for annual town meeting- noted",
+   "tags": [
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "remote meetings until further notice; no February 14 meeting",
+   "quote": "the board w ould meet remotely, and not hybrid.",
+   "tags": [
+    "meeting schedule",
+    "remote participation"
+   ]
+  },
+  {
+   "topic": "Ongoing items: Pond View Commons and Master Plan",
+   "resolution": "no action recorded",
+   "quote": "pond view commons, llc",
+   "tags": [
+    "Pond View Commons",
+    "master plan"
+   ]
+  },
+  {
+   "topic": "Board comment: public market",
+   "resolution": "deferred to February 28 meeting",
+   "quote": "m. allison felt a public market would be a benefit to the town.",
+   "tags": [
+    "public market",
+    "annual town meeting",
+    "MGL"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:33 p.m.",
+   "quote": "p. bertram made motion to adjourn, e. torgersen seconded. roll call vote - p. bertram, aye; e. torgersen, aye; m. allison, aye. passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes, 1/10/22",
+   "where": "list",
+   "quote": "documents used at meeting: minutes, 1/10/22 minutes, 1/10/22, 97 cross street, 125 cross street, 430 mulpus road & 440 mulpus road"
+  },
+  {
+   "name": "Minutes, 1/10/22, 97 Cross Street, 125 Cross Street, 430 Mulpus Road & 440 Mulpus Road",
+   "where": "list",
+   "quote": "documents used at meeting: minutes, 1/10/22 minutes, 1/10/22, 97 cross street, 125 cross street, 430 mulpus road & 440 mulpus road"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "zoning bylaw",
+  "water supply protection",
+  "cannabis bylaw",
+  "public market",
+  "annual town meeting",
+  "remote meetings",
+  "stormwater",
+  "open space",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

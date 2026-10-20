@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-11-16",
  "docid": "2098",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Recommend approval of Article 3 (fire fighters' collective bargaining agreement)",
+   "motion": "Recommend approval of Article 3 of the Special Town Meeting warrant.",
    "moved_by": "Chris Menard",
    "seconded_by": "Dave Passios",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion to recommend approval to article 3, chris menard. 2nd, dave passios. approved unanimously"
   },
   {
-   "motion": "Reconsider Article 7",
+   "motion": "Reconsider Article 7.",
    "moved_by": "Chris Menard",
    "seconded_by": "Evan Watters",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion to reconsider article 7, chris menard. 2nd evan watters. approved unanimously"
   },
   {
-   "motion": "Recommend disapproval of Article 7",
+   "motion": "Recommend disapproval of Article 7 of the Special Town Meeting warrant.",
    "moved_by": "Chris Menard",
    "seconded_by": "Thomas Gray",
    "outcome": "passed 6-1",
@@ -36,7 +36,7 @@
    "quote": "motion to recommend disapproval of article 7, chris menard. 2nd, thomas gray. approved (6-1), evan watters voting no."
   },
   {
-   "motion": "Reconsider Article 8",
+   "motion": "Reconsider Article 8.",
    "moved_by": "Chris Menard",
    "seconded_by": "Evan Watters",
    "outcome": "passed",
@@ -44,7 +44,7 @@
    "quote": "motion to reconsider article 8, chris menard. 2nd evan watters. approved unanimously"
   },
   {
-   "motion": "Recommend disapproval of Article 8",
+   "motion": "Recommend disapproval of Article 8 of the Special Town Meeting warrant.",
    "moved_by": "Thomas Balish",
    "seconded_by": "Chris Menard",
    "outcome": "passed",
@@ -52,7 +52,7 @@
    "quote": "motion to recommend disapproval of article 8, thomas balish. 2nd chris menard. approved unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Evan Watters",
    "outcome": "passed",
@@ -61,6 +61,148 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are readable with clear votes recorded.",
- "cost_usd": 0.0805535
+ "note": "Text extraction, not a scan; votes are recorded in full. The minutes do not describe the content of Articles 3, 7 or 8, so the recommendations are recorded without their subject matter. The meeting was stated as not recorded. Member roles are not printed in the minutes, so none are recorded for members.",
+ "cost_usd": 0.014158480000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "peter beardmore called the meeting to order at 6:00 p.m. and read a statement concerning the open meeting law."
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, chris menard, thomas gray, evan watters, jay simeone, thomas balish"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, chris menard, thomas gray, evan watters, jay simeone, thomas balish"
+  },
+  {
+   "name": "Thomas Gray",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, chris menard, thomas gray, evan watters, jay simeone, thomas balish"
+  },
+  {
+   "name": "Evan Watters",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, chris menard, thomas gray, evan watters, jay simeone, thomas balish"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, chris menard, thomas gray, evan watters, jay simeone, thomas balish"
+  },
+  {
+   "name": "Thomas Balish",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, chris menard, thomas gray, evan watters, jay simeone, thomas balish"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, fire chief patrick sullivan"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, fire chief patrick sullivan"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, town accountant karen brochu, fire chief patrick sullivan"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Fire fighters' collective bargaining agreement salary increases",
+   "what_was_recorded": "The town manager outlined a two-year agreement with the fire fighters' union producing a blended salary increase of 3.0% for FY22 and 7.6% for FY23.",
+   "figures_as_printed": [
+    "3.0%",
+    "7.6%",
+    "FY22",
+    "FY23"
+   ],
+   "quote": "result in a 3.0% blended increase in salaries for fy22 and a 7.6% increase in fy23"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 6:00 p.m.",
+   "quote": "peter beardmore called the meeting to order at 6:00 p.m. and read a statement concerning the open meeting law.",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements",
+   "quote": "2. announcements: none",
+   "tags": []
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "3. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant article recommendations",
+   "resolution": "recommendations made on Articles 3, 7 and 8 (votes as recorded)",
+   "quote": "discussion and vote on special town meeting warrant article recommendations:",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "fire fighters union",
+    "collective bargaining",
+    "salaries"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned, approved unanimously",
+   "quote": "6. adjourn motion, chris menard. 2nd evan watters. approved unanimously.",
+   "tags": []
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting warrant articles 3, 7 and 8",
+   "where": "text",
+   "quote": "discussion and vote on special town meeting warrant article recommendations:"
+  },
+  {
+   "name": "Collective bargaining agreement with the fire fighters’ union (2-year agreement)",
+   "where": "text",
+   "quote": "the town manager outlined the new collective bargaining agreement with the fire fighters' union."
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "warrant articles",
+  "fire fighters union",
+  "collective bargaining",
+  "salary increases",
+  "FY22",
+  "FY23",
+  "Finance Committee"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

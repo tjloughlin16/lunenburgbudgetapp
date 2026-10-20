@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2022-01-20",
  "docid": "1119",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the December 8, 2021 minutes",
+   "motion": "Approve the December 8, 2021 minutes.",
    "moved_by": "Christine Higdon",
    "seconded_by": "Kevin Fish",
    "outcome": "passed",
@@ -21,6 +21,140 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. One vote recorded: approval of prior minutes. The minutes discuss a personal property exemption threshold and abatement applications but record no motions or votes on those items. An ATB hearing decision is reported but is not a board vote. No formal motion to adjourn is recorded.",
- "cost_usd": 0.0751155
+ "note": "Text is macOS Vision OCR of a scanned page; quotes are taken from the OCR text as printed. One motion recorded (approval of minutes, unanimous per 'All in favor', no count given). No roll call. The adjournment has no recorded motion, so it is not listed as a vote. No public comment section appears in the minutes.",
+ "cost_usd": 0.013358680000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard H. Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard h. letarte, board members, christine higdon and kevin fish."
+  },
+  {
+   "name": "Rena Swezey",
+   "role": "Principal Assessor (Interim)",
+   "status": "present",
+   "quote": "also present principal assessor (interim), rena swezey and administrative assessing assistant, sheila craigen"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "also present principal assessor (interim), rena swezey and administrative assessing assistant, sheila craigen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "After discussion of raising the business personal property exemption from $2500 to $5000, the BOA chose to get an estimate of the net loss before committing to a position.",
+   "quote": "after some discussion, the boa decided they would like to get an idea of the net loss before making a commitment."
+  },
+  {
+   "decision": "One abatement application was denied.",
+   "quote": "boa reviewed abatement applications. one denial."
+  },
+  {
+   "decision": "A tentative meeting was set for Tuesday, February 15, 2022.",
+   "quote": "a tentative meeting set for tuesday february 15, 2022."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Business personal property exemption threshold",
+   "what_was_recorded": "Businesses are exempt from taxation when the reported value is under a set amount; staff suggested raising the amount, and the board wanted a net-loss estimate first.",
+   "figures_as_printed": [
+    "$2500",
+    "$5000"
+   ],
+   "quote": "currently, businesses are exempt from taxation if the value reported is under $2500."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of December 8, 2021 minutes",
+   "resolution": "approved",
+   "quote": "christine made a motion to approve the december 8, 2021 minutes. kevin seconded. all in favor.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business personal property exemption article",
+   "resolution": "no decision; net-loss estimate requested before committing",
+   "quote": "rena stated an article has been submitted for the upcoming town meeting regarding personal property.",
+   "tags": [
+    "personal property",
+    "town meeting",
+    "exemption"
+   ]
+  },
+  {
+   "topic": "Abatement applications and ATB decision",
+   "resolution": "one abatement denied; ATB decision for the town received",
+   "quote": "boa reviewed abatement applications. one denial.",
+   "tags": [
+    "abatements",
+    "appellate tax board"
+   ]
+  },
+  {
+   "topic": "Land splits and new growth",
+   "resolution": "discussed; no action",
+   "quote": "rena stated she has been working on various land splits and talked about new growth.",
+   "tags": [
+    "land splits",
+    "new growth"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:26 am; next tentative meeting February 15, 2022",
+   "quote": "meeting adjourned at 9:26 am.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Meeting article regarding personal property (submitted; no number or text given)",
+   "where": "text",
+   "quote": "rena stated an article has been submitted for the upcoming town meeting regarding personal property."
+  },
+  {
+   "name": "ATB (Appellate Tax Board) decision, hearing held remote January 5, 2022",
+   "where": "text",
+   "quote": "the decision is for the appellee, being the town of lunenburg."
+  }
+ ],
+ "tags": [
+  "personal property",
+  "business exemption",
+  "abatements",
+  "appellate tax board",
+  "new growth",
+  "land splits",
+  "town meeting",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

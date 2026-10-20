@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2022-04-05",
  "docid": "2681",
@@ -12,19 +12,160 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the February 15th meeting",
-   "outcome": "unanimously accepted",
+   "motion": "Accept the minutes of the February 15 meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes of february 15th meeting were read by secretary jennifer sanderson and unanimously accepted."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn. next meeting may 3,2022"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0877625
+ "note": "Short set of minutes with no dollar figures, no public speakers and no recorded vote on any substantive item. Only two motions are recorded: approval of the February 15 minutes (passed unanimously, mover not printed) and a motion to adjourn (no mover or result printed). The minutes name no attached documents or exhibits.",
+ "cost_usd": 0.01394948,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order at 7:10 by chairman richard mcgrath with a quorum present."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "minutes of february 15th meeting were read by secretary jennifer sanderson and unanimously accepted."
+  },
+  {
+   "name": "William Loyd",
+   "role": "talent bank applicant, of Highland St.",
+   "status": "absent",
+   "quote": "a copy of the agenda was sent to him by richard, but he is not present."
+  },
+  {
+   "name": "Jennifer Dougherty",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jennifer dougherty has suggested that we check the mass historical preservation website for names of consultants, and send out an inquiry detailing our needs."
+  },
+  {
+   "name": "Ryan Hayward",
+   "role": "of the Medford Society",
+   "status": "not stated",
+   "quote": "richard spoke with ryan hayward of the medford society and learned that several planning grants are coming up."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and minutes of February 15",
+   "resolution": "minutes approved unanimously",
+   "quote": "meeting called to order at 7:10 by chairman richard mcgrath with a quorum present.",
+   "tags": [
+    "minutes",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "New business: talent bank form, William Loyd",
+   "resolution": "no action recorded",
+   "quote": "richard mcgrath has received a talent bank form from william loyd of highland st.",
+   "tags": [
+    "talent bank",
+    "applicant"
+   ]
+  },
+  {
+   "topic": "African Americans in Lunenburg",
+   "resolution": "discussed, no action recorded",
+   "quote": "richard has been in contact with the architect who has worked with both the medford and townsend historical societies",
+   "tags": [
+    "African American history",
+    "census",
+    "research"
+   ]
+  },
+  {
+   "topic": "Litch Cemetery",
+   "resolution": "update, no action recorded",
+   "quote": "litch cemetary: richard will be finishing up over the course of the next few weeks, at which point we will take photos to accompany a press release.",
+   "tags": [
+    "cemetery",
+    "press release"
+   ]
+  },
+  {
+   "topic": "30 School St. (APDC CTA meeting)",
+   "resolution": "update; vote postponed, going to town meeting in November",
+   "quote": "the vote has been postponed for several weeks.",
+   "tags": [
+    "30 School Street",
+    "demolition",
+    "APDC",
+    "Selectboard"
+   ]
+  },
+  {
+   "topic": "K House survey",
+   "resolution": "suggested next steps, no vote",
+   "quote": "jennifer dougherty has suggested that we check the mass historical preservation website for names of consultants, and send out an inquiry detailing our needs.",
+   "tags": [
+    "K House",
+    "consultants",
+    "grants"
+   ]
+  },
+  {
+   "topic": "68 Elm St",
+   "resolution": "no action; nothing happening",
+   "quote": "still nothing happening with 68 elm st.",
+   "tags": [
+    "68 Elm Street"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "motion to adjourn; next meeting May 3, 2022",
+   "quote": "motion to adjourn. next meeting may 3,2022",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "talent bank form (William Loyd)",
+   "where": "text",
+   "quote": "richard mcgrath has received a talent bank form from william loyd of highland st."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "talent bank",
+  "African American history",
+  "Litch Cemetery",
+  "30 School Street",
+  "APDC",
+  "K House",
+  "68 Elm Street",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-11-09",
  "docid": "5274",
@@ -12,56 +12,399 @@
  },
  "votes": [
   {
-   "motion": "Accept the recommendation of the Board of Assessors for the single tax rate of $17.19 for the next fiscal year",
+   "motion": "Accept the Board of Assessors' recommendation for a single tax rate of $17.19 for the next fiscal year.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2\": t. dwyer to accept the recommendation of the board of assessors for the single tax rate of $17.19 for the next fiscal year vote: all in favor"
+   "quote": "to accept the recommendation of the board of assessors for the single tax rate of $17.19 for the next fiscal year"
   },
   {
-   "motion": "Approve the request for the tollbooth fundraiser in both locations on December 11th from 10 am to 2 pm",
+   "motion": "Approve the Salvation Army tollbooth fundraiser in both locations on December 11 from 10 am to 2 pm.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd. l. franco to approve the request for the tollbooth fundraiser in both locations on december 11' from 10 am to 2 pm vote: all in favor"
+   "quote": "to approve the request for the tollbooth fundraiser in both locations on december 11"
   },
   {
-   "motion": "Accept and sign the 2nd Quarter Water Commitment in the amount of $10,624.14",
+   "motion": "Accept and sign the 2nd Quarter Water Commitment in the amount of $10,624.14.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2\": l. franco to accept and sign the 2nd quarter water commitment in the amount of $10,624.14 vote: all in favor"
+   "quote": "to accept and sign the 2nd quarter water commitment in the amount of $10,624.14"
   },
   {
-   "motion": "Appoint Elaina Corcoran as Commissioner of Trust Funds until May 2022",
+   "motion": "Appoint Elaina Corcoran as Commissioner of Trust Funds until May 2022.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2nd: t. dwyer to appoint elaina corcoran as commissioner of trust funds until may 2022 vote: all in favor"
+   "quote": "to appoint elaina corcoran as commissioner of trust funds until may 2022"
   },
   {
-   "motion": "Appoint Nicole Waters to the Trust Fund Commission until May 2022 annual election",
+   "motion": "Appoint Nicole Waters to the Trust Fund Commission until the May 2022 annual election.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2'': l. franco to appoint nicole waters to the trust fund commission until may 2022 annual election vote: all in favor"
+   "quote": "to appoint nicole waters to the trust fund commission until may 2022 annual election"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer to adjourn the meeting the meeting adjourned at 8:16 p.m",
-   "quote_taken_from_text": true
+   "quote": "to adjourn the meeting the meeting adjourned at 8:16 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extraction from scanned minutes. All votes recorded as passing unanimously. Procedural votes include adjournment.",
- "cost_usd": 0.1344965
+ "note": "OCR of a scanned minutes packet (macOS Vision); some quotes carry OCR artifacts (e.g. \"2\\\":\" for \"2nd:\") and were copied as printed. No roll call is printed: attendance is inferred from the statements and motions in the text, so members are marked present only where they moved, seconded, spoke or agreed. Votes are printed only as \"All in Favor\" with no count, so outcomes are recorded as \"passed\". The Finance Committee's recommendation vote reported by the Chair is another body's vote and is not recorded here. The tax classification packet is titled FY2022 but the minutes text says fiscal year 2023; the packet's recommended motion (residential factor 1.0) is not a separate motion in the minutes. Articles 7 and 8 pass-over and the Salary Administration Plan pull are informal agreements, not recorded votes.",
+ "cost_usd": 0.022517880000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the"
+  },
+  {
+   "name": "L. Franco",
+   "role": "Board member (as printed: Mr. Franco)",
+   "status": "present",
+   "quote": "mr. franco and mr. dwyer agreed."
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Board member (as printed: Mr. Dwyer)",
+   "status": "present",
+   "quote": "mr. franco and mr. dwyer agreed."
+  },
+  {
+   "name": "Jeffreys",
+   "role": "not stated",
+   "status": "absent",
+   "quote": "since mr. jeffreys could not be here this evening"
+  },
+  {
+   "name": "Christine Kumar",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor kumar presented information related to setting the tax rate for fiscal year"
+  },
+  {
+   "name": "Lynette Valentine Warren",
+   "role": "Salvation Army Envoy",
+   "status": "present",
+   "quote": "ms. valentine warren, salvation army envoy and resident dave macdonald presented to request a"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "resident",
+   "status": "present",
+   "quote": "mr. macdonald and ms. valentine warren thanked the board and exited the meeting."
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "not stated",
+   "status": "present",
+   "quote": "ms. lemieux presented a proposed schedule:"
+  },
+  {
+   "name": "Steve Weaver",
+   "role": "resident, 288 Holman Street",
+   "status": "present",
+   "quote": "steve weaver, 288 holman street, thanked mr. marino for all his service to the town."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Articles 7 and 8 of the Special Town Meeting warrant are to be passed over, given late-breaking information and new numbers; Mr. Franco and Mr. Dwyer agreed (no recorded vote).",
+   "quote": "the initial motion is to pass over both due to the late breaking new information and new numbers. mr. franco and mr. dwyer agreed."
+  },
+  {
+   "decision": "The Salary Administration Plan is pulled from the consent calendar over a typographical error in the grade, to be addressed directly.",
+   "quote": "so it is being pulled from the consent calendar and will be addressed directly"
+  },
+  {
+   "decision": "Board members are asked to read the Uma Flowers host community agreement and send any recommendations or modifications to the Town Manager for the next agenda.",
+   "quote": "mr. alonzo requested the board members read through the agreement and submit any recommendations or modifications to the town manager"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Single tax rate",
+   "what_was_recorded": "The Board of Assessors recommended a single residential and CIP tax rate, which the board adopted by motion.",
+   "figures_as_printed": [
+    "$17.19"
+   ],
+   "quote": "to accept the recommendation of the board of assessors for the single tax rate of $17.19 for the next fiscal year"
+  },
+  {
+   "topic": "Tax levy estimate",
+   "what_was_recorded": "The presented tax levy estimate for the proposed tax rate.",
+   "figures_as_printed": [
+    "$ 29,953,387.33"
+   ],
+   "quote": "tax levy estimate $ 29,953,387.33"
+  },
+  {
+   "topic": "Total amount to be raised",
+   "what_was_recorded": "The total amount to be raised shown in the tax rate summary used to calculate the proposed rate.",
+   "figures_as_printed": [
+    "$ 47,608,648.54"
+   ],
+   "quote": "to calculate a proposed tax rate: total amount to be raised $ 47,608,648.54"
+  },
+  {
+   "topic": "Value of a $1 change in the tax rate",
+   "what_was_recorded": "The printed statement of how much revenue each $1 on the tax rate raises.",
+   "figures_as_printed": [
+    "$1,742,668"
+   ],
+   "quote": "$1 on the tax rate will raise $1,742,668"
+  },
+  {
+   "topic": "Average single family tax bill",
+   "what_was_recorded": "The printed change in the average single family tax bill over five years.",
+   "figures_as_printed": [
+    "$860.84"
+   ],
+   "quote": "the average single family home tax bill has increased $860.84 or about 15.44% over the past 5 years."
+  },
+  {
+   "topic": "Average single family home value",
+   "what_was_recorded": "The printed change in the average single family home value over five years.",
+   "figures_as_printed": [
+    "$91,400.00"
+   ],
+   "quote": "the average single family home value has increased $91,400.00 or about 33% over the past 5 years."
+  },
+  {
+   "topic": "Firefighters Union contract (STM Article 3) funding",
+   "what_was_recorded": "Year-one funding for the Firefighters Union agreement, described as approved from the salary reserve account, to be voted at Special Town Meeting.",
+   "figures_as_printed": [
+    "$39,000"
+   ],
+   "quote": "the article approves funding for year one in the amount of $39,000 from the salary reserve account"
+  },
+  {
+   "topic": "Firefighter stipends",
+   "what_was_recorded": "The Firefighters Union agreement creates stipends for two officer positions.",
+   "figures_as_printed": [
+    "$1500"
+   ],
+   "quote": "it also creates $1500 stipends for both a fire prevention officer and a training officer."
+  },
+  {
+   "topic": "Second quarter water commitment",
+   "what_was_recorded": "The board accepted and signed the second quarter water commitment.",
+   "figures_as_printed": [
+    "$10,624.14"
+   ],
+   "quote": "to accept and sign the 2nd quarter water commitment in the amount of $10,624.14"
+  },
+  {
+   "topic": "Dept. of Public Utilities rate increase (Unitil)",
+   "what_was_recorded": "Chair noted Unitil's three-year plan, which includes a rate increase; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "their three year plan includes a rate increase."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Year-one funding for the Firefighters Union agreement (STM Article 3) from the salary reserve account, described as already an appropriation within the budget.",
+   "outcome": "Not voted at this meeting; the article is on the November 16, 2021 Special Town Meeting warrant.",
+   "amount_as_printed": "$39,000",
+   "quote": "the article approves funding for year one in the amount of $39,000 from the salary reserve account"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mr. Franco",
+   "stated_role": "",
+   "topic": "Reminder about Armed Forces Day",
+   "quote": "mr. franco stated since mr. jeffreys could not be here this evening, he asked me to remind"
+  },
+  {
+   "speaker": "Steve Weaver",
+   "stated_role": "",
+   "topic": "Thanks to Mr. Marino; TCP Building warrant articles and school space",
+   "quote": "steve weaver, 288 holman street, thanked mr. marino for all his service to the town."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the",
+   "tags": [
+    "announcements",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; Dept. of Public Utilities hearing notice announced",
+   "quote": "steve weaver, 288 holman street, thanked mr. marino for all his service to the town.",
+   "tags": [
+    "public comment",
+    "utilities"
+   ]
+  },
+  {
+   "topic": "Tax classification hearing (FY tax rate)",
+   "resolution": "single tax rate of $17.19 approved",
+   "quote": "tax classification hearing as required by m.g.l. ch. 40 $ 56 on the issue of allocating",
+   "tags": [
+    "tax classification",
+    "tax rate",
+    "levy"
+   ]
+  },
+  {
+   "topic": "Request for Salvation Army tollbooth fundraiser",
+   "resolution": "approved",
+   "quote": "request for salvation army tollbooth fundraiser- lynette valentine",
+   "tags": [
+    "salvation army",
+    "event permit"
+   ]
+  },
+  {
+   "topic": "Current business: water commitment",
+   "resolution": "accepted and signed",
+   "quote": "to accept and sign the 2nd quarter water commitment in the amount of $10,624.14",
+   "tags": [
+    "water",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "informational; vacancies and openings announced",
+   "quote": "announcement on existing vacancies:",
+   "tags": [
+    "vacancies",
+    "town manager",
+    "facilities"
+   ]
+  },
+  {
+   "topic": "Trust Fund Commission appointments",
+   "resolution": "two appointments approved",
+   "quote": "to appoint elaina corcoran as commissioner of trust funds until may 2022",
+   "tags": [
+    "appointments",
+    "trust funds"
+   ]
+  },
+  {
+   "topic": "Old Primary School landscape project schedule",
+   "resolution": "schedule presented and discussed; no vote",
+   "quote": "discussion on schedule for old primary school landscape architectural services project",
+   "tags": [
+    "old primary school",
+    "landscape design",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Committee reports (storm water task force, Finance Committee, Capital Planning)",
+   "resolution": "reported",
+   "quote": "mr. alonzo reported the finance committee met to address three stm warrant articles",
+   "tags": [
+    "finance committee",
+    "stormwater",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Uma Flowers host community agreement",
+   "resolution": "board to review and send comments to Town Manager",
+   "quote": "1. uma flowers host community agreement",
+   "tags": [
+    "host community agreement",
+    "cannabis or development agreement"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles and consent calendar",
+   "resolution": "Articles 7 and 8 passed over; Salary Administration Plan pulled from consent calendar",
+   "quote": "discussion on november 16, 2021 special town meeting warrant articles and consent calendar; votes may be taken",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "firefighters",
+    "historical commission"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:16 p.m.",
+   "quote": "the meeting adjourned at 8:16 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY2022 Tax Classification Hearing packet (Board of Assessors)",
+   "where": "list",
+   "quote": "principal assessor kumar presented information related to setting the tax rate for fiscal year 2023. see attached."
+  },
+  {
+   "name": "Virtual public hearing notice, Dept. of Public Utilities (Unitil three-year plan)",
+   "where": "text",
+   "quote": "a virtual public hearing notice from the dept. of public utilities regarding the three year plan that unitil has filed with them"
+  },
+  {
+   "name": "Uma Flowers Host Community Agreement",
+   "where": "text",
+   "quote": "mr. alonzo requested the board members read through the agreement and submit any recommendations or modifications to the town manager"
+  },
+  {
+   "name": "Motion sheet (consent calendar, Special Town Meeting)",
+   "where": "text",
+   "quote": "the motion sheet will be sent out shortly."
+  },
+  {
+   "name": "Special Town Meeting warrant articles, November 16, 2021",
+   "where": "text",
+   "quote": "discussion on november 16, 2021 special town meeting warrant articles and consent calendar; votes may be taken"
+  }
+ ],
+ "tags": [
+  "tax classification",
+  "tax rate",
+  "levy",
+  "special town meeting",
+  "warrant articles",
+  "appointments",
+  "trust funds",
+  "old primary school",
+  "town manager report",
+  "water commitment",
+  "salvation army",
+  "firefighters contract",
+  "public comment",
+  "facilities",
+  "Unitil"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "see attached."
+ },
+ "dropped_unquoted_by_field": {}
 }

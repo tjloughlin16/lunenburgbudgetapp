@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2021-10-18",
  "docid": "1057",
@@ -12,55 +12,216 @@
  },
  "votes": [
   {
-   "motion": "approve requested septic system variances at 30 Johnson Street",
+   "motion": "Approve the requested variances for 30 Johnson Street (wetland offset from 100 feet to 70 feet; groundwater offset from 5 feet to 4 feet).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by fortin, the board unanimously approved the requested variances. all in favor."
+   "quote": "the board unanimously approved the requested variances. all in favor."
   },
   {
-   "motion": "approve requested septic system variances at 195 Rolling Acres with plan changes",
+   "motion": "Approve the variances for 195 Rolling Acres, with the changes to the plan.",
    "moved_by": "Watters",
    "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by watters and second by jewell, the board voted to approve the variances, with the changes to the plan. all in favor."
+   "quote": "on motion by watters and second by jewell, the board voted to approve the variances, with the changes to the plan."
   },
   {
-   "motion": "approve requested septic system variance at 186 White Street",
-   "moved_by": "Fortin",
-   "seconded_by": "Watters",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "after discussion and on motion by fortin and second by watters, the board unanimously approved the request. all in favor."
-  },
-  {
-   "motion": "approve use of a Tight Tank as replacement system at 61 Upland Avenue",
+   "motion": "Approve the request for 186 White Street (groundwater offset from 5 feet to 3 feet, per DEP Presby approval).",
    "moved_by": "Fortin",
    "seconded_by": "Watters",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by fortin and second by watters the request was approved. all in favor."
+   "quote": "the board unanimously approved the request."
   },
   {
-   "motion": "grant extension to complete repairs at 68 Laurel Lane until January 21, 2022",
+   "motion": "Approve the request for 61 Upland Avenue (use of a tight tank as the replacement system).",
+   "moved_by": "Fortin",
+   "seconded_by": "Watters",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "on motion by fortin and second by watters the request was approved."
+  },
+  {
+   "motion": "Grant Elizabeth McColligan an extension to complete repairs at 68 Laurel Lane until January 21, 2022.",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
    "outcome": "passed",
    "procedural": false,
-   "quote": "after discussion and on motion by jewell and second by fortin, an extension to complete repairs was given until january 21, 2022. all in favor."
+   "quote": "an extension to complete repairs was given until january 21, 2022."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
    "outcome": "passed",
    "procedural": true,
-   "quote": "having no furt her matters before the board and on motion jewell and seconded by watters, the meeting was adjourned at 8:10 pm, all in favor."
+   "quote": "the meeting was adjourned at 8:10 pm, all in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Text scans cleanly. The section header \"MINUTES APPROVED\" at the opening does not record a formal motion and vote, so it is not included.",
- "cost_usd": 0.08938650000000001
+ "note": "Text is a three-page extract with broken words and split lines (e.g. \"wit h\", \"Agreemen t\"); quotes were copied with whitespace collapsed. The heading \"MINUTES APPROVED\" appears with no motion, second, or vote recorded, so it is not listed as a vote or topic. No dollar figures appear. Applicant representatives (Jim Garreffi, Chris MacKenzie, Dan Proctor, Kevin Ritchie, Jim Moran) are listed as attendees because they appeared before the board; no public comment section is printed. The minutes do not state how many members voted on each motion beyond \"All in favor\" and \"unanimously\". Attendance status for the applicants and Garreffi is inferred from their appearance and is marked present on that basis. No documents list is printed.",
+ "cost_usd": 0.015482,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "george emond, perry jewell, evan watters and paul fortin."
+  },
+  {
+   "name": "Perry Jewell",
+   "role": "Member",
+   "status": "present",
+   "quote": "george emond, perry jewell, evan watters and paul fortin."
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Member",
+   "status": "present",
+   "quote": "george emond, perry jewell, evan watters and paul fortin."
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "Member",
+   "status": "present",
+   "quote": "george emond, perry jewell, evan watters and paul fortin."
+  },
+  {
+   "name": "Chris MacKenzie",
+   "role": "representing the owner, 30 Johnson Street",
+   "status": "present",
+   "quote": "chris mackenzie met with the board on behalf of the owner."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent jim garreffi gave a brief covid update."
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "representing the owner, 195 Rolling Acres",
+   "status": "present",
+   "quote": "dan proctor met with the board on behalf of the owner."
+  },
+  {
+   "name": "Kevin Ritchie",
+   "role": "representing the owner, 186 White Street",
+   "status": "present",
+   "quote": "the property is served by public water."
+  },
+  {
+   "name": "Jim Moran",
+   "role": "representing the owner, 61 Upland Avenue",
+   "status": "present",
+   "quote": "jim moran met with the board on behalf of the owner."
+  },
+  {
+   "name": "Elizabeth McColligan",
+   "role": "owner, 68 Laurel Lane",
+   "status": "present",
+   "quote": "an order to correct was issued to elizabeth mccolligan, the owner of"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair told Ms. McColligan that a letter requesting the Housing Code ceiling-height variance would be sufficient and she would not need to appear before the board again.",
+   "quote": "a letter requesting the variance would be sufficient and she would not need to appear before the board again."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "30 Johnson Street, septic variances",
+   "resolution": "approved (variances, unanimous)",
+   "quote": "chris mackenzie met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variances",
+    "Title 5"
+   ]
+  },
+  {
+   "topic": "195 Rolling Acres, Presby septic system",
+   "resolution": "approved with changes to the plan",
+   "quote": "dan proctor met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variances",
+    "Presby"
+   ]
+  },
+  {
+   "topic": "186 White Street, Presby septic system",
+   "resolution": "approved (unanimous)",
+   "quote": "the property is served by public water.",
+   "tags": [
+    "septic",
+    "variances",
+    "Presby"
+   ]
+  },
+  {
+   "topic": "61 Upland Avenue, tight tank",
+   "resolution": "approved",
+   "quote": "jim moran met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "tight tank"
+   ]
+  },
+  {
+   "topic": "68 Laurel Lane, housing code order to correct",
+   "resolution": "extension to January 21, 2022 approved",
+   "quote": "a housing inspection was performed at this address at the request of the tenant",
+   "tags": [
+    "housing code",
+    "order to correct",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "COVID update",
+   "resolution": "no action (informational)",
+   "quote": "agent jim garreffi gave a brief covid update.",
+   "tags": [
+    "Covid-19",
+    "cluster cases"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Order to Correct (issued to Elizabeth McColligan, owner of 68 Laurel Lane)",
+   "where": "text",
+   "quote": "an order to correct was issued to elizabeth mccolligan, the owner of"
+  },
+  {
+   "name": "Summary Process Agreement, signed in Housing Court by the Tenants on September 17, 2021",
+   "where": "text",
+   "quote": "the summary process agreemen t signed in housing court by the tenants on sept ember 17, 2021"
+  }
+ ],
+ "tags": [
+  "septic systems",
+  "Title 5",
+  "variances",
+  "housing code",
+  "order to correct",
+  "tight tank",
+  "Presby system",
+  "Covid-19",
+  "hearings"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

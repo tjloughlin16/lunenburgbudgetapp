@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2022-08-18",
  "docid": "2908",
@@ -12,31 +12,335 @@
  },
  "votes": [
   {
-   "motion": "approve the June 2022 minutes",
+   "motion": "Approve the minutes of June 2022.",
    "moved_by": "Tenant Board Member",
    "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "the minutes of june, 2022 were presented. with no discussion, tenant board member made a motion to approve the minutes. treasurer seconded, with all in favor."
+   "quote": "with no discussion, tenant board member made a motion to approve the minutes. treasurer seconded, with all in favor."
   },
   {
-   "motion": "accept the June and July 2022 financial reports as presented",
+   "motion": "Accept the June and July 2022 financial reports as presented.",
    "moved_by": "Treasurer",
    "seconded_by": "Tenant Board Member",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "treasurer made a motion to accept the june and july financial reports as presented; tenant board member seconded, with all in favor."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 11:10 a.m.",
    "moved_by": "Tenant Board Member",
    "seconded_by": "Treasurer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "there being no further business, tenant board member made a motion to adjourn the meeting at 11:10a.m. treasurer seconded the motion; all were in favor."
+   "quote": "tenant board member made a motion to adjourn the meeting at 11:10a.m. treasurer seconded the motion; all were in favor."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Three votes recorded, all procedural. Titles (Tenant Board Member, Treasurer) used as printed in the motion statements.",
- "cost_usd": 0.08214350000000001
+ "note": "Three motions are recorded, each followed by 'all in favor' or 'all were in favor' with no numeric tally, so the outcome is recorded as passed. The Members Absent field is blank; all four members are listed present in the roll call. Public comment speakers are printed only as 'Tenant' or 'Tenants'. Two motions carry only a role name ('Tenant Board Member', 'Treasurer'), not a printed personal name. The financial reports section is lettered 'b' after 'a' in the printed text; no content impact. Dollar figures and percentages are as printed; none were verified against any other source.",
+ "cost_usd": 0.01883148,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "deborah a.h. christen, vice chair"
+  },
+  {
+   "name": "Linda McDonald",
+   "role": "Treasurer",
+   "status": "present",
+   "quote": "linda mcdonald, treasurer"
+  },
+  {
+   "name": "Wayne Caron",
+   "role": "Tenant Board Member",
+   "status": "present",
+   "quote": "wayne caron, tenant board member"
+  },
+  {
+   "name": "Dale Proulx",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "dale proulx, board member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Jade Tavares",
+   "role": "Administrative Assistance/Special Projects",
+   "status": "present",
+   "quote": "jade tavares, administrative assistance/special projects"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Executive Director agreed to have a Robo-call set up to inform residents if the meeting time changes again.",
+   "quote": "and agreed to have a robo-call set up to inform residents if the time changes again in the future."
+  },
+  {
+   "decision": "The Community Room generator project (FISH# 162040) was tabled due to high costs of bids received.",
+   "quote": "this project was tabled due to high costs of bids received."
+  },
+  {
+   "decision": "Assistant Director to follow up on the cost of the Community Room generator.",
+   "quote": "tenant board member questioned the cost. assistant director to follow up."
+  },
+  {
+   "decision": "Assistant Director to follow up on why the tractor needed to be fixed.",
+   "quote": "tenant board member asked why the tractor needed to be fixed, as it is a brand-new tractor. assistant director to follow up."
+  },
+  {
+   "decision": "Executive Director to draft a letter about the Conservation Commission's denial and bring it to the Board to review and sign.",
+   "quote": "executive director explained he is working on drafting a letter to express concerns about the denial and will bring the letter to the board to review/sign."
+  },
+  {
+   "decision": "The Assistant Treasurer position vacated by Cathy Clark's resignation will be posted.",
+   "quote": "assistant treasurer cathy clark resigned and her position will be posted."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserve level and Maintenance balance",
+   "what_was_recorded": "The Executive Director reported the reserve percentage and a Maintenance balance for June and July 2022, with no concerns noted.",
+   "figures_as_printed": [
+    "76.95%",
+    "$18,582"
+   ],
+   "quote": "executive director explained the reserve is at 76.95%. there is $18,582 to the good for maintenance; no concerns noted for june and july."
+  },
+  {
+   "topic": "Community Room generator quote",
+   "what_was_recorded": "A quote for the Community Room generator was reported; the Tenant Board Member questioned the cost and the Assistant Director is to follow up.",
+   "figures_as_printed": [
+    "$28,000"
+   ],
+   "quote": "assistant director stated one quote was for $28,000."
+  },
+  {
+   "topic": "Tree removal project cost increase",
+   "what_was_recorded": "The Executive Director said the project cost must be increased to include tree replacement; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "we need to increase the cost of the project to include replacement of trees."
+  },
+  {
+   "topic": "Federal Pacific electric panel replacement funding",
+   "what_was_recorded": "The project is described as a DHCD ARPA targeted award; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "this is a dhcd arpa targeted award to replace the federal pacific electric panel; the project is in the planning stage."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Tenants",
+   "stated_role": "",
+   "topic": "Notice of meeting time change",
+   "quote": "tenants stated they were not aware the meeting time changed from 2pm to 10:30am."
+  },
+  {
+   "speaker": "Tenant",
+   "stated_role": "",
+   "topic": "Draft from doors and windows",
+   "quote": "tenant stated there is a draft from the doors and windows; they noted the windows are only being replaced when the apartment is vacant."
+  },
+  {
+   "speaker": "Tenant",
+   "stated_role": "",
+   "topic": "Emergency lights outside handicap apartments",
+   "quote": "tenant stated the emergency lights outside the handicap apartments are white and not red like the other apartments"
+  },
+  {
+   "speaker": "Tenant",
+   "stated_role": "",
+   "topic": "Apartment transfers and accommodations",
+   "quote": "tenant asked about process to move apartments, as well as needing accommodations within a current apartment"
+  },
+  {
+   "speaker": "Tenants",
+   "stated_role": "",
+   "topic": "New smoking gazebo",
+   "quote": "tenants discussed the new gazebo for smoking."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and June 2022 minutes",
+   "resolution": "approved June 2022 minutes; quorum declared",
+   "quote": "the vice chair declared a quorum present and opened the meeting at 10:44 a.m.",
+   "tags": [
+    "quorum",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Opportunity for public comment",
+   "resolution": "no action; tenant concerns noted and answered by staff",
+   "quote": "opportunity for public comment:",
+   "tags": [
+    "tenants",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Director Report",
+   "resolution": "noted; Assistant Treasurer position to be posted",
+   "quote": "the executive director report",
+   "tags": [
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Financial Report – June and July 2022",
+   "resolution": "accepted as presented",
+   "quote": "financial report - june and july 2022",
+   "tags": [
+    "finance",
+    "reserve",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "reported; several items tabled or referred back to staff",
+   "quote": "modernization/work order report - assistant director",
+   "tags": [
+    "capital projects",
+    "work orders",
+    "generator",
+    "tree removal",
+    "DHCD"
+   ]
+  },
+  {
+   "topic": "State-Aided Housing Report",
+   "resolution": "reported; no action",
+   "quote": "state-aided housing report - executive director",
+   "tags": [
+    "occupancy",
+    "waiting list",
+    "applicants"
+   ]
+  },
+  {
+   "topic": "Unfinished Business",
+   "resolution": "none",
+   "quote": "unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "New Business",
+   "resolution": "none",
+   "quote": "6. new business - none",
+   "tags": []
+  },
+  {
+   "topic": "Other Correspondence",
+   "resolution": "received; no action recorded",
+   "quote": "7. other correspondence - executive director",
+   "tags": [
+    "DHCD",
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:10 a.m.",
+   "quote": "there being no further business, tenant board member made a motion to adjourn the meeting at 11:10a.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "DHCD PHN 2022-9 Updates to Performance Management Review (PMR) for 2022 Cycle",
+   "where": "list",
+   "quote": "dhcd phn 2022-9 updates to performance management review (pmr) for 2022 cycle"
+  },
+  {
+   "name": "DHCD PHN 2022-10 Revised PMR Maintenance Metrics",
+   "where": "list",
+   "quote": "dhcd phn 2022-10 revised pmr maintenance metrics"
+  },
+  {
+   "name": "DHCD PHN 2022-11 New Agreed Upon Procedures (AUP) requirements for Section 8",
+   "where": "list",
+   "quote": "dhcd phn 2022-11 new agreed upon procedures (aup) requirements for section 8"
+  },
+  {
+   "name": "DHCD PHN 2022-12 Updates to c. 167 & c. 689 Housing Contracts",
+   "where": "list",
+   "quote": "dhcd phn 2022-12 updates to c. 167 & c. 689 housing contracts"
+  },
+  {
+   "name": "DHCD PHN 2021-20 Addendum #2",
+   "where": "list",
+   "quote": "dhcd phn 2021-20 addendum #2"
+  },
+  {
+   "name": "DHCD PHN 2022-13 Mandatory Data Reporting",
+   "where": "list",
+   "quote": "dhcd phn 2022-13 mandatory data reporting"
+  },
+  {
+   "name": "Financial reports for June and July 2022",
+   "where": "text",
+   "quote": "treasurer made a motion to accept the june and july financial reports as presented"
+  },
+  {
+   "name": "Work Order Reports from June to July",
+   "where": "text",
+   "quote": "work order reports from june to july"
+  },
+  {
+   "name": "State-Aided Housing Report",
+   "where": "text",
+   "quote": "state-aided housing report - executive director"
+  },
+  {
+   "name": "Maintenance Plan",
+   "where": "text",
+   "quote": "this requirement is listed in the maintenance plan."
+  },
+  {
+   "name": "Meeting Notice (posted with 10:30am time)",
+   "where": "text",
+   "quote": "executive director noted the notice was posted with the 10:30am time"
+  },
+  {
+   "name": "Letter to the Lunenburg Conservation Commission (draft)",
+   "where": "text",
+   "quote": "executive director explained he is working on drafting a letter to express concerns about the denial"
+  }
+ ],
+ "tags": [
+  "public housing",
+  "tenant services",
+  "maintenance",
+  "work orders",
+  "DHCD",
+  "financial report",
+  "capital projects",
+  "occupancy",
+  "minutes",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence"
+ },
+ "dropped_unquoted_by_field": {}
 }

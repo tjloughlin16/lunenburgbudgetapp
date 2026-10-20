@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2021-10-21",
  "docid": "2884",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of September 16, 2021 as amended",
+   "motion": "Accept the minutes of September 16, 2021 as amended.",
    "moved_by": "Kate",
    "seconded_by": "Laura",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "kate made a motion to accept the minutes of september 16, 2021 as amended. seconded by laura. the motion passed unanimously."
   },
   {
-   "motion": "Accept the minutes of September 29, 2021 as presented",
+   "motion": "Accept the minutes of September 29, 2021 as presented.",
    "moved_by": "Donna",
    "seconded_by": "Kate",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "donna made a motion to accept the minutes of september 29, 2021 as presented. seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed",
@@ -37,6 +37,271 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0782625
+ "note": "Minutes are a single text of two pages followed by blank pages 3-10; no dollar figure beyond the Friday-hours request was printed. Three votes recorded, all procedural (two approvals of minutes and adjournment). The book-sales decision, review template, review subcommittee and Trustee Handbook deferral are recorded without a vote. The Friday-hours figures are a trustee's comment on a request, not a board action. Maia Wentrup is listed under Attending but takes no recorded part in the discussion.",
+ "cost_usd": 0.016458680000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "",
+   "status": "present",
+   "quote": "attending: kate mccarron, bob conroy, harry kubetz, dick mailloux, donna saiia, muir haman - director lpl, laura boussom, maia wentrup, michael-ray jeffreys"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Expanded pop-up book sales events will be held on the Saturdays in October (Friends of LPL).",
+   "quote": "it was decided to do expanded pop-up book sales events for the saturdays in october."
+  },
+  {
+   "decision": "The Director's Annual Review will use the existing template.",
+   "quote": "we will use the existing template."
+  },
+  {
+   "decision": "The Chair will set a date to collect responses from the trustees for the Director's Annual Review.",
+   "quote": "harry will set a date to collect responses from the bot."
+  },
+  {
+   "decision": "A subcommittee will consolidate comments and draft the Director's Annual Review.",
+   "quote": "the subcommittee will meet to consolidate comments and draft a review."
+  },
+  {
+   "decision": "Discussion of the Trustee Handbook deferred, on the Chair's suggestion.",
+   "quote": "harry suggested we defer discussion on the trustee handbook."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Friday hours budget request",
+   "what_was_recorded": "A trustee said the Friday-hours request is small relative to big-ticket town items and should go through the normal budgeting process, July 2022.",
+   "quote": "even though the $18k for a half year, $35k for the full year is a relatively small request, we should wait and go through the normal budgeting process",
+   "figures_as_printed": [
+    "$18K",
+    "$35K"
+   ]
+  },
+  {
+   "topic": "Revolving fund after fine-free policy",
+   "what_was_recorded": "The Director reported the revolving fund is 40% less than last year, with the full impact not yet known.",
+   "quote": "muir said that the revolving fund is 40% less than it was last year but that the impact isn't fully known yet.",
+   "figures_as_printed": [
+    "40%"
+   ]
+  },
+  {
+   "topic": "Budget status and FY2023 budget process",
+   "what_was_recorded": "The Director reported the budget is one third expended in the fourth month of the fiscal year and the budget process for 2023 has started.",
+   "quote": "we are in the 4th month of the fiscal year and the budget is one third expended.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Capital Plan HVAC priority",
+   "what_was_recorded": "The Director discussed capital plan projects with the DPW; the HVAC system will be prioritized. No dollar figure printed.",
+   "quote": "muir has discussed capital plan projects with rob oliva of the dpw. the hvac system will be prioritized.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "BEAM interactive projector game system",
+   "what_was_recorded": "The BEAM system was installed in the Children’s area; it was purchased by the Friends. No dollar figure printed.",
+   "quote": "the beam interactive projector game system has been installed in the children's area. this was purchased by the friends.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment • no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved (Sept 16 as amended; Sept 29 as presented)",
+   "quote": "kate made a motion to accept the minutes of september 16, 2021 as amended. seconded by laura.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received and discussed",
+   "quote": "we are in the 4th month of the fiscal year and the budget is one third expended.",
+   "tags": [
+    "budget",
+    "fine-free policy",
+    "summer reading",
+    "library software",
+    "staffing",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "deferred",
+   "quote": "harry suggested we defer discussion on the trustee handbook.",
+   "tags": [
+    "trustee handbook"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "expanded pop-up book sales decided",
+   "quote": "book sales have been the main topic of discussion lately.",
+   "tags": [
+    "friends",
+    "book sales"
+   ]
+  },
+  {
+   "topic": "Director's Annual Review",
+   "resolution": "planned: template, date, subcommittee",
+   "quote": "the review is due by december 16th for the december meeting.",
+   "tags": [
+    "personnel review"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "noted",
+   "quote": "harry mentioned that he will miss the december bot meeting due to his company christmas party.",
+   "tags": [
+    "board comments"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 7:58 p.m.",
+   "quote": "meeting was adjourned at 7:58 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "October 21, 2021 Agenda",
+   "where": "list",
+   "quote": "october 21, 2021 agenda"
+  },
+  {
+   "name": "October 2021 Director’s Report",
+   "where": "list",
+   "quote": "october 2021 director's report"
+  },
+  {
+   "name": "October Adult Services Report",
+   "where": "list",
+   "quote": "october adult services report"
+  },
+  {
+   "name": "October 2021 Youth Services Report",
+   "where": "list",
+   "quote": "october 2021 youth services report"
+  },
+  {
+   "name": "October 2021 Teen Services Report",
+   "where": "list",
+   "quote": "october 2021 teen services report"
+  },
+  {
+   "name": "Strategic plan",
+   "where": "text",
+   "quote": "the strategic plan and annual financial report have been submitted to the state."
+  },
+  {
+   "name": "Annual financial report",
+   "where": "text",
+   "quote": "the strategic plan and annual financial report have been submitted to the state."
+  },
+  {
+   "name": "Action plan (state submission)",
+   "where": "text",
+   "quote": "the action plan will be submitted to the state in december."
+  },
+  {
+   "name": "Fine-free policy (library website)",
+   "where": "text",
+   "quote": "kate suggested we update the fine-free policy on the library website."
+  },
+  {
+   "name": "Trustee Handbook",
+   "where": "text",
+   "quote": "harry suggested we defer discussion on the trustee handbook."
+  },
+  {
+   "name": "Capital Plan projects",
+   "where": "text",
+   "quote": "muir has discussed capital plan projects with rob oliva of the dpw."
+  }
+ ],
+ "tags": [
+  "library",
+  "budget",
+  "fine-free policy",
+  "summer reading",
+  "director review",
+  "trustee handbook",
+  "capital plan",
+  "friends of LPL",
+  "library software",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

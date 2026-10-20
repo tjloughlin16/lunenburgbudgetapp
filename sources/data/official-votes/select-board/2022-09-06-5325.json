@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-09-06",
  "docid": "5325",
@@ -12,55 +12,379 @@
  },
  "votes": [
   {
-   "motion": "Approve beer and wine license for St. Boniface Parish on September 17",
+   "motion": "Approve the one-day beer and wine license request for St. Boniface Parish on September 17th.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 4-0-1",
    "procedural": false,
-   "quote": "motion: t. alonzo 2nd: t. dwyer to approve the request for the beer and wine license for st. boniface parish on september 17th vote: 4 in favor, 1 abstention (sroka)"
+   "quote": "to approve the request for the beer and wine license for st. boniface parish on september 17th"
   },
   {
-   "motion": "Approve Boys and Girls Club request for a tollbooth on September 17 from 9 a.m. to 1 p.m. in the Town center",
+   "motion": "Approve the Boys and Girls Club request for a tollbooth on September 17 from 9 a.m. to 1 p.m. in the Town center.",
    "moved_by": "T. Alonzo",
    "seconded_by": "H. Sroka",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to approve the boys and girls club request for a tollbooth on september 17t from 9 a.m. to 1 p.m. in the town center 2nd: h. sroka vote: all in favor"
+   "quote": "to approve the boys and girls club request for a tollbooth on september 17t from 9 a.m. to 1 p.m. in the town center"
   },
   {
-   "motion": "Appoint Richard Tremblay to the Conservation Commission with term expiring June 30, 2024",
+   "motion": "Appoint Richard Tremblay to the Conservation Commission with a term to expire June 30, 2024.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: l. franco 2°: t. dwyer to appoint richard tremblay to the conservation commission with a term to expire june 30, 2024 vote: all in favor"
+   "quote": "to appoint richard tremblay to the conservation commission with a term to expire june 30, 2024"
   },
   {
-   "motion": "Ratify Town Manager's appointment of Eric Babin as Heavy Equipment Operator",
+   "motion": "Ratify the Town Manager's appointment of Eric Babin as Heavy Equipment Operator.",
    "moved_by": "T. Alonzo",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. alonzo to ratify the town manager's appointment of eric babin as heavy equipment operator 2nd: l. franco vote: all in favor"
+   "quote": "to ratify the town manager's appointment of eric babin as heavy equipment operator"
   },
   {
-   "motion": "Approve the Minutes of August 9, 2022",
+   "motion": "Motion whose opening words are missing from the extracted text; the surviving words are 'manager as presented'. Vote recorded as All in Favor.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "manager as presented vote: all in favor"
+  },
+  {
+   "motion": "Approve the Minutes of August 9, 2022 as written.",
    "moved_by": "T. Dwyer",
    "seconded_by": "T. Alonzo",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "motion: t. dwyer 2n: t. alonzo to approve the minutes of august 9, 2022 as written vote: 4 in favor, 1 abstention (jeffreys)"
+   "quote": "to approve the minutes of august 9, 2022 as written vote: 4 in favor, 1 abstention"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco to adjourn the meeting 2\"d: t. dwyer vote: all in favor"
+   "quote": "to adjourn the meeting 2\"d: t. dwyer vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from scanned meeting minutes; minor character artifacts in some seconded-by entries (° and quotation mark rendered instead of 'nd')",
- "cost_usd": 0.13289849999999997
+ "note": "OCR text (macOS Vision), not the signed original. Several glued words and typos in the source (e.g. 'Lunenburgreceived', 'Mr. Jeffieys', '17h'); quotes copied as printed. No roll call recorded, so attendance for board members is inferred from their taking part. Vote 5 ('manager as presented / Vote: All in Favor') has its opening words missing from the text, so its mover, seconder and motion wording are not recoverable. Vote tallies given as printed; 'All in Favor' carries no count.",
+ "cost_usd": 0.0251846,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman jeffreys called the meeting to order at 7:00 p.m."
+  },
+  {
+   "name": "Dwyer",
+   "status": "present",
+   "quote": "mr. dwyer wished his wife a very happy 48th birthday."
+  },
+  {
+   "name": "Franco",
+   "status": "present",
+   "quote": "mr. franco thanked people for voting and all the poll workers"
+  },
+  {
+   "name": "Alonzo",
+   "status": "present",
+   "quote": "mr. alonzo noted there was a hole in the sidewalk outside the"
+  },
+  {
+   "name": "Sroka",
+   "status": "present",
+   "quote": "ms. sroka announced for the record that she was a member of the parish."
+  },
+  {
+   "name": "Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "ms. lemieux stated we've had multiple vacancies for this position"
+  },
+  {
+   "name": "Jamie Toale",
+   "role": "representing the church (St. Boniface Parish request)",
+   "status": "present",
+   "quote": "jamie toale, peninsula drive, was representing the church this evening"
+  },
+  {
+   "name": "Tom Bodkin",
+   "role": "representing the church (St. Boniface Parish request)",
+   "status": "present",
+   "quote": "along with tom bodkin, 64 beal street"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "applicant, Conservation Commission vacancy",
+   "status": "present",
+   "quote": "mr. tremblay thanked the board and exited the meeting."
+  },
+  {
+   "name": "Geneau",
+   "status": "present",
+   "quote": "mr. geneau thanked the board."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of the 300th Anniversary Committee charge was tabled to the next week's meeting.",
+   "quote": "this was tabled until next week's meeting."
+  },
+  {
+   "decision": "Vote to release the listed Executive Session minutes was tabled until the board reviews the Executive Session minutes.",
+   "quote": "this was tabled until the board reviews the executive session minutes."
+  },
+  {
+   "decision": "No action on the Section 2.07 Appointment Policy items; Chairman Jeffreys to finalize the changes and return with an updated draft.",
+   "quote": "no action was taken on these items. mr. jeffieys will finalize the changes according to their discussion and return with an updated draft."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "WRAP (Winter Recovery Assistance Program) state funding",
+   "what_was_recorded": "Lunenburg received a one-time state WRAP allocation, which must be spent by June 30, 2023.",
+   "figures_as_printed": [
+    "$272,679"
+   ],
+   "quote": "through the winter recovery assistance program."
+  },
+  {
+   "topic": "Rough plan for WRAP funds",
+   "what_was_recorded": "The DPW Director's rough plan allocates the WRAP funds across road striping, sidewalks, guardrails and a traffic signal controller, totalling $272,000.",
+   "figures_as_printed": [
+    "$30,000",
+    "$167,000",
+    "$50,000",
+    "$25,000",
+    "$272,000"
+   ],
+   "quote": "$30,000 - road striping or painting"
+  },
+  {
+   "topic": "Cost of digitization and off-site storage versus constructing or maintaining space",
+   "what_was_recorded": "The Municipal Building Design Committee stated that digitization and off-site storage cost less than constructing, remodeling or maintaining records space; no dollar figures were printed.",
+   "figures_as_printed": [],
+   "quote": "the cost of digitization and off-site storage is lower than the cost of"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Dwyer",
+   "topic": "birthday wish for his wife",
+   "quote": "mr. dwyer wished his wife a very happy 48th birthday. the board echoed his wishes."
+  },
+  {
+   "speaker": "Mr. Franco",
+   "topic": "thanks to voters and poll workers",
+   "quote": "mr. franco thanked people for voting and all the poll workers; the town clerk, registrars,"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "mr. dwyer wished his wife a very happy 48th birthday. the board echoed his wishes.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "mr. jeffreys announced the polls are open until 8 pm tonight at the tc passios building",
+   "tags": [
+    "elections",
+    "sidewalk"
+   ]
+  },
+  {
+   "topic": "Communications from other boards (Municipal Building Design Committee)",
+   "resolution": "no action; to be taken up under Committee Reports",
+   "quote": "mr. jeffreys stated there was a communication that went from the municipal building design",
+   "tags": [
+    "records storage",
+    "municipal buildings"
+   ]
+  },
+  {
+   "topic": "One-day beer and wine license, St. Boniface Parish",
+   "resolution": "approved",
+   "quote": "to approve the request for the beer and wine license for st. boniface parish on september 17th",
+   "tags": [
+    "liquor license",
+    "event permits"
+   ]
+  },
+  {
+   "topic": "Tollbooth request, Boys and Girls Club",
+   "resolution": "approved",
+   "quote": "to approve the boys and girls club request for a tollbooth on september 17t from 9 a.m. to 1 p.m. in the town center",
+   "tags": [
+    "event permits"
+   ]
+  },
+  {
+   "topic": "Interview and appointment, Conservation Commission vacancy",
+   "resolution": "approved (Richard Tremblay appointed)",
+   "quote": "to appoint richard tremblay to the conservation commission with a term to expire june 30, 2024",
+   "tags": [
+    "appointments",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Ratification of Heavy Equipment Operator appointment",
+   "resolution": "ratified (Eric Babin)",
+   "quote": "to ratify the town manager's appointment of eric babin as heavy equipment operator",
+   "tags": [
+    "appointments",
+    "staffing",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, employment, WRAP funding, Recreation Director, meetings",
+   "resolution": "informational; no action recorded",
+   "quote": "ms. lemieux announced that recreation director rob thompson resigned in late august.",
+   "tags": [
+    "staffing",
+    "WRAP funding",
+    "road maintenance",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Discussion of 300th Anniversary Committee charge",
+   "resolution": "tabled to next week's meeting",
+   "quote": "this was tabled until next week's meeting.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Review and discuss Section 2.07 Appointment Policy",
+   "resolution": "no action; Chairman to return with updated draft",
+   "quote": "no action was taken on these items. mr. jeffieys will finalize the changes according to their discussion",
+   "tags": [
+    "appointment policy",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Review of Special Town Meeting warrant articles",
+   "resolution": "informational",
+   "quote": "ms. lemieux reported there were only three articles currently; a fy23 budget adjustment,",
+   "tags": [
+    "Special Town Meeting",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Vote to release Executive Session minutes (2015-2016)",
+   "resolution": "tabled until the board reviews the minutes",
+   "quote": "vote to release the following executive session minutes: march 24, 2015",
+   "tags": [
+    "executive session",
+    "records"
+   ]
+  },
+  {
+   "topic": "Approve minutes of August 9, 2022",
+   "resolution": "approved",
+   "quote": "to approve the minutes of august 9, 2022 as written vote: 4 in favor, 1 abstention",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and action items (pavement line striping)",
+   "resolution": "no warrants; informational on striping schedule",
+   "quote": "due to the change between dpw directors, line striping scheduling fell",
+   "tags": [
+    "road maintenance",
+    "pavement",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Communications and committee report: records storage, Library trust funds",
+   "resolution": "informational",
+   "quote": "we reviewed all the tappe and vertex reports to identify what the needs for all these",
+   "tags": [
+    "records storage",
+    "municipal buildings",
+    "Library"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and adjournment",
+   "resolution": "adjourned at 8:40 p.m.",
+   "quote": "to adjourn the meeting 2\"d: t. dwyer vote: all in favor",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Tappe and Vertex reports (municipal building condition reports)",
+   "where": "text",
+   "quote": "we reviewed all the tappe and vertex reports to identify what the needs for all these"
+  },
+  {
+   "name": "2020 PROW ADA Transition Plan",
+   "where": "text",
+   "quote": "the 2020 prow ada transition plan."
+  },
+  {
+   "name": "Special Town Meeting warrant",
+   "where": "text",
+   "quote": "ms. lemieux reported there were only three articles currently; a fy23 budget adjustment,"
+  },
+  {
+   "name": "Section 2.07 Appointment Policy (draft policy)",
+   "where": "text",
+   "quote": "review and discuss section 2.07 - appointment policy"
+  },
+  {
+   "name": "Executive Session minutes, March 24, 2015 through January 5, 2016",
+   "where": "text",
+   "quote": "vote to release the following executive session minutes: march 24,"
+  },
+  {
+   "name": "Municipal Building Design Committee communication to the Town Manager and School Superintendent",
+   "where": "text",
+   "quote": "a communication that went from the municipal building design"
+  }
+ ],
+ "tags": [
+  "select board",
+  "liquor license",
+  "event permits",
+  "appointments",
+  "WRAP funding",
+  "road maintenance",
+  "pavement striping",
+  "records storage",
+  "municipal buildings",
+  "staffing",
+  "Special Town Meeting",
+  "appointment policy",
+  "executive session"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2022-02-02",
  "docid": "2895",
@@ -12,15 +12,93 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Harry",
    "seconded_by": "Kate",
-   "outcome": "unanimously approved",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by harry. seconded by kate. unanimously approved by roll call."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes mention that the amended by-laws draft \"will be further discussed and voted on at the next BOT meeting on February 17th\" — this is a future action, not a vote in the current meeting.",
- "cost_usd": 0.07866350000000001
+ "note": "Minutes are for the Policy Sub-Committee meeting of the Trustees of Lunenburg Public Library. No roll-call or attendance count beyond the single attendance line; no public comment section; no dollar figures. The one recorded vote is the adjournment motion, unanimously approved by roll call (vote count not printed). The by-laws draft was reviewed, not voted on. Single-page extracted text.",
+ "cost_usd": 0.012693080000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Muir Haman",
+   "role": "Director",
+   "status": "present",
+   "quote": "attending: muir haman - director, dick mailloux, bob conroy, kate mccaron, harry kubetz attended remotely."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: muir haman - director, dick mailloux, bob conroy, kate mccaron, harry kubetz attended remotely."
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: muir haman - director, dick mailloux, bob conroy, kate mccaron, harry kubetz attended remotely."
+  },
+  {
+   "name": "Kate McCaron",
+   "status": "present",
+   "quote": "attending: muir haman - director, dick mailloux, bob conroy, kate mccaron, harry kubetz attended remotely."
+  },
+  {
+   "name": "Harry Kubetz",
+   "status": "remote",
+   "quote": "harry kubetz attended remotely."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The amended by-laws draft will be further discussed and voted on at the next Board of Trustees meeting on February 17.",
+   "quote": "the amended draft will be further discussed and voted on at the next bot meeting on february 17 th."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Library By-Laws (special meeting of the Policy sub-committee)",
+   "resolution": "reviewed draft; amended draft to BOT February 17",
+   "quote": "sub-committee members reviewed and discussed the draft copy of the by-laws based on the lancaster thayer memorial library by-laws and edited by dick.",
+   "tags": [
+    "by-laws",
+    "policy",
+    "library"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 4:26 p.m.",
+   "quote": "the meeting was adjourned at 4:26 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft copy of the by-laws (based on the Lancaster Thayer Memorial Library by-laws, edited by Dick)",
+   "where": "text",
+   "quote": "sub-committee members reviewed and discussed the draft copy of the by-laws based on the lancaster thayer memorial library by-laws and edited by dick."
+  }
+ ],
+ "tags": [
+  "library by-laws",
+  "policy sub-committee",
+  "library trustees",
+  "special meeting",
+  "remote attendance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

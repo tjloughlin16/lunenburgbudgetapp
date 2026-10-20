@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-11-01",
  "docid": "5304",
@@ -12,55 +12,487 @@
  },
  "votes": [
   {
-   "motion": "Approve the tollbooth fundraiser for the Salvation Army for December 10, 2022 (rain date December 17) at two locations from 10:00 am to 2:00 pm",
+   "motion": "Approve the tollbooth fundraiser for the Salvation Army on December 10 from 10:00 am to 2:00 pm at two locations, rain date December 17.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2 nd : t. dwyer to approve the tollbooth fundraiser for the salvation army for dec.10 th and rain date of december 17 th at the two locations from 10 :00 am to 2 :00 pm vote: all in favor"
+   "outcome": "passed (All in Favor; count not printed)",
+   "procedural": false,
+   "quote": "to approve the tollbooth fundraiser for the salvation army for dec.10 th and rain date"
   },
   {
-   "motion": "Approve the alteration to premises for the alcohol license to Il Forno Lunenburg Bar, Inc., at 494 Electric Avenue contingent upon the building being built without any significant or substantial changes",
+   "motion": "Approve the alteration to premises for the alcohol license to Il Forno Lunenburg Bar, Inc., at 494 Electric Avenue, contingent on the building being built without significant changes from what was presented.",
    "moved_by": "T. Alonzo",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed (All in Favor; count not printed)",
    "procedural": false,
-   "quote": "motion: t. alonzo 2 nd : m. jeffreys to approve the alteration to premises for the alcohol license to il forno lunenburg bar, inc., at 494 electric avenue contingent upon the building being built without any significant or substantial changes being made from what is being presented to us today on november 1 st by the applicant vote: all in favor"
+   "quote": "to approve the alteration to premises for the alcohol license to il forno"
   },
   {
-   "motion": "Ratify the Town Manager appointment of Alisha Aquino as Tax Collector Principal Clerk",
+   "motion": "Ratify the Town Manager's appointment of Alisha Aquino as Tax Collector Principal Clerk.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: l. franco 2 nd : t. alonzo to ratify the town manager appointment of alisha aquino as tax collector principal clerk vote: all in favor"
+   "outcome": "passed (All in Favor; count not printed)",
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of alisha aquino as tax collector principal"
   },
   {
-   "motion": "Add articles 2, 6, 7 and 9 on the consent calendar",
+   "motion": "Add Articles 2, 6, 7 and 9 to the Special Town Meeting consent calendar.",
    "moved_by": "T. Alonzo",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: t. alonzo 2 nd : t. dwyer to add articles 2, 6, 7 and 9 on the consent calendar vote: all in favor"
+   "outcome": "passed (All in Favor; count not printed)",
+   "procedural": false,
+   "quote": "to add articles 2, 6, 7 and 9 on the consent calendar"
   },
   {
-   "motion": "Approve the minutes of October 4, 2022 as presented",
+   "motion": "Approve the minutes of October 4, 2022 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 5-0",
+   "outcome": "passed (All in Favor; count not printed)",
    "procedural": true,
-   "quote": "motion: l. franco 2 nd : t. alonzo to approve the minutes of october 4, 2022 as presented vote: all in favor"
+   "quote": "to approve the minutes of october 4, 2022 as presented"
   },
   {
-   "motion": "Approve the minutes of October 15, 2022",
+   "motion": "Approve the minutes of October 15, 2022.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Alonzo",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed 4 in favor, 1 abstention (Sroka)",
    "procedural": true,
-   "quote": "motion: l. franco 2 nd : t. alonzo to approve the minutes of october 15, 2022 vote: 4 in favor, 1 abstention (sroka)"
+   "quote": "to approve the minutes of october 15, 2022"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "T. Alonzo",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed (All in Favor; count not printed)",
+   "procedural": true,
+   "quote": "to adjourn the meeting"
   }
  ],
- "dropped_unquoted": 1,
- "note": "All seven votes recorded in the minutes. Board members present: Jeffreys, Alonzo, Franco, Dwyer, Sroka (5 members).",
- "cost_usd": 0.11580750000000001
+ "dropped_unquoted": 0,
+ "note": "Text extraction of a typed minutes document, not a scan; all pages readable. Irregular spacing (letter-spaced words, split tokens such as \"Eagle H ouse\") is printed as extracted, so some quotes keep those gaps. Five of the seven votes record only \"All in Favor\" with no count, so outcome is \"passed\" without a tally. The Oct 15 minutes vote is the only recorded count (4 in favor, 1 abstention). Dollar figures are given as the minutes print them (e.g. \"$ 37 ,823. 45\"). Votes on the Police contract transfer and the Il Forno contingency beyond the motion are not recorded as separate votes. Attendance is stated for members and staff; no roll-call of absences is printed.",
+ "cost_usd": 0.02701061,
+ "schema": 2,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "todd dwyer , heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Member",
+   "status": "present",
+   "quote": "todd dwyer , heather sroka"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Presenter; public comment (155 Island Road)",
+   "status": "present",
+   "quote": "dave macdonald, 155 island road, read aloud a letter expressing disappointment about the"
+  },
+  {
+   "name": "Lynnette Valentine-Warren",
+   "role": "Presenter on behalf of the Salvation Army request",
+   "status": "present",
+   "quote": "dave macdonald and lynnette valentine -warren"
+  },
+  {
+   "name": "Mohamed Mohamed",
+   "role": "Presenter on the Il Forno alteration of premises (applicant side)",
+   "status": "present",
+   "quote": "mohamed mohamed, police chief gammel, police sergeant morreale,"
+  },
+  {
+   "name": "Police Chief Gammel",
+   "role": "Police Chief",
+   "status": "present",
+   "quote": "mohamed mohamed, police chief gammel, police sergeant morreale,"
+  },
+  {
+   "name": "Police Sergeant Morreale",
+   "role": "Police Sergeant; accreditation manager",
+   "status": "present",
+   "quote": "mohamed mohamed, police chief gammel, police sergeant morreale,"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager (minutes author)",
+   "status": "not stated",
+   "quote": "executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "ARPA funding requests and rating criteria were not finalized; the board will read the draft and discuss it at another meeting, with the hope of finalizing by end of December.",
+   "quote": "it was decided that the board read it over and discuss at another meeting"
+  },
+  {
+   "decision": "Mr. Franco asked that a clothing drive be added as an agenda item for the next meeting.",
+   "quote": "mr. franco asked for an agenda item to be added to the next meeting regarding a clothing"
+  },
+  {
+   "decision": "The board will not plan to meet for the rest of November, though that could change.",
+   "quote": "the board is not planning on meeting the rest of november but that could"
+  },
+  {
+   "decision": "The board's first goal item (30 School Street) will be discussed in more detail in December/January.",
+   "quote": "we will be discussing this in more detail in december/ january"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House ADA patio project donation",
+   "what_was_recorded": "Senator Cronin and Representative Kushmerek presented a $100,000 check for the Eagle House ADA patio project at a volunteer event.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "they presented a $100,000 check for the eagle h ouse ada patio proje ct"
+  },
+  {
+   "topic": "High Tea fundraiser for the Council on Aging",
+   "what_was_recorded": "The annual High Tea raised money for the Council on Aging.",
+   "figures_as_printed": [
+    "$2, 756"
+   ],
+   "quote": "t hey raised $2, 756 dollars for the council on aging",
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Police collective bargaining agreement cost",
+   "what_was_recorded": "Ms. Lemieux reported the total budget impact of the police agreement for FY23 (utilising surplus and other lines), FY24 and FY25, and that only $16,000 is needed from the salary reserve account.",
+   "figures_as_printed": [
+    "$16,000",
+    "$ 37 ,823. 45",
+    "$ 197 ,489.13",
+    "$53,948.82",
+    "$289. 261"
+   ],
+   "quote": "the amount needed to be transferred from the surplus reserve account will be $16,000"
+  },
+  {
+   "topic": "Marshall Park engineering and design cost and surplus",
+   "what_was_recorded": "Engineering and design for Marshall Park is estimated at $150,000 to $200,000; $184,000 would be kept available as surplus; about $10,000 remains from the Capital Plan for the Marshall Park master plan.",
+   "figures_as_printed": [
+    "$150,000",
+    "$200,000",
+    "$184,000",
+    "$10,000"
+   ],
+   "quote": "cost for the engineering and design for marshall park is estimated between $150,000 and $200,000"
+  },
+  {
+   "topic": "Assessors real property data collection bid",
+   "what_was_recorded": "The IFB for assessors real property data collection was awarded to Patrick Harring, pending Special Town Meeting approval of the funding.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "patrick harring in t h e amount of $45,000"
+  },
+  {
+   "topic": "Marshall Park survey work bid",
+   "what_was_recorded": "The Marshall Park survey bid was awarded to Dillis & Roy; the capital plan budget for the project was $25,000.",
+   "figures_as_printed": [
+    "$17,700",
+    "$25,000"
+   ],
+   "quote": "d illis & roy in t h e amount of $17,700"
+  },
+  {
+   "topic": "Opioid settlement receipt",
+   "what_was_recorded": "The town has received $28,706, roughly half of the total it will receive; it is coming in as a general fund receipt and would need to be appropriated at Annual Town Meeting to spend.",
+   "figures_as_printed": [
+    "$28,706"
+   ],
+   "quote": "of $28,706, which is roughly half of"
+  },
+  {
+   "topic": "DLS certified free cash FY23",
+   "what_was_recorded": "DLS certified FY23 free cash by fund: General Fund, Water, Solid Waste, Sewer and PEG Access.",
+   "figures_as_printed": [
+    "$2,838,550",
+    "$57,539",
+    "$134,318",
+    "$2,232,978",
+    "$922,599"
+   ],
+   "quote": "water enterprise: $57,539"
+  },
+  {
+   "topic": "New growth certification",
+   "what_was_recorded": "New growth was certified at $234,383, which is $20,860 more than the Annual Town Meeting estimate.",
+   "figures_as_printed": [
+    "$234,383",
+    "$20,860"
+   ],
+   "quote": "$20,860 more than the a nnual t own m eeting"
+  },
+  {
+   "topic": "Streetlight reconciliation with Unitil",
+   "what_was_recorded": "About 30 lights were found that the town had never paid for and 19 lights the town paid for were not in the field; the town would be billed for future electrical expense on the 19 added lights.",
+   "figures_as_printed": [],
+   "quote": "john dinapoli from unitil"
+  },
+  {
+   "topic": "Bridge and culvert management plan funding",
+   "what_was_recorded": "The DPW Director received a quote for a bridge/culvert management plan, and the Town Manager and he are looking at grants to fund the expense.",
+   "figures_as_printed": [],
+   "quote": "he and i are looking at possible grants to fund"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from the surplus reserve account to fund the Police collective bargaining agreement, to be voted at the November 15, 2022 Special Town Meeting.",
+   "amount_as_printed": "$16,000",
+   "outcome": "Not voted at this meeting; proposed for Special Town Meeting.",
+   "quote": "the amount needed to be transferred from the surplus reserve account will be $16,000"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "Water District Commission vote and process",
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "Chairman",
+   "quote": "so not underneath the select board"
+  },
+  {
+   "topic": "Water District meeting and vote",
+   "speaker": "Dave MacDonald",
+   "stated_role": "155 Island Road",
+   "quote": "dave macdonald, 155 island road, read aloud a letter expressing disappointment about the"
+  },
+  {
+   "topic": "Town budgeting and taxes",
+   "speaker": "Michael-Ray Jeffreys",
+   "stated_role": "Chairman",
+   "quote": "its budgeting process every year"
+  },
+  {
+   "topic": "Volunteer Appreciation Day at Eagle House",
+   "speaker": "Tom Alonzo",
+   "stated_role": "Vice Chairman",
+   "quote": "mr. alonzo thanked everyone involved in homecoming this past saturday."
+  },
+  {
+   "topic": "Volunteer Appreciation Day at Eagle House",
+   "speaker": "Heather Lemieux",
+   "stated_role": "Town Manager",
+   "quote": "ms. lemieux added that the volunteer appreciation at eagle house was a fabulous event"
+  },
+  {
+   "topic": "Municipal aggregation program and Recycle Your Reusables event",
+   "speaker": "Heather Lemieux",
+   "stated_role": "Town Manager",
+   "quote": "ms. lemieux reminded about the municipal aggregation program"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; water district process, taxes, Veterans Day, volunteers",
+   "quote": "so not underneath the select board",
+   "tags": [
+    "public comment",
+    "water district",
+    "taxes"
+   ]
+  },
+  {
+   "topic": "Salvation Army tollbooth fundraiser request",
+   "resolution": "approved",
+   "quote": "dave macdonald and lynnette valentine -warren",
+   "tags": [
+    "fundraiser",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Public hearing (continued): Il Forno alcohol premises alteration",
+   "resolution": "approved, contingent on building as presented",
+   "quote": "mr. jeffreys opened the public hearing that was continued to tonight",
+   "tags": [
+    "liquor license",
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Police Department certification presentation",
+   "resolution": "received; board praised the department",
+   "quote": "the board praised the police department for accomplishing the certification.",
+   "tags": [
+    "police",
+    "certification"
+   ]
+  },
+  {
+   "topic": "Ratification of Tax Collector Principal Clerk appointment",
+   "resolution": "ratified",
+   "quote": "to ratify the town manager appointment of alisha aquino as tax collector principal",
+   "tags": [
+    "appointments",
+    "tax collector"
+   ]
+  },
+  {
+   "topic": "Announcements: vacancies, employment, bids, department updates, opioid funds, free cash, streetlights, Flat Hill Road",
+   "resolution": "informational; no action recorded",
+   "quote": "zoning board of appeals (1 associate vacancy)",
+   "tags": [
+    "vacancies",
+    "bids",
+    "free cash",
+    "opioid settlement",
+    "streetlights",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Meetings, events and other announcements",
+   "resolution": "informational; no action",
+   "quote": "meetings, events, and other announcements:",
+   "tags": [
+    "events",
+    "zoning board",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "ARPA funding requests and evaluation criteria",
+   "resolution": "carried over; draft criteria discussed; to be read and discussed at another meeting",
+   "quote": "it was decided that the board read it over and discuss at another meeting",
+   "tags": [
+    "ARPA",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles and consent calendar",
+   "resolution": "articles 2, 6, 7 and 9 placed on consent calendar",
+   "quote": "to add articles 2, 6, 7 and 9 on the consent calendar",
+   "tags": [
+    "special town meeting",
+    "warrant",
+    "police contract"
+   ]
+  },
+  {
+   "topic": "Status update on Select Board and Town Manager goals for FY23",
+   "resolution": "no action; reported",
+   "quote": "we will be discussing this in more detail in december/ january",
+   "tags": [
+    "goals",
+    "staffing",
+    "pavement"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of October 4 and October 15, 2022",
+   "resolution": "approved",
+   "quote": "to approve the minutes of october 4, 2022 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Action items: clothing drive request",
+   "resolution": "agenda item requested for next meeting",
+   "quote": "mr. franco asked for an agenda item to be added to the next meeting regarding a clothing",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "mr. alonzo reported capital planning met last week",
+   "tags": [
+    "capital planning",
+    "green communities",
+    "building committee",
+    "library"
+   ]
+  },
+  {
+   "topic": "Constituent requests: Summer Street ADA space and 51 Parmenter Road",
+   "resolution": "no action; follow-ups with residents and Town Counsel",
+   "quote": "i reached out to town counsel because any access on that property",
+   "tags": [
+    "parking",
+    "septic",
+    "right of entry",
+    "town property"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted; board meets November 8",
+   "quote": "the board will be meeting on november 8",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing): aggregation and recycling event",
+   "resolution": "no action; reminders",
+   "quote": "ms. lemieux reminded about the municipal aggregation program",
+   "tags": [
+    "electricity aggregation",
+    "recycling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:20 P.M.",
+   "quote": "to adjourn the meeting",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "tags": [
+  "select board",
+  "public comment",
+  "water district",
+  "Salvation Army fundraiser",
+  "liquor license",
+  "police certification",
+  "appointments",
+  "ARPA",
+  "special town meeting",
+  "free cash",
+  "opioid settlement",
+  "streetlights",
+  "bids and RFPs",
+  "capital planning",
+  "DPW",
+  "budget",
+  "police contract",
+  "minutes"
+ ],
+ "dropped_unquoted_by_field": {}
 }

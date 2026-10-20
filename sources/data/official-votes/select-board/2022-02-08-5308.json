@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2022-02-08",
  "docid": "5308",
@@ -12,39 +12,296 @@
  },
  "votes": [
   {
-   "motion": "Submit the town's list of priorities to MRC for the Unified Planning Work Program, listing (1) Leominster-Shirley Road, (2) Chase Road and Northfield Road, and (3) Electric Avenue and West Street",
+   "motion": "Submit the list of MRPC FY23 Unified Planning Work Program priorities in the order: #1 Leominster-Shirley Road, #2 Chase Road and Northfield Road, #3 Electric Ave and West St.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd. l. franco to submit our list of priorities to mrc in the following order; #1 leominster-shirley road, #2 chase road and northfield road and #3 electric ave and west st. vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
+   "quote": "to submit our list of priorities to mrc in the following order; #1 leominster-shirley road, #2 chase road and northfield road and #3 electric ave and west st."
   },
   {
-   "motion": "Approve the 3rd Quarter Water Commitment in the amount of $14,896.15",
+   "motion": "Approve the 3rd Quarter Water Commitment in the amount of $14,896.15.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: l. franco to approve the 3'd quarter water commitment in the amount of $14,896.15 vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
+   "quote": "to approve the 3'd quarter water commitment in the amount of $14,896.15 vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
   },
   {
-   "motion": "Approve the minutes of January 18, 2022 as presented",
+   "motion": "Approve the minutes of January 18, 2022 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: l. franco to approve the minutes of january 18, 2022 as presented 2nd: t. dwyer"
+   "quote": "to approve the minutes of january 18, 2022 as presented 2nd: t. dwyer"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer to adjourn the meeting 2nd: l. franco vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
+   "quote": "to adjourn the meeting 2nd: l. franco vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, but readable. Minutes end with \"The meeting adjourned at 8:27 p.m.\" Note: Emergency management plan and videographer appointment were discussed but no votes were recorded—the board deferred the emergency plan for later review, and the videographer section text cuts off incomplete.",
- "cost_usd": 0.1072965
+ "note": "Text is macOS Vision OCR of a scanned document; spellings may be OCR errors (e.g. Rob Oliva is 'Rob Oliver' on page 2; MRC/MRPC; 'Petervon'/'Peterson'). Quotes are copied from the OCR text. Page 5-6 break truncates the Public Access Videographer ratification, so no vote is recorded for it. Page 7 begins mid-sentence ('to invite the Alde'), so earlier text is missing. The Comprehensive Emergency Management Plan has no vote recorded. The minutes approval has a motion but no printed result. 'Mr. Dwyer' appears as Select Board member in votes and as a SWTF commenter; the minutes say he commented 'as a SWTF member as well', so the identity link is inferred. Attendance for board members is taken from the vote record and the remote-meeting statement; no individual remote/in-person status is printed. Public comment at the opening is recorded as none. Elaine M. Peterson, the minutes author, is not listed as a participant.",
+ "cost_usd": 0.019712180000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeffreys",
+   "role": "Vice Chairman, Select Board (presided)",
+   "status": "present",
+   "quote": "vice chairman jeffreys called the meeting to order at 7:00 p.m. and stated the meeting is being conducted remotely."
+  },
+  {
+   "name": "T. Dwyer",
+   "role": "Select Board member (per vote record); also commented as a SWTF member",
+   "status": "present",
+   "quote": "vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "L. Franco",
+   "role": "Select Board member (per vote record)",
+   "status": "present",
+   "quote": "vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Storm Water Task Force member",
+   "status": "present",
+   "quote": "jack rabbitt had a power point presentation outlining the task force's work."
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Chief",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; jack rabbitt, storm water task force member; adam burney, land use director; rob oliva, dpw director; patrick sullivan, fire chief"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Respond to the School Committee that the Select Board will get back to them regarding its request to reconsider air conditioning for the Primary School in the Capital Plan.",
+   "quote": "it was suggested to respond to the school committee that the sb would be getting back to them regarding their request."
+  },
+  {
+   "decision": "Board members to review the Comprehensive Emergency Management Plan and send any questions to the Town Manager.",
+   "quote": "the board will review it and send any questions to the town manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Third quarter water commitment",
+   "what_was_recorded": "The board approved the 3rd quarter water commitment at a printed amount.",
+   "figures_as_printed": [
+    "$14,896.15"
+   ],
+   "quote": "to approve the 3'd quarter water commitment in the amount of $14,896.15 vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye"
+  },
+  {
+   "topic": "Catch basin cleaning funding and manpower",
+   "what_was_recorded": "Discussion of catch basin cleaning (80-120 basins a year, under 15% of the total) included manpower and funding, with no figure printed.",
+   "figures_as_printed": [],
+   "quote": "further discussion ensued about catch basin cleaning and developing a schedule, as well as manpower and funding."
+  },
+  {
+   "topic": "Stormwater effect on town operating budget",
+   "what_was_recorded": "The task force said required stormwater improvements will change town operating budget definitions and financial sources, and it is sensitive to total potential cost; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "lunenburg's required improvement will cause change within our town operating budget definitions and financial sources."
+  },
+  {
+   "topic": "School Primary Schools air conditioning in Capital Plan",
+   "what_was_recorded": "A School Committee letter asked that air conditioning for the Primary School be reconsidered in the Capital Plan; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "mr. jeffreys reported a letter was received from the school committee asking the air conditioning for the primary school be reconsidered in the capital plan."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no comment",
+   "quote": "public comment-there was none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements: Citizen's Party caucus",
+   "resolution": "announced, no action",
+   "quote": "ms. lemieux announced that the citizen's party caucus is on monday, march 14",
+   "tags": [
+    "announcements",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Update from the Stormwater Task Force",
+   "resolution": "presented; two appointments not made because talent bank forms were late",
+   "quote": "the task force has two people interested in being appointed to the swtf but they did not submit their talent bank forms in time for this meeting",
+   "tags": [
+    "stormwater",
+    "appointments",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "MRPC FY23 Unified Planning Work Program project requests",
+   "resolution": "approved priority list for submission to MRPC",
+   "quote": "to submit our list of priorities to mrc in the following order; #1 leominster-shirley road, #2 chase road and northfield road and #3 electric ave and west st.",
+   "tags": [
+    "transportation",
+    "regional planning",
+    "traffic"
+   ]
+  },
+  {
+   "topic": "Comprehensive Emergency Management Plan",
+   "resolution": "reviewed; board to send questions to Town Manager; no vote recorded",
+   "quote": "his intent is to have the select board look through it and vote to ratify it.",
+   "tags": [
+    "emergency management",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Ratification of Public Access Videographer appointment",
+   "resolution": "not stated; minutes break off mid-item",
+   "quote": "ms. lemieux is seeking the sb ratify her appointment.",
+   "tags": [
+    "public access tv",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager Report: vacancies and employment",
+   "resolution": "informational, no action",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "appointments",
+    "employment",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Current Business: 3rd Quarter Water Commitment",
+   "resolution": "approved",
+   "quote": "to approve the 3'd quarter water commitment in the amount of $14,896.15 vote: mr. franco-aye, mr. dwyer-aye, mr. jeffreys-aye",
+   "tags": [
+    "water",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Current Business: approval of minutes of January 18, 2022",
+   "resolution": "motion recorded, no result printed",
+   "quote": "to approve the minutes of january 18, 2022 as presented 2nd: t. dwyer",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "there were none this evening.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Old Business: School Committee air conditioning letter",
+   "resolution": "no action; response suggested",
+   "quote": "it was suggested to respond to the school committee that the sb would be getting back to them regarding their request.",
+   "tags": [
+    "schools",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted; next meeting February 15",
+   "quote": "mr. jeffreys noted their next meeting will be on february 15",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing): pancake breakfast announcement",
+   "resolution": "announcement only",
+   "quote": "mr. franco announced there is a pancake breakfast tomorrow morning at the eagle house senior center from 8-10 a.m.",
+   "tags": [
+    "public comment",
+    "community events"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:27 p.m.",
+   "quote": "the meeting adjourned at 8:27 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Storm Water Task Force PowerPoint presentation (presented by Jack Rabbitt)",
+   "where": "list",
+   "quote": "jack rabbitt had a power point presentation outlining the task force's work."
+  },
+  {
+   "name": "MRPC FY23 Unified Planning Work Program project requests",
+   "where": "text",
+   "quote": "mr. oliva reported mrpc is looking for some projects to include in the unified planning work program for fy23"
+  },
+  {
+   "name": "Comprehensive Emergency Management Plan (Town update)",
+   "where": "text",
+   "quote": "chief sullivan stated this is an update to the town's existing plan that has been in progress over the past year."
+  },
+  {
+   "name": "Letter from the School Committee on Primary School air conditioning",
+   "where": "text",
+   "quote": "mr. jeffreys reported a letter was received from the school committee asking the air conditioning for the primary school be reconsidered in the capital plan."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "MRPC transportation",
+  "emergency management",
+  "public access television",
+  "appointments and vacancies",
+  "water commitment",
+  "school capital plan",
+  "remote meeting",
+  "OCR minutes"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "jack rabbitt had a power point presentation outlining the task force's work."
+ },
+ "dropped_unquoted_by_field": {}
 }

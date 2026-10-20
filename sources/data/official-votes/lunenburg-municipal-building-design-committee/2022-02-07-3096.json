@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2022-02-07",
  "docid": "3096",
@@ -12,6 +12,84 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "Scan contains only the meeting notice and agenda; no minutes of discussions or votes are recorded. Page 2 is blank.",
- "cost_usd": 0.0700065
+ "note": "Only page 1 carries text, and it is a meeting notice and agenda for 7 February 2022. Page 2 is empty. No minutes of proceedings are present, so no votes, decisions, discussion, attendance confirmation or public comment content can be recorded. The page-1 header names two members without stating who attended. A garbled OCR line ('tv tassis, ellen') is not recorded as a name. The OCR text was not checked against a scan.",
+ "cost_usd": 0.01255938,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "matthew allison, member"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "not stated",
+   "quote": "kristina masaitis, member"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "agenda only; no outcome recorded",
+   "quote": "5:30 pm - call to order",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "agenda only; no comments recorded",
+   "quote": "a. public comments from the public",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Committee Reorganization",
+   "resolution": "agenda only; no outcome recorded",
+   "quote": "2. committee reorganization",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Planning committee activities for new charge",
+   "resolution": "agenda only; no outcome recorded",
+   "quote": "3. discussion & planning committee activities moving forward to fulfill new charge",
+   "tags": [
+    "planning",
+    "charge"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes, correspondence, new business",
+   "resolution": "agenda only; no outcome recorded",
+   "quote": "4. review & approve minutes 5. correspondence to and from the committee 6. new business",
+   "tags": [
+    "minutes",
+    "correspondence"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "meeting notice",
+  "agenda",
+  "remote meeting",
+  "COVID-19 guidance",
+  "committee reorganization",
+  "new charge"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

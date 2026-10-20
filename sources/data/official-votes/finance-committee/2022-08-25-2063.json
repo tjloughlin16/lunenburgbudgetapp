@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2022-08-25",
  "docid": "2063",
@@ -12,31 +12,317 @@
  },
  "votes": [
   {
-   "motion": "authorize the chairperson to sign the FY22 departmental transfers",
+   "motion": "Authorize the chairperson to sign the FY22 departmental transfers.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Simeone",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. beardmore motioned to authorize the chairperson to sign the fy22 departmental transfers, mr. simeone seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "approve the August 18, 2022 meeting minutes",
+   "motion": "Approve the August 18, 2022 meeting minutes.",
    "moved_by": "Mr. Beardmore",
    "seconded_by": "Mr. Gray",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. beardmore motioned to approve the august 18, 2022 meeting minutes, mr. gray seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Simeone",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. menard motioned to adjourn, mr. simeone seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0736271
+ "note": "Single-page-set text extraction, not a scan; all content readable. Votes are recorded only as 'motion carried unanimously' with no roll-call or printed count, so outcomes are recorded as 'passed'. Items 9 and 10 contain discussion with no motion. Heather Lemieux is recorded as briefing by email, so her attendance is not stated. No dollar figure is printed for the FY22 departmental transfers. The minutes are not signed or dated by a clerk in the text provided.",
+ "cost_usd": 0.01656098,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Evan Watters",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, tom gray, tom balish, peter beardmore"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, tom gray, tom balish, peter beardmore"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, tom gray, tom balish, peter beardmore"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, tom gray, tom balish, peter beardmore"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, tom gray, tom balish, peter beardmore"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: chairperson evan watters, chris menard, jay simeone, tom gray, tom balish, peter beardmore"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson (guest)",
+   "status": "present",
+   "quote": "guests: school committee chairperson carol archambault"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "town manager heather lemieux briefed mr. watters via email."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Treat the new-member orientation booklet as a living document.",
+   "quote": "the committee agreed the booklet should be treated as a living document."
+  },
+  {
+   "decision": "Seek the assistance of professional external financial consultants to narrow down the amount the town can afford for upcoming projects.",
+   "quote": "the committee agreed the town needs to seek the assistance of professional external financial consultants"
+  },
+  {
+   "decision": "Ask the Town Manager how underfunded capital plan items are handled.",
+   "quote": "agreed to ask the town manager how such issues are handled."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY23 earmark for senior center ADA patio",
+   "what_was_recorded": "The FY23 earmarks and funding include a $100,000 amount toward the senior center ADA patio project.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "fy23 earmarks and funding include $100,000 toward the senior center ada patio project."
+  },
+  {
+   "topic": "ARPA funds available to the town",
+   "what_was_recorded": "The committee discussed the town's ARPA funds, which the minutes print as $3.4 million.",
+   "figures_as_printed": [
+    "$3.4 million"
+   ],
+   "quote": "the committee also discussed the town's $3.4 million in arpa funds."
+  },
+  {
+   "topic": "Capital equipment price increase (tractor mower)",
+   "what_was_recorded": "The requested tractor mower has risen $20,000 in price since the capital plan was passed in May 2022.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the requested tractor mower has gone up $20,000 since the capital plan was passed in may of 2022"
+  }
+ ],
+ "transfers": [
+  {
+   "description": "End-of-year departmental transfers for FY22",
+   "amount_as_printed": "not stated",
+   "outcome": "Committee authorized the chairperson to sign the FY22 departmental transfers.",
+   "quote": "mr. beardmore motioned to authorize the chairperson to sign the fy22 departmental transfers, mr. simeone seconded."
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "mr. watters called the meeting to order at 7:02 p.m. and read a statement concerning",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "quote": "2. pledge of allegiance",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "quote": "3. announcements: none",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "4. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "no action",
+   "quote": "5. chair report: none",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "no action; informational report on Loofah Farms, 30 School Street, Special Town Meeting and ARPA",
+   "quote": "town manager heather lemieux briefed mr. watters via email.",
+   "tags": [
+    "town manager report",
+    "TIF",
+    "30 School Street",
+    "special town meeting",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "End of Year Departmental Transfers",
+   "resolution": "approved; chairperson authorized to sign FY22 transfers",
+   "quote": "mr. beardmore motioned to authorize the chairperson to sign the fy22 departmental transfers",
+   "tags": [
+    "transfers",
+    "FY22"
+   ]
+  },
+  {
+   "topic": "New Finance Committee Member Orientation and Onboarding",
+   "resolution": "draft reviewed; continued; Mr. Balish to meet with Town Manager and Finance Director before next draft",
+   "quote": "mr. balish presented a draft of a document he created to assist new committee members",
+   "tags": [
+    "orientation",
+    "committee roles"
+   ]
+  },
+  {
+   "topic": "Bylaw Proposal – Amending Capital Plan and Monetary Appropriation",
+   "resolution": "discussed; committee to discuss and vote at September 8, 2022 meeting; special meeting on September 15, 2022 considered",
+   "quote": "mr. beardmore consulted town moderator tim murphy, and has submitted a draft of the bylaw to town counsel.",
+   "tags": [
+    "bylaw",
+    "capital plan",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Town Fiscal Policy – Debt Capacity and ARPA spending",
+   "resolution": "discussed; external financial consultants to be sought; ARPA requests due September 30, 2022",
+   "quote": "mr. beardmore opined that the language of the town's current fiscal policies is not controversial",
+   "tags": [
+    "fiscal policy",
+    "debt capacity",
+    "ARPA",
+    "vision document"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved (August 18, 2022 minutes)",
+   "quote": "mr. beardmore motioned to approve the august 18, 2022 meeting minutes, mr. gray seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "discussed; committee agreed to ask the Town Manager about underfunded capital items",
+   "quote": "mr. simeone reported that the dpw director has submitted purchase orders for two trucks",
+   "tags": [
+    "DPW",
+    "capital plan",
+    "equipment prices"
+   ]
+  },
+  {
+   "topic": "Public Comment (second call)",
+   "resolution": "no action",
+   "quote": "13. public comment none 14. items for future meetings: fiscal policy, arpa spending",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "listed for future agendas",
+   "quote": "items for future meetings: fiscal policy, arpa spending, capital plan bylaw, informal meetings",
+   "tags": [
+    "agenda planning"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "no action; dates set",
+   "quote": "next meetings september 8, 2022, september 20, 2022 (with select board)",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:28 p.m.",
+   "quote": "adjourn at 8:28 p.m. mr. menard motioned to adjourn, mr. simeone seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft new-member orientation booklet (Mr. Balish)",
+   "where": "text",
+   "quote": "mr. balish presented a draft of a document he created to assist new committee members"
+  },
+  {
+   "name": "Draft bylaw amending Capital Plan and Monetary Appropriation (submitted to Town Counsel)",
+   "where": "text",
+   "quote": "mr. beardmore consulted town moderator tim murphy, and has submitted a draft of the bylaw to town counsel."
+  },
+  {
+   "name": "Special Town Meeting Warrant",
+   "where": "text",
+   "quote": "special town meeting warrant is open, and will close september 20, 2022."
+  },
+  {
+   "name": "Pond View Commons comprehensive permit (filed with ZBA)",
+   "where": "text",
+   "quote": "pond view commons has filed their comprehensive permit with the zba."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "ARPA",
+  "capital plan",
+  "fiscal policy",
+  "debt capacity",
+  "bylaw",
+  "budget",
+  "end of year transfers",
+  "orientation",
+  "Loofah Farms",
+  "30 School Street",
+  "Pond View Commons",
+  "special town meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,760 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2022-11-01",
+ "video_id": "xMowisHxS0o",
+ "video_url": "https://www.youtube.com/watch?v=xMowisHxS0o",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2022-11-01-xMowisHxS0o.json",
+  "sha256": "2d026fdc22d4b32ed3d4e8bd12bd5aa280556712e84897f1d7af5e18c6241a28",
+  "caption_lines": 403,
+  "segments": 3578
+ },
+ "recording": {
+  "duration_s": 8405,
+  "duration": "2:20",
+  "spoken_chars": 118942,
+  "words_approx": 19823
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11012022-5304",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-11-01-agenda-5304.txt",
+   "path": "sources/meetings/select-board/2022-11-01-agenda-5304.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11012022-5304",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-11-01-minutes-5304.txt",
+   "path": "sources/meetings/select-board/2022-11-01-minutes-5304.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-14T14:09:53Z",
+  "cost_usd": 0.4700095
+ },
+ "minutes": {
+  "headline": "Select Board granted Il Forno's alcohol license alteration, conditioned on building to the plans shown, and certified FY23 free cash.",
+  "summary": "The board heard public comment mostly about a disputed water district vote, approved the Salvation Army boot drive and an alteration of premises for Il Forno, and received a police accreditation presentation. The town manager reported free cash certification, special town meeting article details, and the police contract cost; the board also took up ARPA criteria, a consent calendar, and goals.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr Alonso",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Gamel",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Sergeant Moriali",
+    "role": "presenter, accreditation manager"
+   },
+   {
+    "name_as_heard": "Elaine",
+    "role": "staff (minutes)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 65,
+    "topic": "Chair's comments: water district is a separate entity so process complaints go to it or the Secretary of the Commonwealth; property taxes and senior tax relief plan; Veterans Day.",
+    "stated_role": "chair"
+   },
+   {
+    "t": 949,
+    "topic": "Resident criticized the conduct of the water district special meeting, the lack of a contract to read, and supported Paula Bertram.",
+    "speaker_as_heard": "Dave McDonald",
+    "stated_role": "resident, Hickory Hills"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "free-cash",
+   "grants",
+   "hiring",
+   "personnel",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "town-meeting",
+   "transfers",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 1757,
+    "motion": "Approve Salvation Army toll booth fundraiser Dec 10 (rain date Dec 17) at CVS Whalum Road and town center",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2311,
+    "motion": "Grant alteration of premises for alcohol license to Il Forno Lunenburg Bar Inc at 494 Electric Ave, provided the building does not substantially stray from the plans",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3260,
+    "motion": "Ratify town manager's appointment of Alicia Aquino as tax collector principal clerk",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 5890,
+    "motion": "Add articles 2, 6, 7 and 9 to the consent calendar for the Nov 15 special town meeting",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6627,
+    "motion": "Approve minutes of October 4",
+    "outcome": "passed unanimously",
+    "procedural": true
+   },
+   {
+    "t": 6648,
+    "motion": "Approve minutes of October 15, 2022",
+    "outcome": "passed 4-0 with one abstention",
+    "procedural": true
+   },
+   {
+    "t": 8379,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 422,
+    "topic": "Eagle House ADA patio funding",
+    "what_was_said": "A state check was presented for the ADA patio project at the Eagle house.",
+    "figures_as_heard": [
+     "a hundred thousand dollars"
+    ]
+   },
+   {
+    "t": 867,
+    "topic": "Council on Aging high tea fundraiser",
+    "what_was_said": "The high tea raised money for the Council on Aging gift fund.",
+    "figures_as_heard": [
+     "2756 dollars"
+    ]
+   },
+   {
+    "t": 3424,
+    "topic": "Assessor's data collection bid",
+    "what_was_said": "Bid awarded pending town meeting approval of funding.",
+    "figures_as_heard": [
+     "45 000"
+    ]
+   },
+   {
+    "t": 3424,
+    "topic": "Marshall Park survey bid",
+    "what_was_said": "Bid awarded; capital plan budget was higher.",
+    "figures_as_heard": [
+     "17 700",
+     "25 000"
+    ]
+   },
+   {
+    "t": 3823,
+    "topic": "New growth certification",
+    "what_was_said": "New growth certified above the annual town meeting estimate.",
+    "figures_as_heard": [
+     "234 383",
+     "twenty thousand eight hundred and sixty dollars"
+    ]
+   },
+   {
+    "t": 3989,
+    "topic": "Opioid settlement funds",
+    "what_was_said": "Received as a general fund receipt that must be appropriated at town meeting.",
+    "figures_as_heard": [
+     "28 706 dollars"
+    ]
+   },
+   {
+    "t": 4178,
+    "topic": "FY23 free cash certification",
+    "what_was_said": "DLS certified free cash for the general fund and enterprise funds.",
+    "figures_as_heard": [
+     "two million eight hundred and thirty eight thousand five hundred fifty dollars",
+     "fifty seven thousand five hundred thirty nine dollars",
+     "134 318",
+     "two million 232 978 dollars",
+     "922 599 dollars"
+    ]
+   },
+   {
+    "t": 4949,
+    "topic": "Police contract funding",
+    "what_was_said": "Transfer from salary reserve to cover first-year cost; multi-year impact described.",
+    "figures_as_heard": [
+     "16 000",
+     "37 823 45",
+     "197 489 dollars and 13 cents",
+     "53 948.82 cents",
+     "289 261 dollars"
+    ]
+   },
+   {
+    "t": 5221,
+    "topic": "Police overtime projection",
+    "what_was_said": "A member questioned projected overtime growth over two years.",
+    "figures_as_heard": [
+     "350 000",
+     "446 000",
+     "20"
+    ]
+   },
+   {
+    "t": 5624,
+    "topic": "Marshall Park engineering article",
+    "what_was_said": "Estimated engineering cost range; amount available leaves a small surplus.",
+    "figures_as_heard": [
+     "150 and 200 000",
+     "184 000",
+     "twenty five hundred dollars"
+    ]
+   },
+   {
+    "t": 5870,
+    "topic": "Consent calendar articles",
+    "what_was_said": "Prior-year expense and two sewer stabilization deposits.",
+    "figures_as_heard": [
+     "1 800 4.54 cents",
+     "one thousand six hundred forty five dollars",
+     "nine thousand nine hundred dollars"
+    ]
+   },
+   {
+    "t": 4690,
+    "topic": "ARPA two-phase funding",
+    "what_was_said": "Member proposed a smaller first disbursement and a larger second round.",
+    "figures_as_heard": [
+     "one million",
+     "two and a half million"
+    ]
+   },
+   {
+    "t": 8091,
+    "topic": "Municipal aggregation electricity rate",
+    "what_was_said": "Town aggregation rate compared with Unitil basic service.",
+    "figures_as_heard": [
+     "11.7 cents",
+     "22.2 cents"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4949,
+    "description": "From salary reserve account to police collective bargaining agreement cost",
+    "amount_as_heard": "16 000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 4799,
+    "decision": "ARPA criteria discussion deferred to next week; goal to finalize before year end."
+   },
+   {
+    "t": 6777,
+    "decision": "Placeholder on next week's agenda for the clothing donation bin request."
+   },
+   {
+    "t": 7945,
+    "decision": "Septic access request on town property held off the agenda until requested information arrives."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 65,
+    "t_end": 930,
+    "topic": "Board and public comments incl. water district vote",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1173,
+    "t_end": 1898,
+    "topic": "Salvation Army boot drive",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 1920,
+    "t_end": 2370,
+    "topic": "Il Forno alcohol license alteration hearing",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2374,
+    "t_end": 3195,
+    "topic": "Police accreditation certification",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 3215,
+    "t_end": 4458,
+    "topic": "Appointment and town manager report",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "free-cash",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 4458,
+    "t_end": 4840,
+    "topic": "ARPA request criteria",
+    "resolution": "referred",
+    "tags": [
+     "grants"
+    ]
+   },
+   {
+    "t_start": 4840,
+    "t_end": 5930,
+    "topic": "Special town meeting articles and consent calendar",
+    "resolution": "voted",
+    "tags": [
+     "town-meeting",
+     "warrant-article",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 5934,
+    "t_end": 6607,
+    "topic": "Select board and town manager goals",
+    "resolution": "informational",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 6627,
+    "t_end": 6694,
+    "topic": "Minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 6714,
+    "t_end": 8030,
+    "topic": "Action items and committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 8030,
+    "t_end": 8399,
+    "topic": "Announcements and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Whether the hearing for Il Forno vote count was stated beyond ayes.",
+   "Exact free cash and settlement figures are caption-rendered and unreliable.",
+   "Final opioid settlement total remarks at 4009 were garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 576,
+    "about": "A member criticized the water district's special meeting as chaotic and urged it be redone.",
+    "sides": "a board member against the water district's conduct",
+    "words_as_heard": "it devolved into absolute chaos uh it really was a debacle of how not to run a meeting",
+    "kind": "charged language"
+   },
+   {
+    "t": 1071,
+    "about": "A resident said the water commissioners should be ashamed over the meeting and contract vote.",
+    "sides": "a resident against the water commissioners",
+    "words_as_heard": "should be ashamed of themselves",
+    "kind": "public criticism"
+   },
+   {
+    "t": 5158,
+    "about": "A member questioned projected police overtime growth while others explained drivers.",
+    "sides": "one member questioning vs. town manager and other members",
+    "words_as_heard": "I'm not comfortable with this line item growing by 20 over two years",
+    "kind": "members disagree"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board granted an alteration of premises for Il Forno's alcohol license, provided the building does not substantially stray from the plans shown.",
+    "t": 2311
+   },
+   {
+    "line": "The town manager reported that the state certified free cash for the general fund and the enterprise funds.",
+    "t": 4178
+   },
+   {
+    "line": "The board voted 5-0 to put four articles on the consent calendar for the Nov 15 special town meeting.",
+    "t": 5890
+   },
+   {
+    "line": "The board approved a Salvation Army toll booth fundraiser and ratified the appointment of a tax collector principal clerk.",
+    "t": 1757
+   },
+   {
+    "line": "The board deferred its discussion of criteria for ARPA requests to next week, aiming to finalize them before year end.",
+    "t": 4799
+   }
+  ],
+  "why_it_matters": [
+   "Free cash certification and the special town meeting articles set what voters will be asked to appropriate on Nov 15, including the funding to cover the first-year cost of the new police contract.",
+   "The ARPA criteria, still unsettled, will decide how the remaining federal relief money is requested and awarded."
+  ],
+  "watch_next": [
+   "The ARPA request criteria return to the Select Board agenda next week.",
+   "The special town meeting is on Nov 15; articles on the consent calendar are voted together."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-14T14:10:01Z",
+   "cost_usd": 0.2231009
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_11012022-5304",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2022-11-01-minutes-5304.txt",
+   "path": "sources/meetings/select-board/2022-11-01-minutes-5304.pdf"
+  },
+  "official_sha256": "f7a45f3faee3f8c073e5f769a9f2bde508bb7c43b41d836e258fdd6501810ccd",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all four non-procedural votes, the main figures and the ARPA and clothing-bin decisions. The differences are mostly caption errors in names and police-contract digits, plus items only one record carries.",
+  "counts": {
+   "agree": 16,
+   "caption_error": 7,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Salvation Army toll booth fundraiser vote",
+    "ours": "Approve Salvation Army toll booth fundraiser Dec 10 (rain date Dec 17) at CVS Whalum Road and town center — passed",
+    "official": "to approve the tollbooth fundraiser for the salvation army for dec.10 th and rain date",
+    "note": "Same motion and outcome; official count not printed.",
+    "t": 1757
+   },
+   {
+    "kind": "agree",
+    "about": "Il Forno alteration of premises vote",
+    "ours": "Grant alteration of premises for alcohol license to Il Forno Lunenburg Bar Inc at 494 Electric Ave, provided the building does not substantially stray from the plans — passed",
+    "official": "to approve the alteration to premises for the alcohol license to il forno",
+    "note": "Same motion, address and condition; outcome passed in both.",
+    "t": 2311
+   },
+   {
+    "kind": "caption_error",
+    "about": "Tax collector principal clerk appointee name",
+    "ours": "Ratify town manager's appointment of Alicia Aquino as tax collector principal clerk — passed unanimously",
+    "official": "to ratify the town manager appointment of alisha aquino as tax collector principal",
+    "official_reading": "Alisha Aquino",
+    "note": "Same ratification vote; the captions misheard the first name.",
+    "t": 3260
+   },
+   {
+    "kind": "agree",
+    "about": "Consent calendar articles 2, 6, 7 and 9",
+    "ours": "Add articles 2, 6, 7 and 9 to the consent calendar for the Nov 15 special town meeting — passed 5-0",
+    "official": "to add articles 2, 6, 7 and 9 on the consent calendar",
+    "note": "Same vote and outcome; the official minutes print no count, so 5-0 is not contradicted.",
+    "t": 5890
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Source account for the $16,000 police contract transfer",
+    "ours": "From salary reserve account to police collective bargaining agreement cost — 16 000 (discussed only)",
+    "official": "the amount needed to be transferred from the surplus reserve account will be $16,000",
+    "note": "Amount and not-voted status agree, but ours says salary reserve and the official quote says surplus reserve (its own summary says salary reserve); check the recording at about 4949s and the Special Town Meeting warrant.",
+    "t": 4949
+   },
+   {
+    "kind": "agree",
+    "about": "Eagle House ADA patio check",
+    "ours": "Eagle House ADA patio funding: a hundred thousand dollars",
+    "official": "they presented a $100,000 check for the eagle h ouse ada patio proje ct",
+    "note": "Same figure.",
+    "t": 422
+   },
+   {
+    "kind": "agree",
+    "about": "Council on Aging High Tea proceeds",
+    "ours": "Council on Aging high tea fundraiser: 2756 dollars",
+    "official": "t hey raised $2, 756 dollars for the council on aging",
+    "note": "Same figure; only the printed spacing differs.",
+    "t": 867
+   },
+   {
+    "kind": "agree",
+    "about": "Assessor's data collection bid",
+    "ours": "Assessor's data collection bid: 45 000",
+    "official": "patrick harring in t h e amount of $45,000",
+    "note": "Same amount.",
+    "t": 3424
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Park survey bid",
+    "ours": "Marshall Park survey bid: 17 700, 25 000",
+    "official": "d illis & roy in t h e amount of $17,700",
+    "note": "Bid of $17,700 and $25,000 capital plan budget match.",
+    "t": 3424
+   },
+   {
+    "kind": "agree",
+    "about": "New growth certification",
+    "ours": "New growth certification: 234 383, twenty thousand eight hundred and sixty dollars",
+    "official": "$20,860 more than the a nnual t own m eeting",
+    "note": "Same $234,383 and $20,860 increase.",
+    "t": 3823
+   },
+   {
+    "kind": "agree",
+    "about": "Opioid settlement funds",
+    "ours": "Opioid settlement funds: 28 706 dollars",
+    "official": "of $28,706, which is roughly half of",
+    "note": "Same figure.",
+    "t": 3989
+   },
+   {
+    "kind": "agree",
+    "about": "FY23 free cash certification",
+    "ours": "FY23 free cash certification: two million eight hundred and thirty eight thousand five hundred fifty dollars, fifty seven thousand five hundred thirty nine dollars, 134 318, two million 232 978 dollars, 922 599 dollars",
+    "official": "water enterprise: $57,539",
+    "note": "All five amounts match the official $2,838,550, $57,539, $134,318, $2,232,978 and $922,599.",
+    "t": 4178
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police contract cost figure $37,823.45",
+    "ours": "37 823 45",
+    "official": "$ 37 ,823. 45",
+    "official_reading": "$37,823.45",
+    "note": "Same figure with punctuation lost in captions.",
+    "t": 4949
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police contract cost figure $53,948.82",
+    "ours": "53 948.82 cents",
+    "official": "$53,948.82",
+    "official_reading": "$53,948.82",
+    "note": "The word 'cents' is a caption artifact; the digits match.",
+    "t": 4949
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police contract cost figure $289,261",
+    "ours": "289 261 dollars",
+    "official": "$289. 261",
+    "official_reading": "$289,261",
+    "note": "Same digits; the official text prints an odd period but is the same amount.",
+    "t": 4949
+   },
+   {
+    "kind": "agree",
+    "about": "Police contract cost figure $197,489.13",
+    "ours": "197 489 dollars and 13 cents",
+    "official": "$ 197 ,489.13",
+    "note": "Same figure.",
+    "t": 4949
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Marshall Park remaining capital plan money",
+    "ours": "Marshall Park engineering article: 150 and 200 000, 184 000, twenty five hundred dollars",
+    "official": "cost for the engineering and design for marshall park is estimated between $150,000 and $200,000",
+    "note": "$150,000-$200,000 and $184,000 agree, but ours has 'twenty five hundred dollars' where the official has about $10,000 remaining from the Capital Plan; listen at about 5624s.",
+    "t": 5624
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Police overtime projection",
+    "ours": "Police overtime projection: 350 000, 446 000, 20",
+    "official": "",
+    "note": "Official minutes print no police overtime figures.",
+    "t": 5221
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Consent calendar article amounts",
+    "ours": "Consent calendar articles: 1 800 4.54 cents, one thousand six hundred forty five dollars, nine thousand nine hundred dollars",
+    "official": "",
+    "note": "Official minutes give no per-article amounts.",
+    "t": 5870
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ARPA two-phase funding amounts",
+    "ours": "ARPA two-phase funding: one million, two and a half million",
+    "official": "",
+    "note": "Official minutes mention ARPA criteria but no dollar phases.",
+    "t": 4690
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Municipal aggregation electricity rates",
+    "ours": "Municipal aggregation electricity rate: 11.7 cents, 22.2 cents",
+    "official": "",
+    "note": "Official only notes the program was mentioned, without rates.",
+    "t": 8091
+   },
+   {
+    "kind": "agree",
+    "about": "ARPA criteria deferred",
+    "ours": "ARPA criteria discussion deferred to next week; goal to finalize before year end.",
+    "official": "it was decided that the board read it over and discuss at another meeting",
+    "note": "Same deferral; ours says 'next week' while the official says only 'another meeting', and both aim for year end.",
+    "t": 4799
+   },
+   {
+    "kind": "agree",
+    "about": "Clothing drive agenda item",
+    "ours": "Placeholder on next week's agenda for the clothing donation bin request.",
+    "official": "mr. franco asked for an agenda item to be added to the next meeting regarding a clothing",
+    "note": "Same request.",
+    "t": 6777
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Septic access request held off agenda",
+    "ours": "Septic access request on town property held off the agenda until requested information arrives.",
+    "official": "",
+    "note": "Official minutes do not mention this decision.",
+    "t": 7945
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Streetlight reconciliation with Unitil",
+    "ours": "",
+    "official": "john dinapoli from unitil",
+    "note": "About 30 unpaid lights and 19 billed lights not in the field; not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Bridge and culvert plan funding",
+    "ours": "",
+    "official": "he and i are looking at possible grants to fund",
+    "note": "Grant search for a bridge/culvert management plan; not in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "No meetings planned rest of November",
+    "ours": "",
+    "official": "the board is not planning on meeting the rest of november but that could",
+    "note": "Scheduling statement absent from ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chairman name",
+    "ours": "Mr Alonso (member)",
+    "official": "tom alonzo, vice chairman",
+    "official_reading": "Tom Alonzo",
+    "note": "Misheard surname; the official also gives his role as vice chairman."
+   },
+   {
+    "kind": "agree",
+    "about": "Mr Franco and Mr Dwyer attendance",
+    "ours": "Mr Franco (member)",
+    "official": "todd dwyer , heather sroka",
+    "note": "Both records list Franco (Lou Franco, clerk) and Dwyer (Todd Dwyer) as present."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chairman and fifth member",
+    "ours": "",
+    "official": "michael-ray jeffreys, chairman; tom alonzo, vice chairman; lou",
+    "note": "Chairman Michael-Ray Jeffreys and member Heather Sroka are not in our attendee list."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police chief name",
+    "ours": "Chief Gamel (police chief)",
+    "official": "mohamed mohamed, police chief gammel, police sergeant morreale,",
+    "official_reading": "Police Chief Gammel",
+    "note": "Spelling differs."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Police sergeant name",
+    "ours": "Sergeant Moriali (presenter, accreditation manager)",
+    "official": "mohamed mohamed, police chief gammel, police sergeant morreale,",
+    "official_reading": "Sergeant Morreale",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager",
+    "ours": "Heather (town manager)",
+    "official": "heather lemieux, town manager",
+    "note": "Same person; the captions heard only the first name."
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes taker",
+    "ours": "Elaine (staff (minutes))",
+    "official": "executive assistant to the town manager",
+    "note": "Same person (Elaine M. Peterson)."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-14T14:12:20Z",
+   "cost_usd": 0.2774509
+  }
+ }
+}

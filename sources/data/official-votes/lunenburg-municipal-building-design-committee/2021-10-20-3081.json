@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-10-20",
  "docid": "3081",
@@ -12,23 +12,173 @@
  },
  "votes": [
   {
-   "motion": "Approve the prior minutes",
+   "motion": "Approve the prior meeting's minutes.",
    "moved_by": "Dave Passios",
-   "seconded_by": "Michael Ray-Jeffreys",
    "outcome": "passed",
    "procedural": true,
-   "quote": "move by dave passios. second michael ray-jeffreys. dave, brian, michael, kristina and greg approve."
+   "quote": "review & approve minutes move by dave passios. second michael ray-jeffreys. dave, brian, michael, kristina and greg approve.",
+   "seconded_by": "Michael Ray-Jeffreys"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 6:36.",
    "moved_by": "Michael",
-   "seconded_by": "Dave",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion to adjourn at 6:36 by brian. moved by michael and second by dave. dave, michael kristina and brian approve"
+   "quote": "motion to adjourn at 6:36 by brian. moved by michael and second by dave. dave, michael kristina and brian approve",
+   "seconded_by": "Dave"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Both votes are procedural. The minutes record 5 members present; the first vote (minutes approval) passed with all 5 approving. The second vote (adjournment) passed with 4 members named in approval (Dave, Michael, Kristina, Brian); Gregory Roy is not listed in that approval.",
- "cost_usd": 0.0981905
+ "note": "Minutes header is dated 10/22/2021 while the board's meeting date is 2021-10-20; the minutes are taken as the record for this meeting. The 'Future Meeting Schedule' lists 10/3/21 and 10/10/21, earlier than this meeting, so those dates may be typos as printed. The adjournment line names Brian as the maker ('Motion to adjourn ... by Brian') and also says 'Moved by Michael and second by Dave'; moved_by is recorded as Michael per the formal 'Moved by' wording, and the conflict is unresolved. The minutes name the member as both 'David Passios' and 'Dave Passios'. Vote counts are not printed as numbers; outcomes are recorded as passed because named members are recorded as approving. No dollar figures, transfers, or public comment appear. The Special Town Meeting presentation and the Selectboard presentation are referenced but not attached or listed.",
+ "cost_usd": 0.014561880000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Roy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, michael-ray jeffreys, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, michael-ray jeffreys, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, michael-ray jeffreys, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, michael-ray jeffreys, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, michael-ray jeffreys, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Vice-Chair",
+   "status": "absent",
+   "quote": "members absent: matthew allison and david blatt"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: matthew allison and david blatt"
+  },
+  {
+   "name": "Megan Lordan",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: megan lordan"
+  },
+  {
+   "name": "DiGiorgio",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "digiorgio is trying hard to make the deadlines of the selectboard meeting presentation."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Michael will represent the committee at the presentation to the finance committee.",
+   "quote": "michael will be representing the tcp design committee at the presentation to the finance committee"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Input to/update from DiGiorgio",
+   "resolution": "no action; update only",
+   "quote": "digiorgio is trying hard to make the deadlines of the selectboard meeting presentation.",
+   "tags": [
+    "selectboard",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Proposed warrant articles: Special Town Meeting presentation",
+   "resolution": "discussed; slide changes and square-footage clarity suggested, no action",
+   "quote": "there is a want to clear up the presentation of square feet for every area of the building.",
+   "tags": [
+    "warrant article",
+    "special town meeting",
+    "presentation"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved",
+   "quote": "review & approve minutes move by dave passios. second michael ray-jeffreys.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public outreach: finance committee presentation",
+   "resolution": "Michael to represent the committee",
+   "quote": "michael will be representing the tcp design committee at the presentation to the finance committee",
+   "tags": [
+    "finance committee",
+    "outreach"
+   ]
+  },
+  {
+   "topic": "Correspondence: continuing membership if new town hall article",
+   "resolution": "members expressed interest in continuing; no vote recorded",
+   "quote": "request to find out if the current membership is interested in continuing on if the article to build a new",
+   "tags": [
+    "membership",
+    "town hall",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "dates listed as printed",
+   "quote": "10/27/21, 10/3/21, 10/10/21.",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting presentation",
+   "where": "text",
+   "quote": "presentation of special town meeting presentation. there were talks about changing the slides around so"
+  },
+  {
+   "name": "Selectboard meeting presentation",
+   "where": "text",
+   "quote": "digiorgio is trying hard to make the deadlines of the selectboard meeting presentation."
+  }
+ ],
+ "tags": [
+  "new town hall",
+  "municipal building",
+  "special town meeting",
+  "warrant article",
+  "design committee",
+  "finance committee",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "council-on-aging",
  "meeting_date": "2022-06-14",
  "docid": "1935",
@@ -12,31 +12,289 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the May 10, 2022 meeting as amended",
+   "motion": "Accept the minutes of the May 10, 2022 meeting as amended.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. DiGiacomo",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. lincoln moved to accept the minutes from the may 10, 2022 meeting as amended. ms. digiacomo seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Nominate Ms. Lincoln as chairperson and Ms. Rabbitt as vice chairperson of the COA for FY23",
+   "motion": "Nominate Deb Lincoln as chairperson and Jane Rabbitt as vice chairperson of the COA for FY23.",
    "moved_by": "Mr. Lincoln",
    "seconded_by": "Ms. Dwyer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "mr. lincoln motioned to nominate ms. lincoln as chairperson, and ms. rabbitt as vice chairperson of the coa for fy23. ms. dwyer seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 10:09 a.m.",
    "moved_by": "Ms. DiGiacomo",
    "seconded_by": "Ms. Dwyer",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "ms. digiacomo motioned to adjourn, ms. dwyer seconded. on vote, motion carried unanimously."
+   "quote": "adjournment at 10:09 a.m., ms. digiacomo motioned to adjourn, ms. dwyer seconded. on vote, motion carried unanimously."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0880615
+ "dropped_unquoted": 1,
+ "note": "Plain-text extraction of a two-page set; no scan indicated and no pages appear missing. Page 1 contains a printed line 'Unanimously approved by COA at July 19, 2022 meeting.' sitting mid-text inside the Director's Report; it reads as a later approval note on these minutes, not a vote at this meeting. Public comment and board comment both read 'none'. No transfers or dollar-denominated votes are recorded. Figures given are as printed; grant and bid amounts are not printed where the item has no figure.",
+ "cost_usd": 0.01633108,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Deb Lincoln",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director susan doherty, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Director",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director susan doherty, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Cheryl Moisan",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director susan doherty, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Betty DiGiacomo",
+   "role": "",
+   "status": "present",
+   "quote": "chairperson deb lincoln, director susan doherty, cheryl moisan, betty digiacomo, diane"
+  },
+  {
+   "name": "Diane Nowd",
+   "role": "",
+   "status": "present",
+   "quote": "nowd, jane rabbitt, pete lincoln, susan o'sullivan, jacquelyn dwyer"
+  },
+  {
+   "name": "Jane Rabbitt",
+   "role": "",
+   "status": "present",
+   "quote": "nowd, jane rabbitt, pete lincoln, susan o'sullivan, jacquelyn dwyer"
+  },
+  {
+   "name": "Pete Lincoln",
+   "role": "",
+   "status": "present",
+   "quote": "nowd, jane rabbitt, pete lincoln, susan o'sullivan, jacquelyn dwyer"
+  },
+  {
+   "name": "Susan O’Sullivan",
+   "role": "",
+   "status": "present",
+   "quote": "nowd, jane rabbitt, pete lincoln, susan o'sullivan, jacquelyn dwyer"
+  },
+  {
+   "name": "Jacquelyn Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "nowd, jane rabbitt, pete lincoln, susan o'sullivan, jacquelyn dwyer"
+  },
+  {
+   "name": "John Pesenti",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: john pesenti, judy tarbell, barbara brown"
+  },
+  {
+   "name": "Judy Tarbell",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: john pesenti, judy tarbell, barbara brown"
+  },
+  {
+   "name": "Barbara Brown",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: john pesenti, judy tarbell, barbara brown"
+  },
+  {
+   "name": "Pat Kennedy",
+   "role": "Eagle House Supporters President",
+   "status": "present",
+   "quote": "eagle house supporters president pat kennedy, select board member heather sroka, and lunenburg resident jim mcguigan"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Select Board Member",
+   "status": "present",
+   "quote": "eagle house supporters president pat kennedy, select board member heather sroka, and lunenburg resident jim mcguigan"
+  },
+  {
+   "name": "Jim McGuigan",
+   "role": "Lunenburg Resident",
+   "status": "present",
+   "quote": "eagle house supporters president pat kennedy, select board member heather sroka, and lunenburg resident jim mcguigan"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "New COA Board Member Orientation Package was tabled.",
+   "quote": "1. new coa board member orientation package: tabled"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Eagle House Woo Sox ticket raffle",
+   "what_was_recorded": "The Eagle House Supporters' Woo Sox ticket raffle has raised a sum so far, with the drawing set for July 29, 2022.",
+   "figures_as_printed": [
+    "$300"
+   ],
+   "quote": "the woo sox ticket raffle has brought in $300 so far, and the drawing will be held july 29, 2022."
+  },
+  {
+   "topic": "Patio project state earmark",
+   "what_was_recorded": "State Senator Cronin is supporting a bill that earmarks an amount for the patio project.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "state senator cronin is supporting a bill that earmarks $100,000 for the patio."
+  },
+  {
+   "topic": "AARP grant for patio project",
+   "what_was_recorded": "Director was denied an AARP grant that would have supplemented the patio project; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty was denied a grant from aarp to supplement the patio project"
+  },
+  {
+   "topic": "Generator grant with Fire Department",
+   "what_was_recorded": "Director is working on a grant with the Fire Chief to fund a generator for the building; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "chief sullivan of the lunenburg fire department to fund a generator for the building"
+  },
+  {
+   "topic": "FY23 Formula Grant",
+   "what_was_recorded": "Director is unsure whether FY23 Formula Grant funds will be based on the 2020 Census; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "ms. doherty reported she is still unclear as to whether fy23 formula grant funds will be based on the new 2020 census numbers."
+  },
+  {
+   "topic": "Porch paint and repair bids",
+   "what_was_recorded": "Multiple contractors have bid on the porch paint and repair project; no bid amounts printed.",
+   "figures_as_printed": [],
+   "quote": "multiple contractors have bid on the porch paint and repair project"
+  },
+  {
+   "topic": "Property tax work-off help",
+   "what_was_recorded": "Director hired a property tax work-off person to help with weeding; no amount printed.",
+   "figures_as_printed": [],
+   "quote": "that she's hired a property tax work-off person to help with weeding"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (May 10, 2022)",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. lincoln moved to accept the minutes from the may 10, 2022 meeting as amended. ms. digiacomo seconded."
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no action",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "ms. lincoln informed the board that mr. mcguigan's term as a coa member would begin july 1, 2022."
+  },
+  {
+   "topic": "New COA Board Member Orientation Package",
+   "resolution": "tabled",
+   "tags": [
+    "orientation"
+   ],
+   "quote": "1. new coa board member orientation package: tabled"
+  },
+  {
+   "topic": "FY23 COA Board Member terms",
+   "resolution": "no action",
+   "tags": [
+    "appointments",
+    "terms"
+   ],
+   "quote": "have all been reappointed to another term, their seats will be up as of june 30, 2025."
+  },
+  {
+   "topic": "FY23 COA Board Officers",
+   "resolution": "approved",
+   "tags": [
+    "officers",
+    "elections"
+   ],
+   "quote": "mr. lincoln motioned to nominate ms. lincoln as chairperson, and ms. rabbitt as vice chairperson of the coa for fy23."
+  },
+  {
+   "topic": "FY23 New Board Member Recruitment",
+   "resolution": "no discussion",
+   "tags": [
+    "recruitment"
+   ],
+   "quote": "fy23 new board member recruitment: no discussion"
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "reported, no action",
+   "tags": [
+    "director",
+    "grants",
+    "building",
+    "events"
+   ],
+   "quote": "coa turns 55: ms. doherty reported over 100 people have signed up for the event"
+  },
+  {
+   "topic": "Eagle House Supporters report",
+   "resolution": "reported, no action",
+   "tags": [
+    "eagle house",
+    "fundraising"
+   ],
+   "quote": "ms. kennedy reported she now has a full board with newest member marilyn talley."
+  },
+  {
+   "topic": "Notices and communications",
+   "resolution": "no action",
+   "tags": [
+    "training"
+   ],
+   "quote": "ms. dwyer is due for conflict of interest training."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 10:09 a.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "adjournment at 10:09 a.m., ms. digiacomo motioned to adjourn, ms. dwyer seconded."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "council on aging",
+  "Eagle House",
+  "senior services",
+  "grants",
+  "patio project",
+  "building and grounds",
+  "board officers",
+  "board appointments",
+  "minutes approval",
+  "fundraising"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

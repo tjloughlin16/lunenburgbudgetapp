@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2022-05-04",
  "docid": "6300",
@@ -12,113 +12,626 @@
  },
  "votes": [
   {
-   "motion": "Approve field change for Kroll at 398 Sunset Lane",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Approve the Kroll, 398 Sunset Lane field change request.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion by ml was made to approve the filed change. jv seconded and the commission voted unanimously to approve the motion."
   },
   {
-   "motion": "Approve amendment to Order of Conditions 208-1240 at 411 Townsend Harbor Road with six maples in 30-foot zone",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Richard Bursch",
+   "motion": "Approve the Nick Eaton amendment to Order of Conditions 208-1240 (411 Townsend Harbor Road) with six maples, three in the 30-foot zone and three in the 50-foot zone.",
+   "moved_by": "JR",
+   "seconded_by": "RB",
    "outcome": "passed 5-1",
    "procedural": false,
-   "quote": "jr revised his motion to be consistent with the 30 foot zone. rb seconded. nick eaton asked for clarification. bp summarized the motion",
-   "quote_taken_from_text": true
+   "quote": "the motion was approved by a 5 to 1 vote with jv dissenting."
   },
   {
-   "motion": "Issue negative determination for fence at 141 Hemlock Drive",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for the four-foot fence within the buffer zone at 141 Hemlock Dr.",
+   "moved_by": "RB",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made for a negative determination by rb with a second by cc with a unanimous vote to approve the motion by roll call vote."
   },
   {
-   "motion": "Issue positive determination for landing and deck at 205 Sunset Lane (Map 129 Lot 66)",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
+   "motion": "Issue a positive determination for the landing and deck within the 100 foot buffer zone at 205 Sunset Lane (Harrison).",
+   "moved_by": "RB",
+   "seconded_by": "JR",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made by rb for a positive determination with a second by jr with a unanimous vote by roll call to approve the motion."
   },
   {
-   "motion": "Continue hearing on culvert replacement at 160 Massachusetts Avenue to May 18",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Glenn Maki culvert Notice of Intent (160 Massachusetts Ave) to May 18.",
+   "moved_by": "RB",
+   "seconded_by": "CC",
+   "outcome": "passed",
    "procedural": false,
    "quote": "rb moved to continue to may 18 with a second by cc and a unanimous vote to approve"
   },
   {
-   "motion": "Continue hearing on warehouse at 260 Fahlulah Road to May 18",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Richard Bursch",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Fitchburg Land property Owner LLC Notice of Intent (260 Fahlulah Road) to May 18.",
+   "moved_by": "ML",
+   "seconded_by": "RB",
+   "outcome": "passed",
    "procedural": false,
    "quote": "the meeting was continued until may 18 by a motion of ml and a second by rb with a unanimous roll call vote approving the motion."
   },
   {
-   "motion": "Continue determination hearing on landscaping at 379 Townsend Harbor Road to May 18",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Richard Bursch",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Jason Zirkle request (379 Townsend Harbor Road) to May 18.",
+   "moved_by": "ML",
+   "seconded_by": "RB",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "ml moved to continue to may 18 with rb seconding and the commission unanimously approved the motion by roll call vote ",
-   "quote_taken_from_text": true
+   "quote": "ml moved to continue to may 18 with rb seconding and the commission unanimously approved the motion by roll call vote"
   },
   {
-   "motion": "Continue determination hearing on tree removal at 411 Goodrich Street to May 18",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Issue an order of conditions for the Ken Matson single family home within the buffer zone at 71 Watt St, with a condition that the homeowner be responsible for perpetual maintenance.",
+   "moved_by": "JR",
+   "seconded_by": "ML",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "ml seconded and the commission vote unanimously by roll call vote to approve the motion."
+  },
+  {
+   "motion": "Continue the David Blatt tree removal request (411 Goodrich Street) to the May 18 meeting.",
+   "moved_by": "CC",
+   "seconded_by": "ML",
+   "outcome": "passed",
    "procedural": false,
    "quote": "this was continued to the may 18th meeting by cc and a second by ml with a unanimous vote to approve the motion by roll call vote."
   },
   {
-   "motion": "Issue Order of Conditions for stairs, landing and dock at 160 Sunset Lane",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
+   "motion": "Approve the administrator's determination to replant trees at 165 Townsend Harbor Road.",
+   "moved_by": "JR",
+   "seconded_by": "ML",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "a motion of jr and a second by ml with a unanimous vote to approve by roll call vote"
+  },
+  {
+   "motion": "Modify the prior determination at 365 Sunset to allow the remainder of a rotted triple-stem tree to be cut down with one tree replanted.",
+   "moved_by": "JR",
+   "seconded_by": "ML",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "this was approved by a motion of jr and a second by ml with a unanimous vote to approve by roll call vote."
+  },
+  {
+   "motion": "Issue an Order of Conditions for stairs, a landing and a dock within the 100 foot buffer zone at 160 Sunset Lane (Nazarenko).",
+   "moved_by": "JV",
+   "seconded_by": "CC",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "jv moved to issue an order of conditions. cc seconded and the motion was approved by a vote of 3 for (bp, jc and cc). two were against. ( ml and jr)"
+   "quote": "jv moved to issue an order of conditions. cc seconded and the motion was approved by a vote of 3 for (bp, jc and cc)."
   },
   {
-   "motion": "Continue determination hearing for stairs, landing and dock at 205 Sunset Lane (Lot 68) to May 18",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed 4-1",
+   "motion": "Continue the John Welton request (205 Sunset Lane, Map 129 Lot 68) to May 18th.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed 4-1 (ML abstaining)",
    "procedural": false,
-   "quote": "jv made the motion to continue to may 18th seconded by cc . mr welton noted he has off street parking available. the motion passed by a vote of 4 to 1 ( ml abstaining)"
+   "quote": "the motion passed by a vote of 4 to 1 ( ml abstaining)"
   },
   {
-   "motion": "Approve administrator's determination for tree replanting at 165 Townsend Harbor Road",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "this was approved by a motion of jr and a second by ml with a unanimous vote to approve by roll call vote."
-  },
-  {
-   "motion": "Approve modification at 365 Sunset to allow cutting remaining tree stem and replanting one tree",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "this was approved by a motion of jr and a second by ml with a unanimous vote to approve by roll call vote."
-  },
-  {
-   "motion": "Adjourn meeting",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "JR",
+   "seconded_by": "ML",
+   "outcome": "passed",
    "procedural": true,
    "quote": "meeting adjourned at 11:35 pm by a motion of jr and seconded by ml with a unanimous vote of the commission by roll call vote"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Fourteen substantive votes and one procedural adjournment vote extracted. The minutes show one instance where a determination request was withdrawn without a vote (92 Wilder Road, applicant Patricia Vail). No vote was taken on the April 6 and April 20 minutes; they were deferred to the May 18 meeting.",
- "cost_usd": 0.1247545
+ "dropped_unquoted": 0,
+ "note": "Text is extracted from scanned/Word-style pages with broken spacing and page breaks mid-motion; quotes were collapsed to single spaces. Points that limit the reading: (1) Patricia Adams is recorded as absent (\"all members present except PA\"). (2) The Nazarenko vote lists \"JC\" among the 3 for, which is most likely a typo for JV; the count is printed as \"3 for\" and \"Two were against\", so it is recorded as 3-2. (3) \"RB Signed off of the meeting at 9 46 PM\" appears mid-meeting, yet RB makes and seconds later motions, so the sign-off time is unclear. (4) CC is recorded as excused at 10:55; the Nazarenko and Welton motions come after that point in the text, and the minutes do not say whether CC was present for every later vote. (5) Several entries say \"no objection\" rather than a vote; they are recorded as decisions, not votes. (6) Only the Kroll and Nick Eaton outcomes and the Welton abstention are stated with counts; other unanimous votes are recorded as passed. (7) No budget figures or transfers are printed; the only money item is a discussion of a third-party inspector with no amount. (8) The minutes contain no documents list; the documents below are mentioned in passing.",
+ "cost_usd": 0.02692168,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "bob pease, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "richard bursch, vice chair 960 massachusetts ave."
+  },
+  {
+   "name": "Patricia Adams",
+   "role": "Member",
+   "status": "absent",
+   "quote": "all members present except pa"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Member",
+   "status": "present",
+   "quote": "catie childs jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member",
+   "status": "present",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Member",
+   "status": "present",
+   "quote": "jeffrey viviano conservation administrator"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Member",
+   "status": "present",
+   "quote": "michael larouche richard tremblay, associate"
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Associate",
+   "status": "present",
+   "quote": "richard tremblay, associate"
+  },
+  {
+   "name": "Mary Wilson",
+   "role": "Associate",
+   "status": "present",
+   "quote": "mary wilson made a presentation of the earth day activities from sunday april 24, 2022."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "not stated",
+   "status": "present",
+   "quote": "greg roy outlined the prior approval history and the work involved."
+  },
+  {
+   "name": "Jack Maloney",
+   "role": "not stated",
+   "status": "present",
+   "quote": "jack maloney appeared before the commission and outlined the changes requested for the amendment."
+  },
+  {
+   "name": "Nick Eaton",
+   "role": "not stated",
+   "status": "present",
+   "quote": "nick eaton noted that he felt he was fulfilling a request of cleaning out the trees"
+  },
+  {
+   "name": "Shelby Poulin",
+   "role": "representing herself",
+   "status": "present",
+   "quote": "shelby poulin was present to represent herself."
+  },
+  {
+   "name": "John Harrison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr harrison noted that there was a prior approval for stairs."
+  },
+  {
+   "name": "Mika Lassilla",
+   "role": "representing the applicant (SJ Mullaney)",
+   "status": "present",
+   "quote": "mika lassilla from sj mullaney represented the applicant."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "not stated",
+   "status": "present",
+   "quote": "chris anderson reviewed the scope of work"
+  },
+  {
+   "name": "Jason Zirkle",
+   "role": "representing himself",
+   "status": "present",
+   "quote": "jason zirkle represented himself and outlined the scope of work."
+  },
+  {
+   "name": "Robin Jacobs",
+   "role": "abutter",
+   "status": "present",
+   "quote": "robin jacobs outlined that she had sent a video to the commission and wanted to ask"
+  },
+  {
+   "name": "Chuck Caron",
+   "role": "for the applicant",
+   "status": "present",
+   "quote": "chuck caron was present for the applicant."
+  },
+  {
+   "name": "Susan Walen",
+   "role": "not stated",
+   "status": "present",
+   "quote": "susan walen of 377 flatt hill road. she noted that the notification letter had the wrong address."
+  },
+  {
+   "name": "Matthew Nazarenko",
+   "role": "representing himself",
+   "status": "present",
+   "quote": "matthew nazarenko was present to represent himself."
+  },
+  {
+   "name": "John Welton",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr john welton reviewed the amended scope."
+  },
+  {
+   "name": "Lia Ellowitz",
+   "role": "not stated",
+   "status": "present",
+   "quote": "lia ellowitz noted that there still may be an nheps issue."
+  },
+  {
+   "name": "Butch Magurn",
+   "role": "not stated (resident living on the property at issue)",
+   "status": "present",
+   "quote": "butch magurn asked that they be notified in advance of site visits"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The stop work order at 238 Fire Road remained in place, because a majority of the commission did not support lifting it. No vote was recorded.",
+   "quote": "due to a lack of support by a majority of the commission, to lift it, the stop work order remained in place."
+  },
+  {
+   "decision": "The Fitchburg applicant agreed to remediate an area of invasive species.",
+   "quote": "rb requested that that an area of invasive species be remediated and the applicant agreed to do so."
+  },
+  {
+   "decision": "Chair directed the administrator to consult town counsel on the regulation raised at the Nazarenko hearing.",
+   "quote": "bp asked mm to speak to town counsel concerning the regulation."
+  },
+  {
+   "decision": "Administrator to check with the endangered species program (NHESP) on the 205 Sunset Lane habitat question.",
+   "quote": "he will check with the endangered species program"
+  },
+  {
+   "decision": "Zirkle may start the front yard work, which was outside the 50 foot zone, based on no objection from the commission.",
+   "quote": "mr zirkle, based on no objections by the commission can start that work."
+  },
+  {
+   "decision": "Administrator noted the Eaton septic deck removal was part of the original order and may be completed; no objection recorded.",
+   "quote": "mm noted that it was part of the original order so it is ok to complete."
+  },
+  {
+   "decision": "Pollinator habitat flyer may be placed at the kiosks, with no objection from the commission.",
+   "quote": "bp pollinator habitat wanted to place flyer at the kiosks at the edge of the kiosks. there was no objection by the commission"
+  },
+  {
+   "decision": "Local Girl Scouts' bench may be placed on the lane property, with no objection from the commission.",
+   "quote": "there was no objection by the commission.."
+  },
+  {
+   "decision": "The 92 Wilder Rd tree-removal request was withdrawn by the applicant.",
+   "quote": "92 wilder ; mm noted that the applicant has withdrawn."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Third-party inspector for the Fitchburg Land warehouse project",
+   "what_was_recorded": "The commission discussed hiring a third-party inspector, and the property owner indicated willingness to fund one; no dollar figure is printed.",
+   "quote": "rb asked if the commission could consider potentially hiring a third party inspector.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Drainage and engineered plan for 379 Townsend Harbor Road",
+   "speaker": "Robin Jacobs",
+   "stated_role": "abutter",
+   "quote": "robin jacobs outlined that she had sent a video to the commission and wanted to ask if the work"
+  },
+  {
+   "topic": "Notification letter address for 71 Watt St",
+   "speaker": "Susan Walen",
+   "stated_role": "not stated",
+   "quote": "susan walen of 377 flatt hill road. she noted that the notification letter had the wrong address."
+  },
+  {
+   "topic": "Possible NHESP issue at 160 Sunset Lane",
+   "speaker": "Lia Ellowitz",
+   "stated_role": "not stated",
+   "quote": "lia ellowitz noted that there still may be an nheps issue."
+  },
+  {
+   "topic": "Enforcement at 238 Fire Road: site-visit notice",
+   "speaker": "Butch Magurn",
+   "stated_role": "not stated (resident living on the property at issue)",
+   "quote": "butch magurn asked that they be notified in advance of site visits"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; DPW asked for a volunteer to haul trash",
+   "quote": "3 national honor society students went and picked up trash for the table rock area.",
+   "tags": [
+    "announcements",
+    "trash pickup"
+   ]
+  },
+  {
+   "topic": "Minutes of previous meetings (April 6 and April 20, 2022)",
+   "resolution": "continued to May 18 meeting",
+   "quote": "minutes- will be considered at the may 18",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Earth Day event report (Mary Wilson)",
+   "resolution": "presented; no action recorded",
+   "quote": "mary wilson made a presentation of the earth day activities from sunday april 24, 2022.",
+   "tags": [
+    "earth day",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Kroll, 398 Sunset Lane field change",
+   "resolution": "approved",
+   "quote": "a motion by ml was made to approve the filed change.",
+   "tags": [
+    "field change",
+    "docks",
+    "lake"
+   ]
+  },
+  {
+   "topic": "Nick Eaton amendment, 411 Townsend Harbor Road",
+   "resolution": "approved with six maples (5-1)",
+   "quote": "the motion was approved by a 5 to 1 vote with jv dissenting.",
+   "tags": [
+    "order of conditions",
+    "tree planting",
+    "buffer zone"
+   ]
+  },
+  {
+   "topic": "Shelby Poulin fence request, 141 Hemlock Dr",
+   "resolution": "negative determination",
+   "quote": "a motion was made for a negative determination by rb",
+   "tags": [
+    "determination",
+    "buffer zone",
+    "fence"
+   ]
+  },
+  {
+   "topic": "John Harrison deck request, 205 Sunset Lane",
+   "resolution": "positive determination",
+   "quote": "a motion was made by rb for a positive determination",
+   "tags": [
+    "determination",
+    "deck",
+    "parking",
+    "habitat"
+   ]
+  },
+  {
+   "topic": "Glenn Maki culvert NOI, 160 Massachusetts Ave",
+   "resolution": "continued to May 18",
+   "quote": "rb moved to continue to may 18 with a second by cc",
+   "tags": [
+    "notice of intent",
+    "culvert",
+    "wetland hydrology"
+   ]
+  },
+  {
+   "topic": "Fitchburg Land warehouse NOI, 260 Fahlulah Road",
+   "resolution": "continued to May 18",
+   "quote": "the meeting was continued until may 18 by a motion of ml",
+   "tags": [
+    "notice of intent",
+    "warehouse",
+    "invasive species",
+    "inspector"
+   ]
+  },
+  {
+   "topic": "Jason Zirkle request, 379 Townsend Harbor Road",
+   "resolution": "continued to May 18",
+   "quote": "ml moved to continue to may 18 with rb seconding",
+   "tags": [
+    "determination",
+    "driveway",
+    "drainage",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Ken Matson NOI, 71 Watt St",
+   "resolution": "order of conditions issued",
+   "quote": "ml seconded and the commission vote unanimously by roll call vote to approve the motion.",
+   "tags": [
+    "notice of intent",
+    "single family home",
+    "stormwater",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Patricia Vail tree removal, 92 Wilder Rd",
+   "resolution": "withdrawn by applicant",
+   "quote": "92 wilder ; mm noted that the applicant has withdrawn.",
+   "tags": [
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "David Blatt tree removal, 411 Goodrich Street",
+   "resolution": "continued to May 18",
+   "quote": "this was continued to the may 18th meeting by cc",
+   "tags": [
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "Matthew and Tara Nazarenko NOI, 160 Sunset Lane",
+   "resolution": "order of conditions issued (3-2)",
+   "quote": "jv moved to issue an order of conditions.",
+   "tags": [
+    "notice of intent",
+    "stairs",
+    "dock",
+    "MESA exemption"
+   ]
+  },
+  {
+   "topic": "John Welton request, 205 Sunset Lane Lot 68",
+   "resolution": "continued to May 18 (4-1, one abstention)",
+   "quote": "the motion passed by a vote of 4 to 1 ( ml abstaining)",
+   "tags": [
+    "determination",
+    "deck",
+    "stairs",
+    "NHESP"
+   ]
+  },
+  {
+   "topic": "Tax lien sale list properties",
+   "resolution": "discussion; no action recorded",
+   "quote": "discussion of properties on the tax lien sale list",
+   "tags": [
+    "tax lien"
+   ]
+  },
+  {
+   "topic": "Old business: encroachment and Hollis Road maintenance",
+   "resolution": "update; no action recorded",
+   "quote": "update on encroachment issues at",
+   "tags": [
+    "encroachment",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Enforcement: 238 Fire Road",
+   "resolution": "stop work order remained in place",
+   "quote": "the stop work order remained in place",
+   "tags": [
+    "enforcement",
+    "stop work order",
+    "patio",
+    "pavement"
+   ]
+  },
+  {
+   "topic": "Other enforcement and compliance items",
+   "resolution": "listed; no action recorded",
+   "quote": "certificates of compliance 70 oak ridge road",
+   "tags": [
+    "enforcement",
+    "certificate of compliance"
+   ]
+  },
+  {
+   "topic": "Trails grant update",
+   "resolution": "no update recorded",
+   "quote": "update on trails grant",
+   "tags": [
+    "trails",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Administrator's determinations: 165 Townsend Harbor Road and 365 Sunset",
+   "resolution": "approved both",
+   "quote": "mm noted that the trees are dead, mm to ask to replant",
+   "tags": [
+    "administrator determination",
+    "tree removal"
+   ]
+  },
+  {
+   "topic": "Open space, land and trail use",
+   "resolution": "no objection recorded",
+   "quote": "bp pollinator habitat wanted to place flyer at the kiosks",
+   "tags": [
+    "open space",
+    "trails",
+    "pollinator habitat",
+    "bench"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 11:35 PM",
+   "quote": "meeting adjourned at 11:35 pm by a motion of jr",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Order of Conditions 208-1240 (prior order, 411 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "a previously issued order of conditions 208 -1240 for 411"
+  },
+  {
+   "name": "Lunenburg Wetlands Bylaw and regulations (chapter 239)",
+   "where": "text",
+   "quote": "pursuant to mgl ch 131, s 40 and lunenburg wetlands bylaw and regulations as listed in chapter 239"
+  },
+  {
+   "name": "Plan for fence at 141 Hemlock Dr",
+   "where": "text",
+   "quote": "she noted that they wanted to place a four foot fence that is shown on the plan."
+  },
+  {
+   "name": "Video sent to the commission by Robin Jacobs (379 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "robin jacobs outlined that she had sent a video to the commission"
+  },
+  {
+   "name": "Pictures and narrative submitted by the applicant (379 Townsend Harbor Road)",
+   "where": "text",
+   "quote": "bp reviewed the pictures and narrative"
+  },
+  {
+   "name": "Notification letter (71 Watt St)",
+   "where": "text",
+   "quote": "she noted that the notification letter had the wrong address."
+  },
+  {
+   "name": "As-built submitted (238 Fire Road)",
+   "where": "text",
+   "quote": "mm noted that there was an as built submitted that day"
+  }
+ ],
+ "tags": [
+  "wetlands",
+  "notice of intent",
+  "determinations",
+  "order of conditions",
+  "buffer zone",
+  "tree removal",
+  "stormwater",
+  "continuances",
+  "enforcement",
+  "open space",
+  "earth day",
+  "zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

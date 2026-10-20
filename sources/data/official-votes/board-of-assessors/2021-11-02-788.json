@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-assessors",
  "meeting_date": "2021-11-02",
  "docid": "788",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the October 5, 2021 minutes",
+   "motion": "Approve the October 5, 2021 minutes.",
    "moved_by": "Rich",
    "seconded_by": "Christine",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "rich made a motion to approve the october 5, 2021 minutes. christine seconded the motion. all in favor."
   },
   {
-   "motion": "deny the Chapter Land application (61B) on Page St",
+   "motion": "Deny the Chapter Land (61B) application on Page St.",
    "moved_by": "",
    "seconded_by": "",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "a unanimous vote was made to deny the application."
   },
   {
-   "motion": "approve the Chapter Land application (61A) on Flat Hill Rd",
+   "motion": "Approve the Chapter Land (61A) application on Flat Hill Rd.",
    "moved_by": "Kevin",
    "seconded_by": "",
    "outcome": "passed",
@@ -37,6 +37,174 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1063675
+ "note": "Scanned minutes read by macOS Vision OCR. No vote counts are printed; 'All in favor' and 'unanimous' are recorded as passed without numbers. The adjournment line is garbled and no readable adjournment motion or time was recorded, so none is included. Members are named by first name only in the motions ('Rich', 'Christine', 'Kevin', 'Chris'); the mapping to Richard Letarte, Christine Higdon, Kevin Fish and Chris Kumar is inferred from the attendance line, not stated in the text. Mover of the 61B denial and seconder of the 61A motion are not printed. Approvals of exemptions, vouchers and payroll have no recorded motion and are listed as decisions, not votes. No dollar figures are printed.",
+ "cost_usd": 0.01587868,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard Letarte",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, christine higdon and kevin fish and"
+  },
+  {
+   "name": "Christine Higdon",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, christine higdon and kevin fish and"
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Board Member",
+   "status": "present",
+   "quote": "members present: chairman, richard letarte, board members, christine higdon and kevin fish and"
+  },
+  {
+   "name": "Chris Kumar",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "principal assessor, chris kumar and administrative assessing assistant, sheila craigen"
+  },
+  {
+   "name": "Sheila Craigen",
+   "role": "Administrative Assessing Assistant",
+   "status": "present",
+   "quote": "principal assessor, chris kumar and administrative assessing assistant, sheila craigen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Members agreed and signed off on the necessary paperwork for the Rolling Acres Chapter Land (61B) release, after the 1995 release error was explained (no recorded vote).",
+   "quote": "boa members agreed and signed off on the necessary paperwork."
+  },
+  {
+   "decision": "The BOA approved the exemption applications (2 Clause 37, 2 Clause 17, 12 Clause 22A-F, 2 Clause 22E, 2 Clause 41C) with no motion recorded.",
+   "quote": "ultimately, the boa approved 2 (two clause 37, 2 (two clause 17, 12 (twelve) clause 22a-f, 2 (two) clause 22e and 2 (two clause 41c applications."
+  },
+  {
+   "decision": "The BOA reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments, with no motion recorded.",
+   "quote": "boa reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments."
+  },
+  {
+   "decision": "Chris will send members an electronic copy of the DCR Chapter Land brochure.",
+   "quote": "chris answered questions on the chapter land program and stated she will send members an electronic copy of the brochure from dcr (department of conservation & recreation)."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Expense vouchers, payroll, abatements, warrants and commitments",
+   "what_was_recorded": "The BOA reviewed and approved these money matters; the minutes print no dollar figures.",
+   "figures_as_printed": [],
+   "quote": "boa reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of October 5, 2021 minutes",
+   "resolution": "approved",
+   "quote": "rich made a motion to approve the october 5, 2021 minutes. christine seconded the motion. all in favor.",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Chapter Land (61B) application, Page St",
+   "resolution": "denied unanimously",
+   "quote": "chapter land application (61b) on page st: chris updated the boa (board of assessors) on her",
+   "tags": [
+    "Chapter Land",
+    "61B",
+    "denial"
+   ]
+  },
+  {
+   "topic": "Chapter Land (61A) application, Flat Hill Rd",
+   "resolution": "approved",
+   "quote": "chapter land application (61a) on flat hill rd: chris presented and members reviewed new application",
+   "tags": [
+    "Chapter Land",
+    "61A",
+    "approval"
+   ]
+  },
+  {
+   "topic": "Rolling Acres Chapter Land (61B) sale and release error",
+   "resolution": "members signed paperwork, no vote",
+   "quote": "chris explained she received a call on land (rolling acres) that is currently in the chapter land program (61b).",
+   "tags": [
+    "Chapter Land",
+    "61B",
+    "land sale",
+    "release"
+   ]
+  },
+  {
+   "topic": "Exemption applications",
+   "resolution": "approved (no motion recorded)",
+   "quote": "chris presented and members reviewed exemption applications.",
+   "tags": [
+    "exemptions"
+   ]
+  },
+  {
+   "topic": "Expense vouchers, payroll, abatements, warrants and commitments",
+   "resolution": "approved (no motion recorded)",
+   "quote": "boa reviewed and approved current expense vouchers, payroll, abatements, warrants and commitments.",
+   "tags": [
+    "vouchers",
+    "payroll",
+    "abatements",
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Open discussion: Chapter Land program brochure",
+   "resolution": "no action; brochure to be emailed to members",
+   "quote": "chris answered questions on the chapter land program and stated she will send members an electronic copy of the brochure from dcr (department of conservation & recreation).",
+   "tags": [
+    "Chapter Land",
+    "DCR"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Chapter Land application (61B), Page St",
+   "where": "text",
+   "quote": "chapter land application (61b) on page st: chris updated the boa (board of assessors) on her"
+  },
+  {
+   "name": "Chapter Land application (61A), Flat Hill Rd",
+   "where": "text",
+   "quote": "chapter land application (61a) on flat hill rd: chris presented and members reviewed new application"
+  },
+  {
+   "name": "Exemption Applications",
+   "where": "text",
+   "quote": "chris presented and members reviewed exemption applications."
+  },
+  {
+   "name": "DCR brochure on the Chapter Land program",
+   "where": "text",
+   "quote": "stated she will send members an electronic copy of the brochure from dcr (department of conservation & recreation)."
+  }
+ ],
+ "tags": [
+  "Board of Assessors",
+  "Chapter Land",
+  "61A",
+  "61B",
+  "property tax exemptions",
+  "abatements",
+  "assessing",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

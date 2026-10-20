@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "capital-planning-committee",
  "meeting_date": "2021-10-19",
  "docid": "1298",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of September 14, 2021",
+   "motion": "Approve the minutes of September 14, 2021.",
    "moved_by": "Dave Passios",
    "seconded_by": "Tom Alonzo",
    "outcome": "passed unanimously",
@@ -20,15 +20,297 @@
    "quote": "dave passios made a motion to approve the minutes of september 14, 2021, motion seconded by tom alonzo. passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Dave Passios",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "paula bertram made a motion to adjourn, seconded by dave passios, passed unanimously."
+   "quote": "at 6:16 p.m. paula bertram made a motion to adjourn, seconded by dave passios, passed unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0725595
+ "note": "Extracted text of a three-page set of minutes; the pages are text-readable. Only two votes are printed (approval of the September 14, 2021 minutes and adjournment), both passed unanimously with no roll call. The 'Consensus' and schedule items are recorded as direction without a vote. Several future-year rows have no cost printed. Minutes are signed 'Respectfully submitted: Paula Bertram'. No documents heading is printed. The 'New Projects' tables are listed as documents_and_exhibits with where 'text' because the minutes do not set them out as a documents-used list.",
+ "cost_usd": 0.0168931,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brian Lehtinen",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "the capital planning committee met in the ritter building as scheduled with the following members present: tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "member",
+   "status": "present",
+   "quote": "the capital planning committee met in the ritter building as scheduled with the following members present: tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member",
+   "status": "present",
+   "quote": "the capital planning committee met in the ritter building as scheduled with the following members present: tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "George Martin",
+   "role": "member",
+   "status": "present",
+   "quote": "the capital planning committee met in the ritter building as scheduled with the following members present: tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member",
+   "status": "present",
+   "quote": "the capital planning committee met in the ritter building as scheduled with the following members present: tom alonzo, dave passios, george martin, paula bertram and brian lehtinen."
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "town manager heather lemieux was also in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "By consensus, the Committee will hear from various departments first and then schedule site visits in early December.",
+   "quote": "consensus was to hear from various departments and then schedule site visits in early december."
+  },
+  {
+   "decision": "The Committee will meet with departments from the end of October to the beginning of December, review all requests in mid-December, and aim to finalize its recommendation by mid-January; the Town Manager will give the recommendation to the Select Board in late January.",
+   "quote": "committee will meet with departments between end of october to the beginning of december."
+  },
+  {
+   "decision": "The Committee will meet every Tuesday until November 30, 2021, except November 16 because of Special Town Meeting; the Town Manager will schedule departments.",
+   "quote": "committee will meet every tuesday between now and november 30, 2021 (except november 16th, due to special town meeting)."
+  },
+  {
+   "decision": "The Town Manager will review and finalize the capital request documents with departments.",
+   "quote": "town manager will review and finalize the documents"
+  },
+  {
+   "decision": "Additional FY23 capital applications will not be accepted after the deadline unless there is an emergency.",
+   "quote": "unless there is an emergency, additional applications will not be accepted."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Available funding and free cash",
+   "what_was_recorded": "The Town Manager said capital funding comes from the operating budget, the special purpose stabilization fund and certified free cash, and that free cash has been certified at 2.6 million.",
+   "figures_as_printed": [
+    "2.6 million"
+   ],
+   "quote": "the budget process has not yet begun, free cash has been certified at 2.6 million."
+  },
+  {
+   "topic": "IT consultant",
+   "what_was_recorded": "An IT consultant engaged to assess Town technology needs was funded through the operating budget; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "cost of the consultant was funded through the operating budget."
+  },
+  {
+   "topic": "Planning Master Plan",
+   "what_was_recorded": "No bids were received for two chapters of the master plan; the Planning project's estimated cost is 110,000, and putting the whole project out to bid is estimated to total $153,000 using funds left in a prior capital item.",
+   "figures_as_printed": [
+    "110,000",
+    "$153,000"
+   ],
+   "quote": "total cost is estimated at $153,000, funds remaining in prior capital item will be utilized."
+  },
+  {
+   "topic": "Records Retention Project",
+   "what_was_recorded": "New FY23 Town Manager project with an estimated cost of 40,000.",
+   "figures_as_printed": [
+    "40,000"
+   ],
+   "quote": "town manager records retention project 40,000"
+  },
+  {
+   "topic": "Senior Center ADA Patio",
+   "what_was_recorded": "New FY23 Town Facilities project with an estimated cost of 100,000.",
+   "figures_as_printed": [
+    "100,000"
+   ],
+   "quote": "senior center ada patio 100,000"
+  },
+  {
+   "topic": "Police K-9 and police vehicle",
+   "what_was_recorded": "New FY23 Police projects: a K-9 at 24,250 (the K-9 is retiring) and a marked new police vehicle at 67,805.",
+   "figures_as_printed": [
+    "24,250",
+    "67,805"
+   ],
+   "quote": "police k-9 24,250 k-9 jerry is retiring"
+  },
+  {
+   "topic": "Police vehicle",
+   "what_was_recorded": "New FY23 Police project for a marked new police vehicle at 67,805.",
+   "figures_as_printed": [
+    "67,805"
+   ],
+   "quote": "police police vehicle, marked new 67,805"
+  },
+  {
+   "topic": "PSB drainage and pavement repair (future year)",
+   "what_was_recorded": "Future-year Town Facilities project to repair drainage and pavement at the rear of the PSB building, estimated at 150,000 for FY2024.",
+   "figures_as_printed": [
+    "150,000"
+   ],
+   "quote": "psb repair drainage &pavement rear of building 150,000 fy2024"
+  },
+  {
+   "topic": "Northfield Road culvert",
+   "what_was_recorded": "Future-year Highway projects: Northfield Road culvert survey, design and permitting at 90,000 for FY2025, and culvert construction at 750,000 for FY2026.",
+   "figures_as_printed": [
+    "90,000",
+    "750,000"
+   ],
+   "quote": "northfield road culvert construction 750,000 fy2026"
+  },
+  {
+   "topic": "Flat Hill Road culvert",
+   "what_was_recorded": "The Flat Hill Road culvert project is on hold because allocated funds are insufficient based on bids received; the Town will apply to the small bridge program. No amount is printed.",
+   "figures_as_printed": [],
+   "quote": "is on hold since the allocated funds are not sufficient for the project (based on the bids received)."
+  },
+  {
+   "topic": "Marshall Park surveying",
+   "what_was_recorded": "A Committee member said an additional $25,000 for surveying Marshall Park should be included in the FY23 Capital Plan.",
+   "figures_as_printed": [
+    "$25,000"
+   ],
+   "quote": "an additional $25,000 for surveying marshall park should be included in the fy23 capital plan"
+  },
+  {
+   "topic": "Squad 3 and Rescue 1 replacement",
+   "what_was_recorded": "The Town Manager said the Special Stabilization fund should have sufficient funds to cover replacing Squad 3 and Rescue 1; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "heather lemieux informed the committee that the special stabilization fund should have sufficient funds to cover the replacement of squad 3 and rescue 1."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Special Stabilization fund for Squad 3 and Rescue 1",
+   "speaker": "Heather Lemieux",
+   "stated_role": "Town Manager",
+   "quote": "heather lemieux informed the committee that the special stabilization fund should have sufficient funds to cover the replacement of squad 3 and rescue 1."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "no action",
+   "quote": "chairman lehtinen called the meeting to order at 5:32.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public comment (committee welcome)",
+   "resolution": "no action",
+   "quote": "the committee welcomed george martin.",
+   "tags": [
+    "welcome"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of September 14, 2021",
+   "resolution": "approved unanimously",
+   "quote": "dave passios made a motion to approve the minutes of september 14, 2021, motion seconded by tom alonzo. passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Review of capital requests submitted by departments",
+   "resolution": "reviewed; new FY23 and future-year projects listed; no action",
+   "quote": "heather lemieux reviewed the projects submitted by departments and explained that new projects have not assigned a cip number yet.",
+   "tags": [
+    "capital requests",
+    "FY23 capital plan",
+    "free cash",
+    "stabilization"
+   ]
+  },
+  {
+   "topic": "Timeline to meet with departments",
+   "resolution": "schedule set",
+   "quote": "committee will meet with departments between end of october to the beginning of december.",
+   "tags": [
+    "schedule",
+    "prioritization"
+   ]
+  },
+  {
+   "topic": "Action and agenda items for next meeting (site visits)",
+   "resolution": "consensus: site visits in early December",
+   "quote": "consensus was to hear from various departments and then schedule site visits in early december.",
+   "tags": [
+    "site visits"
+   ]
+  },
+  {
+   "topic": "Set meeting dates",
+   "resolution": "meetings set every Tuesday to November 30, 2021",
+   "quote": "committee will meet every tuesday between now and november 30, 2021 (except november 16th, due to special town meeting).",
+   "tags": [
+    "meeting schedule",
+    "videoing"
+   ]
+  },
+  {
+   "topic": "Public comment (Squad 3 and Rescue 1 funding)",
+   "resolution": "information given; no action",
+   "quote": "heather lemieux informed the committee that the special stabilization fund should have sufficient funds to cover the replacement of squad 3 and rescue 1.",
+   "tags": [
+    "stabilization",
+    "fire apparatus"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:16 p.m.",
+   "quote": "at 6:16 p.m. paula bertram made a motion to adjourn, seconded by dave passios, passed unanimously.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "New Projects FY23 table (department, project, estimated cost, notes)",
+   "where": "text",
+   "quote": "new projects fy23 department project est. cost notes"
+  },
+  {
+   "name": "New Projects Future Years table (department, project, estimated cost, year)",
+   "where": "text",
+   "quote": "new projects future years: department project estimated cost year"
+  },
+  {
+   "name": "FY23 Capital Plan",
+   "where": "text",
+   "quote": "should be included in the fy23 capital plan"
+  }
+ ],
+ "tags": [
+  "capital planning",
+  "FY23 capital plan",
+  "capital requests",
+  "free cash",
+  "special stabilization fund",
+  "town facilities",
+  "police",
+  "highway",
+  "schools",
+  "culverts",
+  "meeting schedule",
+  "Special Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }
