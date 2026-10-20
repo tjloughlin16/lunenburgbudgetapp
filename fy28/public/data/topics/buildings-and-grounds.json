@@ -1,0 +1,355 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$332,016",
+    "unit": "",
+    "value": 332016.0
+   },
+   "b": {
+    "text": "$652,033",
+    "unit": "",
+    "value": 652033.0
+   }
+  },
+  "literals": [],
+  "text": "Building upkeep’s budget nearly doubled in four years, $332,016 to $652,033, while spending grew about a third. These pages show what it buys, and where the difference sits."
+ },
+ "category": "buildings-and-grounds",
+ "chains": [],
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "300",
+    "4000–4999"
+   ],
+   "text": "General fund department 300, non-salary accounts in DESE functions 4000–4999 except utilities. FY2026 is before its close."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Spent",
+    "texts": [
+     "$348,533",
+     "$391,355",
+     "$515,876",
+     "$476,979"
+    ],
+    "values": [
+     348532.82,
+     391354.62,
+     515875.6,
+     476979.37
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Original budget",
+    "texts": [
+     "$332,016",
+     "$406,910",
+     "$517,358",
+     "$652,033"
+    ],
+    "values": [
+     332016.0,
+     406910.0,
+     517358.0,
+     652033.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Upkeep budget and spending, by year",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "buildings-and-grounds",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "$332,016",
+      "unit": "",
+      "value": 332016.0
+     },
+     "b": {
+      "text": "$652,033",
+      "unit": "",
+      "value": 652033.0
+     },
+     "c": {
+      "text": "$348,533",
+      "unit": "",
+      "value": 348532.82
+     },
+     "d": {
+      "text": "$476,979",
+      "unit": "",
+      "value": 476979.37
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-o0",
+     "h-o1",
+     "h-s0",
+     "h-s1"
+    ],
+    "text": "The budget went from $332,016 to $652,033 in four years; spending from $348,533 to $476,979."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$291,136",
+      "unit": "",
+      "value": 291136.0
+     },
+     "b": {
+      "text": "$389,138",
+      "unit": "",
+      "value": 389138.27
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-rlo",
+     "h-rhi",
+     "h-one"
+    ],
+    "text": "Recurring work costs $291,136 to $389,138 a year; projects come and go on top."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$534,907",
+      "unit": "",
+      "value": 534907.12
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-cap"
+    ],
+    "text": "In FY2026 the same payees were paid $534,907 more from capital funds."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-rlo",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "recurring work, lowest year"
+      },
+      "value": {
+       "text": "$291,136",
+       "unit": "",
+       "value": 291136.0
+      }
+     },
+     {
+      "id": "h-rhi",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "recurring work, highest year"
+      },
+      "value": {
+       "text": "$389,138",
+       "unit": "",
+       "value": 389138.27
+      }
+     },
+     {
+      "id": "h-one",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "one- and two-year payees, FY2025"
+      },
+      "value": {
+       "text": "$129,850",
+       "unit": "",
+       "value": 129850.01
+      }
+     }
+    ],
+    "title": "What it buys"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-o0",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2023",
+         "unit": "fiscal year",
+         "value": 2023
+        }
+       },
+       "literals": [],
+       "text": "original budget, FY2023"
+      },
+      "value": {
+       "text": "$332,016",
+       "unit": "",
+       "value": 332016.0
+      }
+     },
+     {
+      "id": "h-o1",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "original budget, FY2026"
+      },
+      "value": {
+       "text": "$652,033",
+       "unit": "",
+       "value": 652033.0
+      }
+     },
+     {
+      "id": "h-s0",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2023",
+         "unit": "fiscal year",
+         "value": 2023
+        }
+       },
+       "literals": [],
+       "text": "spent, FY2023"
+      },
+      "value": {
+       "text": "$348,533",
+       "unit": "",
+       "value": 348532.82
+      }
+     },
+     {
+      "id": "h-s1",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "spent, FY2026"
+      },
+      "value": {
+       "text": "$476,979",
+       "unit": "",
+       "value": 476979.37
+      }
+     },
+     {
+      "id": "h-left",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "left unspent, FY2026"
+      },
+      "value": {
+       "text": "$195,934",
+       "unit": "",
+       "value": 195934.2
+      }
+     },
+     {
+      "id": "h-cap",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "same payees, capital funds, FY2026"
+      },
+      "value": {
+       "text": "$818,207",
+       "unit": "",
+       "value": 818207.12
+      }
+     }
+    ],
+    "title": "Budget and spending"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/buildings-and-grounds",
+ "shelves": [
+  "buildings-and-grounds"
+ ],
+ "table": null,
+ "title": "Building upkeep"
+}

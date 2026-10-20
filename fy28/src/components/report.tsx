@@ -1106,7 +1106,10 @@ export function Ladder({ l, evidence }: { l: LadderData; evidence?: Record<strin
  * A column from a sheet somebody assembled is set in italic and says so (rule 13a). */
 export type FigureTableView = {
   key: string; label: string; columns: string[]; kinds: ('ledger' | 'stated')[]
-  total_col: number; rows: { label: string; cells: (string | null)[] }[]; note: string
+  total_col: number; note: string
+  /** `marks`: per cell, 1 or -1 where the generator found a change of at least its threshold
+   *  against the cell it compares with (scripts/topic.py, change_marks); drawn as an arrow. */
+  rows: { label: string; cells: (string | null)[]; marks?: (1 | -1 | null)[] }[]
 }
 export type FigureTableData = { caption: string; views: FigureTableView[] }
 
@@ -1166,7 +1169,15 @@ export function FigureTable({ t }: { t: FigureTableData }) {
                         fontWeight: i === v.total_col ? 600 : undefined,
                         fontStyle: stated(i) ? 'italic' : undefined,
                         borderLeft: i === v.total_col || stated(i) ? '1px solid var(--grid)' : undefined,
-                      }}>{c ?? '—'}</td>
+                      }}>
+                      {r.marks?.[i] ? (
+                        <span className="mr-1 text-[11px]" style={{ color: r.marks[i] === 1 ? 'var(--thread-1)' : 'var(--thread-2)' }}
+                          title={r.marks[i] === 1 ? 'Rose by the table’s threshold or more' : 'Fell by the table’s threshold or more'}>
+                          <span aria-hidden>{r.marks[i] === 1 ? '▲' : '▼'}</span>
+                          <span className="sr-only">{r.marks[i] === 1 ? 'rose, ' : 'fell, '}</span>
+                        </span>
+                      ) : null}
+                      {c ?? '—'}</td>
                   ))}
                 </tr>
               )

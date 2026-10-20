@@ -14,6 +14,9 @@ CATEGORY = dict(
         (None, ['fy2026-school-surplus', 'fy2026-surplus-by-category',
                 'fy2026-lines-over-budget', 'fy2026-school-transfers',
                 'fy2026-surplus-and-fy2027', 'fy2025-school-surplus']),
+        # Hub B of notes/plans/MUNIS-JOURNAL-REPORTS.md: the surplus read from the journal.
+        ('Surplus from the journal', ['surplus-bridge', 'surplus-repeat-lines', 'budget-burndown',
+                                      'sped-burndown']),
         ('School lines', ['fy2026-tuition-lines', 'fy2026-paraprofessional-overrun',
                           'fy2026-psychologist-line', 'special-education-transportation',
                           'fy2026-athletics-underspend']),
@@ -21,6 +24,9 @@ CATEGORY = dict(
                        'fy2026-school-retiree-insurance']),
     ])
 GENERATOR = 'build_fy2026_closeout_topics.py'
+TOPIC_GENERATORS = {'surplus-bridge': 'build_journal_surplus_topics.py',
+                    'surplus-repeat-lines': 'build_journal_surplus_topics.py',
+                    'budget-burndown': 'build_journal_surplus_topics.py'}
 TOPICS = {
     'fy2026-school-surplus': 'FY2026 school surplus',
     'fy2026-surplus-by-category': 'Surplus by category',
@@ -34,4 +40,7 @@ TOPICS = {
     'fy2026-town-unspent': 'Town unspent balance',
     'fy2026-snow-and-reserve-fund': 'Snow and Reserve Fund',
     'fy2026-school-retiree-insurance': 'School retiree insurance',
+    'surplus-bridge': 'Surplus, step by step',
+    'surplus-repeat-lines': 'Under budget twice',
+    'budget-burndown': 'Budget burndown',
 }

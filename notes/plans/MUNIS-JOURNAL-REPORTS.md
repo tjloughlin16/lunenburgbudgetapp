@@ -151,6 +151,17 @@ Journal-level topics that belong on shelves that already exist:
 - `health-insurance`: `school-health-postings` (MIIA by fund, invoices vs June reclassifications).
 - `athletics`: `athletics-journal` (the athletics revolving fund, all postings, cross-checked against the fund 1301 cashbook).
 
+### Hub F: Buildings and grounds, every fund. NEW category
+
+TJ, 19 October 2026: where building money goes across every fund, starting with what bears on
+the surplus, then why the surplus years did not spend it. Full plan and the topic list:
+`notes/plans/BUILDINGS-AND-GROUNDS.md`. The first category done across every fund; the shape
+is meant to repeat for the other surplus categories.
+
+**THE READER FOR HUB B AND HUB F IS THE TOWN MANAGER** (`notes/process/PERSONAS.md`, reader 8;
+TJ, 19 October 2026: *"im sending this to the town manager. thats our persona to focus on"*).
+Every figure reconciles to MUNIS by account number, in MUNIS's terms.
+
 ## Cadence: one or two at a time, TJ reviews each
 
 TJ, 19 October 2026: *"we can roll out maybe 1 or 2 reports at a time, ill check, then we
@@ -211,11 +222,17 @@ plus minutes) → `built` → `deployed`.
 | A | sped-contracted-services | not started | | |
 | A | sped-transportation-journal | not started | | |
 | A | out-of-district-providers | not started | | |
-| B | surplus-bridge | not started | | method: SCHOOL-SURPLUS-BRIDGE.md |
-| B | surplus-repeat-lines | not started | | |
+| B | surplus-bridge | verified | | `build_journal_surplus_topics.py`; `verify_journal_surplus_topics.py` (period-13 sheets + raw journal); new `bridge` chart type in topic.py/TopicCharts.tsx; persona/minutes review and TJ next |
+| B | surplus-repeat-lines | verified | | same generator and verifier; categories are build_school_surplus.category_of |
 | B | surplus-payroll | not started | | needs payroll grain |
 | B | open-purchase-orders | not started | | settle the $10,000 |
 | B | year-end-close | not started | | |
+| F | buildings-and-grounds (hub) | verified | | `build_buildings_topics.py`; `verify_buildings_topics.py` (period-13 sheets, raw journal, the book's text) |
+| F | upkeep-budget-vs-spending | verified | | the conclusion with its proof; the book against the ledger; grounds lines held the other way round |
+| F | upkeep-surplus-every-dollar | verified | | FY2026, every dollar: budget, carry-in, each transfer with its memo, every payee (77 rows across 3 views), open orders, left; foots to the cent or refuses |
+| F | contracted-building-services | verified | | one account, four years: two overruns, the 13 Feb 2025 Reserve Fund cabling (minutes quoted), FY2026 left $75,660; same generator and verifier |
+| F | upkeep-spending | verified | | by type of work, OUR grouping in sources/data/building-payee-trades.csv (TJ to check); NOT YET CATALOGUED in build_source_index.py (shared file, others' edits) |
+| F | how the budget is set / upkeep over the year / who does the work / building money from every fund / questions for the budget | not started | | the scaffolded set, TJ 20 Oct |
 | C | school-vendors | not started | | |
 | C | vendor-concentration | not started | | |
 | C | vendor-changes | not started | | |

@@ -154,7 +154,8 @@
      "title": "Who is paid, and from where",
      "topics": [
       "sped-all-funds",
-      "sped-providers"
+      "sped-providers",
+      "sped-burndown"
      ]
     }
    ],
@@ -635,6 +636,39 @@
    "title": "School spending history"
   },
   {
+   "answer": "Building upkeep’s budget nearly doubled in four years, $332,016 to $652,033, while spending grew about a third. These pages show what it buys, and where the difference sits.",
+   "area": "school",
+   "elsewhere": [],
+   "groups": [
+    {
+     "title": null,
+     "topics": [
+      "upkeep-spending",
+      "upkeep-budget-vs-spending",
+      "upkeep-surplus-every-dollar",
+      "upkeep-skipped"
+     ]
+    },
+    {
+     "title": "Account by account",
+     "topics": [
+      "contracted-building-services"
+     ]
+    }
+   ],
+   "id": "buildings-and-grounds",
+   "minutes": 1,
+   "order": 27,
+   "path": "/buildings-and-grounds",
+   "ready": true,
+   "shelf": "Buildings and grounds",
+   "start": [
+    "upkeep-surplus-every-dollar",
+    "upkeep-budget-vs-spending"
+   ],
+   "title": "Building upkeep"
+  },
+  {
    "answer": "The state certified $3,354,370 of free cash as of 1 July 2025, the most the Town’s records list; 66.1% of the free cash identified that year was money appropriated and not spent.",
    "area": "town",
    "elsewhere": [
@@ -729,6 +763,15 @@
       "fy2026-school-transfers",
       "fy2026-surplus-and-fy2027",
       "fy2025-school-surplus"
+     ]
+    },
+    {
+     "title": "Surplus from the journal",
+     "topics": [
+      "surplus-bridge",
+      "surplus-repeat-lines",
+      "budget-burndown",
+      "sped-burndown"
      ]
     },
     {
@@ -1464,6 +1507,19 @@
    ],
    "title": "Seats changing hands"
   },
+  "budget-burndown": {
+   "finding": "By the end of March FY2026 had 40.2% of its budget left, against 33.0% and 32.6% in FY2023 and FY2024.",
+   "generator": "scripts/build_journal_surplus_topics.py",
+   "home": "fy2026-closeout",
+   "id": "budget-burndown",
+   "minutes": 2,
+   "path": "/fy2026-closeout/budget-burndown",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Budget burndown"
+  },
   "bus-cost-by-sport": {
    "finding": "Track costs most on the district’s sheet: $13,864 in FY2024, ahead of the next sport’s $9,078.",
    "generator": "scripts/build_transportation.py",
@@ -1678,6 +1734,19 @@
     "school-programs"
    ],
    "title": "Computer science"
+  },
+  "contracted-building-services": {
+   "finding": "Third-party building services left $75,660 in FY2026, after two years of spending past the budget.",
+   "generator": "scripts/build_buildings_topics.py",
+   "home": "buildings-and-grounds",
+   "id": "contracted-building-services",
+   "minutes": 2,
+   "path": "/buildings-and-grounds/contracted-building-services",
+   "ready": true,
+   "shelves": [
+    "buildings-and-grounds"
+   ],
+   "title": "Contracted building services"
   },
   "cost-and-revenue-growth": {
    "finding": "Keeping today’s schools costs 5.18% more each year; revenue grows 3.22% a year in FY2028, then less.",
@@ -3481,6 +3550,20 @@
    ],
    "title": "Special education, all funds"
   },
+  "sped-burndown": {
+   "finding": "In FY2026 the circuit breaker paid $4,005 from July to May, then $333,495 in one June entry.",
+   "generator": "scripts/build_journal_surplus_topics.py",
+   "home": "special-education",
+   "id": "sped-burndown",
+   "minutes": 2,
+   "path": "/special-education/sped-burndown",
+   "ready": true,
+   "shelves": [
+    "special-education",
+    "fy2026-closeout"
+   ],
+   "title": "Special education burndown"
+  },
   "sped-providers": {
    "finding": "Three payees took 66.2% of special education vendor payments; Keystone was paid 4.4 times as much by FY2026.",
    "generator": "scripts/build_journal_sped_topics.py",
@@ -3666,6 +3749,32 @@
     "enrolment"
    ],
    "title": "Students with an IEP"
+  },
+  "surplus-bridge": {
+   "finding": "FY2026’s leftover is $482,118 to $718,885, depending on $236,767 of purchase orders still open.",
+   "generator": "scripts/build_journal_surplus_topics.py",
+   "home": "fy2026-closeout",
+   "id": "surplus-bridge",
+   "minutes": 2,
+   "path": "/fy2026-closeout/surplus-bridge",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Surplus, step by step"
+  },
+  "surplus-repeat-lines": {
+   "finding": "6 budget areas came in under every year from FY2023 to FY2026; 11 of 18 did in both FY2025 and FY2026.",
+   "generator": "scripts/build_journal_surplus_topics.py",
+   "home": "fy2026-closeout",
+   "id": "surplus-repeat-lines",
+   "minutes": 2,
+   "path": "/fy2026-closeout/surplus-repeat-lines",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Under budget twice"
   },
   "tax-bill-neighbours": {
    "finding": "At $7,444, the average bill is 6th of 11 nearby towns and 145 of 351 statewide.",
@@ -4065,6 +4174,58 @@
     "budget-options"
    ],
    "title": "Unpriced school charges"
+  },
+  "upkeep-budget-vs-spending": {
+   "finding": "Building upkeep’s budget rose 96% from FY2023 to FY2026; what it spent rose 37%.",
+   "generator": "scripts/build_buildings_topics.py",
+   "home": "buildings-and-grounds",
+   "id": "upkeep-budget-vs-spending",
+   "minutes": 2,
+   "path": "/buildings-and-grounds/upkeep-budget-vs-spending",
+   "ready": true,
+   "shelves": [
+    "buildings-and-grounds"
+   ],
+   "title": "Upkeep budget and spending"
+  },
+  "upkeep-skipped": {
+   "finding": "10 payees the schools used every year were paid under half as usual in FY2026; 5 got nothing.",
+   "generator": "scripts/build_buildings_topics.py",
+   "home": "buildings-and-grounds",
+   "id": "upkeep-skipped",
+   "minutes": 2,
+   "path": "/buildings-and-grounds/upkeep-skipped",
+   "ready": true,
+   "shelves": [
+    "buildings-and-grounds"
+   ],
+   "title": "Usual purchases skipped"
+  },
+  "upkeep-spending": {
+   "finding": "Most of building upkeep is steady work: $291,136 to $389,138 a year to payees paid year after year.",
+   "generator": "scripts/build_buildings_topics.py",
+   "home": "buildings-and-grounds",
+   "id": "upkeep-spending",
+   "minutes": 2,
+   "path": "/buildings-and-grounds/upkeep-spending",
+   "ready": true,
+   "shelves": [
+    "buildings-and-grounds"
+   ],
+   "title": "What upkeep buys"
+  },
+  "upkeep-surplus-every-dollar": {
+   "finding": "Building upkeep left $195,934 in FY2026: $75,660 on one account, the rest on 13 others.",
+   "generator": "scripts/build_buildings_topics.py",
+   "home": "buildings-and-grounds",
+   "id": "upkeep-surplus-every-dollar",
+   "minutes": 2,
+   "path": "/buildings-and-grounds/upkeep-surplus-every-dollar",
+   "ready": true,
+   "shelves": [
+    "buildings-and-grounds"
+   ],
+   "title": "Upkeep surplus, every dollar"
   },
   "what-per-pupil-counts": {
    "finding": "Three official measures of school spending count different things; neither state one counts capital.",

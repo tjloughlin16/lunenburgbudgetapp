@@ -48,6 +48,10 @@ some defining chart OR image if the data doesnt represent well by a chart."
   parts    shares of ONE whole, as a single bar split into its parts -- "9 of 16 boards".
            Never a pie. Two to six parts, all positive, and they must BE the whole: the
            helper does not invent a remainder.
+  bridge   a WATERFALL: one total stepped to another in signed, labelled pieces, drawn in
+           the order given -- last year's surplus, plus the budget's rise, less each kind
+           of spending's, to this year's. The helper refuses pieces that do not add up to
+           the end: a bridge with a remainder is not a bridge.
   image    for a topic the numbers do not draw well -- a crop of the source page, a diagram.
            src is an address the site serves (fy28/public, or /docs/<key> in the archive
            manifest); alt and caption are required.
@@ -158,6 +162,12 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     if table and any(len(v['rows']) > TABLE_ROWS_MAX for v in table['views']):
         bad.append('%s: a table runs past %d rows -- split it by period or by group'
                    % (id, TABLE_ROWS_MAX))
+    for v in (table or {}).get('views', []):
+        for r in v['rows']:
+            m = r.get('marks')
+            if m is not None and (len(m) != len(r['cells']) or any(x not in (1, -1, None) for x in m)):
+                bad.append('%s: table %r row %r: marks must be 1, -1 or None, one per cell -- '
+                           'build them with change_marks()' % (id, v['key'], r['label']))
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
     extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
@@ -187,7 +197,8 @@ def conclusion(text, rests_on, figures=None, allow=(), notes=()):
 # hub(), so a dict built by hand passes the same gate or none.
 
 CHART_REQUIRED = True     # every topic and hub carries one -- TJ, 13 October 2026
-CHART_TYPES = ('series', 'ranking', 'parts', 'image')
+CHART_TYPES = ('series', 'ranking', 'parts', 'bridge', 'image')
+BRIDGE_STEPS = (2, 10)
 BASES = ('published', 'stated', 'estimate')
 MARKS = ('line', 'bar')
 CHART_TITLE_WORDS = (2, 8)
@@ -200,7 +211,7 @@ PANELS_MAX = 16           # small multiples: each panel is LABELLED, so a colour
 POINTS_MAX = 40
 ROWS_MAX = 20             # a ranking past twenty is a table. Was 15; raised 14 Oct 2026 so the
                           # 18 Monty Tech member towns can be ranked with Lunenburg highlighted
-PARTS = (2, 6)
+PARTS = (2, 8)            # past five parts the palette runs out: `highlight` is then required
 LABEL_MAX = 48
 _ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 _PUBLIC = os.path.join(_ROOT, 'fy28', 'public')
@@ -313,12 +324,45 @@ def ranking(title, rows, unit, highlight=(), basis='published', stack=None, note
 
 
 def parts(title, items, unit, basis='published', note=None, note_figures=None, note_allow=(),
-          decimals=None):
+          decimals=None, highlight=None):
     """Shares of ONE whole, drawn as a single split bar. items: [(label, value)], in the
-    order to draw them. The parts must BE the whole; nothing here adds a remainder."""
+    order to draw them. The parts must BE the whole; nothing here adds a remainder.
+    `highlight`: the one part the page is about -- drawn in colour, every other part in a
+    neutral shade, so the eye lands on it (TJ, 20 October 2026: what was LEFT, as a slice).
+    Written only when set, so no existing chart's payload changes."""
+    extra = {'highlight': highlight} if highlight is not None else {}
     return _checked(dict(type='parts', title=' '.join(title.split()), unit=unit, basis=basis,
                          parts=[dict(label=l, value=v) for l, v in items],
-                         decimals=decimals, note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note')))
+                         decimals=decimals, note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note'),
+                         **extra))
+
+
+def bridge(title, start, steps, end, unit, basis='published', note=None, note_figures=None,
+           note_allow=(), decimals=None):
+    """A waterfall. start and end: (label, total); steps: [(label, signed change)], drawn in
+    the order given. The steps must carry start to end to the cent."""
+    return _checked(dict(type='bridge', title=' '.join(title.split()), unit=unit, basis=basis,
+                         start=dict(label=start[0], value=start[1]),
+                         steps=[dict(label=l, value=v) for l, v in steps],
+                         end=dict(label=end[0], value=end[1]), decimals=decimals,
+                         note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note')))
+
+
+def change_marks(values, pairs, threshold):
+    """MARKS FOR A TABLE ROW: which cells moved by at least `threshold` against the cell they are
+    compared with. values: the row's numbers, in column order (None where there is none);
+    pairs: [(column, compared_with)], e.g. [(1, 0), (2, 1), (3, 2)] for consecutive years.
+    Returns one entry per column: 1 (rose), -1 (fell) or None. The generator decides; the
+    table only draws a mark beside the cell (TJ, 20 October 2026: an icon "for when the diff
+    between years is 10k or above (positive OR negative)")."""
+    out = [None] * len(values)
+    for i, j in pairs:
+        a, b = values[i], values[j]
+        if a is None or b is None:
+            continue
+        if abs(a - b) >= threshold:
+            out[i] = 1 if a > b else -1
+    return out
 
 
 def image(src, alt, caption, caption_figures=None, caption_allow=()):
@@ -385,6 +429,17 @@ def _texts(c):
         return dict(total=fmt(u, whole, d), parts=[
             dict(p, text=fmt(u, p['value'], d), share=_C.pct(100.0 * p['value'] / whole, 0))
             for p in c['parts']])
+    if t == 'bridge':
+        signed = lambda v: ('+' if v >= 0 else '-') + fmt(u, abs(v), d)
+        # `after`: the running total once the step is taken -- the number a floating bar's
+        # POSITION encodes, printed so nobody has to read it off the axis (TJ, 20 October
+        # 2026: "lets try to make this more clear how to read it").
+        run, steps = c['start']['value'], []
+        for x in c['steps']:
+            run += x['value']
+            steps.append(dict(x, text=signed(x['value']), after=fmt(u, round(run, 2), d)))
+        return dict(start=dict(c['start'], text=fmt(u, c['start']['value'], d)),
+                    end=dict(c['end'], text=fmt(u, c['end']['value'], d)), steps=steps)
     return {}
 
 
@@ -487,9 +542,30 @@ def _inline_bad(c, where, texts=True):
             bad += _label_bad(p['label'], where, 'part label')
             if not (_isnum(p['value']) and p['value'] > 0):
                 bad.append('%s part %r: a part is a positive number' % (where, p['label']))
+        if c.get('highlight') is not None and c['highlight'] not in {p['label'] for p in ps}:
+            bad.append('%s: highlight %r is not a part' % (where, c['highlight']))
+        if len(ps) > 5 and c.get('highlight') is None:
+            bad.append('%s: %d parts and five colours -- name the part the page is about with '
+                       'highlight=' % (where, len(ps)))
         if c['unit'] == '%':
             bad.append('%s: parts takes the amounts, not percents -- the shares are drawn from '
                        'them' % where)
+    elif t == 'bridge':
+        st = c['steps']
+        bad += basis(c['basis'], where)
+        if not BRIDGE_STEPS[0] <= len(st) <= BRIDGE_STEPS[1]:
+            bad.append('%s: %d steps; a bridge takes %d to %d' % ((where, len(st)) + BRIDGE_STEPS))
+        ends = [c['start'], c['end']]
+        for x in ends + st:
+            bad += _label_bad(x['label'], where, 'step label')
+            if not _isnum(x['value']):
+                bad.append('%s step %r: not a number' % (where, x['label']))
+        if len({x['label'] for x in ends + st}) != len(st) + 2:
+            bad.append('%s: two steps share a label' % where)
+        if not bad and abs(c['start']['value'] + sum(x['value'] for x in st)
+                           - c['end']['value']) > 0.005:
+            bad.append('%s: the steps do not carry %r to %r -- a bridge has no remainder'
+                       % (where, c['start']['label'], c['end']['label']))
     return bad
 
 
@@ -504,7 +580,7 @@ def check_chart(chart, where, required=False):
         return _inline_bad(chart, '%s chart' % where)
     if set(chart) == {'id', 'source'}:
         return []
-    return ['%s: chart is neither {id, source} nor built by series/ranking/parts/image' % where]
+    return ['%s: chart is neither {id, source} nor built by series/ranking/parts/bridge/image' % where]
 
 
 def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=None,

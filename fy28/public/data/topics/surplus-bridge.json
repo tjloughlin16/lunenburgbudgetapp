@@ -1,0 +1,1005 @@
+{
+ "category": "fy2026-closeout",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "end": {
+   "label": "Left unspent, FY2026",
+   "text": "$482,118",
+   "value": 482118.07
+  },
+  "note": {
+   "figures": {
+    "d": {
+     "text": "300",
+     "unit": "department",
+     "value": 300
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "Each step is the change from FY2025 to FY2026 and its effect on what was left. School general fund, department 300."
+  },
+  "start": {
+   "label": "Left unspent, FY2025",
+   "text": "$627,117",
+   "value": 627116.86
+  },
+  "steps": [
+   {
+    "after": "$1,570,517",
+    "label": "Original appropriation",
+    "text": "+$943,400",
+    "value": 943400.0
+   },
+   {
+    "after": "$1,458,618",
+    "label": "Encumbrances carried forward",
+    "text": "-$111,899",
+    "value": -111899.21
+   },
+   {
+    "after": "$1,778,110",
+    "label": "Other transfers and adjustments",
+    "text": "+$319,492",
+    "value": 319491.89
+   },
+   {
+    "after": "$1,031,433",
+    "label": "Payroll",
+    "text": "-$746,676",
+    "value": -746676.15
+   },
+   {
+    "after": "$759,302",
+    "label": "Vendor invoices",
+    "text": "-$272,132",
+    "value": -272131.53
+   },
+   {
+    "after": "$708,619",
+    "label": "Journal entries",
+    "text": "-$50,683",
+    "value": -50683.11
+   },
+   {
+    "after": "$718,885",
+    "label": "Cash receipts credited",
+    "text": "+$10,266",
+    "value": 10266.26
+   },
+   {
+    "after": "$482,118",
+    "label": "Open encumbrances",
+    "text": "-$236,767",
+    "value": -236766.94
+   }
+  ],
+  "title": "From one year’s surplus to the next",
+  "type": "bridge",
+  "unit": "$"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$718,885",
+     "unit": "",
+     "value": 718885.01
+    },
+    "b": {
+     "text": "$627,117",
+     "unit": "",
+     "value": 627116.86
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$1,150,993",
+       "unit": "",
+       "value": 1150992.68
+      },
+      "b": {
+       "text": "$1,059,225",
+       "unit": "",
+       "value": 1059224.53
+      },
+      "c": {
+       "text": "$236,767",
+       "unit": "",
+       "value": 236766.94
+      },
+      "s": {
+       "text": "$627,117",
+       "unit": "",
+       "value": 627116.86
+      },
+      "t": {
+       "text": "$482,118",
+       "unit": "",
+       "value": 482118.07
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "$627,117, plus $1,150,993 more budget, less $1,059,225 more spent and $236,767 in open orders, is $482,118."
+    },
+    {
+     "closes": "the Town’s journal report for FY2026, run after the year is closed",
+     "figures": {
+      "a": {
+       "text": "$482,118",
+       "unit": "",
+       "value": 482118.07
+      },
+      "b": {
+       "text": "$718,885",
+       "unit": "",
+       "value": 718885.01
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "FY2026 is not closed: every open order paid leaves $482,118; any released adds back, up to $718,885."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$17,862",
+       "unit": "",
+       "value": 17861.67
+      },
+      "b": {
+       "text": "$464,256",
+       "unit": "",
+       "value": 464256.4
+      }
+     },
+     "kind": "measured",
+     "literals": [
+      "300",
+      "301",
+      "13"
+     ],
+     "text": "Scope: department 300, as in the period-13 report. Department 301 (curriculum adoption) ran $17,862 over; with it, $464,256."
+    }
+   ],
+   "rests_on": [
+    "s0",
+    "s1",
+    "db",
+    "ds",
+    "open",
+    "max"
+   ],
+   "text": "Before open orders, FY2026 left $718,885, more than FY2025’s $627,117: the budget grew more than spending."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$746,676",
+     "unit": "",
+     "value": 746676.15
+    },
+    "b": {
+     "text": "$272,132",
+     "unit": "",
+     "value": 272131.53
+    },
+    "c": {
+     "text": "$50,683",
+     "unit": "",
+     "value": 50683.11
+    },
+    "p": {
+     "text": "4.9%",
+     "unit": "",
+     "value": 4.914855288051177
+    },
+    "q": {
+     "text": "3.6%",
+     "unit": "",
+     "value": 3.5630048051929077
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s position control list, with FTE and funding source by year",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Payroll lines are per account per pay run, never per person: dollars here are not staff."
+    }
+   ],
+   "rests_on": [
+    "pay",
+    "inv",
+    "je"
+   ],
+   "text": "Payroll rose $746,676, 4.9%; vendor invoices $272,132, 3.6%; journal entries $50,683."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "-$306,573",
+     "unit": "",
+     "value": -306573.35
+    },
+    "b": {
+     "text": "$12,919",
+     "unit": "",
+     "value": 12918.54
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "cite": {
+      "href": "/docs/district-budget/docs/3-12-25-town-manager-39-s-budget.pdf",
+      "label": "LPS budget book, 12 March 2025, 9400 Collaborative Tuitions"
+     },
+     "figures": {
+      "a": {
+       "text": "$452,580",
+       "unit": "",
+       "value": 452580.0
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "measured",
+     "literals": [
+      "1 July 2024",
+      "FY25"
+     ],
+     "text": "$452,580 of FY2025’s is one line on collaborative tuitions, 1 July 2024 (ADJ FY25 BUDGET). The district’s budget book prints that figure there as the circuit breaker offset."
+    },
+    {
+     "closes": "the backup for journal 2025/01/000564",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "2025/01/000564"
+     ],
+     "text": "The journal entry itself does not name the circuit breaker."
+    }
+   ],
+   "rests_on": [
+    "tr0",
+    "tr1",
+    "adj"
+   ],
+   "text": "Transfers and adjustments, beyond carried-forward encumbrances: -$306,573 in FY2025, $12,919 in FY2026."
+  },
+  {
+   "figures": {
+    "c0": {
+     "text": "$74,805",
+     "unit": "",
+     "value": 74804.71
+    },
+    "c1": {
+     "text": "$184,071",
+     "unit": "",
+     "value": 184070.91
+    },
+    "c2": {
+     "text": "$72,172",
+     "unit": "",
+     "value": 72171.7
+    },
+    "o": {
+     "text": "$236,767",
+     "unit": "",
+     "value": 236766.94
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "o": {
+       "text": "$236,767",
+       "unit": "",
+       "value": 236766.94
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Each closed year’s encumbrances came back the next July as budget, to the cent; the FY2026 close decides how much of the $236,767 does."
+    }
+   ],
+   "rests_on": [
+    "open"
+   ],
+   "text": "Encumbrances carried out of each closed year: $74,805, $184,071, $72,172. FY2026 has $236,767 open."
+  }
+ ],
+ "facts": [
+  {
+   "id": "s0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "left unspent, FY2025"
+   },
+   "value": {
+    "text": "$627,117",
+    "unit": "",
+    "value": 627116.86
+   }
+  },
+  {
+   "id": "s1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "left unspent, FY2026, before the close"
+   },
+   "value": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   }
+  },
+  {
+   "id": "db",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "more budget in FY2026 than in FY2025"
+   },
+   "value": {
+    "text": "$1,150,993",
+    "unit": "",
+    "value": 1150992.68
+   }
+  },
+  {
+   "id": "ds",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "more spent in FY2026 than in FY2025"
+   },
+   "value": {
+    "text": "$1,059,225",
+    "unit": "",
+    "value": 1059224.53
+   }
+  },
+  {
+   "id": "open",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "open encumbrances, FY2026"
+   },
+   "value": {
+    "text": "$236,767",
+    "unit": "",
+    "value": 236766.94
+   }
+  },
+  {
+   "id": "pay",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more through payroll"
+   },
+   "value": {
+    "text": "$746,676",
+    "unit": "",
+    "value": 746676.15
+   }
+  },
+  {
+   "id": "inv",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more through vendor invoices"
+   },
+   "value": {
+    "text": "$272,132",
+    "unit": "",
+    "value": 272131.53
+   }
+  },
+  {
+   "id": "je",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "more through journal entries"
+   },
+   "value": {
+    "text": "$50,683",
+    "unit": "",
+    "value": 50683.11
+   }
+  },
+  {
+   "id": "adj",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1 July 2024"
+    ],
+    "text": "off collaborative tuitions, 1 July 2024"
+   },
+   "value": {
+    "text": "$452,580",
+    "unit": "",
+    "value": 452580.0
+   }
+  },
+  {
+   "id": "tr0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "transfers and adjustments, FY2025"
+   },
+   "value": {
+    "text": "-$306,573",
+    "unit": "",
+    "value": -306573.35
+   }
+  },
+  {
+   "id": "tr1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "transfers and adjustments, FY2026"
+   },
+   "value": {
+    "text": "$12,919",
+    "unit": "",
+    "value": 12918.54
+   }
+  },
+  {
+   "id": "max",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "left before open orders, FY2026"
+   },
+   "value": {
+    "text": "$718,885",
+    "unit": "",
+    "value": 718885.01
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   },
+   "b": {
+    "text": "$718,885",
+    "unit": "",
+    "value": 718885.01
+   },
+   "o": {
+    "text": "$236,767",
+    "unit": "",
+    "value": 236766.94
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "FY2026’s leftover is $482,118 to $718,885, depending on $236,767 of purchase orders still open."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "surplus-bridge",
+ "kind": "topic",
+ "not_established": [
+  "Why any line came in under or over: the journal records postings, not reasons.",
+  "How much of the FY2026 orders still open will be paid, carried or cancelled.",
+  "Whether any cost moved to a grant or revolving fund; the next topics follow that.",
+  "Whether the FY2025 reduction on collaborative tuitions is the circuit breaker offset the budget book prints: the amount and account match; the entry does not say."
+ ],
+ "path": "/fy2026-closeout/surplus-bridge",
+ "said": [],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  }
+ ],
+ "table": {
+  "caption": "The surplus, FY2025 to FY2026",
+  "views": [
+   {
+    "columns": [
+     "Left, FY2025",
+     "Budget",
+     "Payroll",
+     "Vendor invoices",
+     "Journal entries",
+     "Encumbered",
+     "Left, FY2026"
+    ],
+    "key": "categories",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By category",
+    "note": "Each middle column is that piece’s effect on what was left; negative is spending that rose or budget that fell. Journal entries move spending between lines after it is paid, so a row’s payroll and journal entries can run opposite ways.",
+    "rows": [
+     {
+      "cells": [
+       "$2,695",
+       "$34,400",
+       "$124,963",
+       "$0",
+       "$29,105",
+       "$0",
+       "$191,162"
+      ],
+      "label": "Counselors & psychologists"
+     },
+     {
+      "cells": [
+       "$11,529",
+       "$157,467",
+       "-$519,333",
+       "$0",
+       "$518,329",
+       "$0",
+       "$167,992"
+      ],
+      "label": "Teachers & substitutes"
+     },
+     {
+      "cells": [
+       "$50,175",
+       "$124,932",
+       "$0",
+       "$47,597",
+       "-$8,701",
+       "-$18,070",
+       "$195,934"
+      ],
+      "label": "Building & grounds upkeep"
+     },
+     {
+      "cells": [
+       "$5,629",
+       "$476,514",
+       "$0",
+       "$835,414",
+       "-$1,210,554",
+       "$0",
+       "$107,003"
+      ],
+      "label": "Health insurance & benefits"
+     },
+     {
+      "cells": [
+       "$29,946",
+       "$529,049",
+       "$0",
+       "-$745,260",
+       "$333,495",
+       "-$58,708",
+       "$88,522"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$3,177",
+       "-$47,839",
+       "-$100,424",
+       "-$7,973",
+       "$186,078",
+       "$0",
+       "$33,020"
+      ],
+      "label": "Coaches & activity advisors"
+     },
+     {
+      "cells": [
+       "$2,514",
+       "$6,436",
+       "$0",
+       "$15,092",
+       "-$1,725",
+       "-$8,288",
+       "$14,030"
+      ],
+      "label": "Legal services"
+     },
+     {
+      "cells": [
+       "$11,673",
+       "$6,672",
+       "$0",
+       "-$39,006",
+       "$63,070",
+       "-$23,524",
+       "$18,885"
+      ],
+      "label": "Athletics & activities expenses"
+     },
+     {
+      "cells": [
+       "$9,502",
+       "-$115,931",
+       "-$25,920",
+       "$0",
+       "$136,435",
+       "$0",
+       "$4,087"
+      ],
+      "label": "Administrators & office staff"
+     },
+     {
+      "cells": [
+       "$2,015",
+       "$31,186",
+       "-$44,388",
+       "$0",
+       "$3,867",
+       "$0",
+       "-$7,321"
+      ],
+      "label": "Nurses & other staff"
+     },
+     {
+      "cells": [
+       "$2,075",
+       "$6,800",
+       "$0",
+       "-$21,036",
+       "$4,223",
+       "-$475",
+       "-$8,413"
+      ],
+      "label": "Professional development"
+     },
+     {
+      "cells": [
+       "$108,930",
+       "-$82,438",
+       "-$1,250",
+       "$50,860",
+       "$9,546",
+       "-$13,787",
+       "$71,861"
+      ],
+      "label": "Supplies, services & everything else"
+     },
+     {
+      "cells": [
+       "$64,748",
+       "-$104,503",
+       "$0",
+       "-$44,458",
+       "$81,344",
+       "-$5,437",
+       "-$8,305"
+      ],
+      "label": "Equipment & technology"
+     },
+     {
+      "cells": [
+       "$10,406",
+       "$189,707",
+       "$0",
+       "-$254,403",
+       "$0",
+       "-$13,265",
+       "-$67,555"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$63,570",
+       "$10,828",
+       "$0",
+       "-$42,098",
+       "$33,935",
+       "-$88,029",
+       "-$21,792"
+      ],
+      "label": "Heat, electricity & utilities"
+     },
+     {
+      "cells": [
+       "$113,829",
+       "$4,517",
+       "-$129,584",
+       "$110",
+       "$22,480",
+       "$0",
+       "$11,352"
+      ],
+      "label": "Custodians"
+     },
+     {
+      "cells": [
+       "$13,408",
+       "-$34,482",
+       "$0",
+       "-$72,002",
+       "$0",
+       "-$7,186",
+       "-$100,262"
+      ],
+      "label": "Special-ed contracted services"
+     },
+     {
+      "cells": [
+       "$121,294",
+       "-$42,322",
+       "-$50,741",
+       "$5,031",
+       "-$241,344",
+       "$0",
+       "-$208,082"
+      ],
+      "label": "Paraprofessionals"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026"
+    ],
+    "key": "pieces",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Every year",
+    "note": "Budget, less every way money left, less what was still on order. FY2026 is not yet closed.",
+    "rows": [
+     {
+      "cells": [
+       "$22,325,309",
+       "$22,883,442",
+       "$25,304,074",
+       "$26,247,474"
+      ],
+      "label": "Original appropriation (BUC)"
+     },
+     {
+      "cells": [
+       "$185,381",
+       "$74,805",
+       "$184,071",
+       "$72,172"
+      ],
+      "label": "Encumbrances carried forward (BUA)"
+     },
+     {
+      "cells": [
+       "$0",
+       "$989",
+       "-$306,573",
+       "$12,919"
+      ],
+      "label": "Other transfers and adjustments (BUA)"
+     },
+     {
+      "cells": [
+       "$14,526,298",
+       "$14,488,082",
+       "$15,192,231",
+       "$15,938,907"
+      ],
+      "label": "Payroll (PRJ, PRH)"
+     },
+     {
+      "cells": [
+       "$6,595,815",
+       "$7,110,019",
+       "$7,637,698",
+       "$7,909,829"
+      ],
+      "label": "Vendor invoices (API, APM)"
+     },
+     {
+      "cells": [
+       "$1,309,184",
+       "$1,177,488",
+       "$1,731,677",
+       "$1,782,360"
+      ],
+      "label": "Journal entries (GEN, GRV)"
+     },
+     {
+      "cells": [
+       "-$27,434",
+       "-$32,129",
+       "-$7,150",
+       "-$17,416"
+      ],
+      "label": "Cash receipts credited (CRP)"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$0",
+       "$236,767"
+      ],
+      "label": "Open encumbrances"
+     },
+     {
+      "cells": [
+       "$106,827",
+       "$215,776",
+       "$627,117",
+       "$482,118"
+      ],
+      "label": "Left unspent"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "Surplus, step by step"
+}

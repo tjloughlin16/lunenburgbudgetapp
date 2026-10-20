@@ -27,7 +27,7 @@ together.
 
 ---
 
-## The seven readers
+## The eight readers
 
 ### 1. The resident who has already decided the schools are not straight with them
 
@@ -168,6 +168,36 @@ a line on our page a reader would find by searching that name? For every line, i
 status about the world, not our data? Does every fact that changed over the season carry
 its dates, and does every block that states it agree? (notes/process/BUDGET-FEED-GUIDELINES.md has the three
 passes this came from -- for the budget feed only.)
+
+### 8. The Town Manager
+
+Added 19 October 2026, when TJ named the school surplus pages for the Town Manager: *"im
+sending this to the town manager. thats our persona to focus on."* TJ, the same day: *"surplus
+bridge is what the town manager thinks Im using this all for."*
+
+**What they believe walking in.** That the surplus has not yet been explained, that a figure
+before the close is provisional, and that the question that matters is whether the FY26
+budget repeats what produced FY25's.
+
+> "The surplus therefore originates elsewhere and will require further internal analysis to
+> fully explain." … "the FY26 budget, which was developed by the prior team, would need to be
+> reviewed line by line to determine whether the same assumptions that produced the FY25
+> surplus are embedded in the current year's budget, a process that she acknowledged would
+> take months."
+> — Select Board minutes, 9 September 2025, Town Manager Warren-Dyment
+
+**What they will do with the report.** Check it against MUNIS. They run the books this data
+came from and released the journal it is read from, so every figure must tie to a report they
+can open, every scope must be stated (department 300, or with 301), and every term must be
+the one MUNIS uses: encumbrance, carry forward, original appropriation, period 13.
+
+**What the report owes them.** The line-by-line answer, account by account, in a form that
+reconciles to their own reports; the FY2026 figures marked provisional until the close, the
+same caution they gave in public; and no reading of intent. A ledger shows postings, never
+why (rule 7), and this is the reader who will know when a page has guessed.
+
+**The test.** Could they reconcile every figure to MUNIS in an afternoon, and does the page
+answer their own question -- *which assumptions recurred in FY26* -- before anything else?
 
 ---
 

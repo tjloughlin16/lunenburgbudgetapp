@@ -1,5 +1,5 @@
 /** THE INLINE CHART: every topic's signature, drawn from a spec its generator wrote in a few
- *  lines of Python (scripts/topic.py: series, ranking, parts, image). One component for all
+ *  lines of Python (scripts/topic.py: series, ranking, parts, bridge, image). One component for all
  *  of them, so a chart costs a category agent no React and every chart reads as one system.
  *
  *  TJ, 13 October 2026: "Every topic page should have some defining chart OR image if the
@@ -53,9 +53,17 @@ export type RankingChart = {
 export type PartsChart = {
   type: 'parts'; title: string; unit: string; basis: Basis
   parts: { label: string; value: number; text: string; share: string }[]; total: string; note: Unit | null
+  /** The one part the page is about: in colour, every other part neutral (scripts/topic.py). */
+  highlight?: string
+}
+export type BridgeChart = {
+  type: 'bridge'; title: string; unit: string; basis: Basis
+  start: { label: string; value: number; text: string }
+  steps: { label: string; value: number; text: string; after?: string }[]
+  end: { label: string; value: number; text: string }; note: Unit | null
 }
 export type ImageChart = { type: 'image'; src: string; alt: string; caption: Unit }
-export type InlineChart = SeriesChart | RankingChart | PartsChart | ImageChart
+export type InlineChart = SeriesChart | RankingChart | PartsChart | BridgeChart | ImageChart
 
 export const isInline = (c: unknown): c is InlineChart =>
   !!c && typeof c === 'object' && 'type' in (c as Record<string, unknown>)
@@ -385,6 +393,11 @@ function Ranking({ c }: { c: RankingChart }) {
 
 function Parts({ c }: { c: PartsChart }) {
   const sum = c.parts.reduce((a, p) => a + p.value, 0)
+  /* With a highlight, only that part is coloured; the rest alternate two neutral shades so
+     neighbouring segments stay distinct without competing with it. */
+  const fill = (i: number) => !c.highlight ? COLOURS[i]
+    : c.parts[i].label === c.highlight ? COLOURS[0]
+    : `color-mix(in srgb, var(--axis) ${i % 2 ? 45 : 75}%, transparent)`
   const est = c.basis === 'estimate'
   const label = `${c.title}. One whole of ${c.total}, in parts: `
     + c.parts.map(p => `${p.label}, ${p.text} (${p.share})`).join('; ') + '.'
@@ -393,8 +406,8 @@ function Parts({ c }: { c: PartsChart }) {
       <div className="h-7 rounded-[3px] flex overflow-hidden gap-[2px]" aria-hidden>
         {c.parts.map((p, i) => (
           <span key={p.label} title={`${p.label}: ${p.text} (${p.share})`}
-            style={{ width: `${(100 * p.value) / sum}%`, background: est ? `color-mix(in srgb, ${COLOURS[i]} 22%, transparent)` : COLOURS[i],
-              opacity: c.basis === 'stated' ? 0.65 : 1, border: est ? `1.5px dashed ${COLOURS[i]}` : undefined }} />
+            style={{ width: `${(100 * p.value) / sum}%`, background: est ? `color-mix(in srgb, ${fill(i)} 22%, transparent)` : fill(i),
+              opacity: c.basis === 'stated' ? 0.65 : 1, border: est ? `1.5px dashed ${fill(i)}` : undefined }} />
         ))}
       </div>
       <ul className="mt-3 grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-1.5" aria-hidden>
@@ -402,13 +415,70 @@ function Parts({ c }: { c: PartsChart }) {
           <li key={p.label} className="flex items-baseline justify-between gap-3 text-[13px]">
             <span className="inline-flex items-baseline gap-1.5 min-w-0" style={{ color: 'var(--text-secondary)' }}>
               <span className="inline-block w-2.5 h-2.5 rounded-[2px] shrink-0 translate-y-[1px]"
-                style={{ background: COLOURS[i] }} />
-              <span className="break-words">{p.label}</span></span>
+                style={{ background: fill(i) }} />
+              <span className="break-words" style={p.label === c.highlight ? { color: 'var(--text-primary)', fontWeight: 600 } : undefined}>
+                {p.label}</span></span>
             <span className="tnum shrink-0"><span className="font-semibold">{p.text}</span>
               <span style={{ color: 'var(--text-muted)' }}> · {p.share}</span></span>
           </li>
         ))}
       </ul>
+    </Frame>
+  )
+}
+
+/* ------------------------------------------------------------------- bridge */
+
+/* A WATERFALL, drawn in HTML like a ranking so it reflows to a phone: one row per step, in
+   the generator's order, each bar floating from where the running total stood. The two
+   totals sit on zero; a rise takes --thread-1 and a fall --thread-2, and the sign is also
+   printed, so colour is never the only thing saying which way a step went. */
+function Bridge({ c }: { c: BridgeChart }) {
+  let run = c.start.value
+  const rows = [
+    { label: c.start.label, text: c.start.text, after: undefined as string | undefined, from: 0, to: c.start.value, total: true },
+    ...c.steps.map(s => { const from = run; run += s.value; return { label: s.label, text: s.text, after: s.after, from, to: run, total: false } }),
+    { label: c.end.label, text: c.end.text, after: undefined, from: 0, to: c.end.value, total: true },
+  ]
+  const lo = Math.min(0, ...rows.map(r => Math.min(r.from, r.to)))
+  const hi = Math.max(1, ...rows.map(r => Math.max(r.from, r.to)))
+  const pos = (v: number) => (100 * (v - lo)) / (hi - lo)
+  const est = c.basis === 'estimate'
+  const label = `${c.title}. A bridge in ${unitWord(c.unit)}, from ${c.start.label}, ${c.start.text}: `
+    + c.steps.map(s => `${s.label}, ${s.text}${s.after ? `, leaving ${s.after}` : ''}`).join('; ')
+    + `; to ${c.end.label}, ${c.end.text}.`
+  return (
+    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+      {/* HOW TO READ IT, once, above the bars: the position is the running total. */}
+      <p className="text-[12.5px] leading-snug mb-3" style={{ color: 'var(--text-muted)' }} aria-hidden>
+        Read down. The dark bars are totals. Each coloured bar is one step, drawn from where the
+        total stood before it: <span style={{ color: COLOURS[0] }}>■</span> adds,{' '}
+        <span style={{ color: COLOURS[1] }}>■</span> takes away.</p>
+      <ol className="space-y-2" aria-hidden>
+        {rows.map(r => {
+          const colour = r.total ? 'var(--text-secondary)' : COLOURS[r.to >= r.from ? 0 : 1]
+          return (
+            <li key={r.label}>
+              <div className="flex items-baseline justify-between gap-3 text-[13px] leading-tight">
+                <span className="min-w-0 break-words" style={{ color: r.total ? 'var(--text-primary)' : 'var(--text-secondary)',
+                  fontWeight: r.total ? 600 : 400 }}>{r.label}</span>
+                <span className="tnum shrink-0 text-right" style={{ color: 'var(--text-primary)', fontWeight: r.total ? 600 : 500 }}>
+                  {r.text}
+                  {r.after ? <span className="block text-[11.5px] font-normal" style={{ color: 'var(--text-muted)' }}>leaves {r.after}</span> : null}
+                </span>
+              </div>
+              <div className="mt-1 h-2.5 rounded-[2px] relative overflow-hidden" style={{ background: 'var(--surface-3)' }}>
+                <span className="absolute top-0 bottom-0" style={{
+                  left: `${pos(Math.min(r.from, r.to))}%`, width: `${Math.max(pos(Math.max(r.from, r.to)) - pos(Math.min(r.from, r.to)), 0.4)}%`,
+                  background: est ? 'transparent' : colour, opacity: c.basis === 'stated' ? 0.65 : 1,
+                  border: est ? `1.5px dashed ${colour}` : undefined,
+                }} />
+              </div>
+            </li>
+          )
+        })}
+      </ol>
+      <SrTable head={['', 'Change', 'Total after']} rows={rows.map(r => [r.label, r.text, r.after ?? r.text])} />
     </Frame>
   )
 }
@@ -433,6 +503,7 @@ export function InlineTopicChart({ c }: { c: InlineChart }) {
     case 'series': return <Series c={c} />
     case 'ranking': return <Ranking c={c} />
     case 'parts': return <Parts c={c} />
+    case 'bridge': return <Bridge c={c} />
     case 'image': return <Picture c={c} />
     default: return null
   }

@@ -262,6 +262,51 @@ def payee(r):
     return vendor_key(r['vendor'])
 
 
+# ---------------------------------------------------------------- 5. the surplus scope
+
+# THE SCHOOL GENERAL FUND AS THE SURPLUS REPORTS COUNT IT: fund 0100, department 300 -- the
+# scope of the period-13 `gf-school` spreadsheets, which the journal ties to the cent on every
+# column in all four years. Department 301 (org 13012, curriculum adoption) is the rest of the
+# district's own printed budget total and sits OUTSIDE this scope; a report on the surplus says
+# so beside the figure (notes/plans/MUNIS-JOURNAL-REPORTS.md, the settled answers).
+SURPLUS_DEPT = '300'
+DISTRICT_DEPTS = ('300', '301')
+
+
+def department(account):
+    return account.split('-')[2]
+
+
+def in_surplus_scope(a):
+    return a['fund'] == '0100' and department(a['account']) == SURPLUS_DEPT
+
+
+# What made a budget line move. A transfer (`BUA`) is one of two things, told apart by the
+# description the Town gives it: the open purchase orders of the year before, re-budgeted on
+# 1 July (`ENCUMBRANCE CARRY FORWARD <year>`; each equals the previous year's `YEC` close to
+# the cent), or every other change -- a Town Meeting vote, a Reserve Fund transfer, a
+# line-to-line move. Measured 19 October 2026 on FY2023-FY2026.
+def is_carry_forward(r):
+    return r['source'] == 'BUA' and r['description'].startswith('ENCUMBRANCE CARRY FORWARD')
+
+
+def piece(r):
+    """Which piece of a surplus bridge a line is: 'original_budget', 'carry_forward',
+    'transfer', an actual's KIND_OF, or 'encumbrance'."""
+    if r['posts_to'] == 'actual':
+        return KIND_OF[r['source']]
+    if r['posts_to'] == 'transfer':
+        return 'carry_forward' if is_carry_forward(r) else 'transfer'
+    return r['posts_to']
+
+
+def left(rows):
+    """Budget less actual less open orders: what a set of lines left unspent and uncommitted
+    -- the `available_budget` the period-13 spreadsheet prints."""
+    return sum((r['amt'] if r['posts_to'] in ('original_budget', 'transfer') else -r['amt']
+                for r in rows), Decimal(0))
+
+
 # ---------------------------------------------------------------- loading
 
 _CACHE = {}
