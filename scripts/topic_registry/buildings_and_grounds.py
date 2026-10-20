@@ -11,12 +11,12 @@ upkeep over the year, who does the work, building money from every fund, questio
 budget.
 """
 CATEGORY = dict(
-    start=['upkeep-surplus-every-dollar', 'upkeep-budget-vs-spending'],
+    start=['upkeep-ledger', 'upkeep-budget-vs-spending'],
     id='buildings-and-grounds', shelf='Buildings and grounds', title='Building upkeep',
     area='school', order=27,
     groups=[
-        (None, ['upkeep-spending', 'upkeep-budget-vs-spending', 'upkeep-surplus-every-dollar',
-                'upkeep-skipped']),
+        (None, ['upkeep-ledger', 'upkeep-spending', 'upkeep-budget-vs-spending',
+                'upkeep-surplus-every-dollar', 'upkeep-skipped']),
         ('Account by account', ['contracted-building-services']),
     ])
 GENERATOR = 'build_buildings_topics.py'
@@ -26,4 +26,5 @@ TOPICS = {
     'contracted-building-services': 'Contracted building services',
     'upkeep-surplus-every-dollar': 'Upkeep surplus, every dollar',
     'upkeep-skipped': 'Usual purchases skipped',
+    'upkeep-ledger': 'Upkeep leftover by account',
 }

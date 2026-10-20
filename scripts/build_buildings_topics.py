@@ -410,6 +410,7 @@ def build():
     out['contracted-building-services'] = contracted_page(d, U, F, P, N)
     out['upkeep-surplus-every-dollar'] = every_dollar_page(d, U, F, P, N)
     out['upkeep-skipped'] = skipped_page(d, U, F, P, N)
+    out['upkeep-ledger'] = ledger_page(d, U, F, P, N)
 
     # ================================================== the hub
     h = dict(
@@ -489,27 +490,7 @@ def contracted_page(d, U, F, P, N):
     f, con = LD.fact, TP.conclusion
     a = SERVICES
     L = [r for r in J.lines() if r['account'] == a]
-    # PURCHASE ORDERS: each commits money to a named vendor for a stated job. A release (POM)
-    # in FY2026 is an order closed or cut without being paid; a carried-in order (SOY) came
-    # from FY2025 and was budgeted again by the carry-forward.
-    po = {}
-    for r in L:
-        if r['source'] == 'POE' and r['doc_no'] not in po:
-            po[r['doc_no']] = dict(date=r['effective_date'], vendor=r['vendor'],
-                                   job=r['description'].strip())
-    pom, soy, poe26 = defaultdict(lambda: D0), defaultdict(lambda: D0), defaultdict(lambda: D0)
-    for r in L:
-        if r['fy'] != Y1:
-            continue
-        if r['source'] == 'POM':
-            pom[r['doc_no']] += r['amt']
-        elif r['source'] == 'SOY':
-            soy[r['doc_no']] += r['amt']
-        elif r['source'] == 'POE':
-            poe26[r['doc_no']] += r['amt']
-    released = {k: -v for k, v in pom.items() if v < 0}
-    if any(k not in po for k in released):
-        fail('a released order has no opening line in the journal')
+    po, released, soy = orders(L)
     rel = sum(released.values(), D0)
     rel_c = sum((v for k, v in released.items() if soy[k] > 0), D0)
     carried = sorted((k for k in released if soy[k] > 0), key=lambda k: -fl(released[k]))
@@ -859,6 +840,57 @@ SKIP_SHARE = Decimal('0.5')
 DESC_SKIP = re.compile(r'^[\d\s/#.-]*$|^LUNENBUR|^CUST#|^ACCOUNT|^BLANKET', re.I)
 
 
+def orders(L, y=Y1):
+    """PURCHASE ORDERS on a set of lines. Each commits money to a named vendor for a stated job.
+    A release (POM) in year y is an order closed or cut without being paid; a carried-in order
+    (SOY) came from the year before and was budgeted again by the carry-forward.
+    Returns ({order: date, vendor, job}, {order: amount released}, {order: carried in})."""
+    po = {}
+    for r in L:
+        if r['source'] == 'POE' and r['doc_no'] not in po:
+            po[r['doc_no']] = dict(date=r['effective_date'], vendor=r['vendor'],
+                                   job=r['description'].strip())
+    pom, soy = defaultdict(lambda: D0), defaultdict(lambda: D0)
+    for r in L:
+        if r['fy'] == y and r['source'] == 'POM':
+            pom[r['doc_no']] += r['amt']
+        elif r['fy'] == y and r['source'] == 'SOY':
+            soy[r['doc_no']] += r['amt']
+    released = {k: -v for k, v in pom.items() if v < 0}
+    if any(k not in po for k in released):
+        fail('a released order has no opening line in the journal')
+    return po, released, soy
+
+
+def payees_against_usual(L):
+    """THE PAYEE PATTERN on a set of actual lines, against OUR measure of usual (paid in every
+    closed year, FY2023-FY2025, and their average). Returns a dict: pv {(payee, fy): paid},
+    desc {payee: Counter of invoice text}, usual {payee: average}, skipped (under SKIP_SHARE of
+    usual in FY2026, largest shortfall first), stopped (of them, paid nothing), new (paid in
+    FY2026 and in no closed year, largest first)."""
+    from collections import Counter
+    pv, desc = defaultdict(lambda: D0), defaultdict(Counter)
+    for r in L:
+        if r['posts_to'] != 'actual':
+            continue
+        p = J.payee(r)
+        if p is J.MASKED:
+            fail('a masked payee is on building upkeep')
+        if p:
+            pv[(p, r['fy'])] += r['amt']
+            desc[p][r['description'].strip()[:30]] += 1
+    closed = J.YEARS[:-1]
+    names = {p for (p, _) in pv}
+    usual = {p: sum((pv[(p, y)] for y in closed), D0) / len(closed)
+             for p in names if all(pv[(p, y)] > 0 for y in closed)}
+    skipped = sorted((p for p in usual if pv[(p, Y1)] < SKIP_SHARE * usual[p]),
+                     key=lambda p: (fl(pv[(p, Y1)] - usual[p]), p))
+    new = sorted((p for p in names if pv[(p, Y1)] > 0 and all(pv[(p, y)] <= 0 for y in closed)),
+                 key=lambda p: (-fl(pv[(p, Y1)]), p))
+    return dict(pv=pv, desc=desc, usual=usual, skipped=skipped,
+                stopped=[p for p in skipped if pv[(p, Y1)] <= 0], new=new)
+
+
 def what_for(descs):
     """The most common invoice description that says something -- not a customer number."""
     for text, _ in descs.most_common():
@@ -873,28 +905,16 @@ def skipped_page(d, U, F, P, N):
     A = d['A']
     T = trades()
     cat = lambda r: S.category_of(dict(account=r['account'], obj=r['object']))
-    pv, desc = defaultdict(lambda: D0), defaultdict(Counter)
-    for r in J.lines():
-        if r['posts_to'] == 'actual' and J.in_surplus_scope(A[r['account']]) and cat(r) == CAT:
-            p = J.payee(r)
-            if p is J.MASKED:
-                fail('a masked payee is on building upkeep')
-            if p:
-                pv[(p, r['fy'])] += r['amt']
-                desc[p][r['description'].strip()[:30]] += 1
+    L = [r for r in J.lines() if J.in_surplus_scope(A[r['account']]) and cat(r) == CAT]
+    pat = payees_against_usual(L)
+    pv, desc, usual = pat['pv'], pat['desc'], pat['usual']
+    skipped, stopped, new = pat['skipped'], pat['stopped'], pat['new']
     closed = J.YEARS[:-1]
-    usual = {p: sum((pv[(p, y)] for y in closed), D0) / len(closed)
-             for p in {p for (p, _) in pv} if all(pv[(p, y)] > 0 for y in closed)}
-    skipped = sorted((p for p in usual if pv[(p, Y1)] < SKIP_SHARE * usual[p]),
-                     key=lambda p: fl(pv[(p, Y1)] - usual[p]))
-    stopped = [p for p in skipped if pv[(p, Y1)] <= 0]
     occasional = sorted((p for p in {p for (p, _) in pv} if p not in usual
                          and sum(1 for y in closed if pv[(p, y)] > 0) == 2 and pv[(p, Y1)] <= 0
                          and sum((pv[(p, y)] for y in closed), D0) > 1000),
-                        key=lambda p: -fl(sum((pv[(p, y)] for y in closed), D0)))
+                        key=lambda p: (-fl(sum((pv[(p, y)] for y in closed), D0)), p))
     short = sum((usual[p] - pv[(p, Y1)] for p in skipped), D0)
-    new = sorted((p for p in {p for (p, _) in pv} if pv[(p, Y1)] > 0
-                  and all(pv[(p, y)] <= 0 for y in closed)), key=lambda p: -fl(pv[(p, Y1)]))
     small = [p for p in stopped if usual[p] < 1000]
     if not (len(stopped) >= 2 and small):
         fail('the skipped conclusions assume at least two stopped payees, some of them small')
@@ -1001,6 +1021,156 @@ def skipped_page(d, U, F, P, N):
         'Whether a skipped purchase was made some other way: another account, another fund, '
         'a new vendor record, or a contract that changed.',
         'Which building each payment was for.',
+    ]
+    return page
+
+
+# THE DRILL-DOWN LEDGER (TJ, 20 October 2026: "if our page format doesnt work for this type of
+# analysis you can explore other structures for the page"). One card per account holding part
+# of the leftover, each with the same evidence, computed by the same helpers as the pages it
+# draws together: what was bought, what usually is and was not (payees_against_usual), what was
+# ordered and released unpaid (orders), what was new, and the district's own words where a
+# document has them -- each quotation checked verbatim here.
+EMERGENCY = '0100-3-300-4220-99-1-74-2-545004'
+QA_EMERGENCY = ('What would constitute an emergency expenditure? A water heater in one of the '
+                'schools breaking, A server failure that cannot be repaired')
+LEDGER_ROWS = 6                 # payees shown per section on a card; the full lists are linked
+
+
+def ledger_page(d, U, F, P, N):
+    qa = ' '.join(open(QA_TEXT, encoding='utf-8').read().split())
+    if QA_EMERGENCY not in qa or QA_ANSWER not in qa:
+        fail('a district answer is no longer verbatim in %s' % QA_TEXT)
+    f, con = LD.fact, TP.conclusion
+    A = d['A']
+    cat = lambda r: S.category_of(dict(account=r['account'], obj=r['object']))
+    lines = [r for r in J.lines() if J.in_surplus_scope(A[r['account']]) and cat(r) == CAT]
+    by_acct = defaultdict(list)
+    for r in lines:
+        by_acct[r['account']].append(r)
+    bud = lambda a, y: d['acct'][(y, a, 'orig')] + d['acct'][(y, a, 'trans')]
+    sp = lambda a, y: d['acct'][(y, a, 'spent')]
+    left = {a: d['acct_left'](Y1, a) for a in d['accounts']}
+    accts = sorted((a for a in left if left[a] > 0), key=lambda a: (-fl(left[a]), a))
+    total = d['left'][Y1]
+    signed = lambda v: ('+' if v >= 0 else '-') + C.usd(abs(fl(v)))
+    quotes = {SERVICES: [dict(quote=FINCOM_QUOTE, href=FINCOM,
+                              label='Finance Committee minutes, 13 February 2025, on the cabling '
+                                    'paid by Reserve Fund transfer')],
+              EMERGENCY: [dict(quote=QA_EMERGENCY, href=QA,
+                               label='LPS answers to the Finance Committee, FY2027 budget')]}
+    cards, rel_all, skip_all = [], D0, 0
+    for i, a in enumerate(accts):
+        L = by_acct[a]
+        pat = payees_against_usual(L)
+        po, released, soy = orders(L)
+        rel_all += sum(released.values(), D0)
+        skip_all += len(pat['skipped'])
+        db, ds = bud(a, Y1) - bud(a, Y0), sp(a, Y1) - sp(a, Y0)
+        if ds <= -MARK:
+            shape = 'Spending fell against %s.' % C.fy(Y0)
+        elif db >= MARK and db > ds:
+            shape = 'Budget rose faster than spending.'
+        elif sp(a, Y0) < bud(a, Y0):
+            shape = 'Budgeted above what it spends, in %s and %s.' % (C.fy(Y0), C.fy(Y1))
+        else:
+            shape = 'Budgeted above what it spent in %s.' % C.fy(Y1)
+        pv, desc = pat['pv'], pat['desc']
+        paid_now = sorted((p for (p, y) in pv if y == Y1 and pv[(p, y)] > 0),
+                          key=lambda p: (-fl(pv[(p, Y1)]), p))
+        cards.append(dict(
+            id=a, label=LABEL_OF.get(a, A[a]['account_description'].title()), account=a,
+            left=C.usd(fl(left[a])), shape=shape, open=(i == 0),
+            figures=[('Budget', C.usd(fl(bud(a, Y1)))), ('Paid', C.usd(fl(sp(a, Y1)))),
+                     ('On order', C.usd(fl(d['acct'][(Y1, a, 'enc')]))),
+                     ('Budget vs %s' % C.fy(Y0), signed(db)), ('Paid vs %s' % C.fy(Y0), signed(ds))],
+            sections=[
+                dict(title='Usually paid, not this year',
+                     columns=['Invoices read', 'Usual a year', C.fy(Y1)],
+                     rows=[(p.title(), [what_for(desc[p]), C.usd(fl(pat['usual'][p])),
+                                        C.usd(fl(pv[(p, Y1)]))]) for p in pat['skipped']],
+                     note='Paid in every year %s to %s; under half of that average in %s.'
+                          % (C.fy(J.YEARS[0]), C.fy(J.YEARS[-2]), C.fy(Y1))),
+                dict(title='Ordered, then released unpaid',
+                     columns=['Ordered', 'Vendor', 'The job', 'Released'],
+                     rows=[(k, [po[k]['date'], po[k]['vendor'].title(), po[k]['job'],
+                                C.usd(fl(released[k]))])
+                           for k in sorted(released, key=lambda k: (-fl(released[k]), k))],
+                     note='Purchase orders closed or cut in %s without payment%s.'
+                          % (C.fy(Y1), '; some were carried in from %s' % C.fy(Y0)
+                             if any(soy[k] > 0 for k in released) else '')),
+                dict(title='Largest payments, %s' % C.fy(Y1),
+                     columns=['Invoices read', C.fy(Y0), C.fy(Y1)],
+                     rows=[(p.title(), [what_for(desc[p]), C.usd(fl(pv[(p, Y0)])),
+                                        C.usd(fl(pv[(p, Y1)]))]) for p in paid_now[:LEDGER_ROWS]]),
+                dict(title='New in %s' % C.fy(Y1), columns=['Invoices read', C.fy(Y1)],
+                     rows=[(p.title(), [what_for(desc[p]), C.usd(fl(pv[(p, Y1)]))])
+                           for p in pat['new'][:LEDGER_ROWS]],
+                     note='Paid in %s and in none of the three years before.' % C.fy(Y1)),
+            ],
+            quotes=quotes.get(a, []),
+            unknown='whether a skipped purchase or a released order was done some other way, '
+                    'and the basis for this line’s budget.',
+            closes='the facilities work orders for %s, and the district’s basis for the line'
+                   % C.fy(Y1)))
+    led = TP.check_ledger(TP.ledger(
+        'Where the %s was left, account by account' % C.usd(fl(total)),
+        'Open a card to see what was paid, what is usually paid and was not, which orders were '
+        'released unpaid, and who was new. Invoice text as MUNIS prints it, cut short.', cards),
+        'upkeep-ledger')
+    cbs = SERVICES
+    others = [a for a in accts if a != cbs]
+    gap = sum(((bud(a, Y1) - bud(a, Y0)) - (sp(a, Y1) - sp(a, Y0)) for a in others), D0)
+    if accts[0] != cbs or not gap > 0:
+        fail('the ledger conclusions no longer match the accounts')
+    fx = dict(
+        left=f('left', U(total), 'left unspent, %s' % C.fy(Y1), 'published', {'y': F(Y1)}),
+        n=f('n', N(len(accts), 'accounts'), 'accounts holding it', 'published'),
+        cbs=f('cbs', U(left[cbs]), 'on contracted building services', 'published'),
+        cbsd=f('cbsd', U(-(sp(cbs, Y1) - sp(cbs, Y0))), 'less paid there than in %s' % C.fy(Y0),
+               'published', {'y': F(Y0)}),
+        gap=f('gap', U(gap), 'budget rise beyond spending, other accounts', 'published'),
+        rel=f('rel', U(rel_all), 'ordered and released unpaid', 'published'),
+        skip=f('skip', N(skip_all, 'payees'), 'usual payees under half of usual', 'estimate'),
+    )
+    page = TP.page(
+        'upkeep-ledger',
+        'Building upkeep left %s in %s on %s accounts; each card shows what was paid, skipped '
+        'and released.' % (C.usd(fl(total)), C.fy(Y1), C.num(len(accts))),
+        list(fx.values()),
+        [con('%s of it is contracted building services, where %s less was paid than in %s.'
+             % (C.usd(fl(left[cbs])), C.usd(fl(-(sp(cbs, Y1) - sp(cbs, Y0)))), C.fy(Y0)),
+             ['cbs', 'cbsd'],
+             {'a': U(left[cbs]), 'b': U(-(sp(cbs, Y1) - sp(cbs, Y0))), 'y': F(Y0)}),
+         con('On the other %s accounts, budgets rose %s more than spending did.'
+             % (C.num(len(others)), C.usd(fl(gap))), ['gap', 'n'],
+             {'n': N(len(others), 'accounts'), 'a': U(gap)}),
+         con('Across the line, %s was ordered and released unpaid, and %s usual payees were skipped.'
+             % (C.usd(fl(rel_all)), C.num(skip_all)), ['rel', 'skip'],
+             {'a': U(rel_all), 'n': N(skip_all, 'payees')},
+             notes=[step('Usual is our measure: paid every year %s to %s, averaged; skipped is '
+                         'under half of it.' % (C.fy(J.YEARS[0]), C.fy(J.YEARS[-2])), 'estimate',
+                         {'a': F(J.YEARS[0]), 'b': F(J.YEARS[-2])}),
+                    step('Released or skipped is not the same as not done: another order, '
+                         'account or vendor looks the same in a ledger.', 'hypothesis')])],
+        chart=TP.parts(
+            'Where the leftover sits',
+            [(LABEL_OF.get(a, A[a]['account_description'].title()), fl(left[a])) for a in accts[:SLICES]]
+            + ([('%s smaller accounts' % C.num(len(accts[SLICES:])),
+                 fl(sum((left[a] for a in accts[SLICES:]), D0)))] if accts[SLICES:] else []),
+            '$', highlight=LABEL_OF[cbs],
+            note='The %s left on building upkeep in %s, by the account it was left on.'
+                 % (C.usd(fl(total)), C.fy(Y1)), note_figures={'a': U(total), 'y': F(Y1)}),
+        sources=sources() + [
+            dict(label='Town of Lunenburg — Finance Committee minutes, 13 February 2025', href=FINCOM),
+            dict(label='Lunenburg Public Schools — FY2027 School Department Q&A, answers to the '
+                       'Finance Committee', href=QA)],
+        finding_figures={'a': U(total), 'y': F(Y1), 'n': N(len(accts), 'accounts')})
+    page['ledger'] = led
+    page['not_established'] = [
+        'Whether any skipped purchase or released order was done some other way.',
+        'The basis the district used to set each line’s budget.',
+        'The FY2026 figures after the close.',
     ]
     return page
 

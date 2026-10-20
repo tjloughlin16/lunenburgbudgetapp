@@ -643,6 +643,7 @@
     {
      "title": null,
      "topics": [
+      "upkeep-ledger",
       "upkeep-spending",
       "upkeep-budget-vs-spending",
       "upkeep-surplus-every-dollar",
@@ -663,7 +664,7 @@
    "ready": true,
    "shelf": "Buildings and grounds",
    "start": [
-    "upkeep-surplus-every-dollar",
+    "upkeep-ledger",
     "upkeep-budget-vs-spending"
    ],
    "title": "Building upkeep"
@@ -4187,6 +4188,19 @@
     "buildings-and-grounds"
    ],
    "title": "Upkeep budget and spending"
+  },
+  "upkeep-ledger": {
+   "finding": "Building upkeep left $195,934 in FY2026 on 14 accounts; each card shows what was paid, skipped and released.",
+   "generator": "scripts/build_buildings_topics.py",
+   "home": "buildings-and-grounds",
+   "id": "upkeep-ledger",
+   "minutes": 1,
+   "path": "/buildings-and-grounds/upkeep-ledger",
+   "ready": true,
+   "shelves": [
+    "buildings-and-grounds"
+   ],
+   "title": "Upkeep leftover by account"
   },
   "upkeep-skipped": {
    "finding": "10 payees the schools used every year were paid under half as usual in FY2026; 5 got nothing.",

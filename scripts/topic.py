@@ -102,6 +102,56 @@ CONCLUSIONS = (1, 4)
 SAID_MAX = 4
 
 
+def ledger(caption, note, cards):
+    """A LEFTOVER, ACCOUNT BY ACCOUNT: one card per account, its evidence folding out (drawn by
+    fy28/src/components/AccountLedger.tsx). cards: dicts with id, label, account, left (text),
+    shape (one line, words only), figures [(label, text)], sections [dict(title, columns, rows
+    [(label, [cells])], note)], quotes [dict(quote, label, href)] -- each already checked verbatim
+    by the generator -- unknown and closes (rule 7c: what the card cannot show, and what would
+    settle it). Every figure is formatted by the generator; the component formats nothing."""
+    out = []
+    for c in cards:
+        out.append(dict(
+            id=c['id'], label=c['label'], account=c['account'], left=c['left'], shape=c['shape'],
+            figures=[dict(label=l, text=t) for l, t in c['figures']],
+            sections=[dict(title=s['title'], columns=list(s['columns']),
+                           rows=[dict(label=l, cells=list(cells)) for l, cells in s['rows']],
+                           **({'note': s['note']} if s.get('note') else {}))
+                      for s in c['sections'] if s['rows']],
+            quotes=list(c.get('quotes', ())), unknown=c['unknown'], closes=c['closes'],
+            open=bool(c.get('open'))))
+    return dict(caption=caption, note=note, cards=out)
+
+
+def _ledger_bad(l, where):
+    bad = []
+    if not l['cards']:
+        bad.append('%s: a ledger with no cards' % where)
+    for c in l['cards']:
+        w = '%s card %r' % (where, c['label'])
+        for k in ('label', 'account', 'left', 'shape', 'unknown', 'closes'):
+            if not str(c.get(k) or '').strip():
+                bad.append('%s: no %s' % (w, k))
+        if not c['closes'].strip():
+            bad.append('%s: says nothing about what would settle it -- rule 7c' % w)
+        for s in c['sections']:
+            if len(s['rows']) > TABLE_ROWS_MAX:
+                bad.append('%s section %r: past %d rows' % (w, s['title'], TABLE_ROWS_MAX))
+            if any(len(r['cells']) != len(s['columns']) for r in s['rows']):
+                bad.append('%s section %r: a row with the wrong number of cells' % (w, s['title']))
+        for q in c['quotes']:
+            if set(q) != {'quote', 'label', 'href'} or not _served(q['href']):
+                bad.append('%s: a quotation without a served source' % w)
+    return bad
+
+
+def check_ledger(l, where):
+    bad = _ledger_bad(l, where)
+    if bad:
+        raise ConclusionError('ledger did not pass:\n  %s' % '\n  '.join(bad))
+    return l
+
+
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
          finding_figures=None, finding_allow=(), draft=None, also=()):
     """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft

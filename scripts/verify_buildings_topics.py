@@ -210,6 +210,32 @@ def main():
     for r in view['rows']:
         if r['cells'][4] != money(rel.get(r['label'], 0)):
             bad.append('released order %s: %s, recomputed %s' % (r['label'], r['cells'][4], rel.get(r['label'])))
+    # ---- the ledger: each card against the spreadsheet; each released order against the journal
+    p = json.load(open(os.path.join(TOPICS, 'upkeep-ledger.json'), encoding='utf-8'))
+    allpom = defaultdict(D)
+    for r in rows:
+        if r['fiscal_year'] == '2026' and r['source'] == 'POM':
+            allpom[(r['account'], r['doc_no'])] += D(r['amount'])
+    cards = p['ledger']['cards']
+    if sum(D(c['left'].replace('$', '').replace(',', '')) for c in cards) - col[(2026, 'available_budget')] \
+            > D('0.5') * len(cards) + 1:
+        bad.append('ledger: the cards do not foot to what was left')
+    for c in cards:
+        a = c['account']
+        fig = {x['label']: x['text'] for x in c['figures']}
+        want_c = {'left': money(col[(2026, a, 'available_budget')]),
+                  'Budget': money(col[(2026, a, 'original_approp')] + col[(2026, a, 'transfers_adjustments')]),
+                  'Paid': money(col[(2026, a, 'ytd_expended')]),
+                  'On order': money(col[(2026, a, 'encumbrances')])}
+        got_c = dict(fig, left=c['left'])
+        for k, w in want_c.items():
+            if got_c.get(k) != w:
+                bad.append('ledger %s %s: %s, the spreadsheet %s' % (c['label'], k, got_c.get(k), w))
+        rel_sec = next((x for x in c['sections'] if x['title'].startswith('Ordered')), None)
+        want_rel = {k: -v for (aa, k), v in allpom.items() if aa == a and v < 0}
+        got_rel = {r['label']: r['cells'][3] for r in (rel_sec or {}).get('rows', [])}
+        if sorted(got_rel) != sorted(want_rel) or any(got_rel[k] != money(v) for k, v in want_rel.items()):
+            bad.append('ledger %s: released orders do not match the journal' % c['label'])
     if bad:
         print('verify_buildings_topics: %d problem(s)' % len(bad))
         print('\n'.join('  ' + b for b in bad))

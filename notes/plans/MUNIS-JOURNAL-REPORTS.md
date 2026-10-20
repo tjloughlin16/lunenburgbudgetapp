@@ -229,6 +229,7 @@ plus minutes) → `built` → `deployed`.
 | B | year-end-close | not started | | |
 | F | buildings-and-grounds (hub) | verified | | `build_buildings_topics.py`; `verify_buildings_topics.py` (period-13 sheets, raw journal, the book's text) |
 | F | upkeep-budget-vs-spending | verified | | the conclusion with its proof; the book against the ledger; grounds lines held the other way round |
+| F | upkeep-ledger | verified | | THE DRILL-DOWN LEDGER (TJ 20 Oct: explore other page structures): one card per account holding the FY2026 leftover -- usually paid and skipped, orders released unpaid, largest and new payees, the district's words; new component AccountLedger.tsx; meant to replace every-dollar, usual-purchases-skipped and the contracted page's detail once TJ agrees |
 | F | upkeep-surplus-every-dollar | verified | | FY2026, every dollar: budget, carry-in, each transfer with its memo, every payee (77 rows across 3 views), open orders, left; foots to the cent or refuses |
 | F | contracted-building-services | verified | | one account, four years: two overruns, the 13 Feb 2025 Reserve Fund cabling (minutes quoted), FY2026 left $75,660; same generator and verifier |
 | F | upkeep-spending | verified | | by type of work, OUR grouping in sources/data/building-payee-trades.csv (TJ to check); NOT YET CATALOGUED in build_source_index.py (shared file, others' edits) |
