@@ -15,7 +15,7 @@
    "literals": [
     "1"
    ],
-   "text": "Spending over the 1 October headcount, our division. FY2024 dollars: Boston-area CPI-U, July-June averages, our arithmetic."
+   "text": "Spending over the 1 October headcount, our division. Adjusted for inflation: each older year at what it would cost at FY2024 prices (Boston-area prices, ours)."
   },
   "reference": null,
   "series": [
@@ -172,7 +172,7 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Actual, FY2024 dollars",
+    "name": "Actual, adjusted for inflation",
     "texts": [
      "$8,518",
      "$8,824",
@@ -247,7 +247,7 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Budgeted, FY2024 dollars",
+    "name": "Budgeted, adjusted for inflation",
     "texts": [
      null,
      null,
@@ -364,34 +364,70 @@
   {
    "figures": {
     "a": {
-     "text": "1.79",
-     "unit": "times",
-     "value": 1.786502906399528
+     "text": "$11,263",
+     "unit": "",
+     "value": 11263.095772740902
     },
     "b": {
-     "text": "3.85",
-     "unit": "times",
-     "value": 3.848331276999599
+     "text": "$4,564",
+     "unit": "",
+     "value": 4563.689223768077
+    },
+    "c": {
+     "text": "$6,699",
+     "unit": "",
+     "value": 6699.4065489728255
     },
     "y": {
-     "text": "FY2024",
-     "unit": "fiscal year",
-     "value": 2024
-    },
-    "z": {
      "text": "FY1994",
      "unit": "fiscal year",
      "value": 1994
     }
    },
    "literals": [],
-   "rests_on": [
-    "rppx",
-    "ppx",
-    "e0",
-    "e1"
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "3.85",
+       "unit": "times",
+       "value": 3.848331276999599
+      },
+      "b": {
+       "text": "1.79",
+       "unit": "times",
+       "value": 1.786502906399528
+      },
+      "y": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      },
+      "z": {
+       "text": "FY1994",
+       "unit": "fiscal year",
+       "value": 1994
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "As printed, FY2024 spending per child is 3.85 times FY1994; after inflation, 1.79 times."
+    },
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Prices here are what Boston-area households pay. What a school buys, salaries and insurance above all, can rise faster or slower, and nothing here measures that."
+    }
    ],
-   "text": "Per child, FY2024 spending was 1.79 times FY1994 after prices; 3.85 times as printed."
+   "rests_on": [
+    "pp0",
+    "pp1",
+    "rpp0",
+    "rppx",
+    "ppx"
+   ],
+   "text": "Of $11,263 more per child since FY1994, $4,564 just kept up with rising prices; $6,699 is a real increase."
   },
   {
    "figures": {
@@ -461,7 +497,7 @@
     "peak",
     "pp1"
    ],
-   "text": "Enrolment peaked at 1,889 children in FY2001; per child, FY2024 was 1.48 times that year after prices."
+   "text": "Enrolment peaked at 1,889 children in FY2001; per child, FY2024 was 1.48 times that year after inflation."
   }
  ],
  "facts": [
@@ -470,11 +506,6 @@
    "kind": "published",
    "label": {
     "figures": {
-     "r": {
-      "text": "FY2024",
-      "unit": "fiscal year",
-      "value": 2024
-     },
      "y": {
       "text": "FY1994",
       "unit": "fiscal year",
@@ -482,7 +513,7 @@
      }
     },
     "literals": [],
-    "text": "per child, FY1994, in FY2024 dollars"
+    "text": "per child, FY1994, adjusted for inflation"
    },
    "value": {
     "text": "$8,518",
@@ -502,7 +533,7 @@
      }
     },
     "literals": [],
-    "text": "times the FY1994 figure, per child, after prices"
+    "text": "times the FY1994 figure, per child, after inflation"
    },
    "value": {
     "text": "1.79",
@@ -692,11 +723,6 @@
     "unit": "",
     "value": 10.125142207053472
    },
-   "r": {
-    "text": "FY2024",
-    "unit": "fiscal year",
-    "value": 2024
-   },
    "y": {
     "text": "FY1994",
     "unit": "fiscal year",
@@ -709,7 +735,7 @@
    }
   },
   "literals": [],
-  "text": "In FY2024 dollars, spending per child went from $8,518 in FY1994 to $15,217 in FY2024; pupils fell 10.1%."
+  "text": "After inflation, spending per child went from $8,518 in FY1994 to $15,217 in FY2024; pupils fell 10.1%."
  },
  "full_report": {
   "href": "",
@@ -768,7 +794,7 @@
      "Net school spending",
      "Enrolled",
      "Per child, as printed",
-     "Per child, FY2024 dollars"
+     "Per child, after inflation"
     ],
     "key": "recent",
     "kinds": [
@@ -941,7 +967,7 @@
      "Net school spending",
      "Enrolled",
      "Per child, as printed",
-     "Per child, FY2024 dollars"
+     "Per child, after inflation"
     ],
     "key": "earlier",
     "kinds": [

@@ -578,7 +578,7 @@
    "title": "Programs and cuts"
   },
   {
-   "answer": "From FY2008 to FY2024 net school spending rose 12.7% after prices (61.3% as printed), while pupils fell 13.4% and teacher FTE 4.6%. None of it says why.",
+   "answer": "From FY2008 to FY2024 net school spending rose 12.7% after inflation (61.3% as printed), while pupils fell 13.4% and teacher FTE 4.6%. None of it says why.",
    "area": "school",
    "elsewhere": [
     {
@@ -592,6 +592,7 @@
      "topics": [
       "growth-by-spending-type",
       "spending-by-type-over-time",
+      "inflation-and-school-costs",
       "pay-or-headcount",
       "teacher-pay-compared",
       "teachers-on-the-scale",
@@ -629,8 +630,8 @@
    "ready": true,
    "shelf": "School spending history",
    "start": [
-    "growth-by-spending-type",
     "spending-by-type-over-time",
+    "growth-by-spending-type",
     "pay-or-headcount"
    ],
    "title": "School spending history"
@@ -772,7 +773,8 @@
       "surplus-bridge",
       "surplus-repeat-lines",
       "budget-burndown",
-      "sped-burndown"
+      "sped-burndown",
+      "surplus-suggestions"
      ]
     },
     {
@@ -2418,7 +2420,7 @@
    "title": "Growth by spending type"
   },
   "growth-side-by-side": {
-   "finding": "FY2008 to FY2024: spending up 12.7% after prices (61.3% as printed); pupils down 13.4%, teacher FTE 4.6%.",
+   "finding": "FY2008 to FY2024: spending up 12.7% after inflation (61.3% as printed); pupils down 13.4%, teacher FTE 4.6%.",
    "generator": "scripts/build_spending_staff_students_topics.py",
    "home": "school-spending-history",
    "id": "growth-side-by-side",
@@ -2706,6 +2708,19 @@
    ],
    "title": "Income by age"
   },
+  "inflation-and-school-costs": {
+   "finding": "Most of the rise in school spending since FY2009 is inflation: $8.9 million of $10.6 million a year.",
+   "generator": "scripts/build_inflation_topic.py",
+   "home": "school-spending-history",
+   "id": "inflation-and-school-costs",
+   "minutes": 2,
+   "path": "/school-spending-history/inflation-and-school-costs",
+   "ready": true,
+   "shelves": [
+    "school-spending-history"
+   ],
+   "title": "Inflation and school costs"
+  },
   "leaving-and-arriving": {
    "finding": "DESE’s rates imply about 90 children leave each year; enrolment fell 171 in 17 years.",
    "generator": "scripts/build_enrolment_topics.py",
@@ -2772,7 +2787,7 @@
    "title": "Long-run balance rate"
   },
   "long-run-school-spending": {
-   "finding": "In FY2024 dollars net school spending went from $14,974,588 in FY1994 to $24,043,452 in FY2024, 1.61 times.",
+   "finding": "After inflation, net school spending went from $14,974,588 in FY1994 to $24,043,452 in FY2024, 1.61 times.",
    "generator": "scripts/build_spending_staff_students_topics.py",
    "home": "school-spending-history",
    "id": "long-run-school-spending",
@@ -3632,11 +3647,11 @@
    "title": "Spending by type over time"
   },
   "spending-per-child-enrolled": {
-   "finding": "In FY2024 dollars, spending per child went from $8,518 in FY1994 to $15,217 in FY2024; pupils fell 10.1%.",
+   "finding": "After inflation, spending per child went from $8,518 in FY1994 to $15,217 in FY2024; pupils fell 10.1%.",
    "generator": "scripts/build_spending_staff_students_topics.py",
    "home": "school-spending-history",
    "id": "spending-per-child-enrolled",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/school-spending-history/spending-per-child-enrolled",
    "ready": true,
    "shelves": [
@@ -3776,6 +3791,19 @@
     "fy2026-closeout"
    ],
    "title": "Under budget twice"
+  },
+  "surplus-suggestions": {
+   "finding": "The surplus came from many small leftovers, year after year, not one line; these options follow from that.",
+   "generator": "scripts/build_journal_surplus_topics.py",
+   "home": "fy2026-closeout",
+   "id": "surplus-suggestions",
+   "minutes": 1,
+   "path": "/fy2026-closeout/surplus-suggestions",
+   "ready": true,
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Surplus suggestions"
   },
   "tax-bill-neighbours": {
    "finding": "At $7,444, the average bill is 6th of 11 nearby towns and 145 of 351 statewide.",

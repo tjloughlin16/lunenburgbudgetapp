@@ -26,6 +26,7 @@ import {
   Bar, CartesianGrid, ComposedChart, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis,
   YAxis,
 } from 'recharts'
+import { useState } from 'react'
 import { usdShort } from '../model/engine'
 import { abs } from '../lib/abs'
 
@@ -38,17 +39,24 @@ export type SeriesChart = {
     /** Palette place, when it must match another chart of the same things. */
     colour?: number
     /** Small multiples only: first value to last, written by the generator. */
-    change?: string }[]
+    change?: string
+    /** Overlay only: every value less the first, and its text, written by the generator. */
+    rebased?: (number | null)[]; rebased_texts?: (string | null)[] }[]
   note: Unit | null
   reference?: { value: number; label: string; text: string } | null
   from_zero?: boolean
   /** Small multiples: one panel per track, all on one scale from zero (scripts/topic.py). */
   multiples?: boolean
+  /** Overlay: the same tracks on one axis, with a key that picks one out (scripts/topic.py). */
+  overlay?: boolean
 }
 export type RankingChart = {
   type: 'ranking'; title: string; unit: string; basis: Basis; stack: string[] | null
-  rows: { label: string; value?: number | null; values?: (number | null)[]; texts: (string | null)[]; total: string | null }[]
+  rows: { label: string; value?: number | null; values?: (number | null)[]; texts: (string | null)[]; total: string | null
+    /** Bullet rows only: the benchmark, its text, and value less benchmark (scripts/topic.py). */
+    mark?: number; mark_text?: string; gap_text?: string; over?: boolean }[]
   highlight: string[]; note: Unit | null
+  value_label?: string; mark_label?: string; gap_label?: string; under_label?: string
 }
 export type PartsChart = {
   type: 'parts'; title: string; unit: string; basis: Basis
@@ -231,8 +239,134 @@ function Multiples({ c }: { c: SeriesChart }) {
   )
 }
 
+/** OVERLAY. The small multiples' tracks on ONE axis, so they read against each other (TJ,
+ *  20 October 2026). Fifteen lines in five colours is a tangle, so it is drawn as FOCUS AND
+ *  CONTEXT: each line takes its band colour, and the key picks one out -- hover to look, tap
+ *  to hold -- drawing it heavy and fading the rest. The tooltip lists every track at that
+ *  year, largest first, or only the one picked out.
+ *
+ *  It OPENS REBASED (TJ, 20 October 2026): each line is its dollar change since the first
+ *  year, so the lines part by what each type added, not by how big each was. "Amount"
+ *  switches to the sizes. Both sets of values and texts arrive from the generator. */
+type Mode = 'change' | 'amount'
+const pick = (s: SeriesChart['series'][number], m: Mode) =>
+  m === 'change' && s.rebased ? { v: s.rebased, t: s.rebased_texts ?? s.texts } : { v: s.values, t: s.texts }
+
+function OverlayTip({ active, label, c, focus, mode }: { active?: boolean; label?: string; c: SeriesChart; focus: number | null; mode: Mode }) {
+  if (!active) return null
+  const at = c.x.indexOf(String(label))
+  const rows = c.series.map((s, i) => ({ s, i, v: pick(s, mode).v[at] }))
+    .filter(r => focus == null || r.i === focus)
+    .sort((a, b) => (b.v ?? -Infinity) - (a.v ?? -Infinity))
+  return (
+    <div className="rounded-lg px-3 py-2 text-[12px] shadow-lg"
+      style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+      <p className="font-semibold mb-1" style={{ color: 'var(--text-secondary)' }}>{label}</p>
+      {rows.map(({ s, i }) => (
+        <p key={s.name} className="flex items-center justify-between gap-5 tnum">
+          <span className="inline-flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
+            <span className="inline-block w-2.5 h-2.5 rounded-[2px]"
+              style={{ background: COLOURS[(s.colour ?? i) % COLOURS.length] }} />
+            {s.name}</span>
+          <span className="font-semibold">{shown(pick(s, mode).t[at])}</span>
+        </p>
+      ))}
+    </div>
+  )
+}
+
+function Overlay({ c }: { c: SeriesChart }) {
+  const [held, setHeld] = useState<number | null>(null)
+  const [hover, setHover] = useState<number | null>(null)
+  const canRebase = c.series.every(s => s.rebased)
+  const [mode, setMode] = useState<Mode>(canRebase ? 'change' : 'amount')
+  const focus = held ?? hover
+  const rows = c.x.map((x, i) => Object.fromEntries([['x', x],
+    ...c.series.map((s, j) => [`s${j}`, pick(s, mode).v[i]] as const)]))
+  const views: [Mode, string][] = [['change', `Change since ${c.x[0]}`], ['amount', 'Amount']]
+  const common = c.series.every(s => s.basis === c.series[0].basis) ? c.series[0].basis : undefined
+  // The picked-out line is drawn LAST, so it sits on top of the faded ones.
+  const order = c.series.map((_, i) => i).sort((a, b) => (a === focus ? 1 : 0) - (b === focus ? 1 : 0))
+  return (
+    <Frame title={c.title} basis={common} note={c.note} label={seriesLabel(c)}>
+      {canRebase ? (
+        <div className="inline-flex rounded-lg p-0.5 mb-3" role="group" aria-label="What the lines show"
+          style={{ background: 'var(--surface-3)' }}>
+          {views.map(([m, name]) => (
+            <button key={m} type="button" aria-pressed={mode === m} onClick={() => setMode(m)}
+              className="text-[12.5px] font-medium rounded-md px-3 py-1"
+              style={{
+                color: mode === m ? 'var(--text-primary)' : 'var(--text-secondary)',
+                background: mode === m ? 'var(--surface-1)' : 'transparent',
+                boxShadow: mode === m ? '0 1px 2px rgba(0,0,0,0.08)' : undefined,
+              }}>{name}</button>
+          ))}
+        </div>
+      ) : null}
+      <div className="flex flex-wrap gap-1.5 mb-3" role="group" aria-label="Pick out one line">
+        {c.series.map((s, i) => {
+          const col = COLOURS[(s.colour ?? i) % COLOURS.length]
+          const on = held === i
+          return (
+            <button key={s.name} type="button" aria-pressed={on}
+              onClick={() => setHeld(on ? null : i)}
+              onMouseEnter={() => setHover(i)} onMouseLeave={() => setHover(null)}
+              className="inline-flex items-center gap-1.5 text-[12px] rounded-full px-2.5 py-1 transition-opacity"
+              style={{
+                color: 'var(--text-secondary)',
+                border: `1px solid ${on ? col : 'var(--grid)'}`,
+                background: on ? 'var(--surface-3)' : 'transparent',
+                opacity: focus == null || focus === i ? 1 : 0.55,
+              }}>
+              <span className="inline-block w-2.5 h-2.5 rounded-[2px] shrink-0" style={{ background: col }} />
+              {s.name}
+            </button>
+          )
+        })}
+        {held != null ? (
+          <button type="button" onClick={() => setHeld(null)}
+            className="text-[12px] underline px-1.5 py-1" style={{ color: 'var(--text-muted)' }}>
+            Show all</button>
+        ) : null}
+      </div>
+      <div style={{ height: 340 }} aria-hidden>
+        <ResponsiveContainer width="100%" height="100%">
+          <ComposedChart data={rows} margin={{ top: 6, right: 22, bottom: 0, left: 0 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="x" interval="preserveStartEnd" minTickGap={14}
+              tick={{ fill: 'var(--text-muted)', fontSize: 11 }} stroke="var(--axis)" tickLine={false} />
+            {/* Seven ticks in the change view: at five the step is coarse enough that an axis
+                reaching -$0.6M is drawn to -$1.5M, a quarter of the chart empty. */}
+            <YAxis width={c.unit === '$' ? 54 : 44} tick={{ fill: 'var(--text-muted)', fontSize: 11 }}
+              stroke="var(--axis)" tickLine={false} axisLine={false} tickCount={mode === 'change' ? 7 : 5}
+              tickFormatter={(v: number) => tick(c.unit, v)} />
+            {mode === 'change' ? <ReferenceLine y={0} stroke="var(--axis)" /> : null}
+            <Tooltip content={<OverlayTip c={c} focus={focus} mode={mode} />}
+              cursor={{ stroke: 'var(--axis)', strokeDasharray: '2 3' }} />
+            {order.map(i => {
+              const s = c.series[i]
+              const col = COLOURS[(s.colour ?? i) % COLOURS.length]
+              const est = s.basis === 'estimate'
+              return (
+                <Line key={s.name} dataKey={`s${i}`} name={s.name} stroke={col}
+                  strokeWidth={focus === i ? 3.25 : 1.75}
+                  strokeOpacity={focus == null || focus === i ? 1 : 0.18}
+                  strokeDasharray={est ? '6 4' : undefined} dot={false} activeDot={focus == null || focus === i ? { r: 3 } : false}
+                  connectNulls={false} isAnimationActive={false} type="linear" />
+              )
+            })}
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
+      <SrTable head={['', ...c.series.map(s => s.name)]}
+        rows={c.x.map((x, i) => [x, ...c.series.map(s => shown(pick(s, mode).t[i]))])} />
+    </Frame>
+  )
+}
+
 function Series({ c }: { c: SeriesChart }) {
   if (c.multiples) return <Multiples c={c} />
+  if (c.overlay) return <Overlay c={c} />
   const rows = c.x.map((x, i) => Object.fromEntries([['x', x],
     ...c.series.map((s, j) => [`s${j}`, s.values[i]] as const)]))
   const negative = c.series.some(s => s.values.some(v => v != null && v < 0))
@@ -318,7 +452,64 @@ function SrTable({ head, rows }: { head: string[]; rows: string[][] }) {
 
 /* ------------------------------------------------------------------- ranking */
 
+/** A BULLET CHART: each row's bar starts at zero, and a tick across it marks the benchmark.
+ *  Past the tick is above the benchmark, short of it is below; the bar also takes --thread-1
+ *  or --thread-2 for which, and the row prints both figures and the gap, so colour is never
+ *  the only thing saying it. Replaced a diverging stack TJ could not read (20 October 2026). */
+function Bullet({ c }: { c: RankingChart }) {
+  const nums = c.rows.flatMap(r => [r.value ?? 0, r.mark ?? 0])
+  // A little room past the largest value, so a tick at the very end is drawn whole.
+  const lo = Math.max(0, ...nums.map(v => -v)), hi = Math.max(0, ...nums) * 1.02
+  const span = Math.max(lo + hi, 1)
+  const gap = (r: RankingChart['rows'][number]) => `${shown(r.gap_text)} ${r.over ? c.gap_label : c.under_label}`
+  const at = (v: number) => (100 * (v + lo)) / span
+  const est = c.basis === 'estimate'
+  const label = `${c.title}. Ranked, in ${unitWord(c.unit)}. `
+    + c.rows.map(r => `${r.label}: ${c.value_label} ${shown(r.total)}, ${c.mark_label} ${shown(r.mark_text)}, ${gap(r)}`).join('; ') + '.'
+  return (
+    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-[12px]" style={{ color: 'var(--text-secondary)' }}>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-4 h-2.5 rounded-[2px]" style={{ background: COLOURS[0] }} />{c.value_label}, past the tick</span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-4 h-2.5 rounded-[2px]" style={{ background: COLOURS[1] }} />{c.value_label}, short of it</span>
+        <span className="inline-flex items-center gap-1.5">
+          <span className="inline-block w-[3px] h-3.5 rounded-[1px]" style={{ background: 'var(--text-primary)' }} />{c.mark_label}</span>
+      </div>
+      <ol className="space-y-3" aria-hidden>
+        {c.rows.map(r => {
+          const v = r.value ?? 0, m = r.mark ?? 0
+          const col = COLOURS[r.over ? 0 : 1]
+          return (
+            <li key={r.label}>
+              <div className="flex items-baseline justify-between gap-3 text-[13px] leading-tight">
+                <span className="min-w-0 break-words" style={{ color: 'var(--text-primary)' }}>{r.label}</span>
+                <span className="tnum shrink-0 font-medium" style={{ color: 'var(--text-primary)' }}>{shown(r.total)}</span>
+              </div>
+              <div className="mt-1 h-3.5 relative">
+                <div className="absolute left-0 right-0 top-[2px] h-2.5 rounded-[2px]" style={{ background: 'var(--surface-3)' }} />
+                {v === 0 ? null : <span className="absolute top-[2px] h-2.5" style={{
+                  left: `${Math.min(at(0), at(v))}%`, width: `${Math.abs(at(v) - at(0))}%`,
+                  background: est ? 'transparent' : col, opacity: c.basis === 'stated' ? 0.65 : 1,
+                  border: est ? `1.5px dashed ${col}` : undefined }} />}
+                {lo > 0 ? <span className="absolute top-0 bottom-0" style={{ left: `${at(0)}%`, width: 1, background: 'var(--axis)' }} /> : null}
+                <span className="absolute top-0 bottom-0 rounded-[1px]" style={{ left: `calc(${at(m)}% - 1.5px)`, width: 3,
+                  background: 'var(--text-primary)' }} />
+              </div>
+              <p className="text-[11.5px] tnum mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+                {c.mark_label} {shown(r.mark_text)} · <span style={{ color: col, fontWeight: 600 }}>{gap(r)}</span></p>
+            </li>
+          )
+        })}
+      </ol>
+      <SrTable head={['', c.value_label ?? '', c.mark_label ?? '', 'Difference']}
+        rows={c.rows.map(r => [r.label, shown(r.total), shown(r.mark_text), gap(r)])} />
+    </Frame>
+  )
+}
+
 function Ranking({ c }: { c: RankingChart }) {
+  if (c.mark_label) return <Bullet c={c} />
   const vals = (r: RankingChart['rows'][number]) => (c.stack ? r.values ?? [] : [r.value ?? null])
   const total = (r: RankingChart['rows'][number]) => vals(r).reduce<number>((a, v) => a + (v ?? 0), 0)
   const max = Math.max(...c.rows.map(r => Math.abs(total(r))), 1)

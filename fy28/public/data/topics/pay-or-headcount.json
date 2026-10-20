@@ -2,7 +2,7 @@
  "also": [
   {
    "decimals": 1,
-   "from_zero": true,
+   "from_zero": false,
    "kind": "line",
    "note": {
     "figures": {
@@ -10,61 +10,156 @@
       "text": "FY2011",
       "unit": "fiscal year",
       "value": 2011
+     },
+     "y": {
+      "text": "FY2009",
+      "unit": "fiscal year",
+      "value": 2009
      }
     },
     "literals": [],
-    "text": "DESE’s teacher FTE. FY2011 reads low and recovers a year later; see FY2011 teacher reading."
+    "text": "Each over its own FY2009 value, as printed, not adjusted for inflation. FY2011 FTE reads low; see FY2011 teacher reading."
    },
-   "reference": null,
+   "reference": {
+    "label": "The FY2009 level",
+    "text": "100.0%",
+    "value": 100
+   },
    "series": [
+    {
+     "basis": "published",
+     "mark": "line",
+     "name": "Teachers spending",
+     "texts": [
+      "100.0%",
+      "102.0%",
+      "98.8%",
+      "101.9%",
+      "102.2%",
+      "102.2%",
+      "103.4%",
+      "108.8%",
+      "114.5%",
+      "116.5%",
+      "117.4%",
+      "121.5%",
+      "126.1%",
+      "128.3%",
+      "133.8%",
+      "153.8%",
+      "139.4%"
+     ],
+     "values": [
+      100.0,
+      101.98531510162165,
+      98.76392192427171,
+      101.8609720123691,
+      102.21533958554669,
+      102.24566483923932,
+      103.38335977073399,
+      108.75908734491559,
+      114.53861961300447,
+      116.49246356740665,
+      117.43841231540883,
+      121.50858519800222,
+      126.14126902797126,
+      128.27469086793795,
+      133.7924137483214,
+      153.79398525944393,
+      139.39348674119339
+     ]
+    },
     {
      "basis": "published",
      "mark": "line",
      "name": "Teacher FTE",
      "texts": [
-      "120.2 full-time equivalents",
-      "120.4 full-time equivalents",
-      "102.3 full-time equivalents",
-      "114.4 full-time equivalents",
-      "103.0 full-time equivalents",
-      "100.6 full-time equivalents",
-      "101.6 full-time equivalents",
-      "104.7 full-time equivalents",
-      "112.1 full-time equivalents",
-      "115.1 full-time equivalents",
-      "110.5 full-time equivalents",
-      "107.4 full-time equivalents",
-      "108.7 full-time equivalents",
-      "111.3 full-time equivalents",
-      "112.8 full-time equivalents",
-      "114.0 full-time equivalents",
-      "105.0 full-time equivalents"
+      "100.0%",
+      "100.2%",
+      "85.1%",
+      "95.2%",
+      "85.7%",
+      "83.7%",
+      "84.5%",
+      "87.1%",
+      "93.3%",
+      "95.8%",
+      "91.9%",
+      "89.4%",
+      "90.4%",
+      "92.6%",
+      "93.8%",
+      "94.8%",
+      "87.4%"
      ],
      "values": [
-      120.2,
-      120.4,
-      102.3,
-      114.4,
-      103.0,
-      100.6,
-      101.6,
-      104.7,
-      112.1,
-      115.1,
-      110.5,
-      107.4,
-      108.7,
-      111.3,
-      112.8,
-      114.0,
-      105.0
+      100.0,
+      100.16638935108153,
+      85.10815307820299,
+      95.17470881863561,
+      85.69051580698834,
+      83.69384359400998,
+      84.52579034941763,
+      87.10482529118136,
+      93.26123128119801,
+      95.75707154742096,
+      91.93011647254575,
+      89.35108153078203,
+      90.43261231281198,
+      92.59567387687188,
+      93.84359400998336,
+      94.84193011647254,
+      87.35440931780366
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "line",
+     "name": "Spending per teacher FTE",
+     "texts": [
+      "100.0%",
+      "101.8%",
+      "116.0%",
+      "107.0%",
+      "119.3%",
+      "122.2%",
+      "122.3%",
+      "124.9%",
+      "122.8%",
+      "121.7%",
+      "127.7%",
+      "136.0%",
+      "139.5%",
+      "138.5%",
+      "142.6%",
+      "162.2%",
+      "159.6%"
+     ],
+     "values": [
+      100.0,
+      101.81590427919372,
+      116.04519467543949,
+      107.02525206194726,
+      119.28430891439524,
+      122.16629138843506,
+      122.30984098860458,
+      124.86000285443032,
+      122.81482673936787,
+      121.65416264815185,
+      127.74748561368452,
+      135.9900553147101,
+      139.48648148263243,
+      138.53205608558977,
+      142.56957564315806,
+      162.15821954548386,
+      159.57235339325186
      ]
     }
    ],
    "stacked": false,
-   "title": "Teachers, year by year",
+   "title": "Teachers, spending and pay, rebased",
    "type": "series",
-   "unit": "full-time equivalents",
+   "unit": "%",
    "x": [
     "FY2009",
     "FY2010",
@@ -98,7 +193,7 @@
      }
     },
     "literals": [],
-    "text": "Teachers spending over teacher FTE. FY2025 dollars: Boston-area CPI-U, July-June averages, our arithmetic."
+    "text": "Teachers spending over teacher FTE. Adjusted for inflation: each older year at what it would cost at FY2025 prices (Boston-area prices, ours)."
    },
    "reference": null,
    "series": [
@@ -148,7 +243,7 @@
     {
      "basis": "published",
      "mark": "line",
-     "name": "In FY2025 dollars",
+     "name": "Adjusted for inflation",
      "texts": [
       "$88,775",
       "$89,588",
@@ -491,7 +586,7 @@
     "wr",
     "dese"
    ],
-   "text": "Spending per teacher went from $60,986 to $97,317; after Boston-area prices, +9.6%."
+   "text": "Spending per teacher went from $60,986 to $97,317; after Boston-area inflation, +9.6%."
   },
   {
    "figures": {},
@@ -736,7 +831,7 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "the same, after Boston-area prices"
+    "text": "the same, after Boston-area inflation"
    },
    "value": {
     "text": "+9.6%",

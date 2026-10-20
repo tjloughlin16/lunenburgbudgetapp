@@ -17,6 +17,8 @@ parts, in reading order:
                 link to the evidence. Only those three render; the facts carry the rest
     table       optional: FigureTable data -- the figures behind the chart
     said        optional: what was said in public meetings ABOUT THIS TOPIC ONLY
+    lead_quote  optional: ONE quotation the page opens with -- the claim the page tests, above
+                the finding (lead_quote() below). Checked verbatim against the document's text
     sources     where the figures come from, by address
 
 Every unit of prose goes through the same rule-2 check the brief and the ladder use
@@ -119,7 +121,8 @@ def ledger(caption, note, cards):
                            **({'note': s['note']} if s.get('note') else {}))
                       for s in c['sections'] if s['rows']],
             quotes=list(c.get('quotes', ())), unknown=c['unknown'], closes=c['closes'],
-            open=bool(c.get('open'))))
+            open=bool(c.get('open')),
+            **({'value_label': c['value_label']} if c.get('value_label') else {})))
     return dict(caption=caption, note=note, cards=out)
 
 
@@ -153,7 +156,7 @@ def check_ledger(l, where):
 
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
-         finding_figures=None, finding_allow=(), draft=None, also=()):
+         finding_figures=None, finding_allow=(), draft=None, also=(), lead_quote=None):
     """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
     (scripts/generate_report.py). Every check below runs on it exactly as on a registered page;
     only the title and the shelf come from the draft instead of scripts/topics.py.
@@ -184,6 +187,7 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     if len(set(ids)) != len(ids):
         raise ConclusionError('%s: two facts share an id' % id)
     bad = check_unit(f, '%s finding' % id)
+    bad += _lead_bad(lead_quote, said, id)
     bad += check_chart(chart, id, required=CHART_REQUIRED)
     if len(also) > 2:
         bad.append('%s: %d extra charts; a topic draws its signature and at most two more'
@@ -205,7 +209,8 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
         bad.append('%s: no sources -- rule 12' % id)
     n = _words([f] + [x['label'] for x in facts] + list(conclusions)
                + [nn for c in conclusions for nn in c.get('notes', [])]
-               + [dict(text=q['quote']) for q in said])
+               + [dict(text=q['quote']) for q in said]
+               + ([dict(text=lead_quote['quote'])] if lead_quote else []))
     if n > TOPIC_WORDS_MAX:
         bad.append('%s: %d words of prose, the limit is %d -- this is two topics; split it in '
                    'the registry rather than trimming it' % (id, n, TOPIC_WORDS_MAX))
@@ -221,6 +226,8 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
     extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
+    if lead_quote:                                   # likewise written only when set
+        extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS}
     return dict(
         extra, id=id, kind='topic', title=title, category=home,
         path=('/%s/%s' % (home, id)) if draft else REG.path(id),
@@ -231,6 +238,56 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
 
 def _words(units):
     return sum(len(u['text'].split()) for u in units)
+
+
+# ---------------------------------------------------------------------------- lead quote
+# TJ, 20 October 2026, on the inflation page: "start the page with a school committee quote".
+# A page that TESTS a claim opens with the claim, in the speaker's words, so the reader meets
+# what is being tested before the test. It is the claim under test, presented fairly -- the
+# clearest statement of it, not the most quotable slip (CLAUDE.md rule 8) -- and it is
+# checked VERBATIM against the town-published document's extracted text, never a machine
+# caption (a caption is a finding aid, not a record).
+LEAD_KEYS = ('quote', 'who', 'board', 'date', 'href', 'label')
+LEAD_MAX = 420
+
+
+def lead_quote(quote, who, board, date, href, label, text):
+    """The quotation a page opens with. `who` is the speaker exactly as the document names
+    them (a role is fine); `href` the document's /docs address; `text` the repo-relative path of
+    the document's extracted text, which the quote must appear in, whitespace aside. `text` is
+    for the check only and is not written into the payload."""
+    return dict(quote=' '.join(quote.split()), who=' '.join(who.split()), board=board,
+                date=date, href=href, label=' '.join(label.split()), text=text)
+
+
+def _norm_quote(s):
+    s = s.replace('\u2019', "'").replace('\u2018', "'").replace('\u201c', '"').replace('\u201d', '"')
+    return ' '.join(s.split())
+
+
+def _lead_bad(lq, said, where):
+    if lq is None:
+        return []
+    bad = []
+    if set(lq) != set(LEAD_KEYS) | {'text'} or not all(isinstance(lq[k], str) and lq[k].strip()
+                                                      for k in lq):
+        return ['%s: lead quote must be built by lead_quote(), every field set' % where]
+    if len(lq['quote']) > LEAD_MAX:
+        bad.append('%s: lead quote is %d characters, budget %d -- quote the claim, not the '
+                   'speech' % (where, len(lq['quote']), LEAD_MAX))
+    if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', lq['date']):
+        bad.append('%s: lead quote date %r is not YYYY-MM-DD' % (where, lq['date']))
+    if not lq['href'].startswith('/docs/'):
+        bad.append('%s: lead quote href %r is not an archive address (/docs/...)' % (where, lq['href']))
+    path = os.path.join(_ROOT, lq['text'])
+    if not lq['text'].startswith('sources/') or not os.path.exists(path):
+        bad.append('%s: lead quote text %r is not an extracted document under sources/'
+                   % (where, lq['text']))
+    elif _norm_quote(lq['quote']) not in _norm_quote(open(path, encoding='utf-8').read()):
+        bad.append('%s: lead quote is not verbatim in %s' % (where, lq['text']))
+    if any(_norm_quote(q['quote']) == _norm_quote(lq['quote']) for q in said):
+        bad.append('%s: the lead quote is repeated in `said`' % where)
+    return bad
 
 
 def conclusion(text, rests_on, figures=None, allow=(), notes=()):
@@ -329,7 +386,8 @@ def track(name, values, basis='published', mark=None, colour=None):
 
 
 def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_figures=None,
-           note_allow=(), decimals=None, reference=None, from_zero=True, multiples=False):
+           note_allow=(), decimals=None, reference=None, from_zero=True, multiples=False,
+           overlay=False):
     """Named tracks over the same x -- years (C.fy(y)) or categories, as strings.
     reference: (value, label) -- one horizontal line a reader measures the tracks against,
       e.g. (100, 'The state minimum'). Its value is shown by fmt(), like every other.
@@ -339,7 +397,21 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
     multiples: SMALL MULTIPLES -- one small panel per track, every panel on the same scale
       from zero, so each track's own change can be read and their sizes still compare. The
       answer to a stack, where only the bottom band sits on a flat baseline (TJ, 19 October
-      2026: "Its hard with the stacking to see how each one ITSELF changed")."""
+      2026: "Its hard with the stacking to see how each one ITSELF changed").
+    overlay: the same tracks as small multiples, all on ONE axis, so they read against each
+      other (TJ, 20 October 2026: "I want to also see them in relation to each other"). Past
+      five lines one axis is a tangle, so the browser draws it as FOCUS AND CONTEXT: every
+      line in its band colour, and a key that picks one out and fades the rest. Like
+      multiples it takes up to PANELS_MAX tracks, each with its colour=. It opens REBASED --
+      every track as its dollar change since the first year, so the lines separate by what
+      each added rather than by how big each was -- with a toggle back to the amounts."""
+    if multiples and overlay:
+        raise ConclusionError('chart %r: multiples or overlay, not both' % title)
+    if overlay and (stacked or kind != 'line' or any(t['mark'] not in (None, 'line') for t in tracks)):
+        raise ConclusionError('chart %r: an overlay is unstacked lines on one axis' % title)
+    if overlay and any(t['values'][0] is None for t in tracks):
+        raise ConclusionError('chart %r: an overlay opens rebased to its first year, so every '
+                              'track needs a value there' % title)
     if multiples and (stacked or not from_zero or reference is not None):
         raise ConclusionError('chart %r: small multiples are unstacked, from zero, with no '
                               'reference line -- one shared scale is the point' % title)
@@ -356,21 +428,39 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
                          series=[dict(t, mark=t['mark'] or kind) for t in tracks],
                          decimals=decimals, reference=ref, from_zero=bool(from_zero),
                          note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note'),
-                         **({'multiples': True} if multiples else {})))
+                         **({'multiples': True} if multiples else {}),
+                         **({'overlay': True} if overlay else {})))
 
 
 def ranking(title, rows, unit, highlight=(), basis='published', stack=None, note=None,
-            note_figures=None, note_allow=(), decimals=None):
+            note_figures=None, note_allow=(), decimals=None, marks=None, value_label=None,
+            mark_label=None, gap_label=None, under_label=None):
     """Horizontal bars, largest first. rows: [(label, value)], or with `stack` (a list of
-    names) [(label, [value per name])]. `highlight`: a label or labels to mark."""
+    names) [(label, [value per name])]. `highlight`: a label or labels to mark.
+    marks: a BULLET CHART -- {row label: benchmark}, drawn as a tick across each row's bar, so
+      a bar that passes its tick beat the benchmark and one that stops short did not. Needs
+      value_label (what the bar is), mark_label (what the tick is), gap_label (how far a bar
+      PASSES its tick) and under_label (how far one falls SHORT), so a row never prints a
+      negative "beyond" -- "$452,473 short of prices", not "beyond prices -$452,473". Replaced a diverging stack on the inflation page that
+      TJ could not read (20 October 2026: "sometimes blue bar is left, sometimes right")."""
     hl = [highlight] if isinstance(highlight, str) else list(highlight)
     total = lambda v: (sum(x for x in v if _isnum(x)) if isinstance(v, (list, tuple)) else v)
     rs = [dict(label=l, values=list(v)) if stack else dict(label=l, value=v) for l, v in rows]
+    if marks is not None:
+        if stack or not (value_label and mark_label and gap_label and under_label):
+            raise ConclusionError('chart %r: marks are for an unstacked ranking, and need '
+                                  'value_label, mark_label, gap_label and under_label' % title)
+        if set(marks) != {r['label'] for r in rs}:
+            raise ConclusionError('chart %r: marks must name every row, and only rows' % title)
+        for r in rs:
+            r['mark'] = marks[r['label']]
     rs.sort(key=lambda r: (total(r.get('values', r.get('value'))) is None,
                            -(total(r.get('values', r.get('value'))) or 0)))
     return _checked(dict(type='ranking', title=' '.join(title.split()), unit=unit, basis=basis,
                          rows=rs, stack=list(stack) if stack else None, highlight=hl,
-                         decimals=decimals, note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note')))
+                         decimals=decimals, note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note'),
+                         **(dict(value_label=value_label, mark_label=mark_label, gap_label=gap_label,
+                                 under_label=under_label) if marks is not None else {})))
 
 
 def parts(title, items, unit, basis='published', note=None, note_figures=None, note_allow=(),
@@ -464,6 +554,14 @@ def _texts(c):
                 got = [v for v in s['values'] if v is not None]
                 ch = got[-1] - got[0]
                 o['change'] = ('+' if ch >= 0 else '-') + fmt(u, abs(ch), d)
+            # An overlay also carries every track REBASED to its first year -- the change since
+            # then, which is what the chart opens on (TJ, 20 October 2026). In dollars, never a
+            # percentage: an index makes the smallest lines the loudest (CLAUDE.md rule 4).
+            if c.get('overlay'):
+                base = s['values'][0]
+                o['rebased'] = [None if v is None else v - base for v in s['values']]
+                o['rebased_texts'] = [None if v is None else ('+' if v >= 0 else '-') + fmt(u, abs(v), d)
+                                      for v in o['rebased']]
             return o
         return dict(series=[one(s) for s in c['series']])
     if t == 'ranking':
@@ -471,8 +569,14 @@ def _texts(c):
             vs = r['values'] if c['stack'] else [r['value']]
             got = [v for v in vs if v is not None]
             texts = [fmt(u, v, d) for v in vs]
-            return dict(r, texts=texts, total=(texts[0] if not c['stack'] else
-                                               fmt(u, round(sum(got), 6), d) if got else None))
+            o = dict(r, texts=texts, total=(texts[0] if not c['stack'] else
+                                            fmt(u, round(sum(got), 6), d) if got else None))
+            if 'mark' in r:      # a bullet row: the tick and the gap, written here (rule 2)
+                gap = r['value'] - r['mark']
+                o['mark_text'] = fmt(u, r['mark'], d)
+                o['gap_text'] = fmt(u, abs(gap), d)     # unsigned; `over` says which way
+                o['over'] = gap >= 0
+            return o
         return dict(rows=[one(r) for r in c['rows']])
     if t == 'parts':
         whole = round(sum(p['value'] for p in c['parts']), 2)
@@ -538,7 +642,7 @@ def _inline_bad(c, where, texts=True):
             bad.append('%s: %d x values; a series chart draws 2 to %d' % (where, len(x), POINTS_MAX))
         if len(set(x)) != len(x) or not all(isinstance(v, str) and v for v in x):
             bad.append('%s: x must be distinct non-empty strings (C.fy(y) for years)' % where)
-        cap = PANELS_MAX if c.get('multiples') else TRACKS_MAX
+        cap = PANELS_MAX if c.get('multiples') or c.get('overlay') else TRACKS_MAX
         if not 1 <= len(ts) <= cap:
             bad.append('%s: %d tracks; a chart holds 1 to %d' % (where, len(ts), cap))
         if len(ts) > TRACKS_MAX and not all('colour' in s for s in ts):

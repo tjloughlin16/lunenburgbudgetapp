@@ -461,6 +461,52 @@ GROUPS = [
              'Written by us: the four request addresses, why the API rather than BLS\u2019s '
              'flat file, why nothing is spliced, and how a fiscal-year average is built. '
              'Read by scripts/build_spending_staff_students_topics.py.'),
+            ('federal-bls/CIU3026110000000I-2008-2017.json',
+             'School pay, 2008\u20132017', 1,
+             'The BLS API\u2019s answer for series CIU3026110000000I, 2008 to 2017, every published (quarterly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/CIU3026110000000I-2018-2026.json',
+             'School pay, 2018\u20132026', 1,
+             'The BLS API\u2019s answer for series CIU3026110000000I, 2018 to 2026, every published (quarterly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/CIU3030000000000I-2008-2017.json',
+             'Public employers\u2019 benefit costs, 2008\u20132017', 1,
+             'The BLS API\u2019s answer for series CIU3030000000000I, 2008 to 2017, every published (quarterly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/CIU3030000000000I-2018-2026.json',
+             'Public employers\u2019 benefit costs, 2018\u20132026', 1,
+             'The BLS API\u2019s answer for series CIU3030000000000I, 2018 to 2026, every published (quarterly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/CUURS11ASAF11-2008-2017.json',
+             'Grocery prices, Boston area, 2008\u20132017', 1,
+             'The BLS API\u2019s answer for series CUURS11ASAF11, 2008 to 2017, every published (monthly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/CUURS11ASAF11-2018-2026.json',
+             'Grocery prices, Boston area, 2018\u20132026', 1,
+             'The BLS API\u2019s answer for series CUURS11ASAF11, 2018 to 2026, every published (monthly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/CUUR0100SAH21-2008-2017.json',
+             'Home energy prices, Northeast, 2008\u20132017', 1,
+             'The BLS API\u2019s answer for series CUUR0100SAH21, 2008 to 2017, every published (monthly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/CUUR0100SAH21-2018-2026.json',
+             'Home energy prices, Northeast, 2018\u20132026', 1,
+             'The BLS API\u2019s answer for series CUUR0100SAH21, 2018 to 2026, every published (monthly) value, '
+             'saved as returned. A cost index for one kind of school spending on '
+             '/school-spending-history/inflation-and-school-costs.'),
+            ('federal-bls/PROVENANCE-cost-indexes.md',
+             'Where the cost indexes came from', 1,
+             'Written by us: the eight request addresses, what was asked for and does not '
+             'exist (a benefits index for schools alone, a price index for school buses), why '
+             'the Northeast energy series rather than Boston\u2019s, and how a fiscal-year '
+             'average is built. Read with sources/data/inflation-cost-index-map.csv.'),
         ]},
     {
         'section': 'theirs', 'id': 'tax-base', 'origin': 'town',
@@ -571,10 +617,10 @@ GROUPS = [
              'DESE\u2019s copy, Teacher_Contract.pdf, and current. Salary schedules for FY25 to FY27 (3%, 3.125%, 3.125%), pages 34-35.'),
             ('contracts/pdf/dese-teacher-contract-uxbridge.pdf',
              'Uxbridge Unit A agreement as filed with DESE, 1 July 2023 to 30 June 2026', 2,
-             'DESE\u2019s copy, Teacher_Contract.pdf. A scan; current through FY2026.'),
+             'DESE\u2019s copy, Teacher_Contract.pdf. A scan; current through FY2026. Salary schedules for FY24 to FY26, pages 35-38.'),
             ('contracts/pdf/shrewsbury-teachers-2025-2028.pdf',
              'Shrewsbury Education Association agreement, 25 August 2025 to 24 August 2028', 2,
-             'The union\u2019s posted copy, SEA-2025-2028-contract.pdf. A scan.'),
+             'The union\u2019s posted copy, SEA-2025-2028-contract.pdf. A scan. Salary schedules for FY26 to FY28, pages 55-56; dropped steps are printed struck through.'),
             ('contracts/pdf/dese-teacher-contract-shrewsbury.pdf',
              'Shrewsbury teachers\u2019 agreement as filed with DESE, 2022-2025', 1,
              'DESE\u2019s copy, Teacher_Contract.pdf. Expired.'),
@@ -598,16 +644,16 @@ GROUPS = [
              'DESE\u2019s copy, Teacher_Contract.pdf. A scan. Expired.'),
             ('contracts/pdf/groton-dunstable-teachers-2024-2027.pdf',
              'Groton-Dunstable Unit A agreement, 1 September 2024 to 31 August 2027', 2,
-             'The union\u2019s posted signed copy, unit-a-contract-fy25-fy27-signed-1.pdf. A scan. DESE holds only the 2017-2020 schedules.'),
+             'The union\u2019s posted signed copy, unit-a-contract-fy25-fy27-signed-1.pdf. A scan. Salary schedules for FY25 to FY27 (3% a year), pages 54-55. DESE holds only the 2017-2020 schedules.'),
             ('contracts/pdf/ayer-shirley-teachers-2025-2028.pdf',
              'Ayer Shirley teachers\u2019 agreement, 1 September 2025 to 31 August 2028', 2,
-             'The union\u2019s posted copy, asrea_2025-2028_contract.pdf. A scan.'),
+             'The union\u2019s posted copy, asrea_2025-2028_contract.pdf. A scan. Salary schedules for FY26 to FY28 (3.75%, 3.5%, 3.5%), pages 38-40.'),
             ('contracts/pdf/ayer-shirley-teachers-2022-2025.pdf',
              'Ayer Shirley teachers\u2019 agreement, 1 September 2022 to 31 August 2025', 1,
              'The union\u2019s posted copy, 2022-2025_teachers_contract.pdf. Salary schedules for FY23 to FY25, pages 41-43.'),
             ('contracts/pdf/ashburnham-westminster-teachers-2025-2028.pdf',
              'Ashburnham-Westminster Teachers\u2019 Association agreement, July 2025 to June 2028', 2,
-             'The district\u2019s posted copy, awta_contract_2025-2028_2.pdf. A scan.'),
+             'The district\u2019s posted copy, awta_contract_2025-2028_2.pdf. A faint scan. Salary schedules for FY26 to FY28, pages 31-33.'),
             ('contracts/docx/dese-teacher-contract-nashoba.docx',
              'Nashoba Unit A agreement as filed with DESE, 2021-2022, with the 2017-2020 agreement', 1,
              'DESE\u2019s copy, Teacher_Contract.docx. Expired; salary charts FY2018-FY2022 as Word tables. The 2023-2026 and 2026-2029 agreements were not found published.'),
@@ -3635,6 +3681,13 @@ GROUPS = [
              'total of $27,903,187. A function code is not a budget line and not a post, '
              'so this bounds the funding-source question rather than settling it. '
              'Rebuild with scripts/extract_dese_finance.py.'),
+            ('data/inflation-cost-index-map.csv',
+             'Which price index each kind of school spending is measured against, and why', 3,
+             'OURS. One row per DESE spending type (buildings in three parts, by DESE function '
+             'code): the BLS series it is set against, how a fiscal-year average is taken, '
+             'whether it is a fallback to household prices, and the reason for each choice, '
+             'including where no published series fits (tuition, buses). Read by '
+             'scripts/build_inflation_topic.py.'),
             ('data/dese-function-statewide.csv',
              'Where Lunenburg sits among every Massachusetts district, per function, '
              'FY2009\u2013FY2025', 3,

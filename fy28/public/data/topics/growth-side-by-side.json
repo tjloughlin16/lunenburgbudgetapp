@@ -18,7 +18,7 @@
     }
    },
    "literals": [],
-   "text": "Each series over its own FY2008 value. FY2024 dollars: Boston-area CPI-U, July-June averages, our arithmetic."
+   "text": "Each series over its own FY2008 value. Adjusted for inflation: each older year at what it would cost at FY2024 prices (Boston-area prices, ours)."
   },
   "reference": {
    "label": "The FY2008 level",
@@ -76,7 +76,7 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Spending, FY2024 dollars, actual",
+    "name": "Spending adjusted for inflation, actual",
     "texts": [
      "100.0%",
      "100.2%",
@@ -329,14 +329,14 @@
      },
      "kind": "measured",
      "literals": [],
-     "text": "As printed the rise is 61.3%; Boston-area prices rose 43.2% over the same fiscal years."
+     "text": "As printed the rise is 61.3%; Boston-area inflation was 43.2% over the same fiscal years."
     }
    ],
    "rests_on": [
     "r-chg",
     "e-chg"
    ],
-   "text": "After prices spending rose 12.7% over FY2008 to FY2024, and pupils fell 13.4%."
+   "text": "After inflation spending rose 12.7% over FY2008 to FY2024, and pupils fell 13.4%."
   },
   {
    "figures": {
@@ -442,15 +442,10 @@
       "text": "FY2024",
       "unit": "fiscal year",
       "value": 2024
-     },
-     "r": {
-      "text": "FY2024",
-      "unit": "fiscal year",
-      "value": 2024
      }
     },
     "literals": [],
-    "text": "net school spending in FY2024 dollars, FY2008 to FY2024"
+    "text": "net school spending after inflation, FY2008 to FY2024"
    },
    "value": {
     "text": "+12.7%",
@@ -478,7 +473,7 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "Boston-area prices, the same years, July-June"
+    "text": "Boston-area inflation, the same years, July-June"
    },
    "value": {
     "text": "+43.2%",
@@ -676,7 +671,7 @@
    }
   },
   "literals": [],
-  "text": "FY2008 to FY2024: spending up 12.7% after prices (61.3% as printed); pupils down 13.4%, teacher FTE 4.6%."
+  "text": "FY2008 to FY2024: spending up 12.7% after inflation (61.3% as printed); pupils down 13.4%, teacher FTE 4.6%."
  },
  "full_report": {
   "href": "",
@@ -737,7 +732,7 @@
    {
     "columns": [
      "Spending as printed",
-     "Spending, FY2024 dollars",
+     "Spending after inflation",
      "Pupils",
      "Teacher FTE"
     ],

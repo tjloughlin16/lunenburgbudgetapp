@@ -33,7 +33,7 @@
    }
   },
   "literals": [],
-  "text": "From FY2008 to FY2024 net school spending rose 12.7% after prices (61.3% as printed), while pupils fell 13.4% and teacher FTE 4.6%. None of it says why."
+  "text": "From FY2008 to FY2024 net school spending rose 12.7% after inflation (61.3% as printed), while pupils fell 13.4% and teacher FTE 4.6%. None of it says why."
  },
  "category": "school-spending-history",
  "chains": [],
@@ -55,7 +55,7 @@
     }
    },
    "literals": [],
-   "text": "Each series over its own FY2008 value. FY2024 dollars: Boston-area CPI-U, July-June averages, our arithmetic."
+   "text": "Each series over its own FY2008 value. Adjusted for inflation: each older year at what it would cost at FY2024 prices (Boston-area prices, ours)."
   },
   "reference": {
    "label": "The FY2008 level",
@@ -113,7 +113,7 @@
    {
     "basis": "published",
     "mark": "line",
-    "name": "Spending, FY2024 dollars, actual",
+    "name": "Spending adjusted for inflation, actual",
     "texts": [
      "100.0%",
      "100.2%",
@@ -362,7 +362,7 @@
      "h-n",
      "h-e"
     ],
-    "text": "From FY2008 to FY2024 spending rose 12.7% after prices while pupils fell 13.4%."
+    "text": "From FY2008 to FY2024 spending rose 12.7% after inflation while pupils fell 13.4%."
    },
    {
     "figures": {
@@ -441,7 +441,7 @@
      "h-mult",
      "h-el"
     ],
-    "text": "Over FY1994 to FY2024 spending is 1.61 times larger after prices; pupils 10.1% fewer."
+    "text": "Over FY1994 to FY2024 spending is 1.61 times larger after inflation; pupils 10.1% fewer."
    },
    {
     "figures": {
@@ -486,11 +486,6 @@
       "text": "$15,217",
       "unit": "",
       "value": 15217.374498565703
-     },
-     "r": {
-      "text": "FY2024",
-      "unit": "fiscal year",
-      "value": 2024
      }
     },
     "literals": [],
@@ -498,7 +493,7 @@
      "h-rpp",
      "h-pp"
     ],
-    "text": "Per child enrolled it went from $8,518 to $15,217, both in FY2024 dollars."
+    "text": "Per child enrolled it went from $8,518 to $15,217, both adjusted for inflation."
    }
   ],
   "tiers": [
@@ -508,15 +503,9 @@
       "id": "h-r",
       "kind": "published",
       "label": {
-       "figures": {
-        "r": {
-         "text": "FY2024",
-         "unit": "fiscal year",
-         "value": 2024
-        }
-       },
+       "figures": {},
        "literals": [],
-       "text": "net school spending, in FY2024 dollars"
+       "text": "net school spending, after inflation"
       },
       "value": {
        "text": "+12.7%",
@@ -590,7 +579,7 @@
         }
        },
        "literals": [],
-       "text": "times the FY1994 net school spending, FY2024, after prices"
+       "text": "times FY1994 net school spending, FY2024, after inflation"
       },
       "value": {
        "text": "1.61",
@@ -623,11 +612,6 @@
       "kind": "published",
       "label": {
        "figures": {
-        "r": {
-         "text": "FY2024",
-         "unit": "fiscal year",
-         "value": 2024
-        },
         "y": {
          "text": "FY1994",
          "unit": "fiscal year",
@@ -635,7 +619,7 @@
         }
        },
        "literals": [],
-       "text": "per child, FY1994, in FY2024 dollars (ours)"
+       "text": "per child, FY1994, adjusted for inflation (ours)"
       },
       "value": {
        "text": "$8,518",

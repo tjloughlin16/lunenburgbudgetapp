@@ -19,6 +19,9 @@ CATEGORY = dict(
         # Led by the pages that answer the question directly -- where the growth went, by
         # type -- TJ, 19 October 2026.
         ('Side by side', ['growth-by-spending-type', 'spending-by-type-over-time',
+                          # TJ, 20 October 2026: "The schools have since claimed inflation
+                          # is a driver of deficits. lets see if thats true in this page."
+                          'inflation-and-school-costs',
                           # TJ, 19 October 2026: "did the increase cost from more teachers,
                           # or higher pay per teacher?" -- and how pay compares nearby.
                           'pay-or-headcount', 'teacher-pay-compared',
@@ -37,9 +40,10 @@ CATEGORY = dict(
                                      'chapter-70-by-year']),
     ],
     # The page that answers the residents' question most directly (TJ, 19 October 2026).
-    start=['growth-by-spending-type', 'spending-by-type-over-time', 'pay-or-headcount'],
+    start=['spending-by-type-over-time', 'growth-by-spending-type', 'pay-or-headcount'],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_spending_staff_students_topics.py'
+TOPIC_GENERATORS = {'inflation-and-school-costs': 'build_inflation_topic.py'}
 TOPICS = {
     'growth-by-spending-type': 'Growth by spending type',
     'spending-by-type-over-time': 'Spending by type over time',
@@ -51,4 +55,5 @@ TOPICS = {
     'pay-or-headcount': 'Pay or headcount',
     'teacher-pay-compared': 'Teacher pay compared',
     'teachers-on-the-scale': 'Teachers on the scale',
+    'inflation-and-school-costs': 'Inflation and school costs',
 }

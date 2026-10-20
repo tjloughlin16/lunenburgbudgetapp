@@ -448,6 +448,12 @@ def schedules():
         lambda: collections.defaultdict(dict)))
     which = collections.defaultdict(set)
     for r in csv.DictReader(open(SCHEDULES, encoding='utf-8')):
+        # ONLY THE DISTRICTS THIS PAGE HAS ALIGNED. The table now also holds the district's own
+        # comparison districts (Maynard, Wachusett, Hudson, Tyngsborough, Uxbridge, Shrewsbury,
+        # and current Groton-Dunstable and Ayer Shirley schedules); each needs its lanes in
+        # LANES and its longevity rule in LONGEVITY before it can be set beside these.
+        if r['district'] not in LANES:
+            continue
         y = int(r['fy'])
         which[(r['district'], y)].add((r['schedule'], r['doc']))
         grid[r['district']][y][r['lane']][int(r['step'])] = float(r['salary'])
@@ -513,9 +519,14 @@ def comparison_sets():
         return SETS_FALLBACK
     out = collections.defaultdict(set)
     for r in csv.DictReader(open(p, encoding='utf-8')):
-        out[r['set_id']].add(r['district_as_printed'].replace('-', ' ')
-                             if r['district_as_printed'] == 'Ayer-Shirley'
-                             else r['district_as_printed'])
+        name = r['district_as_printed']
+        # The schedules table names the district 'Ayer Shirley'; the registry prints it as
+        # the Budget Task Force did ('Ayer-Shirley') and, for the project's own set, by DESE's
+        # name ('Ayer Shirley School District'). The project's set also lists Lunenburg.
+        if name in ('Ayer-Shirley', 'Ayer Shirley School District'):
+            name = 'Ayer Shirley'
+        if name != 'Lunenburg':
+            out[r['set_id']].add(name)
     if set(out) != set(SETS_FALLBACK):
         fail('comparison-sets.csv carries sets %s, not %s' % (sorted(out), sorted(SETS_FALLBACK)))
     return out
@@ -693,8 +704,14 @@ def build():
         fail('no full fiscal-year price average for FY%s' % missing)
     ref = a1                                  # dollars of the latest ACTUAL year
     RL = {y: N_[y] * P[ref] / P[y] for y in N_}
-    DOLLARS = '%s dollars' % C.fy(ref)
-    CPI_NOTE = ('%s: Boston-area CPI-U, July-June averages, our arithmetic.' % DOLLARS)
+    # INFLATION IS SAID IN WORDS (TJ, 20 October 2026: "we need the word 'inflation' on these
+    # types of explanations"). 'FY2024 dollars' alone read as jargon; the year stays, because
+    # it says whose prices.
+    # PLAIN WORDS FOR WHAT THE ADJUSTMENT DOES (TJ, 20 October 2026: "im not good at this
+    # finance language"). The line that surprised him sits ABOVE the printed one because an
+    # older year is RAISED to today's prices; the note says that, not the economist's name.
+    CPI_NOTE = ('Adjusted for inflation: each older year at what it would cost at %s '
+                'prices (Boston-area prices, ours).' % C.fy(ref))
     cpi_fig = {'r': figure(ref, C.fy(ref), 'fiscal year')}
 
     F = lambda v: figure(v, C.fy(v), 'fiscal year')
@@ -731,7 +748,7 @@ def build():
     growth_chart = TP.series(
         'Spending, pupils and teachers, rebased', [C.fy(y) for y in years], [
             TP.track('Spending as printed, actual', idx(N_, actual), 'published', 'line'),
-            TP.track('Spending, %s, actual' % DOLLARS, idx(RL, actual), 'published', 'line'),
+            TP.track('Spending adjusted for inflation, actual', idx(RL, actual), 'published', 'line'),
             TP.track('Spending as printed, budgeted', idx(N_, budgeted), 'published', 'line'),
             TP.track('Pupils, 1 October', idx(E, E), 'published', 'line'),
             TP.track('Teacher FTE', idx(T, T), 'published', 'line')], '%',
@@ -740,12 +757,12 @@ def build():
         note_figures=dict(cpi_fig, y=F(base)))
     out['growth-side-by-side'] = TP.page(
         'growth-side-by-side',
-        '%s to %s: spending up %s after prices (%s as printed); pupils down %s, teacher FTE %s.'
+        '%s to %s: spending up %s after inflation (%s as printed); pupils down %s, teacher FTE %s.'
         % (C.fy(base), C.fy(a1), C.pct(r_chg), C.pct(n_chg), C.pct(-e_chg), C.pct(-t_chg)),
-        [f('r-chg', SP(r_chg), 'net school spending in %s, %s to %s' % (DOLLARS, C.fy(base), C.fy(a1)),
-           'published', {'r': F(ref), 'a': F(base), 'b': F(a1)}),
+        [f('r-chg', SP(r_chg), 'net school spending after inflation, %s to %s' % (C.fy(base), C.fy(a1)),
+           'published', {'a': F(base), 'b': F(a1)}),
          f('n-chg', SP(n_chg), 'net school spending as printed, the same years', 'published'),
-         f('p-chg', SP(p_chg), 'Boston-area prices, the same years, July-June', 'published'),
+         f('p-chg', SP(p_chg), 'Boston-area inflation, the same years, July-June', 'published'),
          f('e-chg', SP(e_chg), 'pupils enrolled 1 October, the same years', 'published',
            allow=('1',)),
          f('t-chg', SP(t_chg), 'teacher FTE, the same years', 'published'),
@@ -759,10 +776,10 @@ def build():
            {'a': F(era), 'b': F(a1)}),
          f('e-era', SP(e_era), 'pupils, %s to %s' % (C.fy(era), C.fy(a1)), 'published',
            {'a': F(era), 'b': F(a1)})],
-        [con('After prices spending rose %s over %s to %s, and pupils fell %s.'
+        [con('After inflation spending rose %s over %s to %s, and pupils fell %s.'
              % (C.pct(r_chg), C.fy(base), C.fy(a1), C.pct(-e_chg)), ['r-chg', 'e-chg'],
              {'a': PC(r_chg), 'y': F(base), 'z': F(a1), 'b': PC(-e_chg)},
-             notes=[step('As printed the rise is %s; Boston-area prices rose %s over the same '
+             notes=[step('As printed the rise is %s; Boston-area inflation was %s over the same '
                          'fiscal years.' % (C.pct(n_chg), C.pct(p_chg)), 'measured',
                          {'a': PC(n_chg), 'b': PC(p_chg)})]),
          con('Teacher FTE reads %s from %s and %s from %s; the start year sets the sign.'
@@ -781,7 +798,7 @@ def build():
         chart=growth_chart,
         table=dict(caption='Each series as a share of its %s value' % C.fy(base), views=[dict(
             key='index', label='Share of %s' % C.fy(base), total_col=-1, kinds=['ledger'] * 4,
-            columns=['Spending as printed', 'Spending, %s' % DOLLARS, 'Pupils', 'Teacher FTE'],
+            columns=['Spending as printed', 'Spending after inflation', 'Pupils', 'Teacher FTE'],
             rows=[dict(label=C.fy(y) + (' (budgeted)' if y in budgeted else ''), cells=[
                 C.pct(100.0 * N_[y] / N_[base]) if y in N_ else None,
                 C.pct(100.0 * RL[y] / RL[base]) if y in RL else None,
@@ -806,11 +823,11 @@ def build():
     xs = list(range(a0, b1 + 1))
     out['long-run-school-spending'] = TP.page(
         'long-run-school-spending',
-        'In %s net school spending went from %s in %s to %s in %s, %s times.'
-        % (DOLLARS, C.usd(RL[a0]), C.fy(a0), C.usd(N_[a1]), C.fy(a1), '%.2f' % rmult),
-        [f('r0', U(RL[a0]), 'net school spending, %s, in %s' % (C.fy(a0), DOLLARS), 'published',
-           {'y': F(a0), 'r': F(ref)}),
-         f('rmult', X(rmult), 'times the %s figure, %s, after prices' % (C.fy(a0), C.fy(a1)),
+        'After inflation, net school spending went from %s in %s to %s in %s, %s times.'
+        % (C.usd(RL[a0]), C.fy(a0), C.usd(N_[a1]), C.fy(a1), '%.2f' % rmult),
+        [f('r0', U(RL[a0]), 'net school spending, %s, adjusted for inflation' % C.fy(a0), 'published',
+           {'y': F(a0)}),
+         f('rmult', X(rmult), 'times the %s figure, %s, after inflation' % (C.fy(a0), C.fy(a1)),
            'published', {'a': F(a0), 'b': F(a1)}),
          f('pmult', X(pmult), 'times the %s price level, %s, July-June' % (C.fy(a0), C.fy(a1)),
            'published', {'a': F(a0), 'b': F(a1)}),
@@ -819,13 +836,13 @@ def build():
          f('mult', X(mult), 'times the %s figure, %s, as printed' % (C.fy(a0), C.fy(a1)),
            'published', {'a': F(a0), 'b': F(a1)}),
          f('nb', U(N_[b1]), 'net school spending, %s, budgeted' % C.fy(b1), 'published', {'y': F(b1)}),
-         f('up', N(rsteps_up, 'years'), 'of %s year-to-year steps rose after prices'
+         f('up', N(rsteps_up, 'years'), 'of %s year-to-year steps rose after inflation'
            % C.num(steps_n), 'published', {'n': N(steps_n)}),
          f('aid0', PC(aid0), 'Chapter 70 aid as a share of it, %s' % C.fy(a0), 'published',
            {'y': F(a0)}, allow=('70',)),
          f('aid1', PC(aid1), 'Chapter 70 aid as a share of it, %s' % C.fy(a1), 'published',
            {'y': F(a1)}, allow=('70',))],
-        [con('After prices, net school spending rose in %s of %s steps from %s to %s.'
+        [con('After inflation, net school spending rose in %s of %s steps from %s to %s.'
              % (C.num(rsteps_up), C.num(steps_n), C.fy(a0), C.fy(a1)), ['up', 'r0', 'n1'],
              {'a': N(rsteps_up), 'n': N(steps_n), 'y': F(a0), 'z': F(a1)},
              notes=[step('As printed it rose in %s of them.' % C.num(steps_up), 'measured',
@@ -836,7 +853,7 @@ def build():
              notes=[step('Net school spending is the state’s measure: it counts some costs the '
                          'town carries for the schools and leaves out transport and capital. It '
                          'is not the town’s school budget line.', 'measured')]),
-         con('As printed spending is %s times %s; prices are %s times, so after prices %s.'
+         con('As printed spending is %s times %s; prices are %s times, so after inflation %s.'
              % ('%.2f' % mult, C.fy(a0), '%.2f' % pmult, '%.2f' % rmult),
              ['mult', 'pmult', 'rmult'],
              {'a': X(mult), 'y': F(a0), 'b': X(pmult), 'c': X(rmult)}),
@@ -847,15 +864,16 @@ def build():
                      'published', 'bar'),
             TP.track('Budgeted, as printed', [N_[y] if y in budgeted else None for y in xs],
                      'published', 'bar'),
-            TP.track('Actual, %s' % DOLLARS, [RL[y] if y in actual else None for y in xs],
+            TP.track('Actual, adjusted for inflation', [RL[y] if y in actual else None for y in xs],
                      'published', 'line'),
-            TP.track('Budgeted, %s' % DOLLARS, [RL[y] if y in budgeted else None for y in xs],
+            TP.track('Budgeted, adjusted for inflation', [RL[y] if y in budgeted else None for y in xs],
                      'published', 'line')],
             '$', kind='bar', stacked=True,
-            note='Bars as printed by DESE; lines in %s' % CPI_NOTE, note_figures=cpi_fig),
+            note='Bars as printed by DESE. Lines adjusted for inflation: each older year at what it '
+                 'would cost at %s prices (Boston-area prices, ours).' % C.fy(ref), note_figures=cpi_fig),
         table=dict(caption='Net school spending and Chapter 70 aid by year', views=[dict(
             key=key, label=label, total_col=-1, kinds=['ledger'] * 4,
-            columns=['As printed', 'In %s' % DOLLARS, 'Chapter 70 aid', 'Aid share'],
+            columns=['As printed', 'Adjusted for inflation', 'Chapter 70 aid', 'Aid share'],
             rows=[dict(label=C.fy(y) + (' (budgeted)' if y in budgeted else ''), cells=[
                 C.usd(N_[y]), C.usd(RL[y]), C.usd(ch[y]['aid']),
                 C.pct(100.0 * ch[y]['aid'] / N_[y])])
@@ -866,7 +884,7 @@ def build():
                 ('recent', '%s to %s' % (C.fy(a0 + 16), C.fy(b1)), xs[16:]),
                 ('earlier', '%s to %s' % (C.fy(a0), C.fy(a0 + 15)), xs[:16]))]),
         sources=S('ch70', 'ch70-csv') + CPI_SRC,
-        finding_figures={'r': F(ref), 'a': U(RL[a0]), 'y': F(a0), 'b': U(N_[a1]), 'z': F(a1),
+        finding_figures={'a': U(RL[a0]), 'y': F(a0), 'b': U(N_[a1]), 'z': F(a1),
                          'm': X(rmult)})
 
     # ================================================================ spending per child enrolled
@@ -879,11 +897,11 @@ def build():
     peak = max((y for y in E if y <= a1), key=lambda y: E[y])
     out['spending-per-child-enrolled'] = TP.page(
         'spending-per-child-enrolled',
-        'In %s, spending per child went from %s in %s to %s in %s; pupils fell %s.'
-        % (DOLLARS, C.usd(rpp[a0]), C.fy(a0), C.usd(pp[a1]), C.fy(a1), C.pct(-e_long)),
-        [f('rpp0', U(rpp[a0]), 'per child, %s, in %s' % (C.fy(a0), DOLLARS), 'published',
-           {'y': F(a0), 'r': F(ref)}),
-         f('rppx', X(rpp_mult), 'times the %s figure, per child, after prices' % C.fy(a0),
+        'After inflation, spending per child went from %s in %s to %s in %s; pupils fell %s.'
+        % (C.usd(rpp[a0]), C.fy(a0), C.usd(pp[a1]), C.fy(a1), C.pct(-e_long)),
+        [f('rpp0', U(rpp[a0]), 'per child, %s, adjusted for inflation' % C.fy(a0), 'published',
+           {'y': F(a0)}),
+         f('rppx', X(rpp_mult), 'times the %s figure, per child, after inflation' % C.fy(a0),
            'published', {'y': F(a0)}),
          f('pp0', U(pp[a0]), 'per child enrolled, %s, as printed' % C.fy(a0), 'published',
            {'y': F(a0)}),
@@ -901,9 +919,21 @@ def build():
            {'y': F(a1)}),
          f('fe1', N(ch[a1]['fe'], 'pupils'), 'the state’s foundation enrolment, %s' % C.fy(a1),
            'published', {'y': F(a1)})],
-        [con('Per child, %s spending was %s times %s after prices; %s times as printed.'
-             % (C.fy(a1), '%.2f' % rpp_mult, C.fy(a0), '%.2f' % pp_mult), ['rppx', 'ppx', 'e0', 'e1'],
-             {'y': F(a1), 'a': X(rpp_mult), 'z': F(a0), 'b': X(pp_mult)}),
+        # HOW MUCH OF THE RISE IS PRICES (TJ, 20 October 2026: "we need to state this"). Split
+        # in DOLLARS: the start year raised to end-year prices is the price part, the rest is
+        # the rise beyond prices. Splitting the multiples instead (3.85 = 2.15 x 1.79, in logs)
+        # gives a different share, and is not how anybody reads a budget.
+        [con('Of %s more per child since %s, %s just kept up with rising prices; %s is a real increase.'
+             % (C.usd(pp[a1] - pp[a0]), C.fy(a0), C.usd(rpp[a0] - pp[a0]), C.usd(pp[a1] - rpp[a0])),
+             ['pp0', 'pp1', 'rpp0', 'rppx', 'ppx'],
+             {'a': U(pp[a1] - pp[a0]), 'y': F(a0), 'b': U(rpp[a0] - pp[a0]),
+              'c': U(pp[a1] - rpp[a0])},
+             notes=[step('As printed, %s spending per child is %s times %s; after inflation, %s '
+                         'times.' % (C.fy(a1), '%.2f' % pp_mult, C.fy(a0), '%.2f' % rpp_mult),
+                         'measured', {'y': F(a1), 'a': X(pp_mult), 'z': F(a0), 'b': X(rpp_mult)}),
+                    step('Prices here are what Boston-area households pay. What a school buys, '
+                         'salaries and insurance above all, can rise faster or slower, and nothing '
+                         'here measures that.', 'measured')]),
          con('Divided by the state’s foundation enrolment instead, %s reads %s a pupil.'
              % (C.fy(a1), C.usd(pf1)), ['pf1', 'fe1', 'pp1'], {'y': F(a1), 'a': U(pf1)}),
          con('Neither count is exactly the children the dollars pay for.', ['e1', 'fe1'],
@@ -911,7 +941,7 @@ def build():
                          'and not in the 1 October headcount; the foundation count adds '
                          'children schooled elsewhere whose costs are paid another way.',
                          'measured', allow=('1',))]),
-         con('Enrolment peaked at %s children in %s; per child, %s was %s times that year after prices.'
+         con('Enrolment peaked at %s children in %s; per child, %s was %s times that year after inflation.'
              % (C.num(E[peak]), C.fy(peak), C.fy(a1), '%.2f' % (rpp[a1] / rpp[peak])),
              ['peak', 'pp1'], {'a': N(E[peak]), 'y': F(peak), 'z': F(a1),
                                'b': X(rpp[a1] / rpp[peak])})],
@@ -920,16 +950,16 @@ def build():
                      'published', 'line'),
             TP.track('Budgeted, as printed', [pp[y] if y in budgeted else None for y in xs],
                      'published', 'line'),
-            TP.track('Actual, %s' % DOLLARS, [rpp[y] if y in actual else None for y in xs],
+            TP.track('Actual, adjusted for inflation', [rpp[y] if y in actual else None for y in xs],
                      'published', 'line'),
-            TP.track('Budgeted, %s' % DOLLARS, [rpp[y] if y in budgeted else None for y in xs],
+            TP.track('Budgeted, adjusted for inflation', [rpp[y] if y in budgeted else None for y in xs],
                      'published', 'line')], '$',
             note='Spending over the 1 October headcount, our division. %s' % CPI_NOTE,
             note_figures=cpi_fig, note_allow=('1',)),
         table=dict(caption='Spending, children and spending per child', views=[dict(
             key=key, label=label, total_col=-1, kinds=['ledger'] * 4,
             columns=['Net school spending', 'Enrolled', 'Per child, as printed',
-                     'Per child, %s' % DOLLARS],
+                     'Per child, after inflation'],
             rows=[dict(label=C.fy(y) + (' (budgeted)' if y in budgeted else ''), cells=[
                 C.usd(N_[y]), C.num(E[y]), C.usd(pp[y]), C.usd(rpp[y])]) for y in reversed(ys)],
             note='DESE’s figures; per child and the real dollars are ours (BLS Boston-area CPI-U, '
@@ -938,7 +968,7 @@ def build():
                 ('recent', '%s to %s' % (C.fy(a0 + 16), C.fy(b1)), xs[16:]),
                 ('earlier', '%s to %s' % (C.fy(a0), C.fy(a0 + 15)), xs[:16]))]),
         sources=S('ch70', 'enrol', 'ch70-csv', 'enrol-csv') + CPI_SRC,
-        finding_figures={'r': F(ref), 'a': U(rpp[a0]), 'y': F(a0), 'b': U(pp[a1]), 'z': F(a1),
+        finding_figures={'a': U(rpp[a0]), 'y': F(a0), 'b': U(pp[a1]), 'z': F(a1),
                          'c': PC(-e_long)})
 
     # ================================================================ teachers and other staff
@@ -1141,7 +1171,7 @@ def build():
                              C.pct(fg['TCHR'], 0), C.pct(tg, 0)),
         [f('tot', SP(tg), 'all school spending: %s to %s' % (C.usd(tt0), C.usd(tt1)), 'published',
            {'a': U(tt0), 'b': U(tt1)}),
-         f('totr', SP(tgr), 'all school spending after prices, %s to %s' % (C.fy(g0), C.fy(g1)),
+         f('totr', SP(tgr), 'all school spending after inflation, %s to %s' % (C.fy(g0), C.fy(g1)),
            'published', fy01),
          span('TCHR', 'teachers'),
          span('BENE', 'insurance and retirement'),
@@ -1226,6 +1256,9 @@ def build():
         fail('the one-year swing between insurance and teachers is no longer in the data; '
              'the third conclusion says it is')
     add = {n: band[n][g1] - band[n][g0] for n, _ in STACK}
+    each = [TP.track(TN[k], [types(FX[y])[k][2] for y in gy], 'published', 'line',
+                     colour=next(j for j, (_, ks) in enumerate(STACK) if (k.split('-')[0]) in ks))
+            for k in sorted(c1, key=lambda k: -(c1[k] - c0[k]))]
     out['spending-by-type-over-time'] = TP.page(
         'spending-by-type-over-time',
         'School spending, all funds, went from %s in %s to %s in %s.'
@@ -1266,14 +1299,16 @@ def build():
         # hides above its bottom band; largest dollar increase first (TJ, 19 October 2026).
         # Each panel takes the colour of the stack band it sits in, so the two charts read
         # together; pupil services is split into buses, food, nurses and sports.
-        also=[TP.series('Each type on its own', [C.fy(y) for y in gy], [
-            TP.track(TN[k], [types(FX[y])[k][2] for y in gy], 'published', 'line',
-                     colour=next(j for j, (_, ks) in enumerate(STACK)
-                                 if (k.split('-')[0]) in ks))
-            for k in sorted(c1, key=lambda k: -(c1[k] - c0[k]))], '$',
-            multiples=True,
-            note='Every type, on one dollar scale: a steeper line is a bigger rise. A panel '
-                 'takes the colour of its band in the stack above.')],
+        # The same tracks once more on ONE axis, above the panels, so the types read against
+        # each other (TJ, 20 October 2026): the overview, then each type on its own.
+        also=[TP.series('Where the added spending went', [C.fy(y) for y in gy], each, '$',
+                        overlay=True,
+                        note='Opens on each type’s dollar change since the first year; Amount '
+                             'shows the sizes. Pick a type to pick out its line.'),
+              TP.series('Each type on its own', [C.fy(y) for y in gy], each, '$',
+                        multiples=True,
+                        note='Every type, on one dollar scale: a steeper line is a bigger rise. A '
+                             'panel takes the colour of its band in the stack above.')],
         table=dict(caption='School spending by type, by year', views=[dict(
             key='years', label='By year', total_col=len(STACK), kinds=['ledger'] * (len(STACK) + 1),
             columns=[n for n, _ in STACK] + ['Total'],
@@ -1361,7 +1396,7 @@ def build():
          f('w', SP(w_chg), 'per teacher FTE: %s to %s, %s to %s'
            % (C.usd(W[g0]), C.usd(W[g1]), C.fy(g0), C.fy(g1)), 'published',
            {'a': U(W[g0]), 'b': U(W[g1]), 'p': F(g0), 'q': F(g1)}),
-         f('wr', SP(wr_chg), 'the same, after Boston-area prices', 'published'),
+         f('wr', SP(wr_chg), 'the same, after Boston-area inflation', 'published'),
          f('dese', PC(100 * gapd, 1), 'widest gap to DESE’s average salary, %s to %s'
            % (C.fy(ov[0]), C.fy(ov[-1])), 'published', {'a': F(ov[0]), 'b': F(ov[-1])}),
          f('exp', PC(100 * ex[ey[-1]]), 'teachers DESE counts experienced, %s; %s in %s'
@@ -1384,7 +1419,7 @@ def build():
                     step('From %s the count rose instead: more teachers added %s, the pay '
                          'increase %s.' % (C.fy(era), C.usd(ve), C.usd(re_)), 'measured',
                          {'y': F(era), 'a': U(ve), 'b': U(re_)})]),
-         con('Spending per teacher went from %s to %s; after Boston-area prices, %s.'
+         con('Spending per teacher went from %s to %s; after Boston-area inflation, %s.'
              % (C.usd(W[g0]), C.usd(W[g1]), '%+.1f%%' % wr_chg), ['w', 'wr', 'dese'],
              {'a': U(W[g0]), 'b': U(W[g1]), 'c': SP(wr_chg)},
              notes=[step('That division matches DESE’s own average teacher salary within %s in '
@@ -1422,18 +1457,26 @@ def build():
                          note='%s to %s. %s, less what fewer teachers saved, plus the pay increase, '
                               'is %s.' % (C.fy(g0), C.fy(g1), C.usd(TS[g0]), C.usd(TS[g1])),
                          note_figures={'a': F(g0), 'b': F(g1), 'c': U(TS[g0]), 'd': U(TS[g1])}),
-        also=[TP.series('Teachers, year by year', [C.fy(y) for y in gy], [
-                  TP.track('Teacher FTE', [T[y] for y in gy], 'published', 'line')], FTE_UNIT,
-                  decimals=1,
-                  note='DESE’s teacher FTE. %s reads low and recovers a year later; see FY2011 '
-                       'teacher reading.' % C.fy(2011), note_figures={'a': F(2011)}),
+        # COUNT AND SPENDING ON ONE CHART (TJ, 20 October 2026: "the FTE count and the spending
+        # on 1 chart, to compare them"). Teachers and dollars share no unit, so each line is
+        # over its own first-year value -- one axis, no second scale to tune into a story. The
+        # third line is the page's question drawn: spending is count times spending per teacher.
+        also=[TP.series('Teachers, spending and pay, rebased', [C.fy(y) for y in gy], [
+                  TP.track('Teachers spending', [100.0 * TS[y] / TS[g0] for y in gy], 'published', 'line'),
+                  TP.track('Teacher FTE', [100.0 * T[y] / T[g0] for y in gy], 'published', 'line'),
+                  TP.track('Spending per teacher FTE', [100.0 * W[y] / W[g0] for y in gy],
+                           'published', 'line')], '%',
+                  decimals=1, reference=(100, 'The %s level' % C.fy(g0)), from_zero=False,
+                  note='Each over its own %s value, as printed, not adjusted for inflation. '
+                       '%s FTE reads low; see FY2011 teacher reading.' % (C.fy(g0), C.fy(2011)),
+                  note_figures={'y': F(g0), 'a': F(2011)}),
               TP.series('Spending per teacher FTE by year', [C.fy(y) for y in gy], [
                   TP.track('As printed, our division', [W[y] for y in gy], 'published', 'line'),
-                  TP.track('In %s dollars' % C.fy(g1), [WR[y] for y in gy], 'published', 'line'),
+                  TP.track('Adjusted for inflation', [WR[y] for y in gy], 'published', 'line'),
                   TP.track('DESE’s average teacher salary', [sal.get(y) for y in gy],
                            'published', 'line')], '$',
-                  note='Teachers spending over teacher FTE. %s dollars: Boston-area CPI-U, '
-                       'July-June averages, our arithmetic.' % C.fy(g1),
+                  note='Teachers spending over teacher FTE. Adjusted for inflation: each older year at '
+                       'what it would cost at %s prices (Boston-area prices, ours).' % C.fy(g1),
                   note_figures={'a': F(g1)})],
         table=dict(caption='Teachers spending, teacher FTE and spending per FTE', views=[dict(
             key='years', label='By year', total_col=-1, kinds=['ledger'] * 4,
@@ -1986,18 +2029,17 @@ def build():
     # ================================================================ the hub
     tiers = [
         LD.tier('%s to %s' % (C.fy(base), C.fy(a1)), [
-            f('h-r', SP(r_chg), 'net school spending, in %s' % DOLLARS, 'published',
-              {'r': F(ref)}),
+            f('h-r', SP(r_chg), 'net school spending, after inflation', 'published'),
             f('h-n', SP(n_chg), 'net school spending, as printed', 'published'),
             f('h-e', SP(e_chg), 'pupils enrolled 1 October', 'published', allow=('1',)),
             f('h-t', SP(t_chg), 'teacher FTE', 'published')]),
         LD.tier('As far back as each goes', [
-            f('h-mult', X(rmult), 'times the %s net school spending, %s, after prices'
+            f('h-mult', X(rmult), 'times %s net school spending, %s, after inflation'
               % (C.fy(a0), C.fy(a1)), 'published', {'a': F(a0), 'b': F(a1)}),
             f('h-pp', U(pp[a1]), 'per child enrolled, %s (ours)' % C.fy(a1), 'published',
               {'y': F(a1)}),
-            f('h-rpp', U(rpp[a0]), 'per child, %s, in %s (ours)' % (C.fy(a0), DOLLARS),
-              'published', {'y': F(a0), 'r': F(ref)}),
+            f('h-rpp', U(rpp[a0]), 'per child, %s, adjusted for inflation (ours)' % C.fy(a0),
+              'published', {'y': F(a0)}),
             f('h-el', SP(e_long), 'pupils, %s to %s' % (C.fy(a0), C.fy(a1)), 'published',
               {'a': F(a0), 'b': F(a1)}),
             f('h-o', FTE(oth[r1] - oth[r0]), 'more paraprofessional and support FTE, %s to %s'
@@ -2021,7 +2063,7 @@ def build():
               'published', {'a': U(tt0), 'b': U(tt1)})]),
     ]
     hub_ladder = LD.ladder(tiers, [
-        LD.conclusion('From %s to %s spending rose %s after prices while pupils fell %s.'
+        LD.conclusion('From %s to %s spending rose %s after inflation while pupils fell %s.'
                       % (C.fy(base), C.fy(a1), C.pct(r_chg), C.pct(-e_chg)), ['h-r', 'h-n', 'h-e'],
                       {'y': F(base), 'z': F(a1), 'a': PC(r_chg), 'b': PC(-e_chg)}),
         LD.conclusion('Teacher FTE read %s lower over those years; from %s it reads %s higher.'
@@ -2030,7 +2072,7 @@ def build():
         LD.conclusion('Paraprofessional and support FTE rose by %s from %s to %s.'
                       % ('%.1f' % (oth[r1] - oth[r0]), C.fy(r0), C.fy(r1)), ['h-o'],
                       {'a': FTE(oth[r1] - oth[r0]), 'y': F(r0), 'z': F(r1)}),
-        LD.conclusion('Over %s to %s spending is %s times larger after prices; pupils %s fewer.'
+        LD.conclusion('Over %s to %s spending is %s times larger after inflation; pupils %s fewer.'
                       % (C.fy(a0), C.fy(a1), '%.2f' % rmult, C.pct(-e_long)), ['h-mult', 'h-el'],
                       {'y': F(a0), 'z': F(a1), 'a': X(rmult), 'b': PC(-e_long)}),
         LD.conclusion('Since %s, each on its own cost: insurance grew %s, paras %s, '
@@ -2039,13 +2081,13 @@ def build():
                       ['h-bene', 'h-tser', 'h-tchr', 'h-tot'],
                       {'y': F(g0), 'a': PC(fg['BENE'], 0), 'b': PC(fg['TSER'], 0),
                        'c': PC(fg['TCHR'], 0)}),
-        LD.conclusion('Per child enrolled it went from %s to %s, both in %s.'
-                      % (C.usd(rpp[a0]), C.usd(pp[a1]), DOLLARS), ['h-rpp', 'h-pp'],
-                      {'a': U(rpp[a0]), 'b': U(pp[a1]), 'r': F(ref)}),
+        LD.conclusion('Per child enrolled it went from %s to %s, both adjusted for inflation.'
+                      % (C.usd(rpp[a0]), C.usd(pp[a1])), ['h-rpp', 'h-pp'],
+                      {'a': U(rpp[a0]), 'b': U(pp[a1])}),
     ])
     out[CID] = TP.hub(
         CID,
-        'From %s to %s net school spending rose %s after prices (%s as printed), while pupils '
+        'From %s to %s net school spending rose %s after inflation (%s as printed), while pupils '
         'fell %s and teacher FTE %s. None of it says why.'
         % (C.fy(base), C.fy(a1), C.pct(r_chg), C.pct(n_chg), C.pct(-e_chg), C.pct(-t_chg)),
         hub_ladder, chart=growth_chart,

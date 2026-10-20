@@ -55,7 +55,10 @@ type TopicPayload = {
   also?: ChartRef[]
   /** A leftover, account by account (scripts/topic.py ledger()). */
   ledger?: LedgerData
+  /** The claim a page tests, quoted verbatim, opening the page (scripts/topic.py lead_quote). */
+  lead_quote?: LeadQuote
 }
+type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string }
 type HubPayload = {
   kind: 'hub'; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef
   ladder: LadderData; chains: Chain[]; table: FigureTableData | null
@@ -93,6 +96,21 @@ function Shelf({ ix, t }: { ix: Index; t: { shelves: string[] } }) {
         <span key={a}>{i ? ', ' : ''}<a href={abs(cat(a)?.path ?? '/')} className="underline" style={link}>
           {cat(a)?.shelf}</a></span>))}</> : null}
     </p>
+  )
+}
+
+/** THE CLAIM UNDER TEST, first. TJ, 20 October 2026: "start the page with a school committee
+ *  quote". Only a page that tests a claim carries one; it is the speaker's words, verbatim from
+ *  the town-published document, and the page's finding follows directly under it. */
+function LeadQuoteBlock({ q }: { q: LeadQuote }) {
+  return (
+    <figure className="mt-5 max-w-3xl pl-4 border-l-4" style={{ borderColor: 'var(--series-cost)' }}>
+      <p className={eyebrow} style={{ color: 'var(--text-muted)' }}>The claim this page tests</p>
+      <blockquote className="mt-1 text-[16px] leading-relaxed italic" style={{ color: 'var(--text-primary)' }}>
+        “{q.quote}”</blockquote>
+      <figcaption className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>
+        — {q.who}, <a href={abs(q.href)} className="underline" style={link}>{q.label}</a></figcaption>
+    </figure>
   )
 }
 
@@ -276,6 +294,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       ) : p && ix && p.kind === 'topic' ? (
         <>
           <Shelf ix={ix} t={p} />
+          {p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null}
           <p className="text-[19px] leading-snug font-semibold mt-4 max-w-3xl">{p.finding.text}</p>
           <TopicChart chart={p.chart} alt={p.title} />
           {(p.also ?? []).map((c, i) => <TopicChart key={i} chart={c} alt={p.title} />)}
