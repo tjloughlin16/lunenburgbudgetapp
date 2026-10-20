@@ -1,0 +1,264 @@
+{
+ "slug": "town-office-space",
+ "id": "new:town-office-space",
+ "title": "Town office space",
+ "question": "What would consolidating town offices cost compared with renovating Town Hall and Ritter?",
+ "threads": "brooks-house (named);tc-passios-site (named+words);town-offices (words)",
+ "score": {
+  "total": 101.8,
+  "base": 107,
+  "recency": 0.951,
+  "parts": {
+   "meetings": 50,
+   "boards": 18,
+   "threads": 28,
+   "years": 6,
+   "numbers": 5
+  },
+  "days_since": 13,
+  "historical": false,
+  "open_threads": [
+   "brooks-house",
+   "tc-passios-site",
+   "town-offices"
+  ],
+  "hot_threads": [
+   "tc-passios-site",
+   "town-offices"
+  ]
+ },
+ "requested_at": "2026-10-19T10:31:02-04:00",
+ "status": "draft-ready",
+ "runs": [
+  {
+   "n": 1,
+   "kind": "generate",
+   "started": "2026-10-19T10:31:17-04:00",
+   "model": "sonnet",
+   "budget_usd": 5.0,
+   "tool_calls": 33,
+   "last_action": "StructuredOutput ",
+   "finished": "2026-10-19T10:36:28-04:00",
+   "cost_usd": 1.3038315,
+   "exit": 0,
+   "error": "",
+   "commit": "7e0d90cf3d56090c076d9fefdbba2b5a0acbc106"
+  },
+  {
+   "n": 2,
+   "kind": "answer",
+   "started": "2026-10-19T10:38:18-04:00",
+   "model": "sonnet",
+   "budget_usd": 5.0,
+   "tool_calls": 42,
+   "last_action": "StructuredOutput ",
+   "finished": "2026-10-19T10:46:05-04:00",
+   "cost_usd": 2.9489440999999994,
+   "exit": 0,
+   "error": "",
+   "commit": "7a4a32601b355bacc484b3cf04c1a99c53d8a986"
+  }
+ ],
+ "answers": [
+  {
+   "at": "2026-10-19T10:38:18-04:00",
+   "text": "Review of the first draft. Its headline claim is wrong and must not ship; rule 13c applies.\n\n1. THE PLAN IS PRICED, IN THE ARCHIVE. sources/budget-workbooks/finance-committee/fy26-budget/parks-and-town-hall-presentations/2025-lmbdc-taylor-burns-design.pdf (sha256 in sources/budget-workbooks/index.csv), page 40, \"COST ESTIMATE\": Meeting House Renovation, Ritter Memorial Renovation, Town Hall (new), Sitework, subtotals, and \"Total Project Cost w/ OPM & Design Fees\" as a range; alternates priced separately. Its text extract (text/2025-lmbdc-taylor-burns-design.pdf.txt) holds that page. Read every line of the page off the document and cite it. Pages 6-11 carry the square footage per room. The PDF is MIXED (scripts/pdf_kind.py): 21 of 40 pages are pictures, so say which pages you could not read rather than calling anything absent. Search the rest of the archive for the thing (municipal building, Taylor, Ritter, Meeting House), not for one pattern.\n\n2. LEAD WITH THE 2025 PLAN AND WHAT HAPPENED TO IT. The October 2022 concepts are history, not the answer. The Finance Committee's own minutes of 2025-05-08 (sources/meetings/text/finance-committee/2025-05-08-minutes-7210.txt) record \"the vote against recommendation\". Our minutes of the committee on 2025-06-05 (sources/data/recording-minutes/lunenburg-municipal-building-design-committee/) describe it falling short of two-thirds at Town Meeting and losing at the ballot -- that is a caption-derived record, so label it as ours, and look for the town's own Town Meeting / election record before stating the outcome as fact. If the town's record cannot be found, say which documents were searched.\n\n3. WHERE IT STANDS NOW, from the committee's 2026 meetings in recording-minutes: offices only, no school departments (2026-08-17); Ritter too small, needs an addition (2026-08-31); a square-footage-and-cost RFP, no November article (2026-10-05). The Select Board on 2026-10-06 questioned whether consolidating offices should drive the project. Cite each to the video second.\n\n4. The question is \"consolidate vs renovate\". The 2025 plan WAS consolidation (renovate Meeting House and Ritter, build a new Town Hall addition). Compare it to the current direction and to the capital-plan repair lines only where like is compared with like (rule 1 / rule 13a: a consultant estimate is not a budget and not an actual; say which each figure is).\n\n5. Remove or correct the three money-gaps rows you added: the first two claim the archive holds no price. Keep only gaps that remain true after reading page 40, each with its \"-- closes:\" document.\n\n6. There is now a thread, id town-offices, in the person's tree (/Users/tj/lunenburgbudgets/sources/data/threads.csv, read-only to you); it is not on your branch. Do not edit threads.csv; name the thread in your result so it can be linked at publish."
+  }
+ ],
+ "reviews": [],
+ "result": {
+  "status": "draft-ready",
+  "summary": "Rebuilt /town-office-space around the 2025 plan. It prices the plan from page 40 of the Taylor & Burns deck ($21,409,100 to $22,301,145), shows it falling 7 votes short of two-thirds at Town Meeting and losing the 17 May 2025 ballot, 553 to 174 (from the town's FY2025 annual report), and then covers the committee's 2026 direction, which has no price yet. The wrong \"no price exists\" claim is gone, and the money-gaps rows are replaced with four that stay true after reading page 40. Thread to link at publish: town-offices.",
+  "autogen": {
+   "verdict": "with-a-person",
+   "reasons": [
+    "Every figure on the estimate, vote, current-direction and upkeep pages is read from files and asserted by the generator. The page-40 trade costs must add to the printed subtotal, the ballot precincts to the totals, and each quoted minute must be verbatim.",
+    "Four things need a person. First, the ballot result sits in a printed text layer, and Article 29's Town Meeting tally is printed under the heading 'Article 28'; we read it as Article 29's and a person should confirm that against the Town Clerk's tally.",
+    "Second, the 2026 direction is partly caption-derived (the offices-only decision, the 5 October 'no dollar figure', the Select Board's 6 October remark). Those are cited to the video second and labelled ours, and a person must check them at the second.",
+    "Third, the headline question, consolidate versus renovate in dollars, cannot be answered by a script. The current direction has no estimate until the committee's RFP returns.",
+    "Fourth, 21 of the deck's 40 pages are pictures that were not read, and the architects' report dated 24 February 2025 is not in the archive."
+   ]
+  },
+  "pages": [
+   {
+    "path": "/town-office-space",
+    "kind": "hub",
+    "title": "Town office space"
+   },
+   {
+    "path": "/town-office-space/building-plan-estimate",
+    "kind": "topic",
+    "title": "The 2025 estimate"
+   },
+   {
+    "path": "/town-office-space/building-plan-vote",
+    "kind": "topic",
+    "title": "Town Meeting and ballot"
+   },
+   {
+    "path": "/town-office-space/current-direction",
+    "kind": "topic",
+    "title": "Where it stands"
+   },
+   {
+    "path": "/town-office-space/office-building-upkeep",
+    "kind": "topic",
+    "title": "Ritter and Town Hall upkeep"
+   }
+  ],
+  "checks": [
+   "python3 scripts/build_town_office_space_topics.py --check",
+   "python3 scripts/build_topics_index.py",
+   "python3 scripts/topics.py"
+  ],
+  "datasets_used": [
+   {
+    "source": "sources/budget-workbooks/finance-committee/fy26-budget/parks-and-town-hall-presentations/text/2025-lmbdc-taylor-burns-design.pdf.txt",
+    "what": "Page 40 COST ESTIMATE, read to its end; pdf_kind says the page is text. Held PDF sha256 bf9d1619c4a3478f6d67f062f41c02b1a2665f653dc3535bd29130a009fe5b7a, mixed: 21 of 40 pages are pictures."
+   },
+   {
+    "source": "sources/town-annual-reports/text/4130-fy-2025-annual-town-report.txt",
+    "what": "Article 29 warrant text and range; the result line printed under it; Annual Town Election 17 May 2025, Question 1 by precinct"
+   },
+   {
+    "source": "sources/meetings/text/finance-committee/ (2025-03-13, 2025-04-03, 2025-05-08)",
+    "what": "Trade costs as transcribed; roll call on the municipal building article; the 'vote against recommendation' remark"
+   },
+   {
+    "source": "sources/meetings/text/select-board/ (2025-04-08, 2025-07-15)",
+    "what": "5-0 recommendation of Article 29; 'six votes shy'"
+   },
+   {
+    "source": "sources/meetings/text/lunenburg-municipal-building-design-committee/ (2026-08-17, 2026-08-31 minutes)",
+    "what": "Working square footage, target, past per-foot costs, the vote that Ritter is too small"
+   },
+   {
+    "source": "sources/data/recording-minutes/lunenburg-municipal-building-design-committee/ (2025-06-05, 2026-08-17, 2026-10-05)",
+    "what": "Our caption-derived minutes, cited to the video second"
+   },
+   {
+    "source": "sources/data/capital-plans.csv; sources/data/capital-plan-fy27.csv",
+    "what": "Ritter and Town Hall plan lines; the FY27 TC Passios line"
+   }
+  ],
+  "figures": [
+   {
+    "value": "$21,409,100 to $22,301,145",
+    "what": "Total Project Cost w/ OPM & Design Fees for the 2025 plan",
+    "kind": "estimate",
+    "source": "Taylor & Burns deck, pdf page 40, COST ESTIMATE. A consultant's schematic estimate, neither budget nor actual. The same range is printed as Article 29 in the FY2025 annual report."
+   },
+   {
+    "value": "$6,937,445 of $13,288,086",
+    "what": "New Town Hall trade cost against the trade subtotal; Meeting House $2,624,842, Ritter $2,068,279, sitework $1,657,520",
+    "kind": "estimate",
+    "source": "page 40; the four add to the printed subtotal (asserted)"
+   },
+   {
+    "value": "Yes 77, No 48, Abstain 1, 84 needed",
+    "what": "Town Meeting tally under Article 29",
+    "kind": "published",
+    "source": "FY2025 annual report, pdf p. 143; the line is headed 'Article 28' and Article 28 has its own line (Yes 85, No 63), so reading it as Article 29's is ours"
+   },
+   {
+    "value": "No 553, Yes 174, Blank 39, total 766",
+    "what": "Question 1, Ritter Building, Meeting House, New Town Hall, 17 May 2025",
+    "kind": "published",
+    "source": "FY2025 annual report, pdf p. 175; the precinct columns add to each total"
+   },
+   {
+    "value": "5,600; 6,300 to 7,000 sq ft",
+    "what": "Committee's working figure for Ritter, and its working target",
+    "kind": "stated",
+    "source": "MBDC minutes, 31 August 2026 (town-published)"
+   },
+   {
+    "value": "$305,000 / $275,175",
+    "what": "Ritter and Town Hall lines in nine capital plans",
+    "kind": "published",
+    "source": "capital-plans.csv, copy=committee report, project matches Ritter or Town Hall"
+   }
+  ],
+  "open_questions": [
+   {
+    "question": "Should the Town Meeting tally under Article 29 be confirmed with the Town Clerk, given the report prints it under 'Article 28' and the Select Board minutes say 'six votes shy' where the tally is 7 short?",
+    "why": "The page labels our reading and the discrepancy, but a person should settle it before it is quoted.",
+    "blocking": false
+   },
+   {
+    "question": "Should the recording-derived statements (offices-only decision, 'no dollar figure yet', the 6 October Select Board remark) stay until the town publishes the matching minutes?",
+    "why": "They are labelled ours and cited to the video second. The town has published agendas only for 5 and 6 October 2026.",
+    "blocking": false
+   }
+  ],
+  "gaps": [
+   {
+    "what": "Cost of the committee's current direction, an offices-only addition to Ritter of about 6,300 to 7,000 sq ft, so it cannot yet be compared with the 2025 plan",
+    "closes": "The architect's square-footage-and-cost range from the committee's RFP (agreed 5 October 2026)"
+   },
+   {
+    "what": "The 21 picture pages of the Taylor & Burns deck and the architects' full report dated 24 February 2025 named in Article 29",
+    "closes": "The architects' report presented to the Town, dated 24 February 2025"
+   },
+   {
+    "what": "Actual spending on Ritter and Town Hall projects against the capital-plan lines",
+    "closes": "Town Accountant's capital project ledger by project number"
+   },
+   {
+    "what": "Which Finance Committee vote the 8 May 2025 minutes call 'the vote against recommendation', given a printed tally of 6-1 and a roll call of five aye, one no",
+    "closes": "The Finance Committee's signed roll-call record for the municipal building article"
+   }
+  ],
+  "next_steps": [
+   "Link thread town-offices to /town-office-space at publish; threads.csv was not edited.",
+   "Run check_generated.py once at the end; it was not run here.",
+   "Re-run the generator when the committee's RFP result or the 6 October 2026 Select Board minutes are posted.",
+   "Optionally read the deck's picture pages (perspectives) with OCR or by eye, and cite the architects' 24 February 2025 report if it is obtained."
+  ]
+ },
+ "checks": [
+  {
+   "cmd": "python3 scripts/topics.py",
+   "exit": 0,
+   "tail": "topics: 22 categories, 218 topics\n"
+  },
+  {
+   "cmd": "python3 scripts/build_town_office_space_topics.py --check",
+   "exit": 0,
+   "tail": "town office space topics: 5 outputs current\n"
+  },
+  {
+   "cmd": "python3 scripts/build_topics_index.py",
+   "exit": 0,
+   "tail": "wrote fy28/public/data/topics.json\n"
+  },
+  {
+   "cmd": "python3 scripts/topics.py",
+   "exit": 0,
+   "tail": "topics: 22 categories, 218 topics\n"
+  }
+ ],
+ "session_id": "5c16ce0a-86cd-4cdd-8d73-e397e1bf1dd2",
+ "cost_usd": 4.2528,
+ "branch": "gen/town-office-space",
+ "worktree": "/Users/tj/lunenburgbudgets-gen/town-office-space",
+ "branch_summary": {
+  "branch": "gen/town-office-space",
+  "worktree": "/Users/tj/lunenburgbudgets-gen/town-office-space",
+  "base": "6eff8cb2592d1eed3596cd6b15768c070648899e",
+  "head": "7a4a32601b355bacc484b3cf04c1a99c53d8a986",
+  "commits": 2,
+  "files": [
+   "M\tfy28/public/data/reports-recent.json",
+   "A\tfy28/public/data/topics/building-plan-estimate.json",
+   "A\tfy28/public/data/topics/building-plan-vote.json",
+   "A\tfy28/public/data/topics/current-direction.json",
+   "A\tfy28/public/data/topics/office-building-upkeep.json",
+   "A\tfy28/public/data/topics/town-office-space.json",
+   "A\tscripts/build_town_office_space_topics.py",
+   "A\tscripts/topic_registry/town_office_space.py",
+   "M\tsources/data/money-gaps.csv"
+  ],
+  "stat": " 9 files changed, 2047 insertions(+), 1 deletion(-)"
+ }
+}
