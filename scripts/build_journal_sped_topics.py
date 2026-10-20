@@ -50,6 +50,17 @@ import journal as J  # noqa: E402
 OUT_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 ME = os.path.basename(__file__)
 MINE = sorted(t for t, (_, _, gen) in REG.TOPICS.items() if gen == ME)
+# What the town's own minutes say about Keystone's rates, quoted verbatim and checked against our
+# copy on every build (`keystone_quote`). Searched 19 October 2026: `search_minutes.py keystone`
+# finds School Committee agenda items from 2022 to 2025 ("Keystone Collaborative Update",
+# "Keystone Report", "Keystone Collaborative-Property Acquisition" on 2023-06-07, for which no
+# minutes are held) whose minutes only accept a report; this is the one minute that states a
+# figure about Keystone's money.
+KEYSTONE_MINUTES = '/docs/minutes/text/finance-committee/2024-03-14-minutes-6469.txt'
+KEYSTONE_RATES = ('There is a discussion about Keystone Education Collaborative program and the '
+                  'rates being raised almost 11%. Dave Passion questions how the 14% increase was '
+                  'absorbed last year.')
+KEYSTONE_CENSUS = '/docs/district-budget/docs/sc-meetings/2024-2025-keystone-collaborative-update.pdf'
 LEVY = 2.5            # Proposition 2½: the most the levy may rise in a year (statute)
 TOP_RANK = 10         # providers drawn in the signature
 TOP_TABLE = 12        # providers in the table; never every payee (see the docstring)
@@ -146,7 +157,15 @@ def data():
     return d
 
 
+def keystone_quote():
+    src = os.path.join(ROOT, 'sources', 'meetings', 'text',
+                       KEYSTONE_MINUTES.split('/docs/minutes/text/')[1])
+    if KEYSTONE_RATES not in ' '.join(open(src, encoding='utf-8').read().split()):
+        fail('the Keystone quotation is no longer verbatim in %s' % KEYSTONE_MINUTES)
+
+
 def build():
+    keystone_quote()
     d = data()
     U = lambda v: figure(v, C.usd(v))
     F = lambda v: figure(v, C.fy(v), 'fiscal year')
@@ -293,8 +312,8 @@ def build():
     px['payees'] = f('payees', N(d['payees'], 'payees'), 'payees named in those years',
                      'published')
     px['top10'] = f('top10', P(s10), 'of it to the ten largest', 'published')
-    px['l0'] = f('l0', U(l0), 'to FLLAC, %s' % C.fy(F0), 'published', {'y': F(F0)}, allow=('FLLAC',))
-    px['l1'] = f('l1', U(l1), 'to FLLAC, %s' % C.fy(F1), 'published', {'y': F(F1)}, allow=('FLLAC',))
+    px['l0'] = f('l0', U(l0), 'to FLLAC (Keystone), %s' % C.fy(F0), 'published', {'y': F(F0)})
+    px['l1'] = f('l1', U(l1), 'to FLLAC (Keystone), %s' % C.fy(F1), 'published', {'y': F(F1)})
     px['v0'] = f('v0', U(v0), 'to every vendor, %s' % C.fy(F0), 'published', {'y': F(F0)})
     px['v1'] = f('v1', U(v1), 'to every vendor, %s, not yet closed' % C.fy(F1), 'published',
                  {'y': F(F1)})
@@ -305,7 +324,7 @@ def build():
     px['price'] = f('price', None, 'what any one child’s services cost', 'gap',
                     closes='the district’s placement-level billing detail, gross of the circuit '
                            'breaker')
-    if lead != 'FLLAC EDUCATIONAL CO' or carrier != 'VAN POOL':
+    if lead != 'FLLAC (KEYSTONE)' or carrier != 'VAN POOL':
         fail('the labels name FLLAC and Van Pool; the largest payees are now %r and %r'
              % (lead, carrier))
     stack = [fn for fn in FUNDS_DRAWN if any(d['pfund'].get((k, fn)) for k in o[:TOP_RANK])]
@@ -315,8 +334,8 @@ def build():
                  for k in o[:TOP_TABLE]]
     out['sped-providers'] = TP.page(
         'sped-providers',
-        'Three providers took %s of special education vendor payments; FLLAC was paid %s as much '
-        'by %s.' % (C.pct(s3), times(l1 / l0), C.fy(F1)),
+        'Three payees took %s of special education vendor payments; Keystone was paid %s as '
+        'much by %s.' % (C.pct(s3), times(l1 / l0), C.fy(F1)),
         list(px.values()),
         [con('The ten largest of %s named payees took %s of the %s paid to vendors in four years.'
              % (C.num(d['payees']), C.pct(s10), C.usd(va)),
@@ -326,7 +345,7 @@ def build():
                          'figure here is a price.', 'gap',
                          closes='the district’s placement-level billing detail, gross of the '
                                 'circuit breaker')]),
-         con('FLLAC was paid %s in %s and %s in %s; all vendors together rose %s.'
+         con('FLLAC (Keystone) was paid %s in %s and %s in %s; all vendors rose %s.'
              % (C.usd(l0), C.fy(F0), C.usd(l1), C.fy(F1), C.pct(pc(v0, v1))),
              ['l0', 'l1', 'v0', 'v1'],
              {'a': U(l0), 'y': F(F0), 'b': U(l1), 'z': F(F1), 'p': P(pc(v0, v1))},
@@ -336,8 +355,22 @@ def build():
                          'not in the ledger.'
                          % (C.usd(lt0), C.fy(F0), C.usd(lt1), C.fy(F1)), 'gap',
                          {'a': U(lt0), 'y': F(F0), 'b': U(lt1), 'z': F(F1)},
-                         closes='FLLAC’s invoices to the district, by service and by month, '
-                                'counts of students only', allow=('FLLAC',))]),
+                         closes='Keystone’s invoices to the district, by service and month, '
+                                'with student counts only'),
+                    # What the documents say, as documents (rule 7): the Finance Committee's
+                    # minutes record rate rises (quoted in `said`), and Keystone's own update to
+                    # the School Committee reports its census, every member district together.
+                    # Neither is near the rise in payments, and no document held gives
+                    # Lunenburg's own count of students there.
+                    step('Keystone reports its census, all member districts, up 11%% from 2021 '
+                         'to September 2024; the minutes record rate rises of 14%% and almost 11%%. '
+                         'Lunenburg paid it %s as much in FY2026; no document held gives its count.'
+                         % times(l1 / l0), 'gap',
+                         {'t': figure(l1 / l0, times(l1 / l0), 'times')},
+                         allow=('14%', '11%', '2021', '2024', C.fy(F0), C.fy(F1)),
+                         cite=(KEYSTONE_CENSUS, 'Keystone quarterly update, September 2024'),
+                         closes='Keystone’s count of Lunenburg students by year, and its '
+                                'tuition rate sheets, %s-%s' % (C.fy(F0), C.fy(F1)))]),
          con('Van Pool, the special education carrier, was paid %s more in %s than in %s.'
              % (C.pct(pc(c25, c26)), C.fy(F1), C.fy(F1 - 1)),
              ['c25', 'c26'],
@@ -357,15 +390,21 @@ def build():
             for k in top5], '$', kind='bar', multiples=True,
             note='Each panel is one payee on the same scale. %s is not yet closed.' % C.fy(F1),
             note_figures={'y': F(F1)})],
+        said=[dict(quote=KEYSTONE_RATES, board='Finance Committee', date='2024-03-14',
+                   href=KEYSTONE_MINUTES, label='Finance Committee minutes, 2024-03-14')],
         table=dict(caption='The largest special education payees, by year', views=[dict(
             key='payees', label='Invoices paid, every fund', total_col=None,
             kinds=['ledger'] * len(J.YEARS), columns=[C.fy(y) for y in J.YEARS],
             rows=prov_rows,
             note='Names as the report prints them. The table stops at the largest payees, so '
                  'no family’s payment can be read off it by subtraction.')]),
-        sources=sources(),
+        sources=sources() + [
+            dict(label='Town of Lunenburg — Finance Committee minutes, 14 March 2024 '
+                       '(2024-03-14-minutes-6469)', href=KEYSTONE_MINUTES),
+            dict(label='Keystone Educational Collaborative — quarterly update to the School '
+                       'Committee, September 2024', href=KEYSTONE_CENSUS)],
         finding_figures={'a': P(s3), 'b': figure(l1 / l0, times(l1 / l0), 'times'), 'y': F(F1)},
-        finding_allow=('FLLAC',))
+        )
     out['sped-providers']['not_established'] = [
         'Which child, or how many, any payment was for. Families and children are masked, and '
         'appear only inside the four-year aggregate.',

@@ -32,7 +32,7 @@ from decimal import Decimal as D
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from journal import SPED_ACCOUNTS  # noqa: E402  (the definition, shared on purpose)
+from journal import SPED_ACCOUNTS, ALIASES  # noqa: E402  (definitions, shared on purpose)
 
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 TOPICS = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
@@ -149,6 +149,7 @@ def main():
     for fy, v, ref, amt, g in rows:
         vend[fy] += cents(amt)
         name = ' '.join((v or '').upper().split()).rstrip('.,;')
+        name = ALIASES.get(name, name)
         if ref == 'VND' and name in ('', INDIVIDUAL.upper()):
             masked += cents(amt)
         else:
@@ -157,7 +158,7 @@ def main():
     tot = {k: sum(v.values()) for k, v in payee.items()}
     order = sorted(tot, key=lambda k: (-tot[k], k))
     share = lambda ks: 100 * sum(tot[k] for k in ks) / allv
-    fl, vp = payee['FLLAC EDUCATIONAL CO'], payee['VAN POOL']
+    fl, vp = payee['FLLAC (KEYSTONE)'], payee['VAN POOL']
     fl_tuition = {y: cents(c.execute(
         "SELECT SUM(j.amount) FROM munis_school_journal j JOIN sped s USING(account) WHERE "
         "j.posts_to='actual' AND j.source IN ('API','APM') AND j.vendor='FLLAC EDUCATIONAL CO' "
@@ -180,7 +181,7 @@ def main():
     }
     if reclass[1] != 1:
         bad.append('the FY2026 circuit breaker has %d journal entries, not one' % reclass[1])
-    if order[:3] != ['FLLAC EDUCATIONAL CO', 'VAN POOL', 'MAY INSTITUTE']:
+    if order[:3] != ['FLLAC (KEYSTONE)', 'VAN POOL', 'MAY INSTITUTE']:
         bad.append('the three largest payees are now %s' % order[:3])
 
     # every recomputed value, by the text it renders as, for the prose checks below

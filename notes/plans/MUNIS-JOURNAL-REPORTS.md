@@ -205,7 +205,7 @@ plus minutes) → `built` → `deployed`.
 | 0 | gate (Phase 0) | data published `2ee126b2f` | | history rewrite + data page left |
 | 0 | journal data page | generator | | `/analysis/school-journal`, UNLISTED; `build_school_journal.py --check`; awaiting TJ |
 | A | sped-all-funds | verified | | `build_journal_sped_topics.py`; `verify_journal_sped_topics.py`; persona/minutes review and TJ next |
-| A | sped-providers | verified | | same generator and verifier; minutes: FLLAC never named in minutes or captions searched |
+| A | sped-providers | verified | | same generator and verifier; FLLAC labelled FLLAC (Keystone) via journal.ALIASES (correction, TJ 19 Oct: an earlier "never named in the minutes" was a search for the wrong name, rule 13c). Keystone minutes and the Keystone reports in district-budget/docs/sc-meetings read; FinCom 2024-03-14 quoted; none gives Lunenburg's own count |
 | A | sped-cost-growth | not started | | |
 | A | sped-fund-shifts | not started | | |
 | A | sped-contracted-services | not started | | |

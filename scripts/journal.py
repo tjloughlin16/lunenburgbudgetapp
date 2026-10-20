@@ -74,7 +74,8 @@ report (`OPEN_FY`), so an FY2026 actual can still move. Every report that shows 
 
 4. PAYEES (`payee`). A shown payee is the name the extractor kept, normalised by `vendor_key`:
    case, spacing and trailing punctuation only (`SCHOLASTIC INC.` = `SCHOLASTIC INC`), plus
-   `ALIASES`, declared one at a time with the evidence. A vendor number is NOT the key: the
+   `ALIASES`, declared one at a time with the evidence (FLLAC = Keystone, so a page names the
+   collaborative by the program name the town's meetings use). A vendor number is NOT the key: the
    Town holds some vendors under two numbers (`002025` and `2025`) and the same name is the
    same payee. A MASKED payee -- a family or child the redaction hid -- has no key at all and
    is never normalised, merged, counted or split: `payee()` returns `MASKED`, and reports may
@@ -229,7 +230,15 @@ INDIVIDUAL = 'individual (redacted)'
 MASKED = object()       # a masked recipient: never a key, never a name
 # Declared one at a time, each with the evidence that the two names are one payee. Empty is a
 # real state: nothing beyond case, spacing and punctuation has been shown to be one payee yet.
-ALIASES = {}
+ALIASES = {
+    # The FLLAC Educational Collaborative's program is KEYSTONE, and the town’s meetings use that
+    # name ("Keystone Collaborative Update", "Keystone Report"). Basis: the
+    # journal's own invoice numbers on this vendor carry KEY (`23L2KEY1`, `24L2KEY4`, ...) and
+    # its descriptions read `TUITION FOR KEYSTONE`; and TJ, 19 October 2026: "FLLAC is
+    # Keystone." Not every FLLAC line is KEY-coded -- the contracted-services lines carry other
+    # invoice numbers -- so the label names the collaborative first and the program beside it.
+    'FLLAC EDUCATIONAL CO': 'FLLAC (KEYSTONE)',
+}
 
 
 def vendor_key(name):
