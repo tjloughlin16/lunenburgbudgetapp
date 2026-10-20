@@ -119,9 +119,9 @@ For most districts the only route is a records request for teachers by step and 
 
 1. **Deploy.** Run the full `check_generated.py` and `check_phone_width.sh` once first: many agents
    touched shared outputs.
-2. **Journal API files.** `fy28/public/api/munis_school_journal*.json` exist, so the next deploy
-   publishes the journal tables. Another session recorded the redaction decision; confirm it is
-   intended.
+2. ~~Journal API files.~~ **DECIDED 19 Oct 2026 (TJ):** the journal CSVs, API files and analysis
+   publish as masked (employees paid as vendors and CLOSE PER names stay masked); pushed to GitHub
+   that day. The unsent MUNIS email draft and the drafted records requests may be public too.
 3. **`sources/data/gross-wages.csv`**: the town's full name-and-pay list, already published at
    `/docs/data/gross-wages.csv` from earlier work (commit 97a955f76). Keep, or make private and
    publish aggregates only? The teacher-pay work publishes no names.
