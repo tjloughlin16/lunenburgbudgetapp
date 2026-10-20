@@ -65,7 +65,7 @@ WORDS = os.path.join(SRC, 'contracts', 'txt', 'words')
 OUT = os.path.join(SRC, 'data', 'teacher-salary-schedules.csv')
 DOCS_OUT = os.path.join(SRC, 'data', 'teacher-salary-schedule-docs.csv')
 
-FIELDS = ['district', 'org_code', 'contract_period', 'fy', 'schedule', 'step', 'lane', 'salary',
+FIELDS = ['district', 'org_code', 'contract_period', 'fy', 'schedule', 'step', 'step_as_printed', 'lane', 'salary',
           'doc', 'page', 'read', 'flag']
 DOC_FIELDS = ['district', 'org_code', 'doc', 'publisher', 'upstream', 'publisher_filename',
               'contract_period', 'pdf_kind', 'fiscal_years_read', 'cells', 'status', 'note']
@@ -179,6 +179,135 @@ CONTRACTS = {
              'shaded in I-IV). The step 3 to 4 increase is larger than any other. '
              'Printed sideways. Adds $1,000 per further advanced degree in column VIII and '
              '$1,500 for National Board certification, outside the grid.'),
+    # THE DISTRICT'S OWN COMPARISON DISTRICTS (sources/data/comparison-sets.csv, set
+    # `official`), added 19 October 2026: DESE's filing for each, and the current agreement
+    # where one was found published elsewhere.
+    'contracts/pdf/dese-teacher-contract-maynard.pdf': dict(
+        district='Maynard', org='01740000', period='2024-09-01 to 2027-08-31',
+        publisher='DESE educator contracts', filename='Teacher_Contract.pdf',
+        upstream='https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01740000&type=T',
+        kind='mixed: 1 image, 62 text, 6 text+image',
+        note='Current: DESE holds the 2024-2027 agreement. Appendix A, pdf pages 34-35; raises '
+             'of 3%, 3.125% and 3.125% printed above each grid. The lane B* is not defined '
+             'anywhere in the text layer. The two right-hand lanes carry a second line, '
+             '"CAGS after 6/16" and "CAGS Before 6/16", read off the page.'),
+    'contracts/pdf/dese-teacher-contract-uxbridge.pdf': dict(
+        district='Uxbridge', org='03040000', period='2023-07-01 to 2026-06-30',
+        publisher='DESE educator contracts', filename='Teacher_Contract.pdf',
+        upstream='https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=03040000&type=T',
+        kind='scan: 86 image',
+        note='Current through FY2026: the Uxbridge Teachers Association Unit A agreement, '
+             '1 July 2023 to 30 June 2026.'),
+    'contracts/pdf/dese-teacher-contract-shrewsbury.pdf': dict(
+        district='Shrewsbury', org='02710000', period='2022-08-25 to 2025-08-24',
+        publisher='DESE educator contracts', filename='Teacher_Contract.pdf',
+        upstream='https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=02710000&type=T',
+        kind='digital: 125 text',
+        note='Expired August 2025; superseded by the 2025-2028 agreement below. Not read.'),
+    'contracts/pdf/shrewsbury-teachers-2025-2028.pdf': dict(
+        district='Shrewsbury', org='02710000', period='2025-08-25 to 2028-08-24',
+        publisher='Shrewsbury Education Association (massteacher.org)',
+        filename='SEA-2025-2028-contract.pdf',
+        upstream='https://shrewsbury.massteacher.org/wp-content/uploads/sites/47/2026/01/SEA-2025-2028-contract.pdf',
+        kind='scan: 124 image',
+        note='The union’s posted copy of the current agreement, linked from its "SEA '
+             'Contract" page.'),
+    'contracts/pdf/dese-teacher-contract-wachusett.pdf': dict(
+        district='Wachusett', org='07750000',
+        period='memorandum of agreement for 2021-07-01 to 2022-06-30, extending the 2018-2021 agreement',
+        publisher='DESE educator contracts', filename='Teacher_Contract.pdf',
+        upstream='https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=07750000&type=T',
+        kind='scan: 55 image',
+        note='Expired 2022; superseded by the 2023-2026 agreement below. Not read.'),
+    'contracts/pdf/wachusett-teachers-2023-2026.pdf': dict(
+        district='Wachusett', org='07750000', period='2023-07-01 to 2026-06-30',
+        publisher='Wachusett Regional Education Association (massteacher.org)',
+        filename='2023-2026-Unit-A-contract.pdf',
+        upstream='https://wachusett.massteacher.org/wp-content/uploads/sites/56/2023/10/2023-2026-Unit-A-contract.pdf',
+        kind='digital: 61 text',
+        note='The union’s posted copy, from its "Contract Information" page. Article 27F, '
+             'pdf pages 47-49; COLAs of 2%, 2.25% and 2.75% printed above each grid. The '
+             'sixth lane header is printed "2MA/CAG" with "S" on the next line. Longevity '
+             '($3,200 from year 15 to $6,150 from year 30) is paid outside the grid (p43-44).'),
+    'contracts/pdf/dese-teacher-contract-hudson.pdf': dict(
+        district='Hudson', org='01410000', period='2015-08-28 to 2018-08-27',
+        publisher='DESE educator contracts', filename='Teacher_Contract.pdf',
+        upstream='https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01410000&type=T',
+        kind='mixed: 1 image, 83 text, 1 text+image',
+        note='Expired 2018; superseded by the 2025-2028 agreement below. Not read.'),
+    'contracts/pdf/hudson-teachers-2025-2028.pdf': dict(
+        district='Hudson', org='01410000', period='2025-08-28 to 2028-08-27',
+        publisher='Hudson Education Association (its Google Sites page, file on Google Drive)',
+        filename='HEA Contract 2025-2028.pdf',
+        upstream='https://drive.google.com/file/d/1YyP0NeOm3TWnXROL0c_0gr66Fqo1ldSc/view',
+        kind='mixed: 1 image, 86 text, 2 text+image',
+        note='Linked as "HEA Contract 2025 - 2028" from '
+             'sites.google.com/view/hudson-education-association/contract. Appendix A, pdf pages '
+             '46-48; 2% a year. FY2026 eliminates step 0 and inserts a new step 13, so FY2026 is '
+             'not FY2025 times a factor and carries no stated-increase check. Longevity ($900 '
+             'after 16 years, $2,250 at 20) is outside the grid.'),
+    'contracts/pdf/dese-teacher-contract-tyngsborough.pdf': dict(
+        district='Tyngsborough', org='03010000', period='2018-09-01 to 2021-08-31',
+        publisher='DESE educator contracts', filename='Teacher_Contract.pdf',
+        upstream='https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=03010000&type=T',
+        kind='scan: 64 image',
+        note='Expired 2021; superseded by the 2024-2027 agreement below. Not read.'),
+    'contracts/pdf/tyngsborough-teachers-2024-2027.pdf': dict(
+        district='Tyngsborough', org='03010000', period='2024-09-01 to 2027-08-31',
+        publisher='Tyngsborough Public Schools (Collective Bargaining folder, Google Drive)',
+        filename='Unit A Collective Bargaining Agreement.pdf',
+        upstream='https://drive.google.com/file/d/1WEvBmBXxdYvc7dIbvtkSqsIlt4ZvefgZ/view',
+        kind='mixed: 3 image, 67 text, 1 text+image',
+        note='From the "Collective Bargaining" block on the district’s Staff Resources page. '
+             'Duration (Art. XXVII, pdf p38): 1 September 2024 to 31 August 2027. Appendix A '
+             'is one scanned page (pdf p39) holding all three years.'),
+    'contracts/pdf/groton-dunstable-teachers-2024-2027.pdf': dict(
+        district='Groton-Dunstable', org='06730000', period='2024-09-01 to 2027-08-31',
+        publisher="Groton Dunstable Educators' Association (wordpress.com)",
+        filename='unit-a-contract-fy25-fy27-signed-1.pdf',
+        upstream='https://grotondunstable.wordpress.com/wp-content/uploads/2025/01/unit-a-contract-fy25-fy27-signed-1.pdf',
+        kind='scan: 97 image',
+        note='The union’s posted signed copy of the 2024-2027 agreement that DESE does not hold.'),
+    'contracts/pdf/ayer-shirley-teachers-2022-2025.pdf': dict(
+        district='Ayer Shirley', org='06160000', period='2022-09-01 to 2025-08-31',
+        publisher='Ayer Shirley Regional Education Association (weebly.com)',
+        filename='2022-2025_teachers_contract.pdf',
+        upstream='https://asrea.weebly.com/uploads/8/8/7/5/8875355/2022-2025_teachers_contract.pdf',
+        kind='mixed: 1 image, 66 text, 3 text+image',
+        note='The union’s posted copy (the district’s link to it returned 404). '
+             'Schedule A, pdf pages 41-43. FY23 renumbers the steps and adds 2% to the top step, '
+             'so it carries no stated-increase check; FY24 and FY25 are 3% and 4% on the grid. '
+             'The BA lanes stop at step 12.'),
+    'contracts/pdf/ayer-shirley-teachers-2025-2028.pdf': dict(
+        district='Ayer Shirley', org='06160000', period='2025-09-01 to 2028-08-31',
+        publisher='Ayer Shirley Regional Education Association (weebly.com)',
+        filename='asrea_2025-2028_contract.pdf',
+        upstream='https://asrea.weebly.com/uploads/8/8/7/5/8875355/asrea_2025-2028_contract.pdf',
+        kind='scan: 63 image',
+        note='The union’s posted copy of the current agreement.'),
+    'contracts/pdf/ashburnham-westminster-teachers-2025-2028.pdf': dict(
+        district='Ashburnham-Westminster', org='06100000', period='2025-07-01 to 2028-06-30',
+        publisher='Ashburnham-Westminster Regional School District (Current Union Contracts)',
+        filename='awta_contract_2025-2028_2.pdf',
+        upstream='https://files.smartsites.parentsquare.com/6739/awta_contract_2025-2028_2.pdf',
+        kind='scan: 42 image',
+        note="The Ashburnham-Westminster Teachers' Association agreement, from the district's "
+             'Current Union Contracts page (awrsd.org/165696_3). Appendix C, pdf pages 31-33 '
+             '(FY26 3%, FY27 2%, FY28 1%; FY27 and FY28 restructured, steps 1-2 and 1-3 equal). '
+             'NOT READ: a faint scan on which Vision word OCR, at scales 2-6 and on a binarised '
+             'render, missed or misread about one figure in six (64,438 for 64,498; 98,297 for '
+             '93,297), and with no stated-increase identity across restructured years nothing '
+             'would catch a misread digit.'),
+    'contracts/docx/dese-teacher-contract-nashoba.docx': dict(
+        district='Nashoba', org='07250000', period='2021-07-01 to 2022-06-30',
+        publisher='DESE educator contracts', filename='Teacher_Contract.docx',
+        upstream='https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=07250000&type=T',
+        kind='docx (a Word document, not a PDF)',
+        note='Expired 2022. The 2021-2022 agreement (changed articles only, with its FY2022 '
+             'salary chart) followed in the same file by the full 2017-2020 agreement and its '
+             'charts from FY2018, all as Word tables. The School Committee ratified a 2023-2026 '
+             'Unit A agreement (minutes, 15 June 2023) and a 2026-2029 one (18 June 2026); '
+             'neither was found published.'),
 }
 
 # ----------------------------------------------------------------------------- the layouts
@@ -195,7 +324,10 @@ def grid(doc, page, fy, schedule, lanes, steps, region, src, frame='normal', vs=
     """`vs` = (an earlier schedule's printed title in the same document, the factor the
     contract states between them). Where given, every cell present in both must equal the
     earlier cell times the factor to within $2 -- a second instrument, independent of OCR,
-    that catches a misread digit the rising-steps check cannot (73,285 for 73,286)."""
+    that catches a misread digit the rising-steps check cannot (73,285 for 73,286).
+    A third element, {step: {lane: dollars}}, adds a flat amount the contract states on top
+    of the factor for those cells (Tyngsborough: 2.5% on every step, THEN $1,000 or $1,100
+    more on the top step)."""
     L.append(dict(doc=doc, page=page, fy=fy, schedule=schedule, lanes=lanes, steps=steps,
                   region=region, src=src, frame=frame, vs=vs))
 
@@ -347,6 +479,114 @@ grid(D, 41, '2025', 'PROFESSIONAL SALARY SCHEDULE 2024-2025', MT, S(1, 16), (0.2
 grid(D, 42, '2026', 'PROFESSIONAL SALARY SCHEDULE 2025-2026', MT, S(1, 16), (0.25, 0.67, 0.15, 0.95), 'ocr', 'sideways',
      vs=('PROFESSIONAL SALARY SCHEDULE 2024-2025', 1.03))
 
+# MAYNARD, DESE's filing (2024-2027). Appendix A, "2024-2025 3%", "2025-2026 3.125%",
+# "2026-2027 3.125%". The two right-hand headers are printed on three lines each.
+D = 'contracts/pdf/dese-teacher-contract-maynard.pdf'
+MAY = ['B', 'B*', 'B+15', 'M/M+15', 'M+30', 'M+45', 'MM/M+60 CAGS after 6/16',
+       'DOCTORATE CAGS Before 6/16']
+grid(D, 34, '2025', '2024-2025 3%', MAY, S(1, 14), (0.14, 0.49, 0, 1), 'text')
+grid(D, 34, '2026', '2025-2026 3.125%', MAY, S(1, 14), (0.57, 0.915, 0, 1), 'text',
+     vs=('2024-2025 3%', 1.03125))
+grid(D, 35, '2027', '2026-2027 3.125%', MAY, S(1, 14), (0.145, 0.49, 0, 1), 'text',
+     vs=('2025-2026 3.125%', 1.03125))
+
+# WACHUSETT, 2023-2026 (the union's copy). Article 27F "Salary Grid", one year a page,
+# "2023-2024 2% COLA", "2024-2025 2.25% COLA", "2025-2026 2.75% COLA".
+D = 'contracts/pdf/wachusett-teachers-2023-2026.pdf'
+WA = ['BA', 'BA + 15', 'MA', 'MA + 15', 'MA + 30', '2MA/CAGS', 'PhD']
+grid(D, 47, '2024', '2023-2024 2% COLA', WA, S(1, 14), (0.23, 0.59, 0, 1), 'text')
+grid(D, 48, '2025', '2024-2025 2.25% COLA', WA, S(1, 14), (0.19, 0.55, 0, 1), 'text',
+     vs=('2023-2024 2% COLA', 1.0225))
+grid(D, 49, '2026', '2025-2026 2.75% COLA', WA, S(1, 14), (0.19, 0.55, 0, 1), 'text',
+     vs=('2024-2025 2.25% COLA', 1.0275))
+
+# HUDSON, 2025-2028 (the union's copy). Appendix A, "2025-26 2.00% COLA" (steps 1-3 on page
+# 46, under an empty "Step 0" row; 4-14 on page 47), "2026-27 2.00% COLA" (1-12 on page 47,
+# 13-14 on page 48), "2027-28 2.00% COLA". The last header is printed "ADV**".
+D = 'contracts/pdf/hudson-teachers-2025-2028.pdf'
+HU = ['BA', 'BA+15', 'MA', 'MA+15', 'M+30', 'ADV']
+grid(D, 46, '2026', '2025-26 2.00% COLA', HU, S(1, 3), (0.835, 0.895, 0, 1), 'text')
+grid(D, 47, '2026', '2025-26 2.00% COLA', HU, S(4, 14), (0.09, 0.31, 0, 1), 'text')
+grid(D, 47, '2027', '2026-27 2.00% COLA', HU, S(1, 12), (0.66, 0.90, 0, 1), 'text',
+     vs=('2025-26 2.00% COLA', 1.02))
+grid(D, 48, '2027', '2026-27 2.00% COLA', HU, S(13, 14), (0.09, 0.13, 0, 1), 'text',
+     vs=('2025-26 2.00% COLA', 1.02))
+grid(D, 48, '2028', '2027-28 2.00% COLA', HU, S(1, 14), (0.45, 0.73, 0, 1), 'text',
+     vs=('2026-27 2.00% COLA', 1.02))
+
+# AYER SHIRLEY, 2022-2025 (the union's copy). Schedule A, "2022-2023 TEACHER SALARY SCALE /
+# FY23: Renumber and add 2% to Top Step", then "FY 24 3% COLA on Grid" and "FY25 4% COLA on
+# Grid". The BA lanes stop at step 12.
+D = 'contracts/pdf/ayer-shirley-teachers-2022-2025.pdf'
+AS3 = ['BA', 'BA15', 'MA', 'MA15', 'MA30', 'MA45', 'MA60', 'MA75']
+grid(D, 41, '2023', '2022-2023 TEACHER SALARY SCALE FY23', AS3, S(1, 14), (0.23, 0.60, 0, 1), 'text')
+grid(D, 42, '2024', '2023-2024 TEACHER SALARY SCALE FY 24 3% COLA on Grid', AS3, S(1, 14),
+     (0.195, 0.63, 0, 1), 'text', vs=('2022-2023 TEACHER SALARY SCALE FY23', 1.03))
+grid(D, 43, '2025', '2024-2025 TEACHER SALARY SCALE FY25 4% COLA on Grid', AS3, S(1, 14),
+     (0.19, 0.56, 0, 1), 'text',
+     vs=('2023-2024 TEACHER SALARY SCALE FY 24 3% COLA on Grid', 1.04))
+
+# TYNGSBOROUGH, 2024-2027 (the district's copy). Appendix A, one scanned page (pdf p39), three
+# grids: "Fiscal Year 2024-2025 (2.5% Increase all Steps then Top Step $900 B,B+15,B+30,M,M+15
+# AND $1,100 M+30,MM,CAGS)", then 2025-2026 ($1,000 / $1,100) and 2026-2027 ($1,000 for
+# B,B+15,B+30 / $1,200 for M,M+15,M+30,MM,CAGS). The top row is printed "11/13". Steps 1 and
+# 2 were "retired in fiscal year 2008", the page says, and are renumbered annually.
+D = 'contracts/pdf/tyngsborough-teachers-2024-2027.pdf'
+TY = ['B', 'B+15', 'B+30', 'M', 'M+15', 'M+30', 'MM', 'CAGS/ED SPEC']
+TYS = S(1, 10) + ['11/13']
+grid(D, 39, '2025', 'Fiscal Year 2024-2025', TY, TYS, (0.186, 0.32, 0, 1), 'ocr')
+grid(D, 39, '2026', 'Fiscal Year 2025-2026', TY, TYS, (0.426, 0.558, 0, 1), 'ocr',
+     vs=('Fiscal Year 2024-2025', 1.025,
+         {'11/13': dict({l: 1000 for l in TY[:5]}, **{l: 1100 for l in TY[5:]})}))
+grid(D, 39, '2027', 'Fiscal Year 2026-2027', TY, TYS, (0.674, 0.80, 0, 1), 'ocr',
+     vs=('Fiscal Year 2025-2026', 1.025,
+         {'11/13': dict({l: 1000 for l in TY[:3]}, **{l: 1200 for l in TY[3:]})}))
+
+# AYER SHIRLEY, 2025-2028 (the union's copy, a scan). Schedule A, one year a page: "2025-2026
+# TEACHER SALARY SCALE / FY26 / 3.75% COLA", then FY27 and FY28 at 3.5%. The BA lanes stop at 12.
+D = 'contracts/pdf/ayer-shirley-teachers-2025-2028.pdf'
+grid(D, 38, '2026', '2025-2026 TEACHER SALARY SCALE FY26 3.75% COLA', AS3, S(1, 14),
+     (0.195, 0.605, 0, 1), 'ocr')
+grid(D, 39, '2027', '2026-2027 TEACHER SALARY SCALE FY27 3.5% COLA', AS3, S(1, 14),
+     (0.165, 0.575, 0, 1), 'ocr', vs=('2025-2026 TEACHER SALARY SCALE FY26 3.75% COLA', 1.035))
+grid(D, 40, '2028', '2027-2028 TEACHER SALARY SCALE FY28 3.5% COLA', AS3, S(1, 14),
+     (0.165, 0.575, 0, 1), 'ocr', vs=('2026-2027 TEACHER SALARY SCALE FY27 3.5% COLA', 1.035))
+
+# GROTON-DUNSTABLE, 2024-2027 (the union's signed copy, a scan; pages carry /Rotate 270 and
+# read upright). "Unit A Salary Schedule / Schedule A / 2024-2025 - 3.00%" and 2025-2026 on pdf
+# page 54, 2026-2027 on page 55. Steps 0-12; B, B15, M and M15 stop at step 11. To the cent.
+D = 'contracts/pdf/groton-dunstable-teachers-2024-2027.pdf'
+grid(D, 54, '2025', 'Unit A Salary Schedule, Schedule A, 2024-2025 - 3.00%', GD, S(0, 12),
+     (0.222, 0.448, 0, 1), 'ocr')
+grid(D, 54, '2026', 'Unit A Salary Schedule, Schedule A, 2025-2026 - 3.00%', GD, S(0, 12),
+     (0.572, 0.802, 0, 1), 'ocr', vs=('Unit A Salary Schedule, Schedule A, 2024-2025 - 3.00%', 1.03))
+grid(D, 55, '2027', 'Unit A Salary Schedule, Schedule A, 2026-2027 - 3.00%', GD, S(0, 12),
+     (0.205, 0.43, 0, 1), 'ocr', vs=('Unit A Salary Schedule, Schedule A, 2025-2026 - 3.00%', 1.03))
+
+# UXBRIDGE, DESE's filing (2023-2026, a scan). Appendix A, each year "Restructured", so no year
+# is the year before times a factor and there is no stated-increase check: "FY24 - 1%" (pdf
+# p35), "FY25 - 1.75%" (p36), "FY26 - 2%" (p38). Above step 11 the rows are printed as bands
+# of years ("12-14", "19+"), and they change every year; "***25+" is a super-step only for
+# members on 25+ in 2022-23, and is read as printed. Each year also prints a small B / B+15
+# table for those grandfathered by a 6/1/2021 side letter; those are not read.
+D = 'contracts/pdf/dese-teacher-contract-uxbridge.pdf'
+UX = ['B', 'B+15', 'M', 'M+15', 'M+30', 'M+45', 'M+60', 'DOC/CAGs']
+grid(D, 35, '2024', 'FY24 - 1%', UX, S(1, 11) + ['12-14', '15-18', '19-22', '23+', '***25+'],
+     (0.322, 0.712, 0, 1), 'ocr')
+grid(D, 36, '2025', 'FY25 - 1.75%', UX, S(1, 11) + ['12-14', '15-17', '18-20', '21+', '***25+'],
+     (0.393, 0.782, 0, 1), 'ocr')
+grid(D, 38, '2026', 'FY26 - 2%', UX, S(1, 11) + ['12-13', '14-15', '16-18', '19+', '***25+'],
+     (0.183, 0.574, 0, 1), 'ocr')
+
+# SHREWSBURY, 2025-2028 (the union's copy, a scan). Appendix A, "2025-2026 -Drop Step 1; 3.0%
+# COLA for all except 3.25% for Step 13". Step 1 is printed STRUCK THROUGH (dropped), so the
+# region starts at step 2. FY2027 and FY2028 (pdf p56) are not read: shaded and struck rows
+# cost word OCR about a third of the cells there.
+D = 'contracts/pdf/shrewsbury-teachers-2025-2028.pdf'
+SH = ['B', 'B-15', 'M', 'M-15', 'M-30', 'M-45', 'M-60']
+grid(D, 55, '2026', '2025-2026 -Drop Step 1; 3.0% COLA for all except 3.25% for Step 13', SH,
+     S(2, 13), (0.362, 0.595, 0, 1), 'ocr')
+
 # (doc, page, fy or printed title, step, lane): (what word OCR returned, or None if it gave no figure for the
 # cell, and what the page prints, read by eye off the rendered page). Every entry is a cell
 # the arithmetic check flagged, the second reading did not confirm, or the grid left empty.
@@ -386,6 +626,22 @@ CORRECTIONS.update({
     (NMF, 24, '2021', '3', 'MA+30'): (None, '60957'),
     (NMF, 24, '2021', '12', 'MA+30'): (None, '86296'),
 })
+# The district's own comparison districts, 2025-2028 scans: each a cell word OCR gave no
+# figure for (Uxbridge's '$78,1317' is not a figure), read off the rendered page. The Ayer
+# Shirley and Groton-Dunstable readings also equal the prior year times the stated raise.
+ASF = 'contracts/pdf/ayer-shirley-teachers-2025-2028.pdf'
+GDF = 'contracts/pdf/groton-dunstable-teachers-2024-2027.pdf'
+UXF = 'contracts/pdf/dese-teacher-contract-uxbridge.pdf'
+SHF = 'contracts/pdf/shrewsbury-teachers-2025-2028.pdf'
+CORRECTIONS.update({
+    (ASF, 39, '2027', '7', 'MA75'): (None, '84599'),
+    (GDF, 54, '2025', '5', 'M'): (None, '72197.24'),
+    (GDF, 55, '2027', '2', 'M'): (None, '67765.52'),
+    (GDF, 55, '2027', '6', 'B'): (None, '71339.84'),
+    (UXF, 38, '2026', '8', 'M+60'): (None, '78131'),
+    (SHF, 55, '2026', '8', 'M-15'): (None, '83478'),
+    (SHF, 55, '2026', '9', 'M-15'): (None, '86246'),
+})
 FTD = 'contracts/pdf/dese-teacher-contract-fitchburg.pdf'
 CORRECTIONS.update({
     (FTD, 35, '2017', '7', 'MA'): ('61862', '67862'),
@@ -415,6 +671,12 @@ EYE_CHECKED = {
     (MTF, 41, '2025', '10', 'VI: M+30 / Licensure+90'): '86400',
     (MTF, 42, '2026', '5', 'I: BS / Licensure'): '69904',
     (MTF, 42, '2026', '15', 'VII: M+45 / BS'): '105811',
+    (ASF, 40, '2028', '7', 'MA75'): '87560',
+    (GDF, 55, '2027', '4', 'B'): '65746.79',
+    (GDF, 55, '2027', '5', 'B'): '68486.24',
+    (UXF, 36, '2025', '***25+', 'M+60'): '104626',
+    (UXF, 38, '2026', '***25+', 'B+15'): '93667',
+    (UXF, 38, '2026', '***25+', 'M'): '101626',
 }
 
 # ----------------------------------------------------------------------------- words
@@ -497,7 +759,9 @@ def merge_split(toks):
 
 
 def money(text):
-    t = text.strip().rstrip('L|lI.').replace('S', '$') if text else text
+    # A dollar sign read on the wrong side of a figure ('59,266S', '59,923$' -- Vision, on a
+    # scan whose $ sits in its own column) is dropped like the other trailing marks.
+    t = text.strip().rstrip('L|lI.').replace('S', '$').rstrip('$') if text else text
     m = MONEY.match(t)
     if not m:
         return None
@@ -666,6 +930,18 @@ def hits(which, g):
     return True
 
 
+def step_number(label):
+    """The integer `step`: the label itself where it is a number, and otherwise the FIRST step
+    number the printed label names -- Tyngsborough's top row "11/13" is 11, Uxbridge's band
+    "12-14" is 12, "19+" is 19 and its restricted super-step "***25+" is 25. It orders the rows
+    and lets readers that want an integer have one; `step_as_printed` is what the page says,
+    and a band or a "+" row is a band, not one step. Refuses a label with no number in it."""
+    m = re.search(r'\d+', label)
+    if not m:
+        fail('step label %r has no number' % label)
+    return str(int(m.group(0)))
+
+
 def build():
     rows, used, refused = [], set(), {}
     for g in L:
@@ -703,26 +979,29 @@ def build():
                 if (s, lane) in cells:
                     rows.append(dict(district=c['district'], org_code=c['org'],
                                      contract_period=c['period'], fy=g['fy'],
-                                     schedule=g['schedule'], step=s, lane=lane,
+                                     schedule=g['schedule'], step=step_number(s),
+                                     step_as_printed=s, lane=lane,
                                      salary=cells[(s, lane)], doc=g['doc'], page=g['page'],
                                      read=how[(s, lane)], flag=flags.get((s, lane), '')))
     # THE STATED-INCREASE CHECK, across schedules of one document.
     by = {}
     for r in rows:
-        by.setdefault((r['doc'], r['schedule']), {})[(r['step'], r['lane'])] = r
+        by.setdefault((r['doc'], r['schedule']), {})[(r['step_as_printed'], r['lane'])] = r
     for g in L:
         if not g['vs']:
             continue
-        prior, factor = g['vs']
+        prior, factor = g['vs'][:2]
+        adds = g['vs'][2] if len(g['vs']) > 2 else {}
         before = by.get((g['doc'], prior))
         if before is None:
             fail('%s: no schedule titled %r to compare with' % (g['schedule'], prior))
         for key, r in by.get((g['doc'], g['schedule']), {}).items():
             if key[0] not in g['steps'] or key not in before:
                 continue
-            want = float(before[key]['salary']) * factor
+            add = adds.get(key[0], {}).get(key[1], 0)
+            want = float(before[key]['salary']) * factor + add
             if abs(float(r['salary']) - want) > 2:
-                f = 'not %s x %s (%.0f)' % (prior, factor, want)
+                f = 'not %s x %s%s (%.0f)' % (prior, factor, ' + %d' % add if add else '', want)
                 r['flag'] = (r['flag'] + '; ' + f) if r['flag'] else f
     unused = (set(CORRECTIONS) | set(EYE_CHECKED)) - used
     if unused:
@@ -796,7 +1075,7 @@ def main():
                                           d['doc'].split('/')[-1]))
     for r in flagged:
         print('  FLAG %s %s %s step %s %s = %s: %s' % (r['district'], r['fy'], r['schedule'],
-                                                     r['step'], r['lane'], r['salary'], r['flag']))
+                                                     r['step_as_printed'], r['lane'], r['salary'], r['flag']))
 
 
 if __name__ == '__main__':
