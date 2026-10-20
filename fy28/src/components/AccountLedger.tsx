@@ -17,6 +17,8 @@ export type LedgerSection = {
 }
 export type LedgerCard = {
   id: string; label: string; account: string; left: string; shape: string
+  /** What the big figure is, when it is not money left (a suggestion card's evidence). */
+  value_label?: string
   figures: { label: string; text: string }[]
   sections: LedgerSection[]
   quotes: { quote: string; label: string; href: string }[]
@@ -69,11 +71,12 @@ export function AccountLedger({ l }: { l: LedgerData }) {
               <div className="flex items-baseline justify-between gap-3">
                 <span className="min-w-0">
                   <span className="text-[14.5px] font-semibold" style={{ color: 'var(--text-primary)' }}>{c.label}</span>
-                  <span className="block text-[11.5px] break-all" style={{ color: 'var(--text-muted)' }}>{c.account}</span>
+                  <span className={`block text-[11.5px] ${/^\d{4}-/.test(c.account) ? 'break-all' : 'break-words'}`}
+                    style={{ color: 'var(--text-muted)' }}>{c.account}</span>
                 </span>
                 <span className="shrink-0 text-right">
                   <span className="tnum text-[16px] font-semibold" style={{ color: 'var(--text-primary)' }}>{c.left}</span>
-                  <span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>left</span>
+                  <span className="block text-[11.5px] max-w-[11rem]" style={{ color: 'var(--text-muted)' }}>{c.value_label ?? 'left'}</span>
                 </span>
               </div>
               <p className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>{c.shape}</p>

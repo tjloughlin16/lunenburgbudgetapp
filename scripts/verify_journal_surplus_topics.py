@@ -42,6 +42,33 @@ KIND = {'PRJ': 'pay', 'PRH': 'pay', 'API': 'inv', 'APM': 'inv', 'GEN': 'je', 'GR
 bad = []
 
 
+def suggestions(left, cat):
+    """The suggestions page's measurements, from the period-13 spreadsheets: how spread out
+    FY2025's leftover was, and how many accounts were under budget every year; and from the raw
+    journal, the June transfers of FY2025. Its building-upkeep figures are checked by
+    verify_buildings_topics.py, from the same sources."""
+    acct = defaultdict(D)
+    for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-ytd.csv'), encoding='utf-8')):
+        if r['period'] == '13' and r['report'] == 'gf-school' and r['type'] == 'E':
+            acct[(int(r['fiscal_year']), r['account'])] += D(r['available_budget']).quantize(D('0.01'))
+    names = {a for (_, a) in acct}
+    v25 = sorted((acct[(2025, a)] for a in names if acct[(2025, a)] > 0), reverse=True)
+    every = [a for a in names if all(acct[(y, a)] > 0 for y in YEARS)]
+    moved = sum(D(r['amount']) for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-journal.csv'),
+                                                            encoding='utf-8'))
+                if r['fund'] == '0100' and r['account'].split('-')[2] == '300' and r['source'] == 'BUA'
+                and r['fiscal_year'] == '2025' and r['period'] == '12' and D(r['amount']) > 0
+                and not r['description'].startswith('ENCUMBRANCE CARRY FORWARD'))
+    over26 = -sum(acct[(2026, a)] for a in names if acct[(2026, a)] < 0)
+    p = json.load(open(os.path.join(TOPICS, 'surplus-suggestions.json'), encoding='utf-8'))
+    facts = {x['id']: x['value']['value'] for x in p['facts'] if x.get('value')}
+    want = {'n25': len(v25), 'top': 100.0 * float(v25[0]) / float(sum(v25)), 'every': len(every),
+            'mv': moved, 'ov': over26}
+    for k, v in want.items():
+        if abs(float(facts[k]) - float(v)) > 0.006:
+            bad.append('surplus-suggestions %s: page %r, recomputed %r' % (k, facts[k], float(v)))
+
+
 def burndowns(col):
     """The two burndown pages, from the raw journal: the general fund's budget and cumulative
     spending by period, tied at June to the period-13 spreadsheet's YTD expended; the circuit
@@ -231,6 +258,7 @@ def main():
                            % (tid, len(ch['rows']), len(both)))
 
     burndowns(col)
+    suggestions(left, cat)
     if bad:
         print('verify_journal_surplus_topics: %d problem(s)' % len(bad))
         print('\n'.join('  ' + b for b in bad))

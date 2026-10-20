@@ -65,7 +65,8 @@ BOOK_TEXT = os.path.join(ROOT, 'sources', 'district-budget', 'text',
 BOOK_LINE = 'Circuit Breaker (70% = $422,408) (75% = 452,580)-452,580'
 # The reader these pages are written for (notes/process/PERSONAS.md, 8): the Town Manager, who
 # asked this in public. Quoted verbatim and checked against our copy on every build.
-TM_MINUTES = '/docs/minutes/text/select-board/2025-09-09-minutes-7393.txt'
+TM_MINUTES = '/docs/minutes/text/select-board/2025-09-09-minutes-7393.txt'   # our text, for the check
+TM_HREF = '/docs/meetings/select-board/2025-09-09-minutes-7393.pdf'          # the town's own document
 TM_QUOTE = ('the FY26 budget, which was developed by the prior team, would need to be reviewed '
             'line by line to determine whether the same assumptions that produced the FY25 '
             'surplus are embedded in the current year\'s budget')
@@ -427,7 +428,7 @@ def build():
                               % (C.fyspan(J.YEARS[0], J.YEARS[-1]), C.fy(Y1)),
                          note_figures={'r': figure(J.YEARS[0], C.fyspan(J.YEARS[0], J.YEARS[-1]),
                                                    'fiscal years'), 'y': F(Y1)}),
-        said=[dict(quote=TM_QUOTE, board='Select Board', date='2025-09-09', href=TM_MINUTES,
+        said=[dict(quote=TM_QUOTE, board='Select Board', date='2025-09-09', href=TM_HREF,
                    label='Select Board minutes, 9 September 2025, Town Manager’s report')],
         table=dict(caption='Left unspent, line by line and by category', views=[dict(
             key='accounts', label='Accounts, both years', total_col=None,
@@ -463,10 +464,274 @@ def build():
     ]
 
     out.update(burndown_pages())
+    out['surplus-suggestions'] = suggestions_page(d)
     if sorted(out) != MINE:
         fail('the pages built are not the pages the registry gives this script: %s vs %s'
              % (sorted(out), MINE))
     return out, d
+
+
+# ================================================== surplus suggestions
+# TJ, 20 October 2026: "so what should the school committee DO or the superintendent to correct
+# for this next year?" and "can you put this into a SURPLUS suggestions page". Rule 8 governs it:
+# each card is a PLANNING OPTION with what it costs and who bears it, and the question it raises
+# for the budget; the page gives the district the credit the record supports; nothing on it
+# names a cause, because none of the options depends on one. The page's own conclusions stay
+# measurements (topic.py refuses an instruction there); the options live in the cards.
+FINCOM_JUNE = '/docs/minutes/text/finance-committee/2026-06-11-minutes-7845.txt'
+FINCOM_JUNE_QUOTE = ('The documents needed on this topic were not provided but should be '
+                     'available for the next meeting.')
+
+
+def spread(left_by_account):
+    """How spread out a leftover is: (accounts under, the largest, accounts holding half,
+    accounts holding four fifths), over the accounts that came in under."""
+    v = sorted((x for x in left_by_account if x > 0), reverse=True)
+    tot, run, half, most = sum(v, D0), D0, None, None
+    for i, x in enumerate(v, 1):
+        run += x
+        half = half or (i if run >= tot / 2 else None)
+        most = most or (i if run >= tot * Decimal('0.8') else None)
+    return dict(n=len(v), total=tot, top=v[0], half=half, most=most, v=v)
+
+
+def suggestions_page(d):
+    import build_buildings_topics as BB
+    src = os.path.join(ROOT, 'sources', 'meetings', 'text',
+                       FINCOM_JUNE.split('/docs/minutes/text/')[1])
+    if FINCOM_JUNE_QUOTE not in ' '.join(open(src, encoding='utf-8').read().split()):
+        fail('the Finance Committee quotation is no longer verbatim in %s' % FINCOM_JUNE)
+    U = lambda v: figure(fl(v), C.usd(fl(v)))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    P = lambda v, dp=1: figure(v, C.pct(v, dp))
+    N = lambda v, unit=None: figure(v, C.num(v), unit)
+    f, con = LD.fact, TP.conclusion
+    A = J.accounts()
+    gf = [r for r in J.lines() if J.in_surplus_scope(A[r['account']])]
+    # ---- the leftover, by account, every year
+    al = defaultdict(lambda: D0)
+    for (y, _, a), v in d['acct_left'].items():
+        al[(y, a)] += v
+    accts = sorted({a for (_, a) in al})
+    every = [a for a in accts if all(al[(y, a)] > Decimal('0.005') for y in J.YEARS)]
+    s25 = spread([al[(Y0, a)] for a in accts])
+    s26 = spread([al[(Y1, a)] for a in accts])
+    over = {y: -sum((al[(y, a)] for a in accts if al[(y, a)] < 0), D0) for y in (Y0, Y1)}
+    cl = d['cat_left']
+    cats_every = [c for c in CATS if all(cl[(y, c)] > 0 for y in J.YEARS)]
+    # ---- timing: the burndown's March
+    bud, cum = curves(gf, lambda r: r['fy'])
+    mar = {y: left_pct(bud, cum, y, MARCH) for y in J.YEARS}
+    # ---- year-end transfers between lines
+    moved = defaultdict(lambda: D0)
+    for r in gf:
+        if r['source'] == 'BUA' and not J.is_carry_forward(r) and int(r['period']) == JUNE \
+                and r['amt'] > 0:
+            moved[r['fy']] += r['amt']
+    # ---- building upkeep, from its own generator
+    bd = BB.data()
+    up_o = (bd['orig'][J.YEARS[0]], bd['orig'][Y1])
+    up_s = (bd['spent'][J.YEARS[0]], bd['spent'][Y1])
+    grow = lambda a, b: 100.0 * (fl(b) - fl(a)) / fl(a)
+    cat = lambda r: S.category_of(dict(account=r['account'], obj=r['object']))
+    up_lines = [r for r in gf if cat(r) == 'buildings']
+    # By ACCOUNT, as the ledger counts them: one order split across two accounts is two releases.
+    up_rel = {}
+    for a in sorted({r['account'] for r in up_lines}):
+        _, rel_a, _ = BB.orders([r for r in up_lines if r['account'] == a])
+        up_rel.update({(a, k): v for k, v in rel_a.items()})
+    cbs_lines = [r for r in up_lines if r['account'] == BB.SERVICES]
+    _, cbs_rel, cbs_soy = BB.orders(cbs_lines)
+    carried_rel = sum((v for k, v in cbs_rel.items() if cbs_soy[k] > 0), D0)
+    released = sum(up_rel.values(), D0)
+    book = BB.book()
+    (gl0, ga0), (gl1, ga1) = BB.GROUNDS
+    # ---- the circuit breaker
+    monthly = defaultdict(lambda: D0)
+    for r in J.sped_actuals():
+        if J.sped_fund(A[r['account']]) == 'Circuit breaker' and r['fy'] == Y1:
+            monthly['june' if int(r['period']) == JUNE else 'early'] += r['amt']
+    cb_off = Decimal(CB_BOOK.split()[1].replace(',', '').lstrip('-'))
+    # ---- what the record gives the district credit for (rule 8)
+    up26 = [a for a in bd['accounts'] if any(bd['acct'][(Y1, a, k)] for k in ('orig', 'trans', 'spent', 'enc'))]
+    up_over = [a for a in up26 if bd['acct_left'](Y1, a) < 0]
+    if up_over:
+        fail('the credit conclusion assumes no upkeep account ran over in FY%d' % Y1)
+    open26 = d['piece'].get((Y1, 'encumbrance'), D0)
+    if not (len(every) > 20 and mar[Y1] > mar[J.YEARS[0]] and s25['top'] < s25['total'] / 10):
+        fail('the suggestions page’s conclusions no longer match the data')
+
+    fx = dict(
+        n25=f('n25', N(s25['n'], 'accounts'), 'left money in %s' % C.fy(Y0), 'published', {'y': F(Y0)}),
+        top=f('top', P(100.0 * fl(s25['top']) / fl(s25['total']), 0), 'of it on the largest one',
+              'published'),
+        every=f('every', N(len(every), 'accounts'), 'under budget every year, %s'
+                % C.fyspan(J.YEARS[0], Y1), 'published',
+                {'y': figure(J.YEARS[0], C.fyspan(J.YEARS[0], Y1), 'fiscal years')}),
+        m23=f('m23', P(mar[J.YEARS[0]]), 'budget left at end of March, %s' % C.fy(J.YEARS[0]),
+              'published', {'y': F(J.YEARS[0])}),
+        m26=f('m26', P(mar[Y1]), 'budget left at end of March, %s' % C.fy(Y1), 'published',
+              {'y': F(Y1)}),
+        rel=f('rel', U(released), 'upkeep orders released unpaid, %s' % C.fy(Y1), 'published',
+              {'y': F(Y1)}),
+        cb=f('cb', U(cb_off), 'tuition budget set lower for the circuit breaker', 'published'),
+        mv=f('mv', U(moved[Y0]), 'moved between lines in June, %s' % C.fy(Y0), 'published',
+             {'y': F(Y0)}),
+        ov=f('ov', U(over[Y1]), 'spent past budget, %s, before its close' % C.fy(Y1), 'published',
+             {'y': F(Y1)}),
+        uo=f('uo', N(len(up26), 'accounts'), 'upkeep accounts, none over budget', 'published'),
+    )
+    q = lambda label, rows: dict(title=label, columns=[''], rows=[(k, [v]) for k, v in rows])
+    fy = C.fy
+    cards = [
+        dict(id='actuals', open=True, label='Build next year’s lines from actual spending',
+             account='Who: the Superintendent and the business manager, with the School Committee',
+             left=C.num(len(every)), value_label='accounts under budget every year, %s'
+             % C.fyspan(J.YEARS[0], Y1),
+             shape='%s of %s accounts, and %s of %s budget areas, left money in every year from %s '
+                   'to %s.' % (C.num(len(every)), C.num(len(accts)), C.num(len(cats_every)),
+                               C.num(len(CATS)), fy(J.YEARS[0]), fy(Y1)),
+             figures=[('Upkeep budget, %s' % C.fyspan(J.YEARS[0], Y1), '+' + C.pct(grow(*up_o), 0)),
+                      ('Upkeep spending', '+' + C.pct(grow(*up_s), 0))],
+             sections=[q('The option', [
+                 ('The question for the budget', 'What is each line’s request against its last '
+                  'three years of actual spending, and what is the basis where it is higher?'),
+                 ('What it costs', 'Less cushion: some lines will run short in the year and need a '
+                  'transfer the Committee votes, in the open.'),
+                 ('Who bears it', 'The business office, in a longer budget build; the Committee, in '
+                  'more transfer votes.')])],
+             quotes=[dict(quote=TM_QUOTE, href=TM_HREF,
+                          label='The Town Manager, Select Board minutes, 9 September 2025')],
+             unknown='why these lines are set above what they spend: caution, a level-service rule '
+                     'carried forward and vacancies all fit.',
+             closes='the district’s line-by-line budget build-up, with the basis for each line'),
+        dict(id='reforecast', label='Reforecast the year in February or March',
+             account='Who: the business manager reports; the School Committee decides',
+             left=C.pct(mar[Y1]), value_label='of the budget left at the end of March, %s' % fy(Y1),
+             shape='At the end of March %s had %s left; %s had %s. The gap opens in February.'
+                   % (fy(Y1), C.pct(mar[Y1]), fy(J.YEARS[0]), C.pct(mar[J.YEARS[0]])),
+             figures=[('March, %s' % fy(2024), C.pct(mar[2024])), ('March, %s' % fy(Y0), C.pct(mar[Y0]))],
+             sections=[q('The option', [
+                 ('The question for the budget', 'What does the spring forecast say will lapse, '
+                  'line by line, and should any of it be moved before June by transfer?'),
+                 ('What it costs', 'Staff time, and a risk of buying for its own sake: a forecast '
+                  'surplus would fund priorities already planned, not whatever can be ordered.'),
+                 ('Who bears it', 'The business office; the Committee, which votes the transfers.')])],
+             quotes=[],
+             unknown='how much of a spring gap is timing, as with health insurance posted in June, '
+                     'and how much will lapse.',
+             closes='a spring year-end forecast by line, from the business office'),
+        dict(id='orders', label='Review open purchase orders every quarter',
+             account='Who: the business office',
+             left=C.usd(fl(released)), value_label='building upkeep orders released unpaid, %s' % fy(Y1),
+             shape='%s of %s’s orders on contracted building services were budgeted again in %s and '
+                   'closed unpaid on 30 June.' % (C.usd(fl(carried_rel)), fy(Y0), fy(Y1)),
+             figures=[('Open orders when the %s report ran' % fy(Y1), C.usd(fl(open26)))],
+             sections=[q('The option', [
+                 ('The question for the budget', 'Which open orders are still needed, and which '
+                  'should be closed so the money is seen as available before June?'),
+                 ('What it costs', 'A quarterly review in the business office; nothing else.'),
+                 ('Who bears it', 'The business office.')])],
+             quotes=[],
+             unknown='whether a released order’s job was done another way.',
+             closes='the facilities work orders, matched to each purchase order'),
+        dict(id='circuit-breaker', label='Budget the circuit breaker in the open',
+             account='Who: the business manager',
+             left=C.usd(fl(cb_off)), value_label='collaborative tuition budgeted lower, for the '
+             'circuit breaker',
+             shape='The reimbursement arrived as one June entry of %s; July to May the fund paid %s.'
+                   % (C.usd(fl(monthly['june'])), C.usd(fl(monthly['early']))),
+             figures=[],
+             sections=[q('The option', [
+                 ('The question for the budget', 'What is tuition’s gross cost, what circuit '
+                  'breaker money is expected, and how do the two compare each quarter?'),
+                 ('What it costs', 'Two lines where there is one; a quarterly reconciliation.'),
+                 ('Who bears it', 'The business manager.')])],
+             quotes=[],
+             unknown='why the reimbursement was taken in one entry at year end.',
+             closes='the district’s circuit breaker claim and the state’s payment schedule'),
+        dict(id='ledger', label='Check the ledger against the voted budget',
+             account='Who: the business office, once a year',
+             left=C.num(2), value_label='grounds lines loaded the other way round',
+             shape='The budget book puts %s on grounds contracted services and %s on grounds '
+                   'supplies; MUNIS holds them the other way round.'
+                   % (C.usd(fl(book[gl0][1])), C.usd(fl(book[gl1][1]))),
+             figures=[],
+             sections=[q('The option', [
+                 ('The question for the budget', 'Does every MUNIS line hold the figure the '
+                  'Committee voted for it?'),
+                 ('What it costs', 'A one-time comparison when the budget is loaded.'),
+                 ('Who bears it', 'The business office.')])],
+             quotes=[],
+             unknown='whether any other line was loaded differently from the book.',
+             closes='the voted budget against the MUNIS original appropriation, line by line'),
+        dict(id='monthly', label='Report budget against actual every month',
+             account='Who: the School Committee, as a standing item',
+             left=C.usd(fl(moved[Y0])), value_label='moved between lines in June, %s' % fy(Y0),
+             shape='After those transfers %s ran over by %s; %s, before its own, by %s.'
+                   % (fy(Y0), C.usd(fl(over[Y0])), fy(Y1), C.usd(fl(over[Y1]))),
+             figures=[],
+             sections=[q('The option', [
+                 ('The question for the budget', 'What does this month’s year-to-date report show, '
+                  'line by line, against the plan?'),
+                 ('What it costs', 'Little: MUNIS already prints the report each month.'),
+                 ('Who bears it', 'The business office prepares it; the Committee reads it.')])],
+             quotes=[dict(quote=FINCOM_JUNE_QUOTE, href=FINCOM_JUNE,
+                          label='Finance Committee minutes, 11 June 2026, on year-end transfers')],
+             unknown='which lines the June transfers covered, and why.',
+             closes='the FY2025 year-end transfer memos, with the line each covered'),
+    ]
+    led = TP.check_ledger(TP.ledger(
+        'Six options, each with what it costs',
+        'Options, not findings: each rests on the figures above it, and none depends on knowing '
+        'why the money was left. Open a card for the question it raises for the budget.', cards),
+        'surplus-suggestions')
+    page = TP.page(
+        'surplus-suggestions',
+        'The surplus came from many small leftovers, year after year, not one line; these '
+        'options follow from that.',
+        list(fx.values()),
+        [con('%s’s leftover was spread over %s accounts; the largest held %s of it.'
+             % (fy(Y0), C.num(s25['n']), C.pct(100.0 * fl(s25['top']) / fl(s25['total']), 0)),
+             ['n25', 'top'],
+             {'y': F(Y0), 'n': N(s25['n'], 'accounts'),
+              'p': P(100.0 * fl(s25['top']) / fl(s25['total']), 0)},
+             notes=[step('Half of it sat on %s accounts and four fifths on %s.'
+                         % (C.num(s25['half']), C.num(s25['most'])), 'measured',
+                         {'a': N(s25['half'], 'accounts'), 'b': N(s25['most'], 'accounts')})]),
+         con('%s accounts left money in every year from %s to %s.'
+             % (C.num(len(every)), fy(J.YEARS[0]), fy(Y1)), ['every'],
+             {'n': N(len(every), 'accounts'), 'a': F(J.YEARS[0]), 'b': F(Y1)}),
+         con('By the end of March %s had %s of its budget left, against %s in %s.'
+             % (fy(Y1), C.pct(mar[Y1]), C.pct(mar[J.YEARS[0]]), fy(J.YEARS[0])), ['m23', 'm26'],
+             {'y': F(Y1), 'a': P(mar[Y1]), 'b': P(mar[J.YEARS[0]]), 'z': F(J.YEARS[0])}),
+         con('None of the %s building upkeep accounts ran over in %s.' % (C.num(len(up26)), fy(Y1)),
+             ['uo'], {'n': N(len(up26), 'accounts'), 'y': F(Y1)},
+             notes=[step('And %s’s unbudgeted emergency cabling went to the Finance Committee as a '
+                         'Reserve Fund vote, in the open.' % fy(Y0), 'measured', {'y': F(Y0)},
+                         cite=(BB.FINCOM, 'Finance Committee minutes, 13 February 2025'))])],
+        chart=TP.parts(
+            'How spread out the leftover was',
+            [('Largest %s accounts' % C.num(s25['half']), fl(sum(s25['v'][:s25['half']], D0))),
+             ('Next %s' % C.num(s25['most'] - s25['half']),
+              fl(sum(s25['v'][s25['half']:s25['most']], D0))),
+             ('The other %s' % C.num(s25['n'] - s25['most']), fl(sum(s25['v'][s25['most']:], D0)))],
+            '$',
+            note='%s, the accounts that came in under budget, by how much each left. %s, because '
+                 'nothing in it ran over to offset it.' % (fy(Y0), fy(Y0)),
+            note_figures={'y': F(Y0)}),
+        sources=sources() + [
+            dict(label='Town of Lunenburg — Select Board minutes, 9 September 2025', href=TM_HREF),
+            dict(label='Town of Lunenburg — Finance Committee minutes, 11 June 2026', href=FINCOM_JUNE)],
+        finding_figures={})
+    page['ledger'] = led
+    page['not_established'] = [
+        'Why the lines are budgeted above what they spend: nothing here tests a cause, and none of '
+        'the options needs one.',
+        'Whether 1.8 per cent unspent is unusual: no peer district’s year-end variance is in hand.',
+        'The FY2026 figures after the close.',
+    ]
+    return page
 
 
 # ================================================== the burndowns
