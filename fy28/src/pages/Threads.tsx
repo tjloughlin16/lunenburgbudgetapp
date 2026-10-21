@@ -926,13 +926,13 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           </p>
           <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
             {t.history.map(h => (
-              <li key={h.order} className="py-2.5" style={{ borderTop: '1px solid var(--border)' }}>
+              <li key={h.order} className="py-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
                 <span className="text-[12px] font-bold uppercase tracking-wider" style={muted}>{h.when}</span>
                 <span className="text-[12px]" style={muted}> · {h.board}</span>
                 <p className="m-0 mt-0.5 text-[15px] leading-snug">{h.what}</p>
                 {h.quotes.map((q, i) => (
                   <blockquote key={i} className="m-0 mt-1 pl-3 text-[13px] leading-snug italic"
-                    style={{ ...secondary, borderLeft: '2px solid var(--border)' }}>&ldquo;{q}&rdquo;</blockquote>
+                    style={{ ...secondary, borderLeft: '2px solid var(--grid)' }}>&ldquo;{q}&rdquo;</blockquote>
                 ))}
                 <a href={h.href} target={h.basis === 'heard' ? '_blank' : undefined} rel="noreferrer"
                   className="block text-[11.5px] mt-1 underline decoration-dotted" style={muted}>
