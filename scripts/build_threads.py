@@ -337,6 +337,60 @@ def callouts(known, problems):
     return out
 
 
+HISTORY = os.path.join(ROOT, 'sources', 'data', 'thread-history.csv')
+
+
+def history(known, problems):
+    """{thread id: [entry, ...]} -- THE HISTORY BEFORE (and beside) THE CHRONOLOGY.
+
+    TJ, 21 October 2026, on the track and turf field: *"Boards seem to not remember the
+    history so let's get it in front of them on this page."* The chronology follows the
+    meetings a thread's own words find, from `started` on. A matter can have a longer past
+    than that -- the field was in a capital plan in 2015 -- and the past lives in documents
+    (capital plans) as much as in meetings. A person writes each entry; the build refuses
+    one whose quote is not in its source. `quote` may hold several passages joined by ' | ',
+    each checked. A PRINTED entry is checked against the document's text; a HEARD one
+    against the machine captions near `t`, and the page says which. An entry states what the
+    source says and who said it -- never a reason the source does not give (CLAUDE.md rule 7).
+    """
+    out = {}
+    for r in read_csv(HISTORY):
+        tag = '%s history %s' % (r['thread'], r['order'])
+        if r['thread'] not in known:
+            problems.append('%s: no such thread' % tag)
+            continue
+        if r['basis'] == 'printed':
+            txt = os.path.join(ROOT, r['text'])
+            if not os.path.exists(txt):
+                problems.append('%s: no text at %s' % (tag, r['text']))
+                continue
+            against, href, haystack = 'the document', '/docs/' + r['doc'], open(txt, encoding='utf-8', errors='replace').read()
+        elif r['basis'] == 'heard':
+            cap = os.path.join(TRANSCRIPTS, r['board_slug'], '%s-%s.json' % (r['date'], r['video_id']))
+            if not os.path.exists(cap):
+                problems.append('%s: no captions at %s' % (tag, os.path.relpath(cap, ROOT)))
+                continue
+            t = int(r['t'])
+            haystack = ' '.join(x['text'] for x in json.load(open(cap, encoding='utf-8'))['segments']
+                                if t - 30 <= x['start'] <= t + 90)
+            against, href = 'the captions', 'https://www.youtube.com/watch?v=%s&t=%ds' % (r['video_id'], t)
+        else:
+            problems.append('%s: basis is printed or heard, not %r' % (tag, r['basis']))
+            continue
+        quotes = [q for q in r['quote'].split(' | ') if q.strip()]
+        miss = [q for q in quotes if _squash(q) not in _squash(haystack)]
+        if not quotes or miss:
+            problems.append('%s: quote not found in %s: %r' % (tag, against, (miss or [''])[0][:60]))
+            continue
+        out.setdefault(r['thread'], []).append(
+            {'order': int(r['order']), 'when': r['when'], 'date': r['date'], 'board': r['board'],
+             'what': r['what'], 'quotes': quotes, 'basis': r['basis'], 'href': href,
+             'where': r['where'], 'checked_against': against})
+    for cs in out.values():
+        cs.sort(key=lambda c: c['order'])
+    return out
+
+
 def reports_needed(tid):
     """[{title, slug, status, url, question, meetings: [{date, board, question_then, watch_at,
     at, our_minutes}]}] for the suggestions this thread is linked to, newest raising first."""
@@ -868,6 +922,7 @@ def build():
                              if x.get('ready')}}
     rows = read_csv(THREADS)
     calls = callouts({t['id'] for t in rows}, problems)
+    hist = history({t['id'] for t in rows}, problems)
     auto = auto_rows()
     hand_ids = {t['id'] for t in rows}
     for t in auto:
@@ -915,6 +970,7 @@ def build():
                                'registered_on', 'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
             callouts=calls.get(t['id'], []),
+            history=hist.get(t['id'], []),
             reports=report_links(t, catalogue) if not gen else [],
             reports_needed=reports_needed(t['id']),
             # WHERE IT IS ON AN AGENDA: every posted agenda in the window whose item carries

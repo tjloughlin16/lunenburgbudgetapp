@@ -66,6 +66,8 @@ type Thread = {
   hot?: boolean
   /** What someone says NEXT about this matter (sources/data/thread-callouts.csv). */
   callouts?: Callout[]
+  /** The matter's past in documents and recordings, written by a person and quote-checked (sources/data/thread-history.csv). */
+  history?: HistoryEntry[]
   stands: { vote: Item2 | null; decision: Item2 | null; any: Item2 | null }
   momentum: { meetings: number; boards: number; votes: number; days_since_last: number; span_days: number; meetings_last_90: number; board_meetings_since: number; meetings_last_30?: number; boards_last_30?: number }
   closure: Closure | null; chronology: Stop[]; meetings: number; boards_touched: number
@@ -155,6 +157,11 @@ const prettyShort = (iso: string) =>
  *  matter is; the board and the date say where to go and what to look up, which is the
  *  thing a resident can act on. The chronology is ascending, so the last stop is the end. */
 const lastStop = (t: Thread) => t.chronology.length ? t.chronology[t.chronology.length - 1] : null
+
+type HistoryEntry = {
+  order: number; when: string; date: string; board: string; what: string; quotes: string[]
+  basis: 'printed' | 'heard'; href: string; where: string; checked_against: string
+}
 
 const muted = { color: 'var(--text-muted)' } as const
 const secondary = { color: 'var(--text-secondary)' } as const
@@ -907,6 +914,33 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
               </li>
             ))}
           </ul>
+        </>
+      ) : null}
+
+      {t.history?.length ? (
+        <>
+          <H2>How we got here</H2>
+          <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
+            Oldest first. Each entry says what the source says; where a reason is given, it is the
+            speaker&rsquo;s, named as theirs.
+          </p>
+          <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
+            {t.history.map(h => (
+              <li key={h.order} className="py-2.5" style={{ borderTop: '1px solid var(--border)' }}>
+                <span className="text-[12px] font-bold uppercase tracking-wider" style={muted}>{h.when}</span>
+                <span className="text-[12px]" style={muted}> · {h.board}</span>
+                <p className="m-0 mt-0.5 text-[15px] leading-snug">{h.what}</p>
+                {h.quotes.map((q, i) => (
+                  <blockquote key={i} className="m-0 mt-1 pl-3 text-[13px] leading-snug italic"
+                    style={{ ...secondary, borderLeft: '2px solid var(--border)' }}>&ldquo;{q}&rdquo;</blockquote>
+                ))}
+                <a href={h.href} target={h.basis === 'heard' ? '_blank' : undefined} rel="noreferrer"
+                  className="block text-[11.5px] mt-1 underline decoration-dotted" style={muted}>
+                  {h.basis === 'printed' ? 'Printed' : 'As heard'} · {h.where}{h.basis === 'heard' ? ' · watch' : ''}
+                </a>
+              </li>
+            ))}
+          </ol>
         </>
       ) : null}
 
