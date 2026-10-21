@@ -68,6 +68,9 @@ type Thread = {
   callouts?: Callout[]
   /** The matter's past in documents and recordings, written by a person and quote-checked (sources/data/thread-history.csv). */
   history?: HistoryEntry[]
+  /** The organised summary: one table per round, then the open question (sources/data/thread-briefing.csv).
+   *  Every row resolves to one history entry, vote, thread or agenda -- the build refuses one that does not. */
+  briefing?: BriefingSection[]
   /** Every vote on the matter across the whole record, not only since `started` (build_threads.vote_log). */
   votes?: { date: string; board: string; board_slug: string; source: 'town' | 'ours'; text: string; outcome: string
     moved_by: string; seconded_by: string; t?: number | null; video_url?: string; doc_url?: string; town_url?: string; quote?: string
@@ -794,6 +797,75 @@ function NextOnAgenda({ t, asOf }: { t: Thread; asOf: string }) {
   )
 }
 
+type BriefingRow = { date: string; body: string; what: string; vote: string
+  link: { anchor?: string; href?: string; label: string } }
+type BriefingSection = { heading: string; note: string; kind: 'rounds' | 'points'; rows: BriefingRow[] }
+
+/** HOW IT MOVED, ROUND BY ROUND. TJ, 21 October 2026, on the turf field: the rounds tables
+ *  were "exactly the kind of tables that make this very clear, which year is discussed and
+ *  how articles moved through the year" -- and then "put this all on the page in an organized
+ *  fashion". One block per round, headed by WHICH YEAR'S MONEY it was; each line links down
+ *  to the vote or the quoted record it summarises. Rows, not a <table>: a phone at 400px
+ *  cannot hold four columns, and the date and the board read fine stacked. */
+function Briefing({ secs }: { secs: BriefingSection[] }) {
+  const rounds = secs.filter(s => s.kind === 'rounds')
+  const points = secs.filter(s => s.kind === 'points')
+  const go = (e: React.MouseEvent, id: string) => {
+    const el = document.getElementById(id)
+    if (!el) return
+    e.preventDefault()
+    window.history.replaceState({}, '', `#${id}`)
+    el.scrollIntoView({ behavior: 'smooth', block: 'start' })
+  }
+  const Row = ({ r }: { r: BriefingRow }) => (
+    <li className="py-2 grid gap-x-3" style={{ borderTop: '1px solid var(--grid)', gridTemplateColumns: '5.6rem 1fr' }}>
+      <span className="text-[12px] font-semibold tnum pt-0.5" style={muted}>{r.date ? prettyShort(r.date) + ', ' + r.date.slice(0, 4) : ''}</span>
+      <span className="min-w-0">
+        <span className="text-[12px] font-bold uppercase tracking-wider" style={muted}>{r.body}</span>
+        {r.vote ? (
+          <span className="ml-2 text-[12px] font-bold px-1.5 rounded whitespace-nowrap" style={{
+            background: 'var(--surface-3)',
+            color: /^passed|^yes|^voted/i.test(r.vote) ? 'var(--series-revenue)' : undefined }}>{r.vote}</span>
+        ) : null}
+        <span className="block text-[14.5px] leading-snug mt-0.5">
+          {r.what}{' '}
+          {r.link.anchor
+            ? <a href={`#${r.link.anchor}`} onClick={e => go(e, r.link.anchor!)} className="text-[12px] underline decoration-dotted whitespace-nowrap" style={muted}>{r.link.label} ↓</a>
+            : <a href={r.link.href} className="text-[12px] underline decoration-dotted whitespace-nowrap" style={muted}
+                target={r.link.href?.startsWith('http') ? '_blank' : undefined} rel="noreferrer">{r.link.label} →</a>}
+        </span>
+      </span>
+    </li>
+  )
+  const Block = ({ s }: { s: BriefingSection }) => (
+    <div className="mt-4 max-w-3xl">
+      <h3 className="text-[15px] font-bold m-0">{s.heading}</h3>
+      {s.note ? <p className="text-[13px] m-0 mt-0.5 mb-1" style={muted}>{s.note}</p> : null}
+      <ol className="m-0 p-0 list-none">{s.rows.map((r, i) => <Row key={i} r={r} />)}</ol>
+    </div>
+  )
+  return (
+    <>
+      {rounds.length ? (
+        <>
+          <Anchored id="rounds">How it moved, round by round</Anchored>
+          <p className="text-[13px] mt-0 mb-1 max-w-2xl" style={muted}>
+            Each round is one attempt to fund it, named by the fiscal year the money was for. Every line links to the vote or the quoted record below.
+          </p>
+          {rounds.map((s, i) => <Block key={i} s={s} />)}
+        </>
+      ) : null}
+      {points.map((s, i) => (
+        <div key={i}>
+          <Anchored id={i === 0 ? 'process' : `process-${i + 1}`}>{s.heading}</Anchored>
+          {s.note ? <p className="text-[13px] mt-0 mb-1 max-w-2xl" style={muted}>{s.note}</p> : null}
+          <ol className="m-0 p-0 list-none max-w-3xl">{s.rows.map((r, k) => <Row key={k} r={r} />)}</ol>
+        </div>
+      ))}
+    </>
+  )
+}
+
 /** A section a person can link to: the heading carries the id and is itself a link to it,
  *  so clicking it puts the address in the bar (TJ, 21 October 2026: "need the sections to be
  *  anchorable! I want to be able to link to the 'every vote on it'"). */
@@ -903,6 +975,8 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
         </>
       )}
 
+      {t.briefing?.length ? <Briefing secs={t.briefing} /> : null}
+
       {/* THE COUNTS, each with its unit (rule 7b: never a bare number). */}
       <div className="flex flex-wrap gap-x-10 gap-y-4 mt-6">
         <Stat value={String(t.meetings)}>{t.meetings === 1 ? 'meeting has' : 'meetings have'} taken it up</Stat>
@@ -960,7 +1034,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           </p>
           <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
             {[...t.votes].reverse().map((v, i) => (
-              <li key={i} className="py-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
+              <li key={i} id={`v-${t.votes!.length - 1 - i}`} className="py-2.5" style={{ borderTop: '1px solid var(--grid)', scrollMarginTop: 72 }}>
                 <div className="flex flex-wrap items-baseline gap-x-2 text-[12px]">
                   <span className="font-bold uppercase tracking-wider" style={muted}>{pretty(v.date)} · {v.board}</span>
                   {v.fy ? (
@@ -996,7 +1070,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           </p>
           <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
             {[...t.history].reverse().map(h => (
-              <li key={h.order} className="py-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
+              <li key={h.order} id={`h-${h.order}`} className="py-2.5" style={{ borderTop: '1px solid var(--grid)', scrollMarginTop: 72 }}>
                 <span className="text-[12px] font-bold uppercase tracking-wider" style={muted}>{h.when}</span>
                 <span className="text-[12px]" style={muted}> · {h.board}</span>
                 <p className="m-0 mt-0.5 text-[15px] leading-snug">{h.what}</p>

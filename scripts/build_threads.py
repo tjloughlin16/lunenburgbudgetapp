@@ -391,6 +391,99 @@ def history(known, problems):
     return out
 
 
+BRIEFING = os.path.join(ROOT, 'sources', 'data', 'thread-briefing.csv')
+_HEAD_OK = re.compile(r'\bFY\d{2}(\d{2})?\b|\b(19|20)\d\d\b|\bRound \d\b')
+_QUOTED = re.compile(r'"([^"]+)"')
+
+
+def _numbers(s):
+    return re.findall(r'\d+(?:[.,]\d+)*', s or '')
+
+
+def briefing(threads, problems):
+    """THE ORGANISED SUMMARY AT THE TOP OF A THREAD: one table per round, then the open question.
+
+    TJ, 21 October 2026, on the turf field: *"put this all on the page in an organized
+    fashion"* -- after the rounds tables in conversation were the thing that made it clear
+    (*"which year is discussed and how articles moved through the year"*). A person writes
+    each row in sources/data/thread-briefing.csv; the build refuses a row that does not
+    resolve to EXACTLY ONE quote-checked history entry, logged vote, thread, or the town's own
+    agenda listing -- so every line in the summary is a door to its evidence. Rule 2 holds:
+    every figure in a row must be in the source it points to, and every phrase in quotation
+    marks must be in that source's quotes. The heading and note may carry only years.
+    """
+    by_id = {t['id']: t for t in threads}
+    out = {}
+    last = {}
+    for r in read_csv(os.path.join(ROOT, 'sources', 'meetings', 'index.csv')):
+        if r.get('kind') == 'agenda':
+            slug = r['path'].split('/')[0]
+            if r['date'] <= dt.date.today().isoformat() and r['date'] > last.get(slug, ('',))[0]:
+                last[slug] = (r['date'], r['url'])
+    for n, r in enumerate(read_csv(BRIEFING), 2):
+        tag = 'thread-briefing.csv line %d' % n
+        t = by_id.get(r['thread'])
+        if not t:
+            problems.append('%s: no such thread %r' % (tag, r['thread']))
+            continue
+        for k in ('heading', 'note'):
+            if re.search(r'\d', _HEAD_OK.sub('', r[k])):
+                problems.append('%s: a figure in the %s (only years and the round number may be)' % (tag, k))
+        kind, rd, rm = r['ref_kind'], r['ref_date'], r['ref_match']
+        link, hay, quotes, date = None, '', [], r['date']
+        if kind == 'history':
+            hs = [h for h in t.get('history', []) if (h['date'] or h['when']) == rd and rm.lower() in h['what'].lower()]
+            if len(hs) != 1:
+                problems.append('%s: %d history entries match %s / %r (need exactly one)' % (tag, len(hs), rd, rm))
+                continue
+            h = hs[0]
+            link = {'anchor': 'h-%d' % h['order'], 'label': 'the record'}
+            hay, quotes = h['what'] + ' ' + ' '.join(h['quotes']), h['quotes']
+        elif kind == 'vote':
+            vs = [(i, v) for i, v in enumerate(t.get('votes', [])) if v['date'] == rd and rm.lower() in v['board'].lower()]
+            vs = [x for x in vs if x[1]['source'] == 'town'] or vs
+            if not vs:
+                problems.append('%s: no vote on %s by %r' % (tag, rd, rm))
+                continue
+            i, v = vs[0]
+            link = {'anchor': 'v-%d' % i, 'label': 'the vote'}
+            hay, quotes = v['text'] + ' ' + (v.get('outcome') or ''), [v['text']]
+        elif kind == 'thread':
+            if rm not in by_id:
+                problems.append('%s: no such thread %r' % (tag, rm))
+                continue
+            link = {'href': '/threads/' + rm, 'label': by_id[rm]['label']}
+        elif kind == 'last-agenda':
+            if rm not in last:
+                problems.append('%s: no agenda held for %r' % (tag, rm))
+                continue
+            date = last[rm][0]
+            link = {'href': last[rm][1], 'label': 'the agenda'}
+        else:
+            problems.append('%s: ref_kind %r' % (tag, kind))
+            continue
+        if kind in ('history', 'vote'):
+            nums = {x.replace(',', '') for x in _numbers(hay)}
+            bad = [x for x in _numbers(r['what'] + ' ' + r['vote']) if x.replace(',', '') not in nums]
+            if bad:
+                problems.append('%s: figure %s is not in the source it points to' % (tag, bad[0]))
+            if kind == 'history':
+                miss = [q for q in _QUOTED.findall(r['what']) if _squash(q.replace('\u2026', ' ').split(' ')[0]) and
+                        not all(_squash(part) in _squash(' '.join(quotes)) for part in q.split('\u2026') if part.strip())]
+                if miss:
+                    problems.append('%s: quoted %r is not in the source\'s quotes' % (tag, miss[0][:50]))
+        secs = out.setdefault(t['id'], {})
+        sec = secs.setdefault(r['section'], {'heading': '', 'note': '', 'kind': r['kind'], 'rows': []})
+        sec['heading'] = sec['heading'] or r['heading']
+        sec['note'] = sec['note'] or r['note']
+        sec['rows'].append({'date': date, 'body': r['body'], 'what': r['what'], 'vote': r['vote'], 'link': link})
+    for tid, secs in out.items():
+        for k, sec in secs.items():
+            if not sec['heading']:
+                problems.append('%s briefing section %s has no heading' % (tid, k))
+        by_id[tid]['briefing'] = [secs[k] for k in sorted(secs, key=int)]
+
+
 def reports_needed(tid):
     """[{title, slug, status, url, question, meetings: [{date, board, question_then, watch_at,
     at, our_minutes}]}] for the suggestions this thread is linked to, newest raising first."""
@@ -1104,6 +1197,7 @@ def build():
         if t.get('closed_board') == 'town-meeting' and t.get('closed_date') in tm_ids and not gen:
             extra['parent'] = tm_ids[t['closed_date']]
         threads[-1].update(extra)
+    briefing(threads, problems)
     # THE DENOMINATOR, ON EVERY RUN (THREADS-MODEL §7 and search_minutes.py). A thread that
     # went quiet because the RECORD went quiet is not a thread where nothing happened, and
     # the boards with the thinnest minutes are not the boards with the least happening.
