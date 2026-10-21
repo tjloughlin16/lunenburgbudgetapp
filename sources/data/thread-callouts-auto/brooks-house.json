@@ -1,17 +1,17 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "brooks-house",
- "picked_at": "2026-10-20T11:35:21Z",
+ "picked_at": "2026-10-21T11:19:01Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0946,
- "input_sha256": "e87413494c4a5870dffa634bb29d4d58c3798327043d442d236d835c9008cf2b",
+ "cost_usd": 0.2268,
+ "input_sha256": "d9806ec5b22454ad79126b61346595b76addf38da585942dfb04ce9b94d5d198",
  "callouts": [
   {
    "kind": "warrant",
    "value": "Nov 17",
-   "label": "Special Town Meeting is to hear the overdue report on selling or leasing Brooks House",
-   "hook": "report due at town meeting",
+   "label": "Special Town Meeting is to hear a report on selling or leasing Brooks House",
+   "hook": "Town Meeting report on sale or lease",
    "quote": "prepare a report for the november 17 special town meeting",
    "heard": [],
    "item_date": "2026-09-15",
@@ -22,13 +22,33 @@
    "where": "Select Board minutes, 15 Sep 2026",
    "verdict": {
     "keep": true,
-    "why": "Minutes say board had staff prepare a report for the Nov 17 special town meeting; later items (APDC joint-meeting request) don't change that."
+    "why": "Sep 15 minutes assign a report to the Nov 17 special town meeting; nothing later cancels it."
+   }
+  },
+  {
+   "kind": "impact",
+   "value": "Demolition fallback",
+   "label": "A preservation commission member says demolition is Plan B if a sale or lease RFP fails",
+   "hook": "",
+   "quote": "Plan B, if the RFP is not successful, is demolition.",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-10-20",
+   "video_id": "z9j248Lu80E",
+   "t": 3142,
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Quote 'Plan B, if the RFP is not successful, is demolition' from an APDC member; stated as one member's view."
    }
   },
   {
    "kind": "impact",
    "value": "No municipal use",
-   "label": "Building Design Committee voted that the town has no use for Brooks House",
+   "label": "Building design committee voted that the town has no use for Brooks House",
    "hook": "",
    "quote": "there's no municipal use for the Brooks House",
    "heard": [],
@@ -42,27 +62,7 @@
    "where": "Lunenburg Municipal Building Design Committee, 3 Aug 2026",
    "verdict": {
     "keep": true,
-    "why": "Motion that there is no municipal use was moved, seconded and roll-called; nothing later reverses it."
-   }
-  },
-  {
-   "kind": "impact",
-   "value": "Schools pass",
-   "label": "School Committee voted that the school department has no need for Brooks House",
-   "hook": "",
-   "quote": "the school department has no need for them to give it to us",
-   "heard": [],
-   "item_date": "2026-10-07",
-   "item_board": "school-committee",
-   "basis": "heard",
-   "board": "school-committee",
-   "date": "2026-10-07",
-   "video_id": "_XGfbHmZPJg",
-   "t": 4644,
-   "where": "School Committee, 7 Oct 2026",
-   "verdict": {
-    "keep": true,
-    "why": "School Committee roll call 'yes' on the motion that the school department has no need; nothing later."
+    "why": "Aug 3 committee motion and roll call: no municipal use. Later items don't contradict."
    }
   }
  ]

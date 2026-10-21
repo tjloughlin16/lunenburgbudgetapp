@@ -1,10 +1,51 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "trust-fund-vacancy",
- "picked_at": "2026-10-19T15:22:05Z",
+ "picked_at": "2026-10-21T11:19:01Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.0132,
- "input_sha256": "efc6c0ef1e727a69e765ea2af8f15bf88e60839ec3aefbfc952ed7c7cc47b1df",
- "callouts": []
+ "cost_usd": 0.0518,
+ "input_sha256": "38488e5ce217c82166086ed2f4250ce06662d932f5ea15ca22d42c3442361a83",
+ "callouts": [
+  {
+   "kind": "warrant",
+   "value": "Kept off warrant",
+   "label": "Select Board voted not to put the trust fund vacancy article on the Town Meeting warrant",
+   "hook": "article kept off the warrant",
+   "quote": "I just don't think it's ready. I think we need to get it past town council muster first.",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-10-20",
+   "video_id": "z9j248Lu80E",
+   "t": 11699,
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Motion to include Article 11 failed; the board said it was not ready."
+   }
+  },
+  {
+   "kind": "impact",
+   "value": "Charter conflict",
+   "label": "Board member says parts of the draft trust fund bylaw would override the town charter",
+   "hook": "",
+   "quote": "actually supersede the charter",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-10-20",
+   "video_id": "z9j248Lu80E",
+   "t": 11615,
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Member said parts would supersede the charter, concurring with town counsel. Stated as the member's view."
+   }
+  }
+ ]
 }

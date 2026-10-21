@@ -1,7 +1,7 @@
 # The Lunenburg Budget Project
 
 An independent, checkable archive of the Lunenburg, Massachusetts town and school budget:
-43,759 documents, 300 datasets, and 12,222 agendas and sets
+43,806 documents, 302 datasets, and 12,234 agendas and sets
 of minutes across 51 town boards. Not affiliated with the Town of Lunenburg, the
 School Committee or the school district.
 
@@ -36,7 +36,7 @@ clone is needed:
 **Nothing in `fy28/public/api/` is larger than one fetch.** Anything that would be is split
 — `staff_roster_entries.json` is an index and `staff_roster_entries/2022.json` is that year.
 
-**The documents themselves are not in this repository.** 43,759 files, 1.47 GB, live
+**The documents themselves are not in this repository.** 43,806 files, 1.47 GB, live
 in a public object store; `sources/data/archive-manifest.csv` lists every one with its
 sha256 and `python3 scripts/sync_archive.py --pull` fetches them. The extracted text IS
 here, under `sources/*/text/`, and that is what the analysis reads.
@@ -46,7 +46,7 @@ here, under `sources/*/text/`, and that is what the analysis reads.
 | | |
 |---|---|
 | `sources/` | the archive, keyed by **how a document reached us** — see `sources/README.txt` |
-| `sources/data/` | 300 datasets extracted from those documents, CSV |
+| `sources/data/` | 302 datasets extracted from those documents, CSV |
 | `sources/analyses/` | the written analyses, each with a verifier script |
 | `model/` | the projection — `python3 model/export.py` writes `fy28/src/data/model.json` |
 | `scripts/` | extraction, verification and publishing |
