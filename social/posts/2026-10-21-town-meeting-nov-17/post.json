@@ -1,0 +1,74 @@
+{
+  "about": "The Special Town Meeting on November 17, led by what residents care about (wallet, big, long-term, way of life): TC Passios, the track and field, the special education reserve, stormwater. Each line leaves its story on the site; the one dated action is the Finance Committee's public hearing. Figures from the board, recording figures only once checked by ear (heard-figures.csv).",
+  "data": {
+    "m": "app-metrics.json",
+    "tm": "threads.json#threads[id=stm-2026-11-17].warrant",
+    "tcp": "threads.json#threads[id=stm-2026-11-17].warrant.articles[title=non-binding question on TC Passios demolition]",
+    "trk": "threads.json#threads[id=stm-2026-11-17].warrant.articles[title=middle high school track and field engineering]",
+    "sped": "threads.json#threads[id=stm-2026-11-17].warrant.articles[title=transfer of funds to the special education reserve fund]",
+    "hear": "threads.json#threads[id=stm-2026-11-17].warrant.next[0]"
+  },
+  "literal": [
+    "FY27"
+  ],
+  "flare": {
+    "accent": "royal",
+    "motif": "contours"
+  },
+  "image": {
+    "layout": "spotlight",
+    "size": "square",
+    "headline": "{tm.counts.on_warrant|n} questions go to Town Meeting",
+    "emphasis": "{tm.counts.on_warrant|n} questions",
+    "headline_size": 56,
+    "sub": "Special Town Meeting, {tm.date|day}, {tm.time}.",
+    "card": {
+      "eyebrow": "ON THE WARRANT",
+      "title": "{tm.date|day}",
+      "rows": [
+        {
+          "label": "TC Passios",
+          "value": "Tear it down? {tcp.heard[0].figure} estimate"
+        },
+        {
+          "label": "Track and field",
+          "value": "{trk.heard[0].figure} to engineer · {trk.heard[1].figure} total"
+        },
+        {
+          "label": "Special ed reserve",
+          "value": "{sped.heard[0].figure} from free cash"
+        },
+        {
+          "label": "Stormwater",
+          "value": "A household fee, or the town budget?"
+        }
+      ],
+      "chips": [
+        "Public hearing {hear.date|wday}, {hear.time}",
+        "{tm.counts.kept_off|n} kept off"
+      ]
+    },
+    "path": "/threads/stm-2026-11-17",
+    "as_of": "As of {m.as_of|short} · figures checked in the board recordings"
+  },
+  "text": [
+    "{tm.counts.on_warrant|n} questions go to Lunenburg's Special Town Meeting on {tm.date|day}. What's on the warrant so far:",
+    "",
+    "🏚️ Tear down TC Passios? A non-binding question to voters. The building loses heat this winter and the food pantry is planning to move out. A building committee member put demolition at {tcp.heard[0].figure}.",
+    "",
+    "🏟️ {trk.heard[0].figure} to engineer the Middle/High School track and field, the first step toward a project estimated at {trk.heard[1].figure}. The Select Board held it off the warrant at first, then put it on unanimously two weeks later. What changed?",
+    "",
+    "🎒 {sped.heard[0].figure} from free cash for the special education reserve.",
+    "",
+    "💧 A stormwater fee on every household, billed apart from the tax bill, or pay for stormwater through the town budget? A non-binding vote. A second article lets the Planning Board set stormwater permit fees.",
+    "",
+    "…plus the FY27 budget, corrective zoning and a bill from a prior year. The Select Board kept {tm.counts.kept_off|n} other articles off.",
+    "",
+    "Every article, where it stands, and how it got here:",
+    "👉 lburg.org/threads/stm-2026-11-17",
+    "",
+    "📣 The Finance Committee holds a public hearing on these articles {hear.date|day} at {hear.time}.",
+    "",
+    "Which article do you want explained next?"
+  ]
+}
