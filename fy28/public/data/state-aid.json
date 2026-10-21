@@ -443,6 +443,18 @@
    "side": "document_wanted",
    "what": "What school spending has been in constant dollars",
    "why": "CLOSED 18 October 2026. The Bureau of Labor Statistics CPI-U for Boston-Cambridge-Newton (series CUURS11ASA0, January 1990 onward) is landed in sources/federal-bls/, four API responses saved as returned with their addresses and sha256, and its PROVENANCE.md says how the fiscal-year average is built. Every spending page on /school-spending-history now gives dollars as printed beside dollars of the latest actual year, July-June averages, our arithmetic. What the index does NOT settle: it measures what a basket of consumer goods costs in the Boston area, not what a school pays for teachers, tuition or insurance, so \"after prices\" means after general prices -- closes: the CPI-U for Boston-Cambridge-Newton, landed; for a school-specific measure, the state and local government price deflator the state uses to inflate the Chapter 70 foundation budget."
+  },
+  {
+   "closes": "the district\u2019s End of Year Financial Report, special education program, with benefits and town-side costs allocated by program.",
+   "side": "money_out",
+   "what": "What does special education cost in Lunenburg all in, once the benefits and town-side costs of its staff are counted?",
+   "why": "The school MUNIS journal holds every posting to every school account in every fund, FY2023-FY2026, and /special-education/sped-all-funds sums the accounts the ledger labels special education across the general fund, the circuit breaker and the IDEA grants. That is the most complete view the archive holds and it is still a set of postings, not a cost: health insurance and other benefits are charged to school-wide or town accounts, not to a special education line, and special education work paid from accounts with no special education label (district-wide specialists, guidance, nurses) is not separable. WHAT IS NOT ESTABLISHED: the full cost of special education in any year."
+  },
+  {
+   "closes": "the district\u2019s circuit breaker and IDEA spending plans for FY2023-FY2026, and the circuit breaker account statement for each year.",
+   "side": "money_in",
+   "what": "Why did the circuit breaker and the special education grants pay a smaller share of special education in FY2026 than in FY2023?",
+   "why": "The school journal shows the share of special education postings outside the general fund falling over FY2023-FY2026 (/special-education/sped-all-funds), and that in FY2026 the circuit breaker fund paid through a single year-end reclassification of collaborative tuition rather than through invoices during the year. A smaller reimbursement, a balance held back for the next year, and costs moved to other accounts all fit the same postings, and nothing in a ledger says which."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

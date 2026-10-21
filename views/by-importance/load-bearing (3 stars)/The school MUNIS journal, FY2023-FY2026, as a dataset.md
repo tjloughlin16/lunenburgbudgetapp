@@ -1,0 +1,1 @@
+../../../sources/analyses/school-journal.md
