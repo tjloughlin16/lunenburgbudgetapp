@@ -120,6 +120,28 @@ Record only what the minutes print. A field with nothing in it is an empty list.
 _Q = {'type': 'string', 'description': 'VERBATIM and contiguous from the minutes text'}
 
 
+
+# THE ADDRESS OF THE MINUTES THEMSELVES. This was '/docs/meetings/<board>/' + the TEXT file's name
+# -- a folder for documents and a name for text, which exists for nothing: every "read them"
+# link on the site answered 404 until 21 October 2026, when TJ clicked one. Now: the town's
+# original file as the meeting index lists it (PDF or Word), else our extracted text.
+_INDEX = None
+
+
+def minutes_doc_url(board_slug, path):
+    global _INDEX
+    if _INDEX is None:
+        import csv as _csv
+        _INDEX = {}
+        for r in _csv.DictReader(open(os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sources',
+                                                   'meetings', 'index.csv'), encoding='utf-8')):
+            if r.get('path'):
+                _INDEX[os.path.splitext(r['path'])[0]] = r['path']
+    stem = '%s/%s' % (board_slug, os.path.splitext(os.path.basename(path))[0])
+    if stem in _INDEX:
+        return '/docs/meetings/' + _INDEX[stem]
+    return '/docs/minutes/text/%s.txt' % stem
+
 def _item(required, **props):
     props['quote'] = _Q
     return {'type': 'array', 'items': {'type': 'object', 'additionalProperties': False,
@@ -394,7 +416,7 @@ def extract_one(e, force=False, schema=1, model=None, out_dir=None):
         'warning': 'VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.',
         'board_slug': e['board_slug'], 'meeting_date': e['date'], 'docid': e['docid'],
         'source': {'text': e['rel'], 'sha256': sha, 'chars': len(text), 'minutes_url': upstream(e),
-                   'doc_url': '/docs/meetings/' + e['board_slug'] + '/' + os.path.basename(e['path'])},
+                   'doc_url': minutes_doc_url(e['board_slug'], e['path'])},
         'votes': kept, 'dropped_unquoted': dropped, 'note': body.get('note', ''),
         'cost_usd': res.get('total_cost_usd'),
     }

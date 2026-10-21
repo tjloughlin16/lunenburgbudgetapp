@@ -23,7 +23,13 @@ export async function onRequest(context) {
   // Not here. Before answering 404, check whether it MOVED. The archive was reorganised
   // on 4 September 2026 and llms.txt tells agents to cite `/docs/<path>` URLs, so an
   // address published before that date is a promise this file keeps.
-  const to = movedTo(path)
+  // THE TEXT OF A MEETING DOCUMENT, ASKED FOR BESIDE THE DOCUMENT. Generators built links as
+  // '/docs/meetings/<board>/' + the extracted TEXT file's name -- a folder that holds the
+  // town's PDFs and a name that lives under /docs/minutes/text/. About a hundred payloads
+  // carried it; every one answered 404 until 21 October 2026 (TJ clicked a "read them" link).
+  // The text is real, at its own address: send the reader there, whatever wrote the link.
+  const text = /^meetings\/([^/]+)\/([^/]+)\.txt$/.exec(path)
+  const to = text ? `minutes/text/${text[1]}/${text[2]}.txt` : movedTo(path)
   if (to && to !== path) {
     const url = new URL(context.request.url)
     url.pathname = '/docs/' + to
