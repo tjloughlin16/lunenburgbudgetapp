@@ -51,3 +51,14 @@ renderings were scratch; regenerate them by setting `layout`.
    would have picked, until it agrees often enough.
 4. **Then**: posting through Facebook's Page API with a veto window (goes out after a few
    hours unless TJ stops it). Needs a standing permission to deploy when a post is queued.
+
+## BLOCKER FOR THE NEXT DEPLOY: Cloudflare Pages' 20,000-file limit (21 October 2026)
+
+The 21 October build was 20,345 files and the deploy was refused. It went out at 19,984 by
+HOLDING BACK 358 files that had never been live: the school journal's per-period API pages
+(fy28/dist/api/munis_school_journal/, 241), the per-year pages of api/dese_teacher_salaries/
+and api/teacher_salary_schedules/ (38), and 79 generated town-meeting thread feeds (all but
+stm-2026-11-17). They are NOT on the live site. The next deploy will exceed the limit again.
+The fix: serve paged /api/<table>/<n>.json (and similar) through a Pages Function reading R2,
+as /docs already does (fy28/functions/docs/_bucket.js), so those files leave the deployment.
+Pages Pro lifts the limit; Workers Paid does not.
