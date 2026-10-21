@@ -1,248 +1,254 @@
 {
- "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
- "board_slug": "public-access-cable-committee-pacc",
- "board": "Public Access Cable Committee (PACC)",
- "video_title": "PACC Special Meeting",
- "meeting_date": "2026-09-16",
- "video_id": "OiwZv1YBXj0",
- "video_url": "https://www.youtube.com/watch?v=OiwZv1YBXj0",
- "cite": "the video at &t=<seconds>s; every t below is such a second",
- "source": {
-  "transcript": "sources/data/youtube-transcripts/public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0.json",
-  "sha256": "277c5d3ae5a5b17b37b5acebdba289fe96ea4826c70453120794d886c488207f",
-  "caption_lines": 28,
-  "segments": 267
- },
- "recording": {
-  "duration_s": 592,
-  "duration": "0:09",
-  "spoken_chars": 6426,
-  "words_approx": 1071
- },
- "town_published": [
-  {
-   "kind": "agenda",
-   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8014",
-   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2026-09-16-agenda-8014.txt",
-   "path": "sources/meetings/public-access-cable-committee-pacc/2026-09-16-agenda-8014.pdf"
-  }
- ],
- "written": {
-  "by": "scripts/write_recording_minutes.py",
-  "model": "sonnet",
-  "at": "2026-10-18T11:06:16Z",
-  "cost_usd": 0.4516
- },
- "minutes": {
-  "headline": "PACC voted by roll call, 3 yes, to ask Town Meeting to fully fund its FY27 PEG access budget from retained earnings.",
-  "summary": "A special meeting of the Public Access Cable Committee, held by Zoom on short notice, took up one item: warrant wording for an FY27 budget increase. Members reworded the article to say \"fully fund\" rather than \"fund\" so it would not suggest the original budget was wrong. A motion with the summary of the salary increase was seconded and approved by roll call, and the meeting adjourned.",
-  "attendees": [
-   {
-    "name_as_heard": "Steve",
-    "role": "member",
-    "remote": true
-   },
-   {
-    "name_as_heard": "Brian",
-    "role": "member",
-    "remote": true
-   },
-   {
-    "name_as_heard": "Chair (unnamed, conducting roll call)",
-    "role": "chair",
-    "remote": true
-   }
-  ],
-  "public_comment": [],
-  "tags": [
-   "budget",
-   "budget-fy27",
-   "personnel",
-   "town-departments",
-   "town-meeting",
-   "warrant-article"
-  ],
-  "votes": [
-   {
-    "t": 427,
-    "motion": "Move to see if the town will vote to raise and appropriate or transfer from available funds a sum of money to fully fund the FY 2027 PEG access enterprise operating budget, with the summary of an increase for salaries to be funded from retained earnings.",
-    "moved_by": "Steve or Brian (not clear from captions)",
-    "outcome": "passed 3-0 by roll call (three ayes heard: Steve, Brian, and the chair)",
-    "procedural": false
-   },
-   {
-    "t": 565,
-    "motion": "Motion to adjourn",
-    "outcome": "not audible",
-    "procedural": true
-   }
-  ],
-  "budget_items": [
-   {
-    "t": 133,
-    "topic": "FY27 PEG access enterprise operating budget increase",
-    "what_was_said": "The chair proposed warrant wording for a budget increase for the current fiscal year, adapted from the regular town meeting warrant.",
-    "figures_as_heard": []
-   },
-   {
-    "t": 195,
-    "topic": "Salary increase funded from retained earnings",
-    "what_was_said": "The summary describes an increase for salaries for the rest of FY27 to be funded from retained earnings, with indirect costs rising as well.",
-    "figures_as_heard": [
-     "$23,500"
-    ]
-   },
-   {
-    "t": 216,
-    "topic": "Indirect costs",
-    "what_was_said": "The chair said indirect costs also go up with the salary increase and were included, worked out with Joe.",
-    "figures_as_heard": []
-   }
-  ],
-  "transfers": [
-   {
-    "t": 471,
-    "description": "Retained earnings of the PEG access enterprise fund to fund the salary increase for the remainder of FY27",
-    "amount_as_heard": "$23,500",
-    "outcome": "voted (as part of the roll call motion)"
-   }
-  ],
-  "decisions": [
-   {
-    "t": 277,
-    "decision": "Wording of the article changed from 'fund' to 'fully fund' the FY27 budget, so it does not imply the original budget was wrong."
-   },
-   {
-    "t": 534,
-    "decision": "The chair will assemble the final wording, ask a member to send the text, and forward it to the select board's executive person as required for a duly called meeting."
-   }
-  ],
-  "topics": [
-   {
-    "t_start": 3,
-    "t_end": 91,
-    "topic": "Open meeting law notice, Zoom-only special meeting",
-    "resolution": "informational",
-    "tags": []
-   },
-   {
-    "t_start": 91,
-    "t_end": 153,
-    "topic": "Roll call and introduction of proposed warrant wording",
-    "resolution": "informational",
-    "tags": [
-     "warrant-article"
-    ]
-   },
-   {
-    "t_start": 153,
-    "t_end": 427,
-    "topic": "Wording of the FY27 PEG access budget increase article and summary",
-    "resolution": "wording agreed: 'fully fund'",
-    "tags": [
-     "budget-fy27",
-     "warrant-article",
-     "personnel"
-    ]
-   },
-   {
-    "t_start": 427,
-    "t_end": 534,
-    "topic": "Motion on article with salary summary funded from retained earnings; roll call vote",
-    "resolution": "voted",
-    "tags": [
-     "budget-fy27",
-     "warrant-article",
-     "town-meeting"
-    ]
-   },
-   {
-    "t_start": 534,
-    "t_end": 600,
-    "topic": "Forwarding to select board and adjournment",
-    "resolution": "adjournment moved and seconded",
-    "tags": []
-   }
-  ],
-  "not_audible": [
-   "Who made the main motion at 427 versus who seconded it is not clear from the captions.",
-   "The result of the adjournment voice vote is not stated.",
-   "The name of the select board's executive person is garbled."
-  ],
-  "confidence": "moderate",
-  "contention": [],
-  "concerns_and_conditions": [],
-  "documents_mentioned": [
-   {
-    "t": 112,
-    "name_as_heard": "proposed budget increase email / draft warrant wording",
-    "kind": "letter or email",
-    "words_as_heard": "I had sent out via email, which you may or may not have seen um at 3:00 or so",
-    "shown": true
-   },
-   {
-    "t": 133,
-    "name_as_heard": "the regular town meeting warrant",
-    "kind": "warrant article",
-    "words_as_heard": "I took the regular town meeting uh warrant for PAC",
-    "shown": false
-   },
-   {
-    "t": 236,
-    "name_as_heard": "projected salaries payroll numbers",
-    "kind": "spreadsheet",
-    "words_as_heard": "I'm looking at the uh projected salaries payroll numbers",
-    "shown": false
-   }
-  ],
-  "suggested_reports": [
-   {
-    "slug": "pacc-enterprise-fund",
-    "title": "PEG access enterprise fund",
-    "question": "Why does the cable access budget need a mid-year salary increase paid from retained earnings, and what is left in that fund?",
-    "t": 195,
-    "words_as_heard": "an increase for salaries for the remainder of FY 27 in the amount of $23,500 to be funded from retained earnings",
-    "data_in_play": [
-     "$23,500",
-     "retained earnings",
-     "indirect costs"
-    ],
-    "existing": ""
-   }
-  ]
- },
- "digest": {
-  "what_happened": [
-   {
-    "line": "The Public Access Cable Committee voted 3-0 by roll call to ask Town Meeting to fully fund the FY27 PEG access operating budget from retained earnings.",
-    "t": 427
-   },
-   {
-    "line": "Members changed the article's wording from \"fund\" to \"fully fund\" so it would not imply the original budget was wrong.",
-    "t": 277
-   },
-   {
-    "line": "The article's summary describes a salary increase for the rest of FY27, with indirect costs rising alongside it and included in the request.",
-    "t": 195
-   },
-   {
-    "line": "The chair will assemble the final wording and forward it to the select board's office as required for a duly called meeting.",
-    "t": 534
-   }
-  ],
-  "why_it_matters": [
-   "The request would draw on the PEG access enterprise fund's retained earnings rather than the tax levy, so it is a spending decision Town Meeting voters would be asked to approve.",
-   "The minutes do not state the amount, so residents cannot yet judge the size of the salary increase or how much retained earnings it would use."
-  ],
-  "watch_next": [
-   "The final article wording, to be assembled by the chair and sent to the select board's office.",
-   "The Town Meeting warrant, where the article would appear for a vote."
+  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+  "board_slug": "public-access-cable-committee-pacc",
+  "board": "Public Access Cable Committee (PACC)",
+  "video_title": "PACC Special Meeting",
+  "meeting_date": "2026-09-16",
+  "video_id": "OiwZv1YBXj0",
+  "video_url": "https://www.youtube.com/watch?v=OiwZv1YBXj0",
+  "cite": "the video at &t=<seconds>s; every t below is such a second",
+  "source": {
+    "transcript": "sources/data/youtube-transcripts/public-access-cable-committee-pacc/2026-09-16-OiwZv1YBXj0.json",
+    "sha256": "277c5d3ae5a5b17b37b5acebdba289fe96ea4826c70453120794d886c488207f",
+    "caption_lines": 28,
+    "segments": 267
+  },
+  "recording": {
+    "duration_s": 592,
+    "duration": "0:09",
+    "spoken_chars": 6426,
+    "words_approx": 1071
+  },
+  "town_published": [
+    {
+      "kind": "agenda",
+      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09162026-8014",
+      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2026-09-16-agenda-8014.txt",
+      "path": "sources/meetings/public-access-cable-committee-pacc/2026-09-16-agenda-8014.pdf"
+    },
+    {
+      "kind": "minutes",
+      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09162026-8014",
+      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2026-09-16-minutes-8014.txt",
+      "path": "sources/meetings/public-access-cable-committee-pacc/2026-09-16-minutes-8014.pdf"
+    }
   ],
   "written": {
-   "by": "scripts/write_recording_minutes.py --digest",
-   "model": "sonnet",
-   "at": "2026-10-18T11:06:26Z",
-   "cost_usd": 0.327268
+    "by": "scripts/write_recording_minutes.py",
+    "model": "sonnet",
+    "at": "2026-10-18T11:06:16Z",
+    "cost_usd": 0.4516
+  },
+  "minutes": {
+    "headline": "PACC voted by roll call, 3 yes, to ask Town Meeting to fully fund its FY27 PEG access budget from retained earnings.",
+    "summary": "A special meeting of the Public Access Cable Committee, held by Zoom on short notice, took up one item: warrant wording for an FY27 budget increase. Members reworded the article to say \"fully fund\" rather than \"fund\" so it would not suggest the original budget was wrong. A motion with the summary of the salary increase was seconded and approved by roll call, and the meeting adjourned.",
+    "attendees": [
+      {
+        "name_as_heard": "Steve",
+        "role": "member",
+        "remote": true
+      },
+      {
+        "name_as_heard": "Brian",
+        "role": "member",
+        "remote": true
+      },
+      {
+        "name_as_heard": "Chair (unnamed, conducting roll call)",
+        "role": "chair",
+        "remote": true
+      }
+    ],
+    "public_comment": [],
+    "tags": [
+      "budget",
+      "budget-fy27",
+      "personnel",
+      "town-departments",
+      "town-meeting",
+      "warrant-article"
+    ],
+    "votes": [
+      {
+        "t": 427,
+        "motion": "Move to see if the town will vote to raise and appropriate or transfer from available funds a sum of money to fully fund the FY 2027 PEG access enterprise operating budget, with the summary of an increase for salaries to be funded from retained earnings.",
+        "moved_by": "Steve or Brian (not clear from captions)",
+        "outcome": "passed 3-0 by roll call (three ayes heard: Steve, Brian, and the chair)",
+        "procedural": false
+      },
+      {
+        "t": 565,
+        "motion": "Motion to adjourn",
+        "outcome": "not audible",
+        "procedural": true
+      }
+    ],
+    "budget_items": [
+      {
+        "t": 133,
+        "topic": "FY27 PEG access enterprise operating budget increase",
+        "what_was_said": "The chair proposed warrant wording for a budget increase for the current fiscal year, adapted from the regular town meeting warrant.",
+        "figures_as_heard": []
+      },
+      {
+        "t": 195,
+        "topic": "Salary increase funded from retained earnings",
+        "what_was_said": "The summary describes an increase for salaries for the rest of FY27 to be funded from retained earnings, with indirect costs rising as well.",
+        "figures_as_heard": [
+          "$23,500"
+        ]
+      },
+      {
+        "t": 216,
+        "topic": "Indirect costs",
+        "what_was_said": "The chair said indirect costs also go up with the salary increase and were included, worked out with Joe.",
+        "figures_as_heard": []
+      }
+    ],
+    "transfers": [
+      {
+        "t": 471,
+        "description": "Retained earnings of the PEG access enterprise fund to fund the salary increase for the remainder of FY27",
+        "amount_as_heard": "$23,500",
+        "outcome": "voted (as part of the roll call motion)"
+      }
+    ],
+    "decisions": [
+      {
+        "t": 277,
+        "decision": "Wording of the article changed from 'fund' to 'fully fund' the FY27 budget, so it does not imply the original budget was wrong."
+      },
+      {
+        "t": 534,
+        "decision": "The chair will assemble the final wording, ask a member to send the text, and forward it to the select board's executive person as required for a duly called meeting."
+      }
+    ],
+    "topics": [
+      {
+        "t_start": 3,
+        "t_end": 91,
+        "topic": "Open meeting law notice, Zoom-only special meeting",
+        "resolution": "informational",
+        "tags": []
+      },
+      {
+        "t_start": 91,
+        "t_end": 153,
+        "topic": "Roll call and introduction of proposed warrant wording",
+        "resolution": "informational",
+        "tags": [
+          "warrant-article"
+        ]
+      },
+      {
+        "t_start": 153,
+        "t_end": 427,
+        "topic": "Wording of the FY27 PEG access budget increase article and summary",
+        "resolution": "wording agreed: 'fully fund'",
+        "tags": [
+          "budget-fy27",
+          "warrant-article",
+          "personnel"
+        ]
+      },
+      {
+        "t_start": 427,
+        "t_end": 534,
+        "topic": "Motion on article with salary summary funded from retained earnings; roll call vote",
+        "resolution": "voted",
+        "tags": [
+          "budget-fy27",
+          "warrant-article",
+          "town-meeting"
+        ]
+      },
+      {
+        "t_start": 534,
+        "t_end": 600,
+        "topic": "Forwarding to select board and adjournment",
+        "resolution": "adjournment moved and seconded",
+        "tags": []
+      }
+    ],
+    "not_audible": [
+      "Who made the main motion at 427 versus who seconded it is not clear from the captions.",
+      "The result of the adjournment voice vote is not stated.",
+      "The name of the select board's executive person is garbled."
+    ],
+    "confidence": "moderate",
+    "contention": [],
+    "concerns_and_conditions": [],
+    "documents_mentioned": [
+      {
+        "t": 112,
+        "name_as_heard": "proposed budget increase email / draft warrant wording",
+        "kind": "letter or email",
+        "words_as_heard": "I had sent out via email, which you may or may not have seen um at 3:00 or so",
+        "shown": true
+      },
+      {
+        "t": 133,
+        "name_as_heard": "the regular town meeting warrant",
+        "kind": "warrant article",
+        "words_as_heard": "I took the regular town meeting uh warrant for PAC",
+        "shown": false
+      },
+      {
+        "t": 236,
+        "name_as_heard": "projected salaries payroll numbers",
+        "kind": "spreadsheet",
+        "words_as_heard": "I'm looking at the uh projected salaries payroll numbers",
+        "shown": false
+      }
+    ],
+    "suggested_reports": [
+      {
+        "slug": "pacc-enterprise-fund",
+        "title": "PEG access enterprise fund",
+        "question": "Why does the cable access budget need a mid-year salary increase paid from retained earnings, and what is left in that fund?",
+        "t": 195,
+        "words_as_heard": "an increase for salaries for the remainder of FY 27 in the amount of $23,500 to be funded from retained earnings",
+        "data_in_play": [
+          "$23,500",
+          "retained earnings",
+          "indirect costs"
+        ],
+        "existing": ""
+      }
+    ]
+  },
+  "digest": {
+    "what_happened": [
+      {
+        "line": "The Public Access Cable Committee voted 3-0 by roll call to ask Town Meeting to fully fund the FY27 PEG access operating budget from retained earnings.",
+        "t": 427
+      },
+      {
+        "line": "Members changed the article's wording from \"fund\" to \"fully fund\" so it would not imply the original budget was wrong.",
+        "t": 277
+      },
+      {
+        "line": "The article's summary describes a salary increase for the rest of FY27, with indirect costs rising alongside it and included in the request.",
+        "t": 195
+      },
+      {
+        "line": "The chair will assemble the final wording and forward it to the select board's office as required for a duly called meeting.",
+        "t": 534
+      }
+    ],
+    "why_it_matters": [
+      "The request would draw on the PEG access enterprise fund's retained earnings rather than the tax levy, so it is a spending decision Town Meeting voters would be asked to approve.",
+      "The minutes do not state the amount, so residents cannot yet judge the size of the salary increase or how much retained earnings it would use."
+    ],
+    "watch_next": [
+      "The final article wording, to be assembled by the chair and sent to the select board's office.",
+      "The Town Meeting warrant, where the article would appear for a vote."
+    ],
+    "written": {
+      "by": "scripts/write_recording_minutes.py --digest",
+      "model": "sonnet",
+      "at": "2026-10-18T11:06:26Z",
+      "cost_usd": 0.327268
+    }
   }
- }
 }
