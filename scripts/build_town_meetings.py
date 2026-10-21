@@ -1454,13 +1454,27 @@ def heard_figures():
     return list(csv.DictReader(open(HEARD, encoding='utf-8')))
 
 
+SUMMARIES = os.path.join(DATA, 'article-summaries.json')
+
+
+def summaries():
+    """A sentence or two per article, written by scripts/write_article_summaries.py from the
+    article's own record and checked there (no figure the warrant or a checked figure lacks).
+    Keyed meeting|article|title, so a renumbered or reworded article simply has none until the
+    next run writes it."""
+    return json.load(open(SUMMARIES, encoding='utf-8')) if os.path.exists(SUMMARIES) else {}
+
+
 def warrant_payload(m, arts, children, items=()):
     def money(a):
         vals = [float(re.sub(r'[^\d.]', '', x) or 0) for x in AMOUNT.findall(a['amount'] + ' ' + a['result_amount'])]
         return max(vals) if vals else 0
     rows = []
+    summ = summaries()
     for a in arts:
+        sm = summ.get('%s|%s|%s' % (m['id'], a['article'] if a['article'] != '' else '', a['title'].lower().strip()), {})
         rows.append({
+            'summary': sm.get('summary', ''), 'summary_from': sm.get('from', '') if sm.get('summary') else '',
             'article': a['article'], 'title': a['title'], 'title_from': a['title_from'],
             'amount': a['amount'], 'sponsor': a['sponsor'],
             'stage': STAGE_WORD.get(a['stage'], ''),

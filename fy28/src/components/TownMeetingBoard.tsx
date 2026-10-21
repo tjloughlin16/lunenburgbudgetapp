@@ -18,6 +18,8 @@ export type WarrantArticle = {
   clerk_doc: string; clerk_page: string
   amended: boolean; divided: boolean; put_off: boolean
   promoted: boolean; promoted_why: string; thread: string; numbered_by: string; money: number
+  /** A sentence or two, written from the article's own record (write_article_summaries.py). */
+  summary?: string; summary_from?: string
   /** Figures a person checked in the recording (sources/data/heard-figures.csv). */
   heard?: { figure: string; value: number; what: string; board: string; date: string; listen: string
     verified_by: string; verified_on: string; note: string }[]
@@ -104,6 +106,12 @@ function Row({ a, onGo }: { a: WarrantArticle; onGo: (id: string) => void }) {
           <span className="text-[14px] font-bold tnum shrink-0">{a.amount || a.result_amount}</span>
         ) : null}
       </div>
+      {a.summary ? (
+        <p className="text-[14px] leading-snug mt-1" style={{ color: 'var(--text-primary)' }}>
+          {a.summary}{' '}
+          <span className="text-[11.5px]" style={muted}>Summarised from {a.summary_from}.</span>
+        </p>
+      ) : null}
       {/* A FIGURE FROM A RECORDING is shown only once somebody listened at the second cited,
           and it says where it was said, so a reader can hear it too (rule 13). */}
       {a.heard?.length ? (

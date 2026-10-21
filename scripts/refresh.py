@@ -1327,6 +1327,12 @@ def run(a, notes, ctx):
         # new warrant, recommendation or vote reaches its board the day it is read (TJ, 21
         # October 2026). Deterministic, no model, ~25s.
         py('build_town_meetings.py', check=False)
+        # A SENTENCE OR TWO PER ARTICLE, for meetings coming up or just held -- only where the
+        # article's record moved, so most days this is no call at all. Metered like the
+        # callouts; each summary is checked before it can show (write_article_summaries.py).
+        if not a.no_minutes and not a.dry_run:
+            if metered('write_article_summaries.py', notes=notes) is not None:
+                py('build_town_meetings.py', check=False)
         py('build_threads.py', check=False)
         # THE CALLOUTS, for the threads whose record just changed -- what someone says next
         # (TJ, 19 October 2026). A model picks, threads batched to a call, only where the input moved, and a second call judges every new pick;
