@@ -1,0 +1,919 @@
+{
+ "category": "athletics",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "One bar per plan, oldest first, coloured by the year it put the money in. TM: Town Manager; S: schools; d: draft; the number is the plan’s own year."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "FY2024",
+    "texts": [
+     null,
+     null,
+     "$50,000",
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "values": [
+     null,
+     null,
+     50000,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "FY2025",
+    "texts": [
+     null,
+     "$98,000",
+     "$150,000",
+     null,
+     "$200,000",
+     "$200,000",
+     null,
+     null,
+     null,
+     null
+    ],
+    "values": [
+     null,
+     98000,
+     150000,
+     null,
+     200000,
+     200000,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "FY2026",
+    "texts": [
+     null,
+     null,
+     "$2,000,000",
+     "$150,000",
+     "$300,000",
+     null,
+     null,
+     null,
+     null,
+     null
+    ],
+    "values": [
+     null,
+     null,
+     2000000,
+     150000,
+     300000,
+     null,
+     null,
+     null,
+     null,
+     null
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "FY2027",
+    "texts": [
+     "$90,000",
+     null,
+     null,
+     "$2,000,000",
+     "$1,200,000",
+     null,
+     "$1,430,000",
+     null,
+     "$920,000",
+     null
+    ],
+    "values": [
+     90000,
+     null,
+     null,
+     2000000,
+     1200000,
+     null,
+     1430000,
+     null,
+     920000,
+     null
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "FY2029",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "$1,500,000",
+     null
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     1500000,
+     null
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Where each plan put the field",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "TM22",
+   "TM23",
+   "TM24",
+   "S25d",
+   "S25",
+   "TM25",
+   "S26",
+   "TM26",
+   "S27d",
+   "TM27"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "y": {
+     "text": "FY2022",
+     "unit": "fiscal year",
+     "value": 2022
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "wall",
+    "sc26",
+    "turf27"
+   ],
+   "text": "Every one of the schools’ own capital plans we hold lists the field, from FY2022 on."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "b": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "c": {
+     "text": "FY2029",
+     "unit": "fiscal year",
+     "value": 2029
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "big24",
+    "sc26",
+    "turf27"
+   ],
+   "text": "Its biggest line was set for FY2026, then FY2027, then FY2029."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$510,000",
+     "unit": "",
+     "value": 510000
+    },
+    "b": {
+     "text": "$1,500,000",
+     "unit": "",
+     "value": 1500000
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "z": {
+     "text": "FY2029",
+     "unit": "fiscal year",
+     "value": 2029
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "turf26",
+    "turf27"
+   ],
+   "text": "Track and turf was $510,000 for FY2027; the next year’s draft made it $1,500,000 for FY2029."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "b": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "tm-none"
+   ],
+   "text": "The Town Manager’s programs for FY2026 and FY2027 list no field line."
+  }
+ ],
+ "facts": [
+  {
+   "id": "wall",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "retaining wall repairs, the first plan line we hold"
+   },
+   "value": {
+    "text": "$90,000",
+    "unit": "",
+    "value": 90000
+   }
+  },
+  {
+   "id": "study",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "feasibility study for FY2024, left out of the program"
+   },
+   "value": {
+    "text": "$50,000",
+    "unit": "",
+    "value": 50000
+   }
+  },
+  {
+   "id": "big24",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "walls, drainage and turf, set in FY2026"
+   },
+   "value": {
+    "text": "$2,000,000",
+    "unit": "",
+    "value": 2000000
+   }
+  },
+  {
+   "id": "sc26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "School Committee’s plan, all in FY2027"
+   },
+   "value": {
+    "text": "$1,430,000",
+    "unit": "",
+    "value": 1430000
+   }
+  },
+  {
+   "id": "turf26",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "track and turf replacement, that plan"
+   },
+   "value": {
+    "text": "$510,000",
+    "unit": "",
+    "value": 510000
+   }
+  },
+  {
+   "id": "turf27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2029",
+      "unit": "fiscal year",
+      "value": 2029
+     }
+    },
+    "literals": [],
+    "text": "track and turf, next year’s draft, moved to FY2029"
+   },
+   "value": {
+    "text": "$1,500,000",
+    "unit": "",
+    "value": 1500000
+   }
+  },
+  {
+   "id": "hard27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "hillside and drainage, still in FY2027"
+   },
+   "value": {
+    "text": "$920,000",
+    "unit": "",
+    "value": 920000
+   }
+  },
+  {
+   "id": "tm-none",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "b": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "Town Manager programs, FY2026 and FY2027: no field line"
+   },
+   "value": {
+    "text": "2",
+    "unit": "programs",
+    "value": 2
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "y": {
+    "text": "FY2022",
+    "unit": "fiscal year",
+    "value": 2022
+   }
+  },
+  "literals": [],
+  "text": "The schools have put the field in every capital plan of theirs since FY2022; its year kept moving."
+ },
+ "full_report": {
+  "href": "/docs/analyses/athletics.md",
+  "label": "Athletics, the full report"
+ },
+ "id": "turf-field-capital-plans",
+ "kind": "topic",
+ "path": "/athletics/turf-field-capital-plans",
+ "said": [],
+ "shelves": [
+  "athletics"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-budget/docs/a78-fiscal-year-2022-capital-plan-presentation-pdf.pdf",
+   "label": "Town Manager — Capital Investment Plan Presentation (FY2022) (Jan 2021)"
+  },
+  {
+   "href": "/docs/town-budget/docs/a75-fy23-capital-plan-presentation-pdf.pdf",
+   "label": "Town Manager — Capital Investment Plan (FY2023) (Jan 2022)"
+  },
+  {
+   "href": "/docs/town-budget/docs/361-fy24-fy33-school-capital-plan-presentation-pdf.pdf",
+   "label": "Schools — LPS FY24 Capital Plan Requests (catalogued as FY24-FY33 School Capital Plan Presentation) (Oct 2022)"
+  },
+  {
+   "href": "/docs/town-budget/docs/a195-fy24-town-manager-capital-plan-presentation-pdf.pdf",
+   "label": "Town Manager — Capital Investment Plan (FY2024) (Jan 2023)"
+  },
+  {
+   "href": "/docs/district-budget/docs/sc-meetings/2023-10-18-fy25-draft-capital-plan.pdf",
+   "label": "Schools — Proposed FY24-FY34 Capital Plan (catalogued as FY25 Draft Capital Plan) (Oct 2023)"
+  },
+  {
+   "href": "/docs/town-budget/docs/a207-fy25-fy34-lps-capital-plan-presentation-pdf.pdf",
+   "label": "Schools — Lunenburg School Department Capital Plan FY25-34 (Nov 2023)"
+  },
+  {
+   "href": "/docs/town-budget/docs/1504-fy25-fy34-town-manager-preliminary-capital-plan-presentation.pdf",
+   "label": "Town Manager — Preliminary FY25 Capital Investment Plan (Jan 2024)"
+  },
+  {
+   "href": "/docs/district-budget/docs/sc-meetings/2024-2025-fy26-fy35-capital-plan.pdf",
+   "label": "School Committee — Lunenburg School Department Capital Plan FY26-35 (Sep 2024)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/preliminary-fy26-capital-program-presentation.pptx",
+   "label": "Town Manager — PRELIMINARY FY26 CAPITAL PROGRAM (undated)"
+  },
+  {
+   "href": "/docs/district-budget/docs/sc-meetings/2025-2026-revised-draft-capital-plan-fy27-35.pdf",
+   "label": "Schools — REVISED DRAFT Capital Plan FY27-35 (Sep 2025)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy27-budget/capital-planning/preliminary-capital-program-2.1.26.pdf",
+   "label": "Town Manager — PRELIMINARY FY27 CAPITAL PROGRAM (Feb 2026)"
+  },
+  {
+   "href": "/docs/data/capital-plan-field-lines.csv",
+   "label": "Lunenburg Budget Project — capital-plan-field-lines.csv (every field line in every capital plan held, with its quote and how its year was read)"
+  }
+ ],
+ "table": {
+  "caption": "The field, plan by plan and year by year",
+  "views": [
+   {
+    "columns": [
+     "FY2024",
+     "FY2025",
+     "FY2026",
+     "FY2027",
+     "FY2029",
+     "No single year"
+    ],
+    "key": "all",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Every plan",
+    "note": "Each row one plan version, oldest first, as printed. A plan line is a proposal for that year, not money voted or spent. One schools deck gave its main figure no single year. Left out: listed on the Town Manager’s own page of requests not included in the program.",
+    "rows": [
+     {
+      "cells": [
+       "",
+       "",
+       "",
+       "$90,000",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY22, Jan 2021"
+     },
+     {
+      "cells": [
+       "",
+       "$98,000",
+       "",
+       "",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY23, Jan 2022"
+     },
+     {
+      "cells": [
+       "$50,000",
+       "",
+       "",
+       "",
+       "",
+       "$2,200,000"
+      ],
+      "label": "Schools FY24, Oct 2022"
+     },
+     {
+      "cells": [
+       "$50,000 (left out)",
+       "$150,000",
+       "$2,000,000",
+       "",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY24, Jan 2023"
+     },
+     {
+      "cells": [
+       "",
+       "TBD",
+       "$150,000",
+       "$2,000,000",
+       "",
+       ""
+      ],
+      "label": "Schools FY25 draft, Oct 2023"
+     },
+     {
+      "cells": [
+       "",
+       "$200,000",
+       "$300,000",
+       "$1,200,000",
+       "",
+       ""
+      ],
+      "label": "Schools FY25, Nov 2023"
+     },
+     {
+      "cells": [
+       "",
+       "$200,000 (left out)",
+       "",
+       "",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY25, Jan 2024"
+     },
+     {
+      "cells": [
+       "",
+       "",
+       "",
+       "$920,000 + $510,000",
+       "",
+       ""
+      ],
+      "label": "Schools FY26, Sep 2024"
+     },
+     {
+      "cells": [
+       "",
+       "",
+       "no field line",
+       "",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY26, undated"
+     },
+     {
+      "cells": [
+       "",
+       "",
+       "",
+       "$920,000",
+       "$1,500,000",
+       ""
+      ],
+      "label": "Schools FY27 draft, Sep 2025"
+     },
+     {
+      "cells": [
+       "",
+       "",
+       "",
+       "no field line",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY27, Feb 2026"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Who",
+     "The line, as printed",
+     "Amount",
+     "Status"
+    ],
+    "key": "fy2024",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "FY2024",
+    "note": "Every plan that put field money in FY2024, oldest first.",
+    "rows": [
+     {
+      "cells": [
+       "Schools",
+       "Athletic Complex Feasibility Study",
+       "$50,000",
+       ""
+      ],
+      "label": "Schools FY24, Oct 2022"
+     },
+     {
+      "cells": [
+       "Town Manager",
+       "LPS23-06 MS/HS Turf Field Feasibility Study",
+       "$50,000",
+       "left out of the program"
+      ],
+      "label": "Town Manager FY24, Jan 2023"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Who",
+     "The line, as printed",
+     "Amount",
+     "Status"
+    ],
+    "key": "fy2025",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "FY2025",
+    "note": "Every plan that put field money in FY2025, oldest first.",
+    "rows": [
+     {
+      "cells": [
+       "Town Manager",
+       "LPS20-04 Repairs to Turf Field Retaining Wall",
+       "$98,000",
+       ""
+      ],
+      "label": "Town Manager FY23, Jan 2022"
+     },
+     {
+      "cells": [
+       "Town Manager",
+       "LPS23-03 MS/HS Turf Field Engineered Drawings Derived From Feasibility Study",
+       "$150,000",
+       ""
+      ],
+      "label": "Town Manager FY24, Jan 2023"
+     },
+     {
+      "cells": [
+       "Schools",
+       "Upgrade Turf Field Walls / Drainage, Concession Stand (AARPA)",
+       "TBD",
+       ""
+      ],
+      "label": "Schools FY25 draft, Oct 2023"
+     },
+     {
+      "cells": [
+       "Schools",
+       "LMHS Turf Field, Site Survey & Drainage Improvements, Phase 2 (LPS20-04-A)",
+       "$200,000",
+       ""
+      ],
+      "label": "Schools FY25, Nov 2023"
+     },
+     {
+      "cells": [
+       "Town Manager",
+       "LPS20-04-A LMHS Turf Field, Site Survey & Drainage Improvements",
+       "$200,000",
+       "left out of the program"
+      ],
+      "label": "Town Manager FY25, Jan 2024"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Who",
+     "The line, as printed",
+     "Amount",
+     "Status"
+    ],
+    "key": "fy2026",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "FY2026",
+    "note": "Every plan that put field money in FY2026, oldest first.",
+    "rows": [
+     {
+      "cells": [
+       "Town Manager",
+       "LPS20-04-A Upgrade Turf Field Walls / Drainage, Concession Stand",
+       "$2,000,000",
+       ""
+      ],
+      "label": "Town Manager FY24, Jan 2023"
+     },
+     {
+      "cells": [
+       "Schools",
+       "Upgrade Turf Field Walls / Drainage, Concession Stand (AARPA)",
+       "$150,000",
+       ""
+      ],
+      "label": "Schools FY25 draft, Oct 2023"
+     },
+     {
+      "cells": [
+       "Schools",
+       "LMHS Turf Field, Site Survey & Drainage Improvements, Phase 3 (LPS20-04-B)",
+       "$300,000",
+       ""
+      ],
+      "label": "Schools FY25, Nov 2023"
+     },
+     {
+      "cells": [
+       "Town Manager",
+       "no field line",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY26, undated"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Who",
+     "The line, as printed",
+     "Amount",
+     "Status"
+    ],
+    "key": "fy2027",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "FY2027",
+    "note": "Every plan that put field money in FY2027, oldest first.",
+    "rows": [
+     {
+      "cells": [
+       "Town Manager",
+       "LPS20-04 Repairs to Turf Field Retaining Wall",
+       "$90,000",
+       ""
+      ],
+      "label": "Town Manager FY22, Jan 2021"
+     },
+     {
+      "cells": [
+       "Schools",
+       "Upgrade Turf Field Walls / Drainage, Concession Stand (AARPA)",
+       "$2,000,000",
+       ""
+      ],
+      "label": "Schools FY25 draft, Oct 2023"
+     },
+     {
+      "cells": [
+       "Schools",
+       "LMHS Turf Field, Site Survey & Drainage Improvements, Phase 4 (LPS20-04-C)",
+       "$1,200,000",
+       ""
+      ],
+      "label": "Schools FY25, Nov 2023"
+     },
+     {
+      "cells": [
+       "School Committee",
+       "LPS20-04-C: Hillside Hardscape & Drainage",
+       "$920,000",
+       ""
+      ],
+      "label": "Schools FY26, Sep 2024"
+     },
+     {
+      "cells": [
+       "School Committee",
+       "LPS20-04-C: Track/Turf Replacement & Drainage",
+       "$510,000",
+       ""
+      ],
+      "label": "Schools FY26, Sep 2024"
+     },
+     {
+      "cells": [
+       "Schools",
+       "LMHS Turf Field: Hillside Hardscape & Drainage",
+       "$920,000",
+       ""
+      ],
+      "label": "Schools FY27 draft, Sep 2025"
+     },
+     {
+      "cells": [
+       "Town Manager",
+       "no field line",
+       "",
+       ""
+      ],
+      "label": "Town Manager FY27, Feb 2026"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Who",
+     "The line, as printed",
+     "Amount",
+     "Status"
+    ],
+    "key": "fy2029",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "FY2029",
+    "note": "Every plan that put field money in FY2029, oldest first.",
+    "rows": [
+     {
+      "cells": [
+       "Schools",
+       "LMHS Turf Field: Track/Turf Replacement & Drainage",
+       "$1,500,000",
+       ""
+      ],
+      "label": "Schools FY27 draft, Sep 2025"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "Turf field capital plans"
+}

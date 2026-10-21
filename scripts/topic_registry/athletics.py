@@ -10,12 +10,16 @@ CATEGORY = dict(
                 'fee-fund-ledger', 'fy2026-athletics-underspend']),
         ('Athletic transportation', ['athletic-bus-funding', 'fy2027-athletic-bus-cut',
                                      'bus-cost-by-sport', 'away-trips-by-sport']),
+
+        ('The turf field', ['turf-field-capital-plans']),
     ],
     # The three long pages these pointed at are UNLISTED now; each question has a topic page.
     elsewhere=[('/parks/youth-league-payments', 'Youth league field payments'),
                ('/budget-options/school-user-fees', 'School user fees'),
                ('/budget-options/extracurricular-cuts', 'Extracurricular cuts')])
 GENERATOR = 'build_athletics_topics.py'
+# The turf field's capital-plan history, written from sources/data/capital-plan-field-lines.csv.
+TOPIC_GENERATORS = {'turf-field-capital-plans': 'build_turf_plans_topic.py'}
 TOPICS = {
     'total-athletics-cost': 'Total athletics cost',
     'town-budget-and-fee-fund': 'Town budget and fee fund',
@@ -25,4 +29,5 @@ TOPICS = {
     'athletic-fee': 'Athletic fee',
     'fee-fund-ledger': 'Fee fund ledger',
     'fy2026-athletics-underspend': 'FY2026 athletics underspend',
+    'turf-field-capital-plans': 'Turf field capital plans',
 }

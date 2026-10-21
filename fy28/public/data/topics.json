@@ -90,6 +90,12 @@
       "bus-cost-by-sport",
       "away-trips-by-sport"
      ]
+    },
+    {
+     "title": "The turf field",
+     "topics": [
+      "turf-field-capital-plans"
+     ]
     }
    ],
    "id": "athletics",
@@ -3847,7 +3853,7 @@
    "title": "Teachers over time"
   },
   "teacher-pay-compared": {
-   "finding": "On the 5 FY2026 salary schedules held, Lunenburg’s top step was lowest in the bachelor’s and master’s lanes.",
+   "finding": "Of 5 FY2026 salary schedules compared, Lunenburg’s top step was lowest in the bachelor’s and master’s lanes.",
    "generator": "scripts/build_spending_staff_students_topics.py",
    "home": "school-spending-history",
    "id": "teacher-pay-compared",
@@ -4190,6 +4196,19 @@
     "special-education"
    ],
    "title": "Tuition budget"
+  },
+  "turf-field-capital-plans": {
+   "finding": "The schools have put the field in every capital plan of theirs since FY2022; its year kept moving.",
+   "generator": "scripts/build_turf_plans_topic.py",
+   "home": "athletics",
+   "id": "turf-field-capital-plans",
+   "minutes": 1,
+   "path": "/athletics/turf-field-capital-plans",
+   "ready": true,
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Turf field capital plans"
   },
   "unpriced-school-charges": {
    "finding": "Nine charges a Lunenburg family can meet have no published amount anywhere in this archive.",
