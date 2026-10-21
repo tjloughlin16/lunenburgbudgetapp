@@ -792,8 +792,30 @@ function NextOnAgenda({ t, asOf }: { t: Thread; asOf: string }) {
   )
 }
 
+/** A section a person can link to: the heading carries the id and is itself a link to it,
+ *  so clicking it puts the address in the bar (TJ, 21 October 2026: "need the sections to be
+ *  anchorable! I want to be able to link to the 'every vote on it'"). */
+function Anchored({ id, children }: { id: string; children: React.ReactNode }) {
+  return (
+    <H2 id={id}>
+      <a href={`#${id}`} className="no-underline hover:underline" style={{ color: 'inherit' }}>{children}</a>
+    </H2>
+  )
+}
+
 function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | null) => void; ours: Set<string> }) {
   const [all, setAll] = useState(false)
+  // A LINK TO A SECTION LANDS ON IT ONCE THE THREAD HAS RENDERED. App.tsx scrolls when the tab
+  // changes, but threads.json is large and can arrive after that; this runs when the thread
+  // itself is on the page, and again once its layout has settled.
+  useEffect(() => {
+    const id = window.location.hash.slice(1)
+    if (!id) return
+    const go = () => document.getElementById(id)?.scrollIntoView()
+    requestAnimationFrame(go)
+    const k = setTimeout(go, 500)
+    return () => clearTimeout(k)
+  }, [t.id])
   const settled = t.status === 'resolved'
   // Newest first while it is forming; start to finish once it is formed (§14d).
   const chron = settled ? t.chronology : [...t.chronology].reverse()
@@ -887,7 +909,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
         {t.first_seen ? <Stat value={prettyShort(t.first_seen)}>first came up, {t.first_seen.slice(0, 4)}</Stat> : null}
       </div>
 
-      <H2>{settled ? 'How it got there, meeting by meeting' : 'What has been said, newest first'}</H2>
+      <Anchored id="said">{settled ? 'How it got there, meeting by meeting' : 'What has been said, newest first'}</Anchored>
       <p className="text-[13px] mt-0 mb-3 max-w-2xl" style={muted}>
         Every line names its record: <strong>the town&rsquo;s minutes</strong>, quoted, or{' '}
         <strong>our notes from the recording</strong>, written from machine captions that can mishear
@@ -927,7 +949,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           twice, each labelled, as the timeline does -- two records of one vote, not two votes. */}
       {t.votes?.length ? (
         <>
-          <H2>Every vote on it</H2>
+          <Anchored id="votes">Every vote on it</Anchored>
           <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
             Newest first, every board, back to {t.votes[0].date.slice(0, 4)}. The town&rsquo;s minutes name who moved and
             seconded; our notes of a recording do not.
@@ -954,7 +976,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
 
       {t.history?.length ? (
         <>
-          <H2>How we got here</H2>
+          <Anchored id="history">How we got here</Anchored>
           <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
             Newest first. Each entry says what the source says; where a reason is given, it is the
             speaker&rsquo;s, named as theirs.
@@ -981,7 +1003,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
 
       {t.reports?.length ? (
         <>
-          <H2>Read further</H2>
+          <Anchored id="read-further">Read further</Anchored>
           <ul className="m-0 mb-2 p-0 list-none">
             {t.reports.map(r => (
               <li key={r.url} className="mb-1">
@@ -999,7 +1021,7 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           years ago reads differently from one raised last week. */}
       {t.reports_needed?.length ? (
         <>
-          <H2>Reports this thread needs</H2>
+          <Anchored id="reports-needed">Reports this thread needs</Anchored>
           <ul className="m-0 mb-2 p-0 list-none max-w-2xl">
             {t.reports_needed.map(r => (
               <li key={r.slug} className="py-2 border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
@@ -1070,7 +1092,7 @@ function MeetingPage({ t, d, onGo }: { t: Thread; d: Payload; onGo: (id: string 
       </p>
       <TownMeetingBoard w={t.warrant!} onGo={id => onGo(id)} />
 
-      <H2>How the warrant came together</H2>
+      <Anchored id="timeline">How the warrant came together</Anchored>
       <p className="text-[13px] mt-0 mb-3 max-w-2xl" style={muted}>
         Every meeting where a board took up this warrant or one of its articles, newest first. Each
         line names its record: <strong>the town&rsquo;s minutes</strong>, quoted, or{' '}

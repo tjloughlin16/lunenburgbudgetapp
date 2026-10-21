@@ -178,7 +178,7 @@ function Next({ w }: { w: Warrant }) {
   if (w.status !== 'upcoming' || !n.length) return null
   return (
     <section className="mt-8 max-w-2xl" aria-label="What happens next">
-      <h2 className="text-xl font-bold tracking-tight mb-2">What happens next</h2>
+      <h2 id="next" className="text-xl font-bold tracking-tight mb-2 scroll-mt-[calc(var(--header-h)+1rem)]"><a href="#next" className="no-underline hover:underline" style={{ color: 'inherit' }}>What happens next</a></h2>
       <ol className="list-none p-0 m-0 space-y-2">
         {n.map((x, i) => (
           <li key={i} className="card p-3" style={x.hearing ? { borderLeft: '4px solid var(--series-revenue)' } : undefined}>
@@ -274,7 +274,7 @@ export function TownMeetingBoard({ w, onGo }: { w: Warrant; onGo: (id: string) =
         ))}
       </div>
 
-      <h2 className="text-2xl font-bold tracking-tight mt-10 mb-1 max-w-3xl">Every article, and where it stands</h2>
+      <h2 id="articles" className="text-2xl font-bold tracking-tight mt-10 mb-1 max-w-3xl scroll-mt-[calc(var(--header-h)+1rem)]"><a href="#articles" className="no-underline hover:underline" style={{ color: 'inherit' }}>Every article, and where it stands</a></h2>
       <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
         Articles followed closely first, then the largest sums, then by number.
         {provisional ? ' Known so far from the Select Board’s votes: the posted warrant may renumber or reword them.' : ''}
