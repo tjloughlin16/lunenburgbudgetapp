@@ -305,7 +305,7 @@
      "text": "The top step is step 10 to step 15 by contract, so it is not the same years of service everywhere."
     },
     {
-     "closes": "each district’s current teachers’ agreement with its salary schedules, by records request",
+     "closes": "the current agreements we hold for Ashburnham-Westminster, Ayer Shirley and Groton-Dunstable, read; Leominster’s current agreement, by records request",
      "figures": {
       "a": {
        "text": "4",
@@ -316,11 +316,16 @@
        "text": "3",
        "unit": "districts",
        "value": 3
+      },
+      "c": {
+       "text": "3",
+       "unit": "districts",
+       "value": 3
       }
      },
      "kind": "gap",
      "literals": [],
-     "text": "4 districts read have no current contract held, 3 of them in the project’s six, which cannot be compared on scale."
+     "text": "4 districts read lack a current schedule, 3 in the project’s six; we hold current agreements, unread, for 3 of those."
     }
    ],
    "rests_on": [
@@ -623,7 +628,7 @@
    }
   },
   {
-   "closes": "each district’s current teachers’ agreement with its salary schedules, by records request",
+   "closes": "the current agreements we hold for Ashburnham-Westminster, Ayer Shirley and Groton-Dunstable, read; Leominster’s current agreement, by records request",
    "id": "current",
    "kind": "gap",
    "label": {
@@ -635,7 +640,7 @@
      }
     },
     "literals": [],
-    "text": "no current schedule held, 4 districts read"
+    "text": "no current schedule read yet, 4 districts"
    },
    "value": null
   },
@@ -722,7 +727,7 @@
    }
   },
   "literals": [],
-  "text": "On the 5 FY2026 salary schedules held, Lunenburg’s top step was lowest in the bachelor’s and master’s lanes."
+  "text": "Of 5 FY2026 salary schedules compared, Lunenburg’s top step was lowest in the bachelor’s and master’s lanes."
  },
  "full_report": {
   "href": "",
@@ -1191,38 +1196,72 @@
    },
    {
     "columns": [
-     "Latest schedule held"
+     "Latest schedule read",
+     "Why not compared"
     ],
     "key": "missing",
     "kinds": [
+     "ledger",
      "ledger"
     ],
-    "label": "Not current",
-    "note": "Read from the latest contract each district filed with DESE; none covers FY2026.",
+    "label": "Not compared",
+    "note": "Every other district whose schedules we have read. None of the first group has a schedule read for FY2026.",
     "rows": [
      {
       "cells": [
-       "FY2019"
+       "FY2019",
+       "current agreement (2025-2028) held, not yet read"
       ],
       "label": "Ashburnham-Westminster"
      },
      {
       "cells": [
-       "FY2022"
+       "FY2025",
+       "current agreement (2025-2028) held, not yet read"
       ],
       "label": "Ayer Shirley"
      },
      {
       "cells": [
-       "FY2020"
+       "FY2020",
+       "current agreement (2024-2027) held, not yet read"
       ],
       "label": "Groton-Dunstable"
      },
      {
       "cells": [
-       "FY2018"
+       "FY2018",
+       "no current agreement held"
       ],
       "label": "Leominster"
+     },
+     {
+      "cells": [
+       "FY2028",
+       "lanes and longevity not yet aligned"
+      ],
+      "label": "Hudson"
+     },
+     {
+      "cells": [
+       "FY2027",
+       "lanes and longevity not yet aligned"
+      ],
+      "label": "Maynard"
+     },
+     {
+      "cells": [
+       "FY2027",
+       "lanes and longevity not yet aligned"
+      ],
+      "label": "Tyngsborough"
+     },
+     {
+      "cells": [
+       "FY2026",
+       "lanes and longevity not yet aligned"
+      ],
+      "label": "Wachusett"
      }
     ],
     "total_col": -1

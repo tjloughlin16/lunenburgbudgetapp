@@ -460,6 +460,34 @@ def schedules():
     return grid, which
 
 
+def schedules_read():
+    """{district: {fy}} for EVERY district our table of the contracts holds a schedule for,
+    aligned or not. Whether a district has a current schedule is a fact about what we read,
+    not about which districts this page has aligned, so it is answered from the whole table."""
+    out = collections.defaultdict(set)
+    for r in csv.DictReader(open(SCHEDULES, encoding='utf-8')):
+        out[r['district']].add(int(r['fy']))
+    return out
+
+
+def agreements_held(fy):
+    """{district: contract_period} for each agreement we HOLD that is in force during the
+    school year of fiscal year `fy` (on 1 October of it) and whose schedules we have NOT read.
+    A district with such a document has no current schedule because of our reading, not
+    because nothing is published -- the gap is ours to close, not a records request."""
+    import datetime
+    on = datetime.date(fy - 1, 10, 1)
+    out = {}
+    for r in csv.DictReader(open(SCHED_DOCS, encoding='utf-8')):
+        m = re.match(r'(\d{4}-\d{2}-\d{2}) to (\d{4}-\d{2}-\d{2})$', r['contract_period'].strip())
+        if not m or r['status'] == 'read':
+            continue
+        a, b = (datetime.date.fromisoformat(x) for x in m.groups())
+        if a <= on <= b:
+            out[r['district']] = '%d-%d' % (a.year, b.year)
+    return out
+
+
 def pay_distribution():
     """(PD, PB, TOPS) from teacher-pay-distribution.csv: per-year measures, histogram bands,
     and per-lane top-step counts. Counts and distributions only; no names (rule 13e)."""
@@ -1545,7 +1573,16 @@ def build():
     if set(held) != set(LANES):
         fail('the districts with an FY%d schedule (%s) are not the ones LANES aligns'
              % (sfy, ', '.join(held)))
-    stale = {d: max(G[d]) for d in G if max(G[d]) < sfy}      # read, but expired
+    # WHAT WE HAVE READ, all districts, not only those aligned here. Since 20 October 2026 the
+    # table holds more districts than LANES, so "read, but expired" is measured over all of it:
+    # a district is `stale` when its latest schedule read ends before the year compared, and
+    # `unaligned` when it has one for that year that this page has not yet set beside these.
+    ALLG = schedules_read()
+    stale = {d: max(ys) for d, ys in ALLG.items() if max(ys) < sfy}   # read, but expired
+    unaligned = sorted(d for d, ys in ALLG.items() if sfy in ys and d not in LANES)
+    HELD = agreements_held(sfy)
+    unread = {d: HELD[d] for d in stale if d in HELD}       # current agreement held, not read
+    none_held = sorted(d for d in stale if d not in HELD)   # no current agreement held at all
     for y in (sfy - 1, sfy):
         for d in held:
             if len(WHICH[(d, y)]) != 1:
@@ -1603,8 +1640,14 @@ def build():
                          'compared). Longevity and stipends are paid outside it.')
     pl = max(PD)
     nfull, mtop = int(PD[pl]['full_year']), TOPS['Masters']['at_or_above_top']
-    CURRENT = ('each district’s current teachers’ agreement with its salary schedules, by '
-               'records request')
+    # WHAT CLOSES THE GAP depends on what we hold. Where a current agreement is already in
+    # the archive and unread, the remedy is our own reading, not a records request.
+    andj = lambda xs: xs[0] if len(xs) == 1 else '%s and %s' % (', '.join(xs[:-1]), xs[-1])
+    CURRENT = '; '.join(
+        (['the current agreements we hold for %s, read' % andj([snm(d) for d in sorted(unread)])]
+         if unread else []) +
+        (['%s’s current agreement, by records request' % andj(none_held)] if none_held else []))
+    six_unread = [m for m in six_miss if m in unread]
     sy_ = {'y': F(sfy)}
     YRS = figure(LY, str(LY), 'years')
     # ON EACH DISTRICT'S OWN SCALE (TJ, 19 October 2026: "we cannot say what the composition
@@ -1670,7 +1713,7 @@ def build():
 
     out['teacher-pay-compared'] = TP.page(
         'teacher-pay-compared',
-        'On the %s %s salary schedules held, Lunenburg’s top step was lowest in the bachelor’s '
+        'Of %s %s salary schedules compared, Lunenburg’s top step was lowest in the bachelor’s '
         'and master’s lanes.' % (C.num(ns), C.fy(sfy)),
         [f('matop', U(SC6[LEA_NAME]['matop']), 'Lunenburg’s master’s top step, %s' % C.fy(sfy),
            'contract', sy_),
@@ -1687,7 +1730,7 @@ def build():
            'estimate', {'a': YRS}),
          f('lngr', OF(lrank, ns, 'districts'), 'its place, each contract’s longevity added',
            'estimate'),
-         f('current', None, 'no current schedule held, %s districts read'
+         f('current', None, 'no current schedule read yet, %s districts'
            % C.num(len(stale)), 'gap', {'n': N(len(stale), 'districts')}, closes=CURRENT),
          f('sal', U(SAL[LEA][ly]), 'Lunenburg’s average teacher salary, %s' % C.fy(ly),
            'published', lyf),
@@ -1707,10 +1750,12 @@ def build():
                     step('The top step is step %s to step %s by contract, so it is not the same '
                          'years of service everywhere.' % (min(stp), max(stp)), 'measured',
                          {'a': N(min(stp), 'step'), 'b': N(max(stp), 'step')}),
-                    step('%s districts read have no current contract held, %s of them in the '
-                         'project’s six, which cannot be compared on scale.'
-                         % (C.num(len(stale)), C.num(len(six_miss))), 'gap',
-                         {'a': N(len(stale), 'districts'), 'b': N(len(six_miss), 'districts')},
+                    step('%s districts read lack a current schedule, %s in the project’s six; '
+                         'we hold current agreements, unread, for %s of those.'
+                         % (C.num(len(stale)), C.num(len(six_miss)), C.num(len(six_unread))),
+                         'gap',
+                         {'a': N(len(stale), 'districts'), 'b': N(len(six_miss), 'districts'),
+                          'c': N(len(six_unread), 'districts')},
                          closes=CURRENT)]),
          con('With each contract’s longevity at %d years, our arithmetic, its master’s top is '
              '%s, %s of %s.' % (LY, C.usd(withl[LEA_NAME]), ORD(lrank), C.num(ns)),
@@ -1782,11 +1827,16 @@ def build():
                      for d in sorted(held, key=lambda d: -withl[d])],
                  note='Paid outside the salary grid. Each contract counts years of service its '
                       'own way; the reading at %d years is ours.' % LY),
-            dict(key='missing', label='Not current', total_col=-1, kinds=['ledger'],
-                 columns=['Latest schedule held'],
-                 rows=[dict(label=d, cells=[C.fy(stale[d])]) for d in sorted(stale)],
-                 note='Read from the latest contract each district filed with DESE; none covers '
-                      '%s.' % C.fy(sfy)),
+            dict(key='missing', label='Not compared', total_col=-1, kinds=['ledger'] * 2,
+                 columns=['Latest schedule read', 'Why not compared'],
+                 rows=[dict(label=snm(d), cells=[C.fy(stale[d]), (
+                           'current agreement (%s) held, not yet read' % unread[d]) if d in unread
+                           else 'no current agreement held']) for d in sorted(stale)]
+                 + [dict(label=snm(d), cells=[C.fy(max(ALLG[d])),
+                                              'lanes and longevity not yet aligned'])
+                    for d in unaligned],
+                 note='Every other district whose schedules we have read. None of the first group '
+                      'has a schedule read for %s.' % C.fy(sfy)),
             dict(key='latest', label='Average, %s' % C.fy(ly), total_col=-1, kinds=['ledger'] * 3,
                  columns=['Average salary', 'Experienced', 'Teacher FTE'],
                  rows=[dict(label=nm(l), cells=[C.usd(SAL[l][ly]), C.pct(100 * EXS[l]),
