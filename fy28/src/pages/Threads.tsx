@@ -68,6 +68,9 @@ type Thread = {
   callouts?: Callout[]
   /** The matter's past in documents and recordings, written by a person and quote-checked (sources/data/thread-history.csv). */
   history?: HistoryEntry[]
+  /** Every vote on the matter across the whole record, not only since `started` (build_threads.vote_log). */
+  votes?: { date: string; board: string; board_slug: string; source: 'town' | 'ours'; text: string; outcome: string
+    moved_by: string; seconded_by: string; t?: number | null; video_url?: string; doc_url?: string; town_url?: string; quote?: string }[]
   stands: { vote: Item2 | null; decision: Item2 | null; any: Item2 | null }
   momentum: { meetings: number; boards: number; votes: number; days_since_last: number; span_days: number; meetings_last_90: number; board_meetings_since: number; meetings_last_30?: number; boards_last_30?: number }
   closure: Closure | null; chronology: Stop[]; meetings: number; boards_touched: number
@@ -902,7 +905,8 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
         </button>
       ) : null}
 
-      {votes.length > 1 ? (
+      {/* Superseded by "Every vote on it" (the whole record) wherever that exists. */}
+      {votes.length > 1 && !t.votes?.length ? (
         <>
           <H2>Every vote, newest first</H2>
           <ul className="list-none p-0 m-0 max-w-2xl">
@@ -914,6 +918,37 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
               </li>
             ))}
           </ul>
+        </>
+      ) : null}
+
+      {/* EVERY VOTE, WHO MOVED IT, HOW IT WENT. TJ, 21 October 2026, on the turf field: "the
+          meeting notes are amazing to have here. but i can't tell what happened in VOTING."
+          The whole record, oldest first; a vote held in both records of one meeting is listed
+          twice, each labelled, as the timeline does -- two records of one vote, not two votes. */}
+      {t.votes?.length ? (
+        <>
+          <H2>Every vote on it</H2>
+          <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
+            Oldest first, every board, from {t.votes[0].date.slice(0, 4)}. The town&rsquo;s minutes name who moved and
+            seconded; our notes of a recording do not.
+          </p>
+          <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
+            {t.votes.map((v, i) => (
+              <li key={i} className="py-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
+                <div className="flex flex-wrap items-baseline gap-x-2 text-[12px]">
+                  <span className="font-bold uppercase tracking-wider" style={muted}>{pretty(v.date)} · {v.board}</span>
+                  <span className="font-semibold" style={{ color: /fail|defeat|not carr/i.test(v.outcome) ? 'var(--status-critical)' : 'var(--series-revenue)' }}>{v.outcome || 'outcome not recorded'}</span>
+                </div>
+                <p className="text-[14.5px] leading-snug mt-0.5">{v.text}</p>
+                <p className="text-[12px] mt-0.5" style={muted}>
+                  {v.moved_by ? <>Moved by {v.moved_by}{v.seconded_by ? `, seconded by ${v.seconded_by}` : ''} · </> : null}
+                  {v.source === 'town'
+                    ? <>the town&rsquo;s minutes{v.doc_url ? <> · <a className="underline" href={v.doc_url}>read them</a></> : null}</>
+                    : <>our notes, as heard{v.video_url ? <> · <a className="underline" href={`${v.video_url}${v.t != null ? `&t=${v.t}s` : ''}`} target="_blank" rel="noreferrer">hear it</a></> : null}</>}
+                </p>
+              </li>
+            ))}
+          </ol>
         </>
       ) : null}
 

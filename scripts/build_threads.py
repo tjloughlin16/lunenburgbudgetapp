@@ -533,16 +533,19 @@ def town_record():
         src = j.get('source') or {}
         cite = {'source': 'town', 'doc_url': src.get('doc_url') or '', 'town_url': src.get('minutes_url') or ''}
         rec = by.setdefault((j['board_slug'], date), {'items': [], 'seen': set()})
-        def add(kind, text, quote, outcome=''):
+        def add(kind, text, quote, outcome='', **who):
             k = (kind, norm_motion(text))
             if not text or k in rec['seen']:
                 return
             rec['seen'].add(k)
             rec['items'].append(dict(cite, kind=kind, text=text, outcome=outcome, quote=quote or '',
-                                     t=None, video_url=''))
+                                     t=None, video_url='', **{a: b for a, b in who.items() if b}))
         for v in j.get('votes') or []:
             if not v.get('procedural'):
-                add('vote', v.get('motion') or '', v.get('quote'), v.get('outcome') or '')
+                # WHO MOVED AND WHO SECONDED, as the town's minutes print them: the vote log reads
+                # them (TJ, 21 October 2026: "i can't tell what happened in VOTING").
+                add('vote', v.get('motion') or '', v.get('quote'), v.get('outcome') or '',
+                    moved_by=v.get('moved_by') or '', seconded_by=v.get('seconded_by') or '')
         for x in j.get('decisions') or []:
             add('decision', x.get('decision') or '', x.get('quote'))
         for b in j.get('budget_items') or []:
@@ -633,6 +636,43 @@ def looseness(t, record):
             if rx and rx.search(x) and (not qu or qu.search(x)) and not (ex and ex.search(x)):
                 n += 1
     return n
+
+
+def vote_log(t, record, town=None):
+    """EVERY VOTE ON THE MATTER, across the WHOLE record -- not only from the thread's start.
+
+    TJ, 21 October 2026, on the turf field: "i need to see ... who moved it, who added it,
+    removed it ... i can't tell what happened in VOTING." The chronology begins at `started`
+    so it reads as one story; a vote log must not, because the vote that put the field at #7
+    of the schools' capital list (1 November 2023) is years before the thread began. Same
+    matching as the chronology (match AND qualify, NOT exclude); the town's minutes give the
+    mover and seconder; where both records hold a vote of one meeting, both are listed, each
+    labelled, as the chronology does."""
+    rx = re.compile(t['match'], re.I) if t.get('match') else None
+    qu = re.compile(t['qualify'], re.I) if t.get('qualify') else None
+    ex = re.compile(t['exclude'], re.I) if t.get('exclude') else None
+
+    def hit(text):
+        return bool(rx and rx.search(text) and (not qu or qu.search(text)) and not (ex and ex.search(text)))
+    town = town or {}
+    names = dict(board_names(), **{k[0]: v['board'] for k, v in record.items()})
+    out = []
+    for key in sorted(set(record) | set(town), key=lambda k: (k[1], k[0])):
+        slug, date = key
+        if t.get('until') and date > t['until']:
+            continue
+        for v in (record.get(key) or {}).get('votes', []):
+            if not v['procedural'] and hit(v['motion']):
+                out.append({'date': date, 'board': names.get(slug, slug), 'board_slug': slug, 'source': 'ours',
+                            'text': v['motion'], 'outcome': v['outcome'], 'moved_by': '', 'seconded_by': '',
+                            't': v['t'], 'video_url': v['video_url'], 'quote': ''})
+        for it in (town.get(key) or {}).get('items', []):
+            if it['kind'] == 'vote' and hit(it['text']):
+                out.append({'date': date, 'board': names.get(slug, slug), 'board_slug': slug, 'source': 'town',
+                            'text': it['text'], 'outcome': it['outcome'], 'moved_by': it.get('moved_by', ''),
+                            'seconded_by': it.get('seconded_by', ''), 'doc_url': it.get('doc_url', ''),
+                            'town_url': it.get('town_url', ''), 'quote': it.get('quote', '')})
+    return out
 
 
 def chronology(t, record, town=None):
@@ -971,6 +1011,9 @@ def build():
             closure=closure,
             callouts=calls.get(t['id'], []),
             history=hist.get(t['id'], []),
+            # Every vote on the matter, whole record (vote_log); a generated meeting thread's
+            # votes are its articles' results, on its own board.
+            votes=vote_log(t, record, town) if not (gen and 'chronology' in t) else [],
             reports=report_links(t, catalogue) if not gen else [],
             reports_needed=reports_needed(t['id']),
             # WHERE IT IS ON AN AGENDA: every posted agenda in the window whose item carries
