@@ -70,7 +70,9 @@ type Thread = {
   history?: HistoryEntry[]
   /** Every vote on the matter across the whole record, not only since `started` (build_threads.vote_log). */
   votes?: { date: string; board: string; board_slug: string; source: 'town' | 'ours'; text: string; outcome: string
-    moved_by: string; seconded_by: string; t?: number | null; video_url?: string; doc_url?: string; town_url?: string; quote?: string }[]
+    moved_by: string; seconded_by: string; t?: number | null; video_url?: string; doc_url?: string; town_url?: string; quote?: string
+    /** The fiscal year the vote is FOR: a Town Meeting's budget year, or the year it was voted in (fy_basis says which). */
+    fy?: number; fy_meeting?: string; fy_basis?: 'town-meeting' | 'voted-in' }[]
   stands: { vote: Item2 | null; decision: Item2 | null; any: Item2 | null }
   momentum: { meetings: number; boards: number; votes: number; days_since_last: number; span_days: number; meetings_last_90: number; board_meetings_since: number; meetings_last_30?: number; boards_last_30?: number }
   closure: Closure | null; chronology: Stop[]; meetings: number; boards_touched: number
@@ -952,16 +954,27 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
           <Anchored id="votes">Every vote on it</Anchored>
           <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
             Newest first, every board, back to {t.votes[0].date.slice(0, 4)}. The town&rsquo;s minutes name who moved and
-            seconded; our notes of a recording do not.
+            seconded; our notes of a recording do not. A vote on a warrant article or capital request is marked with the
+            fiscal year of the Town Meeting it was headed to (an Annual Town Meeting in spring budgets the next year);
+            any other vote, with the year it was taken in.
           </p>
           <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
             {[...t.votes].reverse().map((v, i) => (
               <li key={i} className="py-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
                 <div className="flex flex-wrap items-baseline gap-x-2 text-[12px]">
                   <span className="font-bold uppercase tracking-wider" style={muted}>{pretty(v.date)} · {v.board}</span>
+                  {v.fy ? (
+                    <span className="font-bold tnum px-1.5 rounded" style={{ background: 'var(--surface-3)' }}
+                      title={v.fy_basis === 'town-meeting' ? `For the ${v.fy_meeting}, which budgets FY${v.fy}` : `Voted in FY${v.fy}`}>
+                      {v.fy_basis === 'town-meeting' ? `For FY${v.fy}` : `Voted in FY${v.fy}`}
+                    </span>
+                  ) : null}
                   <span className="font-semibold" style={{ color: /fail|defeat|not carr/i.test(v.outcome) ? 'var(--status-critical)' : 'var(--series-revenue)' }}>{v.outcome || 'outcome not recorded'}</span>
                 </div>
                 <p className="text-[14.5px] leading-snug mt-0.5">{v.text}</p>
+                {v.fy_basis === 'town-meeting' && v.fy_meeting ? (
+                  <p className="text-[12px] mt-0.5" style={muted}>Headed to the {v.fy_meeting.replace(/, (\d{4}-\d\d-\d\d)$/, (_, d: string) => `, ${pretty(d)}`)}</p>
+                ) : null}
                 <p className="text-[12px] mt-0.5" style={muted}>
                   {v.moved_by ? <>Moved by {v.moved_by}{v.seconded_by ? `, seconded by ${v.seconded_by}` : ''} · </> : null}
                   {v.source === 'town'

@@ -638,6 +638,43 @@ def looseness(t, record):
     return n
 
 
+TM_CSV = os.path.join(os.path.dirname(os.path.abspath(__file__)), '..', 'sources', 'data', 'town-meetings.csv')
+_TMS = None
+
+
+def fy_of(iso):
+    """Massachusetts fiscal years run July to June: 2025-11-01 is FY2026."""
+    return int(iso[:4]) + (1 if int(iso[5:7]) >= 7 else 0)
+
+
+def applies_to(date, text):
+    """WHICH FISCAL YEAR A VOTE IS FOR (TJ, 21 October 2026: "the VOTES needs a FY (which FY)
+    the votes apply to"). A vote about a warrant article, a capital request or borrowing is
+    headed to a Town Meeting: the next one on the register after the vote (a CAPITAL request
+    to the next ANNUAL, which is where capital is funded). An Annual Town Meeting in spring
+    budgets the NEXT fiscal year; a Special acts within its own. Anything else: the fiscal
+    year it was voted in. Returns (fy, label, basis) -- basis says which rule, so the page can
+    say "voted in" rather than claim what a vote was for."""
+    global _TMS
+    if _TMS is None:
+        try:
+            _TMS = sorted((r['date'], r['kind']) for r in csv.DictReader(open(TM_CSV, encoding='utf-8'))
+                          if r.get('date') and r.get('status') != 'called; no later record')
+        except OSError:
+            _TMS = []
+    capital = re.search(r'\bcapital\b|\bpriorit', text, re.I)
+    tm = re.search(r'\bwarrant\b|\barticle\b|town meeting|\bborrow|\bappropriat', text, re.I) and \
+        not re.search(r'\b(payroll|bills?) warrant', text, re.I)
+    if capital or tm:
+        nxt = next(((d, k) for d, k in _TMS if d > date and (k == 'annual' or not capital)), None)
+        if nxt:
+            d, k = nxt
+            fy = fy_of(d) + (1 if k == 'annual' and int(d[5:7]) < 7 else 0)
+            name = 'Annual' if k == 'annual' else 'Special'
+            return fy, '%s Town Meeting, %s' % (name, d), 'town-meeting'
+    return fy_of(date), '', 'voted-in'
+
+
 def vote_log(t, record, town=None):
     """EVERY VOTE ON THE MATTER, across the WHOLE record -- not only from the thread's start.
 
@@ -663,12 +700,16 @@ def vote_log(t, record, town=None):
             continue
         for v in (record.get(key) or {}).get('votes', []):
             if not v['procedural'] and hit(v['motion']):
+                fy, tm_, basis = applies_to(date, v['motion'])
                 out.append({'date': date, 'board': names.get(slug, slug), 'board_slug': slug, 'source': 'ours',
                             'text': v['motion'], 'outcome': v['outcome'], 'moved_by': '', 'seconded_by': '',
-                            't': v['t'], 'video_url': v['video_url'], 'quote': ''})
+                            't': v['t'], 'video_url': v['video_url'], 'quote': '',
+                            'fy': fy, 'fy_meeting': tm_, 'fy_basis': basis})
         for it in (town.get(key) or {}).get('items', []):
             if it['kind'] == 'vote' and hit(it['text']):
+                fy, tm_, basis = applies_to(date, it['text'])
                 out.append({'date': date, 'board': names.get(slug, slug), 'board_slug': slug, 'source': 'town',
+                            'fy': fy, 'fy_meeting': tm_, 'fy_basis': basis,
                             'text': it['text'], 'outcome': it['outcome'], 'moved_by': it.get('moved_by', ''),
                             'seconded_by': it.get('seconded_by', ''), 'doc_url': it.get('doc_url', ''),
                             'town_url': it.get('town_url', ''), 'quote': it.get('quote', '')})
