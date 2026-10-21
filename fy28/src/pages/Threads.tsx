@@ -929,11 +929,11 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
         <>
           <H2>Every vote on it</H2>
           <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
-            Oldest first, every board, from {t.votes[0].date.slice(0, 4)}. The town&rsquo;s minutes name who moved and
+            Newest first, every board, back to {t.votes[0].date.slice(0, 4)}. The town&rsquo;s minutes name who moved and
             seconded; our notes of a recording do not.
           </p>
           <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
-            {t.votes.map((v, i) => (
+            {[...t.votes].reverse().map((v, i) => (
               <li key={i} className="py-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
                 <div className="flex flex-wrap items-baseline gap-x-2 text-[12px]">
                   <span className="font-bold uppercase tracking-wider" style={muted}>{pretty(v.date)} · {v.board}</span>
@@ -956,11 +956,11 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
         <>
           <H2>How we got here</H2>
           <p className="text-[13px] mt-0 mb-2 max-w-2xl" style={muted}>
-            Oldest first. Each entry says what the source says; where a reason is given, it is the
+            Newest first. Each entry says what the source says; where a reason is given, it is the
             speaker&rsquo;s, named as theirs.
           </p>
           <ol className="m-0 mb-2 p-0 list-none max-w-3xl">
-            {t.history.map(h => (
+            {[...t.history].reverse().map(h => (
               <li key={h.order} className="py-2.5" style={{ borderTop: '1px solid var(--grid)' }}>
                 <span className="text-[12px] font-bold uppercase tracking-wider" style={muted}>{h.when}</span>
                 <span className="text-[12px]" style={muted}> · {h.board}</span>
