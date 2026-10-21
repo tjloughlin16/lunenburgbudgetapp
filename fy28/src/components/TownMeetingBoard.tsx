@@ -22,7 +22,7 @@ export type WarrantArticle = {
   summary?: string; summary_from?: string
   /** Figures a person checked in the recording (sources/data/heard-figures.csv). */
   heard?: { figure: string; value: number; what: string; board: string; date: string; listen: string
-    verified_by: string; verified_on: string; note: string }[]
+    verified_by: string; verified_on: string; note: string; how?: 'heard' | 'captions' }[]
 }
 export type Warrant = {
   meeting: string; date: string; kind: 'annual' | 'special'; status: string
@@ -119,7 +119,7 @@ function Row({ a, onGo }: { a: WarrantArticle; onGo: (id: string) => void }) {
           {a.heard.map((h, i) => (
             <li key={i} className="text-[13.5px] leading-snug">
               <span className="font-bold tnum">{h.figure}</span> <span style={secondary}>{h.what}</span>
-              <span className="text-[12px]" style={muted}> · said at the {h.board}, {pretty(h.date)} · checked in the recording · <a className="underline" style={link} href={h.listen} target="_blank" rel="noreferrer">listen</a></span>
+              <span className="text-[12px]" style={muted}> · said at the {h.board}, {pretty(h.date)} · {h.how === 'captions' ? 'from the recording’s captions' : 'checked in the recording'} · <a className="underline" style={link} href={h.listen} target="_blank" rel="noreferrer">listen</a></span>
             </li>
           ))}
         </ul>

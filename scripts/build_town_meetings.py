@@ -1491,7 +1491,8 @@ def warrant_payload(m, arts, children, items=()):
             'money': money(a),
             'heard': [{'figure': h['figure'], 'value': float(h['value']), 'what': h['what'], 'board': h['board'],
                        'date': h['date'], 'listen': '%s&t=%ss' % (h['video_url'], h['t']),
-                       'verified_by': h['verified_by'], 'verified_on': h['verified_on'], 'note': h['note']}
+                       'verified_by': h['verified_by'], 'verified_on': h['verified_on'], 'note': h['note'],
+                       'how': h.get('how') or 'heard'}
                       for h in heard_figures() if h['meeting'] == m['id']
                       and re.search(h['article_match'], a['title'], re.I)],
         })

@@ -354,8 +354,8 @@ h1 em{font-style:normal;color:%(a)s}
 .td{font-size:21px;line-height:1.38;color:#52514e;margin-top:10px}
 .tp{margin-top:auto;font-size:18px;color:#898781}.tp b{color:%(a)s}
 /* bands */
-.bands{display:flex;flex-direction:column;gap:16px}
-.bd{display:flex;align-items:center;gap:28px;background:%(a)s;color:#fff;border-radius:18px;padding:26px 34px}
+.bands{display:flex;flex-direction:column;gap:12px}
+.bd{display:flex;align-items:center;gap:28px;background:%(a)s;color:#fff;border-radius:18px;padding:22px 34px}
 .bd.alt{background:#181713}
 .bdl{flex:1;min-width:0}.bds{font-weight:900;font-size:46px;line-height:1;letter-spacing:-.01em;text-transform:uppercase}
 .bdt{font-size:21px;line-height:1.35;opacity:.88;margin-top:10px}
