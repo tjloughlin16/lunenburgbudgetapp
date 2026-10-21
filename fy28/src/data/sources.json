@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-19",
+ "generated": "2026-10-21",
  "origins": [
   {
    "id": "school",
@@ -60,11 +60,11 @@
  "sections": {
   "theirs": {
    "title": "Published by the town, the district and the state",
-   "blurb": "Primary documents. We did not write any of these and we did not commission them. 54 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 44 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 67 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
+   "blurb": "Primary documents. We did not write any of these and we did not commission them. 51 came from the Town by records request and say so on their row; one more was handed over by somebody acting in a town role, and they are named on its row; the rest were already public. 73 of them link back to the exact file the publisher put up, and 28 of those addresses have been checked the only way an address can be — by downloading what is there now and matching it against our copy, byte for byte. A link that merely looks right is not a source. 81 still have no address of their own, and they are three different things: state reports built on form submission, where the page and the jurisdiction are the whole answer; a table we built here from a document that is itself listed above; and documents gathered before the mirror existed, where nobody wrote down where they came from. Only the last is a gap, it is a gap on our side and not the town’s, and it is named in notes/findings/DATA-WANTED.md. Where a document is unreadable or says something inconvenient, it is here anyway."
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4395 of these 4411 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4410 of these 4426 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -765,6 +765,46 @@
    "blurb": "The consumer price index for the Boston-Cambridge-Newton area (CPI-U, all items, not seasonally adjusted, 1982-84 = 100), January 1990 onward. It is what turns thirty years of school spending into dollars of one year. The fiscal-year averages built from it are OUR arithmetic, because BLS publishes calendar-year averages only.",
    "items": [
     {
+     "path": "federal-bls/CUURS11ASAF11-2008-2017.json",
+     "title": "Grocery prices, Boston area, 2008–2017",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUURS11ASAF11, 2008 to 2017, every published (monthly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 10705,
+     "url": "/docs/federal-bls/CUURS11ASAF11-2008-2017.json",
+     "textUrl": "/docs/federal-bls/CUURS11ASAF11-2008-2017.json"
+    },
+    {
+     "path": "federal-bls/CUUR0100SAH21-2008-2017.json",
+     "title": "Home energy prices, Northeast, 2008–2017",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUUR0100SAH21, 2008 to 2017, every published (monthly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 10705,
+     "url": "/docs/federal-bls/CUUR0100SAH21-2008-2017.json",
+     "textUrl": "/docs/federal-bls/CUUR0100SAH21-2008-2017.json"
+    },
+    {
+     "path": "federal-bls/CUURS11ASAF11-2018-2026.json",
+     "title": "Grocery prices, Boston area, 2018–2026",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUURS11ASAF11, 2018 to 2026, every published (monthly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 9464,
+     "url": "/docs/federal-bls/CUURS11ASAF11-2018-2026.json",
+     "textUrl": "/docs/federal-bls/CUURS11ASAF11-2018-2026.json"
+    },
+    {
+     "path": "federal-bls/CUUR0100SAH21-2018-2026.json",
+     "title": "Home energy prices, Northeast, 2018–2026",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CUUR0100SAH21, 2018 to 2026, every published (monthly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 9464,
+     "url": "/docs/federal-bls/CUUR0100SAH21-2018-2026.json",
+     "textUrl": "/docs/federal-bls/CUUR0100SAH21-2018-2026.json"
+    },
+    {
      "path": "federal-bls/cpi-u-CUURS11ASA0-2010-2019.json",
      "title": "Consumer prices, Boston area, 2010–2019",
      "stars": 1,
@@ -795,6 +835,26 @@
      "textUrl": "/docs/federal-bls/cpi-u-CUURS11ASA0-1990-1999.json"
     },
     {
+     "path": "federal-bls/CIU3026110000000I-2008-2017.json",
+     "title": "School pay, 2008–2017",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CIU3026110000000I, 2008 to 2017, every published (quarterly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 3769,
+     "url": "/docs/federal-bls/CIU3026110000000I-2008-2017.json",
+     "textUrl": "/docs/federal-bls/CIU3026110000000I-2008-2017.json"
+    },
+    {
+     "path": "federal-bls/CIU3030000000000I-2008-2017.json",
+     "title": "Public employers’ benefit costs, 2008–2017",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CIU3030000000000I, 2008 to 2017, every published (quarterly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 3769,
+     "url": "/docs/federal-bls/CIU3030000000000I-2008-2017.json",
+     "textUrl": "/docs/federal-bls/CIU3030000000000I-2008-2017.json"
+    },
+    {
      "path": "federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
      "title": "Consumer prices, Boston area, 2020–2026",
      "stars": 1,
@@ -803,6 +863,38 @@
      "bytes": 3745,
      "url": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json",
      "textUrl": "/docs/federal-bls/cpi-u-CUURS11ASA0-2020-2026.json"
+    },
+    {
+     "path": "federal-bls/PROVENANCE-cost-indexes.md",
+     "title": "Where the cost indexes came from",
+     "stars": 1,
+     "what": "Written by us: the eight request addresses, what was asked for and does not exist (a benefits index for schools alone, a price index for school buses), why the Northeast energy series rather than Boston’s, and how a fiscal-year average is built. Read with sources/data/inflation-cost-index-map.csv.",
+     "kind": "Notes",
+     "bytes": 3662,
+     "url": "/docs/federal-bls/PROVENANCE-cost-indexes.md",
+     "count": 59,
+     "unit": "lines",
+     "textUrl": "/docs/federal-bls/PROVENANCE-cost-indexes.md"
+    },
+    {
+     "path": "federal-bls/CIU3030000000000I-2018-2026.json",
+     "title": "Public employers’ benefit costs, 2018–2026",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CIU3030000000000I, 2018 to 2026, every published (quarterly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 3250,
+     "url": "/docs/federal-bls/CIU3030000000000I-2018-2026.json",
+     "textUrl": "/docs/federal-bls/CIU3030000000000I-2018-2026.json"
+    },
+    {
+     "path": "federal-bls/CIU3026110000000I-2018-2026.json",
+     "title": "School pay, 2018–2026",
+     "stars": 1,
+     "what": "The BLS API’s answer for series CIU3026110000000I, 2018 to 2026, every published (quarterly) value, saved as returned. A cost index for one kind of school spending on /school-spending-history/inflation-and-school-costs.",
+     "kind": "JSON",
+     "bytes": 3249,
+     "url": "/docs/federal-bls/CIU3026110000000I-2018-2026.json",
+     "textUrl": "/docs/federal-bls/CIU3026110000000I-2018-2026.json"
     },
     {
      "path": "federal-bls/PROVENANCE.md",
@@ -952,6 +1044,18 @@
      "textUrl": "/docs/contracts/txt/dee-bus-transportation-agreement-fy26-fy28.txt"
     },
     {
+     "path": "data/teacher-salary-schedules.csv",
+     "title": "Teacher salary schedules, Lunenburg and eight neighbouring districts, as printed",
+     "stars": 3,
+     "what": "Written by us. One row per printed cell of every teacher salary schedule in the contracts below: district, contract period, fiscal year, the schedule’s own title, step and lane as printed, salary, document and page, how the cell was read (text layer, OCR confirmed by a second reading, or by eye) and any flag from the checks: salaries must rise along steps and across lanes, and each year must equal the year before times the increase the contract states. Base schedule only: longevity and stipends paid outside the grid are not in it. Built by scripts/extract_teacher_salary_schedules.py, whose --check rebuilds it.",
+     "kind": "Data",
+     "bytes": 909505,
+     "url": "/docs/data/teacher-salary-schedules.csv",
+     "count": 5231,
+     "unit": "rows",
+     "textUrl": "/docs/data/teacher-salary-schedules.csv"
+    },
+    {
      "path": "contracts/pdf/pec-agreement-2008.pdf",
      "title": "Health insurance agreement (PEC), 16 June 2008",
      "stars": 3,
@@ -1001,6 +1105,18 @@
      "textUrl": "/docs/contracts/txt/pec-fy27-attachment-b-opt-out-policy.txt"
     },
     {
+     "path": "data/comparison-sets.csv",
+     "title": "Comparison districts: which ones, and who chose them",
+     "stars": 3,
+     "what": "Written by us, from the documents. One row per district per document that named it. `official` is every district the district itself named as a comparison: the Budget Task Force’s nine in the FY2026 proposed budget (p57), and the three entered in DESE’s RADAR and the three DART columns in the FY2020 budget -- eleven districts. `project-six` is this project’s own six, chosen with no recorded criterion. Each name is resolved to DESE’s org code; scripts/check_comparison_sets.py refuses one that matches anything but exactly one.",
+     "kind": "Data",
+     "bytes": 9467,
+     "url": "/docs/data/comparison-sets.csv",
+     "count": 21,
+     "unit": "rows",
+     "textUrl": "/docs/data/comparison-sets.csv"
+    },
+    {
      "path": "contracts/data/lea-teacher-salary-schedule.csv",
      "title": "Teacher salary schedule, FY25–FY27",
      "stars": 3,
@@ -1026,6 +1142,19 @@
      "textUrl": "/docs/contracts/txt/custodial-2023-2026.txt"
     },
     {
+     "path": "contracts/pdf/ashburnham-westminster-teachers-2025-2028.pdf",
+     "title": "Ashburnham-Westminster Teachers’ Association agreement, July 2025 to June 2028",
+     "stars": 2,
+     "what": "The district’s posted copy, awta_contract_2025-2028_2.pdf. A faint scan. Salary schedules for FY26 to FY28, pages 31-33.",
+     "upstream": "https://files.smartsites.parentsquare.com/6739/awta_contract_2025-2028_2.pdf",
+     "kind": "PDF",
+     "bytes": 22802570,
+     "url": "/docs/contracts/pdf/ashburnham-westminster-teachers-2025-2028.pdf",
+     "count": 42,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/ashburnham-westminster-teachers-2025-2028.txt"
+    },
+    {
      "path": "contracts/pdf/paraprofessional-fy26-fy28.pdf",
      "title": "Paraprofessional agreement, FY26–FY28",
      "stars": 2,
@@ -1037,6 +1166,84 @@
      "count": 22,
      "unit": "pages",
      "textUrl": "/docs/contracts/txt/paraprofessional-fy26-fy28.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-uxbridge.pdf",
+     "title": "Uxbridge Unit A agreement as filed with DESE, 1 July 2023 to 30 June 2026",
+     "stars": 2,
+     "what": "DESE’s copy, Teacher_Contract.pdf. A scan; current through FY2026. Salary schedules for FY24 to FY26, pages 35-38.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=03040000&type=T",
+     "kind": "PDF",
+     "bytes": 9182028,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-uxbridge.pdf",
+     "count": 86,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-uxbridge.txt"
+    },
+    {
+     "path": "contracts/pdf/ayer-shirley-teachers-2025-2028.pdf",
+     "title": "Ayer Shirley teachers’ agreement, 1 September 2025 to 31 August 2028",
+     "stars": 2,
+     "what": "The union’s posted copy, asrea_2025-2028_contract.pdf. A scan. Salary schedules for FY26 to FY28 (3.75%, 3.5%, 3.5%), pages 38-40.",
+     "upstream": "https://asrea.weebly.com/uploads/8/8/7/5/8875355/asrea_2025-2028_contract.pdf",
+     "kind": "PDF",
+     "bytes": 5059927,
+     "url": "/docs/contracts/pdf/ayer-shirley-teachers-2025-2028.pdf",
+     "count": 63,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/ayer-shirley-teachers-2025-2028.txt"
+    },
+    {
+     "path": "contracts/pdf/shrewsbury-teachers-2025-2028.pdf",
+     "title": "Shrewsbury Education Association agreement, 25 August 2025 to 24 August 2028",
+     "stars": 2,
+     "what": "The union’s posted copy, SEA-2025-2028-contract.pdf. A scan. Salary schedules for FY26 to FY28, pages 55-56; dropped steps are printed struck through.",
+     "upstream": "https://shrewsbury.massteacher.org/wp-content/uploads/sites/47/2026/01/SEA-2025-2028-contract.pdf",
+     "kind": "PDF",
+     "bytes": 3909471,
+     "url": "/docs/contracts/pdf/shrewsbury-teachers-2025-2028.pdf",
+     "count": 124,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/shrewsbury-teachers-2025-2028.txt"
+    },
+    {
+     "path": "contracts/pdf/fitchburg-teachers-2024-2027.pdf",
+     "title": "Fitchburg Education Association, Unit A agreement, 1 July 2024 to 30 June 2027",
+     "stars": 2,
+     "what": "The union’s posted copy, FEA-Teachers-24-27.pdf. Salary schedules for FY25 to FY27, pages 65-66; longevity paid outside the schedule, page 66.",
+     "upstream": "https://fitchburg.massteacher.org/wp-content/uploads/sites/49/2026/05/FEA-Teachers-24-27.pdf",
+     "kind": "PDF",
+     "bytes": 3719959,
+     "url": "/docs/contracts/pdf/fitchburg-teachers-2024-2027.pdf",
+     "count": 72,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/fitchburg-teachers-2024-2027.txt"
+    },
+    {
+     "path": "contracts/pdf/groton-dunstable-teachers-2024-2027.pdf",
+     "title": "Groton-Dunstable Unit A agreement, 1 September 2024 to 31 August 2027",
+     "stars": 2,
+     "what": "The union’s posted signed copy, unit-a-contract-fy25-fy27-signed-1.pdf. A scan. Salary schedules for FY25 to FY27 (3% a year), pages 54-55. DESE holds only the 2017-2020 schedules.",
+     "upstream": "https://grotondunstable.wordpress.com/wp-content/uploads/2025/01/unit-a-contract-fy25-fy27-signed-1.pdf",
+     "kind": "PDF",
+     "bytes": 2515873,
+     "url": "/docs/contracts/pdf/groton-dunstable-teachers-2024-2027.pdf",
+     "count": 97,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/groton-dunstable-teachers-2024-2027.txt"
+    },
+    {
+     "path": "contracts/pdf/hudson-teachers-2025-2028.pdf",
+     "title": "Hudson Education Association agreement, 28 August 2025 to 27 August 2028",
+     "stars": 2,
+     "what": "The union’s copy on Google Drive, HEA Contract 2025-2028.pdf. Salary schedules for FY26 to FY28 (2% a year), pages 46-48.",
+     "upstream": "https://drive.google.com/file/d/1YyP0NeOm3TWnXROL0c_0gr66Fqo1ldSc/view",
+     "kind": "PDF",
+     "bytes": 2130795,
+     "url": "/docs/contracts/pdf/hudson-teachers-2025-2028.pdf",
+     "count": 89,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/hudson-teachers-2025-2028.txt"
     },
     {
      "path": "contracts/pdf/custodial-moa-2026.pdf",
@@ -1052,6 +1259,19 @@
      "textUrl": "/docs/contracts/txt/custodial-moa-2026.txt"
     },
     {
+     "path": "contracts/pdf/tyngsborough-teachers-2024-2027.pdf",
+     "title": "Tyngsborough Unit A agreement, 1 September 2024 to 31 August 2027",
+     "stars": 2,
+     "what": "The district’s copy on Google Drive, Unit A Collective Bargaining Agreement.pdf. Appendix A, page 39, is a scan.",
+     "upstream": "https://drive.google.com/file/d/1WEvBmBXxdYvc7dIbvtkSqsIlt4ZvefgZ/view",
+     "kind": "PDF",
+     "bytes": 1884286,
+     "url": "/docs/contracts/pdf/tyngsborough-teachers-2024-2027.pdf",
+     "count": 71,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/tyngsborough-teachers-2024-2027.txt"
+    },
+    {
      "path": "contracts/pdf/pec-fy27-attachment-a-4-blue-care-elect.pdf",
      "title": "PEC FY27, Attachment A: Blue Care Elect",
      "stars": 2,
@@ -1064,6 +1284,19 @@
      "textUrl": "/docs/contracts/txt/pec-fy27-attachment-a-4-blue-care-elect.txt"
     },
     {
+     "path": "contracts/pdf/dese-teacher-contract-montachusett.pdf",
+     "title": "Monty Tech teachers’ agreement as filed with DESE, 2023-2026",
+     "stars": 2,
+     "what": "DESE’s copy, Teacher_Contract.pdf. Mostly scanned. Salary schedules for 2023-24 to 2025-26, pages 40-42, printed sideways.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=08320000&type=T",
+     "kind": "PDF",
+     "bytes": 1304356,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-montachusett.pdf",
+     "count": 47,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-montachusett.txt"
+    },
+    {
      "path": "contracts/pdf/pec-fy27-attachment-a-1-network-blue-new-england.pdf",
      "title": "PEC FY27, Attachment A: Network Blue New England",
      "stars": 2,
@@ -1074,6 +1307,19 @@
      "count": 4,
      "unit": "pages",
      "textUrl": "/docs/contracts/txt/pec-fy27-attachment-a-1-network-blue-new-england.txt"
+    },
+    {
+     "path": "contracts/pdf/harvard-teachers-2023-2026.pdf",
+     "title": "Harvard Educators Association agreement, 24 August 2023 to 23 August 2026",
+     "stars": 2,
+     "what": "From the Town of Harvard’s site; the town’s filename is “Teachers Contract Aug 24, 2023-Aug 23, 2026.pdf”. Salary schedules for FY24, FY25 and FY26, pages 32-34.",
+     "upstream": "https://www.harvard-ma.gov/DocumentCenter/View/2216/Teachers-Contract-Aug-24-2023-Aug-23-2026-PDF",
+     "kind": "PDF",
+     "bytes": 1176503,
+     "url": "/docs/contracts/pdf/harvard-teachers-2023-2026.pdf",
+     "count": 46,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/harvard-teachers-2023-2026.txt"
     },
     {
      "path": "contracts/pdf/pec-fy27-attachment-a-2-network-blue-select.pdf",
@@ -1113,6 +1359,32 @@
      "textUrl": "/docs/contracts/txt/pec-fy27-attachment-a-3-access-blue-ne-saver.txt"
     },
     {
+     "path": "contracts/pdf/dese-teacher-contract-maynard.pdf",
+     "title": "Maynard teachers’ agreement as filed with DESE, 1 September 2024 to 31 August 2027",
+     "stars": 2,
+     "what": "DESE’s copy, Teacher_Contract.pdf, and current. Salary schedules for FY25 to FY27 (3%, 3.125%, 3.125%), pages 34-35.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01740000&type=T",
+     "kind": "PDF",
+     "bytes": 820321,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-maynard.pdf",
+     "count": 69,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-maynard.txt"
+    },
+    {
+     "path": "contracts/pdf/north-middlesex-teachers-2024-2027.pdf",
+     "title": "North Middlesex teachers’ agreement, 1 July 2024 to 30 June 2027",
+     "stars": 2,
+     "what": "The union’s posted copy, Final-Teachers-CBA-2024-2027-NMRSD.pdf. Raises of 3%, 3.5% and 3.5%; salary schedules pages 24-25.",
+     "upstream": "https://nmta.massteacher.org/wp-content/uploads/sites/23/2025/03/Final-Teachers-CBA-2024-2027-NMRSD.pdf",
+     "kind": "PDF",
+     "bytes": 802628,
+     "url": "/docs/contracts/pdf/north-middlesex-teachers-2024-2027.pdf",
+     "count": 68,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/north-middlesex-teachers-2024-2027.txt"
+    },
+    {
      "path": "contracts/pdf/paraprofessional-salary-fy26-fy28.pdf",
      "title": "Paraprofessional salary schedule",
      "stars": 2,
@@ -1124,6 +1396,31 @@
      "count": 1,
      "unit": "pages",
      "textUrl": "/docs/contracts/txt/paraprofessional-salary-fy26-fy28.txt"
+    },
+    {
+     "path": "data/dese-teacher-salaries.csv",
+     "title": "DESE average teacher salary and teacher FTE, every district, SY2009-SY2025",
+     "stars": 2,
+     "what": "Written by us from DESE’s statewide spending table (held as state-dese/district-expenditures-by-spending-category.xlsx). The average is printed from SY2018. Every figure the RADAR extract also holds ties to it, Lunenburg FY2018-FY2025 named. An average reflects the seniority and credentials of whoever is employed; it is not a pay scale. Built by scripts/extract_dese_teacher_salaries.py.",
+     "kind": "Data",
+     "bytes": 675147,
+     "url": "/docs/data/dese-teacher-salaries.csv",
+     "count": 6068,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-teacher-salaries.csv"
+    },
+    {
+     "path": "contracts/pdf/wachusett-teachers-2023-2026.pdf",
+     "title": "Wachusett Regional Education Association agreement, 1 July 2023 to 30 June 2026",
+     "stars": 2,
+     "what": "The union’s posted copy, 2023-2026-Unit-A-contract.pdf. Salary grids for FY24 to FY26 (2%, 2.25%, 2.75%), pages 47-49.",
+     "upstream": "https://wachusett.massteacher.org/wp-content/uploads/sites/56/2023/10/2023-2026-Unit-A-contract.pdf",
+     "kind": "PDF",
+     "bytes": 291234,
+     "url": "/docs/contracts/pdf/wachusett-teachers-2023-2026.pdf",
+     "count": 61,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/wachusett-teachers-2023-2026.txt"
     },
     {
      "path": "contracts/docx/paraprofessional-wages-draft-individual-waiver-2026-09.docx",
@@ -1148,6 +1445,18 @@
      "textUrl": "/docs/contracts/docx/paraprofessional-wages-draft-union-agreement-2026-09.docx"
     },
     {
+     "path": "data/teacher-salary-schedule-docs.csv",
+     "title": "Teacher contracts read for their salary schedules: what each covers",
+     "stars": 2,
+     "what": "Written by us. One row per contract: district, publisher, address, the publisher’s filename, contract period, what pdf_kind.py found it to be, which fiscal years were read, and what could not be. DESE publishes the latest contract a district submitted, and most had expired; where a current one was found published elsewhere it is listed too.",
+     "kind": "Data",
+     "bytes": 13441,
+     "url": "/docs/data/teacher-salary-schedule-docs.csv",
+     "count": 27,
+     "unit": "rows",
+     "textUrl": "/docs/data/teacher-salary-schedule-docs.csv"
+    },
+    {
      "path": "contracts/PROVENANCE-records-request-2026-10-09.md",
      "title": "How the paraprofessional and Dee Bus documents reached us",
      "stars": 2,
@@ -1158,6 +1467,58 @@
      "count": 80,
      "unit": "lines",
      "textUrl": "/docs/contracts/PROVENANCE-records-request-2026-10-09.md"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-fitchburg.pdf",
+     "title": "Fitchburg Unit A agreement as filed with DESE, 2015-2018",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=00970000&type=T",
+     "kind": "PDF",
+     "bytes": 20193039,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-fitchburg.pdf",
+     "count": 44,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-fitchburg.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-north-middlesex.pdf",
+     "title": "North Middlesex teachers’ agreement as filed with DESE, 2018-2021",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. A scan. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=07350000&type=T",
+     "kind": "PDF",
+     "bytes": 17529462,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-north-middlesex.pdf",
+     "count": 98,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-north-middlesex.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-leominster.pdf",
+     "title": "Leominster teachers’ agreement as filed with DESE, 2015-2018",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. A scan. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01530000&type=T",
+     "kind": "PDF",
+     "bytes": 3608153,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-leominster.pdf",
+     "count": 71,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-leominster.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-tyngsborough.pdf",
+     "title": "Tyngsborough Unit A agreement as filed with DESE, 2018-2021",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. A scan. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=03010000&type=T",
+     "kind": "PDF",
+     "bytes": 3420982,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-tyngsborough.pdf",
+     "count": 64,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-tyngsborough.txt"
     },
     {
      "path": "contracts/pdf/dee-bus-performance-and-payment-bond-fy27.pdf",
@@ -1173,6 +1534,32 @@
      "textUrl": "/docs/contracts/txt/dee-bus-performance-and-payment-bond-fy27.txt"
     },
     {
+     "path": "contracts/pdf/dese-teacher-contract-groton-dunstable.pdf",
+     "title": "Groton-Dunstable Unit A agreement as filed with DESE, schedules 2017-18 to 2019-20",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. A scan; a 2014 base agreement with the 2017-2020 salary schedules. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=06730000&type=T",
+     "kind": "PDF",
+     "bytes": 2049263,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-groton-dunstable.pdf",
+     "count": 30,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-groton-dunstable.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-hudson.pdf",
+     "title": "Hudson teachers’ agreement as filed with DESE, 2015-2018",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01410000&type=T",
+     "kind": "PDF",
+     "bytes": 1663280,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-hudson.pdf",
+     "count": 85,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-hudson.txt"
+    },
+    {
      "path": "contracts/pdf/dee-bus-first-amendment-2025.pdf",
      "title": "First amendment to the Dee Bus agreement, May 2025",
      "stars": 1,
@@ -1186,6 +1573,71 @@
      "textUrl": "/docs/contracts/txt/dee-bus-first-amendment-2025.txt"
     },
     {
+     "path": "contracts/pdf/dese-teacher-contract-wachusett.pdf",
+     "title": "Wachusett teachers’ agreement as filed with DESE: the FY2022 extension of 2018-2021",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. A scan. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=07750000&type=T",
+     "kind": "PDF",
+     "bytes": 1151422,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-wachusett.pdf",
+     "count": 55,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-wachusett.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-shrewsbury.pdf",
+     "title": "Shrewsbury teachers’ agreement as filed with DESE, 2022-2025",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=02710000&type=T",
+     "kind": "PDF",
+     "bytes": 1041998,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-shrewsbury.pdf",
+     "count": 125,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-shrewsbury.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-harvard.pdf",
+     "title": "Harvard teachers’ agreement as filed with DESE, 2017-2020",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. Expired; the latest Harvard filed.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=01250000&type=T",
+     "kind": "PDF",
+     "bytes": 604522,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-harvard.pdf",
+     "count": 44,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-harvard.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-ayer-shirley.pdf",
+     "title": "Ayer Shirley teachers’ agreement as filed with DESE, 2019-2022",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=06160000&type=T",
+     "kind": "PDF",
+     "bytes": 507929,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-ayer-shirley.pdf",
+     "count": 46,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-ayer-shirley.txt"
+    },
+    {
+     "path": "contracts/pdf/ayer-shirley-teachers-2022-2025.pdf",
+     "title": "Ayer Shirley teachers’ agreement, 1 September 2022 to 31 August 2025",
+     "stars": 1,
+     "what": "The union’s posted copy, 2022-2025_teachers_contract.pdf. Salary schedules for FY23 to FY25, pages 41-43.",
+     "upstream": "https://asrea.weebly.com/uploads/8/8/7/5/8875355/2022-2025_teachers_contract.pdf",
+     "kind": "PDF",
+     "bytes": 498320,
+     "url": "/docs/contracts/pdf/ayer-shirley-teachers-2022-2025.pdf",
+     "count": 70,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/ayer-shirley-teachers-2022-2025.txt"
+    },
+    {
      "path": "contracts/pdf/dese-administrator-contract.pdf",
      "title": "Administrator contract template",
      "stars": 1,
@@ -1197,6 +1649,19 @@
      "count": 7,
      "unit": "pages",
      "textUrl": "/docs/contracts/txt/dese-administrator-contract.txt"
+    },
+    {
+     "path": "contracts/pdf/dese-teacher-contract-ashburnham-westminster.pdf",
+     "title": "Ashburnham-Westminster teachers’ agreement as filed with DESE, 2016-2019",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.pdf. Expired.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=06100000&type=T",
+     "kind": "PDF",
+     "bytes": 250545,
+     "url": "/docs/contracts/pdf/dese-teacher-contract-ashburnham-westminster.pdf",
+     "count": 40,
+     "unit": "pages",
+     "textUrl": "/docs/contracts/txt/dese-teacher-contract-ashburnham-westminster.txt"
     },
     {
      "path": "contracts/pdf/dese-superintendent-contract.pdf",
@@ -1225,6 +1690,17 @@
      "count": 5,
      "unit": "pages",
      "textUrl": "/docs/contracts/txt/nonaffiliated-benefits.txt"
+    },
+    {
+     "path": "contracts/docx/dese-teacher-contract-nashoba.docx",
+     "title": "Nashoba Unit A agreement as filed with DESE, 2021-2022, with the 2017-2020 agreement",
+     "stars": 1,
+     "what": "DESE’s copy, Teacher_Contract.docx. Expired; salary charts FY2018-FY2022 as Word tables. The 2023-2026 and 2026-2029 agreements were not found published.",
+     "upstream": "https://profiles.doe.mass.edu/statereport/educatorcontractsdownload.aspx?orgcode=07250000&type=T",
+     "kind": "Document",
+     "bytes": 57526,
+     "url": "/docs/contracts/docx/dese-teacher-contract-nashoba.docx",
+     "textUrl": "/docs/contracts/docx/dese-teacher-contract-nashoba.docx"
     },
     {
      "path": "contracts/pdf/nonaffiliated-salary-schedule.pdf",
@@ -1275,6 +1751,30 @@
      "count": 17,
      "unit": "pages",
      "textUrl": "/docs/peer-districts/ashburnham-westminster-fy27-presentation.txt"
+    },
+    {
+     "path": "peer-districts/ashburnham-annual-town-report-2025.pdf",
+     "title": "Ashburnham annual town report, 2025",
+     "stars": 2,
+     "what": "The Town of Ashburnham’s 2025 report (publisher’s filename “2025 Annual Town Report (Final).pdf”). Held for pdf pages 136-146, where it reprints the Ashburnham-Westminster Regional School District’s own “Earnings In Excess of $500 7/1/24 - 6/30/25”, by name and primary job title. Read by scripts/extract_peer_teacher_pay.py; only counts and distributions are published, never a name.",
+     "upstream": "https://ma-ashburnham.civicplus.com/ArchiveCenter/ViewFile/Item/231",
+     "kind": "PDF",
+     "bytes": 20560972,
+     "url": "/docs/peer-districts/ashburnham-annual-town-report-2025.pdf",
+     "count": 185,
+     "unit": "pages"
+    },
+    {
+     "path": "peer-districts/harvard-annual-town-report-2025.pdf",
+     "title": "Harvard annual town report, 2025",
+     "stars": 2,
+     "what": "The Town of Harvard’s 2025 report (publisher’s filename “2025 Harvard Full Report - Website.pdf”). Held for one section: the School Employee Earnings Report, pdf pages 228-231, which lists TEACHER gross pay by name with a department total. The period is not printed on those pages. Read by scripts/extract_peer_teacher_pay.py; only counts and distributions are published, never a name.",
+     "upstream": "https://www.harvard-ma.gov/Archive/ViewFile/Item/463",
+     "kind": "PDF",
+     "bytes": 15865782,
+     "url": "/docs/peer-districts/harvard-annual-town-report-2025.pdf",
+     "count": 234,
+     "unit": "pages"
     },
     {
      "path": "peer-districts/munis-guide-framingham-general-ledger-2020-2.pdf",
@@ -1365,6 +1865,18 @@
      "count": 10,
      "unit": "pages",
      "textUrl": "/docs/peer-districts/wachusett-fy27-budget-presentation.txt"
+    },
+    {
+     "path": "peer-districts/tyngsborough-gross-wage-report-2022.pdf",
+     "title": "Tyngsborough gross wage report, 2022",
+     "stars": 2,
+     "what": "The Town of Tyngsborough’s “2022 Gross Wage Report” (publisher’s filename “2022 Gross Wage Report (PDF).pdf”), town and school employees. One sheet split over two runs of pages: department and name on pdf pages 1-13, position, SR, Munis and Total on pages 14-26, row for row. The period is not printed. Read by scripts/extract_peer_teacher_pay.py; only counts and distributions are published, never a name.",
+     "upstream": "https://www.tyngsboroughma.gov/Archive.aspx?ADID=88",
+     "kind": "PDF",
+     "bytes": 484866,
+     "url": "/docs/peer-districts/tyngsborough-gross-wage-report-2022.pdf",
+     "count": 27,
+     "unit": "pages"
     },
     {
      "path": "peer-districts/munis-guide-burlingame-overview.pdf",
@@ -1614,9 +2126,9 @@
      "stars": 2,
      "what": "Written by us. One row per document that arrived by request rather than off a website and that the screen flagged or could not read: the decision (publish, redact, withhold), the rule, how much was removed, the reason and who decided. The raw copy of anything redacted or withheld is held privately; this register never holds a redacted value, only where one was.",
      "kind": "Data",
-     "bytes": 59248,
+     "bytes": 62744,
      "url": "/docs/data/redactions.csv",
-     "count": 91,
+     "count": 95,
      "unit": "rows",
      "textUrl": "/docs/data/redactions.csv"
     },
@@ -1809,6 +2321,18 @@
      "count": 17,
      "unit": "rows",
      "textUrl": "/docs/state-dls/free-cash-proof-groton.xlsx"
+    },
+    {
+     "path": "data/takedowns.csv",
+     "title": "What was taken down from the public archive, and why",
+     "stars": 1,
+     "what": "Written by us. One row per document we stopped serving after it was public: the key, its sha256, the reason, who decided and when, and its state -- `stopped serving` (the address answers 410 Gone with the reason), then `deleted` once the object is removed from the bucket and confirmed gone by listing. Kept by scripts/takedown.py.",
+     "kind": "Data",
+     "bytes": 1759,
+     "url": "/docs/data/takedowns.csv",
+     "count": 3,
+     "unit": "rows",
+     "textUrl": "/docs/data/takedowns.csv"
     }
    ]
   },
@@ -1883,32 +2407,6 @@
      "count": 1,
      "unit": "pages",
      "textUrl": "/docs/town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.txt"
-    },
-    {
-     "path": "town-ledgers/account-details/account-details-fy2024-fund1301.xlsx",
-     "title": "Athletics revolving fund, journal detail, FY2024",
-     "stars": 3,
-     "what": "The same export for FY2024, the year the fund’s cash fell by $103,852.53. Its opening balance is a row the town prints, which is what lets the three years be chained and checked. The town’s filename is FY24 Account_Detail_.xlsx.",
-     "byRequest": true,
-     "kind": "Spreadsheet",
-     "bytes": 21816,
-     "url": "/docs/town-ledgers/account-details/account-details-fy2024-fund1301.xlsx",
-     "count": 111,
-     "unit": "rows",
-     "textUrl": "/docs/town-ledgers/account-details/account-details-fy2024-fund1301.xlsx"
-    },
-    {
-     "path": "town-ledgers/account-details/account-details-fy2025-fund1301.xlsx",
-     "title": "Athletics revolving fund, journal detail, FY2025",
-     "stars": 3,
-     "what": "Every receipt and payment in fund 1301 for FY2025, with effective and posting dates. The town’s filename is FY25 Account_Detail.xlsx. Despite the name it is one account only — 1301-0-000-0000-00-0-00-0-104000, CASH. Four general journal entries described only as an adjustment \"per memo\" account for $254,121.18 of the $390,299.87 that came in.",
-     "byRequest": true,
-     "kind": "Spreadsheet",
-     "bytes": 19901,
-     "url": "/docs/town-ledgers/account-details/account-details-fy2025-fund1301.xlsx",
-     "count": 94,
-     "unit": "rows",
-     "textUrl": "/docs/town-ledgers/account-details/account-details-fy2025-fund1301.xlsx"
     },
     {
      "path": "town-ledgers/purchase-orders/PROVENANCE-parks-grounds-bid.md",
@@ -1987,19 +2485,6 @@
      "count": 1,
      "unit": "pages",
      "textUrl": "/docs/town-ledgers/account-details/parks-membership-sales-fy2025-myrec.txt"
-    },
-    {
-     "path": "town-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
-     "title": "Athletics revolving fund, journal detail, FY2026",
-     "stars": 2,
-     "what": "FY2026 to 12 June 2026 — eighteen days short of year-end, so not a closed year. Its payroll total ties to the cent to the salary line in the fund’s own year-end reconciliation. The town’s filename is FY26 Account_Detail.xlsx.",
-     "byRequest": true,
-     "kind": "Spreadsheet",
-     "bytes": 17919,
-     "url": "/docs/town-ledgers/account-details/account-details-fy2026-fund1301.xlsx",
-     "count": 78,
-     "unit": "rows",
-     "textUrl": "/docs/town-ledgers/account-details/account-details-fy2026-fund1301.xlsx"
     },
     {
      "path": "town-ledgers/account-details/athletic-fee-counts-fy2026.docx",
@@ -2159,9 +2644,9 @@
      "what": "The Town Manager’s 18 October 2026 email answering part 2 of our 4 September request: a 1,744-page MUNIS journal report, redacted by the Town but not completely, so it is held private and only our redacted reading is published. Records the redaction log and the spreadsheet still to come.",
      "byRequest": true,
      "kind": "Notes",
-     "bytes": 5635,
+     "bytes": 6132,
      "url": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
-     "count": 93,
+     "count": 100,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md"
     }
@@ -2461,6 +2946,18 @@
      "textUrl": "/docs/analyses/board-composition.md"
     },
     {
+     "path": "analyses/school-journal.md",
+     "title": "The school MUNIS journal, FY2023-FY2026, as a dataset",
+     "stars": 3,
+     "what": "What the journal holds, line by line and fund by fund: the three CSVs with their sha256, what a line is, which source code posts to which column, the redaction (providers named, recipients masked) and what the data cannot show. Generated by scripts/build_school_journal.py from the published CSVs, which it re-ties to the figures the Town’s report prints. UNLISTED until reviewed.",
+     "kind": "Notes",
+     "bytes": 6432,
+     "url": "/docs/analyses/school-journal.md",
+     "count": 113,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/school-journal.md"
+    },
+    {
      "path": "analyses/town-budget-general-government.md",
      "title": "General Government: what the town votes for it",
      "stars": 3,
@@ -2641,6 +3138,18 @@
      "textUrl": "/docs/data/gross-wages.csv"
     },
     {
+     "path": "data/warrant-articles.csv",
+     "title": "Every warrant article, stage by stage",
+     "stars": 2,
+     "what": "Written by us, by scripts/build_town_meetings.py: one row per meeting and article -- its title, amount and sponsor, and each stage (proposed, on the warrant, recommended by the Finance Committee and the Select Board, voted, recorded by the Clerk) with the record it rests on. A stage with no record is blank. A result taken from our minutes of a recording says so in `result_basis` (ours) and gives way to the Clerk’s printed record once that year is read.",
+     "kind": "Data",
+     "bytes": 689353,
+     "url": "/docs/data/warrant-articles.csv",
+     "count": 677,
+     "unit": "rows",
+     "textUrl": "/docs/data/warrant-articles.csv"
+    },
+    {
      "path": "data/school-staff-directory.csv",
      "title": "Who works for the DISTRICT today, off the six sheets the schools publish",
      "stars": 2,
@@ -2658,7 +3167,7 @@
      "stars": 2,
      "what": "Written by us, by `build_board_transfers.py`, from the transfers and votes `extract_official_votes.py` reads out of each set of the town’s minutes, each with a verbatim quote. One row per transfer AS THE MINUTES PRINT IT. `counted`/`why_not` keep what is not a voted transfer (tabled, a licence, a town meeting article the board only recommended). `has_form`, `has_minutes`, `has_recording` say which records speak for it; `gold` is the district’s signed transfer form, held only for the schools. `crosses` says whether the money changed school or DESE program, read from the school ledger. Rows from a RECORDING are captions and never counted.",
      "kind": "Data",
-     "bytes": 313036,
+     "bytes": 313219,
      "url": "/docs/data/board-transfers.csv",
      "count": 509,
      "unit": "rows",
@@ -2670,9 +3179,9 @@
      "stars": 2,
      "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
      "kind": "Data",
-     "bytes": 221621,
+     "bytes": 227930,
      "url": "/docs/data/suggested-reports-meetings.csv",
-     "count": 483,
+     "count": 496,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports-meetings.csv"
     },
@@ -2730,9 +3239,9 @@
      "stars": 2,
      "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
      "kind": "Data",
-     "bytes": 126378,
+     "bytes": 129894,
      "url": "/docs/data/suggested-reports.csv",
-     "count": 188,
+     "count": 192,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports.csv"
     },
@@ -2838,9 +3347,9 @@
      "stars": 2,
      "what": "Our analysis. What the school department left unspent in FY2026, read off the MUNIS period-13 report run on 6 October 2026: where it landed against the range the period-12 ledger allowed, account by account, what is still encumbered, where the unspent money sat by function, and what the School Committee was told in July. Generated by scripts/build_school_surplus.py --fy 2026 and re-verified. Unlisted while it is reviewed.",
      "kind": "Notes",
-     "bytes": 47446,
+     "bytes": 48955,
      "url": "/docs/analyses/fy26-school-surplus.md",
-     "count": 523,
+     "count": 538,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-school-surplus.md"
     },
@@ -2929,6 +3438,18 @@
      "textUrl": "/docs/analyses/budget-vs-actual.md"
     },
     {
+     "path": "data/teacher-pay-distribution.csv",
+     "title": "Teacher gross pay as counts and distributions, by year — NO NAMES",
+     "stars": 2,
+     "what": "The town’s calendar-year wage list joined, by name, to the school rosters the same reports print, FY2011–FY2025, by scripts/extract_teacher_pay.py. The join is PRIVATE (build/private/, gitignored; rule 13e): this file holds only counts, quartiles and $10,000 bands, none resting on fewer than three people, plus the match rate and every rule it rests on. Gross pay includes stipends, coaching and longevity; it is not a salary schedule cell. Digital years are reconciled amount by amount to the PDF’s own text layer.",
+     "kind": "Data",
+     "bytes": 32787,
+     "url": "/docs/data/teacher-pay-distribution.csv",
+     "count": 479,
+     "unit": "rows",
+     "textUrl": "/docs/data/teacher-pay-distribution.csv"
+    },
+    {
      "path": "analyses/fy26-closeout-town.md",
      "title": "FY26 on the town side, as the books stood in June",
      "stars": 2,
@@ -2939,6 +3460,18 @@
      "count": 555,
      "unit": "lines",
      "textUrl": "/docs/analyses/fy26-closeout-town.md"
+    },
+    {
+     "path": "analyses/fy25-school-surplus.md",
+     "title": "The FY25 school surplus, from the closed ledger",
+     "stars": 2,
+     "what": "Our analysis. What the school department left unspent in FY2025, read off the MUNIS period-13 report rather than the minutes: the turnback at the close, what moved out of the budget during the year, where the unspent money sat by function, and how it compares with the figure the School Committee was told. Every figure is generated and re-verified. Unlisted while it is reviewed.",
+     "kind": "Notes",
+     "bytes": 25499,
+     "url": "/docs/analyses/fy25-school-surplus.md",
+     "count": 295,
+     "unit": "lines",
+     "textUrl": "/docs/analyses/fy25-school-surplus.md"
     },
     {
      "path": "analyses/sped-and-funds.md",
@@ -2975,18 +3508,6 @@
      "count": 199,
      "unit": "lines",
      "textUrl": "/docs/analyses/spending-what-comes-in.md"
-    },
-    {
-     "path": "analyses/fy25-school-surplus.md",
-     "title": "The FY25 school surplus, from the closed ledger",
-     "stars": 2,
-     "what": "Our analysis. What the school department left unspent in FY2025, read off the MUNIS period-13 report rather than the minutes: the turnback at the close, what moved out of the budget during the year, where the unspent money sat by function, and how it compares with the figure the School Committee was told. Every figure is generated and re-verified. Unlisted while it is reviewed.",
-     "kind": "Notes",
-     "bytes": 23985,
-     "url": "/docs/analyses/fy25-school-surplus.md",
-     "count": 280,
-     "unit": "lines",
-     "textUrl": "/docs/analyses/fy25-school-surplus.md"
     },
     {
      "path": "data/turnover.csv",
@@ -3049,6 +3570,18 @@
      "textUrl": "/docs/data/report-signatures.csv"
     },
     {
+     "path": "data/threads.csv",
+     "title": "The matters this project tracks across boards",
+     "stars": 2,
+     "what": "One row per thread: the question a resident is following, which boards touch it, the match rules that find it in the record, when it was registered, and whether it has closed and on what vote.",
+     "kind": "Data",
+     "bytes": 16853,
+     "url": "/docs/data/threads.csv",
+     "count": 22,
+     "unit": "rows",
+     "textUrl": "/docs/data/threads.csv"
+    },
+    {
      "path": "data/document-defects.csv",
      "title": "Where a document the town published is itself incomplete",
      "stars": 2,
@@ -3071,18 +3604,6 @@
      "count": 30,
      "unit": "rows",
      "textUrl": "/docs/data/board-goals.csv"
-    },
-    {
-     "path": "data/threads.csv",
-     "title": "The matters this project tracks across boards",
-     "stars": 2,
-     "what": "One row per thread: the question a resident is following, which boards touch it, the match rules that find it in the record, when it was registered, and whether it has closed and on what vote.",
-     "kind": "Data",
-     "bytes": 15440,
-     "url": "/docs/data/threads.csv",
-     "count": 21,
-     "unit": "rows",
-     "textUrl": "/docs/data/threads.csv"
     },
     {
      "path": "data/pipeline-state.csv",
@@ -3133,16 +3654,40 @@
      "textUrl": "/docs/data/PROVENANCE-debt-tables.md"
     },
     {
+     "path": "data/town-meetings.csv",
+     "title": "Every Town Meeting, found from the record",
+     "stars": 2,
+     "what": "Written by us, by scripts/build_town_meetings.py, with no model: one row per Annual or Special Town Meeting from May 2011, the signals it was found from (a legal notice, the warrant, a Select Board vote, an agenda, the Town Clerk’s record, a recording), when it was called and the warrant posted, the document for each, and how many articles are on record.",
+     "kind": "Data",
+     "bytes": 11409,
+     "url": "/docs/data/town-meetings.csv",
+     "count": 33,
+     "unit": "rows",
+     "textUrl": "/docs/data/town-meetings.csv"
+    },
+    {
      "path": "data/school-job-postings.csv",
      "title": "The district’s job postings, as a history: what was listed, and when it left",
      "stars": 2,
      "what": "Written by us, from the snapshots of Lunenburg Public Schools’ own SchoolSpring account (employer 11047) that `fetch_school_job_postings.py` takes daily, one row per posting keyed on SchoolSpring’s job id. Post, display and closing dates are the publisher’s. `first_seen`, `last_seen` and `removed_seen` ARE OURS: they are the days we looked, bounded by the fetch cadence, never the day a post went up or came down. A REMOVAL IS NOT A HIRE — a posting leaves when it is filled, closes, is withdrawn or is reposted, and nothing here says which. Pay is printed only where the district shows it.",
      "kind": "Data",
-     "bytes": 9954,
+     "bytes": 10425,
      "url": "/docs/data/school-job-postings.csv",
-     "count": 20,
+     "count": 21,
      "unit": "rows",
      "textUrl": "/docs/data/school-job-postings.csv"
+    },
+    {
+     "path": "data/peer-teacher-pay-distribution.csv",
+     "title": "Teacher gross pay in Harvard, Ashburnham-Westminster and Tyngsborough, on each district’s own scale — NO NAMES",
+     "stars": 2,
+     "what": "The wage lists three comparison districts’ towns print (Harvard’s 2025 report, period not printed; Ashburnham’s reprint of the regional district’s FY2025 list, earnings over $500; Tyngsborough’s 2022 Gross Wage Report, period not printed), read from the PDFs’ text layer by scripts/extract_peer_teacher_pay.py, beside Lunenburg’s calendar-2025 figures from the same rules. Teachers are Harvard’s own TEACHER section and, for A-W and Tyngsborough, our rule over the printed job title. Each full-year teacher’s gross pay as a share of their own district’s master’s top step where the schedule for the list’s year is held, as counts and bands only, none resting on fewer than three people. Harvard’s sections tie to the totals the page prints, to the cent; each Tyngsborough row’s Total is its SR plus Munis. A-W’s FY2025 and Tyngsborough’s FY2022-FY2023 schedules are not held, so their shares cannot be computed.",
+     "kind": "Data",
+     "bytes": 9962,
+     "url": "/docs/data/peer-teacher-pay-distribution.csv",
+     "count": 114,
+     "unit": "rows",
+     "textUrl": "/docs/data/peer-teacher-pay-distribution.csv"
     },
     {
      "path": "analyses/peer-districts.md",
@@ -3162,9 +3707,9 @@
      "stars": 2,
      "what": "Written by us, from the same snapshots as the row above: `posted` (first listed), `edited` (one row per field that differs between two looks, with the before and after -- descriptions compared as text, whitespace ignored), `relisted` and `removed`. `date` IS THE LOOK THAT SAW IT and `prev_look` the one before; the district made the change somewhere between the two, and the data cannot narrow it further. Pay is compared as SchoolSpring displays it, so a change to a figure the district hides is not an event here.",
      "kind": "Data",
-     "bytes": 6178,
+     "bytes": 6667,
      "url": "/docs/data/school-job-posting-changes.csv",
-     "count": 29,
+     "count": 31,
      "unit": "rows",
      "textUrl": "/docs/data/school-job-posting-changes.csv"
     },
@@ -3253,6 +3798,18 @@
      "textUrl": "/docs/data/tax-collection-unreconciled.csv"
     },
     {
+     "path": "data/thread-callouts.csv",
+     "title": "What someone says next about a thread, chosen by a person",
+     "stars": 2,
+     "what": "Written by us: one row per callout on a thread -- a sum of money, a warrant article, a fee, a change to a service -- with the quote it rests on and its source: the town’s document for a printed figure, the video at its second for a heard one. build_threads.py refuses a row whose quote is not in its source. A person’s row here overrides the model’s picks.",
+     "kind": "Data",
+     "bytes": 2683,
+     "url": "/docs/data/thread-callouts.csv",
+     "count": 5,
+     "unit": "rows",
+     "textUrl": "/docs/data/thread-callouts.csv"
+    },
+    {
      "path": "data/threads-declined.csv",
      "title": "Thread candidates that were rejected, and why",
      "stars": 2,
@@ -3333,6 +3890,16 @@
      "bytes": 27,
      "url": "/docs/data/suggested-reports-merges.csv",
      "textUrl": "/docs/data/suggested-reports-merges.csv"
+    },
+    {
+     "path": "data/threads-auto/town-meetings.json",
+     "title": "The Town Meeting threads, generated",
+     "stars": 1,
+     "what": "Written by us, by scripts/build_town_meetings.py, with no model: a thread for every Town Meeting, and one for each article discussed well beyond its routine stops, which build_threads.py merges beside the hand registry in threads.csv.",
+     "kind": "JSON",
+     "bytes": 2193452,
+     "url": "/docs/data/threads-auto/town-meetings.json",
+     "textUrl": "/docs/data/threads-auto/town-meetings.json"
     },
     {
      "path": "analyses/charts/towns-like-us-positions.svg",
@@ -3457,6 +4024,16 @@
      "textUrl": "/docs/analyses/charts/stabilization-all.svg"
     },
     {
+     "path": "data/article-summaries.json",
+     "title": "A sentence or two per warrant article, model-written and checked",
+     "stars": 1,
+     "what": "OURS, written by a language model (claude -p) in scripts/write_article_summaries.py from the warrant’s own words, heard-figures.csv and our notes of the board discussion, and nothing else. A summary carrying a figure that neither the warrant nor a checked figure carries is refused. Each says what it was written from. The warrant is the record.",
+     "kind": "JSON",
+     "bytes": 9987,
+     "url": "/docs/data/article-summaries.json",
+     "textUrl": "/docs/data/article-summaries.json"
+    },
+    {
      "path": "analyses/charts/town-personnel-all.svg",
      "title": "Every department that publishes a headcount, on one axis",
      "stars": 1,
@@ -3497,6 +4074,16 @@
      "textUrl": "/docs/analyses/charts/town-budgets-trends.svg"
     },
     {
+     "path": "analyses/charts/fy26-school-surplus-budget-vs-spent.svg",
+     "title": "Chart: FY26 school budget against spending, by category",
+     "stars": 1,
+     "what": "Our chart, generated with the FY26 school surplus analysis: each category’s revised budget split into spent, still committed and left over.",
+     "kind": "SVG",
+     "bytes": 8722,
+     "url": "/docs/analyses/charts/fy26-school-surplus-budget-vs-spent.svg",
+     "textUrl": "/docs/analyses/charts/fy26-school-surplus-budget-vs-spent.svg"
+    },
+    {
      "path": "analyses/charts/spending-what-comes-in-funds.svg",
      "title": "Chart: each school fund, in minus out, by year",
      "stars": 1,
@@ -3505,6 +4092,16 @@
      "bytes": 8050,
      "url": "/docs/analyses/charts/spending-what-comes-in-funds.svg",
      "textUrl": "/docs/analyses/charts/spending-what-comes-in-funds.svg"
+    },
+    {
+     "path": "analyses/charts/fy25-school-surplus-budget-vs-spent.svg",
+     "title": "Chart: FY25 school budget against spending, by category",
+     "stars": 1,
+     "what": "Our chart, generated with the FY25 school surplus analysis: each category’s revised budget split into spent, still committed and left over.",
+     "kind": "SVG",
+     "bytes": 8043,
+     "url": "/docs/analyses/charts/fy25-school-surplus-budget-vs-spent.svg",
+     "textUrl": "/docs/analyses/charts/fy25-school-surplus-budget-vs-spent.svg"
     },
     {
      "path": "analyses/charts/spending-what-comes-in-kinds.svg",
@@ -3525,16 +4122,6 @@
      "bytes": 7094,
      "url": "/docs/analyses/charts/sitting-on-money-balances.svg",
      "textUrl": "/docs/analyses/charts/sitting-on-money-balances.svg"
-    },
-    {
-     "path": "analyses/charts/fy26-school-surplus-budget-vs-spent.svg",
-     "title": "Chart: FY26 school budget against spending, by category",
-     "stars": 1,
-     "what": "Our chart, generated with the FY26 school surplus analysis: each category’s revised budget split into spent, still committed and left over.",
-     "kind": "SVG",
-     "bytes": 6999,
-     "url": "/docs/analyses/charts/fy26-school-surplus-budget-vs-spent.svg",
-     "textUrl": "/docs/analyses/charts/fy26-school-surplus-budget-vs-spent.svg"
     },
     {
      "path": "analyses/charts/fy26-school-variance.svg",
@@ -3567,14 +4154,24 @@
      "textUrl": "/docs/analyses/charts/fy26-town-variance.svg"
     },
     {
-     "path": "analyses/charts/fy25-school-surplus-budget-vs-spent.svg",
-     "title": "Chart: FY25 school budget against spending, by category",
+     "path": "analyses/charts/fy26-school-surplus-causes.svg",
+     "title": "Chart: where the FY26 school surplus was left, by category",
      "stars": 1,
-     "what": "Our chart, generated with the FY25 school surplus analysis: each category’s revised budget split into spent, still committed and left over.",
+     "what": "Our chart, generated with the FY26 school surplus analysis: net unspent by plain-English category, largest first, coloured by our discretionary / circumstantial split.",
      "kind": "SVG",
-     "bytes": 6483,
-     "url": "/docs/analyses/charts/fy25-school-surplus-budget-vs-spent.svg",
-     "textUrl": "/docs/analyses/charts/fy25-school-surplus-budget-vs-spent.svg"
+     "bytes": 6345,
+     "url": "/docs/analyses/charts/fy26-school-surplus-causes.svg",
+     "textUrl": "/docs/analyses/charts/fy26-school-surplus-causes.svg"
+    },
+    {
+     "path": "analyses/charts/fy25-school-surplus-causes.svg",
+     "title": "Chart: where the FY25 school surplus was left, by category",
+     "stars": 1,
+     "what": "Our chart, generated with the FY25 school surplus analysis: net unspent by plain-English category, largest first, coloured by our discretionary / circumstantial split.",
+     "kind": "SVG",
+     "bytes": 6338,
+     "url": "/docs/analyses/charts/fy25-school-surplus-causes.svg",
+     "textUrl": "/docs/analyses/charts/fy25-school-surplus-causes.svg"
     },
     {
      "path": "analyses/charts/special-education-costs-circuit-breaker.svg",
@@ -3637,26 +4234,6 @@
      "bytes": 5512,
      "url": "/docs/analyses/charts/spent-with-no-budget-lines.svg",
      "textUrl": "/docs/analyses/charts/spent-with-no-budget-lines.svg"
-    },
-    {
-     "path": "analyses/charts/fy26-school-surplus-causes.svg",
-     "title": "Chart: where the FY26 school surplus was left, by category",
-     "stars": 1,
-     "what": "Our chart, generated with the FY26 school surplus analysis: net unspent by plain-English category, largest first, coloured by our discretionary / circumstantial split.",
-     "kind": "SVG",
-     "bytes": 5210,
-     "url": "/docs/analyses/charts/fy26-school-surplus-causes.svg",
-     "textUrl": "/docs/analyses/charts/fy26-school-surplus-causes.svg"
-    },
-    {
-     "path": "analyses/charts/fy25-school-surplus-causes.svg",
-     "title": "Chart: where the FY25 school surplus was left, by category",
-     "stars": 1,
-     "what": "Our chart, generated with the FY25 school surplus analysis: net unspent by plain-English category, largest first, coloured by our discretionary / circumstantial split.",
-     "kind": "SVG",
-     "bytes": 5204,
-     "url": "/docs/analyses/charts/fy25-school-surplus-causes.svg",
-     "textUrl": "/docs/analyses/charts/fy25-school-surplus-causes.svg"
     },
     {
      "path": "analyses/charts/town-personnel-over-time.svg",
@@ -3981,6 +4558,18 @@
      "count": 6,
      "unit": "rows",
      "textUrl": "/docs/data/debt-repayment-detail-refused.csv"
+    },
+    {
+     "path": "data/heard-figures.csv",
+     "title": "Figures a person checked in the meeting recordings",
+     "stars": 1,
+     "what": "Written by us: a figure our notes of a recording heard, which a person then listened for at the cited second of the video, with who checked it and when. Captions mishear numbers, so these are the only heard figures an article summary may carry. Cite the video at its timestamp, never this file.",
+     "kind": "Data",
+     "bytes": 1334,
+     "url": "/docs/data/heard-figures.csv",
+     "count": 4,
+     "unit": "rows",
+     "textUrl": "/docs/data/heard-figures.csv"
     },
     {
      "path": "data/report-appropriations-supplement-refused.csv",
@@ -4439,9 +5028,9 @@
      "stars": 2,
      "what": "Generated. 4,671 rows: the verbatim title, our `kind`, the meeting date derived from the title with `date_source` saying which route was used, and `classified_by` naming the model. THE UNDETERMINED COUNT IS A DENOMINATOR and belongs anywhere this index is quoted.",
      "kind": "Data",
-     "bytes": 1059295,
+     "bytes": 1060967,
      "url": "/docs/data/youtube-video-classification.csv",
-     "count": 4721,
+     "count": 4729,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-classification.csv"
     },
@@ -4463,9 +5052,9 @@
      "stars": 2,
      "what": "4,671 rows: the video id, the title EXACTLY as posted, the URL and the channel rank (0 = newest). A flat channel extraction returns no upload dates, so `channel_rank` is the only chronology the channel gave us. It carries no classification at all — what board a video was for is a judgment about a string and lives in its own files.",
      "kind": "Data",
-     "bytes": 593366,
+     "bytes": 594354,
      "url": "/docs/data/youtube-videos.csv",
-     "count": 4721,
+     "count": 4729,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-videos.csv"
     },
@@ -4475,9 +5064,9 @@
      "stars": 2,
      "what": "Generated. There is no board column on a video: a tri-board meeting is three rows and is not a special case. `in_agenda_center` is NO for the bodies the town’s AgendaCenter does not carry.",
      "kind": "Data",
-     "bytes": 457323,
+     "bytes": 458272,
      "url": "/docs/data/youtube-video-boards.csv",
-     "count": 2924,
+     "count": 2930,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-video-boards.csv"
     },
@@ -4511,9 +5100,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 251359,
+     "bytes": 264624,
      "url": "/docs/data/money-gaps.csv",
-     "count": 273,
+     "count": 287,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -4547,9 +5136,9 @@
      "stars": 2,
      "what": "Written by us. One row per table: its ROLE (fact, dimension, extract, classification, provenance, derived), its GRAIN — what one row of it represents — and what question it answers. Loaded into the database as `table_semantics`, so the description is queryable by the same route as the data it describes, and checked both ways: a table with no row here fails the build, and a row naming a table that no longer exists fails it too.",
      "kind": "Data",
-     "bytes": 87106,
+     "bytes": 92811,
      "url": "/docs/data/table-semantics.csv",
-     "count": 138,
+     "count": 144,
      "unit": "rows",
      "textUrl": "/docs/data/table-semantics.csv"
     },
@@ -4955,7 +5544,7 @@
      "stars": 1,
      "what": "One row per video of a board and date that has more than one. `relation` says whether two postings are the same recording, an excerpt of it, or a separate recording, measured by shared six-word runs of their captions in BOTH directions; `newest` is the one the site links. Both are treated as valid and their minutes are merged. Written by reconcile_meeting_videos.py.",
      "kind": "Data",
-     "bytes": 20013,
+     "bytes": 20015,
      "url": "/docs/data/meeting-videos.csv",
      "count": 121,
      "unit": "rows",
@@ -5058,7 +5647,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 57114624,
+     "bytes": 59064320,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5068,7 +5657,7 @@
      "stars": 3,
      "what": "Every journal line behind every school account -- general fund and every school special fund -- from July 2022 to the FY2026 close: date, journal, source, amount, vendor, invoice or purchase order, description and check number. Our redacted reading of the Town’s 1,744-page MUNIS journal report, which stays private because the Town’s own redaction missed a child’s name. People paid as vendors read individual (redacted); a child or a person named in a description reads [redacted]. Built by scripts/extract_munis_school_journal.py, which refuses to write unless every account, every printed total and the grand total close to the cent.",
      "kind": "Data",
-     "bytes": 12450333,
+     "bytes": 12622710,
      "url": "/docs/data/munis-school-journal.csv",
      "count": 49043,
      "unit": "rows",
@@ -5080,9 +5669,9 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3802203,
+     "bytes": 3810364,
      "url": "/docs/data/meeting-register.csv",
-     "count": 7080,
+     "count": 7092,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-register.csv"
     },
@@ -5284,9 +5873,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 749477,
+     "bytes": 754879,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 10871,
+     "count": 10934,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -5320,9 +5909,9 @@
      "stars": 3,
      "what": "One row per fetched transcript: the video, the board, the meeting date, how many caption segments and how long. The transcripts themselves are NOT in git — they are machine-generated captions, bulky and never edited by hand, so they go to the archive bucket like the documents rather than into git like the things we write. This index is the map into them, and it is small enough to version. The backfill runs slowly on purpose — the caption endpoint throttles by IP, and ten fetches in 35 seconds once earned a refusal — and it takes the meetings with NO surviving document first, because for those a rough caption is the difference between a searchable account and none. Rebuild with scripts/fetch_youtube_transcripts.py.",
      "kind": "Data",
-     "bytes": 460778,
+     "bytes": 461829,
      "url": "/docs/data/youtube-transcript-index.csv",
-     "count": 2688,
+     "count": 2694,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-transcript-index.csv"
     },
@@ -5608,7 +6197,7 @@
      "stars": 3,
      "what": "Per board and year: how many documents the town listed, how many we hold, and how many contain text a search can match — which is a quarter fewer than hold a text file at all. The unsearchable ones are split by CAUSE rather than lumped: image scans, pages whose text was converted to vector outlines (which OCR cannot read either until they are rasterised), blank files, our own extractor failing on a real text layer, and documents the town lists that we do not hold. The threshold is not a guess — it is calibrated against whether the PDF carries a font resource at all, and the two agree at zero characters and nowhere else. It exists because rule 15a tells everyone here to search the archive before concluding a thing was never discussed, and an unreadable document and a subject nobody raised produce the identical empty result. Rebuild with scripts/build_minutes_searchable.py.",
      "kind": "Data",
-     "bytes": 41717,
+     "bytes": 41721,
      "url": "/docs/data/minutes-searchable.csv",
      "count": 514,
      "unit": "rows",
@@ -5632,7 +6221,7 @@
      "stars": 3,
      "what": "277 rows — every receipt and payment in fund 1301 for FY2024, FY2025 and FY2026 to 12 June 2026, with dates, warrant references and the town’s own comments. One column, running_balance_derived, is ours and not the town’s: MUNIS exports rows, not a balance, and many rows are backdated, so the order is a reconstruction and is named as one. Rebuild with scripts/extract_fund1301_ledger.py, which refuses to write unless each year’s closing balance equals the opening balance the town prints for the next.",
      "kind": "Data",
-     "bytes": 34927,
+     "bytes": 34934,
      "url": "/docs/data/fund-1301-cash-journal.csv",
      "count": 277,
      "unit": "rows",
@@ -5769,6 +6358,18 @@
      "count": 32,
      "unit": "rows",
      "textUrl": "/docs/data/monty-tech-assessment.csv"
+    },
+    {
+     "path": "data/inflation-cost-index-map.csv",
+     "title": "Which price index each kind of school spending is measured against, and why",
+     "stars": 3,
+     "what": "OURS. One row per DESE spending type (buildings in three parts, by DESE function code): the BLS series it is set against, how a fiscal-year average is taken, whether it is a fallback to household prices, and the reason for each choice, including where no published series fits (tuition, buses). Read by scripts/build_inflation_topic.py.",
+     "kind": "Data",
+     "bytes": 6939,
+     "url": "/docs/data/inflation-cost-index-map.csv",
+     "count": 17,
+     "unit": "rows",
+     "textUrl": "/docs/data/inflation-cost-index-map.csv"
     },
     {
      "path": "data/town-ledger-fy26-q3.csv",
@@ -5958,9 +6559,9 @@
      "stars": 2,
      "what": "12,039 rows: the /CreationDate and /ModDate the town’s own PDFs and Word files carry, with the hours between a document being made and its meeting, and the days between a meeting and its minutes being made. A creation date is a LOWER BOUND on posting — a file cannot be published before it exists — and never the posting date, which the AgendaCenter does not publish. Written by scripts/extract_document_timestamps.py; read into the meeting record.",
      "kind": "Data",
-     "bytes": 2583049,
+     "bytes": 2587149,
      "url": "/docs/data/meeting-document-timestamps.csv",
-     "count": 12166,
+     "count": 12184,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-document-timestamps.csv"
     },
@@ -5970,9 +6571,9 @@
      "stars": 2,
      "what": "Written by us, and it is an OBSERVATION LOG rather than a measurement — what this project’s crawler could see on the town’s AgendaCenter on a given day. One row per document, keyed on the town’s own file id. `first_seen` is the day OUR crawler first saw it and NOT the day the town posted it: the AgendaCenter publishes no posting timestamp, so any gap between a meeting and its minutes appearing is an upper bound bounded by how often we look. The 12,065 rows adopted when the watch was seeded carry an EMPTY first_seen, because we do not know — an empty cell rather than a guess — and the `basis` column says which rows those are. Rebuild with scripts/watch_meetings.py.",
      "kind": "Data",
-     "bytes": 1781245,
+     "bytes": 1784475,
      "url": "/docs/data/meeting-watch-state.csv",
-     "count": 12209,
+     "count": 12228,
      "unit": "rows",
      "textUrl": "/docs/data/meeting-watch-state.csv"
     },
@@ -6018,9 +6619,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 600679,
+     "bytes": 606361,
      "url": "/docs/data/search-affinity.csv",
-     "count": 4270,
+     "count": 4306,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -6157,6 +6758,18 @@
      "textUrl": "/docs/data/athletics-fincom.csv"
     },
     {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 99770,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 29,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
+    },
+    {
      "path": "data/copy-status.csv",
      "title": "Whether the publisher’s copy is still our copy",
      "stars": 2,
@@ -6167,18 +6780,6 @@
      "count": 342,
      "unit": "rows",
      "textUrl": "/docs/data/copy-status.csv"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 90869,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 27,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/police-expended.csv",
@@ -6253,6 +6854,18 @@
      "textUrl": "/docs/data/opeb-valuations.csv"
     },
     {
+     "path": "data/meeting-watch-events.csv",
+     "title": "What appeared on the town’s site between one crawl and the next",
+     "stars": 2,
+     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 25645,
+     "url": "/docs/data/meeting-watch-events.csv",
+     "count": 163,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-events.csv"
+    },
+    {
      "path": "data/youtube-no-captions.csv",
      "title": "Recordings whose captions are switched off",
      "stars": 2,
@@ -6263,18 +6876,6 @@
      "count": 199,
      "unit": "rows",
      "textUrl": "/docs/data/youtube-no-captions.csv"
-    },
-    {
-     "path": "data/meeting-watch-events.csv",
-     "title": "What appeared on the town’s site between one crawl and the next",
-     "stars": 2,
-     "what": "Written by us. One row per document the watch saw APPEAR — an agenda posted for a coming meeting, or minutes arriving for a meeting that had none. Everything present when the watch was seeded is deliberately absent: it was already known and was never new. This is the file that makes the feed deterministic, and scripts/check_meeting_watch_idempotent.py proves the point by running the detector twice and requiring the second run to announce nothing. `days_after_meeting_upper_bound` is named that way because it is one. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 22120,
-     "url": "/docs/data/meeting-watch-events.csv",
-     "count": 144,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-events.csv"
     },
     {
      "path": "data/budget-seasons/fy27.csv",
@@ -6409,6 +7010,18 @@
      "textUrl": "/docs/data/budget-seasons/fy27-lines.csv"
     },
     {
+     "path": "data/youtube-watch-events.csv",
+     "title": "What appeared on the town’s YouTube channel between one check and the next",
+     "stars": 2,
+     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
+     "kind": "Data",
+     "bytes": 6807,
+     "url": "/docs/data/youtube-watch-events.csv",
+     "count": 58,
+     "unit": "rows",
+     "textUrl": "/docs/data/youtube-watch-events.csv"
+    },
+    {
      "path": "town-ledgers/account-details/PROVENANCE-fund1301.md",
      "title": "Provenance for the 17 June 2026 records request",
      "stars": 2,
@@ -6420,18 +7033,6 @@
      "count": 106,
      "unit": "lines",
      "textUrl": "/docs/town-ledgers/account-details/PROVENANCE-fund1301.md"
-    },
-    {
-     "path": "data/youtube-watch-events.csv",
-     "title": "What appeared on the town’s YouTube channel between one check and the next",
-     "stars": 2,
-     "what": "Written by us. One row per video the RSS watch first saw, with when. The channel itself is the record; this is the deterministic log the refresh reads.",
-     "kind": "Data",
-     "bytes": 5915,
-     "url": "/docs/data/youtube-watch-events.csv",
-     "count": 50,
-     "unit": "rows",
-     "textUrl": "/docs/data/youtube-watch-events.csv"
     },
     {
      "path": "data/health-insurance-law.csv",
@@ -6627,6 +7228,18 @@
      "textUrl": "/docs/data/myths.csv"
     },
     {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 1234,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 37,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
      "path": "data/feed-watch-events.csv",
      "title": "What appeared in those feeds",
      "stars": 2,
@@ -6637,18 +7250,6 @@
      "count": 7,
      "unit": "rows",
      "textUrl": "/docs/data/feed-watch-events.csv"
-    },
-    {
-     "path": "data/meeting-watch-runs.csv",
-     "title": "When we looked, how much answered, and what was new",
-     "stars": 2,
-     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 1172,
-     "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 35,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "data/school-insurance-tiers.csv",
@@ -6836,7 +7437,7 @@
      "stars": 1,
      "what": "Written by us. The Town flattened pages 34, 643 and 1080 of the journal report to pictures; this is our reading of their 141 journal lines, with every child and private person already masked. The extractor proves it: the three accounts those pages fall in close to the cent only with these lines.",
      "kind": "Data",
-     "bytes": 15494,
+     "bytes": 15878,
      "url": "/docs/data/munis-school-journal-image-pages.csv",
      "count": 141,
      "unit": "rows",
@@ -6865,6 +7466,18 @@
      "count": 63,
      "unit": "rows",
      "textUrl": "/docs/data/tax-impact-fy27.csv"
+    },
+    {
+     "path": "data/building-payee-trades.csv",
+     "title": "What kind of work each school buildings payee does -- our grouping",
+     "stars": 1,
+     "what": "OURS. One row per payee on the school department’s building and grounds lines, assigned a type of work (heating, cooling and plumbing; grounds and fields; ...) from what its invoices in the school journal say, with the description it was assigned from. Read by scripts/build_buildings_topics.py; a payee not here is counted as Other repairs and supplies.",
+     "kind": "Data",
+     "bytes": 4912,
+     "url": "/docs/data/building-payee-trades.csv",
+     "count": 60,
+     "unit": "rows",
+     "textUrl": "/docs/data/building-payee-trades.csv"
     },
     {
      "path": "data/department-budgets-fincom-fy27-vs-gl-history.csv",
@@ -7077,7 +7690,7 @@
    "id": "district-page",
    "origin": "school",
    "title": "The district budget page, mirrored in full",
-   "blurb": "Every document linked from the district’s budget information page — 868 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
+   "blurb": "Every document linked from the district’s budget information page — 883 of them, back to FY18. Each row links to our copy and to the district’s original. Text has been extracted from all but one, including eleven scans that had no text layer until we read them.",
    "items": [
     {
      "path": "district-budget/docs/additional-town-revenue-spending-plan.pdf",
@@ -10387,6 +11000,127 @@
      "upstream": "https://drive.google.com/open?id=1dFjZ5KC-RamQDuWF8luyjLkFqRZFriOk"
     },
     {
+     "path": "district-budget/docs/01-fy20-budget-schedule.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “Budget Calendar”; publisher filename “01 FY20 Budget Schedule.pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 405932,
+     "url": "/docs/district-budget/docs/01-fy20-budget-schedule.pdf",
+     "textUrl": "/docs/district-budget/text/01-fy20-budget-schedule.txt",
+     "upstream": "https://drive.google.com/file/d/1wWzGzKBgUGVtT12aQ_iMwvQW2UXMwQ0D/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-master-superintendent-s-proposed-budget.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “Budget Presentation”; publisher filename “MASTER Superintendent's Proposed Budget.pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 748426,
+     "url": "/docs/district-budget/docs/fy20-master-superintendent-s-proposed-budget.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-master-superintendent-s-proposed-budget.txt",
+     "upstream": "https://drive.google.com/file/d/1jGYFo8xHVqhFJJ9fqRugEvCV0bW6Nf_o/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-copy-of-dart-finance-staff.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “DART Per Pupil Expenditure Summary”; publisher filename “Copy of dart-finance-staff.pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 152309,
+     "url": "/docs/district-budget/docs/fy20-copy-of-dart-finance-staff.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-copy-of-dart-finance-staff.txt",
+     "upstream": "https://drive.google.com/file/d/1p3HILe_7Q6NUSGGtYQEyUjn_qPVXjTuW/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/00-proposed-fy20-budget-nonpersonnel-02.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “Expenses”; publisher filename “00 proposed FY20 Budget - nonpersonnel(02).pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 475335,
+     "url": "/docs/district-budget/docs/00-proposed-fy20-budget-nonpersonnel-02.pdf",
+     "textUrl": "/docs/district-budget/text/00-proposed-fy20-budget-nonpersonnel-02.txt",
+     "upstream": "https://drive.google.com/file/d/1hCmm8vRfBaTGhWRog54C8yQw4QW7TlJA/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-fincom-budget-presentation.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “Finance Committee Budget Presentation”; publisher filename “FinCom Budget presentation.pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1409191,
+     "url": "/docs/district-budget/docs/fy20-fincom-budget-presentation.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-fincom-budget-presentation.txt",
+     "upstream": "https://drive.google.com/file/d/1nfQliLmpcGJzMDwJuOkxQG4i8AzDruYD/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-2018-mcas-report-school-committee.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “MCAS Summary Presentation”; publisher filename “2018 MCAS Report -School Committee.pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 1376226,
+     "url": "/docs/district-budget/docs/fy20-2018-mcas-report-school-committee.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-2018-mcas-report-school-committee.txt",
+     "upstream": "https://drive.google.com/file/d/15OZTYqDu3pMUdb8Ke30iR1oxNeNc1j7z/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-2018-mcas-summary-sc-report-draft-1.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “MCAS Summary Report”; publisher filename “2018 MCAS Summary SC Report draft  (1).pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 532011,
+     "url": "/docs/district-budget/docs/fy20-2018-mcas-summary-sc-report-draft-1.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-2018-mcas-summary-sc-report-draft-1.txt",
+     "upstream": "https://drive.google.com/file/d/1Vzx_oKVDiinp36yZQsWzjeNrXT4zFtp2/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/00-proposed-fy20-budget-personnel-3.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “Personnel”; publisher filename “00 proposed FY20 Budget - personnel(3).pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 447759,
+     "url": "/docs/district-budget/docs/00-proposed-fy20-budget-personnel-3.pdf",
+     "textUrl": "/docs/district-budget/text/00-proposed-fy20-budget-personnel-3.txt",
+     "upstream": "https://drive.google.com/file/d/1H7t4FddT5C3SS2vJ0tXQ8rubnO5MbgHq/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-copy-of-radar-benchmarking-1.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “RADAR Benchmarking Change Over 5 Years”; publisher filename “Copy of RADAR benchmarking (1).pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 191828,
+     "url": "/docs/district-budget/docs/fy20-copy-of-radar-benchmarking-1.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-copy-of-radar-benchmarking-1.txt",
+     "upstream": "https://drive.google.com/file/d/1vp11XBH8NTYkV1kz3TKlKWbdgsQbCbIx/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-radar-comparison-districts.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “RADAR-Comparison Districts”; publisher filename “RADAR-Comparison Districts.pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 858957,
+     "url": "/docs/district-budget/docs/fy20-radar-comparison-districts.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-radar-comparison-districts.txt",
+     "upstream": "https://drive.google.com/file/d/18mbRSBTMKejcxM7SIsYssegz2cADsr7h/view?usp=sharing"
+    },
+    {
+     "path": "district-budget/docs/fy20-radar-student-demographics-wealth.pdf",
+     "title": "FY20 Superintendent's Proposed Budget (12/19/18), linked as “RADAR-Student Demographics”; publisher filename “RADAR Student Demographics & Wealth.pdf”",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "PDF",
+     "bytes": 975122,
+     "url": "/docs/district-budget/docs/fy20-radar-student-demographics-wealth.pdf",
+     "textUrl": "/docs/district-budget/text/fy20-radar-student-demographics-wealth.txt",
+     "upstream": "https://drive.google.com/file/d/1A2I7_H95giJcobcDAVni_CFs4i7Xho99/view?usp=sharing"
+    },
+    {
      "path": "district-budget/docs/fy21-approved-school-budget-6-13-20.pdf",
      "title": "FY21 Approved School Budget 6-13-20",
      "stars": 1,
@@ -11925,6 +12659,16 @@
      "upstream": "https://api.schoolspring.com/api/Jobs/5958072?domainName=www.schoolspring.com"
     },
     {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-20/job-5958072.json",
+     "title": "Job postings: SchoolSpring posting 5958072, detail, fetched 2026-10-20",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 5599,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-20/job-5958072.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5958072?domainName=www.schoolspring.com"
+    },
+    {
      "path": "district-budget/docs/personnel/job-postings/2026-10-14/job-5959044.json",
      "title": "Job postings: SchoolSpring posting 5959044, detail, fetched 2026-10-14",
      "stars": 1,
@@ -11933,6 +12677,16 @@
      "bytes": 4969,
      "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-14/job-5959044.json",
      "upstream": "https://api.schoolspring.com/api/Jobs/5959044?domainName=www.schoolspring.com"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-21/job-5965552.json",
+     "title": "Job postings: SchoolSpring posting 5965552, detail, fetched 2026-10-21",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 4139,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-21/job-5965552.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/5965552?domainName=www.schoolspring.com"
     },
     {
      "path": "district-budget/docs/personnel/job-postings/2026-10-05/listing.json",
@@ -12002,6 +12756,26 @@
      "kind": "JSON",
      "bytes": 3215,
      "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-14/listing.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-20/listing.json",
+     "title": "Job postings: the open postings SchoolSpring lists for Lunenburg Public Schools, fetched 2026-10-20",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 3215,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-20/listing.json",
+     "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
+    },
+    {
+     "path": "district-budget/docs/personnel/job-postings/2026-10-21/listing.json",
+     "title": "Job postings: the open postings SchoolSpring lists for Lunenburg Public Schools, fetched 2026-10-21",
+     "stars": 1,
+     "what": "Mirrored from the district budget page. Not used in any figure on this site.",
+     "kind": "JSON",
+     "bytes": 3432,
+     "url": "/docs/district-budget/docs/personnel/job-postings/2026-10-21/listing.json",
      "upstream": "https://api.schoolspring.com/api/Jobs/GetPagedJobsWithSearch?domainName=www.schoolspring.com&keyword=&location=&category=&gradelevel=&jobtype=&organization=e-11047&swLat=&swLon=&neLat=&neLon=&page=1&size=100&sortDateAscending=false"
     },
     {
@@ -55495,7 +56269,7 @@
    },
    {
     "name": "Finance Committee",
-    "documents": 782
+    "documents": 783
    },
    {
     "name": "Sewer Commission",
@@ -55503,7 +56277,7 @@
    },
    {
     "name": "Conservation Commission",
-    "documents": 717
+    "documents": 718
    },
    {
     "name": "Board Of Health",
@@ -55515,15 +56289,15 @@
    },
    {
     "name": "Library Board Of Trustees",
-    "documents": 442
+    "documents": 444
    },
    {
     "name": "Council On Aging",
-    "documents": 408
+    "documents": 409
    },
    {
     "name": "Public Access Cable Committee (PACC)",
-    "documents": 369
+    "documents": 371
    },
    {
     "name": "Zoning Board Of Appeals",
@@ -55547,7 +56321,7 @@
    },
    {
     "name": "School Committee",
-    "documents": 290
+    "documents": 291
    },
    {
     "name": "Capital Planning Committee",
@@ -55571,11 +56345,11 @@
    },
    {
     "name": "Stormwater Task Force",
-    "documents": 195
+    "documents": 196
    },
    {
     "name": "Agricultural Commission",
-    "documents": 187
+    "documents": 192
    },
    {
     "name": "Open Space Committee",
@@ -55583,7 +56357,7 @@
    },
    {
     "name": "Lunenburg Municipal Building Design Committee",
-    "documents": 165
+    "documents": 166
    },
    {
     "name": "School Building Committee Meeting",
@@ -55602,11 +56376,11 @@
     "documents": 69
    },
    {
-    "name": "Building Reuse Committee",
-    "documents": 64
+    "name": "Planning Board Public Hearing",
+    "documents": 65
    },
    {
-    "name": "Planning Board Public Hearing",
+    "name": "Building Reuse Committee",
     "documents": 64
    },
    {
@@ -55615,7 +56389,7 @@
    },
    {
     "name": "Trust Fund Commission",
-    "documents": 57
+    "documents": 58
    },
    {
     "name": "Finance  Committee Appointing  Committee",
@@ -55639,7 +56413,7 @@
    },
    {
     "name": "Lunenburg 300Th Anniversary Committee",
-    "documents": 32
+    "documents": 33
    },
    {
     "name": "Nashoba Valley Reginal Dispatch Committee",
@@ -55691,22 +56465,22 @@
    }
   ],
   "boardCount": 51,
-  "listed": 12216,
-  "fetched": 12166,
-  "agendas": 7473,
-  "minutes": 4743,
+  "listed": 12234,
+  "fetched": 12184,
+  "agendas": 7484,
+  "minutes": 4750,
   "from": "2009-01-05",
   "to": "2026-11-17",
-  "textFiles": 12168,
+  "textFiles": 12186,
   "note": "Every agenda and set of minutes the town publishes, across all boards. The extracted text is what the analysis reads and is what this site serves. The scanned originals — about 426MB — are archived too, and can be downloaded one at a time at /docs/minutes/<board>/<file>.pdf. They were never in the repository, so until September 2026 they existed on exactly one disk; they now have an off-site copy, which for an archive of public records that keeps losing its own links is the point.",
   "rebuild": "python3 scripts/fetch_agendas.py --from 2025 && python3 scripts/extract_minutes.py"
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 4988,
+  "documents": 5054,
   "groups": 27,
-  "bytes": 6450150503,
-  "loadBearing": 192
+  "bytes": 6609615970,
+  "loadBearing": 194
  },
- "note": "Every document this analysis is built on. Nothing here is private or paid for. 54 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
+ "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

@@ -1325,6 +1325,46 @@ GROUPS = [
              'FY2011 onward: the article, its subject, the result, the amount as printed, '
              'what the Finance Committee and Select Board recommended, and the verbatim '
              'quote with the page it was read from.'),
+            ('data/town-meetings.csv',
+             'Every Town Meeting, found from the record', 2,
+             'Written by us, by scripts/build_town_meetings.py, with no model: one row per '
+             'Annual or Special Town Meeting from May 2011, the signals it was found from (a '
+             'legal notice, the warrant, a Select Board vote, an agenda, the Town Clerk\u2019s '
+             'record, a recording), when it was called and the warrant posted, the document '
+             'for each, and how many articles are on record.'),
+            ('data/warrant-articles.csv',
+             'Every warrant article, stage by stage', 2,
+             'Written by us, by scripts/build_town_meetings.py: one row per meeting and '
+             'article -- its title, amount and sponsor, and each stage (proposed, on the '
+             'warrant, recommended by the Finance Committee and the Select Board, voted, '
+             'recorded by the Clerk) with the record it rests on. A stage with no record is '
+             'blank. A result taken from our minutes of a recording says so in `result_basis` '
+             '(ours) and gives way to the Clerk\u2019s printed record once that year is read.'),
+            ('data/threads-auto/town-meetings.json',
+             'The Town Meeting threads, generated', 1,
+             'Written by us, by scripts/build_town_meetings.py, with no model: a thread for '
+             'every Town Meeting, and one for each article discussed well beyond its routine '
+             'stops, which build_threads.py merges beside the hand registry in threads.csv.'),
+            ('data/heard-figures.csv',
+             'Figures a person checked in the meeting recordings', 1,
+             'Written by us: a figure our notes of a recording heard, which a person then '
+             'listened for at the cited second of the video, with who checked it and when. '
+             'Captions mishear numbers, so these are the only heard figures an article '
+             'summary may carry. Cite the video at its timestamp, never this file.'),
+            ('data/article-summaries.json',
+             'A sentence or two per warrant article, model-written and checked', 1,
+             'OURS, written by a language model (claude -p) in '
+             'scripts/write_article_summaries.py from the warrant\u2019s own words, '
+             'heard-figures.csv and our notes of the board discussion, and nothing else. A '
+             'summary carrying a figure that neither the warrant nor a checked figure carries '
+             'is refused. Each says what it was written from. The warrant is the record.'),
+            ('data/thread-callouts.csv',
+             'What someone says next about a thread, chosen by a person', 2,
+             'Written by us: one row per callout on a thread -- a sum of money, a warrant '
+             'article, a fee, a change to a service -- with the quote it rests on and its '
+             'source: the town\u2019s document for a printed figure, the video at its second '
+             'for a heard one. build_threads.py refuses a row whose quote is not in its '
+             'source. A person\u2019s row here overrides the model\u2019s picks.'),
             ('analyses/spending-compared.md',
              'How Lunenburg compares, and what matching would cost', 3,
              'Lunenburg spends less for each pupil than almost every district in the '
@@ -3681,6 +3721,13 @@ GROUPS = [
              'total of $27,903,187. A function code is not a budget line and not a post, '
              'so this bounds the funding-source question rather than settling it. '
              'Rebuild with scripts/extract_dese_finance.py.'),
+            ('data/building-payee-trades.csv',
+             'What kind of work each school buildings payee does -- our grouping', 1,
+             'OURS. One row per payee on the school department\u2019s building and grounds '
+             'lines, assigned a type of work (heating, cooling and plumbing; grounds and fields; '
+             '...) from what its invoices in the school journal say, with the description it '
+             'was assigned from. Read by scripts/build_buildings_topics.py; a payee not here '
+             'is counted as Other repairs and supplies.'),
             ('data/inflation-cost-index-map.csv',
              'Which price index each kind of school spending is measured against, and why', 3,
              'OURS. One row per DESE spending type (buildings in three parts, by DESE function '
@@ -4328,6 +4375,12 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # its timestamp or the agenda itself. The payloads built from them
              # (recording-minutes.json, notices.json) are what the site serves.
              'data/recording-minutes', 'data/agenda-previews',
+             # One JSON per thread: the callouts a language model PICKED for it
+             # (write_thread_callouts.py). Nothing in them shows until build_threads.py has
+             # checked each against its source and dropped any that fails, so they are working
+             # files and never a source; the checked result is served in threads.json, and a
+             # person's callouts are catalogued as data/thread-callouts.csv.
+             'data/thread-callouts-auto',
              # The budget state of a recording -- deficits, cuts, warnings as heard -- the same
              # kind of thing as our minutes: written by a model, never a source.
              'data/budget-state',
