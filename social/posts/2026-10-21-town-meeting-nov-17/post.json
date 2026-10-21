@@ -16,43 +16,44 @@
     "motif": "contours"
   },
   "image": {
-    "layout": "spotlight",
+    "layout": "bands",
     "size": "square",
-    "headline": "{tm.counts.on_warrant|n} questions go to Town Meeting",
-    "emphasis": "{tm.counts.on_warrant|n} questions",
-    "headline_size": 56,
-    "sub": "Special Town Meeting, {tm.date|day}, {tm.time}.",
-    "card": {
-      "eyebrow": "ON THE WARRANT",
-      "title": "{tm.date|day}",
-      "rows": [
-        {
-          "label": "TC Passios",
-          "value": "Tear it down? {tcp.heard[0].figure} estimate"
-        },
-        {
-          "label": "Track and field",
-          "value": "{trk.heard[0].figure} to engineer · {trk.heard[1].figure} total"
-        },
-        {
-          "label": "Special ed reserve",
-          "value": "{sped.heard[0].figure} from free cash"
-        },
-        {
-          "label": "Stormwater",
-          "value": "A household fee, or the town budget?"
-        }
-      ],
-      "chips": [
-        "Public hearing {hear.date|wday}, {hear.time}",
-        "{tm.counts.kept_off|n} kept off"
-      ]
-    },
+    "headline": "Millions of dollars, a new fee and places you use, on the line",
+    "emphasis": "Millions of dollars",
+    "headline_size": 54,
+    "sub": "Special Town Meeting · {tm.date|day}",
+    "tiles": [
+      {
+        "eyebrow": "TC PASSIOS",
+        "value": "{tcp.heard[0].figure}",
+        "label": "to tear it down, a rough estimate",
+        "text": "The building loses heat this winter. The food pantry is planning to move out.",
+        "path": "/threads/tc-passios-site"
+      },
+      {
+        "eyebrow": "TRACK AND FIELD",
+        "value": "{trk.heard[0].figure}",
+        "label": "to engineer it · {trk.heard[1].figure} to rebuild",
+        "text": "The Superintendent told the Select Board part of the retaining wall is failing.",
+        "path": "/threads/turf-field-study"
+      },
+      {
+        "eyebrow": "STORMWATER",
+        "value": "A new fee?",
+        "label": "or pay through the town budget",
+        "text": "A non-binding vote on a separate fee for every household, billed apart from the tax bill.",
+        "path": "/threads/stormwater-fee"
+      }
+    ],
     "path": "/threads/stm-2026-11-17",
-    "as_of": "As of {m.as_of|short} · figures checked in the board recordings"
+    "as_of": "As of {m.as_of|short} · from the board recordings, figures checked",
+    "conclusion": "Public hearing tomorrow, {hear.time}.",
+    "conclusion_em": "tomorrow",
+    "conclusion_size": 44,
+    "drawn_as": "bands"
   },
   "text": [
-    "{tm.counts.on_warrant|n} questions go to Lunenburg's Special Town Meeting on {tm.date|day}. What's on the warrant so far:",
+    "Millions of dollars, and places people use every week, are on the line at Lunenburg's Special Town Meeting on {tm.date|day}. {tm.counts.on_warrant|n} questions are on the warrant so far:",
     "",
     "🏚️ Tear down TC Passios? A non-binding question to voters. The building loses heat this winter and the food pantry is planning to move out. A building committee member put demolition at {tcp.heard[0].figure}.",
     "",

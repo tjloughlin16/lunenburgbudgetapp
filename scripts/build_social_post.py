@@ -240,7 +240,72 @@ def layout_hero(img, R):
             f'<div class="hl">{R(h["label"])}</div><div class="ht">{R(h.get("text", ""))}</div></div>')
 
 
-LAYOUTS = {'spotlight': layout_spotlight, 'tiles': layout_tiles, 'hero': layout_hero}
+# THREE MORE WAYS TO DRAW THE SAME ITEMS. TJ, 21 October 2026: "we need some variation so that
+# the town doesn't get bored with these type of posts ... with the same intention of boldness
+# and emotion and drama", and the subject of each item ("the turf title") "needs to be a bit
+# bigger. So it screams, you know, schools and stuff." Every one of these reads the SAME
+# `tiles` list a tiles post has -- eyebrow (the subject), value, label, text, path -- so any
+# post can be drawn any of these ways, and `"layout": "auto"` picks one (see pick_layout).
+
+def layout_bands(img, R):
+    """A SCOREBOARD: one full-width band per item, the subject huge on the left, the figure
+    huge on the right, alternating the accent and near-black."""
+    out = []
+    for i, x in enumerate(img['tiles']):
+        out.append(f'<div class="bd {"alt" if i % 2 else ""}"><div class="bdl">'
+                   f'<div class="bds">{R(x["eyebrow"])}</div><div class="bdt">{R(x.get("text", ""))}</div></div>'
+                   f'<div class="bdr"><div class="bdv">{R(x["value"])}</div><div class="bdu">{R(x["label"])}</div></div></div>')
+    return f'<div class="bands">{"".join(out)}</div>'
+
+
+def layout_poster(img, R):
+    """ONE ITEM TAKES THE PAGE: its subject as a banner, its figure enormous; the others in a
+    strip beneath. For the post whose first item is the one people will talk about."""
+    first, rest = img['tiles'][0], img['tiles'][1:]
+    strip = ''.join(f'<div class="ps"><div class="pss">{R(x["eyebrow"])}</div><div class="psv">{R(x["value"])}</div>'
+                    f'<div class="psu">{R(x["label"])}</div></div>' for x in rest)
+    return (f'<div class="poster"><div class="pb">{R(first["eyebrow"])}</div><div class="pv">{R(first["value"])}</div>'
+            f'<div class="pu">{R(first["label"])}</div><div class="pt">{R(first.get("text", ""))}</div>'
+            f'{f"<div class=pstrip>{strip}</div>" if strip else ""}</div>')
+
+
+def layout_split(img, R):
+    """TWO SOLID PANELS, side by side, white type on colour: the accent and near-black. For a
+    post that sets two things against each other."""
+    xs = img['tiles'][:2]
+    return '<div class="split">' + ''.join(
+        f'<div class="sp {"alt" if i else ""}"><div class="sps">{R(x["eyebrow"])}</div>'
+        f'<div class="spv">{R(x["value"])}</div><div class="spu">{R(x["label"])}</div>'
+        f'<div class="spt">{R(x.get("text", ""))}</div></div>' for i, x in enumerate(xs)) + '</div>'
+
+
+LAYOUTS = {'spotlight': layout_spotlight, 'tiles': layout_tiles, 'hero': layout_hero,
+           'bands': layout_bands, 'poster': layout_poster, 'split': layout_split}
+# The layouts that read a `tiles` list -- the pool "auto" draws from.
+ITEM_LAYOUTS = ('tiles', 'bands', 'poster', 'split')
+AUTO_AVOID = 2       # never the same layout as either of the last two posts
+
+
+def pick_layout(slug, img):
+    """"auto": a layout from ITEM_LAYOUTS that neither of the last AUTO_AVOID posts (by folder
+    date, before this one) was drawn in, chosen by the slug so a rebuild picks the same one.
+    `split` needs exactly two items; it is skipped otherwise."""
+    if img['layout'] != 'auto':
+        return img['layout']
+    prior = sorted(d for d in os.listdir(POSTS) if d < slug and os.path.isdir(os.path.join(POSTS, d)))
+    used = []
+    for d in reversed(prior):
+        try:
+            sp = json.load(open(os.path.join(POSTS, d, 'post.json'), encoding='utf-8'))
+        except (OSError, ValueError):
+            continue
+        used.append(sp.get('image', {}).get('drawn_as') or sp.get('image', {}).get('layout'))
+        if len(used) == AUTO_AVOID:
+            break
+    pool = [l for l in ITEM_LAYOUTS if l not in used and not (l == 'split' and len(img['tiles']) != 2)]
+    if not pool:
+        pool = list(ITEM_LAYOUTS)
+    return pool[int(hashlib.sha256(slug.encode()).hexdigest(), 16) % len(pool)]
 
 CSS = '''
 *{box-sizing:border-box}
@@ -282,12 +347,35 @@ h1 em{font-style:normal;color:%(a)s}
 /* tiles */
 .tiles{display:grid;grid-template-columns:1fr 1fr;gap:24px}
 .t{background:#fff;border:2px solid #e4e2dc;border-top:10px solid %(a)s;border-radius:16px;padding:26px 30px;min-height:330px;display:flex;flex-direction:column}
-.te{font-weight:700;font-size:18px;letter-spacing:.12em;color:%(a)s}
+.te{font-weight:800;font-size:30px;letter-spacing:.04em;color:%(a)s;line-height:1.05}
 .tn{font-weight:800;font-size:72px;line-height:1;margin-top:12px;letter-spacing:-.02em}
 .tiles.many .t{padding:24px 24px;min-height:0}.tiles.many .tn{font-size:56px}
 .tu{font-weight:700;font-size:25px;margin-top:6px}
 .td{font-size:21px;line-height:1.38;color:#52514e;margin-top:10px}
 .tp{margin-top:auto;font-size:18px;color:#898781}.tp b{color:%(a)s}
+/* bands */
+.bands{display:flex;flex-direction:column;gap:16px}
+.bd{display:flex;align-items:center;gap:28px;background:%(a)s;color:#fff;border-radius:18px;padding:26px 34px}
+.bd.alt{background:#181713}
+.bdl{flex:1;min-width:0}.bds{font-weight:900;font-size:46px;line-height:1;letter-spacing:-.01em;text-transform:uppercase}
+.bdt{font-size:21px;line-height:1.35;opacity:.88;margin-top:10px}
+.bdr{flex:none;text-align:right;max-width:46%%}.bdv{font-weight:900;font-size:64px;line-height:1;letter-spacing:-.02em}
+.bdu{font-size:20px;font-weight:600;opacity:.88;margin-top:6px}
+/* poster */
+.pb{display:inline-block;background:%(a)s;color:#fff;font-weight:900;font-size:46px;letter-spacing:-.01em;
+  text-transform:uppercase;padding:10px 22px;border-radius:10px;line-height:1}
+.pv{font-weight:900;font-size:120px;line-height:.95;letter-spacing:-.04em;margin-top:12px}
+.pu{font-weight:800;font-size:32px;margin-top:6px}.pt{font-size:23px;line-height:1.38;color:#52514e;margin-top:8px;max-width:980px}
+.pstrip{display:flex;gap:20px;margin-top:20px}
+.ps{flex:1;border-top:8px solid #181713;padding-top:14px}.pss{font-weight:900;font-size:30px;text-transform:uppercase;line-height:1}
+.psv{font-weight:900;font-size:52px;margin-top:6px;letter-spacing:-.02em}.psu{font-size:20px;color:#52514e;font-weight:600}
+/* split */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:18px}
+.sp{background:%(a)s;color:#fff;border-radius:20px;padding:28px 28px;min-height:400px;display:flex;flex-direction:column}
+.sp.alt{background:#181713}
+.sps{font-weight:900;font-size:44px;line-height:1;text-transform:uppercase;letter-spacing:-.01em}
+.spv{font-weight:900;font-size:84px;line-height:1;margin-top:22px;letter-spacing:-.03em}
+.spu{font-weight:700;font-size:25px;margin-top:8px;opacity:.95}.spt{font-size:22px;line-height:1.4;opacity:.88;margin-top:auto}
 /* hero */
 .hero{padding-top:30px}
 .hv{font-weight:800;font-size:220px;line-height:.95;letter-spacing:-.04em;color:%(a)s}
@@ -302,9 +390,10 @@ def build_html(spec, slug, data):
     w, h = SIZES[img.get('size', 'square')]
     name, color, motif, seed = flare_of(spec, slug)
     R = lambda t: render(t, data, lit, where=f'{slug} image', esc=True)  # noqa: E731
-    if img['layout'] not in LAYOUTS:
-        raise SystemExit(f'REFUSING: layout {img["layout"]!r}; choose from {", ".join(LAYOUTS)}')
-    body = LAYOUTS[img['layout']](img, R)
+    lay = pick_layout(slug, img)
+    if lay not in LAYOUTS:
+        raise SystemExit(f'REFUSING: layout {img["layout"]!r}; choose from auto, {", ".join(LAYOUTS)}')
+    body = LAYOUTS[lay](img, R)
     head = R(img['headline'])
     if img.get('emphasis'):
         e = R(img['emphasis'])
@@ -314,7 +403,7 @@ def build_html(spec, slug, data):
     path = html.escape(img.get('path', ''))
     css = CSS % dict(w=w, h=h, a=color, hs=img.get('headline_size', 66), cs=img.get('conclusion_size', 50))
     return f'''<!doctype html><html><head><meta charset="utf-8">
-<!-- GENERATED by scripts/build_social_post.py from post.json. Flare: {name} / {motif}. -->
+<!-- GENERATED by scripts/build_social_post.py from post.json. Flare: {name} / {motif}. Layout: {lay}. -->
 <style>{css}</style></head><body>
 {motif_svg(motif, color, w, h, seed)}
 <div class="frame">
