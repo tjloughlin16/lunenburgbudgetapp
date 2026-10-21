@@ -62,3 +62,34 @@ stm-2026-11-17). They are NOT on the live site. The next deploy will exceed the 
 The fix: serve paged /api/<table>/<n>.json (and similar) through a Pages Function reading R2,
 as /docs already does (fy28/functions/docs/_bucket.js), so those files leave the deployment.
 Pages Pro lifts the limit; Workers Paid does not.
+
+## TOMORROW (22 October 2026): thread pages get TABS -- TJ: "we build tabs tomorrow"
+
+The turf field thread (/threads/turf-field-study) outgrew one page: a vote log, ~29 history
+entries, the capital plans and months of meeting notes in one scroll. Proposed tabs, each
+linkable (#votes, #history already exist as anchors): Overview (where it stands, next,
+key figures) | Votes (vote_log: mover/seconder, FY it was for) | Capital plans (a year-by-year
+table: what the School Committee asked for vs what the Town Manager's program carried --
+built today as history entries; becomes a table) | History (thread-history.csv) | Meetings
+(the chronology) | Sources. Progressive disclosure: summary first, each layer on demand.
+
+## TO DO: connect the dots without TJ (the misses of 21 October)
+
+TJ had to find, himself, the 1 Apr 2025 Select Board reason ("pulled by the school
+department midway through the capital planning process") and the school side's account.
+Causes and the fix for each:
+1. A thread only reads its record from `started` -- the turf thread began Jan 2026, so years
+   of discussion never reached it. vote_log() now covers VOTES across the whole record; do the
+   same for decisions/topics/contention ("before this thread").
+2. Reason capture: for every vote in the log, attach the captions of the few minutes BEFORE
+   the motion -- where the reason is almost always said.
+3. Status-change detection in captions near a thread's subject: pulled, removed, withdrew,
+   tabled, deferred, never ranked, placeholder, held off. Our notes summarise these verbs away.
+4. Corroboration: when one body says another acted ("pulled by the school department"),
+   search that body's record before that date for the act itself.
+5. Plans by version: the schools' capital plans (approved vs revised drafts) and the Town
+   Manager's programs, compared item by item, are the record of what moved. TJ has filed a
+   records request for the OFFICIAL Capital Planning Committee lists and spreadsheets; when
+   they arrive they outrank the departments' ten-year plans.
+6. TC Passios: the automatic figure card says "$1M-$4M to demolish" against the history's
+   $2-3M (as said) -- fix the card picker's figure or the card.
