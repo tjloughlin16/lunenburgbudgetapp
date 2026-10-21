@@ -339,8 +339,15 @@ CATALOGUE_COLUMNS = {'state', 'rows_published', 'figures_reversed'}
 #   `table-corrections.csv` is a log of cells corrected in ANOTHER dataset, not a table of
 #   figures. All four of its pages are cited by `report-appropriations` anyway, so excluding
 #   it moves no page -- which is the point of doing it before it does.
+#
+#   `teacher-salary-schedules.csv` carries `fy` and `page`, and both are about a DIFFERENT
+#   BOOK: the fiscal year a salary grid pays, and the pdf page of a TEACHERS' CONTRACT. The
+#   join is (year, page), so twenty of its (fy, page) pairs land on financial pages of the
+#   town reports by coincidence of number -- FY2025 p36 is Lunenburg's contract grid AND a
+#   page of the FY2025 town report. `--check` named it UNDECLARED on 21 October 2026. It is
+#   not a reading of any annual report, so it is named here rather than declared in PROOF.
 NOT_READINGS = {'annual-report-pages', 'ingest-benchmark', 'extraction-blocked',
-                'table-corrections'}
+                'table-corrections', 'teacher-salary-schedules'}
 
 # WHICH COLUMN HOLDS THE YEAR OF THE BOOK THE PAGE IS IN. Requiring the literal name `fy`
 # made `outstanding-debt.csv` invisible: it names that column `report_fy`, so 1,038 proven
