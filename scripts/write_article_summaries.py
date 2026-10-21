@@ -44,8 +44,8 @@ NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
 MODEL = 'sonnet'
 VERSION = 3            # bump to rewrite every summary after a prompt change
 RECENT_DAYS = 60
-MAX_SENTENCES = 2
-MAX_CHARS = 320
+MAX_SENTENCES = 3        # "a sentence or two"; three short ones when an article carries several figures
+MAX_CHARS = 450
 CAUSE = re.compile(r'\b(?:because|due to|led to|caused|in order to|so that|as a result)\b', re.I)
 STOP = set('the a an of to and for in on at by with from town lunenburg article warrant vote '
            'fiscal year fund funds special annual meeting non binding question'.split())
@@ -62,7 +62,7 @@ Rules, all of them strict:
 - Do not explain causes or motives ("because", "in order to", "due to") unless WARRANT says so.
 - No finance jargon: not "appropriate", "raise and appropriate", "free cash certification",
   "enterprise fund", "levy". Say "pay for", "spend", "set aside" and so on.
-- At most two sentences, under 300 characters. No opinions, no adjectives about merit.
+- Two sentences, three at most when there are several figures; under 450 characters. No opinions, no adjectives about merit.
 - A NON-BINDING (advisory) question decides nothing: say what it asks voters, and that it is
   non-binding.
 - When the warrant is not posted yet, describe the article as the boards described it. Do NOT
@@ -152,7 +152,13 @@ def ask(body, n, meeting):
     res = json.loads(r.stdout)
     out = res.get('structured_output') or res.get('result')
     out = json.loads(out) if isinstance(out, str) else out
-    return {x['key']: x['summary'].strip() for x in out.get('articles') or []}, res.get('total_cost_usd') or 0
+    # Keys compared NORMALISED: the model may echo a key with a curly quote or changed spacing,
+    # and a key that does not match exactly must not silently become "no summary".
+    return {norm(x['key']): x['summary'].strip() for x in out.get('articles') or []}, res.get('total_cost_usd') or 0
+
+
+def norm(k):
+    return re.sub(r'[^a-z0-9|]+', '', k.lower().replace('’', "'"))
 
 
 def record(meeting, cost, result):
@@ -217,9 +223,16 @@ def main():
             print('  %-18s would write %d summaries (%d chars)' % (m['id'], len(todo), len(body)))
             continue
         got, cost = ask(body, len(todo), m['id'])
+        # A BATCH THAT DROPS AN ARTICLE: ask for each missing one on its own. Seen 21 October
+        # 2026 -- three of eleven came back absent from a batch and fine when asked singly.
+        for (k, _, _, _), pr in zip(todo, prompts):
+            if norm(k) not in got:
+                one, c1 = ask(pr, 1, m['id'])
+                got.update(one)
+                cost += c1
         # ONE SECOND TRY for a summary the checks refused, told exactly why. A figure from the
         # captions stays refused if it comes back: the check, not the model, decides.
-        again = [(k, check(got.get(k, ''), allowed)) for k, allowed, _, _ in todo if got.get(k)]
+        again = [(k, check(got.get(norm(k), ''), allowed)) for k, allowed, _, _ in todo if got.get(norm(k))]
         again = [(k, b) for k, b in again if b]
         if again:
             redo = '\n\n'.join('%s\nYOUR FIRST SUMMARY WAS REFUSED: %s. Rewrite it within the rules.'
@@ -230,9 +243,11 @@ def main():
         spent += cost
         kept = 0
         for k, allowed, basis, sha in todo:
-            s = got.get(k, '')
+            s = got.get(norm(k), '')
             bad = check(s, allowed) if s else ['empty']
-            store[k] = {'summary': '' if bad else s, 'from': basis, 'refused': bad if s else [],
+            if not s:
+                print('    no summary returned for %s' % k)
+            store[k] = {'summary': '' if bad else s, 'from': basis, 'refused': bad,
                         'refused_text': s if bad and s else '',
                         'allowed': allowed, 'input_sha256': sha, 'model': MODEL, 'version': VERSION,
                         'written_at': dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')}
