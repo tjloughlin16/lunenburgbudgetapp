@@ -323,7 +323,9 @@ def main():
     d = json.load(open(THREADS, encoding='utf-8'))
     curated = {r['thread'] for r in csv.DictReader(open(CURATED, encoding='utf-8'))} if os.path.exists(CURATED) else set()
     figs, today = heard_figures(), dt.date.today()
-    todo = [t for t in d['threads'] if (t['id'] in a.thread if a.thread else t['status'] == 'open')]
+    # GENERATED THREADS (build_town_meetings.py) are not picked for unless named: their
+    # callouts have not been agreed, and each pick is a metered model call.
+    todo = [t for t in d['threads'] if (t['id'] in a.thread if a.thread else t['status'] == 'open' and not t.get('generated'))]
     if a.thread and len(todo) != len(set(a.thread)):
         raise SystemExit('no such thread among %s' % a.thread)
     os.makedirs(OUT, exist_ok=True)

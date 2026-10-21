@@ -9,6 +9,7 @@ import { ThreadsHero } from '../components/ThreadsHero'
 import { ThreadKind, ThreadMark, KINDS, KIND_LABEL } from '../components/ThreadKind'
 import { HotBadge, ThreadHeat, Tangled, type Heat } from '../components/ThreadHeat'
 import { DynamicThread } from '../components/DynamicThread'
+import { TownMeetingBoard, type Warrant } from '../components/TownMeetingBoard'
 
 const TAB: Tab = 'threads'
 const DATA = 'threads.json'
@@ -72,7 +73,17 @@ type Thread = {
   /** A person's call that this leads the page, in this order (threads.csv `pin`). */
   pin: number | null
   on_agenda?: OnAgenda[]
+  /** GENERATED THREADS (scripts/build_town_meetings.py), never in threads.csv. A Town Meeting's
+   *  thread carries its status board in `warrant`; an article followed closely carries its
+   *  meeting in `parent` and the rule that promoted it in `promoted_why`. A registry thread that
+   *  closes at a Town Meeting carries `parent` too. All absent unless set. */
+  generated?: string; parent?: string; children?: string[]; warrant?: Warrant; promoted_why?: string
 }
+
+/** A Town Meeting's own thread is listed with the meetings, not among the matters; an article's
+ *  generated thread is reached from its meeting's board, unless its meeting is still to come. */
+const isMeeting = (t: Thread) => !!t.warrant
+const listedAsMatter = (t: Thread) => !isMeeting(t) && !(t.generated && t.status !== 'open')
 type ReportNeeded = {
   title: string; slug: string; status: 'new' | 'exists'; url: string; question: string; how: string
   meetings: { date: string; board: string; fiscal_year: string; question_then: string; watch_at: string; at: string; our_minutes: string }[]
@@ -267,11 +278,60 @@ function Card({ t, onGo, ours }: { t: Thread; onGo: (id: string) => void; ours: 
   )
 }
 
+/** EVERY TOWN MEETING, ONE LINE EACH: the one coming up first, then the rest newest first.
+ *  Each is a thread of its own -- built automatically the day the record first shows it (a
+ *  Select Board vote to call it, a legal notice, a posted warrant) -- whose page is the meeting's
+ *  status board. */
+function TownMeetings({ d, onGo }: { d: Payload; onGo: (id: string) => void }) {
+  const [all, setAll] = useState(false)
+  const ms = d.threads.filter(isMeeting).sort((a, b) => (b.warrant!.date).localeCompare(a.warrant!.date))
+  if (!ms.length) return null
+  const ahead = ms.filter(t => t.warrant!.status === 'upcoming').reverse()
+  const past = ms.filter(t => t.warrant!.status !== 'upcoming')
+  const SHOW = 4
+  const shown = all ? past : past.slice(0, SHOW)
+  const line = (t: Thread) => {
+    const w = t.warrant!
+    const voted = w.articles.filter(a => a.result).length
+    const close = w.articles.filter(a => a.promoted).length
+    return (
+      <li key={t.id} className="py-2 border-t first:border-t-0" style={{ borderColor: 'var(--grid)' }}>
+        <a href={`/threads/${t.id}`} onClick={e => { e.preventDefault(); onGo(t.id) }}
+          style={{ fontWeight: 600, textDecoration: 'none' }}>{t.label}</a>
+        <div style={{ ...muted, fontSize: 13, marginTop: 2 }}>
+          {w.articles.length} {w.articles.length === 1 ? 'article' : 'articles'}
+          {w.status === 'upcoming' ? (w.warrant_doc ? ' on the warrant' : ' placed so far; warrant not yet posted')
+            : <> · {voted} with a vote in the record we hold</>}
+          {close ? <> · {close} followed closely</> : null}
+        </div>
+      </li>
+    )
+  }
+  return (
+    <>
+      <H2>Town Meetings</H2>
+      <Body>Every article on each warrant, and where it stands. Each meeting gets its page as soon
+        as the record shows it is coming.</Body>
+      <ul className="list-none p-0 m-0 mt-2 max-w-2xl">
+        {ahead.map(line)}
+        {shown.map(line)}
+      </ul>
+      {past.length > SHOW ? (
+        <button type="button" onClick={() => setAll(a => !a)}
+          className="mt-1 text-[13.5px] font-semibold" style={{ color: 'var(--series-cost)' }}>
+          {all ? 'Show fewer' : `Show all ${past.length} past meetings`}
+        </button>
+      ) : null}
+    </>
+  )
+}
+
 function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ours: Set<string> }) {
   const [group, setGroup] = useState<string | null>(null)
-  const open = d.threads.filter(t => t.status === 'open')
-  const resolved = d.threads.filter(t => t.status === 'resolved')
-  const lapsed = d.threads.filter(t => t.status === 'lapsed')
+  const matters = d.threads.filter(listedAsMatter)
+  const open = matters.filter(t => t.status === 'open')
+  const resolved = matters.filter(t => t.status === 'resolved')
+  const lapsed = matters.filter(t => t.status === 'lapsed')
 
   /* EVERY THREAD APPEARS ONCE. TJ, 11 October 2026: "threads page duplicates threads
      multiple times." It did -- 41 cards for 21 threads. A pinned thread showed in Top AND
@@ -365,6 +425,8 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
       {group && !pinned.length && !newly.length && !rest.length
         ? <Body>Nothing open in {groupLabel(group)}.</Body> : null}
 
+      <TownMeetings d={d} onGo={onGo} />
+
       {/* Resolved grows forever, so it is grouped by fiscal year first — "what did Town
           Meeting settle in FY26" is the question people bring to an archive (§14c). */}
       <H2>Settled</H2>
@@ -421,9 +483,9 @@ function Landing({ d, onGo, ours }: { d: Payload; onGo: (id: string) => void; ou
           twenty — the shape of the year rather than the way in. A reader who wants one
           thread has it before they reach this; a reader who wants the pattern finds it
           where patterns belong, after the particulars. */}
-      <H2>All {d.threads.length}, across time</H2>
+      <H2>All {matters.length}, across time</H2>
       <ThreadRibbons
-        rows={d.threads.map(t => ({
+        rows={matters.map(t => ({
           id: t.id, label: t.label, status: t.status, kind: t.kind, tone: toneOf(t),
           first: t.first_seen, last: t.last_moved,
           dates: t.chronology.map(c => c.date),
@@ -732,12 +794,23 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
   const votes = t.chronology.flatMap(c => c.items.filter(i => i.kind === 'vote').map(i => ({ c, i }))).reverse()
   const townN = t.chronology.filter(c => c.items.some(i => i.source === 'town')).length
   const oursN = t.chronology.filter(c => c.items.some(i => i.source !== 'town')).length
+  const parent = t.parent ? d.threads.find(x => x.id === t.parent) : null
+  if (t.warrant) return <MeetingPage t={t} d={d} onGo={onGo} />
   return (
     <>
       <p style={{ margin: '0 0 10px' }}>
         <a href="/threads" onClick={e => { e.preventDefault(); onGo(null) }}
           style={{ fontSize: 13 }}>← everything the town is deciding</a>
       </p>
+      {/* PART OF A TOWN MEETING: an article followed closely, or a matter that closes there. */}
+      {parent ? (
+        <p className="text-[13.5px] m-0 mb-2" style={secondary}>
+          On the warrant for the{' '}
+          <a className="underline font-semibold" style={{ color: 'var(--series-cost)' }} href={`/threads/${parent.id}`}
+            onClick={e => { e.preventDefault(); onGo(parent.id) }}>{parent.label}</a>
+          {t.promoted_why ? <>. Followed closely: {t.promoted_why}.</> : null}
+        </p>
+      ) : null}
 
       {/* THE STATUS, ONE LINE. Open or settled, and where it last came up. The hot badge,
           where earned, sits above the title (the shell's kicker), not here. */}
@@ -913,6 +986,58 @@ function One({ t, d, onGo, ours }: { t: Thread; d: Payload; onGo: (id: string | 
   )
 }
 
+/** A TOWN MEETING'S PAGE: the meeting and its status board first, then how the warrant came
+ *  together, meeting by meeting (rule 7a -- the thing first). */
+function MeetingPage({ t, d, onGo }: { t: Thread; d: Payload; onGo: (id: string | null) => void }) {
+  const [all, setAll] = useState(false)
+  const chron = [...t.chronology].reverse()
+  const SHOW = 6
+  const shown = all ? chron : chron.slice(0, SHOW)
+  return (
+    <>
+      <p style={{ margin: '0 0 10px' }}>
+        <a href="/threads" onClick={e => { e.preventDefault(); onGo(null) }}
+          style={{ fontSize: 13 }}>← everything the town is deciding</a>
+      </p>
+      <TownMeetingBoard w={t.warrant!} onGo={id => onGo(id)} />
+
+      <H2>How the warrant came together</H2>
+      <p className="text-[13px] mt-0 mb-3 max-w-2xl" style={muted}>
+        Every meeting where a board took up this warrant or one of its articles, newest first. Each
+        line names its record: <strong>the town&rsquo;s minutes</strong>, quoted, or{' '}
+        <strong>our notes from the recording</strong>, written from machine captions that can mishear
+        numbers and names.
+      </p>
+      {chron.length === 0 ? <Body>Nothing in the readable record yet.</Body> : (
+        <ol className="list-none p-0 m-0 space-y-2.5 max-w-2xl">
+          {shown.map((c, i) => <Stop key={i} c={c} />)}
+        </ol>
+      )}
+      {chron.length > SHOW ? (
+        <button type="button" onClick={() => setAll(a => !a)}
+          className="mt-2 text-[13.5px] font-semibold" style={{ color: 'var(--series-cost)' }}>
+          {all ? 'Show fewer' : `Show the ${chron.length - SHOW} earlier meetings`}
+        </button>
+      ) : null}
+
+      <NotShown>
+        {t.caveat ? <p>{t.caveat}</p> : null}
+        <p className={t.caveat ? 'mt-2' : ''}>
+          This page was built automatically from the record: the Select Board&rsquo;s votes, the legal
+          notice and the warrant the town posted, our notes of each meeting, and the Town Clerk&rsquo;s
+          printed record in the annual town report, which arrives about a year later and replaces our
+          notes of the votes when it does. A stage with nothing in the record behind it is left blank.
+        </p>
+        <p className="mt-2">
+          A board&rsquo;s discussion is filed here when it names an article, the warrant or Town Meeting.
+          Discussion in other words is missing, and so is any meeting that left no record we can read
+          ({d.coverage.meetings_readable.toLocaleString()} meetings can be read).
+        </p>
+      </NotShown>
+    </>
+  )
+}
+
 export function Threads() {
   const { d, err } = useReport<Payload>(DATA)
   const [id, setId] = useState<string | null>(() => threadIdFromPath(window.location.pathname))
@@ -949,8 +1074,8 @@ export function Threads() {
   // record has anything to be set against.
   const ours = useMemo(
     () => new Set((d?.threads ?? []).flatMap(x => x.chronology.map(c => c.date))), [d])
-  const open = d ? d.threads.filter(x => x.status === 'open').length : 0
-  const settled = d ? d.threads.filter(x => x.status === 'resolved').length : 0
+  const open = d ? d.threads.filter(x => listedAsMatter(x) && x.status === 'open').length : 0
+  const settled = d ? d.threads.filter(x => listedAsMatter(x) && x.status === 'resolved').length : 0
 
   return (
     <ReportShell

@@ -1322,6 +1322,11 @@ def run(a, notes, ctx):
         # four more meetings -- a generator nothing ran, and nothing checked.
         # ...after the agendas are matched to them, so a thread names its next meeting.
         py('build_agenda_threads.py', check=False)
+        # THE TOWN MEETINGS: every meeting found from the record, every warrant article and
+        # where it stands, written as generated threads that build_threads.py merges -- so a
+        # new warrant, recommendation or vote reaches its board the day it is read (TJ, 21
+        # October 2026). Deterministic, no model, ~25s.
+        py('build_town_meetings.py', check=False)
         py('build_threads.py', check=False)
         # THE CALLOUTS, for the threads whose record just changed -- what someone says next
         # (TJ, 19 October 2026). A model picks, threads batched to a call, only where the input moved, and a second call judges every new pick;

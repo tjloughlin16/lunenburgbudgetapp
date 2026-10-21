@@ -42,6 +42,7 @@ import argparse
 import collections
 import csv
 import datetime as dt
+import functools
 import glob
 import json
 import os
@@ -76,6 +77,21 @@ def report_links(t, catalogue):
         out.append({'title': r['title'], 'url': r['url']})
     return out
 DECLINED = os.path.join(ROOT, 'sources', 'data', 'threads-declined.csv')
+# GENERATED THREADS, never hand-edited: one JSON per generator, each {'threads': [row, ...]} in
+# the registry's own columns plus the generator's fields. build_town_meetings.py writes one
+# thread per Town Meeting -- its status board in `warrant`, its life in `chronology` -- and one
+# per article promoted by its rule, with `parent`. threads.csv stays the hand registry.
+AUTO = os.path.join(ROOT, 'sources', 'data', 'threads-auto')
+# Fields a generated thread may carry that a registry thread never does. Written only when set,
+# so a thread from threads.csv builds exactly as it did before.
+AUTO_FIELDS = ('generated', 'parent', 'children', 'warrant', 'promoted_why')
+
+
+def auto_rows():
+    out = []
+    for f in sorted(glob.glob(os.path.join(AUTO, '*.json'))):
+        out.extend(json.load(open(f, encoding='utf-8'))['threads'])
+    return out
 MINUTES = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 # MOMENTS A PERSON PICKED OUT OF A RECORDING, for a thread, where our minutes dropped them.
 # TJ, 17 October 2026, on the School Committee calling the track walls a danger: *"can you put
@@ -592,6 +608,10 @@ def chronology(t, record, town=None):
         slug, date = key
         if t.get('started') and date < t['started']:
             continue
+        # `until`: a generated article thread ends at its Town Meeting (build_town_meetings.py).
+        # The hand registry has no such column, so its threads are unchanged.
+        if t.get('until') and date > t['until']:
+            continue
         rec = record.get(key)
         hits = []
         if rec:
@@ -658,8 +678,10 @@ def chronology(t, record, town=None):
     return out
 
 
+@functools.lru_cache(maxsize=None)
 def board_names():
-    """slug -> the board's name as the town's AgendaCenter files it."""
+    """slug -> the board's name as the town's AgendaCenter files it. Read once: chronology()
+    calls it per thread, and the index is twelve thousand rows. Callers copy it (dict(...))."""
     out = {}
     for r in read_csv(os.path.join(ROOT, 'sources', 'meetings', 'index.csv')):
         out.setdefault((r.get('path') or '').split('/')[0], r.get('board') or '')
@@ -846,11 +868,30 @@ def build():
                              if x.get('ready')}}
     rows = read_csv(THREADS)
     calls = callouts({t['id'] for t in rows}, problems)
+    auto = auto_rows()
+    hand_ids = {t['id'] for t in rows}
+    for t in auto:
+        if t['id'] in hand_ids:
+            problems.append('%s is both in threads.csv and generated' % t['id'])
+    kids = collections.defaultdict(list)
+    for t in auto:
+        if t.get('parent'):
+            kids[t['parent']].append(t['id'])
+    # A HAND THREAD THAT CLOSES AT A TOWN MEETING belongs under that meeting too: its closure
+    # names the meeting's date. Computed from the registry's own closure columns, never typed.
+    tm_ids = {t['warrant']['date']: t['id'] for t in auto if t.get('warrant')}
     for t in rows:
-        chron = chronology(t, record, town)
+        if t.get('closed_board') == 'town-meeting' and t.get('closed_date') in tm_ids:
+            kids[tm_ids[t['closed_date']]].append(t['id'])
+    for t in rows + auto:
+        gen = t in auto
+        # A GENERATED MEETING THREAD BRINGS ITS OWN CHRONOLOGY AND CLOSURE: its life is the
+        # warrant's, assembled by build_town_meetings.py; a generated ARTICLE thread is
+        # followed by the same matcher as every registry thread.
+        chron = t['chronology'] if gen and 'chronology' in t else chronology(t, record, town)
         temp = temperature(t, chron, dt.date.today().isoformat(), every)
         stands = where_it_stands(chron)
-        closure = resolve_closure(t, record, official)
+        closure = t['closure'] if gen and 'closure' in t else resolve_closure(t, record, official)
         if t['status'] == 'resolved' and not closure:
             problems.append('%s says resolved and its closure does not resolve to a vote' % t['id'])
         if not (t.get('closes') or '').strip():
@@ -874,7 +915,7 @@ def build():
                                'registered_on', 'started', 'closes', 'status', 'resolved_on', 'caveat')},
             closure=closure,
             callouts=calls.get(t['id'], []),
-            reports=report_links(t, catalogue),
+            reports=report_links(t, catalogue) if not gen else [],
             reports_needed=reports_needed(t['id']),
             # WHERE IT IS ON AN AGENDA: every posted agenda in the window whose item carries
             # this thread's words, upcoming and just past. The page filters by the reader's
@@ -910,13 +951,19 @@ def build():
             # October 2026: *"need to have a way to make them important and ordered"*. The
             # registry's `pin` column; blank is unpinned, and unpinned threads keep the
             # newest-first order below the pinned ones.
-            pin=int(t['pin']) if (t.get('pin') or '').strip().isdigit() else None,
+            pin=int((t.get('pin') or '').strip()) if (t.get('pin') or '').strip().isdigit() else None,
             heat=temp['heat'], stage=temp['stage'], tangled=temp['tangled'], hot=temp['hot'],
             momentum=temp['basis'],
             weight=(len({c['board_slug'] for c in chron}) * 100
                     + int((mts[-1] if mts else '0000-00-00').replace('-', '')[2:6] or 0) // 100
                     + min(len(chron), 40)),
         ))
+        extra = dict((k, t[k]) for k in AUTO_FIELDS if gen and t.get(k))
+        if kids.get(t['id']):
+            extra['children'] = kids[t['id']]
+        if t.get('closed_board') == 'town-meeting' and t.get('closed_date') in tm_ids and not gen:
+            extra['parent'] = tm_ids[t['closed_date']]
+        threads[-1].update(extra)
     # THE DENOMINATOR, ON EVERY RUN (THREADS-MODEL §7 and search_minutes.py). A thread that
     # went quiet because the RECORD went quiet is not a thread where nothing happened, and
     # the boards with the thinnest minutes are not the boards with the least happening.
@@ -949,7 +996,9 @@ def hottest(threads):
 
     `as_of` travels with it because `hot` is relative to the day this ran. A refresh that
     stops would otherwise leave last month's fire on the front page; the page checks it."""
-    rows = [t for t in threads if t['hot']]
+    # A generated Town Meeting thread is not put on the front page by this rule; whether it
+    # should be is a decision for later (THREADS-MODEL §20).
+    rows = [t for t in threads if t['hot'] and not t.get('generated')]
     rows.sort(key=lambda t: (-t['momentum']['meetings_last_30'], -t['momentum']['boards_last_30'],
                              t['momentum']['days_since_last']))
     return {'as_of': dt.date.today().isoformat(), 'window_days': HOT_WINDOW,

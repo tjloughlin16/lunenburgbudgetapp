@@ -103,9 +103,11 @@ function useThisWeek(): Pane | null {
 }
 
 function useThreads(): Pane | null {
-  const { d } = useReport<{ threads: { status: string; is_new: boolean; label: string; id: string }[] }>('threads.json')
+  const { d } = useReport<{ threads: { status: string; is_new: boolean; label: string; id: string; generated?: string }[] }>('threads.json')
   if (!d) return null
-  const open = d.threads.filter(t => t.status === 'open')
+  // A GENERATED thread (a town meeting, a warrant article) is not counted here, as /threads
+  // does not count it: the meeting has its own line above this list (TownMeetingNow).
+  const open = d.threads.filter(t => t.status === 'open' && !t.generated)
   return {
     tab: 'Threads', title: 'Open threads', all: `All ${open.length}`, allHref: '/threads', label: 'Open threads',
     rows: open.slice(0, 3).map(t => (
@@ -417,6 +419,42 @@ function BudgetFeedCard() {
   )
 }
 
+/** A TOWN MEETING, FROM THE DAY IT IS KNOWN UNTIL A WEEK AFTER IT. TJ, 21 October 2026:
+ *  "once a town meeting thread upcoming has been identified (boards have started discussing
+ *  it or the warrant opens), a link on the home page for a week after the town meeting
+ *  should show up ... ABOVE the board 'this week' list". Known = the Select Board called it
+ *  or its warrant opened, whichever the record shows first (build_town_meetings.py); the
+ *  line goes by itself TM_AFTER_DAYS after the meeting. Nothing when no meeting is near. */
+const TM_AFTER_DAYS = 7
+type TmWarrant = { meeting: string; date: string; kind: string; status: string; called_on?: string
+  warrant_opens?: string; warrant_closes?: string; articles?: unknown[] }
+function TownMeetingNow() {
+  const { d } = useReport<{ threads: { id: string; kind?: string; label: string; warrant?: TmWarrant }[] }>('threads.json')
+  if (!d) return null
+  const today = todayIso()
+  const live = d.threads.filter(t => {
+    const w = t.kind === 'town-meeting' ? t.warrant : undefined
+    if (!w?.date) return false
+    const known = [w.called_on, w.warrant_opens].filter((x): x is string => !!x).sort()[0]
+    return !!known && known <= today && daysAway(w.date) >= -TM_AFTER_DAYS
+  }).sort((a, b) => (a.warrant!.date < b.warrant!.date ? -1 : 1))
+  if (!live.length) return null
+  return (
+    <ListSection title="Town Meeting" label="Town Meeting">
+      {live.map(t => {
+        const w = t.warrant!
+        const n = w.articles?.length ?? 0
+        const away = daysAway(w.date)
+        const kind = w.kind === 'annual' ? 'Annual Town Meeting' : 'Special Town Meeting'
+        const sub = away >= 0
+          ? `${away === 0 ? 'Today' : away === 1 ? 'Tomorrow' : `In ${away} days`} \u00b7 ${n} article${n === 1 ? '' : 's'} so far \u00b7 where each one stands`
+          : `Held \u00b7 how each of the ${n} articles was voted`
+        return <Row key={t.id} href={`/threads/${t.id}`} eyebrow={dayLabel(w.date)} title={kind} sub={sub} accent />
+      })}
+    </ListSection>
+  )
+}
+
 type Hottest = {
   as_of: string; window_days: number
   threads: { id: string; label: string; short: string; hook?: string; meetings: number; boards: number; days_since_last: number }[]
@@ -591,6 +629,7 @@ export function Home() {
           </p>
         </header>
         <BudgetFeedCard />
+        <TownMeetingNow />
         <HomeLive />
         <HomeLatest />
       </div>
