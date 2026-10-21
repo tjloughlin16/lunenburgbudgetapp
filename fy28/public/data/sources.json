@@ -3897,7 +3897,7 @@
      "stars": 1,
      "what": "Written by us, by scripts/build_town_meetings.py, with no model: a thread for every Town Meeting, and one for each article discussed well beyond its routine stops, which build_threads.py merges beside the hand registry in threads.csv.",
      "kind": "JSON",
-     "bytes": 2193452,
+     "bytes": 2196107,
      "url": "/docs/data/threads-auto/town-meetings.json",
      "textUrl": "/docs/data/threads-auto/town-meetings.json"
     },
@@ -4014,6 +4014,16 @@
      "textUrl": "/docs/analyses/charts/town-personnel-people.svg"
     },
     {
+     "path": "data/article-summaries.json",
+     "title": "A sentence or two per warrant article, model-written and checked",
+     "stars": 1,
+     "what": "OURS, written by a language model (claude -p) in scripts/write_article_summaries.py from the warrant’s own words, heard-figures.csv and our notes of the board discussion, and nothing else. A summary carrying a figure that neither the warrant nor a checked figure carries is refused. Each says what it was written from. The warrant is the record.",
+     "kind": "JSON",
+     "bytes": 10716,
+     "url": "/docs/data/article-summaries.json",
+     "textUrl": "/docs/data/article-summaries.json"
+    },
+    {
      "path": "analyses/charts/stabilization-all.svg",
      "title": "The stabilization funds compared, on one scale",
      "stars": 1,
@@ -4022,16 +4032,6 @@
      "bytes": 10225,
      "url": "/docs/analyses/charts/stabilization-all.svg",
      "textUrl": "/docs/analyses/charts/stabilization-all.svg"
-    },
-    {
-     "path": "data/article-summaries.json",
-     "title": "A sentence or two per warrant article, model-written and checked",
-     "stars": 1,
-     "what": "OURS, written by a language model (claude -p) in scripts/write_article_summaries.py from the warrant’s own words, heard-figures.csv and our notes of the board discussion, and nothing else. A summary carrying a figure that neither the warrant nor a checked figure carries is refused. Each says what it was written from. The warrant is the record.",
-     "kind": "JSON",
-     "bytes": 9987,
-     "url": "/docs/data/article-summaries.json",
-     "textUrl": "/docs/data/article-summaries.json"
     },
     {
      "path": "analyses/charts/town-personnel-all.svg",
@@ -4458,6 +4458,18 @@
      "textUrl": "/docs/analyses/charts/spent-with-no-budget-years.svg"
     },
     {
+     "path": "data/heard-figures.csv",
+     "title": "Figures a person checked in the meeting recordings",
+     "stars": 1,
+     "what": "Written by us: a figure our notes of a recording heard, which a person then listened for at the cited second of the video, with who checked it and when. Captions mishear numbers, so these are the only heard figures an article summary may carry. Cite the video at its timestamp, never this file.",
+     "kind": "Data",
+     "bytes": 2964,
+     "url": "/docs/data/heard-figures.csv",
+     "count": 8,
+     "unit": "rows",
+     "textUrl": "/docs/data/heard-figures.csv"
+    },
+    {
      "path": "analyses/charts/board-composition-fill.svg",
      "title": "Are the chartered seats filled?",
      "stars": 1,
@@ -4558,18 +4570,6 @@
      "count": 6,
      "unit": "rows",
      "textUrl": "/docs/data/debt-repayment-detail-refused.csv"
-    },
-    {
-     "path": "data/heard-figures.csv",
-     "title": "Figures a person checked in the meeting recordings",
-     "stars": 1,
-     "what": "Written by us: a figure our notes of a recording heard, which a person then listened for at the cited second of the video, with who checked it and when. Captions mishear numbers, so these are the only heard figures an article summary may carry. Cite the video at its timestamp, never this file.",
-     "kind": "Data",
-     "bytes": 1334,
-     "url": "/docs/data/heard-figures.csv",
-     "count": 4,
-     "unit": "rows",
-     "textUrl": "/docs/data/heard-figures.csv"
     },
     {
      "path": "data/report-appropriations-supplement-refused.csv",
@@ -5873,9 +5873,9 @@
      "stars": 3,
      "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
      "kind": "Data",
-     "bytes": 754879,
+     "bytes": 755152,
      "url": "/docs/data/agentic-spend.csv",
-     "count": 10934,
+     "count": 10937,
      "unit": "rows",
      "textUrl": "/docs/data/agentic-spend.csv"
     },
@@ -56479,7 +56479,7 @@
  "totals": {
   "documents": 5054,
   "groups": 27,
-  "bytes": 6609615970,
+  "bytes": 6609621257,
   "loadBearing": 194
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
