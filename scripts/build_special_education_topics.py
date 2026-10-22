@@ -683,54 +683,134 @@ def build():
                          'p': P(cutp, 0)})
 
     # ------------------------------------------------ overruns against the voted budget
+    # Built to answer a resident's question: what should the Special Education Reserve Fund
+    # hold, judged by the average and the standard deviation of the overrun year to year?
+    # So the page carries the series, its average and SD, the levels those give, and how
+    # many of the years each level would have covered -- and the arithmetic behind each year.
     need = SC['need']
     pl = SC['per_line']
     req = SC['request']
     nyrs = SC['last_fy'] - SC['first_fy'] + 1
     if len(SC['surprise']) != nyrs or pl['ood']['years'] != nyrs:
         fail('the surprise series no longer covers every year from first_fy to last_fy')
+    # Prove the series from the ledger itself, not from the generator's own field: each
+    # line's spending at the close less the budget voted before the year, and a year's need
+    # is the sum of the lines that ran OVER (an underspend on one line does not pay another's
+    # overrun -- a reserve exists so the overrun need not be found elsewhere).
+    LINES = ('indist', 'ood', 'trans')
+    sur = sorted(SC['surprise'], key=lambda r: r['fy'])
+    for r, lg in zip(sur, sorted(SC['ledger'], key=lambda r: r['fy'])):
+        v = {g: lg[g]['spent'] - lg[g]['original'] for g in LINES}
+        if r['fy'] != lg['fy'] or any(v[g] != r[g] for g in LINES) \
+                or r['need'] != sum(max(0, v[g]) for g in LINES):
+            fail('special-education-costs.json: FY%s need no longer recomputes from the ledger'
+                 % r['fy'])
+    vals = [r['need'] for r in sur]
+    avg = round(statistics.mean(vals))
+    sd = round(statistics.stdev(vals))        # sample SD: 17 years are a sample of years
+    lv1, lv2 = avg + sd, avg + 2 * sd
+    cov = lambda lvl: sum(1 for x in vals if x <= lvl)
+    two = max(((sur[i]['fy'], vals[i] + vals[i + 1]) for i in range(len(vals) - 1)),
+              key=lambda x: x[1])
+    if max(vals) != need['worst']['gross']:
+        fail('the worst year in the series is not need.worst')
     worst_b = max(req['bases'], key=lambda b: b['before'])
     rs = SC['reserve']
+    if cov(lv2) != nyrs:
+        fail('average + 2 SD no longer covers every year; the conclusion says it does')
+    fy0, fy1 = C.fy(sur[0]['fy']), C.fy(sur[-1]['fy'])
     out['special-education-overruns'] = TP.page(
         'special-education-overruns',
         'In the worst of %s years, %s, special education needed %s beyond its voted budget.'
         % (C.num(nyrs), C.fy(need['worst']['fy']), C.usd(need['worst']['gross'])),
-        [f('worst', U(need['worst']['gross']), 'needed beyond the voted budget, %s'
+        [f('worst', U(need['worst']['gross']), 'needed beyond the vote in %s, the worst year'
            % C.fy(need['worst']['fy']), 'published', {'y': F(need['worst']['fy'])}),
-         f('needing', N(need['years_needing'], 'years'), 'of %s needing more than was voted'
+         f('mean', U(avg), 'needed beyond the vote in an average year', 'published'),
+         f('sd', U(sd), 'standard deviation, year to year', 'published'),
+         f('lvl1', U(lv1), 'average + 1 SD: enough in %s of %s years'
+           % (C.num(cov(lv1)), C.num(nyrs)), 'published',
+           {'a': N(cov(lv1)), 'n': N(nyrs)}, allow=('1 SD',)),
+         f('lvl2', U(lv2), 'average + 2 SD: enough in %s of %s years'
+           % (C.num(cov(lv2)), C.num(nyrs)), 'published',
+           {'a': N(cov(lv2)), 'n': N(nyrs)}, allow=('2 SD',)),
+         f('two', U(two[1]), 'worst two years running, %s and %s'
+           % (C.fy(two[0]), C.fy(two[0] + 1)), 'published',
+           {'y': F(two[0]), 'z': F(two[0] + 1)}),
+         f('needing', N(need['years_needing'], 'years'), 'of %s when a line ran over its vote'
            % C.num(nyrs), 'published', {'n': N(nyrs)}),
-         f('median', U(need['median']), 'needed in the median year', 'published'),
-         f('oodover', N(pl['ood']['years_over'], 'years'), 'of %s tuition ran over its budget'
+         f('oodover', N(pl['ood']['years_over'], 'years'), 'of %s when tuition ran over its vote'
            % C.num(nyrs), 'published', {'n': N(nyrs)}),
-         f('oodbest', U(-pl['ood']['best']), 'tuition under its budget, %s' % C.fy(pl['ood']['best_fy']),
+         f('oodbest', U(-pl['ood']['best']), 'tuition under its vote, %s' % C.fy(pl['ood']['best_fy']),
            'published', {'y': F(pl['ood']['best_fy'])}),
-         f('upper', U(worst_b['before']), '%s, with the account’s tuition put back (ours)'
+         f('upper', U(worst_b['before']), '%s, had circuit breaker paid no tuition (ours)'
            % C.fy(worst_b['fy']), 'estimate', {'y': F(worst_b['fy'])}),
-         f('cap', U(rs['cap']), 'most the new reserve may hold, as described', 'published'),
+         f('cap', U(rs['cap']), 'the most the reserve may hold, as described', 'published'),
          f('yes', N(rs['vote']['yes'], 'votes'), 'for the reserve, Town Meeting, November '
            '%s; %s against' % (rs['vote']['date'][:4], C.num(rs['vote']['no'])), 'published',
            {'n': N(rs['vote']['no'])}, allow=('November %s' % rs['vote']['date'][:4],))],
         [con('In the worst of %s years, %s, special education needed %s beyond its voted budget.'
              % (C.num(nyrs), C.fy(need['worst']['fy']), C.usd(need['worst']['gross'])),
-             ['worst', 'needing', 'median'],
+             ['worst', 'needing', 'mean'],
              {'n': N(nyrs), 'y': F(need['worst']['fy']), 'a': U(need['worst']['gross'])},
-             notes=[step('These are general fund figures after whatever tuition the circuit '
+             notes=[step('Each line\u2019s spending at the close less its vote; only lines that ran over '
+                         'are added.', 'measured'),
+                    step('These are general fund figures after whatever tuition the circuit '
                          'breaker account paid, and which accounts count is our grouping.', 'gap',
                          closes='a chart of accounts from the Town marking every special '
                                 'education account')]),
+         con('The average plus two standard deviations is %s, enough in all %s years.'
+             % (C.usd(lv2), C.num(nyrs)), ['mean', 'sd', 'lvl1', 'lvl2', 'two'],
+             {'a': U(lv2), 'n': N(nyrs)},
+             notes=[step('%s of the years needed nothing, so the spread is lopsided; the count of '
+                         'years covered assumes no shape.' % C.num(sum(1 for x in vals if x == 0)),
+                         'gap', {'z': N(sum(1 for x in vals if x == 0))}, allow=(fy0,),
+                         closes='a longer record: the same ledger lines before %s' % fy0)]),
          con('Tuition ran over its voted budget in %s of %s years, and under by as much as %s.'
              % (C.num(pl['ood']['years_over']), C.num(nyrs), C.usd(-pl['ood']['best'])),
              ['oodover', 'oodbest'],
              {'a': N(pl['ood']['years_over']), 'n': N(nyrs), 'b': U(-pl['ood']['best'])}),
-         con('Put the account’s tuition back and %s needed %s; the reserve may hold %s.'
+         con('Had the account paid no tuition, %s needed %s; the reserve may hold %s.'
              % (C.fy(worst_b['fy']), C.usd(worst_b['before']), C.usd(rs['cap'])),
              ['upper', 'cap', 'yes'],
              {'y': F(worst_b['fy']), 'a': U(worst_b['before']), 'c': U(rs['cap'])},
-             notes=[step('The reserve’s statute is not in this archive; its cap is as the Town '
+             notes=[step('The reserve\u2019s statute is not in this archive; its cap is as the Town '
                          'Manager described it, and what it holds is not published.', 'gap',
                          closes='the reserve statute as written, and the amount voted into the '
                                 'reserve')])],
-        chart=dict(id='special-education-costs-surprise', source=COSTS),
+        chart=TP.series('Needed beyond the voted budget, each year',
+                        [C.fy(r['fy']) for r in sur], [
+                            TP.track('Needed beyond the vote', vals, 'published'),
+                            TP.track('Average', [avg] * nyrs, 'published'),
+                            TP.track('Average + 1 SD', [lv1] * nyrs, 'published'),
+                            TP.track('Average + 2 SD', [lv2] * nyrs, 'published')],
+                        '$', kind='line', reference=(rs['cap'], 'The most the reserve may hold'),
+                        note='General fund, %s to %s: each line\u2019s spending above its original '
+                             'vote, added up. Average and SD are our arithmetic.' % (fy0, fy1),
+                        note_figures={'y': F(sur[0]['fy']), 'z': F(sur[-1]['fy'])}),
+        table=dict(caption='How each year\u2019s figure is reached, and the levels it gives', views=[
+            dict(key='years', label='Each year', total_col=3, kinds=['ledger'] * 5,
+                 columns=['In-district', 'Tuition', 'Transport', 'Needed', 'All three, net'],
+                 rows=[dict(label=C.fy(r['fy']),
+                            cells=[C.usd(r['indist']), C.usd(r['ood']), C.usd(r['trans']),
+                                   C.usd(r['need']),
+                                   C.usd(r['indist'] + r['ood'] + r['trans'])])
+                       for r in reversed(sur)],
+                 note='Each line: spent at the close less the budget voted before the year; '
+                      'negative is under. Needed adds only the lines that ran over; net adds all '
+                      'three. Ledger figures; the subtraction is ours.'),
+            dict(key='levels', label='Reserve levels', total_col=0, kinds=['ledger'] * 2,
+                 columns=['Amount', 'Years it would have covered'],
+                 rows=[dict(label=l, cells=[C.usd(v), c]) for l, v, c in [
+                     ('Average', avg, '%s of %s' % (cov(avg), nyrs)),
+                     ('Average + 1 SD', lv1, '%s of %s' % (cov(lv1), nyrs)),
+                     ('Average + 2 SD', lv2, '%s of %s' % (cov(lv2), nyrs)),
+                     ('Worst single year, %s' % C.fy(need['worst']['fy']), max(vals),
+                      '%s of %s' % (cov(max(vals)), nyrs)),
+                     ('Worst two years running, %s-%s' % (C.fy(two[0]), C.fy(two[0] + 1)),
+                      two[1], 'two years'),
+                     ('The most the reserve may hold', rs['cap'], '%s of %s' % (cov(rs['cap']), nyrs))]],
+                 note='Standard deviation is the sample SD of the %s yearly figures. '
+                      'Our arithmetic on the ledger.' % nyrs)]),
         said=[said(SC, 'establish'), said(SC, 'urgency'), said(SC, 'fourteen')],
         sources=S('glytdbud-expense-fy2026-p13-gf-school.xlsx',
                   'glytdbud-expense-fy2026-p13-special-school.xlsx',

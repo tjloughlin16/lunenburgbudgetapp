@@ -1,16 +1,16 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-10-21T11:18:44Z",
+ "picked_at": "2026-10-22T12:22:20Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.3934,
- "input_sha256": "567f3209bf224ca07a9a73689fd4767ee4a4583dfad80776da3bdc7700e0b284",
+ "cost_usd": 0.3801,
+ "input_sha256": "d599edee0804968f7e3cdaa548ddd4bacb72311ee9324bac35b48d1886a4414f",
  "callouts": [
   {
    "kind": "fee",
    "value": "Under $100/yr",
-   "label": "proposed cap on a stormwater fee per property for the first 3 years, if a utility is chosen",
+   "label": "proposed flat stormwater fee per home for the first 3 years, if a utility is chosen",
    "hook": "proposed stormwater fee cap",
    "quote": "it would not exceed $100 per property for the 1st 3 years",
    "heard": [
@@ -25,38 +25,14 @@
    "date": "2026-10-20",
    "video_id": "z9j248Lu80E",
    "t": 5452,
-   "where": "Select Board, 20 Oct 2026",
-   "verdict": {
-    "keep": true,
-    "why": "'Would not exceed $100 per property for the 1st 3 years', framed as a proposal if a utility is chosen. 'Under' is a slight stretch of 'not exceed'."
-   }
-  },
-  {
-   "kind": "warrant",
-   "value": "4-1 vote",
-   "label": "Select Board put an advisory article on stormwater funding options on the special town meeting warrant",
-   "hook": "",
-   "quote": "Motion passes 410.",
-   "heard": [],
-   "item_date": "2026-10-20",
-   "item_board": "select-board",
-   "basis": "heard",
-   "board": "select-board",
-   "date": "2026-10-20",
-   "video_id": "z9j248Lu80E",
-   "t": 11472,
-   "where": "Select Board, 20 Oct 2026",
-   "verdict": {
-    "keep": true,
-    "why": "Article 10 motion passed; captions read 'passes 410' with one 'No' heard, which fits 4-1."
-   }
+   "where": "Select Board, 20 Oct 2026"
   },
   {
    "kind": "money",
    "value": "$480,000",
-   "label": "a year the DPW director says is needed for stormwater compliance, versus about $100,000 budgeted now",
+   "label": "a year the DPW director says is needed to meet the stormwater permit, versus about $100,000 spent now",
    "hook": "",
-   "quote": "But I need around $480,000 a year to, to just to be compliant.",
+   "quote": "my stormwater budget's been a roughly $100,000 per year. But I need around $480,000 a year to, to just to be compliant.",
    "heard": [
     "$100,000",
     "123,000",
@@ -71,11 +47,23 @@
    "date": "2026-10-20",
    "video_id": "z9j248Lu80E",
    "t": 7314,
-   "where": "Select Board, 20 Oct 2026",
-   "verdict": {
-    "keep": true,
-    "why": "DPW director: about $100,000 budgeted, needs about $480,000 to be compliant. Quoted."
-   }
+   "where": "Select Board, 20 Oct 2026"
+  },
+  {
+   "kind": "impact",
+   "value": "$5,000-$50,000",
+   "label": "per day in possible fines for not complying with the federal stormwater permit",
+   "hook": "",
+   "quote": "The fines are $5000 to $50,000 per day.",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-10-20",
+   "video_id": "z9j248Lu80E",
+   "t": 4293,
+   "where": "Select Board, 20 Oct 2026"
   }
  ]
 }

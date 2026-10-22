@@ -1,0 +1,65 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2026-10-21",
+ "source": {
+  "sha256": "e554e51fad96946ac32fe959a6224b3fa0709ab481cba938fe2905aef9c40f6c",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2026-10-21-2-Ax9zkA1NA.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "$3 million",
+    "fiscal_year": 2028,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Turf, field and track replacement estimated in capital plan, likely a debt exclusion not capital.",
+    "status": "announced",
+    "t": 4459,
+    "who": "the superintendent"
+   },
+   {
+    "amount_as_heard": "624,961.19",
+    "fiscal_year": 2029,
+    "kind": "other",
+    "scope": "school",
+    "statement": "Total FY29 capital request.",
+    "status": "announced",
+    "t": 6305,
+    "who": "the superintendent"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "turf field and bleachers",
+    "condition": "if construction is delayed a year",
+    "fiscal_year": 2028,
+    "prediction": "Without prior funding, sports may have to use other fields and schedule away games; bleachers closed next year",
+    "scope": "school",
+    "t": 3940,
+    "who": "the superintendent"
+   },
+   {
+    "about": "facilities trucks",
+    "condition": "if the old trucks are not replaced",
+    "fiscal_year": 2028,
+    "prediction": "Plowing could be delayed and school openings affected if a snow truck fails",
+    "scope": "school",
+    "t": 5493,
+    "who": "the facilities director"
+   }
+  ]
+ },
+ "video_id": "2-Ax9zkA1NA",
+ "video_url": "https://www.youtube.com/watch?v=2-Ax9zkA1NA",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-22T12:06:31Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

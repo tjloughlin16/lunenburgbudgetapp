@@ -3,8 +3,8 @@
  "grain": "A row is a transfer as the Select Board’s minutes record it: sometimes one line to another, sometimes one total for a batch, sometimes only the vote. Totals add the amounts the minutes print; a transfer approved with no amount printed is counted and adds nothing. The fiscal year is the one the minutes state where they state one, otherwise the year the meeting fell in, marked as ours.",
  "has_forms": false,
  "minutes_from": "2010-07-06",
- "minutes_read": 590,
- "minutes_to": "2026-09-15",
+ "minutes_read": 597,
+ "minutes_to": "2026-10-06",
  "slug": "select-board",
  "sources": [
   {
@@ -97,6 +97,78 @@
    "n_gold": 0,
    "n_no_amount": 0,
    "not_counted": [
+    {
+     "amount": "",
+     "amount_as_printed": "not stated",
+     "amount_basis": "no amount printed",
+     "crosses": [],
+     "description": "Transfer of funds to the Special Education Reserve Fund, placed in the Special Town Meeting warrant (amount not set in the minutes).",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": true
+     },
+     "from_line": "",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "reserve fund",
+     "meeting_date": "2026-10-06",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10062026-8052",
+     "our_copy": "/docs/meetings/select-board/2026-10-06-minutes-8052.pdf",
+     "outcome": "Included in the November 17 warrant (passed 5-0-0); School Committee had not yet voted the amount.",
+     "quote": "motion to include the article for transfer of funds to the special education reserve fund in the warrant was made by member alonzo and seconded by vice-chair lehtinen.",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    },
+    {
+     "amount": "5541.00",
+     "amount_as_printed": "$5,541",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Redirect a $5,541 excess from Article 1 to Article 3 (a School Committee action the minutes describe as expected).",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": true
+     },
+     "from_line": "Article 1",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say) -- a July-September vote may close the year before",
+     "fy_ours": true,
+     "kind": "other",
+     "meeting_date": "2026-09-01",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09012026-7984",
+     "our_copy": "/docs/meetings/select-board/2026-09-01-minutes-7984.pdf",
+     "outcome": "not stated by the minutes; expected to be voted by the School Committee, not by the Board",
+     "quote": "a credit of $5,541 - an excess amount from article 1 that the school committee was expected to vote to redirect to article 3",
+     "to_line": "Article 3",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    },
+    {
+     "amount": "36000.00",
+     "amount_as_printed": "$36,000",
+     "amount_basis": "as printed",
+     "crosses": [],
+     "description": "Establish a special revenue fund seeded from WRAP funds, to be appropriated later by Town Meeting for Article 3.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": true
+     },
+     "from_line": "WRAP funds,",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say) -- a July-September vote may close the year before",
+     "fy_ours": true,
+     "kind": "other",
+     "meeting_date": "2026-09-01",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09012026-7984",
+     "our_copy": "/docs/meetings/select-board/2026-09-01-minutes-7984.pdf",
+     "outcome": "passed 5-0-0; fund established by Board vote",
+     "quote": "member alonzo moved to establish a special revenue fund, to be seeded with $36,000 from the wrap funds.",
+     "to_line": "be appropriated later by Town Meeting",
+     "video_url": "",
+     "why_not": "a town meeting article the board acted on; town meeting votes the transfer"
+    },
     {
      "amount": "151338.38",
      "amount_as_printed": "151,338.38",
@@ -1116,6 +1188,54 @@
      "to_line": "",
      "video_url": "",
      "why_not": "not a transfer of money (a licence or property transfer)"
+    },
+    {
+     "amount": "",
+     "amount_as_printed": "not printed",
+     "amount_basis": "no amount printed",
+     "crosses": [],
+     "description": "Previously set-aside ARPA administrative funds applied to existing salaries, unused balances frozen rather than a continuity plan written.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": true
+     },
+     "from_line": "Previously set-aside ARPA administrative funds applied",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "other",
+     "meeting_date": "2025-01-07",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01072025-6942",
+     "our_copy": "/docs/meetings/select-board/2025-01-07-minutes-6942.pdf",
+     "outcome": "Decided by the Interim Town Manager; balances frozen so they can be reversed once the new Town Manager's contract is final.",
+     "quote": "choosing instead to apply those funds to existing administration and finance salaries and freeze the unused balances",
+     "to_line": "existing salaries",
+     "video_url": "",
+     "why_not": "a payment, refund or allocation, not a transfer between budget lines"
+    },
+    {
+     "amount": "95000.00",
+     "amount_as_printed": "approximately $20,000; $75,000",
+     "amount_basis": "sum of 2 figures printed",
+     "crosses": [],
+     "description": "Internal transfer of unused capital funds to the Turkey Hill fire alarm project, plus $75,000 in unallocated ARPA funds identified to close the gap.",
+     "evidence": {
+      "form": false,
+      "minutes": true,
+      "recording": true
+     },
+     "from_line": "",
+     "fy_basis": "the fiscal year the meeting fell in (ours; the minutes do not say)",
+     "fy_ours": true,
+     "kind": "other",
+     "meeting_date": "2025-01-07",
+     "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_01072025-6942",
+     "our_copy": "/docs/meetings/select-board/2025-01-07-minutes-6942.pdf",
+     "outcome": "Reported as done by the Interim Town Manager; no vote recorded.",
+     "quote": "the town transferred approximately $20,000 in unused capital funds internally to turkey hill and identified an additional $75,000 in unallocated arpa funds",
+     "to_line": "",
+     "video_url": "",
+     "why_not": "reported or discussed, not voted by the committee"
     },
     {
      "amount": "32500.00",

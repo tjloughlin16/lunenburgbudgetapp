@@ -1,5 +1,117 @@
 # What is queued, in order
 
+## TOP — board finance pages: every fund clickable, drilling into its history
+
+TJ, 22 October 2026: *"finances section for boards should have each fund be clickable, to
+drill-in to the history."*
+
+`/boards/<slug>/finance` (and `/departments/<slug>`, same component: `fy28/src/pages/Finance.tsx`,
+payload `scripts/build_finance.py` -> `finance.json`) lists each account a body owns with
+its current figure. Each one should open its own history: the FY2011-FY2023 annual-report
+reading, the FY2023-FY2025 transcribed balances and the FY26 MUNIS figures, **kept as the
+three grades the payload already separates** (evidence / read / transcribed, rule 13a),
+with the FY2024-FY2025 special-revenue gap shown as a gap rather than bridged. One shared
+drill-in, so `/accounts` gets it too (rule 7d: one renderer, many payloads). Not started.
+
+---
+
+## QUEUED — metrics, site-wide: the block-grid format does not work
+
+TJ, 22 October 2026, on `/special-education/special-education-overruns`: *"the metrics are poorly
+labeled ... we also need to adjust the metrics across the whole site. this block table format
+doesn't work well."*
+
+**The page first.** Its tiles (`facts` in `topics/special-education-overruns.json`, built by
+`scripts/build_special_education_topics.py`) read as label fragments that only make sense
+glued to the number above them and to the page's own vocabulary:
+`$39,766 / needed in the median year` (needed for what?), `12 years / of 17 needing more than
+was voted`, `$619,020 / FY2024, with the account's tuition put back (ours)` ("the account" and
+"put back" are ours, not English a reader speaks -- rule 7b). Each label must say what the
+figure IS on its own: the quantity, the thing, the year.
+
+**Also on that page (TJ, 22 Oct): show the math, and one net line.**
+- *Prove how each figure was reached*, not just cite sources: for every tile, the inputs, the
+  arithmetic and the result, year by year -- e.g. voted (original) minus spent at close, per
+  line, summed; what "needed" means; how the FY2024 "account's tuition put back" estimate is
+  built. Generated from the same payload, never typed (rule 2); `verify_*` recomputes it.
+- *One line chart of the headline figure itself*: the $223,774 is, per year, out-of-district
+  tuition (spent at close minus original vote) plus transport (same), FY2013 = 131,335 + 92,439
+  -- checked against `special-education-costs.json` `ledger`; FY2024 = 87,269 + 65,455 = 152,724
+  ties to `need.worst_recent.gross`. Plot that per year, FY2010-FY2026, zero marked, with
+  `net` (after the circuit breaker account) as the second line if it reads. Confirm in
+  `build_sped_costs.py` whether a year that came in UNDER counts as negative or as zero before
+  plotting. A component (rule 7f), first on the page.
+
+**THE QUESTION THE CHART SERVES** (a resident's, relayed by TJ 22 Oct): *"assess the proper
+funding level for the Special Education Reserve Fund based on average and standard deviations
+year to year."* So the page should hand that reader the inputs, computed, not a verdict:
+- the per-year series SIGNED (under-budget years negative, not zeroed), gross and net of the
+  circuit breaker account, with mean, standard deviation, and each candidate level
+  (mean, mean+1 SD, mean+2 SD) drawn as horizontal lines on the chart;
+- beside each level, **how many of the 17 years it would have covered** -- the empirical count,
+  because 17 skewed points make an SD-based level a rough guide, and the count needs no
+  distribution assumption;
+- the statutory cap on the reserve already on the page ($541,717 -- re-derive, do not type it)
+  as one more line, so a reader sees where the cap sits against the levels;
+- labelled as OUR arithmetic on published figures (rule 3), dollars nominal, and what it does
+  not show: a reserve's balance carries over, so two bad years in a row is the real test --
+  show the worst two-year run too.
+
+**Then the format.** The grid is `LadderTile` in a 2/4-column bordered `<ul>` in
+`fy28/src/components/report.tsx` (~line 1027), plus the `Stat` row; ~50 files use one or the
+other. Fix it once, in `report.tsx`, so every report changes together (rule 7d). Not decided:
+what replaces the grid -- mock two or three options on this page for TJ before converting.
+Generators' label lengths are enforced in `conclusions.py`; any new label budget goes there.
+
+---
+
+## NEXT — a "start here" special education report: one table, by fiscal year
+
+A request TJ relayed on 22 October 2026. Columns asked for: **fiscal year, special education
+operating budget, IDEA grant funding, circuit breaker funding, actual costs.** Span: ten
+years, or from FY2021 "because of a formula change". Shape: the hub page under `/special-education`
+(hub-and-spoke; it does not replace the four existing pages), the table and its charts
+first, built from a payload (rule 7d).
+
+**What we already hold for each column, checked 22 Oct against the files:**
+
+| column | held | years | where |
+|---|---|---|---|
+| operating budget | general fund, voted (original and revised), three lines: in-district, out-of-district tuition, transport | FY2010-FY2026 | `special-education-costs.json` `ledger` (Finance Committee books to FY2022, MUNIS from FY2023) |
+| IDEA grant | 240 grant, 262 early childhood, AARP IDEA | **FY2020-FY2024 only** | `grants-history.csv`, from the superintendent's budget update -- a district-assembled document, so `stated`, not evidence (rule 13a) |
+| circuit breaker | what DESE paid, by year of payment | FY2006-FY2026 | `dese-circuit-breaker.csv`; fund 2640 receipts and spending FY2023+ |
+| actual costs | general fund spent, same three lines | FY2010-FY2026 | same `ledger` |
+| actual costs, all funds | out-of-district tuition only | FY2023-FY2026 | `special-education-costs.json` `all_funds`; EOYR schedules held for FY2023-FY2024 |
+
+**Gaps to register (rule 7c) before building:**
+- ~~IDEA FY2016-FY2019 and FY2025-FY2026.~~ **DESE publishes it, FY2017-FY2027**, one page per
+  year: `https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=district&fy=<YYYY>&code=0162`.
+  A plain GET works; every year foots to its own `District Total`. Fetched to scratchpad 22 Oct,
+  NOT ingested. 240 grant: $353,466 (FY17) -> $423,413 (FY27). It disagrees with the district's
+  `grants-history.csv` in FY2020 and FY2024 (240), in all four years of 262, and on ARP IDEA (DESE: FY2022
+  only; district: FY2020-FY2023). Why is not established -- an allocation revised mid-year, or the
+  district listing what it budgeted rather than what it was allocated, would each fit. **An
+  ALLOCATION is not a receipt or a spend**, and it runs on the federal grant year. FY2016 and earlier
+  are not on this page. **Fetcher BUILT 22 Oct, not wired:** `scripts/fetch_dese_entitlements.py` -> `build/` only,
+  11/11 years foot, 59 allocations. Still owed: `--if-changed` snapshots through `ingest.land`,
+  catalogue rows, a weekly slot in `refresh.py`. DESE revises allocations in place.
+- All-funds special education spending before FY2023. Closes: DESE's End of Year Financial
+  Report for each year, which splits spending by fund.
+
+**Three things the table must not do:**
+- Add the columns into a "total". A budget, a grant award, a reimbursement and a spend are
+  four different quantities at three stages (rule 1). Each column says which one it is.
+- Count circuit breaker twice. It pays for costs a year after they happen and lands in an
+  account that itself pays tuition; a general-fund actual is already net of what that account
+  covered (rule 11).
+- Treat "the formula change" as known. [UNVERIFIED] The requester's FY21 is likely the Student
+  Opportunity Act, which phased out-of-district transport into the circuit breaker; our own data
+  shows the first transport reimbursement in **FY2022** (`sped-cost.json`
+  `cb_transport_first_year`). Read the statute and DESE's notes before choosing the start year
+  on that basis. Default to FY2016-FY2026, with the change marked on the chart.
+
+---
+
 ## FILINGS — STATE ON 5 OCTOBER 2026. TJ SENDS BY HAND
 
 `notes/HANDOFF-FILINGS.md` is the whole brief.

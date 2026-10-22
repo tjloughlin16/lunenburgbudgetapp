@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**616 of 4988 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**627 of 5054 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4372 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4427 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -41,7 +41,7 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY17 | 18 |
 | FY18 | 20 |
 | FY19 | 30 |
-| FY20 | 53 |
+| FY20 | 64 |
 | FY21 | 17 |
 | FY22 | 22 |
 | FY23 | 45 |
@@ -125,6 +125,7 @@ Listed so this view cannot look more complete than it is.
 - `analyses/peer-districts.md` — What other districts did
 - `analyses/per-pupil-spending.md` — What Lunenburg spends for each pupil, and what that number hides
 - `analyses/questions.md` — A hundred questions this archive can answer, each with the query
+- `analyses/school-journal.md` — The school MUNIS journal, FY2023-FY2026, as a dataset
 - `analyses/show-your-work.md` — Show your work: every calculation, opened up
 - `analyses/sitting-on-money.md` — Is anyone sitting on money? Town and schools
 - `analyses/special-education-costs.md` — Special education costs, and the size of a mid-year surprise
@@ -175,17 +176,43 @@ Listed so this view cannot look more complete than it is.
 - `budget-workbooks/forwarded-anonymously-2026-10-09/line-item-transfers-10-7-26.pdf` — Line Item Transfers 10-7-26 — forwarded anonymously, 9 October 2026
 - `contracts/CONTRACTS.md` — Research notes: union contracts
 - `contracts/PROVENANCE-records-request-2026-10-09.md` — How the paraprofessional and Dee Bus documents reached us
+- `contracts/docx/dese-teacher-contract-nashoba.docx` — Nashoba Unit A agreement as filed with DESE, 2021-2022, with the 2017-2020 agreement
 - `contracts/docx/paraprofessional-wages-draft-individual-waiver-2026-09.docx` — Draft individual Wage Act waiver, paraprofessionals, September 2026
 - `contracts/docx/paraprofessional-wages-draft-union-agreement-2026-09.docx` — Draft agreement with the paraprofessional union on wage payments, September 2026
+- `contracts/pdf/ashburnham-westminster-teachers-2025-2028.pdf` — Ashburnham-Westminster Teachers’ Association agreement, July 2025 to June 2028
+- `contracts/pdf/ayer-shirley-teachers-2022-2025.pdf` — Ayer Shirley teachers’ agreement, 1 September 2022 to 31 August 2025
+- `contracts/pdf/ayer-shirley-teachers-2025-2028.pdf` — Ayer Shirley teachers’ agreement, 1 September 2025 to 31 August 2028
 - `contracts/pdf/custodial-2023-2026.pdf` — Custodial agreement, 2023–2026
 - `contracts/pdf/custodial-moa-2026.pdf` — Custodial memorandum of agreement, 2026
 - `contracts/pdf/dee-bus-first-amendment-2025.pdf` — First amendment to the Dee Bus agreement, May 2025
 - `contracts/pdf/dese-administrator-contract.pdf` — Administrator contract template
 - `contracts/pdf/dese-superintendent-contract.pdf` — Superintendent contract template
+- `contracts/pdf/dese-teacher-contract-ashburnham-westminster.pdf` — Ashburnham-Westminster teachers’ agreement as filed with DESE, 2016-2019
+- `contracts/pdf/dese-teacher-contract-ayer-shirley.pdf` — Ayer Shirley teachers’ agreement as filed with DESE, 2019-2022
+- `contracts/pdf/dese-teacher-contract-fitchburg.pdf` — Fitchburg Unit A agreement as filed with DESE, 2015-2018
+- `contracts/pdf/dese-teacher-contract-groton-dunstable.pdf` — Groton-Dunstable Unit A agreement as filed with DESE, schedules 2017-18 to 2019-20
+- `contracts/pdf/dese-teacher-contract-harvard.pdf` — Harvard teachers’ agreement as filed with DESE, 2017-2020
+- `contracts/pdf/dese-teacher-contract-hudson.pdf` — Hudson teachers’ agreement as filed with DESE, 2015-2018
+- `contracts/pdf/dese-teacher-contract-leominster.pdf` — Leominster teachers’ agreement as filed with DESE, 2015-2018
+- `contracts/pdf/dese-teacher-contract-maynard.pdf` — Maynard teachers’ agreement as filed with DESE, 1 September 2024 to 31 August 2027
+- `contracts/pdf/dese-teacher-contract-montachusett.pdf` — Monty Tech teachers’ agreement as filed with DESE, 2023-2026
+- `contracts/pdf/dese-teacher-contract-north-middlesex.pdf` — North Middlesex teachers’ agreement as filed with DESE, 2018-2021
+- `contracts/pdf/dese-teacher-contract-shrewsbury.pdf` — Shrewsbury teachers’ agreement as filed with DESE, 2022-2025
+- `contracts/pdf/dese-teacher-contract-tyngsborough.pdf` — Tyngsborough Unit A agreement as filed with DESE, 2018-2021
+- `contracts/pdf/dese-teacher-contract-uxbridge.pdf` — Uxbridge Unit A agreement as filed with DESE, 1 July 2023 to 30 June 2026
+- `contracts/pdf/dese-teacher-contract-wachusett.pdf` — Wachusett teachers’ agreement as filed with DESE: the FY2022 extension of 2018-2021
 - `contracts/pdf/dese-teacher-contract.pdf` — Lunenburg Education Association agreement
+- `contracts/pdf/fitchburg-teachers-2024-2027.pdf` — Fitchburg Education Association, Unit A agreement, 1 July 2024 to 30 June 2027
+- `contracts/pdf/groton-dunstable-teachers-2024-2027.pdf` — Groton-Dunstable Unit A agreement, 1 September 2024 to 31 August 2027
+- `contracts/pdf/harvard-teachers-2023-2026.pdf` — Harvard Educators Association agreement, 24 August 2023 to 23 August 2026
+- `contracts/pdf/hudson-teachers-2025-2028.pdf` — Hudson Education Association agreement, 28 August 2025 to 27 August 2028
 - `contracts/pdf/nonaffiliated-benefits.pdf` — Non-affiliated benefits
 - `contracts/pdf/nonaffiliated-salary-schedule.pdf` — Non-affiliated salary schedule
+- `contracts/pdf/north-middlesex-teachers-2024-2027.pdf` — North Middlesex teachers’ agreement, 1 July 2024 to 30 June 2027
 - `contracts/pdf/pec-agreement-2008.pdf` — Health insurance agreement (PEC), 16 June 2008
+- `contracts/pdf/shrewsbury-teachers-2025-2028.pdf` — Shrewsbury Education Association agreement, 25 August 2025 to 24 August 2028
+- `contracts/pdf/tyngsborough-teachers-2024-2027.pdf` — Tyngsborough Unit A agreement, 1 September 2024 to 31 August 2027
+- `contracts/pdf/wachusett-teachers-2023-2026.pdf` — Wachusett Regional Education Association agreement, 1 July 2023 to 30 June 2026
 - `correspondence/2026-03-30-ski-coop-invoice.md` — How the ski co-op invoice reached us, and what it does not show
 - `correspondence/2026-03-30-ski-coop-invoice.xlsx` — The ski co-op invoice, 2025-26 season
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
@@ -210,6 +237,7 @@ Listed so this view cannot look more complete than it is.
 - `data/annual-report-receipts.csv` — Town receipts by source, FY2011–FY2023
 - `data/annual-report-survey.csv` — Every page of every report, and how it can be read
 - `data/archive-orphans.csv` — Objects in the bucket that the index no longer names
+- `data/article-summaries.json` — A sentence or two per warrant article, model-written and checked
 - `data/athletic-fee-schedule.csv` — Athletic fees, by fiscal year, with their sources
 - `data/athletics-by-sport-reconciliation.csv` — Where the district’s workbook does not add up
 - `data/athletics-by-sport.csv` — Athletics by sport, long form
@@ -231,6 +259,7 @@ Listed so this view cannot look more complete than it is.
 - `data/budget-cycles.csv` — When each budget season opens and closes: the day after one annual election to the next
 - `data/budget-episodes.csv` — The episodes of a budget season: the regular cycle and the special ones
 - `data/budget-threads.csv` — The stories a budget season moves forward, one thread each
+- `data/building-payee-trades.csv` — What kind of work each school buildings payee does -- our grouping
 - `data/business/categorized.csv` — Business records by industry
 - `data/business/merged_dataset.csv` — Business certificate records
 - `data/capital-funding-history.csv` — How the capital programme has been paid for
@@ -241,6 +270,7 @@ Listed so this view cannot look more complete than it is.
 - `data/caption-corrections.csv` — Proper nouns the captions mishear, spelled as the town spells them
 - `data/census-acs.csv` — The Census figures, one row per estimate
 - `data/column-glossary.csv` — What each column name means, across every table
+- `data/comparison-sets.csv` — Comparison districts: which ones, and who chose them
 - `data/copy-status.csv` — Whether the publisher’s copy is still our copy
 - `data/dataset-provenance.csv` — Every dataset row joined to the document it came from
 - `data/debt-repayment-detail-refused.csv` — Debt pages that would not read — 24 of them, all one cause
@@ -270,6 +300,7 @@ Listed so this view cannot look more complete than it is.
 - `data/dese-sped-trajectory.csv` — Where a placement starts and where it leads, SY2018–SY2026
 - `data/dese-teacher-grade-subject.csv` — Teacher FTE by grade band AND subject AND school, SY2008–SY2026
 - `data/dese-teacher-program-area.csv` — Teacher FTE by program area, SY2008–SY2026
+- `data/dese-teacher-salaries.csv` — DESE average teacher salary and teacher FTE, every district, SY2009-SY2025
 - `data/dese-teacher-subject.csv` — Teacher FTE by subject, with licensure and class ratios, SY2008–SY2026
 - `data/dese-town-enrollment.csv` — Where every town’s children actually go to school, SY2014–SY2026
 - `data/dls-assessed-values.csv` — Assessed value by class, eleven towns, FY2002–FY2026
@@ -309,6 +340,8 @@ Listed so this view cannot look more complete than it is.
 - `data/gross-wages-refused.csv` — Payroll pages that would not read, and why each refused
 - `data/gross-wages.csv` — The town’s wage list, name by name — AN INCOMPLETE READ
 - `data/health-insurance-law.csv` — What Massachusetts law lets a town do about health insurance, and what it forbids
+- `data/heard-figures.csv` — Figures a person checked in the meeting recordings
+- `data/inflation-cost-index-map.csv` — Which price index each kind of school spending is measured against, and why
 - `data/ingest-pending.csv` — Documents in flight: fetched, not yet in the bucket
 - `data/ingest-plan.csv` — The plan for the annual-report backlog, in batches
 - `data/j1-unreadable.csv` — Trust fund pages that could not be read reliably
@@ -355,6 +388,7 @@ Listed so this view cannot look more complete than it is.
 - `data/pages-read.csv` — Every figure somebody READ off a page, with the verdict its group earned
 - `data/parks-myrec-sales-fy2025.csv` — Parks & Recreation sales, FY2025, both MyRec reports as rows
 - `data/pec-history.csv` — The Public Employees Committee agreement, event by event
+- `data/peer-teacher-pay-distribution.csv` — Teacher gross pay in Harvard, Ashburnham-Westminster and Tyngsborough, on each district’s own scale — NO NAMES
 - `data/peg-access-fund.csv` — The cable fund: what Comcast pays, and what it buys
 - `data/peg-access-identities.csv` — The arithmetic each PEG statement states about itself
 - `data/peg-access-printed-totals.csv` — The revenue-versus-expenses statement each report prints
@@ -427,37 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/stated-cuts.csv` — Every reduction and restoration the district named in writing, FY2020–FY2027
 - `data/stated-figures.csv` — Figures the town stated about itself, with the quote
 - `data/suggested-reports-meetings.csv` — Every meeting a suggested report came up in
-- `data/suggested-reports-merges.csv` — Suggested reports a person folded together
-- `data/suggested-reports.csv` — Reports a meeting’s discussion showed a need for
-- `data/table-corrections.csv` — Cells read off the page image, and cells checked against it
-- `data/table-semantics.csv` — What each table in the database is
-- `data/tax-collection-unreconciled.csv` — The thirteen years it will not publish, and why each refuses
-- `data/tax-collection.csv` — The same Collector’s table, for the years read off a TEXT LAYER
-- `data/tenure.csv` — How long each person stayed, by body and year
-- `data/thread-moments.csv` — Moments added to a thread by hand, each checked against the captions
-- `data/threads-declined.csv` — Thread candidates that were rejected, and why
-- `data/threads.csv` — The matters this project tracks across boards
-- `data/total-expenses-history.csv` — District total expenses, budget and actual by year
-- `data/total-salaries-history.csv` — District total salaries, budget and actual by year
-- `data/town-budget-versions.csv` — Town Manager line-item budgets FY2024-FY2025, every version
-- `data/town-job-posting-changes.csv` — Every change we saw to a town job posting, one row per event
-- `data/town-job-postings.csv` — The town’s job postings, as a history: what was listed, and when it left
-- `data/town-meeting-votes.csv` — Every Town Meeting article and how it was voted
-- `data/town-personnel.csv` — Every town post and who held it, FY2022 to FY2025
-- `data/treasurers-cash.csv` — What the town held in cash, by bank and by fund, every year
-- `data/trust-agency-balances.csv` — Every trust and stabilization fund, as the accounting system prints it
-- `data/trust-fund-balances.csv` — Every trust fund and its balance, from the annual report’s own listing
-- `data/trust-fund-matrix.csv` — Every trust fund and every measure, off the wide matrix the report prints
-- `data/trust-fund-purposes.csv` — What each trust fund is for, from its deed and summary
-- `data/trust-ledger-entries.csv` — Trust funds by category, from the ledger’s summary page
-- `data/turnover.csv` — How many names stop appearing, by body and year
-- `data/vacation-buyout-total.csv` — Town vacation buyout liability, as totals
-- `data/valuation-by-class.csv` — What the town is worth, by class, and the levy on it
-- `data/valuation-refused.csv` — Valuation pages that would not read — currently none
-- `data/variance-by-group.csv` — Budget against actual, every group and year
-- `data/warrant-article-amount-diff.csv` — How warrant article amounts changed between the FY2027 drafts
-- `data/warrant-article-tracking-diff.csv` — How the tracking sheets changed between snapshots
-- `data/warrant-article-tracking-fincom.csv` — The Finance Committee’s warrant article tracking sheets
-- `data/warrant-articles-fincom.csv` — Town Meeting warrant articles and amounts, FY2024–FY2027 drafts
-- `data/warrant-vs-votes-fincom.csv` — Draft warrant amounts against recorded Town Meeting votes
-- `data/working-copies.csv` — Files kept under a fixed name and overwritten when their publisher changes them

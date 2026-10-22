@@ -24,7 +24,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Show your work](/analysis/show-your-work) | page | — / 70.4 min | *(none declared)* |
 | [Towns like us: what they pay, what they spend](/analysis/towns-like-us) | page | 5.0 / 65.4 min | 1. 78th of the 351 Massachusetts towns on the bill as a share of what the home is worth, where 1st asks the most — Lunenburg is middling on the tax bill and in the top quarter of the state on tax EFFORT.<br>2. 29% of the difference in spending per pupil is accounted for by how much taxable property stands behind each child — the strongest of twelve things tested — Taxable property per child predicts school spending. Aid and poverty do not.<br>3. Regional districts do not spend less on administration: $700 a pupil against $693. |
 | [What you can ask this archive](/analysis/what-you-can-ask) | page | — / 14.5 min | *(none declared)* |
-| [Athletics costs](/athletics) | page | — / 9.1 min | *(none declared)* |
+| [Athletics costs](/athletics) | page | — / 9.2 min | *(none declared)* |
 | [Athletic fee](/athletics/athletic-fee) | page | — / 7.2 min | *(none declared)* |
 | [Cost per sport](/athletics/cost-per-sport) | page | — / 8.5 min | *(none declared)* |
 | [Fee fund ledger](/athletics/fee-fund-ledger) | page | — / 7.2 min | *(none declared)* |
@@ -33,6 +33,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Spending by category](/athletics/spending-by-category) | page | — / 7.0 min | *(none declared)* |
 | [Total athletics cost](/athletics/total-athletics-cost) | page | — / 7.0 min | *(none declared)* |
 | [Town budget and fee fund](/athletics/town-budget-and-fee-fund) | page | — / 7.4 min | *(none declared)* |
+| [Turf field capital plans](/athletics/turf-field-capital-plans) | page | — / 8.3 min | *(none declared)* |
 | [Boards and committees](/board-records) | page | — / 7.6 min | *(none declared)* |
 | [Member tenure](/board-records/board-member-tenure) | page | — / 7.0 min | *(none declared)* |
 | [Minutes by year](/board-records/board-minutes-by-year) | page | — / 7.1 min | *(none declared)* |
@@ -2281,7 +2282,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 53.8 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 53.9 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.4 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 18.8 min | *(none declared)* |
 | [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 19.7 min | *(none declared)* |

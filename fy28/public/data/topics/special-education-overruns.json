@@ -1,8 +1,227 @@
 {
  "category": "special-education",
  "chart": {
-  "id": "special-education-costs-surprise",
-  "source": "/data/special-education-costs.json"
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2010",
+     "unit": "fiscal year",
+     "value": 2010
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "General fund, FY2010 to FY2026: each line’s spending above its original vote, added up. Average and SD are our arithmetic."
+  },
+  "reference": {
+   "label": "The most the reserve may hold",
+   "text": "$541,717",
+   "value": 541717
+  },
+  "series": [
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Needed beyond the vote",
+    "texts": [
+     "$18,735",
+     "$94,313",
+     "$39,766",
+     "$223,774",
+     "$146,517",
+     "$65,331",
+     "$39,448",
+     "$0",
+     "$0",
+     "$204,015",
+     "$3,811",
+     "$0",
+     "$95,993",
+     "$0",
+     "$152,724",
+     "$0",
+     "$150,131"
+    ],
+    "values": [
+     18735,
+     94313,
+     39766,
+     223774,
+     146517,
+     65331,
+     39448,
+     0,
+     0,
+     204015,
+     3811,
+     0,
+     95993,
+     0,
+     152724,
+     0,
+     150131
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Average",
+    "texts": [
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621",
+     "$72,621"
+    ],
+    "values": [
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621,
+     72621
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Average + 1 SD",
+    "texts": [
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779",
+     "$149,779"
+    ],
+    "values": [
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779,
+     149779
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Average + 2 SD",
+    "texts": [
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937",
+     "$226,937"
+    ],
+    "values": [
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937,
+     226937
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Needed beyond the voted budget, each year",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2010",
+   "FY2011",
+   "FY2012",
+   "FY2013",
+   "FY2014",
+   "FY2015",
+   "FY2016",
+   "FY2017",
+   "FY2018",
+   "FY2019",
+   "FY2020",
+   "FY2021",
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "conclusions": [
   {
@@ -26,6 +245,12 @@
    "literals": [],
    "notes": [
     {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Each line’s spending at the close less its vote; only lines that ran over are added."
+    },
+    {
      "closes": "a chart of accounts from the Town marking every special education account",
      "figures": {},
      "kind": "gap",
@@ -36,9 +261,49 @@
    "rests_on": [
     "worst",
     "needing",
-    "median"
+    "mean"
    ],
    "text": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$226,937",
+     "unit": "",
+     "value": 226937
+    },
+    "n": {
+     "text": "17",
+     "unit": "",
+     "value": 17
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a longer record: the same ledger lines before FY2010",
+     "figures": {
+      "z": {
+       "text": "5",
+       "unit": "",
+       "value": 5
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "FY2010"
+     ],
+     "text": "5 of the years needed nothing, so the spread is lopsided; the count of years covered assumes no shape."
+    }
+   ],
+   "rests_on": [
+    "mean",
+    "sd",
+    "lvl1",
+    "lvl2",
+    "two"
+   ],
+   "text": "The average plus two standard deviations is $226,937, enough in all 17 years."
   },
   {
    "figures": {
@@ -98,7 +363,7 @@
     "cap",
     "yes"
    ],
-   "text": "Put the account’s tuition back and FY2024 needed $619,020; the reserve may hold $541,717."
+   "text": "Had the account paid no tuition, FY2024 needed $619,020; the reserve may hold $541,717."
   }
  ],
  "facts": [
@@ -114,12 +379,119 @@
      }
     },
     "literals": [],
-    "text": "needed beyond the voted budget, FY2013"
+    "text": "needed beyond the vote in FY2013, the worst year"
    },
    "value": {
     "text": "$223,774",
     "unit": "",
     "value": 223774
+   }
+  },
+  {
+   "id": "mean",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "needed beyond the vote in an average year"
+   },
+   "value": {
+    "text": "$72,621",
+    "unit": "",
+    "value": 72621
+   }
+  },
+  {
+   "id": "sd",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "standard deviation, year to year"
+   },
+   "value": {
+    "text": "$77,158",
+    "unit": "",
+    "value": 77158
+   }
+  },
+  {
+   "id": "lvl1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "13",
+      "unit": "",
+      "value": 13
+     },
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [
+     "1 SD"
+    ],
+    "text": "average + 1 SD: enough in 13 of 17 years"
+   },
+   "value": {
+    "text": "$149,779",
+    "unit": "",
+    "value": 149779
+   }
+  },
+  {
+   "id": "lvl2",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     },
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [
+     "2 SD"
+    ],
+    "text": "average + 2 SD: enough in 17 of 17 years"
+   },
+   "value": {
+    "text": "$226,937",
+    "unit": "",
+    "value": 226937
+   }
+  },
+  {
+   "id": "two",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     },
+     "z": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     }
+    },
+    "literals": [],
+    "text": "worst two years running, FY2013 and FY2014"
+   },
+   "value": {
+    "text": "$370,291",
+    "unit": "",
+    "value": 370291
    }
   },
   {
@@ -134,26 +506,12 @@
      }
     },
     "literals": [],
-    "text": "of 17 needing more than was voted"
+    "text": "of 17 when a line ran over its vote"
    },
    "value": {
     "text": "12",
     "unit": "years",
     "value": 12
-   }
-  },
-  {
-   "id": "median",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "needed in the median year"
-   },
-   "value": {
-    "text": "$39,766",
-    "unit": "",
-    "value": 39766
    }
   },
   {
@@ -168,7 +526,7 @@
      }
     },
     "literals": [],
-    "text": "of 17 tuition ran over its budget"
+    "text": "of 17 when tuition ran over its vote"
    },
    "value": {
     "text": "7",
@@ -188,7 +546,7 @@
      }
     },
     "literals": [],
-    "text": "tuition under its budget, FY2025"
+    "text": "tuition under its vote, FY2025"
    },
    "value": {
     "text": "$432,526",
@@ -208,7 +566,7 @@
      }
     },
     "literals": [],
-    "text": "FY2024, with the account’s tuition put back (ours)"
+    "text": "FY2024, had circuit breaker paid no tuition (ours)"
    },
    "value": {
     "text": "$619,020",
@@ -222,7 +580,7 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "most the new reserve may hold, as described"
+    "text": "the most the reserve may hold, as described"
    },
    "value": {
     "text": "$541,717",
@@ -326,6 +684,260 @@
    "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.txt"
   }
  ],
- "table": null,
+ "table": {
+  "caption": "How each year’s figure is reached, and the levels it gives",
+  "views": [
+   {
+    "columns": [
+     "In-district",
+     "Tuition",
+     "Transport",
+     "Needed",
+     "All three, net"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Each year",
+    "note": "Each line: spent at the close less the budget voted before the year; negative is under. Needed adds only the lines that ran over; net adds all three. Ledger figures; the subtraction is ours.",
+    "rows": [
+     {
+      "cells": [
+       "$82,574",
+       "-$88,522",
+       "$67,557",
+       "$150,131",
+       "$61,609"
+      ],
+      "label": "FY2026"
+     },
+     {
+      "cells": [
+       "-$318,521",
+       "-$432,526",
+       "-$10,406",
+       "$0",
+       "-$761,453"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "-$198,304",
+       "$87,269",
+       "$65,455",
+       "$152,724",
+       "-$45,580"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "-$69,306",
+       "-$185,170",
+       "-$9,116",
+       "$0",
+       "-$263,592"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$95,993",
+       "-$421,483",
+       "-$56,453",
+       "$95,993",
+       "-$381,943"
+      ],
+      "label": "FY2022"
+     },
+     {
+      "cells": [
+       "-$77,847",
+       "-$383,892",
+       "-$119,488",
+       "$0",
+       "-$581,227"
+      ],
+      "label": "FY2021"
+     },
+     {
+      "cells": [
+       "-$85,982",
+       "$3,811",
+       "-$223,308",
+       "$3,811",
+       "-$305,479"
+      ],
+      "label": "FY2020"
+     },
+     {
+      "cells": [
+       "-$58,790",
+       "$204,015",
+       "-$95,538",
+       "$204,015",
+       "$49,687"
+      ],
+      "label": "FY2019"
+     },
+     {
+      "cells": [
+       "-$159,999",
+       "-$19,981",
+       "-$123,816",
+       "$0",
+       "-$303,796"
+      ],
+      "label": "FY2018"
+     },
+     {
+      "cells": [
+       "-$24,058",
+       "-$262,334",
+       "-$128,713",
+       "$0",
+       "-$415,105"
+      ],
+      "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$39,448",
+       "-$23,729",
+       "-$8,538",
+       "$39,448",
+       "$7,181"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "-$56,861",
+       "-$56,652",
+       "$65,331",
+       "$65,331",
+       "-$48,182"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$6,437",
+       "$91,030",
+       "$49,050",
+       "$146,517",
+       "$146,517"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "-$19,183",
+       "$131,335",
+       "$92,439",
+       "$223,774",
+       "$204,591"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "-$52,419",
+       "-$42,800",
+       "$39,766",
+       "$39,766",
+       "-$55,453"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$53,360",
+       "$40,953",
+       "-$32,752",
+       "$94,313",
+       "$61,561"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "-$61,888",
+       "$18,735",
+       "-$73,124",
+       "$18,735",
+       "-$116,277"
+      ],
+      "label": "FY2010"
+     }
+    ],
+    "total_col": 3
+   },
+   {
+    "columns": [
+     "Amount",
+     "Years it would have covered"
+    ],
+    "key": "levels",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Reserve levels",
+    "note": "Standard deviation is the sample SD of the 17 yearly figures. Our arithmetic on the ledger.",
+    "rows": [
+     {
+      "cells": [
+       "$72,621",
+       "10 of 17"
+      ],
+      "label": "Average"
+     },
+     {
+      "cells": [
+       "$149,779",
+       "13 of 17"
+      ],
+      "label": "Average + 1 SD"
+     },
+     {
+      "cells": [
+       "$226,937",
+       "17 of 17"
+      ],
+      "label": "Average + 2 SD"
+     },
+     {
+      "cells": [
+       "$223,774",
+       "17 of 17"
+      ],
+      "label": "Worst single year, FY2013"
+     },
+     {
+      "cells": [
+       "$370,291",
+       "two years"
+      ],
+      "label": "Worst two years running, FY2013-FY2014"
+     },
+     {
+      "cells": [
+       "$541,717",
+       "17 of 17"
+      ],
+      "label": "The most the reserve may hold"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
  "title": "Special education overruns"
 }

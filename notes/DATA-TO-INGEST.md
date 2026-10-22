@@ -12,6 +12,50 @@ reached us.
 
 ## Downloaded, awaiting ingest
 
+### Five files from TJ, 22 October 2026 — QUEUED, NOT YET INGESTED
+
+TJ asked that these go into the ingestion flow and NOT be processed yet. They are still in
+`~/Downloads`; nothing has been copied, read or screened. Hashes taken 22 Oct so the copy
+that is ingested can be matched to the one he handed over.
+
+| file in ~/Downloads | bytes | sha256 |
+|---|---:|---|
+| `Lunenburg_Special_Education_Funding_10_Slides.pptx` | 63,570 | `1b7f6f9f…a4fa` |
+| `Track and Field complex history.pdf` | 915,745 | `b0b9e836…5f6f` |
+| `10.20 Selectboard Presentation Turf Field.pdf` | 699,802 | `df495eeb…be93` |
+| `Brooks House Presentation to Town Meeting Draft.pdf` | 1,540,975 | `8ed2f468…2002` |
+| `Brooks House Presentation to Town Meeting Draft (1).pdf` | 1,540,975 | `8ed2f468…2002` — **the same bytes as the line above; ingest once** |
+
+Full hashes:
+`1b7f6f9fe4b4ffa445ab975ac5c8125318227c0ecc45518435b47418d506a4fa`,
+`b0b9e836bb2f927114a331548f75d21b833f34f3101efebe649abfea47965f6f`,
+`df495eebb36eb1ff33de23f6bff59010fbeb6068c5f9ccdb9de3f8b5198bbe93`,
+`8ed2f4681007be6caeedea0f6cb54977cb5f62664e85138041cd6eecc7f92002`.
+
+**Open before ingest — provenance (rule 12).** None of these came with an address. For
+each: the publisher's link if one exists (the 10.20 deck is probably in the Select Board's
+20 Oct 2026 packet; check the AgendaCenter before calling it emailed), otherwise who sent
+it and how. **The special-education .pptx especially:** its filename does not look like a
+district or town document, so establish who made it before it is filed as anybody's
+evidence — if it is somebody's own summary it is an argument, not a source (rule 13a).
+The Brooks House file is marked *Draft*; record that, and look for the final version.
+
+**What each is for once ingested.**
+- **Track and Field complex history.pdf — compare against our own turf history.** TJ
+  wants it set beside the thread's history (`sources/data/thread-history.csv`, threads
+  `athletic-complex-turf`, `turf-field-repairs`, `turf-field-study`) and the capital-plan
+  page (`/athletics/turf-field-capital-plans`, `scripts/build_turf_plans_topic.py`). Event by
+  event: what it has that we do not, what we have that it omits, and where the two
+  disagree on a date, an amount or a vote — each disagreement settled against the minute
+  or the plan it rests on, not by preferring either account.
+- **10.20 Selectboard Presentation Turf Field.pdf** — the same thread; the presented figures
+  are what we run with, labelled *as presented, not voted*.
+- **Brooks House** — a Town Meeting article; no thread checked yet.
+- **Special education funding slides** — `/special-education`, after provenance is known.
+
+All go through `ingest.stage()` / `redact.gate()` like anything else; `pdf_kind.py` decides
+scan versus digital (rule 13d).
+
 ### 603 CMR 28.00 — the special education regulations. **INGESTED, 10 September 2026.**
 
 Fetched, hashed, catalogued in `sources/state-dese/index.csv` with the publisher's own
