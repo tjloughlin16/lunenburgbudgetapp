@@ -1436,6 +1436,21 @@ GROUPS = [
              'heard-figures.csv and our notes of the board discussion, and nothing else. A '
              'summary carrying a figure that neither the warrant nor a checked figure carries '
              'is refused. Each says what it was written from. The warrant is the record.'),
+            ('data/thread-briefing.csv',
+             'The briefing at the top of a thread, one block per funding round', 2,
+             'Written by us: the organised summary that opens a thread page -- each funding '
+             'round, then the open question. build_threads.py refuses a line that does not '
+             'resolve to a quote-checked entry or a recorded vote.'),
+            ('data/thread-history.csv',
+             'A thread\u2019s history, entry by entry, each with its quote and source', 2,
+             'Written by us: one row per moment in a thread -- the board, the date, what '
+             'happened and the quote it rests on, cited to the document or the video at its '
+             'second. build_threads.py refuses a row whose quote is not in its source.'),
+            ('data/capital-plan-field-lines.csv',
+             'Every playing-field line in every capital plan held, by fiscal year', 2,
+             'Extracted by us from the capital plans: each line naming a field or turf, with '
+             'the plan, its page, the amount and the quote it was read from. '
+             'build_turf_plans_topic.py builds the turf plans topic from it.'),
             ('data/thread-callouts.csv',
              'What someone says next about a thread, chosen by a person', 2,
              'Written by us: one row per callout on a thread -- a sum of money, a warrant '
