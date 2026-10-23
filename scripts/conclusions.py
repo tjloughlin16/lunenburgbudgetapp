@@ -351,6 +351,26 @@ def usd(n):
     return ('-$%s' if n < 0 else '$%s') % format(abs(n), ',d')
 
 
+def footed(parts):
+    """Whole dollars for parts SHOWN WITH THEIR TOTAL, so the column foots.
+
+    Rounding each part on its own can leave the printed parts a dollar or two off the
+    printed total ($25,657,318.31 + $4,004,476.32 shows as ...318 + ...476 = ...794 beside
+    a total of $29,661,795). TJ, 23 October 2026: "this math doesnt add up." The total is
+    kept -- it is the figure other pages print alone -- and the dollars rounding dropped go
+    to the parts with the largest dropped cents (the largest-remainder method), so no part
+    moves by more than one dollar. Returns (parts, total) as numbers; format with usd()."""
+    import math
+    xs = [float(p) for p in parts]
+    total = round(sum(xs))
+    base = [math.floor(x) for x in xs]
+    short = total - sum(base)
+    order = sorted(range(len(xs)), key=lambda i: -(xs[i] - base[i]))
+    for i in order[:short]:
+        base[i] += 1
+    return base, total
+
+
 def pct(x, dp=1):
     return '%.*f%%' % (dp, float(x))
 
