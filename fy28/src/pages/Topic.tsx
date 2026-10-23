@@ -51,6 +51,9 @@ type TopicPayload = {
   conclusions: (LadderUnit & { rests_on: string[]; notes?: Step[] })[]
   table: FigureTableData | null; said: Said[]; sources: { label: string; href: string }[]
   full_report: { href: string; label: string }
+  /** More tables after `table`, each a DIFFERENT table; a table's tabs are the same table
+   *  across years or periods (scripts/topic.py page(tables=...)). */
+  tables?: FigureTableData[]
   /** Up to two more charts under the signature (scripts/topic.py page(also=...)). */
   also?: ChartRef[]
   /** A leftover, account by account (scripts/topic.py ledger()). */
@@ -305,7 +308,8 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
               tag: null, question: '', body: <Brief steps={c.notes ?? []} base={p.full_report.href} />,
             } satisfies LadderEvidence]))} />
           {p.ledger ? <AccountLedger l={p.ledger} /> : null}
-          {p.table ? <section className="mt-10 max-w-3xl"><FigureTable t={p.table} /></section> : null}
+          {[p.table, ...(p.tables ?? [])].filter((t): t is FigureTableData => !!t).map((t, i) => (
+            <section key={i} className={`${i ? 'mt-8' : 'mt-10'} max-w-3xl`}><FigureTable t={t} /></section>))}
           <SaidList said={p.said} />
           <Sources sources={p.sources} />
           <ShelfNav ix={ix} t={p} />

@@ -41,9 +41,9 @@ def words(p):
     parts += [s['quote'] for s in p.get('said', [])]
     for t in (p.get('ladder') or {}).get('tiers', []):
         parts += [f['label']['text'] for f in t['facts']]
-    t = p.get('table')
-    if t:
-        parts += [' '.join(r['label'] for r in t['views'][0]['rows'])]
+    for t in [p.get('table')] + p.get('tables', []):
+        if t:
+            parts += [' '.join(r['label'] for r in t['views'][0]['rows'])]
     return sum(len(x.split()) for x in parts)
 
 

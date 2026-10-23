@@ -16,6 +16,10 @@ parts, in reading order:
                 optionally `notes`: brief.step layers -- what is not known, a hypothesis, a
                 link to the evidence. Only those three render; the facts carry the rest
     table       optional: FigureTable data -- the figures behind the chart
+    tables      optional: MORE tables, each its own FigureTable, drawn after `table` in order.
+                For a page whose figures are several DIFFERENT tables. A table's views (its
+                tabs) are the SAME table across years or periods, never different tables --
+                TJ, 23 October 2026: "tabbing suggests the same data viewed differently"
     said        optional: what was said in public meetings ABOUT THIS TOPIC ONLY
     lead_quote  optional: ONE quotation the page opens with -- the claim the page tests, above
                 the finding (lead_quote() below). Checked verbatim against the document's text
@@ -156,7 +160,8 @@ def check_ledger(l, where):
 
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
-         finding_figures=None, finding_allow=(), draft=None, also=(), lead_quote=None):
+         finding_figures=None, finding_allow=(), draft=None, also=(), lead_quote=None,
+         tables=()):
     """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
     (scripts/generate_report.py). Every check below runs on it exactly as on a registered page;
     only the title and the shelf come from the draft instead of scripts/topics.py.
@@ -214,18 +219,12 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     if n > TOPIC_WORDS_MAX:
         bad.append('%s: %d words of prose, the limit is %d -- this is two topics; split it in '
                    'the registry rather than trimming it' % (id, n, TOPIC_WORDS_MAX))
-    if table and any(len(v['rows']) > TABLE_ROWS_MAX for v in table['views']):
-        bad.append('%s: a table runs past %d rows -- split it by period or by group'
-                   % (id, TABLE_ROWS_MAX))
-    for v in (table or {}).get('views', []):
-        for r in v['rows']:
-            m = r.get('marks')
-            if m is not None and (len(m) != len(r['cells']) or any(x not in (1, -1, None) for x in m)):
-                bad.append('%s: table %r row %r: marks must be 1, -1 or None, one per cell -- '
-                           'build them with change_marks()' % (id, v['key'], r['label']))
+    bad += _tables_bad(([table] if table else []) + list(tables), id, uniform=tables)
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
     extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
+    if tables:                                       # likewise
+        extra['tables'] = list(tables)
     if lead_quote:                                   # likewise written only when set
         extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS}
     return dict(
@@ -234,6 +233,41 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
         shelves=[home] if draft else REG.shelves_of(id), finding=f, chart=chart, facts=list(facts),
         conclusions=list(conclusions), table=table, said=list(said), sources=list(sources),
         full_report=_full(home))
+
+
+def _tables_bad(tables, id, uniform=()):
+    """Every table on a page, `table` and each of `tables`, held to the same rules -- except
+    that only the tables in `uniform` (those passed as `tables`) must keep one set of columns
+    across their views. On 23 October 2026 thirty-seven pages' single `table` held tabs with
+    different columns; they are not refused here, and converting them is a separate decision."""
+    bad = []
+    caps = [t.get('caption') for t in tables]
+    if len(set(caps)) != len(caps):
+        bad.append('%s: two tables share a caption -- each table answers its own question' % id)
+    for t in tables:
+        if not str(t.get('caption') or '').strip() or not t.get('views'):
+            bad.append('%s: a table needs a caption and at least one view' % id)
+            continue
+        cols = [tuple(v['columns']) for v in t['views']]
+        if any(t is u for u in uniform) and len(set(cols)) > 1:
+            bad.append('%s: table %r has views with different columns -- a tab is the same '
+                       'table for another year or period; a different table is its own table'
+                       % (id, t['caption']))
+        for v in t['views']:
+            if len(v['rows']) > TABLE_ROWS_MAX:
+                bad.append('%s: a table runs past %d rows -- split it by period or by group'
+                           % (id, TABLE_ROWS_MAX))
+            if len(v.get('kinds', [])) != len(v['columns']):
+                bad.append('%s: table %r view %r: one kind per column' % (id, t['caption'], v['key']))
+            for r in v['rows']:
+                if len(r['cells']) != len(v['columns']):
+                    bad.append('%s: table %r row %r: %d cells for %d columns'
+                               % (id, t['caption'], r['label'], len(r['cells']), len(v['columns'])))
+                m = r.get('marks')
+                if m is not None and (len(m) != len(r['cells']) or any(x not in (1, -1, None) for x in m)):
+                    bad.append('%s: table %r row %r: marks must be 1, -1 or None, one per cell -- '
+                               'build them with change_marks()' % (id, v['key'], r['label']))
+    return bad
 
 
 def _words(units):

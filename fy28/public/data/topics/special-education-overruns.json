@@ -227,54 +227,14 @@
   {
    "figures": {
     "a": {
-     "text": "$223,774",
-     "unit": "",
-     "value": 223774
-    },
-    "n": {
-     "text": "17",
-     "unit": "",
-     "value": 17
-    },
-    "y": {
-     "text": "FY2013",
-     "unit": "fiscal year",
-     "value": 2013
-    }
-   },
-   "literals": [],
-   "notes": [
-    {
-     "figures": {},
-     "kind": "measured",
-     "literals": [],
-     "text": "Each line’s spending at the close less its vote; only lines that ran over are added."
-    },
-    {
-     "cite": {
-      "href": "/special-education/sped-all-funds",
-      "label": "every fund, the same accounts"
-     },
-     "closes": "a chart of accounts from the Town marking every special education account",
-     "figures": {},
-     "kind": "gap",
-     "literals": [],
-     "text": "These are general fund figures after whatever tuition the circuit breaker account paid, and which accounts count is our grouping."
-    }
-   ],
-   "rests_on": [
-    "worst",
-    "needing",
-    "mean"
-   ],
-   "text": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget."
-  },
-  {
-   "figures": {
-    "a": {
      "text": "$226,937",
      "unit": "",
      "value": 226937
+    },
+    "b": {
+     "text": "13",
+     "unit": "",
+     "value": 13
     },
     "n": {
      "text": "17",
@@ -297,29 +257,73 @@
      "literals": [
       "FY2010"
      ],
-     "text": "5 of the years needed nothing, so the spread is lopsided; the count of years covered assumes no shape."
+     "text": "5 years needed nothing, so counting the years covered assumes no bell curve."
     }
    ],
    "rests_on": [
     "mean",
     "sd",
     "lvl1",
-    "lvl2",
-    "two"
+    "lvl2"
    ],
-   "text": "The average plus two standard deviations is $226,937, enough in all 17 years."
+   "text": "Average plus two standard deviations, $226,937, would have met all 17 years; plus one, 13."
   },
   {
    "figures": {
     "a": {
-     "text": "7",
+     "text": "$223,774",
      "unit": "",
-     "value": 7
+     "value": 223774
     },
     "b": {
-     "text": "$432,526",
+     "text": "$370,291",
      "unit": "",
-     "value": 432526
+     "value": 370291
+    },
+    "w": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    },
+    "y": {
+     "text": "FY2013",
+     "unit": "fiscal year",
+     "value": 2013
+    },
+    "z": {
+     "text": "FY2014",
+     "unit": "fiscal year",
+     "value": 2014
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the reserve statute as written, and the amount voted into the reserve",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The cap is as the Town Manager described it; what the reserve holds is not published."
+    }
+   ],
+   "rests_on": [
+    "worst",
+    "two",
+    "cap"
+   ],
+   "text": "The worst year, FY2013, needed $223,774; the worst two running, FY2013 and FY2014, needed $370,291."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    },
+    "b": {
+     "text": "6",
+     "unit": "",
+     "value": 6
     },
     "n": {
      "text": "17",
@@ -328,23 +332,41 @@
     }
    },
    "literals": [],
-   "rests_on": [
-    "oodover",
-    "oodbest"
+   "notes": [
+    {
+     "closes": "the Special Education Reserve Fund policy, on the Select Board agenda for 27 October 2026",
+     "figures": {
+      "h": {
+       "text": "6",
+       "unit": "",
+       "value": 6
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "27 October 2026"
+     ],
+     "text": "Not set out: whether money moves between lines before the reserve is drawn. In 6 years an overrun sat inside a total that came in under."
+    }
    ],
-   "text": "Tuition ran over its voted budget in 7 of 17 years, and under by as much as $432,526."
+   "rests_on": [
+    "needing",
+    "netover",
+    "oodover"
+   ],
+   "text": "A line ran over its vote in 12 of 17 years; the three lines together, in only 6."
   },
   {
    "figures": {
     "a": {
+     "text": "$466,296",
+     "unit": "",
+     "value": 466296
+    },
+    "b": {
      "text": "$619,020",
      "unit": "",
      "value": 619020
-    },
-    "c": {
-     "text": "$541,717",
-     "unit": "",
-     "value": 541717
     },
     "y": {
      "text": "FY2024",
@@ -355,49 +377,35 @@
    "literals": [],
    "notes": [
     {
-     "closes": "the reserve statute as written, and the amount voted into the reserve",
-     "figures": {},
+     "closes": "the district’s circuit breaker spending plan for each year, set before the year began",
+     "figures": {
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
      "kind": "gap",
      "literals": [],
-     "text": "The reserve’s statute is not in this archive; its cap is as the Town Manager described it, and what it holds is not published."
+     "text": "In FY2026 the circuit breaker paid by one year-end entry, so the need turns partly on how much was charged to it at the close."
     }
    ],
    "rests_on": [
+    "cbyr",
     "upper",
-    "cap",
-    "yes"
+    "cap"
    ],
-   "text": "Had the account paid no tuition, FY2024 needed $619,020; the reserve may hold $541,717."
+   "text": "In FY2024 the circuit breaker account paid $466,296; without it, the need was $619,020."
   }
  ],
  "facts": [
-  {
-   "id": "worst",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2013",
-      "unit": "fiscal year",
-      "value": 2013
-     }
-    },
-    "literals": [],
-    "text": "needed beyond the vote in FY2013, the worst year"
-   },
-   "value": {
-    "text": "$223,774",
-    "unit": "",
-    "value": 223774
-   }
-  },
   {
    "id": "mean",
    "kind": "published",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "needed beyond the vote in an average year"
+    "text": "needed in an average year"
    },
    "value": {
     "text": "$72,621",
@@ -474,6 +482,26 @@
    }
   },
   {
+   "id": "worst",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     }
+    },
+    "literals": [],
+    "text": "needed in the worst year, FY2013"
+   },
+   "value": {
+    "text": "$223,774",
+    "unit": "",
+    "value": 223774
+   }
+  },
+  {
    "id": "two",
    "kind": "published",
    "label": {
@@ -499,6 +527,20 @@
    }
   },
   {
+   "id": "cap",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the most the reserve may hold, as described"
+   },
+   "value": {
+    "text": "$541,717",
+    "unit": "",
+    "value": 541717
+   }
+  },
+  {
    "id": "needing",
    "kind": "published",
    "label": {
@@ -516,6 +558,26 @@
     "text": "12",
     "unit": "years",
     "value": 12
+   }
+  },
+  {
+   "id": "netover",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "17",
+      "unit": "",
+      "value": 17
+     }
+    },
+    "literals": [],
+    "text": "of 17 when all three together ran over"
+   },
+   "value": {
+    "text": "6",
+    "unit": "years",
+    "value": 6
    }
   },
   {
@@ -539,23 +601,23 @@
    }
   },
   {
-   "id": "oodbest",
+   "id": "cbyr",
    "kind": "published",
    "label": {
     "figures": {
      "y": {
-      "text": "FY2025",
+      "text": "FY2024",
       "unit": "fiscal year",
-      "value": 2025
+      "value": 2024
      }
     },
     "literals": [],
-    "text": "tuition under its vote, FY2025"
+    "text": "paid by the circuit breaker account, FY2024"
    },
    "value": {
-    "text": "$432,526",
+    "text": "$466,296",
     "unit": "",
-    "value": 432526
+    "value": 466296
    }
   },
   {
@@ -570,54 +632,23 @@
      }
     },
     "literals": [],
-    "text": "FY2024, had circuit breaker paid no tuition (ours)"
+    "text": "FY2024 need, had it paid no tuition (ours)"
    },
    "value": {
     "text": "$619,020",
     "unit": "",
     "value": 619020
    }
-  },
-  {
-   "id": "cap",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "the most the reserve may hold, as described"
-   },
-   "value": {
-    "text": "$541,717",
-    "unit": "",
-    "value": 541717
-   }
-  },
-  {
-   "id": "yes",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "n": {
-      "text": "24",
-      "unit": "",
-      "value": 24
-     }
-    },
-    "literals": [
-     "November 2025"
-    ],
-    "text": "for the reserve, Town Meeting, November 2025; 24 against"
-   },
-   "value": {
-    "text": "65",
-    "unit": "votes",
-    "value": 65
-   }
   }
  ],
  "finding": {
   "figures": {
    "a": {
+    "text": "$72,621",
+    "unit": "",
+    "value": 72621
+   },
+   "b": {
     "text": "$223,774",
     "unit": "",
     "value": 223774
@@ -626,15 +657,10 @@
     "text": "17",
     "unit": "",
     "value": 17
-   },
-   "y": {
-    "text": "FY2013",
-    "unit": "fiscal year",
-    "value": 2013
    }
   },
   "literals": [],
-  "text": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget."
+  "text": "Over 17 years, special education needed $72,621 a year beyond its vote on average; at most $223,774."
  },
  "full_report": {
   "href": "",
@@ -660,10 +686,11 @@
   },
   {
    "board": "School Committee",
-   "date": "2024-02-28",
-   "href": "/docs/meetings/text/school-committee/2024-02-28-minutes-6439.txt",
-   "label": "School Committee minutes, 2024-02-28",
-   "quote": "Ms. Brzozoski regarding the 14% increase in tuition, when did we find out about this?"
+   "caption": true,
+   "date": "2026-10-07",
+   "href": "https://www.youtube.com/watch?v=kPZcnFd5COw&t=6539s",
+   "label": "School Committee, 2026-10-07, video at 1:48:59 (machine captions)",
+   "quote": "We're going to request $300,000 in free cash if the free cash is certified at the November town meeting"
   }
  ],
  "shelves": [
@@ -686,21 +713,49 @@
   {
    "href": "/docs/town-annual-reports/text/4130-fy-2025-annual-town-report.txt",
    "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.txt"
+  },
+  {
+   "href": "/docs/state-dese/dese-circuit-breaker.xlsx",
+   "label": "Massachusetts Department of Elementary and Secondary Education — dese-circuit-breaker.xlsx"
+  },
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/data/dese-entitlement-allocations.csv",
+   "label": "Massachusetts DESE — entitlement grant allocations, by district (dese-entitlement-allocations.csv)"
+  },
+  {
+   "href": "/docs/correspondence/2026-10-22-special-education-funding-superintendent-finance-committee.pptx",
+   "label": "Lunenburg Public Schools — special education funding, a guide for the Finance Committee, 22 October 2026 (as presented)"
+  },
+  {
+   "href": "/special-education/sped-all-funds",
+   "label": "Special education, all funds (how the journal figures are built)"
   }
  ],
  "table": {
-  "caption": "How each year’s figure is reached, and the levels it gives",
+  "caption": "Voted and spent, general fund, each line, every year",
   "views": [
    {
     "columns": [
-     "In-district",
-     "Tuition",
-     "Transport",
-     "Needed",
-     "All three, net"
+     "In-district, voted",
+     "In-district, spent",
+     "Tuition, voted",
+     "Tuition, spent",
+     "Transport, voted",
+     "Transport, spent",
+     "Read from"
     ],
-    "key": "years",
+    "key": "voted-spent",
     "kinds": [
+     "ledger",
+     "ledger",
      "ledger",
      "ledger",
      "ledger",
@@ -708,240 +763,970 @@
      "ledger"
     ],
     "label": "Each year",
-    "note": "Each line: spent at the close less the budget voted before the year; negative is under. Needed adds only the lines that ran over; net adds all three. Ledger figures; the subtraction is ours.",
+    "note": "Read from: the Town’s MUNIS year-end report, or the Finance Committee’s history workbook. Voted is the budget voted before the year; spent is expended plus what was still owed at the close. In-district is every other special education account. The Finance Committee’s workbook is used before FY2023 because its rows match the MUNIS reports in the years both hold.",
     "rows": [
      {
       "cells": [
-       "$82,574",
-       "-$88,522",
-       "$67,557",
-       "$150,131",
-       "$61,609"
+       "$4,216,813",
+       "$4,299,387",
+       "$1,291,293",
+       "$1,202,771",
+       "$565,734",
+       "$633,291",
+       "MUNIS"
       ],
       "label": "FY2026"
      },
      {
       "cells": [
-       "-$318,521",
-       "-$432,526",
-       "-$10,406",
-       "$0",
-       "-$761,453"
+       "$4,262,965",
+       "$3,944,444",
+       "$1,164,824",
+       "$732,298",
+       "$445,328",
+       "$434,922",
+       "MUNIS"
       ],
       "label": "FY2025"
      },
      {
       "cells": [
-       "-$198,304",
-       "$87,269",
-       "$65,455",
-       "$152,724",
-       "-$45,580"
+       "$3,850,408",
+       "$3,652,104",
+       "$501,239",
+       "$588,508",
+       "$335,947",
+       "$401,402",
+       "MUNIS"
       ],
       "label": "FY2024"
      },
      {
       "cells": [
-       "-$69,306",
-       "-$185,170",
-       "-$9,116",
-       "$0",
-       "-$263,592"
+       "$3,724,015",
+       "$3,654,709",
+       "$489,918",
+       "$304,748",
+       "$329,360",
+       "$320,244",
+       "MUNIS"
       ],
       "label": "FY2023"
      },
      {
       "cells": [
-       "$95,993",
-       "-$421,483",
-       "-$56,453",
-       "$95,993",
-       "-$381,943"
+       "$3,508,656",
+       "$3,604,649",
+       "$818,716",
+       "$397,233",
+       "$297,843",
+       "$241,390",
+       "FinCom sheet"
       ],
       "label": "FY2022"
      },
      {
       "cells": [
-       "-$77,847",
-       "-$383,892",
-       "-$119,488",
-       "$0",
-       "-$581,227"
+       "$3,427,643",
+       "$3,349,796",
+       "$719,269",
+       "$335,377",
+       "$380,409",
+       "$260,921",
+       "FinCom sheet"
       ],
       "label": "FY2021"
      },
      {
       "cells": [
-       "-$85,982",
-       "$3,811",
-       "-$223,308",
-       "$3,811",
-       "-$305,479"
+       "$3,245,546",
+       "$3,159,564",
+       "$865,746",
+       "$869,557",
+       "$446,658",
+       "$223,350",
+       "FinCom sheet"
       ],
       "label": "FY2020"
      },
      {
       "cells": [
-       "-$58,790",
-       "$204,015",
-       "-$95,538",
-       "$204,015",
-       "$49,687"
+       "$2,998,364",
+       "$2,939,574",
+       "$754,480",
+       "$958,495",
+       "$417,585",
+       "$322,047",
+       "FinCom sheet"
       ],
       "label": "FY2019"
      },
      {
       "cells": [
-       "-$159,999",
-       "-$19,981",
-       "-$123,816",
-       "$0",
-       "-$303,796"
+       "$3,065,431",
+       "$2,905,432",
+       "$888,909",
+       "$868,928",
+       "$490,000",
+       "$366,184",
+       "FinCom sheet"
       ],
       "label": "FY2018"
      },
      {
       "cells": [
-       "-$24,058",
-       "-$262,334",
-       "-$128,713",
-       "$0",
-       "-$415,105"
+       "$3,105,994",
+       "$3,081,936",
+       "$903,960",
+       "$641,626",
+       "$489,250",
+       "$360,537",
+       "FinCom sheet"
       ],
       "label": "FY2017"
      },
      {
       "cells": [
-       "$39,448",
-       "-$23,729",
-       "-$8,538",
-       "$39,448",
-       "$7,181"
+       "$2,774,291",
+       "$2,813,739",
+       "$989,655",
+       "$965,926",
+       "$469,046",
+       "$460,508",
+       "FinCom sheet"
       ],
       "label": "FY2016"
      },
      {
       "cells": [
-       "-$56,861",
-       "-$56,652",
-       "$65,331",
-       "$65,331",
-       "-$48,182"
+       "$2,506,498",
+       "$2,449,637",
+       "$1,529,405",
+       "$1,472,753",
+       "$415,488",
+       "$480,819",
+       "FinCom sheet"
       ],
       "label": "FY2015"
      },
      {
       "cells": [
-       "$6,437",
-       "$91,030",
-       "$49,050",
-       "$146,517",
-       "$146,517"
+       "$2,268,285",
+       "$2,274,722",
+       "$1,144,319",
+       "$1,235,349",
+       "$395,702",
+       "$444,752",
+       "FinCom sheet"
       ],
       "label": "FY2014"
      },
      {
       "cells": [
-       "-$19,183",
-       "$131,335",
-       "$92,439",
-       "$223,774",
-       "$204,591"
+       "$2,209,487",
+       "$2,190,304",
+       "$818,500",
+       "$949,835",
+       "$348,060",
+       "$440,499",
+       "FinCom sheet"
       ],
       "label": "FY2013"
      },
      {
       "cells": [
-       "-$52,419",
-       "-$42,800",
-       "$39,766",
-       "$39,766",
-       "-$55,453"
+       "$2,336,028",
+       "$2,283,609",
+       "$708,000",
+       "$665,200",
+       "$270,000",
+       "$309,766",
+       "FinCom sheet"
       ],
       "label": "FY2012"
      },
      {
       "cells": [
-       "$53,360",
-       "$40,953",
-       "-$32,752",
-       "$94,313",
-       "$61,561"
+       "$2,013,473",
+       "$2,066,833",
+       "$607,405",
+       "$648,358",
+       "$300,000",
+       "$267,248",
+       "FinCom sheet"
       ],
       "label": "FY2011"
      },
      {
       "cells": [
-       "-$61,888",
-       "$18,735",
-       "-$73,124",
-       "$18,735",
-       "-$116,277"
+       "$2,203,433",
+       "$2,141,545",
+       "$165,000",
+       "$183,735",
+       "$300,000",
+       "$226,876",
+       "FinCom sheet"
       ],
       "label": "FY2010"
      }
     ],
-    "total_col": 3
-   },
-   {
-    "columns": [
-     "Amount",
-     "Years it would have covered"
-    ],
-    "key": "levels",
-    "kinds": [
-     "ledger",
-     "ledger"
-    ],
-    "label": "Reserve levels",
-    "note": "Standard deviation is the sample SD of the 17 yearly figures. Our arithmetic on the ledger.",
-    "rows": [
-     {
-      "cells": [
-       "$72,621",
-       "10 of 17"
-      ],
-      "label": "Average"
-     },
-     {
-      "cells": [
-       "$149,779",
-       "13 of 17"
-      ],
-      "label": "Average + 1 SD"
-     },
-     {
-      "cells": [
-       "$226,937",
-       "17 of 17"
-      ],
-      "label": "Average + 2 SD"
-     },
-     {
-      "cells": [
-       "$223,774",
-       "17 of 17"
-      ],
-      "label": "Worst single year, FY2013"
-     },
-     {
-      "cells": [
-       "$370,291",
-       "two years"
-      ],
-      "label": "Worst two years running, FY2013-FY2014"
-     },
-     {
-      "cells": [
-       "$541,717",
-       "17 of 17"
-      ],
-      "label": "The most the reserve may hold"
-     }
-    ],
-    "total_col": 0
+    "total_col": -1
    }
   ]
  },
- "title": "Special education overruns"
+ "tables": [
+  {
+   "caption": "Over or under the vote, and the need it leaves",
+   "views": [
+    {
+     "columns": [
+      "In-district",
+      "Tuition",
+      "Transport",
+      "Needed",
+      "All three, net"
+     ],
+     "key": "over",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Each year",
+     "note": "Each line: spent at the close less the vote; negative is under. Needed adds only the lines that ran over; net adds all three. Ledger figures; the subtraction is ours.",
+     "rows": [
+      {
+       "cells": [
+        "$82,574",
+        "-$88,522",
+        "$67,557",
+        "$150,131",
+        "$61,609"
+       ],
+       "label": "FY2026"
+      },
+      {
+       "cells": [
+        "-$318,521",
+        "-$432,526",
+        "-$10,406",
+        "$0",
+        "-$761,453"
+       ],
+       "label": "FY2025"
+      },
+      {
+       "cells": [
+        "-$198,304",
+        "$87,269",
+        "$65,455",
+        "$152,724",
+        "-$45,580"
+       ],
+       "label": "FY2024"
+      },
+      {
+       "cells": [
+        "-$69,306",
+        "-$185,170",
+        "-$9,116",
+        "$0",
+        "-$263,592"
+       ],
+       "label": "FY2023"
+      },
+      {
+       "cells": [
+        "$95,993",
+        "-$421,483",
+        "-$56,453",
+        "$95,993",
+        "-$381,943"
+       ],
+       "label": "FY2022"
+      },
+      {
+       "cells": [
+        "-$77,847",
+        "-$383,892",
+        "-$119,488",
+        "$0",
+        "-$581,227"
+       ],
+       "label": "FY2021"
+      },
+      {
+       "cells": [
+        "-$85,982",
+        "$3,811",
+        "-$223,308",
+        "$3,811",
+        "-$305,479"
+       ],
+       "label": "FY2020"
+      },
+      {
+       "cells": [
+        "-$58,790",
+        "$204,015",
+        "-$95,538",
+        "$204,015",
+        "$49,687"
+       ],
+       "label": "FY2019"
+      },
+      {
+       "cells": [
+        "-$159,999",
+        "-$19,981",
+        "-$123,816",
+        "$0",
+        "-$303,796"
+       ],
+       "label": "FY2018"
+      },
+      {
+       "cells": [
+        "-$24,058",
+        "-$262,334",
+        "-$128,713",
+        "$0",
+        "-$415,105"
+       ],
+       "label": "FY2017"
+      },
+      {
+       "cells": [
+        "$39,448",
+        "-$23,729",
+        "-$8,538",
+        "$39,448",
+        "$7,181"
+       ],
+       "label": "FY2016"
+      },
+      {
+       "cells": [
+        "-$56,861",
+        "-$56,652",
+        "$65,331",
+        "$65,331",
+        "-$48,182"
+       ],
+       "label": "FY2015"
+      },
+      {
+       "cells": [
+        "$6,437",
+        "$91,030",
+        "$49,050",
+        "$146,517",
+        "$146,517"
+       ],
+       "label": "FY2014"
+      },
+      {
+       "cells": [
+        "-$19,183",
+        "$131,335",
+        "$92,439",
+        "$223,774",
+        "$204,591"
+       ],
+       "label": "FY2013"
+      },
+      {
+       "cells": [
+        "-$52,419",
+        "-$42,800",
+        "$39,766",
+        "$39,766",
+        "-$55,453"
+       ],
+       "label": "FY2012"
+      },
+      {
+       "cells": [
+        "$53,360",
+        "$40,953",
+        "-$32,752",
+        "$94,313",
+        "$61,561"
+       ],
+       "label": "FY2011"
+      },
+      {
+       "cells": [
+        "-$61,888",
+        "$18,735",
+        "-$73,124",
+        "$18,735",
+        "-$116,277"
+       ],
+       "label": "FY2010"
+      }
+     ],
+     "total_col": 3
+    }
+   ]
+  },
+  {
+   "caption": "Every fund that paid, FY2023 to FY2026",
+   "views": [
+    {
+     "columns": [
+      "Voted, general fund",
+      "General fund spent",
+      "General fund over",
+      "Circuit breaker",
+      "Grants",
+      "Every fund spent"
+     ],
+     "key": "fy2026",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2026",
+     "note": "The school journal, as /special-education/sped-all-funds reads it. In-district is contracted services, staff pay and supplies. Only the general fund has a vote. The parts are rounded to foot to their totals, so a figure may differ by a dollar from the first table. FY2026 is the last year in the run.",
+     "rows": [
+      {
+       "cells": [
+        "$4,216,813",
+        "$4,299,387",
+        "$82,574",
+        "$4,004",
+        "$435,862",
+        "$4,739,253"
+       ],
+       "label": "In-district"
+      },
+      {
+       "cells": [
+        "$1,291,293",
+        "$1,202,771",
+        "-$88,522",
+        "$333,495",
+        "$0",
+        "$1,536,266"
+       ],
+       "label": "Out-of-district tuition"
+      },
+      {
+       "cells": [
+        "$565,734",
+        "$633,291",
+        "$67,557",
+        "$0",
+        "$0",
+        "$633,291"
+       ],
+       "label": "Transportation"
+      },
+      {
+       "cells": [
+        "$6,073,840",
+        "$6,135,449",
+        "$61,609",
+        "$337,499",
+        "$435,862",
+        "$6,908,810"
+       ],
+       "label": "All three"
+      }
+     ],
+     "total_col": 5
+    },
+    {
+     "columns": [
+      "Voted, general fund",
+      "General fund spent",
+      "General fund over",
+      "Circuit breaker",
+      "Grants",
+      "Every fund spent"
+     ],
+     "key": "fy2025",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2025",
+     "note": "The school journal, as /special-education/sped-all-funds reads it. In-district is contracted services, staff pay and supplies. Only the general fund has a vote. The parts are rounded to foot to their totals, so a figure may differ by a dollar from the first table.",
+     "rows": [
+      {
+       "cells": [
+        "$4,262,965",
+        "$3,944,444",
+        "-$318,521",
+        "$24,801",
+        "$475,488",
+        "$4,444,733"
+       ],
+       "label": "In-district"
+      },
+      {
+       "cells": [
+        "$1,164,824",
+        "$732,298",
+        "-$432,526",
+        "$473,650",
+        "$0",
+        "$1,205,948"
+       ],
+       "label": "Out-of-district tuition"
+      },
+      {
+       "cells": [
+        "$445,328",
+        "$434,922",
+        "-$10,406",
+        "$0",
+        "$0",
+        "$434,922"
+       ],
+       "label": "Transportation"
+      },
+      {
+       "cells": [
+        "$5,873,117",
+        "$5,111,664",
+        "-$761,453",
+        "$498,451",
+        "$475,488",
+        "$6,085,603"
+       ],
+       "label": "All three"
+      }
+     ],
+     "total_col": 5
+    },
+    {
+     "columns": [
+      "Voted, general fund",
+      "General fund spent",
+      "General fund over",
+      "Circuit breaker",
+      "Grants",
+      "Every fund spent"
+     ],
+     "key": "fy2024",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2024",
+     "note": "The school journal, as /special-education/sped-all-funds reads it. In-district is contracted services, staff pay and supplies. Only the general fund has a vote. The parts are rounded to foot to their totals, so a figure may differ by a dollar from the first table.",
+     "rows": [
+      {
+       "cells": [
+        "$3,850,408",
+        "$3,652,104",
+        "-$198,304",
+        "$0",
+        "$599,250",
+        "$4,251,354"
+       ],
+       "label": "In-district"
+      },
+      {
+       "cells": [
+        "$501,239",
+        "$588,508",
+        "$87,269",
+        "$466,296",
+        "$0",
+        "$1,054,804"
+       ],
+       "label": "Out-of-district tuition"
+      },
+      {
+       "cells": [
+        "$335,947",
+        "$401,402",
+        "$65,455",
+        "$0",
+        "$0",
+        "$401,402"
+       ],
+       "label": "Transportation"
+      },
+      {
+       "cells": [
+        "$4,687,594",
+        "$4,642,014",
+        "-$45,580",
+        "$466,296",
+        "$599,250",
+        "$5,707,560"
+       ],
+       "label": "All three"
+      }
+     ],
+     "total_col": 5
+    },
+    {
+     "columns": [
+      "Voted, general fund",
+      "General fund spent",
+      "General fund over",
+      "Circuit breaker",
+      "Grants",
+      "Every fund spent"
+     ],
+     "key": "fy2023",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2023",
+     "note": "The school journal, as /special-education/sped-all-funds reads it. In-district is contracted services, staff pay and supplies. Only the general fund has a vote. The parts are rounded to foot to their totals, so a figure may differ by a dollar from the first table.",
+     "rows": [
+      {
+       "cells": [
+        "$3,724,015",
+        "$3,654,709",
+        "-$69,306",
+        "$0",
+        "$560,954",
+        "$4,215,663"
+       ],
+       "label": "In-district"
+      },
+      {
+       "cells": [
+        "$489,918",
+        "$304,747",
+        "-$185,171",
+        "$494,968",
+        "$0",
+        "$799,715"
+       ],
+       "label": "Out-of-district tuition"
+      },
+      {
+       "cells": [
+        "$329,360",
+        "$320,244",
+        "-$9,116",
+        "$0",
+        "$0",
+        "$320,244"
+       ],
+       "label": "Transportation"
+      },
+      {
+       "cells": [
+        "$4,543,293",
+        "$4,279,700",
+        "-$263,593",
+        "$494,968",
+        "$560,954",
+        "$5,335,622"
+       ],
+       "label": "All three"
+      }
+     ],
+     "total_col": 5
+    }
+   ]
+  },
+  {
+   "caption": "Reserve levels, and the years each would have met",
+   "views": [
+    {
+     "columns": [
+      "Amount",
+      "Years met",
+      "Years short",
+      "Two years running met"
+     ],
+     "key": "levels",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Levels",
+     "note": "Average and standard deviation of the 17 yearly needs: the sample standard deviation, dividing by one fewer than the number of years. Two years running: each pair of consecutive years, for a reserve not refilled between them. Our arithmetic on the ledger.",
+     "rows": [
+      {
+       "cells": [
+        "$72,621",
+        "10 of 17",
+        "7",
+        "3 of 16"
+       ],
+       "label": "Average"
+      },
+      {
+       "cells": [
+        "$149,779",
+        "13 of 17",
+        "4",
+        "8 of 16"
+       ],
+       "label": "Average + 1 SD"
+      },
+      {
+       "cells": [
+        "$226,937",
+        "17 of 17",
+        "0",
+        "14 of 16"
+       ],
+       "label": "Average + 2 SD"
+      },
+      {
+       "cells": [
+        "$223,774",
+        "17 of 17",
+        "0",
+        "14 of 16"
+       ],
+       "label": "Worst single year, FY2013"
+      },
+      {
+       "cells": [
+        "$370,291",
+        "17 of 17",
+        "0",
+        "16 of 16"
+       ],
+       "label": "Worst two years running, FY2013-FY2014"
+      },
+      {
+       "cells": [
+        "$541,717",
+        "17 of 17",
+        "0",
+        "16 of 16"
+       ],
+       "label": "The most the reserve may hold"
+      }
+     ],
+     "total_col": 0
+    }
+   ]
+  },
+  {
+   "caption": "Money that came in beside it, by year",
+   "views": [
+    {
+     "columns": [
+      "Circuit breaker, the state’s quarterly payments",
+      "Circuit breaker, received in the town’s books",
+      "IDEA grant, allocated"
+     ],
+     "key": "in",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Each year",
+     "note": "Receipts and an award, not spending on any line, so never subtracted from the need. The state’s payment is by year paid, and reimburses the year before; the town books it when received. DESE lists extra relief or supplemental payments separately in FY2012, FY2019, FY2025; they are not in the first column. IDEA is the entitlement grant (code 0240), spent over more than one year. The district’s deck to the Finance Committee of 22 October 2026 states the same FY2027 allocation, and that the reserve is separate from the circuit breaker.",
+     "rows": [
+      {
+       "cells": [
+        null,
+        null,
+        "$423,413"
+       ],
+       "label": "FY2027"
+      },
+      {
+       "cells": [
+        "$579,142",
+        "$325,970",
+        "$423,912"
+       ],
+       "label": "FY2026"
+      },
+      {
+       "cells": [
+        "$508,441",
+        "$608,818",
+        "$424,156"
+       ],
+       "label": "FY2025"
+      },
+      {
+       "cells": [
+        "$401,966",
+        "$301,589",
+        "$420,163"
+       ],
+       "label": "FY2024"
+      },
+      {
+       "cells": [
+        "$415,750",
+        "$415,750",
+        "$404,772"
+       ],
+       "label": "FY2023"
+      },
+      {
+       "cells": [
+        "$519,394",
+        "$519,393",
+        "$399,152"
+       ],
+       "label": "FY2022"
+      },
+      {
+       "cells": [
+        "$484,579",
+        "$484,579",
+        "$386,101"
+       ],
+       "label": "FY2021"
+      },
+      {
+       "cells": [
+        "$478,987",
+        "$600,500",
+        "$369,440"
+       ],
+       "label": "FY2020"
+      },
+      {
+       "cells": [
+        "$430,958",
+        "$431,236",
+        "$362,328"
+       ],
+       "label": "FY2019"
+      },
+      {
+       "cells": [
+        "$366,790",
+        "$248,016",
+        "$360,585"
+       ],
+       "label": "FY2018"
+      },
+      {
+       "cells": [
+        "$507,832",
+        "$507,832",
+        "$353,466"
+       ],
+       "label": "FY2017"
+      },
+      {
+       "cells": [
+        "$784,099",
+        "$962,816",
+        null
+       ],
+       "label": "FY2016"
+      },
+      {
+       "cells": [
+        "$672,634",
+        "$637,765",
+        null
+       ],
+       "label": "FY2015"
+      },
+      {
+       "cells": [
+        "$575,389",
+        "$614,230",
+        null
+       ],
+       "label": "FY2014"
+      },
+      {
+       "cells": [
+        "$615,317",
+        "$445,423",
+        null
+       ],
+       "label": "FY2013"
+      },
+      {
+       "cells": [
+        "$419,945",
+        "$554,839",
+        null
+       ],
+       "label": "FY2012"
+      },
+      {
+       "cells": [
+        "$201,165",
+        "$262,734",
+        null
+       ],
+       "label": "FY2011"
+      },
+      {
+       "cells": [
+        "$211,224",
+        null,
+        null
+       ],
+       "label": "FY2010"
+      },
+      {
+       "cells": [
+        "$474,301",
+        null,
+        null
+       ],
+       "label": "FY2009"
+      },
+      {
+       "cells": [
+        "$305,393",
+        null,
+        null
+       ],
+       "label": "FY2008"
+      },
+      {
+       "cells": [
+        "$298,889",
+        null,
+        null
+       ],
+       "label": "FY2007"
+      },
+      {
+       "cells": [
+        "$293,705",
+        null,
+        null
+       ],
+       "label": "FY2006"
+      }
+     ],
+     "total_col": -1
+    }
+   ]
+  }
+ ],
+ "title": "Special education reserve"
 }

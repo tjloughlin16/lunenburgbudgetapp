@@ -39,7 +39,9 @@ TOPICS = {
     'circuit-breaker': 'Circuit breaker',
     'circuit-breaker-account': 'Circuit breaker account',
     'tuition-budget': 'Tuition budget',
-    'special-education-overruns': 'Special education overruns',
+    # Retitled 23 October 2026: the page now answers how big the reserve should be, with the
+    # voted-vs-spent and every-fund tables behind it. The address is unchanged (it was shared).
+    'special-education-overruns': 'Special education reserve',
     'students-with-an-iep': 'Students with an IEP',
     'out-of-district-placements': 'Out-of-district placements',
     'hiring-versus-placing': 'Hiring versus placing',
