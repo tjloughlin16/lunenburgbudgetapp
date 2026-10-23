@@ -1,0 +1,880 @@
+{
+ "category": "school-all-funds",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "Actuals in grant funds. A voted line is a function code the general fund budget is voted on; our classification. FY2026 is not yet closed in this run."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "On a voted line",
+    "texts": [
+     "$96,675",
+     "$106,456",
+     "$26,296",
+     "$14,392"
+    ],
+    "values": [
+     96675.16999999998,
+     106456.31000000001,
+     26296.379999999997,
+     14392.140000000001
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "On a heading",
+    "texts": [
+     "$1,516,074",
+     "$1,667,024",
+     "$430,986",
+     "$556,015"
+    ],
+    "values": [
+     1516073.6699999997,
+     1667024.4700000004,
+     430985.6400000001,
+     556015.28
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "No function code",
+    "texts": [
+     "$287,608",
+     "$159,179",
+     "$738,912",
+     "$450,846"
+    ],
+    "values": [
+     287608.22,
+     159179.14999999997,
+     738911.8300000001,
+     450845.89999999985
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Grant spending by how it is coded",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "y": {
+     "text": "FY2021",
+     "unit": "fiscal year",
+     "value": 2021
+    },
+    "z": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the IDEA grant budgets the district filed with DESE, by function code",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "2300",
+      "2400"
+     ],
+     "text": "Their codes were 2300, 2400: teaching and instructional materials, but no single line."
+    }
+   ],
+   "rests_on": [
+    "i2021",
+    "i2022",
+    "i2023",
+    "i2024"
+   ],
+   "text": "The IDEA grants for FY2021 to FY2024 were booked to headings, never to a voted line."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$357,180",
+     "unit": "",
+     "value": 357180.2599999999
+    },
+    "b": {
+     "text": "$394,801",
+     "unit": "",
+     "value": 394801.1499999999
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the business office’s account set-up for each grant",
+     "figures": {
+      "a": {
+       "text": "$320,895",
+       "unit": "",
+       "value": 320894.9900000001
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "2000"
+     ],
+     "text": "The FY2026 grant went to the heading 2000, instruction: $320,895."
+    },
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Why it changed is not in the ledger. A new account set-up, a new person, or a choice to code at the grant level all fit."
+    }
+   ],
+   "rests_on": [
+    "n25",
+    "t25",
+    "h26"
+   ],
+   "text": "The FY2025 grant put $357,180 of its $394,801 on no function code at all."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$1,006,861",
+     "unit": "",
+     "value": 1006861.1799999999
+    },
+    "b": {
+     "text": "$1,021,253",
+     "unit": "",
+     "value": 1021253.32
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s End of Year Financial Report working papers, grant columns by function",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The district’s End of Year report to the state puts its grant spending on function codes; this ledger mostly does not."
+    }
+   ],
+   "rests_on": [
+    "g2026",
+    "why"
+   ],
+   "text": "Across every grant, $1,006,861 of $1,021,253 spent in FY2026 was on no line."
+  }
+ ],
+ "facts": [
+  {
+   "id": "g2023",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "grant spending on a voted line, FY2023"
+   },
+   "value": {
+    "text": "5.1%",
+    "unit": "",
+    "value": 5.087210821317969
+   }
+  },
+  {
+   "id": "g2024",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "grant spending on a voted line, FY2024"
+   },
+   "value": {
+    "text": "5.5%",
+    "unit": "",
+    "value": 5.508279462284914
+   }
+  },
+  {
+   "id": "g2025",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "grant spending on a voted line, FY2025"
+   },
+   "value": {
+    "text": "2.2%",
+    "unit": "",
+    "value": 2.1983376690993683
+   }
+  },
+  {
+   "id": "g2026",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "grant spending on a voted line, FY2026"
+   },
+   "value": {
+    "text": "1.4%",
+    "unit": "",
+    "value": 1.4092624932666074
+   }
+  },
+  {
+   "id": "i2021",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2021",
+      "unit": "fiscal year",
+      "value": 2021
+     }
+    },
+    "literals": [],
+    "text": "FY2021 IDEA grant, on headings"
+   },
+   "value": {
+    "text": "$21,150",
+    "unit": "",
+    "value": 21149.6
+   }
+  },
+  {
+   "id": "i2022",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2022",
+      "unit": "fiscal year",
+      "value": 2022
+     }
+    },
+    "literals": [],
+    "text": "FY2022 IDEA grant, on headings"
+   },
+   "value": {
+    "text": "$379,711",
+    "unit": "",
+    "value": 379711.4900000001
+   }
+  },
+  {
+   "id": "i2023",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "FY2023 IDEA grant, on headings"
+   },
+   "value": {
+    "text": "$404,772",
+    "unit": "",
+    "value": 404772.00000000006
+   }
+  },
+  {
+   "id": "i2024",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "FY2024 IDEA grant, on headings"
+   },
+   "value": {
+    "text": "$421,857",
+    "unit": "",
+    "value": 421856.93000000005
+   }
+  },
+  {
+   "id": "n25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "FY2025 IDEA grant, no function code"
+   },
+   "value": {
+    "text": "$357,180",
+    "unit": "",
+    "value": 357180.2599999999
+   }
+  },
+  {
+   "id": "t25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "FY2025 IDEA grant, spent in all"
+   },
+   "value": {
+    "text": "$394,801",
+    "unit": "",
+    "value": 394801.1499999999
+   }
+  },
+  {
+   "id": "h26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "2000"
+    ],
+    "text": "FY2026 IDEA grant, on heading 2000"
+   },
+   "value": {
+    "text": "$320,895",
+    "unit": "",
+    "value": 320894.9900000001
+   }
+  },
+  {
+   "closes": "the business office’s account set-up for each grant",
+   "id": "why",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "why the coding changed"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "5.1%",
+    "unit": "",
+    "value": 5.087210821317969
+   },
+   "b": {
+    "text": "1.4%",
+    "unit": "",
+    "value": 1.4092624932666074
+   },
+   "y": {
+    "text": "FY2023",
+    "unit": "fiscal year",
+    "value": 2023
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "Grant spending on a voted budget line went from 5.1% in FY2023 to 1.4% in FY2026."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "grant-coding",
+ "kind": "topic",
+ "not_established": [
+  "Why the IDEA grant moved from headings to no code in FY2025.",
+  "Which line any grant dollar on 0000 or a heading served.",
+  "Whether the district budgets a grant to lines anywhere outside the ledger."
+ ],
+ "path": "/school-all-funds/grant-coding",
+ "said": [],
+ "shelves": [
+  "school-all-funds"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  }
+ ],
+ "table": {
+  "caption": "How grant spending is coded",
+  "views": [
+   {
+    "columns": [
+     "Spent",
+     "On a voted line",
+     "On a heading",
+     "No code",
+     "Codes used"
+    ],
+    "key": "idea",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "text"
+    ],
+    "label": "IDEA grant (#240), grant by grant",
+    "note": "Every IDEA entitlement grant with spending in the run, over its whole life.",
+    "rows": [
+     {
+      "cells": [
+       "$21,150",
+       "$0",
+       "$21,150",
+       "$0",
+       "2300, 2400"
+      ],
+      "label": "FY2021 grant (fund 2773)"
+     },
+     {
+      "cells": [
+       "$379,711",
+       "$0",
+       "$379,711",
+       "$0",
+       "2300, 2400"
+      ],
+      "label": "FY2022 grant (fund 2785)"
+     },
+     {
+      "cells": [
+       "$404,772",
+       "$0",
+       "$404,772",
+       "$0",
+       "2300, 2400"
+      ],
+      "label": "FY2023 grant (fund 2791)"
+     },
+     {
+      "cells": [
+       "$421,857",
+       "$0",
+       "$421,857",
+       "$0",
+       "2300, 2400"
+      ],
+      "label": "FY2024 grant (fund 2758)"
+     },
+     {
+      "cells": [
+       "$394,801",
+       "$0",
+       "$37,621",
+       "$357,180",
+       "0000, 2000"
+      ],
+      "label": "FY2025 grant (fund 2813)"
+     },
+     {
+      "cells": [
+       "$320,895",
+       "$0",
+       "$320,895",
+       "$0",
+       "2000"
+      ],
+      "label": "FY2026 grant (fund 2814)"
+     }
+    ],
+    "total_col": 0
+   },
+   {
+    "columns": [
+     "Spent",
+     "On a voted line",
+     "On a heading",
+     "No code"
+    ],
+    "key": "grants",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Every grant over $10,000, by year",
+    "note": "Fund number and the Town’s name for it, cut at thirty characters by the report.",
+    "rows": [
+     {
+      "cells": [
+       "$71,142",
+       "$0",
+       "$71,142",
+       "$0"
+      ],
+      "label": "2666 FY23 #237 FAMILY & COMMUNITY, FY2023"
+     },
+     {
+      "cells": [
+       "$82,882",
+       "$82,882",
+       "$0",
+       "$0"
+      ],
+      "label": "2681 COMP SCHOOL HEALTH SERV GRANT, FY2023"
+     },
+     {
+      "cells": [
+       "$14,567",
+       "$0",
+       "$0",
+       "$14,567"
+      ],
+      "label": "2686 FY22 FOUNDATION RESERVE, FY2023"
+     },
+     {
+      "cells": [
+       "$18,680",
+       "$0",
+       "$0",
+       "$18,680"
+      ],
+      "label": "2687 FY23 #528 ASOST, FY2023"
+     },
+     {
+      "cells": [
+       "$21,150",
+       "$0",
+       "$21,150",
+       "$0"
+      ],
+      "label": "2773 FY21 IDEA #240 GRANT, FY2023"
+     },
+     {
+      "cells": [
+       "$405,987",
+       "$6,896",
+       "$394,290",
+       "$4,800"
+      ],
+      "label": "2780 FY22 ESSER II #115, FY2023"
+     },
+     {
+      "cells": [
+       "$356,170",
+       "$6,896",
+       "$349,273",
+       "$0"
+      ],
+      "label": "2781 FY22 #119 ESSER III GRANT, FY2023"
+     },
+     {
+      "cells": [
+       "$64,816",
+       "$0",
+       "$0",
+       "$64,816"
+      ],
+      "label": "2782 FY22 ARP IDEA #252, FY2023"
+     },
+     {
+      "cells": [
+       "$360,455",
+       "$0",
+       "$360,455",
+       "$0"
+      ],
+      "label": "2785 FY22 #240, FY2023"
+     },
+     {
+      "cells": [
+       "$71,169",
+       "$0",
+       "$51,918",
+       "$19,251"
+      ],
+      "label": "2786 FY22 TITLE I #305, FY2023"
+     },
+     {
+      "cells": [
+       "$16,241",
+       "$0",
+       "$0",
+       "$16,241"
+      ],
+      "label": "2788 FY22 TITLE II #140, FY2023"
+     },
+     {
+      "cells": [
+       "$91,478",
+       "$0",
+       "$91,478",
+       "$0"
+      ],
+      "label": "2791 FY23 #240, FY2023"
+     },
+     {
+      "cells": [
+       "$13,083",
+       "$0",
+       "$13,083",
+       "$0"
+      ],
+      "label": "2792 FY23 #262, FY2023"
+     },
+     {
+      "cells": [
+       "$129,966",
+       "$0",
+       "$129,966",
+       "$0"
+      ],
+      "label": "2794 FY23 TITLE I #305, FY2023"
+     },
+     {
+      "cells": [
+       "$11,838",
+       "$0",
+       "$11,838",
+       "$0"
+      ],
+      "label": "2795 FY23 TITLE IV #309, FY2023"
+     },
+     {
+      "cells": [
+       "$19,855",
+       "$0",
+       "$19,855",
+       "$0"
+      ],
+      "label": "2796 FY23 TITLE II #140, FY2023"
+     },
+     {
+      "cells": [
+       "$26,862",
+       "$0",
+       "$0",
+       "$26,862"
+      ],
+      "label": "2797 FY23 #719 ACCELERATED LITERACY, FY2023"
+     },
+     {
+      "cells": [
+       "$13,087",
+       "$0",
+       "$0",
+       "$13,087"
+      ],
+      "label": "2798 FY23 #117 SOA EVIDENCE BASED, FY2023"
+     },
+     {
+      "cells": [
+       "$75,372",
+       "$0",
+       "$0",
+       "$75,372"
+      ],
+      "label": "2915 EMERGENCY CONNECTIVITY FUND, FY2023"
+     },
+     {
+      "cells": [
+       "$10,236",
+       "$0",
+       "$0",
+       "$10,236"
+      ],
+      "label": "2595 ARPA FUNDS, FY2024"
+     },
+     {
+      "cells": [
+       "$71,803",
+       "$0",
+       "$71,803",
+       "$0"
+      ],
+      "label": "2653 FY24 FAMILY & COMMUNITY #237, FY2024"
+     },
+     {
+      "cells": [
+       "$84,923",
+       "$84,923",
+       "$0",
+       "$0"
+      ],
+      "label": "2681 COMP SCHOOL HEALTH SERV GRANT, FY2024"
+     },
+     {
+      "cells": [
+       "$25,000",
+       "$0",
+       "$0",
+       "$25,000"
+      ],
+      "label": "2688 FY24 #528 ASOST, FY2024"
+     },
+     {
+      "cells": [
+       "$12,212",
+       "$12,212",
+       "$0",
+       "$0"
+      ],
+      "label": "2689 FY24 COMP SCH HEALTH SERV GR, FY2024"
+     },
+     {
+      "cells": [
+       "$165,760",
+       "$0",
+       "$165,760",
+       "$0"
+      ],
+      "label": "2705 FY24 TITLE 1 GRANT #305, FY2024"
+     },
+     {
+      "cells": [
+       "$13,477",
+       "$0",
+       "$13,477",
+       "$0"
+      ],
+      "label": "2707 FY24 SPEC ED PROGRAM IMPR #274, FY2024"
+     },
+     {
+      "cells": [
+       "$27,832",
+       "$0",
+       "$27,832",
+       "$0"
+      ],
+      "label": "2728 FY24 TITLE 11 PART A #140, FY2024"
+     },
+     {
+      "cells": [
+       "$136,583",
+       "$0",
+       "$0",
+       "$136,583"
+      ],
+      "label": "2748 FY24 SOA #117 EVIDENCE BASED P, FY2024"
+     },
+     {
+      "cells": [
+       "$14,045",
+       "$0",
+       "$14,045",
+       "$0"
+      ],
+      "label": "2750 FY24 TITLE IV-PART A #309, FY2024"
+     },
+     {
+      "cells": [
+       "$239,897",
+       "$0",
+       "$239,897",
+       "$0"
+      ],
+      "label": "2758 FY24 #240, FY2024"
+     }
+    ],
+    "total_col": 0
+   }
+  ]
+ },
+ "title": "Grant spending by line"
+}

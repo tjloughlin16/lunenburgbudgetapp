@@ -1,0 +1,465 @@
+{
+ "category": "school-all-funds",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "Bars are spending, stacked by fund; the line is the general fund budget voted for the same accounts. FY2026 is not yet closed in this run."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "General fund spent",
+    "texts": [
+     "$4,279,700",
+     "$4,642,014",
+     "$5,111,664",
+     "$6,055,912"
+    ],
+    "values": [
+     4279699.9399999855,
+     4642014.020000005,
+     5111664.110000001,
+     6055912.000000013
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Other funds spent",
+    "texts": [
+     "$1,055,922",
+     "$1,065,546",
+     "$973,939",
+     "$773,041"
+    ],
+    "values": [
+     1055922.15,
+     1065545.5699999984,
+     973938.870000001,
+     773040.960000001
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Voted, general fund",
+    "texts": [
+     "$4,543,293",
+     "$4,687,594",
+     "$5,873,117",
+     "$6,073,840"
+    ],
+    "values": [
+     4543293.0,
+     4687594.0,
+     5873117.0,
+     6073839.959999999
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Special education budget and spending",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$6,828,953",
+     "unit": "",
+     "value": 6828952.960000014
+    },
+    "b": {
+     "text": "$6,073,840",
+     "unit": "",
+     "value": 6073839.959999999
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the Town’s journal report for FY2026, run after the year is closed",
+     "figures": {
+      "a": {
+       "text": "$5,335,622",
+       "unit": "",
+       "value": 5335622.089999985
+      },
+      "b": {
+       "text": "$4,543,293",
+       "unit": "",
+       "value": 4543293.0
+      },
+      "y": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      },
+      "z": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "gap",
+     "literals": [],
+     "text": "In FY2023 it was $5,335,622 against $4,543,293. FY2026 is not yet closed in this run."
+    }
+   ],
+   "rests_on": [
+    "v2026",
+    "a2026",
+    "v2023",
+    "a2023"
+   ],
+   "text": "Every fund spent $6,828,953 on special education in FY2026, against $6,073,840 voted."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$17,928",
+     "unit": "",
+     "value": 17927.959999985993
+    },
+    "b": {
+     "text": "$761,453",
+     "unit": "",
+     "value": 761452.8899999987
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "umin",
+    "umax"
+   ],
+   "text": "The general fund itself came in under its vote every year, by $17,928 to $761,453."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$773,041",
+     "unit": "",
+     "value": 773040.960000001
+    },
+    "b": {
+     "text": "$1,065,546",
+     "unit": "",
+     "value": 1065545.5699999984
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "So outside money paid for more than the general fund budgeted, in every year. Whether the vote was set expecting it to is not in a ledger."
+    },
+    {
+     "closes": "the district’s End of Year Financial Report, special education program, all funds",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Special education here is the accounts the ledger labels so; work paid from other accounts is not counted."
+    }
+   ],
+   "rests_on": [
+    "omin",
+    "omax",
+    "intent"
+   ],
+   "text": "Other funds paid $773,041 to $1,065,546 a year on top: the circuit breaker and grants."
+  }
+ ],
+ "facts": [
+  {
+   "id": "v2023",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "voted, general fund, FY2023"
+   },
+   "value": {
+    "text": "$4,543,293",
+    "unit": "",
+    "value": 4543293.0
+   }
+  },
+  {
+   "id": "a2023",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "spent, every fund, FY2023"
+   },
+   "value": {
+    "text": "$5,335,622",
+    "unit": "",
+    "value": 5335622.089999985
+   }
+  },
+  {
+   "id": "v2026",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "voted, general fund, FY2026"
+   },
+   "value": {
+    "text": "$6,073,840",
+    "unit": "",
+    "value": 6073839.959999999
+   }
+  },
+  {
+   "id": "a2026",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "spent, every fund, FY2026"
+   },
+   "value": {
+    "text": "$6,828,953",
+    "unit": "",
+    "value": 6828952.960000014
+   }
+  },
+  {
+   "id": "umin",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "general fund under its vote, smallest year"
+   },
+   "value": {
+    "text": "$17,928",
+    "unit": "",
+    "value": 17927.959999985993
+   }
+  },
+  {
+   "id": "umax",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "general fund under its vote, largest year"
+   },
+   "value": {
+    "text": "$761,453",
+    "unit": "",
+    "value": 761452.8899999987
+   }
+  },
+  {
+   "id": "omin",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paid by other funds, smallest year"
+   },
+   "value": {
+    "text": "$773,041",
+    "unit": "",
+    "value": 773040.960000001
+   }
+  },
+  {
+   "id": "omax",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paid by other funds, largest year"
+   },
+   "value": {
+    "text": "$1,065,546",
+    "unit": "",
+    "value": 1065545.5699999984
+   }
+  },
+  {
+   "closes": "the district’s budget build for special education, with the grant and circuit breaker offsets it assumed",
+   "id": "intent",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "whether the vote counted on other funds"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [],
+  "text": "Special education spending passed its voted budget every year, and other funds paid the difference."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "sped-budget-all-funds",
+ "kind": "topic",
+ "not_established": [
+  "Whether the special education vote was set expecting the circuit breaker and grants to pay the rest.",
+  "What special education costs in full, including benefits and work on unlabelled accounts."
+ ],
+ "path": "/school-all-funds/sped-budget-all-funds",
+ "said": [],
+ "shelves": [
+  "school-all-funds"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  }
+ ],
+ "table": {
+  "caption": "Special education: voted, and spent from every fund",
+  "views": [
+   {
+    "columns": [
+     "Voted, general fund",
+     "Revised, general fund",
+     "General fund spent",
+     "Circuit breaker",
+     "IDEA grants",
+     "Other grants",
+     "Every fund"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By year",
+    "note": "The accounts on the ledger’s special education list (scripts/journal.py), psychologists outside the total.",
+    "rows": [
+     {
+      "cells": [
+       "$4,543,293",
+       "$4,569,303",
+       "$4,279,700",
+       "$494,968",
+       "$559,211",
+       "$1,743",
+       "$5,335,622"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$4,687,594",
+       "$4,736,384",
+       "$4,642,014",
+       "$466,296",
+       "$585,772",
+       "$13,477",
+       "$5,707,560"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$5,873,117",
+       "$5,266,054",
+       "$5,111,664",
+       "$498,451",
+       "$475,488",
+       "$0",
+       "$6,085,603"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$6,073,840",
+       "$6,076,722",
+       "$6,055,912",
+       "$337,499",
+       "$435,542",
+       "$0",
+       "$6,828,953"
+      ],
+      "label": "FY2026"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "Special education budget, every fund"
+}

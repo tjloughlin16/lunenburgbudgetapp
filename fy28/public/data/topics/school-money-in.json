@@ -1,0 +1,556 @@
+{
+ "category": "school-all-funds",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "Receipts posted to school revenue accounts. Capital money is voted by Town Meeting and arrives as budget, not receipts. FY2026 is not yet closed in this run."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Revolving funds and lunch",
+    "texts": [
+     "$1,554,674",
+     "$1,660,859",
+     "$1,683,842",
+     "$1,498,937"
+    ],
+    "values": [
+     1554674.1100000003,
+     1660859.2,
+     1683841.5700000005,
+     1498937.3400000003
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Circuit breaker",
+    "texts": [
+     "$415,750",
+     "$301,589",
+     "$608,818",
+     "$325,970"
+    ],
+    "values": [
+     415750.0,
+     301589.0,
+     608818.0,
+     325970.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Grants",
+    "texts": [
+     "$1,678,301",
+     "$1,949,013",
+     "$1,114,792",
+     "$74,333"
+    ],
+    "values": [
+     1678301.0,
+     1949013.15,
+     1114792.4900000002,
+     74332.87
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Capital and other",
+    "texts": [
+     "$10,296",
+     "$23",
+     "$20",
+     "$84,067"
+    ],
+    "values": [
+     10296.36,
+     22.74,
+     19.84,
+     84066.72000000002
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Money in outside the general fund",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$26,287,474",
+     "unit": "",
+     "value": 26287474.0
+    },
+    "p": {
+     "text": "35.1%",
+     "unit": "",
+     "value": 35.109535438817744
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "70"
+   ],
+   "notes": [
+    {
+     "closes": "the town’s revenue ledger for the school appropriation, by source",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "70"
+     ],
+     "text": "Chapter 70 is paid to the town, not to a school account, so it is shown beside the vote, never added to it."
+    }
+   ],
+   "rests_on": [
+    "gfv",
+    "ch70"
+   ],
+   "text": "The general fund was voted $26,287,474 for FY2026; Chapter 70 aid to the town was 35.1% of that."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,407,472",
+     "unit": "",
+     "value": 3407471.9000000004
+    },
+    "b": {
+     "text": "$1,683,842",
+     "unit": "",
+     "value": 1683841.5700000005
+    },
+    "c": {
+     "text": "$1,114,792",
+     "unit": "",
+     "value": 1114792.4900000002
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "r0",
+    "rev",
+    "gr",
+    "cb"
+   ],
+   "text": "In FY2025 other funds took in $3,407,472: $1,683,842 from fees, lunch and gifts, $1,114,792 from grants."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$74,333",
+     "unit": "",
+     "value": 74332.87
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the DESE grant payment history (GEM$) for each school grant",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Most grants are paid after the money is spent, so a year’s receipts arrive late; an open year looks short."
+    }
+   ],
+   "rests_on": [
+    "gr1"
+   ],
+   "text": "FY2026 grants had received $74,333 when the report was run."
+  }
+ ],
+ "facts": [
+  {
+   "id": "gfv",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "general fund, voted, FY2026"
+   },
+   "value": {
+    "text": "$26,287,474",
+    "unit": "",
+    "value": 26287474.0
+   }
+  },
+  {
+   "id": "ch70",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "70"
+    ],
+    "text": "Chapter 70 aid to the town, FY2026"
+   },
+   "value": {
+    "text": "$9,229,410",
+    "unit": "",
+    "value": 9229410.0
+   }
+  },
+  {
+   "id": "r0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "received by every other fund, FY2025"
+   },
+   "value": {
+    "text": "$3,407,472",
+    "unit": "",
+    "value": 3407471.9000000004
+   }
+  },
+  {
+   "id": "rev",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "fees, lunch and gifts, FY2025"
+   },
+   "value": {
+    "text": "$1,683,842",
+    "unit": "",
+    "value": 1683841.5700000005
+   }
+  },
+  {
+   "id": "cb",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "circuit breaker, FY2025"
+   },
+   "value": {
+    "text": "$608,818",
+    "unit": "",
+    "value": 608818.0
+   }
+  },
+  {
+   "id": "gr",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "grants, FY2025"
+   },
+   "value": {
+    "text": "$1,114,792",
+    "unit": "",
+    "value": 1114792.4900000002
+   }
+  },
+  {
+   "id": "gr1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "grants received so far, FY2026"
+   },
+   "value": {
+    "text": "$74,333",
+    "unit": "",
+    "value": 74332.87
+   }
+  },
+  {
+   "closes": "the Town Meeting capital articles, FY2023–FY2026, by school account",
+   "id": "cap",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "capital money voted to the schools"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$3,407,472",
+    "unit": "",
+    "value": 3407471.9000000004
+   },
+   "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   }
+  },
+  "literals": [],
+  "text": "Outside the voted budget, school funds took in $3,407,472 in FY2025, most of it fees, lunch and grants."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-money-in",
+ "kind": "topic",
+ "not_established": [
+  "What each grant was awarded by the state, against what the ledger loaded as its budget.",
+  "Capital articles voted to the schools: they arrive as budget, not as receipts."
+ ],
+ "path": "/school-all-funds/school-money-in",
+ "said": [],
+ "shelves": [
+  "school-all-funds"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  },
+  {
+   "href": "/docs/data/dls-cherry-sheet.csv",
+   "label": "Massachusetts DLS — cherry sheet receipts, Chapter 70 (dls-cherry-sheet.csv)"
+  }
+ ],
+ "table": {
+  "caption": "Money in, by source",
+  "views": [
+   {
+    "columns": [
+     "Voted, general fund",
+     "Chapter 70 (beside)",
+     "Fees, lunch, gifts",
+     "Circuit breaker",
+     "Grants"
+    ],
+    "key": "years",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "By year",
+    "note": "Chapter 70 is the town’s aid, from the state’s cherry sheet; it pays part of the voted budget and is not added to it.",
+    "rows": [
+     {
+      "cells": [
+       "$22,342,995",
+       "$8,722,228",
+       "$1,554,674",
+       "$415,750",
+       "$1,678,301"
+      ],
+      "label": "FY2023"
+     },
+     {
+      "cells": [
+       "$22,901,128",
+       "$8,819,128",
+       "$1,660,859",
+       "$301,589",
+       "$1,949,013"
+      ],
+      "label": "FY2024"
+     },
+     {
+      "cells": [
+       "$25,321,760",
+       "$8,988,960",
+       "$1,683,842",
+       "$608,818",
+       "$1,114,792"
+      ],
+      "label": "FY2025"
+     },
+     {
+      "cells": [
+       "$26,287,474",
+       "$9,229,410",
+       "$1,498,937",
+       "$325,970",
+       "$74,333"
+      ],
+      "label": "FY2026"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Received"
+    ],
+    "key": "grants",
+    "kinds": [
+     "ledger"
+    ],
+    "label": "Grants by program, four years",
+    "note": "By the DESE grant number in the fund’s name.",
+    "rows": [
+     {
+      "cells": [
+       "$1,621,594"
+      ],
+      "label": "IDEA special education (#240)"
+     },
+     {
+      "cells": [
+       "$961,119"
+      ],
+      "label": "ESSER III (#119)"
+     },
+     {
+      "cells": [
+       "$620,814"
+      ],
+      "label": "Title I (#305)"
+     },
+     {
+      "cells": [
+       "$374,445"
+      ],
+      "label": "ESSER II (#115)"
+     },
+     {
+      "cells": [
+       "$266,769"
+      ],
+      "label": "Family and community (#237)"
+     },
+     {
+      "cells": [
+       "$152,700"
+      ],
+      "label": "Student Opportunity Act (#117)"
+     },
+     {
+      "cells": [
+       "$88,653"
+      ],
+      "label": "Title II (#140)"
+     },
+     {
+      "cells": [
+       "$64,608"
+      ],
+      "label": "ARP IDEA (#252)"
+     },
+     {
+      "cells": [
+       "$39,781"
+      ],
+      "label": "IDEA early childhood (#262)"
+     },
+     {
+      "cells": [
+       "$34,904"
+      ],
+      "label": "Title IV (#309)"
+     },
+     {
+      "cells": [
+       "$591,052"
+      ],
+      "label": "Other grants"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "School money in"
+}

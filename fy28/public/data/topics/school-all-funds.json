@@ -1,0 +1,431 @@
+{
+ "answer": {
+  "figures": {
+   "a": {
+    "text": "$29,661,795",
+    "unit": "",
+    "value": 29661794.630000003
+   },
+   "b": {
+    "text": "$3,374,321",
+    "unit": "",
+    "value": 3374320.6300000027
+   },
+   "y": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The voted school budget is the general fund. Every fund together spent $29,661,795 in FY2026, $3,374,321 more, and these pages show where it came from and which lines it paid."
+ },
+ "category": "school-all-funds",
+ "chains": [],
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "text": "Actuals in every school fund. FY2026 is not yet closed in this run."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "General fund",
+    "texts": [
+     "$22,436,810",
+     "$22,755,089",
+     "$24,560,511",
+     "$25,657,318"
+    ],
+    "values": [
+     22436809.730000004,
+     22755088.949999988,
+     24560511.299999997,
+     25657318.310000002
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Revolving funds and lunch",
+    "texts": [
+     "$1,939,049",
+     "$1,971,201",
+     "$1,497,728",
+     "$1,856,768"
+    ],
+    "values": [
+     1939049.3799999994,
+     1971200.6799999997,
+     1497727.9500000002,
+     1856768.0399999996
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Circuit breaker",
+    "texts": [
+     "$494,968",
+     "$466,296",
+     "$498,451",
+     "$337,499"
+    ],
+    "values": [
+     494967.7200000001,
+     466295.9799999999,
+     498451.3500000002,
+     337499.41000000003
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Grants",
+    "texts": [
+     "$1,900,357",
+     "$1,932,660",
+     "$1,196,194",
+     "$1,021,253"
+    ],
+    "values": [
+     1900357.06,
+     1932659.9299999974,
+     1196193.85,
+     1021253.3200000003
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Capital and other",
+    "texts": [
+     "$53,587",
+     "$67,933",
+     "$637,232",
+     "$788,956"
+    ],
+    "values": [
+     53586.719999999994,
+     67933.17999999998,
+     637231.9199999998,
+     788955.5499999999
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "School spending by fund",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "school-all-funds",
+ "kind": "hub",
+ "ladder": {
+  "conclusions": [
+   {
+    "figures": {
+     "a": {
+      "text": "$26,287,474",
+      "unit": "",
+      "value": 26287474.0
+     },
+     "b": {
+      "text": "$29,661,795",
+      "unit": "",
+      "value": 29661794.630000003
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-v",
+     "h-a"
+    ],
+    "text": "The general fund was voted $26,287,474 for FY2026; every fund together spent $29,661,795."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$4,004,476",
+      "unit": "",
+      "value": 4004476.3200000003
+     },
+     "b": {
+      "text": "$2,401,020",
+      "unit": "",
+      "value": 2401019.62
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "h-o",
+     "h-u"
+    ],
+    "text": "Of $4,004,476 spent outside it, $2,401,020 was booked to no budget line."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "rests_on": [
+     "h-s"
+    ],
+    "text": "Special education ran past its vote every year; other funds paid the rest."
+   }
+  ],
+  "tiers": [
+   {
+    "facts": [
+     {
+      "id": "h-v",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "general fund, voted, FY2026"
+      },
+      "value": {
+       "text": "$26,287,474",
+       "unit": "",
+       "value": 26287474.0
+      }
+     },
+     {
+      "id": "h-a",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "spent from every fund, FY2026"
+      },
+      "value": {
+       "text": "$29,661,795",
+       "unit": "",
+       "value": 29661794.630000003
+      }
+     },
+     {
+      "id": "h-o",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "spent outside the general fund, FY2026"
+      },
+      "value": {
+       "text": "$4,004,476",
+       "unit": "",
+       "value": 4004476.3200000003
+      }
+     },
+     {
+      "id": "h-u",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "of it on no budget line"
+      },
+      "value": {
+       "text": "$2,401,020",
+       "unit": "",
+       "value": 2401019.62
+      }
+     }
+    ],
+    "title": "Money in and out"
+   },
+   {
+    "facts": [
+     {
+      "id": "h-i",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "grant spending on a voted line, FY2026"
+      },
+      "value": {
+       "text": "1.4%",
+       "unit": "",
+       "value": 1.4092624932666074
+      }
+     },
+     {
+      "id": "h-i1",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2025",
+         "unit": "fiscal year",
+         "value": 2025
+        }
+       },
+       "literals": [],
+       "text": "FY2025 IDEA grant with no code at all"
+      },
+      "value": {
+       "text": "$357,180",
+       "unit": "",
+       "value": 357180.2599999999
+      }
+     },
+     {
+      "id": "h-b",
+      "kind": "estimate",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "held in funds that carry, our count"
+      },
+      "value": {
+       "text": "$1,119,636",
+       "unit": "",
+       "value": 1119636.300000006
+      }
+     },
+     {
+      "id": "h-s",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "special education paid outside the vote, FY2026"
+      },
+      "value": {
+       "text": "$773,041",
+       "unit": "",
+       "value": 773040.960000001
+      }
+     },
+     {
+      "id": "h-t",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "tied to the Town’s spreadsheets, to the cent"
+      },
+      "value": {
+       "text": "939",
+       "unit": "accounts",
+       "value": 939
+      }
+     }
+    ],
+    "title": "How it is booked"
+   }
+  ],
+  "title": "What it adds up to"
+ },
+ "path": "/school-all-funds",
+ "shelves": [
+  "school-all-funds"
+ ],
+ "table": {
+  "caption": "How these figures tie to what the Town and the state printed",
+  "views": [
+   {
+    "columns": [
+     "Compared with",
+     "Result"
+    ],
+    "key": "ties",
+    "kinds": [
+     "text",
+     "text"
+    ],
+    "label": "Reconciliation",
+    "note": "The first two must hold to the cent or nothing on these pages is written. The last two are other publishers’ readings of the same money, compared and shown.",
+    "rows": [
+     {
+      "cells": [
+       "939 accounts, 3,756 account-years",
+       "every one ties to the cent; they hold 94% to 97% of each year’s spending"
+      ],
+      "label": "Period-13 spreadsheets, FY2023 to FY2026"
+     },
+     {
+      "cells": [
+       "3,356 accounts",
+       "every one ties to the cent"
+      ],
+      "label": "The report’s own printed totals, FY2026"
+     },
+     {
+      "cells": [
+       "12 funds",
+       "9 tie to the cent; see Unspent money by fund"
+      ],
+      "label": "Town report, special revenue, FY2023"
+     },
+     {
+      "cells": [
+       "5 fund columns",
+       "4 tie to the dollar: circuit breaker, school lunch, school choice, IDEA grants (#240); school gift fund differs by $1"
+      ],
+      "label": "DESE End of Year report, FY2023"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "The whole school budget"
+}

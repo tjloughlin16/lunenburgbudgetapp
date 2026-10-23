@@ -1,0 +1,33 @@
+"""The school budget, all funds. See scripts/topics.py for the model and the title rule.
+
+Phase 3 of notes/MASTER-PLAN.md. TJ, 22 October 2026: *"the schools' 'budget' is just the
+general fund. They layer in grants and stuff to their PowerPoints, but how that gets budgeted
+is SUPER unclear."* So this shelf shows every one of the district's own budget lines with ALL
+the money behind it, from the school MUNIS journal, FY2023 to FY2026: what came in and from
+where, what each line was voted and what every fund spent on it, what was left unspent, and
+what is paid from outside the general fund. The special education page is the same report,
+filtered.
+
+Order 5 puts it first among the school shelves (Phase 4, item 16: "the complete school budget
+as a category at the TOP").
+"""
+CATEGORY = dict(
+    start=['budget-lines-all-funds', 'grant-coding'],
+    id='school-all-funds', shelf='School budget, all funds', title='The whole school budget',
+    area='school', order=5,
+    groups=[
+        ('Money in and out', ['school-money-in', 'budget-lines-all-funds',
+                              'outside-the-general-fund']),
+        ('Left unspent', ['unspent-by-fund']),
+        ('How grants are booked', ['grant-coding']),
+        ('Special education', ['sped-budget-all-funds', 'sped-all-funds']),
+    ])
+GENERATOR = 'build_school_all_funds.py'
+TOPICS = {
+    'school-money-in': 'School money in',
+    'budget-lines-all-funds': 'Budget lines, all funds',
+    'outside-the-general-fund': 'Paid outside the general fund',
+    'unspent-by-fund': 'Unspent money by fund',
+    'grant-coding': 'Grant spending by line',
+    'sped-budget-all-funds': 'Special education budget, every fund',
+}

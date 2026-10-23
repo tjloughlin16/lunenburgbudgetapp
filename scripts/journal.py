@@ -307,6 +307,81 @@ def left(rows):
                 for r in rows), Decimal(0))
 
 
+# ---------------------------------------------------------------- 6. every fund, every line
+
+# THE FUND GROUPS of the all-funds budget (scripts/build_school_all_funds.py), read off the
+# fund NUMBER the Town's chart of accounts gives each fund, never off its name. Five, because
+# a chart holds five hues. Which group a fund is in is OUR grouping; the fund numbers are the
+# Town's. Gift funds (1311, 1315, 15xx) and the transportation fee fund (1600) sit with the
+# revolving funds, numbered beside them; 42xx and 46xx are grant funds by their names (FY26
+# Title I, Title II); 30xx-31xx are capital articles, 81xx scholarships, 9002 custodian details.
+FUND_GROUPS = ('General fund', 'Revolving funds and lunch', 'Circuit breaker', 'Grants',
+               'Capital and other')
+# Which groups carry a balance from year to year BY DESIGN, and which spend an award inside a
+# period the grantor sets. A revolving fund keeps what it does not spend (M.G.L. c.44 s.53E1/2
+# and the school-specific sections); a grant is drawn against an award, so an award not spent
+# is money never received rather than money held.
+CARRIES = {'Revolving funds and lunch': True, 'Circuit breaker': True, 'Grants': False,
+           'Capital and other': True, 'General fund': False}
+
+
+def fund_group(a):
+    f = a['fund']
+    if f == '0100':
+        return 'General fund'
+    if f == '2640':
+        return 'Circuit breaker'
+    if f[:2] in ('13', '15', '16') or f == '2200':
+        return 'Revolving funds and lunch'
+    if f[:2] in ('24', '25', '26', '27', '28', '29', '42', '46'):
+        return 'Grants'
+    if f[:2] in ('30', '31', '81', '90'):
+        return 'Capital and other'
+    raise SystemExit('journal.py: fund %s %r is in no fund group' % (f, a['fund_name']))
+
+
+def function(account):
+    """Segment 4 of the nine: the function code, the Town's version of DESE's chart."""
+    return account.split('-')[3]
+
+
+# WHAT A FUNCTION CODE IS, against the voted budget. Our classification, declared:
+#   line      a code the general fund budget is voted on (original budget or a transfer on a
+#             general fund account, in any year of the run), other than a heading
+#   heading   a code ending 000 (1000, 2000, 4000), or ending 00 where the general fund budgets
+#             codes beneath it but not the code itself (2300 over 2305-2357; 2400 over
+#             2410-2451). It names a group of lines and no one line
+#   none      0000: no function at all
+#   other     a real code the voted budget has no line for (3400, food services: lunch only)
+# The general fund's own few dollars on 2000 (mileage) are a heading too -- the test is the
+# code, not the fund.
+FUNCTION_CLASSES = ('line', 'heading', 'none', 'other')
+
+
+def voted_codes():
+    """The function codes the general fund budget is voted on, headings excluded."""
+    if 'voted' not in _CACHE:
+        A = accounts()
+        codes = {function(r['account']) for r in lines()
+                 if A[r['account']]['fund'] == '0100' and is_expense(A[r['account']])
+                 and r['posts_to'] in ('original_budget', 'transfer') and r['amt'] != 0}
+        _CACHE['voted'] = {c for c in codes if not c.endswith('000')}
+    return _CACHE['voted']
+
+
+def function_class(code):
+    v = voted_codes()
+    if code == '0000':
+        return 'none'
+    if code.endswith('000'):
+        return 'heading'
+    if code in v:
+        return 'line'
+    if code.endswith('00') and any(c[:2] == code[:2] and c != code for c in v):
+        return 'heading'
+    return 'other'
+
+
 # ---------------------------------------------------------------- loading
 
 _CACHE = {}

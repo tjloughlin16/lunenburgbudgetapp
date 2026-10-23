@@ -15,6 +15,51 @@
  ],
  "categories": [
   {
+   "answer": "The voted school budget is the general fund. Every fund together spent $29,661,795 in FY2026, $3,374,321 more, and these pages show where it came from and which lines it paid.",
+   "area": "school",
+   "elsewhere": [],
+   "groups": [
+    {
+     "title": "Money in and out",
+     "topics": [
+      "school-money-in",
+      "budget-lines-all-funds",
+      "outside-the-general-fund"
+     ]
+    },
+    {
+     "title": "Left unspent",
+     "topics": [
+      "unspent-by-fund"
+     ]
+    },
+    {
+     "title": "How grants are booked",
+     "topics": [
+      "grant-coding"
+     ]
+    },
+    {
+     "title": "Special education",
+     "topics": [
+      "sped-budget-all-funds",
+      "sped-all-funds"
+     ]
+    }
+   ],
+   "id": "school-all-funds",
+   "minutes": 1,
+   "order": 5,
+   "path": "/school-all-funds",
+   "ready": true,
+   "shelf": "School budget, all funds",
+   "start": [
+    "budget-lines-all-funds",
+    "grant-coding"
+   ],
+   "title": "The whole school budget"
+  },
+  {
    "answer": "Buses are getting more expensive, in special education and in the regular-route contract. The state repays only a slice of special education busing. The athletic line rose because the district moved that cost from player fees to the town budget, mostly taxes.",
    "area": "school",
    "elsewhere": [],
@@ -1529,6 +1574,19 @@
    ],
    "title": "Budget burndown"
   },
+  "budget-lines-all-funds": {
+   "finding": "In FY2026 other funds spent $4,004,476 beside the general fund; $2,401,020 of it sat on no budget line.",
+   "generator": "scripts/build_school_all_funds.py",
+   "home": "school-all-funds",
+   "id": "budget-lines-all-funds",
+   "minutes": 1,
+   "path": "/school-all-funds/budget-lines-all-funds",
+   "ready": true,
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "Budget lines, all funds"
+  },
   "bus-cost-by-sport": {
    "finding": "Track costs most on the district’s sheet: $13,864 in FY2024, ahead of the next sport’s $9,078.",
    "generator": "scripts/build_transportation.py",
@@ -2373,6 +2431,19 @@
    ],
    "title": "Grade-to-grade loss"
   },
+  "grant-coding": {
+   "finding": "Grant spending on a voted budget line went from 5.1% in FY2023 to 1.4% in FY2026.",
+   "generator": "scripts/build_school_all_funds.py",
+   "home": "school-all-funds",
+   "id": "grant-coding",
+   "minutes": 2,
+   "path": "/school-all-funds/grant-coding",
+   "ready": true,
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "Grant spending by line"
+  },
   "grant-endings": {
    "finding": "42.2% of the grant money that ran out in FY2025 was replaced from the general fund; the rest was not.",
    "generator": "scripts/build_school_programs_topics.py",
@@ -3038,6 +3109,19 @@
    ],
    "title": "Outside money share"
   },
+  "outside-the-general-fund": {
+   "finding": "Funds outside the voted budget spent $16,660,132 in four years: 13.5% of school spending in FY2026.",
+   "generator": "scripts/build_school_all_funds.py",
+   "home": "school-all-funds",
+   "id": "outside-the-general-fund",
+   "minutes": 2,
+   "path": "/school-all-funds/outside-the-general-fund",
+   "ready": true,
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "Paid outside the general fund"
+  },
   "override-cut-lists": {
    "finding": "The May 2024 override took 13 posts off the cut list; the 9 left match posts listed as cut for loss of ESSER.",
    "generator": "scripts/build_school_programs_topics.py",
@@ -3490,6 +3574,19 @@
    ],
    "title": "School health insurance"
   },
+  "school-money-in": {
+   "finding": "Outside the voted budget, school funds took in $3,407,472 in FY2025, most of it fees, lunch and grants.",
+   "generator": "scripts/build_school_all_funds.py",
+   "home": "school-all-funds",
+   "id": "school-money-in",
+   "minutes": 1,
+   "path": "/school-all-funds/school-money-in",
+   "ready": true,
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "School money in"
+  },
   "school-revolving-funds": {
    "finding": "The 9 school revolving funds took in $1,031,126 and paid out $1,119,195 in nine months of FY2026.",
    "generator": "scripts/build_school_spending_topics.py",
@@ -3568,9 +3665,23 @@
    "path": "/special-education/sped-all-funds",
    "ready": true,
    "shelves": [
-    "special-education"
+    "special-education",
+    "school-all-funds"
    ],
    "title": "Special education, all funds"
+  },
+  "sped-budget-all-funds": {
+   "finding": "Special education spending passed its voted budget every year, and other funds paid the difference.",
+   "generator": "scripts/build_school_all_funds.py",
+   "home": "school-all-funds",
+   "id": "sped-budget-all-funds",
+   "minutes": 1,
+   "path": "/school-all-funds/sped-budget-all-funds",
+   "ready": true,
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "Special education budget, every fund"
   },
   "sped-burndown": {
    "finding": "In FY2026 the circuit breaker paid $4,005 from July to May, then $333,495 in one June entry.",
@@ -4222,6 +4333,19 @@
     "budget-options"
    ],
    "title": "Unpriced school charges"
+  },
+  "unspent-by-fund": {
+   "finding": "Fees, lunch and the circuit breaker held $1,692,438 at the end of FY2023; by our count, $1,119,636 by FY2026.",
+   "generator": "scripts/build_school_all_funds.py",
+   "home": "school-all-funds",
+   "id": "unspent-by-fund",
+   "minutes": 2,
+   "path": "/school-all-funds/unspent-by-fund",
+   "ready": true,
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "Unspent money by fund"
   },
   "upkeep-budget-vs-spending": {
    "finding": "Building upkeep’s budget rose 96% from FY2023 to FY2026; what it spent rose 37%.",
