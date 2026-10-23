@@ -408,10 +408,11 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 
 **Special education spending passed its voted budget every year, and other funds paid the difference.**
 
-- Every fund spent $6,828,953 on special education in FY2026, against $6,073,840 voted.
+- Every fund spent $6,908,810 on special education in FY2026, against $6,073,840 voted.
   - *not known:* In FY2023 it was $5,335,622 against $4,543,293. FY2026 is not yet closed in this run. — closes: the Town’s journal report for FY2026, run after the year is closed
-- The general fund itself came in under its vote every year, by $17,928 to $761,453.
-- Other funds paid $773,041 to $1,065,546 a year on top: the circuit breaker and grants.
+- The general fund itself came in under its vote in 3 of 4 years; FY2026 ran $61,609 over.
+  - *not known:* Spent includes what was still owed when the year closed, as on the overruns page.
+- Other funds paid $773,361 to $1,065,546 a year on top: the circuit breaker and grants.
   - *hypothesis:* So outside money paid for more than the general fund budgeted, in every year. Whether the vote was set expecting it to is not in a ledger.
   - *not known:* Special education here is the accounts the ledger labels so; work paid from other accounts is not counted. — closes: the district’s End of Year Financial Report, special education program, all funds
 
@@ -422,7 +423,7 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 | FY2023 | $4,543,293 | $4,569,303 | $4,279,700 | $494,968 | $559,211 | $1,743 | $5,335,622 |
 | FY2024 | $4,687,594 | $4,736,384 | $4,642,014 | $466,296 | $585,772 | $13,477 | $5,707,560 |
 | FY2025 | $5,873,117 | $5,266,054 | $5,111,664 | $498,451 | $475,488 | $0 | $6,085,603 |
-| FY2026 | $6,073,840 | $6,076,722 | $6,055,912 | $337,499 | $435,542 | $0 | $6,828,953 |
+| FY2026 | $6,073,840 | $6,076,722 | $6,135,449 | $337,499 | $435,542 | $0 | $6,908,810 |
 
 *The accounts on the ledger’s special education list (scripts/journal.py), psychologists outside the total.*
 

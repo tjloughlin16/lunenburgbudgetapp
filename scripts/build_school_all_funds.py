@@ -905,14 +905,21 @@ def build():
     s = m['sped']
     gv = {y: s[(y, 'gf', 'original_budget')] for y in Y}
     gr = {y: gv[y] + s[(y, 'gf', 'transfer')] for y in Y}
-    ga = {y: s[(y, 'gf', 'actual')] for y in Y}
-    oa = {y: s[(y, 'out', 'actual')] for y in Y}
+    # SPENT INCLUDES WHAT WAS STILL OWED AT THE CLOSE (the year-end encumbrance), the basis
+    # build_sped_costs.py and /special-education/special-education-overruns use. On actual
+    # alone FY2026 reads $17,928 under its vote; with the $79,537 encumbered, $61,609 over --
+    # two pages of this site must not say opposite things about one year (22 October 2026).
+    ga = {y: s[(y, 'gf', 'actual')] + s[(y, 'gf', 'encumbrance')] for y in Y}
+    oa = {y: s[(y, 'out', 'actual')] + s[(y, 'out', 'encumbrance')] for y in Y}
     al = {y: ga[y] + oa[y] for y in Y}
     over = {y: al[y] - gv[y] for y in Y}
     under = {y: gv[y] - ga[y] for y in Y}
-    if not all(under[y] > 0 for y in Y):
-        fail('the H1 conclusion assumes the general fund came in under its special education vote '
-             'every year; it no longer does')
+    yu = [y for y in Y if under[y] > 0]
+    yo = [y for y in Y if under[y] <= 0]
+    if len(yo) != 1:
+        fail('the H1 conclusion names one year the general fund ran over its vote; %d now do'
+             % len(yo))
+    y_over = yo[0]
     if not all(over[y] > 0 for y in Y):
         fail('the H1 conclusion assumes every fund together passed the vote every year')
     sf = lambda y, k: s.get((y, 'fund:' + k, 'actual'), 0.0)
@@ -920,8 +927,12 @@ def build():
     for y in (F0, F1):
         hx['v%d' % y] = f('v%d' % y, U(gv[y]), 'voted, general fund, %s' % C.fy(y), 'published', {'y': F(y)})
         hx['a%d' % y] = f('a%d' % y, U(al[y]), 'spent, every fund, %s' % C.fy(y), 'published', {'y': F(y)})
-    hx['umin'] = f('umin', U(min(under.values())), 'general fund under its vote, smallest year', 'published')
-    hx['umax'] = f('umax', U(max(under.values())), 'general fund under its vote, largest year', 'published')
+    hx['nund'] = f('nund', N(len(yu), 'years'), 'of %s the general fund came in under its vote'
+                   % C.num(len(Y)), 'published', {'n': N(len(Y))})
+    hx['umax'] = f('umax', U(max(under[y] for y in yu)), 'general fund under its vote, largest year',
+                   'published')
+    hx['gfo'] = f('gfo', U(-under[y_over]), 'general fund over its vote, %s' % C.fy(y_over),
+                  'published', {'y': F(y_over)})
     hx['omin'] = f('omin', U(min(oa.values())), 'paid by other funds, smallest year', 'published')
     hx['omax'] = f('omax', U(max(oa.values())), 'paid by other funds, largest year', 'published')
     hx['intent'] = f('intent', None, 'whether the vote counted on other funds', 'gap',
@@ -938,9 +949,12 @@ def build():
              notes=[step('In %s it was %s against %s. %s' % (C.fy(F0), C.usd(al[F0]), C.usd(gv[F0]), open_note),
                          'gap', {'y': F(F0), 'a': U(al[F0]), 'b': U(gv[F0]), 'z': F(F1)},
                          closes='the Town’s journal report for %s, run after the year is closed' % C.fy(F1))]),
-         con('The general fund itself came in under its vote every year, by %s to %s.'
-             % (C.usd(min(under.values())), C.usd(max(under.values()))), ['umin', 'umax'],
-             {'a': U(min(under.values())), 'b': U(max(under.values()))}),
+         con('The general fund itself came in under its vote in %s of %s years; %s ran %s over.'
+             % (C.num(len(yu)), C.num(len(Y)), C.fy(y_over), C.usd(-under[y_over])),
+             ['nund', 'umax', 'gfo'],
+             {'a': N(len(yu)), 'n': N(len(Y)), 'y': F(y_over), 'b': U(-under[y_over])},
+             notes=[step('Spent includes what was still owed when the year closed, as on the '
+                         'overruns page.', 'measured')]),
          con('Other funds paid %s to %s a year on top: the circuit breaker and grants.'
              % (C.usd(min(oa.values())), C.usd(max(oa.values()))), ['omin', 'omax', 'intent'],
              {'a': U(min(oa.values())), 'b': U(max(oa.values()))},

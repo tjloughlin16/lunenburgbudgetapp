@@ -163,10 +163,11 @@ def main():
     for gy, d in pay['idea_by_grant'].items():
         check('IDEA FY%s grant on a voted line' % gy, d['line'], idea[d['fund']]['line'])
         check('IDEA FY%s grant spent' % gy, d['total'], idea[d['fund']]['line'] + idea[d['fund']]['off'])
-    # special education, the general fund came in under its vote every year (H1)
-    for y, d in pay['sped'].items():
-        if not d['gf_spent'] < d['voted']:
-            bad.append('sped %s: general fund %s is not under its vote %s' % (y, d['gf_spent'], d['voted']))
+    # special education (H1): spent includes the year-end encumbrance, and on that basis the
+    # general fund came in under its vote in every year but one -- the sentence says so
+    over = [y for y, d in pay['sped'].items() if not d['gf_spent'] < d['voted']]
+    if len(over) != 1:
+        bad.append('sped: %d years with the general fund over its vote; the page says one' % len(over))
 
     if bad:
         print('verify_school_all_funds: %d problems' % len(bad))

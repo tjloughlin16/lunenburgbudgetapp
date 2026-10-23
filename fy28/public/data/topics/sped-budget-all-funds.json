@@ -25,13 +25,13 @@
      "$4,279,700",
      "$4,642,014",
      "$5,111,664",
-     "$6,055,912"
+     "$6,135,449"
     ],
     "values": [
      4279699.9399999855,
      4642014.020000005,
      5111664.110000001,
-     6055912.000000013
+     6135448.820000012
     ]
    },
    {
@@ -42,13 +42,13 @@
      "$1,055,922",
      "$1,065,546",
      "$973,939",
-     "$773,041"
+     "$773,361"
     ],
     "values": [
      1055922.15,
      1065545.5699999984,
-     973938.870000001,
-     773040.960000001
+     973938.8700000009,
+     773360.960000001
     ]
    },
    {
@@ -84,9 +84,9 @@
   {
    "figures": {
     "a": {
-     "text": "$6,828,953",
+     "text": "$6,908,810",
      "unit": "",
-     "value": 6828952.960000014
+     "value": 6908809.780000013
     },
     "b": {
      "text": "$6,073,840",
@@ -136,34 +136,53 @@
     "v2023",
     "a2023"
    ],
-   "text": "Every fund spent $6,828,953 on special education in FY2026, against $6,073,840 voted."
+   "text": "Every fund spent $6,908,810 on special education in FY2026, against $6,073,840 voted."
   },
   {
    "figures": {
     "a": {
-     "text": "$17,928",
+     "text": "3",
      "unit": "",
-     "value": 17927.959999985993
+     "value": 3
     },
     "b": {
-     "text": "$761,453",
+     "text": "$61,609",
      "unit": "",
-     "value": 761452.8899999987
+     "value": 61608.860000013374
+    },
+    "n": {
+     "text": "4",
+     "unit": "",
+     "value": 4
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
     }
    },
    "literals": [],
-   "rests_on": [
-    "umin",
-    "umax"
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Spent includes what was still owed when the year closed, as on the overruns page."
+    }
    ],
-   "text": "The general fund itself came in under its vote every year, by $17,928 to $761,453."
+   "rests_on": [
+    "nund",
+    "umax",
+    "gfo"
+   ],
+   "text": "The general fund itself came in under its vote in 3 of 4 years; FY2026 ran $61,609 over."
   },
   {
    "figures": {
     "a": {
-     "text": "$773,041",
+     "text": "$773,361",
      "unit": "",
-     "value": 773040.960000001
+     "value": 773360.960000001
     },
     "b": {
      "text": "$1,065,546",
@@ -192,7 +211,7 @@
     "omax",
     "intent"
    ],
-   "text": "Other funds paid $773,041 to $1,065,546 a year on top: the circuit breaker and grants."
+   "text": "Other funds paid $773,361 to $1,065,546 a year on top: the circuit breaker and grants."
   }
  ],
  "facts": [
@@ -271,23 +290,29 @@
     "text": "spent, every fund, FY2026"
    },
    "value": {
-    "text": "$6,828,953",
+    "text": "$6,908,810",
     "unit": "",
-    "value": 6828952.960000014
+    "value": 6908809.780000013
    }
   },
   {
-   "id": "umin",
+   "id": "nund",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "n": {
+      "text": "4",
+      "unit": "",
+      "value": 4
+     }
+    },
     "literals": [],
-    "text": "general fund under its vote, smallest year"
+    "text": "of 4 the general fund came in under its vote"
    },
    "value": {
-    "text": "$17,928",
-    "unit": "",
-    "value": 17927.959999985993
+    "text": "3",
+    "unit": "years",
+    "value": 3
    }
   },
   {
@@ -305,6 +330,26 @@
    }
   },
   {
+   "id": "gfo",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "general fund over its vote, FY2026"
+   },
+   "value": {
+    "text": "$61,609",
+    "unit": "",
+    "value": 61608.860000013374
+   }
+  },
+  {
    "id": "omin",
    "kind": "published",
    "label": {
@@ -313,9 +358,9 @@
     "text": "paid by other funds, smallest year"
    },
    "value": {
-    "text": "$773,041",
+    "text": "$773,361",
     "unit": "",
-    "value": 773040.960000001
+    "value": 773360.960000001
    }
   },
   {
@@ -449,11 +494,11 @@
       "cells": [
        "$6,073,840",
        "$6,076,722",
-       "$6,055,912",
+       "$6,135,449",
        "$337,499",
        "$435,542",
        "$0",
-       "$6,828,953"
+       "$6,908,810"
       ],
       "label": "FY2026"
      }

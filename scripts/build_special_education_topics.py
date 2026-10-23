@@ -757,7 +757,9 @@ def build():
                     step('These are general fund figures after whatever tuition the circuit '
                          'breaker account paid, and which accounts count is our grouping.', 'gap',
                          closes='a chart of accounts from the Town marking every special '
-                                'education account')]),
+                                'education account',
+                         cite=('/school-all-funds/sped-budget-all-funds',
+                               'every fund, the same accounts'))]),
          con('The average plus two standard deviations is %s, enough in all %s years.'
              % (C.usd(lv2), C.num(nyrs)), ['mean', 'sd', 'lvl1', 'lvl2', 'two'],
              {'a': U(lv2), 'n': N(nyrs)},
