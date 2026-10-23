@@ -271,6 +271,8 @@ SCHOOL_DIRECTORY = os.path.join(ROOT, 'sources', 'district-budget', 'docs', 'per
                                 'staff-directory')
 # DESE's current-grants list and its program pages; `checked.csv` here gates the weekly look.
 DESE_GRANTS = os.path.join(ROOT, 'sources', 'state-dese', 'grants')
+# DESE's entitlement allocations, every district and fund code; `checked.csv` gates the look.
+DESE_ENTITLEMENTS = os.path.join(ROOT, 'sources', 'state-dese', 'entitlements')
 
 
 def directory_due(root, as_of):
@@ -1201,6 +1203,21 @@ def run(a, notes, ctx):
                              'python3 scripts/fetch_dese_grants.py --dry-run' % r.returncode)
         py('extract_dese_grants.py', check=False)
         py('build_grants_open.py', check=False)
+
+    # 3i. DESE'S ENTITLEMENT ALLOCATIONS, WEEKLY: every district, every fund code, FY2017 to
+    # the coming year. DESE revises these pages in place (each carries `Last Updated`), so the
+    # dated snapshots are the only record of an allocation before it was revised. Gated on
+    # the fetcher's own checked.csv like 3h; a page lands only when its bytes differ from the
+    # newest snapshot, through `ingest`, and a year whose by-district pages do not reconcile
+    # with its fund-code pages lands nothing. Network only, ~265 requests at one a second.
+    # extract runs after it so dese-fund-codes.csv picks up a list 3h just refreshed.
+    if not a.dry_run:
+        if directory_due(DESE_ENTITLEMENTS, a.as_of):
+            r = py('fetch_dese_entitlements.py', '--if-changed', check=False)
+            if r.returncode:
+                notes.append('DESE entitlements: the weekly fetch exited %d -- retried tomorrow; '
+                             'run python3 scripts/fetch_dese_entitlements.py --dry-run' % r.returncode)
+        py('extract_dese_entitlements.py', check=False)
 
     # 4-6. The town's recordings.
     py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))

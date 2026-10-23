@@ -1804,6 +1804,24 @@ GROUPS = [
              '`district_reading` and `reading_basis` ARE OURS: a conservative reading of the '
              'eligibility text by fixed rules, `unclear` when in doubt. DESE publishes only the '
              'current list, so our weekly copies are the only history of it.'),
+            ('data/dese-entitlement-allocations.csv',
+             'DESE\u2019s entitlement allocations, every district, every fund code, FY2017 on', 2,
+             'Written by us, by `extract_dese_entitlements.py`, from the copies of DESE\u2019s '
+             '\u201cEntitlement and Allocation Grants\u201d pages that `fetch_dese_entitlements.py` '
+             'keeps weekly (sources/state-dese/entitlements/<date>/). One row per fiscal year, fund '
+             'code and district, as the by-fund-code view prints it; `district_code` is matched off '
+             'DESE\u2019s own district list and left empty where a name is ambiguous. Every year is '
+             'reconciled before it is written: four districts\u2019 by-district pages, footed to '
+             'their printed District Total, must equal their rows across all of the year\u2019s '
+             'fund-code pages. AN ALLOCATION IS WHAT A DISTRICT MAY DRAW, not a receipt and not a '
+             'spend.'),
+            ('data/dese-fund-codes.csv',
+             'DESE fund code to grant name', 2,
+             'Written by us, by `extract_dese_entitlements.py`. The name is DESE\u2019s, from the '
+             'newest allocation page that names the code (or, for a code only on the open-grants '
+             'list, that list\u2019s program name, verbatim). `federal_or_state` is DESE\u2019s '
+             '`Type of Funding` where the open-grants list carries the code, and empty otherwise. '
+             'It is how /accounts names a town grant fund such as `FY25 #240`.'),
             ('data/board-transfers.csv',
              'Every transfer in every board\u2019s minutes, by fiscal year, with its evidence', 2,
              'Written by us, by `build_board_transfers.py`, from the transfers and votes '
