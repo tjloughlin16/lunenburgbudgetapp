@@ -30,7 +30,7 @@ export type VoteRow = {
    *  same in one sentence for the expansion. */
   chips: VoteChip[]; basis_note: string
 }
-export type VoteChip = { text: string; tone: 'ok' | 'caution' | 'neutral'; href: string }
+export type VoteChip = { text: string; tone: 'ok' | 'video' | 'missing' | 'neutral'; href: string }
 export type FyCoverage = { status: 'clerk' | 'part' | 'none'; short: string; text: string; tag: string }
 export type VoteGroup = {
   id: string; label: string; date: string; date_printed: boolean; kind?: string
@@ -222,14 +222,13 @@ export function VoteList({ p }: { p: VotePayload }) {
 function Legend({ kind }: { kind: VotePayload['kind'] }) {
   const rec = kind === 'town-meeting' ? 'Clerk’s record' : 'Town minutes'
   const rows: [VoteChip, string][] = kind === 'town-meeting' ? [
-    [{ text: `${rec} ✓`, tone: 'ok', href: '' }, 'the result is from the Town Clerk’s official record'],
-    [{ text: `${rec} — not yet`, tone: 'caution', href: '' }, 'that year’s annual report isn’t published yet'],
-    [{ text: `${rec} — not found`, tone: 'caution', href: '' }, 'the report is held, but we haven’t found this article in it'],
-    [{ text: 'Video', tone: 'caution', href: '' }, 'the result shown is our reading of the meeting video, and may be wrong'],
+    [{ text: `${rec} ✓`, tone: 'ok', href: '' }, 'source: the Town Clerk’s official record'],
+    [{ text: 'From video', tone: 'video', href: '' }, 'source: our reading of the meeting video — may be wrong'],
+    [{ text: 'No Clerk’s record yet', tone: 'missing', href: '' }, 'the record it should come from isn’t published yet'],
   ] : [
-    [{ text: `${rec} ✓`, tone: 'ok', href: '' }, 'the vote is from the town’s own minutes'],
-    [{ text: `${rec} — not yet`, tone: 'caution', href: '' }, 'no minutes posted (or not read yet, or the vote isn’t in them)'],
-    [{ text: 'Video', tone: 'caution', href: '' }, 'the vote is our reading of the meeting video, and may be wrong'],
+    [{ text: `${rec} ✓`, tone: 'ok', href: '' }, 'source: the town’s own minutes'],
+    [{ text: 'From video', tone: 'video', href: '' }, 'source: our reading of the meeting video — may be wrong'],
+    [{ text: 'No town minutes yet', tone: 'missing', href: '' }, 'the record it should come from isn’t available'],
   ]
   return (
     <ul className="list-none p-0 m-0 mt-2 text-[12px] grid gap-0.5" style={{ color: 'var(--text-muted)' }}>
@@ -274,15 +273,18 @@ function Meeting({ g, votes, kind }: { g: VoteGroup; votes: VoteRow[]; kind: Vot
   )
 }
 
-/** A SOURCE CHIP: the record a vote should rest on and whether we have it, in one to three words.
- *  'ok' is the record, held; 'caution' is a record expected and not available, or our reading of
- *  the video standing in for it -- the amber of this site's "our estimate" marks, outlined. */
+/** A SOURCE CHIP, one to three words. FILLED means "this is where the result comes from": 'ok'
+ *  an official record, 'video' our reading of the meeting video (the amber of this site's "our
+ *  estimate" marks). DASHED AND MUTED means "the record it should come from, which we don't
+ *  have" -- never the source. Two chips in one style read as two sources (TJ, 23 Oct 2026). */
 function Chip({ c }: { c: VoteChip }) {
   const st = c.tone === 'ok'
-    ? { color: 'var(--status-good)', border: '1px solid var(--status-good)', background: 'transparent' }
-    : c.tone === 'caution'
-      ? { color: 'var(--text-primary)', border: '1px dashed var(--status-warning)', background: 'var(--surface-3)' }
-      : { color: 'var(--text-secondary)', border: '1px solid var(--grid)', background: 'transparent' }
+    ? { color: 'var(--status-good)', border: '1px solid var(--status-good)', background: 'color-mix(in srgb, var(--status-good) 12%, transparent)' }
+    : c.tone === 'video'
+      ? { color: 'var(--text-primary)', border: '1px solid var(--status-warning)', background: 'color-mix(in srgb, var(--status-warning) 22%, transparent)' }
+      : c.tone === 'missing'
+        ? { color: 'var(--text-muted)', border: '1px dashed var(--axis)', background: 'transparent', fontWeight: 500 }
+        : { color: 'var(--text-secondary)', border: '1px solid var(--grid)', background: 'transparent' }
   const cls = 'inline-block whitespace-nowrap text-[11.5px] font-semibold px-1.5 py-px rounded no-underline'
   return c.href
     ? <a className={cls + ' hover:underline'} style={st} href={c.href} target="_blank" rel="noreferrer"
@@ -312,7 +314,7 @@ function Row({ v, kind }: { v: VoteRow; kind: VotePayload['kind'] }) {
           </div>
         </summary>
         <div className="mt-2 text-[13.5px] max-w-3xl min-w-0" style={{ borderLeft: '3px solid var(--grid)', paddingLeft: 10 }}>
-          <p className="break-words" style={{ color: v.chips.some(c => c.tone === 'caution') ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{v.basis_note}</p>
+          <p className="break-words" style={{ color: v.chips.some(c => c.tone === 'video') ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{v.basis_note}</p>
           {v.quote && (
             <p className="mt-2 break-words">
               <span className="text-[11px] font-bold uppercase tracking-wide block" style={{ color: 'var(--text-muted)' }}>

@@ -78,17 +78,20 @@ BASIS = {
 }
 
 # THE SOURCE CHIPS (TJ, 23 October 2026). Every vote shows, in at most two chips of one to three
-# words, the record it SHOULD rest on and whether we have it -- "Clerk's record ✓" or "Clerk's
-# record — not yet" -- and a "Video" chip where the result shown comes from our reading of the
-# meeting video. One sentence in the expansion says the same thing in full. verify_vote_lists.py
-# recomputes both from the sources.
+# words: FIRST the source the result shown comes from, filled -- "Clerk's record ✓", "Town
+# minutes ✓", or "From video" -- and THEN, muted and dashed, the record it should rest on where
+# we do not have it: "No Clerk's record yet", "No town minutes yet". The first version showed the
+# missing record first and both chips in one style, so "Town minutes — not yet" read as the
+# source (TJ: "you tell me: which source did this vote come from?"). One sentence in the
+# expansion says the same in full. verify_vote_lists.py recomputes both from the sources.
 TICK = '\u2713'
 WRONG = 'this result is from our reading of the meeting video and may be wrong'
 
 
 def chip(text, tone, href=''):
-    """tone: 'ok' (the record, held), 'caution' (expected and not available, or our reading of the
-    video standing in for it), 'neutral' (the video, beside a record we do have)."""
+    """tone: 'ok' (the source: an official record, held), 'video' (the source: our reading of the
+    meeting video), 'missing' (the record it should rest on, not available), 'neutral' (the video,
+    beside a record we do have)."""
     return {'text': text, 'tone': tone, 'href': href}
 
 
@@ -106,14 +109,14 @@ def tm_source(v, y, held, upcoming):
                 "From the Town Clerk's record in the FY%d annual town report%s." % (
                     y, ', p.%s' % page.group(1) if page else ''))
     if upcoming:
-        return ([chip('Not voted yet', 'caution')], v['reason'])
+        return ([chip('Not voted yet', 'missing')], v['reason'])
     have = y in held
-    c1 = chip("Clerk's record \u2014 " + ('not found' if have else 'not yet'), 'caution',
+    c1 = chip("Clerk's record not found" if have else "No Clerk's record yet", 'missing',
               docs_href(held[y])[0] if have else '')
     why = ("The Town Clerk's record in the FY%d annual town report doesn't have this article as we read it" % y if have
            else "The Town Clerk's FY%d record isn't published yet" % y)
     if v['basis'] == 'ours':
-        return [c1, chip('Video', 'caution', video)], '%s; %s.' % (why, WRONG)
+        return [chip('From video', 'video', video), c1], '%s; %s.' % (why, WRONG)
     return [c1], v['reason']
 
 
@@ -124,19 +127,19 @@ def board_source(v, r):
     if v['basis'] in ('minutes', 'both'):
         chips = [chip('Town minutes ' + TICK, 'ok', minutes)]
         if v['basis'] == 'both' and video:
-            chips.append(chip('Video', 'neutral', video))
+            chips.append(chip('Also on video', 'neutral', video))
         return chips, ("From the town's minutes of this meeting" +
                        ('; matched to the same vote in the video.' if v['basis'] == 'both' else '.'))
     if not r:
-        state, why = 'unknown', "We don't know whether the town posted minutes for this meeting"
+        state, why = 'Town minutes unknown', "We don't know whether the town posted minutes for this meeting"
     elif r.get('official_votes_path'):
-        state, why = 'vote absent', "The town's minutes don't record this vote as we heard it"
+        state, why = 'Not in town minutes', "The town's minutes don't record this vote as we heard it"
     elif r.get('minutes') == '1':
-        state, why = 'not read yet', "The town's minutes are posted but we haven't read them yet"
+        state, why = 'Town minutes unread', "The town's minutes are posted but we haven't read them yet"
     else:
-        state, why = 'not yet', "The town hasn't posted minutes for this meeting"
-    return ([chip('Town minutes \u2014 ' + state, 'caution', r.get('minutes_url') or ''),
-             chip('Video', 'caution', video)], '%s; %s.' % (why, WRONG))
+        state, why = 'No town minutes yet', "The town hasn't posted minutes for this meeting"
+    return ([chip('From video', 'video', video),
+             chip(state, 'missing', r.get('minutes_url') or '')], '%s; %s.' % (why, WRONG))
 
 
 def read_csv(p):

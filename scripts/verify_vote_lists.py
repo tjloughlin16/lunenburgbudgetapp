@@ -159,7 +159,7 @@ def town_meeting():
                 if r['href']:
                     check_link(w, {'label': r['who'], 'href': r['href']})
             # the chips match the basis, recomputed: the Clerk's record held -> its tick; otherwise a
-            # caution chip naming whether the report is held, and a Video chip iff the result is ours
+            # a "From video" chip iff the result is ours, then a missing-record chip naming whether the report is held
             texts = [c['text'] for c in v['chips']]
             y = report_for(g, v)
             if not 1 <= len(texts) <= 2:
@@ -169,7 +169,7 @@ def town_meeting():
             elif g['status'].startswith('Upcoming') and v['result'] in ('not yet voted', 'kept off the warrant'):
                 want = ['Not voted yet']
             else:
-                want = ["Clerk's record — " + ('not found' if y in HELD else 'not yet')] + (['Video'] if v['basis'] == 'ours' else [])
+                want = (['From video'] if v['basis'] == 'ours' else []) + ["Clerk's record not found" if y in HELD else "No Clerk's record yet"]
             if texts != want:
                 fail('%s: chips %s, the record calls for %s' % (w, texts, want))
             if v['basis'] == 'ours' and 'may be wrong' not in v['basis_note']:
@@ -250,13 +250,13 @@ def boards():
                 texts = [c['text'] for c in v['chips']]
                 if v['basis'] == 'recording':
                     n_cav += 1
-                    state = ('unknown' if not r else 'vote absent' if r['official_votes_path']
-                             else 'not read yet' if r['minutes'] == '1' else 'not yet')
-                    want = ['Town minutes — ' + state, 'Video']
+                    state = ('Town minutes unknown' if not r else 'Not in town minutes' if r['official_votes_path']
+                             else 'Town minutes unread' if r['minutes'] == '1' else 'No town minutes yet')
+                    want = ['From video', state]
                     if 'may be wrong' not in v['basis_note']:
                         fail('%s: a vote from the video does not say it may be wrong' % w)
                 else:
-                    want = ['Town minutes ✓'] + (['Video'] if v['basis'] == 'both' and any(
+                    want = ['Town minutes ✓'] + (['Also on video'] if v['basis'] == 'both' and any(
                         l['href'].startswith('https://www.youtube.com/') for l in v['links']) else [])
                 if texts != want:
                     fail('%s: chips %s, the record calls for %s' % (w, texts, want))
