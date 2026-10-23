@@ -455,6 +455,60 @@
    "side": "money_in",
    "what": "Why did the circuit breaker and the special education grants pay a smaller share of special education in FY2026 than in FY2023?",
    "why": "The school journal shows the share of special education postings outside the general fund falling over FY2023-FY2026 (/special-education/sped-all-funds), and that in FY2026 the circuit breaker fund paid through a single year-end reclassification of collaborative tuition rather than through invoices during the year. A smaller reimbursement, a balance held back for the next year, and costs moved to other accounts all fit the same postings, and nothing in a ledger says which."
+  },
+  {
+   "closes": "the business office's account set-up for each IDEA grant, FY2023-FY2026, and the IDEA budgets the district filed with DESE by function code.",
+   "side": "record",
+   "what": "Why the IDEA grant stopped being booked to the teaching and materials headings in FY2025",
+   "why": "MEASURED in the school MUNIS journal (/school-all-funds/grant-coding): every IDEA entitlement grant from FY2021 to FY2024 posted its spending to function 2300 or 2400 -- headings that name teaching and instructional materials but no single voted line. The FY2025 grant posted most of its spending to 0000, no function at all, and the FY2026 grant to 2000, the instruction heading. The ledger records the change and not the reason: a new account set-up, a change of staff in the business office, or a decision to code at the grant level all fit the same postings."
+  },
+  {
+   "closes": "the district's End of Year Financial Report working papers, grant and revolving columns by function, FY2023-FY2026.",
+   "side": "money_out",
+   "what": "Which voted budget line the grant and revolving spending booked to no function code served",
+   "why": "MEASURED: in the school MUNIS journal most spending outside the general fund in FY2026 posts to function 0000 or to a heading (1000, 2000, 2300, 2400, 4000), not to any line the general fund budget is voted on (/school-all-funds/budget-lines-all-funds, which shows it as its own row and does not spread it). The district's End of Year Financial Report to DESE does put grant spending on function codes, so the attribution is made somewhere outside the town's ledger. This narrows `Which budget line each dollar of grant and revolving money paid for`: the ledger cannot answer it either."
+  },
+  {
+   "closes": "DESE's grant award notices, final expenditure reports and carryover approvals for each school grant, FY2023-FY2026.",
+   "side": "money_in",
+   "what": "Whether an unspent school grant budget was carried into the next grant year or simply never drawn",
+   "why": "MEASURED: the grants named for FY2023 and FY2024 spent less than the budget the ledger loaded for them (/school-all-funds/unspent-by-fund). A loaded budget is not always the award -- two FY2026 funds each carry a Title I budget and one has spent nothing -- and some federal grants allow a carryover into the next year's grant, so the shortfall is not established as money lost."
+  },
+  {
+   "closes": "the district's special education budget build for each year, with the circuit breaker and grant offsets it assumed.",
+   "side": "money_out",
+   "what": "Whether the school committee sets the special education budget expecting the circuit breaker and grants to pay the rest",
+   "why": "MEASURED (/special-education/sped-all-funds): on the accounts the ledger labels special education, the general fund came in under its voted budget in three of the four years FY2023-FY2026 and ran over in FY2026 (spent counting what was still owed at year end), and the circuit breaker and grants paid more on top -- so total special education spending passed the vote every year. Whether the vote was built net of those funds by design is intent, and no ledger records intent."
+  },
+  {
+   "closes": null,
+   "side": "money_in",
+   "what": "Why the district's grant history and DESE's allocations disagree for Lunenburg's special education grants",
+   "why": "MEASURED: the district's own grants history (sources/data/grants-history.csv, read from the superintendent's FY25 budget update, pp. 32-36, and the FY24 presentation, p. 16) and DESE's entitlement allocation pages (sources/data/dese-entitlement-allocations.csv, every year reconciled to DESE's by-district page) disagree for Lunenburg. IDEA 240: FY2020 $367,980 in the budget book against $369,440 at DESE; FY2024 $418,237 against $420,163; FY2021-FY2023 agree. Early childhood 262: FY2020 $12,281 vs $12,303, FY2021 $12,368 vs $12,401, FY2023 $13,133 vs $13,083, FY2024 $13,245 vs $13,325; FY2022 agrees at $12,500. ARP IDEA: the budget book lists $88,330 and $8,229 in each of FY2020, FY2021 and FY2022, and $87,888 on grant 252 in FY2023; DESE prints 252 ($88,330) and 264 ($8,229) for FY2022 only. WHAT IS NOT ESTABLISHED: why. An allocation DESE revised after the book was printed, the book reporting a different stage (a budgeted or amended award, a carryover, a draw) under the same name, or a multi-year grant printed in each year it was spent all fit; nothing here tests any of them, and no earlier version of these pages is held here -- our weekly snapshots begin 23 October 2026. FY2018 IDEA cannot be checked across views: DESE's by-fund-code page for 0240 FY2018 answers with its server error page. -- closes: the grant award letters (DESE's GEM$ project award and any amendments) for funds 240, 262, 252 and 264, FY2020-FY2024, which state the amount awarded and its period."
+  },
+  {
+   "closes": "DESE's IDEA Part B allocation calculation for Lunenburg, FY2017-FY2027, showing each input.",
+   "side": "money_in",
+   "what": "Why Lunenburg's IDEA special education allocation per pupil is lower than most comparable districts'",
+   "why": "MEASURED (/school-all-funds/grant-allocations-compared): DESE's IDEA allocation divided by DESE's October headcount puts Lunenburg below the median of its comparison districts in every year that can be compared since FY2017. NOT ESTABLISHED: why. DESE's eligibility text names enrolment in public and private schools and children in poverty as inputs; our divisor counts only pupils enrolled in the district, and the formula's other parts are not on DESE's allocation pages. A smaller resident count, a smaller poverty count or a historical base amount all fit."
+  },
+  {
+   "closes": "DESE's Title III consortium membership list for each year, or the district's Title III application.",
+   "side": "money_in",
+   "what": "Whether Lunenburg receives Title III English-learner money through a consortium",
+   "why": "MEASURED (/school-all-funds/grants-others-receive): most of Lunenburg's comparison districts are allocated Title III; Lunenburg is on none of DESE's Title III allocation pages, FY2017-FY2027. DESE allocates Title III only where a district's amount reaches the statutory floor, and at the median rate per learner our estimate puts Lunenburg just under it. A district under the floor can join a consortium, and DESE's pages do not list a consortium's members."
+  },
+  {
+   "closes": "the district's grants list by year, with the application and award notice for each competitive grant, and DESE's award listings for the same years.",
+   "side": "money_in",
+   "what": "Which competitive state and federal grants the school district applied for and won, by year",
+   "why": "DESE's allocation pages list formula entitlements only, and its open-grants list shows what is open now, not who was awarded. So the grant comparison (/school-all-funds/grants-others-receive) cannot compare what Lunenburg applied for or won against other districts."
+  },
+  {
+   "closes": "the district's circuit breaker spending plan for each year, set before the year began, against which the year-end charge can be compared.",
+   "side": "money_in",
+   "what": "Whether a year's special education overrun on the general fund measures surprise, or how much was charged to the circuit breaker account at the close",
+   "why": "MEASURED (/special-education/special-education-overruns): the need a Special Education Reserve Fund is sized against is the general fund's spending past its vote, line by line, after the circuit breaker account (fund 2640) and the grants paid their share. The circuit breaker account paid tuition in every year FY2023-FY2026, and in FY2026 it paid through a single year-end reclassification of collaborative tuition rather than through invoices during the year (/special-education/sped-all-funds). So how much of a year's tuition lands on the general fund, and therefore that year's overrun, turns partly on a charge decided at the close. Set the account's tuition back on the line and FY2024's need is $619,020 rather than $152,724. WHAT IS NOT ESTABLISHED: whether the amount charged each year follows a rule (the reimbursement received, a planned share, whatever kept the general fund within its vote), so the year-to-year spread of the general fund need cannot be separated from the spread of that choice."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

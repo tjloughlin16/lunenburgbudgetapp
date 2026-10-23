@@ -60,9 +60,9 @@ Which code adds to which column of the printed report is not assumed: it is the 
 | FY2023 | 12,585 | $26,824,771 | $22,436,810 |
 | FY2024 | 12,450 | $27,193,179 | $22,755,089 |
 | FY2025 | 12,133 | $28,390,116 | $24,560,511 |
-| FY2026 (not closed) | 11,875 | $29,661,795 | $25,657,318 |
+| FY2026 (not closed) | 11,875 | $29,929,041 | $25,904,085 |
 
-Spending is actuals on expense accounts, net of every reversal and reclassification. It is the school ledger’s spending, not what the schools cost: see what it cannot show, below.
+Spending is payments plus what was still owed on expense accounts, net of every reversal and reclassification; only FY2026 still owed anything when the report was run. It is the school ledger’s spending, not what the schools cost: see what it cannot show, below.
 
 ## The redaction
 
