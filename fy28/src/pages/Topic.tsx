@@ -60,6 +60,9 @@ type TopicPayload = {
   ledger?: LedgerData
   /** The claim a page tests, quoted verbatim, opening the page (scripts/topic.py lead_quote). */
   lead_quote?: LeadQuote
+  /** ONE link under the finding, to the page a reader of this one most often wanted instead
+   *  (scripts/topic.py page(see=)). */
+  see?: { href: string; label: string }
 }
 type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string }
 type HubPayload = {
@@ -299,6 +302,8 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           <Shelf ix={ix} t={p} />
           {p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null}
           <p className="text-[19px] leading-snug font-semibold mt-4 max-w-3xl">{p.finding.text}</p>
+          {p.see ? <p className="text-[14px] mt-2"><a href={p.see.href} className="underline font-medium"
+            style={link}>{p.see.label} &rarr;</a></p> : null}
           <TopicChart chart={p.chart} alt={p.title} />
           {(p.also ?? []).map((c, i) => <TopicChart key={i} chart={c} alt={p.title} />)}
           <Ladder

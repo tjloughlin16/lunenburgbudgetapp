@@ -1864,6 +1864,17 @@ GROUPS = [
              '`district_reading` and `reading_basis` ARE OURS: a conservative reading of the '
              'eligibility text by fixed rules, `unclear` when in doubt. DESE publishes only the '
              'current list, so our weekly copies are the only history of it.'),
+            ('data/dese-competitive-awards.csv',
+             'DESE\u2019s competitive grant awards, one row per recipient, FY2026 on', 2,
+             'Written by us, by `extract_dese_awards.py`, from the award documents DESE lists under '
+             '\u201cCompetitive Awards\u201d that `fetch_dese_awards.py` keeps (sources/state-dese/'
+             'awards/fy<YYYY>/). Program, funds allocated, proposals received and recommended, '
+             'recipient and amount are DESE\u2019s, as printed. `district`, `district_code` and '
+             '`match` ARE OURS: a recipient is matched to a district only when its normalised name '
+             'equals DESE\u2019s own district name, or by a row read by eye and listed in the '
+             'script; schools, collaboratives and non-profits stay unattributed. A joint award '
+             'prints one amount for several districts, and `joint` says how many share it. DESE '
+             'posts no award list before FY2026.'),
             ('data/dese-entitlement-allocations.csv',
              'DESE\u2019s entitlement allocations, every district, every fund code, FY2017 on', 2,
              'Written by us, by `extract_dese_entitlements.py`, from the copies of DESE\u2019s '

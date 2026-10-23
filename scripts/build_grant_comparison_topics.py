@@ -10,11 +10,15 @@ setup to other districts to see what gaps we have or where we are better."*
 TWO PAGES on the school-all-funds shelf, registered there through TOPIC_GENERATORS:
 
     grant-allocations-compared   the five grants every comparison district holds, per pupil
-    grants-others-receive        the grants comparison districts are allocated and Lunenburg is not
+    grants-others-receive        which grants comparison districts get and Lunenburg does not:
+                                 a presence matrix, competitive awards and formula grants apart
 
 THE DATA
   sources/data/dese-entitlement-allocations.csv   DESE's allocation pages, every district,
                                                   FY2017-FY2027 (extract_dese_entitlements.py)
+  sources/data/dese-competitive-awards.csv        DESE's competitive award documents, FY2026-
+                                                  FY2027, one row per recipient, matched to a
+                                                  district by name (extract_dese_awards.py)
   sources/data/dese-grant-opportunities.csv       DESE's open-grants list: each code's type and
                                                   eligibility text, quoted, never paraphrased
   sources/state-dese/er3w-dyti.json               DESE's district profile: the 1 October
@@ -49,8 +53,15 @@ says "not listed", not "received nothing".
 WHAT THIS DOES NOT SHOW (rule 7). An allocation is formula output. A lower Title I or IDEA
 figure is the formula's answer to the district's counts, not money Lunenburg failed to claim,
 and the page says so; why IDEA per pupil is lower is not established, and is registered in
-money-gaps.csv with the one document that would settle it. Competitive grants are not on these
-pages at all.
+money-gaps.csv with the one document that would settle it.
+
+FORMULA AND COMPETITIVE ARE NEVER MIXED (TJ, 23 October 2026: "almost a PUSH to the school
+committee to look into other grants"). The push is only honest for grants a district applies
+for. So the second page keeps two groups by DESE's OWN label: every code on the "Entitlement And
+Allocation Grants" pages is formula money, and every document under "Competitive Awards" is a
+competitive award. A competitive award list shows who WON; nothing DESE publishes says who
+applied and lost, and the page says so rather than reading absence as not trying. DESE posts
+award lists for FY2026 and the current year only; earlier ones redirect to its 404 page.
 """
 import argparse
 import csv
@@ -94,6 +105,25 @@ SHORT = {'0180': 'Title III', '0186': 'Title III immigrant', '0184': 'Title III 
          '0119': 'ESSER III', '0252': 'ARP IDEA', '0264': 'ARP early childhood IDEA',
          '0302': 'ARP homeless youth'}
 SHORT.update(dict(FIVE))
+FWIN = (2023, 2027)            # the formula window the presence matrix reads, "any year"
+EBP, MYCAP = '0117', '0424'    # the two competitive awards Lunenburg won (refused if that moves)
+AWARDS = os.path.join(ROOT, 'sources', 'data', 'dese-competitive-awards.csv')
+# What a reader calls each competitive grant a comparison district or Lunenburg won. NAMES
+# ONLY, shortened from DESE's own program title on the award document; a code that appears
+# without one here refuses the build rather than printing a 70-character title in a row.
+AWARD_SHORT = {
+    '0117': 'Evidence-based practice', '0122': 'Rethinking discipline',
+    '0181': 'English learner education support', '0199': 'Interpreters in schools',
+    '0213': 'Time-out regulations support', '0215': 'Genocide education',
+    '0335': 'Safe and supportive schools', '0413': 'Work-based learning planning',
+    '0419': 'Career pathways, implementation', '0424': 'Middle school exploration (MyCAP)',
+    '0426': 'Career technical frameworks', '0436': 'Career pathways, planning',
+    '0589': 'Civics teaching and learning', '0593': 'Reading success (PRISM II)',
+    '0594': 'Reading success (PRISM III)', '0598': 'MyCAP planning and implementation',
+    '0612': 'Early childhood partnerships', '0710': 'Farm to school (MA FRESH)',
+    '0718': 'Arts and cultural vitality', '0794': 'Hate crimes prevention',
+    '221P': 'Teacher apprenticeship planning',
+}
 SETS = [('border', "Bordering towns' districts"), ('peer', 'Peers we chose'),
         ('makeup', 'Alike in make-up'), ('behaviour', 'Alike in behaviour')]
 SET_SHORT = {'border': 'border', 'peer': 'peer', 'makeup': 'make-up', 'behaviour': 'behaviour'}
@@ -174,8 +204,44 @@ def load():
     for c, m in members.items():
         if not prof.get(c, {}).get(YEAR, {}).get('n'):
             fail('%s has no FY%d headcount' % (m['name'], YEAR))
+    W, docs = awards(code)
     return dict(alloc=alloc, prof=prof, code=code, lun=lun, members=members, named=named,
-                excluded=excluded, comparable=comparable, names=names)
+                excluded=excluded, comparable=comparable, names=names, awards=W, award_docs=docs)
+
+
+def awards(code_of):
+    """The competitive award rows attributed to a district (extract_dese_awards.py), and one
+    row per award document with its printed proposal counts and our copy's address."""
+    got, docs = [], {}
+    for r in rows(AWARDS):
+        fc = r['fund_code'].upper()
+        docs[(int(r['fy']), fc)] = dict(fy=int(r['fy']), fund=fc, copy=r['our_copy'],
+                                        received=int(r['proposals_received'] or 0),
+                                        recommended=int(r['proposals_recommended'] or 0))
+        if r['district_code']:
+            got.append(dict(fy=int(r['fy']), fund=fc, code=r['district_code'],
+                            amount=float(r['amount']), joint=int(r['joint']),
+                            copy=r['our_copy']))
+    if not got:
+        fail('no competitive award is attributed to any district -- run extract_dese_awards.py')
+    for w in got:
+        d = docs[(w['fy'], w['fund'])]
+        w['received'], w['recommended'] = d['received'], d['recommended']
+    return got, sorted(docs.values(), key=lambda d: (d['fy'], d['fund']))
+
+
+def first_set(m):
+    return next(s for s, _ in SETS if s in m['sets'])
+
+
+def column_order(members):
+    """Bordering districts first, then the peers, then each cohort, alphabetical within."""
+    order = [s for s, _ in SETS]
+    return sorted(members, key=lambda c: (order.index(first_set(members[c])), members[c]['name']))
+
+
+def short_district(name):
+    return name.replace(' School District', '')
 
 
 def snapshot():
@@ -187,11 +253,15 @@ def snapshot():
 
 
 def opportunities():
-    """DESE's open-grants list, by single fund code: (type, eligibility, detail url)."""
+    """DESE's open-grants list, by single fund code: (type, eligibility, detail url). A row
+    may carry several codes -- `0419/0436`, `0285-0563`, `0005 0006 7061 9611` -- and each is
+    a key; codes are upper-cased, as the award documents print some of them lower."""
+    import re
     out = {}
     for r in rows(OPPS):
-        for fc in r['fund_code'].split():
-            out[fc] = r
+        for fc in re.split(r'[\s/\-]+', r['fund_code'].strip()):
+            if fc:
+                out[fc.upper()] = r
     return out
 
 
@@ -397,33 +467,92 @@ def build():
         T_PP,
         'Lunenburg gets less IDEA per pupil than most comparable districts; Title I tracks its '
         'low-income share.',
-        facts1, conc1, chart=chart1, also=also1, table=table1, sources=sources1)
+        facts1, conc1, chart=chart1, also=also1, table=table1, sources=sources1,
+        see=('/school-all-funds/%s' % T_GAP, 'Which grants other districts get that Lunenburg does not'))
 
     # ------------------------------------------------------------ page two: what others get
+    # TWO KINDS OF GRANT, KEPT APART, each by DESE's own label (rule 3, rule 8):
+    #   FORMULA     every code on DESE's "State and Federal Entitlement And Allocation Grants"
+    #               pages. A district does not compete for these; not getting one is the
+    #               formula's answer to its counts, and what decides it is quoted where held.
+    #   COMPETITIVE every award document DESE lists under "Competitive Awards". These are the
+    #               grants a district applies for, and the only ones a "push" can be about.
     opps = opportunities()
+    W = D['awards']
     lun_has = {k[1] for k in alloc if k[0] == lun}
-    all_years = range(FIRST, LAST + 1)
-    lacks = []
-    for fc in sorted({k[1] for k in alloc}):
-        if fc in lun_has:
-            continue
-        got = [c for c in comp if any(alloc.get((c, fc, y), 0) > 0 for y in all_years)]
-        if got:
-            now = [c for c in comp if alloc.get((c, fc, YEAR), 0) > 0]
-            lacks.append(dict(fc=fc, got=got, now=now))
-    lacks.sort(key=lambda r: -len(r['got']))
-    by = {r['fc']: r for r in lacks}
-    if TITLE_III not in by or lacks[0]['fc'] != TITLE_III:
-        fail('Title III is no longer the grant most comparison districts get and Lunenburg does not')
-    # Lunenburg is on NO Title III page, any year -- checked against the names too, in case a
-    # row lost its code
+    others = [c for c in comp]
+    cols = [lun] + column_order(members)
+    col_label = [LUN] + [short_district(members[c]['name']) for c in cols[1:]]
+    SPAN = {'border': 'Bordering', 'peer': 'Peers', 'makeup': 'Make-up', 'behaviour': 'Behaviour'}
+    spans = [(LUN, 1)] + [(SPAN[s], sum(1 for c in cols[1:] if first_set(members[c]) == s))
+                          for s, _ in SETS]
+    spans = [s for s in spans if s[1]]
+
+    # ---- formula: any year in the window
+    fw = range(FWIN[0], FWIN[1] + 1)
+    def f_cell(c, fc):
+        ys = [y for y in fw if alloc.get((c, fc, y), 0) > 0]
+        if not ys:
+            return None
+        return '%s in %s; %s of %s years' % (C.usd(alloc[(c, fc, ys[-1])]), C.fy(ys[-1]),
+                                             C.num(len(ys)), C.num(len(fw)))
+    f_codes = sorted({k[1] for k in alloc if k[2] in fw and k[0] in set(cols)
+                      and alloc[k] > 0})
+    f_rows = [(fc, [f_cell(c, fc) for c in cols]) for fc in f_codes]
+    f_rows = [(fc, cs) for fc, cs in f_rows if any(cs)]
+    f_rows.sort(key=lambda r: (-sum(1 for v in r[1][1:] if v), SHORT[r[0]]))
+    f_lacks = [fc for fc, cs in f_rows if cs[0] is None]
+    f_lacks_n = {fc: sum(1 for v in cs[1:] if v) for fc, cs in f_rows}
+    if TITLE_III not in f_lacks or max(f_lacks, key=lambda fc: f_lacks_n[fc]) != TITLE_III:
+        fail('Title III is no longer the formula grant most comparison districts get and Lunenburg does not')
     for r in rows(ALLOC):
         if r['fund_code'] == TITLE_III and 'lunenburg' in r['district'].lower():
             fail('a Title III row names Lunenburg: %r' % r['district'])
-    t3 = by[TITLE_III]
-    t3_now = len(t3['now'])
+
+    # ---- competitive: every award document held
+    a_years = sorted({w['fy'] for w in W})
+    def c_cell(c, fc):
+        hits = [w for w in W if w['code'] == c and w['fund'] == fc]
+        if not hits:
+            return None
+        return '; '.join('%s%s, %s' % (C.usd(w['amount']), ' joint' if w['joint'] > 1 else '',
+                                       C.fy(w['fy'])) for w in sorted(hits, key=lambda w: w['fy']))
+    c_codes = sorted({w['fund'] for w in W if w['code'] in set(cols)})
+    for fc in c_codes:
+        if fc not in AWARD_SHORT:
+            fail('competitive fund code %s has no short name in AWARD_SHORT' % fc)
+    c_rows = [(fc, [c_cell(c, fc) for c in cols]) for fc in c_codes]
+    c_rows.sort(key=lambda r: (-sum(1 for v in r[1][1:] if v), AWARD_SHORT[r[0]]))
+    c_n = {fc: sum(1 for v in cs[1:] if v) for fc, cs in c_rows}
+    c_gap = [fc for fc, cs in c_rows if cs[0] is None and c_n[fc]]
+    c_lun = [fc for fc, cs in c_rows if cs[0] is not None]
+    winners = sorted({w['code'] for w in W if w['code'] in members})
+    per = {c: len({w['fund'] for w in W if w['code'] == c}) for c in comp}
+    top = max(per.values())
+    top_c = [c for c in comp if per[c] == top]
+    if len(top_c) != 1:
+        fail('two comparison districts tie for the most competitive grants: %s' % top_c)
+    top_c = top_c[0]
+    second = sorted(per.values())[-2]
+    # the open list: DESE's current-grants list names its own Grant Type for each code
+    def opp(fc):
+        return opps.get(fc.upper())
+    c_open = [fc for fc in c_gap if opp(fc) and opp(fc)['grant_type'] == 'Competitive'
+              and opp(fc)['district_reading'] == 'districts eligible']
+    c_still = [fc for fc in c_open if opp(fc)['open_on_list_date'] == 'yes']
+    c_closed_type = [fc for fc in c_gap if opp(fc) and opp(fc)['grant_type'] in ('Continuation', 'Targeted')]
+    ebp = [w for w in W if w['code'] == lun and w['fund'] == EBP]
+    if len(ebp) != 1 or c_n.get(EBP):
+        fail('the evidence-based practice award to Lunenburg changed shape')
+    ebp = ebp[0]
+    myc = [w for w in W if w['code'] == lun and w['fund'] == MYCAP]
+    if len(myc) != 1 or set(c_lun) != {EBP, MYCAP}:
+        fail('Lunenburg won something other than the two awards the page names: %s' % c_lun)
+    myc = myc[0]
+
+    # ---- Title III's floor, our estimate (kept from the first version of this page)
+    t3_ever = f_lacks_n[TITLE_III]
     el_l = prof[lun][YEAR]['el']
-    el_0 = prof[lun][FIRST]['el']
     n_l = prof[lun][YEAR]['n']
     learners = n_l * el_l / 100
     rates = []
@@ -440,84 +569,139 @@ def build():
         fail("DESE's Title III eligibility text no longer states the $10,000 floor")
     if est >= floor:
         fail('the Title III estimate passed the floor; the page says it falls short')
+    perk = opps.get('0400')
+    if '0400' in f_lacks and (not perk or 'Career Technical Education programs' not in perk['eligibility']):
+        fail("DESE's Perkins eligibility text no longer names career technical programmes")
 
-    nY = figure(t3_now, '%s of %s' % (C.num(t3_now), C.num(N)), 'districts')
+    A0, A1 = F(a_years[0]), F(a_years[-1])
+    FW0, FW1 = F(FWIN[0]), F(FWIN[1])
+    ofN = lambda n: figure(n, '%s of %s' % (C.num(n), C.num(N)), 'districts')
+    g_fig = figure(len(c_gap), C.num(len(c_gap)), 'grants')
+    top_name = short_district(members[top_c]['name'])
     facts2 = [
-        f('t3-now', nY, 'comparison districts allocated Title III, %s' % C.fy(YEAR), 'published',
-          {'y': Y}),
-        f('t3-ever', figure(len(t3['got']), C.num(len(t3['got'])), 'districts'),
-          'allocated it in some year, %s to %s' % (C.fy(FIRST), C.fy(LAST)), 'published',
-          {'a': F(FIRST), 'b': F(LAST)}),
+        f('c-gap', g_fig, 'competitive grants others won that Lunenburg did not', 'published'),
+        f('c-who', ofN(len(winners)), 'comparison districts that won at least one', 'published'),
+        f('c-top', figure(top, C.num(top), 'grants'), 'won by %s, the most of any' % top_name,
+          'published'),
+        f('c-lun', figure(len(c_lun), C.num(len(c_lun)), 'grants'),
+          'competitive grants Lunenburg won', 'published'),
+        f('c-open', figure(len(c_open), C.num(len(c_open)), 'grants'),
+          'of those, offered for %s and open to districts' % C.fy(LAST),
+          'published', {'y': F(LAST)}),
+        f('c-still', figure(len(c_still), C.num(len(c_still)), 'grants'),
+          'of those, still open on DESE’s current list', 'published'),
+        f('ebp', U(ebp['amount']), 'Lunenburg, evidence-based practice grant, %s' % C.fy(ebp['fy']),
+          'published', {'y': F(ebp['fy'])}),
+        f('ebp-n', figure(ebp['recommended'], '%s of %s' % (C.num(ebp['recommended']),
+                                                           C.num(ebp['received'])), 'proposals'),
+          'proposals DESE funded for that grant', 'published'),
+        f('t3-ever', ofN(t3_ever), 'comparison districts allocated Title III, %s–%s'
+          % (C.fy(FWIN[0]), C.fy(FWIN[1])), 'published', {'a': FW0, 'b': FW1}),
         f('t3-l', figure(0, 'Not listed', 'allocations'), 'Lunenburg, on every Title III page held',
           'published'),
-        f('el-l', figure(el_l, C.pct(el_l), '%'), 'Lunenburg pupils learning English, %s' % C.fy(YEAR),
-          'published', {'y': Y}),
-        f('el-0', figure(el_0, C.pct(el_0), '%'), 'the same share in %s' % C.fy(FIRST), 'published',
-          {'y': F(FIRST)}),
         f('floor', figure(floor, C.usd(floor)), 'the least DESE will allocate a district, by statute',
           'statute'),
-        f('rate', U(rate), 'Title III per learner, median district, our estimate', 'estimate'),
-        f('est', U(est), 'Lunenburg at that rate, our estimate', 'estimate'),
+        f('est', U(est), 'Lunenburg at the median rate per learner, our estimate', 'estimate'),
     ]
-    for fc in [r['fc'] for r in lacks if r['fc'] != TITLE_III]:
-        r = by[fc]
-        facts2.append(f('c%s' % fc, figure(len(r['got']), C.num(len(r['got'])), 'districts'),
-                        '%s: comparison districts in some year' % SHORT[fc], 'published'))
-    typed = [r['fc'] for r in lacks if r['fc'] in opps]
-    untyped = [r['fc'] for r in lacks if r['fc'] not in opps]
-    if any(opps[fc]['grant_type'] != 'Entitlement' for fc in typed):
-        fail('a grant Lunenburg lacks is no longer listed as an entitlement')
     conc2 = [
-        con('Title III, for English learners, went to %s comparison districts in %s; '
-            'Lunenburg is on no list.' % (nY['text'], C.fy(YEAR)),
-            ['t3-now', 't3-ever', 't3-l'], {'n': nY, 'y': Y}),
-        con('DESE allocates it only where it reaches %s; at the median rate Lunenburg would get '
-            'about %s.' % (C.usd(floor), C.usd(est)), ['floor', 'rate', 'est', 'el-l', 'el-0'],
-            {'f': figure(floor, C.usd(floor)), 'e': U(est)},
-            notes=[step('Our learner count is the October headcount times DESE’s share; DESE '
-                        'counts learners in March. Both figures are ours.', 'hypothesis'),
-                   step('Whether Lunenburg draws Title III through a consortium is not on these '
-                        'pages: they do not list a consortium’s members.', 'gap',
-                        closes="DESE's Title III consortium membership, or the district's "
-                               'Title III application')]),
-        con('DESE lists %s as %s: by formula, not competed for.'
-            % (' and '.join(SHORT[fc] for fc in typed),
-               'an entitlement' if len(typed) == 1 else 'entitlements'), ['t3-now'] +
-            ['c%s' % fc for fc in typed if fc != TITLE_III],
-            notes=[step('DESE requires Perkins districts to offer career technical programmes; '
-                        'that may be why Lunenburg is not listed. Nothing here tests it.',
-                        'hypothesis')]
-            if '0400' in typed else ()),
-        con('Competitive grants are not on these pages, so what the district applied for and won '
-            'is not compared.', ['t3-l'],
-            notes=[step('The open-grants list shows what is open now, not who won.', 'gap',
-                        closes="The district's grants list by year, with each competitive "
-                               'award notice')]),
+        con('Comparison districts won %s competitive DESE grants Lunenburg did not, %s–%s.'
+            % (C.num(len(c_gap)), C.fy(a_years[0]), C.fy(a_years[-1])),
+            ['c-gap', 'c-who', 'c-top'], {'n': g_fig, 'a': A0, 'b': A1},
+            notes=[step('%s, one of the districts alike in make-up, won %s; the next most was %s.'
+                        % (top_name, C.num(top), C.num(second)), 'measured',
+                        {'t': figure(top, C.num(top)), 's': figure(second, C.num(second))}),
+                   step('Whether Lunenburg applied for them is not published: DESE lists only '
+                        'who won.', 'gap',
+                        closes="The district's list of the DESE grants it applied for in those "
+                               'years'),
+                   step('DESE no longer posts its award lists before %s.' % C.fy(a_years[0]),
+                        'gap', {'a': A0},
+                        closes="DESE's competitive award lists for the years before, "
+                               'by records request')]),
+        con('%s of them were offered again for %s, open to school districts; %s.'
+            % (C.num(len(c_open)), C.fy(LAST),
+               'none is still open' if not c_still else '%s still open' % C.num(len(c_still))),
+            ['c-open', 'c-still', 'c-gap'],
+            dict({'n': figure(len(c_open), C.num(len(c_open))), 'y': F(LAST)},
+                 **({'s': figure(len(c_still), C.num(len(c_still)))} if c_still else {})),
+            notes=[step('DESE lists %s more as continuation or targeted grants, for past '
+                        'grantees or invited districts.' % C.num(len(c_closed_type)),
+                        'measured', {'k': figure(len(c_closed_type), C.num(len(c_closed_type)))}),
+                   step('Who may enter is our reading of DESE’s eligibility text, quoted beside '
+                        'each grant on the open-grants page.', 'hypothesis',
+                        cite=('/grants-open-to-lunenburg', 'Grants open to Lunenburg now'))]),
+        con('Lunenburg won %s for evidence-based practice, a grant no comparison district won.'
+            % C.usd(ebp['amount']), ['ebp', 'ebp-n', 'c-lun'], {'a': U(ebp['amount'])},
+            notes=[step('It also won %s for middle school exploration (MyCAP) in %s, as did %s '
+                        'comparison districts.' % (C.usd(myc['amount']), C.fy(myc['fy']),
+                                                   C.num(c_n[MYCAP])), 'measured',
+                        {'a': U(myc['amount']), 'y': F(myc['fy']),
+                         'n': figure(c_n[MYCAP], C.num(c_n[MYCAP]))})]),
+        con('Title III, formula money for English learners, reached %s comparison districts; '
+            'never Lunenburg.' % ofN(t3_ever)['text'], ['t3-ever', 't3-l', 'floor', 'est'],
+            {'n': ofN(t3_ever)},
+            notes=[step('DESE allocates it only where it reaches %s; at the median rate per '
+                        'learner Lunenburg would get about %s.' % (C.usd(floor), C.usd(est)),
+                        'estimate', {'f': figure(floor, C.usd(floor)), 'e': U(est)}),
+                   step('Whether Lunenburg draws it through a consortium is not on these pages.',
+                        'gap', closes="DESE's Title III consortium membership, or the "
+                                      "district's Title III application")]
+            + ([step('Perkins, the other formula grant some get, requires career technical '
+                     'programmes, DESE’s eligibility text says.', 'measured')]
+               if '0400' in f_lacks else [])),
     ]
-    if untyped:
-        conc2[2]['notes'] = list(conc2[2].get('notes', [])) + [
-            step('%s %s not on that list, so %s type is not stated here.'
-                 % (' and '.join(SHORT[fc] for fc in untyped), 'is' if len(untyped) == 1 else 'are',
-                    'its' if len(untyped) == 1 else 'their'), 'gap',
-                 closes="DESE's grant pages for %s" % ', '.join('fund code %s' % fc for fc in untyped),
-                 allow=tuple(untyped))]
-    chart2 = TP.ranking(
-        'Grants Lunenburg is not allocated',
-        [(SHORT[r['fc']], len(r['got'])) for r in lacks], 'districts', basis='published',
-        note='How many of the %s comparison districts DESE allocated each in some year, %s to %s.'
-             % (C.num(N), C.fy(FIRST), C.fy(LAST)),
-        note_figures={'n': nfig, 'a': F(FIRST), 'b': F(LAST)})
-    gcols = ['Districts, any year', 'Districts, %s' % C.fy(YEAR), 'DESE’s type', 'Who']
-    view_g = dict(
-        key='lacks', label='Grants Lunenburg is not allocated', total_col=None,
+    finding2 = ('Comparison districts won %s competitive grants Lunenburg did not in %s–%s; it '
+                'won %s.' % (C.num(len(c_gap)), C.fy(a_years[0]), C.fy(a_years[-1]),
+                             C.num(len(c_lun))))
+    chart2 = TP.presence(
+        'Who gets which grant',
+        col_label,
+        [('Competitive, %s–%s' % (C.fy(a_years[0]), C.fy(a_years[-1])),
+          [(AWARD_SHORT[fc], cs) for fc, cs in c_rows]),
+         ('Formula, any year %s–%s' % (C.fy(FWIN[0]), C.fy(FWIN[1])),
+          [(SHORT[fc], cs) for fc, cs in f_rows])],
+        'districts', spans=spans,
+        note='A dot is a DESE award or allocation. Rows Lunenburg lacks are marked. Fitchburg '
+             'cannot be matched and is left out.')
+
+    # ---- tables
+    def who(fc, cell):
+        return '; '.join('%s %s' % (col_label[i], cs) for i, cs in enumerate(cell) if cs and i)
+    gcols = ['Fiscal years', 'Comparison districts', 'Lunenburg', 'DESE’s %s list' % C.fy(LAST),
+             'Proposals funded', 'Who, and how much']
+    def listed(fc):
+        o = opp(fc)
+        if not o:
+            return 'not listed'
+        return '%s%s' % (o['grant_type'], ', due %s' % o['due'] if o.get('due') else '')
+    def funded(fc):
+        ds = {w['fy']: w for w in D['award_docs'] if w['fund'] == fc}
+        return '; '.join('%s of %s, %s' % (d['recommended'], d['received'], C.fy(y))
+                         for y, d in sorted(ds.items()) if d['received'])
+    view_c = dict(
+        key='competitive', label='Competitive grants', total_col=None,
         kinds=['published'] * len(gcols), columns=gcols,
-        rows=[dict(label='%s (fund code %s)' % (SHORT[r['fc']], r['fc']),
-                   cells=[C.num(len(r['got'])), C.num(len(r['now'])),
-                          opps[r['fc']]['grant_type'] if r['fc'] in opps else 'not on the open list',
-                          ', '.join(members[c]['name'] for c in r['got'])])
-              for r in lacks],
-        note='Of %s comparison districts, %s to %s. Not listed means DESE’s page for that grant '
-             'and year does not name Lunenburg.' % (C.num(N), C.fy(FIRST), C.fy(LAST)))
+        rows=[dict(label='%s · %s' % (AWARD_SHORT[fc], fc),
+                   cells=[', '.join(C.fy(y) for y in sorted({w['fy'] for w in D['award_docs']
+                                                              if w['fund'] == fc})),
+                          C.num(c_n[fc]), cs[0] or 'not awarded', listed(fc), funded(fc),
+                          who(fc, cs)])
+              for fc, cs in c_rows],
+        note='DESE’s competitive award lists, %s and %s; the number after each name is DESE’s fund code. A joint award names several districts '
+             'and prints one amount. The list is DESE’s current-grants list, with its type.'
+             % (C.fy(a_years[0]), C.fy(a_years[-1])))
+    table2 = dict(caption='Competitive grants comparison districts won', views=[view_c])
+    fcols = ['Comparison districts', 'Lunenburg', 'DESE’s type', 'Who']
+    view_f = dict(
+        key='formula', label='Formula grants', total_col=None,
+        kinds=['published'] * len(fcols), columns=fcols,
+        rows=[dict(label='%s · %s' % (SHORT[fc], fc),
+                   cells=[C.num(f_lacks_n[fc]), cs[0] or 'not listed',
+                          opps[fc]['grant_type'] if fc in opps else 'on DESE’s entitlement pages',
+                          ', '.join(col_label[i] for i, v in enumerate(cs) if v and i)])
+              for fc, cs in f_rows],
+        note='Any year %s to %s. Every code is on DESE’s entitlement and allocation pages; the type '
+             'is DESE’s current-grants list where it names one.' % (C.fy(FWIN[0]), C.fy(FWIN[1])))
     t3cols = ['Set', 'Pupils', 'Learning English', 'Title III', 'Per learner']
     t3rows = []
     for c in [lun] + sorted(comp, key=lambda c: -(prof[c][YEAR]['el'])):
@@ -533,25 +717,47 @@ def build():
         rows=t3rows,
         note='Ordered by the share learning English. Per learner divides by the October headcount '
              'times that share, our estimate of the count.')
-    table2 = dict(caption='What comparison districts get that Lunenburg does not',
-                  views=[view_g, view_t3])
-    sources2 = [src_alloc,
-                dict(label='Massachusetts DESE — Title III allocation page, %s (our copy)' % C.fy(YEAR),
-                     href='/docs/%s/code-0180-fy%d.html' % (snapshot(), YEAR)),
+    dcols = ['Set', 'Competitive grants won', 'Won alone, dollars', 'Joint awards']
+    def drow(c):
+        ws = [w for w in W if w['code'] == c]
+        alone = sum(w['amount'] for w in ws if w['joint'] == 1)
+        return dict(label=LUN if c == lun else members[c]['name'],
+                    cells=['Lunenburg' if c == lun else setnames(c),
+                           C.num(len({w['fund'] for w in ws})), C.usd(alone) if alone else '',
+                           C.num(sum(1 for w in ws if w['joint'] > 1)) if any(w['joint'] > 1 for w in ws) else ''])
+    view_d = dict(
+        key='by-district', label='By district', total_col=None, kinds=['published'] * len(dcols),
+        columns=dcols,
+        rows=[drow(c) for c in [lun] + sorted(comp, key=lambda c: (-per[c], members[c]['name']))],
+        note='Competitive grants counted once however many years. A joint award is not split: '
+             'DESE prints one amount for the group.')
+    tables2 = [dict(caption='Formula grants others get', views=[view_f]),
+               dict(caption='Title III and the learners it follows', views=[view_t3]),
+               dict(caption='Competitive grants won, district by district', views=[view_d])]
+    sources2 = [dict(label='Massachusetts DESE — Competitive awards, %s and current, by fund code'
+                           % C.fy(a_years[0]), href='https://www.doe.mass.edu/grants/awards.html'),
+                dict(label='Lunenburg Budget Project — dese-competitive-awards.csv (every '
+                           'recipient on every award document, with our district match)',
+                     href='/docs/data/dese-competitive-awards.csv'),
+                dict(label='Massachusetts DESE — Evidence-based practice award, %s (our copy)'
+                           % C.fy(ebp['fy']), href=ebp['copy']),
+                src_alloc,
                 dict(label='Massachusetts DESE — %s (eligibility, quoted)' % q3['program'],
                      href=q3['detail_url'])]
-    if '0400' in opps:
-        sources2.append(dict(label='Massachusetts DESE — %s (eligibility)' % opps['0400']['program'],
-                             href=opps['0400']['detail_url']))
+    if perk:
+        sources2.append(dict(label='Massachusetts DESE — %s (eligibility)' % perk['program'],
+                             href=perk['detail_url']))
     sources2 += [dict(label="Lunenburg Budget Project — dese-grant-opportunities.csv (DESE's "
-                            'open-grants list, each grant’s type and eligibility)',
+                            'current-grants list, each grant’s type and eligibility)',
                       href='/docs/data/dese-grant-opportunities.csv'),
                  src_prof, src_ours, src_cmp]
     page2 = TP.page(
-        T_GAP,
-        'Most comparison districts get Title III for English learners; we estimate Lunenburg is '
-        'just under its floor.',
-        facts2, conc2, chart=chart2, table=table2, sources=sources2)
+        T_GAP, finding2, facts2, conc2, chart=chart2, table=table2, tables=tables2,
+        sources=sources2,
+        finding_figures={'n': g_fig, 'a': A0, 'b': A1, 'k': figure(len(c_lun), C.num(len(c_lun)))},
+        see=('/school-all-funds/grant-allocations-compared', 'The five grants every district gets, per pupil'))
+    stats2 = dict(c_gap=len(c_gap), c_who=len(winners), c_top=top, c_lun=len(c_lun),
+                  c_open=len(c_open), t3_ever=t3_ever, est=est, rate=rate)
 
     # ------------------------------------------------------------ the figures, as a CSV
     out = []
@@ -573,9 +779,8 @@ def build():
                     comparable='yes' if (fc, y) in D['comparable'] else
                     'no: DESE’s page by fund code for this year was not served'))
     return {T_PP: page1, T_GAP: page2}, out, dict(
-        idea_l=idea_l, idea_med=idea_med, idea_below=idea_below, n=N, ti_l=ti_l, ti_mk=ti_mk,
-        five_l=five_l, five_med=five_med, t3_now=t3_now, t3_ever=len(t3['got']), est=est,
-        rate=rate, el_l=el_l, r_ti=r_ti, r_idea=r_idea)
+        stats2, idea_l=idea_l, idea_med=idea_med, idea_below=idea_below, n=N, ti_l=ti_l,
+        ti_mk=ti_mk, five_l=five_l, five_med=five_med, r_ti=r_ti, r_idea=r_idea)
 
 
 FIELDS = ['fy', 'district', 'district_code', 'sets', 'fund_code', 'grant', 'amount', 'headcount',

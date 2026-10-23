@@ -71,7 +71,17 @@ export type BridgeChart = {
   end: { label: string; value: number; text: string }; note: Unit | null
 }
 export type ImageChart = { type: 'image'; src: string; alt: string; caption: Unit }
-export type InlineChart = SeriesChart | RankingChart | PartsChart | BridgeChart | ImageChart
+/** A PRESENCE MATRIX (scripts/topic.py presence): rows of things, columns of holders, a dot
+ *  where a holder has it. A cell is the text its dot shows, or null. */
+export type PresenceChart = {
+  type: 'presence'; title: string; unit: string; basis: Basis
+  columns: string[]; subject: number
+  spans: { label: string; n: number }[] | null
+  groups: { label: string; rows: { label: string; cells: (string | null)[]; count: number
+    count_text: string; lacks: boolean }[] }[]
+  note: Unit | null
+}
+export type InlineChart = SeriesChart | RankingChart | PartsChart | BridgeChart | ImageChart | PresenceChart
 
 export const isInline = (c: unknown): c is InlineChart =>
   !!c && typeof c === 'object' && 'type' in (c as Record<string, unknown>)
@@ -697,6 +707,90 @@ function Bridge({ c }: { c: BridgeChart }) {
 
 /* ------------------------------------------------------------------- image */
 
+/* ------------------------------------------------------------------- presence */
+
+/** THE PRESENCE MATRIX. What a Venn diagram becomes past three sets: read ACROSS a row for who
+ *  holds a thing, DOWN a column for what one holder has. The subject column (Lunenburg) is
+ *  first and its dots are blue; every other dot is --thread-1. A row the subject lacks carries
+ *  a tinted band and a ring in the subject's cell, so the rows a reader came for stand out
+ *  without colour being the only signal -- the count column says it in words too.
+ *
+ *  A PHONE. The row labels and counts are a sticky first column; the district axis scrolls
+ *  INSIDE the card (overflow-x on the grid, min-w-0 on the frame), so the page never scrolls
+ *  sideways. Column labels are written vertically to keep each column a dot wide. */
+function Presence({ c }: { c: PresenceChart }) {
+  const [tip, setTip] = useState<{ r: string; col: string; text: string } | null>(null)
+  const k = c.subject
+  const cell = 18
+  const label = `${c.title}. A grid of ${c.groups.reduce((a, g) => a + g.rows.length, 0)} rows by ${c.columns.length} columns; `
+    + `the table that follows lists every dot.`
+  const dot = (i: number) => (i === k ? COLOURS[US_COLOUR] : COLOURS[0])
+  return (
+    <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
+      <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-[12px]" style={{ color: 'var(--text-secondary)' }} aria-hidden>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[US_COLOUR] }} />{c.columns[k]} has it</span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[0] }} />another district has it</span>
+        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ border: `1.5px solid ${COLOURS[US_COLOUR]}` }} />{c.columns[k]} does not</span>
+      </div>
+      <div className="overflow-x-auto -mx-1 px-1" aria-hidden style={{ overscrollBehaviorX: 'contain' }}>
+        <table className="border-separate" style={{ borderSpacing: 0 }}>
+          <thead>
+            {c.spans ? (
+              <tr>
+                <th className="sticky left-0 z-10" style={{ background: 'var(--surface-1)' }} />
+                {c.spans.map((s, i) => (
+                  <th key={i} colSpan={s.n} className="text-[10px] font-semibold uppercase tracking-wider text-left align-bottom pb-1 px-0.5"
+                    style={{ color: 'var(--text-muted)', borderLeft: i ? '1px solid var(--grid)' : undefined, maxWidth: s.n * cell, overflowWrap: 'anywhere', lineHeight: 1.15 }}>
+                    {s.n > 1 ? s.label : ''}</th>))}
+              </tr>) : null}
+            <tr>
+              <th className="sticky left-0 z-10 text-left align-bottom text-[11px] font-medium pr-2"
+                style={{ background: 'var(--surface-1)', color: 'var(--text-muted)' }}>Grant</th>
+              {c.columns.map((col, i) => (
+                <th key={col} className="align-bottom p-0" style={{ width: cell, minWidth: cell }}>
+                  <span className="block mx-auto text-[11px] leading-none whitespace-nowrap"
+                    style={{ writingMode: 'vertical-rl', transform: 'rotate(180deg)', height: 96,
+                      color: i === k ? COLOURS[US_COLOUR] : 'var(--text-secondary)', fontWeight: i === k ? 700 : 400 }}>{col}</span>
+                </th>))}
+            </tr>
+          </thead>
+          {c.groups.map(g => (
+            <tbody key={g.label}>
+              <tr><td colSpan={c.columns.length + 1} className="pt-3 pb-1 text-[11px] font-semibold uppercase tracking-wider sticky left-0"
+                style={{ color: 'var(--text-muted)' }}>{g.label}</td></tr>
+              {g.rows.map(r => {
+                const band = r.lacks ? 'color-mix(in srgb, var(--thread-2) 9%, transparent)' : undefined
+                return (
+                  <tr key={r.label} style={{ background: band }}>
+                    <th scope="row" className="sticky left-0 z-10 text-left font-normal pr-2 py-[3px] align-middle"
+                      style={{ background: r.lacks ? 'color-mix(in srgb, var(--thread-2) 9%, var(--surface-1))' : 'var(--surface-1)' }}>
+                      <span className="block text-[12.5px] leading-tight w-[128px] sm:w-[168px]"
+                        style={{ color: 'var(--text-primary)', fontWeight: r.lacks ? 600 : 400 }}>{r.label}</span>
+                      <span className="block text-[11px] tnum" style={{ color: 'var(--text-muted)' }}>{r.count_text}</span>
+                    </th>
+                    {r.cells.map((v, i) => (
+                      <td key={i} className="p-0 text-center align-middle" style={{ width: cell, height: cell,
+                        borderLeft: c.spans && c.spans.slice(0, -1).reduce<number[]>((a, s) => [...a, (a.at(-1) ?? 0) + s.n], []).includes(i) ? '1px solid var(--grid)' : undefined }}
+                        onMouseEnter={() => v && setTip({ r: r.label, col: c.columns[i], text: v })}
+                        onMouseLeave={() => setTip(null)}
+                        onClick={() => v && setTip({ r: r.label, col: c.columns[i], text: v })}>
+                        {v ? <span className="inline-block w-3 h-3 rounded-full align-middle" style={{ background: dot(i) }} />
+                          : i === k && r.lacks ? <span className="inline-block w-3 h-3 rounded-full align-middle" style={{ border: `1.5px solid ${COLOURS[US_COLOUR]}` }} />
+                          : <span className="inline-block w-1 h-1 rounded-full align-middle" style={{ background: 'var(--grid)' }} />}
+                      </td>))}
+                  </tr>)
+              })}
+            </tbody>))}
+        </table>
+      </div>
+      <p className="text-[12px] mt-2 min-h-[1.5em] tnum" style={{ color: 'var(--text-secondary)' }} aria-hidden>
+        {tip ? <><span className="font-semibold">{tip.col}</span>, {tip.r}: {tip.text}</> : 'Hover or tap a dot for the amount and year.'}</p>
+      <SrTable head={['', ...c.columns, 'Others holding it']}
+        rows={c.groups.flatMap(g => g.rows.map(r => [`${g.label}: ${r.label}`, ...r.cells.map(v => v ?? 'no'), r.count_text]))} />
+    </Frame>
+  )
+}
+
 function Picture({ c }: { c: ImageChart }) {
   return (
     <figure className="card p-3 mt-5 max-w-3xl min-w-0">
@@ -717,6 +811,7 @@ export function InlineTopicChart({ c }: { c: InlineChart }) {
     case 'parts': return <Parts c={c} />
     case 'bridge': return <Bridge c={c} />
     case 'image': return <Picture c={c} />
+    case 'presence': return <Presence c={c} />
     default: return null
   }
 }

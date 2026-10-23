@@ -29,6 +29,124 @@ def facts(tid):
     return {f['id']: f['value']['value'] for f in d['facts']}
 
 
+# ---------------------------------------------------------------- the presence matrix, page two
+# A DIFFERENT ROUTE from extract_dese_awards.py + the generator: the award documents are read
+# again here with xml.etree (not regex), and a district is "on" a document when its name
+# appears AS WORDS anywhere in a recipient's printed text -- looser than the extractor's exact
+# normalised match plus its reviewed list. The two routes must give the same dots; where the
+# loose route over-reaches, the only exceptions are these, each a recipient that names a
+# district without being it, read on 23 October 2026:
+NOT_THE_DISTRICT = ('nashoba learning group', 'nashoba valley', 'hilltown coop')
+AWARD_DIR = os.path.join(ROOT, 'sources', 'state-dese', 'awards')
+W = '{http://schemas.openxmlformats.org/wordprocessingml/2006/main}'
+
+
+def read_award(path):
+    import re
+    import zipfile
+    import xml.etree.ElementTree as ET
+    root = ET.fromstring(zipfile.ZipFile(path).read('word/document.xml'))
+    text = lambda el: ' '.join(''.join(t.text or '' for t in el.iter(W + 't')).split())
+    recips = []
+    for tbl in root.iter(W + 'tbl'):
+        trs = [[text(tc) for tc in tr.findall(W + 'tc')] for tr in tbl.findall(W + 'tr')]
+        if trs and len(trs[0]) >= 2 and 'recipient' in trs[0][0].lower():
+            for tr in trs[1:]:
+                m = re.search(r'([\d,]+(?:\.\d\d)?)', tr[-1].replace(' ', ''))
+                if tr[0] and m and re.search(r'\d', m.group(1)):
+                    recips.append((tr[0], float(m.group(1).replace(',', ''))))
+    body = ' '.join(text(p) for p in root.iter(W + 'p'))
+    got = lambda k: int(re.search(k + r':?\s*(\d+)', body).group(1))
+    return recips, got('Proposals Received'), got('Proposals Recommended')
+
+
+def words(s):
+    import re
+    return ' ' + re.sub(r'[^a-z0-9]+', ' ', s.lower().replace('\u2019', "'")) + ' '
+
+
+def competitive(code, comp, lun, names):
+    import re
+    d = json.load(open(os.path.join(TOPICS, 'grants-others-receive.json'), encoding='utf-8'))
+    ch = d['chart']
+    want_names = {c: n for n, c in code.items() if c in set(comp) | {lun}}
+    # the column a district is drawn in, by its label (the page strips " School District")
+    col = {i: lab for i, lab in enumerate(ch['columns'])}
+    by_label = {}
+    for c, n in want_names.items():
+        by_label[n.replace(' School District', '')] = c
+    if set(by_label) != set(col.values()):
+        return ['presence columns %s are not the comparison districts and Lunenburg'
+                % sorted(set(col.values()) ^ set(by_label))], {}
+    # every award document held, read again
+    docs = {}
+    for fy in sorted(os.listdir(AWARD_DIR)):
+        if not re.fullmatch(r'fy\d{4}', fy):
+            continue
+        for f in sorted(os.listdir(os.path.join(AWARD_DIR, fy))):
+            if f.endswith('.docx'):
+                docs[(int(fy[2:]), f[:-5].upper())] = read_award(os.path.join(AWARD_DIR, fy, f))
+    won = {}
+    for (fy, fc), (recips, _, _) in docs.items():
+        for text_, amt in recips:
+            w = words(text_)
+            if any(x in w.strip() for x in NOT_THE_DISTRICT):
+                continue
+            for lab, c in by_label.items():
+                if words(lab.replace('-', ' ')) in w or words(lab) in w:
+                    won.setdefault(fc, {}).setdefault(c, []).append((fy, amt))
+    bad = []
+    comp_rows = ch['groups'][0]['rows']
+    short_of = {}
+    for r in comp_rows:
+        on = {by_label[col[i]] for i, v in enumerate(r['cells']) if v}
+        hit = [fc for fc in won if set(won[fc]) == on]
+        if not hit:
+            bad.append('presence row %r: page dots %s match no award document read again'
+                       % (r['label'], sorted(want_names[c] for c in on)))
+            continue
+        short_of[r['label']] = hit
+    # every grant a district won is a row: none dropped
+    if len([fc for fc in won]) != len(comp_rows):
+        bad.append('the award documents give %d grants with a comparison or Lunenburg winner; '
+                   'the page draws %d rows' % (len(won), len(comp_rows)))
+    # formula rows, straight off the allocation CSV
+    alloc = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data',
+                                              'dese-entitlement-allocations.csv'), encoding='utf-8')):
+        if r['district_code'] and r['amount'] not in ('', '0') and 2023 <= int(r['fy']) <= 2027:
+            alloc.setdefault(r['fund_code'], set()).add(r['district_code'])
+    f_rows = ch['groups'][1]['rows']
+    want_f = {fc: s & (set(comp) | {lun}) for fc, s in alloc.items() if s & (set(comp) | {lun})}
+    page_f = [{by_label[col[i]] for i, v in enumerate(r['cells']) if v} for r in f_rows]
+    if sorted(map(sorted, want_f.values())) != sorted(map(sorted, page_f)):
+        bad.append('the formula rows do not match the allocation CSV, FY2023-FY2027')
+    # the facts
+    gap = [fc for fc, ws in won.items() if lun not in ws]
+    per = {c: sum(1 for ws in won.values() if c in ws) for c in comp}
+    opps = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data',
+                                              'dese-grant-opportunities.csv'), encoding='utf-8')):
+        for fc in re.split(r'[^0-9A-Za-z]+', r['fund_code']):
+            if fc:
+                opps[fc.upper()] = r
+    openc = [fc for fc in gap if fc in opps and opps[fc]['grant_type'] == 'Competitive'
+             and opps[fc]['district_reading'] == 'districts eligible']
+    ebp = [(fy, fc) for fc, ws in won.items() if lun in ws and not (set(ws) - {lun})]
+    if len(ebp) != 1:
+        bad.append('expected one grant Lunenburg alone won, found %d' % len(ebp))
+        return bad, {}
+    fc_e = ebp[0][1]
+    (fy_e, amt_e), = won[fc_e][lun]
+    _, rcv, rec = docs[(fy_e, fc_e)]
+    t3 = sum(1 for c in comp if c in alloc.get('0180', set()))
+    return bad, {'c-gap': len(gap), 'c-who': sum(1 for c in comp if per[c]),
+                 'c-top': max(per.values()), 'c-lun': sum(1 for ws in won.values() if lun in ws),
+                 'c-open': len(openc),
+                 'c-still': sum(1 for fc in openc if opps[fc]['open_on_list_date'] == 'yes'),
+                 'ebp': amt_e, 'ebp-n': rec, 't3-ever': t3}
+
+
 def main():
     twins = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'towns-like-us.json'),
                            encoding='utf-8'))['twins']
@@ -85,9 +203,10 @@ def main():
              for c, p in prof.items()
              if amt.get((c, '0180')) and p.get('Student Headcount') and p.get('English learner % Headcount')]
     learners = hc(lun) * prof[lun]['English learner % Headcount'] / 100
-    want2 = {'t3-now': len(t3), 'el-l': prof[lun]['English learner % Headcount'],
-             'rate': round(st.median(rates)), 'est': round(learners * st.median(rates))}
-    bad = []
+    want2 = {'est': round(learners * st.median(rates))}
+    bad2, w2 = competitive(code, comp, lun, names)
+    want2.update(w2)
+    bad = list(bad2)
     if len(comp) != 28:
         bad.append('expected 28 comparison districts, found %d' % len(comp))
     if any(k[0] == lun and k[1] == '0180' for k in amt):
@@ -101,7 +220,8 @@ def main():
     if bad:
         print('\n'.join(bad))
         return 1
-    print('grant comparison: %d figures recomputed, all agree' % (len(want1) + len(want2)))
+    print('grant comparison: %d figures and every dot of the presence matrix recomputed, all agree'
+          % (len(want1) + len(want2)))
     return 0
 
 

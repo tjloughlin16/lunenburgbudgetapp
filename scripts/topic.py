@@ -58,6 +58,10 @@ some defining chart OR image if the data doesnt represent well by a chart."
            the order given -- last year's surplus, plus the budget's rise, less each kind
            of spending's, to this year's. The helper refuses pieces that do not add up to
            the end: a bridge with a remainder is not a bridge.
+  presence a PRESENCE MATRIX: rows of things, columns of holders, a dot where a holder has the
+           thing -- what to draw instead of a Venn diagram past three sets (UpSet-style). The
+           subject column (Lunenburg) comes first, rows it lacks are flagged, and each row's
+           count of other holders is written by the helper.
   image    for a topic the numbers do not draw well -- a crop of the source page, a diagram.
            src is an address the site serves (fy28/public, or /docs/<key> in the archive
            manifest); alt and caption are required.
@@ -161,11 +165,14 @@ def check_ledger(l, where):
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
          finding_figures=None, finding_allow=(), draft=None, also=(), lead_quote=None,
-         tables=()):
+         tables=(), see=None):
     """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
     (scripts/generate_report.py). Every check below runs on it exactly as on a registered page;
     only the title and the shelf come from the draft instead of scripts/topics.py.
 
+    `see`: (href, label) -- ONE link drawn directly under the finding, to the page that
+    answers the question a reader of this one most often came with instead. For a reader who
+    landed one page over (TJ looked for the grants others get on the per-pupil page).
     `also`: up to two more charts, drawn under the signature, for a second question the same
     figures answer -- a stack says what a total is made of, small multiples how each part
     moved. The signature stays first and stays the page's one remembered image."""
@@ -225,6 +232,13 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
     if tables:                                       # likewise
         extra['tables'] = list(tables)
+    if see:                                          # likewise written only when set
+        href, label = see
+        if not (isinstance(href, str) and href.startswith('/') and isinstance(label, str)
+                and 0 < len(label) <= 80 and not re.search(r'\d', label)):
+            raise ConclusionError('%s: see= is (site path, a label of at most 80 characters '
+                                  'and no figures)' % id)
+        extra['see'] = dict(href=href, label=label)
     if lead_quote:                                   # likewise written only when set
         extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS}
     return dict(
@@ -338,7 +352,9 @@ def conclusion(text, rests_on, figures=None, allow=(), notes=()):
 # hub(), so a dict built by hand passes the same gate or none.
 
 CHART_REQUIRED = True     # every topic and hub carries one -- TJ, 13 October 2026
-CHART_TYPES = ('series', 'ranking', 'parts', 'bridge', 'image')
+CHART_TYPES = ('series', 'ranking', 'parts', 'bridge', 'image', 'presence')
+PRESENCE_ROWS_MAX = 40   # a grid of who-holds-what: each row is one line, so it carries more
+PRESENCE_COLS_MAX = 40   # than a ranking; the column axis scrolls inside the chart on a phone
 BRIDGE_STEPS = (2, 10)
 BASES = ('published', 'stated', 'estimate')
 MARKS = ('line', 'bar')
@@ -522,6 +538,30 @@ def bridge(title, start, steps, end, unit, basis='published', note=None, note_fi
                          note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note')))
 
 
+def presence(title, columns, groups, unit, subject=0, basis='published', note=None,
+             note_figures=None, note_allow=(), spans=None):
+    """A PRESENCE MATRIX -- the standard answer when a Venn diagram has too many sets: one row
+    per thing, one column per holder, a dot where the holder has it. Read across a row: who
+    has it. Down a column: what one holder has. TJ, 23 October 2026, on the grants page:
+    *"this feels like a venn diagram but maybe there are other ways to show it."*
+
+    columns: [label]; `subject` is the index of the column the page is about (Lunenburg),
+      drawn first by convention and in blue.
+    groups: [(group label, [(row label, [cell or None per column])])] -- a cell is the text the
+      dot shows on hover (an amount, the years), or None where the holder does not have it.
+      Rows are drawn in the order given; sort them before passing.
+    spans: optional [(label, n)] naming contiguous runs of columns -- "Bordering", "Alike in
+      make-up" -- drawn as a band over the column labels. They must cover every column.
+    Each row's `count` -- how many columns OTHER than the subject hold it -- and its text are
+    written here, and a row the subject does NOT hold is flagged `lacks`, so the page can mark
+    exactly those."""
+    gs = [dict(label=g, rows=[dict(label=l, cells=list(cs)) for l, cs in rs]) for g, rs in groups]
+    return _checked(dict(type='presence', title=' '.join(title.split()), unit=unit, basis=basis,
+                         columns=list(columns), subject=subject, groups=gs,
+                         spans=[dict(label=l, n=n) for l, n in spans] if spans else None,
+                         note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note')))
+
+
 def change_marks(values, pairs, threshold):
     """MARKS FOR A TABLE ROW: which cells moved by at least `threshold` against the cell they are
     compared with. values: the row's numbers, in column order (None where there is none);
@@ -617,6 +657,15 @@ def _texts(c):
         return dict(total=fmt(u, whole, d), parts=[
             dict(p, text=fmt(u, p['value'], d), share=_C.pct(100.0 * p['value'] / whole, 0))
             for p in c['parts']])
+    if t == 'presence':
+        k, others = c['subject'], len(c['columns']) - 1
+        def one(r):
+            n = sum(1 for i, v in enumerate(r['cells']) if v is not None and i != k)
+            return dict(label=r['label'], cells=r['cells'], count=n,
+                        count_text='%s of %s' % (_C.num(n), _C.num(others)),
+                        lacks=r['cells'][k] is None)
+        return dict(groups=[dict(label=g['label'], rows=[one(r) for r in g['rows']])
+                            for g in c['groups']])
     if t == 'bridge':
         signed = lambda v: ('+' if v >= 0 else '-') + fmt(u, abs(v), d)
         # `after`: the running total once the step is taken -- the number a floating bar's
@@ -738,6 +787,38 @@ def _inline_bad(c, where, texts=True):
         if c['unit'] == '%':
             bad.append('%s: parts takes the amounts, not percents -- the shares are drawn from '
                        'them' % where)
+    elif t == 'presence':
+        cols, gs = c['columns'], c['groups']
+        bad += basis(c['basis'], where)
+        if not 2 <= len(cols) <= PRESENCE_COLS_MAX:
+            bad.append('%s: %d columns; a presence matrix draws 2 to %d' % (where, len(cols), PRESENCE_COLS_MAX))
+        if len(set(cols)) != len(cols):
+            bad.append('%s: two columns share a label' % where)
+        for x in cols:
+            bad += _label_bad(x, where, 'column label')
+        if not (isinstance(c['subject'], int) and 0 <= c['subject'] < len(cols)):
+            bad.append('%s: subject %r is not a column' % (where, c['subject']))
+        if c.get('spans') and sum(x['n'] for x in c['spans']) != len(cols):
+            bad.append('%s: the column spans cover %d columns of %d' % (where, sum(x['n'] for x in c['spans']), len(cols)))
+        for x in c.get('spans') or []:
+            bad += _label_bad(x['label'], where, 'span label')
+        rows = [r for g in gs for r in g['rows']]
+        if not 2 <= len(rows) <= PRESENCE_ROWS_MAX:
+            bad.append('%s: %d rows; a presence matrix draws 2 to %d' % (where, len(rows), PRESENCE_ROWS_MAX))
+        if len({r['label'] for r in rows}) != len(rows):
+            bad.append('%s: two rows share a label' % where)
+        for g in gs:
+            bad += _label_bad(g['label'], where, 'group label')
+            if not g['rows']:
+                bad.append('%s: group %r has no rows' % (where, g['label']))
+        for r in rows:
+            bad += _label_bad(r['label'], where, 'row label')
+            if len(r['cells']) != len(cols):
+                bad.append('%s row %r: %d cells for %d columns' % (where, r['label'], len(r['cells']), len(cols)))
+            if not all(v is None or (isinstance(v, str) and v.strip()) for v in r['cells']):
+                bad.append('%s row %r: a cell is the text its dot shows, or None' % (where, r['label']))
+            if all(v is None for v in r['cells']):
+                bad.append('%s row %r: nobody holds it -- an empty row is not a finding' % (where, r['label']))
     elif t == 'bridge':
         st = c['steps']
         bad += basis(c['basis'], where)
@@ -768,7 +849,7 @@ def check_chart(chart, where, required=False):
         return _inline_bad(chart, '%s chart' % where)
     if set(chart) == {'id', 'source'}:
         return []
-    return ['%s: chart is neither {id, source} nor built by series/ranking/parts/bridge/image' % where]
+    return ['%s: chart is neither {id, source} nor built by series/ranking/parts/bridge/image/presence' % where]
 
 
 def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=None,
