@@ -300,7 +300,11 @@ def main():
     # the grant funds, by the names the annual reports print -- written out, not matched
     GRANT_FUNDS = {'PL 94-142 #240', 'Sped Early Childhood Grant', 'Early Childhood Grant #262',
                    'Sped Program Improvement Grant', 'Program Improvement Grant #274',
-                   'FY21 Sped Program Improvement #298', 'FY22 ARP Idea #252', 'FY22 Idea ARP #264'}
+                   'FY21 Sped Program Improvement #298', 'FY22 ARP Idea #252', 'FY22 Idea ARP #264',
+                   # FY2011-FY2016 names
+                   'Sped Early Childhood', 'Early Childhood SPED ARRA', 'Idea Stimulus Program',
+                   'PL 99-457', 'SPED Electronic Portfolio', 'Sped Curriculum Frameworks',
+                   'Early Childhood Program Improvement', 'Early Childhood Sped Program Improvements'}
     disb = {}
     for r in csv.DictReader(open(os.path.join(DATA, 'special-revenue-read.csv'), encoding='utf-8')):
         if r['fund'] in GRANT_FUNDS | {'50/50 Grant Sped Tuitions'} and r['row_ties'] == 'yes':
@@ -308,8 +312,8 @@ def main():
     change = min(statetr) - 1
     for r in bmt['views'][0]['rows']:
         y = int(r['label'][2:6])
-        check('FY%d formula-change mark' % y, '· formula change' in r['label'], y == change)
-        cells = [money(c.split(' ')[0]) for c in r['cells']]
+        check('FY%d formula-change mark' % y, r['label'], 'FY%d' % y + ('*' if y == change else ''))
+        cells = [None if c is None else money(c.split(' ')[0]) for c in r['cells']]
         if y in munis_years:
             gfv = r0(sum(jl.get((y, 'gf', g, 'voted'), D(0)) for g in LINES))
             gfs = r0(sum(jl.get((y, 'gf', g, 'spent'), D(0)) for g in LINES))
@@ -318,14 +322,17 @@ def main():
         else:
             gfv = sum(led[y][g][0] for g in LINES)
             gfs = sum(led[y][g][1] for g in LINES)
-            allf = gfs + r0(disb[y])
-        check('FY%d board member\'s row' % y, cells, [gfv, alloc[y], cball[y], gfs, allf,
+            allf = gfs + r0(disb[y]) if y in disb else None     # no schedule read: empty
+        check('FY%d board member\'s row' % y, cells, [gfv, alloc.get(y), cball[y], gfs, allf,
                                                       gfs - gfv, need[y]])
-        check('FY%d every-fund marker' % y, r['cells'][4].endswith('§'), y not in munis_years)
+        if allf is not None:
+            check('FY%d every-fund marker' % y, r['cells'][4].endswith('§'), y not in munis_years)
+    check('the table spans the need series',
+          sorted(int(r['label'][2:6]) for r in bmt['views'][0]['rows']), years)
     check('the formula-change year', change, 2021)
 
     # ---- ONE QUANTITY, ONE FIGURE: anything printed in two tables prints identically
-    ten = {int(r['label'][2:6]): [money(c.split(' ')[0]) for c in r['cells']]
+    ten = {int(r['label'][2:6]): [None if c is None else money(c.split(' ')[0]) for c in r['cells']]
            for r in bmt['views'][0]['rows']}
     t3v = {int(v['key'][2:]): {r['label']: [money(c) for c in r['cells']] for r in v['rows']}
            for v in t3['views']}

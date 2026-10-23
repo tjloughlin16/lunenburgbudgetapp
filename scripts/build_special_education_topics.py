@@ -885,15 +885,23 @@ def build():
     #               annual reports' special revenue DISBURSEMENTS for fund 2640 and the special
     #               education grant funds -- spending, not receipts, so not a proxy (rule 7);
     #               checked against the journal for FY2023 below, and the difference printed
-    BM0, BM1 = 2017, SC['last_fy']
+    # Every year the need series covers (TJ: "it's odd I don't see those peaks"). Where a source
+    # does not reach back, the cell is empty and the note says why -- never a different kind
+    # of figure in its place.
+    BM0, BM1 = SC['first_fy'], SC['last_fy']
     alloc = {}
     for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data',
                                               'dese-entitlement-allocations.csv'), encoding='utf-8')):
         if r['district_code'] == '0162':
             alloc.setdefault(int(r['fy']), {})[r['fund_code']] = float(r['amount'])
-    idea_bm = {y: alloc.get(y, {}).get('0240', 0) + alloc.get(y, {}).get('0262', 0)
-               for y in range(BM0, BM1 + 1)}
-    no262 = [y for y in range(BM0, BM1 + 1) if '0262' not in alloc.get(y, {})]
+    # DESE's allocation form offers FY2017 onward (its own year list, in our snapshots under
+    # sources/state-dese/entitlements/); before that there is no allocation to show.
+    IDEA0 = min(alloc)
+    idea_bm = {y: alloc[y].get('0240', 0) + alloc[y].get('0262', 0)
+               for y in range(BM0, BM1 + 1) if y in alloc and '0240' in alloc[y]}
+    if sorted(idea_bm) != list(range(IDEA0, BM1 + 1)):
+        fail('the IDEA allocations are not every year from FY%d' % IDEA0)
+    no262 = [y for y in idea_bm if '0262' not in alloc[y]]
     arp = {y: alloc[y].get('0252', 0) + alloc[y].get('0264', 0) for y in alloc
            if alloc[y].get('0252') or alloc[y].get('0264')}
     cbrows = {int(r['fy']): r for r in csv.DictReader(open(os.path.join(
@@ -919,8 +927,11 @@ def build():
              'board member\'s table marks FY2021' % change_fy)
     # Fund 2640 and the special education grant funds, as the annual reports' special revenue
     # schedule prints their disbursements (each row ties to the page's printed totals).
-    GRANT_RE = re.compile(r'#\s*(240|262|252|264|274|298)\b|94-142|\bIdea\b|^Sped Early Childhood'
-                          r'|^Sped Program Improvement', re.I)
+    # Named as the reports print them: the IDEA grants (94-142 #240, preschool #262 and its
+    # 99-457 predecessor, ARRA and ARP IDEA), the program improvement grants (#274, #298),
+    # and the other grants the reports label special education. Not the kindergarten grants.
+    GRANT_RE = re.compile(r'#\s*(240|262|252|264|274|298)\b|94-142|99-457|\bIdea\b|\bSPED\b'
+                          r'|^Early Childhood Program Improvement$', re.I)
     srr_cb, srr_gr = {}, {}
     for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data', 'special-revenue-read.csv'),
                                  encoding='utf-8')):
@@ -964,14 +975,19 @@ def build():
             e = every[y]['all']
             bm[y] = dict(vote=e[0], gf=e[1], allf=e[4], basis='journal')
         else:
-            if y not in srr_cb or y not in srr_gr:
-                fail('FY%d: the annual report holds no special revenue row for fund 2640 or the '
-                     'grants' % y)
             gf = sum(lg[g]['spent'] for g in LINES)
-            o, c = C.footed([srr_cb[y], srr_gr[y]])
-            bm[y] = dict(vote=sum(lg[g]['original'] for g in LINES), gf=gf, allf=gf + c,
-                         basis='annual report')
-    BM_MARK = {'cb': '†', 'idea': '‡', 'allf': '§'}
+            if (y in srr_cb) != (y in srr_gr):
+                fail('FY%d: the annual report holds fund 2640 or the grants, not both' % y)
+            if y in srr_cb:
+                o, c = C.footed([srr_cb[y], srr_gr[y]])
+                allf, basis = gf + c, 'annual report'
+            else:
+                allf, basis = None, 'none'
+            bm[y] = dict(vote=sum(lg[g]['original'] for g in LINES), gf=gf, allf=allf, basis=basis)
+    SRR0 = min(srr_cb)
+    if [y for y in bm if bm[y]['basis'] == 'none'] != list(range(BM0, SRR0)):
+        fail('a year inside the special revenue schedules\' span has no every-fund figure')
+    BM_MARK = {'cb': '†', 'idea': '‡', 'allf': '§', 'change': '*'}
     need_of = {r['fy']: r['need'] for r in sur}       # the same series as the chart and the SD
     for y in range(BM0, BM1 + 1):
         if need_of[y] < max(0, bm[y]['gf'] - bm[y]['vote']) - 2:
@@ -980,13 +996,14 @@ def build():
         if net_of[y] != bm[y]['gf'] - bm[y]['vote']:
             fail('FY%d: the ten-year table\'s net is not its own two columns' % y)
     bm_rows = [dict(
-        label=C.fy(y) + (' · formula change' if y == change_fy else ''),
+        label=C.fy(y) + (BM_MARK['change'] if y == change_fy else ''),
         cells=[C.usd(bm[y]['vote']),
-               C.usd(idea_bm[y]) + (' ' + BM_MARK['idea'] if y in no262 else ''),
+               (C.usd(idea_bm[y]) + (' ' + BM_MARK['idea'] if y in no262 else ''))
+               if y in idea_bm else None,
                C.usd(cb_all[y]) + (' ' + BM_MARK['cb'] if y in cb_extra else ''),
                C.usd(bm[y]['gf']),
-               C.usd(bm[y]['allf']) + (' ' + BM_MARK['allf'] if bm[y]['basis'] == 'annual report'
-                                       else ''),
+               (C.usd(bm[y]['allf']) + (' ' + BM_MARK['allf'] if bm[y]['basis'] == 'annual report'
+                                        else '')) if bm[y]['allf'] is not None else None,
                # what he is trying to calculate (TJ): the general fund against its vote, net,
                # and the page's own need -- the series the average and SD are taken from
                C.usd(net_of[y]),
@@ -994,16 +1011,18 @@ def build():
         for y in range(BM1, BM0 - 1, -1)]
     bm_table = dict(caption='Budget, IDEA, circuit breaker and actual costs, %s to %s'
                     % (C.fy(BM0), C.fy(BM1)), views=[dict(
-        key='ten', label='Ten years', total_col=6, kinds=['ledger'] * 7,
+        key='years', label='Each year', total_col=6, kinds=['ledger'] * 7,
         columns=['Special Education Operational Budget (general fund vote)',
                  'IDEA Grant Funding (allocated)', 'Circuit Breaker Funding (received)',
                  'Actual Costs, general fund', 'Actual Costs, every fund',
                  'General fund over (under) its vote', 'Needed beyond the vote'],
         rows=bm_rows,
         note=('The first three columns do not add up to anything: the budget is net, voted after '
-              'the circuit breaker and grants it expected. %s: DESE’s file prints a '
+              'the circuit breaker and grants it expected. * %s: DESE’s file prints a '
               'transportation reimbursement for the first time, for every district, in %s, '
-              'paying %s costs. Budget and general fund cover in district, out-of-district '
+              'paying %s costs. A dash is a year a source does not reach: DESE\u2019s allocation '
+              'pages begin at %s, and the annual reports\u2019 special revenue schedules read '
+              'here at %s. Budget and general fund cover in district, out-of-district '
               'tuition and transportation; actual is payments plus what was still owed (before %s, '
               'the Finance Committee workbook’s actual, which does not say). IDEA is '
               'DESE’s allocation (0240 school age plus 0262 preschool); %s for %s the file '
@@ -1015,7 +1034,8 @@ def build():
               'not at all on the circuit breaker. Needed beyond the vote adds each line\u2019s '
               'overrun without offsetting another line\u2019s underspend, so it can exceed the '
               'net difference beside it; the reserve statistics on this page use it.')
-             % (C.fy(change_fy), C.fy(st_tr[0]), C.fy(change_fy), C.fy(EY[0]), BM_MARK['idea'],
+             % (C.fy(change_fy), C.fy(st_tr[0]), C.fy(change_fy), C.fy(IDEA0), C.fy(SRR0),
+                C.fy(EY[0]), BM_MARK['idea'],
                 ' and '.join(C.fy(y) for y in no262), ', '.join(C.fy(y) for y in arp),
                 ', '.join(C.usd(arp[y]) for y in sorted(arp)), BM_MARK['cb'],
                 ', '.join(C.fy(y) for y in cb_extra), BM_MARK['allf'], C.fy(EY[0]),

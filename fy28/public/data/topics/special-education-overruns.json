@@ -740,7 +740,7 @@
   }
  ],
  "table": {
-  "caption": "Budget, IDEA, circuit breaker and actual costs, FY2017 to FY2026",
+  "caption": "Budget, IDEA, circuit breaker and actual costs, FY2010 to FY2026",
   "views": [
    {
     "columns": [
@@ -752,7 +752,7 @@
      "General fund over (under) its vote",
      "Needed beyond the vote"
     ],
-    "key": "ten",
+    "key": "years",
     "kinds": [
      "ledger",
      "ledger",
@@ -762,8 +762,8 @@
      "ledger",
      "ledger"
     ],
-    "label": "Ten years",
-    "note": "The first three columns do not add up to anything: the budget is net, voted after the circuit breaker and grants it expected. FY2021: DESE’s file prints a transportation reimbursement for the first time, for every district, in FY2022, paying FY2021 costs. Budget and general fund cover in district, out-of-district tuition and transportation; actual is payments plus what was still owed (before FY2023, the Finance Committee workbook’s actual, which does not say). IDEA is DESE’s allocation (0240 school age plus 0262 preschool); ‡ for FY2017 and FY2018 the file holds 0240 only; FY2022’s one-time ARP IDEA, $96,559, is not in it. † includes extra relief or supplemental payments (FY2019, FY2025); it is by year paid. § Every fund before FY2023 adds the annual reports’ disbursements from the circuit breaker account and the special education grants: payments only. In FY2023 the two ways differ by $1,109 on grants and not at all on the circuit breaker. Needed beyond the vote adds each line’s overrun without offsetting another line’s underspend, so it can exceed the net difference beside it; the reserve statistics on this page use it.",
+    "label": "Each year",
+    "note": "The first three columns do not add up to anything: the budget is net, voted after the circuit breaker and grants it expected. * FY2021: DESE’s file prints a transportation reimbursement for the first time, for every district, in FY2022, paying FY2021 costs. A dash is a year a source does not reach: DESE’s allocation pages begin at FY2017, and the annual reports’ special revenue schedules read here at FY2011. Budget and general fund cover in district, out-of-district tuition and transportation; actual is payments plus what was still owed (before FY2023, the Finance Committee workbook’s actual, which does not say). IDEA is DESE’s allocation (0240 school age plus 0262 preschool); ‡ for FY2017 and FY2018 the file holds 0240 only; FY2022’s one-time ARP IDEA, $96,559, is not in it. † includes extra relief or supplemental payments (FY2012, FY2019, FY2025); it is by year paid. § Every fund before FY2023 adds the annual reports’ disbursements from the circuit breaker account and the special education grants: payments only. In FY2023 the two ways differ by $1,109 on grants and not at all on the circuit breaker. Needed beyond the vote adds each line’s overrun without offsetting another line’s underspend, so it can exceed the net difference beside it; the reserve statistics on this page use it.",
     "rows": [
      {
       "cells": [
@@ -835,7 +835,7 @@
        "-$581,227",
        "$0"
       ],
-      "label": "FY2021 · formula change"
+      "label": "FY2021*"
      },
      {
       "cells": [
@@ -884,6 +884,90 @@
        "$0"
       ],
       "label": "FY2017"
+     },
+     {
+      "cells": [
+       "$4,232,992",
+       null,
+       "$784,099",
+       "$4,240,173",
+       "$5,197,709 §",
+       "$7,181",
+       "$39,448"
+      ],
+      "label": "FY2016"
+     },
+     {
+      "cells": [
+       "$4,451,391",
+       null,
+       "$672,634",
+       "$4,403,209",
+       "$5,406,964 §",
+       "-$48,182",
+       "$65,331"
+      ],
+      "label": "FY2015"
+     },
+     {
+      "cells": [
+       "$3,808,306",
+       null,
+       "$575,389",
+       "$3,954,823",
+       "$4,902,732 §",
+       "$146,517",
+       "$146,517"
+      ],
+      "label": "FY2014"
+     },
+     {
+      "cells": [
+       "$3,376,047",
+       null,
+       "$615,317",
+       "$3,580,638",
+       "$4,561,700 §",
+       "$204,591",
+       "$223,774"
+      ],
+      "label": "FY2013"
+     },
+     {
+      "cells": [
+       "$3,314,028",
+       null,
+       "$567,634 †",
+       "$3,258,575",
+       "$4,201,296 §",
+       "-$55,453",
+       "$39,766"
+      ],
+      "label": "FY2012"
+     },
+     {
+      "cells": [
+       "$2,920,878",
+       null,
+       "$201,165",
+       "$2,982,439",
+       "$3,819,342 §",
+       "$61,561",
+       "$94,313"
+      ],
+      "label": "FY2011"
+     },
+     {
+      "cells": [
+       "$2,668,433",
+       null,
+       "$211,224",
+       "$2,552,156",
+       null,
+       "-$116,277",
+       "$18,735"
+      ],
+      "label": "FY2010"
      }
     ],
     "total_col": 6
