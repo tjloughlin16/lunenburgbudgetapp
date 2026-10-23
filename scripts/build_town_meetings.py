@@ -623,6 +623,16 @@ def build():
             signals[to]['kinds'] |= kinds
             conflicts[to] = date
             del signals[date]
+    # A DOCUMENT ABOUT A MEETING DOES NOT CREATE ONE (TJ, 23 October 2026: "decks shouldnt be
+    # creating meetings"). Only a record that a meeting was CALLED or HELD can put a date in the
+    # register: the legal notice, the posted warrant, the Select Board's vote, its agenda, the
+    # Clerk's record, our minutes or the town's recording. A draft attaches to a meeting those
+    # records already hold and never stands alone -- a presentation that misprinted a past
+    # meeting's date (the Brooks House deck: "November 17, 2024" for 12 November) made one.
+    CREATES = {'notice', 'warrant', 'sb-vote', 'agenda', 'clerk', 'ours', 'video'}
+    for date in [d for d in signals if not set(signals[d]['signals']) & CREATES]:
+        print('  not a meeting: %s, only %s' % (date, ', '.join(signals[date]['signals'])), file=sys.stderr)
+        del signals[date]
     # ONE DATE CAN HOLD TWO MEETINGS: a Special Town Meeting held inside the Annual. The
     # Clerk prints them apart (2011-05-07), and that is the only record that separates them.
     meetings = []
