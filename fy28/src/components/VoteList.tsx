@@ -56,10 +56,26 @@ const OFF = new Set(['passed over', 'postponed', 'indefinitely postponed', 'no a
 const PAGE = 40   // meetings drawn at once; "show more" draws the next
 
 function tone(result: string) {
-  if (GOOD.has(result)) return { color: 'var(--status-good)', border: 'var(--status-good)' }
-  if (BAD.has(result)) return { color: 'var(--status-critical)', border: 'var(--status-critical)' }
-  if (OFF.has(result)) return { color: 'var(--text-secondary)', border: 'var(--grid)' }
-  return { color: 'var(--text-muted)', border: 'var(--grid)', dashed: true }
+  if (GOOD.has(result)) return { color: 'var(--status-good)', border: 'var(--status-good)', glyph: '✓ ' }
+  if (BAD.has(result)) return { color: 'var(--status-critical)', border: 'var(--status-critical)', glyph: '✗ ' }
+  if (OFF.has(result)) return { color: 'var(--text-secondary)', border: 'var(--grid)', glyph: '' }
+  return { color: 'var(--text-muted)', border: 'var(--grid)', dashed: true, glyph: '' }
+}
+const cap = (x: string) => x ? x[0].toUpperCase() + x.slice(1).toLowerCase() : x
+const Sep = () => <span aria-hidden style={{ color: 'var(--text-muted)' }}> · </span>
+
+/** A SOURCE, AS TEXT: no box. Where the result comes from in a colour that says how far to
+ *  trust it -- the official record muted green, our reading of the video amber -- and the record
+ *  we expected and lack in plain grey. Links open the source in a new tab. */
+function Source({ c }: { c: VoteChip }) {
+  const color = c.tone === 'ok' ? 'var(--status-good)' : c.tone === 'video' ? 'var(--status-warning)'
+    : 'var(--text-muted)'
+  const style = { color, fontWeight: c.tone === 'video' ? 600 : 400 }
+  const text = c.tone === 'video' ? c.text.replace(/^From/, 'from') : c.text
+  return c.href
+    ? <a className="hover:underline" style={style} href={c.href} target="_blank" rel="noreferrer"
+        onClick={e => e.stopPropagation()}>{text}</a>
+    : <span style={style}>{text}</span>
 }
 
 function readParams() {
@@ -226,7 +242,7 @@ function Legend({ kind }: { kind: VotePayload['kind'] }) {
   ]
   return (
     <ul className="list-none p-0 m-0 mt-2 text-[12px] grid gap-0.5" style={{ color: 'var(--text-muted)' }}>
-      {rows.map(([c, t]) => <li key={c.text}><Chip c={c} /> {t}</li>)}
+      {rows.map(([c, t]) => <li key={c.text}><Source c={c} /> — {t}</li>)}
     </ul>
   )
 }
@@ -267,45 +283,29 @@ function Meeting({ g, votes, kind }: { g: VoteGroup; votes: VoteRow[]; kind: Vot
   )
 }
 
-/** A SOURCE CHIP, one to three words. FILLED means "this is where the result comes from": 'ok'
- *  an official record, 'video' our reading of the meeting video (the amber of this site's "our
- *  estimate" marks). DASHED AND MUTED means "the record it should come from, which we don't
- *  have" -- never the source. Two chips in one style read as two sources (TJ, 23 Oct 2026). */
-function Chip({ c }: { c: VoteChip }) {
-  const st = c.tone === 'ok'
-    ? { color: 'var(--status-good)', border: '1px solid var(--status-good)', background: 'color-mix(in srgb, var(--status-good) 12%, transparent)' }
-    : c.tone === 'video'
-      ? { color: 'var(--text-primary)', border: '1px solid var(--status-warning)', background: 'color-mix(in srgb, var(--status-warning) 22%, transparent)' }
-      : c.tone === 'missing'
-        ? { color: 'var(--text-muted)', border: '1px dashed var(--axis)', background: 'transparent', fontWeight: 500 }
-        : { color: 'var(--text-secondary)', border: '1px solid var(--grid)', background: 'transparent' }
-  const cls = 'inline-block whitespace-nowrap text-[11.5px] font-semibold px-1.5 py-px rounded no-underline'
-  return c.href
-    ? <a className={cls + ' hover:underline'} style={st} href={c.href} target="_blank" rel="noreferrer"
-        onClick={e => e.stopPropagation()}>{c.text}</a>
-    : <span className={cls} style={st}>{c.text}</span>
-}
-
 function Row({ v, kind }: { v: VoteRow; kind: VotePayload['kind'] }) {
   const t = tone(v.result)
   return (
     <li className="py-2 min-w-0" style={{ borderBottom: '1px solid var(--grid)' }} id={v.id}>
       <details>
         <summary className="cursor-pointer list-none min-w-0">
-          <div className="flex flex-wrap items-baseline gap-x-2 gap-y-1 min-w-0">
-            {v.n && <span className="text-[13px] font-bold tnum shrink-0" style={{ color: 'var(--text-muted)' }}>{v.n}</span>}
-            <span className="text-[14.5px] font-semibold leading-snug break-words min-w-0 flex-1 basis-[14rem]"
-              style={{ color: v.procedural ? 'var(--text-muted)' : 'var(--text-primary)' }}>{v.title || '(no title in the record)'}</span>
-            {v.amount && <span className="text-[13px] font-semibold tnum shrink-0">{v.amount}</span>}
-            <span className="text-[11.5px] font-bold uppercase tracking-wide px-1.5 py-0.5 rounded max-w-full break-words"
-              style={{ color: t.color, border: `1px ${t.dashed ? 'dashed' : 'solid'} ${t.border}` }}
-              title={v.result_text || v.result_label}>{v.result_text && v.result_text.length <= 22 ? v.result_text : v.result_label}</span>
-          </div>
-          <div className="flex flex-wrap items-center gap-1.5 mt-1">
-            {v.chips.slice(0, 2).map(c => <Chip key={c.text} c={c} />)}
-            {v.conflict && <span className="text-[11.5px] font-semibold" style={{ color: 'var(--status-critical)' }}>records disagree</span>}
-            <span className="text-[11.5px] underline" style={{ color: 'var(--text-muted)' }}>details</span>
-          </div>
+          {/* THE TITLE OWNS THE ROW; EVERYTHING ELSE IS ONE QUIET LINE UNDER IT, in reading order:
+              outcome, then where it comes from, then the record we lack. Boxed badges and chips
+              each claimed as much attention as the title and broke the flow, and the result
+              badge wrapped onto a line of its own on a phone (TJ, 23 October 2026). */}
+          <p className="text-[14.5px] font-semibold leading-snug break-words min-w-0"
+            style={{ color: v.procedural ? 'var(--text-muted)' : 'var(--text-primary)' }}>
+            {v.n && <span className="tnum mr-1.5" style={{ color: 'var(--text-muted)' }}>{v.n}</span>}
+            {v.title || '(no title in the record)'}
+            {v.amount && <span className="tnum font-normal ml-1.5" style={{ color: 'var(--text-secondary)' }}>{v.amount}</span>}
+          </p>
+          <p className="text-[12.5px] mt-0.5 leading-snug break-words">
+            <span className="font-semibold" style={{ color: t.color }} title={v.result_text || v.result_label}>
+              {t.glyph}{cap(v.result_text && v.result_text.length <= 22 ? v.result_text : v.result_label)}</span>
+            {v.chips.slice(0, 2).map(c => <span key={c.text}><Sep /><Source c={c} /></span>)}
+            {v.conflict && <><Sep /><span className="font-semibold" style={{ color: 'var(--status-critical)' }}>records disagree</span></>}
+            <Sep /><span className="underline" style={{ color: 'var(--text-muted)' }}>details</span>
+          </p>
         </summary>
         <div className="mt-2 text-[13.5px] max-w-3xl min-w-0" style={{ borderLeft: '3px solid var(--grid)', paddingLeft: 10 }}>
           <p className="break-words" style={{ color: v.chips.some(c => c.tone === 'video') ? 'var(--text-primary)' : 'var(--text-secondary)' }}>{v.basis_note}</p>
