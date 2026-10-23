@@ -33,4 +33,15 @@ if ! python3 scripts/takedown.py --check; then
   echo "NOT DEPLOYING: the takedown module is stale (above). Run: python3 scripts/takedown.py --write-module"
   exit 1
 fi
-cd "$ROOT/fy28" && npx wrangler pages deploy --commit-dirty=true
+# OUR MEETING TEXT IS SERVED FROM ITS OWN BUCKET, NOT THE DEPLOYMENT. Pages refuses past
+# 20,000 files and /docs/minutes/text/ alone is ~12,000 (21 October 2026). Push what changed,
+# confirm the bucket holds every file by listing it, then deploy a hard-linked copy of dist
+# without them. dist stays whole: the sitemap, search and checks read it.
+STAGE="$ROOT/build/deploy-stage"
+if ! python3 scripts/sync_derived.py --push || ! python3 scripts/sync_derived.py --check; then
+  echo
+  echo "NOT DEPLOYING: the derived bucket does not hold every meeting text file (above)."
+  exit 1
+fi
+python3 scripts/sync_derived.py --stage "$STAGE" || exit 1
+cd "$ROOT/fy28" && npx wrangler pages deploy "$STAGE" "$@" --commit-dirty=true

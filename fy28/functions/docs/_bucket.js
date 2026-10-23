@@ -75,7 +75,31 @@ export async function fromBucket(context, path) {
   const gone = goneFor(path)
   if (gone) return gone
 
-  const key = bucketKey(path)
+  return serveObject(context, bucket, bucketKey(path), 'r2')
+}
+
+// OUR EXTRACTED TEXT OF THE MEETING DOCUMENTS, OUT OF THE SECOND BUCKET.
+//
+// 12,175 `.txt` files under /docs/minutes/text/ were most of a build that Pages' 20,000-file
+// limit refused on 21 October 2026. They are ours -- our reading of the town's PDFs -- so they
+// may change when an extractor improves, and they do not belong in the locked archive bucket
+// beside the documents they were read from (TJ, 22 October: theirs in the archive, ours where
+// it can be replaced). `lunenburg-derived` is unlocked; scripts/sync_derived.py fills it from
+// fy28/dist before every deploy, and the deploy leaves these files out.
+//
+// The key is the published path itself. And a miss here is a 404, NEVER a fall-through to the
+// archive bucket: that bucket holds a 5 September 2026 snapshot of these same paths, older
+// renderings of about two thousand of them, and serving one would be serving a superseded
+// reading under the current address with nothing to say so.
+export const DERIVED_PREFIX = 'minutes/text/'
+
+export async function fromDerived(context, path) {
+  const bucket = context.env && context.env.DERIVED
+  if (!bucket) return null
+  return serveObject(context, bucket, path, 'r2-derived')
+}
+
+async function serveObject(context, bucket, key, source) {
   const { request } = context
 
   if (request.method === 'HEAD') {
@@ -86,7 +110,7 @@ export async function fromBucket(context, path) {
     headers.set('etag', head.httpEtag)
     headers.set('content-length', String(head.size))
     headers.set('cache-control', cacheFor(key))
-    headers.set('x-archive-source', 'r2')
+    headers.set('x-archive-source', source)
     asDocumentNotPage(headers, key)
     return new Response(null, { headers })
   }
@@ -112,7 +136,7 @@ export async function fromBucket(context, path) {
   object.writeHttpMetadata(headers)
   headers.set('etag', object.httpEtag)
   headers.set('cache-control', cacheFor(key))
-  headers.set('x-archive-source', 'r2')
+  headers.set('x-archive-source', source)
   headers.set('accept-ranges', 'bytes')
   asDocumentNotPage(headers, key)
 
@@ -202,5 +226,5 @@ const CACHE = 'public, max-age=604800'
 const DERIVED_CACHE = 'public, max-age=3600'
 
 export function cacheFor(key) {
-  return key.startsWith('analyses/') ? DERIVED_CACHE : CACHE
+  return key.startsWith('analyses/') || key.startsWith(DERIVED_PREFIX) ? DERIVED_CACHE : CACHE
 }

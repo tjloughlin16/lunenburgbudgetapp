@@ -3,7 +3,7 @@
 // See functions/_notfound.js for why this is a Function and not a _redirects rule.
 import { assetOr404 } from '../_notfound.js'
 import { movedTo } from './_moved.js'
-import { fromBucket, goneFor } from './_bucket.js'
+import { fromBucket, fromDerived, goneFor, DERIVED_PREFIX } from './_bucket.js'
 
 export async function onRequest(context) {
   // A WITHDRAWN DOCUMENT IS ANSWERED FIRST, before the build or the bucket is asked -- so
@@ -55,6 +55,14 @@ export async function onRequest(context) {
   // taken out of git and out of the build on 5 September 2026, and the bucket is where
   // they went. Same URL, same bytes, same sha256 -- the only thing that changed is which
   // machine holds them.
+  // Our extracted text is served from its own bucket, and only from there -- see
+  // fromDerived for why a miss must not reach the archive bucket's older snapshot.
+  if (path.startsWith(DERIVED_PREFIX)) {
+    const derived = await fromDerived(context, path)
+    if (derived) return derived
+    return assetOr404(context)
+  }
+
   const stored = await fromBucket(context, path)
   if (stored) return stored
 

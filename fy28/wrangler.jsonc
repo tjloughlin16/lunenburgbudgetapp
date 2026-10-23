@@ -44,7 +44,8 @@
   // identifier; see src/lib/track.ts. Query with scripts/report_site_events.py.
   "analytics_engine_datasets": [ { "binding": "EVENTS", "dataset": "lburg_usage_data" } ],
   "r2_buckets": [
-    { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
+    { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" },
+    { "binding": "DERIVED", "bucket_name": "lunenburg-derived" }
   ],
   "env": {
     "preview": {
@@ -58,7 +59,8 @@
       ],
       "analytics_engine_datasets": [ { "binding": "EVENTS", "dataset": "lburg_usage_data" } ],
       "r2_buckets": [
-        { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
+        { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" },
+    { "binding": "DERIVED", "bucket_name": "lunenburg-derived" }
       ]
     },
     "production": {
@@ -72,7 +74,8 @@
       ],
       "analytics_engine_datasets": [ { "binding": "EVENTS", "dataset": "lburg_usage_data" } ],
       "r2_buckets": [
-        { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" }
+        { "binding": "ARCHIVE", "bucket_name": "lunenburg-budget-project" },
+    { "binding": "DERIVED", "bucket_name": "lunenburg-derived" }
       ]
     }
   }
