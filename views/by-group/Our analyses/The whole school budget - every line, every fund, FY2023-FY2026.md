@@ -1,0 +1,1 @@
+../../../sources/analyses/school-all-funds.md

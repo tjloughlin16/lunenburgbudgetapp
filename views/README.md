@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**627 of 5054 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**703 of 5498 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4427 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4795 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -45,16 +45,16 @@ documents under wrong years. Every one of them is reachable through `by-group/`.
 | FY21 | 17 |
 | FY22 | 22 |
 | FY23 | 45 |
-| FY24 | 89 |
-| FY25 | 119 |
-| FY26 | 161 |
-| FY27 | 218 |
+| FY24 | 90 |
+| FY25 | 120 |
+| FY26 | 162 |
+| FY27 | 291 |
 | FY28 | 10 |
 | FY29 | 3 |
 | FY30 | 1 |
 | FY32 | 1 |
-| FY33 | 7 |
-| FY34 | 11 |
+| FY33 | 8 |
+| FY34 | 12 |
 | FY35 | 2 |
 
 ## Documents with no stated fiscal year
@@ -125,6 +125,7 @@ Listed so this view cannot look more complete than it is.
 - `analyses/peer-districts.md` — What other districts did
 - `analyses/per-pupil-spending.md` — What Lunenburg spends for each pupil, and what that number hides
 - `analyses/questions.md` — A hundred questions this archive can answer, each with the query
+- `analyses/school-all-funds.md` — The whole school budget: every line, every fund, FY2023-FY2026
 - `analyses/school-journal.md` — The school MUNIS journal, FY2023-FY2026, as a dataset
 - `analyses/show-your-work.md` — Show your work: every calculation, opened up
 - `analyses/sitting-on-money.md` — Is anyone sitting on money? Town and schools
@@ -215,6 +216,13 @@ Listed so this view cannot look more complete than it is.
 - `contracts/pdf/wachusett-teachers-2023-2026.pdf` — Wachusett Regional Education Association agreement, 1 July 2023 to 30 June 2026
 - `correspondence/2026-03-30-ski-coop-invoice.md` — How the ski co-op invoice reached us, and what it does not show
 - `correspondence/2026-03-30-ski-coop-invoice.xlsx` — The ski co-op invoice, 2025-26 season
+- `correspondence/2026-10-21-brooks-house-presentation-draft.pdf` — Selling the Brooks House: issues to resolve (draft)
+- `correspondence/2026-10-21-select-board-chair-presentations.md` — How these reached us
+- `correspondence/2026-10-21-stormwater-utility-presentation-select-board-2026-10-20-revised.pdf` — The stormwater utility proposal (revised)
+- `correspondence/2026-10-21-track-and-field-complex-history.pdf` — Track and field complex history, compiled by the Chair
+- `correspondence/2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf` — The Superintendent’s track and field request
+- `correspondence/2026-10-22-special-education-funding-finance-committee.md` — How this reached us
+- `correspondence/2026-10-22-special-education-funding-superintendent-finance-committee.pptx` — How special education funding flows
 - `data/PROVENANCE-annual-report-receipts.md` — Where the receipts came from
 - `data/PROVENANCE-balance-sheet.md` — Why the balance sheet is read rather than OCR’d
 - `data/PROVENANCE-debt-tables.md` — Where both debt tables came from, and every page that refused
@@ -263,6 +271,7 @@ Listed so this view cannot look more complete than it is.
 - `data/business/categorized.csv` — Business records by industry
 - `data/business/merged_dataset.csv` — Business certificate records
 - `data/capital-funding-history.csv` — How the capital programme has been paid for
+- `data/capital-plan-field-lines.csv` — Every playing-field line in every capital plan held, by fiscal year
 - `data/capital-plans-refused.csv` — The capital-plan pages that would not read, and why each refused
 - `data/capital-plans.csv` — What the Capital Planning Committee asked for, ranked, FY2015-FY2023
 - `data/capital-program-options.csv` — The two capital plans the town meeting was asked to choose between
@@ -284,14 +293,19 @@ Listed so this view cannot look more complete than it is.
 - `data/dese-attrition.csv` — How many students leave, by grade, SY2010–SY2026
 - `data/dese-ch70-aid-factor.csv` — How the Chapter 70 aid figure is built, FY2007 on
 - `data/dese-ch70-contribution.csv` — The municipal half of the Chapter 70 formula, FY2007 on
+- `data/dese-ch70-formula-monty-tech.csv` — The Chapter 70 formula for Monty Tech, FY1993–FY2026
 - `data/dese-ch70-formula.csv` — The Chapter 70 formula, term by term, FY1993–FY2026
 - `data/dese-ch70-statewide.csv` — Where Lunenburg sits among every Massachusetts district on state aid
 - `data/dese-circuit-breaker.csv` — High-cost special education reimbursement, FY2006–FY2026
 - `data/dese-class-size.csv` — How many classes ran in each subject, and how full they were
+- `data/dese-competitive-awards.csv` — DESE’s competitive grant awards, one row per recipient, FY2026 on
 - `data/dese-educator-workforce.csv` — Staff HEADCOUNT by job class, with hires and retention, SY2021–SY2023
 - `data/dese-enrollment.csv` — Enrollment by grade and selected population, SY1992–SY2026
+- `data/dese-entitlement-allocations.csv` — DESE’s entitlement allocations, every district, every fund code, FY2017 on
 - `data/dese-function-expenditure.csv` — DESE spending by function code, general fund against grants, FY2009–FY2025
 - `data/dese-function-statewide.csv` — Where Lunenburg sits among every Massachusetts district, per function, FY2009–FY2025
+- `data/dese-fund-codes.csv` — DESE fund code to grant name
+- `data/dese-grant-opportunities.csv` — DESE’s current grant opportunities, one row per program, with eligibility
 - `data/dese-radar.csv` — DESE’s own figures, every district, FY2009–FY2025
 - `data/dese-source-registry.csv` — Every DESE dataset this project reads, and how to refresh it
 - `data/dese-sped-indicator.csv` — Special education indicators and staffing ratios, SY2017–SY2026
@@ -320,6 +334,8 @@ Listed so this view cannot look more complete than it is.
 - `data/eoyr-nss.csv` — Net school spending as the End of Year Report computes it, FY2023 and FY2024
 - `data/eoyr-schedule1.csv` — The district’s End of Year Financial Report, Schedule 1, FY2023 and FY2024
 - `data/eoyr-schedule3.csv` — The End of Year Financial Report, Schedule 3, by function and fund
+- `data/eoyr-schedule4.csv` — The End of Year Financial Report, Schedule 4: special education by placement
+- `data/eoyr-schedule7.csv` — The End of Year Financial Report, Schedule 7: pupil transportation
 - `data/extraction-blocked.csv` — Extractions that ran, refused to publish, and why
 - `data/extraction-plan.csv` — Which pages each dataset was read from
 - `data/feed-sources.csv` — The town and community feeds the refresh watches
@@ -337,6 +353,7 @@ Listed so this view cannot look more complete than it is.
 - `data/fund-balances-fincom.csv` — Special revenue, Chapter 90 and trust fund balances from the Finance Committee’s files
 - `data/fund-owners.csv` — The account registry: every accounting measure the town prints, and who owns it
 - `data/gl-history.csv` — Every general fund account, budget and actual, FY2010–FY2025
+- `data/grant-watch-state.csv` — What is new from DESE: every grant and award list we have seen, and when
 - `data/gross-wages-refused.csv` — Payroll pages that would not read, and why each refused
 - `data/gross-wages.csv` — The town’s wage list, name by name — AN INCOMPLETE READ
 - `data/health-insurance-law.csv` — What Massachusetts law lets a town do about health insurance, and what it forbids
@@ -444,20 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/ski-coop.csv` — The ski co-op invoice, line by line and town by town
 - `data/special-revenue-funds.csv` — The special revenue funds, FY2011–FY2025
 - `data/special-revenue-printed-totals.csv` — The GRAND TOTAL each report prints
-- `data/special-revenue-read.csv` — The special revenue funds, read from the page
-- `data/sped-para-history.csv` — Special education paraprofessionals, ten budgets
-- `data/sped-teacher-history.csv` — Special education teachers, eight budgets
-- `data/sped-transport-history.csv` — Special education transportation, nine budgets
-- `data/stabilization-balances.csv` — What each stabilization and trust fund held, year by year
-- `data/stabilization-flows.csv` — Money taken back out of the stabilization funds, with the printed words
-- `data/stabilization-pages.csv` — Where the stabilization funds are printed, page by page
-- `data/stabilization-unfooted.csv` — Stabilization figures printed on a page whose column does not foot
-- `data/staff-directory.csv` — Who works for the town TODAY, off its own staff directory
-- `data/staff-position-map.csv` — Roster position titles, grouped
-- `data/staff-roster-counts.csv` — Roster headcount by school and year
-- `data/staff-roster-entries.csv` — Every name the town printed on a school staff roster, FY2011–FY2025
-- `data/staffing-by-section.csv` — What each department says about its own staff, on its own pages
-- `data/staffing-coverage.csv` — Where a department publishes and we still have no number
-- `data/stated-cuts.csv` — Every reduction and restoration the district named in writing, FY2020–FY2027
-- `data/stated-figures.csv` — Figures the town stated about itself, with the quote
-- `data/suggested-reports-meetings.csv` — Every meeting a suggested report came up in
