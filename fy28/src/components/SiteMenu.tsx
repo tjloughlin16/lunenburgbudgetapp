@@ -81,6 +81,8 @@ export const GROUPS: Group[] = [
     { to: 'rates', label: 'Rates, fees and contracts', sub: 'The register' },
   ] },
   { title: 'The schools', under: 'reports', items: [
+    // The complete school budget, at the TOP (notes/MASTER-PLAN.md, Phase 4, item 16).
+    { href: '/school-all-funds', label: 'The whole school budget', sub: 'Every line, every fund' },
     { to: 'reports', anchor: 'school', label: 'All school reports', sub: 'Staff, students, money' },
     { to: 'sped', label: 'Special education', sub: 'Counts, costs, placements' },
     { to: 'staffing', label: 'Staffing', sub: 'Who works in each school' },

@@ -605,7 +605,7 @@ def build():
                         note_figures={'y': F(F1)}),
         table=dict(caption='How grant spending is coded', views=[
             dict(key='idea', label='IDEA grant (#240), grant by grant', total_col=0,
-                 kinds=['ledger'] * 4 + ['text'],
+                 kinds=['ledger'] * 5,
                  columns=['Spent', 'On a voted line', 'On a heading', 'No code', 'Codes used'],
                  rows=i_rows,
                  note='Every IDEA entitlement grant with spending in the run, over its whole life.'),
@@ -770,7 +770,7 @@ def build():
             note_figures={'y': F(F1)}),
         table=dict(caption='What is paid outside the general fund', views=[
             dict(key='fundline', label='By fund and line, four years', total_col=None,
-                 kinds=['text', 'ledger'], columns=['Function code', 'Spent'], rows=fc_rows,
+                 kinds=['ledger', 'ledger'], columns=['Function code', 'Spent'], rows=fc_rows,
                  note='The twenty-five largest fund-and-line pairs, %s.' % C.fyspan(F0, F1)),
             dict(key='payees', label='Largest named payees, four years', total_col=None,
                  kinds=['ledger'] * len(OUTSIDE), columns=list(OUTSIDE), rows=pay_rows,
@@ -866,7 +866,7 @@ def build():
                               'and the journal. %s' % (C.fy(F1), C.fy(F0), open_note),
                          note_figures={'y': F(F1), 'z': F(F0)}),
         table=dict(caption='Unspent money by fund', views=[
-            dict(key='carry', label='Funds that carry', total_col=None, kinds=['ledger', 'ledger', 'ledger', 'estimate'],
+            dict(key='carry', label='Funds that carry', total_col=None, kinds=['ledger'] * 4,
                  columns=['End of %s, town report' % C.fy(F0), 'Received, four years', 'Spent, four years',
                           'End of %s, our roll-forward' % C.fy(F1)],
                  rows=[dict(label='%s %s' % (r['fund'], r['ar_name']),
@@ -1018,7 +1018,7 @@ def build():
             TP.track(g, [sp[(y, g)] for y in Y], 'published') for g in GROUPS], '$', kind='bar',
             stacked=True, note='Actuals in every school fund. %s' % open_note, note_figures={'y': F(F1)}),
         table=dict(caption='How these figures tie to what the Town and the state printed', views=[dict(
-            key='ties', label='Reconciliation', total_col=None, kinds=['text', 'text'],
+            key='ties', label='Reconciliation', total_col=None, kinds=['ledger', 'ledger'],
             columns=['Compared with', 'Result'], rows=tie_rows,
             note='The first two must hold to the cent or nothing on these pages is written. The '
                  'last two are other publishers’ readings of the same money, compared and shown.')]),

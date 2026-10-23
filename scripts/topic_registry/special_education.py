@@ -15,7 +15,9 @@ CATEGORY = dict(
         ('What it costs', ['out-of-district-tuition', 'cost-per-placement',
                            'in-district-special-education', 'special-education-transportation']),
         ('What comes back', ['circuit-breaker', 'circuit-breaker-account']),
-        ('Budgets and surprises', ['tuition-budget', 'special-education-overruns']),
+        # The same budget against every fund, home on the School budget, all funds shelf.
+        ('Budgets and surprises', ['tuition-budget', 'special-education-overruns',
+                                   'sped-budget-all-funds']),
         ('Children and placements', ['students-with-an-iep', 'out-of-district-placements',
                                      'hiring-versus-placing', 'class-size-limits']),
         # The school MUNIS journal, every fund, posting by posting (notes/plans/
