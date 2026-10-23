@@ -727,15 +727,16 @@ function Presence({ c }: { c: PresenceChart }) {
   const label = `${c.title}. A grid of ${c.groups.reduce((a, g) => a + g.rows.length, 0)} rows by ${c.columns.length} columns; `
     + `the table that follows lists every dot.`
   const rel = new Set(c.related ?? [])
-  const REL = 'var(--text-secondary)'
-  const dot = (i: number) => (i === k ? COLOURS[US_COLOUR] : rel.has(i) ? REL : COLOURS[0])
+  /* A reference column (Monty Tech) is set apart by its POSITION and its italic label, never by a
+     colour or shape of its own: a third dot style asked the reader to learn a third meaning for one
+     column (TJ, 23 October 2026: "why does monty tech have its own color"). */
+  const dot = (i: number) => (i === k ? COLOURS[US_COLOUR] : COLOURS[0])
   return (
     <Frame title={c.title} basis={c.basis} note={c.note} label={label}>
       <div className="flex flex-wrap gap-x-4 gap-y-1 mb-3 text-[12px]" style={{ color: 'var(--text-secondary)' }} aria-hidden>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[US_COLOUR] }} />{c.columns[k]} has it</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[0] }} />another district has it</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ border: `1.5px solid ${COLOURS[US_COLOUR]}` }} />{c.columns[k]} does not</span>
-        {[...rel].map(i => <span key={i} className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-[2px]" style={{ background: REL }} />{c.columns[i]} has it (for reference)</span>)}
       </div>
       <div className="overflow-x-auto -mx-1 px-1" aria-hidden style={{ overscrollBehaviorX: 'contain' }}>
         <table className="border-separate" style={{ borderSpacing: 0 }}>
@@ -780,7 +781,7 @@ function Presence({ c }: { c: PresenceChart }) {
                         onMouseEnter={() => v && setTip({ r: r.label, col: c.columns[i], text: v })}
                         onMouseLeave={() => setTip(null)}
                         onClick={() => v && setTip({ r: r.label, col: c.columns[i], text: v })}>
-                        {v ? <span className={`inline-block w-3 h-3 align-middle ${rel.has(i) ? 'rounded-[2px]' : 'rounded-full'}`} style={{ background: dot(i) }} />
+                        {v ? <span className="inline-block w-3 h-3 align-middle rounded-full" style={{ background: dot(i) }} />
                           : i === k && r.lacks ? <span className="inline-block w-3 h-3 rounded-full align-middle" style={{ border: `1.5px solid ${COLOURS[US_COLOUR]}` }} />
                           : <span className="inline-block w-1 h-1 rounded-full align-middle" style={{ background: 'var(--grid)' }} />}
                       </td>))}

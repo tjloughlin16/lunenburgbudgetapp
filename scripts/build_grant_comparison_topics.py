@@ -706,7 +706,7 @@ def build():
          ('Formula, any year %s–%s' % (C.fy(FWIN[0]), C.fy(FWIN[1])),
           [(SHORT[fc], cs) for fc, cs in f_rows])],
         'districts', spans=spans, related=[1],
-        note='Grey: Monty Tech, the vocational school Lunenburg shares with %s other towns. '
+        note='Monty Tech, in italics: the vocational school Lunenburg shares with %s other towns. '
              'Shown for reference; not in the district counts.' % C.num(mt_towns['count'] - 1),
         note_figures={'m': figure(mt_towns['count'] - 1, C.num(mt_towns['count'] - 1))})
 
