@@ -797,6 +797,7 @@ def build():
     # computation), and each column's three lines are footed to its total (C.footed). Every
     # fund is then the sum of the footed funds, so the rows foot too.
     import build_school_all_funds as BSAF
+    cents_cb, cents_gr = {}, {}
     ms = BSAF.model()['sped']
     if {c for cs in COMP.values() for c in cs} != set(BSAF.J.IN_TOTAL):
         fail('journal.py components in the total are %s; this page maps %s'
@@ -813,6 +814,8 @@ def build():
                 fail('FY%d %s: the model\'s cents %s and the published table %s part' % (y, g, e, every[y][g]))
             every[y][g] = e + [e[1] + e[2] + e[3]]
         tot = [cols[i][1] for i in range(4)]
+        cents_cb[y] = sum(cents[g][2] for g in LINES)
+        cents_gr[y] = sum(cents[g][3] for g in LINES)
         if any(abs(tot[i] - every[y]['all'][i]) > 1 for i in range(4)):
             fail('FY%d: the model\'s totals %s and the published table %s part' % (y, tot, every[y]['all']))
         every[y]['all'] = tot + [tot[1] + tot[2] + tot[3]]
@@ -867,6 +870,123 @@ def build():
     if '%s (0240)' % C.usd(idea[max(idea)]) not in deck:
         fail('the district deck no longer states the %s IDEA allocation DESE lists'
              % C.fy(max(idea)))
+
+    # THE BOARD MEMBER'S TABLE, in his columns and his order (TJ relayed it verbatim, 23
+    # October 2026): "Fiscal Year (10 years? FY21 had a formula change ...) / Special Education
+    # Operational Budget / IDEA Grant Funding / Circuit Breaker Funding / Actual Costs".
+    #   budget      the general fund vote on the three lines, as tables 2-3 define them
+    #   IDEA        DESE's ALLOCATION, 0240 + 0262 (both IDEA: school age and preschool). The
+    #               FY2022 ARP IDEA allocations (0252, 0264) were one-time and are named in the
+    #               note, not added, so the column stays one quantity year to year
+    #   circuit     what DESE PAID in the year, ALL of it: the quarterly payment plus any extra
+    #   breaker     relief or supplemental payment (he asked for funding, not the schedule)
+    #   actual      spending. General fund: payments plus what was still owed. Every fund:
+    #               FY2023-FY2026 the journal (table 3); FY2017-FY2022 the general fund plus the
+    #               annual reports' special revenue DISBURSEMENTS for fund 2640 and the special
+    #               education grant funds -- spending, not receipts, so not a proxy (rule 7);
+    #               checked against the journal for FY2023 below, and the difference printed
+    BM0, BM1 = 2017, SC['last_fy']
+    alloc = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data',
+                                              'dese-entitlement-allocations.csv'), encoding='utf-8')):
+        if r['district_code'] == '0162':
+            alloc.setdefault(int(r['fy']), {})[r['fund_code']] = float(r['amount'])
+    idea_bm = {y: alloc.get(y, {}).get('0240', 0) + alloc.get(y, {}).get('0262', 0)
+               for y in range(BM0, BM1 + 1)}
+    no262 = [y for y in range(BM0, BM1 + 1) if '0262' not in alloc.get(y, {})]
+    arp = {y: alloc[y].get('0252', 0) + alloc[y].get('0264', 0) for y in alloc
+           if alloc[y].get('0252') or alloc[y].get('0264')}
+    cbrows = {int(r['fy']): r for r in csv.DictReader(open(os.path.join(
+        ROOT, 'sources', 'data', 'dese-circuit-breaker.csv'), encoding='utf-8'))
+        if r['lea'] == '01620000'}
+    num_ = lambda x: float(x) if x not in (None, '') else 0.0
+    cb_all = {y: num_(cbrows[y]['total_quarterly_payment']) + num_(cbrows[y]['extra_relief_payment'])
+              + num_(cbrows[y]['additional_supplemental_payment']) for y in range(BM0, BM1 + 1)}
+    for y in range(BM0, BM1 + 1):
+        if abs(num_(cbrows[y]['total_quarterly_payment']) - paid[y]) > 0.5:
+            fail('FY%d: the circuit breaker CSV and circuit-breaker.json disagree' % y)
+    cb_extra = [y for y in range(BM0, BM1 + 1) if cb_all[y] != paid[y]]
+    # FY2021, THE FORMULA CHANGE, read off DESE's own file: the state row's transportation
+    # reimbursement is empty in every year before the first one printed, and a payment
+    # reimburses the year before -- so that year's COSTS are the first whose transportation
+    # counted. The law that made the change is not in this archive; the file is the evidence.
+    st_tr = sorted(int(r['fy']) for r in csv.DictReader(open(os.path.join(
+        ROOT, 'sources', 'data', 'dese-circuit-breaker.csv'), encoding='utf-8'))
+        if r['level'] == 'state' and r['reimb_transport'])
+    change_fy = st_tr[0] - 1
+    if change_fy != 2021 or st_tr != list(range(st_tr[0], st_tr[-1] + 1)):
+        fail('the first year whose transportation the state reimbursed is FY%d, not FY2021; the '
+             'board member\'s table marks FY2021' % change_fy)
+    # Fund 2640 and the special education grant funds, as the annual reports' special revenue
+    # schedule prints their disbursements (each row ties to the page's printed totals).
+    GRANT_RE = re.compile(r'#\s*(240|262|252|264|274|298)\b|94-142|\bIdea\b|^Sped Early Childhood'
+                          r'|^Sped Program Improvement', re.I)
+    srr_cb, srr_gr = {}, {}
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data', 'special-revenue-read.csv'),
+                                 encoding='utf-8')):
+        y = int(r['fy'])
+        if r['row_ties'] != 'yes':
+            continue
+        if r['fund'] == '50/50 Grant Sped Tuitions':     # fund 2640, as the report names it
+            srr_cb[y] = num_(r['disbursements'])
+        elif GRANT_RE.search(r['fund']):
+            srr_gr[y] = srr_gr.get(y, 0.0) + num_(r['disbursements'])
+    if abs(srr_cb[EY[0]] - cents_cb[EY[0]]) > 0.005:
+        fail('FY%d: fund 2640 disbursements in the annual report (%s) and the journal (%s) no '
+             'longer tie to the cent' % (EY[0], srr_cb[EY[0]], cents_cb[EY[0]]))
+    gr_gap = srr_gr[EY[0]] - cents_gr[EY[0]]
+    if abs(gr_gap) > 2000:
+        fail('FY%d: grant disbursements in the annual report and the journal are %.2f apart; '
+             'the note says about a thousand' % (EY[0], gr_gap))
+    bm = {}
+    for y in range(BM0, BM1 + 1):
+        lg = next(r for r in led if r['fy'] == y)
+        if y in every:
+            e = every[y]['all']
+            bm[y] = dict(vote=e[0], gf=e[1], allf=e[4], basis='journal')
+        else:
+            if y not in srr_cb or y not in srr_gr:
+                fail('FY%d: the annual report holds no special revenue row for fund 2640 or the '
+                     'grants' % y)
+            gf = sum(lg[g]['spent'] for g in LINES)
+            o, c = C.footed([srr_cb[y], srr_gr[y]])
+            bm[y] = dict(vote=sum(lg[g]['original'] for g in LINES), gf=gf, allf=gf + c,
+                         basis='annual report')
+    BM_MARK = {'cb': '†', 'idea': '‡', 'allf': '§'}
+    bm_rows = [dict(
+        label=C.fy(y) + (' · formula change' if y == change_fy else ''),
+        cells=[C.usd(bm[y]['vote']),
+               C.usd(idea_bm[y]) + (' ' + BM_MARK['idea'] if y in no262 else ''),
+               C.usd(cb_all[y]) + (' ' + BM_MARK['cb'] if y in cb_extra else ''),
+               C.usd(bm[y]['gf']),
+               C.usd(bm[y]['allf']) + (' ' + BM_MARK['allf'] if bm[y]['basis'] == 'annual report'
+                                       else '')])
+        for y in range(BM1, BM0 - 1, -1)]
+    bm_table = dict(caption='Budget, IDEA, circuit breaker and actual costs, %s to %s'
+                    % (C.fy(BM0), C.fy(BM1)), views=[dict(
+        key='ten', label='Ten years', total_col=-1, kinds=['ledger'] * 5,
+        columns=['Special Education Operational Budget (general fund vote)',
+                 'IDEA Grant Funding (allocated)', 'Circuit Breaker Funding (received)',
+                 'Actual Costs, general fund', 'Actual Costs, every fund'],
+        rows=bm_rows,
+        note=('The first three columns do not add up to anything: the budget is net, voted after '
+              'the circuit breaker and grants it expected. %s: DESE’s file prints a '
+              'transportation reimbursement for the first time, for every district, in %s, '
+              'paying %s costs. Budget and general fund cover in district, out-of-district '
+              'tuition and transportation; actual is payments plus what was still owed (before %s, '
+              'the Finance Committee workbook’s actual, which does not say). IDEA is '
+              'DESE’s allocation (0240 school age plus 0262 preschool); %s for %s the file '
+              'holds 0240 only; %s’s '
+              'one-time ARP IDEA, %s, is not in it. %s includes extra relief or supplemental '
+              'payments (%s); it is by year paid. %s Every fund before %s adds the annual '
+              'reports’ disbursements from the circuit breaker account and the special '
+              'education grants: payments only. In %s the two ways differ by %s on grants and '
+              'not at all on the circuit breaker.')
+             % (C.fy(change_fy), C.fy(st_tr[0]), C.fy(change_fy), C.fy(EY[0]), BM_MARK['idea'],
+                ' and '.join(C.fy(y) for y in no262), ', '.join(C.fy(y) for y in arp),
+                ', '.join(C.usd(arp[y]) for y in sorted(arp)), BM_MARK['cb'],
+                ', '.join(C.fy(y) for y in cb_extra), BM_MARK['allf'], C.fy(EY[0]),
+                C.fy(EY[0]), C.usd(abs(gr_gap))))])
 
     out['special-education-overruns'] = TP.page(
         'special-education-overruns',
@@ -944,7 +1064,8 @@ def build():
                              'added up. Grants and the circuit breaker account are not in it.'
                              % (fy0, fy1),
                         note_figures={'y': F(sur[0]['fy']), 'z': F(sur[-1]['fy'])}),
-        table=dict(caption='Voted and spent, general fund, each line, every year', views=[
+        table=bm_table,
+        tables=[dict(caption='Voted and spent, general fund, each line, every year', views=[
             dict(key='voted-spent', label='Each year', total_col=-1, kinds=['ledger'] * 7,
                  columns=['In-district, voted', 'In-district, spent', 'Tuition, voted',
                           'Tuition, spent', 'Transport, voted', 'Transport, spent', 'Read from'],
@@ -958,7 +1079,6 @@ def build():
                       'account. The Finance Committee’s workbook is used before %s because its '
                       'rows match the MUNIS reports in the years both hold.'
                       % C.fy(SC['munis_first_fy']))]),
-        tables=[
             dict(caption='Over or under the vote, and the need it leaves', views=[
                 dict(key='over', label='Each year', total_col=3, kinds=['ledger'] * 5,
                      columns=['In-district', 'Tuition', 'Transport', 'Needed', 'All three, net'],

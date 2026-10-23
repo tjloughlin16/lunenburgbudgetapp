@@ -740,234 +740,126 @@
   }
  ],
  "table": {
-  "caption": "Voted and spent, general fund, each line, every year",
+  "caption": "Budget, IDEA, circuit breaker and actual costs, FY2017 to FY2026",
   "views": [
    {
     "columns": [
-     "In-district, voted",
-     "In-district, spent",
-     "Tuition, voted",
-     "Tuition, spent",
-     "Transport, voted",
-     "Transport, spent",
-     "Read from"
+     "Special Education Operational Budget (general fund vote)",
+     "IDEA Grant Funding (allocated)",
+     "Circuit Breaker Funding (received)",
+     "Actual Costs, general fund",
+     "Actual Costs, every fund"
     ],
-    "key": "voted-spent",
+    "key": "ten",
     "kinds": [
-     "ledger",
-     "ledger",
      "ledger",
      "ledger",
      "ledger",
      "ledger",
      "ledger"
     ],
-    "label": "Each year",
-    "note": "Read from: the Town’s MUNIS year-end report, or the Finance Committee’s history workbook. Voted is the budget voted before the year; spent is expended plus what was still owed at the close. In-district is every other special education account. The Finance Committee’s workbook is used before FY2023 because its rows match the MUNIS reports in the years both hold.",
+    "label": "Ten years",
+    "note": "The first three columns do not add up to anything: the budget is net, voted after the circuit breaker and grants it expected. FY2021: DESE’s file prints a transportation reimbursement for the first time, for every district, in FY2022, paying FY2021 costs. Budget and general fund cover in district, out-of-district tuition and transportation; actual is payments plus what was still owed (before FY2023, the Finance Committee workbook’s actual, which does not say). IDEA is DESE’s allocation (0240 school age plus 0262 preschool); ‡ for FY2017 and FY2018 the file holds 0240 only; FY2022’s one-time ARP IDEA, $96,559, is not in it. † includes extra relief or supplemental payments (FY2019, FY2025); it is by year paid. § Every fund before FY2023 adds the annual reports’ disbursements from the circuit breaker account and the special education grants: payments only. In FY2023 the two ways differ by $1,109 on grants and not at all on the circuit breaker.",
     "rows": [
      {
       "cells": [
-       "$4,216,813",
-       "$4,299,387",
-       "$1,291,293",
-       "$1,202,771",
-       "$565,734",
-       "$633,291",
-       "MUNIS"
+       "$6,073,840",
+       "$437,278",
+       "$579,142",
+       "$6,135,449",
+       "$6,908,810"
       ],
       "label": "FY2026"
      },
      {
       "cells": [
-       "$4,262,965",
-       "$3,944,444",
-       "$1,164,824",
-       "$732,298",
-       "$445,328",
-       "$434,922",
-       "MUNIS"
+       "$5,873,117",
+       "$437,529",
+       "$549,407 †",
+       "$5,111,664",
+       "$6,085,603"
       ],
       "label": "FY2025"
      },
      {
       "cells": [
-       "$3,850,408",
-       "$3,652,104",
-       "$501,239",
-       "$588,508",
-       "$335,947",
-       "$401,402",
-       "MUNIS"
+       "$4,687,594",
+       "$433,488",
+       "$401,966",
+       "$4,642,014",
+       "$5,707,560"
       ],
       "label": "FY2024"
      },
      {
       "cells": [
-       "$3,724,015",
-       "$3,654,709",
-       "$489,918",
-       "$304,748",
-       "$329,360",
-       "$320,244",
-       "MUNIS"
+       "$4,543,293",
+       "$417,855",
+       "$415,750",
+       "$4,279,700",
+       "$5,335,622"
       ],
       "label": "FY2023"
      },
      {
       "cells": [
-       "$3,508,656",
-       "$3,604,649",
-       "$818,716",
-       "$397,233",
-       "$297,843",
-       "$241,390",
-       "FinCom sheet"
+       "$4,625,215",
+       "$411,652",
+       "$519,394",
+       "$4,243,272",
+       "$5,089,899 §"
       ],
       "label": "FY2022"
      },
      {
       "cells": [
-       "$3,427,643",
-       "$3,349,796",
-       "$719,269",
-       "$335,377",
-       "$380,409",
-       "$260,921",
-       "FinCom sheet"
+       "$4,527,321",
+       "$398,502",
+       "$484,579",
+       "$3,946,094",
+       "$4,670,249 §"
       ],
-      "label": "FY2021"
+      "label": "FY2021 · formula change"
      },
      {
       "cells": [
-       "$3,245,546",
-       "$3,159,564",
-       "$865,746",
-       "$869,557",
-       "$446,658",
-       "$223,350",
-       "FinCom sheet"
+       "$4,557,950",
+       "$381,743",
+       "$478,987",
+       "$4,252,471",
+       "$5,136,821 §"
       ],
       "label": "FY2020"
      },
      {
       "cells": [
-       "$2,998,364",
-       "$2,939,574",
-       "$754,480",
-       "$958,495",
-       "$417,585",
-       "$322,047",
-       "FinCom sheet"
+       "$4,170,429",
+       "$374,354",
+       "$433,975 †",
+       "$4,220,116",
+       "$4,794,738 §"
       ],
       "label": "FY2019"
      },
      {
       "cells": [
-       "$3,065,431",
-       "$2,905,432",
-       "$888,909",
-       "$868,928",
-       "$490,000",
-       "$366,184",
-       "FinCom sheet"
+       "$4,444,340",
+       "$360,585 ‡",
+       "$366,790",
+       "$4,140,544",
+       "$4,796,546 §"
       ],
       "label": "FY2018"
      },
      {
       "cells": [
-       "$3,105,994",
-       "$3,081,936",
-       "$903,960",
-       "$641,626",
-       "$489,250",
-       "$360,537",
-       "FinCom sheet"
+       "$4,499,204",
+       "$353,466 ‡",
+       "$507,832",
+       "$4,084,099",
+       "$4,981,492 §"
       ],
       "label": "FY2017"
-     },
-     {
-      "cells": [
-       "$2,774,291",
-       "$2,813,739",
-       "$989,655",
-       "$965,926",
-       "$469,046",
-       "$460,508",
-       "FinCom sheet"
-      ],
-      "label": "FY2016"
-     },
-     {
-      "cells": [
-       "$2,506,498",
-       "$2,449,637",
-       "$1,529,405",
-       "$1,472,753",
-       "$415,488",
-       "$480,819",
-       "FinCom sheet"
-      ],
-      "label": "FY2015"
-     },
-     {
-      "cells": [
-       "$2,268,285",
-       "$2,274,722",
-       "$1,144,319",
-       "$1,235,349",
-       "$395,702",
-       "$444,752",
-       "FinCom sheet"
-      ],
-      "label": "FY2014"
-     },
-     {
-      "cells": [
-       "$2,209,487",
-       "$2,190,304",
-       "$818,500",
-       "$949,835",
-       "$348,060",
-       "$440,499",
-       "FinCom sheet"
-      ],
-      "label": "FY2013"
-     },
-     {
-      "cells": [
-       "$2,336,028",
-       "$2,283,609",
-       "$708,000",
-       "$665,200",
-       "$270,000",
-       "$309,766",
-       "FinCom sheet"
-      ],
-      "label": "FY2012"
-     },
-     {
-      "cells": [
-       "$2,013,473",
-       "$2,066,833",
-       "$607,405",
-       "$648,358",
-       "$300,000",
-       "$267,248",
-       "FinCom sheet"
-      ],
-      "label": "FY2011"
-     },
-     {
-      "cells": [
-       "$2,203,433",
-       "$2,141,545",
-       "$165,000",
-       "$183,735",
-       "$300,000",
-       "$226,876",
-       "FinCom sheet"
-      ],
-      "label": "FY2010"
      }
     ],
     "total_col": -1
@@ -975,6 +867,241 @@
   ]
  },
  "tables": [
+  {
+   "caption": "Voted and spent, general fund, each line, every year",
+   "views": [
+    {
+     "columns": [
+      "In-district, voted",
+      "In-district, spent",
+      "Tuition, voted",
+      "Tuition, spent",
+      "Transport, voted",
+      "Transport, spent",
+      "Read from"
+     ],
+     "key": "voted-spent",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Each year",
+     "note": "Read from: the Town’s MUNIS year-end report, or the Finance Committee’s history workbook. Voted is the budget voted before the year; spent is expended plus what was still owed at the close. In-district is every other special education account. The Finance Committee’s workbook is used before FY2023 because its rows match the MUNIS reports in the years both hold.",
+     "rows": [
+      {
+       "cells": [
+        "$4,216,813",
+        "$4,299,387",
+        "$1,291,293",
+        "$1,202,771",
+        "$565,734",
+        "$633,291",
+        "MUNIS"
+       ],
+       "label": "FY2026"
+      },
+      {
+       "cells": [
+        "$4,262,965",
+        "$3,944,444",
+        "$1,164,824",
+        "$732,298",
+        "$445,328",
+        "$434,922",
+        "MUNIS"
+       ],
+       "label": "FY2025"
+      },
+      {
+       "cells": [
+        "$3,850,408",
+        "$3,652,104",
+        "$501,239",
+        "$588,508",
+        "$335,947",
+        "$401,402",
+        "MUNIS"
+       ],
+       "label": "FY2024"
+      },
+      {
+       "cells": [
+        "$3,724,015",
+        "$3,654,709",
+        "$489,918",
+        "$304,748",
+        "$329,360",
+        "$320,244",
+        "MUNIS"
+       ],
+       "label": "FY2023"
+      },
+      {
+       "cells": [
+        "$3,508,656",
+        "$3,604,649",
+        "$818,716",
+        "$397,233",
+        "$297,843",
+        "$241,390",
+        "FinCom sheet"
+       ],
+       "label": "FY2022"
+      },
+      {
+       "cells": [
+        "$3,427,643",
+        "$3,349,796",
+        "$719,269",
+        "$335,377",
+        "$380,409",
+        "$260,921",
+        "FinCom sheet"
+       ],
+       "label": "FY2021"
+      },
+      {
+       "cells": [
+        "$3,245,546",
+        "$3,159,564",
+        "$865,746",
+        "$869,557",
+        "$446,658",
+        "$223,350",
+        "FinCom sheet"
+       ],
+       "label": "FY2020"
+      },
+      {
+       "cells": [
+        "$2,998,364",
+        "$2,939,574",
+        "$754,480",
+        "$958,495",
+        "$417,585",
+        "$322,047",
+        "FinCom sheet"
+       ],
+       "label": "FY2019"
+      },
+      {
+       "cells": [
+        "$3,065,431",
+        "$2,905,432",
+        "$888,909",
+        "$868,928",
+        "$490,000",
+        "$366,184",
+        "FinCom sheet"
+       ],
+       "label": "FY2018"
+      },
+      {
+       "cells": [
+        "$3,105,994",
+        "$3,081,936",
+        "$903,960",
+        "$641,626",
+        "$489,250",
+        "$360,537",
+        "FinCom sheet"
+       ],
+       "label": "FY2017"
+      },
+      {
+       "cells": [
+        "$2,774,291",
+        "$2,813,739",
+        "$989,655",
+        "$965,926",
+        "$469,046",
+        "$460,508",
+        "FinCom sheet"
+       ],
+       "label": "FY2016"
+      },
+      {
+       "cells": [
+        "$2,506,498",
+        "$2,449,637",
+        "$1,529,405",
+        "$1,472,753",
+        "$415,488",
+        "$480,819",
+        "FinCom sheet"
+       ],
+       "label": "FY2015"
+      },
+      {
+       "cells": [
+        "$2,268,285",
+        "$2,274,722",
+        "$1,144,319",
+        "$1,235,349",
+        "$395,702",
+        "$444,752",
+        "FinCom sheet"
+       ],
+       "label": "FY2014"
+      },
+      {
+       "cells": [
+        "$2,209,487",
+        "$2,190,304",
+        "$818,500",
+        "$949,835",
+        "$348,060",
+        "$440,499",
+        "FinCom sheet"
+       ],
+       "label": "FY2013"
+      },
+      {
+       "cells": [
+        "$2,336,028",
+        "$2,283,609",
+        "$708,000",
+        "$665,200",
+        "$270,000",
+        "$309,766",
+        "FinCom sheet"
+       ],
+       "label": "FY2012"
+      },
+      {
+       "cells": [
+        "$2,013,473",
+        "$2,066,833",
+        "$607,405",
+        "$648,358",
+        "$300,000",
+        "$267,248",
+        "FinCom sheet"
+       ],
+       "label": "FY2011"
+      },
+      {
+       "cells": [
+        "$2,203,433",
+        "$2,141,545",
+        "$165,000",
+        "$183,735",
+        "$300,000",
+        "$226,876",
+        "FinCom sheet"
+       ],
+       "label": "FY2010"
+      }
+     ],
+     "total_col": -1
+    }
+   ]
+  },
   {
    "caption": "Over or under the vote, and the need it leaves",
    "views": [

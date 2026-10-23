@@ -235,10 +235,54 @@ def main():
         y = int(lab[2:])
         check('%s received' % lab, [paid.get(y), recd.get(y), idea.get(y)], cells)
 
+    # ---- THE BOARD MEMBER'S TABLE, every cell, FY2017-FY2026
+    bmt = p['table']
+    if bmt['views'][0]['columns'] != ['Special Education Operational Budget (general fund vote)',
+                                      'IDEA Grant Funding (allocated)',
+                                      'Circuit Breaker Funding (received)',
+                                      'Actual Costs, general fund', 'Actual Costs, every fund']:
+        bad.append('the board member\'s table is not first, or its columns moved')
+    alloc = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-entitlement-allocations.csv'), encoding='utf-8')):
+        if r['district_code'] == '0162' and r['fund_code'] in ('0240', '0262'):
+            alloc[int(r['fy'])] = alloc.get(int(r['fy']), 0) + int(r['amount'])
+    cball, statetr = {}, []
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-circuit-breaker.csv'), encoding='utf-8')):
+        if r['lea'] == '01620000':
+            cball[int(r['fy'])] = r0(sum(D(r[k] or '0') for k in (
+                'total_quarterly_payment', 'extra_relief_payment', 'additional_supplemental_payment')))
+        if r['level'] == 'state' and r['reimb_transport']:
+            statetr.append(int(r['fy']))
+    # the grant funds, by the names the annual reports print -- written out, not matched
+    GRANT_FUNDS = {'PL 94-142 #240', 'Sped Early Childhood Grant', 'Early Childhood Grant #262',
+                   'Sped Program Improvement Grant', 'Program Improvement Grant #274',
+                   'FY21 Sped Program Improvement #298', 'FY22 ARP Idea #252', 'FY22 Idea ARP #264'}
+    disb = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'special-revenue-read.csv'), encoding='utf-8')):
+        if r['fund'] in GRANT_FUNDS | {'50/50 Grant Sped Tuitions'} and r['row_ties'] == 'yes':
+            disb[int(r['fy'])] = disb.get(int(r['fy']), D(0)) + D(r['disbursements'] or '0')
+    change = min(statetr) - 1
+    for r in bmt['views'][0]['rows']:
+        y = int(r['label'][2:6])
+        check('FY%d formula-change mark' % y, '· formula change' in r['label'], y == change)
+        cells = [money(c.split(' ')[0]) for c in r['cells']]
+        if y in munis_years:
+            gfv = r0(sum(jl.get((y, 'gf', g, 'voted'), D(0)) for g in LINES))
+            gfs = r0(sum(jl.get((y, 'gf', g, 'spent'), D(0)) for g in LINES))
+            allf = gfs + r0(sum(jl.get((y, 'cb', g, 'spent'), D(0)) for g in LINES)) \
+                + r0(sum(jl.get((y, 'grants', g, 'spent'), D(0)) for g in LINES))
+        else:
+            gfv = sum(led[y][g][0] for g in LINES)
+            gfs = sum(led[y][g][1] for g in LINES)
+            allf = gfs + r0(disb[y])
+        check('FY%d board member\'s row' % y, cells, [gfv, alloc[y], cball[y], gfs, allf])
+        check('FY%d every-fund marker' % y, r['cells'][4].endswith('§'), y not in munis_years)
+    check('the formula-change year', change, 2021)
+
     if bad:
         print('\n'.join(['FAIL'] + bad))
         return 1
-    print('verify_sped_reserve: %d years, average %s, SD %s, +2 SD %s; five tables cell by cell, '
+    print('verify_sped_reserve: %d years, average %s, SD %s, +2 SD %s; six tables cell by cell, '
           'the every-fund table footed both ways, the two definitions tied' %
           (n, usd(avg), usd(sdv), usd(lv2)))
     return 0
