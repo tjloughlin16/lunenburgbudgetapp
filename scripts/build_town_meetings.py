@@ -477,6 +477,37 @@ def art_numbers(text):
     return [n for n in out if n]
 
 
+# A LIST OF ARTICLES: "articles 2,3,6,16,17,18,19", "articles 16 through 19", "articles 4 and 5".
+# ART_REF takes the first number after the word and nothing else, so a consent calendar naming
+# seven articles was filed under one of them and the other six read as "result not found"
+# (23 October 2026, the May 2026 Annual Town Meeting).
+ART_LIST = re.compile(r'\barticles?\s+(\d{1,2}(?:\s*(?:,|;?\s*and|&|through|thru|to|-|\u2013)\s*\d{1,2})*)', re.I)
+
+
+def art_list(text):
+    """The articles of the FIRST list in a motion, ranges expanded -- for a consent calendar,
+    whose first list is what it decides ("...; article 7 removed on a hold" is not)."""
+    m = ART_LIST.search(text)
+    if not m:
+        return []
+    out, parts = [], re.split(r'\s*(,|;?\s*and|&)\s*', m.group(1))
+    for p in parts:
+        r = re.match(r'(\d{1,2})\s*(?:through|thru|to|-|\u2013)\s*(\d{1,2})$', p.strip())
+        if r and int(r.group(1)) < int(r.group(2)):
+            out.extend(range(int(r.group(1)), int(r.group(2)) + 1))
+        elif p.strip().isdigit():
+            out.append(int(p.strip()))
+    return out
+
+
+# A VOTE MARKED PROCEDURAL THAT STILL DECIDES AN ARTICLE. Our minutes mark "accept the reports of
+# town officers (article 1)" procedural, so it was skipped and Article 1 read as not found. Real
+# procedure -- moving the question, recess, adjournment, reconsideration -- stays out.
+PROCEDURE = re.compile(r'move\s+the\s+question|previous\s+question|recess|adjourn|reconsider|'
+                       r'waive\s+the\s+reading|admit|non-?voters?|dissolve|quorum|moderator|'
+                       r'order\s+of\s+(?:the\s+)?articles|take\s+.*out\s+of\s+order', re.I)
+
+
 # =========================================================================================
 # 3. THE REGISTER.
 # =========================================================================================
@@ -508,7 +539,12 @@ def build():
             continue
         is_notice = bool(re.search(r'voted\s+to\s+call|opened\s+the\s+warrant\s+for\s+submission|open\s+the\s+warrant\s+for\s+submission', text, re.I))
         is_warrant = bool(re.search(r'notify\s+and\s+warn', text, re.I)) and not re.search(r'draft', d['local'], re.I)
-        role = 'notice' if is_notice and not is_warrant else 'warrant' if is_warrant else 'draft' if re.search(r'draft', d['local'], re.I) else 'other'
+        # A DRAFT is a draft WARRANT: "draft" in the name is not enough. The Brooks House
+        # presentation (a deck "to Town Meeting", marked draft) entered the register as a
+        # Special Town Meeting on 17 November 2024 that never happened (23 October 2026).
+        is_draft = bool(re.search(r'draft', d['local'], re.I)) and bool(
+            re.search(r'warrant', d['local'], re.I) or len(re.findall(r'\bARTICLE\s+[0-9A-Z]{1,2}\b', text)) >= 3)
+        role = 'notice' if is_notice and not is_warrant else 'warrant' if is_warrant else 'draft' if is_draft else 'other'
         if role == 'other':
             continue
         facts = notice_facts(text) if role == 'notice' else {}
@@ -713,13 +749,19 @@ def our_article_votes(rec):
     boards stating positions, and procedure."""
     out = collections.defaultdict(lambda: {'main': None, 'votes': []})
     for v in rec['votes']:
-        if v['procedural']:
-            continue
         ns = art_numbers(v['motion'])
         if not ns:
             continue
-        # A CONSENT CALENDAR names several articles and decides them all at once.
-        for n in (sorted(set(ns)) if re.search(r'consent', v['motion'], re.I) else ns[:1]):
+        if v['procedural'] and PROCEDURE.search(v['motion']):
+            continue
+        # SEVERAL ARTICLES, ONE VOTE. Town Meeting often takes a group together -- a consent
+        # calendar, or "articles 9, 10 and 11" moved at once (TJ, 23 October 2026: "we
+        # frequently group many articles into 1 vote"). A motion whose FIRST reference is a
+        # plural list decides every article in it; one that names a single article and
+        # mentions another ("amend article 24 to fund ...") stays with the first.
+        group = art_list(v['motion'])
+        joint = len(group) > 1 or re.search(r'consent', v['motion'], re.I)
+        for n in ((group or ns[:1]) if joint else ns[:1]):
             out[n]['votes'].append(v)
     for n, a in out.items():
         role = []
