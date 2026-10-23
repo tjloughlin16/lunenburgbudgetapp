@@ -28,7 +28,7 @@ export function BoardNav({ slug, current }: { slug: string; current: BoardTab })
   const tabs: { key: BoardTab | 'people'; href: string; label: string; show: boolean }[] = [
     { key: 'overview', href: base, label: 'Overview', show: true },
     { key: 'meetings', href: `${base}/meetings`, label: 'Meetings', show: true },
-    { key: 'votes', href: `${base}/votes`, label: `Votes`, show: b.votes > 0 },
+    { key: 'votes', href: `${base}/votes`, label: `All votes`, show: b.votes > 0 },
     { key: 'time', href: `${base}/time`, label: 'Time', show: b.time },
     { key: 'schedule', href: `${base}/schedule`, label: 'Budget schedule', show: b.schedule },
     { key: 'finance', href: `${base}/finance`, label: 'Finance', show: b.finance },

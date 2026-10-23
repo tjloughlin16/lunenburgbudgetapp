@@ -46,6 +46,8 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'boardcompare' | 'youthsports'
   | 'schoolfinance' | 'accounts' | 'departments' | 'parks' | 'orgcharts' | 'jobs'
   | 'grantsopen'
+  // Every warrant article of every Town Meeting, searchable by fiscal year (build_vote_lists.py).
+  | 'tmvotes'
   | 'healthlever' | 'freecashlever' | 'salarylever' | 'feelever' | 'extraslever' | 'positionslever'
   | 'bythenumbers'
   | 'owners'
@@ -369,6 +371,9 @@ export const SLUG: Record<Tab, string> = {
   // DESE's open grant programs, for the schools to see what they can apply for (scripts/
   // build_grants_open.py). Not `grants`: that alias has meant Outside the budget since before.
   grantsopen: 'grants-open-to-lunenburg',
+  // TJ, 23 October 2026: "a single page that lists all town meeting votes, ever." The plain
+  // address a resident would type; each board's own list is /boards/<slug>/votes.
+  tmvotes: 'town-meeting-votes',
   departments: 'departments',
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
@@ -519,6 +524,8 @@ export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
   'jobs',
   // Open grant programs: a list to check, not a read.
   'grantsopen',
+  // Every Town Meeting vote: searched, not read.
+  'tmvotes',
 ])
 
 /** Pages that are BOARDS -- dials, sliders, a cascade to reorder. They are used, not
@@ -531,6 +538,7 @@ const ALIASES: Record<string, Tab> = {
   // The chooser answers to a name as well as to the root. `/` is what gets shared; `home`
   // is what somebody types when they have lost their place.
   home: 'home', doors: 'home',
+  'warrant-articles': 'tmvotes', 'tm-votes': 'tmvotes', 'town-meeting-vote': 'tmvotes',
   answers: 'answers',
   walk: 'walk', 'the-walkthrough': 'walk', walkthrough: 'walk', start: 'walk', 'start-here': 'walk',
   deeper: 'deeper', more: 'deeper', everything: 'deeper',
@@ -870,6 +878,7 @@ export const LABEL: Record<Tab, string> = {
   orgcharts: 'Town-wide org charts',
   jobs: 'Job postings — the town and the schools',
   grantsopen: 'Grants open to Lunenburg — DESE programs a school district can apply for',
+  tmvotes: 'Every Town Meeting vote',
   departments: 'The departments',
   healthlever: 'Health insurance',
   freecashlever: 'Free cash — can it fill the gap?',

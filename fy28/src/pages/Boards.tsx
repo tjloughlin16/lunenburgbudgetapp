@@ -1,5 +1,6 @@
 import { useState } from 'react'
 import { BoardNav } from '../components/BoardNav'
+import { VoteList, type VotePayload } from '../components/VoteList'
 import { RecordCell, type RecordStatus } from '../components/RecordCell'
 import { boardSlugFromPath, boardSpokeFromPath, type BoardSpoke, type Tab } from '../routes'
 import { Body, H2, ReportShell, useReport } from '../components/report'
@@ -129,9 +130,10 @@ function Index({ d }: { d: Payload }) {
   const rest = d.boards.filter(b => !b.the_three)
   const openTotal = d.boards.reduce((n, b) => n + (b.join?.open_seats ?? 0), 0)
   const openBoards = d.boards.filter(b => (b.join?.open_seats ?? 0) > 0).length
+  // A div, not one big link: the card now carries a second door, to the board's every vote.
   const Card = ({ b }: { b: Board }) => (
-    <a href={`/boards/${b.slug}`} className="card block p-4 transition-opacity hover:opacity-90">
-      <p className="text-[15px] font-bold leading-snug" style={{ color: 'var(--series-cost)' }}>{b.name} &rarr;</p>
+    <div className="card p-4">
+      <a href={`/boards/${b.slug}`} className="block text-[15px] font-bold leading-snug no-underline hover:underline" style={{ color: 'var(--series-cost)' }}>{b.name} &rarr;</a>
       <p className="text-xs mt-1.5 tnum" style={{ color: 'var(--text-secondary)' }}>
         {splitMeetings(b.meetings).upcoming[0]
           ? <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>next {mmdd(splitMeetings(b.meetings).upcoming[0].date)} · </span>
@@ -139,9 +141,13 @@ function Index({ d }: { d: Payload }) {
             /* OUR ESTIMATE, never in the posted meeting's voice: the amber underline and the
                word "likely", and the tag says whose guess it is. */
             ? <span style={{ color: 'var(--text-primary)' }}><span style={{ borderBottom: '2px solid var(--status-warning)' }}>likely {mmdd(likelyDate(b, [])!)}</span> <span style={kicker}>(our estimate)</span> · </span> : null}
-        {n0(b.counts.agendas)} agendas · {n0(b.counts.minutes)} minutes · {n0(b.counts.recordings)} recordings{b.counts.our_minutes ? ` · ${n0(b.counts.our_minutes)} of ours, ${n0(b.counts.votes)} votes` : ''}
+        {n0(b.counts.agendas)} agendas · {n0(b.counts.minutes)} minutes · {n0(b.counts.recordings)} recordings{b.counts.our_minutes ? ` · ${n0(b.counts.our_minutes)} of ours` : ''}
       </p>
-    </a>
+      {b.votes.length > 0 && (
+        <a href={`/boards/${b.slug}/votes`} className="inline-block text-[12.5px] font-semibold underline mt-1.5" style={{ color: 'var(--text-primary)' }}>
+          All {n0(b.votes.length)} votes, searchable &rarr;</a>
+      )}
+    </div>
   )
   return (
     <ReportShell tab={TAB} title="The boards — each one, in one place"
@@ -160,6 +166,10 @@ function Index({ d }: { d: Payload }) {
         </p>
       )}
       <p className="text-[14px] mt-5 max-w-3xl">
+        <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/town-meeting-votes">Every Town Meeting vote &rarr;</a>
+        <span style={{ color: 'var(--text-secondary)' }}> &mdash; every warrant article, searchable by fiscal year. Each board&rsquo;s own votes are on its card below.</span>
+      </p>
+      <p className="text-[14px] mt-3 max-w-3xl">
         <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/board-records">Board records &rarr;</a>
         <span style={{ color: 'var(--text-secondary)' }}> &mdash; every board beside the others on what the record measures, starting with which meetings got minutes.</span>
       </p>
@@ -626,17 +636,24 @@ function MeetingsTab({ b, d, upcoming, past }: { b: Board; d: Payload; upcoming:
   )
 }
 
+/** EVERY VOTE OF THIS BOARD -- the same searchable list as /town-meeting-votes
+ *  (components/VoteList), from `/data/votes/<slug>.json` (scripts/build_vote_lists.py, which
+ *  regroups this page's own join -- build_boards.py -- by meeting and fiscal year). TJ,
+ *  23 October 2026: *"a very simple 'All Votes' per board too, with the same search
+ *  mechanisms, broken out by FY, easily findable."* Its own small file, so a search does not
+ *  wait on boards.json. */
 function VotesTab({ b }: { b: Board }) {
-  const [all, setAll] = useState(false)
-  const substantive = b.votes.filter(v => !v.procedural)
+  const { d: p, err } = useReport<VotePayload>(`votes/${b.slug}.json`)
   return (
     <>
-      <p className="text-sm mt-5 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>
-        From the town&rsquo;s minutes ({n0(b.counts.official_votes_read)} of {n0(b.counts.minutes)} sets read) and our minutes of the recordings ({n0(b.counts.our_minutes)}), joined per meeting: {n0(substantive.length)} substantive, {n0(b.votes.length - substantive.length)} procedural (accepting minutes, adjourning). Where both records have a vote the town&rsquo;s wording stands{b.counts.vote_conflicts ? <>; <strong style={{ color: 'var(--status-critical)' }}>{n0(b.counts.vote_conflicts)} disagree on the outcome</strong> and say so</> : '; none disagree on the outcome'}.
-        <button className="underline ml-2" onClick={() => setAll(!all)}>{all ? 'hide procedural' : 'show procedural too'}</button>
-      </p>
-      <VotesTable votes={all ? b.votes : substantive} />
-      <p className="text-xs mt-1 max-w-3xl" style={kicker}>The town&rsquo;s minutes are the record: a vote from them carries the minutes&rsquo; own words, checked verbatim. A vote from the recording only was written by a language model from machine captions &mdash; a motion as heard, and “not audible” a finding about the recording &mdash; and links to the second in the video.</p>
+      {b.slug === 'town-meeting' && (
+        <p className="text-[14px] mt-5 max-w-3xl">
+          <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }} href="/town-meeting-votes">Every Town Meeting vote, article by article &rarr;</a>
+          <span style={{ color: 'var(--text-secondary)' }}> &mdash; with the Town Clerk&rsquo;s printed record. This list is the motions heard on the recordings.</span>
+        </p>
+      )}
+      {err && <p className="text-sm mt-5" style={kicker}>The vote list did not load ({err}).</p>}
+      {p && <VoteList p={p} />}
     </>
   )
 }

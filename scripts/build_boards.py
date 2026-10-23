@@ -612,6 +612,7 @@ def build(as_of=None):
                     conflicts += 1
                 votes.append(dict(date=d, t=rv.get('t') if rv else None, motion=ov.get('motion'), outcome=ov.get('outcome'),
                                   procedural=bool(ov.get('procedural')), moved_by=ov.get('moved_by') or (rv or {}).get('moved_by'),
+                                  seconded_by=ov.get('seconded_by') or (rv or {}).get('seconded_by'),
                                   source='both' if rv else 'minutes', quote=ov.get('quote'), conflict=conflict,
                                   minutes_doc=off['source'].get('doc_url'), minutes_url=off['source'].get('minutes_url'),
                                   page=('/meeting-minutes/' + o['slug']) if o else None,
@@ -620,7 +621,7 @@ def build(as_of=None):
                 if i in used:
                     continue
                 votes.append(dict(date=d, t=rv.get('t'), motion=rv.get('motion'), outcome=rv.get('outcome'),
-                                  procedural=bool(rv.get('procedural')), moved_by=rv.get('moved_by'),
+                                  procedural=bool(rv.get('procedural')), moved_by=rv.get('moved_by'), seconded_by=rv.get('seconded_by'),
                                   source='recording', quote=None, conflict=None, minutes_doc=None, minutes_url=None,
                                   page='/meeting-minutes/' + o['slug'],
                                   video_url='%s&t=%ds' % (o['video_url'], rv['t']) if rv.get('t') is not None else o['video_url']))

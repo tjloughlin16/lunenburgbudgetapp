@@ -194,6 +194,10 @@ CHECKS = [
     ('build_property_owners.py', ['--check']),
     ('build_one_big_report.py', ['--check']),
     ('build_boards.py', ['--check']),
+    # EVERY VOTE, ONE LIST PER BODY: /town-meeting-votes and /boards/<slug>/votes, regrouped
+    # from the Town Meeting register and build_boards.py's join -- then checked by a second route.
+    ('build_vote_lists.py', ['--check']),
+    ('verify_vote_lists.py', []),
     ('build_budget_feed.py', ['--check']),
     ('build_feeds.py', ['--check']),
     ('extract_scenario_lines.py', ['--check']),
@@ -781,6 +785,8 @@ PREREQ = {
     'reconcile_meeting_videos.py': ['build_youtube_classification.py'],
     'build_recording_minutes.py': ['merge_recording_minutes.py'],
     'build_agenda_threads.py': ['build_meeting_feed.py'],
+    # THE VOTE LISTS READ boards.json AND THE TOWN MEETING REGISTER, so both come first.
+    'build_vote_lists.py': ['build_boards.py', 'build_town_meetings.py', 'build_meeting_register.py'],
 }
 
 

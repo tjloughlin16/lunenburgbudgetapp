@@ -54,6 +54,7 @@ import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Fina
 import { OrgCharts } from './pages/OrgCharts'
 import { JobsPage } from './components/JobPostings'
 import { GrantsOpenPage } from './pages/GrantsOpen'
+import { TownMeetingVotesPage } from './pages/TownMeetingVotes'
 import { BoardTransfers } from './pages/BoardTransfers'
 import { Parks } from './pages/Parks'
 import { BudgetFeed } from './pages/BudgetFeed'
@@ -539,6 +540,7 @@ export default function App() {
       {tab === 'orgcharts' && <OrgCharts />}
       {tab === 'jobs' && <JobsPage />}
       {tab === 'grantsopen' && <GrantsOpenPage />}
+      {tab === 'tmvotes' && <TownMeetingVotesPage />}
       {tab === 'parks' && <Parks />}
       {tab === 'budgetfeed' && <BudgetFeed />}
       {tab === 'thisweek' && <ThisWeek />}

@@ -50,6 +50,7 @@ export const GROUPS: Group[] = [
   { title: 'Who decides', under: null, items: [
     { to: 'threads', label: 'Threads', sub: 'Each matter, followed across boards' },
     { to: 'boards', label: 'Boards & committees', sub: 'Meetings, votes, finance, per board' },
+    { to: 'tmvotes', label: 'Town Meeting votes', sub: 'Every article, searchable by fiscal year' },
     { href: '/board-records', label: 'Board records', sub: 'Who posts minutes, seats, turnover' },
     { to: 'orgcharts', label: 'Org charts', sub: 'Who works where, by year' },
     { to: 'jobs', label: 'Job postings', sub: 'Open positions, town and schools' },
