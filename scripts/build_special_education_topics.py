@@ -953,6 +953,10 @@ def build():
             bm[y] = dict(vote=sum(lg[g]['original'] for g in LINES), gf=gf, allf=gf + c,
                          basis='annual report')
     BM_MARK = {'cb': '†', 'idea': '‡', 'allf': '§'}
+    need_of = {r['fy']: r['need'] for r in sur}       # the same series as the chart and the SD
+    for y in range(BM0, BM1 + 1):
+        if need_of[y] < max(0, bm[y]['gf'] - bm[y]['vote']) - 2:
+            fail('FY%d: the need is below the net overrun; adding only overruns cannot do that' % y)
     bm_rows = [dict(
         label=C.fy(y) + (' · formula change' if y == change_fy else ''),
         cells=[C.usd(bm[y]['vote']),
@@ -960,14 +964,19 @@ def build():
                C.usd(cb_all[y]) + (' ' + BM_MARK['cb'] if y in cb_extra else ''),
                C.usd(bm[y]['gf']),
                C.usd(bm[y]['allf']) + (' ' + BM_MARK['allf'] if bm[y]['basis'] == 'annual report'
-                                       else '')])
+                                       else ''),
+               # what he is trying to calculate (TJ): the general fund against its vote, net,
+               # and the page's own need -- the series the average and SD are taken from
+               C.usd(bm[y]['gf'] - bm[y]['vote']),
+               C.usd(need_of[y])])
         for y in range(BM1, BM0 - 1, -1)]
     bm_table = dict(caption='Budget, IDEA, circuit breaker and actual costs, %s to %s'
                     % (C.fy(BM0), C.fy(BM1)), views=[dict(
-        key='ten', label='Ten years', total_col=-1, kinds=['ledger'] * 5,
+        key='ten', label='Ten years', total_col=6, kinds=['ledger'] * 7,
         columns=['Special Education Operational Budget (general fund vote)',
                  'IDEA Grant Funding (allocated)', 'Circuit Breaker Funding (received)',
-                 'Actual Costs, general fund', 'Actual Costs, every fund'],
+                 'Actual Costs, general fund', 'Actual Costs, every fund',
+                 'General fund over (under) its vote', 'Needed beyond the vote'],
         rows=bm_rows,
         note=('The first three columns do not add up to anything: the budget is net, voted after '
               'the circuit breaker and grants it expected. %s: DESE’s file prints a '
@@ -981,7 +990,9 @@ def build():
               'payments (%s); it is by year paid. %s Every fund before %s adds the annual '
               'reports’ disbursements from the circuit breaker account and the special '
               'education grants: payments only. In %s the two ways differ by %s on grants and '
-              'not at all on the circuit breaker.')
+              'not at all on the circuit breaker. Needed beyond the vote adds each line\u2019s '
+              'overrun without offsetting another line\u2019s underspend, so it can exceed the '
+              'net difference beside it; the reserve statistics on this page use it.')
              % (C.fy(change_fy), C.fy(st_tr[0]), C.fy(change_fy), C.fy(EY[0]), BM_MARK['idea'],
                 ' and '.join(C.fy(y) for y in no262), ', '.join(C.fy(y) for y in arp),
                 ', '.join(C.usd(arp[y]) for y in sorted(arp)), BM_MARK['cb'],

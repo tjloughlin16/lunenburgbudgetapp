@@ -240,7 +240,8 @@ def main():
     if bmt['views'][0]['columns'] != ['Special Education Operational Budget (general fund vote)',
                                       'IDEA Grant Funding (allocated)',
                                       'Circuit Breaker Funding (received)',
-                                      'Actual Costs, general fund', 'Actual Costs, every fund']:
+                                      'Actual Costs, general fund', 'Actual Costs, every fund',
+                                      'General fund over (under) its vote', 'Needed beyond the vote']:
         bad.append('the board member\'s table is not first, or its columns moved')
     alloc = {}
     for r in csv.DictReader(open(os.path.join(DATA, 'dese-entitlement-allocations.csv'), encoding='utf-8')):
@@ -275,7 +276,8 @@ def main():
             gfv = sum(led[y][g][0] for g in LINES)
             gfs = sum(led[y][g][1] for g in LINES)
             allf = gfs + r0(disb[y])
-        check('FY%d board member\'s row' % y, cells, [gfv, alloc[y], cball[y], gfs, allf])
+        check('FY%d board member\'s row' % y, cells, [gfv, alloc[y], cball[y], gfs, allf,
+                                                      gfs - gfv, need[y]])
         check('FY%d every-fund marker' % y, r['cells'][4].endswith('§'), y not in munis_years)
     check('the formula-change year', change, 2021)
 

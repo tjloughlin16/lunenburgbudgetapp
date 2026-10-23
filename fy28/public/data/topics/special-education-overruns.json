@@ -748,7 +748,9 @@
      "IDEA Grant Funding (allocated)",
      "Circuit Breaker Funding (received)",
      "Actual Costs, general fund",
-     "Actual Costs, every fund"
+     "Actual Costs, every fund",
+     "General fund over (under) its vote",
+     "Needed beyond the vote"
     ],
     "key": "ten",
     "kinds": [
@@ -756,10 +758,12 @@
      "ledger",
      "ledger",
      "ledger",
+     "ledger",
+     "ledger",
      "ledger"
     ],
     "label": "Ten years",
-    "note": "The first three columns do not add up to anything: the budget is net, voted after the circuit breaker and grants it expected. FY2021: DESE’s file prints a transportation reimbursement for the first time, for every district, in FY2022, paying FY2021 costs. Budget and general fund cover in district, out-of-district tuition and transportation; actual is payments plus what was still owed (before FY2023, the Finance Committee workbook’s actual, which does not say). IDEA is DESE’s allocation (0240 school age plus 0262 preschool); ‡ for FY2017 and FY2018 the file holds 0240 only; FY2022’s one-time ARP IDEA, $96,559, is not in it. † includes extra relief or supplemental payments (FY2019, FY2025); it is by year paid. § Every fund before FY2023 adds the annual reports’ disbursements from the circuit breaker account and the special education grants: payments only. In FY2023 the two ways differ by $1,109 on grants and not at all on the circuit breaker.",
+    "note": "The first three columns do not add up to anything: the budget is net, voted after the circuit breaker and grants it expected. FY2021: DESE’s file prints a transportation reimbursement for the first time, for every district, in FY2022, paying FY2021 costs. Budget and general fund cover in district, out-of-district tuition and transportation; actual is payments plus what was still owed (before FY2023, the Finance Committee workbook’s actual, which does not say). IDEA is DESE’s allocation (0240 school age plus 0262 preschool); ‡ for FY2017 and FY2018 the file holds 0240 only; FY2022’s one-time ARP IDEA, $96,559, is not in it. † includes extra relief or supplemental payments (FY2019, FY2025); it is by year paid. § Every fund before FY2023 adds the annual reports’ disbursements from the circuit breaker account and the special education grants: payments only. In FY2023 the two ways differ by $1,109 on grants and not at all on the circuit breaker. Needed beyond the vote adds each line’s overrun without offsetting another line’s underspend, so it can exceed the net difference beside it; the reserve statistics on this page use it.",
     "rows": [
      {
       "cells": [
@@ -767,7 +771,9 @@
        "$437,278",
        "$579,142",
        "$6,135,449",
-       "$6,908,810"
+       "$6,908,810",
+       "$61,609",
+       "$150,131"
       ],
       "label": "FY2026"
      },
@@ -777,7 +783,9 @@
        "$437,529",
        "$549,407 †",
        "$5,111,664",
-       "$6,085,603"
+       "$6,085,603",
+       "-$761,453",
+       "$0"
       ],
       "label": "FY2025"
      },
@@ -787,7 +795,9 @@
        "$433,488",
        "$401,966",
        "$4,642,014",
-       "$5,707,560"
+       "$5,707,560",
+       "-$45,580",
+       "$152,724"
       ],
       "label": "FY2024"
      },
@@ -797,7 +807,9 @@
        "$417,855",
        "$415,750",
        "$4,279,700",
-       "$5,335,622"
+       "$5,335,622",
+       "-$263,593",
+       "$0"
       ],
       "label": "FY2023"
      },
@@ -807,7 +819,9 @@
        "$411,652",
        "$519,394",
        "$4,243,272",
-       "$5,089,899 §"
+       "$5,089,899 §",
+       "-$381,943",
+       "$95,993"
       ],
       "label": "FY2022"
      },
@@ -817,7 +831,9 @@
        "$398,502",
        "$484,579",
        "$3,946,094",
-       "$4,670,249 §"
+       "$4,670,249 §",
+       "-$581,227",
+       "$0"
       ],
       "label": "FY2021 · formula change"
      },
@@ -827,7 +843,9 @@
        "$381,743",
        "$478,987",
        "$4,252,471",
-       "$5,136,821 §"
+       "$5,136,821 §",
+       "-$305,479",
+       "$3,811"
       ],
       "label": "FY2020"
      },
@@ -837,7 +855,9 @@
        "$374,354",
        "$433,975 †",
        "$4,220,116",
-       "$4,794,738 §"
+       "$4,794,738 §",
+       "$49,687",
+       "$204,015"
       ],
       "label": "FY2019"
      },
@@ -847,7 +867,9 @@
        "$360,585 ‡",
        "$366,790",
        "$4,140,544",
-       "$4,796,546 §"
+       "$4,796,546 §",
+       "-$303,796",
+       "$0"
       ],
       "label": "FY2018"
      },
@@ -857,12 +879,14 @@
        "$353,466 ‡",
        "$507,832",
        "$4,084,099",
-       "$4,981,492 §"
+       "$4,981,492 §",
+       "-$415,105",
+       "$0"
       ],
       "label": "FY2017"
      }
     ],
-    "total_col": -1
+    "total_col": 6
    }
   ]
  },
