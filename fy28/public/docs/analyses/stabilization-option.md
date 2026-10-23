@@ -10,7 +10,7 @@ Analysis, September 2026. The companion to [the stabilization funds](stabilizati
 
 **$3,147,179 is the only balance Town Meeting may spend on anything lawful.** The other $5,914,242 is restricted to the purpose each fund was created for. A school deficit is not that purpose for any of them.
 
-**Spending all of it closes FY28 and FY29, and runs out partway through FY30.** That is 2.3 years, after which the money is gone and the gap is $2,205,046 — larger than the one it started on.
+**Spending all of it closes FY28 and FY29, and runs out partway through FY30.** That is 2.3 years, after which the money is gone and the gap is $2,205,125 — larger than the one it started on.
 
 **Stopping the deposits instead raises about $308,980 a year**, which is recurring money against a recurring gap — the right SHAPE of answer. It covers 33% of the FY28 gap and 14% of FY30’s.
 
@@ -20,13 +20,13 @@ So: **neither closes the gap, and they fail differently.** One buys two years an
 
 ## Both options, against the gap
 
-![Stacked bars, one per fiscal year from FY28 to FY35. Each bar is that year’s level-service gap, from $932,531 to $6,773,193. The redirected deposits cover $308,980 of every bar; the reserve covers the rest of FY28 and FY29 and part of FY30, and after that every bar is almost entirely the part still short.](charts/stabilization-option-split.svg)
+![Stacked bars, one per fiscal year from FY28 to FY35. Each bar is that year’s level-service gap, from $932,664 to $6,770,349. The redirected deposits cover $308,980 of every bar; the reserve covers the rest of FY28 and FY29 and part of FY30, and after that every bar is almost entirely the part still short.](charts/stabilization-option-split.svg)
 
-*Both levers pulled at once, which is the most favourable case there is. The deposits are redirected every year and the reserve is spent on whatever they do not cover. It covers FY28 and FY29 outright; by FY35 the gap is $6,773,193 and everything the town has done here covers $308,980 of it.*
+*Both levers pulled at once, which is the most favourable case there is. The deposits are redirected every year and the reserve is spent on whatever they do not cover. It covers FY28 and FY29 outright; by FY35 the gap is $6,770,349 and everything the town has done here covers $308,980 of it.*
 
-![A falling bar chart. The fund opens at $3,147,179, is drawn down by $623,551 and then $1,226,117, and is empty from FY30 onward.](charts/stabilization-option-burndown.svg)
+![A falling bar chart. The fund opens at $3,147,179, is drawn down by $623,684 and then $1,226,282, and is empty from FY30 onward.](charts/stabilization-option-burndown.svg)
 
-*The same scenario, from the fund’s side. It does not taper — it stops. $623,551 is drawn in FY28 and $1,226,117 in FY29, and from FY30 there is nothing left to draw and the deposits are doing it alone.*
+*The same scenario, from the fund’s side. It does not taper — it stops. $623,684 is drawn in FY28 and $1,226,282 in FY29, and from FY30 there is nothing left to draw and the deposits are doing it alone.*
 
 ---
 
@@ -51,11 +51,11 @@ Town Meeting voted **$4,115,873** into these funds between FY2014 and FY2025, an
 
 | year | the gap | covered from the fund | still short | fund left |
 |---|---:|---:|---:|---:|
-| FY28 | $932,531 | $932,531 | — | $2,214,648 |
-| FY29 | $1,535,097 | $1,535,097 | — | $679,551 |
-| FY30 | $2,205,046 | $679,551 | $1,525,495 | $0 |
+| FY28 | $932,664 | $932,664 | — | $2,214,515 |
+| FY29 | $1,535,262 | $1,535,262 | — | $679,253 |
+| FY30 | $2,205,125 | $679,253 | $1,525,872 | $0 |
 
-**It buys two years.** In FY30 the fund is empty, the gap is $2,205,046, and every structural choice the town had in FY28 is still in front of it — with $3,147,179 less in reserve and nothing to show a bond rating agency.
+**It buys two years.** In FY30 the fund is empty, the gap is $2,205,125, and every structural choice the town had in FY28 is still in front of it — with $3,147,179 less in reserve and nothing to show a bond rating agency.
 
 *And this is the generous version.* It assumes Town Meeting votes the whole balance to the schools, in one go, with no reserve kept for a roof, a fire engine or a snow season — which is what the fund is for.
 

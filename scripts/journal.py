@@ -71,13 +71,22 @@ End of Year report). A tie compares like with like, whatever the page presents.
    widened the list without the redaction would publish payees the redaction thought were not
    special education; this makes that impossible rather than unlikely.
 
-   The redaction errs wide on purpose, and one part of the list is wider than a cost report
-   should count: SCHOOL PSYCHOLOGISTS (`PSYCH` matches them). Psychologists serve every
-   student, and their salary accounts are not special education accounts by any label the
-   Town gives them. So they are IN the list -- masked as special education, which is the
-   cautious direction -- and their component is declared `in_total=False` (`COMPONENTS`):
-   reports show them beside the special education total, never inside it. That is OUR
-   choice, named here and on every page that uses it.
+   The redaction errs wide on purpose, and parts of the list are wider than a cost report
+   should count. WHAT A REPORT COUNTS is decided, where a label and DESE disagree, by
+   DESE's documents, once, in `sources/data/sped-definition.csv` (TJ, 23 October 2026: "if
+   those match DESE then we need to include them"), read here through `SD`:
+     * psychological services, function 2800 -- the psychologists (`PSYCH` matches them) and
+       their testing materials. DESE counts a psychologist as special education only under
+       the special education job code, which the ledger does not carry, and the district's
+       FY2023 and FY2024 reports put the same accounts on opposite sides. On the list --
+       masked, the cautious direction -- and outside the total (`component()`);
+     * equipment, function 7300: DESE's chart gives it no program. On the list, outside;
+     * the Student Services Coordinator, which no label names: the district's own report to
+       DESE puts the salary in its special education column, so it is ADDED to the list
+       (`SD.ADDED_ACCOUNTS`, `is_sped()`) -- a payroll account, so the redaction gains no
+       payee by it.
+   Every other rule on the site (build_sped_costs.py's segment 51, model/sped.py's budget
+   lines) reads the same file, so the three cannot disagree on these items.
 
    NOT in the list, and so in no special education figure: `D.W. SPECIALISTS` (district-wide
    specialists, org S2510061), the guidance counsellors and social workers, the nurses, and
@@ -102,6 +111,7 @@ End of Year report). A tie compares like with like, whatever the page presents.
    only add masked lines into an aggregate that also holds other payees (`masked_ok`).
 """
 import csv
+import importlib.util
 import os
 import re
 import sys
@@ -155,14 +165,37 @@ SPED_ACCOUNTS = re.compile(r"SPED|SPEC(?:IAL)?\.? ED|CIRCUIT BREAKER|\bIDEA\b|\b
                            r"|TUTOR|THERAP|PSYCH|COLLABORATIVE", re.I)
 
 
+# THE DESE ITEMS. TJ, 23 October 2026: "if those match DESE then we need to include them."
+# The handful of accounts where a label is not the answer -- one counted although nothing in
+# its name says special education, functions and accounts left out although a label does --
+# are decided ONCE, with the DESE document and cell for each, in
+# `sources/data/sped-definition.csv`, parsed by model/sped_definition.py. The budget model and
+# build_sped_costs.py read the same module, so the three rules cannot part on them. Loaded by
+# path, not by sys.path, because model/ holds modules whose names scripts/ also uses.
+def _load_definition():
+    if 'sped_definition' in sys.modules:       # model/sped.py got there first: one instance
+        return sys.modules['sped_definition']
+    spec = importlib.util.spec_from_file_location(
+        'sped_definition', os.path.join(ROOT, 'model', 'sped_definition.py'))
+    mod = importlib.util.module_from_spec(spec)
+    spec.loader.exec_module(mod)
+    sys.modules['sped_definition'] = mod
+    return mod
+
+
+SD = _load_definition()
+
+
 def account_text(a):
     """What SPED_ACCOUNTS is matched against: description, org name and fund name."""
     return ' | '.join([a['account_description'], a['org_name'], a['fund_name']])
 
 
 def is_sped(a):
-    """On THE special education list -- the redaction's scope and every report's."""
-    return bool(SPED_ACCOUNTS.search(account_text(a)))
+    """On THE special education list -- the redaction's scope and every report's. An account
+    the DESE list ADDS is on it too (the Student Services Coordinator: a salary account, paid by
+    payroll, no payee), so the redaction never masks less than a report counts."""
+    return bool(SPED_ACCOUNTS.search(account_text(a))) or a['account'] in SD.ADDED_ACCOUNTS
 
 
 def is_expense(a):
@@ -189,8 +222,15 @@ COMPONENTS = [
     ('supplies', 'Supplies, equipment and other', True,
      ('525007', '540000', '545001', '555007', '555050', '555055', '575001', '575002',
       '575003', '575004', '575005', '585001')),
-    # OUR CHOICE, see the module docstring: on the list, outside the total.
-    ('psychologists', 'School psychologists', False, ('511023',)),
+    # On the list, outside the total: psychological services, function 2800 -- the
+    # psychologists' salaries and the testing materials. DESE's rule turns on a job code the
+    # ledger does not carry, and the district's two reports put these accounts on opposite
+    # sides (sped-definition.csv, `psychology`). Placed by FUNCTION in component(), so the
+    # testing materials' object code (shared with supplies elsewhere) does not decide it.
+    ('psychologists', 'School psychologists and testing', False, ('511023',)),
+    # On the list, outside the total because DESE's definition leaves it out: equipment
+    # (7300), English learner and Section 504 accounts -- sped-definition.csv, each row.
+    ('not-dese', 'Not special education by DESE\u2019s definition', False, ()),
     # On the list only because the word TUITION is in the account name: school choice and
     # charter tuition, and course reimbursement. Not special education. No line has ever
     # posted to them in this run; if one does, it is shown beside the total, never in it.
@@ -204,6 +244,8 @@ IN_TOTAL = {c for c, _, t, _ in COMPONENTS if t}
 def component(a):
     if not (is_sped(a) and is_expense(a)):
         return None
+    if SD.ledger_scope(a['account']) == 'excluded':
+        return 'psychologists' if function(a['account']) == '2800' else 'not-dese'
     c = _COMPONENT_OF.get(a['object'])
     if c is None:
         raise SystemExit('journal.py: special education account %s has object %s (%s), which no '

@@ -106,10 +106,9 @@ def journal_lines():
     out = {}
     for r in csv.DictReader(open(J.JOURNAL_CSV, encoding='utf-8')):
         a = acc[r['account']]
-        if not a['object'].startswith('5') or not J.SPED_ACCOUNTS.search(
-                ' | '.join([a['account_description'], a['org_name'], a['fund_name']])):
-            continue
-        if a['object'] in ('511023', '535027', '535028', '535029'):   # outside the total
+        # journal.py's definition -- the label list and the DESE items of
+        # sources/data/sped-definition.csv -- decides which accounts are in the total.
+        if not a['object'].startswith('5') or not J.in_sped_total(a):
             continue
         fund = ('gf' if r['fund'] == '0100' else 'cb' if r['fund'] == '2640'
                 else 'grants' if re.search(r'#\s*(240|262|252|264|760|762|274|298|242)\b',

@@ -683,8 +683,12 @@ def s_sped():
              'FY26 change', 'FY27 change'], rows, 'lrrrrr'),
       '',
       f'The paraprofessional increase is {pct(sped.PARA_SHARE_OF_RISE, 0)} of the whole',
-      'FY27 rise — every other part of special education fell that year. Take it out and',
-      f'the rest of the line grew {pct(sped.EX_PARAS_RATE)} a year, below the levy cap.',
+      'FY27 rise — ' + ('everything else in special education, taken together, fell that year.'
+                        if sped.PARA_SHARE_OF_RISE > 1 else
+                        'everything else in special education, taken together, rose by the rest.')
+      + ' Take it out and',
+      f'the rest of the line grew {pct(sped.EX_PARAS_RATE)} a year, '
+      f'{sped._vs_cap(sped.EX_PARAS_RATE).lower()} the levy cap.',
       '',
       f'So {pct(sped.WHOLE_LINE_RATE)} is not a growth rate. It is one hiring decision,',
       'averaged over two years and then compounded forever. **Those paraprofessionals were',

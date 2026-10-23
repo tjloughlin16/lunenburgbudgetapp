@@ -18,7 +18,9 @@ Nothing here re-decides any of those; a second copy would be a defect.
 WHAT A FIGURE IS. An ACTUAL posted to a special education expense account in the school
 journal, FY2023 to FY2026, net of every reversal and reclassification posted in the run
 (rule 11: a posting is what the school ledger recorded, not what a thing costs). School
-psychologists are on the list and outside the total, by our choice (journal.COMPONENTS).
+psychologists and their testing materials (function 2800) are on the list and outside the
+total, and equipment, English learner and 504 accounts are left out, as DESE's documents decide
+(sources/data/sped-definition.csv, journal.COMPONENTS).
 FY2026's close is not posted in this run, so every FY2026 figure can still move.
 
 RULE 1. Nothing here feeds the model. The one comparison with a rate -- the general fund's

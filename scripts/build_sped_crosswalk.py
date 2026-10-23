@@ -31,15 +31,21 @@ filed (rule 13a); every page that uses them says so. Schedule 4 (special educati
 placement) and Schedule 7 (transportation) are read as cross-checks and their disagreements
 with Schedule 1 are reported, not hidden.
 
-OUR THREE DEFINITIONS, none changed here (TJ decides each difference -- the `decision`
-column is left empty wherever a rule differs from DESE):
+OUR THREE DEFINITIONS. TJ, 23 October 2026: "if those match DESE then we need to include
+them". Every item where a rule differed from DESE was settled against DESE's own documents
+and written ONCE into `sources/data/sped-definition.csv` (model/sped_definition.py), which all
+three rules now read: an item is counted only where DESE's documents count it, and left out
+where they do not or where the district's two reports contradict each other. The `decision`
+column names the item that decides each function; a function where a rule still differs from
+DESE and no item decides it fails the build. Since then the three rules count the same total
+in both years, and this page checks it:
 
   budget lines   model/sped.py is_sped() or is_tuition(), on the district budget book's own
                  FY2023 and FY2024 actual columns (`lps-budget-lines.csv`)
   journal        scripts/journal.py in_sped_total() -- THE special education account list,
-                 psychologists outside the total
+                 with the DESE items
   sped costs     scripts/build_sped_costs.py group_of() -- segment 51, less two ELL accounts,
-                 plus the special education transportation account
+                 plus the special education transportation account, with the DESE items
 
 The two ledger rules are applied to ONE ledger -- the Town's period-13 school general fund
 report (`munis-school-ytd.csv`), spent plus encumbered, which is how DESE says to report a
@@ -82,6 +88,7 @@ from brief import step  # noqa: E402
 import journal as J  # noqa: E402
 import build_sped_costs as SC  # noqa: E402
 import sped as SP  # noqa: E402
+import sped_definition as SD  # noqa: E402  (THE DESE items, sources/data/sped-definition.csv)
 
 DATA = os.path.join(ROOT, 'sources', 'data')
 DESE_DIR = os.path.join(ROOT, 'sources', 'state-dese')
@@ -190,6 +197,148 @@ def dese_definition():
         if must not in got.get(cell, ''):
             fail('printing version eoy25!%s no longer says %r' % (cell, must))
         out[k] = (cell, got[cell])
+    return out
+
+
+# THE DESE CELLS THE ITEMS REST ON (sources/data/sped-definition.csv, `dese_citation`). Read
+# from the workbooks on every run; the build fails if a cell stops saying what the item cites.
+ITEM_CELLS = [
+    (PRINTING_XLSX, 'eoy25', 'D1584', 'EPIMS job codes 1211 through 1223, 1312 and 1320'),
+    (PRINTING_XLSX, 'eoy25', 'D1810', 'Guidance Counselors, and School Adjustment Counselors (2710)'),
+    (PRINTING_XLSX, 'eoy25', 'D1814', 'psychological evaluation (2800)'),
+    (PRINTING_XLSX, 'eoy25', 'D958', 'must exceed the dollar limits for non-instructional equipment ($5,000)'),
+    (PRINTING_XLSX, 'eoy25', 'D2170', 'DESE will record school choice tuition for special education by placement'),
+    (PRINTING_XLSX, 'eoy25', 'D2172', 'DESE will record charter school tuition for special education by placement'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D28', 'Supervisor/Director of Pupil Personnel'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D29', 'Special Education Administrator'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D40', 'School Special Education Administrator'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D82', 'Guidance Counselor'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D84', 'School Adjustment Counselor \u2013 Non-Special Education'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D85', 'School Adjustment Counselor \u2013 Special Education'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D87', 'School Psychologist \u2013 Non-Special Education'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D88', 'School Psychologist \u2013 Special Education'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D89', 'School Social Worker \u2013 Non-Special Education'),
+    (PRINTING_XLSX, 'EOYR-EPIMScrosswalk', 'D90', 'School Social Worker \u2013 Special Education'),
+    (CROSSWALK_XLSX, 'codes', 'C46', 'Equipment (7300, 7400)'),
+]
+
+
+def item_cells():
+    want = collections.defaultdict(dict)
+    for path, sheet, cell, text in ITEM_CELLS:
+        want[(path, sheet)][cell] = text
+    for (path, sheet), cells in want.items():
+        wb = openpyxl.load_workbook(path, read_only=True, data_only=True)
+        got = {}
+        for row in wb[sheet].iter_rows():
+            for c in row:
+                if getattr(c, 'coordinate', None) in cells and c.value is not None:
+                    got[c.coordinate] = ' '.join(str(c.value).split())
+        wb.close()
+        for cell, text in cells.items():
+            if text not in got.get(cell, ''):
+                fail('%s %s!%s no longer says %r' % (os.path.basename(path), sheet, cell, text))
+    return True
+
+
+def schedule1_cells():
+    """{(fy, cell): (function, column, amount)} -- every cell of Schedule 1, as extracted."""
+    out = {}
+    for r in csv.DictReader(open(S1, encoding='utf-8')):
+        out[(int(r['fiscal_year'][2:]), r['cell'])] = (r['function_code'], r['column'],
+                                                       money(r['amount']))
+    return out
+
+
+def cell_of(ref, s1c):
+    """'eoy24!F126' -> its amount, failing if the extract does not hold the cell."""
+    m = re.fullmatch(r'eoy(\d\d)!([A-Z]+\d+)', ref)
+    if not m:
+        fail('sped-definition.csv cites %r, which is not an eoyNN!CELL reference' % ref)
+    k = (2000 + int(m.group(1)), m.group(2))
+    if k not in s1c:
+        fail('sped-definition.csv cites %s, which eoyr-schedule1.csv does not hold' % ref)
+    return s1c[k][2]
+
+
+def items_measured(led, bl):
+    """Every claim the items' `why` makes about the report and the ledger, MEASURED here; the
+    build fails if one stops holding. Returns the figures the page shows for each item."""
+    item_cells()
+    s1c = schedule1_cells()
+    by = {it['id']: it for it in SD.ITEMS}
+    for it in SD.ITEMS:
+        for ref in it['report_cells']:
+            cell_of(ref, s1c)
+    acct = collections.defaultdict(float)          # (fy, account) -> spent
+    for (fy, a, f, seg, desc, amt, *_r) in led:
+        acct[(fy, a)] += amt
+    func = lambda fy, code: sum(v for (y, a), v in acct.items() if y == fy and a.split('-')[3] == code)
+    known = {a for (_, a) in acct}
+    for it in SD.ITEMS:
+        for a in it['accounts']:
+            if a not in known:
+                fail('sped-definition.csv %s names account %s, which the period-13 ledger does '
+                     'not hold' % (it['id'], a))
+    for x in SD.EXCLUDED_LINE_ITEMS:
+        if not any((r['line_item'] or '').strip() == x for r in SP.rows()):
+            fail('sped-definition.csv names budget line %r, which the book does not hold' % x)
+    c = lambda ref: cell_of(ref, s1c)
+    out = {}
+    # coordinator: the report's special education salary in 2110 IS the account, both years
+    (co,) = by['coordinator']['accounts']
+    for fy in YEARS:
+        if abs(c('eoy%d!F126' % (fy % 100)) - acct[(fy, co)]) > TOL:
+            fail('coordinator: eoy%d!F126 is no longer the coordinator account' % (fy % 100))
+    out['coordinator'] = {fy: acct[(fy, co)] for fy in YEARS}
+    # spellings: the FY2023 report carries both lines the model used to miss
+    sup = sum(a for (fy, cd, g, item, a, k) in bl if fy == Y0 and item == 'Spcl Ed General School Supplies')
+    if abs(c('eoy23!F235') - sup) > TOL:
+        fail('spellings: eoy23!F235 is no longer the special education school supplies line')
+    rel = sum(v for (y, a), v in acct.items() if y == Y0 and a.startswith('0100-3-300-2310-51-1-06-2-53501')
+              and a[-6:] in ('535011', '535012'))
+    if abs(c('eoy23!F129') - rel) > TOL:
+        fail('spellings: eoy23!F129 is no longer related services plus hospital tutoring')
+    out['spellings'] = (sup, rel)
+    # psychology: FY2023 all special education; FY2024 the same accounts in regular day, plus a
+    # special education figure equal to FY2023's
+    psy23 = func(Y0, '2800')
+    if abs(c('eoy23!F274') + c('eoy23!F279') - psy23) > 2 * TOL:
+        fail('psychology: FY2023 special education is no longer every 2800 account')
+    sal24 = sum(v for (y, a), v in acct.items() if y == Y1 and a.split('-')[3] == '2800'
+                and a.endswith('511023'))
+    if abs(c('eoy24!E274') - sal24) > TOL:
+        fail('psychology: eoy24!E274 is no longer the FY2024 psychologist salaries')
+    if c('eoy24!F274') != c('eoy23!F274'):
+        fail('psychology: the FY2024 special education figure no longer repeats FY2023\'s')
+    if any(abs(v - c('eoy24!F274')) <= TOL for (y, a), v in acct.items() if y == Y1) \
+            or abs(func(Y1, '2800') - c('eoy24!F274')) <= TOL:
+        fail('psychology: the FY2024 special education figure now matches a FY2024 account')
+    out['psychology'] = {Y0: psy23, Y1: func(Y1, '2800'), 'repeat': c('eoy24!F274')}
+    # guidance: the same special education share both years, matching no account
+    for ref in ('F258', 'F262'):
+        if c('eoy23!' + ref) != c('eoy24!' + ref):
+            fail('guidance: %s no longer repeats across the two reports' % ref)
+    for fy in YEARS:
+        if any(abs(v - c('eoy%d!F258' % (fy % 100))) <= TOL for (y, a), v in acct.items()
+               if y == fy and a.split('-')[3] == '2710'):
+            fail('guidance: a 2710 account now matches the report\'s special education share')
+    out['guidance'] = {fy: c('eoy%d!F258' % (fy % 100)) + c('eoy%d!F262' % (fy % 100)) for fy in YEARS}
+    # equipment: Schedule 1 gives line 1742 no special education cell
+    if any(v[0] == '7300, 7400' and v[1] == 'SPECIAL EDUCATION' for v in s1c.values()):
+        fail('equipment: the report now prints a special education cell for equipment')
+    out['equipment'] = {fy: sum(v for (y, a), v in acct.items() if y == fy
+                                and a.split('-')[3] == '7300' and a.split('-')[4] == '51')
+                        for fy in YEARS}
+    # choice and charter: the town's, both years
+    out['choice-charter'] = {fy: c('eoy%d!F529' % (fy % 100)) + c('eoy%d!F530' % (fy % 100)) for fy in YEARS}
+    if not all(out['choice-charter'].values()):
+        fail('choice-charter: a year with no special education school choice or charter tuition')
+    # the allocation: two substitute cells repeat across the reports too
+    for ref in ('F173', 'F178'):
+        if c('eoy23!' + ref) != c('eoy24!' + ref):
+            fail('allocation: %s no longer repeats across the two reports' % ref)
+    out['repeats'] = ['eoy24!F258', 'eoy24!F262', 'eoy24!F274', 'eoy24!F173', 'eoy24!F178']
     return out
 
 
@@ -427,6 +576,29 @@ def build():
         if cc == 'counted':
             ours['sped_costs'][(fy, row_code(f))] += a
 
+    # ---- THE DECISIONS: which sped-definition.csv item decides each function
+    item_by = {it['id']: it for it in SD.ITEMS}
+    item_of_code = {}
+    for it in SD.ITEMS:
+        for f in it['functions']:
+            item_of_code.setdefault(f, it['id'])
+        for a in it['accounts']:
+            item_of_code.setdefault(row_code(SD.function_of(a)), it['id'])
+
+    def decide(code, disagree, st, where):
+        iid = item_of_code.get(code)
+        if disagree and iid is None and code.startswith('2'):
+            iid = 'allocation'       # the district's split of a mixed instructional function
+        if disagree and iid is None:
+            fail('%s: a rule differs from DESE and no sped-definition.csv item decides it -- '
+                 'a new difference is a decision' % where)
+        if iid is None:
+            return 'none needed'
+        it = item_by[iid]
+        return '%s (sped-definition.csv: %s)' % (it['decision'], iid)
+
+    measured = items_measured(led, bl)
+
     # ---- the rows
     rows = []
     all_codes = sorted(set(codes) | {row_code(c) for c in counted_codes}
@@ -490,7 +662,7 @@ def build():
             return 'no general fund school account in this function'
         if which == 'journal':
             lab = {'counted': 'accounts on THE special education list', 'no': 'accounts not on it',
-                   'outside': 'psychologist accounts (listed, outside the total)'}
+                   'outside': 'accounts listed, outside the total (sped-definition.csv)'}
         else:
             lab = {'counted': 'segment-51 accounts (and SPECIAL ED TRANSPORTATION)',
                    'no': 'accounts outside segment 51', 'ell': 'the ELL account(s), excluded'}
@@ -580,7 +752,7 @@ def build():
             counted_by_journal='yes' if any(by_def['journal'].values()) else 'no',
             counted_by_sped_costs='yes' if any(by_def['sped_costs'].values()) else 'no',
             agrees_with_dese=ag, why=' '.join(why), evidence='; '.join(ev),
-            decision='' if disagree else 'none needed'))
+            decision=decide(code, 'no' in ag, st, 'function %s' % code)))
 
         # ---- the rules within a function: every budget group and every ledger rule
         if not anything:
@@ -662,7 +834,9 @@ def build():
                  agrees_with_dese=ag, evidence='; '.join(ev),
                  why='Schedule 4’s grain: the functions in this group, DESE’s special education '
                      'column against each of our rules.',
-                 decision='' if 'no' in ag else 'none needed')
+                 decision='; '.join(sorted({decide(x, 'no' in ag, '', 'group %s' % g)
+                                            for x in gr['codes']} - ({'none needed'} if 'no' in ag else set())))
+                 or 'none needed')
         rows.append(r)
 
     # ---- the cross-checks inside the report
@@ -679,7 +853,7 @@ def build():
     missed = {fy: sum(a for (y, c, gname, item, a, k) in bl if y == fy and not k
                       and bl_reason(gname, item, k).startswith('NOT counted, though'))
               for fy in YEARS}
-    data = dict(missed=missed, rows=rows, totals=totals, dese_tot=dese_tot, printed=printed, groups=groups,
+    data = dict(measured=measured, missed=missed, rows=rows, totals=totals, dese_tot=dese_tot, printed=printed, groups=groups,
                 checks=checks, psych=psych, s1=s1, definition=definition, codes=codes,
                 progs=progs, s4=s4, s4l=s4l)
     return data
@@ -753,137 +927,169 @@ def sources():
 def page(d):
     U = lambda v: figure(v, C.usd(v))
     F = lambda y: figure(y, C.fy(y), 'fiscal year')
+    N = lambda n, unit: figure(n, C.num(n), unit)
     f, con = LD.fact, TP.conclusion
     g = d['groups']
     tot, dt = d['totals'], d['dese_tot']
-    lo = min(tot[x][Y1] for x in DEFS)
-    hi = max(tot[x][Y1] for x in DEFS)
-    teach = g['2300']
-    t_d = teach['sped'][Y1]
-    t_o = {x: teach['defs'][x][Y1] for x in DEFS}
-    psy_d = d['s1'][(Y1, '2800')]['sc']
-    psy_all = d['s1'][(Y1, '2800')]['all']
-    gui_d = g['2700']['sped'][Y1]
-    if any(g['2700']['defs'][x][Y1] for x in DEFS):
-        fail('the page says none of our rules counts guidance; one now does')
-    # Tuition and transportation: the agreement the page states, asserted.
+    m = d['measured']
+    # ONE DEFINITION: the three rules must now count the same, every year, or the page's first
+    # sentence is false (sped-definition.csv is what they share).
+    for fy in YEARS:
+        if max(tot[x][fy] for x in DEFS) - min(tot[x][fy] for x in DEFS) > TOL:
+            fail('FY%d: the three rules no longer agree (%s) -- the page says they do'
+                 % (fy, {x: round(tot[x][fy]) for x in DEFS}))
+    ours = {fy: tot['journal'][fy] for fy in YEARS}
+    dsc = {fy: d['printed'][fy][0] for fy in YEARS}          # the school committee total, printed
+    town = {fy: sum(d['s1'][(fy, c)]['town'] for c in ('9110', '9120')) for fy in YEARS}
+    for fy in YEARS:
+        if abs(dsc[fy] + town[fy] - dt[fy]) > TOL:
+            fail('FY%d: DESE’s total is no longer the school committee plus the town' % fy)
+    gap = {fy: dsc[fy] - ours[fy] for fy in YEARS}
+    diff = lambda k, fy: g[k]['sped'][fy] - g[k]['defs']['journal'][fy]
+    gui, psy, teach = diff('2700', Y1), diff('2800', Y1), diff('2300', Y1)
+    if any(g['2700']['defs'][x][fy] or g['2800']['defs'][x][fy] for x in DEFS for fy in YEARS):
+        fail('the page says no rule counts guidance or psychology; one now does')
+    rest = gap[Y1] - gui - psy - teach
+    if not (0 <= rest < min(gui, psy, teach)):
+        fail('the page says guidance, psychology and teaching are most of the gap')
     agree_codes = ('3300', '9300', '9400')
     for code in agree_codes:
-        for x in DEFS:
-            for fy in YEARS:
-                if abs(g[code]['defs'][x][fy] - g[code]['sped'][fy]) > TOL:
-                    fail('the page says %s agrees with DESE for every rule; %s FY%d does not'
-                         % (code, x, fy))
-    town = sum(d['s1'][(Y1, c)]['town'] for c in ('9110', '9120'))
+        for fy in YEARS:
+            if abs(g[code]['defs']['journal'][fy] - g[code]['sped'][fy]) > TOL:
+                fail('the page says %s agrees with DESE; FY%d does not' % (code, fy))
     ck = d['checks'][Y1]
     s4gap = ck['s1_instr'] - ck['s4_instr']
+    nrep = len(m['repeats'])
     facts = [
-        f('dese', U(dt[Y1]), 'special education in the %s report to DESE' % C.fy(Y1),
+        f('dsc', U(dsc[Y1]), 'special education, school committee, %s report to DESE' % C.fy(Y1),
           'published', {'y': F(Y1)}),
-        f('bl', U(tot['budget_lines'][Y1]), 'by the budget model’s rule, %s' % C.fy(Y1),
+        f('ours', U(ours[Y1]), 'by our rules, all three, %s' % C.fy(Y1), 'published', {'y': F(Y1)}),
+        f('gap', U(gap[Y1]), 'DESE counts and we do not, %s' % C.fy(Y1), 'published', {'y': F(Y1)}),
+        f('dese', U(dt[Y1]), 'DESE’s whole %s total, the town’s tuition included' % C.fy(Y1),
           'published', {'y': F(Y1)}),
-        f('jr', U(tot['journal'][Y1]), 'by the ledger account list, %s' % C.fy(Y1),
-          'published', {'y': F(Y1)}),
-        f('sc', U(tot['sped_costs'][Y1]), 'by the account-code rule, %s' % C.fy(Y1),
-          'published', {'y': F(Y1)}),
-        f('teach', U(t_d), 'teaching and aides DESE counts, %s' % C.fy(Y1), 'published',
-          {'y': F(Y1)}),
-        f('psy', U(psy_d), 'of %s on psychology that DESE counts' % C.usd(psy_all), 'published',
-          {'a': U(psy_all)}),
-        f('gui', U(gui_d), 'of guidance DESE counts; we count none', 'published'),
+        f('town', U(town[Y1]), 'school choice and charter tuition, paid by the town', 'published'),
+        f('gui', U(gui), 'of guidance DESE counts; we count none', 'published'),
+        f('psy', U(psy), 'of psychology DESE counts; we count none', 'published'),
+        f('teach', U(teach), 'more teaching and aides than our rules count', 'published'),
+        f('rep', N(nrep, 'figures'), 'in the %s report that repeat %s’s exactly' % (C.fy(Y1), C.fy(Y0)),
+          'published', {'y': F(Y1), 'z': F(Y0)}),
         f('tuit', U(sum(g[c]['sped'][Y1] for c in agree_codes)),
-          'tuition and transport, %s: DESE and all three rules' % C.fy(Y1), 'published',
+          'tuition and transport, %s: DESE and our rules alike' % C.fy(Y1), 'published',
           {'y': F(Y1)}),
-        f('town', U(town), 'school choice and charter tuition, paid by the town', 'published'),
         f('s4', U(s4gap), 'between two special education totals in one report', 'published'),
         f('alloc', None, 'which accounts make up DESE’s share of a mixed function', 'gap',
           closes='the district’s worksheet mapping each MUNIS account to an End of Year '
                  'Report line and program, FY2023 and FY2024'),
     ]
-    xs = [k for k in g if g[k]['codes'] and (g[k]['sped'][Y1] or any(g[k]['defs'][x][Y1]
-                                                                       for x in DEFS))]
+    xs = [k for k in g if g[k]['codes'] and (g[k]['sped'][Y1] or g[k]['defs']['journal'][Y1])]
+
     def label(k):
         n = GROUP_NAME.get(k) or d['codes'].get(k, ('',))[0] or k
         return n if k in n else '%s (%s)' % (n, k)
     chart = TP.series(
-        'Special education by function, four definitions', [label(k) for k in xs], [
+        'Special education by function, DESE and our rules', [label(k) for k in xs], [
             TP.track('DESE report', [g[k]['sped'][Y1] for k in xs], 'published', 'bar'),
-            TP.track('Budget model rule', [g[k]['defs']['budget_lines'][Y1] for k in xs],
-                     'stated', 'bar'),
-            TP.track('Ledger account list', [g[k]['defs']['journal'][Y1] for k in xs],
-                     'published', 'bar'),
-            TP.track('Account-code rule', [g[k]['defs']['sped_costs'][Y1] for k in xs],
-                     'published', 'bar')],
+            TP.track('Our rules', [g[k]['defs']['journal'][Y1] for k in xs], 'published', 'bar')],
         '$', kind='bar',
-        note='%s, general fund. DESE’s column against each of our rules, by function group.'
-             % C.fy(Y1), note_figures={'y': F(Y1)})
+        note='%s, general fund. DESE’s special education column against our three rules, which '
+             'now count the same, by function group.' % C.fy(Y1), note_figures={'y': F(Y1)})
     conclusions = [
-        con('DESE’s %s report counts %s as special education; our three rules count %s to %s.'
-            % (C.fy(Y1), C.usd(dt[Y1]), C.usd(lo), C.usd(hi)),
-            ['dese', 'bl', 'jr', 'sc'], {'y': F(Y1), 'a': U(dt[Y1]), 'b': U(lo), 'c': U(hi)},
-            notes=[step('DESE counts special education as a PROGRAM inside a function, not as a '
-                        'function: teaching, aides and psychology are each split by program.',
-                        'measured'),
+        con('Our three rules now agree, at %s for %s; DESE’s report counts %s for the schools.'
+            % (C.usd(ours[Y1]), C.fy(Y1), C.usd(dsc[Y1])),
+            ['dsc', 'ours', 'gap'], {'a': U(ours[Y1]), 'y': F(Y1), 'b': U(dsc[Y1])},
+            notes=[step('Each item where a rule differed from DESE is decided once, from DESE’s '
+                        'documents, and every rule reads it: the table below.', 'measured'),
+                   step('DESE’s whole total adds %s of school choice and charter tuition, which '
+                        'the state charges to the town, not the schools.' % C.usd(town[Y1]),
+                        'measured', {'a': U(town[Y1])}),
                    step('The report is the district’s working copy, not the filing; DESE’s '
                         'filed figures would supersede it.', 'gap', allow=(C.fy(Y0), C.fy(Y1)),
                         closes='the End of Year Financial Report as filed with DESE, '
                                '%s and %s' % (C.fy(Y0), C.fy(Y1)))]),
-        con('Teaching and aides are most of the gap: DESE counts %s, our rules %s to %s.'
-            % (C.usd(t_d), C.usd(min(t_o.values())), C.usd(max(t_o.values()))),
-            ['teach', 'alloc'],
-            {'a': U(t_d), 'b': U(min(t_o.values())), 'c': U(max(t_o.values()))},
-            notes=[step('Separately, the budget model misses %s of lines the book labels “Spcl Ed” '
-                        'or “Spec Ed”, a spelling its rule does not read.' % C.usd(d['missed'][Y1]),
-                        'measured', {'a': U(d['missed'][Y1])}),
-                   step('Which of the district’s accounts DESE’s figure is made of is not in '
-                        'the report or the ledger.', 'gap',
-                        closes='the district’s worksheet mapping each MUNIS account to an End '
-                               'of Year Report line and program')]),
-        con('DESE splits psychology and guidance between programs; none of our rules does.',
-            ['psy', 'gui'],
-            notes=[step('The budget model counts every psychologist, the ledger rules none; '
-                        'DESE counts part. Which part is the district’s allocation.', 'measured')]),
+        con('Guidance %s, psychology %s and teaching %s are most of what DESE counts and we do not.'
+            % (C.usd(gui), C.usd(psy), C.usd(teach)), ['gui', 'psy', 'teach', 'alloc'],
+            {'a': U(gui), 'b': U(psy), 'c': U(teach)},
+            notes=[step('Each is a share the district assigned inside a mixed function. DESE '
+                        'assigns it person by person, by what each one does; the ledger records '
+                        'accounts, not people.', 'measured'),
+                   step('Which accounts make up those shares is not in the report or the ledger.',
+                        'gap', closes='the district’s EPIMS job codes for its psychologists, '
+                                      'counselors and teachers, and its account-to-report worksheet')]),
+        con('The %s report repeats %s’s special education figures exactly in %s places.'
+            % (C.fy(Y1), C.fy(Y0), C.num(nrep)), ['rep', 'psy', 'gui'],
+            {'y': F(Y1), 'z': F(Y0), 'n': N(nrep, 'figures')},
+            notes=[step('Guidance salaries and supplies, psychology and two substitute lines carry '
+                        'the same figure both years; psychology’s matches no %s account.' % C.fy(Y1),
+                        'measured', {'y': F(Y1)}),
+                   step('Whether they were carried forward unchanged is not stated in the '
+                        'working copy.', 'hypothesis')]),
         con('Out-of-district tuition and transportation agree with DESE to the dollar, both '
             'years.', ['tuit', 'town', 's4'],
-            notes=[step('DESE also counts %s of school choice and charter tuition the town pays '
-                        'in %s; no school account carries it.' % (C.usd(town), C.fy(Y1)),
-                        'measured', {'a': U(town), 'y': F(Y1)}),
-                   step('Inside the %s working copy, Schedule 4 totals %s less than Schedule 3; '
+            notes=[step('Inside the %s working copy, Schedule 4 totals %s less than Schedule 3; '
                         'DESE’s instructions tie the two.'
                         % (C.fy(Y1), C.usd(s4gap)), 'measured', {'y': F(Y1), 'a': U(s4gap)},
                         allow=('Schedule 4', 'Schedule 3'))]),
     ]
-    # Table: every function with special education money, either side, both years.
+    # Table 1: every function with special education money, either side, both years.
     fr = [r for r in d['rows'] if r['level'] == 'function'
-          and any(money(r[c]) for c in ('dese_sped_fy%d' % Y1, 'budget_lines_fy%d' % Y1,
-                                        'journal_fy%d' % Y1, 'sped_costs_fy%d' % Y1,
-                                        'dese_sped_fy%d' % Y0, 'budget_lines_fy%d' % Y0,
-                                        'journal_fy%d' % Y0, 'sped_costs_fy%d' % Y0))]
+          and any(money(r[c]) for c in ('dese_sped_fy%d' % Y1, 'journal_fy%d' % Y1,
+                                        'dese_sped_fy%d' % Y0, 'journal_fy%d' % Y0))]
     lab = lambda r: '%s %s' % (r['item'], r['dese_function_name'][:34])
     views = []
     for fy in (Y1, Y0):
         views.append(dict(
             key='fy%d' % fy, label=C.fy(fy), total_col=None,
-            kinds=['published', 'stated', 'ledger', 'ledger'],
-            columns=['DESE report', 'Budget model rule', 'Ledger account list',
-                     'Account-code rule'],
-            rows=[dict(label=lab(r), cells=[C.usd(money(r['%s_fy%d' % (c, fy)]))
-                                            for c in ('dese_sped',) + DEFS]) for r in fr],
+            kinds=['published', 'ledger', 'ledger'],
+            columns=['DESE report', 'Our rules', 'DESE less ours'],
+            rows=[dict(label=lab(r), cells=[C.usd(money(r['dese_sped_fy%d' % fy])),
+                                            C.usd(money(r['journal_fy%d' % fy])),
+                                            C.usd(money(r['dese_sped_fy%d' % fy])
+                                                  - money(r['journal_fy%d' % fy]))])
+                  for r in fr],
             note='General fund, spent plus encumbered. A code with no DESE name is the town’s '
-                 'own; the whole list, with the rule inside each function, is the CSV.'))
+                 'own, compared in its group. The whole list, with the rule inside each '
+                 'function, is the CSV.'))
+    # Table 2: the items, as sources/data/sped-definition.csv decides them.
+    shown = {
+        'coordinator': lambda: 'Report’s special education salary is this account: %s (%s), %s (%s)'
+        % (C.usd(m['coordinator'][Y0]), C.fy(Y0), C.usd(m['coordinator'][Y1]), C.fy(Y1)),
+        'spellings': lambda: '%s: special education supplies (%s) and related services (%s) in its special education column'
+        % (C.fy(Y0), C.usd(m['spellings'][0]), C.usd(m['spellings'][1])),
+        'psychology': lambda: '%s: all of it, %s. %s: every account as regular day, plus %s that matches no account'
+        % (C.fy(Y0), C.usd(m['psychology'][Y0]), C.fy(Y1), C.usd(m['psychology']['repeat'])),
+        'guidance': lambda: '%s in both years, matching no account'
+        % C.usd(m['guidance'][Y1]),
+        'equipment': lambda: 'Filed as undistributed; %s and %s on the account'
+        % (C.usd(m['equipment'][Y0]), C.usd(m['equipment'][Y1])),
+        'choice-charter': lambda: 'Town’s spending: %s (%s), %s (%s)'
+        % (C.usd(m['choice-charter'][Y0]), C.fy(Y0), C.usd(m['choice-charter'][Y1]), C.fy(Y1)),
+        'allocation': lambda: 'Teaching and aides: %s more than our rules, %s' % (C.usd(teach), C.fy(Y1)),
+    }
+    items = dict(caption='Each item, as DESE’s documents decide it', views=[dict(
+        key='items', label='Items', total_col=None,
+        kinds=['ledger', 'published', 'published', 'published'],
+        columns=['Our rules', 'What DESE says', 'DESE’s document', 'What the district’s report shows'],
+        rows=[dict(label=it['item'],
+                   cells=[it['decision'], it['dese_rule'], it['dese_citation'],
+                          shown[it['id']]() if it['id'] in shown else '—'])
+              for it in SD.ITEMS],
+        note='sources/data/sped-definition.csv, read by all three rules. The report is the '
+             'district’s working copy of its End of Year Financial Report.')])
     p = TP.page(
         PAGE,
-        'DESE counts special education by program, not by code; our rules miss its %s total '
-        'by up to %s.' % (C.fy(Y1), C.usd(max(abs(tot[x][Y1] - dt[Y1]) for x in DEFS))),
+        'Our rules now count what DESE’s documents count; DESE’s %s report still counts %s more.'
+        % (C.fy(Y1), C.usd(gap[Y1])),
         facts, conclusions, chart=chart,
-        table=dict(caption='Special education by function code, DESE beside each of our rules',
+        table=dict(caption='Special education by function code, DESE beside our rules',
                    views=views),
+        tables=[items],
         sources=sources(),
-        finding_figures={'y': F(Y1),
-                         'a': U(max(abs(tot[x][Y1] - dt[Y1]) for x in DEFS))})
+        finding_figures={'y': F(Y1), 'a': U(gap[Y1])})
     p['not_established'] = [
         'Which ledger accounts and budget lines make up DESE’s special education share of a '
         'mixed function: the report prints one figure per function and program.',
+        'Which of the district’s psychologists and counselors are coded special education in '
+        'EPIMS, which is what DESE’s rule turns on.',
         'Where the district reports its own codes 2310, 2315, 2357 and 2900, which are not in '
         'DESE’s chart.',
         'Whether the report as filed with DESE matches these working copies.',

@@ -838,7 +838,7 @@ STAFF_WORDING = re.compile(r"\bSTAFF\b", re.I)
 # THE special education account list is defined ONCE, in scripts/journal.py, and imported: the
 # accounts every special education report counts are exactly the accounts whose families this
 # redaction masks.
-from journal import SPED_ACCOUNTS  # noqa: E402
+from journal import is_sped  # noqa: E402  (SPED_ACCOUNTS plus the DESE-added accounts)
 SPED_TEXT = re.compile(r"\bSPED\b|SPECIAL ED|\bIEP\b|\bOOD\b|OUT OF DIST|\bPLACEM|TUITION"
                        r"|\bACE\b|KEYSTONE|COLLAB", re.I)
 # A line about transporting a child, or about money families pay in, says nothing on its own
@@ -1510,9 +1510,7 @@ def redact(acct, f, emp):
         said, soft, transport = row_kind(acct, f)[1:4]
         payee = f.get('_payee_class')
         text = f['description'] + ' ' + f['comment']
-        open_transport = transport and not (
-            SPED_ACCOUNTS.search(' | '.join([acct['account_description'], acct['org_name'],
-                                             acct['fund_name']])) or SPED_TEXT.search(text))
+        open_transport = transport and not (is_sped(acct) or SPED_TEXT.search(text))
         if open_transport and not incident and not PARENT_OTHER.search(text):
             said = False                            # a non-SPED transport payee is listed
             payee = 'staff' if payee in ('parent', 'uncertain') else payee

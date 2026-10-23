@@ -23,8 +23,8 @@ number attached to it** — no avoided cost, no placement count, no estimate of 
 in-district capacity buys how much avoidance.
 
 Two things moved in the direction the argument predicts. Placements fell from **30 in
-FY2015 to 10 in FY2025**. In-district special education spending rose from **$4,865,038**
-in the FY25 budget to **$5,466,201** in FY27 Balanced, while the out-of-district tuition
+FY2015 to 10 in FY2025**. In-district special education spending rose from **$4,839,863**
+in the FY25 budget to **$5,544,996** in FY27 Balanced, while the out-of-district tuition
 line was budgeted **down from $1,291,293 to $700,142** in a single year.
 
 **That is a correlation between two series and nothing more.** At least four other
@@ -87,8 +87,9 @@ report, sourced to SIMS Report 7 (`sources/data/placement-counts.csv`):
 | Residential | 6 | 5 | 1 | 1 |
 | **Total** | **30** | **11** | **7** | **10** |
 
-**In-district special education**, budget to budget: $4,865,038 (FY25) → $4,964,329
-(FY26) → $5,442,383 (FY27 level service) → $5,466,201 (FY27 Balanced).
+**In-district special education**, budget to budget: $4,839,863 (FY25) → $4,918,136
+(FY26) → $5,521,178 (FY27 level service) → $5,544,996 (FY27 Balanced), on the definition
+DESE's documents decide (`/special-education/sped-definition`, 23 October 2026).
 
 **Out-of-district tuition**, budget to budget: $1,164,824 (FY25) → $1,291,293 (FY26) →
 $700,142 (FY27), a fall of $591,151 in one year.

@@ -41,7 +41,12 @@ the transportation programme. So:
     transportation            the account the Town names SPECIAL ED TRANSPORTATION
     in district               every other segment-51 account, LESS the two accounts the
                               district's own budget book labels as English Language
-                              Learner costs (sped-and-the-curve.md drew the same line)
+                              Learner costs (sped-and-the-curve.md drew the same line),
+                              and PLUS/LESS the DESE items: the Student Services
+                              Coordinator counted, psychological services (2800),
+                              equipment (7300) and the Section 504 account left out --
+                              sources/data/sped-definition.csv, shared with journal.py
+                              and model/sped.py so the three rules cannot part
 
 That `51` means "special education" is an inference from the labels, not a published
 chart of accounts, and it is registered as a gap.
@@ -70,6 +75,7 @@ import sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import conclusions as C  # noqa: E402
 from conclusions import conclusion, emit, figure  # noqa: E402
+import journal as J  # noqa: E402  (the DESE items: J.SD, one definition for every rule)
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 ID = 'special-education-costs'
@@ -263,10 +269,18 @@ def group_of(acct, desc):
         return None
     if TRANSPORT.match(desc.strip()):
         return 'trans'
-    if p[4] != '51':
-        return None
+    # THE DESE ITEMS, shared with journal.py and model/sped.py (sources/data/sped-definition.csv):
+    # an account DESE's definition leaves out is in no group, whatever its segment; one it
+    # counts without a special education segment is in district.
     if acct in ELL:
         return 'ell'
+    scope = J.SD.ledger_scope(acct)
+    if scope == 'excluded':
+        return None
+    if scope == 'added':
+        return 'indist'
+    if p[4] != '51':
+        return None
     if p[3] in OOD_FUNCS:
         return 'ood'
     return 'indist'

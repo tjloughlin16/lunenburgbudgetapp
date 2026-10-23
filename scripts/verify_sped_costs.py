@@ -24,6 +24,8 @@ from decimal import Decimal as D, ROUND_HALF_EVEN
 from statistics import median
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+import journal as J  # noqa: E402  (J.SD: the DESE items, a definition shared on purpose)
 DATA = os.path.join(ROOT, 'sources', 'data')
 PAY = os.path.join(ROOT, 'fy28', 'public', 'data', 'special-education-costs.json')
 MD = os.path.join(ROOT, 'sources', 'analyses', 'special-education-costs.md')
@@ -50,7 +52,16 @@ def kind(account, desc):
         return None
     if desc.strip().upper() in ('SPECIAL ED TRANSPORTATION', 'SPECIAL EDUCATION TRANSPORTATION'):
         return 'trans'
-    if prog != '51' or account in ELL:
+    if account in ELL:
+        return None
+    # The DESE items -- sources/data/sped-definition.csv -- are a DEFINITION, shared on purpose
+    # with the generator (journal.SD); the classification around them is still written out here.
+    scope = J.SD.ledger_scope(account)
+    if scope == 'excluded':
+        return None
+    if scope == 'added':
+        return 'indist'
+    if prog != '51':
         return None
     return 'ood' if func in TUITION_FUNCS else 'indist'
 

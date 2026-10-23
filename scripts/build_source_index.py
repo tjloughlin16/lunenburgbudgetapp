@@ -3750,8 +3750,17 @@ GROUPS = [
              'Written by us. Every DESE function code, whether DESE lets it carry a special '
              'education program, what the district reported in that column for FY2023 and '
              'FY2024, and what each of our three definitions counts there, with the rule inside '
-             'every mixed function and the evidence cell by cell. The decision column is left '
-             'empty where our rule differs from DESE. Built by scripts/build_sped_crosswalk.py.'),
+             'every mixed function and the evidence cell by cell. The decision column names '
+             'the sped-definition.csv item that decides each function where a rule differs '
+             'from DESE. Built by scripts/build_sped_crosswalk.py.'),
+            ('data/sped-definition.csv',
+             'What counts as special education, item by item, as DESE’s documents decide it', 3,
+             'Written by us. The items where an account label and DESE disagree -- the student '
+             'services coordinator, psychology, guidance, equipment, school choice and charter '
+             'tuition, English learner and Section 504 accounts -- each with our decision, '
+             'DESE’s rule, the DESE workbook cell that states it, and the cells of the '
+             'district’s End of Year Report that show it. Read by every special education rule '
+             'on the site (model/sped_definition.py), so they cannot disagree.'),
             ('data/eoyr-nss.csv',
              'Net school spending as the End of Year Report computes it, FY2023 and FY2024', 2,
              'Written by us. Every numbered line of the actual-year net school spending '

@@ -509,6 +509,36 @@
    "side": "money_in",
    "what": "Whether a year's special education overrun on the general fund measures surprise, or how much was charged to the circuit breaker account at the close",
    "why": "MEASURED (/special-education/special-education-overruns): the need a Special Education Reserve Fund is sized against is the general fund's spending past its vote, line by line, after the circuit breaker account (fund 2640) and the grants paid their share. The circuit breaker account paid tuition in every year FY2023-FY2026, and in FY2026 it paid through a single year-end reclassification of collaborative tuition rather than through invoices during the year (/special-education/sped-all-funds). So how much of a year's tuition lands on the general fund, and therefore that year's overrun, turns partly on a charge decided at the close. Set the account's tuition back on the line and FY2024's need is $619,020 rather than $152,724. WHAT IS NOT ESTABLISHED: whether the amount charged each year follows a rule (the reimbursement received, a planned share, whatever kept the general fund within its vote), so the year-to-year spread of the general fund need cannot be separated from the spread of that choice."
+  },
+  {
+   "closes": null,
+   "side": "record",
+   "what": "Why the FY2023 annual town report and the school journal disagree, fund by fund, on special education grant spending",
+   "why": "MEASURED (/special-education/special-education-overruns, the ten-year table): for FY2023 the annual town report's Special Revenue Funds schedule prints disbursements of $562,063.28 from the special education grant funds and the school journal posts $560,954.43 to the same grants (payments plus what was still owed) -- $1,108.85 apart in total, while the circuit breaker account (fund 2640) agrees to the cent, $494,967.72. Fund by fund the gap is larger and runs both ways: the FY2022 #240 grant is $10,495.25 higher in the journal, the FY2023 #240 grant $3,564.68 higher, the FY2021 #240 grant $670.67 lower, and the report prints two #262 rows ($12,500.00 and $1,998.11) the journal has no FY2023 postings for. The page uses the report's disbursements for FY2017-FY2022, where no journal is held. WHAT IS NOT ESTABLISHED: whether the difference is timing (cash paid against obligations recorded), grant-year attribution, or a transcription in one of the two. -- closes: the Town Accountant's FY2023 trial balance for the school grant funds, showing expenditures and encumbrances by fund."
+  },
+  {
+   "closes": "the district's list of the DESE grant applications it submitted, by year, with each outcome",
+   "side": "money_in",
+   "what": "Which competitive DESE grants Lunenburg applied for and did not win",
+   "why": "DESE's award documents name only the districts that won. Comparison districts won competitive grants in FY2026 and FY2027 that Lunenburg did not (/school-all-funds/grants-others-receive), and nothing published says whether the district applied for them."
+  },
+  {
+   "closes": "DESE's competitive award lists for FY2023 to FY2025, by records request",
+   "side": "document_wanted",
+   "what": "DESE's competitive award lists before FY2026",
+   "why": "DESE's Grant Allocations & Awards page links competitive award lists for FY2026 and the current year only; fy25-awards.html, fy24- and fy23- redirect to its 404 page (checked 23 October 2026). So who won a competitive grant before FY2026 cannot be compared."
+  },
+  {
+   "closes": "Monty Tech's grant applications and budgets, by programme and by member town",
+   "side": "money_in",
+   "what": "How much of the federal grant money Monty Tech is allocated serves Lunenburg students",
+   "why": "DESE allocates Perkins, IDEA and the Title grants to Montachusett Regional Vocational Technical as one district, and it serves students from every member town (/school-all-funds/grants-others-receive). Lunenburg gets no Perkins allocation of its own, and nothing published says what part of Monty Tech's serves Lunenburg's students."
+  },
+  {
+   "closes": "the FY2024 End of Year Financial Report as filed with DESE.",
+   "side": "record",
+   "what": "Why does the FY2024 End of Year Report working copy repeat FY2023's special education figures for guidance, psychology and two substitute lines?",
+   "why": "MEASURED (sources/data/sped-definition.csv, checked by scripts/build_sped_crosswalk.py): five Special Education cells of the FY2024 working copy (eoy24!F173, F178, F258, F262 and F274) equal the FY2023 copy's to the dollar, and the psychology figure matches no FY2024 ledger account while the FY2024 psychologist salaries sit, whole, in the Regular Day column. Whether the five were carried forward unchanged, or the report as filed differs, is not stated in the working copy."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",
@@ -1502,7 +1532,7 @@
    "updated": "2026-10-13",
    "url": "/docs/analyses/show-your-work.md",
    "why": "Every rate the projection uses and what each one rests on \u2014 including the state aid growth rate, which is recorded there as having no stated source",
-   "words": 16454
+   "words": 16584
   },
   {
    "id": "/free-cash/free-cash-sources",

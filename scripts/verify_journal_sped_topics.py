@@ -15,8 +15,9 @@ sources the generator never reads:
   * FY2023-FY2026, general fund: the PUBLISHED period-13 spreadsheets (`munis_school_ytd`),
     for every special education account both hold.
 
-The ONE thing shared is the special education account list itself, journal.SPED_ACCOUNTS: it
-is a definition, and there is one of it on purpose (the redaction and the reports must agree).
+The ONE thing shared is the special education definition itself -- journal.is_sped and
+in_sped_total, with the DESE items of sources/data/sped-definition.csv: it is a definition, and
+there is one of it on purpose (the redaction and the reports must agree).
 
 Then every registered figure on both pages -- each fact, each conclusion and note, the finding
 -- is compared with its recomputed value, and the FY2026 masked-payee rule is checked: no
@@ -32,12 +33,11 @@ from decimal import Decimal as D
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from journal import SPED_ACCOUNTS, ALIASES  # noqa: E402  (definitions, shared on purpose)
+from journal import ALIASES, is_sped, in_sped_total  # noqa: E402  (definitions, shared on purpose)
 
 DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 TOPICS = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 YEARS = (2023, 2024, 2025, 2026)
-OUTSIDE_TOTAL = {'511023', '535027', '535028', '535029'}   # psychologists; named tuition
 IDEA = {'240', '262', '252', '264', '760', '762'}
 OTHER = {'274', '298', '242'}
 INVOICE = ('API', 'APM')
@@ -70,9 +70,12 @@ def main():
     for a, fund, fname, org, oname, desc, obj, ytd, enc in c.execute(
             'SELECT account, fund, fund_name, org, org_name, account_description, object, '
             'ytd_actual, encumbrances FROM munis_school_journal_account'):
-        if obj.startswith('5') and SPED_ACCOUNTS.search(' | '.join([desc, oname, fname])):
-            acct[a] = dict(g=group(fund, fname), obj=obj, ytd=cents(ytd), enc=cents(enc), org=org)
-    total_acc = {a for a, v in acct.items() if v['obj'] not in OUTSIDE_TOTAL}
+        row = dict(account=a, account_description=desc, org_name=oname, fund_name=fname,
+                   object=obj)
+        if obj.startswith('5') and is_sped(row):
+            acct[a] = dict(g=group(fund, fname), obj=obj, ytd=cents(ytd), enc=cents(enc), org=org,
+                           total=in_sped_total(row))
+    total_acc = {a for a, v in acct.items() if v['total']}
     # Accounts in no group (two school revolving funds) are allowed only while nothing posts.
     stray = sorted(a for a in total_acc if acct[a]['g'] == 'other')
     if stray and c.execute("SELECT COUNT(*) FROM munis_school_journal WHERE posts_to='actual' "
@@ -130,7 +133,7 @@ def main():
 
     psy = {y: cents(c.execute(
         "SELECT COALESCE(SUM(j.amount),0) FROM munis_school_journal j JOIN "
-        "munis_school_journal_account a USING(account) WHERE a.object='511023' AND "
+        "munis_school_journal_account a USING(account) WHERE a.account LIKE '%-2800-%' AND "
         "j.posts_to='actual' AND j.fiscal_year=?", (y,)).fetchone()[0]) for y in YEARS}
     reclass = c.execute(
         "SELECT SUM(j.amount), COUNT(*) FROM munis_school_journal j JOIN sped s USING(account) "

@@ -789,7 +789,7 @@
   "salaries": 0.04,
   "health": 0.09,
   "transport": 0.06,
-  "sped": 0.064840310824972,
+  "sped": 0.06429670323659295,
   "sped_tuition": 0.0,
   "utilities": 0.05,
   "other": 0.03,
@@ -814,13 +814,13 @@
   "stm_appropriation": 0
  },
  "expenseBase": {
-  "other": 1772053.0,
-  "sped": 5466201.0,
+  "other": 1653079.0,
+  "sped": 5544996.0,
   "transport": 1053360.0,
   "utilities": 605511.0,
   "health": 4019071.0,
   "sped_tuition": 700142.0,
-  "salaries": 12955951.5
+  "salaries": 12996130.5
  },
  "floorNote": {
   "isOurs": true,
@@ -934,7 +934,7 @@
    {
     "id": "sped",
     "metric": "Special education growth, in district",
-    "value": "6.48% a year",
+    "value": "6.43% a year",
     "kind": "ours",
     "basis": "OURS. Every part of this line is escalated at what its own budgets show it doing, measured across eight to ten years of them, weighted by its share of the line: professional staff 2.7% across 53%, paraprofessionals 12.8% across 34%, transport 5.7% across 12%. Not one of those is a contract rate, and the two that have contracts show why. Special education teachers are on an agreement giving 3.5% and their line has grown 2.67% across 8 budgets \u2014 below it, because headcount there has drifted down. The paras run the other way: their contract gives 2.0%; across 10 budgets, FY18 to FY27, the line went from $634,513 to $1,872,411 \u2014 2.95 times, 8 of 9 years up, an R\u00b2 of 0.89, and a compound rate that stays between +11.5% and +17.0% wherever you start it. That is headcount, and no pay settlement reaches it. A contract sets what one person is paid. It says nothing about how many people are employed, and on this line that is where the movement is \u2014 in both directions. This figure has previously stood at 2.48%, 4.28% and 6.80%; each was built on fewer budget years than the archive turned out to hold. What it still assumes is that the climb continues at roughly the rate it has held. A budget column cannot test that by itself \u2014 it shows dollars per line and never people. Two headcount sources exist and neither closes it: DESE publishes paraprofessional FTE per district per year, without classification or school, and the town prints per-school staff rosters by name and position in every annual report, FY2011\u2013FY2025, without any FTE at all \u2014 published at https://lunenburgbudgetproject.org/api/staff_roster_entries and https://lunenburgbudgetproject.org/data/staff-roster-counts.csv A count of names is not a staffing level. The full range is published beside the rate.",
     "doc": "budget-workbooks/fy27-proposals.xlsx",
@@ -1310,15 +1310,15 @@
   ]
  },
  "sped": {
-  "rate": 0.064840310824972,
+  "rate": 0.06429670323659295,
   "units": [
    {
     "id": "professional",
     "label": "Professional staff",
     "basis": "Measured over 8 budgets. Their agreement gives 3.5% and the line has run below it \u2014 headcount drifting down, not a smaller pay rise",
     "rate": 0.026749641904463495,
-    "amount": 2867519.0,
-    "share": 0.5268866597591533
+    "amount": 2946314.0,
+    "share": 0.5336386546494245
    },
    {
     "id": "paras",
@@ -1326,7 +1326,7 @@
     "basis": "Measured over 10 budgets rather than taken from the 2.0% contract \u2014 this line is headcount, and no settlement reaches it",
     "rate": 0.12776302345076007,
     "amount": 1872411.0,
-    "share": 0.34404249021063016
+    "share": 0.33913251845892306
    },
    {
     "id": "transport",
@@ -1334,7 +1334,7 @@
     "basis": "Vendor contract with no published escalator; measured over 9 budgets",
     "rate": 0.05685920126814903,
     "amount": 649953.0,
-    "share": 0.11942434040382678
+    "share": 0.11771998656808384
    },
    {
     "id": "unbargained",
@@ -1342,38 +1342,38 @@
     "basis": "Not bargained; identical in every budget held",
     "rate": 0.0,
     "amount": 52500.0,
-    "share": 0.009646509626389764
+    "share": 0.00950884032356863
    }
   ],
   "range": [
    {
     "id": "ex_paras",
-    "rate": 0.01021427550182974,
+    "rate": 0.024996895005451103,
     "label": "Special education apart from the paras, two budgets",
-    "what": "What the rest of the line did while the paras were being added. Below the levy cap \u2014 and it is the paras, not the rest, that make this line a driver."
+    "what": "What the rest of the line did while the paras were being added. At the levy cap \u2014 and it is the paras, not the rest, that make this line a driver."
    },
    {
     "id": "contracts_only",
-    "rate": 0.02532188289578297,
+    "rate": 0.025460003281908318,
     "label": "If every settlement were the whole story",
     "what": "The two bargained agreements at their published rates and nothing else \u2014 no bus increase, no change in how many people are employed. Published here because it is what this model used to assume, and because the gap between it and the rate above is the part of this line that pay settlements do not explain."
    },
    {
-    "id": "whole",
-    "rate": 0.05767303492560738,
-    "label": "The whole line, two budgets",
-    "what": "What the in-district line did between the last two budgets. Close to the rate used, and reached a different way."
-   },
-   {
     "id": "contracts",
-    "rate": 0.064840310824972,
+    "rate": 0.06429670323659295,
     "used": true,
     "label": "Each part at its contract, or at what it has measurably done",
     "what": "Professional staff at the teachers\u2019 agreement; paras and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part\u2019s share of the line."
    },
    {
+    "id": "whole",
+    "rate": 0.06806907390515793,
+    "label": "The whole line, two budgets",
+    "what": "What the in-district line did between the last two budgets. Close to the rate used, and reached a different way."
+   },
+   {
     "id": "fy27",
-    "rate": 0.09629788511282378,
+    "rate": 0.12261604659074421,
     "label": "FY27 by itself",
     "what": "The single steepest year. One observation, and the top of the range."
    }
@@ -1408,25 +1408,18 @@
     "fy27": 52500.0
    },
    {
-    "id": "psych",
-    "label": "Psychologists and testing",
-    "fy25": 270675.0,
-    "fy26": 295355.0,
-    "fy27": 207723.0
-   },
-   {
     "id": "teachers",
     "label": "Special education teachers",
-    "fy25": 1990158.0,
-    "fy26": 1993848.0,
-    "fy27": 1963512.0
+    "fy25": 2093158.0,
+    "fy26": 2096848.0,
+    "fy27": 2093512.0
    },
    {
     "id": "other",
     "label": "Administration, legal, supplies and contracted work",
-    "fy25": 136467.0,
-    "fy26": 146841.65,
-    "fy27": 107039.0
+    "fy25": 278967.0,
+    "fy26": 293003.65,
+    "fy27": 263557.0
    }
   ],
   "year": {
@@ -1445,28 +1438,28 @@
     "id": "budgeted",
     "label": "As the district budgeted it for FY27",
     "tuition": 700142,
-    "gap": 932531,
+    "gap": 932664,
     "delta": 0
    },
    {
     "id": "midway",
     "label": "Midway back",
     "tuition": 1000000,
-    "gap": 1232389,
+    "gap": 1232522,
     "delta": 299858
    },
    {
     "id": "fy25",
     "label": "Back to the FY25 budget",
     "tuition": 1164824,
-    "gap": 1397213,
+    "gap": 1397346,
     "delta": 464682
    },
    {
     "id": "fy26",
     "label": "Back to the FY26 budget",
     "tuition": 1291293,
-    "gap": 1523682,
+    "gap": 1523815,
     "delta": 591151
    }
   ],
@@ -1512,7 +1505,7 @@
     "pct": 16.3
    }
   ],
-  "base": 5466201.0,
+  "base": 5544996.0,
   "tuitionBase": 700142.0,
   "appropriation": 26572289.5,
   "classified": {
@@ -1578,16 +1571,22 @@
      "basis": "group"
     },
     {
+     "group": "2110 - Curriculum/Spec Ed Directors",
+     "item": "Student Services Coordinator (Spec Ed)",
+     "amount": 155418.0,
+     "basis": "name"
+    },
+    {
      "group": "2320 - Therapeutic Services",
      "item": "P.S. Special Ed Speech Pathologists",
      "amount": 154255.0,
      "basis": "group"
     },
     {
-     "group": "2800 - Psychological Services",
-     "item": "P.S. Psychologist",
-     "amount": 102227.0,
-     "basis": "group"
+     "group": "2310 - Tutoring Cont. Ser.",
+     "item": "Spcl Ed Contrtd Related Services",
+     "amount": 130000.0,
+     "basis": "name"
     },
     {
      "group": "2310 - Teachers Specialists - Special Education",
@@ -1611,18 +1610,6 @@
      "group": "2110 - Special Education Clerical",
      "item": "Special Ed Clerical",
      "amount": 69382.0,
-     "basis": "group"
-    },
-    {
-     "group": "2800 - Psychological Services",
-     "item": "Middle School Psychologist",
-     "amount": 46685.0,
-     "basis": "group"
-    },
-    {
-     "group": "2800 - Psychological Services",
-     "item": "H.S. Psychologist",
-     "amount": 46685.0,
      "basis": "group"
     },
     {
@@ -1653,12 +1640,6 @@
      "group": "2325 - Special Education Substitutes",
      "item": "E.S. Special Ed Subs .",
      "amount": 15500.0,
-     "basis": "group"
-    },
-    {
-     "group": "2800 - Psych. Services",
-     "item": "Psychological Testing/Supplies",
-     "amount": 12126.0,
      "basis": "group"
     },
     {
@@ -1698,16 +1679,16 @@
      "basis": "group"
     },
     {
+     "group": "2430 - General School Supplies",
+     "item": "Spcl Ed General School Supplies",
+     "amount": 5100.0,
+     "basis": "name"
+    },
+    {
      "group": "2110 - Special Education",
      "item": "Specl Ed Computer Contracted Services",
      "amount": 4573.0,
      "basis": "group"
-    },
-    {
-     "group": "7300 - Acquisition/Improvement Equipment",
-     "item": "Special Ed Equipment",
-     "amount": 4000.0,
-     "basis": "name"
     },
     {
      "group": "2415 - E.S. Other Instr. Materials",
@@ -1770,18 +1751,6 @@
      "basis": "group"
     },
     {
-     "group": "2110 - Special Education",
-     "item": "504 Program General Supplies",
-     "amount": 0.0,
-     "basis": "group"
-    },
-    {
-     "group": "2800 - Psych. Services",
-     "item": "2800 - Psych. Services",
-     "amount": 0.0,
-     "basis": "group"
-    },
-    {
      "group": "2110 - Special Education Clerical",
      "item": "SALARIES CLERICAL",
      "amount": 0.0,
@@ -1828,18 +1797,6 @@
      "item": "Special Ed Contracted Services",
      "amount": 0.0,
      "basis": "group"
-    },
-    {
-     "group": "2800 - Psychological Services",
-     "item": "System School Psychologist",
-     "amount": 0.0,
-     "basis": "group"
-    },
-    {
-     "group": "2800 - Psychological Services",
-     "item": "E.S. Psychologist",
-     "amount": 0.0,
-     "basis": "group"
     }
    ],
    "excluded": [
@@ -1860,6 +1817,30 @@
      "amount": 0.0
     },
     {
+     "group": "Psychological services (2800): psychologists and testing",
+     "why": "The district's two reports disagree. FY2023 puts every psychologist account and the testing materials in special education; FY2024 puts the same accounts in regular day and prints a separate special education figure that no FY2024 account holds. DESE's rule turns on a job code the ledger does not carry, so it is left out of every total and shown beside it.",
+     "lines": 7,
+     "fy25": 270675.0,
+     "fy26": 295355.0,
+     "amount": 207723.0
+    },
+    {
+     "group": "Special education equipment (7300)",
+     "why": "The report files equipment as undistributed, with no special education cell, and the form gives it none. Left out of every total.",
+     "lines": 1,
+     "fy25": 7000.0,
+     "fy26": 7000.0,
+     "amount": 4000.0
+    },
+    {
+     "group": "Section 504 program supplies",
+     "why": "In segment 51 and in the budget book's special education group, but a 504 plan is a general education accommodation. Every rule leaves it out.",
+     "lines": 1,
+     "fy25": 0.0,
+     "fy26": 0.0,
+     "amount": 0.0
+    },
+    {
      "group": "9300 / 9400 \u2014 out-of-district tuition",
      "why": "Special education, but escalated on its own because it is set by placement rather than by payroll, and it behaves nothing like staffing.",
      "lines": 4,
@@ -1874,13 +1855,11 @@
     "2310 - Teachers Specialists - Special Education",
     "2320 - Therapeutic Services",
     "2325 - Special Education Substitutes",
-    "2330 - Paraprofessionals Special Education *** (LTP notes)",
-    "2800 - Psych. Services",
-    "2800 - Psychological Services"
+    "2330 - Paraprofessionals Special Education *** (LTP notes)"
    ],
-   "total": 5466201.0,
-   "byGroup": 46,
-   "byName": 8
+   "total": 5544996.0,
+   "byGroup": 38,
+   "byName": 10
   },
   "tuitionRate": 0.0,
   "tuitionHistory": [
@@ -5661,27 +5640,27 @@
   "deficits": [
    {
     "fy": 28,
-    "amount": 932531
+    "amount": 932664
    },
    {
     "fy": 29,
-    "amount": 1535097
+    "amount": 1535262
    },
    {
     "fy": 30,
-    "amount": 2205046
+    "amount": 2205125
    },
    {
     "fy": 31,
-    "amount": 2947857
+    "amount": 2947714
    },
    {
     "fy": 32,
-    "amount": 3769443
+    "amount": 3768921
    },
    {
     "fy": 33,
-    "amount": 4676182
+    "amount": 4675101
    }
   ],
   "ladder": [
@@ -5691,39 +5670,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": true,
-      "remaining": 2421839
+      "remaining": 2421706
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": true,
-      "remaining": 886742
+      "remaining": 886444
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -1318304
+      "remaining": -1318681
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -4266161
+      "remaining": -4266395
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -8035604
+      "remaining": -8035316
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -12711786
+      "remaining": -12710417
      }
     ]
    },
@@ -5733,39 +5712,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": true,
-      "remaining": 1909939
+      "remaining": 1909806
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": true,
-      "remaining": 374842
+      "remaining": 374544
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -1830204
+      "remaining": -1830581
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -4778061
+      "remaining": -4778295
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -8547504
+      "remaining": -8547216
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -13223686
+      "remaining": -13222317
      }
     ]
    },
@@ -5775,39 +5754,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": true,
-      "remaining": 1398040
+      "remaining": 1397907
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": false,
-      "remaining": -137057
+      "remaining": -137355
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -2342103
+      "remaining": -2342480
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -5289960
+      "remaining": -5290194
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -9059403
+      "remaining": -9059115
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -13735585
+      "remaining": -13734216
      }
     ]
    },
@@ -5817,39 +5796,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": true,
-      "remaining": 886140
+      "remaining": 886007
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": false,
-      "remaining": -648957
+      "remaining": -649255
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -2854003
+      "remaining": -2854380
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -5801860
+      "remaining": -5802094
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -9571303
+      "remaining": -9571015
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -14247485
+      "remaining": -14246116
      }
     ]
    },
@@ -5859,39 +5838,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": true,
-      "remaining": 374241
+      "remaining": 374108
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": false,
-      "remaining": -1160856
+      "remaining": -1161154
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -3365902
+      "remaining": -3366279
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -6313759
+      "remaining": -6313993
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -10083202
+      "remaining": -10082914
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -14759384
+      "remaining": -14758015
      }
     ]
    },
@@ -5901,39 +5880,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": false,
-      "remaining": -137659
+      "remaining": -137792
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": false,
-      "remaining": -1672756
+      "remaining": -1673054
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -3877802
+      "remaining": -3878179
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -6825659
+      "remaining": -6825893
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -10595102
+      "remaining": -10594814
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -15271284
+      "remaining": -15269915
      }
     ]
    },
@@ -5943,39 +5922,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": false,
-      "remaining": -649559
+      "remaining": -649692
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": false,
-      "remaining": -2184656
+      "remaining": -2184954
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -4389702
+      "remaining": -4390079
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -7337559
+      "remaining": -7337793
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -11107002
+      "remaining": -11106714
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -15783184
+      "remaining": -15781815
      }
     ]
    },
@@ -5985,39 +5964,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": false,
-      "remaining": -1161458
+      "remaining": -1161591
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": false,
-      "remaining": -2696555
+      "remaining": -2696853
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -4901601
+      "remaining": -4901978
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -7849458
+      "remaining": -7849692
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -11618901
+      "remaining": -11618613
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -16295083
+      "remaining": -16293714
      }
     ]
    },
@@ -6027,39 +6006,39 @@
     "covers": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "covered": false,
-      "remaining": -1673358
+      "remaining": -1673491
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "covered": false,
-      "remaining": -3208455
+      "remaining": -3208753
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "covered": false,
-      "remaining": -5413501
+      "remaining": -5413878
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "covered": false,
-      "remaining": -8361358
+      "remaining": -8361592
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "covered": false,
-      "remaining": -12130801
+      "remaining": -12130513
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "covered": false,
-      "remaining": -16806983
+      "remaining": -16805614
      }
     ]
    }
@@ -6072,39 +6051,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -2421839,
+      "deficit": -2421706,
       "applied": 3354370,
-      "after": -2421839
+      "after": -2421706
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6115,39 +6094,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -744654,
+      "deficit": -744521,
       "applied": 1677185,
-      "after": -744654
+      "after": -744521
      },
      {
       "fy": 29,
-      "deficit": -142088,
+      "deficit": -141923,
       "applied": 1677185,
-      "after": -142088
+      "after": -141923
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6158,39 +6137,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -185592,
+      "deficit": -185459,
       "applied": 1118123,
-      "after": -185592
+      "after": -185459
      },
      {
       "fy": 29,
-      "deficit": 416974,
+      "deficit": 417139,
       "applied": 1118123,
-      "after": 416974
+      "after": 417139
      },
      {
       "fy": 30,
-      "deficit": 1086923,
+      "deficit": 1087002,
       "applied": 1118123,
-      "after": 1086923
+      "after": 1087002
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6201,39 +6180,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -1909939,
+      "deficit": -1909806,
       "applied": 2842470,
-      "after": -1909939
+      "after": -1909806
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6244,39 +6223,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -488704,
+      "deficit": -488571,
       "applied": 1421235,
-      "after": -488704
+      "after": -488571
      },
      {
       "fy": 29,
-      "deficit": 113862,
+      "deficit": 114027,
       "applied": 1421235,
-      "after": 113862
+      "after": 114027
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6287,39 +6266,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -14959,
+      "deficit": -14826,
       "applied": 947490,
-      "after": -14959
+      "after": -14826
      },
      {
       "fy": 29,
-      "deficit": 587607,
+      "deficit": 587772,
       "applied": 947490,
-      "after": 587607
+      "after": 587772
      },
      {
       "fy": 30,
-      "deficit": 1257556,
+      "deficit": 1257635,
       "applied": 947490,
-      "after": 1257556
+      "after": 1257635
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6330,39 +6309,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -1398040,
+      "deficit": -1397907,
       "applied": 2330571,
-      "after": -1398040
+      "after": -1397907
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6373,39 +6352,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -232754,
+      "deficit": -232621,
       "applied": 1165285,
-      "after": -232754
+      "after": -232621
      },
      {
       "fy": 29,
-      "deficit": 369812,
+      "deficit": 369977,
       "applied": 1165285,
-      "after": 369812
+      "after": 369977
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6416,39 +6395,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 155674,
+      "deficit": 155807,
       "applied": 776857,
-      "after": 155674
+      "after": 155807
      },
      {
       "fy": 29,
-      "deficit": 758240,
+      "deficit": 758405,
       "applied": 776857,
-      "after": 758240
+      "after": 758405
      },
      {
       "fy": 30,
-      "deficit": 1428189,
+      "deficit": 1428268,
       "applied": 776857,
-      "after": 1428189
+      "after": 1428268
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6459,39 +6438,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -886140,
+      "deficit": -886007,
       "applied": 1818671,
-      "after": -886140
+      "after": -886007
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6502,39 +6481,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 23195,
+      "deficit": 23328,
       "applied": 909336,
-      "after": 23195
+      "after": 23328
      },
      {
       "fy": 29,
-      "deficit": 625761,
+      "deficit": 625926,
       "applied": 909336,
-      "after": 625761
+      "after": 625926
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6545,39 +6524,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 326307,
+      "deficit": 326440,
       "applied": 606224,
-      "after": 326307
+      "after": 326440
      },
      {
       "fy": 29,
-      "deficit": 928873,
+      "deficit": 929038,
       "applied": 606224,
-      "after": 928873
+      "after": 929038
      },
      {
       "fy": 30,
-      "deficit": 1598822,
+      "deficit": 1598901,
       "applied": 606224,
-      "after": 1598822
+      "after": 1598901
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6588,39 +6567,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": -374241,
+      "deficit": -374108,
       "applied": 1306772,
-      "after": -374241
+      "after": -374108
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6631,39 +6610,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 279145,
+      "deficit": 279278,
       "applied": 653386,
-      "after": 279145
+      "after": 279278
      },
      {
       "fy": 29,
-      "deficit": 881711,
+      "deficit": 881876,
       "applied": 653386,
-      "after": 881711
+      "after": 881876
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6674,39 +6653,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 496940,
+      "deficit": 497073,
       "applied": 435591,
-      "after": 496940
+      "after": 497073
      },
      {
       "fy": 29,
-      "deficit": 1099506,
+      "deficit": 1099671,
       "applied": 435591,
-      "after": 1099506
+      "after": 1099671
      },
      {
       "fy": 30,
-      "deficit": 1769455,
+      "deficit": 1769534,
       "applied": 435591,
-      "after": 1769455
+      "after": 1769534
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6717,39 +6696,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 137659,
+      "deficit": 137792,
       "applied": 794872,
-      "after": 137659
+      "after": 137792
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6760,39 +6739,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 535095,
+      "deficit": 535228,
       "applied": 397436,
-      "after": 535095
+      "after": 535228
      },
      {
       "fy": 29,
-      "deficit": 1137661,
+      "deficit": 1137826,
       "applied": 397436,
-      "after": 1137661
+      "after": 1137826
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6803,39 +6782,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 667574,
+      "deficit": 667707,
       "applied": 264957,
-      "after": 667574
+      "after": 667707
      },
      {
       "fy": 29,
-      "deficit": 1270140,
+      "deficit": 1270305,
       "applied": 264957,
-      "after": 1270140
+      "after": 1270305
      },
      {
       "fy": 30,
-      "deficit": 1940089,
+      "deficit": 1940168,
       "applied": 264957,
-      "after": 1940089
+      "after": 1940168
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6846,39 +6825,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 649559,
+      "deficit": 649692,
       "applied": 282972,
-      "after": 649559
+      "after": 649692
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6889,39 +6868,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 791045,
+      "deficit": 791178,
       "applied": 141486,
-      "after": 791045
+      "after": 791178
      },
      {
       "fy": 29,
-      "deficit": 1393611,
+      "deficit": 1393776,
       "applied": 141486,
-      "after": 1393611
+      "after": 1393776
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6932,39 +6911,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 838207,
+      "deficit": 838340,
       "applied": 94324,
-      "after": 838207
+      "after": 838340
      },
      {
       "fy": 29,
-      "deficit": 1440773,
+      "deficit": 1440938,
       "applied": 94324,
-      "after": 1440773
+      "after": 1440938
      },
      {
       "fy": 30,
-      "deficit": 2110722,
+      "deficit": 2110801,
       "applied": 94324,
-      "after": 2110722
+      "after": 2110801
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -6975,39 +6954,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "applied": 0,
-      "after": 932531
+      "after": 932664
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -7018,39 +6997,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "applied": 0,
-      "after": 932531
+      "after": 932664
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -7061,39 +7040,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "applied": 0,
-      "after": 932531
+      "after": 932664
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -7104,39 +7083,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "applied": 0,
-      "after": 932531
+      "after": 932664
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -7147,39 +7126,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "applied": 0,
-      "after": 932531
+      "after": 932664
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    },
@@ -7190,39 +7169,39 @@
     "years": [
      {
       "fy": 28,
-      "deficit": 932531,
+      "deficit": 932664,
       "applied": 0,
-      "after": 932531
+      "after": 932664
      },
      {
       "fy": 29,
-      "deficit": 1535097,
+      "deficit": 1535262,
       "applied": 0,
-      "after": 1535097
+      "after": 1535262
      },
      {
       "fy": 30,
-      "deficit": 2205046,
+      "deficit": 2205125,
       "applied": 0,
-      "after": 2205046
+      "after": 2205125
      },
      {
       "fy": 31,
-      "deficit": 2947857,
+      "deficit": 2947714,
       "applied": 0,
-      "after": 2947857
+      "after": 2947714
      },
      {
       "fy": 32,
-      "deficit": 3769443,
+      "deficit": 3768921,
       "applied": 0,
-      "after": 3769443
+      "after": 3768921
      },
      {
       "fy": 33,
-      "deficit": 4676182,
+      "deficit": 4675101,
       "applied": 0,
-      "after": 4676182
+      "after": 4675101
      }
     ]
    }
@@ -7233,56 +7212,56 @@
    "years": [
     {
      "fy": 28,
-     "deficit": 932531,
+     "deficit": 932664,
      "freeCashApplied": 794872,
-     "afterFreeCash": 137659,
+     "afterFreeCash": 137792,
      "overrideValue": 794872,
-     "afterOverride": 137659
+     "afterOverride": 137792
     },
     {
      "fy": 29,
-     "deficit": 1535097,
+     "deficit": 1535262,
      "freeCashApplied": 0,
-     "afterFreeCash": 1535097,
+     "afterFreeCash": 1535262,
      "overrideValue": 814744,
-     "afterOverride": 720353
+     "afterOverride": 720518
     },
     {
      "fy": 30,
-     "deficit": 2205046,
+     "deficit": 2205125,
      "freeCashApplied": 0,
-     "afterFreeCash": 2205046,
+     "afterFreeCash": 2205125,
      "overrideValue": 835112,
-     "afterOverride": 1369934
+     "afterOverride": 1370013
     },
     {
      "fy": 31,
-     "deficit": 2947857,
+     "deficit": 2947714,
      "freeCashApplied": 0,
-     "afterFreeCash": 2947857,
+     "afterFreeCash": 2947714,
      "overrideValue": 855990,
-     "afterOverride": 2091867
+     "afterOverride": 2091724
     },
     {
      "fy": 32,
-     "deficit": 3769443,
+     "deficit": 3768921,
      "freeCashApplied": 0,
-     "afterFreeCash": 3769443,
+     "afterFreeCash": 3768921,
      "overrideValue": 877390,
-     "afterOverride": 2892053
+     "afterOverride": 2891531
     },
     {
      "fy": 33,
-     "deficit": 4676182,
+     "deficit": 4675101,
      "freeCashApplied": 0,
-     "afterFreeCash": 4676182,
+     "afterFreeCash": 4675101,
      "overrideValue": 899325,
-     "afterOverride": 3776857
+     "afterOverride": 3775776
     }
    ],
-   "cumulativeNone": 16066156,
-   "cumulativeFreeCash": 15271284,
-   "cumulativeOverride": 10988723
+   "cumulativeNone": 16064787,
+   "cumulativeFreeCash": 15269915,
+   "cumulativeOverride": 10987354
   },
   "sustainableDraw": 2026212,
   "policyStops": [
@@ -7333,43 +7312,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 2026212,
-      "after": -1093681
+      "after": -1093548
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 16066156,
-    "gapLeftWithPolicy": 3908884
+    "gapLeftOneTimeOnly": 16064787,
+    "gapLeftWithPolicy": 3907515
    },
    {
     "target": 0.07,
@@ -7380,43 +7359,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 2026212,
-      "after": -1093681
+      "after": -1093548
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 16066156,
-    "gapLeftWithPolicy": 3908884
+    "gapLeftOneTimeOnly": 16064787,
+    "gapLeftWithPolicy": 3907515
    },
    {
     "target": 0.06,
@@ -7427,43 +7406,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 2309184,
-      "after": -1376653
+      "after": -1376520
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 15783184,
-    "gapLeftWithPolicy": 3625912
+    "gapLeftOneTimeOnly": 15781815,
+    "gapLeftWithPolicy": 3624543
    },
    {
     "target": 0.05,
@@ -7474,43 +7453,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 2821084,
-      "after": -1888553
+      "after": -1888420
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 15271284,
-    "gapLeftWithPolicy": 3114012
+    "gapLeftOneTimeOnly": 15269915,
+    "gapLeftWithPolicy": 3112643
    },
    {
     "target": 0.04,
@@ -7521,43 +7500,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 3332984,
-      "after": -2400453
+      "after": -2400320
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 14759384,
-    "gapLeftWithPolicy": 2602112
+    "gapLeftOneTimeOnly": 14758015,
+    "gapLeftWithPolicy": 2600743
    },
    {
     "target": 0.03,
@@ -7568,43 +7547,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 3844883,
-      "after": -2912352
+      "after": -2912219
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 14247485,
-    "gapLeftWithPolicy": 2090213
+    "gapLeftOneTimeOnly": 14246116,
+    "gapLeftWithPolicy": 2088844
    },
    {
     "target": 0.02,
@@ -7615,43 +7594,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 4356783,
-      "after": -3424252
+      "after": -3424119
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 13735585,
-    "gapLeftWithPolicy": 1578313
+    "gapLeftOneTimeOnly": 13734216,
+    "gapLeftWithPolicy": 1576944
    },
    {
     "target": 0.01,
@@ -7662,43 +7641,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 4868682,
-      "after": -3936151
+      "after": -3936018
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 13223686,
-    "gapLeftWithPolicy": 1066414
+    "gapLeftOneTimeOnly": 13222317,
+    "gapLeftWithPolicy": 1065045
    },
    {
     "target": 0.0,
@@ -7709,43 +7688,43 @@
     "years": [
      {
       "fy": 28,
-      "before": 932531,
+      "before": 932664,
       "applied": 5380582,
-      "after": -4448051
+      "after": -4447918
      },
      {
       "fy": 29,
-      "before": 1535097,
+      "before": 1535262,
       "applied": 2026212,
-      "after": -491115
+      "after": -490950
      },
      {
       "fy": 30,
-      "before": 2205046,
+      "before": 2205125,
       "applied": 2026212,
-      "after": 178834
+      "after": 178913
      },
      {
       "fy": 31,
-      "before": 2947857,
+      "before": 2947714,
       "applied": 2026212,
-      "after": 921645
+      "after": 921502
      },
      {
       "fy": 32,
-      "before": 3769443,
+      "before": 3768921,
       "applied": 2026212,
-      "after": 1743231
+      "after": 1742709
      },
      {
       "fy": 33,
-      "before": 4676182,
+      "before": 4675101,
       "applied": 2026212,
-      "after": 2649970
+      "after": 2648889
      }
     ],
-    "gapLeftOneTimeOnly": 12711786,
-    "gapLeftWithPolicy": 554514
+    "gapLeftOneTimeOnly": 12710417,
+    "gapLeftWithPolicy": 553145
    }
   ],
   "capital": {
@@ -9352,7 +9331,7 @@
   {
    "id": "gap",
    "label": "The hole, every year",
-   "value": "$676,899",
+   "value": "$677,024",
    "sub": "Average annual shortfall FY28\u2013FY30, after each year\u2019s cuts compound",
    "anchor": "years",
    "tone": "critical"
@@ -9404,7 +9383,7 @@
    "anchor": "the-money",
    "headline": "Cutting every extra still funded \u2014 $376,207 \u2014 covers 40% of next year\u2019s gap, once.",
    "figure": "$376,207",
-   "body": "Every sport still funded, every band, every club and every art supply, eliminated entirely, comes to $376,207; the FY27 budget already took most of athletics, and the same money cannot be cut twice. Next year\u2019s gap is $932,531 and the five-year total about $3.2 million. So the whole \"cut the frills\" argument does not cover FY28, and then the column is empty forever while the gap returns every single year."
+   "body": "Every sport still funded, every band, every club and every art supply, eliminated entirely, comes to $376,207; the FY27 budget already took most of athletics, and the same money cannot be cut twice. Next year\u2019s gap is $932,664 and the five-year total about $3.2 million. So the whole \"cut the frills\" argument does not cover FY28, and then the column is empty forever while the gap returns every single year."
   },
   {
    "n": 2,

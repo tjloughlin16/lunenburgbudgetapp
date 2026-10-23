@@ -26,7 +26,7 @@ it at all. So the fall is a **level** change rather than a slower rate of growth
 happen again, but it cannot keep happening, and the published 3.98% describes a year
 whose arithmetic does not carry forward.
 
-Underneath it, in-district special education escalates at **6.48%** — and the reason is
+Underneath it, in-district special education escalates at **6.43%** — and the reason is
 not pay. The paras are on a contract giving 2.0%; their budget line has grown **12.78% a
 year across 10 budgets**, up in 8 of 9. The teachers are on a contract giving 3.5% and
 theirs has grown 2.67%. **A contract sets what one person is paid. It says nothing
@@ -45,13 +45,20 @@ below therefore rests on a classification somebody made. This one is ours.
 
 The rule has two parts:
 
-1. **8 function groups are special education outright**, and every line inside them
+1. **6 function groups are special education outright**, and every line inside them
    counts — except English Language Learner lines, which are excluded wherever they
-   appear — 46 lines.
-2. **Inside the mixed groups, a line counts when the district's own label says so** —
-   8 lines.
+   appear — 38 lines.
+2. **Inside the mixed groups, a line counts when the district's own label says so**, in
+   any of the spellings the book uses ("Special Ed", "Specl Ed", "Spcl Ed", "Spec Ed") —
+   10 lines.
+3. **Where a label and DESE's documents disagree, DESE's word decides**, once, for every
+   special education figure on this site: `sources/data/sped-definition.csv`, item by
+   item with the DESE cell for each, at `/special-education/sped-definition`. Since 23
+   October 2026 that brings in the Student Services Coordinator, whose salary the
+   district's own End of Year Report counts as special education, and leaves out
+   psychological services (2800), equipment (7300) and Section 504 supplies.
 
-Together, **54 lines totalling $5,466,201**, which is the amount every projection
+Together, **48 lines totalling $5,544,996**, which is the amount every projection
 here starts from.
 
 The groups taken whole:
@@ -62,18 +69,18 @@ The groups taken whole:
 - `2320 - Therapeutic Services`
 - `2325 - Special Education Substitutes`
 - `2330 - Paraprofessionals Special Education *** (LTP notes)`
-- `2800 - Psych. Services`
-- `2800 - Psychological Services`
 
-The 8 lines caught by their name rather than their group, one of which is most of the
+The 10 lines caught by their name rather than their group, one of which is most of the
 money:
 
 | line | FY27 |
 |---|---:|
 | Special Education Transportation - System | $649,953 |
+| Student Services Coordinator (Spec Ed) | $155,418 |
+| Spcl Ed Contrtd Related Services | $130,000 |
 | Special Ed Hospital Tutoring | $10,000 |
 | Special Ed Contrctd Evaluations | $8,000 |
-| Special Ed Equipment | $4,000 |
+| Spcl Ed General School Supplies | $5,100 |
 | E.S. Special Education Instr. Materials | $3,317 |
 | H.S. Special Education Instr. Materials | $2,215 |
 | P.S. Special Education Instr. Materials | $1,800 |
@@ -83,6 +90,9 @@ money:
 its middle.
 
 - **2330 - Paraprofessionals General Education** — General education paras. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction. FY25 $121,233, FY26 $0, FY27 $0.
+- **Psychological services (2800): psychologists and testing** — Taken whole until 23 October 2026. DESE splits psychologists by job code, and the district's two End of Year Reports put the same accounts on opposite sides, so it is left out (sped-definition.csv, `psychology`). FY25 $270,675, FY26 $295,355, FY27 $207,723.
+- **Special education equipment (7300)** — DESE's chart gives equipment no program. FY25 $7,000, FY26 $7,000, FY27 $4,000.
+- **Section 504 program supplies** — a 504 plan is not special education under MGL c.71B. Budgeted at nothing in all three years.
 - **9300 / 9400 — out-of-district tuition** — Special education, but escalated on its own because it is set by placement rather than by payroll, and it behaves nothing like staffing. FY25 $1,164,824, FY26 $1,291,293, FY27 $700,142.
 
 The general education paras are worth a second look. They are budgeted at nothing from
@@ -119,21 +129,27 @@ Against a 2.5% levy cap, a 1.48-point gap.
 
 | bucket | FY26 | FY27 level service | change | rate | share of the increase |
 |---|---:|---:|---:|---:|---:|
-| Salaries | 12,801,345 | 13,503,716 | +702,371 | +5.5% | 67% |
-| **Special education, in district** | **4,964,329** | **5,442,383** | **+478,054** | **+9.6%** | **46%** |
+| Salaries | 12,938,963 | 13,543,895 | +604,932 | +4.7% | 58% |
+| **Special education, in district** | **4,918,136** | **5,521,178** | **+603,042** | **+12.3%** | **58%** |
 | Health insurance | 3,752,258 | 4,068,166 | +315,908 | +8.4% | 30% |
 | Transportation | 965,500 | 1,053,360 | +87,860 | +9.1% | 8% |
 | Utilities | 548,450 | 605,511 | +57,061 | +10.4% | 5% |
-| Everything else | 1,964,301 | 1,960,011 | −4,290 | −0.2% | ~0% |
+| Everything else | 1,872,876 | 1,841,037 | −31,839 | −1.7% | −3% |
 | **Out-of-district tuition** | **1,291,293** | **700,142** | **−591,151** | **−45.8%** | **−57%** |
 
 Shares exceed 100% because one line runs the other way.
 
 In-district special education is the **second-largest single contributor to cost growth**,
-at more than twice the blended rate. Taken all in — including tuition — special education
-made the level-service budget $100,074 *smaller*.
+$1,890 behind salaries, at three times the blended rate. Taken all in — including tuition —
+special education added only $11,891 to the level-service budget: the in-district rise and
+the tuition fall nearly cancel.
 
 Both statements are true. Which one is useful depends on whether the tuition fall repeats.
+
+(Until 23 October 2026 this table counted psychological services and not the Student
+Services Coordinator, and read +$478,054 for the line and −$100,074 taken all in. The
+psychologists' lines fell in FY27, so taking them out made the line's rise larger. The
+definition is now DESE's: `/special-education/sped-definition`.)
 
 ---
 
@@ -146,11 +162,10 @@ entries moving in opposite directions:
 |---|---:|---:|---:|---:|---:|
 | **Paraprofessionals** | 1,366,893 | 1,342,373 | **1,872,411** | **+530,038** | **+39.5%** |
 | Special education transport | 445,328 | 565,734 | 649,953 | +84,219 | +14.9% |
-| Speech, OT and summer services | 768,573 | 753,555 | 784,444 | +30,889 | +4.1% |
+| Speech, OT and summer services | 603,017 | 567,677 | 589,245 | +21,568 | +3.8% |
 | Substitutes | 52,500 | 52,500 | 52,500 | 0 | 0% |
-| Administration, legal, supplies | 145,467 | 167,842 | 134,741 | −33,101 | −19.7% |
-| Special education teachers | 1,979,158 | 1,978,848 | 1,945,512 | −33,336 | −1.7% |
-| Psychologists and testing | 270,675 | 295,355 | 207,723 | −87,632 | −29.7% |
+| Administration, legal, supplies | 278,967 | 293,004 | 263,557 | −29,447 | −10.1% |
+| Special education teachers and contracted services | 2,093,158 | 2,096,848 | 2,093,512 | −3,336 | −0.2% |
 | **Out-of-district tuition** | 1,164,824 | 1,291,293 | **700,142** | **−591,151** | **−45.8%** |
 
 Teachers are flat. Therapists are near flat. Substitutes are identical. The year is
@@ -199,10 +214,10 @@ if placements return, or if the FY27 figure was optimistic — FY28 looks materi
 
 | FY28 out-of-district tuition | FY28 gap | against the model |
 |---|---:|---:|
-| As the district budgeted it for FY27, $700,142 | $932,531 | — |
-| Midway back, $1,000,000 | $1,232,389 | **+$299,858** |
-| Back to the FY25 budget, $1,164,824 | $1,397,213 | **+$464,682** |
-| Back to the FY26 budget, $1,291,293 | $1,523,682 | **+$591,151** |
+| As the district budgeted it for FY27, $700,142 | $932,664 | — |
+| Midway back, $1,000,000 | $1,232,522 | **+$299,858** |
+| Back to the FY25 budget, $1,164,824 | $1,397,346 | **+$464,682** |
+| Back to the FY26 budget, $1,291,293 | $1,523,815 | **+$591,151** |
 
 None of these is a forecast. They are the cost of being wrong about one line, and the
 range is wider than any other single assumption in the model.
@@ -212,7 +227,7 @@ range is wider than any other single assumption in the model.
 ## Is the increase in paras a step, or a climb?
 
 The whole in-district rate turns on this. If FY27's 39% increase in paraprofessionals was
-a one-time step, its cost already sits in the $5,745,543 the model starts from and the
+a one-time step, its cost already sits in the $5,544,996 the model starts from and the
 line should escalate at what the contracts give. If it is the latest year of a climb, it
 should escalate at what the climb has been doing.
 
@@ -245,11 +260,13 @@ wherever you start it — the opposite of out-of-district tuition, whose rate sw
 steepest year of a trend running since FY18, not a departure from one.
 
 **And it is the paras, not the rest of the line, that make special education a driver.**
-In FY27 the paraprofessional increase was **111% of the whole year's rise** in in-district
-special education — every other part of the line fell. Take the paras out and the
-remainder grew **1.02% a year** across the two most recent budgets, below the levy cap. One
-part of this line is climbing and the rest is close to flat, which is precisely why a
-single blended rate taken from the settlements gets it wrong.
+In FY27 the paraprofessional increase was **88% of the whole year's rise** in in-district
+special education — everything else in the line, taken together, rose by $73,004. Take the
+paras out and the remainder grew **2.50% a year** across the two most recent budgets, at
+the levy cap. One part of this line is climbing and the rest grows at about the cap, which
+is precisely why a single blended rate taken from the settlements gets it wrong. (These
+read 111% and 1.02% until 23 October 2026, while the line still counted psychological
+services, which fell in FY27.)
 
 **That is headcount, and no settlement reaches it.** The paras' contract gives 2.0%. Their
 budget line has grown at 12.8%. Pricing them at their contract assumes the district stops
@@ -440,9 +457,9 @@ But a reader should know the alternative and what it is worth, so here it is:
 
 | para component | blended rate | FY28 gap |
 |---|---:|---:|
-| What the budget line did — **used** | 12.78% | $932,531 |
-| Headcount growth plus their contract | 5.98% | $804,719 |
-| Their contract alone | 2.00% | $729,871 |
+| What the budget line did — **used** | 12.78% | $932,664 |
+| Headcount growth plus their contract | 5.98% | $804,860 |
+| Their contract alone | 2.00% | $730,017 |
 
 **What would settle it** is unchanged and now more valuable: DESE's End of Year Financial
 Report separates spending by fund. See `notes/findings/DATA-WANTED.md`.
@@ -527,10 +544,10 @@ because the line is well behaved, and it is 12% of the total.
 
 ### Two things this does not cover, said plainly
 
-**$920,007 of the line — 16.9% of it — is not measured.** The rate for professional
-staff was measured on the teacher lines, $1,945,512 of a $2,865,519 component. The rest is
-therapeutic services, psychologists, clerical and supplies, and it rides on the teachers'
-rate. Extracting the speech and therapy lines was attempted and yielded three settled
+**$1,000,802 of the line — 18.1% of it — is not measured.** The rate for professional
+staff was measured on the teacher lines, $1,945,512 of a $2,946,314 component. The rest is
+therapeutic and contracted related services, the student services coordinator, clerical
+and supplies, and it rides on the teachers' rate. Extracting the speech and therapy lines was attempted and yielded three settled
 years, which is not enough to test a trend on. It is the next thing worth doing if more of
 the district's documents are mirrored.
 
@@ -551,7 +568,7 @@ argument that FY27's increase in paras was a step already sitting in the base. *
 argument was sound and its premise was false.** With two budget years there is no way to
 tell a step from a climb; with ten there is, and it is a climb.
 
-The rate is now **6.48%**, and the projected gap went up rather than down. That is what
+The rate is now **6.43%**, and the projected gap went up rather than down. That is what
 the evidence says, and the direction it moves the answer is not a reason to prefer the
 other one.
 
@@ -677,19 +694,19 @@ Weighting each part of the line by the contract that governs it:
 
 | bargaining unit | share of the line | their contract |
 |---|---:|---|
-| Professional staff (LEA) | 52% | 3.5% FY27, plus steps |
-| Paraprofessionals (AFSCME 503) | 33% | 2.0% FY28, plus steps |
+| Professional staff (LEA) | 53% | 3.5% FY27, plus steps |
+| Paraprofessionals (AFSCME 503) | 34% | 2.0% FY28, plus steps |
 | Transport (vendor) | 12% | vendor contract |
-| Substitutes, supplies, legal | 3% | not bargained |
+| Substitutes | 1% | not bargained |
 
-**Weighted, those two settlements come to 2.57%** — and the line has risen faster than that
+**Weighted, those two settlements come to 2.55%** — and the line has risen faster than that
 in every budget we hold.
 
 That gap is the whole question, and it is answered in *Is the increase in paras a step, or
 a climb?* above: the paras' line has grown 12.8% a year across 10 budgets while their
 contract gives 2.0%. So the model escalates
 every part of it at what its own budgets show it doing, measured across eight to ten
-years of them, which comes to **6.48%**.
+years of them, which comes to **6.43%**.
 
 > **Correction, 28 August 2026.** This file has carried five different rates for this line
 > in one day. The sequence is kept because each step was a real error and the last one is
@@ -715,6 +732,11 @@ years of them, which comes to **6.48%**.
 > taken the whole of function 2330, which also files $10,000, $2,000 and $2,000 of tutoring
 > and contracted services in FY25 to FY27; the paras' rate is measured on the five school
 > paraprofessional lines alone, so it is now applied to those lines alone.
+>
+> **6.43%**, 23 October 2026, is the same measurement on the definition DESE's documents
+> decide (`sources/data/sped-definition.csv`): the Student Services Coordinator and two
+> "Spcl Ed" lines came in, psychological services and equipment went out. On that line the
+> whole-line rate over two budgets reads 6.81%, and it is still one hiring decision averaged.
 >
 > The lesson is not about any of the five numbers. It is that a contract sets what one
 > person is paid and says nothing about how many people are employed, and that on this

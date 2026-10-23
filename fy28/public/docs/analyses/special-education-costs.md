@@ -8,7 +8,7 @@
 
 **In the worst of 17 years, special education needed $223,774 more than its voted budget.** That was FY2013; the median year needed $39,766. General fund: what exceeded the circuit breaker account too.
 
-**Out-of-district tuition is the swing: over its voted budget in 7 of 17 years.** The worst, FY2019, was $204,015 over. In-district spending never ran more than 2.7% over.
+**Out-of-district tuition is the swing: over its voted budget in 7 of 17 years.** The worst, FY2019, was $204,015 over. In-district spending never ran more than 2.6% over.
 
 **Measured after the circuit breaker account, no year in 17 needed more than $300,000.** Counting that account’s routine tuition as surprise, 3 of 4 recent years did; $500,000 covers 3 of 4.
 
@@ -29,7 +29,7 @@
 | FY2023 | $0 | $309,798 | $494,968 | yes |
 | FY2024 | $152,724 | $619,020 | $466,296 | yes |
 | FY2025 | $0 | $41,124 | $473,650 | no |
-| FY2026 | $150,131 | $395,104 | $333,495 | yes |
+| FY2026 | $140,743 | $385,716 | $333,495 | yes |
 
 *FY2023 to FY2026, the four closed years the year-end reports print in full; every special education line, overruns added without netting (our rule).* On basis (a), across all 17 years since FY2010, no year passed $300,000; the worst was $223,774, in FY2013.
 
@@ -73,35 +73,35 @@ Every figure on this page is a NET result at the close of a year: children who a
 
 ### In plain terms
 
-Before each year begins the town votes a budget for special education. At the close of the year the accounting system records what was spent. The difference is the surprise. Across 17 years, the out-of-district tuition line ran over in 7 and under in the rest; transportation ran over in 6; the in-district lines ran over in 5, and never by more than 2.7%.
+Before each year begins the town votes a budget for special education. At the close of the year the accounting system records what was spent. The difference is the surprise. Across 17 years, the out-of-district tuition line ran over in 7 and under in the rest; transportation ran over in 6; the in-district lines ran over in 5, and never by more than 2.6%.
 
 ### The evidence
 
 | FY | tuition voted | tuition spent | miss | in-district voted | in-district spent | miss | transport voted | transport spent | miss | overruns, added | ledger |
 |---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|---|
-| FY2010 | $165,000 | $183,735 | +$18,735 | $2,203,433 | $2,141,545 | -$61,888 | $300,000 | $226,876 | -$73,124 | $18,735 | FinCom history |
-| FY2011 | $607,405 | $648,358 | +$40,953 | $2,013,473 | $2,066,833 | +$53,360 | $300,000 | $267,248 | -$32,752 | $94,313 | FinCom history |
-| FY2012 | $708,000 | $665,200 | -$42,800 | $2,336,028 | $2,283,609 | -$52,419 | $270,000 | $309,766 | +$39,766 | $39,766 | FinCom history |
-| FY2013 | $818,500 | $949,835 | +$131,335 | $2,209,487 | $2,190,304 | -$19,183 | $348,060 | $440,499 | +$92,439 | $223,774 | FinCom history |
-| FY2014 | $1,144,319 | $1,235,349 | +$91,030 | $2,268,285 | $2,274,722 | +$6,437 | $395,702 | $444,752 | +$49,050 | $146,517 | FinCom history |
-| FY2015 | $1,529,405 | $1,472,753 | -$56,652 | $2,506,498 | $2,449,637 | -$56,861 | $415,488 | $480,819 | +$65,331 | $65,331 | FinCom history |
-| FY2016 | $989,655 | $965,926 | -$23,729 | $2,774,291 | $2,813,739 | +$39,448 | $469,046 | $460,508 | -$8,538 | $39,448 | FinCom history |
-| FY2017 | $903,960 | $641,626 | -$262,334 | $3,105,994 | $3,081,936 | -$24,058 | $489,250 | $360,537 | -$128,713 | $0 | FinCom history |
-| FY2018 | $888,909 | $868,928 | -$19,981 | $3,065,431 | $2,905,432 | -$159,999 | $490,000 | $366,184 | -$123,816 | $0 | FinCom history |
-| FY2019 | $754,480 | $958,495 | +$204,015 | $2,998,364 | $2,939,574 | -$58,790 | $417,585 | $322,047 | -$95,538 | $204,015 | FinCom history |
-| FY2020 | $865,746 | $869,557 | +$3,811 | $3,245,546 | $3,159,564 | -$85,982 | $446,658 | $223,350 | -$223,308 | $3,811 | FinCom history |
-| FY2021 | $719,269 | $335,377 | -$383,892 | $3,427,643 | $3,349,796 | -$77,847 | $380,409 | $260,921 | -$119,488 | $0 | FinCom history |
-| FY2022 | $818,716 | $397,233 | -$421,483 | $3,508,656 | $3,604,649 | +$95,993 | $297,843 | $241,390 | -$56,453 | $95,993 | FinCom history |
-| FY2023 | $489,918 | $304,748 | -$185,170 | $3,724,015 | $3,654,709 | -$69,306 | $329,360 | $320,244 | -$9,116 | $0 | MUNIS year-end |
-| FY2024 | $501,239 | $588,508 | +$87,269 | $3,850,408 | $3,652,104 | -$198,304 | $335,947 | $401,402 | +$65,455 | $152,724 | MUNIS year-end |
-| FY2025 | $1,164,824 | $732,298 | -$432,526 | $4,262,965 | $3,944,444 | -$318,521 | $445,328 | $434,922 | -$10,406 | $0 | MUNIS year-end |
-| FY2026 | $1,291,293 | $1,202,771 | -$88,522 | $4,216,813 | $4,299,387 | +$82,574 | $565,734 | $633,291 | +$67,557 | $150,131 | MUNIS year-end |
+| FY2010 | $165,000 | $183,735 | +$18,735 | $2,287,533 | $2,230,417 | -$57,116 | $300,000 | $226,876 | -$73,124 | $18,735 | FinCom history |
+| FY2011 | $607,405 | $648,358 | +$40,953 | $2,102,473 | $2,152,074 | +$49,601 | $300,000 | $267,248 | -$32,752 | $90,554 | FinCom history |
+| FY2012 | $708,000 | $665,200 | -$42,800 | $2,424,028 | $2,372,915 | -$51,113 | $270,000 | $309,766 | +$39,766 | $39,766 | FinCom history |
+| FY2013 | $818,500 | $949,835 | +$131,335 | $2,202,787 | $2,179,875 | -$22,912 | $348,060 | $440,499 | +$92,439 | $223,774 | FinCom history |
+| FY2014 | $1,144,319 | $1,235,349 | +$91,030 | $2,352,546 | $2,357,288 | +$4,742 | $395,702 | $444,752 | +$49,050 | $144,822 | FinCom history |
+| FY2015 | $1,529,405 | $1,472,753 | -$56,652 | $2,591,498 | $2,538,142 | -$53,356 | $415,488 | $480,819 | +$65,331 | $65,331 | FinCom history |
+| FY2016 | $989,655 | $965,926 | -$23,729 | $2,859,291 | $2,897,092 | +$37,801 | $469,046 | $460,508 | -$8,538 | $37,801 | FinCom history |
+| FY2017 | $903,960 | $641,626 | -$262,334 | $3,192,728 | $3,169,818 | -$22,910 | $489,250 | $360,537 | -$128,713 | $0 | FinCom history |
+| FY2018 | $888,909 | $868,928 | -$19,981 | $3,152,398 | $2,998,955 | -$153,443 | $490,000 | $366,184 | -$123,816 | $0 | FinCom history |
+| FY2019 | $754,480 | $958,495 | +$204,015 | $3,089,005 | $3,036,125 | -$52,880 | $417,585 | $322,047 | -$95,538 | $204,015 | FinCom history |
+| FY2020 | $865,746 | $869,557 | +$3,811 | $3,336,187 | $3,275,608 | -$60,579 | $446,658 | $223,350 | -$223,308 | $3,811 | FinCom history |
+| FY2021 | $719,269 | $335,377 | -$383,892 | $3,541,143 | $3,466,704 | -$74,439 | $380,409 | $260,921 | -$119,488 | $0 | FinCom history |
+| FY2022 | $818,716 | $397,233 | -$421,483 | $3,625,656 | $3,718,535 | +$92,879 | $297,843 | $241,390 | -$56,453 | $92,879 | FinCom history |
+| FY2023 | $489,918 | $304,748 | -$185,170 | $3,843,015 | $3,783,794 | -$59,221 | $329,360 | $320,244 | -$9,116 | $0 | MUNIS year-end |
+| FY2024 | $501,239 | $588,508 | +$87,269 | $3,978,308 | $3,786,492 | -$191,816 | $335,947 | $401,402 | +$65,455 | $152,724 | MUNIS year-end |
+| FY2025 | $1,164,824 | $732,298 | -$432,526 | $4,394,535 | $4,078,902 | -$315,633 | $445,328 | $434,922 | -$10,406 | $0 | MUNIS year-end |
+| FY2026 | $1,291,293 | $1,202,771 | -$88,522 | $4,352,400 | $4,425,586 | +$73,186 | $565,734 | $633,291 | +$67,557 | $140,743 | MUNIS year-end |
 
-*FY2010 to FY2026, 17 years.* **voted** is the ORIGINAL general fund budget — what Town Meeting appropriated before the year began. **spent** is expended plus encumbered at the close (only FY2026 carries an encumbrance). **overruns, added** is every line’s overrun summed without netting any line’s underspend against it: the amount a reserve would have had to supply if nothing else in the school budget were moved. **That rule is ours.** Netting the three lines instead, the worst year is FY2013, +$204,591.
+*FY2010 to FY2026, 17 years.* **voted** is the ORIGINAL general fund budget — what Town Meeting appropriated before the year began. **spent** is expended plus encumbered at the close (only FY2026 carries an encumbrance). **overruns, added** is every line’s overrun summed without netting any line’s underspend against it: the amount a reserve would have had to supply if nothing else in the school budget were moved. **That rule is ours.** Netting the three lines instead, the worst year is FY2013, +$200,862.
 
 **Comparing a budget to an actual is allowed here, and only here.** Rule 1 of this project forbids mixing the two in a growth rate or a projection, because the step between them contaminates the rate. In this section the step between them is the thing being measured. Nothing below grows a budget from an actual.
 
-**Is this FY2025 again?** FY2025 is the year the schools finished with money unspent. Its three special education lines together came in $761,453 under the budget voted for them, $432,526 of it on tuition. In FY2026, the latest closed year, they came in $61,609 over.
+**Is this FY2025 again?** FY2025 is the year the schools finished with money unspent. Its three special education lines together came in $758,565 under the budget voted for them, $432,526 of it on tuition. In FY2026, the latest closed year, they came in $52,221 over.
 
 **What was said in the overrun years.** Statements, not measurements.
 
@@ -214,42 +214,42 @@ Whether the district plans on the account. If the general fund tuition line is b
 
 ### In plain terms
 
-Over FY2010 to FY2026, in-district special education averaged $2,988,940 a year of general fund spending and out-of-district tuition $765,923. Together, on that same basis, $3,754,864 a year; over the last five years, $4,476,170. Counting every fund, as the state reports it, out-of-district tuition averaged $1,201,594 a year over FY2009 to FY2025, and the circuit breaker paid back an average of $474,634 a year.
+Over FY2010 to FY2026, in-district special education averaged $3,086,372 a year of general fund spending and out-of-district tuition $765,923. Together, on that same basis, $3,852,295 a year; over the last five years, $4,603,773. Counting every fund, as the state reports it, out-of-district tuition averaged $1,201,594 a year over FY2009 to FY2025, and the circuit breaker paid back an average of $474,634 a year.
 
 ### The evidence
 
 | FY | in district, spent (general fund) | tuition, spent (general fund) | transportation, spent (general fund) | tuition, every fund (DESE) | circuit breaker paid (DESE) |
 |---|---:|---:|---:|---:|---:|
 | FY2009 | — | — | — | $674,350 | $474,301 |
-| FY2010 | $2,141,545 | $183,735 | $226,876 | $539,509 | $211,224 |
-| FY2011 | $2,066,833 | $648,358 | $267,248 | $825,194 | $201,165 |
-| FY2012 | $2,283,609 | $665,200 | $309,766 | $1,232,350 | $419,945 |
-| FY2013 | $2,190,304 | $949,835 | $440,499 | $1,554,923 | $615,317 |
-| FY2014 | $2,274,722 | $1,235,349 | $444,752 | $1,852,392 | $575,389 |
-| FY2015 | $2,449,637 | $1,472,753 | $480,819 | $2,094,813 | $672,634 |
-| FY2016 | $2,813,739 | $965,926 | $460,508 | $1,553,142 | $784,099 |
-| FY2017 | $3,081,936 | $641,626 | $360,537 | $1,170,397 | $507,832 |
-| FY2018 | $2,905,432 | $868,928 | $366,184 | $1,140,157 | $366,790 |
-| FY2019 | $2,939,574 | $958,495 | $322,047 | $1,166,701 | $430,958 |
-| FY2020 | $3,159,564 | $869,557 | $223,350 | $1,315,167 | $478,987 |
-| FY2021 | $3,349,796 | $335,377 | $260,921 | $871,429 | $484,579 |
-| FY2022 | $3,604,649 | $397,233 | $241,390 | $945,295 | $519,394 |
-| FY2023 | $3,654,709 | $304,748 | $320,244 | $828,554 | $415,750 |
-| FY2024 | $3,652,104 | $588,508 | $401,402 | $1,456,770 | $401,966 |
-| FY2025 | $3,944,444 | $732,298 | $434,922 | $1,205,949 | $508,441 |
-| FY2026 | $4,299,387 | $1,202,771 | $633,291 | — | $579,142 |
+| FY2010 | $2,230,417 | $183,735 | $226,876 | $539,509 | $211,224 |
+| FY2011 | $2,152,074 | $648,358 | $267,248 | $825,194 | $201,165 |
+| FY2012 | $2,372,915 | $665,200 | $309,766 | $1,232,350 | $419,945 |
+| FY2013 | $2,179,875 | $949,835 | $440,499 | $1,554,923 | $615,317 |
+| FY2014 | $2,357,288 | $1,235,349 | $444,752 | $1,852,392 | $575,389 |
+| FY2015 | $2,538,142 | $1,472,753 | $480,819 | $2,094,813 | $672,634 |
+| FY2016 | $2,897,092 | $965,926 | $460,508 | $1,553,142 | $784,099 |
+| FY2017 | $3,169,818 | $641,626 | $360,537 | $1,170,397 | $507,832 |
+| FY2018 | $2,998,955 | $868,928 | $366,184 | $1,140,157 | $366,790 |
+| FY2019 | $3,036,125 | $958,495 | $322,047 | $1,166,701 | $430,958 |
+| FY2020 | $3,275,608 | $869,557 | $223,350 | $1,315,167 | $478,987 |
+| FY2021 | $3,466,704 | $335,377 | $260,921 | $871,429 | $484,579 |
+| FY2022 | $3,718,535 | $397,233 | $241,390 | $945,295 | $519,394 |
+| FY2023 | $3,783,794 | $304,748 | $320,244 | $828,554 | $415,750 |
+| FY2024 | $3,786,492 | $588,508 | $401,402 | $1,456,770 | $401,966 |
+| FY2025 | $4,078,902 | $732,298 | $434,922 | $1,205,949 | $508,441 |
+| FY2026 | $4,425,586 | $1,202,771 | $633,291 | — | $579,142 |
 
 *FY2009 to FY2026.* Each column is ONE basis and they are never added across: the first three are the town’s ledger, closed-year spending, general fund only; the fourth is DESE’s End of Year Financial Report, functions 9300 and 9400, every fund; the fifth is the state’s payment schedule, by year of PAYMENT, and each payment answers for the year before.
 
 | average a year of | span | whole span | last five years |
 |---|---|---:|---:|
-| In-district special education (general fund, ours) | FY2010 to FY2026 | $2,988,940 | $3,831,059 |
+| In-district special education (general fund, ours) | FY2010 to FY2026 | $3,086,372 | $3,958,662 |
 | Out-of-district tuition (general fund) | FY2010 to FY2026 | $765,923 | $645,112 |
-| **Combined, in district and out (general fund)** | FY2010 to FY2026 | **$3,754,864** | **$4,476,170** |
+| **Combined, in district and out (general fund)** | FY2010 to FY2026 | **$3,852,295** | **$4,603,773** |
 | Special education transportation (general fund) | FY2010 to FY2026 | $364,397 | $406,250 |
 | Out-of-district tuition, every fund (DESE) | FY2009 to FY2025 | $1,201,594 | $1,061,599 |
 
-**Why the combined figure is general fund only, and transportation sits apart.** The in-district lines and the general fund tuition line come from the same ledger, the same fund and the same years, so adding them is like with like. Tuition from every fund comes from a different return and has no in-district counterpart — DESE publishes no in-district special education total — so it is not added to anything. Transportation is one account, and the circuit breaker reimburses the out-of-district part of it, so it cannot be put on either side. Out-of-district tuition was between 7.7% and 37.5% of the general fund combined figure across the span.
+**Why the combined figure is general fund only, and transportation sits apart.** The in-district lines and the general fund tuition line come from the same ledger, the same fund and the same years, so adding them is like with like. Tuition from every fund comes from a different return and has no in-district counterpart — DESE publishes no in-district special education total — so it is not added to anything. Transportation is one account, and the circuit breaker reimburses the out-of-district part of it, so it cannot be put on either side. Out-of-district tuition was between 7.5% and 36.7% of the general fund combined figure across the span.
 
 ### What this does not show
 
@@ -287,12 +287,12 @@ Dividing a year’s tuition, from every fund, by the number of children the town
 
 | FY | children with a plan, in district (DESE) | in-district spent (general fund, ours) | per child in district — OUR ESTIMATE | children with a plan, all (DESE) | in district + tuition (general fund) | per child, combined — OUR ESTIMATE |
 |---|---:|---:|---:|---:|---:|---:|
-| FY2021 | 249 | $3,349,796 | $13,453 | 261 | $3,685,173 | $14,119 |
-| FY2022 | 217 | $3,604,649 | $16,611 | 227 | $4,001,882 | $17,629 |
-| FY2023 | 230 | $3,654,709 | $15,890 | 234 | $3,959,457 | $16,921 |
-| FY2024 | 224 | $3,652,104 | $16,304 | 233 | $4,240,612 | $18,200 |
-| FY2025 | 238 | $3,944,444 | $16,573 | 248 | $4,676,742 | $18,858 |
-| FY2026 | 246 | $4,299,387 | $17,477 | 258 | $5,502,158 | $21,326 |
+| FY2021 | 249 | $3,466,704 | $13,923 | 261 | $3,802,081 | $14,567 |
+| FY2022 | 217 | $3,718,535 | $17,136 | 227 | $4,115,768 | $18,131 |
+| FY2023 | 230 | $3,783,794 | $16,451 | 234 | $4,088,542 | $17,472 |
+| FY2024 | 224 | $3,786,492 | $16,904 | 233 | $4,375,000 | $18,777 |
+| FY2025 | 238 | $4,078,902 | $17,138 | 248 | $4,811,200 | $19,400 |
+| FY2026 | 246 | $4,425,586 | $17,990 | 258 | $5,628,357 | $21,815 |
 
 *FY2021 to FY2026, the years DESE publishes the in-district count.* DESE counts children with a plan in October; the town counts placements in March.
 
@@ -425,7 +425,7 @@ What the town should hold. A reserve sized to the worst of 17 years covers the w
 
 `notes/process/PERSONAS.md`, run before publishing.
 
-- **Already sure the schools are not straight with them.** The largest figure on the page — $619,020 in FY2024, counting the circuit breaker account’s routine tuition as surprise — is in the summary, labelled as the upper bound it is, and so is the fact that in-district spending never ran more than 2.7% over.
+- **Already sure the schools are not straight with them.** The largest figure on the page — $619,020 in FY2024, counting the circuit breaker account’s routine tuition as surprise — is in the summary, labelled as the upper bound it is, and so is the fact that in-district spending never ran more than 2.6% over.
 - **Hears it second-hand.** The sentence they will repeat is the first card: in the worst of 17 years special education needed $223,774 more than its voted budget. It is true as worded, on the general fund basis it names; it is not a statement that anybody overspent, because tuition came in under budget in most years.
 - **Close to the boards.** No finding names a person. The one person named is quoted for an argument made on the record at a public meeting.
 - **Finance Committee.** One thing to do differently: ask, before voting the tuition line, how much of it the district expects the circuit breaker account to pay, and for the placement count it was built on.

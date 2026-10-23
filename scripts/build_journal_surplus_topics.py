@@ -992,7 +992,7 @@ def burndown_pages():
             TP.track(C.fy(y), [round(S_[(y, p)], 1) for p in range(13)], 'published', 'line')
             for y in J.YEARS], '%', decimals=1,
             note='General fund special education accounts, department 300: share of the final '
-                 'budget not yet spent. Psychologists are outside it.',
+                 'budget not yet spent. Psychology and equipment are outside it, as DESE decides.',
             note_figures={'d': N(int(J.SURPLUS_DEPT), 'department')})],
         table=dict(caption='Special education budget left, by what it buys', views=[dict(
             key='components', label='General fund', total_col=None, kinds=['ledger'] * 4,

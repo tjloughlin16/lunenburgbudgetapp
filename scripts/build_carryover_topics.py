@@ -402,7 +402,7 @@ def build():
                            'it still owes is already in its spent.' % C.fy(J.OPEN_FY)),
                      eview('sped', 'Special education, general fund', sp,
                            'The general fund’s special education accounts in the total '
-                           '(journal.py). School psychologists are outside it.')])
+                           '(journal.py). Psychology and equipment are outside it, as DESE\u2019s documents decide.')])
 
     # ---- table 2: by budget line and fund group, one view per close
     def label_close(y):

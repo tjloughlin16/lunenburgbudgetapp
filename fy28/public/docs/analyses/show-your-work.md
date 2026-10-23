@@ -147,10 +147,10 @@ programs into FY28 is itself a cost the district has to absorb.
 
 | group | FY27 | share of the budget | grows at | that rate is |
 |:--|--:|--:|--:|:--|
-| Salaries, other than special education | $13,348,216 | 49.5% | 4.00% | `contract` |
-| Special education, in district | $5,466,201 | 20.3% | 6.48% | `ours` |
+| Salaries, other than special education | $13,388,394 | 49.7% | 4.00% | `contract` |
+| Special education, in district | $5,544,996 | 20.6% | 6.43% | `ours` |
 | Health insurance and unemployment | $4,019,071 | 14.9% | 9.00% | `published` |
-| Everything else | $1,772,053 | 6.6% | 3.00% | `published` |
+| Everything else | $1,653,079 | 6.1% | 3.00% | `published` |
 | Transportation, other than special education | $1,053,360 | 3.9% | 6.00% | `ours` |
 | Out-of-district tuition | $700,142 | 2.6% | 0.00% | `ours` |
 | Utilities | $605,511 | 2.2% | 5.00% | `published` |
@@ -191,12 +191,12 @@ School appropriation, FY27                                $26,572,288
 Money available to the schools, FY28                      $27,428,736
                                                       ---------------
 Cost of the same services, on the FY27 basis              $26,964,554
-  each group grown at its own rate (blended 5.18%)        +$1,396,714
+  each group grown at its own rate (blended 5.18%)        +$1,396,847
                                                       ---------------
-Cost of the same services, FY28                           $28,361,267
+Cost of the same services, FY28                           $28,361,400
 Money available to the schools, FY28                      $27,428,736
                                                       ---------------
-GAP                                                          $932,531
+GAP                                                          $932,664
 ```
 
 Those figures are recomputed from the steps above and checked against the model
@@ -212,31 +212,31 @@ added together, and each one is not "the extra hole that year" either.
 
 | year | cost of the same services | money available | shortfall that year, if nothing is done first | of which is new that year | town revenue growth |
 |:--|--:|--:|--:|--:|--:|
-| FY28 | $28,361,267 | $27,428,736 | $932,531 | $932,531 | 3.22% |
-| FY29 | $29,841,775 | $28,306,678 | $1,535,097 | $572,716 | 3.20% |
-| FY30 | $31,411,702 | $29,206,656 | $2,205,046 | $621,148 | 3.18% |
-| FY31 | $33,077,086 | $30,129,229 | $2,947,857 | $673,154 | 3.16% |
-| FY32 | $34,844,413 | $31,074,970 | $3,769,443 | $729,053 | 3.14% |
-| FY33 | $36,720,647 | $32,044,466 | $4,676,182 | $789,132 | 3.12% |
+| FY28 | $28,361,400 | $27,428,736 | $932,664 | $932,664 | 3.22% |
+| FY29 | $29,841,940 | $28,306,678 | $1,535,262 | $572,743 | 3.20% |
+| FY30 | $31,411,781 | $29,206,656 | $2,205,125 | $621,057 | 3.18% |
+| FY31 | $33,076,943 | $30,129,229 | $2,947,714 | $672,929 | 3.16% |
+| FY32 | $34,843,891 | $31,074,970 | $3,768,921 | $728,678 | 3.14% |
+| FY33 | $36,719,566 | $32,044,466 | $4,675,101 | $788,590 | 3.12% |
 
 **Three different questions, three different answers, and they get confused for
 each other constantly:**
 
 | the question | answer for FY29 |
 |:--|:--|
-| What is the shortfall in FY29, if the town does nothing in FY28? | **$1,535,097** — the gap column |
-| How much of that is new in FY29, over and above the FY28 hole carried forward? | **$572,716** — the second column |
-| What do the shortfalls come to across FY28–FY33 added together? | **$16,066,156** |
+| What is the shortfall in FY29, if the town does nothing in FY28? | **$1,535,262** — the gap column |
+| How much of that is new in FY29, over and above the FY28 hole carried forward? | **$572,743** — the second column |
+| What do the shortfalls come to across FY28–FY33 added together? | **$16,064,787** |
 
-So FY29’s $1,535,097 is **not**
-$932,531 plus something. It is what FY29 looks like
+So FY29’s $1,535,262 is **not**
+$932,664 plus something. It is what FY29 looks like
 on its own if FY28 was left alone — the earlier shortfall is still
 there, and a year of growth has been added on top of it.
 
 **And the same word means something different in Section 10.** There, every year’s
 gap is what is left *after* the previous years have been cut, which is a much
-smaller number: FY29 is $1,535,097 here and
-$558,350 there — 64% lower. Both are
+smaller number: FY29 is $1,535,262 here and
+$558,515 there — 64% lower. Both are
 correct. They answer different questions, and the distance between them is the
 value of acting early rather than late.
 
@@ -289,11 +289,11 @@ adds up to the amount by which the whole budget outruns Proposition 2½.
 | line | share | grows at | above the cap by | contribution | that rate is |
 |:--|--:|--:|--:|--:|:--|
 | Health insurance and unemployment | 14.9% | 9.00% | 6.50% | **0.97** | `published` |
-| Special education, in district | 20.3% | 6.48% | 3.98% | **0.81** | `ours` |
-| Salaries, other than special education | 49.5% | 4.00% | 1.50% | **0.74** | `contract` |
+| Special education, in district | 20.6% | 6.43% | 3.93% | **0.81** | `ours` |
+| Salaries, other than special education | 49.7% | 4.00% | 1.50% | **0.74** | `contract` |
 | Transportation, other than special education | 3.9% | 6.00% | 3.50% | **0.14** | `ours` |
 | Utilities | 2.2% | 5.00% | 2.50% | **0.06** | `published` |
-| Everything else | 6.6% | 3.00% | 0.50% | **0.03** | `published` |
+| Everything else | 6.1% | 3.00% | 0.50% | **0.03** | `published` |
 | Out-of-district tuition | 2.6% | 0.00% | -2.50% | **-0.06** | `ours` |
 
 **Total: 2.68 points.** That is the number that has to reach
@@ -303,7 +303,7 @@ and the difference between them is those 2.68 points.
 ### The same fact, two ways
 
 **Salaries, other than special education** is the largest line in the budget at
-$13,348,216 — 49.5% of all spending.
+$13,388,394 — 49.7% of all spending.
 It grows at 4.00%, which is 1.50% above the
 cap, so it contributes 0.74 points.
 
@@ -340,7 +340,7 @@ chose. Here is the whole list in one place.
 | group | grows at | label | basis |
 |:--|--:|:--|:--|
 | Salaries, other than special education | 4.00% | `contract` | The teachers’ agreement — scale increases plus steps |
-| Special education, in district | 6.48% | `ours` | A blend of two contracts and two measured trends. Section 4 |
+| Special education, in district | 6.43% | `ours` | A blend of two contracts and two measured trends. Section 4 |
 | Health insurance and unemployment | 9.00% | `published` | The district’s own stated assumption for FY27 |
 | Everything else | 3.00% | `published` | The district’s own stated assumption for FY27 |
 | Transportation, other than special education | 6.00% | `ours` | The district assumed 10% for FY27. This is softer, and ours |
@@ -403,12 +403,12 @@ is no published quantity called "special education", so this total is a rule we
 wrote:
 
 1. **Eight account groups are special education outright**, and every line inside
-   them counts — 46 lines.
+   them counts — 38 lines.
 2. **Inside groups that carry both kinds of cost**, a line counts when the
-   district’s own label for it says special education — 8 lines. One
+   district’s own label for it says special education — 10 lines. One
    of those, special education transportation, is most of the money.
 
-That is 54 lines totalling $5,466,201 in the adopted FY27
+That is 48 lines totalling $5,544,996 in the adopted FY27
 budget. Every one of them is published as a list, so the total can be added up by
 hand.
 
@@ -418,6 +418,9 @@ hand.
 |:--|--:|--:|:--|
 | English Language Learner lines, wherever they appear | 2 | $279,342 | A different entitlement, serving different children, under a different part of the law — but the district files some of it inside groups that are otherwise special education, so a rule that took those groups at their word counted it. It did, until this was found. |
 | 2330 - Paraprofessionals General Education | 4 | $0 | General education paras. The group next to the special education one, and the single boundary most likely to be crossed by accident in either direction. |
+| Psychological services (2800): psychologists and testing | 7 | $207,723 | The district's two reports disagree. FY2023 puts every psychologist account and the testing materials in special education; FY2024 puts the same accounts in regular day and prints a separate special education figure that no FY2024 account holds. DESE's rule turns on a job code the ledger does not carry, so it is left out of every total and shown beside it. |
+| Special education equipment (7300) | 1 | $4,000 | The report files equipment as undistributed, with no special education cell, and the form gives it none. Left out of every total. |
+| Section 504 program supplies | 1 | $0 | In segment 51 and in the budget book's special education group, but a 504 plan is a general education accommodation. Every rule leaves it out. |
 | 9300 / 9400 — out-of-district tuition | 4 | $700,142 | Special education, but escalated on its own because it is set by placement rather than by payroll, and it behaves nothing like staffing. |
 
 **English Language Learner lines are the correction most worth knowing about.** The
@@ -428,7 +431,7 @@ children, under a different part of the law.
 
 ### The obvious answer, and why we did not use it
 
-The obvious number is 5.77% — what the whole line did across
+The obvious number is 6.81% — what the whole line did across
 three budgets. It was our published choice for a day. Break the line into its parts
 and the whole increase is one component moving once:
 
@@ -438,20 +441,19 @@ and the whole increase is one component moving once:
 | Special education transport | $445,328 | $565,734 | $649,953 | 27.0% | 14.9% |
 | Speech, OT and summer services | $603,017 | $567,677 | $589,245 | -5.9% | 3.8% |
 | Substitutes | $52,500 | $52,500 | $52,500 | 0.0% | 0.0% |
-| Psychologists and testing | $270,675 | $295,355 | $207,723 | 9.1% | -29.7% |
-| Special education teachers | $1,990,158 | $1,993,848 | $1,963,512 | 0.2% | -1.5% |
-| Administration, legal, supplies and contracted work | $136,467 | $146,842 | $107,039 | 7.6% | -27.1% |
-| **Whole line** | **$4,865,038** | **$4,964,329** | **$5,442,383** | **2.0%** | **9.6%** |
+| Special education teachers | $2,093,158 | $2,096,848 | $2,093,512 | 0.2% | -0.2% |
+| Administration, legal, supplies and contracted work | $278,967 | $293,004 | $263,557 | 5.0% | -10.0% |
+| **Whole line** | **$4,839,863** | **$4,918,136** | **$5,521,178** | **1.6%** | **12.3%** |
 
-The paraprofessional increase is 111% of the whole
-FY27 rise — every other part of special education fell that year. Take it out and
-the rest of the line grew 1.02% a year, below the levy cap.
+The paraprofessional increase is 88% of the whole
+FY27 rise — everything else in special education, taken together, rose by the rest. Take it out and
+the rest of the line grew 2.50% a year, at the levy cap.
 
-So 5.77% is not a growth rate. It is one hiring decision,
+So 6.81% is not a growth rate. It is one hiring decision,
 averaged over two years and then compounded forever. **Those paraprofessionals were
 hired. Their cost is already inside the
-$5,466,201 this projection starts from.**
-Growing that base at 5.77% assumes the district hires
+$5,544,996 this projection starts from.**
+Growing that base at 6.81% assumes the district hires
 39% more paraprofessionals again next year, and again
 the year after.
 
@@ -507,11 +509,11 @@ it.** Which of those applies is decided by the test above, not by preference.
 
 | part | FY27 amount | share of the line | grows at | basis |
 |:--|--:|--:|--:|:--|
-| Professional staff | $2,867,519 | 52.7% | 2.67% | Measured over 8 budgets. Their agreement gives 3.5% and the line has run below it — headcount drifting down, not a smaller pay rise |
-| Paraprofessionals | $1,872,411 | 34.4% | 12.78% | Measured over 10 budgets rather than taken from the 2.0% contract — this line is headcount, and no settlement reaches it |
-| Transport | $649,953 | 11.9% | 5.69% | Vendor contract with no published escalator; measured over 9 budgets |
+| Professional staff | $2,946,314 | 53.4% | 2.67% | Measured over 8 budgets. Their agreement gives 3.5% and the line has run below it — headcount drifting down, not a smaller pay rise |
+| Paraprofessionals | $1,872,411 | 33.9% | 12.78% | Measured over 10 budgets rather than taken from the 2.0% contract — this line is headcount, and no settlement reaches it |
+| Transport | $649,953 | 11.8% | 5.69% | Vendor contract with no published escalator; measured over 9 budgets |
 | Substitutes and supplies | $52,500 | 1.0% | 0.00% | Not bargained; identical in every budget held |
-| **Blended rate** |  |  | **6.48%** |  |
+| **Blended rate** |  |  | **6.43%** |  |
 
 **Two published contract rates are deliberately not used, and it cuts both ways.**
 The teachers’ agreement gives 3.5% and this line has run *below*
@@ -529,11 +531,11 @@ nor the lowest, and anyone who prefers a different one can see what it costs.
 
 | rate | reading | what it is |
 |:--|:--|:--|
-| **1.02%** | Special education apart from the paras, two budgets | What the rest of the line did while the paras were being added. Below the levy cap — and it is the paras, not the rest, that make this line a driver. |
-| **2.53%** | If every settlement were the whole story | The two bargained agreements at their published rates and nothing else — no bus increase, no change in how many people are employed. Published here because it is what this model used to assume, and because the gap between it and the rate above is the part of this line that pay settlements do not explain. |
-| **5.77%** | The whole line, two budgets | What the in-district line did between the last two budgets. Close to the rate used, and reached a different way. |
-| **6.48%**  ← used | Each part at its contract, or at what it has measurably done | Professional staff at the teachers’ agreement; paras and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part’s share of the line. |
-| **9.63%** | FY27 by itself | The single steepest year. One observation, and the top of the range. |
+| **2.50%** | Special education apart from the paras, two budgets | What the rest of the line did while the paras were being added. At the levy cap — and it is the paras, not the rest, that make this line a driver. |
+| **2.55%** | If every settlement were the whole story | The two bargained agreements at their published rates and nothing else — no bus increase, no change in how many people are employed. Published here because it is what this model used to assume, and because the gap between it and the rate above is the part of this line that pay settlements do not explain. |
+| **6.43%**  ← used | Each part at its contract, or at what it has measurably done | Professional staff at the teachers’ agreement; paras and buses at what ten and nine budgets show them doing, because no contract governs how many people are employed. Weighted by each part’s share of the line. |
+| **6.81%** | The whole line, two budgets | What the in-district line did between the last two budgets. Close to the rate used, and reached a different way. |
+| **12.26%** | FY27 by itself | The single steepest year. One observation, and the top of the range. |
 
 ### What we assumed, and what would settle it
 
@@ -613,10 +615,10 @@ priced: each row below re-runs the whole projection with tuition set to that amo
 
 | scenario | tuition | FY28 gap | against the budgeted figure |
 |:--|--:|--:|--:|
-| As the district budgeted it for FY27 | $700,142 | $932,531 | — |
-| Midway back | $1,000,000 | $1,232,389 | +$299,858 |
-| Back to the FY25 budget | $1,164,824 | $1,397,213 | +$464,682 |
-| Back to the FY26 budget | $1,291,293 | $1,523,682 | +$591,151 |
+| As the district budgeted it for FY27 | $700,142 | $932,664 | — |
+| Midway back | $1,000,000 | $1,232,522 | +$299,858 |
+| Back to the FY25 budget | $1,164,824 | $1,397,346 | +$464,682 |
+| Back to the FY26 budget | $1,291,293 | $1,523,815 | +$591,151 |
 
 The full width of that range is $591,151 of FY28
 gap. It is the widest single-assumption range anywhere in this model.
@@ -905,15 +907,15 @@ Six years of gap under each policy:
 
 | keep in reserve | which is | released once | plus, every year | gap remaining, one-off only | gap remaining, with the policy |
 |:--|:--|--:|--:|--:|--:|
-| 8% | above the recommended range | $0 | $2,026,212 | $16,066,156 | $3,908,884 |
-| 7% | top of the recommended range | $0 | $2,026,212 | $16,066,156 | $3,908,884 |
-| 6% | middle of the recommended range | $282,972 | $2,026,212 | $15,783,184 | $3,625,912 |
-| 5% | bottom of the recommended range | $794,872 | $2,026,212 | $15,271,284 | $3,114,012 |
-| 4% | below the range — and about what a normal year generates | $1,306,772 | $2,026,212 | $14,759,384 | $2,602,112 |
-| 3% | well below the range | $1,818,671 | $2,026,212 | $14,247,485 | $2,090,213 |
-| 2% | well below the range | $2,330,571 | $2,026,212 | $13,735,585 | $1,578,313 |
-| 1% | nearly nothing held back | $2,842,470 | $2,026,212 | $13,223,686 | $1,066,414 |
-| 0% | spend everything, hold no reserve | $3,354,370 | $2,026,212 | $12,711,786 | $554,514 |
+| 8% | above the recommended range | $0 | $2,026,212 | $16,064,787 | $3,907,515 |
+| 7% | top of the recommended range | $0 | $2,026,212 | $16,064,787 | $3,907,515 |
+| 6% | middle of the recommended range | $282,972 | $2,026,212 | $15,781,815 | $3,624,543 |
+| 5% | bottom of the recommended range | $794,872 | $2,026,212 | $15,269,915 | $3,112,643 |
+| 4% | below the range — and about what a normal year generates | $1,306,772 | $2,026,212 | $14,758,015 | $2,600,743 |
+| 3% | well below the range | $1,818,671 | $2,026,212 | $14,246,116 | $2,088,844 |
+| 2% | well below the range | $2,330,571 | $2,026,212 | $13,734,216 | $1,576,944 |
+| 1% | nearly nothing held back | $2,842,470 | $2,026,212 | $13,222,317 | $1,065,045 |
+| 0% | spend everything, hold no reserve | $3,354,370 | $2,026,212 | $12,710,417 | $553,145 |
 
 ### Free cash against an override — a one-off against a permanent change
 
@@ -928,18 +930,18 @@ At $794,872:
 
 | FY | gap | free cash applied | gap after free cash | override worth | gap after override |
 |:--|--:|--:|--:|--:|--:|
-| FY28 | $932,531 | $794,872 | $137,659 | $794,872 | $137,659 |
-| FY29 | $1,535,097 | $0 | $1,535,097 | $814,744 | $720,353 |
-| FY30 | $2,205,046 | $0 | $2,205,046 | $835,112 | $1,369,934 |
-| FY31 | $2,947,857 | $0 | $2,947,857 | $855,990 | $2,091,867 |
-| FY32 | $3,769,443 | $0 | $3,769,443 | $877,390 | $2,892,053 |
-| FY33 | $4,676,182 | $0 | $4,676,182 | $899,325 | $3,776,857 |
+| FY28 | $932,664 | $794,872 | $137,792 | $794,872 | $137,792 |
+| FY29 | $1,535,262 | $0 | $1,535,262 | $814,744 | $720,518 |
+| FY30 | $2,205,125 | $0 | $2,205,125 | $835,112 | $1,370,013 |
+| FY31 | $2,947,714 | $0 | $2,947,714 | $855,990 | $2,091,724 |
+| FY32 | $3,768,921 | $0 | $3,768,921 | $877,390 | $2,891,531 |
+| FY33 | $4,675,101 | $0 | $4,675,101 | $899,325 | $3,775,776 |
 
 | six-year total gap | amount |
 |:--|--:|
-| Doing nothing | $16,066,156 |
-| With the free cash draw | $15,271,284 |
-| With an override of the same size | $10,988,723 |
+| Doing nothing | $16,064,787 |
+| With the free cash draw | $15,269,915 |
+| With an override of the same size | $10,987,354 |
 
 **Note what this shows, and what it must not be made to say.** An override of this
 size does not close the gap either. It grows at 2.5% while the gap
@@ -1380,11 +1382,11 @@ difference is the whole argument for acting early rather than late.
 
 | FY | shortfall that year, after earlier years have been cut | cut | cumulative positions lost | still unclosed |
 |:--|--:|--:|--:|--:|
-| FY28 | $932,531 | $939,180 | 2.9 | — |
-| FY29 | $558,350 | $624,436 | 9.9 | — |
-| FY30 | $539,815 | $595,400 | 15.2 | — |
-| FY31 | $596,801 | $708,386 | 19.2 | — |
-| FY32 | $587,623 | $689,560 | 25.2 | — |
+| FY28 | $932,664 | $939,180 | 2.9 | — |
+| FY29 | $558,515 | $624,436 | 9.9 | — |
+| FY30 | $539,894 | $595,400 | 15.2 | — |
+| FY31 | $596,658 | $708,386 | 19.2 | — |
+| FY32 | $587,101 | $689,560 | 25.2 | — |
 
 ### Where the cutting stops, which is ours
 
@@ -1481,9 +1483,9 @@ roughly doubles what commercial development appears to be worth.
 A dollar added to the town’s levy limit                         $1.00
   of which reaches the schools                                  $0.53
                                                       ---------------
-FY28 school gap                                              $932,531
-  levy needed to close it                                  $1,753,445
-  new taxable value needed, in one year                  $121,851,614
+FY28 school gap                                              $932,664
+  levy needed to close it                                  $1,753,692
+  new taxable value needed, in one year                  $121,868,763
 ```
 
 ### The same requirement, in buildings
@@ -1537,11 +1539,11 @@ grows at 2.5% a year like the rest of the levy.
 > Cost to one household = the override amount ÷ total taxable value × that home’s value
 
 ```
-An override covering the whole FY28 school gap               $932,531
-  cost to the average home, per year                          $193.79
+An override covering the whole FY28 school gap               $932,664
+  cost to the average home, per year                          $193.82
                                                       ---------------
-The same, if the question is town-wide rather than school-only       $1,753,445
-  cost to the average home, per year                          $364.39
+The same, if the question is town-wide rather than school-only       $1,753,692
+  cost to the average home, per year                          $364.44
 ```
 
 A general override has to be about 1.9 times the size to do the same
@@ -1559,12 +1561,12 @@ own — the fresh hole, over and above the one already there.
 
 | FY | total gap | the fresh part of it | town-wide question needed to raise that |
 |:--|--:|--:|--:|
-| FY28 | $932,531 | $932,531 | $1,753,445 |
-| FY29 | $1,535,097 | $572,716 | $1,076,882 |
-| FY30 | $2,205,046 | $621,148 | $1,167,949 |
-| FY31 | $2,947,857 | $673,154 | $1,265,736 |
-| FY32 | $3,769,443 | $729,053 | $1,370,844 |
-| FY33 | $4,676,182 | $789,132 | $1,483,811 |
+| FY28 | $932,664 | $932,664 | $1,753,692 |
+| FY29 | $1,535,262 | $572,743 | $1,076,931 |
+| FY30 | $2,205,125 | $621,057 | $1,167,776 |
+| FY31 | $2,947,714 | $672,929 | $1,265,311 |
+| FY32 | $3,768,921 | $728,678 | $1,370,136 |
+| FY33 | $4,675,101 | $788,590 | $1,482,789 |
 
 Each town-wide question is about 1.9 times the fresh school gap,
 because the schools receive only a share of a levy dollar.
@@ -1606,15 +1608,15 @@ produced by running the real projection twice, not estimated.
 | assumption | currently | moved by | FY28 gap | FY33 gap | grade | what backs it |
 |:--|--:|--:|--:|--:|:--|:--|
 | Levy growth | 2.50% | +1 point | −$181,532 | −$1,297,324 | `given` | Proposition 2½. Fixed by statute |
-| Salary growth | 4.00% | +1 point | +$133,482 | +$998,134 | `given` | The teachers’ agreement — scale increases plus steps |
+| Salary growth | 4.00% | +1 point | +$133,884 | +$1,001,139 | `given` | The teachers’ agreement — scale increases plus steps |
 | State aid growth | 2.71% | +1 point | −$63,160 | −$443,874 | `derived` | The median annual step in the town’s own budgeted cherry sheet total across 23 consecutive budget years, FY2005–FY2027, unrounded — see below |
-| Special education, in district | 6.48% | +1 point | +$54,662 | +$459,688 | `derived` | Two contracts and two measured trends, weighted by share — Section 4, with the trend tests and a five-point range published beside it |
-| New growth per year | $400,000 | +$100,000 | −$53,183 | −$339,718 | `given` | The town’s own FY27 estimate — though its own series has been falling, Section 11 |
-| Health insurance | 9.00% | +1 point | +$40,191 | +$379,645 | `given` | The district’s own stated assumption for FY27 |
+| Special education, in district | 6.43% | +1 point | +$55,450 | +$465,131 | `derived` | Two contracts and two measured trends, weighted by share — Section 4, with the trend tests and a five-point range published beside it |
+| New growth per year | $400,000 | +$100,000 | −$53,183 | −$339,719 | `given` | The town’s own FY27 estimate — though its own series has been falling, Section 11 |
+| Health insurance | 9.00% | +1 point | +$40,190 | +$379,645 | `given` | The district’s own stated assumption for FY27 |
 | Local receipts growth | 1.00% | +1 point | −$18,657 | −$120,601 | **`BARE`** | Nothing. No stated source and no derivation — see below |
-| Everything else | 3.00% | +1 point | +$17,721 | +$126,288 | `given` | The district’s own stated assumption for FY27 |
-| Transportation | 6.00% | +1 point | +$10,534 | +$86,598 | `judged` | The district assumed 10%. This is softer, and ours, and rests on no trend test |
-| Out-of-district tuition | 0.00% | +1 point | +$7,001 | +$43,073 | `derived` | Held flat because eleven budgets show no trend — Section 5. The risk is priced as scenarios instead |
+| Everything else | 3.00% | +1 point | +$16,531 | +$117,809 | `given` | The district’s own stated assumption for FY27 |
+| Transportation | 6.00% | +1 point | +$10,533 | +$86,598 | `judged` | The district assumed 10%. This is softer, and ours, and rests on no trend test |
+| Out-of-district tuition | 0.00% | +1 point | +$7,001 | +$43,072 | `derived` | Held flat because eleven budgets show no trend — Section 5. The risk is priced as scenarios instead |
 | Utilities | 5.00% | +1 point | +$6,055 | +$47,486 | `given` | The district’s own stated assumption for FY27 |
 
 | grade | means |

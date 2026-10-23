@@ -14,37 +14,36 @@ lines that behave nothing alike.
 THE RATE, AND WHY IT IS NOT WHAT THE LINE DID
 --------------------------------------------------------------------------------------
 
-The obvious number is 5.77% -- what the whole line did across three budgets. It was the
-published choice for a day, and it is wrong, for the same reason this analysis says the
-district's own 3.98% is wrong.
+The obvious number is what the whole line did across three budgets (WHOLE_LINE_RATE
+below). It was the published choice for a day, and it is wrong, for the same reason this
+analysis says the district's own 3.98% is wrong.
 
-Decompose the two years and the whole thing is one line moving once:
+Decompose the two years and the increase is mostly one line moving once: the
+paraprofessionals, up by about 39% in FY27 alone, are most of that year's rise
+(PARA_SHARE_OF_RISE), and the rest of the line, taken together, grew at EX_PARAS_RATE.
 
-    whole line          4,865,038 -> 4,964,329 -> 5,442,383    +2.0%, +9.6%
-    paraprofessionals   1,366,893 -> 1,342,373 -> 1,872,411    -1.8%, +39.5%
-    everything else     3,498,145 -> 3,621,956 -> 3,569,972    +3.5%, -1.4%
+(Recompute rather than quote: `python3 model/sped.py`. These figures have moved three times
+and none of the moves was in the district's budget. They were first written before English
+Language Learner lines were excluded, when the whole line read about $207,000 higher. They
+moved again when tutoring and contracted services filed under 2330 were taken out of the
+paraprofessional row. And on 23 October 2026 the line was made to match what DESE's
+documents count (sources/data/sped-definition.csv): the Student Services Coordinator and two
+"Spcl Ed" lines came in, psychological services (2800) and equipment went out. Psychology
+had FALLEN in FY27, so taking it out made the rest of the line grow faster: it had read
+"111% of the rise, and the rest grew 1.02%, below the levy cap"; it now reads about 88% and
+2.50%, at the cap. The paraprofessional row was unaffected by all three, which is why the
+argument -- a step, not a rate -- survived each correction.)
 
-(These figures moved once already, and the change was not in the district's budget. They
-were first written before English Language Learner lines were excluded from this
-classification, so the whole line read about $207,000 higher and the rate 5.89%. The
-paraprofessional row was unaffected either way, which is why the argument survived the
-correction unchanged. They moved a second time, by $10,000/$2,000/$2,000, when tutoring and
-contracted services filed under 2330 were moved out of the paraprofessional row to match
-the five lines the documents itemise. Recompute rather than quote: `python3 model/sped.py`.)
-
-The paraprofessional increase is 111% of the FY27 rise -- every other part of special
-education fell that year. Strip it out and the rest of the line grew 1.02% a year across
-the two budgets, below the levy cap.
-
-So 5.77% is not a growth rate. It is one hiring decision, averaged over two years and
-then compounded forever. Rule 6 exists for exactly this: a short rate off a step change
-is not a trend, and three of the six lines the back-test flagged turned out to be steps.
+So the whole-line rate is not a growth rate. It is one hiring decision, averaged over two
+years and then compounded forever. Rule 6 exists for exactly this: a short rate off a step
+change is not a trend, and three of the six lines the back-test flagged turned out to be
+steps.
 
 The distinction is the one the whole site is built on. A **level** change moves the curve
 once and leaves its angle alone. A **rate** changes the angle. Those paras were hired;
-their cost is already inside the $5,466,201 the model starts from. Escalating that base
-at 5.77% says the district will hire 39% more paras again next year, and again the year
-after. Nothing supports that.
+their cost is already inside the base the model starts from. Escalating that base at the
+whole-line rate says the district will hire 39% more paras again next year, and again the
+year after. Nothing supports that.
 
 What the model uses instead is what the people in this line are contracted to receive,
 weighted by how much of the line each of them is.
@@ -69,6 +68,8 @@ The range below is published beside the rate for that reason. It is not decorati
 """
 import csv, os, re
 
+import sped_definition as SD
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 LINES = os.path.join(ROOT, 'sources/data/lps-budget-lines.csv')
 DESE = os.path.join(ROOT, 'sources/state-dese/selected-populations.csv')
@@ -88,9 +89,10 @@ SPED_GROUPS = {
     '2320 - Therapeutic Services',
     '2325 - Special Education Substitutes',
     '2330 - Paraprofessionals Special Education *** (LTP notes)',
-    '2800 - Psych. Services',
-    '2800 - Psychological Services',
 }
+# The two 2800 groups, psychological services, were taken whole here until 23 October 2026.
+# They are out of every special education rule since then (sped-definition.csv, `psychology`).
+
 
 
 # English Language Learners. The district files these lines inside groups that are
@@ -114,6 +116,12 @@ def is_sped(row):
     each school's supplies. English Language Learner lines are excluded wherever they
     appear, including inside groups that are otherwise special education.
     """
+    return _labelled(row) and dese_item(row) is None
+
+
+def _labelled(row):
+    """The district's own labelling: a special education group, or a line whose name says
+    special education in any of the spellings the book uses. ELL and tuition aside."""
     group = (row['function_group'] or '').strip()
     if group.startswith(('9300', '9400')):
         return False
@@ -122,7 +130,17 @@ def is_sped(row):
     if group in SPED_GROUPS:
         return True
     item = (row['line_item'] or '').lower()
-    return 'special ed' in item or 'specl ed' in item
+    return any(lab in item for lab in ('special ed', 'specl ed') + SD.LABELS)
+
+
+def dese_item(row):
+    """The sped-definition.csv item that leaves a budget line out, or None. THE DESE ITEMS
+    (model/sped_definition.py): a function no rule counts -- psychology, guidance, equipment,
+    school choice and charter tuition -- and a line DESE's definition leaves out (Section
+    504), decided once for all three rules."""
+    group = (row['function_group'] or '').strip()
+    return (SD.EXCLUDED_FUNCTIONS.get(group[:4])
+            or SD.EXCLUDED_LINE_ITEMS.get((row['line_item'] or '').strip()))
 
 
 def is_tuition(row):
@@ -159,7 +177,8 @@ PARTS = [
     ('therapy', 'Speech, OT and summer services',
      lambda r: '2320' in _g(r) or 'summer' in _item(r)),
     ('subs', 'Substitutes', lambda r: '2325' in _g(r)),
-    ('psych', 'Psychologists and testing', lambda r: '2800' in _g(r)),
+    # No psychologists part: psychological services (2800) is outside the line since 23
+    # October 2026 (sped-definition.csv, `psychology`), so a part for it would always be empty.
     ('teachers', 'Special education teachers', lambda r: '2310' in _g(r)),
 ]
 
@@ -419,9 +438,17 @@ _whole = _series(is_sped)
 _paras = _series(_part_pred('paras'))
 _nopara = _series(lambda r: is_sped(r) and not _part_pred('paras')(r))
 
-WHOLE_LINE_RATE = _cagr(_whole)          # 5.77% -- what the line did, step included
-EX_PARAS_RATE = _cagr(_nopara)           # ~1.0% -- the line apart from the hiring
-FY27_ALONE_RATE = _whole[2] / _whole[1] - 1   # 9.63%
+WHOLE_LINE_RATE = _cagr(_whole)          # what the line did, step included
+EX_PARAS_RATE = _cagr(_nopara)           # the line apart from the hiring
+FY27_ALONE_RATE = _whole[2] / _whole[1] - 1
+
+
+def _vs_cap(rate, cap=0.025):
+    """'Below', 'At' or 'Above' the levy cap, as a rate reads at two decimals: 2.4997% prints
+    as 2.50% and is described as at the cap, never as below it."""
+    r = round(rate * 100, 2)
+    return 'Below' if r < cap * 100 else ('At' if r == cap * 100 else 'Above')
+
 
 # What the FY27 year actually was: one line moving, and moving by more than the whole
 # year's increase, because everything else in special education fell.
@@ -432,8 +459,9 @@ PARA_SHARE_OF_RISE = PARA_FY27_CHANGE / (_whole[2] - _whole[1])
 RANGE = [
     dict(id='ex_paras', rate=EX_PARAS_RATE,
          label='Special education apart from the paras, two budgets',
-         what='What the rest of the line did while the paras were being added. Below the '
-              'levy cap — and it is the paras, not the rest, that make this line a driver.'),
+         what='What the rest of the line did while the paras were being added. %s the '
+              'levy cap — and it is the paras, not the rest, that make this line a driver.'
+              % _vs_cap(EX_PARAS_RATE)),
     dict(id='contracts_only', rate=(LEA_RATE * _share('professional')
                                     + AFSCME_RATE * _share('paras')),
          label='If every settlement were the whole story',
@@ -592,6 +620,15 @@ EXCLUDED = [
 ]
 
 
+# The two 2800 groups the rule took whole before 23 October 2026, so the excluded list can
+# still show what the psychology item leaves out.
+_FORMER_GROUPS = {'2800 - Psych. Services', '2800 - Psychological Services'}
+
+
+def _labelled_or_group(r):
+    return _labelled(r) or (r['function_group'] or '').strip() in _FORMER_GROUPS
+
+
 def classified():
     """Every line counted, with the reason it was counted, and what sits just outside.
 
@@ -622,6 +659,18 @@ def classified():
             pred = lambda r, g=group: (r['function_group'] or '').strip() == g
         excluded.append(dict(
             group=group, why=why, lines=sum(1 for r in rs if pred(r)),
+            fy25=total(FY25, pred, rs), fy26=total(FY26, pred, rs),
+            amount=total(FY27BAL, pred, rs)))
+    # The DESE items: lines the district labels special education that DESE's documents
+    # leave out (sources/data/sped-definition.csv), one entry per item that holds a line.
+    for it in SD.ITEMS:
+        if it['decision'] != 'not counted':
+            continue
+        pred = lambda r, i=it['id']: _labelled_or_group(r) and dese_item(r) == i
+        if not any(pred(r) for r in rs):
+            continue
+        excluded.append(dict(
+            group=it['item'], why=it['why'], lines=sum(1 for r in rs if pred(r)),
             fy25=total(FY25, pred, rs), fy26=total(FY26, pred, rs),
             amount=total(FY27BAL, pred, rs)))
     excluded.append(dict(
@@ -664,7 +713,7 @@ def classified():
 #
 # A figure that swings from -45.78% to +11.78% on the choice of start year is not a
 # measurement of anything. Publishing 0.66% because FY17 happens to be the first year the
-# archive reaches would be the same error as escalating the in-district line at 5.77% --
+# archive reaches would be the same error as escalating the in-district line at its whole-line rate --
 # an arbitrary choice wearing a measurement's clothes.
 #
 # So the line is held flat, and the risk is carried by the range instead, which is priced

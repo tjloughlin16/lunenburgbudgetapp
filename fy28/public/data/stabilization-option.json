@@ -2,91 +2,91 @@
  "about": "What the stabilization funds could do about the school budget gap, and for how long.",
  "both": [
   {
-   "drawn": 623551.0,
+   "drawn": 623684.0,
    "fy": 28,
-   "gap": 932531.0,
-   "left": 2523627.96,
+   "gap": 932664.0,
+   "left": 2523494.96,
    "redirected": 308980.0,
    "shortfall": 0.0
   },
   {
-   "drawn": 1226117.0,
+   "drawn": 1226282.0,
    "fy": 29,
-   "gap": 1535097.0,
-   "left": 1297510.96,
+   "gap": 1535262.0,
+   "left": 1297212.96,
    "redirected": 308980.0,
    "shortfall": 0.0
   },
   {
-   "drawn": 1297510.96,
+   "drawn": 1297212.96,
    "fy": 30,
-   "gap": 2205046.0,
+   "gap": 2205125.0,
    "left": 0.0,
    "redirected": 308980.0,
-   "shortfall": 598555.04
+   "shortfall": 598932.04
   },
   {
    "drawn": 0.0,
    "fy": 31,
-   "gap": 2947857.0,
+   "gap": 2947714.0,
    "left": 0.0,
    "redirected": 308980.0,
-   "shortfall": 2638877.0
+   "shortfall": 2638734.0
   },
   {
    "drawn": 0.0,
    "fy": 32,
-   "gap": 3769443.0,
+   "gap": 3768921.0,
    "left": 0.0,
    "redirected": 308980.0,
-   "shortfall": 3460463.0
+   "shortfall": 3459941.0
   },
   {
    "drawn": 0.0,
    "fy": 33,
-   "gap": 4676182.0,
+   "gap": 4675101.0,
    "left": 0.0,
    "redirected": 308980.0,
-   "shortfall": 4367202.0
+   "shortfall": 4366121.0
   },
   {
    "drawn": 0.0,
    "fy": 34,
-   "gap": 5674956.0,
+   "gap": 5673111.0,
    "left": 0.0,
    "redirected": 308980.0,
-   "shortfall": 5365976.0
+   "shortfall": 5364131.0
   },
   {
    "drawn": 0.0,
    "fy": 35,
-   "gap": 6773193.0,
+   "gap": 6770349.0,
    "left": 0.0,
    "redirected": 308980.0,
-   "shortfall": 6464213.0
+   "shortfall": 6461369.0
   }
  ],
  "burndown": [
   {
-   "covered": 932531.0,
+   "covered": 932664.0,
    "fy": 28,
-   "gap": 932531.0,
-   "left": 2214647.96,
+   "gap": 932664.0,
+   "left": 2214514.96,
    "shortfall": 0.0
   },
   {
-   "covered": 1535097.0,
+   "covered": 1535262.0,
    "fy": 29,
-   "gap": 1535097.0,
-   "left": 679550.96,
+   "gap": 1535262.0,
+   "left": 679252.96,
    "shortfall": 0.0
   },
   {
-   "covered": 679550.96,
+   "covered": 679252.96,
    "fy": 30,
-   "gap": 2205046.0,
+   "gap": 2205125.0,
    "left": 0.0,
-   "shortfall": 1525495.04
+   "shortfall": 1525872.04
   }
  ],
  "conclusions": [
@@ -94,7 +94,7 @@
    "basis": "The balance is the beginning balance, the start of FY2026, that the town’s MUNIS trust and agency report at 31 March 2026 prints for the general Stabilization Fund. The gaps are `model/finance.py`. The burndown is arithmetic over the two and models no interest.",
    "bearing": "lever",
    "claim": "The $3,147,179 the town may freely spend covers FY28, FY29 and part of FY30.",
-   "detail": "The fund enters FY30 with $679,551 against a $2,205,046 gap and empties partway through the year. And this is the generous reading: it assumes Town Meeting votes the whole balance to the schools in one go, keeping nothing back for a roof, a fire engine or a snow season, which is what the fund is for.",
+   "detail": "The fund enters FY30 with $679,253 against a $2,205,125 gap and empties partway through the year. And this is the generous reading: it assumes Town Meeting votes the whole balance to the schools in one go, keeping nothing back for a roof, a fire engine or a snow season, which is what the fund is for.",
    "figure": "bal",
    "figures": {
     "a": {
@@ -118,14 +118,14 @@
      "value": 30
     },
     "gap": {
-     "text": "$2,205,046",
+     "text": "$2,205,125",
      "unit": "the gap in the year the fund empties",
-     "value": 2205046.0
+     "value": 2205125.0
     },
     "left": {
-     "text": "$679,551",
+     "text": "$679,253",
      "unit": "left entering the third year",
-     "value": 679550.96
+     "value": 679252.96
     }
    },
    "id": "the-whole-spendable-reserve-buys-two-years",
@@ -138,7 +138,7 @@
      "slug": "/analysis/free-cash"
     }
    ],
-   "so_what": "Then it is gone, and FY30 still needs $2,205,046 with no reserve behind it."
+   "so_what": "Then it is gone, and FY30 still needs $2,205,125 with no reserve behind it."
   },
   {
    "basis": "`town_meeting_votes`, deposits summed per fiscal year and divided by the span. The restricted/redirectable split is OURS, read off which fund each deposit went to and where that fund’s money comes from.",
@@ -165,7 +165,7 @@
     "sh": {
      "text": "33%",
      "unit": "of the first year’s gap",
-     "value": 33.13348296196052
+     "value": 33.12875805220315
     }
    },
    "id": "stopping-the-deposits-is-the-right-shape-and-the-wrong-size",
@@ -215,8 +215,8 @@
   {
    "basis": "`model/finance.py`, the level-service projection the rest of the site uses. Budget columns only, per rule 1.",
    "bearing": "sizes",
-   "claim": "The gap grows from $932,531 to $2,205,046 in three years. The reserve does not grow.",
-   "detail": "By FY35 the projection puts it at $6,773,193. Spending a reserve against a series like that buys the years at the small end and leaves the large ones exactly as they were — which is why this page reports what each option COVERS rather than whether it works.",
+   "claim": "The gap grows from $932,664 to $2,205,125 in three years. The reserve does not grow.",
+   "detail": "By FY35 the projection puts it at $6,770,349. Spending a reserve against a series like that buys the years at the small end and leaves the large ones exactly as they were — which is why this page reports what each option COVERS rather than whether it works.",
    "figure": "g3",
    "figures": {
     "fy": {
@@ -225,19 +225,19 @@
      "value": 35
     },
     "g1": {
-     "text": "$932,531",
+     "text": "$932,664",
      "unit": "the level-service gap, first year",
-     "value": 932531.0
+     "value": 932664.0
     },
     "g3": {
-     "text": "$2,205,046",
+     "text": "$2,205,125",
      "unit": "the same gap three years on",
-     "value": 2205046.0
+     "value": 2205125.0
     },
     "gl": {
-     "text": "$6,773,193",
+     "text": "$6,770,349",
      "unit": "the gap at the end of the projection",
-     "value": 6773193.0
+     "value": 6770349.0
     }
    },
    "id": "the-gap-grows-and-the-reserve-does-not",
@@ -308,35 +308,35 @@
  "gaps": [
   [
    28,
-   932531.0
+   932664.0
   ],
   [
    29,
-   1535097.0
+   1535262.0
   ],
   [
    30,
-   2205046.0
+   2205125.0
   ],
   [
    31,
-   2947857.0
+   2947714.0
   ],
   [
    32,
-   3769443.0
+   3768921.0
   ],
   [
    33,
-   4676182.0
+   4675101.0
   ],
   [
    34,
-   5674956.0
+   5673111.0
   ],
   [
    35,
-   6773193.0
+   6770349.0
   ]
  ],
  "generated_by": "scripts/build_stabilization_option.py",

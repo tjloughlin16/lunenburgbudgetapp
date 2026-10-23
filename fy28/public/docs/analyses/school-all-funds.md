@@ -409,14 +409,14 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 
 **Special education spending passed its voted budget every year, and other funds paid the difference.**
 
-- Every fund spent $6,908,810 on special education in FY2026, against $6,073,840 voted.
-  - *not known:* In FY2023 it was $5,335,622 against $4,543,293. FY2026 is not yet closed in this run. — closes: the Town’s journal report for FY2026, run after the year is closed
-- The general fund itself came in under its vote in 3 of 4 years; FY2026 ran $61,609 over.
+- Every fund spent $7,035,009 on special education in FY2026, against $6,209,427 voted.
+  - *not known:* In FY2023 it was $5,464,708 against $4,662,293. FY2026 is not yet closed in this run. — closes: the Town’s journal report for FY2026, run after the year is closed
+- The general fund itself came in under its vote in 3 of 4 years; FY2026 ran $52,221 over.
   - *measured:* Spent includes what was still owed when the year closed, as on the overruns page.
 - Other funds paid $773,361 to $1,065,546 a year on top: the circuit breaker and grants.
   - *hypothesis:* So outside money paid for more than the general fund budgeted, in every year. Whether the vote was set expecting it to is not in a ledger.
   - *not known:* Special education here is the accounts the ledger labels so; work paid from other accounts is not counted. — closes: the district’s End of Year Financial Report, special education program, all funds
-- Other funds paid 19.8% of it in FY2023 and 11.2% in FY2026.
+- Other funds paid 19.3% of it in FY2023 and 11.0% in FY2026.
   - *hypothesis:* Why less came from other funds is not in a ledger: a smaller reimbursement, a balance held back, or costs moved are all possible.
 
 **Special education: what was voted, what was spent, and which fund paid — FY2026**
@@ -426,9 +426,9 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 | Out-of-district tuition | $1,291,293 | $1,202,771 | $333,495 | $0 | $1,536,266 |
 | Transportation | $565,734 | $633,291 | $0 | $0 | $633,291 |
 | Contracted services and evaluations | $152,500 | $239,337 | $4,005 | $295,264 | $538,605 |
-| Staff pay and benefits | $4,027,368 | $4,028,380 | $0 | $100,601 | $4,128,981 |
-| Supplies, equipment and other | $36,946 | $31,670 | $0 | $39,997 | $71,667 |
-| All of it | $6,073,840 | $6,135,449 | $337,499 | $435,862 | $6,908,810 |
+| Staff pay and benefits | $4,177,530 | $4,178,542 | $0 | $100,601 | $4,279,143 |
+| Supplies, equipment and other | $22,371 | $7,707 | $0 | $39,997 | $47,704 |
+| All of it | $6,209,427 | $6,261,648 | $337,499 | $435,862 | $7,035,009 |
 
 *Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants. FY2026 is not yet closed.*
 
@@ -439,9 +439,9 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 | Out-of-district tuition | $1,164,824 | $732,298 | $473,650 | $0 | $1,205,949 |
 | Transportation | $445,328 | $434,922 | $0 | $0 | $434,922 |
 | Contracted services and evaluations | $154,258 | $152,132 | $24,801 | $2,500 | $179,433 |
-| Staff pay and benefits | $4,076,734 | $3,773,316 | $0 | $419,028 | $4,192,344 |
-| Supplies, equipment and other | $31,973 | $18,997 | $0 | $53,959 | $72,956 |
-| All of it | $5,873,117 | $5,111,664 | $498,451 | $475,488 | $6,085,603 |
+| Staff pay and benefits | $4,223,234 | $3,919,816 | $0 | $419,028 | $4,338,844 |
+| Supplies, equipment and other | $17,043 | $6,954 | $0 | $53,959 | $60,913 |
+| All of it | $6,004,687 | $5,246,122 | $498,451 | $475,488 | $6,220,061 |
 
 *Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
 
@@ -452,9 +452,9 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 | Out-of-district tuition | $501,239 | $588,508 | $466,296 | $0 | $1,054,804 |
 | Transportation | $335,947 | $401,402 | $0 | $0 | $401,402 |
 | Contracted services and evaluations | $136,900 | $185,908 | $0 | $49,805 | $235,713 |
-| Staff pay and benefits | $3,676,729 | $3,445,748 | $0 | $510,903 | $3,956,651 |
-| Supplies, equipment and other | $36,779 | $20,448 | $0 | $38,541 | $58,989 |
-| All of it | $4,687,594 | $4,642,014 | $466,296 | $599,250 | $5,707,560 |
+| Staff pay and benefits | $3,819,629 | $3,588,648 | $0 | $510,903 | $4,099,551 |
+| Supplies, equipment and other | $21,779 | $11,936 | $0 | $38,541 | $50,477 |
+| All of it | $4,815,494 | $4,776,402 | $466,296 | $599,250 | $5,841,948 |
 
 *Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
 
@@ -465,9 +465,9 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 | Out-of-district tuition | $489,918 | $304,747 | $494,968 | $0 | $799,715 |
 | Transportation | $329,360 | $320,244 | $0 | $0 | $320,244 |
 | Contracted services and evaluations | $119,900 | $126,333 | $0 | $122,102 | $248,435 |
-| Staff pay and benefits | $3,567,225 | $3,504,347 | $0 | $397,023 | $3,901,370 |
-| Supplies, equipment and other | $36,890 | $24,029 | $0 | $41,829 | $65,858 |
-| All of it | $4,543,293 | $4,279,700 | $494,968 | $560,954 | $5,335,622 |
+| Staff pay and benefits | $3,703,225 | $3,643,847 | $0 | $397,023 | $4,040,870 |
+| Supplies, equipment and other | $19,890 | $13,615 | $0 | $41,829 | $55,443 |
+| All of it | $4,662,293 | $4,408,786 | $494,968 | $560,954 | $5,464,708 |
 
 *Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
 
