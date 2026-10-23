@@ -1,14 +1,15 @@
 #!/usr/bin/env python3
-"""Special education in the school MUNIS journal: every fund, and who is paid. Two topic pages.
+"""Special education in the school MUNIS journal: who is paid. One topic page.
 
     python3 scripts/build_journal_sped_topics.py           # write fy28/public/data/topics/*.json
     python3 scripts/build_journal_sped_topics.py --check   # fail if either output would change
 
-    sped-all-funds   /special-education/sped-all-funds   Special education, all funds
     sped-providers   /special-education/sped-providers   Special education providers
 
-Both on the special education shelf, in the group "Who is paid, and from where"
+On the special education shelf, in the group "Who is paid, and from where"
 (scripts/topic_registry/special_education.py; notes/plans/MUNIS-JOURNAL-REPORTS.md, Hub A).
+/special-education/sped-all-funds was written here until 23 October 2026; it is now the
+vote beside every fund, written by build_school_all_funds.py, which holds the budget.
 
 WHAT THEY READ. Only `scripts/journal.py`: the loader, THE special education account list
 (the one the extractor's redaction uses), its components and fund groups, and the payee rule.
@@ -118,10 +119,6 @@ def data():
     d['comp'] = {(y, c): money(byc.get((y, c), 0)) for y in J.YEARS for c in J.IN_TOTAL}
     psy = J.rollup([r for r in J.sped_actuals(True) if comp(r) == 'psychologists'], 'fy')
     d['psy'] = {y: money(psy.get((y,), 0)) for y in J.YEARS}
-    # The cross-tab: one year, what it paid for (rows) by where the money came from (columns).
-    # Its row totals are d['comp'] and its column totals d['fund'], asserted in build().
-    byfc = J.rollup(J.sped_actuals(True), 'fy', fund, comp)
-    d['fc'] = {k: money(v) for k, v in byfc.items()}
     # The circuit breaker in the open year: what produced its actuals.
     cb = [r for r in L if r['fy'] == F1 and fund(r) == 'Circuit breaker']
     d['cb_kind'] = {k: money(v) for (k,), v in
@@ -180,123 +177,6 @@ def build():
     pc = lambda a, b: 100.0 * (b - a) / a
     cagr = lambda a, b, n: 100.0 * ((b / a) ** (1.0 / n) - 1)
     yrs = len(J.YEARS) - 1
-
-    # ================================================== sped-all-funds
-    t0, t1, g0, g1 = d['total'][F0], d['total'][F1], d['gf'][F0], d['gf'][F1]
-    o0, o1 = d['other'][F0], d['other'][F1]
-    s0, s1 = d['out_share'][F0], d['out_share'][F1]
-    p_all, p_gf = pc(t0, t1), pc(g0, g1)
-    gf_rate = cagr(g0, g1, yrs)
-    if not (g1 > g0 and t1 > t0):
-        fail('the finding assumes both rose; the data no longer says so')
-    if not s1 < s0:
-        fail('the second conclusion assumes the share outside the general fund fell')
-    fx = {}
-    fx['all0'] = f('all0', U(t0), 'every fund, %s' % C.fy(F0), 'published', {'y': F(F0)})
-    fx['all1'] = f('all1', U(t1), 'every fund, %s, not yet closed' % C.fy(F1), 'published',
-                   {'y': F(F1)})
-    fx['gf0'] = f('gf0', U(g0), 'from the general fund, %s' % C.fy(F0), 'published', {'y': F(F0)})
-    fx['gf1'] = f('gf1', U(g1), 'from the general fund, %s' % C.fy(F1), 'published', {'y': F(F1)})
-    fx['out0'] = f('out0', P(s0), 'paid outside the general fund, %s' % C.fy(F0), 'published',
-                   {'y': F(F0)})
-    fx['out1'] = f('out1', P(s1), 'paid outside the general fund, %s' % C.fy(F1), 'published',
-                   {'y': F(F1)})
-    fx['rate'] = f('rate', P(gf_rate), 'general fund part, growth a year, %s'
-                   % C.fyspan(F0, F1), 'published', {'y': figure(F0, C.fyspan(F0, F1), 'fiscal years')})
-    fx['reclass'] = f('reclass', U(d['cb_reclass']),
-                      'circuit breaker, %s, one year-end reclassification' % C.fy(F1),
-                      'published', {'y': F(F1)})
-    fx['open'] = f('open', U(d['open']), 'still on order on these accounts, %s' % C.fy(F1),
-                   'published', {'y': F(F1)})
-    fx['psy'] = f('psy', U(d['psy'][F1]), 'school psychologists, %s, not counted above'
-                  % C.fy(F1), 'published', {'y': F(F1)})
-    fx['benefits'] = f('benefits', None, 'benefits and town-side costs of these staff', 'gap',
-                       closes=BENEFITS_CLOSES)
-
-    comp_order = [c for c, _, inn, _ in J.COMPONENTS if inn]
-    cols = (('General fund', ('General fund',)), ('Circuit breaker', ('Circuit breaker',)),
-            ('Grants', ('IDEA grants', 'Other special education grants')))
-    cell = lambda y, c, fns: sum(d['fc'].get((y, fn, c), 0.0) for fn in fns)
-
-    def year_view(y):
-        rows = []
-        for c in comp_order:
-            v = [cell(y, c, fns) for _, fns in cols]
-            if abs(sum(v) - d['comp'][(y, c)]) > 0.005:
-                fail('%s %s: the funds do not sum to the component' % (y, c))
-            rows.append(dict(label=J.COMPONENT_LABEL[c], cells=[C.usd(x) for x in v + [sum(v)]]))
-        tot = [sum(cell(y, c, fns) for c in comp_order) for _, fns in cols]
-        for (name, fns), t in zip(cols, tot):
-            if abs(t - sum(d['fund'][(y, fn)] for fn in fns)) > 0.005:
-                fail('%s %s: the components do not sum to the fund' % (y, name))
-        rows.append(dict(label='All of it', cells=[C.usd(x) for x in tot + [sum(tot)]]))
-        pv = [cell(y, 'psychologists', fns) for _, fns in cols]
-        rows.append(dict(label='School psychologists (not in the total)',
-                         cells=[C.usd(x) for x in pv + [sum(pv)]]))
-        return dict(key='fy%d' % y, label=C.fy(y), total_col=3, kinds=['ledger'] * 4,
-                    columns=[n for n, _ in cols] + ['Every fund'], rows=rows,
-                    note='Rows are what the money paid for, by object code; columns are the fund '
-                         'that paid. Grants are the IDEA and special education program '
-                         'improvement grants. Psychologists serve every student; they are on the '
-                         'list and kept out of the total, by our choice.'
-                         + (' %s is not yet closed.' % C.fy(y) if y == F1 else ''))
-
-    out['sped-all-funds'] = TP.page(
-        'sped-all-funds',
-        'Special education across every fund rose %s from %s to %s; the general fund’s part rose %s.'
-        % (C.pct(p_all), C.fy(F0), C.fy(F1), C.pct(p_gf)),
-        list(fx.values()),
-        [con('The general fund paid %s more in %s than in %s; every fund together, %s more.'
-             % (C.usd(g1 - g0), C.fy(F1), C.fy(F0), C.usd(t1 - t0)),
-             ['all0', 'all1', 'gf0', 'gf1', 'open'],
-             {'a': U(g1 - g0), 'y': F(F1), 'z': F(F0), 'b': U(t1 - t0)},
-             notes=[step('These are postings to school accounts, not what special education '
-                         'costs: benefits and costs charged outside these accounts are not here.',
-                         'gap', closes=BENEFITS_CLOSES),
-                    step('%s is not closed in this run: %s was still on order on these accounts.'
-                         % (C.fy(F1), C.usd(d['open'])), 'gap',
-                         {'y': F(F1), 'o': U(d['open'])},
-                         closes='the Town’s journal report for %s, run after the year is closed' % C.fy(F1),
-                         )]),
-         con('Other funds paid %s of it in %s and %s in %s: %s, then %s.'
-             % (C.pct(s0), C.fy(F0), C.pct(s1), C.fy(F1), C.usd(o0), C.usd(o1)),
-             ['out0', 'out1', 'reclass'],
-             {'a': P(s0), 'y': F(F0), 'b': P(s1), 'z': F(F1), 'c': U(o0), 'd': U(o1)},
-             notes=[step('In %s the circuit breaker paid through one year-end reclassification '
-                         'of %s; in earlier years it paid invoices through the year.'
-                         % (C.fy(F1), C.usd(d['cb_reclass'])), 'gap',
-                         {'y': F(F1), 'r': U(d['cb_reclass'])},
-                         closes='the district’s circuit breaker and IDEA spending plans, '
-                                'and the circuit breaker account statement, by year'),
-                    step('Why less came from other funds is not in a ledger: a smaller '
-                         'reimbursement, a balance held back, or costs moved are all possible.',
-                         'hypothesis')]),
-         con('The general fund’s part grew %s a year, against the %s a year the levy may rise.'
-             % (C.pct(gf_rate), C.pct(LEVY)),
-             ['rate', 'gf0', 'gf1'],
-             {'a': P(gf_rate), 'l': figure(LEVY, C.pct(LEVY), 'statute')},
-             notes=[step('A comparison, not a forecast: nothing in the model is set from these '
-                         'actuals.', 'gap',
-                         closes='the voted special education budgets for the same years, '
-                                'compared line by line')])],
-        chart=TP.series('Special education spending by fund', [C.fy(y) for y in J.YEARS], [
-            TP.track(fn, [d['fund'][(y, fn)] for y in J.YEARS], 'published')
-            for fn in FUNDS_DRAWN if any(d['fund'][(y, fn)] for y in J.YEARS)],
-            '$', kind='bar', stacked=True,
-            note='Actuals on the accounts the school ledger labels special education, net of '
-                 'every reclassification. %s is not yet closed.' % C.fy(F1),
-            note_figures={'y': F(F1)}),
-        table=dict(caption='What special education paid for, and which fund paid',
-                   views=[year_view(y) for y in reversed(J.YEARS)]),
-        sources=sources(),
-        finding_figures={'a': P(p_all), 'y': F(F0), 'z': F(F1), 'b': P(p_gf)})
-    out['sped-all-funds']['not_established'] = [
-        'What special education costs in full: benefits and costs charged outside these '
-        'accounts, and special education work paid from accounts with no special education '
-        'label, are not in the journal’s special education accounts.',
-        'Why the share paid by the circuit breaker and grants fell.',
-        'The FY2026 figures after the close.',
-    ]
 
     # ================================================== sped-providers
     o = d['order']

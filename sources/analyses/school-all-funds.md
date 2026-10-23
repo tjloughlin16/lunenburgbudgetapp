@@ -404,7 +404,7 @@ What this does not establish:
 
 Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)](/docs/data/munis-school-journal.csv); [Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)](/docs/data/munis-school-journal-accounts.csv); [Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account](/docs/data/munis-school-ytd.csv); [Town of Lunenburg — how the journal reached us, and what was redacted](/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md)
 
-## Special education budget, every fund
+## Special education, all funds
 
 **Special education spending passed its voted budget every year, and other funds paid the difference.**
 
@@ -415,6 +415,8 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 - Other funds paid $773,361 to $1,065,546 a year on top: the circuit breaker and grants.
   - *hypothesis:* So outside money paid for more than the general fund budgeted, in every year. Whether the vote was set expecting it to is not in a ledger.
   - *not known:* Special education here is the accounts the ledger labels so; work paid from other accounts is not counted. — closes: the district’s End of Year Financial Report, special education program, all funds
+- Other funds paid 19.8% of it in FY2023 and 11.2% in FY2026.
+  - *hypothesis:* Why less came from other funds is not in a ledger: a smaller reimbursement, a balance held back, or costs moved are all possible.
 
 **Special education: what was voted, what was spent, and which fund paid — FY2026**
 

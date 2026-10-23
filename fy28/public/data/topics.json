@@ -49,7 +49,6 @@
     {
      "title": "Special education",
      "topics": [
-      "sped-budget-all-funds",
       "sped-all-funds"
      ]
     }
@@ -197,7 +196,7 @@
      "topics": [
       "tuition-budget",
       "special-education-overruns",
-      "sped-budget-all-funds"
+      "sped-all-funds"
      ]
     },
     {
@@ -212,7 +211,6 @@
     {
      "title": "Who is paid, and from where",
      "topics": [
-      "sped-all-funds",
       "sped-providers",
       "sped-burndown"
      ]
@@ -3691,8 +3689,8 @@
    "title": "Special education transportation"
   },
   "sped-all-funds": {
-   "finding": "Special education across every fund rose 28.0% from FY2023 to FY2026; the general fund’s part rose 41.5%.",
-   "generator": "scripts/build_journal_sped_topics.py",
+   "finding": "Special education spending passed its voted budget every year, and other funds paid the difference.",
+   "generator": "scripts/build_school_all_funds.py",
    "home": "special-education",
    "id": "sped-all-funds",
    "minutes": 2,
@@ -3703,20 +3701,6 @@
     "school-all-funds"
    ],
    "title": "Special education, all funds"
-  },
-  "sped-budget-all-funds": {
-   "finding": "Special education spending passed its voted budget every year, and other funds paid the difference.",
-   "generator": "scripts/build_school_all_funds.py",
-   "home": "school-all-funds",
-   "id": "sped-budget-all-funds",
-   "minutes": 1,
-   "path": "/school-all-funds/sped-budget-all-funds",
-   "ready": true,
-   "shelves": [
-    "school-all-funds",
-    "special-education"
-   ],
-   "title": "Special education budget, every fund"
   },
   "sped-burndown": {
    "finding": "In FY2026 the circuit breaker paid $4,005 from July to May, then $333,495 in one June entry.",

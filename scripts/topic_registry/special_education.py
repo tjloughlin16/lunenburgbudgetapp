@@ -16,18 +16,20 @@ CATEGORY = dict(
                            'in-district-special-education', 'special-education-transportation']),
         ('What comes back', ['circuit-breaker', 'circuit-breaker-account']),
         # The same budget against every fund, home on the School budget, all funds shelf.
+        # sped-all-funds: the vote beside every fund that paid, written by
+        # build_school_all_funds.py (merged 23 October 2026 with the budget page that repeated it).
         ('Budgets and surprises', ['tuition-budget', 'special-education-overruns',
-                                   'sped-budget-all-funds']),
+                                   'sped-all-funds']),
         ('Children and placements', ['students-with-an-iep', 'out-of-district-placements',
                                      'hiring-versus-placing', 'class-size-limits']),
         # The school MUNIS journal, every fund, posting by posting (notes/plans/
         # MUNIS-JOURNAL-REPORTS.md, Hub A). Written by build_journal_sped_topics.py.
-        ('Who is paid, and from where', ['sped-all-funds', 'sped-providers', 'sped-burndown']),
+        ('Who is paid, and from where', ['sped-providers', 'sped-burndown']),
     ],
     elsewhere=[('/enrolment/children-schooled-elsewhere', 'Children schooled elsewhere'),
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_special_education_topics.py'
-TOPIC_GENERATORS = {'sped-all-funds': 'build_journal_sped_topics.py',
+TOPIC_GENERATORS = {'sped-all-funds': 'build_school_all_funds.py',
                     'sped-providers': 'build_journal_sped_topics.py',
                     'sped-burndown': 'build_journal_surplus_topics.py'}
 TOPICS = {

@@ -21,7 +21,7 @@ CATEGORY = dict(
         ('Left unspent', ['unspent-by-fund']),
         ('How grants are booked', ['grant-coding']),
         ('Grants compared', ['grant-allocations-compared', 'grants-others-receive']),
-        ('Special education', ['sped-budget-all-funds', 'sped-all-funds']),
+        ('Special education', ['sped-all-funds']),
     ])
 GENERATOR = 'build_school_all_funds.py'
 # DESE's allocations against the comparison districts (MASTER-PLAN item 10): a different source
@@ -34,7 +34,6 @@ TOPICS = {
     'outside-the-general-fund': 'Paid outside the general fund',
     'unspent-by-fund': 'Unspent money by fund',
     'grant-coding': 'Grant spending by line',
-    'sped-budget-all-funds': 'Special education budget, every fund',
     'grant-allocations-compared': 'Grant allocations compared',
     'grants-others-receive': 'Grants other districts get',
 }

@@ -11,7 +11,7 @@
     outside-the-general-fund  /school-all-funds/outside-the-general-fund   fund x line x payee
     unspent-by-fund           /school-all-funds/unspent-by-fund            receipts, spending, balance
     grant-coding              /school-all-funds/grant-coding               H2: is grant spending on a line?
-    sped-budget-all-funds     /school-all-funds/sped-budget-all-funds      H1: special education, filtered
+    sped-all-funds            /special-education/sped-all-funds            H1: special education, filtered
 
 Phase 3 of notes/MASTER-PLAN.md (items 11-15 and the two hypotheses). TJ, 22 October 2026: "the
 schools' 'budget' is just the general fund. They layer in grants and stuff to their
@@ -903,7 +903,7 @@ def build():
         'Whether an unspent grant award was carried into the next grant year or simply not drawn.',
     ]
 
-    # ================================================== sped-budget-all-funds (H1)
+    # ================================================== sped-all-funds (H1)
     s = m['sped']
     gv = {y: s[(y, 'gf', 'original_budget')] for y in Y}
     gr = {y: gv[y] + s[(y, 'gf', 'transfer')] for y in Y}
@@ -937,6 +937,11 @@ def build():
                   'published', {'y': F(y_over)})
     hx['omin'] = f('omin', U(min(oa.values())), 'paid by other funds, smallest year', 'published')
     hx['omax'] = f('omax', U(max(oa.values())), 'paid by other funds, largest year', 'published')
+    osh = {y: 100.0 * oa[y] / al[y] for y in Y}
+    if not osh[F1] < osh[F0]:
+        fail('the share conclusion assumes other funds paid a smaller share in %d than in %d' % (F1, F0))
+    hx['osh0'] = f('osh0', P(osh[F0]), 'paid outside the general fund, %s' % C.fy(F0), 'published', {'y': F(F0)})
+    hx['osh1'] = f('osh1', P(osh[F1]), 'paid outside the general fund, %s' % C.fy(F1), 'published', {'y': F(F1)})
     hx['intent'] = f('intent', None, 'whether the vote counted on other funds', 'gap',
                      closes='the district’s budget build for special education, with the grant '
                             'and circuit breaker offsets it assumed')
@@ -957,7 +962,7 @@ def build():
         for got, want, what in ((tot[0], gv[y], 'voted'), (tot[1], ga[y], 'general fund spent'),
                                 (tot[4], al[y], 'every fund')):
             if abs(got - want) > 0.005:
-                raise SystemExit('sped-budget-all-funds %s: the components\' %s is %.2f, the year\'s is %.2f'
+                raise SystemExit('sped-all-funds %s: the components\' %s is %.2f, the year\'s is %.2f'
                                  % (y, what, got, want))
         rows.append(dict(label='All of it', cells=[C.usd(x) for x in tot]))
         return dict(key='fy%d' % y, label=C.fy(y), total_col=4, kinds=['ledger'] * 5,
@@ -968,8 +973,8 @@ def build():
                          'IDEA and special education program improvement grants.'
                          + (' %s is not yet closed.' % C.fy(y) if y == F1 else ''))
 
-    out['sped-budget-all-funds'] = TP.page(
-        'sped-budget-all-funds',
+    out['sped-all-funds'] = TP.page(
+        'sped-all-funds',
         'Special education spending passed its voted budget every year, and other funds paid the '
         'difference.',
         list(hx.values()),
@@ -994,7 +999,13 @@ def build():
                     step('Special education here is the accounts the ledger labels so; work paid '
                          'from other accounts is not counted.', 'gap',
                          closes='the district’s End of Year Financial Report, special education '
-                                'program, all funds')])],
+                                'program, all funds')]),
+         con('Other funds paid %s of it in %s and %s in %s.'
+             % (C.pct(osh[F0]), C.fy(F0), C.pct(osh[F1]), C.fy(F1)), ['osh0', 'osh1'],
+             {'a': P(osh[F0]), 'y': F(F0), 'b': P(osh[F1]), 'z': F(F1)},
+             notes=[step('Why less came from other funds is not in a ledger: a smaller '
+                         'reimbursement, a balance held back, or costs moved are all possible.',
+                         'hypothesis')])],
         chart=TP.series('Special education budget and spending', years, [
             TP.track('General fund spent', [ga[y] for y in Y], 'published', 'bar'),
             TP.track('Other funds spent', [oa[y] for y in Y], 'published', 'bar'),
@@ -1005,7 +1016,7 @@ def build():
         table=dict(caption='Special education: what was voted, what was spent, and which fund paid',
                    views=[sped_year(y) for y in reversed(Y)]),
         sources=sources())
-    out['sped-budget-all-funds']['not_established'] = [
+    out['sped-all-funds']['not_established'] = [
         'Whether the special education vote was set expecting the circuit breaker and grants to pay '
         'the rest.',
         'What special education costs in full, including benefits and work on unlabelled accounts.',

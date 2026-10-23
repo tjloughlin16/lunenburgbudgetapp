@@ -1,5 +1,5 @@
 #!/usr/bin/env python3
-"""Recompute every figure on /special-education/sped-all-funds and /sped-providers by a
+"""Recompute every figure on /special-education/sped-providers by a
 DIFFERENT ROUTE.
 
     python3 scripts/verify_journal_sped_topics.py
@@ -167,12 +167,6 @@ def main():
 
     pct = lambda a, b: 100 * (b - a) / a
     want = {
-        'sped-all-funds': {
-            'all0': total[2023], 'all1': total[2026], 'gf0': gf[2023], 'gf1': gf[2026],
-            'out0': 100 * other[2023] / total[2023], 'out1': 100 * other[2026] / total[2026],
-            'rate': 100 * ((float(gf[2026] / gf[2023])) ** (1 / 3) - 1),
-            'reclass': cents(reclass[0]), 'open': open_enc, 'psy': psy[2026],
-        },
         'sped-providers': {
             'vend': allv, 'top3': share(order[:3]), 'top10': share(order[:10]),
             'payees': len(tot), 'l0': fl[2023], 'l1': fl[2026], 'v0': vend[2023],
