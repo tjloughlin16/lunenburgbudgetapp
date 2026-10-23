@@ -1135,9 +1135,20 @@ def build():
     # ---------------------------------------------------------- regional districts
     pp_of = {r['district']: r['per_pupil'] for r in PS['last_year']}
     pp_of.update({r['district']: r['per_pupil'] for r in de['rows']})
-    reg = sorted(((d, pp_of[d]) for d in REGIONAL), key=lambda t: t[1])
-    if len(reg) != 5:
-        fail('the prose says five regional districts')
+    # The comparison is the ACADEMIC regionals. Monty Tech is read out of REGIONAL by its LEA
+    # (lunenburg_districts), never by a typed name, and shown beside the range for reference:
+    # a grades 9-12 vocational school is not like-for-like with them.
+    monty = DIST.dese_name(DIST.MONTY_LEA)
+    if monty not in REGIONAL:
+        fail('Monty Tech is no longer among the regional districts read')
+    if de['fin_fy'] != fy:
+        fail('Monty Tech’s figure a pupil is no longer the same fiscal year as the others')
+    reg = sorted(((d, pp_of[d]) for d in REGIONAL if d != monty), key=lambda t: t[1])
+    DIST.assert_excluded([d for d, _ in reg], 'the regional-district spending range')
+    if len(reg) < 2:
+        fail('fewer than two academic regional districts to compare')
+    mt_pp = pp_of[monty]
+    mt_span = DIST.grade_span(DIST.MONTY_LEA)
     cfy = 2026
     rt = {}
     rt_all = []
@@ -1155,15 +1166,18 @@ def build():
     if set(rt) != set(REGIONAL) or lun_rt is None:
         fail('a regional transportation line is missing from the FY%d cherry sheet' % cfy)
     rt_tot, rt_n = sum(rt_all), sum(1 for a in rt_all if a > 0)
-    big_rt = sorted(((d, a) for d, a in rt.items() if d != REGIONAL[0]), key=lambda t: -t[1])[:2]
+    big_rt = sorted(((d, a) for d, a in rt.items() if d != monty), key=lambda t: -t[1])[:2]
     out['regional-district-spending'] = TP.page(
         'regional-district-spending',
-        'Five nearby regional districts spent %s to %s a pupil in %s; Lunenburg spent %s.'
+        'Nearby academic regional districts spent %s to %s a pupil in %s; Lunenburg spent %s.'
         % (C.usd(reg[0][1]), C.usd(reg[-1][1]), C.fy(fy), C.usd(hd['per_pupil'])),
-        [f('lo', U(reg[0][1]), '%s, the lowest of the five' % reg[0][0], 'published'),
+        [f('lo', U(reg[0][1]), '%s, the lowest of the %s' % (reg[0][0], C.num(len(reg))),
+           'published', {'n': N(len(reg))}),
          f('hi', U(reg[-1][1]), '%s, the highest' % SHORT.get(reg[-1][0], reg[-1][0]),
            'published'),
          f('lun', U(hd['per_pupil']), 'Lunenburg, a single-town district, %s' % C.fy(fy),
+           'published', {'y': F(fy)}),
+         f('mt', U(mt_pp), '%s, vocational, for reference, %s' % (DIST.MONTY_SHORT, C.fy(fy)),
            'published', {'y': F(fy)}),
          f('rtall', U(rt_tot), 'regional transportation aid, cherry sheet, %s' % C.fy(cfy),
            'published', {'y': F(cfy)}),
@@ -1171,9 +1185,16 @@ def build():
          f('rt1', U(big_rt[0][1]), '%s’s share' % big_rt[0][0], 'published'),
          f('rt2', U(big_rt[1][1]), '%s’s share' % big_rt[1][0], 'published'),
          f('lunrt', U(lun_rt), 'Lunenburg’s line, %s' % C.fy(cfy), 'published', {'y': F(cfy)})],
-        [con('The five span %s to %s a pupil; being regional does not fix the figure.'
-             % (C.usd(reg[0][1]), C.usd(reg[-1][1])), ['lo', 'hi', 'lun'],
-             {'a': U(reg[0][1]), 'b': U(reg[-1][1])}),
+        [con('The %s academic regionals span %s to %s a pupil; being regional does not fix '
+             'the figure.' % (C.num(len(reg)), C.usd(reg[0][1]), C.usd(reg[-1][1])),
+             ['lo', 'hi', 'lun', 'mt'],
+             {'n': N(len(reg)), 'a': U(reg[0][1]), 'b': U(reg[-1][1])},
+             notes=[step('For reference, outside that range: %s, Lunenburg’s grades %s vocational '
+                         'district, spent %s a pupil in %s. A vocational school is not '
+                         'like-for-like with academic districts.'
+                         % (DIST.MONTY_SHORT, mt_span, C.usd(mt_pp), C.fy(fy)), 'measured',
+                         {'m': U(mt_pp), 'y': F(fy)}, allow=(mt_span,),
+                         cite=(DIST.MONTY_HREF, DIST.MONTY_SHORT))]),
          con('The %s cherry sheet carries %s of regional transportation aid, to %s districts.'
              % (C.fy(cfy), C.usd(rt_tot), C.num(rt_n)), ['rtall', 'rtn', 'lunrt'],
              {'y': F(cfy), 'a': U(rt_tot), 'n': N(rt_n)},
@@ -1185,17 +1206,23 @@ def build():
          con('%s’s share was %s; %s’s %s.' % (big_rt[0][0], C.usd(big_rt[0][1]), big_rt[1][0],
                                              C.usd(big_rt[1][1])), ['rt1', 'rt2'],
              {'a': U(big_rt[0][1]), 'b': U(big_rt[1][1])})],
-        table=dict(caption='The regional districts compared', views=[dict(
-            key='regional', label='Regional districts nearby', total_col=-1, kinds=['ledger'] * 2,
+        table=dict(caption='The academic regional districts compared', views=[dict(
+            key='regional', label='Academic regional districts nearby', total_col=-1,
+            kinds=['ledger'] * 2,
             columns=['A pupil, %s' % C.fy(fy), 'Transport aid, %s' % C.fy(cfy)],
             rows=[dict(label=d, cells=[C.usd(v), C.usd(rt[d])]) for d, v in reversed(reg)]
-            + [dict(label='Lunenburg', cells=[C.usd(hd['per_pupil']), C.usd(lun_rt)])],
+            + [dict(label='Lunenburg', cells=[C.usd(hd['per_pupil']), C.usd(lun_rt)])]
+            + [dict(label='%s (vocational, grades %s), for reference'
+                          % (DIST.MONTY_SHORT, mt_span),
+                    cells=[C.usd(mt_pp), C.usd(rt[monty])])],
             note='Spending is DESE’s, all funds; aid is the DLS cherry sheet at the final state '
-                 'budget. Which districts are regional is our reading of each.')]),
-        chart=TP.ranking('Regional districts, spending a pupil',
+                 'budget. Which districts are regional is our reading of each. Monty Tech is '
+                 'shown for reference and is not in the range.')]),
+        chart=TP.ranking('Academic regional districts, spending a pupil',
                          [(short(d), v) for d, v in reg] + [('Lunenburg', hd['per_pupil'])], '$',
                          highlight='Lunenburg',
-                         note='All funds, %s. Which districts are regional is our reading of each.'
+                         note='All funds, %s. Which districts are regional is our reading of each. '
+                              'Monty Tech, vocational, is left out.'
                               % C.fy(fy), note_figures={'y': F(fy)}),
         said=[quote('transport-bill'), quote('not-regionalize')],
         sources=S('district-expenditures-by-function.xlsx', 'dls-cherry-sheet.csv',

@@ -15,17 +15,9 @@
     }
    },
    "literals": [],
-   "text": "All funds, FY2025. Which districts are regional is our reading of each."
+   "text": "All funds, FY2025. Which districts are regional is our reading of each. Monty Tech, vocational, is left out."
   },
   "rows": [
-   {
-    "label": "Monty Tech",
-    "texts": [
-     "$25,827"
-    ],
-    "total": "$25,827",
-    "value": 25827.0
-   },
    {
     "label": "Groton-Dunstable",
     "texts": [
@@ -68,7 +60,7 @@
    }
   ],
   "stack": null,
-  "title": "Regional districts, spending a pupil",
+  "title": "Academic regional districts, spending a pupil",
   "type": "ranking",
   "unit": "$"
  },
@@ -81,18 +73,49 @@
      "value": 18142.0
     },
     "b": {
-     "text": "$25,827",
+     "text": "$22,664",
      "unit": "",
-     "value": 25827.0
+     "value": 22664.0
+    },
+    "n": {
+     "text": "4",
+     "unit": "",
+     "value": 4
     }
    },
    "literals": [],
+   "notes": [
+    {
+     "cite": {
+      "href": "/monty-tech",
+      "label": "Monty Tech"
+     },
+     "figures": {
+      "m": {
+       "text": "$25,827",
+       "unit": "",
+       "value": 25827.0
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "measured",
+     "literals": [
+      "9–12"
+     ],
+     "text": "For reference, outside that range: Monty Tech, Lunenburg’s grades 9–12 vocational district, spent $25,827 a pupil in FY2025. A vocational school is not like-for-like with academic districts."
+    }
+   ],
    "rests_on": [
     "lo",
     "hi",
-    "lun"
+    "lun",
+    "mt"
    ],
-   "text": "The five span $18,142 to $25,827 a pupil; being regional does not fix the figure."
+   "text": "The 4 academic regionals span $18,142 to $22,664 a pupil; being regional does not fix the figure."
   },
   {
    "figures": {
@@ -155,9 +178,15 @@
    "id": "lo",
    "kind": "published",
    "label": {
-    "figures": {},
+    "figures": {
+     "n": {
+      "text": "4",
+      "unit": "",
+      "value": 4
+     }
+    },
     "literals": [],
-    "text": "Ashburnham-Westminster, the lowest of the five"
+    "text": "Ashburnham-Westminster, the lowest of the 4"
    },
    "value": {
     "text": "$18,142",
@@ -171,12 +200,12 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "Monty Tech, the highest"
+    "text": "Groton-Dunstable, the highest"
    },
    "value": {
-    "text": "$25,827",
+    "text": "$22,664",
     "unit": "",
-    "value": 25827.0
+    "value": 22664.0
    }
   },
   {
@@ -197,6 +226,26 @@
     "text": "$18,027",
     "unit": "",
     "value": 18027.0
+   }
+  },
+  {
+   "id": "mt",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Monty Tech, vocational, for reference, FY2025"
+   },
+   "value": {
+    "text": "$25,827",
+    "unit": "",
+    "value": 25827.0
    }
   },
   {
@@ -290,9 +339,9 @@
     "value": 18142.0
    },
    "b": {
-    "text": "$25,827",
+    "text": "$22,664",
     "unit": "",
-    "value": 25827.0
+    "value": 22664.0
    },
    "c": {
     "text": "$18,027",
@@ -306,7 +355,7 @@
    }
   },
   "literals": [],
-  "text": "Five nearby regional districts spent $18,142 to $25,827 a pupil in FY2025; Lunenburg spent $18,027."
+  "text": "Nearby academic regional districts spent $18,142 to $22,664 a pupil in FY2025; Lunenburg spent $18,027."
  },
  "full_report": {
   "href": "",
@@ -349,7 +398,7 @@
   }
  ],
  "table": {
-  "caption": "The regional districts compared",
+  "caption": "The academic regional districts compared",
   "views": [
    {
     "columns": [
@@ -361,16 +410,9 @@
      "ledger",
      "ledger"
     ],
-    "label": "Regional districts nearby",
-    "note": "Spending is DESE’s, all funds; aid is the DLS cherry sheet at the final state budget. Which districts are regional is our reading of each.",
+    "label": "Academic regional districts nearby",
+    "note": "Spending is DESE’s, all funds; aid is the DLS cherry sheet at the final state budget. Which districts are regional is our reading of each. Monty Tech is shown for reference and is not in the range.",
     "rows": [
-     {
-      "cells": [
-       "$25,827",
-       "$2,022,089"
-      ],
-      "label": "Montachusett Regional Vocational Technical"
-     },
      {
       "cells": [
        "$22,664",
@@ -405,6 +447,13 @@
        "$0"
       ],
       "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "$25,827",
+       "$2,022,089"
+      ],
+      "label": "Monty Tech (vocational, grades 9–12), for reference"
      }
     ],
     "total_col": -1

@@ -59,6 +59,10 @@ import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
+# Lunenburg's two districts. DESE's comparison sheet, not this project, chose the districts
+# the teacher rank is taken over, and Monty Tech is one of them: the rank is left as DESE's
+# and a note beside it says so (lunenburg_districts, the one place the LEA is typed).
+import lunenburg_districts as DIST  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
@@ -308,6 +312,18 @@ def build():
                            note='%s: DESE’s FTE over its pupils (our division), for only the %s '
                                 'districts its sheet carries in every year.' % (C.fy(rl), C.num(n_stable)),
                            note_figures={'y': F(rl), 'n': N(n_stable)})
+    # Who is on DESE's sheet in the rank's year, read off the payload -- and whether Monty Tech
+    # is one of them. The note under the rank says so only while the sheet says so.
+    monty = DIST.dese_name(DIST.MONTY_LEA)
+    sheet_rl = {p['district'] for p in PA['peers'] if any(q['fy'] == rl for q in p['points'])}
+    if len(sheet_rl) != rt['of']:
+        fail('the districts on the %s sheet no longer number the rank’s %d' % (rl, rt['of']))
+    mt_note = ([step('One of the %s on DESE’s sheet is %s, Lunenburg’s vocational district, which '
+                     'teaches grades %s only. The rank is over DESE’s set, not ours.'
+                     % (C.num(rt['of']), DIST.MONTY_SHORT, DIST.grade_span(DIST.MONTY_LEA)),
+                     'measured', {'n': N(rt['of'])}, allow=(DIST.grade_span(DIST.MONTY_LEA),),
+                     cite=(DIST.MONTY_HREF, DIST.MONTY_SHORT))]
+               if monty in sheet_rl else [])
     out['teachers-per-pupil'] = TP.page(
         'teachers-per-pupil',
         'Lunenburg had %s teacher FTE per hundred pupils in %s, %s of %s on the state’s sheet.'
@@ -343,7 +359,7 @@ def build():
                          % (C.num(of_first), C.fy(rf), C.num(rt['of']), C.fy(rl),
                             C.num(len(virtual)), C.fy(v_from)), 'gap',
                          {'a': N(of_first), 'y': F(rf), 'b': N(rt['of']), 'z': F(rl),
-                          'v': N(len(virtual)), 'w': F(v_from)}, closes=MEMBERSHIP)]),
+                          'v': N(len(virtual)), 'w': F(v_from)}, closes=MEMBERSHIP)] + mt_note),
          con('Among the %s districts on the sheet in every year, Lunenburg is %s in %s.'
              % (C.num(n_stable), ORD(st_t[rl]['rank']), C.fy(rl)), ['st-rank'],
              {'n': N(n_stable), 'r': figure(st_t[rl]['rank'], ORD(st_t[rl]['rank'])),
