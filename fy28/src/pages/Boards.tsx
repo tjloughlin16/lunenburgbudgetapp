@@ -1,4 +1,3 @@
-import { useState } from 'react'
 import { BoardNav } from '../components/BoardNav'
 import { VoteList, type VotePayload } from '../components/VoteList'
 import { RecordCell, type RecordStatus } from '../components/RecordCell'

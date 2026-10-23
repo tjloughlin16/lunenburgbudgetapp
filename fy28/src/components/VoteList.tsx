@@ -46,12 +46,6 @@ export type VotePayload = {
   fy_coverage: Record<string, FyCoverage>
 }
 
-/** What a reader sees for where a result comes from. Our reading of a video gets no chip: it
- *  carries its own note in plain words (`caveat`), which is louder. */
-const BASIS_SHORT: Record<string, string> = {
-  clerk: 'Town Clerk’s record', ours: '', none: '',
-  minutes: 'The town’s minutes', both: 'The town’s minutes, matched to the video', recording: '',
-}
 const BASIS_LONG: Record<string, string> = {
   clerk: 'Town Clerk’s record', ours: 'From our reading of the meeting video', none: 'Result not found',
   minutes: 'The town’s minutes', both: 'The town’s minutes, matched to the video', recording: 'From our reading of the meeting video',
