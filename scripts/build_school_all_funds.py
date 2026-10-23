@@ -297,6 +297,7 @@ def model():
                 sped[(r['fy'], side, r['posts_to'])] += amt
                 if side == 'out' and r['posts_to'] == 'actual':
                     sped[(r['fy'], 'fund:' + J.sped_fund(a), 'actual')] += amt
+                sped[(r['fy'], side + ':' + J.component(a), r['posts_to'])] += amt
         elif J.is_revenue(a) and r['posts_to'] == 'actual':
             rec[(r['fy'], g)] -= amt
             fund_rec[(r['fy'], a['fund'])] -= amt
@@ -966,7 +967,17 @@ def build():
                                              C.usd(sf(y, 'Other special education grants')), C.usd(al[y])])
                   for y in Y],
             note='The accounts on the ledger’s special education list (scripts/journal.py), '
-                 'psychologists outside the total.')]),
+                 'psychologists outside the total.'),
+            dict(key='parts', label='By what it bought, %s' % C.fy(F1), total_col=3, kinds=['ledger'] * 4,
+                 columns=['Voted, general fund', 'General fund spent', 'Other funds spent', 'Every fund'],
+                 rows=[dict(label=J.COMPONENT_LABEL[c],
+                            cells=[C.usd(s.get((F1, 'gf:' + c, 'original_budget'), 0.0)),
+                                   C.usd(s.get((F1, 'gf:' + c, 'actual'), 0.0)),
+                                   C.usd(s.get((F1, 'out:' + c, 'actual'), 0.0)),
+                                   C.usd(s.get((F1, 'gf:' + c, 'actual'), 0.0) + s.get((F1, 'out:' + c, 'actual'), 0.0))])
+                       for c, _, inn, _ in J.COMPONENTS if inn],
+                 note='The same budget filtered to special education, by object code: the voted '
+                      'line beside every fund that paid for it.')]),
         sources=sources())
     out['sped-budget-all-funds']['not_established'] = [
         'Whether the special education vote was set expecting the circuit breaker and grants to pay '

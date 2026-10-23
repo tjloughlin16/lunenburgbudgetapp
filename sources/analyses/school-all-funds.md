@@ -426,6 +426,18 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 
 *The accounts on the ledger’s special education list (scripts/journal.py), psychologists outside the total.*
 
+**Special education: voted, and spent from every fund — By what it bought, FY2026**
+
+| | Voted, general fund | General fund spent | Other funds spent | Every fund |
+|---|---:|---:|---:|---:|
+| Out-of-district tuition | $1,291,293 | $1,144,063 | $333,495 | $1,477,558 |
+| Transportation | $565,734 | $620,025 | $0 | $620,025 |
+| Contracted services and evaluations | $152,500 | $232,152 | $299,268 | $531,420 |
+| Staff pay and benefits | $4,027,368 | $4,028,380 | $100,601 | $4,128,981 |
+| Supplies, equipment and other | $36,946 | $31,292 | $39,677 | $70,969 |
+
+*The same budget filtered to special education, by object code: the voted line beside every fund that paid for it.*
+
 What this does not establish:
 
 - Whether the special education vote was set expecting the circuit breaker and grants to pay the rest.
