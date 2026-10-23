@@ -29,6 +29,7 @@ import {
 import { useState } from 'react'
 import { usdShort } from '../model/engine'
 import { abs } from '../lib/abs'
+import { TableDownload } from './TableDownload'
 
 type Unit = { text: string }
 type Basis = 'published' | 'stated' | 'estimate'
@@ -813,6 +814,16 @@ function Presence({ c }: { c: PresenceChart }) {
         {tip ? <><span className="font-semibold">{tip.col}</span>, {tip.r}: {tip.text}</> : 'Hover or tap a dot for the amount and year.'}</p>
       <SrTable head={['', ...c.columns, 'Others holding it']}
         rows={c.groups.flatMap(g => g.rows.map(r => [`${g.label}: ${r.label}`, ...r.cells.map(v => v ?? 'no'), r.count_text]))} />
+      {/* The dots are aria-hidden, so the page-wide enhancer leaves them alone; the download
+          is the payload's own rows instead (TableDownload.tsx). */}
+      <TableDownload className="mt-1" spec={() => ({
+        caption: c.title,
+        views: [{ note: c.note ? [c.note.text] : [], grid: {
+          rowHeader: true,
+          columns: ['Group', '', ...c.columns, 'Others holding it'],
+          rows: c.groups.flatMap(g => g.rows.map(r => [g.label, r.label, ...r.cells, r.count_text])),
+        } }],
+      })} />
     </Frame>
   )
 }

@@ -1,5 +1,7 @@
 import { useEffect, useRef, useState } from 'react'
 import { abs } from '../lib/abs'
+import type { ExportSpec } from '../lib/tableExport'
+import { TableDownload } from './TableDownload'
 import { AREA_LABEL, AREA_TABS, LABEL, SLUG, areaOf, type Tab } from '../routes'
 import { useDocumentTitle, setShareMeta } from '../lib/title'
 
@@ -538,9 +540,9 @@ const kb = (n: number) => (n >= 1e6 ? `${(n / 1e6).toFixed(1)} MB` : `${Math.rou
  *  paper. A printed figure whose source did not print is a figure nobody can check. */
 export function Provenance({ sources }: { sources: Source[] }) {
   return (
-    <div className="report-provenance grid gap-3 mt-5 sm:grid-cols-2">
+    <div className="report-provenance grid gap-3 mt-5 sm:grid-cols-2" data-page-sources="">
       {sources.map(s => (
-        <div key={s.path} className="card p-4 avoid-break">
+        <div key={s.path} className="card p-4 avoid-break" data-source-label={s.path.split('/').pop()}>
           <p className="text-[13.5px] font-bold leading-snug break-words">
             {s.path.split('/').pop()}
           </p>
@@ -1117,6 +1119,25 @@ export type FigureTableView = {
 }
 export type FigureTableData = { caption: string; views: FigureTableView[] }
 
+/** The payload's own figures, every view, for the download (TableDownload.tsx): exact, never
+ *  read back off the page. */
+export function figureTableSpec(t: FigureTableData, current = 0): ExportSpec {
+  return {
+    caption: t.caption, current,
+    views: t.views.map(v => ({
+      label: t.views.length > 1 ? v.label : undefined,
+      note: [v.note, ...(v.lines ?? []),
+        ...(v.kinds.some(x => x === 'stated') ? [`Not from the books (a figure somebody assembled, not the accounting system): ${v.columns.filter((_, i) => v.kinds[i] === 'stated').join(', ')}`] : [])],
+      grid: {
+        rowHeader: true,
+        columns: [v.rows.every(r => /^(FY|SY)\d{4}/.test(r.label)) ? 'Year' : '', ...v.columns,
+          ...(v.rows.some(r => r.code) ? ['Code'] : [])],
+        rows: v.rows.map(r => [r.label, ...r.cells, ...(v.rows.some(x => x.code) ? [r.code ?? null] : [])]),
+      },
+    })),
+  }
+}
+
 export function FigureTable({ t }: { t: FigureTableData }) {
   const [k, setK] = useState(0)
   const v = t.views[k]
@@ -1138,8 +1159,9 @@ export function FigureTable({ t }: { t: FigureTableData }) {
           </div>
         ) : null}
       </div>
+      <TableDownload className="mb-1" spec={() => figureTableSpec(t, k)} />
       <div className="overflow-x-auto rounded-md border" style={{ borderColor: 'var(--grid)' }}>
-        <table className="w-full text-[13px] tabular-nums border-collapse min-w-[560px]">
+        <table data-download="own" className="w-full text-[13px] tabular-nums border-collapse min-w-[560px]">
           <thead>
             <tr style={{ background: 'var(--surface-1)', color: 'var(--text-secondary)' }}>
               <th scope="col" className="sticky left-0 text-left font-semibold px-2.5 py-2 align-bottom"

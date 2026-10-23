@@ -106,6 +106,7 @@ import { ReadingTime } from './components/ReadingTime'
 const HOME_TITLE = document.title
 import { type Package } from './model/rates'
 import { ReleaseNotesDialog, VersionStamp } from './components/WhatChanged'
+import { TableDownloads } from './components/TableDownload'
 
 
 /** The three pages you use rather than read.
@@ -658,6 +659,8 @@ export default function App() {
       </footer>
 
       <ReleaseNotesDialog open={notesOpen} onClose={() => setNotesOpen(false)} />
+      {/* A CSV and Excel download on every data table on the site (TableDownload.tsx). */}
+      <TableDownloads />
     </div>
     </NavProvider>
   )

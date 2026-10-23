@@ -145,7 +145,7 @@ function SaidList({ said }: { said: Said[] }) {
  * the smaller reports broken out". A page ends at its own sources. */
 function Sources({ sources }: { sources: { label: string; href: string }[] }) {
   return (
-    <section className="mt-10 max-w-3xl">
+    <section className="mt-10 max-w-3xl" data-page-sources="">
       <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>Sources</h2>
       <ul className="mt-2 space-y-1 text-[13px]">
         {sources.map(s => (

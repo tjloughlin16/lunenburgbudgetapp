@@ -1,4 +1,7 @@
 import { useEffect, useMemo, useState } from 'react'
+import { TableDownload } from './TableDownload'
+import type { ExportSpec } from '../lib/tableExport'
+import { SITE } from '../lib/abs'
 
 /** EVERY VOTE, SEARCHABLE -- one component for Town Meeting's articles and every board's motions.
  *
@@ -188,7 +191,10 @@ export function VoteList({ p }: { p: VotePayload }) {
         </p>
       )}
 
-      <div className="mt-4">
+      {filtered.length > 0 && (
+        <TableDownload className="mt-3 max-w-4xl" spec={() => voteSpec(p, filtered, { q, fy, m, result, proc })} />
+      )}
+      <div className="mt-1">
         {filtered.slice(0, shown).map(({ g, votes }, i, arr) => (
           <div key={g.id}>
             {(i === 0 || arr[i - 1].g.fy !== g.fy) && <FyHead fy={g.fy} c={p.fy_coverage[String(g.fy)]} />}
@@ -225,6 +231,36 @@ export function VoteList({ p }: { p: VotePayload }) {
       </section>
     </div>
   )
+}
+
+/** THE VOTES AS ROWS, for the download: every vote the filters keep (not only the meetings
+ *  drawn so far), one row each, in the order the page lists them. The view says which filters
+ *  were on, so a downloaded search still says what it is a search for. */
+function voteSpec(p: VotePayload, filtered: { g: VoteGroup; votes: VoteRow[] }[],
+  f: { q: string; fy: string; m: string; result: string; proc: boolean }): ExportSpec {
+  const on = [f.q.trim() && `search “${f.q.trim()}”`, f.fy && `FY${f.fy}`,
+    f.m && (p.groups.find(g => g.id === f.m)?.label ?? f.m), f.result && `result: ${f.result}`,
+    f.proc && 'procedural votes included'].filter(Boolean).join(', ')
+  const n = p.kind === 'town-meeting' ? 'Article' : 'No.'
+  return {
+    caption: p.title,
+    views: [{
+      label: on ? `Filtered: ${on}` : (p.kind === 'town-meeting' ? 'Every article' : 'Every vote'),
+      note: [p.grain, p.fy_rule, p.quote_rule].filter(Boolean),
+      grid: {
+        columns: ['Fiscal year', 'Meeting', 'Date', n, 'Title', 'Amount', 'Result', 'Result as recorded',
+          'Amount voted', 'Where the result comes from', 'Records disagree', 'Moved by', 'Seconded by',
+          'Procedural', 'The record, word for word or as heard', 'Record'],
+        rows: filtered.flatMap(({ g, votes }) => votes.map(v => [
+          `FY${g.fy}`, g.label, g.date || null, v.n || null, v.title || null, v.amount ?? null,
+          v.result_label || v.result || null, v.result_text ?? null, v.result_amount ?? null,
+          BASIS_LONG[v.basis] ?? v.basis ?? null, v.conflict ?? null, v.moved_by ?? null, v.seconded_by ?? null,
+          v.procedural ? 'yes' : null, v.quote || null,
+          v.links[0]?.href ? (v.links[0].href.startsWith('/') ? `${SITE}${v.links[0].href}` : v.links[0].href) : null,
+        ])),
+      },
+    }],
+  }
 }
 
 /** WHAT THE CHIPS MEAN -- one line each, beside the filters, after the thing they are a key to
