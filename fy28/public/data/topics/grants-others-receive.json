@@ -1,0 +1,781 @@
+{
+ "category": "school-all-funds",
+ "chart": {
+  "basis": "published",
+  "decimals": null,
+  "highlight": [],
+  "note": {
+   "figures": {
+    "a": {
+     "text": "FY2017",
+     "unit": "fiscal year",
+     "value": 2017
+    },
+    "b": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "n": {
+     "text": "28",
+     "unit": "districts",
+     "value": 28
+    }
+   },
+   "literals": [],
+   "text": "How many of the 28 comparison districts DESE allocated each in some year, FY2017 to FY2027."
+  },
+  "rows": [
+   {
+    "label": "Title III",
+    "texts": [
+     "17 districts"
+    ],
+    "total": "17 districts",
+    "value": 17
+   },
+   {
+    "label": "Perkins secondary",
+    "texts": [
+     "5 districts"
+    ],
+    "total": "5 districts",
+    "value": 5
+   },
+   {
+    "label": "Title III summer",
+    "texts": [
+     "2 districts"
+    ],
+    "total": "2 districts",
+    "value": 2
+   },
+   {
+    "label": "Title III immigrant",
+    "texts": [
+     "1 districts"
+    ],
+    "total": "1 districts",
+    "value": 1
+   }
+  ],
+  "stack": null,
+  "title": "Grants Lunenburg is not allocated",
+  "type": "ranking",
+  "unit": "districts"
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "n": {
+     "text": "15 of 28",
+     "unit": "districts",
+     "value": 15
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "t3-now",
+    "t3-ever",
+    "t3-l"
+   ],
+   "text": "Title III, for English learners, went to 15 of 28 comparison districts in FY2025; Lunenburg is on no list."
+  },
+  {
+   "figures": {
+    "e": {
+     "text": "$8,391",
+     "unit": "",
+     "value": 8391
+    },
+    "f": {
+     "text": "$10,000",
+     "unit": "",
+     "value": 10000
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Our learner count is the October headcount times DESE’s share; DESE counts learners in March. Both figures are ours."
+    },
+    {
+     "closes": "DESE's Title III consortium membership, or the district's Title III application",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Whether Lunenburg draws Title III through a consortium is not on these pages: they do not list a consortium’s members."
+    }
+   ],
+   "rests_on": [
+    "floor",
+    "rate",
+    "est",
+    "el-l",
+    "el-0"
+   ],
+   "text": "DESE allocates it only where it reaches $10,000; at the median rate Lunenburg would get about $8,391."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "DESE requires Perkins districts to offer career technical programmes; that may be why Lunenburg is not listed. Nothing here tests it."
+    },
+    {
+     "closes": "DESE's grant pages for fund code 0184, fund code 0186",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "0184",
+      "0186"
+     ],
+     "text": "Title III summer and Title III immigrant are not on that list, so their type is not stated here."
+    }
+   ],
+   "rests_on": [
+    "t3-now",
+    "c0400"
+   ],
+   "text": "DESE lists Title III and Perkins secondary as entitlements: by formula, not competed for."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "The district's grants list by year, with each competitive award notice",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "The open-grants list shows what is open now, not who won."
+    }
+   ],
+   "rests_on": [
+    "t3-l"
+   ],
+   "text": "Competitive grants are not on these pages, so what the district applied for and won is not compared."
+  }
+ ],
+ "facts": [
+  {
+   "id": "t3-now",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "comparison districts allocated Title III, FY2025"
+   },
+   "value": {
+    "text": "15 of 28",
+    "unit": "districts",
+    "value": 15
+   }
+  },
+  {
+   "id": "t3-ever",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     },
+     "b": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "allocated it in some year, FY2017 to FY2027"
+   },
+   "value": {
+    "text": "17",
+    "unit": "districts",
+    "value": 17
+   }
+  },
+  {
+   "id": "t3-l",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg, on every Title III page held"
+   },
+   "value": {
+    "text": "Not listed",
+    "unit": "allocations",
+    "value": 0
+   }
+  },
+  {
+   "id": "el-l",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Lunenburg pupils learning English, FY2025"
+   },
+   "value": {
+    "text": "3.5%",
+    "unit": "%",
+    "value": 3.5
+   }
+  },
+  {
+   "id": "el-0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     }
+    },
+    "literals": [],
+    "text": "the same share in FY2017"
+   },
+   "value": {
+    "text": "1.6%",
+    "unit": "%",
+    "value": 1.6
+   }
+  },
+  {
+   "id": "floor",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the least DESE will allocate a district, by statute"
+   },
+   "value": {
+    "text": "$10,000",
+    "unit": "",
+    "value": 10000
+   }
+  },
+  {
+   "id": "rate",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Title III per learner, median district, our estimate"
+   },
+   "value": {
+    "text": "$153",
+    "unit": "",
+    "value": 153
+   }
+  },
+  {
+   "id": "est",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg at that rate, our estimate"
+   },
+   "value": {
+    "text": "$8,391",
+    "unit": "",
+    "value": 8391
+   }
+  },
+  {
+   "id": "c0400",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Perkins secondary: comparison districts in some year"
+   },
+   "value": {
+    "text": "5",
+    "unit": "districts",
+    "value": 5
+   }
+  },
+  {
+   "id": "c0184",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Title III summer: comparison districts in some year"
+   },
+   "value": {
+    "text": "2",
+    "unit": "districts",
+    "value": 2
+   }
+  },
+  {
+   "id": "c0186",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Title III immigrant: comparison districts in some year"
+   },
+   "value": {
+    "text": "1",
+    "unit": "districts",
+    "value": 1
+   }
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [],
+  "text": "Most comparison districts get Title III for English learners; we estimate Lunenburg is just under its floor."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "grants-others-receive",
+ "kind": "topic",
+ "path": "/school-all-funds/grants-others-receive",
+ "said": [],
+ "shelves": [
+  "school-all-funds"
+ ],
+ "sources": [
+  {
+   "href": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx",
+   "label": "Massachusetts DESE — Grant allocations and awards, by fund code, FY2017 to FY2027"
+  },
+  {
+   "href": "/docs/state-dese/entitlements/2026-10-23/code-0180-fy2025.html",
+   "label": "Massachusetts DESE — Title III allocation page, FY2025 (our copy)"
+  },
+  {
+   "href": "https://www.doe.mass.edu/grants/2027/0180/",
+   "label": "Massachusetts DESE — FY27 Title III: English Language Acquisition and Academic Achievement Program for English Learners and Immigrant Children and Youth (eligibility, quoted)"
+  },
+  {
+   "href": "https://www.doe.mass.edu/grants/2027/0400/",
+   "label": "Massachusetts DESE — FY27 Strengthening Career and Technical Education for the 21st Century Act (Perkins V) Secondary Allocation Grant (eligibility)"
+  },
+  {
+   "href": "/docs/data/dese-grant-opportunities.csv",
+   "label": "Lunenburg Budget Project — dese-grant-opportunities.csv (DESE's open-grants list, each grant’s type and eligibility)"
+  },
+  {
+   "href": "/docs/state-dese/er3w-dyti.json",
+   "label": "Massachusetts DESE — district profiles: headcount, low-income, English-learner and disability shares (er3w-dyti)"
+  },
+  {
+   "href": "/docs/data/grant-allocations-compared.csv",
+   "label": "Lunenburg Budget Project — grant-allocations-compared.csv (every figure on these pages: allocation, headcount, per pupil, by district and year)"
+  },
+  {
+   "href": "/analysis/towns-like-us",
+   "label": "Lunenburg Budget Project — Towns like us (where the comparison sets are defined)"
+  }
+ ],
+ "table": {
+  "caption": "What comparison districts get that Lunenburg does not",
+  "views": [
+   {
+    "columns": [
+     "Districts, any year",
+     "Districts, FY2025",
+     "DESE’s type",
+     "Who"
+    ],
+    "key": "lacks",
+    "kinds": [
+     "published",
+     "published",
+     "published",
+     "published"
+    ],
+    "label": "Grants Lunenburg is not allocated",
+    "note": "Of 28 comparison districts, FY2017 to FY2027. Not listed means DESE’s page for that grant and year does not name Lunenburg.",
+    "rows": [
+     {
+      "cells": [
+       "17",
+       "15",
+       "Entitlement",
+       "Abington, Auburn, Ayer Shirley School District, Chelmsford, Dracut, Easthampton, Easton, Fairhaven, Gardner, Harvard, Leominster, Maynard, Melrose, Nashoba, North Middlesex, Northbridge, Westford"
+      ],
+      "label": "Title III (fund code 0180)"
+     },
+     {
+      "cells": [
+       "5",
+       "1",
+       "Entitlement",
+       "Easthampton, Groton-Dunstable, Leominster, North Middlesex, Pembroke"
+      ],
+      "label": "Perkins secondary (fund code 0400)"
+     },
+     {
+      "cells": [
+       "2",
+       "0",
+       "not on the open list",
+       "Chelmsford, Leominster"
+      ],
+      "label": "Title III summer (fund code 0184)"
+     },
+     {
+      "cells": [
+       "1",
+       "1",
+       "not on the open list",
+       "Leominster"
+      ],
+      "label": "Title III immigrant (fund code 0186)"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "Set",
+     "Pupils",
+     "Learning English",
+     "Title III",
+     "Per learner"
+    ],
+    "key": "title-iii",
+    "kinds": [
+     "published",
+     "published",
+     "published",
+     "published",
+     "estimate"
+    ],
+    "label": "Title III, FY2025",
+    "note": "Ordered by the share learning English. Per learner divides by the October headcount times that share, our estimate of the count.",
+    "rows": [
+     {
+      "cells": [
+       "Lunenburg",
+       "1,563",
+       "3.5%",
+       "not listed",
+       ""
+      ],
+      "label": "Lunenburg"
+     },
+     {
+      "cells": [
+       "border",
+       "6,193",
+       "14.7%",
+       "$148,041",
+       "$163"
+      ],
+      "label": "Leominster"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "2,143",
+       "12.3%",
+       "$38,958",
+       "$148"
+      ],
+      "label": "Abington"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "2,532",
+       "10.7%",
+       "$35,530",
+       "$131"
+      ],
+      "label": "Gardner"
+     },
+     {
+      "cells": [
+       "border, peer",
+       "1,723",
+       "7.3%",
+       "$14,648",
+       "$116"
+      ],
+      "label": "Ayer Shirley School District"
+     },
+     {
+      "cells": [
+       "make-up",
+       "1,217",
+       "7.2%",
+       "$14,181",
+       "$162"
+      ],
+      "label": "Maynard"
+     },
+     {
+      "cells": [
+       "make-up",
+       "3,491",
+       "6.2%",
+       "$34,907",
+       "$161"
+      ],
+      "label": "Dracut"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "3,815",
+       "6.1%",
+       "$30,699",
+       "$132"
+      ],
+      "label": "Melrose"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "5,068",
+       "5.8%",
+       "$46,750",
+       "$159"
+      ],
+      "label": "Chelmsford"
+     },
+     {
+      "cells": [
+       "make-up",
+       "1,838",
+       "5.0%",
+       "$11,843",
+       "$129"
+      ],
+      "label": "Northbridge"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "3,360",
+       "3.8%",
+       "$17,765",
+       "$139"
+      ],
+      "label": "Easton"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "2,506",
+       "3.7%",
+       "$14,804",
+       "$160"
+      ],
+      "label": "Auburn"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "1,368",
+       "3.7%",
+       "not listed",
+       ""
+      ],
+      "label": "Easthampton"
+     },
+     {
+      "cells": [
+       "border",
+       "2,914",
+       "3.6%",
+       "$21,661",
+       "$206"
+      ],
+      "label": "North Middlesex"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "1,357",
+       "3.5%",
+       "not listed",
+       ""
+      ],
+      "label": "West Bridgewater"
+     },
+     {
+      "cells": [
+       "peer",
+       "4,575",
+       "3.5%",
+       "$28,673",
+       "$179"
+      ],
+      "label": "Westford"
+     },
+     {
+      "cells": [
+       "make-up",
+       "2,013",
+       "3.3%",
+       "not listed",
+       ""
+      ],
+      "label": "East Bridgewater"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "2,043",
+       "3.2%",
+       "not listed",
+       ""
+      ],
+      "label": "Belchertown"
+     },
+     {
+      "cells": [
+       "border",
+       "2,990",
+       "3.2%",
+       "$11,532",
+       "$121"
+      ],
+      "label": "Nashoba"
+     },
+     {
+      "cells": [
+       "make-up",
+       "1,727",
+       "2.3%",
+       "$15,895",
+       "$400"
+      ],
+      "label": "Fairhaven"
+     },
+     {
+      "cells": [
+       "peer",
+       "1,023",
+       "2.2%",
+       "not listed",
+       ""
+      ],
+      "label": "Harvard"
+     },
+     {
+      "cells": [
+       "peer",
+       "2,300",
+       "2.1%",
+       "not listed",
+       ""
+      ],
+      "label": "Groton-Dunstable"
+     },
+     {
+      "cells": [
+       "make-up",
+       "1,291",
+       "2.0%",
+       "not listed",
+       ""
+      ],
+      "label": "Sutton"
+     },
+     {
+      "cells": [
+       "make-up",
+       "1,113",
+       "1.7%",
+       "not listed",
+       ""
+      ],
+      "label": "Douglas"
+     },
+     {
+      "cells": [
+       "behaviour",
+       "2,550",
+       "1.5%",
+       "not listed",
+       ""
+      ],
+      "label": "Hanover"
+     },
+     {
+      "cells": [
+       "make-up",
+       "2,367",
+       "1.5%",
+       "not listed",
+       ""
+      ],
+      "label": "Pembroke"
+     },
+     {
+      "cells": [
+       "make-up",
+       "1,197",
+       "1.3%",
+       "not listed",
+       ""
+      ],
+      "label": "Georgetown"
+     },
+     {
+      "cells": [
+       "peer",
+       "1,655",
+       "1.2%",
+       "not listed",
+       ""
+      ],
+      "label": "Littleton"
+     },
+     {
+      "cells": [
+       "make-up",
+       "1,991",
+       "0.9%",
+       "not listed",
+       ""
+      ],
+      "label": "Swansea"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "Grants other districts get"
+}
