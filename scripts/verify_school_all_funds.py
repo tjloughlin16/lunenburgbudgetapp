@@ -29,7 +29,7 @@ from decimal import Decimal
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
-PAY = os.path.join(ROOT, 'fy28', 'public', 'data', 'school-all-funds.json')
+PAY = os.path.join(ROOT, 'fy28', 'public', 'data', 'school-all-funds-model.json')
 TOPICS = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 YEARS = (2023, 2024, 2025, 2026)
 bad = []
