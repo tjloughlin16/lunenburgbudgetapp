@@ -46,6 +46,8 @@ import topic_registry as _reg  # noqa: E402
 
 CATEGORIES, TOPICS = [], {}
 for _m in sorted(_pk.iter_modules(_reg.__path__), key=lambda m: m.name):
+    if _m.name == 'related':          # relations between pages, not a shelf (topic_registry/related.py)
+        continue
     _mod = _il.import_module('topic_registry.' + _m.name)
     CATEGORIES.append(_mod.CATEGORY)
     for _tid, _title in _mod.TOPICS.items():

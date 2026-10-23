@@ -165,14 +165,13 @@ def check_ledger(l, where):
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
          finding_figures=None, finding_allow=(), draft=None, also=(), lead_quote=None,
-         tables=(), see=None):
+         tables=()):
     """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
     (scripts/generate_report.py). Every check below runs on it exactly as on a registered page;
     only the title and the shelf come from the draft instead of scripts/topics.py.
 
-    `see`: (href, label) -- ONE link drawn directly under the finding, to the page that
-    answers the question a reader of this one most often came with instead. For a reader who
-    landed one page over (TJ looked for the grants others get on the per-pupil page).
+    Pages a reader of this one should be offered next are not set here: they are declared,
+    symmetrically, in scripts/topic_registry/related.py and drawn from topics.json.
     `also`: up to two more charts, drawn under the signature, for a second question the same
     figures answer -- a stack says what a total is made of, small multiples how each part
     moved. The signature stays first and stays the page's one remembered image."""
@@ -232,13 +231,6 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
     if tables:                                       # likewise
         extra['tables'] = list(tables)
-    if see:                                          # likewise written only when set
-        href, label = see
-        if not (isinstance(href, str) and href.startswith('/') and isinstance(label, str)
-                and 0 < len(label) <= 80 and not re.search(r'\d', label)):
-            raise ConclusionError('%s: see= is (site path, a label of at most 80 characters '
-                                  'and no figures)' % id)
-        extra['see'] = dict(href=href, label=label)
     if lead_quote:                                   # likewise written only when set
         extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS}
     return dict(

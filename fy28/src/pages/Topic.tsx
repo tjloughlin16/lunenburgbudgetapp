@@ -27,9 +27,13 @@ import { AccountLedger, type LedgerData } from '../components/AccountLedger'
 import { Brief, Tag, type Chain, type Step } from '../components/brief'
 import { TopicLink } from '../components/TopicLink'
 
+/** A page declared related to this one (scripts/topic_registry/related.py): a topic, a hub,
+ *  or another page on the site, with the one-line reason a reader would go there. */
+type Related = { id: string; title: string; path: string; why: string }
 type IndexTopic = {
   id: string; title: string; path: string; home: string; shelves: string[]
   finding: string | null; minutes: number | null; ready: boolean
+  related?: Related[]
 }
 type IndexCategory = {
   id: string; shelf: string; title: string; path: string; answer: string | null
@@ -38,6 +42,7 @@ type IndexCategory = {
   /** The hub's most insightful pages, called out under the answer (scripts/topics.py). */
   start?: string[]
   full_report: { href: string; label: string }
+  related?: Related[]
 }
 type Index = { categories: IndexCategory[]; topics: Record<string, IndexTopic> }
 
@@ -60,9 +65,6 @@ type TopicPayload = {
   ledger?: LedgerData
   /** The claim a page tests, quoted verbatim, opening the page (scripts/topic.py lead_quote). */
   lead_quote?: LeadQuote
-  /** ONE link under the finding, to the page a reader of this one most often wanted instead
-   *  (scripts/topic.py page(see=)). */
-  see?: { href: string; label: string }
 }
 type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string }
 type HubPayload = {
@@ -222,6 +224,26 @@ function Elsewhere({ cat }: { cat: IndexCategory }) {
   ) : null
 }
 
+/** RELATED PAGES, right after the conclusions. TJ, 23 October 2026: two grants pages on one
+ *  shelf "need to somehow suggest each other". A shelf's previous and next follow the shelf's
+ *  order; this is the page on any shelf -- or a hub, or another page -- that answers the next
+ *  question. Declared once, symmetrically, in scripts/topic_registry/related.py; the reason
+ *  stands where a topic's finding would, in the same TopicLink shape a topic has everywhere. */
+function RelatedPages({ ix, rs }: { ix: Index; rs?: Related[] }) {
+  if (!rs?.length) return null
+  return (
+    <section className="no-print mt-8 max-w-3xl" aria-labelledby="related-pages">
+      <h2 id="related-pages" className={eyebrow} style={{ color: 'var(--text-muted)' }}>Related</h2>
+      <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-3 mt-2">
+        {rs.map(r => (
+          <li key={r.id}><TopicLink t={{ title: r.title, path: r.path, finding: r.why,
+            ready: ix.topics[r.id]?.ready ?? true }} /></li>
+        ))}
+      </ul>
+    </section>
+  )
+}
+
 /** Previous, next, and back to the hub -- so a reader moves through a shelf without it. */
 function ShelfNav({ ix, t }: { ix: Index; t: TopicPayload }) {
   const cat = ix.categories.find(c => c.id === t.category)
@@ -293,6 +315,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
             tag: <Tag v={c.verdict} label={c.label} />, question: c.question,
             body: <Brief steps={c.steps} base={p.full_report.href} />,
           } satisfies LadderEvidence]))} />
+          <RelatedPages ix={ix} rs={ix.categories.find(c => c.id === p.id)?.related} />
           {ix.categories.find(c => c.id === p.id)
             ? <TopicCards ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}
           {p.table ? <section className="mt-10 max-w-3xl"><FigureTable t={p.table} /></section> : null}
@@ -302,8 +325,6 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           <Shelf ix={ix} t={p} />
           {p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null}
           <p className="text-[19px] leading-snug font-semibold mt-4 max-w-3xl">{p.finding.text}</p>
-          {p.see ? <p className="text-[14px] mt-2"><a href={p.see.href} className="underline font-medium"
-            style={link}>{p.see.label} &rarr;</a></p> : null}
           <TopicChart chart={p.chart} alt={p.title} />
           {(p.also ?? []).map((c, i) => <TopicChart key={i} chart={c} alt={p.title} />)}
           <Ladder
@@ -312,6 +333,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
             evidence={Object.fromEntries(p.conclusions.map((c, i) => [`n${i}`, {
               tag: null, question: '', body: <Brief steps={c.notes ?? []} base={p.full_report.href} />,
             } satisfies LadderEvidence]))} />
+          <RelatedPages ix={ix} rs={ix.topics[p.id]?.related} />
           {p.ledger ? <AccountLedger l={p.ledger} /> : null}
           {[p.table, ...(p.tables ?? [])].filter((t): t is FigureTableData => !!t).map((t, i) => (
             <section key={i} className={`${i ? 'mt-8' : 'mt-10'} max-w-3xl`}><FigureTable t={t} /></section>))}
