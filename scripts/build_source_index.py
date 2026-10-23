@@ -1884,6 +1884,16 @@ GROUPS = [
              'script; schools, collaboratives and non-profits stay unattributed. A joint award '
              'prints one amount for several districts, and `joint` says how many share it. DESE '
              'posts no award list before FY2026.'),
+            ('data/grant-watch-state.csv',
+             'What is new from DESE: every grant and award list we have seen, and when', 2,
+             'Written by us, by `watch_grants.py`, from the dated copies `fetch_dese_grants.py` '
+             'and `fetch_dese_awards.py` keep -- no fetch of its own. One row per grant program '
+             'page and per award document version. `first_seen` is the day OUR fetcher landed '
+             'the bytes, not the day DESE posted them; DESE prints neither. `basis` splits it: '
+             '`seed` was adopted when the watch began and announced nothing, `carried` was not '
+             'new by the rules, `observed` was announced, and only those carry a `notice` -- '
+             'frozen as it was written. An award notice says Lunenburg is listed or is NOT '
+             'LISTED, never that it lost: DESE lists winners only.'),
             ('data/dese-entitlement-allocations.csv',
              'DESE\u2019s entitlement allocations, every district, every fund code, FY2017 on', 2,
              'Written by us, by `extract_dese_entitlements.py`, from the copies of DESE\u2019s '

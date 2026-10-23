@@ -19,6 +19,11 @@ a retro notice says what the recording carries and links to the minutes page whe
 item is cited to the second. A retro text quotes no figure -- those are as heard.
 
 The site renders both on /this-week; the payload is also what a person copies from.
+
+A THIRD KIND, 23 October 2026: `grants` -- a DESE grant newly open to districts, or a new
+award list naming Lunenburg or a comparison district. Detected by watch_grants.py off the
+held snapshots and frozen in its state file when first seen; this only selects the ones
+still live (watch_grants.notices). The home page draws them as a notification line.
 """
 import argparse
 import datetime as dt
@@ -26,8 +31,10 @@ import glob
 import json
 import os
 import re
+import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 PREVIEWS = os.path.join(ROOT, 'sources', 'data', 'agenda-previews')
 RECORDED = os.path.join(ROOT, 'sources', 'data', 'recording-minutes')
 RUNS = os.path.join(ROOT, 'sources', 'data', 'refresh-runs.csv')
@@ -201,6 +208,8 @@ def payload():
             'written': m['written']['at'][:10],
         })
     retro.sort(key=lambda x: (x['date'], x['board']), reverse=True)
+    import watch_grants
+    grants = watch_grants.notices(today)
     return {
         'category': 'announcement',
         'what': 'Notices composed from published agendas (upcoming) and our minutes of recordings (retro). '
@@ -208,7 +217,8 @@ def payload():
         'as_of': today,
         'upcoming': upcoming,
         'retro': retro,
-        'counts': {'upcoming': len(upcoming), 'retro': len(retro)},
+        'grants': grants,
+        'counts': {'upcoming': len(upcoming), 'retro': len(retro), 'grants': len(grants)},
     }
 
 

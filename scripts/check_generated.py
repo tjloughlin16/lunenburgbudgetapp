@@ -219,6 +219,13 @@ CHECKS = [
     ('verify_ap.py', []),
     ('write_agenda_preview.py', ['--check']),
     ('reconcile_minutes.py', ['--check']),
+    # THE DESE GRANT WATCH, 23 October 2026: its state is consistent and records every item
+    # the held snapshots show (a new one unrecorded is stale), and the detector announces a
+    # new grant once, an unchanged one never, and nothing on a baseline -- the second needs a
+    # test that runs it, for the reason the meeting watch's does. Before build_notices,
+    # which publishes what it announced.
+    ('watch_grants.py', ['--check']),
+    ('check_grant_watch.py', []),
     ('build_notices.py', ['--check']),
     # ONE REPORT OVER ALL OF THEM. It reads every report's payload and writes none of its
     # own claims, so this entry fails exactly when it should: a report changed a

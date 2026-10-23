@@ -1038,7 +1038,7 @@ def main():
 
     if a.check:
         bad = 0
-        for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']), ('watch_feeds.py', ['--check']), ('watch_documents.py', ['--check']),
+        for s, args in (('watch_meetings.py', ['--check']), ('watch_youtube.py', ['--check']), ('watch_feeds.py', ['--check']), ('watch_documents.py', ['--check']), ('watch_grants.py', ['--check']),
                         ('write_recording_minutes.py', ['--check']), ('write_agenda_preview.py', ['--check']),
                         ('build_notices.py', ['--check']), ('build_meeting_feed.py', ['--check']),
                         ('build_boards.py', ['--check']), ('build_budget_feed.py', ['--check'])):
@@ -1214,6 +1214,14 @@ def run(a, notes, ctx):
                 notes.append('DESE awards: the weekly fetch exited %d -- run '
                              'python3 scripts/fetch_dese_awards.py --dry-run' % r.returncode)
             py('extract_dese_awards.py', check=False)
+        # 3h''. WHAT IS NEW FROM DESE, for the home page's notification line: a grant newly
+        # open to districts, an award list naming Lunenburg or a comparison district. Read off
+        # the snapshots just landed, never a fetch, so it runs every day; build_notices.py
+        # (step 8) publishes the live ones. No model call.
+        r = py('watch_grants.py', check=False)
+        if r.returncode:
+            notes.append('DESE grant watch exited %d -- run python3 scripts/watch_grants.py --check'
+                         % r.returncode)
 
     # 3i. DESE'S ENTITLEMENT ALLOCATIONS, WEEKLY: every district, every fund code, FY2017 to
     # the coming year. DESE revises these pages in place (each carries `Last Updated`), so the

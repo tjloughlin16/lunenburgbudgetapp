@@ -509,11 +509,57 @@ function HotInTown() {
   )
 }
 
+/** NEW FROM DESE -- a grant newly open to districts, or an award list that names Lunenburg
+ *  or a comparison district. One thin line, like Hot in town, and nothing when there is none.
+ *
+ *  TJ, 23 October 2026: *"if a grant shows up that's new, or an award, we need to call that on
+ *  the homepage too, as sort of a notification."* The detection is NOT made here:
+ *  watch_grants.py reads the held DESE snapshots, freezes each notice the day it is first
+ *  seen, and build_notices.py publishes the live ones with an `expires` date. The page drops a
+ *  notice past that date itself, so a stopped refresh cannot leave an old grant called new. */
+type GrantNotice = { kind: 'grant' | 'award'; first_seen: string; expires: string; text: string
+  href: string; source_url: string }
+const GRANTS_SHOWN = 3
+/** The day OUR fetcher landed it -- DESE prints no posting date for either kind. */
+const shortDate = (iso: string) => {
+  const [y, m, dd] = iso.split('-').map(Number)
+  return new Date(y, m - 1, dd).toLocaleDateString('en-US', { month: 'short', day: 'numeric' })
+}
+function NewFromDese() {
+  const { d } = useReport<{ grants?: GrantNotice[] }>('notices.json')
+  const live = (d?.grants ?? []).filter(n => n.expires >= todayIso())
+  if (!live.length) return null
+  const shown = live.slice(0, GRANTS_SHOWN)
+  return (
+    <div className="text-[13.5px] leading-snug mb-5">
+      <span className="text-[11px] font-bold uppercase tracking-widest"
+        style={{ color: 'var(--brand)' }}>New from the state</span>
+      <ul className="mt-1 space-y-1">
+        {shown.map(n => (
+          <li key={n.kind + n.href + n.text}>
+            <a href={n.href} onClick={() => track('door', 'dese:' + n.kind)}
+              className="font-semibold underline decoration-1 underline-offset-2">{n.text}</a>
+            <span className="text-[12px]" style={{ color: 'var(--text-muted)' }}>
+              {' '}· we found it {shortDate(n.first_seen)} · <a href={n.source_url} target="_blank"
+                rel="noreferrer" className="underline">DESE</a>
+            </span>
+          </li>
+        ))}
+      </ul>
+      {live.length > shown.length && (
+        <a href="/grants-open-to-lunenburg" className="text-[12.5px] underline"
+          style={{ color: 'var(--text-muted)' }}>{live.length - shown.length} more</a>
+      )}
+    </div>
+  )
+}
+
 export function Home() {
   return (
     <div className="mx-auto max-w-5xl px-5 pb-20">
       <header className="pt-10 pb-6">
         <HotInTown />
+        <NewFromDese />
         <h1 className="text-[27px] sm:text-4xl font-bold tracking-tight leading-[1.1]">
           The <span style={{ color: 'var(--brand)' }}>Lunenburg</span> Budget Project
         </h1>

@@ -46,6 +46,14 @@ def n_word(n, one, many):
     return '%d %s' % (n, one if n == 1 else many)
 
 
+def open_to_districts(r):
+    """THE ONE PLACE a row counts as a grant a school district may apply for now: competitive
+    (not DESE's Entitlement or Allocation), open on the list date, and read `districts
+    eligible`. The page's lead group is this; watch_grants.py announces only these."""
+    return (r['grant_type'] not in FORMULA and r['open_on_list_date'] == 'yes'
+            and r['district_reading'] == 'districts eligible')
+
+
 def held_list(sha):
     """The DATED copy of the list holding these bytes -- the publisher's file, in the bucket --
     not the working copy, which is ours and is overwritten."""
@@ -82,7 +90,7 @@ def build():
         ('open-districts', 'Open now: school districts may apply',
          'DESE’s eligibility text opens these to public school districts. Conditions, where '
          'there are any, are in the text on each card.',
-         soon([r for r in applied if is_open(r) and r['district_reading'] == 'districts eligible'])),
+         soon([r for r in rows if open_to_districts(r)])),
         ('open-unclear', 'Open now: limited to named or past recipients, or unclear',
          'Open, but the eligibility text limits them to recipients DESE or the state budget '
          'names, or to last year’s grantees, or does not say plainly. None names Lunenburg.',
