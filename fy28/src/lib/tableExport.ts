@@ -267,7 +267,7 @@ export function specFromTable(t: HTMLTableElement): ExportSpec {
 /* ------------------------------------------------------------------ the file */
 
 const slug = (s: string, n = 48) => s.toLowerCase().normalize('NFKD').replace(/[^\w\s-]/g, '')
-  .replace(/[\s_-]+/g, '-').replace(/^-|-$/g, '').slice(0, n).replace(/-$/, '')
+  .replace(/[\s_-]+/g, '-').replace(/^-|-$/g, '').replace(new RegExp(`^(.{1,${n}})(?:-.*)?$`), '$1').slice(0, n)
 
 function pageInfo() {
   const path = window.location.pathname.replace(/\/+$/, '') || '/'
