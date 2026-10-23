@@ -527,143 +527,339 @@
   }
  ],
  "table": {
-  "caption": "Special education in the school journal, by year",
+  "caption": "What special education paid for, and which fund paid",
   "views": [
    {
     "columns": [
      "General fund",
      "Circuit breaker",
      "Grants",
-     "Every fund",
-     "Outside the general fund"
+     "Every fund"
     ],
-    "key": "funds",
-    "kinds": [
-     "ledger",
-     "ledger",
-     "ledger",
-     "ledger",
-     "ledger"
-    ],
-    "label": "By fund",
-    "note": "Grants are the IDEA grants and the special education program improvement grants together.",
-    "rows": [
-     {
-      "cells": [
-       "$6,055,912",
-       "$337,499",
-       "$435,542",
-       "$6,828,953",
-       "11.3%"
-      ],
-      "label": "FY2026"
-     },
-     {
-      "cells": [
-       "$5,111,664",
-       "$498,451",
-       "$475,488",
-       "$6,085,603",
-       "16.0%"
-      ],
-      "label": "FY2025"
-     },
-     {
-      "cells": [
-       "$4,642,014",
-       "$466,296",
-       "$599,250",
-       "$5,707,560",
-       "18.7%"
-      ],
-      "label": "FY2024"
-     },
-     {
-      "cells": [
-       "$4,279,700",
-       "$494,968",
-       "$560,954",
-       "$5,335,622",
-       "19.8%"
-      ],
-      "label": "FY2023"
-     }
-    ],
-    "total_col": 3
-   },
-   {
-    "columns": [
-     "FY2023",
-     "FY2024",
-     "FY2025",
-     "FY2026"
-    ],
-    "key": "components",
+    "key": "fy2026",
     "kinds": [
      "ledger",
      "ledger",
      "ledger",
      "ledger"
     ],
-    "label": "By what it bought, every fund",
-    "note": "By object code. Psychologists serve every student; they are on the list and kept out of the total, by our choice.",
+    "label": "FY2026",
+    "note": "Rows are what the money paid for, by object code; columns are the fund that paid. Grants are the IDEA and special education program improvement grants. Psychologists serve every student; they are on the list and kept out of the total, by our choice. FY2026 is not yet closed.",
     "rows": [
      {
       "cells": [
-       "$799,715",
-       "$1,054,804",
-       "$1,205,949",
+       "$1,144,063",
+       "$333,495",
+       "$0",
        "$1,477,558"
       ],
       "label": "Out-of-district tuition"
      },
      {
       "cells": [
-       "$320,244",
-       "$401,402",
-       "$434,922",
+       "$620,025",
+       "$0",
+       "$0",
        "$620,025"
       ],
       "label": "Transportation"
      },
      {
       "cells": [
-       "$248,435",
-       "$235,713",
-       "$179,433",
+       "$232,152",
+       "$4,005",
+       "$295,264",
        "$531,420"
       ],
       "label": "Contracted services and evaluations"
      },
      {
       "cells": [
-       "$3,901,370",
-       "$3,956,651",
-       "$4,192,344",
+       "$4,028,380",
+       "$0",
+       "$100,601",
        "$4,128,981"
       ],
       "label": "Staff pay and benefits"
      },
      {
       "cells": [
-       "$65,858",
-       "$58,989",
-       "$72,956",
+       "$31,292",
+       "$0",
+       "$39,677",
        "$70,969"
       ],
       "label": "Supplies, equipment and other"
      },
      {
       "cells": [
-       "$164,610",
-       "$184,049",
-       "$274,522",
+       "$6,055,912",
+       "$337,499",
+       "$435,542",
+       "$6,828,953"
+      ],
+      "label": "All of it"
+     },
+     {
+      "cells": [
+       "$192,122",
+       "$0",
+       "$0",
        "$192,122"
       ],
       "label": "School psychologists (not in the total)"
      }
     ],
-    "total_col": null
+    "total_col": 3
+   },
+   {
+    "columns": [
+     "General fund",
+     "Circuit breaker",
+     "Grants",
+     "Every fund"
+    ],
+    "key": "fy2025",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2025",
+    "note": "Rows are what the money paid for, by object code; columns are the fund that paid. Grants are the IDEA and special education program improvement grants. Psychologists serve every student; they are on the list and kept out of the total, by our choice.",
+    "rows": [
+     {
+      "cells": [
+       "$732,298",
+       "$473,650",
+       "$0",
+       "$1,205,949"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$434,922",
+       "$0",
+       "$0",
+       "$434,922"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$152,132",
+       "$24,801",
+       "$2,500",
+       "$179,433"
+      ],
+      "label": "Contracted services and evaluations"
+     },
+     {
+      "cells": [
+       "$3,773,316",
+       "$0",
+       "$419,028",
+       "$4,192,344"
+      ],
+      "label": "Staff pay and benefits"
+     },
+     {
+      "cells": [
+       "$18,997",
+       "$0",
+       "$53,959",
+       "$72,956"
+      ],
+      "label": "Supplies, equipment and other"
+     },
+     {
+      "cells": [
+       "$5,111,664",
+       "$498,451",
+       "$475,488",
+       "$6,085,603"
+      ],
+      "label": "All of it"
+     },
+     {
+      "cells": [
+       "$274,522",
+       "$0",
+       "$0",
+       "$274,522"
+      ],
+      "label": "School psychologists (not in the total)"
+     }
+    ],
+    "total_col": 3
+   },
+   {
+    "columns": [
+     "General fund",
+     "Circuit breaker",
+     "Grants",
+     "Every fund"
+    ],
+    "key": "fy2024",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2024",
+    "note": "Rows are what the money paid for, by object code; columns are the fund that paid. Grants are the IDEA and special education program improvement grants. Psychologists serve every student; they are on the list and kept out of the total, by our choice.",
+    "rows": [
+     {
+      "cells": [
+       "$588,508",
+       "$466,296",
+       "$0",
+       "$1,054,804"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$401,402",
+       "$0",
+       "$0",
+       "$401,402"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$185,908",
+       "$0",
+       "$49,805",
+       "$235,713"
+      ],
+      "label": "Contracted services and evaluations"
+     },
+     {
+      "cells": [
+       "$3,445,748",
+       "$0",
+       "$510,903",
+       "$3,956,651"
+      ],
+      "label": "Staff pay and benefits"
+     },
+     {
+      "cells": [
+       "$20,448",
+       "$0",
+       "$38,541",
+       "$58,989"
+      ],
+      "label": "Supplies, equipment and other"
+     },
+     {
+      "cells": [
+       "$4,642,014",
+       "$466,296",
+       "$599,250",
+       "$5,707,560"
+      ],
+      "label": "All of it"
+     },
+     {
+      "cells": [
+       "$184,049",
+       "$0",
+       "$0",
+       "$184,049"
+      ],
+      "label": "School psychologists (not in the total)"
+     }
+    ],
+    "total_col": 3
+   },
+   {
+    "columns": [
+     "General fund",
+     "Circuit breaker",
+     "Grants",
+     "Every fund"
+    ],
+    "key": "fy2023",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2023",
+    "note": "Rows are what the money paid for, by object code; columns are the fund that paid. Grants are the IDEA and special education program improvement grants. Psychologists serve every student; they are on the list and kept out of the total, by our choice.",
+    "rows": [
+     {
+      "cells": [
+       "$304,748",
+       "$494,968",
+       "$0",
+       "$799,715"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$320,244",
+       "$0",
+       "$0",
+       "$320,244"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$126,333",
+       "$0",
+       "$122,102",
+       "$248,435"
+      ],
+      "label": "Contracted services and evaluations"
+     },
+     {
+      "cells": [
+       "$3,504,347",
+       "$0",
+       "$397,023",
+       "$3,901,370"
+      ],
+      "label": "Staff pay and benefits"
+     },
+     {
+      "cells": [
+       "$24,029",
+       "$0",
+       "$41,829",
+       "$65,858"
+      ],
+      "label": "Supplies, equipment and other"
+     },
+     {
+      "cells": [
+       "$4,279,700",
+       "$494,968",
+       "$560,954",
+       "$5,335,622"
+      ],
+      "label": "All of it"
+     },
+     {
+      "cells": [
+       "$164,610",
+       "$0",
+       "$0",
+       "$164,610"
+      ],
+      "label": "School psychologists (not in the total)"
+     }
+    ],
+    "total_col": 3
    }
   ]
  },

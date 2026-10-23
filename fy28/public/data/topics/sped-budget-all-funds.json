@@ -429,123 +429,54 @@
   }
  ],
  "table": {
-  "caption": "Special education: voted, and spent from every fund",
+  "caption": "Special education: what was voted, what was spent, and which fund paid",
   "views": [
    {
     "columns": [
      "Voted, general fund",
-     "Revised, general fund",
      "General fund spent",
      "Circuit breaker",
-     "IDEA grants",
-     "Other grants",
-     "Every fund"
+     "Grants",
+     "Every fund spent"
     ],
-    "key": "years",
+    "key": "fy2026",
     "kinds": [
-     "ledger",
-     "ledger",
      "ledger",
      "ledger",
      "ledger",
      "ledger",
      "ledger"
     ],
-    "label": "By year",
-    "note": "The accounts on the ledger’s special education list (scripts/journal.py), psychologists outside the total.",
-    "rows": [
-     {
-      "cells": [
-       "$4,543,293",
-       "$4,569,303",
-       "$4,279,700",
-       "$494,968",
-       "$559,211",
-       "$1,743",
-       "$5,335,622"
-      ],
-      "label": "FY2023"
-     },
-     {
-      "cells": [
-       "$4,687,594",
-       "$4,736,384",
-       "$4,642,014",
-       "$466,296",
-       "$585,772",
-       "$13,477",
-       "$5,707,560"
-      ],
-      "label": "FY2024"
-     },
-     {
-      "cells": [
-       "$5,873,117",
-       "$5,266,054",
-       "$5,111,664",
-       "$498,451",
-       "$475,488",
-       "$0",
-       "$6,085,603"
-      ],
-      "label": "FY2025"
-     },
-     {
-      "cells": [
-       "$6,073,840",
-       "$6,076,722",
-       "$6,135,449",
-       "$337,499",
-       "$435,542",
-       "$0",
-       "$6,908,810"
-      ],
-      "label": "FY2026"
-     }
-    ],
-    "total_col": null
-   },
-   {
-    "columns": [
-     "Voted, general fund",
-     "General fund spent",
-     "Other funds spent",
-     "Every fund"
-    ],
-    "key": "parts",
-    "kinds": [
-     "ledger",
-     "ledger",
-     "ledger",
-     "ledger"
-    ],
-    "label": "By what it bought, FY2026",
-    "note": "The same budget filtered to special education, by object code: the voted line beside every fund that paid for it.",
+    "label": "FY2026",
+    "note": "Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants. FY2026 is not yet closed.",
     "rows": [
      {
       "cells": [
        "$1,291,293",
-       "$1,144,063",
+       "$1,202,771",
        "$333,495",
-       "$1,477,558"
+       "$0",
+       "$1,536,266"
       ],
       "label": "Out-of-district tuition"
      },
      {
       "cells": [
        "$565,734",
-       "$620,025",
+       "$633,291",
        "$0",
-       "$620,025"
+       "$0",
+       "$633,291"
       ],
       "label": "Transportation"
      },
      {
       "cells": [
        "$152,500",
-       "$232,152",
-       "$299,268",
-       "$531,420"
+       "$239,337",
+       "$4,005",
+       "$295,264",
+       "$538,605"
       ],
       "label": "Contracted services and evaluations"
      },
@@ -553,6 +484,7 @@
       "cells": [
        "$4,027,368",
        "$4,028,380",
+       "$0",
        "$100,601",
        "$4,128,981"
       ],
@@ -561,14 +493,271 @@
      {
       "cells": [
        "$36,946",
-       "$31,292",
-       "$39,677",
-       "$70,969"
+       "$31,670",
+       "$0",
+       "$39,997",
+       "$71,667"
       ],
       "label": "Supplies, equipment and other"
+     },
+     {
+      "cells": [
+       "$6,073,840",
+       "$6,135,449",
+       "$337,499",
+       "$435,862",
+       "$6,908,810"
+      ],
+      "label": "All of it"
      }
     ],
-    "total_col": 3
+    "total_col": 4
+   },
+   {
+    "columns": [
+     "Voted, general fund",
+     "General fund spent",
+     "Circuit breaker",
+     "Grants",
+     "Every fund spent"
+    ],
+    "key": "fy2025",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2025",
+    "note": "Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.",
+    "rows": [
+     {
+      "cells": [
+       "$1,164,824",
+       "$732,298",
+       "$473,650",
+       "$0",
+       "$1,205,949"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$445,328",
+       "$434,922",
+       "$0",
+       "$0",
+       "$434,922"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$154,258",
+       "$152,132",
+       "$24,801",
+       "$2,500",
+       "$179,433"
+      ],
+      "label": "Contracted services and evaluations"
+     },
+     {
+      "cells": [
+       "$4,076,734",
+       "$3,773,316",
+       "$0",
+       "$419,028",
+       "$4,192,344"
+      ],
+      "label": "Staff pay and benefits"
+     },
+     {
+      "cells": [
+       "$31,973",
+       "$18,997",
+       "$0",
+       "$53,959",
+       "$72,956"
+      ],
+      "label": "Supplies, equipment and other"
+     },
+     {
+      "cells": [
+       "$5,873,117",
+       "$5,111,664",
+       "$498,451",
+       "$475,488",
+       "$6,085,603"
+      ],
+      "label": "All of it"
+     }
+    ],
+    "total_col": 4
+   },
+   {
+    "columns": [
+     "Voted, general fund",
+     "General fund spent",
+     "Circuit breaker",
+     "Grants",
+     "Every fund spent"
+    ],
+    "key": "fy2024",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2024",
+    "note": "Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.",
+    "rows": [
+     {
+      "cells": [
+       "$501,239",
+       "$588,508",
+       "$466,296",
+       "$0",
+       "$1,054,804"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$335,947",
+       "$401,402",
+       "$0",
+       "$0",
+       "$401,402"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$136,900",
+       "$185,908",
+       "$0",
+       "$49,805",
+       "$235,713"
+      ],
+      "label": "Contracted services and evaluations"
+     },
+     {
+      "cells": [
+       "$3,676,729",
+       "$3,445,748",
+       "$0",
+       "$510,903",
+       "$3,956,651"
+      ],
+      "label": "Staff pay and benefits"
+     },
+     {
+      "cells": [
+       "$36,779",
+       "$20,448",
+       "$0",
+       "$38,541",
+       "$58,989"
+      ],
+      "label": "Supplies, equipment and other"
+     },
+     {
+      "cells": [
+       "$4,687,594",
+       "$4,642,014",
+       "$466,296",
+       "$599,250",
+       "$5,707,560"
+      ],
+      "label": "All of it"
+     }
+    ],
+    "total_col": 4
+   },
+   {
+    "columns": [
+     "Voted, general fund",
+     "General fund spent",
+     "Circuit breaker",
+     "Grants",
+     "Every fund spent"
+    ],
+    "key": "fy2023",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2023",
+    "note": "Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.",
+    "rows": [
+     {
+      "cells": [
+       "$489,918",
+       "$304,747",
+       "$494,968",
+       "$0",
+       "$799,715"
+      ],
+      "label": "Out-of-district tuition"
+     },
+     {
+      "cells": [
+       "$329,360",
+       "$320,244",
+       "$0",
+       "$0",
+       "$320,244"
+      ],
+      "label": "Transportation"
+     },
+     {
+      "cells": [
+       "$119,900",
+       "$126,333",
+       "$0",
+       "$122,102",
+       "$248,435"
+      ],
+      "label": "Contracted services and evaluations"
+     },
+     {
+      "cells": [
+       "$3,567,225",
+       "$3,504,347",
+       "$0",
+       "$397,023",
+       "$3,901,370"
+      ],
+      "label": "Staff pay and benefits"
+     },
+     {
+      "cells": [
+       "$36,890",
+       "$24,029",
+       "$0",
+       "$41,829",
+       "$65,858"
+      ],
+      "label": "Supplies, equipment and other"
+     },
+     {
+      "cells": [
+       "$4,543,293",
+       "$4,279,700",
+       "$494,968",
+       "$560,954",
+       "$5,335,622"
+      ],
+      "label": "All of it"
+     }
+    ],
+    "total_col": 4
    }
   ]
  },

@@ -416,28 +416,57 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
   - *hypothesis:* So outside money paid for more than the general fund budgeted, in every year. Whether the vote was set expecting it to is not in a ledger.
   - *not known:* Special education here is the accounts the ledger labels so; work paid from other accounts is not counted. — closes: the district’s End of Year Financial Report, special education program, all funds
 
-**Special education: voted, and spent from every fund — By year**
+**Special education: what was voted, what was spent, and which fund paid — FY2026**
 
-| | Voted, general fund | Revised, general fund | General fund spent | Circuit breaker | IDEA grants | Other grants | Every fund |
-|---|---:|---:|---:|---:|---:|---:|---:|
-| FY2023 | $4,543,293 | $4,569,303 | $4,279,700 | $494,968 | $559,211 | $1,743 | $5,335,622 |
-| FY2024 | $4,687,594 | $4,736,384 | $4,642,014 | $466,296 | $585,772 | $13,477 | $5,707,560 |
-| FY2025 | $5,873,117 | $5,266,054 | $5,111,664 | $498,451 | $475,488 | $0 | $6,085,603 |
-| FY2026 | $6,073,840 | $6,076,722 | $6,135,449 | $337,499 | $435,542 | $0 | $6,908,810 |
+| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
+|---|---:|---:|---:|---:|---:|
+| Out-of-district tuition | $1,291,293 | $1,202,771 | $333,495 | $0 | $1,536,266 |
+| Transportation | $565,734 | $633,291 | $0 | $0 | $633,291 |
+| Contracted services and evaluations | $152,500 | $239,337 | $4,005 | $295,264 | $538,605 |
+| Staff pay and benefits | $4,027,368 | $4,028,380 | $0 | $100,601 | $4,128,981 |
+| Supplies, equipment and other | $36,946 | $31,670 | $0 | $39,997 | $71,667 |
+| All of it | $6,073,840 | $6,135,449 | $337,499 | $435,862 | $6,908,810 |
 
-*The accounts on the ledger’s special education list (scripts/journal.py), psychologists outside the total.*
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants. FY2026 is not yet closed.*
 
-**Special education: voted, and spent from every fund — By what it bought, FY2026**
+**Special education: what was voted, what was spent, and which fund paid — FY2025**
 
-| | Voted, general fund | General fund spent | Other funds spent | Every fund |
-|---|---:|---:|---:|---:|
-| Out-of-district tuition | $1,291,293 | $1,144,063 | $333,495 | $1,477,558 |
-| Transportation | $565,734 | $620,025 | $0 | $620,025 |
-| Contracted services and evaluations | $152,500 | $232,152 | $299,268 | $531,420 |
-| Staff pay and benefits | $4,027,368 | $4,028,380 | $100,601 | $4,128,981 |
-| Supplies, equipment and other | $36,946 | $31,292 | $39,677 | $70,969 |
+| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
+|---|---:|---:|---:|---:|---:|
+| Out-of-district tuition | $1,164,824 | $732,298 | $473,650 | $0 | $1,205,949 |
+| Transportation | $445,328 | $434,922 | $0 | $0 | $434,922 |
+| Contracted services and evaluations | $154,258 | $152,132 | $24,801 | $2,500 | $179,433 |
+| Staff pay and benefits | $4,076,734 | $3,773,316 | $0 | $419,028 | $4,192,344 |
+| Supplies, equipment and other | $31,973 | $18,997 | $0 | $53,959 | $72,956 |
+| All of it | $5,873,117 | $5,111,664 | $498,451 | $475,488 | $6,085,603 |
 
-*The same budget filtered to special education, by object code: the voted line beside every fund that paid for it.*
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
+
+**Special education: what was voted, what was spent, and which fund paid — FY2024**
+
+| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
+|---|---:|---:|---:|---:|---:|
+| Out-of-district tuition | $501,239 | $588,508 | $466,296 | $0 | $1,054,804 |
+| Transportation | $335,947 | $401,402 | $0 | $0 | $401,402 |
+| Contracted services and evaluations | $136,900 | $185,908 | $0 | $49,805 | $235,713 |
+| Staff pay and benefits | $3,676,729 | $3,445,748 | $0 | $510,903 | $3,956,651 |
+| Supplies, equipment and other | $36,779 | $20,448 | $0 | $38,541 | $58,989 |
+| All of it | $4,687,594 | $4,642,014 | $466,296 | $599,250 | $5,707,560 |
+
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
+
+**Special education: what was voted, what was spent, and which fund paid — FY2023**
+
+| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
+|---|---:|---:|---:|---:|---:|
+| Out-of-district tuition | $489,918 | $304,747 | $494,968 | $0 | $799,715 |
+| Transportation | $329,360 | $320,244 | $0 | $0 | $320,244 |
+| Contracted services and evaluations | $119,900 | $126,333 | $0 | $122,102 | $248,435 |
+| Staff pay and benefits | $3,567,225 | $3,504,347 | $0 | $397,023 | $3,901,370 |
+| Supplies, equipment and other | $36,890 | $24,029 | $0 | $41,829 | $65,858 |
+| All of it | $4,543,293 | $4,279,700 | $494,968 | $560,954 | $5,335,622 |
+
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
 
 What this does not establish:
 

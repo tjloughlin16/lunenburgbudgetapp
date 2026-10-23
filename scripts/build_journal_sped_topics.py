@@ -118,6 +118,10 @@ def data():
     d['comp'] = {(y, c): money(byc.get((y, c), 0)) for y in J.YEARS for c in J.IN_TOTAL}
     psy = J.rollup([r for r in J.sped_actuals(True) if comp(r) == 'psychologists'], 'fy')
     d['psy'] = {y: money(psy.get((y,), 0)) for y in J.YEARS}
+    # The cross-tab: one year, what it paid for (rows) by where the money came from (columns).
+    # Its row totals are d['comp'] and its column totals d['fund'], asserted in build().
+    byfc = J.rollup(J.sped_actuals(True), 'fy', fund, comp)
+    d['fc'] = {k: money(v) for k, v in byfc.items()}
     # The circuit breaker in the open year: what produced its actuals.
     cb = [r for r in L if r['fy'] == F1 and fund(r) == 'Circuit breaker']
     d['cb_kind'] = {k: money(v) for (k,), v in
@@ -210,14 +214,33 @@ def build():
                        closes=BENEFITS_CLOSES)
 
     comp_order = [c for c, _, inn, _ in J.COMPONENTS if inn]
-    fund_rows = [dict(label=C.fy(y), cells=[
-        C.usd(d['gf'][y]), C.usd(d['fund'][(y, 'Circuit breaker')]),
-        C.usd(d['fund'][(y, 'IDEA grants')] + d['fund'][(y, 'Other special education grants')]),
-        C.usd(d['total'][y]), C.pct(d['out_share'][y])]) for y in reversed(J.YEARS)]
-    comp_rows = [dict(label=J.COMPONENT_LABEL[c], cells=[C.usd(d['comp'][(y, c)]) for y in J.YEARS])
-                 for c in comp_order]
-    comp_rows.append(dict(label='School psychologists (not in the total)',
-                          cells=[C.usd(d['psy'][y]) for y in J.YEARS]))
+    cols = (('General fund', ('General fund',)), ('Circuit breaker', ('Circuit breaker',)),
+            ('Grants', ('IDEA grants', 'Other special education grants')))
+    cell = lambda y, c, fns: sum(d['fc'].get((y, fn, c), 0.0) for fn in fns)
+
+    def year_view(y):
+        rows = []
+        for c in comp_order:
+            v = [cell(y, c, fns) for _, fns in cols]
+            if abs(sum(v) - d['comp'][(y, c)]) > 0.005:
+                fail('%s %s: the funds do not sum to the component' % (y, c))
+            rows.append(dict(label=J.COMPONENT_LABEL[c], cells=[C.usd(x) for x in v + [sum(v)]]))
+        tot = [sum(cell(y, c, fns) for c in comp_order) for _, fns in cols]
+        for (name, fns), t in zip(cols, tot):
+            if abs(t - sum(d['fund'][(y, fn)] for fn in fns)) > 0.005:
+                fail('%s %s: the components do not sum to the fund' % (y, name))
+        rows.append(dict(label='All of it', cells=[C.usd(x) for x in tot + [sum(tot)]]))
+        pv = [cell(y, 'psychologists', fns) for _, fns in cols]
+        rows.append(dict(label='School psychologists (not in the total)',
+                         cells=[C.usd(x) for x in pv + [sum(pv)]]))
+        return dict(key='fy%d' % y, label=C.fy(y), total_col=3, kinds=['ledger'] * 4,
+                    columns=[n for n, _ in cols] + ['Every fund'], rows=rows,
+                    note='Rows are what the money paid for, by object code; columns are the fund '
+                         'that paid. Grants are the IDEA and special education program '
+                         'improvement grants. Psychologists serve every student; they are on the '
+                         'list and kept out of the total, by our choice.'
+                         + (' %s is not yet closed.' % C.fy(y) if y == F1 else ''))
+
     out['sped-all-funds'] = TP.page(
         'sped-all-funds',
         'Special education across every fund rose %s from %s to %s; the general fund’s part rose %s.'
@@ -263,18 +286,8 @@ def build():
             note='Actuals on the accounts the school ledger labels special education, net of '
                  'every reclassification. %s is not yet closed.' % C.fy(F1),
             note_figures={'y': F(F1)}),
-        table=dict(caption='Special education in the school journal, by year', views=[
-            dict(key='funds', label='By fund', total_col=3, kinds=['ledger'] * 5,
-                 columns=['General fund', 'Circuit breaker', 'Grants', 'Every fund',
-                          'Outside the general fund'],
-                 rows=fund_rows,
-                 note='Grants are the IDEA grants and the special education program '
-                      'improvement grants together.'),
-            dict(key='components', label='By what it bought, every fund', total_col=None,
-                 kinds=['ledger'] * len(J.YEARS), columns=[C.fy(y) for y in J.YEARS],
-                 rows=comp_rows,
-                 note='By object code. Psychologists serve every student; they are on the list '
-                      'and kept out of the total, by our choice.')]),
+        table=dict(caption='What special education paid for, and which fund paid',
+                   views=[year_view(y) for y in reversed(J.YEARS)]),
         sources=sources(),
         finding_figures={'a': P(p_all), 'y': F(F0), 'z': F(F1), 'b': P(p_gf)})
     out['sped-all-funds']['not_established'] = [

@@ -298,6 +298,8 @@ def model():
                 if side == 'out' and r['posts_to'] == 'actual':
                     sped[(r['fy'], 'fund:' + J.sped_fund(a), 'actual')] += amt
                 sped[(r['fy'], side + ':' + J.component(a), r['posts_to'])] += amt
+                if r['posts_to'] in ('actual', 'encumbrance'):
+                    sped[(r['fy'], 'spent', J.sped_fund(a), J.component(a))] += amt
         elif J.is_revenue(a) and r['posts_to'] == 'actual':
             rec[(r['fy'], g)] -= amt
             fund_rec[(r['fy'], a['fund'])] -= amt
@@ -938,6 +940,34 @@ def build():
     hx['intent'] = f('intent', None, 'whether the vote counted on other funds', 'gap',
                      closes='the district’s budget build for special education, with the grant '
                             'and circuit breaker offsets it assumed')
+    # THE TABLE: one year per view. Rows are what the money paid for; columns the general fund's
+    # vote, then spending by the fund that paid. Its bottom row must be the by-year figures above.
+    comps = [c for c, _, inn, _ in J.COMPONENTS if inn]
+    paid_by = (('General fund spent', ('General fund',)), ('Circuit breaker', ('Circuit breaker',)),
+               ('Grants', ('IDEA grants', 'Other special education grants')))
+
+    def sped_year(y):
+        sp = lambda c, fns: sum(s.get((y, 'spent', fn, c), 0.0) for fn in fns)
+        rows, tot = [], [0.0] * 5
+        for c in comps:
+            v = [s.get((y, 'gf:' + c, 'original_budget'), 0.0)] + [sp(c, fns) for _, fns in paid_by]
+            v.append(sum(v[1:]))
+            tot = [t + x for t, x in zip(tot, v)]
+            rows.append(dict(label=J.COMPONENT_LABEL[c], cells=[C.usd(x) for x in v]))
+        for got, want, what in ((tot[0], gv[y], 'voted'), (tot[1], ga[y], 'general fund spent'),
+                                (tot[4], al[y], 'every fund')):
+            if abs(got - want) > 0.005:
+                raise SystemExit('sped-budget-all-funds %s: the components\' %s is %.2f, the year\'s is %.2f'
+                                 % (y, what, got, want))
+        rows.append(dict(label='All of it', cells=[C.usd(x) for x in tot]))
+        return dict(key='fy%d' % y, label=C.fy(y), total_col=4, kinds=['ledger'] * 5,
+                    columns=['Voted, general fund'] + [n for n, _ in paid_by] + ['Every fund spent'],
+                    rows=rows,
+                    note='Only the general fund has a vote; the circuit breaker and grants are spent '
+                         'without one. Spent includes what was still owed at the close. Grants are the '
+                         'IDEA and special education program improvement grants.'
+                         + (' %s is not yet closed.' % C.fy(y) if y == F1 else ''))
+
     out['sped-budget-all-funds'] = TP.page(
         'sped-budget-all-funds',
         'Special education spending passed its voted budget every year, and other funds paid the '
@@ -972,26 +1002,8 @@ def build():
             kind='bar', stacked=True,
             note='Bars are spending, stacked by fund; the line is the general fund budget voted for '
                  'the same accounts. %s' % open_note, note_figures={'y': F(F1)}),
-        table=dict(caption='Special education: voted, and spent from every fund', views=[dict(
-            key='years', label='By year', total_col=None, kinds=['ledger'] * 7,
-            columns=['Voted, general fund', 'Revised, general fund', 'General fund spent',
-                     'Circuit breaker', 'IDEA grants', 'Other grants', 'Every fund'],
-            rows=[dict(label=C.fy(y), cells=[C.usd(gv[y]), C.usd(gr[y]), C.usd(ga[y]),
-                                             C.usd(sf(y, 'Circuit breaker')), C.usd(sf(y, 'IDEA grants')),
-                                             C.usd(sf(y, 'Other special education grants')), C.usd(al[y])])
-                  for y in Y],
-            note='The accounts on the ledger’s special education list (scripts/journal.py), '
-                 'psychologists outside the total.'),
-            dict(key='parts', label='By what it bought, %s' % C.fy(F1), total_col=3, kinds=['ledger'] * 4,
-                 columns=['Voted, general fund', 'General fund spent', 'Other funds spent', 'Every fund'],
-                 rows=[dict(label=J.COMPONENT_LABEL[c],
-                            cells=[C.usd(s.get((F1, 'gf:' + c, 'original_budget'), 0.0)),
-                                   C.usd(s.get((F1, 'gf:' + c, 'actual'), 0.0)),
-                                   C.usd(s.get((F1, 'out:' + c, 'actual'), 0.0)),
-                                   C.usd(s.get((F1, 'gf:' + c, 'actual'), 0.0) + s.get((F1, 'out:' + c, 'actual'), 0.0))])
-                       for c, _, inn, _ in J.COMPONENTS if inn],
-                 note='The same budget filtered to special education, by object code: the voted '
-                      'line beside every fund that paid for it.')]),
+        table=dict(caption='Special education: what was voted, what was spent, and which fund paid',
+                   views=[sped_year(y) for y in reversed(Y)]),
         sources=sources())
     out['sped-budget-all-funds']['not_established'] = [
         'Whether the special education vote was set expecting the circuit breaker and grants to pay '
