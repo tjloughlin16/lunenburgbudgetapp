@@ -784,8 +784,9 @@ def build():
                             TP.track('Average + 1 SD', [lv1] * nyrs, 'published'),
                             TP.track('Average + 2 SD', [lv2] * nyrs, 'published')],
                         '$', kind='line', reference=(rs['cap'], 'The most the reserve may hold'),
-                        note='General fund, %s to %s: each line\u2019s spending above its original '
-                             'vote, added up. Average and SD are our arithmetic.' % (fy0, fy1),
+                        note='General fund only, %s to %s: each line\u2019s spending above its vote, '
+                             'added up. Grants and the circuit breaker account are not in it.'
+                             % (fy0, fy1),
                         note_figures={'y': F(sur[0]['fy']), 'z': F(sur[-1]['fy'])}),
         table=dict(caption='How each year\u2019s figure is reached, and the levels it gives', views=[
             dict(key='years', label='Each year', total_col=3, kinds=['ledger'] * 5,
