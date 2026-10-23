@@ -1,36 +1,40 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-10-22T12:22:20Z",
+ "picked_at": "2026-10-23T11:21:40Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.3801,
- "input_sha256": "d599edee0804968f7e3cdaa548ddd4bacb72311ee9324bac35b48d1886a4414f",
+ "cost_usd": 0.3812,
+ "input_sha256": "37c185e2a23dc299ae30278a00d3e6c4176c2a597653d87a2dd1e323ee86de79",
  "callouts": [
   {
    "kind": "fee",
-   "value": "Under $100/yr",
-   "label": "proposed flat stormwater fee per home for the first 3 years, if a utility is chosen",
-   "hook": "proposed stormwater fee cap",
-   "quote": "it would not exceed $100 per property for the 1st 3 years",
+   "value": "~$85 a year",
+   "label": "projected stormwater fee for a single-family home if a utility is adopted; not yet set",
+   "hook": "projected yearly fee, not set",
+   "quote": "single family homes, we're looking at probably around $85 a year",
    "heard": [
-    "$100",
-    "$85 per ERU",
-    "4200 square feet"
+    "$85",
+    "$109",
+    "4200 feet"
    ],
-   "item_date": "2026-10-20",
-   "item_board": "select-board",
+   "item_date": "2026-10-21",
+   "item_board": "conservation-commission",
    "basis": "heard",
-   "board": "select-board",
-   "date": "2026-10-20",
-   "video_id": "z9j248Lu80E",
-   "t": 5452,
-   "where": "Select Board, 20 Oct 2026"
+   "board": "conservation-commission",
+   "date": "2026-10-21",
+   "video_id": "hB7nDLUXqXk",
+   "t": 12252,
+   "where": "Conservation Commission, 21 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "~$85 a year is stated as a probable figure; label and hook say not set; later items don't change it."
+   }
   },
   {
    "kind": "money",
-   "value": "$480,000",
-   "label": "a year the DPW director says is needed to meet the stormwater permit, versus about $100,000 spent now",
+   "value": "$100,000 vs $480,000",
+   "label": "what the town spends yearly on stormwater now vs. what the DPW director says compliance needs",
    "hook": "",
    "quote": "my stormwater budget's been a roughly $100,000 per year. But I need around $480,000 a year to, to just to be compliant.",
    "heard": [
@@ -47,12 +51,16 @@
    "date": "2026-10-20",
    "video_id": "z9j248Lu80E",
    "t": 7314,
-   "where": "Select Board, 20 Oct 2026"
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "DPW director quoted: ~$100,000 spent, ~$480,000 needed to comply; later dispute doesn't overtake it."
+   }
   },
   {
    "kind": "impact",
-   "value": "$5,000-$50,000",
-   "label": "per day in possible fines for not complying with the federal stormwater permit",
+   "value": "$5000-$50,000",
+   "label": "possible fine per day if the town does not comply with its federal stormwater permit",
    "hook": "",
    "quote": "The fines are $5000 to $50,000 per day.",
    "heard": [],
@@ -63,7 +71,11 @@
    "date": "2026-10-20",
    "video_id": "z9j248Lu80E",
    "t": 4293,
-   "where": "Select Board, 20 Oct 2026"
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Presenter quoted: fines $5000 to $50,000 per day; supported and not contradicted."
+   }
   }
  ]
 }

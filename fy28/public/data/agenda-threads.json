@@ -2,23 +2,29 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-10-22",
+ "as_of": "2026-10-23",
  "window": {
-  "from": "2026-10-08",
-  "to": "2026-11-19"
+  "from": "2026-10-09",
+  "to": "2026-11-20"
  },
  "counts": {
-  "agendas": 36,
-  "agendas_upcoming": 9,
-  "agendas_unreadable": 2,
-  "items": 430,
-  "business_items": 254,
-  "matched_items": 20,
-  "upcoming_business_items": 23,
-  "upcoming_matched_items": 3,
+  "agendas": 41,
+  "agendas_upcoming": 12,
+  "agendas_unreadable": 3,
+  "items": 490,
+  "business_items": 284,
+  "matched_items": 21,
+  "upcoming_business_items": 40,
+  "upcoming_matched_items": 2,
   "threads_on_an_upcoming_agenda": 3
  },
  "unreadable": [
+  {
+   "board": "School Advisory Councils & Committees",
+   "date": "2026-10-26",
+   "file_id": "8098",
+   "why": "no item could be read off the agenda text"
+  },
   {
    "board": "Board of Registrars",
    "date": "2026-10-30",
@@ -3223,7 +3229,7 @@
    "date": "2026-10-22",
    "file_id": "8087",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8087",
    "agenda_doc": "/docs/meetings/finance-committee/2026-10-22-agenda-8087.pdf",
    "items": [
@@ -3405,7 +3411,7 @@
    "date": "2026-10-22",
    "file_id": "8088",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8088",
    "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-22-agenda-8088.pdf",
    "items": [
@@ -3600,6 +3606,359 @@
    ]
   },
   {
+   "board": "School Advisory Councils & Committees",
+   "board_slug": "school-advisory-councils-committees",
+   "date": "2026-10-26",
+   "file_id": "8098",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10262026-8098",
+   "agenda_doc": "/docs/meetings/school-advisory-councils-committees/2026-10-26-agenda-8098.pdf",
+   "items": [],
+   "threads": []
+  },
+  {
+   "board": "Select Board",
+   "board_slug": "select-board",
+   "date": "2026-10-27",
+   "file_id": "8097",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10272026-8097",
+   "agenda_doc": "/docs/meetings/select-board/2026-10-27-agenda-8097.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER AND PLEDGE OF ALLEGIANCE",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Early voting at Town Hall ends Thursday, October 29th at 6:00 PM",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Election day is on Tuesday, November 3rd from 7 am to 8 pm at the Middle/High School",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Special Town Meeting will be on Tuesday, November 17th at 7 pm in the Middle/High School Auditorium",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "The Stormwater Task Force will be having a Presentation and Community Meeting regarding Stormwater Financing Options on Monday, November 7th 7-8 pm in the Wallace Room at the Lunenburg Public Library",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": [
+      {
+       "id": "stormwater-fee",
+       "label": "The stormwater fee",
+       "by": "words"
+      }
+     ]
+    },
+    {
+     "line": "Change of Officers/Directors Application for Existing Liquor License for Global Montello Group Corporation d/b/a Honey Farms #3829 Located at 134 Leominster-Shirley Road",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Acknowledgement of the Resignation of Steven Walker, Public Access Cable Committee",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Acknowledgement of the Resignation of Joeci Gilchrest, Economic Development Committee",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion on October 27th Select Board Chat Session and Schedule Next Chat Session",
+     "parent": "",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Introduce Draft of Flag Policy with Modifications",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Special Education Reserve Fund Policy",
+     "parent": "",
+     "n": 11,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Special Town Meeting, November 17, 2026",
+     "parent": "",
+     "n": 12,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Select Board Recommendations on Articles",
+     "parent": "Special Town Meeting, November 17, 2026",
+     "n": 13,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Update on Food Pantry Relocation and License Agreement",
+     "parent": "",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion on Lunenburg Municipal Buildings",
+     "parent": "",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "October 1, 2024, July 7, 2026, July 14, 2026, July 21, 2026, October 20, 2026",
+     "parent": "",
+     "n": 16,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "November 10th Select Board Meeting",
+     "parent": "",
+     "n": 17,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "November 17th Special Town Meeting",
+     "parent": "",
+     "n": 18,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": [
+    "stormwater-fee"
+   ]
+  },
+  {
+   "board": "Sewer Commission",
+   "board_slug": "sewer-commission",
+   "date": "2026-10-27",
+   "file_id": "8096",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10272026-8096",
+   "agenda_doc": "/docs/meetings/sewer-commission/2026-10-27-agenda-8096.pdf",
+   "items": [
+    {
+     "line": "6:00 PM CALL TO ORDER AND PLEDGE OF ALLEGIANCE",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "CURRENT BUSINESS",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Minutes of 09/08/2026– Vote to Approve",
+     "parent": "CURRENT BUSINESS",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "424 Sunnyhill Road- Payment plan request",
+     "parent": "CURRENT BUSINESS",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Sewer Business Manager/DPW Director Updates",
+     "parent": "CURRENT BUSINESS",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "CTE Contract- Update",
+     "parent": "CURRENT BUSINESS",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Q2 FY27 Billing- Update",
+     "parent": "CTE Contract- Update",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Sewer Demand Fee rate– Discussion",
+     "parent": "CTE Contract- Update",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Future agenda Items– Discussion",
+     "parent": "CURRENT BUSINESS",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "OLD BUSINESS",
+     "parent": "",
+     "n": 11,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT",
+     "parent": "",
+     "n": 12,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "UPCOMING SCHEDULED SEWER COMMISSION ACTIVITIES November 10th, 2026, 6pm Regular (Hybrid) Meeting December 8th, 2026, 6pm Regular (Hybrid) Meeting",
+     "parent": "",
+     "n": 13,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "ADJOURN",
+     "parent": "",
+     "n": 14,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Board of Assessors",
+   "board_slug": "board-of-assessors",
+   "date": "2026-10-28",
+   "file_id": "8099",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10282026-8099",
+   "agenda_doc": "/docs/meetings/board-of-assessors/2026-10-28-agenda-8099.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review and Approve Minutes of September 23, September 30, October 14, and Executive Session October 14, 2026.",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Sign Excise Tax Commitment 5.",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Sign Certificate for renewal of Chapter 61B status.",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Status on Preparations for the November 24, 2026, Tax Classification Hearing:",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Commercial / Industrial (Vision) Update and Data Review.",
+     "parent": "Status on Preparations for the November 24, 2026, Tax Classification Hearing:",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Public",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Board",
+     "parent": "",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
    "board": "Board of Registrars",
    "board_slug": "board-of-registrars",
    "date": "2026-10-30",
@@ -3638,6 +3997,145 @@
      "parent": "",
      "n": 1,
      "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Planning Board",
+   "board_slug": "planning-board",
+   "date": "2026-11-10",
+   "file_id": "8095",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_11102026-8095",
+   "agenda_doc": "/docs/meetings/planning-board/2026-11-10-agenda-8095.pdf",
+   "items": [
+    {
+     "line": "CALL TO ORDER",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "PUBLIC COMMENT",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "BOARD COMMENT",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "MINUTES APPROVAL",
+     "parent": "",
+     "n": 4,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "CHAIR / DIRECTOR’S REPORT",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "MEET & GREET POSTMORTEN DISCUSSIONS AND",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "PLANNING BOARD BYLAWS CHANGES FEEDBACK",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "NEW BUSINESSES UPDATES",
+     "parent": "",
+     "n": 8,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "BUSINESS UPDATEES",
+     "parent": "",
+     "n": 9,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "LUNENBURG BUSINESS ASSOCIATION UPDATE",
+     "parent": "",
+     "n": 10,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "TOPICS FOR FUTURE MEETINGS",
+     "parent": "",
+     "n": 11,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "COMMITTEE REPORTS",
+     "parent": "",
+     "n": 12,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Open Space Committee",
+     "parent": "COMMITTEE REPORTS",
+     "n": 13,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Select Board",
+     "parent": "COMMITTEE REPORTS",
+     "n": 14,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Planning Board",
+     "parent": "COMMITTEE REPORTS",
+     "n": 15,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "MEETING SCHEDULE 2nd Tuesday of the Month 5:30pm December 8, 2026",
+     "parent": "",
+     "n": 16,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "BOARD COMMENT",
+     "parent": "",
+     "n": 17,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "ADJOURNMENT",
+     "parent": "",
+     "n": 18,
+     "procedural": true,
      "threads": []
     }
    ],
@@ -3783,7 +4281,7 @@
     "board_slug": "finance-committee",
     "date": "2026-10-22",
     "body_as_printed": "",
-    "upcoming": true,
+    "upcoming": false,
     "line": "Stormwater Utility",
     "parent": "New Business",
     "by": "words",
@@ -3795,12 +4293,24 @@
     "board_slug": "stormwater-task-force",
     "date": "2026-10-22",
     "body_as_printed": "",
-    "upcoming": true,
+    "upcoming": false,
     "line": "PRESENTATION TO FINANCE COMMITTEE",
     "parent": "",
     "by": "board",
     "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10222026-8088",
     "agenda_doc": "/docs/meetings/stormwater-task-force/2026-10-22-agenda-8088.pdf"
+   },
+   {
+    "board": "Select Board",
+    "board_slug": "select-board",
+    "date": "2026-10-27",
+    "body_as_printed": "",
+    "upcoming": true,
+    "line": "The Stormwater Task Force will be having a Presentation and Community Meeting regarding Stormwater Financing Options on Monday, November 7th 7-8 pm in the Wallace Room at the Lunenburg Public Library",
+    "parent": "",
+    "by": "words",
+    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10272026-8097",
+    "agenda_doc": "/docs/meetings/select-board/2026-10-27-agenda-8097.pdf"
    }
   ],
   "trust-fund-vacancy": [

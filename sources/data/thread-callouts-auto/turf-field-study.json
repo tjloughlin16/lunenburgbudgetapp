@@ -1,18 +1,18 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "turf-field-study",
- "picked_at": "2026-10-22T12:22:20Z",
+ "picked_at": "2026-10-23T11:21:40Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.1634,
- "input_sha256": "b32184963a10ccca5ced4d73d28c8ac0648204c64fbc75eac9c2daf745033544",
+ "cost_usd": 0.1798,
+ "input_sha256": "c6f6a74d0a4dd971f0e0cb799e2964a9b28e1b3857d255620a910c93eed28835",
  "callouts": [
   {
    "kind": "money",
    "value": "$195,830",
-   "label": "requested for engineering and design of the middle-high track and field, not construction",
-   "hook": "requested for track engineering",
-   "quote": "the school committee's request for $195,830 for a professional engineering and related services for the middle high school track and field facility",
+   "label": "School Committee's request for engineering services for the track and turf field, not construction",
+   "hook": "requested for engineering study",
+   "quote": "request for $195,830 for a professional engineering and related services for the middle high school track and field facility",
    "heard": [
     "$195,830"
    ],
@@ -23,32 +23,18 @@
    "date": "2026-10-20",
    "video_id": "z9j248Lu80E",
    "t": 8412,
-   "where": "Select Board, 20 Oct 2026"
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": false,
+    "why": "Hook calls it an engineering 'study'; the request is design/engineering services, and the Finance Committee later said much of it is construction-phase services."
+   }
   },
   {
-   "kind": "money",
-   "value": "~$3 million",
-   "label": "earlier estimate to replace the turf, McCarron Field and track; likely borrowed by debt exclusion",
+   "kind": "warrant",
+   "value": "Nov 17",
+   "label": "Special Town Meeting, where the track and turf engineering article is on the warrant",
    "hook": "",
-   "quote": "an earlier estimate of the project costs for the turf um McCarron Field um and track replacement allocation was approximately $3 million",
-   "heard": [
-    "$3 million"
-   ],
-   "item_date": "2026-10-21",
-   "item_board": "school-committee",
-   "basis": "heard",
-   "board": "school-committee",
-   "date": "2026-10-21",
-   "video_id": "2-Ax9zkA1NA",
-   "t": 4459,
-   "where": "School Committee, 21 Oct 2026"
-  },
-  {
-   "kind": "impact",
-   "value": "3 ft and 6 ft",
-   "label": "roped off beside the failing lower wall at the turf field, leaving track lanes 7 and 8 unusable",
-   "hook": "",
-   "quote": "We had to rope off 3 feet on the upper side of the wall and six feet on the lower side of the wall",
+   "quote": "The special town meeting is Tuesday, November 17th at 700 p.m.",
    "heard": [],
    "item_date": "2026-10-21",
    "item_board": "school-committee",
@@ -56,8 +42,32 @@
    "board": "school-committee",
    "date": "2026-10-21",
    "video_id": "2-Ax9zkA1NA",
-   "t": 3706,
-   "where": "School Committee, 21 Oct 2026"
+   "t": 271,
+   "where": "School Committee, 21 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Select Board added the article; Special Town Meeting Nov 17 at 7 pm is stated."
+   }
+  },
+  {
+   "kind": "impact",
+   "value": "150 ft",
+   "label": "of the lower retaining wall at the track is in failure, a potential danger to the public, per the engineer",
+   "hook": "",
+   "quote": "150 ft section of the lower retaining wall as being in a state of failure and a potential danger to the public",
+   "heard": [],
+   "item_date": "2026-10-20",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-10-20",
+   "video_id": "z9j248Lu80E",
+   "t": 8516,
+   "where": "Select Board, 20 Oct 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Engineer's 150 ft section in failure, quoted; consistent with later reports."
+   }
   }
  ]
 }

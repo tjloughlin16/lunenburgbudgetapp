@@ -225,7 +225,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">144</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">238,740</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">238,782</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">1842</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">63%</div><div class="l">columns described</div></div>
 </div>
@@ -3487,7 +3487,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 10,792 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 10,834 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
 <details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">131 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
@@ -3501,7 +3501,7 @@ to $325</td><td>quoted in source</td></tr>
 <div class="scroll"><table class="samp"><tr><th>path</th><th>sha256</th></tr>
 <tr><td>sources/data/report-officials.csv</td><td>91c468ad19dd8581e974d5673622bee9bd8235467ee…</td></tr>
 <tr><td>sources/data/town-ledger-fy26-q3.csv</td><td>b6731da30b0e5941ddecd8da0c5ab06259ae5c18d77…</td></tr>
-<tr><td>sources/meetings/index.csv</td><td>d5404cd84ce9bea939b9c71fd881c10f71acd82a9c9…</td></tr>
+<tr><td>sources/meetings/index.csv</td><td>8dfb986a5883c66f80619495e4e822ade9ca07ca7df…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>build_meta</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">2 rows</span><button class="open" data-t="build_meta" data-q="SELECT key, value FROM build_meta ORDER BY key">Query table</button></span><span class="gr">one row per fact about this build (key, value)</span></summary>
@@ -3513,7 +3513,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-10-23T04:50:49Z</td></tr>
+<tr><td>built_at</td><td>2026-10-23T11:22:59Z</td></tr>
 <tr><td>inputs</td><td>131</td></tr>
 </table></div>
 </details>
@@ -3633,7 +3633,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>report-enrollment-mcas</td><td>FY2018</td><td>13</td><td>112,125,137,139,143</td><td>5</td><td>0</td><td>0</td><td>4125-fy-2018-annual-town-report.pdf</td><td>FY 2018 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>364a1138df754668ee59a499cf3d76b6ac006d47a4a…</td><td>8052398</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,179 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
+<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,221 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
 <p class="ans">One row per source document: its archive path, how it reached us, its publisher URL, whether that link still opens (<code>link_state</code>), whether our copy still matches the publisher&#x27;s (<code>copy_state</code>), and both checksums. Also which columns a workbook HIDES from a reader.</p>
 <p class="warn"><code>link_state</code> says whether the publisher&#x27;s copy still opens; <code>copy_state</code> whether it still matches ours.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -3653,7 +3653,7 @@ to $325</td><td>quoted in source</td></tr>
 <div class="scroll"><table class="samp"><tr><th>doc_id</th><th>path</th><th>source_type</th><th>basis</th><th>ledger_at</th><th>hidden_columns</th><th>url</th><th>link_state</th><th>copy_state</th><th>remote_sha256</th><th>local_sha256</th></tr>
 <tr><td>sources/budget-workbooks/finance-committee/…</td><td>sources/budget-workbooks/finance-committee/…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">empty</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>f5c807913c2342a2d8f619e927b53281443b20d53fc…</td></tr>
 <tr><td>sources/district-budget/docs/sc-meetings/20…</td><td>sources/district-budget/docs/sc-meetings/20…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://drive.google.com/file/d/1hai98UcLcL…</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>4fd7a666925f7b72e7a46b89c61fbaf908d91e47a76…</td></tr>
-<tr><td>sources/state-dese/dese-sped-placement-traj…</td><td>sources/state-dese/dese-sped-placement-traj…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://educationtocareer.data.mass.gov/d/9…</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>ff3e4c9e8dd8bb7db54c90ca3a89321f395e8696ad3…</td></tr>
+<tr><td>sources/state-dese/district-expenditures-by…</td><td>sources/state-dese/district-expenditures-by…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://educationtocareer.data.mass.gov/res…</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>653615f4b7d0a8302ce632fecc90ed43193fc37c835…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>extraction_plan</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">555 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="extraction_plan">Query table</button></span><span class="gr">one row per planned extract</span></summary>
