@@ -130,6 +130,11 @@ CHECKS = [
     # and every figure recomputed by the verifier's different route.
     ('build_school_surplus.py', ['--all', '--check']),
     ('verify_school_surplus.py', ['--all']),
+    # ORDERS CARRIED FROM ONE SCHOOL YEAR INTO THE NEXT: the topic page, which refuses unless
+    # every close's YEC equals the next year's SOY and carry-forward, account by account; and
+    # its figures recomputed in SQL off the database copy of the journal.
+    ('build_carryover_topics.py', ['--check']),
+    ('verify_carryover.py', []),
     # THE SPECIAL EDUCATION CROSSWALK: DESE's function codes and program column beside the
     # three definitions we use, and the topic page that shows the differences. Fails if a
     # counted line or account lands on no row.
