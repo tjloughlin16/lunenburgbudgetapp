@@ -7,6 +7,37 @@ they came from so the detail is one click away.
 
 **The first goal:** answer a board member's open question on the special education overruns.
 
+## OVERNIGHT 22-23 OCTOBER -- what was done (committed locally, NOT pushed, NOT deployed)
+
+- **Deploy unblocked, deploy NOT run.** Our meeting text (12,175 `.txt`) now lives in a second,
+  UNLOCKED bucket `lunenburg-derived`, all 12,175 confirmed by listing; `/docs` serves
+  `minutes/text/` from it and never falls back to the archive's 5 Sep snapshot
+  (`fy28/functions/docs/_bucket.js` `fromDerived`). `deploy_site.sh` pushes, checks, and deploys a
+  hard-linked copy of dist without them (~8,100 files). `dist/` is freshly built (2,292 routes, all
+  prerendered). The deploy itself was refused by the session's permission classifier -- TJ runs
+  `bash scripts/deploy_site.sh --branch preview`, checks a `/docs/minutes/text/...` URL answers
+  `x-archive-source: r2-derived`, then `bash scripts/deploy_site.sh` for production.
+- **Phase 0:** overruns page done (levels, SD, years covered, per-year arithmetic, general-fund-only
+  note, link to the all-funds page). The all-funds special education page now counts year-end
+  encumbrances like the overruns page, so the two agree (FY2026: $61,609 over, not $17,928 under).
+- **Phase 2:** items 7-10 DONE -- DESE allocations, every district FY2017-FY2027 (25,371 rows, all
+  years reconciled; 0240 FY2018 not served by DESE); fund names on /accounts; open grants page
+  `/grants-open-to-lunenburg` (weekly fetch); grant comparison pages on the school-all-funds shelf.
+- **Phase 3:** DONE first pass -- `/school-all-funds` hub + six pages, reconciled to the period-13
+  reports to the cent, H1/H2 measured. Not yet: persona/AUDIT-PASS review; FY2024-25 annual-report
+  special revenue; allocations beside receipts.
+- **Phase 4:** DONE -- Menu: Other schools, Special reports, the all-funds shelf at the top of
+  schools; same order on /reports.
+- **Phase 5:** item 19 (fund drill-in) DONE. Item 20 (metrics redesign) NOT started -- needs TJ to
+  pick from mocks.
+- **Quick:** `./dev.sh` DONE. Item 22 (the four Downloads files) NOT done -- provenance is TJ's.
+- **Still failing in check_generated, from earlier sessions, untouched:** build_threads (machine
+  picks not judged; veterans-exemption callout overtaken), map_annual_report_pages and
+  build_source_index (capital-plan-field-lines, thread-briefing, thread-history not declared /
+  catalogued -- the turf-thread commits), write_recording_minutes (3 select-board meetings whose
+  town documents changed), sync_d1 --check (D1 API error 7500 -- check `wrangler whoami` scopes),
+  build_board_transfers (another session's uncommitted board-transfers.csv).
+
 ---
 
 ## What changed what is possible (checked 22 Oct, not assumed)
