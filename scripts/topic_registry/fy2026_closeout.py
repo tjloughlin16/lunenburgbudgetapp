@@ -9,7 +9,7 @@ CATEGORY = dict(
     # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
     start=['fy2026-school-surplus', 'fy2026-surplus-and-fy2027'],
     id='fy2026-closeout', shelf='FY2026 closeout', title='FY2026 year end', area='town',
-    order=51,
+    order=95,  # a special report, last in the town section (TJ, 22 Oct 2026)
     groups=[
         (None, ['fy2026-school-surplus', 'fy2026-surplus-by-category',
                 'fy2026-lines-over-budget', 'fy2026-school-transfers',

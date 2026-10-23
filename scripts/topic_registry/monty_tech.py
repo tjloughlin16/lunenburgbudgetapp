@@ -13,7 +13,7 @@ answers a question about every district. All four are listed here. One page, man
 CATEGORY = dict(
     # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
     start=['monty-tech-per-pupil'],
-    id='monty-tech', shelf='Monty Tech', title='Monty Tech finances', area='school', order=22,
+    id='monty-tech', shelf='Monty Tech', title='Monty Tech finances', area='school', order=90,  # Other schools, last (TJ, 22 Oct 2026)
     groups=[
         ('Lunenburg’s pupils there', ['monty-tech-enrolment']),
         ('What Lunenburg pays', ['monty-tech-assessment']),

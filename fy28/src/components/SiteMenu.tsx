@@ -30,7 +30,7 @@ type Item = { label: string; sub: string } & ({ to: Tab; anchor?: string; href?:
  *  PARENT to this field and fails the build when they disagree. */
 type Group = { title: string; under: Tab | null; items: Item[] }
 
-/* EIGHT GROUPS, AND THE FIRST CUT HAD FIVE. TJ, same day: *"I likely missed full
+/* EIGHT GROUPS (TEN SINCE 22 OCTOBER 2026), AND THE FIRST CUT HAD FIVE. TJ, same day: *"I likely missed full
  * categories (which really is the reason I asked for this)."* He had: the first version
  * reached 25 of the site's ~70 routes, and the misses were whole subjects -- the money,
  * the schools, the town, the tools, past budget seasons -- because it was written from
@@ -89,6 +89,13 @@ export const GROUPS: Group[] = [
     { href: '/state-aid/minimum-aid', label: 'Chapter 70', sub: 'Why we get the minimum' },
     { href: '/school-programs/announced-cuts', label: 'Announced cuts', sub: 'What was announced, what shows' },
   ] },
+  // OTHER SCHOOLS: schools Lunenburg pays into but does not run. TJ, 22 October 2026:
+  // "Monty Tech and Bromfield are other schools, so those should go in a separate section
+  // for schools ... at the bottom of the menu for schools".
+  { title: 'Other schools', under: null, items: [
+    { href: '/monty-tech', label: 'Monty Tech', sub: 'The regional vocational school' },
+    { href: '/bromfield', label: 'Harvard and Bromfield', sub: 'Another town’s schools, compared' },
+  ] },
   { title: 'The town', under: 'reports', items: [
     { to: 'reports', anchor: 'town', label: 'All town reports', sub: 'People, the ledger, the votes' },
     { href: '/homes-and-taxes/town-population', label: 'Population and households', sub: 'Who lives here' },
@@ -98,6 +105,10 @@ export const GROUPS: Group[] = [
     { href: '/town-reserves', label: 'Stabilization funds', sub: 'What is saved, who may spend it' },
     { href: '/parks', label: 'Parks & Recreation', sub: 'A department, whole' },
     { href: '/parks/youth-league-payments', label: 'Youth sports and fields', sub: 'What the leagues pay' },
+  ] },
+  // A one-off report rather than a subject, so it sits below the town's subjects (TJ, 22 Oct).
+  { title: 'Special reports', under: null, items: [
+    { href: '/fy2026-closeout', label: 'FY2026 year end', sub: 'How the year closed, town and schools' },
   ] },
   { title: 'Check it', under: null, items: [
     { to: 'sources', label: 'Sources', sub: 'Every document this rests on' },
@@ -228,7 +239,7 @@ function Pill({ n }: { n: number }) {
   )
 }
 
-/** The same eight groups, drawn as a SITE MAP -- the panel's body, and the FAT FOOTER on
+/** The same groups, drawn as a SITE MAP -- the panel's body, and the FAT FOOTER on
  *  every page. A menu behind a button is found only by people who think to press it; a
  *  footer map is where a reader who has scrolled to the end looks for "what else is here". */
 export function SiteMap({ tab, onPick, compact }: { tab: Tab; onPick?: () => void; compact?: boolean }) {

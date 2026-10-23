@@ -14,7 +14,7 @@ listed here, one page on two shelves, because the rate scenario reads it.
 CATEGORY = dict(
     # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
     start=['harvard-per-pupil'],
-    id='bromfield', shelf='Bromfield', title='Harvard and Bromfield', area='school', order=23,
+    id='bromfield', shelf='Bromfield', title='Harvard and Bromfield', area='school', order=91,  # Other schools, last (TJ, 22 Oct 2026)
     groups=[
         ('What Harvard spends a pupil', ['harvard-per-pupil', 'harvard-line-by-line']),
         ('Lunenburg at other rates', ['lunenburg-at-harvard-rate', 'cost-of-the-median']),
