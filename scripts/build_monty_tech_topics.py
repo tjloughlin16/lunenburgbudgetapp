@@ -500,8 +500,10 @@ def build():
             fail('the chart\'s five parts do not add to %s\'s total revenue' % d['name'])
     out['monty-tech-revenue'] = TP.page(
         'monty-tech-revenue',
-        'Grants and donations were %s of Monty Tech’s %s revenue; Chapter 70 aid and town '
-        'budgets, %s.' % (C.pct(mgd), C.fy(CR.FY), C.pct(mst)),
+        # THE COMPARISON LEADS (TJ, 23 Oct 2026, could not find this page as a comparison).
+        'Towns paid %s of Lunenburg schools’ %s revenue, %s of Monty Tech’s; Chapter 70, '
+        '%s and %s.' % (C.pct(sh(lu, 'towns')), C.fy(CR.FY), C.pct(sh(mt, 'towns')),
+                        C.pct(sh(lu, 'ch70')), C.pct(sh(mt, 'ch70'))),
         [f('mt-total', U(mt['total']), 'Monty Tech revenue, every source, %s' % C.fy(CR.FY),
            'published', ry),
          f('mt-gd', U(mt['grants_and_donations']), 'of it grants and donations (our grouping)',
@@ -572,7 +574,8 @@ def build():
                  'neither district reported is left out.',
             lines=revenue_lines(mt, lu))]),
         sources=S('census', 'census-doc', 'census-f33', 'mt-deck', 'mt-book'),
-        finding_figures={'a': P(mgd), 'y': F(CR.FY), 'b': P(mst)},
+        finding_figures={'a': P(sh(lu, 'towns')), 'y': F(CR.FY), 'b': P(sh(mt, 'towns')),
+                         'c': P(sh(lu, 'ch70')), 'd': P(sh(mt, 'ch70'))},
         finding_allow=('Chapter 70',))
 
     # ------------------------------------------------ the hub
