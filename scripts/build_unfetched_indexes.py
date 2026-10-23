@@ -250,6 +250,33 @@ TREES = {
          "How the ski co-op invoice reached us, what it shows about what Lunenburg bills "
          "Littleton, Narragansett and Leominster, and what it does not show "
          "(our provenance note)"),
+        # Hand-added to index.csv by the records-request ingest of 9 October 2026 and never
+        # put here, so this tree's --check was stale from that day. Carried over as written.
+        ('2026-09-16-para-wages-superintendent-counsel-payroll.txt',
+         '2026-09-16-para-wages-superintendent-counsel-payroll.txt',
+         "Paraprofessional wage correction, 11-16 September 2026 — the Superintendent, the "
+         "district's counsel and the payroll office (released in the response to a records "
+         "request, 9 October 2026; our transcription, contact details removed, the original "
+         "held privately)"),
+        # Emailed by the Chair of the Select Board, 21 October 2026, on request. The email
+        # is the address; it is set out in the provenance note below.
+        ('2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf',
+         'text/2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf.txt',
+         "The Superintendent's track and field presentation to the Select Board, 20 October "
+         "2026 — a $195,830 professional-services request for the November 2026 Special Town "
+         "Meeting (emailed by the Chair of the Select Board, 21 October 2026, on request; "
+         "publisher's filename '10.20 Selectboard Presentation Turf Field.pdf')"),
+        ('2026-10-21-brooks-house-presentation-draft.pdf',
+         'text/2026-10-21-brooks-house-presentation-draft.pdf.txt',
+         "Selling the Brooks House: Issues to Resolve — Stephen Wallace's presentation to the "
+         "Select Board, 20 October 2026, marked DRAFT (emailed by the Chair of the Select "
+         "Board, 21 October 2026; publisher's filename 'Brooks House Presentation to Town "
+         "Meeting Draft.pdf')"),
+        ('2026-10-21-select-board-chair-presentations.md',
+         '2026-10-21-select-board-chair-presentations.md',
+         "How the three Select Board documents of 20 October 2026 reached us: the request, the "
+         "two replies, who sent them, and the hand-compiled track and field history held "
+         "pending review (our provenance note)"),
     ],
 }
 

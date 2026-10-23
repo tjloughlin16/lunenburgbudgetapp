@@ -854,6 +854,33 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'select-board-2026-10-20', 'origin': 'request',
+        'title': 'Presentations to the Select Board, 20 October 2026',
+        'blurb': 'Two decks shown at the meeting, sent to this project by the Chair of the Select '
+                 'Board on 21 October 2026 in answer to a request. The town has not posted them '
+                 'with the meeting’s agenda.',
+        'items': [
+            ('correspondence/2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf',
+             'The Superintendent’s track and field request', 2,
+             'Twenty slides asking the Select Board to put a $195,830 engineering and '
+             'professional-services article on the 17 November 2026 Special Town Meeting '
+             'warrant for the middle/high school track, turf, retaining walls and drainage. '
+             'Its figures are as presented, not voted. The publisher’s filename was '
+             '“10.20 Selectboard Presentation Turf Field.pdf”.'),
+            ('correspondence/2026-10-21-brooks-house-presentation-draft.pdf',
+             'Selling the Brooks House: issues to resolve (draft)', 3,
+             'Stephen Wallace’s presentation on selling the Brooks House at 1033 Massachusetts '
+             'Avenue, for the 17 November 2026 Special Town Meeting. The copy sent is marked '
+             'Draft and may not be the version shown at Town Meeting.'),
+            ('correspondence/2026-10-21-select-board-chair-presentations.md',
+             'How these reached us', 3,
+             'The provenance note: the request, the two replies with their times, the '
+             'publisher’s filenames and sha256s, and the third attachment, a hand-compiled '
+             'track and field history its compiler says may be incomplete. That one is held '
+             'privately while it waits for review.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'business', 'origin': 'town',
         'title': 'Business registrations',
         'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '

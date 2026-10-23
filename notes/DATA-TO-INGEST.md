@@ -12,7 +12,30 @@ reached us.
 
 ## Downloaded, awaiting ingest
 
-### Five files from TJ, 22 October 2026 — QUEUED, NOT YET INGESTED
+### Five files from TJ, 22 October 2026 — THREE INGESTED 23 October 2026 (one held pending); the .pptx still waits
+
+**Status, 23 October 2026.** Hashes re-taken off `~/Downloads` and matched the table below
+before staging. All went through `ingest.stage()` → `redact.gate()` → `ingest.secure()`.
+Provenance: `sources/correspondence/2026-10-21-select-board-chair-presentations.md`.
+- `10.20 Selectboard Presentation Turf Field.pdf` → **public**,
+  `correspondence/2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf`
+  (`pdf_kind`: digital). Text in `sources/correspondence/text/`.
+- `Brooks House Presentation to Town Meeting Draft.pdf` → **public**,
+  `correspondence/2026-10-21-brooks-house-presentation-draft.pdf` (digital; DRAFT kept in
+  the name). The `(1)` copy is identical and was not ingested twice.
+- `Track and Field complex history.pdf` → **HELD, `pending`, private bucket**
+  (`raw/correspondence/2026-10-21-track-and-field-complex-history.pdf`). It is `mixed`, and
+  page 10 is a picture of two 2021 STM slides, which was read by eye and shows no personal
+  information. It goes public on a `publish` decision in `sources/data/redactions.csv`,
+  which waits for TJ. The comparison against our thread is in
+  `notes/findings/TURF-HISTORY-COMPARISON.md`.
+- **Who sent them.** Renee Emkey is the **Chair of the Select Board** (20 Oct 2026 agenda),
+  not the Town Clerk. The *"Clerk"* in the line below is an officer's title she has
+  held on boards: Clerk of the Select Board in earlier minutes (*"Chair Amanda Moore, Clerk
+  Renee Emkey"*), and *"Clerk- Renee Emkey, Select Board"* on Budget Task Force agendas.
+- **Not in the town's AgendaCenter.** The 20 Oct 2026 Select Board entry (8080) is a
+  two-page agenda with no presentations attached.
+- `Lunenburg_Special_Education_Funding_10_Slides.pptx`: **not ingested**, no provenance.
 
 TJ asked that these go into the ingestion flow and NOT be processed yet. They are still in
 `~/Downloads`; nothing has been copied, read or screened. Hashes taken 22 Oct so the copy
