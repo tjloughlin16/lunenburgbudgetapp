@@ -42,6 +42,8 @@ export type VoteGroup = {
 export type VotePayload = {
   title: string; standfirst: string; kind: 'town-meeting' | 'board'
   coverage: string[]; grain: string; fy_rule: string; quote_rule: string
+  /** One line saying what FY means on this page, when it is not simply the year a meeting was held. */
+  fy_short?: string
   basis: Record<string, string>; by_basis: Record<string, number>
   results: { key: string; n: number; label: string }[]; fys: number[]
   votes: number; meetings: number; groups: VoteGroup[]
@@ -179,6 +181,11 @@ export function VoteList({ p }: { p: VotePayload }) {
         </div>
         <Legend kind={p.kind} />
       </div>
+      {p.fy_short && (
+        <p className="text-[12.5px] mt-2 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{p.fy_short}{' '}
+          <a className="underline" href="#fy-rule">How FY is set</a>
+        </p>
+      )}
 
       <p className="text-[12.5px] mt-3 max-w-3xl" style={{ color: 'var(--text-muted)' }}>{p.coverage[0]}{' '}
         <a className="underline" href="#what-this-covers">What this covers</a>
@@ -220,7 +227,7 @@ export function VoteList({ p }: { p: VotePayload }) {
             <li key={k}><strong style={{ color: 'var(--text-primary)' }}>{BASIS_LONG[k] ?? k}</strong> ({(p.by_basis[k] ?? 0).toLocaleString('en-US')}): {v}.</li>
           ))}
         </ul>
-        <p className="text-[13.5px] mt-3" style={{ color: 'var(--text-secondary)' }}>{p.fy_rule}</p>
+        <p id="fy-rule" className="text-[13.5px] mt-3 scroll-mt-24" style={{ color: 'var(--text-secondary)' }}>{p.fy_rule}</p>
         <p className="text-[13.5px] mt-2" style={{ color: 'var(--text-secondary)' }}>{p.quote_rule}</p>
         <p className="text-[13.5px] mt-2" style={{ color: 'var(--text-secondary)' }}>{p.grain}</p>
         <p className="text-[12.5px] mt-3" style={{ color: 'var(--text-muted)' }}>
@@ -248,7 +255,7 @@ function voteSpec(p: VotePayload, filtered: { g: VoteGroup; votes: VoteRow[] }[]
       label: on ? `Filtered: ${on}` : (p.kind === 'town-meeting' ? 'Every article' : 'Every vote'),
       note: [p.grain, p.fy_rule, p.quote_rule].filter(Boolean),
       grid: {
-        columns: ['Fiscal year', 'Meeting', 'Date', n, 'Title', 'Amount', 'Result', 'Result as recorded',
+        columns: [p.fy_short ? 'Fiscal year (budget year)' : 'Fiscal year', 'Meeting', 'Date', n, 'Title', 'Amount', 'Result', 'Result as recorded',
           'Amount voted', 'Where the result comes from', 'Records disagree', 'Moved by', 'Seconded by',
           'Procedural', 'The record, word for word or as heard', 'Record'],
         rows: filtered.flatMap(({ g, votes }) => votes.map(v => [
@@ -305,7 +312,7 @@ function Meeting({ g, votes, kind }: { g: VoteGroup; votes: VoteRow[]; kind: Vot
     <section className="mt-6 min-w-0" id={g.id} aria-label={g.label}>
       <div className="flex flex-wrap items-baseline gap-x-3 gap-y-1 pb-1.5" style={{ borderBottom: '2px solid var(--grid)' }}>
         <h2 className="text-[17px] sm:text-lg font-bold leading-snug break-words min-w-0">{g.label}</h2>
-        <span className="text-[12px] font-semibold tnum" style={{ color: 'var(--text-muted)' }} title={g.fy_basis}>FY{g.fy}{g.date_printed ? '' : ' (the report’s year)'}</span>
+        <span className="text-[12px] font-semibold tnum" style={{ color: 'var(--text-muted)' }} title={g.fy_basis}>FY{g.fy}{g.fy_basis.startsWith('a guess') ? ' (a guess: no date printed)' : ''}</span>
         {g.status && <span className="text-[12px] font-semibold" style={{ color: 'var(--status-warning)' }}>{g.status}</span>}
         <span className="text-[12px] flex flex-wrap gap-x-2" style={{ color: 'var(--text-muted)' }}>
           {g.links.map(l => <a key={l.href} className="underline" href={l.href} target="_blank" rel="noreferrer">{l.label}</a>)}

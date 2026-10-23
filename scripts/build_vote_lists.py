@@ -26,12 +26,23 @@ search mechanisms" -- and then: be explicit, per fiscal year, about whether we h
 needed to be accurate. So every fiscal year carries a coverage line computed from the data, and
 every vote whose only record is our minutes of a recording carries a plain-words label saying so.
 
-THE FISCAL YEAR. Massachusetts runs 1 July to 30 June, named for the year it ends. A vote's `fy`
-is the fiscal year IN WHICH THE MEETING WAS HELD -- so the May 2025 Annual Town Meeting is FY2025
-although it adopts the FY2026 budget. Where an article's own title names a fiscal year ("Set the
-FY2014 general operating budget"), that is carried as `names_fy`, read off the words and nothing
-else. For the Clerk's undated rows the meeting's fiscal year cannot be computed, so `fy` is the
-fiscal year of the annual report that prints them and the row says so (`fy_basis`).
+THE FISCAL YEAR. Massachusetts runs 1 July to 30 June, named for the year it ends. A TOWN MEETING
+vote's `fy` is THE BUDGET YEAR IT ACTS ON (TJ, 23 October 2026), not the year the meeting was held:
+  * an ANNUAL Town Meeting votes the budget for the fiscal year that begins the next 1 July -- the
+    calendar year of the meeting + 1, whatever its month (May 2026 -> FY2027; the June 2020 meeting
+    -> FY2021). Observed: in every dated annual meeting the fiscal year its articles name most often
+    is exactly that one.
+  * a SPECIAL Town Meeting amends the year it is held in -- the fiscal year of its date (November
+    2025 -> FY2026; the May 2011 Special, held beside the Annual, amends FY2011). Observed the same
+    way: every dated special's most-named fiscal year is the one it was held in.
+  * the Clerk's UNDATED rows: the annual report labelled year Y prints the meetings of calendar
+    year Y (every dated row obeys that), so an undated ANNUAL is FY Y+1 for certain. An undated
+    SPECIAL may fall either side of 1 July, so it is FY Y or Y+1 -- whichever its own articles name
+    more often, and Y, labelled as a guess, where they name neither. `fy_basis` says which.
+An article's own fiscal year ("Pay bills of FY2025") is carried as `names_fy`, read off the words and
+nothing else; it never moves the article. A BOARD's votes keep the fiscal year they were held in --
+a board meeting acts in its own year -- except Town Meeting's own recording page, which follows the
+Town Meeting rule.
 
 A QUOTE IS SHOWN AS VERBATIM ONLY WHERE IT IS. The Clerk's quotes were transcribed by a model
 from the annual report's text layer; each is looked for in that document (case, whitespace, curly
@@ -149,6 +160,32 @@ def read_csv(p):
 def plain_fy(date):
     y = int(date[:4])
     return y + 1 if date[5:7] >= '07' else y
+
+
+def tm_fy(date, kind):
+    """(fy, fy_basis) for a dated Town Meeting: the budget year it acts on. See the docstring."""
+    if kind == 'annual':
+        fy = int(date[:4]) + 1
+        return fy, 'the budget year: an Annual Town Meeting votes the budget for FY%d, which begins 1 July %d' % (fy, fy - 1)
+    fy = plain_fy(date)
+    if kind == 'special':
+        return fy, 'the budget year: a Special Town Meeting amends the year it is held in, FY%d' % fy
+    return fy, 'held in FY%d; the meeting is not recorded as annual or special' % fy
+
+
+def undated_tm_fy(kind, report_year, votes):
+    """(fy, fy_basis) for the Clerk's undated run printed in the annual report of `report_year`."""
+    y = report_year
+    if kind == 'annual':
+        return y + 1, ('the budget year: an Annual Town Meeting in %d votes the budget for FY%d (the Clerk prints no '
+                       'date, but this report prints the meetings of %d)' % (y, y + 1, y))
+    named = collections.Counter(f for v in votes for f in v['names_fy'] if f in (y, y + 1))
+    if named and named.most_common(1)[0][1] > sum(named.values()) - named.most_common(1)[0][1]:
+        fy = named.most_common(1)[0][0]
+        return fy, ('the budget year, read off the articles: the Clerk prints no date, and these articles name FY%d '
+                    'more often than any other year the meeting could amend' % fy)
+    return y, ('a guess: the Clerk prints no date, so this Special may amend FY%d or FY%d; filed under FY%d, the '
+               "year of the report that prints it" % (y, y + 1, y))
 
 
 def pretty(d):
@@ -398,7 +435,7 @@ def town_meeting():
                                       "Town Clerk's record or our minutes of the video." if not m['warrant_doc'] and rows else '')
         groups.append({'id': m['id'], 'kind': m['kind'], 'date': m['date'], 'date_printed': True,
                        'label': '%s, %s' % (kind_label(m['kind']), pretty(m['date'])),
-                       'fy': plain_fy(m['date']), 'fy_basis': 'held in FY%d' % plain_fy(m['date']),
+                       'fy': tm_fy(m['date'], m['kind'])[0], 'fy_basis': tm_fy(m['date'], m['kind'])[1],
                        'status': status, 'note': note,
                        'links': links, 'votes': [article_row(m, a, held) for a in rows]})
     # THE CLERK'S UNDATED ROWS -- runs of one report, one kind, split where the numbering restarts.
@@ -433,13 +470,12 @@ def town_meeting():
                           'record_doc': path,
                           'result_label': RESULT_LABEL.get(CLERK_WORD.get(r['result'], r['result']), CLERK_WORD.get(r['result'], r['result'])),
                           'reason': "The record doesn't say what was decided." if r['result'] == 'unclear' else ''})
+        fy, fy_basis = undated_tm_fy(r0['meeting'], int(r0['fy']), votes)
         groups.append({'id': gid, 'kind': r0['meeting'], 'date': '', 'date_printed': False,
                        'label': '%s printed in the %s, p.%s -- date not printed' % (
                            kind_label(r0['meeting']), doc_label(r0['source_doc']),
                            '-'.join(str(p) for p in (pages[0], pages[-1])) if len(pages) > 1 else pages[0]),
-                       'fy': int(r0['fy']),
-                       'fy_basis': "the fiscal year of the annual report that prints it; the Clerk prints no date beside "
-                                   "these votes, so the meeting may fall in a later year",
+                       'fy': fy, 'fy_basis': fy_basis,
                        'status': '', 'note': 'The annual report prints these votes without a meeting date, so we do not guess one.',
                        'links': [{'label': doc_label(r0['source_doc']), 'href': href}] + (
                            [{'label': "the town's copy", 'href': town}] if town else []),
@@ -552,6 +588,22 @@ def tm_fy_coverage(groups):
     return out
 
 
+TM_FY_SHORT = 'FY = the budget year the vote acts on, not the year the meeting was held.'
+
+
+def tm_fy_rule(groups):
+    """The rule in a reader's words, with its example read off the latest held Annual meeting."""
+    ann = max((g for g in groups if g['kind'] == 'annual' and g['date'] and not g['status']), key=lambda g: g['date'])
+    spc = max((g for g in groups if g['kind'] == 'special' and g['date'] and not g['status']
+               and g['date'][5:7] >= '07'), key=lambda g: g['date'])
+    return ('FY means the budget year the vote acts on. Fiscal years run 1 July to 30 June. An Annual Town Meeting '
+            'votes the next year\'s budget, so the %s %s meeting is FY%d; a Special Town Meeting amends the year it is '
+            'held in, so the %s %s meeting is FY%d. Every meeting keeps its date. Where an article names a fiscal year '
+            'of its own, that is shown beside it.' % (
+                MONTHS[int(ann['date'][5:7]) - 1], ann['date'][:4], ann['fy'],
+                MONTHS[int(spc['date'][5:7]) - 1], spc['date'][:4], spc['fy']))
+
+
 def tm_payload():
     groups = town_meeting()
     s = summarise(groups, ['clerk', 'ours', 'none'])
@@ -584,9 +636,8 @@ def tm_payload():
         'grain': 'One row per warrant article per meeting. A row is an ARTICLE, not a motion: an amendment voted on '
                  'the floor is folded into the article it amended. Dollar amounts are as the warrant or the Clerk printed '
                  'them; an amount is what was asked or voted, never what was spent.',
-        'fy_rule': 'Fiscal years run 1 July to 30 June. A meeting is filed under the fiscal year it was HELD in: the '
-                   'May Annual Town Meeting falls in the year before the budget it adopts. Where an article names a '
-                   'fiscal year, that is shown beside it.',
+        'fy_rule': tm_fy_rule(groups),
+        'fy_short': TM_FY_SHORT,
         'quote_rule': "Verbatim means found word for word in the cited page. %d of the Clerk's quotes were not, and are "
                       "shown as the extractor's reading. A result from our minutes is a motion as heard on the "
                       "recording, never a quote." % notverb,
@@ -606,7 +657,7 @@ def register():
     return {(r['board_slug'], r['date']): r for r in read_csv(REGISTER) if r.get('board_slug') and r.get('date')}
 
 
-def board_fy_coverage(slug, reg, horizon, groups):
+def board_fy_coverage(slug, reg, horizon, groups, fy_of=plain_fy):
     """Per fiscal year: of the meetings the register knows, how many have the town's minutes READ
     for votes, minutes posted but not read, only our minutes of a recording, or no record we can
     use. A meeting after `horizon` (the last date anything at all was recorded for any board) is
@@ -615,7 +666,7 @@ def board_fy_coverage(slug, reg, horizon, groups):
     for (s, d), r in reg.items():
         if s != slug or d > horizon:
             continue
-        c = by[plain_fy(d)]
+        c = by[fy_of(d)]
         c['meetings'] += 1
         if r['official_votes_path']:
             c['town_read'] += 1
@@ -659,10 +710,16 @@ def board_payloads():
     reg = register()
     horizon = max(max(r['minutes_first_seen'] or '', r['video_uploaded'] or '', r['our_minutes_written'] or '')
                   for r in reg.values())
+    tm_kind = {m['date']: m['kind'] for m in read_csv(os.path.join(DATA, 'town-meetings.csv'))}
     out = {}
     for b in d['boards']:
         if not b['votes']:
             continue
+        if b['slug'] == 'town-meeting':
+            # TOWN MEETING'S OWN RECORDINGS follow the Town Meeting rule: the budget year
+            fy_of = lambda date: tm_fy(date, tm_kind.get(date, ''))
+        else:
+            fy_of = lambda date: (plain_fy(date), 'held in FY%d' % plain_fy(date))
         by_date = collections.defaultdict(list)
         for v in b['votes']:
             by_date[v['date']].append(v)
@@ -701,14 +758,14 @@ def board_payloads():
                              'reason': "The record doesn't say how the vote went." if result == 'not recorded' else ''})
                 rows[-1]['chips'], rows[-1]['basis_note'] = board_source(rows[-1], r)
             groups.append({'id': '%s-%s' % (b['slug'], date), 'date': date, 'date_printed': True,
-                           'label': pretty(date), 'fy': plain_fy(date), 'fy_basis': 'held in FY%d' % plain_fy(date),
+                           'label': pretty(date), 'fy': fy_of(date)[0], 'fy_basis': fy_of(date)[1],
                            'status': '', 'note': '', 'links': links, 'votes': rows})
         s = summarise(groups, ['minutes', 'both', 'recording'])
         c = b['counts']
         dates = sorted(by_date)
         coverage = [
             '%s votes at %s meetings, %s to %s (FY%d-FY%d).' % (
-                f'{s["votes"]:,}', f'{s["meetings"]:,}', pretty(dates[0]), pretty(dates[-1]), plain_fy(dates[0]), plain_fy(dates[-1])),
+                f'{s["votes"]:,}', f'{s["meetings"]:,}', pretty(dates[0]), pretty(dates[-1]), min(g['fy'] for g in groups), max(g['fy'] for g in groups)),
             "%s from the board's own minutes (%s of the %s sets the town posted have been read), %s of them matched to "
             "the recording; %s from our minutes of a recording only." % (
                 f'{s["by_basis"]["minutes"] + s["by_basis"]["both"]:,}', f'{c["official_votes_read"]:,}', f'{c["minutes"]:,}',
@@ -722,11 +779,14 @@ def board_payloads():
             'standfirst': 'Every motion the %s voted on that a record we hold shows, newest first.' % b['name'],
             'coverage': coverage,
             'grain': 'One row per motion voted. Procedural votes (minutes, adjournment) are hidden unless asked for.',
-            'fy_rule': 'Fiscal years run 1 July to 30 June; a meeting is filed under the fiscal year it was held in.',
+            'fy_rule': TM_FY_SHORT + ' An Annual Town Meeting votes the next year\'s budget; a Special amends the year '
+                       'it is held in. Fiscal years run 1 July to 30 June.' if b['slug'] == 'town-meeting' else
+                       'Fiscal years run 1 July to 30 June; a meeting is filed under the fiscal year it was held in.',
+            **({'fy_short': TM_FY_SHORT} if b['slug'] == 'town-meeting' else {}),
             'quote_rule': "A quote is the minutes' own words, checked verbatim when they were read. A vote from the "
                           'recording only is a motion as heard by a language model from captions, never a quote.',
             'basis': {k: BASIS[k] for k in ('minutes', 'both', 'recording')},
-            'fy_coverage': board_fy_coverage(b['slug'], reg, horizon, groups),
+            'fy_coverage': board_fy_coverage(b['slug'], reg, horizon, groups, lambda d: fy_of(d)[0]),
             'conflicts': c.get('vote_conflicts', 0),
             **s,
             'groups': groups,

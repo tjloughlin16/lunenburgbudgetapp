@@ -15,9 +15,13 @@ payloads and checks each against the SOURCES, not against the generator's own ar
      is a motion in our minutes of that meeting's video, word for word.
   3. LABELS. Every vote's plain-words caveat is the one its record calls for, recomputed from the
      register; no vote resting on a record carries one, and none resting on a video lacks one.
-  4. PER-YEAR COVERAGE. Each fiscal year's counts recompute from warrant-articles.csv and
+  4. THE FISCAL YEAR. A Town Meeting is filed under the budget year it acts on: an Annual under
+     its calendar year + 1, a Special under the fiscal year of its date. An undated Annual printed in
+     report Y is FY Y+1; an undated Special is FY Y or Y+1, and Y+1 only where its own articles name
+     Y+1 more than Y. Recomputed from town-meetings.csv's `kind`, not from the generator's function.
+  5. PER-YEAR COVERAGE. Each fiscal year's counts recompute from warrant-articles.csv and
      town-meeting-votes.csv (Town Meeting) or meeting-register.csv (boards).
-  5. LINKS. Every /docs/ link is a document in the archive manifest; every video link is a video id
+  6. LINKS. Every /docs/ link is a document in the archive manifest; every video link is a video id
      on record, and a link labelled "Video at" carries &t=; every /meeting-minutes/ link is a file
      of ours; every town URL is one a catalogue or the register records.
 
@@ -64,6 +68,12 @@ def doc_words(path):
 
 def fy_of(d):
     return int(d[:4]) + 1 if d[5:7] >= '07' else int(d[:4])
+
+
+def tm_budget_fy(d, kind):
+    """The budget year a dated Town Meeting acts on: an Annual votes the year that begins the next
+    1 July; a Special amends the year it is held in."""
+    return int(d[:4]) + 1 if kind == 'annual' else fy_of(d)
 
 
 # ---------------------------------------------------------------------------------- links
@@ -149,6 +159,28 @@ def town_meeting():
         fail('town meeting: %d rows on the page, %d articles + %d undated in the sources'
              % (sum(len(g['votes']) for g in p['groups']), len(arts), n_clerk_und))
 
+    # THE FISCAL YEAR, recomputed from the register's kind
+    for mid, m in reg.items():
+        g = groups.get(mid)
+        if g and g['fy'] != tm_budget_fy(m['date'], m['kind']):
+            fail('%s (%s, %s): filed under FY%d, the budget year is FY%d'
+                 % (mid, m['kind'], m['date'], g['fy'], tm_budget_fy(m['date'], m['kind'])))
+    for g in undated:
+        ys = {int(x) for v in g['votes'] for x in re.findall(r'fy-(\d{4})-annual-town-report', v.get('record_doc') or '')}
+        if len(ys) != 1:
+            fail('%s: undated group printed in %s reports' % (g['id'], sorted(ys)))
+            continue
+        y = ys.pop()
+        if g['kind'] == 'annual':
+            ok = g['fy'] == y + 1
+        else:
+            named = collections.Counter(f for v in g['votes'] for f in (v.get('names_fy') or []) if f in (y, y + 1))
+            ok = g['fy'] == (y + 1 if named[y + 1] > named[y] else y)
+        if not ok:
+            fail('%s (%s, report of %d): filed under FY%d' % (g['id'], g['kind'], y, g['fy']))
+    if not p.get('fy_short') or 'budget year' not in p['fy_rule']:
+        fail('town meeting: the page does not say what FY means')
+
     verb = heard = 0
     for g in p['groups']:
         for v in g['votes']:
@@ -190,9 +222,9 @@ def town_meeting():
                 motions = [x['motion'] for x in json.load(open(f[0], encoding='utf-8'))['minutes']['votes']] if f else []
                 if v['quote'] not in motions:
                     fail('%s: "as heard" %r is not a motion in our minutes of %s' % (w, v['quote'][:60], vid))
-    # per-FY coverage, recomputed from the sources: a register article's FY is its meeting's; an
-    # undated Clerk row's is its report's
-    fy_m = {mid: fy_of(m['date']) for mid, m in reg.items()}
+    # per-FY coverage, recomputed from the sources: a register article's FY is its meeting's budget
+    # year; an undated Clerk row's is its group's, which the check above has recomputed
+    fy_m = {mid: tm_budget_fy(m['date'], m['kind']) for mid, m in reg.items()}
     want = collections.defaultdict(collections.Counter)
     for a in arts:
         m = reg[a['meeting']]
@@ -202,10 +234,9 @@ def town_meeting():
             continue
         c['articles'] += 1
         c['clerk' if a['result_basis'] == 'official' else 'ours' if a['result_basis'] == 'ours' else 'none'] += 1
-    for r in clerk:
-        if not r['meeting_date']:
-            want[int(r['fy'])]['articles'] += 1
-            want[int(r['fy'])]['clerk'] += 1
+    for g in undated:
+        want[g['fy']]['articles'] += len(g['votes'])
+        want[g['fy']]['clerk'] += len(g['votes'])
     for fy, c in want.items():
         got = p['fy_coverage'].get(str(fy))
         if not got:
@@ -221,6 +252,9 @@ def town_meeting():
 
 
 # ---------------------------------------------------------------------------------- boards
+TM_KIND = {m['date']: m['kind'] for m in read_csv(os.path.join(DATA, 'town-meetings.csv'))}
+
+
 def boards():
     b = json.load(open(os.path.join(PUB, 'boards.json'), encoding='utf-8'))
     files = {os.path.basename(f)[:-5]: f for f in glob.glob(os.path.join(PUB, 'votes', '*.json'))}
@@ -235,10 +269,12 @@ def boards():
         if x['slug'] not in files:
             continue
         p = json.load(open(files[x['slug']], encoding='utf-8'))
-        src = collections.Counter(fy_of(v['date']) for v in x['votes'])
+        # a board acts in the year it meets; Town Meeting's own recordings take the budget year
+        fy_b = (lambda d: tm_budget_fy(d, TM_KIND.get(d, ''))) if x['slug'] == 'town-meeting' else fy_of
+        src = collections.Counter(fy_b(v['date']) for v in x['votes'])
         got = collections.Counter()
         for g in p['groups']:
-            if g['fy'] != fy_of(g['date']):
+            if g['fy'] != fy_b(g['date']):
                 fail('%s %s: filed under FY%d' % (x['slug'], g['date'], g['fy']))
             r = reg.get((x['slug'], g['date']))
             for v in g['votes']:
@@ -276,7 +312,7 @@ def boards():
         for (s, d), r in reg.items():
             if s != x['slug'] or d > horizon:
                 continue
-            c = want[fy_of(d)]
+            c = want[fy_b(d)]
             c['meetings'] += 1
             c['town_read' if r['official_votes_path'] else 'town_unread' if r['minutes'] == '1'
               else 'ours_only' if r['our_minutes_path'] else 'nothing'] += 1

@@ -1068,7 +1068,8 @@ def article_row(m, n, a, draft):
     # a budget adjustment nobody needed. Postponed, tabled or referred is a decision deferred.
     put_off = (c and c['result'] == 'indefinitely_postponed') or (o and o.get('put_off'))
     return {
-        'meeting': m['id'], 'article': '' if isinstance(n, str) else n, 'title': squash(title), 'title_from': title_from,
+        'meeting': m['id'], 'article': '' if isinstance(n, str) else n, 'title': plain_title(squash(title)),
+        'title_as_printed': squash(title), 'title_from': title_from,
         'warrant_words': a['warrant_words'], 'amount': a['amount'], 'sponsor': a['sponsor'],
         'details_doc': a['details_doc'], 'details_town_url': a['details_town_url'],
         'details_page': a['details_page'],
@@ -1409,21 +1410,42 @@ def closure_of(a, m):
             'that year\'s annual report is extracted.'}
 
 
-ACRONYMS = set('FY PEG OPEB SAP ADA MBTA DPW CPA EDC COA MGL II III LMHS TC PACC MART IBPO AFSCME STM ATM BTFC APDC US MSBA LED'.split())
-
-
-PROPER = {'lunenburg', 'massachusetts', 'whalom', 'passios', 'ritter', 'brooks', 'marshall', 'fitchburg', 'montachusett', 'chapter'}
+# SENTENCE CASE FOR A WARRANT PRINTED IN CAPITALS. TJ, 23 October 2026: the warrant prints many
+# article titles in ALL CAPS; show them in sentence case, keep the original as printed. Only a title
+# with NO lower-case letter at all is converted -- a mixed-case title is the publisher's own casing
+# and is left alone. The lists are explicit and small, so the output is deterministic and a wrong
+# word is fixed here, once. `title_as_printed` in warrant-articles.csv keeps the warrant's own text.
+ACRONYMS = set('FY PEG OPEB SAP ADA MBTA DPW CPA EDC COA MGL ARPA HVAC LCTV II III IV LMHS TC PACC MART IBPO '
+               'AFSCME STM ATM BTFC APDC US MSBA LED USDA DEP DOR DLS DESE MA MWRA PILOT'.split())
+# Single words that are names wherever they occur in a title.
+PROPER = {'lunenburg', 'massachusetts', 'whalom', 'passios', 'ritter', 'brooks', 'marshall', 'fitchburg',
+          'montachusett', 'chapter', 'proposition', 'teamsters', 'leominster', 'townsend', 'shirley', 'lancaster',
+          'devens', 'nashoba', 'commonwealth', 'turkey', 'gilchrest', 'woodruff', 'pratt', 'wallis', 'rangeley'}
+# Phrases that are names only together: a body, a place, a programme. Matched on whole words.
+PROPER_PHRASES = ['select board', 'board of selectmen', 'school committee', 'finance committee', 'town meeting',
+                  'planning board', 'board of health', 'board of assessors', 'conservation commission',
+                  'capital planning committee', 'open space committee', 'economic development committee',
+                  'historical commission', 'council on aging', 'community preservation committee',
+                  'lunenburg public schools', 'kids kingdom', 'brooks house', 'marshall park', 'mart connect',
+                  'monty tech', 'turkey hill', 'whalom park', 'local 170', 'town clerk', 'town manager']
 
 
 def plain_title(s):
-    """A warrant's capitals in sentence case, keeping acronyms and anything with a figure --
-    the same rule as plainTitle() in fy28/src/components/TownMeetingBoard.tsx."""
-    letters = re.sub(r'[^A-Za-z]', '', s)
-    if not letters or sum(c.isupper() for c in letters) < len(letters) * .7:
+    """A title printed ENTIRELY in capitals, in sentence case: acronyms and any word carrying a
+    figure stay upper case ("FY2027", "FY ’25", "#1"), names on the lists above are capitalised,
+    everything else is lower case, and the first letter is a capital. A title with any lower-case
+    letter is returned unchanged. Idempotent: a converted title has lower case, so it passes through."""
+    if not re.search(r'[A-Z]', s or '') or re.search(r'[a-z]', s):
         return s
-    out = re.sub(r"[a-z0-9\u2019'.]+", lambda m: m.group(0).upper()
+    out = re.sub(r"[a-z0-9\u2019'.#]+", lambda m: m.group(0).upper()
                  if re.sub(r"[\u2019'.]", '', m.group(0).upper()) in ACRONYMS or re.search(r'\d', m.group(0))
                  else m.group(0).capitalize() if m.group(0) in PROPER else m.group(0), s.lower())
+    for ph in PROPER_PHRASES:
+        out = re.sub(r'\b%s\b' % re.escape(ph).replace(r'\ ', r'\s+'),
+                     lambda m: ' '.join(w.upper() if w.upper() in ACRONYMS else w.capitalize()
+                                        for w in m.group(0).split()), out, flags=re.I)
+    out = re.sub(r'\bi&i\b', 'I&I', out)
+    out = out.rstrip(' :')
     return out[:1].upper() + out[1:]
 
 
@@ -1592,7 +1614,7 @@ MEETING_COLS = ['id', 'date', 'date_conflict', 'kind', 'kind_basis', 'status', '
                 'warrant_closes_ref', 'warrant_signed',
                 'notice_doc', 'notice_town_url', 'warrant_doc', 'warrant_town_url', 'articles', 'articles_voted',
                 'articles_clerk', 'thin']
-ARTICLE_COLS = ['meeting', 'article', 'title', 'title_from', 'amount', 'sponsor', 'stage',
+ARTICLE_COLS = ['meeting', 'article', 'title', 'title_as_printed', 'title_from', 'amount', 'sponsor', 'stage',
                 'details_doc', 'details_page', 'details_town_url',
                 'proposed_ref', 'placed_ref', 'fincom_rec', 'fincom_ref', 'sb_rec', 'sb_ref',
                 'result', 'result_basis', 'result_amount', 'result_ref', 'result_quote', 'recorded_ref',
