@@ -766,6 +766,11 @@
    "why": "The FY2023 annual town report prints each school special revenue fund's balance carried; the school journal gives every receipt and payment since. /school-all-funds/unspent-by-fund rolls the first forward with the second, and that is OUR arithmetic, not a balance anybody printed: it assumes the journal holds every receipt (one fund's interest is booked outside the school department) and it does not take off orders still open. The FY2024 and FY2025 annual reports' special revenue schedules are held and not yet read. — closes: the Town Accountant's special revenue fund balances at 30 June 2024, 2025 and 2026, school funds."
   },
   {
+   "side": "money_out",
+   "what": "Why a school purchase order was still open on 30 June, and why an order carried into the next year was closed with nothing paid",
+   "why": "MEASURED (/school-all-funds/carried-over-orders): at each close the school journal zeroes every open order (YEC) and reopens it on 1 July (SOY), and a carry-forward transfer raises the next year's budget by the same amount; of the general fund orders carried out of FY2023-FY2025, 68% were paid the next year and the rest closed with nothing paid against them. Neither the journal nor the period-13 reports say why an order was open at the year end (goods not delivered, an invoice not received, a deliberate hold of budget), or why a carried order was closed rather than paid, or whether what it was for was bought again on a new order (one revolving-fund order, Nature's Classroom, was closed and the same amount paid on a new one). So the size of the carry is measured and its cause is not. — closes: the district’s year-end list of open purchase orders, with the reason each was kept open or closed, FY2023-FY2026."
+  },
+  {
    "side": "extraction",
    "what": "Which of the town's two FY2023 statements of what the special revenue and enterprise funds held is right?",
    "why": "The FY2023 combined balance sheet gives special revenue fund equity as 6,131,303.68 and enterprise fund equity as 3,812,502.24, together 9,943,805.92. The special revenue schedule in the SAME annual report prints a grand total carried forward of 10,031,099.78. They are 87,293.86 apart. The comparison ties to the cent in FY2011, FY2013, FY2019 and FY2022, and the balance sheet's own arithmetic is complete -- every column foots to its own printed totals and liabilities plus equity equals assets -- so this is two published tables disagreeing and not a reading error. — closes: the Town Accountant's FY2023 trial balance, which would say which of the two the books support."
@@ -794,11 +799,6 @@
    "side": "extraction",
    "what": "Can we trust the stabilization and trust fund balances enough to chart how much the town holds in reserve, and how that has moved?",
    "why": "12 of 644 rows in `report_trust_funds` are reconciled to a total the document itself prints — 418 failed that check and 214 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 17 years, 10 need real PDF geometry rather than text, 5 are messy and 2 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 17 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
-  },
-  {
-   "side": "money_out",
-   "what": "Why a school purchase order was still open on 30 June, and why an order carried into the next year was closed with nothing paid",
-   "why": "MEASURED (/school-all-funds/carried-over-orders): at each close the school journal zeroes every open order (YEC) and reopens it on 1 July (SOY), and a carry-forward transfer raises the next year's budget by the same amount; of the general fund orders carried out of FY2023-FY2025, 68% were paid the next year and the rest closed with nothing paid against them. Neither the journal nor the period-13 reports say why an order was open at the year end (goods not delivered, an invoice not received, a deliberate hold of budget), or why a carried order was closed rather than paid, or whether what it was for was bought again on a new order (one revolving-fund order, Nature's Classroom, was closed and the same amount paid on a new one). So the size of the carry is measured and its cause is not. — closes: the district’s year-end list of open purchase orders, with the reason each was kept open or closed, FY2023-FY2026."
   }
  ],
  "generated_by": "scripts/build_finance.py",
