@@ -42,7 +42,7 @@ CACHE = os.path.join(ROOT, 'build', 'cache')
 # Read, never recomputed: one median per year on the site, not two. Note it counts a district
 # DESE prints at $0 a pupil (Gosnold, which has no pupils of its own) -- see its own docstring.
 STATEWIDE = os.path.join(ROOT, 'sources', 'data', 'dese-function-statewide.csv')
-LUNENBURG, MONTY = '01620000', '08320000'
+from lunenburg_districts import LUNENBURG_LEA as LUNENBURG, MONTY_LEA as MONTY  # noqa: E402  (named once)
 # Harvard Public Schools, the district The Bromfield School belongs to: the Bromfield shelf's
 # benchmark (build_bromfield_topics.py).
 HARVARD = '01250000'

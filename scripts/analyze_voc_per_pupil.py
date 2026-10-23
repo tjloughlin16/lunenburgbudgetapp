@@ -17,14 +17,15 @@ programmes inside a high school is not in it, by construction.
 import collections
 import os
 import statistics
+import sys
 
 import openpyxl
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 WB = os.path.join(ROOT, 'sources', 'state-dese', 'district-expenditures-by-function.xlsx')
 OUT = os.path.join(ROOT, 'notes', 'findings', 'VOC-TECH-PER-PUPIL.md')
-MONTY = '08320000'
-LUNENBURG = '01620000'
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from lunenburg_districts import MONTY_LEA as MONTY, LUNENBURG_LEA as LUNENBURG  # noqa: E402
 KEYS = ('Vocational', 'Agricultural', 'Technical')
 
 

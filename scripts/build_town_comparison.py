@@ -68,6 +68,10 @@ import sys
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
 from conclusions import conclusion, figure, emit, usd, pct  # noqa: E402
+# Lunenburg's two districts -- its own and Monty Tech -- named once (lunenburg_districts.py).
+# Every comparison set here is a list of TOWNS, so Monty Tech, which is eighteen towns'
+# district, can never be in one; the page says so beside each school comparison.
+import lunenburg_districts as LD  # noqa: E402
 
 OUT_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'towns-like-us.json')
 CHARTS = os.path.join(ROOT, 'sources', 'analyses', 'charts')
@@ -506,14 +510,15 @@ def destinations():
     if not rs:
         raise SystemExit('no FY%d destination rows for Lunenburg in %s'
                          % (FY, os.path.relpath(DEST, ROOT)))
-    tot = {}
+    tot, lea = {}, {}
     for r in rs:
         tot[r['district']] = tot.get(r['district'], 0) + int(r['students'])
+        lea[r['district']] = r['lea']
     out = []
     for d, n in sorted(tot.items(), key=lambda kv: -kv[1]):
-        if d == 'Lunenburg':
+        if lea[d] == LD.LUNENBURG_LEA:
             kind = 'own'
-        elif 'Montachusett Regional Vocational' in d:
+        elif lea[d] == LD.MONTY_LEA:
             # Lunenburg is one of its eighteen member towns and pays an assessment, so a
             # child here is not leaving the tax base. sources/analyses/monty-tech.md.
             kind = 'assessed'
@@ -2091,6 +2096,7 @@ def regional_picture(frame, dese):
                               pupils=fte, admin=adm, overhead=adm + lead, total=tot))
     if len(rows_) < 100:
         raise SystemExit('only %d districts for the regional comparison' % len(rows_))
+    LD.assert_excluded([r['district'] for r in rows_], 'the regional administration comparison')
     single = [r for r in rows_ if not r['regional']]
     reg = [r for r in rows_ if r['regional']]
     by_size = sorted(rows_, key=lambda r: r['pupils'])
@@ -3045,6 +3051,9 @@ def build():
                              'minute of %s says %s' % (what, usd2(mine),
                                                        CLASSIFICATION['date_text'], usd2(theirs)))
     towns = sorted(frame)
+    # Monty Tech teaches grades 9-12, so k12_districts() can never admit it; asserted rather
+    # than assumed, because every median, rank and count on this page is taken over `frame`.
+    LD.assert_excluded(towns, 'the town frame')
 
     def corr_of(a, b):
         v = pearson([frame[t][a] for t in towns], [frame[t][b] for t in towns])
@@ -3204,6 +3213,9 @@ def build():
                          for t in frame if t in parcels},
         overlap10=overlap10, overlap25=overlap25,
         destinations=dest,
+        # Lunenburg's own district and Monty Tech, labelled; Monty Tech is in no set here.
+        lunenburg_districts=LD.districts(),
+        monty_tech_note=LD.not_in_comparison(md=False),
         # No `outline` here: the heat map already ships every town's polygon and the
         # signature map draws its faint state outline from those. One Massachusetts, not two.
         map=dict(towns=shapes,
@@ -3721,6 +3733,15 @@ def markdown(payload, frame):
     w('')
 
     G = P['cheap_and_generous']
+    # MONTY TECH, BESIDE EVERY SCHOOL COMPARISON IT CANNOT SIT IN. TJ, 23 October 2026: the
+    # sets are towns, so Lunenburg's own vocational district is never in them, and a reader
+    # judging what Lunenburg spends on its children has to be told where the rest are.
+    mt = [d for d in P['destinations'] if d['kind'] == 'assessed']
+    if len(mt) != 1:
+        raise SystemExit('expected one assessed destination (Monty Tech), found %d' % len(mt))
+    MT_NOTE = ('*%s The figures here are Lunenburg Public Schools\u2019 alone; the %d Lunenburg '
+               'residents Monty Tech enrols are schooled, and their spending reported, by Monty '
+               'Tech.*' % (LD.not_in_comparison(), mt[0]['students']))
     w('![%s](charts/towns-like-us-positions.svg)'
       % ('Twelve measures, each drawn as the full spread of the %d Massachusetts towns that '
          'run their own K\u201312 district, with Lunenburg marked and the middle half of '
@@ -3735,6 +3756,8 @@ def markdown(payload, frame):
       % ('For each town, how many pupils it has and what it spends on each of them, split '
          'into what the town must raise from homes, what it raises from business, what the '
          'state adds, and what it spends above the figure the state calculates for it.'))
+    w('')
+    w(MT_NOTE)
     w('')
     # THE ANSWER SITS UNDER THE CHART THAT RAISES IT.
     #
@@ -4007,6 +4030,8 @@ def markdown(payload, frame):
       % ('Every Massachusetts town shaded by what its schools spend per pupil, darkest where '
          'it is highest, with Lunenburg outlined in red. Towns that do not run their own '
          'K\u201312 district are left blank.'))
+    w('')
+    w(MT_NOTE)
     w('')
 
     PR = P['predictors']
@@ -4355,6 +4380,8 @@ def markdown(payload, frame):
       'the average single-family property tax bill. \u201cSpends\u201d is dollars per pupil '
       'from all funds. Neither is a verdict \u2014 a town that spends less may be run leanly '
       'or may be short of what its children need, and nothing here can tell those apart.')
+    w('')
+    w(MT_NOTE)
     w('')
     order = ['pays-less-spends-more', 'pays-more-spends-more', 'pays-less-spends-less',
              'pays-more-spends-less', 'regional']

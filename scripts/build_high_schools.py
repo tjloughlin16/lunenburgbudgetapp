@@ -58,7 +58,7 @@ ENR = 'state-dese/dese-enrollment-by-grade.xlsx'
 PPX = 'state-dese/school-expenditures-by-spending-category.xlsx'
 MT_TEXT = 'town-budget/text/3583-fy27-monty-tech-budget-presentation-pdf.txt'
 MT_DOC = 'town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf'
-MT_LEA = '08320000'
+from lunenburg_districts import MONTY_LEA as MT_LEA  # noqa: E402  (named once)
 FIRST_FY = 2008
 GRADES = ('G9_CNT', 'G10_CNT', 'G11_CNT', 'G12_CNT')
 BELOW_9 = ('PK_CNT', 'K_CNT', 'G1_CNT', 'G2_CNT', 'G3_CNT', 'G4_CNT', 'G5_CNT', 'G6_CNT',

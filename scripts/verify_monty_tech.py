@@ -59,8 +59,7 @@ DOCUMENT = os.path.join(ROOT, 'sources', 'analyses', 'monty-tech.md')
 GAPS = os.path.join(ROOT, 'sources', 'data', 'money-gaps.csv')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 
-LPS_LEA = '01620000'
-MT_LEA = '08320000'
+from lunenburg_districts import LUNENBURG_LEA as LPS_LEA, MONTY_LEA as MT_LEA  # noqa: E402  (named once)
 TOWN = 'Lunenburg'
 LEDGER_FY = 2026
 

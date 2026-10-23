@@ -91,8 +91,9 @@ GAPS = os.path.join(ROOT, 'sources', 'data', 'money-gaps.csv')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'monty-tech.json')
 MINUTES = 'sources/meetings/text'
 
-LPS_LEA = '01620000'          # Lunenburg Public Schools, in DESE's district tables
-MT_LEA = '08320000'           # Montachusett Regional Vocational Technical.
+# Lunenburg Public Schools and Montachusett Regional Vocational Technical, in DESE's
+# district tables -- named once, in lunenburg_districts.py.
+from lunenburg_districts import LUNENBURG_LEA as LPS_LEA, MONTY_LEA as MT_LEA  # noqa: E402
 #                               A district NAME is a rendering; the LEA is the key.
 TOWN = 'Lunenburg'
 LEDGER_FY = 2026
@@ -863,15 +864,15 @@ def dese_total():
         # Only the two districts the pages compare, in the one year: the file runs in
         # year-then-district order, so the scan stops at the end of Monty Tech's block
         # rather than reading all 363,000 rows on every build.
-        if str(row[0]) == str(DESE_FY) and row[1] in ('01620000', '08320000'):
+        if str(row[0]) == str(DESE_FY) and row[1] in (LPS_LEA, MT_LEA):
             rows += 1
             if str(row[5])[:1] in ('7', '8'):
                 capital += 1
-            if row[1] == '08320000' and row[5] == 'TTPP':
+            if row[1] == MT_LEA and row[5] == 'TTPP':
                 hit = (i, row)
                 break
     if hit is None:
-        fail('%s: no FY%d TTPP row for LEA 08320000' % (DESE_FUNCTIONS, DESE_FY))
+        fail('%s: no FY%d TTPP row for LEA %s' % (DESE_FUNCTIONS, DESE_FY, MT_LEA))
     if capital:
         fail('%s now carries %d capital or debt rows for the two districts; the page says '
              'it carries none'

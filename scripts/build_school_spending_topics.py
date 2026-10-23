@@ -59,6 +59,10 @@ import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
 import per_pupil_measures as PPM  # noqa: E402
+# Lunenburg's two districts. The six this project compares are K-12 and regional districts,
+# so Monty Tech -- Lunenburg's own vocational district -- is in none of these sets; the page
+# says so under the comparison it is missing from (lunenburg_districts.topic_step()).
+import lunenburg_districts as DIST  # noqa: E402
 
 PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
 OUT_DIR = os.path.join(PUB, 'topics')
@@ -809,7 +813,8 @@ def build():
         [con('Lunenburg spent %s a pupil, sixth of six; %s spent %s more.'
              % (C.usd(lun['per_pupil']), nxt['district'], C.usd(diff)), ['lun', 'next', 'diff',
                                                                           'rank'],
-             {'a': U(lun['per_pupil']), 'b': U(diff)}),
+             {'a': U(lun['per_pupil']), 'b': U(diff)},
+             notes=[step(**DIST.topic_step())]),
          con('In %s years its place among the six was never better than %s.'
              % (C.num(len(lun_ranks)), Ord(hd['best_rank'])['text']), ['best'],
              {'n': N(len(lun_ranks)), 'r': Ord(hd['best_rank'])}),
@@ -871,7 +876,8 @@ def build():
              {'a': SP(slo['spend_pct']), 'b': SP(shi['spend_pct']), 'c': SP(ld['spend_pct'])}),
          con('Pupils moved further apart: North Middlesex lost %s of its pupils, Lunenburg %s.'
              % (C.pct(-100 * nm['pupils_pct']), C.pct(-100 * ld['pupils_pct'])), ['nmpu', 'lpu'],
-             {'a': P(-100 * nm['pupils_pct']), 'b': P(-100 * ld['pupils_pct'])}),
+             {'a': P(-100 * nm['pupils_pct']), 'b': P(-100 * ld['pupils_pct'])},
+             notes=[step(**DIST.topic_step())]),
          con('So North Middlesex’s figure a pupil rose %s and Lunenburg’s %s; a ratio moves with '
              'both halves.' % (C.pct(100 * nm['per_pupil_pct']), C.pct(100 * ld['per_pupil_pct'])),
              ['nmpp', 'lpp'], {'a': SP(nm['per_pupil_pct']), 'b': SP(ld['per_pupil_pct'])},

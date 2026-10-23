@@ -42,7 +42,7 @@ PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'sped-leaving.json')
 PAGE = os.path.join(ROOT, 'fy28', 'src', 'pages', 'SpedLeaving.tsx')
 TOWN = 'Lunenburg'
 LEA = '01620000'
-MONTY = '08320000'
+from lunenburg_districts import MONTY_LEA as MONTY  # noqa: E402  (named once)
 
 # The only literal numbers allowed to stand in the page's prose, and neither is a
 # measurement. `grade 9` NAMES a grade -- it is the hypothesis the page refuses to adopt,

@@ -63,7 +63,7 @@ PUB = os.path.join(ROOT, 'fy28', 'public', 'data')
 LEA = '01620000'
 # Montachusett Regional Vocational Technical. Lunenburg is a MEMBER of this district,
 # which is why its children are Resident/Member rows and why they are not "choosing out".
-MONTY = '08320000'
+from lunenburg_districts import MONTY_LEA as MONTY  # noqa: E402  (named once)
 STATE = '00000000'
 TOWN = 'Lunenburg'
 MINUTES = 'sources/meetings/text'

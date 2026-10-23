@@ -54,6 +54,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 import conclusions as C  # noqa: E402
 from conclusions import figure  # noqa: E402
 import ladder as LD  # noqa: E402
+import lunenburg_districts as DIST  # noqa: E402  (Lunenburg's two districts, named once)
 import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
@@ -502,7 +503,8 @@ def build():
                          closes='a combined Ayer and Shirley count for the years before the '
                                 'region formed'),
                     step('Births and housing are outside this file, so why the region fell is '
-                         'not tested here.', 'hypothesis')])],
+                         'not tested here.', 'hypothesis'),
+                    step(**DIST.topic_step())])],
         # Drawn as the FALL, the same positive figure the facts print, so a bar and its tile
         # cannot round one number two ways.
         chart=TP.ranking('Enrolment fall, nearby districts',
@@ -911,7 +913,7 @@ def build():
     # its grades 9-12) and DESE's FOUNDATION enrolment, the Chapter 70 count, by member town
     # off the apportionment sheet the district reprints (build_monty_tech.member_towns,
     # footed to the sheet's own totals).
-    mtd = next(d for d in HS['enrolment']['districts'] if d['lea'] == '08320000')
+    mtd = next(d for d in HS['enrolment']['districts'] if d['lea'] == DIST.MONTY_LEA)
     whole = {int(y): v for y, v in mtd['g912'].items()}
     w0, w1 = min(whole), max(whole)
     if w1 != 2026:
@@ -1134,7 +1136,7 @@ def build():
                                                'regional_transport_fund'))
     lun6 = p100(d6['lunenburg_of_assessments'])
     mtpp = PS['destinations']['widest']
-    if mtpp['lea'] != '08320000':
+    if mtpp['lea'] != DIST.MONTY_LEA:
         fail('peer-spending.json: the widest destination is no longer Monty Tech (LEA 08320000)')
     pp_fy = PS['destinations']['fin_fy']
     dt = MT['dese_total']
@@ -1236,7 +1238,7 @@ def build():
     # school enrolled nothing below grade 9. Nothing divides a cost by a count.
     G = ('9–12', 'grades 9–12', 'Grades 9–12', 'grade 9', 'K–12')
     hd = {d['lea']: d for d in HS['enrolment']['districts']}
-    LUN, MTL = '01620000', '08320000'
+    LUN, MTL = DIST.LUNENBURG_LEA, DIST.MONTY_LEA
     e0, e1 = HS['enrolment']['first_fy'], HS['enrolment']['last_fy']
     if e0 != b0 or e1 != last_fy:
         fail('high-schools.json spans FY%d-FY%d, the enrolment pages FY%d-FY%d' % (e0, e1, b0, last_fy))
