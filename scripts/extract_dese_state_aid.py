@@ -11,6 +11,16 @@ Writes four files:
   sources/data/dese-ch70-contribution.csv  dataContribution  the MUNICIPAL side of it
   sources/data/dese-circuit-breaker.csv    ab34-d3ma high-cost special education claims
   sources/data/dese-ch70-statewide.csv     every district collapsed to a distribution
+  sources/data/dese-ch70-formula-monty-tech.csv  DataC70 for Monty Tech, in its own file
+
+MONTY TECH IS IN ITS OWN FILE, NOT IN THE PEER SET. Lunenburg's children are schooled by two
+districts (lunenburg_districts.py), and the second -- Montachusett Regional Vocational
+Technical -- is nobody's peer: it is eighteen towns' district. Several readers of
+`dese-ch70-formula.csv` take EVERY district row in a year as the comparison set
+(build_peer_spending.py, build_spending_target.py), so a row added there would silently join
+the six-district standing table -- the defect `dese_xlsx.peers()` was written to stop. Its
+rows are the same columns, the same identities asserted, written beside the peer file rather
+than inside it. Read by build_enrolment_topics.py for /enrolment/monty-tech-funding.
 
 SEVEN DISTRICTS IN THE ROW-LEVEL FILES, AND EVERY DISTRICT AS A DISTRIBUTION
 
@@ -116,6 +126,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from dese_xlsx import DATA, ROOT, STATE, fmt, num, peers, records  # noqa: E402
+from lunenburg_districts import MONTY_LEA  # noqa: E402  (named once, never typed here)
 
 DOC_PROFILE = 'sources/state-dese/dese-ch70-district-profile.xlsx'
 DOC_FACTORS = 'sources/state-dese/dese-ch70-key-factors.xlsx'
@@ -127,6 +138,7 @@ OUT_AID = os.path.join(DATA, 'dese-ch70-aid-factor.csv')
 OUT_CONTRIB = os.path.join(DATA, 'dese-ch70-contribution.csv')
 OUT_CB = os.path.join(DATA, 'dese-circuit-breaker.csv')
 OUT_STATEWIDE = os.path.join(DATA, 'dese-ch70-statewide.csv')
+OUT_MONTY = os.path.join(DATA, 'dese-ch70-formula-monty-tech.csv')
 
 STATEWIDE_FIELDS = ['fy', 'measure', 'basis', 'districts', 'p_min', 'p25', 'median', 'p75',
                     'p_max', 'lunenburg', 'lunenburg_rank_of_districts', 'doc_id']
@@ -595,8 +607,38 @@ def main():
     # ---- every district, as a distribution, before the scope is applied ---------------
     statewide = build_statewide(formula, cb)
 
+    # ---- Monty Tech, before the scope, into its own file ------------------------------
+    # Every identity above was asserted on these rows with the rest. Two more, here: the
+    # district must be present, and its aid must agree between the two DESE workbooks
+    # (DataC70 against dataAid) in every year both print -- a regional district's aid
+    # is the one figure on its page that the member towns never pay.
+    monty = [dict(r) for r in formula if r['lea'] == MONTY_LEA]
+    if not monty:
+        print('\nLEA %s has no row in DataC70, which looks exactly like a join that '
+              'matched nothing.\nNothing written.' % MONTY_LEA)
+        return 1
+    m_aid = {r['fy']: num(r['ch70_aid']) for r in aid if r['lea'] == MONTY_LEA}
+    m_tied = [r['fy'] for r in monty if r['fy'] in m_aid and num(r['ch70_aid']) is not None
+              and abs(m_aid[r['fy']] - num(r['ch70_aid'])) <= 1]
+    m_both = [r['fy'] for r in monty if r['fy'] in m_aid]
+    if not m_both or len(m_tied) != len(m_both):
+        print('\nMonty Tech Chapter 70 aid: DataC70 and dataAid agree in %d of %d shared '
+              'years. Nothing written.' % (len(m_tied), len(m_both)))
+        return 1
+    if any(r['reconciles'] != 'yes' for r in monty if r['fy'] in m_both):
+        print('\nA Monty Tech year no longer satisfies rqdnss == distrlc + c70aid. '
+              'Nothing written.')
+        return 1
+    print('  Monty Tech (LEA %s): %d years, FY%d-FY%d; aid agrees across the two '
+          'workbooks in %d of %d' % (MONTY_LEA, len(monty), min(r['fy'] for r in monty),
+                                     max(r['fy'] for r in monty), len(m_tied), len(m_both)))
+
     # ---- the scope --------------------------------------------------------------------
     want = peers()
+    if MONTY_LEA in want:
+        print('\nThe peer set now includes Monty Tech; it would be written twice. '
+              'Nothing written.')
+        return 1
     n_all = (len(formula), len(aid), len(contrib), len(cb))
     formula = [r for r in formula if r['lea'] in want or r['level'] == 'state']
     aid = [r for r in aid if r['lea'] in want or r['level'] == 'state']
@@ -620,7 +662,8 @@ def main():
 
     outputs = [(OUT_FORMULA, FORMULA_FIELDS, formula), (OUT_AID, AID_FIELDS, aid),
                (OUT_CONTRIB, CONTRIB_FIELDS, contrib), (OUT_CB, CB_FIELDS, cb),
-               (OUT_STATEWIDE, STATEWIDE_FIELDS, statewide)]
+               (OUT_STATEWIDE, STATEWIDE_FIELDS, statewide),
+               (OUT_MONTY, FORMULA_FIELDS, monty)]
     texts = []
     for path, fields, recs in outputs:
         if not recs:
@@ -636,7 +679,7 @@ def main():
             print('\nstale: %s\nRe-run: python3 scripts/extract_dese_state_aid.py'
                   % ', '.join(stale))
             return 1
-        print('\nok: all four state-aid extracts still reproduce')
+        print('\nok: all %d state-aid extracts still reproduce' % len(texts))
         return 0
 
     print()

@@ -33,6 +33,9 @@ are supposed to:
   fy28/public/data/peer-spending.json     only for DESE's all-funds spending a pupil at
                                           Monty Tech, set beside the operating budget on
                                           /enrolment/monty-tech-funding as NOT the same measure.
+  sources/data/dese-ch70-formula.csv      extract_dese_state_aid.py: DESE's Chapter 70 terms,
+  sources/data/dese-ch70-formula-monty-tech.csv   Lunenburg and Monty Tech, and the municipal
+  sources/data/dese-ch70-contribution.csv         side -- the "Chapter 70, side by side" table.
 
 RULE 7. A count of children is a fact. Why any of them left, or arrived, is a hypothesis and
 every page says so in a `hypothesis` note, or names the record that would settle it.
@@ -1156,6 +1159,110 @@ def build():
                       href=ga['docs_url'] + '#page=5')
     yrs = [2026, 2027]
     CH70 = ('Chapter 70',)
+
+    # CHAPTER 70, SIDE BY SIDE. Why does Monty Tech get so much more aid a pupil than
+    # Lunenburg? Aid is, at its base, the foundation budget less the required local
+    # contribution, so two things can drive it: a bigger budget a pupil, or a smaller share of
+    # it that the towns must raise. Both are MEASURED here off one DESE workbook (DataC70 of
+    # the district profile), Lunenburg from the peer extract and Monty Tech from its own file
+    # (extract_dese_state_aid.py says why it is kept apart). Per FOUNDATION pupil -- the
+    # formula's own count, not a headcount. Why the foundation budget is higher -- vocational
+    # rates, grade span, demographics -- is NOT split out in anything held; DESE's own
+    # definition is quoted and the gap is the one already registered in money-gaps.csv.
+    def c70(path, lea):
+        rows_ = {int(r['fy']): r for r in csv.DictReader(open(os.path.join(
+            ROOT, 'sources', 'data', path), encoding='utf-8')) if r['lea'] == lea}
+        if not rows_:
+            fail('%s has no rows for LEA %s' % (path, lea))
+        return rows_
+    cl = c70('dese-ch70-formula.csv', DIST.LUNENBURG_LEA)
+    cm = c70('dese-ch70-formula-monty-tech.csv', DIST.MONTY_LEA)
+    cyrs = [y for y in sorted(set(cl) & set(cm)) if y >= 2024]
+    if not cyrs:
+        fail('no fiscal year from FY2024 on is in both Chapter 70 extracts')
+
+    def term(r):
+        if r['reconciles'] != 'yes':
+            fail('%s FY%s: required NSS no longer equals contribution plus aid' % (r['district'], r['fy']))
+        fe, fb = float(r['foundation_enrollment']), float(r['foundation_budget'])
+        rlc, aid = float(r['required_local_contribution']), float(r['ch70_aid'])
+        return dict(fe=round(fe), fbpp=fb / fe, share=p100(rlc / fb), aidpp=aid / fe,
+                    above=aid - (fb - rlc), rlc=rlc, aid=aid)
+    tl = {y: term(cl[y]) for y in cyrs}
+    tm = {y: term(cm[y]) for y in cyrs}
+    cy = cyrs[-1]
+    L, M = tl[cy], tm[cy]
+    # Ties to documents neither derived from the DESE workbook: Monty Tech's own budget book
+    # (its Chapter 70 line) and DESE's apportionment sheet as the district reprints it.
+    mtm = MT['member_towns']
+    if cy == 2026:
+        if round(M['aid']) != d6['ch70']:
+            fail('FY2026 Monty Tech Chapter 70: DESE’s workbook %s, the district’s book %s'
+                 % (M['aid'], d6['ch70']))
+        if round(M['rlc']) != sum(t['rlc26'] for t in mtm['towns']) or M['fe'] != mtm['fe26']:
+            fail('FY2026 Monty Tech: DESE’s workbook and the apportionment sheet disagree')
+        if round(L['rlc']) != round(r26['lps_rlc']):
+            fail('FY2026 Lunenburg required contribution: profile and key-factors disagree')
+    else:
+        fail('the side-by-side ties are written for FY2026; the latest shared year is FY%d' % cy)
+    if not (M['fbpp'] > L['fbpp'] and M['share'] < L['share']):
+        fail('the conclusion says both hypotheses hold; in FY%d they no longer both do' % cy)
+    fb_x = M['fbpp'] / L['fbpp']
+    sh_x = (100 - M['share']) / (100 - L['share'])
+    big = max(mtm['towns'], key=lambda t: t['fe26'])
+    lt = next(t for t in mtm['towns'] if t['town'] == 'Lunenburg')
+    contrib = {r['municipality']: r for r in csv.DictReader(open(os.path.join(
+        ROOT, 'sources', 'data', 'dese-ch70-contribution.csv'), encoding='utf-8'))
+        if r['fy'] == str(cy)}
+    if big['town'] not in contrib or 'Lunenburg' not in contrib:
+        fail('dese-ch70-contribution.csv has no FY%d row for %s or Lunenburg' % (cy, big['town']))
+    town_share = {k: p100(float(contrib[k]['required_local_contribution'])
+                          / float(contrib[k]['town_foundation_budget']))
+                  for k in (big['town'], 'Lunenburg')}
+    if round(float(contrib['Lunenburg']['required_local_contribution'])) != round(r26['town_rlc']):
+        fail('Lunenburg’s FY2026 town-wide requirement differs between the two DESE sheets')
+    X = lambda v: figure(round(v, 2), '%.2f' % v, 'times')
+    ch70_side = dict(caption='Chapter 70, side by side', views=[dict(
+        key='c70', label=C.fyspan(cyrs[0], cyrs[-1]), kinds=['published'] * 4,
+        columns=['Foundation enrolment', 'Foundation budget a pupil',
+                 'Towns’ required share', 'Chapter 70 aid a pupil'],
+        rows=[dict(label='%s · %s' % (C.fy(y), nm),
+                   cells=[C.num(t[y]['fe']), C.usd(t[y]['fbpp']), C.pct(t[y]['share']),
+                          C.usd(t[y]['aidpp'])])
+              for y in reversed(cyrs) for nm, t in (('Lunenburg', tl), ('Monty Tech', tm))],
+        note='DESE’s Chapter 70 district profile, sheet DataC70. A pupil means a FOUNDATION '
+             'pupil, the formula’s own count, not a headcount. The towns’ required share is the '
+             'required local contribution over the foundation budget.')])
+    side_con = con(
+        'More aid both ways: a %s budget a pupil to Lunenburg’s %s; a %s local share to its %s.'
+        % (C.usd(M['fbpp']), C.usd(L['fbpp']), C.pct(M['share']), C.pct(L['share'])),
+        ['mtfb', 'mtrlc', 'ch70'],
+        {'a': U(M['fbpp']), 'b': U(L['fbpp']), 'p': P(M['share']), 'q': P(L['share'])},
+        notes=[step('Aid a pupil, %s: %s against %s. The budget a pupil is %s times Lunenburg’s, '
+                    'the share left to the state %s times; Lunenburg’s aid is also %s above its gap.'
+                    % (C.fy(cy), C.usd(M['aidpp']), C.usd(L['aidpp']), '%.2f' % fb_x,
+                       '%.2f' % sh_x, C.usd(L['above'])), 'measured',
+                    {'y': F(cy), 'a': U(M['aidpp']), 'b': U(L['aidpp']), 'x': X(fb_x),
+                     'z': X(sh_x), 'c': U(L['above'])}),
+               step('%s at Monty Tech: %s’s %s pupils carry %s, %s each; Lunenburg’s %s, %s each. '
+                    'Town-wide, %s is required to raise %s of its foundation budget; Lunenburg, %s.'
+                    % (C.fy(cy), big['town'], C.num(big['fe26']), C.usd(big['rlc26']),
+                       C.usd(big['rlc26'] / big['fe26']), C.num(lt['fe26']),
+                       C.usd(lt['rlc26'] / lt['fe26']), big['town'],
+                       C.pct(town_share[big['town']]), C.pct(town_share['Lunenburg'])),
+                    'measured',
+                    {'y': F(cy), 'n': N(big['fe26'], 'pupils'), 'a': U(big['rlc26']),
+                     'b': U(big['rlc26'] / big['fe26']), 'm': N(lt['fe26'], 'pupils'),
+                     'c': U(lt['rlc26'] / lt['fe26']), 'p': P(town_share[big['town']]),
+                     'q': P(town_share['Lunenburg'])}),
+               step('DESE sets a foundation budget by a district’s “grades, programs, and '
+                    'demographic characteristics”; which of them makes Monty Tech’s higher is '
+                    'not split out in anything held.', 'gap',
+                    cite=(src['dese-ch70-key-factors.xlsx']['href'],
+                          'DESE, Chapter 70 Key Factors workbook, User Guide, cell B19'),
+                    closes='DESE’s foundation budget rate schedule and Monty Tech’s foundation '
+                           'enrolment by category')])
+
     out['monty-tech-funding'] = TP.page(
         'monty-tech-funding',
         'State Chapter 70 aid paid %s of Monty Tech’s %s operating budget; the member towns paid %s.'
@@ -1173,15 +1280,15 @@ def build():
            'published'),
          f('lun', U(d6['lunenburg']), 'of it assessed on Lunenburg, %s' % C.fy(2026), 'published',
            {'y': F(2026)}),
-         f('next', U(d7['budget']), 'operating budget proposed, %s' % C.fy(2027), 'published',
-           {'y': F(2027)}),
          f('pp', U(mtpp['per_pupil']), 'a pupil, all funds, no capital or debt (DESE), %s'
            % C.fy(pp_fy), 'published',
            {'y': F(pp_fy)}),
          f('grants', U(gr), 'grant awards the district charts for %s' % C.fy(2025), 'published',
            {'y': F(2025)}),
-         f('gr', U(dt['grants_revolving']), 'of grants and revolving money in DESE’s %s total'
-           % C.fy(pp_fy), 'published', {'y': F(pp_fy)}),
+         f('mtfb', U(M['fbpp']), 'Monty Tech foundation budget a pupil, %s' % C.fy(cy),
+           'published', {'y': F(cy)}),
+         f('mtrlc', P(M['share']), 'of it required of the member towns, %s' % C.fy(cy),
+           'published', {'y': F(cy)}),
          f('funds', None, 'Monty Tech’s spending by fund, %s' % C.fy(2026), 'gap',
            {'y': F(2026)},
            closes='DESE’s End of Year Financial Report for LEA 08320000 for FY2026, which '
@@ -1193,11 +1300,9 @@ def build():
          con('Lunenburg’s %s was %s of the towns’ assessments; it pays none of the Chapter 70.'
              % (C.usd(d6['lunenburg']), C.pct(lun6)), ['lun', 'towns', 'ch70'],
              {'a': U(d6['lunenburg']), 'p': P(lun6)}, allow=CH70),
-         con('The other %s, %s, is state transportation aid and the district’s own funds.'
-             % (C.pct(rest6), C.usd(rest6_amt)), ['aid', 'ed', 'rtf'],
-             {'p': P(rest6), 'a': U(rest6_amt)}),
+         side_con,
          con('This is the operating budget only; DESE’s %s a pupil for %s counts every fund.'
-             % (C.usd(mtpp['per_pupil']), C.fy(pp_fy)), ['pp', 'gr', 'grants', 'funds', 'budget'],
+             % (C.usd(mtpp['per_pupil']), C.fy(pp_fy)), ['pp', 'grants', 'funds', 'budget'],
              {'a': U(mtpp['per_pupil']), 'y': F(pp_fy)},
              notes=[step('DESE splits %s: %s general fund and %s grants and revolving. The '
                          'same split for %s, the budget above, is not in this archive.'
@@ -1227,7 +1332,12 @@ def build():
             note='The FY 2027 Budget Summary, PDF page 25. Excess & Deficiency is the sum of '
                  'what it applies to operating and to capital. The five sum to the printed '
                  'Total Budget in both years, checked by the generator.')]),
-        sources=[summary_src, grants_src, src['district-expenditures-by-function.xlsx']],  # TTPP row, see dese_total
+        tables=[ch70_side],
+        sources=[summary_src, grants_src, src['district-expenditures-by-function.xlsx'],  # TTPP row, see dese_total
+                 src['dese-ch70-district-profile.xlsx'], src['dese-ch70-key-factors.xlsx'],
+                 dict(label='DESE’s Chapter 70 apportionment for Monty Tech, reprinted in the '
+                            'FY27 Monty Tech Budget Presentation, PDF page 24',
+                      href=mtm['docs_url'])],
         finding_figures={'a': P(sh(rv6['ch70'])), 'y': F(2026), 'b': P(sh(rv6['assessments']))},
         finding_allow=CH70)
 

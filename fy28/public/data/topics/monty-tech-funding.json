@@ -152,23 +152,130 @@
   {
    "figures": {
     "a": {
-     "text": "$2,700,000",
+     "text": "$20,827",
      "unit": "",
-     "value": 2700000
+     "value": 20826.89143817204
+    },
+    "b": {
+     "text": "$13,770",
+     "unit": "",
+     "value": 13770.396600124766
     },
     "p": {
-     "text": "7.8%",
+     "text": "39.5%",
      "unit": "",
-     "value": 7.794099999999999
+     "value": 39.45610025854984
+    },
+    "q": {
+     "text": "60.4%",
+     "unit": "",
+     "value": 60.40891443252732
     }
    },
    "literals": [],
-   "rests_on": [
-    "aid",
-    "ed",
-    "rtf"
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$12,609",
+       "unit": "",
+       "value": 12609.411962239497
+      },
+      "b": {
+       "text": "$5,758",
+       "unit": "",
+       "value": 5757.585776668746
+      },
+      "c": {
+       "text": "$490,095",
+       "unit": "",
+       "value": 490095.25
+      },
+      "x": {
+       "text": "1.51",
+       "unit": "times",
+       "value": 1.51
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      },
+      "z": {
+       "text": "1.53",
+       "unit": "times",
+       "value": 1.53
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Aid a pupil, FY2026: $12,609 against $5,758. The budget a pupil is 1.51 times Lunenburg’s, the share left to the state 1.53 times; Lunenburg’s aid is also $490,095 above its gap."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$1,814,721",
+       "unit": "",
+       "value": 1814721
+      },
+      "b": {
+       "text": "$4,583",
+       "unit": "",
+       "value": 4582.628787878788
+      },
+      "c": {
+       "text": "$12,581",
+       "unit": "",
+       "value": 12581.29702970297
+      },
+      "m": {
+       "text": "101",
+       "unit": "pupils",
+       "value": 101
+      },
+      "n": {
+       "text": "396",
+       "unit": "pupils",
+       "value": 396
+      },
+      "p": {
+       "text": "22.0%",
+       "unit": "",
+       "value": 22.003425455423166
+      },
+      "q": {
+       "text": "60.4%",
+       "unit": "",
+       "value": 60.40891359750834
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "FY2026 at Monty Tech: Fitchburg’s 396 pupils carry $1,814,721, $4,583 each; Lunenburg’s 101, $12,581 each. Town-wide, Fitchburg is required to raise 22.0% of its foundation budget; Lunenburg, 60.4%."
+    },
+    {
+     "cite": {
+      "href": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+      "label": "DESE, Chapter 70 Key Factors workbook, User Guide, cell B19"
+     },
+     "closes": "DESE’s foundation budget rate schedule and Monty Tech’s foundation enrolment by category",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "DESE sets a foundation budget by a district’s “grades, programs, and demographic characteristics”; which of them makes Monty Tech’s higher is not split out in anything held."
+    }
    ],
-   "text": "The other 7.8%, $2,700,000, is state transportation aid and the district’s own funds."
+   "rests_on": [
+    "mtfb",
+    "mtrlc",
+    "ch70"
+   ],
+   "text": "More aid both ways: a $20,827 budget a pupil to Lunenburg’s $13,770; a 39.5% local share to its 60.4%."
   },
   {
    "figures": {
@@ -219,7 +326,6 @@
    ],
    "rests_on": [
     "pp",
-    "gr",
     "grants",
     "funds",
     "budget"
@@ -341,26 +447,6 @@
    }
   },
   {
-   "id": "next",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2027",
-      "unit": "fiscal year",
-      "value": 2027
-     }
-    },
-    "literals": [],
-    "text": "operating budget proposed, FY2027"
-   },
-   "value": {
-    "text": "$35,516,660",
-    "unit": "",
-    "value": 35516660
-   }
-  },
-  {
    "id": "pp",
    "kind": "published",
    "label": {
@@ -401,23 +487,43 @@
    }
   },
   {
-   "id": "gr",
+   "id": "mtfb",
    "kind": "published",
    "label": {
     "figures": {
      "y": {
-      "text": "FY2025",
+      "text": "FY2026",
       "unit": "fiscal year",
-      "value": 2025
+      "value": 2026
      }
     },
     "literals": [],
-    "text": "of grants and revolving money in DESE’s FY2025 total"
+    "text": "Monty Tech foundation budget a pupil, FY2026"
    },
    "value": {
-    "text": "$5,189,760",
+    "text": "$20,827",
     "unit": "",
-    "value": 5189760
+    "value": 20826.89143817204
+   }
+  },
+  {
+   "id": "mtrlc",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of it required of the member towns, FY2026"
+   },
+   "value": {
+    "text": "39.5%",
+    "unit": "",
+    "value": 39.45610025854984
    }
   },
   {
@@ -485,6 +591,18 @@
   {
    "href": "/docs/state-dese/district-expenditures-by-function.xlsx",
    "label": "Massachusetts DESE, expenditures by function, all funds — district-expenditures-by-function.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-ch70-district-profile.xlsx",
+   "label": "Massachusetts DESE — dese-ch70-district-profile.xlsx"
+  },
+  {
+   "href": "/docs/state-dese/dese-ch70-key-factors.xlsx",
+   "label": "Massachusetts DESE — dese-ch70-key-factors.xlsx"
+  },
+  {
+   "href": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf#page=24",
+   "label": "DESE’s Chapter 70 apportionment for Monty Tech, reprinted in the FY27 Monty Tech Budget Presentation, PDF page 24"
   }
  ],
  "table": {
@@ -566,5 +684,85 @@
    }
   ]
  },
+ "tables": [
+  {
+   "caption": "Chapter 70, side by side",
+   "views": [
+    {
+     "columns": [
+      "Foundation enrolment",
+      "Foundation budget a pupil",
+      "Towns’ required share",
+      "Chapter 70 aid a pupil"
+     ],
+     "key": "c70",
+     "kinds": [
+      "published",
+      "published",
+      "published",
+      "published"
+     ],
+     "label": "FY2024 to FY2026",
+     "note": "DESE’s Chapter 70 district profile, sheet DataC70. A pupil means a FOUNDATION pupil, the formula’s own count, not a headcount. The towns’ required share is the required local contribution over the foundation budget.",
+     "rows": [
+      {
+       "cells": [
+        "1,603",
+        "$13,770",
+        "60.4%",
+        "$5,758"
+       ],
+       "label": "FY2026 · Lunenburg"
+      },
+      {
+       "cells": [
+        "1,488",
+        "$20,827",
+        "39.5%",
+        "$12,609"
+       ],
+       "label": "FY2026 · Monty Tech"
+      },
+      {
+       "cells": [
+        "1,633",
+        "$13,199",
+        "58.4%",
+        "$5,505"
+       ],
+       "label": "FY2025 · Lunenburg"
+      },
+      {
+       "cells": [
+        "1,476",
+        "$20,261",
+        "38.9%",
+        "$12,515"
+       ],
+       "label": "FY2025 · Monty Tech"
+      },
+      {
+       "cells": [
+        "1,615",
+        "$12,792",
+        "57.7%",
+        "$5,461"
+       ],
+       "label": "FY2024 · Lunenburg"
+      },
+      {
+       "cells": [
+        "1,465",
+        "$20,127",
+        "37.9%",
+        "$12,504"
+       ],
+       "label": "FY2024 · Monty Tech"
+      }
+     ]
+    }
+   ]
+  }
+ ],
  "title": "Monty Tech funding"
 }

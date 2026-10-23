@@ -3898,6 +3898,18 @@ GROUPS = [
              'nss_stage. Publish the ratio to the required minimum as a measurement, '
              'never as a verdict: a floor is not a standard of adequacy. Rebuild with '
              'scripts/extract_dese_state_aid.py.'),
+            ('data/dese-ch70-formula-monty-tech.csv',
+             'The Chapter 70 formula for Monty Tech, FY1993–FY2026', 3,
+             'The same thirty-four years and the same columns as dese-ch70-formula.csv, '
+             'for Montachusett Regional Vocational Technical (LEA 08320000) only — '
+             'Lunenburg’s second school district, which it shares with the other '
+             'member towns. Kept in its own file so that it never joins the peer '
+             'comparison, which readers of the peer file take whole. Its Chapter 70 aid '
+             'agrees between DESE’s district profile and key-factors workbooks in '
+             'every shared year, checked on every run. For FY2026 the after-penalties '
+             'aid column differs from the aid column; the aid column is the one the '
+             'district’s own budget book prints. Rebuild with '
+             'scripts/extract_dese_state_aid.py.'),
             ('data/dese-ch70-statewide.csv',
              'Where Lunenburg sits among every Massachusetts district on state aid', 3,
              'Four ratios per fiscal year across all districts \u2014 net school spending '
