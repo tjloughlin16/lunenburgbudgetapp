@@ -28,5 +28,6 @@ TOPICS = {
     'monty-tech-per-pupil': 'Monty Tech per pupil',
     'monty-tech-line-by-line': 'Monty Tech per-pupil breakdown',
     'lunenburg-at-monty-tech-rate': 'Monty Tech rate scenario',
-    'monty-tech-revenue': 'Monty Tech revenue',
+    # Retitled 23 Oct 2026: TJ could not find the Lunenburg comparison under 'Monty Tech revenue'.
+    'monty-tech-revenue': 'Funding sources compared',
 }

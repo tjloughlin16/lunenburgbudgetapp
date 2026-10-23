@@ -1796,7 +1796,20 @@
    "minutes": 1,
    "path": "/state-aid/cherry-sheet-variance",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "free-cash-balance",
+     "path": "/free-cash/free-cash-balance",
+     "title": "Free cash balance",
+     "why": "How much free cash the state certified"
+    },
+    {
+     "id": "free-cash-sources",
+     "path": "/free-cash/free-cash-sources",
+     "title": "Free cash sources",
+     "why": "Where the free cash came from"
+    }
+   ],
    "shelves": [
     "state-aid"
    ],
@@ -1843,6 +1856,12 @@
      "path": "/special-education/sped-definition",
      "title": "Special education definition",
      "why": "Why our special education total differs from the state’s"
+    },
+    {
+     "id": "circuit-breaker-account",
+     "path": "/special-education/circuit-breaker-account",
+     "title": "Circuit breaker account",
+     "why": "What the circuit breaker account holds at each year end"
     }
    ],
    "shelves": [
@@ -1859,7 +1878,32 @@
    "minutes": 2,
    "path": "/special-education/circuit-breaker-account",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "special-education-overruns",
+     "path": "/special-education/special-education-overruns",
+     "title": "Special education reserve",
+     "why": "What a reserve would have had to cover, year by year"
+    },
+    {
+     "id": "sped-all-funds",
+     "path": "/special-education/sped-all-funds",
+     "title": "Special education, all funds",
+     "why": "Which other funds paid when special education passed its vote"
+    },
+    {
+     "id": "sped-definition",
+     "path": "/special-education/sped-definition",
+     "title": "Special education definition",
+     "why": "Why our special education total differs from the state’s"
+    },
+    {
+     "id": "circuit-breaker",
+     "path": "/special-education/circuit-breaker",
+     "title": "Circuit breaker",
+     "why": "What the state reimburses for the costliest placements"
+    }
+   ],
    "shelves": [
     "special-education"
    ],
@@ -2215,7 +2259,20 @@
    "minutes": 2,
    "path": "/free-cash/free-cash-balance",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "cherry-sheet-variance",
+     "path": "/state-aid/cherry-sheet-variance",
+     "title": "Cherry sheet variance",
+     "why": "How state aid came in against the estimate"
+    },
+    {
+     "id": "free-cash-sources",
+     "path": "/free-cash/free-cash-sources",
+     "title": "Free cash sources",
+     "why": "Where the free cash came from"
+    }
+   ],
    "shelves": [
     "free-cash"
    ],
@@ -2259,7 +2316,20 @@
    "minutes": 1,
    "path": "/free-cash/free-cash-sources",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "cherry-sheet-variance",
+     "path": "/state-aid/cherry-sheet-variance",
+     "title": "Cherry sheet variance",
+     "why": "How state aid came in against the estimate"
+    },
+    {
+     "id": "free-cash-balance",
+     "path": "/free-cash/free-cash-balance",
+     "title": "Free cash balance",
+     "why": "How much free cash the state certified"
+    }
+   ],
    "shelves": [
     "free-cash"
    ],
@@ -2463,7 +2533,14 @@
    "minutes": 1,
    "path": "/fy2026-closeout/fy2026-tuition-lines",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "fy2027-bus-budget",
+     "path": "/transportation/fy2027-bus-budget",
+     "title": "FY2027 bus budget",
+     "why": "Next year’s bus budget, school-day and athletic"
+    }
+   ],
    "shelves": [
     "fy2026-closeout"
    ],
@@ -2492,7 +2569,14 @@
    "minutes": 1,
    "path": "/transportation/fy2027-bus-budget",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "fy2026-tuition-lines",
+     "path": "/fy2026-closeout/fy2026-tuition-lines",
+     "title": "Tuition at year end",
+     "why": "The tuition lines at year end, against next year’s budget"
+    }
+   ],
    "shelves": [
     "transportation"
    ],
@@ -2779,7 +2863,20 @@
    "minutes": 1,
    "path": "/bromfield/harvard-per-pupil",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "lunenburg-at-harvard-rate",
+     "path": "/bromfield/lunenburg-at-harvard-rate",
+     "title": "Harvard rate scenario",
+     "why": "Lunenburg’s budget at Harvard’s rate a pupil"
+    },
+    {
+     "id": "lunenburg-at-monty-tech-rate",
+     "path": "/monty-tech/lunenburg-at-monty-tech-rate",
+     "title": "Monty Tech rate scenario",
+     "why": "Lunenburg’s budget at Monty Tech’s rate a pupil"
+    }
+   ],
    "shelves": [
     "bromfield"
    ],
@@ -3160,7 +3257,20 @@
    "minutes": 1,
    "path": "/bromfield/lunenburg-at-harvard-rate",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "harvard-per-pupil",
+     "path": "/bromfield/harvard-per-pupil",
+     "title": "Harvard per pupil",
+     "why": "What Harvard spends a pupil, beside Lunenburg"
+    },
+    {
+     "id": "lunenburg-at-monty-tech-rate",
+     "path": "/monty-tech/lunenburg-at-monty-tech-rate",
+     "title": "Monty Tech rate scenario",
+     "why": "Lunenburg’s budget at Monty Tech’s rate a pupil"
+    }
+   ],
    "shelves": [
     "bromfield"
    ],
@@ -3174,7 +3284,20 @@
    "minutes": 2,
    "path": "/monty-tech/lunenburg-at-monty-tech-rate",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "harvard-per-pupil",
+     "path": "/bromfield/harvard-per-pupil",
+     "title": "Harvard per pupil",
+     "why": "What Harvard spends a pupil, beside Lunenburg"
+    },
+    {
+     "id": "lunenburg-at-harvard-rate",
+     "path": "/bromfield/lunenburg-at-harvard-rate",
+     "title": "Harvard rate scenario",
+     "why": "Lunenburg’s budget at Harvard’s rate a pupil"
+    }
+   ],
    "shelves": [
     "monty-tech"
    ],
@@ -3233,7 +3356,20 @@
    "minutes": 1,
    "path": "/enrolment/monty-tech-funding",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "monty-tech-revenue",
+     "path": "/monty-tech/monty-tech-revenue",
+     "title": "Funding sources compared",
+     "why": "Monty Tech and Lunenburg schools, revenue by source"
+    },
+    {
+     "id": "monty-tech-per-pupil",
+     "path": "/monty-tech/monty-tech-per-pupil",
+     "title": "Monty Tech per pupil",
+     "why": "What Monty Tech spends a pupil"
+    }
+   ],
    "shelves": [
     "enrolment",
     "monty-tech"
@@ -3263,7 +3399,20 @@
    "minutes": 2,
    "path": "/monty-tech/monty-tech-per-pupil",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "monty-tech-revenue",
+     "path": "/monty-tech/monty-tech-revenue",
+     "title": "Funding sources compared",
+     "why": "Monty Tech and Lunenburg schools, revenue by source"
+    },
+    {
+     "id": "monty-tech-funding",
+     "path": "/enrolment/monty-tech-funding",
+     "title": "Monty Tech funding",
+     "why": "What pays Monty Tech’s operating budget"
+    }
+   ],
    "shelves": [
     "monty-tech",
     "school-spending"
@@ -3278,11 +3427,24 @@
    "minutes": 2,
    "path": "/monty-tech/monty-tech-revenue",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "monty-tech-funding",
+     "path": "/enrolment/monty-tech-funding",
+     "title": "Monty Tech funding",
+     "why": "What pays Monty Tech’s operating budget"
+    },
+    {
+     "id": "monty-tech-per-pupil",
+     "path": "/monty-tech/monty-tech-per-pupil",
+     "title": "Monty Tech per pupil",
+     "why": "What Monty Tech spends a pupil"
+    }
+   ],
    "shelves": [
     "monty-tech"
    ],
-   "title": "Monty Tech revenue"
+   "title": "Funding sources compared"
   },
   "nearby-district-enrolment": {
    "finding": "Lunenburg’s enrolment fell 14.0% from FY2008 to FY2026; 3 of 4 nearby districts fell further.",
@@ -3595,7 +3757,20 @@
    "minutes": 2,
    "path": "/school-spending-history/pay-or-headcount",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "salary-line-and-staffing",
+     "path": "/budget-options/salary-line-and-staffing",
+     "title": "Salary line and staffing",
+     "why": "What holding the salary line does to positions"
+    },
+    {
+     "id": "teacher-contract",
+     "path": "/budget-options/teacher-contract",
+     "title": "Teacher contract",
+     "why": "What the next teachers’ agreement moves in the gap"
+    }
+   ],
    "shelves": [
     "school-spending-history"
    ],
@@ -3810,7 +3985,20 @@
    "minutes": 1,
    "path": "/budget-options/salary-line-and-staffing",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "pay-or-headcount",
+     "path": "/school-spending-history/pay-or-headcount",
+     "title": "Pay or headcount",
+     "why": "Fewer teachers, each costing more: what moved the line"
+    },
+    {
+     "id": "teacher-contract",
+     "path": "/budget-options/teacher-contract",
+     "title": "Teacher contract",
+     "why": "What the next teachers’ agreement moves in the gap"
+    }
+   ],
    "shelves": [
     "budget-options",
     "crisis"
@@ -4005,6 +4193,12 @@
      "path": "/special-education/circuit-breaker",
      "title": "Circuit breaker",
      "why": "What the state reimburses for the costliest placements"
+    },
+    {
+     "id": "circuit-breaker-account",
+     "path": "/special-education/circuit-breaker-account",
+     "title": "Circuit breaker account",
+     "why": "What the circuit breaker account holds at each year end"
     }
    ],
    "shelves": [
@@ -4055,6 +4249,12 @@
      "path": "/special-education/circuit-breaker",
      "title": "Circuit breaker",
      "why": "What the state reimburses for the costliest placements"
+    },
+    {
+     "id": "circuit-breaker-account",
+     "path": "/special-education/circuit-breaker-account",
+     "title": "Circuit breaker account",
+     "why": "What the circuit breaker account holds at each year end"
     }
    ],
    "shelves": [
@@ -4104,6 +4304,12 @@
      "path": "/special-education/circuit-breaker",
      "title": "Circuit breaker",
      "why": "What the state reimburses for the costliest placements"
+    },
+    {
+     "id": "circuit-breaker-account",
+     "path": "/special-education/circuit-breaker-account",
+     "title": "Circuit breaker account",
+     "why": "What the circuit breaker account holds at each year end"
     }
    ],
    "shelves": [
@@ -4375,7 +4581,20 @@
    "minutes": 1,
    "path": "/budget-options/teacher-contract",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "pay-or-headcount",
+     "path": "/school-spending-history/pay-or-headcount",
+     "title": "Pay or headcount",
+     "why": "Fewer teachers, each costing more: what moved the line"
+    },
+    {
+     "id": "salary-line-and-staffing",
+     "path": "/budget-options/salary-line-and-staffing",
+     "title": "Salary line and staffing",
+     "why": "What holding the salary line does to positions"
+    }
+   ],
    "shelves": [
     "budget-options",
     "crisis"

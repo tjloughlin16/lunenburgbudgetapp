@@ -49,7 +49,8 @@ RELATED = [
     [('special-education-overruns', 'What a reserve would have had to cover, year by year'),
      ('sped-all-funds', 'Which other funds paid when special education passed its vote'),
      ('sped-definition', 'Why our special education total differs from the state’s'),
-     ('circuit-breaker', 'What the state reimburses for the costliest placements')],
+     ('circuit-breaker', 'What the state reimburses for the costliest placements'),
+     ('circuit-breaker-account', 'What the circuit breaker account holds at each year end')],
     # Money left over: carried as orders, held in funds, set against each budget line.
     [('carried-over-orders', 'Open orders carried from one year into the next'),
      ('unspent-by-fund', 'What each fund held unspent at the end of the year'),
@@ -57,4 +58,20 @@ RELATED = [
     # The funds outside the vote: what came in, and what went out.
     [('school-money-in', 'What the funds outside the budget took in, and from where'),
      ('outside-the-general-fund', 'What the funds outside the voted budget spent, as a share of the whole')],
+    # Accepted by TJ from --suggest-related, 23 October 2026.
+    [('harvard-per-pupil', 'What Harvard spends a pupil, beside Lunenburg'),
+     ('lunenburg-at-harvard-rate', 'Lunenburg’s budget at Harvard’s rate a pupil'),
+     ('lunenburg-at-monty-tech-rate', 'Lunenburg’s budget at Monty Tech’s rate a pupil')],
+    [('pay-or-headcount', 'Fewer teachers, each costing more: what moved the line'),
+     ('salary-line-and-staffing', 'What holding the salary line does to positions'),
+     ('teacher-contract', 'What the next teachers’ agreement moves in the gap')],
+    [('cherry-sheet-variance', 'How state aid came in against the estimate'),
+     ('free-cash-balance', 'How much free cash the state certified'),
+     ('free-cash-sources', 'Where the free cash came from')],
+    [('fy2026-tuition-lines', 'The tuition lines at year end, against next year’s budget'),
+     ('fy2027-bus-budget', 'Next year’s bus budget, school-day and athletic')],
+    # TJ could not find the Monty Tech and Lunenburg funding comparison from the hub.
+    [('monty-tech-revenue', 'Monty Tech and Lunenburg schools, revenue by source'),
+     ('monty-tech-funding', 'What pays Monty Tech’s operating budget'),
+     ('monty-tech-per-pupil', 'What Monty Tech spends a pupil')],
 ]
