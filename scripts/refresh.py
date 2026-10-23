@@ -125,6 +125,8 @@ SITE_PAYLOADS = [
     'build_minutes_fts.py', 'build_reading_time.py', 'build_short_versions.py',
     'build_schema_page.py', 'build_reference_pages.py', 'build_decisions_doc.py',
     'build_ingest_plan.py', 'build_reports_index.py', 'build_sitemap.py',
+    # /ask and the footer on every page: the newest reports and every count, after the index.
+    'build_agent_manifest.py',
     # 5. LAST, because they count everything above them.
     'build_readme.py', 'build_app_metrics.py',
 ]

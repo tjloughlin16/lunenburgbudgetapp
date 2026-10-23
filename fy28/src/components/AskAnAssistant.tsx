@@ -53,6 +53,10 @@ function buildPrompt() {
   for (const q of MANIFEST.query) lines.push(`  ${abs(q.path)}`, `      ${q.note}`)
   lines.push('', 'FILES THAT ANSWER A PARTICULAR QUESTION:')
   for (const a of MANIFEST.answers) lines.push(`  ${abs(a.path)}`, `      ${a.question}`)
+  if (MANIFEST.recent.length) {
+    lines.push('', 'NEWEST REPORTS (the most recent first):')
+    for (const r of MANIFEST.recent) lines.push(`  ${abs(r.path)}`, `      ${r.date} · ${r.title}`)
+  }
   lines.push(
     '',
     'TWO THINGS TO GET RIGHT, because the data lets you get them wrong quietly:',
@@ -159,6 +163,23 @@ export function AskAnAssistant() {
             </li>
           ))}
       </ul>
+
+      {MANIFEST.recent.length > 0 && <>
+        <h2 className="mt-10 text-lg font-bold">Newest reports</h2>
+        <p className="mt-2 text-[14px]" style={{ color: 'var(--text-secondary)' }}>
+          In the prompt too, so an assistant sees what went up this week.
+        </p>
+        <ul className="mt-3 text-[14px] space-y-2">
+          {MANIFEST.recent.map(r => (
+            <li key={r.path}>
+              <a href={r.path} className="underline font-semibold"
+                style={{ color: 'var(--series-cost)' }}>{r.title}</a>
+              <span className="ml-2 tnum text-[12.5px]" style={{ color: 'var(--text-muted)' }}>{r.date}</span>
+              {r.note && <div className="text-[13px]" style={{ color: 'var(--text-secondary)' }}>{r.note}</div>}
+            </li>
+          ))}
+        </ul>
+      </>}
 
       <h2 className="mt-10 text-lg font-bold">What to ask it</h2>
       <p className="mt-2 text-[15px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>

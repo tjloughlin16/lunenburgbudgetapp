@@ -58,8 +58,8 @@ ANSWERS = [
      'planning, cemeteries, the library, anything',
      '/minutes/INDEX.txt', 'then /minutes/<board>.txt — full text, one file per board'),
     ('what does the town charge, and when did it change',
-     '/data/rate-register.csv', '62 rates: athletic and bus fees, contracts, each with the '
-     'fiscal year it applies to and the document that set it'),
+     '/data/rate-register.csv', '{rates} rates: athletic and bus fees, contracts, each with '
+     'the fiscal year it applies to and the document that set it'),
     ('athletic fees, by year and tier',
      '/data/athletic-fee-schedule.csv', 'FY24-FY27, most figures checked against a cell or a vote'),
     ('is the town hoarding free cash, or rebuilding it — and what it would buy',
@@ -121,11 +121,11 @@ ANSWERS = [
 QUERY = [
     ('/llms.txt', 'start here — what this site holds and how to read it'),
     ('/api/index', 'every machine-readable address, as JSON'),
-    ('/api/tables', 'what data EXISTS before you ask anything: 49 datasets, the years '
-                    'each covers, row counts. 5KB'),
+    ('/api/tables', 'what data EXISTS before you ask anything: {tables} datasets, the '
+                    'years each covers, row counts'),
     ('/api/schema', 'the grain of every table, and four ways to get a confident wrong '
                     'answer out of it'),
-    ('/api/questions', '107 worked questions, each with the query that answers it'),
+    ('/api/questions', '{questions} worked questions, each with the query that answers it'),
     ('/api/query?sql=SELECT%20name%20FROM%20sqlite_master%20WHERE%20type%3D%27table%27',
      'one read-only SELECT over the database, as a plain GET. Returns the documents its '
      'rows came from'),
@@ -158,6 +158,45 @@ def boards():
     return sorted(out, key=lambda b: -b[1])
 
 
+def counts():
+    """The figures the notes above state, read from the files they describe (rule 2).
+
+    These were typed once -- "49 datasets", "107 worked questions" -- and were 122 and 108
+    by the time anybody looked, because nothing reran this script.
+    """
+    def load(rel, default):
+        try:
+            return json.load(open(os.path.join(PUB, rel.lstrip('/'))))
+        except (OSError, ValueError):
+            return default
+    rates = 0
+    rr = os.path.join(PUB, 'data', 'rate-register.csv')
+    if os.path.exists(rr):
+        import csv
+        rates = sum(1 for _ in csv.DictReader(open(rr, encoding='utf-8')))
+    return dict(tables=load('/api/tables.json', {}).get('count', 0),
+                questions=len(load('/api/questions.json', {}).get('questions', [])),
+                rates=rates)
+
+
+RECENT = 12
+
+
+def recent():
+    """The newest reports, from the index build_reports_index.py writes.
+
+    The ANSWERS list is curated and only changes when somebody edits it, so a report
+    published today would never reach /ask or the footer. This half is not curated: it is
+    whatever the reports index says went up most recently.
+    """
+    try:
+        r = json.load(open(os.path.join(PUB, 'data', 'reports-recent.json')))
+    except (OSError, ValueError):
+        return []
+    return [dict(title=x['title'], path=x['url'], date=x.get('first_published', ''),
+                 note=x.get('about', '')) for x in r.get('reports', [])[:RECENT]]
+
+
 def exists(rel):
     """True if the path is a real file in the published output."""
     return os.path.exists(os.path.join(PUB, rel.lstrip('/')))
@@ -179,8 +218,10 @@ def main():
     except (OSError, ValueError):
         pass
 
+    cnt = counts()
     rows, missing = [], []
     for question, path, note in ANSWERS:
+        note = note.format(**cnt)
         if not exists(path):
             missing.append(path)
             continue
@@ -220,6 +261,12 @@ def main():
     for path, note in EXTRA:
         if exists(path):
             lines.append(f'    {path}{" " * (width - len(path))}{note}')
+    new = recent()
+    if new:
+        lines += ['', '  NEWEST REPORTS, from /data/reports-recent.json:', '']
+        for x in new:
+            lines.append(f'    {x["date"]}  {x["path"]}')
+            lines.append(f'      {x["title"]}: {x["note"]}'.rstrip())
     bl = boards()
     if corpus or bl:
         lines += ['',
@@ -261,7 +308,7 @@ def main():
         i = html.index('<!--')
         j = html.index('-->', i) + 3
         html = html[:i] + block + html[j:]
-    open(INDEX, 'w', encoding='utf-8').write(html)
+    outputs = {INDEX: html}
 
     # The 404 page is where an agent that guessed at a URL lands. Telling it only that
     # this path is wrong, when we could tell it what actually exists, wastes the one fetch
@@ -274,8 +321,7 @@ def main():
         else:
             k = h.index('<!--')
             h = h[:k] + block + '\n' + h[k:]
-        open(nf, 'w', encoding='utf-8').write(h)
-        print(f'  also written into {os.path.relpath(nf, ROOT)}')
+        outputs[nf] = h
 
     # The visible copy. A comment is dropped by every extraction method there is; this is
     # the one an agent actually reads, and a researcher can use it too.
@@ -299,18 +345,26 @@ def main():
         # it, and /api/index is written by build_api.py after this runs on a cold build,
         # so neither can be filtered that way -- they are checked live by check-agents.mjs
         # instead, which fetches every advertised URL.
-        query=[dict(path=pth, note=n) for pth, n in QUERY],
+        query=[dict(path=pth, note=note.format(**cnt)) for pth, note in QUERY],
+        recent=new,
         # How many worked questions the bank holds, read from the bank rather than typed.
         # The /ask page states this number to a reader, and rule 2 covers every generated
         # surface, not just the model.
-        questions=len(json.load(open(os.path.join(PUB, 'api', 'questions.json')))
-                      .get('questions', []))
-        if exists('/api/questions.json') else 0,
+        questions=cnt['questions'],
         corpus=corpus,
     )
     mj = os.path.join(ROOT, 'fy28', 'src', 'data', 'agent-manifest.json')
-    json.dump(manifest, open(mj, 'w'), indent=1)
-    print(f'  wrote {os.path.relpath(mj, ROOT)} for the visible footer')
+    outputs[mj] = json.dumps(manifest, indent=1)
+
+    stale = [f for f, text in outputs.items()
+             if not os.path.exists(f) or open(f, encoding='utf-8').read() != text]
+    if '--check' in sys.argv:
+        for f in stale:
+            print(f'stale: {os.path.relpath(f, ROOT)} -- run python3 scripts/build_agent_manifest.py')
+        return 1 if stale else 0
+    for f in stale:
+        open(f, 'w', encoding='utf-8').write(outputs[f])
+        print(f'  wrote {os.path.relpath(f, ROOT)}')
 
     print(f'wrote the manifest into {os.path.relpath(INDEX, ROOT)} '
           f'({len(block):,} bytes, {len(rows)} answerable questions)')

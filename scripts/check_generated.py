@@ -58,6 +58,9 @@ CHECKS = [
     # sources/data/takedowns.csv, or if any tree holds a taken-down document in sources/.
     ('takedown.py', ['--check']),
     ('build_readme.py', ['--check']),
+    # /ask and the inventory on every page. Fails when a report went up, a board gained
+    # minutes or a count moved and the manifest was not rebuilt -- it drifted 9 days unseen.
+    ('build_agent_manifest.py', ['--check']),
     # JOB POSTINGS: the town's snapshots tie to their catalogue and to the page's own printed
     # count, and /jobs, the town's two tables and every board's link reproduce from them.
     ('fetch_town_job_postings.py', ['--check']),
