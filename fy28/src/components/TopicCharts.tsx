@@ -23,8 +23,8 @@
  *  they reflow to any width and need no hover; the series chart is recharts in a
  *  ResponsiveContainer. Nothing here sets a width wider than its column. */
 import {
-  Bar, CartesianGrid, ComposedChart, Line, ReferenceLine, ResponsiveContainer, Tooltip, XAxis,
-  YAxis,
+  Bar, CartesianGrid, ComposedChart, LabelList, Line, ReferenceLine, ResponsiveContainer, Tooltip,
+  XAxis, YAxis,
 } from 'recharts'
 import { useState } from 'react'
 import { usdShort } from '../model/engine'
@@ -49,6 +49,8 @@ export type SeriesChart = {
   multiples?: boolean
   /** Overlay: the same tracks on one axis, with a key that picks one out (scripts/topic.py). */
   overlay?: boolean
+  /** Stacked bars only: each bar's total, as text, printed above it (scripts/topic.py). */
+  totals?: string[]
 }
 export type RankingChart = {
   type: 'ranking'; title: string; unit: string; basis: Basis; stack: string[] | null
@@ -195,6 +197,12 @@ function SeriesTip({ active, label, c, payload, offset = 0 }: TipProps & { paylo
             {shown(s.texts[at])}</span>
         </p>
       ))}
+      {c.totals ? (
+        <p className="flex items-center justify-between gap-5 tnum mt-1 pt-1" style={{ borderTop: '1px solid var(--grid)' }}>
+          <span style={{ color: 'var(--text-secondary)' }}>Total</span>
+          <span className="font-semibold">{c.totals[at]}</span>
+        </p>
+      ) : null}
     </div>
   )
 }
@@ -429,7 +437,7 @@ function Series({ c }: { c: SeriesChart }) {
       ) : null}
       <div style={{ height: 260 }} aria-hidden>
         <ResponsiveContainer width="100%" height="100%">
-          <ComposedChart data={rows} margin={{ top: 6, right: 22, bottom: 0, left: 0 }} barGap={2}>
+          <ComposedChart data={rows} margin={{ top: c.totals ? 22 : 6, right: 22, bottom: 0, left: 0 }} barGap={2}>
             <CartesianGrid stroke="var(--grid)" vertical={false} />
             <XAxis dataKey="x" interval={c.x.length <= 12 ? 0 : 'preserveStartEnd'} minTickGap={c.x.length <= 12 ? 2 : 14}
               tick={{ fill: 'var(--text-muted)', fontSize: 11 }} stroke="var(--axis)" tickLine={false} />
@@ -455,7 +463,18 @@ function Series({ c }: { c: SeriesChart }) {
                   /* A ZERO IS NOT A GAP. A bar of zero would draw nothing, exactly as a year
                      nobody printed does; a two-pixel stub tells them apart. Stacks skip it,
                      because a stacked track is empty by design where another stands. */
-                  minPointSize={c.stacked ? undefined : 2} />
+                  minPointSize={c.stacked ? undefined : 2}>
+                  {/* The whole of each stack, above its top band: the generator's text, so the
+                      label foots to the bands (TJ, 23 October 2026: a share chart hid the scale). */}
+                  {c.totals && i === c.series.length - 1 ? (
+                    <LabelList dataKey={`s${i}`} content={(p: { x?: number | string; y?: number | string;
+                      width?: number | string; index?: number }) => (
+                      <text x={Number(p.x) + Number(p.width) / 2} y={Number(p.y) - 7} textAnchor="middle"
+                        fontSize={12} fontWeight={600} fill="var(--text-primary)">
+                        {c.totals?.[p.index ?? 0]}</text>
+                    )} />
+                  ) : null}
+                </Bar>
               ) : (
                 <Line key={s.name} dataKey={`s${i}`} name={s.name} stroke={colourOf(s, i)} strokeWidth={2.25}
                   strokeDasharray={est ? '6 4' : undefined} dot={c.x.length <= 12 ? { r: 2.5 } : false}

@@ -429,7 +429,7 @@ def track(name, values, basis='published', mark=None, colour=None):
 
 def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_figures=None,
            note_allow=(), decimals=None, reference=None, from_zero=True, multiples=False,
-           overlay=False):
+           overlay=False, totals=False):
     """Named tracks over the same x -- years (C.fy(y)) or categories, as strings.
     reference: (value, label) -- one horizontal line a reader measures the tracks against,
       e.g. (100, 'The state minimum'). Its value is shown by fmt(), like every other.
@@ -446,7 +446,13 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
       line in its band colour, and a key that picks one out and fades the rest. Like
       multiples it takes up to PANELS_MAX tracks, each with its colour=. It opens REBASED --
       every track as its dollar change since the first year, so the lines separate by what
-      each added rather than by how big each was -- with a toggle back to the amounts."""
+      each added rather than by how big each was -- with a toggle back to the amounts.
+    totals: a STACKED bar chart prints each bar's total above it, so the size of each whole
+      reads without hovering (TJ, 23 October 2026, on a share chart that hid two districts'
+      very different scales). The text is fmt() of the sum of the plotted values, written
+      here, so the label foots to the bands it sits on. Written only when set."""
+    if totals and not (stacked and kind == 'bar'):
+        raise ConclusionError('chart %r: totals label a stacked bar chart' % title)
     if multiples and overlay:
         raise ConclusionError('chart %r: multiples or overlay, not both' % title)
     if overlay and (stacked or kind != 'line' or any(t['mark'] not in (None, 'line') for t in tracks)):
@@ -471,7 +477,10 @@ def series(title, x, tracks, unit, kind='line', stacked=False, note=None, note_f
                          decimals=decimals, reference=ref, from_zero=bool(from_zero),
                          note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note'),
                          **({'multiples': True} if multiples else {}),
-                         **({'overlay': True} if overlay else {})))
+                         **({'overlay': True} if overlay else {}),
+                         **({'totals': [fmt(unit, sum(t['values'][i] or 0 for t in tracks),
+                                            decimals) for i in range(len(x))]}
+                            if totals else {})))
 
 
 def ranking(title, rows, unit, highlight=(), basis='published', stack=None, note=None,
@@ -730,6 +739,10 @@ def _inline_bad(c, where, texts=True):
                        'repeated colour means something' % where)
         if len({s['name'] for s in ts}) != len(ts):
             bad.append('%s: two tracks share a name' % where)
+        if 'totals' in c and c['totals'] != [fmt(c['unit'], sum(s['values'][i] or 0 for s in ts),
+                                                 c.get('decimals')) for i in range(len(x))]:
+            bad.append('%s: its totals do not foot to its bands -- build it with series(totals=True)'
+                       % where)
         n = 0
         for s in ts:
             w = '%s track %r' % (where, s['name'])

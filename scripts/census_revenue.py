@@ -53,7 +53,16 @@ PATH = os.path.join(ROOT, 'sources', KEY)
 CACHE = os.path.join(ROOT, 'build', 'cache')
 FY = 2024
 IDS = {'2507080': 'lunenburg', '2508050': 'monty'}
-VERSION = 1
+VERSION = 2
+# PUPILS, for the page's per-pupil chart, from the SAME file and year as the dollars: V33, "Fall
+# Membership" in the record layout (census-school24doc.txt line 477), "presented in whole
+# amounts" (line 229) -- fall 2023 memberships from NCES's Common Core of Data (line 98). Each is
+# held against DESE's own 1 October headcount for the same year, in dese-radar.csv, by
+# PUPILS_CHECK: the Census may adjust an enrolment "inconsistent with the finances reported"
+# (line 98), and a count that drifted would make every per-pupil figure wrong at once.
+DESE_RADAR = os.path.join(ROOT, 'sources', 'data', 'dese-radar.csv')
+DESE_LEA = {'lunenburg': '01620000', 'monty': '08320000'}
+PUPILS_TOLERANCE = 0.03   # ours: within 3% of DESE's headcount, or the build stops
 
 # The documentation's own lists, in its order.
 FEDERAL = ('C14 C15 C19 C22 C23 C26 C27 B11 C20 C25 C36 B10 B12 B14 B13').split()
@@ -226,7 +235,7 @@ def _rows():
         return json.load(open(cp, encoding='utf-8'))
     import openpyxl
     ws = openpyxl.load_workbook(PATH, read_only=True).worksheets[0]
-    want = ('NAME', 'YRDATA', 'TOTALREV', 'TFEDREV', 'TSTREV', 'TLOCREV') + tuple(FEDERAL + STATE + LOCAL)
+    want = ('NAME', 'YRDATA', 'V33', 'TOTALREV', 'TFEDREV', 'TSTREV', 'TLOCREV') + tuple(FEDERAL + STATE + LOCAL)
     rows, head = {}, None
     for r in ws.iter_rows(values_only=True):
         if head is None:
@@ -262,7 +271,7 @@ def revenue():
         if x['TOTALREV'] != x['TFEDREV'] + x['TSTREV'] + x['TLOCREV']:
             fail('%s %s: TOTALREV is not federal + state + local' % (KEY, nid))
         k = lambda v: v * 1000
-        d = dict(name=x['NAME'], nces=nid, fy=FY,
+        d = dict(name=x['NAME'], nces=nid, fy=FY, pupils=x['V33'],
                  total=k(x['TOTALREV']), federal=k(x['TFEDREV']), state=k(x['TSTREV']),
                  local=k(x['TLOCREV']),
                  ch70=k(x['C01']), transport=k(x['C12']), on_behalf=k(x['C38']),
@@ -289,7 +298,27 @@ def revenue():
         if unnamed:
             fail('%s %s: money in local items with no name: %s' % (KEY, nid, unnamed))
         out[who] = d
+    for who, hc in dese_headcounts().items():
+        p = out[who]['pupils']
+        if not p or abs(p - hc) > PUPILS_TOLERANCE * hc:
+            fail('%s: Census fall membership %s is not within %d%% of DESE\'s FY%d headcount %s'
+                 % (who, p, round(PUPILS_TOLERANCE * 100), FY, hc))
+        out[who]['dese_headcount'] = hc
     return out
+
+
+def dese_headcounts():
+    """{who: DESE's 1 October headcount for FY}, off dese-radar.csv's 'Student Headcount'."""
+    import csv
+    got = {}
+    for r in csv.DictReader(open(DESE_RADAR, encoding='utf-8')):
+        if r['measure'] == 'Student Headcount' and r['fy'] == str(FY):
+            for who, lea in DESE_LEA.items():
+                if r['lea'] == lea:
+                    got[who] = int(float(r['value']))
+    if set(got) != set(DESE_LEA):
+        fail('dese-radar.csv has no FY%d headcount for %s' % (FY, sorted(set(DESE_LEA) - set(got))))
+    return got
 
 
 def verify_page():
@@ -307,10 +336,40 @@ def verify_page():
         x = dict(zip(head, r))
         if x['NCESID'] in IDS:
             raw[IDS[x['NCESID']]] = x
-    rows = [r for r in page['table']['views'][0]['rows'] if r.get('code')]
+    views = {v['key']: v for v in page['table']['views']}
+    rows = [r for r in views['dollars']['rows'] if r.get('code')]
     bad = []
     usd = lambda v: '${:,}'.format(v)
-    for col, who in ((0, 'monty'), (2, 'lunenburg')):
+    num = lambda t: int(t.strip('$').replace(',', ''))
+    # PER PUPIL. Every row of the per-pupil view against its own dollars row over the file's
+    # V33, read here afresh: footing may move a row by under a dollar and never more; the rows
+    # add to the total row; the total is TOTALREV over V33; and the two rows the page's
+    # sentences quote -- Chapter 70 (C01) and the town budgets (T02 + D23) -- are tied to their
+    # Census items directly, not through the page's dollars.
+    dol, pup = views['dollars']['rows'], views['pupil']['rows']
+    if [r['label'] for r in dol] != [r['label'] for r in pup]:
+        bad.append('the per-pupil view does not have the dollars view\'s rows')
+    for col, who in ((0, 'monty'), (1, 'lunenburg')):
+        x = raw[who]
+        n = x['V33']
+        for d, p_ in zip(dol, pup):
+            exact = num(d['cells'][col]) / n
+            if abs(num(p_['cells'][col]) - exact) >= 1:
+                bad.append('%s %s a pupil: page %s, file %.2f' % (who, p_['label'], p_['cells'][col], exact))
+        if sum(num(r['cells'][col]) for r in pup[:-1]) != num(pup[-1]['cells'][col]):
+            bad.append('%s: the per-pupil rows do not add to the total a pupil' % who)
+        if num(pup[-1]['cells'][col]) != round(x['TOTALREV'] * 1000 / n):
+            bad.append('%s: total a pupil is not TOTALREV over V33' % who)
+        by = {r['label']: r for r in dol}
+        for lab, val in (('State Chapter 70 aid', x['C01']),
+                         ('Town budgets, mostly property tax', (x['T02'] or 0) + (x['D23'] or 0))):
+            if num(by[lab]['cells'][col]) != val * 1000:
+                bad.append('%s %s: page %s, file %s' % (who, lab, by[lab]['cells'][col], usd(val * 1000)))
+        print('census_revenue: %s, V33 fall membership %s; total %s a pupil, Chapter 70 %s, '
+              'town budgets %s' % (who, n, pup[-1]['cells'][col],
+                                   next(r for r in pup if r['label'] == 'State Chapter 70 aid')['cells'][col],
+                                   next(r for r in pup if r['label'].startswith('Town budgets'))['cells'][col]))
+    for col, who in ((0, 'monty'), (1, 'lunenburg')):
         x = raw[who]
         for r in rows:
             c = r['code'].split()[-1]
@@ -326,7 +385,7 @@ def verify_page():
     if bad:
         fail('the revenue page does not match the Census file:\n  ' + '\n  '.join(bad))
     print('census_revenue: %d itemised rows match the file, and foot to other local for both '
-          'districts' % len(rows))
+          'districts; every per-pupil row is within a dollar of the file' % len(rows))
 
 
 if __name__ == '__main__':
@@ -337,5 +396,10 @@ if __name__ == '__main__':
         for c, it in local_items().items():
             print('%s  line %-4s %-52s %s' % (c, it['line'] or 'IX.1', it['census'], it['name']))
         sys.exit(0)
-    json.dump(revenue(), sys.stdout, indent=1)
+    R = revenue()
+    for who, d in R.items():
+        print('%s: Census V33 fall membership %s, DESE headcount %s' % (who, d['pupils'],
+                                                                        d['dese_headcount']),
+              file=sys.stderr)
+    json.dump(R, sys.stdout, indent=1)
     print()

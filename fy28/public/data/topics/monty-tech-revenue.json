@@ -1,7 +1,205 @@
 {
+ "also": [
+  {
+   "decimals": null,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {
+     "n": {
+      "text": "18",
+      "unit": "towns",
+      "value": 18
+     },
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [
+     "9-12",
+     "PK-12"
+    ],
+    "text": "Each district’s revenue over its own pupils in the same file: Monty Tech, grades 9-12 from 18 towns; Lunenburg, PK-12. FY2024."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Grants and donations",
+     "texts": [
+      "$2,323",
+      "$1,406"
+     ],
+     "values": [
+      2323,
+      1406
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "State Chapter 70 aid",
+     "texts": [
+      "$12,829",
+      "$5,582"
+     ],
+     "values": [
+      12829,
+      5582
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Town budgets, mostly property tax",
+     "texts": [
+      "$8,397",
+      "$10,226"
+     ],
+     "values": [
+      8397,
+      10226
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "State transport aid and state-paid pensions",
+     "texts": [
+      "$3,561",
+      "$2,271"
+     ],
+     "values": [
+      3561,
+      2271
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "The rest: school meals, tuition, fees",
+     "texts": [
+      "$3,094",
+      "$168"
+     ],
+     "values": [
+      3094,
+      168
+     ]
+    }
+   ],
+   "stacked": true,
+   "title": "Revenue a pupil, by source",
+   "totals": [
+    "$30,204",
+    "$19,653"
+   ],
+   "type": "series",
+   "unit": "$",
+   "x": [
+    "Monty Tech",
+    "Lunenburg schools"
+   ]
+  },
+  {
+   "decimals": 1,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "The same revenue as shares of each district’s total, FY2024, so the mix can be compared at any size."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Grants and donations",
+     "texts": [
+      "7.7%",
+      "7.2%"
+     ],
+     "values": [
+      7.692842734923837,
+      7.152748703745451
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "State Chapter 70 aid",
+     "texts": [
+      "42.5%",
+      "28.4%"
+     ],
+     "values": [
+      42.472931302311565,
+      28.401661782229237
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Town budgets, mostly property tax",
+     "texts": [
+      "27.8%",
+      "52.0%"
+     ],
+     "values": [
+      27.801349377477916,
+      52.03375092589611
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "State transport aid and state-paid pensions",
+     "texts": [
+      "11.8%",
+      "11.6%"
+     ],
+     "values": [
+      11.789664046741322,
+      11.558403916137966
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "The rest: school meals, tuition, fees",
+     "texts": [
+      "10.2%",
+      "0.9%"
+     ],
+     "values": [
+      10.243212538545361,
+      0.8534346719912402
+     ]
+    }
+   ],
+   "stacked": true,
+   "title": "Shares of each district’s revenue",
+   "type": "series",
+   "unit": "%",
+   "x": [
+    "Monty Tech",
+    "Lunenburg schools"
+   ]
+  }
+ ],
  "category": "monty-tech",
  "chart": {
-  "decimals": 1,
+  "decimals": null,
   "from_zero": true,
   "kind": "bar",
   "note": {
@@ -23,7 +221,7 @@
     }
    },
    "literals": [],
-   "text": "Census Bureau, FY2024, shares of each district’s revenue; grouping ours. Lunenburg’s town budget is 71.0% property tax (FY2026)."
+   "text": "Census Bureau, FY2024, each district’s revenue in dollars; grouping ours. Lunenburg’s town budget is 71.0% property tax (FY2026)."
   },
   "reference": null,
   "series": [
@@ -32,12 +230,12 @@
     "mark": "bar",
     "name": "Grants and donations",
     "texts": [
-     "7.7%",
-     "7.2%"
+     "$3,318,000",
+     "$2,221,000"
     ],
     "values": [
-     7.692842734923837,
-     7.152748703745451
+     3318000,
+     2221000
     ]
    },
    {
@@ -45,12 +243,12 @@
     "mark": "bar",
     "name": "State Chapter 70 aid",
     "texts": [
-     "42.5%",
-     "28.4%"
+     "$18,319,000",
+     "$8,819,000"
     ],
     "values": [
-     42.472931302311565,
-     28.401661782229237
+     18319000,
+     8819000
     ]
    },
    {
@@ -58,12 +256,12 @@
     "mark": "bar",
     "name": "Town budgets, mostly property tax",
     "texts": [
-     "27.8%",
-     "52.0%"
+     "$11,991,000",
+     "$16,157,000"
     ],
     "values": [
-     27.801349377477916,
-     52.03375092589611
+     11991000,
+     16157000
     ]
    },
    {
@@ -71,12 +269,12 @@
     "mark": "bar",
     "name": "State transport aid and state-paid pensions",
     "texts": [
-     "11.8%",
-     "11.6%"
+     "$5,085,000",
+     "$3,589,000"
     ],
     "values": [
-     11.789664046741322,
-     11.558403916137966
+     5085000,
+     3589000
     ]
    },
    {
@@ -84,19 +282,23 @@
     "mark": "bar",
     "name": "The rest: school meals, tuition, fees",
     "texts": [
-     "10.2%",
-     "0.9%"
+     "$4,418,000",
+     "$265,000"
     ],
     "values": [
-     10.243212538545361,
-     0.8534346719912402
+     4418000,
+     265000
     ]
    }
   ],
   "stacked": true,
   "title": "Where the money comes from",
+  "totals": [
+   "$43,131,000",
+   "$31,051,000"
+  ],
   "type": "series",
-  "unit": "%",
+  "unit": "$",
   "x": [
    "Monty Tech",
    "Lunenburg schools"
@@ -106,24 +308,123 @@
   {
    "figures": {
     "a": {
-     "text": "$3,318,000",
-     "unit": "",
-     "value": 3318000
+     "text": "$12,829",
+     "unit": "dollars a pupil",
+     "value": 12829
     },
     "b": {
-     "text": "$43,131,000",
-     "unit": "",
-     "value": 43131000
+     "text": "$5,582",
+     "unit": "dollars a pupil",
+     "value": 5582
     },
-    "p": {
+    "x": {
+     "text": "2.3",
+     "unit": "times",
+     "value": 2.3
+    }
+   },
+   "literals": [
+    "Chapter 70"
+   ],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$18,319,000",
+       "unit": "",
+       "value": 18319000
+      },
+      "b": {
+       "text": "$8,819,000",
+       "unit": "",
+       "value": 8819000
+      },
+      "l": {
+       "text": "1,580",
+       "unit": "pupils",
+       "value": 1580
+      },
+      "m": {
+       "text": "1,428",
+       "unit": "pupils",
+       "value": 1428
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "$18,319,000 over 1,428 pupils at Monty Tech; $8,819,000 over 1,580 at Lunenburg, both counts the Census file’s own."
+    },
+    {
+     "closes": "DESE’s Chapter 70 foundation budget for each district, by enrolment category",
+     "figures": {
+      "n": {
+       "text": "18",
+       "unit": "towns",
+       "value": 18
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "9-12",
+      "PK-12",
+      "Chapter 70"
+     ],
+     "text": "Monty Tech’s pupils are in grades 9-12, from 18 towns; Lunenburg’s, PK-12. Why the formula pays them differently is not taken apart here."
+    }
+   ],
+   "rests_on": [
+    "mt-c70pp",
+    "lu-c70pp",
+    "mt-pupils",
+    "lu-pupils"
+   ],
+   "text": "Chapter 70 aid was $12,829 a pupil at Monty Tech, 2.3 times Lunenburg schools’ $5,582."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$10,226",
+     "unit": "dollars a pupil",
+     "value": 10226
+    },
+    "b": {
+     "text": "$8,397",
+     "unit": "dollars a pupil",
+     "value": 8397
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "n": {
+       "text": "18",
+       "unit": "towns",
+       "value": 18
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Monty Tech’s figure is what its 18 member towns are assessed, Lunenburg among them; Lunenburg’s is the Town of Lunenburg’s appropriation."
+    }
+   ],
+   "rests_on": [
+    "lu-townpp",
+    "mt-townpp"
+   ],
+   "text": "Town budgets paid $10,226 a pupil at Lunenburg schools and $8,397 at Monty Tech."
+  },
+  {
+   "figures": {
+    "a": {
      "text": "7.7%",
      "unit": "",
      "value": 7.7
     },
-    "y": {
-     "text": "FY2024",
-     "unit": "fiscal year",
-     "value": 2024
+    "b": {
+     "text": "7.2%",
+     "unit": "",
+     "value": 7.2
     }
    },
    "literals": [],
@@ -135,23 +436,6 @@
       "Chapter 70"
      ],
      "text": "“Grants” is our grouping: federal money and the state’s program grants, less school-meal money, which is paid per meal by formula. Chapter 70, transport aid and pensions the state pays are left out."
-    },
-    {
-     "figures": {
-      "a": {
-       "text": "$1,280,000",
-       "unit": "",
-       "value": 1280000
-      },
-      "p": {
-       "text": "10.7%",
-       "unit": "",
-       "value": 10.7
-      }
-     },
-     "kind": "measured",
-     "literals": [],
-     "text": "Monty Tech’s school-meal money was $1,280,000, federal and state; counted as a grant, it would raise the share to 10.7%."
     },
     {
      "figures": {
@@ -169,54 +453,7 @@
      "kind": "measured",
      "literals": [],
      "text": "Monty Tech’s own chart shows $3,681,900 in grant awards for FY2025: awards in a later year, not revenue received."
-    }
-   ],
-   "rests_on": [
-    "mt-gd",
-    "mt-total",
-    "mt-gdp"
-   ],
-   "text": "Grants and donations brought Monty Tech $3,318,000 of $43,131,000 in FY2024, 7.7%."
-  },
-  {
-   "figures": {
-    "n": {
-     "text": "9",
-     "unit": "times",
-     "value": 9
     },
-    "p": {
-     "text": "70.3%",
-     "unit": "",
-     "value": 70.3
-    }
-   },
-   "literals": [
-    "Chapter 70"
-   ],
-   "rests_on": [
-    "mt-st",
-    "mt-stp"
-   ],
-   "text": "State Chapter 70 aid and member town budgets brought 70.3%, over 9 times as much."
-  },
-  {
-   "figures": {
-    "a": {
-     "text": "7.2%",
-     "unit": "",
-     "value": 7.2
-    },
-    "b": {
-     "text": "80.4%",
-     "unit": "",
-     "value": 80.4
-    }
-   },
-   "literals": [
-    "Chapter 70"
-   ],
-   "notes": [
     {
      "closes": "Lunenburg’s DESE End of Year Financial Report, its revenue and food service schedules",
      "figures": {
@@ -232,12 +469,12 @@
     }
    ],
    "rests_on": [
-    "lu-gd",
+    "mt-gdp",
     "lu-gdp",
-    "lu-stp",
+    "mt-total",
     "lu-total"
    ],
-   "text": "Lunenburg’s schools took 7.2% from grants and donations; Chapter 70 and the town budget, 80.4%."
+   "text": "Grants and donations were 7.7% of Monty Tech’s revenue and 7.2% of Lunenburg schools’."
   },
   {
    "figures": {
@@ -298,80 +535,6 @@
    }
   },
   {
-   "id": "mt-gd",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "of it grants and donations (our grouping)"
-   },
-   "value": {
-    "text": "$3,318,000",
-    "unit": "",
-    "value": 3318000
-   }
-  },
-  {
-   "id": "mt-gdp",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "share from grants and donations"
-   },
-   "value": {
-    "text": "7.7%",
-    "unit": "",
-    "value": 7.7
-   }
-  },
-  {
-   "id": "mt-st",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [
-     "Chapter 70"
-    ],
-    "text": "Chapter 70 aid plus member town budgets"
-   },
-   "value": {
-    "text": "$30,310,000",
-    "unit": "",
-    "value": 30310000
-   }
-  },
-  {
-   "id": "mt-stp",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [
-     "Chapter 70"
-    ],
-    "text": "share from Chapter 70 and town budgets"
-   },
-   "value": {
-    "text": "70.3%",
-    "unit": "",
-    "value": 70.3
-   }
-  },
-  {
-   "id": "mt-don",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "private gifts to Monty Tech"
-   },
-   "value": {
-    "text": "$6,000",
-    "unit": "",
-    "value": 6000
-   }
-  },
-  {
    "id": "lu-total",
    "kind": "published",
    "label": {
@@ -392,17 +555,111 @@
    }
   },
   {
-   "id": "lu-gd",
+   "id": "mt-pupils",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "9-12",
+     "fall 2023"
+    ],
+    "text": "Monty Tech pupils, grades 9-12, fall 2023"
+   },
+   "value": {
+    "text": "1,428",
+    "unit": "pupils",
+    "value": 1428
+   }
+  },
+  {
+   "id": "lu-pupils",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "PK-12",
+     "fall 2023"
+    ],
+    "text": "Lunenburg schools pupils, PK-12, fall 2023"
+   },
+   "value": {
+    "text": "1,580",
+    "unit": "pupils",
+    "value": 1580
+   }
+  },
+  {
+   "id": "mt-c70pp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 aid a pupil, Monty Tech"
+   },
+   "value": {
+    "text": "$12,829",
+    "unit": "dollars a pupil",
+    "value": 12829
+   }
+  },
+  {
+   "id": "lu-c70pp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "Chapter 70"
+    ],
+    "text": "Chapter 70 aid a pupil, Lunenburg schools"
+   },
+   "value": {
+    "text": "$5,582",
+    "unit": "dollars a pupil",
+    "value": 5582
+   }
+  },
+  {
+   "id": "mt-townpp",
    "kind": "published",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "of it grants and donations"
+    "text": "member town budgets a pupil, Monty Tech"
    },
    "value": {
-    "text": "$2,221,000",
+    "text": "$8,397",
+    "unit": "dollars a pupil",
+    "value": 8397
+   }
+  },
+  {
+   "id": "lu-townpp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "town budget a pupil, Lunenburg schools"
+   },
+   "value": {
+    "text": "$10,226",
+    "unit": "dollars a pupil",
+    "value": 10226
+   }
+  },
+  {
+   "id": "mt-gdp",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "Monty Tech revenue from grants and donations (our grouping)"
+   },
+   "value": {
+    "text": "7.7%",
     "unit": "",
-    "value": 2221000
+    "value": 7.7
    }
   },
   {
@@ -411,7 +668,7 @@
    "label": {
     "figures": {},
     "literals": [],
-    "text": "share from grants and donations"
+    "text": "Lunenburg schools revenue from grants and donations"
    },
    "value": {
     "text": "7.2%",
@@ -420,19 +677,17 @@
    }
   },
   {
-   "id": "lu-stp",
+   "id": "mt-don",
    "kind": "published",
    "label": {
     "figures": {},
-    "literals": [
-     "Chapter 70"
-    ],
-    "text": "share from Chapter 70 and the town budget"
+    "literals": [],
+    "text": "private gifts to Monty Tech"
    },
    "value": {
-    "text": "80.4%",
+    "text": "$6,000",
     "unit": "",
-    "value": 80.4
+    "value": 6000
    }
   },
   {
@@ -448,43 +703,29 @@
     "unit": "",
     "value": 137000
    }
-  },
-  {
-   "id": "awards",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "grant awards Monty Tech charts, a later year"
-   },
-   "value": {
-    "text": "$3,681,900",
-    "unit": "",
-    "value": 3681900
-   }
   }
  ],
  "finding": {
   "figures": {
    "a": {
-    "text": "52.0%",
+    "text": "$43,131,000",
     "unit": "",
-    "value": 52.0
+    "value": 43131000
    },
    "b": {
-    "text": "27.8%",
+    "text": "$31,051,000",
     "unit": "",
-    "value": 27.8
+    "value": 31051000
    },
    "c": {
-    "text": "28.4%",
-    "unit": "",
-    "value": 28.4
+    "text": "$30,204",
+    "unit": "dollars a pupil",
+    "value": 30204
    },
    "d": {
-    "text": "42.5%",
-    "unit": "",
-    "value": 42.5
+    "text": "$19,653",
+    "unit": "dollars a pupil",
+    "value": 19653
    },
    "y": {
     "text": "FY2024",
@@ -492,10 +733,8 @@
     "value": 2024
    }
   },
-  "literals": [
-   "Chapter 70"
-  ],
-  "text": "Towns paid 52.0% of Lunenburg schools’ FY2024 revenue, 27.8% of Monty Tech’s; Chapter 70, 28.4% and 42.5%."
+  "literals": [],
+  "text": "Monty Tech took in $43,131,000 in FY2024 and Lunenburg schools $31,051,000: $30,204 and $19,653 a pupil."
  },
  "full_report": {
   "href": "",
@@ -528,6 +767,10 @@
   {
    "href": "/docs/town-budget/docs/a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf",
    "label": "Monty Tech, FY24 budget for public hearing, 8 March 2023, staffing profile — a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf"
+  },
+  {
+   "href": "/docs/data/dese-radar.csv",
+   "label": "Lunenburg Budget Project — dese-radar.csv (DESE’s FTE pupil counts, from RADAR)"
   }
  ],
  "table": {
@@ -536,18 +779,14 @@
    {
     "columns": [
      "Monty Tech",
-     "Share",
-     "Lunenburg schools",
-     "Share"
+     "Lunenburg schools"
     ],
-    "key": "sources",
+    "key": "dollars",
     "kinds": [
-     "ledger",
-     "ledger",
      "ledger",
      "ledger"
     ],
-    "label": "Census Bureau, in dollars",
+    "label": "Dollars",
     "lines": [
      "Paid by other school systems (D11): the form asks for “payments received from other school systems, both within and outside the state, for tuition, transportation, and other services”, and tells a regional district to report here any assessments paid by independent school districts.",
      "Tuition (A07): the Census item is “Tuition fees from pupils, parents, and other private sources”, one of the form’s student-fee lines. Tuition another school system pays is D11, not this.",
@@ -558,86 +797,68 @@
      "Refunds and other local revenue (U97): “receipts from refunds of prior year expenditures and other revenue from local sources not provided for elsewhere”. The survey does not split the two.",
      "What Monty Tech’s tuition (A07), payments from other school systems (D11) and refunds and other revenue (U97) were for is not in any document held here. Its FY2024 budget book lists Practical Nursing and Continuing and Post Graduate Studies staff among those paid from revolving or special-revenue funds, so those programmes exist; it prints no revenue for them. Closes: Monty Tech’s audited financial statements, revenue by fund."
     ],
-    "note": "Town budgets: for Lunenburg, the Town of Lunenburg’s appropriation; for Monty Tech, what its member towns are assessed. The file reports thousands of dollars, shown here times 1,000; each total is checked against its items. The rows after town budgets are the rest of local revenue, one row per Census item; an item neither district reported is left out.",
+    "note": "Census Bureau. Town budgets: for Lunenburg, the Town of Lunenburg’s appropriation; for Monty Tech, what its member towns are assessed. The file reports thousands of dollars, shown here times 1,000; each total is checked against its items. The rows after town budgets are the rest of local revenue, one row per Census item; an item neither district reported is left out.",
     "rows": [
      {
       "cells": [
        "$3,312,000",
-       "7.7%",
-       "$2,084,000",
-       "6.7%"
+       "$2,084,000"
       ],
       "label": "Federal and state grants, less meals"
      },
      {
       "cells": [
        "$6,000",
-       "under 0.1%",
-       "$137,000",
-       "0.4%"
+       "$137,000"
       ],
       "label": "Private gifts"
      },
      {
       "cells": [
        "$1,280,000",
-       "3.0%",
-       "$0",
-       "0.0%"
+       "$0"
       ],
       "label": "School-meal money, federal and state"
      },
      {
       "cells": [
        "$18,319,000",
-       "42.5%",
-       "$8,819,000",
-       "28.4%"
+       "$8,819,000"
       ],
       "label": "State Chapter 70 aid"
      },
      {
       "cells": [
        "$2,196,000",
-       "5.1%",
-       "$427,000",
-       "1.4%"
+       "$427,000"
       ],
       "label": "State transportation aid"
      },
      {
       "cells": [
        "$2,889,000",
-       "6.7%",
-       "$3,162,000",
-       "10.2%"
+       "$3,162,000"
       ],
       "label": "Pensions the state pays on its behalf"
      },
      {
       "cells": [
        "$0",
-       "0.0%",
-       "$0",
-       "0.0%"
+       "$0"
       ],
       "label": "State capital and debt aid"
      },
      {
       "cells": [
        "$11,991,000",
-       "27.8%",
-       "$16,157,000",
-       "52.0%"
+       "$16,157,000"
       ],
       "label": "Town budgets, mostly property tax"
      },
      {
       "cells": [
        "$527,000",
-       "1.2%",
-       "$149,000",
-       "0.5%"
+       "$149,000"
       ],
       "code": "Census D11",
       "label": "Paid by other school systems"
@@ -645,9 +866,7 @@
      {
       "cells": [
        "$1,313,000",
-       "3.0%",
-       "$0",
-       "0.0%"
+       "$0"
       ],
       "code": "Census A07",
       "label": "Tuition paid by students, parents or private sources"
@@ -655,9 +874,7 @@
      {
       "cells": [
        "$111,000",
-       "0.3%",
-       "$0",
-       "0.0%"
+       "$0"
       ],
       "code": "Census A09",
       "label": "School meal sales"
@@ -665,9 +882,7 @@
      {
       "cells": [
        "$12,000",
-       "under 0.1%",
-       "$0",
-       "0.0%"
+       "$0"
       ],
       "code": "Census A13",
       "label": "Student activity receipts"
@@ -675,9 +890,7 @@
      {
       "cells": [
        "$0",
-       "0.0%",
-       "$80,000",
-       "0.3%"
+       "$80,000"
       ],
       "code": "Census A40",
       "label": "Rent and use of school buildings and land"
@@ -685,9 +898,7 @@
      {
       "cells": [
        "$275,000",
-       "0.6%",
-       "$0",
-       "0.0%"
+       "$0"
       ],
       "code": "Census U22",
       "label": "Interest earned"
@@ -695,9 +906,7 @@
      {
       "cells": [
        "$900,000",
-       "2.1%",
-       "$36,000",
-       "0.1%"
+       "$36,000"
       ],
       "code": "Census U97",
       "label": "Refunds and other local revenue"
@@ -705,8 +914,294 @@
      {
       "cells": [
        "$43,131,000",
+       "$31,051,000"
+      ],
+      "label": "Total revenue"
+     }
+    ]
+   },
+   {
+    "columns": [
+     "Monty Tech",
+     "Lunenburg schools"
+    ],
+    "key": "pupil",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Per pupil",
+    "lines": [
+     "Paid by other school systems (D11): the form asks for “payments received from other school systems, both within and outside the state, for tuition, transportation, and other services”, and tells a regional district to report here any assessments paid by independent school districts.",
+     "Tuition (A07): the Census item is “Tuition fees from pupils, parents, and other private sources”, one of the form’s student-fee lines. Tuition another school system pays is D11, not this.",
+     "School meal sales (A09): what students, teachers and adults paid for breakfasts, lunches and milk, “not from state or federal funds”; those are the school-meal row above.",
+     "Student activity receipts (A13): gross receipts of district activity funds “under control of the custodian of district funds”.",
+     "Rent (A40): the Census item is “Rents and royalties”; the form asks for revenue “from allowing temporary possession or granting rights to the use of school district buildings, land, or other properties”.",
+     "Interest earned (U22): “interest earnings from all funds held by the school system”, every fund, not the general fund alone.",
+     "Refunds and other local revenue (U97): “receipts from refunds of prior year expenditures and other revenue from local sources not provided for elsewhere”. The survey does not split the two.",
+     "What Monty Tech’s tuition (A07), payments from other school systems (D11) and refunds and other revenue (U97) were for is not in any document held here. Its FY2024 budget book lists Practical Nursing and Continuing and Post Graduate Studies staff among those paid from revolving or special-revenue funds, so those programmes exist; it prints no revenue for them. Closes: Monty Tech’s audited financial statements, revenue by fund."
+    ],
+    "note": "Each row over the district’s fall 2023 enrolment in the same Census file: 1,428 at Monty Tech (grades 9-12), 1,580 at Lunenburg (PK-12). Rounded to the dollar so the rows add to the total.",
+    "rows": [
+     {
+      "cells": [
+       "$2,319",
+       "$1,319"
+      ],
+      "label": "Federal and state grants, less meals"
+     },
+     {
+      "cells": [
+       "$4",
+       "$87"
+      ],
+      "label": "Private gifts"
+     },
+     {
+      "cells": [
+       "$896",
+       "$0"
+      ],
+      "label": "School-meal money, federal and state"
+     },
+     {
+      "cells": [
+       "$12,829",
+       "$5,582"
+      ],
+      "label": "State Chapter 70 aid"
+     },
+     {
+      "cells": [
+       "$1,538",
+       "$270"
+      ],
+      "label": "State transportation aid"
+     },
+     {
+      "cells": [
+       "$2,023",
+       "$2,001"
+      ],
+      "label": "Pensions the state pays on its behalf"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0"
+      ],
+      "label": "State capital and debt aid"
+     },
+     {
+      "cells": [
+       "$8,397",
+       "$10,226"
+      ],
+      "label": "Town budgets, mostly property tax"
+     },
+     {
+      "cells": [
+       "$369",
+       "$94"
+      ],
+      "code": "Census D11",
+      "label": "Paid by other school systems"
+     },
+     {
+      "cells": [
+       "$920",
+       "$0"
+      ],
+      "code": "Census A07",
+      "label": "Tuition paid by students, parents or private sources"
+     },
+     {
+      "cells": [
+       "$78",
+       "$0"
+      ],
+      "code": "Census A09",
+      "label": "School meal sales"
+     },
+     {
+      "cells": [
+       "$8",
+       "$0"
+      ],
+      "code": "Census A13",
+      "label": "Student activity receipts"
+     },
+     {
+      "cells": [
+       "$0",
+       "$51"
+      ],
+      "code": "Census A40",
+      "label": "Rent and use of school buildings and land"
+     },
+     {
+      "cells": [
+       "$193",
+       "$0"
+      ],
+      "code": "Census U22",
+      "label": "Interest earned"
+     },
+     {
+      "cells": [
+       "$630",
+       "$23"
+      ],
+      "code": "Census U97",
+      "label": "Refunds and other local revenue"
+     },
+     {
+      "cells": [
+       "$30,204",
+       "$19,653"
+      ],
+      "label": "Total revenue"
+     }
+    ]
+   },
+   {
+    "columns": [
+     "Monty Tech",
+     "Lunenburg schools"
+    ],
+    "key": "share",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Shares",
+    "lines": [
+     "Paid by other school systems (D11): the form asks for “payments received from other school systems, both within and outside the state, for tuition, transportation, and other services”, and tells a regional district to report here any assessments paid by independent school districts.",
+     "Tuition (A07): the Census item is “Tuition fees from pupils, parents, and other private sources”, one of the form’s student-fee lines. Tuition another school system pays is D11, not this.",
+     "School meal sales (A09): what students, teachers and adults paid for breakfasts, lunches and milk, “not from state or federal funds”; those are the school-meal row above.",
+     "Student activity receipts (A13): gross receipts of district activity funds “under control of the custodian of district funds”.",
+     "Rent (A40): the Census item is “Rents and royalties”; the form asks for revenue “from allowing temporary possession or granting rights to the use of school district buildings, land, or other properties”.",
+     "Interest earned (U22): “interest earnings from all funds held by the school system”, every fund, not the general fund alone.",
+     "Refunds and other local revenue (U97): “receipts from refunds of prior year expenditures and other revenue from local sources not provided for elsewhere”. The survey does not split the two.",
+     "What Monty Tech’s tuition (A07), payments from other school systems (D11) and refunds and other revenue (U97) were for is not in any document held here. Its FY2024 budget book lists Practical Nursing and Continuing and Post Graduate Studies staff among those paid from revolving or special-revenue funds, so those programmes exist; it prints no revenue for them. Closes: Monty Tech’s audited financial statements, revenue by fund."
+    ],
+    "note": "Each row as a share of the district’s total revenue.",
+    "rows": [
+     {
+      "cells": [
+       "7.7%",
+       "6.7%"
+      ],
+      "label": "Federal and state grants, less meals"
+     },
+     {
+      "cells": [
+       "under 0.1%",
+       "0.4%"
+      ],
+      "label": "Private gifts"
+     },
+     {
+      "cells": [
+       "3.0%",
+       "0.0%"
+      ],
+      "label": "School-meal money, federal and state"
+     },
+     {
+      "cells": [
+       "42.5%",
+       "28.4%"
+      ],
+      "label": "State Chapter 70 aid"
+     },
+     {
+      "cells": [
+       "5.1%",
+       "1.4%"
+      ],
+      "label": "State transportation aid"
+     },
+     {
+      "cells": [
+       "6.7%",
+       "10.2%"
+      ],
+      "label": "Pensions the state pays on its behalf"
+     },
+     {
+      "cells": [
+       "0.0%",
+       "0.0%"
+      ],
+      "label": "State capital and debt aid"
+     },
+     {
+      "cells": [
+       "27.8%",
+       "52.0%"
+      ],
+      "label": "Town budgets, mostly property tax"
+     },
+     {
+      "cells": [
+       "1.2%",
+       "0.5%"
+      ],
+      "code": "Census D11",
+      "label": "Paid by other school systems"
+     },
+     {
+      "cells": [
+       "3.0%",
+       "0.0%"
+      ],
+      "code": "Census A07",
+      "label": "Tuition paid by students, parents or private sources"
+     },
+     {
+      "cells": [
+       "0.3%",
+       "0.0%"
+      ],
+      "code": "Census A09",
+      "label": "School meal sales"
+     },
+     {
+      "cells": [
+       "under 0.1%",
+       "0.0%"
+      ],
+      "code": "Census A13",
+      "label": "Student activity receipts"
+     },
+     {
+      "cells": [
+       "0.0%",
+       "0.3%"
+      ],
+      "code": "Census A40",
+      "label": "Rent and use of school buildings and land"
+     },
+     {
+      "cells": [
+       "0.6%",
+       "0.0%"
+      ],
+      "code": "Census U22",
+      "label": "Interest earned"
+     },
+     {
+      "cells": [
+       "2.1%",
+       "0.1%"
+      ],
+      "code": "Census U97",
+      "label": "Refunds and other local revenue"
+     },
+     {
+      "cells": [
        "100.0%",
-       "$31,051,000",
        "100.0%"
       ],
       "label": "Total revenue"
