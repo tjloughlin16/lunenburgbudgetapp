@@ -83,6 +83,13 @@ def sources():
                              '— census-elsec24.xlsx', href='/docs/' + CR.KEY),
         'census-doc': dict(label='U.S. Census Bureau, the same survey’s documentation and data '
                                  'dictionary — census-school24doc.docx', href='/docs/' + CR.DOC_KEY),
+        'census-f33': dict(label='U.S. Census Bureau, Form F-33 and its instructions, survey year '
+                                 '2024, page 8, Part I Section A — census-f33_2024_508.pdf',
+                           href='/docs/' + CR.F33_KEY),
+        'mt-book': dict(label='Monty Tech, FY24 budget for public hearing, 8 March 2023, staffing '
+                              'profile — a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf',
+                        href='/docs/town-budget/docs/a103-fy24-monty-tech-budget-for-public-hearing-'
+                             'march-08-2023-pdf.pdf'),
         'mt-deck': dict(label='Monty Tech, FY27 Budget Presentation, page 5, “Update of Annual '
                               'Grant Awards” — 3583-fy27-monty-tech-budget-presentation-pdf.pdf',
                         href='/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf'),
@@ -90,6 +97,109 @@ def sources():
                            'version — printing-version.xlsx, sheet eoy25, lines 3524-3529',
                      href=EOYR),
     }
+
+
+# "OTHER LOCAL", ITEMISED. TJ, 23 October 2026, on the single row this replaced ("Other local:
+# tuition, fees, interest, other"): *"that's a huge number and not to know what it represents is
+# hard... like what is A07 Tuition?! U97?!"* Each item now has its own row, named in plain words
+# with the Census code beside it in small type. The names and the meanings are census_revenue's,
+# read from the Census Bureau's own data dictionary and F-33 instructions -- not typed here.
+REVENUE_HEAD = (('Federal and state grants, less meals', 'grants'),
+                ('Private gifts', 'donations'),
+                ('School-meal money, federal and state', 'meals'),
+                ('State Chapter 70 aid', 'ch70'),
+                ('State transportation aid', 'transport'),
+                ('Pensions the state pays on its behalf', 'on_behalf'),
+                ('State capital and debt aid', 'capital_aid'),
+                ('Town budgets, mostly property tax', 'towns'))
+
+# One line under the table per item a reader cannot read off its name, each the Census form's own
+# instruction for that line. The quoted words are asserted verbatim against the form here, as
+# census_revenue asserts the instruction it holds; the rest of each line is ours.
+ITEM_LINES = {
+    'D11': ('Paid by other school systems (D11): the form asks for “payments received from other '
+            'school systems, both within and outside the state, for tuition, transportation, and '
+            'other services”, and tells a regional district to report here any assessments paid by '
+            'independent school districts.', 'payments received from other school systems, both within and '
+            'outside the state, for tuition, transportation, and other services'),
+    'A07': ('Tuition (A07): the Census item is “Tuition fees from pupils, parents, and other private '
+            'sources”, one of the form’s student-fee lines. Tuition another school system pays is '
+            'D11, not this.', None),
+    'A09': ('School meal sales (A09): what students, teachers and adults paid for breakfasts, '
+            'lunches and milk, “not from state or federal funds”; those are the school-meal row '
+            'above.', 'not from state or federal funds'),
+    'A13': ('Student activity receipts (A13): gross receipts of district activity funds “under '
+            'control of the custodian of district funds”.',
+            'under control of the custodian of district funds'),
+    'U22': ('Interest earned (U22): “interest earnings from all funds held by the school system”, '
+            'every fund, not the general fund alone.',
+            'interest earnings from all funds held by the school system'),
+    'U97': ('Refunds and other local revenue (U97): “receipts from refunds of prior year expenditures and other '
+            'revenue from local sources not provided for elsewhere”. The survey does not split the '
+            'two.', 'receipts from refunds of prior year expenditures and other revenue from local '
+            'sources not provided for elsewhere'),
+    'A40': ('Rent (A40): the Census item is “Rents and royalties”; the form asks for revenue “from '
+            'allowing temporary possession or granting rights to the use of school district '
+            'buildings, land, or other properties”.', 'from allowing temporary possession or '
+            'granting rights to the use of school district buildings, land, or other properties'),
+}
+
+# WHAT MONTY TECH'S ITEMS WERE FOR is not in any document held here (searched 23 October 2026:
+# both Monty Tech budget books, the meeting archive). The FY2024 hearing book's staffing profile
+# lists Practical Nursing and Continuing and Post Graduate Studies under "Salaries from
+# Revolving/Special Revenue Funds" (town-budget/text/a103-...-march-08-2023-pdf.txt, lines
+# 459-463), so the programmes exist; it prints no revenue for them. Registered in money-gaps.csv.
+ITEM_GAP = ('What Monty Tech’s tuition (A07), payments from other school systems (D11) and refunds '
+            'and other revenue (U97) were for is not in any document held here. Its FY2024 budget '
+            'book lists Practical Nursing and Continuing and Post Graduate Studies staff among those '
+            'paid from revolving or special-revenue funds, so those programmes exist; it prints no '
+            'revenue for them. Closes: Monty Tech’s audited financial statements, revenue by fund.')
+ITEM_GAP_QUOTE = (os.path.join(ROOT, 'sources', 'town-budget', 'text',
+                               'a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.txt'),
+                  ('Salaries from Revolving/Special Revenue Funds', 'Practical Nursing',
+                   'Continuing and Post Graduate Studies'))
+
+
+def item_codes(mt, lu):
+    """The other-local items either district reported, in the survey's own order."""
+    return [c for c in CR.OTHER_LOCAL if mt['other_local_items'][c] or lu['other_local_items'][c]]
+
+
+def revenue_rows(mt, lu, sh, SP):
+    items = CR.local_items()
+    codes = item_codes(mt, lu)
+    for d in (mt, lu):
+        if sum(d['other_local_items'][c] for c in codes) != d['other_local']:
+            fail('%s: the itemised rows do not add to the other local revenue they replace'
+                 % d['name'])
+        if sum(d[k] for _, k in REVENUE_HEAD) + d['other_local'] != d['total']:
+            fail('%s: the table\'s rows do not add to total revenue' % d['name'])
+    pct = lambda d, v: SP(100.0 * v / d['total'])
+    rows = [dict(label=lab, cells=[C.usd(mt[k]), SP(sh(mt, k)), C.usd(lu[k]), SP(sh(lu, k))])
+            for lab, k in REVENUE_HEAD]
+    for c in codes:
+        a, b = mt['other_local_items'][c], lu['other_local_items'][c]
+        rows.append(dict(label=items[c]['name'], code='Census %s' % c,
+                         cells=[C.usd(a), pct(mt, a), C.usd(b), pct(lu, b)]))
+    rows.append(dict(label='Total revenue', cells=[C.usd(mt['total']), SP(sh(mt, 'total')),
+                                                   C.usd(lu['total']), SP(sh(lu, 'total'))]))
+    return rows
+
+
+def revenue_lines(mt, lu):
+    form = ' '.join(open(CR.F33_TEXT, encoding='utf-8').read().replace('\u2013', '-').split())
+    out = []
+    for c in item_codes(mt, lu):
+        if c not in ITEM_LINES:
+            fail('Census item %s has money in it and no line saying what it is' % c)
+        line, quote = ITEM_LINES[c]
+        if quote and quote not in form:
+            fail('the words quoted for %s are not in the F-33, verbatim' % c)
+        out.append(line)
+    held = open(ITEM_GAP_QUOTE[0], encoding='utf-8').read()
+    if not all(q in held for q in ITEM_GAP_QUOTE[1]):
+        fail('the Monty Tech FY2024 budget book no longer reads as the gap line says')
+    return out + [ITEM_GAP]
 
 
 def build():
@@ -454,22 +564,14 @@ def build():
             key='sources', label='Census Bureau, in dollars',
             columns=['Monty Tech', 'Share', 'Lunenburg schools', 'Share'],
             kinds=['ledger'] * 4,
-            rows=[dict(label=lab, cells=[C.usd(mt[k]), SP(sh(mt, k)), C.usd(lu[k]),
-                                         SP(sh(lu, k))])
-                  for lab, k in (('Federal and state grants, less meals', 'grants'),
-                                 ('Private gifts', 'donations'),
-                                 ('School-meal money, federal and state', 'meals'),
-                                 ('State Chapter 70 aid', 'ch70'),
-                                 ('State transportation aid', 'transport'),
-                                 ('Pensions the state pays on its behalf', 'on_behalf'),
-                                 ('State capital and debt aid', 'capital_aid'),
-                                 ('Town budgets, mostly property tax', 'towns'),
-                                 ('Other local: tuition, fees, interest, other', 'other_local'),
-                                 ('Total revenue', 'total'))],
+            rows=revenue_rows(mt, lu, sh, SP),
             note='Town budgets: for Lunenburg, the Town of Lunenburg’s appropriation; for Monty '
                  'Tech, what its member towns are assessed. The file reports thousands of dollars, '
-                 'shown here times 1,000; each total is checked against its items.')]),
-        sources=S('census', 'census-doc', 'mt-deck'),
+                 'shown here times 1,000; each total is checked against its items. The rows after '
+                 'town budgets are the rest of local revenue, one row per Census item; an item '
+                 'neither district reported is left out.',
+            lines=revenue_lines(mt, lu))]),
+        sources=S('census', 'census-doc', 'census-f33', 'mt-deck', 'mt-book'),
         finding_figures={'a': P(mgd), 'y': F(CR.FY), 'b': P(mst)},
         finding_allow=('Chapter 70',))
 

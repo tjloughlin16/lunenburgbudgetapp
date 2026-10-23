@@ -350,6 +350,15 @@ GROUPS = [
              'What every column means, and the notes by state. The Massachusetts notes say how '
              'DESE accounts for construction financed by bonds: in the year the principal is '
              'repaid, not the year it is built.'),
+            ('state-census/census-f33_2024_508.pdf',
+             'Form F-33 and its instructions, survey year 2024', 2,
+             'The questionnaire each state answers for every school system, with its own '
+             'instructions. Part I, Section A says what each local revenue line holds -- '
+             'tuition, payments from other school systems, interest, miscellaneous -- and is '
+             'where /monty-tech/monty-tech-revenue takes each item\u2019s meaning from. The '
+             'form prints the item codes apart from the line labels, so the code-to-name '
+             'pairing is read from the technical documentation above, never off the form. '
+             'Fetched by scripts/fetch_census_f33.py.'),
         ]},
     {
         'section': 'theirs', 'id': 'census', 'origin': 'us-census',
@@ -4526,7 +4535,11 @@ SKIP_DIRS = {'meetings', 'contracts/txt', 'district-budget',
              # of them, annual-report-reads.csv, is what anything downstream reads.
              'data/annual-report-reads',
              # The site's own brand assets: the favicon and the Facebook cover, with a README.
-             'data/brand'}
+             'data/brand',
+             # Our text of the Census Bureau's F-33 form and technical documentation, written
+             # by scripts/fetch_census_f33.py and read by census_revenue.py for each local
+             # item's name and meaning. A reading of two documents catalogued below.
+             'state-census/text'}
 # Bookkeeping about the R2 archive rather than anything read for a figure:
 # `archive-manifest.csv` is every object with its sha256, and `archive-push-state.csv`
 # records what `sync_archive.py` has uploaded and read back. Both are described on the
@@ -5022,6 +5035,18 @@ SOURCE_URLS = {
     'district-budget/docs/lhs-athletics-faq.pdf':
         'https://tts-livesite.rschooltoday.com/sites/lunenburghs.rschoolteams.com/'
         'files/files/Private_User/jbunnell/Frequently%20Asked%20Questions.pdf',
+
+    # The Census Bureau's school-finance files for survey year 2024. All three verified 23
+    # October 2026 by downloading from these addresses and matching the sha256 to our copy.
+    'state-census/census-elsec24.xlsx':
+        'https://www2.census.gov/programs-surveys/school-finances/tables/2024/'
+        'secondary-education-finance/elsec24.xlsx',
+    'state-census/census-school24doc.docx':
+        'https://www2.census.gov/programs-surveys/school-finances/tables/2024/'
+        'secondary-education-finance/school24doc.docx',
+    'state-census/census-f33_2024_508.pdf':
+        'https://www2.census.gov/programs-surveys/school-finances/technical-documentation/'
+        'questionnaires/2024/f33_2024_508.pdf',
 
     # --- Recorded earlier ------------------------------------------------------------
     'state-dese/district-spending-categories.csv':

@@ -3,6 +3,8 @@
 Survey of School System Finances -- Lunenburg's schools and Monty Tech, side by side.
 
     python3 scripts/census_revenue.py        # print both districts, every source, in dollars
+    python3 scripts/census_revenue.py --items         # every local item: code, form line, name
+    python3 scripts/census_revenue.py --verify-page   # the revenue page's item rows, recomputed
 
 WHY. TJ, 16 October 2026: people in town say *"monty tech makes most of its money by grants and
 fundraising"* -- *"we need to show that, and compare lunenburg's grants and how they compare."*
@@ -21,6 +23,18 @@ where a state award such as a Clean Energy Center grant lands; it leaves out Cha
 transportation reimbursement and the benefits the state pays on a district's behalf, none of
 which anybody applies for. `donations` is the survey's own item, U50, private contributions.
 
+WHAT "OTHER LOCAL" HOLDS. Local revenue less the town budgets (T02, D23) and private gifts (U50)
+was one row on the page until TJ, 23 October 2026: *"that's a huge number and not to know what it
+represents is hard... like what is A07 Tuition?! U97?!"* It is now its items, each named. The
+NAME of each code is read at run time from the survey's own data dictionary (the TLOCREV entry of
+the technical documentation, where each code sits beside its name), and its MEANING from the
+FY2024 form F-33's instructions, Part I Section A, page 8 -- both census.gov's own files, landed
+by scripts/fetch_census_f33.py. The form prints its codes in a column apart from its line labels,
+so a code is never paired with a line by position on the form (CLAUDE.md 13b): the line is found
+by the item's NAME, which the form and the dictionary both print. Each quoted instruction is
+asserted to appear verbatim in the form's text, and an item with money in it and no entry in
+LOCAL_ITEMS refuses the build.
+
 SCHOOL MEALS ARE NOT GRANTS. Federal school-meal money (C25, Child Nutrition Act) and the state's
 meal programs (C10) are paid per meal served, by formula. They once sat inside `grants` and were
 a quarter of Monty Tech's "grants and donations"; they are now `meals`, a band of their own, and
@@ -29,6 +43,7 @@ a quarter of Monty Tech's "grants and donations"; they are now `meals`, a band o
 import hashlib
 import json
 import os
+import re
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -48,10 +63,158 @@ LOCAL = ('T02 T06 T09 T15 T40 T99 D11 D23 A07 A08 A09 A11 A13 A15 A20 A40 '
 STATE_PROGRAMS = ('C04', 'C05', 'C06', 'C07', 'C08', 'C09', 'C10', 'C13', 'C24', 'C35', 'C39')
 MEALS = ('C25', 'C10')   # federal and state school-meal programs, both the survey's own items
 TOWNS = ('T02', 'D23')   # a parent town's appropriation; a regional district's member towns
+# Local revenue that is neither the town budgets nor private gifts: the page's itemised rows.
+OTHER_LOCAL = tuple(c for c in LOCAL if c not in TOWNS + ('U50',))
+
+F33_KEY = 'state-census/census-f33_2024_508.pdf'
+F33_TEXT = os.path.join(ROOT, 'sources', 'state-census', 'text', 'census-f33_2024_508.txt')
+DOC_TEXT = os.path.join(ROOT, 'sources', 'state-census', 'text', 'census-school24doc.txt')
+
+# EVERY LOCAL ITEM: code -> (the page's plain name, the form's line, the instruction, quoted).
+#
+# The Census NAME is not typed here: label() reads it off the data dictionary,
+# census-school24doc.txt lines 558-599 (the TLOCREV entry: code, then its name). The FORM LINE
+# is where the F-33 prints that same name -- page 1, text lines 41-58, and page 2, lines 92-95 --
+# and form_line_names() checks every one of those pairings by name. The QUOTE is the form's own
+# instruction for that line, page 8, "Part I - REVENUE, Section A - FROM LOCAL SOURCES", text
+# lines 509-552 (A15's is Part IX, page 10, line 836). quote_ok() asserts each is verbatim.
+LOCAL_ITEMS = {
+    # Lines 1-5, text lines 511-517.
+    'T06': ('Property taxes the district levies', 1,
+            'Independent school districts should report their tax receipts here.'),
+    'T09': ('Sales taxes the district levies', 2,
+            'Lines 2 through 5 will be applicable to only a relatively small number of districts.'),
+    'T15': ('Utility taxes the district levies', 3,
+            'Lines 2 through 5 will be applicable to only a relatively small number of districts.'),
+    'T40': ('Income taxes the district levies', 4,
+            'Lines 2 through 5 will be applicable to only a relatively small number of districts.'),
+    'T99': ('Other taxes the district levies', 5,
+            'Taxes reported here should be those which the district has the power to levy.'),
+    # Line 6, text lines 518-520.
+    'T02': ('The parent town’s appropriation', 6,
+            'Dependent school systems should report their tax receipts and any other amounts '
+            'appropriated by their parent government on line 6'),
+    # Line 7, text lines 521-526.
+    'D23': ('Member towns’ assessments', 7,
+            'Regional school systems should report assessments received from cities and towns here.'),
+    # Line 8, text lines 527-532.
+    'D11': ('Paid by other school systems', 8,
+            'Report payments received from other school systems, both within and outside the '
+            'state, for tuition, transportation, and other services (such as purchasing and data '
+            'processing). Regional school systems should report assessments received from '
+            'independent school districts here.'),
+    # Lines 9-14, text lines 533-541.
+    'A07': ('Tuition paid by students, parents or private sources', 9,
+            'Report all student fees on these lines.'),
+    'A08': ('Bus fees paid by students, parents or private sources', 10,
+            'Report all student fees on these lines.'),
+    'A11': ('Textbook sales and rentals', 11,
+            'Report all student fees on these lines.'),
+    'A09': ('School meal sales', 12,
+            'Gross receipts from sale of school breakfasts, lunches, and milk (from students, '
+            'teachers, adults, but not from state or federal funds) should be entered on line 12.'),
+    'A13': ('Student activity receipts', 13,
+            'Gross district activity receipts for those funds under control of the custodian of '
+            'district funds should be included on line 13.'),
+    'A20': ('Other sales and services', 14,
+            'Revenues from other sales and services, including community services activities '
+            'should be entered on line 14.'),
+    # Part IX, line 1 -- a special processing item, not a Section A line. Text line 836.
+    'A15': ('Student fees that cannot be split by kind', None,
+            'Report here any item in your chart of accounts that cannot be crosswalked into the '
+            'items identified in Part I, Lines 9 (tuition), 10 (transportation), 11 (textbook '
+            'sales), 12 (school food service sales), or 13 (district activities).'),
+    # Lines 15-20, text lines 542-552.
+    'A40': ('Rent and use of school buildings and land', 15,
+            'Include revenues received from allowing temporary possession or granting rights to '
+            'the use of school district buildings, land, or other properties on line 15.'),
+    'U11': ('Sale of property', 16,
+            'Report amounts received from sale of real property, buildings (and improvements to '
+            'them), land easements, rights-of-way, and other capital assets (buses, automobiles, '
+            'etc.) on line 16.'),
+    'U22': ('Interest earned', 17,
+            'Include interest earnings from all funds held by the school system on line 17.'),
+    'U30': ('Fines', 18,
+            'Report revenues from penalties imposed for violations of law on line 18.'),
+    'U50': ('Private gifts', 19,
+            'Report gifts of cash or securities from private individuals or organizations on '
+            'line 19.'),
+    'U97': ('Refunds and other local revenue', 20,
+            'Report receipts from refunds of prior year expenditures and other revenue from local '
+            'sources not provided for elsewhere on line 20.'),
+}
 
 
 def fail(msg):
     raise SystemExit('census_revenue: ' + msg)
+
+
+def _norm(t):
+    """For comparing two printings of one name: case, spacing, the form's slashed zero, a
+    trailing plural and the form's own NCES account numbers in brackets are not the name."""
+    t = re.sub(r'\([^)]*\)?$', '', t.replace('Ø', '0')).lower()
+    return ' '.join(re.sub(r'(?<=x)es$|s$', '', w) for w in re.findall(r'[a-z]+', t))
+
+
+def _flat(t):
+    return ' '.join(t.replace('\u2013', '-').split())
+
+
+def labels():
+    """{code: name} for every local item, off the data dictionary's TLOCREV entry -- the
+    survey's own pairing of a code with its name."""
+    if not os.path.exists(DOC_TEXT):
+        fail('%s is not here; run scripts/fetch_census_f33.py' % os.path.relpath(DOC_TEXT, ROOT))
+    lines = [l.strip() for l in open(DOC_TEXT, encoding='utf-8')]
+    starts = [i for i, l in enumerate(lines) if l == 'TLOCREV' and i + 2 < len(lines)
+              and lines[i + 2].startswith('(sum of')]
+    if len(starts) != 1:
+        fail('the data dictionary has %d TLOCREV entries with an item list, not one' % len(starts))
+    out, i = {}, starts[0] + 3
+    while i + 1 < len(lines) and re.fullmatch(r'[A-Z]\d\d', lines[i]):
+        out[lines[i]] = lines[i + 1]
+        i += 2
+    if tuple(out) != tuple(LOCAL):
+        fail('the data dictionary lists local items %s; this file sums %s' % (list(out), list(LOCAL)))
+    return out
+
+
+def form_line_names():
+    """{line number: name} for Part I Section A of the F-33, off the form's own page 1-2 list."""
+    if not os.path.exists(F33_TEXT):
+        fail('%s is not here; run scripts/fetch_census_f33.py' % os.path.relpath(F33_TEXT, ROOT))
+    out, on = {}, False
+    for l in open(F33_TEXT, encoding='utf-8'):
+        l = l.strip()
+        if l.startswith('Section A') and 'FROM LOCAL SOURCES' in l:
+            on = True
+            continue
+        if l.startswith('Section B'):
+            on = False
+        m = on and re.match(r'(\d+)\. (.+)$', l)
+        if m:
+            out[int(m.group(1))] = m.group(2)
+    if sorted(out) != list(range(1, 21)):
+        fail('the F-33 lists local lines %s, not 1 to 20' % sorted(out))
+    return out
+
+
+def local_items():
+    """{code: dict(code, census, name, line, meaning)} for every local item, every pairing and
+    every quotation checked against the two Census documents."""
+    lab, form = labels(), form_line_names()
+    text = _flat(open(F33_TEXT, encoding='utf-8').read())
+    out = {}
+    for code in LOCAL:
+        if code not in LOCAL_ITEMS:
+            fail('local item %s (%s) has no entry in LOCAL_ITEMS' % (code, lab[code]))
+        name, line, quote = LOCAL_ITEMS[code]
+        if line is not None and _norm(form[line]) != _norm(lab[code]):
+            fail('F-33 line %d is %r; the dictionary names %s %r' % (line, form[line], code, lab[code]))
+        if _flat(quote) not in text:
+            fail('the F-33 instruction quoted for %s is not in the form, verbatim' % code)
+        out[code] = dict(code=code, census=lab[code], name=name, line=line, meaning=quote)
+    return out
 
 
 def _rows():
@@ -86,6 +249,7 @@ def revenue():
     """{'lunenburg': {...}, 'monty': {...}}, every figure in DOLLARS (the file's thousands times
     1,000), with the groupings the Monty Tech revenue page draws."""
     rows = _rows()
+    named = local_items()
     out = {}
     for nid, who in IDS.items():
         x = rows.get(nid)
@@ -109,6 +273,9 @@ def revenue():
         if d['ch70'] + d['transport'] + d['on_behalf'] + d['capital_aid'] + d['state_programs'] != d['state']:
             fail('%s %s: the state groupings do not add to TSTREV' % (KEY, nid))
         d['other_local'] = d['local'] - d['towns'] - d['donations']
+        d['other_local_items'] = {c: k(x[c] or 0) for c in OTHER_LOCAL}
+        if sum(d['other_local_items'].values()) != d['other_local']:
+            fail('%s %s: the other local items do not add to local less towns and gifts' % (KEY, nid))
         d['grants'] = d['federal'] + d['state_programs'] - d['meals']
         d['grants_and_donations'] = d['grants'] + d['donations']
         d['state_and_towns'] = d['ch70'] + d['towns']
@@ -118,10 +285,57 @@ def revenue():
                  d['on_behalf'], d['capital_aid'], d['towns'], d['other_local'])
         if sum(parts) != d['total']:
             fail('%s %s: the page\'s nine parts do not add to TOTALREV' % (KEY, nid))
+        unnamed = [c for c, v in d['other_local_items'].items() if v and c not in named]
+        if unnamed:
+            fail('%s %s: money in local items with no name: %s' % (KEY, nid, unnamed))
         out[who] = d
     return out
 
 
+def verify_page():
+    """Every itemised row on /monty-tech/monty-tech-revenue, recomputed by a different route: the
+    workbook read afresh (no cache), by column NAME, and the published cells compared as text.
+    And the rows together foot to the single "other local" figure they replaced."""
+    import openpyxl
+    page = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'topics',
+                                       'monty-tech-revenue.json'), encoding='utf-8'))
+    ws = openpyxl.load_workbook(PATH, read_only=True).worksheets[0]
+    it = ws.iter_rows(values_only=True)
+    head = list(next(it))
+    raw = {}
+    for r in it:
+        x = dict(zip(head, r))
+        if x['NCESID'] in IDS:
+            raw[IDS[x['NCESID']]] = x
+    rows = [r for r in page['table']['views'][0]['rows'] if r.get('code')]
+    bad = []
+    usd = lambda v: '${:,}'.format(v)
+    for col, who in ((0, 'monty'), (2, 'lunenburg')):
+        x = raw[who]
+        for r in rows:
+            c = r['code'].split()[-1]
+            if r['cells'][col] != usd((x[c] or 0) * 1000):
+                bad.append('%s %s: page %s, file %s' % (who, c, r['cells'][col], usd((x[c] or 0) * 1000)))
+        old = (x['TLOCREV'] - (x['T02'] or 0) - (x['D23'] or 0) - (x['U50'] or 0)) * 1000
+        shown = sum(int(r['cells'][col].strip('$').replace(',', '')) for r in rows)
+        if shown != old:
+            bad.append('%s: the item rows sum to %s, the other local figure is %s' % (who, usd(shown), usd(old)))
+        missing = [c for c in OTHER_LOCAL if x[c] and 'Census ' + c not in [r['code'] for r in rows]]
+        if missing:
+            bad.append('%s: items with money and no row: %s' % (who, missing))
+    if bad:
+        fail('the revenue page does not match the Census file:\n  ' + '\n  '.join(bad))
+    print('census_revenue: %d itemised rows match the file, and foot to other local for both '
+          'districts' % len(rows))
+
+
 if __name__ == '__main__':
+    if sys.argv[1:] == ['--verify-page']:
+        verify_page()
+        sys.exit(0)
+    if sys.argv[1:] == ['--items']:
+        for c, it in local_items().items():
+            print('%s  line %-4s %-52s %s' % (c, it['line'] or 'IX.1', it['census'], it['name']))
+        sys.exit(0)
     json.dump(revenue(), sys.stdout, indent=1)
     print()

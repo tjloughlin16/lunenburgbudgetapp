@@ -508,8 +508,16 @@
    "label": "U.S. Census Bureau, the same survey’s documentation and data dictionary — census-school24doc.docx"
   },
   {
+   "href": "/docs/state-census/census-f33_2024_508.pdf",
+   "label": "U.S. Census Bureau, Form F-33 and its instructions, survey year 2024, page 8, Part I Section A — census-f33_2024_508.pdf"
+  },
+  {
    "href": "/docs/town-budget/docs/3583-fy27-monty-tech-budget-presentation-pdf.pdf",
    "label": "Monty Tech, FY27 Budget Presentation, page 5, “Update of Annual Grant Awards” — 3583-fy27-monty-tech-budget-presentation-pdf.pdf"
+  },
+  {
+   "href": "/docs/town-budget/docs/a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf",
+   "label": "Monty Tech, FY24 budget for public hearing, 8 March 2023, staffing profile — a103-fy24-monty-tech-budget-for-public-hearing-march-08-2023-pdf.pdf"
   }
  ],
  "table": {
@@ -530,7 +538,17 @@
      "ledger"
     ],
     "label": "Census Bureau, in dollars",
-    "note": "Town budgets: for Lunenburg, the Town of Lunenburg’s appropriation; for Monty Tech, what its member towns are assessed. The file reports thousands of dollars, shown here times 1,000; each total is checked against its items.",
+    "lines": [
+     "Paid by other school systems (D11): the form asks for “payments received from other school systems, both within and outside the state, for tuition, transportation, and other services”, and tells a regional district to report here any assessments paid by independent school districts.",
+     "Tuition (A07): the Census item is “Tuition fees from pupils, parents, and other private sources”, one of the form’s student-fee lines. Tuition another school system pays is D11, not this.",
+     "School meal sales (A09): what students, teachers and adults paid for breakfasts, lunches and milk, “not from state or federal funds”; those are the school-meal row above.",
+     "Student activity receipts (A13): gross receipts of district activity funds “under control of the custodian of district funds”.",
+     "Rent (A40): the Census item is “Rents and royalties”; the form asks for revenue “from allowing temporary possession or granting rights to the use of school district buildings, land, or other properties”.",
+     "Interest earned (U22): “interest earnings from all funds held by the school system”, every fund, not the general fund alone.",
+     "Refunds and other local revenue (U97): “receipts from refunds of prior year expenditures and other revenue from local sources not provided for elsewhere”. The survey does not split the two.",
+     "What Monty Tech’s tuition (A07), payments from other school systems (D11) and refunds and other revenue (U97) were for is not in any document held here. Its FY2024 budget book lists Practical Nursing and Continuing and Post Graduate Studies staff among those paid from revolving or special-revenue funds, so those programmes exist; it prints no revenue for them. Closes: Monty Tech’s audited financial statements, revenue by fund."
+    ],
+    "note": "Town budgets: for Lunenburg, the Town of Lunenburg’s appropriation; for Monty Tech, what its member towns are assessed. The file reports thousands of dollars, shown here times 1,000; each total is checked against its items. The rows after town budgets are the rest of local revenue, one row per Census item; an item neither district reported is left out.",
     "rows": [
      {
       "cells": [
@@ -606,12 +624,73 @@
      },
      {
       "cells": [
-       "$3,138,000",
-       "7.3%",
-       "$265,000",
-       "0.9%"
+       "$527,000",
+       "1.2%",
+       "$149,000",
+       "0.5%"
       ],
-      "label": "Other local: tuition, fees, interest, other"
+      "code": "Census D11",
+      "label": "Paid by other school systems"
+     },
+     {
+      "cells": [
+       "$1,313,000",
+       "3.0%",
+       "$0",
+       "0.0%"
+      ],
+      "code": "Census A07",
+      "label": "Tuition paid by students, parents or private sources"
+     },
+     {
+      "cells": [
+       "$111,000",
+       "0.3%",
+       "$0",
+       "0.0%"
+      ],
+      "code": "Census A09",
+      "label": "School meal sales"
+     },
+     {
+      "cells": [
+       "$12,000",
+       "under 0.1%",
+       "$0",
+       "0.0%"
+      ],
+      "code": "Census A13",
+      "label": "Student activity receipts"
+     },
+     {
+      "cells": [
+       "$0",
+       "0.0%",
+       "$80,000",
+       "0.3%"
+      ],
+      "code": "Census A40",
+      "label": "Rent and use of school buildings and land"
+     },
+     {
+      "cells": [
+       "$275,000",
+       "0.6%",
+       "$0",
+       "0.0%"
+      ],
+      "code": "Census U22",
+      "label": "Interest earned"
+     },
+     {
+      "cells": [
+       "$900,000",
+       "2.1%",
+       "$36,000",
+       "0.1%"
+      ],
+      "code": "Census U97",
+      "label": "Refunds and other local revenue"
      },
      {
       "cells": [

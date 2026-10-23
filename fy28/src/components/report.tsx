@@ -1107,9 +1107,13 @@ export function Ladder({ l, evidence }: { l: LadderData; evidence?: Record<strin
 export type FigureTableView = {
   key: string; label: string; columns: string[]; kinds: ('ledger' | 'stated')[]
   total_col: number; note: string
+  /** `lines`: further notes, one paragraph each, under `note` -- a definition per row a reader
+   *  cannot read off its name (the Census items on /monty-tech/monty-tech-revenue). */
+  lines?: string[]
   /** `marks`: per cell, 1 or -1 where the generator found a change of at least its threshold
-   *  against the cell it compares with (scripts/topic.py, change_marks); drawn as an arrow. */
-  rows: { label: string; cells: (string | null)[]; marks?: (1 | -1 | null)[] }[]
+   *  against the cell it compares with (scripts/topic.py, change_marks); drawn as an arrow.
+   *  `code`: the publisher's own code for the row, set in small type under its plain name. */
+  rows: { label: string; code?: string; cells: (string | null)[]; marks?: (1 | -1 | null)[] }[]
 }
 export type FigureTableData = { caption: string; views: FigureTableView[] }
 
@@ -1161,7 +1165,9 @@ export function FigureTable({ t }: { t: FigureTableData }) {
               return (
                 <tr key={r.label} style={{ background: bg }}>
                   <th scope="row" className="sticky left-0 text-left font-semibold px-2.5 py-1.5"
-                    style={{ background: bg, color: 'var(--text-primary)' }}>{r.label}</th>
+                    style={{ background: bg, color: 'var(--text-primary)' }}>{r.label}
+                    {r.code ? <span className="block text-[11px] font-normal" style={{ color: 'var(--text-muted)' }}>
+                      {r.code}</span> : null}</th>
                   {r.cells.map((c, i) => (
                     <td key={i} className="text-right px-2.5 py-1.5 whitespace-nowrap"
                       style={{
@@ -1186,6 +1192,9 @@ export function FigureTable({ t }: { t: FigureTableData }) {
         </table>
       </div>
       <p className="text-[12.5px] leading-snug mt-1.5" style={{ color: 'var(--text-muted)' }}>{v.note}</p>
+      {(v.lines ?? []).map((l, i) => (
+        <p key={i} className="text-[12.5px] leading-snug mt-1" style={{ color: 'var(--text-muted)' }}>{l}</p>
+      ))}
     </figure>
   )
 }
