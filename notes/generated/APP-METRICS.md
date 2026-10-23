@@ -4,7 +4,7 @@
 
 ## What the town and the state published — and we hold
 
-- **16,605 documents** — PDFs, spreadsheets, Word files and slide decks — 44,301 files and 10.45 GB in all, each with its address, its publisher’s filename and a checksum.
+- **16,648 documents** — PDFs, spreadsheets, Word files and slide decks — 44,398 files and 10.46 GB in all, each with its address, its publisher’s filename and a checksum.
 - **16 kinds of source**: budget-workbooks, contracts, correspondence, district-budget, federal-bls, meetings, peer-districts, state-census, state-dese, state-dls, state-law, state-massgis, town-annual-reports, town-budget, town-ledgers, town-supplementary.
 - **12,252 meeting documents** from **51 town boards**: 4,761 sets of minutes and 7,491 agendas, 2009-01-05 to 2026-10-23 — **18 years**.
 - **5,345 annual town report appropriation lines**, FY2011–FY2025, read page by page.
@@ -15,20 +15,20 @@
 ## What we made from it
 
 - **4,541 hours of meeting recordings transcribed** — 2,699 meetings, 189.2 days of audio end to end, 2012-05-02 to 2026-10-22. Machine captions, ours, a finding aid: they locate a moment; they do not settle what was said.
-- **1611 meetings with our own minutes** written from those recordings — **5145 substantive votes** and **772 transfers** logged, each linked to the second of the video.
-- **A database of 225,557 rows in 128 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
+- **1615 meetings with our own minutes** written from those recordings — **5167 substantive votes** and **776 transfers** logged, each linked to the second of the video.
+- **A database of 225,617 rows in 128 tables**, rebuilt from the documents on every run and queryable by anyone at `/api/query`.
 - **6 analyses** and **256 published conclusions**, every figure recomputed by a script before it ships.
 - **193 cuts announced in writing** traced across budget cycles; **71 rates** in the projection, each backtested against the district’s later budgets.
-- **292 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
-- **400 pages** on the site.
+- **306 registered gaps** — questions the published record cannot answer, each with the one document that would close it.
+- **402 pages** on the site.
 
 ## Where it came from
 
-- `www.lunenburgma.gov` — 12,665 files
+- `www.lunenburgma.gov` — 12,694 files
 - `massago.hylandcloud.com` — 5,799 files
 - `drive.google.com` — 1,545 files
-- `www.doe.mass.edu` — 352 files
-- `docs.google.com` — 52 files
+- `www.doe.mass.edu` — 391 files
+- `docs.google.com` — 64 files
 - `profiles.doe.mass.edu` — 46 files
 
 Everything above is checkable: every document is downloadable at its own address, every figure carries its source, and the whole database is one file anybody can open.
