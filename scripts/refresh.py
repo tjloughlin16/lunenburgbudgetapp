@@ -1196,13 +1196,24 @@ def run(a, notes, ctx):
     # does not wait a week); a page lands only when its bytes changed, through `ingest`, so no
     # separate backup step. Network only, about 75 requests at one a second -- no model call.
     if not a.dry_run:
-        if directory_due(DESE_GRANTS, a.as_of):
+        grants_due = directory_due(DESE_GRANTS, a.as_of)
+        if grants_due:
             r = py('fetch_dese_grants.py', '--if-changed', check=False)
             if r.returncode:
                 notes.append('DESE grants: the weekly fetch exited %d -- retried tomorrow; run '
                              'python3 scripts/fetch_dese_grants.py --dry-run' % r.returncode)
         py('extract_dese_grants.py', check=False)
         py('build_grants_open.py', check=False)
+        # 3h'. DESE'S COMPETITIVE AWARD LISTS -- who WON each grant -- on the same weekly beat.
+        # DESE keeps only the current and previous year's lists up: FY2025's link already
+        # answers with its error page, so a list we have not saved before it goes is gone
+        # (23 October 2026). land_version never lands the same bytes twice.
+        if grants_due:
+            r = py('fetch_dese_awards.py', check=False)
+            if r.returncode:
+                notes.append('DESE awards: the weekly fetch exited %d -- run '
+                             'python3 scripts/fetch_dese_awards.py --dry-run' % r.returncode)
+            py('extract_dese_awards.py', check=False)
 
     # 3i. DESE'S ENTITLEMENT ALLOCATIONS, WEEKLY: every district, every fund code, FY2017 to
     # the coming year. DESE revises these pages in place (each carries `Last Updated`), so the
