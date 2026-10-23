@@ -77,6 +77,27 @@ export const isInline = (c: unknown): c is InlineChart =>
   !!c && typeof c === 'object' && 'type' in (c as Record<string, unknown>)
 
 const COLOURS = [1, 2, 3, 4, 5].map(i => `var(--thread-${i})`)
+
+/* LUNENBURG IS ALWAYS BLUE (TJ, 23 October 2026: "lunenburg should ALWAYS be blue in these
+   charts"). A track, row or part named for the town takes --thread-2 wherever it appears, and
+   the other tracks skip blue so nothing else is mistaken for it. One rule, applied once here
+   on the way in, so no generator has to remember it. */
+const US = /^Lunenburg\b/
+const US_COLOUR = 1
+const isUs = (name: string) => US.test(name)
+const hlColour = (label: string) => COLOURS[isUs(label) ? US_COLOUR : 0]
+
+function withUs(c: SeriesChart): SeriesChart {
+  if (!c.series.some(t => isUs(t.name))) return c
+  let next = 0
+  return { ...c, series: c.series.map(t => {
+    if (t.colour != null) return t
+    if (isUs(t.name)) return { ...t, colour: US_COLOUR }
+    if (next === US_COLOUR) next++
+    return { ...t, colour: next++ }
+  }) }
+}
+const colourOf = (s: { colour?: number }, i: number) => COLOURS[(s.colour ?? i) % COLOURS.length]
 const BASIS_TAG: Record<Basis, string | null> = {
   published: null, stated: 'not from the books', estimate: 'our estimate',
 }
@@ -156,7 +177,7 @@ function SeriesTip({ active, label, c, payload, offset = 0 }: TipProps & { paylo
       {c.series.map((s, i) => row[`s${i}`] === undefined ? null : (
         <p key={s.name} className="flex items-center justify-between gap-5 tnum">
           <span className="inline-flex items-center gap-1.5" style={{ color: 'var(--text-secondary)' }}>
-            <span className="inline-block w-2.5 h-2.5 rounded-[2px]" style={{ background: COLOURS[(i + offset) % COLOURS.length] }} />
+            <span className="inline-block w-2.5 h-2.5 rounded-[2px]" style={{ background: COLOURS[(s.colour ?? i + offset) % COLOURS.length] }} />
             {s.name}{BASIS_TAG[s.basis] ? ` (${BASIS_TAG[s.basis]})` : ''}</span>
           <span className="font-semibold" style={{ color: row[`s${i}`] == null ? 'var(--text-muted)' : undefined }}>
             {shown(s.texts[at])}</span>
@@ -390,7 +411,7 @@ function Series({ c }: { c: SeriesChart }) {
     <Frame title={c.title} basis={common} note={c.note} label={seriesLabel(c)}>
       {c.series.length > 1 ? (
         <div className="flex flex-wrap gap-x-4 gap-y-1 mb-2">
-          {c.series.map((s, i) => <Key key={s.name} colour={COLOURS[i]} name={s.name} basis={s.basis}
+          {c.series.map((s, i) => <Key key={s.name} colour={colourOf(s, i)} name={s.name} basis={s.basis}
             mark={s.mark} tag={!common} />)}
         </div>
       ) : null}
@@ -414,17 +435,17 @@ function Series({ c }: { c: SeriesChart }) {
             {c.series.map((s, i) => {
               const est = s.basis === 'estimate'
               return s.mark === 'bar' ? (
-                <Bar key={s.name} dataKey={`s${i}`} name={s.name} fill={COLOURS[i]} isAnimationActive={false}
+                <Bar key={s.name} dataKey={`s${i}`} name={s.name} fill={colourOf(s, i)} isAnimationActive={false}
                   stackId={c.stacked ? 'stack' : undefined}
                   fillOpacity={est ? 0.15 : s.basis === 'stated' ? 0.6 : 1}
-                  stroke={est ? COLOURS[i] : undefined} strokeDasharray={est ? '4 3' : undefined}
+                  stroke={est ? colourOf(s, i) : undefined} strokeDasharray={est ? '4 3' : undefined}
                   radius={c.stacked ? undefined : [3, 3, 0, 0]}
                   /* A ZERO IS NOT A GAP. A bar of zero would draw nothing, exactly as a year
                      nobody printed does; a two-pixel stub tells them apart. Stacks skip it,
                      because a stacked track is empty by design where another stands. */
                   minPointSize={c.stacked ? undefined : 2} />
               ) : (
-                <Line key={s.name} dataKey={`s${i}`} name={s.name} stroke={COLOURS[i]} strokeWidth={2.25}
+                <Line key={s.name} dataKey={`s${i}`} name={s.name} stroke={colourOf(s, i)} strokeWidth={2.25}
                   strokeDasharray={est ? '6 4' : undefined} dot={c.x.length <= 12 ? { r: 2.5 } : false}
                   connectNulls={false} isAnimationActive={false} type="linear" />
               )
@@ -551,7 +572,7 @@ function Ranking({ c }: { c: RankingChart }) {
                     {v == null || v === 0 ? null : (
                       <span className="absolute top-0 bottom-0" style={{
                         left: v < 0 ? `${zero - w}%` : `${zero}%`, width: `${w}%`,
-                        background: est ? 'transparent' : hl || !c.highlight.length ? COLOURS[v < 0 ? 1 : 0] : 'var(--axis)',
+                        background: est ? 'transparent' : (hl || !c.highlight.length) && isUs(r.label) ? COLOURS[US_COLOUR] : hl || !c.highlight.length ? COLOURS[v < 0 ? 1 : 0] : 'var(--axis)',
                         opacity: c.basis === 'stated' ? 0.65 : 1,
                         border: est ? `1.5px dashed ${COLOURS[v < 0 ? 1 : 0]}` : undefined,
                       }} />
@@ -563,7 +584,7 @@ function Ranking({ c }: { c: RankingChart }) {
                 {vals(r).map((v, i) => v == null || v <= 0 ? null : (
                   <span key={i} style={{
                     width: `${(100 * v) / max}%`,
-                    background: est ? 'transparent' : c.stack ? COLOURS[i] : hl || !c.highlight.length ? COLOURS[0] : 'var(--axis)',
+                    background: est ? 'transparent' : c.stack ? COLOURS[i] : hl || !c.highlight.length ? hlColour(r.label) : 'var(--axis)',
                     opacity: c.basis === 'stated' ? 0.65 : c.stack && c.highlight.length && !hl ? 0.45 : 1,
                     border: est ? `1.5px dashed ${COLOURS[c.stack ? i : 0]}` : undefined,
                   }} />
@@ -587,7 +608,7 @@ function Parts({ c }: { c: PartsChart }) {
   /* With a highlight, only that part is coloured; the rest alternate two neutral shades so
      neighbouring segments stay distinct without competing with it. */
   const fill = (i: number) => !c.highlight ? COLOURS[i]
-    : c.parts[i].label === c.highlight ? COLOURS[0]
+    : c.parts[i].label === c.highlight ? hlColour(c.parts[i].label)
     : `color-mix(in srgb, var(--axis) ${i % 2 ? 45 : 75}%, transparent)`
   const est = c.basis === 'estimate'
   const label = `${c.title}. One whole of ${c.total}, in parts: `
@@ -691,7 +712,7 @@ function Picture({ c }: { c: ImageChart }) {
 
 export function InlineTopicChart({ c }: { c: InlineChart }) {
   switch (c.type) {
-    case 'series': return <Series c={c} />
+    case 'series': return <Series c={withUs(c)} />
     case 'ranking': return <Ranking c={c} />
     case 'parts': return <Parts c={c} />
     case 'bridge': return <Bridge c={c} />
