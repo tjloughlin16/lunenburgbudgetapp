@@ -539,7 +539,7 @@ def bridge(title, start, steps, end, unit, basis='published', note=None, note_fi
 
 
 def presence(title, columns, groups, unit, subject=0, basis='published', note=None,
-             note_figures=None, note_allow=(), spans=None):
+             note_figures=None, note_allow=(), spans=None, related=()):
     """A PRESENCE MATRIX -- the standard answer when a Venn diagram has too many sets: one row
     per thing, one column per holder, a dot where the holder has it. Read across a row: who
     has it. Down a column: what one holder has. TJ, 23 October 2026, on the grants page:
@@ -550,6 +550,9 @@ def presence(title, columns, groups, unit, subject=0, basis='published', note=No
     groups: [(group label, [(row label, [cell or None per column])])] -- a cell is the text the
       dot shows on hover (an amount, the years), or None where the holder does not have it.
       Rows are drawn in the order given; sort them before passing.
+    related: indices of columns drawn BESIDE the subject because they serve it -- Monty Tech,
+      Lunenburg's vocational district -- in a neutral colour, and never counted: a row's count
+      is the columns that are neither the subject nor related.
     spans: optional [(label, n)] naming contiguous runs of columns -- "Bordering", "Alike in
       make-up" -- drawn as a band over the column labels. They must cover every column.
     Each row's `count` -- how many columns OTHER than the subject hold it -- and its text are
@@ -559,6 +562,7 @@ def presence(title, columns, groups, unit, subject=0, basis='published', note=No
     return _checked(dict(type='presence', title=' '.join(title.split()), unit=unit, basis=basis,
                          columns=list(columns), subject=subject, groups=gs,
                          spans=[dict(label=l, n=n) for l, n in spans] if spans else None,
+                         **({'related': sorted(related)} if related else {}),
                          note=_note(note, note_figures, note_allow, CHART_NOTE_MAX, 'chart note')))
 
 
@@ -658,9 +662,10 @@ def _texts(c):
             dict(p, text=fmt(u, p['value'], d), share=_C.pct(100.0 * p['value'] / whole, 0))
             for p in c['parts']])
     if t == 'presence':
-        k, others = c['subject'], len(c['columns']) - 1
+        k, rel = c['subject'], set(c.get('related') or ())
+        others = len(c['columns']) - 1 - len(rel)
         def one(r):
-            n = sum(1 for i, v in enumerate(r['cells']) if v is not None and i != k)
+            n = sum(1 for i, v in enumerate(r['cells']) if v is not None and i != k and i not in rel)
             return dict(label=r['label'], cells=r['cells'], count=n,
                         count_text='%s of %s' % (_C.num(n), _C.num(others)),
                         lacks=r['cells'][k] is None)
@@ -798,6 +803,9 @@ def _inline_bad(c, where, texts=True):
             bad += _label_bad(x, where, 'column label')
         if not (isinstance(c['subject'], int) and 0 <= c['subject'] < len(cols)):
             bad.append('%s: subject %r is not a column' % (where, c['subject']))
+        for i in c.get('related') or ():
+            if not (isinstance(i, int) and 0 <= i < len(cols)) or i == c['subject']:
+                bad.append('%s: related column %r is not a column other than the subject' % (where, i))
         if c.get('spans') and sum(x['n'] for x in c['spans']) != len(cols):
             bad.append('%s: the column spans cover %d columns of %d' % (where, sum(x['n'] for x in c['spans']), len(cols)))
         for x in c.get('spans') or []:

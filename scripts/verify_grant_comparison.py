@@ -75,6 +75,18 @@ def competitive(code, comp, lun, names):
     by_label = {}
     for c, n in want_names.items():
         by_label[n.replace(' School District', '')] = c
+    # Monty Tech: drawn beside Lunenburg, in no count. Its code is read off the allocation CSV
+    # by DESE's own label, here as in the generator, but by a separate read.
+    mts = {r['district_code'] for r in csv.DictReader(open(os.path.join(
+        ROOT, 'sources', 'data', 'dese-entitlement-allocations.csv'), encoding='utf-8'))
+        if r['district'] == 'Montachusett Regional Vocational Technical'}
+    if len(mts) != 1:
+        return ['Monty Tech does not resolve to one code: %s' % sorted(mts)], {}
+    mt = mts.pop()
+    by_label['Monty Tech'] = mt
+    if ch.get('related') != [ch['columns'].index('Monty Tech')]:
+        return ['Monty Tech is not the one related (uncounted) column'], {}
+    counted = set(comp)
     if set(by_label) != set(col.values()):
         return ['presence columns %s are not the comparison districts and Lunenburg'
                 % sorted(set(col.values()) ^ set(by_label))], {}
@@ -92,12 +104,17 @@ def competitive(code, comp, lun, names):
             w = words(text_)
             if any(x in w.strip() for x in NOT_THE_DISTRICT):
                 continue
-            for lab, c in by_label.items():
+            for lab, c in list(by_label.items()) + [('Montachusett', mt)]:
                 if words(lab.replace('-', ' ')) in w or words(lab) in w:
                     won.setdefault(fc, {}).setdefault(c, []).append((fy, amt))
     bad = []
     comp_rows = ch['groups'][0]['rows']
     short_of = {}
+    for r in ch['groups'][0]['rows'] + ch['groups'][1]['rows']:
+        n = sum(1 for i, v in enumerate(r['cells']) if v and by_label[col[i]] in counted)
+        if r['count'] != n:
+            bad.append('presence row %r counts %d, recomputed %d without Monty Tech or Lunenburg'
+                       % (r['label'], r['count'], n))
     for r in comp_rows:
         on = {by_label[col[i]] for i, v in enumerate(r['cells']) if v}
         hit = [fc for fc in won if set(won[fc]) == on]
@@ -117,10 +134,21 @@ def competitive(code, comp, lun, names):
         if r['district_code'] and r['amount'] not in ('', '0') and 2023 <= int(r['fy']) <= 2027:
             alloc.setdefault(r['fund_code'], set()).add(r['district_code'])
     f_rows = ch['groups'][1]['rows']
-    want_f = {fc: s & (set(comp) | {lun}) for fc, s in alloc.items() if s & (set(comp) | {lun})}
+    want_f = {fc: s & (set(comp) | {lun, mt}) for fc, s in alloc.items() if s & (set(comp) | {lun})}
     page_f = [{by_label[col[i]] for i, v in enumerate(r['cells']) if v} for r in f_rows]
     if sorted(map(sorted, want_f.values())) != sorted(map(sorted, page_f)):
         bad.append('the formula rows do not match the allocation CSV, FY2023-FY2027')
+    # Monty Tech's Perkins line, in a conclusion note: years allocated and the FY2025 amount
+    perk = {}
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data',
+                                              'dese-entitlement-allocations.csv'), encoding='utf-8')):
+        if r['district_code'] == mt and r['fund_code'] == '0400' and r['amount'] not in ('', '0'):
+            perk[int(r['fy'])] = int(r['amount'])
+    yrs = [y for y in range(2023, 2028) if y in perk]
+    line = '%d of 5 years, $%s in FY2025' % (len(yrs), format(perk[2025], ','))
+    notes = [n['text'] for c in d['conclusions'] for n in c.get('notes', [])]
+    if not any(line in t for t in notes):
+        bad.append('Monty Tech Perkins note: expected %r on the page' % line)
     # the facts
     gap = [fc for fc, ws in won.items() if lun not in ws]
     per = {c: sum(1 for ws in won.values() if c in ws) for c in comp}
