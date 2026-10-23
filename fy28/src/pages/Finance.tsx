@@ -34,7 +34,10 @@ type Current = Partial<Snap> & { grade: 'evidence' | 'transcribed'; as_of?: stri
   estimate?: number; collected?: number; expense_budget?: number; revenue_estimate?: number; report?: string; reports?: string[] }
 type Hist = { fy: number; grade: 'read' | 'transcribed'; opening?: number | null; revenue?: number | null; spent?: number | null; closing?: number | null; chains?: boolean; report: string }
 type Measure = { id: string; kind: string; subkind: string; code: string; name: string; owner: string; owner_basis: string; relates_to: string
-  purpose: string; authority: string; trend_label: string; report: string; current: Current | null; history: Hist[]; notes: string[]; snapshots?: Snap[] }
+  purpose: string; authority: string; trend_label: string; report: string; current: Current | null; history: Hist[]; notes: string[]; snapshots?: Snap[]
+  // DESE's own name for a school grant fund, from the allocation pages (dese-fund-codes.csv) --
+  // the town's ledger name (`FY25 #240`) stays beside it, because that is what a resident asks for.
+  dese?: { fund_code: string; name: string; fy: string; source_url: string; display: string } }
 type Owner = { slug: string; name: string; kind: string; owns: string[]; relates: string[]; counts: Record<string, number>
   totals: { appropriation_revised: number | null; appropriation_expended: number | null; appropriation_period: number | null; special_revenue_held: number | null
     special_revenue_in: number | null; special_revenue_out: number | null; trust_held: number | null; agency_held: number | null; revenue_estimate: number | null }
@@ -59,6 +62,11 @@ const money = (n: number | null | undefined) => (n === null || n === undefined ?
 const short = (n: number) => Math.abs(n) >= 1e6 ? `$${(n / 1e6).toFixed(2)}M` : Math.abs(n) >= 1e3 ? `$${Math.round(n / 1e3)}k` : usd(n)
 const title = (s: string) => s.replace(/\s+/g, ' ').trim().toLowerCase().replace(/(^|[\s(/-])([a-z])/g, (_m, p, c) => p + c.toUpperCase())
   .replace(/\bFy(\d)/g, 'FY$1').replace(/\bCoa\b/g, 'COA').replace(/\bDpw\b/g, 'DPW').replace(/\bIt\b/g, 'IT').replace(/\bPeg\b/g, 'PEG').replace(/\bMart\b/g, 'MART').replace(/\bOpeb\b/g, 'OPEB')
+// A grant fund reads by DESE's name; everything else by the ledger's, re-cased.
+const label = (m: Measure) => m.dese ? m.dese.display : title(m.name)
+const ledgerName = (m: Measure) => m.name.replace(/\s+/g, ' ').trim()
+// Where there is no second line to carry it, the ledger's name rides along in the label.
+const labelInline = (m: Measure) => m.dese ? `${m.dese.display} — the ledger’s “${ledgerName(m)}”` : title(m.name)
 const ownerHref = (d: Payload, slug: string) => {
   const o = d.owners[slug]
   if (!o) return '/accounts'
@@ -222,7 +230,7 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
             <H2 id="related">Money on other pages that is also the {o.name}&rsquo;s</H2>
             <Body>Owned elsewhere in the ledger, spent on or received for this body.</Body>
             <ul className="mt-3 space-y-1.5 text-sm">
-              {related.map(m => <li key={m.id}><span className="tnum" style={{ color: 'var(--text-muted)' }}>{m.code}</span> {title(m.name)}{m.purpose ? <span style={{ color: 'var(--text-secondary)' }}> — {m.purpose}</span> : null} · <a className="underline" href={ownerHref(d, m.owner)}>{d.owners[m.owner]?.name ?? m.owner}</a>{m.current && m.kind === 'appropriation' ? <span className="tnum" style={{ color: 'var(--text-secondary)' }}> · {money(m.current.revised)} voted</span> : m.current && m.kind === 'revenue' ? <span className="tnum" style={{ color: 'var(--text-secondary)' }}> · {money(m.current.estimate)} estimated</span> : m.current && m.current.closing !== undefined ? <span className="tnum" style={{ color: 'var(--text-secondary)' }}> · {money(m.current.closing)} held</span> : null}</li>)}
+              {related.map(m => <li key={m.id}><span className="tnum" style={{ color: 'var(--text-muted)' }}>{m.code}</span> {labelInline(m)}{m.purpose ? <span style={{ color: 'var(--text-secondary)' }}> — {m.purpose}</span> : null} · <a className="underline" href={ownerHref(d, m.owner)}>{d.owners[m.owner]?.name ?? m.owner}</a>{m.current && m.kind === 'appropriation' ? <span className="tnum" style={{ color: 'var(--text-secondary)' }}> · {money(m.current.revised)} voted</span> : m.current && m.kind === 'revenue' ? <span className="tnum" style={{ color: 'var(--text-secondary)' }}> · {money(m.current.estimate)} estimated</span> : m.current && m.current.closing !== undefined ? <span className="tnum" style={{ color: 'var(--text-secondary)' }}> · {money(m.current.closing)} held</span> : null}</li>)}
             </ul>
           </section>
         )}
@@ -292,7 +300,8 @@ const Td = ({ children, right, tone }: { children: React.ReactNode; right?: bool
 function Name({ m }: { m: Measure }) {
   return (
     <>
-      <span className="font-semibold">{title(m.name)}</span>
+      <span className="font-semibold">{label(m)}</span>
+      {m.dese && <span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>the town’s ledger calls it “{ledgerName(m)}” · <a className="underline" href={m.dese.source_url}>DESE allocation page</a></span>}
       {(m.purpose || m.authority) && <span className="block text-[11.5px]" style={{ color: 'var(--text-muted)' }}>{m.purpose}{m.purpose && m.authority ? ' · ' : ''}{m.authority}</span>}
     </>
   )
@@ -393,7 +402,7 @@ function History({ m }: { m: Measure }) {
   const rows = [...m.history, ...(m.current ? [{ fy: m.current.fy as number, grade: m.current.grade, opening: m.current.opening, revenue: m.current.revenue, spent: m.current.spent, closing: m.current.closing, report: m.current.report ?? '', chains: undefined as boolean | undefined }] : [])].sort((a, b) => a.fy - b.fy)
   return (
     <div className="card p-3 mt-1 text-[12.5px]">
-      <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{title(m.name)}, year by year{m.trend_label ? ` — the annual reports call it “${m.trend_label}”` : ''}</p>
+      <p className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>{labelInline(m)}, year by year{m.trend_label ? ` — the annual reports call it “${m.trend_label}”` : ''}</p>
       <table className="mt-2">
         <thead><tr><Th>year</Th><Th right>opening</Th><Th right>in</Th><Th right>out</Th><Th right>held at year end</Th><Th>grade</Th></tr></thead>
         <tbody>{rows.map(r => (
@@ -469,7 +478,7 @@ function AccountsIndex({ d }: { d: Payload }) {
             <details key={o.slug} className="mt-3 card p-3">
               <summary className="cursor-pointer text-sm"><a className="underline font-semibold" href={ownerHref(d, o.slug)}>{o.name}</a> <span style={{ color: 'var(--text-muted)' }}>· {o.owns.length} account{o.owns.length === 1 ? '' : 's'}{o.totals.appropriation_revised !== null ? ` · ${short(o.totals.appropriation_revised)} voted` : ''}{o.totals.special_revenue_held !== null ? ` · ${short(o.totals.special_revenue_held)} in its funds` : ''}</span></summary>
               <ul className="mt-2 text-[12.5px] columns-1 md:columns-2 gap-6">
-                {o.owns.map(i => { const m = d.measures[i]; return <li key={i} className="break-inside-avoid"><span className="tnum" style={{ color: 'var(--text-muted)' }}>{m.code}</span> {title(m.name)} <span style={{ color: 'var(--text-muted)' }}>· {m.kind}</span></li> })}
+                {o.owns.map(i => { const m = d.measures[i]; return <li key={i} className="break-inside-avoid"><span className="tnum" style={{ color: 'var(--text-muted)' }}>{m.code}</span> {labelInline(m)} <span style={{ color: 'var(--text-muted)' }}>· {m.kind}</span></li> })}
               </ul>
             </details>
           ))}

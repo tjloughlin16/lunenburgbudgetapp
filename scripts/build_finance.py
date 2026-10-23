@@ -42,6 +42,54 @@ SR_OCR = os.path.join(ROOT, 'sources', 'data', 'special-revenue-funds.csv')
 TRUST_OCR = os.path.join(ROOT, 'sources', 'data', 'report-trust-funds.csv')
 GAPS = os.path.join(ROOT, 'sources', 'data', 'money-gaps.csv')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'finance.json')
+DESE_CODES = os.path.join(ROOT, 'sources', 'data', 'dese-fund-codes.csv')
+DESE_ALLOC = os.path.join(ROOT, 'sources', 'data', 'dese-entitlement-allocations.csv')
+LUNENBURG_DESE = '0162'
+
+
+# A SCHOOL GRANT FUND IS NAMED BY THE TOWN IN ITS OWN SHORTHAND -- `FY25 #240`, `FY23 240`,
+# `FY25 140   080524093026`, `FY21 ESSER FUND CODE 113` -- and the number in it is DESE's fund
+# code. DESE's own name for that code comes from the allocation pages we fetched
+# (sources/data/dese-fund-codes.csv, built by extract_dese_entitlements.py); nothing here
+# types a grant name. A code DESE's entitlement pages do not carry (117, 102, 719 are state
+# or competitive grants) gets NO name rather than a guessed one.
+_CODE_PATTERNS = (re.compile(r'#\s*(\d{3})\b'),
+                  re.compile(r'\bFUND CODE\s+(\d{3})\b', re.I),
+                  re.compile(r'^FY\s?\d{2}\s+(\d{3})\b', re.I))
+
+
+def dese_names():
+    """({4-digit code: row of dese-fund-codes.csv}, {(fy, code): Lunenburg's grant_name}).
+    Empty if the extract has not been built, so the page publishes what it always did."""
+    if not os.path.exists(DESE_CODES):
+        return {}, {}
+    # Only codes named off an ALLOCATION page. A code known only from the open-grants list
+    # carries that list's year in its name (`FY27 ...`), which would mislabel a FY23 fund.
+    codes = {r['fund_code']: r for r in csv.DictReader(io.open(DESE_CODES, encoding='utf-8'))
+             if r['name_fy']}
+    by_year = {}
+    if os.path.exists(DESE_ALLOC):
+        for r in csv.DictReader(io.open(DESE_ALLOC, encoding='utf-8')):
+            if r['district_code'] == LUNENBURG_DESE and r['grant_name']:
+                by_year[(r['fy'], r['fund_code'])] = (r['grant_name'], r['source_url'])
+    return codes, by_year
+
+
+def dese_grant(name, codes, by_year):
+    """DESE's name for the grant a town fund name points at, or None."""
+    code = None
+    for pat in _CODE_PATTERNS:
+        m = pat.search(name.strip())
+        if m:
+            code = m.group(1).zfill(4)
+            break
+    if not code or code not in codes:
+        return None
+    fy = re.match(r'^\s*FY\s?(\d{2})\b', name, re.I)
+    fy = '20' + fy.group(1) if fy else ''
+    dname, url = by_year.get((fy, code), (codes[code]['name'], codes[code]['source_url']))
+    return dict(fund_code=code, name=dname, fy=fy, source_url=url,
+                display='%s (DESE fund code %s)%s' % (dname, code, ', FY' + fy if fy else ''))
 
 
 def fail(msg):
@@ -240,9 +288,14 @@ def build():
     tr, tr_asof = trusts()
     read_hist, ocr_bal, tr_bal = sr_read_history(), sr_ocr_balances(), trust_ocr_balances()
 
+    dcodes, dyears = dese_names()
     measures = {}
     for r in reg:
         m = {k: r[k] for k in r}
+        if r['kind'] == 'special-revenue':
+            g = dese_grant(r['name'], dcodes, dyears)
+            if g:
+                m['dese'] = g
         cur, hist, notes = None, [], []
         if r['kind'] in ('appropriation', 'debt'):
             snaps = depts.get(r['code'], {})

@@ -784,6 +784,16 @@
    "side": "extraction",
    "what": "Can we trust the stabilization and trust fund balances enough to chart how much the town holds in reserve, and how that has moved?",
    "why": "12 of 644 rows in `report_trust_funds` are reconciled to a total the document itself prints — 418 failed that check and 214 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 17 years, 10 need real PDF geometry rather than text, 5 are messy and 2 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 17 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
+  },
+  {
+   "side": "money_out",
+   "what": "Which voted budget line the grant and revolving spending booked to no function code served",
+   "why": "MEASURED: in the school MUNIS journal most spending outside the general fund in FY2026 posts to function 0000 or to a heading (1000, 2000, 2300, 2400, 4000), not to any line the general fund budget is voted on (/school-all-funds/budget-lines-all-funds, which shows it as its own row and does not spread it). The district's End of Year Financial Report to DESE does put grant spending on function codes, so the attribution is made somewhere outside the town's ledger. This narrows `Which budget line each dollar of grant and revolving money paid for`: the ledger cannot answer it either. — closes: the district's End of Year Financial Report working papers, grant and revolving columns by function, FY2023-FY2026."
+  },
+  {
+   "side": "held",
+   "what": "What the school revolving funds and the circuit breaker held at 30 June 2026",
+   "why": "The FY2023 annual town report prints each school special revenue fund's balance carried; the school journal gives every receipt and payment since. /school-all-funds/unspent-by-fund rolls the first forward with the second, and that is OUR arithmetic, not a balance anybody printed: it assumes the journal holds every receipt (one fund's interest is booked outside the school department) and it does not take off orders still open. The FY2024 and FY2025 annual reports' special revenue schedules are held and not yet read. — closes: the Town Accountant's special revenue fund balances at 30 June 2024, 2025 and 2026, school funds."
   }
  ],
  "generated_by": "scripts/build_finance.py",
@@ -17458,6 +17468,13 @@
     "salaries": 0,
     "spent": 3240.0
    },
+   "dese": {
+    "display": "Title IV, Part A: Student Support and Academic Enrichment (DESE fund code 0309), FY2026",
+    "fund_code": "0309",
+    "fy": "2026",
+    "name": "Title IV, Part A: Student Support and Academic Enrichment",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2026&code=0309"
+   },
    "history": [],
    "id": "sr-2690",
    "kind": "special-revenue",
@@ -17523,6 +17540,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title I, Part A (DESE fund code 0305), FY2024",
+    "fund_code": "0305",
+    "fy": "2024",
+    "name": "Title I, Part A",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2024&code=0305"
    },
    "history": [],
    "id": "sr-2705",
@@ -17704,6 +17728,13 @@
     "salaries": 0,
     "spent": 0
    },
+   "dese": {
+    "display": "Title I, Part A Basic Grants to LEAs (DESE fund code 0305), FY2025",
+    "fund_code": "0305",
+    "fy": "2025",
+    "name": "Title I, Part A Basic Grants to LEAs",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2025&code=0305"
+   },
    "history": [
     {
      "chains": true,
@@ -17740,6 +17771,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title I, Part A: Improving Basic Programs (DESE fund code 0305), FY2015",
+    "fund_code": "0305",
+    "fy": "2015",
+    "name": "Title I, Part A: Improving Basic Programs",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2027&code=0305"
    },
    "history": [
     {
@@ -17784,6 +17822,13 @@
     "salaries": 0,
     "spent": 3217.32
    },
+   "dese": {
+    "display": "Title II, Part A: Supporting Effective Instruction (DESE fund code 0140), FY2024",
+    "fund_code": "0140",
+    "fy": "2024",
+    "name": "Title II, Part A: Supporting Effective Instruction",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2024&code=0140"
+   },
    "history": [
     {
      "closing": 8677.5,
@@ -17826,6 +17871,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Special Education: Program Improvement (DESE fund code 0274), FY2017",
+    "fund_code": "0274",
+    "fy": "2017",
+    "name": "Special Education: Program Improvement",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2017&code=0274"
    },
    "history": [
     {
@@ -17899,6 +17951,13 @@
     "salaries": 0,
     "spent": 0
    },
+   "dese": {
+    "display": "Title IV, Part A: Student Support and Academic Enrichment (DESE fund code 0309), FY2024",
+    "fund_code": "0309",
+    "fy": "2024",
+    "name": "Title IV, Part A: Student Support and Academic Enrichment",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2024&code=0309"
+   },
    "history": [
     {
      "closing": -18.5,
@@ -17941,6 +18000,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Student Support and Academic Enrichment (DESE fund code 0309), FY2019",
+    "fund_code": "0309",
+    "fy": "2019",
+    "name": "Student Support and Academic Enrichment",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2019&code=0309"
    },
    "history": [
     {
@@ -17985,6 +18051,13 @@
     "salaries": 0,
     "spent": 1665.9
    },
+   "dese": {
+    "display": "Individuals with Disabilities Education Act (IDEA) Federal Special Education Entitlement Grant (DESE fund code 0240), FY2023",
+    "fund_code": "0240",
+    "fy": "2023",
+    "name": "Individuals with Disabilities Education Act (IDEA) Federal Special Education Entitlement Grant",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2023&code=0240"
+   },
    "history": [
     {
      "chains": false,
@@ -18021,6 +18094,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title IIA (DESE fund code 0140), FY2020",
+    "fund_code": "0140",
+    "fy": "2020",
+    "name": "Title IIA",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2020&code=0140"
    },
    "history": [
     {
@@ -18065,6 +18145,13 @@
     "salaries": 0,
     "spent": 0
    },
+   "dese": {
+    "display": "Title I, Part A: Improving Basic Programs (DESE fund code 0305), FY2020",
+    "fund_code": "0305",
+    "fy": "2020",
+    "name": "Title I, Part A: Improving Basic Programs",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2020&code=0305"
+   },
    "history": [
     {
      "closing": -200.0,
@@ -18107,6 +18194,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title IV, Part A: Student Support and Academic Enrichment (DESE fund code 0309), FY2020",
+    "fund_code": "0309",
+    "fy": "2020",
+    "name": "Title IV, Part A: Student Support and Academic Enrichment",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2020&code=0309"
    },
    "history": [
     {
@@ -18151,6 +18245,13 @@
     "salaries": 0,
     "spent": 0
    },
+   "dese": {
+    "display": "Elementary and Secondary Schools Emergency Relief Fund (DESE fund code 0113), FY2021",
+    "fund_code": "0113",
+    "fy": "2021",
+    "name": "Elementary and Secondary Schools Emergency Relief Fund",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2021&code=0113"
+   },
    "history": [
     {
      "closing": -99.78,
@@ -18193,6 +18294,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title II, Part A: Building Systems of Support for Excellent Teaching and Leading (DESE fund code 0140), FY2021",
+    "fund_code": "0140",
+    "fy": "2021",
+    "name": "Title II, Part A: Building Systems of Support for Excellent Teaching and Leading",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2021&code=0140"
    },
    "history": [
     {
@@ -18273,6 +18381,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title I, Part A: Improving Basic Programs (DESE fund code 0305), FY2021",
+    "fund_code": "0305",
+    "fy": "2021",
+    "name": "Title I, Part A: Improving Basic Programs",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2021&code=0305"
    },
    "history": [
     {
@@ -18397,6 +18512,13 @@
     "salaries": 0,
     "spent": 0
    },
+   "dese": {
+    "display": "Elementary and Secondary Schools Emergency Relief Fund (ESSER III) (DESE fund code 0119), FY2022",
+    "fund_code": "0119",
+    "fy": "2022",
+    "name": "Elementary and Secondary Schools Emergency Relief Fund (ESSER III)",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2022&code=0119"
+   },
    "history": [
     {
      "closing": -0.0,
@@ -18440,6 +18562,13 @@
     "salaries": 0,
     "spent": 0
    },
+   "dese": {
+    "display": "Title IV, Part A: Student Support and Academic Enrichment (DESE fund code 0309), FY2022",
+    "fund_code": "0309",
+    "fy": "2022",
+    "name": "Title IV, Part A: Student Support and Academic Enrichment",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2022&code=0309"
+   },
    "history": [
     {
      "closing": 886.62,
@@ -18482,6 +18611,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title II, Part A: Supporting Effective Instruction (DESE fund code 0140), FY2022",
+    "fund_code": "0140",
+    "fy": "2022",
+    "name": "Title II, Part A: Supporting Effective Instruction",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2022&code=0140"
    },
    "history": [
     {
@@ -18569,6 +18705,13 @@
     "salaries": 0,
     "spent": 0
    },
+   "dese": {
+    "display": "Title IV, Part A: Student Support and Academic Enrichment (DESE fund code 0309), FY2023",
+    "fund_code": "0309",
+    "fy": "2023",
+    "name": "Title IV, Part A: Student Support and Academic Enrichment",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2023&code=0309"
+   },
    "history": [
     {
      "closing": 214.0,
@@ -18611,6 +18754,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 0
+   },
+   "dese": {
+    "display": "Title II, Part A: Supporting Effective Instruction (DESE fund code 0140), FY2023",
+    "fund_code": "0140",
+    "fy": "2023",
+    "name": "Title II, Part A: Supporting Effective Instruction",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2023&code=0140"
    },
    "history": [
     {
@@ -18698,6 +18848,13 @@
     "salaries": 0,
     "spent": 2208.0
    },
+   "dese": {
+    "display": "Title II, Part A: Supporting Effective Instruction (DESE fund code 0140), FY2025",
+    "fund_code": "0140",
+    "fy": "2025",
+    "name": "Title II, Part A: Supporting Effective Instruction",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2025&code=0140"
+   },
    "history": [
     {
      "chains": false,
@@ -18764,6 +18921,13 @@
     "salaries": 89183.81,
     "spent": 229398.33
    },
+   "dese": {
+    "display": "Individuals with Disabilities Education Act (IDEA) Federal Special Education Entitlement Grant (DESE fund code 0240), FY2025",
+    "fund_code": "0240",
+    "fy": "2025",
+    "name": "Individuals with Disabilities Education Act (IDEA) Federal Special Education Entitlement Grant",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2025&code=0240"
+   },
    "history": [
     {
      "chains": false,
@@ -18801,6 +18965,13 @@
     "salaries": 0,
     "spent": 179636.83
    },
+   "dese": {
+    "display": "Individuals with Disabilities Education Act (IDEA) Federal Special Education Entitlement Grant (DESE fund code 0240), FY2026",
+    "fund_code": "0240",
+    "fy": "2026",
+    "name": "Individuals with Disabilities Education Act (IDEA) Federal Special Education Entitlement Grant",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2026&code=0240"
+   },
    "history": [],
    "id": "sr-2814",
    "kind": "special-revenue",
@@ -18829,6 +19000,13 @@
     "revenue": 0,
     "salaries": 0,
     "spent": 5427.0
+   },
+   "dese": {
+    "display": "Special Education: Program Improvement (DESE fund code 0274), FY2025",
+    "fund_code": "0274",
+    "fy": "2025",
+    "name": "Special Education: Program Improvement",
+    "source_url": "https://www.doe.mass.edu/grants/entitlement-allocation.aspx?view=code&fy=2017&code=0274"
    },
    "history": [
     {
