@@ -735,7 +735,7 @@ function Presence({ c }: { c: PresenceChart }) {
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[US_COLOUR] }} />{c.columns[k]} has it</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[0] }} />another district has it</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ border: `1.5px solid ${COLOURS[US_COLOUR]}` }} />{c.columns[k]} does not</span>
-        {[...rel].map(i => <span key={i} className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-[2px]" style={{ background: REL }} />{c.columns[i]}, not counted</span>)}
+        {[...rel].map(i => <span key={i} className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-[2px]" style={{ background: REL }} />{c.columns[i]} has it (for reference)</span>)}
       </div>
       <div className="overflow-x-auto -mx-1 px-1" aria-hidden style={{ overscrollBehaviorX: 'contain' }}>
         <table className="border-separate" style={{ borderSpacing: 0 }}>

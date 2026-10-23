@@ -107,7 +107,9 @@ SHORT = {'0180': 'Title III', '0186': 'Title III immigrant', '0184': 'Title III 
 SHORT.update(dict(FIVE))
 MT_NAME = 'Montachusett Regional Vocational Technical'   # DESE's label on the allocation pages
 MT_LABEL = 'Monty Tech'
-MT_SET = 'Lunenburg’s vocational district, not counted'
+# PLAIN WORDS (TJ, 23 Oct 2026: "what does 'Monty Tech, not counted' mean?!"): it is shown for
+# reference, beside Lunenburg, and is not one of the comparison districts the counts are of.
+MT_SET = 'Lunenburg’s vocational school, for reference'
 FWIN = (2023, 2027)            # the formula window the presence matrix reads, "any year"
 EBP, MYCAP = '0117', '0424'    # the two competitive awards Lunenburg won (refused if that moves)
 AWARDS = os.path.join(ROOT, 'sources', 'data', 'dese-competitive-awards.csv')
@@ -704,9 +706,9 @@ def build():
          ('Formula, any year %s–%s' % (C.fy(FWIN[0]), C.fy(FWIN[1])),
           [(SHORT[fc], cs) for fc, cs in f_rows])],
         'districts', spans=spans, related=[1],
-        note='Grey: Monty Tech, Lunenburg’s vocational district, shared by %s member towns; '
-             'in no count. Fitchburg cannot be matched.' % C.num(mt_towns['count']),
-        note_figures={'m': figure(mt_towns['count'], C.num(mt_towns['count']))})
+        note='Grey: Monty Tech, the vocational school Lunenburg shares with %s other towns. '
+             'Shown for reference; not in the district counts.' % C.num(mt_towns['count'] - 1),
+        note_figures={'m': figure(mt_towns['count'] - 1, C.num(mt_towns['count'] - 1))})
 
     # ---- tables
     def who(fc, cell):
@@ -776,7 +778,8 @@ def build():
         key='by-district', label='By district', total_col=None, kinds=['published'] * len(dcols),
         columns=dcols,
         rows=[drow(c) for c in [lun, mt] + sorted(comp, key=lambda c: (-per[c], members[c]['name']))],
-        note='Competitive grants counted once however many years. A joint award is not split: '
+        note='Fitchburg is left out: DESE prints two district codes under that name. '
+             'Competitive grants counted once however many years. A joint award is not split: '
              'DESE prints one amount for the group.')
     tables2 = [dict(caption='Formula grants others get', views=[view_f]),
                dict(caption='Title III and the learners it follows', views=[view_t3]),
