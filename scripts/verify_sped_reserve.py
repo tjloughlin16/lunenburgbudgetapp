@@ -69,6 +69,34 @@ def sample_sd(xs):
     return (sum((D(x) - m) ** 2 for x in xs) / (n - 1)).sqrt(), m
 
 
+def foot(parts):
+    """Largest-remainder rounding, written here in Decimal: whole dollars that add to the
+    rounded total. The page's rule (conclusions.footed); not imported, so a change there that
+    broke the rule would be caught here."""
+    parts = [D(x) for x in parts]
+    total = r0(sum(parts))
+    base = [int(x.to_integral_value(rounding='ROUND_FLOOR')) for x in parts]
+    order = sorted(range(len(parts)), key=lambda i: -(parts[i] - base[i]))
+    for i in order[:total - sum(base)]:
+        base[i] += 1
+    return base
+
+
+def ledger_cents():
+    """(fy, line) -> [vote, spent] in cents, the period-13 ledger in the database."""
+    db = sqlite3.connect(os.path.join(DATA, 'lunenburg.db'))
+    out = {}
+    for fy, acct, desc, typ, o, s, e in db.execute(
+            "SELECT fiscal_year, account, description, type, original_approp, ytd_expended, "
+            "encumbrances FROM munis_school_ytd WHERE period=13"):
+        k = VSC.kind(acct, desc) if typ == 'E' else None
+        if k:
+            a = out.setdefault((int(fy), k), [D(0), D(0)])
+            a[0] += D(str(o or 0))
+            a[1] += D(str(s or 0)) + D(str(e or 0))
+    return out
+
+
 def journal_lines():
     """Special education postings by (fy, fund group, line, column), in cents, from the raw
     journal CSV. Which accounts are special education is journal.py's published list -- the
@@ -136,12 +164,27 @@ def main():
     # table 1 and 2, cell by cell
     t1 = {r['label']: r['cells'] for r in tables['Voted and spent, general fund, each line, every year']['views'][0]['rows']}
     t2 = {r['label']: r['cells'] for r in tables['Over or under the vote, and the need it leaves']['views'][0]['rows']}
+    # From the first MUNIS year the page rounds the three lines once from cents so they add to
+    # the year's total; before it, the workbook's whole dollars. Recomputed that way here.
+    lc = ledger_cents()
+    fl = {}
+    for y in years:
+        if y in munis_years:
+            v = foot([lc[(y, g)][0] for g in LINES])
+            sp = foot([lc[(y, g)][1] for g in LINES])
+            fl[y] = {g: (v[i], sp[i]) for i, g in enumerate(LINES)}
+        else:
+            fl[y] = {g: tuple(led[y][g]) for g in LINES}
+    ov = {y: {g: fl[y][g][1] - fl[y][g][0] for g in LINES} for y in years}
+    fnet = {y: sum(ov[y].values()) for y in years}
     for y in years:
         fy = 'FY%d' % y
-        check('%s voted/spent' % fy, [money(c) for c in t1[fy][:6]],
-              [led[y][g][i] for g in LINES for i in (0, 1)])
-        check('%s over/need' % fy, [money(c) for c in t2[fy]],
-              [var[y]['indist'], var[y]['ood'], var[y]['trans'], need[y], net[y]])
+        check('%s need, footed lines against the series' % fy,
+              sum(max(0, x) for x in ov[y].values()), need[y])
+        check('%s voted/spent' % fy, [fl[y][g][i] for g in LINES for i in (0, 1)],
+              [money(c) for c in t1[fy][:6]])
+        check('%s over/need' % fy, [ov[y]['indist'], ov[y]['ood'], ov[y]['trans'], need[y], fnet[y]],
+              [money(c) for c in t2[fy]])
     lv = {r['label']: r['cells'] for r in tables['Reserve levels, and the years each would have met']['views'][0]['rows']}
     for lab, amt in (('Average', avg), ('Average + 1 SD', lv1), ('Average + 2 SD', lv2)):
         check('level %s' % lab, lv[lab], [usd(amt), '%d of %d' % (cov(amt), n), str(n - cov(amt)),
@@ -280,6 +323,31 @@ def main():
                                                       gfs - gfv, need[y]])
         check('FY%d every-fund marker' % y, r['cells'][4].endswith('§'), y not in munis_years)
     check('the formula-change year', change, 2021)
+
+    # ---- ONE QUANTITY, ONE FIGURE: anything printed in two tables prints identically
+    ten = {int(r['label'][2:6]): [money(c.split(' ')[0]) for c in r['cells']]
+           for r in bmt['views'][0]['rows']}
+    t3v = {int(v['key'][2:]): {r['label']: [money(c) for c in r['cells']] for r in v['rows']}
+           for v in t3['views']}
+    LAB = {'indist': 'In-district', 'ood': 'Out-of-district tuition', 'trans': 'Transportation'}
+    same = lambda what, *xs: len(set(xs)) == 1 or bad.append('%s prints differently: %s' % (what, xs))
+    for y, row in ten.items():
+        t1r = [money(c) for c in t1['FY%d' % y][:6]]
+        t2r = [money(c) for c in t2['FY%d' % y]]
+        same('FY%d vote' % y, row[0], sum(t1r[0::2]))
+        same('FY%d general fund spent' % y, row[3], sum(t1r[1::2]))
+        same('FY%d net' % y, row[5], t2r[4])
+        same('FY%d need' % y, row[6], t2r[3])
+        if y in t3v:
+            a = t3v[y]['All three']
+            same('FY%d vote, ten-year and every fund' % y, row[0], a[0])
+            same('FY%d general fund spent, ten-year and every fund' % y, row[3], a[1])
+            same('FY%d net, three tables' % y, row[5], a[2], t2r[4])
+            same('FY%d every fund' % y, row[4], a[5])
+            for i, g in enumerate(LINES):
+                same('FY%d %s vote' % (y, g), t1r[2 * i], t3v[y][LAB[g]][0])
+                same('FY%d %s spent' % (y, g), t1r[2 * i + 1], t3v[y][LAB[g]][1])
+                same('FY%d %s over' % (y, g), t2r[i], t3v[y][LAB[g]][2])
 
     if bad:
         print('\n'.join(['FAIL'] + bad))

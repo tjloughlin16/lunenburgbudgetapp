@@ -938,6 +938,25 @@ def build():
     if abs(gr_gap) > 2000:
         fail('FY%d: grant disbursements in the annual report and the journal are %.2f apart; '
              'the note says about a thousand' % (EY[0], gr_gap))
+    # ONE FIGURE FOR ONE QUANTITY ON THIS PAGE. For FY2023-FY2026 every table reads the lines
+    # footed from cents (table 3's `every`, the same cents as the period-13 ledger, tied above);
+    # before that, the ledger's own whole dollars. `vs` is that one set: (vote, spent) per line,
+    # and the over, the net and the need below are all derived from it. The need must come out
+    # as the series the statistics were taken from, or the build stops.
+    vs = {}
+    for r in led:
+        y = r['fy']
+        vs[y] = ({g: (every[y][g][0], every[y][g][1]) for g in LINES} if y in every
+                 else {g: (r[g]['original'], r[g]['spent']) for g in LINES})
+    over_of = {y: {g: vs[y][g][1] - vs[y][g][0] for g in LINES} for y in vs}
+    net_of = {y: sum(over_of[y].values()) for y in vs}
+    for r in sur:
+        if sum(max(0, x) for x in over_of[r['fy']].values()) != r['need']:
+            fail('FY%d: the need from the footed lines is not the series the statistics use'
+                 % r['fy'])
+    for y in every:
+        if net_of[y] != every[y]['all'][1] - every[y]['all'][0]:
+            fail('FY%d: the footed lines do not add to the year\'s total' % y)
     bm = {}
     for y in range(BM0, BM1 + 1):
         lg = next(r for r in led if r['fy'] == y)
@@ -957,6 +976,9 @@ def build():
     for y in range(BM0, BM1 + 1):
         if need_of[y] < max(0, bm[y]['gf'] - bm[y]['vote']) - 2:
             fail('FY%d: the need is below the net overrun; adding only overruns cannot do that' % y)
+    for y in bm:
+        if net_of[y] != bm[y]['gf'] - bm[y]['vote']:
+            fail('FY%d: the ten-year table\'s net is not its own two columns' % y)
     bm_rows = [dict(
         label=C.fy(y) + (' · formula change' if y == change_fy else ''),
         cells=[C.usd(bm[y]['vote']),
@@ -967,7 +989,7 @@ def build():
                                        else ''),
                # what he is trying to calculate (TJ): the general fund against its vote, net,
                # and the page's own need -- the series the average and SD are taken from
-               C.usd(bm[y]['gf'] - bm[y]['vote']),
+               C.usd(net_of[y]),
                C.usd(need_of[y])])
         for y in range(BM1, BM0 - 1, -1)]
     bm_table = dict(caption='Budget, IDEA, circuit breaker and actual costs, %s to %s'
@@ -1081,22 +1103,22 @@ def build():
                  columns=['In-district, voted', 'In-district, spent', 'Tuition, voted',
                           'Tuition, spent', 'Transport, voted', 'Transport, spent', 'Read from'],
                  rows=[dict(label=C.fy(r['fy']),
-                            cells=[C.usd(r[g][k]) for g in LINES for k in ('original', 'spent')]
+                            cells=[C.usd(vs[r['fy']][g][i]) for g in LINES for i in (0, 1)]
                             + ['MUNIS' if r['source'] == 'munis' else 'FinCom sheet'])
                        for r in reversed(led)],
-                 note='Read from: the Town’s MUNIS year-end report, or the Finance Committee’s '
+                 note='From %s the three lines are rounded once from cents so they add to the '
+                      'year\u2019s total. Read from: the Town’s MUNIS year-end report, or the Finance Committee’s '
                       'history workbook. Voted is the budget voted before the year; spent is expended plus what was '
                       'still owed at the close. In-district is every other special education '
                       'account. The Finance Committee’s workbook is used before %s because its '
                       'rows match the MUNIS reports in the years both hold.'
-                      % C.fy(SC['munis_first_fy']))]),
+                      % (C.fy(SC['munis_first_fy']), C.fy(SC['munis_first_fy'])))]),
             dict(caption='Over or under the vote, and the need it leaves', views=[
                 dict(key='over', label='Each year', total_col=3, kinds=['ledger'] * 5,
                      columns=['In-district', 'Tuition', 'Transport', 'Needed', 'All three, net'],
                      rows=[dict(label=C.fy(r['fy']),
-                                cells=[C.usd(r['indist']), C.usd(r['ood']), C.usd(r['trans']),
-                                       C.usd(r['need']),
-                                       C.usd(r['indist'] + r['ood'] + r['trans'])])
+                                cells=[C.usd(over_of[r['fy']][g]) for g in LINES]
+                                + [C.usd(r['need']), C.usd(net_of[r['fy']])])
                            for r in reversed(sur)],
                      note='Each line: spent at the close less the vote; negative is under. Needed '
                           'adds only the lines that ran over; net adds all three. Ledger figures; '
@@ -1113,8 +1135,9 @@ def build():
                                           ('All three', every[y]['all']))],
                      note='The school journal, as /special-education/sped-all-funds reads it. '
                           'In-district is contracted services, staff pay and supplies. Only the '
-                          'general fund has a vote. The parts are rounded to foot to their totals, '
-                          'so a figure may differ by a dollar from the first table.'
+                          'general fund has a vote. Each column is rounded once from cents, so its '
+                          'parts add to its total, and every table on this page prints the same '
+                          'dollars.'
                           + (' %s is the last year in the run.' % C.fy(y) if y == EY[-1] else ''))
                 for y in reversed(EY)]),
             dict(caption='Reserve levels, and the years each would have met', views=[
