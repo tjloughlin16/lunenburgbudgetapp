@@ -45,6 +45,7 @@ export type Tab = 'home' | 'walk' | 'deeper' | 'answers' | 'money' | 'themoney' 
   | 'homestudents'
   | 'boardcompare' | 'youthsports'
   | 'schoolfinance' | 'accounts' | 'departments' | 'parks' | 'orgcharts' | 'jobs'
+  | 'grantsopen'
   | 'healthlever' | 'freecashlever' | 'salarylever' | 'feelever' | 'extraslever' | 'positionslever'
   | 'bythenumbers'
   | 'owners'
@@ -365,6 +366,9 @@ export const SLUG: Record<Tab, string> = {
   orgcharts: 'org-charts',
   // The town's and the school district's open jobs, and every one we saw come and go.
   jobs: 'jobs',
+  // DESE's open grant programs, for the schools to see what they can apply for (scripts/
+  // build_grants_open.py). Not `grants`: that alias has meant Outside the budget since before.
+  grantsopen: 'grants-open-to-lunenburg',
   departments: 'departments',
   // THE LEVERS: one report per thing the town can actually decide (TJ, 17 September
   // 2026, the first shelf of /reports, "What the town can do"). Each answers what pulling
@@ -513,6 +517,8 @@ export const REFERENCE: ReadonlySet<Tab> = new Set<Tab>([
   'orgcharts',
   // Open jobs and their history: looked up, not read.
   'jobs',
+  // Open grant programs: a list to check, not a read.
+  'grantsopen',
 ])
 
 /** Pages that are BOARDS -- dials, sliders, a cascade to reorder. They are used, not
@@ -863,6 +869,7 @@ export const LABEL: Record<Tab, string> = {
   accounts: 'Every account, once',
   orgcharts: 'Town-wide org charts',
   jobs: 'Job postings — the town and the schools',
+  grantsopen: 'Grants open to Lunenburg — DESE programs a school district can apply for',
   departments: 'The departments',
   healthlever: 'Health insurance',
   freecashlever: 'Free cash — can it fill the gap?',
@@ -946,6 +953,7 @@ export const PARENT: Partial<Record<Tab, Tab>> = {
   boardcompare: 'boards',
   youthsports: 'reports',
   schoolfinance: 'boards', accounts: 'themoney', departments: 'themoney', parks: 'reports',
+  grantsopen: 'reports',
   healthlever: 'reports', freecashlever: 'reports', salarylever: 'reports', feelever: 'reports', extraslever: 'reports', positionslever: 'reports',
   analysis: 'reports',
   required: 'reports',

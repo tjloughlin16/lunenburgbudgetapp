@@ -269,6 +269,8 @@ TOWN_DIRECTORY = os.path.join(ROOT, 'sources', 'town-supplementary', 'docs',
                               'staff-directory')
 SCHOOL_DIRECTORY = os.path.join(ROOT, 'sources', 'district-budget', 'docs', 'personnel',
                                 'staff-directory')
+# DESE's current-grants list and its program pages; `checked.csv` here gates the weekly look.
+DESE_GRANTS = os.path.join(ROOT, 'sources', 'state-dese', 'grants')
 
 
 def directory_due(root, as_of):
@@ -1185,6 +1187,20 @@ def run(a, notes, ctx):
     if not a.dry_run:
         if fetch_oml(a, notes) and not a.no_push:
             back_up_documents(notes, 'after the OML determinations')
+
+    # 3h. DESE'S CURRENT GRANT OPPORTUNITIES, WEEKLY, for /grants-open-to-lunenburg. DESE
+    # publishes only the current list and overwrites it in place, so these copies are the only
+    # history of it. Gated on the fetcher's own checked.csv like the directories (a missed day
+    # does not wait a week); a page lands only when its bytes changed, through `ingest`, so no
+    # separate backup step. Network only, about 75 requests at one a second -- no model call.
+    if not a.dry_run:
+        if directory_due(DESE_GRANTS, a.as_of):
+            r = py('fetch_dese_grants.py', '--if-changed', check=False)
+            if r.returncode:
+                notes.append('DESE grants: the weekly fetch exited %d -- retried tomorrow; run '
+                             'python3 scripts/fetch_dese_grants.py --dry-run' % r.returncode)
+        py('extract_dese_grants.py', check=False)
+        py('build_grants_open.py', check=False)
 
     # 4-6. The town's recordings.
     py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))

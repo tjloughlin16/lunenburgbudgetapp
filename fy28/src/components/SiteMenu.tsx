@@ -90,6 +90,7 @@ export const GROUPS: Group[] = [
     { to: 'athletics', label: 'Athletics and fees', sub: 'Both sides of the money' },
     { href: '/state-aid/minimum-aid', label: 'Chapter 70', sub: 'Why we get the minimum' },
     { href: '/school-programs/announced-cuts', label: 'Announced cuts', sub: 'What was announced, what shows' },
+    { to: 'grantsopen', label: 'Grants open now', sub: 'DESE programs the district can apply for' },
   ] },
   // OTHER SCHOOLS: schools Lunenburg pays into but does not run. TJ, 22 October 2026:
   // "Monty Tech and Bromfield are other schools, so those should go in a separate section

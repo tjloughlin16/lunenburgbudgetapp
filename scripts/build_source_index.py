@@ -1785,6 +1785,16 @@ GROUPS = [
              'that differs between two looks), `relisted`, `removed`. `date` is the look '
              'that saw it and `prev_look` the one before; the town made the change somewhere '
              'between the two.'),
+            ('data/dese-grant-opportunities.csv',
+             'DESE’s current grant opportunities, one row per program, with eligibility', 2,
+             'Written by us, by `extract_dese_grants.py`, from the copies of DESE’s '
+             '“Current Grants” list and each program’s own page that '
+             '`fetch_dese_grants.py` keeps weekly (sources/state-dese/grants/). Fund code, '
+             'program, dates, grant type, state or federal, unit and contact are DESE’s; '
+             '`eligibility`, `purpose` and `funding_text` are quoted from the program page. '
+             '`district_reading` and `reading_basis` ARE OURS: a conservative reading of the '
+             'eligibility text by fixed rules, `unclear` when in doubt. DESE publishes only the '
+             'current list, so our weekly copies are the only history of it.'),
             ('data/board-transfers.csv',
              'Every transfer in every board\u2019s minutes, by fiscal year, with its evidence', 2,
              'Written by us, by `build_board_transfers.py`, from the transfers and votes '
