@@ -15,7 +15,7 @@
  ],
  "categories": [
   {
-   "answer": "The voted school budget is the general fund. Every fund together spent $29,661,795 in FY2026, $3,374,321 more, and these pages show where it came from and which lines it paid.",
+   "answer": "The voted school budget is the general fund. Every fund together spent $29,929,041 in FY2026, $3,641,567 more, and these pages show where it came from and which lines it paid.",
    "area": "school",
    "elsewhere": [],
    "groups": [
@@ -30,7 +30,8 @@
     {
      "title": "Left unspent",
      "topics": [
-      "unspent-by-fund"
+      "unspent-by-fund",
+      "carried-over-orders"
      ]
     },
     {
@@ -103,7 +104,7 @@
    "title": "School bus costs"
   },
   {
-   "answer": "Athletics is paid from two pots, the town budget and a fee fund. The town’s ledger shows $439,510 paid in FY2026 and the fee fund $146,911; the district’s own sheets disagree on what each team costs, by a multiple.",
+   "answer": "Athletics is paid from two pots, the town budget and a fee fund. The town’s ledger shows $463,034 spent in FY2026 and the fee fund $146,911; the district’s own sheets disagree on what each team costs, by a multiple.",
    "area": "school",
    "elsewhere": [
     {
@@ -618,7 +619,7 @@
    "title": "School spending history"
   },
   {
-   "answer": "Building upkeep’s budget nearly doubled in four years, $332,016 to $652,033, while spending grew about a third. These pages show what it buys, and where the difference sits.",
+   "answer": "Building upkeep’s budget nearly doubled in four years, $332,016 to $652,033, while spending grew 42%. These pages show what it buys, and where the difference sits.",
    "area": "school",
    "elsewhere": [],
    "groups": [
@@ -1587,11 +1588,11 @@
    "title": "Budget burndown"
   },
   "budget-lines-all-funds": {
-   "finding": "In FY2026 other funds spent $4,004,476 beside the general fund; $2,401,020 of it sat on no budget line.",
+   "finding": "In FY2026 other funds spent $4,024,956 beside the general fund; $2,408,319 of it sat on no budget line.",
    "generator": "scripts/build_school_all_funds.py",
    "home": "school-all-funds",
    "id": "budget-lines-all-funds",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/school-all-funds/budget-lines-all-funds",
    "ready": true,
    "shelves": [
@@ -1640,6 +1641,19 @@
     "crisis"
    ],
    "title": "Business building pace"
+  },
+  "carried-over-orders": {
+   "finding": "The general fund carried at most $190,128 of open orders into a new year, and the budget went with them.",
+   "generator": "scripts/build_carryover_topics.py",
+   "home": "school-all-funds",
+   "id": "carried-over-orders",
+   "minutes": 3,
+   "path": "/school-all-funds/carried-over-orders",
+   "ready": true,
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "Carried-over orders"
   },
   "chapter-70-by-year": {
    "finding": "Chapter 70 was $9,229,410 in FY2026 and $3,921,700 in FY2007; it fell in 2 of 19 years.",
@@ -2457,7 +2471,7 @@
    "title": "Grant allocations compared"
   },
   "grant-coding": {
-   "finding": "Grant spending on a voted budget line went from 5.1% in FY2023 to 1.4% in FY2026.",
+   "finding": "Grant spending on a voted budget line went from 5.1% in FY2023 to 2.3% in FY2026.",
    "generator": "scripts/build_school_all_funds.py",
    "home": "school-all-funds",
    "id": "grant-coding",
@@ -3148,7 +3162,7 @@
    "title": "Outside money share"
   },
   "outside-the-general-fund": {
-   "finding": "Funds outside the voted budget spent $16,660,132 in four years: 13.5% of school spending in FY2026.",
+   "finding": "Funds outside the voted budget spent $16,680,612 in four years: 13.4% of school spending in FY2026.",
    "generator": "scripts/build_school_all_funds.py",
    "home": "school-all-funds",
    "id": "outside-the-general-fund",
@@ -3666,18 +3680,18 @@
    "title": "School user fees"
   },
   "special-education-overruns": {
-   "finding": "In the worst of 17 years, FY2013, special education needed $223,774 beyond its voted budget.",
+   "finding": "Over 17 years, special education needed $72,621 a year beyond its vote on average; at most $223,774.",
    "generator": "scripts/build_special_education_topics.py",
    "home": "special-education",
    "id": "special-education-overruns",
-   "minutes": 2,
+   "minutes": 3,
    "path": "/special-education/special-education-overruns",
    "ready": true,
    "shelves": [
     "special-education",
     "school-spending"
    ],
-   "title": "Special education overruns"
+   "title": "Special education reserve"
   },
   "special-education-transportation": {
    "finding": "The fastest-growing bus line: 10.1% a year, and $67,555 past its FY2026 budget.",
@@ -4386,7 +4400,7 @@
    "title": "Unspent money by fund"
   },
   "upkeep-budget-vs-spending": {
-   "finding": "Building upkeep’s budget rose 96% from FY2023 to FY2026; what it spent rose 37%.",
+   "finding": "Building upkeep’s budget rose 96% from FY2023 to FY2026; what it spent rose 42%.",
    "generator": "scripts/build_buildings_topics.py",
    "home": "buildings-and-grounds",
    "id": "upkeep-budget-vs-spending",
