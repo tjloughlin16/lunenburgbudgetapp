@@ -21,6 +21,16 @@ if building; then
   echo "Build finished."
 fi
 cd "$ROOT" || exit 1
+# A COMPLETE dist IS NOT A FRESH ONE. On 23 October 2026 a build failed at its type check and
+# left the morning's dist in place, whole and prerendered, so both checks below passed and the
+# preview shipped stale. Refuse if any source or public file is newer than the built page.
+NEWER="$(find fy28/src fy28/public -type f -newer fy28/dist/index.html 2>/dev/null | head -3)"
+if [ -n "$NEWER" ]; then
+  echo "NOT DEPLOYING: fy28/dist is older than the code and data it is built from, e.g.:"
+  echo "$NEWER" | sed 's/^/  /'
+  echo "Run: cd fy28 && npm run build:site   (and check it exits 0)"
+  exit 1
+fi
 if ! python3 scripts/check_dist_complete.py || ! python3 scripts/check_prerender.py; then
   echo
   echo "NOT DEPLOYING: fy28/dist is not fully prerendered (above). Run: cd fy28 && npm run build:site"
