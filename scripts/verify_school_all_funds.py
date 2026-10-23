@@ -17,6 +17,13 @@ recomputes every headline figure three other ways:
      against DESE's End of Year report, and the circuit breaker's FY2023 receipts and
      disbursements against the annual town report -- each to the dollar.
 
+SPENT IS PAYMENTS PLUS WHAT WAS STILL OWED (TJ, 23 October 2026; scripts/journal.py, WHAT
+"SPENT" MEANS). Re-derived here from the CSV's own `posts_to` column, not imported: a line is
+spent if it posts to the report's actual or encumbrance column; the spreadsheet route adds the
+spreadsheet's `encumbrances` to its `ytd_expended`. The ties to other publishers (route 3) and
+the balances roll forward on payments alone, because those documents print actuals and a
+balance is cash -- and that is checked too.
+
 And THE PROSE: every figure a page states as a tile or in its finding is read back from the
 page and compared with the recomputed value (rule 9: recomputed, not re-read).
 """
@@ -32,6 +39,7 @@ DATA = os.path.join(ROOT, 'sources', 'data')
 PAY = os.path.join(ROOT, 'fy28', 'public', 'data', 'school-all-funds-model.json')
 TOPICS = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics')
 YEARS = (2023, 2024, 2025, 2026)
+SPENT = ('actual', 'encumbrance')     # payments plus what was still owed
 bad = []
 
 
@@ -72,10 +80,13 @@ def main():
     spent = defaultdict(Decimal)
     rec = defaultdict(Decimal)
     gfcodes = set()
+    owed = defaultdict(Decimal)
     for r in rows:
         g = group(r['fund'])
-        if r['exp'] and r['posts_to'] == 'actual':
+        if r['exp'] and r['posts_to'] in SPENT:
             spent[(r['fy'], g)] += r['a']
+        if r['exp'] and r['posts_to'] == 'encumbrance':
+            owed[(r['fy'], g)] += r['a']
         if r['exp'] and g == 'General fund' and r['posts_to'] == 'original_budget':
             voted[r['fy']] += r['a']
         if r['exp'] and g == 'General fund' and r['posts_to'] in ('original_budget', 'transfer') and r['a']:
@@ -91,7 +102,7 @@ def main():
                 and any(c[:2] == code[:2] and c != code for c in lines))
     unat = defaultdict(Decimal)
     for r in rows:
-        if r['exp'] and r['posts_to'] == 'actual' and r['fund'] != '0100' and unattributed(r['code']):
+        if r['exp'] and r['posts_to'] in SPENT and r['fund'] != '0100' and unattributed(r['code']):
             unat[r['fy']] += r['a']
     for y in YEARS:
         k = str(y)
@@ -105,6 +116,11 @@ def main():
             check('%s %d' % (g, y), v, spent[(y, g)])
         for g, v in pay['receipts'][k].items():
             check('receipts %s %d' % (g, y), v, rec[(y, g)])
+        for g, v in pay['owed'][k].items():
+            check('owed %s %d' % (g, y), v, owed[(y, g)])
+            if y != YEARS[-1] and owed[(y, g)]:
+                bad.append('%s %d is closed and still owes %s; the pages say only the open year does'
+                           % (g, y, owed[(y, g)]))
 
     # ---- route 2: the Town's period-13 spreadsheets, general fund
     ytd = [r for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-ytd.csv'), encoding='utf-8'))
@@ -112,9 +128,11 @@ def main():
     for y in YEARS:
         d301 = [r for r in rows if r['fy'] == y and r['fund'] == '0100' and r['account'].split('-')[2] == '301']
         sv = sum(Decimal(str(round(float(r['original_approp'] or 0), 2))) for r in ytd if int(r['fiscal_year']) == y)
-        ss = sum(Decimal(str(round(float(r['ytd_expended'] or 0), 2))) for r in ytd if int(r['fiscal_year']) == y)
+        ss = sum(Decimal(str(round(float(r['ytd_expended'] or 0), 2)))
+                 + Decimal(str(round(float(r['encumbrances'] or 0), 2)))
+                 for r in ytd if int(r['fiscal_year']) == y)
         sv += sum(r['a'] for r in d301 if r['posts_to'] == 'original_budget')
-        ss += sum(r['a'] for r in d301 if r['posts_to'] == 'actual')
+        ss += sum(r['a'] for r in d301 if r['posts_to'] in SPENT)
         check('voted %d, spreadsheet route' % y, pay['gf_voted'][str(y)], sv)
         check('general fund spent %d, spreadsheet route' % y, pay['gf_spent'][str(y)], ss)
 
@@ -135,6 +153,18 @@ def main():
     cb = ar['50/50 Grant Sped Tuitions']
     check('circuit breaker FY2023 disbursements, town report', Decimal(cb['disbursements']), fsp['2640'])
     check('circuit breaker FY2023 receipts, town report', Decimal(cb['receipts']), rec[(2023, 'Circuit breaker')])
+    # the balances roll forward on CASH: the town report's FY2023 balance, plus receipts, less
+    # payments (actual alone) in FY2024-FY2026 -- an order still owed has not left the fund
+    frec, fcash = defaultdict(Decimal), defaultdict(Decimal)
+    for r in rows:
+        if r['rev'] and r['posts_to'] == 'actual':
+            frec[(r['fy'], r['fund'])] -= r['a']
+        if r['exp'] and r['posts_to'] == 'actual':
+            fcash[(r['fy'], r['fund'])] += r['a']
+    for c in pay['carry']:
+        want = Decimal(str(c['carried_fy2023'])) + sum(frec[(y, c['fund'])] - fcash[(y, c['fund'])]
+                                                     for y in YEARS[1:])
+        check('balance of fund %s, end of FY2026, on cash' % c['fund'], c['end'], want)
 
     # ---- the prose: tiles and findings read back off the pages
     hub = json.load(open(os.path.join(TOPICS, 'school-all-funds.json'), encoding='utf-8'))
@@ -144,6 +174,11 @@ def main():
         bad.append('hub tile h-v reads %s; recomputed %s' % (tiles['h-v'], usd(voted[2026])))
     if tiles['h-a'] != usd(a26):
         bad.append('hub tile h-a reads %s; recomputed %s' % (tiles['h-a'], usd(a26)))
+    if tiles['h-g'] != usd(spent[(2026, 'General fund')]):
+        bad.append('hub tile h-g reads %s; recomputed %s' % (tiles['h-g'], usd(spent[(2026, 'General fund')])))
+    o26 = sum(v for (yy, _), v in owed.items() if yy == 2026)
+    if tiles['h-w'] != usd(o26):
+        bad.append('hub tile h-w reads %s; recomputed %s' % (tiles['h-w'], usd(o26)))
     if tiles['h-u'] != usd(unat[2026]):
         bad.append('hub tile h-u reads %s; recomputed %s' % (tiles['h-u'], usd(unat[2026])))
     if usd(a26 - voted[2026]) not in hub['answer']['text']:
@@ -156,7 +191,7 @@ def main():
     # the IDEA grants, grant by grant, from raw: what share of each grant sat on a voted line
     idea = defaultdict(lambda: defaultdict(Decimal))
     for r in rows:
-        if r['exp'] and r['posts_to'] == 'actual' and group(r['fund']) == 'Grants' and '240' in r['fund_name'] \
+        if r['exp'] and r['posts_to'] in SPENT and group(r['fund']) == 'Grants' and '240' in r['fund_name'] \
                 and r['fund_name'].split()[0].upper().startswith("FY"):
             k = 'line' if r['code'] in lines else 'off'
             idea[r['fund']][k] += r['a']

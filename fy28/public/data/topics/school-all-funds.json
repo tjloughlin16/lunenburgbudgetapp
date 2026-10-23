@@ -2,14 +2,14 @@
  "answer": {
   "figures": {
    "a": {
-    "text": "$29,661,795",
+    "text": "$29,929,041",
     "unit": "",
-    "value": 29661794.630000003
+    "value": 29929041.300000004
    },
    "b": {
-    "text": "$3,374,321",
+    "text": "$3,641,567",
     "unit": "",
-    "value": 3374320.6300000027
+    "value": 3641567.3000000045
    },
    "y": {
     "text": "FY2026",
@@ -18,7 +18,7 @@
    }
   },
   "literals": [],
-  "text": "The voted school budget is the general fund. Every fund together spent $29,661,795 in FY2026, $3,374,321 more, and these pages show where it came from and which lines it paid."
+  "text": "The voted school budget is the general fund. Every fund together spent $29,929,041 in FY2026, $3,641,567 more, and these pages show where it came from and which lines it paid."
  },
  "category": "school-all-funds",
  "chains": [],
@@ -35,7 +35,7 @@
     }
    },
    "literals": [],
-   "text": "Actuals in every school fund. FY2026 is not yet closed in this run."
+   "text": "Spending in every school fund. Spent includes what was still owed; only FY2026 owed any."
   },
   "reference": null,
   "series": [
@@ -47,13 +47,13 @@
      "$22,436,810",
      "$22,755,089",
      "$24,560,511",
-     "$25,657,318"
+     "$25,904,085"
     ],
     "values": [
      22436809.730000004,
      22755088.949999988,
-     24560511.299999997,
-     25657318.310000002
+     24560511.3,
+     25904085.250000004
     ]
    },
    {
@@ -64,13 +64,13 @@
      "$1,939,049",
      "$1,971,201",
      "$1,497,728",
-     "$1,856,768"
+     "$1,861,160"
     ],
     "values": [
-     1939049.3799999994,
-     1971200.6799999997,
-     1497727.9500000002,
-     1856768.0399999996
+     1939049.3799999997,
+     1971200.6800000002,
+     1497727.9499999997,
+     1861160.3900000001
     ]
    },
    {
@@ -84,9 +84,9 @@
      "$337,499"
     ],
     "values": [
-     494967.7200000001,
-     466295.9799999999,
-     498451.3500000002,
+     494967.72,
+     466295.98,
+     498451.35000000003,
      337499.41000000003
     ]
    },
@@ -98,13 +98,13 @@
      "$1,900,357",
      "$1,932,660",
      "$1,196,194",
-     "$1,021,253"
+     "$1,037,341"
     ],
     "values": [
      1900357.06,
      1932659.9299999974,
      1196193.85,
-     1021253.3200000003
+     1037340.7000000002
     ]
    },
    {
@@ -152,14 +152,14 @@
       "value": 26287474.0
      },
      "g": {
-      "text": "$25,657,318",
+      "text": "$25,904,085",
       "unit": "",
-      "value": 25657318.310000002
+      "value": 25904085.250000004
      },
      "o": {
-      "text": "$4,004,476",
+      "text": "$4,024,956",
       "unit": "",
-      "value": 4004476.3200000003
+      "value": 4024956.0500000007
      },
      "y": {
       "text": "FY2026",
@@ -174,19 +174,19 @@
      "h-o",
      "h-a"
     ],
-    "text": "FY2026: the general fund spent $25,657,318 of $26,287,474 voted; other funds added $4,004,476."
+    "text": "FY2026: the general fund spent $25,904,085 of $26,287,474 voted; other funds added $4,024,956."
    },
    {
     "figures": {
      "a": {
-      "text": "$4,004,476",
+      "text": "$4,024,956",
       "unit": "",
-      "value": 4004476.3200000003
+      "value": 4024956.0500000007
      },
      "b": {
-      "text": "$2,401,020",
+      "text": "$2,408,319",
       "unit": "",
-      "value": 2401019.62
+      "value": 2408318.62
      }
     },
     "literals": [],
@@ -194,7 +194,7 @@
      "h-o",
      "h-u"
     ],
-    "text": "Of $4,004,476 spent outside it, $2,401,020 was booked to no budget line."
+    "text": "Of $4,024,956 spent outside it, $2,408,319 was booked to no budget line."
    },
    {
     "figures": {},
@@ -240,12 +240,12 @@
         }
        },
        "literals": [],
-       "text": "general fund, spent, FY2026"
+       "text": "general fund, spent or owed, FY2026"
       },
       "value": {
-       "text": "$25,657,318",
+       "text": "$25,904,085",
        "unit": "",
-       "value": 25657318.310000002
+       "value": 25904085.250000004
       }
      },
      {
@@ -263,9 +263,9 @@
        "text": "spent outside the general fund, FY2026"
       },
       "value": {
-       "text": "$4,004,476",
+       "text": "$4,024,956",
        "unit": "",
-       "value": 4004476.3200000003
+       "value": 4024956.0500000007
       }
      },
      {
@@ -283,9 +283,9 @@
        "text": "spent from every fund, FY2026"
       },
       "value": {
-       "text": "$29,661,795",
+       "text": "$29,929,041",
        "unit": "",
-       "value": 29661794.630000003
+       "value": 29929041.300000004
       }
      },
      {
@@ -297,9 +297,29 @@
        "text": "of it on no budget line"
       },
       "value": {
-       "text": "$2,401,020",
+       "text": "$2,408,319",
        "unit": "",
-       "value": 2401019.62
+       "value": 2408318.62
+      }
+     },
+     {
+      "id": "h-w",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "of all spent, owed and not yet paid, FY2026"
+      },
+      "value": {
+       "text": "$267,247",
+       "unit": "",
+       "value": 267246.6699999992
       }
      }
     ],
@@ -322,9 +342,9 @@
        "text": "grant spending on a voted line, FY2026"
       },
       "value": {
-       "text": "1.4%",
+       "text": "2.3%",
        "unit": "",
-       "value": 1.4092624932666074
+       "value": 2.261505790720445
       }
      },
      {

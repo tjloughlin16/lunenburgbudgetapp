@@ -30,6 +30,26 @@ general fund leaves; it does not close it.
 THE FY2026 CLOSE IS NOT IN THIS RUN. Encumbrances were still open when the Town ran the
 report (`OPEN_FY`), so an FY2026 actual can still move. Every report that shows FY2026 says so.
 
+=== WHAT "SPENT" MEANS ON THIS SITE ===
+
+TJ, 23 October 2026, deciding it for every page: "'spent' - payments plus owed." Wherever school
+spending is shown as SPENT against a budget or a vote, it is the year's actuals (`COLUMN_OF` ->
+'actual': invoices paid, pay runs, journal entries, receipts) PLUS what was still owed at the
+year end (-> 'encumbrance'). `SPENT` names the two columns and `is_spent()` applies them; a
+report that compares spending with a budget reads one of those, never 'actual' alone.
+
+What that comes to, measured, so nobody has to rediscover it: in a CLOSED year the close
+(`YEC`) zeroes the year's encumbrances and the next year re-opens them (`SOY`), so a closed
+year's encumbrance column nets to nothing and its spent equals its payments; what was owed at
+that close is counted in the year it was paid. Only the open year (`OPEN_FY`) carries an
+encumbrance, and that is what the definition adds. The same holds for the period-13
+spreadsheets, whose `encumbrances` column is zero in every closed year.
+
+Two things are NOT spent and keep the actual column: a fund BALANCE (cash: what came in less
+what was paid -- an order not yet paid has not left the fund), and any tie to a document that
+prints actuals (the period-13 `ytd_expended`, the annual town report's disbursements, DESE's
+End of Year report). A tie compares like with like, whatever the page presents.
+
 === THE FOUR DEFINITIONS ===
 
 1. SOURCE CODES -> the column of the printed report they post to (`COLUMN_OF`). Proven, not
@@ -106,6 +126,13 @@ COLUMN_OF = {'BUC': 'original_budget', 'BUA': 'transfer'}
 COLUMN_OF.update({s: 'actual' for s in ('API', 'APM', 'PRJ', 'PRH', 'GEN', 'GRV', 'CRP')})
 COLUMN_OF.update({s: 'encumbrance' for s in ('POE', 'POL', 'POM', 'SOY', 'YEC', 'GEL')})
 CLASSES = ('actual', 'encumbrance', 'original_budget', 'transfer')
+# THE SITE'S DEFINITION OF SPENT (module docstring): payments plus what is still owed.
+SPENT = ('actual', 'encumbrance')
+
+
+def is_spent(r):
+    """A line that counts as spent: an actual, or an encumbrance still owed."""
+    return r['posts_to'] in SPENT
 
 # What produced an ACTUAL. Read off the codes as the lines use them: API/APM carry a vendor and
 # an invoice; PRJ/PRH carry a payroll warrant and no person (see `PAYROLL_GRAIN`); GEN/GRV are

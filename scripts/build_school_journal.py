@@ -93,9 +93,11 @@ def facts():
     f['tied'] = len(A)
     f['by_source'] = Counter(r['source'] for r in L)
     f['by_year'] = {y: dict(lines=sum(1 for r in L if r['fy'] == y),
-                            spent=sum(r['amt'] for r in L if r['fy'] == y and r['posts_to'] == 'actual'
+                            # spent: payments plus what was still owed (journal.py, WHAT
+                            # "SPENT" MEANS) -- the figure /school-all-funds shows for the year
+                            spent=sum(r['amt'] for r in L if r['fy'] == y and J.is_spent(r)
                                       and J.is_expense(A[r['account']])),
-                            gf=sum(r['amt'] for r in L if r['fy'] == y and r['posts_to'] == 'actual'
+                            gf=sum(r['amt'] for r in L if r['fy'] == y and J.is_spent(r)
                                    and r['fund'] == '0100' and J.is_expense(A[r['account']])))
                     for y in f['years']}
     vnd = [r for r in L if r['ref_type'] == 'VND']
@@ -266,9 +268,10 @@ def render(f, pay):
         w('| %s%s | %s | %s | %s |' % (C.fy(y), ' (not closed)' if y == J.OPEN_FY else '',
                                       C.num(b['lines']), usd(b['spent']), usd(b['gf'])))
     w('')
-    w('Spending is actuals on expense accounts, net of every reversal and reclassification. '
-      'It is the school ledger’s spending, not what the schools cost: see what it cannot '
-      'show, below.')
+    w('Spending is payments plus what was still owed on expense accounts, net of every reversal '
+      'and reclassification; only %s still owed anything when the report was run. It is the '
+      'school ledger’s spending, not what the schools cost: see what it cannot show, below.'
+      % C.fy(J.OPEN_FY))
     w('')
     w('## The redaction')
     w('')

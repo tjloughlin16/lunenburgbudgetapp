@@ -218,7 +218,7 @@ def annual_report_tie(m, rc):
         if name not in ar:
             fail('the FY%d annual report has no school fund named %r' % (F0, name))
         r = ar[name]
-        rec, sp = m['fund_rec'].get((F0, f), 0.0), m['fund_exp'].get((F0, f), 0.0)
+        rec, sp = m['fund_rec'].get((F0, f), 0.0), m['fund_cash'].get((F0, f), 0.0)
         ar_rec, ar_sp = float(r['receipts'] or 0), float(r['disbursements'] or 0)
         # Investment income the Town books on the fund's revenue line outside the school
         # department (department 000): in the town report's receipts, not in Report 1.
@@ -240,7 +240,7 @@ def eoyr_tie(m):
     for col, label, pred in EOYR_PAIRS:
         if col not in rows:
             fail('EOYR FY%d line 3080 has no column %r' % (F0, col))
-        ours = sum(v for (y, acc), v in m['acct_exp'].items() if y == F0 and pred(A[acc]))
+        ours = sum(v for (y, acc), v in m['acct_cash'].items() if y == F0 and pred(A[acc]))
         out.append(dict(column=col, label=label, eoyr=rows[col], journal=round(ours),
                         ties=abs(rows[col] - round(ours)) < 0.5))
     return out
@@ -260,32 +260,48 @@ def code_names():
 
 
 def model():
+    """Every figure the pages use, on TWO bases, each for one kind of question (journal.py,
+    WHAT "SPENT" MEANS):
+
+      SPENT (`J.is_spent`: payments plus what was still owed at the year end) -- everything a
+        page shows as spent beside a budget or a vote: `exp`, and so `spent`, `all`, `outside`,
+        `unattr`, the line table, the grant coding (`by_fund_code`), special education, and an
+        ended grant's spending against its loaded budget (`fund_spent`).
+      CASH (`posts_to == 'actual'` alone) -- what a fund paid out: `fund_cash`, which rolls a
+        balance forward (an order not yet paid has not left the fund, so a balance is receipts
+        less payments) and ties to the annual town report's disbursements; `acct_cash`, which
+        ties to DESE's End of Year report; and `payee`, which is invoices PAID to a payee.
+    The ties compare with what those documents print, which is actuals; only the presented
+    spending changes basis. In a closed year the two are equal (the close zeroes the
+    encumbrances), so the difference is FY2026's open orders."""
     A, L = J.accounts(), J.lines()
     m = dict(fund_name={a['fund']: a['fund_name'] for a in A.values()})
-    m['acct_exp'] = defaultdict(float)
-    exp = defaultdict(float)           # (fy, group, code) -> actual
+    m['acct_cash'] = defaultdict(float)
+    exp = defaultdict(float)           # (fy, group, code) -> spent (payments plus owed)
     gfb = defaultdict(float)           # (fy, code, 'voted'|'revised') -> general fund budget
     rec = defaultdict(float)           # (fy, group) -> receipts
-    fund_rec, fund_exp, fund_bud = defaultdict(float), defaultdict(float), defaultdict(float)
-    by_fund_code = defaultdict(float)  # (fy, fund, code) -> actual outside the general fund
-    payee = defaultdict(float)         # (group, payee) -> four-year invoices outside the GF
+    fund_rec, fund_bud = defaultdict(float), defaultdict(float)
+    fund_cash = defaultdict(float)     # (fy, fund) -> payments only: balances and the town report tie
+    fund_spent = defaultdict(float)    # (fy, fund) -> spent, against a fund's loaded budget
+    by_fund_code = defaultdict(float)  # (fy, fund, code) -> spent outside the general fund
+    payee = defaultdict(float)         # (group, payee) -> four-year invoices PAID outside the GF
     sped = defaultdict(float)          # (fy, side, column)
-    gf_dept = defaultdict(float)       # (fy, dept) -> general fund actual
     for r in L:
         a = A[r['account']]
         g, code, amt = J.fund_group(a), J.function(r['account']), fl(r['amt'])
         if J.is_expense(a):
-            if r['posts_to'] == 'actual':
+            if J.is_spent(r):
                 exp[(r['fy'], g, code)] += amt
-                m['acct_exp'][(r['fy'], r['account'])] += amt
-                fund_exp[(r['fy'], a['fund'])] += amt
+                fund_spent[(r['fy'], a['fund'])] += amt
                 if g != 'General fund':
                     by_fund_code[(r['fy'], a['fund'], code)] += amt
+            if r['posts_to'] == 'actual':
+                m['acct_cash'][(r['fy'], r['account'])] += amt
+                fund_cash[(r['fy'], a['fund'])] += amt
+                if g != 'General fund':
                     p = J.payee(r)
                     if p is not None and p is not J.MASKED and J.KIND_OF[r['source']] == 'invoice':
                         payee[(g, p)] += amt
-                else:
-                    gf_dept[(r['fy'], J.department(r['account']))] += amt
             elif r['posts_to'] in ('original_budget', 'transfer'):
                 fund_bud[(r['fy'], a['fund'])] += amt
                 if g == 'General fund':
@@ -298,13 +314,22 @@ def model():
                 if side == 'out' and r['posts_to'] == 'actual':
                     sped[(r['fy'], 'fund:' + J.sped_fund(a), 'actual')] += amt
                 sped[(r['fy'], side + ':' + J.component(a), r['posts_to'])] += amt
-                if r['posts_to'] in ('actual', 'encumbrance'):
+                if J.is_spent(r):
                     sped[(r['fy'], 'spent', J.sped_fund(a), J.component(a))] += amt
         elif J.is_revenue(a) and r['posts_to'] == 'actual':
             rec[(r['fy'], g)] -= amt
             fund_rec[(r['fy'], a['fund'])] -= amt
-    m.update(exp=exp, gfb=gfb, rec=rec, fund_rec=fund_rec, fund_exp=fund_exp, fund_bud=fund_bud,
-             by_fund_code=by_fund_code, payee=payee, sped=sped, gf_dept=gf_dept)
+    # What the open year still owes, by group: the whole difference between the two bases.
+    m['owed'] = {(y, g): sum(fl(r['amt']) for r in L if r['fy'] == y and r['posts_to'] == 'encumbrance'
+                             and J.is_expense(A[r['account']]) and J.fund_group(A[r['account']]) == g)
+                 for y in Y for g in GROUPS}
+    for (y, g), v in m['owed'].items():
+        if y != F1 and abs(v) > 0.005:
+            fail('%s is closed but its %s still carries %.2f owed; the pages say only %s does'
+                 % (C.fy(y), g, v, C.fy(F1)))
+    m.update(exp=exp, gfb=gfb, rec=rec, fund_rec=fund_rec, fund_cash=fund_cash,
+             fund_spent=fund_spent, fund_bud=fund_bud, by_fund_code=by_fund_code, payee=payee,
+             sped=sped)
     codes = sorted({k[2] for k in exp} | {k[1] for k in gfb})
     m['codes'] = codes
     m['cls'] = {c: J.function_class(c) for c in codes}
@@ -398,6 +423,10 @@ def build():
     pc = lambda a, b: 100.0 * (b - a) / a
     years = [C.fy(y) for y in Y]
     open_note = '%s is not yet closed in this run.' % C.fy(F1)
+    # Said wherever a page shows spending beside a budget (journal.py, WHAT "SPENT" MEANS). Its
+    # only figure is the open year, so it carries note_figures {'y': F(F1)} like open_note.
+    spent_note = 'Spent includes what was still owed; only %s owed any.' % C.fy(F1)
+    owed1 = sum(m['owed'][(F1, g)] for g in GROUPS)
     out = {}
     sp = m['spent']
     gfs = {y: sp[(y, 'General fund')] for y in Y}
@@ -483,7 +512,9 @@ def build():
              % (C.usd(m['gf_voted'][y1]), C.fy(y1), C.usd(gfs[y1]), C.usd(all1)),
              ['voted', 'gf', 'all'],
              {'a': U(m['gf_voted'][y1]), 'y': F(y1), 'b': U(gfs[y1]), 'c': U(all1)},
-             notes=[step(open_note + ' These are postings to school accounts, not what the '
+             notes=[step('Spent includes what was still owed when the report was run: %s, every '
+                         'fund.' % C.usd(owed1), 'measured', {'w': U(owed1)}),
+                    step(open_note + ' These are postings to school accounts, not what the '
                          'schools cost in full.', 'gap', {'y': F(F1)}, closes=BENEFITS_CLOSES)]),
          con('Other funds spent on %s of the %s voted lines; %s landed on one.'
              % (C.num(n_lines_out), C.num(n_lines), C.usd(out_on_lines)),
@@ -501,8 +532,8 @@ def build():
                                 'by function code')])],
         chart=TP.ranking('Largest budget lines, every fund', rank_rows, '$', highlight=un_label,
                          stack=['General fund', 'Other funds'],
-                         note='%s actuals by function code. The highlighted row is spending on '
-                              'no line. %s' % (C.fy(y1), open_note),
+                         note='%s spending by function code. The highlighted row is spending on '
+                              'no line. %s' % (C.fy(y1), spent_note),
                          note_figures={'y': F(y1)}),
         table=dict(caption='Every budget line, %s: voted, and spent from every fund' % C.fy(y1),
                    views=views),
@@ -609,8 +640,8 @@ def build():
                                 'grant columns by function')])],
         chart=TP.series('Grant spending by how it is coded', years, stack_rows, '$', kind='bar',
                         stacked=True,
-                        note='Actuals in grant funds. A voted line is a function code the general '
-                             'fund budget is voted on; our classification. %s' % open_note,
+                        note='Spending in grant funds; a voted line is a code the general fund '
+                             'budget is voted on (ours). %s' % spent_note,
                         note_figures={'y': F(F1)}),
         table=dict(caption='How grant spending is coded', views=[
             dict(key='idea', label='IDEA grant (#240), grant by grant', total_col=0,
@@ -775,7 +806,7 @@ def build():
                          closes='the accounts-payable detail behind each warrant, by fund')])],
         chart=TP.series('Spending outside the general fund', years, [
             TP.track(g, [ogrp[y][g] for y in Y], 'published') for g in OUTSIDE], '$', kind='bar',
-            stacked=True, note='Actuals in every school fund but the general fund. %s' % open_note,
+            stacked=True, note='Spending in every school fund but the general fund. %s' % spent_note,
             note_figures={'y': F(F1)}),
         table=dict(caption='What is paid outside the general fund', views=[
             dict(key='fundline', label='By fund and line, four years', total_col=None,
@@ -798,13 +829,17 @@ def build():
     int_tied = sum(1 for r in carry if r['ties_with_interest'] and not r['ties'])
     net_tied = sum(1 for r in carry if r['net_ties'] and not r['ties_with_interest'])
     untied = [r for r in carry if not (r['ties_with_interest'] or r['net_ties'])]
+    # A BALANCE IS CASH, so the roll-forward takes payments only (fund_cash), not spent: an order
+    # still owed at the end of FY2026 has not left the fund, and the town report's balance it
+    # starts from is a cash balance too. What those funds still owed is shown beside it (owed4).
     bal = []
     for r in carry:
         fnd = r['fund']
-        later = sum(m['fund_rec'].get((y, fnd), 0.0) - m['fund_exp'].get((y, fnd), 0.0) for y in Y[1:])
+        later = sum(m['fund_rec'].get((y, fnd), 0.0) - m['fund_cash'].get((y, fnd), 0.0) for y in Y[1:])
         bal.append(dict(r, end=r['carried'] + later,
                         rec4=sum(m['fund_rec'].get((y, fnd), 0.0) for y in Y),
-                        exp4=sum(m['fund_exp'].get((y, fnd), 0.0) for y in Y)))
+                        exp4=sum(m['fund_cash'].get((y, fnd), 0.0) for y in Y),
+                        owed=m['fund_spent'].get((F1, fnd), 0.0) - m['fund_cash'].get((F1, fnd), 0.0)))
     bal.sort(key=lambda r: -r['end'])
     start_tot = sum(r['carried'] for r in bal)
     end_tot = sum(r['end'] for r in bal)
@@ -815,7 +850,7 @@ def build():
         if J.fund_group(a) != 'Grants' or grant_year(nm) not in (F0, F0 + 1):
             continue
         aw = sum(m['fund_bud'].get((y, fnd), 0.0) for y in Y)
-        spent = sum(m['fund_exp'].get((y, fnd), 0.0) for y in Y)
+        spent = sum(m['fund_spent'].get((y, fnd), 0.0) for y in Y)   # against a budget: spent
         if aw or spent:
             ended.append(dict(fund=fnd, name=nm.strip(), award=aw, spent=spent, left=aw - spent))
     ended.sort(key=lambda r: -r['left'])
@@ -846,7 +881,7 @@ def build():
              % (lead_b['ar_name'], C.usd(lead_b['end'])), ['start', 'end', 'lead'],
              {'a': U(lead_b['end'])}, allow=tuple(re.findall(r'\d+', lead_b['ar_name'])),
              notes=[step('Our roll-forward: the town report’s %s balance, plus every receipt, less '
-                         'every payment in the journal since. %s orders still open are not taken off.'
+                         'every payment in the journal since. A balance is cash: %s orders still owed are not taken off.'
                          % (C.fy(F0), C.fy(F1)), 'gap', {'y': F(F0), 'z': F(F1)}, allow=('30 June 2026',),
                          closes='the Town Accountant’s special revenue balances at 30 June 2026')]),
          con('%s of %s funds tie to the town report to the cent for %s, receipts and spending both.'
@@ -1025,11 +1060,13 @@ def build():
     # ================================================== the hub
     hb = dict(
         v=f('h-v', U(m['gf_voted'][F1]), 'general fund, voted, %s' % C.fy(F1), 'published', {'y': F(F1)}),
-        g=f('h-g', U(m['spent'][(F1, 'General fund')]), 'general fund, spent, %s' % C.fy(F1), 'published',
+        g=f('h-g', U(m['spent'][(F1, 'General fund')]), 'general fund, spent or owed, %s' % C.fy(F1), 'published',
             {'y': F(F1)}),
         a=f('h-a', U(m['all'][F1]), 'spent from every fund, %s' % C.fy(F1), 'published', {'y': F(F1)}),
         o=f('h-o', U(m['outside'][F1]), 'spent outside the general fund, %s' % C.fy(F1), 'published', {'y': F(F1)}),
         u=f('h-u', U(m['unattr'][F1]), 'of it on no budget line', 'published'),
+        w=f('h-w', U(owed1), 'of all spent, owed and not yet paid, %s' % C.fy(F1), 'published',
+            {'y': F(F1)}),
         i=f('h-i', P(g_line[F1]), 'grant spending on a voted line, %s' % C.fy(F1), 'published', {'y': F(F1)}),
         i1=f('h-i1', U(g25['none']), '%s IDEA grant with no code at all' % C.fy(2025), 'published',
              {'y': F(2025)}),
@@ -1043,7 +1080,7 @@ def build():
         # Shown as voted / every fund / outside, a reader added the vote to the outside spending
         # and got a total the page does not print (TJ, 23 October 2026): the vote is a budget
         # and the other two are spending (rule 1), so they never sum.
-        LD.tier('Money in and out', [hb['v'], hb['g'], hb['o'], hb['a'], hb['u']]),
+        LD.tier('Money in and out', [hb['v'], hb['g'], hb['o'], hb['a'], hb['u'], hb['w']]),
         LD.tier('How it is booked', [hb['i'], hb['i1'], hb['b'], hb['s'], hb['t']]),
     ], [
         LD.conclusion('%s: the general fund spent %s of %s voted; other funds added %s.'
@@ -1082,7 +1119,7 @@ def build():
         hub_ladder,
         chart=TP.series('School spending by fund', years, [
             TP.track(g, [sp[(y, g)] for y in Y], 'published') for g in GROUPS], '$', kind='bar',
-            stacked=True, note='Actuals in every school fund. %s' % open_note, note_figures={'y': F(F1)}),
+            stacked=True, note='Spending in every school fund. %s' % spent_note, note_figures={'y': F(F1)}),
         table=dict(caption='How these figures tie to what the Town and the state printed', views=[dict(
             key='ties', label='Reconciliation', total_col=None, kinds=['ledger', 'ledger'],
             columns=['Compared with', 'Result'], rows=tie_rows,
@@ -1101,7 +1138,9 @@ def build():
         gf_spent={str(y): round(gfs[y], 2) for y in Y},
         all_spent={str(y): round(m['all'][y], 2) for y in Y},
         outside_spent={str(y): round(m['outside'][y], 2) for y in Y},
+        spent_basis='payments plus what was still owed (journal.SPENT: %s)' % ', '.join(J.SPENT),
         by_group={str(y): {g: round(sp[(y, g)], 2) for g in GROUPS} for y in Y},
+        owed={str(y): {g: round(m['owed'][(y, g)], 2) for g in GROUPS} for y in Y},
         unattributed={str(y): round(m['unattr'][y], 2) for y in Y},
         receipts={str(y): {g: round(rin[(y, g)], 2) for g in OUTSIDE} for y in Y},
         chapter70={str(y): m['ch70'][y] for y in Y},
@@ -1111,7 +1150,8 @@ def build():
         grant_line_share={str(y): round(g_line[y], 4) for y in Y},
         sped={str(y): dict(voted=round(gv[y], 2), gf_spent=round(ga[y], 2), outside=round(oa[y], 2))
               for y in Y},
-        carry=[dict(fund=r['fund'], carried_fy2023=r['carried'], end=round(r['end'], 2)) for r in bal],
+        carry=[dict(fund=r['fund'], carried_fy2023=r['carried'], end=round(r['end'], 2),
+                    owed_fy2026=round(r['owed'], 2)) for r in bal],
         annual_report_tie=[{k: r[k] for k in ('fund', 'ar_name', 'receipts', 'ar_receipts', 'spent',
                                               'ar_spent', 'ties', 'net_ties')} for r in art],
         eoyr_tie=eo,
@@ -1155,7 +1195,7 @@ def markdown(pages):
         for c in p['conclusions']:
             o.append('- %s' % c['text'])
             for n in c.get('notes', []):
-                tag = 'hypothesis' if n['kind'] == 'hypothesis' else 'not known'
+                tag = {'gap': 'not known'}.get(n['kind'], n['kind'])
                 o.append('  - *%s:* %s%s' % (tag, n['text'],
                                             (' — closes: %s' % n['closes']) if n.get('closes') else ''))
         o.append('')
