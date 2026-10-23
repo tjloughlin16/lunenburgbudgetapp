@@ -1209,6 +1209,9 @@ def build():
     over_orig = [y for y in yrs if SL[y]['spent'] + SL[y]['committed'] > SL[y]['original']]
     L = SL[yrs[-1]]
     yl = yrs[-1]
+    # SPENT IS PAID PLUS STILL OWED (journal.py, WHAT "SPENT" MEANS). SL keeps the two apart
+    # because the workbook tie compares `spent` with what the workbook prints, which is paid.
+    L_spent = L['spent'] + L['committed']
     out['school-budget-against-actual'] = TP.page(
         'school-budget-against-actual',
         'The school general fund spent less than its revised budget in all %s years, %s to %s.'
@@ -1223,8 +1226,8 @@ def build():
          f('over', OF(len(over_orig), len(yrs), 'years'), 'years spending passed the original '
            'budget', 'published'),
          f('rev', U(L['revised']), 'revised budget, %s' % C.fy(yl), 'published', {'y': F(yl)}),
-         f('spent', U(L['spent']), 'spent, %s' % C.fy(yl), 'published', {'y': F(yl)}),
-         f('com', U(L['committed']), 'still committed at the close, %s' % C.fy(yl), 'published',
+         f('spent', U(L_spent), 'spent or still owed, %s' % C.fy(yl), 'published', {'y': F(yl)}),
+         f('com', U(L['committed']), 'of it still owed at the close, %s' % C.fy(yl), 'published',
            {'y': F(yl)}),
          f('tied', OF(len(tied), len(tied), 'years'), 'years the workbook ties to the ledger, '
            'to the dollar', 'published')],
@@ -1237,10 +1240,10 @@ def build():
                                 'grant award records for the same year')]),
          con('Spending passed the original voted budget in %s years; the revised budget covered '
              'it each time.' % C.num(len(over_orig)), ['over'], {'n': N(len(over_orig))}),
-         con('For %s: %s revised, %s spent and %s still committed at the close.'
-             % (C.fy(yl), C.usd(L['revised']), C.usd(L['spent']), C.usd(L['committed'])),
+         con('For %s: %s revised and %s spent, %s of it still owed at the close.'
+             % (C.fy(yl), C.usd(L['revised']), C.usd(L_spent), C.usd(L['committed'])),
              ['rev', 'spent', 'com'],
-             {'y': F(yl), 'a': U(L['revised']), 'b': U(L['spent']), 'c': U(L['committed'])}),
+             {'y': F(yl), 'a': U(L['revised']), 'b': U(L_spent), 'c': U(L['committed'])}),
          con('Before %s the figures are a workbook assembled from the ledger; where both exist '
              'they agree.' % C.fy(min(y for y in yrs if SL[y]['source'] == 'ledger')), ['tied'],
              {'y': F(min(y for y in yrs if SL[y]['source'] == 'ledger'))})],

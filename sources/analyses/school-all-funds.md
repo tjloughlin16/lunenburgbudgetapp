@@ -92,7 +92,7 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 
 | | Voted, general fund | General fund spent | Other funds spent | Every fund |
 |---|---:|---:|---:|---:|
-| 2110 Curriculum Directors and Dept. Heads (Supervisory) | $463,481 | $451,633 | $4,005 | $455,637 |
+| 2110 Curriculum Directors and Dept. Heads (Supervisory) | $463,481 | $451,633 | $4,004 | $455,637 |
 | 2210 School Leadership-Building | $1,122,440 | $1,107,873 | $0 | $1,107,873 |
 | 2305 Teachers, Classroom | $7,929,717 | $7,867,027 | $0 | $7,867,027 |
 | 2310 P/R Short Term Tutoring | $2,187,067 | $2,128,686 | $0 | $2,128,686 |
@@ -158,7 +158,7 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 |---|---:|---:|---:|---:|
 | 0000 No function code | $0 | $0 | $1,248,934 | $1,248,934 |
 | 1000 Administration (heading only) | $0 | $0 | -$35,400 | -$35,400 |
-| 2000 Instruction (heading only) | $500 | $2,977 | $1,130,192 | $1,133,168 |
+| 2000 Instruction (heading only) | $500 | $2,977 | $1,130,191 | $1,133,168 |
 | 2300 Teaching (heading only) | $0 | $0 | $35,968 | $35,968 |
 | 2400 Instructional materials (heading only) | $0 | $0 | $15,551 | $15,551 |
 | 3400 Food Services | $0 | $0 | $926,125 | $926,125 |

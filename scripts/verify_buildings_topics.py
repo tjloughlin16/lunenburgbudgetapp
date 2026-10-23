@@ -94,12 +94,16 @@ def main():
                 continue
 
     left = {y: col[(y, 'available_budget')] for y in YEARS}
+    # SPENT is payments plus what was still owed (journal.py, WHAT "SPENT" MEANS): the
+    # spreadsheet's ytd_expended plus its encumbrances. Paid, where a page shows it apart, and
+    # the journal tie above, stay on ytd_expended.
+    sp = lambda *k: col[k + ('ytd_expended',)] + col[k + ('encumbrances',)]
     want = {
         'upkeep-budget-vs-spending': dict(
             o0=col[(2023, 'original_approp')], o1=col[(2026, 'original_approp')],
-            s0=col[(2023, 'ytd_expended')], s1=col[(2026, 'ytd_expended')],
+            s0=sp(2023), s1=sp(2026),
             db=col[(2026, 'original_approp')] - col[(2025, 'original_approp')],
-            ds=col[(2025, 'ytd_expended')] - col[(2026, 'ytd_expended')],
+            ds=sp(2025) - sp(2026),
             left=left[2026], enc=col[(2026, 'encumbrances')], c0=cap[2025], c1=cap[2026]),
         'upkeep-spending': dict(rlo=min(rec.values()), rhi=max(rec.values()), one0=one[2025],
                                 one23=one[2023]),
@@ -120,7 +124,7 @@ def main():
                     bad.append('book line %r reads %s, the book %s' % (r['label'], r['cells'][:2], b))
             ch = p['chart']['series']
             for y, s, o in zip(YEARS, ch[0]['values'], ch[1]['values']):
-                if abs(s - float(col[(y, 'ytd_expended')])) > 0.006 or \
+                if abs(s - float(sp(y))) > 0.006 or \
                         abs(o - float(col[(y, 'original_approp')])) > 0.006:
                     bad.append('chart FY%d does not match the spreadsheet' % y)
         else:
@@ -140,10 +144,10 @@ def main():
     yp = {p: sum(1 for y in YEARS if ap[(p, y)] > 0) for p in ps}
     arec = {y: sum(ap[(p, y)] for p in ps if yp[p] >= 3) for y in YEARS}
     g = lambda y, c: col[(y, a, c)]
-    cw = dict(o24=g(2024, 'original_approp'), s24=g(2024, 'ytd_expended'),
-              o25=g(2025, 'original_approp'), s25=g(2025, 'ytd_expended'), rf=rf,
+    cw = dict(o24=g(2024, 'original_approp'), s24=sp(2024, a),
+              o25=g(2025, 'original_approp'), s25=sp(2025, a), rf=rf,
               o26=g(2026, 'original_approp'),
-              s26=g(2026, 'ytd_expended'), left=g(2026, 'available_budget'), r25=arec[2025],
+              s26=sp(2026, a), left=g(2026, 'available_budget'), r25=arec[2025],
               r26=arec[2026])
     p = json.load(open(os.path.join(TOPICS, 'contracted-building-services.json'), encoding='utf-8'))
     facts = {x['id']: x for x in p['facts']}

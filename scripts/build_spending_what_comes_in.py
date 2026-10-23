@@ -137,10 +137,14 @@ def fund_names():
 
 
 def gf_by_function():
+    """General fund SPENT by function: expended plus still encumbered at the close -- the site's
+    definition of spent (scripts/journal.py, WHAT "SPENT" MEANS), the basis the athletics pages
+    compare against this payload. Only FY2026 carries an encumbrance."""
     t = defaultdict(float)
     for r in csv.DictReader(open(MUNIS, encoding='utf-8')):
         if r['report'] == 'gf-school' and r['period'] == '13':
-            t[(r['account'].split('-')[3], int(r['fiscal_year']))] += money(r['ytd_expended'])
+            t[(r['account'].split('-')[3], int(r['fiscal_year']))] += (money(r['ytd_expended'])
+                                                                       + money(r['encumbrances']))
     return t
 
 
@@ -470,8 +474,11 @@ def build():
     lunch_codes = sorted({t['function'] for t in function_test if t['fund'] == '2200' and not t['generic']})
     lunch_gf = round(sum(gf[(fn, y)] for fn in lunch_codes for y in YEARS), 2)
 
+    # Athletics SPENT on both sides, payments plus what was still owed, so the fee fund's share
+    # is read on one basis. The per-fund in/out above stays on payments: it rolls a balance.
     ath_years = [dict(fy=y, gf_spent=round(gf[('3510', y)], 2),
-                      fund_spent=round(exp[('1301', y)], 2), fees_in=round(rev[('1301', y)], 2))
+                      fund_spent=round(exp[('1301', y)] + enc[('1301', y)], 2),
+                      fees_in=round(rev[('1301', y)], 2))
                  for y in YEARS]
     ath_gf = round(sum(y['gf_spent'] for y in ath_years), 2)
     ath_fund = round(sum(y['fund_spent'] for y in ath_years), 2)
@@ -803,8 +810,9 @@ def build():
         'The FY2026 balances against any second document; they are carried through the ledger.',
         'The town’s own special revenue funds: these ledgers are the schools’ alone, and the town’s '
         'receipts and disbursements are read only to FY2023 (registered gap).',
-        'Encumbrances: %s is still committed in these funds at the closes and is not counted as '
-        'spent.' % usd(enc_total),
+        'Orders still owed: %s in these funds at the closes. They count as spent on this site, '
+        'but a balance is cash and they have not left the funds, so “out” here is payments.'
+        % usd(enc_total),
     ]
     w('## What it does not show\n')
     for x in not_est:
@@ -817,8 +825,9 @@ def build():
     w('')
     w('## Method\n')
     w('- Revenue is the period-13 `ytd_expended` on revenue rows, sign reversed (MUNIS prints '
-      'revenue as a credit); expenditure is `ytd_expended` on expense rows. Encumbrances are not '
-      'counted as spent.')
+      'revenue as a credit); “out” is `ytd_expended` on expense rows -- payments, because this '
+      'page rolls balances and a balance is cash. Spent on this site is payments plus what was '
+      'still owed (`encumbrances`), and the athletics comparison is read that way on both sides.')
     w('- The fund grouping is sitting-on-money’s, imported from `build_sitting_on_money.py`. Grants '
       '(every other 2xxx fund) are ours, by MUNIS’s numbering. Two 13xx funds outside the fourteen '
       'moved no money in any of the four years; the generator refuses to build if that changes.')

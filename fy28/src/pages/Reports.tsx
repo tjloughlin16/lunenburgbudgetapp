@@ -64,7 +64,7 @@ type Owner = {
   slug: string; name: string; url: string; accounts: number
   /** FY2026, as Town Meeting revised it — a FLOW, and net (rule 11). */
   appropriation: number | null
-  expended: number | null
+  spent: number | null
   /** Revolving funds and trusts at 31 March 2026 — a STOCK, and not the same kind of
    *  number as the appropriation beside it. Never add the two. */
   held: number | null

@@ -12,7 +12,7 @@
 
 **Not every fund covers its own spending, even on its own books.** After-school activities, extended day and the circuit breaker spent more than came in in three of the four years. Extended day — minuted in February 2025 as *“a self-sustaining program”* — spent $241,062 more than it took in across FY2024 to FY2026.
 
-**Athletics fees matched 25.5% of the athletics spending the books show**, FY2023 to FY2026. The general fund booked 68.4% of that spending under the same function code; the fee fund booked the other 31.6%, partly from its balance. Athletics is the only fee-funded programme where the two can be set side by side.
+**Athletics fees matched 25.2% of the athletics spending the books show**, FY2023 to FY2026. The general fund booked 68.7% of that spending under the same function code; the fee fund booked the other 31.3%, partly from its balance. Athletics is the only fee-funded programme where the two can be set side by side.
 
 ---
 
@@ -104,10 +104,10 @@ A fund’s spending is booked to a DESE function code. Where the general fund bo
 | FY2023 | $335,766 | $314,864 | 48.4% | $144,950 |
 | FY2024 | $295,979 | $250,575 | 45.8% | $135,765 |
 | FY2025 | $541,945 | $32,796 | 5.7% | $131,481 |
-| FY2026 | $439,510 | $146,911 | 25.1% | $188,944 |
-| **four years** | **$1,613,201** | **$745,146** | **31.6%** | **$601,141** |
+| FY2026 | $463,034 | $146,911 | 24.1% | $188,944 |
+| **four years** | **$1,636,724** | **$745,146** | **31.3%** | **$601,141** |
 
-**What the data shows.** The athletics fee fund paid 31.6% of the athletics spending booked in either fund, and the fees themselves equal 25.5% of it. The fund’s share swung from 48.4% in FY2023 to 5.7% in FY2025.
+**What the data shows.** The athletics fee fund paid 31.3% of the athletics spending booked in either fund, and the fees themselves equal 25.2% of it. The fund’s share swung from 48.4% in FY2023 to 5.7% in FY2025.
 
 **What it does not show.** Why the split moved. Costs may have been moved between the two deliberately, the fund may have been rested to rebuild its balance (it took in $98,685 more than it spent in FY2025), or a general fund line may be budgeted net of the revolving fund (registered gap). And it is not the whole cost of athletics: fields, custodians and utilities sit in other general fund functions and are in neither column (registered gap). **Rule 11 applies to every fund here: covering its costs means covering the costs booked to it.**
 
@@ -156,7 +156,7 @@ The first matches the ledger: school choice and facilities use both spent more t
 - School funds the period-13 special funds report does not carry (registered gap).
 - The FY2026 balances against any second document; they are carried through the ledger.
 - The town’s own special revenue funds: these ledgers are the schools’ alone, and the town’s receipts and disbursements are read only to FY2023 (registered gap).
-- Encumbrances: $13,780 is still committed in these funds at the closes and is not counted as spent.
+- Orders still owed: $13,780 in these funds at the closes. They count as spent on this site, but a balance is cash and they have not left the funds, so “out” here is payments.
 
 ## Closes with
 
@@ -171,7 +171,7 @@ Each is a row in `sources/data/money-gaps.csv`:
 
 ## Method
 
-- Revenue is the period-13 `ytd_expended` on revenue rows, sign reversed (MUNIS prints revenue as a credit); expenditure is `ytd_expended` on expense rows. Encumbrances are not counted as spent.
+- Revenue is the period-13 `ytd_expended` on revenue rows, sign reversed (MUNIS prints revenue as a credit); “out” is `ytd_expended` on expense rows -- payments, because this page rolls balances and a balance is cash. Spent on this site is payments plus what was still owed (`encumbrances`), and the athletics comparison is read that way on both sides.
 - The fund grouping is sitting-on-money’s, imported from `build_sitting_on_money.py`. Grants (every other 2xxx fund) are ours, by MUNIS’s numbering. Two 13xx funds outside the fourteen moved no money in any of the four years; the generator refuses to build if that changes.
 - The shared-function test reads the DESE function code (the fourth segment of the account) on both sides; codes 0000, 2000, 4000 and 5200 name no programme and are not counted as a match. The generator refuses to build if the test ever finds a programme other than athletics.
 - Verified by `scripts/verify_spending_what_comes_in.py`, which recomputes every conclusion figure by a second route.

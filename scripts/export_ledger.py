@@ -844,7 +844,9 @@ def gross_budget(db, fy=2026, period=12):
         ))
 
     net_appropriated = sum(a['original'] or 0 for a in accounts)
-    net_spent = sum(a['expended'] or 0 for a in accounts)
+    # SPENT is paid plus still owed (journal.py, WHAT "SPENT" MEANS): the rows keep the two
+    # apart, the total beside the appropriation adds them.
+    net_spent = sum((a['expended'] or 0) + (a['encumbered'] or 0) for a in accounts)
     known_outside = sum(u['spent'] for u in unattributed)
 
     return dict(

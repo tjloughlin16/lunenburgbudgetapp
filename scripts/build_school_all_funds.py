@@ -465,8 +465,10 @@ def build():
                   closes='the district’s grant budgets and DESE final expenditure reports, by function code')
 
     def lrow(r):
+        # general fund + other funds = every fund, printed side by side, so they foot
+        (g, o), a = C.footed([r['gf'], r['out']])
         return dict(label='%s %s' % (r['code'], r['name']),
-                    cells=[C.usd(r['voted']), C.usd(r['gf']), C.usd(r['out']), C.usd(r['all'])])
+                    cells=[C.usd(r['voted']), C.usd(g), C.usd(o), C.usd(a)])
     views = []
     for s, label in SERIES:
         rs = [r for r in lines_only if r['code'].startswith(s)]
@@ -490,9 +492,9 @@ def build():
         onl, oth = part(('line',)), part(('other',))
         if abs(gfs[y] + onl + m['unattr'][y] + oth - m['all'][y]) > 0.01:
             fail('the year view does not foot in %s' % C.fy(y))
-        year_rows.append(dict(label=C.fy(y), cells=[C.usd(m['gf_voted'][y]), C.usd(gfs[y]),
-                                                     C.usd(onl), C.usd(m['unattr'][y]), C.usd(oth),
-                                                     C.usd(m['all'][y])]))
+        parts, whole = C.footed([gfs[y], onl, m['unattr'][y], oth])
+        year_rows.append(dict(label=C.fy(y), cells=[C.usd(m['gf_voted'][y])]
+                              + [C.usd(x) for x in parts] + [C.usd(whole)]))
     views.append(dict(key='years', label='Every year', total_col=5, kinds=['ledger'] * 6,
                       columns=['Voted, general fund', 'General fund spent', 'Other funds, on a line',
                                'Other funds, on no line', 'Other funds, other code', 'Every fund'],

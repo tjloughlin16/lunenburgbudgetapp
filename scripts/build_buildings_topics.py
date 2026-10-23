@@ -128,19 +128,26 @@ def data():
     d = dict(A=A)
     acct = defaultdict(lambda: D0)       # (fy, account, piece)
     for r in L:
-        piece = 'orig' if r['source'] == 'BUC' else {'transfer': 'trans', 'actual': 'spent',
+        piece = 'orig' if r['source'] == 'BUC' else {'transfer': 'trans', 'actual': 'paid',
                                                      'encumbrance': 'enc'}.get(r['posts_to'])
         acct[(r['fy'], r['account'], piece)] += r['amt']
+    # SPENT IS PAYMENTS PLUS WHAT WAS STILL OWED (TJ, 23 October 2026; journal.py, WHAT "SPENT"
+    # MEANS): 'spent' is what a page sets beside a budget; 'paid' is kept for the pages that
+    # show paid and on order side by side (the leftover bridge, the account cards) and for the
+    # payee and trade totals, which are payments to someone.
+    for (y, a) in {(y, a) for (y, a, _) in list(acct)}:
+        acct[(y, a, 'spent')] = acct[(y, a, 'paid')] + acct[(y, a, 'enc')]
     d['acct'] = acct
     d['accounts'] = sorted({a for (_, a, _) in acct})
     yr = lambda y, p: sum((v for (yy, _, pp), v in acct.items() if yy == y and pp == p), D0)
     d['orig'] = {y: yr(y, 'orig') for y in J.YEARS}
     d['trans'] = {y: yr(y, 'trans') for y in J.YEARS}
+    d['paid'] = {y: yr(y, 'paid') for y in J.YEARS}
     d['spent'] = {y: yr(y, 'spent') for y in J.YEARS}
     d['enc'] = {y: yr(y, 'enc') for y in J.YEARS}
-    d['left'] = {y: d['orig'][y] + d['trans'][y] - d['spent'][y] - d['enc'][y] for y in J.YEARS}
+    d['left'] = {y: d['orig'][y] + d['trans'][y] - d['spent'][y] for y in J.YEARS}
     d['acct_left'] = lambda y, a: (acct[(y, a, 'orig')] + acct[(y, a, 'trans')]
-                                   - acct[(y, a, 'spent')] - acct[(y, a, 'enc')])
+                                   - acct[(y, a, 'spent')])
     # payees and type of work
     T = trades()
     pv = defaultdict(lambda: D0)
@@ -158,7 +165,7 @@ def data():
         d['trade'][(T.get(p, OTHER) if p else OTHER, y)] += v
     d['trades'] = sorted({t for (t, _) in d['trade']},
                          key=lambda t: (t == OTHER, -sum(fl(d['trade'][(t, y)]) for y in J.YEARS)))
-    d['unmapped_share'] = {y: 100.0 * fl(sum(pv[(p, y)] for p in unmapped)) / fl(d['spent'][y])
+    d['unmapped_share'] = {y: 100.0 * fl(sum(pv[(p, y)] for p in unmapped)) / fl(d['paid'][y])
                            for y in J.YEARS}
     yp = {p: sum(1 for y in J.YEARS if pv[(p, y)] > 0) for p in payees}
     d['recurring'] = {y: sum((pv[(p, y)] for p in payees if yp[p] >= 3), D0) for y in J.YEARS}
@@ -216,7 +223,8 @@ def build():
     fx['o0'] = f('o0', U(o0), 'original budget, %s' % C.fy(F0), 'published', {'y': F(F0)})
     fx['o1'] = f('o1', U(o1), 'original budget, %s' % C.fy(Y1), 'published', {'y': F(Y1)})
     fx['s0'] = f('s0', U(s0), 'spent, %s' % C.fy(F0), 'published', {'y': F(F0)})
-    fx['s1'] = f('s1', U(s1), 'spent, %s, before the close' % C.fy(Y1), 'published', {'y': F(Y1)})
+    fx['s1'] = f('s1', U(s1), 'spent or on order, %s, before the close' % C.fy(Y1), 'published',
+                 {'y': F(Y1)})
     fx['db'] = f('db', U(db), 'more budget in %s than %s' % (C.fy(Y1), C.fy(Y0)), 'published',
                  {'y': F(Y1), 'z': F(Y0)})
     fx['ds'] = f('ds', U(-ds), 'less spent in %s than %s' % (C.fy(Y1), C.fy(Y0)), 'published',
@@ -353,7 +361,7 @@ def build():
     row = lambda lab, vs: dict(label=lab, cells=[C.usd(v) for v in vs],
                                marks=TP.change_marks(vs, YEAR_PAIRS, MARK))
     trade_rows = [row(t, [fl(tr[(t, y)]) for y in J.YEARS]) for t in TRS]
-    trade_rows.append(row('Every type of work', [fl(d['spent'][y]) for y in J.YEARS]))
+    trade_rows.append(row('Every type of work', [fl(d['paid'][y]) for y in J.YEARS]))
     out['upkeep-spending'] = TP.page(
         'upkeep-spending',
         'Most of building upkeep is steady work: %s to %s a year to payees paid year after year.'
@@ -444,11 +452,11 @@ def build():
     out[HUB] = TP.hub(
         HUB,
         'Building upkeep’s budget nearly doubled in four years, %s to %s, while spending grew '
-        'about a third. These pages show what it buys, and where the difference sits.'
-        % (C.usd(fl(o0)), C.usd(fl(o1))),
+        '%s. These pages show what it buys, and where the difference sits.'
+        % (C.usd(fl(o0)), C.usd(fl(o1)), C.pct(ps, 0)),
         hub_ladder,
         chart=out['upkeep-budget-vs-spending']['chart'],
-        answer_figures={'a': U(o0), 'b': U(o1)})
+        answer_figures={'a': U(o0), 'b': U(o1), 'p': figure(ps, C.pct(ps, 0))})
 
     if sorted(k for k in out if k != HUB) != MINE:
         fail('the pages built are not the pages the registry gives this script: %s vs %s'
@@ -530,7 +538,7 @@ def contracted_page(d, U, F, P, N):
              allow=('13 February 2025',)),
         rel=f('rel', U(rel), 'ordered, then released unpaid, %s' % C.fy(Y1), 'published', {'y': F(Y1)}),
         o26=f('o26', U(g(Y1, 'orig')), 'original budget, %s' % C.fy(Y1), 'published', {'y': F(Y1)}),
-        s26=f('s26', U(g(Y1, 'spent')), 'spent, %s, before the close' % C.fy(Y1), 'published',
+        s26=f('s26', U(g(Y1, 'spent')), 'spent or on order, %s, before the close' % C.fy(Y1), 'published',
               {'y': F(Y1)}),
         left=f('left', U(left), 'left unspent, %s' % C.fy(Y1), 'published', {'y': F(Y1)}),
         r25=f('r25', U(rec[Y0]), 'recurring service payees, %s' % C.fy(Y0), 'published', {'y': F(Y0)}),
@@ -695,7 +703,7 @@ def every_dollar_page(d, U, F, P, N):
     over = sum((v for v in al.values() if v < 0), D0)
     # Against FY2025, account by account: budget (original plus transfers) and spending.
     bud = lambda a, y: d['acct'][(y, a, 'orig')] + d['acct'][(y, a, 'trans')]
-    sp = lambda a, y: d['acct'][(y, a, 'spent')]
+    sp = lambda a, y: d['acct'][(y, a, 'paid')]     # the bridge shows paid and on order apart
     db = sum((bud(a, Y1) - bud(a, Y0) for a in d['accounts']), D0)
     ds = sum((sp(a, Y1) - sp(a, Y0) for a in d['accounts']), D0)
     left0 = d['left'][Y0]
@@ -738,7 +746,7 @@ def every_dollar_page(d, U, F, P, N):
             cells=[C.usd(v) for v in vals[:4]] + [C.usd(fl(pieces[(a, 'open')])), C.usd(fl(al[a]))]))
     acct_rows.append(dict(label='Every account', cells=[
         C.usd(fl(v)) for v in (sum((bud(a, Y0) for a in d['accounts']), D0),
-                               orig + carry + trans, d['spent'][Y0], paid, open_, left)]))
+                               orig + carry + trans, d['paid'][Y0], paid, open_, left)]))
     order = sorted(pay, key=lambda p: (p == 'Journal entries and refunds', -fl(pay[p])))
     payee_views = []
     for i in range(0, len(order), PAYEE_VIEW):
@@ -1049,7 +1057,7 @@ def ledger_page(d, U, F, P, N):
     for r in lines:
         by_acct[r['account']].append(r)
     bud = lambda a, y: d['acct'][(y, a, 'orig')] + d['acct'][(y, a, 'trans')]
-    sp = lambda a, y: d['acct'][(y, a, 'spent')]
+    sp = lambda a, y: d['acct'][(y, a, 'paid')]     # the card shows Paid and On order apart
     left = {a: d['acct_left'](Y1, a) for a in d['accounts']}
     accts = sorted((a for a in left if left[a] > 0), key=lambda a: (-fl(left[a]), a))
     total = d['left'][Y1]

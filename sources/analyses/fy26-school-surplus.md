@@ -16,7 +16,7 @@
 
 **FY26 left $482,118 unspent; the FY27 school budget was set $761,000 below level service.** The surplus goes to the town as free cash, and Town Meeting decides where certified free cash is spent.
 
-**Electricity and contracted therapy ran past their voted budgets all 4 years, by $489,283.** FY27 budgets them at $316,250 and $130,000; FY26 already paid $319,109 and $204,758.
+**Electricity and contracted therapy ran past their voted budgets all 4 years, by $489,283.** FY27 budgets them at $316,250 and $130,000; FY26 already spent $381,471 and $206,020.
 
 **20 accounts were given $117,626 by transfer in FY26 and still ended $223,361 under.** School Committee dues got $13,500 for a search invoice and ended with $13,689 unspent.
 
@@ -98,7 +98,7 @@ Two measured things, side by side; neither explains the other. The FY2027 budget
 | Electricity | `0100-3-300-4130-99-1-74-2-521011` | -$13,633 | -$105,732 | -$67,266 | -$116,471 | $316,250 |
 | Contracted related services (special-education therapy) | `0100-3-300-2310-51-1-06-2-535012` | -$14,197 | -$41,922 | -$27,042 | -$103,020 | $130,000 |
 
-FY2026 had already paid $319,108.72 for electricity and $204,757.65 for therapy before anything still committed. Beside electricity, natural-gas heating (`0100-3-300-4120-99-1-74-2-521025`) was voted above its spending in FY2024, FY2025, FY2026 and received transfers in, net, in every year held: FY2023 voted $98,151, moved $14,500, spent and committed $122,623; FY2024 voted $98,151, moved $16,400, spent and committed $94,480; FY2025 voted $120,000, moved $5,608, spent and committed $82,522; FY2026 voted $145,000, moved $11,024, spent and committed $110,464.
+FY2026 had already spent $381,470.85 for electricity and $206,020.05 for therapy, counting what was still owed at the close. Beside electricity, natural-gas heating (`0100-3-300-4120-99-1-74-2-521025`) was voted above its spending in FY2024, FY2025, FY2026 and received transfers in, net, in every year held: FY2023 voted $98,151, moved $14,500, spent and committed $122,623; FY2024 voted $98,151, moved $16,400, spent and committed $94,480; FY2025 voted $120,000, moved $5,608, spent and committed $82,522; FY2026 voted $145,000, moved $11,024, spent and committed $110,464.
 
 At the Finance Committee on 26 February 2026 a member “questions the impact of the solar panels”. *Hypotheses, untested:* buildings moving load from gas to electricity; rates; the solar arrangement. *Would settle it:* the utility bills by building, with kilowatt-hours and any solar credit.
 

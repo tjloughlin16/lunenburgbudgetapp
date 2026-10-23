@@ -85,6 +85,12 @@ def pct1(a, b):
 
 # --------------------------------------------------------------------- the ledger
 
+def footed_row(parts):
+    """Parts and their total, in whole dollars that add up (conclusions.footed)."""
+    ps, t = C.footed(parts)
+    return ps + [t]
+
+
 def ledger():
     """Function 3510 (athletics) from the period-13 reports: the general fund (0100) and the
     athletics revolving fund (1301), by year, account by account."""
@@ -95,12 +101,18 @@ def ledger():
     for r in rows:
         fy, pot = int(r['fiscal_year']), 'town' if r['fund'] == '0100' else 'fund'
         d = out.setdefault(fy, {}).setdefault(pot, dict(rows=[], original=0.0, revised=0.0,
-                                                         spent=0.0, owed=0.0, left=0.0))
+                                                         paid=0.0, owed=0.0, left=0.0))
         d['rows'].append(r)
         for k, col in (('original', 'original_approp'), ('revised', 'revised_budget'),
-                       ('spent', 'ytd_expended'), ('owed', 'encumbrances'),
+                       ('paid', 'ytd_expended'), ('owed', 'encumbrances'),
                        ('left', 'available_budget')):
             d[k] += float(r[col] or 0)
+    # SPENT IS PAYMENTS PLUS WHAT WAS STILL OWED (TJ, 23 October 2026; scripts/journal.py, WHAT
+    # "SPENT" MEANS). `paid` is the ledger's expended column alone, kept for the one table that
+    # shows paid and owed side by side. Only FY2026 owes anything.
+    for pots in out.values():
+        for d in pots.values():
+            d['spent'] = d['paid'] + d['owed']
     if sorted(out) != [2023, 2024, 2025, 2026]:
         fail('the period-13 reports no longer hold FY2023-FY2026 for function 3510: %s'
              % sorted(out))
@@ -228,14 +240,13 @@ def build():
     agree = CS['agreeing']
     teams = CS['count']
     fx = {}
-    # PAID, NOT SPENT. Here `spent` is ytd_expended alone; the transportation pages say
-    # spent for paid PLUS still owed. FY2026 is the only year with anything owed ($23,524 on
-    # the town side), so its sentences say paid -- one word, one meaning, across the site.
+    # SPENT, on the site's one definition: paid plus still owed at the close (ledger() above),
+    # the basis the transportation and special education pages use too.
     fx['town26'] = f('town26', U(town[2026]['spent']),
-                     'town budget, paid for athletics, %s (ledger)' % C.fy(2026),
+                     'town budget, spent on athletics, %s (ledger)' % C.fy(2026),
                      'published', {'y': F(2026)})
     fx['fund26'] = f('fund26', U(fund[2026]['spent']),
-                     'fee fund, paid for athletics, %s (ledger)' % C.fy(2026),
+                     'fee fund, spent on athletics, %s (ledger)' % C.fy(2026),
                      'published', {'y': F(2026)})
     fx['deck24'] = f('deck24', U(tot['deck']),
                      '%s teams, %s, the district’s May 2024 deck' % (C.num(teams), C.fy(2024)),
@@ -344,12 +355,12 @@ def build():
     table_pots = dict(caption='Athletics spending by fund, by year', views=[
         dict(key='ledger', label='The town’s ledger', total_col=2, kinds=['ledger'] * 4,
              columns=['Town budget, spent', 'Fee fund, spent', 'The two', 'Fee fund’s share'],
-             rows=[dict(label=C.fy(fy), cells=[
-                 C.usd(town[fy]['spent']), C.usd(fund[fy]['spent']),
-                 C.usd(town[fy]['spent'] + fund[fy]['spent']), C.pct(share[fy])])
+             rows=[dict(label=C.fy(fy), cells=[C.usd(x) for x in footed_row(
+                 [town[fy]['spent'], fund[fy]['spent']])] + [C.pct(share[fy])])
                  for fy in sorted(L, reverse=True)],
              note='MUNIS year-end (period 13) reports, function 3510 in the general fund and '
-                  'fund 1301. Spent is what the ledger records as expended at the close. The '
+                  'fund 1301. Spent is what the ledger records as expended at the close plus '
+                  'what was still owed then; only FY2026 owed anything. The '
                   'fee fund’s FY2025 figure is net of four journal entries marked expense '
                   'adjustments.'),
         dict(key='fy19doc', label='The district’s FY2019 budget document',
@@ -830,8 +841,8 @@ def build():
 
     # ---- FY2026 athletics underspend
     t26 = town[2026]
-    if abs(t26['revised'] - t26['spent'] - t26['owed'] - t26['left']) > 0.01:
-        fail('the FY2026 athletics accounts no longer foot: budget less spent less owed')
+    if abs(t26['revised'] - t26['spent'] - t26['left']) > 0.01:
+        fail('the FY2026 athletics accounts no longer foot: budget less spent (paid and owed)')
     left_pct = pct1(t26['left'], t26['revised'])
     sec = acct[('S3066671', '511032')]
     if float(sec['ytd_expended']) != 0 or float(sec['revised_budget']) <= 0:
@@ -842,13 +853,17 @@ def build():
     biggest = max(t26['rows'], key=lambda r: float(r['available_budget']))
     if biggest['obj'] != '511032':
         fail('the secretary account is no longer the largest unspent athletics account')
-    under_rows = [dict(label=r['description'].capitalize(), cells=[
-        C.usd(float(r['revised_budget'])), C.usd(float(r['ytd_expended'])),
-        C.usd(float(r['encumbrances'])), C.usd(float(r['available_budget']))])
-        for r in sorted(t26['rows'], key=lambda r: -float(r['revised_budget']))
-        if any(float(r[k] or 0) for k in ('revised_budget', 'ytd_expended'))]
-    under_rows.append(dict(label='All athletics accounts', cells=[
-        C.usd(t26['revised']), C.usd(t26['spent']), C.usd(t26['owed']), C.usd(t26['left'])]))
+    shown = [r for r in sorted(t26['rows'], key=lambda r: -float(r['revised_budget']))
+             if any(float(r[k] or 0) for k in ('revised_budget', 'ytd_expended', 'encumbrances'))]
+    # The accounts are printed above their total, so each column foots (conclusions.footed).
+    ucols = [C.footed([float(r[k] or 0) for r in shown])
+             for k in ('revised_budget', 'ytd_expended', 'encumbrances', 'available_budget')]
+    for got, want in zip((t[1] for t in ucols), (t26['revised'], t26['paid'], t26['owed'], t26['left'])):
+        if got != round(want):
+            fail('the FY2026 athletics accounts shown do not sum to the year’s total')
+    under_rows = [dict(label=r['description'].capitalize(),
+                       cells=[C.usd(ucols[j][0][i]) for j in range(4)]) for i, r in enumerate(shown)]
+    under_rows.append(dict(label='All athletics accounts', cells=[C.usd(t[1]) for t in ucols]))
     eq = A['counted']['equipment']['said']
     seq = A['helmets_sequel']
     out['fy2026-athletics-underspend'] = TP.page(
@@ -857,8 +872,8 @@ def build():
         % (C.fy(2026), C.usd(t26['left']), C.usd(t26['revised'])),
         [f('rev26', U(t26['revised']), 'athletics budget after transfers, %s' % C.fy(2026),
            'published', {'y': F(2026)}),
-         f('spent26', U(t26['spent']), 'spent by the close', 'published'),
-         f('owed26', U(t26['owed']), 'committed and still owed at the close', 'published'),
+         f('spent26', U(t26['spent']), 'spent by the close, paid or still owed', 'published'),
+         f('owed26', U(t26['owed']), 'of it still owed at the close', 'published'),
          f('left26', U(t26['left']), 'left unspent', 'published'),
          f('leftpct', P(left_pct), 'of the budget left unspent', 'published'),
          f('sec', U(float(sec['revised_budget'])), 'athletics secretary, with nothing spent',
@@ -893,11 +908,11 @@ def build():
             note_figures={'a': U(t26['left']), 'b': U(t26['revised']), 'y': F(2026)}),
         table=dict(caption='Athletics accounts at the close', views=[dict(
             key='accounts', label='Town general fund, function 3510', total_col=3,
-            kinds=['ledger'] * 4, columns=['Budget after transfers', 'Spent', 'Still owed',
+            kinds=['ledger'] * 4, columns=['Budget after transfers', 'Paid', 'Still owed',
                                            'Left'],
             rows=under_rows,
             note='The MUNIS year-end (period 13) report. Left is the report’s own column: '
-                 'budget less spent less still owed.')]),
+                 'budget less paid less still owed.')]),
         said=[said_from(eq, 0),
               dict(quote=seq['quotes'][0]['text'], board=seq['board'],
                    date=re.search(r'(\d{4}-\d{2}-\d{2})', seq['url']).group(1),
@@ -931,7 +946,7 @@ def build():
          ('town', 'open'): ['unspent26', 'bldg-gap'], ('fund', 'open'): ['memo25'],
          ('sheets', 'open'): ['agree', 'sport-gap']})
     hub_ladder = LD.ladder(tiers, [
-        LD.conclusion('The town’s ledger shows %s paid for athletics in %s, and the fee fund %s.'
+        LD.conclusion('The town’s ledger shows %s spent on athletics in %s, and the fee fund %s.'
                       % (C.usd(town[2026]['spent']), C.fy(2026), C.usd(fund[2026]['spent'])),
                       ['town26', 'fund26'],
                       {'a': U(town[2026]['spent']), 'y': F(2026), 'b': U(fund[2026]['spent'])}),
@@ -953,7 +968,7 @@ def build():
     out['athletics'] = TP.hub(
         'athletics',
         'Athletics is paid from two pots, the town budget and a fee fund. The town’s ledger shows '
-        '%s paid in %s and the fee fund %s; the district’s own sheets disagree on what each team '
+        '%s spent in %s and the fee fund %s; the district’s own sheets disagree on what each team '
         'costs, by a multiple.' % (C.usd(town[2026]['spent']), C.fy(2026),
                                    C.usd(fund[2026]['spent'])),
         hub_ladder, chart=TP.series(

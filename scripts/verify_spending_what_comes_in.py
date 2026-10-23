@@ -67,8 +67,9 @@ def fig(conc, cid, key, want, tol=D('0.5')):
     same('%s/%s' % (cid, key), conc[cid]['figures'][key]['value'], want, tol)
 
 
-def book(y, which):
-    """(fund, function, type, description) -> Decimal YTD actual, from the workbook itself."""
+def book(y, which, owed=False):
+    """(fund, function, type, description) -> Decimal YTD actual, from the workbook itself.
+    owed=True reads the ENCUMBRANCES column instead: what was still owed at the close."""
     wb = openpyxl.load_workbook(BOOK % (y, which), read_only=True, data_only=True)
     out = {}
     head = None
@@ -85,7 +86,7 @@ def book(y, which):
         k = (seg[0], seg[3], typ, str(rec.get('ACCOUNT DESCRIPTION') or '').strip())
         # The special-funds workbook heads the column `YTD ACTUAL`, the general fund one
         # `YTD EXPENDED`; exactly one of the two must be present.
-        cols = [c for c in ('YTD ACTUAL', 'YTD EXPENDED') if c in rec]
+        cols = [c for c in (('ENCUMBRANCES',) if owed else ('YTD ACTUAL', 'YTD EXPENDED')) if c in rec]
         if len(cols) != 1:
             bad.append('%s: no single YTD column in %s' % (BOOK % (y, which), head))
             return out
@@ -163,12 +164,18 @@ def main():
     fig(conc, c, 'bal', carried[2023]['Extended Day Revolving Fund'] + net('1312', (2024, 2025, 2026)))
 
     c = 'athletics-fees-pay-a-share'
-    g = {y: sum((v for (f, fn, t, _d), v in gf[y].items() if fn == '3510' and t == 'E'), D(0)) for y in YEARS}
-    fund_out = sum((rout.get(('1301', y), D(0)) for y in YEARS), D(0))
+    # athletics SPENT, both sides: payments plus what was still owed (the site's definition)
+    gfo = {y: book(y, 'gf-school', owed=True) for y in YEARS}
+    spo = {y: book(y, 'special-school', owed=True) for y in YEARS}
+    g = {y: sum((v + gfo[y].get((f, fn, t, _d), D(0)) for (f, fn, t, _d), v in gf[y].items()
+                 if fn == '3510' and t == 'E'), D(0)) for y in YEARS}
+    o1301 = {y: sum((v for (f, _fn, t, _d), v in spo[y].items() if f == '1301' and t == 'E'), D(0))
+             for y in YEARS}
+    fund_out = sum((rout.get(('1301', y), D(0)) + o1301[y] for y in YEARS), D(0))
     fees = sum((rin.get(('1301', y), D(0)) for y in YEARS), D(0))
     fig(conc, c, 'gf', sum(g.values(), D(0)))
     fig(conc, c, 'fund', fund_out)
-    fig(conc, c, 'f25', rout[('1301', 2025)])
+    fig(conc, c, 'f25', rout[('1301', 2025)] + o1301[2025])
     fig(conc, c, 'g25', g[2025])
     fig(conc, c, 'share', D(100) * fees / (fund_out + sum(g.values(), D(0))), D('0.05'))
 

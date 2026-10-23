@@ -136,14 +136,16 @@ already holds copies of the three CSVs, and a deploy would serve them.
 Every figure below comes from `lunenburg.db`. Each is a measurement; any "why" is a hypothesis
 (rule 7). These are net appropriations, not costs (rule 11).
 
-- **School General Fund, revised budget vs actual:**
+- **School General Fund, revised budget vs spent** (spent = paid plus still owed, TJ's
+  definition of 23 October 2026, `journal.SPENT`; closed years owe nothing at the close, so
+  only FY2026 differs from the actual column -- $25,657,318 paid, $246,767 still owed):
 
-  | FY | revised budget | actual |
+  | FY | revised budget | spent |
   |---|---|---|
   | 2023 | $22,546,062 | $22,436,810 |
   | 2024 | $22,977,154 | $22,755,089 |
   | 2025 | $25,187,628 | $24,560,511 |
-  | 2026 | $26,368,342 | $25,657,318 |
+  | 2026 | $26,368,342 | $25,904,085 |
 
   Salaries (object 51x) came in under budget every year.
 - **FY2026 vs the period-13 spreadsheet.** This run's FY2026 General Fund actual is $43,639.08

@@ -961,7 +961,7 @@ def finance_index():
         stock = sum(x for x in held if x)
         return dict(
             appropriation=t.get('appropriation_revised'),
-            expended=t.get('appropriation_expended'),
+            spent=t.get('appropriation_spent'),     # paid plus still owed
             period=t.get('appropriation_period'),
             held=stock or None,
             held_parts=dict(special_revenue=t.get('special_revenue_held'),

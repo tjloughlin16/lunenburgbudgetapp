@@ -134,11 +134,15 @@ def ledger():
                                         report=r['doc_id'])
         elif r['fund'] != '0100':
             e = ent.setdefault(r['fund'], dict(fy=snap['fy'], period=snap['period'], expense_budget=0.0, expended=0.0,
+                                               encumbered=0.0, spent=0.0,
                                                revenue_estimate=0.0, collected=0.0, reports=set()))
             e['reports'].add(r['doc_id'])
             if r['account_type'] == 'expense':
                 e['expense_budget'] = round(e['expense_budget'] + (snap['revised'] or 0), 2)
                 e['expended'] = round(e['expended'] + (snap['expended'] or 0), 2)
+                e['encumbered'] = round(e['encumbered'] + (snap['encumbered'] or 0), 2)
+                # SPENT is paid plus still owed (journal.py, WHAT "SPENT" MEANS)
+                e['spent'] = round(e['expended'] + e['encumbered'], 2)
             else:
                 e['revenue_estimate'] = round(e['revenue_estimate'] - (snap['revised'] or 0), 2)
                 e['collected'] = round(e['collected'] - (snap['expended'] or 0), 2)
@@ -362,7 +366,9 @@ def build():
         revs = [m for m in own if m['kind'] == 'revenue' and m['current']]
         o['totals'] = dict(
             appropriation_revised=r2(sum(m['current']['revised'] or 0 for m in appro)) if appro else None,
-            appropriation_expended=r2(sum(m['current']['expended'] or 0 for m in appro)) if appro else None,
+            # SPENT, set beside the vote: paid plus still owed (journal.py, WHAT "SPENT" MEANS)
+            appropriation_spent=r2(sum((m['current']['expended'] or 0) + (m['current']['encumbered'] or 0)
+                                       for m in appro)) if appro else None,
             appropriation_period=max((m['current']['period'] for m in appro), default=None),
             special_revenue_held=r2(sum(m['current']['closing'] for m in srs)) if srs else None,
             special_revenue_in=r2(sum(m['current']['revenue'] for m in srs)) if srs else None,
@@ -421,7 +427,7 @@ def build():
         generated_by='scripts/build_finance.py',
         about='The School Committee’s finances, every line: the appropriation, its revolving funds, grants, gifts and trusts, with what each held at 31 March 2026 and what it has done since FY2011 — the first of a page per board and department, from a registry of every accounting measure the town prints.',
         grain='DOLLARS as the accounting system printed them for FY2026 (evidence), beside the annual reports’ schedules for earlier years (read and tied, or transcribed) — kept apart. An appropriation is a net line, not a cost (rule 11).',
-        as_of=dict(ledger='FY2026, period 12 (year end, unaudited) where an account-level report exists; period 9 (31 March 2026) otherwise',
+        as_of=dict(ledger='FY2026, period 12 (through June, unaudited) where an account-level report exists; period 9 (31 March 2026) otherwise',
                    special_revenue=sr_asof, trusts=tr_asof),
         kinds=KINDS,
         measures=measures,
@@ -497,7 +503,7 @@ def school_conclusions(measures, asof):
                      'n': figure(len(srs), C.num(len(srs))), 'share': figure(share, C.pct(share, 1))},
             figure='held', kind='measured', bearing='sizes',
             detail='The town’s FY26 special-revenue report lists every fund with a department code; %s of them carry the schools’ code, 300. Their closing balances sum to %s. '
-                   'The general-fund appropriation is department 300 on the FY26 year-end budget report (%s revised, period 12, summed from its accounts). A balance is not a spendable surplus: '
+                   'The general-fund appropriation is department 300 on the FY26 budget report through June (%s revised, period 12, summed from its accounts). A balance is not a spendable surplus: '
                    'a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.' % (C.num(len(srs)), C.usd(held), C.usd(appro['revised'])),
             basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report’s department 300 total.',
             not_shown='What any balance is committed to. The report is balances, not obligations; the district’s own fund-by-fund plan would say what is spoken for.',

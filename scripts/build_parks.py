@@ -76,7 +76,7 @@ def sources():
         'town-ledgers/purchase-orders/po-closed-fy2025-parks-grounds-bid.pdf': ('Grounds-maintenance bid, year one from 1 July 2024', 'a contractor, by records request'),
         'town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-parks.pdf': ('FY2024 year-to-date budget report, Parks, with journal detail', 'MUNIS, by records request; image only'),
         'town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx': ('FY26 special-revenue report, 31 March 2026', 'MUNIS, by records request'),
-        'town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx': ('FY26 year-end budget report, general fund', 'MUNIS, by records request'),
+        'town-ledgers/expenses/glytdbud-expense-fy2026-p12-gf-all.xlsx': ('FY26 budget report through June (period 12), general fund', 'MUNIS, by records request'),
     }
     man = {r['key']: r for r in csv.DictReader(io.open(MANIFEST, encoding='utf-8'))}
     out = []
@@ -114,6 +114,9 @@ def build():
     held_share = 100 * f['closing'] / a['revised']
     fy25 = [h for h in trans if h['fy'] == 2025][0]
 
+    # SPENT is paid plus still owed (journal.py, WHAT "SPENT" MEANS): expended + encumbered.
+    # The fee fund's `spent` below is a revolving fund's money out -- cash -- and stays so.
+    spent_appro = round(a['expended'] + a['encumbered'], 2)
     rows = [
         conclusion(
             id='the-parks-reserve',
@@ -123,15 +126,15 @@ def build():
             figures={'held': figure(f['closing'], C.usd(f['closing']), 'in the Park Revolving Fund, 31 March 2026'),
                      'share': figure(held_share, C.pct(held_share, 0)), 'appro': figure(a['revised'], C.usd(a['revised'])),
                      'in': figure(f['revenue'], C.usd(f['revenue'])), 'out': figure(f['spent'], C.usd(f['spent'])),
-                     'spent_appro': figure(a['expended'], C.usd(a['expended']))},
+                     'spent_appro': figure(spent_appro, C.usd(spent_appro))},
             figure='held', kind='measured', bearing='sizes',
-            detail='The general fund voted the department %s for FY2026 as revised and %s of it was spent by year end (the FY26 year-end budget report, department 650). '
+            detail='The general fund voted the department %s for FY2026 as revised and %s of it was spent through June, counting what was still owed (the FY26 budget report through June, period 12, department 650). '
                    'Beside that, fund 1500 — programme and beach fees, kept in a revolving fund the department spends on the parks that raise them — carried %s at the end of March, '
                    'after %s in and %s out since July. A revolving balance is not a surplus the town can move: it is committed to the purpose that raised it, by the vote that created the fund.'
-                   % (C.usd(a['revised']), C.usd(a['expended']), C.usd(f['closing']), C.usd(f['revenue']), C.usd(f['spent'])),
-            basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 year-end expense report, department 650 summed from its accounts.',
+                   % (C.usd(a['revised']), C.usd(spent_appro), C.usd(f['closing']), C.usd(f['revenue']), C.usd(f['spent'])),
+            basis='sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, the row for fund 1500 (ACCOUNT BALANCE, REVENUE, EXPENDITURE, FUND BALANCE, credits shown as amounts, identity asserted); the FY26 expense report through June (period 12), department 650 summed from its accounts, expended plus encumbered.',
             not_shown='What the balance is spoken for, or what the last quarter of FY2026 did. The report stops at 31 March.',
-            allow=('1500', '650', 'FY26', '2026', '31'),
+            allow=('1500', '650', 'FY26', '2026', '31', 'period 12'),
         ),
         conclusion(
             id='the-fund-since-2011',
@@ -189,7 +192,7 @@ def build():
         generated_by='scripts/build_parks.py',
         about='Parks & Recreation: what the department is voted, what its own fee fund holds and has done since FY2011, what the registration system took in for FY2025, and what a contractor bid to keep the grounds.',
         grain='DOLLARS from four kinds of document kept apart: the FY26 accounting printouts (evidence), the annual reports’ fund schedule (read and tied; FY2024–FY2025 transcribed), the registration system’s sales (a printout, not the books), and a bid (stated). Not what the parks cost all in.',
-        as_of=dict(ledger='FY2026 year end (period 12), unaudited', fund=f['as_of'], myrec='1 July 2024 – 30 June 2025'),
+        as_of=dict(ledger='FY2026 through June (period 12), unaudited', fund=f['as_of'], myrec='1 July 2024 – 30 June 2025'),
         appropriation=dict(code='650', name=appro['name'], **{k: a[k] for k in ('original', 'revised', 'expended', 'encumbered', 'available', 'period')}),
         fund=dict(code='1500', name=fund['name'], current=f, history=fund['history']),
         gift=dict(code='1523', name=gift['name'], current=gift['current'], history=gift['history']),

@@ -434,7 +434,7 @@ def build():
            'published'),
          f('elec27', U(ch['electricity']['fy27']), 'electricity, %s budget (district workbook)'
            % C.fy(2027), 'published', {'y': F(2027)}),
-         f('elec26', U(ch['electricity']['paid26']), 'electricity, paid in %s' % C.fy(2026),
+         f('elec26', U(ch['electricity']['spent26']), 'electricity, spent or owed in %s' % C.fy(2026),
            'published', {'y': F(2026)})],
         [con('%s accounts closed %s past budget by %s; in %s, %s did.'
              % (C.num(over[2026][0]), C.fy(2026), C.usd(-over[2026][1]), C.fy(2025),

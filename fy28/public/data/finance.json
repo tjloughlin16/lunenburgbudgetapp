@@ -1,7 +1,7 @@
 {
  "about": "The School Committee’s finances, every line: the appropriation, its revolving funds, grants, gifts and trusts, with what each held at 31 March 2026 and what it has done since FY2011 — the first of a page per board and department, from a registry of every accounting measure the town prints.",
  "as_of": {
-  "ledger": "FY2026, period 12 (year end, unaudited) where an account-level report exists; period 9 (31 March 2026) otherwise",
+  "ledger": "FY2026, period 12 (through June, unaudited) where an account-level report exists; period 9 (31 March 2026) otherwise",
   "special_revenue": "2026-03-31",
   "trusts": "2026-03-31"
  },
@@ -10,7 +10,7 @@
    "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report’s department 300 total.",
    "bearing": "sizes",
    "claim": "The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.",
-   "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 year-end budget report ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
+   "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 budget report through June ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
    "figure": "held",
    "figures": {
     "appropriation": {
@@ -215,7 +215,7 @@
     "basis": "sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx, every row with department code 300, column FUND BALANCE; the expense report’s department 300 total.",
     "bearing": "sizes",
     "claim": "The schools hold $1,592,572 in 61 funds outside the appropriation, as of end of March.",
-    "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 year-end budget report ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
+    "detail": "The town’s FY26 special-revenue report lists every fund with a department code; 61 of them carry the schools’ code, 300. Their closing balances sum to $1,592,572. The general-fund appropriation is department 300 on the FY26 budget report through June ($26,332,564 revised, period 12, summed from its accounts). A balance is not a spendable surplus: a grant fund’s balance is claimed against a grant’s budget, and a revolving fund’s against the programme that raised it.",
     "figure": "held",
     "figures": {
      "appropriation": {
@@ -756,6 +756,16 @@
    "why": "The district’s FY 2027 Budget Summary sets out its operating (general fund) budget for FY2026 and FY2027 and the five sources that pay for it: Chapter 70, the member towns’ assessments, state transportation aid, its Regional Transportation Fund and its Excess & Deficiency reserve. Grants and revolving funds are not in it. DESE’s expenditures-by-function file DOES split the district’s total by fund, general fund against grants and revolving, but only through FY2025, and that total, which DESE titles Expenditure (Admin, Instruction, Operations), carries no capital or debt service row. So the operating budget on /enrolment/monty-tech-funding and DESE’s per-pupil figure are different years and different scopes, and nothing here reconciles them. — closes: DESE’s End of Year Financial Report for LEA 08320000 for FY2026, which splits spending by fund."
   },
   {
+   "side": "money_out",
+   "what": "Which voted budget line the grant and revolving spending booked to no function code served",
+   "why": "MEASURED: in the school MUNIS journal most spending outside the general fund in FY2026 posts to function 0000 or to a heading (1000, 2000, 2300, 2400, 4000), not to any line the general fund budget is voted on (/school-all-funds/budget-lines-all-funds, which shows it as its own row and does not spread it). The district's End of Year Financial Report to DESE does put grant spending on function codes, so the attribution is made somewhere outside the town's ledger. This narrows `Which budget line each dollar of grant and revolving money paid for`: the ledger cannot answer it either. — closes: the district's End of Year Financial Report working papers, grant and revolving columns by function, FY2023-FY2026."
+  },
+  {
+   "side": "held",
+   "what": "What the school revolving funds and the circuit breaker held at 30 June 2026",
+   "why": "The FY2023 annual town report prints each school special revenue fund's balance carried; the school journal gives every receipt and payment since. /school-all-funds/unspent-by-fund rolls the first forward with the second, and that is OUR arithmetic, not a balance anybody printed: it assumes the journal holds every receipt (one fund's interest is booked outside the school department) and it does not take off orders still open. The FY2024 and FY2025 annual reports' special revenue schedules are held and not yet read. — closes: the Town Accountant's special revenue fund balances at 30 June 2024, 2025 and 2026, school funds."
+  },
+  {
    "side": "extraction",
    "what": "Which of the town's two FY2023 statements of what the special revenue and enterprise funds held is right?",
    "why": "The FY2023 combined balance sheet gives special revenue fund equity as 6,131,303.68 and enterprise fund equity as 3,812,502.24, together 9,943,805.92. The special revenue schedule in the SAME annual report prints a grand total carried forward of 10,031,099.78. They are 87,293.86 apart. The comparison ties to the cent in FY2011, FY2013, FY2019 and FY2022, and the balance sheet's own arithmetic is complete -- every column foots to its own printed totals and liabilities plus equity equals assets -- so this is two published tables disagreeing and not a reading error. — closes: the Town Accountant's FY2023 trial balance, which would say which of the two the books support."
@@ -784,16 +794,6 @@
    "side": "extraction",
    "what": "Can we trust the stabilization and trust fund balances enough to chart how much the town holds in reserve, and how that has moved?",
    "why": "12 of 644 rows in `report_trust_funds` are reconciled to a total the document itself prints — 418 failed that check and 214 were never checked. The figures are read and published, so a query returns them and they look confident; only the `status` column says otherwise. Every page was surveyed before anyone tried: of 17 years, 10 need real PDF geometry rather than text, 5 are messy and 2 are clean — mirrored layouts, rows offset from their own names, a missing fund-name column, and column counts that change between years. 16 of 17 years do print a grand total to reconcile against, so the anchor exists. — closes: a geometry-aware extractor for this table family, tied to the printed total on each page. The per-year survey is in `sources/data/extraction-plan.csv`."
-  },
-  {
-   "side": "money_out",
-   "what": "Which voted budget line the grant and revolving spending booked to no function code served",
-   "why": "MEASURED: in the school MUNIS journal most spending outside the general fund in FY2026 posts to function 0000 or to a heading (1000, 2000, 2300, 2400, 4000), not to any line the general fund budget is voted on (/school-all-funds/budget-lines-all-funds, which shows it as its own row and does not spread it). The district's End of Year Financial Report to DESE does put grant spending on function codes, so the attribution is made somewhere outside the town's ledger. This narrows `Which budget line each dollar of grant and revolving money paid for`: the ledger cannot answer it either. — closes: the district's End of Year Financial Report working papers, grant and revolving columns by function, FY2023-FY2026."
-  },
-  {
-   "side": "held",
-   "what": "What the school revolving funds and the circuit breaker held at 30 June 2026",
-   "why": "The FY2023 annual town report prints each school special revenue fund's balance carried; the school journal gives every receipt and payment since. /school-all-funds/unspent-by-fund rolls the first forward with the second, and that is OUR arithmetic, not a balance anybody printed: it assumes the journal holds every receipt (one fund's interest is booked outside the school department) and it does not take off orders still open. The FY2024 and FY2025 annual reports' special revenue schedules are held and not yet read. — closes: the Town Accountant's special revenue fund balances at 30 June 2024, 2025 and 2026, school funds."
   }
  ],
  "generated_by": "scripts/build_finance.py",
@@ -1221,6 +1221,7 @@
    "code": "5000",
    "current": {
     "collected": 298020.2,
+    "encumbered": 0.0,
     "expended": 184920.48,
     "expense_budget": 184920.0,
     "fy": 2026,
@@ -1230,7 +1231,8 @@
      "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt",
      "sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt"
     ],
-    "revenue_estimate": 436667.0
+    "revenue_estimate": 436667.0,
+    "spent": 184920.48
    },
    "history": [],
    "id": "ef-5000",
@@ -1250,6 +1252,7 @@
    "code": "5100",
    "current": {
     "collected": 0.0,
+    "encumbered": 0.0,
     "expended": 0.0,
     "expense_budget": 0.0,
     "fy": 2026,
@@ -1259,7 +1262,8 @@
      "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt",
      "sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt"
     ],
-    "revenue_estimate": 0.0
+    "revenue_estimate": 0.0,
+    "spent": 0.0
    },
    "history": [],
    "id": "ef-5100",
@@ -1279,6 +1283,7 @@
    "code": "6000",
    "current": {
     "collected": 1018940.07,
+    "encumbered": 442912.29,
     "expended": 1085564.09,
     "expense_budget": 1726394.0,
     "fy": 2026,
@@ -1288,7 +1293,8 @@
      "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-sewer.txt",
      "sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-sewer.txt"
     ],
-    "revenue_estimate": 1454671.0
+    "revenue_estimate": 1454671.0,
+    "spent": 1528476.38
    },
    "history": [],
    "id": "ef-6000",
@@ -1308,6 +1314,7 @@
    "code": "6100",
    "current": {
     "collected": 46851.59,
+    "encumbered": 0.0,
     "expended": 8542.37,
     "expense_budget": 45000.0,
     "fy": 2026,
@@ -1317,7 +1324,8 @@
      "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-water.txt",
      "sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-water.txt"
     ],
-    "revenue_estimate": 45000.0
+    "revenue_estimate": 45000.0,
+    "spent": 8542.37
    },
    "history": [],
    "id": "ef-6100",
@@ -1337,6 +1345,7 @@
    "code": "6200",
    "current": {
     "collected": 117827.68,
+    "encumbered": 6795.1,
     "expended": 139039.89,
     "expense_budget": 225928.0,
     "fy": 2026,
@@ -1346,7 +1355,8 @@
      "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-peg-access.txt",
      "sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-peg-access.txt"
     ],
-    "revenue_estimate": 225927.0
+    "revenue_estimate": 225927.0,
+    "spent": 145834.99
    },
    "history": [],
    "id": "ef-6200",
@@ -1366,6 +1376,7 @@
    "code": "7900",
    "current": {
     "collected": 828757.48,
+    "encumbered": 0.0,
     "expended": 0.0,
     "expense_budget": 0.0,
     "fy": 2026,
@@ -1375,7 +1386,8 @@
      "sources/town-ledgers/expenses/glytdbud-expense-fy2026-p09-ef-solid-waste.txt",
      "sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-ef-solid-waste.txt"
     ],
-    "revenue_estimate": 1000000.0
+    "revenue_estimate": 1000000.0,
+    "spent": 0.0
    },
    "history": [],
    "id": "ef-7900",
@@ -21903,9 +21915,9 @@
    "slug": "accounting",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 440607.96,
     "appropriation_period": 12,
     "appropriation_revised": 508568.56,
+    "appropriation_spent": 440607.96,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -21929,9 +21941,9 @@
    "slug": "animal-control",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 46392.73,
     "appropriation_period": 12,
     "appropriation_revised": 46125.0,
+    "appropriation_spent": 46392.73,
     "revenue_estimate": 1000.0,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -21962,9 +21974,9 @@
    "slug": "architectural-preservation-district-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 0,
     "appropriation_period": 12,
     "appropriation_revised": 500.0,
+    "appropriation_spent": 0,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22002,9 +22014,9 @@
    "slug": "board-of-assessors",
    "totals": {
     "agency_held": 30907.25,
-    "appropriation_expended": 287020.62,
     "appropriation_period": 12,
     "appropriation_revised": 327255.62,
+    "appropriation_spent": 289220.62,
     "revenue_estimate": 113794.0,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22050,9 +22062,9 @@
    "slug": "board-of-health",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 124354.28,
     "appropriation_period": 12,
     "appropriation_revised": 126361.3,
+    "appropriation_spent": 124354.28,
     "revenue_estimate": 2200.0,
     "special_revenue_held": 171034.77,
     "special_revenue_in": 2318.33,
@@ -22096,9 +22108,9 @@
    "slug": "building-inspection",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 12512.12,
     "appropriation_period": 12,
     "appropriation_revised": 10281.5,
+    "appropriation_spent": 12512.12,
     "revenue_estimate": 284750.0,
     "special_revenue_held": 400.0,
     "special_revenue_in": 0,
@@ -22138,9 +22150,9 @@
    "slug": "capital-planning-committee",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 2293320.32,
     "appropriation_period": 12,
     "appropriation_revised": 2293320.32,
+    "appropriation_spent": 2293320.32,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22184,9 +22196,9 @@
    "slug": "cemetery-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 122535.57,
     "appropriation_period": 12,
     "appropriation_revised": 127756.57,
+    "appropriation_spent": 123235.57,
     "revenue_estimate": 5500.0,
     "special_revenue_held": 209.39,
     "special_revenue_in": 0,
@@ -22207,9 +22219,9 @@
    "slug": "commonwealth",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 935843.0,
     "appropriation_period": 12,
     "appropriation_revised": 935843.0,
+    "appropriation_spent": 935843.0,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22254,9 +22266,9 @@
    "slug": "conservation-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": null,
     "appropriation_period": null,
     "appropriation_revised": null,
+    "appropriation_spent": null,
     "revenue_estimate": 5250.0,
     "special_revenue_held": 110159.42,
     "special_revenue_in": 58741.74,
@@ -22303,9 +22315,9 @@
    "slug": "council-on-aging",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 204228.12,
     "appropriation_period": 12,
     "appropriation_revised": 267306.78,
+    "appropriation_spent": 212237.77,
     "revenue_estimate": null,
     "special_revenue_held": 66060.85,
     "special_revenue_in": 92444.23,
@@ -22338,9 +22350,9 @@
    "slug": "cultural-council",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": null,
     "appropriation_period": null,
     "appropriation_revised": null,
+    "appropriation_spent": null,
     "revenue_estimate": null,
     "special_revenue_held": 225.0,
     "special_revenue_in": 0,
@@ -22361,9 +22373,9 @@
    "slug": "dispatch",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 305889.53,
     "appropriation_period": 12,
     "appropriation_revised": 310763.9,
+    "appropriation_spent": 305889.53,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22420,9 +22432,9 @@
    "slug": "dpw",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 2835036.41,
     "appropriation_period": 12,
     "appropriation_revised": 2887470.19,
+    "appropriation_spent": 3009133.42,
     "revenue_estimate": null,
     "special_revenue_held": -169333.71,
     "special_revenue_in": 41816.62,
@@ -22446,9 +22458,9 @@
    "slug": "emergency-management",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 6916.92,
     "appropriation_period": 12,
     "appropriation_revised": 7000.07,
+    "appropriation_spent": 6996.92,
     "revenue_estimate": null,
     "special_revenue_held": 778.03,
     "special_revenue_in": 0,
@@ -22486,9 +22498,9 @@
    "slug": "facilities",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 893660.52,
     "appropriation_period": 12,
     "appropriation_revised": 954768.75,
+    "appropriation_spent": 897259.24,
     "revenue_estimate": 149600.0,
     "special_revenue_held": 3000.19,
     "special_revenue_in": 0,
@@ -22520,9 +22532,9 @@
    "slug": "finance-committee",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 306.0,
     "appropriation_period": 12,
     "appropriation_revised": 186800.0,
+    "appropriation_spent": 306.0,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22572,9 +22584,9 @@
    "slug": "fire",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 1709051.87,
     "appropriation_period": 12,
     "appropriation_revised": 1742387.34,
+    "appropriation_spent": 1721701.59,
     "revenue_estimate": 292050.0,
     "special_revenue_held": 9297.1,
     "special_revenue_in": 3753.0,
@@ -22610,9 +22622,9 @@
    "slug": "historical-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 0,
     "appropriation_period": 12,
     "appropriation_revised": 1000.0,
+    "appropriation_spent": 0,
     "revenue_estimate": null,
     "special_revenue_held": 4287.36,
     "special_revenue_in": 0,
@@ -22645,9 +22657,9 @@
    "slug": "information-technology",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 469955.98,
     "appropriation_period": 12,
     "appropriation_revised": 517287.56,
+    "appropriation_spent": 486870.84,
     "revenue_estimate": null,
     "special_revenue_held": 7379.2,
     "special_revenue_in": 0,
@@ -22668,9 +22680,9 @@
    "slug": "land-use",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 335323.72,
     "appropriation_period": 12,
     "appropriation_revised": 446669.06,
+    "appropriation_spent": 337345.25,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22717,9 +22729,9 @@
    "slug": "library-board-of-trustees",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 621443.59,
     "appropriation_period": 12,
     "appropriation_revised": 638951.79,
+    "appropriation_spent": 630732.79,
     "revenue_estimate": null,
     "special_revenue_held": 172621.38,
     "special_revenue_in": 19011.85,
@@ -22750,9 +22762,9 @@
    "slug": "montachusett-regional-planning",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 4477.98,
     "appropriation_period": 12,
     "appropriation_revised": 4477.98,
+    "appropriation_spent": 4477.98,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22773,9 +22785,9 @@
    "slug": "monty-tech",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 1334521.0,
     "appropriation_period": 12,
     "appropriation_revised": 1334521.0,
+    "appropriation_spent": 1334521.0,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -22818,9 +22830,9 @@
    "slug": "parks-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 113350.2,
     "appropriation_period": 12,
     "appropriation_revised": 140759.43,
+    "appropriation_spent": 117618.6,
     "revenue_estimate": 0,
     "special_revenue_held": 86407.56,
     "special_revenue_in": 8131.97,
@@ -22865,9 +22877,9 @@
    "slug": "planning-board",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 0,
     "appropriation_period": 12,
     "appropriation_revised": 0,
+    "appropriation_spent": 0,
     "revenue_estimate": 12000.0,
     "special_revenue_held": 54954.97,
     "special_revenue_in": 18730.5,
@@ -22933,9 +22945,9 @@
    "slug": "police",
    "totals": {
     "agency_held": -6345.47,
-    "appropriation_expended": 2338623.25,
     "appropriation_period": 12,
     "appropriation_revised": 2502441.33,
+    "appropriation_spent": 2338673.25,
     "revenue_estimate": 19474.0,
     "special_revenue_held": 106233.8,
     "special_revenue_in": 1155.46,
@@ -23061,9 +23073,9 @@
    "slug": "school-committee",
    "totals": {
     "agency_held": -25916.54,
-    "appropriation_expended": 25657318.31,
     "appropriation_period": 12,
     "appropriation_revised": 26368341.65,
+    "appropriation_spent": 25904102.2,
     "revenue_estimate": null,
     "special_revenue_held": 1592572.29,
     "special_revenue_in": 1553150.87,
@@ -23141,9 +23153,9 @@
    "slug": "select-board",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 176969.37,
     "appropriation_period": 12,
     "appropriation_revised": 191283.67,
+    "appropriation_spent": 176969.41,
     "revenue_estimate": 109500.0,
     "special_revenue_held": 369493.48,
     "special_revenue_in": 99510.61,
@@ -23184,9 +23196,9 @@
    "slug": "sewer-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": null,
     "appropriation_period": null,
     "appropriation_revised": null,
+    "appropriation_spent": null,
     "revenue_estimate": null,
     "special_revenue_held": 387.09,
     "special_revenue_in": 0,
@@ -23232,9 +23244,9 @@
    "slug": "town-clerk",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 89190.98,
     "appropriation_period": 12,
     "appropriation_revised": 95923.08,
+    "appropriation_spent": 90767.38,
     "revenue_estimate": 18950.0,
     "special_revenue_held": 252.35,
     "special_revenue_in": 0,
@@ -23281,9 +23293,9 @@
    "slug": "town-manager",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 4421195.81,
     "appropriation_period": 12,
     "appropriation_revised": 4596960.9,
+    "appropriation_spent": 4448731.06,
     "revenue_estimate": null,
     "special_revenue_held": -5572.23,
     "special_revenue_in": 0,
@@ -23306,9 +23318,9 @@
    "slug": "town-meeting",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 1027937.0,
     "appropriation_period": 12,
     "appropriation_revised": 1027937.0,
+    "appropriation_spent": 1027937.0,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -23475,9 +23487,9 @@
    "slug": "treasurer-collector",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 2795183.2,
     "appropriation_period": 12,
     "appropriation_revised": 2837782.17,
+    "appropriation_spent": 2814734.22,
     "revenue_estimate": 51199264.0,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -23520,9 +23532,9 @@
    "slug": "trust-fund-commission",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": null,
     "appropriation_period": null,
     "appropriation_revised": null,
+    "appropriation_spent": null,
     "revenue_estimate": null,
     "special_revenue_held": 432.26,
     "special_revenue_in": 0,
@@ -23553,9 +23565,9 @@
    "slug": "veterans-services",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 75663.17,
     "appropriation_period": 12,
     "appropriation_revised": 90699.0,
+    "appropriation_spent": 75663.17,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -23576,9 +23588,9 @@
    "slug": "worcester-regional-retirement",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": 2392572.0,
     "appropriation_period": 12,
     "appropriation_revised": 2392572.0,
+    "appropriation_spent": 2392572.0,
     "revenue_estimate": null,
     "special_revenue_held": null,
     "special_revenue_in": null,
@@ -23611,9 +23623,9 @@
    "slug": "zoning-board-of-appeals",
    "totals": {
     "agency_held": null,
-    "appropriation_expended": null,
     "appropriation_period": null,
     "appropriation_revised": null,
+    "appropriation_spent": null,
     "revenue_estimate": 2000.0,
     "special_revenue_held": 14621.79,
     "special_revenue_in": 0,

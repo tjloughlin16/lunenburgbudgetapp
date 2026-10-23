@@ -208,6 +208,8 @@ def para_accounts(rows):
             transfers=round(float(r['transfers_adjustments']), 2),
             revised=round(float(r['revised_budget']), 2),
             expended=round(float(r['ytd_expended']), 2),
+            # spent: paid plus still owed (journal.py, WHAT "SPENT" MEANS)
+            spent=round(float(r['ytd_expended']) + float(r['encumbrances']), 2),
             available=round(float(r['available_budget']), 2),
         ))
     return out
@@ -322,7 +324,8 @@ def waterfall_svg(t, moved_note, unspent_label, compare, rbw, gap_text, title, s
     stages = [
         ('Voted\n(original)', 0, orig, SPENT, orig),
         ('Revised\nbudget', 0, t['revised'], SPENT, t['revised']),
-        ('Spent', 0, t['expended'], SPENT, t['expended']),
+        # spent = paid plus still owed, so the bars foot to the revised budget
+        ('Spent', 0, t['expended'] + t['encumbered'], SPENT, t['expended'] + t['encumbered']),
         (unspent_label, 0, t['available'], UNSPENT, t['available']),
     ]
     x = 0
@@ -1467,12 +1470,12 @@ def fy2025():
             claim='One SPED paraprofessional line gained %s mid-year; another lost %s.'
                   % (usd(ms_sped['transfers']), usd(abs(es_sped['transfers']))),
             so_what='The high-school paraprofessional line (not SPED) spent %s of %s '
-                    'budgeted.' % (usd(hs_nonsped['expended']), usd(hs_nonsped['revised'])),
+                    'budgeted.' % (usd(hs_nonsped['spent']), usd(hs_nonsped['revised'])),
             figures={'ms': figure(ms_sped['transfers'], usd(ms_sped['transfers']),
                                   'added to the middle-school SPED paraprofessional line'),
                      'es': figure(abs(es_sped['transfers']), usd(abs(es_sped['transfers'])),
                                   'removed from the elementary SPED paraprofessional line'),
-                     'hs_spent': figure(hs_nonsped['expended'], usd(hs_nonsped['expended'])),
+                     'hs_spent': figure(hs_nonsped['spent'], usd(hs_nonsped['spent'])),
                      'hs_budget': figure(hs_nonsped['revised'], usd(hs_nonsped['revised'])),
                      'ps': figure(ps_sped['available'], usd(ps_sped['available'])),
                      'hs_sped': figure(hs_sped['available'], usd(hs_sped['available'])),
@@ -1630,7 +1633,9 @@ def fy2025():
         moved_out=moved_out,
         not_spent_against_original=not_spent_against_original,
         waterfall=dict(voted=t['original'], moved_out=t['transfers'], revised=t['revised'],
-                       spent=t['expended'], unspent=t['available'],
+                       # spent = paid plus still owed (journal.py, WHAT "SPENT" MEANS), so
+                       # revised = spent + unspent and the bars foot
+                       spent=round(t['expended'] + t['encumbered'], 2), unspent=t['available'],
                        district_figure=DISTRICT_FIGURE),
         by_function=bf,
         by_function_totals=dict(salary=tot_sal, non_salary=tot_non,
@@ -1989,11 +1994,12 @@ def fy26_audit(rows, t, cats):
                for y in HISTORY_YEARS]
         chronic[k] = dict(account=a0, years=per, over_years=sum(1 for p in per if p['gap'] < 0),
                           total=round(-sum(p['gap'] for p in per), 2),
-                          paid26=F(byacct[a0][2026], 'ytd_expended'), fy27=wb[k]['fy27_balanced'])
+                          # spent, paid plus still owed -- the basis of `years` above
+                          spent26=round(se(byacct[a0][2026]), 2), fy27=wb[k]['fy27_balanced'])
         if chronic[k]['over_years'] != len(HISTORY_YEARS):
             fail('%s no longer ran past its voted budget in every year held' % k)
-        if chronic[k]['fy27'] >= chronic[k]['paid26']:
-            fail('%s: FY2027 is no longer budgeted below what FY2026 paid' % k)
+        if chronic[k]['fy27'] >= chronic[k]['spent26']:
+            fail('%s: FY2027 is no longer budgeted below what FY2026 spent' % k)
     chronic_total = round(sum(c['total'] for c in chronic.values()), 2)
     heat = [dict(fy=y, voted=F(byacct[ACCT_HEATING][y], 'original_approp'),
                  transfers=F(byacct[ACCT_HEATING][y], 'transfers_adjustments'),
@@ -2049,13 +2055,13 @@ def fy26_audit(rows, t, cats):
     psych = acct(wb['psych']['accounts'][0])
     if F(psych, 'ytd_expended') != 0:
         fail('the primary psychologist line now shows spending; the card must be rewritten')
-    kinder_spent = round(sum(F(acct(a), 'ytd_expended') for a in wb['kinder']['accounts']), 2)
+    kinder_spent = round(sum(se(acct(a)) for a in wb['kinder']['accounts']), 2)
     kinder_voted = round(sum(F(acct(a), 'revised_budget') for a in wb['kinder']['accounts']), 2)
     if kinder_voted != 0 or wb['kinder']['fy27_balanced'] != 0:
         fail('the kindergarten aide lines are no longer at $0 in FY2026 and FY2027 balanced')
 
     # ---- credit ----------------------------------------------------------------------------
-    para_paid26 = round(sum(F(acct(a), 'ytd_expended') for a in wb['sped_paras']['accounts']), 2)
+    para_paid26 = round(sum(se(acct(a)) for a in wb['sped_paras']['accounts']), 2)   # spent
     para_over26 = round(sum(F(acct(a), 'available_budget')
                             for a in wb['sped_paras']['accounts']), 2)
     para27 = wb['sped_paras']['fy27_balanced']
@@ -2197,19 +2203,19 @@ def fy26_audit(rows, t, cats):
             id='lines-voted-below-spending-every-year',
             claim='Electricity and contracted therapy ran past their voted budgets all %s '
                   'years, by %s.' % (C.num(n_years), usd(chronic_total)),
-            so_what='FY27 budgets them at %s and %s; FY26 already paid %s and %s.'
+            so_what='FY27 budgets them at %s and %s; FY26 already spent %s and %s.'
                     % (usd(chronic['electricity']['fy27']), usd(chronic['therapy']['fy27']),
-                       usd(chronic['electricity']['paid26']), usd(chronic['therapy']['paid26'])),
+                       usd(chronic['electricity']['spent26']), usd(chronic['therapy']['spent26'])),
             figures={'ctot': figure(chronic_total, usd(chronic_total),
                                     'spent past the voted budget, FY2023 to FY2026'),
                      'cn': figure(n_years, C.num(n_years), 'years'),
                      'e27': figure(chronic['electricity']['fy27'],
                                    usd(chronic['electricity']['fy27'])),
                      'r27': figure(chronic['therapy']['fy27'], usd(chronic['therapy']['fy27'])),
-                     'e26': figure(chronic['electricity']['paid26'],
-                                   usd(chronic['electricity']['paid26'])),
-                     'r26': figure(chronic['therapy']['paid26'],
-                                   usd(chronic['therapy']['paid26'])),
+                     'e26': figure(chronic['electricity']['spent26'],
+                                   usd(chronic['electricity']['spent26'])),
+                     'r26': figure(chronic['therapy']['spent26'],
+                                   usd(chronic['therapy']['spent26'])),
                      'etot': figure(chronic['electricity']['total'],
                                     usd(chronic['electricity']['total'])),
                      'rtot': figure(chronic['therapy']['total'], usd(chronic['therapy']['total'])),
@@ -2483,10 +2489,10 @@ def fy26_audit_md(a, t):
     p('')
     heat_above = [h['fy'] for h in f['heating'] if h['voted'] > h['spent']]
     heat_in = [h['fy'] for h in f['heating'] if h['transfers'] > 0]
-    p('FY2026 had already paid %s for electricity and %s for therapy before anything still '
-      'committed. Beside electricity, natural-gas heating (`%s`) was voted above its spending '
+    p('FY2026 had already spent %s for electricity and %s for therapy, counting what was still '
+      'owed at the close. Beside electricity, natural-gas heating (`%s`) was voted above its spending '
       'in %s and received transfers in, net, in %s: %s.\n'
-      % (usd2(ch['electricity']['paid26']), usd2(ch['therapy']['paid26']), ACCT_HEATING,
+      % (usd2(ch['electricity']['spent26']), usd2(ch['therapy']['spent26']), ACCT_HEATING,
          ', '.join(C.fy(y) for y in heat_above),
          'every year held' if len(heat_in) == len(HISTORY_YEARS)
          else ', '.join(C.fy(y) for y in heat_in),
@@ -3089,7 +3095,9 @@ def fy2026():
         year_end_agenda=dict(item=FY26_AGENDA_ITEM, dates=agenda_dates,
                              minutes_held=with_minutes),
         waterfall=dict(voted=t['original'], moved_out=t['transfers'], revised=t['revised'],
-                       spent=t['expended'], unspent=t['available'],
+                       # spent = paid plus still owed (journal.py, WHAT "SPENT" MEANS), so
+                       # revised = spent + unspent and the bars foot
+                       spent=round(t['expended'] + t['encumbered'], 2), unspent=t['available'],
                        compare=[dict(label=l.replace('\n', ' '), value=v)
                                 for l, v, _ in compare],
                        gap_label='still encumbered', gap=t['encumbered']),

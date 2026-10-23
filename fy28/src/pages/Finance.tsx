@@ -39,7 +39,7 @@ type Measure = { id: string; kind: string; subkind: string; code: string; name: 
   // the town's ledger name (`FY25 #240`) stays beside it, because that is what a resident asks for.
   dese?: { fund_code: string; name: string; fy: string; source_url: string; display: string } }
 type Owner = { slug: string; name: string; kind: string; owns: string[]; relates: string[]; counts: Record<string, number>
-  totals: { appropriation_revised: number | null; appropriation_expended: number | null; appropriation_period: number | null; special_revenue_held: number | null
+  totals: { appropriation_revised: number | null; appropriation_spent: number | null; appropriation_period: number | null; special_revenue_held: number | null
     special_revenue_in: number | null; special_revenue_out: number | null; trust_held: number | null; agency_held: number | null; revenue_estimate: number | null }
   // WHO WORKS THERE, and the address of the chart that names them -- from
   // `body-crosswalk.csv`, which `build_org_charts.py` reads for the link the other way.
@@ -146,7 +146,7 @@ export function Accounts() {
 function Standfirst({ d, slug }: { d: Payload; slug: string }) {
   const o = d.owners[slug]; const t = o.totals
   const parts: React.ReactNode[] = []
-  if (t.appropriation_revised !== null) parts.push(<>voted {short(t.appropriation_revised)} for FY2026{t.appropriation_period === 12 ? ' and spent ' + short(t.appropriation_expended ?? 0) + ' of it by year end' : ''}</>)
+  if (t.appropriation_revised !== null) parts.push(<>voted {short(t.appropriation_revised)} for FY2026{t.appropriation_period === 12 ? ' and spent ' + short(t.appropriation_spent ?? 0) + ' of it through June (period 12), counting what was still owed' : ''}</>)
   if (t.special_revenue_held !== null) parts.push(<>holds {short(t.special_revenue_held)} in {o.counts['special-revenue']} funds outside the budget</>)
   if (t.trust_held !== null) parts.push(<>{short(t.trust_held)} in {(o.counts.trust ?? 0) + (o.counts.stabilization ?? 0)} trust and stabilization funds</>)
   if (t.revenue_estimate !== null && o.counts.revenue) parts.push(<>raises an estimated {short(t.revenue_estimate)} in {o.counts.revenue} revenue lines</>)
@@ -196,7 +196,7 @@ function OwnerPage({ d, slug, conclusions }: { d: Payload; slug: string; conclus
         </p>
       ) : null}
       <div className="mt-8 flex flex-wrap gap-x-12 gap-y-6">
-        {t.appropriation_revised !== null && <Stat value={short(t.appropriation_revised)}>voted for FY2026 across {(o.counts.appropriation ?? 0) + (o.counts.debt ?? 0)} line{(o.counts.appropriation ?? 0) + (o.counts.debt ?? 0) === 1 ? '' : 's'}, as revised{t.appropriation_period === 12 ? '; ' + short(t.appropriation_expended ?? 0) + ' spent by year end' : ''}</Stat>}
+        {t.appropriation_revised !== null && <Stat value={short(t.appropriation_revised)}>voted for FY2026 across {(o.counts.appropriation ?? 0) + (o.counts.debt ?? 0)} line{(o.counts.appropriation ?? 0) + (o.counts.debt ?? 0) === 1 ? '' : 's'}, as revised{t.appropriation_period === 12 ? '; ' + short(t.appropriation_spent ?? 0) + ' spent or still owed through June (period 12)' : ''}</Stat>}
         {t.special_revenue_held !== null && <Stat value={short(t.special_revenue_held)} tone="var(--series-revenue)">held in {o.counts['special-revenue']} funds outside the budget at {d.as_of.special_revenue}</Stat>}
         {t.special_revenue_in !== null && <Stat value={short(t.special_revenue_in)}>into those funds in nine months of FY2026; {short(t.special_revenue_out ?? 0)} out</Stat>}
         {t.trust_held !== null && <Stat value={short(t.trust_held)}>in {(o.counts.trust ?? 0) + (o.counts.stabilization ?? 0)} trust and stabilization funds at {d.as_of.trusts}</Stat>}
@@ -361,7 +361,7 @@ function ApproTable({ ms }: { ms: Measure[] }) {
   return (
     <div className="overflow-x-auto mt-4">
       <table className="text-sm" style={{ minWidth: 760 }}>
-        <thead><tr><Th>code</Th><Th>line</Th><Th right>voted</Th><Th right>revised</Th><Th right>spent</Th><Th right>encumbered</Th><Th right>left</Th><Th right>as of</Th></tr></thead>
+        <thead><tr><Th>code</Th><Th>line</Th><Th right>voted</Th><Th right>revised</Th><Th right>paid</Th><Th right>encumbered</Th><Th right>left</Th><Th right>as of</Th></tr></thead>
         <tbody>{ms.map(m => { const c = m.current; return (
           <DrillRow key={m.id} m={m} open={openId === m.id} onToggle={() => toggle(m.id)} cols={8}>{name => <>
             <Td tone="var(--text-muted)">{m.code}</Td><Td>{name}</Td>
@@ -370,7 +370,7 @@ function ApproTable({ ms }: { ms: Measure[] }) {
             <Td right tone="var(--text-muted)">{c ? `FY${String(c.fy).slice(2)} p${c.period}` : '—'}</Td>
           </>}</DrillRow>) })}</tbody>
       </table>
-      <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>The FY26 year-to-date budget reports (evidence). Period 12 is the year end, unaudited, summed from the line&rsquo;s accounts; period 9 is 31 March. A line is net of whatever else pays for the thing &mdash; rule 11. Click a line for every figure held for it.</p>
+      <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>The FY26 year-to-date budget reports (evidence). Period 12 runs through June, unaudited, summed from the line&rsquo;s accounts; period 9 is 31 March. A line is net of whatever else pays for the thing &mdash; rule 11. Click a line for every figure held for it.</p>
     </div>
   )
 }
@@ -397,11 +397,11 @@ function EnterpriseTable({ ms }: { ms: Measure[] }) {
   return (
     <div className="overflow-x-auto mt-4">
       <table className="text-sm" style={{ minWidth: 640 }}>
-        <thead><tr><Th>fund</Th><Th>name</Th><Th right>expense budget</Th><Th right>spent</Th><Th right>revenue estimate</Th><Th right>collected</Th></tr></thead>
+        <thead><tr><Th>fund</Th><Th>name</Th><Th right>expense budget</Th><Th right>spent or owed</Th><Th right>revenue estimate</Th><Th right>collected</Th></tr></thead>
         <tbody>{ms.map(m => { const c = m.current; return (
           <DrillRow key={m.id} m={m} open={openId === m.id} onToggle={() => toggle(m.id)} cols={6}>{name => <>
             <Td tone="var(--text-muted)">{m.code}</Td><Td>{name}</Td>
-            <Td right>{money(c?.expense_budget)}</Td><Td right>{money(c?.expended)}</Td><Td right>{money(c?.revenue_estimate)}</Td><Td right>{money(c?.collected)}</Td>
+            <Td right>{money(c?.expense_budget)}</Td><Td right>{money(c?.spent)}</Td><Td right>{money(c?.revenue_estimate)}</Td><Td right>{money(c?.collected)}</Td>
           </>}</DrillRow>) })}</tbody>
       </table>
       <p className="text-[12px] mt-2" style={{ color: 'var(--text-muted)' }}>The FY26 enterprise-fund reports, period 9 (evidence), summed from their accounts.</p>
@@ -527,17 +527,17 @@ function LineHistory({ m }: { m: Measure }) {
       {snaps.length > 0 && (
         <div className="overflow-x-auto">
         <table className="mt-2">
-          <thead><tr><Th>report</Th><Th right>voted</Th><Th right>revised</Th><Th right>spent</Th><Th right>encumbered</Th><Th right>left</Th><Th>grade</Th></tr></thead>
+          <thead><tr><Th>report</Th><Th right>voted</Th><Th right>revised</Th><Th right>paid</Th><Th right>encumbered</Th><Th right>left</Th><Th>grade</Th></tr></thead>
           <tbody>{snaps.map(s => (
             <tr key={s.period} style={{ borderTop: '1px solid var(--grid)' }}>
-              <Td>FY{s.fy}, period {s.period}{s.period === 12 ? ' (year end, unaudited)' : s.period === 9 ? ' (31 March)' : ''}</Td>
+              <Td>FY{s.fy}, period {s.period}{s.period === 12 ? ' (through June, unaudited)' : s.period === 9 ? ' (31 March)' : ''}</Td>
               <Td right>{money(s.original)}</Td><Td right>{money(s.revised)}</Td><Td right>{money(s.expended)}</Td><Td right>{money(s.encumbered)}</Td><Td right>{money(s.available)}</Td>
               <Td tone={gradeTone('evidence')}>evidence</Td>
             </tr>))}</tbody>
         </table>
         </div>
       )}
-      {!snaps.length && c && <p className="mt-2">FY{c.fy}{c.period ? `, period ${c.period}` : ''}: {m.kind === 'revenue' ? <>estimated {money(c.estimate)}, collected {money(c.collected)}</> : m.kind === 'enterprise' ? <>expense budget {money(c.expense_budget)}, spent {money(c.expended)}; revenue estimate {money(c.revenue_estimate)}, collected {money(c.collected)}</> : <>{money(c.revised)} revised</>} <span style={{ color: gradeTone(c.grade) }}>({c.grade})</span>.</p>}
+      {!snaps.length && c && <p className="mt-2">FY{c.fy}{c.period ? `, period ${c.period}` : ''}: {m.kind === 'revenue' ? <>estimated {money(c.estimate)}, collected {money(c.collected)}</> : m.kind === 'enterprise' ? <>expense budget {money(c.expense_budget)}, spent or owed {money(c.spent)}; revenue estimate {money(c.revenue_estimate)}, collected {money(c.collected)}</> : <>{money(c.revised)} revised</>} <span style={{ color: gradeTone(c.grade) }}>({c.grade})</span>.</p>}
       {!c && <p className="mt-2">No figure for this line in any report we hold.</p>}
       <p className="text-[11.5px] mt-2" style={{ color: 'var(--text-muted)' }}>
         {m.kind === 'appropriation' || m.kind === 'debt'

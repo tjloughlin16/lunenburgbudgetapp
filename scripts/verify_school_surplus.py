@@ -592,8 +592,9 @@ def verify_audit_2026(run, rows):
               'chronic total recomputed as %s' % (tots['electricity'] + tots['therapy']))
     W.update({cid + '/ctot': tots['electricity'] + tots['therapy'], cid + '/cn': D(len(Y)),
               cid + '/e27': bk([184], 'fy27_balanced'), cid + '/r27': bk([55], 'fy27_balanced'),
-              cid + '/e26': v(2026, AUDIT_KEYS['electricity'][0][0], 'ytd_expended'),
-              cid + '/r26': v(2026, AUDIT_KEYS['therapy'][0][0], 'ytd_expended'),
+              # spent: paid plus still owed (journal.py, WHAT "SPENT" MEANS)
+              cid + '/e26': se(2026, AUDIT_KEYS['electricity'][0][0]),
+              cid + '/r26': se(2026, AUDIT_KEYS['therapy'][0][0]),
               cid + '/etot': tots['electricity'], cid + '/rtot': tots['therapy'],
               cid + '/rv': v(2023, AUDIT_KEYS['therapy'][0][0], 'original_approp')})
     run.check('questions the impact of the solar panels' in flat(
@@ -661,14 +662,14 @@ def verify_audit_2026(run, rows):
     cid = 'lines-budgeted-again'
     kp = AUDIT_KEYS['psych'][0][0]
     run.check(v(2026, kp, 'ytd_expended') == 0, 'the psychologist line now shows spending')
-    ks = sum(v(2026, k, 'ytd_expended') for k in AUDIT_KEYS['kinder'][0])
+    ks = sum(se(2026, k) for k in AUDIT_KEYS['kinder'][0])
     run.check(bk([332, 333], 'fy27_balanced') == 0, 'FY2027 now budgets kindergarten aides')
     W.update({cid + '/pv': v(2026, kp, 'original_approp'),
               cid + '/p27': bk([359], 'fy27_balanced'), cid + '/ks': ks})
 
     cid = 'credit-budgets-that-caught-up'
     pk = AUDIT_KEYS['sped_paras'][0]
-    p26 = sum(v(2026, k, 'ytd_expended') for k in pk)
+    p26 = sum(se(2026, k) for k in pk)
     p27 = bk([337, 338, 339, 340, 341], 'fy27_balanced')
     hs = -(v(2023, K_HEALTH, 'available_budget') + v(2024, K_HEALTH, 'available_budget'))
     hl = v(2026, K_HEALTH, 'available_budget')
