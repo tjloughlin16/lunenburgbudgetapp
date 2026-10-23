@@ -1,5 +1,23 @@
 # What is queued, in order
 
+
+## NEXT — click a table row to see the journal lines behind it (TJ, 23 October 2026)
+
+*"i need to be able to drill into things like this '0000 No function code' to see what was
+spent with that listing. this feels like a red flag but i dont know how to find it, so
+clicking these to bring up the spend list would be very helpful."*
+
+- Every all-funds table row keyed by function code (and fund, year) opens the published
+  journal lines behind it: date, fund, account, payee as published (masked stays masked),
+  description, amount — summing to the row's figure, asserted at build.
+- Static slices from `sources/data/munis-school-journal.csv` (published), e.g.
+  `fy28/public/data/journal/<code>.json`, filtered client-side by year and fund. Watch the
+  Pages file count (sync_derived.py --stage fails past 20,000).
+- `FigureTable` (fy28/src/components/report.tsx) gets an optional row link, so every report
+  table can drill in. Wait until the board-member page agent's Topic.tsx change lands.
+- Measured: function 0000 spending outside the general fund includes the FY2025 IDEA grant
+  (#240, 38 lines, $267,996) and the capital plan funds (FY2024 plan, FY2026, $530,023).
+
 ## TOP — board finance pages: every fund clickable, drilling into its history
 
 TJ, 22 October 2026: *"finances section for boards should have each fund be clickable, to
