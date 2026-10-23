@@ -12,7 +12,7 @@ reached us.
 
 ## Downloaded, awaiting ingest
 
-### Five files from TJ, 22 October 2026 — THREE INGESTED 23 October 2026 (one held pending); the .pptx still waits
+### Five files from TJ, 22 October 2026, and the stormwater deck — ALL INGESTED 23 October 2026, all public
 
 **Status, 23 October 2026.** Hashes re-taken off `~/Downloads` and matched the table below
 before staging. All went through `ingest.stage()` → `redact.gate()` → `ingest.secure()`.
@@ -23,19 +23,31 @@ Provenance: `sources/correspondence/2026-10-21-select-board-chair-presentations.
 - `Brooks House Presentation to Town Meeting Draft.pdf` → **public**,
   `correspondence/2026-10-21-brooks-house-presentation-draft.pdf` (digital; DRAFT kept in
   the name). The `(1)` copy is identical and was not ingested twice.
-- `Track and Field complex history.pdf` → **HELD, `pending`, private bucket**
-  (`raw/correspondence/2026-10-21-track-and-field-complex-history.pdf`). It is `mixed`, and
-  page 10 is a picture of two 2021 STM slides, which was read by eye and shows no personal
-  information. It goes public on a `publish` decision in `sources/data/redactions.csv`,
-  which waits for TJ. The comparison against our thread is in
-  `notes/findings/TURF-HISTORY-COMPARISON.md`.
+- `Track and Field complex history.pdf` → **public**, 23 Oct 2026, on TJ's `publish` decision
+  (*"we are allowed to use those photos for the track and field. its public."*):
+  `correspondence/2026-10-21-track-and-field-complex-history.pdf`. It was held first because it
+  is `mixed` and page 10 is a picture (two 2021 STM slides, read by eye, nothing personal).
+  The comparison against our thread is in `notes/findings/TURF-HISTORY-COMPARISON.md`.
+- `Lunenburg Stormwater Utility Presentation - Select Board - 10.20.26 Revised.pdf` (sha256
+  `4142bcdf…331c`, 8,334,990 bytes): the *SWTF presentation* in Renee Emkey's 4:26 PM reply.
+  It reached `~/Downloads` on 23 Oct. → **public**,
+  `correspondence/2026-10-21-stormwater-utility-presentation-select-board-2026-10-20-revised.pdf`
+  (Weston & Sampson; `mixed`, held for slide 31, the closing slide; read by eye, published).
+  **Revised** is kept in the name. It is on `/threads/stormwater-fee` as `thread-history.csv`
+  `stormwater-fee` order 4, figures as presented, not voted.
 - **Who sent them.** Renee Emkey is the **Chair of the Select Board** (20 Oct 2026 agenda),
   not the Town Clerk. The *"Clerk"* in the line below is an officer's title she has
   held on boards: Clerk of the Select Board in earlier minutes (*"Chair Amanda Moore, Clerk
   Renee Emkey"*), and *"Clerk- Renee Emkey, Select Board"* on Budget Task Force agendas.
 - **Not in the town's AgendaCenter.** The 20 Oct 2026 Select Board entry (8080) is a
   two-page agenda with no presentations attached.
-- `Lunenburg_Special_Education_Funding_10_Slides.pptx`: **not ingested**, no provenance.
+- `Lunenburg_Special_Education_Funding_10_Slides.pptx` → **public**,
+  `correspondence/2026-10-22-special-education-funding-superintendent-finance-committee.pptx`.
+  Provenance from TJ, 23 Oct: shared informally by a Finance Committee member after the slides
+  became public record, not a records request. The slides are the Superintendent's own (slide 1;
+  `lastModifiedBy` Jodi Fortuna). They were shown to the Finance Committee on 22 Oct 2026, under
+  the Special Education Reserve Fund article. Note:
+  `sources/correspondence/2026-10-22-special-education-funding-finance-committee.md`.
 
 TJ asked that these go into the ingestion flow and NOT be processed yet. They are still in
 `~/Downloads`; nothing has been copied, read or screened. Hashes taken 22 Oct so the copy

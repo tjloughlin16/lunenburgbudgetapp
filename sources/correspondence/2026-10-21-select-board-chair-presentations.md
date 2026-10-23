@@ -1,4 +1,4 @@
-# Three documents from the Select Board meeting of 20 October 2026, by email
+# Four documents from the Select Board meeting of 20 October 2026, by email
 
 None of these came off a website. Each was attached to an email to the site owner, so the
 email is the address (rule 12): who sent it, to whom, when, and in reply to what.
@@ -24,7 +24,8 @@ Emkey"*), and *"Clerk- Renee Emkey, Select Board"* on Budget Task Force agendas.
 |---|---|---:|---|---|
 | `2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf` | `10.20 Selectboard Presentation Turf Field.pdf` | 699,802 | `df495eebb36eb1ff33de23f6bff59010fbeb6068c5f9ccdb9de3f8b5198bbe93` | public |
 | `2026-10-21-brooks-house-presentation-draft.pdf` | `Brooks House Presentation to Town Meeting Draft.pdf` | 1,540,975 | `8ed2f4681007be6caeedea0f6cb54977cb5f62664e85138041cd6eecc7f92002` | public |
-| `2026-10-21-track-and-field-complex-history.pdf` | `Track and Field complex history.pdf` | 915,745 | `b0b9e836bb2f927114a331548f75d21b833f34f3101efebe649abfea47965f6f` | **held, pending** |
+| `2026-10-21-track-and-field-complex-history.pdf` | `Track and Field complex history.pdf` | 915,745 | `b0b9e836bb2f927114a331548f75d21b833f34f3101efebe649abfea47965f6f` | public (TJ, 23 Oct 2026) |
+| `2026-10-21-stormwater-utility-presentation-select-board-2026-10-20-revised.pdf` | `Lunenburg Stormwater Utility Presentation - Select Board - 10.20.26 Revised.pdf` | 8,334,990 | `4142bcdfb18645dcb718132765bcd2cffb1797f46ca2118e04c3cdedf26b331c` | public |
 
 **1. The Superintendent's deck.** *A Timely Next Step for the LMHS Track and Field
 Facility*, Dr. Jodi Fortuna, Superintendent, a presentation to the Select Board asking for a
@@ -54,13 +55,34 @@ printed. Its use here is as a checklist against our own turf history
 quotes rests on a capital-plan request or a Town Meeting vote, and that underlying document
 is what settles a figure.
 
-**It is held in the private bucket, `pending`.** `pdf_kind` reads it as `mixed` (3 text,
+**Public since 23 October 2026, on TJ's decision.** `pdf_kind` reads it as `mixed` (3 text,
 6 text+image, 1 image). Page 10 is a picture, and the screen holds any PDF with a page it
-cannot read (rule 13d). Page 10 was rendered and read by eye on 23 October 2026. It shows two
-slides from the 18 November 2021 Special Town Meeting, Article 8 (the free cash history,
-FY15-FY22, and *"What will a YES vote do?"*), under the heading *"Slides presented by MRJ at
-2021 STM"*. The only people it names are public officials in their roles. Making it public
-needs a `publish` decision in `sources/data/redactions.csv`, which waits for TJ.
+cannot read (rule 13d), so it was held in the private bucket as `pending`. Page 10 was
+rendered and read by eye on 23 October 2026. It shows two slides from the 18 November 2021
+Special Town Meeting, Article 8 (the free cash history, FY15-FY22, and *"What will a YES vote
+do?"*), under the heading *"Slides presented by MRJ at 2021 STM"*. The only people it names
+are public officials in their roles. TJ, 23 October 2026: *"we are allowed to use those photos
+for the track and field. its public."* The `publish` row is in `sources/data/redactions.csv`.
+
+**4. The stormwater (SWTF) deck.** *Funding Mechanisms to Achieve Stormwater Permit
+Compliance*, dated October 20, 2026 on its cover. Thirty-one slides by **Weston & Sampson**, the
+consultant: its logo is on every slide and its last slide reads *"Thank you! Questions?
+westonandsampson.com"*. The PDF's own metadata says Bluebeam, created 19 October 2026 13:17
+(-04:00). **The filename marks it `Revised`.** It is the version attached to Renee Emkey's
+4:26 PM reply (*"the SWTF presentation"*), and we do not know how it differs from the version
+shown on the night or whether another revision exists. It reached this archive on 23 October
+2026, after the note above was first written.
+
+`pdf_kind`: `mixed` (30 text+image, 1 image). The picture page is slide 31, the closing slide,
+so the screen held it. Every page was read by eye on a contact sheet and slide 31 at full size,
+23 October 2026: slide furniture, landscape and flooding photographs, maps and charts. The
+example properties are anonymous (*Property X, Y, Z*; *Commercial A, B*). Nobody is named.
+Published on TJ's instruction to ingest it onto the stormwater thread. It is on
+`/threads/stormwater-fee` as a printed history entry (`sources/data/thread-history.csv`,
+`stormwater-fee` order 4).
+
+Under rule 13a it is a consultant's proposal, not a ledger. Its fee, budget and timetable are
+**as presented, not voted** (slide 20 says so itself: *"Fees have not been finalized"*).
 
 ## Not published by the town, as far as the archive shows
 
@@ -72,9 +94,8 @@ the copies the Board's Chair sent.
 
 ## Not here
 
-- **The stormwater (SWTF) deck** was attached to the same 4:26 PM reply. It is not among the
-  files handed to this archive.
 - **`Lunenburg_Special_Education_Funding_10_Slides.pptx`** came with these files but was in
-  neither email. It is not ingested and waits for provenance.
+  neither email. It has its own provenance and is ingested separately:
+  `2026-10-22-special-education-funding-finance-committee.md`.
 - **A second copy of the Brooks House deck**, `… Draft (1).pdf`, was byte-identical
   (same sha256) and was ingested once.

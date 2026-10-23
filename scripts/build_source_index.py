@@ -856,9 +856,10 @@ GROUPS = [
     {
         'section': 'theirs', 'id': 'select-board-2026-10-20', 'origin': 'request',
         'title': 'Presentations to the Select Board, 20 October 2026',
-        'blurb': 'Two decks shown at the meeting, sent to this project by the Chair of the Select '
-                 'Board on 21 October 2026 in answer to a request. The town has not posted them '
-                 'with the meeting’s agenda.',
+        'blurb': 'Three decks shown at the meeting and the Chair’s own history of the track and '
+                 'field requests, sent to this project by the Chair of the Select Board on 21 '
+                 'October 2026 in answer to a request. The town has not posted them with the '
+                 'meeting’s agenda.',
         'items': [
             ('correspondence/2026-10-21-track-and-field-presentation-superintendent-select-board-2026-10-20.pdf',
              'The Superintendent’s track and field request', 2,
@@ -872,12 +873,44 @@ GROUPS = [
              'Stephen Wallace’s presentation on selling the Brooks House at 1033 Massachusetts '
              'Avenue, for the 17 November 2026 Special Town Meeting. The copy sent is marked '
              'Draft and may not be the version shown at Town Meeting.'),
+            ('correspondence/2026-10-21-stormwater-utility-presentation-select-board-2026-10-20-revised.pdf',
+             'The stormwater utility proposal (revised)', 2,
+             'Weston & Sampson’s thirty-one slides for the joint meeting with the Stormwater '
+             'Task Force: why the town needs stormwater money, the funding options, a proposed '
+             'fee and a proposed budget, and a timetable starting with a straw poll at the fall '
+             '2026 Town Meeting. Its figures are as presented, not voted. The copy sent is '
+             'marked Revised.'),
+            ('correspondence/2026-10-21-track-and-field-complex-history.pdf',
+             'Track and field complex history, compiled by the Chair', 3,
+             'Ten slides of capital-plan requests and Town Meeting articles for the field, '
+             'compiled by hand by the Chair of the Select Board, who wrote that it may not be '
+             'complete. A checklist, not an authority: each figure rests on the plan or vote '
+             'it quotes.'),
             ('correspondence/2026-10-21-select-board-chair-presentations.md',
              'How these reached us', 3,
-             'The provenance note: the request, the two replies with their times, the '
-             'publisher’s filenames and sha256s, and the third attachment, a hand-compiled '
-             'track and field history its compiler says may be incomplete. That one is held '
-             'privately while it waits for review.'),
+             'The provenance note: the request, the two replies with their times, and the '
+             'publisher’s filenames and sha256s.'),
+        ],
+    },
+    {
+        'section': 'theirs', 'id': 'finance-committee-2026-10-22-sped', 'origin': 'school',
+        'title': 'Special education funding, for the Finance Committee, 22 October 2026',
+        'blurb': 'The Superintendent’s slides on how special education is paid for, shown to the '
+                 'Finance Committee. A committee member passed them to this project after they '
+                 'became public record. This was not a records request, and the district has '
+                 'not posted them.',
+        'items': [
+            ('correspondence/2026-10-22-special-education-funding-superintendent-finance-committee.pptx',
+             'How special education funding flows', 2,
+             'Ten slides by Dr. Jodi Fortuna, Superintendent: the operating budget and '
+             'Chapter 70, federal IDEA grants, and Circuit Breaker reimbursement, with DESE’s '
+             'FY26 and FY27 Circuit Breaker listings and a special education reserve. It '
+             'explains how the money moves. It does not state fund balances or total special '
+             'education spending, and it says so.'),
+            ('correspondence/2026-10-22-special-education-funding-finance-committee.md',
+             'How this reached us', 3,
+             'Who shared it, who made it (from the file’s own metadata), where it was '
+             'presented, and which of its figures were checked against DESE.'),
         ],
     },
     {

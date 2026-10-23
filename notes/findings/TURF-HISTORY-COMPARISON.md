@@ -8,11 +8,10 @@ corrections are in the table at the end, waiting for TJ.
 
 - **Hers.** *Track and Field complex history.pdf*, ten slides. The Chair of the Select Board,
   Renee Emkey, assembled it for the 20 October 2026 meeting and emailed it on 21 October:
-  *"I did it manually so do not assume it is complete."* It is held in the private bucket,
-  `pending`, as `correspondence/2026-10-21-track-and-field-complex-history.pdf` (provenance:
-  `sources/correspondence/2026-10-21-select-board-chair-presentations.md`). Under rule 13a it
-  is `stated`. **This note quotes figures from a document that is not yet public.** None of
-  them is personal, but the note should not be published before the document is.
+  *"I did it manually so do not assume it is complete."* It is public since 23 October 2026,
+  on TJ's `publish` decision, as `correspondence/2026-10-21-track-and-field-complex-history.pdf`
+  (provenance: `sources/correspondence/2026-10-21-select-board-chair-presentations.md`).
+  Under rule 13a it is `stated`.
 - **Ours.** The `turf-field-study` thread: 46 rows in `thread-history.csv` and the rounds in
   `thread-briefing.csv`. Also `sources/data/capital-plan-field-lines.csv`, which
   `scripts/build_turf_plans_topic.py` reads for `/athletics/turf-field-capital-plans`.

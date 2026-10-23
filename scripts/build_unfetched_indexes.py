@@ -272,11 +272,35 @@ TREES = {
          "Select Board, 20 October 2026, marked DRAFT (emailed by the Chair of the Select "
          "Board, 21 October 2026; publisher's filename 'Brooks House Presentation to Town "
          "Meeting Draft.pdf')"),
+        ('2026-10-21-track-and-field-complex-history.pdf',
+         'text/2026-10-21-track-and-field-complex-history.pdf.txt',
+         "Track and Field complex history — capital-plan requests and Town Meeting articles "
+         "compiled by hand by the Chair of the Select Board for the meeting of 20 October 2026, "
+         "by her own account possibly incomplete (emailed 21 October 2026; publisher's filename "
+         "'Track and Field complex history.pdf')"),
+        ('2026-10-21-stormwater-utility-presentation-select-board-2026-10-20-revised.pdf',
+         'text/2026-10-21-stormwater-utility-presentation-select-board-2026-10-20-revised.pdf.txt',
+         "Funding Mechanisms to Achieve Stormwater Permit Compliance — Weston & Sampson's "
+         "stormwater utility presentation to the Select Board and the Stormwater Task Force, "
+         "20 October 2026, marked Revised (emailed by the Chair of the Select Board, 21 October "
+         "2026; publisher's filename 'Lunenburg Stormwater Utility Presentation - Select Board - "
+         "10.20.26 Revised.pdf')"),
         ('2026-10-21-select-board-chair-presentations.md',
          '2026-10-21-select-board-chair-presentations.md',
-         "How the three Select Board documents of 20 October 2026 reached us: the request, the "
-         "two replies, who sent them, and the hand-compiled track and field history held "
-         "pending review (our provenance note)"),
+         "How the four Select Board documents of 20 October 2026 reached us: the request, the "
+         "two replies, who sent them, and what each document is (our provenance note)"),
+        # Shared informally by a Finance Committee member after the slides became public
+        # record -- not a records request. The share is the address; see the note.
+        ('2026-10-22-special-education-funding-superintendent-finance-committee.pptx',
+         'text/2026-10-22-special-education-funding-superintendent-finance-committee.pptx.txt',
+         "How special education funding flows — the Superintendent's ten slides for the "
+         "Finance Committee, 22 October 2026 (shared by a Finance Committee member after the "
+         "slides became public record; publisher's filename "
+         "'Lunenburg_Special_Education_Funding_10_Slides.pptx')"),
+        ('2026-10-22-special-education-funding-finance-committee.md',
+         '2026-10-22-special-education-funding-finance-committee.md',
+         "How the Superintendent's special education funding deck reached us, who made it, "
+         "where it was presented, and what kind of evidence it is (our provenance note)"),
     ],
 }
 
