@@ -3704,6 +3704,24 @@ GROUPS = [
              'Written by us. District totals by function across the general fund, grants and '
              'revolving funds, with the header cells each column name was built from. In the '
              'FY2024 working copy the grant columns evaluate to zero.'),
+            ('data/eoyr-schedule4.csv',
+             'The End of Year Financial Report, Schedule 4: special education by placement', 2,
+             'Written by us, cell by cell, from the district’s FY2023 and FY2024 working copies: '
+             'special education spending by function group and SIMS placement, school committee, '
+             'town and circuit breaker together, tied to every total the schedule prints. Built '
+             'by scripts/extract_eoyr.py.'),
+            ('data/eoyr-schedule7.csv',
+             'The End of Year Financial Report, Schedule 7: pupil transportation', 2,
+             'Written by us, cell by cell, from the same working copies: transportation spending '
+             'and riders by program, including the special education block, with the row '
+             'totals tied. Built by scripts/extract_eoyr.py.'),
+            ('data/sped-crosswalk.csv',
+             'What counts as special education: DESE’s function codes beside our three rules', 3,
+             'Written by us. Every DESE function code, whether DESE lets it carry a special '
+             'education program, what the district reported in that column for FY2023 and '
+             'FY2024, and what each of our three definitions counts there, with the rule inside '
+             'every mixed function and the evidence cell by cell. The decision column is left '
+             'empty where our rule differs from DESE. Built by scripts/build_sped_crosswalk.py.'),
             ('data/eoyr-nss.csv',
              'Net school spending as the End of Year Report computes it, FY2023 and FY2024', 2,
              'Written by us. Every numbered line of the actual-year net school spending '

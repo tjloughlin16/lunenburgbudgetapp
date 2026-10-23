@@ -214,6 +214,12 @@
       "sped-providers",
       "sped-burndown"
      ]
+    },
+    {
+     "title": "How it is counted",
+     "topics": [
+      "sped-definition"
+     ]
     }
    ],
    "id": "special-education",
@@ -3715,6 +3721,19 @@
     "fy2026-closeout"
    ],
    "title": "Special education burndown"
+  },
+  "sped-definition": {
+   "finding": "DESE counts special education by program, not by code; our rules miss its FY2024 total by up to $977,832.",
+   "generator": "scripts/build_sped_crosswalk.py",
+   "home": "special-education",
+   "id": "sped-definition",
+   "minutes": 2,
+   "path": "/special-education/sped-definition",
+   "ready": true,
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Special education definition"
   },
   "sped-providers": {
    "finding": "Three payees took 66.2% of special education vendor payments; Keystone was paid 4.4 times as much by FY2026.",

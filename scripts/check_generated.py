@@ -130,6 +130,10 @@ CHECKS = [
     # and every figure recomputed by the verifier's different route.
     ('build_school_surplus.py', ['--all', '--check']),
     ('verify_school_surplus.py', ['--all']),
+    # THE SPECIAL EDUCATION CROSSWALK: DESE's function codes and program column beside the
+    # three definitions we use, and the topic page that shows the differences. Fails if a
+    # counted line or account lands on no row.
+    ('build_sped_crosswalk.py', ['--check']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,
     # which is the point: a page that grew past the table's top row grew on the record.

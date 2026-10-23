@@ -1,0 +1,954 @@
+{
+ "category": "special-education",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "text": "FY2024, general fund. DESE’s column against each of our rules, by function group."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "DESE report",
+    "texts": [
+     "$255,346",
+     "$3,905,046",
+     "$12,346",
+     "$192,810",
+     "$164,611",
+     "$401,402",
+     "$0",
+     "$69,188",
+     "$30,589",
+     "$397,529",
+     "$190,979"
+    ],
+    "values": [
+     255346.16999999998,
+     3905045.72,
+     12346.0,
+     192810.0,
+     164611.0,
+     401402.22,
+     0.0,
+     69187.9977338095,
+     30589.090000000004,
+     397529.04,
+     190979.0
+    ]
+   },
+   {
+    "basis": "stated",
+    "mark": "bar",
+    "name": "Budget model rule",
+    "texts": [
+     "$90,446",
+     "$3,399,901",
+     "$8,192",
+     "$0",
+     "$190,712",
+     "$401,402",
+     "$1,848",
+     "$0",
+     "$0",
+     "$397,529",
+     "$190,979"
+    ],
+    "values": [
+     90445.64,
+     3399900.6100000003,
+     8192.35,
+     0.0,
+     190712.44,
+     401402.22,
+     1848.28,
+     0.0,
+     0.0,
+     397529.04,
+     190979.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Ledger account list",
+    "texts": [
+     "$90,446",
+     "$3,544,823",
+     "$8,324",
+     "$0",
+     "$6,664",
+     "$401,402",
+     "$1,848",
+     "$0",
+     "$0",
+     "$397,529",
+     "$190,979"
+    ],
+    "values": [
+     90445.64,
+     3544822.64,
+     8323.6,
+     0.0,
+     6663.6,
+     401402.22,
+     1848.28,
+     0.0,
+     0.0,
+     397529.04,
+     190979.0
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Account-code rule",
+    "texts": [
+     "$90,446",
+     "$3,544,823",
+     "$8,324",
+     "$0",
+     "$6,664",
+     "$401,402",
+     "$1,848",
+     "$0",
+     "$0",
+     "$397,529",
+     "$190,979"
+    ],
+    "values": [
+     90445.64,
+     3544822.64,
+     8323.6,
+     0.0,
+     6663.6,
+     401402.22,
+     1848.28,
+     0.0,
+     0.0,
+     397529.04,
+     190979.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Special education by function, four definitions",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Supervisory (2100)",
+   "Teaching (2300)",
+   "Textbooks & Instructional Equipment (2400)",
+   "Guidance (2700)",
+   "Psychological (2800)",
+   "Transportation Services (3300)",
+   "Equipment (7300, 7400)",
+   "School Choice Tuition (9110)",
+   "Tuition to Commonwealth Charter Schools (9120)",
+   "Tuition to Private Schools (9300)",
+   "Tuition to Collaboratives (9400)"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$5,619,846",
+     "unit": "",
+     "value": 5619846.237733809
+    },
+    "b": {
+     "text": "$4,642,014",
+     "unit": "",
+     "value": 4642014.02
+    },
+    "c": {
+     "text": "$4,681,010",
+     "unit": "",
+     "value": 4681009.579999999
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "DESE counts special education as a PROGRAM inside a function, not as a function: teaching, aides and psychology are each split by program."
+    },
+    {
+     "closes": "the End of Year Financial Report as filed with DESE, FY2023 and FY2024",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2023",
+      "FY2024"
+     ],
+     "text": "The report is the district’s working copy, not the filing; DESE’s filed figures would supersede it."
+    }
+   ],
+   "rests_on": [
+    "dese",
+    "bl",
+    "jr",
+    "sc"
+   ],
+   "text": "DESE’s FY2024 report counts $5,619,846 as special education; our three rules count $4,642,014 to $4,681,010."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$3,905,046",
+     "unit": "",
+     "value": 3905045.72
+    },
+    "b": {
+     "text": "$3,399,901",
+     "unit": "",
+     "value": 3399900.6100000003
+    },
+    "c": {
+     "text": "$3,544,823",
+     "unit": "",
+     "value": 3544822.64
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$287,953",
+       "unit": "",
+       "value": 287953.28
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Separately, the budget model misses $287,953 of lines the book labels “Spcl Ed” or “Spec Ed”, a spelling its rule does not read."
+    },
+    {
+     "closes": "the district’s worksheet mapping each MUNIS account to an End of Year Report line and program",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Which of the district’s accounts DESE’s figure is made of is not in the report or the ledger."
+    }
+   ],
+   "rests_on": [
+    "teach",
+    "alloc"
+   ],
+   "text": "Teaching and aides are most of the gap: DESE counts $3,905,046, our rules $3,399,901 to $3,544,823."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "The budget model counts every psychologist, the ledger rules none; DESE counts part. Which part is the district’s allocation."
+    }
+   ],
+   "rests_on": [
+    "psy",
+    "gui"
+   ],
+   "text": "DESE splits psychology and guidance between programs; none of our rules does."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$99,777",
+       "unit": "",
+       "value": 99777.08773380952
+      },
+      "y": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "DESE also counts $99,777 of school choice and charter tuition the town pays in FY2024; no school account carries it."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$377,466",
+       "unit": "",
+       "value": 377465.8900000006
+      },
+      "y": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      }
+     },
+     "kind": "measured",
+     "literals": [
+      "Schedule 4",
+      "Schedule 3"
+     ],
+     "text": "Inside the FY2024 working copy, Schedule 4 totals $377,466 less than Schedule 3; DESE’s instructions tie the two."
+    }
+   ],
+   "rests_on": [
+    "tuit",
+    "town",
+    "s4"
+   ],
+   "text": "Out-of-district tuition and transportation agree with DESE to the dollar, both years."
+  }
+ ],
+ "facts": [
+  {
+   "id": "dese",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "special education in the FY2024 report to DESE"
+   },
+   "value": {
+    "text": "$5,619,846",
+    "unit": "",
+    "value": 5619846.237733809
+   }
+  },
+  {
+   "id": "bl",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "by the budget model’s rule, FY2024"
+   },
+   "value": {
+    "text": "$4,681,010",
+    "unit": "",
+    "value": 4681009.579999999
+   }
+  },
+  {
+   "id": "jr",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "by the ledger account list, FY2024"
+   },
+   "value": {
+    "text": "$4,642,014",
+    "unit": "",
+    "value": 4642014.02
+   }
+  },
+  {
+   "id": "sc",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "by the account-code rule, FY2024"
+   },
+   "value": {
+    "text": "$4,642,014",
+    "unit": "",
+    "value": 4642014.02
+   }
+  },
+  {
+   "id": "teach",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "teaching and aides DESE counts, FY2024"
+   },
+   "value": {
+    "text": "$3,905,046",
+    "unit": "",
+    "value": 3905045.72
+   }
+  },
+  {
+   "id": "psy",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "a": {
+      "text": "$355,323",
+      "unit": "",
+      "value": 355323.0
+     }
+    },
+    "literals": [],
+    "text": "of $355,323 on psychology that DESE counts"
+   },
+   "value": {
+    "text": "$164,611",
+    "unit": "",
+    "value": 164611.0
+   }
+  },
+  {
+   "id": "gui",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of guidance DESE counts; we count none"
+   },
+   "value": {
+    "text": "$192,810",
+    "unit": "",
+    "value": 192810.0
+   }
+  },
+  {
+   "id": "tuit",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "tuition and transport, FY2024: DESE and all three rules"
+   },
+   "value": {
+    "text": "$989,910",
+    "unit": "",
+    "value": 989910.26
+   }
+  },
+  {
+   "id": "town",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "school choice and charter tuition, paid by the town"
+   },
+   "value": {
+    "text": "$99,777",
+    "unit": "",
+    "value": 99777.08773380952
+   }
+  },
+  {
+   "id": "s4",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "between two special education totals in one report"
+   },
+   "value": {
+    "text": "$377,466",
+    "unit": "",
+    "value": 377465.8900000006
+   }
+  },
+  {
+   "closes": "the district’s worksheet mapping each MUNIS account to an End of Year Report line and program, FY2023 and FY2024",
+   "id": "alloc",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which accounts make up DESE’s share of a mixed function"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$977,832",
+    "unit": "",
+    "value": 977832.2177338097
+   },
+   "y": {
+    "text": "FY2024",
+    "unit": "fiscal year",
+    "value": 2024
+   }
+  },
+  "literals": [],
+  "text": "DESE counts special education by program, not by code; our rules miss its FY2024 total by up to $977,832."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "sped-definition",
+ "kind": "topic",
+ "not_established": [
+  "Which ledger accounts and budget lines make up DESE’s special education share of a mixed function: the report prints one figure per function and program.",
+  "Where the district reports its own codes 2310, 2315, 2357 and 2900, which are not in DESE’s chart.",
+  "Whether the report as filed with DESE matches these working copies."
+ ],
+ "path": "/special-education/sped-definition",
+ "said": [],
+ "shelves": [
+  "special-education"
+ ],
+ "sources": [
+  {
+   "href": "/docs/state-dese/dese-eoyr-fy2025-function-crosswalk.xlsx",
+   "label": "DESE — End of Year Financial Report, function and program crosswalk, FY2025 (crosswalks.xlsx)"
+  },
+  {
+   "href": "/docs/state-dese/dese-eoyr-fy2025-printing-version.xlsx",
+   "label": "DESE — End of Year Financial Report, FY2025, printing version, with the instruction for each line (printing-version.xlsx)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/school-budget-files-amanda-moore-foia-request-to-school-dept/24eoy162-9-20-24.xlsx",
+   "label": "Lunenburg Public Schools — End of Year Financial Report workbook, FY2024, working copy dated 20 September 2024 (records request)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/department-presentations/lunenburg-public-schools/school-budget-files-amanda-moore-foia-request-to-school-dept/updated-th-23eoy162.xlsm",
+   "label": "Lunenburg Public Schools — End of Year Financial Report workbook, FY2023, working copy (records request)"
+  },
+  {
+   "href": "/docs/data/sped-crosswalk.csv",
+   "label": "Lunenburg Budget Project — sped-crosswalk.csv, the whole list, every function code, budget line group and ledger rule"
+  },
+  {
+   "href": "/docs/data/munis-school-ytd.csv",
+   "label": "Lunenburg Budget Project — munis-school-ytd.csv, the school general fund at period 13"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv, the district budget book, line by line"
+  }
+ ],
+ "table": {
+  "caption": "Special education by function code, DESE beside each of our rules",
+  "views": [
+   {
+    "columns": [
+     "DESE report",
+     "Budget model rule",
+     "Ledger account list",
+     "Account-code rule"
+    ],
+    "key": "fy2024",
+    "kinds": [
+     "published",
+     "stated",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2024",
+    "note": "General fund, spent plus encumbered. A code with no DESE name is the town’s own; the whole list, with the rule inside each function, is the CSV.",
+    "rows": [
+     {
+      "cells": [
+       "$255,346",
+       "$90,446",
+       "$90,446",
+       "$90,446"
+      ],
+      "label": "2110 Curriculum Directors and Departmen"
+     },
+     {
+      "cells": [
+       "$2,082,829",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2305 Teachers, Classroom"
+     },
+     {
+      "cells": [
+       "$0",
+       "$1,812,540",
+       "$1,870,528",
+       "$1,870,528"
+      ],
+      "label": "2310 Teachers Specialists - Special Edu"
+     },
+     {
+      "cells": [
+       "$623,928",
+       "$521,267",
+       "$608,201",
+       "$608,201"
+      ],
+      "label": "2320 Medical/Therapeutic Services"
+     },
+     {
+      "cells": [
+       "$31,300",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2324 Substitutes, Long-Term"
+     },
+     {
+      "cells": [
+       "$101,010",
+       "$60,145",
+       "$60,145",
+       "$60,145"
+      ],
+      "label": "2325 Substitutes, Short-Term"
+     },
+     {
+      "cells": [
+       "$1,060,979",
+       "$1,005,949",
+       "$1,005,949",
+       "$1,005,949"
+      ],
+      "label": "2330 Paraprofessionals"
+     },
+     {
+      "cells": [
+       "$5,000",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2358 Outside Professional Development P"
+     },
+     {
+      "cells": [
+       "$12,346",
+       "$8,192",
+       "$8,192",
+       "$8,192"
+      ],
+      "label": "2415 Instructional Materials (Libraries"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$131",
+       "$131"
+      ],
+      "label": "2430 General Classroom Supplies"
+     },
+     {
+      "cells": [
+       "$192,810",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2710 Guidance/Adjustment Counselors"
+     },
+     {
+      "cells": [
+       "$164,611",
+       "$190,712",
+       "$6,664",
+       "$6,664"
+      ],
+      "label": "2800 Psychological Services"
+     },
+     {
+      "cells": [
+       "$401,402",
+       "$401,402",
+       "$401,402",
+       "$401,402"
+      ],
+      "label": "3300 Transportation Services"
+     },
+     {
+      "cells": [
+       "$0",
+       "$1,848",
+       "$1,848",
+       "$1,848"
+      ],
+      "label": "7400 Equipment (7300, 7400)"
+     },
+     {
+      "cells": [
+       "$69,188",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "9110 Tuition for School Choice"
+     },
+     {
+      "cells": [
+       "$30,589",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "9120 Tuition to Commonwealth Charter Sc"
+     },
+     {
+      "cells": [
+       "$397,529",
+       "$397,529",
+       "$397,529",
+       "$397,529"
+      ],
+      "label": "9300 Tuition to Non-Public Schools"
+     },
+     {
+      "cells": [
+       "$190,979",
+       "$190,979",
+       "$190,979",
+       "$190,979"
+      ],
+      "label": "9400 Tuition to Collaboratives"
+     }
+    ],
+    "total_col": null
+   },
+   {
+    "columns": [
+     "DESE report",
+     "Budget model rule",
+     "Ledger account list",
+     "Account-code rule"
+    ],
+    "key": "fy2023",
+    "kinds": [
+     "published",
+     "stated",
+     "ledger",
+     "ledger"
+    ],
+    "label": "FY2023",
+    "note": "General fund, spent plus encumbered. A code with no DESE name is the town’s own; the whole list, with the rule inside each function, is the CSV.",
+    "rows": [
+     {
+      "cells": [
+       "$322,667",
+       "$57,868",
+       "$57,868",
+       "$57,868"
+      ],
+      "label": "2110 Curriculum Directors and Departmen"
+     },
+     {
+      "cells": [
+       "$1,951,595",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2305 Teachers, Classroom"
+     },
+     {
+      "cells": [
+       "$0",
+       "$1,815,835",
+       "$1,847,454",
+       "$1,847,454"
+      ],
+      "label": "2310 Teachers Specialists - Special Edu"
+     },
+     {
+      "cells": [
+       "$509,029",
+       "$551,279",
+       "$636,857",
+       "$636,857"
+      ],
+      "label": "2320 Medical/Therapeutic Services"
+     },
+     {
+      "cells": [
+       "$31,300",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2324 Substitutes, Long-Term"
+     },
+     {
+      "cells": [
+       "$40,865",
+       "$72,165",
+       "$72,165",
+       "$72,165"
+      ],
+      "label": "2325 Substitutes, Short-Term"
+     },
+     {
+      "cells": [
+       "$1,089,391",
+       "$1,018,072",
+       "$1,018,072",
+       "$1,018,072"
+      ],
+      "label": "2330 Paraprofessionals"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2358 Outside Professional Development P"
+     },
+     {
+      "cells": [
+       "$10,784",
+       "$9,608",
+       "$9,608",
+       "$9,608"
+      ],
+      "label": "2415 Instructional Materials (Libraries"
+     },
+     {
+      "cells": [
+       "$2,270",
+       "$0",
+       "$2,270",
+       "$2,270"
+      ],
+      "label": "2430 General Classroom Supplies"
+     },
+     {
+      "cells": [
+       "$192,810",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "2710 Guidance/Adjustment Counselors"
+     },
+     {
+      "cells": [
+       "$173,295",
+       "$173,294",
+       "$8,684",
+       "$8,684"
+      ],
+      "label": "2800 Psychological Services"
+     },
+     {
+      "cells": [
+       "$320,244",
+       "$320,244",
+       "$320,244",
+       "$320,244"
+      ],
+      "label": "3300 Transportation Services"
+     },
+     {
+      "cells": [
+       "$0",
+       "$1,731",
+       "$1,731",
+       "$1,731"
+      ],
+      "label": "7400 Equipment (7300, 7400)"
+     },
+     {
+      "cells": [
+       "$66,129",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "9110 Tuition for School Choice"
+     },
+     {
+      "cells": [
+       "$32,940",
+       "$0",
+       "$0",
+       "$0"
+      ],
+      "label": "9120 Tuition to Commonwealth Charter Sc"
+     },
+     {
+      "cells": [
+       "$118,194",
+       "$118,194",
+       "$118,194",
+       "$118,194"
+      ],
+      "label": "9300 Tuition to Non-Public Schools"
+     },
+     {
+      "cells": [
+       "$186,554",
+       "$186,554",
+       "$186,554",
+       "$186,554"
+      ],
+      "label": "9400 Tuition to Collaboratives"
+     }
+    ],
+    "total_col": null
+   }
+  ]
+ },
+ "title": "Special education definition"
+}

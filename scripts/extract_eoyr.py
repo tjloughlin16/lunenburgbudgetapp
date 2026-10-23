@@ -16,6 +16,10 @@ Produces three CSVs under sources/data/:
                          with the raw header cells each stitched column name
                          came from (rule 13: a column name we assembled is
                          derived, cite its cells).
+  eoyr-schedule4.csv  -- Schedule 4, special education expenditures by function and
+                         placement (school committee, town and circuit breaker), cell by cell.
+  eoyr-schedule7.csv  -- Schedule 7, pupil transportation, including its special
+                         education block (lines 4070-4160), cell by cell.
   eoyr-nss.csv        -- the Net School Spending computation (the actual-year
                          block only -- see NSS_SCOPE note below; rule 1 forbids
                          mixing the adjacent "budgeted NSS" block in with it).
@@ -54,6 +58,8 @@ EOY_SHEET = {"FY2024": "eoy24", "FY2023": "eoy23"}
 OUT_S1 = REPO / "sources/data/eoyr-schedule1.csv"
 OUT_S3 = REPO / "sources/data/eoyr-schedule3.csv"
 OUT_NSS = REPO / "sources/data/eoyr-nss.csv"
+OUT_S4 = REPO / "sources/data/eoyr-schedule4.csv"
+OUT_S7 = REPO / "sources/data/eoyr-schedule7.csv"
 
 DESE_FUNCTION_FILE = REPO / "sources/state-dese/district-expenditures-by-function.xlsx"
 DESE_NSS_FILE = REPO / "sources/state-dese/dese-ch70-foundation-nss.xlsx"
@@ -528,6 +534,172 @@ def extract_schedule3(fy, grid):
 
 
 # ---------------------------------------------------------------------------
+# Schedule 4 (special education by placement) and Schedule 7 (pupil
+# transportation), both on the eoy sheet. Added 23 October 2026 for
+# scripts/build_sped_crosswalk.py: Schedule 3 is INSTRUCTIONAL services only
+# (it ends at line 3599, function 2000 -- schedule3_total holds nothing after
+# it), so DESE's own special education figures for tuition (9000) and
+# transportation (3300) are only on these two schedules and on Schedule 1.
+# ---------------------------------------------------------------------------
+
+SCHED_COLS = range(4, 13)  # E..M: the printed columns 1-9 of both schedules
+
+
+def _line_code(v):
+    if is_num(v):
+        return str(int(v))
+    if isinstance(v, str) and v.strip().isdigit():
+        return v.strip()
+    return None
+
+
+def _schedule_rows(grid, number):
+    """(header row numbers, data rows) of the eoy sheet's 'SCHEDULE <number>' block,
+    up to the next schedule marker that is not the same schedule continued."""
+    n = len(grid)
+    start = None
+    for i, row in enumerate(grid):
+        if schedule_marker(row) == number:
+            start = i
+            break
+    if start is None:
+        raise RuntimeError(f"no 'SCHEDULE {number}' marker on the eoy sheet")
+    rows = []
+    i = start + 1
+    while i < n:
+        row = grid[i]
+        m = schedule_marker(row)
+        if m is not None and m != number:
+            break
+        a = row[0] if len(row) > 0 else None
+        if is_num(a) and _line_code(row[2] if len(row) > 2 else None):
+            rows.append(i)
+        i += 1
+    return start, rows
+
+
+def _header_above(grid, first_data_idx, floor_idx):
+    """The contiguous non-data rows directly above a data row (at most six), as 1-based
+    row numbers -- the heading a block's columns are named from."""
+    out = []
+    r = first_data_idx - 1
+    while r > floor_idx and len(out) < 6:
+        row = grid[r]
+        a = row[0] if len(row) > 0 else None
+        if is_num(a) and _line_code(row[2] if len(row) > 2 else None):
+            break
+        if all(v is None or (isinstance(v, str) and not v.strip()) for v in row[2:13]):
+            break
+        out.append(r + 1)
+        r -= 1
+    return list(reversed(out))
+
+
+def _emit(fy, schedule, grid, idx, headings, cites, out):
+    row = grid[idx]
+    line = _line_code(row[2])
+    desc = str(row[3]).strip() if len(row) > 3 and row[3] is not None else ""
+    code = trailing_code(desc)
+    func = code if code and not is_object_code(code) else ""
+    amounts = {}
+    for c in SCHED_COLS:
+        v = row[c] if c < len(row) else None
+        if is_num(v):
+            amounts[c] = float(v)
+            coord = f"{get_column_letter(c + 1)}{idx + 1}"
+            out.append({
+                "fiscal_year": fy, "schedule": schedule, "line": line, "function_code": func,
+                "description": desc, "printed_column": c - 3,
+                "column": headings.get(c, ""), "amount": v,
+                "header_cells": "; ".join(f"{k}={val!r}" for k, val in cites.get(c, [])),
+                "cell": coord,
+            })
+    return line, amounts
+
+
+def extract_schedule4(fy, grid):
+    """Schedule 4, SPECIAL EDUCATION EXPENDITURES BY PLACEMENT. Ties: every row's column 9
+    (TOTAL) to its columns 1-8; line 3860 to lines 3810-3850 and line 3920 to lines
+    3880-3910, column by column; line 3950 to 3860 + 3870 + 3920 + 3930."""
+    start, rows = _schedule_rows(grid, 4)
+    if not rows:
+        raise RuntimeError(f"{fy}: Schedule 4 has no data rows")
+    hdr = list(range(start + 2, rows[0] + 1))   # the rows between the marker and line 3810
+    headings, cites = stitch_header(grid, hdr, 4, 12)
+    out, by_line = [], {}
+    for idx in rows:
+        line, amounts = _emit(fy, "4", grid, idx, headings, cites, out)
+        by_line[line] = (idx, amounts)
+        if 12 in amounts:
+            parts = sum(v for c, v in amounts.items() if c < 12)
+            record_tie(fy, "schedule4", "row total", line, "9 TOTAL", parts, amounts[12],
+                       f"M{idx + 1}")
+
+    def tie_sum(total, parts):
+        idx, tot = by_line[total]
+        for c in SCHED_COLS:
+            if c not in tot:
+                continue
+            s = sum(by_line[p][1].get(c, 0.0) for p in parts if p in by_line)
+            record_tie(fy, "schedule4", "column total", total, str(c - 3), s, tot[c],
+                       f"{get_column_letter(c + 1)}{idx + 1}")
+
+    tie_sum("3860", ["3810", "3815", "3820", "3830", "3840", "3850"])
+    tie_sum("3920", ["3880", "3885", "3887", "3888", "3890", "3900", "3910"])
+    tie_sum("3950", ["3860", "3870", "3920", "3930"])
+    return out
+
+
+# Line 4290, TOTALS FOR ALL PROGRAMS: in FY2024 its column 5 (1,284,608) is the sum of the
+# program blocks' column 5, while its columns 1-4 sum to 1,318,927 -- the 34,319 by which its
+# column 2 (401,402, the Schedule 1 figure) exceeds the special education block (367,083).
+# Recorded as printed; build_sped_crosswalk.py reports the difference.
+SCHED7_UNTIED = {"4290"}
+SCHED7_SPED_LINES = ["4070", "4080", "4110", "4120", "4130", "4140", "4150"]
+
+
+def extract_schedule7(fy, grid):
+    """Schedule 7, PUPIL TRANSPORTATION. Ties: every row's column 5 to columns 1-4 and
+    column 9 to columns 6-8; the special education block's line 4160 to lines 4070-4150,
+    column by column. The regular-education subtotal (4040) and the all-programs line
+    (4290) are recorded as printed and NOT tied column by column: in FY2024 line 4040
+    prints column 1 as 724,845 where line 4000 prints 767,525, and line 4290 column 2 is
+    401,402 where the special education block sums to 367,083 -- defects of the working
+    copy, reported by build_sped_crosswalk.py rather than hidden here."""
+    start, rows = _schedule_rows(grid, 7)
+    out, by_line = [], {}
+    blocks = []   # split into blocks at every gap in the data rows
+    for idx in rows:
+        if blocks and idx - blocks[-1][-1] <= 1:
+            blocks[-1].append(idx)
+        else:
+            blocks.append([idx])
+    floor = start
+    for blk in blocks:
+        hdr = _header_above(grid, blk[0], floor)
+        headings, cites = stitch_header(grid, hdr, 4, 12)
+        for idx in blk:
+            line, amounts = _emit(fy, "7", grid, idx, headings, cites, out)
+            by_line[line] = (idx, amounts)
+            if 8 in amounts and line not in SCHED7_UNTIED:
+                parts = sum(v for c, v in amounts.items() if c < 8)
+                record_tie(fy, "schedule7", "row total", line, "5 TOTAL", parts, amounts[8],
+                           f"I{idx + 1}")
+            if 12 in amounts:
+                parts = sum(v for c, v in amounts.items() if 8 < c < 12)
+                record_tie(fy, "schedule7", "row total", line, "9 TOTAL", parts, amounts[12],
+                           f"M{idx + 1}")
+        floor = blk[-1]
+    idx, tot = by_line["4160"]
+    for c in SCHED_COLS:
+        if c in tot:
+            s = sum(by_line[p][1].get(c, 0.0) for p in SCHED7_SPED_LINES if p in by_line)
+            record_tie(fy, "schedule7", "special education total", "4160", str(c - 3), s,
+                       tot[c], f"{get_column_letter(c + 1)}{idx + 1}")
+    return out
+
+
+# ---------------------------------------------------------------------------
 # Net School Spending (reports sheet, actual-year block only)
 # ---------------------------------------------------------------------------
 
@@ -789,13 +961,15 @@ def main():
     ap.add_argument("--check", action="store_true", help="verify only; do not write")
     args = ap.parse_args()
 
-    all_s1, all_s3, all_nss = [], [], []
+    all_s1, all_s3, all_nss, all_s4, all_s7 = [], [], [], [], []
     for fy, path in FILES.items():
         if not path.exists():
             print(f"ERROR: {fy} source not found: {path}", file=sys.stderr)
             sys.exit(1)
         eoy_grid = load_grid(path, EOY_SHEET[fy])
         all_s1.extend(extract_schedule1(fy, eoy_grid))
+        all_s4.extend(extract_schedule4(fy, eoy_grid))
+        all_s7.extend(extract_schedule7(fy, eoy_grid))
 
         s3_grid = load_grid(path, "schedule3_total")
         all_s3.extend(extract_schedule3(fy, s3_grid))
@@ -810,7 +984,8 @@ def main():
         sys.exit(1)
 
     print(f"All tie-outs and NSS arithmetic checks passed ({len(all_s1)} schedule-1 rows, "
-          f"{len(all_s3)} schedule-3 rows, {len(all_nss)} NSS lines).")
+          f"{len(all_s3)} schedule-3 rows, {len(all_s4)} schedule-4 cells, "
+          f"{len(all_s7)} schedule-7 cells, {len(all_nss)} NSS lines).")
     if TIE_WARNINGS:
         print(f"\n{len(TIE_WARNINGS)} tie-out(s) did not match but are fully explained by a blank "
               f"cell in the source workbook (not blocking; cited below):")
@@ -841,6 +1016,12 @@ def main():
         all_nss,
         ["fiscal_year", "line", "label", "school_committee", "city_town", "total", "note", "cell_total"],
     )
+    s47 = ["fiscal_year", "schedule", "line", "function_code", "description", "printed_column",
+           "column", "amount", "header_cells", "cell"]
+    write_csv(OUT_S4, all_s4, s47)
+    write_csv(OUT_S7, all_s7, s47)
+    print(f"Wrote {OUT_S4}")
+    print(f"Wrote {OUT_S7}")
     print(f"\nWrote {OUT_S1}")
     print(f"Wrote {OUT_S3}")
     print(f"Wrote {OUT_NSS}")

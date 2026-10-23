@@ -25,13 +25,17 @@ CATEGORY = dict(
         # The school MUNIS journal, every fund, posting by posting (notes/plans/
         # MUNIS-JOURNAL-REPORTS.md, Hub A). Written by build_journal_sped_topics.py.
         ('Who is paid, and from where', ['sped-providers', 'sped-burndown']),
+        # DESE's definition beside our three, function code by function code. Written by
+        # build_sped_crosswalk.py, with the permanent list at sources/data/sped-crosswalk.csv.
+        ('How it is counted', ['sped-definition']),
     ],
     elsewhere=[('/enrolment/children-schooled-elsewhere', 'Children schooled elsewhere'),
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_special_education_topics.py'
 TOPIC_GENERATORS = {'sped-all-funds': 'build_school_all_funds.py',
                     'sped-providers': 'build_journal_sped_topics.py',
-                    'sped-burndown': 'build_journal_surplus_topics.py'}
+                    'sped-burndown': 'build_journal_surplus_topics.py',
+                    'sped-definition': 'build_sped_crosswalk.py'}
 TOPICS = {
     'out-of-district-tuition': 'Out-of-district tuition',
     'cost-per-placement': 'Cost per placement',
@@ -49,4 +53,5 @@ TOPICS = {
     'sped-all-funds': 'Special education, all funds',
     'sped-providers': 'Special education providers',
     'sped-burndown': 'Special education burndown',
+    'sped-definition': 'Special education definition',
 }
