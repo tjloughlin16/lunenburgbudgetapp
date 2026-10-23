@@ -372,5 +372,146 @@
    "at": "2026-10-16T14:55:58Z",
    "cost_usd": 0.2256577
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06062022-4724",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2022-06-06-minutes-4724.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2022-06-06-minutes-4724.pdf"
+  },
+  "official_sha256": "1b4ae9c523c70001f4c56332a090b5a9c0d26e015867f3274a9890f49cfee875",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the clerk appointment, the plan to poll members for the next meeting, and most attendees. Ours carries a long building-cost discussion with many figures that the official minutes leave out, and the official minutes carry a $861,051.33 budget balance and a volunteer-invite task that ours lacks. The one thing to know: the captions blur the two Steves, so ours shows one Steve where the official minutes list Steve Walker and Steve Archambault.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 1,
+   "discrepancy": 1,
+   "only_in_ours": 6,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to appoint Steve as clerk",
+    "ours": "Appoint Steve formally as clerk — not audible",
+    "official": "motion to appoint s.archambault as clerk (f.beall, 2nd p.sarapas), passed",
+    "note": "Same vote in both; ours could not hear the outcome or the mover, the official minutes give mover, seconder and 'passed'.",
+    "t": 504
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Budget report March ending balance",
+    "ours": "",
+    "official": "budget report march ending balance - $861,051.33",
+    "note": "The manager's budget report figure appears only in the official minutes; no matching figure is in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Studio contents fund / building cost figures",
+    "ours": "Studio contents fund: a hundred dollars per square foot, 300 to 350, 2 700 square feet, 900 000; TC Passios building cost: 40 million, 3 000 square feet",
+    "official": "",
+    "note": "The official minutes are a summary and do not record the discussion of studio and building costs.",
+    "t": 1318
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Operations budget and cost of owning a building",
+    "ours": "Operations budget: 200 000 per year; Cost of owning a building: six hundred dollars a month, 500 a month, a thousand dollars a month",
+    "official": "",
+    "note": "Discussed on the recording, absent from the official minutes; captions are unreliable on these figures.",
+    "t": 1463
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Other station facility and old primary school demolition figures",
+    "ours": "Cost analysis of another station's facility: 4500 square feet, 2 million; Old primary school demolition: 300 000, 250 000",
+    "official": "",
+    "note": "Cost comparisons heard in discussion that the official minutes do not mention.",
+    "t": 1869
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Comcast contract and franchise fee figures",
+    "ours": "Comcast contract and capital: two and a half percent, five percent, 170 000, 100 and a; Franchise fee revenue trend: fifty thousand dollars",
+    "official": "",
+    "note": "Contract and franchise fee discussion is not in the official minutes.",
+    "t": 2893
+   },
+   {
+    "kind": "agree",
+    "about": "Polling members for next meeting date",
+    "ours": "The chair will email members asking for availability in the first two weeks of July to schedule the next meeting, which must reappoint officers; discussion limited to availability by reply to the chair only.",
+    "official": "s.walker will poll members to find an appropriate time.",
+    "note": "Same action; ours adds the July window and reply-to-chair-only detail, and the official names S.Walker as the one polling.",
+    "t": 3401
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Who will chair left to next meeting",
+    "ours": "Question of who will chair left to the committee at the next meeting when officers are reappointed.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 3526
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Select Board volunteer invite",
+    "ours": "",
+    "official": "s.archambault will send the select board's volunteer invite to p.sarapas.",
+    "note": "An action item in the official minutes with no counterpart in ours.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Which Steve is present",
+    "ours": "Steve (chair / acting clerk (chairs the meeting; appointed clerk formally))",
+    "official": "pacc members present: a. steve walker, steve archambault, paul sarapas.",
+    "note": "Ours lists one Steve; the official minutes list two, Walker and Archambault. Check the recording to see who chaired and who was appointed clerk (the official minutes suggest Archambault).",
+    "t": 504
+   },
+   {
+    "kind": "agree",
+    "about": "Paul present",
+    "ours": "Paul (member)",
+    "official": "pacc members present: a. steve walker, steve archambault, paul sarapas.",
+    "note": "Same attendee.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Faith attending",
+    "ours": "Faith (member)",
+    "official": "b. faith beall - via zoom.",
+    "note": "Same attendee; official adds that she attended remotely.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Absent member Lincoln",
+    "ours": "Pete Lincoln (member (absent))",
+    "official": "3. absent - peter lincoln",
+    "note": "Same absent member, name given as Peter in the official minutes.",
+    "official_reading": "Peter Lincoln",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joe, PACC manager",
+    "ours": "Joe (PACC manager/town employee (reported on, not present))",
+    "official": "",
+    "note": "Joe is not listed in the official attendees; ours says he was only reported on, so this is expected.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-23T10:33:04Z",
+   "cost_usd": 0.2495723
+  }
  }
 }

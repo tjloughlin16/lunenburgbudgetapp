@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-10-12",
  "docid": "5688",
@@ -12,31 +12,321 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from 9/28/21",
-   "moved_by": "Brett Ramsden",
-   "seconded_by": "John Reynolds",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: brett r. to approve the minutes from 9/28/21. second: john r. roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
-  },
-  {
-   "motion": "Have Rob obtain at least 2 or more quotes from engineers to estimate the potential cost for construction of Upland Ave./Eastern Ave. extension and White Street",
-   "moved_by": "Brett Ramsden",
-   "seconded_by": "Mike Deveikis",
-   "outcome": "passed 4-0",
+   "motion": "Have Rob reach out to engineers and get estimate quotes for the Upland Ave/Eastern Ave work.",
+   "moved_by": "Brett R.",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": false,
-   "quote": "motion: brett r. second: mike d. to have rob get at least 2 or more quotes for the cost for engineers to estimate the potential cost for the construction of an upland ave./eastern ave, extension. discussion: john suggested amending the motion to include white st. brett amended the motion to include white street and john seconded it. roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
+   "quote": "motion: brett r. to have rob reach out to engineers and get estimate quotes for upland ave/eastern ave. work."
   },
   {
-   "motion": "Adjourn at 6:43pm",
-   "moved_by": "John Reynolds",
-   "seconded_by": "Mike Nault",
-   "outcome": "passed 4-0",
+   "motion": "Have Rob get at least 2 quotes from engineers for the cost of estimating an Upland Ave./Eastern Ave. extension, as amended to include White Street.",
+   "moved_by": "Brett R.",
+   "seconded_by": "Mike D.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
+  },
+  {
+   "motion": "Approve the minutes from 9/28/21.",
+   "moved_by": "Brett R.",
+   "seconded_by": "John R.",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: john r. to adjourn at 6:43pm. second: mike n. roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
+   "quote": "to approve the minutes from 9/28/21. second: john r. roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
+  },
+  {
+   "motion": "Adjourn the meeting at 6:43pm.",
+   "moved_by": "John R.",
+   "seconded_by": "Mike N.",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "to adjourn at 6:43pm. second: mike n. roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd from macOS Vision; all votes clearly recorded with roll call outcomes.",
- "cost_usd": 0.1091965
+ "note": "Text is macOS Vision OCR and partly garbled (e.g. 'October 26i', 'detinitions'; the clerk's signature is illegible), so quotes are copied as printed. The chair was absent and Mike N. opened and chaired; John Reynolds joined partway through the Upland discussion and voted on the roll call. Public comment opened with 'none', so no speaker is recorded there. Brett's first motion (to have Rob reach out to engineers) has no recorded result, and a second, amended motion was then voted on. The roll-call lines show four ayes; I recorded them as 'passed' rather than a count, because the minutes do not print a count. No reserve-fund or line-item transfer is recorded; the indirect-cost transfers to the town are mentioned without an amount.",
+ "cost_usd": 0.020551140000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: vice-chair-john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: vice-chair-john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendees: vice-chair-john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "mike n. opened the meeting at 6:08 pm in the absence of dave and john and did a roll call of attendees."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "director- rob oliva, business manager-barb lefebvre, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: chair- dave macdonald"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Rob will go with a limited scope of work to get a preliminary plan and quote for Upland Ave.",
+   "quote": "rob said he would go with a limited scope of work to get a preliminary plan and quote."
+  },
+  {
+   "decision": "Barb to discuss the Fitchburg regulation changes with Town Counsel and return to the Commission, which can then vote.",
+   "quote": "barb will come back to the commission with counsel's input and they can vote on it."
+  },
+  {
+   "decision": "The Commission agreed that Barb should discuss the Fitchburg wording with Counsel.",
+   "quote": "the commission agreed that barb should discuss it with counsel."
+  },
+  {
+   "decision": "Invoices were verbally okayed by the Commission (Fitchburg usage, Fitchburg debt service, Mead Talerman).",
+   "quote": "invoices were verbally okayed by the commission."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Upland Ave engineering estimate cost",
+   "what_was_recorded": "Rob estimated a conceptual drawing with a construction estimate at about $6-8K; the Commission said it would revisit once engineering quotes, expected under $10K, were in.",
+   "figures_as_printed": [
+    "$6-8K",
+    "$10K"
+   ],
+   "quote": "rob replied about $6-8k for a conceptual drawing from available information, including a construction estimate."
+  },
+  {
+   "topic": "FY22 capital account",
+   "what_was_recorded": "Of the $100K budgeted for Capital, just under $17K has been spent, including the Mass Ave 2 panel and the Dana St impeller work.",
+   "figures_as_printed": [
+    "$100K",
+    "$17K"
+   ],
+   "quote": "out of the $100k budgeted for capital, they have spent just under $17k, which includes the mass ave 2 panel"
+  },
+  {
+   "topic": "Maintenance account",
+   "what_was_recorded": "About $26K has been spent of the $64,425 Maintenance Account, leaving $ 38,500.",
+   "figures_as_printed": [
+    "$26K",
+    "$64,425",
+    "$ 38,500"
+   ],
+   "quote": "the maintenance account has spent about $26k out of $64,425, which has $ 38,500 left."
+  },
+  {
+   "topic": "FY22 year-to-date revenues and expenses",
+   "what_was_recorded": "Year-to-date revenues are $298,097.50 and expenses are $345,991.30; expenses are higher because they include annual transfers to the town for indirect costs, insurance and benefits.",
+   "figures_as_printed": [
+    "$298,097.50",
+    "$345,991.30"
+   ],
+   "quote": "barb reported the revenues, so far, are $298,097.50 and expenses are $345,991.30."
+  },
+  {
+   "topic": "Business manager invoices",
+   "what_was_recorded": "Three invoices were reported: Fitchburg usage, Fitchburg debt service (budgeted), and Mead Talerman for an August bill related to 419 Whalom Rd.",
+   "figures_as_printed": [
+    "$14,325.20",
+    "$20,965.40",
+    "$340.65"
+   ],
+   "quote": "barb reported she has 3 invoices- fitchburg usage - $14,325.20, fitchburg debt service - $20,965.40 (which was budgeted) and mead talerman- $340.65"
+  },
+  {
+   "topic": "Indirect cost transfers to the town",
+   "what_was_recorded": "Expenses are higher to date because they include the annual transfers to the town for indirect costs, insurance and benefits; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "expenses are currently higher since they include the annual transfers to the town for indirect costs insurance and benefits)."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Praise for chair",
+   "speaker": "Brett",
+   "quote": "public comment- brett said mike n. did a great job chairing the meeting."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "no action; Q1 delinquency notices, Elizabeth St. crack sealing, Oct 26 in-person meeting noted",
+   "tags": [
+    "delinquency",
+    "road work"
+   ],
+   "quote": "announcements - barb announced the q1 delinquency notices have gone out."
+  },
+  {
+   "topic": "Upland Ave/Eastern Ave Extension discussion",
+   "resolution": "engineering quotes requested; motion amended to add White St.; passed",
+   "tags": [
+    "upland ave",
+    "eastern ave",
+    "engineering estimate",
+    "betterment",
+    "tight tanks"
+   ],
+   "quote": "upland ave/eastern ave extension discussion - barb reported that she discussed surveying the residents with"
+  },
+  {
+   "topic": "Fitchburg response to regulation changes",
+   "resolution": "Barb to consult Town Counsel and return to the Commission",
+   "tags": [
+    "regulations",
+    "fitchburg",
+    "town counsel"
+   ],
+   "quote": "fitchburg response to regulation changes - barb noted that she'd sent the commissioners the attachment from fitchburg"
+  },
+  {
+   "topic": "Grease trap permit renewals FY22",
+   "resolution": "noted; three 1st Tuesday logs outstanding",
+   "tags": [
+    "grease trap",
+    "permits"
+   ],
+   "quote": "grease trap permit renewals for fy22 - barb reported all annual permits have now been received, including one"
+  },
+  {
+   "topic": "Maintenance report",
+   "resolution": "noted; capital and maintenance spending reviewed",
+   "tags": [
+    "capital",
+    "maintenance",
+    "manholes"
+   ],
+   "quote": "maintenance report- rob noted that dave had asked about capital and maintenance expenditures so far."
+  },
+  {
+   "topic": "FY22 year-to-date budget",
+   "resolution": "noted",
+   "tags": [
+    "budget",
+    "fy22"
+   ],
+   "quote": "fy22 ytd budget - barb reported the revenues, so far, are $298,097.50 and expenses are $345,991.30."
+  },
+  {
+   "topic": "Minutes of 9/28/21",
+   "resolution": "approved, passed",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes from 9/28/21. second: john r. roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "invoices verbally okayed",
+   "tags": [
+    "invoices",
+    "conflict of interest"
+   ],
+   "quote": "business manager report - barb reported she has 3 invoices- fitchburg usage - $14,325.20"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none from the public; one remark by Brett",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment- brett said mike n. did a great job chairing the meeting."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted: Oct 26 at Town Hall; Nov 9 remote",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming scheduled sewer commission activities:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:43pm, passed",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "to adjourn at 6:43pm. second: mike n. roll call vote: mike d.-aye, brett-aye, john-aye and mike n.-aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Q1 delinquency notices",
+   "where": "text",
+   "quote": "barb announced the q1 delinquency notices have gone out."
+  },
+  {
+   "name": "Email from Green Mountain Pipe regarding crack sealing on Elizabeth Street",
+   "where": "text",
+   "quote": "rob reported he received an email from green mountain pipe, regarding the crack sealing work on elizabeth street."
+  },
+  {
+   "name": "Attachment from Fitchburg (Jeff Murawski) with suggested regulation changes",
+   "where": "text",
+   "quote": "she'd sent the commissioners the attachment from fitchburg, jeff murawski, with his suggested changes"
+  },
+  {
+   "name": "Email from Jeff Murawski (Fitchburg) with concern on Article IV, Section IV-3",
+   "where": "text",
+   "quote": "hadn't included the email with his concern regarding the wording in article iv, section iv-3 regarding discharge documents."
+  },
+  {
+   "name": "Three invoices (Fitchburg usage, Fitchburg debt service, Mead Talerman)",
+   "where": "text",
+   "quote": "barb reported she has 3 invoices- fitchburg usage - $14,325.20, fitchburg debt service - $20,965.40 (which was budgeted) and mead talerman- $340.65"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "upland ave",
+  "eastern ave extension",
+  "engineering estimate",
+  "betterment",
+  "capital budget",
+  "maintenance budget",
+  "fy22 budget",
+  "grease trap",
+  "fitchburg",
+  "town counsel",
+  "zoom meeting",
+  "vice-chair chaired"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

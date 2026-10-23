@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-10-13",
  "docid": "3077",
@@ -12,21 +12,239 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from 8/25/21",
-   "outcome": "passed 5-0-1",
+   "motion": "Approve the minutes of 8/25/21, recorded by roll call: five members aye and Michael-Ray Jeffreys abstaining.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to approve minutes from 8/25/21 greg roy aye, kristina masaitis aye, dave passios, aye brian lehtinen aye, dave blatt aye michael-ray jeffries abstain"
   },
   {
-   "motion": "adjourn at 6:44 PM",
+   "motion": "Adjourn the meeting at 6:44PM.",
    "moved_by": "Dave Blatt",
    "seconded_by": "Brian Lehtinen",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion by dave blatt to adjourn at 6:44pm. seconded by brian lehtinen. michael ray, dave passios dave batt, brian lehtinen, kristina masaitis, greg roy all aye."
+   "quote": "motion by dave blatt to adjourn at 6:44pm. seconded by brian lehtinen."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1111905
+ "note": "Plain-text extraction with no page-by-page structure; no vote tally is printed for the minutes approval (roll call only, one abstention, mover not named), so its outcome is recorded as not stated. Name spellings vary within the minutes: 'Dave Passios' and 'David Passios', 'Michael-Ray Jeffries' and 'Michael-Ray Jeffreys', 'Dave Batt' and 'David Blatt'; names are given as the attendance list prints them. The 'Input to/update from DiGiorgio' item names a person with no recorded content, so DiGiorgio is not listed as an attendee. The minutes print no dollar figures. Architect and Members Absent fields are blank.",
+ "cost_usd": 0.015118140000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Roy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios, matthew allison, kristina masaitis"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios, matthew allison, kristina masaitis"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios, matthew allison, kristina masaitis"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios, matthew allison, kristina masaitis"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios, matthew allison, kristina masaitis"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios, matthew allison, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, michael-ray jeffreys, brian lehtinen, david passios, matthew allison, kristina masaitis"
+  },
+  {
+   "name": "Megan Lordan",
+   "role": "Town Employees",
+   "status": "present",
+   "quote": "town employees: megan lordan"
+  },
+  {
+   "name": "Rhonda Lizio",
+   "role": "Community Guests",
+   "status": "present",
+   "quote": "community guests: rhonda lizio"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave Blatt will find simple, easy-to-follow photos of the building and break down what is proposed on each side of the warrant article.",
+   "quote": "he will make sure that he finds photos that are simple and easy to follow so everyone understands what is being proposed."
+  },
+  {
+   "decision": "Public Outreach meeting set for November 10; information for the Lunenburg Ledger due Tuesday November 5 by 5PM.",
+   "quote": "november 10th will be a public outreach meeting. information would need to be sent in tuesday november 5th by 5pm the week of to the lunenburg ledger."
+  },
+  {
+   "decision": "Dave Blatt will assemble the outreach information for the following week.",
+   "quote": "dave blatt will get info together for next week."
+  },
+  {
+   "decision": "Michael-Ray Jeffreys will attend the Finance Committee meeting to propose the article.",
+   "quote": "michael-ray jeffreys will go to the meeting to propose the article."
+  },
+  {
+   "decision": "Future meeting dates set as 10/20/21, 10/27/21, 11/3/21 and 11/10/21.",
+   "quote": "future meeting schedule: 10/20/21, 10/27/21 11/3/21 and 11/10/21."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Borrowing amount and borrowing capacity",
+   "what_was_recorded": "Numbers on the amount to be borrowed and the borrowing capacity were discussed with the Finance Committee; no figures are printed in the minutes.",
+   "quote": "talks with the finance committee about numbers related to the amount being borrowed and the borrowing capacity of it.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Building renderings and budget",
+   "what_was_recorded": "The committee noted there are no good renderings of the building because there was no budget to have them done; no dollar figure printed.",
+   "quote": "there are not good renderings of the building as there was not a budget to have them done.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Money for the archival area",
+   "what_was_recorded": "A public commenter objected to the amount of money being dedicated to the archival area; no dollar figure printed.",
+   "quote": "rhonda lizio 181 reservoir rd is concerned with the fact that there is so much money being dedicated to the archival area.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lizio",
+   "stated_role": "Community Guests",
+   "topic": "money for archival area vs old town hall",
+   "quote": "rhonda lizio 181 reservoir rd is concerned with the fact that there is so much money being dedicated to the archival area."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment from the Committee (select board and finance committee)",
+   "resolution": "no action; joint meeting with finance committee suggested",
+   "tags": [
+    "select board",
+    "finance committee"
+   ],
+   "quote": "michael-ray gave an update on the select board and some of the hesitancy of them."
+  },
+  {
+   "topic": "Input to/update from DiGiorgio",
+   "resolution": "no content recorded",
+   "tags": [
+    "update"
+   ],
+   "quote": "input to/update from digiorgio"
+  },
+  {
+   "topic": "Proposed warrant articles",
+   "resolution": "discussed; Blatt to prepare simpler photos and breakdown",
+   "tags": [
+    "warrant articles",
+    "renderings"
+   ],
+   "quote": "dave blatt is concerned that the pictures showing the building are not up to par."
+  },
+  {
+   "topic": "Review and approve minutes of 8/25/21",
+   "resolution": "approved by roll call (five aye, one abstention as recorded)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "motion to approve minutes from 8/25/21 greg roy aye"
+  },
+  {
+   "topic": "Public outreach",
+   "resolution": "Public Outreach meeting set for November 10; Ledger deadline November 5",
+   "tags": [
+    "public outreach",
+    "lunenburg ledger"
+   ],
+   "quote": "november 10th will be a public outreach meeting."
+  },
+  {
+   "topic": "Correspondence: archival space and borrowing",
+   "resolution": "discussed; Jeffreys to propose article to Finance Committee",
+   "tags": [
+    "archival storage",
+    "borrowing",
+    "finance committee"
+   ],
+   "quote": "ms. lizio reached out to the committee about the archival space in the building and would like to see."
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "dates set",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "future meeting schedule: 10/20/21, 10/27/21 11/3/21 and 11/10/21."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard; no committee response recorded",
+   "tags": [
+    "public comment",
+    "archival storage"
+   ],
+   "quote": "is wondering why there is nothing being put into the old town hall."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:44PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion by dave blatt to adjourn at 6:44pm. seconded by brian lehtinen."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proposed Warrant Articles",
+   "where": "text",
+   "quote": "discussion of proposed warrant articles"
+  },
+  {
+   "name": "Minutes of 8/25/21",
+   "where": "text",
+   "quote": "motion to approve minutes from 8/25/21"
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "archival storage",
+  "borrowing",
+  "warrant articles",
+  "public outreach",
+  "finance committee",
+  "select board",
+  "renderings"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

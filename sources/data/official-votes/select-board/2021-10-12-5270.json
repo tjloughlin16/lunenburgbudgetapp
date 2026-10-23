@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-10-12",
  "docid": "5270",
@@ -12,40 +12,565 @@
  },
  "votes": [
   {
-   "motion": "Submit a request for demolition of the old Primary School located at 30 School Street within the next fifteen days",
-   "moved_by": "M. Jeffreys",
+   "motion": "Approve the common victualler license for BKK Group LLC d/b/a Bangkok Hill at 177 Massachusetts Avenue.",
+   "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2': l. franco that the select board submit a request for demolition of the old primary school located at 30 school street within the next fifteen days vote: all in favor"
+   "quote": "to approve the common victualler license for bkk group llc, d/b/a bangkok hill, located at 177 massachusetts avenue vote: all in favor"
   },
   {
-   "motion": "Approve the Revised MA Covid-19 Emergency Paid Sick Leave Policy",
+   "motion": "Accept and approve the warrant article as amended (context indicates the Demolition Delay Bylaw amendment).",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed (all in favor)",
+   "procedural": false,
+   "quote": "to accept and approve the warrant article as amended vote: all in favor"
+  },
+  {
+   "motion": "Deny the request of Randy Moulton to bow hunt on the 671 West Street parcel.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed 3-2 (3 in favor, 2 against: Dwyer, Marino)",
+   "procedural": false,
+   "quote": "to deny the request to bow hunton the 671 west street parcel vote: 3 in favor, 2 against"
+  },
+  {
+   "motion": "That the Select Board submit a request for demolition of the old Primary School located at 30 School Street within the next fifteen days.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed (all in favor)",
+   "procedural": false,
+   "quote": "that the select board submit a request for demolition of the old primary school located at 30 school street within the next fifteen days vote: all in favor"
+  },
+  {
+   "motion": "Approve the Revised MA Covid-19 Emergency Paid Sick Leave Policy.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
-   "quote": "motion: t. dwyer 2\": j. marino to approve the revised ma covid-19 emergency paid sick leave policy vote: all in favor"
+   "quote": "to approve the revised ma covid-19 emergency paid sick leave policy vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of October 5, 2021 as presented",
+   "motion": "Approve the minutes of October 5, 2021 as presented.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion: m. jeffreys to approve the minutes of october 5, 2021 as presented 2\"': l. franco vote: all in favo",
-   "quote_taken_from_text": true
+   "quote": "to approve the minutes of october 5, 2021 as presented"
   },
   {
-   "motion": "Enter into Executive Session pursuant to MGL c. 30, Section 21, Paragraph 3 to discuss strategy with respect to collective bargaining for Municipal Employees Union and Fire Union",
+   "motion": "Enter Executive Session under MGL c. 30, Section 21, Paragraph 3 (collective bargaining; Municipal Employees Union, Fire Union) and adjourn after exiting Executive Session.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed",
+   "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: j. marino 2': t. dwyer to enter into executive session pursuant to mgl c. 30, section 21, paragraph 3 and to adjourn after exiting executive session to discuss strategy with respect to collective bargaining ifan open meeting may have a detrimental effect on the bargaining position of the public body and the chair so declares. (municipal employees union, fire union) vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to enter into executive session pursuant to mgl c. 30, section 21, paragraph 3 and to adjourn after exiting executive session to discuss strategy with respect to collective bargaining"
   }
  ],
- "dropped_unquoted": 3,
- "note": "OCR scan; minor OCR artifacts in seconded-by designations (2\\\", 2d, 2') and one misspelling in quote (ifan instead of if an). One motion (AJD's Café common victualler license) discussed but no vote recorded.",
- "cost_usd": 0.1352417
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision). Several votes read from OCR with some garbling (e.g. 'bow hunton'); the FY22 budget adjustment table is OCR-garbled and its figures are not relied on. The AJD's Café common victualler item has a motion-like line but no recorded motion or vote. The adjournment at 9:47 p.m. has no recorded motion. The minutes start mid-sentence on page 4 and the APDC interview runs across a page break. Executive session minutes are separate and not in this text. Page 13 is blank. The text does not say whether Peter Beardmore or Dave Passios spoke in person or by Zoom.",
+ "cost_usd": 0.027164340000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the"
+  },
+  {
+   "name": "Marino",
+   "role": "Select Board member (role not printed)",
+   "status": "present",
+   "quote": "mr. marino expressed concern about a husband and wife participating on the same committee."
+  },
+  {
+   "name": "Dwyer",
+   "role": "Select Board member (role not printed)",
+   "status": "present",
+   "quote": "mr. dwyer asked him if he intended to use a tree stand."
+  },
+  {
+   "name": "Franco",
+   "role": "Select Board member (role not printed)",
+   "status": "present",
+   "quote": "mr. franco noted the changes to the article since the last meeting and they addressed the"
+  },
+  {
+   "name": "Jeffreys",
+   "role": "Select Board member (role not printed)",
+   "status": "present",
+   "quote": "mr. jeffreys stated he would not support this request because this area is being used casually by"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; arthur dragoslis, judith dragoslis, robert"
+  },
+  {
+   "name": "Arthur Dragoslis",
+   "role": "Also Present (applicant, AJD's Café common victualler hearing)",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; arthur dragoslis, judith dragoslis, robert"
+  },
+  {
+   "name": "Judith Dragoslis",
+   "role": "Also Present (applicant, AJD's Café common victualler hearing)",
+   "status": "present",
+   "quote": "mr. and mrs. dragoslis thanked the board and exited the meeting."
+  },
+  {
+   "name": "Robert Bowen",
+   "role": "Attorney, 1686 Mass. Ave.; presented on behalf of the applicants",
+   "status": "present",
+   "quote": "attorney robert bowen, 1686 mass. ave., presented on behalf of the applicants, bkk group"
+  },
+  {
+   "name": "Maneerat Srisawad",
+   "role": "New owner, BKK Group LLC d/b/a Bangkok Hill",
+   "status": "present",
+   "quote": "he introduced the new owners, ms. maneerat srisawad and ms. natalie laohome, who were present."
+  },
+  {
+   "name": "Natalie Laohome",
+   "role": "New owner, BKK Group LLC d/b/a Bangkok Hill",
+   "status": "present",
+   "quote": "he introduced the new owners, ms. maneerat srisawad and ms. natalie laohome, who were present."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PAC Chairman, 227 Pleasant Street",
+   "status": "present",
+   "quote": "steve walker, pac chairman, 227 pleasant street, stated there is a bill to establish a state-"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman (Historical Commission)",
+   "status": "present",
+   "quote": "chairman richard mcgrath submitted an amended warrant article with the following changes:"
+  },
+  {
+   "name": "Randy Moulton",
+   "role": "Applicant, 157 Wilder Road, Leominster",
+   "status": "present",
+   "quote": "randy moulton, 157 wilder road, leominster, is requesting to archery hunt on the 671 west"
+  },
+  {
+   "name": "Laura McGrath",
+   "role": "Applicant, APDC Resident Representative, 22 Cushing Lane",
+   "status": "present",
+   "quote": "mrs. mcgrath stated she has been a middle school social studies teacher in leominster"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee Chair, 282 Pleasant St.",
+   "status": "not stated",
+   "quote": "peter beardmore, finance committee chair, 282 pleasant st., announced their public hearing"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "56 Whiting Street (public comment)",
+   "status": "not stated",
+   "quote": "dave passios, 56 whiting street, stated the finance committee has scheduled a date for an"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board reached consensus to apply now for the demolition determination form for the Old Primary School; Chairman to invite the APD after it hires the design company.",
+   "quote": "the consensus was to apply now."
+  },
+  {
+   "decision": "Chairman will invite the APD to attend a future meeting after they have hired the design company, so they can change their minds.",
+   "quote": "mr. alonzo stated he would be inviting the apd to attend the meeting after they"
+  },
+  {
+   "decision": "Chairman asked all members to complete their evaluation forms for the landscape design proposals by Thursday, ahead of board interviews.",
+   "quote": "mr. alonzo requested everyone complete their evaluation forms by this thursday as"
+  },
+  {
+   "decision": "Town Manager to work with Unitil to contact residents who opted out of the Municipal Aggregation Program and inform them they may opt back in.",
+   "quote": "to work on contacting residents that have opted out of the municipal aggregation program"
+  },
+  {
+   "decision": "An informational page on COVID-19 education will be inserted into the Special Town Meeting warrant, after the Town Manager spoke with the Board of Health agent.",
+   "quote": "an informational page will be inserted into the special town meeting warrant."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Unitil basic service rate (DPU filing)",
+   "what_was_recorded": "Unitil's proposed fixed basic service rate for residential and small commercial customers, and the bill increase a typical 600 kWh residential customer would see if approved.",
+   "quote": "will see an average monthly bill increase of $61.96 (or 37.9 percent)",
+   "figures_as_printed": [
+    "$0.19880 per kilowatt hour",
+    "$61.96",
+    "37.9 percent"
+   ]
+  },
+  {
+   "topic": "Municipal aggregation rate vs Unitil proposed rate",
+   "what_was_recorded": "Lunenburg's three-year municipal aggregation rate compared with Unitil's proposed increased rate.",
+   "quote": "0.11210/k wh versus unitil's proposed increase to 0.1988 /kwh",
+   "figures_as_printed": [
+    "0.11210/k Wh",
+    "0.1988 /kWh"
+   ]
+  },
+  {
+   "topic": "PACC capital reserve and franchise fees",
+   "what_was_recorded": "PAC received a capital infusion held in reserve for future studio space, and receives about $200,000 per year in franchise fees, which has slightly reduced.",
+   "quote": "we received a capital infusion of $170,000 which we are keeping in reserve for our future studio space.",
+   "figures_as_printed": [
+    "$170,000",
+    "$200,000"
+   ]
+  },
+  {
+   "topic": "Accounts payable and payroll warrants signed",
+   "what_was_recorded": "The Board signed three warrants: accounts payable, payroll, and payroll deductions.",
+   "quote": "the board signed an accounts payable warrant in the amount of $1,261,490.85, a payroll",
+   "figures_as_printed": [
+    "$1,261,490.85",
+    "$923,708.19",
+    "$605,318.76"
+   ]
+  },
+  {
+   "topic": "Certified free cash and enterprise retained earnings (FY2021)",
+   "what_was_recorded": "Town Manager reported certified FY2021 free cash and retained earnings for the General Fund and enterprise funds.",
+   "quote": "the general fund free cash was certified at $2,666,962, the water",
+   "figures_as_printed": [
+    "$2,666,962",
+    "$54,544",
+    "49,413",
+    "$1,828,706",
+    "$835,969"
+   ]
+  },
+  {
+   "topic": "FY22 budget adjustments table (Nov 16 STM)",
+   "what_was_recorded": "A draft table of FY22 budget adjustments was presented for Article A. The OCR text of the table is garbled and its figures are not reliable as read here.",
+   "quote": "fy22 budget adjustments from 5/1/21 atm to 11/16/21 stm",
+   "figures_as_printed": [
+    "(78,500.00)",
+    "1,177,736.00"
+   ]
+  },
+  {
+   "topic": "Article K, TC Passios building (value of article)",
+   "what_was_recorded": "Chairman stated the Finance Committee will be asked to recommend on an article of high monetary value, cited as $23 million.",
+   "quote": "on an article of a high monetary value in terms of $23 million",
+   "figures_as_printed": [
+    "$23 million"
+   ]
+  },
+  {
+   "topic": "Article L, design and construction documents for new building",
+   "what_was_recorded": "Board discussed Article L, which requests $250,000 for design and engineering; Mr. Jeffreys said it was a placeholder estimate.",
+   "quote": "we are plugging in an estimate of $250,000 as a number.",
+   "figures_as_printed": [
+    "$250,000"
+   ]
+  },
+  {
+   "topic": "Community Foundation grant to Council of Aging",
+   "what_was_recorded": "A Community Foundation approved a grant to the Council of Aging.",
+   "quote": "they have approved a $20,000 grant to the council of aging.",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Costs of Tappe and Vertex studies and building plans",
+   "what_was_recorded": "Mr. Jeffreys requested from the Town Manager the costs paid for the Tappe and Vertex studies and other building-plan funding. No figures printed.",
+   "quote": "requested from ms. lemieux the costs of what has been paid for the tappe and vertex studies",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Use of free cash for Special Town Meeting",
+   "what_was_recorded": "Chairman noted some Finance Committee members object to using free cash as a funding source at a Special Town Meeting. No figures printed.",
+   "quote": "some members of the finance committee have a problem about using free cash as a funding source at a special town meeting",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Library FY 23 budget requests",
+   "what_was_recorded": "The Library Director and Library Trustees chair will make increased FY 23 budget requests tied to Friday opening. No figures printed.",
+   "quote": "the library director and chair of the library trustees will be making their increased budget requests for fy 23.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Finance Committee hearing and Chapter 70 workshop",
+   "speaker": "Peter Beardmore",
+   "stated_role": "Finance Committee Chair, 282 Pleasant St.",
+   "quote": "peter beardmore, finance committee chair, 282 pleasant st., announced their public hearing will be this thursday at 7:00 pm in person and via zoom on the special town meeting"
+  },
+  {
+   "topic": "Articles K and L timing and Finance Committee hearing",
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "quote": "dave passios, 56 whiting street, stated the finance committee has scheduled a date for an"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and Unitil electricity rate announcements",
+   "resolution": "information only; no action",
+   "quote": "peter beardmore, finance committee chair, 282 pleasant st., announced their public hearing",
+   "tags": [
+    "public comment",
+    "Finance Committee",
+    "electricity",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Common victualler hearing: AJD's Café (Lunenburg Diner)",
+   "resolution": "no motion or vote recorded in the text",
+   "quote": "to approve the common victualler license for ajd's café llc d/b/a lunenburg diner at",
+   "tags": [
+    "licensing",
+    "common victualler"
+   ]
+  },
+  {
+   "topic": "Common victualler hearing: BKK Group (Bangkok Hill)",
+   "resolution": "approved, all in favor",
+   "quote": "to approve the common victualler license for bkk group llc, d/b/a bangkok hill, located at 177 massachusetts avenue",
+   "tags": [
+    "licensing",
+    "common victualler"
+   ]
+  },
+  {
+   "topic": "Meeting with PACC Chairman on streaming-video bills",
+   "resolution": "letter to legislators requested; no vote recorded",
+   "quote": "the action being requested by pac is for the select board to send a letter to the two",
+   "tags": [
+    "PACC",
+    "cable",
+    "streaming",
+    "state legislation"
+   ]
+  },
+  {
+   "topic": "Historical Commission demolition delay bylaw amendment (STM article)",
+   "resolution": "approved as amended",
+   "quote": "chairman richard mcgrath submitted an amended warrant article with the following changes:",
+   "tags": [
+    "demolition delay",
+    "bylaw",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Randy Moulton request to bow hunt 671 West Street",
+   "resolution": "denied 3-2",
+   "quote": "randy moulton, 157 wilder road, leominster, is requesting to archery hunt on the 671 west",
+   "tags": [
+    "conservation land",
+    "hunting"
+   ]
+  },
+  {
+   "topic": "Interviews and appointments: APDC resident representative",
+   "resolution": "interview heard; no vote recorded in the text",
+   "quote": "mrs. mcgrath stated she has been a middle school social studies teacher in leominster",
+   "tags": [
+    "appointments",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "Committee vacancies, employment openings and legislative updates",
+   "resolution": "information only",
+   "quote": "interested persons can find application forms on the town website and completed forms can be",
+   "tags": [
+    "vacancies",
+    "employment",
+    "state legislation",
+    "Chapter 70",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Budget updates: certified free cash",
+   "resolution": "information only",
+   "quote": "the general fund free cash was certified at $2,666,962, the water",
+   "tags": [
+    "free cash",
+    "budget"
+   ]
+  },
+  {
+   "topic": "COVID-19 update and upcoming events",
+   "resolution": "information only",
+   "quote": "the current positivity rate for lunenburg as of october 2nd was 6.94%.",
+   "tags": [
+    "COVID-19",
+    "events"
+   ]
+  },
+  {
+   "topic": "Old Primary School demolition request",
+   "resolution": "approved, all in favor",
+   "quote": "that the select board submit a request for demolition of the old primary school located at 30 school street within the next fifteen days",
+   "tags": [
+    "old primary school",
+    "demolition",
+    "APDC"
+   ]
+  },
+  {
+   "topic": "November 16, 2021 STM warrant articles and recommendations",
+   "resolution": "discussed; no recommendation vote recorded",
+   "quote": "ms. lemieux presented a draft of fy22 adjustments to the budget (article a.) and stated",
+   "tags": [
+    "Special Town Meeting",
+    "TCP building",
+    "budget",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Evaluation of landscape design proposals for 30 School Street",
+   "resolution": "no vote; evaluations due",
+   "quote": "mr. alonzo requested everyone complete their evaluation forms by this thursday as",
+   "tags": [
+    "procurement",
+    "landscape design"
+   ]
+  },
+  {
+   "topic": "Revised COVID-19 emergency paid sick leave policy",
+   "resolution": "approved, all in favor",
+   "quote": "to approve the revised ma covid-19 emergency paid sick leave policy",
+   "tags": [
+    "COVID-19",
+    "personnel policy"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of October 5, 2021",
+   "resolution": "approved, all in favor",
+   "quote": "to approve the minutes of october 5, 2021 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants signed",
+   "resolution": "signed by the Board",
+   "quote": "the board signed an accounts payable warrant in the amount of $1,261,490.85, a payroll",
+   "tags": [
+    "warrants",
+    "accounts payable",
+    "payroll"
+   ]
+  },
+  {
+   "topic": "Action items: TCP building committee, library, civics project, Finance Committee",
+   "resolution": "information only",
+   "quote": "the tcp building design committee met and discussed the timeline of these cost estimates and",
+   "tags": [
+    "TCP building",
+    "library",
+    "Council on Aging",
+    "Finance Committee"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings, public comment, and executive session",
+   "resolution": "entered executive session; no public comment",
+   "quote": "mr. alonzo reported they would be entering executive session.",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Delay Bi-monthly Report (form)",
+   "where": "text",
+   "quote": "submitting the document entitled, \"demolition delay bi-monthly report\" on a bimonthly basis,"
+  },
+  {
+   "name": "Temporary Construction Access Plan of Land in Lunenburg, Massachusetts (prepared by VHB, Inc., dated May 2021)",
+   "where": "text",
+   "quote": "plan of land entitled \"temporary construction access plan of land in lunenburg, massachusetts,\" prepared for the town of lunenburg,"
+  },
+  {
+   "name": "Unitil basic service supply solicitation filing with DPU",
+   "where": "text",
+   "quote": "fitchburg gas and electric light company d/b/a unitil requested that the"
+  },
+  {
+   "name": "MassAccess model letter",
+   "where": "text",
+   "quote": "based on a massaccess model letter on behalf of the town"
+  },
+  {
+   "name": "S 2200 (Senate) and H 130 (House) bills on streaming fees",
+   "where": "text",
+   "quote": "there are two versions sitting in committee: s 2200 (senate) and h 130 (house)."
+  },
+  {
+   "name": "APDC Guidelines and Regulations",
+   "where": "text",
+   "quote": "as stated in the apdc guidelines and regulations"
+  },
+  {
+   "name": "Demolition determination form",
+   "where": "text",
+   "quote": "discussion turned to whether to submit the demolition determination form."
+  },
+  {
+   "name": "FY 2021 balance sheet submitted to DOR",
+   "where": "text",
+   "quote": "the finance director submitted the fy 2021 balance sheet to dor last week"
+  },
+  {
+   "name": "Tappe and Vertex studies",
+   "where": "text",
+   "quote": "tappe and vertex studies as well as other funding spent related to building plans"
+  },
+  {
+   "name": "Approval of Minutes of October 5, 2021",
+   "where": "text",
+   "quote": "approval of minutes of october 5, 2021"
+  },
+  {
+   "name": "Code of Lunenburg Section 250-3.1 and Section 250-4.9 (Planning Board zoning articles)",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the code of lunenburg, section 250-3.1, which is a section of the"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "licensing",
+  "cable and PACC",
+  "demolition delay",
+  "Old Primary School",
+  "TCP building",
+  "Special Town Meeting",
+  "warrant articles",
+  "free cash",
+  "budget",
+  "electricity aggregation",
+  "COVID-19",
+  "executive session",
+  "collective bargaining",
+  "appointments"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -477,5 +477,163 @@
    "at": "2026-10-16T19:27:48Z",
    "cost_usd": 0.22686969999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04042022-4719",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/public-access-cable-committee-pacc/2022-04-04-minutes-4719.txt",
+   "path": "sources/meetings/public-access-cable-committee-pacc/2022-04-04-minutes-4719.pdf"
+  },
+  "official_sha256": "248062b6fe256d2fe620a390a0d169cedd858c09616f35d14ec5301228d2084b",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the March ending balance, the May 2nd 5:00 start, and most attendees, but they describe the two votes differently. Check the subscriber-numbers vote and the recognition vote first: ours has a different purpose and an unheard outcome, and the official minutes record both as passed with named movers. The official minutes print no dollar figures for the studio discussion that fills our figures list.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 2,
+   "discrepancy": 3,
+   "only_in_ours": 5,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote on subscriber and revenue numbers",
+    "ours": "Approve the cable subscriber and revenue numbers for use if asked at town meeting — passed unanimously",
+    "official": "s. walker asked to include and update subscriber numbers and fees over the last few years. (motion: s.archambault, 2nd p.lincoln - passed).",
+    "note": "Both record a passed vote on subscriber numbers, but ours is approving numbers for town meeting use and the official is a request to include and update subscriber numbers and fees; check the recording near 5:25 for the motion wording and whether the vote was unanimous.",
+    "t": 325
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote recognizing departing member's service",
+    "ours": "Recognize a departing member's years of service, pending receipt of his resignation letter — not audible",
+    "official": "motion s.walker, 2nd f.beall (passed), to recognize the time and expertise of jeff's 7 years of service to the paac.",
+    "note": "Our minutes could not hear the outcome and describe it as pending a resignation letter, while the official minutes record it as passed with 7 years of service; check the recording near 17:14 for the result and the wording.",
+    "t": 1034
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Line item transfer for portable AV matrix switcher",
+    "ours": "Line item transfer requested to cover purchase order for portable AV matrix switcher — not stated (discussed only)",
+    "official": "",
+    "note": "The official minutes record no transfers and do not mention the AV matrix switcher; ours says it was discussed only, with no vote.",
+    "t": 1518
+   },
+   {
+    "kind": "agree",
+    "about": "March budget report ending balance",
+    "ours": "eight hundred and ninety thousand two hundred and ninety dollars, eight ninety two ninety",
+    "official": "budget report march ending balance - $890,290.36.",
+    "note": "Same figure; ours dropped the cents, which the official minutes print as $890,290.36.",
+    "t": 1871
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Subscriber and revenue trend figures",
+    "ours": "58 subscribers, 3350, 201, six point four percent, five percent, 199 600, 195 831, just under two percent, down 8",
+    "official": "",
+    "note": "The official minutes give no dollar or subscriber figures for the trend, only the request to include and update numbers and fees.",
+    "t": 161
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Studio space cost estimates",
+    "ours": "Metal building cost estimate: 28, 56 to 88 000, 104 000, 43 dollars per square foot, 11 000, 20 000; Leominster studio operating and build costs: 1.5 million dollars, 333 dollars per square foot",
+    "official": "",
+    "note": "The official minutes say only that costs of a new studio were presented, with no figures; the recording's lease, building, mortgage and Leominster figures are unconfirmed by them.",
+    "t": 2674
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Invite prospective volunteer",
+    "ours": "Members agreed to invite a prospective volunteer to attend meetings as a member of the public and to fill out the talent bank; the committee recommends but the Select Board appoints.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 929
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Future studio space on next agenda",
+    "ours": "Future studio space stays on the next agenda; a member asked to arrange the Zoom.",
+    "official": "",
+    "note": "The official minutes record neither the agenda item nor the Zoom arrangement.",
+    "t": 3894
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting set for May 2nd, starting at five o'clock, with one member joining by Zoom around 6:30.",
+    "official": "next meeting is monday, may 2nd, **5:00 pm**.",
+    "note": "Date and time agree; the 6:30 Zoom detail appears only in ours.",
+    "t": 4155
+   },
+   {
+    "kind": "only_in_official",
+    "about": "February minutes tabled",
+    "ours": "",
+    "official": "1. feb. minutes tabled",
+    "note": "Our minutes do not mention the February minutes being tabled."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Lunenburg Leger service directory",
+    "ours": "",
+    "official": "the lunenburg leger has free space in the service directory we can use. j.mclaughlin will persue.",
+    "note": "Our minutes do not record this item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Information to be sent to Jeff Bajko",
+    "ours": "",
+    "official": "s.walker will send him appropriate information.",
+    "note": "Not in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair attendee Pete",
+    "ours": "Pete (chair)",
+    "official": "a. steve walker, peter lincoln, steve archambault. b. faith beall - via zoom.",
+    "note": "Same person: Peter Lincoln; ours gives the first name only.",
+    "official_reading": "Peter Lincoln"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Station manager Joe",
+    "ours": "Joe (Joe McLaughlin) (manager (PACC station manager))",
+    "official": "4. non-members: jo mclaughlin,",
+    "note": "Same person with the first name differing: Jo McLaughlin in the official minutes, Joe in ours.",
+    "official_reading": "Jo McLaughlin"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Members Steve Walker and Steve Archambault",
+    "ours": "Steve (member)",
+    "official": "a. steve walker, peter lincoln, steve archambault. b. faith beall - via zoom.",
+    "note": "Ours lists one Steve while the official minutes list two members named Steve; check which spoke in the recording and whether one attended."
+   },
+   {
+    "kind": "agree",
+    "about": "Faith Beall attendance",
+    "ours": "Faith (member)",
+    "official": "a. steve walker, peter lincoln, steve archambault. b. faith beall - via zoom.",
+    "note": "Same attendee; the official minutes add that she attended by Zoom."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Jeff Bajko excused",
+    "ours": "",
+    "official": "3. excused - jeff bajko",
+    "note": "Our attendees do not list Jeff Bajko, who is recorded as excused."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-23T10:34:08Z",
+   "cost_usd": 0.2599023
+  }
  }
 }

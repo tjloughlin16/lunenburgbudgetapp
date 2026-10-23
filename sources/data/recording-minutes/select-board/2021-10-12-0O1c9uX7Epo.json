@@ -1,0 +1,806 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2021-10-12",
+ "video_id": "0O1c9uX7Epo",
+ "video_url": "https://www.youtube.com/watch?v=0O1c9uX7Epo",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-10-12-0O1c9uX7Epo.json",
+  "sha256": "3275bfed24cf35b1eac408f4037d87d4c6061eac481d5f4a4afb5ff1ed220b4b",
+  "caption_lines": 479,
+  "segments": 4544
+ },
+ "recording": {
+  "duration_s": 10022,
+  "duration": "2:47",
+  "spoken_chars": 130600,
+  "words_approx": 21766
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10122021-5270",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-10-12-agenda-5270.txt",
+   "path": "sources/meetings/select-board/2021-10-12-agenda-5270.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10122021-5270",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-10-12-minutes-5270.txt",
+   "path": "sources/meetings/select-board/2021-10-12-minutes-5270.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-23T12:30:08Z",
+  "cost_usd": 0.5518367
+ },
+ "minutes": {
+  "headline": "Select Board voted to file a demolition request for the old primary school and reviewed the Nov. 16 special town meeting warrant.",
+  "summary": "The board granted two common victualler licenses, heard a cable committee request for letters supporting streaming-fee legislation, and backed the Historical Commission's revised demolition delay bylaw for the warrant. It denied a bow-hunting request and declined an APDC appointment over the same-household concern. It voted to submit the old primary school demolition request, then reviewed draft warrant articles, with a sharp exchange over the new-building design article for the TC Passios site.",
+  "attendees": [
+   {
+    "name_as_heard": "Chair (Alonso)",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Town Manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 125,
+    "speaker_as_heard": "Peter Beardmore, 282 Pleasant Street",
+    "stated_role": "chair of the finance committee",
+    "topic": "Announced Thursday's finance committee public hearing on the warrant articles and the Oct. 28 joint meeting with the School Committee on Chapter 70 funding."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "chapter-70",
+   "contracts-and-unions",
+   "debt",
+   "executive-session",
+   "facilities",
+   "free-cash",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "public-comment",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1035,
+    "motion": "Approve common victualler license for AJD's Cafe LLC d/b/a Lunenburg Diner",
+    "outcome": "passed (voice vote, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 1246,
+    "motion": "Approve common victualler license for BKK Group LLC d/b/a Bangkok Hill",
+    "outcome": "passed (voice vote, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 3829,
+    "motion": "Accept and include the amended demolition delay bylaw in the warrant",
+    "outcome": "passed (voice vote, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 4227,
+    "motion": "Deny Mr. Moulton's request to bow hunt at 671 West Street",
+    "outcome": "passed 3-2",
+    "procedural": false
+   },
+   {
+    "t": 6254,
+    "motion": "Submit a request for demolition of the old primary school within 15 days",
+    "outcome": "passed (voice vote, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 9428,
+    "motion": "Approve revised Massachusetts COVID-19 emergency paid sick leave policy",
+    "outcome": "passed (voice vote, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 9470,
+    "motion": "Approve minutes of October 5, 2021",
+    "outcome": "passed (voice vote, none opposed)",
+    "procedural": true
+   },
+   {
+    "t": 9958,
+    "motion": "Enter executive session (collective bargaining, fire union) and adjourn afterward",
+    "outcome": "roll call, members heard answering aye; full count not clearly captioned",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1390,
+    "topic": "Cable franchise fee",
+    "what_was_said": "Town receives a franchise fee on video services, with a capital infusion held in reserve for a new space.",
+    "figures_as_heard": [
+     "five percent",
+     "a hundred and seventy thousand 000",
+     "200 000 per year"
+    ]
+   },
+   {
+    "t": 5385,
+    "topic": "Free cash and retained earnings certification",
+    "what_was_said": "Town manager reported certified free cash and enterprise retained earnings.",
+    "figures_as_heard": [
+     "2 million six hundred and sixty six thousand nine hundred and sixty two dollars",
+     "fifty four thousand five hundred and forty four dollars",
+     "forty nine thousand four hundred thirteen dollars",
+     "one million eight hundred and twenty eight thousand seven hundred six dollars",
+     "nine hundred 835 sixty nine dollars"
+    ]
+   },
+   {
+    "t": 6438,
+    "topic": "Article A FY22 budget adjustments",
+    "what_was_said": "Draft adds funds for assistant accountant, technology costs, and Medicare, partly via transfer from group health insurance.",
+    "figures_as_heard": [
+     "4912",
+     "65 352",
+     "78 500",
+     "thirty nine thousand nine thirty five"
+    ]
+   },
+   {
+    "t": 6554,
+    "topic": "Prior year bills",
+    "what_was_said": "Prior year technology bills were higher than usual.",
+    "figures_as_heard": [
+     "seven thousand five hundred and nineteen dollars and seventy cents"
+    ]
+   },
+   {
+    "t": 7368,
+    "topic": "Article L design funding",
+    "what_was_said": "Draft asks for funds from available funds for design and engineering of a new building, with debate about timeline and escalation.",
+    "figures_as_heard": [
+     "250 000",
+     "23 million dollar",
+     "500 000 more",
+     "four percent"
+    ]
+   },
+   {
+    "t": 9512,
+    "topic": "Warrants",
+    "what_was_said": "Payroll, deduction and accounts payable warrants were read.",
+    "figures_as_heard": [
+     "nine hundred twenty three thousand seven hundred eight dollars and nineteen cents",
+     "605 318.76",
+     "1 million 261 490.85"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 6511,
+    "description": "Transfer from group health and life insurance to cover Medicare account costs, remainder by raise and appropriate",
+    "amount_as_heard": "78 500",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 2755,
+    "decision": "Cable letters to legislators held one week for review; to be voted next week."
+   },
+   {
+    "t": 3873,
+    "decision": "Town manager to have town counsel tidy wording on the demo delay bylaw (and/or and bi-monthly)."
+   },
+   {
+    "t": 6339,
+    "decision": "Board to vote recommendations on special town meeting articles next week."
+   },
+   {
+    "t": 9036,
+    "decision": "Scoring sheets for 30 School Street landscape proposals due Thursday; interviews of 30 to 45 minutes each."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 2,
+    "t_end": 125,
+    "topic": "Opening and meeting notices",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 125,
+    "t_end": 327,
+    "topic": "Public comment: finance committee hearing and Chapter 70 meeting",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "chapter-70",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 327,
+    "t_end": 597,
+    "topic": "Announcements: Unitil rate request and aggregation",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 597,
+    "t_end": 1307,
+    "topic": "Common victualler licenses (Lunenburg Diner, Bangkok Hill)",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1307,
+    "t_end": 2775,
+    "topic": "Cable committee: streaming fee legislation letters",
+    "resolution": "tabled one week",
+    "tags": [
+     "legal",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2775,
+    "t_end": 3893,
+    "topic": "Demolition delay bylaw amendment article",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "planning-and-zoning",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3893,
+    "t_end": 4270,
+    "topic": "Bow hunting request, 671 West Street",
+    "resolution": "voted, denied 3-2",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4270,
+    "t_end": 5007,
+    "topic": "APDC resident representative interview",
+    "resolution": "no formal vote; board members opposed same-household service",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 5007,
+    "t_end": 5982,
+    "topic": "Town manager report: vacancies, legislative update, free cash, COVID",
+    "resolution": "informational",
+    "tags": [
+     "free-cash",
+     "personnel",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 5982,
+    "t_end": 6296,
+    "topic": "Old primary school demolition request",
+    "resolution": "voted",
+    "tags": [
+     "facilities",
+     "primary-school"
+    ]
+   },
+   {
+    "t_start": 6296,
+    "t_end": 8995,
+    "topic": "November 16 special town meeting warrant articles",
+    "resolution": "draft review; vote next week",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 8995,
+    "t_end": 9199,
+    "topic": "30 School Street landscape design proposals",
+    "resolution": "scoring due Thursday",
+    "tags": [
+     "capital"
+    ]
+   },
+   {
+    "t_start": 9199,
+    "t_end": 9450,
+    "topic": "COVID-19 paid sick leave policy",
+    "resolution": "voted",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 9450,
+    "t_end": 9537,
+    "topic": "Minutes and warrants",
+    "resolution": "minutes voted",
+    "tags": []
+   },
+   {
+    "t_start": 9537,
+    "t_end": 10000,
+    "topic": "Action items, committee reports, executive session",
+    "resolution": "executive session on fire union bargaining",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Exact roll call count for executive session",
+   "Some warrant article letters and details around 6340-6390 garbled",
+   "Whether the demolition and sick-leave votes were unanimous is inferred only from 'opposed none'"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 7012,
+    "about": "Debate over whether to keep the TC Passios new-building design article (L) and its free cash funding on the special town meeting warrant, given timing and finance committee concerns.",
+    "sides": "One member against the timeline and the free-cash source; the member who proposed the article and others in favor",
+    "words_as_heard": "nobody has agreed in this town that we need 55 000 square feet",
+    "kind": "members disagree"
+   },
+   {
+    "t": 8242,
+    "about": "Dispute over the claimed half-million-dollar cost of a six-month delay.",
+    "sides": "One member challenged the figure; another cited professionals' four percent escalation estimate",
+    "words_as_heard": "there's no proof that every six months is 500",
+    "kind": "members disagree"
+   },
+   {
+    "t": 8516,
+    "about": "Disagreement over whether a new building has been publicly discussed.",
+    "sides": "One member against the proposing member",
+    "words_as_heard": "nobody zero people have had except your committee have had discussions",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 4060,
+    "kind": "safety",
+    "about": "Concern that the town cannot notify other users of town land that hunting is occurring.",
+    "who": "a member",
+    "words_as_heard": "we will not be able to effectively communicate to all the people who use the land that the activity is occurring"
+   },
+   {
+    "t": 4654,
+    "kind": "condition",
+    "about": "A member would oppose the APDC appointment because a spouse already serves on the commission.",
+    "who": "a member",
+    "words_as_heard": "that is going to be my hang up here and for that reason and that reason only"
+   },
+   {
+    "t": 7700,
+    "kind": "condition",
+    "about": "A member said he wanted to see the town manager's presentation before agreeing she could present article L at town meeting.",
+    "who": "a member",
+    "words_as_heard": "i'd like to know before as one member of the board we vote to say yeah and let's see what you're going to present"
+   },
+   {
+    "t": 3138,
+    "kind": "liability or legal",
+    "about": "Ambiguity in whether the and/or between conditions a and b in the demolition bylaw would be misread; sent to town counsel.",
+    "who": "a member",
+    "words_as_heard": "is there an or between a and b or is it an and"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1328,
+    "name_as_heard": "Streaming video bills H.130 and Senate bill, model letters",
+    "kind": "letter or email",
+    "words_as_heard": "you should have copies of a model letter that you can send"
+   },
+   {
+    "t": 2795,
+    "name_as_heard": "the amended article from the historical commission",
+    "kind": "warrant article",
+    "words_as_heard": "the amended article from the historical commission"
+   },
+   {
+    "t": 6392,
+    "name_as_heard": "chart of changes (draft FY22 budget adjustments)",
+    "kind": "spreadsheet",
+    "words_as_heard": "budget adjustments in draft format in our google drive called chart of changes"
+   },
+   {
+    "t": 7368,
+    "name_as_heard": "article L language email",
+    "kind": "warrant article",
+    "words_as_heard": "i sent over some languages in our google drive it's titled article l"
+   },
+   {
+    "t": 9199,
+    "name_as_heard": "revised Massachusetts COVID-19 emergency paid sick leave policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "revised massachusetts covet 19 emergency paid sick leave policy"
+   },
+   {
+    "t": 9015,
+    "name_as_heard": "scoring criteria for the three landscape design submissions",
+    "kind": "other",
+    "words_as_heard": "basic scoring criteria for each of the three submissions"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "town-building-concepts",
+    "title": "Town building concepts",
+    "question": "What would a new town hall and community center cost compared with rehabilitating the TC Passios building, and how would it be paid for?",
+    "t": 6743,
+    "words_as_heard": "it's a 23 million dollar building project that may come in the springtime",
+    "data_in_play": [
+     "250 000",
+     "23 million dollar",
+     "9 million dollars",
+     "four percent a year escalation"
+    ],
+    "existing": "thread:tc-passios-site"
+   },
+   {
+    "slug": "cable-franchise-revenue",
+    "title": "Cable franchise revenue",
+    "question": "How much cable franchise revenue does the town get and how would the streaming bills change it?",
+    "t": 1390,
+    "words_as_heard": "we presently get about 200 000 per year in franchise fees",
+    "data_in_play": [
+     "five percent",
+     "200 000",
+     "a hundred and seventy thousand 000"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "free-cash-use-special-town-meeting",
+    "title": "Free cash for articles",
+    "question": "How much free cash is certified and what is the warrant asking to spend?",
+    "t": 5385,
+    "words_as_heard": "the general fund free cash was certified at 2 million six hundred and sixty six thousand nine hundred and sixty two dollars",
+    "data_in_play": [
+     "2 million six hundred and sixty six thousand nine hundred and sixty two dollars",
+     "250 000"
+    ],
+    "existing": "topic:free-cash-balance"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted without opposition to submit a request to demolish the old primary school within 15 days.",
+    "t": 6254
+   },
+   {
+    "line": "The board voted to put the Historical Commission's amended demolition delay bylaw in the November 16 special town meeting warrant.",
+    "t": 3829
+   },
+   {
+    "line": "The board reviewed the draft warrant articles, including funds for design of a new building and budget adjustments; it will vote recommendations next week.",
+    "t": 6339
+   },
+   {
+    "line": "The board denied a bow-hunting request at 671 West Street, 3-2.",
+    "t": 4227
+   },
+   {
+    "line": "The board approved two common victualler licenses and held the cable committee's request for letters on streaming-fee legislation for one week.",
+    "t": 1035
+   }
+  ],
+  "why_it_matters": [
+   "The demolition request and the design-funding article for a new building are items residents will be asked to vote on at the November 16 special town meeting, and the draft article drew debate over timeline and escalation.",
+   "The budget adjustments article draws on a transfer from group health insurance, so it touches how the town covers added staffing and technology costs in the current year."
+  ],
+  "watch_next": [
+   "The board's recommendations on the special town meeting articles, set for a vote at next week's meeting.",
+   "The November 16 special town meeting, and the board's vote next week on letters supporting streaming-fee legislation."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-23T12:30:20Z",
+   "cost_usd": 0.311754
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10122021-5270",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-10-12-minutes-5270.txt",
+   "path": "sources/meetings/select-board/2021-10-12-minutes-5270.pdf"
+  },
+  "official_sha256": "54e8b6f8fed6c79d9b56d92545b88115a16bd6bb1780474a3234c705756ce5e0",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on five of the six non-procedural votes, including the 3-2 bow hunting denial, and on the warrant totals and free cash figures. The main difference is that our minutes record a vote on the AJD's Cafe (Lunenburg Diner) license that the official minutes do not show, so check the recording against the official minutes' text for that item.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 4,
+   "discrepancy": 1,
+   "only_in_ours": 5,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Vote: common victualler license for AJD's Cafe LLC d/b/a Lunenburg Diner",
+    "t": 1035,
+    "ours": "Approve common victualler license for AJD's Cafe LLC d/b/a Lunenburg Diner — passed (voice vote, none opposed)",
+    "official": "",
+    "note": "The official minutes record no vote on the AJD's Cafe license, though they list the Dragoslises as present for that hearing; check the recording and the official minutes for whether a vote was taken or omitted."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: BKK Group LLC d/b/a Bangkok Hill license",
+    "t": 1246,
+    "ours": "Approve common victualler license for BKK Group LLC d/b/a Bangkok Hill — passed (voice vote, none opposed)",
+    "official": "to approve the common victualler license for bkk group llc, d/b/a bangkok hill, located at 177 massachusetts avenue vote: all in favor",
+    "note": "Same item and outcome, unanimous."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: amended demolition delay bylaw article",
+    "t": 3829,
+    "ours": "Accept and include the amended demolition delay bylaw in the warrant — passed (voice vote, none opposed)",
+    "official": "to accept and approve the warrant article as amended vote: all in favor",
+    "note": "Same article and outcome; the official minutes identify the article only by context."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: deny Moulton bow hunt request, 671 West Street",
+    "t": 4227,
+    "ours": "Deny Mr. Moulton's request to bow hunt at 671 West Street — passed 3-2",
+    "official": "to deny the request to bow hunton the 671 west street parcel vote: 3 in favor, 2 against",
+    "note": "Same outcome and tally; the official minutes name Dwyer and Marino as the two opposed."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: request demolition of old primary school within 15 days",
+    "t": 6254,
+    "ours": "Submit a request for demolition of the old primary school within 15 days — passed (voice vote, none opposed)",
+    "official": "that the select board submit a request for demolition of the old primary school located at 30 school street within the next fifteen days vote: all in favor",
+    "note": "Same motion and outcome."
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: revised COVID-19 emergency paid sick leave policy",
+    "t": 9428,
+    "ours": "Approve revised Massachusetts COVID-19 emergency paid sick leave policy — passed (voice vote, none opposed)",
+    "official": "to approve the revised ma covid-19 emergency paid sick leave policy vote: all in favor",
+    "note": "Same motion and outcome."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Transfer of 78,500 from group health and life insurance to Medicare account",
+    "t": 6511,
+    "ours": "Transfer from group health and life insurance to cover Medicare account costs, remainder by raise and appropriate — 78 500 (discussed only)",
+    "official": "",
+    "note": "The official minutes list no transfers. Their Article A budget-adjustment table shows (78,500.00) but its text is garbled and does not describe a transfer, so check the Article A table."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: cable/PAC franchise fees and reserve",
+    "t": 1390,
+    "ours": "Cable franchise fee: five percent, a hundred and seventy thousand 000, 200 000 per year",
+    "official": "we received a capital infusion of $170,000 which we are keeping in reserve for our future studio space.",
+    "note": "The $170,000 and roughly $200,000 per year match; the 'five percent' is not in the official text."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: certified free cash and retained earnings",
+    "t": 5385,
+    "ours": "Free cash and retained earnings certification: 2 million six hundred and sixty six thousand nine hundred and sixty two dollars, fifty four thousand five hundred and forty four dollars, forty nine thousand four hundred thirteen dollars, one million eight hundred and twenty eight thousand seven hundred six dollars, nine hundred 835 sixty nine dollars",
+    "official": "the general fund free cash was certified at $2,666,962, the water",
+    "note": "All five figures match the official list ($2,666,962, $54,544, 49,413, $1,828,706, $835,969); ours garbles the last as '835 sixty nine'."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Figure: last retained earnings amount",
+    "t": 5385,
+    "ours": "nine hundred 835 sixty nine dollars",
+    "official": "$835,969",
+    "official_reading": "$835,969",
+    "note": "Captions garbled the spoken figure; the digits match the official $835,969."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: Article A budget adjustments (78,500)",
+    "t": 6438,
+    "ours": "Article A FY22 budget adjustments: 4912, 65 352, 78 500, thirty nine thousand nine thirty five",
+    "official": "fy22 budget adjustments from 5/1/21 atm to 11/16/21 stm",
+    "note": "The official table is garbled and prints only (78,500.00) and 1,177,736.00, so only 78,500 can be compared; the other figures cannot be checked."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Figure: prior year bills",
+    "t": 6554,
+    "ours": "Prior year bills: seven thousand five hundred and nineteen dollars and seventy cents",
+    "official": "",
+    "note": "The official minutes do not mention $7,519.70 in prior year bills."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: Article L design funding $250,000",
+    "t": 7368,
+    "ours": "Article L design funding: 250 000, 23 million dollar, 500 000 more, four percent",
+    "official": "we are plugging in an estimate of $250,000 as a number.",
+    "note": "The $250,000 matches; the $23 million appears in the official minutes under Article K, while the '500 000 more' and 'four percent' are not in the official text."
+   },
+   {
+    "kind": "agree",
+    "about": "Figure: warrants signed",
+    "t": 9512,
+    "ours": "Warrants: nine hundred twenty three thousand seven hundred eight dollars and nineteen cents, 605 318.76, 1 million 261 490.85",
+    "official": "the board signed an accounts payable warrant in the amount of $1,261,490.85, a payroll",
+    "note": "All three amounts match ($923,708.19, $605,318.76, $1,261,490.85)."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: cable letters to legislators held one week",
+    "t": 2755,
+    "ours": "Cable letters to legislators held one week for review; to be voted next week.",
+    "official": "",
+    "note": "The official minutes do not record this deferral, though they note Steve Walker's comment on a state bill."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: town counsel to tidy demolition delay bylaw wording",
+    "t": 3873,
+    "ours": "Town manager to have town counsel tidy wording on the demo delay bylaw (and/or and bi-monthly).",
+    "official": "",
+    "note": "The official minutes record the amended article as approved but say nothing about town counsel tidying the wording."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Decision: vote on special town meeting article recommendations next week",
+    "t": 6339,
+    "ours": "Board to vote recommendations on special town meeting articles next week.",
+    "official": "",
+    "note": "The official minutes do not record this scheduling decision."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: landscape proposal scoring sheets due Thursday",
+    "t": 9036,
+    "ours": "Scoring sheets for 30 School Street landscape proposals due Thursday; interviews of 30 to 45 minutes each.",
+    "official": "mr. alonzo requested everyone complete their evaluation forms by this thursday as",
+    "note": "Same Thursday deadline; the interview length is only in ours."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: consensus to apply now for demolition determination",
+    "ours": "",
+    "official": "the consensus was to apply now.",
+    "note": "Related to our demolition vote at t=6254, but the official minutes describe it as a consensus on applying for the demolition determination form."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: invite the APD after it hires the design company",
+    "ours": "",
+    "official": "mr. alonzo stated he would be inviting the apd to attend the meeting after they",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: contact residents who opted out of municipal aggregation",
+    "ours": "",
+    "official": "to work on contacting residents that have opted out of the municipal aggregation program",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Decision: COVID-19 informational page in the STM warrant",
+    "ours": "",
+    "official": "an informational page will be inserted into the special town meeting warrant.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Figure: Unitil basic service rate and aggregation rate",
+    "ours": "",
+    "official": "will see an average monthly bill increase of $61.96 (or 37.9 percent)",
+    "note": "The Unitil rate discussion ($0.1988/kWh vs $0.1121/kWh aggregation) is not in our minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Figure: Community Foundation $20,000 grant to Council on Aging",
+    "ours": "",
+    "official": "they have approved a $20,000 grant to the council of aging.",
+    "note": "Not captured in our minutes."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Mourinho",
+    "ours": "Mr. Mourinho (member)",
+    "official": "mr. marino expressed concern about a husband and wife participating on the same committee.",
+    "official_reading": "Marino",
+    "note": "Misheard name; the official minutes list Marino as a member and one of the two opposed on the bow hunt vote."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "mr. jeffreys stated he would not support this request because this area is being used casually by",
+    "official_reading": "Jeffreys",
+    "note": "Spelling difference only."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chair (Alonso)",
+    "ours": "Chair (Alonso) (chair)",
+    "official": "chairman alonzo called the meeting to order at 7:00 p.m. and asked everyone to stand for the",
+    "official_reading": "Alonzo",
+    "note": "Spelling difference only."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Dwyer, Franco, Town Manager",
+    "ours": "Mr. Dwyer (member); Mr. Franco (member); Town Manager (town manager)",
+    "official": "also present: heather lemieux, town manager; arthur dragoslis, judith dragoslis, robert",
+    "note": "Same people present; the official minutes also name the Town Manager as Heather Lemieux and list applicants and speakers that ours omits."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-23T12:32:38Z",
+   "cost_usd": 0.2887863
+  }
+ }
+}
