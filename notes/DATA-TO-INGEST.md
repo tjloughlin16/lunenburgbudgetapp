@@ -55,6 +55,27 @@ Full hashes:
 `df495eebb36eb1ff33de23f6bff59010fbeb6068c5f9ccdb9de3f8b5198bbe93`,
 `8ed2f4681007be6caeedea0f6cb54977cb5f62664e85138041cd6eecc7f92002`.
 
+**PROVENANCE, given by TJ 23 October 2026 (the emails, pasted into the session):**
+- **Request:** TJ to Renee Emkey (Chair of the Select Board, per the 20 Oct 2026 agenda; "Clerk" in older minutes is an officer title she held) and
+  Jennifer, Wed 21 Oct 2026 4:06 PM: *"Could you please send me the presentation decks that
+  were used during the recent select board meeting? … the stormwater presentation and the
+  track and field one from the superintendent. I don't THINK I need to mark this as an
+  official request, but I do mean it that way!"*
+- **Reply 1**, Renee Emkey, 21 Oct 4:26 PM: *"Please find attached the SWTF presentation and
+  the superintendent's presentation. I also included Stephen Wallace's presentation on the
+  Brooks House."* → `10.20 Selectboard Presentation Turf Field.pdf` (the superintendent's
+  deck, Select Board 20 Oct 2026) and `Brooks House Presentation to Town Meeting Draft.pdf`
+  (Stephen Wallace). **The SWTF (stormwater) deck is not among the five files hashed here**;
+  TJ to drop it in if he wants it. She adds that stormwater presents a subset to FinCom on
+  22 Oct.
+- **Reply 2**, Renee Emkey, 21 Oct 5:59 PM: *"Attached is the information I collected for
+  last night's meeting. I did it manually so do not assume it is complete."* →
+  `Track and Field complex history.pdf`. **A hand-assembled compilation by the Select Board Chair, by her
+  own description incomplete** — rule 13a: an argument someone assembled, `stated`, not a
+  ledger. Its value is as a checklist against our thread, not as an authority over it.
+- **`Lunenburg_Special_Education_Funding_10_Slides.pptx` — still no provenance.** Not in
+  either email. Held until TJ says where it came from.
+
 **Open before ingest — provenance (rule 12).** None of these came with an address. For
 each: the publisher's link if one exists (the 10.20 deck is probably in the Select Board's
 20 Oct 2026 packet; check the AgendaCenter before calling it emailed), otherwise who sent

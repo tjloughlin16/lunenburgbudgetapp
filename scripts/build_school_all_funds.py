@@ -1025,6 +1025,8 @@ def build():
     # ================================================== the hub
     hb = dict(
         v=f('h-v', U(m['gf_voted'][F1]), 'general fund, voted, %s' % C.fy(F1), 'published', {'y': F(F1)}),
+        g=f('h-g', U(m['spent'][(F1, 'General fund')]), 'general fund, spent, %s' % C.fy(F1), 'published',
+            {'y': F(F1)}),
         a=f('h-a', U(m['all'][F1]), 'spent from every fund, %s' % C.fy(F1), 'published', {'y': F(F1)}),
         o=f('h-o', U(m['outside'][F1]), 'spent outside the general fund, %s' % C.fy(F1), 'published', {'y': F(F1)}),
         u=f('h-u', U(m['unattr'][F1]), 'of it on no budget line', 'published'),
@@ -1037,12 +1039,18 @@ def build():
         t=f('h-t', N(rc['ytd_accounts'], 'accounts'), 'tied to the Town’s spreadsheets, to the cent', 'published'),
     )
     hub_ladder = LD.ladder([
-        LD.tier('Money in and out', [hb['v'], hb['a'], hb['o'], hb['u']]),
+        # THE ORDER IS THE ARITHMETIC: the vote, then spending in two parts, then their sum.
+        # Shown as voted / every fund / outside, a reader added the vote to the outside spending
+        # and got a total the page does not print (TJ, 23 October 2026): the vote is a budget
+        # and the other two are spending (rule 1), so they never sum.
+        LD.tier('Money in and out', [hb['v'], hb['g'], hb['o'], hb['a'], hb['u']]),
         LD.tier('How it is booked', [hb['i'], hb['i1'], hb['b'], hb['s'], hb['t']]),
     ], [
-        LD.conclusion('The general fund was voted %s for %s; every fund together spent %s.'
-                      % (C.usd(m['gf_voted'][F1]), C.fy(F1), C.usd(m['all'][F1])), ['h-v', 'h-a'],
-                      {'a': U(m['gf_voted'][F1]), 'y': F(F1), 'b': U(m['all'][F1])}),
+        LD.conclusion('%s: the general fund spent %s of %s voted; other funds added %s.'
+                      % (C.fy(F1), C.usd(m['spent'][(F1, 'General fund')]), C.usd(m['gf_voted'][F1]),
+                         C.usd(m['outside'][F1])), ['h-v', 'h-g', 'h-o', 'h-a'],
+                      {'y': F(F1), 'g': U(m['spent'][(F1, 'General fund')]), 'a': U(m['gf_voted'][F1]),
+                       'o': U(m['outside'][F1])}),
         LD.conclusion('Of %s spent outside it, %s was booked to no budget line.'
                       % (C.usd(m['outside'][F1]), C.usd(m['unattr'][F1])), ['h-o', 'h-u'],
                       {'a': U(m['outside'][F1]), 'b': U(m['unattr'][F1])}),
