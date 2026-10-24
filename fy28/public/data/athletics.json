@@ -2641,11 +2641,6 @@
    "why": "MEASURED (/school-all-funds/carried-over-orders): at each close the school journal zeroes every open order (YEC) and reopens it on 1 July (SOY), and a carry-forward transfer raises the next year's budget by the same amount; of the general fund orders carried out of FY2023-FY2025, 68% were paid the next year and the rest closed with nothing paid against them. Neither the journal nor the period-13 reports say why an order was open at the year end (goods not delivered, an invoice not received, a deliberate hold of budget), or why a carried order was closed rather than paid, or whether what it was for was bought again on a new order (one revolving-fund order, Nature's Classroom, was closed and the same amount paid on a new one). So the size of the carry is measured and its cause is not. \u2014 closes: the district\u2019s year-end list of open purchase orders, with the reason each was kept open or closed, FY2023-FY2026."
   },
   {
-   "side": "extraction",
-   "what": "Which of the town's two FY2023 statements of what the special revenue and enterprise funds held is right?",
-   "why": "The FY2023 combined balance sheet gives special revenue fund equity as 6,131,303.68 and enterprise fund equity as 3,812,502.24, together 9,943,805.92. The special revenue schedule in the SAME annual report prints a grand total carried forward of 10,031,099.78. They are 87,293.86 apart. The comparison ties to the cent in FY2011, FY2013, FY2019 and FY2022, and the balance sheet's own arithmetic is complete -- every column foots to its own printed totals and liabilities plus equity equals assets -- so this is two published tables disagreeing and not a reading error. \u2014 closes: the Town Accountant's FY2023 trial balance, which would say which of the two the books support."
-  },
-  {
    "side": "record",
    "what": "Why the FY2023 annual town report and the school journal disagree, fund by fund, on special education grant spending",
    "why": "MEASURED (/special-education/special-education-overruns, the ten-year table): for FY2023 the annual town report's Special Revenue Funds schedule prints disbursements of $562,063.28 from the special education grant funds and the school journal posts $560,954.43 to the same grants (payments plus what was still owed) -- $1,108.85 apart in total, while the circuit breaker account (fund 2640) agrees to the cent, $494,967.72. Fund by fund the gap is larger and runs both ways: the FY2022 #240 grant is $10,495.25 higher in the journal, the FY2023 #240 grant $3,564.68 higher, the FY2021 #240 grant $670.67 lower, and the report prints two #262 rows ($12,500.00 and $1,998.11) the journal has no FY2023 postings for. The page uses the report's disbursements for FY2017-FY2022, where no journal is held. WHAT IS NOT ESTABLISHED: whether the difference is timing (cash paid against obligations recorded), grant-year attribution, or a transcription in one of the two. -- closes: the Town Accountant's FY2023 trial balance for the school grant funds, showing expenditures and encumbrances by fund."
@@ -2659,6 +2654,11 @@
    "side": "record",
    "what": "Why does the FY2024 End of Year Report working copy repeat FY2023's special education figures for guidance, psychology and two substitute lines?",
    "why": "MEASURED (sources/data/sped-definition.csv, checked by scripts/build_sped_crosswalk.py): five Special Education cells of the FY2024 working copy (eoy24!F173, F178, F258, F262 and F274) equal the FY2023 copy's to the dollar, and the psychology figure matches no FY2024 ledger account while the FY2024 psychologist salaries sit, whole, in the Regular Day column. Whether the five were carried forward unchanged, or the report as filed differs, is not stated in the working copy. \u2014 closes: the FY2024 End of Year Financial Report as filed with DESE."
+  },
+  {
+   "side": "extraction",
+   "what": "Which of the town's two FY2023 statements of what the special revenue and enterprise funds held is right?",
+   "why": "The FY2023 combined balance sheet gives special revenue fund equity as 6,131,303.68 and enterprise fund equity as 3,812,502.24, together 9,943,805.92. The special revenue schedule in the SAME annual report prints a grand total carried forward of 10,031,099.78. They are 87,293.86 apart. The comparison ties to the cent in FY2011, FY2013, FY2019 and FY2022, and the balance sheet's own arithmetic is complete -- every column foots to its own printed totals and liabilities plus equity equals assets -- so this is two published tables disagreeing and not a reading error. \u2014 closes: the Town Accountant's FY2023 trial balance, which would say which of the two the books support."
   }
  ],
  "generated_by": "scripts/build_athletics_charts.py",
