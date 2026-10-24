@@ -1588,14 +1588,13 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/classify_roster_roles.py --check   # ...and fail if it is stale
     python3 scripts/sync_d1.py                  # push the database to D1 — INCREMENTAL: only
                                                 #   tables whose DIGEST differs are sent, at most
-                                                #   40,000 rows a run, and what does not fit is
-                                                #   named and waits for tomorrow. A big change
-                                                #   converges over days instead of failing
-                                                #   forever. --full forces a whole replace and
-                                                #   NO LONGER FITS: 153,414 rows is ~306,828
-                                                #   writes against 100,000 a day. This line
-                                                #   used to say ~51,000 and was stale by 3x,
-                                                #   which is how a broken push route looked fine
+                                                #   --limit rows a run (default 40,000), and what
+                                                #   does not fit is named and waits. A SINGLE TABLE
+                                                #   LARGER THAN THE LIMIT IS NEVER SENT, so raise
+                                                #   it. THE DAILY REFRESH RUNS THIS (step 9, since
+                                                #   24 October 2026, limit 60,000); by hand only to
+                                                #   publish a table before tomorrow. --plan says
+                                                #   what is owed without sending anything
     python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree;
                                                 #   SKIPPED while tables are still deferred,
                                                 #   because counting a table D1 does not hold

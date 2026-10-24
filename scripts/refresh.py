@@ -31,7 +31,7 @@ THE ORDER, AND WHY IT CANNOT MOVE
   7b. reconcile          ours against the town's minutes where both exist: caption
                          errors resolved beside the as-heard reading, real differences flagged
   8. rebuild             the feed, the minutes payload, the notices, the index, the metrics
-  9. push                the search index to D1, inside the day's write budget
+  9. push                the search index and the analysis database to D1, incrementally
  10. commit              only the files this run wrote (refresh_git.py), replayed onto main
  11. deploy              only with --deploy, only from main's own commit, gated only on the
                          generators this run executed. Rule 10: nothing deploys unasked.
@@ -44,8 +44,13 @@ here is free. Rows carry a `priority`; `*` covers any board.
 
 TWO THINGS IT REFUSES TO DO AT ONCE. If the transcript backfill is running it skips the
 caption fetch rather than competing for the same rate limit (the pattern is written so it
-cannot match its own argv -- see CLAUDE.md on pgrep). And it never runs the analysis
-database push (`sync_d1.py`), which shares the D1 write budget: that stays a decision.
+cannot match its own argv -- see CLAUDE.md on pgrep).
+
+IT PUSHES THE ANALYSIS DATABASE TOO (`sync_d1.py`, incremental), TJ, 24 October 2026:
+*"the daily refresh can push the database."* It used to be a decision because D1 STOPPED
+at 100,000 writes a day on the free plan. On Workers Paid (since 9 October 2026) writes are
+a monthly allowance, and six tables -- the school journal among them -- had gone unpushed
+for days because nobody ran it by hand, so `/api/query` answered "no such table".
 """
 import argparse
 import csv
@@ -88,6 +93,8 @@ MAX_OFFICIAL_VOTES_PER_RUN = 40
 MAX_OCR_PER_RUN = 40             # ~20 minutes of local CPU; nothing charged to the plan
 MAX_RECONCILE_PER_RUN = 10       # ~3 minutes, ~$3; excludes nothing, just bounds a run
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
+DB_PUSH_LIMIT = 60000           # rows; the school journal alone is ~49,000, and a table
+                                # larger than the ceiling can never be sent at all
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 
 # THE PAYLOADS THE SITE SERVES, rebuilt every run because the database is.
@@ -138,7 +145,8 @@ SITE_PAYLOADS = [
 NOT_BLOCKING = {
     'build_if_students_leave.py': 'a FINDING about the archive, not a stale file: FY2011 '
                                   'School Choice does not state its own arithmetic',
-    'sync_d1.py': 'an external service, and rule 10 keeps that push manual',
+    'sync_d1.py': 'an external service; the run pushes it at step 9, and a table deferred '
+                  'past the row ceiling makes --check error until the next run',
     'build_search_index.py': 'rebuilt below; it re-checks its own inputs and a document '
                              'fetched mid-run always looks newer than the index',
     # THE REST OF THIS SET ARE CONTENT CHECKS, not reproducibility checks. They read the
@@ -1033,7 +1041,7 @@ def main():
                     help='commit ONLY the files this run wrote, and push them when on main')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--no-minutes', action='store_true')
-    ap.add_argument('--no-push', action='store_true', help='skip the search index push to D1')
+    ap.add_argument('--no-push', action='store_true', help='skip the D1 pushes (search index and database)')
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--as-of', default=dt.date.today().isoformat())
     a = ap.parse_args()
@@ -1447,9 +1455,13 @@ def run(a, notes, ctx):
         # Runs after the streams above have done their work, so the figure on the
         # dashboard falls as the queue drains rather than describing this morning.
         py('build_backlog_depth.py', check=False)       # notes/generated/BACKLOG-DEPTH.md + /data/backlog-depth.json
-        # 9. The search index to D1 -- the analysis database push is NOT run here.
+        # 9. The search index and the analysis database to D1. Both incremental: only
+        # tables whose digest differs are sent, and anything past the row ceiling is named
+        # and waits for the next run. check=False -- a refused push is a note, not a
+        # reason to lose the night's ingestion.
         if not a.no_push:
             py('sync_search_d1.py', '--limit', str(SEARCH_PUSH_LIMIT), check=False)
+            py('sync_d1.py', '--limit', str(DB_PUSH_LIMIT), check=False)
         # 10. THE DOCUMENTS THEMSELVES TO THE BUCKET. The refresh fetches the town's new
         # PDFs into its own worktree, but git carries only the manifest and the text --
         # so a document fetched here and never pushed exists on one disk and nowhere
