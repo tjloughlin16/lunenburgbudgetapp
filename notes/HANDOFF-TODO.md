@@ -107,6 +107,12 @@ countdown.
   — the thing that would settle which fund pays which post. Then the fee schedules the
   family-costs page is missing: the adopted transportation fee schedule and the adopted
   student activity fee schedule, both real charges TJ has paid, neither published.
+  **And, added 24 October 2026, the psychologist question** (money-gaps `people` row):
+  EPIMS staff counts and salary totals by job classification -- 3350/3351 adjustment
+  counselors, 3360/3361 psychologists, 3370/3371 social workers -- for SY2023 and SY2024,
+  aggregated, no names. The district's two End of Year Reports put the same psychologist
+  accounts in special education (FY2023) and regular day (FY2024), and DESE's rule turns on
+  that job code. Until it arrives, psychology stays out of every special education total.
 - **D3**, the tax-rate and town-meeting extraction.
 - The nine unpriced charges on `/what-families-pay`. Values drop into the `HOUSEHOLD` list
   in `scripts/build_rate_register.py` around line 93 — a row with an empty value already

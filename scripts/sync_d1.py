@@ -166,6 +166,46 @@ def remote_stages():
     return out
 
 
+def local_indexes():
+    """{index name: CREATE INDEX IF NOT EXISTS ...} for every index the schema declares.
+
+    Autoindexes (a PRIMARY KEY or UNIQUE constraint) have no SQL and come with the table."""
+    db = sqlite3.connect(DB)
+    out = {}
+    for name, sql in db.execute("SELECT name, sql FROM sqlite_master "
+                                "WHERE type='index' AND sql IS NOT NULL ORDER BY name"):
+        out[name] = re.sub(r'^CREATE\s+(UNIQUE\s+)?INDEX\s+(?!IF NOT EXISTS)',
+                           lambda m: 'CREATE %sINDEX IF NOT EXISTS ' % (m.group(1) or ''),
+                           sql.strip(), count=1).rstrip(';') + ';'
+    return out
+
+
+def ensure_indexes(dry=False):
+    """Create on D1 every local index it does not hold. Returns (missing names, rc).
+
+    THE INCREMENTAL PUSH NEVER SENT INDEXES, found 24 October 2026: a table rebuilt on the
+    remote (`new`, `reshaped`, and now a staged swap) is DROPped, which drops its indexes,
+    and nothing put them back -- D1 held 9 of the 12. A missing index does not change an
+    answer, only what it costs: every query on that column becomes a full scan, and rows
+    read are the billed unit. One read of the remote's index names; creates only what is
+    missing, so a run that changed nothing writes nothing.
+    """
+    want = local_indexes()
+    got = {str(list(x.values())[0]) for x in (_rows(
+        "SELECT name FROM sqlite_master WHERE type='index' AND sql IS NOT NULL") or [])
+        if isinstance(x, dict)}
+    missing = sorted(set(want) - got)
+    if not missing or dry:
+        return missing, 0
+    r = wrangler('d1', 'execute', NAME, '--remote', '-y', '--command',
+                 ' '.join(want[n] for n in missing))
+    if r.returncode != 0:
+        print('  index create failed:\n' + (r.stderr or r.stdout)[-800:])
+        return missing, 1
+    print('  indexes: created %d missing on D1 -- %s' % (len(missing), ', '.join(missing)))
+    return missing, 0
+
+
 def push_incremental(limit, dry=False):
     """Send only the tables whose digest differs. Returns (sent, deferred, rc)."""
     local = INC.local_state(DB)
@@ -233,8 +273,10 @@ def main():
 
     if args.check:
         want, got, bad = compare()
+        missing, _rc = ensure_indexes(dry=True)
+        bad += ['index %s: local only' % n for n in missing]
         if bad:
-            print(f'D1 disagrees with {DB} on {len(bad)} table(s):')
+            print(f'D1 disagrees with {DB} on {len(bad)} table(s) or index(es):')
             for b in bad[:12]:
                 print('  ' + b)
             print('\n  Run: python3 scripts/sync_d1.py')
@@ -324,6 +366,9 @@ def main():
         return 0
 
     if here == last and not args.force:
+        _missing, rc = ensure_indexes()
+        if rc:
+            return rc
         print(f'nothing to do: D1 already holds this database ({here[:12]}).\n'
               f'  A full replace writes about {rows:,} rows against a free-tier limit of\n'
               f'  100,000 a day, so it is not run for a database that has not changed.\n'
@@ -336,6 +381,9 @@ def main():
     if not args.full:
         print(f'incremental push — only tables whose digest differs are sent')
         sent, deferred, rc = push_incremental(args.limit)
+        if rc:
+            return rc
+        _missing, rc = ensure_indexes()
         if rc:
             return rc
         # THE CONSISTENCY CHECK CANNOT RUN MID-CONVERGENCE, and must not be mistaken for
