@@ -48,7 +48,8 @@ that will actually persist.
 THE BUDGET IS A CEILING, NOT A HOPE. Each run sends whole tables while the running total of
 rows stays under `--limit` (default 40,000, which leaves room for index maintenance inside
 the free tier's 100,000 writes a day). What does not fit is named and waits for tomorrow, so
-a large change converges over days instead of failing forever. Tables are taken smallest
+a large change converges over days instead of failing forever. A single table bigger than
+the ceiling is loaded in slices instead -- see plan_staged. Tables are taken smallest
 first: it clears the most tables per run, and a table pushed is a table `/api/query` can
 answer about.
 """
@@ -197,7 +198,10 @@ def plan(local, remote, limit, deps=None):
             if missing:
                 still.append((t, reason, rows))
                 continue
-            if total + rows > limit and kept:
+            # OVER THE CEILING ON ITS OWN -> plan_staged sends it in slices. It used to go
+            # whole on a run where nothing smaller was owed, which with a daily refresh
+            # changing small tables every morning is a run that may never come.
+            if rows > limit or (total + rows > limit and kept):
                 still.append((t, reason, rows))
                 continue
             kept.append((t, reason, rows))
@@ -348,10 +352,23 @@ def batch_sql(local, send, drop, sch=None):
         if reason == 'rows':
             # Same shape, and nothing references it: keep the table, replace its contents.
             out.append('DELETE FROM "%s";' % t)
+            out.extend(inserts)
+        elif reason == 'swap':
+            # A STAGED TABLE, WHOLE ON THE REMOTE UNDER ITS STAGING NAME (see stage_sql):
+            # the live table is replaced by a rename, so its rows are not sent again.
+            out.append('DROP TABLE IF EXISTS "%s";' % t)
+            # LEGACY RENAME, because the modern one re-parses every VIEW in the schema and
+            # refuses if any names a table missing at that instant -- and the children of a
+            # parent are exactly that, dropped above and reloaded below (found in the local
+            # test: `v_revenue_classified` names `ledger_snapshot`).
+            out.append('PRAGMA legacy_alter_table = ON;')
+            out.append('ALTER TABLE "%s" RENAME TO "%s";' % (stage_name(t), t))
+            out.append('PRAGMA legacy_alter_table = OFF;')
+            out.append('DELETE FROM %s WHERE name = %s;' % (STAGE_TABLE, _q(t)))
         else:
             out.append('DROP TABLE IF EXISTS "%s";' % t)
             out.append(create.rstrip(';') + ';')
-        out.extend(inserts)
+            out.extend(inserts)
         out.append('DELETE FROM %s WHERE name = %s;' % (SYNC_TABLE, _q(t)))
         out.append('INSERT INTO %s (name, sha256, rows) VALUES (%s, %s, %d);'
                    % (SYNC_TABLE, _q(t), _q(sha), rows))
@@ -428,6 +445,78 @@ def _values(stmt):
     return out
 
 
+# A TABLE LARGER THAN THE CEILING IS LOADED IN PIECES, NEVER LEFT BEHIND. TJ, 24 October
+# 2026: *"'never sent at all' can never be a thing."* It was: plan() sends WHOLE tables
+# under --limit, so the school journal (49,043 rows) waited behind a 40,000 ceiling every
+# run, for ever, and /api/query answered "no such table" until somebody raised the limit
+# by hand.
+#
+# So a table over the ceiling goes to the remote under a STAGING NAME, a slice a run, and
+# the live table is replaced only once the staged copy is whole -- by a rename, inside the
+# usual batch, so a reader never sees half of it. Three things make that safe:
+#
+#   * WHICH ROWS ARE LOADED IS COUNTED ON THE REMOTE, NOT REMEMBERED. The resume point is
+#     COUNT(*) of the staging table. `wrangler --file` applies a file in batches, so a run
+#     that fails part-way leaves a PREFIX of the slice behind, and counting it resumes from
+#     exactly there. A counter written at the end of the file would be wrong after that.
+#   * THE STAGE IS TIED TO A DIGEST. If the table changes while it is being loaded, the
+#     slices already sent describe the old table, so the stage is dropped and starts again.
+#     A table that changes more often than it can be loaded never converges, and describe()
+#     says so rather than pretending.
+#   * EACH RUN GIVES IT AT LEAST HALF THE CEILING, whatever the small tables took, so it
+#     always advances. A run may therefore send up to 1.5x --limit.
+STAGE_TABLE = 'synced_stage'
+STAGE_SCHEMA = ('CREATE TABLE IF NOT EXISTS %s (name TEXT PRIMARY KEY, sha256 TEXT NOT NULL)'
+                % STAGE_TABLE)
+STAGE_PREFIX = '_stage__'
+
+
+def stage_name(t):
+    return STAGE_PREFIX + t
+
+
+def plan_staged(local, remote, stages, deferred, total, limit, deps=None):
+    """Pick up to one over-ceiling table from `deferred` and the slice of it to send now.
+
+    `stages` is {table: (sha256, rows already on the remote)}. Returns
+    (table, start, end, swap) or None. `swap` is True when this slice completes it.
+    """
+    deps = deps or {}
+    waiting = {t for t, _, _ in deferred}
+    for t, reason, rows in sorted(deferred, key=lambda x: x[2]):
+        if rows <= limit:
+            continue                    # fits whole; an ordinary later run sends it
+        if any(p not in remote or p in waiting for p in deps.get(t, ())):
+            continue                    # a parent must be on the remote first
+        sha = local[t][0]
+        start = stages[t][1] if t in stages and stages[t][0] == sha else 0
+        budget = max(limit - total, limit // 2)
+        end = min(rows, start + budget)
+        return t, start, end, end == rows
+    return None
+
+
+def stage_sql(local, t, start, end, restart):
+    """Statements that add rows [start, end) of `t` to its staging table on the remote."""
+    sha, _rows, create, inserts = local[t]
+    st = stage_name(t)
+    out = [STAGE_SCHEMA + ';']
+    if restart:
+        out.append('DROP TABLE IF EXISTS "%s";' % st)
+        # The local CREATE, renamed. The rename at swap time renames it back, so the live
+        # table ends up with exactly the schema the local one has.
+        out.append(re.sub(r'^CREATE TABLE\s+(?:"[^"]+"|\S+)', 'CREATE TABLE "%s"' % st,
+                          create.rstrip(';'), count=1) + ';')
+        out.append('DELETE FROM %s WHERE name = %s;' % (STAGE_TABLE, _q(t)))
+        out.append('INSERT INTO %s (name, sha256) VALUES (%s, %s);'
+                   % (STAGE_TABLE, _q(t), _q(sha)))
+    head = 'INSERT INTO "%s" (' % t
+    for stmt in inserts[start:end]:
+        assert stmt.startswith(head), stmt[:80]
+        out.append('INSERT INTO "%s" (' % st + stmt[len(head):])
+    return out
+
+
 def parse_remote(rows):
     """{table: (sha256, rows_or_None, create_or_None)} from a synced_table read."""
     out = {}
@@ -458,5 +547,5 @@ def describe(send, drop, deferred, total, limit):
                      % (len(deferred), '{:,}'.format(d)))
         for t, reason, rows in deferred[:8]:
             lines.append('    %-40s %-9s %s row(s)' % (t, reason, '{:,}'.format(rows)))
-        lines.append('    Run again tomorrow; the ceiling is a day of the free tier.')
+        lines.append('    The next run carries what is left.')
     return lines

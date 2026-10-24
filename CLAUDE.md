@@ -1589,12 +1589,13 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/sync_d1.py                  # push the database to D1 — INCREMENTAL: only
                                                 #   tables whose DIGEST differs are sent, at most
                                                 #   --limit rows a run (default 40,000), and what
-                                                #   does not fit is named and waits. A SINGLE TABLE
-                                                #   LARGER THAN THE LIMIT IS NEVER SENT, so raise
-                                                #   it. THE DAILY REFRESH RUNS THIS (step 9, since
-                                                #   24 October 2026, limit 60,000); by hand only to
-                                                #   publish a table before tomorrow. --plan says
-                                                #   what is owed without sending anything
+                                                #   does not fit is named and waits. A TABLE BIGGER
+                                                #   THAN THE LIMIT IS LOADED IN SLICES under a
+                                                #   staging name and swapped in whole when complete
+                                                #   (d1_incremental.plan_staged). THE DAILY REFRESH
+                                                #   RUNS THIS (step 9, since 24 October 2026); by
+                                                #   hand only to publish before tomorrow. --plan
+                                                #   says what is owed without sending anything
     python3 scripts/sync_d1.py --check          # ...and fail if the two copies disagree;
                                                 #   SKIPPED while tables are still deferred,
                                                 #   because counting a table D1 does not hold

@@ -133,6 +133,39 @@ def remote_digests():
     return INC.parse_remote(rows)
 
 
+def _rows(sql):
+    r = wrangler('d1', 'execute', NAME, '--remote', '--json', '--command', sql, '-y')
+    if r.returncode != 0:
+        return None
+    try:
+        payload = json.loads(re.sub(r'^[^\[{]*', '', r.stdout.strip(), count=1))
+    except ValueError:
+        return None
+    out = []
+    for block in (payload if isinstance(payload, list) else [payload]):
+        out.extend(block.get('results', []) or [])
+    return out
+
+
+def remote_stages():
+    """{table: (sha256, rows already loaded)} for every table being loaded in pieces.
+
+    The loaded count is COUNT(*) of the staging table itself, never a number we wrote down:
+    a run that failed part-way leaves a prefix of its slice behind, and only the count says
+    where that prefix ends (see d1_incremental.plan_staged). No `synced_stage` table means
+    nothing has ever been staged.
+    """
+    out = {}
+    for x in _rows('SELECT name, sha256 FROM %s' % INC.STAGE_TABLE) or []:
+        name, sha = (list(x.values()) if isinstance(x, dict) else list(x))[:2]
+        got = _rows('SELECT COUNT(*) AS n FROM "%s"' % INC.stage_name(name))
+        if got is None:
+            continue                # a registered stage with no table: start it again
+        n = list(got[0].values())[0] if got and isinstance(got[0], dict) else 0
+        out[str(name)] = (str(sha), int(n))
+    return out
+
+
 def push_incremental(limit, dry=False):
     """Send only the tables whose digest differs. Returns (sent, deferred, rc)."""
     local = INC.local_state(DB)
@@ -141,12 +174,33 @@ def push_incremental(limit, dry=False):
         print('  D1 records no per-table digests yet, so every table counts as new.\n'
               '  This first run will take several days at the free tier; each one clears\n'
               '  what fits and names what is left.')
-    send, drop, deferred, total = INC.plan(local, remote, limit, INC.parents(DB))
+    deps = INC.parents(DB)
+    send, drop, deferred, total = INC.plan(local, remote, limit, deps)
     for line in INC.describe(send, drop, deferred, total, limit):
         print('  ' + line)
-    if dry or (not send and not drop):
+    # A TABLE OVER THE CEILING IS SENT IN SLICES -- d1_incremental.plan_staged. Only when
+    # one is deferred, so an ordinary push makes no extra request.
+    staged = None
+    if any(r > limit for _, _, r in deferred):
+        stages = remote_stages()
+        staged = INC.plan_staged(local, remote, stages, deferred, total, limit, deps)
+        if staged:
+            t, start, end, swap = staged
+            print('  STAGED %s: rows %s-%s of %s%s' % (
+                t, '{:,}'.format(start + 1), '{:,}'.format(end), '{:,}'.format(local[t][1]),
+                ' -- complete, so it replaces the live table in this run' if swap
+                else '; the next run continues from the remote\'s own count'))
+            if swap:
+                deferred = [d for d in deferred if d[0] != t]
+    if dry or (not send and not drop and not staged):
         return len(send), len(deferred), 0
-    sql = INC.batch_sql(local, send, drop, INC.schema(DB))
+    sch = INC.schema(DB)
+    sql = INC.batch_sql(local, send, drop, sch)
+    if staged:
+        t, start, end, swap = staged
+        sql += '\n'.join(INC.stage_sql(local, t, start, end, restart=start == 0)) + '\n'
+        if swap:
+            sql += INC.batch_sql(local, [(t, 'swap', local[t][1])], [], sch)
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
         fh.write(sql)
         path = fh.name

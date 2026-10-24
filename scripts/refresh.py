@@ -93,8 +93,7 @@ MAX_OFFICIAL_VOTES_PER_RUN = 40
 MAX_OCR_PER_RUN = 40             # ~20 minutes of local CPU; nothing charged to the plan
 MAX_RECONCILE_PER_RUN = 10       # ~3 minutes, ~$3; excludes nothing, just bounds a run
 SEARCH_PUSH_LIMIT = 20000       # rows; leaves the day's budget for a data push too
-DB_PUSH_LIMIT = 60000           # rows; the school journal alone is ~49,000, and a table
-                                # larger than the ceiling can never be sent at all
+DB_PUSH_LIMIT = 40000           # rows a run; a table bigger than this goes in slices
 TRANSCRIPT_WINDOW_DAYS = 21     # captions are retried for meetings this recent
 
 # THE PAYLOADS THE SITE SERVES, rebuilt every run because the database is.
