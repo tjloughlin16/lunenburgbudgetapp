@@ -1,593 +1,599 @@
 {
- "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
- "board_slug": "select-board",
- "board": "Select Board",
- "video_title": "Select Board",
- "meeting_date": "2026-10-06",
- "video_id": "PaRmbzsOMks",
- "video_url": "https://www.youtube.com/watch?v=PaRmbzsOMks",
- "cite": "the video at &t=<seconds>s; every t below is such a second",
- "source": {
-  "transcript": "sources/data/youtube-transcripts/select-board/2026-10-06-PaRmbzsOMks.json",
-  "sha256": "959926b2eec8d2c27282d0104f2d6301525aa06ca25a1c578dc47496e215ee8c",
-  "caption_lines": 494,
-  "segments": 3586
- },
- "recording": {
-  "duration_s": 10460,
-  "duration": "2:54",
-  "spoken_chars": 141658,
-  "words_approx": 23609
- },
- "town_published": [
-  {
-   "kind": "agenda",
-   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10062026-8052",
-   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-10-06-agenda-8052.txt",
-   "path": "sources/meetings/select-board/2026-10-06-agenda-8052.pdf"
-  }
- ],
- "written": {
-  "by": "scripts/write_recording_minutes.py",
-  "model": "sonnet",
-  "at": "2026-10-17T13:08:22Z",
-  "cost_usd": 1.2199676
- },
- "minutes": {
-  "headline": "Select Board put several articles on the Nov. 17 special town meeting warrant and held others pending information.",
-  "summary": "The board granted a common victualler license to Kiku Asian Cuisine, re-voted the November 3 polling place after the cafeteria proved too small, and approved handbook changes through chapter 6. Most of the evening went to the special town meeting warrant, where some articles were included and others held. Members also discussed the tri-board, the direction of the Municipal Building Design Committee, committee bylaw clean-up, and a personnel committee liaison.",
-  "attendees": [
-   {
-    "name_as_heard": "Madam Chair",
-    "role": "chair"
-   },
-   {
-    "name_as_heard": "Tom",
-    "role": "member"
-   },
-   {
-    "name_as_heard": "Damon",
-    "role": "member"
-   },
-   {
-    "name_as_heard": "Brian Leighton",
-    "role": "member (arrived 8:11 p.m.)"
-   },
-   {
-    "name_as_heard": "Glenn",
-    "role": "member"
-   },
-   {
-    "name_as_heard": "Town Manager",
-    "role": "town manager"
-   }
-  ],
-  "public_comment": [],
-  "tags": [
-   "budget",
-   "capital",
-   "elections",
-   "facilities",
-   "free-cash",
-   "legal",
-   "override",
-   "personnel",
-   "planning-and-zoning",
-   "policy",
-   "special-education",
-   "staffing",
-   "town-departments",
-   "town-meeting",
-   "warrant-article",
-   "water-sewer"
-  ],
-  "votes": [
-   {
-    "t": 423,
-    "motion": "Approve the common victualler license for Kiku Asian Cuisine at 50 Mass Ave",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 3302,
-    "motion": "Set the November 3 polling location to the middle high school gymnasium, 1079 Mass Ave, with posting locations at the four named places",
-    "moved_by": "Damon",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 4687,
-    "motion": "Accept the Boards, Committees and Commissions Handbook changes through chapter 6",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 6630,
-    "motion": "Include Article 1 (reports of officers and committees) in the warrant",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 6663,
-    "motion": "Include the article amending the fiscal year 2027 omnibus budget in the warrant",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 6708,
-    "motion": "Include authorization to pay expenses from a prior fiscal year in the warrant",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 7600,
-    "motion": "Include the transfer of funds to the special education reserve fund in the warrant",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 7699,
-    "motion": "Include corrective zoning amendments in the warrant",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 7719,
-    "motion": "Include the stormwater management bylaw fee structure in the warrant",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 9596,
-    "motion": "Include the non-binding question on TC Passios demolition in the warrant",
-    "moved_by": "Tom",
-    "outcome": "passed unanimously",
-    "procedural": false
-   },
-   {
-    "t": 10430,
-    "motion": "Adjourn",
-    "moved_by": "Brian",
-    "outcome": "passed unanimously",
-    "procedural": true
-   }
-  ],
-  "budget_items": [
-   {
-    "t": 3435,
-    "topic": "School Street parking lot milling",
-    "what_was_said": "Town manager reported the DPW price for milling came in under a stated amount under an existing contract, avoiding a larger pavement project.",
-    "figures_as_heard": [
-     "under $10,000"
-    ]
-   },
-   {
-    "t": 6800,
-    "topic": "Middle high school track and field engineering services",
-    "what_was_said": "Warrant article with a stated amount and an engineering proposal; board held it pending the finance committee hearing.",
-    "figures_as_heard": [
-     "195,830"
-    ]
-   },
-   {
-    "t": 7278,
-    "topic": "Capital plan total versus requests",
-    "what_was_said": "Town manager said the capital plan was smaller than the projects submitted.",
-    "figures_as_heard": [
-     "1.83 million",
-     "$3.26 million"
-    ]
-   },
-   {
-    "t": 7465,
-    "topic": "Remaining free cash after May town meeting",
-    "what_was_said": "Town manager said a substantial amount of free cash was left unexpended after May.",
-    "figures_as_heard": [
-     "$562,0306"
-    ]
-   },
-   {
-    "t": 7505,
-    "topic": "Special education reserve fund transfer",
-    "what_was_said": "Article to transfer certified free cash into the fund; school committee has not voted the amount, and the cap relates to net school spending.",
-    "figures_as_heard": [
-     "2%",
-     "20 million"
-    ]
-   },
-   {
-    "t": 8635,
-    "topic": "Assistant town manager position",
-    "what_was_said": "Town manager described the position as budgeted and the earlier eliminated position as funding it.",
-    "figures_as_heard": [
-     "$70,000",
-     "$120,000"
-    ]
-   },
-   {
-    "t": 10044,
-    "topic": "Early voting location use agreement",
-    "what_was_said": "Landlord draft agreement charges a use fee and requires added insurance, partly reimbursed by the state.",
-    "figures_as_heard": [
-     "$1000"
-    ]
-   },
-   {
-    "t": 9826,
-    "topic": "Town meeting projector replacement",
-    "what_was_said": "Replacement cost was given as a range and may go through the capital plan.",
-    "figures_as_heard": [
-     "between 10,000 and 50,000",
-     "between 10 and 20"
-    ]
-   },
-   {
-    "t": 9894,
-    "topic": "Accounts payable warrant",
-    "what_was_said": "Board signed a payables warrant.",
-    "figures_as_heard": [
-     "$39,879.53"
-    ]
-   }
-  ],
-  "transfers": [
-   {
-    "t": 7505,
-    "description": "Certified free cash to the special education reserve fund (article for special town meeting)",
-    "amount_as_heard": "not stated",
-    "outcome": "discussed only; article voted into warrant"
-   }
-  ],
-  "decisions": [
-   {
-    "t": 804,
-    "decision": "Select board chat sessions continue monthly with one member attending; next set for Tuesday the 27th at the adult activity center."
-   },
-   {
-    "t": 4448,
-    "decision": "A member agreed to serve as liaison to the personnel committee."
-   },
-   {
-    "t": 2704,
-    "decision": "Board agreed to work on clarifying committee membership language in the bylaws for spring."
-   },
-   {
-    "t": 6773,
-    "decision": "Veterans exemption articles, PEG access fund amendment, track and field engineering, stormwater advisory article, trust funds article and SAP amendment held off the warrant for now."
-   },
-   {
-    "t": 9038,
-    "decision": "Personnel committee bylaw ideas will not be added to the November warrant; they can come in spring."
-   },
-   {
-    "t": 10247,
-    "decision": "A meeting may be called before the next scheduled one on the early voting location agreement."
-   }
-  ],
-  "topics": [
-   {
-    "t_start": 15,
-    "t_end": 223,
-    "topic": "Opening, announcements, condolences",
-    "resolution": "informational",
-    "tags": []
-   },
-   {
-    "t_start": 223,
-    "t_end": 486,
-    "topic": "Kiku Asian Cuisine license",
-    "resolution": "voted",
-    "tags": [
-     "economic-development"
-    ]
-   },
-   {
-    "t_start": 486,
-    "t_end": 560,
-    "topic": "Town manager report on recruitments",
-    "resolution": "informational",
-    "tags": [
-     "hiring",
-     "personnel"
-    ]
-   },
-   {
-    "t_start": 560,
-    "t_end": 975,
-    "topic": "Select board chat sessions",
-    "resolution": "decision",
-    "tags": [
-     "public-comment"
-    ]
-   },
-   {
-    "t_start": 975,
-    "t_end": 2110,
-    "topic": "Future of the tri-board",
-    "resolution": "no resolution",
-    "tags": [
-     "budget",
-     "town-meeting"
-    ]
-   },
-   {
-    "t_start": 2110,
-    "t_end": 2890,
-    "topic": "Bylaw chapter 12 committees",
-    "resolution": "agreed to work on it",
-    "tags": [
-     "policy"
-    ]
-   },
-   {
-    "t_start": 2890,
-    "t_end": 3345,
-    "topic": "Polling location",
-    "resolution": "voted",
-    "tags": [
-     "elections"
-    ]
-   },
-   {
-    "t_start": 3345,
-    "t_end": 3660,
-    "topic": "Food pantry, School Street milling, opioid funds",
-    "resolution": "informational",
-    "tags": [
-     "facilities",
-     "grants"
-    ]
-   },
-   {
-    "t_start": 3660,
-    "t_end": 4470,
-    "topic": "Personnel committee liaison",
-    "resolution": "decision",
-    "tags": [
-     "personnel"
-    ]
-   },
-   {
-    "t_start": 4493,
-    "t_end": 4730,
-    "topic": "Boards handbook",
-    "resolution": "voted",
-    "tags": [
-     "policy"
-    ]
-   },
-   {
-    "t_start": 4748,
-    "t_end": 6449,
-    "topic": "Municipal building design committee direction",
-    "resolution": "no resolution",
-    "tags": [
-     "facilities",
-     "capital"
-    ]
-   },
-   {
-    "t_start": 6449,
-    "t_end": 9660,
-    "topic": "Special town meeting warrant",
-    "resolution": "voted",
-    "tags": [
-     "warrant-article",
-     "town-meeting",
-     "capital"
-    ]
-   },
-   {
-    "t_start": 9660,
-    "t_end": 9894,
-    "topic": "Town meeting logistics",
-    "resolution": "informational",
-    "tags": [
-     "technology",
-     "town-meeting"
-    ]
-   },
-   {
-    "t_start": 9894,
-    "t_end": 10260,
-    "topic": "Warrant, committee reports, early voting location",
-    "resolution": "informational",
-    "tags": [
-     "elections",
-     "legal"
-    ]
-   },
-   {
-    "t_start": 10260,
-    "t_end": 10480,
-    "topic": "Upcoming meetings and adjournment",
-    "resolution": "voted",
-    "tags": []
-   }
-  ],
-  "not_audible": [
-   "Speaker identities are mostly not marked; names are inferred from addressing only.",
-   "Voice votes recorded as unanimous where the chair said so; individual votes not captured.",
-   "Several dollar figures are unreliable captions (e.g. the free cash figure)."
-  ],
-  "confidence": "moderate",
-  "contention": [
-   {
-    "t": 6925,
-    "about": "Whether the track and field engineering article bypasses the capital planning process.",
-    "sides": "Several members against including it; others open to hearing the presentation first",
-    "words_as_heard": "I just think it's a big middle finger to all the other department heads",
-    "kind": "members disagree"
-   },
-   {
-    "t": 7867,
-    "about": "Objections to the stormwater advisory article and its notice to residents.",
-    "sides": "One member critical of the article versus other members and the chair supporting it",
-    "words_as_heard": "lulls the resident into voting on the most consequential aspect of this unfunded mandate",
-    "kind": "members disagree"
-   },
-   {
-    "t": 5141,
-    "about": "Whether consolidating administrative offices should drive the building project.",
-    "sides": "One member skeptical versus others supporting consolidation",
-    "words_as_heard": "If the motivation is simply to combine administrative services, I think it's headed to failure",
-    "kind": "members disagree"
-   }
-  ],
-  "concerns_and_conditions": [
-   {
-    "t": 7401,
-    "kind": "condition",
-    "about": "Member would support the track and field work out of cycle only if there is a real safety emergency.",
-    "who": "a member",
-    "words_as_heard": "They can make a real life safety argument about it, then I could be in favor of it."
-   },
-   {
-    "t": 6985,
-    "kind": "safety",
-    "about": "Question of injuries from the condition of the turf field.",
-    "who": "a member",
-    "words_as_heard": "less kids are actively getting injured because of the condition of the field. There's a safety concern"
-   },
-   {
-    "t": 4770,
-    "kind": "condition",
-    "about": "Member wants more justification for project scope beyond consolidating offices.",
-    "who": "a member",
-    "words_as_heard": "I would still be looking for more justification on you know, what the scope of the, the project"
-   },
-   {
-    "t": 5873,
-    "kind": "condition",
-    "about": "Member wants a year without an override before asking for building money.",
-    "who": "a member",
-    "words_as_heard": "I think we need to get through one year without an override proposition before we ask the town for building money."
-   },
-   {
-    "t": 6563,
-    "kind": "condition",
-    "about": "Trust fund article cannot be judged without the text on file.",
-    "who": "town manager",
-    "words_as_heard": "I can't say whether we should include this until I see that."
-   },
-   {
-    "t": 9979,
-    "kind": "liability or legal",
-    "about": "Town counsel says only the select board can execute the early voting use agreement.",
-    "who": "town manager",
-    "words_as_heard": "the town clerk does not have the authority to execute an agreement with the village and that only the select board has such authority"
-   }
-  ],
-  "documents_mentioned": [
-   {
-    "t": 2132,
-    "name_as_heard": "Word document on committees with select board members",
-    "kind": "memo",
-    "words_as_heard": "There's a Word document. committees with select board members, reps"
-   },
-   {
-    "t": 4493,
-    "name_as_heard": "boards, committees and commission's handbook",
-    "kind": "draft policy or bylaw",
-    "words_as_heard": "the boards, committees and commission's handbook. So I dropped in the folder"
-   },
-   {
-    "t": 6449,
-    "name_as_heard": "Draft Warrant 11-17-26",
-    "kind": "warrant article",
-    "words_as_heard": "Draft Warrant 11-17-26 V 92726 red lined annotated by AJC"
-   },
-   {
-    "t": 6816,
-    "name_as_heard": "Gale Engineering proposal",
-    "kind": "contract or agreement",
-    "words_as_heard": "in your meeting packet there's a proposal, um under the submitted articles folder"
-   },
-   {
-    "t": 10044,
-    "name_as_heard": "use and occupancy agreement",
-    "kind": "contract or agreement",
-    "words_as_heard": "I have a draft of the use and occupancy agreement from the landlord"
-   }
-  ],
-  "suggested_reports": [
-   {
-    "slug": "capital-plan-town-meeting-vote",
-    "title": "Capital plan vote",
-    "question": "Should the track and field engineering money go through capital planning or straight to town meeting?",
-    "t": 6861,
-    "words_as_heard": "What's the reason why it's Doesn't belong in capital planning, right?",
-    "data_in_play": [
-     "195,830",
-     "1.83 million",
-     "$3.26 million"
-    ],
-    "existing": ""
-   },
-   {
-    "slug": "stormwater-funding-options",
-    "title": "Stormwater funding options",
-    "question": "How do the operating budget and a stormwater utility compare as ways to fund MS4 compliance?",
-    "t": 7762,
-    "words_as_heard": "the two mechanisms for funding MS4 compliance and stormwater maintenance",
-    "data_in_play": [],
-    "existing": "thread:stormwater-fee"
-   },
-   {
-    "slug": "town-office-space",
-    "title": "Town office space",
-    "question": "What would consolidating town offices cost compared with renovating Town Hall and Ritter?",
-    "t": 4748,
-    "words_as_heard": "the focus on combining administrative functions in one building is the sole driver of the increased project size and the costs",
-    "data_in_play": [],
-    "existing": ""
-   }
-  ]
- },
- "digest": {
-  "what_happened": [
-   {
-    "line": "The Select Board voted unanimously to put the non-binding question on the TC Passios demolition on the Nov. 17 special town meeting warrant.",
-    "t": 9596
-   },
-   {
-    "line": "The board also voted unanimously to include the FY2027 omnibus budget amendment, a prior-year bills article and the special education reserve fund transfer.",
-    "t": 6663
-   },
-   {
-    "line": "Corrective zoning amendments and the stormwater management bylaw fee structure were each added to the warrant by unanimous vote.",
-    "t": 7699
-   },
-   {
-    "line": "The board held the track and field engineering article, veterans exemption articles, PEG access amendment, trust funds article and others off the warrant for now.",
-    "t": 6773
-   },
-   {
-    "line": "The board re-voted the Nov. 3 polling place as the middle high school gymnasium after the cafeteria proved too small, and approved handbook changes through chapter 6.",
-    "t": 3302
-   }
-  ],
-  "why_it_matters": [
-   "The articles now on the warrant, including a budget amendment and a transfer into the special education reserve, are what residents will be asked to vote on at the Nov. 17 special town meeting.",
-   "Held articles such as the track and field engineering money could still return, so what is on the final warrant may change, and the special education transfer amount had not yet been voted by the school committee.",
-   "Voters on Nov. 3 go to the middle high school gymnasium, not the cafeteria."
-  ],
-  "watch_next": [
-   "The finance committee hearing, pending which the board held the track and field engineering article.",
-   "A possible meeting before the next scheduled one on the early voting location use agreement."
+  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+  "board_slug": "select-board",
+  "board": "Select Board",
+  "video_title": "Select Board",
+  "meeting_date": "2026-10-06",
+  "video_id": "PaRmbzsOMks",
+  "video_url": "https://www.youtube.com/watch?v=PaRmbzsOMks",
+  "cite": "the video at &t=<seconds>s; every t below is such a second",
+  "source": {
+    "transcript": "sources/data/youtube-transcripts/select-board/2026-10-06-PaRmbzsOMks.json",
+    "sha256": "959926b2eec8d2c27282d0104f2d6301525aa06ca25a1c578dc47496e215ee8c",
+    "caption_lines": 494,
+    "segments": 3586
+  },
+  "recording": {
+    "duration_s": 10460,
+    "duration": "2:54",
+    "spoken_chars": 141658,
+    "words_approx": 23609
+  },
+  "town_published": [
+    {
+      "kind": "agenda",
+      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10062026-8052",
+      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-10-06-agenda-8052.txt",
+      "path": "sources/meetings/select-board/2026-10-06-agenda-8052.pdf"
+    },
+    {
+      "kind": "minutes",
+      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10062026-8052",
+      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-10-06-minutes-8052.txt",
+      "path": "sources/meetings/select-board/2026-10-06-minutes-8052.pdf"
+    }
   ],
   "written": {
-   "by": "scripts/write_recording_minutes.py --digest",
-   "model": "sonnet",
-   "at": "2026-10-17T13:08:32Z",
-   "cost_usd": 0.332032
+    "by": "scripts/write_recording_minutes.py",
+    "model": "sonnet",
+    "at": "2026-10-17T13:08:22Z",
+    "cost_usd": 1.2199676
+  },
+  "minutes": {
+    "headline": "Select Board put several articles on the Nov. 17 special town meeting warrant and held others pending information.",
+    "summary": "The board granted a common victualler license to Kiku Asian Cuisine, re-voted the November 3 polling place after the cafeteria proved too small, and approved handbook changes through chapter 6. Most of the evening went to the special town meeting warrant, where some articles were included and others held. Members also discussed the tri-board, the direction of the Municipal Building Design Committee, committee bylaw clean-up, and a personnel committee liaison.",
+    "attendees": [
+      {
+        "name_as_heard": "Madam Chair",
+        "role": "chair"
+      },
+      {
+        "name_as_heard": "Tom",
+        "role": "member"
+      },
+      {
+        "name_as_heard": "Damon",
+        "role": "member"
+      },
+      {
+        "name_as_heard": "Brian Leighton",
+        "role": "member (arrived 8:11 p.m.)"
+      },
+      {
+        "name_as_heard": "Glenn",
+        "role": "member"
+      },
+      {
+        "name_as_heard": "Town Manager",
+        "role": "town manager"
+      }
+    ],
+    "public_comment": [],
+    "tags": [
+      "budget",
+      "capital",
+      "elections",
+      "facilities",
+      "free-cash",
+      "legal",
+      "override",
+      "personnel",
+      "planning-and-zoning",
+      "policy",
+      "special-education",
+      "staffing",
+      "town-departments",
+      "town-meeting",
+      "warrant-article",
+      "water-sewer"
+    ],
+    "votes": [
+      {
+        "t": 423,
+        "motion": "Approve the common victualler license for Kiku Asian Cuisine at 50 Mass Ave",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 3302,
+        "motion": "Set the November 3 polling location to the middle high school gymnasium, 1079 Mass Ave, with posting locations at the four named places",
+        "moved_by": "Damon",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 4687,
+        "motion": "Accept the Boards, Committees and Commissions Handbook changes through chapter 6",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 6630,
+        "motion": "Include Article 1 (reports of officers and committees) in the warrant",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 6663,
+        "motion": "Include the article amending the fiscal year 2027 omnibus budget in the warrant",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 6708,
+        "motion": "Include authorization to pay expenses from a prior fiscal year in the warrant",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 7600,
+        "motion": "Include the transfer of funds to the special education reserve fund in the warrant",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 7699,
+        "motion": "Include corrective zoning amendments in the warrant",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 7719,
+        "motion": "Include the stormwater management bylaw fee structure in the warrant",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 9596,
+        "motion": "Include the non-binding question on TC Passios demolition in the warrant",
+        "moved_by": "Tom",
+        "outcome": "passed unanimously",
+        "procedural": false
+      },
+      {
+        "t": 10430,
+        "motion": "Adjourn",
+        "moved_by": "Brian",
+        "outcome": "passed unanimously",
+        "procedural": true
+      }
+    ],
+    "budget_items": [
+      {
+        "t": 3435,
+        "topic": "School Street parking lot milling",
+        "what_was_said": "Town manager reported the DPW price for milling came in under a stated amount under an existing contract, avoiding a larger pavement project.",
+        "figures_as_heard": [
+          "under $10,000"
+        ]
+      },
+      {
+        "t": 6800,
+        "topic": "Middle high school track and field engineering services",
+        "what_was_said": "Warrant article with a stated amount and an engineering proposal; board held it pending the finance committee hearing.",
+        "figures_as_heard": [
+          "195,830"
+        ]
+      },
+      {
+        "t": 7278,
+        "topic": "Capital plan total versus requests",
+        "what_was_said": "Town manager said the capital plan was smaller than the projects submitted.",
+        "figures_as_heard": [
+          "1.83 million",
+          "$3.26 million"
+        ]
+      },
+      {
+        "t": 7465,
+        "topic": "Remaining free cash after May town meeting",
+        "what_was_said": "Town manager said a substantial amount of free cash was left unexpended after May.",
+        "figures_as_heard": [
+          "$562,0306"
+        ]
+      },
+      {
+        "t": 7505,
+        "topic": "Special education reserve fund transfer",
+        "what_was_said": "Article to transfer certified free cash into the fund; school committee has not voted the amount, and the cap relates to net school spending.",
+        "figures_as_heard": [
+          "2%",
+          "20 million"
+        ]
+      },
+      {
+        "t": 8635,
+        "topic": "Assistant town manager position",
+        "what_was_said": "Town manager described the position as budgeted and the earlier eliminated position as funding it.",
+        "figures_as_heard": [
+          "$70,000",
+          "$120,000"
+        ]
+      },
+      {
+        "t": 10044,
+        "topic": "Early voting location use agreement",
+        "what_was_said": "Landlord draft agreement charges a use fee and requires added insurance, partly reimbursed by the state.",
+        "figures_as_heard": [
+          "$1000"
+        ]
+      },
+      {
+        "t": 9826,
+        "topic": "Town meeting projector replacement",
+        "what_was_said": "Replacement cost was given as a range and may go through the capital plan.",
+        "figures_as_heard": [
+          "between 10,000 and 50,000",
+          "between 10 and 20"
+        ]
+      },
+      {
+        "t": 9894,
+        "topic": "Accounts payable warrant",
+        "what_was_said": "Board signed a payables warrant.",
+        "figures_as_heard": [
+          "$39,879.53"
+        ]
+      }
+    ],
+    "transfers": [
+      {
+        "t": 7505,
+        "description": "Certified free cash to the special education reserve fund (article for special town meeting)",
+        "amount_as_heard": "not stated",
+        "outcome": "discussed only; article voted into warrant"
+      }
+    ],
+    "decisions": [
+      {
+        "t": 804,
+        "decision": "Select board chat sessions continue monthly with one member attending; next set for Tuesday the 27th at the adult activity center."
+      },
+      {
+        "t": 4448,
+        "decision": "A member agreed to serve as liaison to the personnel committee."
+      },
+      {
+        "t": 2704,
+        "decision": "Board agreed to work on clarifying committee membership language in the bylaws for spring."
+      },
+      {
+        "t": 6773,
+        "decision": "Veterans exemption articles, PEG access fund amendment, track and field engineering, stormwater advisory article, trust funds article and SAP amendment held off the warrant for now."
+      },
+      {
+        "t": 9038,
+        "decision": "Personnel committee bylaw ideas will not be added to the November warrant; they can come in spring."
+      },
+      {
+        "t": 10247,
+        "decision": "A meeting may be called before the next scheduled one on the early voting location agreement."
+      }
+    ],
+    "topics": [
+      {
+        "t_start": 15,
+        "t_end": 223,
+        "topic": "Opening, announcements, condolences",
+        "resolution": "informational",
+        "tags": []
+      },
+      {
+        "t_start": 223,
+        "t_end": 486,
+        "topic": "Kiku Asian Cuisine license",
+        "resolution": "voted",
+        "tags": [
+          "economic-development"
+        ]
+      },
+      {
+        "t_start": 486,
+        "t_end": 560,
+        "topic": "Town manager report on recruitments",
+        "resolution": "informational",
+        "tags": [
+          "hiring",
+          "personnel"
+        ]
+      },
+      {
+        "t_start": 560,
+        "t_end": 975,
+        "topic": "Select board chat sessions",
+        "resolution": "decision",
+        "tags": [
+          "public-comment"
+        ]
+      },
+      {
+        "t_start": 975,
+        "t_end": 2110,
+        "topic": "Future of the tri-board",
+        "resolution": "no resolution",
+        "tags": [
+          "budget",
+          "town-meeting"
+        ]
+      },
+      {
+        "t_start": 2110,
+        "t_end": 2890,
+        "topic": "Bylaw chapter 12 committees",
+        "resolution": "agreed to work on it",
+        "tags": [
+          "policy"
+        ]
+      },
+      {
+        "t_start": 2890,
+        "t_end": 3345,
+        "topic": "Polling location",
+        "resolution": "voted",
+        "tags": [
+          "elections"
+        ]
+      },
+      {
+        "t_start": 3345,
+        "t_end": 3660,
+        "topic": "Food pantry, School Street milling, opioid funds",
+        "resolution": "informational",
+        "tags": [
+          "facilities",
+          "grants"
+        ]
+      },
+      {
+        "t_start": 3660,
+        "t_end": 4470,
+        "topic": "Personnel committee liaison",
+        "resolution": "decision",
+        "tags": [
+          "personnel"
+        ]
+      },
+      {
+        "t_start": 4493,
+        "t_end": 4730,
+        "topic": "Boards handbook",
+        "resolution": "voted",
+        "tags": [
+          "policy"
+        ]
+      },
+      {
+        "t_start": 4748,
+        "t_end": 6449,
+        "topic": "Municipal building design committee direction",
+        "resolution": "no resolution",
+        "tags": [
+          "facilities",
+          "capital"
+        ]
+      },
+      {
+        "t_start": 6449,
+        "t_end": 9660,
+        "topic": "Special town meeting warrant",
+        "resolution": "voted",
+        "tags": [
+          "warrant-article",
+          "town-meeting",
+          "capital"
+        ]
+      },
+      {
+        "t_start": 9660,
+        "t_end": 9894,
+        "topic": "Town meeting logistics",
+        "resolution": "informational",
+        "tags": [
+          "technology",
+          "town-meeting"
+        ]
+      },
+      {
+        "t_start": 9894,
+        "t_end": 10260,
+        "topic": "Warrant, committee reports, early voting location",
+        "resolution": "informational",
+        "tags": [
+          "elections",
+          "legal"
+        ]
+      },
+      {
+        "t_start": 10260,
+        "t_end": 10480,
+        "topic": "Upcoming meetings and adjournment",
+        "resolution": "voted",
+        "tags": []
+      }
+    ],
+    "not_audible": [
+      "Speaker identities are mostly not marked; names are inferred from addressing only.",
+      "Voice votes recorded as unanimous where the chair said so; individual votes not captured.",
+      "Several dollar figures are unreliable captions (e.g. the free cash figure)."
+    ],
+    "confidence": "moderate",
+    "contention": [
+      {
+        "t": 6925,
+        "about": "Whether the track and field engineering article bypasses the capital planning process.",
+        "sides": "Several members against including it; others open to hearing the presentation first",
+        "words_as_heard": "I just think it's a big middle finger to all the other department heads",
+        "kind": "members disagree"
+      },
+      {
+        "t": 7867,
+        "about": "Objections to the stormwater advisory article and its notice to residents.",
+        "sides": "One member critical of the article versus other members and the chair supporting it",
+        "words_as_heard": "lulls the resident into voting on the most consequential aspect of this unfunded mandate",
+        "kind": "members disagree"
+      },
+      {
+        "t": 5141,
+        "about": "Whether consolidating administrative offices should drive the building project.",
+        "sides": "One member skeptical versus others supporting consolidation",
+        "words_as_heard": "If the motivation is simply to combine administrative services, I think it's headed to failure",
+        "kind": "members disagree"
+      }
+    ],
+    "concerns_and_conditions": [
+      {
+        "t": 7401,
+        "kind": "condition",
+        "about": "Member would support the track and field work out of cycle only if there is a real safety emergency.",
+        "who": "a member",
+        "words_as_heard": "They can make a real life safety argument about it, then I could be in favor of it."
+      },
+      {
+        "t": 6985,
+        "kind": "safety",
+        "about": "Question of injuries from the condition of the turf field.",
+        "who": "a member",
+        "words_as_heard": "less kids are actively getting injured because of the condition of the field. There's a safety concern"
+      },
+      {
+        "t": 4770,
+        "kind": "condition",
+        "about": "Member wants more justification for project scope beyond consolidating offices.",
+        "who": "a member",
+        "words_as_heard": "I would still be looking for more justification on you know, what the scope of the, the project"
+      },
+      {
+        "t": 5873,
+        "kind": "condition",
+        "about": "Member wants a year without an override before asking for building money.",
+        "who": "a member",
+        "words_as_heard": "I think we need to get through one year without an override proposition before we ask the town for building money."
+      },
+      {
+        "t": 6563,
+        "kind": "condition",
+        "about": "Trust fund article cannot be judged without the text on file.",
+        "who": "town manager",
+        "words_as_heard": "I can't say whether we should include this until I see that."
+      },
+      {
+        "t": 9979,
+        "kind": "liability or legal",
+        "about": "Town counsel says only the select board can execute the early voting use agreement.",
+        "who": "town manager",
+        "words_as_heard": "the town clerk does not have the authority to execute an agreement with the village and that only the select board has such authority"
+      }
+    ],
+    "documents_mentioned": [
+      {
+        "t": 2132,
+        "name_as_heard": "Word document on committees with select board members",
+        "kind": "memo",
+        "words_as_heard": "There's a Word document. committees with select board members, reps"
+      },
+      {
+        "t": 4493,
+        "name_as_heard": "boards, committees and commission's handbook",
+        "kind": "draft policy or bylaw",
+        "words_as_heard": "the boards, committees and commission's handbook. So I dropped in the folder"
+      },
+      {
+        "t": 6449,
+        "name_as_heard": "Draft Warrant 11-17-26",
+        "kind": "warrant article",
+        "words_as_heard": "Draft Warrant 11-17-26 V 92726 red lined annotated by AJC"
+      },
+      {
+        "t": 6816,
+        "name_as_heard": "Gale Engineering proposal",
+        "kind": "contract or agreement",
+        "words_as_heard": "in your meeting packet there's a proposal, um under the submitted articles folder"
+      },
+      {
+        "t": 10044,
+        "name_as_heard": "use and occupancy agreement",
+        "kind": "contract or agreement",
+        "words_as_heard": "I have a draft of the use and occupancy agreement from the landlord"
+      }
+    ],
+    "suggested_reports": [
+      {
+        "slug": "capital-plan-town-meeting-vote",
+        "title": "Capital plan vote",
+        "question": "Should the track and field engineering money go through capital planning or straight to town meeting?",
+        "t": 6861,
+        "words_as_heard": "What's the reason why it's Doesn't belong in capital planning, right?",
+        "data_in_play": [
+          "195,830",
+          "1.83 million",
+          "$3.26 million"
+        ],
+        "existing": ""
+      },
+      {
+        "slug": "stormwater-funding-options",
+        "title": "Stormwater funding options",
+        "question": "How do the operating budget and a stormwater utility compare as ways to fund MS4 compliance?",
+        "t": 7762,
+        "words_as_heard": "the two mechanisms for funding MS4 compliance and stormwater maintenance",
+        "data_in_play": [],
+        "existing": "thread:stormwater-fee"
+      },
+      {
+        "slug": "town-office-space",
+        "title": "Town office space",
+        "question": "What would consolidating town offices cost compared with renovating Town Hall and Ritter?",
+        "t": 4748,
+        "words_as_heard": "the focus on combining administrative functions in one building is the sole driver of the increased project size and the costs",
+        "data_in_play": [],
+        "existing": ""
+      }
+    ]
+  },
+  "digest": {
+    "what_happened": [
+      {
+        "line": "The Select Board voted unanimously to put the non-binding question on the TC Passios demolition on the Nov. 17 special town meeting warrant.",
+        "t": 9596
+      },
+      {
+        "line": "The board also voted unanimously to include the FY2027 omnibus budget amendment, a prior-year bills article and the special education reserve fund transfer.",
+        "t": 6663
+      },
+      {
+        "line": "Corrective zoning amendments and the stormwater management bylaw fee structure were each added to the warrant by unanimous vote.",
+        "t": 7699
+      },
+      {
+        "line": "The board held the track and field engineering article, veterans exemption articles, PEG access amendment, trust funds article and others off the warrant for now.",
+        "t": 6773
+      },
+      {
+        "line": "The board re-voted the Nov. 3 polling place as the middle high school gymnasium after the cafeteria proved too small, and approved handbook changes through chapter 6.",
+        "t": 3302
+      }
+    ],
+    "why_it_matters": [
+      "The articles now on the warrant, including a budget amendment and a transfer into the special education reserve, are what residents will be asked to vote on at the Nov. 17 special town meeting.",
+      "Held articles such as the track and field engineering money could still return, so what is on the final warrant may change, and the special education transfer amount had not yet been voted by the school committee.",
+      "Voters on Nov. 3 go to the middle high school gymnasium, not the cafeteria."
+    ],
+    "watch_next": [
+      "The finance committee hearing, pending which the board held the track and field engineering article.",
+      "A possible meeting before the next scheduled one on the early voting location use agreement."
+    ],
+    "written": {
+      "by": "scripts/write_recording_minutes.py --digest",
+      "model": "sonnet",
+      "at": "2026-10-17T13:08:32Z",
+      "cost_usd": 0.332032
+    }
   }
- }
 }

@@ -346,8 +346,11 @@ CATALOGUE_COLUMNS = {'state', 'rows_published', 'figures_reversed'}
 #   town reports by coincidence of number -- FY2025 p36 is Lunenburg's contract grid AND a
 #   page of the FY2025 town report. `--check` named it UNDECLARED on 21 October 2026. It is
 #   not a reading of any annual report, so it is named here rather than declared in PROOF.
+#
+#   `capital-plan-field-lines.csv` is the same case: its `page` is a page of a CAPITAL PLAN
+#   presentation, and its `fy` the plan's year. Named UNDECLARED on 23 October 2026.
 NOT_READINGS = {'annual-report-pages', 'ingest-benchmark', 'extraction-blocked',
-                'table-corrections', 'teacher-salary-schedules'}
+                'table-corrections', 'teacher-salary-schedules', 'capital-plan-field-lines'}
 
 # WHICH COLUMN HOLDS THE YEAR OF THE BOOK THE PAGE IS IN. Requiring the literal name `fy`
 # made `outstanding-debt.csv` invisible: it names that column `report_fy`, so 1,038 proven
