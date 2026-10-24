@@ -309,7 +309,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Agricultural Commission — missing records](/boards/agricultural-commission/records) | reference | — / 10.0 min | *(none declared)* |
 | [Agricultural Commission — budget schedule](/boards/agricultural-commission/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Agricultural Commission — where the time goes](/boards/agricultural-commission/time) | reference | — / 5.9 min | *(none declared)* |
-| [Agricultural Commission — votes](/boards/agricultural-commission/votes) | reference | — / 30.7 min | *(none declared)* |
+| [Agricultural Commission — votes](/boards/agricultural-commission/votes) | reference | — / 31.7 min | *(none declared)* |
 | [Architectural Preservation District Commission](/boards/architectural-preservation-district-commission) | reference | — / 8.0 min | *(none declared)* |
 | [Architectural Preservation District Commission — about](/boards/architectural-preservation-district-commission/about) | reference | — / 7.5 min | *(none declared)* |
 | [Architectural Preservation District Commission — finances](/boards/architectural-preservation-district-commission/finance) | reference | — / 11.1 min | *(none declared)* |
@@ -317,7 +317,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Architectural Preservation District Commission — missing records](/boards/architectural-preservation-district-commission/records) | reference | — / 9.2 min | *(none declared)* |
 | [Architectural Preservation District Commission — budget schedule](/boards/architectural-preservation-district-commission/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [Architectural Preservation District Commission — where the time goes](/boards/architectural-preservation-district-commission/time) | reference | — / 5.9 min | *(none declared)* |
-| [Architectural Preservation District Commission — votes](/boards/architectural-preservation-district-commission/votes) | reference | — / 37.8 min | *(none declared)* |
+| [Architectural Preservation District Commission — votes](/boards/architectural-preservation-district-commission/votes) | reference | — / 38.4 min | *(none declared)* |
 | [Athletic Advisory Council](/boards/athletic-advisory-council) | reference | — / 6.6 min | *(none declared)* |
 | [Athletic Advisory Council — meetings](/boards/athletic-advisory-council/meetings) | reference | — / 6.2 min | *(none declared)* |
 | [Athletic Advisory Council — missing records](/boards/athletic-advisory-council/records) | reference | — / 7.3 min | *(none declared)* |
@@ -334,14 +334,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Board of Assessors — budget schedule](/boards/board-of-assessors/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Assessors — where the time goes](/boards/board-of-assessors/time) | reference | — / 6.0 min | *(none declared)* |
 | [Board of Assessors: transfers](/boards/board-of-assessors/transfers) | reference | — / 6.7 min | *(none declared)* |
-| [Board of Assessors — votes](/boards/board-of-assessors/votes) | reference | — / 58.0 min | *(none declared)* |
+| [Board of Assessors — votes](/boards/board-of-assessors/votes) | reference | — / 59.3 min | *(none declared)* |
 | [Board of Health](/boards/board-of-health) | reference | — / 7.5 min | *(none declared)* |
 | [Board of Health — about](/boards/board-of-health/about) | reference | — / 7.0 min | *(none declared)* |
 | [Board of Health — finances](/boards/board-of-health/finance) | reference | — / 12.8 min | *(none declared)* |
 | [Board of Health — meetings](/boards/board-of-health/meetings) | reference | — / 7.5 min | *(none declared)* |
 | [Board of Health — missing records](/boards/board-of-health/records) | reference | — / 13.1 min | *(none declared)* |
 | [Board of Health — budget schedule](/boards/board-of-health/schedule) | reference | — / 6.1 min | *(none declared)* |
-| [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 46.4 min | *(none declared)* |
+| [Board of Health — votes](/boards/board-of-health/votes) | reference | — / 47.8 min | *(none declared)* |
 | [Board of Registrars](/boards/board-of-registrars) | reference | — / 6.2 min | *(none declared)* |
 | [Board of Registrars — about](/boards/board-of-registrars/about) | reference | — / 5.8 min | *(none declared)* |
 | [Board of Registrars — meetings](/boards/board-of-registrars/meetings) | reference | — / 7.1 min | *(none declared)* |
@@ -356,20 +356,20 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Building Reuse Committee — meetings](/boards/building-reuse-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Building Reuse Committee — missing records](/boards/building-reuse-committee/records) | reference | — / 7.8 min | *(none declared)* |
 | [Building Reuse Committee — budget schedule](/boards/building-reuse-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [Building Reuse Committee — votes](/boards/building-reuse-committee/votes) | reference | — / 10.0 min | *(none declared)* |
+| [Building Reuse Committee — votes](/boards/building-reuse-committee/votes) | reference | — / 10.1 min | *(none declared)* |
 | [By-Law Committee](/boards/by-law-committee) | reference | — / 7.4 min | *(none declared)* |
 | [By-Law Committee — about](/boards/by-law-committee/about) | reference | — / 6.1 min | *(none declared)* |
 | [By-Law Committee — meetings](/boards/by-law-committee/meetings) | reference | — / 7.4 min | *(none declared)* |
 | [By-Law Committee — missing records](/boards/by-law-committee/records) | reference | — / 7.8 min | *(none declared)* |
 | [By-Law Committee — budget schedule](/boards/by-law-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
-| [By-Law Committee — votes](/boards/by-law-committee/votes) | reference | — / 11.0 min | *(none declared)* |
+| [By-Law Committee — votes](/boards/by-law-committee/votes) | reference | — / 11.1 min | *(none declared)* |
 | [Cable Advisory Committee](/boards/cable-advisory-committee) | reference | — / 8.2 min | *(none declared)* |
 | [Cable Advisory Committee — about](/boards/cable-advisory-committee/about) | reference | — / 6.7 min | *(none declared)* |
 | [Cable Advisory Committee — meetings](/boards/cable-advisory-committee/meetings) | reference | — / 7.0 min | *(none declared)* |
 | [Cable Advisory Committee — missing records](/boards/cable-advisory-committee/records) | reference | — / 7.7 min | *(none declared)* |
 | [Cable Advisory Committee — budget schedule](/boards/cable-advisory-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Cable Advisory Committee — where the time goes](/boards/cable-advisory-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Cable Advisory Committee — votes](/boards/cable-advisory-committee/votes) | reference | — / 10.3 min | *(none declared)* |
+| [Cable Advisory Committee — votes](/boards/cable-advisory-committee/votes) | reference | — / 10.4 min | *(none declared)* |
 | [Capital Planning Committee](/boards/capital-planning-committee) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — about](/boards/capital-planning-committee/about) | reference | — / 7.5 min | *(none declared)* |
 | [Capital Planning Committee — finances](/boards/capital-planning-committee/finance) | reference | — / 12.2 min | *(none declared)* |
@@ -377,7 +377,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Capital Planning Committee — missing records](/boards/capital-planning-committee/records) | reference | — / 11.7 min | *(none declared)* |
 | [Capital Planning Committee — budget schedule](/boards/capital-planning-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Capital Planning Committee — where the time goes](/boards/capital-planning-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 22.9 min | *(none declared)* |
+| [Capital Planning Committee — votes](/boards/capital-planning-committee/votes) | reference | — / 23.2 min | *(none declared)* |
 | [Cemetery Commission](/boards/cemetery-commission) | reference | — / 7.9 min | *(none declared)* |
 | [Cemetery Commission — about](/boards/cemetery-commission/about) | reference | — / 6.5 min | *(none declared)* |
 | [Cemetery Commission — finances](/boards/cemetery-commission/finance) | reference | — / 12.9 min | *(none declared)* |
@@ -386,13 +386,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Cemetery Commission — budget schedule](/boards/cemetery-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Cemetery Commission — where the time goes](/boards/cemetery-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Cemetery Commission: transfers](/boards/cemetery-commission/transfers) | reference | — / 7.8 min | *(none declared)* |
-| [Cemetery Commission — votes](/boards/cemetery-commission/votes) | reference | — / 43.5 min | *(none declared)* |
+| [Cemetery Commission — votes](/boards/cemetery-commission/votes) | reference | — / 44.3 min | *(none declared)* |
 | [Charter Review Committee](/boards/charter-review-committee) | reference | — / 7.5 min | *(none declared)* |
 | [Charter Review Committee — about](/boards/charter-review-committee/about) | reference | — / 6.3 min | *(none declared)* |
 | [Charter Review Committee — meetings](/boards/charter-review-committee/meetings) | reference | — / 6.8 min | *(none declared)* |
 | [Charter Review Committee — missing records](/boards/charter-review-committee/records) | reference | — / 7.6 min | *(none declared)* |
 | [Charter Review Committee — budget schedule](/boards/charter-review-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
-| [Charter Review Committee — votes](/boards/charter-review-committee/votes) | reference | — / 14.9 min | *(none declared)* |
+| [Charter Review Committee — votes](/boards/charter-review-committee/votes) | reference | — / 15.2 min | *(none declared)* |
 | [Conservation Commission](/boards/conservation-commission) | reference | — / 8.5 min | *(none declared)* |
 | [Conservation Commission Public Hearing](/boards/conservation-commission-public-hearing) | reference | — / 6.2 min | *(none declared)* |
 | [Conservation Commission Public Hearing — meetings](/boards/conservation-commission-public-hearing/meetings) | reference | — / 6.1 min | *(none declared)* |
@@ -403,7 +403,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Conservation Commission — budget schedule](/boards/conservation-commission/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Conservation Commission — where the time goes](/boards/conservation-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Conservation Commission: transfers](/boards/conservation-commission/transfers) | reference | — / 7.1 min | *(none declared)* |
-| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 180.8 min | *(none declared)* |
+| [Conservation Commission — votes](/boards/conservation-commission/votes) | reference | — / 186.6 min | *(none declared)* |
 | [Council on Aging](/boards/council-on-aging) | reference | — / 8.6 min | *(none declared)* |
 | [Council on Aging — about](/boards/council-on-aging/about) | reference | — / 6.5 min | *(none declared)* |
 | [Council on Aging — finances](/boards/council-on-aging/finance) | reference | — / 12.0 min | *(none declared)* |
@@ -411,18 +411,18 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Council on Aging — missing records](/boards/council-on-aging/records) | reference | — / 9.4 min | *(none declared)* |
 | [Council on Aging — budget schedule](/boards/council-on-aging/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Council on Aging — where the time goes](/boards/council-on-aging/time) | reference | — / 5.9 min | *(none declared)* |
-| [Council on Aging — votes](/boards/council-on-aging/votes) | reference | — / 37.3 min | *(none declared)* |
+| [Council on Aging — votes](/boards/council-on-aging/votes) | reference | — / 38.1 min | *(none declared)* |
 | [Cultural Council](/boards/cultural-council) | reference | — / 6.9 min | *(none declared)* |
 | [Cultural Council — about](/boards/cultural-council/about) | reference | — / 6.9 min | *(none declared)* |
 | [Cultural Council — finances](/boards/cultural-council/finance) | reference | — / 11.5 min | *(none declared)* |
 | [Cultural Council — meetings](/boards/cultural-council/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Cultural Council — missing records](/boards/cultural-council/records) | reference | — / 9.0 min | *(none declared)* |
-| [Cultural Council — votes](/boards/cultural-council/votes) | reference | — / 23.4 min | *(none declared)* |
+| [Cultural Council — votes](/boards/cultural-council/votes) | reference | — / 24.0 min | *(none declared)* |
 | [Devens Regional Oversight Committee](/boards/devens-regional-oversight-committee) | reference | — / 7.0 min | *(none declared)* |
 | [Devens Regional Oversight Committee — meetings](/boards/devens-regional-oversight-committee/meetings) | reference | — / 6.5 min | *(none declared)* |
 | [Devens Regional Oversight Committee — missing records](/boards/devens-regional-oversight-committee/records) | reference | — / 7.6 min | *(none declared)* |
 | [Devens Regional Oversight Committee — budget schedule](/boards/devens-regional-oversight-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [Devens Regional Oversight Committee — votes](/boards/devens-regional-oversight-committee/votes) | reference | — / 8.4 min | *(none declared)* |
+| [Devens Regional Oversight Committee — votes](/boards/devens-regional-oversight-committee/votes) | reference | — / 8.5 min | *(none declared)* |
 | [Economic Development Committee](/boards/economic-development-committee) | reference | — / 7.6 min | *(none declared)* |
 | [Economic Development Committee — about](/boards/economic-development-committee/about) | reference | — / 8.8 min | *(none declared)* |
 | [Economic Development Committee — meetings](/boards/economic-development-committee/meetings) | reference | — / 9.0 min | *(none declared)* |
@@ -436,11 +436,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee Appointing Committee — meetings](/boards/finance-committee-appointing-committee/meetings) | reference | — / 7.1 min | *(none declared)* |
 | [Finance Committee Appointing Committee — missing records](/boards/finance-committee-appointing-committee/records) | reference | — / 8.3 min | *(none declared)* |
 | [Finance Committee Appointing Committee — where the time goes](/boards/finance-committee-appointing-committee/time) | reference | — / 5.7 min | *(none declared)* |
-| [Finance Committee Appointing Committee — votes](/boards/finance-committee-appointing-committee/votes) | reference | — / 12.6 min | *(none declared)* |
+| [Finance Committee Appointing Committee — votes](/boards/finance-committee-appointing-committee/votes) | reference | — / 12.8 min | *(none declared)* |
 | [Finance Committee Public Hearing](/boards/finance-committee-public-hearing) | reference | — / 7.1 min | *(none declared)* |
 | [Finance Committee Public Hearing — meetings](/boards/finance-committee-public-hearing/meetings) | reference | — / 6.1 min | *(none declared)* |
 | [Finance Committee Public Hearing — budget schedule](/boards/finance-committee-public-hearing/schedule) | reference | — / 6.1 min | *(none declared)* |
-| [Finance Committee Public Hearing — votes](/boards/finance-committee-public-hearing/votes) | reference | — / 10.8 min | *(none declared)* |
+| [Finance Committee Public Hearing — votes](/boards/finance-committee-public-hearing/votes) | reference | — / 11.1 min | *(none declared)* |
 | [Finance Committee — about](/boards/finance-committee/about) | reference | — / 7.2 min | *(none declared)* |
 | [Finance Committee — finances](/boards/finance-committee/finance) | reference | — / 11.1 min | *(none declared)* |
 | [Finance Committee — meetings](/boards/finance-committee/meetings) | reference | — / 10.6 min | *(none declared)* |
@@ -448,13 +448,13 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee — budget schedule](/boards/finance-committee/schedule) | reference | — / 7.5 min | *(none declared)* |
 | [Finance Committee — where the time goes](/boards/finance-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [Finance Committee: transfers](/boards/finance-committee/transfers) | reference | — / 8.0 min | *(none declared)* |
-| [Finance Committee — votes](/boards/finance-committee/votes) | reference | — / 106.6 min | *(none declared)* |
+| [Finance Committee — votes](/boards/finance-committee/votes) | reference | — / 110.5 min | *(none declared)* |
 | [Green Communities Committee](/boards/green-communities-committee) | reference | — / 7.8 min | *(none declared)* |
 | [Green Communities Committee — about](/boards/green-communities-committee/about) | reference | — / 8.5 min | *(none declared)* |
 | [Green Communities Committee — meetings](/boards/green-communities-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Green Communities Committee — missing records](/boards/green-communities-committee/records) | reference | — / 9.0 min | *(none declared)* |
 | [Green Communities Committee — budget schedule](/boards/green-communities-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
-| [Green Communities Committee — votes](/boards/green-communities-committee/votes) | reference | — / 15.7 min | *(none declared)* |
+| [Green Communities Committee — votes](/boards/green-communities-committee/votes) | reference | — / 15.9 min | *(none declared)* |
 | [Green Community Task Force](/boards/green-community-task-force) | reference | — / 7.2 min | *(none declared)* |
 | [Green Community Task Force — about](/boards/green-community-task-force/about) | reference | — / 5.7 min | *(none declared)* |
 | [Green Community Task Force — meetings](/boards/green-community-task-force/meetings) | reference | — / 8.9 min | *(none declared)* |
@@ -470,7 +470,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Land Acquisition Committee](/boards/land-acquisition-committee) | reference | — / 6.3 min | *(none declared)* |
 | [Land Acquisition Committee — meetings](/boards/land-acquisition-committee/meetings) | reference | — / 6.3 min | *(none declared)* |
 | [Land Acquisition Committee — missing records](/boards/land-acquisition-committee/records) | reference | — / 7.4 min | *(none declared)* |
-| [Land Acquisition Committee — votes](/boards/land-acquisition-committee/votes) | reference | — / 7.4 min | *(none declared)* |
+| [Land Acquisition Committee — votes](/boards/land-acquisition-committee/votes) | reference | — / 7.5 min | *(none declared)* |
 | [Library Board of Trustees](/boards/library-board-of-trustees) | reference | — / 8.3 min | *(none declared)* |
 | [Library Board of Trustees — about](/boards/library-board-of-trustees/about) | reference | — / 8.0 min | *(none declared)* |
 | [Library Board of Trustees — finances](/boards/library-board-of-trustees/finance) | reference | — / 12.3 min | *(none declared)* |
@@ -479,7 +479,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Library Board of Trustees — budget schedule](/boards/library-board-of-trustees/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Library Board of Trustees — where the time goes](/boards/library-board-of-trustees/time) | reference | — / 5.9 min | *(none declared)* |
 | [Library Board of Trustees: transfers](/boards/library-board-of-trustees/transfers) | reference | — / 7.0 min | *(none declared)* |
-| [Library Board of Trustees — votes](/boards/library-board-of-trustees/votes) | reference | — / 32.7 min | *(none declared)* |
+| [Library Board of Trustees — votes](/boards/library-board-of-trustees/votes) | reference | — / 33.7 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee](/boards/lunenburg-300th-anniversary-committee) | reference | — / 7.1 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — about](/boards/lunenburg-300th-anniversary-committee/about) | reference | — / 7.4 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — meetings](/boards/lunenburg-300th-anniversary-committee/meetings) | reference | — / 6.4 min | *(none declared)* |
@@ -494,14 +494,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Lunenburg Housing Authority — meetings](/boards/lunenburg-housing-authority/meetings) | reference | — / 7.4 min | *(none declared)* |
 | [Lunenburg Housing Authority — missing records](/boards/lunenburg-housing-authority/records) | reference | — / 8.4 min | *(none declared)* |
 | [Lunenburg Housing Authority — budget schedule](/boards/lunenburg-housing-authority/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [Lunenburg Housing Authority — votes](/boards/lunenburg-housing-authority/votes) | reference | — / 39.9 min | *(none declared)* |
+| [Lunenburg Housing Authority — votes](/boards/lunenburg-housing-authority/votes) | reference | — / 41.7 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee](/boards/lunenburg-municipal-building-design-committee) | reference | — / 8.2 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — about](/boards/lunenburg-municipal-building-design-committee/about) | reference | — / 6.8 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — meetings](/boards/lunenburg-municipal-building-design-committee/meetings) | reference | — / 10.5 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — missing records](/boards/lunenburg-municipal-building-design-committee/records) | reference | — / 9.2 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — budget schedule](/boards/lunenburg-municipal-building-design-committee/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — where the time goes](/boards/lunenburg-municipal-building-design-committee/time) | reference | — / 6.0 min | *(none declared)* |
-| [Lunenburg Municipal Building Design Committee — votes](/boards/lunenburg-municipal-building-design-committee/votes) | reference | — / 17.0 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — votes](/boards/lunenburg-municipal-building-design-committee/votes) | reference | — / 17.1 min | *(none declared)* |
 | [Lunenburg Water District](/boards/lunenburg-water-district) | reference | — / 7.5 min | *(none declared)* |
 | [Lunenburg Water District — meetings](/boards/lunenburg-water-district/meetings) | reference | — / 10.5 min | *(none declared)* |
 | [Lunenburg Water District — where the time goes](/boards/lunenburg-water-district/time) | reference | — / 5.9 min | *(none declared)* |
@@ -525,7 +525,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Nashoba Valley Reginal Dispatch Committee — missing records](/boards/nashoba-valley-reginal-dispatch-committee/records) | reference | — / 7.9 min | *(none declared)* |
 | [Nashoba Valley Reginal Dispatch Committee — budget schedule](/boards/nashoba-valley-reginal-dispatch-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Nashoba Valley Reginal Dispatch Committee: transfers](/boards/nashoba-valley-reginal-dispatch-committee/transfers) | reference | — / 6.9 min | *(none declared)* |
-| [Nashoba Valley Reginal Dispatch Committee — votes](/boards/nashoba-valley-reginal-dispatch-committee/votes) | reference | — / 9.2 min | *(none declared)* |
+| [Nashoba Valley Reginal Dispatch Committee — votes](/boards/nashoba-valley-reginal-dispatch-committee/votes) | reference | — / 9.3 min | *(none declared)* |
 | [North Central Climate Change Coalition](/boards/north-central-climate-change-coalition) | reference | — / 6.1 min | *(none declared)* |
 | [North Central Climate Change Coalition — meetings](/boards/north-central-climate-change-coalition/meetings) | reference | — / 6.1 min | *(none declared)* |
 | [North Central Climate Change Coalition — missing records](/boards/north-central-climate-change-coalition/records) | reference | — / 7.3 min | *(none declared)* |
@@ -535,7 +535,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Open Space Committee — missing records](/boards/open-space-committee/records) | reference | — / 10.2 min | *(none declared)* |
 | [Open Space Committee — budget schedule](/boards/open-space-committee/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Open Space Committee — where the time goes](/boards/open-space-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Open Space Committee — votes](/boards/open-space-committee/votes) | reference | — / 27.4 min | *(none declared)* |
+| [Open Space Committee — votes](/boards/open-space-committee/votes) | reference | — / 27.8 min | *(none declared)* |
 | [Parks Commission](/boards/parks-commission) | reference | — / 8.2 min | *(none declared)* |
 | [Parks Commission — about](/boards/parks-commission/about) | reference | — / 6.5 min | *(none declared)* |
 | [Parks Commission — finances](/boards/parks-commission/finance) | reference | — / 12.9 min | *(none declared)* |
@@ -544,26 +544,26 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Parks Commission — budget schedule](/boards/parks-commission/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Parks Commission — where the time goes](/boards/parks-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Parks Commission: transfers](/boards/parks-commission/transfers) | reference | — / 6.6 min | *(none declared)* |
-| [Parks Commission — votes](/boards/parks-commission/votes) | reference | — / 53.3 min | *(none declared)* |
+| [Parks Commission — votes](/boards/parks-commission/votes) | reference | — / 54.7 min | *(none declared)* |
 | [Personnel Committee](/boards/personnel-committee) | reference | — / 7.6 min | *(none declared)* |
 | [Personnel Committee — about](/boards/personnel-committee/about) | reference | — / 6.5 min | *(none declared)* |
 | [Personnel Committee — meetings](/boards/personnel-committee/meetings) | reference | — / 10.1 min | *(none declared)* |
 | [Personnel Committee — missing records](/boards/personnel-committee/records) | reference | — / 9.7 min | *(none declared)* |
 | [Personnel Committee — budget schedule](/boards/personnel-committee/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Personnel Committee — where the time goes](/boards/personnel-committee/time) | reference | — / 5.9 min | *(none declared)* |
-| [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 51.9 min | *(none declared)* |
+| [Personnel Committee — votes](/boards/personnel-committee/votes) | reference | — / 53.2 min | *(none declared)* |
 | [Planning Board](/boards/planning-board) | reference | — / 8.0 min | *(none declared)* |
 | [Planning Board Public Hearing](/boards/planning-board-public-hearing) | reference | — / 7.5 min | *(none declared)* |
 | [Planning Board Public Hearing — meetings](/boards/planning-board-public-hearing/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Planning Board Public Hearing — budget schedule](/boards/planning-board-public-hearing/schedule) | reference | — / 6.0 min | *(none declared)* |
-| [Planning Board Public Hearing — votes](/boards/planning-board-public-hearing/votes) | reference | — / 9.7 min | *(none declared)* |
+| [Planning Board Public Hearing — votes](/boards/planning-board-public-hearing/votes) | reference | — / 9.8 min | *(none declared)* |
 | [Planning Board — about](/boards/planning-board/about) | reference | — / 7.2 min | *(none declared)* |
 | [Planning Board — finances](/boards/planning-board/finance) | reference | — / 12.3 min | *(none declared)* |
 | [Planning Board — meetings](/boards/planning-board/meetings) | reference | — / 10.7 min | *(none declared)* |
 | [Planning Board — missing records](/boards/planning-board/records) | reference | — / 13.3 min | *(none declared)* |
 | [Planning Board — budget schedule](/boards/planning-board/schedule) | reference | — / 6.3 min | *(none declared)* |
 | [Planning Board — where the time goes](/boards/planning-board/time) | reference | — / 5.9 min | *(none declared)* |
-| [Planning Board — votes](/boards/planning-board/votes) | reference | — / 117.2 min | *(none declared)* |
+| [Planning Board — votes](/boards/planning-board/votes) | reference | — / 120.6 min | *(none declared)* |
 | [Public Access Cable Committee (PACC)](/boards/public-access-cable-committee-pacc) | reference | — / 9.1 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — about](/boards/public-access-cable-committee-pacc/about) | reference | — / 6.0 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — meetings](/boards/public-access-cable-committee-pacc/meetings) | reference | — / 11.8 min | *(none declared)* |
@@ -571,18 +571,18 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Public Access Cable Committee (PACC) — budget schedule](/boards/public-access-cable-committee-pacc/schedule) | reference | — / 6.2 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — where the time goes](/boards/public-access-cable-committee-pacc/time) | reference | — / 5.9 min | *(none declared)* |
 | [Public Access Cable Committee (PACC): transfers](/boards/public-access-cable-committee-pacc/transfers) | reference | — / 6.9 min | *(none declared)* |
-| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 40.9 min | *(none declared)* |
+| [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 41.6 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.9 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — missing records](/boards/school-advisory-councils-committees/records) | reference | — / 14.9 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — budget schedule](/boards/school-advisory-councils-committees/schedule) | reference | — / 6.1 min | *(none declared)* |
-| [School Advisory Councils &amp; Committees — votes](/boards/school-advisory-councils-committees/votes) | reference | — / 14.6 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — votes](/boards/school-advisory-councils-committees/votes) | reference | — / 14.7 min | *(none declared)* |
 | [School Building Committee](/boards/school-building-committee) | reference | — / 6.0 min | *(none declared)* |
 | [School Building Committee Meeting](/boards/school-building-committee-meeting) | reference | — / 7.4 min | *(none declared)* |
 | [School Building Committee Meeting — meetings](/boards/school-building-committee-meeting/meetings) | reference | — / 7.5 min | *(none declared)* |
 | [School Building Committee Meeting — missing records](/boards/school-building-committee-meeting/records) | reference | — / 9.7 min | *(none declared)* |
 | [School Building Committee Meeting — budget schedule](/boards/school-building-committee-meeting/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [School Building Committee Meeting — votes](/boards/school-building-committee-meeting/votes) | reference | — / 35.3 min | *(none declared)* |
+| [School Building Committee Meeting — votes](/boards/school-building-committee-meeting/votes) | reference | — / 35.5 min | *(none declared)* |
 | [School Building Committee — meetings](/boards/school-building-committee/meetings) | reference | — / 6.6 min | *(none declared)* |
 | [School Committee](/boards/school-committee) | reference | — / 9.4 min | *(none declared)* |
 | [School Committee — about](/boards/school-committee/about) | reference | — / 11.2 min | *(none declared)* |
@@ -591,7 +591,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School Committee — budget schedule](/boards/school-committee/schedule) | reference | — / 6.8 min | *(none declared)* |
 | [School Committee — where the time goes](/boards/school-committee/time) | reference | — / 5.9 min | *(none declared)* |
 | [School Committee: line item transfers](/boards/school-committee/transfers) | reference | — / 10.3 min | *(none declared)* |
-| [School Committee — votes](/boards/school-committee/votes) | reference | — / 97.9 min | *(none declared)* |
+| [School Committee — votes](/boards/school-committee/votes) | reference | — / 100.5 min | *(none declared)* |
 | [Select Board](/boards/select-board) | reference | — / 9.7 min | *(none declared)* |
 | [Select Board Public Hearing](/boards/select-board-public-hearing) | reference | — / 6.2 min | *(none declared)* |
 | [Select Board Public Hearing — meetings](/boards/select-board-public-hearing/meetings) | reference | — / 6.5 min | *(none declared)* |
@@ -602,12 +602,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Select Board — budget schedule](/boards/select-board/schedule) | reference | — / 7.8 min | *(none declared)* |
 | [Select Board — where the time goes](/boards/select-board/time) | reference | — / 5.9 min | *(none declared)* |
 | [Select Board: transfers](/boards/select-board/transfers) | reference | — / 10.9 min | *(none declared)* |
-| [Select Board — votes](/boards/select-board/votes) | reference | — / 119.2 min | *(none declared)* |
+| [Select Board — votes](/boards/select-board/votes) | reference | — / 122.8 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee](/boards/senior-citizens-tax-work-off-committee) | reference | — / 7.1 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — meetings](/boards/senior-citizens-tax-work-off-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — missing records](/boards/senior-citizens-tax-work-off-committee/records) | reference | — / 7.7 min | *(none declared)* |
 | [Senior Citizens Tax Work Off Committee — budget schedule](/boards/senior-citizens-tax-work-off-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
-| [Senior Citizens Tax Work Off Committee — votes](/boards/senior-citizens-tax-work-off-committee/votes) | reference | — / 10.4 min | *(none declared)* |
+| [Senior Citizens Tax Work Off Committee — votes](/boards/senior-citizens-tax-work-off-committee/votes) | reference | — / 10.5 min | *(none declared)* |
 | [Sewer Commission](/boards/sewer-commission) | reference | — / 8.2 min | *(none declared)* |
 | [Sewer Commission — about](/boards/sewer-commission/about) | reference | — / 8.0 min | *(none declared)* |
 | [Sewer Commission — finances](/boards/sewer-commission/finance) | reference | — / 12.4 min | *(none declared)* |
@@ -616,14 +616,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Sewer Commission — budget schedule](/boards/sewer-commission/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Sewer Commission — where the time goes](/boards/sewer-commission/time) | reference | — / 5.9 min | *(none declared)* |
 | [Sewer Commission: transfers](/boards/sewer-commission/transfers) | reference | — / 7.3 min | *(none declared)* |
-| [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 48.2 min | *(none declared)* |
+| [Sewer Commission — votes](/boards/sewer-commission/votes) | reference | — / 49.6 min | *(none declared)* |
 | [Stormwater Task Force](/boards/stormwater-task-force) | reference | — / 7.7 min | *(none declared)* |
 | [Stormwater Task Force — about](/boards/stormwater-task-force/about) | reference | — / 6.9 min | *(none declared)* |
 | [Stormwater Task Force — meetings](/boards/stormwater-task-force/meetings) | reference | — / 10.3 min | *(none declared)* |
 | [Stormwater Task Force — missing records](/boards/stormwater-task-force/records) | reference | — / 9.6 min | *(none declared)* |
 | [Stormwater Task Force — budget schedule](/boards/stormwater-task-force/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Stormwater Task Force — where the time goes](/boards/stormwater-task-force/time) | reference | — / 5.9 min | *(none declared)* |
-| [Stormwater Task Force — votes](/boards/stormwater-task-force/votes) | reference | — / 18.3 min | *(none declared)* |
+| [Stormwater Task Force — votes](/boards/stormwater-task-force/votes) | reference | — / 18.5 min | *(none declared)* |
 | [TCP Building Design Committee](/boards/tcp-building-design-committee) | reference | — / 6.6 min | *(none declared)* |
 | [TCP Building Design Committee — meetings](/boards/tcp-building-design-committee/meetings) | reference | — / 7.5 min | *(none declared)* |
 | [TCP Building Design Committee — where the time goes](/boards/tcp-building-design-committee/time) | reference | — / 5.8 min | *(none declared)* |
@@ -650,7 +650,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Trust Fund Commission — missing records](/boards/trust-fund-commission/records) | reference | — / 7.6 min | *(none declared)* |
 | [Trust Fund Commission — budget schedule](/boards/trust-fund-commission/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [Trust Fund Commission — where the time goes](/boards/trust-fund-commission/time) | reference | — / 5.9 min | *(none declared)* |
-| [Trust Fund Commission — votes](/boards/trust-fund-commission/votes) | reference | — / 26.8 min | *(none declared)* |
+| [Trust Fund Commission — votes](/boards/trust-fund-commission/votes) | reference | — / 27.2 min | *(none declared)* |
 | [Zoning Board of Appeals](/boards/zoning-board-of-appeals) | reference | — / 7.8 min | *(none declared)* |
 | [Zoning Board of Appeals — about](/boards/zoning-board-of-appeals/about) | reference | — / 7.2 min | *(none declared)* |
 | [Zoning Board of Appeals — finances](/boards/zoning-board-of-appeals/finance) | reference | — / 11.4 min | *(none declared)* |
