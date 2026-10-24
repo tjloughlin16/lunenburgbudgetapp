@@ -1,488 +1,707 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "select-board",
-  "board": "Select Board",
-  "meeting_date": "2026-06-02",
-  "video_id": "zkmjpWzNB8M",
-  "video_url": "https://www.youtube.com/watch?v=zkmjpWzNB8M",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/select-board/2026-06-02-zkmjpWzNB8M.json",
-    "sha256": "e0a31cb3f9ca843d1dee68a9847ae4d74e44c8160481a7c96060f1f72bed70b6",
-    "caption_lines": 290,
-    "segments": 2551
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-06-02",
+ "video_id": "zkmjpWzNB8M",
+ "video_url": "https://www.youtube.com/watch?v=zkmjpWzNB8M",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-06-02-zkmjpWzNB8M.json",
+  "sha256": "e0a31cb3f9ca843d1dee68a9847ae4d74e44c8160481a7c96060f1f72bed70b6",
+  "caption_lines": 290,
+  "segments": 2551
+ },
+ "recording": {
+  "duration_s": 6915,
+  "duration": "1:55",
+  "spoken_chars": 78995,
+  "words_approx": 13165
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06022026-7835",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-02-agenda-7835.txt",
+   "path": "sources/meetings/select-board/2026-06-02-agenda-7835.pdf"
   },
-  "recording": {
-    "duration_s": 6915,
-    "duration": "1:55",
-    "spoken_chars": 78995,
-    "words_approx": 13165
-  },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06022026-7835",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-02-agenda-7835.txt",
-      "path": "sources/meetings/select-board/2026-06-02-agenda-7835.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06022026-7835",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-02-minutes-7835.txt",
-      "path": "sources/meetings/select-board/2026-06-02-minutes-7835.pdf"
-    }
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06022026-7835",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-02-minutes-7835.txt",
+   "path": "sources/meetings/select-board/2026-06-02-minutes-7835.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-13T21:03:45Z",
+  "cost_usd": 0.39848939999999994
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "the chair",
+    "role": "select board chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Glenn",
+    "role": "select board member (elected clerk this meeting)",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "select board member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Melissa",
+    "role": "assistant town manager / human resources director",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 236,
+    "speaker_as_heard": "John Bowen Jr.",
+    "topic": "Read his Memorial Day speech (delayed due to an email mix-up) and invited the public to a Flag Day flag-retirement ceremony on June 14th."
+   },
+   {
+    "t": 706,
+    "speaker_as_heard": "Karen Menard",
+    "stated_role": "park commissioner",
+    "topic": "Thanked the many volunteers, sponsors and town staff who put on the spring vendor fair."
+   },
+   {
+    "t": 995,
+    "speaker_as_heard": "Tom Alonzo",
+    "topic": "Thanked spring-fair organizers and announced the next night's Lunenburg Water District special meeting on the water treatment plant article."
+   },
+   {
+    "t": 6689,
+    "speaker_as_heard": "Richard Howard",
+    "topic": "Asked the select board and Trust Fund Commission chair to appoint him to a vacant Trust Fund Commission seat so the commission can regain a quorum."
+   }
+  ],
+  "tags": [
+   "budget",
+   "contracts-and-unions",
+   "elections",
+   "facilities",
+   "hiring",
+   "override",
+   "personnel",
+   "policy",
+   "public-comment",
+   "public-safety",
+   "recreation",
+   "seniors",
+   "staffing",
+   "town-departments",
+   "town-meeting",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 1345,
+    "motion": "Appoint Andrew Valeri as the non-union employee representative to the sick leave bank committee, term to expire June 30, 2027.",
+    "outcome": "unanimous approval",
+    "procedural": false
+   },
+   {
+    "t": 1409,
+    "motion": "Ratify the town manager's appointment of Cedric Robinson and Michael Clark Jr. as seasonal cemetery laborers, contingent on vetting by the assistant town manager/HR director.",
+    "outcome": "passes unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1790,
+    "motion": "Approve the special event application for the Shrieks and Creeks Haunted House and Hayride Festival on October 17, 2026.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1832,
+    "motion": "Nominate Glenn Mloud as clerk of the select board.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2388,
+    "motion": "Set the special town election date for Saturday, August 8th.",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3057,
+    "motion": "Appoint Karen Manard and Thomas Bodkin Jr. to the cable advisory committee.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3144,
+    "motion": "Appoint Karen Manard as a member of the ZBA, term to expire June 30, 2031.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3753,
+    "motion": "Appoint Jennifer Duffy and Kim Muzzy (associate member) to the Agricultural Commission, terms expiring 2029.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3850,
+    "motion": "Appoint Steve Walker to PAC, term expiring 2029.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3914,
+    "motion": "Declare two fabric love seats and two fabric chairs with matching pillows from the Adult Activity Center as surplus.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 6219,
+    "motion": "Accept the FY26 annual town manager performance evaluation as read (composite compiled by labor counsel).",
+    "outcome": "passes unanimously",
+    "procedural": false
+   },
+   {
+    "t": 6305,
+    "motion": "Approve seven sets of select board minutes from 2024 (July 17, Aug 13, Aug 20, Sept 3, Sept 17, Sept 24, Oct 15).",
+    "outcome": "passes unanimously",
+    "procedural": true
+   },
+   {
+    "t": 6891,
+    "motion": "Adjourn at 8:56 p.m.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1035,
+    "topic": "Lunenburg Water District treatment plant article",
+    "figures_as_heard": [
+     "$47 million"
+    ],
+    "what_was_said": "A resident announced the Water District's special meeting the next night to vote on a single article to fund a water treatment plant, urging water-district voters to attend."
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2047,
+    "decision": "Brian will serve as select board liaison to Capital Planning and Glenn to the Council on Aging, informally, without a vote."
+   },
+   {
+    "t": 2067,
+    "decision": "The chair will continue as liaison to the middle/high school civics classes."
+   },
+   {
+    "t": 2111,
+    "decision": "The chair will act as interim liaison to the 300th anniversary committee until the board is at full strength."
+   },
+   {
+    "t": 2367,
+    "decision": "The nomination-paper deadlines for the special election will be pushed back about a week from the town clerk's original tentative schedule."
+   },
+   {
+    "t": 3479,
+    "decision": "Board will hold a workshop-style session on June 15th at 7 p.m. to interview applicants for board/committee vacancies."
+   },
+   {
+    "t": 6390,
+    "decision": "Glenn and Brian will each take on seven more sets of draft select board minutes to review, aiming to finish by end of June."
+   },
+   {
+    "t": 6621,
+    "decision": "Board tentatively plans an ad hoc goals-setting workshop sometime in July, to be finalized at a later meeting."
+   },
+   {
+    "t": 6809,
+    "decision": "Town manager/chair will consult town counsel on the process for appointing Richard Howard to the vacant Trust Fund Commission seat since that body currently lacks a quorum."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 22,
+    "t_end": 89,
+    "topic": "Moment of silence for a child's death and opening remarks",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 89,
+    "t_end": 151,
+    "topic": "Pledge of allegiance and broadcast/agenda notices",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 151,
+    "t_end": 213,
+    "topic": "Announcements: library book/bake sale and police/fire memorial service",
+    "resolution": "informational",
+    "tags": [
+     "library",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 213,
+    "t_end": 706,
+    "topic": "Public comment: John Bowen Jr.'s Memorial Day speech and Flag Day invitation",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 706,
+    "t_end": 995,
+    "topic": "Public comment: thanks for the spring vendor fair",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 995,
+    "t_end": 1097,
+    "topic": "Public comment: spring fair thanks and Water District treatment-plant meeting notice",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1097,
+    "t_end": 1261,
+    "topic": "Chair's remarks on social media harassment of board members and the failed override",
+    "resolution": "informational",
+    "tags": [
+     "override",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 1261,
+    "t_end": 1451,
+    "topic": "Clerk resignation and town manager appointments (sick leave bank, cemetery laborers)",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1451,
+    "t_end": 1697,
+    "topic": "Town manager report: food pantry siting, staff training, TC Pacios vandalism, recruitments",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "facilities",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1697,
+    "t_end": 1832,
+    "topic": "Shrieks and Creeks special event application",
+    "resolution": "voted",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 1832,
+    "t_end": 2195,
+    "topic": "Select board reorganization: clerk election and liaison assignments",
+    "resolution": "voted / informal decisions",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 2195,
+    "t_end": 2451,
+    "topic": "Scheduling the special town election to fill two board vacancies",
+    "resolution": "voted",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 2451,
+    "t_end": 3057,
+    "topic": "Annual select board appointments: reviewing applicants across many committees",
+    "resolution": "referred to future interviews",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3057,
+    "t_end": 3169,
+    "topic": "Appointments to cable advisory committee and ZBA",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3169,
+    "t_end": 3620,
+    "topic": "Scheduling an interview workshop for remaining board/committee applicants",
+    "resolution": "decided (no vote)",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3620,
+    "t_end": 3893,
+    "topic": "Reappointments to Agricultural Commission and PAC; discussion of other vacancies",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3893,
+    "t_end": 3956,
+    "topic": "Declaration of surplus furniture at the Adult Activity Center",
+    "resolution": "voted",
+    "tags": [
+     "facilities",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 3956,
+    "t_end": 6262,
+    "topic": "Town manager's FY26 annual performance evaluation, read and accepted",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 6262,
+    "t_end": 6455,
+    "topic": "Approval of 2024 select board minutes and assignment of remaining minutes to review",
+    "resolution": "voted / assigned",
+    "tags": []
+   },
+   {
+    "t_start": 6455,
+    "t_end": 6683,
+    "topic": "Committee reports: Municipal Building Design Committee and Finance Committee",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "policy",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 6683,
+    "t_end": 6851,
+    "topic": "Public comment: Trust Fund Commission vacancy appointment request",
+    "resolution": "no resolution",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 6851,
+    "t_end": 6913,
+    "topic": "Closing board comments, meeting scheduling, and adjournment",
+    "resolution": "voted (adjournment)",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact vote tallies throughout are only heard as scattered 'aye' sounds, not a counted roll call.",
+   "A long stretch of the recording (roughly the 4300s to 5199s in caption time) is silent or blank while board members privately read the town manager's evaluation.",
+   "Audio/microphone problems at the very start of public comment (around 236-306) make a few seconds unclear.",
+   "The exact spelling of the deceased child's name ('Hadtie'/'Haddie') and of the resigned clerk's name ('Caesar Nolo') are uncertain.",
+   "Some names of streets and applicants may be mis-rendered by the captioning (e.g., 'Todd Hullman', 'Elizer Derby Wood')."
+  ],
+  "confidence": "moderate",
+  "headline": "Board set an August 8 special election for two vacant seats and completed the town manager's annual review",
+  "summary": "The select board opened with tributes to a deceased child and to Memorial Day, then handled a long docket of committee appointments, reappointments, and a special-event permit. It set an August 8 special town election to fill two board vacancies, completed and accepted the town manager's FY26 performance evaluation (compiled by labor counsel after the board chair could not do so), and heard a board member's public appeal for unity after the town's failed override vote."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The select board set Saturday, August 8 as the date for a special town election to fill two board vacancies.",
+    "t": 2388
+   },
+   {
+    "line": "The board completed and accepted the town manager's FY26 performance evaluation, compiled by labor counsel after the board chair was unable to do so.",
+    "t": 6219
+   },
+   {
+    "line": "The board made appointments and reappointments across several committees, including the ZBA, Agricultural Commission, and cable advisory committee.",
+    "t": 3057
+   },
+   {
+    "line": "A board member urged public unity following the town's failed override vote.",
+    "t": 1097
+   }
+  ],
+  "why_it_matters": [
+   "The August 8 special election is a vote residents will be asked to take, to fill two seats on the select board.",
+   "The town manager's annual performance evaluation is part of the town's oversight of that office, and this year it was assembled by outside labor counsel rather than the board chair.",
+   "Open seats on bodies like the Trust Fund Commission touch whether that committee can reach a quorum to act on trust fund matters."
+  ],
+  "watch_next": [
+   "August 8 special town election for two select board seats",
+   "June 15 workshop session to interview applicants for board and committee vacancies"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-13T21:03:45Z",
-    "cost_usd": 0.39848939999999994
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "the chair",
-        "role": "select board chair",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Glenn",
-        "role": "select board member (elected clerk this meeting)",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Brian",
-        "role": "select board member",
-        "remote": false
-      },
-      {
-        "name_as_heard": "the town manager",
-        "role": "town manager",
-        "remote": false
-      },
-      {
-        "name_as_heard": "Melissa",
-        "role": "assistant town manager / human resources director",
-        "remote": false
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 236,
-        "speaker_as_heard": "John Bowen Jr.",
-        "topic": "Read his Memorial Day speech (delayed due to an email mix-up) and invited the public to a Flag Day flag-retirement ceremony on June 14th."
-      },
-      {
-        "t": 706,
-        "speaker_as_heard": "Karen Menard",
-        "stated_role": "park commissioner",
-        "topic": "Thanked the many volunteers, sponsors and town staff who put on the spring vendor fair."
-      },
-      {
-        "t": 995,
-        "speaker_as_heard": "Tom Alonzo",
-        "topic": "Thanked spring-fair organizers and announced the next night's Lunenburg Water District special meeting on the water treatment plant article."
-      },
-      {
-        "t": 6689,
-        "speaker_as_heard": "Richard Howard",
-        "topic": "Asked the select board and Trust Fund Commission chair to appoint him to a vacant Trust Fund Commission seat so the commission can regain a quorum."
-      }
-    ],
-    "tags": [
-      "budget",
-      "contracts-and-unions",
-      "elections",
-      "facilities",
-      "hiring",
-      "override",
-      "personnel",
-      "policy",
-      "public-comment",
-      "public-safety",
-      "recreation",
-      "seniors",
-      "staffing",
-      "town-departments",
-      "town-meeting",
-      "water-sewer"
-    ],
-    "votes": [
-      {
-        "t": 1345,
-        "motion": "Appoint Andrew Valeri as the non-union employee representative to the sick leave bank committee, term to expire June 30, 2027.",
-        "outcome": "unanimous approval",
-        "procedural": false
-      },
-      {
-        "t": 1409,
-        "motion": "Ratify the town manager's appointment of Cedric Robinson and Michael Clark Jr. as seasonal cemetery laborers, contingent on vetting by the assistant town manager/HR director.",
-        "outcome": "passes unanimously",
-        "procedural": false
-      },
-      {
-        "t": 1790,
-        "motion": "Approve the special event application for the Shrieks and Creeks Haunted House and Hayride Festival on October 17, 2026.",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 1832,
-        "motion": "Nominate Glenn Mloud as clerk of the select board.",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 2388,
-        "motion": "Set the special town election date for Saturday, August 8th.",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 3057,
-        "motion": "Appoint Karen Manard and Thomas Bodkin Jr. to the cable advisory committee.",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3144,
-        "motion": "Appoint Karen Manard as a member of the ZBA, term to expire June 30, 2031.",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3753,
-        "motion": "Appoint Jennifer Duffy and Kim Muzzy (associate member) to the Agricultural Commission, terms expiring 2029.",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3850,
-        "motion": "Appoint Steve Walker to PAC, term expiring 2029.",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 3914,
-        "motion": "Declare two fabric love seats and two fabric chairs with matching pillows from the Adult Activity Center as surplus.",
-        "outcome": "passed",
-        "procedural": false
-      },
-      {
-        "t": 6219,
-        "motion": "Accept the FY26 annual town manager performance evaluation as read (composite compiled by labor counsel).",
-        "outcome": "passes unanimously",
-        "procedural": false
-      },
-      {
-        "t": 6305,
-        "motion": "Approve seven sets of select board minutes from 2024 (July 17, Aug 13, Aug 20, Sept 3, Sept 17, Sept 24, Oct 15).",
-        "outcome": "passes unanimously",
-        "procedural": true
-      },
-      {
-        "t": 6891,
-        "motion": "Adjourn at 8:56 p.m.",
-        "outcome": "passed",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 1035,
-        "topic": "Lunenburg Water District treatment plant article",
-        "figures_as_heard": [
-          "$47 million"
-        ],
-        "what_was_said": "A resident announced the Water District's special meeting the next night to vote on a single article to fund a water treatment plant, urging water-district voters to attend."
-      }
-    ],
-    "transfers": [],
-    "decisions": [
-      {
-        "t": 2047,
-        "decision": "Brian will serve as select board liaison to Capital Planning and Glenn to the Council on Aging, informally, without a vote."
-      },
-      {
-        "t": 2067,
-        "decision": "The chair will continue as liaison to the middle/high school civics classes."
-      },
-      {
-        "t": 2111,
-        "decision": "The chair will act as interim liaison to the 300th anniversary committee until the board is at full strength."
-      },
-      {
-        "t": 2367,
-        "decision": "The nomination-paper deadlines for the special election will be pushed back about a week from the town clerk's original tentative schedule."
-      },
-      {
-        "t": 3479,
-        "decision": "Board will hold a workshop-style session on June 15th at 7 p.m. to interview applicants for board/committee vacancies."
-      },
-      {
-        "t": 6390,
-        "decision": "Glenn and Brian will each take on seven more sets of draft select board minutes to review, aiming to finish by end of June."
-      },
-      {
-        "t": 6621,
-        "decision": "Board tentatively plans an ad hoc goals-setting workshop sometime in July, to be finalized at a later meeting."
-      },
-      {
-        "t": 6809,
-        "decision": "Town manager/chair will consult town counsel on the process for appointing Richard Howard to the vacant Trust Fund Commission seat since that body currently lacks a quorum."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 22,
-        "t_end": 89,
-        "topic": "Moment of silence for a child's death and opening remarks",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 89,
-        "t_end": 151,
-        "topic": "Pledge of allegiance and broadcast/agenda notices",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 151,
-        "t_end": 213,
-        "topic": "Announcements: library book/bake sale and police/fire memorial service",
-        "resolution": "informational",
-        "tags": [
-          "library",
-          "public-safety"
-        ]
-      },
-      {
-        "t_start": 213,
-        "t_end": 706,
-        "topic": "Public comment: John Bowen Jr.'s Memorial Day speech and Flag Day invitation",
-        "resolution": "informational",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 706,
-        "t_end": 995,
-        "topic": "Public comment: thanks for the spring vendor fair",
-        "resolution": "informational",
-        "tags": [
-          "public-comment",
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 995,
-        "t_end": 1097,
-        "topic": "Public comment: spring fair thanks and Water District treatment-plant meeting notice",
-        "resolution": "informational",
-        "tags": [
-          "public-comment",
-          "water-sewer"
-        ]
-      },
-      {
-        "t_start": 1097,
-        "t_end": 1261,
-        "topic": "Chair's remarks on social media harassment of board members and the failed override",
-        "resolution": "informational",
-        "tags": [
-          "override",
-          "budget"
-        ]
-      },
-      {
-        "t_start": 1261,
-        "t_end": 1451,
-        "topic": "Clerk resignation and town manager appointments (sick leave bank, cemetery laborers)",
-        "resolution": "voted",
-        "tags": [
-          "hiring",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 1451,
-        "t_end": 1697,
-        "topic": "Town manager report: food pantry siting, staff training, TC Pacios vandalism, recruitments",
-        "resolution": "informational",
-        "tags": [
-          "town-departments",
-          "facilities",
-          "public-safety"
-        ]
-      },
-      {
-        "t_start": 1697,
-        "t_end": 1832,
-        "topic": "Shrieks and Creeks special event application",
-        "resolution": "voted",
-        "tags": [
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 1832,
-        "t_end": 2195,
-        "topic": "Select board reorganization: clerk election and liaison assignments",
-        "resolution": "voted / informal decisions",
-        "tags": [
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 2195,
-        "t_end": 2451,
-        "topic": "Scheduling the special town election to fill two board vacancies",
-        "resolution": "voted",
-        "tags": [
-          "elections"
-        ]
-      },
-      {
-        "t_start": 2451,
-        "t_end": 3057,
-        "topic": "Annual select board appointments: reviewing applicants across many committees",
-        "resolution": "referred to future interviews",
-        "tags": [
-          "hiring",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 3057,
-        "t_end": 3169,
-        "topic": "Appointments to cable advisory committee and ZBA",
-        "resolution": "voted",
-        "tags": [
-          "hiring",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 3169,
-        "t_end": 3620,
-        "topic": "Scheduling an interview workshop for remaining board/committee applicants",
-        "resolution": "decided (no vote)",
-        "tags": [
-          "hiring",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 3620,
-        "t_end": 3893,
-        "topic": "Reappointments to Agricultural Commission and PAC; discussion of other vacancies",
-        "resolution": "voted",
-        "tags": [
-          "hiring",
-          "personnel"
-        ]
-      },
-      {
-        "t_start": 3893,
-        "t_end": 3956,
-        "topic": "Declaration of surplus furniture at the Adult Activity Center",
-        "resolution": "voted",
-        "tags": [
-          "facilities",
-          "seniors"
-        ]
-      },
-      {
-        "t_start": 3956,
-        "t_end": 6262,
-        "topic": "Town manager's FY26 annual performance evaluation, read and accepted",
-        "resolution": "voted",
-        "tags": [
-          "personnel",
-          "staffing"
-        ]
-      },
-      {
-        "t_start": 6262,
-        "t_end": 6455,
-        "topic": "Approval of 2024 select board minutes and assignment of remaining minutes to review",
-        "resolution": "voted / assigned",
-        "tags": []
-      },
-      {
-        "t_start": 6455,
-        "t_end": 6683,
-        "topic": "Committee reports: Municipal Building Design Committee and Finance Committee",
-        "resolution": "informational",
-        "tags": [
-          "budget",
-          "policy",
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 6683,
-        "t_end": 6851,
-        "topic": "Public comment: Trust Fund Commission vacancy appointment request",
-        "resolution": "no resolution",
-        "tags": [
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 6851,
-        "t_end": 6913,
-        "topic": "Closing board comments, meeting scheduling, and adjournment",
-        "resolution": "voted (adjournment)",
-        "tags": []
-      }
-    ],
-    "not_audible": [
-      "Exact vote tallies throughout are only heard as scattered 'aye' sounds, not a counted roll call.",
-      "A long stretch of the recording (roughly the 4300s to 5199s in caption time) is silent or blank while board members privately read the town manager's evaluation.",
-      "Audio/microphone problems at the very start of public comment (around 236-306) make a few seconds unclear.",
-      "The exact spelling of the deceased child's name ('Hadtie'/'Haddie') and of the resigned clerk's name ('Caesar Nolo') are uncertain.",
-      "Some names of streets and applicants may be mis-rendered by the captioning (e.g., 'Todd Hullman', 'Elizer Derby Wood')."
-    ],
-    "confidence": "moderate",
-    "headline": "Board set an August 8 special election for two vacant seats and completed the town manager's annual review",
-    "summary": "The select board opened with tributes to a deceased child and to Memorial Day, then handled a long docket of committee appointments, reappointments, and a special-event permit. It set an August 8 special town election to fill two board vacancies, completed and accepted the town manager's FY26 performance evaluation (compiled by labor counsel after the board chair could not do so), and heard a board member's public appeal for unity after the town's failed override vote."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The select board set Saturday, August 8 as the date for a special town election to fill two board vacancies.",
-        "t": 2388
-      },
-      {
-        "line": "The board completed and accepted the town manager's FY26 performance evaluation, compiled by labor counsel after the board chair was unable to do so.",
-        "t": 6219
-      },
-      {
-        "line": "The board made appointments and reappointments across several committees, including the ZBA, Agricultural Commission, and cable advisory committee.",
-        "t": 3057
-      },
-      {
-        "line": "A board member urged public unity following the town's failed override vote.",
-        "t": 1097
-      }
-    ],
-    "why_it_matters": [
-      "The August 8 special election is a vote residents will be asked to take, to fill two seats on the select board.",
-      "The town manager's annual performance evaluation is part of the town's oversight of that office, and this year it was assembled by outside labor counsel rather than the board chair.",
-      "Open seats on bodies like the Trust Fund Commission touch whether that committee can reach a quorum to act on trust fund matters."
-    ],
-    "watch_next": [
-      "August 8 special town election for two select board seats",
-      "June 15 workshop session to interview applicants for board and committee vacancies"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-13T21:04:03Z",
-      "cost_usd": 0.14009639999999998
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-13T21:04:03Z",
+   "cost_usd": 0.14009639999999998
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06022026-7835",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-02-minutes-7835.txt",
+   "path": "sources/meetings/select-board/2026-06-02-minutes-7835.pdf"
+  },
+  "official_sha256": "07903e0d3a60786daa9cd6d7431e6ae7cdec52e5da4a4c6d12211bb55da0a367",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all 11 votes, each passing unanimously, and on the $47 million water treatment plant figure. The differences are misheard names, one wording difference on who takes the extra minutes, and a few items only one record has.",
+  "counts": {
+   "agree": 11,
+   "caption_error": 5,
+   "discrepancy": 1,
+   "only_in_ours": 3,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Sick leave bank appointee name",
+    "ours": "Appoint Andrew Valeri as the non-union employee representative to the sick leave bank committee, term to expire June 30, 2027. — unanimous approval",
+    "official": "motion by vice-chair brian lehtinen to appoint andrew valliere as representative of non-union employees to the sick leave bank committee",
+    "official_reading": "Andrew Valliere",
+    "note": "Same appointment and term; the captions misspelled the surname.",
+    "t": 1345
+   },
+   {
+    "kind": "agree",
+    "about": "Seasonal cemetery laborers ratification",
+    "ours": "Ratify the town manager's appointment of Cedric Robinson and Michael Clark Jr. as seasonal cemetery laborers, contingent on vetting by the assistant town manager/HR director. — passes unanimously",
+    "official": "motion by vice-chair brian lehtinen to ratify the town manager's appointment of cedric robinson as seasonal cemetery laborer and michael clark jr.",
+    "note": "Same appointees, same contingency, unanimous (3-0-0).",
+    "t": 1409
+   },
+   {
+    "kind": "agree",
+    "about": "Shrieks and Creeks special event vote",
+    "ours": "Approve the special event application for the Shrieks and Creeks Haunted House and Hayride Festival on October 17, 2026. — passed",
+    "official": "motion by vice-chair lehtinen to approve the special event application for shrieks and creeks haunted house and hayride festival to be held on saturday, october 17, 2026.",
+    "note": "Same event, date and outcome.",
+    "t": 1790
+   },
+   {
+    "kind": "caption_error",
+    "about": "Clerk nomination, Glenn's surname",
+    "ours": "Nominate Glenn Mloud as clerk of the select board. — passed",
+    "official": "motion by vice-chair lehtinen to nominate select board member glenn mcleod as clerk of the select board.",
+    "official_reading": "Glenn McLeod",
+    "note": "Same nomination and outcome; the captions misheard the surname.",
+    "t": 1832
+   },
+   {
+    "kind": "agree",
+    "about": "Special town election date",
+    "ours": "Set the special town election date for Saturday, August 8th. — passed unanimously",
+    "official": "motion by vice-chair lehtinen to set the special town election date for saturday, august 8, 2026.",
+    "note": "Same date and outcome.",
+    "t": 2388
+   },
+   {
+    "kind": "caption_error",
+    "about": "Cable Advisory Committee appointees",
+    "ours": "Appoint Karen Manard and Thomas Bodkin Jr. to the cable advisory committee. — passed",
+    "official": "motion to appoint karin menard and thomas bodkin jr. to the cable advisory committee was made by vice-chair lehtinen and seconded by clerk mcleod.",
+    "official_reading": "Karin Menard",
+    "note": "Same vote; the captions misspelled Karin Menard.",
+    "t": 3057
+   },
+   {
+    "kind": "caption_error",
+    "about": "ZBA appointment",
+    "ours": "Appoint Karen Manard as a member of the ZBA, term to expire June 30, 2031. — passed",
+    "official": "motion by vice-chair lehtinen to appoint karin menard as full member of the zoning board of appeals, term to expire june 30, 2031.",
+    "official_reading": "Karin Menard",
+    "note": "Same appointment and term; the captions misspelled the name.",
+    "t": 3144
+   },
+   {
+    "kind": "caption_error",
+    "about": "Agricultural Commission appointees",
+    "ours": "Appoint Jennifer Duffy and Kim Muzzy (associate member) to the Agricultural Commission, terms expiring 2029. — passed",
+    "official": "motion by vice-chair lehtinen to appoint jennifer duffy and kim muzzi (as associate member) to the agricultural commission, terms expiring 2029.",
+    "official_reading": "Kim Muzzi",
+    "note": "Same vote and terms; only the spelling of Muzzi differs.",
+    "t": 3753
+   },
+   {
+    "kind": "agree",
+    "about": "PAC appointment of Steve Walker",
+    "ours": "Appoint Steve Walker to PAC, term expiring 2029. — passed",
+    "official": "motion by vice-chair lehtinen to appoint steve walker to the public access corporation (pac), term expiring 2029.",
+    "note": "Same appointee, term and outcome.",
+    "t": 3850
+   },
+   {
+    "kind": "agree",
+    "about": "Surplus furniture from the Adult Activity Center",
+    "ours": "Declare two fabric love seats and two fabric chairs with matching pillows from the Adult Activity Center as surplus. — passed",
+    "official": "motion by vice-chair lehtinen to declare two fabric loveseats and two fabric chairs with matching pillows from the adult activity center as surplus.",
+    "note": "Same items and outcome.",
+    "t": 3914
+   },
+   {
+    "kind": "agree",
+    "about": "FY26 town manager evaluation accepted",
+    "ours": "Accept the FY26 annual town manager performance evaluation as read (composite compiled by labor counsel). — passes unanimously",
+    "official": "motion by vice-chair lehtinen to accept the fy26 annual town manager performance evaluation as read.",
+    "note": "Same vote and outcome; the labor counsel detail is only in ours.",
+    "t": 6219
+   },
+   {
+    "kind": "agree",
+    "about": "Water treatment plant article figure",
+    "ours": "Lunenburg Water District treatment plant article: $47 million",
+    "official": "to vote on a single article: the proposed $47,000,000 water treatment plant.",
+    "note": "Same amount in different notation.",
+    "t": 1035
+   },
+   {
+    "kind": "agree",
+    "about": "Interim liaison assignments without a vote",
+    "ours": "Brian will serve as select board liaison to Capital Planning and Glenn to the Council on Aging, informally, without a vote.",
+    "official": "the following interim assignments were made pending the filling of the two board vacancies",
+    "note": "Both records show interim assignments made with no vote; the official minutes do not give the individual assignments in the quoted text.",
+    "t": 2047
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Nomination-paper deadlines pushed back",
+    "ours": "The nomination-paper deadlines for the special election will be pushed back about a week from the town clerk's original tentative schedule.",
+    "official": "",
+    "note": "The official minutes record the election date but nothing about shifted nomination deadlines.",
+    "t": 2367
+   },
+   {
+    "kind": "agree",
+    "about": "June 15 workshop interviews",
+    "ours": "Board will hold a workshop-style session on June 15th at 7 p.m. to interview applicants for board/committee vacancies.",
+    "official": "a workshop-style interview meeting was tentatively scheduled for monday, june 15th at 7:00 pm, pending availability of applicants and a confirmed location.",
+    "note": "Same date and time; the official minutes add that it is tentative.",
+    "t": 3479
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Who takes on seven more sets of minutes",
+    "ours": "Glenn and Brian will each take on seven more sets of draft select board minutes to review, aiming to finish by end of June.",
+    "official": "agreed that each of the three members would take responsibility for reviewing and approving seven additional sets to clear the backlog by end of june.",
+    "note": "Ours names two members and the official minutes say all three; check the recording at about 6390s to see whether the chair also took seven sets.",
+    "t": 6390
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "July goals-setting workshop",
+    "ours": "Board tentatively plans an ad hoc goals-setting workshop sometime in July, to be finalized at a later meeting.",
+    "official": "",
+    "note": "The official minutes mention no July goals workshop.",
+    "t": 6621
+   },
+   {
+    "kind": "agree",
+    "about": "Trust Fund Commission appointment process",
+    "ours": "Town manager/chair will consult town counsel on the process for appointing Richard Howard to the vacant Trust Fund Commission seat since that body currently lacks a quorum.",
+    "official": "chair emkey agreed to consult with town counsel on the appropriate process and follow up.",
+    "note": "Both record consulting town counsel; the official minutes credit the chair, ours says town manager/chair.",
+    "t": 6809
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Cable and ZBA acted on immediately",
+    "ours": "",
+    "official": "the board agreed to act immediately on the cable advisory committee and zoning board of appeals, where applicants equal available vacancies.",
+    "note": "Context for the two appointments; ours has the votes but not this stated reason."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Pending reappointments deferred",
+    "ours": "",
+    "official": "the board noted the following pending reappointment applications to be acted upon at a subsequent meeting",
+    "note": "The official minutes list four deferred reappointments (Lockwood, Gillis, Christopher, Bursch); ours has none."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Board signing the evaluation",
+    "ours": "",
+    "official": "chair emkey noted that board members would sign the evaluation document for inclusion in the town manager's personnel file.",
+    "note": "Follow-up on the evaluation vote that ours does not record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant town manager / HR director attending",
+    "ours": "Melissa (assistant town manager / human resources director)",
+    "official": "",
+    "note": "The official attendance lists only the town manager as staff. The cemetery vote references vetting by the assistant town manager/HR director, so check whether she attended."
+   },
+   {
+    "kind": "agree",
+    "about": "Board members and town manager present",
+    "ours": "the chair (select board chair); Glenn (select board member); Brian (select board member); the town manager (town manager)",
+    "official": "members present: chair renee emkey, vice-chair brian lehtinen, and clerk glenn mcleod",
+    "note": "The same three board members and the town manager attended."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenters and applicant representatives",
+    "ours": "",
+    "official": "andrew woods, robin baldwin, and molly belliveau of the club: lunenburg teen center located at 15 memorial drive appeared before the board",
+    "note": "The official minutes name public commenters (Bowen, Menard, Alonzo, Howard) and Club representatives; ours lists none."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-24T11:12:41Z",
+   "cost_usd": 0.2807218
+  }
+ }
 }

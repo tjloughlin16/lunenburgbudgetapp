@@ -1,544 +1,844 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "select-board",
-  "board": "Select Board",
-  "meeting_date": "2026-09-01",
-  "video_id": "kG4KE9VgCdY",
-  "video_url": "https://www.youtube.com/watch?v=kG4KE9VgCdY",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/select-board/2026-09-01-kG4KE9VgCdY.json",
-    "sha256": "25615dc7ba04b525ac4c67cb04fd4199c6a030387438776ac85cc3e4d8640904",
-    "caption_lines": 296,
-    "segments": 2124
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-09-01",
+ "video_id": "kG4KE9VgCdY",
+ "video_url": "https://www.youtube.com/watch?v=kG4KE9VgCdY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-09-01-kG4KE9VgCdY.json",
+  "sha256": "25615dc7ba04b525ac4c67cb04fd4199c6a030387438776ac85cc3e4d8640904",
+  "caption_lines": 296,
+  "segments": 2124
+ },
+ "recording": {
+  "duration_s": 6338,
+  "duration": "1:45",
+  "spoken_chars": 83839,
+  "words_approx": 13973
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09012026-7984",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-09-01-agenda-7984.txt",
+   "path": "sources/meetings/select-board/2026-09-01-agenda-7984.pdf"
   },
-  "recording": {
-    "duration_s": 6338,
-    "duration": "1:45",
-    "spoken_chars": 83839,
-    "words_approx": 13973
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09012026-7984",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-09-01-minutes-7984.txt",
+   "path": "sources/meetings/select-board/2026-09-01-minutes-7984.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-11T21:05:19Z",
+  "cost_usd": 0.38185600000000003,
+  "retagged": {
+   "at": "2026-09-12T11:54:34Z",
+   "cost_usd": 0.1375136
   },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09012026-7984",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-09-01-agenda-7984.txt",
-      "path": "sources/meetings/select-board/2026-09-01-agenda-7984.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09012026-7984",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-09-01-minutes-7984.txt",
-      "path": "sources/meetings/select-board/2026-09-01-minutes-7984.pdf"
-    }
+  "backfilled": [
+   {
+    "field": "headline",
+    "at": "2026-09-12T12:21:13Z",
+    "cost_usd": 0.13895700000000002
+   }
+  ]
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Renee",
+    "role": "Chair, Select Board"
+   },
+   {
+    "name_as_heard": "Tom (Alonzo)",
+    "role": "Select Board member"
+   },
+   {
+    "name_as_heard": "Damon",
+    "role": "Select Board member"
+   },
+   {
+    "name_as_heard": "Glenn",
+    "role": "Select Board member"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "Select Board member"
+   },
+   {
+    "name_as_heard": "Jen",
+    "role": "Town Manager"
+   },
+   {
+    "name_as_heard": "Brian Fernandez",
+    "role": "new Principal Assessor"
+   },
+   {
+    "name_as_heard": "Matt Nazarenko",
+    "role": "petitioner, Article 3",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Peter Beard Moore",
+    "role": "Vice Chairman, Finance Committee"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 121,
+    "speaker_as_heard": "Tim Murphy",
+    "stated_role": "resident, 97 Island Road",
+    "topic": "did not receive the EDDM postcard notice for the special town meeting and heard from neighbors who also did not receive one"
+   },
+   {
+    "t": 441,
+    "speaker_as_heard": "Nicole Waters",
+    "stated_role": "representing the Eagle House supporters",
+    "topic": "requested permission for the Eagle House supporters' annual toll booth fundraiser in town center on Saturday, October 24th"
+   },
+   {
+    "t": 6147,
+    "speaker_as_heard": "Anna Lockwood",
+    "topic": "clarified her earlier finance committee comment about the $5,000 figure, saying the real issue is that the schools are operating with far less than the level-service budget required and that new state aid should go to the schools"
+   }
+  ],
+  "tags": [
+   "athletics",
+   "budget",
+   "budget-fy26",
+   "budget-fy27",
+   "contracts-and-unions",
+   "elections",
+   "facilities",
+   "fees",
+   "free-cash",
+   "health-insurance",
+   "high-school",
+   "hiring",
+   "housing",
+   "legal",
+   "middle-school",
+   "personnel",
+   "policy",
+   "public-safety",
+   "recreation",
+   "roads-and-dpw",
+   "school-choice",
+   "seniors",
+   "staffing",
+   "state-aid",
+   "town-meeting",
+   "transfers",
+   "transportation",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 567,
+    "motion": "approve the Eagle House supporters' request for a toll booth in town center on Saturday, October 24th, 9 to 1",
+    "moved_by": "a board member (as heard)",
+    "outcome": "passed 4-0-1 (one abstention)",
+    "procedural": false
+   },
+   {
+    "t": 3479,
+    "motion": "select board recommend approval of Article One at $397,189 (the net education-aid figure rather than the school committee's requested $418,0056)",
+    "moved_by": "Tom (Alonzo), as heard",
+    "outcome": "passed, unanimous",
+    "procedural": false
+   },
+   {
+    "t": 5096,
+    "motion": "accept the letter to the Speaker and Senate President (as amended) supporting the Question 1 legislative audit, and send it to the Speaker, Senate President, and the local legislative delegation",
+    "outcome": "passed, unanimous",
+    "procedural": false
+   },
+   {
+    "t": 5806,
+    "motion": "establish a special revenue fund seeded with $36,000 of RAP (Winter Recovery Assistance Program) money, to serve as the funding source for Article 3 (middle school sports restoration)",
+    "outcome": "passed, unanimous",
+    "procedural": false
+   },
+   {
+    "t": 5911,
+    "motion": "approve multiple sets of minutes (October 24 2025 through May 5 2026, as listed)",
+    "outcome": "passed 3-0-2 (two members abstained)",
+    "procedural": true
+   },
+   {
+    "t": 6312,
+    "motion": "adjourn at 8:47 p.m.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 761,
+    "topic": "Article 3 - middle school sports restoration",
+    "what_was_said": "The petitioner's original ask was reduced after high school athletic transportation was separately funded through the revolving account and additional state aid; board members pressed on how the figure dropped so much and whether it was net of athletic fee revenue.",
+    "figures_as_heard": [
+     "151,000",
+     "$60,000",
+     "5541",
+     "5,541",
+     "$5000",
+     "$15,000",
+     "$35,541",
+     "30,308",
+     "$150,000",
+     "$30,000",
+     "$120,000"
+    ]
+   },
+   {
+    "t": 1574,
+    "topic": "Athletic transportation line (FY27 budget)",
+    "what_was_said": "The FY27 budget's athletic transportation line was cut; the board reviewed how the school department funded high school transportation back from the revolving account and additional state aid freed up by a reading grant.",
+    "figures_as_heard": [
+     "$127,000",
+     "60,000",
+     "50,000",
+     "$10,000",
+     "109,000",
+     "104"
+    ]
+   },
+   {
+    "t": 1850,
+    "topic": "Athletic fees (middle/high school)",
+    "what_was_said": "Members discussed current and expected athletic fee levels and whether middle school sports could be largely self-funding through fees.",
+    "figures_as_heard": [
+     "$400",
+     "275",
+     "$75",
+     "350",
+     "$9000"
+    ]
+   },
+   {
+    "t": 2130,
+    "topic": "Article 1 - additional state aid to school FY27 operating budget",
+    "what_was_said": "The school committee requested the full receipts-side increase, but a board member argued the appropriation should be the net education-aid figure after backing out school-choice/charter tuition pass-through and assessment increases not related to education aid.",
+    "figures_as_heard": [
+     "$418,0056",
+     "$15,326",
+     "$20,867",
+     "$397,189",
+     "$5,5061",
+     "5,541"
+    ]
+   },
+   {
+    "t": 3178,
+    "topic": "FY26 snow and ice deficit / Winter Recovery Assistance Program (RAP)",
+    "what_was_said": "The town's FY26 snow and ice deficit was outlined along with the free cash already appropriated toward it in May and the RAP allocation received from the state, which DLS recommended using to fully cure the deficit before deciding what to do with the remainder.",
+    "figures_as_heard": [
+     "691,000",
+     "$520,000",
+     "171,000",
+     "$228,154.34",
+     "171,000",
+     "$57,154.34"
+    ]
+   },
+   {
+    "t": 3414,
+    "topic": "RAP remainder / Article 3 funding split",
+    "what_was_said": "The board discussed splitting the remaining RAP balance between free cash and a new special revenue fund, ultimately settling on an amount to seed the fund as the funding source for Article 3.",
+    "figures_as_heard": [
+     "30,38",
+     "27,000",
+     "35,849",
+     "$36,000"
+    ]
+   },
+   {
+    "t": 3670,
+    "topic": "FY26 school department year-end (preliminary)",
+    "what_was_said": "The Town Manager reported a preliminary projection of unexpended FY26 school appropriations against the full omnibus budget, noting the figures will move as close-out continues, and flagged funding that had been shifted from the operating budget to a grant.",
+    "figures_as_heard": [
+     "$4700",
+     "$600,000",
+     "1.63 million",
+     "287,000"
+    ]
+   },
+   {
+    "t": 3850,
+    "topic": "Municipal aggregation electricity rate",
+    "what_was_said": "The town selected a 24-month supply rate through First Point Power for the Community Choice Power aggregation program rather than locking in longer, citing market volatility, at a rate lower than Unitil's current rate.",
+    "figures_as_heard": [
+     "$16.8 per kilowatt hour",
+     "$18.92"
+    ]
+   },
+   {
+    "t": 5989,
+    "topic": "Water commitment, first quarterly billing FY27",
+    "what_was_said": "The board was asked to sign the first quarterly water billing commitment for FY27.",
+    "figures_as_heard": [
+     "$19,892"
+    ]
+   },
+   {
+    "t": 6190,
+    "topic": "School level-service budget shortfall (public comment)",
+    "what_was_said": "A resident stated the schools are operating well below what a level-service budget required and that a recent net increase in state aid from the Governor's budget should be directed entirely to the school department.",
+    "figures_as_heard": [
+     "$800,000",
+     "470,000"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 3241,
+    "description": "RAP (Winter Recovery Assistance Program) money applied to cure the remaining FY26 snow and ice deficit",
+    "amount_as_heard": "171,000",
+    "outcome": "discussed only / administrative, informing the RAP fund vote"
+   },
+   {
+    "t": 3806,
+    "description": "Remaining RAP balance split between a new special revenue fund (to fund Article 3) and FY26 free cash",
+    "amount_as_heard": "$36,000 to special revenue fund; remainder to free cash",
+    "outcome": "voted"
+   },
+   {
+    "t": 2784,
+    "description": "Contingent transfer of $5,541 from the Article One school aid appropriation to help fund Article 3, if both articles pass",
+    "amount_as_heard": "5541",
+    "outcome": "discussed only, contingent on town meeting votes Thursday"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 268,
+    "decision": "Staff will gather addresses from residents who did not receive special town meeting postcards and raise it with the post office as a possible EDDM delivery issue"
+   },
+   {
+    "t": 2931,
+    "decision": "The school committee indicated it would vote to spend Article 3 money consistent with the article's intent (restoring middle school sports) if the article passes, since the article language itself is not legally binding on how the school committee spends a supplemental appropriation"
+   },
+   {
+    "t": 4097,
+    "decision": "The personnel committee will hold an off-cycle meeting to review the job description for the vacant data collector position before it can be posted"
+   },
+   {
+    "t": 4482,
+    "decision": "Scheduled the next select board 'chat' session for Wednesday, September 30th, 6 to 7 p.m., likely at the library"
+   },
+   {
+    "t": 4256,
+    "decision": "Agreed to add the town's position on AI data centers to a future select board agenda"
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 11,
+    "t_end": 99,
+    "topic": "Call to order, Pledge of Allegiance, announcements (special town meeting Thursday, polls open)",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 99,
+    "t_end": 289,
+    "topic": "Public comment: special town meeting postcard/notice not received by some residents",
+    "resolution": "no vote; staff to follow up with post office",
+    "tags": [
+     "public-comment",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 289,
+    "t_end": 419,
+    "topic": "Board comment on a school committee remark about not 'squabbling' over $5,000",
+    "resolution": "informational",
+    "tags": [
+     "budget"
+    ]
+   },
+   {
+    "t_start": 419,
+    "t_end": 589,
+    "topic": "Eagle House supporters toll booth fundraiser application",
+    "resolution": "voted, passed 4-0-1",
+    "tags": []
+   },
+   {
+    "t_start": 589,
+    "t_end": 715,
+    "topic": "Introduction of new Principal Assessor Brian Fernandez",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 715,
+    "t_end": 2123,
+    "topic": "Special town meeting Article 3: restoring cut middle school and select high school sports and their funding source",
+    "resolution": "discussed only; no vote taken, deferred to the WRAP discussion / town meeting floor",
+    "tags": [
+     "athletics",
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 2123,
+    "t_end": 3629,
+    "topic": "Special town meeting Article 1: appropriating additional state aid to the FY27 school operating budget (gross vs. net figure)",
+    "resolution": "voted; board recommended $397,189 (net), passed unanimously",
+    "tags": [
+     "state-aid",
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 3656,
+    "t_end": 4180,
+    "topic": "Town Manager's report: FY26 preliminary closeout/review proposal, municipal aggregation, training, personnel committee, Touch a Truck, employee appreciation, recruitment and a resignation",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy26",
+     "personnel",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4180,
+    "t_end": 4525,
+    "topic": "Select board 'chat' session recap and scheduling of the next session",
+    "resolution": "scheduled: Wednesday, September 30th, 6-7 p.m.",
+    "tags": []
+   },
+   {
+    "t_start": 4525,
+    "t_end": 5142,
+    "topic": "Letter to state legislative leaders supporting the Question 1 audit of the legislature",
+    "resolution": "voted, amended and passed unanimously",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5142,
+    "t_end": 5827,
+    "topic": "Winter Recovery Assistance Program (RAP) funds: curing the FY26 snow and ice deficit and funding Article 3 via a new special revenue fund",
+    "resolution": "voted; special revenue fund of $36,000 created, passed unanimously",
+    "tags": [
+     "budget-fy26",
+     "transfers",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 5827,
+    "t_end": 5890,
+    "topic": "Municipal buildings / TC Passos senior housing discussion",
+    "resolution": "informational",
+    "tags": [
+     "facilities",
+     "housing",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 5890,
+    "t_end": 5995,
+    "topic": "Approval of prior meeting minutes and signing of a water commitment",
+    "resolution": "voted; minutes passed 3-0-2; water commitment signed",
+    "tags": [
+     "town-meeting",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 6020,
+    "t_end": 6125,
+    "topic": "Committee reports: finance committee and stormwater task force update",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 6125,
+    "t_end": 6312,
+    "topic": "Public comment: clarification on school funding shortfall and the $5,000 remark",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 6312,
+    "t_end": 6320,
+    "topic": "Adjournment",
+    "resolution": "voted, passed",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The exact figure for the school committee's Article 1 request is rendered inconsistently as '$418,0056' and '$418,056' in the captions.",
+   "The Town Manager's preliminary FY26 unexpended-funds range is captioned as 'between $4700 and $600,000', which appears to be a mis-transcription of a dollar range (likely $400,000-$600,000).",
+   "A figure referenced as '$5,5061' appears to be a caption error for $5,541.",
+   "Some cross-talk during the Article 3 discussion between board members and Matt Nazarenko produced garbled or overlapping numbers around the $30,000-$36,000 range.",
+   "Speaker identity between 'Mr. Alonzo' and 'Mr. McLeod' during the override/state-aid discussion around t=3248-3268 is not clearly distinguishable in the captions.",
+   "Individual votes (aye/nay) by named member on the toll booth motion are not clearly attributable beyond the overall 4-0-1 count."
+  ],
+  "confidence": "moderate",
+  "summary": "The Lunenburg Select Board approved a permit for the Eagle House supporters' fall fundraiser, welcomed a new Principal Assessor, and spent most of the meeting preparing for Thursday's special town meeting: it recommended a lower, \"net\" figure than the school committee requested for the article supplementing the FY27 school budget with additional state aid, and worked through how to fund a separate citizen petition article restoring cut middle school and some high school sports. The board voted to create a special revenue fund from one-time Winter Recovery Assistance Program money to serve as that sports article's funding source after using most of the RAP funds to close the FY26 snow and ice deficit. It also voted to send an amended letter to state legislative leaders supporting the voter-approved audit of the Massachusetts legislature.",
+  "headline": "Select Board recommends a lower education-aid figure than the school committee for Thursday's special town meeting article."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to recommend a lower, net education-aid figure than the school committee requested for Thursday's special town meeting article.",
+    "t": 3479
+   },
+   {
+    "line": "The board voted to create a special revenue fund from Winter Recovery Assistance Program money to fund a citizen petition restoring cut middle school and some high school sports.",
+    "t": 5806
+   },
+   {
+    "line": "The board voted, unanimously and as amended, to send a letter to state legislative leaders supporting the voter-approved audit of the Massachusetts legislature.",
+    "t": 5096
+   },
+   {
+    "line": "The board approved a permit for the Eagle House supporters' fall fundraiser toll booth in town center.",
+    "t": 567
+   }
+  ],
+  "why_it_matters": [
+   "Thursday's special town meeting will ask voters to act on both the school aid article and the sports-restoration article the board discussed tonight, and the board's recommended aid figure differs from what the school committee asked for.",
+   "The sports article's funding source is one-time snow-and-ice relief money rather than a new line in the operating budget, which shapes what happens after this year if the article passes.",
+   "A resident's public comment tied a recent increase in state aid to whether the school budget should be treated as level-service, a question the board's article recommendation touches directly."
+  ],
+  "watch_next": [
+   "Thursday's special town meeting vote on Article 1 (school aid appropriation) and Article 3 (sports restoration)"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-11T21:05:19Z",
-    "cost_usd": 0.38185600000000003,
-    "retagged": {
-      "at": "2026-09-12T11:54:34Z",
-      "cost_usd": 0.1375136
-    },
-    "backfilled": [
-      {
-        "field": "headline",
-        "at": "2026-09-12T12:21:13Z",
-        "cost_usd": 0.13895700000000002
-      }
-    ]
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "Renee",
-        "role": "Chair, Select Board"
-      },
-      {
-        "name_as_heard": "Tom (Alonzo)",
-        "role": "Select Board member"
-      },
-      {
-        "name_as_heard": "Damon",
-        "role": "Select Board member"
-      },
-      {
-        "name_as_heard": "Glenn",
-        "role": "Select Board member"
-      },
-      {
-        "name_as_heard": "Brian",
-        "role": "Select Board member"
-      },
-      {
-        "name_as_heard": "Jen",
-        "role": "Town Manager"
-      },
-      {
-        "name_as_heard": "Brian Fernandez",
-        "role": "new Principal Assessor"
-      },
-      {
-        "name_as_heard": "Matt Nazarenko",
-        "role": "petitioner, Article 3",
-        "remote": true
-      },
-      {
-        "name_as_heard": "Peter Beard Moore",
-        "role": "Vice Chairman, Finance Committee"
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 121,
-        "speaker_as_heard": "Tim Murphy",
-        "stated_role": "resident, 97 Island Road",
-        "topic": "did not receive the EDDM postcard notice for the special town meeting and heard from neighbors who also did not receive one"
-      },
-      {
-        "t": 441,
-        "speaker_as_heard": "Nicole Waters",
-        "stated_role": "representing the Eagle House supporters",
-        "topic": "requested permission for the Eagle House supporters' annual toll booth fundraiser in town center on Saturday, October 24th"
-      },
-      {
-        "t": 6147,
-        "speaker_as_heard": "Anna Lockwood",
-        "topic": "clarified her earlier finance committee comment about the $5,000 figure, saying the real issue is that the schools are operating with far less than the level-service budget required and that new state aid should go to the schools"
-      }
-    ],
-    "tags": [
-      "athletics",
-      "budget",
-      "budget-fy26",
-      "budget-fy27",
-      "contracts-and-unions",
-      "elections",
-      "facilities",
-      "fees",
-      "free-cash",
-      "health-insurance",
-      "high-school",
-      "hiring",
-      "housing",
-      "legal",
-      "middle-school",
-      "personnel",
-      "policy",
-      "public-safety",
-      "recreation",
-      "roads-and-dpw",
-      "school-choice",
-      "seniors",
-      "staffing",
-      "state-aid",
-      "town-meeting",
-      "transfers",
-      "transportation",
-      "warrant-article",
-      "water-sewer"
-    ],
-    "votes": [
-      {
-        "t": 567,
-        "motion": "approve the Eagle House supporters' request for a toll booth in town center on Saturday, October 24th, 9 to 1",
-        "moved_by": "a board member (as heard)",
-        "outcome": "passed 4-0-1 (one abstention)",
-        "procedural": false
-      },
-      {
-        "t": 3479,
-        "motion": "select board recommend approval of Article One at $397,189 (the net education-aid figure rather than the school committee's requested $418,0056)",
-        "moved_by": "Tom (Alonzo), as heard",
-        "outcome": "passed, unanimous",
-        "procedural": false
-      },
-      {
-        "t": 5096,
-        "motion": "accept the letter to the Speaker and Senate President (as amended) supporting the Question 1 legislative audit, and send it to the Speaker, Senate President, and the local legislative delegation",
-        "outcome": "passed, unanimous",
-        "procedural": false
-      },
-      {
-        "t": 5806,
-        "motion": "establish a special revenue fund seeded with $36,000 of RAP (Winter Recovery Assistance Program) money, to serve as the funding source for Article 3 (middle school sports restoration)",
-        "outcome": "passed, unanimous",
-        "procedural": false
-      },
-      {
-        "t": 5911,
-        "motion": "approve multiple sets of minutes (October 24 2025 through May 5 2026, as listed)",
-        "outcome": "passed 3-0-2 (two members abstained)",
-        "procedural": true
-      },
-      {
-        "t": 6312,
-        "motion": "adjourn at 8:47 p.m.",
-        "outcome": "passed",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 761,
-        "topic": "Article 3 - middle school sports restoration",
-        "what_was_said": "The petitioner's original ask was reduced after high school athletic transportation was separately funded through the revolving account and additional state aid; board members pressed on how the figure dropped so much and whether it was net of athletic fee revenue.",
-        "figures_as_heard": [
-          "151,000",
-          "$60,000",
-          "5541",
-          "5,541",
-          "$5000",
-          "$15,000",
-          "$35,541",
-          "30,308",
-          "$150,000",
-          "$30,000",
-          "$120,000"
-        ]
-      },
-      {
-        "t": 1574,
-        "topic": "Athletic transportation line (FY27 budget)",
-        "what_was_said": "The FY27 budget's athletic transportation line was cut; the board reviewed how the school department funded high school transportation back from the revolving account and additional state aid freed up by a reading grant.",
-        "figures_as_heard": [
-          "$127,000",
-          "60,000",
-          "50,000",
-          "$10,000",
-          "109,000",
-          "104"
-        ]
-      },
-      {
-        "t": 1850,
-        "topic": "Athletic fees (middle/high school)",
-        "what_was_said": "Members discussed current and expected athletic fee levels and whether middle school sports could be largely self-funding through fees.",
-        "figures_as_heard": [
-          "$400",
-          "275",
-          "$75",
-          "350",
-          "$9000"
-        ]
-      },
-      {
-        "t": 2130,
-        "topic": "Article 1 - additional state aid to school FY27 operating budget",
-        "what_was_said": "The school committee requested the full receipts-side increase, but a board member argued the appropriation should be the net education-aid figure after backing out school-choice/charter tuition pass-through and assessment increases not related to education aid.",
-        "figures_as_heard": [
-          "$418,0056",
-          "$15,326",
-          "$20,867",
-          "$397,189",
-          "$5,5061",
-          "5,541"
-        ]
-      },
-      {
-        "t": 3178,
-        "topic": "FY26 snow and ice deficit / Winter Recovery Assistance Program (RAP)",
-        "what_was_said": "The town's FY26 snow and ice deficit was outlined along with the free cash already appropriated toward it in May and the RAP allocation received from the state, which DLS recommended using to fully cure the deficit before deciding what to do with the remainder.",
-        "figures_as_heard": [
-          "691,000",
-          "$520,000",
-          "171,000",
-          "$228,154.34",
-          "171,000",
-          "$57,154.34"
-        ]
-      },
-      {
-        "t": 3414,
-        "topic": "RAP remainder / Article 3 funding split",
-        "what_was_said": "The board discussed splitting the remaining RAP balance between free cash and a new special revenue fund, ultimately settling on an amount to seed the fund as the funding source for Article 3.",
-        "figures_as_heard": [
-          "30,38",
-          "27,000",
-          "35,849",
-          "$36,000"
-        ]
-      },
-      {
-        "t": 3670,
-        "topic": "FY26 school department year-end (preliminary)",
-        "what_was_said": "The Town Manager reported a preliminary projection of unexpended FY26 school appropriations against the full omnibus budget, noting the figures will move as close-out continues, and flagged funding that had been shifted from the operating budget to a grant.",
-        "figures_as_heard": [
-          "$4700",
-          "$600,000",
-          "1.63 million",
-          "287,000"
-        ]
-      },
-      {
-        "t": 3850,
-        "topic": "Municipal aggregation electricity rate",
-        "what_was_said": "The town selected a 24-month supply rate through First Point Power for the Community Choice Power aggregation program rather than locking in longer, citing market volatility, at a rate lower than Unitil's current rate.",
-        "figures_as_heard": [
-          "$16.8 per kilowatt hour",
-          "$18.92"
-        ]
-      },
-      {
-        "t": 5989,
-        "topic": "Water commitment, first quarterly billing FY27",
-        "what_was_said": "The board was asked to sign the first quarterly water billing commitment for FY27.",
-        "figures_as_heard": [
-          "$19,892"
-        ]
-      },
-      {
-        "t": 6190,
-        "topic": "School level-service budget shortfall (public comment)",
-        "what_was_said": "A resident stated the schools are operating well below what a level-service budget required and that a recent net increase in state aid from the Governor's budget should be directed entirely to the school department.",
-        "figures_as_heard": [
-          "$800,000",
-          "470,000"
-        ]
-      }
-    ],
-    "transfers": [
-      {
-        "t": 3241,
-        "description": "RAP (Winter Recovery Assistance Program) money applied to cure the remaining FY26 snow and ice deficit",
-        "amount_as_heard": "171,000",
-        "outcome": "discussed only / administrative, informing the RAP fund vote"
-      },
-      {
-        "t": 3806,
-        "description": "Remaining RAP balance split between a new special revenue fund (to fund Article 3) and FY26 free cash",
-        "amount_as_heard": "$36,000 to special revenue fund; remainder to free cash",
-        "outcome": "voted"
-      },
-      {
-        "t": 2784,
-        "description": "Contingent transfer of $5,541 from the Article One school aid appropriation to help fund Article 3, if both articles pass",
-        "amount_as_heard": "5541",
-        "outcome": "discussed only, contingent on town meeting votes Thursday"
-      }
-    ],
-    "decisions": [
-      {
-        "t": 268,
-        "decision": "Staff will gather addresses from residents who did not receive special town meeting postcards and raise it with the post office as a possible EDDM delivery issue"
-      },
-      {
-        "t": 2931,
-        "decision": "The school committee indicated it would vote to spend Article 3 money consistent with the article's intent (restoring middle school sports) if the article passes, since the article language itself is not legally binding on how the school committee spends a supplemental appropriation"
-      },
-      {
-        "t": 4097,
-        "decision": "The personnel committee will hold an off-cycle meeting to review the job description for the vacant data collector position before it can be posted"
-      },
-      {
-        "t": 4482,
-        "decision": "Scheduled the next select board 'chat' session for Wednesday, September 30th, 6 to 7 p.m., likely at the library"
-      },
-      {
-        "t": 4256,
-        "decision": "Agreed to add the town's position on AI data centers to a future select board agenda"
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 11,
-        "t_end": 99,
-        "topic": "Call to order, Pledge of Allegiance, announcements (special town meeting Thursday, polls open)",
-        "resolution": "informational",
-        "tags": [
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 99,
-        "t_end": 289,
-        "topic": "Public comment: special town meeting postcard/notice not received by some residents",
-        "resolution": "no vote; staff to follow up with post office",
-        "tags": [
-          "public-comment",
-          "town-meeting"
-        ]
-      },
-      {
-        "t_start": 289,
-        "t_end": 419,
-        "topic": "Board comment on a school committee remark about not 'squabbling' over $5,000",
-        "resolution": "informational",
-        "tags": [
-          "budget"
-        ]
-      },
-      {
-        "t_start": 419,
-        "t_end": 589,
-        "topic": "Eagle House supporters toll booth fundraiser application",
-        "resolution": "voted, passed 4-0-1",
-        "tags": []
-      },
-      {
-        "t_start": 589,
-        "t_end": 715,
-        "topic": "Introduction of new Principal Assessor Brian Fernandez",
-        "resolution": "informational",
-        "tags": [
-          "personnel",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 715,
-        "t_end": 2123,
-        "topic": "Special town meeting Article 3: restoring cut middle school and select high school sports and their funding source",
-        "resolution": "discussed only; no vote taken, deferred to the WRAP discussion / town meeting floor",
-        "tags": [
-          "athletics",
-          "town-meeting",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 2123,
-        "t_end": 3629,
-        "topic": "Special town meeting Article 1: appropriating additional state aid to the FY27 school operating budget (gross vs. net figure)",
-        "resolution": "voted; board recommended $397,189 (net), passed unanimously",
-        "tags": [
-          "state-aid",
-          "town-meeting",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 3656,
-        "t_end": 4180,
-        "topic": "Town Manager's report: FY26 preliminary closeout/review proposal, municipal aggregation, training, personnel committee, Touch a Truck, employee appreciation, recruitment and a resignation",
-        "resolution": "informational",
-        "tags": [
-          "budget-fy26",
-          "personnel",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 4180,
-        "t_end": 4525,
-        "topic": "Select board 'chat' session recap and scheduling of the next session",
-        "resolution": "scheduled: Wednesday, September 30th, 6-7 p.m.",
-        "tags": []
-      },
-      {
-        "t_start": 4525,
-        "t_end": 5142,
-        "topic": "Letter to state legislative leaders supporting the Question 1 audit of the legislature",
-        "resolution": "voted, amended and passed unanimously",
-        "tags": [
-          "policy"
-        ]
-      },
-      {
-        "t_start": 5142,
-        "t_end": 5827,
-        "topic": "Winter Recovery Assistance Program (RAP) funds: curing the FY26 snow and ice deficit and funding Article 3 via a new special revenue fund",
-        "resolution": "voted; special revenue fund of $36,000 created, passed unanimously",
-        "tags": [
-          "budget-fy26",
-          "transfers",
-          "warrant-article"
-        ]
-      },
-      {
-        "t_start": 5827,
-        "t_end": 5890,
-        "topic": "Municipal buildings / TC Passos senior housing discussion",
-        "resolution": "informational",
-        "tags": [
-          "facilities",
-          "housing",
-          "seniors"
-        ]
-      },
-      {
-        "t_start": 5890,
-        "t_end": 5995,
-        "topic": "Approval of prior meeting minutes and signing of a water commitment",
-        "resolution": "voted; minutes passed 3-0-2; water commitment signed",
-        "tags": [
-          "town-meeting",
-          "water-sewer"
-        ]
-      },
-      {
-        "t_start": 6020,
-        "t_end": 6125,
-        "topic": "Committee reports: finance committee and stormwater task force update",
-        "resolution": "informational",
-        "tags": [
-          "roads-and-dpw",
-          "town-departments"
-        ]
-      },
-      {
-        "t_start": 6125,
-        "t_end": 6312,
-        "topic": "Public comment: clarification on school funding shortfall and the $5,000 remark",
-        "resolution": "informational",
-        "tags": [
-          "budget",
-          "public-comment"
-        ]
-      },
-      {
-        "t_start": 6312,
-        "t_end": 6320,
-        "topic": "Adjournment",
-        "resolution": "voted, passed",
-        "tags": []
-      }
-    ],
-    "not_audible": [
-      "The exact figure for the school committee's Article 1 request is rendered inconsistently as '$418,0056' and '$418,056' in the captions.",
-      "The Town Manager's preliminary FY26 unexpended-funds range is captioned as 'between $4700 and $600,000', which appears to be a mis-transcription of a dollar range (likely $400,000-$600,000).",
-      "A figure referenced as '$5,5061' appears to be a caption error for $5,541.",
-      "Some cross-talk during the Article 3 discussion between board members and Matt Nazarenko produced garbled or overlapping numbers around the $30,000-$36,000 range.",
-      "Speaker identity between 'Mr. Alonzo' and 'Mr. McLeod' during the override/state-aid discussion around t=3248-3268 is not clearly distinguishable in the captions.",
-      "Individual votes (aye/nay) by named member on the toll booth motion are not clearly attributable beyond the overall 4-0-1 count."
-    ],
-    "confidence": "moderate",
-    "summary": "The Lunenburg Select Board approved a permit for the Eagle House supporters' fall fundraiser, welcomed a new Principal Assessor, and spent most of the meeting preparing for Thursday's special town meeting: it recommended a lower, \"net\" figure than the school committee requested for the article supplementing the FY27 school budget with additional state aid, and worked through how to fund a separate citizen petition article restoring cut middle school and some high school sports. The board voted to create a special revenue fund from one-time Winter Recovery Assistance Program money to serve as that sports article's funding source after using most of the RAP funds to close the FY26 snow and ice deficit. It also voted to send an amended letter to state legislative leaders supporting the voter-approved audit of the Massachusetts legislature.",
-    "headline": "Select Board recommends a lower education-aid figure than the school committee for Thursday's special town meeting article."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The Select Board voted to recommend a lower, net education-aid figure than the school committee requested for Thursday's special town meeting article.",
-        "t": 3479
-      },
-      {
-        "line": "The board voted to create a special revenue fund from Winter Recovery Assistance Program money to fund a citizen petition restoring cut middle school and some high school sports.",
-        "t": 5806
-      },
-      {
-        "line": "The board voted, unanimously and as amended, to send a letter to state legislative leaders supporting the voter-approved audit of the Massachusetts legislature.",
-        "t": 5096
-      },
-      {
-        "line": "The board approved a permit for the Eagle House supporters' fall fundraiser toll booth in town center.",
-        "t": 567
-      }
-    ],
-    "why_it_matters": [
-      "Thursday's special town meeting will ask voters to act on both the school aid article and the sports-restoration article the board discussed tonight, and the board's recommended aid figure differs from what the school committee asked for.",
-      "The sports article's funding source is one-time snow-and-ice relief money rather than a new line in the operating budget, which shapes what happens after this year if the article passes.",
-      "A resident's public comment tied a recent increase in state aid to whether the school budget should be treated as level-service, a question the board's article recommendation touches directly."
-    ],
-    "watch_next": [
-      "Thursday's special town meeting vote on Article 1 (school aid appropriation) and Article 3 (sports restoration)"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-12T14:15:49Z",
-      "cost_usd": 0.1395144
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-12T14:15:49Z",
+   "cost_usd": 0.1395144
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09012026-7984",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-09-01-minutes-7984.txt",
+   "path": "sources/meetings/select-board/2026-09-01-minutes-7984.pdf"
+  },
+  "official_sha256": "03e47f7d11da616a9f834e77e8a325b4a4ae876fc87723d63b33930e1ee2d372",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the three main votes (Article 1 at $397,189, the audit letter, the $36,000 special revenue fund) and on nearly all the dollar figures, and most differences are caption misreadings. The one a reader should check is the Eagle House toll booth vote (4-0-1 in ours), which has no vote in the official minutes. Ours also records a free-cash split as voted, and that is not in the official minutes either.",
+  "counts": {
+   "agree": 17,
+   "caption_error": 7,
+   "discrepancy": 2,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Eagle House supporters' toll booth vote",
+    "t": 567,
+    "ours": "approve the Eagle House supporters' request for a toll booth in town center on Saturday, October 24th, 9 to 1 — passed 4-0-1 (one abstention)",
+    "official": "nicole waters, 80 horizon island road, appeared before the board as a representative of the eagle house supporters, inc.",
+    "note": "The official minutes list the Eagle House representative as appearing but record no vote on the toll booth; check the recording at this point and the clerk's full minutes for the motion and the 4-0-1 count."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 1 recommendation at $397,189",
+    "t": 3479,
+    "ours": "select board recommend approval of Article One at $397,189 — passed, unanimous",
+    "official": "member alonzo moved that the board recommend approval of article 1 at the amended amount of $397,189.",
+    "note": "Same motion and amount; official records 5-0-0, consistent with unanimous."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article 1 as-printed amount",
+    "t": 2130,
+    "ours": "$418,0056",
+    "official": "chair emkey turned the board's attention to article 1, which sought an appropriation of $418,056 in additional state aid",
+    "official_reading": "$418,056",
+    "note": "Misplaced digit grouping of the same figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Letter on the Massachusetts audit (Question 1)",
+    "t": 5096,
+    "ours": "accept the letter to the Speaker and Senate President (as amended) supporting the Question 1 legislative audit, and send it to the Speaker, Senate President, and the local legislative delegation — passed, unanimous",
+    "official": "member alonzo moved to approve the letter to house speaker mariano and senate president spilka regarding the massachusetts audit, as amended",
+    "note": "Same vote; official 5-0-0."
+   },
+   {
+    "kind": "agree",
+    "about": "Special revenue fund seeded with $36,000 for Article 3",
+    "t": 5806,
+    "ours": "establish a special revenue fund seeded with $36,000 of RAP (Winter Recovery Assistance Program) money, to serve as the funding source for Article 3 — passed, unanimous",
+    "official": "member alonzo moved to establish a special revenue fund, to be seeded with $36,000 from the wrap funds.",
+    "note": "Same vote and amount; ours says RAP, the official minutes say WRAP, for the same program."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Remainder of RAP balance to free cash",
+    "t": 3806,
+    "ours": "$36,000 to special revenue fund; remainder to free cash (voted)",
+    "official": "leaving a remaining balance of approximately $57,154.34",
+    "note": "Ours records the remainder going to free cash as a voted action; the official minutes show only the $36,000 fund vote. Check the recording to see whether a separate free-cash vote was taken."
+   },
+   {
+    "kind": "agree",
+    "about": "RAP money applied to FY26 snow and ice deficit",
+    "t": 3241,
+    "ours": "RAP money applied to cure the remaining FY26 snow and ice deficit — 171,000",
+    "official": "chair emkey explained that the town's fy26 snow and ice deficit was estimated at approximately $691,000",
+    "note": "Both give a $691,000 deficit, $520,000 of free cash already appropriated, and about $171,000 remaining."
+   },
+   {
+    "kind": "agree",
+    "about": "$5,541 contingent transfer from Article 1 to Article 3",
+    "t": 2784,
+    "ours": "Contingent transfer of $5,541 from the Article One school aid appropriation to help fund Article 3, if both articles pass",
+    "official": "a credit of $5,541 - an excess amount from article 1 that the school committee was expected to vote to redirect to article 3",
+    "note": "Same amount and the same description of it as a School Committee action, not a Board vote."
+   },
+   {
+    "kind": "caption_error",
+    "about": "$5,541 figure in Article 1 list",
+    "t": 2130,
+    "ours": "$5,5061",
+    "official": "a credit of $5,541 - an excess amount from article 1 that the school committee was expected to vote to redirect to article 3",
+    "official_reading": "$5,541",
+    "note": "Garbled digits for the same $5,541 figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Cherry sheet offsets $15,326 and $20,867",
+    "t": 2130,
+    "ours": "$15,326, $20,867",
+    "official": "those two items together totaled approximately $20,867, which he argued should not be included in the school's appropriation request",
+    "note": "Same figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Article 3 petition and total figures",
+    "t": 761,
+    "ours": "151,000, $60,000, 30,308",
+    "official": "the original petition had been filed at $151,000",
+    "note": "The $151,000, $60,000 and $30,308 figures appear in both."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article 3 total",
+    "t": 3414,
+    "ours": "30,38",
+    "official": "the resulting total for article 3 was $30,308.",
+    "official_reading": "$30,308",
+    "note": "Dropped digit in the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Special revenue fund calculation $35,849 rounded to $36,000",
+    "t": 3414,
+    "ours": "35,849, $36,000",
+    "official": "the amount going into the special revenue fund should be approximately $35,849 (i.e., $30,308 plus $5,541)",
+    "note": "Same figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletic transportation line figures",
+    "t": 1574,
+    "ours": "$127,000, 60,000, 50,000, $10,000, 109,000, 104",
+    "official": "",
+    "note": "The official minutes give only the roughly $60,000 high school sports transportation figure, not the rest of this discussion."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Athletic fee amounts $400 and $75",
+    "t": 1850,
+    "ours": "$400, 275, $75, 350, $9000",
+    "official": "",
+    "note": "The official minutes give the $275 to $350 range and $9,000 but not the $400 or $75 figures."
+   },
+   {
+    "kind": "agree",
+    "about": "Middle school athletic fees and track revenue",
+    "t": 1850,
+    "ours": "275, 350, $9000",
+    "official": "athletic fees at the middle school level, approximately $275 to $350 per student, would make many of these programs substantially or even entirely self-funding",
+    "note": "Same fee range and $9,000."
+   },
+   {
+    "kind": "agree",
+    "about": "WRAP money received and remaining balance",
+    "t": 3178,
+    "ours": "$228,154.34, $57,154.34",
+    "official": "the town received $228,154.34 in wrap funds.",
+    "note": "Same figures."
+   },
+   {
+    "kind": "caption_error",
+    "about": "School unexpended appropriations",
+    "t": 3670,
+    "ours": "$4700",
+    "official": "approximately $470,000 to $600,000 in unexpended fy26",
+    "official_reading": "$470,000",
+    "note": "Misheard $470,000 as $4700."
+   },
+   {
+    "kind": "agree",
+    "about": "Total unexpended funds and grant item",
+    "t": 3670,
+    "ours": "1.63 million, 287,000",
+    "official": "indexed against approximately $1,630,000 in total unexpended funds across the entire omnibus budget",
+    "note": "Same figures; $287,000 is the amount moved to a grant."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Electricity aggregation rate units",
+    "t": 3850,
+    "ours": "$16.8 per kilowatt hour, $18.92",
+    "official": "at a rate of 16.8 cents per kilowatt hour, compared to unitil's current rate of 18.92 cents per kilowatt hour",
+    "official_reading": "16.8 cents per kilowatt hour",
+    "note": "Ours gives dollars where the official minutes say cents; the rates match."
+   },
+   {
+    "kind": "agree",
+    "about": "First water commitment of FY27",
+    "t": 5989,
+    "ours": "Water commitment, first quarterly billing FY27: $19,892",
+    "official": "the board signed the first water commitment of fy27: the first quarterly billing from the water department in the amount of $19,892.",
+    "note": "Same amount."
+   },
+   {
+    "kind": "agree",
+    "about": "Public comment on $800,000 level-service shortfall",
+    "t": 6190,
+    "ours": "$800,000, 470,000",
+    "official": "the schools are currently operating with approximately $800,000 less than their level-service budget would require",
+    "note": "Same $800,000 figure."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Postcard delivery follow-up",
+    "t": 268,
+    "ours": "Staff will gather addresses from residents who did not receive special town meeting postcards and raise it with the post office as a possible EDDM delivery issue",
+    "official": "",
+    "note": "The official minutes record Tim Murphy's comment on the postcards but no follow-up decision."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "School Committee intent on Article 3 spending",
+    "t": 2931,
+    "ours": "The school committee indicated it would vote to spend Article 3 money consistent with the article's intent",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Personnel committee off-cycle meeting on data collector",
+    "t": 4097,
+    "ours": "The personnel committee will hold an off-cycle meeting to review the job description for the vacant data collector position before it can be posted",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Next Select Board chat on September 30",
+    "t": 4482,
+    "ours": "Scheduled the next select board 'chat' session for Wednesday, September 30th, 6 to 7 p.m., likely at the library",
+    "official": "given members' varying scheduling constraints, the board agreed to hold the next session on wednesday, september 30th from 6:00 to 7:00 pm.",
+    "note": "Same date and time; official says staff are to identify a venue, ours says likely the library."
+   },
+   {
+    "kind": "agree",
+    "about": "AI data center on a future agenda",
+    "t": 4256,
+    "ours": "Agreed to add the town's position on AI data centers to a future select board agenda",
+    "official": "chair emkey noted that the ai data center topic would merit a future agenda discussion with the full board.",
+    "note": "Same decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Deferral of Article 3 recommendation",
+    "ours": "",
+    "official": "chair emkey indicated that the board would defer its formal recommendation on article 3 until the wrap discussion later in the meeting",
+    "note": "Ours has no deferral decision."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Municipal buildings item stays on the agenda",
+    "ours": "",
+    "official": "chair emkey noted that this item would remain on the agenda on an ongoing basis.",
+    "note": "Not in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Principal Assessor name",
+    "ours": "Brian Fernandez (new Principal Assessor)",
+    "official": "town manager jennifer warren-dyment had the pleasure of introducing brian fernandes, the newly hired principal assessor",
+    "official_reading": "Brian Fernandes",
+    "note": "Spelling of the surname."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Finance Committee vice chairman name",
+    "ours": "Peter Beard Moore (Vice Chairman, Finance Committee)",
+    "official": "peter beardmore, vice chairman of the finance committee, addressed the board from the floor.",
+    "official_reading": "Peter Beardmore",
+    "note": "Misheard surname."
+   },
+   {
+    "kind": "agree",
+    "about": "Select Board members and Town Manager present",
+    "ours": "Renee (Chair), Tom (Alonzo), Damon, Glenn, Brian, Jen (Town Manager)",
+    "official": "members present: chair renee emkey, vice-chair brian lehtinen, clerk glenn mcleod, member damon mcquaid, and member tom alonzo",
+    "note": "All five members present; ours has first names only. Jen is Jennifer Warren-Dyment."
+   },
+   {
+    "kind": "agree",
+    "about": "Matthew Nazarenko, Article 3 petitioner",
+    "ours": "Matt Nazarenko (petitioner, Article 3)",
+    "official": "matthew nazarenko appeared remotely to present an update on the citizen's petition article he had filed to restore cut sports programs.",
+    "note": "Same person."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees: Tim Murphy, Nicole Waters, Ana Lockwood",
+    "ours": "",
+    "official": "ana lockwood, 91 main street, addressed the board.",
+    "note": "Ours omits these three speakers (Tim Murphy and Nicole Waters are also named in the official minutes). Ana Lockwood's $800,000 comment is in ours without her name."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-24T11:10:33Z",
+   "cost_usd": 0.3003858
+  }
+ }
 }

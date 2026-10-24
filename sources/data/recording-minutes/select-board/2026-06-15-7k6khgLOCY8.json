@@ -1,371 +1,536 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "select-board",
-  "board": "Select Board",
-  "meeting_date": "2026-06-15",
-  "video_id": "7k6khgLOCY8",
-  "video_url": "https://www.youtube.com/watch?v=7k6khgLOCY8",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/select-board/2026-06-15-7k6khgLOCY8.json",
-    "sha256": "36ab4a147c7eb7196dbba7b94af9c579d844e5d2756b97d7dac524a95ec7874a",
-    "caption_lines": 207,
-    "segments": 2047
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "meeting_date": "2026-06-15",
+ "video_id": "7k6khgLOCY8",
+ "video_url": "https://www.youtube.com/watch?v=7k6khgLOCY8",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2026-06-15-7k6khgLOCY8.json",
+  "sha256": "36ab4a147c7eb7196dbba7b94af9c579d844e5d2756b97d7dac524a95ec7874a",
+  "caption_lines": 207,
+  "segments": 2047
+ },
+ "recording": {
+  "duration_s": 4343,
+  "duration": "1:12",
+  "spoken_chars": 54890,
+  "words_approx": 9148
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06152026-7859",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-15-agenda-7859.txt",
+   "path": "sources/meetings/select-board/2026-06-15-agenda-7859.pdf"
   },
-  "recording": {
-    "duration_s": 4343,
-    "duration": "1:12",
-    "spoken_chars": 54890,
-    "words_approx": 9148
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06152026-7859",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-15-minutes-7859.txt",
+   "path": "sources/meetings/select-board/2026-06-15-minutes-7859.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-09-11T21:53:02Z",
+  "cost_usd": 0.315125,
+  "retagged": {
+   "at": "2026-09-12T11:52:18Z",
+   "cost_usd": 0.13221460000000002
   },
-  "town_published": [
-    {
-      "kind": "agenda",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06152026-7859",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-15-agenda-7859.txt",
-      "path": "sources/meetings/select-board/2026-06-15-agenda-7859.pdf"
-    },
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06152026-7859",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-15-minutes-7859.txt",
-      "path": "sources/meetings/select-board/2026-06-15-minutes-7859.pdf"
-    }
+  "backfilled": [
+   {
+    "field": "headline",
+    "at": "2026-09-12T12:19:50Z",
+    "cost_usd": 0.13694820000000002
+   }
+  ]
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Renee",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Glenn",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Brian",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jen",
+    "role": "town manager"
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2601,
+    "topic": "Green Communities program funding",
+    "what_was_said": "The town manager/staff explained that Green Communities is a state program that funds certain efficiency projects for cities and towns, such as mini-splits and building weatherization, provided the project meets ROI/efficiency standards. It was noted the program previously funded HVAC/mini-split work at the primary school.",
+    "figures_as_heard": []
+   }
+  ],
+  "confidence": "moderate",
+  "decisions": [
+   {
+    "t": 2290,
+    "decision": "Richard Taylor decided to withdraw his interest in the other committees he had listed and focus solely on the Americans with Disabilities Committee."
+   },
+   {
+    "t": 2682,
+    "decision": "The board agreed not to appoint Vincent (\"Vinnie\") to Green Communities tonight; he will submit an application/form and be connected with the committee chair (David Blatt) before a future appointment."
+   },
+   {
+    "t": 3372,
+    "decision": "The board agreed to keep Dave Passios as the full Green Communities member and expects an additional full-member vacancy when Dave Blatt leaves the community in the fall."
+   },
+   {
+    "t": 4292,
+    "decision": "The board noted the Americans with Disabilities Committee likely cannot meet again until it has a member-at-large and a select board representative assigned, which may not happen until August."
+   }
+  ],
+  "not_audible": [
+   "Audio dropped repeatedly during the roll call after the APDC motion around 752 seconds; the vote count was pieced together from partial captions.",
+   "Richie Taylor's audio cut out and was garbled/muffled multiple times (around 895, 927, 2084, 2104 seconds), making parts of his remarks hard to follow.",
+   "Audio was lost briefly during Elena Christopher's background remarks around 1120-1165 seconds.",
+   "Exact wording of the Council on Aging Elena Christopher/Christopher Johnson vote result (\"we have two\") is unclear/ambiguous in the captions beyond the individual roll-call ayes."
+  ],
+  "public_comment": [
+   {
+    "t": 154,
+    "topic": "Interest in reappointment to the Architectural Preservation District Committee (APDC)",
+    "stated_role": "current APDC member seeking reappointment"
+   },
+   {
+    "t": 195,
+    "topic": "Interest in joining the APDC despite checking multiple committee boxes; said APDC is her passion",
+    "stated_role": "applicant for APDC, football/track boosters and PTO volunteer"
+   },
+   {
+    "t": 445,
+    "topic": "Background as a structural engineer/architectural designer, MIT graduate, offered to help APDC",
+    "stated_role": "applicant for APDC"
+   },
+   {
+    "t": 814,
+    "topic": "Interest in the Americans with Disabilities Committee and background as a Lunenburg native who did social work with kids with autism",
+    "stated_role": "applicant for several committees"
+   },
+   {
+    "t": 1013,
+    "topic": "Interest in Council on Aging/APDC/Americans with Disabilities Committee; retired state employee working part-time in memory care",
+    "stated_role": "applicant, 28-year resident"
+   },
+   {
+    "t": 1288,
+    "topic": "Interest in reappointment to Council on Aging and description of ongoing subcommittee work",
+    "stated_role": "current Council on Aging member seeking reappointment"
+   },
+   {
+    "speaker_as_heard": "Chris Johnson",
+    "t": 1288,
+    "topic": "Interest in Council on Aging, background as a retired computer professional and participant in Adult Activity Center programs"
+   },
+   {
+    "speaker_as_heard": "David Bartlett",
+    "t": 1415,
+    "topic": "Interest in Council on Aging and Personnel Committee; background running a Council on Aging in Lancaster"
+   },
+   {
+    "t": 1489,
+    "topic": "Interest in Council on Aging and Personnel Committee; former paid Council on Aging coordinator for the town",
+    "stated_role": "24-year resident"
+   },
+   {
+    "t": 2371,
+    "topic": "Interest in Conservation Committee, later redirected toward Green Communities given HVAC background",
+    "stated_role": "applicant, 6-year resident"
+   },
+   {
+    "t": 2932,
+    "topic": "Interest in the Cultural Council; background as a forensic scientist and multicultural sorority alumna",
+    "stated_role": "applicant, about a year in town"
+   },
+   {
+    "speaker_as_heard": "Tanya Willett Doll",
+    "t": 3549,
+    "topic": "Interest in the Personnel Committee, currently on the Finance Committee, background in HR/talent management at Harvard's Bloomberg Center for Cities"
+   }
+  ],
+  "summary": "This Select Board meeting was devoted entirely to annual appointments and reappointments to town boards, committees and commissions, with the board interviewing each applicant briefly before voting. By the end of the meeting the board had filled seats on the APDC, Council on Aging, Americans with Disabilities Committee, Conservation Committee, Cultural Council, Green Communities and a newly reconstituted five-member Personnel Committee, leaving remaining vacancies only on Conservation, Cultural Council, Historical Commission and PAC.",
+  "tags": [
+   "facilities",
+   "grants",
+   "personnel",
+   "policy",
+   "primary-school",
+   "public-comment",
+   "town-departments"
+  ],
+  "topics": [
+   {
+    "topic": "Call to order and Pledge of Allegiance",
+    "t_start": 5,
+    "t_end": 27,
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "topic": "Overview of the appointments process for the evening",
+    "t_start": 49,
+    "t_end": 133,
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "topic": "Architectural Preservation District Committee (APDC) appointments",
+    "t_start": 133,
+    "t_end": 772,
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "topic": "Council on Aging appointments",
+    "t_start": 950,
+    "t_end": 2044,
+    "resolution": "voted",
+    "tags": [
+     "seniors"
+    ]
+   },
+   {
+    "topic": "Americans with Disabilities Committee appointment/ratification",
+    "t_start": 2064,
+    "t_end": 2269,
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "topic": "Conservation Committee reappointment and remaining vacancy",
+    "t_start": 2330,
+    "t_end": 2886,
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "topic": "Cultural Council appointment",
+    "t_start": 2886,
+    "t_end": 3139,
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "topic": "Green Communities Committee appointment and discussion of upcoming vacancy",
+    "t_start": 3139,
+    "t_end": 3434,
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "topic": "Historical Commission vacancies",
+    "t_start": 3434,
+    "t_end": 3476,
+    "resolution": "no resolution",
+    "tags": []
+   },
+   {
+    "topic": "PAC vacancy",
+    "t_start": 3476,
+    "t_end": 3523,
+    "resolution": "no resolution",
+    "tags": []
+   },
+   {
+    "topic": "Personnel Committee re-establishment and appointments",
+    "t_start": 3523,
+    "t_end": 4209,
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "topic": "Recap of remaining committee vacancies",
+    "t_start": 4209,
+    "t_end": 4314,
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "topic": "Adjournment",
+    "t_start": 4314,
+    "t_end": 4335,
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "transfers": [],
+  "votes": [
+   {
+    "t": 694,
+    "motion": "Appoint Andrew Gillis and Molly Wagner to the APDC",
+    "outcome": "passed 3-0",
+    "procedural": false
+   },
+   {
+    "t": 1893,
+    "motion": "Reappoint Elena Christopher and appoint Christopher Johnson to the Council on Aging (terms to expire June 30, 2029)",
+    "outcome": "passed 3-0",
+    "procedural": false
+   },
+   {
+    "t": 2021,
+    "motion": "Appoint Pauline Roy to the Council on Aging for a term to expire June 30, 2029",
+    "outcome": "passed 3-0",
+    "procedural": false
+   },
+   {
+    "t": 2247,
+    "motion": "Ratify the town manager's appointment of Richard Taylor and Heather Gleason to the Americans with Disabilities Committee",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 2824,
+    "motion": "Reappoint Richard Bursch to the Conservation Committee for a three-year term",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3097,
+    "motion": "Appoint Carla Velasquez to the Cultural Council for a term of 3 years",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 3392,
+    "motion": "Appoint Dave Passios as a full member of Green Communities, term to expire June 30, 2029",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4168,
+    "motion": "Appoint David Bartlett (1-year), Pauline Roy (2-year), and Tanya Doll (3-year) to the newly reconstituted Personnel Committee",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 4314,
+    "motion": "Adjourn the meeting at 8:15 p.m.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "headline": "The Select Board reconstituted the Personnel Committee as a five-member body and filled its seats along with most other town board vacancies."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board reconstituted the Personnel Committee as a five-member body and appointed three members to it.",
+    "t": 4168
+   },
+   {
+    "line": "The board also filled seats on the APDC, Council on Aging, Americans with Disabilities Committee, Conservation Committee, Cultural Council and Green Communities.",
+    "t": 694
+   },
+   {
+    "line": "The Americans with Disabilities Committee is not expected to meet again until it has a member-at-large and a Select Board representative assigned, possibly not until August.",
+    "t": 4292
+   },
+   {
+    "line": "Vacancies remain on the Conservation Committee, Cultural Council, Historical Commission and PAC.",
+    "t": 4209
+   }
+  ],
+  "why_it_matters": [
+   "Residents interested in serving on a town board now know which seats are filled and which -- Conservation, Cultural Council, Historical Commission, PAC -- are still open.",
+   "The Personnel Committee's reconstitution affects how the town handles personnel policy matters going forward.",
+   "A delay in staffing the Americans with Disabilities Committee could postpone its work on accessibility issues into the fall."
+  ],
+  "watch_next": [
+   "Assignment of a member-at-large and a Select Board representative to the Americans with Disabilities Committee, expected around August 2026",
+   "Applications for the remaining Conservation Committee, Cultural Council, Historical Commission and PAC vacancies"
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-09-11T21:53:02Z",
-    "cost_usd": 0.315125,
-    "retagged": {
-      "at": "2026-09-12T11:52:18Z",
-      "cost_usd": 0.13221460000000002
-    },
-    "backfilled": [
-      {
-        "field": "headline",
-        "at": "2026-09-12T12:19:50Z",
-        "cost_usd": 0.13694820000000002
-      }
-    ]
-  },
-  "minutes": {
-    "attendees": [
-      {
-        "name_as_heard": "Renee",
-        "role": "chair"
-      },
-      {
-        "name_as_heard": "Glenn",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Brian",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Jen",
-        "role": "town manager"
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 2601,
-        "topic": "Green Communities program funding",
-        "what_was_said": "The town manager/staff explained that Green Communities is a state program that funds certain efficiency projects for cities and towns, such as mini-splits and building weatherization, provided the project meets ROI/efficiency standards. It was noted the program previously funded HVAC/mini-split work at the primary school.",
-        "figures_as_heard": []
-      }
-    ],
-    "confidence": "moderate",
-    "decisions": [
-      {
-        "t": 2290,
-        "decision": "Richard Taylor decided to withdraw his interest in the other committees he had listed and focus solely on the Americans with Disabilities Committee."
-      },
-      {
-        "t": 2682,
-        "decision": "The board agreed not to appoint Vincent (\"Vinnie\") to Green Communities tonight; he will submit an application/form and be connected with the committee chair (David Blatt) before a future appointment."
-      },
-      {
-        "t": 3372,
-        "decision": "The board agreed to keep Dave Passios as the full Green Communities member and expects an additional full-member vacancy when Dave Blatt leaves the community in the fall."
-      },
-      {
-        "t": 4292,
-        "decision": "The board noted the Americans with Disabilities Committee likely cannot meet again until it has a member-at-large and a select board representative assigned, which may not happen until August."
-      }
-    ],
-    "not_audible": [
-      "Audio dropped repeatedly during the roll call after the APDC motion around 752 seconds; the vote count was pieced together from partial captions.",
-      "Richie Taylor's audio cut out and was garbled/muffled multiple times (around 895, 927, 2084, 2104 seconds), making parts of his remarks hard to follow.",
-      "Audio was lost briefly during Elena Christopher's background remarks around 1120-1165 seconds.",
-      "Exact wording of the Council on Aging Elena Christopher/Christopher Johnson vote result (\"we have two\") is unclear/ambiguous in the captions beyond the individual roll-call ayes."
-    ],
-    "public_comment": [
-      {
-        "t": 154,
-        "topic": "Interest in reappointment to the Architectural Preservation District Committee (APDC)",
-        "stated_role": "current APDC member seeking reappointment"
-      },
-      {
-        "t": 195,
-        "topic": "Interest in joining the APDC despite checking multiple committee boxes; said APDC is her passion",
-        "stated_role": "applicant for APDC, football/track boosters and PTO volunteer"
-      },
-      {
-        "t": 445,
-        "topic": "Background as a structural engineer/architectural designer, MIT graduate, offered to help APDC",
-        "stated_role": "applicant for APDC"
-      },
-      {
-        "t": 814,
-        "topic": "Interest in the Americans with Disabilities Committee and background as a Lunenburg native who did social work with kids with autism",
-        "stated_role": "applicant for several committees"
-      },
-      {
-        "t": 1013,
-        "topic": "Interest in Council on Aging/APDC/Americans with Disabilities Committee; retired state employee working part-time in memory care",
-        "stated_role": "applicant, 28-year resident"
-      },
-      {
-        "t": 1288,
-        "topic": "Interest in reappointment to Council on Aging and description of ongoing subcommittee work",
-        "stated_role": "current Council on Aging member seeking reappointment"
-      },
-      {
-        "speaker_as_heard": "Chris Johnson",
-        "t": 1288,
-        "topic": "Interest in Council on Aging, background as a retired computer professional and participant in Adult Activity Center programs"
-      },
-      {
-        "speaker_as_heard": "David Bartlett",
-        "t": 1415,
-        "topic": "Interest in Council on Aging and Personnel Committee; background running a Council on Aging in Lancaster"
-      },
-      {
-        "t": 1489,
-        "topic": "Interest in Council on Aging and Personnel Committee; former paid Council on Aging coordinator for the town",
-        "stated_role": "24-year resident"
-      },
-      {
-        "t": 2371,
-        "topic": "Interest in Conservation Committee, later redirected toward Green Communities given HVAC background",
-        "stated_role": "applicant, 6-year resident"
-      },
-      {
-        "t": 2932,
-        "topic": "Interest in the Cultural Council; background as a forensic scientist and multicultural sorority alumna",
-        "stated_role": "applicant, about a year in town"
-      },
-      {
-        "speaker_as_heard": "Tanya Willett Doll",
-        "t": 3549,
-        "topic": "Interest in the Personnel Committee, currently on the Finance Committee, background in HR/talent management at Harvard's Bloomberg Center for Cities"
-      }
-    ],
-    "summary": "This Select Board meeting was devoted entirely to annual appointments and reappointments to town boards, committees and commissions, with the board interviewing each applicant briefly before voting. By the end of the meeting the board had filled seats on the APDC, Council on Aging, Americans with Disabilities Committee, Conservation Committee, Cultural Council, Green Communities and a newly reconstituted five-member Personnel Committee, leaving remaining vacancies only on Conservation, Cultural Council, Historical Commission and PAC.",
-    "tags": [
-      "facilities",
-      "grants",
-      "personnel",
-      "policy",
-      "primary-school",
-      "public-comment",
-      "town-departments"
-    ],
-    "topics": [
-      {
-        "topic": "Call to order and Pledge of Allegiance",
-        "t_start": 5,
-        "t_end": 27,
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "topic": "Overview of the appointments process for the evening",
-        "t_start": 49,
-        "t_end": 133,
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "topic": "Architectural Preservation District Committee (APDC) appointments",
-        "t_start": 133,
-        "t_end": 772,
-        "resolution": "voted",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "topic": "Council on Aging appointments",
-        "t_start": 950,
-        "t_end": 2044,
-        "resolution": "voted",
-        "tags": [
-          "seniors"
-        ]
-      },
-      {
-        "topic": "Americans with Disabilities Committee appointment/ratification",
-        "t_start": 2064,
-        "t_end": 2269,
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "topic": "Conservation Committee reappointment and remaining vacancy",
-        "t_start": 2330,
-        "t_end": 2886,
-        "resolution": "voted",
-        "tags": [
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "topic": "Cultural Council appointment",
-        "t_start": 2886,
-        "t_end": 3139,
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "topic": "Green Communities Committee appointment and discussion of upcoming vacancy",
-        "t_start": 3139,
-        "t_end": 3434,
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "topic": "Historical Commission vacancies",
-        "t_start": 3434,
-        "t_end": 3476,
-        "resolution": "no resolution",
-        "tags": []
-      },
-      {
-        "topic": "PAC vacancy",
-        "t_start": 3476,
-        "t_end": 3523,
-        "resolution": "no resolution",
-        "tags": []
-      },
-      {
-        "topic": "Personnel Committee re-establishment and appointments",
-        "t_start": 3523,
-        "t_end": 4209,
-        "resolution": "voted",
-        "tags": [
-          "personnel"
-        ]
-      },
-      {
-        "topic": "Recap of remaining committee vacancies",
-        "t_start": 4209,
-        "t_end": 4314,
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "topic": "Adjournment",
-        "t_start": 4314,
-        "t_end": 4335,
-        "resolution": "voted",
-        "tags": []
-      }
-    ],
-    "transfers": [],
-    "votes": [
-      {
-        "t": 694,
-        "motion": "Appoint Andrew Gillis and Molly Wagner to the APDC",
-        "outcome": "passed 3-0",
-        "procedural": false
-      },
-      {
-        "t": 1893,
-        "motion": "Reappoint Elena Christopher and appoint Christopher Johnson to the Council on Aging (terms to expire June 30, 2029)",
-        "outcome": "passed 3-0",
-        "procedural": false
-      },
-      {
-        "t": 2021,
-        "motion": "Appoint Pauline Roy to the Council on Aging for a term to expire June 30, 2029",
-        "outcome": "passed 3-0",
-        "procedural": false
-      },
-      {
-        "t": 2247,
-        "motion": "Ratify the town manager's appointment of Richard Taylor and Heather Gleason to the Americans with Disabilities Committee",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 2824,
-        "motion": "Reappoint Richard Bursch to the Conservation Committee for a three-year term",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 3097,
-        "motion": "Appoint Carla Velasquez to the Cultural Council for a term of 3 years",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 3392,
-        "motion": "Appoint Dave Passios as a full member of Green Communities, term to expire June 30, 2029",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 4168,
-        "motion": "Appoint David Bartlett (1-year), Pauline Roy (2-year), and Tanya Doll (3-year) to the newly reconstituted Personnel Committee",
-        "outcome": "passed unanimously",
-        "procedural": false
-      },
-      {
-        "t": 4314,
-        "motion": "Adjourn the meeting at 8:15 p.m.",
-        "outcome": "passed",
-        "procedural": true
-      }
-    ],
-    "headline": "The Select Board reconstituted the Personnel Committee as a five-member body and filled its seats along with most other town board vacancies."
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The Select Board reconstituted the Personnel Committee as a five-member body and appointed three members to it.",
-        "t": 4168
-      },
-      {
-        "line": "The board also filled seats on the APDC, Council on Aging, Americans with Disabilities Committee, Conservation Committee, Cultural Council and Green Communities.",
-        "t": 694
-      },
-      {
-        "line": "The Americans with Disabilities Committee is not expected to meet again until it has a member-at-large and a Select Board representative assigned, possibly not until August.",
-        "t": 4292
-      },
-      {
-        "line": "Vacancies remain on the Conservation Committee, Cultural Council, Historical Commission and PAC.",
-        "t": 4209
-      }
-    ],
-    "why_it_matters": [
-      "Residents interested in serving on a town board now know which seats are filled and which -- Conservation, Cultural Council, Historical Commission, PAC -- are still open.",
-      "The Personnel Committee's reconstitution affects how the town handles personnel policy matters going forward.",
-      "A delay in staffing the Americans with Disabilities Committee could postpone its work on accessibility issues into the fall."
-    ],
-    "watch_next": [
-      "Assignment of a member-at-large and a Select Board representative to the Americans with Disabilities Committee, expected around August 2026",
-      "Applications for the remaining Conservation Committee, Cultural Council, Historical Commission and PAC vacancies"
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-09-12T14:12:21Z",
-      "cost_usd": 0.1343784
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-09-12T14:12:21Z",
+   "cost_usd": 0.1343784
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06152026-7859",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2026-06-15-minutes-7859.txt",
+   "path": "sources/meetings/select-board/2026-06-15-minutes-7859.pdf"
+  },
+  "official_sha256": "af0376664acb195d15d6ae770475c51c82e2f59a5f595237527b1e905db269b4",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on all eight appointment votes and their outcomes (3-0 or unanimous, all passed). The differences are name spellings from the captions, plus a few discussion points that only one record carries. The one to check is the Conservation Committee: the official minutes record only the reappointment of Richard Bursch, and our minutes also record a decision not to appoint applicant Vinnie to Green Communities.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 5,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: Council on Aging reappoint Elena Christopher, appoint Christopher Johnson",
+    "ours": "Reappoint Elena Christopher and appoint Christopher Johnson to the Council on Aging (terms to expire June 30, 2029) — passed 3-0",
+    "official": "motion to reappoint elena christopher and to appoint christopher johnson to the council on aging for terms expiring june 30, 2029, was made by vice-chair lehtinen",
+    "note": "Same motion, terms and 3-0 outcome in both.",
+    "t": 1893
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Pauline Roy to Council on Aging",
+    "ours": "Appoint Pauline Roy to the Council on Aging for a term to expire June 30, 2029 — passed 3-0",
+    "official": "motion to appoint pauline roy to the council on aging for a term expiring june 30, 2029, was made by clerk mcleod and seconded by vice-chair lehtinen.",
+    "note": "Same appointment, term and outcome.",
+    "t": 2021
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: ratify Richard Taylor and Heather Gleason to ADC",
+    "ours": "Ratify the town manager's appointment of Richard Taylor and Heather Gleason to the Americans with Disabilities Committee — passed unanimously",
+    "official": "motion to ratify the town manager's appointment of richard taylor and heather gleason to the americans with disabilities committee was made by chair emkey and seconded by clerk mcleod.",
+    "note": "Same ratification; unanimous equals 3-0-0.",
+    "t": 2247
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Personnel Committee appointments and staggered terms",
+    "ours": "Appoint David Bartlett (1-year), Pauline Roy (2-year), and Tanya Doll (3-year) to the newly reconstituted Personnel Committee — passed unanimously",
+    "official": "motion to appoint david bartlett for a one-year term, pauline roy for a two-year term, and tanya dall for a three-year term to the personnel committee was made by vice-chair lehtinen",
+    "note": "Same three appointees and terms; only the surname spelling differs (see separate finding).",
+    "t": 4168
+   },
+   {
+    "kind": "caption_error",
+    "about": "APDC appointee name (vote at t=694)",
+    "ours": "Appoint Andrew Gillis and Molly Wagner to the APDC — passed 3-0",
+    "official": "motion to appoint andrew gillis and mali wagner to the architectural preservation district committee for terms expiring june 30, 2029, was made by clerk mcleod",
+    "official_reading": "Mali Wagner",
+    "note": "Same vote and outcome; the captions misheard the first name.",
+    "t": 694
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation Committee reappointee surname",
+    "ours": "Reappoint Richard Bursch to the Conservation Committee for a three-year term — passed unanimously",
+    "official": "motion to reappoint richard birch to the conservation committee for a three-year term was made by clerk mcleod and seconded by select board member lehtinen.",
+    "official_reading": "Richard Birch",
+    "note": "Same vote; the official minutes print Birch, though their own structured note says Bursch appears elsewhere, so the spelling needs checking.",
+    "t": 2824
+   },
+   {
+    "kind": "caption_error",
+    "about": "Cultural Council appointee name",
+    "ours": "Appoint Carla Velasquez to the Cultural Council for a term of 3 years — passed unanimously",
+    "official": "motion to appoint karla velazquez to the cultural council for a term of three years was made by clerk mcleod and seconded by vice-chair lehtinen.",
+    "official_reading": "Karla Velazquez",
+    "note": "Same vote; the captions misspelled the name.",
+    "t": 3097
+   },
+   {
+    "kind": "caption_error",
+    "about": "Green Communities member surname",
+    "ours": "Appoint Dave Passios as a full member of Green Communities, term to expire June 30, 2029 — passed unanimously",
+    "official": "motion to appoint dave pasios as a full member to the green communities committee for a term expiring june 30, 2029, was made by vice-chair lehtinen and seconded by chair emkey.",
+    "official_reading": "Dave Pasios",
+    "note": "Same vote; the official motion prints Pasios but elsewhere says Passios, so the spelling is uncertain in both records.",
+    "t": 3392
+   },
+   {
+    "kind": "caption_error",
+    "about": "Personnel Committee three-year appointee surname",
+    "ours": "Tanya Doll (3-year)",
+    "official": "tanya dall for a three-year term",
+    "official_reading": "Tanya Dall",
+    "note": "Same person and term; the captions misspelled the surname.",
+    "t": 4168
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Dave Passios kept as full Green Communities member",
+    "ours": "The board agreed to keep Dave Passios as the full Green Communities member and expects an additional full-member vacancy when Dave Blatt leaves the community in the fall.",
+    "official": "the board agreed to reappoint mr. passios as a full member.",
+    "note": "Both record the agreement to retain him; the expected vacancy when Blatt leaves appears only in ours.",
+    "t": 3372
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Vinnie not appointed to Green Communities",
+    "ours": "The board agreed not to appoint Vincent (\"Vinnie\") to Green Communities tonight; he will submit an application/form and be connected with the committee chair (David Blatt) before a future appointment.",
+    "official": "",
+    "note": "The official minutes name Vincent Acito only as a Conservation Committee applicant and record no decision to defer him; check the recording to see which committee was meant.",
+    "t": 2682
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Richard Taylor narrowed his interest to ADC",
+    "ours": "Richard Taylor decided to withdraw his interest in the other committees he had listed and focus solely on the Americans with Disabilities Committee.",
+    "official": "",
+    "note": "The official minutes do not record this.",
+    "t": 2290
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "ADC cannot meet until members are assigned",
+    "ours": "The board noted the Americans with Disabilities Committee likely cannot meet again until it has a member-at-large and a select board representative assigned, which may not happen until August.",
+    "official": "",
+    "note": "The official minutes do not mention the ADC's meeting prospects.",
+    "t": 4292
+   },
+   {
+    "kind": "only_in_official",
+    "about": "APDC appointees sworn in by Town Clerk",
+    "ours": "",
+    "official": "both appointees were directed to be sworn in by the town clerk.",
+    "note": "Our minutes do not record the swearing-in direction."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Nathan Lockwood stepped back from APDC reappointment",
+    "ours": "",
+    "official": "nathan lockwood, a long-standing member who helped draft the apdc bylaw in 2015, voluntarily stepped back",
+    "note": "Our minutes do not mention Lockwood or why only Gillis and Wagner were appointed."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: three board members and the town manager",
+    "ours": "Renee (chair), Glenn (member), Brian (member), Jen (town manager)",
+    "official": "members present: chair renee emkey, vice-chair brian lehtinen (remote via zoom), and clerk glenn mcleod",
+    "note": "Same people. The official minutes add surnames and that Lehtinen was remote, and name the town manager as Jennifer Warren-Dyment."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants present at the meeting",
+    "ours": "",
+    "official": "vincent acito, a six-year lunenburg resident working in hvac for johnson controls",
+    "note": "The official minutes list many applicants, such as Acito, Lockwood, Johnson and Dall, whom our minutes do not list as attendees."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-24T11:12:12Z",
+   "cost_usd": 0.2685518
+  }
+ }
 }

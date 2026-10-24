@@ -1,472 +1,781 @@
 {
-  "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
-  "board_slug": "conservation-commission",
-  "board": "Conservation Commission",
-  "video_title": "Conservation Commission",
-  "meeting_date": "2026-10-07",
-  "video_id": "fuvplLsgLNE",
-  "video_url": "https://www.youtube.com/watch?v=fuvplLsgLNE",
-  "cite": "the video at &t=<seconds>s; every t below is such a second",
-  "source": {
-    "transcript": "sources/data/youtube-transcripts/conservation-commission/2026-10-07-fuvplLsgLNE.json",
-    "sha256": "6168ee6abd3aadf06752152617a00da52b1200ec156d0a8d48da9ce8dec3810e",
-    "caption_lines": 472,
-    "segments": 3992
-  },
-  "recording": {
-    "duration_s": 9958,
-    "duration": "2:45",
-    "spoken_chars": 123908,
-    "words_approx": 20651
-  },
-  "town_published": [
-    {
-      "kind": "minutes",
-      "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072026-8056",
-      "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-10-07-minutes-8056.txt",
-      "path": "sources/meetings/conservation-commission/2026-10-07-minutes-8056.pdf"
-    }
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "conservation-commission",
+ "board": "Conservation Commission",
+ "video_title": "Conservation Commission",
+ "meeting_date": "2026-10-07",
+ "video_id": "fuvplLsgLNE",
+ "video_url": "https://www.youtube.com/watch?v=fuvplLsgLNE",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/conservation-commission/2026-10-07-fuvplLsgLNE.json",
+  "sha256": "6168ee6abd3aadf06752152617a00da52b1200ec156d0a8d48da9ce8dec3810e",
+  "caption_lines": 472,
+  "segments": 3992
+ },
+ "recording": {
+  "duration_s": 9958,
+  "duration": "2:45",
+  "spoken_chars": 123908,
+  "words_approx": 20651
+ },
+ "town_published": [
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072026-8056",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-10-07-minutes-8056.txt",
+   "path": "sources/meetings/conservation-commission/2026-10-07-minutes-8056.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-08T11:18:17Z",
+  "cost_usd": 0.428355
+ },
+ "minutes": {
+  "headline": "Commission approved several septic and other compliance certificates and two NOIs, and continued most hearings to October 21.",
+  "summary": "The Conservation Commission heard a planning director presentation on four draft zoning amendments, then worked through a long hearing list. Most hearings were continued to October 21; the Sunny Hill Road driveway, the Goodrich Street irrigation pond and the Pleasant Street septic were approved. The commission also approved eight certificates of compliance and authorized spending on the Hollis Road house.",
+  "attendees": [
+   {
+    "name_as_heard": "Mike Larouche",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Andrea Bernett",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Teddy Dette",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mary Wilson",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jenny Puther",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Harlin",
+    "role": "conservation agent/administrator"
+   },
+   {
+    "name_as_heard": "Steven Wallace",
+    "role": "planning director (presenter)"
+   },
+   {
+    "name_as_heard": "Ryan Proctor",
+    "role": "applicant representative (Dillis & Rory)"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 81,
+    "speaker_as_heard": "Ryan Proctor, 1523 Massav",
+    "topic": "Archery deer season is open on conservation land; he recommended fluorescent clothing for hikers, especially near Duskon."
+   },
+   {
+    "t": 124,
+    "topic": "Member Andrea described the mushroom walk at the Lane property, with a large turnout. She raised dog waste and off-leash dogs on the trails and suggested signage or a future agenda item."
+   },
+   {
+    "t": 2125,
+    "topic": "Abutter said the retaining wall at 386 Sunset Lane is dangerously deteriorated, with only a bungee-held gate, and that it could have been an emergency certification."
+   },
+   {
+    "t": 6645,
+    "topic": "Abutter asked that no more trees be removed than necessary for the Goodrich Street irrigation pond."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "facilities",
+   "grants",
+   "housing",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment"
+  ],
+  "votes": [
+   {
+    "t": 1273,
+    "motion": "Approve minutes of 9/16/2026",
+    "outcome": "passed (3 aye, 1 abstain per roll call)",
+    "procedural": true
+   },
+   {
+    "t": 1462,
+    "motion": "Continue 143 Island Road NOI (septic) to October 21 at applicant's request",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 2330,
+    "motion": "Continue 386 Sunset Lane NOI to October 21",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 5160,
+    "motion": "Continue 3 Wilderwood Avenue RDA to October 21",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6059,
+    "motion": "Continue 37 Fire Road 10 NOI to October 21",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6204,
+    "motion": "Continue ADA parking lot and trail NOI at 1625 Mass Ave to October 21",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6245,
+    "motion": "Continue substation/utility pole NOI at 934 Mass Ave to October 21",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 6517,
+    "motion": "Approve NOI for 108 Sunny Hill Road driveway crossing of isolated wetland",
+    "outcome": "passed 4-0, chair not voting",
+    "procedural": false
+   },
+   {
+    "t": 6712,
+    "motion": "Approve NOI for irrigation pond at 157 Goodrich Street",
+    "outcome": "passed 4-0, chair not voting",
+    "procedural": false
+   },
+   {
+    "t": 6990,
+    "motion": "Approve NOI for septic replacement at 141 Pleasant Street",
+    "outcome": "passed (3 aye, 1 abstain, chair aye)",
+    "procedural": false
+   },
+   {
+    "t": 7031,
+    "motion": "Continue 404 Page Street NOI to October 21",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7208,
+    "motion": "Approve certificate of compliance for 352 Sunset Lane",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7445,
+    "motion": "Approve COC-26-9 (171 Island Road)",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7467,
+    "motion": "Approve COC-26-10 (171 Island Road)",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7809,
+    "motion": "Approve certificate of compliance for 68 Laurel Lane",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 7854,
+    "motion": "Approve certificate of compliance for 68 Laurel Lane A",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 8051,
+    "motion": "Approve certificate of compliance for 163 Beiel Street per agent's recommendation",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 8174,
+    "motion": "Approve certificate of compliance for 15 White Street per agent's recommendation",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 8643,
+    "motion": "Approve the flooring proposal for Hollis Road carpeting and laundry room vinyl, paid from the Hollis Road account",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 9420,
+    "motion": "Spend not to exceed an amount for paint and supplies for the Hollis Road house",
+    "outcome": "passed 5-0",
+    "procedural": false
+   },
+   {
+    "t": 9927,
+    "motion": "Adjourn",
+    "outcome": "passed 5-0",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 8602,
+    "topic": "Hollis Road house carpet and laundry room flooring",
+    "what_was_said": "Proposal with prevailing wage, tax-exempt status and W9, to be paid from the Hollis Road account, which holds enough to cover it.",
+    "figures_as_heard": [
+     "$9,41150",
+     "$9,411.50",
+     "26,000"
+    ]
+   },
+   {
+    "t": 8668,
+    "topic": "Hollis Road account use",
+    "what_was_said": "The agent said the commission has full authority to use the account on other commission properties as well as the Hollis Road house.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 9255,
+    "topic": "Paint for Hollis Road house",
+    "what_was_said": "A cap of $400 was proposed, then a cap of $700 was moved and approved, including supplies.",
+    "figures_as_heard": [
+     "$400",
+     "$700"
+    ]
+   },
+   {
+    "t": 8403,
+    "topic": "Hollis Road electrical work",
+    "what_was_said": "An electrician is preparing an estimate, with donated materials, and added code-compliant closet light fixtures at a small per-item cost.",
+    "figures_as_heard": [
+     "$15"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 8319,
+    "decision": "Plan to bring a custodian/caretaker for the Hollis Road house onto the town payroll through a town meeting article, then seek applicants."
+   },
+   {
+    "t": 9044,
+    "decision": "Volunteers will start painting at Hollis Road on Saturday. Non-commission helpers must sign waivers, which the agent will print."
+   },
+   {
+    "t": 5072,
+    "decision": "For 3 Wilderwood the commission asked for 3:1 replacement of the two maples, a wall across the beach at a lower height, a replacement planting plan and schedule, and a revised drawing. The pines are to stay."
+   },
+   {
+    "t": 5974,
+    "decision": "For 37 Fire Road 10 the commission asked to remove the sandy beach area and to try to keep the tree."
+   },
+   {
+    "t": 402,
+    "decision": "Possible placards on dog waste and leash rules at Lane and Largetown Forest entrances were discussed, and a future agenda item was suggested."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 60,
+    "topic": "Call to order and roll call",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 60,
+    "t_end": 442,
+    "topic": "Public comment: archery season, mushroom walk, dog waste on trails",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 442,
+    "t_end": 1017,
+    "topic": "Planning director presentation of four draft zoning amendments (senior housing, inclusionary, cluster, minor site plan)",
+    "resolution": "informational; comments due end of November",
+    "tags": [
+     "planning-and-zoning",
+     "housing",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1017,
+    "t_end": 1230,
+    "topic": "Pollinator habitat update, 123 Hollis Road",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 1230,
+    "t_end": 1313,
+    "topic": "Minutes of 9/16/2026",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 1313,
+    "t_end": 2370,
+    "topic": "Public hearings: 3 Wilderwood (deferred), 143 Island Road, 386 Sunset Lane retaining walls",
+    "resolution": "continued to Oct 21",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2370,
+    "t_end": 5198,
+    "topic": "3 Wilderwood Avenue RDA: retaining wall, maple and pine removal, sand and replacement plantings",
+    "resolution": "continued to Oct 21",
+    "tags": [
+     "legal",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5198,
+    "t_end": 6099,
+    "topic": "37 Fire Road 10 NOI: patio and wall reconstruction",
+    "resolution": "continued to Oct 21",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 6099,
+    "t_end": 6265,
+    "topic": "Continued hearings: 1625 Mass Ave ADA parking and trail; substation at 934 Mass Ave",
+    "resolution": "continued to Oct 21",
+    "tags": [
+     "legal",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6265,
+    "t_end": 7031,
+    "topic": "Approved NOIs: 108 Sunny Hill Road driveway, 157 Goodrich Street pond, 141 Pleasant Street septic",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 7031,
+    "t_end": 7092,
+    "topic": "404 Page Street NOI",
+    "resolution": "continued to Oct 21",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 7092,
+    "t_end": 8196,
+    "topic": "Certificates of compliance: 352 Sunset, 171 Island, 68 and 68A Laurel, 163 Beiel, 15 White",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 8196,
+    "t_end": 9741,
+    "topic": "Hollis Road house: custodian, repairs, flooring and paint approvals, work plan",
+    "resolution": "voted",
+    "tags": [
+     "facilities",
+     "personnel",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 9741,
+    "t_end": 9927,
+    "topic": "Committee reports, MACC convention, open meeting law note",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 9927,
+    "t_end": 9960,
+    "topic": "Adjournment",
+    "resolution": "procedural",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact dollar figure of the paint cap and flooring proposal rendered inconsistently in captions ($9,41150 / $9,411.50).",
+   "Roll call for the minutes: Mary Wilson abstained; counts inferred from the spoken roll.",
+   "The Pleasant Street approval roll call is partial; Mary Wilson abstained and the full count is not clear.",
+   "Applicant name and spelling for several hearings are mangled in captions."
+  ],
+  "confidence": "moderate"
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The commission approved three notices of intent: a driveway crossing at Sunny Hill Road, an irrigation pond on Goodrich Street, and a septic replacement on Pleasant Street.",
+    "t": 6990
+   },
+   {
+    "line": "Most other hearings were continued to October 21, including 3 Wilderwood Avenue, 37 Fire Road 10, 386 Sunset Lane, 143 Island Road, 404 Page Street, and the Mass Ave sites.",
+    "t": 5160
+   },
+   {
+    "line": "The commission approved certificates of compliance for properties on Sunset Lane, Island Road, Laurel Lane, Beiel Street and White Street, each by 5-0.",
+    "t": 8174
+   },
+   {
+    "line": "For the Hollis Road house, the commission approved a flooring proposal paid from the Hollis Road account and capped paint and supplies spending.",
+    "t": 9420
+   },
+   {
+    "line": "The planning director presented four draft zoning amendments, with comments due at the end of November.",
+    "t": 442
+   }
+  ],
+  "why_it_matters": [
+   "Approved notices of intent set the conditions for work near wetlands in town, and the continued hearings on Wilderwood, Fire Road and Sunset Lane stay open to public comment on October 21.",
+   "The draft zoning amendments on senior housing, inclusionary, cluster and minor site plan rules could change what can be built in town, and residents can still comment before the end of November.",
+   "Hollis Road house repairs are drawing on a dedicated commission account, and a plan to put a caretaker on the town payroll would need a town meeting article that residents would vote on."
+  ],
+  "watch_next": [
+   "October 21: continued hearings resume, including 3 Wilderwood Avenue, 37 Fire Road 10 and 386 Sunset Lane.",
+   "End of November: deadline for comments on the four draft zoning amendments."
   ],
   "written": {
-    "by": "scripts/write_recording_minutes.py",
-    "model": "sonnet",
-    "at": "2026-10-08T11:18:17Z",
-    "cost_usd": 0.428355
-  },
-  "minutes": {
-    "headline": "Commission approved several septic and other compliance certificates and two NOIs, and continued most hearings to October 21.",
-    "summary": "The Conservation Commission heard a planning director presentation on four draft zoning amendments, then worked through a long hearing list. Most hearings were continued to October 21; the Sunny Hill Road driveway, the Goodrich Street irrigation pond and the Pleasant Street septic were approved. The commission also approved eight certificates of compliance and authorized spending on the Hollis Road house.",
-    "attendees": [
-      {
-        "name_as_heard": "Mike Larouche",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Andrea Bernett",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Teddy Dette",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Mary Wilson",
-        "role": "member"
-      },
-      {
-        "name_as_heard": "Jenny Puther",
-        "role": "chair"
-      },
-      {
-        "name_as_heard": "Harlin",
-        "role": "conservation agent/administrator"
-      },
-      {
-        "name_as_heard": "Steven Wallace",
-        "role": "planning director (presenter)"
-      },
-      {
-        "name_as_heard": "Ryan Proctor",
-        "role": "applicant representative (Dillis & Rory)"
-      }
-    ],
-    "public_comment": [
-      {
-        "t": 81,
-        "speaker_as_heard": "Ryan Proctor, 1523 Massav",
-        "topic": "Archery deer season is open on conservation land; he recommended fluorescent clothing for hikers, especially near Duskon."
-      },
-      {
-        "t": 124,
-        "topic": "Member Andrea described the mushroom walk at the Lane property, with a large turnout. She raised dog waste and off-leash dogs on the trails and suggested signage or a future agenda item."
-      },
-      {
-        "t": 2125,
-        "topic": "Abutter said the retaining wall at 386 Sunset Lane is dangerously deteriorated, with only a bungee-held gate, and that it could have been an emergency certification."
-      },
-      {
-        "t": 6645,
-        "topic": "Abutter asked that no more trees be removed than necessary for the Goodrich Street irrigation pond."
-      }
-    ],
-    "tags": [
-      "economic-development",
-      "facilities",
-      "grants",
-      "housing",
-      "legal",
-      "personnel",
-      "planning-and-zoning",
-      "public-comment"
-    ],
-    "votes": [
-      {
-        "t": 1273,
-        "motion": "Approve minutes of 9/16/2026",
-        "outcome": "passed (3 aye, 1 abstain per roll call)",
-        "procedural": true
-      },
-      {
-        "t": 1462,
-        "motion": "Continue 143 Island Road NOI (septic) to October 21 at applicant's request",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 2330,
-        "motion": "Continue 386 Sunset Lane NOI to October 21",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 5160,
-        "motion": "Continue 3 Wilderwood Avenue RDA to October 21",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 6059,
-        "motion": "Continue 37 Fire Road 10 NOI to October 21",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 6204,
-        "motion": "Continue ADA parking lot and trail NOI at 1625 Mass Ave to October 21",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 6245,
-        "motion": "Continue substation/utility pole NOI at 934 Mass Ave to October 21",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 6517,
-        "motion": "Approve NOI for 108 Sunny Hill Road driveway crossing of isolated wetland",
-        "outcome": "passed 4-0, chair not voting",
-        "procedural": false
-      },
-      {
-        "t": 6712,
-        "motion": "Approve NOI for irrigation pond at 157 Goodrich Street",
-        "outcome": "passed 4-0, chair not voting",
-        "procedural": false
-      },
-      {
-        "t": 6990,
-        "motion": "Approve NOI for septic replacement at 141 Pleasant Street",
-        "outcome": "passed (3 aye, 1 abstain, chair aye)",
-        "procedural": false
-      },
-      {
-        "t": 7031,
-        "motion": "Continue 404 Page Street NOI to October 21",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 7208,
-        "motion": "Approve certificate of compliance for 352 Sunset Lane",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 7445,
-        "motion": "Approve COC-26-9 (171 Island Road)",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 7467,
-        "motion": "Approve COC-26-10 (171 Island Road)",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 7809,
-        "motion": "Approve certificate of compliance for 68 Laurel Lane",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 7854,
-        "motion": "Approve certificate of compliance for 68 Laurel Lane A",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 8051,
-        "motion": "Approve certificate of compliance for 163 Beiel Street per agent's recommendation",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 8174,
-        "motion": "Approve certificate of compliance for 15 White Street per agent's recommendation",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 8643,
-        "motion": "Approve the flooring proposal for Hollis Road carpeting and laundry room vinyl, paid from the Hollis Road account",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 9420,
-        "motion": "Spend not to exceed an amount for paint and supplies for the Hollis Road house",
-        "outcome": "passed 5-0",
-        "procedural": false
-      },
-      {
-        "t": 9927,
-        "motion": "Adjourn",
-        "outcome": "passed 5-0",
-        "procedural": true
-      }
-    ],
-    "budget_items": [
-      {
-        "t": 8602,
-        "topic": "Hollis Road house carpet and laundry room flooring",
-        "what_was_said": "Proposal with prevailing wage, tax-exempt status and W9, to be paid from the Hollis Road account, which holds enough to cover it.",
-        "figures_as_heard": [
-          "$9,41150",
-          "$9,411.50",
-          "26,000"
-        ]
-      },
-      {
-        "t": 8668,
-        "topic": "Hollis Road account use",
-        "what_was_said": "The agent said the commission has full authority to use the account on other commission properties as well as the Hollis Road house.",
-        "figures_as_heard": []
-      },
-      {
-        "t": 9255,
-        "topic": "Paint for Hollis Road house",
-        "what_was_said": "A cap of $400 was proposed, then a cap of $700 was moved and approved, including supplies.",
-        "figures_as_heard": [
-          "$400",
-          "$700"
-        ]
-      },
-      {
-        "t": 8403,
-        "topic": "Hollis Road electrical work",
-        "what_was_said": "An electrician is preparing an estimate, with donated materials, and added code-compliant closet light fixtures at a small per-item cost.",
-        "figures_as_heard": [
-          "$15"
-        ]
-      }
-    ],
-    "transfers": [],
-    "decisions": [
-      {
-        "t": 8319,
-        "decision": "Plan to bring a custodian/caretaker for the Hollis Road house onto the town payroll through a town meeting article, then seek applicants."
-      },
-      {
-        "t": 9044,
-        "decision": "Volunteers will start painting at Hollis Road on Saturday. Non-commission helpers must sign waivers, which the agent will print."
-      },
-      {
-        "t": 5072,
-        "decision": "For 3 Wilderwood the commission asked for 3:1 replacement of the two maples, a wall across the beach at a lower height, a replacement planting plan and schedule, and a revised drawing. The pines are to stay."
-      },
-      {
-        "t": 5974,
-        "decision": "For 37 Fire Road 10 the commission asked to remove the sandy beach area and to try to keep the tree."
-      },
-      {
-        "t": 402,
-        "decision": "Possible placards on dog waste and leash rules at Lane and Largetown Forest entrances were discussed, and a future agenda item was suggested."
-      }
-    ],
-    "topics": [
-      {
-        "t_start": 0,
-        "t_end": 60,
-        "topic": "Call to order and roll call",
-        "resolution": "procedural",
-        "tags": []
-      },
-      {
-        "t_start": 60,
-        "t_end": 442,
-        "topic": "Public comment: archery season, mushroom walk, dog waste on trails",
-        "resolution": "informational",
-        "tags": [
-          "public-comment",
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 442,
-        "t_end": 1017,
-        "topic": "Planning director presentation of four draft zoning amendments (senior housing, inclusionary, cluster, minor site plan)",
-        "resolution": "informational; comments due end of November",
-        "tags": [
-          "planning-and-zoning",
-          "housing",
-          "economic-development"
-        ]
-      },
-      {
-        "t_start": 1017,
-        "t_end": 1230,
-        "topic": "Pollinator habitat update, 123 Hollis Road",
-        "resolution": "informational",
-        "tags": [
-          "recreation"
-        ]
-      },
-      {
-        "t_start": 1230,
-        "t_end": 1313,
-        "topic": "Minutes of 9/16/2026",
-        "resolution": "voted",
-        "tags": []
-      },
-      {
-        "t_start": 1313,
-        "t_end": 2370,
-        "topic": "Public hearings: 3 Wilderwood (deferred), 143 Island Road, 386 Sunset Lane retaining walls",
-        "resolution": "continued to Oct 21",
-        "tags": [
-          "planning-and-zoning",
-          "legal"
-        ]
-      },
-      {
-        "t_start": 2370,
-        "t_end": 5198,
-        "topic": "3 Wilderwood Avenue RDA: retaining wall, maple and pine removal, sand and replacement plantings",
-        "resolution": "continued to Oct 21",
-        "tags": [
-          "legal",
-          "planning-and-zoning"
-        ]
-      },
-      {
-        "t_start": 5198,
-        "t_end": 6099,
-        "topic": "37 Fire Road 10 NOI: patio and wall reconstruction",
-        "resolution": "continued to Oct 21",
-        "tags": [
-          "legal"
-        ]
-      },
-      {
-        "t_start": 6099,
-        "t_end": 6265,
-        "topic": "Continued hearings: 1625 Mass Ave ADA parking and trail; substation at 934 Mass Ave",
-        "resolution": "continued to Oct 21",
-        "tags": [
-          "legal",
-          "facilities"
-        ]
-      },
-      {
-        "t_start": 6265,
-        "t_end": 7031,
-        "topic": "Approved NOIs: 108 Sunny Hill Road driveway, 157 Goodrich Street pond, 141 Pleasant Street septic",
-        "resolution": "voted",
-        "tags": [
-          "legal"
-        ]
-      },
-      {
-        "t_start": 7031,
-        "t_end": 7092,
-        "topic": "404 Page Street NOI",
-        "resolution": "continued to Oct 21",
-        "tags": [
-          "legal"
-        ]
-      },
-      {
-        "t_start": 7092,
-        "t_end": 8196,
-        "topic": "Certificates of compliance: 352 Sunset, 171 Island, 68 and 68A Laurel, 163 Beiel, 15 White",
-        "resolution": "voted",
-        "tags": [
-          "legal"
-        ]
-      },
-      {
-        "t_start": 8196,
-        "t_end": 9741,
-        "topic": "Hollis Road house: custodian, repairs, flooring and paint approvals, work plan",
-        "resolution": "voted",
-        "tags": [
-          "facilities",
-          "personnel",
-          "budget"
-        ]
-      },
-      {
-        "t_start": 9741,
-        "t_end": 9927,
-        "topic": "Committee reports, MACC convention, open meeting law note",
-        "resolution": "informational",
-        "tags": []
-      },
-      {
-        "t_start": 9927,
-        "t_end": 9960,
-        "topic": "Adjournment",
-        "resolution": "procedural",
-        "tags": []
-      }
-    ],
-    "not_audible": [
-      "Exact dollar figure of the paint cap and flooring proposal rendered inconsistently in captions ($9,41150 / $9,411.50).",
-      "Roll call for the minutes: Mary Wilson abstained; counts inferred from the spoken roll.",
-      "The Pleasant Street approval roll call is partial; Mary Wilson abstained and the full count is not clear.",
-      "Applicant name and spelling for several hearings are mangled in captions."
-    ],
-    "confidence": "moderate"
-  },
-  "digest": {
-    "what_happened": [
-      {
-        "line": "The commission approved three notices of intent: a driveway crossing at Sunny Hill Road, an irrigation pond on Goodrich Street, and a septic replacement on Pleasant Street.",
-        "t": 6990
-      },
-      {
-        "line": "Most other hearings were continued to October 21, including 3 Wilderwood Avenue, 37 Fire Road 10, 386 Sunset Lane, 143 Island Road, 404 Page Street, and the Mass Ave sites.",
-        "t": 5160
-      },
-      {
-        "line": "The commission approved certificates of compliance for properties on Sunset Lane, Island Road, Laurel Lane, Beiel Street and White Street, each by 5-0.",
-        "t": 8174
-      },
-      {
-        "line": "For the Hollis Road house, the commission approved a flooring proposal paid from the Hollis Road account and capped paint and supplies spending.",
-        "t": 9420
-      },
-      {
-        "line": "The planning director presented four draft zoning amendments, with comments due at the end of November.",
-        "t": 442
-      }
-    ],
-    "why_it_matters": [
-      "Approved notices of intent set the conditions for work near wetlands in town, and the continued hearings on Wilderwood, Fire Road and Sunset Lane stay open to public comment on October 21.",
-      "The draft zoning amendments on senior housing, inclusionary, cluster and minor site plan rules could change what can be built in town, and residents can still comment before the end of November.",
-      "Hollis Road house repairs are drawing on a dedicated commission account, and a plan to put a caretaker on the town payroll would need a town meeting article that residents would vote on."
-    ],
-    "watch_next": [
-      "October 21: continued hearings resume, including 3 Wilderwood Avenue, 37 Fire Road 10 and 386 Sunset Lane.",
-      "End of November: deadline for comments on the four draft zoning amendments."
-    ],
-    "written": {
-      "by": "scripts/write_recording_minutes.py --digest",
-      "model": "sonnet",
-      "at": "2026-10-08T11:18:29Z",
-      "cost_usd": 0.224895
-    }
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-08T11:18:29Z",
+   "cost_usd": 0.224895
   }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10072026-8056",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/conservation-commission/2026-10-07-minutes-8056.txt",
+   "path": "sources/meetings/conservation-commission/2026-10-07-minutes-8056.pdf"
+  },
+  "official_sha256": "08eeaf8e90f873d88782dc3d04e7ef42650c68783abc45ae7e7cc2279bffc047",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on most continuances and certificates of compliance, and the Hollis Road flooring approval matches at $9,411.50. They differ on several votes: 108 Sunny Hill Road, 404 Page Street, 3 Wilderwood, the paint spend, the Snow Riders motion, and how the 171 Island Road and 68 Laurel Lane certificates were voted. A reader should check the 108 Sunny Hill Road item first, since ours records an approval and the official minutes record a continuance with no stated result.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 5,
+   "discrepancy": 10,
+   "only_in_ours": 4,
+   "only_in_official": 4
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "108 Sunny Hill Road NOI vote",
+    "t": 6517,
+    "ours": "Approve NOI for 108 Sunny Hill Road driveway crossing of isolated wetland — passed 4-0, chair not voting",
+    "official": "motion: m. larouche to continue to october 7, 2026 second: m. wilson",
+    "note": "Ours records an approval; the official minutes record a motion to continue with a garbled roll call and no stated result. Check the recording around t=6517 and the commission's decision or file for NOI-26-24."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "157 Goodrich Street NOI tally",
+    "t": 6712,
+    "ours": "Approve NOI for irrigation pond at 157 Goodrich Street — passed 4-0, chair not voting",
+    "official": "motion: m. larouche to approve notice of intent, subject to water quality certification",
+    "note": "The outcome is the same, but the official minutes tally it 4-0-1 (an abstention) and add the water quality certification condition. Ours has neither the abstention nor the condition. Check the roll call."
+   },
+   {
+    "kind": "agree",
+    "about": "141 Pleasant Street NOI approval",
+    "t": 6990,
+    "ours": "Approve NOI for septic replacement at 141 Pleasant Street — passed (3 aye, 1 abstain, chair aye)",
+    "official": "motion: m. larouche to approve notice of intent second: a. burnap",
+    "note": "Three ayes plus the chair's aye and one abstention gives the official 4-0-1."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "404 Page Street continuance date",
+    "t": 7031,
+    "ours": "Continue 404 Page Street NOI to October 21 — passed 5-0",
+    "official": "applicant requested a continuance motion: m. larouche to continue to october 7, 2026",
+    "note": "The official minutes give October 7, which is the meeting date itself and probably a typo. Confirm the continuance date in the recording and the agenda."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "3 Wilderwood Avenue RDA vote",
+    "t": 5160,
+    "ours": "Continue 3 Wilderwood Avenue RDA to October 21 — passed 5-0",
+    "official": "the commission expressed support for retaining the pine trees and requested:",
+    "note": "Ours records a 5-0 vote to continue. The official minutes record no vote for this item. Check whether the continuance was voted."
+   },
+   {
+    "kind": "agree",
+    "about": "143 Island Road continuance",
+    "t": 1462,
+    "ours": "Continue 143 Island Road NOI (septic) to October 21 at applicant's request — passed 5-0",
+    "official": "pending receipt of a dep file number. motion: m. larouche to continue to october 21, 2026",
+    "note": "Same item, date and 5-0 vote."
+   },
+   {
+    "kind": "agree",
+    "about": "386 Sunset Lane continuance",
+    "t": 2330,
+    "ours": "Continue 386 Sunset Lane NOI to October 21 — passed 5-0",
+    "official": "because a dep file number had not yet been received, the hearing could not be closed. motion: m. larouche to continue to october 21, 2026",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "37 Fire Road 10 continuance",
+    "t": 6059,
+    "ours": "Continue 37 Fire Road 10 NOI to October 21 — passed 5-0",
+    "official": "further discussion regarding site restoration. motion: m. larouche to continue to october 21, 2026",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "1625 Mass Ave continuance",
+    "t": 6204,
+    "ours": "Continue ADA parking lot and trail NOI at 1625 Mass Ave to October 21 — passed 5-0",
+    "official": "design plans are being finalized. motion: m. larouche to continue to october 21, 2026",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "934 Mass Ave continuance",
+    "t": 6245,
+    "ours": "Continue substation/utility pole NOI at 934 Mass Ave to October 21 — passed 5-0",
+    "official": "the agenda indicates that the hearing was continued to 10/21/26. motion: m. larouche to continue to october 21, 2026",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "352 Sunset Lane certificate of compliance",
+    "t": 7208,
+    "ours": "Approve certificate of compliance for 352 Sunset Lane — passed 5-0",
+    "official": "agent reported the site was stable, vegetated, and consistent with approved plans motion: m. larouch to approve",
+    "note": "Same vote. The official minutes number it COC-26-8."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "171 Island Road certificates",
+    "t": 7445,
+    "ours": "Approve COC-26-9 (171 Island Road) — passed 5-0; Approve COC-26-10 (171 Island Road) — passed 5-0",
+    "official": "and closed. motion: m. larouch to approve second: m. wilson",
+    "note": "Ours records two votes, COC-26-9 and COC-26-10. The official minutes record one vote closing the historic Order of Conditions (COC-26-6 and COC-26-10). Check the certificate numbers and the number of motions."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "68 Laurel Lane certificates",
+    "t": 7809,
+    "ours": "Approve certificate of compliance for 68 Laurel Lane — passed 5-0; Approve certificate of compliance for 68 Laurel Lane A — passed 5-0",
+    "official": "68 laurel lane (coc-26-12) motion: m. larouch to approve second: m. wilson",
+    "note": "Ours records two votes (68 Laurel Lane and 'Laurel Lane A'). The official minutes record one, COC-26-12. Check whether there was a second certificate or a duplicate."
+   },
+   {
+    "kind": "agree",
+    "about": "15 White Street certificate of compliance",
+    "t": 8174,
+    "ours": "Approve certificate of compliance for 15 White Street per agent's recommendation — passed 5-0",
+    "official": "motion: m. larouch to approve second: m. doucette",
+    "note": "Same."
+   },
+   {
+    "kind": "agree",
+    "about": "Hollis Road flooring approval and amount",
+    "t": 8643,
+    "ours": "Approve the flooring proposal for Hollis Road carpeting and laundry room vinyl, paid from the Hollis Road account — passed 5-0",
+    "official": "motion: approve expenditure of $9,411.50 for flooring replacement. vote: unanimous approval.",
+    "note": "Same approval and amount. The official minutes list a second 5-0 motion on carpeting and flooring (Wilson/Doucette) that ours does not separate, so check whether it was one vote or two."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Hollis Road flooring amount",
+    "t": 8602,
+    "ours": "$9,41150, $9,411.50, 26,000",
+    "official": "the commission reviewed a proposal from amo flooring to replace carpeting and install flooring in the laundry area at a cost of $9,411.50.",
+    "official_reading": "$9,411.50",
+    "note": "The captions garbled the digits and the stray '26,000' has no counterpart. The correct figure is $9,411.50."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Hollis Road paint spending vote",
+    "t": 9420,
+    "ours": "Spend not to exceed an amount for paint and supplies for the Hollis Road house — passed 5-0",
+    "official": "",
+    "note": "Ours records a 5-0 vote on a paint spending cap. The official minutes record no such vote or amount. Check the recording near t=9420 and whether the cap was $400 or $700."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Paint figures for Hollis Road",
+    "t": 9255,
+    "ours": "Paint for Hollis Road house: $400, $700",
+    "official": "",
+    "note": "The official minutes give no paint figures."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hollis Road electrical work figure",
+    "t": 8403,
+    "ours": "Hollis Road electrical work: $15",
+    "official": "",
+    "note": "The official minutes carry no electrical figure. The $15 is probably truncated, so check the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Snow Riders trail work permission",
+    "ours": "",
+    "official": "motion by: m. larouche grant permission to the snow riders to do trail work",
+    "note": "The official minutes record a 5-0 vote granting the Lunenburg Snow Riders trail work. Ours has no such vote. Check the public comment segment of the recording."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "37 Fire Road 10 beach request",
+    "t": 5974,
+    "ours": "For 37 Fire Road 10 the commission asked to remove the sandy beach area and to try to keep the tree.",
+    "official": "additional review of the proposed beach area.",
+    "note": "Ours says the commission asked for the beach to be removed. The official minutes say only that it asked for further review of the beach area. Check the recording for what was actually requested."
+   },
+   {
+    "kind": "agree",
+    "about": "3 Wilderwood requests: pines and replanting",
+    "t": 5072,
+    "ours": "For 3 Wilderwood the commission asked for 3:1 replacement of the two maples, a wall across the beach at a lower height, a replacement planting plan and schedule, and a revised drawing. The pines are to stay.",
+    "official": "the commission expressed support for retaining the pine trees and requested:",
+    "note": "Both records have the pines retained, a revised plan and a replanting schedule. Ours adds details (3:1 maple replacement, lower wall) that the official minutes do not give."
+   },
+   {
+    "kind": "agree",
+    "about": "Dog waste and leash signage",
+    "t": 402,
+    "ours": "Possible placards on dog waste and leash rules at Lane and Largetown Forest entrances were discussed, and a future agenda item was suggested.",
+    "official": "commissioners suggested additional signage at trail entrances may be warranted and agreed the issue could be placed on a future agenda.",
+    "note": "Same decision: signage and a future agenda item."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hollis Road caretaker via town payroll",
+    "t": 8319,
+    "ours": "Plan to bring a custodian/caretaker for the Hollis Road house onto the town payroll through a town meeting article, then seek applicants.",
+    "official": "",
+    "note": "The official minutes do not mention the caretaker plan or a town meeting article."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Volunteer painting and waivers",
+    "t": 9044,
+    "ours": "Volunteers will start painting at Hollis Road on Saturday. Non-commission helpers must sign waivers, which the agent will print.",
+    "official": "",
+    "note": "The official minutes do not mention the volunteer painting or waivers."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Hollis Road occupancy update",
+    "ours": "",
+    "official": "interior improvements can proceed while occupancy issues are addressed.",
+    "note": "Only the official minutes record the Town-side statement that interior work can proceed."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Andrea Burnap",
+    "ours": "Andrea Bernett (member)",
+    "official": "present: j. pewtherer, a. burnap, and m. larouche. t. doucette, m. wilson",
+    "official_reading": "Andrea Burnap",
+    "note": "Name misheard by the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Teddy Doucette",
+    "ours": "Teddy Dette (member)",
+    "official": "present: j. pewtherer, a. burnap, and m. larouche. t. doucette, m. wilson",
+    "official_reading": "Teddy Doucette",
+    "note": "Name misheard by the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair Jennifer Pewtherer",
+    "ours": "Jenny Puther (chair)",
+    "official": "present: j. pewtherer, a. burnap, and m. larouche. t. doucette, m. wilson",
+    "official_reading": "Jennifer Pewtherer",
+    "note": "Name misheard by the captions."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conservation agent",
+    "ours": "Harlin (conservation agent/administrator)",
+    "official": "herlin jaime reported that a meeting had been held with town staff, counsel, and commission representatives",
+    "official_reading": "Herlin Jaime",
+    "note": "Name misheard by the captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Members Larouche and Wilson present",
+    "ours": "Mike Larouche (member); Mary Wilson (member)",
+    "official": "present: j. pewtherer, a. burnap, and m. larouche. t. doucette, m. wilson",
+    "note": "Both are listed as present in both records."
+   },
+   {
+    "kind": "agree",
+    "about": "Planning Director Steven Wallace",
+    "ours": "Steven Wallace (planning director (presenter))",
+    "official": "planning director steven wallace presented draft zoning amendments currently under review by the planning board",
+    "note": "Same person and role."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Ryan Proctor's role",
+    "ours": "Ryan Proctor (applicant representative (Dillis & Rory))",
+    "official": "ryan proctor informed the commission that massachusetts archery season for white-tailed deer opened",
+    "note": "Ours lists Ryan Proctor as an applicant representative. The official minutes list him as a public commenter on archery season, with Matt Proctor as the RDA-26-12 applicant. Check who spoke for the applicant."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent Vice Chair Richard Bursch",
+    "ours": "",
+    "official": "absent: r. bursch",
+    "note": "Ours does not record the absence."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment: trail work and archery season",
+    "ours": "",
+    "official": "chris st. germain met with the commission to as permission to do trail work after wind events on lake shirley, flat hill, small forrest and lane property.",
+    "note": "Ours has no public comment on trail work after wind events or on archery season (Chris St. Germain, Ryan Proctor), and no attendee entry for St. Germain."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Applicants and minutes clerk",
+    "ours": "",
+    "official": "respectfully submitted, andrea schnepf",
+    "note": "Only the official minutes name the applicants (Salas, Mitrano, Ryder, Unitil, Rager, Violette, Rajanok, Byers and Warren) and the clerk."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-24T11:09:19Z",
+   "cost_usd": 0.436326
+  }
+ }
 }
