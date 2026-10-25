@@ -70,9 +70,10 @@ type TopicPayload = {
   /** Arranged parts: explain, matrix, timeline, checks, panels, custom (scripts/topic_blocks.py). */
   blocks?: Block[]
 }
-type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string }
+type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string
+  caption?: boolean }
 type HubPayload = {
-  kind: 'hub'; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef
+  kind: 'hub'; lead_quote?: LeadQuote; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef
   ladder: LadderData; chains: Chain[]; table: FigureTableData | null
   full_report: { href: string; label: string }
   /** What each thing the chart draws IS, and why it surprises (scripts/topic.py term()). */
@@ -163,7 +164,9 @@ function LeadQuoteBlock({ q }: { q: LeadQuote }) {
       <blockquote className="mt-1 text-[16px] leading-relaxed italic" style={{ color: 'var(--text-primary)' }}>
         “{q.quote}”</blockquote>
       <figcaption className="text-[13px] mt-1" style={{ color: 'var(--text-secondary)' }}>
-        — {q.who}, <a href={abs(q.href)} className="underline" style={link}>{q.label}</a></figcaption>
+        — {q.who}, {q.board}, <span className="font-semibold">{longDate(q.date)}</span> &middot;{' '}
+        <a href={abs(q.href)} className="underline" style={link}>{q.label}</a>
+        {q.caption ? <span style={{ color: 'var(--text-muted)' }}> — machine captions, a finding aid</span> : null}</figcaption>
     </figure>
   )
 }
@@ -366,6 +369,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       {p && ix && p.kind === 'hub' ? (
         <>
           <Blocks blocks={p.blocks} place="top" />
+          {p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null}
           <p className="text-[19px] leading-snug font-semibold mt-6 max-w-3xl">{p.answer.text}</p>
           <p className="text-[13px] mt-2"><a href="#topics" className="underline" style={link}>
             Go straight to the topics &darr;</a></p>

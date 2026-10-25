@@ -1788,10 +1788,13 @@ def build():
     # record, so a reader sees what a meeting saw and what the year closed at, and neither is
     # marked wrong. The October 2026 Finance Committee remark is left out: its captions render
     # out of district as "Audit district", and a quote is not built around a mis-hearing.
+    # THE OPENING QUOTATION (TJ, 25 October 2026: "i expected at least one at the top of the
+    # page"): the claim the hub's ledger is set against, in a School Committee meeting's words.
+    OPEN = video('school-committee', 'School Committee', '2025-02-05-ad6QtSaJqVU.json', '2:33:32',
+                 'it\'s dangerous to hedge our bets and go lean on our special edlines because those '
+                 'are the lines that blow our budget out of the water when we have unanticipated '
+                 'students moving in to lunenberg')
     SAID = [
-        video('school-committee', 'School Committee', '2025-02-05-ad6QtSaJqVU.json', '2:33:32',
-              'those are the lines that blow our budget out of the water when we have unanticipated '
-              'students moving in to lunenberg'),
         video('school-committee', 'School Committee', '2025-09-03-SI-irBe6ABs.json', '1:07:09',
               'somebody could move 350 ft across the town line and now we have a million dollar '
               'hole in our budget.'),
@@ -1841,7 +1844,7 @@ def build():
         'serf-said-ledger', 'What was said, beside that year’s ledger',
         dict(items=s_items, ledger_head='The ledger, each line against its vote,'), place='body', figures=s_fig,
         allow=[q['href'] for q in SAID],          # addresses, not figures
-        alt='Eight quotations from public meetings, each beside the special education lines’ '
+        alt='Seven quotations from public meetings, each beside the special education lines’ '
             'results for that fiscal year.',
         so=('The quotations fall in %s fiscal years, and in %s a line spent past its vote. %s, quoted '
             'most, closed with every line inside it: much of the worry is about a year that could '
@@ -1856,6 +1859,10 @@ def build():
         % (C.num(n_line), C.num(nyrs), C.usd(o_med5), C.usd(o_max)),
         ladder, chart=out['reserve-options']['chart'],
         answer_figures={'k': N(n_line), 'n': N(nyrs), 'm': U(o_med5), 'a': U(o_max)},
+        lead_quote=TP.lead_quote(OPEN['quote'], OPEN['who'], OPEN['board'], OPEN['date'],
+                                 OPEN['href'], OPEN['label'],
+                                 'sources/data/youtube-transcripts/school-committee/2025-02-05-ad6QtSaJqVU.json',
+                                 caption=True),
         blocks=[hub_impact, hub_answers, money_chart, said_block,
                 TB.chart(surprise_chart, place='chart',
                          so=('Out-of-district tuition is the largest share, %s, but not most of it: '

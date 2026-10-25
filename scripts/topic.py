@@ -90,6 +90,7 @@ some defining chart OR image if the data doesnt represent well by a chart."
   topic with no chart.
 """
 import math
+import json
 import os
 import re
 
@@ -242,7 +243,7 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     if blocks:                                       # likewise; built by topic_blocks
         extra['blocks'] = list(blocks)
     if lead_quote:                                   # likewise written only when set
-        extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS}
+        extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS + (('caption',) if lead_quote.get('caption') else ())}
     return dict(
         extra, id=id, kind='topic', title=title, category=home,
         path=('/%s/%s' % (home, id)) if draft else REG.path(id),
@@ -301,13 +302,22 @@ LEAD_KEYS = ('quote', 'who', 'board', 'date', 'href', 'label')
 LEAD_MAX = 420
 
 
-def lead_quote(quote, who, board, date, href, label, text):
+def lead_quote(quote, who, board, date, href, label, text, caption=False):
     """The quotation a page opens with. `who` is the speaker exactly as the document names
     them (a role is fine); `href` the document's /docs address; `text` the repo-relative path of
     the document's extracted text, which the quote must appear in, whitespace aside. `text` is
-    for the check only and is not written into the payload."""
-    return dict(quote=' '.join(quote.split()), who=' '.join(who.split()), board=board,
-                date=date, href=href, label=' '.join(label.split()), text=text)
+    for the check only and is not written into the payload.
+
+    `caption=True`: a recording's machine captions instead (TJ, 25 October 2026, wanting the
+    SERF hub to open on what was said in a meeting, most of which survives only as video).
+    `href` is then the video at its timestamp and `text` our captions file under
+    sources/data/youtube-transcripts/, which the quote must appear in, segments joined. The
+    page labels it machine captions, a finding aid, never a record."""
+    q = dict(quote=' '.join(quote.split()), who=' '.join(who.split()), board=board,
+             date=date, href=href, label=' '.join(label.split()), text=text)
+    if caption:
+        q['caption'] = True
+    return q
 
 
 def _norm_quote(s):
@@ -319,25 +329,38 @@ def _lead_bad(lq, said, where):
     if lq is None:
         return []
     bad = []
-    if set(lq) != set(LEAD_KEYS) | {'text'} or not all(isinstance(lq[k], str) and lq[k].strip()
-                                                      for k in lq):
+    cap = lq.get('caption') is True
+    if set(lq) - {'caption'} != set(LEAD_KEYS) | {'text'} or not all(
+            isinstance(lq[k], str) and lq[k].strip() for k in lq if k != 'caption'):
         return ['%s: lead quote must be built by lead_quote(), every field set' % where]
     if len(lq['quote']) > LEAD_MAX:
         bad.append('%s: lead quote is %d characters, budget %d -- quote the claim, not the '
                    'speech' % (where, len(lq['quote']), LEAD_MAX))
     if not re.fullmatch(r'\d{4}-\d{2}-\d{2}', lq['date']):
         bad.append('%s: lead quote date %r is not YYYY-MM-DD' % (where, lq['date']))
+    path = os.path.join(_ROOT, lq['text'])
+    if cap:
+        if not re.match(r'https://www\.youtube\.com/watch\?v=[\w-]+&t=\d+s$', lq['href']):
+            bad.append('%s: a caption lead quote links the video at its second, not %r' % (where, lq['href']))
+        if not (lq['text'].startswith('sources/data/youtube-transcripts/') and os.path.exists(path)):
+            bad.append('%s: caption lead quote text %r is not one of our captions files' % (where, lq['text']))
+        elif _norm_quote(lq['quote']) not in _norm_quote(' '.join(
+                x['text'] for x in json.load(open(path, encoding='utf-8'))['segments'])):
+            bad.append('%s: lead quote is not verbatim in the captions %s' % (where, lq['text']))
+        return bad + [x for x in _said_dupe(lq, said, where)]
     if not lq['href'].startswith('/docs/'):
         bad.append('%s: lead quote href %r is not an archive address (/docs/...)' % (where, lq['href']))
-    path = os.path.join(_ROOT, lq['text'])
     if not lq['text'].startswith('sources/') or not os.path.exists(path):
         bad.append('%s: lead quote text %r is not an extracted document under sources/'
                    % (where, lq['text']))
     elif _norm_quote(lq['quote']) not in _norm_quote(open(path, encoding='utf-8').read()):
         bad.append('%s: lead quote is not verbatim in %s' % (where, lq['text']))
-    if any(_norm_quote(q['quote']) == _norm_quote(lq['quote']) for q in said):
-        bad.append('%s: the lead quote is repeated in `said`' % where)
-    return bad
+    return bad + _said_dupe(lq, said, where)
+
+
+def _said_dupe(lq, said, where):
+    return (['%s: the lead quote is repeated in `said`' % where]
+            if any(_norm_quote(q['quote']) == _norm_quote(lq['quote']) for q in said) else [])
 
 
 def conclusion(text, rests_on, figures=None, allow=(), notes=(), so=None, so_figures=None,
@@ -934,7 +957,7 @@ def how(title, steps):
 
 
 def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=None,
-        answer_allow=(), terms=(), how_it_works=None, blocks=()):
+        answer_allow=(), terms=(), how_it_works=None, blocks=(), lead_quote=None):
     """A category's hub: the answer, the signature chart, the matrix and conclusions, and --
     added by build_topics_index.py from the registry -- a card per topic. `terms`: up to
     TERMS_MAX entries built by term(), drawn under the chart -- what each thing it draws is."""
@@ -945,6 +968,10 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
         bad.append('hub %s: %d terms; at most %d' % (cid, len(terms), TERMS_MAX))
     bad += check_chart(chart, 'hub %s' % cid, required=CHART_REQUIRED)
     bad += TB.blocks_bad(blocks, 'hub %s' % cid)
+    # A hub may open on a quotation too (TJ, 25 October 2026: "i expected at least one at the
+    # top of the page"); a quote repeated in a block below is the block's to drop.
+    bad += _lead_bad(lead_quote, [it for b in blocks for it in (b.get('data') or {}).get('items', [])
+                                  if isinstance(it, dict) and 'quote' in it], 'hub %s' % cid)
     # A hub draws top, lead, chart, body and end (Topic.tsx); `also1`/`also2` sit beside a topic
     # page's extra charts and a hub has none, so a block placed there vanished without a word.
     bad += ['hub %s: block %r is placed %r, which a hub does not draw' % (cid, b.get('title'), b['place'])
@@ -961,6 +988,8 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
         extra['how'] = how_it_works
     if blocks:                                          # likewise
         extra['blocks'] = list(blocks)
+    if lead_quote:                                      # likewise
+        extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS + (('caption',) if lead_quote.get('caption') else ())}
     return dict(extra, id=cid, kind='hub', title=cat['title'], category=cid, path=REG.path(cid),
                 shelves=[cid], answer=a, chart=chart, ladder=ladder, chains=list(chains),
                 table=table, full_report=_full(cid))
