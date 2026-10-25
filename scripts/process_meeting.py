@@ -649,6 +649,7 @@ def run_governed(plan, a, S, ceiling):
     d, last_tick, last_line, last_guard = None, 0.0, None, 0.0
     last_fetch = time.time()                     # the fetch(force=True) above
     window_full = False
+    last_u7 = h0[-1]['u7'] if h0 else None       # to see the WEEK reset (rebase_ceiling below)
     try:
         while True:
             for f in [f for f in active if f.done()]:
@@ -708,6 +709,21 @@ def run_governed(plan, a, S, ceiling):
                 h = G.readings()
                 if h and now - h[-1]['t'] < G.STALE_S:
                     gp.measured(T.done, h[-1]['u5'])
+                    # THE BACKSTOP FOLLOWS THE WEEK. The dollar ceiling is the weekly headroom in
+                    # dollars, and it was computed ONCE, at start. The run of 22 October 2026
+                    # started at 07:53 with the week at 100% -- fifteen hours before it reset --
+                    # so the ceiling came out $6.00, the governor rightly waited for the reset,
+                    # and then the stale $6 stopped it on 24 October with a fresh week unused.
+                    # TJ: "its supposed to keep up to the pace.. why did it stop at $6". So when
+                    # the weekly bar FALLS (a reset), the ceiling is rebased: what is spent so far
+                    # plus the new week's headroom, at the same rate and margin as at start.
+                    u7 = h[-1]['u7']
+                    if (a.until_usage and a.max_usd is None and last_u7 is not None
+                            and u7 < last_u7 - 5):
+                        ceiling = round(T.spent + max(1.0, max(0.0, a.week_cap - u7) * S.PCT_DOLLARS * 1.2), 2)
+                        say('[gov %s] the week reset (%g%% -> %g%%): ceiling rebased to $%.2f'
+                            % (dt.datetime.now().strftime('%H:%M'), last_u7, u7, ceiling))
+                    last_u7 = u7
                 d = G.decide(gp, h, now, in_flight=len(active))
                 # BLIND, NOT RECKLESS. With no fresh reading (the endpoint answered 429 for over
                 # an hour on 7 October) decide() drops to one worker but cannot see a cap. So the
