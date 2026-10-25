@@ -1,18 +1,18 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "stormwater-fee",
- "picked_at": "2026-10-23T11:21:40Z",
+ "picked_at": "2026-10-25T11:08:08Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.3812,
- "input_sha256": "37c185e2a23dc299ae30278a00d3e6c4176c2a597653d87a2dd1e323ee86de79",
+ "cost_usd": 0.4179,
+ "input_sha256": "631f83b5939e11bc7b4afe064836d9de4b2802f50ce7e063729e2b16b6bdfc1b",
  "callouts": [
   {
    "kind": "fee",
    "value": "~$85 a year",
-   "label": "projected stormwater fee for a single-family home if a utility is adopted; not yet set",
-   "hook": "projected yearly fee, not set",
-   "quote": "single family homes, we're looking at probably around $85 a year",
+   "label": "projected stormwater fee for a single-family home; no fee has been set",
+   "hook": "projected yearly stormwater fee",
+   "quote": "single family homes, we're looking at probably around $85 a year.",
    "heard": [
     "$85",
     "$109",
@@ -28,15 +28,35 @@
    "where": "Conservation Commission, 21 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "~$85 a year is stated as a probable figure; label and hook say not set; later items don't change it."
+    "why": "~$85 stated as 'probably around'; label says projected and no fee set; later notes give no different figure."
+   }
+  },
+  {
+   "kind": "warrant",
+   "value": "Nov 17",
+   "label": "Special Town Meeting, where the stormwater fee article is expected",
+   "hook": "",
+   "quote": "November 17th special town meeting",
+   "heard": [],
+   "item_date": "2026-09-15",
+   "item_board": "select-board",
+   "basis": "heard",
+   "board": "select-board",
+   "date": "2026-09-15",
+   "video_id": "kig-BTakGjQ",
+   "t": 4336,
+   "where": "Select Board, 15 Sep 2026",
+   "verdict": {
+    "keep": true,
+    "why": "Nov 17 special town meeting is in the evidence; later items (Article 8/10, advisory question) don't change the date."
    }
   },
   {
    "kind": "money",
-   "value": "$100,000 vs $480,000",
-   "label": "what the town spends yearly on stormwater now vs. what the DPW director says compliance needs",
+   "value": "$480,000",
+   "label": "a year the DPW director says stormwater compliance needs, versus about $100,000 now",
    "hook": "",
-   "quote": "my stormwater budget's been a roughly $100,000 per year. But I need around $480,000 a year to, to just to be compliant.",
+   "quote": "I need around $480,000 a year to, to just to be compliant.",
    "heard": [
     "$100,000",
     "123,000",
@@ -54,27 +74,7 @@
    "where": "Select Board, 20 Oct 2026",
    "verdict": {
     "keep": true,
-    "why": "DPW director quoted: ~$100,000 spent, ~$480,000 needed to comply; later dispute doesn't overtake it."
-   }
-  },
-  {
-   "kind": "impact",
-   "value": "$5000-$50,000",
-   "label": "possible fine per day if the town does not comply with its federal stormwater permit",
-   "hook": "",
-   "quote": "The fines are $5000 to $50,000 per day.",
-   "heard": [],
-   "item_date": "2026-10-20",
-   "item_board": "select-board",
-   "basis": "heard",
-   "board": "select-board",
-   "date": "2026-10-20",
-   "video_id": "z9j248Lu80E",
-   "t": 4293,
-   "where": "Select Board, 20 Oct 2026",
-   "verdict": {
-    "keep": true,
-    "why": "Presenter quoted: fines $5000 to $50,000 per day; supported and not contradicted."
+    "why": "DPW director quoted: about $100,000 now, needs around $480,000 to be compliant; nothing later contradicts."
    }
   }
  ]

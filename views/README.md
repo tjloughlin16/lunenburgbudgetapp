@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**703 of 5499 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**703 of 5502 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4796 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4799 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -414,6 +414,7 @@ Listed so this view cannot look more complete than it is.
 - `data/placement-counts.csv` — Out-of-district placements, by year, FY2011–FY2025
 - `data/police-expended-vs-gl-history.csv` — Police as expended, compared with the general fund history
 - `data/police-expended.csv` — Police spending as expended, FY2015-FY2023
+- `data/position-funds-crosswalk.csv` — Leadership posts paired with their budget line and ledger account
 - `data/prior-year-bills-fincom.csv` — Prior-year bills on the FY2027 warrant
 - `data/public-safety-staffing-plans-vs-roster.csv` — Planned positions against the published roster
 - `data/public-safety-staffing-plans.csv` — Police and fire staffing plans: positions PLANNED, not hired
@@ -460,4 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/search-vocabulary.csv` — The site’s own vocabulary, for the search box’s suggestions
 - `data/ski-coop.csv` — The ski co-op invoice, line by line and town by town
 - `data/special-revenue-funds.csv` — The special revenue funds, FY2011–FY2025
-- `data/special-revenue-printed-totals.csv` — The GRAND TOTAL each report prints

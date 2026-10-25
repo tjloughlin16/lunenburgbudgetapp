@@ -1,18 +1,18 @@
 {
  "warning": "PICKED BY A LANGUAGE MODEL. Nothing here shows until build_threads.py has checked each callout against its source; a failing one is dropped.",
  "thread": "turkey-hill-rebuild",
- "picked_at": "2026-10-19T15:22:48Z",
+ "picked_at": "2026-10-25T11:08:08Z",
  "model": "sonnet",
  "version": 2,
- "cost_usd": 0.1214,
- "input_sha256": "d32162c2e8e54046acd2ded4bfd1f14683990c7a433403157a02b79c80851730",
+ "cost_usd": 0.1538,
+ "input_sha256": "d70c70d24e3798eb092a293f5b458913cb066964a24b2b98a6a55bbfce99868b",
  "callouts": [
   {
    "kind": "money",
    "value": "$16M",
-   "label": "feasibility report's estimate to rehab Turkey Hill, which members call optimistic",
-   "hook": "to rehab Turkey Hill",
-   "quote": "their projection was $16 million",
+   "label": "earlier estimate to renovate Turkey Hill, which members doubt is realistic",
+   "hook": "estimated to renovate, doubted",
+   "quote": "their their projection was $16 million.",
    "heard": [
     "$16 million",
     "$85 million",
@@ -29,54 +29,51 @@
    "t": 5222,
    "where": "School Committee, 5 Nov 2025",
    "verdict": {
-    "keep": true,
-    "why": "Report's $16M rehab projection was called wildly optimistic; no later estimate replaces it."
+    "keep": false,
+    "why": "Label says 'members doubt' but only one member called $16M wildly optimistic; plural overstates."
    }
   },
   {
    "kind": "impact",
-   "value": "April",
-   "label": "deadline to file the state statement of interest for Turkey Hill",
+   "value": "April '27",
+   "label": "target for the town to file its state school-building aid application for Turkey Hill",
    "hook": "",
-   "quote": "Deadline is in April",
+   "quote": "I do believe we can do April of 27.",
    "heard": [],
-   "item_date": "2026-09-09",
+   "item_date": "2025-12-03",
    "item_board": "school-committee",
    "basis": "heard",
    "board": "school-committee",
-   "date": "2026-09-09",
-   "video_id": "tKWYbMFWJtI",
-   "t": 6396,
-   "where": "School Committee, 9 Sep 2026",
+   "date": "2025-12-03",
+   "video_id": "LAK2GHxq2is",
+   "t": 6529,
+   "where": "School Committee, 3 Dec 2025",
    "verdict": {
     "keep": true,
-    "why": "Members said the SOI process opens in January and the deadline is April."
+    "why": "April 2027 SOI target stated; Sept 2026 notes (SOI window closes in April) are consistent."
    }
   },
   {
    "kind": "money",
-   "value": "$85M",
-   "label": "a member's figure for a new Turkey Hill that the town may not afford",
+   "value": "$1M-$1.25M",
+   "label": "estimated cost of the accessibility fixes at Turkey Hill",
    "hook": "",
-   "quote": "spend $85 million on a new building",
+   "quote": "the cost was estimated for a million to 1,250,000",
    "heard": [
-    "$16 million",
-    "$85 million",
-    "$60 million",
-    "$75 million",
-    "$66 million"
+    "a million to 1,250,000",
+    "500,000"
    ],
-   "item_date": "2025-11-05",
+   "item_date": "2026-01-07",
    "item_board": "school-committee",
    "basis": "heard",
    "board": "school-committee",
-   "date": "2025-11-05",
-   "video_id": "gvMBXdLD8D4",
-   "t": 5222,
-   "where": "School Committee, 5 Nov 2025",
+   "date": "2026-01-07",
+   "video_id": "pjSX2hx8kwI",
+   "t": 9394,
+   "where": "School Committee, 7 Jan 2026",
    "verdict": {
     "keep": true,
-    "why": "A member cited $85M and doubted the town has the appetite or money."
+    "why": "Study cited 10 accessibility issues at $1M to $1.25M; nothing later overtakes it."
    }
   }
  ]
