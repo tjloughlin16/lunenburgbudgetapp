@@ -43,9 +43,10 @@ TOPICS = {
     'circuit-breaker': 'Circuit breaker',
     'circuit-breaker-account': 'Circuit breaker account',
     'tuition-budget': 'Tuition budget',
-    # Retitled 23 October 2026: the page now answers how big the reserve should be, with the
-    # voted-vs-spent and every-fund tables behind it. The address is unchanged (it was shared).
-    'special-education-overruns': 'Special education reserve',
+    # Retitled 23 October 2026 to 'Special education reserve', and back on 24 October when the
+    # SERF report took that name for its own shelf (/special-education-reserve), which lists
+    # this page too. The address is unchanged (it was shared).
+    'special-education-overruns': 'Special education overruns',
     'students-with-an-iep': 'Students with an IEP',
     'out-of-district-placements': 'Out-of-district placements',
     'hiring-versus-placing': 'Hiring versus placing',

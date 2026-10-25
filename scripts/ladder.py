@@ -97,17 +97,35 @@ def tier(title, facts):
     return dict(title=t, facts=list(facts))
 
 
-def conclusion(text, rests_on, figures=None, allow=(), chain=None):
+SO_MAX = 140
+
+
+def conclusion(text, rests_on, figures=None, allow=(), chain=None, so=None, so_figures=None,
+               so_allow=()):
     """One rung at the top. `rests_on` names the facts under it; `chain` optionally names a
     question in the brief whose verdict and evidence open beneath it. TJ, 12 October 2026:
     the conclusions and the questions "seem to be the same type of information" -- so a
-    question is no longer a second list, it is the evidence for a conclusion."""
+    question is no longer a second list, it is the evidence for a conclusion.
+
+    `so`: WHAT IT MEANS -- the line under the fact saying what it changes for a decision or a
+    reader. TJ, 24 October 2026: "we give a fact, which is AMAZING. but what does the fact mean
+    or suggest? ... how does it impact decision making or citizens or boards". It is our
+    reading of the fact, so it is drawn as such; it may not instruct (PRESCRIPTIVE), and every
+    figure in it is registered like any other."""
     u = _unit(text, figures, allow, CONCLUSION_MAX, 'conclusion')
     if not rests_on:
         raise ConclusionError('a conclusion must rest on at least one fact: %r' % text)
     u['rests_on'] = list(rests_on)
     if chain:
         u['chain'] = chain
+    if so:
+        m = _unit(so, so_figures, so_allow, SO_MAX, 'conclusion means')
+        bad = check_unit(m, 'conclusion means')
+        if PRESCRIPTIVE.search(m['text']):
+            bad.append('what it means tells the reader what to do: %r' % m['text'])
+        if bad:
+            raise ConclusionError('\n  '.join(bad))
+        u['so'] = m
     return u
 
 

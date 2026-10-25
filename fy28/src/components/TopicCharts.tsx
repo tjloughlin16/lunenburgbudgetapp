@@ -409,8 +409,16 @@ function Overlay({ c }: { c: SeriesChart }) {
 function Series({ c }: { c: SeriesChart }) {
   if (c.multiples) return <Multiples c={c} />
   if (c.overlay) return <Overlay c={c} />
+  // THE TOTALS RIDE ON AN INVISIBLE CAP BAND, one per x, never on the top track: recharts
+  // draws no rect -- and so no label -- where a band is zero, and LabelList then hands its
+  // labels out in order, so a stack whose top track was empty in some years printed the
+  // first totals over the wrong bars (found 24 October 2026 on /special-education-reserve,
+  // FY2013's total over FY2022). The cap is a hair tall in every column, so every column
+  // gets exactly its own total.
+  const capH = c.totals ? Math.max(1, ...c.series.flatMap(s => s.values.map(v => Math.abs(v ?? 0)))) * 1e-6 : 0
   const rows = c.x.map((x, i) => Object.fromEntries([['x', x],
-    ...c.series.map((s, j) => [`s${j}`, s.values[i]] as const)]))
+    ...c.series.map((s, j) => [`s${j}`, s.values[i]] as const),
+    ...(c.totals ? [['__cap', capH] as const] : [])]))
   const negative = c.series.some(s => s.values.some(v => v != null && v < 0))
   // An axis that need not start at zero still starts on a round number, and takes in the
   // reference line, so "the minimum" is never off the bottom of its own chart.
@@ -465,16 +473,6 @@ function Series({ c }: { c: SeriesChart }) {
                      nobody printed does; a two-pixel stub tells them apart. Stacks skip it,
                      because a stacked track is empty by design where another stands. */
                   minPointSize={c.stacked ? undefined : 2}>
-                  {/* The whole of each stack, above its top band: the generator's text, so the
-                      label foots to the bands (TJ, 23 October 2026: a share chart hid the scale). */}
-                  {c.totals && i === c.series.length - 1 ? (
-                    <LabelList dataKey={`s${i}`} content={(p: { x?: number | string; y?: number | string;
-                      width?: number | string; index?: number }) => (
-                      <text x={Number(p.x) + Number(p.width) / 2} y={Number(p.y) - 7} textAnchor="middle"
-                        fontSize={12} fontWeight={600} fill="var(--text-primary)">
-                        {c.totals?.[p.index ?? 0]}</text>
-                    )} />
-                  ) : null}
                 </Bar>
               ) : (
                 <Line key={s.name} dataKey={`s${i}`} name={s.name} stroke={colourOf(s, i)} strokeWidth={2.25}
@@ -482,6 +480,18 @@ function Series({ c }: { c: SeriesChart }) {
                   connectNulls={false} isAnimationActive={false} type="linear" />
               )
             })}
+            {/* The whole of each stack, above it: the generator's text, so the label foots to
+                the bands (TJ, 23 October 2026: a share chart hid the scale). */}
+            {c.totals ? (
+              <Bar dataKey="__cap" stackId="stack" fill="transparent" isAnimationActive={false}>
+                <LabelList dataKey="__cap" content={(p: { x?: number | string; y?: number | string;
+                  width?: number | string; index?: number }) => (
+                  <text x={Number(p.x) + Number(p.width) / 2} y={Number(p.y) - 7} textAnchor="middle"
+                    fontSize={12} fontWeight={600} fill="var(--text-primary)">
+                    {c.totals?.[p.index ?? 0]}</text>
+                )} />
+              </Bar>
+            ) : null}
           </ComposedChart>
         </ResponsiveContainer>
       </div>

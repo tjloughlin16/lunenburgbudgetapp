@@ -1,0 +1,920 @@
+{
+ "category": "school-all-funds",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Entries that move pay between funds and net to zero; accruals and duplicate reversals are left out."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Moved onto other funds",
+    "texts": [
+     "$24,323",
+     "$362,799",
+     "$20,660",
+     "$137,848"
+    ],
+    "values": [
+     24323,
+     362799,
+     20660,
+     137848
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Moved back onto the general fund",
+    "texts": [
+     "$1,449",
+     "$214,546",
+     "$195,890",
+     "$205,645"
+    ],
+    "values": [
+     1449,
+     214546,
+     195890,
+     205645
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "General fund pay moved by journal entry",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$545,630",
+     "unit": "",
+     "value": 545630
+    },
+    "b": {
+     "text": "$617,530",
+     "unit": "",
+     "value": 617530
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the school business office memos the entries cite",
+     "figures": {},
+     "kind": "gap",
+     "literals": [],
+     "text": "Most cite a school memo; the memos are not in this archive."
+    }
+   ],
+   "rests_on": [
+    "m-off",
+    "m-on",
+    "m-n"
+   ],
+   "text": "Year-end entries moved $545,630 of general fund pay onto grants and fees; $617,530 came back."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$187,339",
+     "unit": "",
+     "value": 187339
+    },
+    "y": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "The same entry put pay on Comprehensive school health, ESSER III (pandemic), IDEA (special education), Student Opportunity Act, and others; it does not pair each line with one grant."
+    }
+   ],
+   "rests_on": [
+    "m-big"
+   ],
+   "text": "The largest: $187,339 of paraprofessionals pay moved onto grants in one FY2024 entry."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$120,009",
+     "unit": "",
+     "value": 120009
+    },
+    "b": {
+     "text": "$106,317",
+     "unit": "",
+     "value": 106317
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "So that year the general fund carried coaches’ pay first booked to the fee fund, not the other way round."
+    }
+   ],
+   "rests_on": [
+    "m-fee",
+    "m-coach"
+   ],
+   "text": "In FY2025, $120,009 of the athletic fee fund’s pay moved onto the general fund, $106,317 to coaches."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$35,400",
+     "unit": "",
+     "value": 35400
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "y": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "The FY2023 entry calls it a portion of one person’s pay; the name is redacted."
+    }
+   ],
+   "rests_on": [
+    "m-35"
+   ],
+   "text": "$35,400 moved between extended day and the family engagement grant in each of the four years."
+  }
+ ],
+ "facts": [
+  {
+   "id": "m-off",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "general fund pay moved onto other funds"
+   },
+   "value": {
+    "text": "$545,630",
+    "unit": "",
+    "value": 545630
+   }
+  },
+  {
+   "id": "m-on",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "other funds’ pay moved onto the general fund"
+   },
+   "value": {
+    "text": "$617,530",
+    "unit": "",
+    "value": 617530
+   }
+  },
+  {
+   "id": "m-n",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "journal entries that moved pay, FY2023 to FY2026"
+   },
+   "value": {
+    "text": "40",
+    "unit": "entries",
+    "value": 40
+   }
+  },
+  {
+   "id": "m-big",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "paraprofessionals, FY2024"
+   },
+   "value": {
+    "text": "$187,339",
+    "unit": "",
+    "value": 187339
+   }
+  },
+  {
+   "id": "m-fee",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "athletic fee fund pay moved off it, FY2025"
+   },
+   "value": {
+    "text": "$120,009",
+    "unit": "",
+    "value": 120009
+   }
+  },
+  {
+   "id": "m-coach",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of it onto general fund coaches’ pay"
+   },
+   "value": {
+    "text": "$106,317",
+    "unit": "",
+    "value": 106317
+   }
+  },
+  {
+   "id": "m-35",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "between extended day and one grant, each year"
+   },
+   "value": {
+    "text": "$35,400",
+    "unit": "",
+    "value": 35400
+   }
+  },
+  {
+   "closes": "the school business office memos the entries cite",
+   "id": "m-why",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "why each entry was made"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$545,630",
+    "unit": "",
+    "value": 545630
+   },
+   "b": {
+    "text": "$617,530",
+    "unit": "",
+    "value": 617530
+   }
+  },
+  "literals": [],
+  "text": "Journal entries moved $545,630 of general fund pay onto other funds in four years, and $617,530 back."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "pay-moved-between-funds",
+ "kind": "topic",
+ "path": "/school-all-funds/pay-moved-between-funds",
+ "said": [],
+ "shelves": [
+  "school-all-funds"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account)"
+  },
+  {
+   "href": "/docs/data/position-funds-crosswalk.csv",
+   "label": "Lunenburg Budget Project — position-funds-crosswalk.csv (each post’s title, budget line and account, paired by us)"
+  },
+  {
+   "href": "/docs/data/school-staff-directory.csv",
+   "label": "Lunenburg Public Schools — district staff directory (school-staff-directory.csv)"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  }
+ ],
+ "table": null,
+ "tables": [
+  {
+   "caption": "Every pay move over the floor, by year",
+   "views": [
+    {
+     "columns": [
+      "Moved",
+      "The other side",
+      "Entry, as printed"
+     ],
+     "key": "fy2023",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2023",
+     "note": "Below zero: pay taken off this account and put on the other side. Moves under $5,000 are left out.",
+     "rows": [
+      {
+       "cells": [
+        "-$60,338",
+        "IDEA (special education), School Choice Revolving Fund, Title I",
+        "5/10/23 SCHOOL MEMO FY23-011"
+       ],
+       "label": "Title I — Grant Administrators Salaries"
+      },
+      {
+       "cells": [
+        "-$35,400",
+        "Family and community engagement",
+        "PORTION OF [redacted] FY23 237"
+       ],
+       "label": "Extended Day Revolving Fund — Salaries Revolving Funds"
+      },
+      {
+       "cells": [
+        "-$13,083",
+        "#252, #264, #274, and others",
+        "6/30/23 SCHOOL MEMO FY23-013; PARTIAL [redacted] TO FY23 #262"
+       ],
+       "label": "General fund — P.S. Sped Paraprofessionals"
+      },
+      {
+       "cells": [
+        "-$6,978",
+        "#252, #264, #274, and others",
+        "6/30/23 SCHOOL MEMO FY23-014; 6/30/23 SCHOOL MEMO FY23-016"
+       ],
+       "label": "ESSER II (pandemic) — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "-$5,161",
+        "IDEA (special education), School Choice Revolving Fund",
+        "5/10/23 SCHOOL MEMO FY23-011"
+       ],
+       "label": "Title I — Grant Administrators Salaries"
+      },
+      {
+       "cells": [
+        "$9,136",
+        "ESSER II (pandemic), General fund, School Choice Revolving Fund",
+        "6/30/23 SCHOOL MEMO FY23-014"
+       ],
+       "label": "Student Opportunity Act — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "$13,083",
+        "ESSER II (pandemic), General fund, School Choice Revolving Fund",
+        "6/30/23 SCHOOL MEMO FY23-013; PARTIAL [redacted] TO FY23 #262"
+       ],
+       "label": "IDEA (preschool) — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "$35,400",
+        "Extended Day Revolving Fund, General fund",
+        "PORTION OF [redacted] FY23 237"
+       ],
+       "label": "Family and community engagement — Grant Administrators Salaries"
+      },
+      {
+       "cells": [
+        "$69,768",
+        "ESSER II (pandemic), General fund, School Choice Revolving Fund, and others",
+        "6/30/23 SCHOOL MEMO FY23-017; 5/10/23 SCHOOL MEMO FY23-011"
+       ],
+       "label": "Title I — Grant Instr Staff Salaries"
+      }
+     ]
+    },
+    {
+     "columns": [
+      "Moved",
+      "The other side",
+      "Entry, as printed"
+     ],
+     "key": "fy2024",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2024",
+     "note": "Below zero: pay taken off this account and put on the other side. Moves under $5,000 are left out.",
+     "rows": [
+      {
+       "cells": [
+        "-$219,367",
+        "General fund, IDEA (special education)",
+        "RECLASS SCHOOL MEMO 10/11/24-6"
+       ],
+       "label": "IDEA (special education) — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "-$187,339",
+        "Comprehensive school health, ESSER III (pandemic), IDEA (special education), and others",
+        "6/26/24 SCHOOL MEMO FY24"
+       ],
+       "label": "General fund — Paraprofessionals"
+      },
+      {
+       "cells": [
+        "-$118,420",
+        "Comprehensive school health, ESSER III (pandemic), IDEA (special education), and others",
+        "6/26/24 SCHOOL MEMO FY24"
+       ],
+       "label": "General fund — H.S. Guidance Counselors"
+      },
+      {
+       "cells": [
+        "-$84,892",
+        "#274, General fund, IDEA (preschool), and others",
+        "RECLASS SCHOOL MEMO 10/11/24-4"
+       ],
+       "label": "Student Opportunity Act — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "-$73,808",
+        "General fund",
+        "RECLASS SCHOOL MEMO 10/11/24-9"
+       ],
+       "label": "ESSER III (pandemic) — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "-$67,997",
+        "School Choice Revolving Fund",
+        "RECLASS SCHOOL MEMO 10/11/24-3"
+       ],
+       "label": "Title I — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "-$40,898",
+        "Extended Day Revolving Fund, General fund",
+        "RECLASS SCHOOL MEMO 10/11/24-5"
+       ],
+       "label": "ESSER II (pandemic) — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "-$35,682",
+        "Title I",
+        "ADJ FY24 EXPENSE FROM TITLE 1; REVERSE"
+       ],
+       "label": "General fund — Hs Sped Resource Room Teacher"
+      },
+      {
+       "cells": [
+        "-$31,171",
+        "General fund, School Choice Revolving Fund",
+        "RECLASS SCHOOL MEMO 10/11/24-7"
+       ],
+       "label": "IDEA (special education) — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "-$21,358",
+        "Comprehensive school health, ESSER III (pandemic), IDEA (special education), and others",
+        "6/26/24 SCHOOL MEMO FY24"
+       ],
+       "label": "General fund — M.S. Nurses"
+      },
+      {
+       "cells": [
+        "-$11,900",
+        "Comprehensive school health, School Choice Revolving Fund",
+        "RECLASS SCHOOL MEMO 10/11/24-7"
+       ],
+       "label": "Deeper learning — Stipends"
+      },
+      {
+       "cells": [
+        "-$6,192",
+        "After-school (ASOST)",
+        "RECLASS SCHOOL MEMO 10/11/24-1"
+       ],
+       "label": "After-school (ASOST) — Stipends"
+      },
+      {
+       "cells": [
+        "$8,783",
+        "After-school (ASOST), Extended Day Revolving Fund",
+        "RECLASS SCHOOL MEMO 10/11/24-8; RECLASS SCHOOL MEMO 10/11/24-1"
+       ],
+       "label": "After-school (ASOST) — Stipends"
+      },
+      {
+       "cells": [
+        "$13,007",
+        "IDEA (special education)",
+        "RECLASS SCHOOL MEMO 10/11/24-7"
+       ],
+       "label": "General fund — P.S. Special Ed Teachers"
+      },
+      {
+       "cells": [
+        "$13,325",
+        "Student Opportunity Act",
+        "RECLASS SCHOOL MEMO 10/11/24-4"
+       ],
+       "label": "IDEA (preschool) — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "$13,477",
+        "Student Opportunity Act",
+        "RECLASS SCHOOL MEMO 10/11/24-4"
+       ],
+       "label": "#274 — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "$33,057",
+        "Deeper learning, General fund",
+        "6/26/24 SCHOOL MEMO FY24; RECLASS SCHOOL MEMO 10/11/24-7"
+       ],
+       "label": "Comprehensive school health — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "$35,400",
+        "Extended Day Revolving Fund",
+        "RECLASS SCHOOL MEMO 10/11/24-8"
+       ],
+       "label": "Family and community engagement — Grant Administrators Salaries"
+      },
+      {
+       "cells": [
+        "$73,808",
+        "ESSER III (pandemic)",
+        "RECLASS SCHOOL MEMO 10/11/24-9"
+       ],
+       "label": "General fund — M.S. Guidance Counselors"
+      },
+      {
+       "cells": [
+        "$88,105",
+        "Deeper learning, IDEA (special education), Title I",
+        "RECLASS SCHOOL MEMO 10/11/24-7; ADJ FY24 EXPENSE; REVERSE; RECLASS SCHOOL MEMO 1"
+       ],
+       "label": "School Choice Revolving Fund — Salaries Revolving Funds"
+      },
+      {
+       "cells": [
+        "$118,420",
+        "General fund",
+        "6/26/24 SCHOOL MEMO FY24"
+       ],
+       "label": "ESSER III (pandemic) — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "$123,353",
+        "General fund, Student Opportunity Act",
+        "6/26/24 SCHOOL MEMO FY24; RECLASS SCHOOL MEMO 10/11/24-4"
+       ],
+       "label": "Student Opportunity Act — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "$125,063",
+        "IDEA (special education), Student Opportunity Act",
+        "RECLASS SCHOOL MEMO 10/11/24-4; RECLASS SCHOOL MEMO 10/11/24-6"
+       ],
+       "label": "General fund — E.S. Sped Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$165,760",
+        "General fund, School Choice Revolving Fund",
+        "ADJ FY24 EXPENSE; REVERSE; 6/26/24 SCHOOL MEMO FY24; ADJ FY24 EXPENSE FROM TITLE"
+       ],
+       "label": "Title I — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "$223,525",
+        "General fund, IDEA (special education)",
+        "6/26/24 SCHOOL MEMO FY24; RECLASS SCHOOL MEMO 10/11/24-6"
+       ],
+       "label": "IDEA (special education) — Grnt Non Instr/Supprt Salaries"
+      }
+     ]
+    },
+    {
+     "columns": [
+      "Moved",
+      "The other side",
+      "Entry, as printed"
+     ],
+     "key": "fy2025",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2025",
+     "note": "Below zero: pay taken off this account and put on the other side. Moves under $5,000 are left out.",
+     "rows": [
+      {
+       "cells": [
+        "-$120,009",
+        "General fund",
+        "PER MEMO 08/20/2025"
+       ],
+       "label": "Athletic fee fund (Chapter 658) — Salaries Revolving Funds"
+      },
+      {
+       "cells": [
+        "-$35,400",
+        "Extended Day Revolving Fund",
+        "PER MEMO 07/16/2025"
+       ],
+       "label": "Family and community engagement — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "-$8,139",
+        "General fund",
+        "PER MEMO 09/02/2025"
+       ],
+       "label": "School Choice Revolving Fund — Salaries Revolving Funds"
+      },
+      {
+       "cells": [
+        "-$6,664",
+        "IDEA (preschool)",
+        "PER MEMO 08/20/2025"
+       ],
+       "label": "General fund — P.S. Sped Paraprofessionals"
+      },
+      {
+       "cells": [
+        "-$6,600",
+        "Comprehensive school health",
+        "ADJ EXP TO FY25 CSHS"
+       ],
+       "label": "General fund — H.S. Regular Substitutes"
+      },
+      {
+       "cells": [
+        "$6,664",
+        "General fund",
+        "PER MEMO 08/20/2025"
+       ],
+       "label": "IDEA (preschool) — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "$13,692",
+        "Athletic fee fund (Chapter 658)",
+        "PER MEMO 08/20/2025"
+       ],
+       "label": "General fund — H.S. Principal/Asst Principal"
+      },
+      {
+       "cells": [
+        "$13,900",
+        "General fund",
+        "ADJ EXP FR GF"
+       ],
+       "label": "Comprehensive school health — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "$35,400",
+        "Family and community engagement",
+        "PER MEMO 07/16/2025"
+       ],
+       "label": "Extended Day Revolving Fund — Salaries Revolving Funds"
+      },
+      {
+       "cells": [
+        "$71,043",
+        "Athletic fee fund (Chapter 658)",
+        "PER MEMO 01/30/25; PER MEMO 05/02/25; PER MEMO 7/02/25"
+       ],
+       "label": "General fund — Special Detail/Athletic Events"
+      },
+      {
+       "cells": [
+        "$106,317",
+        "Athletic fee fund (Chapter 658)",
+        "PER MEMO 08/20/2025"
+       ],
+       "label": "General fund — Athletic Coaches"
+      }
+     ]
+    },
+    {
+     "columns": [
+      "Moved",
+      "The other side",
+      "Entry, as printed"
+     ],
+     "key": "fy2026",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "FY2026",
+     "note": "Below zero: pay taken off this account and put on the other side. Moves under $5,000 are left out.",
+     "rows": [
+      {
+       "cells": [
+        "-$205,645",
+        "Fair Share grant, General fund, IDEA (special education), and others",
+        "reclass; grant 240 fy26 to primary"
+       ],
+       "label": "IDEA (special education) — Grnt Non Instr/Supprt Salaries"
+      },
+      {
+       "cells": [
+        "-$87,302",
+        "Title I",
+        "transfer to s2032101"
+       ],
+       "label": "Student Opportunity Act — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "-$77,777",
+        "Title I",
+        "transfer to s2032101"
+       ],
+       "label": "General fund — Kindergarten Teachers/Regular"
+      },
+      {
+       "cells": [
+        "-$42,952",
+        "Fair Share grant, IDEA (special education), Student Opportunity Act",
+        "reclass"
+       ],
+       "label": "General fund — E.S. Teachers/Regular"
+      },
+      {
+       "cells": [
+        "-$35,400",
+        "Extended Day Revolving Fund",
+        "PER [redacted] 6-22-2026"
+       ],
+       "label": "Family and community engagement — Grant Administrators Salaries"
+      },
+      {
+       "cells": [
+        "-$17,120",
+        "MyCAP grant",
+        "mycap grant"
+       ],
+       "label": "General fund — School Stipends"
+      },
+      {
+       "cells": [
+        "-$11,418",
+        "Fair Share grant, General fund, IDEA (special education), and others",
+        "reclass"
+       ],
+       "label": "IDEA (special education) — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "$11,418",
+        "General fund, IDEA (special education)",
+        "reclass"
+       ],
+       "label": "IDEA (special education) — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "$17,120",
+        "General fund",
+        "mycap grant"
+       ],
+       "label": "MyCAP grant — Salaries Staff"
+      },
+      {
+       "cells": [
+        "$35,400",
+        "Family and community engagement",
+        "PER [redacted] 6-22-2026"
+       ],
+       "label": "Extended Day Revolving Fund — Salaries Revolving Funds"
+      },
+      {
+       "cells": [
+        "$39,900",
+        "IDEA (special education)",
+        "reclass; grant 240 fy26 to primary"
+       ],
+       "label": "General fund — E.S. Sped Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$42,952",
+        "General fund, IDEA (special education)",
+        "reclass"
+       ],
+       "label": "Student Opportunity Act — Grant Instr Staff Salaries"
+      },
+      {
+       "cells": [
+        "$45,671",
+        "IDEA (special education)",
+        "reclass; grant 240 fy26 to primary"
+       ],
+       "label": "General fund — M.S. Spec Ed Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$120,074",
+        "IDEA (special education)",
+        "reclass; grant 240 fy26 to primary"
+       ],
+       "label": "General fund — P.S. Sped Paraprofessionals"
+      },
+      {
+       "cells": [
+        "$165,079",
+        "General fund, Student Opportunity Act",
+        "transfer to s2032101"
+       ],
+       "label": "Title I — Grant Prof Salaries - Mtrs"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "title": "Pay moved between funds"
+}

@@ -34,9 +34,15 @@ listed on another shelf keeps that one address.
 # Split from one list on 12 October 2026 so several authors -- people or agents -- can each
 # add a category without rewriting a shared file (CLAUDE.md: "a generated file with several
 # authors gets clobbered, not merged"). `area` groups the shelves on /reports:
-AREAS = [('school', 'The schools'), ('town', 'The town'), ('options', 'Budget options')]
+AREAS = [('school', 'The schools'), ('town', 'The town'), ('options', 'Budget options'),
+         # SPECIAL REPORTS: one-off reports for a decision or a moment, at the bottom of the menu
+         # and of /reports, each with an `archive_after` date past which it leaves the menu and
+         # moves to the archive on /reports (TJ, 24 October 2026: "reports that wont stay on the
+         # menu forever at a high level and will eventually go into an archive").
+         ('special', 'Special reports')]
 
 import importlib as _il
+import re
 import pkgutil as _pk
 import os as _os
 import sys as _sys
@@ -106,6 +112,11 @@ def check():
     for c in CATEGORIES:
         if c.get('area') not in dict(AREAS):
             bad.append('%s: area %r is not one of %s' % (c['id'], c.get('area'), [a for a, _ in AREAS]))
+        aa = c.get('archive_after')
+        if (c.get('area') == 'special') != bool(aa):
+            bad.append('%s: a special report, and only one, carries archive_after' % c['id'])
+        if aa and not re.fullmatch(r'\d{4}-\d\d-\d\d', aa):
+            bad.append('%s: archive_after %r is not an ISO date' % (c['id'], aa))
         for name in (c['title'], c['shelf']):
             if name.rstrip().endswith(('?', '.')) or len(name.split()) > 5:
                 bad.append('%s: %r reads as a sentence -- a title is the subject in 2-4 words'

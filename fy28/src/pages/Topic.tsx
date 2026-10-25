@@ -26,6 +26,7 @@ import { InlineTopicChart, isInline, type InlineChart } from '../components/Topi
 import { AccountLedger, type LedgerData } from '../components/AccountLedger'
 import { Brief, Tag, type Chain, type Step } from '../components/brief'
 import { TopicLink } from '../components/TopicLink'
+import { Blocks, type Block } from '../components/blocks/Blocks'
 
 /** A page declared related to this one (scripts/topic_registry/related.py): a topic, a hub,
  *  or another page on the site, with the one-line reason a reader would go there. */
@@ -46,7 +47,7 @@ type IndexCategory = {
 }
 type Index = { categories: IndexCategory[]; topics: Record<string, IndexTopic> }
 
-type Said = { quote: string; board: string; date: string; href: string; label: string; caption?: boolean }
+type Said = { quote: string; board: string; date: string; href: string; label: string; caption?: boolean; who?: string }
 /** A bespoke component in ANALYSIS_CHARTS fed by a payload, or an inline spec written by
  *  scripts/topic.py (series, ranking, parts, image) and drawn by TopicCharts. */
 type ChartRef = { id: string; source: string } | InlineChart | null
@@ -61,19 +62,64 @@ type TopicPayload = {
   tables?: FigureTableData[]
   /** Up to two more charts under the signature (scripts/topic.py page(also=...)). */
   also?: ChartRef[]
+  how?: HowData
   /** A leftover, account by account (scripts/topic.py ledger()). */
   ledger?: LedgerData
   /** The claim a page tests, quoted verbatim, opening the page (scripts/topic.py lead_quote). */
   lead_quote?: LeadQuote
+  /** Arranged parts: explain, matrix, timeline, checks, panels, custom (scripts/topic_blocks.py). */
+  blocks?: Block[]
 }
 type LeadQuote = { quote: string; who: string; board: string; date: string; href: string; label: string }
 type HubPayload = {
   kind: 'hub'; id: string; title: string; category: string; path: string; answer: LadderUnit; chart: ChartRef
   ladder: LadderData; chains: Chain[]; table: FigureTableData | null
   full_report: { href: string; label: string }
+  /** What each thing the chart draws IS, and why it surprises (scripts/topic.py term()). */
+  terms?: { term: string; means: LadderUnit; surprises: LadderUnit }[]
+  how?: HowData
+  blocks?: Block[]
+}
+
+/** HOW IT WORKS: a mechanism as numbered steps (scripts/topic.py how()). */
+type HowData = { title: string; steps: LadderUnit[] }
+
+function How({ h }: { h: HowData }) {
+  return (
+    <section className="mt-6 max-w-3xl">
+      <h2 className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+        {h.title}</h2>
+      <ol className="mt-2 space-y-2 list-decimal pl-5">
+        {h.steps.map((s, i) => (
+          <li key={i} className="text-[15px] leading-snug pl-1">{s.text}</li>
+        ))}
+      </ol>
+    </section>
+  )
 }
 
 const link = { color: 'var(--series-cost)' }
+
+/** A hub's terms, under its chart: a reader meets the definition beside the thing it defines,
+ *  not three clicks down on a topic page (TJ, 24 October 2026). */
+function Terms({ terms }: { terms: NonNullable<HubPayload['terms']> }) {
+  return (
+    <section className="mt-6 max-w-3xl">
+      <h2 className="text-[11px] font-semibold uppercase tracking-widest" style={{ color: 'var(--text-muted)' }}>
+        What these are, and why they surprise</h2>
+      <dl className="mt-2 grid gap-x-6 gap-y-4 sm:grid-cols-2">
+        {terms.map(t => (
+          <div key={t.term} className="pl-3 border-l-2" style={{ borderColor: 'var(--grid)' }}>
+            <dt className="text-[15px] font-semibold">{t.term}</dt>
+            <dd className="text-[14px] leading-snug mt-0.5" style={{ color: 'var(--text-secondary)' }}>{t.means.text}</dd>
+            <dd className="text-[14px] leading-snug mt-1" style={{ color: 'var(--text-primary)' }}>
+              <span className="font-semibold">Why it surprises: </span>{t.surprises.text}</dd>
+          </div>
+        ))}
+      </dl>
+    </section>
+  )
+}
 const eyebrow = 'text-[11px] font-semibold uppercase tracking-widest'
 
 /** The page's signature chart: inline, or from the site's registry. */
@@ -122,6 +168,16 @@ function LeadQuoteBlock({ q }: { q: LeadQuote }) {
   )
 }
 
+/** '2025-10-07' -> '7 October 2025'. TJ, 24 October 2026: "all quotes need a year and the name
+ *  of the person ... its unclear if its from 2009, 2026". An ISO date in a link reads as an
+ *  identifier, not as WHEN; so the date is written out, beside who said it. */
+const MONTH_NAMES = ['January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
+  'September', 'October', 'November', 'December']
+function longDate(iso: string): string {
+  const m = /^(\d{4})-(\d{2})-(\d{2})$/.exec(iso)
+  return m ? `${Number(m[3])} ${MONTH_NAMES[Number(m[2]) - 1]} ${m[1]}` : iso
+}
+
 function SaidList({ said }: { said: Said[] }) {
   if (!said.length) return null
   return (
@@ -132,6 +188,8 @@ function SaidList({ said }: { said: Said[] }) {
           <li key={i} className="pl-3 border-l-2" style={{ borderColor: s.caption ? 'var(--axis)' : 'var(--grid)' }}>
             <p className="text-[14.5px] leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
               “{s.quote}”</p>
+            <p className="text-[13px] mt-0.5" style={{ color: 'var(--text-secondary)' }}>
+              — {s.who ? <>{s.who}, </> : null}{s.board}, <span className="font-semibold">{longDate(s.date)}</span></p>
             <p className="text-[12.5px] mt-0.5"><a href={s.href} className="underline" style={link}>
               {s.label}</a>{s.caption ? <span style={{ color: 'var(--text-muted)' }}> — machine captions, a finding aid</span> : null}</p>
           </li>
@@ -307,10 +365,16 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
       dataUrl={`/data/topics/${id}.json`}>
       {p && ix && p.kind === 'hub' ? (
         <>
+          <Blocks blocks={p.blocks} place="top" />
           <p className="text-[19px] leading-snug font-semibold mt-6 max-w-3xl">{p.answer.text}</p>
           <p className="text-[13px] mt-2"><a href="#topics" className="underline" style={link}>
             Go straight to the topics &darr;</a></p>
+          <Blocks blocks={p.blocks} place="lead" />
           <TopicChart chart={p.chart} alt={title} />
+          <Blocks blocks={p.blocks} place="chart" />
+          {p.terms?.length ? <Terms terms={p.terms} /> : null}
+          {p.how ? <How h={p.how} /> : null}
+          <Blocks blocks={p.blocks} place="body" />
           <Ladder l={p.ladder} evidence={Object.fromEntries(p.chains.map(c => [c.id, {
             tag: <Tag v={c.verdict} label={c.label} />, question: c.question,
             body: <Brief steps={c.steps} base={p.full_report.href} />,
@@ -319,14 +383,22 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           {ix.categories.find(c => c.id === p.id)
             ? <TopicCards ix={ix} cat={ix.categories.find(c => c.id === p.id)!} /> : null}
           {p.table ? <section className="mt-10 max-w-3xl"><FigureTable t={p.table} /></section> : null}
+          <Blocks blocks={p.blocks} place="end" />
         </>
       ) : p && ix && p.kind === 'topic' ? (
         <>
           <Shelf ix={ix} t={p} />
+          {/* The claim under test first, then the page's headline conclusion (TJ, 25 Oct 2026). */}
           {p.lead_quote ? <LeadQuoteBlock q={p.lead_quote} /> : null}
+          <Blocks blocks={p.blocks} place="top" />
           <p className="text-[19px] leading-snug font-semibold mt-4 max-w-3xl">{p.finding.text}</p>
+          <Blocks blocks={p.blocks} place="lead" />
           <TopicChart chart={p.chart} alt={p.title} />
-          {(p.also ?? []).map((c, i) => <TopicChart key={i} chart={c} alt={p.title} />)}
+          <Blocks blocks={p.blocks} place="chart" />
+          {(p.also ?? []).map((c, i) => <div key={i}><TopicChart chart={c} alt={p.title} />
+            <Blocks blocks={p.blocks} place={i === 0 ? 'also1' : 'also2'} /></div>)}
+          {p.how ? <How h={p.how} /> : null}
+          <Blocks blocks={p.blocks} place="body" />
           <Ladder
             l={{ tiers: [{ title: 'The facts', facts: p.facts }], title: 'What it shows',
                  conclusions: p.conclusions.map((c, i) => ({ ...c, chain: c.notes?.length ? `n${i}` : undefined })) }}
@@ -337,6 +409,7 @@ export function Topic({ fallback = 'transportation' }: { fallback?: string }) {
           {p.ledger ? <AccountLedger l={p.ledger} /> : null}
           {[p.table, ...(p.tables ?? [])].filter((t): t is FigureTableData => !!t).map((t, i) => (
             <section key={i} className={`${i ? 'mt-8' : 'mt-10'} max-w-3xl`}><FigureTable t={t} /></section>))}
+          <Blocks blocks={p.blocks} place="end" />
           <SaidList said={p.said} />
           <Sources sources={p.sources} />
           <ShelfNav ix={ix} t={p} />

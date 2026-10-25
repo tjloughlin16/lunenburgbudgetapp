@@ -110,10 +110,6 @@ export const GROUPS: Group[] = [
     { href: '/parks', label: 'Parks & Recreation', sub: 'A department, whole' },
     { href: '/parks/youth-league-payments', label: 'Youth sports and fields', sub: 'What the leagues pay' },
   ] },
-  // A one-off report rather than a subject, so it sits below the town's subjects (TJ, 22 Oct).
-  { title: 'Special reports', under: null, items: [
-    { href: '/fy2026-closeout', label: 'FY2026 year end', sub: 'How the year closed, town and schools' },
-  ] },
   { title: 'Check it', under: null, items: [
     { to: 'sources', label: 'Sources', sub: 'Every document this rests on' },
     { to: 'search', label: 'Search', sub: 'Pages, documents, minutes, video' },
@@ -124,6 +120,41 @@ export const GROUPS: Group[] = [
     { to: 'about', label: 'About', sub: 'Who runs this, and how' },
   ] },
 ]
+
+/** SPECIAL REPORTS, LAST, AND EACH ONE LEAVES ON ITS OWN DATE. TJ, 24 October 2026: *"serf is a
+ *  special hub/report, so it needs to show at the bottom of the menu in something like 'special
+ *  reports', same as 'fy2026 closeout'... reports that wont stay on the menu forever at a high
+ *  level and will eventually go into an archive."* Read from topics.json: every hub whose area
+ *  is `special` (scripts/topics.py), until its `archive_after` date; then it is listed only in
+ *  the archive on /reports. Nothing is regenerated for a report to leave -- the date is
+ *  compared here, against today, like the NEW badge. */
+type SpecialHub = { id: string; shelf: string; title: string; path: string; area: string;
+                    order: number; archive_after?: string }
+
+export function useSpecialReports() {
+  const { d } = useReport<{ categories: SpecialHub[] }>('topics.json')
+  const today = todayIso()
+  const all = (d?.categories ?? []).filter(c => c.area === 'special')
+    .sort((a, b) => (b.archive_after ?? '').localeCompare(a.archive_after ?? ''))
+  return { current: all.filter(c => !c.archive_after || c.archive_after >= today),
+           archived: all.filter(c => c.archive_after && c.archive_after < today) }
+}
+
+function SpecialReports({ tab, onPick, compact }: { tab: Tab; onPick?: () => void; compact?: boolean }) {
+  const { current } = useSpecialReports()
+  return (
+    <section>
+      <h2 className="text-[11px] font-bold uppercase tracking-widest mb-1"
+        style={{ color: 'var(--text-muted)' }}>Special reports</h2>
+      <ul className="m-0 p-0 list-none">
+        {current.map(c => <li key={c.id}><ItemLink it={{ href: c.path, label: c.shelf, sub: c.title }}
+          tab={tab} onPick={onPick} compact={compact} n={0} /></li>)}
+        <li><ItemLink it={{ href: '/reports#special-archive', label: 'Archive', sub: 'Special reports past their moment' }}
+          tab={tab} onPick={onPick} compact={compact} n={0} /></li>
+      </ul>
+    </section>
+  )
+}
 
 function ItemLink({ it, tab, onPick, compact, n }: { it: Item; tab: Tab; onPick?: () => void; compact?: boolean; n: number }) {
   const here = it.to !== undefined && tab === it.to && !it.anchor
@@ -262,6 +293,7 @@ export function SiteMap({ tab, onPick, compact }: { tab: Tab; onPick?: () => voi
           </ul>
         </section>
       ))}
+      <SpecialReports tab={tab} onPick={onPick} compact={compact} />
     </div>
     </>
   )

@@ -35,6 +35,9 @@ import re
 import sqlite3
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import deidentify as DI  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 PAY = os.path.join(ROOT, 'fy28', 'public', 'data', 'sped-regulation.json')
 REG = os.path.join(ROOT, 'sources', 'state-dese',
@@ -404,7 +407,8 @@ def main():
         ok(os.path.exists(path), '%s: the document this quote cites is not here' % rel)
         if os.path.exists(path):
             minutes = flat(open(path, encoding='utf-8', errors='replace').read())
-            ok(flat(q['quote']) in minutes,
+            # Shown by role (scripts/deidentify.py); checked as the minutes print it.
+            ok(flat(DI.original(q['quote'])) in minutes,
                '%s %s: the quote is no longer in %s' % (q['board'], q['date'], rel))
 
     # 8. THE COVERAGE DENOMINATOR IS PRESENT AND NON-TRIVIAL. A grep that found nothing

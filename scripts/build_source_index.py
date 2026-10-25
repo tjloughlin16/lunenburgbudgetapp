@@ -3819,6 +3819,12 @@ GROUPS = [
              'One row per account in the same journal report: fund, org, the FY2026 original '
              'appropriation, transfers, revised budget, actual, encumbrances and available it '
              'prints, and how many journal lines sit under it.'),
+            ('data/position-funds-crosswalk.csv',
+             'Leadership posts paired with their budget line and ledger account', 1,
+             'Written by us. Each post\u2019s title in the district staff directory, its line in '
+             'the district\u2019s budget workbook and the journal account that pays it, with the '
+             'basis for every pairing beside it. It is how /school-all-funds/positions-and-their-funds '
+             'follows a post by name; where no line or account carries a title, it says so.'),
             ('data/munis-school-journal-image-pages.csv',
              'Three pages of the school journal report, read by eye', 1,
              'Written by us. The Town flattened pages 34, 643 and 1080 of the journal report to '
@@ -3979,6 +3985,17 @@ GROUPS = [
              'separated. It also carries a count of CHILDREN rather than dollars. Keyed '
              'on FISCAL year where every other DESE file here is school year. Rebuild '
              'with scripts/extract_dese_state_aid.py.'),
+            ('data/dese-sped-expenditure.csv',
+             'Special education spending as DESE prints it, FY2008–FY2025', 3,
+             'Lunenburg and the State Total, from DESE RADAR’s Special Education '
+             'Direct Expenditure Trends workbook: in-district teaching, other '
+             'instructional and transportation; out-of-district tuition to public schools '
+             'and collaboratives and to private and out-of-state schools, and its '
+             'transportation; non-public health; and grants and revolving funds, which '
+             'DESE does NOT split in or out of district. Beside total expenditures and '
+             'DESE’s own share. DOLLARS ONLY — no count of children, so any '
+             'per-child figure is ours. A blank is a blank cell, not $0. Rebuild with '
+             'scripts/extract_dese_sped_expenditure.py.'),
             ('data/dese-teacher-program-area.csv',
              'Teacher FTE by program area, SY2008\u2013SY2026', 3,
              'General education, special education, career/technical and English learner '

@@ -142,6 +142,10 @@ CHECKS = [
     # three definitions we use, and the topic page that shows the differences. Fails if a
     # counted line or account lands on no row.
     ('build_sped_crosswalk.py', ['--check']),
+    # THE SERF REPORT: the special education reserve, six pages and a hub. Refuses if a year's
+    # need stops recomputing from its ledger rows, or a quotation stops being verbatim.
+    ('build_serf_topics.py', ['--check']),
+    ('build_pay_by_fund_topics.py', ['--check']),
     ('build_reports_index.py', ['--check']),
     # How long every page is, measured from the build. It changes whenever a page does,
     # which is the point: a page that grew past the table's top row grew on the record.
@@ -727,6 +731,12 @@ CHECKS = [
     # also splits two pairs of identically named columns that hold different numbers,
     # and carries whether each year's net school spending is actual or BUDGETED.
     ('extract_dese_state_aid.py', ['--check']),
+    # Special education spending, FY2008-FY2025, off DESE's RADAR Direct Expenditure
+    # Trends workbook. Refuses to write unless every Lunenburg row sums to the workbook's
+    # own cached total, matches DESE's hidden long-format run (FY2008-FY2023) and the
+    # FY25 comparison sheet, and the State Total equals the sum of every district.
+    ('fetch_dese_sped_expenditure.py', ['--check']),
+    ('extract_dese_sped_expenditure.py', ['--check']),
     # The student datasets. Six DESE files, five tables: the sending and receiving
     # enrollment files hold the identical rows and are loaded once, and the extract
     # compares them row by row on every run so that a divergence stops the build rather

@@ -37,11 +37,25 @@ WHY_MAX = 70
 MAX_PER_PAGE = 4
 
 RELATED = [
+    # The SERF report: what the reserve meets, against what it would cost to budget instead.
+    [('arrivals-and-the-budget', 'Whether a mid-year arrival left the year short'),
+     ('surprise-costs', 'Which special education lines run over their vote'),
+     ('reserve-size', 'Which overruns a reserve would be drawn for')],
+    [('reserve-options', 'Six sizes for the reserve, and the years each would cover'),
+     ('reserve-or-budget', 'The same money held once, or added to every vote')],
+    [('reserve-or-budget', 'The same money held once, or added to every vote'),
+     ('fy2026-snow-and-reserve-fund', 'How the town budgets another line that surprises')],
     # The grants a district gets, three ways: won in competition, allocated by formula, open now.
     [('grants-others-receive', 'Competitive grants comparable districts won that Lunenburg did not'),
      ('grant-allocations-compared', 'The formula grants every district gets, per pupil'),
      ('/grants-open-to-lunenburg', 'Grants open to Lunenburg',
       'The state grant programs the district can apply for now')],
+    # Who grants and fees pay for (TJ, 24 October 2026): the athletic fee fund's pay, and the
+    # posts the directory lists against the accounts that pay them.
+    [('pay-moved-between-funds', 'Pay moved between the fee fund and the general fund'),
+     ('fee-fund-ledger', 'The athletic fee fund’s cash, year by year')],
+    [('positions-and-their-funds', 'Which fund pays each leadership post'),
+     ('district-staff-directory', 'Who the district lists, by title')],
     # How grants are booked against the voted lines, and the total spent outside the vote.
     [('grant-coding', 'How much grant spending lands on a voted budget line'),
      ('outside-the-general-fund', 'What the funds outside the voted budget spent, as a share of the whole')],

@@ -1,0 +1,620 @@
+{
+ "blocks": [
+  {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Initial listing, FY2027",
+       "tone": "good",
+       "value": "$818,087"
+      },
+      {
+       "label": "Median, last 5 years",
+       "tone": null,
+       "value": "$519,394"
+      },
+      {
+       "label": "Lowest year, FY2011",
+       "tone": "bad",
+       "value": "$201,165"
+      }
+     ],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "A listing, not a payment: it moves with last year’s costs and DESE’s rate, so the range matters more than the number."
+     },
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "Repays last year’s placement costs. Revised during the year."
+     },
+     "title": "Circuit breaker (state)"
+    },
+    {
+     "rows": [
+      {
+       "label": "Allocated, FY2027",
+       "tone": null,
+       "value": "$437,380"
+      },
+      {
+       "label": "Median, FY2017 to FY2027",
+       "tone": null,
+       "value": "$411,652"
+      },
+      {
+       "label": "Largest change in a year",
+       "tone": null,
+       "value": "4.4%"
+      }
+     ],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "The steady part: close to last year’s, every year, and too small a step to absorb a new placement."
+     },
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "An award spent over two years, set by formula."
+     },
+     "title": "IDEA (federal)"
+    }
+   ],
+   "place": "lead",
+   "title": "What to expect next year"
+  }
+ ],
+ "category": "special-education-reserve",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "IDEA is school age and preschool. Title I and the pandemic grants are not special education and are left out."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Circuit breaker, paid (state)",
+    "texts": [
+     "$211,224",
+     "$201,165",
+     "$567,634",
+     "$615,317",
+     "$575,389",
+     "$672,634",
+     "$784,099",
+     "$507,832",
+     "$366,790",
+     "$433,975",
+     "$478,987",
+     "$484,579",
+     "$519,394",
+     "$415,750",
+     "$401,966",
+     "$549,407",
+     "$579,142",
+     null
+    ],
+    "values": [
+     211224.0,
+     201165.0,
+     567634.0,
+     615317.0,
+     575389.0,
+     672634.0,
+     784099.0,
+     507832.0,
+     366790.0,
+     433975.0,
+     478987.0,
+     484579.0,
+     519394.0,
+     415750.0,
+     401966.0,
+     549407.0,
+     579142.0,
+     null
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "IDEA, allocated (federal)",
+    "texts": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     "$353,466",
+     "$360,585",
+     "$374,354",
+     "$381,743",
+     "$398,502",
+     "$411,652",
+     "$417,855",
+     "$433,488",
+     "$437,529",
+     "$437,278",
+     "$437,380"
+    ],
+    "values": [
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     null,
+     353466.0,
+     360585.0,
+     374354.0,
+     381743.0,
+     398502.0,
+     411652.0,
+     417855.0,
+     433488.0,
+     437529.0,
+     437278.0,
+     437380.0
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "State and federal special education money",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2010",
+   "FY2011",
+   "FY2012",
+   "FY2013",
+   "FY2014",
+   "FY2015",
+   "FY2016",
+   "FY2017",
+   "FY2018",
+   "FY2019",
+   "FY2020",
+   "FY2021",
+   "FY2022",
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026",
+   "FY2027"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$507,832",
+     "unit": "",
+     "value": 507832.0
+    },
+    "b": {
+     "text": "$201,165",
+     "unit": "",
+     "value": 201165.0
+    },
+    "c": {
+     "text": "$784,099",
+     "unit": "",
+     "value": 784099.0
+    },
+    "y": {
+     "text": "FY2011",
+     "unit": "fiscal year",
+     "value": 2011
+    },
+    "z": {
+     "text": "FY2016",
+     "unit": "fiscal year",
+     "value": 2016
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "Paid in the year after the costs it repays, so a bad year shows up in the next one’s payment."
+    }
+   ],
+   "rests_on": [
+    "g-med",
+    "g-mean",
+    "g-lo",
+    "g-hi"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Circuit breaker income swings by hundreds of thousands from year to year, so it cannot be counted on as a fixed sum."
+   },
+   "text": "The circuit breaker paid a median $507,832 a year, from $201,165 in FY2011 to $784,099 in FY2016."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$353,466",
+     "unit": "",
+     "value": 353466.0
+    },
+    "b": {
+     "text": "$437,380",
+     "unit": "",
+     "value": 437380.0
+    },
+    "p": {
+     "text": "4.4%",
+     "unit": "",
+     "value": 4.390126341543921
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "y": {
+       "text": "FY2017",
+       "unit": "fiscal year",
+       "value": 2017
+      },
+      "z": {
+       "text": "FY2018",
+       "unit": "fiscal year",
+       "value": 2018
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "An award spent over two years, not cash. FY2017 and FY2018 list the school-age grant only."
+    }
+   ],
+   "rests_on": [
+    "g-idea",
+    "g-imed"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "IDEA is the steady part, and it barely grows, so it cannot absorb a new placement."
+   },
+   "text": "IDEA moved steadily, $353,466 to $437,380, never more than 4.4% in a year."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$818,087",
+     "unit": "",
+     "value": 818087
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    },
+    "z": {
+     "text": "FY2010",
+     "unit": "fiscal year",
+     "value": 2010
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "DESE’s final FY2027 circuit breaker listing, June 2027",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2027",
+      "2027"
+     ],
+     "text": "An initial listing, from the district’s deck; DESE revises it during the year."
+    }
+   ],
+   "rests_on": [
+    "g-27",
+    "g-hi",
+    "g-med5"
+   ],
+   "so": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "A larger repayment arrives in FY2027 and refills the account; it also says the costs of FY2026 were high."
+   },
+   "text": "The FY2027 listing, $818,087, is above every year paid since FY2010."
+  }
+ ],
+ "facts": [
+  {
+   "id": "g-med",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2010",
+      "unit": "fiscal year",
+      "value": 2010
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "circuit breaker, median year, FY2010 to FY2026"
+   },
+   "value": {
+    "text": "$507,832",
+    "unit": "",
+    "value": 507832.0
+   }
+  },
+  {
+   "id": "g-mean",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "circuit breaker, average year"
+   },
+   "value": {
+    "text": "$492,076",
+    "unit": "",
+    "value": 492075.5294117647
+   }
+  },
+  {
+   "id": "g-lo",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2011",
+      "unit": "fiscal year",
+      "value": 2011
+     }
+    },
+    "literals": [],
+    "text": "circuit breaker, lowest, FY2011"
+   },
+   "value": {
+    "text": "$201,165",
+    "unit": "",
+    "value": 201165.0
+   }
+  },
+  {
+   "id": "g-hi",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2016",
+      "unit": "fiscal year",
+      "value": 2016
+     }
+    },
+    "literals": [],
+    "text": "circuit breaker, highest, FY2016"
+   },
+   "value": {
+    "text": "$784,099",
+    "unit": "",
+    "value": 784099.0
+   }
+  },
+  {
+   "id": "g-med5",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "n": {
+      "text": "5",
+      "unit": "",
+      "value": 5
+     }
+    },
+    "literals": [],
+    "text": "circuit breaker, median of the last 5 years"
+   },
+   "value": {
+    "text": "$519,394",
+    "unit": "",
+    "value": 519394.0
+   }
+  },
+  {
+   "id": "g-27",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "circuit breaker, FY2027 initial listing (district)"
+   },
+   "value": {
+    "text": "$818,087",
+    "unit": "",
+    "value": 818087
+   }
+  },
+  {
+   "id": "g-idea",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "IDEA allocated, FY2027"
+   },
+   "value": {
+    "text": "$437,380",
+    "unit": "",
+    "value": 437380.0
+   }
+  },
+  {
+   "id": "g-imed",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     },
+     "z": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "IDEA, median year, FY2017 to FY2027"
+   },
+   "value": {
+    "text": "$411,652",
+    "unit": "",
+    "value": 411652.0
+   }
+  },
+  {
+   "id": "g-both",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the two together, median year"
+   },
+   "value": {
+    "text": "$861,014",
+    "unit": "",
+    "value": 861014.0
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$507,832",
+    "unit": "",
+    "value": 507832.0
+   },
+   "b": {
+    "text": "$437,380",
+    "unit": "",
+    "value": 437380.0
+   },
+   "w": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   },
+   "y": {
+    "text": "FY2010",
+    "unit": "fiscal year",
+    "value": 2010
+   },
+   "z": {
+    "text": "FY2026",
+    "unit": "fiscal year",
+    "value": 2026
+   }
+  },
+  "literals": [],
+  "text": "The circuit breaker paid a median $507,832 a year, FY2010 to FY2026; IDEA allocated $437,380 for FY2027."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "special-education-grants",
+ "kind": "topic",
+ "path": "/special-education-reserve/special-education-grants",
+ "said": [],
+ "shelves": [
+  "special-education-reserve"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx (school general fund, FY2026 at the close)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general-fund-budget-vs-actuals-history.xlsx (voted against spent, FY2010 to FY2022)"
+  },
+  {
+   "href": "/docs/state-dese/dese-circuit-breaker.xlsx",
+   "label": "Massachusetts DESE — dese-circuit-breaker.xlsx (circuit breaker payments)"
+  },
+  {
+   "href": "/docs/correspondence/2026-10-22-special-education-funding-superintendent-finance-committee.pptx",
+   "label": "Lunenburg Public Schools — 2026-10-22-special-education-funding-superintendent-finance-committee.pptx (special education funding, to the Finance Committee, 22 October 2026)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.pdf (FY2025 annual town report: the May 2025 Town Meeting votes)"
+  },
+  {
+   "href": "/docs/state-dese/radar-sped-direct-expenditure-trends-fy2008-fy2025.xlsx",
+   "label": "Massachusetts DESE — radar-sped-direct-expenditure-trends-fy2008-fy2025.xlsx (special education direct expenditure trends, FY2008 to FY2025)"
+  },
+  {
+   "href": "/docs/state-law/2026-10-24/section13e.html",
+   "label": "General Court of Massachusetts — G.L. c.40 §13E, the special education reserve fund"
+  },
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026)"
+  },
+  {
+   "href": "/docs/data/dese-entitlement-allocations.csv",
+   "label": "Lunenburg Budget Project — dese-entitlement-allocations.csv (DESE entitlement grant allocations)"
+  },
+  {
+   "href": "/docs/data/placement-counts.csv",
+   "label": "Lunenburg Budget Project — placement-counts.csv (the town’s 1 March placement counts)"
+  }
+ ],
+ "table": null,
+ "title": "Special education grants"
+}

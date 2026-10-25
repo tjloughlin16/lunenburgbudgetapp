@@ -73,6 +73,7 @@ import statistics
 import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import deidentify as DI  # noqa: E402
 import conclusions as C  # noqa: E402
 from conclusions import conclusion, emit, figure  # noqa: E402
 import journal as J  # noqa: E402  (the DESE items: J.SD, one definition for every rule)
@@ -463,7 +464,7 @@ def said():
         if squash(q['quote']) not in text_of(q['path']):
             fail('the quote attributed to %s %s is no longer in %s' % (q['board'], q['date'],
                                                                     q['path']))
-        out.append(dict(key=q['key'], board=q['board'], date=q['date'], quote=q['quote'],
+        out.append(dict(key=q['key'], board=q['board'], date=q['date'], quote=DI.shown(q['quote']),
                         why=q['why'], cite='/docs/' + q['path'][len('sources/'):]))
     tm = text_of(TOWN_MEETING['path'])
     for k in ('heading', 'quote', 'fincom'):

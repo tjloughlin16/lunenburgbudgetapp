@@ -867,7 +867,7 @@ export type LadderMatrix = {
 }
 export type LadderData = {
   tiers: { title: string; facts: LadderFact[] }[]
-  conclusions: (LadderUnit & { rests_on: string[]; chain?: string })[]
+  conclusions: (LadderUnit & { rests_on: string[]; chain?: string; so?: LadderUnit })[]
   title: string
   matrix?: LadderMatrix
 }
@@ -1056,6 +1056,12 @@ export function Ladder({ l, evidence }: { l: LadderData; evidence?: Record<strin
                 <div className="flex-1 min-w-0">
                   <p className="text-[16px] leading-snug font-semibold"
                     style={{ color: 'var(--text-primary)' }}>{c.text}</p>
+                  {/* What it means: our reading of the fact, for the decision (ladder.py). */}
+                  {c.so ? (
+                    <p className="text-[14.5px] leading-snug mt-1" style={{ color: 'var(--text-secondary)' }}>
+                      <span className="font-semibold" style={{ color: 'var(--text-primary)' }}>What it means: </span>
+                      {c.so.text}</p>
+                  ) : null}
                   {ev?.question ? (
                     <p className="text-[13px] leading-snug mt-1 flex flex-wrap items-center gap-x-2 gap-y-0.5"
                       style={{ color: 'var(--text-secondary)' }}>

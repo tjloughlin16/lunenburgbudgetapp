@@ -1,4 +1,134 @@
 {
+ "also": [
+  {
+   "decimals": null,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {
+     "a": {
+      "text": "10",
+      "unit": "",
+      "value": 10
+     },
+     "n": {
+      "text": "16",
+      "unit": "",
+      "value": 16
+     }
+    },
+    "literals": [],
+    "text": "A spent bar taller than its received bar is a year the account used savings: 10 of 16 years."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Received from the state",
+     "texts": [
+      "$262,734",
+      "$554,839",
+      "$445,423",
+      "$614,230",
+      "$637,765",
+      "$962,816",
+      "$507,832",
+      "$248,016",
+      "$431,236",
+      "$600,500",
+      "$484,579",
+      "$519,393",
+      "$415,750",
+      "$301,589",
+      "$608,818",
+      "$325,970"
+     ],
+     "values": [
+      262734,
+      554839,
+      445423,
+      614230,
+      637765,
+      962816,
+      507832,
+      248016,
+      431236,
+      600500,
+      484579,
+      519393,
+      415750,
+      301589,
+      608818,
+      325970
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Spent from the account",
+     "texts": [
+      "$193,889",
+      "$567,150",
+      "$605,089",
+      "$590,700",
+      "$644,777",
+      "$586,891",
+      "$525,718",
+      "$278,232",
+      "$208,206",
+      "$549,454",
+      "$511,020",
+      "$548,063",
+      "$494,968",
+      "$466,296",
+      "$498,451",
+      "$337,499"
+     ],
+     "values": [
+      193889,
+      567150,
+      605089,
+      590700,
+      644777,
+      586891,
+      525718,
+      278232,
+      208206,
+      549454,
+      511020,
+      548063,
+      494968,
+      466296,
+      498451,
+      337499
+     ]
+    }
+   ],
+   "stacked": false,
+   "title": "Received and spent, each year",
+   "type": "series",
+   "unit": "$",
+   "x": [
+    "FY2011",
+    "FY2012",
+    "FY2013",
+    "FY2014",
+    "FY2015",
+    "FY2016",
+    "FY2017",
+    "FY2018",
+    "FY2019",
+    "FY2020",
+    "FY2021",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ]
+  }
+ ],
  "category": "special-education",
  "chart": {
   "decimals": null,
@@ -438,6 +568,117 @@
   "href": "",
   "label": ""
  },
+ "how": {
+  "steps": [
+   {
+    "figures": {},
+    "literals": [],
+    "text": "Lunenburg pays a placement’s out-of-district tuition this year, out of the general fund."
+   },
+   {
+    "figures": {},
+    "literals": [
+     "2640"
+    ],
+    "text": "The next year the state sends back part of it: the circuit breaker. That money goes into a separate account, fund 2640, not the general fund."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "text": "The School Committee can spend it on special education without a Town Meeting vote, in the year it arrives or the next, mostly on out-of-district tuition. Every dollar paid from it is one the general fund does not pay."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$515,000",
+      "unit": "",
+      "value": 515000.0
+     },
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "So part of the tuition bill is planned to come from the account, not the general fund budget: for FY2023 the district planned to spend $515,000 from it."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "FY2016",
+      "unit": "fiscal year",
+      "value": 2016
+     },
+     "b": {
+      "text": "FY2019",
+      "unit": "fiscal year",
+      "value": 2019
+     },
+     "c": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Not fully spent: the state sent more than the account paid that year. The leftover stays, the balance grows, and it cushions a later year, as in FY2016, FY2019 and FY2025."
+   },
+   {
+    "figures": {
+     "a": {
+      "text": "$301,589",
+      "unit": "",
+      "value": 301589.0
+     },
+     "b": {
+      "text": "$466,296",
+      "unit": "",
+      "value": 466295.98
+     },
+     "c": {
+      "text": "$347,676",
+      "unit": "",
+      "value": 347675.51
+     },
+     "d": {
+      "text": "$182,969",
+      "unit": "",
+      "value": 182968.53
+     },
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "Overspent: the account paid more than the state sent, so it used savings. In FY2024 the state sent $301,589 and the account paid $466,296; the balance fell from $347,676 to $182,969."
+   },
+   {
+    "figures": {
+     "y": {
+      "text": "FY2013",
+      "unit": "fiscal year",
+      "value": 2013
+     },
+     "z": {
+      "text": "FY2015",
+      "unit": "fiscal year",
+      "value": 2015
+     }
+    },
+    "literals": [],
+    "text": "From FY2013 to FY2015 it paid out more than it had and closed below zero."
+   },
+   {
+    "figures": {},
+    "literals": [],
+    "text": "So the account works as an unvoted reserve: a surprise paid from it never shows on the general fund line. A reserve fund would do the same job in the open."
+   }
+  ],
+  "title": "How the circuit breaker account works"
+ },
  "id": "circuit-breaker-account",
  "kind": "topic",
  "path": "/special-education/circuit-breaker-account",
@@ -451,7 +692,8 @@
   }
  ],
  "shelves": [
-  "special-education"
+  "special-education",
+  "special-education-reserve"
  ],
  "sources": [
   {

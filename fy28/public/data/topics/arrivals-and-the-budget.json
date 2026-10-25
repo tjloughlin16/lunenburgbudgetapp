@@ -1,0 +1,1013 @@
+{
+ "also": [
+  {
+   "decimals": null,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {
+     "a": {
+      "text": "3",
+      "unit": "",
+      "value": 3
+     }
+    },
+    "literals": [],
+    "text": "Two counts a school year, by two different bodies. The count moved by at most 3 children between them; neither says who arrived or left."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "October (DESE)",
+     "texts": [
+      "12 children",
+      "10 children",
+      "4 children",
+      "9 children",
+      "10 children"
+     ],
+     "values": [
+      12,
+      10,
+      4,
+      9,
+      10
+     ]
+    },
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "1 March (the town)",
+     "texts": [
+      "12 children",
+      "8 children",
+      "7 children",
+      "8 children",
+      "10 children"
+     ],
+     "values": [
+      12,
+      8,
+      7,
+      8,
+      10
+     ]
+    }
+   ],
+   "stacked": false,
+   "title": "Children placed out of district, October and March",
+   "type": "series",
+   "unit": "children",
+   "x": [
+    "FY2021",
+    "FY2022",
+    "FY2023",
+    "FY2024",
+    "FY2025"
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {
+      "a": {
+       "text": "$776,088",
+       "unit": "",
+       "value": 776088
+      },
+      "b": {
+       "text": "$510,256",
+       "unit": "",
+       "value": 510256
+      },
+      "c": {
+       "text": "$258,209",
+       "unit": "",
+       "value": 258209
+      },
+      "n": {
+       "text": "6",
+       "unit": "",
+       "value": 6
+      },
+      "t": {
+       "text": "17",
+       "unit": "",
+       "value": 17
+      }
+     },
+     "literals": [],
+     "text": "**Measured:** of the three settings, collaborative tuition ran furthest over budget: $776,088 across 6 of 17 years. Private schools ran $510,256 over in their bad years; Lunenburg’s own schools, $258,209."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$56,598",
+       "unit": "",
+       "value": 56598
+      },
+      "b": {
+       "text": "$1,409,774",
+       "unit": "",
+       "value": 1409774
+      }
+     },
+     "literals": [
+      "71",
+      "5"
+     ],
+     "text": "**Two things sit beside it.** The collaborative line has had almost no slack: $56,598 over on balance across those years, where private ran $1,409,774 under. And a child arriving already in a collaborative is Lunenburg’s from the first day, with no year paid by the old town (our reading of c.71B §5)."
+    },
+    {
+     "figures": {},
+     "literals": [],
+     "text": "**Not shown:** whether either of those caused the overruns, or how many children did. That needs counts the district does not publish: the Surprise costs page names them."
+    }
+   ],
+   "place": "lead",
+   "title": "The biggest impact: collaborative placements",
+   "tone": "callout"
+  },
+  {
+   "block": "timeline",
+   "event_label": "the move",
+   "groups": [
+    {
+     "heading": "A family moves into Lunenburg, with a child already placed out of district",
+     "tracks": [
+      {
+       "basis": {
+        "kind": "law",
+        "label": "Statute: c.71B §5"
+       },
+       "cut": false,
+       "event": 3,
+       "label": "In a private school, arrives in October",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "The old town pays to June. Lunenburg budgets it from next year."
+       },
+       "states": [
+        null,
+        null,
+        null,
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "O",
+        "B",
+        "B"
+       ],
+       "tags": [
+        "Private tuition",
+        "Transport"
+       ],
+       "verdict": "N"
+      },
+      {
+       "basis": {
+        "kind": "law",
+        "label": "Statute: c.71B §5"
+       },
+       "cut": false,
+       "event": 10,
+       "label": "In a private school, arrives in May",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "The old town pays to June and all of next year."
+       },
+       "states": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "O",
+        "O",
+        "O",
+        "B"
+       ],
+       "tags": [
+        "Private tuition",
+        "Transport"
+       ],
+       "verdict": "N"
+      },
+      {
+       "basis": {
+        "kind": "reading",
+        "label": "Our reading"
+       },
+       "cut": false,
+       "event": 3,
+       "label": "In a collaborative, arrives in October",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "Lunenburg pays from the day the family arrives."
+       },
+       "states": [
+        null,
+        null,
+        null,
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "B",
+        "B"
+       ],
+       "tags": [
+        "Collaborative tuition",
+        "Transport"
+       ],
+       "verdict": "S"
+      },
+      {
+       "basis": {
+        "kind": "reading",
+        "label": "Our reading"
+       },
+       "cut": false,
+       "event": 10,
+       "label": "In a collaborative, arrives in May",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "Arrives after next year’s budget is set, so it misses two budgets."
+       },
+       "states": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "S",
+        "S",
+        "S",
+        "B"
+       ],
+       "tags": [
+        "Collaborative tuition",
+        "Transport"
+       ],
+       "verdict": "S"
+      }
+     ]
+    },
+    {
+     "heading": "A child who already lives in Lunenburg",
+     "tracks": [
+      {
+       "basis": {
+        "kind": "law",
+        "label": "Regulation: 603 CMR 28.10"
+       },
+       "cut": false,
+       "event": 6,
+       "label": "Placed out of district for the first time, in January",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "Lunenburg pays from the day the placement starts."
+       },
+       "states": [
+        null,
+        null,
+        null,
+        null,
+        null,
+        null,
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "S",
+        "B",
+        "B"
+       ],
+       "tags": [
+        "Private or collaborative tuition",
+        "Transport"
+       ],
+       "verdict": "S"
+      }
+     ]
+    },
+    {
+     "heading": "A family moves out of Lunenburg, with a child placed out of district",
+     "tracks": [
+      {
+       "basis": {
+        "kind": "law",
+        "label": "Statute: c.71B §5"
+       },
+       "cut": true,
+       "event": 3,
+       "label": "In a private school, leaves in October",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "Lunenburg keeps paying to June. It was budgeted, so nothing is saved."
+       },
+       "states": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        null,
+        null
+       ],
+       "tags": [
+        "Private tuition",
+        "Transport"
+       ],
+       "verdict": "N"
+      },
+      {
+       "basis": {
+        "kind": "law",
+        "label": "Statute: c.71B §5"
+       },
+       "cut": true,
+       "event": 10,
+       "label": "In a private school, leaves in May",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "Lunenburg pays all of next year too, for a child who has left."
+       },
+       "states": [
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        "B",
+        null
+       ],
+       "tags": [
+        "Private tuition",
+        "Transport"
+       ],
+       "verdict": "N"
+      },
+      {
+       "basis": {
+        "kind": "reading",
+        "label": "Our reading"
+       },
+       "cut": true,
+       "event": 3,
+       "label": "In a collaborative, leaves in October",
+       "note": {
+        "figures": {},
+        "literals": [],
+        "text": "The new town pays from arrival, so the rest of the budget goes unspent."
+       },
+       "states": [
+        "B",
+        "B",
+        "B",
+        "U",
+        "U",
+        "U",
+        "U",
+        "U",
+        "U",
+        "U",
+        "U",
+        "U",
+        null,
+        null
+       ],
+       "tags": [
+        "Collaborative tuition"
+       ],
+       "verdict": "U"
+      }
+     ]
+    }
+   ],
+   "legend": [
+    {
+     "key": "S",
+     "label": "Surprise: Lunenburg pays, nothing budgeted",
+     "tone": "bad"
+    },
+    {
+     "key": "B",
+     "label": "Budgeted: Lunenburg pays, known in time",
+     "tone": "neutral"
+    },
+    {
+     "key": "O",
+     "label": "Another town pays",
+     "tone": "other"
+    },
+    {
+     "key": "U",
+     "label": "Budgeted, not spent",
+     "pattern": "outline",
+     "tone": "good"
+    }
+   ],
+   "marker": {
+    "after": 8,
+    "label": "next year’s budget set, in spring (our assumption)"
+   },
+   "note": {
+    "figures": {},
+    "literals": [],
+    "text": "Each strip runs July to June, then the next two years. One placement, not any child’s bill."
+   },
+   "periods": [
+    "Jul",
+    "Aug",
+    "Sep",
+    "Oct",
+    "Nov",
+    "Dec",
+    "Jan",
+    "Feb",
+    "Mar",
+    "Apr",
+    "May",
+    "Jun",
+    "Next yr",
+    "Yr after"
+   ],
+   "place": "body",
+   "title": "When a family moves: which town pays, month by month",
+   "verdicts": [
+    {
+     "key": "S",
+     "label": "Surprise",
+     "tone": "bad"
+    },
+    {
+     "key": "N",
+     "label": "Not a surprise",
+     "tone": "neutral"
+    },
+    {
+     "key": "U",
+     "label": "Underspend",
+     "tone": "good"
+    }
+   ]
+  }
+ ],
+ "category": "special-education-reserve",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {
+    "a": {
+     "text": "$230,514",
+     "unit": "",
+     "value": 230514
+    }
+   },
+   "literals": [
+    "71",
+    "5"
+   ],
+   "text": "The same $230,514-a-year private placement in every bar, our average, over two school years: the year of the move and the next. G.L. c.71B §5."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "stated",
+    "colour": 1,
+    "mark": "bar",
+    "name": "Lunenburg",
+    "texts": [
+     "$230,514",
+     "$0",
+     "$230,514",
+     "$461,028"
+    ],
+    "values": [
+     230514,
+     0,
+     230514,
+     461028
+    ]
+   },
+   {
+    "basis": "stated",
+    "colour": 2,
+    "mark": "bar",
+    "name": "The other town",
+    "texts": [
+     "$230,514",
+     "$461,028",
+     "$230,514",
+     "$0"
+    ],
+    "values": [
+     230514,
+     461028,
+     230514,
+     0
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Example, who pays when a placed child moves",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "Moves into Lunenburg, 1 November",
+   "Moves into Lunenburg, 1 June",
+   "Leaves Lunenburg, 1 November",
+   "Leaves Lunenburg, 1 June"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "cite": {
+      "href": "/docs/state-law/2026-10-24/section5.html",
+      "label": "G.L. c.71B §5"
+     },
+     "figures": {},
+     "kind": "quote",
+     "literals": [],
+     "text": "Lunenburg serves the child from arrival and pays only any increase in cost."
+    },
+    {
+     "cite": {
+      "href": "/docs/state-law/2026-10-24/section5.html",
+      "label": "G.L. c.71B §5"
+     },
+     "figures": {},
+     "kind": "quote",
+     "literals": [
+      "1",
+      "30"
+     ],
+     "text": "From 1 April to 30 June, the former town pays the following year too."
+    },
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [
+      "28",
+      "2024",
+      "1"
+     ],
+     "text": "The minutes of 28 February 2024 record the first half the other way round: before 1 April the cost stays with the former town for that year."
+    },
+    {
+     "cite": {
+      "href": "/docs/state-law/2026-10-24/section5.html",
+      "label": "G.L. c.71B §5"
+     },
+     "figures": {},
+     "kind": "quote",
+     "literals": [],
+     "text": "The law covers private day and residential placements only. A child placed in a collaborative, or newly placed here, is not covered by it."
+    }
+   ],
+   "rests_on": [
+    "m-law",
+    "m-reg",
+    "m-apr"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "A child moving in from a private placement costs Lunenburg nothing that year; one from a collaborative does."
+   },
+   "text": "By law, a child in a private placement who moves in is the former town’s cost that year."
+  },
+  {
+   "figures": {},
+   "literals": [],
+   "notes": [
+    {
+     "closes": "the district’s placement log: each placement’s start and end date, and how it began",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "FY2025"
+     ],
+     "text": "Which of the FY2025 move-ins were already placed is not published."
+    }
+   ],
+   "rests_on": [
+    "m-law",
+    "m-apr",
+    "m-in"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The in-year placement risk is a child already living here who is newly placed, more than one moving in."
+   },
+   "text": "So a child moving in from a private placement is mostly a next-year cost, known in time."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$452,580",
+     "unit": "",
+     "value": 452580.0
+    },
+    "b": {
+     "text": "$50,000",
+     "unit": "",
+     "value": 50000
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [
+    "1"
+   ],
+   "rests_on": [
+    "m-out",
+    "m-tm",
+    "m-held",
+    "m-spent",
+    "m-move"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The move-in money was voted into a line the district had already cut, on day one, by far more."
+   },
+   "text": "In FY2025, $452,580 left out-of-district tuition on 1 July; Town Meeting put $50,000 back in May."
+  }
+ ],
+ "facts": [
+  {
+   "id": "m-law",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "71",
+     "5"
+    ],
+    "text": "the former town pays the rest of the year"
+   },
+   "value": {
+    "text": "c.71B §5",
+    "unit": "",
+    "value": 5
+   }
+  },
+  {
+   "id": "m-apr",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1"
+    ],
+    "text": "moves from then: it pays the next year too"
+   },
+   "value": {
+    "text": "1 April",
+    "unit": "",
+    "value": 1
+   }
+  },
+  {
+   "id": "m-reg",
+   "kind": "statute",
+   "label": {
+    "figures": {},
+    "literals": [
+     "28.03(1)(c)"
+    ],
+    "text": "the new town serves the child without delay"
+   },
+   "value": {
+    "text": "28.03(1)(c)",
+    "unit": "",
+    "value": 28.03
+   }
+  },
+  {
+   "id": "m-tm",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Town Meeting added for move-ins, FY2025"
+   },
+   "value": {
+    "text": "$50,000",
+    "unit": "",
+    "value": 50000
+   }
+  },
+  {
+   "id": "m-out",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "1",
+     "2024"
+    ],
+    "text": "moved out of the same line on 1 July 2024"
+   },
+   "value": {
+    "text": "$452,580",
+    "unit": "",
+    "value": 452580.0
+   }
+  },
+  {
+   "id": "m-held",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "left in the line after both moves, FY2025"
+   },
+   "value": {
+    "text": "$762,244",
+    "unit": "",
+    "value": 762244.0
+   }
+  },
+  {
+   "id": "m-spent",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "spent on out-of-district tuition, FY2025"
+   },
+   "value": {
+    "text": "$732,298",
+    "unit": "",
+    "value": 732298
+   }
+  },
+  {
+   "id": "m-move",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "most the placed count moved, October to March"
+   },
+   "value": {
+    "text": "3",
+    "unit": "children",
+    "value": 3
+   }
+  },
+  {
+   "closes": "the district’s placement log: each placement’s start and end date, and how it began",
+   "id": "m-in",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "children who moved to town already placed"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {},
+  "literals": [
+   "1"
+  ],
+  "text": "A child in a private placement who moves in is the former town’s cost that year; after 1 April, the next too."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "arrivals-and-the-budget",
+ "kind": "topic",
+ "lead_quote": {
+  "board": "School Committee",
+  "date": "2024-02-28",
+  "href": "/docs/meetings/text/school-committee/2024-02-28-minutes-6439.txt",
+  "label": "School Committee minutes, 28 February 2024",
+  "quote": "April 1st is the deadline, if a student enters the district before this date our school incurs the cost, if it is after this date the sending school assumes the expense for the rest of the year and the following year",
+  "who": "Julianna Hanscom, Director of Special Services"
+ },
+ "path": "/special-education-reserve/arrivals-and-the-budget",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2025-03-27",
+   "href": "/docs/meetings/text/finance-committee/2025-03-27-minutes-7011.txt",
+   "label": "Finance Committee minutes, 2025-03-27",
+   "quote": "School special education move in transfer of $50,000 (may be reduced at town meeting)",
+   "who": "Jennifer Warren-Dyment, Town Manager, presenting her budget"
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-02-04",
+   "href": "/docs/meetings/text/school-committee/2026-02-04-minutes-7634.txt",
+   "label": "School Committee minutes, 2026-02-04",
+   "quote": "we currently have students on our radar that may require out of district placement and we have also had students move into the district that require out of district placements",
+   "who": "Dr. Jodi Fortuna, Superintendent of Schools"
+  }
+ ],
+ "shelves": [
+  "special-education-reserve"
+ ],
+ "sources": [
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx (school general fund, FY2026 at the close)"
+  },
+  {
+   "href": "/docs/budget-workbooks/finance-committee/fy26-budget/general-fund-budget-vs-actuals-history.xlsx",
+   "label": "Lunenburg Finance Committee — general-fund-budget-vs-actuals-history.xlsx (voted against spent, FY2010 to FY2022)"
+  },
+  {
+   "href": "/docs/state-dese/dese-circuit-breaker.xlsx",
+   "label": "Massachusetts DESE — dese-circuit-breaker.xlsx (circuit breaker payments)"
+  },
+  {
+   "href": "/docs/correspondence/2026-10-22-special-education-funding-superintendent-finance-committee.pptx",
+   "label": "Lunenburg Public Schools — 2026-10-22-special-education-funding-superintendent-finance-committee.pptx (special education funding, to the Finance Committee, 22 October 2026)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — 4130-fy-2025-annual-town-report.pdf (FY2025 annual town report: the May 2025 Town Meeting votes)"
+  },
+  {
+   "href": "/docs/state-dese/radar-sped-direct-expenditure-trends-fy2008-fy2025.xlsx",
+   "label": "Massachusetts DESE — radar-sped-direct-expenditure-trends-fy2008-fy2025.xlsx (special education direct expenditure trends, FY2008 to FY2025)"
+  },
+  {
+   "href": "/docs/state-law/2026-10-24/section13e.html",
+   "label": "General Court of Massachusetts — G.L. c.40 §13E, the special education reserve fund"
+  },
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026)"
+  },
+  {
+   "href": "/docs/data/dese-entitlement-allocations.csv",
+   "label": "Lunenburg Budget Project — dese-entitlement-allocations.csv (DESE entitlement grant allocations)"
+  },
+  {
+   "href": "/docs/data/placement-counts.csv",
+   "label": "Lunenburg Budget Project — placement-counts.csv (the town’s 1 March placement counts)"
+  },
+  {
+   "href": "/docs/state-law/2026-10-24/section5.html",
+   "label": "General Court of Massachusetts — G.L. c.71B §5 (Section5.html)"
+  },
+  {
+   "href": "/docs/state-dese/603cmr28-special-education-regulations.html",
+   "label": "Massachusetts DESE — 603 CMR 28.00, special education regulations"
+  }
+ ],
+ "table": {
+  "caption": "Who pays, worked examples: an average private placement",
+  "views": [
+   {
+    "columns": [
+     "Lunenburg pays, rest of the school year of the move",
+     "Lunenburg pays, the whole school year after",
+     "The other town pays, across both"
+    ],
+    "key": "examples",
+    "kinds": [
+     "stated",
+     "stated",
+     "stated"
+    ],
+    "label": "Examples",
+    "note": "An example, not any child’s bill: $230,514 a year, the average private placement, FY2022 to FY2025 (private tuition divided by the children placed, our estimate), split by the months left in the school year. The law: the town the child came from pays the rest of that year; from 1 April to 30 June, the next year too. A child placed here who was not already placed is Lunenburg’s from the start. If the new team changes the placement, Lunenburg pays any increase. A year later the state repays about $133,571 of a year’s $230,514, leaving about $96,943 a year to Lunenburg (our arithmetic).",
+    "rows": [
+     {
+      "cells": [
+       "$0",
+       "$230,514",
+       "$153,676"
+      ],
+      "label": "Moves into Lunenburg, 1 November"
+     },
+     {
+      "cells": [
+       "$0",
+       "$230,514",
+       "$76,838"
+      ],
+      "label": "Moves into Lunenburg, 1 March"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$249,724"
+      ],
+      "label": "Moves into Lunenburg, 1 June"
+     },
+     {
+      "cells": [
+       "$153,676",
+       "$0",
+       "$230,514"
+      ],
+      "label": "Leaves Lunenburg, 1 November"
+     },
+     {
+      "cells": [
+       "$19,210",
+       "$230,514",
+       "$0"
+      ],
+      "label": "Leaves Lunenburg, 1 June"
+     },
+     {
+      "cells": [
+       "$153,676",
+       "$230,514",
+       "$0"
+      ],
+      "label": "Already lives in Lunenburg, newly placed, 1 November"
+     }
+    ]
+   }
+  ]
+ },
+ "title": "Move-ins"
+}

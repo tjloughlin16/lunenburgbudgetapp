@@ -58,6 +58,7 @@ sys.path.append(os.path.join(ROOT, 'model'))  # after scripts/: model/ has its o
 import conclusions as C  # noqa: E402
 from conclusions import figure  # noqa: E402
 import ladder as LD  # noqa: E402
+import circuit_breaker_how as CBH  # noqa: E402
 import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
@@ -544,6 +545,7 @@ def build():
     if neg != [2013, 2014, 2015]:
         fail('the years the account closed below zero have changed: %s' % neg)
     lowest = min(yrs.values(), key=lambda r: r['closing'])
+    n_over = sum(1 for r in yrs.values() if r['spent'] > r['received'])
     if round(cbs[2024]['paid']) != round(af[2024]['dese_paid']):
         fail('FY2024: the two payloads disagree on what the state paid')
     rt = SC['receipts_timing'][0]
@@ -615,6 +617,17 @@ def build():
                   for r in sorted(acct['years'], key=lambda r: -r['fy'])],
             note='To %s, the Special Revenue schedule of each annual town report; after it, carried '
                  'through the town’s year-end ledgers.' % C.fy(2023))]),
+        # TJ, 24 October 2026: how the account works, step by step, and whether each year it
+        # was fully spent or overspent -- "what does it mean if the circuit breaker isnt fully
+        # spent, or its overspent? I dont undersatnd."
+        how_it_works=CBH.steps(acct['years']),
+        also=[TP.series('Received and spent, each year', [C.fy(y) for y in sorted(yrs)], [
+            TP.track('Received from the state', [round(yrs[y]['received']) for y in sorted(yrs)]),
+            TP.track('Spent from the account', [round(yrs[y]['spent']) for y in sorted(yrs)])],
+            '$', kind='bar',
+            note='A spent bar taller than its received bar is a year the account used savings: %s '
+                 'of %s years.' % (C.num(n_over), C.num(len(yrs))),
+            note_figures={'a': N(n_over), 'n': N(len(yrs))})],
         said=[said(SC, 'carryover')],
         sources=S('glytdbud-expense-fy2026-p13-special-school.xlsx',
                   '4130-fy-2025-annual-town-report.txt', 'dese-circuit-breaker.xlsx'),

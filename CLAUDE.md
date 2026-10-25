@@ -517,6 +517,52 @@ in front of it?* If yes, it must not run here.
 API-equivalent`; a batch is quoted in % of the week and a session is worth quoting the
 same way.
 
+## 7h. Convey it the best possible way. The template is not the answer
+
+TJ, 25 October 2026, after a page explaining which family moves make a special education
+surprise cost was built outside the framework -- a decision matrix and a month-by-month
+timeline -- and read better than anything inside it:
+
+> *"i didnt mean to constrain outcomes. you clearly have been constrained."* ... *"you can
+> build diagrams, charts, or whatever on the fly even if we dont have templates for them or
+> havent used them before ... for ANY page, hub we build."* ... *"since we simplified the
+> pages, they are losing some of their power ... 1 paragraph, a chart, metrics, a few
+> conclusions, and sources. Thats relatively boring."*
+
+He was right, and the cause was specific. Every chart type drew a QUANTITY, every conclusion
+was a metric and two lines, and every word was counted as if read top to bottom. A page whose
+answer is a MECHANISM -- who pays, under which rule, from when -- had nowhere to go, so the
+answer got cut to fit the slots or was never attempted.
+
+**The rules split in two, and only one half binds.**
+
+| integrity: fixed, every page, every block | shape: the author's call |
+|---|---|
+| every digit a registered figure (rule 2) | which parts, in what order, how many |
+| every claim says what it rests on (rule 3) | chart or diagram type, including ones never used before |
+| our reading drawn as our reading, never as the law or the record (rule 7) | how much a diagram says |
+| nothing tells the reader what to do (rule 8) | |
+| a chart is a component from the payload, never an image (rule 7f) | |
+
+**The question every page gets, before it ships and when it is reviewed:** *is this information
+conveyed in the best possible way? Did the template constrain it, and can we do better?* A rule
+is a matrix. A sequence over time is a timeline. A comparison is two panels side by side. A
+cause-and-effect list is a table of marks. A thing the reader may misread opens with its
+definition. The default layout (finding, chart, facts, conclusions) is a floor, not a ceiling.
+
+**How, mechanically.** `scripts/topic_blocks.py` holds the arranged parts -- `explain`,
+`matrix`, `timeline`, `checks`, `panels` -- and `custom`, which draws ANY component written
+for one page (`fy28/src/components/blocks/custom/`). Each is placed where it explains something
+(`lead`, `chart`, `also1`, `also2`, `body`, `end`). Block words do not count toward a page's
+word cap: words in a diagram are found by position, not read in order. The site-wide reading
+time ratchet still measures the whole page. `/special-education-reserve/surprise-costs` is the
+worked example.
+
+**And a conclusion may be categorical.** Rule 7b's *a conclusion is a metric* is the default
+for a measured finding. When the finding is a RULE ("a collaborative move-in is a surprise; a
+private one is not"), say the rule, and name its basis: the statute, the regulation, or our
+reading. Forcing a number onto it is the constraint this rule removes.
+
 ## 8. This app explains how to fix the problem. It is not an audit
 
 The job is helping a resident understand what would work, and what each option costs

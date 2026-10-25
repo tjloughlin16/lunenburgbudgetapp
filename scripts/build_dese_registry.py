@@ -161,6 +161,18 @@ ELSEWHERE = [
      'that EPIMS collects per-individual Federal Salary Source plus percent of salary — '
      'which fund pays which post, the thing rule 11 says nobody publishes.',
      'Federal grants only; state grants and revolving funds are not in these fields.'),
+    ('sources/state-dese/radar-sped-direct-expenditure-trends-fy2008-fy2025.xlsx', '',
+     'Special Education Direct Expenditure Trends (RADAR)',
+     'https://www.doe.mass.edu/research/radar/direct-expenditure-trends.xlsx',
+     'Special education spending per district, FY2008-FY2025: in-district teaching, other '
+     'instructional and transportation; out-of-district tuition and transportation; '
+     'grants and revolving funds; beside total expenditures. Dollars only, no count of '
+     'children. Extracted by extract_dese_sped_expenditure.py.',
+     'Overwritten in place yearly (this edition dated 12 May 2026, FY08 to FY25). Linked '
+     'from doe.mass.edu/research/radar/; the old /finance/statistics/ page now redirects '
+     'there. Read the `data` sheet with data_only=True; the hidden sheet `Spec_Education_'
+     'Exp run 03192024` is the long-format run behind FY2008-FY2023. A new edition gets a '
+     'new key in fetch_dese_sped_expenditure.py.'),
     ('sources/state-dese/sims-datahandbook_2021.docx', '', 'SIMS Data Handbook 2021',
      'https://www.doe.mass.edu/', 'As above, 2021 edition.', ''),
     ('sources/state-dese/sims-datahandbook_2022.docx', '', 'SIMS Data Handbook 2022',

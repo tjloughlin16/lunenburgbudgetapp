@@ -1,5 +1,5 @@
 {
- "generated": "2026-10-24",
+ "generated": "2026-10-25",
  "origins": [
   {
    "id": "school",
@@ -64,7 +64,7 @@
   },
   "reference": {
    "title": "Everything else the district and the town publish",
-   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4833 of these 4849 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
+   "blurb": "Mirrored here so it is available and so no figure has to be looked up over the network. 4836 of these 4852 feed no number on this site. The other 16 are byte-identical copies of primary sources listed above — kept, and marked as such on their row, because a mirror with the load-bearing documents quietly removed is no longer a copy of the publisher’s page. It is all here because a document nobody kept is a document nobody can check, and because we would rather hold what we did not use than be asked why we did not look."
   },
   "ours": {
    "title": "Written by this project, not by the town",
@@ -3325,9 +3325,9 @@
      "stars": 2,
      "what": "One row per raising: the date, board and fiscal year, the question as it was asked THEN, the words as the captions heard them, and the moment in the video. Kept apart so a suggestion first raised years ago still carries its own context.",
      "kind": "Data",
-     "bytes": 238731,
+     "bytes": 240217,
      "url": "/docs/data/suggested-reports-meetings.csv",
-     "count": 519,
+     "count": 522,
      "unit": "rows",
      "textUrl": "/docs/data/suggested-reports-meetings.csv"
     },
@@ -3385,7 +3385,7 @@
      "stars": 2,
      "what": "One row per suggestion, merged across meetings: the subject, whether a page already answers it, how many meetings raised it, first and last date, fiscal years, and the meetings by date. Read by a model from our minutes of each recording -- a place to start, not a finding.",
      "kind": "Data",
-     "bytes": 137138,
+     "bytes": 137692,
      "url": "/docs/data/suggested-reports.csv",
      "count": 201,
      "unit": "rows",
@@ -4045,7 +4045,7 @@
      "stars": 2,
      "what": "Written by us, by `build_job_postings.py`, from the snapshots of the town’s own job board (lunenburgma.gov/Jobs.aspx) that `fetch_town_job_postings.py` takes daily, one row per posting keyed on the town’s job id. The posted date and the closing terms (`Open Until Filled`) are the town’s; `department_as_printed` is read from the town’s own summary line. `first_seen`, `last_seen` and `removed_seen` ARE OURS, the days we looked. A REMOVAL IS NOT A HIRE.",
      "kind": "Data",
-     "bytes": 1471,
+     "bytes": 1473,
      "url": "/docs/data/town-job-postings.csv",
      "count": 4,
      "unit": "rows",
@@ -4115,7 +4115,7 @@
      "stars": 1,
      "what": "Written by us, by scripts/build_town_meetings.py, with no model: a thread for every Town Meeting, and one for each article discussed well beyond its routine stops, which build_threads.py merges beside the hand registry in threads.csv.",
      "kind": "JSON",
-     "bytes": 2231324,
+     "bytes": 2233542,
      "url": "/docs/data/threads-auto/town-meetings.json",
      "textUrl": "/docs/data/threads-auto/town-meetings.json"
     },
@@ -5318,9 +5318,9 @@
      "stars": 2,
      "what": "Money coming in that cannot be seen, spending that cannot be split, and the documents that would close each. Bus fees are charged by published policy and have no observable destination; school building debt sits inside two accounts for all town borrowing; the pension covers town and school staff with no published split. Loaded as `money_gaps`.",
      "kind": "Data",
-     "bytes": 283859,
+     "bytes": 285937,
      "url": "/docs/data/money-gaps.csv",
-     "count": 310,
+     "count": 313,
      "unit": "rows",
      "textUrl": "/docs/data/money-gaps.csv"
     },
@@ -5865,7 +5865,7 @@
      "stars": 3,
      "what": "Every figure on this site in one queryable file, built by scripts/build_db.py from the CSVs above, which remain the source of truth. It is a derived read model: dropped and rebuilt from scratch on every run, never edited by hand, because a row in a database has no address, no publisher filename and no checksum. Every fact row carries the document it came from. Also served as a read-only JSON API at /api/index, with /api/schema stating the grain of each table and the four ways to get a confident wrong answer out of it.",
      "kind": "DB",
-     "bytes": 59236352,
+     "bytes": 59248640,
      "url": "/docs/data/lunenburg.db",
      "textUrl": "/docs/data/lunenburg.db"
     },
@@ -5887,7 +5887,7 @@
      "stars": 3,
      "what": "One row per meeting occasion — one board, one date — with what this project holds for it: an agenda, minutes, whether their text can actually be read, a recording, a transcript, and a processed transcript. The last two are zero everywhere today and the columns are kept anyway, because a column nobody has filled is a measurable gap and a column nobody added is an invisible one. THE GRAIN IS DERIVED: the town publishes no list of meetings held, it publishes documents, and a document implies a meeting — so a row means at least one artefact says this board met that day, and a meeting that left no trace cannot appear. The `evidence` column says which side put each row there, because the document side is the town’s own filing and the video side is a model reading a video title, and those are different kinds of evidence. 231 meetings here have a recording and no paperwork at all, 162 of them School Committee. Rebuild with scripts/build_meeting_register.py.",
      "kind": "Data",
-     "bytes": 3818047,
+     "bytes": 3818306,
      "url": "/docs/data/meeting-register.csv",
      "count": 7099,
      "unit": "rows",
@@ -6074,6 +6074,18 @@
      "textUrl": "/docs/data/munis-school-ytd.csv"
     },
     {
+     "path": "data/agentic-spend.csv",
+     "title": "What the scripted reading cost, job by job",
+     "stars": 3,
+     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
+     "kind": "Data",
+     "bytes": 769150,
+     "url": "/docs/data/agentic-spend.csv",
+     "count": 11127,
+     "unit": "rows",
+     "textUrl": "/docs/data/agentic-spend.csv"
+    },
+    {
      "path": "data/dese-radar.csv",
      "title": "DESE’s own figures, every district, FY2009–FY2025",
      "stars": 3,
@@ -6084,18 +6096,6 @@
      "count": 5344,
      "unit": "rows",
      "textUrl": "/docs/data/dese-radar.csv"
-    },
-    {
-     "path": "data/agentic-spend.csv",
-     "title": "What the scripted reading cost, job by job",
-     "stars": 3,
-     "what": "One row per job the pre-reset sweep ran: the stream, the board, the meeting date, the API-equivalent cost and whether it succeeded. The weekly allowance is a fixed budget, so this is how much of it the machine reading took.",
-     "kind": "Data",
-     "bytes": 759741,
-     "url": "/docs/data/agentic-spend.csv",
-     "count": 10997,
-     "unit": "rows",
-     "textUrl": "/docs/data/agentic-spend.csv"
     },
     {
      "path": "data/omnibus-history.csv",
@@ -6547,9 +6547,9 @@
      "stars": 3,
      "what": "The state publishes these on its own schedule, so each row carries the portal page a person can open, the API endpoint a program can call, the publisher, the sha256 of the copy we hold, what the dataset can answer, and when it is worth fetching again. Rows marked WANTED are datasets we do NOT hold and have decided we need — the registry records the gap rather than only the holdings, so next year’s refresh starts from a list rather than from memory. Rebuild with scripts/build_dese_registry.py.",
      "kind": "Data",
-     "bytes": 13529,
+     "bytes": 14497,
      "url": "/docs/data/dese-source-registry.csv",
-     "count": 31,
+     "count": 32,
      "unit": "rows",
      "textUrl": "/docs/data/dese-source-registry.csv"
     },
@@ -6576,6 +6576,18 @@
      "count": 124,
      "unit": "rows",
      "textUrl": "/docs/data/account-names.csv"
+    },
+    {
+     "path": "data/dese-sped-expenditure.csv",
+     "title": "Special education spending as DESE prints it, FY2008–FY2025",
+     "stars": 3,
+     "what": "Lunenburg and the State Total, from DESE RADAR’s Special Education Direct Expenditure Trends workbook: in-district teaching, other instructional and transportation; out-of-district tuition to public schools and collaboratives and to private and out-of-state schools, and its transportation; non-public health; and grants and revolving funds, which DESE does NOT split in or out of district. Beside total expenditures and DESE’s own share. DOLLARS ONLY — no count of children, so any per-child figure is ours. A blank is a blank cell, not $0. Rebuild with scripts/extract_dese_sped_expenditure.py.",
+     "kind": "Data",
+     "bytes": 8729,
+     "url": "/docs/data/dese-sped-expenditure.csv",
+     "count": 36,
+     "unit": "rows",
+     "textUrl": "/docs/data/dese-sped-expenditure.csv"
     },
     {
      "path": "data/monty-tech-assessment.csv",
@@ -6873,9 +6885,9 @@
      "stars": 2,
      "what": "Written by us. Topic tags for 77 pages and 259 documents so a search for a subject finds the page about it even where the word is not on it.",
      "kind": "Data",
-     "bytes": 606764,
+     "bytes": 608475,
      "url": "/docs/data/search-affinity.csv",
-     "count": 4308,
+     "count": 4317,
      "unit": "rows",
      "textUrl": "/docs/data/search-affinity.csv"
     },
@@ -6976,6 +6988,18 @@
      "textUrl": "/docs/data/public-safety-staffing-plans.csv"
     },
     {
+     "path": "data/refresh-runs.csv",
+     "title": "Every daily refresh, timed",
+     "stars": 2,
+     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
+     "kind": "Data",
+     "bytes": 118608,
+     "url": "/docs/data/refresh-runs.csv",
+     "count": 33,
+     "unit": "rows",
+     "textUrl": "/docs/data/refresh-runs.csv"
+    },
+    {
      "path": "data/debt-service-projections.csv",
      "title": "Excluded debt service projected to FY2050, Town Hall and Marshall Park included",
      "stars": 2,
@@ -6986,18 +7010,6 @@
      "count": 474,
      "unit": "rows",
      "textUrl": "/docs/data/debt-service-projections.csv"
-    },
-    {
-     "path": "data/refresh-runs.csv",
-     "title": "Every daily refresh, timed",
-     "stars": 2,
-     "what": "Written by us. One row per run: what was new, what was written, how long each step took, whether it deployed.",
-     "kind": "Data",
-     "bytes": 109291,
-     "url": "/docs/data/refresh-runs.csv",
-     "count": 31,
-     "unit": "rows",
-     "textUrl": "/docs/data/refresh-runs.csv"
     },
     {
      "path": "data/fund-owners.csv",
@@ -7506,6 +7518,18 @@
      "textUrl": "/docs/data/feed-watch-events.csv"
     },
     {
+     "path": "data/meeting-watch-runs.csv",
+     "title": "When we looked, how much answered, and what was new",
+     "stars": 2,
+     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
+     "kind": "Data",
+     "bytes": 1358,
+     "url": "/docs/data/meeting-watch-runs.csv",
+     "count": 41,
+     "unit": "rows",
+     "textUrl": "/docs/data/meeting-watch-runs.csv"
+    },
+    {
      "path": "data/myths.csv",
      "title": "Claims heard in town, and what the data says",
      "stars": 2,
@@ -7516,18 +7540,6 @@
      "count": 3,
      "unit": "rows",
      "textUrl": "/docs/data/myths.csv"
-    },
-    {
-     "path": "data/meeting-watch-runs.csv",
-     "title": "When we looked, how much answered, and what was new",
-     "stars": 2,
-     "what": "Written by us. One row per day per source, so the record says how much of the town’s listing actually responded on each run. That column exists because a board-year that fails to fetch and a board-year with no meetings come back identically empty — the silent-zero shape — and a run too incomplete to trust refuses to write at all. Rebuild with scripts/watch_meetings.py.",
-     "kind": "Data",
-     "bytes": 1327,
-     "url": "/docs/data/meeting-watch-runs.csv",
-     "count": 40,
-     "unit": "rows",
-     "textUrl": "/docs/data/meeting-watch-runs.csv"
     },
     {
      "path": "data/school-insurance-tiers.csv",
@@ -7828,6 +7840,18 @@
      "count": 6,
      "unit": "rows",
      "textUrl": "/docs/data/j1-unreadable.csv"
+    },
+    {
+     "path": "data/position-funds-crosswalk.csv",
+     "title": "Leadership posts paired with their budget line and ledger account",
+     "stars": 1,
+     "what": "Written by us. Each post’s title in the district staff directory, its line in the district’s budget workbook and the journal account that pays it, with the basis for every pairing beside it. It is how /school-all-funds/positions-and-their-funds follows a post by name; where no line or account carries a title, it says so.",
+     "kind": "Data",
+     "bytes": 2003,
+     "url": "/docs/data/position-funds-crosswalk.csv",
+     "count": 11,
+     "unit": "rows",
+     "textUrl": "/docs/data/position-funds-crosswalk.csv"
     },
     {
      "path": "data/public-safety-staffing-plans-vs-roster.csv",
@@ -24308,7 +24332,7 @@
    "id": "state-dese",
    "origin": "state-dese",
    "title": "State enrollment data",
-   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 418 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
+   "blurb": "Lunenburg’s selected-population counts from the state, FY19 to FY26 — 419 files. The count of students with disabilities is the one quantity the budget cannot supply: special education spending is staff numbers times contract rates, and a budget only shows the product.",
    "items": [
     {
      "path": "state-dese/603cmr28-special-education-regulations.html",
@@ -24411,6 +24435,16 @@
      "bytes": 238209,
      "url": "/docs/state-dese/dese-eoyr-fy2025-function-crosswalk.xlsx",
      "upstream": "https://www.doe.mass.edu/finance/accounting/eoy/fy2025/crosswalks.xlsx"
+    },
+    {
+     "path": "state-dese/radar-sped-direct-expenditure-trends-fy2008-fy2025.xlsx",
+     "title": "DESE RADAR Special Education Direct Expenditure Trends, FY2008-FY2025 -- special education spending in district, out of district and from grants, every district; publisher filename direct-expenditure-trends.xlsx, linked from https://www.doe.mass.edu/research/radar/default.html",
+     "stars": 1,
+     "what": "Mirrored from the publisher. Not used in any figure on this site.",
+     "kind": "Spreadsheet",
+     "bytes": 2847486,
+     "url": "/docs/state-dese/radar-sped-direct-expenditure-trends-fy2008-fy2025.xlsx",
+     "upstream": "https://www.doe.mass.edu/research/radar/direct-expenditure-trends.xlsx"
     },
     {
      "path": "state-dese/radar-district-comparison.xlsx",
@@ -28499,7 +28533,7 @@
    "id": "state-law",
    "origin": "state-law",
    "title": "The Open Meeting Law, as the State publishes it",
-   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2933 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
+   "blurb": "The statute (G.L. c.30A §§18-25), its regulations (940 CMR 29.00), the Attorney General’s guide, FAQ and checklists, and every determination letter the AG has issued since 2010 — 2935 documents, each the publisher’s own file. Held so that a quotation of the law can be checked against the law.",
    "items": [
     {
      "path": "state-law/2026-10-14/603cmr41.html.html",
@@ -60545,6 +60579,17 @@
      "upstream": "https://www.mass.gov/doc/open-meeting-law-text/download"
     },
     {
+     "path": "state-law/2026-10-24/section13e.html",
+     "title": "G.L. c.40 §13E, the special education reserve fund (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 74589,
+     "url": "/docs/state-law/2026-10-24/section13e.html",
+     "textUrl": "/docs/state-law/text/c40-13e.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40/Section13E"
+    },
+    {
      "path": "state-law/2026-10-15/section2.html",
      "title": "G.L. c.70 §2, definitions including net school spending (malegislature.gov)",
      "stars": 1,
@@ -60675,6 +60720,17 @@
      "url": "/docs/state-law/2026-10-14/section16d.html",
      "textUrl": "/docs/state-law/text/c71-16d.txt",
      "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/Section16D"
+    },
+    {
+     "path": "state-law/2026-10-24/section5.html",
+     "title": "G.L. c.71B §5, special education costs, and who pays when a placed child moves (malegislature.gov)",
+     "stars": 1,
+     "what": "Mirrored from the publisher. The law itself; not a figure on this site.",
+     "kind": "HTML",
+     "bytes": 77587,
+     "url": "/docs/state-law/2026-10-24/section5.html",
+     "textUrl": "/docs/state-law/text/c71b-5.txt",
+     "upstream": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71B/Section5"
     },
     {
      "path": "state-law/2026-10-08/11.06.2024-oml-executive-session-checklist-2024.pdf",
@@ -60987,10 +61043,10 @@
  },
  "corpusIndexUrl": "/docs/minutes/index.csv",
  "totals": {
-  "documents": 5499,
+  "documents": 5504,
   "groups": 29,
-  "bytes": 6679383812,
-  "loadBearing": 202
+  "bytes": 6682434527,
+  "loadBearing": 203
  },
  "note": "Every document this analysis is built on. Nothing here is private or paid for. 51 came from the Town by records request and are marked; the rest were published by the district, the town, the state or a neighboring district. 5 of them are no longer open at the address their publisher used — checked 29 August 2026, and all but a handful were Google Drive links that now ask for a sign-in. Our copies stay open, and every row carries a sha256 so anyone who still has access can check them against the originals. Where a document was unreadable, or says something inconvenient, it is listed anyway."
 }

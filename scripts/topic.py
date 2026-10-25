@@ -98,6 +98,7 @@ import conclusions as _C
 from conclusions import ConclusionError
 import ladder as LD
 import topics as REG
+import topic_blocks as TB
 
 FINDING_MAX = 110
 # A PAGE THAT IS TOO LONG IS TWO PAGES. TJ, 12 October 2026: "it's an indicator that we
@@ -105,7 +106,7 @@ FINDING_MAX = 110
 # not tuned by trimming prose: past these, the build refuses, and the remedy is to split the
 # topic in the registry. Set just above the longest page on the day they were written.
 TOPIC_WORDS_MAX = 320     # prose a reader meets: finding, labels, conclusions, notes, quotes
-HUB_WORDS_MAX = 400
+HUB_WORDS_MAX = 500   # was 400; TJ, 24 Oct 2026, when the hub's definitions were being cut to fit
 TABLE_ROWS_MAX = 30
 FACTS = (2, 12)
 CONCLUSIONS = (1, 4)
@@ -165,8 +166,12 @@ def check_ledger(l, where):
 
 def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sources=(),
          finding_figures=None, finding_allow=(), draft=None, also=(), lead_quote=None,
-         tables=()):
-    """`draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
+         tables=(), how_it_works=None, blocks=()):
+    """`blocks`: arranged parts built by scripts/topic_blocks.py -- explain, matrix,
+    timeline, checks, panels, or a custom component drawn for this page alone. Their words do
+    not count toward TOPIC_WORDS_MAX (see that module for why); the integrity checks do apply.
+
+    `draft`: {'title', 'home'} for a page NOT YET in the registry -- an auto-generated draft
     (scripts/generate_report.py). Every check below runs on it exactly as on a registered page;
     only the title and the shelf come from the draft instead of scripts/topics.py.
 
@@ -226,11 +231,16 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
         bad.append('%s: %d words of prose, the limit is %d -- this is two topics; split it in '
                    'the registry rather than trimming it' % (id, n, TOPIC_WORDS_MAX))
     bad += _tables_bad(([table] if table else []) + list(tables), id, uniform=tables)
+    bad += TB.blocks_bad(blocks, id)
     if bad:
         raise ConclusionError('topic %s did not pass:\n  %s' % (id, '\n  '.join(bad)))
     extra = dict(also=list(also)) if also else {}   # absent, not empty: no other payload moves
     if tables:                                       # likewise
         extra['tables'] = list(tables)
+    if how_it_works:                                 # likewise; built by how()
+        extra['how'] = how_it_works
+    if blocks:                                       # likewise; built by topic_blocks
+        extra['blocks'] = list(blocks)
     if lead_quote:                                   # likewise written only when set
         extra['lead_quote'] = {k: lead_quote[k] for k in LEAD_KEYS}
     return dict(
@@ -330,9 +340,12 @@ def _lead_bad(lq, said, where):
     return bad
 
 
-def conclusion(text, rests_on, figures=None, allow=(), notes=()):
-    """A topic conclusion: ladder.conclusion plus `notes`, the brief.step layers under it."""
-    c = LD.conclusion(text, rests_on, figures, allow)
+def conclusion(text, rests_on, figures=None, allow=(), notes=(), so=None, so_figures=None,
+               so_allow=()):
+    """A topic conclusion: ladder.conclusion plus `notes`, the brief.step layers under it, and
+    `so`, what it means (ladder.conclusion)."""
+    c = LD.conclusion(text, rests_on, figures, allow, so=so, so_figures=so_figures,
+                      so_allow=so_allow)
     if notes:
         c['notes'] = list(notes)
     return c
@@ -865,22 +878,86 @@ def check_chart(chart, where, required=False):
     return ['%s: chart is neither {id, source} nor built by series/ranking/parts/bridge/image/presence' % where]
 
 
+TERM_MAX = 40
+TERM_TEXT_MAX = 170
+TERMS_MAX = 5
+
+
+def term(name, means, surprises, figures=None, allow=()):
+    """One entry in a hub's TERMS: what a thing the chart draws IS, and why it surprises. TJ,
+    24 October 2026: "the main serf page needs definitions of tuitions and transport and WHY they
+    become surprises. waiting until the topic pages is too long." `means` carries no figure;
+    `surprises` may, and every figure in it is registered and checked like any other prose."""
+    if len(name) > TERM_MAX:
+        raise ConclusionError('term %r is longer than %d characters' % (name, TERM_MAX))
+    m = _unit(means, None, (), TERM_TEXT_MAX, 'term %s means' % name)
+    w = _unit(surprises, figures, allow, TERM_TEXT_MAX, 'term %s surprises' % name)
+    bad = check_unit(m, 'term %s means' % name) + check_unit(w, 'term %s surprises' % name)
+    if bad:
+        raise ConclusionError('term %s did not pass:\n  %s' % (name, '\n  '.join(bad)))
+    return dict(term=name, means=m, surprises=w)
+
+
+HOW_TITLE_MAX = 60
+HOW_STEP_MAX = 220
+HOW_STEPS = (2, 8)
+HOW_WORDS_MAX = 240
+
+
+def how(title, steps):
+    """HOW IT WORKS: a mechanism told as numbered steps, in plain words, with a worked example
+    among them. TJ, 24 October 2026, on the circuit breaker explained step by step: *"PERFECT...
+    can you make sure thats on the page somewhere too? super easy to follow."* A conclusion says
+    what the data shows; this says how the thing works, so the conclusions can be read.
+    `steps`: [(text, figures, allow)] or [text]; every figure registered, like any other prose.
+    Its words are capped on their own (HOW_WORDS_MAX), not out of the page's, so explaining a
+    mechanism never crowds out what the page found."""
+    t = ' '.join(title.split())
+    if not t or len(t) > HOW_TITLE_MAX:
+        raise ConclusionError('how-it-works title %r is over %d characters' % (t, HOW_TITLE_MAX))
+    if not HOW_STEPS[0] <= len(steps) <= HOW_STEPS[1]:
+        raise ConclusionError('how-it-works %r: %d steps; %d to %d' % ((t, len(steps)) + HOW_STEPS))
+    us, bad = [], []
+    for i, st in enumerate(steps):
+        st = st if isinstance(st, tuple) else (st,)
+        text, figs, allow = st[0], (st[1] if len(st) > 1 else None), (st[2] if len(st) > 2 else ())
+        u = _unit(text, figs, allow, HOW_STEP_MAX, 'how-it-works %r step %d' % (t, i + 1))
+        bad += check_unit(u, 'how-it-works step %d' % (i + 1))
+        if PRESCRIPTIVE.search(u['text']):
+            bad.append('how-it-works step %d tells the reader what to do' % (i + 1))
+        us.append(u)
+    if _words(us) > HOW_WORDS_MAX:
+        bad.append('how-it-works %r: %d words, the limit is %d' % (t, _words(us), HOW_WORDS_MAX))
+    if bad:
+        raise ConclusionError('how-it-works did not pass:\n  %s' % '\n  '.join(bad))
+    return dict(title=t, steps=us)
+
+
 def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=None,
-        answer_allow=()):
+        answer_allow=(), terms=(), how_it_works=None, blocks=()):
     """A category's hub: the answer, the signature chart, the matrix and conclusions, and --
-    added by build_topics_index.py from the registry -- a card per topic."""
+    added by build_topics_index.py from the registry -- a card per topic. `terms`: up to
+    TERMS_MAX entries built by term(), drawn under the chart -- what each thing it draws is."""
     cat = REG.category(cid)
     a = _unit(answer, answer_figures, answer_allow, 260, '%s answer' % cid)
     bad = check_unit(a, '%s answer' % cid)
+    if len(terms) > TERMS_MAX:
+        bad.append('hub %s: %d terms; at most %d' % (cid, len(terms), TERMS_MAX))
     bad += check_chart(chart, 'hub %s' % cid, required=CHART_REQUIRED)
+    bad += TB.blocks_bad(blocks, 'hub %s' % cid)
     n = _words([a] + [f['label'] for t in ladder['tiers'] for f in t['facts']]
-               + ladder['conclusions'])
+               + ladder['conclusions'] + [x[k] for x in terms for k in ('means', 'surprises')])
     if n > HUB_WORDS_MAX:
         bad.append('hub %s: %d words, the limit is %d -- move detail down to a topic'
                    % (cid, n, HUB_WORDS_MAX))
     if bad:
         raise ConclusionError('hub %s did not pass:\n  %s' % (cid, '\n  '.join(bad)))
-    return dict(id=cid, kind='hub', title=cat['title'], category=cid, path=REG.path(cid),
+    extra = dict(terms=list(terms)) if terms else {}   # absent, not empty: no other hub moves
+    if how_it_works:                                    # likewise
+        extra['how'] = how_it_works
+    if blocks:                                          # likewise
+        extra['blocks'] = list(blocks)
+    return dict(extra, id=cid, kind='hub', title=cat['title'], category=cid, path=REG.path(cid),
                 shelves=[cid], answer=a, chart=chart, ladder=ladder, chains=list(chains),
                 table=table, full_report=_full(cid))
 

@@ -1,4 +1,5 @@
-import { useNewReports, NewBadge, NEW_DAYS } from '../components/SiteMenu'
+import { useNewReports, NewBadge, NEW_DAYS, useSpecialReports } from '../components/SiteMenu'
+import { todayIso } from '../lib/meetings'
 import MANIFEST from '../data/agent-manifest.json'
 import { useEffect, useState } from 'react'
 import { Section, Note } from '../components/primitives'
@@ -210,7 +211,7 @@ type TopicIndex = {
   areas: { id: string; title: string }[]
   categories: { id: string; shelf: string; title: string; path: string; answer: string | null
     groups: { title: string | null; topics: string[] }[]
-    elsewhere: { href: string; title: string }[]; area: string | null }[]
+    elsewhere: { href: string; title: string }[]; area: string | null; archive_after?: string }[]
   topics: Record<string, { id: string; title: string; path: string; finding: string | null
     shelves: string[]; ready: boolean }>
 }
@@ -256,18 +257,45 @@ function HubContents() {
 
 /** The shelves of one AREA (scripts/topics.py AREAS), drawn after that area's group of
  *  older reports -- so a subject lands under The schools, The town or Budget options. */
-function TopicShelves({ area }: { area: string }) {
+/** "30 June 2027", the way the site writes a date in prose (Topic.tsx longDate). */
+const longDay = (iso: string) => {
+  const [y, m, d] = iso.split('-').map(Number)
+  return `${d} ${new Date(y, m - 1, d).toLocaleString('en-GB', { month: 'long' })} ${y}`
+}
+
+/** The archive: special reports past their date, each one line, newest first. Empty until the
+ *  first one passes its date, and it says so rather than drawing nothing. */
+function SpecialArchive() {
+  const { archived, current } = useSpecialReports()
+  if (!archived.length) return (
+    <p className="text-[14px]" style={{ color: 'var(--text-secondary)' }}>
+      None yet. {current.length ? `The ${current.length === 1 ? 'one' : current.length} special report${current.length === 1 ? '' : 's'} above move${current.length === 1 ? 's' : ''} here on ${current.length === 1 ? 'its date' : 'their dates'}.` : ''}</p>)
+  return (
+    <ul className="grid gap-x-6 gap-y-3 sm:grid-cols-2">
+      {archived.map(c => <li key={c.id}><a href={c.path} className="font-semibold underline"
+        style={{ color: 'var(--series-cost)' }}>{c.shelf}</a>
+        <span className="text-[13px]" style={{ color: 'var(--text-secondary)' }}> — {c.title}, archived {longDay(c.archive_after!)}</span></li>)}
+    </ul>
+  )
+}
+
+function TopicShelves({ area, archived }: { area: string; archived?: boolean }) {
   const [ix, setIx] = useState<TopicIndex | null>(null)
   useEffect(() => { fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {}) }, [])
   if (!ix) return null
   const shelfName = (id: string) => ix.categories.find(c => c.id === id)?.shelf
+  // A special report past its archive date is drawn only in the archive (SiteMenu.useSpecialReports).
+  const today = todayIso()
+  const past = (c: TopicIndex['categories'][number]) => !!c.archive_after && c.archive_after < today
   return (
     <>
-      {ix.categories.filter(c => c.area === area).map(c => (
+      {ix.categories.filter(c => c.area === area && (archived === undefined || past(c) === archived)).map(c => (
         // ONE DOOR TO THE HUB. The heading is the link; its answer sits under it. A boxed
         // card for the hub used to follow, linking the same page under its other title --
         // "Athletics ->" then "Athletics costs ->" -- two doors that looked like two places.
-        <Section key={c.id} id={c.id} eyebrow="A subject, page by page" title={c.shelf} href={c.path}
+        <Section key={c.id} id={c.id} eyebrow={c.area !== 'special' ? 'A subject, page by page'
+          : past(c) ? 'Archived special report' : 'A special report, on the menu until ' + longDay(c.archive_after!)}
+          title={c.shelf} href={c.path}
           lede={c.answer ?? undefined}>
           {c.groups.map((g, gi) => (
             <div key={gi} className="mt-5">
@@ -491,6 +519,13 @@ export function Reports() {
           : g.key === 'town' ? <TopicShelves area="town" />
           : g.key === 'levers' ? <TopicShelves area="options" /> : null}
       </div>))}
+
+      {/* SPECIAL REPORTS, after every subject: one-off reports for a decision or a moment,
+          then the archive of those past their date (scripts/topics.py, area `special`). */}
+      <TopicShelves area="special" archived={false} />
+      <Section id="special-archive" eyebrow="Special reports past their moment" title="Archive">
+        <SpecialArchive />
+      </Section>
 
       {/* SHOW YOUR WORK GETS A SECTION TO ITSELF, AND IT GOES LAST.
           TJ: "its a critical report". It is, and in the middle of a list of eighteen it

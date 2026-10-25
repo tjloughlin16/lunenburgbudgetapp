@@ -539,6 +539,12 @@
    "side": "record",
    "what": "Why does the FY2024 End of Year Report working copy repeat FY2023's special education figures for guidance, psychology and two substitute lines?",
    "why": "MEASURED (sources/data/sped-definition.csv, checked by scripts/build_sped_crosswalk.py): five Special Education cells of the FY2024 working copy (eoy24!F173, F178, F258, F262 and F274) equal the FY2023 copy's to the dollar, and the psychology figure matches no FY2024 ledger account while the FY2024 psychologist salaries sit, whole, in the Regular Day column. Whether the five were carried forward unchanged, or the report as filed differs, is not stated in the working copy."
+  },
+  {
+   "closes": "the Town\u2019s MUNIS payroll distribution report, each employee\u2019s pay by fund and account, FY2023\u2013FY2026; or the district\u2019s grant budgets filed with DESE, which list the posts each grant pays.",
+   "side": "people",
+   "what": "Which posts each grant and fee fund pays for, and how much of each post",
+   "why": "The school journal posts payroll one line per account per pay run and records no person, and grant pay posts to accounts named for a kind of work (support salaries, instructional salaries), so a grant can be totalled but not tied to a post. Year-end entries also move pay between funds, mostly citing school memos not in this archive (/school-all-funds/pay-moved-between-funds)."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

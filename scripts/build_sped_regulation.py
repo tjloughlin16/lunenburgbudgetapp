@@ -62,6 +62,7 @@ import zipfile
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
+import deidentify as DI  # noqa: E402
 import conclusions as C                                              # noqa: E402
 from conclusions import conclusion, emit, figure                     # noqa: E402
 # The provenance, meeting-archive and manifest plumbing every report shares. Imported
@@ -886,7 +887,7 @@ def said():
                  'never your rendering of it' % (spec['board'], spec['date'], rel))
         out.append(dict(
             key=spec['key'], board=spec['board'].replace('-', ' ').title(),
-            date=spec['date'], quote=spec['quote'], why=spec['why'], kind=spec['kind'],
+            date=spec['date'], quote=DI.shown(spec['quote']), why=spec['why'], kind=spec['kind'],
             cite='/docs/' + rel.replace('sources/', ''),
             town='https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_%s%s%s-%s'
                  % (spec['date'][5:7], spec['date'][8:10], spec['date'][:4], spec['doc'])))

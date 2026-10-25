@@ -1,0 +1,537 @@
+{
+ "category": "school-all-funds",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "line",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Each account as the ledger names it. Paid includes pay moved in or out by journal entry."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Athletic Director",
+    "texts": [
+     "$85,977",
+     "$90,200",
+     "$96,044",
+     "$74,406"
+    ],
+    "values": [
+     85977,
+     90200,
+     96044,
+     74406
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Student Services Coordinator (Spec Ed)",
+    "texts": [
+     "$139,500",
+     "$142,900",
+     "$146,500",
+     "$150,162"
+    ],
+    "values": [
+     139500,
+     142900,
+     146500,
+     150162
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Superintendent",
+    "texts": [
+     "$171,000",
+     "$177,000",
+     "$203,448",
+     "$174,000"
+    ],
+    "values": [
+     171000,
+     177000,
+     203448,
+     174000
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Instructional Services Director",
+    "texts": [
+     "$120,013",
+     "$121,000",
+     "$125,517",
+     "$137,931"
+    ],
+    "values": [
+     120013,
+     121000,
+     125517,
+     137931
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "line",
+    "name": "Director of Food Services",
+    "texts": [
+     "$55,200",
+     "$57,200",
+     "$59,200",
+     "$59,753"
+    ],
+    "values": [
+     55200,
+     57200,
+     59200,
+     59753
+    ]
+   }
+  ],
+  "stacked": false,
+  "title": "Leadership pay by account",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$85,977",
+     "unit": "",
+     "value": 85977
+    },
+    "b": {
+     "text": "$74,406",
+     "unit": "",
+     "value": 74406
+    },
+    "y": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "measured",
+     "literals": [],
+     "text": "The fee fund paid coaches, not the director, as coded; see pay moved between funds."
+    }
+   ],
+   "rests_on": [
+    "q-ad0",
+    "q-ad1"
+   ],
+   "text": "The athletic director’s pay came from the general fund: $85,977 in FY2023, $74,406 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "2",
+     "unit": "",
+     "value": 2
+    },
+    "n": {
+     "text": "10",
+     "unit": "",
+     "value": 10
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$4,269",
+       "unit": "",
+       "value": 4269
+      },
+      "y": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "FY2023 Instructional Services Director, moved off: $4,269."
+    },
+    {
+     "figures": {
+      "a": {
+       "text": "$13,692",
+       "unit": "",
+       "value": 13692
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "FY2025 High school principal and assistants, moved on: $13,692."
+    }
+   ],
+   "rests_on": [
+    "q-n",
+    "q-mv"
+   ],
+   "text": "Only 2 of 10 general fund leadership accounts had any pay moved to or from another fund."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$59,753",
+     "unit": "",
+     "value": 59753
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "That it pays the Director of Food Services is our reading of its name."
+    }
+   ],
+   "rests_on": [
+    "q-food"
+   ],
+   "text": "One post is paid from a fee fund by name: the lunch fund’s department head, $59,753 in FY2026."
+  }
+ ],
+ "facts": [
+  {
+   "id": "q-ad0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "athletic director’s account, FY2023"
+   },
+   "value": {
+    "text": "$85,977",
+    "unit": "",
+    "value": 85977
+   }
+  },
+  {
+   "id": "q-ad1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the same, FY2026"
+   },
+   "value": {
+    "text": "$74,406",
+    "unit": "",
+    "value": 74406
+   }
+  },
+  {
+   "id": "q-food",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "lunch fund department-head pay, FY2026"
+   },
+   "value": {
+    "text": "$59,753",
+    "unit": "",
+    "value": 59753
+   }
+  },
+  {
+   "id": "q-n",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "general fund leadership accounts read"
+   },
+   "value": {
+    "text": "10",
+    "unit": "posts",
+    "value": 10
+   }
+  },
+  {
+   "id": "q-mv",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "of them with pay moved to another fund"
+   },
+   "value": {
+    "text": "2",
+    "unit": "posts",
+    "value": 2
+   }
+  },
+  {
+   "closes": "the Town’s payroll distribution report: each employee’s pay by fund and account",
+   "id": "q-who",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "which post each grant support salary pays"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "2",
+    "unit": "",
+    "value": 2
+   },
+   "n": {
+    "text": "10",
+    "unit": "",
+    "value": 10
+   }
+  },
+  "literals": [],
+  "text": "Of 10 general fund leadership accounts, 2 had any pay moved to or from another fund."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "positions-and-their-funds",
+ "kind": "topic",
+ "path": "/school-all-funds/positions-and-their-funds",
+ "said": [],
+ "shelves": [
+  "school-all-funds"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account)"
+  },
+  {
+   "href": "/docs/data/position-funds-crosswalk.csv",
+   "label": "Lunenburg Budget Project — position-funds-crosswalk.csv (each post’s title, budget line and account, paired by us)"
+  },
+  {
+   "href": "/docs/data/school-staff-directory.csv",
+   "label": "Lunenburg Public Schools — district staff directory (school-staff-directory.csv)"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  }
+ ],
+ "table": null,
+ "tables": [
+  {
+   "caption": "Leadership posts: budget line, account paid, and pay moved",
+   "views": [
+    {
+     "columns": [
+      "Budget book line, FY2027 workbook",
+      "FY2023",
+      "FY2024",
+      "FY2025",
+      "FY2026",
+      "Moved to or from another fund"
+     ],
+     "key": "posts",
+     "kinds": [
+      "stated",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Posts",
+     "note": "Which post an account pays is our pairing of title, budget line and account name; the basis for each is in position-funds-crosswalk.csv.",
+     "rows": [
+      {
+       "cells": [
+        "Superintendent",
+        "$171,000",
+        "$177,000",
+        "$203,448",
+        "$174,000",
+        "none"
+       ],
+       "label": "Superintendent"
+      },
+      {
+       "cells": [
+        "Business Manager",
+        "$64,250",
+        "$30,977",
+        "$79,597",
+        "$102,069",
+        "none"
+       ],
+       "label": "Business Manager"
+      },
+      {
+       "cells": [
+        "Human Resource Director",
+        "$64,250",
+        "$28,977",
+        "$79,598",
+        "$0",
+        "none"
+       ],
+       "label": "Human Resources Director"
+      },
+      {
+       "cells": [
+        "Student Services Coordinator (Spec Ed)",
+        "$139,500",
+        "$142,900",
+        "$146,500",
+        "$150,162",
+        "none"
+       ],
+       "label": "Student Services Coordinator (Spec Ed)"
+      },
+      {
+       "cells": [
+        "Instructional Services Director (Curriculum)",
+        "$120,013",
+        "$121,000",
+        "$125,517",
+        "$137,931",
+        "-$4,269"
+       ],
+       "label": "Instructional Services Director"
+      },
+      {
+       "cells": [
+        "Athletic Director",
+        "$85,977",
+        "$90,200",
+        "$96,044",
+        "$74,406",
+        "none"
+       ],
+       "label": "Athletic Director"
+      },
+      {
+       "cells": [
+        "none by this title",
+        "$55,200",
+        "$57,200",
+        "$59,200",
+        "$59,753",
+        "none"
+       ],
+       "label": "Director of Food Services"
+      },
+      {
+       "cells": [
+        "P.S. Principal/Asst. Prin.",
+        "$202,729",
+        "$221,115",
+        "$201,280",
+        "$210,898",
+        "none"
+       ],
+       "label": "Primary school principal and assistant"
+      },
+      {
+       "cells": [
+        "E.S. Principal/Asst. Prin.",
+        "$217,845",
+        "$215,080",
+        "$217,200",
+        "$243,939",
+        "none"
+       ],
+       "label": "Elementary school principal and assistant"
+      },
+      {
+       "cells": [
+        "M.S. Principal/Asst. Prin.",
+        "$176,938",
+        "$181,024",
+        "$182,424",
+        "$190,005",
+        "none"
+       ],
+       "label": "Middle school principal and assistants"
+      },
+      {
+       "cells": [
+        "H.S. Principal/Asst. Prin.",
+        "$268,298",
+        "$269,212",
+        "$285,120",
+        "$203,236",
+        "$13,692"
+       ],
+       "label": "High school principal and assistants"
+      }
+     ]
+    }
+   ]
+  }
+ ],
+ "title": "Positions and their funds"
+}

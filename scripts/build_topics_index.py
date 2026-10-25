@@ -146,7 +146,8 @@ def build(strict):
             groups=[dict(title=g, topics=list(ids)) for g, ids in c['groups']],
             elsewhere=[dict(href=a, title=b) for a, b in c.get('elsewhere', [])],
             start=list(c.get('start', [])), related=rel.get(c['id'], []),
-            area=c.get('area'), order=c.get('order', 99)))
+            area=c.get('area'), order=c.get('order', 99),
+            **({'archive_after': c['archive_after']} if c.get('archive_after') else {})))
     out = dict(generated_by='scripts/build_topics_index.py', categories=cats, topics=topics,
                areas=[dict(id=a, title=t) for a, t in REG.AREAS])
     routes = json.dumps(sorted(c['id'] for c in cats if c['ready']), indent=1) + '\n'

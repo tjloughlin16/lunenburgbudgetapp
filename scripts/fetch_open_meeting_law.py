@@ -117,6 +117,17 @@ DOCS += [('603-cmr-41-all', '603 CMR 41.00, Regional School Districts, all secti
           'Massachusetts Department of Elementary and Secondary Education',
           'https://www.doe.mass.edu/lawsregs/603cmr41.html?section=all')]
 
+# SPECIAL EDUCATION -- the reserve fund and who pays when a placed child moves. TJ, 24 October
+# 2026, asking whether the district's account of a 1 April deadline (School Committee minutes,
+# 28 February 2024) is true. c.71B §5 is the statute that answers it; c.40 §13E is the Special
+# Education Reserve Fund itself, whose cap the SERF report had only as the Town Manager described it.
+DOCS += [('c71b-5', 'G.L. c.71B §5, special education costs, and who pays when a placed child moves '
+          '(malegislature.gov)', 'General Court of Massachusetts',
+          'https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71B/Section5'),
+         ('c40-13e', 'G.L. c.40 §13E, the special education reserve fund (malegislature.gov)',
+          'General Court of Massachusetts',
+          'https://malegislature.gov/Laws/GeneralLaws/PartI/TitleVII/Chapter40/Section13E')]
+
 
 def read_index():
     if not os.path.exists(INDEX):

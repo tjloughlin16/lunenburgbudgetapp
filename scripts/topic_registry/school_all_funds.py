@@ -22,6 +22,10 @@ CATEGORY = dict(
         ('How grants are booked', ['grant-coding']),
         ('Grants compared', ['grant-allocations-compared', 'grants-others-receive']),
         ('Special education', ['sped-all-funds']),
+        # TJ, 24 October 2026: "for all the grants.... have we broken down how that money is
+        # spent? I want to have reports on that." Every post read alike; none singled out.
+        ('Who grants and fees pay for', ['pay-from-grants-and-fees', 'pay-moved-between-funds',
+                                         'positions-and-their-funds']),
     ])
 GENERATOR = 'build_school_all_funds.py'
 # DESE's allocations against the comparison districts (MASTER-PLAN item 10): a different source
@@ -30,7 +34,10 @@ GENERATOR = 'build_school_all_funds.py'
 # one question the all-funds generator does not ask, so its own generator.
 TOPIC_GENERATORS = {'grant-allocations-compared': 'build_grant_comparison_topics.py',
                     'grants-others-receive': 'build_grant_comparison_topics.py',
-                    'carried-over-orders': 'build_carryover_topics.py'}
+                    'carried-over-orders': 'build_carryover_topics.py',
+                    'pay-from-grants-and-fees': 'build_pay_by_fund_topics.py',
+                    'pay-moved-between-funds': 'build_pay_by_fund_topics.py',
+                    'positions-and-their-funds': 'build_pay_by_fund_topics.py'}
 TOPICS = {
     'school-money-in': 'School money in',
     'budget-lines-all-funds': 'Budget lines, all funds',
@@ -40,4 +47,7 @@ TOPICS = {
     'grant-allocations-compared': 'Grant allocations compared',
     'grants-others-receive': 'Grants other districts get',
     'carried-over-orders': 'Carried-over orders',
+    'pay-from-grants-and-fees': 'Pay from grants and fees',
+    'pay-moved-between-funds': 'Pay moved between funds',
+    'positions-and-their-funds': 'Positions and their funds',
 }
