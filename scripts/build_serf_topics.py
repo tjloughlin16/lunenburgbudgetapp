@@ -124,6 +124,24 @@ def minute(board_slug, board, fname, quote, who):
                 label='%s minutes, %s' % (board, date))
 
 
+def video(board_slug, board, fname, at, quote, who=None):
+    """A quotation from the machine captions of a meeting recording, at its timestamp, checked
+    verbatim against our copy of the captions every build. Captions name nobody, so `who` stays
+    CAPTION_WHO unless the captions themselves say who is speaking (rule 13: never a guess)."""
+    rel = 'sources/data/youtube-transcripts/%s/%s' % (board_slug, fname)
+    t = json.load(open(os.path.join(ROOT, rel), encoding='utf-8'))
+    if norm(quote) not in norm(' '.join(x['text'] for x in t['segments'])):
+        fail('%r is not verbatim in %s' % (quote[:60], rel))
+    h, m, sec = (int(x) for x in at.split(':'))
+    secs = h * 3600 + m * 60 + sec
+    if not any(abs(x['start'] - secs) < 60 and norm(quote).split()[0] in norm(x['text'])
+               for x in t['segments']):
+        fail('%r does not begin near %s in %s' % (quote[:40], at, rel))
+    return dict(quote=quote, board=board, date=t['meeting_date'], who=who or CAPTION_WHO,
+                href='%s&t=%ds' % (t['video_url'], secs), caption=True,
+                label='%s, %s, video at %s (machine captions)' % (board, t['meeting_date'], at))
+
+
 def money(s):
     t = s.replace('−', '-').strip()
     if not re.fullmatch(r'-?\$[\d,]+', t):
@@ -1308,7 +1326,7 @@ def build():
             ('Three lines net, two running', stats['net']['two']),
             ('Whole school, one year', stats['school']['worst']),
             ('Whole school, two running', stats['school']['two']),
-            ('The cap in law', cap)], '$', highlight='Line by line, two running',
+            ('The cap in law', cap)], '$',
             note='Beyond the general fund vote, %s to %s. Two running: the worst pair of '
                  'consecutive years.' % (C.fy(fy0), C.fy(fy1)),
             note_figures={'y': F(fy0), 'z': F(fy1)}),
@@ -1396,13 +1414,17 @@ def build():
                 for y in sorted(bad_y, key=lambda y: -need[y])]
     if not all(need[y] <= o_pair for y in bad_y):
         fail('the coverage grid says the worst two years running met every bad year')
+    n_all = sum(1 for _, v in cov_opts if covered(v) == len(bad_y))
+    if n_all != 3 or [covered(v) == len(bad_y) for _, v in cov_opts] != sorted(
+            covered(v) == len(bad_y) for _, v in cov_opts):
+        fail('the grid says the largest options, and only those, meet every year')
     cov_grid = TB.checks('Which bad years each option would have met', cov_cols, cov_rows,
                          place='chart', first='Bad year', second='Options that met it', tone='good',
                          note='A mark: that year’s overrun, as spent, fit inside the reserve, '
                               'assuming it was full when the year began.',
-                         so=('Every option meets the small years; the choice is only about the '
-                             'biggest few. At %s, the worst two years running, every year on record '
-                             'is met.' % C.usd(o_pair), {'a': U(o_pair)}))
+                         so=('Every option meets the small years; they differ only on the biggest '
+                             'few, and the %s largest meet every year on record.' % C.num(n_all),
+                             {'a': N(n_all)}))
     out['reserve-options'] = TP.page(
         'reserve-options',
         'Six ways to size the reserve run from %s to %s; the law caps it at %s.'
@@ -1545,12 +1567,18 @@ def build():
     # THE WALK A BOARD MEMBER TAKES (TJ, 24 October 2026: "walk the hub from a user's
     # perspective, a board member... they need to draw conclusions, so we need to... make the
     # bold statements of what the data is actually saying"). In the order they ask it:
-    #   1. does special education run short?           rarely, and never by much in total
+    #   1. does special education run short?           a line does, most years; the three
+    #                                                  together less often (TJ, 25 October 2026:
+    #                                                  "the school committee will disagree with
+    #                                                  'Special education rarely runs short'" --
+    #                                                  and the ledger agrees with them)
     #   2. then what surprises us?                     late orders, in spring
     #   3. aren't move-ins the problem?                by law, a placed child is the old town's cost that year
     #   4. so what is the reserve for?                 the slack in the budget gets moved; the
     #                                                  circuit breaker account that absorbed it is shrinking
-    #   5. how big?                                    the worst two years running, under the cap
+    #   5. how big?                                    six sizes, side by side; none singled out
+    #                                                  (TJ, 25 October 2026: highlighting one
+    #                                                  "suggest thats the option to pick" -- rule 8)
     #   6. why not just budget it?                     it raises far more for the same protection
     cba_y = {r['fy']: r['closing'] for r in SC['cb_account']['years']}
     cb_hi_y = max((y for y in cba_y if y < fy1), key=lambda y: cba_y[y])
@@ -1588,6 +1616,9 @@ def build():
              'several times in total, and has fallen from its high')
     mfig = [v for y in mys for k, v in mrow[y].items() if k == 'fy' or k.startswith('t_')]
     h = {}
+    n_line = len(bad_y)                       # years at least one line spent past its vote
+    h['h-line'] = f('h-line', N(n_line, 'years'), 'of %s a line spent past its vote' % C.num(nyrs),
+                    'published', {'n': N(nyrs)})
     h['h-under'] = f('h-under', N(n_under, 'years'), 'of %s the three lines spent under budget'
                      % C.num(nyrs), 'published', {'n': N(nyrs)})
     h['h-school'] = f('h-school', U(stats['school']['worst']), 'whole school over its budget, worst year',
@@ -1617,15 +1648,15 @@ def build():
                       closes='the Special Education Reserve Fund policy, Select Board, 27 October 2026',
                       allow=('27', '2026'))
     ladder = LD.ladder([
-        LD.tier('Does it run short?', [h['h-under'], h['h-school'], h['h-spring'], h['h-law']]),
+        LD.tier('Does it run short?', [h['h-line'], h['h-under'], h['h-school'], h['h-spring'], h['h-law']]),
         LD.tier('Where the slack goes', [h['h-moved'], h['h-repaid'], h['h-cba'], h['h-cba0']]),
         LD.tier('How big, and why a reserve', [h['h-med'], h['h-adj'], h['h-med5'], h['h-worst'],
                                                h['h-ours'], h['h-adjmax'], h['h-cap'],
                                                h['h-policy']]),
     ], [
-        LD.conclusion('Special education rarely runs short: its three lines spent under budget in %s of %s years.'
-                      % (C.num(n_under), C.num(nyrs)), ['h-under', 'h-school'],
-                      {'a': N(n_under), 'n': N(nyrs)}),
+        LD.conclusion('A line spent past its vote in %s of %s years; the three together came in under in %s.'
+                      % (C.num(n_line), C.num(nyrs), C.num(n_under)), ['h-line', 'h-under', 'h-school'],
+                      {'a': N(n_line), 'n': N(nyrs), 'b': N(n_under)}),
         LD.conclusion('When it does, the bill comes late: %s of orders placed after September came March to June.'
                       % C.pct(spring_pct, 0), ['h-spring'], {'a': P(spring_pct, 0)}),
         LD.conclusion('A child already in a private placement who moves in is, by law, the old town’s cost that year.',
@@ -1700,8 +1731,13 @@ def build():
     # where overspending lands under it. The definitions moved to Surprise costs; the circuit
     # breaker's step-by-step lives on its own page.
     money_chart = TB.custom(
-        'serf-money-stack', 'What was voted, what the state’s repayment paid, what ran over',
+        # TJ, 25 October 2026: "how does the repayment work on this chart? it looks additive"
+        # -- it IS additive, and nothing said so. `read` says it above the bars.
+        'serf-money-stack', 'Each year’s bill: the vote, then what was spent on top of it',
         dict(rows=[mrow[y] for y in mys],
+             read='Each bar adds up. Left: the budget Town Meeting voted, hatched where a line left '
+                  'some unspent. Then what was spent on top of the vote: red from the town budget, '
+                  'green from the state’s repayment of the year before.',
              legend=dict(within='Spent, inside what was voted', unspent='Voted, not spent',
                          over='Spent above a line’s vote', state='Paid from the state’s repayment'),
              note='The three special education lines, each year. The repayment is the circuit '
@@ -1713,18 +1749,20 @@ def build():
             'reserve covers the smaller of the two cushions; if the repayment falls, what is left '
             'to cover grows.' % (C.fy(mys[0]), C.fy(fy1), C.usd(st_sum), C.usd(ov_sum)),
             {'y': F(mys[0]), 'z': F(fy1), 'a': U(st_sum), 'b': U(ov_sum)}))
-    if not (covered(o_pair) == len(bad_y) and o_pair < cap and cb_med > o_med):
-        fail('the three answers say the worst two years met every bad year inside the cap, and '
-             'that a median repayment exceeds a median bad year')
+    if not (covered(o_med5) < len(bad_y) == covered(o_max) and o_max < cap and cb_med > o_med5):
+        fail('the three answers say the recent median misses some bad years, the worst year '
+             'meets them all inside the cap, and a median repayment exceeds a median bad year')
     FYR2 = lambda txt, a, b: (txt, {'y': F(a), 'z': F(b)})
     hub_answers = TB.panels('The three answers', [
         TB.panel('What reserve to keep', [
-            ('Median bad year', C.usd(o_med), None),
-            ('Worst two years running', C.usd(o_pair), 'bad'),
+            ('Median bad year, last five', C.usd(o_med5), None),
+            ((('Worst year on record, %s' % C.fy(sl['wfy'])), {'y': F(sl['wfy'])}), C.usd(o_max), None),
             ('The most the law allows', C.usd(cap), None)],
             sub='Six ways to size it are compared on Reserve options.',
-            so='Held at the worst two years running, it would have met every bad year on record, '
-               'inside the legal limit.'),
+            so=('Held at the recent median it would have met %s of %s bad years; at the worst year, '
+                'all of them. The choice is how rare a year to insure against.'
+                % (C.num(covered(o_med5)), C.num(len(bad_y))),
+                {'a': N(covered(o_med5)), 'n': N(len(bad_y))})),
         TB.panel('What comes back', [
             (FYR2('Circuit breaker, median a year, %s to %s' % (C.fy(fy0), C.fy(fy1)), fy0, fy1),
              C.usd(cb_med), None),
@@ -1742,15 +1780,83 @@ def build():
             so='The budget is usually big enough. The risk is its slack being moved before a spring '
                'bill, and padding every year costs more than holding a reserve once.')],
         place='lead')
+    # WHAT WAS SAID, BESIDE THAT YEAR'S LEDGER. TJ, 25 October 2026: "the school committee will
+    # disagree ... can you find quotes that say the surprises from special education crush the
+    # budget and put them on this page." Found by a search of every board's minutes and
+    # captions (43 candidates); these eight vary by board, year and kind of surprise. Each
+    # sits beside the town's ledger for the fiscal year it was said in -- the line-by-line
+    # record, so a reader sees what a meeting saw and what the year closed at, and neither is
+    # marked wrong. The October 2026 Finance Committee remark is left out: its captions render
+    # out of district as "Audit district", and a quote is not built around a mis-hearing.
+    SAID = [
+        video('school-committee', 'School Committee', '2025-02-05-ad6QtSaJqVU.json', '2:33:32',
+              'those are the lines that blow our budget out of the water when we have unanticipated '
+              'students moving in to lunenberg'),
+        video('school-committee', 'School Committee', '2025-09-03-SI-irBe6ABs.json', '1:07:09',
+              'somebody could move 350 ft across the town line and now we have a million dollar '
+              'hole in our budget.'),
+        video('select-board', 'Select Board', '2024-12-17-jrG1b_tADyo.json', '1:56:30',
+              'those costs are enormous they are staggering and we have no way to Abate them no '
+              'way to prepare for them no way to alter them'),
+        video('school-committee', 'School Committee', '2023-10-04-RSuhiVz9L-A.json', '0:40:09',
+              'if we get a sped private tuition that comes in unexpected it\'s going to affect our '
+              'budget and here we are I mean it just happened'),
+        video('finance-committee', 'Finance Committee', '2025-06-12-iRhUTui_HRY.json', '1:11:12',
+              'the outofd district placement can just kill you'),
+        video('school-committee', 'School Committee', '2025-06-18-AIhtA5pkPI0.json', '2:37:06',
+              'We had so much unexpected special ed costs creep in this year.'),
+        minute('school-committee', 'School Committee', '2024-01-24-minutes-6375.txt',
+               'Our out of District placements have skyrocketed, our transportation has skyrocketed',
+               'Mr. Beardmore, School Committee member, as minuted'),
+        minute('select-board', 'Select Board', '2012-05-01-minutes-4804.txt',
+               'the schools cannot cover their deficit due to higher than expected special education '
+               'costs.', 'Not named in the minutes'),
+    ]
+    LONG = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August', 'September',
+            'October', 'November', 'December')
+    s_fig, s_items, s_years = [], [], {}
+    for q in SAID:
+        yy, mm, dd = (int(x) for x in q['date'].split('-'))
+        fy = yy + 1 if mm >= 7 else yy
+        if fy not in mrow:
+            fail('a quotation from %s falls in %s, a year the ledger does not hold' % (q['date'], C.fy(fy)))
+        when = '%d %s %d' % (dd, LONG[mm - 1], yy)
+        rows = [(LINE_NAME[g], '%s over' % C.usd(over[fy][g]), 'bad')
+                for g in LINES if over[fy][g] > 0]
+        s_years[fy] = bool(rows)
+        if not rows:
+            rows = [('Every line', 'within its vote', 'good')]
+        rows.append(('The three together', '%s %s' % (C.usd(abs(net[fy])), 'over' if net[fy] > 0 else 'under'),
+                     'bad' if net[fy] > 0 else None))
+        rows.append(('Paid from the state’s repayment', mrow[fy]['t_state'], None))
+        s_fig += [C.fy(fy), when, mrow[fy]['t_state']] + [r[1] for r in rows]
+        s_items.append(dict(quote=q['quote'], who=q['who'], when=when, board=q['board'],
+                            href=q['href'], label=q['label'], caption=bool(q.get('caption')),
+                            fy=C.fy(fy), ledger=[dict(label=a, value=b, tone=c) for a, b, c in rows]))
+        s_fig += [q['label'], q['quote']]
+    s_top = max(s_years, key=lambda y: sum(1 for i in s_items if i['fy'] == C.fy(y)))
+    if s_years[s_top]:
+        fail('the quotations say the year quoted most closed with every line inside its vote')
+    said_block = TB.custom(
+        'serf-said-ledger', 'What was said, beside that year’s ledger',
+        dict(items=s_items, ledger_head='The ledger, each line against its vote,'), place='body', figures=s_fig,
+        allow=[q['href'] for q in SAID],          # addresses, not figures
+        alt='Eight quotations from public meetings, each beside the special education lines’ '
+            'results for that fiscal year.',
+        so=('The quotations fall in %s fiscal years, and in %s a line spent past its vote. %s, quoted '
+            'most, closed with every line inside it: much of the worry is about a year that could '
+            'come, which is what a reserve is for.'
+            % (C.num(len(s_years)), C.num(sum(s_years.values())), C.fy(s_top)),
+            {'n': N(len(s_years)), 'a': N(sum(s_years.values())), 'y': F(s_top)}))
     out[HUB] = TP.hub(
         HUB,
-        'Special education rarely runs short; when it does, the bill comes in spring, after its slack '
-        'is moved. A median bad year ran %s over; the worst two years running, %s. Held once, a '
-        'reserve raises less than adding the same cushion to every budget.'
-        % (C.usd(o_med), C.usd(o_pair)),
+        'A special education line spent past its vote in %s of %s years, the bill often in spring, '
+        'after slack was moved. A median bad year of the last five ran %s over; the worst year '
+        'on record, %s. Held once, a reserve costs less than a yearly cushion.'
+        % (C.num(n_line), C.num(nyrs), C.usd(o_med5), C.usd(o_max)),
         ladder, chart=out['reserve-options']['chart'],
-        answer_figures={'m': U(o_med), 'a': U(o_pair)},
-        blocks=[hub_impact, hub_answers, money_chart,
+        answer_figures={'k': N(n_line), 'n': N(nyrs), 'm': U(o_med5), 'a': U(o_max)},
+        blocks=[hub_impact, hub_answers, money_chart, said_block,
                 TB.chart(surprise_chart, place='chart',
                          so=('Out-of-district tuition is the largest share, %s, but not most of it: '
                              'a reserve drawn only for tuition would miss the rest.' % C.pct(share['ood']),
@@ -1763,7 +1869,7 @@ def build():
 
     # ------------------------------------------------ what each conclusion means
     meanings(out[HUB]['ladder']['conclusions'], [
-        'So a reserve is insurance for the occasional bad year, not a fix for a budget that is too small.',
+        'The surprises are real and frequent; what has absorbed them is slack in the other lines, and that slack can be moved.',
         'A spring bill finds the year’s money already committed; that timing, more than the size, is what a reserve covers.',
         'Such a move can be seen coming and budgeted the next year; the in-year risk is a child newly placed here.',
         'Padding the special education budget does not protect against spring bills if the padding can be moved in July.',

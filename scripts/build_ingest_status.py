@@ -2448,6 +2448,17 @@ font-variant-numeric:tabular-nums;flex:0 0 auto}
 border-radius:9px;background:#21262d;color:#8b949e}
 .pill.go{background:#1a3a24;color:#3fb950}.pill.warn{background:#3a2d12;color:#d29922}
 .pill.no{background:#3a1d1d;color:#f85149}
+/* THE PACING RUN'S STATE, as one chip big enough to read across the room (TJ, 25 October
+   2026: "put an indicator on that panel that its running. and if its not, say why"). */
+.state{display:inline-flex;align-items:center;gap:7px;font-size:12.5px;font-weight:600;
+padding:3px 10px;border-radius:12px;white-space:nowrap;letter-spacing:.02em}
+.state.go{background:#1a3a24;color:#3fb950}.state.warn{background:#3a2d12;color:#d29922}
+.state.no{background:#3a1d1d;color:#f85149}.state.idle{background:#21262d;color:#8b949e}
+.state .dot{width:8px;height:8px;border-radius:50%;background:currentColor}
+.state.go .dot{animation:pulse 1.4s ease-in-out infinite}
+@keyframes pulse{0%,100%{opacity:1}50%{opacity:.25}}
+.why{margin:8px 0 2px;padding:7px 10px;border-radius:6px;background:#161b22;border-left:3px solid #30363d;font-size:13px}
+.why.go{border-left-color:#3fb950}.why.warn{border-left-color:#d29922}.why.no{border-left-color:#f85149}
 .key{display:inline-block;width:9px;height:9px;border-radius:2px;margin:0 3px 0 10px}
 .key.go{background:#3fb950}.key.warn{background:#d29922}
 .ph{font-size:11px;padding:2px 8px;border-radius:9px;background:#21262d;color:#586069;
@@ -2799,6 +2810,74 @@ def finished(n=14):
 # to a straight line across the week (process_meeting.py --week-line), so the page shows the
 # same two numbers the governor decides on -- the server's weekly bar and where the line is
 # -- read from the same files, so the card and the run cannot disagree.
+def _pacing_state(pid, catch_at):
+    """-> (kind, chip, why): is the paced minutes run working RIGHT NOW, and if not, why.
+
+    TJ, 25 October 2026: "when 'Weekly pacing' is running, can you put an indicator on that
+    panel that its running. and if its not, say why in a more apparent fashion". Read from
+    the same places the run itself writes: the process tree (a `claude` call under the run is
+    a meeting being written), its log's newest [gov] line (why it is not starting one), and
+    the two stop files (why it is not there at all)."""
+    esc = lambda t: (t or '').replace('&', '&amp;').replace('<', '&lt;').replace('>', '&gt;')
+    logs = sorted(glob.glob(os.path.join(ROOT, 'build', 'process-meeting*.log')), key=os.path.getmtime)
+    tail = ''
+    if logs:
+        try:
+            with open(logs[-1], encoding='utf-8', errors='replace') as fh:
+                fh.seek(max(0, os.path.getsize(logs[-1]) - 60000))
+                tail = fh.read()
+        except OSError:
+            pass
+    gov = re.findall(r'\[gov (\d\d:\d\d)\] (.*)', tail)
+    meet = re.findall(r'^\[(\d+)/~(\d+)\] (\S+) (\S+):', tail, re.M)
+    if pid:
+        ps = subprocess.run(['ps', '-A', '-o', 'pid=,ppid=,command='], capture_output=True, text=True).stdout
+        kids, cmd = {}, {}
+        for ln in ps.splitlines():
+            parts = ln.split(None, 2)
+            if len(parts) >= 2 and parts[0].isdigit() and parts[1].isdigit():
+                kids.setdefault(int(parts[1]), []).append(int(parts[0]))
+                cmd[int(parts[0])] = parts[2] if len(parts) > 2 else ''
+        stack, busy = [pid], False
+        while stack:
+            for c in kids.get(stack.pop(), []):
+                stack.append(c)
+                busy = busy or 'claude' in cmd.get(c, '')
+        if busy:
+            what = ('meeting %s of ~%s: %s, %s' % meet[-1]) if meet else 'a meeting'
+            return 'go', 'RUNNING', 'Writing %s.' % esc(what)
+        at, note = gov[-1] if gov else ('', '')
+        n = note.lower()
+        if 'waiting for it' in n or 'weekly line' in n:
+            return 'warn', 'PAUSED &middot; AHEAD OF THE LINE', (
+                'Spent faster than the weekly line allows, so it starts nothing until the line '
+                'catches up%s. Nothing is wrong.' % (' &mdash; around <b>%s</b>' % catch_at if catch_at else ''))
+        if 'stale' in n:
+            return 'warn', 'PAUSED &middot; USAGE UNREAD', (
+                'It cannot read the usage bars, so it will not start a meeting blind (since %s).' % at)
+        if 'yield' in n or 'lock' in n:
+            return 'warn', 'PAUSED &middot; LOCK HELD', 'Another batch holds the lock; it resumes when that finishes.'
+        if 'window' in n or 'cap' in n or 'reset' in n:
+            return 'warn', 'PAUSED &middot; 5-HOUR WINDOW', 'At the session cap: %s (since %s).' % (esc(note.split('  ')[-2] if '  ' in note else note), at)
+        return 'warn', 'BETWEEN MEETINGS', esc(note) or 'Alive, about to start the next meeting.'
+    stopped = os.path.join(ROOT, 'build', 'minutes-pacing.STOPPED')
+    kill = os.path.join(ROOT, 'build', 'STOP-METERED')
+    first = lambda f: open(f, encoding='utf-8', errors='replace').read().strip().splitlines()[0:1] or ['']
+    if os.path.exists(kill):
+        return 'no', 'STOPPED &middot; KILL SWITCH', (
+            'build/STOP-METERED is present: %s. Delete it to allow metered runs.' % esc(first(kill)[0][:200]))
+    if os.path.exists(stopped):
+        return 'no', 'STOPPED &middot; NEEDS A PERSON', (
+            '%s<br>Delete <code>build/minutes-pacing.STOPPED</code> to let the launcher start it again.'
+            % esc(first(stopped)[0][:240]))
+    m = re.findall(r'^(STOPPED: .*|done)$', tail, re.M)
+    if m and m[-1] == 'done':
+        return 'idle', 'FINISHED', 'The last run completed its list. Nothing is queued to start it.'
+    return 'no', 'NOT RUNNING', (
+        'No paced run and no stop file. %s' % (esc(m[-1]) if m else
+                                             'The log ends without a stop reason: it may have been killed.'))
+
+
 def _week_pacing_card():
     try:
         sys.path.insert(0, os.path.join(ROOT, 'scripts'))
@@ -2817,10 +2896,16 @@ def _week_pacing_card():
     # does not see -- so the card would say "no paced run" with one waiting.
     ps = subprocess.run(['pgrep', '-fl', '[p]rocess_meeting.py --until-usage'], capture_output=True, text=True).stdout
     m = re.search(r'--week-line\s+([\d.]+)', ps)
+    pid = int(ps.split()[0]) if m else None
     live = bool(m)
     if m:
         goal = float(m.group(1))
     line = G.week_line(goal, wr, now)
+    # EVEN PACE: 100% spread over the week, the "pace" mark on TJ's status line
+    # (~/.claude/statusline-usage.sh). TJ, 25 October 2026: "youa re saying the pace is 36%, so
+    # we have 2 differnet ways to calculate pace". Both are right and both are shown, named:
+    # the run's line aims for `goal` and keeps the rest for interactive work.
+    even = 100.0 * min(1.0, max(0.0, 1.0 - (wr - now) / G.WEEK_S))
     u7 = last['u7']
     gap = u7 - line
     catch = ''
@@ -2834,19 +2919,22 @@ def _week_pacing_card():
             else:
                 hi = mid
         catch = ' &middot; the line reaches %g%% around <b>%s</b>' % (u7, dt.datetime.fromtimestamp(hi).strftime('%a %H:%M'))
-    state = (('<span class="pill">waiting</span>' if gap >= 0 else '<span class="pill go">filling</span>')
-             if live else '<span class="pill">no paced run</span>')
+    kind, chip, why = _pacing_state(pid, dt.datetime.fromtimestamp(hi).strftime('%a %H:%M') if gap > 0 else '')
+    state = '<span class="state %s"><span class="dot"></span>%s</span>' % (kind, chip)
     pct = lambda v: max(0.0, min(100.0, v))
     bar = ('<div style="position:relative;height:10px;background:#21262d;border-radius:5px;margin:8px 0 2px">'
            '<div style="position:absolute;left:0;top:0;bottom:0;width:%.1f%%;background:#d29922;border-radius:5px"></div>'
-           '<div title="the line" style="position:absolute;top:-3px;bottom:-3px;left:%.1f%%;width:2px;background:#e6edf3"></div>'
-           '</div>' % (pct(u7), pct(line)))
-    return ('<div class="card"><div class="row"><b class="grow">Weekly pacing</b>%s</div>%s'
-            '<div class="tiny">Weekly bar <b>%g%%</b> against a line at <b>%.1f%%</b> (%s %.1f points) &middot; goal %g%%, '
-            'climbing to 100%% over the last day &middot; resets %s%s</div>'
+           '<div title="the minutes run\u2019s line" style="position:absolute;top:-3px;bottom:-3px;left:%.1f%%;width:2px;background:#e6edf3"></div>'
+           '<div title="even pace" style="position:absolute;top:-3px;bottom:-3px;left:%.1f%%;width:2px;background:#8b949e"></div>'
+           '</div>' % (pct(u7), pct(line), pct(even)))
+    return ('<div class="card"><div class="row"><b class="grow">Weekly pacing</b>%s</div>'
+            '<div class="why %s">%s</div>%s'
+            '<div class="tiny">Weekly bar <b>%g%%</b> &middot; <span style="color:#e6edf3">&#9474;</span> the minutes run\u2019s line <b>%.1f%%</b> (%s %.1f points; '
+            'it aims for %g%% and keeps the rest for interactive work, climbing to 100%% over the last day) &middot; '
+            '<span style="color:#8b949e">&#9474;</span> even pace <b>%.0f%%</b>, the pace on your status line &middot; resets %s%s</div>'
             '<div class="tiny" style="color:#8b949e;margin-top:2px">The bar counts every session on the account, so a heavy '
             'interactive day raises it and the minutes run starts less; reading %s.</div></div>'
-            % (state, bar, u7, line, 'ahead by' if gap >= 0 else 'behind by', abs(gap), goal,
+            % (state, kind, why, bar, u7, line, 'over it by' if gap >= 0 else 'under it by', abs(gap), goal, even,
                dt.datetime.fromtimestamp(wr).strftime('%a %d %b %H:%M'), catch, ago(dt.datetime.fromtimestamp(last['t'], dt.timezone.utc).isoformat())))
 
 

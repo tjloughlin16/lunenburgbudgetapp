@@ -13,7 +13,7 @@ import type { CustomProps } from './index'
 
 type Row = { fy: string; voted: number; within: number; over: number; state: number
   t_voted: string; t_over: string; t_state: string; t_spent: string }
-type Data = { rows: Row[]; legend: { within: string; unspent: string; over: string; state: string }; note: string }
+type Data = { rows: Row[]; read?: string; legend: { within: string; unspent: string; over: string; state: string }; note: string }
 
 const C = {
   within: 'var(--text-muted)',
@@ -36,6 +36,7 @@ export default function SerfMoneyStack({ data, alt }: CustomProps) {
   const pct = (v: number) => `${(100 * v) / max}%`
   return (
     <figure aria-label={alt} className="max-w-3xl">
+      {d.read ? <p className="text-[14px] leading-snug mb-2" style={{ color: 'var(--text-secondary)' }}>{d.read}</p> : null}
       <ul className="flex flex-wrap gap-x-5 gap-y-1.5 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
         <Key swatch={{ background: C.within, opacity: 0.55 }} label={d.legend.within} />
         <Key swatch={{ background: HATCH, boxShadow: 'inset 0 0 0 1px var(--grid)' }} label={d.legend.unspent} />

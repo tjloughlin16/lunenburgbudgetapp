@@ -945,6 +945,10 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
         bad.append('hub %s: %d terms; at most %d' % (cid, len(terms), TERMS_MAX))
     bad += check_chart(chart, 'hub %s' % cid, required=CHART_REQUIRED)
     bad += TB.blocks_bad(blocks, 'hub %s' % cid)
+    # A hub draws top, lead, chart, body and end (Topic.tsx); `also1`/`also2` sit beside a topic
+    # page's extra charts and a hub has none, so a block placed there vanished without a word.
+    bad += ['hub %s: block %r is placed %r, which a hub does not draw' % (cid, b.get('title'), b['place'])
+            for b in blocks if b.get('place') in ('also1', 'also2')]
     n = _words([a] + [f['label'] for t in ladder['tiers'] for f in t['facts']]
                + ladder['conclusions'] + [x[k] for x in terms for k in ('means', 'surprises')])
     if n > HUB_WORDS_MAX:
