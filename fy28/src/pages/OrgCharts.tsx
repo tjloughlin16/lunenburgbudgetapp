@@ -1,5 +1,6 @@
 import { createContext, useContext, useEffect, useMemo, useState } from 'react'
 import { ReportShell, Body, Grain, H2, Stat } from '../components/report'
+import { personSlug } from './Person'
 
 /* TOWN-WIDE ORG CHARTS: who held which role, in every department, board and school.
  *
@@ -55,16 +56,25 @@ const DOUBTFUL = 'Likely incorrect'
  * sources first appear, and lives in a context so the three name renderers share it. */
 const SourceNum = createContext<(r: Row) => { n: number; doc?: SourceDoc } | null>(() => null)
 
+// EVERY NAME OPENS ITS PERSON'S PAGE, and `?person=` marks one name on the chart -- the
+// link back from that page (pages/Person.tsx). TJ, 26 October 2026.
+const MARKED = personSlug(fromUrl('person'))
+
 function Name({ r }: { r: Row }) {
   const num = useContext(SourceNum)(r)
   const masterOnly = r.source.includes("only on the district's master list")
   const doubtful = r.status === 'doubtful'
+  const marked = Boolean(MARKED) && personSlug(r.person) === MARKED
   return (
     <>
       {doubtful
         ? <span style={{ color: 'var(--text-muted)', fontStyle: 'italic' }}
             title="On the district’s master staff list, but not on this school’s own staff sheet. The school’s own list is taken as the authority.">{r.person}</span>
-        : r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
+        : r.person && r.status === 'filled'
+          ? <a href={`/people/${personSlug(r.person)}`} className="hover:underline" style={marked
+              ? { fontWeight: 700, background: 'var(--surface-2, rgba(0,0,0,.06))', padding: '1px 5px', borderRadius: 4, color: 'inherit' }
+              : { color: 'inherit' }}>{r.person}</a>
+          : r.person || (r.status === 'vacant' ? 'vacant' : '\u2014 unnamed post \u2014')}
       {masterOnly && <span title="Only on the district’s master staff list, not on any school’s own sheet: unconfirmed"
         style={{ color: 'var(--status-warning)' }}>{' '}&dagger;</span>}
       {num && (num.doc?.copy_url

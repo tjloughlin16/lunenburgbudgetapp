@@ -1026,6 +1026,10 @@ function resolvePath(pathname: string): Tab | null {
   if (seg === 'boards/school-committee/finance') return 'schoolfinance'
   if (seg.startsWith('boards/')) return 'boards'
   if (seg.startsWith('departments/')) return 'departments'
+  // ONE PAGE PER PERSON, /people/<slug>. It rides the org charts' tab rather than having
+  // one of its own: a Tab gets a SLUG, and a SLUG is a door the sitemap and the prerender
+  // enumerate -- and an employee's page must not be one (pages/Person.tsx).
+  if (/^people\/[a-z0-9-]+$/.test(seg)) return 'orgcharts'
   if (seg.startsWith('budget-feed/')) return 'budgetfeed'
   if (seg === '') return ROOT
   return BY_SLUG[seg] ?? null

@@ -176,6 +176,16 @@ def department_pages():
     return ['/departments/' + x['slug'] for x in d.get('departments', []) if x['slug'] in d.get('owners', {})]
 
 
+def people_pages():
+    """A person who holds or held a public office. EMPLOYEES ARE LEFT OUT ON PURPOSE: their
+    pages carry noindex (TJ, 26 October 2026; scripts/build_people.py)."""
+    p = os.path.join(PUB, 'data', 'people.json')
+    if not os.path.exists(p):
+        return []
+    d = json.load(io.open(p, encoding='utf-8'))
+    return sorted('/people/' + x['slug'] for x in d.get('people', []) if x.get('indexed'))
+
+
 def topic_pages():
     """Every hub and topic page (scripts/topics.py) whose payload exists, off the index the
     shelves read. TOPICS_INDEX may point at a BUILD's own copy (dist/data/topics.json), so a
@@ -299,7 +309,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + feed_pages() + topic_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + people_pages() + feed_pages() + topic_pages() + ENTRY + published_data()
               + reference() + analyses() + feeds()):
         if u not in seen:
             seen.add(u)

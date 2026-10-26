@@ -52,6 +52,7 @@ import { Boards } from './pages/Boards'
 import { BoardRecords } from './pages/BoardRecords'
 import { SchoolFinance, BoardFinance, Departments, Accounts } from './pages/Finance'
 import { OrgCharts } from './pages/OrgCharts'
+import { Person, personSlugFromPath } from './pages/Person'
 import { JobsPage } from './components/JobPostings'
 import { GrantsOpenPage } from './pages/GrantsOpen'
 import { TownMeetingVotesPage } from './pages/TownMeetingVotes'
@@ -547,7 +548,7 @@ export default function App() {
       {tab === 'schoolfinance' && <SchoolFinance />}
       {tab === 'departments' && <Departments />}
       {tab === 'accounts' && <Accounts />}
-      {tab === 'orgcharts' && <OrgCharts />}
+      {tab === 'orgcharts' && (personSlugFromPath(window.location.pathname) ? <Person /> : <OrgCharts />)}
       {tab === 'jobs' && <JobsPage />}
       {tab === 'grantsopen' && <GrantsOpenPage />}
       {tab === 'tmvotes' && <TownMeetingVotesPage />}

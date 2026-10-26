@@ -229,6 +229,15 @@ async function readRoutes() {
     departments = f.departments.filter(x => f.owners[x.slug]).map(x => `/departments/${x.slug}`).sort()
     console.log(`  ${departments.length} departments at /departments/<slug>`)
   }
+  // PEOPLE WHO HOLD OR HELD A PUBLIC OFFICE. An employee's page is client-rendered only,
+  // carries noindex and is in no sitemap (TJ, 26 October 2026; scripts/build_people.py):
+  // a prerendered file is exactly what such a page should not leave in dist.
+  const peopleFile = join(APP, 'public', 'data', 'people.json')
+  let people = []
+  if (existsSync(peopleFile)) {
+    people = JSON.parse(await readFile(peopleFile, 'utf8')).people.filter(p => p.indexed).map(p => `/people/${p.slug}`).sort()
+    console.log(`  ${people.length} people at /people/<slug> (public office; employees are not prerendered)`)
+  }
   // TOPIC PAGES: every /<category>/<topic> whose payload exists, off the index the shelves
   // read (scripts/build_topics_index.py). The two hubs are SLUG routes already.
   const topicsFile = join(APP, 'public', 'data', 'topics.json')
@@ -241,7 +250,7 @@ async function readRoutes() {
       .filter(p => !routes.includes(p)).sort()
     console.log(`  ${topicPages.length} topic pages at /<category>/<topic>`)
   }
-  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...spokes, ...finance, ...records, ...transfers, ...departments, ...meetings, ...topicPages]
+  return [...routes, ...docs.map(d => `/analysis/${d}`), ...posts.map(s => `/blog/${s}`), ...boards.map(s => `/boards/${s}`), ...spokes, ...finance, ...records, ...transfers, ...departments, ...meetings, ...people, ...topicPages]
 }
 
 /** Serve dist, falling back to the PRISTINE shell -- with the probe in it.

@@ -530,9 +530,9 @@ def job_rows(entry):
 #
 # One row per name as printed (whitespace collapsed, case ignored), listing every role,
 # body and year it appears under. The SAME NAME IS NOT PROVEN TO BE ONE PERSON -- two
-# Jennifers in two decades are one row here -- and the card says so. The link goes to the
-# most recent chart the name is on. No email, no extension: the search carries what the
-# chart shows and nothing more.
+# Jennifers in two decades are one row here -- and the card says so. The link opens the
+# person's own page, /people/<slug> (build_people.py), which links the chart. No email,
+# no extension in the INDEX: the page carries what the publisher printed.
 
 ORG_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'org-charts.json')
 
@@ -549,16 +549,19 @@ def _fy_span(fys):
 
 
 def person_rows(entry):
-    from urllib.parse import urlencode
+    from build_people import slug_for
     rows = json.load(open(entry['file'], encoding='utf-8'))['rows']
     people = {}
     for r in rows:
         name = ' '.join((r.get('person') or '').split())
-        if r.get('status') != 'filled' or not name:
+        if r.get('status') != 'filled' or not name or not slug_for(name):
             continue
-        people.setdefault(name.lower(), {'names': [], 'rows': []})
-        people[name.lower()]['names'].append(name)
-        people[name.lower()]['rows'].append(r)
+        # THE PERSON PAGE'S IDENTITY, so a result and the page it opens agree on who a
+        # name is. Keyed on the lowercased name, `Scott Barry-Grove` and `Scott Barry
+        # Grove` were two rows with ONE doc_key.
+        people.setdefault(slug_for(name), {'names': [], 'rows': []})
+        people[slug_for(name)]['names'].append(name)
+        people[slug_for(name)]['rows'].append(r)
     out = []
     for key, p in sorted(people.items()):
         name = max(set(p['names']), key=p['names'].count)
@@ -573,13 +576,15 @@ def person_rows(entry):
                                       for (role, where), fys in lines)
         out.append(({
             'corpus': 'person',
-            'doc_key': 'person:' + re.sub(r'[^a-z0-9]+', '-', key).strip('-'),
+            'doc_key': 'person:' + key,
             'file_key': entry['file_key'],
             'title': name,
             'board': latest['unit'], 'board_slug': None,
             'date': '',
             'kind': '%s, FY%s' % (latest['role'] or 'listed', latest['fy']),
-            'cite_url': '%s/org-charts?%s' % (SITE, urlencode({'unit': latest['unit'], 'fy': latest['fy']})),
+            # Their own page (build_people.py), not the chart they sit in. TJ, 26 October
+            # 2026: a result that says "person" and opens a chart of eighty is a dead end.
+            'cite_url': '%s/people/%s' % (SITE, key),
             'source_url': None,
             'start_s': None, 'seg_starts': None,
             'chars': len(body),
@@ -592,6 +597,12 @@ def person_rows(entry):
 # EVERY CORPUS, IN ONE PLACE. sync_search_d1.py reads this rather than keeping its own
 # list: a corpus added here and not there is indexed locally and never counted remotely.
 CORPORA = ('post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'transcript')
+
+# Bump when a corpus's reader writes different rows from the same file. It joins the file's
+# fingerprint, so the index re-reads the file and sync_search_d1.py re-sends it -- both
+# decide on that field alone, and a reader change with unchanged bytes reached neither.
+# person 2: keyed on the person page's slug and linking it (26 October 2026).
+READER_VERSION = {'person': '2'}
 
 READERS = {
     'job': job_rows,
@@ -615,6 +626,8 @@ def wanted():
             # a file re-keyed with unchanged bytes must still be re-read here and re-sent
             # by sync_search_d1.py, which both decide on this field alone.
             e['sha256'] += ':key=' + e['key_stem']
+        if e['corpus'] in READER_VERSION:
+            e['sha256'] += ':reader=' + READER_VERSION[e['corpus']]
         out[e['file_key']] = e
     if not out:
         raise SystemExit('no inputs found at all; refusing to write an empty index')

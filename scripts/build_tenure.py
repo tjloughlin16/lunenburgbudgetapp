@@ -55,6 +55,11 @@ there -- and that second document is ours. So for EMPLOYEE bodies (`school`,
 `longest_person` is named. Members of boards and appointed officers keep their names:
 they hold public office, and the town prints them as office-holders. The identity join
 still runs on the names, in memory; only the output is anonymous.
+
+REVISED 26 October 2026 for the person pages, NOT for this file. TJ chose full pages for
+everyone at /people/<slug> (build_people.py), employees included, with their pages kept
+out of the sitemap and marked noindex. These aggregate tables stay anonymous: they answer
+a question about bodies, and nothing in them needs a name.
 """
 import argparse
 import collections
