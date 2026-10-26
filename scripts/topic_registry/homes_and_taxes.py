@@ -20,7 +20,7 @@ CATEGORY = dict(
                             'household-income', 'income-by-age']),
         ('Homes and the bill', ['owners-and-renters', 'average-tax-bill', 'tax-bill-neighbours',
                                 'home-value-and-bill', 'regional-school-share',
-                                'years-in-the-home', 'bill-by-deed-year']),
+                                'years-in-the-home', 'bill-by-deed-year', 'senior-tax-work-off']),
         ('Growth', ['homes-and-enrolment', 'new-growth', 'business-building-pace',
                     'commercial-share']),
         ('Related pages', ['enrolment-by-year', 'per-pupil-spending']),
@@ -28,6 +28,9 @@ CATEGORY = dict(
     elsewhere=[('/try-growth', 'Growth dials: what building would have to do'),
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_homes_and_taxes_topics.py'
+# The senior work-off program is read from its own cited data file, not the census and DLS
+# sources the shelf's first generator reads.
+TOPIC_GENERATORS = {'senior-tax-work-off': 'build_workoff_topics.py'}
 TOPICS = {
     'town-population': 'Population and households',
     'residents-by-age': 'Residents by age',
@@ -45,4 +48,5 @@ TOPICS = {
     'new-growth': 'New growth',
     'business-building-pace': 'Business building pace',
     'commercial-share': 'Commercial share',
+    'senior-tax-work-off': 'Senior tax work-off',
 }
