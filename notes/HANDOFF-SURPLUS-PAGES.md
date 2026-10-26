@@ -87,8 +87,13 @@ cannot tell apart, the document that settles the rest (a money-gaps row). Rule 7
    - **The prepayment is LAWFUL** -- G.L. c. 71 s. 71D (a school committee may approve tuition up
      to three months in advance) and c. 40 s. 4E; DLS "Prepayment from Prior Fiscal Year Funds"
      uses this exact case (a July-September bill due 30 June). Rule 8: a tool that moves money
-     between years, not a defect. Measured: FY2025 prepaid one FY2026 invoice ($29,571.84),
-     FY2026 prepaid $189,276.75. Open: the s. 71D approval -- no vote found in School Committee
+     between years, not a defect. Measured: FY2026 prepaid $189,276.75 -- the ONLY prepayment
+     visible FY2023-FY2026. Every late-June tuition payment in every year and fund was read: the
+     rest are current monthly bills ("MAY 2024", "JUNE 2024"). CORRECTION: the FY2025 "26L2KEY46"
+     ($29,571.84, paid 29 April 2025, 2640) is almost certainly FY2025 quarter 4 with a mistyped
+     prefix -- KEY46 is the one number missing from FY2025's KEY41-47 run. Treat it as FY2025.
+     Private-school invoice numbers carry no year, so a private prepayment cannot be excluded by
+     numbering; the amounts are one month's size. Open: the s. 71D approval -- no vote found in School Committee
      minutes April-July 2026; 24 June 2026 minutes say carryover POs were "already discussed ...
      with the encumbrances". Finance Committee 22 Oct 2026 (captions, 1:49:50): "We are allowed
      to prepay the 1st quarter of out of district tuition from circuit Breaker accounts" -- this
