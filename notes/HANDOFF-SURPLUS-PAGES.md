@@ -79,6 +79,8 @@ footing. Only the as-printed pair, which mixes footings AND counts an FY2027 bil
     speaker he answers: "if it's spent by the school district before it gets there [free cash],
     that there is an open transparent conversation around it." The posted minutes (7634) do not
     record the exchange. So the practice was named in public five months before it was used.
+    TJ confirmed (26 Oct 2026, from knowing the meeting) that the speaker is Chris McNamara. Still
+    verify against the video before quoting; the page names him by role, as the minutes do.
   - Finance Committee, 22 Oct 2026, https://www.youtube.com/watch?v=wQWhIwYOc9o&t=6440s (1:47:20-
     1:51:20), the district's circuit breaker slides: "We are allowed to prepay the 1st quarter of
     out of district tuition from circuit Breaker accounts"; eligible students 9 (FY2025) -> 13
