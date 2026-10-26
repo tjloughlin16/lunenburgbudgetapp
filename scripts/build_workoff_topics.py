@@ -380,15 +380,32 @@ def build():
         'print some years before it, one after it and most without saying, so a change between two '
         'colours is not a measured change.', None, ('2014',)))
 
+    # THE EARLIER TOTALS (TJ, 26 October 2026: "in FY11 it shows '1500 hours of labor'"). Two
+    # reports before 2015 print an approximate total, "over", with no season named: they are
+    # not points on the line, and the note must not say no hours exist before it.
+    early = [r for r in csv.DictReader(open(DATA, encoding='utf-8'))
+             if r['season'].startswith('AR-') and r['hours'] and r['hours_qualifier'] == 'over']
+    if [r['season'] for r in early] != ['AR-FY2011', 'AR-FY2014']:
+        fail('the earlier hours totals are no longer the FY2011 and FY2014 reports')
+    early_t = ', '.join('over %s (%s report)' % (C.num(int(float(r['hours']))), r['season'][3:])
+                        for r in early)
     hseries = [hours.get(y) for y in years if y >= h0y]
+    # A trend, so a line (TJ: "lines show trends, bars show composition").
     hchart = TP.series('Hours worked, all departments together', [str(y) for y in years if y >= h0y],
-                       [TP.track('Hours a report prints', hseries, basis='stated')], 'hours', kind='bar',
+                       [TP.track('Hours a report prints', hseries, basis='stated')], 'hours', kind='line',
                        decimals=2,
-                       note='No hours are published before %d, or for %s.' % (h0y, ', '.join(map(str, no_hours))),
-                       note_allow=tuple(map(str, [h0y] + no_hours)))
+                       note='Before %d, only rough totals with no season named: %s. None is printed '
+                            'for %s.'
+                            % (h0y, early_t, ', '.join(map(str, no_hours))),
+                       note_allow=tuple(map(str, [h0y] + no_hours))
+                       + tuple(C.num(int(float(r['hours']))) for r in early)
+                       + tuple(r['season'][3:] for r in early))
     hours_block = TB.chart(hchart, place='chart', so=(
-        'Total hours fell from %s in %d to %s in %d. No report says how they split between departments.'
+        'Total hours fell from %s in %d to %s in %d, and the two earlier rough totals are higher '
+        'still. No report says how they split between departments.'
         % (hrs(h0), h0y, hrs(h1), last), {'a': H(h0), 'b': H(h1)}, (str(h0y), str(last))))
+    if not all(float(r['hours']) > max(v for v in hours.values() if v is not None) for r in early):
+        fail('the hours meaning says the earlier rough totals are above every season since %d' % h0y)
 
     # ------------------------------------------------------------ the rules, as a timeline
     def states(test):
@@ -472,7 +489,8 @@ def build():
         [('listed', 'Listed in that season’s report', 'neutral'),
          ('noreport', 'No program section that year', 'other')], place='body',
         note=('The grouping of names is ours: Treasurer, Tax Collector and Treasurer/Tax Collector are one row. '
-              'No report says how many hours each department received, and none before %d names them.' % dyears[0],
+              'No report says how many hours each department received. Before %d they name only the school '
+              'system and “various town departments”.' % dyears[0],
               None, (str(dyears[0]),)))
 
     # ------------------------------------------------------------ where two records disagree
