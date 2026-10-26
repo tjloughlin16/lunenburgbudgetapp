@@ -1276,11 +1276,16 @@ def prepaid_page(d):
     w_late, w_june = Decimal(mw.group(1).replace(',', '')), Decimal(m24.group(1).replace(',', ''))
     if not (paid < w_late and 0.45 < fl(paid / w_late) < 0.6):
         fail('the page says the payment was about half of the 18 to 30 June warrant')
+    later = [os.path.basename(x) for x in glob.glob(os.path.join(ROOT, SC_MINUTES, '2026-*.txt'))
+             if os.path.basename(x)[:10] > '2026-07-15'
+             and re.search(r'6/18', open(x, encoding='utf-8').read())]
+    if later:
+        fail('a later School Committee document now lists the 18 to 30 June warrant: %s' % later)
     if '2026-07-15' in text:
         fail('the 15 July minutes are now posted; re-read them and rewrite the trail')
     cap = lambda dt: _captions(glob.glob(os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts',
                                                       'school-committee', dt + '-*.json'))[0])
-    QUOTES = {'2026-07-15': 'I think we just had the warrants',
+    QUOTES = {'2026-07-15': 'Transfers is next meeting',
               '2026-09-09': 'It\'s late and I don\'t have information',
               '2026-09-16': 'it looks like that large unexpended funds is in our private school tuitions'}
     for dt, q in QUOTES.items():
@@ -1302,8 +1307,9 @@ def prepaid_page(d):
              % usd2(w_june), 'Four transfers and the carry-forward orders voted; no tuition payment among '
              'them. The warrants end before 30 June.', 2100),
             ('2026-07-15', 'Warrants for 18 to 30 June, %s: the period of the 30 June payment.'
-             % usd2(w_late), 'The warrants item passes in seconds: “%s.” Nothing about what the '
-             'warrant held is said.' % QUOTES['2026-07-15'], 95),
+             % usd2(w_late), 'Raised, then the talk turns to transfers (“%s”), and the meeting '
+             'moves on: no warrants approved. Listened to in full, 26 October 2026. No later '
+             'agenda or minutes lists this warrant.' % QUOTES['2026-07-15'], 95),
             ('2026-07-29', 'Year-end line-item transfers; warrants for July.',
              'Transfers “just to cover overages”; FY2026 to close “well below” the year before. No '
              'tuition payment mentioned.', 1330),
@@ -1375,11 +1381,11 @@ def prepaid_page(d):
             notes=[step('That the two entries were made together, for that purpose, is a '
                         'hypothesis; moving tuition onto the circuit breaker at year end is '
                         'routine, and no document links them.', 'hypothesis')]),
-        con('The warrant for 18 to 30 June, %s, was on the 15 July agenda; those minutes were '
-            'never posted.' % usd2(w_late), ['approval', 'before', 'budget'],
+        con('The warrant for 18 to 30 June, %s, was on the 15 July agenda and is approved nowhere '
+            'on the record.' % usd2(w_late), ['approval', 'before', 'budget'],
             {'w': U2(w_late)}, allow=('18', '30 June', '15 July'),
-            so='The payment was about half that warrant, and the recording shows no discussion of '
-               'what it held. No advance-tuition vote is minuted.',
+            so='The payment was about half that warrant. Whether it was approved some other way, '
+               'only the signed warrant can show.',
             notes=[step('Approval may exist off the minutes: year-end warrants are often signed '
                         'between meetings.', 'gap',
                         closes='the signed warrant for check %s' % check, allow=(check,))])]
@@ -1451,7 +1457,7 @@ def prepaid_page(d):
         ('30 June 2026', 'Journal', 'Nine FLLAC invoices numbered for %s paid from the general '
          'fund, check %s' % (C.fy(Y1 + 1), check), 'journal %s' % jnl),
         ('15 July 2026', 'School Committee', 'Warrants for 18 to 30 June on the agenda, the period '
-         'of the payment; passed without discussion of what they held; minutes never posted',
+         'of the payment; raised, then passed over without approval; minutes never posted',
          'agenda, recording'),
         ('29 July 2026', 'School Committee', 'Told %s would close well below the year before'
          % C.fy(Y1), 'minutes'),
@@ -1538,9 +1544,9 @@ def prepaid_page(d):
                       figures=(usd2(w_june), usd2(w_late)), allow=trail_allow,
                       alt='School Committee meetings from 24 June to 16 September 2026: what each '
                           'agenda held, what the record shows, and links to every record that exists',
-                      so=('The warrant that would carry the payment went before the School Committee on '
-                          '15 July, a meeting whose minutes were never posted; so did every year-end '
-                          'review after it.', None, ('15 July',))),
+                      so=('The warrant that would carry the payment was put before the School Committee '
+                          'on 15 July and not approved, there or at any later meeting on record.',
+                          None, ('15 July',))),
             TB.explain('The record, in order', [
                 ('**%s, %s.** %s. (%s)' % (w, b_, c_, e_), None,
                  tuple(re.findall(r'\d[\d,]*', '%s %s %s' % (w, c_, e_))))
@@ -1554,7 +1560,9 @@ def prepaid_page(d):
                  'Finance Committee and Select Board was read, minutes and recordings. None '
                  'mentions this payment or the re-charge to the circuit breaker. No minutes record '
                  'an advance-tuition vote. The warrant for the last two weeks of June was on the '
-                 'School Committee’s 15 July agenda; that meeting’s minutes were never posted.',
+                 'School Committee’s 15 July agenda, and the recording moves past it without '
+                 'approving it; that meeting’s minutes were never posted, and no later agenda '
+                 'lists it.',
                  None, ('2026', '15 July')),
                 ('**Not yet held.** The signed warrant, FLLAC’s invoices with their service '
                  'dates, and the School Committee’s September year-end budget reviews. Each is a '
