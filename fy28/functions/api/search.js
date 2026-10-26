@@ -119,6 +119,66 @@ const HEADERS = {
 const json = (obj, status = 200, extra = {}) =>
   new Response(JSON.stringify(obj, null, 1) + '\n', { status, headers: { ...HEADERS, ...extra } })
 
+/** WORD FAMILIES. `custodian` must find `custodial`: TJ, 26 October 2026, searched
+ *  `custodian contract` and the meeting that approved it never says either word -- its minutes
+ *  say "Custodial MOU" and "the custodial agreement". A starts-with match on `custodian` cannot
+ *  reach `custodial`; the shared stem `custod` can. A word of six letters or more loses one
+ *  common English ending, and only if five letters remain -- `special` stays `special`, so it
+ *  never becomes `spec` and matches `specific`. This is light STEMMING done at query time. */
+const ENDING = /(ians|ian|ials|ial|ions|ion|ings|ing|ers|er|ed|es|s)$/
+export function family(w) {
+  const lw = w.toLowerCase()
+  if (!/^\p{L}{6,}$/u.test(lw)) return lw
+  const stem = lw.replace(ENDING, '')
+  return stem.length >= 5 ? stem : lw
+}
+const termFor = f => '"' + f + '"' + (/^\p{L}{3,}$/u.test(f) && !SHORT_EXACT.has(f) ? '*' : '')
+// Acronyms in the table below match as words, not as starts: `mou*` would reach `mount`.
+const SHORT_EXACT = new Set(['mou', 'moa', 'cba'])
+
+/** WORDS THAT MEAN THE SAME THING IN THE TOWN'S RECORDS. Kept small on purpose, and only for
+ *  a pairing that has failed a real search: a contract is written up as an AGREEMENT, an MOU
+ *  or an MOA far more often than as a contract (the custodians' contract, 29 July 2026, is
+ *  "Custodial MOU" on the agenda and "the custodial agreement" in the vote). A group widens
+ *  only the WORDS-TOGETHER tier below; it never adds a row on its own. */
+const SAME = [['contract', 'agreement', 'mou', 'moa', 'cba', 'memorandum']]
+function alternatives(w) {
+  const f = family(w)
+  for (const g of SAME) if (g.some(x => family(x) === f)) return [...new Set(g.map(family))]
+  return [f]
+}
+
+/** THE WORDS-TOGETHER TIER: an exact phrase, or every word -- in its family or one of its
+ *  same-meaning alternatives -- within five words of the others. A row matching this is
+ *  ranked above every row that merely holds the words somewhere, IN BOTH ORDERS: newest-first
+ *  used to throw proximity away entirely, so nine pages of minutes with `custodian` on page
+ *  three and `Contracted Services` on page two sorted level with the passage that approved
+ *  the contract. Two to four plain words only; '' otherwise. */
+export function nearExpression(q) {
+  if (/"/.test(q)) return ''
+  const words = (q.replace(/[’']s\b/g, '').match(/[\p{L}\p{N}$%.-]+/gu) || [])
+    .map(w => w.replace(/[.,]+$/, '')).filter(Boolean)
+  if (words.length < 2 || words.length > 4) return ''
+  let combos = [[]]
+  for (const w of words) {
+    const alts = /^\p{L}+$/u.test(w) ? alternatives(w) : [w.toLowerCase()]
+    combos = combos.flatMap(c => alts.map(a => [...c, a]))
+    if (combos.length > 12) combos = combos.slice(0, 12)
+  }
+  const near = combos.map(c => `NEAR(${c.map(termFor).join(' ')}, 5)`)
+  return [phraseOf(q), ...near].join(' OR ')
+}
+
+/** THE EXACT WORDS, IN ORDER -- the top tier. A synonym widens what is found; it must not
+ *  outrank what was typed. Without this, `custodian contract` put the Conservation
+ *  Commission's "custodial agreement" (a caretaker's licence on Hollis Road) above the
+ *  School Committee recording that says "the custodian contract", because it was newer. */
+export function phraseOf(q) {
+  const words = (q.replace(/[’']s\b/g, '').match(/[\p{L}\p{N}$%.-]+/gu) || [])
+    .map(w => w.replace(/[.,]+$/, '')).filter(Boolean)
+  return words.length > 1 && !/"/.test(q) ? `"${words.join(' ')}"` : ''
+}
+
 /** A user's words, as an FTS5 expression that cannot throw -- and that finds what a person
  *  means rather than only what they typed.
  *
@@ -156,7 +216,7 @@ export function ftsExpression(q, { together = false } = {}) {
     for (const w of clean.split(' ')) {
       if (!w) continue
       words.push(w)
-      terms.push('"' + w + '"' + (/^\p{L}{3,}$/u.test(w) ? '*' : ''))
+      terms.push(termFor(family(w)))
     }
   }
   if (!terms.length) return ''
@@ -195,7 +255,12 @@ export async function onRequest(context) {
   const per = Math.max(1, Math.min(PER_CORPUS_MAX, parseInt(url.searchParams.get('per') || '', 10) || PER_CORPUS))
   // `match=together` -- see ftsExpression. Default unchanged.
   const together = (url.searchParams.get('match') || '').trim() === 'together'
-  const expr = ftsExpression(q, { together })
+  // THE MATCH: every word somewhere, OR the words together (nearExpression), so a passage
+  // that says `custodial agreement` qualifies for `custodian contract` even though the plain
+  // match cannot reach it. `near` also decides the ranking tier and the snippet below.
+  const near = together ? '' : nearExpression(q)
+  const plain = ftsExpression(q, { together })
+  const expr = plain && near ? `(${plain}) OR (${near})` : plain
 
   // The index's own statement of what it holds, written by the push. Read, never counted
   // here: a COUNT(*) per corpus would read every row on every call.
@@ -271,22 +336,28 @@ export async function onRequest(context) {
       // exactly why a guard is cheap now and would be archaeology later.
       const byDate = sort === 'newest' && DATED.includes(c)
       sortedBy[c] = byDate ? 'date' : 'rank'
+      // `together`: 2 = the exact words typed, 1 = together in a family or synonym form,
+      // 0 = somewhere in the row (nearExpression). It LEADS a relevance order and only breaks
+      // ties in a date order: newest first means newest. TJ, 26 October 2026: "the sort is
+      // 'newest first' so why would 7-29 EVER show up before 10-7?"
       const order = byDate
-        ? "ORDER BY (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') DESC, date DESC, rank"
-        : c === SPLIT_FROM_PAGE && titleTerms.length
+        ? "ORDER BY (date GLOB '[0-9][0-9][0-9][0-9]-[0-9][0-9]-[0-9][0-9]') DESC, date DESC, together DESC, rank"
+        : 'ORDER BY together DESC, ' + (c === SPLIT_FROM_PAGE && titleTerms.length
           // A REPORT TITLED WITH YOUR WORDS COMES FIRST. "free cash" ranked /this-week and
           // /meeting-minutes -- long pages that mention it in passing -- above the five
           // pages named for it. Titles hit by more of the words first, then bm25.
-          ? `ORDER BY (${titleTerms.map(w => `(instr(lower(title), '${w}') > 0)`).join(' + ')}) DESC, rank`
-          : 'ORDER BY rank'
+          ? `(${titleTerms.map(w => `(instr(lower(title), '${w}') > 0)`).join(' + ')}) DESC, rank`
+          : 'rank')
       // `report` and `page` both read the page rows; the address list decides which side.
       const real = c === SPLIT_FROM_PAGE ? 'page' : c
       const split = c === SPLIT_FROM_PAGE ? ` AND cite_url IN (${sqlList(reports)})`
         : c === 'page' ? ` AND cite_url NOT IN (${sqlList(reports)})` : ''
       const sql = `
         SELECT * FROM (
-          SELECT corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,
+          SELECT rowid AS id, corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,
                  start_s, chars, bm25(search) AS rank,
+                 ${near ? `((rowid IN (SELECT rowid FROM search WHERE search MATCH ?3 AND corpus = ?2))
+                   + (rowid IN (SELECT rowid FROM search WHERE search MATCH ?4 AND corpus = ?2)))` : '0'} AS together,
                  snippet(search, 0, '‹', '›', '…', 20) AS snippet
           FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where}
           LIMIT ${CANDIDATES}
@@ -296,10 +367,23 @@ export async function onRequest(context) {
         ? `SELECT COUNT(DISTINCT cite_url) AS n FROM (SELECT cite_url FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where} LIMIT ${CANDIDATES})`
         : `SELECT COUNT(*) AS n FROM (SELECT rowid FROM search WHERE search MATCH ?1 AND corpus = ?2${split}${where} LIMIT ${CANDIDATES})`
       const [r, n] = await Promise.all([
-        db.prepare(sql).bind(expr, real, ...binds).all(),
+        db.prepare(sql).bind(expr, real, ...(near ? [near, phraseOf(q)] : []), ...binds).all(),
         db.prepare(countSql).bind(expr, real, ...binds).all(),
       ])
       rowsRead += (r.meta && r.meta.rows_read || 0) + (n.meta && n.meta.rows_read || 0)
+      // THE PASSAGE WHERE THE WORDS MEET. snippet() picks its fragment against the whole
+      // expression, so a row that qualified on the words together still showed whichever
+      // fragment held the most single words -- the 29 July minutes opened on "Contracted
+      // Services" instead of the custodial agreement. Re-cut against the together tier, for
+      // the rows that matched it. A rowid lookup per returned row: cheap.
+      const close = (r.results || []).filter(x => x.together).map(x => Number(x.id)).filter(Number.isInteger)
+      if (near && close.length) {
+        const s = await db.prepare(`SELECT rowid AS id, snippet(search, 0, '‹', '›', '…', 20) AS snippet
+          FROM search WHERE search MATCH ?1 AND rowid IN (${close.join(',')})`).bind(near).all()
+        rowsRead += (s.meta && s.meta.rows_read) || 0
+        const cut = new Map((s.results || []).map(x => [Number(x.id), x.snippet]))
+        for (const x of r.results) if (cut.has(Number(x.id))) x.snippet = cut.get(Number(x.id))
+      }
       const count = (n.results && n.results[0] && n.results[0].n) || 0
       counts[c] = { hits: count, capped: count >= CANDIDATES, holds: holds[c] }
       // A transcript hit is cited at its CHUNK's start -- within sixty seconds before the
@@ -350,7 +434,7 @@ export async function onRequest(context) {
     dated: DATED,
     perCorpus: per,
     candidates: CANDIDATES,
-    ranking: `${sort === 'newest' ? 'newest first in ' + DATED.join(', ') + ' and bm25 in the rest' : 'bm25'}, within the first ${CANDIDATES} matching rows of each corpus; a count of ${CANDIDATES}+ means the cap was hit and the order is local to those rows`,
+    ranking: `${sort === 'newest' ? 'newest first in ' + DATED.join(', ') + ' (the exact words, then the words together, breaking ties) and ' : ''}${near ? 'the exact words first, then the words together (in a family or same-meaning form), then the words anywhere, then bm25' : 'bm25'}${sort === 'newest' ? ' in the rest' : ''}, within the first ${CANDIDATES} matching rows of each corpus; a count of ${CANDIDATES}+ means the cap was hit and the order is local to those rows`,
     index,
     counts,
     results,

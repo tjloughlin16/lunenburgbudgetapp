@@ -3,6 +3,7 @@ import { RecentMeetings } from '../components/RecentMeetings'
 import { recordedSlugFromPath } from '../routes'
 import { useShareMeta } from '../lib/title'
 import { ReportShell, useReport, H2, Body, MoreReports } from '../components/report'
+import { MeetingRecord } from './MeetingRecord'
 
 const TAB: Tab = 'recorded'
 const DATA = '/data/recording-minutes.json'
@@ -194,14 +195,12 @@ function MeetingAt({ slug }: { slug: string }) {
     )
   }
   const m = meetings.find(x => x.slug === slug) ?? sameDay[0]
+  // NO RECORDING PAGE: the meeting itself, from the register -- agenda, the town's minutes,
+  // the votes they record (pages/MeetingRecord.tsx). Every meeting has an address now, not
+  // only the 1,617 we wrote minutes for. TJ, 26 October 2026.
   if (!m) {
-    return (
-      <ReportShell tab={TAB} title="No minutes at this address" dataUrl={DATA}
-        standfirst="Every recording with minutes is listed on the index.">
-        <Body>The address <code>/meeting-minutes/{slug}</code> names no meeting. The index is{' '}
-          <a className="underline" style={{ color: 'var(--series-cost)' }} href="/meeting-minutes">here</a>.</Body>
-      </ReportShell>
-    )
+    const [board, rest] = slug.split('/')
+    return <MeetingRecord board={board} date={rest.slice(0, 10)} />
   }
   return <MeetingPage m={m} warning={d!.warning} dataUrl={`/data/${file}`} />
 }

@@ -128,7 +128,10 @@ SITE_PAYLOADS = [
     'build_board_posting.py', 'build_youth_sports.py', 'build_lunenburg_by_the_numbers.py',
     'build_what_families_pay.py', 'build_no_captions_report.py',
     # 4. The indexes and the written pages that count what is now held.
-    'build_minutes_fts.py', 'build_reading_time.py', 'build_short_versions.py',
+    'build_minutes_fts.py',
+    # One page per person: reads the org charts, the minutes' votes and the index just built.
+    'build_people.py',
+    'build_reading_time.py', 'build_short_versions.py',
     'build_schema_page.py', 'build_reference_pages.py', 'build_decisions_doc.py',
     'build_ingest_plan.py', 'build_reports_index.py', 'build_sitemap.py',
     # /ask and the footer on every page: the newest reports and every count, after the index.
@@ -1358,6 +1361,7 @@ def run(a, notes, ctx):
         # THE ONE MEETING RECORD, before anything that lists meetings reads it.
         py('extract_document_timestamps.py', '--quiet')
         py('build_meeting_register.py')
+        py('build_meeting_pages.py')     # a page for every meeting in it
         py('build_meeting_feed.py')
         py('build_recording_minutes.py')
         # THE SUGGESTED-REPORTS REGISTER, merged from every minutes file just written. Free:

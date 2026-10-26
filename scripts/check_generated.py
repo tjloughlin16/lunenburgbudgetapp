@@ -169,6 +169,8 @@ CHECKS = [
     # every input's sha256 against what was indexed. A search over a stale index is a
     # search that says "nobody said it" about things that were said last week.
     ('build_search_index.py', ['--check']),
+    # ONE PAGE PER PERSON, from the org charts, the town's votes and the minutes index.
+    ('build_people.py', ['--check']),
     # OUR MINUTES OF THE RECORDINGS. Each file records the sha256 of the transcript it was
     # written from and the town documents it links to; the payload is derived from the
     # files. A minutes file that outlives a re-fetched transcript is the derived-thing-
@@ -651,6 +653,8 @@ CHECKS = [
     #     takes seconds.
     ('build_minutes_fts.py', ['--check']),
     ('build_meeting_register.py', ['--check']),
+    # A PAGE FOR EVERY MEETING, grouped out of the register and the town's votes.
+    ('build_meeting_pages.py', ['--check']),
     # The meeting watch, added 8 September 2026. Three entries because there are three
     # different ways this can be wrong and only one of them is staleness.
     #
@@ -807,6 +811,8 @@ PREREQ = {
     'build_agenda_threads.py': ['build_meeting_feed.py'],
     # THE VOTE LISTS READ boards.json AND THE TOWN MEETING REGISTER, so both come first.
     'build_vote_lists.py': ['build_boards.py', 'build_town_meetings.py', 'build_meeting_register.py'],
+    'build_meeting_pages.py': ['build_meeting_register.py'],
+    'build_people.py': ['build_minutes_fts.py'],
 }
 
 

@@ -136,6 +136,8 @@ type Hit = {
   snippet: string
   matched: string[]
   via?: 'text' | 'topic'
+  /** 2 = the exact words, 1 = the words together in another form, 0 = anywhere (api/search.js). */
+  together?: number
 }
 type Corpus = 'report' | 'post' | 'page' | 'job' | 'person' | 'recorded' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
@@ -193,10 +195,15 @@ const GROUPS: { id: string; label: string; short: string; hint: string; corpora:
     hint: 'The analyses this project has written, school and town — every one listed on /reports.' },
   { id: 'documents', label: 'Documents', short: 'Documents', corpora: ['source'],
     hint: 'Budgets, contracts, purchase orders, annual reports and state files, cited to the page. Not minutes.' },
-  { id: 'minutes', label: 'Minutes & agendas', short: 'Minutes', corpora: ['minutes'],
-    hint: 'What the town published before and after a meeting — minutes and agendas both. A record.' },
-  { id: 'recordings', label: 'Meeting recordings', short: 'Recordings', corpora: ['recorded', 'transcript'],
-    hint: 'Machine captions of the videos, and our own notes written from them. A finding aid, never the record.' },
+  // MEETINGS, NOT FILE TYPES. TJ, 26 October 2026: *"when i search and select 'meetings',
+  // there's no MEETINGS filter. i can select minutes but its just blank text docs."* The
+  // town's minutes and agendas and our notes from the recordings are all a meeting, and
+  // every one of them now opens that meeting's page (pages/MeetingRecord.tsx). The badge on
+  // each card still says which it is: a record, or our notes.
+  { id: 'meetings', label: 'Meetings', short: 'Meetings', corpora: ['minutes', 'recorded', 'transcript'],
+    hint: 'One card per meeting, newest first, wherever the words were found: the town’s minutes and agendas, our notes from the recording, or the recording’s captions. Each opens the meeting.' },
+  { id: 'recordings', label: 'Meeting recordings', short: 'Recordings', corpora: ['transcript'],
+    hint: 'Machine captions of the videos, opened at the moment the words were said. A finding aid, never the record.' },
   { id: 'site', label: 'On this site', short: 'This site', corpora: ['page', 'post'],
     hint: 'The board and meeting pages, the other pages here, and the posts written by this project. Reports have their own chip.' },
   { id: 'jobs', label: 'Job postings', short: 'Jobs', corpora: ['job'],
@@ -369,7 +376,8 @@ function Snippet({ s }: { s: string }) {
 export default function Search() {
   const initial = useMemo(() => {
     const u = new URL(window.location.href)
-    const t = u.searchParams.get('type') || ''
+    // `minutes` was this chip's id until 26 October 2026, and links carrying it exist.
+    const t = (u.searchParams.get('type') || '').replace(/^minutes$/, 'meetings')
     return {
       q: u.searchParams.get('q') || '',
       board: u.searchParams.get('board') || '',
@@ -779,7 +787,15 @@ export default function Search() {
             </section>
           )}
 
-          {shown.filter(c => (data.results[c] || []).some(h => h.via !== 'topic')).map(c => {
+          {/* ONE LIST OF MEETINGS, sorted across everything said about them. TJ, 26 October
+              2026: "the sort is 'newest first' so why would 7-29 EVER show up before 10-7?"
+              Because the sort ran inside each kind: 7 October was only in the CAPTIONS, the
+              last section on the page, under an older set of the town's minutes. A meeting
+              is one thing however it was recorded, so it is one card, in one order. */}
+          {type !== 'recordings' && MEETING_KINDS.some(c => shown.includes(c)) && <Meetings data={data} kinds={MEETING_KINDS.filter(c => shown.includes(c))} sort={sort} />}
+
+          {shown.filter(c => !(type !== 'recordings' && MEETING_KINDS.includes(c)))
+            .filter(c => (data.results[c] || []).some(h => h.via !== 'topic')).map(c => {
             const hits = (data.results[c] || []).filter(h => h.via !== 'topic')
             const count = data.counts[c]
             if (!count) return null
@@ -869,8 +885,85 @@ export default function Search() {
   )
 }
 
+/** The kinds that are a meeting: the town's documents, our notes, the captions. */
+const MEETING_KINDS: Corpus[] = ['minutes', 'recorded', 'transcript']
+const SOURCE_LABEL: Record<string, string> = { minutes: 'The town’s minutes', agenda: 'Agenda', recorded: 'Our notes from the recording', transcript: 'Captions' }
+
+function longDay(iso: string) {
+  const [y, m, d] = iso.split('-').map(Number)
+  return new Date(y, m - 1, d).toLocaleDateString('en-US', { weekday: 'short', year: 'numeric', month: 'short', day: 'numeric' })
+}
+
+/** ONE CARD PER MEETING, in one order. Newest first means the newest MEETING, whichever of
+ *  the three records the words were found in; by relevance, the meetings holding the exact
+ *  words come first (api/search.js `together`), then the best bm25 among their hits. Each
+ *  card keeps its sources apart and labelled -- a caption is our machine's hearing, not the
+ *  record -- and opens the meeting's page, where all three sit together. */
+function Meetings({ data, kinds, sort }: { data: Payload; kinds: Corpus[]; sort: Sort }) {
+  const groups = new Map<string, { board: string; board_slug: string; date: string; hits: Hit[] }>()
+  for (const c of kinds) {
+    for (const h of data.results[c] || []) {
+      if (h.via === 'topic' || !h.board_slug || !/^\d{4}-\d{2}-\d{2}$/.test(h.date || '')) continue
+      const k = `${h.board_slug}/${h.date}`
+      if (!groups.has(k)) groups.set(k, { board: h.board || h.board_slug, board_slug: h.board_slug, date: h.date, hits: [] })
+      groups.get(k)!.hits.push(h)
+    }
+  }
+  const best = (g: { hits: Hit[] }) => Math.max(...g.hits.map(h => h.together ?? 0))
+  const rank = (g: { hits: Hit[] }) => Math.min(...g.hits.map(h => h.rank))
+  const list = [...groups.values()].sort((a, b) => sort === 'newest'
+    ? b.date.localeCompare(a.date) || best(b) - best(a)
+    : best(b) - best(a) || rank(a) - rank(b))
+  if (!list.length) return null
+  const total = kinds.reduce((n, c) => n + (data.counts[c]?.hits || 0), 0)
+  return (
+    <section className="mt-6 sm:mt-8" aria-label="Meetings">
+      <div className="flex flex-wrap items-baseline gap-x-2 gap-y-0.5">
+        <h2 className="text-lg font-semibold">Meetings</h2>
+        <span className="text-sm tnum" style={{ color: 'var(--text-secondary)' }}>
+          {list.length} {list.length === 1 ? 'meeting' : 'meetings'}, {sort === 'newest' ? 'newest first' : 'best match first'}
+        </span>
+      </div>
+      <p className="text-xs mt-0.5" style={{ color: 'var(--text-muted)' }}>
+        Found in {kinds.map((c, i) => <span key={c}>{i ? ' · ' : ''}{fmt(data.counts[c]?.hits || 0)} {c === 'minutes' ? 'town minutes and agendas' : c === 'recorded' ? 'sets of our notes' : 'caption passages'}</span>)}.
+        {total > list.length && ' Each kind returns its newest matches, so a long search shows the most recent meetings first; narrow by board or date for older ones.'}
+      </p>
+      <ol className="mt-3 space-y-3">
+        {list.map(g => (
+          <li key={`${g.board_slug}/${g.date}`} className="card p-3">
+            <div className="flex flex-wrap items-baseline gap-x-2">
+              <a className="font-semibold underline" style={{ color: 'var(--series-cost)' }}
+                href={`/meeting-minutes/${g.board_slug}/${g.date}`}>{g.board}, {longDay(g.date)}</a>
+              {best(g) === 2 && <span className="text-[10px] font-bold uppercase tracking-widest px-1.5 py-0.5 rounded"
+                style={{ border: '1px solid var(--grid)', color: 'var(--text-muted)' }}>exact words</span>}
+            </div>
+            <ul className="mt-1.5 space-y-1.5">
+              {g.hits.sort((a, b) => (b.together ?? 0) - (a.together ?? 0)).slice(0, 3).map(h => {
+                const isT = h.corpus === 'transcript'
+                const label = SOURCE_LABEL[h.corpus === 'minutes' ? (h.kind === 'agenda' ? 'agenda' : 'minutes') : h.corpus]
+                return (
+                  <li key={h.doc_key} className="text-sm leading-relaxed" style={{ color: 'var(--text-secondary)' }}>
+                    <a className="text-[11px] font-semibold uppercase tracking-wider underline mr-1.5" href={h.cite_url}
+                      target={isT ? '_blank' : undefined} rel="noreferrer"
+                      style={{ color: isT ? 'var(--series-revenue, #b5540f)' : 'var(--text-muted)' }}>
+                      {isT ? <>&#9654; {label} at {hms(h.start_s || 0)}</> : label}</a>
+                    <Snippet s={h.snippet} />
+                  </li>
+                )
+              })}
+            </ul>
+          </li>
+        ))}
+      </ol>
+    </section>
+  )
+}
+
 function Result({ h }: { h: Hit }) {
   const isT = h.corpus === 'transcript'
+  // A town document opens its MEETING; the bare text stays one click away.
+  const meeting = h.corpus === 'minutes' && h.board_slug && /^\d{4}-\d{2}-\d{2}$/.test(h.date || '')
+    ? `/meeting-minutes/${h.board_slug}/${h.date}` : null
   const g = groupOf(h.corpus)
   const where = isT
     ? `${h.board || h.board_slug}, ${h.date} — at ${hms(h.start_s || 0)}`
@@ -892,7 +985,7 @@ function Result({ h }: { h: Hit }) {
             : { border: '1px solid var(--grid)', color: 'var(--text-muted)' }}>
           {badge(h)}
         </span>
-        <a className="font-semibold underline" href={h.cite_url} target={isT || h.corpus === 'source' || (h.corpus === 'job' && !h.cite_url.includes('lunenburgbudgetproject.org')) ? '_blank' : undefined} rel="noreferrer"
+        <a className="font-semibold underline" href={meeting ?? h.cite_url} target={isT || h.corpus === 'source' || (h.corpus === 'job' && !h.cite_url.includes('lunenburgbudgetproject.org')) ? '_blank' : undefined} rel="noreferrer"
           style={{ color: isT ? 'var(--series-revenue, #b5540f)' : 'var(--series-cost)' }}>
           {isT ? <><span aria-hidden="true">&#9654; </span>{h.title}</> : h.title}
         </a>
@@ -909,6 +1002,7 @@ function Result({ h }: { h: Hit }) {
         {isT
           ? <>Opens the video about a minute before these words. A transcript is a finding aid: what was said is on the recording, not here.</>
           : h.matched.length ? <>matched: {h.matched.join(', ')}</> : null}
+        {meeting && <> · <a className="underline" href={h.cite_url}>the {h.kind === 'agenda' ? 'agenda' : 'minutes'} as text</a></>}
         {h.source_url && !isT && <> · <a className="underline" href={h.source_url} target="_blank" rel="noreferrer">{h.corpus === 'job' ? 'our copy of the posting' : <>publisher&rsquo;s copy</>}</a></>}
       </p>
       <span className="sr-only">{g.label}</span>
