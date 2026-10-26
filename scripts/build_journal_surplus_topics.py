@@ -1326,7 +1326,8 @@ def prepaid_page(d):
     if not TP.verbatim_in('taking certain tuitions out of the grants', cap('2026-09-16')):
         fail('the 16 September grants remark is no longer in the captions')
     trail_allow = tuple(sorted({x['when'] for x in trail} | {l_['href'] for x in trail for l_ in x['links']}
-                               | {'2 to 17 June', '18 to 30 June', '30 June', 'FY26', 'FY2026'}))
+                               | {'2 to 17 June', '18 to 30 June', '30 June', 'FY26', 'FY2026',
+                                  '26 October 2026'}))
 
     fx = {}
     fx['paid'] = f('paid', U2(paid), 'paid to FLLAC from the general fund, 30 June 2026',
