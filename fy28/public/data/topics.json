@@ -1340,6 +1340,7 @@
      "topics": [
       "fy2026-surplus-by-category",
       "surplus-bridge",
+      "fy2026-tuition-paid-early",
       "surplus-repeat-lines",
       "surplus-suggestions"
      ]
@@ -2606,6 +2607,12 @@
      "path": "/transportation/fy2027-bus-budget",
      "title": "FY2027 bus budget",
      "why": "Next year’s bus budget, school-day and athletic"
+    },
+    {
+     "id": "fy2026-tuition-paid-early",
+     "path": "/fy2026-closeout/fy2026-tuition-paid-early",
+     "title": "Year-end tuition payment",
+     "why": "Tuition paid on the year’s last day, and the surplus"
     }
    ],
    "shelves": [
@@ -2613,6 +2620,27 @@
     "special-education"
    ],
    "title": "Tuition at year end"
+  },
+  "fy2026-tuition-paid-early": {
+   "finding": "On 30 June 2026 the school general fund paid $189,277 on FLLAC invoices numbered for FY2027.",
+   "generator": "scripts/build_journal_surplus_topics.py",
+   "home": "fy2026-closeout",
+   "id": "fy2026-tuition-paid-early",
+   "minutes": 2,
+   "path": "/fy2026-closeout/fy2026-tuition-paid-early",
+   "ready": true,
+   "related": [
+    {
+     "id": "fy2026-tuition-lines",
+     "path": "/fy2026-closeout/fy2026-tuition-lines",
+     "title": "Tuition at year end",
+     "why": "The tuition lines at year end, against next year’s budget"
+    }
+   ],
+   "shelves": [
+    "fy2026-closeout"
+   ],
+   "title": "Year-end tuition payment"
   },
   "fy2027-athletic-bus-cut": {
    "finding": "FY2027 cut athletic buses from the town budget, then put $60,000 back, most on the fee fund.",

@@ -563,6 +563,7 @@ def build():
 
     out.update(burndown_pages())
     out['surplus-suggestions'] = suggestions_page(d)
+    out[PREPAID] = prepaid_page(d)
     if sorted(out) != MINE:
         fail('the pages built are not the pages the registry gives this script: %s vs %s'
              % (sorted(out), MINE))
@@ -1135,6 +1136,306 @@ def burndown_pages():
     ]
     return out
 
+
+
+# ================================================== the 30 June tuition payment
+# TJ, 26 October 2026: "please build a page for this specifically so i can point people to it
+# related to the FY26 surplus". Found in the review of the surplus pages: on the last day of
+# FY2026 the general fund paid FLLAC nine invoices whose numbers, and rate, are FY2027's.
+#
+# WHAT IS MEASURED: every entry, its date, fund, account, source code and check; FLLAC's own
+# numbering run (`25L2KEY..` paid only in FY2025, `26..` in FY2026, `27..` only on 30 June 2026)
+# and its standard quarterly rate per prefix. WHAT IS OUR READING: that the `27` invoices bill
+# FY2027's first quarter -- four clues, no service dates -- and it is labelled so everywhere.
+# RULE 8: the practice is lawful (G.L. c. 71 s. 71D; DLS), so the page states the EFFECT on the
+# surplus figure and what the record does not show (an approval), never intent.
+PREPAID = 'fy2026-tuition-paid-early'
+COLLAB = '0100-3-300-9400-51-1-06-2-535023'     # general fund collaborative tuitions
+FEB4_CAPTIONS = 'sources/data/youtube-transcripts/school-committee/2026-02-04-HsjpFotE9hc.json'
+FEB4_HREF = 'https://www.youtube.com/watch?v=HsjpFotE9hc&t=3760s'
+FEB4_QUOTE = ('what would you have done with the $556,000? Well, if I had looked at the budget '
+              'and saw that, … one of the things you can do towards the end is prepay special '
+              'ed tuitions.')
+FEB4_ASK = ('if it\'s spent by the school district before it gets there, that there is an open '
+            'transparent conversation around it')
+OCT22_CAPTIONS = 'sources/data/youtube-transcripts/finance-committee/2026-10-22-wQWhIwYOc9o.json'
+OCT22_HREF = 'https://www.youtube.com/watch?v=wQWhIwYOc9o&t=6585s'
+OCT22_QUOTE = ('We are allowed to prepay the 1st quarter of out of district tuition from circuit '
+               'Breaker accounts.')
+JUL29_TEXT = 'sources/meetings/text/school-committee/2026-07-29-minutes-7930.txt'
+JUL29_QUOTE = 'he was confident the remaining amount would be well below that figure'
+SC_MINUTES = 'sources/meetings/text/school-committee'
+
+
+def _captions(path):
+    return ' '.join(x['text'] for x in
+                    json.load(open(os.path.join(ROOT, path), encoding='utf-8'))['segments'])
+
+
+def prepaid_page(d):
+    import glob
+    import re
+    U = lambda v: figure(fl(v), C.usd(fl(v)))
+    U2 = lambda v: figure(fl(v), usd2(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    N = lambda v, unit=None: figure(v, C.num(v), unit)
+    f, con = LD.fact, TP.conclusion
+    rows = [r for r in J.lines() if r['vendor'].startswith('FLLAC')
+            and 'TUITION' in r['account_description'] and J.COLUMN_OF[r['source']] == 'actual']
+    pre = lambda r: (re.match(r'(\d\d)L2KEY(\d)', r['doc_no'] or '') or [None, None, None])
+    # FLLAC's run: which prefix was paid in which year, and its standard quarterly rate.
+    by_prefix = defaultdict(set)
+    rate = defaultdict(lambda: defaultdict(int))
+    for r in rows:
+        m = pre(r)
+        if m[1]:
+            by_prefix[int('20' + m[1])].add(r['fy'])
+            rate[int('20' + m[1])][r['amt']] += 1
+    # FY2023 and FY2024 were billed one total a quarter; from FY2025 one invoice a placement,
+    # at a standard quarterly rate -- the most common amount under each prefix.
+    std = {y: max(c, key=c.get) for y, c in rate.items() if y >= Y0}
+    if sorted(std) != [Y0, Y1, Y1 + 1] or not std[Y0] < std[Y1] < std[Y1 + 1]:
+        fail('the page assumes three FLLAC rates, rising, for FY%d to FY%d' % (Y0, Y1 + 1))
+    # The 30 June payment: every invoice numbered for the next year, paid on the year's last day.
+    early = [r for r in rows if pre(r)[1] and int('20' + pre(r)[1]) == r['fy'] + 1
+             and r['effective_date'] == '%d-06-30' % r['fy']]
+    paid = sum((r['amt'] for r in early), D0)
+    if {r['fy'] for r in early} != {Y1} or len(early) != 9:
+        fail('the page assumes nine next-year invoices paid on 30 June, all in FY%d' % Y1)
+    if {r['account'] for r in early} != {COLLAB} or {r['source'] for r in early} != {'API'}:
+        fail('the 30 June invoices are no longer vendor payments on the general fund line')
+    if len({(r['journal'], r['check_no']) for r in early}) != 1:
+        fail('the 30 June invoices are no longer one journal and one check')
+    jnl, check = early[0]['journal'], early[0]['check_no']
+    if by_prefix[Y1 + 1] != {Y1}:
+        fail('FY2027-numbered invoices were paid in a year other than FY%d' % Y1)
+    # The day before: the reclass onto the circuit breaker fund.
+    recl = [r for r in J.lines() if r['fy'] == Y1 and r['source'] == 'GEN'
+            and 'RECLASS COLLABORATIVE' in r['description']]
+    out_gf = -sum((r['amt'] for r in recl if r['fund'] == '0100'), D0)
+    in_cb = sum((r['amt'] for r in recl if r['fund'] == '2640'), D0)
+    if out_gf != in_cb or out_gf <= 0 or {r['effective_date'] for r in recl} != {'%d-06-29' % Y1}:
+        fail('the reclass is no longer one 29 June entry from the general fund to fund 2640')
+    # The line, before 30 June: paid against its budget, and never a transfer.
+    acct = J.accounts()[COLLAB]
+    line = [r for r in J.lines() if r['account'] == COLLAB and r['fy'] == Y1]
+    budget = sum((r['amt'] for r in line if r['posts_to'] in ('original_budget', 'transfer')), D0)
+    if any(r['posts_to'] == 'transfer' and r['amt'] for r in line):
+        fail('the collaborative tuition line now shows a transfer; the page says none covered it')
+    paid_before = sum((r['amt'] for r in line if r['posts_to'] == 'actual'
+                       and r['effective_date'] < '%d-06-30' % Y1), D0)
+    if not paid_before > budget:
+        fail('the page says the line was past its budget before 30 June')
+    # No such payment in any other year we hold.
+    others = [r for r in rows if r['fy'] != Y1 and pre(r)[1] and int('20' + pre(r)[1]) > r['fy']
+              and r['effective_date'][5:] >= '06-01']
+    if others:
+        fail('a year before FY%d now shows a next-year FLLAC invoice paid in June' % Y1)
+    # What it does to the surplus: FY2025 and FY2026 on one footing (Surplus by year).
+    owed = {y: d['left'][y] - d['closed'][y] for y in (Y0, Y1)}
+    without = d['left'][Y1] + paid
+    if not (without > d['left'][Y0] > owed[Y0] > owed[Y1]):
+        fail('the page says that without the payment FY%d left more than FY%d on any footing'
+             % (Y1, Y0))
+    # The record: no warrant for 18 June to 5 July, and no advance-tuition vote, in the minutes.
+    mins = sorted(glob.glob(os.path.join(ROOT, SC_MINUTES, '2026-0[4-8]-*minutes*.txt')))
+    text = {os.path.basename(m)[:10]: ' '.join(open(m, encoding='utf-8').read().split()) for m in mins}
+    # Every warrant period the Committee approved, as (month, day) of its first and last day.
+    spans = [((int(a), int(b)), (int(c), int(e))) for t in text.values() for a, b, c, e in
+             re.findall(r'[Ww]arrants:? (\d+)/(\d+)(?:/\d+)? (?:to|-|–) (\d+)/(\d+)', t)]
+    if not spans:
+        fail('no warrant periods read from the School Committee minutes; the pattern broke')
+    if any(lo <= (7, 5) and hi >= (6, 18) for lo, hi in spans):
+        fail('a School Committee warrant covering 18 June to 5 July now appears in the minutes')
+    if any(re.search(r'71D|\bprepa(?:y|id|ying|yment)\b|advance (?:tuition|payment)|'
+                     r'tuitions? in advance', t, re.I) for t in text.values()):
+        fail('a School Committee minute now mentions advance tuition; re-read it')
+    if not TP.verbatim_in(JUL29_QUOTE, open(os.path.join(ROOT, JUL29_TEXT), encoding='utf-8').read()):
+        fail('the 29 July quotation is no longer in the minutes')
+    for q, p_ in ((FEB4_ASK, FEB4_CAPTIONS), (OCT22_QUOTE, OCT22_CAPTIONS)):
+        if not TP.verbatim_in(q, _captions(p_)):
+            fail('a quotation is no longer in the captions %s' % p_)
+
+    fx = {}
+    fx['paid'] = f('paid', U2(paid), 'paid to FLLAC from the general fund, 30 June 2026',
+                   'published', allow=('30 June 2026',))
+    fx['n'] = f('n', N(len(early), 'invoices'), 'invoices, all numbered for %s' % C.fy(Y1 + 1),
+                'published', {'y': F(Y1 + 1)})
+    fx['r27'] = f('r27', U2(std[Y1 + 1]), 'the quarterly rate on those invoices', 'published')
+    fx['r26'] = f('r26', U2(std[Y1]), 'the rate on every %s-numbered invoice' % C.fy(Y1),
+                  'published', {'y': F(Y1)})
+    fx['recl'] = f('recl', U2(out_gf), 'charged to the circuit breaker instead, 29 June 2026',
+                   'published', allow=('29 June 2026',))
+    fx['before'] = f('before', U(paid_before), 'already paid on the line before 30 June',
+                     'published', allow=('30 June',))
+    fx['budget'] = f('budget', U(budget), 'the line’s %s budget, never added to by transfer'
+                     % C.fy(Y1), 'published', {'y': F(Y1)})
+    fx['left'] = f('left', U(d['left'][Y1]), '%s left, as reported' % C.fy(Y1), 'published',
+                   {'y': F(Y1)})
+    fx['without'] = f('without', U(without), '%s left without the payment (our sum)' % C.fy(Y1),
+                      'published', {'y': F(Y1)})
+    fx['owed25'] = f('owed25', U(owed[Y0]), '%s left, counted the same way' % C.fy(Y0),
+                     'published', {'y': F(Y0)})
+    fx['period'] = f('period', None, 'the service period the invoices bill', 'gap',
+                     closes='FLLAC’s invoices 27L2KEY11 to 27L2KEY19, with their service dates',
+                     allow=('27', '11', '19'))
+    fx['approval'] = f('approval', None, 'who approved the payment', 'gap',
+                       closes='the signed warrant that paid check %s, with the School '
+                              'Committee’s approval of it' % check, allow=(check,))
+    conclusions = [
+        con('On 30 June the general fund paid %s on %s FLLAC invoices numbered, and priced, '
+            'for %s.' % (C.usd(fl(paid)), C.num(len(early)), C.fy(Y1 + 1)),
+            ['paid', 'n', 'r27', 'r26', 'period'],
+            {'a': U(paid), 'n': N(len(early)), 'y': F(Y1 + 1)}, allow=('30 June',),
+            so='If they pay for %s, %s’s surplus reads %s smaller than what %s needed for itself.'
+               % (C.fy(Y1 + 1), C.fy(Y1), C.usd(fl(paid)), C.fy(Y1)),
+            so_figures={'y': F(Y1 + 1), 'z': F(Y1), 'a': U(paid)},
+            notes=[step('That they bill %s’s first quarter is our reading: each invoice prefix '
+                        'was paid in its own year, %s had paid four quarters, and the rate is '
+                        'new.' % (C.fy(Y1 + 1), C.fy(Y1)),
+                        'hypothesis', {'y': F(Y1 + 1), 'z': F(Y1)})]),
+        con('Taken back out, %s left %s, more than %s’s %s counted the same way.'
+            % (C.fy(Y1), C.usd(fl(without)), C.fy(Y0), C.usd(fl(owed[Y0]))),
+            ['left', 'without', 'owed25'],
+            {'y': F(Y1), 'a': U(without), 'z': F(Y0), 'b': U(owed[Y0])},
+            so='In July the Committee heard %s would close well below %s. That holds as reported '
+               'and reverses with this payment taken out.' % (C.fy(Y1), C.fy(Y0)),
+            so_figures={'y': F(Y1), 'z': F(Y0)}),
+        con('The day before, %s of %s tuition was charged to the circuit breaker instead of the '
+            'general fund.' % (C.usd(fl(out_gf)), C.fy(Y1)), ['recl'],
+            {'a': U(out_gf), 'y': F(Y1)},
+            so='General fund money unspent at year end returns to the town as free cash; circuit '
+               'breaker money, the district says, can carry a year.',
+            notes=[step('That the two entries were made together, for that purpose, is a '
+                        'hypothesis; moving tuition onto the circuit breaker at year end is '
+                        'routine, and no document links them.', 'hypothesis')]),
+        con('No School Committee minutes record an advance-tuition vote or a warrant for '
+            '18 June to 5 July.', ['approval', 'before', 'budget'],
+            allow=('18 June', '5 July'),
+            so='The line had already paid more than its budget, and no transfer covered it; the '
+               'signed warrant would show who approved the payment.',
+            notes=[step('Approval may exist off the minutes: year-end warrants are often signed '
+                        'between meetings.', 'gap',
+                        closes='the signed warrant for check %s' % check, allow=(check,))])]
+
+    # The circuit breaker fund itself: what came in (CRP receipts) and what it paid, by year.
+    cb = [r for r in J.lines() if r['fund'] == '2640']
+    cb_in = [-fl(sum((r['amt'] for r in cb if r['fy'] == y and r['source'] == 'CRP'), D0))
+             for y in J.YEARS]
+    cb_out = [fl(sum((r['amt'] for r in cb if r['fy'] == y and J.COLUMN_OF[r['source']] == 'actual'
+                      and r['source'] != 'CRP'), D0)) for y in J.YEARS]
+    cb_early = fl(sum((r['amt'] for r in cb if r['fy'] == Y1 and r['source'] == 'API'), D0))
+    if not (max(cb_in) == cb_in[J.YEARS.index(Y0)] and cb_in[J.YEARS.index(Y0)]
+            > cb_out[J.YEARS.index(Y0)] and cb_early < 10000):
+        fail('the circuit breaker block assumes FY%d took in the most and FY%d paid almost '
+             'nothing before June' % (Y0, Y1))
+    yrs = J.YEARS
+    same = [fl(sum((r['amt'] for r in rows if r['fy'] == y and r not in early), D0)) for y in yrs]
+    ahead = [fl(sum((r['amt'] for r in early if r['fy'] == y), D0)) for y in yrs]
+    record = [
+        ('4 February 2026', 'School Committee', 'Prepaying special education tuition named as a use '
+         'for a large year-end leftover; an open conversation called for if leftover is spent '
+         'before it reaches free cash', 'recording'),
+        ('24 June 2026', 'School Committee', 'Four line-item transfers and the carry-forward '
+         'orders voted; no tuition payment among them', 'minutes, recording'),
+        ('29 June 2026', 'Journal', 'Collaborative tuition the general fund had paid charged to '
+         'the circuit breaker instead', 'journal %s' % recl[0]['journal']),
+        ('30 June 2026', 'Journal', 'Nine FLLAC invoices numbered for %s paid from the general '
+         'fund, check %s' % (C.fy(Y1 + 1), check), 'journal %s' % jnl),
+        ('29 July 2026', 'School Committee', 'Told %s would close well below the year before'
+         % C.fy(Y1), 'minutes'),
+        ('22 October 2026', 'Finance Committee', 'Prepaying a first quarter from circuit breaker '
+         'money explained as a rule; this payment not mentioned', 'recording'),
+    ]
+    page = TP.page(
+        PREPAID,
+        'On 30 June 2026 the school general fund paid %s on FLLAC invoices numbered for %s.'
+        % (C.usd(fl(paid)), C.fy(Y1 + 1)),
+        list(fx.values()), conclusions,
+        chart=TP.series(
+            'FLLAC tuition paid, by year it was paid', [C.fy(y) for y in yrs],
+            [TP.track('Invoices numbered for that year', same, 'published', 'bar'),
+             TP.track('Invoices numbered for the next year', ahead, 'published', 'bar')],
+            '$', kind='bar', stacked=True,
+            note='Every FLLAC payment on a tuition account, every fund. The year is FLLAC’s '
+                 'invoice number; a few invoices carry none.'),
+        also=[TP.series(
+            'What was left, with and without the payment', [C.fy(Y0), C.fy(Y1)],
+            [TP.track('Left, counting orders still owed', [fl(owed[Y0]), fl(owed[Y1])],
+                      'published', 'bar'),
+             TP.track('Without the 30 June payment (our sum)', [None, fl(without)], 'estimate',
+                      'bar')],
+            '$', kind='bar',
+            note='School general fund, department 300. Counting orders owed is the footing on '
+                 'Surplus by year.', note_allow=('300',))],
+        blocks=[TB.explain('A payment, not a transfer', [
+            'A **transfer** moves budget from one line to another; no money leaves, and the '
+            'School Committee votes each one. A **reclass** moves a cost already paid from one '
+            'fund to another. A **payment** sends money to a vendor, on a warrant.',
+            ('The 30 June entry is a payment. It was charged to a line that had already spent past '
+             'its budget, and was covered, inside the school total, by other lines’ leftovers.',
+             None, ('30 June',))],
+            place='lead', tone='define'),
+            TB.chart(TP.series(
+                'The circuit breaker fund, in and out', [C.fy(y) for y in J.YEARS],
+                [TP.track('Received from the state', cb_in, 'published', 'bar'),
+                 TP.track('Paid out, or charged to it', cb_out, 'published', 'bar')],
+                '$', kind='bar',
+                note='Fund 2640, from the school journal. The fund’s balance is not in the '
+                     'journal, so what would have expired is not known.', note_allow=('2640',)),
+                place='body',
+                so=('%s took in the most and %s paid almost nothing from it until the 29 June '
+                    're-charge. That it was spent before receipts expired fits, as a hypothesis.'
+                    % (C.fy(Y0), C.fy(Y1)), {'y': F(Y0), 'z': F(Y1)}, ('29 June',))),
+            TB.explain('The record, in order', [
+                ('**%s, %s.** %s. (%s)' % (w, b_, c_, e_), None,
+                 tuple(re.findall(r'\d[\d,]*', '%s %s %s' % (w, c_, e_))))
+                for w, b_, c_, e_ in record], place='body', tone='plain'),
+            TB.explain('What the record shows, and does not', [
+                ('**Allowed.** State law lets a school committee approve paying up to three months '
+                 'of tuition in advance (G.L. c. 71, s. 71D), and the state’s Division of Local '
+                 'Services uses this case as its example: a July to September bill, due 30 June, '
+                 'charged to the year that is ending.', None, ('71', '71D', '30 June')),
+                ('**Not announced.** Every June and July 2026 meeting of the School Committee, '
+                 'Finance Committee and Select Board was read, minutes and recordings. None '
+                 'mentions this payment or the re-charge to the circuit breaker. No minutes record '
+                 'an advance-tuition vote, or a warrant covering the last two weeks of June.',
+                 None, ('2026',)),
+                ('**Not yet held.** The signed warrant, FLLAC’s invoices with their service '
+                 'dates, and the School Committee’s September year-end budget reviews. Each is a '
+                 'registered gap, listed on What we cannot answer.', None, ())],
+                place='end', tone='plain')],
+        lead_quote=TP.lead_quote(
+            FEB4_QUOTE, 'Christopher McNamara, Business Administrator', 'School Committee',
+            '2026-02-04', FEB4_HREF, 'School Committee recording, 4 February 2026',
+            FEB4_CAPTIONS, caption=True),
+        said=[dict(quote=FEB4_ASK, board='School Committee', date='2026-02-04',
+                   href='https://www.youtube.com/watch?v=HsjpFotE9hc&t=3830s',
+                   label='A speaker at the same meeting (machine captions)'),
+              dict(quote=JUL29_QUOTE, board='School Committee', date='2026-07-29',
+                   href='/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf',
+                   label='School Committee minutes, 29 July 2026, the business manager'),
+              dict(quote=OCT22_QUOTE, board='Finance Committee', date='2026-10-22',
+                   href=OCT22_HREF, label='Finance Committee recording (machine captions)')],
+        sources=sources() + [
+            dict(label='Lunenburg School Committee — 2026-07-29-minutes-7930.pdf',
+                 href='/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf'),
+            dict(label='Lunenburg School Committee — 2026-06-24 minutes',
+                 href='/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt'),
+            dict(label='School Committee recording, 4 February 2026', href=FEB4_HREF),
+            dict(label='Finance Committee recording, 22 October 2026', href=OCT22_HREF),
+            dict(label='G.L. c. 71, s. 71D — advance payment of tuition',
+                 href='https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/section71D'),
+            dict(label='Division of Local Services — prepayment from prior fiscal year funds',
+                 href='https://www.mass.gov/info-details/ask-dls-prepayment-from-prior-fiscal-year-funds')],
+        finding_figures={'a': U(paid), 'y': F(Y1 + 1)}, finding_allow=('30 June 2026',))
+    page['not_established'] = [
+        'What service period the invoices bill: the journal records no dates of service.',
+        'Who approved the payment, and whether the School Committee voted advance tuition.',
+        'Whether the 29 June reclass and the 30 June payment were made together on purpose.',
+        'Whether this happened before FY2023: the journal begins there.',
+    ]
+    return page
 
 def outputs():
     pages, _ = build()

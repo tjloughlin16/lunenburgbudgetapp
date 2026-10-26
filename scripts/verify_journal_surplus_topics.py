@@ -286,6 +286,7 @@ def main():
                            % (tid, len(ch['rows']), len(both)))
 
     burndowns(col)
+    prepaid(owed, left)
     suggestions(left, cat)
     if bad:
         print('verify_journal_surplus_topics: %d problem(s)' % len(bad))
@@ -297,6 +298,36 @@ def main():
           'on actuals and transfers' % n)
     return 0
 
+
+
+def prepaid(owed, left):
+    """/fy2026-closeout/fy2026-tuition-paid-early, from the raw journal CSV: the nine FLLAC
+    invoices numbered 27..., the 29 June reclass, the line before 30 June, and the surplus with
+    the payment taken out. Shares nothing with the generator but the file."""
+    COLLAB = '0100-3-300-9400-51-1-06-2-535023'
+    rows = list(csv.DictReader(open(os.path.join(DATA, 'munis-school-journal.csv'), encoding='utf-8')))
+    early = [r for r in rows if r['doc_no'].startswith('27L2KEY')]
+    paid = sum(D(r['amount']) for r in early)
+    recl = sum(D(r['amount']) for r in rows if r['fiscal_year'] == '2026' and r['fund'] == '0100'
+               and r['source'] == 'GEN' and 'RECLASS COLLABORATIVE' in r['description'])
+    line = [r for r in rows if r['account'] == COLLAB and r['fiscal_year'] == '2026']
+    budget = sum(D(r['amount']) for r in line if r['source'] in ('BUC', 'BUA'))
+    before = sum(D(r['amount']) for r in line if r['source'] in KIND
+                 and r['effective_date'] < '2026-06-30')
+    want = {'paid': paid, 'recl': -recl, 'before': before, 'budget': budget, 'left': left[Y1],
+            'without': left[Y1] + paid, 'owed25': owed[Y0]}
+    p = json.load(open(os.path.join(TOPICS, 'fy2026-tuition-paid-early.json'), encoding='utf-8'))
+    facts = {x['id']: x for x in p['facts']}
+    if len(early) != 9 or {r['effective_date'] for r in early} != {'2026-06-30'} \
+            or {r['account'] for r in early} != {COLLAB}:
+        bad.append('tuition-paid-early: the 27-numbered invoices are not nine, on 30 June, on '
+                   'the general fund collaborative line')
+    if facts['n']['value']['value'] != len(early):
+        bad.append('tuition-paid-early: the page counts %r invoices' % facts['n']['value']['value'])
+    for k, v in want.items():
+        got = facts[k]['value']['value']
+        if abs(float(got) - float(v)) > 0.006:
+            bad.append('tuition-paid-early %s: page %r, recomputed %r' % (k, got, float(v)))
 
 if __name__ == '__main__':
     sys.exit(main())

@@ -17,8 +17,8 @@ CATEGORY = dict(
     # Lines over budget folded into Surplus by category, FY2025 school surplus into Surplus by
     # year (fy28/src/routes.ts TOPIC_MERGED).
     groups=[
-        (None, ['fy2026-surplus-by-category', 'surplus-bridge', 'surplus-repeat-lines',
-                'surplus-suggestions']),
+        (None, ['fy2026-surplus-by-category', 'surplus-bridge', 'fy2026-tuition-paid-early',
+                'surplus-repeat-lines', 'surplus-suggestions']),
         ('Through the year', ['budget-burndown', 'sped-burndown', 'fy2026-school-transfers']),
         ('School lines', ['fy2026-tuition-lines', 'fy2026-paraprofessional-overrun',
                           'fy2026-psychologist-line', 'special-education-transportation',
@@ -30,7 +30,8 @@ GENERATOR = 'build_fy2026_closeout_topics.py'
 TOPIC_GENERATORS = {'surplus-bridge': 'build_journal_surplus_topics.py',
                     'surplus-repeat-lines': 'build_journal_surplus_topics.py',
                     'budget-burndown': 'build_journal_surplus_topics.py',
-                    'surplus-suggestions': 'build_journal_surplus_topics.py'}
+                    'surplus-suggestions': 'build_journal_surplus_topics.py',
+                    'fy2026-tuition-paid-early': 'build_journal_surplus_topics.py'}
 TOPICS = {
     'fy2026-surplus-by-category': 'Surplus by category',
     'fy2026-school-transfers': 'Year-end transfers',
@@ -44,4 +45,5 @@ TOPICS = {
     'surplus-repeat-lines': 'Repeat underspending',
     'budget-burndown': 'Budget burndown',
     'surplus-suggestions': 'Surplus suggestions',
+    'fy2026-tuition-paid-early': 'Year-end tuition payment',
 }

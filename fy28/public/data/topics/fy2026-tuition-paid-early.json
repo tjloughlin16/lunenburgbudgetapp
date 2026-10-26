@@ -1,0 +1,806 @@
+{
+ "also": [
+  {
+   "decimals": null,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {},
+    "literals": [
+     "300"
+    ],
+    "text": "School general fund, department 300. Counting orders owed is the footing on Surplus by year."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Left, counting orders still owed",
+     "texts": [
+      "$554,945",
+      "$482,118"
+     ],
+     "values": [
+      554945.16,
+      482118.07
+     ]
+    },
+    {
+     "basis": "estimate",
+     "mark": "bar",
+     "name": "Without the 30 June payment (our sum)",
+     "texts": [
+      null,
+      "$671,395"
+     ],
+     "values": [
+      null,
+      671394.82
+     ]
+    }
+   ],
+   "stacked": false,
+   "title": "What was left, with and without the payment",
+   "type": "series",
+   "unit": "$",
+   "x": [
+    "FY2025",
+    "FY2026"
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [],
+     "text": "A **transfer** moves budget from one line to another; no money leaves, and the School Committee votes each one. A **reclass** moves a cost already paid from one fund to another. A **payment** sends money to a vendor, on a warrant."
+    },
+    {
+     "figures": {},
+     "literals": [
+      "30 June"
+     ],
+     "text": "The 30 June entry is a payment. It was charged to a line that had already spent past its budget, and was covered, inside the school total, by other lines’ leftovers."
+    }
+   ],
+   "place": "lead",
+   "title": "A payment, not a transfer",
+   "tone": "define"
+  },
+  {
+   "block": "chart",
+   "place": "body",
+   "so": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "29 June"
+    ],
+    "text": "FY2025 took in the most and FY2026 paid almost nothing from it until the 29 June re-charge. That it was spent before receipts expired fits, as a hypothesis."
+   },
+   "spec": {
+    "decimals": null,
+    "from_zero": true,
+    "kind": "bar",
+    "note": {
+     "figures": {},
+     "literals": [
+      "2640"
+     ],
+     "text": "Fund 2640, from the school journal. The fund’s balance is not in the journal, so what would have expired is not known."
+    },
+    "reference": null,
+    "series": [
+     {
+      "basis": "published",
+      "mark": "bar",
+      "name": "Received from the state",
+      "texts": [
+       "$415,750",
+       "$301,589",
+       "$608,818",
+       "$325,970"
+      ],
+      "values": [
+       415750.0,
+       301589.0,
+       608818.0,
+       325970.0
+      ]
+     },
+     {
+      "basis": "published",
+      "mark": "bar",
+      "name": "Paid out, or charged to it",
+      "texts": [
+       "$494,968",
+       "$466,296",
+       "$498,451",
+       "$337,499"
+      ],
+      "values": [
+       494967.72,
+       466295.98,
+       498451.35,
+       337499.41
+      ]
+     }
+    ],
+    "stacked": false,
+    "title": "The circuit breaker fund, in and out",
+    "type": "series",
+    "unit": "$",
+    "x": [
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026"
+    ]
+   }
+  },
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [
+      "4",
+      "2026"
+     ],
+     "text": "**4 February 2026, School Committee.** Prepaying special education tuition named as a use for a large year-end leftover; an open conversation called for if leftover is spent before it reaches free cash. (recording)"
+    },
+    {
+     "figures": {},
+     "literals": [
+      "24",
+      "2026"
+     ],
+     "text": "**24 June 2026, School Committee.** Four line-item transfers and the carry-forward orders voted; no tuition payment among them. (minutes, recording)"
+    },
+    {
+     "figures": {},
+     "literals": [
+      "29",
+      "2026",
+      "2026",
+      "12",
+      "000692"
+     ],
+     "text": "**29 June 2026, Journal.** Collaborative tuition the general fund had paid charged to the circuit breaker instead. (journal 2026/12/000692)"
+    },
+    {
+     "figures": {},
+     "literals": [
+      "30",
+      "2026",
+      "2027",
+      "218995",
+      "2026",
+      "12",
+      "001152"
+     ],
+     "text": "**30 June 2026, Journal.** Nine FLLAC invoices numbered for FY2027 paid from the general fund, check 218995. (journal 2026/12/001152)"
+    },
+    {
+     "figures": {},
+     "literals": [
+      "29",
+      "2026",
+      "2026"
+     ],
+     "text": "**29 July 2026, School Committee.** Told FY2026 would close well below the year before. (minutes)"
+    },
+    {
+     "figures": {},
+     "literals": [
+      "22",
+      "2026"
+     ],
+     "text": "**22 October 2026, Finance Committee.** Prepaying a first quarter from circuit breaker money explained as a rule; this payment not mentioned. (recording)"
+    }
+   ],
+   "place": "body",
+   "title": "The record, in order",
+   "tone": "plain"
+  },
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {},
+     "literals": [
+      "71",
+      "71D",
+      "30 June"
+     ],
+     "text": "**Allowed.** State law lets a school committee approve paying up to three months of tuition in advance (G.L. c. 71, s. 71D), and the state’s Division of Local Services uses this case as its example: a July to September bill, due 30 June, charged to the year that is ending."
+    },
+    {
+     "figures": {},
+     "literals": [
+      "2026"
+     ],
+     "text": "**Not announced.** Every June and July 2026 meeting of the School Committee, Finance Committee and Select Board was read, minutes and recordings. None mentions this payment or the re-charge to the circuit breaker. No minutes record an advance-tuition vote, or a warrant covering the last two weeks of June."
+    },
+    {
+     "figures": {},
+     "literals": [],
+     "text": "**Not yet held.** The signed warrant, FLLAC’s invoices with their service dates, and the School Committee’s September year-end budget reviews. Each is a registered gap, listed on What we cannot answer."
+    }
+   ],
+   "place": "end",
+   "title": "What the record shows, and does not",
+   "tone": "plain"
+  }
+ ],
+ "category": "fy2026-closeout",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [],
+   "text": "Every FLLAC payment on a tuition account, every fund. The year is FLLAC’s invoice number; a few invoices carry none."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Invoices numbered for that year",
+    "texts": [
+     "$197,445",
+     "$290,003",
+     "$474,588",
+     "$781,366"
+    ],
+    "values": [
+     197445.0,
+     290003.2,
+     474588.2,
+     781366.43
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Invoices numbered for the next year",
+    "texts": [
+     "$0",
+     "$0",
+     "$0",
+     "$189,277"
+    ],
+    "values": [
+     0.0,
+     0.0,
+     0.0,
+     189276.75
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "FLLAC tuition paid, by year it was paid",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$189,277",
+     "unit": "",
+     "value": 189276.75
+    },
+    "n": {
+     "text": "9",
+     "unit": "",
+     "value": 9
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [
+    "30 June"
+   ],
+   "notes": [
+    {
+     "figures": {
+      "y": {
+       "text": "FY2027",
+       "unit": "fiscal year",
+       "value": 2027
+      },
+      "z": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "That they bill FY2027’s first quarter is our reading: each invoice prefix was paid in its own year, FY2026 had paid four quarters, and the rate is new."
+    }
+   ],
+   "rests_on": [
+    "paid",
+    "n",
+    "r27",
+    "r26",
+    "period"
+   ],
+   "so": {
+    "figures": {
+     "a": {
+      "text": "$189,277",
+      "unit": "",
+      "value": 189276.75
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "If they pay for FY2027, FY2026’s surplus reads $189,277 smaller than what FY2026 needed for itself."
+   },
+   "text": "On 30 June the general fund paid $189,277 on 9 FLLAC invoices numbered, and priced, for FY2027."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$671,395",
+     "unit": "",
+     "value": 671394.82
+    },
+    "b": {
+     "text": "$554,945",
+     "unit": "",
+     "value": 554945.16
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "left",
+    "without",
+    "owed25"
+   ],
+   "so": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "In July the Committee heard FY2026 would close well below FY2025. That holds as reported and reverses with this payment taken out."
+   },
+   "text": "Taken back out, FY2026 left $671,395, more than FY2025’s $554,945 counted the same way."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$333,495",
+     "unit": "",
+     "value": 333494.89
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "That the two entries were made together, for that purpose, is a hypothesis; moving tuition onto the circuit breaker at year end is routine, and no document links them."
+    }
+   ],
+   "rests_on": [
+    "recl"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "General fund money unspent at year end returns to the town as free cash; circuit breaker money, the district says, can carry a year."
+   },
+   "text": "The day before, $333,495 of FY2026 tuition was charged to the circuit breaker instead of the general fund."
+  },
+  {
+   "figures": {},
+   "literals": [
+    "18 June",
+    "5 July"
+   ],
+   "notes": [
+    {
+     "closes": "the signed warrant for check 218995",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "218995"
+     ],
+     "text": "Approval may exist off the minutes: year-end warrants are often signed between meetings."
+    }
+   ],
+   "rests_on": [
+    "approval",
+    "before",
+    "budget"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The line had already paid more than its budget, and no transfer covered it; the signed warrant would show who approved the payment."
+   },
+   "text": "No School Committee minutes record an advance-tuition vote or a warrant for 18 June to 5 July."
+  }
+ ],
+ "facts": [
+  {
+   "id": "paid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30 June 2026"
+    ],
+    "text": "paid to FLLAC from the general fund, 30 June 2026"
+   },
+   "value": {
+    "text": "$189,276.75",
+    "unit": "",
+    "value": 189276.75
+   }
+  },
+  {
+   "id": "n",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "invoices, all numbered for FY2027"
+   },
+   "value": {
+    "text": "9",
+    "unit": "invoices",
+    "value": 9
+   }
+  },
+  {
+   "id": "r27",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the quarterly rate on those invoices"
+   },
+   "value": {
+    "text": "$19,885.50",
+    "unit": "",
+    "value": 19885.5
+   }
+  },
+  {
+   "id": "r26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the rate on every FY2026-numbered invoice"
+   },
+   "value": {
+    "text": "$19,255.50",
+    "unit": "",
+    "value": 19255.5
+   }
+  },
+  {
+   "id": "recl",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "29 June 2026"
+    ],
+    "text": "charged to the circuit breaker instead, 29 June 2026"
+   },
+   "value": {
+    "text": "$333,494.89",
+    "unit": "",
+    "value": 333494.89
+   }
+  },
+  {
+   "id": "before",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "30 June"
+    ],
+    "text": "already paid on the line before 30 June"
+   },
+   "value": {
+    "text": "$488,785",
+    "unit": "",
+    "value": 488785.3
+   }
+  },
+  {
+   "id": "budget",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "the line’s FY2026 budget, never added to by transfer"
+   },
+   "value": {
+    "text": "$302,663",
+    "unit": "",
+    "value": 302662.56
+   }
+  },
+  {
+   "id": "left",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "FY2026 left, as reported"
+   },
+   "value": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   }
+  },
+  {
+   "id": "without",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "FY2026 left without the payment (our sum)"
+   },
+   "value": {
+    "text": "$671,395",
+    "unit": "",
+    "value": 671394.82
+   }
+  },
+  {
+   "id": "owed25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "FY2025 left, counted the same way"
+   },
+   "value": {
+    "text": "$554,945",
+    "unit": "",
+    "value": 554945.16
+   }
+  },
+  {
+   "closes": "FLLAC’s invoices 27L2KEY11 to 27L2KEY19, with their service dates",
+   "id": "period",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "27",
+     "11",
+     "19"
+    ],
+    "text": "the service period the invoices bill"
+   },
+   "value": null
+  },
+  {
+   "closes": "the signed warrant that paid check 218995, with the School Committee’s approval of it",
+   "id": "approval",
+   "kind": "gap",
+   "label": {
+    "figures": {},
+    "literals": [
+     "218995"
+    ],
+    "text": "who approved the payment"
+   },
+   "value": null
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$189,277",
+    "unit": "",
+    "value": 189276.75
+   },
+   "y": {
+    "text": "FY2027",
+    "unit": "fiscal year",
+    "value": 2027
+   }
+  },
+  "literals": [
+   "30 June 2026"
+  ],
+  "text": "On 30 June 2026 the school general fund paid $189,277 on FLLAC invoices numbered for FY2027."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-tuition-paid-early",
+ "kind": "topic",
+ "lead_quote": {
+  "board": "School Committee",
+  "caption": true,
+  "date": "2026-02-04",
+  "href": "https://www.youtube.com/watch?v=HsjpFotE9hc&t=3760s",
+  "label": "School Committee recording, 4 February 2026",
+  "quote": "what would you have done with the $556,000? Well, if I had looked at the budget and saw that, … one of the things you can do towards the end is prepay special ed tuitions.",
+  "who": "Christopher McNamara, Business Administrator"
+ },
+ "not_established": [
+  "What service period the invoices bill: the journal records no dates of service.",
+  "Who approved the payment, and whether the School Committee voted advance tuition.",
+  "Whether the 29 June reclass and the 30 June payment were made together on purpose.",
+  "Whether this happened before FY2023: the journal begins there."
+ ],
+ "path": "/fy2026-closeout/fy2026-tuition-paid-early",
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2026-02-04",
+   "href": "https://www.youtube.com/watch?v=HsjpFotE9hc&t=3830s",
+   "label": "A speaker at the same meeting (machine captions)",
+   "quote": "if it's spent by the school district before it gets there, that there is an open transparent conversation around it"
+  },
+  {
+   "board": "School Committee",
+   "date": "2026-07-29",
+   "href": "/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+   "label": "School Committee minutes, 29 July 2026, the business manager",
+   "quote": "he was confident the remaining amount would be well below that figure"
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2026-10-22",
+   "href": "https://www.youtube.com/watch?v=wQWhIwYOc9o&t=6585s",
+   "label": "Finance Committee recording (machine captions)",
+   "quote": "We are allowed to prepay the 1st quarter of out of district tuition from circuit Breaker accounts."
+  }
+ ],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+   "label": "Lunenburg School Committee — 2026-07-29-minutes-7930.pdf"
+  },
+  {
+   "href": "/docs/minutes/text/school-committee/2026-06-24-minutes-7869.txt",
+   "label": "Lunenburg School Committee — 2026-06-24 minutes"
+  },
+  {
+   "href": "https://www.youtube.com/watch?v=HsjpFotE9hc&t=3760s",
+   "label": "School Committee recording, 4 February 2026"
+  },
+  {
+   "href": "https://www.youtube.com/watch?v=wQWhIwYOc9o&t=6585s",
+   "label": "Finance Committee recording, 22 October 2026"
+  },
+  {
+   "href": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/section71D",
+   "label": "G.L. c. 71, s. 71D — advance payment of tuition"
+  },
+  {
+   "href": "https://www.mass.gov/info-details/ask-dls-prepayment-from-prior-fiscal-year-funds",
+   "label": "Division of Local Services — prepayment from prior fiscal year funds"
+  }
+ ],
+ "table": null,
+ "title": "Year-end tuition payment"
+}
