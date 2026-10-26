@@ -25,7 +25,7 @@ import { ANALYSIS_CHARTS } from '../components/analysisCharts'
 import { InlineTopicChart, isInline, type InlineChart } from '../components/TopicCharts'
 import { AccountLedger, type LedgerData } from '../components/AccountLedger'
 import { Brief, Tag, type Chain, type Step } from '../components/brief'
-import { TopicLink } from '../components/TopicLink'
+import { TopicLink, shelfEntry } from '../components/TopicLink'
 import { Blocks, type Block } from '../components/blocks/Blocks'
 
 /** A page declared related to this one (scripts/topic_registry/related.py): a topic, a hub,
@@ -262,7 +262,7 @@ function TopicCards({ ix, cat }: { ix: Index; cat: IndexCategory }) {
         <div key={gi} className={gi ? 'mt-6' : undefined}>
           <h2 className={eyebrow} style={{ color: 'var(--text-muted)' }}>{g.title ?? `${cat.shelf}, topic by topic`}</h2>
           <ul className="grid grid-cols-1 sm:grid-cols-2 gap-x-6 gap-y-4 mt-2">
-            {g.topics.map(id => ix.topics[id]).filter(Boolean).map(t => (
+            {g.topics.map(id => shelfEntry(ix, id)).filter((t): t is NonNullable<typeof t> => !!t).map(t => (
               <li key={t.id}><TopicLink t={t} also={t.shelves.filter(s => s !== cat.id)
                 .map(shelfOf).filter((x): x is string => !!x)} /></li>
             ))}

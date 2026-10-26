@@ -8,23 +8,28 @@ Transportation shelf and is listed here, one page on two shelves.
 """
 CATEGORY = dict(
     # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
-    start=['in-district-special-education', 'tuition-budget'],
+    # TJ, 26 October 2026: "i think 'sped-all-funds' should be the 'start here' for the special
+    # education hub" -- the whole of what it costs, every fund, before any one line.
+    start=['sped-all-funds', 'tuition-budget', 'circuit-breaker'],
     id='special-education', shelf='Special education', title='Special education costs',
     area='school', order=20,
+    # EVERY SPECIAL EDUCATION PAGE ON THE SITE, wherever it is home (TJ, 26 October 2026: "we
+    # have a BUNCH of reports about special education, but spread out across the reports page
+    # ... collect all those into a hub"). A page listed here stays home on its own shelf. The
+    # paraprofessional pages are NOT here: they count every paraprofessional, and which ones
+    # serve special education is not published (rule 7).
     groups=[
-        ('What it costs', ['out-of-district-tuition', 'cost-per-placement',
-                           'in-district-special-education', 'special-education-transportation']),
-        ('What comes back', ['circuit-breaker', 'circuit-breaker-account']),
-        # The same budget against every fund, home on the School budget, all funds shelf.
-        # sped-all-funds: the vote beside every fund that paid, written by
-        # build_school_all_funds.py (merged 23 October 2026 with the budget page that repeated it).
+        ('What it costs', ['sped-all-funds', 'out-of-district-tuition', 'cost-per-placement',
+                           'in-district-special-education', 'special-education-transportation',
+                           'sped-providers']),
+        ('What comes back', ['circuit-breaker', 'circuit-breaker-account',
+                             'special-education-grants', 'how-tuition-is-paid']),
         ('Budgets and surprises', ['tuition-budget', 'special-education-overruns',
-                                   'sped-all-funds']),
+                                   'fy2026-tuition-lines', 'sped-burndown']),
+        # The reserve is a special report with its own hub; it is one door here.
+        ('The reserve fund', ['special-education-reserve']),
         ('Children and placements', ['students-with-an-iep', 'out-of-district-placements',
                                      'hiring-versus-placing', 'class-size-limits']),
-        # The school MUNIS journal, every fund, posting by posting (notes/plans/
-        # MUNIS-JOURNAL-REPORTS.md, Hub A). Written by build_journal_sped_topics.py.
-        ('Who is paid, and from where', ['sped-providers', 'sped-burndown']),
         # DESE's definition beside our three, function code by function code. Written by
         # build_sped_crosswalk.py, with the permanent list at sources/data/sped-crosswalk.csv.
         ('How it is counted', ['sped-definition']),

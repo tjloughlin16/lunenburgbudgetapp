@@ -3,7 +3,7 @@ import { todayIso } from '../lib/meetings'
 import MANIFEST from '../data/agent-manifest.json'
 import { useEffect, useState } from 'react'
 import { Section, Note } from '../components/primitives'
-import { TopicLink } from '../components/TopicLink'
+import { TopicLink, shelfEntry } from '../components/TopicLink'
 
 /** Reports and analyses — what this project has written, as opposed to what it mirrors.
  *
@@ -304,7 +304,7 @@ function TopicShelves({ area, archived }: { area: string; archived?: boolean }) 
                   style={{ color: 'var(--text-muted)' }}>{g.title}</h3>
               ) : null}
               <ul className="grid gap-x-6 gap-y-4 sm:grid-cols-2">
-                {g.topics.map(id => ix.topics[id]).filter(Boolean).map(t => (
+                {g.topics.map(id => shelfEntry(ix, id)).filter((t): t is NonNullable<typeof t> => !!t).map(t => (
                   <li key={t.id}><TopicLink t={t} also={t.shelves.filter(s => s !== c.id)
                     .map(shelfName).filter((x): x is string => !!x)} /></li>
                 ))}

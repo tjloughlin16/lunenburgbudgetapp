@@ -95,8 +95,13 @@ def check():
     bad = []
     for c in CATEGORIES:
         seen = [t for _, ids in c['groups'] for t in ids]
+        # A group may also name another HUB, drawn as one more door on the shelf (TJ, 26 October
+        # 2026: "the serf hub should also go into the main special education grouping").
+        hubs = {x['id'] for x in CATEGORIES}
         for t in seen:
-            if t not in TOPICS:
+            if t == c['id']:
+                bad.append('%s lists itself' % c['id'])
+            elif t not in TOPICS and t not in hubs:
                 bad.append('%s lists %r, which is not registered' % (c['id'], t))
         if len(set(seen)) != len(seen):
             bad.append('%s lists a topic twice' % c['id'])
