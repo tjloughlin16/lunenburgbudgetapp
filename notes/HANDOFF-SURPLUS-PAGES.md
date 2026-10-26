@@ -70,6 +70,19 @@ footing. Only the as-printed pair, which mixes footings AND counts an FY2027 bil
   FY2027's first quarter" is OUR READING -- four clues (prefix pattern, a fifth round in a
   four-quarter year, the new $19,885.50 rate, 30 June timing), no service dates. Settles it:
   FLLAC's invoice 27L2KEY11; the FY2027 journal (no Q1 FLLAC payment in its autumn); a s.71D vote.
+- SAID ON THE RECORD (machine captions -- a finding aid; check the video before quoting; captions
+  name no speakers):
+  - School Committee, 4 Feb 2026, https://www.youtube.com/watch?v=HsjpFotE9hc&t=3700s (1:01:40-
+    1:04:40). A speaker addressed as "Chris" (McNamara, Business Administrator, is listed as a
+    guest in the minutes): "had I been here back in 2025 ... what would you have done with the
+    $556,000? ... one of the things you can do towards the end is prepay special ed tuitions." The
+    speaker he answers: "if it's spent by the school district before it gets there [free cash],
+    that there is an open transparent conversation around it." The posted minutes (7634) do not
+    record the exchange. So the practice was named in public five months before it was used.
+  - Finance Committee, 22 Oct 2026, https://www.youtube.com/watch?v=wQWhIwYOc9o&t=6440s (1:47:20-
+    1:51:20), the district's circuit breaker slides: "We are allowed to prepay the 1st quarter of
+    out of district tuition from circuit Breaker accounts"; eligible students 9 (FY2025) -> 13
+    (FY2026). The FY2026 GENERAL FUND prepayment is not mentioned anywhere in the captions.
 - Rule 8: lawful (c.71 s.71D; DLS). The finding is the EFFECT on the figure the Committee heard
   and on what lapses to free cash, never intent.
 - Still to cite in the build: the circuit breaker carry-forward rule; c.71 s.34 (bottom-line
