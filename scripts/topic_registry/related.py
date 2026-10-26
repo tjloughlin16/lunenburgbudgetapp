@@ -70,6 +70,10 @@ RELATED = [
      ('special-education-grants', 'Which grants could pay for a mid-year surprise'),
      ('/special-education/circuit-breaker', 'Circuit breaker',
       'How the state works out its reimbursement')],
+    # TJ, 26 October 2026, wanted grants-others-receive under special education; it is mostly
+    # other subjects' competitive grants, so it is a related page here rather than on the hub.
+    [('sped-grants', 'Every special education grant and the circuit breaker, by year'),
+     ('grants-others-receive', 'Competitive grants comparable districts won that Lunenburg did not')],
     # Money left over: carried as orders, held in funds, set against each budget line.
     [('carried-over-orders', 'Open orders carried from one year into the next'),
      ('unspent-by-fund', 'What each fund held unspent at the end of the year'),

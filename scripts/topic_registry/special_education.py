@@ -22,8 +22,12 @@ CATEGORY = dict(
         ('What it costs', ['sped-all-funds', 'out-of-district-tuition', 'cost-per-placement',
                            'in-district-special-education', 'special-education-transportation',
                            'sped-providers']),
+        # grant-allocations-compared (home: School budget, all funds) added 26 October 2026: IDEA
+        # per pupil against comparable districts. grants-others-receive is NOT listed: its
+        # competitive grants are mostly not special education; it is related to sped-grants.
         ('What comes back', ['sped-grants', 'circuit-breaker', 'circuit-breaker-account',
-                             'special-education-grants', 'how-tuition-is-paid']),
+                             'special-education-grants', 'how-tuition-is-paid',
+                             'grant-allocations-compared']),
         ('Budgets and surprises', ['tuition-budget', 'special-education-overruns',
                                    'fy2026-tuition-lines', 'sped-burndown']),
         # The reserve is a special report with its own hub; it is one door here.
