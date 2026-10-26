@@ -63,7 +63,8 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 import conclusions as C  # noqa: E402
 from conclusions import figure  # noqa: E402
 import ladder as LD  # noqa: E402
-import topic as TP  # noqa: E402
+import topic as TP
+import topic_blocks as TB  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
 import journal as J  # noqa: E402
@@ -317,6 +318,10 @@ def model():
                 sped[(r['fy'], side + ':' + J.component(a), col)] += amt
                 if J.is_spent(r):
                     sped[(r['fy'], 'spent', J.sped_fund(a), J.component(a))] += amt
+                    # The grant PROGRAM, by DESE's fund code: one column each on sped-all-funds.
+                    gc = J.grant_code(a['fund_name']) if side == 'out' and a['fund'] != '2640' else None
+                    if gc:
+                        sped[(r['fy'], 'spent', 'code:' + gc, J.component(a))] += amt
         elif J.is_revenue(a) and r['posts_to'] == 'actual':
             rec[(r['fy'], g)] -= amt
             fund_rec[(r['fy'], a['fund'])] -= amt
@@ -748,6 +753,36 @@ def build():
 
     # ================================================== outside-the-general-fund
     ogrp = {y: {g: sp[(y, g)] for g in OUTSIDE} for y in Y}
+    # GRANTS BY NAME (TJ, 26 October 2026: "breakdown the grants by the name"). Each grant fund's
+    # spending, under journal.grant_program's name; award years of one program add together. The
+    # years must add to the Grants bar the hub and this page draw.
+    rep = {}
+    for a in A.values():
+        rep.setdefault(a['fund'], a)
+    gname = defaultdict(float)
+    for (y, fnd), v in m['fund_spent'].items():
+        if y in Y and J.fund_group(rep[fnd]) == 'Grants':
+            gname[(y, J.grant_program(rep[fnd]))] += v
+    for y in Y:
+        if abs(sum(v for (yy, _), v in gname.items() if yy == y) - sp[(y, 'Grants')]) > 0.01:
+            fail('%s: the grants by name do not add to the Grants spending' % C.fy(y))
+    if not (all(round(gname.get((F1, J.GRANT_PROGRAM[c]), 0.0)) == 0 for c in ('115', '119'))
+            and max((v, nm) for (y, nm), v in gname.items() if y == F1)[1] == J.GRANT_PROGRAM['240']):
+        fail('the hub says the pandemic grants paid nothing in %s and IDEA is the largest grant' % F1)
+    g4 = defaultdict(float)
+    for (y, nm), v in gname.items():
+        g4[nm] += v
+    gnames = [nm for nm in sorted(g4, key=lambda k: -g4[k]) if round(g4[nm])]
+    grant_rows = [dict(label=nm, cells=[C.usd(gname.get((y, nm), 0.0)) if round(gname.get((y, nm), 0.0))
+                                        else '' for y in Y] + [C.usd(g4[nm])]) for nm in gnames]
+    grant_rows.append(dict(label='All grants', cells=[C.usd(sp[(y, 'Grants')]) for y in Y]
+                           + [C.usd(sum(sp[(y, 'Grants')] for y in Y))]))
+    grant_view = dict(key='grants', label='Grants, by name', total_col=len(Y),
+                      kinds=['ledger'] * (len(Y) + 1), columns=[C.fy(y) for y in Y] + ['Four years'],
+                      rows=grant_rows,
+                      note='Spent or still owed at the close, every award year of a grant together. '
+                           'Named by DESE fund code where the fund carries one, otherwise by the '
+                           'fund’s own name.')
     four = {g: sum(ogrp[y][g] for y in Y) for g in OUTSIDE}
     out4 = sum(four.values())
     share_out = {y: 100.0 * m['outside'][y] / m['all'][y] for y in Y}
@@ -811,7 +846,7 @@ def build():
             TP.track(g, [ogrp[y][g] for y in Y], 'published') for g in OUTSIDE], '$', kind='bar',
             stacked=True, note='Spending in every school fund but the general fund. %s' % spent_note,
             note_figures={'y': F(F1)}),
-        table=dict(caption='What is paid outside the general fund', views=[
+        table=dict(caption='What is paid outside the general fund', views=[grant_view,
             dict(key='fundline', label='By fund and line, four years', total_col=None,
                  kinds=['ledger', 'ledger'], columns=['Function code', 'Spent'], rows=fc_rows,
                  note='The twenty-five largest fund-and-line pairs, %s.' % C.fyspan(F0, F1)),
@@ -986,29 +1021,41 @@ def build():
     # THE TABLE: one year per view. Rows are what the money paid for; columns the general fund's
     # vote, then spending by the fund that paid. Its bottom row must be the by-year figures above.
     comps = [c for c, _, inn, _ in J.COMPONENTS if inn]
-    paid_by = (('General fund spent', ('General fund',)), ('Circuit breaker', ('Circuit breaker',)),
-               ('Grants', ('IDEA grants', 'Other special education grants')))
+    # EACH GRANT BY NAME (TJ, 26 October 2026: "break down the 'other funds spent' into the
+    # actual list of funds"). The ledger names a fund by year and DESE code ('FY24 #240'); the
+    # name shown is journal.GRANT_PROGRAM's, the one map every page uses, with the code beside it.
+    PROGRAM = J.GRANT_PROGRAM
+    used = sorted({k[2][5:] for k in s if len(k) == 4 and k[1] == 'spent' and str(k[2]).startswith('code:')
+                   and k[0] in Y and s[k]},
+                  key=lambda c: -sum(v for k, v in s.items() if len(k) == 4 and k[2] == 'code:' + c))
+    if set(used) - set(PROGRAM):
+        fail('a special education grant code has no name here: %s' % sorted(set(used) - set(PROGRAM)))
+    paid_by = (('General fund spent', ('General fund',)), ('Circuit breaker', ('Circuit breaker',))) + \
+        tuple(('%s (#%s)' % (PROGRAM[c], c), ('code:' + c,)) for c in used)
 
     def sped_year(y):
         sp = lambda c, fns: sum(s.get((y, 'spent', fn, c), 0.0) for fn in fns)
-        rows, tot = [], [0.0] * 5
+        # Only the grants that paid this year: a column of zeros is width a phone does not have.
+        pb = paid_by[:2] + tuple(x for x in paid_by[2:] if any(sp(c, x[1]) for c in comps))
+        rows, tot = [], [0.0] * (len(pb) + 2)
         for c in comps:
-            v = [s.get((y, 'gf:' + c, 'original_budget'), 0.0)] + [sp(c, fns) for _, fns in paid_by]
+            v = [s.get((y, 'gf:' + c, 'original_budget'), 0.0)] + [sp(c, fns) for _, fns in pb]
             v.append(sum(v[1:]))
             tot = [t + x for t, x in zip(tot, v)]
             rows.append(dict(label=J.COMPONENT_LABEL[c], cells=[C.usd(x) for x in v]))
         for got, want, what in ((tot[0], gv[y], 'voted'), (tot[1], ga[y], 'general fund spent'),
-                                (tot[4], al[y], 'every fund')):
+                                (tot[-1], al[y], 'every fund')):
             if abs(got - want) > 0.005:
                 raise SystemExit('sped-all-funds %s: the components\' %s is %.2f, the year\'s is %.2f'
                                  % (y, what, got, want))
         rows.append(dict(label='All of it', cells=[C.usd(x) for x in tot]))
-        return dict(key='fy%d' % y, label=C.fy(y), total_col=4, kinds=['ledger'] * 5,
-                    columns=['Voted, general fund'] + [n for n, _ in paid_by] + ['Every fund spent'],
+        return dict(key='fy%d' % y, label=C.fy(y), total_col=len(pb) + 1, kinds=['ledger'] * (len(pb) + 2),
+                    columns=['Voted, general fund'] + [n for n, _ in pb] + ['Every fund spent'],
                     rows=rows,
                     note='Only the general fund has a vote; the circuit breaker and grants are spent '
-                         'without one. Spent includes what was still owed at the close. Grants are the '
-                         'IDEA and special education program improvement grants.'
+                         'without one. Spent includes what was still owed at the close. Each grant is '
+                         'named with its DESE fund code. Chapter 70 is not a column: it is '
+                         'state aid paid into the general fund, so it is inside general fund spent.'
                          + (' %s is not yet closed.' % C.fy(y) if y == F1 else ''))
 
     out['sped-all-funds'] = TP.page(
@@ -1128,7 +1175,21 @@ def build():
             columns=['Compared with', 'Result'], rows=tie_rows,
             note='The first two must hold to the cent or nothing on these pages is written. The '
                  'last two are other publishers’ readings of the same money, compared and shown.')]),
-        answer_figures={'a': U(m['all'][F1]), 'y': F(F1), 'b': U(m['all'][F1] - m['gf_voted'][F1])})
+        answer_figures={'a': U(m['all'][F1]), 'y': F(F1), 'b': U(m['all'][F1] - m['gf_voted'][F1])},
+        # The Grants bar above, by name (TJ, 26 October 2026: "breakdown the grants by the name").
+        # The twelve largest, the rest together; every grant by year is on Paid outside the
+        # general fund.
+        blocks=[TB.chart(TP.ranking(
+            'Grant spending, by grant',
+            [(nm, g4[nm]) for nm in gnames[:12]]
+            + ([('%s other grants' % C.num(len(gnames) - 12), sum(g4[nm] for nm in gnames[12:]))]
+               if len(gnames) > 12 else []), '$',
+            note='%s, spent or still owed at the close, every award year of a grant together.'
+                 % C.fyspan(F0, F1), note_figures={'y': F(F0), 'z': F(F1)}),
+            place='chart',
+            so=('The two pandemic grants paid nothing in %s; IDEA, %s over four years, is the '
+                'largest grant still paying.' % (C.fy(F1), C.usd(g4[J.GRANT_PROGRAM['240']])),
+                {'y': F(F1), 'a': U(g4[J.GRANT_PROGRAM['240']])}))])
 
     if sorted(k for k in out if k != HUB) != MINE:
         fail('the pages built are not the pages the registry gives this script: %s vs %s'

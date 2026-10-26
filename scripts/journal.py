@@ -276,6 +276,47 @@ def grant_code(fund_name):
     return m.group(1) if m else None
 
 
+# GRANT NAMES, for reading: by DESE fund code, else by a pattern in the fund's name. Ours, one
+# map for every page (moved here from build_pay_by_fund_topics.py, 26 October 2026, when the
+# all-funds pages began naming grants too: two pages naming one grant two ways reads as two).
+GRANT_PROGRAM = {'240': 'IDEA (special education)', '262': 'IDEA (preschool)', '305': 'Title I',
+                 '140': 'Title IIA', '309': 'Title IV', '117': 'Student Opportunity Act',
+                 '237': 'Family and community engagement', '115': 'ESSER II (pandemic)',
+                 '119': 'ESSER III (pandemic)', '528': 'After-school (ASOST)', '718': 'Arts and culture',
+                 '105': 'Deeper learning', '252': 'IDEA (pandemic relief)',
+                 '264': 'IDEA preschool (pandemic relief)',
+                 '274': 'Special education program improvement',
+                 '298': 'Preschool special education program improvement',
+                 '719': 'Accelerated literacy'}
+GRANT_NAMED = [(r'SCH(OOL)?\s+HEALTH', 'Comprehensive school health'),
+               (r'CHAPTER 658', 'Athletic fee fund (Chapter 658)'),
+               (r'FAIR SHARE', 'Fair Share grant'), (r'MY CAP', 'MyCAP grant'),
+               (r'SPEC ED PROG', 'Special education program improvement'),
+               (r'^ARPA\b', 'ARPA funds'), (r'^1192 SPECIAL SUPPORT', 'Special support (#1192)')]
+
+
+def grant_program(a):
+    """A fund's name for reading: 'General fund', a program by DESE code, or the fund's own name."""
+    if fund_group(a) == 'General fund':
+        return 'General fund'
+    code = grant_code(a['fund_name'])
+    name = re.sub(r"^\s*FY\s*'?\d\d\s*", '', a['fund_name']).strip()
+    if not code:
+        # Some award years drop the '#': 'FY25 117 SOA EVIDENCE BASED'.
+        mm = re.match(r'(\d{3})\b', name)
+        code = mm.group(1) if mm and mm.group(1) in GRANT_PROGRAM else None
+    if code:
+        return GRANT_PROGRAM.get(code, '#%s' % code)
+    for pat, label in GRANT_NAMED:
+        if re.search(pat, name, re.I):
+            return label
+    if re.fullmatch(r'[\d\s]+', name):
+        # 'FY252740205202509302025': the ledger gives this fund a number, not a name. What the
+        # digits encode is not stated, so it is not decoded here.
+        return 'Fund %s (no name in the ledger)' % a['fund']
+    return name.title()
+
+
 def sped_fund(a):
     """Which of SPED_FUNDS an account on the list posts to. Refuses an account it cannot place."""
     if a['fund'] == '0100':

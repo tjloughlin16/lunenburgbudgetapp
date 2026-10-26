@@ -196,6 +196,42 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 - The largest single payee outside the general fund was THURSTON FOODS: $916,522.
   - *not known:* Invoices only. Pay runs and journal entries name no payee, and families paid for their own child are not named anywhere here. — closes: the accounts-payable detail behind each warrant, by fund
 
+**What is paid outside the general fund — Grants, by name**
+
+| | FY2023 | FY2024 | FY2025 | FY2026 | Four years |
+|---|---:|---:|---:|---:|---:|
+| IDEA (special education) | $473,083 | $572,447 | $462,115 | $435,862 | $1,943,506 |
+| ESSER III (pandemic) | $356,170 | $711,818 | $1,408 |  | $1,069,396 |
+| Title I | $201,135 | $217,052 | $192,149 | $191,985 | $802,322 |
+| ESSER II (pandemic) | $405,987 | $15,959 |  |  | $421,946 |
+| Student Opportunity Act | $14,771 | $139,613 | $138,573 | $97,565 | $390,521 |
+| Comprehensive school health | $82,882 | $97,135 | $28,850 | $20,983 | $229,850 |
+| ARPA funds |  | $10,236 | $137,785 | $75,000 | $223,020 |
+| Green Communities Grant |  |  | $149,970 | $57,523 | $207,493 |
+| Family and community engagement | $71,142 | $73,398 | -$40 | -$4,138 | $140,362 |
+| Title IIA | $36,564 | $47,713 | $36,224 | $18,860 | $139,361 |
+| Fair Share grant |  |  |  | $70,548 | $70,548 |
+| Title IV | $24,222 | $18,945 | $13,538 | $10,107 | $66,811 |
+| IDEA (pandemic relief) | $64,816 |  |  |  | $64,816 |
+| Emergency Connectivity Fund | $75,372 | -$28,629 |  |  | $46,743 |
+| After-school (ASOST) | $18,680 | $25,000 |  |  | $43,680 |
+| Special support (#1192) |  |  |  | $40,000 | $40,000 |
+| IDEA (preschool) | $13,083 | $13,325 | $13,373 |  | $39,781 |
+| Accelerated literacy | $26,993 |  |  |  | $26,993 |
+| MyCAP grant |  |  |  | $17,120 | $17,120 |
+| Foundation Reserve | $14,567 |  |  |  | $14,567 |
+| Special education program improvement | $543 | $13,477 |  |  | $14,021 |
+| Arts and culture |  | $5,172 | $7,017 | $500 | $12,689 |
+| Displaced Students-Puerto Rico |  |  | $10,661 |  | $10,661 |
+| Fund 2832 (no name in the ledger) |  |  | $4,573 | $5,427 | $10,000 |
+| Deeper learning | $8,920 |  |  |  | $8,920 |
+| IDEA preschool (pandemic relief) | $8,229 |  |  |  | $8,229 |
+| School Water Improvement Grant | $1,998 |  |  |  | $1,998 |
+| Preschool special education program improvement | $1,200 |  |  |  | $1,200 |
+| All grants | $1,900,357 | $1,932,660 | $1,196,194 | $1,037,341 | $6,066,552 |
+
+*Spent or still owed at the close, every award year of a grant together. Named by DESE fund code where the fund carries one, otherwise by the fund’s own name.*
+
 **What is paid outside the general fund — By fund and line, four years**
 
 | | Function code | Spent |
@@ -421,7 +457,7 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 
 **Special education: what was voted, what was spent, and which fund paid — FY2026**
 
-| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
+| | Voted, general fund | General fund spent | Circuit breaker | IDEA (special education) (#240) | Every fund spent |
 |---|---:|---:|---:|---:|---:|
 | Out-of-district tuition | $1,291,293 | $1,202,771 | $333,495 | $0 | $1,536,266 |
 | Transportation | $565,734 | $633,291 | $0 | $0 | $633,291 |
@@ -430,46 +466,46 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 | Supplies, equipment and other | $22,371 | $7,707 | $0 | $39,997 | $47,704 |
 | All of it | $6,209,427 | $6,261,648 | $337,499 | $435,862 | $7,035,009 |
 
-*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants. FY2026 is not yet closed.*
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Each grant is named with its DESE fund code. Chapter 70 is not a column: it is state aid paid into the general fund, so it is inside general fund spent. FY2026 is not yet closed.*
 
 **Special education: what was voted, what was spent, and which fund paid — FY2025**
 
-| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
-|---|---:|---:|---:|---:|---:|
-| Out-of-district tuition | $712,244 | $732,298 | $473,650 | $0 | $1,205,949 |
-| Transportation | $445,328 | $434,922 | $0 | $0 | $434,922 |
-| Contracted services and evaluations | $154,258 | $152,132 | $24,801 | $2,500 | $179,433 |
-| Staff pay and benefits | $4,223,234 | $3,919,816 | $0 | $419,028 | $4,338,844 |
-| Supplies, equipment and other | $17,043 | $6,954 | $0 | $53,959 | $60,913 |
-| All of it | $5,552,107 | $5,246,122 | $498,451 | $475,488 | $6,220,061 |
+| | Voted, general fund | General fund spent | Circuit breaker | IDEA (special education) (#240) | IDEA (preschool) (#262) | Every fund spent |
+|---|---:|---:|---:|---:|---:|---:|
+| Out-of-district tuition | $712,244 | $732,298 | $473,650 | $0 | $0 | $1,205,949 |
+| Transportation | $445,328 | $434,922 | $0 | $0 | $0 | $434,922 |
+| Contracted services and evaluations | $154,258 | $152,132 | $24,801 | $2,500 | $0 | $179,433 |
+| Staff pay and benefits | $4,223,234 | $3,919,816 | $0 | $405,655 | $13,373 | $4,338,844 |
+| Supplies, equipment and other | $17,043 | $6,954 | $0 | $53,959 | $0 | $60,913 |
+| All of it | $5,552,107 | $5,246,122 | $498,451 | $462,115 | $13,373 | $6,220,061 |
 
-*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Each grant is named with its DESE fund code. Chapter 70 is not a column: it is state aid paid into the general fund, so it is inside general fund spent.*
 
 **Special education: what was voted, what was spent, and which fund paid — FY2024**
 
-| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
-|---|---:|---:|---:|---:|---:|
-| Out-of-district tuition | $501,239 | $588,508 | $466,296 | $0 | $1,054,804 |
-| Transportation | $335,947 | $401,402 | $0 | $0 | $401,402 |
-| Contracted services and evaluations | $136,900 | $185,908 | $0 | $49,805 | $235,713 |
-| Staff pay and benefits | $3,819,629 | $3,588,648 | $0 | $510,903 | $4,099,551 |
-| Supplies, equipment and other | $21,779 | $11,936 | $0 | $38,541 | $50,477 |
-| All of it | $4,815,494 | $4,776,402 | $466,296 | $599,250 | $5,841,948 |
+| | Voted, general fund | General fund spent | Circuit breaker | IDEA (special education) (#240) | IDEA (preschool) (#262) | Special education program improvement (#274) | Every fund spent |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| Out-of-district tuition | $501,239 | $588,508 | $466,296 | $0 | $0 | $0 | $1,054,804 |
+| Transportation | $335,947 | $401,402 | $0 | $0 | $0 | $0 | $401,402 |
+| Contracted services and evaluations | $136,900 | $185,908 | $0 | $49,805 | $0 | $0 | $235,713 |
+| Staff pay and benefits | $3,819,629 | $3,588,648 | $0 | $484,101 | $13,325 | $13,477 | $4,099,551 |
+| Supplies, equipment and other | $21,779 | $11,936 | $0 | $38,541 | $0 | $0 | $50,477 |
+| All of it | $4,815,494 | $4,776,402 | $466,296 | $572,447 | $13,325 | $13,477 | $5,841,948 |
 
-*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Each grant is named with its DESE fund code. Chapter 70 is not a column: it is state aid paid into the general fund, so it is inside general fund spent.*
 
 **Special education: what was voted, what was spent, and which fund paid — FY2023**
 
-| | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
-|---|---:|---:|---:|---:|---:|
-| Out-of-district tuition | $489,918 | $304,747 | $494,968 | $0 | $799,715 |
-| Transportation | $329,360 | $320,244 | $0 | $0 | $320,244 |
-| Contracted services and evaluations | $119,900 | $126,333 | $0 | $122,102 | $248,435 |
-| Staff pay and benefits | $3,703,225 | $3,643,847 | $0 | $397,023 | $4,040,870 |
-| Supplies, equipment and other | $19,890 | $13,615 | $0 | $41,829 | $55,443 |
-| All of it | $4,662,293 | $4,408,786 | $494,968 | $560,954 | $5,464,708 |
+| | Voted, general fund | General fund spent | Circuit breaker | IDEA (special education) (#240) | IDEA (pandemic relief) (#252) | IDEA (preschool) (#262) | Special education program improvement (#274) | IDEA preschool (pandemic relief) (#264) | Preschool special education program improvement (#298) | Every fund spent |
+|---|---:|---:|---:|---:|---:|---:|---:|---:|---:|---:|
+| Out-of-district tuition | $489,918 | $304,747 | $494,968 | $0 | $0 | $0 | $0 | $0 | $0 | $799,715 |
+| Transportation | $329,360 | $320,244 | $0 | $0 | $0 | $0 | $0 | $0 | $0 | $320,244 |
+| Contracted services and evaluations | $119,900 | $126,333 | $0 | $50,253 | $63,077 | $0 | $543 | $8,229 | $0 | $248,435 |
+| Staff pay and benefits | $3,703,225 | $3,643,847 | $0 | $383,940 | $0 | $13,083 | $0 | $0 | $0 | $4,040,870 |
+| Supplies, equipment and other | $19,890 | $13,615 | $0 | $38,890 | $1,739 | $0 | $0 | $0 | $1,200 | $55,443 |
+| All of it | $4,662,293 | $4,408,786 | $494,968 | $473,083 | $64,816 | $13,083 | $543 | $8,229 | $1,200 | $5,464,708 |
 
-*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
+*Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Each grant is named with its DESE fund code. Chapter 70 is not a column: it is state aid paid into the general fund, so it is inside general fund spent.*
 
 What this does not establish:
 

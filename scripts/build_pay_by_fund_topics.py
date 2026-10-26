@@ -52,20 +52,11 @@ F0, F1 = Y[0], Y[-1]
 # Pay: object 51xxxx, less the two 51-objects that are not wages (grant fringe benefits are
 # benefits; 519016 is CONTRACTED SERVICES filed under the 51 series).
 NOT_PAY = ('517001', '519016')
-# Grant programs by DESE fund code, for reading. Ours; a code not here prints its fund name.
-PROGRAM = {'240': 'IDEA (special education)', '262': 'IDEA (preschool)', '305': 'Title I',
-           '140': 'Title IIA', '309': 'Title IV', '117': 'Student Opportunity Act',
-           '237': 'Family and community engagement', '115': 'ESSER II (pandemic)',
-           '119': 'ESSER III (pandemic)', '528': 'After-school (ASOST)', '718': 'Arts and culture',
-           '105': 'Deeper learning'}
+# Grant names: journal.GRANT_PROGRAM and journal.grant_program, shared with the all-funds pages.
+PROGRAM = J.GRANT_PROGRAM
 KIND = [('ADMINISTRATOR', 'Administrators'), ('NON INSTR', 'Support staff'),
         ('INSTR', 'Instructional staff'),
         ('STIPEND', 'Stipends')]
-# Funds with no DESE code in their name, named for reading. Ours.
-NAMED = [(r'SCH(OOL)?\s+HEALTH', 'Comprehensive school health'),
-         (r'CHAPTER 658', 'Athletic fee fund (Chapter 658)'),
-         (r'FAIR SHARE', 'Fair Share grant'), (r'MY CAP', 'MyCAP grant'),
-         (r'SPEC ED PROG', 'Special education program improvement')]
 ESSER = ('115', '119')
 FEE_FUND = '1301'                      # Chapter 658 school athletics: the athletic fee fund
 MOVE_ROW_MIN = 5000
@@ -79,22 +70,7 @@ def is_pay(a):
     return a['object'][:2] == '51' and a['object'] not in NOT_PAY
 
 
-def program(a):
-    g = J.fund_group(a)
-    if g == 'General fund':
-        return 'General fund'
-    code = J.grant_code(a['fund_name'])
-    name = re.sub(r"^\s*FY\s*'?\d\d\s*", '', a['fund_name']).strip()
-    if not code:
-        # Some award years drop the '#': 'FY25 117 SOA EVIDENCE BASED'.
-        mm = re.match(r'(\d{3})\b', name)
-        code = mm.group(1) if mm and mm.group(1) in PROGRAM else None
-    if code:
-        return PROGRAM.get(code, '#%s' % code)
-    for pat, label in NAMED:
-        if re.search(pat, name, re.I):
-            return label
-    return name.title()
+program = J.grant_program
 
 
 def short(names, n=3):

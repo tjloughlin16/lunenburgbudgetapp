@@ -75,6 +75,16 @@ def main():
         r['exp'] = r['object'].startswith('5')
         r['rev'] = r['object'].startswith('4')
 
+    # THE CIRCUIT BREAKER NETTING (26 October 2026). The vote is net of the expected circuit
+    # breaker; FY2025 was loaded gross and netted on 1 July 2024 by one one-sided entry, which is
+    # part of the vote (build_sped_costs.net_fy2025, journal.NETTING). Named here rather than
+    # imported, so this route stays independent; it must exist, alone, with no other side.
+    NET_J = (2025, '2025/01/000564')
+    net_rows = [r for r in rows if (r['fy'], r['journal']) == NET_J]
+    if len(net_rows) != 1 or net_rows[0]['description'].strip() != 'ADJ FY25 BUDGET':
+        raise SystemExit('verify_school_all_funds: the FY2025 netting entry is not one line as read')
+    is_net = lambda r: (r['fy'], r['journal']) == NET_J
+
     # ---- route 1: raw
     voted = defaultdict(Decimal)
     spent = defaultdict(Decimal)
@@ -87,7 +97,7 @@ def main():
             spent[(r['fy'], g)] += r['a']
         if r['exp'] and r['posts_to'] == 'encumbrance':
             owed[(r['fy'], g)] += r['a']
-        if r['exp'] and g == 'General fund' and r['posts_to'] == 'original_budget':
+        if r['exp'] and g == 'General fund' and (r['posts_to'] == 'original_budget' or is_net(r)):
             voted[r['fy']] += r['a']
         if r['exp'] and g == 'General fund' and r['posts_to'] in ('original_budget', 'transfer') and r['a']:
             gfcodes.add(r['code'])
@@ -132,6 +142,7 @@ def main():
                  + Decimal(str(round(float(r['encumbrances'] or 0), 2)))
                  for r in ytd if int(r['fiscal_year']) == y)
         sv += sum(r['a'] for r in d301 if r['posts_to'] == 'original_budget')
+        sv += sum(r['a'] for r in rows if is_net(r) and r['fy'] == y)
         ss += sum(r['a'] for r in d301 if r['posts_to'] in SPENT)
         check('voted %d, spreadsheet route' % y, pay['gf_voted'][str(y)], sv)
         check('general fund spent %d, spreadsheet route' % y, pay['gf_spent'][str(y)], ss)
