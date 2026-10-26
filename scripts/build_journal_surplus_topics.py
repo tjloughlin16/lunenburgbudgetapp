@@ -1177,6 +1177,8 @@ def _captions(path):
 
 
 def prepaid_page(d):
+    import csv
+    import datetime
     import glob
     import re
     U = lambda v: figure(fl(v), C.usd(fl(v)))
@@ -1260,6 +1262,66 @@ def prepaid_page(d):
         if not TP.verbatim_in(q, _captions(p_)):
             fail('a quotation is no longer in the captions %s' % p_)
 
+    # WHERE THE APPROVAL WOULD BE (TJ, 26 Oct 2026). The warrant that paid check %s falls in
+    # the period 18 to 30 June; the School Committee's 15 July agenda lists exactly that warrant.
+    # Its minutes were never posted. Amounts are read off the documents, quotes off the captions.
+    reg = {r['date']: r for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data',
+           'meeting-register.csv'), encoding='utf-8')) if r['board_slug'] == 'school-committee'}
+    agenda = lambda dt: ' '.join(open(glob.glob(os.path.join(ROOT, SC_MINUTES, dt + '-agenda-*.txt'))[0],
+                                      encoding='utf-8').read().split())
+    mw = re.search(r'6/18 to 6/30 \$([\d,]+\.\d\d)', agenda('2026-07-15'))
+    m24 = re.search(r'Warrants 6/2/26 to 6/17/26 \$([\d,]+\.\d\d)', text['2026-06-24'])
+    if not (mw and m24):
+        fail('the June warrant periods are no longer on the 15 July agenda and 24 June minutes')
+    w_late, w_june = Decimal(mw.group(1).replace(',', '')), Decimal(m24.group(1).replace(',', ''))
+    if not (paid < w_late and 0.45 < fl(paid / w_late) < 0.6):
+        fail('the page says the payment was about half of the 18 to 30 June warrant')
+    if '2026-07-15' in text:
+        fail('the 15 July minutes are now posted; re-read them and rewrite the trail')
+    cap = lambda dt: _captions(glob.glob(os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts',
+                                                      'school-committee', dt + '-*.json'))[0])
+    QUOTES = {'2026-07-15': 'I think we just had the warrants',
+              '2026-09-09': 'It\'s late and I don\'t have information',
+              '2026-09-16': 'it looks like that large unexpended funds is in our private school tuitions'}
+    for dt, q in QUOTES.items():
+        if not TP.verbatim_in(q, cap(dt)):
+            fail('the %s quotation is no longer in the captions' % dt)
+    def links(dt, t=None):
+        r_ = reg[dt]
+        out_ = [dict(label='Agenda', href=r_['agenda_url'])]
+        if r_['minutes_url']:
+            out_.append(dict(label='Minutes', href=r_['minutes_url']))
+        if r_['video_urls']:
+            out_.append(dict(label='Recording', href=r_['video_urls'].split()[0] + ('&t=%ds' % t if t else ''),
+                             caption=True))
+        miss = ([] if r_['video_urls'] else ['No recording']) + ([] if r_['minutes_url'] else ['No minutes posted'])
+        return out_, miss
+    trail = []
+    for dt, expected, shows, t in (
+            ('2026-06-24', 'Warrants for 2 to 17 June, %s; line-item transfers; carry-forward orders.'
+             % usd2(w_june), 'Four transfers and the carry-forward orders voted; no tuition payment among '
+             'them. The warrants end before 30 June.', 2100),
+            ('2026-07-15', 'Warrants for 18 to 30 June, %s: the period of the 30 June payment.'
+             % usd2(w_late), 'The warrants item passes in seconds: “%s.” Nothing about what the '
+             'warrant held is said.' % QUOTES['2026-07-15'], 95),
+            ('2026-07-29', 'Year-end line-item transfers; warrants for July.',
+             'Transfers “just to cover overages”; FY2026 to close “well below” the year before. No '
+             'tuition payment mentioned.', 1330),
+            ('2026-09-02', 'FY26 Year End Budget review.', 'Neither recorded nor minuted.', None),
+            ('2026-09-09', 'FY26 Year End Budget review.', 'Passed over: “%s.”' % QUOTES['2026-09-09'],
+             7555),
+            ('2026-09-16', 'Warrants; a warrant article request.',
+             '“%s”, and a mention of “taking certain tuitions out of the grants”.'
+             % QUOTES['2026-09-16'], 690)):
+        lk, miss = links(dt, t)
+        d_ = datetime.date.fromisoformat(dt)
+        trail.append(dict(when='%d %s %d' % (d_.day, d_.strftime('%B'), d_.year), board='School Committee',
+                          expected=expected, shows=shows, links=lk, missing=miss))
+    if not TP.verbatim_in('taking certain tuitions out of the grants', cap('2026-09-16')):
+        fail('the 16 September grants remark is no longer in the captions')
+    trail_allow = tuple(sorted({x['when'] for x in trail} | {l_['href'] for x in trail for l_ in x['links']}
+                               | {'2 to 17 June', '18 to 30 June', '30 June', 'FY26', 'FY2026'}))
+
     fx = {}
     fx['paid'] = f('paid', U2(paid), 'paid to FLLAC from the general fund, 30 June 2026',
                    'published', allow=('30 June 2026',))
@@ -1313,11 +1375,11 @@ def prepaid_page(d):
             notes=[step('That the two entries were made together, for that purpose, is a '
                         'hypothesis; moving tuition onto the circuit breaker at year end is '
                         'routine, and no document links them.', 'hypothesis')]),
-        con('No School Committee minutes record an advance-tuition vote or a warrant for '
-            '18 June to 5 July.', ['approval', 'before', 'budget'],
-            allow=('18 June', '5 July'),
-            so='The line had already paid more than its budget, and no transfer covered it; the '
-               'signed warrant would show who approved the payment.',
+        con('The warrant for 18 to 30 June, %s, was on the 15 July agenda; those minutes were '
+            'never posted.' % usd2(w_late), ['approval', 'before', 'budget'],
+            {'w': U2(w_late)}, allow=('18', '30 June', '15 July'),
+            so='The payment was about half that warrant, and the recording shows no discussion of '
+               'what it held. No advance-tuition vote is minuted.',
             notes=[step('Approval may exist off the minutes: year-end warrants are often signed '
                         'between meetings.', 'gap',
                         closes='the signed warrant for check %s' % check, allow=(check,))])]
@@ -1388,6 +1450,9 @@ def prepaid_page(d):
          'the circuit breaker instead', 'journal %s' % recl[0]['journal']),
         ('30 June 2026', 'Journal', 'Nine FLLAC invoices numbered for %s paid from the general '
          'fund, check %s' % (C.fy(Y1 + 1), check), 'journal %s' % jnl),
+        ('15 July 2026', 'School Committee', 'Warrants for 18 to 30 June on the agenda, the period '
+         'of the payment; passed without discussion of what they held; minutes never posted',
+         'agenda, recording'),
         ('29 July 2026', 'School Committee', 'Told %s would close well below the year before'
          % C.fy(Y1), 'minutes'),
         ('22 October 2026', 'Finance Committee', 'Prepaying a first quarter from circuit breaker '
@@ -1468,6 +1533,14 @@ def prepaid_page(d):
                      'education burndown.',
                 so=('One year drew the fund as bills came in; the next left it untouched until the '
                     'year’s last days. Why is not in any document held.', None, ())),
+            TB.custom('meeting-trail', 'Where the approval would be on the record',
+                      dict(rows=trail), place='body',
+                      figures=(usd2(w_june), usd2(w_late)), allow=trail_allow,
+                      alt='School Committee meetings from 24 June to 16 September 2026: what each '
+                          'agenda held, what the record shows, and links to every record that exists',
+                      so=('The warrant that would carry the payment went before the School Committee on '
+                          '15 July, a meeting whose minutes were never posted; so did every year-end '
+                          'review after it.', None, ('15 July',))),
             TB.explain('The record, in order', [
                 ('**%s, %s.** %s. (%s)' % (w, b_, c_, e_), None,
                  tuple(re.findall(r'\d[\d,]*', '%s %s %s' % (w, c_, e_))))
@@ -1480,8 +1553,9 @@ def prepaid_page(d):
                 ('**Not announced.** Every June and July 2026 meeting of the School Committee, '
                  'Finance Committee and Select Board was read, minutes and recordings. None '
                  'mentions this payment or the re-charge to the circuit breaker. No minutes record '
-                 'an advance-tuition vote, or a warrant covering the last two weeks of June.',
-                 None, ('2026',)),
+                 'an advance-tuition vote. The warrant for the last two weeks of June was on the '
+                 'School Committee’s 15 July agenda; that meeting’s minutes were never posted.',
+                 None, ('2026', '15 July')),
                 ('**Not yet held.** The signed warrant, FLLAC’s invoices with their service '
                  'dates, and the School Committee’s September year-end budget reviews. Each is a '
                  'registered gap, listed on What we cannot answer.', None, ())],
