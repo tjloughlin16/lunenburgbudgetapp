@@ -9,12 +9,14 @@
  *  component formats nothing and draws from the payload (rule 7f). When one is used on a
  *  second page, promote it to a named block in Blocks.tsx and scripts/topic_blocks.py. */
 import type { ComponentType } from 'react'
+import GrantAwardsStack from './grant-awards-stack'
 import SerfMoneyStack from './serf-money-stack'
 import SerfSaidLedger from './serf-said-ledger'
 
 export type CustomProps = { data: unknown; alt: string }
 
 export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
+  'grant-awards-stack': GrantAwardsStack,
   'serf-money-stack': SerfMoneyStack,
   'serf-said-ledger': SerfSaidLedger,
 }

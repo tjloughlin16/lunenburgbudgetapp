@@ -26,7 +26,7 @@ import {
   Bar, CartesianGrid, ComposedChart, LabelList, Line, ReferenceLine, ResponsiveContainer, Tooltip,
   XAxis, YAxis,
 } from 'recharts'
-import { useState } from 'react'
+import { useRef, useState } from 'react'
 import { usdShort } from '../model/engine'
 import { abs } from '../lib/abs'
 import { TableDownload } from './TableDownload'
@@ -751,7 +751,16 @@ function Bridge({ c }: { c: BridgeChart }) {
  *  INSIDE the card (overflow-x on the grid, min-w-0 on the frame), so the page never scrolls
  *  sideways. Column labels are written vertically to keep each column a dot wide. */
 function Presence({ c }: { c: PresenceChart }) {
-  const [tip, setTip] = useState<{ r: string; col: string; text: string } | null>(null)
+  /* The tip is drawn AT the dot as well as in the line under the grid: on a long grid that line
+     is a screen away from the dot a reader is pointing at (TJ, 26 October 2026: hovering a dot
+     should show the amount). x/y are the dot's centre in the wrapper's coordinates. */
+  const [tip, setTip] = useState<{ r: string; col: string; text: string; x: number; y: number } | null>(null)
+  const wrap = useRef<HTMLDivElement>(null)
+  const show = (e: React.MouseEvent<HTMLElement>, r: string, col: string, text: string) => {
+    const w = wrap.current?.getBoundingClientRect()
+    const b = e.currentTarget.getBoundingClientRect()
+    setTip({ r, col, text, x: w ? b.left + b.width / 2 - w.left : 0, y: w ? b.top - w.top : 0 })
+  }
   const k = c.subject
   const cell = 18
   const label = `${c.title}. A grid of ${c.groups.reduce((a, g) => a + g.rows.length, 0)} rows by ${c.columns.length} columns; `
@@ -768,7 +777,9 @@ function Presence({ c }: { c: PresenceChart }) {
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ background: COLOURS[0] }} />another district has it</span>
         <span className="inline-flex items-center gap-1.5"><span className="inline-block w-2.5 h-2.5 rounded-full" style={{ border: `1.5px solid ${COLOURS[US_COLOUR]}` }} />{c.columns[k]} does not</span>
       </div>
-      <div className="overflow-x-auto -mx-1 px-1" aria-hidden style={{ overscrollBehaviorX: 'contain' }}>
+      <div ref={wrap} className="relative">
+      <div className="overflow-x-auto -mx-1 px-1" aria-hidden style={{ overscrollBehaviorX: 'contain' }}
+        onScroll={() => setTip(null)}>
         <table className="border-separate" style={{ borderSpacing: 0 }}>
           <thead>
             {c.spans ? (
@@ -808,9 +819,9 @@ function Presence({ c }: { c: PresenceChart }) {
                     {r.cells.map((v, i) => (
                       <td key={i} className="p-0 text-center align-middle" style={{ width: cell, height: cell,
                         borderLeft: c.spans && c.spans.slice(0, -1).reduce<number[]>((a, s) => [...a, (a.at(-1) ?? 0) + s.n], []).includes(i) ? '1px solid var(--grid)' : undefined }}
-                        onMouseEnter={() => v && setTip({ r: r.label, col: c.columns[i], text: v })}
+                        onMouseEnter={e => v && show(e, r.label, c.columns[i], v)}
                         onMouseLeave={() => setTip(null)}
-                        onClick={() => v && setTip({ r: r.label, col: c.columns[i], text: v })}>
+                        onClick={e => v && show(e, r.label, c.columns[i], v)}>
                         {v ? <span className="inline-block w-3 h-3 align-middle rounded-full" style={{ background: dot(i) }} />
                           : i === k && r.lacks ? <span className="inline-block w-3 h-3 rounded-full align-middle" style={{ border: `1.5px solid ${COLOURS[US_COLOUR]}` }} />
                           : <span className="inline-block w-1 h-1 rounded-full align-middle" style={{ background: 'var(--grid)' }} />}
@@ -819,6 +830,15 @@ function Presence({ c }: { c: PresenceChart }) {
               })}
             </tbody>))}
         </table>
+      </div>
+      {tip ? (
+        <div role="tooltip" className="absolute z-20 pointer-events-none px-2 py-1 rounded text-[12px] leading-snug tnum shadow"
+          style={{ left: Math.max(4, Math.min(tip.x - 110, (wrap.current?.clientWidth ?? 240) - 224)), top: Math.max(0, tip.y - 6),
+            transform: 'translateY(-100%)', width: 220, background: 'var(--surface-1)', color: 'var(--text-primary)',
+            border: '1px solid var(--grid)' }}>
+          <span className="font-semibold">{tip.col}</span>: {tip.text}
+          <span className="block text-[11px]" style={{ color: 'var(--text-muted)' }}>{tip.r}</span>
+        </div>) : null}
       </div>
       <p className="text-[12px] mt-2 min-h-[1.5em] tnum" style={{ color: 'var(--text-secondary)' }} aria-hidden>
         {tip ? <><span className="font-semibold">{tip.col}</span>, {tip.r}: {tip.text}</> : 'Hover or tap a dot for the amount and year.'}</p>

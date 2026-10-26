@@ -543,8 +543,11 @@ def build():
         hits = [w for w in W if w['code'] == c and w['fund'] == fc]
         if not hits:
             return None
-        return '; '.join('%s%s, %s' % (C.usd(w['amount']), ' joint' if w['joint'] > 1 else '',
-                                       C.fy(w['fy'])) for w in sorted(hits, key=lambda w: w['fy']))
+        # YEAR FIRST, then the amount (TJ, 26 October 2026: hovering a dot shows "Nashoba: FY2026
+        # $50,000", both years if both). The dot's tooltip prints exactly this text.
+        return '; '.join('%s %s%s' % (C.fy(w['fy']), C.usd(w['amount']),
+                                      ', shared award' if w['joint'] > 1 else '')
+                         for w in sorted(hits, key=lambda w: w['fy']))
     c_codes = sorted({w['fund'] for w in W if w['code'] in set(comp) | {lun}})
     for fc in c_codes:
         if fc not in AWARD_SHORT:
@@ -734,8 +737,8 @@ def build():
                           listed(fc), funded(fc),
                           who(fc, cs)])
               for fc, cs in c_rows],
-        note='DESE’s competitive award lists, %s and %s; the number after each name is DESE’s fund code. A joint award names several districts '
-             'and prints one amount. The list is DESE’s current-grants list, with its type. Monty Tech, '
+        note='DESE’s competitive award lists, %s and %s; the number after each name is DESE’s fund code. A shared award names several districts '
+             'and DESE prints one amount for them together. The list is DESE’s current-grants list, with its type. Monty Tech, '
              'Lunenburg’s vocational district, is on no award list held.'
              % (C.fy(a_years[0]), C.fy(a_years[-1])))
     table2 = dict(caption='Competitive grants comparison districts won', views=[view_c])
@@ -766,7 +769,7 @@ def build():
         rows=t3rows,
         note='Ordered by the share learning English. Per learner divides by the October headcount '
              'times that share, our estimate of the count.')
-    dcols = ['Set', 'Competitive grants won', 'Won alone, dollars', 'Joint awards']
+    dcols = ['Set', 'Competitive grants won', 'Dollars, its own awards', 'Shared awards']
     def drow(c):
         ws = [w for w in W if w['code'] == c]
         alone = sum(w['amount'] for w in ws if w['joint'] == 1)
@@ -779,8 +782,8 @@ def build():
         columns=dcols,
         rows=[drow(c) for c in [lun, mt] + sorted(comp, key=lambda c: (-per[c], members[c]['name']))],
         note='Fitchburg is left out: DESE prints two district codes under that name. '
-             'Competitive grants counted once however many years. A joint award is not split: '
-             'DESE prints one amount for the group.')
+             'Competitive grants counted once however many years. A shared award goes to several '
+             'districts as one amount DESE does not split, so it is counted here, not in dollars.')
     tables2 = [dict(caption='Formula grants others get', views=[view_f]),
                dict(caption='Title III and the learners it follows', views=[view_t3]),
                dict(caption='Competitive grants won, district by district', views=[view_d])]
@@ -801,9 +804,10 @@ def build():
                             'current-grants list, each grant’s type and eligibility)',
                       href='/docs/data/dese-grant-opportunities.csv'),
                  src_prof, src_ours, src_cmp]
+    stack = award_stack(D, comp, W, members, c_codes)
     page2 = TP.page(
         T_GAP, finding2, facts2, conc2, chart=chart2, table=table2, tables=tables2,
-        sources=sources2,
+        sources=sources2, blocks=[stack],
         finding_figures={'n': g_fig, 'a': A0, 'b': A1, 'k': figure(len(c_lun), C.num(len(c_lun)))})
     stats2 = dict(c_gap=len(c_gap), c_who=len(winners), c_top=top, c_lun=len(c_lun),
                   c_open=len(c_open), t3_ever=t3_ever, est=est, rate=rate)
@@ -832,7 +836,141 @@ def build():
         ti_mk=ti_mk, five_l=five_l, five_med=five_med, r_ti=r_ti, r_idea=r_idea)
 
 
-FIELDS = ['fy', 'district', 'district_code', 'sets', 'fund_code', 'grant', 'amount', 'headcount',
+def award_stack(D, comp, W, members, c_codes):
+    """THE DOLLAR VIEW of the competitive awards (TJ, 26 October 2026: "compare dollar values
+    across each of those towns ... each town gets a bar, broken up by stacked bars by grant
+    amount ... what we have now is a boolean table"). One bar per district, stacked by grant,
+    drawn by fy28/src/components/blocks/custom/grant-awards-stack.tsx.
+
+    WHAT IS STACKED: awards a district won ALONE. A joint award names several districts and
+    DESE prints one amount for the group; adding it to each member's bar would count it once
+    per member, so it is left out of the bar and named beside it.
+
+    DOLLARS ONLY, NO PER PUPIL: DESE's October headcount ends at FY2025 (YEAR) and the award
+    lists are FY2026 and FY2027. Dividing one year's awards by another year's pupils is the
+    cross-year arithmetic this module refuses for the allocations, so the view stays in dollars.
+
+    SUBSETS are the four comparison sets this page already uses, imported from
+    build_town_comparison.py and joined by DESE district code in load(); a district in two sets
+    shows when either is ticked. Fitchburg cannot be joined (see the module header)."""
+    import topic_blocks as TB
+    lun, mt = D['lun'], D['mt']
+    years = sorted({w['fy'] for w in W})
+    ykeys = ['y' + 'abcdefgh'[i] for i in range(len(years))]
+    YK = dict(zip(years, ykeys))
+    codes = [lun, mt] + sorted(comp, key=lambda c: members[c]['name'])
+    alone = [w for w in W if w['code'] in codes and w['joint'] == 1]
+    # grants, largest total first; colour follows that order
+    gtot = {}
+    for w in alone:
+        gtot[w['fund']] = gtot.get(w['fund'], 0) + w['amount']
+    for fc in gtot:
+        if fc not in AWARD_SHORT or fc not in c_codes:
+            fail('award %s is stacked but has no short name' % fc)
+    gorder = sorted(gtot, key=lambda fc: (-gtot[fc], AWARD_SHORT[fc]))
+    gi = {fc: i for i, fc in enumerate(gorder)}
+    figs = set()
+
+    def U(v):
+        t = C.usd(v)
+        figs.add(t)
+        return t
+
+    def sums(ws):
+        out = {'all': sum(w['amount'] for w in ws)}
+        for y in years:
+            out[YK[y]] = sum(w['amount'] for w in ws if w['fy'] == y)
+        return out
+
+    out_rows = []
+    for c in codes:
+        ws = [w for w in alone if w['code'] == c]
+        ws.sort(key=lambda w: (gi[w['fund']], w['fy']))
+        jn = sum(1 for w in W if w['code'] == c and w['joint'] > 1)
+        jt = ''
+        if jn:
+            jt = 'Plus %s shared %s, not in the bar' % (C.num(jn), 'award' if jn == 1 else 'awards')
+            figs.add(C.num(jn))
+        s = sums(ws)
+        pick = []
+        for fc in sorted({w['fund'] for w in ws}, key=gi.get):
+            p = sums([w for w in ws if w['fund'] == fc])
+            # t: the text the bar's breakdown and a picked grant print; v: the same amounts as
+            # numbers, which only ORDER the breakdown largest first
+            pick.append(dict(g=gi[fc], t={k: U(v) for k, v in p.items() if v},
+                             v={k: v for k, v in p.items() if v}))
+        out_rows.append(dict(
+            name=LUN if c == lun else MT_LABEL if c == mt else short_district(members[c]['name']),
+            kind='lun' if c == lun else 'mt' if c == mt else 'cmp',
+            sets=[] if c in (lun, mt) else list(members[c]['sets']),
+            seg=[dict(g=gi[w['fund']], y=YK[w['fy']], v=w['amount']) for w in ws],
+            val=s, tot={k: U(v) if v else '' for k, v in s.items()}, pick=pick, joint=jt))
+
+    # ---- FOOTING: every bar against the awards file, re-read here independently of awards()
+    file_sum = {}
+    for r in rows(AWARDS):
+        if r['district_code'] in codes and r['joint'] == '1':
+            k = (r['district_code'], int(r['fy']))
+            file_sum[k] = file_sum.get(k, 0) + float(r['amount'])
+    for c, r in zip(codes, out_rows):
+        for y in years:
+            got = sum(sg['v'] for sg in r['seg'] if sg['y'] == YK[y])
+            if abs(got - file_sum.get((c, y), 0)) > 0.005:
+                fail('the %s bar for %s does not foot to the awards file: %s against %s'
+                     % (r['name'], C.fy(y), got, file_sum.get((c, y), 0)))
+    if abs(sum(r['val']['all'] for r in out_rows) - sum(file_sum.values())) > 0.005:
+        fail('the stacked bars do not foot to the awards file')
+
+    for r in out_rows:
+        if r['joint'] and not r['val']['all']:
+            fail('%s has only shared awards; the chart lists it as having no grant of its own'
+                 % r['name'])
+
+    # ---- what it means: where Lunenburg's dollars sit among the comparison districts
+    lv = out_rows[0]['val']['all']
+    cv = [r['val']['all'] for r in out_rows if r['kind'] == 'cmp']
+    more = sum(1 for v in cv if v > lv)
+    none_ = sum(1 for v in cv if not v)
+    top = max(out_rows[2:], key=lambda r: r['val']['all'])
+    N = len(cv)
+    ORD = ['first', 'second', 'third', 'fourth', 'fifth', 'sixth', 'seventh', 'eighth', 'ninth',
+           'tenth']
+    if more >= len(ORD):
+        fail('Lunenburg is no longer in the upper half by dollars; the meaning below says it is')
+    ylab = [C.fy(y) for y in years]
+    figs.update(ylab)
+    yrs = [dict(key='all', label='Both years')] + [dict(key=YK[y], label=C.fy(y)) for y in years]
+    data = dict(
+        years=yrs,
+        sets=[dict(key=s, label=l) for s, l in SETS],
+        grants=[dict(name=AWARD_SHORT[fc]) for fc in gorder],
+        rows=out_rows,
+        text=dict(none='No grant of its own', none_pick='Did not win this one on its own', all='All grants', sets='Comparison sets',
+                  year='Years', grants='Grants, largest total first: hover or tap one to pick it out',
+                  clear='Show every grant', bars='Hover or tap a bar for its grants',
+                  total='Total', mt='Lunenburg’s vocational school, for reference'),
+        note='Dollars on DESE’s competitive award lists, %s and %s. Some awards go to several '
+             'districts together as one amount, with no split, so each bar counts only awards the '
+             'district won by itself; a shared award is named under its bar and in the tables '
+             'below. Comparison sets as on Towns like us, matched by DESE district code; Fitchburg '
+             'cannot be matched. Per pupil is not shown: DESE’s headcount ends at %s.'
+             % (ylab[0], ylab[-1], C.fy(YEAR)))
+    figs.add(C.fy(YEAR))
+    so = ('In dollars Lunenburg ranks %s of %s: it won %s in awards of its own, %s comparison '
+          'districts won more and %s won none of their own. %s won the most, %s.'
+          % (ORD[more], C.num(N + 1),
+             C.usd(lv), C.num(more), C.num(none_), top['name'], C.usd(top['val']['all'])),
+          {'k': figure(N + 1, C.num(N + 1)),
+           'a': figure(round(lv), C.usd(lv)), 'm': figure(more, C.num(more)),
+           'z': figure(none_, C.num(none_)),
+           't': figure(round(top['val']['all']), C.usd(top['val']['all']))})
+    return TB.custom('grant-awards-stack', 'Competitive dollars won, by district and grant', data,
+                     place='lead', figures=sorted(figs),
+                     alt='Horizontal bars, one per district, each split by grant: the dollars '
+                         'of competitive DESE awards it won by itself.', so=so)
+
+
+FIELDS = ['fy','district', 'district_code', 'sets', 'fund_code', 'grant', 'amount', 'headcount',
           'low_income_pct', 'english_learner_pct', 'disability_pct', 'per_pupil', 'comparable']
 
 
