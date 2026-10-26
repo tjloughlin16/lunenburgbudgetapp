@@ -1165,6 +1165,8 @@ OCT22_QUOTE = ('We are allowed to prepay the 1st quarter of out of district tuit
 JUL29_TEXT = 'sources/meetings/text/school-committee/2026-07-29-minutes-7930.txt'
 JUL29_QUOTE = 'he was confident the remaining amount would be well below that figure'
 SC_MINUTES = 'sources/meetings/text/school-committee'
+SPECREV = 'sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx'
+DESE_CB_FAQ = 'https://www.doe.mass.edu/finance/circuitbreaker/faq.html'
 
 
 def _captions(path):
@@ -1329,6 +1331,32 @@ def prepaid_page(d):
             > cb_out[J.YEARS.index(Y0)] and cb_early < 10000):
         fail('the circuit breaker block assumes FY%d took in the most and FY%d paid almost '
              'nothing before June' % (Y0, Y1))
+    # The fund's balance, from the Town's special-revenue report at 31 March 2026 (period 9,
+    # published with the period-9 package), carried to 30 June with the journal's own entries.
+    # DESE: "FY26 reimbursements must be spent ... in FY26 and/or FY27, and cannot be carried
+    # into FY28" (circuit breaker FAQ, question 10). One fund, 2640, holds every year's money,
+    # so which dollars are "older" is our arithmetic: what the fund held on 1 July 2025, less
+    # what FY2026 spent before the re-charge, could only be FY2025's or earlier.
+    import openpyxl
+    ws = openpyxl.load_workbook(os.path.join(ROOT, SPECREV), read_only=True, data_only=True).worksheets[0]
+    sr = [r for r in ws.iter_rows(values_only=True) if r and r[0] == 2640]
+    if len(sr) != 1:
+        fail('fund 2640 is not one row in %s' % SPECREV)
+    open_bal, sr_rev, sr_exp, mar_bal = -Decimal(str(sr[0][8])), -Decimal(str(sr[0][10])), \
+        Decimal(str(sr[0][13])), -Decimal(str(sr[0][15])).quantize(Decimal('0.01'))
+    if open_bal + sr_rev - sr_exp != mar_bal:
+        fail('the special-revenue report no longer foots for fund 2640')
+    j_rev = -sum((r['amt'] for r in cb if r['fy'] == Y1 and r['source'] == 'CRP'), D0)
+    j_api = sum((r['amt'] for r in cb if r['fy'] == Y1 and r['source'] == 'API'), D0)
+    if j_rev != sr_rev or j_api != sr_exp:
+        fail('the journal no longer agrees with the March report: nothing else posted to fund '
+             '2640 in FY%d but the 29 June re-charge' % Y1)
+    if any(r['source'] not in ('CRP', 'API', 'GEN', 'POE', 'POL', 'POM') for r in cb if r['fy'] == Y1):
+        fail('fund 2640 has an FY%d entry of a kind the balance arithmetic does not handle' % Y1)
+    older = open_bal - sr_exp           # what could only be FY2025's money or earlier
+    june_bal = mar_bal - out_gf          # after the 29 June re-charge (our arithmetic)
+    if not (out_gf > older > 0 and june_bal < sr_rev):
+        fail('the circuit breaker block assumes the re-charge used all the older money')
     yrs = J.YEARS
     same = [fl(sum((r['amt'] for r in rows if r['fy'] == y and r not in early), D0)) for y in yrs]
     ahead = [fl(sum((r['amt'] for r in early if r['fy'] == y), D0)) for y in yrs]
@@ -1387,6 +1415,24 @@ def prepaid_page(d):
                 so=('%s took in the most and %s paid almost nothing from it until the 29 June '
                     're-charge. That it was spent before receipts expired fits, as a hypothesis.'
                     % (C.fy(Y0), C.fy(Y1)), {'y': F(Y0), 'z': F(Y1)}, ('29 June',))),
+            TB.panels('The circuit breaker fund, before and after', [
+                TB.panel('To the end of March, as the Town printed it', [
+                    ('Held at the start of the year', usd2(open_bal), None),
+                    ('Received this year', usd2(sr_rev), None),
+                    ('Spent this year, to March', usd2(sr_exp), None),
+                    ('Held at the end of March', usd2(mar_bal), None)]),
+                TB.panel('At year end (our arithmetic)', [
+                    ('Older money, to be spent by year end', usd2(older), 'bad'),
+                    ('Tuition charged to it at year end', usd2(out_gf), None),
+                    ('Left at year end, all this year’s receipts', usd2(june_bal), 'good')])],
+                place='body',
+                note='One fund holds every year’s money, so older money is what it held at the '
+                     'start of the year less what the year spent before June. The Town’s '
+                     'special-revenue report, then the school journal.',
+                so=('Without the re-charge, %s would have passed the state’s one-year limit. The '
+                    're-charge used all of it, and %s carries into %s.'
+                    % (C.usd(fl(older)), C.usd(fl(june_bal)), C.fy(Y1 + 1)),
+                    {'a': U(older), 'b': U(june_bal), 'y': F(Y1 + 1)})),
             TB.explain('The record, in order', [
                 ('**%s, %s.** %s. (%s)' % (w, b_, c_, e_), None,
                  tuple(re.findall(r'\d[\d,]*', '%s %s %s' % (w, c_, e_))))
@@ -1426,6 +1472,11 @@ def prepaid_page(d):
             dict(label='Finance Committee recording, 22 October 2026', href=OCT22_HREF),
             dict(label='G.L. c. 71, s. 71D — advance payment of tuition',
                  href='https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/section71D'),
+            dict(label='Town of Lunenburg — special-revenue-fy2026-p09.xlsx (fund balances, '
+                       '31 March 2026)',
+                 href='/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx'),
+            dict(label='DESE — circuit breaker FAQ, question 10 (the one-year carry-forward)',
+                 href=DESE_CB_FAQ),
             dict(label='Division of Local Services — prepayment from prior fiscal year funds',
                  href='https://www.mass.gov/info-details/ask-dls-prepayment-from-prior-fiscal-year-funds')],
         finding_figures={'a': U(paid), 'y': F(Y1 + 1)}, finding_allow=('30 June 2026',))

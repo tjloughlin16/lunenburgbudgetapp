@@ -153,6 +153,84 @@
    }
   },
   {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Held at the start of the year",
+       "tone": null,
+       "value": "$293,335.18"
+      },
+      {
+       "label": "Received this year",
+       "tone": null,
+       "value": "$325,970.00"
+      },
+      {
+       "label": "Spent this year, to March",
+       "tone": null,
+       "value": "$4,004.52"
+      },
+      {
+       "label": "Held at the end of March",
+       "tone": null,
+       "value": "$615,300.66"
+      }
+     ],
+     "title": "To the end of March, as the Town printed it"
+    },
+    {
+     "rows": [
+      {
+       "label": "Older money, to be spent by year end",
+       "tone": "bad",
+       "value": "$289,330.66"
+      },
+      {
+       "label": "Tuition charged to it at year end",
+       "tone": null,
+       "value": "$333,494.89"
+      },
+      {
+       "label": "Left at year end, all this year’s receipts",
+       "tone": "good",
+       "value": "$281,805.77"
+      }
+     ],
+     "title": "At year end (our arithmetic)"
+    }
+   ],
+   "note": {
+    "figures": {},
+    "literals": [],
+    "text": "One fund holds every year’s money, so older money is what it held at the start of the year less what the year spent before June. The Town’s special-revenue report, then the school journal."
+   },
+   "place": "body",
+   "so": {
+    "figures": {
+     "a": {
+      "text": "$289,331",
+      "unit": "",
+      "value": 289330.66
+     },
+     "b": {
+      "text": "$281,806",
+      "unit": "",
+      "value": 281805.77
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "Without the re-charge, $289,331 would have passed the state’s one-year limit. The re-charge used all of it, and $281,806 carries into FY2027."
+   },
+   "title": "The circuit breaker fund, before and after"
+  },
+  {
    "block": "explain",
    "paragraphs": [
     {
@@ -795,6 +873,14 @@
   {
    "href": "https://malegislature.gov/Laws/GeneralLaws/PartI/TitleXII/Chapter71/section71D",
    "label": "G.L. c. 71, s. 71D — advance payment of tuition"
+  },
+  {
+   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — special-revenue-fy2026-p09.xlsx (fund balances, 31 March 2026)"
+  },
+  {
+   "href": "https://www.doe.mass.edu/finance/circuitbreaker/faq.html",
+   "label": "DESE — circuit breaker FAQ, question 10 (the one-year carry-forward)"
   },
   {
    "href": "https://www.mass.gov/info-details/ask-dls-prepayment-from-prior-fiscal-year-funds",
