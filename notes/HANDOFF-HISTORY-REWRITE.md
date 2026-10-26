@@ -16,7 +16,8 @@ TJ: "do whatever you think is the best idea. i dont want to lose anything". Done
   before and after), and `git push --force-with-lease=main:23647187f` -> origin main `912264f5a`.
 - Not rewritten, local only, never pushed: branches `wip-snapshot-2026-10-19` and
   `gen/town-office-space` still sit on the OLD history. Do not push either.
-- **Step 5 TICKET FILED 26 October 2026** by TJ; waiting on GitHub Support. (Its assistant
+- **Step 5 TICKET FILED 26 October 2026** by TJ: GitHub Support ticket 4909191
+  (https://help.github.com/ticket/personal/0/4909191, his account only); waiting on Support. (Its assistant
   confirmed the request is in the right shape; NEVER run the `git push --force --mirror` it
   suggests here -- it would push the two old-history local branches and delete eleven remote
   branches). The ticket names the first changed
