@@ -303,7 +303,7 @@ shelf. A timeline per source: when it arrives, and the rule on when it must be s
 - Circuit breaker, measured (fund 2640 CRP lines): quarterly installments -- FY2023 Nov, Jan,
   Apr, Jun; FY2024 Oct, Jan, Apr (4th arrived Jul 2024); FY2025 Jul, Oct, Dec, Apr, Jun; FY2026
   Jul, Sep, Dec, then none posted. DESE FAQ q10: spend in the year received or the next.
-  OPEN: DESE prints $579,142 for FY2026; fund 2640 booked $325,970; $253,172 unlocated.
+  OPEN: DESE prints $579,142 for FY2026; fund 2640 booked $285,004 of it (Sep, Dec); $294,138 (spring and June installments) unlocated.
 - Federal grants (IDEA #240 etc.): a new fund each year (2758, 2813, 2814); their own periods.
 - The town appropriation, Chapter 70 / cherry sheet, revolving funds: to be read.
 
@@ -317,7 +317,7 @@ shelf. A timeline per source: when it arrives, and the rule on when it must be s
   awkwardly there now; candidate to move to a revolving-funds page (the all-funds review, queue #3).
 - **Two retired addresses** still served stale by the week-long edge cache until ~1-2 November:
   `/special-education-reserve/surprises-and-state-aid`, `/fy2026-closeout/fy2026-school-surplus`.
-- **Gaps registered 26 October**: the FY2026 circuit breaker $253,172 not booked in fund 2640; the
+- **Gaps registered 26 October**: the FY2026 circuit breaker: $294,138 (two installments) not booked in fund 2640 -- corrected from $253,172, which netted FY2025's $40,966 supplemental; the
   worksheet behind the budget's 75% circuit breaker line; work-off hours per department.
 - **Cleanup**: `read_allocations` (build_school_all_funds) and `read_idea` (build_serf_topics) read
   the same DESE file twice; make one shared reader.
