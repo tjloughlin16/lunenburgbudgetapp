@@ -25,10 +25,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Towns like us: what they pay, what they spend](/analysis/towns-like-us) | page | 5.0 / 66.2 min | 1. 78th of the 351 Massachusetts towns on the bill as a share of what the home is worth, where 1st asks the most — Lunenburg is middling on the tax bill and in the top quarter of the state on tax EFFORT.<br>2. 29% of the difference in spending per pupil is accounted for by how much taxable property stands behind each child — the strongest of twelve things tested — Taxable property per child predicts school spending. Aid and poverty do not.<br>3. Regional districts do not spend less on administration: $700 a pupil against $693. |
 | [What you can ask this archive](/analysis/what-you-can-ask) | page | — / 14.5 min | *(none declared)* |
 | [Athletics costs](/athletics) | page | — / 9.2 min | *(none declared)* |
-| [Athletic fee](/athletics/athletic-fee) | page | — / 7.2 min | *(none declared)* |
+| [Athletic fee](/athletics/athletic-fee) | page | — / 7.3 min | *(none declared)* |
 | [Cost per sport](/athletics/cost-per-sport) | page | — / 8.6 min | *(none declared)* |
-| [Fee fund ledger](/athletics/fee-fund-ledger) | page | — / 7.2 min | *(none declared)* |
-| [FY2026 athletics underspend](/athletics/fy2026-athletics-underspend) | page | — / 7.2 min | *(none declared)* |
+| [Fee fund ledger](/athletics/fee-fund-ledger) | page | — / 7.4 min | *(none declared)* |
+| [FY2026 athletics underspend](/athletics/fy2026-athletics-underspend) | page | — / 7.3 min | *(none declared)* |
 | [Participation](/athletics/participation) | page | — / 6.7 min | *(none declared)* |
 | [Spending by category](/athletics/spending-by-category) | page | — / 7.0 min | *(none declared)* |
 | [Total athletics cost](/athletics/total-athletics-cost) | page | — / 7.0 min | *(none declared)* |
@@ -51,7 +51,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Closing the gap](/budget-options) | page | — / 9.6 min | *(none declared)* |
 | [Classroom positions](/budget-options/classroom-positions) | page | — / 6.5 min | *(none declared)* |
 | [Extracurricular cuts](/budget-options/extracurricular-cuts) | page | — / 6.8 min | *(none declared)* |
-| [Family fees](/budget-options/family-fees) | page | — / 6.8 min | *(none declared)* |
+| [Family fees](/budget-options/family-fees) | page | — / 6.9 min | *(none declared)* |
 | [FY2027 cut size](/budget-options/fy2027-cut-size) | page | — / 6.6 min | *(none declared)* |
 | [The FY2027 override](/budget-options/fy2027-override) | page | — / 6.9 min | *(none declared)* |
 | [Override duration](/budget-options/override-duration) | page | — / 7.3 min | *(none declared)* |
@@ -61,9 +61,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Salary line and staffing](/budget-options/salary-line-and-staffing) | page | — / 7.4 min | *(none declared)* |
 | [School user fees](/budget-options/school-user-fees) | page | — / 7.0 min | *(none declared)* |
 | [Teacher contract](/budget-options/teacher-contract) | page | — / 7.2 min | *(none declared)* |
-| [Unpriced school charges](/budget-options/unpriced-school-charges) | page | — / 7.1 min | *(none declared)* |
+| [Unpriced school charges](/budget-options/unpriced-school-charges) | page | — / 7.2 min | *(none declared)* |
 | [Building upkeep](/buildings-and-grounds) | page | — / 6.9 min | *(none declared)* |
-| [Contracted building services](/buildings-and-grounds/contracted-building-services) | page | — / 8.1 min | *(none declared)* |
+| [Contracted building services](/buildings-and-grounds/contracted-building-services) | page | — / 8.2 min | *(none declared)* |
 | [Upkeep budget and spending](/buildings-and-grounds/upkeep-budget-vs-spending) | page | — / 7.3 min | *(none declared)* |
 | [Upkeep leftover by account](/buildings-and-grounds/upkeep-ledger) | page | — / 18.2 min | *(none declared)* |
 | [Usual purchases skipped](/buildings-and-grounds/upkeep-skipped) | page | — / 7.9 min | *(none declared)* |
@@ -100,39 +100,39 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Enrolment by grade band](/enrolment/enrolment-by-grade-band) | page | — / 6.9 min | *(none declared)* |
 | [Enrolment by year](/enrolment/enrolment-by-year) | page | — / 7.4 min | *(none declared)* |
 | [Grade 8 loss trend](/enrolment/grade-8-loss-trend) | page | — / 6.9 min | *(none declared)* |
-| [Grade-to-grade loss](/enrolment/grade-to-grade-loss) | page | — / 7.2 min | *(none declared)* |
+| [Grade-to-grade loss](/enrolment/grade-to-grade-loss) | page | — / 7.3 min | *(none declared)* |
 | [High-needs students](/enrolment/high-needs-students) | page | — / 7.6 min | *(none declared)* |
 | [High school enrolment](/enrolment/high-school-enrolment) | page | — / 7.6 min | *(none declared)* |
 | [High school spending](/enrolment/high-school-spending) | page | — / 7.1 min | *(none declared)* |
 | [Leaving and arriving](/enrolment/leaving-and-arriving) | page | — / 6.5 min | *(none declared)* |
-| [Monty Tech assessment](/enrolment/monty-tech-assessment) | page | — / 7.3 min | *(none declared)* |
+| [Monty Tech assessment](/enrolment/monty-tech-assessment) | page | — / 7.4 min | *(none declared)* |
 | [Monty Tech enrolment](/enrolment/monty-tech-enrolment) | page | — / 7.4 min | *(none declared)* |
 | [Monty Tech funding](/enrolment/monty-tech-funding) | page | — / 8.1 min | *(none declared)* |
 | [Nearby district enrolment](/enrolment/nearby-district-enrolment) | page | — / 6.2 min | *(none declared)* |
-| [School choice flows](/enrolment/school-choice-flows) | page | — / 7.1 min | *(none declared)* |
+| [School choice flows](/enrolment/school-choice-flows) | page | — / 7.2 min | *(none declared)* |
 | [Free cash](/free-cash) | page | — / 7.5 min | *(none declared)* |
 | [Free cash calculator](/free-cash-calculator) | page | 2.0 / 27.7 min | 1. 47% — Free cash is not money the town saved. It is mostly money the town budgeted and did not spend.<br>2. 45 of 45 — Local receipts have beaten the estimate every single year — and so have all 9 towns.<br>3. 2.49× — The record year was an event, not a stance. Underspending in 2025 was 2.49 times Lunenburg’s own recent average.<br>4. $361,912 — The state’s proof adds up exactly — to a figure that is not the one it certifies.<br>5. These agree with what this project has already published, and that is worth saying. |
 | [Free cash and capital](/free-cash/free-cash-and-capital) | page | — / 7.0 min | *(none declared)* |
-| [Free cash balance](/free-cash/free-cash-balance) | page | — / 7.4 min | *(none declared)* |
+| [Free cash balance](/free-cash/free-cash-balance) | page | — / 7.5 min | *(none declared)* |
 | [Free cash guideline](/free-cash/free-cash-guideline) | page | — / 7.5 min | *(none declared)* |
 | [Free cash for schools](/free-cash/free-cash-redirect) | page | — / 7.0 min | *(none declared)* |
-| [Free cash sources](/free-cash/free-cash-sources) | page | — / 7.2 min | *(none declared)* |
+| [Free cash sources](/free-cash/free-cash-sources) | page | — / 7.3 min | *(none declared)* |
 | [FY2026 year end](/fy2026-closeout) | page | — / 8.9 min | *(none declared)* |
 | [Budget burndown](/fy2026-closeout/budget-burndown) | page | — / 7.9 min | *(none declared)* |
-| [FY2025 school surplus](/fy2026-closeout/fy2025-school-surplus) | page | — / 6.5 min | *(none declared)* |
+| [FY2025 school surplus](/fy2026-closeout/fy2025-school-surplus) | page | — / 6.6 min | *(none declared)* |
 | [Lines over budget](/fy2026-closeout/fy2026-lines-over-budget) | page | — / 7.0 min | *(none declared)* |
 | [Paraprofessional overrun](/fy2026-closeout/fy2026-paraprofessional-overrun) | page | — / 7.2 min | *(none declared)* |
 | [Psychologist line](/fy2026-closeout/fy2026-psychologist-line) | page | — / 6.8 min | *(none declared)* |
 | [School retiree insurance](/fy2026-closeout/fy2026-school-retiree-insurance) | page | — / 6.9 min | *(none declared)* |
-| [FY2026 school surplus](/fy2026-closeout/fy2026-school-surplus) | page | — / 7.1 min | *(none declared)* |
+| [FY2026 school surplus](/fy2026-closeout/fy2026-school-surplus) | page | — / 7.2 min | *(none declared)* |
 | [Year-end transfers](/fy2026-closeout/fy2026-school-transfers) | page | — / 7.3 min | *(none declared)* |
-| [Snow and Reserve Fund](/fy2026-closeout/fy2026-snow-and-reserve-fund) | page | — / 6.7 min | *(none declared)* |
+| [Snow and Reserve Fund](/fy2026-closeout/fy2026-snow-and-reserve-fund) | page | — / 6.8 min | *(none declared)* |
 | [Surplus and FY2027 budget](/fy2026-closeout/fy2026-surplus-and-fy2027) | page | — / 6.6 min | *(none declared)* |
 | [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 7.2 min | *(none declared)* |
 | [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 7.0 min | *(none declared)* |
 | [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 6.8 min | *(none declared)* |
 | [Surplus, step by step](/fy2026-closeout/surplus-bridge) | page | — / 8.2 min | *(none declared)* |
-| [Under budget twice](/fy2026-closeout/surplus-repeat-lines) | page | — / 8.6 min | *(none declared)* |
+| [Under budget twice](/fy2026-closeout/surplus-repeat-lines) | page | — / 8.7 min | *(none declared)* |
 | [Surplus suggestions](/fy2026-closeout/surplus-suggestions) | page | — / 10.5 min | *(none declared)* |
 | [Health insurance costs](/health-insurance) | page | — / 8.3 min | *(none declared)* |
 | [District health line](/health-insurance/district-health-line) | page | — / 6.7 min | *(none declared)* |
@@ -142,7 +142,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Plans and premiums](/health-insurance/health-plans-and-premiums) | page | — / 6.8 min | *(none declared)* |
 | [State-reported spending](/health-insurance/health-state-reported) | page | — / 7.5 min | *(none declared)* |
 | [Towns compared](/health-insurance/health-towns-compared) | page | — / 6.9 min | *(none declared)* |
-| [PEC agreement](/health-insurance/pec-agreement) | page | — / 6.7 min | *(none declared)* |
+| [PEC agreement](/health-insurance/pec-agreement) | page | — / 6.8 min | *(none declared)* |
 | [Retiree health accounts](/health-insurance/retiree-health-accounts) | page | — / 7.0 min | *(none declared)* |
 | [School health insurance](/health-insurance/school-health-insurance) | page | — / 6.7 min | *(none declared)* |
 | [Homes, taxes, growth](/homes-and-taxes) | page | — / 9.3 min | *(none declared)* |
@@ -151,7 +151,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Business building pace](/homes-and-taxes/business-building-pace) | page | — / 6.4 min | *(none declared)* |
 | [Commercial share](/homes-and-taxes/commercial-share) | page | — / 6.8 min | *(none declared)* |
 | [Home value and bill](/homes-and-taxes/home-value-and-bill) | page | — / 7.3 min | *(none declared)* |
-| [Homes and enrolment](/homes-and-taxes/homes-and-enrolment) | page | — / 7.4 min | *(none declared)* |
+| [Homes and enrolment](/homes-and-taxes/homes-and-enrolment) | page | — / 7.5 min | *(none declared)* |
 | [Household income](/homes-and-taxes/household-income) | page | — / 6.6 min | *(none declared)* |
 | [Households with children](/homes-and-taxes/households-with-children) | page | — / 6.4 min | *(none declared)* |
 | [Income by age](/homes-and-taxes/income-by-age) | page | — / 6.5 min | *(none declared)* |
@@ -181,35 +181,38 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School facilities fund](/parks/school-facilities-fund) | page | — / 7.1 min | *(none declared)* |
 | [School field upkeep](/parks/school-field-upkeep) | page | — / 6.3 min | *(none declared)* |
 | [Youth league payments](/parks/youth-league-payments) | page | — / 6.5 min | *(none declared)* |
-| [The whole school budget](/school-all-funds) | page | — / 8.1 min | *(none declared)* |
+| [The whole school budget](/school-all-funds) | page | — / 8.4 min | *(none declared)* |
 | [Budget lines, all funds](/school-all-funds/budget-lines-all-funds) | page | — / 8.0 min | *(none declared)* |
 | [Carried-over orders](/school-all-funds/carried-over-orders) | page | — / 10.5 min | *(none declared)* |
 | [Grant allocations compared](/school-all-funds/grant-allocations-compared) | page | — / 9.3 min | *(none declared)* |
 | [Grant spending by line](/school-all-funds/grant-coding) | page | — / 7.4 min | *(none declared)* |
 | [Grants other districts get](/school-all-funds/grants-others-receive) | page | — / 24.1 min | *(none declared)* |
 | [Paid outside the general fund](/school-all-funds/outside-the-general-fund) | page | — / 8.0 min | *(none declared)* |
+| [Pay from grants and fees](/school-all-funds/pay-from-grants-and-fees) | page | — / 8.1 min | *(none declared)* |
+| [Pay moved between funds](/school-all-funds/pay-moved-between-funds) | page | — / 7.9 min | *(none declared)* |
+| [Positions and their funds](/school-all-funds/positions-and-their-funds) | page | — / 7.5 min | *(none declared)* |
 | [School money in](/school-all-funds/school-money-in) | page | — / 7.2 min | *(none declared)* |
 | [Unspent money by fund](/school-all-funds/unspent-by-fund) | page | — / 7.8 min | *(none declared)* |
 | [Programs and cuts](/school-programs) | page | — / 8.6 min | *(none declared)* |
-| [Announced cuts](/school-programs/announced-cuts) | page | — / 7.8 min | *(none declared)* |
+| [Announced cuts](/school-programs/announced-cuts) | page | — / 7.9 min | *(none declared)* |
 | [AP participation](/school-programs/ap-participation) | page | — / 7.4 min | *(none declared)* |
 | [AP scores](/school-programs/ap-scores) | page | — / 7.0 min | *(none declared)* |
-| [AP subjects](/school-programs/ap-subjects) | page | — / 6.8 min | *(none declared)* |
+| [AP subjects](/school-programs/ap-subjects) | page | — / 6.9 min | *(none declared)* |
 | [Computer science](/school-programs/computer-science-courses) | page | — / 7.3 min | *(none declared)* |
 | [Cuts against state counts](/school-programs/cuts-against-state-counts) | page | — / 7.0 min | *(none declared)* |
 | [Grant endings](/school-programs/grant-endings) | page | — / 7.6 min | *(none declared)* |
-| [High school sections](/school-programs/high-school-sections) | page | — / 7.6 min | *(none declared)* |
+| [High school sections](/school-programs/high-school-sections) | page | — / 7.7 min | *(none declared)* |
 | [History courses](/school-programs/history-courses) | page | — / 6.8 min | *(none declared)* |
 | [Lines cut to zero](/school-programs/lines-cut-to-zero) | page | — / 7.6 min | *(none declared)* |
 | [Outside money share](/school-programs/outside-money-share) | page | — / 7.1 min | *(none declared)* |
-| [Override cut lists](/school-programs/override-cut-lists) | page | — / 7.3 min | *(none declared)* |
+| [Override cut lists](/school-programs/override-cut-lists) | page | — / 7.4 min | *(none declared)* |
 | [World languages](/school-programs/world-languages) | page | — / 7.5 min | *(none declared)* |
 | [Spending compared](/school-spending) | page | — / 10.1 min | *(none declared)* |
 | [School spending history](/school-spending-history) | page | — / 9.7 min | *(none declared)* |
 | [FY2011 teacher reading](/school-spending-history/fy2011-teacher-reading) | page | — / 7.4 min | *(none declared)* |
 | [Growth by spending type](/school-spending-history/growth-by-spending-type) | page | — / 8.0 min | *(none declared)* |
 | [Growth side by side](/school-spending-history/growth-side-by-side) | page | — / 8.2 min | *(none declared)* |
-| [Inflation and school costs](/school-spending-history/inflation-and-school-costs) | page | — / 12.8 min | *(none declared)* |
+| [Inflation and school costs](/school-spending-history/inflation-and-school-costs) | page | — / 12.9 min | *(none declared)* |
 | [Long-run school spending](/school-spending-history/long-run-school-spending) | page | — / 8.5 min | *(none declared)* |
 | [Pay or headcount](/school-spending-history/pay-or-headcount) | page | — / 8.9 min | *(none declared)* |
 | [Spending by type over time](/school-spending-history/spending-by-type-over-time) | page | — / 11.6 min | *(none declared)* |
@@ -226,7 +229,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Line-level misses](/school-spending/line-level-misses) | page | — / 7.1 min | *(none declared)* |
 | [Lunenburg per-pupil breakdown](/school-spending/per-pupil-line-by-line) | page | — / 8.1 min | *(none declared)* |
 | [Spending per pupil](/school-spending/per-pupil-spending) | page | — / 7.8 min | *(none declared)* |
-| [Regional districts](/school-spending/regional-district-spending) | page | — / 6.9 min | *(none declared)* |
+| [Regional districts](/school-spending/regional-district-spending) | page | — / 7.0 min | *(none declared)* |
 | [Revolving fund history](/school-spending/revolving-fund-history) | page | — / 7.0 min | *(none declared)* |
 | [Budget against actual](/school-spending/school-budget-against-actual) | page | — / 7.6 min | *(none declared)* |
 | [School Committee funds](/school-spending/school-committee-funds) | page | — / 6.7 min | *(none declared)* |
@@ -236,28 +239,37 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Spending by function](/school-spending/spending-by-function) | page | — / 8.1 min | *(none declared)* |
 | [What per pupil counts](/school-spending/what-per-pupil-counts) | page | — / 7.3 min | *(none declared)* |
 | [School staff](/school-staffing) | page | — / 8.8 min | *(none declared)* |
-| [District staff directory](/school-staffing/district-staff-directory) | page | — / 6.8 min | *(none declared)* |
+| [District staff directory](/school-staffing/district-staff-directory) | page | — / 6.9 min | *(none declared)* |
 | [People and posts](/school-staffing/headcount-and-fte) | page | — / 6.6 min | *(none declared)* |
 | [Paraprofessional counts compared](/school-staffing/paraprofessional-counts) | page | — / 7.3 min | *(none declared)* |
-| [Paraprofessionals over time](/school-staffing/paraprofessional-fte) | page | — / 7.6 min | *(none declared)* |
+| [Paraprofessionals over time](/school-staffing/paraprofessional-fte) | page | — / 7.7 min | *(none declared)* |
 | [Printed school rosters](/school-staffing/printed-school-rosters) | page | — / 7.2 min | *(none declared)* |
 | [Support staff](/school-staffing/school-support-staff) | page | — / 7.8 min | *(none declared)* |
 | [Staff by programme](/school-staffing/staff-by-programme) | page | — / 6.9 min | *(none declared)* |
 | [Staff retention](/school-staffing/staff-retention) | page | — / 6.6 min | *(none declared)* |
-| [Teachers over time](/school-staffing/teacher-fte-over-time) | page | — / 7.9 min | *(none declared)* |
+| [Teachers over time](/school-staffing/teacher-fte-over-time) | page | — / 8.0 min | *(none declared)* |
 | [Teachers by school](/school-staffing/teachers-by-school) | page | — / 7.6 min | *(none declared)* |
-| [Teachers by subject](/school-staffing/teachers-by-subject) | page | — / 7.9 min | *(none declared)* |
+| [Teachers by subject](/school-staffing/teachers-by-subject) | page | — / 8.0 min | *(none declared)* |
 | [Teachers per pupil](/school-staffing/teachers-per-pupil) | page | — / 7.6 min | *(none declared)* |
-| [Special education costs](/special-education) | page | — / 8.8 min | *(none declared)* |
-| [Circuit breaker](/special-education/circuit-breaker) | page | — / 8.1 min | *(none declared)* |
-| [Circuit breaker account](/special-education/circuit-breaker-account) | page | — / 7.6 min | *(none declared)* |
+| [Special education costs](/special-education) | page | — / 8.9 min | *(none declared)* |
+| [Special education reserve fund](/special-education-reserve) | page | — / 12.5 min | *(none declared)* |
+| [Move-ins](/special-education-reserve/arrivals-and-the-budget) | page | — / 11.4 min | *(none declared)* |
+| [Out-of-district tuition payments](/special-education-reserve/how-tuition-is-paid) | page | — / 8.6 min | *(none declared)* |
+| [Reserve options](/special-education-reserve/reserve-options) | page | — / 10.5 min | *(none declared)* |
+| [Reserve or budget](/special-education-reserve/reserve-or-budget) | page | — / 8.6 min | *(none declared)* |
+| [Draw rules](/special-education-reserve/reserve-size) | page | — / 8.4 min | *(none declared)* |
+| [Special education grants](/special-education-reserve/special-education-grants) | page | — / 7.9 min | *(none declared)* |
+| [Surprise costs](/special-education-reserve/surprise-costs) | page | — / 17.7 min | *(none declared)* |
+| [Surprises and state aid](/special-education-reserve/surprises-and-state-aid) | page | — / 9.8 min | *(none declared)* |
+| [Circuit breaker](/special-education/circuit-breaker) | page | — / 8.2 min | *(none declared)* |
+| [Circuit breaker account](/special-education/circuit-breaker-account) | page | — / 8.9 min | *(none declared)* |
 | [Class size limits](/special-education/class-size-limits) | page | — / 7.7 min | *(none declared)* |
 | [Cost per placement](/special-education/cost-per-placement) | page | — / 6.7 min | *(none declared)* |
 | [Hiring versus placing](/special-education/hiring-versus-placing) | page | — / 6.7 min | *(none declared)* |
 | [In-district special education](/special-education/in-district-special-education) | page | — / 7.6 min | *(none declared)* |
 | [Out-of-district placements](/special-education/out-of-district-placements) | page | — / 7.9 min | *(none declared)* |
 | [Out-of-district tuition](/special-education/out-of-district-tuition) | page | — / 7.5 min | *(none declared)* |
-| [Special education reserve](/special-education/special-education-overruns) | page | — / 13.8 min | *(none declared)* |
+| [Special education overruns](/special-education/special-education-overruns) | page | — / 13.9 min | *(none declared)* |
 | [Special education, all funds](/special-education/sped-all-funds) | page | — / 7.7 min | *(none declared)* |
 | [Special education burndown](/special-education/sped-burndown) | page | — / 7.7 min | *(none declared)* |
 | [Special education definition](/special-education/sped-definition) | page | — / 10.0 min | *(none declared)* |
@@ -268,7 +280,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Aid per pupil](/state-aid/aid-per-pupil) | page | — / 6.6 min | *(none declared)* |
 | [Chapter 70 by year](/state-aid/chapter-70-by-year) | page | — / 7.3 min | *(none declared)* |
 | [Share of the school budget](/state-aid/chapter-70-school-budget-share) | page | — / 6.5 min | *(none declared)* |
-| [Cherry sheet assessments](/state-aid/cherry-sheet-assessments) | page | — / 7.0 min | *(none declared)* |
+| [Cherry sheet assessments](/state-aid/cherry-sheet-assessments) | page | — / 7.1 min | *(none declared)* |
 | [Cherry sheet variance](/state-aid/cherry-sheet-variance) | page | — / 6.7 min | *(none declared)* |
 | [Foundation budget](/state-aid/foundation-budget) | page | — / 6.5 min | *(none declared)* |
 | [Minimum aid](/state-aid/minimum-aid) | page | — / 6.9 min | *(none declared)* |
@@ -278,8 +290,8 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [State aid growth](/state-aid/state-aid-growth) | page | — / 7.0 min | *(none declared)* |
 | [Total state aid](/state-aid/total-state-aid) | page | — / 7.6 min | *(none declared)* |
 | [Stabilization funds](/town-reserves) | page | — / 7.1 min | *(none declared)* |
-| [General stabilization fund](/town-reserves/general-stabilization-fund) | page | — / 7.4 min | *(none declared)* |
-| [Reserves against the gap](/town-reserves/reserves-and-the-gap) | page | — / 6.7 min | *(none declared)* |
+| [General stabilization fund](/town-reserves/general-stabilization-fund) | page | — / 7.5 min | *(none declared)* |
+| [Reserves against the gap](/town-reserves/reserves-and-the-gap) | page | — / 6.8 min | *(none declared)* |
 | [Stabilization fund balances](/town-reserves/stabilization-balances) | page | — / 6.9 min | *(none declared)* |
 | [Stabilization deposits](/town-reserves/stabilization-deposits) | page | — / 7.4 min | *(none declared)* |
 | [Stabilization withdrawals](/town-reserves/stabilization-withdrawals) | page | — / 7.0 min | *(none declared)* |
@@ -288,11 +300,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Athletic bus funding](/transportation/athletic-bus-funding) | page | — / 6.7 min | *(none declared)* |
 | [Away trips by sport](/transportation/away-trips-by-sport) | page | — / 6.8 min | *(none declared)* |
 | [Bus cost by sport](/transportation/bus-cost-by-sport) | page | — / 7.0 min | *(none declared)* |
-| [Bus fee](/transportation/bus-fee) | page | — / 6.4 min | *(none declared)* |
+| [Bus fee](/transportation/bus-fee) | page | — / 6.5 min | *(none declared)* |
 | [Dee Bus contract](/transportation/dee-bus-contract) | page | — / 6.9 min | *(none declared)* |
-| [FY2027 athletic bus cut](/transportation/fy2027-athletic-bus-cut) | page | — / 7.0 min | *(none declared)* |
+| [FY2027 athletic bus cut](/transportation/fy2027-athletic-bus-cut) | page | — / 7.1 min | *(none declared)* |
 | [FY2027 bus budget](/transportation/fy2027-bus-budget) | page | — / 6.7 min | *(none declared)* |
-| [Special education transportation](/transportation/special-education-transportation) | page | — / 6.9 min | *(none declared)* |
+| [Special education transportation](/transportation/special-education-transportation) | page | — / 7.0 min | *(none declared)* |
 | [State reimbursement](/transportation/state-reimbursement) | page | — / 6.4 min | *(none declared)* |
 | [Budget Crisis](/walkthrough) | page | 2.9 / 35.8 min | 1. Projections show a $933k deficit next year, and one in every year after it.<br>2. The budget in force already cut 9.2 FTE, and the projection reopens anyway.<br>3. Costs grow 5.18% a year and revenue 3.02%: a rate problem, not a bad year.<br>4. Salaries and health insurance are 65% of the budget — the only two lines that can change the direction, and neither is a School Committee vote.<br>5. About $795k a year of free cash could go to the schools, and it is one-time money. |
 | [What a family actually pays](/what-families-pay) | page | 4.0 / 37.1 min | 1. Two high schoolers, one sport each, the bus and a club: $1,110 a year.<br>2. Three children playing one sport each pay $812.50 a year at the full rate.<br>3. A second child adds $460 to a family’s school bill. |
@@ -624,10 +636,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Stormwater Task Force — budget schedule](/boards/stormwater-task-force/schedule) | reference | — / 6.0 min | *(none declared)* |
 | [Stormwater Task Force — where the time goes](/boards/stormwater-task-force/time) | reference | — / 5.9 min | *(none declared)* |
 | [Stormwater Task Force — votes](/boards/stormwater-task-force/votes) | reference | — / 18.5 min | *(none declared)* |
-| [TCP Building Design Committee](/boards/tcp-building-design-committee) | reference | — / 6.6 min | *(none declared)* |
-| [TCP Building Design Committee — meetings](/boards/tcp-building-design-committee/meetings) | reference | — / 7.5 min | *(none declared)* |
-| [TCP Building Design Committee — where the time goes](/boards/tcp-building-design-committee/time) | reference | — / 5.8 min | *(none declared)* |
-| [TCP Building Design Committee — votes](/boards/tcp-building-design-committee/votes) | reference | — / 7.1 min | *(none declared)* |
+| [TCP Building Design Committee](/boards/tcp-building-design-committee) | reference | — / 7.0 min | *(none declared)* |
+| [TCP Building Design Committee — meetings](/boards/tcp-building-design-committee/meetings) | reference | — / 7.6 min | *(none declared)* |
+| [TCP Building Design Committee — where the time goes](/boards/tcp-building-design-committee/time) | reference | — / 5.9 min | *(none declared)* |
+| [TCP Building Design Committee — votes](/boards/tcp-building-design-committee/votes) | reference | — / 8.1 min | *(none declared)* |
 | [Town Manager Screening Committee](/boards/town-manager-screening-committee) | reference | — / 7.4 min | *(none declared)* |
 | [Town Manager Screening Committee — about](/boards/town-manager-screening-committee/about) | reference | — / 7.3 min | *(none declared)* |
 | [Town Manager Screening Committee — meetings](/boards/town-manager-screening-committee/meetings) | reference | — / 7.2 min | *(none declared)* |
@@ -685,7 +697,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Go deeper](/go-deeper) | reference | — / 8.4 min | *(none declared)* |
 | [Grants open to Lunenburg — DESE programs a school district can apply for](/grants-open-to-lunenburg) | reference | — / 20.3 min | *(none declared)* |
 | [Job postings — the town and the schools](/jobs) | reference | — / 12.8 min | *(none declared)* |
-| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 448.9 min | *(none declared)* |
+| [Meeting minutes, written from the recordings](/meeting-minutes) | reference | — / 449.4 min | *(none declared)* |
 | [Agricultural Commission, February 17, 2022](/meeting-minutes/agricultural-commission/2022-02-17-0ZIyMdjowFU) | reference | — / 12.7 min | *(none declared)* |
 | [Architectural Preservation District Commission, March 10, 2022](/meeting-minutes/architectural-preservation-district-commission/2022-03-10-AGHQVROpYA4) | reference | — / 10.9 min | *(none declared)* |
 | [Architectural Preservation District Commission, January 5, 2023](/meeting-minutes/architectural-preservation-district-commission/2023-01-05-dGRjCkC0XiE) | reference | — / 14.3 min | *(none declared)* |
@@ -1053,6 +1065,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-PbkkhwgRyUQ) | reference | — / 9.5 min | *(none declared)* |
 | [Finance Committee Appointing Committee, February 18, 2025](/meeting-minutes/finance-committee-appointing-committee/2025-02-18-aRgNS23pU6U) | reference | — / 9.5 min | *(none declared)* |
 | [Finance Committee Appointing Committee, July 6, 2026](/meeting-minutes/finance-committee-appointing-committee/2026-07-06-CqrerhpDpWk) | reference | — / 10.4 min | *(none declared)* |
+| [Finance Committee, October 7, 2021](/meeting-minutes/finance-committee/2021-10-07-cmyWUZzeBS0) | reference | — / 12.2 min | *(none declared)* |
 | [Finance Committee, October 14, 2021](/meeting-minutes/finance-committee/2021-10-14-ueog2Zsqgtw) | reference | — / 17.5 min | *(none declared)* |
 | [Finance Committee, October 28, 2021](/meeting-minutes/finance-committee/2021-10-28-Gp102JkcQdU) | reference | — / 14.4 min | *(none declared)* |
 | [Finance Committee, November 4, 2021](/meeting-minutes/finance-committee/2021-11-04-kUqJBVgp2mk) | reference | — / 15.0 min | *(none declared)* |
@@ -2190,6 +2203,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Stormwater Task Force, September 14, 2026](/meeting-minutes/stormwater-task-force/2026-09-14-fHuUxPFr0rg) | reference | — / 10.8 min | *(none declared)* |
 | [Stormwater Task Force, September 21, 2026](/meeting-minutes/stormwater-task-force/2026-09-21-uXzVaiUhtzw) | reference | — / 12.5 min | *(none declared)* |
 | [Stormwater Task Force, October 15, 2026](/meeting-minutes/stormwater-task-force/2026-10-15-6WmGpAdBTZQ) | reference | — / 14.0 min | *(none declared)* |
+| [TCP Building Design Committee, October 6, 2021](/meeting-minutes/tcp-building-design-committee/2021-10-06-muorV2PV6RA) | reference | — / 10.7 min | *(none declared)* |
 | [TCP Building Design Committee, October 20, 2021](/meeting-minutes/tcp-building-design-committee/2021-10-20-XKdzno_0IiQ) | reference | — / 9.9 min | *(none declared)* |
 | [TCP Building Design Committee, October 27, 2021](/meeting-minutes/tcp-building-design-committee/2021-10-27-i8JO7I5i7v0) | reference | — / 11.0 min | *(none declared)* |
 | [TCP Building Design Committee, November 10, 2021](/meeting-minutes/tcp-building-design-committee/2021-11-10-l0pPhBrJ69Q) | reference | — / 11.5 min | *(none declared)* |
@@ -2304,11 +2318,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 53.8 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 54.3 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.4 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 19.3 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.7 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.5 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 15.5 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 472.4 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
-| [What we cannot answer](/what-we-cannot-answer) | reference | — / 218.4 min | *(none declared)* |
+| [What we cannot answer](/what-we-cannot-answer) | reference | — / 219.4 min | *(none declared)* |

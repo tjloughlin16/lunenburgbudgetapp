@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-04-26",
  "docid": "4130",
@@ -12,6 +12,46 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "This document is a Multirule Certification form signed by Planning Board member Matthew Atlison on 10/02/07, certifying that he missed a public hearing on April 26, 2021 regarding 101 Pleasant Street Definitive Subdivision Plan. It is not meeting minutes and contains no votes, motions, or voting outcomes.",
- "cost_usd": 0.0762385
+ "note": "Not board minutes. The text is a single page of a Multiple Rule Certification form (G.L.c.39 s.23D, adopted Town Meeting December 5, 2006) in which one Planning Board member certifies he missed a public hearing on the 101 Pleasant Street Definitive Subdivision Plan held April 26, 2021 and reviewed its evidence. It records no meeting, no attendance, no motions, no votes, no budget figures, no public comment. The OCR has dropped nearly all spaces, and the signature date and filing block are garbled, so they are not quoted. The form's checkbox options (Minutes of the missed hearing; Audio/video recording; Other) are unmarked in the text, so no documents are recorded as used. The member's name appears as 'MatthewAtlison' in the text; it is given here as 'Matthew Atlison' as the page's heading prints it. Status 'absent' refers only to the missed hearing.",
+ "cost_usd": 0.01282405,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Atlison",
+   "role": "Member, Lunenburg Planning Board (signer of the certification; the form does not print a title beyond 'a member of the Lunenburg Planning Board')",
+   "status": "absent",
+   "quote": "1.iamamemberofthelunenburgplanningboard"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Multiple Rule certification for a missed public hearing, 101 Pleasant Street Definitive Subdivision Plan",
+   "resolution": "certification form filed as record (no board vote)",
+   "quote": "101pleasantstreetdefinitivesubdivisionplan",
+   "tags": [
+    "subdivision",
+    "public hearing",
+    "certification"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "missed hearing",
+  "certification",
+  "G.L. c.39 s.23D",
+  "101 Pleasant Street"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

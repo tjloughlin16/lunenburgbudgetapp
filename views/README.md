@@ -18,9 +18,9 @@ Regenerate after any ingest:
 
 ## Coverage, stated rather than implied
 
-**703 of 5502 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
+**703 of 5504 catalogued documents are placed by year.** A document appears under every year it states in its title AND every year the extracts record it as supplying — **110 reach years their own name does not mention**, which is the point: `fy27-proposals.xlsx` is a main source for FY23, FY24 and FY25 and says only FY27.
 
-The other **4799 do not**, and are NOT placed by year. A fiscal year is taken only from
+The other **4801 do not**, and are NOT placed by year. A fiscal year is taken only from
 an explicit `FY26`-style marker, never inferred from a publication date — a document
 published in March 2026 is usually about FY27, and guessing would file real
 documents under wrong years. Every one of them is reachable through `by-group/`.
@@ -308,6 +308,7 @@ Listed so this view cannot look more complete than it is.
 - `data/dese-grant-opportunities.csv` — DESE’s current grant opportunities, one row per program, with eligibility
 - `data/dese-radar.csv` — DESE’s own figures, every district, FY2009–FY2025
 - `data/dese-source-registry.csv` — Every DESE dataset this project reads, and how to refresh it
+- `data/dese-sped-expenditure.csv` — Special education spending as DESE prints it, FY2008–FY2025
 - `data/dese-sped-indicator.csv` — Special education indicators and staffing ratios, SY2017–SY2026
 - `data/dese-sped-movement.csv` — Children entering and leaving special education services, SY2019–SY2025
 - `data/dese-sped-program.csv` — What the students with disabilities are, SY2020–SY2026
@@ -460,4 +461,3 @@ Listed so this view cannot look more complete than it is.
 - `data/search-affinity.csv` — Which words pin which page or document at the top of a search
 - `data/search-vocabulary.csv` — The site’s own vocabulary, for the search box’s suggestions
 - `data/ski-coop.csv` — The ski co-op invoice, line by line and town by town
-- `data/special-revenue-funds.csv` — The special revenue funds, FY2011–FY2025

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-04-26",
  "docid": "4148",
@@ -12,15 +12,187 @@
  },
  "votes": [
   {
-   "motion": "Continue the hearing to May 10 at 6:35 p.m.",
+   "motion": "Continue the public hearing on the 101 Pleasant Street definitive subdivision to May 10, 2021 at 6:35 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "p. bertram made motion to continue the hearing to may 10, 6:35 p.m., m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; t. cole, aye. vote passed 3-0."
+   "procedural": false,
+   "quote": "p. bertram made motion to continue the hearing to may 10, 6:35 p.m., m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; t. cole, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0902125
+ "note": "Text extract, not a scan. Spacing is irregular in places (e.g. 'Subdivi son', 'mainte nance'); quotes are collapsed to single spaces where needed. One motion, a continuance by roll call; no other motions, adjournment, or minutes approval recorded. No dollar figures are printed in these minutes. The Hearing recessed at 8:02 p.m. without a recorded motion.",
+ "cost_usd": 0.023896900000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "status": "absent",
+   "quote": "matthew allison, erik torgersen",
+   "role": "Chair"
+  },
+  {
+   "name": "Tanner Cole",
+   "status": "present",
+   "quote": "tanner cole, present; paula bertram, present; matthew brenner, present.",
+   "role": "Vice Chair"
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "tanner cole, present; paula bertram, present; matthew brenner, present.",
+   "role": "Clerk"
+  },
+  {
+   "name": "Matthew Brenner",
+   "status": "present",
+   "quote": "tanner cole, present; paula bertram, present; matthew brenner, present.",
+   "role": "Member"
+  },
+  {
+   "name": "Erik Torgersen",
+   "status": "absent",
+   "quote": "matthew allison, erik torgersen",
+   "role": "Member"
+  },
+  {
+   "name": "Adam Burney",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director:",
+   "role": "Land Use Director"
+  },
+  {
+   "name": "Trevor Fletcher",
+   "status": "present",
+   "quote": "the applicant was represented by trevor fletcher, graz engineering.",
+   "role": "representing the applicant (Graz Engineering)"
+  },
+  {
+   "name": "Gregory Bittner",
+   "status": "present",
+   "quote": "gregory bittner, 32 sandy cove road",
+   "role": ""
+  },
+  {
+   "name": "Andrea Adams",
+   "status": "present",
+   "quote": "andrea adams- she was representing her mother",
+   "role": "representing her mother, who resided at 39 Pleasant Street"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Applicant to submit justification for the requested waivers so the Board could vote on the waivers and the setback at its May 10 meeting (staff recommendation; no board vote recorded on this point).",
+   "quote": "a. burney recommended the applicant submit justification for the requested waivers"
+  },
+  {
+   "decision": "Land Use Director to request an opinion from the Building Commissioner on whether the 25-foot setback runs from the property line or the street line.",
+   "quote": "a. burney responded that he would request an opinion from the building commissioner."
+  },
+  {
+   "decision": "Land Use Director to verify with Town Counsel whether the private roadway and HOA ownership can be memorialized through the subdivision approval, which requires the applicant's agreement.",
+   "quote": "a. burney maintained that would have to be with the agreement of the applicant, but he would also verify with town counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial security for residential subdivision",
+   "what_was_recorded": "The minutes state that a form of financial security would be required with the Town if any work was not completed by the applicant; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "for a residential subdivision, a form of financial security would be required with the town in the ev ent any of the work was not completed by the applicant",
+   "quote_taken_from_text": true
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Gregory Bittner",
+   "stated_role": "32 Sandy Cove Road",
+   "topic": "affordable housing component",
+   "quote": "inquired if there would be an affordable housing component with the residential subdivision as there would be more than ten (10) units."
+  },
+  {
+   "speaker": "Gregory Bittner",
+   "stated_role": "32 Sandy Cove Road",
+   "topic": "active road cut moratorium",
+   "quote": "inquired if there was an active road cut moratorium that would have to be taken into consideration."
+  },
+  {
+   "speaker": "Andrea Adams",
+   "stated_role": "representing her mother, who resided at 39 Pleasant Street",
+   "topic": "project comments, wetlands and roadway",
+   "quote": "she was developing comments on the project, to include comments on the roadway."
+  },
+  {
+   "speaker": "representatives of 182 Massachusetts Avenue",
+   "stated_role": "abutting property representatives (unnamed)",
+   "topic": "keeping everything open and honest",
+   "quote": "both g. bittner and representatives of 182 massachusetts avenue voiced concern with the applicant keeping everything open and honest."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: 101 Pleasant Street six-lot duplex definitive subdivision",
+   "resolution": "continued to May 10, 2021",
+   "quote": "for a six-lot subdivision consisting of six duplex buildings at 101 pleasant street (map 095, parcel 0003), lunenburg, ma.",
+   "tags": [
+    "subdivision",
+    "definitive plan",
+    "duplex",
+    "Pleasant Street",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Definitive Subdivision Plan, dtd 03.22.2021",
+   "where": "list",
+   "quote": "definitive subdivision plan, dtd 03.22.2021"
+  },
+  {
+   "name": "Review letter, Graves Engineering, Inc., dtd 04.26.2021 (Jeff Walsh, GEI)",
+   "where": "list",
+   "quote": "review letter, graves engineering, inc., dtd 04.26.2021"
+  },
+  {
+   "name": "Memorandum, DPW Director, dtd 04.22.2021",
+   "where": "list",
+   "quote": "memorandum, dpw director, dtd 04.22.2021"
+  },
+  {
+   "name": "Code of the Town of Lunenburg, Chapter 325 Subdivision Regulations, Article III, Section 325-3.4 (Definitive Plan)",
+   "where": "text",
+   "quote": "article iii, section 325-3.4. definitive plan of the code of the town of lunenburg"
+  },
+  {
+   "name": "Zoning bylaw (affordable housing requirement for residential development of nine or more units)",
+   "where": "text",
+   "quote": "under the zoning bylaw, any residential development of nine (9) or more units required 10% of the units to be affordable."
+  },
+  {
+   "name": "Operation and Maintenance Plan (O&M Plan)",
+   "where": "text",
+   "quote": "the o&m plan needed to be updated and possibly reviewed by town counsel."
+  }
+ ],
+ "tags": [
+  "subdivision",
+  "definitive plan",
+  "stormwater",
+  "wetlands",
+  "waivers",
+  "affordable housing",
+  "HOA",
+  "roadway",
+  "Pleasant Street",
+  "public hearing",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }
