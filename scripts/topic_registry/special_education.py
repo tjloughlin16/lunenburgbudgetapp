@@ -22,7 +22,7 @@ CATEGORY = dict(
         ('What it costs', ['sped-all-funds', 'out-of-district-tuition', 'cost-per-placement',
                            'in-district-special-education', 'special-education-transportation',
                            'sped-providers']),
-        ('What comes back', ['circuit-breaker', 'circuit-breaker-account',
+        ('What comes back', ['sped-grants', 'circuit-breaker', 'circuit-breaker-account',
                              'special-education-grants', 'how-tuition-is-paid']),
         ('Budgets and surprises', ['tuition-budget', 'special-education-overruns',
                                    'fy2026-tuition-lines', 'sped-burndown']),
@@ -38,6 +38,7 @@ CATEGORY = dict(
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_special_education_topics.py'
 TOPIC_GENERATORS = {'sped-all-funds': 'build_school_all_funds.py',
+                    'sped-grants': 'build_school_all_funds.py',
                     # Merged 26 October 2026 with the SERF shelf's five steps, which need
                     # that script's measures (TJ: "only have one called 'circuit breaker'").
                     'circuit-breaker': 'build_serf_topics.py',
@@ -60,6 +61,9 @@ TOPICS = {
     'hiring-versus-placing': 'Hiring versus placing',
     'class-size-limits': 'Class size limits',
     'sped-all-funds': 'Special education, all funds',
+    # Every special education stream outside the vote, by name (TJ, 26 October 2026: "we ALSO
+    # need a general 'special education grants' page that does it all").
+    'sped-grants': 'Special education grants',
     'sped-providers': 'Special education providers',
     'sped-burndown': 'Special education burndown',
     'sped-definition': 'Special education definition',

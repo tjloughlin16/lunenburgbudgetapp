@@ -65,6 +65,11 @@ RELATED = [
      ('sped-definition', 'Why our special education total differs from the state’s'),
      ('circuit-breaker', 'What the state reimburses for the costliest placements'),
      ('circuit-breaker-account', 'What the circuit breaker account holds at each year end')],
+    # Special education grants: every stream by name, beside the grants a surprise may draw on.
+    [('sped-grants', 'Every special education grant and the circuit breaker, by year'),
+     ('special-education-grants', 'Which grants could pay for a mid-year surprise'),
+     ('/special-education/circuit-breaker', 'Circuit breaker',
+      'How the state works out its reimbursement')],
     # Money left over: carried as orders, held in funds, set against each budget line.
     [('carried-over-orders', 'Open orders carried from one year into the next'),
      ('unspent-by-fund', 'What each fund held unspent at the end of the year'),

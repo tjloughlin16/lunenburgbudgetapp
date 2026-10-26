@@ -209,6 +209,7 @@
     {
      "title": "What comes back",
      "topics": [
+      "sped-grants",
       "circuit-breaker",
       "circuit-breaker-account",
       "special-education-grants",
@@ -4389,12 +4390,25 @@
    "minutes": 1,
    "path": "/special-education-reserve/special-education-grants",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "sped-grants",
+     "path": "/special-education/sped-grants",
+     "title": "Special education grants",
+     "why": "Every special education grant and the circuit breaker, by year"
+    },
+    {
+     "id": "/special-education/circuit-breaker",
+     "path": "/special-education/circuit-breaker",
+     "title": "Circuit breaker",
+     "why": "How the state works out its reimbursement"
+    }
+   ],
    "shelves": [
     "special-education-reserve",
     "special-education"
    ],
-   "title": "Special education grants"
+   "title": "Grants for surprises"
   },
   "special-education-overruns": {
    "finding": "A special education line ran over its vote in 13 of 17 years; the worst, FY2013, by $223,774.",
@@ -4546,6 +4560,33 @@
     "special-education"
    ],
    "title": "Special education definition"
+  },
+  "sped-grants": {
+   "finding": "Special education grants and the circuit breaker paid $1,055,922 in FY2023 and $773,361 in FY2026.",
+   "generator": "scripts/build_school_all_funds.py",
+   "home": "special-education",
+   "id": "sped-grants",
+   "minutes": 2,
+   "path": "/special-education/sped-grants",
+   "ready": true,
+   "related": [
+    {
+     "id": "special-education-grants",
+     "path": "/special-education-reserve/special-education-grants",
+     "title": "Grants for surprises",
+     "why": "Which grants could pay for a mid-year surprise"
+    },
+    {
+     "id": "/special-education/circuit-breaker",
+     "path": "/special-education/circuit-breaker",
+     "title": "Circuit breaker",
+     "why": "How the state works out its reimbursement"
+    }
+   ],
+   "shelves": [
+    "special-education"
+   ],
+   "title": "Special education grants"
   },
   "sped-providers": {
    "finding": "Three payees took 66.5% of special education vendor payments; Keystone was paid 4.3 times as much by FY2026.",

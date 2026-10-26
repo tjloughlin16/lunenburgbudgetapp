@@ -12,6 +12,7 @@
     unspent-by-fund           /school-all-funds/unspent-by-fund            receipts, spending, balance
     grant-coding              /school-all-funds/grant-coding               H2: is grant spending on a line?
     sped-all-funds            /special-education/sped-all-funds            H1: special education, filtered
+    sped-grants               /special-education/sped-grants               every special education stream outside the vote
 
 Phase 3 of notes/MASTER-PLAN.md (items 11-15 and the two hypotheses). TJ, 22 October 2026: "the
 schools' 'budget' is just the general fund. They layer in grants and stuff to their
@@ -137,6 +138,12 @@ SERIES = [('1', 'Administration'), ('2', 'Instruction'), ('3', 'Other student se
           ('7', 'Equipment'), ('9', 'Tuition to other schools')]
 TOP_LINES = 16          # lines drawn in the ranking, beside the unattributed row
 TOP_PAYEES = 12
+# THE SPECIAL EDUCATION STREAMS OUTSIDE THE VOTE, by DESE fund code (sped-grants). Named with
+# journal.GRANT_PROGRAM. The page refuses if these and the circuit breaker stop adding to the
+# other-funds spending on sped-all-funds, so a new stream cannot be silently left off.
+SG_CODES = ('240', '262', '252', '264', '274', '298')
+ALLOC_CSV = os.path.join(DATA, 'dese-entitlement-allocations.csv')
+CB_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'circuit-breaker.json')
 BENEFITS_CLOSES = ('the Town’s schedule of school benefits and town-side costs, by fund')
 
 
@@ -395,6 +402,20 @@ def grant_year(name):
     """The fiscal year a grant fund is named for: 'FY24 #240' -> 2024. None if unnamed."""
     mm = re.match(r"\s*FY\s*'?\s*(\d\d)(?!\d)", name)
     return 2000 + int(mm.group(1)) if mm else None
+
+
+def read_allocations():
+    """{(code, fy): dollars}: DESE's entitlement allocations to Lunenburg (district 0162) for the
+    special education codes, every year the file lists. Per code; build_serf_topics.read_idea
+    sums #240 and #262 from the same file, and build() asserts the two agree."""
+    out = {}
+    for r in csv.DictReader(open(ALLOC_CSV, encoding='utf-8')):
+        c = r['fund_code'].lstrip('0')
+        if r['district_code'] == '0162' and c in SG_CODES:
+            if (c, int(r['fy'])) in out:
+                fail('DESE allocations list %s for %s twice' % (c, r['fy']))
+            out[(c, int(r['fy']))] = float(r['amount'])
+    return out
 
 
 # ======================================================================== pages
@@ -1107,6 +1128,255 @@ def build():
         'What special education costs in full, including benefits and work on unlabelled accounts.',
     ]
 
+    # ================================================== sped-grants
+    # EVERY SPECIAL EDUCATION STREAM OUTSIDE THE VOTE, BY NAME (TJ, 26 October 2026: "we ALSO
+    # need a general 'special education grants' page that does it all"). Spending is the same
+    # `sped` accumulation as sped-all-funds above (spent or still owed at the close), so the two
+    # pages cannot disagree: the streams must add to that page's "other funds" every year.
+    # Allocations are DESE's (read_allocations); they are a budget-side figure and are shown
+    # beside spending, never subtracted from it (rule 1).
+    SG = [c for c in SG_CODES]
+    sg_name = {c: PROGRAM[c] for c in SG}
+    sg_name['CB'] = 'Circuit breaker'
+    sg_keys = ['CB'] + SG
+    sg_fn = lambda k: 'Circuit breaker' if k == 'CB' else 'code:' + k
+    sg_c = lambda y, k, c: s.get((y, 'spent', sg_fn(k), c), 0.0)
+    sg_y = {(y, k): sum(sg_c(y, k, c) for c in comps) for y in Y for k in sg_keys}
+    sg_t = {y: sum(sg_y[(y, k)] for k in sg_keys) for y in Y}
+    for y in Y:
+        if abs(sg_t[y] - oa[y]) > 0.005:
+            fail('sped-grants %s: the named streams add to %.2f; other funds paid %.2f on '
+                 'sped-all-funds -- a stream is missing from SG_CODES' % (y, sg_t[y], oa[y]))
+    alloc = read_allocations()
+    # The same rule as build_serf_topics.read_idea (#240 plus #262): asserted, so the two pages'
+    # IDEA figures cannot drift apart. TODO: move both into one shared reader.
+    import build_serf_topics as _serf
+    for y, v in _serf.read_idea().items():
+        if abs(v - alloc.get(('240', y), 0.0) - alloc.get(('262', y), 0.0)) > 0.005:
+            fail('sped-grants: IDEA allocation %s differs from build_serf_topics.read_idea' % y)
+    # Each award: a ledger fund named for one award year of one program.
+    awards = []
+    for fnd, nm in m['fund_name'].items():
+        a = rep[fnd]
+        gc_ = J.grant_code(nm) if J.fund_group(a) == 'Grants' else None
+        if gc_ not in SG:
+            continue
+        spent_y = {y: m['fund_spent'].get((y, fnd), 0.0) for y in Y}
+        loaded = sum(m['fund_bud'].get((y, fnd), 0.0) for y in Y)
+        if not (any(round(v, 2) for v in spent_y.values()) or round(loaded, 2)):
+            continue
+        gy = grant_year(nm)
+        if gy is None:
+            fail('sped-grants: fund %s %r names no award year' % (fnd, nm))
+        awards.append(dict(fund=fnd, code=gc_, gy=gy, spent=spent_y, loaded=loaded))
+    awards.sort(key=lambda r: (SG.index(r['code']), r['gy']))
+    for y in Y:
+        for k in SG:
+            got = sum(r['spent'][y] for r in awards if r['code'] == k)
+            if abs(got - sg_y[(y, k)]) > 0.005:
+                fail('sped-grants %s #%s: the awards add to %.2f, the stream to %.2f' % (y, k, got, sg_y[(y, k)]))
+    # The circuit breaker: what DESE paid, by fiscal year of payment, beside the ledger.
+    cbj = json.load(open(CB_JSON, encoding='utf-8'))
+    cb_paid = {r['fy']: float(r['paid']) for r in cbj['series']}
+    cb_rec = {y: m['fund_rec'].get((y, '2640'), 0.0) for y in Y}
+    if abs(cb_rec[F0] - cb_paid[F0]) > 0.5:
+        fail('sped-grants: the circuit breaker fund received %.2f in %s; DESE paid %.2f'
+             % (cb_rec[F0], F0, cb_paid[F0]))
+    lag = cb_paid[F0 + 1] - cb_rec[F0 + 1]
+    if not (lag > 0 and abs((cb_rec[F0 + 2] - cb_paid[F0 + 2]) - lag) < 0.5):
+        fail('sped-grants: the conclusion says part of %s’s circuit breaker payment was booked '
+             'in %s; it no longer reads that way' % (F0 + 1, F0 + 2))
+    cb_short = cb_paid[F1] - cb_rec[F1]
+    if not cb_short > 0:
+        fail('sped-grants: the conclusion says the fund booked less than DESE paid in %s' % F1)
+    # IDEA (#240): rose every award year to a peak, then fell every year after.
+    i240 = sorted(y for (c, y) in alloc if c == '240')
+    peak = max(i240, key=lambda y: alloc[('240', y)])
+    if not (all(alloc[('240', b)] > alloc[('240', a_)] for a_, b in zip(i240, i240[1:]) if b <= peak)
+            and all(alloc[('240', b)] < alloc[('240', a_)] for a_, b in zip(i240, i240[1:]) if a_ >= peak)
+            and peak < i240[-1]):
+        fail('sped-grants: the IDEA conclusion says it rose every year, then fell')
+    n_fall = sum(1 for y in i240 if y > peak)
+    # Pandemic IDEA (#252, #264): allocated once, spent in F0, nothing after.
+    PAN = [c for c in SG if c in ('252', '264')]
+    if sorted({y for (c, y) in alloc if c in PAN}) != [F0 - 1]:
+        fail('sped-grants: the pandemic IDEA grants are said to be allocated in %s only' % (F0 - 1))
+    pan = {y: sum(sg_y[(y, k)] for k in PAN) for y in Y}
+    if not (pan[F0] > 0 and all(abs(pan[y]) < 0.005 for y in Y[1:])):
+        fail('sped-grants: the pandemic IDEA grants are said to have paid in %s only' % F0)
+    pan_c = {c: sum(sg_c(F0, k, c) for k in PAN) for c in comps}
+    pan_top = max(pan_c, key=lambda c: pan_c[c])
+    # Preschool IDEA (#262): the open year's award loaded and unspent; the three before it
+    # spent wholly in their own year.
+    pre = {r['gy']: r for r in awards if r['code'] == '262'}
+    pre_prev = [gy for gy in sorted(pre) if F0 <= gy < F1]
+    if not (F1 in pre and abs(sum(pre[F1]['spent'].values())) < 0.005 and pre[F1]['loaded'] > 0
+            and len(pre_prev) == len(Y) - 1
+            and all(abs(pre[gy]['spent'][gy] - sum(pre[gy]['spent'].values())) < 0.005
+                    and pre[gy]['spent'][gy] > 0 for gy in pre_prev)):
+        fail('sped-grants: the preschool conclusion says %s’s award is unspent and the three '
+             'before were spent in their own year' % F1)
+    if abs(pre[F1]['loaded'] - alloc[('262', F1)]) > 0.005:
+        fail('sped-grants: the preschool award loaded differs from DESE’s allocation')
+    sgx = {}
+    for y in (F0, F1):
+        sgx['sg-t%d' % y] = f('sg-t%d' % y, U(sg_t[y]), 'paid by grants and the circuit breaker, %s' % C.fy(y),
+                             'published', {'y': F(y)})
+    sgx['sg-ipk'] = f('sg-ipk', U(alloc[('240', peak)]), 'IDEA allocated, %s, the peak' % C.fy(peak),
+                      'published', {'y': F(peak)})
+    sgx['sg-ilast'] = f('sg-ilast', U(alloc[('240', i240[-1])]), 'IDEA allocated, %s' % C.fy(i240[-1]),
+                        'published', {'y': F(i240[-1])})
+    sgx['sg-cbp'] = f('sg-cbp', U(cb_paid[F1]), 'circuit breaker paid by DESE, %s' % C.fy(F1), 'published',
+                      {'y': F(F1)})
+    sgx['sg-cbr'] = f('sg-cbr', U(cb_rec[F1]), 'booked received in the fund, %s' % C.fy(F1), 'published',
+                      {'y': F(F1)})
+    sgx['sg-cbs'] = f('sg-cbs', U(sg_y[(F1, 'CB')]), 'spent from the fund, %s' % C.fy(F1), 'published',
+                      {'y': F(F1)})
+    sgx['sg-cbwhy'] = f('sg-cbwhy', None, 'where the rest of the payment was booked', 'gap',
+                        closes='the Town Treasurer’s record of each %s circuit breaker payment: '
+                               'date received and fund credited' % C.fy(F1))
+    sgx['sg-pan'] = f('sg-pan', U(pan[F0]), 'pandemic IDEA spent, %s, its last year' % C.fy(F0), 'published',
+                      {'y': F(F0)})
+    sgx['sg-pre'] = f('sg-pre', U(pre[F1]['loaded']), 'preschool IDEA award loaded, %s' % C.fy(F1),
+                      'published', {'y': F(F1)})
+    sgx['sg-pre0'] = f('sg-pre0', U(sum(pre[F1]['spent'].values())), 'of it spent by the close',
+                       'published')
+    # Five bands, the chart's limit: the two small groups drawn together, each named in full in
+    # the table below by journal.GRANT_PROGRAM.
+    SMALL = [c for c in SG if c not in PAN + ['240', '262']]
+    bands = [('Circuit breaker', ['CB']), (sg_name['240'], ['240']), (sg_name['262'], ['262']),
+             ('Pandemic IDEA, ended', PAN), ('Program improvement grants', SMALL)]
+    if sorted(k for _, ks in bands for k in ks) != sorted(sg_keys):
+        fail('sped-grants: the chart bands do not hold every stream once')
+    sg_tracks = [TP.track(nm, [sum(sg_y[(y, k)] for k in ks) for y in Y], 'published', 'bar')
+                 for nm, ks in bands]
+    # THE TABLES. Every row foots: the streams to sg_t (= sped-all-funds' other funds), the
+    # awards to the streams, asserted above.
+    yr_rows = [dict(label='%s (#%s)' % (sg_name[k], k) if k != 'CB' else 'Circuit breaker (fund 2640)',
+                    cells=[C.usd(sg_y[(y, k)]) if round(sg_y[(y, k)]) else '' for y in Y]
+                    + [C.usd(sum(sg_y[(y, k)] for y in Y))]) for k in sg_keys]
+    yr_rows.append(dict(label='All of it', cells=[C.usd(sg_t[y]) for y in Y] + [C.usd(sum(sg_t.values()))]))
+    aw_rows = []
+    for r in awards:
+        al_ = alloc.get((r['code'], r['gy']))
+        aw_rows.append(dict(
+            label='%s (#%s), %s award' % (sg_name[r['code']], r['code'], C.fy(r['gy'])),
+            cells=[C.usd(al_) if al_ is not None else 'not listed', C.usd(r['loaded'])]
+            + [C.usd(r['spent'][y]) if round(r['spent'][y]) else '' for y in Y]
+            + [C.usd(sum(r['spent'].values()))]))
+    cb_rows = [dict(label='Paid by DESE, by year of payment', cells=[C.usd(cb_paid[y]) for y in Y]),
+               dict(label='Booked received in fund 2640', cells=[C.usd(cb_rec[y]) for y in Y]),
+               dict(label='Spent from fund 2640', cells=[C.usd(sg_y[(y, 'CB')]) for y in Y])]
+
+    def card(title, keys, sub, so):
+        rows = [(J.COMPONENT_LABEL[c], C.usd(sum(sg_c(y, k, c) for y in Y for k in keys)), None)
+                for c in comps if round(sum(sg_c(y, k, c) for y in Y for k in keys))]
+        tot = sum(sg_y[(y, k)] for y in Y for k in keys)
+        if abs(sum(sum(sg_c(y, k, c) for y in Y for k in keys) for c in comps) - tot) > 0.005:
+            fail('sped-grants: card %r does not foot' % title)
+        rows.append((('All of it, %s' % C.fyspan(F0, F1), {'y': F(F0), 'z': F(F1)}), C.usd(tot), None))
+        return TB.panel(title, rows, sub=sub, so=so)
+    cb4 = {c: sum(sg_c(y, 'CB', c) for y in Y) for c in comps}
+    i4 = {c: sum(sg_c(y, '240', c) for y in Y) for c in comps}
+    cb_top, i_top = max(cb4, key=cb4.get), max(i4, key=i4.get)
+    if cb_top != 'tuition' or i_top != 'pay':
+        fail('sped-grants: the cards say the circuit breaker mostly paid tuition and IDEA mostly pay')
+    pay_blocks = TB.panels('What each one pays for', [
+        card(('IDEA (#240)', None, ('240',)), ['240'],
+             'Federal, by formula. Each award is spent over up to three school years.',
+             'Mostly staff pay: the grant pays for people, so a smaller award is a question about posts.'),
+        card('Circuit breaker', ['CB'],
+             'Not a grant: the state repaying part of last year’s costliest placements.',
+             'Mostly tuition: it follows the placements it repays, so it moves with them a year late.'),
+        card(('Preschool IDEA (#262)', None, ('262',)), ['262'],
+             'Federal, by formula, for children aged three to five.',
+             'Small and steady: it changes little from year to year.'),
+        card('Ended and small grants', PAN + SMALL,
+             'Pandemic IDEA, ended; and the program improvement grants.',
+             'Money that has stopped: whatever it paid for is now paid by another fund or not at all.'),
+    ], place='also1')
+
+    out['sped-grants'] = TP.page(
+        'sped-grants',
+        'Special education grants and the circuit breaker paid %s in %s and %s in %s.'
+        % (C.usd(sg_t[F0]), C.fy(F0), C.usd(sg_t[F1]), C.fy(F1)),
+        list(sgx.values()),
+        [con('IDEA rose every year to %s for %s, then fell %s years running, to %s for %s.'
+             % (C.usd(alloc[('240', peak)]), C.fy(peak), C.num(n_fall), C.usd(alloc[('240', i240[-1])]),
+                C.fy(i240[-1])), ['sg-ipk', 'sg-ilast'],
+             {'a': U(alloc[('240', peak)]), 'y': F(peak), 'n': N(n_fall),
+              'b': U(alloc[('240', i240[-1])]), 'z': F(i240[-1])},
+             so='The largest grant has stopped growing, so none of the next rise in special '
+                'education costs is covered by it.',
+             notes=[step('An allocation is what DESE awards; spending is what the ledger shows. '
+                         'They are different stages, shown side by side and never subtracted.',
+                         'measured')]),
+         con('DESE paid %s of circuit breaker in %s; the fund booked %s received and spent %s.'
+             % (C.usd(cb_paid[F1]), C.fy(F1), C.usd(cb_rec[F1]), C.usd(sg_y[(F1, 'CB')])),
+             ['sg-cbp', 'sg-cbr', 'sg-cbs', 'sg-cbwhy'],
+             {'a': U(cb_paid[F1]), 'y': F(F1), 'b': U(cb_rec[F1]), 'c': U(sg_y[(F1, 'CB')])},
+             so=('The rest may be booked later, as %s of %s’s was, or booked elsewhere; '
+                 'the ledger cannot say which.' % (C.usd(lag), C.fy(F0 + 1))),
+             so_figures={'a': U(lag), 'y': F(F0 + 1)},
+             notes=[step('%s is not yet closed in this run.' % C.fy(F1), 'gap', {'y': F(F1)},
+                         closes='the Town’s journal report for %s, run after the year is closed' % C.fy(F1)),
+                    step('How the reimbursement is worked out, and Chapter 70, which is general '
+                         'state aid and not a special education grant, are on the circuit breaker '
+                         'page.', 'measured', allow=('70',),
+                         cite=('/special-education/circuit-breaker', 'Circuit breaker'))]),
+         con('The two pandemic IDEA grants paid %s in %s and nothing after; DESE allocated them once.'
+             % (C.usd(pan[F0]), C.fy(F0)), ['sg-pan'], {'a': U(pan[F0]), 'y': F(F0)},
+             so='What they paid for, mostly %s, either moved to another fund or stopped; the ledger '
+                'cannot tell which.' % J.COMPONENT_LABEL[pan_top].lower()),
+         con('Preschool IDEA’s %s award, %s, had nothing spent by the close; the %s before were spent in-year.'
+             % (C.fy(F1), C.usd(pre[F1]['loaded']), C.num(len(pre_prev))), ['sg-pre', 'sg-pre0'],
+             {'y': F(F1), 'a': U(pre[F1]['loaded']), 'n': N(len(pre_prev))},
+             so='Small, but the one award here with nothing spent; whether it was spent after the '
+                'close is not in this ledger.')],
+        finding_figures={'a': U(sg_t[F0]), 'y': F(F0), 'b': U(sg_t[F1]), 'z': F(F1)},
+        chart=TP.series('Special education money outside the vote', years, sg_tracks, '$', kind='bar',
+                        stacked=True, totals=True,
+                        note='Spent or still owed at the close, by the fund that paid. %s' % open_note,
+                        note_figures={'y': F(F1)}),
+        also=[TP.series('IDEA allocations by award year', [C.fy(y) for y in sorted({y for (_, y) in alloc})], [
+            TP.track(sg_name[k], [alloc.get((k, y)) for y in sorted({y for (_, y) in alloc})], 'published', 'line')
+            for k in ('240', '262')], '$', kind='line',
+            note='DESE’s allocations to Lunenburg, by the year of the award. The latest is announced, '
+                 'not yet spent.')],
+        table=dict(caption='Special education money outside the vote, by year', views=[dict(
+            key='years', label='By year', total_col=len(Y), kinds=['ledger'] * (len(Y) + 1),
+            columns=years + ['Four years'], rows=yr_rows,
+            note='Spent or still owed at the close. The bottom row is the other-funds figure on '
+                 'Special education, all funds.')]),
+        tables=[dict(caption='Each grant award: allocated, loaded and spent', views=[dict(
+            key='awards', label='By award', total_col=len(Y) + 2, kinds=['published', 'ledger'] + ['ledger'] * (len(Y) + 1),
+            columns=['Allocated by DESE', 'Loaded in the ledger'] + years + ['Spent, these years'],
+            rows=aw_rows,
+            note='Allocated and loaded are budgets; spent is the ledger, and is not subtracted from '
+                 'either. Loaded and spent count %s only: an older award’s earlier figures are not '
+                 'in this journal. Not listed: DESE’s file does not list that award.'
+                 % C.fyspan(F0, F1))]),
+                dict(caption='The circuit breaker: paid, received and spent', views=[dict(
+                    key='cb', label='Circuit breaker', total_col=None, kinds=['ledger'] * len(Y),
+                    columns=years, rows=cb_rows,
+                    note='DESE’s payment is by the fiscal year it was paid; the fund’s receipts and '
+                         'spending are the Town’s ledger.')])],
+        blocks=[TB.explain('Grants and a reimbursement', [
+            'The grants are federal awards DESE allocates to each district by formula. The '
+            'circuit breaker is not a grant: it is the state repaying part of the previous '
+            'year’s costliest placements.'], place='chart'), pay_blocks],
+        sources=sources() + [
+            dict(label='Massachusetts DESE — entitlement grant allocations, by district and fund '
+                       'code (dese-entitlement-allocations.csv)',
+                 href='/docs/data/dese-entitlement-allocations.csv'),
+            dict(label='Massachusetts DESE — circuit breaker reimbursements, every district '
+                       '(dese-circuit-breaker.xlsx)', href='/docs/state-dese/dese-circuit-breaker.xlsx')])
+    out['sped-grants']['not_established'] = [
+        'Where the rest of the latest circuit breaker payment was booked, if anywhere.',
+        'What the pandemic IDEA grants’ work was paid from after they ended, or whether it stopped.',
+        'Grants that pay special education from accounts the ledger does not label so.',
+    ]
+
     # ================================================== the hub
     hb = dict(
         v=f('h-v', U(m['gf_voted'][F1]), 'general fund, voted, %s' % C.fy(F1), 'published', {'y': F(F1)}),
@@ -1214,6 +1484,14 @@ def build():
         grant_line_share={str(y): round(g_line[y], 4) for y in Y},
         sped={str(y): dict(voted=round(gv[y], 2), gf_spent=round(ga[y], 2), outside=round(oa[y], 2))
               for y in Y},
+        sped_grants=dict(
+            streams={str(y): {k: round(sg_y[(y, k)], 2) for k in sg_keys} for y in Y},
+            total={str(y): round(sg_t[y], 2) for y in Y},
+            cb_paid={str(y): cb_paid[y] for y in Y},
+            cb_received={str(y): round(cb_rec[y], 2) for y in Y},
+            allocations={'%s-%d' % k: v for k, v in sorted(alloc.items())},
+            awards=[dict(fund=r['fund'], code=r['code'], award_fy=r['gy'], loaded=round(r['loaded'], 2),
+                         spent={str(y): round(r['spent'][y], 2) for y in Y}) for r in awards]),
         carry=[dict(fund=r['fund'], carried_fy2023=r['carried'], end=round(r['end'], 2),
                     owed_fy2026=round(r['owed'], 2)) for r in bal],
         annual_report_tie=[{k: r[k] for k in ('fund', 'ar_name', 'receipts', 'ar_receipts', 'spent',
@@ -1230,6 +1508,8 @@ def markdown(pages):
     is not known beneath them, its tables, what it does not establish, and its sources."""
     cat = REG.category(HUB)
     order = [HUB] + [t for _, ids in cat['groups'] for t in ids if t in pages]
+    # A page this script builds for another shelf (sped-grants) still belongs in the document.
+    order += sorted(t for t in pages if t not in order)
     hub = pages[HUB]
     o = ['# %s' % hub['title'], '', hub['answer']['text'], '',
          '*Generated by `scripts/build_school_all_funds.py` from the school MUNIS journal. Every '

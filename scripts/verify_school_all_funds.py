@@ -215,6 +215,50 @@ def main():
     if len(over) != 1:
         bad.append('sped: %d years with the general fund over its vote; the page says one' % len(over))
 
+    # special education grants (sped-grants): each stream from raw, by the '#code' in the fund's
+    # own name and fund 2640, every expense line spent; the circuit breaker's receipts; DESE's
+    # allocations from its CSV; and the finding and conclusions read back off the page.
+    import re
+    sgp = pay['sped_grants']
+    codes = [k for k in sgp['streams']['2023'] if k != 'CB']
+    sgr = defaultdict(Decimal)
+    for r in rows:
+        if not (r['exp'] and r['posts_to'] in SPENT):
+            continue
+        mm = re.search(r'#\s*(\d{3})\b', r['fund_name'])
+        k = 'CB' if r['fund'] == '2640' else (mm.group(1) if mm and group(r['fund']) == 'Grants' else None)
+        if k == 'CB' or k in codes:
+            sgr[(r['fy'], k)] += r['a']
+    for y in YEARS:
+        for k, v in sgp['streams'][str(y)].items():
+            check('sped-grants %s %d' % (k, y), v, sgr[(y, k)])
+        check('sped-grants total %d' % y, sgp['total'][str(y)], sum(v for (yy, _), v in sgr.items() if yy == y))
+        check('sped-grants total %d is sped-all-funds other funds' % y, sgp['total'][str(y)],
+              pay['sped'][str(y)]['outside'])
+        check('circuit breaker received %d' % y, sgp['cb_received'][str(y)], rec[(y, 'Circuit breaker')])
+    al = {}
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-entitlement-allocations.csv'), encoding='utf-8')):
+        if r['district_code'] == '0162' and r['fund_code'].lstrip('0') in codes:
+            al['%s-%s' % (r['fund_code'].lstrip('0'), r['fy'])] = Decimal(r['amount'])
+    if set(al) != set(sgp['allocations']):
+        bad.append('sped-grants allocations: payload holds %s, DESE CSV %s' % (sorted(sgp['allocations']), sorted(al)))
+    for k, v in sgp['allocations'].items():
+        check('sped-grants allocation %s' % k, v, al.get(k, 0))
+    sg = json.load(open(os.path.join(TOPICS, 'sped-grants.json'), encoding='utf-8'))
+    tot = lambda y: sum(v for (yy, _), v in sgr.items() if yy == y)
+    for want in (usd(tot(2023)), usd(tot(2026))):
+        if want not in sg['finding']['text']:
+            bad.append('sped-grants finding does not state %s: %r' % (want, sg['finding']['text']))
+    ctext = ' '.join(c['text'] + ' ' + c.get('so', {}).get('text', '') for c in sg['conclusions'])
+    lag = Decimal(str(sgp['cb_paid']['2024'])) - rec[(2024, 'Circuit breaker')]
+    for want in (usd(sgp['cb_paid']['2026']), usd(rec[(2026, 'Circuit breaker')]), usd(sgr[(2026, 'CB')]),
+                 usd(sgr[(2023, '252')] + sgr[(2023, '264')]), usd(lag), usd(al['240-2025']),
+                 usd(al['240-2027']), usd(al['262-2026'])):
+        if want not in ctext:
+            bad.append('sped-grants conclusions do not state %s' % want)
+    if any(sgr[(y, c)] for y in YEARS[1:] for c in ('252', '264')):
+        bad.append('sped-grants: the pandemic IDEA grants spent after FY2023; the page says they did not')
+
     if bad:
         print('verify_school_all_funds: %d problems' % len(bad))
         for b in bad:

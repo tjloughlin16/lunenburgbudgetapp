@@ -702,14 +702,18 @@ def build():
     MAP = {'ood': ('Out-of-district tuition',), 'trans': ('Transportation',),
            'indist': ('Contracted services and evaluations', 'Staff pay and benefits',
                       'Supplies, equipment and other')}
-    WANT_COLS = ['Voted, general fund', 'General fund spent', 'Circuit breaker', 'Grants',
-                 'Every fund spent']
+    # Since 26 October 2026 that table names each grant in its own column, only the grants that
+    # paid that year (TJ: "break down the other funds spent"); they are added back to one
+    # grants figure here. Rounded cell by cell, so the sum can sit a dollar or two off.
+    HEAD, TAIL = ['Voted, general fund', 'General fund spent', 'Circuit breaker'], 'Every fund spent'
     every = {}            # fy -> line -> [voted, gf spent, circuit breaker, grants, every fund]
     for v in AFP['table']['views']:
-        if v['columns'] != WANT_COLS:
+        if v['columns'][:3] != HEAD or v['columns'][-1] != TAIL or \
+                not all(re.search(r'\(#\d{3}\)$', c) for c in v['columns'][3:-1]):
             fail('sped-all-funds: its table columns moved: %s' % v['columns'])
         y = int(v['key'][2:])
-        rows = {r['label']: [money(c) for c in r['cells']] for r in v['rows']}
+        rows = {r['label']: (lambda xs: xs[:3] + [sum(xs[3:-1]), xs[-1]])([money(c) for c in r['cells']])
+                for r in v['rows']}
         if set(rows) != {x for xs in MAP.values() for x in xs} | {'All of it'}:
             fail('sped-all-funds FY%d: its rows are not the five components and a total' % y)
         every[y] = {g: [sum(rows[c][i] for c in cs) for i in range(5)] for g, cs in MAP.items()}

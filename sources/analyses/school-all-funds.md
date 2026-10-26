@@ -513,3 +513,38 @@ What this does not establish:
 - What special education costs in full, including benefits and work on unlabelled accounts.
 
 Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)](/docs/data/munis-school-journal.csv); [Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)](/docs/data/munis-school-journal-accounts.csv); [Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account](/docs/data/munis-school-ytd.csv); [Town of Lunenburg — how the journal reached us, and what was redacted](/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md)
+
+## Special education grants
+
+**Special education grants and the circuit breaker paid $1,055,922 in FY2023 and $773,361 in FY2026.**
+
+- IDEA rose every year to $424,156 for FY2025, then fell 2 years running, to $423,413 for FY2027.
+  - *measured:* An allocation is what DESE awards; spending is what the ledger shows. They are different stages, shown side by side and never subtracted.
+- DESE paid $579,142 of circuit breaker in FY2026; the fund booked $325,970 received and spent $337,499.
+  - *not known:* FY2026 is not yet closed in this run. — closes: the Town’s journal report for FY2026, run after the year is closed
+  - *measured:* How the reimbursement is worked out, and Chapter 70, which is general state aid and not a special education grant, are on the circuit breaker page.
+- The two pandemic IDEA grants paid $73,045 in FY2023 and nothing after; DESE allocated them once.
+- Preschool IDEA’s FY2026 award, $13,366, had nothing spent by the close; the 3 before were spent in-year.
+
+**Special education money outside the vote, by year — By year**
+
+| | FY2023 | FY2024 | FY2025 | FY2026 | Four years |
+|---|---:|---:|---:|---:|---:|
+| Circuit breaker (fund 2640) | $494,968 | $466,296 | $498,451 | $337,499 | $1,797,214 |
+| IDEA (special education) (#240) | $473,083 | $572,447 | $462,115 | $435,862 | $1,943,506 |
+| IDEA (preschool) (#262) | $13,083 | $13,325 | $13,373 |  | $39,781 |
+| IDEA (pandemic relief) (#252) | $64,816 |  |  |  | $64,816 |
+| IDEA preschool (pandemic relief) (#264) | $8,229 |  |  |  | $8,229 |
+| Special education program improvement (#274) | $543 | $13,477 |  |  | $14,021 |
+| Preschool special education program improvement (#298) | $1,200 |  |  |  | $1,200 |
+| All of it | $1,055,922 | $1,065,546 | $973,939 | $773,361 | $3,868,768 |
+
+*Spent or still owed at the close. The bottom row is the other-funds figure on Special education, all funds.*
+
+What this does not establish:
+
+- Where the rest of the latest circuit breaker payment was booked, if anywhere.
+- What the pandemic IDEA grants’ work was paid from after they ended, or whether it stopped.
+- Grants that pay special education from accounts the ledger does not label so.
+
+Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)](/docs/data/munis-school-journal.csv); [Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)](/docs/data/munis-school-journal-accounts.csv); [Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account](/docs/data/munis-school-ytd.csv); [Town of Lunenburg — how the journal reached us, and what was redacted](/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md); [Massachusetts DESE — entitlement grant allocations, by district and fund code (dese-entitlement-allocations.csv)](/docs/data/dese-entitlement-allocations.csv); [Massachusetts DESE — circuit breaker reimbursements, every district (dese-circuit-breaker.xlsx)](/docs/state-dese/dese-circuit-breaker.xlsx)
