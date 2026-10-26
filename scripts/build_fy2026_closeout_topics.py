@@ -1153,6 +1153,7 @@ def build():
                       so='Snow ran far past its vote and the town still stood under in June; '
                          'its close, not yet held, settles the year.'),
     ], matrix=mx)
+    why_left = why_it_was_left(L, left26, JS)
     out[HUB] = TP.hub(
         HUB,
         'The school general fund ended %s with %s unspent, %s of its budget, counting orders '
@@ -1160,6 +1161,7 @@ def build():
         % (C.fy(2026), C.usd(left26), C.pct(left_pct), C.fy(2025), C.usd(owed25),
            C.usd(t['available'])),
         hub_ladder, chart=dict(id='fy26-school-surplus-waterfall', source=SRC26), table=runs_table,
+        blocks=[why_left],
         answer_figures={'y': F(2026), 'a': U(left26), 'p': P(left_pct), 'z': F(2025),
                         'b': U(owed25), 't': U(t['available'])})
 
@@ -1167,6 +1169,120 @@ def build():
         fail('the pages built are not the pages the registry gives this script: %s'
              % sorted(set(MINE) ^ set(out)))
     return out
+
+
+# ------------------------------------------------ why it was left
+# TJ, 26 October 2026: the candidate causes are "really huge potential conclusions" and belong
+# on the hub. Each row is what the ledger MEASURES for one candidate; none states a cause,
+# because no document does (rule 7). Category nets are build_school_surplus.py's own table,
+# so this block and Surplus by category cannot disagree.
+SALARY_CATS = ('teachers', 'counselors', 'paras', 'admin', 'custodians', 'athletics_staff',
+               'other_staff')
+OVER_CATS = ('sped_services', 'transport', 'utilities')
+GRANT_QUOTE = 'taking certain tuitions out of the grants'
+
+
+def why_it_was_left(L, left26, JS):
+    import build_school_surplus as SS
+    J = JS.J
+    U = lambda v: figure(v, C.usd(v))
+    F = lambda v: figure(v, C.fy(v), 'fiscal year')
+    by = {y: {c['key']: c for c in SS.causes(L[y])} for y in (2023, 2024, 2025, 2026)}
+    c26 = by[2026]
+    if not near(sum(c['unspent'] for c in c26.values()), left26):
+        fail('the category table no longer sums to what FY2026 left')
+    net = lambda keys: round(sum(c26[k]['unspent'] for k in keys), 2)
+    sal, over3 = net(SALARY_CATS), net(OVER_CATS)
+    upkeep = net(('buildings', 'supplies'))
+    aides = round(c26['paras']['over'], 2)
+    ben = c26['benefits']['unspent']
+    ben23, ben24 = by[2023]['benefits']['unspent'], by[2024]['benefits']['unspent']
+    if not (ben > 0 > ben23 and ben24 < 0):
+        fail('benefits no longer ran over in FY2023 and FY2024 and under in FY2026')
+    # The areas under budget in every year held: Repeat underspending's six.
+    every = sorted(k for k in c26 if all(by[y].get(k, {}).get('unspent', 0) > 0 for y in by))
+    if every != sorted(['teachers', 'counselors', 'custodians', 'buildings', 'athletics',
+                        'supplies']):
+        fail('the areas under every year are no longer Repeat underspending\'s six: %s' % every)
+
+    acct = lambda desc: [r for r in L[2026] if r['description'] == desc]
+    priv, coll = acct('SPED TUITIONS-PRIVATE'), acct('COLLABORATIVE TUITIONS')
+    if len(priv) != 1 or len(coll) != 1:
+        fail('expected one private and one collaborative tuition account in FY2026')
+    priv, coll = priv[0], coll[0]
+    if max(L[2026], key=lambda r: r['available_budget']) is not priv:
+        fail('private tuition is no longer the school account with the largest leftover')
+
+    actual = [r for r in J.lines() if J.COLUMN_OF[r['source']] == 'actual']
+    may = lambda fy, gf: round(float(sum(r['amt'] for r in actual if r['fy'] == fy
+                                         and 'MAY INST' in r['vendor'].upper()
+                                         and (r['fund'] == '0100') == gf)), 2)
+    may25_gf, may26_grant = may(2025, True), may(2026, False)
+    if not all(r['fund_name'].endswith('#240') for r in actual if r['fy'] == 2026
+               and 'MAY INST' in r['vendor'].upper() and r['fund'] != '0100'):
+        fail('May Institute was paid in FY2026 from a fund other than the general fund and IDEA')
+    early = round(float(sum(r['amt'] for r in actual if r['fy'] == 2026 and r['fund'] == '0100'
+                            and r['vendor'].startswith('FLLAC')
+                            and (r['doc_no'] or '').startswith('27L2KEY'))), 2)
+    if not near(early, 189276.75):
+        fail('the year-end FLLAC payment is no longer the Year-end tuition payment page\'s')
+    import glob
+    cap = glob.glob(os.path.join(ROOT, 'sources', 'data', 'youtube-transcripts',
+                                 'school-committee', '2026-09-16-*.json'))
+    if len(cap) != 1 or not TP.verbatim_in(GRANT_QUOTE, JS._captions(cap[0])):
+        fail('the 16 September 2026 grants remark is no longer in the captions')
+
+    rows = [
+        TB.check_row(
+            'A federal grant paid a private placement',
+            ('Private tuition left %s of %s. May Institute, paid %s by the general fund in %s, '
+             'was paid %s by the special education grant in %s. Said in September: “%s”.'
+             % (C.usd(priv['available_budget']), C.usd(priv['revised_budget']),
+                C.usd(may25_gf), C.fy(2025), C.usd(may26_grant), C.fy(2026), GRANT_QUOTE),
+             {'a': U(priv['available_budget']), 'b': U(priv['revised_budget']),
+              'c': U(may25_gf), 'y': F(2025), 'd': U(may26_grant), 'z': F(2026)}),
+            {0}),
+        TB.check_row(
+            'Collaborative tuition ran past budget',
+            ('%s past, with no transfer in. %s of it paid invoices numbered for %s, on 30 June '
+             '(Year-end tuition payment).'
+             % (C.usd(-coll['available_budget']), C.usd(early), C.fy(2027)),
+             {'a': U(-coll['available_budget']), 'b': U(early), 'y': F(2027)}, ('30 June',)),
+            {1}),
+        TB.check_row(
+            'Salary lines, taken together',
+            ('%s left net, after aides ran %s past budget. A vacancy, a leave and a budget set '
+             'above pay look the same in a ledger.' % (C.usd(sal), C.usd(-aides)),
+             {'a': U(sal), 'b': U(-aides)}),
+            {0, 1, 2}),
+        TB.check_row(
+            'Building upkeep and supplies',
+            ('%s left. In dollars, upkeep was further behind its usual March pace than any other '
+             'area (Budget burndown); no document records a decision to hold it.' % C.usd(upkeep),
+             {'a': U(upkeep)}),
+            {0, 2}),
+        TB.check_row(
+            'Health insurance and benefits',
+            ('%s left; in %s and %s the same lines ran %s and %s past budget.'
+             % (C.usd(ben), C.fy(2023), C.fy(2024), C.usd(-ben23), C.usd(-ben24)),
+             {'a': U(ben), 'y': F(2023), 'z': F(2024), 'b': U(-ben23), 'c': U(-ben24)}),
+            {0}),
+        TB.check_row(
+            'Therapy, buses and electricity',
+            ('%s past budget, net. Contracted therapy and electricity were voted below their '
+             'spending in all four years held (Surplus by category).' % C.usd(-over3),
+             {'a': U(-over3)}),
+            {1, 2}),
+    ]
+    return TB.checks(
+        'Why it was left', ['Left money', 'Used money', 'Same every year'], rows,
+        place='body', first='What the ledger shows', second='Measured',
+        note=('School accounts at the %s close, counting orders still owed; with the smaller '
+              'lines they net to %s. A ledger records payments, never the reason for one. The '
+              'September remark is from machine captions of the School Committee, a finding aid.'
+              % (C.fy(2026), C.usd(left26)), {'y': F(2026), 'a': U(left26)}),
+        so=('The leftover has several sources, not one. Over half of the largest account’s was '
+            'a change of payer, not a cut; the steadiest sit in areas under budget every year.'))
 
 
 def outputs():

@@ -288,6 +288,7 @@ def main():
     burndowns(col)
     prepaid(owed, left)
     suggestions(left, cat)
+    why_left(cat, acct)
     if bad:
         print('verify_journal_surplus_topics: %d problem(s)' % len(bad))
         print('\n'.join('  ' + b for b in bad))
@@ -328,6 +329,44 @@ def prepaid(owed, left):
         got = facts[k]['value']['value']
         if abs(float(got) - float(v)) > 0.006:
             bad.append('tuition-paid-early %s: page %r, recomputed %r' % (k, got, float(v)))
+
+
+def why_left(cat, acct):
+    """The hub's "Why it was left" block, /fy2026-closeout: every dollar in it, recomputed from
+    the period-13 spreadsheets (category nets, the two tuition accounts) and the raw journal
+    (May Institute by fund, the 27-numbered FLLAC invoices). Every money figure in the block
+    must be one of these, and every one of these must be in the block."""
+    PRIV, COLL = '0100-3-300-9300-51-1-06-2-535019', '0100-3-300-9400-51-1-06-2-535023'
+    budget = defaultdict(D)
+    for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-ytd.csv'), encoding='utf-8')):
+        if r['period'] == '13' and r['report'] == 'gf-school' and r['fiscal_year'] == '2026':
+            budget[r['account']] += D(r['revised_budget']).quantize(D('0.01'))
+    may, early = defaultdict(D), D(0)
+    for r in csv.DictReader(open(os.path.join(DATA, 'munis-school-journal.csv'), encoding='utf-8')):
+        if r['source'] == 'API' and 'MAY INST' in r['vendor'].upper():
+            may[(int(r['fiscal_year']), r['fund'] == '0100')] += D(r['amount'])
+        if r['doc_no'].startswith('27L2KEY') and r['fund'] == '0100':
+            early += D(r['amount'])
+    c = lambda y, *ks: sum(cat[(y, k)] for k in ks)
+    sal = c(Y1, 'teachers', 'counselors', 'paras', 'admin', 'custodians', 'athletics_staff',
+            'other_staff')
+    aides = -sum(acct[(Y1, a)] for (y, a) in list(acct) if y == Y1 and acct[(y, a)] < 0
+                 and a.split('-')[3] == '2330' and a.split('-')[-1].startswith('51'))
+    want = [acct[(Y1, PRIV)], budget[PRIV], may[(2025, True)], may[(2026, False)],
+            -acct[(Y1, COLL)], early, sal, aides, c(Y1, 'buildings', 'supplies'),
+            c(Y1, 'benefits'), -c(2023, 'benefits'), -c(2024, 'benefits'),
+            -c(Y1, 'sped_services', 'transport', 'utilities'), sum(acct[(Y1, a)] for (y, a) in acct if y == Y1)]
+    want = {'$' + format(round(v), ',') for v in want}
+    p = json.load(open(os.path.join(TOPICS, 'fy2026-closeout.json'), encoding='utf-8'))
+    blk = [b for b in p.get('blocks', []) if b.get('title') == 'Why it was left']
+    if len(blk) != 1:
+        bad.append('fy2026-closeout: no "Why it was left" block')
+        return
+    text = ' '.join([r['why']['text'] for r in blk[0]['rows']] + [blk[0]['note']['text']])
+    got = set(re.findall(r'\$[\d,]+', text))
+    if got != want:
+        bad.append('why it was left: in the block, not recomputed %s; recomputed, not in the block %s'
+                   % (sorted(got - want), sorted(want - got)))
 
 if __name__ == '__main__':
     sys.exit(main())

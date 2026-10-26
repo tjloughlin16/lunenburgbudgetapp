@@ -115,7 +115,39 @@ footing. Only the as-printed pair, which mixes footings AND counts an FY2027 bil
   appropriation), which frames the whole section: transfers moved ~$277k of $1,201,434 overruns
   ($394,929 in, $117,626 of it to accounts that ended under); ~$924k was absorbed unvoted.
 
-## NEXT: "Why it was left" (TJ, 26 October 2026, evening) -- build in a FRESH session
+## "Why it was left" -- BUILT on the hub, 26 October 2026 (late evening). Not deployed
+
+A `TB.checks` block on /fy2026-closeout (place `body`), built by `why_it_was_left()` in
+`build_fy2026_closeout_topics.py` from build_school_surplus's category table, so it cannot
+disagree with Surplus by category. Six rows, columns Left money / Used money / Same every year.
+FY2026, counting orders still owed, net $482,118:
+
+| row | measured |
+|---|---|
+| A federal grant paid a private placement | private tuition left $522,629 of $988,630; May Institute, $318,255 from the GF in FY2025, $287,108 from the IDEA grant (fund 2814) in FY2026 |
+| Collaborative tuition ran past budget | $434,108, no transfer in; $189,277 of it the FY2027-numbered invoices |
+| Salary lines, taken together | $192,211 left net, after aides (function 2330) ran $210,082 past |
+| Building upkeep and supplies | $267,795 left |
+| Health insurance and benefits | $107,003 left; ran $197,227 / $123,307 OVER in FY2023 / FY2024 |
+| Therapy, buses and electricity | $189,610 used, net |
+
+- **New evidence on the record:** School Committee, 16 Sep 2026 (captions, ~12:09-13:00,
+  https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=729s): "it looks like that large unexpended funds is
+  in our private school tuitions" and "we're taking certain tuitions out of the grants". Speaker
+  not identified from the captions. Consistent with the measured switch; says nothing about
+  whether the FY2026 BUDGET expected it.
+- **New money-gaps row** (last row): why the grant paid May Institute, and whether the budget
+  expected it -- closes: the FY2026 IDEA (240) grant application and DESE-approved budget.
+  The thrift (218) and vacancy (219) rows already carried the remedies item 3 and 4 below asked for.
+- **Verified by a different route:** `verify_journal_surplus_topics.py` `why_left()` recomputes
+  every dollar in the block from the period-13 spreadsheet and the raw journal CSV, set-equal
+  both ways. Power-tested: one digit changed in the payload fails it.
+- **NOT done:** the hub ladder is still at its 6-conclusion limit and carries no root-cause
+  conclusion; the obvious swap is the FY2027-level-service one, TJ's call. Not built or rendered
+  (no `npm run build:site`); not deployed. Candidate 1's tuition-by-placement-type page is still
+  to build.
+
+### The candidates as originally scoped (TJ, 26 October 2026, evening)
 
 TJ: the candidate causes are "really huge potential conclusions" and belong on the hub, in a
 "Why it was left" section. Order by evidence; each candidate: what the ledger MEASURES, what it
@@ -162,8 +194,9 @@ cannot tell apart, the document that settles the rest (a money-gaps row). Rule 7
      with the encumbrances". Finance Committee 22 Oct 2026 (captions, 1:49:50): "We are allowed
      to prepay the 1st quarter of out of district tuition from circuit Breaker accounts" -- this
      one was paid from the GENERAL FUND. Without it, FY2026 leaves $189,277 more.
-   - Build: a tuition page on this shelf (by line AND by placement type, by fund), replacing the
-     "Tuition at year end" framing; a verifier reading the journal raw.
+   - Build: PARTLY DONE. The prepayment has its page, `fy2026-tuition-paid-early` ("Year-end
+     tuition payment", commit fa1c0e808, build_journal_surplus_topics.py). Still to do: tuition by
+     placement type and by fund, replacing the "Tuition at year end" framing.
 2. **Building jobs -- measured** (/buildings-and-grounds/upkeep-skipped, upkeep-surplus-every-dollar):
    10 usual payees paid under half, 5 nothing; $67,393 of orders released unpaid.
 3. **Spending slowed from February -- measured** (budget-burndown). Whether anyone DECIDED to hold
@@ -177,23 +210,25 @@ cannot tell apart, the document that settles the rest (a money-gaps row). Rule 7
 16 topic pages in four groups, plus the hub. Registry: `scripts/topic_registry/fy2026_closeout.py`.
 Regenerate this table rather than trusting it: the snippet at the bottom does.
 
-| group | page | built by | opens on |
-|---|---|---|---|
-| (lead) | **fy2026-surplus-by-category** (START HERE, TJ: "the main school based surplus page") | build_fy2026_closeout_topics.py | $1,683,552 left on accounts under budget, $1,201,434 used by accounts over; net $482,118 |
-| | fy2026-lines-over-budget (TJ: *"similarly seems useless"*) | same | 57 school accounts closed past budget; 4 in FY2025 |
-| | fy2026-school-transfers | same | $394,929 in, $309,839 out, net $85,090 |
-| | fy2025-school-surplus | same | FY2025 left $627,117, $23,231 more than the Committee was given |
-| Surplus from the journal | surplus-bridge | build_journal_surplus_topics.py | $482,118 to $718,885 depending on $236,767 of open orders |
-| | surplus-repeat-lines | same | 6 areas under every year FY2023-FY2026 |
-| | budget-burndown | same | 40.2% of the budget left at end of March |
-| | sped-burndown | same | circuit breaker paid $4,005 July-May, then $333,495 in June |
-| | surplus-suggestions | same | many small leftovers, year after year |
-| School lines | fy2026-tuition-lines | build_fy2026_closeout_topics.py | FY2027 budgets $700,142 where FY2026 spent $1,202,771 |
-| | fy2026-paraprofessional-overrun | same | $208,082 over; $99,064 against no budget |
-| | fy2026-psychologist-line | same | one psychologist account paid nothing |
-| | special-education-transportation (home: Transportation) | build_transportation.py | |
-| | fy2026-athletics-underspend (home: Athletics) | build_athletics_topics.py | |
-| Town side | fy2026-town-unspent, fy2026-snow-and-reserve-fund, fy2026-school-retiree-insurance | build_fy2026_closeout_topics.py | |
+| group | page | built by | concl. with meaning | opens on |
+|---|---|---|---|---|
+| (lead) | **fy2026-surplus-by-category** (START HERE, TJ: "the main school based surplus page") | build_fy2026_closeout_topics.py | 4/4 | $1,683,552 left on accounts under budget, $1,201,434 used by accounts over; net $482,118 |
+| | surplus-bridge ("Surplus by year") | build_journal_surplus_topics.py | 4/4 | printed, FY2026 left $144,999 less than FY2025; $72,827 less on one footing |
+| | fy2026-tuition-paid-early ("Year-end tuition payment") | same | 4/4 | $189,277 paid 30 June 2026 on FLLAC invoices numbered for FY2027 |
+| | surplus-repeat-lines ("Repeat underspending") | same | 4/4 | 6 areas under every year FY2023-FY2026 |
+| | surplus-suggestions | same | 4/4 | many small leftovers, year after year |
+| Through the year | budget-burndown | same | 4/4 | 40.2% of the budget left at end of March |
+| | sped-burndown | same | 4/4 | circuit breaker paid $4,005 July-May, then $333,495 in June |
+| | fy2026-school-transfers | build_fy2026_closeout_topics.py | 4/4 | $394,929 in, $309,839 out, net $85,090 |
+| School lines | fy2026-tuition-lines | same | 3/3 | FY2027 budgets $700,142 where FY2026 spent $1,202,771 |
+| | fy2026-paraprofessional-overrun | same | 4/4 | $208,082 over; $99,064 against no budget |
+| | fy2026-psychologist-line | same | 4/4 | one psychologist account paid nothing |
+| | special-education-transportation (home: Transportation) | build_transportation.py | **0/2** | |
+| | fy2026-athletics-underspend (home: Athletics) | build_athletics_topics.py | **0/3** | |
+| Town side | fy2026-town-unspent, fy2026-snow-and-reserve-fund, fy2026-school-retiree-insurance | build_fy2026_closeout_topics.py | all | |
+
+Regenerated 26 October 2026 (evening). Retired: `fy2026-lines-over-budget` (into Surplus by
+category) and `fy2025-school-surplus` (into Surplus by year).
 
 Also UNLISTED long reports on the same money: `sources/analyses/fy26-school-surplus.md` and
 `fy25-school-surplus.md` (built by `build_school_surplus.py --all`, verified by
