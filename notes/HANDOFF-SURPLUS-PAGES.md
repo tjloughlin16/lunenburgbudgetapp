@@ -51,6 +51,31 @@ Read rule 7h and `notes/process/AUDIT-PASS.md` before touching anything.
 
 ---
 
+## LEAD OF "WHY IT WAS LEFT": the prepayment moves the comparison (TJ, 26 Oct 2026: "right?")
+
+Take the $189,276.75 out of FY2026's spending and FY2026 left MORE than FY2025 on every single
+footing. Only the as-printed pair, which mixes footings AND counts an FY2027 bill, shows less.
+
+| | FY2025 | FY2026 |
+|---|---:|---:|
+| counting orders still owed | $554,945 | $671,395 |
+| closed-report footing (orders not counted) | $627,117 | up to $908,162 |
+| as each report prints it (the July comparison) | $627,117 | $482,118 |
+
+- The July 2026 minutes: FY2026 would close "well below" the ~$600,000 returned from FY2025.
+- Sequence (journal 2026/12/000692 and 2026/12/001152): 29 June, $333,494.89 of collaborative
+  tuition reclassed from the general fund to the circuit breaker (2640); 30 June, the general
+  fund pays nine `27L2KEY11-19` invoices, $189,276.75. A link between the two is a HYPOTHESIS.
+- WORDING (rule 7): "carries FY2027 invoice numbers and FY2027's rate" is measured; "pays for
+  FY2027's first quarter" is OUR READING -- four clues (prefix pattern, a fifth round in a
+  four-quarter year, the new $19,885.50 rate, 30 June timing), no service dates. Settles it:
+  FLLAC's invoice 27L2KEY11; the FY2027 journal (no Q1 FLLAC payment in its autumn); a s.71D vote.
+- Rule 8: lawful (c.71 s.71D; DLS). The finding is the EFFECT on the figure the Committee heard
+  and on what lapses to free cash, never intent.
+- Still to cite in the build: the circuit breaker carry-forward rule; c.71 s.34 (bottom-line
+  appropriation), which frames the whole section: transfers moved ~$277k of $1,201,434 overruns
+  ($394,929 in, $117,626 of it to accounts that ended under); ~$924k was absorbed unvoted.
+
 ## NEXT: "Why it was left" (TJ, 26 October 2026, evening) -- build in a FRESH session
 
 TJ: the candidate causes are "really huge potential conclusions" and belong on the hub, in a
