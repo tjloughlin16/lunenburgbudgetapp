@@ -13,23 +13,23 @@ $100k'. Thats a problem because we already budgeted for that"* -- a gross arriva
 unbudgeted cost, and the pages measure the second.
 """
 CATEGORY = dict(
-    start=['circuit-breaker', 'reserve-options', 'surprise-costs'],
+    # TJ, 26 October 2026: "the circuit breaker is not a 'start here' page ... 'reserve or
+    # budget' is likely a start here".
+    start=['reserve-or-budget', 'reserve-options', 'surprise-costs'],
     id='special-education-reserve', shelf='SERF report', title='Special education reserve fund',
     # A special report (TJ, 24 Oct 2026): off the menu after the reserve's first full year.
     area='special', archive_after='2027-06-30', order=21,
     groups=[
         # In the order a board member asks (TJ, 24 October 2026: the story flow).
-        # TJ, 26 October 2026: the five-step explanation "is solid on its own" -- the shelf's
-        # overview, read first.
-        # Merged into Circuit breaker the next day (TJ: "maybe we merge and only have one
-        # called 'circuit breaker'"): it is home on Special education and listed here first.
-        ('How it works', ['circuit-breaker']),
         ('What surprises, and when', ['surprise-costs', 'arrivals-and-the-budget']),
-        ('What comes back, and when', ['how-tuition-is-paid', 'special-education-grants',
-                                       'circuit-breaker-account']),
+        # Circuit breaker (merged with the five steps, 26 October 2026) leads what comes back.
+        ('What comes back, and when', ['circuit-breaker', 'how-tuition-is-paid',
+                                       'special-education-grants', 'circuit-breaker-account']),
         # TJ, 24 October 2026: "propose ALL the options... and let someone pick".
-        ('How big, and why a reserve', ['reserve-options', 'reserve-or-budget',
-                                        'special-education-overruns']),
+        ('How big, and why a reserve', ['reserve-or-budget', 'reserve-options']),
+        # TJ, 26 October 2026: "supporting data that is captured in the other pages". Its totals
+        # are on Reserve options; the line-by-line years and the levels table are only here.
+        ('The year-by-year record', ['special-education-overruns']),
     ],
     elsewhere=[('/special-education', 'Special education costs'),
                ('/what-we-cannot-answer', 'What we cannot answer')])
