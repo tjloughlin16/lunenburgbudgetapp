@@ -418,38 +418,38 @@
    {
     "figures": {
      "a": {
-      "text": "$482,118",
+      "text": "$522,629",
       "unit": "",
-      "value": 482118.07
+      "value": 522629.18
      },
      "g": {
-      "text": "$761,000",
+      "text": "$287,108",
       "unit": "",
-      "value": 761000.5
-     },
-     "y": {
-      "text": "FY2027",
-      "unit": "fiscal year",
-      "value": 2027
-     },
-     "z": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
+      "value": 287107.65
      }
     },
     "literals": [],
     "rests_on": [
-     "gap27",
-     "left26",
-     "ceiling"
+     "h-priv",
+     "h-grant"
     ],
     "so": {
-     "figures": {},
+     "figures": {
+      "m": {
+       "text": "$318,255",
+       "unit": "",
+       "value": 318254.94
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
      "literals": [],
-     "text": "The budget was drawn up months before the close; set side by side, neither explains the other."
+     "text": "The general fund paid that school $318,255 in FY2025. Over half the leftover was a change of payer, not a cut; no record says why."
     },
-    "text": "FY2027’s school budget was set $761,000 below level service; FY2026 then left $482,118."
+    "text": "Private tuition left $522,629, the largest leftover; a federal grant paid $287,108 of its bills."
    },
    {
     "figures": {
@@ -504,6 +504,8 @@
      "facts": [
       "h-under",
       "h-over",
+      "h-priv",
+      "h-grant",
       "h-n26",
       "h-n25",
       "h-tuit",
@@ -710,6 +712,40 @@
        "text": "$1,201,434",
        "unit": "",
        "value": 1201433.81
+      }
+     },
+     {
+      "id": "h-priv",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "left on private tuition, the largest leftover"
+      },
+      "value": {
+       "text": "$522,629",
+       "unit": "",
+       "value": 522629.18
+      }
+     },
+     {
+      "id": "h-grant",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2026",
+         "unit": "fiscal year",
+         "value": 2026
+        }
+       },
+       "literals": [],
+       "text": "tuition paid by the special education grant, FY2026"
+      },
+      "value": {
+       "text": "$287,108",
+       "unit": "",
+       "value": 287107.65
       }
      },
      {

@@ -1074,6 +1074,7 @@ def build():
             and near(float(jd['left'][2026]), left26)):
         fail('the journal no longer reproduces the period-13 figures the hub states')
     owed25 = round(float(jd['left'][2025] - jd['closed'][2025]), 2)
+    wv, why_left = why_it_was_left(L, left26, JS)
     h = dict(
         left=fx['left26'], enc=fx['enc26'], leftpct=fx['leftpct'],
         under=f('h-under', U(under26), 'left on school accounts under budget', 'published'),
@@ -1084,6 +1085,10 @@ def build():
               'published', {'y': F(2025)}),
         left25=f('h-left25', U(owed25), '%s, counted the same way (our sum)' % C.fy(2025),
                  'published', {'y': F(2025)}),
+        grant=f('h-grant', U(wv['may26']), 'tuition paid by the special education grant, %s'
+                % C.fy(2026), 'published', {'y': F(2026)}),
+        priv=f('h-priv', U(wv['priv']), 'left on private tuition, the largest leftover',
+               'published'),
         tuit=f('h-tuit', U(gf_tu_spent), 'out-of-district tuition, spent, %s' % C.fy(2026),
                'published', {'y': F(2026)}),
         kind=f('h-kind', U(k_paid), 'kindergarten aides paid, with no budget', 'published'),
@@ -1099,7 +1104,8 @@ def build():
     tiers = [
         LD.tier('What was left', [h['left'], h['leftpct'], h['enc'], h['left25'], fx['ceiling'],
                                   fx['gap27'], h['town']]),
-        LD.tier('What moved inside it', [h['under'], h['over'], h['n26'], h['n25'], h['tuit'],
+        LD.tier('What moved inside it', [h['under'], h['over'], h['priv'], h['grant'], h['n26'],
+                                         h['n25'], h['tuit'],
                                          h['kind'], h['snow']]),
         LD.tier('What is not settled', [h['counter'], h['tp13']]),
     ]
@@ -1108,7 +1114,8 @@ def build():
         [('left', 'What was left'), ('moved', 'What moved'), ('open', 'Not settled')],
         {('school', 'left'): ['left26', 'leftpct', 'enc26', 'h-left25', 'ceiling', 'gap27'],
          ('town', 'left'): ['h-town'],
-         ('school', 'moved'): ['h-under', 'h-over', 'h-n26', 'h-n25', 'h-tuit', 'h-kind'],
+         ('school', 'moved'): ['h-under', 'h-over', 'h-priv', 'h-grant', 'h-n26', 'h-n25',
+                               'h-tuit', 'h-kind'],
          ('town', 'moved'): ['h-snow'],
          ('school', 'open'): ['h-counter'], ('town', 'open'): ['h-tp13']})
     hub_ladder = LD.ladder(tiers, [
@@ -1140,12 +1147,13 @@ def build():
                          'again carries %s for these accounts.'
                          % (C.fy(2027), C.usd(A['kinder']['fy27'])),
                       so_figures={'y': F(2027), 'z': U(A['kinder']['fy27'])}),
-        LD.conclusion('%s’s school budget was set %s below level service; %s then left %s.'
-                      % (C.fy(2027), C.usd(cut['gap']), C.fy(2026), C.usd(left26)),
-                      ['gap27', 'left26', 'ceiling'],
-                      {'y': F(2027), 'g': U(cut['gap']), 'z': F(2026), 'a': U(left26)},
-                      so='The budget was drawn up months before the close; set side by side, '
-                         'neither explains the other.'),
+        LD.conclusion('Private tuition left %s, the largest leftover; a federal grant paid %s of its bills.'
+                      % (C.usd(wv['priv']), C.usd(wv['may26'])), ['h-priv', 'h-grant'],
+                      {'a': U(wv['priv']), 'g': U(wv['may26'])},
+                      so='The general fund paid that school %s in %s. Over half the leftover was a '
+                         'change of payer, not a cut; no record says why.'
+                         % (C.usd(wv['may25']), C.fy(2025)),
+                      so_figures={'m': U(wv['may25']), 'y': F(2025)}),
         LD.conclusion('In June the town stood %s under; snow removal had paid %s.'
                       % (C.usd(t['available']), C.usd(sn['expended'])), ['h-town', 'h-snow',
                                                                           'h-tp13'],
@@ -1153,7 +1161,6 @@ def build():
                       so='Snow ran far past its vote and the town still stood under in June; '
                          'its close, not yet held, settles the year.'),
     ], matrix=mx)
-    why_left = why_it_was_left(L, left26, JS)
     out[HUB] = TP.hub(
         HUB,
         'The school general fund ended %s with %s unspent, %s of its budget, counting orders '
@@ -1274,7 +1281,9 @@ def why_it_was_left(L, left26, JS):
              {'a': U(-over3)}),
             {1, 2}),
     ]
-    return TB.checks(
+    vals = dict(priv=priv['available_budget'], priv_budget=priv['revised_budget'],
+                may25=may25_gf, may26=may26_grant)
+    return vals, TB.checks(
         'Why it was left', ['Left money', 'Used money', 'Same every year'], rows,
         place='body', first='What the ledger shows', second='Measured',
         note=('School accounts at the %s close, counting orders still owed; with the smaller '
