@@ -40,6 +40,11 @@ other shelves, other builders) have no meanings yet -- do them with Athletics / 
 fine); `threads.json` is dirty from the minutes backlog, so it was not regenerated.
 `fy28/public/data/reports.json` regenerates with the backlog's byte counts; not committed.
 
+**NEXT, and bigger: `notes/HANDOFF-FY-BREAKDOWN.md`** (TJ, 26 Oct 2026, late): one fiscal year
+broken into four measured parts -- voted above cost, paid by other funds, transfers, paid for
+another year -- with a Sankey and a timeline of moves. It is the general answer to "why was
+there a surplus"; the Why it was left block is the hand-built first instance of it.
+
 ---
 
 **START HERE (fresh session, 26 October 2026 evening):** load the `building-a-page` skill, then
