@@ -105,8 +105,13 @@ def content_type(key):
 
 # --- the credential -------------------------------------------------------------------
 
-WRANGLER_CONFIG = os.path.expanduser(
-    '~/Library/Preferences/.wrangler/config/default.toml')
+# Wrangler has kept its login in two places: macOS's Preferences folder, and (from 25 October
+# 2026, after an update) ~/.wrangler. It refreshes only the one it now uses, so the other goes
+# stale and every request answers 401. Read whichever was written last.
+_WRANGLER_CONFIGS = [os.path.expanduser(p) for p in (
+    '~/.wrangler/config/default.toml', '~/Library/Preferences/.wrangler/config/default.toml')]
+WRANGLER_CONFIG = max((p for p in _WRANGLER_CONFIGS if os.path.exists(p)),
+                      key=os.path.getmtime, default=_WRANGLER_CONFIGS[0])
 NODE22 = os.path.expanduser('~/.nvm/versions/node/v22.22.2/bin')
 
 
