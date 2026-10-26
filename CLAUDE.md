@@ -577,6 +577,16 @@ Every figure in a finished document gets re-checked against the data by script. 
 re-read — recomputed. Prose drifts during editing, and the version that ships is the one
 nobody checked.
 
+## Push holds -- read before ANY `git push`
+
+**None at present.** (The hold of 19 October 2026, unmasked journal names in history, ended
+26 October 2026 with the rewrite: `notes/HANDOFF-HISTORY-REWRITE.md`.)
+
+A hold recorded only in one session's memory is invisible to every other session, which is how
+those names reached GitHub on 19 October. So a hold is written HERE, with its reason and what
+lifts it, and removed here when it lifts. Local branches still on the pre-rewrite history --
+`wip-snapshot-2026-10-19`, `gen/town-office-space` -- are never pushed.
+
 ## 10. Nothing deploys without being asked
 
 Tag what is live. `v1` is the build before the source archive; `v2` is the current public

@@ -1,4 +1,25 @@
-# Handoff: unmasked journal names are in the PUBLIC GitHub history. Rewrite and force-push
+# Handoff: unmasked journal names were in the PUBLIC GitHub history -- REWRITTEN 26 October 2026
+
+**STATUS, 26 October 2026: steps 1-4 DONE; step 5 (GitHub's purge) is TJ's to file.**
+TJ: "do whatever you think is the best idea. i dont want to lose anything". Done as:
+- Backup first: `~/lunenburg-backups/2026-10-26-history-rewrite/` -- `repo-all-refs.bundle`
+  (every ref, verified "okay"), `uncommitted-work.tar.gz` (the 333 uncommitted files of other
+  agents) and `uncommitted-tracked.patch`, `show-ref-before.txt`.
+- Rewritten in a SCRATCH CLONE, never the working tree (filter tools reset the working tree, and
+  other agents' uncommitted work was in it): `git filter-branch --index-filter` removing
+  `fy28/public/api/munis_school_journal*` from exactly the 17 commits `1f6be08d4`..`06576fbea^`;
+  tags v15-v19 carried onto the new history.
+- Proven before anything moved: the final tree is IDENTICAL; 1,890 commits before and after; of
+  the 235 journal file versions in the bad commits, the only one still reachable is
+  `munis_school_journal_account.json`, byte-identical to the reviewed publication `2ee126b2f`.
+- Then `update-ref` main (old value asserted), working tree untouched (338 uncommitted entries
+  before and after), and `git push --force-with-lease=main:23647187f` -> origin main `912264f5a`.
+- Not rewritten, local only, never pushed: branches `wip-snapshot-2026-10-19` and
+  `gen/town-office-space` still sit on the OLD history. Do not push either.
+- **Step 5 is still open:** GitHub keeps the old commits reachable by SHA until Support purges
+  them. TJ files "remove sensitive data" naming `1f6be08d4`, `06576fbea` and the path.
+
+---
 
 Written 20 October 2026. **Deferred by TJ** ("put this into a handoff we'll do later"). Until it is
 done: **do not push** anything else to `origin`, and do not clear this from the to-do list.
