@@ -74,6 +74,16 @@ cannot tell apart, the document that settles the rest (a money-gaps row). Rule 7
    - So the private leftover sat unused and, inside one appropriation, covered the collaborative
      overrun; tuition nets to $88,522 left. FY2027 budgets $700,142 for both lines (side by side
      with FY2026's $1,202,771 GF; never differenced -- rule 1).
+   - **CORRECTED (TJ challenged the "doubling").** Group by the school year an invoice BILLS,
+     read off FLLAC's invoice numbers (`25L2KEY..` = FY2025, `26..`, `27..`; our reading of the
+     numbering, corroborated by a new quarterly rate in each prefix: $18,482.40, $19,255.50,
+     $19,885.50). Collaborative tuition by year billed: ~$457,677 FY2025 -> ~$851,852 FY2026
+     (+86%). Invoices per quarter 5,5,6,6 -> 8,8,10,9 (an invoice is not a child -- rule 7);
+     rate +4.2%. **$189,276.75 paid 30 June 2026 from FY2026 GF money bills FY2027** (nine
+     `27L2KEY1x` invoices, quarter one). So of the $434,108 collaborative overrun, $189,277 is
+     next year's tuition paid early, and FY2027's $700,142 starts with its first quarter paid.
+     No other payee spelling in any fund; FY2025's $445,631 (on 2640's private account) is
+     already counted. The cost rise is real but ~$394k, not $524k.
    - Build: a tuition page on this shelf (by line AND by placement type, by fund), replacing the
      "Tuition at year end" framing; a verifier reading the journal raw.
 2. **Building jobs -- measured** (/buildings-and-grounds/upkeep-skipped, upkeep-surplus-every-dollar):
