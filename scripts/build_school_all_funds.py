@@ -55,6 +55,7 @@ import csv
 import json
 import os
 import re
+import statistics
 import sys
 from collections import defaultdict
 from decimal import Decimal
@@ -144,6 +145,7 @@ TOP_PAYEES = 12
 SG_CODES = ('240', '262', '252', '264', '274', '298')
 ALLOC_CSV = os.path.join(DATA, 'dese-entitlement-allocations.csv')
 CB_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'circuit-breaker.json')
+MIN_AID_JSON = os.path.join(ROOT, 'fy28', 'public', 'data', 'minimum-aid.json')
 BENEFITS_CLOSES = ('the Town’s schedule of school benefits and town-side costs, by fund')
 
 
@@ -404,18 +406,89 @@ def grant_year(name):
     return 2000 + int(mm.group(1)) if mm else None
 
 
-def read_allocations():
-    """{(code, fy): dollars}: DESE's entitlement allocations to Lunenburg (district 0162) for the
-    special education codes, every year the file lists. Per code; build_serf_topics.read_idea
-    sums #240 and #262 from the same file, and build() asserts the two agree."""
+def read_allocations(codes=SG_CODES):
+    """{(code, fy): dollars}: DESE's entitlement allocations to Lunenburg (district 0162), every
+    year the file lists -- for the special education codes by default, or for `codes` (None:
+    every code). Per code; build_serf_topics.read_idea sums #240 and #262 from the same file,
+    and build() asserts the two agree."""
     out = {}
     for r in csv.DictReader(open(ALLOC_CSV, encoding='utf-8')):
         c = r['fund_code'].lstrip('0')
-        if r['district_code'] == '0162' and c in SG_CODES:
+        if r['district_code'] == '0162' and (codes is None or c in codes):
             if (c, int(r['fy'])) in out:
                 fail('DESE allocations list %s for %s twice' % (c, r['fy']))
             out[(c, int(r['fy']))] = float(r['amount'])
     return out
+
+
+# ======================================================================== trend charts
+# ONE GRANT'S HISTORY, AS A LINE (TJ, 26 October 2026: "add trend line graphs for each grant so
+# we can see how they are trending and what the average is or projected amount for the next
+# year"). Shared by sped-grants and school-money-in, so a grant's trend is drawn one way.
+# LINES SHOW TRENDS, BARS SHOW COMPOSITION: each stream on its own scale (a shared one
+# flattens the small grants), its average as a reference line, and next year as its own track
+# -- a published figure where one exists, else OUR estimate at the median yearly change.
+
+_U = lambda v: figure(v, C.usd(v))
+_F = lambda v: figure(v, C.fy(v), 'fiscal year')
+_P = lambda v, dp=1: figure(v, C.pct(v, dp))
+_N = lambda v, unit=None: figure(v, C.num(v), unit)
+
+
+def alloc_trend(alloc, k, who):
+    """One code's allocations: (years, values, average, median yearly change, next year at it)."""
+    ys_ = sorted(y for (c, y) in alloc if c == k)
+    if ys_ != list(range(ys_[0], ys_[-1] + 1)):
+        fail('%s: #%s skips an allocation year' % (who, k))
+    v = [alloc[(k, y)] for y in ys_]
+    step_ = statistics.median(b / a_ - 1 for a_, b in zip(v, v[1:]))
+    return ys_, v, statistics.mean(v), step_, v[-1] * (1 + step_)
+
+
+def fell(v):
+    """Years in a row the series fell, latest first."""
+    n = 0
+    while n + 1 < len(v) and v[-1 - n] < v[-2 - n]:
+        n += 1
+    return n
+
+
+def trend_chart(title, ys_, hist_name, hist, nxt_y, nxt, nxt_name, nxt_basis, avg, avg_label,
+                note, so, place='chart', note_allow=()):
+    """A stream's history as a line, with its average, and next year as its own track in its
+    own basis (the district's listing, DESE's announcement, or our estimate) -- a segment from
+    the last real year, so it reads as a continuation, not a fact. nxt_y None: an ended
+    stream, drawn with no next year."""
+    xs = list(ys_) + ([nxt_y] if nxt_y else [])
+    tracks = [TP.track(hist_name, list(hist) + ([None] if nxt_y else []), 'published', 'line')]
+    if nxt_y:
+        tracks.append(TP.track(nxt_name, [None] * (len(ys_) - 1) + [hist[-1], nxt], nxt_basis, 'line'))
+    return TB.chart(TP.series(title, [C.fy(y) for y in xs], tracks, '$', kind='line',
+                              reference=None if avg is None else (avg, avg_label), note=note[0],
+                              note_figures=note[1], note_allow=note_allow),
+                    place=place, so=so)
+
+
+def alloc_trend_chart(alloc, k, name, who, place='chart'):
+    """An entitlement grant's allocations by award year, with next year as OUR estimate."""
+    ys_, v, avg, st, est = alloc_trend(alloc, k, who)
+    nm = '%s (#%s)' % (name, k)
+    return trend_chart(
+        '%s, allocated each year' % name, ys_, nm + ', allocated', v, ys_[-1] + 1,
+        round(est), 'Next year, our estimate', 'estimate', avg,
+        'Average, %s to %s' % (C.fy(ys_[0]), C.fy(ys_[-1])),
+        ('DESE’s allocations by award year; %s is announced. The dashed end '
+         'is ours: %s moved by the median yearly change, %s.'
+         % (C.fy(ys_[-1]), C.fy(ys_[-1]), C.pct(100 * st)),
+         {'y': _F(ys_[-1]), 'p': _P(100 * st)}),
+        ('An average of %s a year, and %s announced for %s. At its usual yearly '
+         'change %s would be about %s: our estimate, not an award.%s'
+         % (C.usd(avg), C.usd(v[-1]), C.fy(ys_[-1]), C.fy(ys_[-1] + 1), C.usd(round(est)),
+            (' It fell in each of the last %s years, so the estimate may run high.'
+             % C.num(fell(v))) if fell(v) >= 2 else ''),
+         dict({'a': _U(avg), 'b': _U(v[-1]), 'y': _F(ys_[-1]), 'z': _F(ys_[-1] + 1),
+               'c': _U(round(est))}, **({'n': _N(fell(v))} if fell(v) >= 2 else {}))),
+        place=place)
 
 
 # ======================================================================== pages
@@ -696,84 +769,6 @@ def build():
     grant_rec = {y: rin[(y, 'Grants')] for y in Y}
     # Grant receipts by program (DESE code), four years.
     A = J.accounts()
-    prog = defaultdict(float)
-    for (y, fnd), v in m['fund_rec'].items():
-        a = next(x for x in A.values() if x['fund'] == fnd)
-        if J.fund_group(a) == 'Grants':
-            prog[J.grant_code(a['fund_name']) or 'none'] += v
-    PROG = {'240': 'IDEA special education (#240)', '305': 'Title I (#305)',
-            '119': 'ESSER III (#119)', '115': 'ESSER II (#115)', '117': 'Student Opportunity Act (#117)',
-            '237': 'Family and community (#237)', '140': 'Title II (#140)', '309': 'Title IV (#309)',
-            '252': 'ARP IDEA (#252)', '262': 'IDEA early childhood (#262)'}
-    prog_rows = [dict(label=PROG.get(k, 'Other grants'), cells=[C.usd(v)])
-                 for k, v in sorted(prog.items(), key=lambda kv: -kv[1]) if k in PROG]
-    prog_rows.append(dict(label='Other grants', cells=[C.usd(sum(v for k, v in prog.items() if k not in PROG))]))
-    mx = {}
-    mx['gfv'] = f('gfv', U(m['gf_voted'][F1]), 'general fund, voted, %s' % C.fy(F1), 'published', {'y': F(F1)})
-    mx['ch70'] = f('ch70', U(m['ch70'][F1]), 'Chapter 70 aid to the town, %s' % C.fy(F1), 'published', {'y': F(F1)},
-                  allow=('70',))
-    mx['r0'] = f('r0', U(rin_tot[LAST_CLOSED]), 'received by every other fund, %s' % C.fy(LAST_CLOSED),
-                 'published', {'y': F(LAST_CLOSED)})
-    mx['rev'] = f('rev', U(rin[(LAST_CLOSED, 'Revolving funds and lunch')]),
-                  'fees, lunch and gifts, %s' % C.fy(LAST_CLOSED), 'published', {'y': F(LAST_CLOSED)})
-    mx['cb'] = f('cb', U(rin[(LAST_CLOSED, 'Circuit breaker')]), 'circuit breaker, %s' % C.fy(LAST_CLOSED),
-                 'published', {'y': F(LAST_CLOSED)})
-    mx['gr'] = f('gr', U(grant_rec[LAST_CLOSED]), 'grants, %s' % C.fy(LAST_CLOSED), 'published', {'y': F(LAST_CLOSED)})
-    mx['gr1'] = f('gr1', U(grant_rec[F1]), 'grants received so far, %s' % C.fy(F1), 'published', {'y': F(F1)})
-    mx['cap'] = f('cap', None, 'capital money voted to the schools', 'gap',
-                  closes='the Town Meeting capital articles, FY2023–FY2026, by school account')
-    ch_share = 100.0 * m['ch70'][F1] / m['gf_voted'][F1]
-    out['school-money-in'] = TP.page(
-        'school-money-in',
-        'Outside the voted budget, school funds took in %s in %s, most of it fees, lunch and grants.'
-        % (C.usd(rin_tot[LAST_CLOSED]), C.fy(LAST_CLOSED)),
-        list(mx.values()),
-        [con('The general fund was voted %s for %s; Chapter 70 aid to the town was %s of that.'
-             % (C.usd(m['gf_voted'][F1]), C.fy(F1), C.pct(ch_share)),
-             ['gfv', 'ch70'], {'a': U(m['gf_voted'][F1]), 'y': F(F1), 'p': P(ch_share)}, allow=('70',),
-             notes=[step('Chapter 70 is paid to the town, not to a school account, so it is shown '
-                         'beside the vote, never added to it.', 'gap', allow=('70',),
-                         closes='the town’s revenue ledger for the school appropriation, by source')]),
-         con('In %s other funds took in %s: %s from fees, lunch and gifts, %s from grants.'
-             % (C.fy(LAST_CLOSED), C.usd(rin_tot[LAST_CLOSED]),
-                C.usd(rin[(LAST_CLOSED, 'Revolving funds and lunch')]), C.usd(grant_rec[LAST_CLOSED])),
-             ['r0', 'rev', 'gr', 'cb'],
-             {'y': F(LAST_CLOSED), 'a': U(rin_tot[LAST_CLOSED]),
-              'b': U(rin[(LAST_CLOSED, 'Revolving funds and lunch')]), 'c': U(grant_rec[LAST_CLOSED])}),
-         con('%s grants had received %s when the report was run.' % (C.fy(F1), C.usd(grant_rec[F1])),
-             ['gr1'], {'y': F(F1), 'a': U(grant_rec[F1])},
-             notes=[step('Most grants are paid after the money is spent, so a year’s receipts '
-                         'arrive late; an open year looks short.', 'gap',
-                         closes='the DESE grant payment history (GEM$) for each school grant')])],
-        chart=TP.series('Money in outside the general fund', years, [
-            TP.track(g, [rin[(y, g)] for y in Y], 'published') for g in OUTSIDE
-            if any(abs(rin[(y, g)]) >= 0.5 for y in Y)], '$', kind='bar', stacked=True,
-            note='Receipts posted to school revenue accounts. Capital money is voted by Town '
-                 'Meeting and arrives as budget, not receipts. %s' % open_note,
-            note_figures={'y': F(F1)}),
-        table=dict(caption='Money in, by source', views=[
-            dict(key='years', label='By year', total_col=None, kinds=['ledger'] * 5,
-                 columns=['Voted, general fund', 'Chapter 70 (beside)', 'Fees, lunch, gifts',
-                          'Circuit breaker', 'Grants'],
-                 rows=[dict(label=C.fy(y), cells=[C.usd(m['gf_voted'][y]), C.usd(m['ch70'][y]),
-                                                  C.usd(rin[(y, 'Revolving funds and lunch')]),
-                                                  C.usd(rin[(y, 'Circuit breaker')]),
-                                                  C.usd(grant_rec[y])]) for y in Y],
-                 note='Chapter 70 is the town’s aid, from the state’s cherry sheet; it pays part of '
-                      'the voted budget and is not added to it.'),
-            dict(key='grants', label='Grants by program, four years', total_col=None, kinds=['ledger'],
-                 columns=['Received'], rows=prog_rows,
-                 note='By the DESE grant number in the fund’s name.')]),
-        sources=sources() + [dict(label='Massachusetts DLS — cherry sheet receipts, Chapter 70 '
-                                        '(dls-cherry-sheet.csv)', href='/docs/data/dls-cherry-sheet.csv')],
-        finding_figures={'a': U(rin_tot[LAST_CLOSED]), 'y': F(LAST_CLOSED)})
-    out['school-money-in']['not_established'] = [
-        'What each grant was awarded by the state, against what the ledger loaded as its budget.',
-        'Capital articles voted to the schools: they arrive as budget, not as receipts.',
-    ]
-
-    # ================================================== outside-the-general-fund
-    ogrp = {y: {g: sp[(y, g)] for g in OUTSIDE} for y in Y}
     # GRANTS BY NAME (TJ, 26 October 2026: "breakdown the grants by the name"). Each grant fund's
     # spending, under journal.grant_program's name; award years of one program add together. The
     # years must add to the Grants bar the hub and this page draw.
@@ -794,6 +789,253 @@ def build():
     for (y, nm), v in gname.items():
         g4[nm] += v
     gnames = [nm for nm in sorted(g4, key=lambda k: -g4[k]) if round(g4[nm])]
+    prog = defaultdict(float)
+    for (y, fnd), v in m['fund_rec'].items():
+        a = next(x for x in A.values() if x['fund'] == fnd)
+        if J.fund_group(a) == 'Grants':
+            prog[J.grant_code(a['fund_name']) or 'none'] += v
+    # The codes the table names, under journal.GRANT_PROGRAM's names, as every page names them.
+    PROG = {k: '%s (#%s)' % (J.GRANT_PROGRAM[k], k)
+            for k in ('240', '305', '119', '115', '117', '237', '140', '309', '252', '262')}
+    prog_rows = [dict(label=PROG.get(k, 'Other grants'), cells=[C.usd(v)])
+                 for k, v in sorted(prog.items(), key=lambda kv: -kv[1]) if k in PROG]
+    prog_rows.append(dict(label='Other grants', cells=[C.usd(sum(v for k, v in prog.items() if k not in PROG))]))
+    mx = {}
+    mx['gfv'] = f('gfv', U(m['gf_voted'][F1]), 'general fund, voted, %s' % C.fy(F1), 'published', {'y': F(F1)})
+    mx['ch70'] = f('ch70', U(m['ch70'][F1]), 'Chapter 70 aid to the town, %s' % C.fy(F1), 'published', {'y': F(F1)},
+                  allow=('70',))
+    mx['r0'] = f('r0', U(rin_tot[LAST_CLOSED]), 'received by every other fund, %s' % C.fy(LAST_CLOSED),
+                 'published', {'y': F(LAST_CLOSED)})
+    mx['rev'] = f('rev', U(rin[(LAST_CLOSED, 'Revolving funds and lunch')]),
+                  'fees, lunch and gifts, %s' % C.fy(LAST_CLOSED), 'published', {'y': F(LAST_CLOSED)})
+    mx['cb'] = f('cb', U(rin[(LAST_CLOSED, 'Circuit breaker')]), 'circuit breaker, %s' % C.fy(LAST_CLOSED),
+                 'published', {'y': F(LAST_CLOSED)})
+    mx['gr'] = f('gr', U(grant_rec[LAST_CLOSED]), 'grants, %s' % C.fy(LAST_CLOSED), 'published', {'y': F(LAST_CLOSED)})
+    mx['gr1'] = f('gr1', U(grant_rec[F1]), 'grants received so far, %s' % C.fy(F1), 'published', {'y': F(F1)})
+    mx['cap'] = f('cap', None, 'capital money voted to the schools', 'gap',
+                  closes='the Town Meeting capital articles, FY2023–FY2026, by school account')
+    ch_share = 100.0 * m['ch70'][F1] / m['gf_voted'][F1]
+    # GENERAL AID AND GRANTS, side by side (TJ, 26 October 2026, after sped-grants: "we need a
+    # similar page for ALL grants ... we may have the page already? but need this same info
+    # there too"). Chapter 70 is GENERAL aid, paid into the town's general fund toward the
+    # school budget; every grant is CATEGORICAL, restricted to its purpose. Never one total.
+    # Three stages, never subtracted (rule 1): Chapter 70 as DESE set it, grant ALLOCATIONS as
+    # DESE announced them, grant SPENDING as the ledger shows it.
+    ma = json.load(open(MIN_AID_JSON, encoding='utf-8'))
+    c70 = {r['fy']: float(r['aid']) for r in ma['series']}
+    for y in Y:
+        if abs(c70[y] - m['ch70'][y]) > 0.5:
+            fail('school-money-in: Chapter 70 %s is %.0f in DESE’s calculation and %.0f on the '
+                 'cherry sheet; the page draws one as the other' % (y, c70[y], m['ch70'][y]))
+    c70y = sorted(c70)
+    if c70y != list(range(c70y[0], c70y[-1] + 1)) or c70y[-1] != F1:
+        fail('school-money-in: DESE’s Chapter 70 series is not continuous to %s' % F1)
+    ch_next = {int(r['fy']): float(r['amount']) for r in csv.DictReader(open(CHERRY_CSV, encoding='utf-8'))
+               if r['name'] == 'Lunenburg' and r['line'] == 'Chapter 70' and r['flow'] == 'Receipts'}
+    if F1 + 1 not in ch_next:
+        fail('school-money-in: the cherry sheet has no Chapter 70 for %s' % (F1 + 1))
+    last = ma['series'][-1]
+    floor = sorted(ma['on_floor'])
+    if not (last['fy'] == F1 and F1 in floor and abs(last['change'] - last['minimum_aid']) < 0.5):
+        fail('school-money-in: the Chapter 70 meaning says %s’s rise was the minimum aid alone' % F1)
+    # Allocations: every code DESE lists for Lunenburg. A year is HELD when DESE's district page
+    # for it lists any grant (extract_dese_entitlements reconciles that page to its own total),
+    # so a code missing from a held year was not allocated that year -- not merely unread.
+    alloc_all = read_allocations(None)
+    held = sorted({y for (_, y) in alloc_all})
+    if held != list(range(held[0], held[-1] + 1)):
+        fail('school-money-in: DESE allocation years held are not continuous: %s' % held)
+    # The yearly federal grants: allocated in every year held from FORMULA0 on.
+    YEARLY = ('240', '305', '140', '309', '262')
+    PANDEMIC = ('113', '115', '119', '252', '264', '302')
+    FORMULA0 = 2019
+    if any((k, y) not in alloc_all for k in YEARLY for y in held if y >= FORMULA0):
+        fail('school-money-in: a yearly grant has no allocation in a held year from %s' % FORMULA0)
+    if FORMULA0 - 1 in held and all((k, FORMULA0 - 1) in alloc_all for k in YEARLY):
+        fail('school-money-in: all five yearly grants start before %s now' % FORMULA0)
+    pan_al = {y: sum(alloc_all.get((k, y), 0.0) for k in PANDEMIC) for y in held}
+    pan_years = [y for y in held if pan_al[y]]
+    other = sorted({k for (k, _) in alloc_all} - set(YEARLY) - set(PANDEMIC))
+    if any(sum(1 for (k2, _) in alloc_all if k2 == k) > 1 for k in other):
+        fail('school-money-in: a grant with several years of allocations is not drawn: %s' % other)
+    fg = {y: sum(alloc_all[(k, y)] for k in YEARLY) for y in held if y >= FORMULA0}
+    fg_pc = pc(fg[FORMULA0], fg[F1])
+    c70_pc = pc(c70[FORMULA0], c70[F1])
+    if not (c70_pc > 0 > fg_pc):
+        fail('school-money-in: the conclusion says Chapter 70 rose and the yearly grants fell')
+    dese_name = {}
+    for r in csv.DictReader(open(ALLOC_CSV, encoding='utf-8')):
+        if r['district_code'] == '0162':
+            dese_name[r['fund_code'].lstrip('0')] = r['grant_name']
+    gnm = lambda k: J.GRANT_PROGRAM.get(k, dese_name[k])
+    # Grant SPENDING by name (gname, above): the four largest streams, ESSER's two together.
+    ESSER = [J.GRANT_PROGRAM['115'], J.GRANT_PROGRAM['119']]
+    esser = {y: sum(gname.get((y, nm), 0.0) for nm in ESSER) for y in Y}
+    if not (esser[F0] > 0 and abs(esser[F1]) < 0.005):
+        fail('school-money-in: ESSER is said to have paid in %s and nothing in %s' % (F0, F1))
+    esser_last = max(y for y in Y if round(esser[y]))
+    big = [nm for nm in gnames if nm not in ESSER][:3]
+    comp = [('ESSER II and III, ended', ESSER)] + [(nm, [nm]) for nm in big]
+    named = {nm for _, ns in comp for nm in ns}
+    comp_tracks = [TP.track(lab, [sum(gname.get((y, nm), 0.0) for nm in ns) for y in Y], 'published', 'bar')
+                   for lab, ns in comp]
+    comp_tracks.append(TP.track('Other grants', [sum(v for (yy, nm), v in gname.items()
+                                                     if yy == y and nm not in named) for y in Y],
+                                'published', 'bar'))
+    for i, y in enumerate(Y):
+        if abs(sum(t['values'][i] for t in comp_tracks) - sp[(y, 'Grants')]) > 0.01:
+            fail('school-money-in: the grant bands do not add to grant spending in %s' % y)
+    if not rin[(LAST_CLOSED, 'Revolving funds and lunch')] > grant_rec[LAST_CLOSED]:
+        fail('school-money-in: the meaning says fees and lunch brought in more than grants')
+    drop = sp[(F0, 'Grants')] - sp[(F1, 'Grants')]
+    if not (drop > 0 and esser[F0] > drop / 2):
+        fail('school-money-in: the conclusion says ESSER was most of the fall in grant spending')
+    mx['fg0'] = f('fg0', U(fg[FORMULA0]), 'yearly federal grants allocated, %s' % C.fy(FORMULA0), 'published',
+                  {'y': F(FORMULA0)})
+    mx['fg1'] = f('fg1', U(fg[F1]), 'yearly federal grants allocated, %s' % C.fy(F1), 'published', {'y': F(F1)})
+    mx['gs0'] = f('gs0', U(sp[(F0, 'Grants')]), 'every grant, spent, %s' % C.fy(F0), 'published', {'y': F(F0)})
+    mx['gs1'] = f('gs1', U(sp[(F1, 'Grants')]), 'every grant, spent or owed, %s' % C.fy(F1), 'published',
+                  {'y': F(F1)})
+    # ---- the blocks: what each kind of money is, then each one's trend
+    floor_txt = ', '.join(C.fy(y) for y in floor)
+    floor_figs = {'f%d' % i: F(y) for i, y in enumerate(floor)}
+    explain = TB.explain('General aid and grants', [
+        ('**Chapter 70 is general aid.** The state pays it into the town’s general fund toward the '
+         'school budget, and it may be spent on anything that budget covers. Lunenburg was held at '
+         'the formula’s minimum-aid floor in %s.' % floor_txt, floor_figs, ('70',)),
+        '**Every grant is categorical.** It may be spent only on the purpose it was given for, and '
+        'most are paid after the money is spent. So the two are shown side by side here, never '
+        'added into one total.',
+        '**Allocated is not spent.** An allocation is what DESE says the district may draw; spending '
+        'is what the ledger shows. Different stages, never subtracted.',
+    ], place='chart', tone='define')
+    t_c70 = trend_chart(
+        'General state aid, set each year', c70y, 'Chapter 70 aid, as DESE set it', [c70[y] for y in c70y],
+        F1 + 1, ch_next[F1 + 1], 'Cherry sheet (state)', 'published', statistics.mean(c70.values()),
+        'Average, %s to %s' % (C.fy(c70y[0]), C.fy(c70y[-1])),
+        ('DESE’s Chapter 70 calculation by fiscal year; %s is the state’s cherry sheet.' % C.fy(F1 + 1),
+         {'y': F(F1 + 1)}),
+        ('%s rose %s, the formula’s minimum aid alone. Every grant together spent %s in %s: '
+         'restricted money beside this general aid.'
+         % (C.fy(F1), C.usd(last['change']), C.usd(sp[(LAST_CLOSED, 'Grants')]), C.fy(LAST_CLOSED)),
+         {'y': F(F1), 'a': U(last['change']), 'b': U(sp[(LAST_CLOSED, 'Grants')]), 'z': F(LAST_CLOSED)}),
+        note_allow=('70',))
+    t_comp = TB.chart(TP.series('Grant spending, by grant', years, comp_tracks, '$', kind='bar',
+                                stacked=True, totals=True,
+                                note='Spent or still owed at the close, every award year of a grant '
+                                     'together. %s' % open_note, note_figures={'y': F(F1)}),
+                      place='chart',
+                      so=('ESSER paid %s in %s and nothing after %s; whatever it paid for is now paid '
+                          'from another fund or not at all, and the ledger cannot say which.'
+                          % (C.usd(esser[F0]), C.fy(F0), C.fy(esser_last)),
+                          {'a': U(esser[F0]), 'y': F(F0), 'z': F(esser_last)}))
+    t_alloc = [alloc_trend_chart(alloc_all, k, gnm(k), 'school-money-in') for k in YEARLY]
+    t_pan = trend_chart(
+        'Pandemic relief grants, allocated', held, 'Pandemic relief, allocated',
+        [pan_al[y] for y in held], None, None, None, None, None, None,
+        ('ESSER I, II and III and three American Rescue Plan grants, by award year. Ended: no '
+         'next year.', None),
+        ('Allocated only in %s, %s in all, and nothing in any year since: the one grant stream '
+         'here that has ended.' % (' and '.join(C.fy(y) for y in pan_years), C.usd(sum(pan_al.values()))),
+         dict({'p%d' % i: F(y) for i, y in enumerate(pan_years)}, a=U(sum(pan_al.values())))))
+    al_years = [y for y in held if y >= min(pan_years)]
+    al_rows = [dict(label='%s (#%s)' % (gnm(k), k),
+                    cells=[C.usd(alloc_all[(k, y)]) if (k, y) in alloc_all else '' for y in al_years])
+               for k in sorted({k for (k, y) in alloc_all if y in al_years},
+                               key=lambda k: -sum(alloc_all.get((k, y), 0.0) for y in al_years))]
+    out['school-money-in'] = TP.page(
+        'school-money-in',
+        'In %s Chapter 70 aid was %s and every grant spent %s: general aid beside restricted money.'
+        % (C.fy(LAST_CLOSED), C.usd(c70[LAST_CLOSED]), C.usd(sp[(LAST_CLOSED, 'Grants')])),
+        list(mx.values()),
+        [con('The general fund was voted %s for %s; Chapter 70 aid to the town was %s of that.'
+             % (C.usd(m['gf_voted'][F1]), C.fy(F1), C.pct(ch_share)),
+             ['gfv', 'ch70'], {'a': U(m['gf_voted'][F1]), 'y': F(F1), 'p': P(ch_share)}, allow=('70',),
+             so='This part of the vote rests on a state formula the town does not set, and '
+                'Lunenburg is held at its floor.',
+             notes=[step('Chapter 70 is paid to the town, not to a school account, so it is shown '
+                         'beside the vote, never added to it.', 'gap', allow=('70',),
+                         closes='the town’s revenue ledger for the school appropriation, by source')]),
+         con('In %s other funds took in %s: %s from fees, lunch and gifts, %s from grants.'
+             % (C.fy(LAST_CLOSED), C.usd(rin_tot[LAST_CLOSED]),
+                C.usd(rin[(LAST_CLOSED, 'Revolving funds and lunch')]), C.usd(grant_rec[LAST_CLOSED])),
+             ['r0', 'rev', 'gr', 'cb', 'gr1'],
+             {'y': F(LAST_CLOSED), 'a': U(rin_tot[LAST_CLOSED]),
+              'b': U(rin[(LAST_CLOSED, 'Revolving funds and lunch')]), 'c': U(grant_rec[LAST_CLOSED])},
+             so='Fees and lunch bring in more than grants do, and each fund may be spent only on '
+                'what it was collected for.',
+             notes=[step('%s grants had received %s when the report was run. Most grants are paid '
+                         'after the money is spent, so an open year looks short.'
+                         % (C.fy(F1), C.usd(grant_rec[F1])), 'gap', {'y': F(F1), 'a': U(grant_rec[F1])},
+                         closes='the DESE grant payment history (GEM$) for each school grant')]),
+         con('%s to %s, Chapter 70 rose %s; the five yearly federal grants’ allocations fell %s.'
+             % (C.fy(FORMULA0), C.fy(F1), C.pct(c70_pc), C.pct(-fg_pc)), ['ch70', 'fg0', 'fg1'],
+             {'y': F(FORMULA0), 'z': F(F1), 'a': P(c70_pc), 'b': P(-fg_pc)}, allow=('70',),
+             so='The outside money that grew is general aid already inside the vote; the restricted '
+                'grants did not grow.',
+             notes=[step('Both are amounts the state and DESE set, not receipts or spending, and '
+                         'neither is adjusted for prices. The five are IDEA, its preschool grant, '
+                         'Title I, Title IIA and Title IV.', 'measured')]),
+         con('Grant spending fell from %s in %s to %s in %s; %s of the fall was ESSER ending.'
+             % (C.usd(sp[(F0, 'Grants')]), C.fy(F0), C.usd(sp[(F1, 'Grants')]), C.fy(F1), C.usd(esser[F0])),
+             ['gs0', 'gs1'],
+             {'a': U(sp[(F0, 'Grants')]), 'y': F(F0), 'b': U(sp[(F1, 'Grants')]), 'z': F(F1),
+              'c': U(esser[F0])},
+             so='The pandemic money has run out; what it paid for is now paid from another fund or '
+                'not at all.',
+             notes=[step(open_note + ' Spent includes what was still owed at the close.', 'gap',
+                         {'y': F(F1)},
+                         closes='the Town’s journal report for %s, run after the year is closed' % C.fy(F1))])],
+        chart=TP.series('Money in outside the general fund', years, [
+            TP.track(g, [rin[(y, g)] for y in Y], 'published') for g in OUTSIDE
+            if any(abs(rin[(y, g)]) >= 0.5 for y in Y)], '$', kind='bar', stacked=True,
+            note='Receipts posted to school revenue accounts. Capital money is voted by Town '
+                 'Meeting and arrives as budget, not receipts. %s' % open_note,
+            note_figures={'y': F(F1)}),
+        blocks=[explain, t_c70, t_comp] + t_alloc + [t_pan],
+        table=dict(caption='Money in, by source', views=[
+            dict(key='years', label='By year', total_col=None, kinds=['ledger'] * 5,
+                 columns=['Voted, general fund', 'Chapter 70 (beside)', 'Fees, lunch, gifts',
+                          'Circuit breaker', 'Grants'],
+                 rows=[dict(label=C.fy(y), cells=[C.usd(m['gf_voted'][y]), C.usd(m['ch70'][y]),
+                                                  C.usd(rin[(y, 'Revolving funds and lunch')]),
+                                                  C.usd(rin[(y, 'Circuit breaker')]),
+                                                  C.usd(grant_rec[y])]) for y in Y],
+                 note='Chapter 70 is the town’s aid, from the state’s cherry sheet; it pays part of '
+                      'the voted budget and is not added to it.'),
+            dict(key='grants', label='Grants by program, four years', total_col=None, kinds=['ledger'],
+                 columns=['Received'], rows=prog_rows,
+                 note='By the DESE grant number in the fund’s name.'),
+            dict(key='alloc', label='Grants allocated by DESE', total_col=None,
+                 kinds=['published'] * len(al_years), columns=[C.fy(y) for y in al_years], rows=al_rows,
+                 note='DESE’s entitlement allocations to Lunenburg by award year. Blank: DESE allocated '
+                      'nothing that year. Allocated is not spent.')]),
+        sources=sources() + [dict(label='Massachusetts DLS — cherry sheet receipts, Chapter 70 '
+                                        '(dls-cherry-sheet.csv)', href='/docs/data/dls-cherry-sheet.csv'),
+                             dict(label='Massachusetts DESE — Chapter 70 key factors, every year '
+                                        '(dese-ch70-key-factors.xlsx)', href=ma['source']['docs_url']),
+                             dict(label='Massachusetts DESE — entitlement grant allocations, by district and fund '
+                                        'code (dese-entitlement-allocations.csv)',
+                                  href='/docs/data/dese-entitlement-allocations.csv')],
+        finding_figures={'y': F(LAST_CLOSED), 'a': U(c70[LAST_CLOSED]), 'b': U(sp[(LAST_CLOSED, 'Grants')])},
+        finding_allow=('70',))
+    out['school-money-in']['not_established'] = [
+        'What each grant was awarded by the state, against what the ledger loaded as its budget.',
+        'Capital articles voted to the schools: they arrive as budget, not as receipts.',
+        'What ESSER paid for after it ended: another fund, or nothing.',
+    ]
+    money_in = dict(
+        chapter70_dese={str(y): c70[y] for y in c70y}, chapter70_next={str(F1 + 1): ch_next[F1 + 1]},
+        yearly_codes=list(YEARLY), pandemic_codes=list(PANDEMIC), formula_from=FORMULA0,
+        yearly_allocated={str(y): v for y, v in fg.items()},
+        pandemic_allocated={str(y): v for y, v in pan_al.items()},
+        grants_spent={str(y): round(sp[(y, 'Grants')], 2) for y in Y},
+        esser_spent={str(y): round(esser[y], 2) for y in Y},
+        by_grant={str(y): {nm: round(v, 2) for (yy, nm), v in sorted(gname.items()) if yy == y and round(v, 2)}
+                  for y in Y})
+
+    # ================================================== outside-the-general-fund
+    ogrp = {y: {g: sp[(y, g)] for g in OUTSIDE} for y in Y}
     grant_rows = [dict(label=nm, cells=[C.usd(gname.get((y, nm), 0.0)) if round(gname.get((y, nm), 0.0))
                                         else '' for y in Y] + [C.usd(g4[nm])]) for nm in gnames]
     grant_rows.append(dict(label='All grants', cells=[C.usd(sp[(y, 'Grants')]) for y in Y]
@@ -1303,7 +1545,6 @@ def build():
     # announced allocation; the district's initial circuit breaker listing), else OUR estimate --
     # the last figure moved by the median yearly change, drawn as an estimate and labelled so.
     # The ended grants get no next year.
-    import statistics
     deck = open(os.path.join(ROOT, 'sources', 'correspondence', 'text',
                              '2026-10-22-special-education-funding-superintendent-finance-committee.pptx.txt'),
                 encoding='utf-8').read()
@@ -1315,66 +1556,23 @@ def build():
     if cby[-1] != F1:
         fail('sped-grants: the circuit breaker file does not end at %s' % F1)
     cb_avg = statistics.mean(cbs.values())
-
-    def trend(k):
-        ys_ = sorted(y for (c, y) in alloc if c == k)
-        if ys_ != list(range(ys_[0], ys_[-1] + 1)):
-            fail('sped-grants: #%s skips an allocation year' % k)
-        v = [alloc[(k, y)] for y in ys_]
-        step_ = statistics.median(b / a_ - 1 for a_, b in zip(v, v[1:]))
-        return ys_, v, statistics.mean(v), step_, v[-1] * (1 + step_)
-    tr = {k: trend(k) for k in ('240', '262')}
-
-    def tchart(title, ys_, hist, nxt_y, nxt, nxt_name, nxt_basis, avg, avg_label, note, so):
-        xs = list(ys_) + [nxt_y]
-        # LINES SHOW TRENDS, BARS SHOW COMPOSITION (TJ, 26 October 2026). The composition is the
-        # stacked bars at the top of this page; these are each stream's trend, as lines. Next
-        # year is its own track, a segment from the last real year, in its own basis -- the
-        # district's listing, or our estimate -- so it reads as a continuation, not a fact.
-        last = hist_v[hist][-1]
-        return TB.chart(TP.series(title, [C.fy(y) for y in xs], [
-            TP.track(hist, [v for v in hist_v[hist]] + [None], 'published', 'line'),
-            TP.track(nxt_name, [None] * (len(ys_) - 1) + [last, nxt], nxt_basis, 'line')], '$',
-            kind='line', reference=(avg, avg_label), note=note[0], note_figures=note[1]),
-            place='chart', so=so)
-    hist_v = {'Paid, by year of payment': [cbs[y] for y in cby]}
-    t_cb = tchart('Circuit breaker, paid each year', cby, 'Paid, by year of payment', F1 + 1, CB27,
-                  'Initial listing (district)', 'stated', cb_avg,
-                  'Average, %s to %s' % (C.fy(cby[0]), C.fy(cby[-1])),
-                  ('DESE’s payments by the year paid; the next year is the district’s initial '
-                   'listing, which DESE revises during the year.', None),
-                  ('It swings: %s at its lowest, %s at its highest, against an average of %s. The '
-                   '%s listing, %s, is above every year paid.'
-                   % (C.usd(min(cbs.values())), C.usd(max(cbs.values())), C.usd(cb_avg), C.fy(F1 + 1),
-                      C.usd(CB27)),
-                   {'a': U(min(cbs.values())), 'b': U(max(cbs.values())), 'c': U(cb_avg),
-                    'y': F(F1 + 1), 'd': U(CB27)}))
+    # The composition is the stacked bars at the top of this page; these are each stream's
+    # trend, as lines (trend_chart).
+    t_cb = trend_chart('Circuit breaker, paid each year', cby, 'Paid, by year of payment',
+                       [cbs[y] for y in cby], F1 + 1, CB27,
+                       'Initial listing (district)', 'stated', cb_avg,
+                       'Average, %s to %s' % (C.fy(cby[0]), C.fy(cby[-1])),
+                       ('DESE’s payments by the year paid; the next year is the district’s initial '
+                        'listing, which DESE revises during the year.', None),
+                       ('It swings: %s at its lowest, %s at its highest, against an average of %s. The '
+                        '%s listing, %s, is above every year paid.'
+                        % (C.usd(min(cbs.values())), C.usd(max(cbs.values())), C.usd(cb_avg), C.fy(F1 + 1),
+                           C.usd(CB27)),
+                        {'a': U(min(cbs.values())), 'b': U(max(cbs.values())), 'c': U(cb_avg),
+                         'y': F(F1 + 1), 'd': U(CB27)}))
     if not CB27 > max(cbs.values()):
         fail('sped-grants: the trend says the FY2027 listing is above every year paid')
-    def fell(v):                          # years in a row the allocation fell, latest first
-        n = 0
-        while n + 1 < len(v) and v[-1 - n] < v[-2 - n]:
-            n += 1
-        return n
-    t_idea = []
-    for k in ('240', '262'):
-        ys_, v, avg, st, est = tr[k]
-        nm = '%s (#%s)' % (sg_name[k], k)
-        hist_v[nm + ', allocated'] = v
-        t_idea.append(tchart('%s, allocated each year' % sg_name[k], ys_, nm + ', allocated', ys_[-1] + 1,
-                             round(est), 'Next year, our estimate', 'estimate', avg,
-                             'Average, %s to %s' % (C.fy(ys_[0]), C.fy(ys_[-1])),
-                             ('DESE’s allocations by award year; %s is announced. The dashed end '
-                              'is ours: %s moved by the median yearly change, %s.'
-                              % (C.fy(ys_[-1]), C.fy(ys_[-1]), C.pct(100 * st)),
-                              {'y': F(ys_[-1]), 'p': P(100 * st)}),
-                             ('An average of %s a year, and %s announced for %s. At its usual yearly '
-                              'change %s would be about %s: our estimate, not an award.%s'
-                              % (C.usd(avg), C.usd(v[-1]), C.fy(ys_[-1]), C.fy(ys_[-1] + 1), C.usd(round(est)),
-                                 (' It fell in each of the last %s years, so the estimate may run high.'
-                                  % C.num(fell(v))) if fell(v) >= 2 else ''),
-                              dict({'a': U(avg), 'b': U(v[-1]), 'y': F(ys_[-1]), 'z': F(ys_[-1] + 1),
-                                    'c': U(round(est))}, **({'n': N(fell(v))} if fell(v) >= 2 else {})))))
+    t_idea = [alloc_trend_chart(alloc, k, sg_name[k], 'sped-grants') for k in ('240', '262')]
     out['sped-grants'] = TP.page(
         'sped-grants',
         'Special education grants and the circuit breaker paid %s in %s and %s in %s.'
@@ -1574,6 +1772,7 @@ def build():
                                               'ar_spent', 'ties', 'net_ties')} for r in art],
         eoyr_tie=eo,
         ended_grants=dict(award=round(aw_tot, 2), never_spent=round(left_tot, 2)),
+        money_in=money_in,
         lines=[{k: (round(v, 2) if isinstance(v, float) else v) for k, v in r.items()} for r in line_rows],
     )
     return out, figs

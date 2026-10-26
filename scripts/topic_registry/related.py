@@ -74,6 +74,16 @@ RELATED = [
     # other subjects' competitive grants, so it is a related page here rather than on the hub.
     [('sped-grants', 'Every special education grant and the circuit breaker, by year'),
      ('grants-others-receive', 'Competitive grants comparable districts won that Lunenburg did not')],
+    # School grants and aid (TJ, 26 October 2026: "make sure you create them as related pages"):
+    # every grant beside general state aid, linked to the special education streams, the same
+    # grants against other districts, and the state aid formula. Pairs, not one cluster, so the
+    # others are not offered to each other past their four.
+    [('school-money-in', 'General state aid beside every grant: allocated, spent, trend'),
+     ('sped-grants', 'Every special education grant and the circuit breaker, by year')],
+    [('school-money-in', 'General state aid beside every grant: allocated, spent, trend'),
+     ('grant-allocations-compared', 'The formula grants every district gets, per pupil')],
+    [('school-money-in', 'General state aid beside every grant: allocated, spent, trend'),
+     ('chapter-70-by-year', 'How the state aid formula set Lunenburg’s aid each year')],
     # Money left over: carried as orders, held in funds, set against each budget line.
     [('carried-over-orders', 'Open orders carried from one year into the next'),
      ('unspent-by-fund', 'What each fund held unspent at the end of the year'),

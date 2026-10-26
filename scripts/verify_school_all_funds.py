@@ -259,6 +259,57 @@ def main():
     if any(sgr[(y, c)] for y in YEARS[1:] for c in ('252', '264')):
         bad.append('sped-grants: the pandemic IDEA grants spent after FY2023; the page says they did not')
 
+    # school grants and aid (school-money-in): Chapter 70 against the cherry sheet (another
+    # publisher's printing of the same aid), DESE's allocations from its CSV with Decimal, grant
+    # and ESSER spending from raw, and the finding and conclusions read back off the page.
+    mi = pay['money_in']
+    cs = {int(r['fy']): Decimal(r['amount']) for r in csv.DictReader(open(os.path.join(DATA, 'dls-cherry-sheet.csv'), encoding='utf-8'))
+          if r['name'] == 'Lunenburg' and r['line'] == 'Chapter 70' and r['flow'] == 'Receipts'}
+    both = [y for y in map(int, mi['chapter70_dese']) if y in cs]
+    if len(both) < 4:
+        bad.append('school-money-in: the cherry sheet overlaps DESE’s Chapter 70 in only %d years' % len(both))
+    for y in both:
+        check('Chapter 70 %d, cherry sheet' % y, mi['chapter70_dese'][str(y)], cs[y], Decimal('0.5'))
+    for y, v in mi['chapter70_next'].items():
+        check('Chapter 70 %s, cherry sheet' % y, v, cs[int(y)])
+    al2 = defaultdict(Decimal)
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-entitlement-allocations.csv'), encoding='utf-8')):
+        if r['district_code'] == '0162':
+            k = r['fund_code'].lstrip('0')
+            if k in mi['yearly_codes']:
+                al2[('yearly', int(r['fy']))] += Decimal(r['amount'])
+            if k in mi['pandemic_codes']:
+                al2[('pandemic', int(r['fy']))] += Decimal(r['amount'])
+    for y, v in mi['yearly_allocated'].items():
+        check('yearly grants allocated %s' % y, v, al2[('yearly', int(y))])
+    for y, v in mi['pandemic_allocated'].items():
+        check('pandemic grants allocated %s' % y, v, al2[('pandemic', int(y))])
+    gsp, esp = defaultdict(Decimal), defaultdict(Decimal)
+    for r in rows:
+        if r['exp'] and r['posts_to'] in SPENT and group(r['fund']) == 'Grants':
+            gsp[r['fy']] += r['a']
+            mm = re.search(r'#\s*(\d{3})\b', r['fund_name']) or re.match(r"\s*FY\s*'?\d\d\s+(\d{3})\b", r['fund_name'])
+            if mm and mm.group(1) in ('115', '119'):
+                esp[r['fy']] += r['a']
+    for y in YEARS:
+        check('grants spent %d' % y, mi['grants_spent'][str(y)], gsp[y])
+        check('ESSER spent %d' % y, mi['esser_spent'][str(y)], esp[y])
+        check('grants by name add up, %d' % y, sum(Decimal(str(v)) for v in mi['by_grant'][str(y)].values()), gsp[y])
+    smi = json.load(open(os.path.join(TOPICS, 'school-money-in.json'), encoding='utf-8'))
+    pct = lambda a, b: '%.1f%%' % abs(round(float(100 * (b - a) / a), 1))
+    f0 = mi['formula_from']
+    c70 = {int(y): Decimal(str(v)) for y, v in mi['chapter70_dese'].items()}
+    for want in (usd(c70[2025]), usd(gsp[2025])):
+        if want not in smi['finding']['text']:
+            bad.append('school-money-in finding does not state %s: %r' % (want, smi['finding']['text']))
+    ctext = ' '.join(c['text'] for c in smi['conclusions'])
+    for want in (pct(c70[f0], c70[2026]), pct(al2[('yearly', f0)], al2[('yearly', 2026)]),
+                 usd(gsp[2023]), usd(gsp[2026]), usd(esp[2023])):
+        if want not in ctext:
+            bad.append('school-money-in conclusions do not state %s' % want)
+    if not (c70[2026] > c70[f0] and al2[('yearly', 2026)] < al2[('yearly', f0)] and esp[2026] == 0):
+        bad.append('school-money-in: the conclusions’ directions no longer hold')
+
     if bad:
         print('verify_school_all_funds: %d problems' % len(bad))
         for b in bad:

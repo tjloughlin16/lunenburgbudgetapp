@@ -19,15 +19,18 @@ The voted school budget is the general fund. Every fund together spent $29,929,0
 
 *The first two must hold to the cent or nothing on these pages is written. The last two are other publishers’ readings of the same money, compared and shown.*
 
-## School money in
+## School grants and aid
 
-**Outside the voted budget, school funds took in $3,407,472 in FY2025, most of it fees, lunch and grants.**
+**In FY2025 Chapter 70 aid was $8,988,960 and every grant spent $1,196,194: general aid beside restricted money.**
 
 - The general fund was voted $26,287,474 for FY2026; Chapter 70 aid to the town was 35.1% of that.
   - *not known:* Chapter 70 is paid to the town, not to a school account, so it is shown beside the vote, never added to it. — closes: the town’s revenue ledger for the school appropriation, by source
 - In FY2025 other funds took in $3,407,472: $1,683,842 from fees, lunch and gifts, $1,114,792 from grants.
-- FY2026 grants had received $74,333 when the report was run.
-  - *not known:* Most grants are paid after the money is spent, so a year’s receipts arrive late; an open year looks short. — closes: the DESE grant payment history (GEM$) for each school grant
+  - *not known:* FY2026 grants had received $74,333 when the report was run. Most grants are paid after the money is spent, so an open year looks short. — closes: the DESE grant payment history (GEM$) for each school grant
+- FY2019 to FY2026, Chapter 70 rose 22.4%; the five yearly federal grants’ allocations fell 1.2%.
+  - *measured:* Both are amounts the state and DESE set, not receipts or spending, and neither is adjusted for prices. The five are IDEA, its preschool grant, Title I, Title IIA and Title IV.
+- Grant spending fell from $1,900,357 in FY2023 to $1,037,341 in FY2026; $762,157 of the fall was ESSER ending.
+  - *not known:* FY2026 is not yet closed in this run. Spent includes what was still owed at the close. — closes: the Town’s journal report for FY2026, run after the year is closed
 
 **Money in, by source — By year**
 
@@ -44,26 +47,45 @@ The voted school budget is the general fund. Every fund together spent $29,929,0
 
 | | Received |
 |---|---:|
-| IDEA special education (#240) | $1,621,594 |
-| ESSER III (#119) | $961,119 |
+| IDEA (special education) (#240) | $1,621,594 |
+| ESSER III (pandemic) (#119) | $961,119 |
 | Title I (#305) | $620,814 |
-| ESSER II (#115) | $374,445 |
-| Family and community (#237) | $266,769 |
+| ESSER II (pandemic) (#115) | $374,445 |
+| Family and community engagement (#237) | $266,769 |
 | Student Opportunity Act (#117) | $152,700 |
-| Title II (#140) | $88,653 |
-| ARP IDEA (#252) | $64,608 |
-| IDEA early childhood (#262) | $39,781 |
+| Title IIA (#140) | $88,653 |
+| IDEA (pandemic relief) (#252) | $64,608 |
+| IDEA (preschool) (#262) | $39,781 |
 | Title IV (#309) | $34,904 |
 | Other grants | $591,052 |
 
 *By the DESE grant number in the fund’s name.*
 
+**Money in, by source — Grants allocated by DESE**
+
+| | FY2021 | FY2022 | FY2023 | FY2024 | FY2025 | FY2026 | FY2027 |
+|---|---:|---:|---:|---:|---:|---:|---:|
+| IDEA (special education) (#240) | $386,101 | $399,152 | $404,772 | $420,163 | $424,156 | $423,912 | $423,413 |
+| Title I (#305) | $182,749 | $180,342 | $191,672 | $210,432 | $208,197 | $209,552 | $193,820 |
+| ESSER III (pandemic) (#119) |  | $1,351,034 |  |  |  |  |  |
+| ESSER II (pandemic) (#115) | $588,834 |  |  |  |  |  |  |
+| Title IIA (#140) | $26,728 | $32,708 | $31,556 | $36,509 | $33,663 | $35,634 | $28,443 |
+| Elementary and Secondary Schools Emergency Relief Fund (#113) | $198,073 |  |  |  |  |  |  |
+| Title IV (#309) | $17,538 | $12,442 | $12,904 | $14,045 | $15,259 | $14,616 | $15,109 |
+| IDEA (preschool) (#262) | $12,401 | $12,500 | $13,083 | $13,325 | $13,373 | $13,366 | $13,967 |
+| IDEA (pandemic relief) (#252) |  | $88,330 |  |  |  |  |  |
+| IDEA preschool (pandemic relief) (#264) |  | $8,229 |  |  |  |  |  |
+| American Rescue Plan-Homeless Children and Youth II (#302) |  | $3,266 |  |  |  |  |  |
+
+*DESE’s entitlement allocations to Lunenburg by award year. Blank: DESE allocated nothing that year. Allocated is not spent.*
+
 What this does not establish:
 
 - What each grant was awarded by the state, against what the ledger loaded as its budget.
 - Capital articles voted to the schools: they arrive as budget, not as receipts.
+- What ESSER paid for after it ended: another fund, or nothing.
 
-Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)](/docs/data/munis-school-journal.csv); [Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)](/docs/data/munis-school-journal-accounts.csv); [Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account](/docs/data/munis-school-ytd.csv); [Town of Lunenburg — how the journal reached us, and what was redacted](/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md); [Massachusetts DLS — cherry sheet receipts, Chapter 70 (dls-cherry-sheet.csv)](/docs/data/dls-cherry-sheet.csv)
+Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)](/docs/data/munis-school-journal.csv); [Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)](/docs/data/munis-school-journal-accounts.csv); [Town of Lunenburg — period-13 MUNIS spreadsheets, school general fund and special funds, FY2023–FY2026 (munis-school-ytd.csv), tied account by account](/docs/data/munis-school-ytd.csv); [Town of Lunenburg — how the journal reached us, and what was redacted](/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md); [Massachusetts DLS — cherry sheet receipts, Chapter 70 (dls-cherry-sheet.csv)](/docs/data/dls-cherry-sheet.csv); [Massachusetts DESE — Chapter 70 key factors, every year (dese-ch70-key-factors.xlsx)](/docs/state-dese/dese-ch70-key-factors.xlsx); [Massachusetts DESE — entitlement grant allocations, by district and fund code (dese-entitlement-allocations.csv)](/docs/data/dese-entitlement-allocations.csv)
 
 ## Budget lines, all funds
 

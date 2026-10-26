@@ -1836,7 +1836,14 @@
    "minutes": 1,
    "path": "/state-aid/chapter-70-by-year",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "school-money-in",
+     "path": "/school-all-funds/school-money-in",
+     "title": "School grants and aid",
+     "why": "General state aid beside every grant: allocated, spent, trend"
+    }
+   ],
    "shelves": [
     "state-aid",
     "school-spending-history"
@@ -2808,6 +2815,12 @@
      "path": "/grants-open-to-lunenburg",
      "title": "Grants open to Lunenburg",
      "why": "The state grant programs the district can apply for now"
+    },
+    {
+     "id": "school-money-in",
+     "path": "/school-all-funds/school-money-in",
+     "title": "School grants and aid",
+     "why": "General state aid beside every grant: allocated, spent, trend"
     }
    ],
    "shelves": [
@@ -3690,7 +3703,7 @@
     {
      "id": "school-money-in",
      "path": "/school-all-funds/school-money-in",
-     "title": "School money in",
+     "title": "School grants and aid",
      "why": "What the funds outside the budget took in, and from where"
     }
    ],
@@ -4328,14 +4341,32 @@
    "title": "School health insurance"
   },
   "school-money-in": {
-   "finding": "Outside the voted budget, school funds took in $3,407,472 in FY2025, most of it fees, lunch and grants.",
+   "finding": "In FY2025 Chapter 70 aid was $8,988,960 and every grant spent $1,196,194: general aid beside restricted money.",
    "generator": "scripts/build_school_all_funds.py",
    "home": "school-all-funds",
    "id": "school-money-in",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/school-all-funds/school-money-in",
    "ready": true,
    "related": [
+    {
+     "id": "sped-grants",
+     "path": "/special-education/sped-grants",
+     "title": "Special education grants",
+     "why": "Every special education grant and the circuit breaker, by year"
+    },
+    {
+     "id": "grant-allocations-compared",
+     "path": "/school-all-funds/grant-allocations-compared",
+     "title": "Grant allocations compared",
+     "why": "The formula grants every district gets, per pupil"
+    },
+    {
+     "id": "chapter-70-by-year",
+     "path": "/state-aid/chapter-70-by-year",
+     "title": "Chapter 70 by year",
+     "why": "How the state aid formula set Lunenburg’s aid each year"
+    },
     {
      "id": "outside-the-general-fund",
      "path": "/school-all-funds/outside-the-general-fund",
@@ -4346,7 +4377,7 @@
    "shelves": [
     "school-all-funds"
    ],
-   "title": "School money in"
+   "title": "School grants and aid"
   },
   "school-revolving-funds": {
    "finding": "The 9 school revolving funds took in $1,031,126 and paid out $1,119,195 in nine months of FY2026.",
@@ -4610,6 +4641,12 @@
      "path": "/school-all-funds/grants-others-receive",
      "title": "Grants other districts get",
      "why": "Competitive grants comparable districts won that Lunenburg did not"
+    },
+    {
+     "id": "school-money-in",
+     "path": "/school-all-funds/school-money-in",
+     "title": "School grants and aid",
+     "why": "General state aid beside every grant: allocated, spent, trend"
     }
    ],
    "shelves": [

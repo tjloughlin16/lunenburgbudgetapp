@@ -39,7 +39,7 @@ TOPIC_GENERATORS = {'grant-allocations-compared': 'build_grant_comparison_topics
                     'pay-moved-between-funds': 'build_pay_by_fund_topics.py',
                     'positions-and-their-funds': 'build_pay_by_fund_topics.py'}
 TOPICS = {
-    'school-money-in': 'School money in',
+    'school-money-in': 'School grants and aid',
     'budget-lines-all-funds': 'Budget lines, all funds',
     'outside-the-general-fund': 'Paid outside the general fund',
     'unspent-by-fund': 'Unspent money by fund',
