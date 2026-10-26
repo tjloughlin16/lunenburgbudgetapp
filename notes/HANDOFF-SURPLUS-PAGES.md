@@ -85,6 +85,22 @@ footing. Only the as-printed pair, which mixes footings AND counts an FY2027 bil
     1:51:20), the district's circuit breaker slides: "We are allowed to prepay the 1st quarter of
     out of district tuition from circuit Breaker accounts"; eligible students 9 (FY2025) -> 13
     (FY2026). The FY2026 GENERAL FUND prepayment is not mentioned anywhere in the captions.
+- NOT ANNOUNCED IN JUNE OR JULY (checked 26 Oct 2026). Every June 2026 meeting of the School
+  Committee (3, 24 June), Finance Committee (11 June) and Select Board (2, 15, 16, 30 June), minutes
+  AND captions, plus School Committee 29 July: no mention of prepaying tuition, FY2027 tuition,
+  FLLAC, or moving tuition onto the circuit breaker. What WAS presented:
+  - SC 24 June (captions 35:00-42:00): four line-item transfers (salary reserve $90,769.62 to 13
+    deficit salary lines; athletic transportation to dues $9,670.45; equipment $1,316.94; a salary
+    to extended day $35,400/$34,500, a transposition). Carry-forward encumbrances voted from a sheet
+    "not in your packet"; the largest named is June transportation. The prepayment is not an
+    encumbrance (paid 30 June, API) and was not on either list as described.
+  - SC 29 July (captions 22:10-29:20): year-end transfers "just to cover overages"; includes
+    $81,075.96 from the HS special education resource room teacher -- "Was that an unfilled
+    position?" "a leave of absence" (USE for the vacancy gap). No tuition item.
+  - FinCom 11 June: year-end transfer documents "were not provided". SB 16 June: town year-end
+    transfers deferred to July.
+  - No s.71D advance-tuition vote in any of them. Not held: the 24 June encumbrance sheet, the
+    meeting packets, and the 2 and 9 September 2026 School Committee "FY26 Year End Budget review".
 - Rule 8: lawful (c.71 s.71D; DLS). The finding is the EFFECT on the figure the Committee heard
   and on what lapses to free cash, never intent.
 - Still to cite in the build: the circuit breaker carry-forward rule; c.71 s.34 (bottom-line
