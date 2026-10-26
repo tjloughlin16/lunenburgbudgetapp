@@ -84,6 +84,15 @@ cannot tell apart, the document that settles the rest (a money-gaps row). Rule 7
      next year's tuition paid early, and FY2027's $700,142 starts with its first quarter paid.
      No other payee spelling in any fund; FY2025's $445,631 (on 2640's private account) is
      already counted. The cost rise is real but ~$394k, not $524k.
+   - **The prepayment is LAWFUL** -- G.L. c. 71 s. 71D (a school committee may approve tuition up
+     to three months in advance) and c. 40 s. 4E; DLS "Prepayment from Prior Fiscal Year Funds"
+     uses this exact case (a July-September bill due 30 June). Rule 8: a tool that moves money
+     between years, not a defect. Measured: FY2025 prepaid one FY2026 invoice ($29,571.84),
+     FY2026 prepaid $189,276.75. Open: the s. 71D approval -- no vote found in School Committee
+     minutes April-July 2026; 24 June 2026 minutes say carryover POs were "already discussed ...
+     with the encumbrances". Finance Committee 22 Oct 2026 (captions, 1:49:50): "We are allowed
+     to prepay the 1st quarter of out of district tuition from circuit Breaker accounts" -- this
+     one was paid from the GENERAL FUND. Without it, FY2026 leaves $189,277 more.
    - Build: a tuition page on this shelf (by line AND by placement type, by fund), replacing the
      "Tuition at year end" framing; a verifier reading the journal raw.
 2. **Building jobs -- measured** (/buildings-and-grounds/upkeep-skipped, upkeep-surplus-every-dollar):
