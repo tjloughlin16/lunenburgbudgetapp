@@ -124,10 +124,17 @@ def minute(board_slug, board, fname, quote, who):
                 label='%s minutes, %s' % (board, date))
 
 
+def by_ear(name):
+    """A speaker named by a person who listened to the recording (TJ, 25 October 2026), never
+    by the captions, which name nobody. The page says which."""
+    return '%s (named from the recording, not the captions)' % name
+
+
 def video(board_slug, board, fname, at, quote, who=None):
     """A quotation from the machine captions of a meeting recording, at its timestamp, checked
     verbatim against our copy of the captions every build. Captions name nobody, so `who` stays
-    CAPTION_WHO unless the captions themselves say who is speaking (rule 13: never a guess)."""
+    CAPTION_WHO unless the captions themselves say who is speaking (rule 13: never a guess), or
+    a person listened to the recording and named the speaker: by_ear() says so on the page."""
     rel = 'sources/data/youtube-transcripts/%s/%s' % (board_slug, fname)
     t = json.load(open(os.path.join(ROOT, rel), encoding='utf-8'))
     if norm(quote) not in norm(' '.join(x['text'] for x in t['segments'])):
@@ -138,7 +145,7 @@ def video(board_slug, board, fname, at, quote, who=None):
                for x in t['segments']):
         fail('%r does not begin near %s in %s' % (quote[:40], at, rel))
     return dict(quote=quote, board=board, date=t['meeting_date'], who=who or CAPTION_WHO,
-                href='%s&t=%ds' % (t['video_url'], secs), caption=True,
+                href='%s&t=%ds' % (t['video_url'], secs), caption=True, src=rel,
                 label='%s, %s, video at %s (machine captions)' % (board, t['meeting_date'], at))
 
 
@@ -1790,20 +1797,22 @@ def build():
     # out of district as "Audit district", and a quote is not built around a mis-hearing.
     # THE OPENING QUOTATION (TJ, 25 October 2026: "i expected at least one at the top of the
     # page"): the claim the hub's ledger is set against, in a School Committee meeting's words.
-    OPEN = video('school-committee', 'School Committee', '2025-02-05-ad6QtSaJqVU.json', '2:33:32',
-                 'it\'s dangerous to hedge our bets and go lean on our special edlines because those '
-                 'are the lines that blow our budget out of the water when we have unanticipated '
-                 'students moving in to lunenberg')
+    # TJ, 25 October 2026, after listening: #2 and #3 are Anthony Sculimbrene, #4 is Peter
+    # Beardmore -- "use this one. its all budget focused." So Beardmore's opens the page.
+    OPEN = video('school-committee', 'School Committee', '2023-10-04-RSuhiVz9L-A.json', '0:40:09',
+                 'if we get a sped private tuition that comes in unexpected it\'s going to affect our '
+                 'budget and here we are I mean it just happened', who=by_ear('Peter Beardmore'))
     SAID = [
+        video('school-committee', 'School Committee', '2025-02-05-ad6QtSaJqVU.json', '2:33:32',
+              'it\'s dangerous to hedge our bets and go lean on our special edlines because those '
+              'are the lines that blow our budget out of the water when we have unanticipated '
+              'students moving in to lunenberg'),
         video('school-committee', 'School Committee', '2025-09-03-SI-irBe6ABs.json', '1:07:09',
               'somebody could move 350 ft across the town line and now we have a million dollar '
-              'hole in our budget.'),
+              'hole in our budget.', who=by_ear('Anthony Sculimbrene')),
         video('select-board', 'Select Board', '2024-12-17-jrG1b_tADyo.json', '1:56:30',
               'those costs are enormous they are staggering and we have no way to Abate them no '
-              'way to prepare for them no way to alter them'),
-        video('school-committee', 'School Committee', '2023-10-04-RSuhiVz9L-A.json', '0:40:09',
-              'if we get a sped private tuition that comes in unexpected it\'s going to affect our '
-              'budget and here we are I mean it just happened'),
+              'way to prepare for them no way to alter them', who=by_ear('Anthony Sculimbrene')),
         video('finance-committee', 'Finance Committee', '2025-06-12-iRhUTui_HRY.json', '1:11:12',
               'the outofd district placement can just kill you'),
         video('school-committee', 'School Committee', '2025-06-18-AIhtA5pkPI0.json', '2:37:06',
@@ -1861,7 +1870,7 @@ def build():
         answer_figures={'k': N(n_line), 'n': N(nyrs), 'm': U(o_med5), 'a': U(o_max)},
         lead_quote=TP.lead_quote(OPEN['quote'], OPEN['who'], OPEN['board'], OPEN['date'],
                                  OPEN['href'], OPEN['label'],
-                                 'sources/data/youtube-transcripts/school-committee/2025-02-05-ad6QtSaJqVU.json',
+                                 OPEN['src'],
                                  caption=True),
         blocks=[hub_impact, hub_answers, money_chart, said_block,
                 TB.chart(surprise_chart, place='chart',
