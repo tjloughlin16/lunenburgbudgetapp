@@ -51,6 +51,39 @@ Read rule 7h and `notes/process/AUDIT-PASS.md` before touching anything.
 
 ---
 
+## NEXT: "Why it was left" (TJ, 26 October 2026, evening) -- build in a FRESH session
+
+TJ: the candidate causes are "really huge potential conclusions" and belong on the hub, in a
+"Why it was left" section. Order by evidence; each candidate: what the ledger MEASURES, what it
+cannot tell apart, the document that settles the rest (a money-gaps row). Rule 7: no cause stated.
+
+1. **Tuition routing -- measured, lead with it.** Placement payees across EVERY fund (journal,
+   tuition accounts, payees sorted by name -- ours): collaborative (FLLAC, CAPS) $197,445 /
+   $290,003 / $487,249 / $1,011,557 FY2023-FY2026; private $602,270 / $764,801 / $718,700 /
+   $747,059 ($459,951 GF + $287,108 from fund 2814 "FY'26 #240", May Institute, Oct-Jun).
+   - The #240 grant paid NO placement in FY2023-FY2025 (funds 2758, 2813 exist, pay none); the
+     circuit breaker (2640) was the other payer. FY2025: $445,631 to FLLAC posted to 2640's
+     PRIVATE tuition account. FY2023/FY2024: GF collaborative line paid exactly its budget.
+   - Plan (FY2026 budget book, final-fy26-sc-approved-budget...txt lines 297-301): private
+     $988,630; collaborative $782,867 less circuit breaker $480,204 = $302,663 net. No grant
+     offset planned on private tuition IN THE BOOK (grant application not read -- a gap).
+   - Private: $988,630 set; all-fund private cost $747,059 -> $241,571 above cost even had the GF
+     paid all of it; the grant took $287,108 more; line closed $522,629 under, NO transfer out.
+   - Collaborative: cost $228,690 above the $782,867 gross plan; circuit breaker paid $333,495,
+     $146,709 below the $480,204 planned; plus $58,708 still owed = $434,108 over, NO transfer in.
+   - So the private leftover sat unused and, inside one appropriation, covered the collaborative
+     overrun; tuition nets to $88,522 left. FY2027 budgets $700,142 for both lines (side by side
+     with FY2026's $1,202,771 GF; never differenced -- rule 1).
+   - Build: a tuition page on this shelf (by line AND by placement type, by fund), replacing the
+     "Tuition at year end" framing; a verifier reading the journal raw.
+2. **Building jobs -- measured** (/buildings-and-grounds/upkeep-skipped, upkeep-surplus-every-dollar):
+   10 usual payees paid under half, 5 nothing; $67,393 of orders released unpaid.
+3. **Spending slowed from February -- measured** (budget-burndown). Whether anyone DECIDED to hold
+   spending is the gap: fix the "thrift" money-gaps row, whose remedy (the journal by month) is held.
+4. **Vacancies -- gap.** Cannot look back; the open-positions list tracks forward from FY2027.
+   Fix the gap row: remedy = FY2026 position-control roster (back) + the tracker (forward).
+5. **Lines budgeted above cost -- measured pattern** (Repeat underspending), cause not.
+
 ## What to review: the FY2026 closeout shelf, /fy2026-closeout
 
 16 topic pages in four groups, plus the hub. Registry: `scripts/topic_registry/fy2026_closeout.py`.
