@@ -13,12 +13,15 @@ $100k'. Thats a problem because we already budgeted for that"* -- a gross arriva
 unbudgeted cost, and the pages measure the second.
 """
 CATEGORY = dict(
-    start=['reserve-options', 'surprise-costs'],
+    start=['surprises-and-state-aid', 'reserve-options', 'surprise-costs'],
     id='special-education-reserve', shelf='SERF report', title='Special education reserve fund',
     # A special report (TJ, 24 Oct 2026): off the menu after the reserve's first full year.
     area='special', archive_after='2027-06-30', order=21,
     groups=[
         # In the order a board member asks (TJ, 24 October 2026: the story flow).
+        # TJ, 26 October 2026: the five-step explanation "is solid on its own" -- the shelf's
+        # overview, read first.
+        ('How it works', ['surprises-and-state-aid']),
         ('What surprises, and when', ['surprise-costs', 'arrivals-and-the-budget']),
         ('What comes back, and when', ['how-tuition-is-paid', 'special-education-grants',
                                        'circuit-breaker-account']),
@@ -30,6 +33,7 @@ CATEGORY = dict(
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_serf_topics.py'
 TOPICS = {
+    'surprises-and-state-aid': 'Surprises and state aid',
     'surprise-costs': 'Surprise costs',
     'arrivals-and-the-budget': 'Move-ins',
     'how-tuition-is-paid': 'Out-of-district tuition payments',

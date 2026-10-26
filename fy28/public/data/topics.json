@@ -323,7 +323,7 @@
    "title": "Students and schools"
   },
   {
-   "answer": "A special education line spent past its vote in 12 of 17 years, the bill often in spring, after slack was moved. A median bad year of the last five ran $140,743 over; the worst year on record, $223,774. Held once, a reserve costs less than a yearly cushion.",
+   "answer": "A special education line spent past its vote in 13 of 17 years, on top of the state repayment the vote counts on. A median bad year of the last five ran $116,811 over; the worst year on record, $223,774. Held once, a reserve costs less than a yearly cushion.",
    "archive_after": "2027-06-30",
    "area": "special",
    "elsewhere": [
@@ -337,6 +337,12 @@
     }
    ],
    "groups": [
+    {
+     "title": "How it works",
+     "topics": [
+      "surprises-and-state-aid"
+     ]
+    },
     {
      "title": "What surprises, and when",
      "topics": [
@@ -370,6 +376,7 @@
    "related": [],
    "shelf": "SERF report",
    "start": [
+    "surprises-and-state-aid",
     "reserve-options",
     "surprise-costs"
    ],
@@ -4106,7 +4113,7 @@
    "title": "Required local contribution"
   },
   "reserve-options": {
-   "finding": "Six ways to size the reserve run from $91,717 to $412,397; the law caps it at $541,717.",
+   "finding": "Six ways to size the reserve run from $90,554 to $412,397; the law caps it at $541,717.",
    "generator": "scripts/build_serf_topics.py",
    "home": "special-education-reserve",
    "id": "reserve-options",
@@ -4127,7 +4134,7 @@
    "title": "Reserve options"
   },
   "reserve-or-budget": {
-   "finding": "Budgeting the cushion every year raises $2,374,005 more than a reserve covering the same years.",
+   "finding": "Budgeting the cushion every year raises $2,345,375 more than a reserve covering the same years.",
    "generator": "scripts/build_serf_topics.py",
    "home": "special-education-reserve",
    "id": "reserve-or-budget",
@@ -4435,14 +4442,21 @@
    "minutes": 1,
    "path": "/special-education-reserve/special-education-grants",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "surprises-and-state-aid",
+     "path": "/special-education-reserve/surprises-and-state-aid",
+     "title": "Surprises and state aid",
+     "why": "How a surprise is paid, and what state money does and does not do"
+    }
+   ],
    "shelves": [
     "special-education-reserve"
    ],
    "title": "Special education grants"
   },
   "special-education-overruns": {
-   "finding": "Over 17 years, special education needed $71,468 a year beyond its vote on average; at most $223,774.",
+   "finding": "Over 17 years, special education needed $72,648 a year beyond its vote on average; at most $223,774.",
    "generator": "scripts/build_special_education_topics.py",
    "home": "special-education",
    "id": "special-education-overruns",
@@ -4835,7 +4849,7 @@
    "title": "Surplus suggestions"
   },
   "surprise-costs": {
-   "finding": "A surprise cost is spending above the budget as voted: $1,214,955 over 17 years.",
+   "finding": "A surprise cost is spending above the budget as voted: $1,235,009 over 17 years.",
    "generator": "scripts/build_serf_topics.py",
    "home": "special-education-reserve",
    "id": "surprise-costs",
@@ -4860,6 +4874,27 @@
     "special-education-reserve"
    ],
    "title": "Surprise costs"
+  },
+  "surprises-and-state-aid": {
+   "finding": "Chapter 70 and IDEA are fixed in advance; the circuit breaker comes a year late and is already in the vote.",
+   "generator": "scripts/build_serf_topics.py",
+   "home": "special-education-reserve",
+   "id": "surprises-and-state-aid",
+   "minutes": 1,
+   "path": "/special-education-reserve/surprises-and-state-aid",
+   "ready": true,
+   "related": [
+    {
+     "id": "special-education-grants",
+     "path": "/special-education-reserve/special-education-grants",
+     "title": "Special education grants",
+     "why": "The federal and state grants, year by year"
+    }
+   ],
+   "shelves": [
+    "special-education-reserve"
+   ],
+   "title": "Surprises and state aid"
   },
   "tax-bill-neighbours": {
    "finding": "At $7,444, the average bill is 6th of 11 nearby towns and 145 of 351 statewide.",

@@ -206,24 +206,24 @@
     {
      "figures": {
       "a": {
-       "text": "$796,673",
+       "text": "48.4%",
        "unit": "",
-       "value": 796673
+       "value": 48.35608485444236
       },
       "b": {
-       "text": "$510,256",
+       "text": "30.7%",
        "unit": "",
-       "value": 510256
+       "value": 30.736456171574456
       },
       "c": {
-       "text": "$258,209",
+       "text": "20.9%",
        "unit": "",
-       "value": 258209
+       "value": 20.907458973983186
       },
       "n": {
-       "text": "7",
+       "text": "8",
        "unit": "",
-       "value": 7
+       "value": 8
       },
       "t": {
        "text": "17",
@@ -232,35 +232,32 @@
       }
      },
      "literals": [],
-     "text": "**Measured:** of the three settings, collaborative tuition ran furthest over budget: $796,673 across 7 of 17 years. Private schools ran $510,256 over in their bad years; Lunenburg’s own schools, $258,209."
+     "text": "**Measured:** tuition for children placed outside Lunenburg’s schools was 48.4% of all spending above budget, over in 8 of 17 years. Transportation was 30.7%; Lunenburg’s own schools, 20.9%."
     },
     {
      "figures": {
       "a": {
-       "text": "$509,178",
+       "text": "$480,204",
        "unit": "",
-       "value": 509178
+       "value": 480204
       },
-      "b": {
-       "text": "$1,409,774",
-       "unit": "",
-       "value": 1409774
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
       }
      },
-     "literals": [
-      "71",
-      "5"
-     ],
-     "text": "**Two things sit beside it.** The collaborative line has had almost no slack: $509,178 over on balance across those years, where private ran $1,409,774 under. And a child arriving already in a collaborative is Lunenburg’s from the first day, with no year paid by the old town (our reading of c.71B §5)."
+     "literals": [],
+     "text": "**Private and collaborative are not split here.** The vote subtracts the state repayment it expects from the collaborative line, $480,204 in FY2026, so that line looks over and private looks under because of where the subtraction is booked."
     },
     {
      "figures": {},
      "literals": [],
-     "text": "**Not shown:** whether either of those caused the overruns, or how many children did. That needs counts the district does not publish: the grid below names them."
+     "text": "**Not shown:** which placements caused the overruns, or how many children. That needs counts the district does not publish: the grid below names them."
     }
    ],
    "place": "top",
-   "title": "The biggest impact: collaborative placements",
+   "title": "The biggest impact: out-of-district tuition",
    "tone": "callout"
   },
   {
@@ -644,9 +641,20 @@
    ],
    "place": "also1",
    "so": {
-    "figures": {},
+    "figures": {
+     "a": {
+      "text": "$480,204",
+      "unit": "",
+      "value": 480204
+     },
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
     "literals": [],
-    "text": "Private has usually had room to spare, so an unplanned private placement mostly fits. Collaborative has had almost none, so one shows as overspending. The two share one total, so private room has often covered collaborative overruns."
+    "text": "The two share one total, and the vote subtracts the expected state repayment from the collaborative line alone, $480,204 in FY2026. So the split shows where that subtraction is booked as much as where children are placed."
    },
    "title": "Inside out-of-district tuition: private and collaborative"
   },
@@ -1118,18 +1126,7 @@
    "text": "Out-of-district tuition was 48.4% of all overspending above budget; transportation, 30.7%."
   },
   {
-   "figures": {
-    "a": {
-     "text": "$796,673",
-     "unit": "",
-     "value": 796673
-    },
-    "b": {
-     "text": "$510,256",
-     "unit": "",
-     "value": 510256
-    }
-   },
+   "figures": {},
    "literals": [],
    "notes": [
     {
@@ -1160,10 +1157,30 @@
      "text": "In FY2026 private tuition came in $522,629 under and collaborative $434,108 over; together they showed -$88,522."
     },
     {
-     "figures": {},
-     "kind": "hypothesis",
+     "figures": {
+      "a": {
+       "text": "-$480,204",
+       "unit": "",
+       "value": -480204
+      },
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "measured",
      "literals": [],
-     "text": "Why private runs under is untested; one possibility is that the circuit breaker account pays part of it."
+     "text": "The FY2026 budget prints the expected repayment, -$480,204, as a minus line under collaborative tuition."
+    },
+    {
+     "closes": "the circuit breaker claim by student, or the fund 2640 ledger by vendor",
+     "figures": {},
+     "kind": "gap",
+     "literals": [
+      "2640"
+     ],
+     "text": "Which placements the repayment then pays for is not published."
     }
    ],
    "rests_on": [
@@ -1176,7 +1193,7 @@
     "literals": [],
     "text": "A placement added to the smaller collaborative line shows as an overrun even when private tuition has room to spare."
    },
-   "text": "Line by line, collaborative tuition ran $796,673 over budget; private, $510,256, yet far under on balance."
+   "text": "Split by setting, private runs under and collaborative over: the repayment is subtracted from collaborative."
   },
   {
    "figures": {

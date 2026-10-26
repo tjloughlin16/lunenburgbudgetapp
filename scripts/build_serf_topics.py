@@ -450,8 +450,16 @@ def build():
     priv_n = sum(1 for v in priv.values() if v > 0)
     coll_n = sum(1 for v in coll.values() if v > 0)
     priv_net = sum(priv.values())
-    if not (coll_over > priv_over and priv_net < 0 and priv[fy1] < 0 < coll[fy1]):
-        fail('the surprise page says collaborative tuition carries the overruns and private runs under')
+    # WHERE THE REPAYMENT IS SUBTRACTED. The vote is net of the expected circuit breaker, and
+    # the budget book prints that subtraction on the COLLABORATIVE line (FY2026: -480,204;
+    # FY2025's netting entry posts to collaborative tuitions too). So collaborative looks over
+    # and private under for a reason that is bookkeeping, not children. Until 25 October 2026
+    # the hub led with "the biggest impact: collaborative placements" -- $434,108 of its
+    # $796,673 was FY2026 alone. Withdrawn; the split is reported with where it is booked.
+    cbo = led_line(SC, fy1, 'ood')['cb_offset']
+    if not (priv[fy1] < 0 < coll[fy1] < cbo):
+        fail('the pages say %s collaborative ran over by less than the repayment subtracted from it, '
+             'and private under' % fy1)
     acct_need = {y: round(sum(max(0, v[3] - v[2]) for v in acct[y].values())) for y in ys}
     rank = sorted(LINES, key=lambda g: -by_line[g])
     if rank[0] != 'ood' or not share['ood'] < 50:
@@ -665,23 +673,20 @@ def build():
     # the overrun summed over the years a line ran over -- not cost times cases, which needs
     # the unpublished boxes. The two things beside it are a measurement (slack) and our reading
     # (no old-town year); that either CAUSED the overrun is untested, and the text says so.
-    coll_net = sum(coll.values())
-    if not (coll_over > priv_over > by_line['indist'] and coll_net > 0 > priv_net):
-        fail('the callout says collaboratives ran furthest over, with no slack, and private under on balance')
     def impact(place, where_counts):
-      return TB.explain('The biggest impact: collaborative placements', [
-        ('**Measured:** of the three settings, collaborative tuition ran furthest over budget: '
-         '%s across %s of %s years. Private schools ran %s over in their bad years; Lunenburg’s '
-         'own schools, %s.' % (C.usd(coll_over), C.num(coll_n), C.num(nyrs), C.usd(priv_over),
-                                C.usd(by_line['indist'])),
-         {'a': U(coll_over), 'n': N(coll_n), 't': N(nyrs), 'b': U(priv_over), 'c': U(by_line['indist'])}),
-        ('**Two things sit beside it.** The collaborative line has had almost no slack: %s over on '
-         'balance across those years, where private ran %s under. And a child arriving already in '
-         'a collaborative is Lunenburg’s from the first day, with no year paid by the old town '
-         '(our reading of c.71B §5).' % (C.usd(coll_net), C.usd(-priv_net)),
-         {'a': U(coll_net), 'b': U(-priv_net)}, ('71', '5')),
-        '**Not shown:** whether either of those caused the overruns, or how many children did. '
-        'That needs counts the district does not publish: %s.' % where_counts],
+      return TB.explain('The biggest impact: out-of-district tuition', [
+        ('**Measured:** tuition for children placed outside Lunenburg’s schools was %s of all '
+         'spending above budget, over in %s of %s years. Transportation was %s; Lunenburg’s own '
+         'schools, %s.' % (C.pct(share['ood']), C.num(yrs_over['ood']), C.num(nyrs),
+                           C.pct(share['trans']), C.pct(share['indist'])),
+         {'a': P(share['ood']), 'n': N(yrs_over['ood']), 't': N(nyrs), 'b': P(share['trans']),
+          'c': P(share['indist'])}),
+        ('**Private and collaborative are not split here.** The vote subtracts the state '
+         'repayment it expects from the collaborative line, %s in %s, so that line looks over '
+         'and private looks under because of where the subtraction is booked.'
+         % (C.usd(cbo), C.fy(fy1)), {'a': U(cbo), 'y': F(fy1)}),
+        '**Not shown:** which placements caused the overruns, or how many children. That needs '
+        'counts the district does not publish: %s.' % where_counts],
         tone='callout', place=place)
     # The same block on three pages (TJ: "that should go on the main SERF page, as well as other
     # pages too. thats a huge conclusion"): built once, so the three cannot drift apart.
@@ -703,9 +708,10 @@ def build():
              'bad' if sum(coll.values()) > 0 else 'good')],
             sub='A programme run jointly by several school districts.')],
         place='also1',
-        so=('Private has usually had room to spare, so an unplanned private placement mostly fits. '
-            'Collaborative has had almost none, so one shows as overspending. The two share one '
-            'total, so private room has often covered collaborative overruns.'))
+        so=('The two share one total, and the vote subtracts the expected state repayment from '
+            'the collaborative line alone, %s in %s. So the split shows where that subtraction is '
+            'booked as much as where children are placed.' % (C.usd(cbo), C.fy(fy1)),
+            {'a': U(cbo), 'y': F(fy1)}))
     sc_checks = TB.checks('What causes a surprise cost', [
         'Private', 'Collab\u00adorative', 'Transport', 'In-district'], [
         TB.check_row('A Lunenburg child is placed out of district during the year',
@@ -815,15 +821,18 @@ def build():
              % (C.pct(share['ood']), C.pct(share['trans'])),
              ['s-ood', 's-trans', 's-ind', 's-ood-n', 's-trans-n'],
              {'a': P(share['ood']), 'b': P(share['trans'])}),
-         con('Line by line, collaborative tuition ran %s over budget; private, %s, yet far under on balance.'
-             % (C.usd(coll_over), C.usd(priv_over)), ['s-coll', 's-priv', 's-privnet'],
-             {'a': U(coll_over), 'b': U(priv_over)},
+         con('Split by setting, private runs under and collaborative over: the repayment is subtracted from collaborative.',
+             ['s-coll', 's-priv', 's-privnet'],
              notes=[step('In %s private tuition came in %s under and collaborative %s over; '
                          'together they showed %s.' % (C.fy(fy1), C.usd(-priv[fy1]), C.usd(coll[fy1]),
                                                        C.usd(over[fy1]['ood'])), 'measured',
                          {'y': F(fy1), 'a': U(-priv[fy1]), 'b': U(coll[fy1]), 'c': U(over[fy1]['ood'])}),
-                    step('Why private runs under is untested; one possibility is that the circuit '
-                         'breaker account pays part of it.', 'hypothesis')]),
+                    step('The %s budget prints the expected repayment, %s, as a minus line under '
+                         'collaborative tuition.' % (C.fy(fy1), C.usd(-cbo)), 'measured',
+                         {'y': F(fy1), 'a': U(-cbo)}),
+                    step('Which placements the repayment then pays for is not published.', 'gap',
+                         closes='the circuit breaker claim by student, or the fund 2640 ledger by vendor',
+                         allow=('2640',))]),
          con('Many arrive after the budget is set: %s of orders placed after September came March to June.'
              % C.pct(spring_pct, 0), ['s-late-o', 's-late-t', 's-spring'],
              {'a': P(spring_pct, 0)},
@@ -1648,7 +1657,6 @@ def build():
     h['h-spring'] = f('h-spring', P(spring_pct, 0), 'of late orders placed March to June', 'published')
     h['h-law'] = f('h-law', figure(5, 'c.71B §5'), 'a private placement moving in: old town pays',
                    'statute', allow=('71', '5'))
-    cbo = led_line(SC, fy1, 'ood')['cb_offset']
     h['h-net'] = f('h-net', U(cbo), 'repayment the %s tuition vote counted on in advance'
                    % C.fy(fy1), 'published', {'y': F(fy1)})
     h['h-cba'] = f('h-cba', U(cb_close), 'circuit breaker account, close of %s' % C.fy(fy1), 'published',
@@ -1876,6 +1884,138 @@ def build():
         so=('The quotations fall in %s fiscal years, and in %s a line spent past its vote.'
             % (C.num(len(s_years)), C.num(sum(s_years.values()))),
             {'n': N(len(s_years)), 'a': N(sum(s_years.values()))}))
+    # ------------------------------------------------ surprises and state aid: the five steps
+    # TJ, 26 October 2026, after the mechanism was settled (the vote is net of the expected
+    # circuit breaker): "explain it in the simplest form possible ... how we get hit with
+    # devastating costs, how much they are, and how the state offsets are working here (between
+    # CB, IDEA, Ch70, etc)" -- then: "put that 5 step explanation into its own detailed
+    # explanation page. It's solid on its own." One page, read first on the shelf.
+    SA = load('state-aid.json')['ledger']
+    if SA['fy'] != fy1 or SA['ch70']['kind'] != 'school':
+        fail('state-aid.json no longer holds %s\'s Chapter 70 budget line' % C.fy(fy1))
+    ch70, ch70_pct = SA['ch70']['budgeted'], 100.0 * SA['ch70_share_of_school']
+    C70 = ('/docs/state-law/2026-10-15/section2.html', 'G.L. c.70 §2')
+    c70t = norm(text_of('sources/state-law/text/c70-2.txt'))
+    C70_Q = ('\'\'Assumed tuitioned-out special education enrollment\'\', 1 per cent of the total '
+             'foundation enrollment in a district')
+    if C70_Q not in c70t:
+        fail('c.70 §2 no longer assumes tuitioned-out special education at 1 per cent')
+    k = cb[fy1]                                # paid in fy1, for the costs of the year before
+    own = k['eligible'] - k['paid']
+    per_child = k['eligible'] / k['children']
+    st_low = mrow[fy1]['state']
+    if not (k['children'] and own > 0 and st_low < mrow[st_hi]['state'] and cbo > st_low):
+        fail('the state-aid page says FY2026 repaid part of nine children\'s costs, and the account '
+             'now spends less than the vote counted on')
+    sx = lambda y: mrow[y]['state']
+    man = {r['key'] for r in csv.DictReader(open(MANIFEST, encoding='utf-8'))}
+    sa_src = []
+    for key, pub, what in (
+            ('town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.pdf',
+             'Town of Lunenburg — Town Accountant (MUNIS)', 'general fund revenue, FY2026: Chapter 70'),
+            ('district-budget/docs/fy26-school-dept-approved-budget-3-12-25.pdf',
+             'Lunenburg Public Schools', 'FY2026 approved budget: the circuit breaker line under tuition'),
+            ('state-law/2026-10-15/section2.html', 'General Court of Massachusetts',
+             'G.L. c.70 §2, the assumed special education enrollment')):
+        if key not in man:
+            fail('%s is not in archive-manifest.csv' % key)
+        sa_src.append(dict(label='%s — %s (%s)' % (pub, os.path.basename(key), what), href='/docs/' + key))
+    steps = TB.explain('Five steps, from a placement to the bill', [
+        ('**1. A child needs a placement the district cannot give itself.** A private school or a '
+         'collaborative, often with a van to get there. The law has Lunenburg pay from the day it starts. '
+         'For a child who moves in already in a private school, the former town pays the rest of '
+         'that year, so most move-ins are a next-year cost (Move-ins).', None, ('1.',)),
+        ('**2. It often lands late, and it is big for one line.** %s of orders placed after '
+         'September came March to June. A special education line spent past its vote in %s of %s '
+         'years: %s in a median recent bad year, %s at worst.'
+         % (C.pct(spring_pct, 0), C.num(n_line), C.num(nyrs), C.usd(o_med5), C.usd(o_max)),
+         {'p': P(spring_pct, 0), 'k': N(n_line), 'n': N(nyrs), 'a': U(o_med5), 'b': U(o_max)}, ('2.',)),
+        ('**3. Chapter 70 and IDEA do not move.** Chapter 70, %s in %s, is %s of the school '
+         'budget, set by a formula before the year begins; it assumes 1%% of children are placed '
+         'out of district, whatever the real number. IDEA, %s allocated for %s, is a fixed federal '
+         'grant.' % (C.usd(ch70), C.fy(fy1), C.pct(ch70_pct, 0), C.usd(idea[iys[-1]]), C.fy(iys[-1])),
+         {'a': U(ch70), 'y': F(fy1), 'p': P(ch70_pct, 0), 'b': U(idea[iys[-1]]), 'z': F(iys[-1])},
+         ('3.', '70', '1%')),
+        ('**4. The circuit breaker repays part, a year later, and the vote already spent it.** The '
+         'state repays a share of the costliest children: %s for %s children in %s, %s of their '
+         'costs. But the tuition vote is set after subtracting the repayment expected, %s for %s.'
+         % (C.usd(k['paid']), C.num(k['children']), C.fy(fy1), C.pct(cshare[fy1]), C.usd(cbo), C.fy(fy1)),
+         {'a': U(k['paid']), 'c': N(k['children']), 'y': F(fy1), 'p': P(cshare[fy1]), 'b': U(cbo)}, ('4.',)),
+        ('**5. So what is left lands on the town budget.** A new placement is paid in full until '
+         'the repayment catches up; a repayment smaller than expected leaves a gap the same size. '
+         'Either is met from slack in other lines, or from a reserve, spent only by a vote of both '
+         'boards.', None, ('5.',))],
+        tone='define', place='lead')
+    sa_checks = TB.checks('What each source does when a child is placed', [
+        'State school aid', 'IDEA', 'Circuit breaker', 'Town budget'], [
+        TB.check_row('Set before the school year begins',
+                     'State school aid by the state budget, IDEA by the federal allocation, the town '
+                     'budget by Town Meeting.', {0, 1, 3}),
+        TB.check_row('Pays more when a costly child is placed',
+                     'Only the circuit breaker responds to the child, and only above a threshold, '
+                     'for part of the cost.', {2}),
+        TB.check_row('Pays in the same year',
+                     'The circuit breaker repays the year before. Until then the town budget '
+                     'carries the full cost.', {3}),
+        TB.check_row('Already counted in the tuition vote',
+                     'The vote subtracts the repayment expected, so it is not spare money.', {2})],
+        place='body', first='What it does', second='Why', tone='good',
+        so=('Of the three, only the circuit breaker answers a surprise, a year late and already '
+            'spent in the vote; the first year of any surprise is the town budget’s.'))
+    sa_example = TB.explain('One real year: the latest claim', [
+        ('The district claimed %s children whose costs crossed the state threshold, %s between '
+         'them, about %s each. The state paid %s, or %s. The other %s stayed with Lunenburg.'
+         % (C.num(k['children']), C.usd(k['eligible']), C.usd(per_child), C.usd(k['paid']),
+            C.pct(cshare[fy1]), C.usd(own)),
+         {'c': N(k['children']), 'e': U(k['eligible']), 'q': U(per_child), 'a': U(k['paid']),
+          'p': P(cshare[fy1]), 'o': U(own)}),
+        ('The circuit breaker account then spent %s in %s, against %s in %s, while the vote counted '
+         'on %s.' % (C.usd(st_low), C.fy(fy1), C.usd(sx(st_hi)), C.fy(st_hi), C.usd(cbo)),
+         {'a': U(st_low), 'y': F(fy1), 'b': U(sx(st_hi)), 'z': F(st_hi), 'c': U(cbo)})],
+        tone='define', place='body', figures_note='Figures: DESE’s circuit breaker file and the '
+        'school ledger; the per-child figure is our division.')
+    out['surprises-and-state-aid'] = TP.page(
+        'surprises-and-state-aid',
+        'Chapter 70 and IDEA are fixed in advance; the circuit breaker comes a year late and is already in the vote.',
+        [f('a-line', N(n_line, 'years'), 'of %s a special education line spent past its vote' % C.num(nyrs),
+           'published', {'n': N(nyrs)}),
+         f('a-med5', U(o_med5), 'spent past the vote, median bad year of the last five', 'published'),
+         f('a-worst', U(o_max), 'spent past the vote, worst year, %s' % C.fy(sl['wfy']), 'published',
+           {'y': F(sl['wfy'])}),
+         f('a-ch70', U(ch70), 'Chapter 70, budgeted for %s' % C.fy(fy1), 'published', {'y': F(fy1)},
+           allow=('70,',)),
+         f('a-ch70p', P(ch70_pct, 0), 'of the school budget from Chapter 70, %s' % C.fy(fy1),
+           'published', {'y': F(fy1)}, allow=('70,',)),
+         f('a-assume', figure(1, '1%'), 'of children Chapter 70 assumes are placed out of district',
+           'statute', allow=('70',)),
+         f('a-idea', U(idea[iys[-1]]), 'IDEA allocated, %s' % C.fy(iys[-1]), 'published',
+           {'y': F(iys[-1])}),
+         f('a-cbpaid', U(k['paid']), 'circuit breaker paid, %s, for the year before' % C.fy(fy1),
+           'published', {'y': F(fy1)}),
+         f('a-cbshare', P(cshare[fy1]), 'of those children’s costs repaid', 'published'),
+         f('a-cbo', U(cbo), 'repayment the %s tuition vote counted on in advance' % C.fy(fy1),
+           'published', {'y': F(fy1)}),
+         f('a-cbspent', U(st_low), 'circuit breaker account spent, %s' % C.fy(fy1), 'published',
+           {'y': F(fy1)})],
+        [con('A special education line spent past its vote in %s of %s years; a recent bad year, %s.'
+             % (C.num(n_line), C.num(nyrs), C.usd(o_med5)), ['a-line', 'a-med5', 'a-worst'],
+             {'a': N(n_line), 'n': N(nyrs), 'b': U(o_med5)}),
+         con('Chapter 70 and IDEA are set before the year and do not rise when a child is placed.',
+             ['a-ch70', 'a-ch70p', 'a-assume', 'a-idea'], allow=('70',),
+             notes=[step('Chapter 70 assumes 1%% of children are placed out of district, whatever '
+                         'the real number.', 'quote', cite=C70, allow=('70', '1%'))]),
+         con('The circuit breaker repaid %s of the costliest children’s costs, a year late.'
+             % C.pct(cshare[fy1]), ['a-cbpaid', 'a-cbshare'], {'a': P(cshare[fy1])}),
+         con('And the vote had already counted on it: %s for %s, before it was paid.'
+             % (C.usd(cbo), C.fy(fy1)), ['a-cbo', 'a-cbspent'], {'a': U(cbo), 'y': F(fy1)})],
+        chart=TP.series('What the state’s repayment paid, each year', [C.fy(y) for y in mys], [
+            TP.track('Paid from the circuit breaker account', [sx(y) for y in mys])],
+            '$', kind='bar',
+            note='Spent from the circuit breaker account on the three special education lines, '
+                 'on top of the vote.'),
+        sources=src + sa_src, finding_allow=('70',),
+        blocks=[steps, sa_checks, sa_example])
+
     out[HUB] = TP.hub(
         HUB,
         'A special education line spent past its vote in %s of %s years, on top of the state '
@@ -1943,6 +2083,11 @@ def build():
         'The three medians differ mostly by how old years are counted; recent years and scaled years agree more closely.',
         'Whether old overruns count at today’s size nearly doubles the worst case; nothing in the data settles it.',
         'If overruns grow with the budget, no reserve the law allows covers a repeat of the worst stretch.'])
+    meanings(out['surprises-and-state-aid']['conclusions'], [
+        'Overruns are the usual year, not the rare one; what varies is how big.',
+        'State school aid is planned in advance, so a mid-year placement gets nothing extra from it.',
+        'The repayment answers the costliest children, but only part of their cost and only the next year.',
+        'It is not spare money: if it comes in smaller, the shortfall lands on the town budget, mostly taxes.'])
     meanings(out['reserve-or-budget']['conclusions'], [
         'Budgeting the cushion raises taxes for money that, in most years, is never needed for special education.',
         'A reserve asks taxpayers once, and afterwards only for what was actually used.',
