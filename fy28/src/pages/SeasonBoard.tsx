@@ -87,6 +87,7 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
   const town = moment('town', 'now'), both = moment('both', 'now')
   const cuts = b.cuts.filter(r => r.status !== 'expected' && r.status !== 'warned')
   const decided = cuts.filter(r => r.status === 'decided'), off = cuts.filter(r => r.status === 'came_off'), tierOnly = cuts.filter(r => r.status === 'tier_only')
+  const sideWide = off.length + warned.length + tierOnly.length > decided.length
   const byFamily = (xs: Row[]) => { const m = new Map<string, Row[]>(); for (const r of xs) { const f = family(r); m.set(f, [...(m.get(f) || []), r]) }; return [...m.entries()] }
   const fteOf = (xs: Row[]) => xs.reduce((a, r) => a + (r.fte || 0), 0)
   const finalBallot = b.final.filter(r => r.status === 'ballot'), appropriated = b.final.filter(r => r.status === 'appropriated'), took = b.final.filter(r => r.status === 'took_effect'), later = b.final.filter(r => r.status === 'restored_later')
@@ -138,8 +139,11 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
 
       {/* 2. the cuts */}
       <Block title={T('cuts', 'The cuts', '').title} color="var(--status-critical)" sub={T('cuts', '', 'What was cut, what came off the list, and what only an override tier would have cut — grouped the way a family looks for its own.').sub}>
-        <div className="grid gap-4 lg:grid-cols-3">
-          <div className="lg:col-span-2">
+        {/* TWO COLUMNS ONLY WHEN THE CUTS ARE THE LONGER SIDE. TJ, 26 October 2026: early in a
+            season nothing is cut yet and 24 warnings filled the narrow side column, a strip the
+            length of the page beside an empty wide one. The side lists go full width then. */}
+        <div className={sideWide ? 'grid gap-4' : 'grid gap-4 lg:grid-cols-3'}>
+          <div className={sideWide ? undefined : 'lg:col-span-2'}>
             {(decided.length > 0 || !d.live) && <p className="text-xs font-bold uppercase tracking-wider" style={{ color: 'var(--status-critical)' }}>{T('cuts.cut', 'Cut', '').title} — {decided.length}</p>}
             <NotYet block="cuts" />
             {(['school', 'town'] as const).map(scope => {
@@ -168,7 +172,7 @@ export function SeasonBoard({ fy, id, fallback, onLoaded }: { fy: number; id?: s
             {off.length === 0 && decided.length > 0 && <p className="text-sm" style={{ color: 'var(--text-muted)' }}>Nothing came off.</p>}
             {warned.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-5" style={{ color: 'var(--status-warning)' }}>Warned about — {warned.length}</p>
             <p className="text-xs" style={{ color: 'var(--text-muted)' }}>A prediction or a threat on the record, with no figure yet. Straight from the recording; nobody has confirmed it means a cut.</p>
-            <ul className="mt-2">{warned.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
+            <ul className={sideWide ? 'mt-2 sm:grid sm:grid-cols-2 sm:gap-x-6' : 'mt-2'}>{warned.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
             {tierOnly.length > 0 && <><p className="text-xs font-bold uppercase tracking-wider mt-5" style={{ color: 'var(--text-muted)' }}>Only inside a tier — {tierOnly.length}</p>
             <ul className="mt-2">{tierOnly.map((r, i) => <Item key={i} r={r} muted />)}</ul></>}
           </div>
