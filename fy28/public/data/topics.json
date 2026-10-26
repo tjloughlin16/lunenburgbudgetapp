@@ -362,7 +362,6 @@
      "title": "How big, and why a reserve",
      "topics": [
       "reserve-options",
-      "reserve-size",
       "reserve-or-budget",
       "special-education-overruns"
      ]
@@ -1494,10 +1493,10 @@
      "why": "Which special education lines run over their vote"
     },
     {
-     "id": "reserve-size",
-     "path": "/special-education-reserve/reserve-size",
-     "title": "Draw rules",
-     "why": "Which overruns a reserve would be drawn for"
+     "id": "reserve-options",
+     "path": "/special-education-reserve/reserve-options",
+     "title": "Reserve options",
+     "why": "Seven sizes for the reserve, and which overspending it pays for"
     }
    ],
    "shelves": [
@@ -4114,14 +4113,26 @@
    "title": "Required local contribution"
   },
   "reserve-options": {
-   "finding": "Six ways to size the reserve run from $90,554 to $412,397; the law caps it at $541,717.",
+   "finding": "Seven ways to size the reserve run from $90,554 to $412,397; the law caps it at $541,717.",
    "generator": "scripts/build_serf_topics.py",
    "home": "special-education-reserve",
    "id": "reserve-options",
-   "minutes": 1,
+   "minutes": 2,
    "path": "/special-education-reserve/reserve-options",
    "ready": true,
    "related": [
+    {
+     "id": "arrivals-and-the-budget",
+     "path": "/special-education-reserve/arrivals-and-the-budget",
+     "title": "Move-ins",
+     "why": "Whether a mid-year arrival left the year short"
+    },
+    {
+     "id": "surprise-costs",
+     "path": "/special-education-reserve/surprise-costs",
+     "title": "Surprise costs",
+     "why": "Which special education lines run over their vote"
+    },
     {
      "id": "reserve-or-budget",
      "path": "/special-education-reserve/reserve-or-budget",
@@ -4147,7 +4158,7 @@
      "id": "reserve-options",
      "path": "/special-education-reserve/reserve-options",
      "title": "Reserve options",
-     "why": "Six sizes for the reserve, and the years each would cover"
+     "why": "Seven sizes for the reserve, and which overspending it pays for"
     },
     {
      "id": "fy2026-snow-and-reserve-fund",
@@ -4160,33 +4171,6 @@
     "special-education-reserve"
    ],
    "title": "Reserve or budget"
-  },
-  "reserve-size": {
-   "finding": "Which overruns count moves the worst year from $78,554 to $811,505.",
-   "generator": "scripts/build_serf_topics.py",
-   "home": "special-education-reserve",
-   "id": "reserve-size",
-   "minutes": 2,
-   "path": "/special-education-reserve/reserve-size",
-   "ready": true,
-   "related": [
-    {
-     "id": "arrivals-and-the-budget",
-     "path": "/special-education-reserve/arrivals-and-the-budget",
-     "title": "Move-ins",
-     "why": "Whether a mid-year arrival left the year short"
-    },
-    {
-     "id": "surprise-costs",
-     "path": "/special-education-reserve/surprise-costs",
-     "title": "Surprise costs",
-     "why": "Which special education lines run over their vote"
-    }
-   ],
-   "shelves": [
-    "special-education-reserve"
-   ],
-   "title": "Draw rules"
   },
   "reserves-and-the-gap": {
    "finding": "Spent on the school gap, the general fund covers FY2028 and FY2029 and runs out in FY2030, by our arithmetic.",
@@ -4450,7 +4434,7 @@
    "title": "Special education grants"
   },
   "special-education-overruns": {
-   "finding": "Over 17 years, special education needed $72,648 a year beyond its vote on average; at most $223,774.",
+   "finding": "A special education line ran over its vote in 13 of 17 years; the worst, FY2013, by $223,774.",
    "generator": "scripts/build_special_education_topics.py",
    "home": "special-education",
    "id": "special-education-overruns",
@@ -4858,10 +4842,10 @@
      "why": "Whether a mid-year arrival left the year short"
     },
     {
-     "id": "reserve-size",
-     "path": "/special-education-reserve/reserve-size",
-     "title": "Draw rules",
-     "why": "Which overruns a reserve would be drawn for"
+     "id": "reserve-options",
+     "path": "/special-education-reserve/reserve-options",
+     "title": "Reserve options",
+     "why": "Seven sizes for the reserve, and which overspending it pays for"
     }
    ],
    "shelves": [

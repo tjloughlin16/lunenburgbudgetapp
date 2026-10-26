@@ -661,7 +661,11 @@ def build():
     avg = round(statistics.mean(vals))
     sd = round(statistics.stdev(vals))        # sample SD: 17 years are a sample of years
     lv1, lv2 = avg + sd, avg + 2 * sd
-    cov = lambda lvl: sum(1 for x in vals if x <= lvl)
+    # Counted over the years a line ran over, as Reserve options counts them: a year that needed
+    # nothing is met by any reserve, and counting it made the same level read 16 of 17 here and
+    # 12 of 13 there (TJ, 26 October 2026: "seems to have different numbers").
+    nbad = sum(1 for x in vals if x > 0)
+    cov = lambda lvl: sum(1 for x in vals if 0 < x <= lvl)
     pairs = [vals[i] + vals[i + 1] for i in range(len(vals) - 1)]
     cov2 = lambda lvl: sum(1 for x in pairs if x <= lvl)
     two = max(((sur[i]['fy'], pairs[i]) for i in range(len(pairs))), key=lambda x: x[1])
@@ -979,22 +983,26 @@ def build():
 
     out['special-education-overruns'] = TP.page(
         'special-education-overruns',
-        'Over %s years, special education needed %s a year beyond its vote on average; at most %s.'
-        % (C.num(nyrs), C.usd(avg), C.usd(need['worst']['gross'])),
+        # Reopened 26 October 2026 on what the table shows (TJ: the SERF pages "seem to have
+        # different numbers"): the average led here and nowhere else, and it is a sizing
+        # method, which Reserve options now carries beside the other six.
+        'A special education line ran over its vote in %s of %s years; the worst, %s, by %s.'
+        % (C.num(need['years_needing']), C.num(nyrs), C.fy(need['worst']['fy']),
+           C.usd(need['worst']['gross'])),
         [f('mean', U(avg), 'needed in an average year', 'published'),
          f('sd', U(sd), 'standard deviation, year to year', 'published'),
          f('lvl1', U(lv1), 'average + 1 SD: enough in %s of %s years'
-           % (C.num(cov(lv1)), C.num(nyrs)), 'published',
-           {'a': N(cov(lv1)), 'n': N(nyrs)}, allow=('1 SD',)),
+           % (C.num(cov(lv1)), C.num(nbad)), 'published',
+           {'a': N(cov(lv1)), 'n': N(nbad)}, allow=('1 SD',)),
          f('lvl2', U(lv2), 'average + 2 SD: enough in %s of %s years'
-           % (C.num(cov(lv2)), C.num(nyrs)), 'published',
-           {'a': N(cov(lv2)), 'n': N(nyrs)}, allow=('2 SD',)),
+           % (C.num(cov(lv2)), C.num(nbad)), 'published',
+           {'a': N(cov(lv2)), 'n': N(nbad)}, allow=('2 SD',)),
          f('worst', U(need['worst']['gross']), 'needed in the worst year, %s'
            % C.fy(need['worst']['fy']), 'published', {'y': F(need['worst']['fy'])}),
          f('two', U(two[1]), 'worst two years running, %s and %s'
            % (C.fy(two[0]), C.fy(two[0] + 1)), 'published',
            {'y': F(two[0]), 'z': F(two[0] + 1)}),
-         f('cap', U(rs['cap']), 'the most the reserve may hold, as described', 'published'),
+         f('cap', U(rs['cap']), 'the reserve’s legal cap', 'statute'),
          f('needing', N(need['years_needing'], 'years'), 'of %s when a line ran over its vote'
            % C.num(nyrs), 'published', {'n': N(nyrs)}),
          f('netover', N(netover, 'years'), 'of %s when all three together ran over'
@@ -1005,25 +1013,15 @@ def build():
            % C.fy(worst_b['fy']), 'published', {'y': F(worst_b['fy'])}),
          f('upper', U(worst_b['before']), '%s need, had it paid no tuition (ours)'
            % C.fy(worst_b['fy']), 'estimate', {'y': F(worst_b['fy'])})],
-        [con('Average plus two standard deviations, %s, would have met %s of %s years; plus one, %s.'
-             % (C.usd(lv2), C.num(cov(lv2)), C.num(nyrs), C.num(cov(lv1))),
-             ['mean', 'sd', 'lvl1', 'lvl2'],
-             {'a': U(lv2), 'k': N(cov(lv2)), 'n': N(nyrs), 'b': N(cov(lv1))},
-             notes=[step('%s years needed nothing, so counting the years covered assumes no bell '
-                         'curve.' % C.num(sum(1 for x in vals if x == 0)),
-                         'gap', {'z': N(sum(1 for x in vals if x == 0))},
-                         closes='a longer record: the same ledger lines before %s' % fy0,
-                         allow=(fy0,))]),
-         con('The worst year, %s, needed %s; the worst two running, %s and %s, needed %s.'
+        [con('The worst year, %s, needed %s; the worst two running, %s and %s, needed %s.'
              % (C.fy(need['worst']['fy']), C.usd(need['worst']['gross']), C.fy(two[0]),
                 C.fy(two[0] + 1), C.usd(two[1])),
              ['worst', 'two', 'cap'],
              {'y': F(need['worst']['fy']), 'a': U(need['worst']['gross']), 'w': F(two[0]),
               'z': F(two[0] + 1), 'b': U(two[1])},
-             notes=[step('The cap is as the Town Manager described it; what the reserve holds is '
-                         'not published.', 'gap',
-                         closes='the reserve statute as written, and the amount voted into the '
-                                'reserve')]),
+             notes=[step('The cap is G.L. c.40 §13E’s: 2%% of net school spending. What the '
+                         'reserve holds is not published.', 'gap', allow=('40', '13E', '2%'),
+                         closes='the amount voted into the reserve')]),
          con('A line ran over its vote in %s of %s years; the three lines together, in only %s.'
              % (C.num(need['years_needing']), C.num(nyrs), C.num(netover)),
              ['needing', 'netover', 'oodover'],
@@ -1033,6 +1031,15 @@ def build():
                          % C.num(hidden), 'gap', {'h': N(hidden)},
                          closes='the Special Education Reserve Fund policy, on the Select Board '
                                 'agenda for 27 October 2026', allow=('27 October 2026',))]),
+         con('Average plus two standard deviations, %s, would have met %s of %s bad years; plus one, %s.'
+             % (C.usd(lv2), C.num(cov(lv2)), C.num(nbad), C.num(cov(lv1))),
+             ['mean', 'sd', 'lvl1', 'lvl2'],
+             {'a': U(lv2), 'k': N(cov(lv2)), 'n': N(nbad), 'b': N(cov(lv1))},
+             notes=[step('%s years needed nothing, so counting the years covered assumes no bell '
+                         'curve.' % C.num(sum(1 for x in vals if x == 0)),
+                         'gap', {'z': N(sum(1 for x in vals if x == 0))},
+                         closes='a longer record: the same ledger lines before %s' % fy0,
+                         allow=(fy0,))]),
          con('In %s the circuit breaker account paid %s; without it, the need was %s.'
              % (C.fy(worst_b['fy']), C.usd(cbs[worst_b['fy']]), C.usd(worst_b['before'])),
              ['cbyr', 'upper', 'cap'],
@@ -1098,9 +1105,9 @@ def build():
                 for y in reversed(EY)]),
             dict(caption='Reserve levels, and the years each would have met', views=[
                 dict(key='levels', label='Levels', total_col=0, kinds=['ledger'] * 4,
-                     columns=['Amount', 'Years met', 'Years short', 'Two years running met'],
-                     rows=[dict(label=l, cells=[C.usd(v), '%s of %s' % (cov(v), nyrs),
-                                                C.num(nyrs - cov(v)),
+                     columns=['Amount', 'Bad years met', 'Bad years short', 'Two years running met'],
+                     rows=[dict(label=l, cells=[C.usd(v), '%s of %s' % (cov(v), nbad),
+                                                C.num(nbad - cov(v)),
                                                 '%s of %s' % (cov2(v), len(pairs))])
                            for l, v in [
                                ('Average', avg), ('Average + 1 SD', lv1), ('Average + 2 SD', lv2),
@@ -1147,7 +1154,7 @@ def build():
                       'Finance Committee, 22 October 2026 (as presented)', href='/docs/' + DECK),
            dict(label='Special education, all funds (how the journal figures are built)',
                 href='/special-education/sped-all-funds')],
-        finding_figures={'n': N(nyrs), 'a': U(avg), 'b': U(need['worst']['gross'])})
+        finding_figures={'k': N(need['years_needing']), 'n': N(nyrs), 'y': F(need['worst']['fy']), 'b': U(need['worst']['gross'])})
 
     # ------------------------------------------------ children with a plan
     cnt = {r['fy']: r for r in ST['counts']}

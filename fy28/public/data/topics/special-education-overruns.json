@@ -227,55 +227,6 @@
   {
    "figures": {
     "a": {
-     "text": "$223,442",
-     "unit": "",
-     "value": 223442
-    },
-    "b": {
-     "text": "14",
-     "unit": "",
-     "value": 14
-    },
-    "k": {
-     "text": "16",
-     "unit": "",
-     "value": 16
-    },
-    "n": {
-     "text": "17",
-     "unit": "",
-     "value": 17
-    }
-   },
-   "literals": [],
-   "notes": [
-    {
-     "closes": "a longer record: the same ledger lines before FY2010",
-     "figures": {
-      "z": {
-       "text": "4",
-       "unit": "",
-       "value": 4
-      }
-     },
-     "kind": "gap",
-     "literals": [
-      "FY2010"
-     ],
-     "text": "4 years needed nothing, so counting the years covered assumes no bell curve."
-    }
-   ],
-   "rests_on": [
-    "mean",
-    "sd",
-    "lvl1",
-    "lvl2"
-   ],
-   "text": "Average plus two standard deviations, $223,442, would have met 16 of 17 years; plus one, 14."
-  },
-  {
-   "figures": {
-    "a": {
      "text": "$223,774",
      "unit": "",
      "value": 223774
@@ -304,11 +255,15 @@
    "literals": [],
    "notes": [
     {
-     "closes": "the reserve statute as written, and the amount voted into the reserve",
+     "closes": "the amount voted into the reserve",
      "figures": {},
      "kind": "gap",
-     "literals": [],
-     "text": "The cap is as the Town Manager described it; what the reserve holds is not published."
+     "literals": [
+      "40",
+      "13E",
+      "2%"
+     ],
+     "text": "The cap is G.L. c.40 §13E’s: 2%% of net school spending. What the reserve holds is not published."
     }
    ],
    "rests_on": [
@@ -360,6 +315,55 @@
     "oodover"
    ],
    "text": "A line ran over its vote in 13 of 17 years; the three lines together, in only 6."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$223,442",
+     "unit": "",
+     "value": 223442
+    },
+    "b": {
+     "text": "10",
+     "unit": "",
+     "value": 10
+    },
+    "k": {
+     "text": "12",
+     "unit": "",
+     "value": 12
+    },
+    "n": {
+     "text": "13",
+     "unit": "",
+     "value": 13
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "closes": "a longer record: the same ledger lines before FY2010",
+     "figures": {
+      "z": {
+       "text": "4",
+       "unit": "",
+       "value": 4
+      }
+     },
+     "kind": "gap",
+     "literals": [
+      "FY2010"
+     ],
+     "text": "4 years needed nothing, so counting the years covered assumes no bell curve."
+    }
+   ],
+   "rests_on": [
+    "mean",
+    "sd",
+    "lvl1",
+    "lvl2"
+   ],
+   "text": "Average plus two standard deviations, $223,442, would have met 12 of 13 bad years; plus one, 10."
   },
   {
    "figures": {
@@ -438,20 +442,20 @@
    "label": {
     "figures": {
      "a": {
-      "text": "14",
+      "text": "10",
       "unit": "",
-      "value": 14
+      "value": 10
      },
      "n": {
-      "text": "17",
+      "text": "13",
       "unit": "",
-      "value": 17
+      "value": 13
      }
     },
     "literals": [
      "1 SD"
     ],
-    "text": "average + 1 SD: enough in 14 of 17 years"
+    "text": "average + 1 SD: enough in 10 of 13 years"
    },
    "value": {
     "text": "$148,045",
@@ -465,20 +469,20 @@
    "label": {
     "figures": {
      "a": {
-      "text": "16",
+      "text": "12",
       "unit": "",
-      "value": 16
+      "value": 12
      },
      "n": {
-      "text": "17",
+      "text": "13",
       "unit": "",
-      "value": 17
+      "value": 13
      }
     },
     "literals": [
      "2 SD"
     ],
-    "text": "average + 2 SD: enough in 16 of 17 years"
+    "text": "average + 2 SD: enough in 12 of 13 years"
    },
    "value": {
     "text": "$223,442",
@@ -533,11 +537,11 @@
   },
   {
    "id": "cap",
-   "kind": "published",
+   "kind": "statute",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "the most the reserve may hold, as described"
+    "text": "the reserve’s legal cap"
    },
    "value": {
     "text": "$541,717",
@@ -648,24 +652,29 @@
  ],
  "finding": {
   "figures": {
-   "a": {
-    "text": "$72,648",
-    "unit": "",
-    "value": 72648
-   },
    "b": {
     "text": "$223,774",
     "unit": "",
     "value": 223774
    },
+   "k": {
+    "text": "13",
+    "unit": "",
+    "value": 13
+   },
    "n": {
     "text": "17",
     "unit": "",
     "value": 17
+   },
+   "y": {
+    "text": "FY2013",
+    "unit": "fiscal year",
+    "value": 2013
    }
   },
   "literals": [],
-  "text": "Over 17 years, special education needed $72,648 a year beyond its vote on average; at most $223,774."
+  "text": "A special education line ran over its vote in 13 of 17 years; the worst, FY2013, by $223,774."
  },
  "full_report": {
   "href": "",
@@ -1696,8 +1705,8 @@
     {
      "columns": [
       "Amount",
-      "Years met",
-      "Years short",
+      "Bad years met",
+      "Bad years short",
       "Two years running met"
      ],
      "key": "levels",
@@ -1713,7 +1722,7 @@
       {
        "cells": [
         "$72,648",
-        "10 of 17",
+        "6 of 13",
         "7",
         "3 of 16"
        ],
@@ -1722,7 +1731,7 @@
       {
        "cells": [
         "$148,045",
-        "14 of 17",
+        "10 of 13",
         "3",
         "8 of 16"
        ],
@@ -1731,7 +1740,7 @@
       {
        "cells": [
         "$223,442",
-        "16 of 17",
+        "12 of 13",
         "1",
         "14 of 16"
        ],
@@ -1740,7 +1749,7 @@
       {
        "cells": [
         "$223,774",
-        "17 of 17",
+        "13 of 13",
         "0",
         "14 of 16"
        ],
@@ -1749,7 +1758,7 @@
       {
        "cells": [
         "$368,596",
-        "17 of 17",
+        "13 of 13",
         "0",
         "16 of 16"
        ],
@@ -1758,7 +1767,7 @@
       {
        "cells": [
         "$541,717",
-        "17 of 17",
+        "13 of 13",
         "0",
         "16 of 16"
        ],

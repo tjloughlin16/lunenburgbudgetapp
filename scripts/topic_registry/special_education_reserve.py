@@ -28,7 +28,7 @@ CATEGORY = dict(
         ('What comes back, and when', ['how-tuition-is-paid', 'special-education-grants',
                                        'circuit-breaker-account']),
         # TJ, 24 October 2026: "propose ALL the options... and let someone pick".
-        ('How big, and why a reserve', ['reserve-options', 'reserve-size', 'reserve-or-budget',
+        ('How big, and why a reserve', ['reserve-options', 'reserve-or-budget',
                                         'special-education-overruns']),
     ],
     elsewhere=[('/special-education', 'Special education costs'),
@@ -41,6 +41,5 @@ TOPICS = {
     'how-tuition-is-paid': 'Tuition after repayment',
     'special-education-grants': 'Special education grants',
     'reserve-options': 'Reserve options',
-    'reserve-size': 'Draw rules',
     'reserve-or-budget': 'Reserve or budget',
 }

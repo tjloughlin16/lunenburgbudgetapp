@@ -161,13 +161,14 @@ def main():
     check('years needing', sum(1 for v in vals if v > 0), fact['needing'])
     check('years net over', sum(1 for y in years if net[y] > 0), fact['netover'])
     check('tuition years over', sum(1 for y in years if var[y]['ood'] > 0), fact['oodover'])
-    cov = lambda lvl: sum(1 for v in vals if v <= lvl)
-    want = ('Average plus two standard deviations, %s, would have met %d of %d years; plus one, %d.'
-            % (usd(lv2), cov(lv2), n, cov(lv1)))
-    check('conclusion 1', p['conclusions'][0]['text'], want)
+    nbad = sum(1 for v in vals if v > 0)
+    cov = lambda lvl: sum(1 for v in vals if 0 < v <= lvl)
+    want = ('Average plus two standard deviations, %s, would have met %d of %d bad years; plus one, %d.'
+            % (usd(lv2), cov(lv2), nbad, cov(lv1)))
+    check('conclusion 3', p['conclusions'][2]['text'], want)
     check('finding', p['finding']['text'],
-          'Over %d years, special education needed %s a year beyond its vote on average; at most %s.'
-          % (n, usd(avg), usd(need[worst_fy])))
+          'A special education line ran over its vote in %d of %d years; the worst, FY%d, by %s.'
+          % (nbad, n, worst_fy, usd(need[worst_fy])))
 
     # table 1 and 2, cell by cell
     t1 = {r['label']: r['cells'] for r in tables['Voted and spent, general fund, each line, every year']['views'][0]['rows']}
@@ -199,7 +200,7 @@ def main():
               [money(c) for c in t2[fy]])
     lv = {r['label']: r['cells'] for r in tables['Reserve levels, and the years each would have met']['views'][0]['rows']}
     for lab, amt in (('Average', avg), ('Average + 1 SD', lv1), ('Average + 2 SD', lv2)):
-        check('level %s' % lab, lv[lab], [usd(amt), '%d of %d' % (cov(amt), n), str(n - cov(amt)),
+        check('level %s' % lab, lv[lab], [usd(amt), '%d of %d' % (cov(amt), nbad), str(nbad - cov(amt)),
                                           '%d of %d' % (sum(1 for v in pairs.values() if v <= amt), n - 1)])
 
     # ---- THE TIE: two account definitions, FY2023-FY2026, in cents

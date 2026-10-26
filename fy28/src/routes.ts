@@ -1047,6 +1047,8 @@ export const TOPIC_MERGED: Record<string, string> = {
   // TJ, 26 October 2026: "maybe we merge and only have one called 'circuit breaker'" --
   // the five steps from a placement to the bill, published for one day under SERF.
   'surprises-and-state-aid': 'circuit-breaker',
+  // 'Draw rules', folded into Reserve options as four cards (TJ: "i dont know what a 'draw' is").
+  'reserve-size': 'reserve-options',
 }
 
 /** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id. These were

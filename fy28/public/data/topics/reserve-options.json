@@ -386,11 +386,134 @@
  ],
  "blocks": [
   {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Worst year, FY2013",
+       "tone": null,
+       "value": "$223,774"
+      },
+      {
+       "label": "Worst two years running",
+       "tone": null,
+       "value": "$368,596"
+      },
+      {
+       "label": "Years a line ran over",
+       "tone": null,
+       "value": "13 of 17"
+      }
+     ],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "A line that runs over may use the reserve even if another line came in under."
+     },
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "Every size on these pages counts this way."
+     },
+     "title": "Each line, against its own vote"
+    },
+    {
+     "rows": [
+      {
+       "label": "Worst year, FY2026",
+       "tone": "bad",
+       "value": "$811,505"
+      },
+      {
+       "label": "Median year",
+       "tone": null,
+       "value": "$264,851"
+      },
+      {
+       "label": "The most the law allows",
+       "tone": null,
+       "value": "$541,717"
+      }
+     ],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "If no account may cover another, the worst year alone passes the legal cap. Money moves between accounts all year, so this is the most it could be."
+     },
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "Each account in the budget book, measured alone."
+     },
+     "title": "Each budget account, on its own"
+    },
+    {
+     "rows": [
+      {
+       "label": "Worst year, FY2013",
+       "tone": null,
+       "value": "$200,862"
+      },
+      {
+       "label": "Years the three ran over together",
+       "tone": null,
+       "value": "6 of 17"
+      }
+     ],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "The reserve would be needed about one year in three, and for less."
+     },
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "One line’s overspending is first met by another’s leftover."
+     },
+     "title": "The three lines added together"
+    },
+    {
+     "rows": [
+      {
+       "label": "Worst year, FY2023",
+       "tone": null,
+       "value": "$78,554"
+      },
+      {
+       "label": "Years the whole budget ran over",
+       "tone": null,
+       "value": "4 of 17"
+      }
+     ],
+     "so": {
+      "figures": {},
+      "literals": [],
+      "text": "A reserve this size would almost never be touched."
+     },
+     "sub": {
+      "figures": {},
+      "literals": [],
+      "text": "Every school line’s leftover is used first."
+     },
+     "title": "The whole school budget"
+    }
+   ],
+   "note": {
+    "figures": {},
+    "literals": [],
+    "text": "The reserve’s written policy decides which of these it follows."
+   },
+   "place": "body",
+   "title": "Which overspending the reserve pays for"
+  },
+  {
    "block": "checks",
    "columns": [
     "Median: $90,554",
     "Median, today: $121,615",
     "Median, last five: $116,811",
+    "Average + two swings: $223,442",
     "Worst: $223,774",
     "Worst two: $368,596",
     "Worst, today: $412,397"
@@ -407,9 +530,9 @@
      "contrast": false,
      "label": "FY2013, $223,774 over",
      "marks": [
-      3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
@@ -419,13 +542,13 @@
         "value": 3
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 3 of 6"
+      "text": "Met by 3 of 7"
      }
     },
     {
@@ -434,23 +557,24 @@
      "marks": [
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "3",
+        "text": "4",
         "unit": "",
-        "value": 3
+        "value": 4
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 3 of 6"
+      "text": "Met by 4 of 7"
      }
     },
     {
@@ -459,23 +583,24 @@
      "marks": [
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "3",
+        "text": "4",
         "unit": "",
-        "value": 3
+        "value": 4
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 3 of 6"
+      "text": "Met by 4 of 7"
      }
     },
     {
@@ -484,23 +609,24 @@
      "marks": [
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "3",
+        "text": "4",
         "unit": "",
-        "value": 3
+        "value": 4
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 3 of 6"
+      "text": "Met by 4 of 7"
      }
     },
     {
@@ -509,23 +635,24 @@
      "marks": [
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "3",
+        "text": "4",
         "unit": "",
-        "value": 3
+        "value": 4
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 3 of 6"
+      "text": "Met by 4 of 7"
      }
     },
     {
@@ -536,23 +663,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "5",
-        "unit": "",
-        "value": 5
-       },
-       "n": {
         "text": "6",
         "unit": "",
         "value": 6
+       },
+       "n": {
+        "text": "7",
+        "unit": "",
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 5 of 6"
+      "text": "Met by 6 of 7"
      }
     },
     {
@@ -564,23 +692,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 6 of 6"
+      "text": "Met by 7 of 7"
      }
     },
     {
@@ -592,23 +721,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 6 of 6"
+      "text": "Met by 7 of 7"
      }
     },
     {
@@ -620,23 +750,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 6 of 6"
+      "text": "Met by 7 of 7"
      }
     },
     {
@@ -648,23 +779,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 6 of 6"
+      "text": "Met by 7 of 7"
      }
     },
     {
@@ -676,23 +808,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 6 of 6"
+      "text": "Met by 7 of 7"
      }
     },
     {
@@ -704,23 +837,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 6 of 6"
+      "text": "Met by 7 of 7"
      }
     },
     {
@@ -732,23 +866,24 @@
       2,
       3,
       4,
-      5
+      5,
+      6
      ],
      "why": {
       "figures": {
        "a": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        },
        "n": {
-        "text": "6",
+        "text": "7",
         "unit": "",
-        "value": 6
+        "value": 7
        }
       },
       "literals": [],
-      "text": "Met by 6 of 6"
+      "text": "Met by 7 of 7"
      }
     }
    ],
@@ -827,6 +962,14 @@
     "value": 223774
    },
    {
+    "label": "Average plus two standard deviations",
+    "texts": [
+     "$223,442"
+    ],
+    "total": "$223,442",
+    "value": 223442
+   },
+   {
     "label": "Median bad year, at today’s budget",
     "texts": [
      "$121,615"
@@ -852,7 +995,7 @@
    }
   ],
   "stack": null,
-  "title": "Six ways to size the reserve",
+  "title": "Seven ways to size the reserve",
   "type": "ranking",
   "unit": "$"
  },
@@ -932,7 +1075,7 @@
     "o-med",
     "o-adj",
     "o-med5",
-    "o-b1"
+    "o-2sd"
    ],
    "so": {
     "figures": {},
@@ -1059,6 +1202,20 @@
    }
   },
   {
+   "id": "o-2sd",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "average plus two standard deviations"
+   },
+   "value": {
+    "text": "$223,442",
+    "unit": "",
+    "value": 223442
+   }
+  },
+  {
    "id": "o-max",
    "kind": "published",
    "label": {
@@ -1137,24 +1294,18 @@
    }
   },
   {
-   "id": "o-b1",
-   "kind": "published",
+   "closes": "the Special Education Reserve Fund policy, on the Select Board agenda for 27 October 2026",
+   "id": "o-rule",
+   "kind": "gap",
    "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "the three lines’ budget, FY2026"
+    "figures": {},
+    "literals": [
+     "27",
+     "2026"
+    ],
+    "text": "which overspending the reserve pays for"
    },
-   "value": {
-    "text": "$6,209,427",
-    "unit": "",
-    "value": 6209427
-   }
+   "value": null
   },
   {
    "id": "o-share",
@@ -1196,7 +1347,7 @@
    }
   },
   "literals": [],
-  "text": "Six ways to size the reserve run from $90,554 to $412,397; the law caps it at $541,717."
+  "text": "Seven ways to size the reserve run from $90,554 to $412,397; the law caps it at $541,717."
  },
  "full_report": {
   "href": "",
@@ -1254,7 +1405,7 @@
  "table": null,
  "tables": [
   {
-   "caption": "The six options, and the bad years each would have covered",
+   "caption": "The seven options, and the bad years each would have covered",
    "views": [
     {
      "columns": [
@@ -1299,6 +1450,15 @@
         "the middle of 4: FY2022, FY2024, FY2025, FY2026"
        ],
        "label": "Median bad year, last five"
+      },
+      {
+       "cells": [
+        "$223,442",
+        "12 of 13",
+        "10 of 13",
+        "the average year, plus twice its usual swing"
+       ],
+       "label": "Average plus two standard deviations"
       },
       {
        "cells": [

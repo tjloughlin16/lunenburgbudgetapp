@@ -1267,7 +1267,7 @@ def build():
         fail('the page says counting the circuit breaker raises the overrun')
     cb_peak_y = max((y for y in cyrs if y < fy1), key=lambda y: cba[y]['closing'])
 
-    # ------------------------------------------------ reserve size: three draw rules
+    # ------------------------------------------------ which overspending counts: four rules
     stats = {}
     for k, m in (('acct', acct_need), ('line', need), ('net', pos(net)), ('school', pos(whole))):
         w = max(ys, key=lambda y: m[y])
@@ -1294,74 +1294,42 @@ def build():
     if not (stats['school']['worst'] <= stats['net']['worst'] <= sl['worst'] < ours < cap
             < sa['worst']):
         fail('the reserve levels are no longer in the order the page describes')
-    out['reserve-size'] = TP.page(
-        'reserve-size',
-        'Which overruns count moves the worst year from %s to %s.'
-        % (C.usd(stats['school']['worst']), C.usd(sa['worst'])),
-        [f('r-aw', U(sa['worst']), 'account by account, worst year, %s' % C.fy(sa['wfy']), 'published',
-           {'y': F(sa['wfy'])}),
-         f('r-am', U(sa['median']), 'account by account, median year', 'published'),
-         f('r-lw', U(sl['worst']), 'line by line, worst year, %s' % C.fy(sl['wfy']), 'published',
-           {'y': F(sl['wfy'])}),
-         f('r-l2', U(sl['two']), 'line by line, worst two years running', 'published'),
-         f('r-2sd', U(lvl2), 'average plus two standard deviations', 'published'),
-         f('r-nw', U(stats['net']['worst']), 'three lines net, worst year, %s' % C.fy(stats['net']['wfy']),
-           'published', {'y': F(stats['net']['wfy'])}),
-         f('r-nn', N(stats['net']['years'], 'years'), 'of %s with a net overrun' % C.num(nyrs),
-           'published', {'n': N(nyrs)}),
-         f('r-sw', U(stats['school']['worst']), 'whole school, worst year, %s'
-           % C.fy(stats['school']['wfy']), 'published', {'y': F(stats['school']['wfy'])}),
-         f('r-sn', N(stats['school']['years'], 'years'), 'of %s the whole school ran over'
-           % C.num(nyrs), 'published', {'n': N(nyrs)}),
-         f('r-cap', U(cap), 'the most it may hold: 2% of net school spending', 'statute',
-           allow=('2%',)),
-         f('r-ours', U(ours), 'a balance that met every year and every pair', 'estimate'),
-         f('r-rule', None, 'which overrun the reserve is drawn against', 'gap',
-           closes='the Special Education Reserve Fund policy, on the Select Board agenda for '
-                  '27 October 2026', allow=('27', '2026'))],
-        [con('Drawn account by account, as the budget book lists them: %s at worst, past the cap.'
-             % C.usd(sa['worst']), ['r-aw', 'r-am', 'r-cap', 'r-rule'], {'a': U(sa['worst'])},
-             notes=[step('An upper bound: money moves between accounts all year, by School '
-                         'Committee transfer, so one account’s overrun is often met by another.',
-                         'estimate')]),
-         con('Drawn line by line, the worst year needed %s; the worst two running, %s.'
-             % (C.usd(sl['worst']), C.usd(sl['two'])), ['r-lw', 'r-l2', 'r-2sd', 'r-ours'],
-             {'a': U(sl['worst']), 'b': U(sl['two'])},
-             notes=[step('Measured after the circuit breaker account paid. In %s, without it, '
-                         'the need was %s.' % (C.fy(wb['fy']), C.usd(wb['before'])), 'estimate',
-                         {'y': F(wb['fy']), 'a': U(wb['before'])})]),
-         con('Drawn when the three lines ran over together: %s at worst, in %s of %s years.'
-             % (C.usd(stats['net']['worst']), C.num(stats['net']['years']), C.num(nyrs)),
-             ['r-nw', 'r-nn'],
-             {'a': U(stats['net']['worst']), 'b': N(stats['net']['years']), 'n': N(nyrs)}),
-         con('Drawn when the whole school ran over its vote: %s at worst, in %s years.'
-             % (C.usd(stats['school']['worst']), C.num(stats['school']['years'])),
-             ['r-sw', 'r-sn'], {'a': U(stats['school']['worst']), 'b': N(stats['school']['years'])})],
-        chart=TP.ranking('Each draw rule, worst year and worst pair', [
-            ('Account by account, one year', sa['worst']),
-            ('Account by account, two running', sa['two']),
-            ('Line by line, one year', sl['worst']),
-            ('Line by line, two running', sl['two']),
-            ('Three lines net, one year', stats['net']['worst']),
-            ('Three lines net, two running', stats['net']['two']),
-            ('Whole school, one year', stats['school']['worst']),
-            ('Whole school, two running', stats['school']['two']),
-            ('The cap in law', cap)], '$',
-            note='Beyond the general fund vote, %s to %s. Two running: the worst pair of '
-                 'consecutive years.' % (C.fy(fy0), C.fy(fy1)),
-            note_figures={'y': F(fy0), 'z': F(fy1)}),
-        finding_figures={'a': U(stats['school']['worst']), 'b': U(sa['worst'])},
-        said=[caption(SC, 'motion'),
-              minute('select-board', 'Select Board', '2025-10-07-minutes-7441.txt',
-                     'The total balance cannot exceed 2% of annual net school spending.',
-                     'Jennifer Warren-Dyment, Town Manager'),
-              minute('select-board', 'Select Board', '2025-10-21-minutes-7466.txt',
-                     'Member McLeod expressed lingering concern about potential budget impacts if '
-                     'the reserve were to reduce urgency around special education line-item '
-                     'funding.', 'Select Board member McLeod')],
-        sources=src)
+    # WHICH OVERSPENDING THE RESERVE PAYS FOR. Its own page ('Draw rules') until 26 October 2026,
+    # when TJ read it beside Reserve options: "i dont know what a 'draw' is so its unclear how
+    # these 2 are different pages ... make sure this isnt confusing for people if you merge". It
+    # is not a seventh size: it is the rule every size rests on, so it sits here as four cards,
+    # the one these pages use first, in plain words, and the word 'draw' nowhere.
+    nsl = '%s of %s' % (C.num(sl['years']), C.num(nyrs))
+    yr = lambda lab, y: ((lab + ', %s' % C.fy(y)), {'y': F(y)})
+    which = TB.panels('Which overspending the reserve pays for', [
+        TB.panel('Each line, against its own vote', [
+            (yr('Worst year', sl['wfy']), C.usd(sl['worst']), None),
+            ('Worst two years running', C.usd(sl['two']), None),
+            ('Years a line ran over', nsl, None)],
+            sub='Every size on these pages counts this way.',
+            so='A line that runs over may use the reserve even if another line came in under.'),
+        TB.panel('Each budget account, on its own', [
+            (yr('Worst year', sa['wfy']), C.usd(sa['worst']), 'bad'),
+            ('Median year', C.usd(sa['median']), None),
+            ('The most the law allows', C.usd(cap), None)],
+            sub='Each account in the budget book, measured alone.',
+            so='If no account may cover another, the worst year alone passes the legal cap. Money '
+               'moves between accounts all year, so this is the most it could be.'),
+        TB.panel('The three lines added together', [
+            (yr('Worst year', stats['net']['wfy']), C.usd(stats['net']['worst']), None),
+            ('Years the three ran over together', '%s of %s' % (C.num(stats['net']['years']),
+                                                              C.num(nyrs)), None)],
+            sub='One line’s overspending is first met by another’s leftover.',
+            so='The reserve would be needed about one year in three, and for less.'),
+        TB.panel('The whole school budget', [
+            (yr('Worst year', stats['school']['wfy']), C.usd(stats['school']['worst']), None),
+            ('Years the whole budget ran over', '%s of %s' % (C.num(stats['school']['years']),
+                                                            C.num(nyrs)), None)],
+            sub='Every school line’s leftover is used first.',
+            so='A reserve this size would almost never be touched.')],
+        place='body', note='The reserve’s written policy decides which of these it follows.')
 
-    # ------------------------------------------------ reserve options: six sizes, side by side
+    # ------------------------------------------------ reserve options: seven sizes, side by side
     # TJ, 24 October 2026: "we could propose ALL the options then. max of 12, median of 12,
     # median of 5, or the adjusted 12 year. We could show ALL on a single page and let someone
     # pick... show how to view that and compare it and validate which one makes sense".
@@ -1385,7 +1353,7 @@ def build():
     o_adjmax = half_up(share_y[adj_wfy] * b1)
     adj_pfy = max(ys[:-1], key=lambda y: share_y[y] + share_y[ys[ys.index(y) + 1]])
     o_adjpair = half_up((share_y[adj_pfy] + share_y[ys[ys.index(adj_pfy) + 1]]) * b1)
-    if not o_med < min(o_adj, o_med5) <= max(o_adj, o_med5) < o_max < o_pair < o_adjmax < cap < o_adjpair:
+    if not o_med < min(o_adj, o_med5) <= max(o_adj, o_med5) < lvl2 < o_max < o_pair < o_adjmax < cap < o_adjpair:
         fail('the reserve options are no longer in the order the page describes')
     if adj_wfy != sl['wfy']:
         fail('the options page says the worst year is the same year either way')
@@ -1398,6 +1366,9 @@ def build():
          % C.fy(fy1)),
         ('Median bad year, last five', o_med5, 'the middle of %s: %s' % (C.num(len(bad5)),
                                                                           ', '.join(C.fy(y) for y in bad5))),
+        # Average plus two standard deviations: the Special education overruns page's own measure,
+        # here as a seventh size so every way the shelf sizes the reserve is on one page.
+        ('Average plus two standard deviations', lvl2, 'the average year, plus twice its usual swing'),
         ('Worst year', o_max, C.fy(sl['wfy'])),
         ('Worst two years running', o_pair, '%s and %s' % (C.fy(sl['tfy']), C.fy(sl['tfy'] + 1))),
         ('Worst year, at today’s budget', o_adjmax, '%s scaled to the %s budget (ours)'
@@ -1406,7 +1377,7 @@ def build():
     opt_rows = [dict(label=lab, cells=[C.usd(v), '%s of %s' % (C.num(covered(v)), C.num(len(bad_y))),
                                        '%s of %s' % (C.num(covered_adj(v)), C.num(len(bad_y))), how])
                 for lab, v, how in options]
-    opt_table = dict(caption='The six options, and the bad years each would have covered',
+    opt_table = dict(caption='The seven options, and the bad years each would have covered',
                      views=[dict(key='options', label='Options',
                                  columns=['Reserve', 'Bad years covered, as spent',
                                           'Bad years covered, at today’s budget', 'How it is measured'],
@@ -1421,11 +1392,11 @@ def build():
     # each bad year, a mark where it would have covered it. Worst year first, so the grid is a
     # staircase: the bigger the year, the fewer options reach it. As spent, every column.
     cov_opts = [(lab, v) for lab, v, _ in options]
-    cov_cols = [('%s: %s' % (('Median', 'Median, today', 'Median, last five', 'Worst',
-                              'Worst two', 'Worst, today')[i], C.usd(v)), {'a': U(v)})
+    cov_cols = [('%s: %s' % (('Median', 'Median, today', 'Median, last five', 'Average + two swings',
+                              'Worst', 'Worst two', 'Worst, today')[i], C.usd(v)), {'a': U(v)})
                 for i, (_, v) in enumerate(cov_opts)]
-    if len(cov_opts) != 6:
-        fail('the coverage grid names six options')
+    if len(cov_opts) != 7:
+        fail('the coverage grid names seven options')
     met = lambda y: sum(1 for _, v in cov_opts if need[y] <= v)
     cov_rows = [TB.check_row(('%s, %s over' % (C.fy(y), C.usd(need[y])), {'y': F(y), 'a': U(need[y])}),
                              ('Met by %s of %s' % (C.num(met(y)), C.num(len(cov_opts))),
@@ -1447,23 +1418,26 @@ def build():
                              {'a': N(n_all)}))
     out['reserve-options'] = TP.page(
         'reserve-options',
-        'Six ways to size the reserve run from %s to %s; the law caps it at %s.'
+        'Seven ways to size the reserve run from %s to %s; the law caps it at %s.'
         % (C.usd(o_med), C.usd(o_adjmax), C.usd(cap)),
         [f('o-med', U(o_med), 'median bad year, %s to %s' % (C.fy(fy0), C.fy(fy1)), 'published',
            {'y': F(fy0), 'z': F(fy1)}),
          f('o-adj', U(o_adj), 'median bad year, at today’s budget', 'estimate'),
          f('o-med5', U(o_med5), 'median bad year, last five years', 'published'),
+         f('o-2sd', U(lvl2), 'average plus two standard deviations', 'published'),
          f('o-max', U(o_max), 'worst year, %s' % C.fy(sl['wfy']), 'published', {'y': F(sl['wfy'])}),
          f('o-pair', U(o_pair), 'worst two years running', 'published'),
          f('o-adjmax', U(o_adjmax), 'worst year, at today’s budget', 'estimate'),
          f('o-adjpair', U(o_adjpair), 'worst two running, at today’s budget', 'estimate'),
          f('o-cap', U(cap), 'the most it may hold: 2% of net school spending', 'statute',
            allow=('2%',)),
-         f('o-b1', U(b1), 'the three lines’ budget, %s' % C.fy(fy1), 'published', {'y': F(fy1)}),
+         f('o-rule', None, 'which overspending the reserve pays for', 'gap',
+           closes='the Special Education Reserve Fund policy, on the Select Board agenda for '
+                  '27 October 2026', allow=('27', '2026')),
          f('o-share', P(100 * share_y[adj_wfy]), 'over budget in %s, the worst share' % C.fy(adj_wfy),
            'published', {'y': F(adj_wfy)})],
         [con('A median bad year ran %s over; scaled to today’s budget, %s; in the last five years, %s.'
-             % (C.usd(o_med), C.usd(o_adj), C.usd(o_med5)), ['o-med', 'o-adj', 'o-med5', 'o-b1'],
+             % (C.usd(o_med), C.usd(o_adj), C.usd(o_med5)), ['o-med', 'o-adj', 'o-med5', 'o-2sd'],
              {'a': U(o_med), 'b': U(o_adj), 'c': U(o_med5)},
              notes=[step('Every size here is the general fund’s overrun: the cost left after the '
                          'circuit breaker account has paid its share.', 'measured'),
@@ -1480,7 +1454,7 @@ def build():
          con('At today’s budget the worst two years running come to %s, past the %s cap.'
              % (C.usd(o_adjpair), C.usd(cap)), ['o-adjpair', 'o-pair', 'o-cap'],
              {'a': U(o_adjpair), 'b': U(cap)})],
-        chart=TP.ranking('Six ways to size the reserve', [(lab, v) for lab, v, _ in options]
+        chart=TP.ranking('Seven ways to size the reserve', [(lab, v) for lab, v, _ in options]
                          + [('The most the law allows', cap)], '$',
                          highlight=['Median bad year, at today’s budget', 'Worst year, at today’s budget',
                                     'The most the law allows'],
@@ -1504,7 +1478,7 @@ def build():
                   note_figures={'a': U(b1)})],
         tables=[opt_table],
         finding_figures={'a': U(o_med), 'b': U(o_adjmax), 'c': U(cap)},
-        blocks=[cov_grid], sources=src)
+        blocks=[which, cov_grid], sources=src)
 
     # ------------------------------------------------ reserve or budget: a stock or a flow
     # TJ, 24 October 2026: "it seems like the budget option is bad but its not stated in a way
@@ -1597,7 +1571,7 @@ def build():
     #   3. aren't move-ins the problem?                by law, a placed child is the old town's cost that year
     #   4. what does the state pay?                    the tuition vote counts on the repayment
     #                                                  before it arrives, and its account is shrinking
-    #   5. how big?                                    six sizes, side by side; none singled out
+    #   5. how big?                                    seven sizes, side by side; none singled out
     #                                                  (TJ, 25 October 2026: highlighting one
     #                                                  "suggest thats the option to pick" -- rule 8)
     #   6. why not just budget it?                     it raises far more for the same protection
@@ -1689,7 +1663,7 @@ def build():
                       % (C.usd(st_sum), C.num(len(mys)), C.usd(ov_sum)),
                       ['h-repaid', 'h-oversum', 'h-cba', 'h-cba0'],
                       {'a': U(st_sum), 'n': N(len(mys)), 'b': U(ov_sum)}),
-        LD.conclusion('Six ways to size the reserve run from %s, a median bad year, to %s, the worst at today’s budget.'
+        LD.conclusion('Seven ways to size the reserve run from %s, a median bad year, to %s, the worst at today’s budget.'
                       % (C.usd(o_med), C.usd(o_adjmax)),
                       ['h-med', 'h-adj', 'h-med5', 'h-worst', 'h-ours', 'h-adjmax', 'h-cap',
                        'h-policy'],
@@ -1782,7 +1756,7 @@ def build():
             ('Median bad year, last five', C.usd(o_med5), None),
             ((('Worst year on record, %s' % C.fy(sl['wfy'])), {'y': F(sl['wfy'])}), C.usd(o_max), None),
             ('The most the law allows', C.usd(cap), None)],
-            sub='Six ways to size it are compared on Reserve options.',
+            sub='Each line counted against its own vote. Seven ways to size it are on Reserve options.',
             so=('Held at the recent median it would have met %s of %s bad years; at the worst year, '
                 'all of them. The choice is how rare a year to insure against.'
                 % (C.num(covered(o_med5)), C.num(len(bad_y))),
@@ -2176,12 +2150,6 @@ def build():
         'IDEA is the steady part, and it barely grows, so it cannot absorb a new placement.',
         ('A larger repayment arrives in %s and refills the account; it also says the costs of %s were high.'
          % (C.fy(fy1 + 1), C.fy(fy1)), {'y': F(fy1 + 1), 'z': F(fy1)})])
-    meanings(out['reserve-size']['conclusions'], [
-        'If no budget line may cover another, the worst year alone passes the legal cap; the rule sets the size more than history does.',
-        'If each line may draw on its own, a safe reserve is about the size of two bad years.',
-        'If the lines cover each other first, the reserve is drawn about one year in three, and for less.',
-        'If the whole school budget runs out first, a reserve this size would almost never be touched.',
-        ])
     meanings(out['reserve-options']['conclusions'], [
         'The three medians differ mostly by how old years are counted; recent years and scaled years agree more closely.',
         'Whether old overruns count at today’s size nearly doubles the worst case; nothing in the data settles it.',

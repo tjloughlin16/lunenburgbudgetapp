@@ -40,8 +40,8 @@ RELATED = [
     # The SERF report: what the reserve meets, against what it would cost to budget instead.
     [('arrivals-and-the-budget', 'Whether a mid-year arrival left the year short'),
      ('surprise-costs', 'Which special education lines run over their vote'),
-     ('reserve-size', 'Which overruns a reserve would be drawn for')],
-    [('reserve-options', 'Six sizes for the reserve, and the years each would cover'),
+     ('reserve-options', 'Seven sizes for the reserve, and which overspending it pays for')],
+    [('reserve-options', 'Seven sizes for the reserve, and which overspending it pays for'),
      ('reserve-or-budget', 'The same money held once, or added to every vote')],
     [('reserve-or-budget', 'The same money held once, or added to every vote'),
      ('fy2026-snow-and-reserve-fund', 'How the town budgets another line that surprises')],
