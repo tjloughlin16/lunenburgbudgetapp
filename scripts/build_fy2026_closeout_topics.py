@@ -272,64 +272,31 @@ def build():
                       'published')
     fx['leftpct'] = f('leftpct', P(left_pct), 'of the school budget left unspent', 'published')
 
-    # ---- FY2026 school surplus
+    # ---- FY2026 school surplus: FOLDED INTO THE HUB, 26 October 2026 (TJ: "this page seems
+    # useless ... i think this data was shown on the main page"). It opened on the hub's own
+    # figure and chart; what only it held -- the two runs of the report, and what the Committee
+    # heard in July -- is the hub's table now. Its address opens the hub (routes.ts TOPIC_MERGED).
     told = S['stated']
-    out['fy2026-school-surplus'] = TP.page(
-        'fy2026-school-surplus',
-        'The school general fund closed %s with %s unspent and uncommitted, %s of its budget.'
-        % (C.fy(2026), C.usd(left26), C.pct(left_pct)),
-        [fx['rev26'], fx['paid26'], fx['enc26'], fx['left26'], fx['leftpct'], fx['ceiling'],
-         f('p12', U(p12['available']), 'the same figure in the June report (period 12)',
-           'published', allow=('12',)),
-         f('moved', U2(moved), 'change between the two runs', 'published'),
-         f('told', U(told['returned_fy25']), 'returned the year before, as the Committee '
-           'heard in July', 'published'),
-         f('fate', None, 'whether each open order is paid or released', 'gap',
-           closes='the Town Accountant’s list of FY2026 encumbrances carried into FY2027, '
-                  'by account'),
-         f('free-cash', None, 'what reaches the town as certified free cash', 'gap',
-           closes='the state’s FY2026 free cash certification for Lunenburg')],
-        [con('The school budget closed %s with %s left, %s of %s.'
-             % (C.fy(2026), C.usd(left26), C.pct(left_pct), C.usd(rev26)),
-             ['rev26', 'paid26', 'left26', 'leftpct'],
-             {'y': F(2026), 'a': U(left26), 'p': P(left_pct), 'b': U(rev26)}),
-         con('Another %s is committed to open orders; released in full, the figure reaches %s.'
-             % (C.usd(enc26), C.usd(ceiling)), ['enc26', 'ceiling', 'fate'],
-             {'e': U(enc26), 'c': U(ceiling)},
-             notes=[step('Paid, an order leaves the figure where it is; released, it raises it. '
-                         'The ledger shows the commitment, not its fate.', 'gap',
-                         closes='the Town Accountant’s list of FY2026 encumbrances carried '
-                                'into FY2027, by account')]),
-         con('Between the September and October runs the figure moved %s; no payment changed.'
-             % usd2(moved), ['p12', 'moved'], {'m': U2(moved)}),
-         con('In July the Committee heard it would be well below about %s; %s is below it, '
-             '%s above.' % (C.usd(told['returned_fy25']), C.usd(left26), C.usd(ceiling)),
-             ['told', 'left26', 'ceiling'],
-             {'t': U(told['returned_fy25']), 'a': U(left26), 'c': U(ceiling)})],
-        chart=dict(id='fy26-school-surplus-waterfall', source=SRC26),
-        table=dict(caption='The school general fund, %s, two runs of one report' % C.fy(2026),
-                   views=[dict(
-                       key='runs', label='Period 12 and period 13', total_col=-1,
-                       kinds=['ledger'] * 2,
-                       columns=['June report (period 12)', 'Closed year (period 13)'],
-                       rows=[dict(label=lab, cells=[usd2(p12[a]), usd2(s26[b])])
-                             for lab, a, b in (
-                                 ('Voted', 'original', 'original_approp'),
-                                 ('Moved by transfer, net', 'transfers', 'transfers_adjustments'),
-                                 ('Budget after transfers', 'revised', 'revised_budget'),
-                                 ('Paid', 'expended', 'ytd_expended'),
-                                 ('Still committed', 'encumbered', 'encumbrances'),
-                                 ('Left unspent', 'available', 'available_budget'))],
-                       note='MUNIS year-to-date budget reports for department 300, run 1 '
-                            'September and 6 October 2026. Left is the report’s own column: '
-                            'budget less paid less still committed.')]),
-        said=[said_file('school-committee/2026-07-29-minutes-7930.txt',
-                        'the approximately $600,000 that had been returned', 'School Committee'),
-              said_file('school-committee/2026-07-29-minutes-7930.txt',
-                        'he was confident the remaining amount would be well below that figure',
-                        'School Committee')],
-        sources=[src['p13-26'], src['p12'], src['sc0729'], src['d-munis'], src['d-ledger']],
-        finding_figures={'y': F(2026), 'a': U(left26), 'p': P(left_pct)})
+    runs_table = dict(
+        caption='The school general fund, %s, two runs of one report' % C.fy(2026),
+        views=[dict(
+            key='runs', label='Period 12 and period 13', total_col=-1, kinds=['ledger'] * 2,
+            columns=['June report (period 12)', 'Closed year (period 13)'],
+            rows=[dict(label=lab, cells=[usd2(p12[a_]), usd2(s26[b_])])
+                  for lab, a_, b_ in (
+                      ('Voted', 'original', 'original_approp'),
+                      ('Moved by transfer, net', 'transfers', 'transfers_adjustments'),
+                      ('Budget after transfers', 'revised', 'revised_budget'),
+                      ('Paid', 'expended', 'ytd_expended'),
+                      ('Still committed', 'encumbered', 'encumbrances'),
+                      ('Left unspent', 'available', 'available_budget'))],
+            note='MUNIS year-to-date budget reports for department 300, run 1 September and '
+                 '6 October 2026; between them the figure moved %s and no payment changed. Left '
+                 'is the report’s own column: budget less paid less still committed. In July the '
+                 'School Committee heard the year would close “well below” the %s returned the '
+                 'year before (minutes, 29 July 2026); it closed at %s, or %s if every open '
+                 'order is released.' % (usd2(moved), C.usd(told['returned_fy25']), C.usd(left26),
+                                         C.usd(ceiling)))])
     if told['returned_fy25'] != 600000.0:
         fail('the July minutes figure in the payload changed')
 
@@ -578,45 +545,14 @@ def build():
         sources=[src['p13-26'], src['sc0729'], src['sc1105'], src['d-munis']],
         finding_figures={'i': U(gross_in), 'o': U(-gross_out), 'n': U(net_tr)})
 
-    # ---- Surplus and FY2027 budget
+    # ---- Surplus and FY2027 budget: FOLDED INTO THE HUB, 26 October 2026 (TJ: "this too ...
+    # seems useless"). Its whole finding was two figures side by side that explain nothing about
+    # each other; that is one line on the hub, said with the same caution.
     cut = A['fy27_cut']
     if not near(cut['level_service'] - cut['balanced'], cut['gap']):
         fail('the FY2027 level-service gap no longer foots')
-    out['fy2026-surplus-and-fy2027'] = TP.page(
-        'fy2026-surplus-and-fy2027',
-        'The %s school budget was set %s below level service; %s then closed %s unspent.'
-        % (C.fy(2027), C.usd(cut['gap']), C.fy(2026), C.usd(left26)),
-        [f('level', U(cut['level_service']), '%s school budget, level service' % C.fy(2027),
-           'published', {'y': F(2027)}),
-         f('balanced', U(cut['balanced']), '%s school budget, the no-override budget'
-           % C.fy(2027), 'published', {'y': F(2027)}),
-         f('gap', U(cut['gap']), 'the difference between the two', 'published'),
-         fx['left26'], fx['ceiling'],
-         f('free-cash', None, 'what reaches the town as certified free cash', 'gap',
-           closes='the state’s FY2026 free cash certification for Lunenburg')],
-        [con('The %s school budget was set %s below level service.'
-             % (C.fy(2027), C.usd(cut['gap'])), ['level', 'balanced', 'gap'],
-             {'y': F(2027), 'g': U(cut['gap'])}),
-         con('%s then closed with %s unspent, %s if every open order is released.'
-             % (C.fy(2026), C.usd(left26), C.usd(ceiling)), ['left26', 'ceiling'],
-             {'y': F(2026), 'a': U(left26), 'c': U(ceiling)}),
-         con('The budget was drawn up months before the close; set side by side, neither '
-             'explains the other.', ['gap', 'left26']),
-         con('Unspent school money returns to the town; what is certified as free cash is not '
-             'yet known.', ['left26', 'free-cash'],
-             notes=[step('Whether any of it reaches the schools again is a Town Meeting '
-                         'decision, and none is recorded here.', 'gap',
-                         closes='the state’s FY2026 free cash certification for Lunenburg, and '
-                                'the Town Meeting votes that appropriate it')])],
-        chart=TP.ranking(
-            'The cut beside the surplus',
-            [('%s, below level service' % C.fy(2027), cut['gap']),
-             ('%s, left unspent' % C.fy(2026), left26),
-             ('%s, if every order is released' % C.fy(2026), ceiling)], '$',
-            note='A budget and a ledger, set side by side and never subtracted: the budget was '
-                 'drawn up months before the close.'),
-        sources=[src['wb27'], src['p13-26'], src['d-wb'], src['d-munis']],
-        finding_figures={'y': F(2027), 'g': U(cut['gap']), 'z': F(2026), 'a': U(left26)})
+    fx['gap27'] = f('gap27', U(cut['gap']), '%s school budget, set below level service'
+                    % C.fy(2027), 'published', {'y': F(2027)})
 
     # ---- FY2025 school surplus
     w25 = S25['waterfall']
@@ -1140,7 +1076,8 @@ def build():
                closes='the town general fund’s FY2026 period-13 budget report'),
     )
     tiers = [
-        LD.tier('What was left', [h['left'], h['leftpct'], h['enc'], h['left25'], h['town']]),
+        LD.tier('What was left', [h['left'], h['leftpct'], h['enc'], fx['ceiling'], h['left25'],
+                                  fx['gap27'], h['town']]),
         LD.tier('What moved inside it', [h['under'], h['over'], h['n26'], h['n25'], h['tuit'],
                                          h['kind'], h['snow']]),
         LD.tier('What is not settled', [h['counter'], h['tp13']]),
@@ -1148,7 +1085,7 @@ def build():
     mx = LD.matrix(
         [('school', 'School department'), ('town', 'Town departments')],
         [('left', 'What was left'), ('moved', 'What moved'), ('open', 'Not settled')],
-        {('school', 'left'): ['left26', 'leftpct', 'enc26', 'h-left25'],
+        {('school', 'left'): ['left26', 'leftpct', 'enc26', 'ceiling', 'h-left25', 'gap27'],
          ('town', 'left'): ['h-town'],
          ('school', 'moved'): ['h-under', 'h-over', 'h-n26', 'h-n25', 'h-tuit', 'h-kind'],
          ('town', 'moved'): ['h-snow'],
@@ -1167,6 +1104,12 @@ def build():
                       {'n': N(over[2026][0]), 'z': F(2025), 'm': N(over[2025][0])}),
         LD.conclusion('Kindergarten aides were paid %s with no budget and no transfer.'
                       % C.usd(k_paid), ['h-kind'], {'k': U(k_paid)}),
+        LD.conclusion('%s’s school budget was set %s below level service; %s then left %s.'
+                      % (C.fy(2027), C.usd(cut['gap']), C.fy(2026), C.usd(left26)),
+                      ['gap27', 'left26', 'ceiling'],
+                      {'y': F(2027), 'g': U(cut['gap']), 'z': F(2026), 'a': U(left26)},
+                      so='The budget was drawn up months before the close; set side by side, '
+                         'neither explains the other.'),
         LD.conclusion('In June the town stood %s under; snow removal had paid %s.'
                       % (C.usd(t['available']), C.usd(sn['expended'])), ['h-town', 'h-snow',
                                                                           'h-tp13'],
@@ -1177,7 +1120,7 @@ def build():
         'The school general fund closed %s with %s unspent, %s of its budget, at period 13. '
         'Town departments stood %s under in June, before their close.'
         % (C.fy(2026), C.usd(left26), C.pct(left_pct), C.usd(t['available'])),
-        hub_ladder, chart=dict(id='fy26-school-surplus-waterfall', source=SRC26),
+        hub_ladder, chart=dict(id='fy26-school-surplus-waterfall', source=SRC26), table=runs_table,
         answer_figures={'y': F(2026), 'a': U(left26), 'p': P(left_pct), 't': U(t['available'])},
         answer_allow=('13',))
 

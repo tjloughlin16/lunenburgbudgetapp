@@ -556,8 +556,7 @@
       "teachers-per-pupil",
       "children-schooled-elsewhere",
       "special-education-overruns",
-      "fy2025-school-surplus",
-      "fy2026-school-surplus"
+      "fy2025-school-surplus"
      ]
     }
    ],
@@ -1336,11 +1335,9 @@
     {
      "title": null,
      "topics": [
-      "fy2026-school-surplus",
       "fy2026-surplus-by-category",
       "fy2026-lines-over-budget",
       "fy2026-school-transfers",
-      "fy2026-surplus-and-fy2027",
       "fy2025-school-surplus"
      ]
     },
@@ -1374,15 +1371,16 @@
     }
    ],
    "id": "fy2026-closeout",
-   "minutes": 1,
+   "minutes": 2,
    "order": 95,
    "path": "/fy2026-closeout",
    "ready": true,
    "related": [],
    "shelf": "FY2026 closeout",
    "start": [
-    "fy2026-school-surplus",
-    "fy2026-surplus-and-fy2027"
+    "surplus-bridge",
+    "fy2026-surplus-by-category",
+    "fy2026-lines-over-budget"
    ],
    "title": "FY2026 year end"
   }
@@ -2551,21 +2549,6 @@
    ],
    "title": "School retiree insurance"
   },
-  "fy2026-school-surplus": {
-   "finding": "The school general fund closed FY2026 with $482,118 unspent and uncommitted, 1.8% of its budget.",
-   "generator": "scripts/build_fy2026_closeout_topics.py",
-   "home": "fy2026-closeout",
-   "id": "fy2026-school-surplus",
-   "minutes": 2,
-   "path": "/fy2026-closeout/fy2026-school-surplus",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout",
-    "school-spending"
-   ],
-   "title": "FY2026 school surplus"
-  },
   "fy2026-school-transfers": {
    "finding": "Transfers moved $394,929 into school accounts and $309,839 out; the department ended $85,090 up, net.",
    "generator": "scripts/build_fy2026_closeout_topics.py",
@@ -2601,20 +2584,6 @@
     "department-budgets"
    ],
    "title": "Snow and Reserve Fund"
-  },
-  "fy2026-surplus-and-fy2027": {
-   "finding": "The FY2027 school budget was set $761,000 below level service; FY2026 then closed $482,118 unspent.",
-   "generator": "scripts/build_fy2026_closeout_topics.py",
-   "home": "fy2026-closeout",
-   "id": "fy2026-surplus-and-fy2027",
-   "minutes": 1,
-   "path": "/fy2026-closeout/fy2026-surplus-and-fy2027",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout"
-   ],
-   "title": "Surplus and FY2027 budget"
   },
   "fy2026-surplus-by-category": {
    "finding": "Accounts under budget left $1,683,552 and accounts over used $1,201,434 of it; the net is $482,118.",

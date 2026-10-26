@@ -128,6 +128,42 @@
    },
    {
     "figures": {
+     "a": {
+      "text": "$482,118",
+      "unit": "",
+      "value": 482118.07
+     },
+     "g": {
+      "text": "$761,000",
+      "unit": "",
+      "value": 761000.5
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "rests_on": [
+     "gap27",
+     "left26",
+     "ceiling"
+    ],
+    "so": {
+     "figures": {},
+     "literals": [],
+     "text": "The budget was drawn up months before the close; set side by side, neither explains the other."
+    },
+    "text": "FY2027’s school budget was set $761,000 below level service; FY2026 then left $482,118."
+   },
+   {
+    "figures": {
      "s": {
       "text": "$1,038,092",
       "unit": "",
@@ -156,7 +192,9 @@
       "left26",
       "leftpct",
       "enc26",
-      "h-left25"
+      "ceiling",
+      "h-left25",
+      "gap27"
      ],
      "row": "left"
     },
@@ -280,6 +318,20 @@
       }
      },
      {
+      "id": "ceiling",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "left if every open order is released (our sum)"
+      },
+      "value": {
+       "text": "$718,885",
+       "unit": "",
+       "value": 718885.01
+      }
+     },
+     {
       "id": "h-left25",
       "kind": "published",
       "label": {
@@ -297,6 +349,26 @@
        "text": "$627,117",
        "unit": "",
        "value": 627116.86
+      }
+     },
+     {
+      "id": "gap27",
+      "kind": "published",
+      "label": {
+       "figures": {
+        "y": {
+         "text": "FY2027",
+         "unit": "fiscal year",
+         "value": 2027
+        }
+       },
+       "literals": [],
+       "text": "FY2027 school budget, set below level service"
+      },
+      "value": {
+       "text": "$761,000",
+       "unit": "",
+       "value": 761000.5
       }
      },
      {
@@ -471,6 +543,68 @@
  "shelves": [
   "fy2026-closeout"
  ],
- "table": null,
+ "table": {
+  "caption": "The school general fund, FY2026, two runs of one report",
+  "views": [
+   {
+    "columns": [
+     "June report (period 12)",
+     "Closed year (period 13)"
+    ],
+    "key": "runs",
+    "kinds": [
+     "ledger",
+     "ledger"
+    ],
+    "label": "Period 12 and period 13",
+    "note": "MUNIS year-to-date budget reports for department 300, run 1 September and 6 October 2026; between them the figure moved $16.95 and no payment changed. Left is the report’s own column: budget less paid less still committed. In July the School Committee heard the year would close “well below” the $600,000 returned the year before (minutes, 29 July 2026); it closed at $482,118, or $718,885 if every open order is released.",
+    "rows": [
+     {
+      "cells": [
+       "$26,247,474.00",
+       "$26,247,474.00"
+      ],
+      "label": "Voted"
+     },
+     {
+      "cells": [
+       "$85,090.24",
+       "$85,090.24"
+      ],
+      "label": "Moved by transfer, net"
+     },
+     {
+      "cells": [
+       "$26,332,564.24",
+       "$26,332,564.24"
+      ],
+      "label": "Budget after transfers"
+     },
+     {
+      "cells": [
+       "$25,613,679.23",
+       "$25,613,679.23"
+      ],
+      "label": "Paid"
+     },
+     {
+      "cells": [
+       "$236,783.89",
+       "$236,766.94"
+      ],
+      "label": "Still committed"
+     },
+     {
+      "cells": [
+       "$482,101.12",
+       "$482,118.07"
+      ],
+      "label": "Left unspent"
+     }
+    ],
+    "total_col": -1
+   }
+  ]
+ },
  "title": "FY2026 year end"
 }

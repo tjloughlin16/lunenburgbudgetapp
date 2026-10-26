@@ -1049,6 +1049,8 @@ export const TOPIC_MERGED: Record<string, string> = {
   'surprises-and-state-aid': 'circuit-breaker',
   // 'Draw rules', folded into Reserve options as four cards (TJ: "i dont know what a 'draw' is").
   'reserve-size': 'reserve-options',
+  // Both opened on the hub's own figure; folded into the FY2026 closeout hub (TJ: "seems useless").
+  'fy2026-school-surplus': 'fy2026-closeout', 'fy2026-surplus-and-fy2027': 'fy2026-closeout',
 }
 
 /** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id. These were

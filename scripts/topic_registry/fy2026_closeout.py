@@ -7,14 +7,14 @@ transportation's FY2026 overrun (transportation) and the FY2026 athletics unders
 """
 CATEGORY = dict(
     # Start here: the pages that most directly answer this shelf (picked 19 October 2026).
-    start=['fy2026-school-surplus', 'fy2026-surplus-and-fy2027'],
+    # 26 October 2026: the two start pages folded into the hub (TJ: "seems useless").
+    start=['surplus-bridge', 'fy2026-surplus-by-category', 'fy2026-lines-over-budget'],
     id='fy2026-closeout', shelf='FY2026 closeout', title='FY2026 year end', area='special',
     # A special report (TJ, 24 Oct 2026): off the menu once FY2027's close replaces it.
     archive_after='2027-10-31', order=95,
     groups=[
-        (None, ['fy2026-school-surplus', 'fy2026-surplus-by-category',
-                'fy2026-lines-over-budget', 'fy2026-school-transfers',
-                'fy2026-surplus-and-fy2027', 'fy2025-school-surplus']),
+        (None, ['fy2026-surplus-by-category', 'fy2026-lines-over-budget',
+                'fy2026-school-transfers', 'fy2025-school-surplus']),
         # Hub B of notes/plans/MUNIS-JOURNAL-REPORTS.md: the surplus read from the journal.
         ('Surplus from the journal', ['surplus-bridge', 'surplus-repeat-lines', 'budget-burndown',
                                       'sped-burndown', 'surplus-suggestions']),
@@ -30,11 +30,9 @@ TOPIC_GENERATORS = {'surplus-bridge': 'build_journal_surplus_topics.py',
                     'budget-burndown': 'build_journal_surplus_topics.py',
                     'surplus-suggestions': 'build_journal_surplus_topics.py'}
 TOPICS = {
-    'fy2026-school-surplus': 'FY2026 school surplus',
     'fy2026-surplus-by-category': 'Surplus by category',
     'fy2026-lines-over-budget': 'Lines over budget',
     'fy2026-school-transfers': 'Year-end transfers',
-    'fy2026-surplus-and-fy2027': 'Surplus and FY2027 budget',
     'fy2025-school-surplus': 'FY2025 school surplus',
     'fy2026-tuition-lines': 'Tuition at year end',
     'fy2026-paraprofessional-overrun': 'Paraprofessional overrun',
