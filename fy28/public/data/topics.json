@@ -13,6 +13,10 @@
    "title": "Budget options"
   },
   {
+   "id": "compare",
+   "title": "Comparison districts"
+  },
+  {
    "id": "special",
    "title": "Special reports"
   }
@@ -292,14 +296,6 @@
      ]
     },
     {
-     "title": "Monty Tech",
-     "topics": [
-      "monty-tech-enrolment",
-      "monty-tech-assessment",
-      "monty-tech-funding"
-     ]
-    },
-    {
      "title": "High school to high school",
      "topics": [
       "high-school-enrolment",
@@ -561,9 +557,7 @@
       "children-schooled-elsewhere",
       "special-education-overruns",
       "fy2025-school-surplus",
-      "fy2026-school-surplus",
-      "monty-tech-per-pupil",
-      "monty-tech-line-by-line"
+      "fy2026-school-surplus"
      ]
     }
    ],
@@ -867,8 +861,7 @@
      "topics": [
       "fy2026-town-unspent",
       "fy2026-snow-and-reserve-fund",
-      "fy2026-school-retiree-insurance",
-      "monty-tech-assessment"
+      "fy2026-school-retiree-insurance"
      ]
     }
    ],
@@ -1252,7 +1245,7 @@
   },
   {
    "answer": "Monty Tech is the regional vocational high school Lunenburg belongs to. Lunenburg’s bill was $1,334,521, most of it a minimum the state sets; the school spent $25,827 a pupil in FY2025, less than most vocational districts.",
-   "area": "school",
+   "area": "compare",
    "elsewhere": [
     {
      "href": "/analysis/monty-tech",
@@ -1304,7 +1297,7 @@
   },
   {
    "answer": "Harvard, the district The Bromfield School belongs to, spent $25,565 a pupil in FY2025, $7,538 more than Lunenburg, on the same state measure. It serves a smaller low-income share, and nothing here shows the spending causes results.",
-   "area": "school",
+   "area": "compare",
    "elsewhere": [],
    "groups": [
     {
@@ -3463,15 +3456,13 @@
   "monty-tech-assessment": {
    "finding": "Lunenburg’s FY2026 Monty Tech bill was $1,334,521; 95.2% of it is a minimum the state sets.",
    "generator": "scripts/build_enrolment_topics.py",
-   "home": "enrolment",
+   "home": "monty-tech",
    "id": "monty-tech-assessment",
    "minutes": 2,
-   "path": "/enrolment/monty-tech-assessment",
+   "path": "/monty-tech/monty-tech-assessment",
    "ready": true,
    "related": [],
    "shelves": [
-    "enrolment",
-    "department-budgets",
     "monty-tech"
    ],
    "title": "Monty Tech assessment"
@@ -3479,14 +3470,13 @@
   "monty-tech-enrolment": {
    "finding": "Monty Tech enrolled 1,403 pupils in FY2026 from 18 member towns; 97 were Lunenburg residents.",
    "generator": "scripts/build_enrolment_topics.py",
-   "home": "enrolment",
+   "home": "monty-tech",
    "id": "monty-tech-enrolment",
    "minutes": 2,
-   "path": "/enrolment/monty-tech-enrolment",
+   "path": "/monty-tech/monty-tech-enrolment",
    "ready": true,
    "related": [],
    "shelves": [
-    "enrolment",
     "monty-tech"
    ],
    "title": "Monty Tech enrolment"
@@ -3494,10 +3484,10 @@
   "monty-tech-funding": {
    "finding": "State Chapter 70 aid paid 54.2% of Monty Tech’s FY2026 operating budget; the member towns paid 38.0%.",
    "generator": "scripts/build_enrolment_topics.py",
-   "home": "enrolment",
+   "home": "monty-tech",
    "id": "monty-tech-funding",
    "minutes": 2,
-   "path": "/enrolment/monty-tech-funding",
+   "path": "/monty-tech/monty-tech-funding",
    "ready": true,
    "related": [
     {
@@ -3514,7 +3504,6 @@
     }
    ],
    "shelves": [
-    "enrolment",
     "monty-tech"
    ],
    "title": "Monty Tech funding"
@@ -3529,8 +3518,7 @@
    "ready": true,
    "related": [],
    "shelves": [
-    "monty-tech",
-    "school-spending"
+    "monty-tech"
    ],
    "title": "Monty Tech per-pupil breakdown"
   },
@@ -3551,14 +3539,13 @@
     },
     {
      "id": "monty-tech-funding",
-     "path": "/enrolment/monty-tech-funding",
+     "path": "/monty-tech/monty-tech-funding",
      "title": "Monty Tech funding",
      "why": "What pays Monty Tech’s operating budget"
     }
    ],
    "shelves": [
-    "monty-tech",
-    "school-spending"
+    "monty-tech"
    ],
    "title": "Monty Tech per pupil"
   },
@@ -3573,7 +3560,7 @@
    "related": [
     {
      "id": "monty-tech-funding",
-     "path": "/enrolment/monty-tech-funding",
+     "path": "/monty-tech/monty-tech-funding",
      "title": "Monty Tech funding",
      "why": "What pays Monty Tech’s operating budget"
     },

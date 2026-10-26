@@ -21,7 +21,9 @@ CATEGORY = dict(
                                    'town-library', 'town-smaller-departments']),
         ('People', ['town-staff-counts', 'town-headcount-coverage']),
         ('Related pages', ['fy2026-town-unspent', 'fy2026-snow-and-reserve-fund',
-                           'fy2026-school-retiree-insurance', 'monty-tech-assessment']),
+                           # monty-tech-assessment left 26 October 2026: Monty Tech pages are
+                           # listed only on the Monty Tech shelf (TJ).
+                           'fy2026-school-retiree-insurance']),
     ])
 GENERATOR = 'build_department_budgets_topics.py'
 TOPICS = {

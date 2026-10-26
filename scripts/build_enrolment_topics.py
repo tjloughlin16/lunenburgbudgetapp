@@ -68,8 +68,9 @@ OUT_DIR = os.path.join(PUB, 'topics')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 HUB = 'enrolment'
 
-MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
-        if home == HUB and gen == 'build_enrolment_topics.py']
+# Every page this script writes, wherever it is home: the Monty Tech pages moved shelf on
+# 26 October 2026 and are still written here.
+MINE = [t for t, (_, home, gen) in REG.TOPICS.items() if gen == 'build_enrolment_topics.py']
 
 
 def fail(msg):

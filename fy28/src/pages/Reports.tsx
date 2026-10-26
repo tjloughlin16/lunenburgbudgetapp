@@ -293,7 +293,8 @@ function TopicShelves({ area, archived }: { area: string; archived?: boolean }) 
         // ONE DOOR TO THE HUB. The heading is the link; its answer sits under it. A boxed
         // card for the hub used to follow, linking the same page under its other title --
         // "Athletics ->" then "Athletics costs ->" -- two doors that looked like two places.
-        <Section key={c.id} id={c.id} eyebrow={c.area !== 'special' ? 'A subject, page by page'
+        <Section key={c.id} id={c.id} eyebrow={c.area === 'compare' ? 'A comparison district, page by page'
+          : c.area !== 'special' ? 'A subject, page by page'
           : past(c) ? 'Archived special report' : 'A special report, on the menu until ' + longDay(c.archive_after!)}
           title={c.shelf} href={c.path}
           lede={c.answer ?? undefined}>
@@ -520,6 +521,9 @@ export function Reports() {
           : g.key === 'levers' ? <TopicShelves area="options" /> : null}
       </div>))}
 
+      {/* COMPARISON DISTRICTS, after every subject of Lunenburg's own: another district it is
+          measured against, each a hub whose pages are listed only there (TJ, 26 October 2026). */}
+      <TopicShelves area="compare" />
       {/* SPECIAL REPORTS, after every subject: one-off reports for a decision or a moment,
           then the archive of those past their date (scripts/topics.py, area `special`). */}
       <TopicShelves area="special" archived={false} />

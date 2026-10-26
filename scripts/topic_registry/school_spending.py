@@ -36,8 +36,7 @@ CATEGORY = dict(
         ('Elsewhere on the site', ['net-school-spending', 'net-school-spending-rank',
                                    'required-local-contribution', 'teachers-per-pupil',
                                    'children-schooled-elsewhere', 'special-education-overruns',
-                                   'fy2025-school-surplus', 'fy2026-school-surplus',
-                                   'monty-tech-per-pupil', 'monty-tech-line-by-line']),
+                                   'fy2025-school-surplus', 'fy2026-school-surplus']),
     ],
     elsewhere=[('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_school_spending_topics.py'

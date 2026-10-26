@@ -39,6 +39,9 @@ AREAS = [('school', 'The schools'), ('town', 'The town'), ('options', 'Budget op
          # and of /reports, each with an `archive_after` date past which it leaves the menu and
          # moves to the archive on /reports (TJ, 24 October 2026: "reports that wont stay on the
          # menu forever at a high level and will eventually go into an archive").
+         # COMPARISON DISTRICTS: hubs about another district Lunenburg is measured against, a
+         # section of their own, every page of theirs only there (TJ, 26 October 2026).
+         ('compare', 'Comparison districts'),
          ('special', 'Special reports')]
 
 import importlib as _il

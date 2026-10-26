@@ -96,7 +96,8 @@ export const GROUPS: Group[] = [
   // OTHER SCHOOLS: schools Lunenburg pays into but does not run. TJ, 22 October 2026:
   // "Monty Tech and Bromfield are other schools, so those should go in a separate section
   // for schools ... at the bottom of the menu for schools".
-  { title: 'Other schools', under: null, items: [
+  // Renamed 26 October 2026 to match the section of the same name on /reports (TJ).
+  { title: 'Comparison districts', under: null, items: [
     { href: '/monty-tech', label: 'Monty Tech', sub: 'The regional vocational school' },
     { href: '/bromfield', label: 'Harvard and Bromfield', sub: 'Another town’s schools, compared' },
   ] },
