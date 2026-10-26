@@ -1,5 +1,9 @@
 # Handoff: the surplus pages, consolidated and made to mean something
 
+**START HERE (fresh session, 26 October 2026 evening):** load the `building-a-page` skill, then
+read this file top to bottom. Everything else from the long 26 October session is committed,
+pushed and live; nothing of it is pending except what is listed under "Open, elsewhere" below.
+
 Written 26 October 2026, at the end of a long session, for a FRESH one. TJ's ask, verbatim:
 
 > *"I think we spawn a new session and review the surplus pages to see how we can consolidate,
@@ -113,9 +117,15 @@ All of them passed at `7c348a12c`.
 
 ## Standing constraints (do not relearn these)
 
-- **No `git push`** until the history rewrite (memory, open items 19 Oct).
-- **Deploy only when TJ asks.** The auto-mode classifier also blocks `deploy_site.sh` from this
-  agent; TJ runs `! bash scripts/deploy_site.sh` himself. Commits from 26 October are NOT live.
+- **Push: no hold** (the history rewrite was done 26 October; check `## Push holds` in CLAUDE.md
+  before any push). Push `main` only, never `--mirror`: two local branches are on the old history.
+- **Deploy only when TJ asks.** The agent CAN run it: `bash scripts/deploy_site.sh` on its own
+  (a combined build-and-deploy command was once refused by the auto-mode classifier). Build first
+  (`cd fy28 && npm run build:site`, ~15 min, in the background).
+- **After a deploy, check the page RENDERS, not only that files match.** On 26 October three
+  trend charts sat in a payload, hashed MATCH live, and were never drawn (blocks placed at
+  `also2` with one `also` chart -- topic.py now refuses that). Dump the live DOM
+  (`chrome --headless=new --dump-dom <url>`) and grep for each chart title, or screenshot it.
 - **Other agents' uncommitted files are in this tree** (the 2021 minutes backlog: boards,
   recording-minutes, threads, feeds, official-votes, sources.json). Never `git checkout`, stash
   or commit them. `check_generated.py` fails ~20 checks on them; that is not yours.
@@ -136,3 +146,20 @@ All of them passed at `7c348a12c`.
             print(' ', t, '|', R.TOPICS[t][2], '|', len(cs), 'concl,', sum(1 for x in cs if x.get('so')),
                   'with meaning |', d['finding']['text'][:100])
     EOF
+
+## Open, elsewhere (not this review's job; do not lose them)
+
+- **GitHub Support ticket 4909191** (purge the pre-rewrite commits): `notes/HANDOFF-HISTORY-REWRITE.md`.
+  Done when the old commit URL there stops answering 200.
+- **Work-off page** (`/homes-and-taxes/senior-tax-work-off`): TJ to decide the opening line,
+  "16 completed 2010" vs "6 took part 2025" (close but different measures).
+- **School grants and aid** (`/school-all-funds/school-money-in`): fees, lunch and gifts sit
+  awkwardly there now; candidate to move to a revolving-funds page (the all-funds review, queue #3).
+- **Two retired addresses** still served stale by the week-long edge cache until ~1-2 November:
+  `/special-education-reserve/surprises-and-state-aid`, `/fy2026-closeout/fy2026-school-surplus`.
+- **Gaps registered 26 October**: the FY2026 circuit breaker $253,172 not booked in fund 2640; the
+  worksheet behind the budget's 75% circuit breaker line; work-off hours per department.
+- **Cleanup**: `read_allocations` (build_school_all_funds) and `read_idea` (build_serf_topics) read
+  the same DESE file twice; make one shared reader.
+- **Uncommitted files in the tree belong to the minutes backlog run** (2021 minutes, boards,
+  threads, feeds, official-votes, sources.json). Never commit, checkout or stash them.
