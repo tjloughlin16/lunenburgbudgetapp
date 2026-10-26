@@ -92,6 +92,17 @@ def ledger():
                 a = sums.setdefault((fy, k), [D(0), D(0)])
                 a[0] += D(r['original'] or '0')
                 a[1] += D(r['actual'] or '0')
+    # A tuition budget loaded GROSS of the circuit breaker and netted on the first day of the
+    # year by a budget adjustment (FY2025: `ADJ FY25 BUDGET`, -452,580) is measured net, as
+    # voted. Found here by its own route -- every first-day BUA entry labelled ADJ on a tuition
+    # object -- not by the generator's assertion against the budget book.
+    with open(os.path.join(DATA, 'munis-school-journal.csv'), encoding='utf-8') as fh:
+        for r in csv.DictReader(fh):
+            fy = int(r['fiscal_year'])
+            if (r['source'] == 'BUA' and r['fund'] == '0100' and r['object'] in ('535019', '535022', '535023')
+                    and r['effective_date'] == '%d-07-01' % (fy - 1)
+                    and r['description'].upper().startswith('ADJ')):
+                sums[(fy, 'ood')][0] += D(r['amount'])
     years = sorted({fy for fy, _ in sums})
     out = {}
     for fy in years:

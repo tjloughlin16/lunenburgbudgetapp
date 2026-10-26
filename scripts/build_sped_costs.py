@@ -379,7 +379,67 @@ def load_ledger():
                           variance=round(s) - round(o),
                           variance_pct=round(100.0 * (round(s) - round(o)) / round(o), 1))
         rows.append(row)
+    net_fy2025(rows)
     return rows, cb, tie_years, sorted(partial)
+
+
+JOURNAL = os.path.join(ROOT, 'sources', 'data', 'munis-school-journal.csv')
+BOOK26 = os.path.join(ROOT, 'sources', 'district-budget', 'docs',
+                      'fy26-school-dept-approved-budget-3-12-25.pdf')
+
+
+def net_fy2025(rows):
+    """FY2025's tuition budget, NET of the circuit breaker, as every other year is.
+
+    The district votes out-of-district tuition net of the state's expected repayment: its
+    FY2026 approved budget prints `Circuit Breaker (70% = $422,408)` as a NEGATIVE line under
+    the tuitions, -452,580 for FY2025 and -480,204 for FY2026. MUNIS's FY2026 original budget
+    is already that net figure. FY2025's was loaded GROSS and cut on 1 July 2024 by one
+    one-sided entry, `ADJ FY25 BUDGET`, of exactly the book's FY2025 offset. Measured against
+    the gross figure, FY2025 looked $452,580 under budget, and the cut read as slack being
+    moved out of the line (it was, until 25 October 2026, on the SERF hub). The vote is the
+    net figure, so that is what FY2025 is measured against. Three things are asserted, or
+    nothing is changed: the book prints the offset, the journal holds one entry of that
+    amount with no other side, and FY2026's original already equals the book's net."""
+    # Read with layout, so a row's label and its figures stay on one line (the plain
+    # extraction in text/ puts the offset's figures above its label).
+    import pypdf
+    book = ' '.join(' '.join(pg.extract_text(extraction_mode='layout').split())
+                    for pg in pypdf.PdfReader(BOOK26).pages)
+    m = re.search(r'Circuit Breaker \(70% = \$[\d,]+\) \(75% = [\d,$]*\S* (-[\d,]+) (-[\d,]+)', book)
+    if not m:
+        fail('the FY2026 budget book no longer prints the circuit breaker offset line')
+    off25, off26 = (-int(x.replace(',', '').lstrip('-')) for x in m.groups())
+    day1 = [r for r in csv.DictReader(open(JOURNAL, encoding='utf-8'))
+            if r['fiscal_year'] == '2025' and r['effective_date'] == '2024-07-01'
+            and r['source'] == 'BUA' and r['fund'] == '0100'
+            and r['description'].strip() == 'ADJ FY25 BUDGET']
+    if [round(float(r['amount'])) for r in day1] != [off25]:
+        fail('the 1 July 2024 budget entry is not one line of the book\'s FY2025 offset %s: %s'
+             % (off25, [r['amount'] for r in day1]))
+    if J.NETTING != {(2025, day1[0]['journal'])}:
+        fail('journal.NETTING no longer names the FY2025 netting entry %s' % day1[0]['journal'])
+    if any(round(abs(float(r['amount']))) == -off25 for r in csv.DictReader(open(JOURNAL, encoding='utf-8'))
+           if r['fiscal_year'] == '2025' and r['journal'] != day1[0]['journal']):
+        fail('the FY2025 offset has another side in the journal: it was a move, not a netting')
+    led = {r['fy']: r for r in rows}
+    private = re.search(r'Special Ed Tuitions/Private ([\d,]+) ([\d,]+)', book)
+    coll = re.search(r'Collaborative Tuitions ([\d,]+) ([\d,]+)', book)
+    gross = [int(private.group(i).replace(',', '')) + int(coll.group(i).replace(',', ''))
+             for i in (1, 2)]
+    if led[2026]['ood']['original'] != gross[1] + off26:
+        fail('FY2026 out-of-district original %s is not the book\'s net %s'
+             % (led[2026]['ood']['original'], gross[1] + off26))
+    if led[2025]['ood']['original'] != gross[0]:
+        fail('FY2025 out-of-district original %s is not the book\'s gross %s: re-read before netting'
+             % (led[2025]['ood']['original'], gross[0]))
+    r = led[2025]['ood']
+    r['original'] += off25
+    r['variance'] = r['spent'] - r['original']
+    r['variance_pct'] = round(100.0 * r['variance'] / r['original'], 1)
+    r['netted'] = off25
+    # What each year's tuition vote counted on from the circuit breaker, as the book prints it.
+    led[2025]['ood']['cb_offset'], led[2026]['ood']['cb_offset'] = -off25, -off26
 
 
 def ell_tie(db):
@@ -1217,8 +1277,8 @@ def render_md(m, rows):
         ow = lambda x: '%s %s' % (C.usd(abs(x)), 'over' if x > 0 else 'under')
         a('**Is this FY2025 again?** FY2025 is the year the schools finished with money '
           'unspent. Its three special education lines together came in %s the budget voted '
-          'for them, %s of it on tuition. In %s, the latest closed year, they came in %s.\n\n'
-          % (ow(tot25), C.usd(abs(r25['ood']['variance'])), C.fy(m['last']),
+          'for them, while tuition alone ran %s. In %s, the latest closed year, they came in %s.\n\n'
+          % (ow(tot25), ow(r25['ood']['variance']), C.fy(m['last']),
              ow(m['need'][-1]['net'])))
     a('**What was said in the overrun years.** Statements, not measurements.\n\n')
     for q in m['quotes']:

@@ -359,6 +359,20 @@ def is_carry_forward(r):
     return r['source'] == 'BUA' and r['description'].startswith('ENCUMBRANCE CARRY FORWARD')
 
 
+# A third kind, one entry in four years: the out-of-district tuition budget loaded GROSS of
+# the circuit breaker and cut to the voted, NET figure on 1 July (FY2025: `ADJ FY25 BUDGET`,
+# -452,580 on collaborative tuitions, one-sided, equal to the circuit breaker line the FY2026
+# budget book prints under the tuitions). It is not a move -- nothing received it -- so a
+# reader of the VOTE counts it as part of the original budget. The printed report does not,
+# so `posts_to` stays `transfer` and the tie to the report is untouched.
+# build_sped_costs.net_fy2025 asserts the amount against the book.
+NETTING = {(2025, '2025/01/000564')}
+
+
+def is_netting(r):
+    return (r['fy'], r['journal']) in NETTING and r['source'] == 'BUA'
+
+
 def piece(r):
     """Which piece of a surplus bridge a line is: 'original_budget', 'carry_forward',
     'transfer', an actual's KIND_OF, or 'encumbrance'."""

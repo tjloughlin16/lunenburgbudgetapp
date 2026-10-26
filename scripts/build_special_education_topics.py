@@ -749,8 +749,6 @@ def build():
     if not netover < need['years_needing']:
         fail('the voted-vs-spent conclusion says fewer years ran over in total than on a line')
     rs = SC['reserve']
-    if cov(lv2) != nyrs:
-        fail('average + 2 SD no longer covers every year; the conclusion says it does')
     if not two[1] > lv2:
         fail('the worst two-year run no longer exceeds average + 2 SD; conclusion 2 says it does')
     fy0, fy1 = C.fy(sur[0]['fy']), C.fy(sur[-1]['fy'])
@@ -1082,10 +1080,10 @@ def build():
            % C.fy(worst_b['fy']), 'published', {'y': F(worst_b['fy'])}),
          f('upper', U(worst_b['before']), '%s need, had it paid no tuition (ours)'
            % C.fy(worst_b['fy']), 'estimate', {'y': F(worst_b['fy'])})],
-        [con('Average plus two standard deviations, %s, would have met all %s years; plus one, %s.'
-             % (C.usd(lv2), C.num(nyrs), C.num(cov(lv1))),
+        [con('Average plus two standard deviations, %s, would have met %s of %s years; plus one, %s.'
+             % (C.usd(lv2), C.num(cov(lv2)), C.num(nyrs), C.num(cov(lv1))),
              ['mean', 'sd', 'lvl1', 'lvl2'],
-             {'a': U(lv2), 'n': N(nyrs), 'b': N(cov(lv1))},
+             {'a': U(lv2), 'k': N(cov(lv2)), 'n': N(nyrs), 'b': N(cov(lv1))},
              notes=[step('%s years needed nothing, so counting the years covered assumes no bell '
                          'curve.' % C.num(sum(1 for x in vals if x == 0)),
                          'gap', {'z': N(sum(1 for x in vals if x == 0))},

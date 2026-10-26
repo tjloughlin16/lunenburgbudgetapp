@@ -35,7 +35,7 @@ The voted school budget is the general fund. Every fund together spent $29,929,0
 |---|---:|---:|---:|---:|---:|
 | FY2023 | $22,342,995 | $8,722,228 | $1,554,674 | $415,750 | $1,678,301 |
 | FY2024 | $22,901,128 | $8,819,128 | $1,660,859 | $301,589 | $1,949,013 |
-| FY2025 | $25,321,760 | $8,988,960 | $1,683,842 | $608,818 | $1,114,792 |
+| FY2025 | $24,869,180 | $8,988,960 | $1,683,842 | $608,818 | $1,114,792 |
 | FY2026 | $26,287,474 | $9,229,410 | $1,498,937 | $325,970 | $74,333 |
 
 *Chapter 70 is the town’s aid, from the state’s cherry sheet; it pays part of the voted budget and is not added to it.*
@@ -172,7 +172,7 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 |---|---:|---:|---:|---:|---:|---:|
 | FY2023 | $22,342,995 | $22,436,810 | $1,199,379 | $2,558,520 | $630,062 | $26,824,771 |
 | FY2024 | $22,901,128 | $22,755,089 | $1,032,651 | $2,674,177 | $731,262 | $27,193,179 |
-| FY2025 | $25,321,760 | $24,560,511 | $737,348 | $2,339,229 | $753,028 | $28,390,116 |
+| FY2025 | $24,869,180 | $24,560,511 | $737,348 | $2,339,229 | $753,028 | $28,390,116 |
 | FY2026 | $26,287,474 | $25,904,085 | $690,512 | $2,408,319 | $926,125 | $29,929,041 |
 
 *On no line is function 0000 or a heading. Other code is a real code with no voted line, mostly food services.*
@@ -436,12 +436,12 @@ Sources: [Lunenburg Budget Project — munis-school-journal.csv (every school jo
 
 | | Voted, general fund | General fund spent | Circuit breaker | Grants | Every fund spent |
 |---|---:|---:|---:|---:|---:|
-| Out-of-district tuition | $1,164,824 | $732,298 | $473,650 | $0 | $1,205,949 |
+| Out-of-district tuition | $712,244 | $732,298 | $473,650 | $0 | $1,205,949 |
 | Transportation | $445,328 | $434,922 | $0 | $0 | $434,922 |
 | Contracted services and evaluations | $154,258 | $152,132 | $24,801 | $2,500 | $179,433 |
 | Staff pay and benefits | $4,223,234 | $3,919,816 | $0 | $419,028 | $4,338,844 |
 | Supplies, equipment and other | $17,043 | $6,954 | $0 | $53,959 | $60,913 |
-| All of it | $6,004,687 | $5,246,122 | $498,451 | $475,488 | $6,220,061 |
+| All of it | $5,552,107 | $5,246,122 | $498,451 | $475,488 | $6,220,061 |
 
 *Only the general fund has a vote; the circuit breaker and grants are spent without one. Spent includes what was still owed at the close. Grants are the IDEA and special education program improvement grants.*
 

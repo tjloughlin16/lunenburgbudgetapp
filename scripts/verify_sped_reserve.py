@@ -115,9 +115,20 @@ def journal_lines():
                                            a['fund_name']) else 'other:' + r['fund'])
         g = line_of.get(a['object'], 'indist')
         col = {'actual': 'spent', 'encumbrance': 'spent', 'original_budget': 'voted'}.get(r['posts_to'])
+        # A tuition budget loaded gross of the circuit breaker and cut to the voted net figure on
+        # the first day of the year (FY2025, `ADJ FY25 BUDGET`), found here by its own route:
+        # a first-day budget adjustment on a tuition object. Kept apart from `voted`, which
+        # ties to the printed original; the vote is the two together.
+        fy = int(r['fiscal_year'])
+        if (r['source'] == 'BUA' and g == 'ood' and r['effective_date'] == '%d-07-01' % (fy - 1)
+                and r['description'].upper().startswith('ADJ')):
+            col = 'netting'
         if col:
             k = (int(r['fiscal_year']), fund, g, col)
             out[k] = out.get(k, D(0)) + D(r['amount'])
+    for k in [k for k in out if k[3] in ('voted', 'netting')]:     # the vote, net
+        v = k[:3] + ('vote',)
+        out[v] = out.get(v, D(0)) + out[k]
     return out
 
 
@@ -151,10 +162,8 @@ def main():
     check('years net over', sum(1 for y in years if net[y] > 0), fact['netover'])
     check('tuition years over', sum(1 for y in years if var[y]['ood'] > 0), fact['oodover'])
     cov = lambda lvl: sum(1 for v in vals if v <= lvl)
-    want = ('Average plus two standard deviations, %s, would have met all %d years; plus one, %d.'
-            % (usd(lv2), n, cov(lv1)))
-    if cov(lv2) != n:
-        bad.append('+2 SD no longer covers every year')
+    want = ('Average plus two standard deviations, %s, would have met %d of %d years; plus one, %d.'
+            % (usd(lv2), cov(lv2), n, cov(lv1)))
     check('conclusion 1', p['conclusions'][0]['text'], want)
     check('finding', p['finding']['text'],
           'Over %d years, special education needed %s a year beyond its vote on average; at most %s.'
@@ -166,6 +175,10 @@ def main():
     # From the first MUNIS year the page rounds the three lines once from cents so they add to
     # the year's total; before it, the workbook's whole dollars. Recomputed that way here.
     lc = ledger_cents()
+    jl = journal_lines()
+    for (y, fund, g, col), amt in jl.items():          # the ledger's original, netted as voted
+        if col == 'netting' and fund == 'gf':
+            lc[(y, g)][0] += amt
     fl = {}
     for y in years:
         if y in munis_years:
@@ -190,7 +203,6 @@ def main():
                                           '%d of %d' % (sum(1 for v in pairs.values() if v <= amt), n - 1)])
 
     # ---- THE TIE: two account definitions, FY2023-FY2026, in cents
-    jl = journal_lines()
     db = sqlite3.connect(os.path.join(DATA, 'lunenburg.db'))
     ytd = {}
     for fy, acct, desc, typ, o, s, e in db.execute(
@@ -227,7 +239,7 @@ def main():
         rows = {r['label']: [money(c) for c in r['cells']] for r in v['rows']}
         tot = rows['All three']
         sums = lambda fund, col: sum(jl.get((y, fund, g, col), D(0)) for g in LINES)
-        want = [r0(sums('gf', 'voted')), r0(sums('gf', 'spent')), None, r0(sums('cb', 'spent')),
+        want = [r0(sums('gf', 'vote')), r0(sums('gf', 'spent')), None, r0(sums('cb', 'spent')),
                 r0(sums('grants', 'spent'))]
         for i in (0, 1, 3, 4):
             if abs(tot[i] - want[i]) > 1:
@@ -241,7 +253,7 @@ def main():
                   sum(rows[l][i] for l in rows if l != 'All three'))
         for lab, g in (('In-district', 'indist'), ('Out-of-district tuition', 'ood'),
                        ('Transportation', 'trans')):
-            for i, col, fund in ((0, 'voted', 'gf'), (1, 'spent', 'gf'), (3, 'spent', 'cb'),
+            for i, col, fund in ((0, 'vote', 'gf'), (1, 'spent', 'gf'), (3, 'spent', 'cb'),
                                  (4, 'spent', 'grants')):
                 if abs(rows[lab][i] - jl.get((y, fund, g, col), D(0))) > 1:
                     bad.append('FY%d %s col %d: %s against the journal %s'
@@ -314,7 +326,7 @@ def main():
         check('FY%d formula-change mark' % y, r['label'], 'FY%d' % y + ('*' if y == change else ''))
         cells = [None if c is None else money(c.split(' ')[0]) for c in r['cells']]
         if y in munis_years:
-            gfv = r0(sum(jl.get((y, 'gf', g, 'voted'), D(0)) for g in LINES))
+            gfv = r0(sum(jl.get((y, 'gf', g, 'vote'), D(0)) for g in LINES))
             gfs = r0(sum(jl.get((y, 'gf', g, 'spent'), D(0)) for g in LINES))
             allf = gfs + r0(sum(jl.get((y, 'cb', g, 'spent'), D(0)) for g in LINES)) \
                 + r0(sum(jl.get((y, 'grants', g, 'spent'), D(0)) for g in LINES))

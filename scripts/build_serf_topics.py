@@ -307,6 +307,11 @@ def read_accounts(SC, ys):
         a[0], a[1] = SCB.segs(r['account'])[3], g
         a[2] += SCB.num(r['original'])
         a[3] += SCB.num(r['actual'])
+    # The vote is net of the circuit breaker; FY2025's tuition was loaded gross and netted on
+    # 1 July (journal.NETTING), so that entry belongs to the original budget.
+    for r in SCB.J.lines():
+        if SCB.J.is_netting(r) and (r['fy'], r['account']) in acc:
+            acc[(r['fy'], r['account'])][2] += float(r['amt'])
     led = {r['fy']: r for r in SC['ledger']}
     out = {y: {} for y in ys}
     for (fy, account), (fn, g, o, sp) in acc.items():
@@ -857,8 +862,17 @@ def build():
     moved, tm_fy = 50000, 2025
     if moves[tm_fy]['atm'] != moved:
         fail('the journal does not post the Town Meeting\'s %s to out-of-district tuition' % moved)
-    out_day1 = -moves[tm_fy]['day1']
-    held = led_line(SC, tm_fy, 'ood')['original'] - out_day1 + moved
+    # The 1 July 2024 entry on this line is the circuit breaker netting (journal.NETTING), not
+    # a move: the ledger's original is already net of it, as voted.
+    if moves[tm_fy]['day1'] != led_line(SC, tm_fy, 'ood').get('netted'):
+        fail('FY%d: a first-day entry on tuition other than the circuit breaker netting' % tm_fy)
+    voted25 = led_line(SC, tm_fy, 'ood')['original']
+    held = voted25 + moved
+    if held != led_line(SC, tm_fy, 'ood')['revised']:
+        fail('FY%d: the voted tuition budget plus Town Meeting is not the revised budget' % tm_fy)
+    over25 = led_line(SC, tm_fy, 'ood')['spent'] - voted25
+    if not 0 < over25 < moved:
+        fail('the move-in conclusion says FY2025 tuition ran over its vote by less than Town Meeting added')
     spent25 = led_line(SC, tm_fy, 'ood')['spent']
     # THE LAW, read whole (CLAUDE.md 13c: look at the document, not a pattern). The regulation
     # says the new district SERVES a child without delay; the statute says who PAYS. TJ, 24
@@ -965,9 +979,9 @@ def build():
            'statute', allow=('28.03(1)(c)',)),
          f('m-tm', U(moved), 'Town Meeting added for move-ins, %s' % C.fy(tm_fy), 'published',
            {'y': F(tm_fy)}),
-         f('m-out', U(out_day1), 'moved out of the same line on 1 July 2024', 'published',
-           allow=('1', '2024')),
-         f('m-held', U(held), 'left in the line after both moves, %s' % C.fy(tm_fy), 'published',
+         f('m-voted', U(voted25), 'tuition voted, %s, net of the circuit breaker'
+           % C.fy(tm_fy), 'published', {'y': F(tm_fy)}),
+         f('m-held', U(held), 'the line after Town Meeting’s vote, %s' % C.fy(tm_fy), 'published',
            {'y': F(tm_fy)}),
          f('m-spent', U(spent25), 'spent on out-of-district tuition, %s' % C.fy(tm_fy), 'published',
            {'y': F(tm_fy)}),
@@ -994,10 +1008,10 @@ def build():
              notes=[step('Which of the FY2025 move-ins were already placed is not published.', 'gap',
                          closes='the district’s placement log: each placement’s start and end '
                                 'date, and how it began', allow=('FY2025',))]),
-         con('In %s, %s left out-of-district tuition on 1 July; Town Meeting put %s back in May.'
-             % (C.fy(tm_fy), C.usd(out_day1), C.usd(moved)), ['m-out', 'm-tm', 'm-held', 'm-spent',
-                                                              'm-move'],
-             {'y': F(tm_fy), 'a': U(out_day1), 'b': U(moved)}, allow=('1',))],
+         con('In %s, tuition ran %s past its vote; Town Meeting had added %s for move-ins in May.'
+             % (C.fy(tm_fy), C.usd(over25), C.usd(moved)), ['m-voted', 'm-tm', 'm-held', 'm-spent',
+                                                             'm-move'],
+             {'y': F(tm_fy), 'a': U(over25), 'b': U(moved)})],
         chart=TP.series('Example, who pays when a placed child moves', [w[0] for w in win], [
             TP.track('Lunenburg', [w[1] for w in win], 'stated', colour=1),
             TP.track('The other town', [w[2] for w in win], 'stated', colour=2)],
@@ -1278,7 +1292,7 @@ def build():
     lvl2 = round(mean_need) + 2 * round(sd_need)       # the overrun page's own rounding
     sa = stats['acct']
     sa['median'] = round(statistics.median(acct_need.values()))
-    if not (stats['school']['worst'] <= stats['net']['worst'] <= sl['worst'] <= lvl2 < ours < cap
+    if not (stats['school']['worst'] <= stats['net']['worst'] <= sl['worst'] < ours < cap
             < sa['worst']):
         fail('the reserve levels are no longer in the order the page describes')
     out['reserve-size'] = TP.page(
@@ -1372,7 +1386,7 @@ def build():
     o_adjmax = half_up(share_y[adj_wfy] * b1)
     adj_pfy = max(ys[:-1], key=lambda y: share_y[y] + share_y[ys[ys.index(y) + 1]])
     o_adjpair = half_up((share_y[adj_pfy] + share_y[ys[ys.index(adj_pfy) + 1]]) * b1)
-    if not o_med < o_adj < o_med5 < o_max < o_pair < o_adjmax < cap < o_adjpair:
+    if not o_med < min(o_adj, o_med5) <= max(o_adj, o_med5) < o_max < o_pair < o_adjmax < cap < o_adjpair:
         fail('the reserve options are no longer in the order the page describes')
     if adj_wfy != sl['wfy']:
         fail('the options page says the worst year is the same year either way')
@@ -1496,8 +1510,10 @@ def build():
     # ------------------------------------------------ reserve or budget: a stock or a flow
     # TJ, 24 October 2026: "it seems like the budget option is bad but its not stated in a way
     # that makes it clear WHY". Three reasons, each measured: it raises more, the money sits
-    # unused, and money in a budget line can be moved out of it on the first day of the year.
-    L = lvl2                                  # the smallest level that met every single year
+    # unused, and a reserve is spent only by vote of both boards. (A third reason, that money
+    # left tuition on 1 July 2024, was withdrawn 25 October 2026: that entry is the circuit
+    # breaker netting the vote, journal.NETTING, not a move.)
+    L = max(need.values())                    # the smallest level that met every single year
     if any(need[y] > L for y in ys):
         fail('the budget comparison assumes the level met every year')
     n_under = sum(1 for y in ys if net[y] < 0)
@@ -1522,8 +1538,6 @@ def build():
          f('b-res', U(as_reserve), 'raised if held once and refilled', 'estimate'),
          f('b-paid', U(paid_out), 'overspending either one would have paid', 'published'),
          f('b-lapsed', U(lapsed), 'budgeted and never needed', 'estimate'),
-         f('b-moved', U(out_day1), 'moved out of out-of-district tuition, 1 July 2024', 'published',
-           allow=('1', '2024')),
          f('b-under', N(n_under, 'years'), 'of %s the three lines spent under budget' % C.num(nyrs),
            'published', {'n': N(nyrs)}),
          f('b-cush', U(cushion), 'budget above spending, three lines, a year', 'published')],
@@ -1537,10 +1551,11 @@ def build():
          con('Held once as a reserve, the same protection raises %s: %s up front, then refills.'
              % (C.usd(as_reserve), C.usd(L)), ['b-res', 'b-l', 'b-paid'],
              {'a': U(as_reserve), 'b': U(L)}),
-         con('A cushion in the budget can be moved: on 1 July 2024, %s left out-of-district tuition.'
-             % C.usd(out_day1), ['b-moved'], {'a': U(out_day1)}, allow=('1', '2024'),
-             notes=[step('A reserve cannot be moved that way: spending it needs a majority of both '
-                         'the School Committee and the Select Board.', 'quote',
+         con('A reserve is spent only by a majority of both the School Committee and the Select Board.',
+             ['b-l'],
+             notes=[step('Money in a budget line is moved between lines by School Committee '
+                         'transfer during the year.', 'measured'),
+                    step('The fund requires a majority vote of both boards to expend.', 'quote',
                          cite=(SB_RULE['href'], SB_RULE['label']))]),
          con('The cushion is already there: the three lines spent under budget in %s of %s years.'
              % (C.num(n_under), C.num(nyrs)), ['b-under', 'b-cush'],
@@ -1581,8 +1596,8 @@ def build():
     #                                                  and the ledger agrees with them)
     #   2. then what surprises us?                     late orders, in spring
     #   3. aren't move-ins the problem?                by law, a placed child is the old town's cost that year
-    #   4. so what is the reserve for?                 the slack in the budget gets moved; the
-    #                                                  circuit breaker account that absorbed it is shrinking
+    #   4. what does the state pay?                    the tuition vote counts on the repayment
+    #                                                  before it arrives, and its account is shrinking
     #   5. how big?                                    six sizes, side by side; none singled out
     #                                                  (TJ, 25 October 2026: highlighting one
     #                                                  "suggest thats the option to pick" -- rule 8)
@@ -1614,14 +1629,14 @@ def build():
         mrow[y] = dict(fy=C.fy(y), voted=vo, within=wi, over=ov, state=st,
                        t_voted=C.usd(vo), t_over=C.usd(ov), t_state=C.usd(st),
                        t_spent=C.usd(wi + ov + st))
-    st_more = sum(1 for y in mys if mrow[y]['state'] > mrow[y]['over'])
     st_sum = sum(mrow[y]['state'] for y in mys)
     ov_sum = sum(mrow[y]['over'] for y in mys)
     st_hi = max(mys, key=lambda y: mrow[y]['state'])
-    if not (st_more == len(mys) and st_sum > 3 * ov_sum and mrow[fy1]['state'] < mrow[st_hi]['state']):
-        fail('the money chart\'s meaning says the repayment outran overspending every year, by '
-             'several times in total, and has fallen from its high')
+    if not (st_sum > 3 * ov_sum and mrow[fy1]['state'] < mrow[st_hi]['state']):
+        fail('the money chart\'s meaning says the repayment outran overspending '
+             'several times over in total, and has fallen from its high')
     mfig = [v for y in mys for k, v in mrow[y].items() if k == 'fy' or k.startswith('t_')]
+    mfig += ['All %s years' % C.num(len(mys)), C.usd(ov_sum), C.usd(st_sum)]
     h = {}
     n_line = len(bad_y)                       # years at least one line spent past its vote
     h['h-line'] = f('h-line', N(n_line, 'years'), 'of %s a line spent past its vote' % C.num(nyrs),
@@ -1633,14 +1648,16 @@ def build():
     h['h-spring'] = f('h-spring', P(spring_pct, 0), 'of late orders placed March to June', 'published')
     h['h-law'] = f('h-law', figure(5, 'c.71B §5'), 'a private placement moving in: old town pays',
                    'statute', allow=('71', '5'))
-    h['h-moved'] = f('h-moved', U(out_day1), 'moved out of the tuition budget, 1 July 2024', 'published',
-                     allow=('1', '2024'))
+    cbo = led_line(SC, fy1, 'ood')['cb_offset']
+    h['h-net'] = f('h-net', U(cbo), 'repayment the %s tuition vote counted on in advance'
+                   % C.fy(fy1), 'published', {'y': F(fy1)})
     h['h-cba'] = f('h-cba', U(cb_close), 'circuit breaker account, close of %s' % C.fy(fy1), 'published',
                    {'y': F(fy1)})
     h['h-cba0'] = f('h-cba0', U(cba_y[cb_hi_y]), 'the same account, close of %s' % C.fy(cb_hi_y),
                     'published', {'y': F(cb_hi_y)})
-    h['h-repaid'] = f('h-repaid', N(st_more, 'years'), 'of %s the state’s repayment paid more than ran over'
-                      % C.num(len(mys)), 'published', {'n': N(len(mys))})
+    h['h-repaid'] = f('h-repaid', U(st_sum), 'the state’s repayment spent, %s to %s'
+                      % (C.fy(mys[0]), C.fy(fy1)), 'published', {'y': F(mys[0]), 'z': F(fy1)})
+    h['h-oversum'] = f('h-oversum', U(ov_sum), 'spent past the vote, the same years', 'published')
     # The sizes, side by side (TJ, 24 October 2026: "propose ALL the options... and let
     # someone pick"). The full set, with the years each covers, is reserve-options.
     h['h-med'] = f('h-med', U(o_med), 'median bad year, as spent', 'published')
@@ -1656,7 +1673,7 @@ def build():
                       allow=('27', '2026'))
     ladder = LD.ladder([
         LD.tier('Does it run short?', [h['h-line'], h['h-under'], h['h-school'], h['h-spring'], h['h-law']]),
-        LD.tier('Where the slack goes', [h['h-moved'], h['h-repaid'], h['h-cba'], h['h-cba0']]),
+        LD.tier('What the state pays', [h['h-net'], h['h-repaid'], h['h-oversum'], h['h-cba'], h['h-cba0']]),
         LD.tier('How big, and why a reserve', [h['h-med'], h['h-adj'], h['h-med5'], h['h-worst'],
                                                h['h-ours'], h['h-adjmax'], h['h-cap'],
                                                h['h-policy']]),
@@ -1668,11 +1685,12 @@ def build():
                       % C.pct(spring_pct, 0), ['h-spring'], {'a': P(spring_pct, 0)}),
         LD.conclusion('A child already in a private placement who moves in is, by law, the old town’s cost that year.',
                       ['h-law']),
-        LD.conclusion('The slack in the budget does not wait for spring: %s left out-of-district tuition on 1 July.'
-                      % C.usd(out_day1), ['h-moved'], {'a': U(out_day1)}, allow=('1',)),
-        LD.conclusion('In %s of %s years the state’s repayment paid for more than ran over the budget.'
-                      % (C.num(st_more), C.num(len(mys))), ['h-repaid', 'h-cba', 'h-cba0'],
-                      {'a': N(st_more), 'n': N(len(mys))}),
+        LD.conclusion('The tuition vote counts on the repayment: %s was set %s lower to allow for it.'
+                      % (C.fy(fy1), C.usd(cbo)), ['h-net'], {'y': F(fy1), 'a': U(cbo)}),
+        LD.conclusion('Beyond the vote, the repayment spent %s in %s years; overruns came to %s.'
+                      % (C.usd(st_sum), C.num(len(mys)), C.usd(ov_sum)),
+                      ['h-repaid', 'h-oversum', 'h-cba', 'h-cba0'],
+                      {'a': U(st_sum), 'n': N(len(mys)), 'b': U(ov_sum)}),
         LD.conclusion('Six ways to size the reserve run from %s, a median bad year, to %s, the worst at today’s budget.'
                       % (C.usd(o_med), C.usd(o_adjmax)),
                       ['h-med', 'h-adj', 'h-med5', 'h-worst', 'h-ours', 'h-adjmax', 'h-cap',
@@ -1742,6 +1760,7 @@ def build():
         # -- it IS additive, and nothing said so. `read` says it above the bars.
         'serf-money-stack', 'Each year’s bill: the vote, then what was spent on top of it',
         dict(rows=[mrow[y] for y in mys],
+             total=dict(label='All %s years' % C.num(len(mys)), t_over=C.usd(ov_sum), t_state=C.usd(st_sum)),
              read='Each bar adds up. Left: the budget Town Meeting voted, hatched where a line left '
                   'some unspent. Then what was spent on top of the vote: red from the town budget, '
                   'green from the state’s repayment of the year before.',
@@ -1776,16 +1795,15 @@ def build():
             (('Share of placement costs repaid, %s' % C.fy(cy), {'y': F(cy)}), C.pct(cshare[cy]), None),
             (('IDEA allocated, %s' % C.fy(iys[-1]), {'y': F(iys[-1])}), C.usd(idea[iys[-1]]), None)],
             sub='The circuit breaker arrives a year after Lunenburg pays.',
-            so='More comes back in a typical year than runs over, but a year late and in amounts '
-               'that swing, so it cannot stand in for a reserve.'),
+            so='The vote already counts on it: tuition is budgeted after subtracting the expected '
+               'repayment, so it cannot also stand in for a reserve.'),
         TB.panel('What budget to carry', [
             (('Years the three lines spent under budget, of %s' % C.num(nyrs), {'n': N(nyrs)}),
              C.num(n_under), 'good'),
-            (('Moved out of tuition, 1 July 2024', None, ('1', '2024')), C.usd(out_day1), None),
             ('Budgeting the cushion yearly costs more than a reserve by', C.usd(extra), 'bad')],
-            sub='The slack is there, but it can be moved before the spring bill.',
-            so='The budget is usually big enough. The risk is its slack being moved before a spring '
-               'bill, and padding every year costs more than holding a reserve once.')],
+            sub='Most years the three lines leave money unspent.',
+            so='The budget is usually big enough in total. Padding it every year costs more than '
+               'holding a reserve once.')],
         place='lead')
     # WHAT WAS SAID, BESIDE THAT YEAR'S LEDGER. TJ, 25 October 2026: "the school committee will
     # disagree ... can you find quotes that say the surprises from special education crush the
@@ -1849,24 +1867,19 @@ def build():
                             href=q['href'], label=q['label'], caption=bool(q.get('caption')),
                             fy=C.fy(fy), ledger=[dict(label=a, value=b, tone=c) for a, b, c in rows]))
         s_fig += [q['label'], q['quote']]
-    s_top = max(s_years, key=lambda y: sum(1 for i in s_items if i['fy'] == C.fy(y)))
-    if s_years[s_top]:
-        fail('the quotations say the year quoted most closed with every line inside its vote')
     said_block = TB.custom(
         'serf-said-ledger', 'What was said, beside that year’s ledger',
         dict(items=s_items, ledger_head='The ledger, each line against its vote,'), place='body', figures=s_fig,
         allow=[q['href'] for q in SAID],          # addresses, not figures
         alt='Seven quotations from public meetings, each beside the special education lines’ '
             'results for that fiscal year.',
-        so=('The quotations fall in %s fiscal years, and in %s a line spent past its vote. %s, quoted '
-            'most, closed with every line inside it: much of the worry is about a year that could '
-            'come, which is what a reserve is for.'
-            % (C.num(len(s_years)), C.num(sum(s_years.values())), C.fy(s_top)),
-            {'n': N(len(s_years)), 'a': N(sum(s_years.values())), 'y': F(s_top)}))
+        so=('The quotations fall in %s fiscal years, and in %s a line spent past its vote.'
+            % (C.num(len(s_years)), C.num(sum(s_years.values()))),
+            {'n': N(len(s_years)), 'a': N(sum(s_years.values()))}))
     out[HUB] = TP.hub(
         HUB,
-        'A special education line spent past its vote in %s of %s years, the bill often in spring, '
-        'after slack was moved. A median bad year of the last five ran %s over; the worst year '
+        'A special education line spent past its vote in %s of %s years, on top of the state '
+        'repayment the vote counts on. A median bad year of the last five ran %s over; the worst year '
         'on record, %s. Held once, a reserve costs less than a yearly cushion.'
         % (C.num(n_line), C.num(nyrs), C.usd(o_med5), C.usd(o_max)),
         ladder, chart=out['reserve-options']['chart'],
@@ -1891,11 +1904,11 @@ def build():
 
     # ------------------------------------------------ what each conclusion means
     meanings(out[HUB]['ladder']['conclusions'], [
-        'The surprises are real and frequent; what has absorbed them is slack in the other lines, and that slack can be moved.',
+        'The surprises are real and frequent; what has absorbed them is slack in the other lines.',
         'A spring bill finds the year’s money already committed; that timing, more than the size, is what a reserve covers.',
         'Such a move can be seen coming and budgeted the next year; the in-year risk is a child newly placed here.',
-        'Padding the special education budget does not protect against spring bills if the padding can be moved in July.',
-        'The vote has never been the whole bill, and the repayment’s account is thinner, so the next bad year lands closer to the budget.',
+        'If the repayment comes in smaller than expected, the gap lands on the town budget, mostly taxes.',
+        'The vote has never been the whole bill: the state pays a large share on top of it, and its account is thinner now.',
 
         ('The choice is how rare a year to insure against: the median bad year was covered in %s of %s, the worst in all.'
          % (C.num(covered(o_med)), C.num(len(bad_y))),
@@ -1933,7 +1946,7 @@ def build():
     meanings(out['reserve-or-budget']['conclusions'], [
         'Budgeting the cushion raises taxes for money that, in most years, is never needed for special education.',
         'A reserve asks taxpayers once, and afterwards only for what was actually used.',
-        'Money in a budget line protects nothing if it can be moved out before the bill arrives.',
+        'A reserve is set aside for this and nothing else; a budget line can be spent on whatever else runs short first.',
         'A reserve saves money only if the budget is set lower once it exists: that is the decision to watch.'])
 
     if sorted(k for k in out if k != HUB) != sorted(MINE):

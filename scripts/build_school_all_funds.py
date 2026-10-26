@@ -306,14 +306,15 @@ def model():
                 fund_bud[(r['fy'], a['fund'])] += amt
                 if g == 'General fund':
                     gfb[(r['fy'], code, 'revised')] += amt
-                    if r['posts_to'] == 'original_budget':
+                    if r['posts_to'] == 'original_budget' or J.is_netting(r):
                         gfb[(r['fy'], code, 'voted')] += amt
             if J.in_sped_total(a):
                 side = 'gf' if g == 'General fund' else 'out'
-                sped[(r['fy'], side, r['posts_to'])] += amt
+                col = 'original_budget' if J.is_netting(r) else r['posts_to']   # voted is net
+                sped[(r['fy'], side, col)] += amt
                 if side == 'out' and r['posts_to'] == 'actual':
                     sped[(r['fy'], 'fund:' + J.sped_fund(a), 'actual')] += amt
-                sped[(r['fy'], side + ':' + J.component(a), r['posts_to'])] += amt
+                sped[(r['fy'], side + ':' + J.component(a), col)] += amt
                 if J.is_spent(r):
                     sped[(r['fy'], 'spent', J.sped_fund(a), J.component(a))] += amt
         elif J.is_revenue(a) and r['posts_to'] == 'actual':

@@ -13,7 +13,7 @@ import type { CustomProps } from './index'
 
 type Row = { fy: string; voted: number; within: number; over: number; state: number
   t_voted: string; t_over: string; t_state: string; t_spent: string }
-type Data = { rows: Row[]; read?: string; legend: { within: string; unspent: string; over: string; state: string }; note: string }
+type Data = { rows: Row[]; total?: { label: string; t_over: string; t_state: string }; read?: string; legend: { within: string; unspent: string; over: string; state: string }; note: string }
 
 const C = {
   within: 'var(--text-muted)',
@@ -67,6 +67,13 @@ export default function SerfMoneyStack({ data, alt }: CustomProps) {
             </span>,
           ]
         })}
+        {d.total ? [
+          <span key="tl" className="col-span-2 sm:col-span-2 font-semibold pt-1.5 border-t" style={{ color: 'var(--text-primary)', borderColor: 'var(--grid)' }}>{d.total.label}</span>,
+          <span key="tt" className="col-start-2 sm:col-start-auto flex gap-3 justify-start sm:justify-end tabular-nums text-[12.5px] font-semibold pt-1.5 sm:border-t" style={{ borderColor: 'var(--grid)' }}>
+            <span className="sm:w-[86px] sm:text-right" style={{ color: C.over }}><span className="sm:hidden">Over </span>{d.total.t_over}</span>
+            <span className="sm:w-[86px] sm:text-right" style={{ color: C.state }}><span className="sm:hidden">Repaid </span>{d.total.t_state}</span>
+          </span>,
+        ] : null}
       </div>
       <figcaption className="text-[13.5px] mt-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{d.note}</figcaption>
     </figure>

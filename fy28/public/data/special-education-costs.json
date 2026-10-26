@@ -26,15 +26,15 @@
    "gf_spent": 588508
   },
   {
-   "above_voted": 41124,
-   "above_voted_pct": 3.5,
+   "above_voted": 493704,
+   "above_voted_pct": 69.3,
    "all_spent": 1205948,
    "cb_fund_other": 24801,
    "cb_fund_receipts": 608818,
    "cb_fund_spent": 473650,
    "dese_paid": 508441,
    "fy": 2025,
-   "gf_original": 1164824,
+   "gf_original": 712244,
    "gf_spent": 732298
   },
   {
@@ -509,7 +509,7 @@
    "basis": "General fund budget voted before the year against spending at the close, account by account: MUNIS year-end reports FY2023 to FY2026, the Finance Committee’s ledger history before that. The grouping of accounts is ours.",
    "bearing": "lever",
    "claim": "In the worst of 17 years, special education needed $223,774 more than its voted budget.",
-   "detail": "Each year from FY2010 to FY2026, the tuition, in-district and transportation lines are set against the budget the town voted before the year began, and every line’s overrun is added up without netting it against another line’s underspend. 12 of the 17 years needed something. These are general fund figures, measured after whatever tuition the district charged to its circuit breaker account that year — so they are what exceeded both sources. A reserve sized to the worst year would have covered every one of them — a rule we chose, not a figure any document recommends.",
+   "detail": "Each year from FY2010 to FY2026, the tuition, in-district and transportation lines are set against the budget the town voted before the year began, and every line’s overrun is added up without netting it against another line’s underspend. 13 of the 17 years needed something. These are general fund figures, measured after whatever tuition the district charged to its circuit breaker account that year — so they are what exceeded both sources. A reserve sized to the worst year would have covered every one of them — a rule we chose, not a figure any document recommends.",
    "figure": "worst",
    "figures": {
     "fy": {
@@ -528,9 +528,9 @@
      "value": 17
     },
     "needing": {
-     "text": "12",
+     "text": "13",
      "unit": "years",
-     "value": 12
+     "value": 13
     },
     "span": {
      "text": "FY2010 to FY2026",
@@ -553,8 +553,8 @@
   {
    "basis": "General fund accounts in functions 9100, 9300 and 9400, special education programme, original budget against spent, FY2010 to FY2026; in-district is every other special education account less two English learner accounts. Ours.",
    "bearing": "sizes",
-   "claim": "Out-of-district tuition is the swing: over its voted budget in 7 of 17 years.",
-   "detail": "The tuition line is a forecast, made months ahead, of which children will need a placement and at what price. In the other years it came in under, by as much as $432,526, and the median year landed -$23,729 from it — a line that misses in both directions is unpredictable rather than under-budgeted. Transportation ran over in 6 years, by as much as $92,439 in FY2013. All general fund.",
+   "claim": "Out-of-district tuition is the swing: over its voted budget in 8 of 17 years.",
+   "detail": "The tuition line is a forecast, made months ahead, of which children will need a placement and at what price. In the other years it came in under, by as much as $421,483, and the median year landed -$19,981 from it — a line that misses in both directions is unpredictable rather than under-budgeted. Transportation ran over in 6 years, by as much as $92,439 in FY2013. All general fund.",
    "figure": "over",
    "figures": {
     "band": {
@@ -563,9 +563,9 @@
      "value": 2.6
     },
     "best": {
-     "text": "$432,526",
+     "text": "$421,483",
      "unit": "",
-     "value": 432526
+     "value": 421483
     },
     "fy": {
      "text": "FY2019",
@@ -573,14 +573,14 @@
      "value": 2019
     },
     "median": {
-     "text": "-$23,729",
+     "text": "-$19,981",
      "unit": "",
-     "value": -23729
+     "value": -19981
     },
     "over": {
-     "text": "7",
+     "text": "8",
      "unit": "years over budget",
-     "value": 7
+     "value": 8
     },
     "t_fy": {
      "text": "FY2013",
@@ -638,9 +638,9 @@
      "value": 4
     },
     "over": {
-     "text": "3",
+     "text": "4",
      "unit": "years",
-     "value": 3
+     "value": 4
     },
     "t300": {
      "text": "$300,000",
@@ -673,7 +673,7 @@
    "literals": [],
    "not_shown": "What the next year will need, and how much of the account is already spoken for: nothing published says what the district plans to spend from it.",
    "see": [],
-   "so_what": "Counting that account’s routine tuition as surprise, 3 of 4 recent years did; $500,000 covers 3 of 4."
+   "so_what": "Counting that account’s routine tuition as surprise, 4 of 4 recent years did; $500,000 covers 3 of 4."
   },
   {
    "basis": "MUNIS year-end reports for the school special funds, fund 2640, FY2023 to FY2026; year-end balances from the annual town reports’ Special Revenue schedule to FY2023, then carried through the year-end ledgers — the same series /analysis/sitting-on-money uses.",
@@ -1225,11 +1225,13 @@
     "variance_pct": -7.2
    },
    "ood": {
-    "original": 1164824,
+    "cb_offset": 452580,
+    "netted": -452580,
+    "original": 712244,
     "revised": 762244,
     "spent": 732298,
-    "variance": -432526,
-    "variance_pct": -37.1
+    "variance": 20054,
+    "variance_pct": 2.8
    },
    "source": "munis",
    "trans": {
@@ -1250,6 +1252,7 @@
     "variance_pct": 1.7
    },
    "ood": {
+    "cb_offset": 480204,
     "original": 1291293,
     "revised": 1291293,
     "spent": 1202771,
@@ -1434,7 +1437,7 @@
    "net": -39092,
    "tuition_transport": 152724
   },
-  "years_needing": 12
+  "years_needing": 13
  },
  "not_established": [
   "How many children entered or left an out-of-district placement during any year, or when. Only two snapshots a few months apart are published, and they are taken by different bodies.",
@@ -1622,10 +1625,10 @@
   "ood": {
    "avg_spent": 765923,
    "avg_spent_recent": 645112,
-   "best": -432526,
-   "best_fy": 2025,
-   "median_overrun": 87269,
-   "median_variance": -23729,
+   "best": -421483,
+   "best_fy": 2022,
+   "median_overrun": 64111,
+   "median_variance": -19981,
    "spent_first": 183735,
    "spent_last": 1202771,
    "worst": 204015,
@@ -1634,7 +1637,7 @@
    "worst_pct_fy": 2019,
    "worst_pct_value": 27.0,
    "years": 17,
-   "years_over": 7
+   "years_over": 8
   },
   "trans": {
    "avg_spent": 364397,
@@ -1678,8 +1681,8 @@
     "fy": 2024
    },
    {
-    "after": 0,
-    "before": 41124,
+    "after": 20054,
+    "before": 493704,
     "cb_tuition": 473650,
     "fy": 2025
    },
@@ -1690,7 +1693,7 @@
     "fy": 2026
    }
   ],
-  "before_over_300": 3,
+  "before_over_300": 4,
   "before_within_500": 3,
   "by_type": [
    {
@@ -2162,8 +2165,8 @@
   {
    "fy": 2025,
    "indist": -315633,
-   "need": 0,
-   "ood": -432526,
+   "need": 20054,
+   "ood": 20054,
    "source": "munis",
    "trans": -10406
   },
