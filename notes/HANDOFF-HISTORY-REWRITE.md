@@ -16,8 +16,10 @@ TJ: "do whatever you think is the best idea. i dont want to lose anything". Done
   before and after), and `git push --force-with-lease=main:23647187f` -> origin main `912264f5a`.
 - Not rewritten, local only, never pushed: branches `wip-snapshot-2026-10-19` and
   `gen/town-office-space` still sit on the OLD history. Do not push either.
-- **Step 5 is still open:** GitHub keeps the old commits reachable by SHA until Support purges
-  them. TJ files "remove sensitive data" naming `1f6be08d4`, `06576fbea` and the path.
+- **Step 5 FILED 26 October 2026:** TJ submitted the GitHub Support request (first changed
+  commit `1f6be08d4901a0859a4f7d322db9f838aea2b40d`, range to `06576fbea`, 0 PRs, 0 forks).
+  Done when https://github.com/tjloughlin16/lunenburgbudgetapp/commit/1f6be08d4901a0859a4f7d322db9f838aea2b40d
+  stops answering 200 (it did on 26 October, before the purge).
 
 ---
 
