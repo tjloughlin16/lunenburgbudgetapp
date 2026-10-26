@@ -39,7 +39,10 @@ TOPICS = {
     'arrivals-and-the-budget': 'Move-ins',
     # Retitled 26 October 2026 when its circuit breaker figures moved to Circuit breaker.
     'how-tuition-is-paid': 'Tuition after repayment',
-    'special-education-grants': 'Special education grants',
+    # Retitled 26 October 2026: it answers what can meet a surprise; every special education grant
+    # is on /special-education/sped-grants (TJ: "the title is 'special education grants' not
+    # related to surprises").
+    'special-education-grants': 'Grants for surprises',
     'reserve-options': 'Reserve options',
     'reserve-or-budget': 'Reserve or budget',
 }

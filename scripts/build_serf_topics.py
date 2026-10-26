@@ -1179,6 +1179,35 @@ def build():
             so='The steady part: close to last year’s, every year, and too small a step to absorb '
                'a new placement.')],
         place='lead')
+    # WHAT IS NOT COUNTED, AND WHY. TJ, 26 October 2026, on this page: "should ch70 and ALL
+    # grants be on this that we get?" -- and then that its old title, 'Special education
+    # grants', promised a list the page does not give. It answers what can meet a SURPRISE, so
+    # it is 'Grants for surprises' now; every special education grant is on its own page
+    # (/special-education/sped-grants). Neither Chapter 70 nor the other grants can pay for a
+    # placement, and the pandemic IDEA awards are one year that ended.
+    MA = load('minimum-aid.json')['headline']
+    al = collections.defaultdict(dict)
+    for r in csv.DictReader(open(os.path.join(DATA, 'dese-entitlement-allocations.csv'), encoding='utf-8')):
+        if r['district_code'] == '0162':
+            al[r['fund_code']][int(r['fy'])] = float(r['amount'])
+    arp = {c: al[c] for c in ('0252', '0264')}
+    if not (all(list(v) == [2022] for v in arp.values()) and MA['foundation_aid_increment'] == 0
+            and MA['minimum_aid_increment'] == MA['increase'] > 0):
+        fail('the not-counted block says the pandemic IDEA awards were FY2022 only and Chapter 70 '
+             'rose by minimum aid alone')
+    arp_t = sum(v[2022] for v in arp.values())
+    g_out = TB.explain('What is not counted here, and why', [
+        ('**Chapter 70.** General state aid for the whole school budget, %s in %s. It does not '
+         'move when a child is placed: Lunenburg is held at the minimum-aid floor, and its %s '
+         'rise was %s a pupil, whatever the placements.'
+         % (C.usd(MA['aid']), C.fy(MA['fy']), C.fy(MA['fy']), C.usd(MA['per_pupil'])),
+         {'a': U(MA['aid']), 'y': F(MA['fy']), 'p': U(MA['per_pupil'])}, ('70',)),
+        ('**Other grants.** Title I, Title II and the rest are awarded for other purposes, not '
+         'for placements; the pandemic relief grants (ESSER) have ended.', None),
+        ('**The pandemic IDEA grants.** One award each, %s in %s, spent the next year and not '
+         'repeated. Every special education grant, by name and year, is on the Special education '
+         'grants page.' % (C.usd(arp_t), C.fy(2022)), {'a': U(arp_t), 'y': F(2022)})],
+        tone='define', place='body')
     out['special-education-grants'] = TP.page(
         'special-education-grants',
         'The circuit breaker paid a median %s a year, %s to %s; IDEA allocated %s for %s.'
@@ -1224,11 +1253,11 @@ def build():
             TP.track('Circuit breaker, paid (state)', [cb[y]['paid'] if y in cb and y <= fy1
                                                        else None for y in gx]),
             TP.track('IDEA, allocated (federal)', [idea.get(y) for y in gx])],
-            '$', note='IDEA is school age and preschool. Title I and the pandemic grants are not '
-                      'special education and are left out.'),
+            '$', note='IDEA is school age and preschool, as allocated. The one-year pandemic IDEA '
+                      'awards and every grant for other purposes are left out: see below.'),
         finding_figures={'a': U(cb_med), 'y': F(fy0), 'z': F(fy1), 'b': U(idea[iys[-1]]),
                          'w': F(iys[-1])},
-        blocks=[g_next], sources=src)
+        blocks=[g_next, g_out], sources=src)
 
     # ------------------------------------------------ after the circuit breaker: what is left
     # Folded into reserve options and the hub (TJ, 24 October 2026: "do you think 'After the
