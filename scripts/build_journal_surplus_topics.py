@@ -1166,6 +1166,8 @@ JUL29_TEXT = 'sources/meetings/text/school-committee/2026-07-29-minutes-7930.txt
 JUL29_QUOTE = 'he was confident the remaining amount would be well below that figure'
 SC_MINUTES = 'sources/meetings/text/school-committee'
 SPECREV = 'sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx'
+BOOK26_TEXT = ('sources/district-budget/text/'
+               'final-fy26-sc-approved-budget-3-12-25-with-level-service-budget.txt')
 DESE_CB_FAQ = 'https://www.doe.mass.edu/finance/circuitbreaker/faq.html'
 
 
@@ -1353,6 +1355,22 @@ def prepaid_page(d):
              '2640 in FY%d but the 29 June re-charge' % Y1)
     if any(r['source'] not in ('CRP', 'API', 'GEN', 'POE', 'POL', 'POM') for r in cb if r['fy'] == Y1):
         fail('fund 2640 has an FY%d entry of a kind the balance arithmetic does not handle' % Y1)
+    # When the fund was DRAWN, FY2025 against FY2026: what the budget book planned it to pay,
+    # what it paid July to May, and in June (payments and re-charges; receipts excluded).
+    drawn = lambda y, june: fl(sum((r['amt'] for r in cb if r['fy'] == y
+                                    and J.COLUMN_OF[r['source']] == 'actual' and r['source'] != 'CRP'
+                                    and (r['effective_date'][5:7] == '06') == june), D0))
+    # Planned: FY2025 the ADJ FY25 journal line; FY2026 the circuit breaker offset the FY2026
+    # budget book prints under 9400 Collaborative Tuitions, read from our copy of the book.
+    book26 = ' '.join(open(os.path.join(ROOT, BOOK26_TEXT), encoding='utf-8').read().split())
+    m26 = re.search(r'Circuit Breaker \(70% = \$[\d,]+\) \(75% = [\d,]+\) \([\d,.]+\)\$ '
+                    r'\(([\d,.]+)\)\$', book26)
+    if not m26:
+        fail('the FY2026 circuit breaker offset is no longer in %s' % BOOK26_TEXT)
+    plan = {Y0: fl(-d['adj']), Y1: float(m26.group(1).replace(',', ''))}
+    if not (drawn(Y0, False) > 100 * drawn(Y1, False) and drawn(Y1, True) > drawn(Y0, True)):
+        fail('the timing block assumes FY%d drew the fund through the year and FY%d in June'
+             % (Y0, Y1))
     older = open_bal - sr_exp           # what could only be FY2025's money or earlier
     june_bal = mar_bal - out_gf          # after the 29 June re-charge (our arithmetic)
     if not (out_gf > older > 0 and june_bal < sr_rev):
@@ -1433,6 +1451,23 @@ def prepaid_page(d):
                     're-charge used all of it, and %s carries into %s.'
                     % (C.usd(fl(older)), C.usd(fl(june_bal)), C.fy(Y1 + 1)),
                     {'a': U(older), 'b': U(june_bal), 'y': F(Y1 + 1)})),
+            TB.panels('When the circuit breaker was drawn', [
+                TB.panel('The year before', [
+                    ('Planned to pay tuition (budget)', C.usd(plan[Y0]), None),
+                    ('Drawn July to May', C.usd(drawn(Y0, False)), 'good'),
+                    ('Drawn in June', C.usd(drawn(Y0, True)), None),
+                    ('Left in the fund at year end', C.usd(fl(open_bal)), None)]),
+                TB.panel('The year of this surplus', [
+                    ('Planned to pay tuition (budget)', C.usd(plan[Y1]), None),
+                    ('Drawn July to May', C.usd(drawn(Y1, False)), 'bad'),
+                    ('Drawn in June', C.usd(drawn(Y1, True)), None),
+                    ('Left in the fund at year end (ours)', C.usd(fl(june_bal)), None)])],
+                place='body',
+                note='The state pays each year’s reimbursement for the year before, and the money '
+                     'is spent within a year of arriving, or not at all. Month by month: Special '
+                     'education burndown.',
+                so=('One year drew the fund as bills came in; the next left it untouched until the '
+                    'year’s last days. Why is not in any document held.', None, ())),
             TB.explain('The record, in order', [
                 ('**%s, %s.** %s. (%s)' % (w, b_, c_, e_), None,
                  tuple(re.findall(r'\d[\d,]*', '%s %s %s' % (w, c_, e_))))

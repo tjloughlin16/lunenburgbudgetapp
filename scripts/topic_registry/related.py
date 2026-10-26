@@ -105,7 +105,8 @@ RELATED = [
      ('fy2027-bus-budget', 'Next year’s bus budget, school-day and athletic')],
     # The 30 June payment of FY2027-numbered tuition (review of the surplus pages, 26 Oct 2026).
     [('fy2026-tuition-paid-early', 'Tuition paid on the year’s last day, and the surplus'),
-     ('fy2026-tuition-lines', 'The tuition lines at year end, against next year’s budget')],
+     ('fy2026-tuition-lines', 'The tuition lines at year end, against next year’s budget'),
+     ('sped-burndown', 'When the circuit breaker was drawn, month by month')],
     # TJ could not find the Monty Tech and Lunenburg funding comparison from the hub.
     [('monty-tech-revenue', 'Monty Tech and Lunenburg schools, revenue by source'),
      ('monty-tech-funding', 'What pays Monty Tech’s operating budget'),

@@ -2613,6 +2613,12 @@
      "path": "/fy2026-closeout/fy2026-tuition-paid-early",
      "title": "Year-end tuition payment",
      "why": "Tuition paid on the year’s last day, and the surplus"
+    },
+    {
+     "id": "sped-burndown",
+     "path": "/special-education/sped-burndown",
+     "title": "Special education burndown",
+     "why": "When the circuit breaker was drawn, month by month"
     }
    ],
    "shelves": [
@@ -2635,6 +2641,12 @@
      "path": "/fy2026-closeout/fy2026-tuition-lines",
      "title": "Tuition at year end",
      "why": "The tuition lines at year end, against next year’s budget"
+    },
+    {
+     "id": "sped-burndown",
+     "path": "/special-education/sped-burndown",
+     "title": "Special education burndown",
+     "why": "When the circuit breaker was drawn, month by month"
     }
    ],
    "shelves": [
@@ -4566,7 +4578,20 @@
    "minutes": 2,
    "path": "/special-education/sped-burndown",
    "ready": true,
-   "related": [],
+   "related": [
+    {
+     "id": "fy2026-tuition-paid-early",
+     "path": "/fy2026-closeout/fy2026-tuition-paid-early",
+     "title": "Year-end tuition payment",
+     "why": "Tuition paid on the year’s last day, and the surplus"
+    },
+    {
+     "id": "fy2026-tuition-lines",
+     "path": "/fy2026-closeout/fy2026-tuition-lines",
+     "title": "Tuition at year end",
+     "why": "The tuition lines at year end, against next year’s budget"
+    }
+   ],
    "shelves": [
     "special-education",
     "fy2026-closeout"
