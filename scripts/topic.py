@@ -325,6 +325,24 @@ def _norm_quote(s):
     return ' '.join(s.split())
 
 
+ELIDE = ' \u2026 '
+
+
+def verbatim_in(quote, text):
+    """Is `quote` verbatim in `text`, whitespace and curly quotes aside? An ellipsis with a
+    space either side (ELIDE) marks words left out of one speech: each part must then appear
+    verbatim, in the order quoted (TJ, 25 October 2026: a few sentences later in the same
+    remarks belong to the same quotation)."""
+    text, at = _norm_quote(text), 0
+    for part in _norm_quote(quote).split(ELIDE.strip()):
+        part = part.strip()
+        i = text.find(part, at) if part else -1
+        if i < 0:
+            return False
+        at = i + len(part)
+    return True
+
+
 def _lead_bad(lq, said, where):
     if lq is None:
         return []
@@ -344,7 +362,7 @@ def _lead_bad(lq, said, where):
             bad.append('%s: a caption lead quote links the video at its second, not %r' % (where, lq['href']))
         if not (lq['text'].startswith('sources/data/youtube-transcripts/') and os.path.exists(path)):
             bad.append('%s: caption lead quote text %r is not one of our captions files' % (where, lq['text']))
-        elif _norm_quote(lq['quote']) not in _norm_quote(' '.join(
+        elif not verbatim_in(lq['quote'], ' '.join(
                 x['text'] for x in json.load(open(path, encoding='utf-8'))['segments'])):
             bad.append('%s: lead quote is not verbatim in the captions %s' % (where, lq['text']))
         return bad + [x for x in _said_dupe(lq, said, where)]
@@ -353,7 +371,7 @@ def _lead_bad(lq, said, where):
     if not lq['text'].startswith('sources/') or not os.path.exists(path):
         bad.append('%s: lead quote text %r is not an extracted document under sources/'
                    % (where, lq['text']))
-    elif _norm_quote(lq['quote']) not in _norm_quote(open(path, encoding='utf-8').read()):
+    elif not verbatim_in(lq['quote'], open(path, encoding='utf-8').read()):
         bad.append('%s: lead quote is not verbatim in %s' % (where, lq['text']))
     return bad + _said_dupe(lq, said, where)
 

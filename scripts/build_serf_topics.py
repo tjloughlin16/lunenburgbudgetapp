@@ -137,7 +137,7 @@ def video(board_slug, board, fname, at, quote, who=None):
     a person listened to the recording and named the speaker: by_ear() says so on the page."""
     rel = 'sources/data/youtube-transcripts/%s/%s' % (board_slug, fname)
     t = json.load(open(os.path.join(ROOT, rel), encoding='utf-8'))
-    if norm(quote) not in norm(' '.join(x['text'] for x in t['segments'])):
+    if not TP.verbatim_in(quote, ' '.join(x['text'] for x in t['segments'])):
         fail('%r is not verbatim in %s' % (quote[:60], rel))
     h, m, sec = (int(x) for x in at.split(':'))
     secs = h * 3600 + m * 60 + sec
@@ -1801,7 +1801,10 @@ def build():
     # Beardmore -- "use this one. its all budget focused." So Beardmore's opens the page.
     OPEN = video('school-committee', 'School Committee', '2023-10-04-RSuhiVz9L-A.json', '0:40:09',
                  'if we get a sped private tuition that comes in unexpected it\'s going to affect our '
-                 'budget and here we are I mean it just happened', who=by_ear('Peter Beardmore'))
+                 'budget and here we are I mean it just happened' + TP.ELIDE +
+                 'when it\'s a 24 million dollar budget 125 000 doesn\'t seem like a lot but it is'
+                 + TP.ELIDE + 'there is no mechanism in the state of Massachusetts for us to '
+                 'recover a dollar of those funds', who=by_ear('Peter Beardmore'))
     SAID = [
         video('school-committee', 'School Committee', '2025-02-05-ad6QtSaJqVU.json', '2:33:32',
               'it\'s dangerous to hedge our bets and go lean on our special edlines because those '
@@ -1872,7 +1875,10 @@ def build():
                                  OPEN['href'], OPEN['label'],
                                  OPEN['src'],
                                  caption=True),
-        blocks=[hub_impact, hub_answers, money_chart, said_block,
+        # The quotations beside each year's ledger are HIDDEN, not deleted (TJ, 25 October
+        # 2026: "a bit too confrontational"). said_block is still built and checked; put it
+        # back in this list to show it.
+        blocks=[hub_impact, hub_answers, money_chart,
                 TB.chart(surprise_chart, place='chart',
                          so=('Out-of-district tuition is the largest share, %s, but not most of it: '
                              'a reserve drawn only for tuition would miss the rest.' % C.pct(share['ood']),
