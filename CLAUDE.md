@@ -550,18 +550,16 @@ is a matrix. A sequence over time is a timeline. A comparison is two panels side
 cause-and-effect list is a table of marks. A thing the reader may misread opens with its
 definition. The default layout (finding, chart, facts, conclusions) is a floor, not a ceiling.
 
-**How, mechanically.** `scripts/topic_blocks.py` holds the arranged parts -- `explain`,
-`matrix`, `timeline`, `checks`, `panels` -- and `custom`, which draws ANY component written
-for one page (`fy28/src/components/blocks/custom/`). Each is placed where it explains something
-(`lead`, `chart`, `also1`, `also2`, `body`, `end`). Block words do not count toward a page's
-word cap: words in a diagram are found by position, not read in order. The site-wide reading
-time ratchet still measures the whole page. `/special-education-reserve/surprise-costs` is the
-worked example.
+**And every figure arrives with what it means.** TJ, 25 October 2026: *"put the conclusions as
+insights, following the 'what it means' pattern so we dont put important metrics without an
+insight to understand them."* A reader should be able to draw a conclusion, not just see a
+fact. Blocks enforce it; conclusions do not yet, and 30 of 941 carry one (26 October 2026).
 
-**And a conclusion may be categorical.** Rule 7b's *a conclusion is a metric* is the default
-for a measured finding. When the finding is a RULE ("a collaborative move-in is a surprise; a
-private one is not"), say the rule, and name its basis: the statute, the regulation, or our
-reading. Forcing a number onto it is the constraint this rule removes.
+**How, mechanically -- load the `building-a-page` skill** (`.claude/skills/building-a-page/`)
+before writing or reviewing any page. It holds the shape-by-subject table, the blocks and where
+they go, the limits the build enforces, the conventions settled on 26 October, the review
+checklist and TJ's review queue. Kept there, not here, so a session that is not building pages
+does not carry it.
 
 ## 8. This app explains how to fix the problem. It is not an audit
 
