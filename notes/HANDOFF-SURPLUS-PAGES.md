@@ -2,7 +2,15 @@
 
 ## DONE, 26 October 2026 (second session). Read this block first
 
-**Committed locally, NOT deployed** (rule 10: TJ asks). Build, then `bash scripts/deploy_site.sh`.
+**DEPLOYED 26 October 2026** (TJ asked), https://6c49d7a7.lunenburg-fy28.pages.dev, pushed at
+c5e9b7266. Live pages checked by DOM dump: the hub, Surplus by category, Surplus by year, Year-end
+tuition payment (every block), and both retired addresses forwarding. **The deploy skipped ONE
+check, with TJ's approval:** `check_dist_complete.py` refused on 107 sitemap pages (2021
+meeting-minutes and board "time" pages) that the prerender does not build -- the minutes
+backlog's work in progress (`process_meeting.py --until-usage`, PID 34340, running). None was
+prerendered live before the deploy either (the live site served them as the app shell), so
+nothing was removed. Every other step of deploy_site.sh ran: freshness, check_prerender,
+takedown --check, sync_derived push/check/stage. Fixing that gap is the backlog's, not this shelf's.
 
 1. **The footing defect, fixed on the hub and given a page.** A closed year's close (`YEC`) zeroes
    the orders it still owes and re-opens them next July as carried-forward budget, so FY2025's
