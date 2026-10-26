@@ -179,6 +179,16 @@ deleted once this clears.
 `--limit 1` fetches one document and then runs the whole alias sweep, which is the part
 this is about. Expect `138 of 138` once the entries expire.
 
+**SEEN AGAIN, 26 October 2026, on retired TOPIC pages, not documents.** After deployment
+`91a362fa`, `/special-education-reserve/surprises-and-state-aid` and
+`/fy2026-closeout/fy2026-school-surplus` (both retired that day, mapped in `TOPIC_MERGED`)
+still answered 200 with their OLD prerendered HTML on `lunenburgbudgetproject.org`, under
+`cache-control: public, s-maxage=604800` and `age` from 493 to 30,544 seconds; the deployment
+URL answered correctly. Every address the new deployment HOLDS was fresh (`max-age=0`, the new
+bundle). So the rule caches whatever a URL last answered and it outlives a page's removal:
+**retiring a page leaves its old address stale for up to a week** unless the cache rule is found.
+`reserve-size`, retired the same day but never visited, redirected correctly.
+
 **The durable half is already fixed.** Redirects now carry `cache-control: public,
 max-age=3600`, so the longest this file can be wrong about where a document lives is an
 hour. Something on the zone still caches `/docs/` documents for a week — worth finding in
