@@ -1547,7 +1547,7 @@ def build():
          f('b-res', U(as_reserve), 'raised if held once and refilled', 'estimate'),
          f('b-paid', U(paid_out), 'overspending either one would have paid', 'published'),
          f('b-lapsed', U(lapsed), 'budgeted and never needed', 'estimate'),
-         f('b-under', N(n_under, 'years'), 'of %s the three lines spent under budget' % C.num(nyrs),
+         f('b-under', N(n_under, 'years'), 'years of %s the three lines spent under budget' % C.num(nyrs),
            'published', {'n': N(nyrs)}),
          f('b-cush', U(cushion), 'budget above spending, three lines, a year', 'published')],
         [con('Added to the budget every year, %s raises %s over %s years to pay %s of overspending.'
@@ -1648,9 +1648,9 @@ def build():
     mfig += ['All %s years' % C.num(len(mys)), C.usd(ov_sum), C.usd(st_sum)]
     h = {}
     n_line = len(bad_y)                       # years at least one line spent past its vote
-    h['h-line'] = f('h-line', N(n_line, 'years'), 'of %s a line spent past its vote' % C.num(nyrs),
+    h['h-line'] = f('h-line', N(n_line, 'years'), 'years of %s a line spent past its vote' % C.num(nyrs),
                     'published', {'n': N(nyrs)})
-    h['h-under'] = f('h-under', N(n_under, 'years'), 'of %s the three lines spent under budget'
+    h['h-under'] = f('h-under', N(n_under, 'years'), 'years of %s the three lines spent under budget'
                      % C.num(nyrs), 'published', {'n': N(nyrs)})
     h['h-school'] = f('h-school', U(stats['school']['worst']), 'whole school over its budget, worst year',
                       'published')

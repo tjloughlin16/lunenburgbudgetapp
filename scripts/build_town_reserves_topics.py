@@ -414,7 +414,7 @@ def build():
          f('band', figure(lo, '%s to %s' % (C.pct(lo, 0), C.pct(hi, 0))),
            'the range the Town says the state recommends', 'published'),
          f('short', N(len(last10) - len(met), 'years'),
-           'of the last %s below %s, on the Town’s figures' % (C.num(len(last10)), C.pct(lo, 0)),
+           'years of the last %s below %s, on the Town’s figures' % (C.num(len(last10)), C.pct(lo, 0)),
            'published', {'n': N(len(last10)), 'lo': P(lo, 0)}),
          f('ours-orig', P(sh_orig, 2), 'the same, against the %s original budget (ours)'
            % C.fy(2026), 'estimate', {'y': F(2026)}),
@@ -1105,7 +1105,7 @@ def build():
     h['h-share'] = f('h-share', P(fs['pct'], 2), 'free cash as a share of budget, %s, Town’s '
                      'figure' % C.fy(2026), 'published', {'y': F(2026)})
     h['h-short'] = f('h-short', N(len(last10) - len(met), 'years'),
-                     'of the last %s below %s, on the Town’s figures'
+                     'years of the last %s below %s, on the Town’s figures'
                      % (C.num(len(last10)), C.pct(lo, 0)), 'published',
                      {'n': N(len(last10)), 'lo': P(lo, 0)})
     h['h-capital'] = f('h-capital', U(fc26), 'free cash into capital, %s' % C.fy(2026),
@@ -1124,7 +1124,7 @@ def build():
                            'estimate')
     s_['h-fromfc'] = f('h-fromfc', N(n_fc, 'articles'), 'of %s deposits naming free cash'
                        % C.num(len(dep)), 'published', {'n': N(len(dep))})
-    s_['h-years'] = f('h-years', N(2, 'years'), 'of the school gap the general fund covers (ours)',
+    s_['h-years'] = f('h-years', N(2, 'years'), 'years of the school gap the general fund covers (ours)',
                       'estimate')
     s_['h-out-gap'] = f('h-out-gap', None, 'every withdrawal from the funds, by year', 'gap',
                         closes='the MUNIS trust fund reports of expenditure')
