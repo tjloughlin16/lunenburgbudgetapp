@@ -1294,7 +1294,7 @@ def build():
         card('Ended and small grants', PAN + SMALL,
              'Pandemic IDEA, ended; and the program improvement grants.',
              'Money that has stopped: whatever it paid for is now paid by another fund or not at all.'),
-    ], place='also1')
+    ], place='chart')
 
     # TRENDS, ONE CHART PER STREAM. TJ, 26 October 2026: "add trend line graphs for each grant
     # so we can see how they are trending and what the average is or projected amount for the
@@ -1327,10 +1327,16 @@ def build():
 
     def tchart(title, ys_, hist, nxt_y, nxt, nxt_name, nxt_basis, avg, avg_label, note, so):
         xs = list(ys_) + [nxt_y]
+        # LINES SHOW TRENDS, BARS SHOW COMPOSITION (TJ, 26 October 2026). The composition is the
+        # stacked bars at the top of this page; these are each stream's trend, as lines. Next
+        # year is its own track, a segment from the last real year, in its own basis -- the
+        # district's listing, or our estimate -- so it reads as a continuation, not a fact.
+        last = hist_v[hist][-1]
         return TB.chart(TP.series(title, [C.fy(y) for y in xs], [
-            TP.track(hist, [v for v in hist_v[hist]] + [None], 'published', 'bar'),
-            TP.track(nxt_name, [None] * len(ys_) + [nxt], nxt_basis, 'bar')], '$', kind='bar',
-            reference=(avg, avg_label), note=note[0], note_figures=note[1]), place='also2', so=so)
+            TP.track(hist, [v for v in hist_v[hist]] + [None], 'published', 'line'),
+            TP.track(nxt_name, [None] * (len(ys_) - 1) + [last, nxt], nxt_basis, 'line')], '$',
+            kind='line', reference=(avg, avg_label), note=note[0], note_figures=note[1]),
+            place='chart', so=so)
     hist_v = {'Paid, by year of payment': [cbs[y] for y in cby]}
     t_cb = tchart('Circuit breaker, paid each year', cby, 'Paid, by year of payment', F1 + 1, CB27,
                   'Initial listing (district)', 'stated', cb_avg,
@@ -1358,8 +1364,8 @@ def build():
         t_idea.append(tchart('%s, allocated each year' % sg_name[k], ys_, nm + ', allocated', ys_[-1] + 1,
                              round(est), 'Next year, our estimate', 'estimate', avg,
                              'Average, %s to %s' % (C.fy(ys_[0]), C.fy(ys_[-1])),
-                             ('DESE’s allocations by award year; %s is announced. The last bar is '
-                              'ours: %s moved by the median yearly change, %s.'
+                             ('DESE’s allocations by award year; %s is announced. The dashed end '
+                              'is ours: %s moved by the median yearly change, %s.'
                               % (C.fy(ys_[-1]), C.fy(ys_[-1]), C.pct(100 * st)),
                               {'y': F(ys_[-1]), 'p': P(100 * st)}),
                              ('An average of %s a year, and %s announced for %s. At its usual yearly '
@@ -1411,11 +1417,8 @@ def build():
                         stacked=True, totals=True,
                         note='Spent or still owed at the close, by the fund that paid. %s' % open_note,
                         note_figures={'y': F(F1)}),
-        also=[TP.series('IDEA allocations by award year', [C.fy(y) for y in sorted({y for (_, y) in alloc})], [
-            TP.track(sg_name[k], [alloc.get((k, y)) for y in sorted({y for (_, y) in alloc})], 'published', 'line')
-            for k in ('240', '262')], '$', kind='line',
-            note='DESE’s allocations to Lunenburg, by the year of the award. The latest is announced, '
-                 'not yet spent.')],
+        # The combined 'IDEA allocations by award year' line chart was dropped 26 October 2026:
+        # it repeated the per-stream trend lines below, and its shared scale flattened preschool.
         table=dict(caption='Special education money outside the vote, by year', views=[dict(
             key='years', label='By year', total_col=len(Y), kinds=['ledger'] * (len(Y) + 1),
             columns=years + ['Four years'], rows=yr_rows,
@@ -1437,7 +1440,7 @@ def build():
         blocks=[TB.explain('Grants and a reimbursement', [
             'The grants are federal awards DESE allocates to each district by formula. The '
             'circuit breaker is not a grant: it is the state repaying part of the previous '
-            'year’s costliest placements.'], place='chart'), pay_blocks, t_cb] + t_idea,
+            'year’s costliest placements.'], place='chart'), t_cb] + t_idea + [pay_blocks],
         sources=sources() + [
             dict(label='Massachusetts DESE — entitlement grant allocations, by district and fund '
                        'code (dese-entitlement-allocations.csv)',

@@ -1,98 +1,4 @@
 {
- "also": [
-  {
-   "decimals": null,
-   "from_zero": true,
-   "kind": "line",
-   "note": {
-    "figures": {},
-    "literals": [],
-    "text": "DESE’s allocations to Lunenburg, by the year of the award. The latest is announced, not yet spent."
-   },
-   "reference": null,
-   "series": [
-    {
-     "basis": "published",
-     "mark": "line",
-     "name": "IDEA (special education)",
-     "texts": [
-      "$353,466",
-      "$360,585",
-      "$362,328",
-      "$369,440",
-      "$386,101",
-      "$399,152",
-      "$404,772",
-      "$420,163",
-      "$424,156",
-      "$423,912",
-      "$423,413"
-     ],
-     "values": [
-      353466.0,
-      360585.0,
-      362328.0,
-      369440.0,
-      386101.0,
-      399152.0,
-      404772.0,
-      420163.0,
-      424156.0,
-      423912.0,
-      423413.0
-     ]
-    },
-    {
-     "basis": "published",
-     "mark": "line",
-     "name": "IDEA (preschool)",
-     "texts": [
-      null,
-      null,
-      "$12,026",
-      "$12,303",
-      "$12,401",
-      "$12,500",
-      "$13,083",
-      "$13,325",
-      "$13,373",
-      "$13,366",
-      "$13,967"
-     ],
-     "values": [
-      null,
-      null,
-      12026.0,
-      12303.0,
-      12401.0,
-      12500.0,
-      13083.0,
-      13325.0,
-      13373.0,
-      13366.0,
-      13967.0
-     ]
-    }
-   ],
-   "stacked": false,
-   "title": "IDEA allocations by award year",
-   "type": "series",
-   "unit": "$",
-   "x": [
-    "FY2017",
-    "FY2018",
-    "FY2019",
-    "FY2020",
-    "FY2021",
-    "FY2022",
-    "FY2023",
-    "FY2024",
-    "FY2025",
-    "FY2026",
-    "FY2027"
-   ]
-  }
- ],
  "blocks": [
   {
    "block": "explain",
@@ -106,6 +12,481 @@
    "place": "chart",
    "title": "Grants and a reimbursement",
    "tone": "define"
+  },
+  {
+   "block": "chart",
+   "place": "chart",
+   "so": {
+    "figures": {
+     "a": {
+      "text": "$201,165",
+      "unit": "",
+      "value": 201165.0
+     },
+     "b": {
+      "text": "$784,099",
+      "unit": "",
+      "value": 784099.0
+     },
+     "c": {
+      "text": "$454,567",
+      "unit": "",
+      "value": 454566.6666666667
+     },
+     "d": {
+      "text": "$818,087",
+      "unit": "",
+      "value": 818087
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     }
+    },
+    "literals": [],
+    "text": "It swings: $201,165 at its lowest, $784,099 at its highest, against an average of $454,567. The FY2027 listing, $818,087, is above every year paid."
+   },
+   "spec": {
+    "decimals": null,
+    "from_zero": true,
+    "kind": "line",
+    "note": {
+     "figures": {},
+     "literals": [],
+     "text": "DESE’s payments by the year paid; the next year is the district’s initial listing, which DESE revises during the year."
+    },
+    "reference": {
+     "label": "Average, FY2006 to FY2026",
+     "text": "$454,567",
+     "value": 454566.6666666667
+    },
+    "series": [
+     {
+      "basis": "published",
+      "mark": "line",
+      "name": "Paid, by year of payment",
+      "texts": [
+       "$293,705",
+       "$298,889",
+       "$305,393",
+       "$474,301",
+       "$211,224",
+       "$201,165",
+       "$419,945",
+       "$615,317",
+       "$575,389",
+       "$672,634",
+       "$784,099",
+       "$507,832",
+       "$366,790",
+       "$430,958",
+       "$478,987",
+       "$484,579",
+       "$519,394",
+       "$415,750",
+       "$401,966",
+       "$508,441",
+       "$579,142",
+       null
+      ],
+      "values": [
+       293705.0,
+       298889.0,
+       305393.0,
+       474301.0,
+       211224.0,
+       201165.0,
+       419945.0,
+       615317.0,
+       575389.0,
+       672634.0,
+       784099.0,
+       507832.0,
+       366790.0,
+       430958.0,
+       478987.0,
+       484579.0,
+       519394.0,
+       415750.0,
+       401966.0,
+       508441.0,
+       579142.0,
+       null
+      ]
+     },
+     {
+      "basis": "stated",
+      "mark": "line",
+      "name": "Initial listing (district)",
+      "texts": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       "$579,142",
+       "$818,087"
+      ],
+      "values": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       579142.0,
+       818087
+      ]
+     }
+    ],
+    "stacked": false,
+    "title": "Circuit breaker, paid each year",
+    "type": "series",
+    "unit": "$",
+    "x": [
+     "FY2006",
+     "FY2007",
+     "FY2008",
+     "FY2009",
+     "FY2010",
+     "FY2011",
+     "FY2012",
+     "FY2013",
+     "FY2014",
+     "FY2015",
+     "FY2016",
+     "FY2017",
+     "FY2018",
+     "FY2019",
+     "FY2020",
+     "FY2021",
+     "FY2022",
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026",
+     "FY2027"
+    ]
+   }
+  },
+  {
+   "block": "chart",
+   "place": "chart",
+   "so": {
+    "figures": {
+     "a": {
+      "text": "$393,408",
+      "unit": "",
+      "value": 393408.0
+     },
+     "b": {
+      "text": "$423,413",
+      "unit": "",
+      "value": 423413.0
+     },
+     "c": {
+      "text": "$430,549",
+      "unit": "",
+      "value": 430549
+     },
+     "n": {
+      "text": "2",
+      "unit": "",
+      "value": 2
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     },
+     "z": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "An average of $393,408 a year, and $423,413 announced for FY2027. At its usual yearly change FY2028 would be about $430,549: our estimate, not an award. It fell in each of the last 2 years, so the estimate may run high."
+   },
+   "spec": {
+    "decimals": null,
+    "from_zero": true,
+    "kind": "line",
+    "note": {
+     "figures": {
+      "p": {
+       "text": "1.7%",
+       "unit": "",
+       "value": 1.6854236534432632
+      },
+      "y": {
+       "text": "FY2027",
+       "unit": "fiscal year",
+       "value": 2027
+      }
+     },
+     "literals": [],
+     "text": "DESE’s allocations by award year; FY2027 is announced. The dashed end is ours: FY2027 moved by the median yearly change, 1.7%."
+    },
+    "reference": {
+     "label": "Average, FY2017 to FY2027",
+     "text": "$393,408",
+     "value": 393408.0
+    },
+    "series": [
+     {
+      "basis": "published",
+      "mark": "line",
+      "name": "IDEA (special education) (#240), allocated",
+      "texts": [
+       "$353,466",
+       "$360,585",
+       "$362,328",
+       "$369,440",
+       "$386,101",
+       "$399,152",
+       "$404,772",
+       "$420,163",
+       "$424,156",
+       "$423,912",
+       "$423,413",
+       null
+      ],
+      "values": [
+       353466.0,
+       360585.0,
+       362328.0,
+       369440.0,
+       386101.0,
+       399152.0,
+       404772.0,
+       420163.0,
+       424156.0,
+       423912.0,
+       423413.0,
+       null
+      ]
+     },
+     {
+      "basis": "estimate",
+      "mark": "line",
+      "name": "Next year, our estimate",
+      "texts": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       "$423,413",
+       "$430,549"
+      ],
+      "values": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       423413.0,
+       430549
+      ]
+     }
+    ],
+    "stacked": false,
+    "title": "IDEA (special education), allocated each year",
+    "type": "series",
+    "unit": "$",
+    "x": [
+     "FY2017",
+     "FY2018",
+     "FY2019",
+     "FY2020",
+     "FY2021",
+     "FY2022",
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026",
+     "FY2027",
+     "FY2028"
+    ]
+   }
+  },
+  {
+   "block": "chart",
+   "place": "chart",
+   "so": {
+    "figures": {
+     "a": {
+      "text": "$12,927",
+      "unit": "",
+      "value": 12927.111111111111
+     },
+     "b": {
+      "text": "$13,967",
+      "unit": "",
+      "value": 13967.0
+     },
+     "c": {
+      "text": "$14,152",
+      "unit": "",
+      "value": 14152
+     },
+     "y": {
+      "text": "FY2027",
+      "unit": "fiscal year",
+      "value": 2027
+     },
+     "z": {
+      "text": "FY2028",
+      "unit": "fiscal year",
+      "value": 2028
+     }
+    },
+    "literals": [],
+    "text": "An average of $12,927 a year, and $13,967 announced for FY2027. At its usual yearly change FY2028 would be about $14,152: our estimate, not an award."
+   },
+   "spec": {
+    "decimals": null,
+    "from_zero": true,
+    "kind": "line",
+    "note": {
+     "figures": {
+      "p": {
+       "text": "1.3%",
+       "unit": "",
+       "value": 1.3240256857085742
+      },
+      "y": {
+       "text": "FY2027",
+       "unit": "fiscal year",
+       "value": 2027
+      }
+     },
+     "literals": [],
+     "text": "DESE’s allocations by award year; FY2027 is announced. The dashed end is ours: FY2027 moved by the median yearly change, 1.3%."
+    },
+    "reference": {
+     "label": "Average, FY2019 to FY2027",
+     "text": "$12,927",
+     "value": 12927.111111111111
+    },
+    "series": [
+     {
+      "basis": "published",
+      "mark": "line",
+      "name": "IDEA (preschool) (#262), allocated",
+      "texts": [
+       "$12,026",
+       "$12,303",
+       "$12,401",
+       "$12,500",
+       "$13,083",
+       "$13,325",
+       "$13,373",
+       "$13,366",
+       "$13,967",
+       null
+      ],
+      "values": [
+       12026.0,
+       12303.0,
+       12401.0,
+       12500.0,
+       13083.0,
+       13325.0,
+       13373.0,
+       13366.0,
+       13967.0,
+       null
+      ]
+     },
+     {
+      "basis": "estimate",
+      "mark": "line",
+      "name": "Next year, our estimate",
+      "texts": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       "$13,967",
+       "$14,152"
+      ],
+      "values": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       13967.0,
+       14152
+      ]
+     }
+    ],
+    "stacked": false,
+    "title": "IDEA (preschool), allocated each year",
+    "type": "series",
+    "unit": "$",
+    "x": [
+     "FY2019",
+     "FY2020",
+     "FY2021",
+     "FY2022",
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026",
+     "FY2027",
+     "FY2028"
+    ]
+   }
   },
   {
    "block": "panels",
@@ -236,483 +617,8 @@
      "title": "Ended and small grants"
     }
    ],
-   "place": "also1",
+   "place": "chart",
    "title": "What each one pays for"
-  },
-  {
-   "block": "chart",
-   "place": "also2",
-   "so": {
-    "figures": {
-     "a": {
-      "text": "$201,165",
-      "unit": "",
-      "value": 201165.0
-     },
-     "b": {
-      "text": "$784,099",
-      "unit": "",
-      "value": 784099.0
-     },
-     "c": {
-      "text": "$454,567",
-      "unit": "",
-      "value": 454566.6666666667
-     },
-     "d": {
-      "text": "$818,087",
-      "unit": "",
-      "value": 818087
-     },
-     "y": {
-      "text": "FY2027",
-      "unit": "fiscal year",
-      "value": 2027
-     }
-    },
-    "literals": [],
-    "text": "It swings: $201,165 at its lowest, $784,099 at its highest, against an average of $454,567. The FY2027 listing, $818,087, is above every year paid."
-   },
-   "spec": {
-    "decimals": null,
-    "from_zero": true,
-    "kind": "bar",
-    "note": {
-     "figures": {},
-     "literals": [],
-     "text": "DESE’s payments by the year paid; the next year is the district’s initial listing, which DESE revises during the year."
-    },
-    "reference": {
-     "label": "Average, FY2006 to FY2026",
-     "text": "$454,567",
-     "value": 454566.6666666667
-    },
-    "series": [
-     {
-      "basis": "published",
-      "mark": "bar",
-      "name": "Paid, by year of payment",
-      "texts": [
-       "$293,705",
-       "$298,889",
-       "$305,393",
-       "$474,301",
-       "$211,224",
-       "$201,165",
-       "$419,945",
-       "$615,317",
-       "$575,389",
-       "$672,634",
-       "$784,099",
-       "$507,832",
-       "$366,790",
-       "$430,958",
-       "$478,987",
-       "$484,579",
-       "$519,394",
-       "$415,750",
-       "$401,966",
-       "$508,441",
-       "$579,142",
-       null
-      ],
-      "values": [
-       293705.0,
-       298889.0,
-       305393.0,
-       474301.0,
-       211224.0,
-       201165.0,
-       419945.0,
-       615317.0,
-       575389.0,
-       672634.0,
-       784099.0,
-       507832.0,
-       366790.0,
-       430958.0,
-       478987.0,
-       484579.0,
-       519394.0,
-       415750.0,
-       401966.0,
-       508441.0,
-       579142.0,
-       null
-      ]
-     },
-     {
-      "basis": "stated",
-      "mark": "bar",
-      "name": "Initial listing (district)",
-      "texts": [
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       "$818,087"
-      ],
-      "values": [
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       818087
-      ]
-     }
-    ],
-    "stacked": false,
-    "title": "Circuit breaker, paid each year",
-    "type": "series",
-    "unit": "$",
-    "x": [
-     "FY2006",
-     "FY2007",
-     "FY2008",
-     "FY2009",
-     "FY2010",
-     "FY2011",
-     "FY2012",
-     "FY2013",
-     "FY2014",
-     "FY2015",
-     "FY2016",
-     "FY2017",
-     "FY2018",
-     "FY2019",
-     "FY2020",
-     "FY2021",
-     "FY2022",
-     "FY2023",
-     "FY2024",
-     "FY2025",
-     "FY2026",
-     "FY2027"
-    ]
-   }
-  },
-  {
-   "block": "chart",
-   "place": "also2",
-   "so": {
-    "figures": {
-     "a": {
-      "text": "$393,408",
-      "unit": "",
-      "value": 393408.0
-     },
-     "b": {
-      "text": "$423,413",
-      "unit": "",
-      "value": 423413.0
-     },
-     "c": {
-      "text": "$430,549",
-      "unit": "",
-      "value": 430549
-     },
-     "n": {
-      "text": "2",
-      "unit": "",
-      "value": 2
-     },
-     "y": {
-      "text": "FY2027",
-      "unit": "fiscal year",
-      "value": 2027
-     },
-     "z": {
-      "text": "FY2028",
-      "unit": "fiscal year",
-      "value": 2028
-     }
-    },
-    "literals": [],
-    "text": "An average of $393,408 a year, and $423,413 announced for FY2027. At its usual yearly change FY2028 would be about $430,549: our estimate, not an award. It fell in each of the last 2 years, so the estimate may run high."
-   },
-   "spec": {
-    "decimals": null,
-    "from_zero": true,
-    "kind": "bar",
-    "note": {
-     "figures": {
-      "p": {
-       "text": "1.7%",
-       "unit": "",
-       "value": 1.6854236534432632
-      },
-      "y": {
-       "text": "FY2027",
-       "unit": "fiscal year",
-       "value": 2027
-      }
-     },
-     "literals": [],
-     "text": "DESE’s allocations by award year; FY2027 is announced. The last bar is ours: FY2027 moved by the median yearly change, 1.7%."
-    },
-    "reference": {
-     "label": "Average, FY2017 to FY2027",
-     "text": "$393,408",
-     "value": 393408.0
-    },
-    "series": [
-     {
-      "basis": "published",
-      "mark": "bar",
-      "name": "IDEA (special education) (#240), allocated",
-      "texts": [
-       "$353,466",
-       "$360,585",
-       "$362,328",
-       "$369,440",
-       "$386,101",
-       "$399,152",
-       "$404,772",
-       "$420,163",
-       "$424,156",
-       "$423,912",
-       "$423,413",
-       null
-      ],
-      "values": [
-       353466.0,
-       360585.0,
-       362328.0,
-       369440.0,
-       386101.0,
-       399152.0,
-       404772.0,
-       420163.0,
-       424156.0,
-       423912.0,
-       423413.0,
-       null
-      ]
-     },
-     {
-      "basis": "estimate",
-      "mark": "bar",
-      "name": "Next year, our estimate",
-      "texts": [
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       "$430,549"
-      ],
-      "values": [
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       430549
-      ]
-     }
-    ],
-    "stacked": false,
-    "title": "IDEA (special education), allocated each year",
-    "type": "series",
-    "unit": "$",
-    "x": [
-     "FY2017",
-     "FY2018",
-     "FY2019",
-     "FY2020",
-     "FY2021",
-     "FY2022",
-     "FY2023",
-     "FY2024",
-     "FY2025",
-     "FY2026",
-     "FY2027",
-     "FY2028"
-    ]
-   }
-  },
-  {
-   "block": "chart",
-   "place": "also2",
-   "so": {
-    "figures": {
-     "a": {
-      "text": "$12,927",
-      "unit": "",
-      "value": 12927.111111111111
-     },
-     "b": {
-      "text": "$13,967",
-      "unit": "",
-      "value": 13967.0
-     },
-     "c": {
-      "text": "$14,152",
-      "unit": "",
-      "value": 14152
-     },
-     "y": {
-      "text": "FY2027",
-      "unit": "fiscal year",
-      "value": 2027
-     },
-     "z": {
-      "text": "FY2028",
-      "unit": "fiscal year",
-      "value": 2028
-     }
-    },
-    "literals": [],
-    "text": "An average of $12,927 a year, and $13,967 announced for FY2027. At its usual yearly change FY2028 would be about $14,152: our estimate, not an award."
-   },
-   "spec": {
-    "decimals": null,
-    "from_zero": true,
-    "kind": "bar",
-    "note": {
-     "figures": {
-      "p": {
-       "text": "1.3%",
-       "unit": "",
-       "value": 1.3240256857085742
-      },
-      "y": {
-       "text": "FY2027",
-       "unit": "fiscal year",
-       "value": 2027
-      }
-     },
-     "literals": [],
-     "text": "DESE’s allocations by award year; FY2027 is announced. The last bar is ours: FY2027 moved by the median yearly change, 1.3%."
-    },
-    "reference": {
-     "label": "Average, FY2019 to FY2027",
-     "text": "$12,927",
-     "value": 12927.111111111111
-    },
-    "series": [
-     {
-      "basis": "published",
-      "mark": "bar",
-      "name": "IDEA (preschool) (#262), allocated",
-      "texts": [
-       "$12,026",
-       "$12,303",
-       "$12,401",
-       "$12,500",
-       "$13,083",
-       "$13,325",
-       "$13,373",
-       "$13,366",
-       "$13,967",
-       null
-      ],
-      "values": [
-       12026.0,
-       12303.0,
-       12401.0,
-       12500.0,
-       13083.0,
-       13325.0,
-       13373.0,
-       13366.0,
-       13967.0,
-       null
-      ]
-     },
-     {
-      "basis": "estimate",
-      "mark": "bar",
-      "name": "Next year, our estimate",
-      "texts": [
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       "$14,152"
-      ],
-      "values": [
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       null,
-       14152
-      ]
-     }
-    ],
-    "stacked": false,
-    "title": "IDEA (preschool), allocated each year",
-    "type": "series",
-    "unit": "$",
-    "x": [
-     "FY2019",
-     "FY2020",
-     "FY2021",
-     "FY2022",
-     "FY2023",
-     "FY2024",
-     "FY2025",
-     "FY2026",
-     "FY2027",
-     "FY2028"
-    ]
-   }
   }
  ],
  "category": "special-education",

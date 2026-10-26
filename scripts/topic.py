@@ -192,6 +192,14 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
     else:
         title, home, _ = REG.TOPICS[id]
     f = _unit(finding, finding_figures, finding_allow, FINDING_MAX, '%s finding' % id)
+    # A BLOCK PLACED AFTER A CHART THE PAGE DOES NOT HAVE IS NEVER DRAWN (Topic.tsx renders
+    # also1/also2 blocks inside the loop over `also`). Three trend charts vanished that way on
+    # 26 October 2026 with every check passing. Refuse it here.
+    for b_ in blocks:
+        need = {'also1': 1, 'also2': 2}.get(b_.get('place'))
+        if need and len(also) < need:
+            raise ConclusionError('%s: a block is placed at %r, but the page has %d also chart(s)'
+                                  % (id, b_['place'], len(also)))
     if not FACTS[0] <= len(facts) <= FACTS[1]:
         raise ConclusionError('%s: %d facts; a topic holds %d to %d' % ((id, len(facts)) + FACTS))
     if not CONCLUSIONS[0] <= len(conclusions) <= CONCLUSIONS[1]:

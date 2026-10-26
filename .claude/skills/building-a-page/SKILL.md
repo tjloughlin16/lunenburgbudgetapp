@@ -40,9 +40,14 @@ Ask first: *what KIND of answer is this?*
 | causes and effects, or which source does what | a table of marks | `TB.checks` |
 | something a reader will misread | a definition first | `TB.explain`, tone `define` |
 | steps that add up (a bridge, a waterfall) | a bridge or stack | `TP.bridge`, or `custom` |
-| a quantity over years | a series | `TP.series` |
+| a quantity over years (a TREND) | lines | `TP.series(kind='line')` |
+| what a whole is made of (COMPOSITION) | stacked bars | `TP.series(kind='bar', stacked=True)` |
 | things ranked by size | a ranking | `TP.ranking` |
 | anything else | a component written for this page | `TB.custom` + `fy28/src/components/blocks/custom/` |
+
+**Lines show trends, bars show composition** (TJ, 26 October 2026). A grant's history over the
+years is a line; how a year's total splits between grants is a stacked bar. Next year, when shown,
+is its own track continuing the line, in its own basis (a published figure, or `estimate`).
 
 Any chart can also be placed mid-page with `TB.chart(spec, place=...)`. Places: `lead`,
 `chart`, `also1`, `also2`, `body`, `end`. Block words do not count toward the 320-word page
