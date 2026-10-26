@@ -243,7 +243,15 @@ export default function App() {
     setTab('context')
   }, [tab])
 
+  /** A TAB WHOSE ADDRESS A HUB NOW HOLDS. Typed in, /special-education resolves to the hub;
+   *  clicked from the Menu (`to: 'sped'`) it set the old tab and drew the page the hub
+   *  replaced -- one address, two pages, depending on how you arrived (TJ, 26 October 2026:
+   *  "its the special education button from the menu"). The address decides, as it does on a
+   *  fresh load: the hub is loaded the way every topic link loads it. */
+  const hubHolds = (t: Tab) => t !== 'topic' && t !== 'athletics' && tabFromPath(pathFor(t)) === 'topic'
+
   const go = (t: Tab, anchor?: string) => {
+    if (hubHolds(t)) { window.location.assign(pathFor(t) + (anchor ? `#${anchor}` : '')); return }
     if (t !== tab) setFrom(tab)
     setTab(t); navigate(t, anchor)
     // The hash effect above scrolls once the target tab has rendered. It only fires on a
@@ -264,6 +272,7 @@ export default function App() {
    *  If the crumb is the page we just came from, actually go back and let popstate do the
    *  work. Otherwise replace the current entry rather than adding one. */
   const goUp = (t: Tab) => {
+    if (hubHolds(t)) { window.location.assign(pathFor(t)); return }
     if (from === t) { window.history.back(); return }
     setFrom(null)
     setTab(t)
