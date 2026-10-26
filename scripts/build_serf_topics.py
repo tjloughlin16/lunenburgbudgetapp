@@ -1806,9 +1806,10 @@ def build():
             so='The vote already counts on it: tuition is budgeted after subtracting the expected '
                'repayment, so it cannot also stand in for a reserve.'),
         TB.panel('What budget to carry', [
-            (('Years the three lines spent under budget, of %s' % C.num(nyrs), {'n': N(nyrs)}),
-             C.num(n_under), 'good'),
-            ('Budgeting the cushion yearly costs more than a reserve by', C.usd(extra), 'bad')],
+            ('Years the three lines spent under budget',
+             '%s of %s' % (C.num(n_under), C.num(nyrs)), 'good'),
+            (('Extra a yearly cushion costs over a reserve, %s years' % C.num(nyrs), {'n': N(nyrs)}),
+             C.usd(extra), 'bad')],
             sub='Most years the three lines leave money unspent.',
             so='The budget is usually big enough in total. Padding it every year costs more than '
                'holding a reserve once.')],
