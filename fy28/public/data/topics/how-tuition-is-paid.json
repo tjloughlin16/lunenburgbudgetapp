@@ -3,85 +3,6 @@
   {
    "decimals": null,
    "from_zero": true,
-   "kind": "line",
-   "note": {
-    "figures": {},
-    "literals": [],
-    "text": "Of every dollar of placement cost the state counts, how much it paid back, by the year it paid; each payment covers the year before."
-   },
-   "reference": null,
-   "series": [
-    {
-     "basis": "published",
-     "mark": "line",
-     "name": "The state’s share",
-     "texts": [
-      "14.2%",
-      "14.7%",
-      "27.2%",
-      "31.6%",
-      "33.9%",
-      "32.5%",
-      "39.0%",
-      "32.7%",
-      "33.0%",
-      "38.9%",
-      "38.8%",
-      "44.8%",
-      "48.9%",
-      "49.6%",
-      "43.9%",
-      "42.4%",
-      "46.1%"
-     ],
-     "values": [
-      14.159885285783334,
-      14.701723075708776,
-      27.218113045146506,
-      31.61584190974345,
-      33.86715041387108,
-      32.48799270481953,
-      39.00646559979544,
-      32.74286414308465,
-      32.98257666769778,
-      38.898461510689096,
-      38.817532385965336,
-      44.81560161032413,
-      48.927565830190936,
-      49.58217403074751,
-      43.93719291917387,
-      42.4397552648932,
-      46.06510370061047
-     ]
-    }
-   ],
-   "stacked": false,
-   "title": "Share of placement costs the state paid back",
-   "type": "series",
-   "unit": "%",
-   "x": [
-    "FY2010",
-    "FY2011",
-    "FY2012",
-    "FY2013",
-    "FY2014",
-    "FY2015",
-    "FY2016",
-    "FY2017",
-    "FY2018",
-    "FY2019",
-    "FY2020",
-    "FY2021",
-    "FY2022",
-    "FY2023",
-    "FY2024",
-    "FY2025",
-    "FY2026"
-   ]
-  },
-  {
-   "decimals": null,
-   "from_zero": true,
    "kind": "bar",
    "note": {
     "figures": {},
@@ -287,43 +208,6 @@
   {
    "figures": {
     "a": {
-     "text": "46.1%",
-     "unit": "",
-     "value": 46.06510370061047
-    },
-    "b": {
-     "text": "14.2%",
-     "unit": "",
-     "value": 14.159885285783334
-    },
-    "y": {
-     "text": "FY2026",
-     "unit": "fiscal year",
-     "value": 2026
-    },
-    "z": {
-     "text": "FY2010",
-     "unit": "fiscal year",
-     "value": 2010
-    }
-   },
-   "literals": [],
-   "rests_on": [
-    "t-share",
-    "t-share0",
-    "t-elig",
-    "t-paid"
-   ],
-   "so": {
-    "figures": {},
-    "literals": [],
-    "text": "The state now covers nearly half of placement costs, so a placement’s price overstates what it costs the town."
-   },
-   "text": "The state paid back 46.1% of placement costs in FY2026, up from 14.2% in FY2010."
-  },
-  {
-   "figures": {
-    "a": {
      "text": "73.7%",
      "unit": "",
      "value": 73.73331381173969
@@ -448,86 +332,6 @@
    }
   },
   {
-   "id": "t-elig",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "placement costs the state counted, for FY2026"
-   },
-   "value": {
-    "text": "$1,257,225",
-    "unit": "",
-    "value": 1257225.0
-   }
-  },
-  {
-   "id": "t-paid",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "repaid by the state, FY2026"
-   },
-   "value": {
-    "text": "$579,142",
-    "unit": "",
-    "value": 579142.0
-   }
-  },
-  {
-   "id": "t-share",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "the state’s share of placement costs, FY2026"
-   },
-   "value": {
-    "text": "46.1%",
-    "unit": "",
-    "value": 46.06510370061047
-   }
-  },
-  {
-   "id": "t-share0",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2010",
-      "unit": "fiscal year",
-      "value": 2010
-     }
-    },
-    "literals": [],
-    "text": "the state’s share, FY2010"
-   },
-   "value": {
-    "text": "14.2%",
-    "unit": "",
-    "value": 14.159885285783334
-   }
-  },
-  {
    "id": "t-net",
    "kind": "published",
    "label": {
@@ -647,28 +451,23 @@
  "finding": {
   "figures": {
    "a": {
-    "text": "$579,142",
+    "text": "$230,514",
     "unit": "",
-    "value": 579142.0
+    "value": 230514
    },
    "b": {
-    "text": "$1,257,225",
+    "text": "$133,571",
     "unit": "",
-    "value": 1257225.0
+    "value": 133571
    },
-   "p": {
-    "text": "46.1%",
+   "c": {
+    "text": "$96,943",
     "unit": "",
-    "value": 46.06510370061047
-   },
-   "y": {
-    "text": "FY2026",
-    "unit": "fiscal year",
-    "value": 2026
+    "value": 96943
    }
   },
   "literals": [],
-  "text": "In FY2026 the state paid back $579,142 of $1,257,225 in placement costs, 46.1%, a year after Lunenburg paid."
+  "text": "Of $230,514 a year for an average private placement, Lunenburg keeps $96,943 after the state repays $133,571."
  },
  "full_report": {
   "href": "",
@@ -733,5 +532,5 @@
   }
  ],
  "table": null,
- "title": "Out-of-district tuition payments"
+ "title": "Tuition after repayment"
 }

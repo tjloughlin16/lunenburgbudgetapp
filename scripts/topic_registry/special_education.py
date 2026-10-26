@@ -33,6 +33,9 @@ CATEGORY = dict(
                ('/what-we-cannot-answer', 'What we cannot answer')])
 GENERATOR = 'build_special_education_topics.py'
 TOPIC_GENERATORS = {'sped-all-funds': 'build_school_all_funds.py',
+                    # Merged 26 October 2026 with the SERF shelf's five steps, which need
+                    # that script's measures (TJ: "only have one called 'circuit breaker'").
+                    'circuit-breaker': 'build_serf_topics.py',
                     'sped-providers': 'build_journal_sped_topics.py',
                     'sped-burndown': 'build_journal_surplus_topics.py',
                     'sped-definition': 'build_sped_crosswalk.py'}

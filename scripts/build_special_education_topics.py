@@ -455,84 +455,9 @@ def build():
     s26 = 100 * c26['paid_share_of_claim']
     se26 = 100 * c26['paid_share_of_eligible']
     tr0 = CO['cb_transport_first_year']
-    out['circuit-breaker'] = TP.page(
-        'circuit-breaker',
-        'The state paid %s in %s on %s of eligible costs for %s children: %s.'
-        % (C.usd(c26['paid']), C.fy(c26['fy']), C.usd(c26['eligible']), C.num(c26['children']),
-           C.pct(se26)),
-        [f('paid26', U(c26['paid']), 'paid by the state in %s, for %s costs'
-           % (C.fy(c26['fy']), C.fy(c26['fy'] - 1)), 'published',
-           {'y': F(c26['fy']), 'z': F(c26['fy'] - 1)}),
-         f('elig26', U(c26['eligible']), 'eligible costs it was paid on', 'published'),
-         f('kids26', N(c26['children'], 'children'), 'children claimed, %s' % C.fy(c26['fy']),
-           'published', {'y': F(c26['fy'])}),
-         f('thresh26', U(c26['threshold']), 'threshold taken off first, %s' % C.fy(c26['fy']),
-           'published', {'y': F(c26['fy'])}),
-         f('perkid', U(c26['threshold_per_child']), 'of threshold per child claimed', 'published'),
-         f('se26', P(se26), 'of eligible costs paid (our division)', 'published'),
-         f('identity', N(ident, 'years'), 'of %s, eligible less threshold equals the claim'
-           % C.num(nyears), 'published', {'n': N(nyears)}),
-         f('s10', P(s10), 'of the net claim paid, %s' % C.fy(2010), 'published', {'y': F(2010)}),
-         f('s23', P(s23), 'of the net claim paid, %s' % C.fy(2023), 'published', {'y': F(2023)}),
-         f('kpeak', N(kpeak['children'], 'children'), 'children claimed, %s' % C.fy(kpeak['fy']),
-           'published', {'y': F(kpeak['fy'])}),
-         f('transport', U(c26['transport']), 'of the %s payment for transport' % C.fy(c26['fy']),
-           'published', {'y': F(c26['fy'])})],
-        [con('The threshold, %s in %s, comes off first; the state paid %s of eligible costs.'
-             % (C.usd(c26['threshold']), C.fy(c26['fy']), C.pct(se26)),
-             ['thresh26', 'perkid', 'elig26', 'paid26', 'se26', 'identity'],
-             {'a': U(c26['threshold']), 'y': F(c26['fy']), 'p': P(se26)}),
-         con('The share of the claim paid has moved: %s in %s, %s in %s.'
-             % (C.pct(s10), C.fy(2010), C.pct(s23), C.fy(2023)), ['s10', 's23'],
-             {'a': P(s10), 'y': F(2010), 'b': P(s23), 'z': F(2023)},
-             notes=[step('The statute is not in this archive; that the share follows the state’s '
-                         'appropriation is how the district describes it, not quoted law.', 'gap',
-                         closes='the circuit breaker statute as written, and each year’s state '
-                                'appropriation for it')]),
-         con('Children claimed fell from %s in %s to %s in %s.'
-             % (C.num(kpeak['children']), C.fy(kpeak['fy']), C.num(c26['children']),
-                C.fy(c26['fy'])), ['kpeak', 'kids26'],
-             {'a': N(kpeak['children']), 'y': F(kpeak['fy']), 'b': N(c26['children']),
-              'z': F(c26['fy'])},
-             notes=[step('Why the count fell is not published: the file counts children and '
-                         'sums dollars, and names no placement.', 'gap',
-                         closes='the district’s circuit breaker claims by year, child by child, '
-                                'with names removed')]),
-         con('Since %s the state also repays transport: %s of the %s payment.'
-             % (C.fy(tr0), C.usd(c26['transport']), C.fy(c26['fy'])), ['transport'],
-             {'y': F(tr0), 'a': U(c26['transport']), 'z': F(c26['fy'])})],
-        # The finding is what the state paid against what was eligible, after the threshold
-        # comes off: three flows from one file, by year of payment.
-        chart=TP.series('Circuit breaker, eligible and paid', [C.fy(r['fy']) for r in CB['series']], [
-            TP.track('Eligible costs', [r['eligible'] for r in CB['series']], 'published', 'line'),
-            TP.track('Threshold taken off first', [r['threshold'] for r in CB['series']],
-                     'published', 'line'),
-            TP.track('Paid by the state', [r['paid'] for r in CB['series']], 'published', 'bar')],
-            '$', note='DESE’s reimbursement file, by year of payment; each payment is for the costs '
-                      'of the year before.'),
-        table=dict(caption='The circuit breaker, by year of payment', views=[
-            dict(key='years', label='Lunenburg', total_col=-1, kinds=['ledger'] * 5,
-                 columns=['Children claimed', 'Eligible costs', 'Threshold', 'Paid',
-                          'Share of claim paid'],
-                 rows=[dict(label=C.fy(r['fy']), cells=[
-                     C.num(r['children']), C.usd(r['eligible']), C.usd(r['threshold']),
-                     C.usd(r['paid']), C.pct(100 * r['paid_share_of_claim'])])
-                     for r in sorted(CB['series'], key=lambda r: -r['fy'])],
-                 note='DESE’s reimbursement file. A payment reimburses the year before; '
-                      'transport is in the paid column from %s.' % C.fy(tr0)),
-            dict(key='peers', label='Neighbours, %s' % C.fy(CB['last_fy']), total_col=-1,
-                 # No per-child column: eligible dollars over children claimed is the proxy
-                 # rule 7 forbids (see cost-per-placement above).
-                 kinds=['ledger', 'ledger'],
-                 columns=['Children claimed', 'Share of claim paid'],
-                 rows=[dict(label=p['district'], cells=[
-                     C.num(p['children']), C.pct(100 * p['paid_share'])])
-                     for p in sorted(CB['peers'], key=lambda p: p['district'])],
-                 note='The same file, the same year.')]),
-        said=[said(CO, 'fortyfour'), said(CO, 'eightyk')],
-        sources=S('dese-circuit-breaker.xlsx', '2023-2024-circuit-breaker-presentation.pdf'),
-        finding_figures={'a': U(c26['paid']), 'y': F(c26['fy']), 'b': U(c26['eligible']),
-                         'n': N(c26['children']), 'p': P(se26)})
+    # The Circuit breaker PAGE is written by build_serf_topics.py since 26 October 2026, merged
+    # with the SERF shelf's five steps (TJ: "only have one called 'circuit breaker'"). The
+    # checks above stay: the account page below reads the same payloads.
 
     # ------------------------------------------------ the circuit breaker account
     acct = SC['cb_account']

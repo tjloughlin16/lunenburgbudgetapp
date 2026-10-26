@@ -1036,7 +1036,17 @@ function resolvePath(pathname: string): Tab | null {
 export function topicIdFromPath(pathname: string): string | null {
   const m = /^\/([a-z0-9-]+)(?:\/([a-z0-9-]+))?\/?$/.exec(pathname.toLowerCase())
   if (m && !m[2] && TOPIC_ALIASES[m[1]]) return TOPIC_ALIASES[m[1]]
-  return m && TOPIC_CATEGORIES.includes(m[1]) ? (m[2] ?? m[1]) : null
+  if (!m || !TOPIC_CATEGORIES.includes(m[1])) return null
+  return m[2] ? (TOPIC_MERGED[m[2]] ?? m[2]) : m[1]
+}
+
+/** TOPIC PAGES MERGED INTO ANOTHER: old id -> the page that holds it now. The page is
+ *  fetched by the new id and Topic.tsx moves the address bar to its path, so a shared link
+ *  to the old page lands on what replaced it. */
+export const TOPIC_MERGED: Record<string, string> = {
+  // TJ, 26 October 2026: "maybe we merge and only have one called 'circuit breaker'" --
+  // the five steps from a placement to the bill, published for one day under SERF.
+  'surprises-and-state-aid': 'circuit-breaker',
 }
 
 /** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id. These were

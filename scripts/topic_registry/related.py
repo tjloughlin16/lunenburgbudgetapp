@@ -37,9 +37,6 @@ WHY_MAX = 70
 MAX_PER_PAGE = 4
 
 RELATED = [
-    # The SERF overview, beside the pages that take each of its steps further.
-    [('surprises-and-state-aid', 'How a surprise is paid, and what state money does and does not do'),
-     ('special-education-grants', 'The federal and state grants, year by year')],
     # The SERF report: what the reserve meets, against what it would cost to budget instead.
     [('arrivals-and-the-budget', 'Whether a mid-year arrival left the year short'),
      ('surprise-costs', 'Which special education lines run over their vote'),

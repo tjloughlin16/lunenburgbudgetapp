@@ -340,7 +340,7 @@
     {
      "title": "How it works",
      "topics": [
-      "surprises-and-state-aid"
+      "circuit-breaker"
      ]
     },
     {
@@ -376,7 +376,7 @@
    "related": [],
    "shelf": "SERF report",
    "start": [
-    "surprises-and-state-aid",
+    "circuit-breaker",
     "reserve-options",
     "surprise-costs"
    ],
@@ -1931,8 +1931,8 @@
    "title": "Children schooled elsewhere"
   },
   "circuit-breaker": {
-   "finding": "The state paid $579,142 in FY2026 on $1,257,225 of eligible costs for 9 children: 46.1%.",
-   "generator": "scripts/build_special_education_topics.py",
+   "finding": "The one state payment that moves when a child is placed: part of the cost, a year late, already in the vote.",
+   "generator": "scripts/build_serf_topics.py",
    "home": "special-education",
    "id": "circuit-breaker",
    "minutes": 2,
@@ -1966,6 +1966,7 @@
    ],
    "shelves": [
     "special-education",
+    "special-education-reserve",
     "state-aid"
    ],
    "title": "Circuit breaker"
@@ -3245,7 +3246,7 @@
    "title": "Households with children"
   },
   "how-tuition-is-paid": {
-   "finding": "In FY2026 the state paid back $579,142 of $1,257,225 in placement costs, 46.1%, a year after Lunenburg paid.",
+   "finding": "Of $230,514 a year for an average private placement, Lunenburg keeps $96,943 after the state repays $133,571.",
    "generator": "scripts/build_serf_topics.py",
    "home": "special-education-reserve",
    "id": "how-tuition-is-paid",
@@ -3256,7 +3257,7 @@
    "shelves": [
     "special-education-reserve"
    ],
-   "title": "Out-of-district tuition payments"
+   "title": "Tuition after repayment"
   },
   "in-district-special-education": {
    "finding": "The paraprofessional budget line grew 12.78% a year over 10 budgets; the state’s FTE fell 63.3%.",
@@ -4442,14 +4443,7 @@
    "minutes": 1,
    "path": "/special-education-reserve/special-education-grants",
    "ready": true,
-   "related": [
-    {
-     "id": "surprises-and-state-aid",
-     "path": "/special-education-reserve/surprises-and-state-aid",
-     "title": "Surprises and state aid",
-     "why": "How a surprise is paid, and what state money does and does not do"
-    }
-   ],
+   "related": [],
    "shelves": [
     "special-education-reserve"
    ],
@@ -4874,27 +4868,6 @@
     "special-education-reserve"
    ],
    "title": "Surprise costs"
-  },
-  "surprises-and-state-aid": {
-   "finding": "Chapter 70 and IDEA are fixed in advance; the circuit breaker comes a year late and is already in the vote.",
-   "generator": "scripts/build_serf_topics.py",
-   "home": "special-education-reserve",
-   "id": "surprises-and-state-aid",
-   "minutes": 1,
-   "path": "/special-education-reserve/surprises-and-state-aid",
-   "ready": true,
-   "related": [
-    {
-     "id": "special-education-grants",
-     "path": "/special-education-reserve/special-education-grants",
-     "title": "Special education grants",
-     "why": "The federal and state grants, year by year"
-    }
-   ],
-   "shelves": [
-    "special-education-reserve"
-   ],
-   "title": "Surprises and state aid"
   },
   "tax-bill-neighbours": {
    "finding": "At $7,444, the average bill is 6th of 11 nearby towns and 145 of 351 statewide.",
