@@ -294,6 +294,19 @@ All of them passed at `7c348a12c`.
                   'with meaning |', d['finding']['text'][:100])
     EOF
 
+## TJ's request for /school-all-funds (26 Oct 2026): "timing of money in"
+
+*"timing of money in. So when we get money from all the various ... the tax money from the
+town, all the grants, the governor's budget, when that money gets injected ... And if there's
+caveats of when it needs to be spent."* For the whole-school-budget review (queue #3), not this
+shelf. A timeline per source: when it arrives, and the rule on when it must be spent.
+- Circuit breaker, measured (fund 2640 CRP lines): quarterly installments -- FY2023 Nov, Jan,
+  Apr, Jun; FY2024 Oct, Jan, Apr (4th arrived Jul 2024); FY2025 Jul, Oct, Dec, Apr, Jun; FY2026
+  Jul, Sep, Dec, then none posted. DESE FAQ q10: spend in the year received or the next.
+  OPEN: DESE prints $579,142 for FY2026; fund 2640 booked $325,970; $253,172 unlocated.
+- Federal grants (IDEA #240 etc.): a new fund each year (2758, 2813, 2814); their own periods.
+- The town appropriation, Chapter 70 / cherry sheet, revolving funds: to be read.
+
 ## Open, elsewhere (not this review's job; do not lose them)
 
 - **GitHub Support ticket 4909191** (purge the pre-rewrite commits): `notes/HANDOFF-HISTORY-REWRITE.md`.
