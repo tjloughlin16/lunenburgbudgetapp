@@ -12,12 +12,14 @@ CATEGORY = dict(
     id='fy2026-closeout', shelf='FY2026 closeout', title='FY2026 year end', area='special',
     # A special report (TJ, 24 Oct 2026): off the menu once FY2027's close replaces it.
     archive_after='2027-10-31', order=95,
+    # 26 October 2026, regrouped by the question a reader brings, not by which ledger answered
+    # it (period-13 report or journal): how much and where; when in the year; what could change.
+    # Lines over budget folded into Surplus by category, FY2025 school surplus into Surplus by
+    # year (fy28/src/routes.ts TOPIC_MERGED).
     groups=[
-        (None, ['fy2026-surplus-by-category', 'fy2026-lines-over-budget',
-                'fy2026-school-transfers', 'fy2025-school-surplus']),
-        # Hub B of notes/plans/MUNIS-JOURNAL-REPORTS.md: the surplus read from the journal.
-        ('Surplus from the journal', ['surplus-bridge', 'surplus-repeat-lines', 'budget-burndown',
-                                      'sped-burndown', 'surplus-suggestions']),
+        (None, ['fy2026-surplus-by-category', 'surplus-bridge', 'surplus-repeat-lines',
+                'surplus-suggestions']),
+        ('Through the year', ['budget-burndown', 'sped-burndown', 'fy2026-school-transfers']),
         ('School lines', ['fy2026-tuition-lines', 'fy2026-paraprofessional-overrun',
                           'fy2026-psychologist-line', 'special-education-transportation',
                           'fy2026-athletics-underspend']),
@@ -31,17 +33,15 @@ TOPIC_GENERATORS = {'surplus-bridge': 'build_journal_surplus_topics.py',
                     'surplus-suggestions': 'build_journal_surplus_topics.py'}
 TOPICS = {
     'fy2026-surplus-by-category': 'Surplus by category',
-    'fy2026-lines-over-budget': 'Lines over budget',
     'fy2026-school-transfers': 'Year-end transfers',
-    'fy2025-school-surplus': 'FY2025 school surplus',
     'fy2026-tuition-lines': 'Tuition at year end',
     'fy2026-paraprofessional-overrun': 'Paraprofessional overrun',
     'fy2026-psychologist-line': 'Psychologist line',
     'fy2026-town-unspent': 'Town unspent balance',
     'fy2026-snow-and-reserve-fund': 'Snow and Reserve Fund',
     'fy2026-school-retiree-insurance': 'School retiree insurance',
-    'surplus-bridge': 'Surplus, step by step',
-    'surplus-repeat-lines': 'Under budget twice',
+    'surplus-bridge': 'Surplus by year',
+    'surplus-repeat-lines': 'Repeat underspending',
     'budget-burndown': 'Budget burndown',
     'surplus-suggestions': 'Surplus suggestions',
 }

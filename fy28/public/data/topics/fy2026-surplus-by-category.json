@@ -1,4 +1,113 @@
 {
+ "also": [
+  {
+   "decimals": null,
+   "from_zero": true,
+   "kind": "bar",
+   "note": {
+    "figures": {},
+    "literals": [
+     "300",
+     "13"
+    ],
+    "text": "Department 300, period 13 of each year: accounts whose own available column closed below zero."
+   },
+   "reference": null,
+   "series": [
+    {
+     "basis": "published",
+     "mark": "bar",
+     "name": "Accounts past budget",
+     "texts": [
+      "70 accounts",
+      "52 accounts",
+      "4 accounts",
+      "57 accounts"
+     ],
+     "values": [
+      70,
+      52,
+      4,
+      57
+     ]
+    }
+   ],
+   "stacked": false,
+   "title": "School accounts past budget at the close",
+   "type": "series",
+   "unit": "accounts",
+   "x": [
+    "FY2023",
+    "FY2024",
+    "FY2025",
+    "FY2026"
+   ]
+  }
+ ],
+ "blocks": [
+  {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "All accounts under",
+       "tone": null,
+       "value": "$1,683,552"
+      },
+      {
+       "label": "Building and grounds upkeep",
+       "tone": null,
+       "value": "$195,934"
+      },
+      {
+       "label": "Counselors and psychologists",
+       "tone": null,
+       "value": "$191,162"
+      },
+      {
+       "label": "Teachers and substitutes",
+       "tone": null,
+       "value": "$167,992"
+      }
+     ],
+     "title": "Left under budget"
+    },
+    {
+     "rows": [
+      {
+       "label": "All accounts over",
+       "tone": "bad",
+       "value": "$1,201,434"
+      },
+      {
+       "label": "The five largest overruns",
+       "tone": "bad",
+       "value": "$811,010"
+      },
+      {
+       "label": "Paraprofessionals, net",
+       "tone": "bad",
+       "value": "$208,082"
+      },
+      {
+       "label": "Accounts over with no transfer in",
+       "tone": null,
+       "value": "38"
+      }
+     ],
+     "title": "Spent past budget"
+    }
+   ],
+   "place": "chart",
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "The surplus is what was left after the right-hand card was paid out of the left-hand one, inside one appropriation."
+   },
+   "title": "The two halves of the net"
+  }
+ ],
  "category": "fy2026-closeout",
  "chart": {
   "id": "fy26-school-surplus-causes",
@@ -29,6 +138,11 @@
     "over",
     "paras"
    ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "A small net sat on large misses both ways, so how closely lines were budgeted shows in the two halves, not in the total."
+   },
    "text": "The $482,118 is a net: $1,683,552 left on some accounts, $1,201,434 spent past others."
   },
   {
@@ -45,47 +159,179 @@
     }
    },
    "literals": [],
-   "rests_on": [
-    "bldg",
-    "bldg-pct",
-    "teach",
-    "teach-pct",
-    "couns"
-   ],
-   "text": "Building upkeep left the most, 28.4% of its budget; teachers left 1.5% of theirs."
-  },
-  {
-   "figures": {
-    "p": {
-     "text": "58.9%",
-     "unit": "",
-     "value": 58.9
-    }
-   },
-   "literals": [],
    "notes": [
     {
      "figures": {},
      "kind": "hypothesis",
      "literals": [],
      "text": "A hold on purchasing fits. So do orders slipping past year end, lines budgeted high, and other funds paying. The ledger cannot tell them apart."
-    },
-    {
-     "closes": "a statement by the district of which FY2026 purchases it held back, and when",
-     "figures": {},
-     "kind": "gap",
-     "literals": [
-      "FY2026"
-     ],
-     "text": "Which lines count as discretionary is our judgement, not the district’s."
     }
    ],
    "rests_on": [
-    "disc",
+    "bldg",
+    "bldg-pct",
+    "teach-pct",
     "disc-pct",
     "why"
    ],
-   "text": "By our grouping, 58.9% of the surplus sat in lines a decision to buy less moves."
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Salaries landed close to budget. The leftover sits in a few non-salary lines, which a decision to buy less moves."
+   },
+   "text": "Building upkeep left 28.4% of its budget; teachers left 1.5% of theirs."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
+    },
+    "b": {
+     "text": "70",
+     "unit": "",
+     "value": 70
+    },
+    "c": {
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "d": {
+     "text": "52",
+     "unit": "",
+     "value": 52
+    },
+    "m": {
+     "text": "4",
+     "unit": "",
+     "value": 4
+    },
+    "n": {
+     "text": "57",
+     "unit": "",
+     "value": 57
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    },
+    "z": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "k": {
+       "text": "38",
+       "unit": "",
+       "value": 38
+      },
+      "n": {
+       "text": "57",
+       "unit": "",
+       "value": 57
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "38 of the 57 received no transfer in during the year."
+    },
+    {
+     "figures": {
+      "z": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "That FY2025’s transfers were a deliberate reconciliation after its surplus became public is a hypothesis; nothing here records it."
+    }
+   ],
+   "rests_on": [
+    "n26",
+    "n25",
+    "notr"
+   ],
+   "so": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "FY2025 is the unusual year, not FY2026: most years close with dozens of lines covered from the ones that left money."
+   },
+   "text": "57 accounts closed FY2026 past budget; FY2023 had 70, FY2024 52, and FY2025 only 4."
+  },
+  {
+   "figures": {
+    "c": {
+     "text": "$489,283",
+     "unit": "",
+     "value": 489282.94
+    }
+   },
+   "literals": [],
+   "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$316,250",
+       "unit": "",
+       "value": 316250.0
+      },
+      "b": {
+       "text": "$381,471",
+       "unit": "",
+       "value": 381470.85
+      },
+      "y": {
+       "text": "FY2027",
+       "unit": "fiscal year",
+       "value": 2027
+      },
+      "z": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "FY2027 budgets electricity at $316,250; FY2026 spent or owed $381,471 on it."
+    },
+    {
+     "figures": {},
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Buildings moving load from gas to electricity, rates, and the solar arrangement all fit the electricity line; none is tested here."
+    }
+   ],
+   "rests_on": [
+    "chron"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [],
+    "text": "Each year those lines are paid from leftovers elsewhere in the same budget; voting them nearer their cost shrinks both halves."
+   },
+   "text": "Electricity and contracted therapy were voted below their spending in all four years held, by $489,283."
   }
  ],
  "facts": [
@@ -146,34 +392,6 @@
    }
   },
   {
-   "id": "couns",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "left on counselors and psychologists, net"
-   },
-   "value": {
-    "text": "$191,162",
-    "unit": "",
-    "value": 191162.4
-   }
-  },
-  {
-   "id": "teach",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "left on teachers and substitutes, net"
-   },
-   "value": {
-    "text": "$167,992",
-    "unit": "",
-    "value": 167992.45
-   }
-  },
-  {
    "id": "teach-pct",
    "kind": "published",
    "label": {
@@ -188,40 +406,12 @@
    }
   },
   {
-   "id": "paras",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "paraprofessionals, net (over budget)"
-   },
-   "value": {
-    "text": "-$208,082",
-    "unit": "",
-    "value": -208081.73
-   }
-  },
-  {
-   "id": "disc",
-   "kind": "estimate",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "left in supplies, upkeep, equipment and the like (ours)"
-   },
-   "value": {
-    "text": "$283,991",
-    "unit": "",
-    "value": 283991.32
-   }
-  },
-  {
    "id": "disc-pct",
    "kind": "estimate",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "of the surplus in those lines (our grouping)"
+    "text": "of the surplus in supplies, upkeep and such (ours)"
    },
    "value": {
     "text": "58.9%",
@@ -230,13 +420,101 @@
    }
   },
   {
-   "closes": "the school general fund journal by month, from the Town Accountant",
+   "id": "n26",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "accounts past budget at the FY2026 close"
+   },
+   "value": {
+    "text": "57",
+    "unit": "accounts",
+    "value": 57
+   }
+  },
+  {
+   "id": "n25",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "accounts past budget, FY2025"
+   },
+   "value": {
+    "text": "4",
+    "unit": "accounts",
+    "value": 4
+   }
+  },
+  {
+   "id": "notr",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "of the FY2026 past budget, given no transfer in"
+   },
+   "value": {
+    "text": "38",
+    "unit": "accounts",
+    "value": 38
+   }
+  },
+  {
+   "id": "paras",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "paraprofessionals over budget, net"
+   },
+   "value": {
+    "text": "$208,082",
+    "unit": "",
+    "value": 208081.73
+   }
+  },
+  {
+   "id": "chron",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "electricity and therapy, voted below spending, four years"
+   },
+   "value": {
+    "text": "$489,283",
+    "unit": "",
+    "value": 489282.94
+   }
+  },
+  {
+   "closes": "the district’s line-by-line budget build-up, with the basis for each line",
    "id": "why",
    "kind": "gap",
    "label": {
     "figures": {},
     "literals": [],
-    "text": "what any dollar was bought, or when"
+    "text": "why any line came in under or over"
    },
    "value": null
   }
@@ -279,8 +557,28 @@
    "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2026-p13-gf-school.xlsx"
   },
   {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2025-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2025-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2024-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2024-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/town-ledgers/expenses/glytdbud-expense-fy2023-p13-gf-school.xlsx",
+   "label": "Town of Lunenburg — Town Accountant (MUNIS) — glytdbud-expense-fy2023-p13-gf-school.xlsx"
+  },
+  {
+   "href": "/docs/budget-workbooks/fy27-proposals.xlsx",
+   "label": "Lunenburg Public Schools — fy27-proposals.xlsx"
+  },
+  {
    "href": "/docs/data/munis-school-ytd.csv",
    "label": "Lunenburg Budget Project — munis-school-ytd.csv (the period-13 school reports, one row an account)"
+  },
+  {
+   "href": "/docs/data/lps-budget-lines.csv",
+   "label": "Lunenburg Budget Project — lps-budget-lines.csv (the FY2027 district workbook, line by line)"
   }
  ],
  "table": {
@@ -479,5 +777,132 @@
    }
   ]
  },
+ "tables": [
+  {
+   "caption": "School accounts past their budgets at the close, by year",
+   "views": [
+    {
+     "columns": [
+      "Accounts past budget",
+      "By how much",
+      "Transfers in, gross"
+     ],
+     "key": "years",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Department 300, period 13",
+     "note": "Past budget means the report’s own available column is below zero: budget less paid less still committed.",
+     "rows": [
+      {
+       "cells": [
+        "57",
+        "$1,201,434",
+        "$394,929"
+       ],
+       "label": "FY2026"
+      },
+      {
+       "cells": [
+        "4",
+        "$22,275",
+        "$1,463,210"
+       ],
+       "label": "FY2025"
+      },
+      {
+       "cells": [
+        "52",
+        "$1,167,996",
+        "$486,257"
+       ],
+       "label": "FY2024"
+      },
+      {
+       "cells": [
+        "70",
+        "$753,697",
+        "$590,339"
+       ],
+       "label": "FY2023"
+      }
+     ],
+     "total_col": -1
+    }
+   ]
+  },
+  {
+   "caption": "The five largest overruns, FY2026",
+   "views": [
+    {
+     "columns": [
+      "Voted",
+      "Paid",
+      "Still committed",
+      "Past budget"
+     ],
+     "key": "top",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Department 300, period 13",
+     "note": "Kindergarten aides had no budget and received no transfer. The collaborative tuition line is read on its own page.",
+     "rows": [
+      {
+       "cells": [
+        "$302,663",
+        "$678,062",
+        "$58,708",
+        "$434,108"
+       ],
+       "label": "Collaborative tuitions"
+      },
+      {
+       "cells": [
+        "$265,000",
+        "$319,109",
+        "$62,362",
+        "$110,338"
+       ],
+       "label": "Electricity charges"
+      },
+      {
+       "cells": [
+        "$103,000",
+        "$204,758",
+        "$1,262",
+        "$100,520"
+       ],
+       "label": "Contract related services"
+      },
+      {
+       "cells": [
+        "$0",
+        "$93,691",
+        "$0",
+        "$93,691"
+       ],
+       "label": "Kindergarten aides/regular"
+      },
+      {
+       "cells": [
+        "$2,719,099",
+        "$2,791,452",
+        "$0",
+        "$72,353"
+       ],
+       "label": "H.s. teachers/regular"
+      }
+     ],
+     "total_col": -1
+    }
+   ]
+  }
+ ],
  "title": "Surplus by category"
 }

@@ -558,7 +558,7 @@
       "teachers-per-pupil",
       "children-schooled-elsewhere",
       "special-education-overruns",
-      "fy2025-school-surplus"
+      "surplus-bridge"
      ]
     }
    ],
@@ -1330,7 +1330,7 @@
    "title": "Harvard and Bromfield"
   },
   {
-   "answer": "The school general fund closed FY2026 with $482,118 unspent, 1.8% of its budget, at period 13. Town departments stood $858,462 under in June, before their close.",
+   "answer": "The school general fund ended FY2026 with $482,118 unspent, 1.8% of its budget, counting orders still owed. Counted the same way, FY2025 left $554,945. Town departments stood $858,462 under in June.",
    "archive_after": "2027-10-31",
    "area": "special",
    "elsewhere": [],
@@ -1339,19 +1339,17 @@
      "title": null,
      "topics": [
       "fy2026-surplus-by-category",
-      "fy2026-lines-over-budget",
-      "fy2026-school-transfers",
-      "fy2025-school-surplus"
+      "surplus-bridge",
+      "surplus-repeat-lines",
+      "surplus-suggestions"
      ]
     },
     {
-     "title": "Surplus from the journal",
+     "title": "Through the year",
      "topics": [
-      "surplus-bridge",
-      "surplus-repeat-lines",
       "budget-burndown",
       "sped-burndown",
-      "surplus-suggestions"
+      "fy2026-school-transfers"
      ]
     },
     {
@@ -2469,21 +2467,6 @@
    ],
    "title": "FY2011 teacher reading"
   },
-  "fy2025-school-surplus": {
-   "finding": "FY2025 closed with $627,117 unspent, $23,231 more than the figure the School Committee was given.",
-   "generator": "scripts/build_fy2026_closeout_topics.py",
-   "home": "fy2026-closeout",
-   "id": "fy2025-school-surplus",
-   "minutes": 1,
-   "path": "/fy2026-closeout/fy2025-school-surplus",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout",
-    "school-spending"
-   ],
-   "title": "FY2025 school surplus"
-  },
   "fy2026-athletics-underspend": {
    "finding": "Athletics closed FY2026 with $55,300 of its $518,334 town budget unspent, on the town’s ledger.",
    "generator": "scripts/build_athletics_topics.py",
@@ -2498,20 +2481,6 @@
     "fy2026-closeout"
    ],
    "title": "FY2026 athletics underspend"
-  },
-  "fy2026-lines-over-budget": {
-   "finding": "57 school accounts closed FY2026 past their budgets; in FY2025, 4 did.",
-   "generator": "scripts/build_fy2026_closeout_topics.py",
-   "home": "fy2026-closeout",
-   "id": "fy2026-lines-over-budget",
-   "minutes": 1,
-   "path": "/fy2026-closeout/fy2026-lines-over-budget",
-   "ready": true,
-   "related": [],
-   "shelves": [
-    "fy2026-closeout"
-   ],
-   "title": "Lines over budget"
   },
   "fy2026-paraprofessional-overrun": {
    "finding": "Paraprofessional accounts ran $208,082 over in FY2026; $99,064 of it was paid against no budget.",
@@ -4855,7 +4824,7 @@
    "title": "Students with an IEP"
   },
   "surplus-bridge": {
-   "finding": "FY2026’s leftover is $482,118 to $718,885, depending on $236,767 of purchase orders still open.",
+   "finding": "Printed, FY2026 left $144,999 less than FY2025; on one footing it is $72,827 less, on the other $91,768 more.",
    "generator": "scripts/build_journal_surplus_topics.py",
    "home": "fy2026-closeout",
    "id": "surplus-bridge",
@@ -4864,9 +4833,10 @@
    "ready": true,
    "related": [],
    "shelves": [
-    "fy2026-closeout"
+    "fy2026-closeout",
+    "school-spending"
    ],
-   "title": "Surplus, step by step"
+   "title": "Surplus by year"
   },
   "surplus-repeat-lines": {
    "finding": "6 budget areas came in under every year from FY2023 to FY2026; 11 of 18 did in both FY2025 and FY2026.",
@@ -4880,7 +4850,7 @@
    "shelves": [
     "fy2026-closeout"
    ],
-   "title": "Under budget twice"
+   "title": "Repeat underspending"
   },
   "surplus-suggestions": {
    "finding": "The surplus came from many small leftovers, year after year, not one line; these options follow from that.",

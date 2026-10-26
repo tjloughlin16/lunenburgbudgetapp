@@ -1,5 +1,39 @@
 # Handoff: the surplus pages, consolidated and made to mean something
 
+## DONE, 26 October 2026 (second session). Read this block first
+
+**Committed locally, NOT deployed** (rule 10: TJ asks). Build, then `bash scripts/deploy_site.sh`.
+
+1. **The footing defect, fixed on the hub and given a page.** A closed year's close (`YEC`) zeroes
+   the orders it still owes and re-opens them next July as carried-forward budget, so FY2025's
+   period-13 report prints what was left BEFORE its $72,172 of open orders. FY2026's report was
+   run before its close and counts its $236,767 as spent. The hub, and the July 2026 minutes'
+   comparison with "the approximately $600,000", set the two side by side as printed. On one
+   footing: FY2025 $554,945 vs FY2026 $482,118 (owed counted, TJ's "spent" rule); or $627,117 vs
+   up to $718,885 (the closed reports' footing). FY2023 and FY2024 left ~$32,000 each on the
+   owed footing. Verified by a second route: `verify_journal_surplus_topics.py` recomputes the
+   owed footing from next July's `SOY` lines, not the `YEC` lines the generator reads.
+2. **Nine school-surplus pages to seven.** `fy2026-lines-over-budget` -> Surplus by category (the
+   "over" half of its own net; two-panel block + accounts-over-by-year chart). `fy2025-school-surplus`
+   -> `surplus-bridge`, retitled **Surplus by year** (signature: four years, both footings; the
+   bridge is a body chart block; opens on the July quote it tests). Both in `TOPIC_MERGED`.
+   `surplus-repeat-lines` retitled **Repeat underspending**. Groups now by reader question:
+   lead (category, year, repeat, suggestions) / Through the year (burndown, SpEd burndown,
+   transfers) / School lines / Town side.
+3. **Every conclusion on the 14 pages these two builders write, and the hub, has a meaning.**
+   `topic.MEANINGS_REQUIRED = ('fy2026-closeout',)` is the ratchet: a page homed on a listed
+   shelf, or its hub, fails without `so=`. Add a shelf when converted; never remove one.
+4. The two long UNLISTED reports stay unlisted (documents of record behind the hub's charts;
+   TJ: no full reports promoted). Their prose already gives FY2026 as a $482,118-$718,885 range.
+
+**Still open:** `special-education-transportation` and `fy2026-athletics-underspend` (homed on
+other shelves, other builders) have no meanings yet -- do them with Athletics / Transportation.
+`sources/data/threads.csv` row `fy25-school-surplus` still links the old address (redirects
+fine); `threads.json` is dirty from the minutes backlog, so it was not regenerated.
+`fy28/public/data/reports.json` regenerates with the backlog's byte counts; not committed.
+
+---
+
 **START HERE (fresh session, 26 October 2026 evening):** load the `building-a-page` skill, then
 read this file top to bottom. Everything else from the long 26 October session is committed,
 pushed and live; nothing of it is pending except what is listed under "Open, elsewhere" below.

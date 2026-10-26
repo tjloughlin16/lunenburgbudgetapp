@@ -6,6 +6,11 @@
     "unit": "",
     "value": 482118.07
    },
+   "b": {
+    "text": "$554,945",
+    "unit": "",
+    "value": 554945.16
+   },
    "p": {
     "text": "1.8%",
     "unit": "",
@@ -20,12 +25,15 @@
     "text": "FY2026",
     "unit": "fiscal year",
     "value": 2026
+   },
+   "z": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
    }
   },
-  "literals": [
-   "13"
-  ],
-  "text": "The school general fund closed FY2026 with $482,118 unspent, 1.8% of its budget, at period 13. Town departments stood $858,462 under in June, before their close."
+  "literals": [],
+  "text": "The school general fund ended FY2026 with $482,118 unspent, 1.8% of its budget, counting orders still owed. Counted the same way, FY2025 left $554,945. Town departments stood $858,462 under in June."
  },
  "category": "fy2026-closeout",
  "chains": [],
@@ -63,9 +71,26 @@
     "rests_on": [
      "left26",
      "leftpct",
-     "enc26"
+     "enc26",
+     "h-left25"
     ],
-    "text": "The school general fund closed FY2026 with $482,118 left, 1.8% of its budget."
+    "so": {
+     "figures": {
+      "a": {
+       "text": "$554,945",
+       "unit": "",
+       "value": 554945.16
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "literals": [],
+     "text": "Counted the same way FY2025 left $554,945. As printed the two years are on different footings; Surplus by year draws both."
+    },
+    "text": "Counting orders still owed, the school general fund ended FY2026 with $482,118 left, 1.8% of its budget."
    },
    {
     "figures": {
@@ -85,6 +110,11 @@
      "h-under",
      "h-over"
     ],
+    "so": {
+     "figures": {},
+     "literals": [],
+     "text": "A small net sat on large misses both ways, so how closely lines were budgeted shows in the halves, not the total."
+    },
     "text": "That is a net: $1,683,552 left on some accounts, $1,201,434 spent past others."
    },
    {
@@ -110,6 +140,37 @@
      "h-n26",
      "h-n25"
     ],
+    "so": {
+     "figures": {
+      "a": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      },
+      "b": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      },
+      "c": {
+       "text": "70",
+       "unit": "",
+       "value": 70
+      },
+      "d": {
+       "text": "52",
+       "unit": "",
+       "value": 52
+      },
+      "z": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      }
+     },
+     "literals": [],
+     "text": "FY2025 is the unusual year: FY2023 and FY2024 closed with 70 and 52 accounts past budget."
+    },
     "text": "57 school accounts closed past budget; in FY2025, 4 did."
    },
    {
@@ -124,6 +185,22 @@
     "rests_on": [
      "h-kind"
     ],
+    "so": {
+     "figures": {
+      "y": {
+       "text": "FY2027",
+       "unit": "fiscal year",
+       "value": 2027
+      },
+      "z": {
+       "text": "$0",
+       "unit": "",
+       "value": 0.0
+      }
+     },
+     "literals": [],
+     "text": "Money was spent where none was voted or moved, and the FY2027 budget again carries $0 for these accounts."
+    },
     "text": "Kindergarten aides were paid $99,064 with no budget and no transfer."
    },
    {
@@ -181,6 +258,11 @@
      "h-snow",
      "h-tp13"
     ],
+    "so": {
+     "figures": {},
+     "literals": [],
+     "text": "Snow ran far past its vote and the town still stood under in June; its close, not yet held, settles the year."
+    },
     "text": "In June the town stood $858,462 under; snow removal had paid $1,038,092."
    }
   ],
@@ -192,8 +274,8 @@
       "left26",
       "leftpct",
       "enc26",
-      "ceiling",
       "h-left25",
+      "ceiling",
       "gap27"
      ],
      "row": "left"
@@ -318,20 +400,6 @@
       }
      },
      {
-      "id": "ceiling",
-      "kind": "published",
-      "label": {
-       "figures": {},
-       "literals": [],
-       "text": "left if every open order is released (our sum)"
-      },
-      "value": {
-       "text": "$718,885",
-       "unit": "",
-       "value": 718885.01
-      }
-     },
-     {
       "id": "h-left25",
       "kind": "published",
       "label": {
@@ -343,12 +411,26 @@
         }
        },
        "literals": [],
-       "text": "left unspent at the FY2025 close"
+       "text": "FY2025, counted the same way (our sum)"
       },
       "value": {
-       "text": "$627,117",
+       "text": "$554,945",
        "unit": "",
-       "value": 627116.86
+       "value": 554945.16
+      }
+     },
+     {
+      "id": "ceiling",
+      "kind": "published",
+      "label": {
+       "figures": {},
+       "literals": [],
+       "text": "left if every open order is released (our sum)"
+      },
+      "value": {
+       "text": "$718,885",
+       "unit": "",
+       "value": 718885.01
       }
      },
      {
@@ -557,7 +639,7 @@
      "ledger"
     ],
     "label": "Period 12 and period 13",
-    "note": "MUNIS year-to-date budget reports for department 300, run 1 September and 6 October 2026; between them the figure moved $16.95 and no payment changed. Left is the report’s own column: budget less paid less still committed. In July the School Committee heard the year would close “well below” the $600,000 returned the year before (minutes, 29 July 2026); it closed at $482,118, or $718,885 if every open order is released.",
+    "note": "MUNIS year-to-date budget reports for department 300, run 1 September and 6 October 2026; between them the figure moved $16.95 and no payment changed. Left is the report’s own column: budget less paid less still committed. In July the School Committee heard the year would close “well below” the $600,000 returned the year before (minutes, 29 July 2026). On the footing FY2025’s closed report uses, FY2026 is up to $718,885; counting orders owed, $482,118.",
     "rows": [
      {
       "cells": [

@@ -53,6 +53,7 @@ import conclusions as C  # noqa: E402
 from conclusions import figure  # noqa: E402
 import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
+import topic_blocks as TB  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step as _step  # noqa: E402
 
@@ -72,7 +73,6 @@ LEDGER = os.path.join(D, 'munis-ledger.csv')
 MANIFEST = os.path.join(D, 'archive-manifest.csv')
 MINUTES = os.path.join(ROOT, 'sources', 'meetings', 'text')
 SRC26 = '/data/fy26-school-surplus.json'
-SRC25 = '/data/fy25-school-surplus.json'
 HUB = 'fy2026-closeout'
 
 MINE = [t for t, (_, home, gen) in REG.TOPICS.items()
@@ -294,13 +294,16 @@ def build():
                  '6 October 2026; between them the figure moved %s and no payment changed. Left '
                  'is the report’s own column: budget less paid less still committed. In July the '
                  'School Committee heard the year would close “well below” the %s returned the '
-                 'year before (minutes, 29 July 2026); it closed at %s, or %s if every open '
-                 'order is released.' % (usd2(moved), C.usd(told['returned_fy25']), C.usd(left26),
-                                         C.usd(ceiling)))])
+                 'year before (minutes, 29 July 2026). On the footing FY2025’s closed report '
+                 'uses, FY2026 is up to %s; counting orders owed, %s.'
+                 % (usd2(moved), C.usd(told['returned_fy25']), C.usd(ceiling), C.usd(left26)))])
     if told['returned_fy25'] != 600000.0:
         fail('the July minutes figure in the payload changed')
 
-    # ---- Surplus by category
+    # ---- Surplus by category, WITH the lines over budget (26 October 2026). Lines over budget
+    # was the other half of this page's own net -- the $1,201,434 -- and TJ called it "similarly
+    # useless" on its own. One page now holds both halves, side by side, and the history of the
+    # overruns; fy2026-lines-over-budget opens here (routes.ts TOPIC_MERGED).
     cats = {c['key']: c for c in S['causes']['categories']}
     if not near(sum(c['unspent'] for c in cats.values()), left26):
         fail('the categories no longer sum to the FY2026 unspent figure')
@@ -313,61 +316,6 @@ def build():
     worst = min(cats.values(), key=lambda c: c['unspent'])
     if worst['key'] != 'paras':
         fail('paraprofessionals are no longer the largest category overrun')
-    out['fy2026-surplus-by-category'] = TP.page(
-        'fy2026-surplus-by-category',
-        'Accounts under budget left %s and accounts over used %s of it; the net is %s.'
-        % (C.usd(under26), C.usd(-over[2026][1]), C.usd(left26)),
-        [f('under', U(under26), 'left on accounts that came in under', 'published'),
-         f('over', U(-over[2026][1]), 'spent past budget on the accounts that went over',
-           'published'),
-         f('bldg', U(b['unspent']), 'left on building and grounds upkeep', 'published'),
-         f('bldg-pct', P(b['pct_of_revised']), 'of the upkeep budget left', 'published'),
-         f('couns', U(cs['unspent']), 'left on counselors and psychologists, net', 'published'),
-         f('teach', U(te['unspent']), 'left on teachers and substitutes, net', 'published'),
-         f('teach-pct', P(te['pct_of_revised']), 'of the teacher budget left', 'published'),
-         f('paras', U(pa['unspent']), 'paraprofessionals, net (over budget)', 'published'),
-         f('disc', U(disc['unspent']), 'left in supplies, upkeep, equipment and the like (ours)',
-           'estimate'),
-         f('disc-pct', P(disc['share_pct']), 'of the surplus in those lines (our grouping)',
-           'estimate'),
-         f('why', None, 'what any dollar was bought, or when', 'gap',
-           closes='the school general fund journal by month, from the Town Accountant')],
-        [con('The %s is a net: %s left on some accounts, %s spent past others.'
-             % (C.usd(left26), C.usd(under26), C.usd(-over[2026][1])),
-             ['under', 'over', 'paras'],
-             {'a': U(left26), 'u': U(under26), 'o': U(-over[2026][1])}),
-         con('Building upkeep left the most, %s of its budget; teachers left %s of theirs.'
-             % (C.pct(b['pct_of_revised']), C.pct(te['pct_of_revised'])),
-             ['bldg', 'bldg-pct', 'teach', 'teach-pct', 'couns'],
-             {'b': P(b['pct_of_revised']), 't': P(te['pct_of_revised'])}),
-         con('By our grouping, %s of the surplus sat in lines a decision to buy less moves.'
-             % C.pct(disc['share_pct']), ['disc', 'disc-pct', 'why'],
-             {'p': P(disc['share_pct'])},
-             notes=[step('A hold on purchasing fits. So do orders slipping past year end, '
-                         'lines budgeted high, and other funds paying. The ledger cannot tell '
-                         'them apart.', 'hypothesis'),
-                    step('Which lines count as discretionary is our judgement, not the '
-                         'district’s.', 'gap',
-                         closes='a statement by the district of which FY2026 purchases it '
-                                'held back, and when')])],
-        chart=dict(id='fy26-school-surplus-causes', source=SRC26),
-        table=dict(caption='Where the %s school surplus was left, by category' % C.fy(2026),
-                   views=[dict(
-                       key='categories', label='Department 300, period 13', total_col=3,
-                       kinds=['ledger'] * 4,
-                       columns=['Budget after transfers', 'Paid', 'Still committed', 'Left'],
-                       rows=[dict(label=c['label'], cells=[
-                           C.usd(c['revised']), C.usd(c['expended']), C.usd(c['encumbered']),
-                           C.usd(c['unspent'])]) for c in S['causes']['categories']]
-                       + [dict(label='All categories', cells=[
-                           C.usd(rev26), C.usd(paid26), C.usd(enc26), C.usd(left26)])],
-                       note='Every account is placed in one category by its DESE function and '
-                            'object code. The categories are ours; the figures are the '
-                            'ledger’s.')]),
-        sources=[src['p13-26'], src['d-munis']],
-        finding_figures={'u': U(under26), 'o': U(-over[2026][1]), 'a': U(left26)})
-
-    # ---- Lines over budget
     top5 = A['overdrawn']['top5']
     top5_sum = round(sum(r['available'] for r in top5), 2)
     for r in top5:
@@ -381,58 +329,111 @@ def build():
     for k in ('electricity', 'therapy'):
         if ch[k]['over_years'] != 4:
             fail('%s was not voted below its spending in all four years' % k)
-    out['fy2026-lines-over-budget'] = TP.page(
-        'fy2026-lines-over-budget',
-        '%s school accounts closed %s past their budgets; in %s, %s did.'
-        % (C.num(over[2026][0]), C.fy(2026), C.fy(2025), C.num(over[2025][0])),
-        [f('n26', N(over[2026][0], 'accounts'), 'accounts past budget at the %s close'
+    if not (over[2025][0] < 10 < min(over[y][0] for y in (2023, 2024, 2026))):
+        fail('the meaning says FY2025 alone closed with only a handful of accounts past budget')
+    if not b['pct_of_revised'] > 10 * te['pct_of_revised']:
+        fail('the upkeep conclusion assumes upkeep left a far larger share than teachers')
+    out['fy2026-surplus-by-category'] = TP.page(
+        'fy2026-surplus-by-category',
+        'Accounts under budget left %s and accounts over used %s of it; the net is %s.'
+        % (C.usd(under26), C.usd(-over[2026][1]), C.usd(left26)),
+        [f('under', U(under26), 'left on accounts that came in under', 'published'),
+         f('over', U(-over[2026][1]), 'spent past budget on the accounts that went over',
+           'published'),
+         f('bldg', U(b['unspent']), 'left on building and grounds upkeep', 'published'),
+         f('bldg-pct', P(b['pct_of_revised']), 'of the upkeep budget left', 'published'),
+         f('teach-pct', P(te['pct_of_revised']), 'of the teacher budget left', 'published'),
+         f('disc-pct', P(disc['share_pct']), 'of the surplus in supplies, upkeep and such (ours)', 'estimate'),
+         f('n26', N(over[2026][0], 'accounts'), 'accounts past budget at the %s close'
            % C.fy(2026), 'published', {'y': F(2026)}),
-         f('amt26', U(-over[2026][1]), 'by how much, together', 'published'),
          f('n25', N(over[2025][0], 'accounts'), 'accounts past budget, %s' % C.fy(2025),
            'published', {'y': F(2025)}),
-         f('n24', N(over[2024][0], 'accounts'), 'accounts past budget, %s' % C.fy(2024),
-           'published', {'y': F(2024)}),
-         f('n23', N(over[2023][0], 'accounts'), 'accounts past budget, %s' % C.fy(2023),
-           'published', {'y': F(2023)}),
          f('notr', N(no_tr, 'accounts'), 'of the %s past budget, given no transfer in'
            % C.fy(2026), 'published', {'y': F(2026)}),
-         f('top5', U(-top5_sum), 'past budget on the five largest overruns', 'published'),
+         f('paras', U(-pa['unspent']), 'paraprofessionals over budget, net', 'published'),
          f('chron', U(chron), 'electricity and therapy, voted below spending, four years',
            'published'),
-         f('elec27', U(ch['electricity']['fy27']), 'electricity, %s budget (district workbook)'
-           % C.fy(2027), 'published', {'y': F(2027)}),
-         f('elec26', U(ch['electricity']['spent26']), 'electricity, spent or owed in %s' % C.fy(2026),
-           'published', {'y': F(2026)})],
-        [con('%s accounts closed %s past budget by %s; in %s, %s did.'
-             % (C.num(over[2026][0]), C.fy(2026), C.usd(-over[2026][1]), C.fy(2025),
-                C.num(over[2025][0])), ['n26', 'amt26', 'n25'],
-             {'n': N(over[2026][0]), 'y': F(2026), 'a': U(-over[2026][1]), 'z': F(2025),
-              'm': N(over[2025][0])}),
-         con('%s and %s closed like %s, with %s and %s accounts over.'
-             % (C.fy(2023), C.fy(2024), C.fy(2026), C.num(over[2023][0]), C.num(over[2024][0])),
-             ['n23', 'n24', 'n26'],
-             {'a': F(2023), 'b': F(2024), 'y': F(2026), 'n': N(over[2023][0]),
-              'm': N(over[2024][0])},
-             notes=[step('That %s’s transfers were a deliberate reconciliation after its '
+         f('why', None, 'why any line came in under or over', 'gap',
+           closes='the district’s line-by-line budget build-up, with the basis for each line')],
+        [con('The %s is a net: %s left on some accounts, %s spent past others.'
+             % (C.usd(left26), C.usd(under26), C.usd(-over[2026][1])),
+             ['under', 'over', 'paras'],
+             {'a': U(left26), 'u': U(under26), 'o': U(-over[2026][1])},
+             so='A small net sat on large misses both ways, so how closely lines were budgeted '
+                'shows in the two halves, not in the total.'),
+         con('Building upkeep left %s of its budget; teachers left %s of theirs.'
+             % (C.pct(b['pct_of_revised']), C.pct(te['pct_of_revised'])),
+             ['bldg', 'bldg-pct', 'teach-pct', 'disc-pct', 'why'],
+             {'b': P(b['pct_of_revised']), 't': P(te['pct_of_revised'])},
+             so='Salaries landed close to budget. The leftover sits in a few non-salary lines, '
+                'which a decision to buy less moves.',
+             notes=[step('A hold on purchasing fits. So do orders slipping past year end, '
+                         'lines budgeted high, and other funds paying. The ledger cannot tell '
+                         'them apart.', 'hypothesis')]),
+         con('%s accounts closed %s past budget; %s had %s, %s %s, and %s only %s.'
+             % (C.num(over[2026][0]), C.fy(2026), C.fy(2023), C.num(over[2023][0]), C.fy(2024),
+                C.num(over[2024][0]), C.fy(2025), C.num(over[2025][0])),
+             ['n26', 'n25', 'notr'],
+             {'n': N(over[2026][0]), 'y': F(2026), 'a': F(2023), 'b': N(over[2023][0]),
+              'c': F(2024), 'd': N(over[2024][0]), 'z': F(2025), 'm': N(over[2025][0])},
+             so='%s is the unusual year, not %s: most years close with dozens of lines covered '
+                'from the ones that left money.' % (C.fy(2025), C.fy(2026)),
+             so_figures={'z': F(2025), 'y': F(2026)},
+             notes=[step('%s of the %s received no transfer in during the year.'
+                         % (C.num(no_tr), C.num(over[2026][0])), 'measured',
+                         {'k': N(no_tr), 'n': N(over[2026][0])}),
+                    step('That %s’s transfers were a deliberate reconciliation after its '
                          'surplus became public is a hypothesis; nothing here records it.'
                          % C.fy(2025), 'hypothesis', {'z': F(2025)})]),
-         con('%s of the %s accounts past budget received no transfer in during the year.'
-             % (C.num(no_tr), C.num(over[2026][0])), ['notr', 'n26'],
-             {'k': N(no_tr), 'n': N(over[2026][0])}),
          con('Electricity and contracted therapy were voted below their spending in all four '
-             'years held, by %s.' % C.usd(chron), ['chron', 'elec27', 'elec26'],
+             'years held, by %s.' % C.usd(chron), ['chron'],
              {'c': U(chron)},
-             notes=[step('Buildings moving load from gas to electricity, rates, and the solar '
+             so='Each year those lines are paid from leftovers elsewhere in the same budget; '
+                'voting them nearer their cost shrinks both halves.',
+             notes=[step('%s budgets electricity at %s; %s spent or owed %s on it.'
+                         % (C.fy(2027), C.usd(ch['electricity']['fy27']), C.fy(2026),
+                            C.usd(ch['electricity']['spent26'])), 'measured',
+                         {'y': F(2027), 'a': U(ch['electricity']['fy27']), 'z': F(2026),
+                          'b': U(ch['electricity']['spent26'])}),
+                    step('Buildings moving load from gas to electricity, rates, and the solar '
                          'arrangement all fit the electricity line; none is tested here.',
                          'hypothesis')])],
-        chart=TP.series(
+        chart=dict(id='fy26-school-surplus-causes', source=SRC26),
+        blocks=[TB.panels('The two halves of the net', [
+            TB.panel('Left under budget', [
+                ('All accounts under', C.usd(under26), None),
+                ('Building and grounds upkeep', C.usd(b['unspent']), None),
+                ('Counselors and psychologists', C.usd(cs['unspent']), None),
+                ('Teachers and substitutes', C.usd(te['unspent']), None)]),
+            TB.panel('Spent past budget', [
+                ('All accounts over', C.usd(-over[2026][1]), 'bad'),
+                ('The five largest overruns', C.usd(-top5_sum), 'bad'),
+                ('Paraprofessionals, net', C.usd(-pa['unspent']), 'bad'),
+                ('Accounts over with no transfer in', C.num(no_tr), None)])],
+            place='chart',
+            so='The surplus is what was left after the right-hand card was paid out of the '
+               'left-hand one, inside one appropriation.')],
+        also=[TP.series(
             'School accounts past budget at the close', [C.fy(fy) for fy in sorted(over)],
             [TP.track('Accounts past budget', [over[fy][0] for fy in sorted(over)],
                       'published', 'bar')],
             'accounts', kind='bar',
             note='Department 300, period 13 of each year: accounts whose own available column '
-                 'closed below zero.', note_allow=('300', '13')),
-        table=dict(caption='School accounts past their budgets at the close, by year', views=[
+                 'closed below zero.', note_allow=('300', '13'))],
+        table=dict(caption='Where the %s school surplus was left, by category' % C.fy(2026),
+                   views=[dict(
+                       key='categories', label='Department 300, period 13', total_col=3,
+                       kinds=['ledger'] * 4,
+                       columns=['Budget after transfers', 'Paid', 'Still committed', 'Left'],
+                       rows=[dict(label=c['label'], cells=[
+                           C.usd(c['revised']), C.usd(c['expended']), C.usd(c['encumbered']),
+                           C.usd(c['unspent'])]) for c in S['causes']['categories']]
+                       + [dict(label='All categories', cells=[
+                           C.usd(rev26), C.usd(paid26), C.usd(enc26), C.usd(left26)])],
+                       note='Every account is placed in one category by its DESE function and '
+                            'object code. The categories are ours; the figures are the '
+                            'ledger’s.')]),
+        tables=[dict(caption='School accounts past their budgets at the close, by year', views=[
             dict(key='years', label='Department 300, period 13', total_col=-1,
                  kinds=['ledger'] * 3,
                  columns=['Accounts past budget', 'By how much', 'Transfers in, gross'],
@@ -440,19 +441,19 @@ def build():
                      C.num(over[fy][0]), C.usd(-over[fy][1]),
                      C.usd(by_year[fy]['transfers_in'])]) for fy in (2026, 2025, 2024, 2023)],
                  note='Past budget means the report’s own available column is below zero: '
-                      'budget less paid less still committed.'),
-            dict(key='top', label='The five largest, %s' % C.fy(2026), total_col=-1,
+                      'budget less paid less still committed.')]),
+            dict(caption='The five largest overruns, %s' % C.fy(2026), views=[
+            dict(key='top', label='Department 300, period 13', total_col=-1,
                  kinds=['ledger'] * 4,
                  columns=['Voted', 'Paid', 'Still committed', 'Past budget'],
                  rows=[dict(label=r['description'].capitalize(), cells=[
                      C.usd(r['original']), C.usd(r['spent']), C.usd(r['encumbered']),
                      C.usd(-r['available'])]) for r in top5],
                  note='Kindergarten aides had no budget and received no transfer. The '
-                      'collaborative tuition line is read on its own page.')]),
+                      'collaborative tuition line is read on its own page.')])],
         sources=[src['p13-26'], src['p13-25'], src['p13-24'], src['p13-23'], src['wb27'],
                  src['d-munis'], src['d-wb']],
-        finding_figures={'n': N(over[2026][0]), 'y': F(2026), 'z': F(2025),
-                         'm': N(over[2025][0])})
+        finding_figures={'u': U(under26), 'o': U(-over[2026][1]), 'a': U(left26)})
 
     # ---- Year-end transfers
     gv = A['given']
@@ -496,21 +497,29 @@ def build():
              % (C.usd(gross_in), C.usd(-gross_out), C.usd(net_tr)),
              ['in', 'out', 'net', 'counterparty'],
              {'i': U(gross_in), 'o': U(-gross_out), 'n': U(net_tr)},
+             so='The gross moved was several times the net, so the net hides how much was '
+                'reshuffled; the ledger cannot say who voted which part.',
              notes=[step('The ledger is net per account and names no counterparty, so it '
                          'cannot say which transfer was which.', 'gap',
                          closes='the FY2026 transfer schedule by account, with the '
                                 'counterparty and the vote for each')]),
          con('The 29 July minutes itemise ten transfers totalling %s, account by account.'
-             % usd2(july), ['july'], {'j': U2(july)}, allow=('29 July',)),
+             % usd2(july), ['july'], {'j': U2(july)}, allow=('29 July',),
+             so='Credit where the record shows it: part of the year-end movement was put before '
+                'the Committee account by account, in public.'),
          con('%s accounts were given %s by transfer and still closed with %s left.'
              % (C.num(len(given)), C.usd(g_in), C.usd(g_left)),
              ['given-n', 'given-in', 'given-left'],
-             {'n': N(len(given)), 'i': U(g_in), 'l': U(g_left)}),
+             {'n': N(len(given)), 'i': U(g_in), 'l': U(g_left)},
+             so='Money moved into lines that did not need it by the close, so a transfer is a '
+                'forecast made during the year, not a measure of need.'),
          con('School Committee dues got %s, minuted as for a search invoice, and closed with %s '
              'left.'
              % (C.usd(dues['transfers_adjustments']), C.usd(dues['available_budget'])),
              ['dues-in', 'dues-left'],
              {'i': U(dues['transfers_adjustments']), 'l': U(dues['available_budget'])},
+             so='A transfer minuted for one purpose left its line with more than it was given, '
+                'so the minute and the ledger do not yet reconcile.',
              notes=[step('Whatever paid the search invoice, this line shows no payment of it. '
                          'Nothing held reconciles the two.', 'gap',
                          closes='the superintendent search invoice and the entry that paid it')])],
@@ -554,61 +563,12 @@ def build():
     fx['gap27'] = f('gap27', U(cut['gap']), '%s school budget, set below level service'
                     % C.fy(2027), 'published', {'y': F(2027)})
 
-    # ---- FY2025 school surplus
-    w25 = S25['waterfall']
-    dist = w25['district_figure']
-    diff25 = round(s25['available_budget'] - dist, 2)
-    if not near(diff25, S25['diff'] if isinstance(S25['diff'], (int, float)) else
-                S25['diff'].get('amount', diff25)):
-        fail('the FY2025 gap against the district figure is not the payload’s')
+    # ---- FY2025 school surplus: FOLDED INTO Surplus by year (surplus-bridge, written by
+    # build_journal_surplus_topics.py), 26 October 2026. Its figure is one of that page's four
+    # years, and its one finding -- the closed ledger above what the Committee was told -- is a
+    # conclusion there. Its address opens that page (routes.ts TOPIC_MERGED).
     if s25['encumbrances'] != 0:
-        fail('FY2025 now carries open purchase orders; the page says it carries none')
-    pct25 = round(100 * s25['available_budget'] / s25['revised_budget'], 1)
-    cats25 = {c['key']: c for c in S25['causes']['categories']}
-    out['fy2025-school-surplus'] = TP.page(
-        'fy2025-school-surplus',
-        '%s closed with %s unspent, %s more than the figure the School Committee was given.'
-        % (C.fy(2025), C.usd(s25['available_budget']), C.usd(diff25)),
-        [f('rev25', U(s25['revised_budget']), 'school budget after transfers, %s' % C.fy(2025),
-           'published', {'y': F(2025)}),
-         f('out25', U(-s25['transfers_adjustments']), 'moved out of the school budget, net',
-           'published'),
-         f('paid25', U(s25['ytd_expended']), 'paid by the close', 'published'),
-         f('left25', U(s25['available_budget']), 'left unspent at the close', 'published'),
-         f('pct25', P(pct25), 'of the budget left unspent', 'published'),
-         f('enc25', U(0), 'still committed', 'published'),
-         f('dist', U2(dist), 'the figure the Committee was given, 17 September 2025',
-           'published', allow=('17 September 2025',)),
-         f('diff', U(diff25), 'the closed ledger above that figure (our arithmetic)',
-           'estimate'),
-         f('paras25', U(cats25['paras']['unspent']), 'left on paraprofessionals, %s'
-           % C.fy(2025), 'published', {'y': F(2025)}),
-         f('paras26', U(pa['unspent']), 'paraprofessionals, %s, net' % C.fy(2026),
-           'published', {'y': F(2026)})],
-        [con('%s closed with %s left, %s of its budget, and nothing still committed.'
-             % (C.fy(2025), C.usd(s25['available_budget']), C.pct(pct25)),
-             ['rev25', 'paid25', 'left25', 'pct25', 'enc25'],
-             {'y': F(2025), 'a': U(s25['available_budget']), 'p': P(pct25)}),
-         con('The Committee was told %s; the closed ledger shows %s more.'
-             % (usd2(dist), C.usd(diff25)), ['dist', 'diff', 'left25'],
-             {'d': U2(dist), 'x': U(diff25)},
-             notes=[step('Entries posted after the September meeting fit; no single account '
-                         'or pair of accounts makes up the gap, and this ledger cannot test '
-                         'it.', 'hypothesis')]),
-         con('Paraprofessionals left %s in %s; in %s they ran %s over.'
-             % (C.usd(cats25['paras']['unspent']), C.fy(2025), C.fy(2026),
-                C.usd(-pa['unspent'])), ['paras25', 'paras26'],
-             {'a': U(cats25['paras']['unspent']), 'y': F(2025), 'z': F(2026),
-              'b': U(-pa['unspent'])})],
-        chart=dict(id='fy25-school-surplus-waterfall', source=SRC25),
-        said=[said_file('school-committee/2025-09-17-minutes-7408.txt',
-                        'the surplus number has gone up to $603,885.97, the change is due to '
-                        'closing out purchase orders from FY25.', 'School Committee'),
-              said_file('school-committee/2025-09-17-minutes-7408.txt',
-                        'double booking of the para salaries, the music program and supply '
-                        'line cuts', 'School Committee')],
-        sources=[src['p13-25'], src['sc0917'], src['d-munis']],
-        finding_figures={'y': F(2025), 'a': U(s25['available_budget']), 'x': U(diff25)})
+        fail('FY2025 now carries open purchase orders; Surplus by year says it carries none')
 
     # ---- Tuition at year end
     tu = A['tuition']
@@ -629,6 +589,10 @@ def build():
     priv_pct = round(100 * priv['ytd_expended'] / priv['revised_budget'])
     coll_pct = round(100 * coll['ytd_expended'] / coll['revised_budget'])
     cby = {r['fy']: r for r in tu['by_year']}
+    if not ((priv_pct - 100) * (coll_pct - 100) < 0
+            and cby[2026]['cb_share_pct'] < cby[2023]['cb_share_pct']):
+        fail('the tuition meanings assume the lines missed in opposite directions and the '
+             'circuit breaker share fell')
     out['fy2026-tuition-lines'] = TP.page(
         'fy2026-tuition-lines',
         '%s budgets %s for the two tuition lines on which %s spent %s.'
@@ -653,6 +617,8 @@ def build():
         [con('Private tuition paid %s of its budget; collaborative tuition paid %s of its.'
              % (C.pct(priv_pct, 0), C.pct(coll_pct, 0)), ['priv-b', 'priv-p', 'coll-b', 'coll-p'],
              {'a': P(priv_pct, 0), 'b': P(coll_pct, 0)},
+             so='The two tuition lines missed in opposite directions, so their combined budget '
+                'was closer than either line was.',
              notes=[step('A shift from private to collaborative placements fits; so do rate '
                          'changes, recoding, and budgets struck high or low. Placement counts '
                          'by year are not published.', 'hypothesis')]),
@@ -660,6 +626,8 @@ def build():
              % (C.fy(2027), C.usd(tu['fy27']), C.fy(2026), C.usd(gf_tu_spent)),
              ['fy27', 'both', 'children'],
              {'y': F(2027), 'a': U(tu['fy27']), 'z': F(2026), 'b': U(gf_tu_spent)},
+             so='The next budget assumes far less general fund tuition than this year spent; '
+                'what it rests on is the question for that line.',
              notes=[step('Placements ending, more expected from the circuit breaker, and '
                          'FY2027 tuition prepaid from FY2026 money all fit. None is tested '
                          'here.', 'hypothesis', allow=('FY2027', 'FY2026'))]),
@@ -668,6 +636,8 @@ def build():
                 C.fy(2023)), ['cb26', 'cb-share26', 'cb-share23'],
              {'a': P(cby[2026]['cb_share_pct']), 'y': F(2026),
               'b': P(cby[2023]['cb_share_pct']), 'z': F(2023)},
+             so='The circuit breaker covers a smaller share of tuition than it did, so more of it '
+                'falls on the school general fund.',
              notes=[step('Why its share fell is not measured: the reimbursement follows the '
                          'year of the cost at a rate the state sets, and the fund’s balance '
                          'is not held.', 'gap',
@@ -738,9 +708,14 @@ def build():
         [con('Paraprofessional accounts paid %s against %s budgeted, %s over.'
              % (C.usd(pa['expended']), C.usd(pa['revised']), C.usd(-pa['unspent'])),
              ['rev', 'paid', 'over'],
-             {'p': U(pa['expended']), 'r': U(pa['revised']), 'o': U(-pa['unspent'])}),
+             {'p': U(pa['expended']), 'r': U(pa['revised']), 'o': U(-pa['unspent'])},
+             so='The largest overrun in the school budget, covered from lines that left money, '
+                'so it does not show in the net.'),
          con('Two kindergarten aide accounts with no budget and no transfer paid %s.'
              % usd2(k_paid), ['k-budget', 'k-paid', 'k-27'], {'k': U2(k_paid)},
+             so='Money was spent where none was voted or moved, and the %s budget again carries '
+                '%s for these accounts.' % (C.fy(2027), C.usd(A['kinder']['fy27'])),
+             so_figures={'y': F(2027), 'z': U(A['kinder']['fy27'])},
              notes=[step('A recoding, a grant expected to cover it, and an overrun awaiting a '
                          'transfer all fit. Nothing here chooses between them.', 'hypothesis'),
                     step('No document held connects the spending to a decision.', 'gap',
@@ -748,11 +723,15 @@ def build():
                                 'authority for each')]),
          con('All %s special-education aide lines closed over, by %s together.'
              % (C.num(len(sped)), C.usd(-sped_net)), ['sp-n', 'sp-over'],
-             {'n': N(len(sped)), 'o': U(-sped_net)}),
+             {'n': N(len(sped)), 'o': U(-sped_net)},
+             so='Every line ran over, not one, a pattern across the service rather than one '
+                'account’s surprise.'),
          con('%s budgets those aides at %s; %s paid them %s.'
              % (C.fy(2027), C.usd(cr['sped_paras_fy27']), C.fy(2026), C.usd(sped_paid)),
              ['sp-27', 'sp-paid'],
-             {'y': F(2027), 'a': U(cr['sped_paras_fy27']), 'z': F(2026), 'b': U(sped_paid)})],
+             {'y': F(2027), 'a': U(cr['sped_paras_fy27']), 'z': F(2026), 'b': U(sped_paid)},
+             so='Set side by side, the next budget can be read against what these aides cost '
+                'this year.')],
         chart=TP.ranking(
             'Paraprofessional accounts past budget',
             [(r['description'].capitalize(), -r['available_budget']) for r in para_rows], '$',
@@ -813,17 +792,23 @@ def build():
            closes='the position-control roster by month, and payroll by account')],
         [con('One of four psychologist lines, %s budgeted, paid nothing all year.'
              % C.usd(z['revised_budget']), ['z-b', 'z-p', 'post'], {'b': U(z['revised_budget'])},
+             so='A budgeted post paid nothing all year, money the budget counted on spending and '
+                'did not, without the ledger saying why.',
              notes=[step('A line paying nothing fits a vacancy, a leave, a person paid from '
                          'another account, or a coding change. The ledger shows dollars.',
                          'gap', closes='the position-control roster by month, and payroll '
                                        'by account')]),
          con('The other %s psychologist lines paid their budgets in full or slightly over.'
-             % C.num(len(full)), ['full'], {'n': N(len(full))}),
+             % C.num(len(full)), ['full'], {'n': N(len(full))},
+             so='The line that paid nothing is the exception, not a pattern across the service.'),
          con('%s budgets the same line at %s.' % (C.fy(2027), C.usd(A['psych']['fy27'])),
-             ['z-27'], {'y': F(2027), 'a': U(A['psych']['fy27'])}),
+             ['z-27'], {'y': F(2027), 'a': U(A['psych']['fy27'])},
+             so='Whether the post is filled in the new year decides whether this money is spent '
+                'or left again.'),
          con('Counselor and psychologist lines left %s while paraprofessionals ran %s over.'
              % (C.usd(cs['unspent']), C.usd(-pa['unspent'])), ['couns', 'paras', 'soc'],
              {'c': U(cs['unspent']), 'p': U(-pa['unspent'])},
+             so='Within one appropriation the two roughly offset; the net hides both.',
              notes=[step('That one paid for the other is a hypothesis. Late hires, contract '
                          'steps and hours fit the same two numbers, and no headcount is '
                          'published.', 'hypothesis')])],
@@ -867,6 +852,10 @@ def build():
     tr_e = round(sum(r['expended'] for r in tr), 2)
     if not near(t['expended'] + t['encumbered'] + t['available'], t['revised'], 0.05):
         fail('the town report no longer foots: paid + committed + left != budget')
+    if not len(t_over) / len(tw) < s_over12 / len(p12s):
+        fail('the meaning says accounts past budget were rarer on the town side')
+    if not (gross_in > 3 * net_tr > 0):
+        fail('the transfers meaning says the gross was several times the net')
     out['fy2026-town-unspent'] = TP.page(
         'fy2026-town-unspent',
         'In June, before the close, town departments stood %s under a %s budget.'
@@ -893,22 +882,29 @@ def build():
                 C.usd(t_over_amt), C.num(len(t_over))),
              ['t-rev', 't-paid', 't-enc', 't-left', 't-over', 't-n'],
              {'a': U(t['available']), 'u': U(t_under_amt), 'n': N(len(t_under)),
-              'o': U(t_over_amt), 'm': N(len(t_over))}),
+              'o': U(t_over_amt), 'm': N(len(t_over))},
+             so='The town is a June reading with books still open, so its figure is not yet the '
+                'year’s final one.'),
          con('%s of %s town accounts were over in June; %s of %s school accounts were.'
              % (C.num(len(t_over)), C.num(len(tw)), C.num(s_over12), C.num(len(p12s))),
              ['t-over', 't-n', 's-over'],
              {'a': N(len(t_over)), 'b': N(len(tw)), 'c': N(s_over12), 'd': N(len(p12s))},
+             so='Accounts past budget were rarer on the town side than in the schools, in the '
+                'same month of the same year.',
              notes=[step('Tighter school budgets, readier town transfers, and different '
                          'coding all fit; nothing here separates them.', 'hypothesis')]),
          con('Two transfer accounts voted %s moved %s to capital and stabilization funds.'
              % (C.usd(tr_o), C.usd(tr_e)), ['tr-o', 'tr-e'], {'o': U(tr_o), 'e': U(tr_e)},
+             so='Part of the year’s budget went to reserves and capital by vote during the year, '
+                'moved on purpose rather than left over.',
              notes=[step('The ledger records that these budgets grew, not what vote funded '
                          'the growth.', 'gap',
                          closes='the FY2026 Town Meeting votes funding the capital and '
                                 'stabilization transfers')]),
          con('%s was still committed in June; released in full, the figure reaches %s.'
              % (C.usd(t['encumbered']), C.usd(t_ceiling)), ['t-enc', 't-ceil', 'p13'],
-             {'e': U(t['encumbered']), 'c': U(t_ceiling)})],
+             {'e': U(t['encumbered']), 'c': U(t_ceiling)},
+             so='Until the close, the town’s leftover is a range, as the schools’ was before theirs.')],
         chart=TP.ranking(
             'Town accounts under and over in June',
             [('Left on accounts under budget', t_under_amt),
@@ -941,6 +937,8 @@ def build():
     if rf['expended'] != 0 or rf['transfers'] != 0 or wages['transfers'] != 0:
         fail('the Reserve Fund or the snow wages line now shows movement')
     w_pct = round(100 * wages['expended'] / wages['revised'])
+    if not (2.5 < sn['expended'] / sn['original'] < 3.5 and w_pct > 100):
+        fail('the snow meanings assume about three times the vote, and wages over budget')
     out['fy2026-snow-and-reserve-fund'] = TP.page(
         'fy2026-snow-and-reserve-fund',
         'Snow removal paid %s against %s voted; the %s Reserve Fund paid nothing.'
@@ -961,12 +959,18 @@ def build():
         [con('Snow removal paid %s against %s voted and %s after transfers.'
              % (C.usd(sn['expended']), C.usd(sn['original']), C.usd(sn['revised'])),
              ['sn-o', 'sn-t', 'sn-r', 'sn-p', 'sn-over'],
-             {'p': U(sn['expended']), 'o': U(sn['original']), 'r': U(sn['revised'])}),
+             {'p': U(sn['expended']), 'o': U(sn['original']), 'r': U(sn['revised'])},
+             so='Snow paid about three times its vote, so the vote was a starting figure, not a '
+                'forecast of this winter.'),
          con('The wages line, %s budgeted, paid %s with no transfer in.'
              % (C.usd(wages['revised']), C.usd(wages['expended'])), ['w-b', 'w-p', 'w-pct'],
-             {'b': U(wages['revised']), 'p': U(wages['expended'])}),
+             {'b': U(wages['revised']), 'p': U(wages['expended'])},
+             so='The overrun on wages was never covered by a transfer, so it rests on the other '
+                'snow lines and the town’s close.'),
          con('The %s Reserve Fund paid nothing and moved nothing in the same year.'
              % C.usd(rf['original']), ['rf', 'rf-p', 'rb'], {'r': U(rf['original'])},
+             so='The contingency meant for overruns went unused in a year snow ran over, so it is '
+                'still there at the close.',
              notes=[step('A contingency nobody needed, a policy of leaving it, or a reserve '
                          'nobody asked to use all fit; nothing here separates them.',
                          'hypothesis')])],
@@ -1026,15 +1030,21 @@ def build():
         [con('The town’s insurance department paid %s by June; %s was on SCHRETHLTH.'
              % (C.usd(ins_paid), C.usd(sr['expended'])), ['ins', 'sr-b', 'sr-p'],
              {'i': U(ins_paid), 's': U(sr['expended'])},
+             so='If the name means what it says, a school cost sits on the town’s side, outside '
+                'the school budget.',
              notes=[step('Reading SCHRETHLTH as school retiree health insurance is ours, '
                          'from the account name.', 'gap',
                          closes='the Town Accountant’s chart of accounts naming account 570018',
                          allow=('570018',))]),
          con('The school ledger carries its own health insurance account: %s paid in %s.'
              % (C.usd(shi_paid), C.fy(2026)), ['shi'],
-             {'s': U(shi_paid), 'y': F(2026)}),
+             {'s': U(shi_paid), 'y': F(2026)},
+             so='The school ledger pays its own staff insurance; anything the town side carries '
+                'for the schools is on top of it.'),
          con('Whether any of the town’s other %s covers school staff is not split out.'
-             % C.usd(rest), ['rest', 'hi', 'split'], {'r': U(rest)})],
+             % C.usd(rest), ['rest', 'hi', 'split'], {'r': U(rest)},
+             so='Until the billing is split by employer, the school share of town insurance is '
+                'unknown, not zero.')],
         chart=TP.ranking(
             'The insurance department, paid by June',
             [(r['name'], r['expended']) for r in ins], '$', highlight='SCHRETHLTH',
@@ -1053,6 +1063,17 @@ def build():
         finding_figures={'s': U(sr['expended'])})
 
     # ------------------------------------------------ the hub
+    # ONE FOOTING FOR TWO YEARS (26 October 2026). FY2025's closed report leaves out the orders
+    # it still owed at its close (they were paid from FY2026's carried-forward budget); FY2026's,
+    # run before its close, counts its open orders as spent. The hub set the two side by side as
+    # printed. It now states FY2025 counted the way FY2026 is, read from the journal module
+    # Surplus by year uses, so the two pages cannot disagree.
+    import build_journal_surplus_topics as JS
+    jd = JS.data()
+    if not (near(float(jd['left'][2025]), s25['available_budget'])
+            and near(float(jd['left'][2026]), left26)):
+        fail('the journal no longer reproduces the period-13 figures the hub states')
+    owed25 = round(float(jd['left'][2025] - jd['closed'][2025]), 2)
     h = dict(
         left=fx['left26'], enc=fx['enc26'], leftpct=fx['leftpct'],
         under=f('h-under', U(under26), 'left on school accounts under budget', 'published'),
@@ -1061,8 +1082,8 @@ def build():
               % C.fy(2026), 'published', {'y': F(2026)}),
         n25=f('h-n25', N(over[2025][0], 'accounts'), 'the same count, %s' % C.fy(2025),
               'published', {'y': F(2025)}),
-        left25=f('h-left25', U(s25['available_budget']), 'left unspent at the %s close'
-                 % C.fy(2025), 'published', {'y': F(2025)}),
+        left25=f('h-left25', U(owed25), '%s, counted the same way (our sum)' % C.fy(2025),
+                 'published', {'y': F(2025)}),
         tuit=f('h-tuit', U(gf_tu_spent), 'out-of-district tuition, spent, %s' % C.fy(2026),
                'published', {'y': F(2026)}),
         kind=f('h-kind', U(k_paid), 'kindergarten aides paid, with no budget', 'published'),
@@ -1076,7 +1097,7 @@ def build():
                closes='the town general fund’s FY2026 period-13 budget report'),
     )
     tiers = [
-        LD.tier('What was left', [h['left'], h['leftpct'], h['enc'], fx['ceiling'], h['left25'],
+        LD.tier('What was left', [h['left'], h['leftpct'], h['enc'], h['left25'], fx['ceiling'],
                                   fx['gap27'], h['town']]),
         LD.tier('What moved inside it', [h['under'], h['over'], h['n26'], h['n25'], h['tuit'],
                                          h['kind'], h['snow']]),
@@ -1085,25 +1106,40 @@ def build():
     mx = LD.matrix(
         [('school', 'School department'), ('town', 'Town departments')],
         [('left', 'What was left'), ('moved', 'What moved'), ('open', 'Not settled')],
-        {('school', 'left'): ['left26', 'leftpct', 'enc26', 'ceiling', 'h-left25', 'gap27'],
+        {('school', 'left'): ['left26', 'leftpct', 'enc26', 'h-left25', 'ceiling', 'gap27'],
          ('town', 'left'): ['h-town'],
          ('school', 'moved'): ['h-under', 'h-over', 'h-n26', 'h-n25', 'h-tuit', 'h-kind'],
          ('town', 'moved'): ['h-snow'],
          ('school', 'open'): ['h-counter'], ('town', 'open'): ['h-tp13']})
     hub_ladder = LD.ladder(tiers, [
-        LD.conclusion('The school general fund closed %s with %s left, %s of its budget.'
-                      % (C.fy(2026), C.usd(left26), C.pct(left_pct)),
-                      ['left26', 'leftpct', 'enc26'],
-                      {'y': F(2026), 'a': U(left26), 'p': P(left_pct)}),
+        LD.conclusion('Counting orders still owed, the school general fund ended %s with %s '
+                      'left, %s of its budget.' % (C.fy(2026), C.usd(left26), C.pct(left_pct)),
+                      ['left26', 'leftpct', 'enc26', 'h-left25'],
+                      {'y': F(2026), 'a': U(left26), 'p': P(left_pct)},
+                      so='Counted the same way %s left %s. As printed the two years are on '
+                         'different footings; Surplus by year draws both.'
+                         % (C.fy(2025), C.usd(owed25)),
+                      so_figures={'y': F(2025), 'a': U(owed25)}),
         LD.conclusion('That is a net: %s left on some accounts, %s spent past others.'
                       % (C.usd(under26), C.usd(-over[2026][1])), ['h-under', 'h-over'],
-                      {'u': U(under26), 'o': U(-over[2026][1])}),
+                      {'u': U(under26), 'o': U(-over[2026][1])},
+                      so='A small net sat on large misses both ways, so how closely lines were '
+                         'budgeted shows in the halves, not the total.'),
         LD.conclusion('%s school accounts closed past budget; in %s, %s did.'
                       % (C.num(over[2026][0]), C.fy(2025), C.num(over[2025][0])),
                       ['h-n26', 'h-n25'],
-                      {'n': N(over[2026][0]), 'z': F(2025), 'm': N(over[2025][0])}),
+                      {'n': N(over[2026][0]), 'z': F(2025), 'm': N(over[2025][0])},
+                      so='%s is the unusual year: %s and %s closed with %s and %s accounts past '
+                         'budget.' % (C.fy(2025), C.fy(2023), C.fy(2024), C.num(over[2023][0]),
+                                      C.num(over[2024][0])),
+                      so_figures={'z': F(2025), 'a': F(2023), 'b': F(2024),
+                                  'c': N(over[2023][0]), 'd': N(over[2024][0])}),
         LD.conclusion('Kindergarten aides were paid %s with no budget and no transfer.'
-                      % C.usd(k_paid), ['h-kind'], {'k': U(k_paid)}),
+                      % C.usd(k_paid), ['h-kind'], {'k': U(k_paid)},
+                      so='Money was spent where none was voted or moved, and the %s budget '
+                         'again carries %s for these accounts.'
+                         % (C.fy(2027), C.usd(A['kinder']['fy27'])),
+                      so_figures={'y': F(2027), 'z': U(A['kinder']['fy27'])}),
         LD.conclusion('%s’s school budget was set %s below level service; %s then left %s.'
                       % (C.fy(2027), C.usd(cut['gap']), C.fy(2026), C.usd(left26)),
                       ['gap27', 'left26', 'ceiling'],
@@ -1113,16 +1149,19 @@ def build():
         LD.conclusion('In June the town stood %s under; snow removal had paid %s.'
                       % (C.usd(t['available']), C.usd(sn['expended'])), ['h-town', 'h-snow',
                                                                           'h-tp13'],
-                      {'t': U(t['available']), 's': U(sn['expended'])}),
+                      {'t': U(t['available']), 's': U(sn['expended'])},
+                      so='Snow ran far past its vote and the town still stood under in June; '
+                         'its close, not yet held, settles the year.'),
     ], matrix=mx)
     out[HUB] = TP.hub(
         HUB,
-        'The school general fund closed %s with %s unspent, %s of its budget, at period 13. '
-        'Town departments stood %s under in June, before their close.'
-        % (C.fy(2026), C.usd(left26), C.pct(left_pct), C.usd(t['available'])),
+        'The school general fund ended %s with %s unspent, %s of its budget, counting orders '
+        'still owed. Counted the same way, %s left %s. Town departments stood %s under in June.'
+        % (C.fy(2026), C.usd(left26), C.pct(left_pct), C.fy(2025), C.usd(owed25),
+           C.usd(t['available'])),
         hub_ladder, chart=dict(id='fy26-school-surplus-waterfall', source=SRC26), table=runs_table,
-        answer_figures={'y': F(2026), 'a': U(left26), 'p': P(left_pct), 't': U(t['available'])},
-        answer_allow=('13',))
+        answer_figures={'y': F(2026), 'a': U(left26), 'p': P(left_pct), 'z': F(2025),
+                        'b': U(owed25), 't': U(t['available'])})
 
     if sorted(k for k in out if k != HUB) != sorted(MINE):
         fail('the pages built are not the pages the registry gives this script: %s'

@@ -112,6 +112,13 @@ TABLE_ROWS_MAX = 30
 FACTS = (2, 12)
 CONCLUSIONS = (1, 4)
 SAID_MAX = 4
+# EVERY CONCLUSION SAYS WHAT IT MEANS -- a RATCHET, one shelf at a time. TJ, 25 October 2026:
+# "put the conclusions as insights, following the 'what it means' pattern so we dont put
+# important metrics without an insight to understand them." On 26 October 2026 30 of 941
+# conclusions carried one, so the rule cannot be switched on site-wide; a shelf joins this list
+# when every page HOMED on it (and its hub) has been converted, and never leaves it. The
+# reading-time budget is the precedent.
+MEANINGS_REQUIRED = ('fy2026-closeout',)
 
 
 def ledger(caption, note, cards):
@@ -230,6 +237,9 @@ def page(id, finding, facts, conclusions, chart=None, table=None, said=(), sourc
             bad += check_unit(n, '%s conclusion %d note' % (id, i + 1))
         if PRESCRIPTIVE.search(c['text']):
             bad.append('%s conclusion %d tells the reader what to do' % (id, i + 1))
+        if home in MEANINGS_REQUIRED and not c.get('so'):
+            bad.append('%s conclusion %d says nothing about what it means, and shelf %r requires '
+                       'it (MEANINGS_REQUIRED): pass so=' % (id, i + 1, home))
     if not sources:
         bad.append('%s: no sources -- rule 12' % id)
     n = _words([f] + [x['label'] for x in facts] + list(conclusions)
@@ -993,6 +1003,9 @@ def hub(cid, answer, ladder, chains=(), chart=None, table=None, answer_figures=N
     if len(terms) > TERMS_MAX:
         bad.append('hub %s: %d terms; at most %d' % (cid, len(terms), TERMS_MAX))
     bad += check_chart(chart, 'hub %s' % cid, required=CHART_REQUIRED)
+    if cid in MEANINGS_REQUIRED:
+        bad += ['hub %s conclusion %d says nothing about what it means (MEANINGS_REQUIRED)'
+                % (cid, i + 1) for i, c in enumerate(ladder['conclusions']) if not c.get('so')]
     bad += TB.blocks_bad(blocks, 'hub %s' % cid)
     # A hub may open on a quotation too (TJ, 25 October 2026: "i expected at least one at the
     # top of the page"); a quote repeated in a block below is the block's to drop.

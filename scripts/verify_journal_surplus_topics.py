@@ -174,6 +174,16 @@ def main():
     dk = lambda k: kind[(Y1, k)] - kind[(Y0, k)]
     open1 = col[(Y1, 'encumbrances')]
 
+    # Left counting orders owed: a closed year's close moves its open orders into next July's
+    # budget, where they arrive as the start-of-year re-encumbrances (SOY) read above. So what
+    # a closed year left, counting what it still owed, is its printed figure less the next
+    # year's SOY; the open year's printed figure already counts its open orders.
+    owed = {y: left[y] - (carry[y + 1] if y + 1 in carry else 0) for y in YEARS}
+    # What the Committee was told for FY2025, read from the minutes themselves.
+    sc = ' '.join(open(os.path.join(ROOT, 'sources', 'meetings', 'text', 'school-committee',
+                                    '2025-09-17-minutes-7408.txt'), encoding='utf-8').read().split())
+    told = D(re.search(r'surplus number has gone up to \$([\d,]+\.\d\d)', sc).group(1).replace(',', ''))
+
     cats = [c[0] for c in CATEGORIES]
     both = [c for c in cats if cat[(Y0, c)] > 0 and cat[(Y1, c)] > 0]
     every = [c for c in cats if all(cat[(y, c)] > 0 for y in YEARS)]
@@ -182,10 +192,10 @@ def main():
     a_both = [a for a in names if acct[(Y0, a)] > 0 and acct[(Y1, a)] > 0]
     want = {
         'surplus-bridge': dict(
-            s0=left[Y0], s1=left[Y1], db=budget[Y1] - budget[Y0],
-            ds=col[(Y1, 'ytd_expended')] - col[(Y0, 'ytd_expended')], open=open1,
-            pay=dk('pay'), inv=dk('inv'), je=dk('je'), adj=-sum(adj),
-            tr0=other[Y0], tr1=other[Y1]),
+            dict(('o%d' % y, owed[y]) for y in YEARS),
+            p0=left[Y0], p1=left[Y1] + open1, c0=carry[Y1], open=open1, told=told,
+            diff=left[Y0] - told, db=budget[Y1] - budget[Y0],
+            ds=col[(Y1, 'ytd_expended')] - col[(Y0, 'ytd_expended')]),
         'surplus-repeat-lines': dict(
             n=len(both), b0=sum(cat[(Y0, c)] for c in both), b1=sum(cat[(Y1, c)] for c in both),
             s0=left[Y0], s1=left[Y1], e=len(every),
@@ -197,13 +207,16 @@ def main():
         bad.append('expected one ADJ FY25 BUDGET line; found %d' % len(adj))
     # Every money figure the prose may state: the facts, plus the ones the notes and chart use.
     extra = [left[Y1] + col[(Y1, 'encumbrances')], left[Y0] - left[Y1], left301, left[Y1] + left301, -left301] + [carry[y] for y in YEARS[1:]] \
+        + [owed[Y0] - owed[Y1], left[Y1] + open1 - left[Y0], dk('pay'), dk('inv'), dk('je'), -sum(adj)] \
         + [budget[Y1] - budget[Y0]] \
         + [col[(Y1, 'original_approp')] - col[(Y0, 'original_approp')]]
     money = {'$' + format(abs(round(float(v))), ',') for f in want.values() for v in f.values()}
     money |= {'$' + format(abs(round(float(v))), ',') for v in extra}
+    money.add('$' + format(told, ',.2f'))   # quoted to the cent, as the minutes print it
     pct = lambda a, b, dp: '%.*f%%' % (dp, 100.0 * float(a) / float(b))
     top = sorted(a_both, key=lambda a: -(acct[(Y0, a)] + acct[(Y1, a)]))[:30]
     percents = {pct(dk('pay'), kind[(Y0, 'pay')], 1), pct(dk('inv'), kind[(Y0, 'inv')], 1),
+                pct(dk('pay'), col[(Y1, 'ytd_expended')] - col[(Y0, 'ytd_expended')], 0),
                 pct(want['surplus-repeat-lines']['b0'], left[Y0], 0),
                 pct(sum(acct[(y, a)] for a in top for y in (Y0, Y1)),
                     sum(acct[(y, a)] for a in a_both for y in (Y0, Y1)), 0)}
@@ -235,7 +248,22 @@ def main():
                     if cell != '$' + format(round(float(acct[(y, a)])), ','):
                         bad.append('%s: account %s %d reads %s; the spreadsheet %s'
                                    % (tid, a, y, cell, acct[(y, a)]))
+        units += [c['so'] for c in p['conclusions'] if c.get('so')]
+        for u in units[-4:]:
+            for f in u['figures'].values():
+                t = f['text'].lstrip('-')
+                if (t.startswith('$') and t not in money) or (t.endswith('%') and t not in percents):
+                    bad.append('%s: %r in a meaning is not a recomputed figure' % (tid, t))
         ch = p['chart']
+        if tid == 'surplus-bridge':
+            tr = {t['name']: t['values'] for t in ch['series']}
+            if [round(v, 2) for v in tr['Counting orders owed']] != [round(float(owed[y]), 2) for y in YEARS]:
+                bad.append('%s: the owed track is not the spreadsheet less next July’s SOY' % tid)
+            printed = [v for v in tr['As a closed year’s report prints it'] if v is not None]
+            if [round(v, 2) for v in printed] != [round(float(left[y]), 2) for y in YEARS[:-1]]:
+                bad.append('%s: the printed track is not the closed reports' % tid)
+            ch = next(b['spec'] for b in p.get('blocks', []) if b['block'] == 'chart'
+                      and b['spec']['type'] == 'bridge')
         if ch['type'] == 'bridge':
             if abs(ch['start']['value'] - float(left[Y0])) > 0.006 or \
                     abs(ch['end']['value'] - float(left[Y1])) > 0.006:

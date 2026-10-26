@@ -1,115 +1,269 @@
 {
+ "blocks": [
+  {
+   "block": "chart",
+   "place": "body",
+   "so": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     },
+     "z": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Read step by step, the drop as printed is the open orders: without them FY2026 ends above FY2025."
+   },
+   "spec": {
+    "basis": "published",
+    "decimals": null,
+    "end": {
+     "label": "Left, FY2026, as printed",
+     "text": "$482,118",
+     "value": 482118.07
+    },
+    "note": {
+     "figures": {
+      "d": {
+       "text": "300",
+       "unit": "department",
+       "value": 300
+      },
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      },
+      "z": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "literals": [],
+     "text": "Each step is the change from FY2025 to FY2026 and its effect on what was left. School general fund, department 300."
+    },
+    "start": {
+     "label": "Left, FY2025, as printed",
+     "text": "$627,117",
+     "value": 627116.86
+    },
+    "steps": [
+     {
+      "after": "$1,570,517",
+      "label": "Original appropriation",
+      "text": "+$943,400",
+      "value": 943400.0
+     },
+     {
+      "after": "$1,458,618",
+      "label": "Encumbrances carried forward",
+      "text": "-$111,899",
+      "value": -111899.21
+     },
+     {
+      "after": "$1,778,110",
+      "label": "Other transfers and adjustments",
+      "text": "+$319,492",
+      "value": 319491.89
+     },
+     {
+      "after": "$1,031,433",
+      "label": "Payroll",
+      "text": "-$746,676",
+      "value": -746676.15
+     },
+     {
+      "after": "$759,302",
+      "label": "Vendor invoices",
+      "text": "-$272,132",
+      "value": -272131.53
+     },
+     {
+      "after": "$708,619",
+      "label": "Journal entries",
+      "text": "-$50,683",
+      "value": -50683.11
+     },
+     {
+      "after": "$718,885",
+      "label": "Cash receipts credited",
+      "text": "+$10,266",
+      "value": 10266.26
+     },
+     {
+      "after": "$482,118",
+      "label": "Open encumbrances",
+      "text": "-$236,767",
+      "value": -236766.94
+     }
+    ],
+    "title": "From one year’s surplus to the next",
+    "type": "bridge",
+    "unit": "$"
+   }
+  }
+ ],
  "category": "fy2026-closeout",
  "chart": {
-  "basis": "published",
   "decimals": null,
-  "end": {
-   "label": "Left unspent, FY2026",
-   "text": "$482,118",
-   "value": 482118.07
-  },
+  "from_zero": true,
+  "kind": "line",
   "note": {
    "figures": {
     "d": {
      "text": "300",
      "unit": "department",
      "value": 300
-    },
-    "y": {
-     "text": "FY2025",
-     "unit": "fiscal year",
-     "value": 2025
-    },
-    "z": {
-     "text": "FY2026",
-     "unit": "fiscal year",
-     "value": 2026
     }
    },
    "literals": [],
-   "text": "Each step is the change from FY2025 to FY2026 and its effect on what was left. School general fund, department 300."
+   "text": "School general fund, department 300. A closed year’s report leaves out orders still owed at its close; they are paid from the next year’s budget."
   },
-  "start": {
-   "label": "Left unspent, FY2025",
-   "text": "$627,117",
-   "value": 627116.86
-  },
-  "steps": [
+  "reference": null,
+  "series": [
    {
-    "after": "$1,570,517",
-    "label": "Original appropriation",
-    "text": "+$943,400",
-    "value": 943400.0
+    "basis": "published",
+    "mark": "line",
+    "name": "Counting orders owed",
+    "texts": [
+     "$32,022",
+     "$31,705",
+     "$554,945",
+     "$482,118"
+    ],
+    "values": [
+     32022.04,
+     31705.37,
+     554945.16,
+     482118.07
+    ]
    },
    {
-    "after": "$1,458,618",
-    "label": "Encumbrances carried forward",
-    "text": "-$111,899",
-    "value": -111899.21
+    "basis": "published",
+    "mark": "line",
+    "name": "As a closed year’s report prints it",
+    "texts": [
+     "$106,827",
+     "$215,776",
+     "$627,117",
+     null
+    ],
+    "values": [
+     106826.75,
+     215776.28,
+     627116.86,
+     null
+    ]
    },
    {
-    "after": "$1,778,110",
-    "label": "Other transfers and adjustments",
-    "text": "+$319,492",
-    "value": 319491.89
-   },
-   {
-    "after": "$1,031,433",
-    "label": "Payroll",
-    "text": "-$746,676",
-    "value": -746676.15
-   },
-   {
-    "after": "$759,302",
-    "label": "Vendor invoices",
-    "text": "-$272,132",
-    "value": -272131.53
-   },
-   {
-    "after": "$708,619",
-    "label": "Journal entries",
-    "text": "-$50,683",
-    "value": -50683.11
-   },
-   {
-    "after": "$718,885",
-    "label": "Cash receipts credited",
-    "text": "+$10,266",
-    "value": 10266.26
-   },
-   {
-    "after": "$482,118",
-    "label": "Open encumbrances",
-    "text": "-$236,767",
-    "value": -236766.94
+    "basis": "estimate",
+    "mark": "line",
+    "name": "FY2026, if it closes the same way (our sum)",
+    "texts": [
+     null,
+     null,
+     "$627,117",
+     "$718,885"
+    ],
+    "values": [
+     null,
+     null,
+     627116.86,
+     718885.01
+    ]
    }
   ],
-  "title": "From one year’s surplus to the next",
-  "type": "bridge",
-  "unit": "$"
+  "stacked": false,
+  "title": "What was left at year end, two footings",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
  },
  "conclusions": [
   {
    "figures": {
     "a": {
-     "text": "$718,885",
-     "unit": "",
-     "value": 718885.01
+     "text": "FY2023",
+     "unit": "fiscal year",
+     "value": 2023
     },
     "b": {
-     "text": "$627,117",
+     "text": "FY2024",
+     "unit": "fiscal year",
+     "value": 2024
+    },
+    "c": {
+     "text": "$32,022",
      "unit": "",
-     "value": 627116.86
+     "value": 32022.04
+    },
+    "d": {
+     "text": "$31,705",
+     "unit": "",
+     "value": 31705.37
+    },
+    "e": {
+     "text": "$554,945",
+     "unit": "",
+     "value": 554945.16
     },
     "y": {
-     "text": "FY2026",
-     "unit": "fiscal year",
-     "value": 2026
-    },
-    "z": {
      "text": "FY2025",
      "unit": "fiscal year",
      "value": 2025
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "o2023",
+    "o2024",
+    "o2025"
+   ],
+   "so": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "Leftovers near zero were the pattern until FY2025. What changed that year is the question; the ledger records postings, not reasons."
+   },
+   "text": "Counting orders owed, FY2023 and FY2024 left $32,022 and $31,705; FY2025 left $554,945."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$72,172",
+     "unit": "",
+     "value": 72171.7
+    },
+    "b": {
+     "text": "$236,767",
+     "unit": "",
+     "value": 236766.94
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
     }
    },
    "literals": [],
@@ -117,47 +271,42 @@
     {
      "figures": {
       "a": {
-       "text": "$1,150,993",
+       "text": "$718,885",
        "unit": "",
-       "value": 1150992.68
+       "value": 718885.01
       },
-      "b": {
-       "text": "$1,059,225",
+      "c0": {
+       "text": "$74,805",
        "unit": "",
-       "value": 1059224.53
+       "value": 74804.71
       },
-      "c": {
-       "text": "$236,767",
+      "c1": {
+       "text": "$184,071",
        "unit": "",
-       "value": 236766.94
+       "value": 184070.91
       },
-      "s": {
-       "text": "$627,117",
+      "c2": {
+       "text": "$72,172",
        "unit": "",
-       "value": 627116.86
+       "value": 72171.7
       },
-      "t": {
-       "text": "$482,118",
-       "unit": "",
-       "value": 482118.07
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
       }
      },
      "kind": "measured",
      "literals": [],
-     "text": "$627,117, plus $1,150,993 more budget, less $1,059,225 more spent and $236,767 in open orders, is $482,118."
+     "text": "Each closed year’s orders came back the next July as budget, to the cent: $74,805, $184,071, $72,172. If FY2026 closes the same way, its printed figure rises by what is carried or released, up to $718,885."
     },
     {
-     "closes": "the Town’s journal report for FY2026, run after the year is closed",
+     "closes": "the Town’s FY2026 period-13 report, run after the close",
      "figures": {
-      "a": {
-       "text": "$482,118",
+      "o": {
+       "text": "$236,767",
        "unit": "",
-       "value": 482118.07
-      },
-      "b": {
-       "text": "$718,885",
-       "unit": "",
-       "value": 718885.01
+       "value": 236766.94
       },
       "y": {
        "text": "FY2026",
@@ -166,97 +315,52 @@
       }
      },
      "kind": "gap",
-     "literals": [],
-     "text": "FY2026 is not closed: every open order paid leaves $482,118; any released adds back, up to $718,885."
-    },
-    {
-     "figures": {
-      "a": {
-       "text": "$17,862",
-       "unit": "",
-       "value": 17861.67
-      },
-      "b": {
-       "text": "$464,256",
-       "unit": "",
-       "value": 464256.4
-      }
-     },
-     "kind": "measured",
      "literals": [
-      "300",
-      "301",
       "13"
      ],
-     "text": "Scope: department 300, as in the period-13 report. Department 301 (curriculum adoption) ran $17,862 over; with it, $464,256."
+     "text": "Whether any of the $236,767 will be paid inside FY2026 or carried forward."
     }
    ],
    "rests_on": [
-    "s0",
-    "s1",
-    "db",
-    "ds",
+    "c0",
     "open",
-    "max"
+    "p0",
+    "o2026"
    ],
-   "text": "Before open orders, FY2026 left $718,885, more than FY2025’s $627,117: the budget grew more than spending."
-  },
-  {
-   "figures": {
-    "a": {
-     "text": "$746,676",
-     "unit": "",
-     "value": 746676.15
+   "so": {
+    "figures": {
+     "a": {
+      "text": "$718,885",
+      "unit": "",
+      "value": 718885.01
+     },
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
     },
-    "b": {
-     "text": "$272,132",
-     "unit": "",
-     "value": 272131.53
-    },
-    "c": {
-     "text": "$50,683",
-     "unit": "",
-     "value": 50683.11
-    },
-    "p": {
-     "text": "4.9%",
-     "unit": "",
-     "value": 4.914855288051177
-    },
-    "q": {
-     "text": "3.6%",
-     "unit": "",
-     "value": 3.5630048051929077
-    }
+    "literals": [],
+    "text": "So the two printed figures are not one measure. On FY2025’s footing FY2026 is $718,885, above FY2025; counting orders owed, it is below."
    },
-   "literals": [],
-   "notes": [
-    {
-     "closes": "the district’s position control list, with FTE and funding source by year",
-     "figures": {},
-     "kind": "gap",
-     "literals": [],
-     "text": "Payroll lines are per account per pay run, never per person: dollars here are not staff."
-    }
-   ],
-   "rests_on": [
-    "pay",
-    "inv",
-    "je"
-   ],
-   "text": "Payroll rose $746,676, 4.9%; vendor invoices $272,132, 3.6%; journal entries $50,683."
+   "text": "FY2025’s closed report leaves out $72,172 it still owed; FY2026’s counts $236,767 owed as spent."
   },
   {
    "figures": {
     "a": {
-     "text": "-$306,573",
+     "text": "$1,150,993",
      "unit": "",
-     "value": -306573.35
+     "value": 1150992.68
     },
     "b": {
-     "text": "$12,919",
+     "text": "$1,059,225",
      "unit": "",
-     "value": 12918.54
+     "value": 1059224.53
     },
     "y": {
      "text": "FY2025",
@@ -271,6 +375,38 @@
    },
    "literals": [],
    "notes": [
+    {
+     "figures": {
+      "a": {
+       "text": "$746,676",
+       "unit": "",
+       "value": 746676.15
+      },
+      "b": {
+       "text": "$272,132",
+       "unit": "",
+       "value": 272131.53
+      },
+      "c": {
+       "text": "$50,683",
+       "unit": "",
+       "value": 50683.11
+      },
+      "p": {
+       "text": "4.9%",
+       "unit": "",
+       "value": 4.914855288051177
+      },
+      "q": {
+       "text": "3.6%",
+       "unit": "",
+       "value": 3.5630048051929077
+      }
+     },
+     "kind": "measured",
+     "literals": [],
+     "text": "Payroll rose $746,676, 4.9%; vendor invoices $272,132, 3.6%; journal entries $50,683."
+    },
     {
      "cite": {
       "href": "/docs/district-budget/docs/3-12-25-town-manager-39-s-budget.pdf",
@@ -293,82 +429,117 @@
       "1 July 2024",
       "FY25"
      ],
-     "text": "$452,580 of FY2025’s is one line on collaborative tuitions, 1 July 2024 (ADJ FY25 BUDGET). The district’s budget book prints that figure there as the circuit breaker offset."
-    },
-    {
-     "closes": "the backup for journal 2025/01/000564",
-     "figures": {},
-     "kind": "gap",
-     "literals": [
-      "2025/01/000564"
-     ],
-     "text": "The journal entry itself does not name the circuit breaker."
+     "text": "$452,580 of FY2025’s budget change is one line on collaborative tuitions, 1 July 2024 (ADJ FY25 BUDGET). The district’s budget book prints that figure there as the circuit breaker offset; the entry does not say so."
     }
    ],
    "rests_on": [
-    "tr0",
-    "tr1",
-    "adj"
+    "db",
+    "ds",
+    "p0",
+    "p1"
    ],
-   "text": "Transfers and adjustments, beyond carried-forward encumbrances: -$306,573 in FY2025, $12,919 in FY2026."
+   "so": {
+    "figures": {
+     "p": {
+      "text": "70%",
+      "unit": "",
+      "value": 70.49271696908303
+     }
+    },
+    "literals": [],
+    "text": "The budget rose faster than spending did, so more was left before orders. Payroll was 70% of the extra spending."
+   },
+   "text": "From FY2025 to FY2026 the budget grew $1,150,993 and spending $1,059,225: more left before orders."
   },
   {
    "figures": {
-    "c0": {
-     "text": "$74,805",
+    "t": {
+     "text": "$603,885.97",
      "unit": "",
-     "value": 74804.71
+     "value": 603885.97
     },
-    "c1": {
-     "text": "$184,071",
+    "x": {
+     "text": "$23,231",
      "unit": "",
-     "value": 184070.91
-    },
-    "c2": {
-     "text": "$72,172",
-     "unit": "",
-     "value": 72171.7
-    },
-    "o": {
-     "text": "$236,767",
-     "unit": "",
-     "value": 236766.94
+     "value": 23230.89
     },
     "y": {
-     "text": "FY2026",
+     "text": "FY2025",
      "unit": "fiscal year",
-     "value": 2026
+     "value": 2025
     }
    },
    "literals": [],
    "notes": [
     {
-     "figures": {
-      "o": {
-       "text": "$236,767",
-       "unit": "",
-       "value": 236766.94
-      },
-      "y": {
-       "text": "FY2026",
-       "unit": "fiscal year",
-       "value": 2026
-      }
-     },
-     "kind": "measured",
+     "figures": {},
+     "kind": "hypothesis",
      "literals": [],
-     "text": "Each closed year’s encumbrances came back the next July as budget, to the cent; the FY2026 close decides how much of the $236,767 does."
+     "text": "Entries posted after the September meeting fit; no single account or pair of accounts makes up the gap, and this ledger cannot test it."
     }
    ],
    "rests_on": [
-    "open"
+    "told",
+    "diff",
+    "p0"
    ],
-   "text": "Encumbrances carried out of each closed year: $74,805, $184,071, $72,172. FY2026 has $236,767 open."
+   "so": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "A surplus figure moves after it is first reported, so the FY2026 figure the Committee hears depends on the day the report is run."
+   },
+   "text": "The Committee was told $603,885.97 for FY2025; the closed report shows $23,231 more."
   }
  ],
  "facts": [
   {
-   "id": "s0",
+   "id": "o2023",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2023",
+      "unit": "fiscal year",
+      "value": 2023
+     }
+    },
+    "literals": [],
+    "text": "left, FY2023, counting orders owed"
+   },
+   "value": {
+    "text": "$32,022",
+    "unit": "",
+    "value": 32022.04
+   }
+  },
+  {
+   "id": "o2024",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2024",
+      "unit": "fiscal year",
+      "value": 2024
+     }
+    },
+    "literals": [],
+    "text": "left, FY2024, counting orders owed"
+   },
+   "value": {
+    "text": "$31,705",
+    "unit": "",
+    "value": 31705.37
+   }
+  },
+  {
+   "id": "o2025",
    "kind": "published",
    "label": {
     "figures": {
@@ -379,16 +550,16 @@
      }
     },
     "literals": [],
-    "text": "left unspent, FY2025"
+    "text": "left, FY2025, counting orders owed"
    },
    "value": {
-    "text": "$627,117",
+    "text": "$554,945",
     "unit": "",
-    "value": 627116.86
+    "value": 554945.16
    }
   },
   {
-   "id": "s1",
+   "id": "o2026",
    "kind": "published",
    "label": {
     "figures": {
@@ -399,12 +570,131 @@
      }
     },
     "literals": [],
-    "text": "left unspent, FY2026, before the close"
+    "text": "left, FY2026, counting orders owed"
    },
    "value": {
     "text": "$482,118",
     "unit": "",
     "value": 482118.07
+   }
+  },
+  {
+   "id": "p0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "left, FY2025, as its closed report prints it"
+   },
+   "value": {
+    "text": "$627,117",
+    "unit": "",
+    "value": 627116.86
+   }
+  },
+  {
+   "id": "p1",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "FY2026 on that footing (our sum)"
+   },
+   "value": {
+    "text": "$718,885",
+    "unit": "",
+    "value": 718885.01
+   }
+  },
+  {
+   "id": "c0",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     },
+     "z": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "owed at the FY2025 close, paid from FY2026’s budget"
+   },
+   "value": {
+    "text": "$72,172",
+    "unit": "",
+    "value": 72171.7
+   }
+  },
+  {
+   "id": "open",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [],
+    "text": "still owed on open orders, FY2026"
+   },
+   "value": {
+    "text": "$236,767",
+    "unit": "",
+    "value": 236766.94
+   }
+  },
+  {
+   "id": "told",
+   "kind": "published",
+   "label": {
+    "figures": {
+     "y": {
+      "text": "FY2025",
+      "unit": "fiscal year",
+      "value": 2025
+     }
+    },
+    "literals": [],
+    "text": "the FY2025 figure the Committee was given"
+   },
+   "value": {
+    "text": "$603,885.97",
+    "unit": "",
+    "value": 603885.97
+   }
+  },
+  {
+   "id": "diff",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "the closed report above that figure (our arithmetic)"
+   },
+   "value": {
+    "text": "$23,231",
+    "unit": "",
+    "value": 23230.89
    }
   },
   {
@@ -456,171 +746,38 @@
     "unit": "",
     "value": 1059224.53
    }
-  },
-  {
-   "id": "open",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "open encumbrances, FY2026"
-   },
-   "value": {
-    "text": "$236,767",
-    "unit": "",
-    "value": 236766.94
-   }
-  },
-  {
-   "id": "pay",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "more through payroll"
-   },
-   "value": {
-    "text": "$746,676",
-    "unit": "",
-    "value": 746676.15
-   }
-  },
-  {
-   "id": "inv",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "more through vendor invoices"
-   },
-   "value": {
-    "text": "$272,132",
-    "unit": "",
-    "value": 272131.53
-   }
-  },
-  {
-   "id": "je",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [],
-    "text": "more through journal entries"
-   },
-   "value": {
-    "text": "$50,683",
-    "unit": "",
-    "value": 50683.11
-   }
-  },
-  {
-   "id": "adj",
-   "kind": "published",
-   "label": {
-    "figures": {},
-    "literals": [
-     "1 July 2024"
-    ],
-    "text": "off collaborative tuitions, 1 July 2024"
-   },
-   "value": {
-    "text": "$452,580",
-    "unit": "",
-    "value": 452580.0
-   }
-  },
-  {
-   "id": "tr0",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2025",
-      "unit": "fiscal year",
-      "value": 2025
-     }
-    },
-    "literals": [],
-    "text": "transfers and adjustments, FY2025"
-   },
-   "value": {
-    "text": "-$306,573",
-    "unit": "",
-    "value": -306573.35
-   }
-  },
-  {
-   "id": "tr1",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "transfers and adjustments, FY2026"
-   },
-   "value": {
-    "text": "$12,919",
-    "unit": "",
-    "value": 12918.54
-   }
-  },
-  {
-   "id": "max",
-   "kind": "published",
-   "label": {
-    "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
-     }
-    },
-    "literals": [],
-    "text": "left before open orders, FY2026"
-   },
-   "value": {
-    "text": "$718,885",
-    "unit": "",
-    "value": 718885.01
-   }
   }
  ],
  "finding": {
   "figures": {
    "a": {
-    "text": "$482,118",
+    "text": "$72,827",
     "unit": "",
-    "value": 482118.07
+    "value": 72827.09
    },
    "b": {
-    "text": "$718,885",
+    "text": "$91,768",
     "unit": "",
-    "value": 718885.01
+    "value": 91768.15
    },
-   "o": {
-    "text": "$236,767",
+   "g": {
+    "text": "$144,999",
     "unit": "",
-    "value": 236766.94
+    "value": 144998.79
    },
    "y": {
+    "text": "FY2025",
+    "unit": "fiscal year",
+    "value": 2025
+   },
+   "z": {
     "text": "FY2026",
     "unit": "fiscal year",
     "value": 2026
    }
   },
   "literals": [],
-  "text": "FY2026’s leftover is $482,118 to $718,885, depending on $236,767 of purchase orders still open."
+  "text": "Printed, FY2026 left $144,999 less than FY2025; on one footing it is $72,827 less, on the other $91,768 more."
  },
  "full_report": {
   "href": "",
@@ -628,16 +785,33 @@
  },
  "id": "surplus-bridge",
  "kind": "topic",
+ "lead_quote": {
+  "board": "School Committee",
+  "date": "2026-07-29",
+  "href": "/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+  "label": "School Committee minutes, 29 July 2026",
+  "quote": "the approximately $600,000 that had been returned … he was confident the remaining amount would be well below that figure",
+  "who": "Business manager, as the minutes record it"
+ },
  "not_established": [
   "Why any line came in under or over: the journal records postings, not reasons.",
   "How much of the FY2026 orders still open will be paid, carried or cancelled.",
-  "Whether any cost moved to a grant or revolving fund; the next topics follow that.",
-  "Whether the FY2025 reduction on collaborative tuitions is the circuit breaker offset the budget book prints: the amount and account match; the entry does not say."
+  "Which footing the July 2026 comparison with “the approximately $600,000” used.",
+  "Whether any cost moved to a grant or revolving fund."
  ],
  "path": "/fy2026-closeout/surplus-bridge",
- "said": [],
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-09-17",
+   "href": "/docs/meetings/school-committee/2025-09-17-minutes-7408.pdf",
+   "label": "School Committee minutes, 17 September 2025",
+   "quote": "the surplus number has gone up to $603,885.97, the change is due to closing out purchase orders from FY25."
+  }
+ ],
  "shelves": [
-  "fy2026-closeout"
+  "fy2026-closeout",
+  "school-spending"
  ],
  "sources": [
   {
@@ -651,11 +825,138 @@
   {
    "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
    "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf",
+   "label": "Lunenburg School Committee — 2026-07-29-minutes-7930.pdf"
+  },
+  {
+   "href": "/docs/meetings/school-committee/2025-09-17-minutes-7408.pdf",
+   "label": "Lunenburg School Committee — 2025-09-17-minutes-7408.pdf"
   }
  ],
  "table": {
   "caption": "The surplus, FY2025 to FY2026",
   "views": [
+   {
+    "columns": [
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026"
+    ],
+    "key": "pieces",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "ledger",
+     "ledger"
+    ],
+    "label": "Every year",
+    "note": "Budget, less every way money left, less what was still on order. A closed year’s close moves its open orders into next July’s budget; FY2026 is not yet closed. Department 300 only: department 301 (curriculum adoption) ran $17,862 over in FY2026; with it, $464,256 left. Payroll is per account per pay run, never per person.",
+    "rows": [
+     {
+      "cells": [
+       "$22,325,309",
+       "$22,883,442",
+       "$25,304,074",
+       "$26,247,474"
+      ],
+      "label": "Original appropriation (BUC)"
+     },
+     {
+      "cells": [
+       "$185,381",
+       "$74,805",
+       "$184,071",
+       "$72,172"
+      ],
+      "label": "Encumbrances carried forward (BUA)"
+     },
+     {
+      "cells": [
+       "$0",
+       "$989",
+       "-$306,573",
+       "$12,919"
+      ],
+      "label": "Other transfers and adjustments (BUA)"
+     },
+     {
+      "cells": [
+       "$14,526,298",
+       "$14,488,082",
+       "$15,192,231",
+       "$15,938,907"
+      ],
+      "label": "Payroll (PRJ, PRH)"
+     },
+     {
+      "cells": [
+       "$6,595,815",
+       "$7,110,019",
+       "$7,637,698",
+       "$7,909,829"
+      ],
+      "label": "Vendor invoices (API, APM)"
+     },
+     {
+      "cells": [
+       "$1,309,184",
+       "$1,177,488",
+       "$1,731,677",
+       "$1,782,360"
+      ],
+      "label": "Journal entries (GEN, GRV)"
+     },
+     {
+      "cells": [
+       "-$27,434",
+       "-$32,129",
+       "-$7,150",
+       "-$17,416"
+      ],
+      "label": "Cash receipts credited (CRP)"
+     },
+     {
+      "cells": [
+       "$0",
+       "$0",
+       "$0",
+       "$236,767"
+      ],
+      "label": "Open encumbrances"
+     },
+     {
+      "cells": [
+       "$106,827",
+       "$215,776",
+       "$627,117",
+       "$482,118"
+      ],
+      "label": "Left unspent, as the report prints it"
+     },
+     {
+      "cells": [
+       "$74,805",
+       "$184,071",
+       "$72,172",
+       "not yet closed"
+      ],
+      "label": "Owed at the close, carried to next July (YEC)"
+     },
+     {
+      "cells": [
+       "$32,022",
+       "$31,705",
+       "$554,945",
+       "$482,118"
+      ],
+      "label": "Left, counting orders owed"
+     }
+    ],
+    "total_col": null
+   },
    {
     "columns": [
      "Left, FY2025",
@@ -677,7 +978,7 @@
      "ledger"
     ],
     "label": "By category",
-    "note": "Each middle column is that piece’s effect on what was left; negative is spending that rose or budget that fell. Journal entries move spending between lines after it is paid, so a row’s payroll and journal entries can run opposite ways.",
+    "note": "Each middle column is that piece’s effect on what was left, as printed; negative is spending that rose or budget that fell. Journal entries move spending between lines after it is paid.",
     "rows": [
      {
       "cells": [
@@ -897,109 +1198,8 @@
      }
     ],
     "total_col": null
-   },
-   {
-    "columns": [
-     "FY2023",
-     "FY2024",
-     "FY2025",
-     "FY2026"
-    ],
-    "key": "pieces",
-    "kinds": [
-     "ledger",
-     "ledger",
-     "ledger",
-     "ledger"
-    ],
-    "label": "Every year",
-    "note": "Budget, less every way money left, less what was still on order. FY2026 is not yet closed.",
-    "rows": [
-     {
-      "cells": [
-       "$22,325,309",
-       "$22,883,442",
-       "$25,304,074",
-       "$26,247,474"
-      ],
-      "label": "Original appropriation (BUC)"
-     },
-     {
-      "cells": [
-       "$185,381",
-       "$74,805",
-       "$184,071",
-       "$72,172"
-      ],
-      "label": "Encumbrances carried forward (BUA)"
-     },
-     {
-      "cells": [
-       "$0",
-       "$989",
-       "-$306,573",
-       "$12,919"
-      ],
-      "label": "Other transfers and adjustments (BUA)"
-     },
-     {
-      "cells": [
-       "$14,526,298",
-       "$14,488,082",
-       "$15,192,231",
-       "$15,938,907"
-      ],
-      "label": "Payroll (PRJ, PRH)"
-     },
-     {
-      "cells": [
-       "$6,595,815",
-       "$7,110,019",
-       "$7,637,698",
-       "$7,909,829"
-      ],
-      "label": "Vendor invoices (API, APM)"
-     },
-     {
-      "cells": [
-       "$1,309,184",
-       "$1,177,488",
-       "$1,731,677",
-       "$1,782,360"
-      ],
-      "label": "Journal entries (GEN, GRV)"
-     },
-     {
-      "cells": [
-       "-$27,434",
-       "-$32,129",
-       "-$7,150",
-       "-$17,416"
-      ],
-      "label": "Cash receipts credited (CRP)"
-     },
-     {
-      "cells": [
-       "$0",
-       "$0",
-       "$0",
-       "$236,767"
-      ],
-      "label": "Open encumbrances"
-     },
-     {
-      "cells": [
-       "$106,827",
-       "$215,776",
-       "$627,117",
-       "$482,118"
-      ],
-      "label": "Left unspent"
-     }
-    ],
-    "total_col": null
    }
   ]
  },
- "title": "Surplus, step by step"
+ "title": "Surplus by year"
 }

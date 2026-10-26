@@ -43,6 +43,7 @@ import ladder as LD  # noqa: E402
 import topic as TP  # noqa: E402
 import topics as REG  # noqa: E402
 from brief import step  # noqa: E402
+import topic_blocks as TB  # noqa: E402
 import journal as J  # noqa: E402
 import build_school_surplus as S  # noqa: E402
 
@@ -70,6 +71,11 @@ TM_HREF = '/docs/meetings/select-board/2025-09-09-minutes-7393.pdf'          # t
 TM_QUOTE = ('the FY26 budget, which was developed by the prior team, would need to be reviewed '
             'line by line to determine whether the same assumptions that produced the FY25 '
             'surplus are embedded in the current year\'s budget')
+# What the Committee heard when the FY2025 figure moved (17 September 2025), checked verbatim.
+SC0917_TEXT = os.path.join(ROOT, 'sources', 'meetings', 'text', 'school-committee',
+                           '2025-09-17-minutes-7408.txt')
+SC0917_QUOTE = ('the surplus number has gone up to $603,885.97, the change is due to closing out '
+                'purchase orders from FY25.')
 ACCOUNT_ROWS = 30            # accounts listed line by line; the rest are counted, not listed
 D0 = Decimal(0)
 
@@ -100,6 +106,8 @@ def verbatim():
                        TM_MINUTES.split('/docs/minutes/text/')[1])
     if TM_QUOTE not in ' '.join(open(src, encoding='utf-8').read().split()):
         fail('the Town Manager quotation is no longer verbatim in %s' % TM_MINUTES)
+    if SC0917_QUOTE not in ' '.join(open(SC0917_TEXT, encoding='utf-8').read().split()):
+        fail('the 17 September 2025 quotation is no longer verbatim in %s' % SC0917_TEXT)
 
 
 def cat_of(r):
@@ -156,10 +164,16 @@ def fl(x):
     return float(x)
 
 
+def usd2(x):
+    x = float(x)
+    return ('-$' if x < 0 else '$') + format(abs(x), ',.2f')
+
+
 def build():
     verbatim()
     d = data()
     U = lambda v: figure(fl(v), C.usd(fl(v)))
+    U2 = lambda v: figure(fl(v), usd2(v))
     F = lambda v: figure(v, C.fy(v), 'fiscal year')
     P = lambda v, dp=1: figure(v, C.pct(v, dp))
     N = lambda v, unit=None: figure(v, C.num(v), unit)
@@ -167,7 +181,18 @@ def build():
     pc = lambda y, p: d['piece'].get((y, p), D0)
     out = {}
 
-    # ================================================== surplus-bridge
+    # ================================================== surplus-bridge: SURPLUS BY YEAR
+    # Rebuilt 26 October 2026, absorbing fy2025-school-surplus (its address opens this page,
+    # fy28/src/routes.ts TOPIC_MERGED). The page exists to say ONE thing the printed reports
+    # hide: the years are not on the same footing.
+    #
+    # THE FOOTING. A closed year's close (`YEC`) zeroes the orders still owed, and the next July
+    # re-opens them as carried-forward budget (`d['closed']`, asserted to the cent in data()). So
+    # a CLOSED year's period-13 report prints what was left BEFORE its open orders. FY2026's was
+    # run before its close and prints what was left AFTER them. Set side by side as printed --
+    # the hub did, and so did the July minutes -- the two years differ in kind. Both footings are
+    # drawn for every year; TJ's site-wide rule ("spent - payments plus owed", journal.py) makes
+    # the owed-counted one the lead.
     s0, s1 = d['left'][Y0], d['left'][Y1]
     budget = {y: pc(y, 'original_budget') + pc(y, 'carry_forward') + pc(y, 'transfer')
               for y in (Y0, Y1)}
@@ -178,39 +203,56 @@ def build():
     open1 = pc(Y1, 'encumbrance')
     if pc(Y0, 'encumbrance') != 0:
         fail('FY%d is closed and should hold no open orders' % Y0)
-    if not (s1 < s0 and db > 0 and ds > 0 and open1 > 0):
-        fail('the bridge conclusions assume the surplus fell while budget and spending rose')
+    if not (s1 < s0 and db > ds > 0 and open1 > 0):
+        fail('the bridge assumes the printed surplus fell while budget rose more than spending')
+    if d['closed'][Y1] != 0:
+        fail('FY%d now has a close posted; the footing note says it does not' % Y1)
+    owed = {y: d['left'][y] - d['closed'][y] for y in J.YEARS}   # orders owed counted as spent
+    printed = {y: d['left'][y] + (open1 if y == Y1 else D0) for y in J.YEARS}  # a closed report's footing
+    if not (owed[Y1] < owed[Y0] and printed[Y1] > printed[Y0]):
+        fail('the footing conclusion assumes FY%d is below FY%d on one footing and above on '
+             'the other' % (Y1, Y0))
+    early = J.YEARS[:2]
+    if not all(owed[y] < owed[Y0] / 10 for y in early):
+        fail('the first conclusion assumes the early years left a small fraction of FY%d' % Y0)
     pay_pct = 100.0 * fl(dv('payroll')) / fl(pc(Y0, 'payroll'))
     inv_pct = 100.0 * fl(dv('invoice')) / fl(pc(Y0, 'invoice'))
     with301 = s1 + d['left301']
     if d['left301'] >= 0:
         fail('the department 301 note assumes the curriculum line ran over')
-    tr0, tr1 = pc(Y0, 'transfer'), pc(Y1, 'transfer')
     closed = [d['closed'][y] for y in J.YEARS[:-1]]
     if not open1 > max(closed):
         fail('the open-orders conclusion assumes FY%d holds more than any closed year' % Y1)
+    # FY2025 against what the School Committee was told (the page this absorbed)
+    W25 = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'fy25-school-surplus.json'),
+                         encoding='utf-8'))
+    if abs(fl(s0) - W25['totals']['available']) > 0.01:
+        fail('the journal’s FY%d left is not the period-13 report’s' % Y0)
+    told = Decimal(str(W25['waterfall']['district_figure']))
+    diff25 = s0 - told
+    if diff25 <= 0:
+        fail('the FY%d conclusion assumes the ledger shows more than the Committee was told' % Y0)
 
     fx = {}
-    fx['s0'] = f('s0', U(s0), 'left unspent, %s' % C.fy(Y0), 'published', {'y': F(Y0)})
-    fx['s1'] = f('s1', U(s1), 'left unspent, %s, before the close' % C.fy(Y1), 'published',
+    for y in J.YEARS:
+        fx['o%d' % y] = f('o%d' % y, U(owed[y]), 'left, %s, counting orders owed'
+                          % C.fy(y), 'published', {'y': F(y)})
+    fx['p0'] = f('p0', U(printed[Y0]), 'left, %s, as its closed report prints it' % C.fy(Y0),
+                 'published', {'y': F(Y0)})
+    fx['p1'] = f('p1', U(printed[Y1]), '%s on that footing (our sum)' % C.fy(Y1), 'published',
                  {'y': F(Y1)})
+    fx['c0'] = f('c0', U(d['closed'][Y0]), 'owed at the %s close, paid from %s’s budget'
+                 % (C.fy(Y0), C.fy(Y1)), 'published', {'y': F(Y0), 'z': F(Y1)})
+    fx['open'] = f('open', U(open1), 'still owed on open orders, %s' % C.fy(Y1), 'published',
+                   {'y': F(Y1)})
+    fx['told'] = f('told', U2(told), 'the %s figure the Committee was given' % C.fy(Y0),
+                   'published', {'y': F(Y0)})
+    fx['diff'] = f('diff', U(diff25), 'the closed report above that figure (our arithmetic)',
+                   'estimate')
     fx['db'] = f('db', U(db), 'more budget in %s than in %s' % (C.fy(Y1), C.fy(Y0)), 'published',
                  {'y': F(Y1), 'z': F(Y0)})
     fx['ds'] = f('ds', U(ds), 'more spent in %s than in %s' % (C.fy(Y1), C.fy(Y0)), 'published',
                  {'y': F(Y1), 'z': F(Y0)})
-    fx['open'] = f('open', U(open1), 'open encumbrances, %s' % C.fy(Y1), 'published',
-                   {'y': F(Y1)})
-    fx['pay'] = f('pay', U(dv('payroll')), 'more through payroll', 'published')
-    fx['inv'] = f('inv', U(dv('invoice')), 'more through vendor invoices', 'published')
-    fx['je'] = f('je', U(dv('journal entry')), 'more through journal entries', 'published')
-    fx['adj'] = f('adj', U(-d['adj']), 'off collaborative tuitions, 1 July 2024', 'published',
-                  allow=('1 July 2024',))
-    fx['tr0'] = f('tr0', U(tr0), 'transfers and adjustments, %s' % C.fy(Y0), 'published',
-                  {'y': F(Y0)})
-    fx['tr1'] = f('tr1', U(tr1), 'transfers and adjustments, %s' % C.fy(Y1), 'published',
-                  {'y': F(Y1)})
-    fx['max'] = f('max', U(s1 + open1), 'left before open orders, %s' % C.fy(Y1), 'published',
-                  {'y': F(Y1)})
 
     yrs_closed = ', '.join(C.usd(fl(v)) for v in closed)
     cat_rows = []
@@ -232,100 +274,147 @@ def build():
                                  ('journal entry', 'Journal entries (GEN, GRV)'),
                                  ('receipt', 'Cash receipts credited (CRP)'),
                                  ('encumbrance', 'Open encumbrances'))]
-    piece_rows.append(dict(label='Left unspent', cells=[C.usd(fl(d['left'][y])) for y in J.YEARS]))
+    piece_rows.append(dict(label='Left unspent, as the report prints it',
+                           cells=[C.usd(fl(d['left'][y])) for y in J.YEARS]))
+    piece_rows.append(dict(label='Owed at the close, carried to next July (YEC)',
+                           cells=[C.usd(fl(d['closed'][y])) if y != Y1 else 'not yet closed'
+                                  for y in J.YEARS]))
+    piece_rows.append(dict(label='Left, counting orders owed',
+                           cells=[C.usd(fl(owed[y])) for y in J.YEARS]))
 
+    yspan = figure(J.YEARS[0], C.fyspan(J.YEARS[0], J.YEARS[-1]), 'fiscal years')
+    bridge_chart = TP.bridge(
+        'From one year’s surplus to the next',
+        ('Left, %s, as printed' % C.fy(Y0), fl(s0)),
+        [('Original appropriation', fl(dv('original_budget'))),
+         ('Encumbrances carried forward', fl(dv('carry_forward'))),
+         ('Other transfers and adjustments', fl(dv('transfer'))),
+         ('Payroll', -fl(dv('payroll'))),
+         ('Vendor invoices', -fl(dv('invoice'))),
+         ('Journal entries', -fl(dv('journal entry'))),
+         ('Cash receipts credited', -fl(dv('receipt'))),
+         ('Open encumbrances', -fl(open1))],
+        ('Left, %s, as printed' % C.fy(Y1), fl(s1)), '$',
+        note='Each step is the change from %s to %s and its effect on what was left. '
+             'School general fund, department 300.' % (C.fy(Y0), C.fy(Y1)),
+        note_figures={'y': F(Y0), 'z': F(Y1), 'd': N(int(J.SURPLUS_DEPT), 'department')})
     out['surplus-bridge'] = TP.page(
         'surplus-bridge',
-        '%s’s leftover is %s to %s, depending on %s of purchase orders still open.'
-        % (C.fy(Y1), C.usd(fl(s1)), C.usd(fl(s1 + open1)), C.usd(fl(open1))),
+        'Printed, %s left %s less than %s; on one footing it is %s less, on the other %s more.'
+        % (C.fy(Y1), C.usd(fl(printed[Y0] - owed[Y1])), C.fy(Y0), C.usd(fl(owed[Y0] - owed[Y1])),
+           C.usd(fl(printed[Y1] - printed[Y0]))),
         list(fx.values()),
-        [con('Before open orders, %s left %s, more than %s’s %s: the budget grew more than '
-             'spending.' % (C.fy(Y1), C.usd(fl(s1 + open1)), C.fy(Y0), C.usd(fl(s0))),
-             ['s0', 's1', 'db', 'ds', 'open', 'max'],
-             {'y': F(Y1), 'a': U(s1 + open1), 'z': F(Y0), 'b': U(s0)},
-             notes=[step('%s, plus %s more budget, less %s more spent and %s in open orders, '
-                         'is %s.' % (C.usd(fl(s0)), C.usd(fl(db)), C.usd(fl(ds)),
-                                     C.usd(fl(open1)), C.usd(fl(s1))), 'measured',
-                         {'s': U(s0), 'a': U(db), 'b': U(ds), 'c': U(open1), 't': U(s1)}),
-                    step('%s is not closed: every open order paid leaves %s; any released adds '
-                         'back, up to %s.' % (C.fy(Y1), C.usd(fl(s1)), C.usd(fl(s1 + open1))),
-                         'gap', {'y': F(Y1), 'a': U(s1), 'b': U(s1 + open1)},
-                         closes='the Town’s journal report for %s, run after the year is closed'
-                                % C.fy(Y1)),
-                    step('Scope: department 300, as in the period-13 report. Department 301 '
-                         '(curriculum adoption) ran %s over; with it, %s.'
-                         % (C.usd(fl(-d['left301'])), C.usd(fl(with301))),
-                         'measured', {'a': U(-d['left301']), 'b': U(with301)},
-                         allow=('300', '301', '13'))]),
-         con('Payroll rose %s, %s; vendor invoices %s, %s; journal entries %s.'
-             % (C.usd(fl(dv('payroll'))), C.pct(pay_pct), C.usd(fl(dv('invoice'))),
-                C.pct(inv_pct), C.usd(fl(dv('journal entry')))),
-             ['pay', 'inv', 'je'],
-             {'a': U(dv('payroll')), 'p': P(pay_pct), 'b': U(dv('invoice')), 'q': P(inv_pct),
-              'c': U(dv('journal entry'))},
-             notes=[step('Payroll lines are per account per pay run, never per person: dollars '
-                         'here are not staff.', 'gap',
-                         closes='the district’s position control list, with FTE and funding '
-                                'source by year')]),
-         con('Transfers and adjustments, beyond carried-forward encumbrances: %s in %s, %s in %s.'
-             % (C.usd(fl(tr0)), C.fy(Y0), C.usd(fl(tr1)), C.fy(Y1)),
-             ['tr0', 'tr1', 'adj'],
-             {'a': U(tr0), 'y': F(Y0), 'b': U(tr1), 'z': F(Y1)},
-             notes=[step('%s of %s’s is one line on collaborative tuitions, 1 July 2024 (ADJ '
-                         'FY25 BUDGET). The district’s budget book prints that figure there as '
-                         'the circuit breaker offset.' % (C.usd(fl(-d['adj'])), C.fy(Y0)),
-                         'measured', {'a': U(-d['adj']), 'y': F(Y0)},
-                         allow=('1 July 2024', 'FY25'),
-                         cite=(BOOK, 'LPS budget book, 12 March 2025, 9400 Collaborative Tuitions')),
-                    step('The journal entry itself does not name the circuit breaker.', 'gap',
-                         closes='the backup for journal 2025/01/000564',
-                         allow=('2025/01/000564',))]),
-         con('Encumbrances carried out of each closed year: %s. %s has %s open.'
-             % (yrs_closed, C.fy(Y1), C.usd(fl(open1))),
-             ['open'],
-             dict({'y': F(Y1), 'o': U(open1)},
-                  **{'c%d' % i: U(v) for i, v in enumerate(closed)}),
-             notes=[step('Each closed year’s encumbrances came back the next July as budget, '
-                         'to the cent; the %s close decides how much of the %s does.'
-                         % (C.fy(Y1), C.usd(fl(open1))), 'measured',
-                         {'y': F(Y1), 'o': U(open1)})])],
-        chart=TP.bridge(
-            'From one year’s surplus to the next',
-            ('Left unspent, %s' % C.fy(Y0), fl(s0)),
-            [('Original appropriation', fl(dv('original_budget'))),
-             ('Encumbrances carried forward', fl(dv('carry_forward'))),
-             ('Other transfers and adjustments', fl(dv('transfer'))),
-             ('Payroll', -fl(dv('payroll'))),
-             ('Vendor invoices', -fl(dv('invoice'))),
-             ('Journal entries', -fl(dv('journal entry'))),
-             ('Cash receipts credited', -fl(dv('receipt'))),
-             ('Open encumbrances', -fl(open1))],
-            ('Left unspent, %s' % C.fy(Y1), fl(s1)), '$',
-            note='Each step is the change from %s to %s and its effect on what was left. '
-                 'School general fund, department 300.' % (C.fy(Y0), C.fy(Y1)),
-            note_figures={'y': F(Y0), 'z': F(Y1), 'd': N(int(J.SURPLUS_DEPT), 'department')}),
+        [con('Counting orders owed, %s and %s left %s and %s; %s left %s.'
+             % (C.fy(early[0]), C.fy(early[1]), C.usd(fl(owed[early[0]])),
+                C.usd(fl(owed[early[1]])), C.fy(Y0), C.usd(fl(owed[Y0]))),
+             ['o%d' % early[0], 'o%d' % early[1], 'o%d' % Y0],
+             {'a': F(early[0]), 'b': F(early[1]), 'c': U(owed[early[0]]),
+              'd': U(owed[early[1]]), 'y': F(Y0), 'e': U(owed[Y0])},
+             so='Leftovers near zero were the pattern until %s. What changed that year is the '
+                'question; the ledger records postings, not reasons.' % C.fy(Y0),
+             so_figures={'y': F(Y0)}),
+         con('%s’s closed report leaves out %s it still owed; %s’s counts %s owed as spent.'
+             % (C.fy(Y0), C.usd(fl(d['closed'][Y0])), C.fy(Y1), C.usd(fl(open1))),
+             ['c0', 'open', 'p0', 'o%d' % Y1],
+             {'y': F(Y0), 'a': U(d['closed'][Y0]), 'z': F(Y1), 'b': U(open1)},
+             so='So the two printed figures are not one measure. On %s’s footing %s is %s, above '
+                '%s; counting orders owed, it is below.'
+                % (C.fy(Y0), C.fy(Y1), C.usd(fl(printed[Y1])), C.fy(Y0)),
+             so_figures={'y': F(Y0), 'z': F(Y1), 'a': U(printed[Y1])},
+             notes=[step('Each closed year’s orders came back the next July as budget, to the '
+                         'cent: %s. If %s closes the same way, its printed figure rises by what '
+                         'is carried or released, up to %s.'
+                         % (yrs_closed, C.fy(Y1), C.usd(fl(printed[Y1]))), 'measured',
+                         dict({'y': F(Y1), 'a': U(printed[Y1])},
+                              **{'c%d' % i: U(v) for i, v in enumerate(closed)})),
+                    step('Whether any of the %s will be paid inside %s or carried forward.'
+                         % (C.usd(fl(open1)), C.fy(Y1)), 'gap',
+                         {'o': U(open1), 'y': F(Y1)},
+                         allow=('13',),
+                         closes='the Town’s %s period-13 report, run after the close'
+                                % C.fy(Y1))]),
+         con('From %s to %s the budget grew %s and spending %s: more left before orders.'
+             % (C.fy(Y0), C.fy(Y1), C.usd(fl(db)), C.usd(fl(ds))),
+             ['db', 'ds', 'p0', 'p1'],
+             {'y': F(Y0), 'z': F(Y1), 'a': U(db), 'b': U(ds)},
+             so='The budget rose faster than spending did, so more was left before orders. Payroll '
+                'was %s of the extra spending.' % C.pct(100.0 * fl(dv('payroll')) / fl(ds), 0),
+             so_figures={'p': P(100.0 * fl(dv('payroll')) / fl(ds), 0)},
+             notes=[step('Payroll rose %s, %s; vendor invoices %s, %s; journal entries %s.'
+                         % (C.usd(fl(dv('payroll'))), C.pct(pay_pct), C.usd(fl(dv('invoice'))),
+                            C.pct(inv_pct), C.usd(fl(dv('journal entry')))), 'measured',
+                         {'a': U(dv('payroll')), 'p': P(pay_pct), 'b': U(dv('invoice')),
+                          'q': P(inv_pct), 'c': U(dv('journal entry'))}),
+                    step('%s of %s’s budget change is one line on collaborative tuitions, '
+                         '1 July 2024 (ADJ FY25 BUDGET). The district’s budget book prints that '
+                         'figure there as the circuit breaker offset; the entry does not say so.'
+                         % (C.usd(fl(-d['adj'])), C.fy(Y0)), 'measured',
+                         {'a': U(-d['adj']), 'y': F(Y0)}, allow=('1 July 2024', 'FY25'),
+                         cite=(BOOK, 'LPS budget book, 12 March 2025, 9400 Collaborative Tuitions'))]),
+         con('The Committee was told %s for %s; the closed report shows %s more.'
+             % (usd2(told), C.fy(Y0), C.usd(fl(diff25))), ['told', 'diff', 'p0'],
+             {'t': U2(told), 'y': F(Y0), 'x': U(diff25)},
+             so='A surplus figure moves after it is first reported, so the %s figure the '
+                'Committee hears depends on the day the report is run.' % C.fy(Y1),
+             so_figures={'y': F(Y1)},
+             notes=[step('Entries posted after the September meeting fit; no single account '
+                         'or pair of accounts makes up the gap, and this ledger cannot test '
+                         'it.', 'hypothesis')])],
+        chart=TP.series(
+            'What was left at year end, two footings', [C.fy(y) for y in J.YEARS],
+            [TP.track('Counting orders owed', [fl(owed[y]) for y in J.YEARS], 'published'),
+             TP.track('As a closed year’s report prints it',
+                      [fl(printed[y]) if y != Y1 else None for y in J.YEARS], 'published'),
+             TP.track('%s, if it closes the same way (our sum)' % C.fy(Y1),
+                      [None] * (len(J.YEARS) - 2) + [fl(printed[Y0]), fl(printed[Y1])],
+                      'estimate')],
+            '$', kind='line',
+            note='School general fund, department 300. A closed year’s report leaves out orders '
+                 'still owed at its close; they are paid from the next year’s budget.',
+            note_figures={'d': N(int(J.SURPLUS_DEPT), 'department')}),
+        blocks=[TB.chart(bridge_chart, place='body',
+                         so=('Read step by step, the drop as printed is the open orders: '
+                             'without them %s ends above %s.' % (C.fy(Y1), C.fy(Y0)),
+                             {'y': F(Y1), 'z': F(Y0)}))],
+        lead_quote=TP.lead_quote(
+            'the approximately $600,000 that had been returned … he was confident the '
+            'remaining amount would be well below that figure',
+            'Business manager, as the minutes record it', 'School Committee', '2026-07-29',
+            '/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf',
+            'School Committee minutes, 29 July 2026',
+            'sources/meetings/text/school-committee/2026-07-29-minutes-7930.txt'),
+        said=[dict(quote=SC0917_QUOTE, board='School Committee', date='2025-09-17',
+                   href='/docs/meetings/school-committee/2025-09-17-minutes-7408.pdf',
+                   label='School Committee minutes, 17 September 2025')],
         table=dict(caption='The surplus, %s to %s' % (C.fy(Y0), C.fy(Y1)), views=[
+            dict(key='pieces', label='Every year', total_col=None,
+                 kinds=['ledger'] * len(J.YEARS), columns=[C.fy(y) for y in J.YEARS],
+                 rows=piece_rows,
+                 note='Budget, less every way money left, less what was still on order. A '
+                      'closed year’s close moves its open orders into next July’s budget; %s '
+                      'is not yet closed. Department 300 only: department 301 (curriculum '
+                      'adoption) ran %s over in %s; with it, %s left. Payroll is per account '
+                      'per pay run, never per person.'
+                      % (C.fy(J.OPEN_FY), C.usd(fl(-d['left301'])), C.fy(Y1), C.usd(fl(with301)))),
             dict(key='categories', label='By category', total_col=None, kinds=['ledger'] * 7,
                  columns=['Left, %s' % C.fy(Y0), 'Budget', 'Payroll', 'Vendor invoices',
                           'Journal entries', 'Encumbered', 'Left, %s' % C.fy(Y1)],
                  rows=cat_rows,
-                 note='Each middle column is that piece’s effect on what was left; negative is '
-                      'spending that rose or budget that fell. Journal entries move spending '
-                      'between lines after it is paid, so a row’s payroll and journal entries '
-                      'can run opposite ways.'),
-            dict(key='pieces', label='Every year', total_col=None,
-                 kinds=['ledger'] * len(J.YEARS), columns=[C.fy(y) for y in J.YEARS],
-                 rows=piece_rows,
-                 note='Budget, less every way money left, less what was still on order. %s is '
-                      'not yet closed.' % C.fy(J.OPEN_FY))]),
-        sources=sources(),
-        finding_figures={'y': F(Y1), 'a': U(s1), 'b': U(s1 + open1), 'o': U(open1)})
+                 note='Each middle column is that piece’s effect on what was left, as printed; '
+                      'negative is spending that rose or budget that fell. Journal entries move '
+                      'spending between lines after it is paid.')]),
+        sources=sources() + [
+            dict(label='Lunenburg School Committee — 2026-07-29-minutes-7930.pdf',
+                 href='/docs/meetings/school-committee/2026-07-29-minutes-7930.pdf'),
+            dict(label='Lunenburg School Committee — 2025-09-17-minutes-7408.pdf',
+                 href='/docs/meetings/school-committee/2025-09-17-minutes-7408.pdf')],
+        finding_figures={'z': F(Y1), 'g': U(printed[Y0] - owed[Y1]), 'y': F(Y0),
+                         'a': U(owed[Y0] - owed[Y1]), 'b': U(printed[Y1] - printed[Y0])})
     out['surplus-bridge']['not_established'] = [
         'Why any line came in under or over: the journal records postings, not reasons.',
         'How much of the FY2026 orders still open will be paid, carried or cancelled.',
-        'Whether any cost moved to a grant or revolving fund; the next topics follow that.',
-        'Whether the FY2025 reduction on collaborative tuitions is the circuit breaker offset '
-        'the budget book prints: the amount and account match; the entry does not say.',
+        'Which footing the July 2026 comparison with “the approximately $600,000” used.',
+        'Whether any cost moved to a grant or revolving fund.',
     ]
 
     # ================================================== surplus-repeat-lines
@@ -393,24 +482,33 @@ def build():
              % (C.num(len(every)), C.usd(fl(e4))),
              ['e', 'e4'],
              {'n': N(len(every), 'categories'), 'a': U(e4)},
+             so='These areas ran under four years running, so each next budget has a record of '
+                'years to be set against, not one year’s result.',
              notes=[step('They are %s.' % listing, 'measured')]),
          con('The %s under both years left %s in %s, %s of its surplus; in %s, %s, more than all of it.'
              % (C.num(len(both)), C.usd(fl(b0)), C.fy(Y0), C.pct(sh0, 0), C.fy(Y1), C.usd(fl(b1))),
              ['n', 'b0', 'b1', 's0', 's1'],
              {'n': N(len(both), 'categories'), 'a': U(b0), 'y': F(Y0), 'p': P(sh0, 0), 'b': U(b1), 'z': F(Y1)},
-             notes=[step('The surplus was %s, then %s. In %s every category came in under; '
+             so='In %s the repeat underspends were larger than the whole surplus: overruns '
+                'elsewhere absorbed the rest, so the total hides slack.' % C.fy(Y1),
+             so_figures={'y': F(Y1)},
+             notes=[step('The surplus as printed was %s, then %s. In %s every category came in under; '
                          'in %s, the categories that ran over used the difference.'
                          % (C.usd(fl(s0)), C.usd(fl(s1)), C.fy(Y0), C.fy(Y1)), 'measured',
                          {'a': U(s0), 'b': U(s1), 'y': F(Y0), 'z': F(Y1)})]),
          con('%s left the most of them over the two years: %s, then %s.'
              % (S.CAT_LABEL[lead], C.usd(fl(cl[(Y0, lead)])), C.usd(fl(cl[(Y1, lead)]))),
              ['l0', 'l1'],
-             {'a': U(cl[(Y0, lead)]), 'b': U(cl[(Y1, lead)])}),
+             {'a': U(cl[(Y0, lead)]), 'b': U(cl[(Y1, lead)])},
+             so='Its leftover grew almost four times over in a year; it is the one area where '
+                'the newer slack is concentrated.'),
          con('Line by line, %s of %s accounts left money in both years; in %s they left %s.'
              % (C.num(len(a_both)), C.num(len(accts)), C.fy(Y1), C.usd(fl(ab1))),
              ['an', 'ab1', 'why'],
              {'n': N(len(a_both), 'accounts'), 'm': N(len(accts), 'accounts'), 'y': F(Y1),
               'a': U(ab1)},
+             so='The pattern holds at the grain the Town Manager named in public, line by line, not '
+                'only in category totals.',
              notes=[step('The table lists the %s that left the most, %s of the money, by '
                          'account number; %s of them left money in all four years.'
                          % (C.num(len(shown)), C.pct(sh_share, 0),
@@ -696,17 +794,25 @@ def suggestions_page(d):
              ['n25', 'top'],
              {'y': F(Y0), 'n': N(s25['n'], 'accounts'),
               'p': P(100.0 * fl(s25['top']) / fl(s25['total']), 0)},
+             so='No single line explains the surplus, so a remedy aimed at one account would '
+                'leave most of it in place.',
              notes=[step('Half of it sat on %s accounts and four fifths on %s.'
                          % (C.num(s25['half']), C.num(s25['most'])), 'measured',
                          {'a': N(s25['half'], 'accounts'), 'b': N(s25['most'], 'accounts')})]),
          con('%s accounts left money in every year from %s to %s.'
              % (C.num(len(every)), fy(J.YEARS[0]), fy(Y1)), ['every'],
-             {'n': N(len(every), 'accounts'), 'a': F(J.YEARS[0]), 'b': F(Y1)}),
+             {'n': N(len(every), 'accounts'), 'a': F(J.YEARS[0]), 'b': F(Y1)},
+             so='These are the accounts where a budget built from recent spending would differ '
+                'most from the one voted.'),
          con('By the end of March %s had %s of its budget left, against %s in %s.'
              % (fy(Y1), C.pct(mar[Y1]), C.pct(mar[J.YEARS[0]]), fy(J.YEARS[0])), ['m23', 'm26'],
-             {'y': F(Y1), 'a': P(mar[Y1]), 'b': P(mar[J.YEARS[0]]), 'z': F(J.YEARS[0])}),
+             {'y': F(Y1), 'a': P(mar[Y1]), 'b': P(mar[J.YEARS[0]]), 'z': F(J.YEARS[0])},
+             so='The surplus was visible in the monthly report by spring, months before the '
+                'close and before the next budget was voted.'),
          con('None of the %s building upkeep accounts ran over in %s.' % (C.num(len(up26)), fy(Y1)),
              ['uo'], {'n': N(len(up26), 'accounts'), 'y': F(Y1)},
+             so='Credit where the ledger shows it: upkeep was kept inside its budget on every '
+                'account, and an emergency went to a public vote.',
              notes=[step('And %s’s unbudgeted emergency cabling went to the Finance Committee as a '
                          'Reserve Fund vote, in the open.' % fy(Y0), 'measured', {'y': F(Y0)},
                          cite=(BB.FINCOM, 'Finance Committee minutes, 13 February 2025'))])],
@@ -816,6 +922,8 @@ def burndown_pages():
     lead = max((c for c in ahead if c != POSTED_IN_JUNE and Lc[(Y1, c, JUNE)] > 10),
                key=lambda c: ahead[c][2])
     lg = ahead[lead]
+    if not 28 < Lc[(Y1, lead, JUNE)] < 100 / 3:
+        fail('the meaning says %s had almost a third left in June' % lead)
     bx = {}
     bx['m23'] = f('m23', P(L[(2023, MARCH)]), 'of the budget left at end of March, %s' % C.fy(2023),
                   'published', {'y': F(2023)})
@@ -851,6 +959,8 @@ def burndown_pages():
              % (C.fy(Y1), pc(m26), C.fy(2025), pc(L[(2025, MARCH)])),
              ['m23', 'm24', 'm25', 'm26'],
              {'y': F(Y1), 'a': P(m26), 'z': F(2025), 'b': P(L[(2025, MARCH)])},
+             so='From February the last two years spent more slowly than the two before; by spring '
+                'the monthly report already showed a surplus forming.',
              notes=[step('The four years track together through January; the gap opens in '
                          'February.', 'measured'),
                     step('Against the usual pace, about %s of %s’s March gap is health insurance and benefits, posted '
@@ -862,18 +972,25 @@ def burndown_pages():
              % (pc(late[Y1]), C.fy(Y1), pc(late[2023]), C.fy(2023)),
              ['late23', 'late26'],
              {'a': P(late[Y1]), 'y': F(Y1), 'b': P(late[2023]), 'z': F(2023)},
+             so='Over a third of a year’s budget is spent in its last quarter, so a March balance '
+                'alone overstates what will be left.',
              notes=[step('June carries the year-end journal entries, which move spending '
                          'between lines and months.', 'measured')]),
          con('June ended with %s unspent in %s, against %s in %s.'
              % (pc(L[(Y1, JUNE)]), C.fy(Y1), pc(L[(2023, JUNE)]), C.fy(2023)),
              ['j23', 'j26'],
              {'a': P(L[(Y1, JUNE)]), 'y': F(Y1), 'b': P(L[(2023, JUNE)]), 'z': F(2023)},
+             so='On payments alone %s kept over five times %s’s share at June; the orders still '
+                'open are the rest, on Surplus by year.' % (C.fy(Y1), C.fy(2023)),
+             so_figures={'y': F(Y1), 'z': F(2023)},
              notes=[step('Spending only: %s’s open purchase orders are not counted until paid.'
                          % C.fy(Y1), 'measured', {'y': F(Y1)})]),
          con('%s had %s left in March against a usual %s, and still %s in June.'
              % (S.CAT_LABEL[lead], pc(Lc[(Y1, lead, MARCH)]), pc(lg[1]), pc(Lc[(Y1, lead, JUNE)])),
              ['lead', 'leadu', 'leadj'],
              {'a': P(Lc[(Y1, lead, MARCH)]), 'b': P(lg[1]), 'c': P(Lc[(Y1, lead, JUNE)])},
+             so='No other area was further behind its usual March pace in dollars, and it still '
+                'had almost a third of its budget left in June.',
              notes=[step('Usual is our average of %s to %s at the same month; the usual pace '
                          'in dollars is in the table.' % (C.fy(BASE[0]), C.fy(BASE[-1])),
                          'estimate', {'a': F(BASE[0]), 'b': F(BASE[-1])})])],
@@ -960,6 +1077,8 @@ def burndown_pages():
              % (C.usd(early[Y0]), C.fy(Y0), C.usd(early[Y1]), C.fy(Y1)),
              ['cb0', 'cb1', 'cbj', 'off'],
              {'a': U(early[Y0]), 'y': F(Y0), 'b': U(early[Y1]), 'z': F(Y1)},
+             so='Until June the general fund carried tuition the reimbursement later paid, so '
+                'those lines read as further over budget than they closed.',
              notes=[step('In June one entry moved %s of collaborative tuition onto it. The '
                          'budget book set that tuition line %s lower for this money.'
                          % (C.usd(cb_june), C.usd(480204)), 'measured',
@@ -971,14 +1090,20 @@ def burndown_pages():
                                 'schedule for %s' % C.fy(Y1), allow=(C.fy(Y1),))]),
          con('General fund special education spending in September and October: %s, against %s '
              'in %s.' % (C.usd(fl(so[Y1])), C.usd(fl(so[Y0])), C.fy(Y0)),
-             ['so0', 'so1'], {'a': U(so[Y1]), 'b': U(so[Y0]), 'y': F(Y0)}),
+             ['so0', 'so1'], {'a': U(so[Y1]), 'b': U(so[Y0]), 'y': F(Y0)},
+             so='The early months already showed the year running ahead of the last one, a signal '
+                'the monthly report carries long before the close.'),
          con('Tuition spent %s of its %s budget by December; %s in %s.'
              % (C.pct(t_dec[Y1], 0), C.fy(Y1), C.pct(t_dec[Y0], 0), C.fy(Y0)),
              ['t0', 't1'],
-             {'a': P(t_dec[Y1], 0), 'y': F(Y1), 'b': P(t_dec[Y0], 0), 'z': F(Y0)}),
+             {'a': P(t_dec[Y1], 0), 'y': F(Y1), 'b': P(t_dec[Y0], 0), 'z': F(Y0)},
+             so='By December most of the tuition budget was used, months before the year end '
+                'showed the overrun.'),
          con('Contracted services still had %s of the budget left in December and ended June %s over.'
              % (C.pct(con_dec, 0), C.pct(-con_jun, 0)),
              ['cd', 'cj'], {'a': P(con_dec, 0), 'b': P(-con_jun, 0)},
+             so='A line can look comfortable at mid-year and close far over, so its December '
+                'balance says little about its year end.',
              notes=[step('The costs arrived in the second half of the year; the journal shows '
                          'when, not why.', 'measured')])],
         chart=TP.series('Circuit breaker spending, before June and in June',

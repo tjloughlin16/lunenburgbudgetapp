@@ -1051,6 +1051,9 @@ export const TOPIC_MERGED: Record<string, string> = {
   'reserve-size': 'reserve-options',
   // Both opened on the hub's own figure; folded into the FY2026 closeout hub (TJ: "seems useless").
   'fy2026-school-surplus': 'fy2026-closeout', 'fy2026-surplus-and-fy2027': 'fy2026-closeout',
+  // The other half of its own net, and one year of four: folded 26 October 2026 in the review
+  // of the surplus pages (notes/HANDOFF-SURPLUS-PAGES.md).
+  'fy2026-lines-over-budget': 'fy2026-surplus-by-category', 'fy2025-school-surplus': 'surplus-bridge',
 }
 
 /** ONE-SEGMENT ADDRESSES THAT NAME A HUB BY ANOTHER WORD: slug -> category id. These were
