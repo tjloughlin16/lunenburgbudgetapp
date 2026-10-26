@@ -1296,6 +1296,79 @@ def build():
              'Money that has stopped: whatever it paid for is now paid by another fund or not at all.'),
     ], place='also1')
 
+    # TRENDS, ONE CHART PER STREAM. TJ, 26 October 2026: "add trend line graphs for each grant
+    # so we can see how they are trending and what the average is or projected amount for the
+    # next year". Each on its own scale (a shared one flattens the small grants), each with its
+    # average as a reference line and the next year: a PUBLISHED figure where one exists (IDEA's
+    # announced allocation; the district's initial circuit breaker listing), else OUR estimate --
+    # the last figure moved by the median yearly change, drawn as an estimate and labelled so.
+    # The ended grants get no next year.
+    import statistics
+    deck = open(os.path.join(ROOT, 'sources', 'correspondence', 'text',
+                             '2026-10-22-special-education-funding-superintendent-finance-committee.pptx.txt'),
+                encoding='utf-8').read()
+    CB27 = 818087
+    if '$818,087' not in deck or 'FY27 initial' not in deck:
+        fail('sped-grants: the deck no longer gives the FY2027 initial circuit breaker listing')
+    cbs = {r['fy']: r['paid'] for r in json.load(open(CB_JSON, encoding='utf-8'))['series']}
+    cby = sorted(cbs)
+    if cby[-1] != F1:
+        fail('sped-grants: the circuit breaker file does not end at %s' % F1)
+    cb_avg = statistics.mean(cbs.values())
+
+    def trend(k):
+        ys_ = sorted(y for (c, y) in alloc if c == k)
+        if ys_ != list(range(ys_[0], ys_[-1] + 1)):
+            fail('sped-grants: #%s skips an allocation year' % k)
+        v = [alloc[(k, y)] for y in ys_]
+        step_ = statistics.median(b / a_ - 1 for a_, b in zip(v, v[1:]))
+        return ys_, v, statistics.mean(v), step_, v[-1] * (1 + step_)
+    tr = {k: trend(k) for k in ('240', '262')}
+
+    def tchart(title, ys_, hist, nxt_y, nxt, nxt_name, nxt_basis, avg, avg_label, note, so):
+        xs = list(ys_) + [nxt_y]
+        return TB.chart(TP.series(title, [C.fy(y) for y in xs], [
+            TP.track(hist, [v for v in hist_v[hist]] + [None], 'published', 'bar'),
+            TP.track(nxt_name, [None] * len(ys_) + [nxt], nxt_basis, 'bar')], '$', kind='bar',
+            reference=(avg, avg_label), note=note[0], note_figures=note[1]), place='also2', so=so)
+    hist_v = {'Paid, by year of payment': [cbs[y] for y in cby]}
+    t_cb = tchart('Circuit breaker, paid each year', cby, 'Paid, by year of payment', F1 + 1, CB27,
+                  'Initial listing (district)', 'stated', cb_avg,
+                  'Average, %s to %s' % (C.fy(cby[0]), C.fy(cby[-1])),
+                  ('DESE’s payments by the year paid; the next year is the district’s initial '
+                   'listing, which DESE revises during the year.', None),
+                  ('It swings: %s at its lowest, %s at its highest, against an average of %s. The '
+                   '%s listing, %s, is above every year paid.'
+                   % (C.usd(min(cbs.values())), C.usd(max(cbs.values())), C.usd(cb_avg), C.fy(F1 + 1),
+                      C.usd(CB27)),
+                   {'a': U(min(cbs.values())), 'b': U(max(cbs.values())), 'c': U(cb_avg),
+                    'y': F(F1 + 1), 'd': U(CB27)}))
+    if not CB27 > max(cbs.values()):
+        fail('sped-grants: the trend says the FY2027 listing is above every year paid')
+    def fell(v):                          # years in a row the allocation fell, latest first
+        n = 0
+        while n + 1 < len(v) and v[-1 - n] < v[-2 - n]:
+            n += 1
+        return n
+    t_idea = []
+    for k in ('240', '262'):
+        ys_, v, avg, st, est = tr[k]
+        nm = '%s (#%s)' % (sg_name[k], k)
+        hist_v[nm + ', allocated'] = v
+        t_idea.append(tchart('%s, allocated each year' % sg_name[k], ys_, nm + ', allocated', ys_[-1] + 1,
+                             round(est), 'Next year, our estimate', 'estimate', avg,
+                             'Average, %s to %s' % (C.fy(ys_[0]), C.fy(ys_[-1])),
+                             ('DESE’s allocations by award year; %s is announced. The last bar is '
+                              'ours: %s moved by the median yearly change, %s.'
+                              % (C.fy(ys_[-1]), C.fy(ys_[-1]), C.pct(100 * st)),
+                              {'y': F(ys_[-1]), 'p': P(100 * st)}),
+                             ('An average of %s a year, and %s announced for %s. At its usual yearly '
+                              'change %s would be about %s: our estimate, not an award.%s'
+                              % (C.usd(avg), C.usd(v[-1]), C.fy(ys_[-1]), C.fy(ys_[-1] + 1), C.usd(round(est)),
+                                 (' It fell in each of the last %s years, so the estimate may run high.'
+                                  % C.num(fell(v))) if fell(v) >= 2 else ''),
+                              dict({'a': U(avg), 'b': U(v[-1]), 'y': F(ys_[-1]), 'z': F(ys_[-1] + 1),
+                                    'c': U(round(est))}, **({'n': N(fell(v))} if fell(v) >= 2 else {})))))
     out['sped-grants'] = TP.page(
         'sped-grants',
         'Special education grants and the circuit breaker paid %s in %s and %s in %s.'
@@ -1364,7 +1437,7 @@ def build():
         blocks=[TB.explain('Grants and a reimbursement', [
             'The grants are federal awards DESE allocates to each district by formula. The '
             'circuit breaker is not a grant: it is the state repaying part of the previous '
-            'year’s costliest placements.'], place='chart'), pay_blocks],
+            'year’s costliest placements.'], place='chart'), pay_blocks, t_cb] + t_idea,
         sources=sources() + [
             dict(label='Massachusetts DESE — entitlement grant allocations, by district and fund '
                        'code (dese-entitlement-allocations.csv)',
