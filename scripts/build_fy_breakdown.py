@@ -48,7 +48,6 @@ LINES_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown')
 SCHOOL = 'School budget'
 Y0, Y1 = 2025, 2026
 D0 = Decimal(0)
-PRIVATE = '0100-3-300-9300-51-1-06-2-535019'
 
 # Who paid, in six, on the weekly chart: a chart holds five hues and a grey. IDEA is named apart from the other
 # grants because it is the grant this question turned on.
@@ -415,90 +414,133 @@ def year_weeks(m, T):
                                'here.'))
 
 
+def year_facts(m, T):
+    """THE YEAR IN FIGURES, for every year, switched by the page's picker (TJ, 27 October 2026:
+    "make the facts and conclusions switch with the year"). Each fact is a figure the model
+    computes; each conclusion states two of them side by side and what follows, nothing about
+    why (rule 7)."""
+    monday = lambda d: d - timedelta(days=d.weekday())
+    files = line_files(m)
+    out = []
+    for fy in J.YEARS:
+        y = m['years'][fy]
+        rs = [r for r in m['rows'] if r['fy'] == fy and r['account']]
+        under = sum((r['left'] for r in rs if r['left'] > 0), D0)
+        over = -sum((r['left'] for r in rs if r['left'] < 0), D0)
+        n_under = sum(1 for r in rs if r['left'] > 0)
+        n_over = sum(1 for r in rs if r['left'] < 0)
+        off = sum((r['moved_off'] for r in rs), D0)
+        on = sum((r['moved_on'] for r in rs), D0)
+        direct = sum((r['other_funds'] for r in m['rows'] if r['fy'] == fy), D0) - off
+        moved = sum((t['moved'] for t in m['transfers'] if t['fy'] == fy), D0)
+        wk = defaultdict(Decimal)
+        for rows in files[fy].values():
+            for x in rows:
+                if x['d'] and not x['k'].startswith(RECHARGE):
+                    wk[monday(date.fromisoformat(x['d']))] += x['v']
+        big = max(wk, key=lambda w: wk[w])
+        if under - over != y['left']:
+            fail('FY%d: under less over is not what was left' % fy)
+        facts = [
+            dict(v=T.usd(y['left']), label='left on the school lines, orders owed counted'),
+            dict(v=T.usd(under), label=T.lit('left on the %s lines that ended under budget'
+                                             % C.num(n_under))),
+            dict(v=T.usd(over), label=T.lit('spent past budget on the %s lines that ran over'
+                                            % C.num(n_over))),
+            dict(v=T.usd(moved), label='budget moved between lines by transfer'),
+            dict(v=T.usd(off), label='bills re-charged off the school budget'),
+            dict(v=T.usd(on), label='bills re-charged back onto it'),
+            dict(v=T.usd(direct), label='paid by other funds from the start (our match)',
+                 estimate=True),
+            dict(v=T.usd(wk[big]), label=T.lit('spent or owed in the biggest week, starting %s'
+                                               % long_date(big.isoformat()))),
+        ]
+        if y['prepaid']:
+            facts.append(dict(v=T.usd(y['prepaid']), label=T.lit(
+                'of %s tuition paid early' % C.fy(fy + 1))))
+        if y['carried_unpaid']:
+            facts.append(dict(v=T.usd(y['carried_unpaid']), label=T.lit(
+                '%s orders carried in and never paid' % C.fy(fy - 1))))
+        cons = [dict(
+            claim=T.lit('%s left %s: %s on lines under budget, less %s spent past budget on '
+                        'the rest.' % (T.fy(fy), T.usd(y['left']), T.usd(under), T.usd(over))),
+            so=T.lit('The surplus is a net. %s lines ran over and were covered by leftovers '
+                     'elsewhere in the same budget.' % C.num(n_over)))]
+        if off or on:
+            net = off - on
+            cons.append(dict(
+                claim=T.lit('Journal entries re-charged %s of bills off the school budget and '
+                            '%s back onto it.' % (T.usd(off), T.usd(on))),
+                so=T.lit('Net, they %s Left by %s. The bills cost the same either way; only '
+                         'the fund that paid them changed.'
+                         % ('raised' if net > 0 else 'lowered', T.usd(abs(net))))))
+        cons.append(dict(
+            claim=T.lit('Grants and other funds paid %s toward these lines from the start.'
+                        % T.usd(direct)),
+            so='That money never passed through the school budget, so Left does not show it. '
+               'Which line it counts toward is our match, by payee or kind of work.'))
+        if y['prepaid']:
+            cons.append(dict(
+                claim=T.lit('%s paid %s of %s tuition before its year began.'
+                            % (T.fy(fy), T.usd(y['prepaid']), T.fy(fy + 1))),
+                so=T.lit('Paid from %s’s budget, it is spending that year did not need: without '
+                         'it, %s would have left %s.'
+                         % (T.fy(fy), T.fy(fy), T.usd(y['left'] + y['prepaid'])))))
+        elif y['carried_unpaid']:
+            cons.append(dict(
+                claim=T.lit('%s of %s’s orders were carried in and never paid.'
+                            % (T.usd(y['carried_unpaid']), T.fy(fy - 1))),
+                so='The budget carried in for them was not spent, so it ends the year as Left.'))
+        out.append(dict(fy=T.fy(fy), facts=facts, conclusions=cons))
+    return dict(years=out, text=dict(
+        facts='The figures', conclusions='What they show', means='What it means:',
+        estimate='Our estimate'))
+
+
 def page(m):
-    y0, y1 = m['years'][Y0], m['years'][Y1]
-    t0, t1 = y0['terms'], y1['terms']
-    rows = {(r['fy'], r['account']): r for r in m['rows'] if r['account']}
-    priv = rows[(Y1, PRIVATE)]
-    idea_tuition = sum((v for (rl, py), v in priv['payers'].items() if py.startswith('IDEA')), D0)
-    if priv['other_funds'] != idea_tuition:
-        raise SystemExit('build_fy_breakdown: the page says the IDEA grant is all of private '
-                         'tuition’s other-fund money in FY%d' % Y1)
-    # Journal moves, measured on the school budget's side: cost taken off its lines, less cost
-    # moved back on.
-    net = lambda y: sum((mv['off'] - mv['onto'] for mv in m['moves'] if mv['fy'] == y), D0)
-    mv0, mv1 = net(Y0), net(Y1)
-    moves = [mv for mv in m['moves'] if mv['fy'] == Y1]
-    idea_back = -sum((v for mv in moves for p, v in mv['by_payer'].items() if p.startswith('IDEA')), D0)
-    if not (idea_back > 0 and {mv['date'][5:7] for mv in moves} == {'06'} and mv0 < 0 < mv1):
-        raise SystemExit('build_fy_breakdown: the page says June %d entries moved IDEA pay onto '
-                         'the general fund, and moves ran onto it in FY%d and off it in FY%d'
-                         % (Y1, Y0, Y1))
-    um1 = sum(y1['unmatched'].values(), D0)
-    more = t1['other_funds'] - t0['other_funds']
-    without = y1['left'] + y1['prepaid']
+    mv = lambda y: sum((x['off'] - x['onto'] for x in m['moves'] if x['fy'] == y), D0)
+    mv0, mv1 = mv(Y0), mv(Y1)
+    if not mv0 < 0 < mv1:
+        fail('the page says re-charges ran onto the school budget in FY%d and off it in FY%d'
+             % (Y0, Y1))
     f = LD.fact
+    left = {y: m['years'][y]['left'] for y in J.YEARS}
 
     def con(text, rests, figs, so):
         return TP.conclusion(text, rests, figs, so=so[0], so_figures=so[1], so_allow=so[2])
-    facts = [
-        f('left', U(y1['left']), 'left on the school lines, orders owed counted', 'published'),
-        f('above', U(t1['voted_above_cost']), 'voted above what the lines cost, all funds',
-          'estimate'),
-        f('other', U(t1['other_funds']), 'paid by other funds toward those lines', 'estimate'),
-        f('transfers', U(t1['transfers']), 'budget moved in by transfer, net', 'published'),
-        f('another', U(t1['another_year']), 'another year’s money, net', 'published'),
-        f('prepaid', U(y1['prepaid']), 'next year’s tuition, paid this year', 'published'),
-        f('carried', U(y1['carried_unpaid']), 'last year’s orders, carried in and not paid',
-          'published'),
-        f('moved1', U(mv1), 'cost taken off the general fund by journal entry, net',
-          'published'),
-        f('moved0', U(mv0), 'the same, the year before', 'published'),
-        f('ideaback', U(idea_back), 'IDEA grant pay moved onto the general fund, June',
-          'published'),
-        f('idea', U(idea_tuition), 'IDEA grant paid toward private tuition', 'estimate'),
-        f('unmatched', U(um1), 'other funds’ spending no rule places on a line', 'estimate'),
-    ]
+    # The page's own facts and conclusions compare the years, so they hold whichever year the
+    # picker shows; each year's own are in the block it switches (year_facts).
+    facts = [f('left%d' % y, U(left[y]), 'left on the school lines, %s' % C.fy(y), 'published',
+               label_figures={'y': F(y)}) for y in J.YEARS] + [
+        f('moved1', U(mv1), 'taken off the school budget by re-charges, %s, net' % C.fy(Y1),
+          'published', label_figures={'y': F(Y1)}),
+        f('moved0', U(-mv0), 'added to it by re-charges, %s, net' % C.fy(Y0), 'published',
+          label_figures={'y': F(Y0)})]
     conclusions = [
-        con('Other funds paid %s toward %s’s lines; the vote alone was %s below what they cost.'
-            % (C.usd(fl(t1['other_funds'])), C.fy(Y1), C.usd(fl(-t1['voted_above_cost']))),
-            ['other', 'above', 'left'],
-            {'a': U(t1['other_funds']), 'y': F(Y1), 'b': U(-t1['voted_above_cost'])},
-            so=('A line is what is left after other funds pay, so it can end under with nothing '
-                'costing less. They paid %s more than in %s.'
-                % (C.usd(fl(more)), C.fy(Y0)),
-                {'m': U(more), 'y': F(Y0)}, ())),
-        con('The IDEA grant paid %s of private tuition; June entries moved %s of its pay onto '
-            'the general fund.' % (C.usd(fl(idea_tuition)), C.usd(fl(idea_back))),
-            ['idea', 'ideaback'], {'a': U(idea_tuition), 'b': U(idea_back)},
-            so=('One grant changed payer both ways in one year; the voted budget shows neither. '
-                'Why it paid the placement is in no document held.',
-                None, ())),
-        con('Journal entries took a net %s off the general fund in %s, after adding %s in %s.'
-            % (C.usd(fl(mv1)), C.fy(Y1), C.usd(fl(-mv0)), C.fy(Y0)), ['moved1', 'moved0'],
-            {'a': U(mv1), 'y': F(Y1), 'b': U(-mv0), 'z': F(Y0)},
-            so=('A swing of %s between two years, made by entries after the spending. Each is '
-                'in the journal with its date and memo.' % C.usd(fl(mv1 - mv0)),
-                {'s': U(mv1 - mv0)}, ())),
-        con('%s paid %s of %s tuition; %s of %s’s orders were carried in and never paid.'
-            % (C.fy(Y1), C.usd(fl(y1['prepaid'])), C.fy(Y1 + 1), C.usd(fl(y1['carried_unpaid'])),
-               C.fy(Y0)), ['prepaid', 'carried', 'another'],
-            {'y': F(Y1), 'a': U(y1['prepaid']), 'z': F(Y1 + 1), 'b': U(y1['carried_unpaid']),
-             'x': F(Y0)},
-            so=('Without the early payment %s would have left %s, more than %s on the same '
-                'footing.' % (C.fy(Y1), C.usd(fl(without)), C.fy(Y0)),
-                {'y': F(Y1), 'w': U(without), 'z': F(Y0)}, ())),
+        con('The school lines left %s and %s in %s and %s, then %s and %s.'
+            % (C.usd(fl(left[2023])), C.usd(fl(left[2024])), C.fy(2023), C.fy(2024),
+               C.usd(fl(left[2025])), C.usd(fl(left[2026]))),
+            ['left2023', 'left2024', 'left2025', 'left2026'],
+            {'a': U(left[2023]), 'b': U(left[2024]), 'x': F(2023), 'z': F(2024),
+             'c': U(left[2025]), 'd': U(left[2026])},
+            so=('Two years near nothing, then two near half a million. Each year’s own figures, '
+                'above, show what moved in it.', None, ())),
+        con('Re-charges added %s to the school budget’s spending in %s and took %s off in %s.'
+            % (C.usd(fl(-mv0)), C.fy(Y0), C.usd(fl(mv1)), C.fy(Y1)), ['moved0', 'moved1'],
+            {'a': U(-mv0), 'y': F(Y0), 'b': U(mv1), 'z': F(Y1)},
+            so=('A swing of %s between two years, made by entries after the spending; the bills '
+                'cost the same either way.' % C.usd(fl(mv1 - mv0)), {'s': U(mv1 - mv0)}, ())),
     ]
     T = Texts()
     lines = lines_data(m, T)
+    figures = year_facts(m, T)
     weeks = year_weeks(m, T)
     if {mv['date'][5:7] for mv in m['moves'] if mv['fy'] == Y1} != {'06'}:
         fail('the weekly chart says every %d re-charge was in June' % Y1)
     return TP.page(
         ID,
-        '%s’s lines left %s; other funds paid %s of their cost, %s more than in %s.'
-        % (C.fy(Y1), C.usd(fl(y1['left'])), C.usd(fl(t1['other_funds'])), C.usd(fl(more)),
-           C.fy(Y0)),
+        'The school lines left %s in %s and %s in %s; pick a year to see what moved in it.'
+        % (C.usd(fl(left[2023])), C.fy(2023), C.usd(fl(left[Y1])), C.fy(Y1)),
         facts, conclusions,
         chart=TP.series(
             'What the school lines left, by year', [C.fy(y) for y in J.YEARS],
@@ -534,6 +576,12 @@ def page(m):
                       so=('A line can end under because its bills were re-charged to another '
                           'fund after the school budget paid them. Sorted by category, lines '
                           'that cancel each other out sit side by side.', None, ())),
+            TB.custom('fy-year-facts', 'The year in figures', figures, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Computed from every posting on the school lines'),
+                      alt='The picked year’s figures and what they show',
+                      so=('Each figure is the year picked at the top; pick another and they '
+                          'change with it.', None, ())),
         ],
         sources=[
             dict(label='Lunenburg Budget Project — munis-school-journal.csv (every school '
@@ -550,8 +598,7 @@ def page(m):
             dict(label='Town of Lunenburg — how the journal reached us, and what was redacted',
                  href='/docs/town-ledgers/account-details/'
                       'PROVENANCE-fy2023-fy2026-p13-school-journal.md')],
-        finding_figures={'y': F(Y1), 'l': U(y1['left']), 'o': U(t1['other_funds']),
-                         'm': U(more), 'z': F(Y0)},
+        finding_figures={'a': U(left[2023]), 'x': F(2023), 'b': U(left[Y1]), 'y': F(Y1)},
         # HIDDEN, NOT RELEASED (TJ, 26 October 2026: "put this page into a hidden section where
         # we wont release it"). Built as a draft: outside the shelf registry, so it is on no
         # shelf, in no topics.json, not in the sitemap and not prerendered. The address still

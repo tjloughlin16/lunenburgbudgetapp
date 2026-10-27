@@ -10,6 +10,7 @@
  *  second page, promote it to a named block in Blocks.tsx and scripts/topic_blocks.py. */
 import type { ComponentType } from 'react'
 import FyLineTable from './fy-line-table'
+import FyYearFacts from './fy-year-facts'
 import FyYearPicker from './fy-year-picker'
 import FyYearWeeks from './fy-year-weeks'
 import GrantAwardsStack from './grant-awards-stack'
@@ -21,6 +22,7 @@ export type CustomProps = { data: unknown; alt: string }
 
 export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-line-table': FyLineTable,
+  'fy-year-facts': FyYearFacts,
   'fy-year-picker': FyYearPicker,
   'fy-year-weeks': FyYearWeeks,
   'grant-awards-stack': GrantAwardsStack,
