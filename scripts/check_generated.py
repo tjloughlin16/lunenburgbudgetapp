@@ -133,6 +133,10 @@ CHECKS = [
     # and every figure recomputed by the verifier's different route.
     ('build_school_surplus.py', ['--all', '--check']),
     ('verify_school_surplus.py', ['--all']),
+    # The surplus in four parts (fy_breakdown.py): the page, and every line's four parts
+    # recomputed off the raw CSVs and tied to the period-13 report, owed footing.
+    ('build_fy_breakdown.py', ['--check']),
+    ('verify_fy_breakdown.py', []),
     # ORDERS CARRIED FROM ONE SCHOOL YEAR INTO THE NEXT: the topic page, which refuses unless
     # every close's YEC equals the next year's SOY and carry-forward, account by account; and
     # its figures recomputed in SQL off the database copy of the journal.

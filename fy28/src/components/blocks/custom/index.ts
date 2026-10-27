@@ -9,6 +9,10 @@
  *  component formats nothing and draws from the payload (rule 7f). When one is used on a
  *  second page, promote it to a named block in Blocks.tsx and scripts/topic_blocks.py. */
 import type { ComponentType } from 'react'
+import FyAlluvial from './fy-alluvial'
+import FyLineTable from './fy-line-table'
+import FyMovesTimeline from './fy-moves-timeline'
+import FyPool from './fy-pool'
 import GrantAwardsStack from './grant-awards-stack'
 import MeetingTrail from './meeting-trail'
 import SerfMoneyStack from './serf-money-stack'
@@ -17,6 +21,10 @@ import SerfSaidLedger from './serf-said-ledger'
 export type CustomProps = { data: unknown; alt: string }
 
 export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
+  'fy-alluvial': FyAlluvial,
+  'fy-line-table': FyLineTable,
+  'fy-moves-timeline': FyMovesTimeline,
+  'fy-pool': FyPool,
   'grant-awards-stack': GrantAwardsStack,
   'meeting-trail': MeetingTrail,
   'serf-money-stack': SerfMoneyStack,

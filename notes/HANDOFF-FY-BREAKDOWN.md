@@ -1,5 +1,55 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
+## SHELVED, 26 October 2026 (late). HIDDEN, NOT RELEASED. TJ is taking a different approach
+
+TJ, after reading it: *"im struggling to undersand this ... and how it helps undersand the
+moves"*, then: *"lets put this page into a hidden section where we wont release it."* The page is
+built as a DRAFT (`draft=` in `build_fy_breakdown.py`), so it is on no shelf, not in topics.json,
+not in the sitemap and not prerendered; the address /fy2026-closeout/fy2026-breakdown still opens.
+Model, verifier and components are kept; `check_generated.py` still runs both.
+
+**Why it did not land, in one line:** it opened on the all-funds identity (other funds paid
+$1.6M toward the lines, voted $1.0M below cost), which is mostly STRUCTURAL -- fee funds paying
+their own staff's insurance every year -- and it buried the part that changed between years: the
+moves. What finally made sense in conversation was one table, measured from the journal:
+
+| | FY2025 | FY2026 |
+|---|---:|---:|
+| left, as reported (owed counted) | $554,945 | $482,118 |
+| bills moved between the school budget and other funds | $253,382 onto it | $366,899 off it |
+| next year's tuition paid early | none | $189,277 |
+| last year's orders never paid | $38,354 | $41,377 |
+| left before those moves (our arithmetic) | $769,973 | $263,119 |
+
+Run the model before quoting any of it (rule 2). TJ declined rebuilding the page around it.
+
+## BUILT, 26 October 2026 (night): the data, the identity, the verifier, the alluvial. Not committed, not deployed
+
+- `scripts/fy_breakdown.py`: the model. The identity closes to the cent on every line, every year;
+  owed footing (FY2023 $32,022 / FY2024 $31,705 / FY2025 $554,945 / FY2026 $482,118 -- run it, do
+  not quote this line). Both worked cases reproduce. Match rules a/b/c are declared in its docstring,
+  with two decisions made here: CAPITAL ARTICLES are matched only by journal entry (by payee they
+  pulled ~$818k of HVAC work onto operating lines); a cost moved BACK onto the general fund is left
+  with its own account (IDEA's aide payroll on fund 2813 is function 0000, unmatched -- placing the
+  move-back on the aide lines made a phantom negative).
+- `scripts/verify_fy_breakdown.py`: own CSV reader, shares only `category_of`; ties every line to
+  the period-13 `available_budget` less next July's SOY, and the alluvial's columns to every school
+  expense dollar. Power-tested three ways (shifted term, one cent, broken prepay rule): all fail it.
+  Found one real defect while being written: placed money on a line with no postings that year was
+  silently dropped ($48,910 in FY2026). Fixed in both routes; the model now asserts it.
+- `scripts/build_fy_breakdown.py` -> `/fy2026-closeout/fy2026-breakdown`, "Surplus in four parts":
+  alluvial (`fy-alluvial.tsx`, `?block=tuition` opens on one block), waterfall of the four parts,
+  4 conclusions with meanings, 12 facts, the four-way table by category with a tab per year. In
+  `check_generated.py`. Phone width checked (400px, clean). Registry: lead group of the shelf.
+- money-gaps: new last row (which line a grant dollar pays toward; closes: DESE-approved grant
+  budgets, End of Year Financial Report). Public copies not regenerated (refresh does it).
+- ALSO BUILT (same night, TJ: "build everything you planned"): `fy-pool` (under lines -> one pool
+  -> over lines + left; no line-to-line edges), `fy-moves-timeline` (transfers / fund moves /
+  money crossing years, July-June, the Town's memo on each), `fy-line-table` (every line, sortable,
+  each opening on its own waterfall and its payers with the matching rule; unmatched money listed).
+  All three carry FY2023-FY2026 tabs. The payload is ~950 KB, mostly the line table. Waiting on
+  TJ's comparison against what he thinks will reveal the most.
+
 Written 26 October 2026 (late), for a FRESH session. Load the `building-a-page` skill first,
 then read this file, then `notes/HANDOFF-SURPLUS-PAGES.md` (the surplus work this grows out of).
 
