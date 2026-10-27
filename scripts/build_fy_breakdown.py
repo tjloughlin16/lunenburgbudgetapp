@@ -279,16 +279,20 @@ def lines_data(m, T):
         budget='What the line was allowed to spend: voted, plus transfers, plus carried.',
         before='What the school budget paid or still owed on this line, before any journal '
                'entry moved cost to or from another fund. Orders still owed at year end count.',
-        off='Cost already spent on this line, re-booked by journal entry onto a grant or another '
-            'fund (a reclass). The school budget’s spending goes down, so Left goes up. The bills '
+        off='THE SCHOOL BUDGET’S SIDE. Cost already spent on this line, re-booked by journal '
+            'entry onto a grant or another fund (a reclass). Here it LEAVES the school budget: '
+            'what the school budget spent goes down by this much, so Left goes up by this much. '
+            'The same amount appears again under What the line cost, because the bills still '
             'cost the same.',
         on='Cost a grant or another fund had paid, re-booked onto this line by journal entry. The '
            'school budget’s spending goes up, so Left goes down.',
         left='The budget, less what the school budget spent after the moves: this line’s part of '
              'the surplus, or of what ran over.',
         spent='What the school budget spent on this line, after the moves.',
-        off_cost='The same moved cost, counted back in: it is still this line’s cost, paid by '
-                 'another fund.',
+        off_cost='WHAT THE LINE COST. The same amount the school budget moved off this line, '
+                 'counted back in here because it is still this line’s cost: the other fund paid '
+                 'it instead. Left out, the total would be short by exactly what moved. It does '
+                 'not change Left; that happened on the school budget’s side.',
         direct='What grants and other funds paid toward this line in the first place. Left does '
                'not change. Which spending counts toward which line is our match, by payee or by '
                'kind of work.',
@@ -305,11 +309,11 @@ def lines_data(m, T):
                          col('carried', 'carried', 'Carried from last year', '+', 'budget'),
                          col('budget', 'budget', 'Budget', '=', 'budget'),
                          col('before', 'before', 'Spent before moves', '−', 'budget'),
-                         col('off', 'off', 'Moved to other funds', '+', 'budget'),
+                         col('off', 'off', 'Moved to other funds, off the school budget', '+', 'budget'),
                          col('on', 'on', 'Moved back from other funds', '−', 'budget'),
                          col('left', 'left', 'Left', '=', 'budget'),
                          col('spent', 'spent', 'Spent by the school budget', '', 'cost'),
-                         col('off_cost', 'off', 'Moved to other funds', '+', 'cost'),
+                         col('off_cost', 'off', 'Moved to other funds, still this line’s cost', '+', 'cost'),
                          col('direct', 'direct', 'Paid directly by other funds', '+', 'cost'),
                          col('total', 'total', 'Total spent, all funds', '=', 'cost')],
                 text=dict(
