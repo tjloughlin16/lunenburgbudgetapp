@@ -1,0 +1,813 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2021-08-24",
+ "video_id": "1TdZen534xs",
+ "video_url": "https://www.youtube.com/watch?v=1TdZen534xs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-08-24-1TdZen534xs.json",
+  "sha256": "2947ffa740718f4feafe7654a7bef3007d95f1d8adaf182a4d3216e9442a95ef",
+  "caption_lines": 275,
+  "segments": 2567
+ },
+ "recording": {
+  "duration_s": 5749,
+  "duration": "1:35",
+  "spoken_chars": 73602,
+  "words_approx": 12267
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_08242021-5265",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-08-24-agenda-5265.txt",
+   "path": "sources/meetings/select-board/2021-08-24-agenda-5265.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08242021-5265",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-08-24-minutes-5265.txt",
+   "path": "sources/meetings/select-board/2021-08-24-minutes-5265.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-25T14:18:48Z",
+  "cost_usd": 0.4145111
+ },
+ "minutes": {
+  "headline": "Select Board heard a strong FY21 close and backed a comment letter against the Pondview Commons 40B.",
+  "summary": "The board ratified a police hire and a temporary veterans agent, appointed a housing authority tenant member, and heard the FY21 fourth-quarter financial report showing revenue and closeouts above estimates. It authorized the town manager to compile the 40B comment letter, approved changed earth removal hours, funded a boundary survey, and directed a revised landscape RFP for 30 School Street.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Alonso",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jefferies",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "the police chief",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Karen",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Adam Costa",
+    "role": "town counsel"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "assistant town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 122,
+    "topic": "Public comment opened; none from the public."
+   },
+   {
+    "t": 2826,
+    "topic": "A resident asked whether the compromise Saturday hours of 9 to 12 for the earth removal permit were still on the table.",
+    "speaker_as_heard": "pamela"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "free-cash",
+   "grants",
+   "hiring",
+   "housing",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety",
+   "roads-and-dpw",
+   "technology",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 408,
+    "motion": "Ratify the town manager's appointment of Joel Ortega as full-time patrol officer effective December 5, 2021",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1682,
+    "motion": "Appoint Stanley Randall to the housing authority tenant board member seat, term to expire 2023",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2661,
+    "motion": "Authorize the town manager to compile public comments and work with town counsel on a cover letter for the 40B comment submission",
+    "outcome": "passed 5-0 (roll call)",
+    "procedural": false
+   },
+   {
+    "t": 3097,
+    "motion": "Approve the earth removal permit renewal with weekday hours 7:30 a.m. to 4 p.m. and Saturday 9 a.m. to 12 p.m.",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3310,
+    "motion": "Ratify the town manager's appointment of David Lauzon Jr. as temporary veterans agent",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4834,
+    "motion": "Approve the boundary survey and staking of three potential encroachments on the conservation property",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5589,
+    "motion": "Approve minutes of August 3, August 10 and August 17, 2021, voted separately",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 5715,
+    "motion": "Adjourn",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 470,
+    "topic": "FY21 total revenue collections",
+    "what_was_said": "Total collections exceeded estimates.",
+    "figures_as_heard": [
+     "44 million two hundred and fifty two thousand fifty dollars",
+     "two point two percent",
+     "nine hundred and thirty five thousand one dollars"
+    ]
+   },
+   {
+    "t": 511,
+    "topic": "Local receipts versus estimate",
+    "what_was_said": "Local receipts exceeded estimates because the estimates were level funded and conservative during the pandemic.",
+    "figures_as_heard": [
+     "19.26 percent",
+     "590 516"
+    ]
+   },
+   {
+    "t": 597,
+    "topic": "Motor vehicle excise, penalties and interest, non-recurring",
+    "what_was_said": "These categories exceeded estimates.",
+    "figures_as_heard": [
+     "three hundred and seven thousand one hundred and fifty eight dollars",
+     "a hundred and four thousand five hundred and fourteen dollars",
+     "98 055"
+    ]
+   },
+   {
+    "t": 702,
+    "topic": "Tax levy collections",
+    "what_was_said": "Collections reached nearly the full estimate, with additional tax lien revenue.",
+    "figures_as_heard": [
+     "28 million seven hundred and seventy six thousand two hundred and fifty dollars",
+     "ninety nine point seven percent",
+     "two hundred and twenty thousand seven hundred and seventy four dollars"
+    ]
+   },
+   {
+    "t": 745,
+    "topic": "State aid versus estimate",
+    "what_was_said": "State aid exceeded estimate mainly due to a one-time zoning incentive payment for the tri-town housing project, plus extra smart growth reimbursement.",
+    "figures_as_heard": [
+     "2.64 percent",
+     "240 260",
+     "two hundred and ten thousand dollars",
+     "forty four thousand three hundred and forty five dollars"
+    ]
+   },
+   {
+    "t": 785,
+    "topic": "FY21 expenditures and unexpended balance",
+    "what_was_said": "The town spent most of its budget and left a balance of unexpended funds.",
+    "figures_as_heard": [
+     "43 million and seventeen thousand forty eight dollars",
+     "ninety seven percent",
+     "one million two hundred and forty nine thousand nine hundred and fifty dollars"
+    ]
+   },
+   {
+    "t": 825,
+    "topic": "Appropriation closeouts by category",
+    "what_was_said": "Closeouts were read out by department group, with schools the largest after unclassified.",
+    "figures_as_heard": [
+     "four hundred and twenty five thousand five hundred and forty five dollars",
+     "491 127 dollars",
+     "one million three hundred and eight thousand eight hundred ninety three dollars"
+    ]
+   },
+   {
+    "t": 952,
+    "topic": "Estimated free cash",
+    "what_was_said": "The finance director estimated free cash up from the prior certified amount, driven by revenue.",
+    "figures_as_heard": [
+     "two million six hundred and seventy five 000",
+     "871 thousand dollars"
+    ]
+   },
+   {
+    "t": 1119,
+    "topic": "CARES Act and FEMA offsets",
+    "what_was_said": "Eligible costs moved to CARES and FEMA funds, lowering closeouts that would otherwise have been absorbed by budgets.",
+    "figures_as_heard": [
+     "between three and four hundred thousand"
+    ]
+   },
+   {
+    "t": 4241,
+    "topic": "Boundary survey and staking quote",
+    "what_was_said": "A quote was given for a partial boundary survey of three possible encroachments plus staking.",
+    "figures_as_heard": [
+     "6500",
+     "1500",
+     "eight thousand dollars"
+    ]
+   },
+   {
+    "t": 4649,
+    "topic": "Cost of surveying all 24 possible encroachments",
+    "what_was_said": "A member questioned the cumulative cost of surveys across all identified violations.",
+    "figures_as_heard": [
+     "sixty four thousand dollars",
+     "15 000 20 000"
+    ]
+   },
+   {
+    "t": 4985,
+    "topic": "30 School Street landscape architect RFP scope",
+    "what_was_said": "Scope of tasks may exceed the existing appropriation, so a special town meeting might be needed.",
+    "figures_as_heard": [
+     "200 or so hours"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3860,
+    "decision": "Main Street upper common plan: remove the pine tree and route through the center by the sign, with the flagpole possibly moved."
+   },
+   {
+    "t": 5254,
+    "decision": "Revised 30 School Street RFP: remove construction documents task, task one to deliver two concepts then one chosen plus a proposal for next phases, bring to the September 7 agenda; aim for a March 1 finished product."
+   },
+   {
+    "t": 4750,
+    "decision": "Conservation survey of the remaining 24 possible encroachments will proceed serially as conservation commission determines."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 11,
+    "t_end": 142,
+    "topic": "Opening, open meeting law notice, public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 142,
+    "t_end": 440,
+    "topic": "Ratification of full-time patrol officer appointment",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "public-safety",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 450,
+    "t_end": 1286,
+    "topic": "Finance director's FY21 fourth quarter report",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "free-cash",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1286,
+    "t_end": 1730,
+    "topic": "Housing authority tenant member interview and appointment",
+    "resolution": "voted",
+    "tags": [
+     "housing",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1743,
+    "t_end": 2715,
+    "topic": "40B comment letter on Pondview Commons with town counsel",
+    "resolution": "voted",
+    "tags": [
+     "housing",
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2724,
+    "t_end": 3248,
+    "topic": "Earth removal permit renewal hours",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 3248,
+    "t_end": 3340,
+    "topic": "Temporary veterans agent appointment",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3340,
+    "t_end": 3802,
+    "topic": "Town manager report: vacancies, DPW bridge and sidewalk ramps, IT director, announcements",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report",
+     "roads-and-dpw",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3802,
+    "t_end": 3990,
+    "topic": "Complete Streets Main Street upper common",
+    "resolution": "no resolution",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 3992,
+    "t_end": 4860,
+    "topic": "Boundary survey of conservation property encroachments",
+    "resolution": "voted",
+    "tags": [
+     "legal",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4860,
+    "t_end": 5560,
+    "topic": "Revised RFP for 30 School Street landscape architect",
+    "resolution": "direction given",
+    "tags": [
+     "capital",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 5568,
+    "t_end": 5750,
+    "topic": "Minutes, committee reports, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact count of the vote on the patrol officer ratification, housing seat, earth removal and other voice votes beyond 'aye/none opposed'.",
+   "Figures read in the finance report are as captioned and may be misheard.",
+   "Chair's name 'Alonso' rendered by captions; other member names may be mangled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3574,
+    "about": "A member criticized engineering and contractor quality on the Pleasant Street bridge and Complete Streets ramps.",
+    "sides": "a member criticizing engineering work; the town manager and another member explaining the projects were not signed off as complete",
+    "words_as_heard": "i questioned people's dedication to their job",
+    "kind": "charged language"
+   },
+   {
+    "t": 4586,
+    "about": "A member opposed funding a piecemeal survey of three encroachments out of 24 identified.",
+    "sides": "one member against; the town manager and other members in favor",
+    "words_as_heard": "i'm not in favor of this proposal",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1639,
+    "kind": "liability or legal",
+    "about": "Concerns about conditions and treatment of tenants at the housing authority and management contractor.",
+    "who": "a member",
+    "words_as_heard": "i think there's cause for concern i think there's a lot of cause for concern"
+   },
+   {
+    "t": 3391,
+    "kind": "safety",
+    "about": "Pleasant Street bridge railing height and gap beside the rail needed additional protection for pedestrians.",
+    "who": "the town manager",
+    "words_as_heard": "address some safety concerns including the gap between the face of the rail and the edge of the pavement and the height of the bridge railing"
+   },
+   {
+    "t": 3432,
+    "kind": "liability or legal",
+    "about": "Possible ADA noncompliance of installed Complete Streets sidewalk ramps.",
+    "who": "the town manager",
+    "words_as_heard": "we would like to have reviewed as far as their ada compliance"
+   },
+   {
+    "t": 3904,
+    "kind": "safety",
+    "about": "Trees at the island obstruct vision at an intersection and can create a hazard.",
+    "who": "the police chief",
+    "words_as_heard": "it obstructs your vision going into those intersections"
+   },
+   {
+    "t": 4484,
+    "kind": "condition",
+    "about": "A member wants a survey done before asserting a property claim that could take a resident's driveway.",
+    "who": "a member",
+    "words_as_heard": "i think it's really important that we do some due diligence"
+   },
+   {
+    "t": 4606,
+    "kind": "condition",
+    "about": "A member preferred a comprehensive set of survey violations before spending on surveys.",
+    "who": "a member",
+    "words_as_heard": "i'd much rather do it at the same time as a comprehensive set"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 805,
+    "name_as_heard": "summary of the different appropriations and closeouts",
+    "kind": "report",
+    "words_as_heard": "i did provide you with a summary of the different appropriations and how much was closed out in each one"
+   },
+   {
+    "t": 1763,
+    "name_as_heard": "40B comment letter and resident comments",
+    "kind": "letter or email",
+    "words_as_heard": "we have a comment letter that we have to submit to mass housing by september 2nd"
+   },
+   {
+    "t": 2724,
+    "name_as_heard": "earth removal permit renewal",
+    "kind": "application or permit",
+    "words_as_heard": "renewal of the annual earth removal permit for 13.25 mass avenue"
+   },
+   {
+    "t": 4241,
+    "name_as_heard": "survey quote",
+    "kind": "contract or agreement",
+    "words_as_heard": "6500 to perform a partial boundary survey"
+   },
+   {
+    "t": 4877,
+    "name_as_heard": "revised RFP for 30 School Street",
+    "kind": "contract or agreement",
+    "words_as_heard": "revised requests for proposals for the landscape architectural service for 30 school street"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "30-school-street-plan",
+    "title": "30 School Street options",
+    "question": "What will the landscape architect design work for 30 School Street cost and what is appropriated?",
+    "t": 4877,
+    "words_as_heard": "the scope under task two may exceed our appropriation",
+    "data_in_play": [
+     "200 or so hours"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "free-cash-fy21-close",
+    "title": "FY21 free cash",
+    "question": "How did FY21 revenue and closeouts produce the estimated free cash and what is it used for?",
+    "t": 952,
+    "words_as_heard": "my estimate at this point in time is two million six hundred and seventy five 000",
+    "data_in_play": [
+     "two million six hundred and seventy five 000",
+     "871 thousand dollars"
+    ],
+    "existing": "topic:free-cash-balance"
+   },
+   {
+    "slug": "conservation-land-encroachments",
+    "title": "Conservation land encroachments",
+    "question": "What do boundary surveys of possible encroachments on conservation land cost across all 24 locations?",
+    "t": 4586,
+    "words_as_heard": "if every three is costing us eight thousand dollars at sixty four thousand dollars",
+    "data_in_play": [
+     "6500",
+     "1500",
+     "sixty four thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 5-0 to authorize the town manager to compile public comments and work with town counsel on a cover letter for the 40B comment submission.",
+    "t": 2661
+   },
+   {
+    "line": "The finance director's fourth-quarter report showed FY21 revenue collections above estimates, with local receipts and state aid both ahead of what was budgeted.",
+    "t": 470
+   },
+   {
+    "line": "The board approved the earth removal permit renewal with weekday hours and a shorter Saturday window.",
+    "t": 3097
+   },
+   {
+    "line": "The board approved a boundary survey and staking of three possible encroachments on conservation property; the remaining 24 will be surveyed one at a time.",
+    "t": 4834
+   },
+   {
+    "line": "The board directed a revised RFP for a 30 School Street landscape architect, to return on the September 7 agenda, after noting the scope might exceed the appropriation.",
+    "t": 5254
+   }
+  ],
+  "why_it_matters": [
+   "The 40B comment letter is the town's formal response to a state-permitted housing proposal, which can override local zoning, so what the letter says shapes what the town can ask for.",
+   "Revenue that came in above conservative pandemic-era estimates feeds free cash, which residents are asked to vote on at town meeting.",
+   "If the 30 School Street design work costs more than the existing appropriation, a special town meeting vote could be needed."
+  ],
+  "watch_next": [
+   "The September 7 Select Board agenda, when the revised 30 School Street RFP is due back.",
+   "The finance director's free cash estimate, which the minutes describe as up from the prior certified amount."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-25T14:18:57Z",
+   "cost_usd": 0.2407618
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_08242021-5265",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-08-24-minutes-5265.txt",
+   "path": "sources/meetings/select-board/2021-08-24-minutes-5265.pdf"
+  },
+  "official_sha256": "dfd234a2d44a2284111b0f362797089537ad652d5069885e4b9fc48157155189",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on all six votes in substance and on most revenue figures. The main differences are the earth removal motion, the free cash estimate, the 30 School Street RFP scope, and attendee names. Check the earth removal motion first: the official minutes add a Saturday no-trucking condition and describe an amendment to hours, where ours records a permit renewal.",
+  "counts": {
+   "agree": 12,
+   "caption_error": 3,
+   "discrepancy": 5,
+   "only_in_ours": 1,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Ortega appointment as full-time patrol officer",
+    "ours": "Ratify the town manager's appointment of Joel Ortega as full-time patrol officer effective December 5, 2021 — passed",
+    "official": "to ratify the town manager's appointment of joel ortega to full-time officer effective december 5, 2021 vote: all in favor",
+    "note": "Same appointment, same effective date, passed in both.",
+    "t": 408
+   },
+   {
+    "kind": "agree",
+    "about": "Stanley Randall housing authority appointment",
+    "ours": "Appoint Stanley Randall to the housing authority tenant board member seat, term to expire 2023 — passed",
+    "official": "to appoint stanley randall to the housing authority tenant board member seat with a term to expire 2023",
+    "note": "Same vote and term.",
+    "t": 1682
+   },
+   {
+    "kind": "agree",
+    "about": "40B comment submission authorization",
+    "ours": "Authorize the town manager to compile public comments and work with town counsel on a cover letter for the 40B comment submission — passed 5-0 (roll call)",
+    "official": "to authorize town manager to work with town counsel to compile the submittal for public comment and create a cover letter for the submission of those public comments",
+    "note": "Same motion and outcome; the 5-0 tally is only in ours, not contradicted.",
+    "t": 2661
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Earth removal permit hours vote",
+    "ours": "Approve the earth removal permit renewal with weekday hours 7:30 a.m. to 4 p.m. and Saturday 9 a.m. to 12 p.m. — passed",
+    "official": "to amend the operating hours from 7:30 a.m. to 4:00 p.m. monday through friday and 9:00 a.m. to noon on saturday, with no trucking on saturdays",
+    "note": "Hours match, but the official motion amends the hours and bars trucking on Saturdays, and does not mention a permit renewal; check the recording for what was moved and whether the trucking restriction was voted.",
+    "t": 3097
+   },
+   {
+    "kind": "agree",
+    "about": "David Lauzon Jr. temporary veterans agent",
+    "ours": "Ratify the town manager's appointment of David Lauzon Jr. as temporary veterans agent — passed",
+    "official": "to ratify the town manager appointment of david lauzon jr as temporary veterans agent",
+    "note": "Same vote.",
+    "t": 3310
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Cowdrey conservation boundary survey vote",
+    "ours": "Approve the boundary survey and staking of three potential encroachments on the conservation property — passed",
+    "official": "to approve the survey for the three potential encroachments against the cowdrey conservation property in the amount of $8,000",
+    "note": "Same vote, but ours says survey and staking and no amount; the official gives $8,000, which matches the $6,500 plus $1,500 quote in ours. Likely consistent, but confirm the motion included staking and the $8,000.",
+    "t": 4834
+   },
+   {
+    "kind": "agree",
+    "about": "Boundary survey quote",
+    "ours": "Boundary survey and staking quote: 6500, 1500, eight thousand dollars",
+    "official": "we received an estimate of $6,500 to perform a partial boundary survey",
+    "note": "Same figures: $6,500 plus $1,500 totals $8,000.",
+    "t": 4241
+   },
+   {
+    "kind": "agree",
+    "about": "FY21 total collections",
+    "ours": "FY21 total revenue collections: 44 million two hundred and fifty two thousand fifty dollars, two point two percent, nine hundred and thirty five thousand one dollars",
+    "official": "total collections for fy21 are $44,252,049.61. actuals exceeded estimates by 2.2%, or",
+    "note": "Same figures, with cents dropped in the captions.",
+    "t": 470
+   },
+   {
+    "kind": "agree",
+    "about": "Local receipts over estimate",
+    "ours": "Local receipts versus estimate: 19.26 percent, 590 516",
+    "official": "we exceeded our fy21 local receipt estimate by 19.26%, or $590,515.97.",
+    "note": "Same, rounded.",
+    "t": 511
+   },
+   {
+    "kind": "agree",
+    "about": "Tax levy and tax lien figures",
+    "ours": "Tax levy collections: 28 million seven hundred and seventy six thousand two hundred and fifty dollars, ninety nine point seven percent, two hundred and twenty thousand seven hundred and seventy four dollars",
+    "official": "the total tax levy for fy21, net of the overlay, is $28,776,249.82.",
+    "note": "Same figures (99.7% and $220,773.96 lien revenue also in official).",
+    "t": 702
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY21 expenditures / appropriation close-out total",
+    "ours": "FY21 expenditures and unexpended balance: 43 million and seventeen thousand forty eight dollars, ninety seven percent, one million two hundred and forty nine thousand nine hundred and fifty dollars",
+    "official": "funds is $1,249,949.83. she provided a summary of the appropriation close-outs:",
+    "note": "The $1.25M balance matches; the budget base is $43,317,048.41 in the official minutes, so the heard '43 million and seventeen thousand' is a garbled version of that.",
+    "t": 785,
+    "official_reading": "$43,317,048.41"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Estimated free cash",
+    "ours": "Estimated free cash: two million six hundred and seventy five 000, 871 thousand dollars",
+    "official": "ms. brochu estimated free cash available will be $2,600,075.00 which is an increase of",
+    "note": "Captions say $2,675,000 where the official says $2,600,075; the $871,000 increase matches. Check the recording for which was said.",
+    "t": 952
+   },
+   {
+    "kind": "agree",
+    "about": "CARES Act offset",
+    "ours": "CARES Act and FEMA offsets: between three and four hundred thousand",
+    "official": "ms. brochu stated the town budgets would have had to bear expenses of about $300,000 - $400,000 if the cares act did not reimburse the town.",
+    "note": "Same range.",
+    "t": 1119
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Prior-year close-out comparison",
+    "ours": "",
+    "official": "she noted that the closeout for fiscal year 2020 was $1,242,000 compared to fiscal year 2021 of $1,249,000.",
+    "note": "Our minutes do not record the FY2020 close-out comparison.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Main Street upper common tree removal",
+    "ours": "Main Street upper common plan: remove the pine tree and route through the center by the sign, with the flagpole possibly moved.",
+    "official": "after reviewing the area again, the consensus was to remove the large evergreen tree (and replace it later with a smaller one).",
+    "note": "Same consensus; the official adds replacement with a smaller tree, ours adds the flagpole.",
+    "t": 3860
+   },
+   {
+    "kind": "discrepancy",
+    "about": "30 School Street RFP scope",
+    "ours": "Revised 30 School Street RFP: remove construction documents task, task one to deliver two concepts then one chosen plus a proposal for next phases, bring to the September 7 agenda; aim for a March 1 finished product.",
+    "official": "it was decided to reduce the rep to request only task#1.",
+    "note": "Both reduce the RFP, but ours describes removing the construction documents task and a March 1 target while the official says only Task 1 is requested; check what was decided.",
+    "t": 5254
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Conservation survey of remaining 24 encroachments",
+    "ours": "Conservation survey of the remaining 24 possible encroachments will proceed serially as conservation commission determines.",
+    "official": "",
+    "note": "Decision not in the official minutes; cost of $64,000 also only in ours.",
+    "t": 4750
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment on Saturday hours",
+    "ours": "",
+    "official": "pamela anzaldi, 70 townsend harbor road, via zoom, asked if the change from 8 am to 9 am to noon on saturdays was still an option.",
+    "note": "Public comment is not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair name",
+    "ours": "Mr. Alonso (chair)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino",
+    "note": "Misspelled name in captions.",
+    "official_reading": "Tom Alonzo"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chairman name",
+    "ours": "Mr. Jefferies (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino",
+    "note": "Misspelled name.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Board member Mourinho vs Marino",
+    "ours": "Mr. Mourinho (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino",
+    "note": "Likely a misheard Jim Marino; confirm against the recording.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Dwyer and Franco present",
+    "ours": "Mr. Dwyer (member), Mr. Franco (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino",
+    "note": "Both present in both.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Staff attendees",
+    "ours": "Adam Costa (town counsel); Karen (finance director); the police chief",
+    "official": "linda macdonald, housing authority member; deb christen, housing authority member; adam costa, town counsel",
+    "note": "Counsel, finance director and police chief present in both; the official names them Karen Brochu and Tom Gammel.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Housing Authority members and others attending",
+    "ours": "",
+    "official": "linda macdonald, housing authority member; deb christen, housing authority member; adam costa, town counsel",
+    "note": "Official lists Linda MacDonald, Deb Christen, Joel Ortega, Stanley Randall and Pamela Anzaldi; ours does not.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-25T14:20:42Z",
+   "cost_usd": 0.2936856
+  }
+ }
+}

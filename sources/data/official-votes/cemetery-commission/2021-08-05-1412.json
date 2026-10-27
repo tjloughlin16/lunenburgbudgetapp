@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2021-08-05",
  "docid": "1412",
@@ -12,37 +12,194 @@
  },
  "votes": [
   {
-   "motion": "Keep the Cemetery closed during the winter",
+   "motion": "Keep the North Cemetery parking lot closed during the winter months.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed 3-0",
    "procedural": false,
    "quote": "a 3-0 vote was taken to keep the cemetery closed during the winter."
   },
   {
-   "motion": "Approve corrected minutes of June 24, 2021",
-   "outcome": "approved",
+   "motion": "Approve the corrected minutes of the June 24, 2021 board meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "corrected minutes of the june 24,2021 board meeting were read and approved by commissioners yasko, dorren and chairman tyler."
   },
   {
-   "motion": "Install a camera on the Cemetery Garage facing the last entrance on Holman Street",
-   "outcome": "approved",
+   "motion": "Install a camera on the Cemetery Garage facing the last entrance on Holman Street, as suggested by Chairman Tyler.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "chairman tyler suggested a camera be put on the cemetery garage facing the last entrance on holman street. chairman tyler and commissioners yasko and dorren approved."
+   "quote": "chairman tyler and commissioners yasko and dorren approved."
   },
   {
-   "motion": "Place the Lance May commemorative plaque on the right pillar of the Garage",
+   "motion": "Place the Lance May commemorative plaque on the right pillar of the Garage.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
    "quote": "chairman tyler and commissioners yasko and dorren voted to have the place placed on the right pillar of the garage."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "",
+   "seconded_by": "",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion was made to adjourn the meeting and was seconded and affirmed by roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are clear and readable. Five votes recorded.",
- "cost_usd": 0.1094185
+ "note": "Text extraction of a 3-page minutes document with no printed agenda. Motions carry no mover or seconder except the adjournment (unnamed). Several approvals are recorded only as named members approving, with no count printed; the camera and plaque approvals are recorded as Tyler, Yasko and Dorren approving. The 'Next Meeting TBD' line gives no date. The minutes contain no dollar figures.",
+ "cost_usd": 0.01643069,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was called to order at 3:30pm by chairman tyler."
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present were commissioners yasko, dorren and dpw director oliva."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Commissioner; Clerk",
+   "status": "present",
+   "quote": "present were commissioners yasko, dorren and dpw director oliva."
+  },
+  {
+   "name": "Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "present were commissioners yasko, dorren and dpw director oliva."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "DPW Director Oliva to have the container and bricks put in the back of the garage before the Lance May dedication in September.",
+   "quote": "dpw director oliva stated he would have the container and bricks put in the back of the garage before the lance may dedication in september."
+  },
+  {
+   "decision": "DPW Director Oliva to obtain quotes for trimming the hedges at the North Cemetery along Holman Street; trimming around the exit roadways may come first, depending on costs.",
+   "quote": "dpw director oliva will get quotes."
+  },
+  {
+   "decision": "Going forward, cemetery rubbish removal costs to be absorbed within the DPW budget rather than paid by the Commission.",
+   "quote": "director oliva stated that going forward, this cost will be absorbed within the dpw budget."
+  },
+  {
+   "decision": "Commissioner Tyler to contact a local stone mason about helping rebuild fallen stone walls at North Cemetery.",
+   "quote": "commissioner tyler will contact a local stone mason to see if he would help with rebuilding."
+  },
+  {
+   "decision": "DPW Director Oliva to look into surveying for laying out new plots needed at South Cemetery.",
+   "quote": "commissioner tyler asked director oliva if he was familiar with surveying, pertaining to the laying out of new plots that are needed at south cemetery."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hedge trimming, North Cemetery",
+   "what_was_recorded": "Hedge trimming along Holman Street was discussed as depending on costs received; quotes were to be obtained. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "depending on the costs received we may want to start the trimming of the hedges around the exit roadways first"
+  },
+  {
+   "topic": "Rubbish removal at cemeteries",
+   "what_was_recorded": "Rubbish removal had been paid by the Commission; going forward the cost is to be absorbed within the DPW budget. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "director oliva stated that going forward, this cost will be absorbed within the dpw budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Garage painting and Lance May dedication prep",
+   "resolution": "informational; container and bricks to be placed before dedication",
+   "quote": "chairman tyler advising the commission that the garage at the north cemetery will be painted on friday august 6th or monday august 9th by all phases contracting."
+  },
+  {
+   "topic": "North Cemetery hedge trimming on Holman Street",
+   "resolution": "DPW Director to get quotes; no decision on scope",
+   "quote": "dpw director oliva will get quotes."
+  },
+  {
+   "topic": "Part-time cemetery position",
+   "resolution": "noted; position filled, start next week",
+   "quote": "dpw oliva said that one of the part time positions has been filled yet at the cemetery. that person will start next week."
+  },
+  {
+   "topic": "North Cemetery parking lot opening in winter",
+   "resolution": "passed 3-0 to keep cemetery closed during winter",
+   "quote": "a 3-0 vote was taken to keep the cemetery closed during the winter."
+  },
+  {
+   "topic": "Corrected minutes of June 24, 2021",
+   "resolution": "approved",
+   "quote": "corrected minutes of the june 24,2021 board meeting were read and approved by commissioners yasko, dorren and chairman tyler."
+  },
+  {
+   "topic": "North Cemetery security camera",
+   "resolution": "approved camera on garage facing Holman Street entrance",
+   "quote": "chairman tyler and commissioners yasko and dorren approved."
+  },
+  {
+   "topic": "Fallen stone walls, North Cemetery",
+   "resolution": "Commissioner Tyler to contact a stone mason",
+   "quote": "commissioner tyler will contact a local stone mason to see if he would help with rebuilding."
+  },
+  {
+   "topic": "Rubbish removal cost",
+   "resolution": "cost to be absorbed within DPW budget going forward",
+   "quote": "director oliva stated that going forward, this cost will be absorbed within the dpw budget."
+  },
+  {
+   "topic": "South Cemetery new plot layout",
+   "resolution": "Director Oliva to look into surveying",
+   "quote": "commissioner tyler asked director oliva if he was familiar with surveying, pertaining to the laying out of new plots that are needed at south cemetery."
+  },
+  {
+   "topic": "Lance May commemorative plaque",
+   "resolution": "approved placement on right pillar of garage",
+   "quote": "chairman tyler mentioned the lance may commemorative plaque will be delivered on august 23, 2021."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:05pm",
+   "quote": "motion was made to adjourn the meeting and was seconded and affirmed by roll call vote."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Corrected minutes of the June 24, 2021 board meeting",
+   "where": "text",
+   "quote": "corrected minutes of the june 24,2021 board meeting were read and approved by commissioners yasko, dorren and chairman tyler."
+  }
+ ],
+ "tags": [
+  "cemetery",
+  "DPW",
+  "North Cemetery",
+  "South Cemetery",
+  "security",
+  "parking lot",
+  "hedges",
+  "rubbish removal",
+  "minutes",
+  "Lance May plaque"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

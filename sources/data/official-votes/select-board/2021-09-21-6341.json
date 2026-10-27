@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-09-21",
  "docid": "6341",
@@ -12,23 +12,115 @@
  },
  "votes": [
   {
-   "motion": "Send a letter of support for the FLP application and authorize Mr. Alonzo to sign it on behalf of the Select Board",
+   "motion": "Send a letter of support for the Forest Legacy Program (FLP) application and authorize Mr. Alonzo to sign it on behalf of the Select Board.",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: j. marino 2'': l. franco to send a letter of support for the flp application and authorize mr. alonzo to sign it on behalf of the select board vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "to send a letter of support for the flp application and authorize mr. alonzo to sign it on behalf of the select board"
   },
   {
-   "motion": "Adjourn the meeting and not reenter Open Meeting",
+   "motion": "Adjourn the meeting and not reenter Open Meeting.",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: j. marino to adjourn the meeting and not reenter open meeting vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye 2nd: l. franco"
+   "quote": "to adjourn the meeting and not reenter open meeting vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted document; text is clear and all votes are recorded.",
- "cost_usd": 0.1193665
+ "note": "OCR text (macOS Vision), so the vote lines and the seconder's line are read off a scan. The seconder on the adjournment motion (\"2nd: L. Franco\") is printed after its vote line. The first motion's seconder is printed as \"2''\" and read as L. Franco. The signature is garbled in OCR (Elaire m. Piterson, read as Elaine M. Peterson) and the recorder is not treated as an attendee. The minutes name no Chair. Al Futterman appeared as a presenter, not in a labelled public comment period, so public_comment is empty. The motion's time is not printed; the meeting opened at 9:25 p.m. and adjourned at 9:43 p.m.",
+ "cost_usd": 0.015547090000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "absent",
+   "quote": "member not present: michael-ray jeffreys, vice chairman",
+   "role": "Vice Chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, al futterman, nashua river wild and scenic stewardship council- nsn wild and scenic rivers forest legacy program",
+   "role": "Town Manager"
+  },
+  {
+   "name": "Al Futterman",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, al futterman, nashua river wild and scenic stewardship council- nsn wild and scenic rivers forest legacy program",
+   "role": "Nashua River Wild and Scenic Stewardship Council- NSN Wild and Scenic Rivers Forest Legacy Program (presenter seeking a letter of support)"
+  },
+  {
+   "name": "J. Marino",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye",
+   "role": "Select Board member (named in the motion as J. Marino; the vote line prints Mr. Marino)"
+  },
+  {
+   "name": "Mr. Dwyer",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye",
+   "role": "Select Board member"
+  },
+  {
+   "name": "L. Franco",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye",
+   "role": "Select Board member (named in the motion as L. Franco; the vote line prints Mr. Franco)"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye",
+   "role": "Select Board member; authorized to sign the letter on behalf of the Select Board"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Federal Forest Legacy grant for the donated 20-acre tract",
+   "what_was_recorded": "The federal grant application's value is not determined: no appraisal is required until the grant is approved, and the minutes say federal funding must pass congressional and presidential budget approval, so approval is not expected until 2023. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the value of the property is not determined as an appraisal is not required until the grant is approved."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "NSN Forest Legacy Program letter of support",
+   "resolution": "approved: letter of support sent and Mr. Alonzo authorized to sign it (passed 4-0)",
+   "quote": "mr. futterman is seeking a letter of support from the select board for a federal grant",
+   "tags": [
+    "forest legacy program",
+    "letter of support",
+    "conservation land",
+    "federal grant",
+    "Holman Street"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Nashua, Squannacook and Nissitissit Wild & Scenic Rivers (NSN) Forest Legacy Program (FLP) application",
+   "where": "text",
+   "quote": "the nashua, squannacook and nissitissit wild & scenic rivers (nsn) forest legacy program (flp) application"
+  }
+ ],
+ "tags": [
+  "forest legacy program",
+  "conservation land",
+  "letter of support",
+  "federal grant",
+  "Holman Street",
+  "Nashua River Wild and Scenic",
+  "Conservation Commission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

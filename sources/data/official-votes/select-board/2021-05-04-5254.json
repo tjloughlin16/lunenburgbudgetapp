@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-05-04",
  "docid": "5254",
@@ -12,31 +12,379 @@
  },
  "votes": [
   {
-   "motion": "Appoint Ruth Anderson to the Board of Registrars (Republican)",
+   "motion": "Appoint Ruth Anderson to the Board of Registrars (Republican), 3-year term",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: j. marino to appoint ruth anderson to the board of registrars (republican) vote: mr. jeffreys-aye, mr. marino-aye, ms. adams-aye, mr. dwyer-aye, mr. alonzo- aye"
+   "quote": "motion: t. dwyer 2nd: j. marino to appoint ruth anderson to the board of registrars (republican)"
   },
   {
-   "motion": "Approve the common victualler license for Yatim Central Convenience Lunenburg, LLC located at 451 Massachusetts Avenue",
+   "motion": "Approve the common victualler license for Yatim Central Convenience Lunenburg, LLC at 451 Massachusetts Avenue",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: t. dwyer to approve the common victualler license for yatim central convenience lunenburg, llc located at 451 massachusetts avenue vote: ms. adams-aye, mr. dwyer- aye, mr. jeffreys- aye, mr. marino-aye, mr. alonzo- aye"
+   "quote": "motion: m. jeffreys 2nd: t. dwyer to approve the common victualler license for yatim central convenience lunenburg, llc located at 451 massachusetts avenue"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 9:00 p.m.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: t. dwyer 2nd:j. marino to adjourn the meeting at 9:00 p.m. vote: mr. dwyer, ms. adams- aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo-aye"
+   "quote": "motion: t. dwyer 2nd:j. marino to adjourn the meeting at 9:00 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan with minor spacing artifacts (some \"aye\" votes split across line breaks). All three votes clearly recorded.",
- "cost_usd": 0.1173105
+ "note": "OCR text with garbled passages: the page 3 header (\"VA LAAAAA LAGSA\") is unreadable; the page 9 paragraph on the live broadcast and May meeting format is partly garbled, though the key sentences are legible. The adjournment vote lists Mr. Dwyer without the word \"aye\", so its outcome is recorded as \"passed\" with no count. Other vote tallies are listed by name with \"aye\" and recorded as \"passed\" without a printed count. The warrants were signed by the Chair, not voted on. The Town Manager's goal text contains OCR errors. The meeting was conducted remotely per the minutes. The minutes' author is not listed as an attendee because she did not take part in the meeting.",
+ "cost_usd": 0.11375725,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "",
+   "status": "present",
+   "quote": "mark bursch, 20 buttonwood place, stated at town meeting this past saturday comments were made by an individual personally attacking public volunteers and small business owners,"
+  },
+  {
+   "name": "Ruth Anderson",
+   "role": "candidate, Board of Registrars (Republican nominee)",
+   "status": "present",
+   "quote": "ruth anderson, 31 the lane, has lived in town over 50 years and been a poll worker for over 30 years"
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "candidate, Board of Registrars (Republican nominee)",
+   "status": "present",
+   "quote": "ms. rudd has been in town for over 30 years, would like to help out."
+  },
+  {
+   "name": "Carol Kelly",
+   "role": "candidate, Board of Registrars (Republican nominee)",
+   "status": "present",
+   "quote": "ms. kelly stated she has lived here since 2003."
+  },
+  {
+   "name": "Mr. Yatim",
+   "role": "applicant, common victualler license hearing",
+   "status": "present",
+   "quote": "mr. yatim stated there will be no changes in the hours."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux to follow up with PAC on the technical problem with the live broadcast feeds of meetings (chair to check with PAC first).",
+   "quote": "they would have to check with pac because there was a technical problem with the live feeds. ms. lemieux will follow up on this."
+  },
+  {
+   "decision": "Chair to work with the Town Manager on whether the last May meeting is held in person in Town Hall, subject to Board of Health and state safety guidelines; to be revisited later.",
+   "quote": "mr. alonzo will work with the town manager but advised they must follow the safety guidelines from the board of health and the state."
+  },
+  {
+   "decision": "Composite Town Manager performance evaluation deferred to the next meeting for review.",
+   "quote": "this is what is presented during the meeting. it will be reviewed at the next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Primary School fire alarm upgrade",
+   "what_was_recorded": "The original estimate for the Primary School fire alarm upgrade was $127,000; a Statewide Contract proposal came in at about $62,000, and the Superintendent recommends proceeding this fiscal year using the $25,000 earmark and the remainder from an anticipated FY21 school budget surplus.",
+   "figures_as_printed": [
+    "$127,000",
+    "$62,000",
+    "$25,000"
+   ],
+   "quote": "the original estimate for this project was for $127,000 and this proposal came in at approximately $62,000."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Chair announced he signed five warrants the prior week, including accounts payable, a void payroll warrant, payroll and payroll deduction warrants.",
+   "figures_as_printed": [
+    "$480,612.81",
+    "($1,100.00)",
+    "$3,088.26",
+    "$814,618.03",
+    "$267,954.70"
+   ],
+   "quote": "mr. alonzo announced he signed the following warrants last week:"
+  },
+  {
+   "topic": "925 Mass Ave redevelopment funding and remediation",
+   "what_was_recorded": "The Town Manager applied for $250,000 from the MassDevelopment Brownfields Redevelopment Fund in September 2020 and was told the town was not yet eligible; the program has a little over 1 million in funding and received over 100 applications last year. The ideal scenario is MA DEP removing the tanks and soil.",
+   "figures_as_printed": [
+    "$250,000",
+    "a little over 1 million"
+   ],
+   "quote": "i also applied for $250,000 in funding through massdevelopment brownfields redevelopment fund in september of 2020 but received notification that we were"
+  },
+  {
+   "topic": "CARES Act and FEMA reimbursement reporting",
+   "what_was_recorded": "The Finance Director has periodically reported to DOR on CARES Act spending, and FEMA reimbursement eligibility guidelines have changed frequently. No dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the finance director has periodically had to submit reports to dor on cares act spending"
+  },
+  {
+   "topic": "Treasurer lockbox fees",
+   "what_was_recorded": "The lockbox company will change in FY 2022 to save on lockbox fees; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the lockbox company will be changing in fy 2022 in order to save on lockbox fees."
+  },
+  {
+   "topic": "Motor vehicle excise billing delay",
+   "what_was_recorded": "The RMV delayed sending out motor vehicle excise tax bills that should have come in March; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the rmv was delayed in sending out mv excise taxes that should have come in march."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mark Bursch",
+   "stated_role": "",
+   "topic": "Personal attacks on volunteers at town meeting",
+   "quote": "mark bursch, 20 buttonwood place, stated at town meeting this past saturday comments were made by an individual personally attacking public volunteers and small business owners,"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening public comment",
+   "resolution": "no action; comments on town meeting conduct",
+   "quote": "mark bursch, 20 buttonwood place, stated at town meeting this past saturday comments were made by an individual personally attacking public volunteers and small business owners,",
+   "tags": [
+    "public comment",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Appointment: Board of Registrars (Republican)",
+   "resolution": "approved: Ruth Anderson appointed",
+   "quote": "motion: t. dwyer 2nd: j. marino to appoint ruth anderson to the board of registrars (republican)",
+   "tags": [
+    "appointments",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Common victualler license hearing, 451 Mass Ave",
+   "resolution": "approved",
+   "quote": "to approve the common victualler license for yatim central convenience lunenburg, llc located at 451 massachusetts avenue",
+   "tags": [
+    "licensing",
+    "common victualler"
+   ]
+  },
+  {
+   "topic": "Ratification of Town Manager's appointments",
+   "resolution": "listed; no vote recorded",
+   "quote": "ratification of town manager's appointments:",
+   "tags": [
+    "appointments",
+    "beach",
+    "seasonal staff"
+   ]
+  },
+  {
+   "topic": "Town meeting debrief",
+   "resolution": "discussed; no action",
+   "quote": "mr. alonzo thanked the 130 voters who attended.",
+   "tags": [
+    "town meeting",
+    "civility"
+   ]
+  },
+  {
+   "topic": "Report on FY 2021 Town Manager goals",
+   "resolution": "reported",
+   "quote": "ms. lemieux reported the first goal is ongoing.",
+   "tags": [
+    "town manager goals",
+    "925 Mass Ave",
+    "facilities",
+    "succession planning"
+   ]
+  },
+  {
+   "topic": "Composite Town Manager performance evaluation",
+   "resolution": "deferred to next meeting",
+   "quote": "this is what is presented during the meeting. it will be reviewed at the next meeting",
+   "tags": [
+    "performance evaluation"
+   ]
+  },
+  {
+   "topic": "Report on FY 2021 Select Board goals",
+   "resolution": "reported",
+   "quote": "mr. alonzo noted the board had three objectives for this year.",
+   "tags": [
+    "select board goals",
+    "old primary school",
+    "volunteerism"
+   ]
+  },
+  {
+   "topic": "Standing and ad hoc committee vacancies",
+   "resolution": "vacancies announced; appointments to follow in June",
+   "quote": "mr. alonzo announced these vacancies will be appointed to in june.",
+   "tags": [
+    "vacancies",
+    "appointments",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reported as signed",
+   "quote": "mr. alonzo announced he signed the following warrants last week:",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Action items: live broadcast and May meeting format",
+   "resolution": "follow-up assigned to Town Manager and Chair",
+   "quote": "mr. alonzo stated as things open up he would like the last meeting in may in person in town hall",
+   "tags": [
+    "remote meetings",
+    "broadcast",
+    "covid"
+   ]
+  },
+  {
+   "topic": "Committee reports (Planning Board)",
+   "resolution": "reported",
+   "quote": "mr. dwyer reported on the planning board activities:",
+   "tags": [
+    "planning board",
+    "master plan",
+    "bright farms"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "reported; fire alarm, Complete Streets and department updates",
+   "quote": "town manager report and covid-19 update",
+   "tags": [
+    "town manager report",
+    "fire alarm",
+    "complete streets",
+    "departments"
+   ]
+  },
+  {
+   "topic": "COVID-19 in Lunenburg",
+   "resolution": "reported",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of",
+   "tags": [
+    "covid",
+    "vaccination",
+    "town offices"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "announced",
+   "quote": "mr. alonzo announced their next meetings this month are may 11 and may 18.",
+   "tags": [
+    "schedule",
+    "annual town election"
+   ]
+  },
+  {
+   "topic": "Closing public comment",
+   "resolution": "no public comment",
+   "quote": "there was none at this time.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:00 p.m.",
+   "quote": "to adjourn the meeting at 9:00 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Phase II Environmental Site Assessment (Phase II ESA)",
+   "where": "text",
+   "quote": "the phase ii esa that was performed indicates no known such conditions requiring an ira."
+  },
+  {
+   "name": "Continuity of Operations Plan",
+   "where": "text",
+   "quote": "complete the continuity of operations plan that will be a written document that identifies key personnel"
+  },
+  {
+   "name": "RFP for Master Plan Services",
+   "where": "text",
+   "quote": "the planning board will be working on an rfp for master plan services to hire an outside"
+  }
+ ],
+ "tags": [
+  "select board",
+  "board of registrars",
+  "appointments",
+  "common victualler license",
+  "public comment",
+  "town meeting",
+  "covid-19",
+  "primary school fire alarm",
+  "warrants",
+  "925 mass ave",
+  "town manager goals",
+  "performance evaluation",
+  "committee vacancies",
+  "remote meeting",
+  "cares act",
+  "treasurer",
+  "excise",
+  "planning board"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-09-28",
  "docid": "5687",
@@ -12,20 +12,20 @@
  },
  "votes": [
   {
-   "motion": "Approve the Parks Department's request to add a special warrant article to include Marshall Park in the Sewer Service Area.",
+   "motion": "Approve the Parks Department request to add a special article to the Special Town Meeting to add Marshall Park to the Sewer District.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. to approve the request from the parks department to add a special article to the special town meeting to add marshall park to the sewer district. roll call vote: mike n.-aye, brett-aye, mike d.-aye, john-aye and dave-aye."
+   "quote": "to approve the request from the parks department to add a special article to the special town meeting to add marshall park to the sewer district."
   },
   {
-   "motion": "Send survey to residents on Upland Ave and Eastern Ave regarding sewer extension.",
+   "motion": "Have Barb and Rob send a survey to residents on Upland Ave and Eastern Ave for a sewer extension (amended motion).",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "motion: john r. second: brett r. to have barb and rob send a survey to residents on upland ave, and eastern ave. for a sewer extension. roll call vote: john-aye, brett-aye and dave-aye."
+   "quote": "to have barb and rob send a survey to residents on upland ave, and eastern ave. for a sewer extension."
   },
   {
    "motion": "Approve the minutes of the 9/14/21 meeting.",
@@ -33,18 +33,297 @@
    "seconded_by": "John R.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: brett r. to approve the minutes for the 9/14/21 meeting. second: john r. roll call vote: john-aye, brett-aye and dave-aye."
+   "quote": "minutes of 9/14- motion: brett r. to approve the minutes for the 9/14/21 meeting."
   },
   {
-   "motion": "Adjourn the meeting.",
+   "motion": "Adjourn the meeting at 6:52pm.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "motion: john r. to adjourn at 6:52pm. second: brett r. roll call vote: john-aye, brett-aye and dave-aye."
+   "quote": "to adjourn at 6:52pm. second: brett r."
   }
  ],
- "dropped_unquoted": 0,
- "note": "OCR extraction from Zoom meeting minutes, 2021-09-28. All votes recorded with roll-call results.",
- "cost_usd": 0.09388949999999999
+ "dropped_unquoted": 1,
+ "note": "Text is macOS Vision OCR of a scanned page; some words are OCR or typing artefacts (e.g. \"1s quarter\", \"fight tank\", \"Dave P.\" and \"Dave M.\" abbreviations), so quotes are copied as printed with line breaks collapsed. The first survey motion (Upland Ave only) was amended by the mover before any vote and is not recorded separately; only the amended motion's vote is recorded. Mike N. and Mike D. left during the Marshall Park item after the roll call. Two motions have no printed attendance on the vote lines beyond the ayes listed. The minutes do not print a documents list heading.",
+ "cost_usd": 0.01882639,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair-john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, minutes clerk- jane ranley"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair-john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "attendees: chair- dave macdonald, vice-chair-john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: mike deveikis and mike nault, dpw director- rob oliva, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "present",
+   "quote": "members: mike deveikis and mike nault, dpw director- rob oliva, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "members: mike deveikis and mike nault, dpw director- rob oliva, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "present",
+   "quote": "members: mike deveikis and mike nault, dpw director- rob oliva, minutes clerk- jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "absent",
+   "quote": "absent: business manager-barb lefebvre"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Parks Commission",
+   "status": "present",
+   "quote": "parks commission - marshall park request- dave passios- rob reported the parks commission would like the sewer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave and John agreed to ask Barb to send out another survey letter (later formalized by the Upland/Eastern Ave survey vote).",
+   "quote": "dave and john agreed to ask barb to send out another survey letter."
+  },
+  {
+   "decision": "Rob agreed to put together a list of other roads to consider for sewer need within the Sewer District.",
+   "quote": "brett asked rob if he could put together a list of other roads to consider for sewer need within the sewer district and rob agreed to do so."
+  },
+  {
+   "decision": "Rob will discuss his engineering comments on the 711 Mass Ave condo plan with the engineer before the project comes to the Commission.",
+   "quote": "rob said he will discuss his comments with them prior to their coming to the commission."
+  },
+  {
+   "decision": "Rob will talk to a contractor about repairing 8-10 manhole covers.",
+   "quote": "will talk to a contractor about repairing 8-10 of them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Part-time assistant position change",
+   "what_was_recorded": "The part-time assistant position will become a 24 hrs./week position with full benefits at town meeting, adding about $50K to the FY22 budget.",
+   "figures_as_printed": [
+    "$50K"
+   ],
+   "quote": "dave added the part time assistant position will be changed at town meeting to a 24 hrs./week position, with full benefits. this will add about $50k to fy22 budget."
+  },
+  {
+   "topic": "Leominster and Fitchburg rate increase",
+   "what_was_recorded": "A 7% increase between Fitchburg and Leominster was figured into the FY22 budget.",
+   "figures_as_printed": [
+    "7%"
+   ],
+   "quote": "dave m. noted there was a 7% increase between fitchburg & leominster and the extra was figured into the budget."
+  },
+  {
+   "topic": "Manhole repairs and maintenance budget",
+   "what_was_recorded": "Rob said the maintenance plan is still within budget after manhole covers were already purchased.",
+   "figures_as_printed": [],
+   "quote": "rob added they are still good on the budget."
+  },
+  {
+   "topic": "Marshall Park septic soil testing",
+   "what_was_recorded": "The Board of Health has money available for soil testing at Marshall Park.",
+   "figures_as_printed": [],
+   "quote": "dave p. noted the board of health has money for soil testing."
+  },
+  {
+   "topic": "Upland Ave sewer extension cost",
+   "what_was_recorded": "John said a sewer extension on Upland Ave could be expensive because of the ledge; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "john pointed out it could be an expensive project due to the ledge."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements: first quarter bills",
+   "resolution": "noted; past-due amounts to be paid or added to December tax bill",
+   "quote": "dave announced the 1s quarter bills were due 9/27.",
+   "tags": [
+    "sewer bills",
+    "tax bill"
+   ]
+  },
+  {
+   "topic": "Appointment: Marshall Park sewer request",
+   "resolution": "approved request to add Marshall Park to a Special Town Meeting article (passed 5-0)",
+   "quote": "rob reported the parks commission would like the sewer service area (ssa) expanded to include marshall park",
+   "tags": [
+    "Marshall Park",
+    "sewer district",
+    "Parks Commission",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "711 Mass Ave condo project",
+   "resolution": "no action; Rob to discuss his comments with the engineer before the project returns",
+   "quote": "711 mass ave condo project-rob stated this is an 8-unit condo project and the site plan was approved by the planning",
+   "tags": [
+    "site plan",
+    "condominiums",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Upland Ave extension",
+   "resolution": "survey of Upland and Eastern Ave residents approved (passed 3-0); list of roads requested",
+   "quote": "upland ave extension discussion- rob was contacted by a party that wants to purchase 71 upland ave.",
+   "tags": [
+    "Upland Ave",
+    "septic",
+    "E1 pump",
+    "sewer extension",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "noted; warrant closed at 5pm",
+   "quote": "special town meeting warrant articles- dave m. reported the warrant closed at 5pm today",
+   "tags": [
+    "warrant articles",
+    "Special Town Meeting"
+   ]
+  },
+  {
+   "topic": "Maintenance plan report: manhole covers",
+   "resolution": "noted; contractor to be consulted on 8-10 covers",
+   "quote": "maintenance plan report - rob reported there are numerous manhole covers on mass ave., leominster rd and other",
+   "tags": [
+    "manholes",
+    "Mass Ave",
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "FY22 budget updates: Leominster rate increase",
+   "resolution": "noted; part-time assistant position change to be made at town meeting",
+   "quote": "fy22 budget updates- leominster's rate increase- dave m. noted there was a 7% increase",
+   "tags": [
+    "FY22 budget",
+    "Leominster",
+    "Fitchburg",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Minutes of 9/14/21",
+   "resolution": "approved (passed 3-0)",
+   "quote": "minutes of 9/14- motion: brett r. to approve the minutes for the 9/14/21 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Grease trap program FY22 permit renewals",
+   "resolution": "noted; certified letters sent 9/17",
+   "quote": "grease trap program fy22 permit renewals- dave reported that certified letters were sent on 9/17 to a & d crossroads",
+   "tags": [
+    "grease trap",
+    "permits",
+    "enforcement"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs and counsel hours",
+   "resolution": "noted; members to email Barb with agenda inputs",
+   "quote": "member agenda inputs for future meetings/counsel hours - dave reminded all of upcoming counsel hours",
+   "tags": [
+    "agenda",
+    "counsel hours"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted; October 12 remote and October 26 Town Hall meetings",
+   "quote": "october 12, 2021 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "meeting schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:52pm (passed 3-0)",
+   "quote": "to adjourn at 6:52pm. second: brett r.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Approved site plan, 711 Mass Ave condo project (approved by Planning Board 8/23/21, 8 sewer connections)",
+   "where": "list",
+   "quote": "rob screen shared the approved site plan and noted they approved it with 8 sewer connections."
+  },
+  {
+   "name": "Sewer Commission's Special Town Meeting articles (copy sent by Barb)",
+   "where": "list",
+   "quote": "barb had sent out a copy of the sewer commission's articles."
+  },
+  {
+   "name": "Residents survey letter for Upland Ave and Eastern Ave",
+   "where": "text",
+   "quote": "dave and john agreed to ask barb to send out another survey letter."
+  },
+  {
+   "name": "Earlier residents survey on sewer interest (several years ago)",
+   "where": "text",
+   "quote": "he noted a survey of residents was done several years ago, with half of the residents interested in sewer."
+  },
+  {
+   "name": "Certified letters on outstanding grease trap permit renewals (sent 9/17 to A & D Crossroads and Dario's)",
+   "where": "text",
+   "quote": "certified letters were sent on 9/17 to a & d crossroads and dario's"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "sewer district",
+  "Marshall Park",
+  "Upland Ave",
+  "septic",
+  "sewer extension survey",
+  "Special Town Meeting",
+  "FY22 budget",
+  "manholes",
+  "grease trap",
+  "minutes",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "rob screen shared the approved site plan"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1
+ }
 }

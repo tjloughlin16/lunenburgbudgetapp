@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-05-19",
  "docid": "6296",
@@ -12,144 +12,651 @@
  },
  "votes": [
   {
-   "motion": "to close the enforcement order for Michael Shank's property at Leominster Road",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of May 5, 2021, with a sentence inserted in the fourth paragraph.",
+   "moved_by": "",
+   "seconded_by": "CL",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "cl seconded and the commission voted unanimously to approve."
+  },
+  {
+   "motion": "Close the enforcement order against Michael Shank.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jr motioned, kj seconded and a unanimous vote to close the enforcement order."
   },
   {
-   "motion": "to approve the May 5 minutes with insertion of a sentence thanking Carl Luck for his work",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "jr wanted to remind that the there be sentence inserted where the magurn s thanked cl for his work. cl seconded and the commission voted unanimously to approve."
-  },
-  {
-   "motion": "to continue the hearing on Kevin Hill's Notice of Intent at 41 Country Road to June 2, 2021",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue the 41 Country Road Notice of Intent hearing to June 2, 2021.",
+   "moved_by": "CC",
+   "seconded_by": "JR",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "cc moved to continue. jr seconded and the commission voted unanimously to continue by roll call voted."
   },
   {
-   "motion": "to issue a negative determination for Debra Anderson at 25 Crescent Terrace and geo-locate trees to be removed",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed unanimously",
+   "motion": "Issue a negative determination for 25 Crescent Terrace and have MM geo-locate the trees to be removed.",
+   "moved_by": "KJ",
+   "seconded_by": "CL",
+   "outcome": "passed",
    "procedural": false,
    "quote": "kj moved to issue a negative determination and that mm geo-locate the trees to be removed. cl seconded and the commission voted unanimously to approve the motion by roll call vote."
   },
   {
-   "motion": "to issue an order of conditions for Holman Street Lot 1 as designed with approval contingent on planning board approval",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Issue an order of conditions for the 150 Holman St seven lots as designed, conditioned on approvals from the planning board.",
+   "moved_by": "JV",
+   "seconded_by": "KJ",
    "outcome": "failed",
    "procedural": false,
-   "quote": "the vote on the motion was cc no, kj yes cl. no jv, no bp, yes. as the vote was tied the motion did not pass."
+   "quote": "jv moved to issue an order of conditions as designed with the condition that the approvals be given from planning board. kj seconded."
   },
   {
-   "motion": "to consider the 30-foot no touch zone demarcation for all Holman Street lots",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Carl Luck",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Consider the no-touch zone demarcation (30 or 50 foot) for all of the Holman lots.",
+   "moved_by": "JR",
+   "seconded_by": "CL",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "jr noted that we should consider it for all of the lots and made it in the form of a motion. cl seconded."
   },
   {
-   "motion": "to continue all hearings for 150 Holman Street lots 1-7 to June 2, 2021",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue all of the 150 Holman St hearings to June 2, 2021.",
+   "moved_by": "JV",
+   "seconded_by": "KJ",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "jv moved to continue all of the hearings to the june 2, 2021 meeting at 7 pm. kj seconded and the commission voted unanimously."
   },
   {
-   "motion": "to continue the hearing on beach raking at 90 Ruth Street to June 2, 2021",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue the 90 Ruth Street beach raking hearing to June 2, 2021.",
+   "moved_by": "Cl",
+   "seconded_by": "JR",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "cl moved to continue to the june 2, 2021 meeting. jr seconded and the commission voted unanimously to approve the motion"
   },
   {
-   "motion": "to continue the hearing on Fire Road 12 parking area restoration to June 2, 2021",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue the Fire Road 12 hearing to June 2, 2021.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "kj moved to continue to the june 2 2021 meeting cc seconded and the commission voted unanimously."
   },
   {
-   "motion": "to continue the hearing on tree removal at 73 Peninsula Drive to June 16, 2021",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
-   "procedural": true,
-   "quote": "on a motion by jv and a second by kj and a unanimous vote to approve the motion"
+   "motion": "Continue the 73 Peninsula Drive hearing to June 16, 2021.",
+   "moved_by": "JV",
+   "seconded_by": "KJ",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "based on the applicants request the meeting was continued to june 16, 2021 at 7 pm on a motion by jv and a second by kj and a unanimous vote to approve the motion"
   },
   {
-   "motion": "to approve the amended plan for 238 Fire Road 16 with pending changes and grant the driveway waiver with perpetual condition on further construction",
-   "moved_by": "Kenneth Jones",
+   "motion": "Continue the 48 Pearl Street hearing to June 2, 2021.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the meeting was continued to june 2, 2021 at 7 pm by a motion of kj and a second by cc with a unanimous vote to approve the motion."
+  },
+  {
+   "motion": "Continue the 137 Flynn Road hearing to June 2, 2021.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the meeting was continued to june 2, 2021 at 7 pm by a motion of kj and a second by cc with a unanimous vote to approve the motion"
+  },
+  {
+   "motion": "Continue the 757 Chase Road hearing to June 2, 2021.",
+   "moved_by": "KJ",
+   "seconded_by": "CC",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the meeting was continued to june 2, 2021 at 7 pm by a motion of kj and a second by cc with a unanimous vote to approve the motion."
+  },
+  {
+   "motion": "Approve the amended plan for 238 Fire Road 16 pending correction of the Scribner’s errors, and grant the driveway waiver with a perpetual condition on work in the 50 foot zone.",
+   "moved_by": "KJ",
    "seconded_by": "",
    "outcome": "passed 4-2",
    "procedural": false,
-   "quote": "the vote was kj yes cc yes cl no jr no jv yes and bp yes the motion carried 4 votes to 2."
+   "quote": "kj moved to approve the amended plan pending the changes of the scribner's errors and that the waiver for the driveway be granted with a perpetual condition"
   },
   {
-   "motion": "to amend the motion to require review of planning board conditions before final approval",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Amend the 238 Fire Road 16 motion to have the commission review the planning board decision first.",
+   "moved_by": "CL",
+   "seconded_by": "JR",
    "outcome": "failed",
    "procedural": false,
-   "quote": "cl restated his motion amendment that the commission review the planning board decision. kj no cc yes jr yes jv no bp no the motion was tied 3 to 3"
+   "quote": "cl proposed an amendment to the motion pending review of the planning board conditions to ensure that it does not interfere with the commission decision. jr seconded."
   },
   {
-   "motion": "to approve the amended plan for 238 Fire Road 16 with pending changes and grant the driveway waiver with perpetual condition on further construction",
-   "moved_by": "Kenneth Jones",
+   "motion": "Approve the 238 Fire Road 16 motion again, as restated.",
+   "moved_by": "KJ",
    "seconded_by": "",
    "outcome": "passed 4-2",
    "procedural": false,
    "quote": "the motion to approve was kj yes, cc yes cl no jr no jv and bp yes the motion carried 4 to 2."
   },
   {
-   "motion": "to continue the hearing on MA Pleasant LLC's subdivision at 101 Pleasant Street to June 2, 2021",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue the 101 Pleasant Street hearing to June 2, 2021.",
+   "moved_by": "CC",
+   "seconded_by": "KJ",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "cc moved to continue to june 2 2021. kj seconded and the commission approve the motion by unanimous roll call vote."
   },
   {
-   "motion": "to continue the hearing on retaining wall and property improvements at 386 Sunset Lane to June 2, 2021",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Continue the 386 Sunset Lane hearing to June 2, 2021, with CL recusing.",
+   "moved_by": "CC",
+   "seconded_by": "JV",
+   "outcome": "passed",
+   "procedural": false,
    "quote": "cc moved to continue to june 2, 2021. jv second and the commission approve the motion by unanimous roll call vote. with cl recusing."
   },
   {
-   "motion": "to lift the enforcement order on Leominster Road and wait until the determination hearing",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
+   "motion": "Accept the proposed changes to the land use forms.",
+   "moved_by": "KJ",
+   "seconded_by": "JV",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "kj moved to accept the changes . jv seconded and the commission voted unanimously to approve the motion by roll call vote."
+  },
+  {
+   "motion": "Lift the enforcement order at 313 Leominster Road and wait until the determination hearing.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
+   "outcome": "passed",
    "procedural": false,
    "quote": "jr moved to lift the enforcement order and wait until the determination hearing. kj seconded the motion and the commission voted unanimously to lift the enforcement order."
   },
   {
-   "motion": "to adjourn the meeting",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "KJ",
+   "seconded_by": "JV",
+   "outcome": "passed",
    "procedural": true,
    "quote": "the meeting adjourned at 1130 pm by a motion of kj a second of jv with a unanimous vote to ===page 10=== appr",
    "quote_taken_from_text": true
   }
  ],
- "dropped_unquoted": 4,
- "note": "All votes recorded. Minutes are readable OCR-quality text. Two votes concerning Leominster Road enforcement action appear separately (public comment and enforcement section, items 1 and 20). Two votes on the 238 Fire Road 16 (Magurn property) application recorded: initial vote passed 4-2, then revote after failed amendment also passed 4-2.",
- "cost_usd": 0.2324385
+ "dropped_unquoted": 0,
+ "note": "Text extracted without page-level gaps; several spellings look like transcription errors (e.g. 'Cl' for CL, 'Mr Shrank', 'Ma gurn', 'Mary Ann'). Matthew S. Marro is identified as MM from the header and the text; 'Mary Ann' is read as Maryann Dipinto. Holman order-of-conditions vote (150 Holman St): named votes are CC no, KJ yes, CL no, JV no, BP yes; JR's vote is not printed; recorded as failed, count not stated. The 238 Fire Road 16 amendment is printed as 'tied 3 to 3', but the named votes (KJ no, CC yes, JR yes, JV no, BP no) total 2 yes and 3 no; recorded as failed with the count not restated. The second on the 238 Fire Road 16 main motion is not printed. The mover of the May 5 minutes approval is unclear ('KJ moved and there was no second', then CL seconded). Public comment and speaker remarks during hearings are attributed as printed. The minutes show CC left at 10:40 PM after the 386 Sunset Lane item; the adjournment is at 11:30 PM.",
+ "cost_usd": 0.15416324999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chairman pease called the meeting to order with all members except rb in attendance"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "kj moved to issue a negative determination and that mm geo-locate the trees to be removed."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "member (no role printed)",
+   "status": "absent",
+   "quote": "chairman pease called the meeting to order with all members except rb in attendance"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "cc moved to continue to june 2 2021. kj seconded and the commission approve the motion by unanimous roll call vote."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "cl noted that he felt he could with the position to be filled."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "jr asked if the appointment was on the agenda."
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "member (no role printed)",
+   "status": "present",
+   "quote": "jv moved to continue all of the hearings to the june 2, 2021 meeting at 7 pm."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "mm noted the applicant has asked for a continuance to june 2."
+  },
+  {
+   "name": "Debra Anderson",
+   "role": "represented herself",
+   "status": "present",
+   "quote": "debra anderson represented herself."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing the applicants",
+   "status": "present",
+   "quote": "brian marchetti and maryann dipinto were present representing the applicants."
+  },
+  {
+   "name": "Maryann Dipinto",
+   "role": "representing the applicants",
+   "status": "present",
+   "quote": "brian marchetti and maryann dipinto were present representing the applicants."
+  },
+  {
+   "name": "Michael Shank",
+   "role": "not stated",
+   "status": "present",
+   "quote": "michael shank spoke about an enforcement issue in which until cut trees under his service line prior"
+  },
+  {
+   "name": "Andrea Adams",
+   "role": "not stated",
+   "status": "present",
+   "quote": "public comment: andrea adams wondered what was going to happen with 101 pleasant street."
+  },
+  {
+   "name": "Phyllis Luck",
+   "role": "based on her six years on the Select Board",
+   "status": "present",
+   "quote": "phyllis luck 50 sunset lane, based on her six years on the select board, reminded the"
+  },
+  {
+   "name": "Valerie Martin",
+   "role": "represented the applicant",
+   "status": "present",
+   "quote": "valerie martin represented the applicant."
+  },
+  {
+   "name": "Daniel Murphy",
+   "role": "represented himself",
+   "status": "present",
+   "quote": "daniel murphy represented himself and outlined the trees that he wishes to remove."
+  },
+  {
+   "name": "Brian Butler",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "brian butler, joann magurn and butch magurn were present representing the applicant."
+  },
+  {
+   "name": "Joann Magurn",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "brian butler, joann magurn and butch magurn were present representing the applicant."
+  },
+  {
+   "name": "Butch Magurn",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "brian butler, joann magurn and butch magurn were present representing the applicant."
+  },
+  {
+   "name": "Greg Bittner",
+   "role": "former member of the planning board",
+   "status": "present",
+   "quote": "greg bittner noted that as a former member of the planning board that vital access was granted with conditions."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The chair said he could not make a recommendation on the talent bank appointment without an opportunity to meet and discuss it, after the deadline passed.",
+   "quote": "as the deadline passed he felt that he could not make a recommendation absent the opportunity to meet and discuss a recommendation."
+  },
+  {
+   "decision": "The chair recommended that the 238 Fire Road 16 applicant revise the plans and work with the Conservation Administrator.",
+   "quote": "bp recommended that the applicant revise the plans and work with mm."
+  },
+  {
+   "decision": "The chair gave the 73 Peninsula Drive applicant the contact information to approach Hickory Hills Landowners.",
+   "quote": "bp gave the applicant the contact information to approach hickory hills landowners."
+  },
+  {
+   "decision": "The Conservation Administrator said he would highlight the boilerplate reporting-requirement conditions for the Holman lots and send them out.",
+   "quote": "mm noted that there was a boiler plate condition on reporting requirements and he would highlight them and send them out."
+  },
+  {
+   "decision": "The chair said the Holman no-touch zone question would be considered at the next meeting.",
+   "quote": "bp noted that could be considered at the next meeting."
+  },
+  {
+   "decision": "The Conservation Administrator said he would check the record on the 48 Oak Ridge patio concern raised by CL.",
+   "quote": "mm noted there appears to be no expansion of the patio itself and will check on the record to address cl's concerns."
+  },
+  {
+   "decision": "The chair will talk to Karen Brochu about the trails grant funds.",
+   "quote": "bp is going to talk to karen brochu concerning the trails grant funds."
+  },
+  {
+   "decision": "The commission will inspect the wood lots marked by Gary during its next site inspection.",
+   "quote": "the commission will inspect during the next site inspection."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Trails grant funds",
+   "what_was_recorded": "The chair was to follow up with Karen Brochu on the trails grant funds; the minutes print no dollar figure.",
+   "figures_as_printed": [],
+   "quote": "bp is going to talk to karen brochu concerning the trails grant funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Michael Shank",
+   "stated_role": "",
+   "topic": "enforcement order, cut trees and legacy debris near brook",
+   "quote": "michael shank spoke about an enforcement issue in which until cut trees under his service line prior to his purchase of the property without permission."
+  },
+  {
+   "speaker": "Andrea Adams",
+   "stated_role": "",
+   "topic": "101 Pleasant Street hearing status",
+   "quote": "public comment: andrea adams wondered what was going to happen with 101 pleasant street."
+  },
+  {
+   "speaker": "Phyllis Luck",
+   "stated_role": "based on her six years on the Select Board",
+   "topic": "recommendation on talent bank appointment (Michael Larouche, Carl Luck)",
+   "quote": "phyllis luck 50 sunset lane, based on her six years on the select board, reminded the"
+  },
+  {
+   "speaker": "Greg Bittner",
+   "stated_role": "former member of the planning board",
+   "topic": "planning board conditions on vital access at 238 Fire Road 16",
+   "quote": "greg bittner noted that as a former member of the planning board that vital access was granted with conditions."
+  },
+  {
+   "speaker": "Andrea Adams",
+   "stated_role": "",
+   "topic": "Fire Road 16 hearing: each project on its own merits",
+   "quote": "andrea adams stated that each project is based on its own merits and she appreciates"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "called to order; RB absent",
+   "quote": "chairman pease called the meeting to order with all members except rb in attendance",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "enforcement order closed by vote; other comments noted",
+   "quote": "michael shank spoke about an enforcement issue in which until cut trees under his service line prior",
+   "tags": [
+    "enforcement",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Talent bank appointment recommendation",
+   "resolution": "no recommendation made; discussed",
+   "quote": "phyllis luck 50 sunset lane, based on her six years on the select board, reminded the",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Minutes of May 5, 2021",
+   "resolution": "approved",
+   "quote": "minutes of previous meetings -may 5, 2021 minutes may 5 lot2 northfield road.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "41 Country Road Notice of Intent",
+   "resolution": "continued to June 2, 2021",
+   "quote": "mm noted the applicant has asked for a continuance to june 2. cc moved to continue.",
+   "tags": [
+    "wetlands",
+    "Notice of Intent"
+   ]
+  },
+  {
+   "topic": "25 Crescent Terrace request for determination",
+   "resolution": "negative determination issued; MM to geo-locate trees",
+   "quote": "debra anderson represented herself.",
+   "tags": [
+    "wetlands",
+    "request for determination",
+    "trees"
+   ]
+  },
+  {
+   "topic": "150 Holman St seven lot subdivision NOIs",
+   "resolution": "order of conditions failed on tie; hearings continued to June 2, 2021",
+   "quote": "bp noted the commission would use one hearing for the 7 nois.",
+   "tags": [
+    "wetlands",
+    "stormwater",
+    "subdivision",
+    "vernal pool"
+   ]
+  },
+  {
+   "topic": "90 Ruth Street beach raking request for determination",
+   "resolution": "continued to June 2, 2021",
+   "quote": "valerie martin represented the applicant.",
+   "tags": [
+    "enforcement",
+    "erosion",
+    "beach"
+   ]
+  },
+  {
+   "topic": "Fire Road 12 town parking area restoration",
+   "resolution": "continued to June 2, 2021",
+   "quote": "fire road 12 mm narrated the history of the file and the work needed to be done",
+   "tags": [
+    "town property",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "73 Peninsula Drive request for determination",
+   "resolution": "continued to June 16, 2021",
+   "quote": "daniel murphy represented himself and outlined the trees that he wishes to remove.",
+   "tags": [
+    "trees",
+    "lake"
+   ]
+  },
+  {
+   "topic": "48 Pearl Street Notice of Intent (Lake Shirley access)",
+   "resolution": "continued to June 2, 2021",
+   "quote": "notice of intent by christopher and suzanne degeorge will be held.",
+   "tags": [
+    "Lake Shirley",
+    "erosion"
+   ]
+  },
+  {
+   "topic": "137 Flynn Road Notice of Intent (stone wall)",
+   "resolution": "continued to June 2, 2021",
+   "quote": "notice of intent by cynthia ritchie for work at 137 flynn road to build a natural stone wall",
+   "tags": [
+    "waterfront",
+    "erosion"
+   ]
+  },
+  {
+   "topic": "757 Chase Road Notice of Intent (commercial building)",
+   "resolution": "continued to June 2, 2021",
+   "quote": "notice of intent by empire management corp for work at 757 chase road for the",
+   "tags": [
+    "commercial",
+    "demolition"
+   ]
+  },
+  {
+   "topic": "238 Fire Road 16 Notice of Intent (Magurn, Lake Shirley)",
+   "resolution": "amended plan approved 4-2 with driveway waiver; amendment to review planning board decision failed on a tie; approval restated 4-2",
+   "quote": "brian butler, joann magurn and butch magurn were present representing the applicant.",
+   "tags": [
+    "Lake Shirley",
+    "waiver",
+    "driveway",
+    "wetlands"
+   ]
+  },
+  {
+   "topic": "101 Pleasant Street Notice of Intent (six lot subdivision)",
+   "resolution": "continued to June 2, 2021",
+   "quote": "a notice of intent by ma pleasant llc will be held. work proposed is construction of a six lot subdivision",
+   "tags": [
+    "subdivision",
+    "wetland crossing"
+   ]
+  },
+  {
+   "topic": "386 Sunset Lane Notice of Intent (Tremblay)",
+   "resolution": "continued to June 2, 2021; CL recused",
+   "quote": "intent by richard tremblay for work at 386 sunset lane for repairs",
+   "tags": [
+    "retaining wall",
+    "fencing",
+    "driveway"
+   ]
+  },
+  {
+   "topic": "Land use forms review",
+   "resolution": "changes accepted",
+   "quote": "old business review of land use forms. the proposed changes for the form were reviewed.",
+   "tags": [
+    "land use forms",
+    "old business"
+   ]
+  },
+  {
+   "topic": "Next steps in implementing new land use rules",
+   "resolution": "discussed; no action",
+   "quote": "bp noted that he has consulted with brandon kibbee about potential changes to the land use plan at",
+   "tags": [
+    "land use",
+    "signage",
+    "hunting"
+   ]
+  },
+  {
+   "topic": "Enforcement actions and administrative hearings",
+   "resolution": "313 Leominster Road enforcement order lifted; other items updated",
+   "quote": "mm noted the violation and that it was completed by",
+   "tags": [
+    "enforcement",
+    "illegal dumping"
+   ]
+  },
+  {
+   "topic": "Trails grant",
+   "resolution": "chair to follow up",
+   "quote": "update on trails grant - status report, if any. bp is going to talk to karen brochu concerning the trails grant funds.",
+   "tags": [
+    "trails",
+    "grant"
+   ]
+  },
+  {
+   "topic": "Administrator's reports",
+   "resolution": "wood lots to be inspected; Rayno/Hollis update set for June 16",
+   "quote": "kj noted that we should inspect the wood lots gary marked and he is going to come to the",
+   "tags": [
+    "forestry",
+    "open space",
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Communications and public comment on appointments",
+   "resolution": "discussed; no action",
+   "quote": "jr revisited the recommendations of the commission appointments and urged the other members",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:30 PM",
+   "quote": "the meeting adjourned at 1130 pm by a motion of kj a second of jv with a unanimous vote to ===page 10=== appr",
+   "tags": [
+    "procedure"
+   ],
+   "quote_taken_from_text": true
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of May 5, 2021",
+   "where": "text",
+   "quote": "minutes of previous meetings -may 5, 2021 minutes may 5 lot2 northfield road."
+  },
+  {
+   "name": "Land use forms (proposed changes)",
+   "where": "text",
+   "quote": "old business review of land use forms. the proposed changes for the form were reviewed."
+  },
+  {
+   "name": "Stream stats calculations (150 Holman St)",
+   "where": "text",
+   "quote": "maryann dipinto noted and documented no flow on the stream as required under wetland regulation and the stream"
+  },
+  {
+   "name": "Orthophoto (tree removal, 25 Crescent Terrace)",
+   "where": "text",
+   "quote": "mm noted that he could geolocate the trees to be removed and superimpose them on the orthophoto."
+  },
+  {
+   "name": "Picture of the cut area (73 Peninsula Drive)",
+   "where": "text",
+   "quote": "cl noted there was a picture of the cut area and he felt there was a larger one in the area that was"
+  },
+  {
+   "name": "Applicant's letter (238 Fire Road 16)",
+   "where": "text",
+   "quote": "mr butler noted in his letter a specific condition proposed that there could be a perpetual"
+  },
+  {
+   "name": "Written proposed waiver (238 Fire Road 16)",
+   "where": "text",
+   "quote": "mr butler noted the written proposed waiver."
+  },
+  {
+   "name": "Planning board decision (238 Fire Road 16)",
+   "where": "text",
+   "quote": "cl restated his motion amendment that the commission review the planning board decision."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "Notice of Intent",
+  "public hearings",
+  "continuances",
+  "enforcement",
+  "remote meeting",
+  "Lake Shirley",
+  "appointments",
+  "land use forms",
+  "trails grant",
+  "stormwater",
+  "driveway waiver"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

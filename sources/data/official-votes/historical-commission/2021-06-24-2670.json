@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2021-06-24",
  "docid": "2670",
@@ -12,6 +12,157 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe discussions, reports, correspondences, and administrative updates (vacant barn repair, cemetery work, building conditions, appointment announcement, upcoming publication) but contain no motions, seconds, or formal votes.",
- "cost_usd": 0.0796499
+ "note": "The minutes are headed THURSDAY JUNE 23, 2021; the meeting date supplied is 2021-06-24. No motions or votes are recorded; the minutes say only that the May minutes were \"accepted\" and that the meeting was adjourned at 7:50, with no motion stated for either. No public comment section appears. The document has one page and no documents list or heading.",
+ "cost_usd": 0.014794590000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting called to order by chairman richard mcgrath"
+  },
+  {
+   "name": "William Tyler",
+   "role": "Cemetery Commissioner",
+   "status": "present",
+   "quote": "also present was cemetery commissioner william tyler."
+  },
+  {
+   "name": "William Lakso",
+   "role": "not stated",
+   "status": "present",
+   "quote": "william lakso reported the publication on may 16 of the jones house, with two other articles appearing soon."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "jennifer sanderson clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The May meeting minutes were accepted (submitted by William Lakso). No motion or vote is recorded.",
+   "quote": "minutes from the may meeting were submitted by william lakso, and accepted."
+  },
+  {
+   "decision": "William Lakso will announce Megan Lordan's appointment to the Historical Commission in the Lunenburg Ledger.",
+   "quote": "william lakso will announce megan lordan's appointment to the historical commission in the lunenburg ledger."
+  },
+  {
+   "decision": "Next meeting set for Tuesday September 21, 2021.",
+   "quote": "next meeting is tuesday september 21, 2021."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Funding for a wall at Goodrich family cemetery",
+   "what_was_recorded": "A question was raised on whether funding is available for a wall at the Goodrich family cemetery this year; no figure or decision is recorded.",
+   "quote": "question on availability of funding for a wall at goodrich family cemetery this year.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval",
+   "resolution": "accepted",
+   "quote": "minutes from the may meeting were submitted by william lakso, and accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence: barn at 188 Flat Hill",
+   "resolution": "noted; repairs considered feasible, owner amenable",
+   "quote": "matt allison has been in touch with richard mcgrath regarding the barn at 188 flat hill, which is a k-house.",
+   "tags": [
+    "barn",
+    "Flat Hill",
+    "historic buildings"
+   ]
+  },
+  {
+   "topic": "Correspondence: Battle House roof",
+   "resolution": "noted",
+   "quote": "william tyler reports a gaping hole in the roof of the battle house on elm street.",
+   "tags": [
+    "Battle House",
+    "roof",
+    "Elm Street"
+   ]
+  },
+  {
+   "topic": "New business",
+   "resolution": "no action",
+   "quote": "no new business old business: curbing has been donated by powell's for the arnold-litch cemetery.",
+   "tags": [
+    "new business"
+   ]
+  },
+  {
+   "topic": "Old business: cemeteries and publications",
+   "resolution": "noted; funding question raised, no decision",
+   "quote": "curbing has been donated by powell's for the arnold-litch cemetery.",
+   "tags": [
+    "cemeteries",
+    "Arnold-Litch",
+    "Goodrich",
+    "curbing",
+    "publications"
+   ]
+  },
+  {
+   "topic": "APDC update: demolition by neglect",
+   "resolution": "noted; no action recorded",
+   "quote": "the primary school was recently vandalized, and remains in violation.",
+   "tags": [
+    "APDC",
+    "Primary School",
+    "demolition by neglect",
+    "Methodist Church",
+    "Town Hall"
+   ]
+  },
+  {
+   "topic": "Appointment announcement: Megan Lordan",
+   "resolution": "announcement assigned to William Lakso",
+   "quote": "william lakso will announce megan lordan's appointment to the historical commission in the lunenburg ledger.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:50; no motion recorded",
+   "quote": "meeting adjourned at 7:50.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes from March and May (published and submitted to committee members)",
+   "where": "text",
+   "quote": "copies of the minutes from march and may have been published and submitted to committee members."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "cemeteries",
+  "demolition by neglect",
+  "historic buildings",
+  "appointments",
+  "Historical Commission",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

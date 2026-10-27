@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2021-06-15",
  "docid": "3201",
@@ -12,23 +12,420 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of 5/18/2021",
+   "motion": "Approve the minutes of the 5/18/2021 meeting.",
    "moved_by": "Bob Pease",
    "seconded_by": "Mike Toohill",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "bob pease made a motion to approve the minutes of 5/18/2021, motion was seconded by mike toohill. motion passed unanimously."
   },
   {
-   "motion": "authorize Brandon and Ana to collaborate on the communication to other Boards and Committees",
+   "motion": "Authorize Brandon Kibbe and Ana Flavia Lockwood to collaborate on the communication to other Boards and Committees (Whalom Woods).",
    "moved_by": "Bob Pease",
    "seconded_by": "Paula Bertram",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "bob pease made a motion that the committee authorize brandon and ana to collaborate on the communication to other boards and committees. motion seconded by paula bertram. passed unanimously."
+   "quote": "bob pease made a motion that the committee authorize brandon and ana to collaborate on the communication to other boards and committees. motion seconded by paula bertram."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are OCR'd; two procedural and substantive votes found. No vote recorded on adjournment (item 6 states meeting was adjourned at 9:32 p.m. without explicit motion language).",
- "cost_usd": 0.0849415
+ "note": "OCR of a scanned minutes document (macOS Vision). Header dates the meeting June 15, 2021, but the running footer reads \"Open Space Minutes 9.22.2020\"; the header is used. Several names are OCR-garbled or spelled two ways in the text (Katisch/Katish; Ritchie letter header). No motion is recorded for the Lake Shirley discussion, the call to order, or adjournment, so none is listed as a vote. Petition signature pages (pages 7-9) are partly illegible and are not transcribed. Item numbering in the text is out of order (agenda item 4 is taken first). Ritchie letter is dated June 14, 2021 and is attached, not read as a vote.",
+ "cost_usd": 0.1487785,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Ana Flavia Lockwood",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met in the ritter memorial building as posted with the following committee members present:"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met in the ritter memorial building as posted with the following committee members present:"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met in the ritter memorial building as posted with the following committee members present:"
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met in the ritter memorial building as posted with the following committee members present:"
+  },
+  {
+   "name": "Sarah Cammer",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met in the ritter memorial building as posted with the following committee members present:"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met in the ritter memorial building as posted with the following committee members present:"
+  },
+  {
+   "name": "Renee Raboin",
+   "role": "of 46 Fire Road 12",
+   "status": "present",
+   "quote": "renee raboin of 46 fire road 12 stated that she had spoken with matt marro and he informed her that"
+  },
+  {
+   "name": "John Tata",
+   "role": "of 135 Flynn Road",
+   "status": "present",
+   "quote": "john tata of 135 flynn road informed the board that the dam for lake shirley failed in 1987 when he"
+  },
+  {
+   "name": "Christian Reniken",
+   "role": "of 70 Fire Road 12",
+   "status": "present",
+   "quote": "christian reniken of 70 fire road 12 stated that he grew of up on the lake and is concerned about the"
+  },
+  {
+   "name": "Cindy Lee Gee",
+   "role": "of 140 Flynn Road",
+   "status": "present",
+   "quote": "cindy lee gee of 140 flynn road said that there are approximately 240 homes on the lake which"
+  },
+  {
+   "name": "Larry Ouellette",
+   "role": "of 110 Fire Road 12",
+   "status": "present",
+   "quote": "larry ouellette of 110 fire road 12 told the committee that his family has owned the property since"
+  },
+  {
+   "name": "Kaitlyn Katisch",
+   "role": "of 605 Reservoir Road",
+   "status": "present",
+   "quote": "kaitlyn katisch, 605 reservoir road noted that shady point does check boats for weeds and that"
+  },
+  {
+   "name": "Tammy Lovewell",
+   "role": "of 579 Reservoir Road",
+   "status": "present",
+   "quote": "tammy lovewell, 579 reservoir road, informed the committee that residents pay voluntary dues to the"
+  },
+  {
+   "name": "Stanley Helstowski",
+   "role": "Fire Road 10",
+   "status": "present",
+   "quote": "stanley helstowski, fire road 10, expressed concern if the state gets involved."
+  },
+  {
+   "name": "Robin Wilson",
+   "role": "of 701 Reservoir Road, owner of Shady Point",
+   "status": "present",
+   "quote": "robin wilson of 701 reservoir road, owner of shady point, told the board that shady point provided"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Meeting moved to the downstairs meeting room because of the number of residents in attendance.",
+   "quote": "due to the number of residents in attendance the meeting was moved to the downstairs meeting room"
+  },
+  {
+   "decision": "Sarah Cammer to reach out to Town Counsel on process and associated costs for the lake parcels identified as general municipal land.",
+   "quote": "sarah will reach out to town counsel to discuss process and associated costs for various parcels on the lake identified as general municipal land."
+  },
+  {
+   "decision": "Paula Bertram to meet with the Police Department on parking options and lake patrols for the current situation.",
+   "quote": "paula will meet with the police department to discuss parking options and lake patrols for the current situation."
+  },
+  {
+   "decision": "No decision on public access to Lake Shirley; the Committee said it is listening and not ready to decide at this point.",
+   "quote": "sarah cammer noted that the committee is listening and not ready to decide at this point"
+  },
+  {
+   "decision": "Bob Pease to investigate the parcel history of 225 Pleasant Street (Whalom Woods).",
+   "quote": "bob pease will investigate further."
+  },
+  {
+   "decision": "The Committee accepted Lynne Man's resignation; Eric Hinds's talent bank form to be forwarded to the Planning Board.",
+   "quote": "the committee accepted lynne's resignation and eric's talent bank will be forwarded to the planning board."
+  },
+  {
+   "decision": "Use of a portion of the Pleasant Street Parcel by the Parks Department to be placed on the next agenda.",
+   "quote": "ana requested that use of a portion of the pleasant street parcel by the parks department be placed on the next agenda."
+  },
+  {
+   "decision": "Paula Bertram to reach out to PAC on whether it can record meetings on the 3rd Tuesday of the month.",
+   "quote": "paula will reach out to pac to see if they are available to record meetings on the 3rd tuesday of the month."
+  },
+  {
+   "decision": "Bob Pease to reach out to Elaine about availability of meeting space.",
+   "quote": "bob pease will reach out to elaine about availability of meeting space."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Shady Point access fee",
+   "what_was_recorded": "A speaker said some families may not be able to afford the daily fee charged by Lake Shirley for access through Shady Point.",
+   "figures_as_printed": [
+    "$30 per day"
+   ],
+   "quote": "some families may not be able to afford the $30 per day fee charged by lake shirley to obtain access through shady point."
+  },
+  {
+   "topic": "Voluntary weed program contributions",
+   "what_was_recorded": "A speaker reported residents contribute voluntarily to the weed program, with about 120 of 240 homes contributing.",
+   "figures_as_printed": [
+    "$45,000"
+   ],
+   "quote": "kaitlyn katisch stated that $45,000 per year is contributed by residents to the weed program, this is a"
+  },
+  {
+   "topic": "Hickory Hills dam cost",
+   "what_was_recorded": "Paula Bertram said the Hickory Hills dam project was privately funded at a stated cost.",
+   "figures_as_printed": [
+    "$500,000"
+   ],
+   "quote": "paula bertram responded that the dam project was privately funded and that the cost was $500,000."
+  },
+  {
+   "topic": "Cost of determining ownership of parcels",
+   "what_was_recorded": "Paula Bertram said the Committee needs to understand the cost of determining ownership; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "paula stated we need to understand the cost associated with determining ownership."
+  },
+  {
+   "topic": "State Department of Fishing and Boating Access funding",
+   "what_was_recorded": "Brandon Kibbe said the Department would fund public access launches, with the Town entering a municipal agreement; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "the department would fund access, but the town would have to enter into a municipal agreement they will manage it."
+  },
+  {
+   "topic": "Policing cost",
+   "what_was_recorded": "A resident asked who would pay for policing if the parcel were used for recreation; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "ms. raboin questioned if this parcel is used for recreational use, who will pay for the policing and why are we not looking at hickory hills?"
+  },
+  {
+   "topic": "Dam repair funding",
+   "what_was_recorded": "A speaker said 10 years was spent obtaining funds for dam repairs before the State funded them; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a coffer dam was installed, and 10 years was spent obtaining funds for repairs, eventually repairs were funded by the state."
+  },
+  {
+   "topic": "Shady Point police details",
+   "what_was_recorded": "Shady Point said it spent a significant amount of money on police details, half of which were filled; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "shady point has spent a significant amount of money to provide police details, unfortunately only 50% of the details have been able to be filled due to staffing."
+  },
+  {
+   "topic": "Returning parcels to the tax rolls",
+   "what_was_recorded": "Brandon Kibbe said a parcel that cannot serve a public purpose could be returned to the tax rolls; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "brandon responded that if a parcel cannot serve a public purpose why not put it back on the tax rolls."
+  },
+  {
+   "topic": "Town money spent on the project",
+   "what_was_recorded": "A speaker opined that the Committee is wasting Town money; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "in his opinion the committee is wasting town money."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Renee Raboin",
+   "stated_role": "of 46 Fire Road 12",
+   "topic": "Lake Shirley wetland, policing, Hickory Hills, petition",
+   "quote": "renee raboin of 46 fire road 12 stated that she had spoken with matt marro and he informed her that"
+  },
+  {
+   "speaker": "John Tata",
+   "stated_role": "of 135 Flynn Road",
+   "topic": "Dam history, opposition to Stump Cove ramp, wildlife",
+   "quote": "john tata of 135 flynn road informed the board that the dam for lake shirley failed in 1987 when he"
+  },
+  {
+   "speaker": "Christian Reniken",
+   "stated_role": "of 70 Fire Road 12",
+   "topic": "Shoreline degradation from public access",
+   "quote": "christian reniken of 70 fire road 12 stated that he grew of up on the lake and is concerned about the"
+  },
+  {
+   "speaker": "Cindy Lee Gee",
+   "stated_role": "of 140 Flynn Road",
+   "topic": "Boat traffic and liability",
+   "quote": "cindy lee gee of 140 flynn road said that there are approximately 240 homes on the lake which"
+  },
+  {
+   "speaker": "Larry Ouellette",
+   "stated_role": "of 110 Fire Road 12",
+   "topic": "Shoreline erosion and wake boats",
+   "quote": "larry ouellette of 110 fire road 12 told the committee that his family has owned the property since"
+  },
+  {
+   "speaker": "Kaitlyn Katisch",
+   "stated_role": "of 605 Reservoir Road",
+   "topic": "Invasive weeds and boat inspections",
+   "quote": "kaitlyn katisch, 605 reservoir road noted that shady point does check boats for weeds and that"
+  },
+  {
+   "speaker": "Kaitlyn Katisch",
+   "stated_role": "of 605 Reservoir Road",
+   "topic": "Weed program contributions",
+   "quote": "kaitlyn katisch stated that $45,000 per year is contributed by residents to the weed program, this is a"
+  },
+  {
+   "speaker": "Tammy Lovewell",
+   "stated_role": "of 579 Reservoir Road",
+   "topic": "Voluntary dues, weeds, trash on Reservoir Road",
+   "quote": "tammy lovewell, 579 reservoir road, informed the committee that residents pay voluntary dues to the"
+  },
+  {
+   "speaker": "Tammy Lovewell",
+   "stated_role": "of 579 Reservoir Road",
+   "topic": "Public access on public property versus Hickory Hills",
+   "quote": "tammy lovewell questioned why public access is not improved on public property and why hickory hills"
+  },
+  {
+   "speaker": "Stanley Helstowski",
+   "stated_role": "Fire Road 10",
+   "topic": "State involvement, Lake Layola ramp, bathrooms",
+   "quote": "stanley helstowski, fire road 10, expressed concern if the state gets involved."
+  },
+  {
+   "speaker": "Robin Wilson",
+   "stated_role": "of 701 Reservoir Road, owner of Shady Point",
+   "topic": "Shady Point access and police details",
+   "quote": "robin wilson of 701 reservoir road, owner of shady point, told the board that shady point provided"
+  },
+  {
+   "speaker": "John Tata",
+   "stated_role": "a former member of the Finance Committee",
+   "topic": "Project called futile and a waste of Town money",
+   "quote": "john tata, a former member of the finance committee, opined that the entire project of public access"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 6:41 p.m.; moved to the downstairs room",
+   "quote": "meeting called to order by the chairman at 6:41 p.m.",
+   "tags": [
+    "procedure",
+    "meeting logistics"
+   ]
+  },
+  {
+   "topic": "Lake Shirley parcels (agenda item 4, taken out of order)",
+   "resolution": "discussed at length with public comment; no vote; follow-up assigned to Town Counsel and Police",
+   "quote": "update on further title information, discuss next steps to confirm town ownership & potential uses.",
+   "tags": [
+    "Lake Shirley",
+    "public access",
+    "boat launch",
+    "Stump Cove",
+    "parcels",
+    "title",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of 05/18/2021 meeting",
+   "resolution": "approved",
+   "quote": "bob pease made a motion to approve the minutes of 5/18/2021, motion was seconded by mike toohill.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Whalom Woods (225 Pleasant Street & 671 West Street)",
+   "resolution": "parcel research assigned; communications motion passed; Parks interest in Pleasant Street parcel noted",
+   "quote": "whalom woods - 225 pleasant street & 671 west street. update from selectmen's meeting,",
+   "tags": [
+    "Whalom Woods",
+    "Pleasant Street",
+    "parks",
+    "parcels",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Committee administration",
+   "resolution": "resignation accepted; talent bank forwarded to Planning Board",
+   "quote": "committee administration update - brandon kibbe informed the committee that lynne man had",
+   "tags": [
+    "membership",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Public comment and committee business (agenda item 5)",
+   "resolution": "next agenda item requested; recording and meeting space to be explored",
+   "quote": "ana requested that use of a portion of the pleasant street parcel by the parks department be placed on the next agenda.",
+   "tags": [
+    "zoom",
+    "recording",
+    "meeting logistics"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:32 p.m.; no motion recorded",
+   "quote": "meeting was adjourned at 9:32 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Petition regarding proposed increased public access to Lake Shirley (signed by 33 people; signature pages attached)",
+   "where": "list",
+   "quote": "provided the committee with a petition signed by 33 people which is attached to and made part of these minutes."
+  },
+  {
+   "name": "Letter from Brian and Cynthia Ritchie, dated June 14, 2021, opposing a public ramp and parking lot at Stump Cove",
+   "where": "list",
+   "quote": "the letter is attached to and made part of these minutes."
+  },
+  {
+   "name": "Open Space Plan",
+   "where": "text",
+   "quote": "the open space plan recommended reviewing properties classified as general municipal property to identify lands that"
+  },
+  {
+   "name": "Plan dated 6/21/1947 drawn by William Ray for Peter Montonen",
+   "where": "text",
+   "quote": "the abutting property refers to plan dated 6/21/1947 drawn by william ray for peter montonen."
+  },
+  {
+   "name": "PowerPoint presentation prepared by Dave Prokowiew and Eric Hinds",
+   "where": "text",
+   "quote": "presented the powerpoint presentation prepared by dave prokowiew and eric hinds"
+  },
+  {
+   "name": "Talent bank form submitted by Eric Hinds",
+   "where": "text",
+   "quote": "eric hinds has submitted a talent bank form and is very interested in joining"
+  }
+ ],
+ "tags": [
+  "Lake Shirley",
+  "public access",
+  "boat launch",
+  "Stump Cove",
+  "Whalom Woods",
+  "Open Space Committee",
+  "public comment",
+  "invasive weeds",
+  "boat traffic",
+  "meeting logistics",
+  "Hickory Hills"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "provided the committee with a petition signed by 33 people"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2021-08-05",
  "docid": "584",
@@ -12,6 +12,112 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes are recorded in these minutes. The text describes a call to order, reading of correspondence, discussion of the Old Primary School building, a proposal by Dwyer to buy a property (\"Discussion followed\"), and adjournment at 8:50PM. However, no motion is recorded with a vote outcome or result. The proposal by Dwyer is not followed by any statement of a vote being taken or a recorded outcome. Adjournment is stated as a fact but no vote on adjournment is recorded.",
- "cost_usd": 0.10682
+ "note": "Minutes are a short summary. No motions are recorded, including the adjournment; no vote list is possible. No dollar figures are printed. No public comment section is printed. No documents list is printed; the documents below are mentioned in the text only.",
+ "cost_usd": 0.01379349,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order: at 7:30pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "call to order: at 7:30pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Tony Nicastro",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order: at 7:30pm with mcgrath, dwyer and nicastro in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting is set for September 9 at 7:30.",
+   "quote": "next meeting: sept 9th,7:30"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Correspondence",
+   "resolution": "letter read; no action recorded",
+   "quote": "a letter was read from ronda lisio recommending soliciting funds and publicizing the preservation of the old primary school.",
+   "tags": [
+    "correspondence",
+    "Old Primary School",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Discussion of the Old Primary School Building",
+   "resolution": "discussed; no action recorded",
+   "quote": "dwyer stated his opinion that the apd bylaw and regulations allowed the commission to grant a cta",
+   "tags": [
+    "Old Primary School",
+    "APD bylaw",
+    "CTA",
+    "affordable housing",
+    "adaptive reuse"
+   ]
+  },
+  {
+   "topic": "Other Business: Lancaster and Whiting property",
+   "resolution": "discussed; no action recorded",
+   "quote": "dwyer proposed the apdc offer to buy the property, renovate and sell.",
+   "tags": [
+    "demolition by neglect",
+    "property acquisition",
+    "Lancaster and Whiting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from Ronda Lisio recommending soliciting funds and publicizing the preservation of the Old Primary School",
+   "where": "text",
+   "quote": "a letter was read from ronda lisio recommending soliciting funds and publicizing the preservation of the old primary school."
+  },
+  {
+   "name": "Richard McGrath's letter to Keith Cheneaux, chairman of the Fitchburg Historical Society, requesting guidance on preserving the OPS",
+   "where": "text",
+   "quote": "richard wrote to keith cheneaux- chairman of the fitchburg historical society, and architecture teacher at fitchburg state"
+  },
+  {
+   "name": "New View Communities webpage content on renovation of schools of the same age in Athol",
+   "where": "text",
+   "quote": "richard also shared content from new view communities webpage"
+  },
+  {
+   "name": "APD bylaw and regulations",
+   "where": "text",
+   "quote": "dwyer stated his opinion that the apd bylaw and regulations allowed the commission to grant a cta"
+  },
+  {
+   "name": "Dwyer's design concept for converting the OPS into an open-air pavilion",
+   "where": "text",
+   "quote": "he furthermore presented his design concept for the same."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "Architectural Preservation District",
+  "Old Primary School",
+  "demolition by neglect",
+  "property acquisition",
+  "CTA",
+  "affordable housing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

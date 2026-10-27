@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-09-07",
  "docid": "5281",
@@ -12,39 +12,413 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointments of Temporary Recreation Director (Robert Thompson) and Facilities Custodian (Donald Gagne)",
+   "motion": "To ratify the Town Manager's appointments of Temporary Recreation Director (Robert Thompson) and Facilities Custodian (Donald Gagne).",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: j. marino 2nd: t. dwyer to ratify the town manager's appointments of temporary recreation director (robert thompson) and facilities custodian (donald gagne) vote: all in favor"
+   "outcome": "passed (all in favor; count not printed)",
+   "procedural": false,
+   "quote": "motion: j. marino 2nd: t. dwyer to ratify the town manager's appointments of temporary recreation director"
   },
   {
-   "motion": "Approve the minutes of August 24, 2021 as presented",
+   "motion": "To approve the minutes of August 24, 2021 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-1",
+   "outcome": "4-0-1 (4 in favor, 1 abstain, Jeffreys)",
    "procedural": true,
    "quote": "motion: l. franco to approve the minutes as presented 2nd: t. dwyer vote: 4 in favor, 1 abstain (jeffreys)"
   },
   {
-   "motion": "Approve draft #2 of the Request for Proposals for Landscape Architectural Services for 30 School Street",
+   "motion": "To approve draft #2 of the Request for Proposals for Landscape Architectural Services for 30 School Street.",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; count not printed)",
    "procedural": false,
-   "quote": "motion: j. marino to approve draft #2 of the request for proposals 2n: m. jeffreys vote: all in favor"
+   "quote": "motion: j. marino to approve draft #2 of the request for proposals"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed",
+   "outcome": "passed (all in favor; count not printed)",
    "procedural": true,
    "quote": "motion: t. dwyer to adjourn the meeting 2nd: m. jeffreys vote: all in favor"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan, macOS Vision; readable with no missing pages or unrecorded votes.",
- "cost_usd": 0.0926345
+ "note": "Text is macOS Vision OCR. Pages 3-4 (roadway signage illustration) are largely unreadable, so no figures are taken from them. OCR errors were read through: 'M. Jeffreys' is printed as '2n:' in the RFP vote and read as the 2nd; 'Dueto' read as 'Due to'. No roll-call votes are printed; ratification and adjournment record only 'All in Favor' with no count. The Leominster-Shirley Road item was a preliminary presentation with no motion. Jack Brennan and Dave Rodgers appeared via Zoom. Donald Gagne and Robert Thompson are named as appointees, not participants.",
+ "cost_usd": 0.023751890000000005,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "member (no title printed)",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "member (no title printed)",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director, john brennan,"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director, john brennan,"
+  },
+  {
+   "name": "John Brennan",
+   "role": "The Brennan Group, Inc. (representing Lunenburg Central)",
+   "status": "present",
+   "quote": "john brennan (the brennan group, inc.) and peter mahoney (john m. corcoran & co.) are here in person to represent lunenburg central."
+  },
+  {
+   "name": "Peter Mahoney",
+   "role": "John M. Corcoran & Co. (representing Lunenburg Central)",
+   "status": "present",
+   "quote": "peter mahoney (john m. corcoran & co.) are here in person to represent lunenburg central."
+  },
+  {
+   "name": "Jack Brennan",
+   "role": "representing Lunenburg Central, via Zoom",
+   "status": "remote",
+   "quote": "jack brennan of lunenburg central is participating via zoom due to having a cold"
+  },
+  {
+   "name": "Eric Riece",
+   "role": "GPI Engineering",
+   "status": "present",
+   "quote": "eric riece of gpi engineering was also present."
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "82 Highland Street, via Zoom",
+   "status": "remote",
+   "quote": "dave rodgers, 82 highland street, via zoom, inquired why the town was hiring a temporary recreation director."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town Manager to keep in touch with the developer's representative, together with the DPW Director and Land Use Director, as the project moves forward.",
+   "quote": "ms. lemieux will keep in touch with mr. brennan, along with the dpw director and land use director as this moves forward."
+  },
+  {
+   "decision": "Chair requested the Planning Board keep this board apprised of any meetings related to the Leominster-Shirley Road project.",
+   "quote": "mr. alonzo requested the planning board keep this board apprised of any meetings related to the project."
+  },
+  {
+   "decision": "Parcel 7 of 671 West Street placed on a future agenda for discussion; the Open Space Committee to be contacted about it.",
+   "quote": "this will be a future agenda item for discussion. open space committee will be contacted regarding this parcel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "MIIA Risk Management Grant (Microsoft Office 365 transition)",
+   "what_was_recorded": "The Town Manager applied for a risk management grant through the insurance carrier to move the Town to Office 365.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "i applied for a $10,000 risk management grant through our insurance carrier to transition the town to microsoft office 365."
+  },
+  {
+   "topic": "Community Compact IT Grant Program",
+   "what_was_recorded": "The Town Manager plans to apply for a Community Compact IT grant of up to a stated amount for IT equipment upgrades, due October 1.",
+   "figures_as_printed": [
+    "$200,000"
+   ],
+   "quote": "this grant is for funding up to $200,000 and is due by october 1st."
+  },
+  {
+   "topic": "2021 Community Enrichment Grant (senior center outdoor recreation area)",
+   "what_was_recorded": "The COA Director applied to the Community Foundation for a grant to redesign the senior center outdoor recreation area for ADA compliance.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "the coa director applied for a $20,000 community enrichment grant through the community foundation of north central mass"
+  },
+  {
+   "topic": "Elderly Exemption income and asset limits (warrant article E)",
+   "what_was_recorded": "A Special Town Meeting warrant article would adjust the Elderly Exemption income and asset limits and raise the exemption amount.",
+   "figures_as_printed": [
+    "$31,500",
+    "$52,700",
+    "$39,600",
+    "$72,700",
+    "$1,000"
+   ],
+   "quote": "to single person income limit $31,500, asset limit $52,700, married persons income limit $39,600, asset limit $72,700 and to increase the exemption amount to $1,000"
+  },
+  {
+   "topic": "Special Town Meeting warrant article B (prior year expenses)",
+   "what_was_recorded": "A draft warrant article would raise or transfer a sum of money to pay prior year expenses; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "b. to see if the town will vote to raise and appropriate or transfer from available funds, a sum of money for payment of prior year expenses"
+  },
+  {
+   "topic": "Parcel at 510 Townsend Harbor Road (1938 purchase)",
+   "what_was_recorded": "Historical record: the front parcel was bought at the 1938 Annual Town Meeting for a stated sum for 33 acres.",
+   "figures_as_printed": [
+    "$225"
+   ],
+   "quote": "the front parcel is an old dump that was purchased at the march 5, 1938 annual town meeting by article 32 which voted $225 to purchase 33 acres."
+  },
+  {
+   "topic": "Leominster-Shirley Road project fiscal impact",
+   "what_was_recorded": "The developer's presentation described a positive fiscal impact and significant increase in tax revenue; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "positive fiscal impact with significant increase in tax revenue with limited impacts on public services"
+  },
+  {
+   "topic": "Lions Club pancake breakfast price (announcement)",
+   "what_was_recorded": "A community pancake breakfast announcement printed the price per person.",
+   "figures_as_printed": [
+    "$2.00"
+   ],
+   "quote": "mr. jeffreys announced there is pancake breakfast sponsored by the lions club tomorrow morning at the senior center from 8:00 - 10:00 a.m. the price is $2.00."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street, via Zoom",
+   "topic": "temporary recreation director and Leominster-Shirley Road project tax revenue",
+   "quote": "dave rodgers, 82 highland street, via zoom, inquired why the town was hiring a temporary recreation director. ms. lemieux reported the recreation director is on medical leave"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Meeting with Lunenburg Central on 475 Leominster-Shirley Road parcel",
+   "resolution": "presented; preliminary, no vote; board asked to be kept apprised",
+   "tags": [
+    "Leominster-Shirley Road",
+    "industrial development",
+    "turn lane",
+    "traffic"
+   ],
+   "quote": "meeting with lunenburg central regarding new parcel 475 leominster shirley road as part of larger parcel 1263 reservoir road and widening of road for turn lane"
+  },
+  {
+   "topic": "Ratification of Town Manager's appointments",
+   "resolution": "ratified",
+   "tags": [
+    "appointments",
+    "personnel"
+   ],
+   "quote": "ratification of the town manager's appointment of facilities custodian donald gagne"
+  },
+  {
+   "topic": "Town Manager report: DPW updates",
+   "resolution": "reported; no action",
+   "tags": [
+    "roads",
+    "bridges",
+    "sidewalks",
+    "DPW"
+   ],
+   "quote": "pleasant street bridge: the pleasant street bridge was opened to through traffic on friday, august 27th."
+  },
+  {
+   "topic": "Vacancies and employment openings",
+   "resolution": "announced",
+   "tags": [
+    "appointments",
+    "employment"
+   ],
+   "quote": "announcement on existing vacancies:"
+  },
+  {
+   "topic": "Home rule petitions: Jaxx Country Variety liquor license and library trust funds",
+   "resolution": "reported; no action",
+   "tags": [
+    "liquor license",
+    "library",
+    "legislation"
+   ],
+   "quote": "the bill to authorize the library board of trustees to invest the library trust funds has received its second reading."
+  },
+  {
+   "topic": "Authorized changes to assessors records on certain town properties",
+   "resolution": "reported; no action",
+   "tags": [
+    "assessors",
+    "town property",
+    "conservation"
+   ],
+   "quote": "authorized changes to assessors records on certain town properties:"
+  },
+  {
+   "topic": "Disposition of parcel 7 of 671 West Street",
+   "resolution": "discussed; future agenda item, Open Space Committee to be contacted",
+   "tags": [
+    "town land",
+    "open space",
+    "disposition"
+   ],
+   "quote": "discussion ensued about whether to keep the parcel or put it out for bid. this will be a future agenda item for discussion."
+  },
+  {
+   "topic": "Comment letter to MassHousing on Pond View Commons 40B",
+   "resolution": "reported; no action",
+   "tags": [
+    "40B",
+    "housing",
+    "MassHousing"
+   ],
+   "quote": "i finalized and sent the town's comment letter to masshousing regarding the 40b project eligibility/site approval application from pond view commons"
+  },
+  {
+   "topic": "Grants",
+   "resolution": "reported; no action",
+   "tags": [
+    "grants",
+    "IT",
+    "senior center"
+   ],
+   "quote": "2021 community enrichment grant: the coa director applied for a $20,000 community enrichment grant"
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "reported; public health notice posted",
+   "tags": [
+    "COVID-19",
+    "public health"
+   ],
+   "quote": "the director at nashoba associated boards of health asked us to post a public health notice from the cdc"
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "announced",
+   "tags": [
+    "events",
+    "Special Town Meeting"
+   ],
+   "quote": "the fall special town meeting will be tuesday, november 16, 2021 at 7 p.m."
+  },
+  {
+   "topic": "Draft November 16, 2021 Special Town Meeting warrant",
+   "resolution": "no comments or questions; no vote recorded",
+   "tags": [
+    "Special Town Meeting",
+    "warrant"
+   ],
+   "quote": "there were no comments or questions about the warrant articles at this time."
+  },
+  {
+   "topic": "Approval of minutes of August 24, 2021",
+   "resolution": "approved 4-0-1",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes as presented"
+  },
+  {
+   "topic": "Revised RFP for landscape architectural services, 30 School Street",
+   "resolution": "approved draft #2",
+   "tags": [
+    "RFP",
+    "30 School Street",
+    "procurement"
+   ],
+   "quote": "to approve draft #2 of the request for proposals"
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "announced",
+   "tags": [
+    "meetings",
+    "marijuana establishment"
+   ],
+   "quote": "mr. alonzo noted the board meets again on september 14 and 21."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one speaker, questions answered",
+   "tags": [
+    "public comment",
+    "recreation",
+    "Leominster-Shirley Road"
+   ],
+   "quote": "mr. rodgers asked about the leominster-shirley road project and getting further information"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:48 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting adjourned at 8:48 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Request for Proposals (draft #2), Landscape Architectural Services for 30 School Street",
+   "where": "text",
+   "quote": "ms. lemieux presented draft #2 of the rfp. the changes were made as requested previously; the project tasks have been reduced and the timeline for submission was amended."
+  },
+  {
+   "name": "Draft November 16, 2021 Special Town Meeting Warrant (articles A-E)",
+   "where": "list",
+   "quote": "1. draft november 16, 2021 special town meeting warrant a. to see if the town will vote to raise and appropriate, borrow, or transfer from available funds"
+  },
+  {
+   "name": "Proposed roadway signage illustration, Leominster-Shirley Road",
+   "where": "text",
+   "quote": "the following illustration shows proposed signage for the road."
+  },
+  {
+   "name": "Town comment letter to MassHousing re 40B Pond View Commons (sent September 2, 2021, with 32 attachments)",
+   "where": "text",
+   "quote": "i finalized and sent the town's comment letter to masshousing regarding the 40b project eligibility/site approval application from pond view commons on thursday, september 2, 2021."
+  },
+  {
+   "name": "Deed, 510 Townsend Harbor Road / Lake Shirley Dam parcel (Deed Book 1628 Page 47)",
+   "where": "text",
+   "quote": "land and dam were given to the town from lake shirley improvement corporation at the august 25, 1987 special town meeting. (deed book 1628 page 47)"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Leominster-Shirley Road",
+  "industrial warehouse",
+  "traffic and roads",
+  "appointments",
+  "grants",
+  "40B housing",
+  "town-owned land",
+  "Special Town Meeting warrant",
+  "minutes",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux presented draft #2 of the rfp"
+ },
+ "dropped_unquoted_by_field": {}
 }

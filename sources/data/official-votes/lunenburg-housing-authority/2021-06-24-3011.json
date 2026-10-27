@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2021-06-24",
  "docid": "3011",
@@ -12,67 +12,338 @@
  },
  "votes": [
   {
-   "motion": "Elect Jon Hogue as Chair",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "linda mcdonald made a motion to elect jon hogue as chair, catherine clark seconded. linda mcdonald made a motion to elect deborah christen as vice chair, catherine clark seconded. upon roll call vote with jon hogue- yes, catherine clark-yes, linda mcdonald-yes, the motion s were passed with a 3 to 0 vo",
+   "motion": "Elect Jon Hogue as Chair.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Catherine Clark",
-   "quote_taken_from_text": true
+   "outcome": "passed 3 to 0",
+   "procedural": false,
+   "quote": "linda mcdonald made a motion to elect jon hogue as chair, catherine clark seconded."
   },
   {
-   "motion": "Elect Deborah Christen as Vice Chair",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "linda mcdonald made a motion to elect jon hogue as chair, catherine clark seconded. linda mcdonald made a motion to elect deborah christen as vice chair, catherine clark seconded. upon roll call vote with jon hogue- yes, catherine clark-yes, linda mcdonald-yes, the motion s were passed with a 3 to 0 vo",
+   "motion": "Elect Deborah Christen as Vice Chair.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Catherine Clark",
-   "quote_taken_from_text": true
+   "outcome": "passed 3 to 0",
+   "procedural": false,
+   "quote": "linda mcdonald made a motion to elect deborah christen as vice chair, catherine clark seconded."
   },
   {
-   "motion": "Accept and approve the minutes of the May 20, 2021 meeting",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "jon hogue made a motion to accept and approve the minutes of the may 20, 2021 meeting. linda mcdonald seconded and all were in favor with a roll call vote of jon hogue -aye, linda mcdonald- aye, catherine clark-aye",
+   "motion": "Accept and approve the minutes of the May 20, 2021 meeting.",
    "moved_by": "Jon Hogue",
    "seconded_by": "Linda McDonald",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve the May 2021 financial report",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion to approve the may 2021 financial report made by jon hogue; catherine clark seconded. jon hogue-aye, deborah christen-aye, linda mcdonald-aye and financials were accepted and approved.",
-   "moved_by": "Jon Hogue",
-   "seconded_by": "Catherine Clark"
-  },
-  {
-   "motion": "Approve Resolution 2021-8 for final completion of Underground Fire Alarm Wiring Replacement at 667-1",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion made by catherine clark to approve resolution 2021-8; jon hogue seconded. catherine clark-aye, jon hogue-aye, linda mcdonald-aye and motion passed with a 3 to 0 vote.",
-   "moved_by": "Catherine Clark",
-   "seconded_by": "Jon Hogue"
-  },
-  {
-   "motion": "Approve Resolution 2021-9 to hire Resident Service Coordinator through RSC funding",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion made by jon hogue to approve resolution 202 1-9; catherine clark seconded. jon hogue -aye, catherine clark-aye, linda mcdonald-aye and motion passed with a 3 to 0 vote.",
-   "moved_by": "Jon Hogue",
-   "seconded_by": "Catherine Clark"
-  },
-  {
-   "motion": "Adjourn the meeting",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "catherine clark made a motion to adjourn the meeting at 3:39 p.m.; jon hogue seconded. jon hogue- aye, deborah christen-aye, linda mcdonald-aye with all in favor the meeting adjourned",
+   "quote": "jon hogue made a motion to accept and approve the minutes of the may 20, 2021 meeting."
+  },
+  {
+   "motion": "Approve the May 2021 financial report.",
+   "moved_by": "Jon Hogue",
+   "seconded_by": "Catherine Clark",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion to approve the may 2021 financial report made by jon hogue; catherine clark seconded."
+  },
+  {
+   "motion": "Approve Resolution 2021-8, final completion for 667-1 Underground Fire Alarm Wiring Replacement, DHCD Fish #162030.",
    "moved_by": "Catherine Clark",
    "seconded_by": "Jon Hogue",
-   "quote_taken_from_text": true
+   "outcome": "passed 3 to 0",
+   "procedural": false,
+   "quote": "motion made by catherine clark to approve resolution 2021-8; jon hogue seconded."
+  },
+  {
+   "motion": "Approve Resolution 2021-9, hiring a Resident Service Coordinator through RSC funding.",
+   "moved_by": "Jon Hogue",
+   "seconded_by": "Catherine Clark",
+   "outcome": "passed 3 to 0",
+   "procedural": false,
+   "quote": "motion made by jon hogue to approve resolution 202 1-9; catherine clark seconded."
+  },
+  {
+   "motion": "Adjourn the meeting at 3:39 p.m.",
+   "moved_by": "Catherine Clark",
+   "seconded_by": "Jon Hogue",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "catherine clark made a motion to adjourn the meeting at 3:39 p.m.; jon hogue seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1397279
+ "note": "Text is clean printed minutes, not a scan. No public comment speakers were recorded (the minutes say no individuals called in), so public_comment is empty. Inconsistencies left as printed: Deborah Christen is marked absent in the roll call but is recorded as voting aye in the financial report and adjournment votes; the header lists Linda McDonald as Chair while the election motion names Jon Hogue as Chair; Denise Ivaldi is titled Recording Secretary in the header and Administrative Assistant in item 1a. Several votes record aye names but no numeric count, so outcome is 'passed'.",
+ "cost_usd": 0.020234890000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "jon hogue -present, linda mcdonald-present, catherine clark-present, deborah christen-absent."
+  },
+  {
+   "name": "Jon Hogue",
+   "role": "Member",
+   "status": "present",
+   "quote": "jon hogue -present, linda mcdonald-present, catherine clark-present, deborah christen-absent."
+  },
+  {
+   "name": "Catherine Clark",
+   "role": "Member",
+   "status": "present",
+   "quote": "jon hogue -present, linda mcdonald-present, catherine clark-present, deborah christen-absent."
+  },
+  {
+   "name": "Deborah Christen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "jon hogue -present, linda mcdonald-present, catherine clark-present, deborah christen-absent."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Juneteenth Independence Day to be formally adopted next year; placed on a future meeting agenda.",
+   "quote": "we will formally adopt for next year, on agenda for future meeting."
+  },
+  {
+   "decision": "Board meeting time change to be brought up at the next meeting for discussion and vote.",
+   "quote": "we will bring up next meeting for discussion and vote."
+  },
+  {
+   "decision": "By-laws to be amended for the meeting time change; other needed changes under review.",
+   "quote": "by-laws will have to be amended; we are reviewing for any other changes needed."
+  },
+  {
+   "decision": "The Board will not meet in July.",
+   "quote": "the board will not meet in july after brief discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Reserves and subsidy, May 2021 financial report",
+   "what_was_recorded": "Reserves were at 99.78%, with a warning not to let them reach 100% or the subsidy is lost; projects being considered to bring reserves down include a maintenance tractor with snow plow and snow blower.",
+   "quote": "reserves are at 99.78%, we should not let this go to 100% or we lose subsidy.",
+   "figures_as_printed": [
+    "99.78%"
+   ]
+  },
+  {
+   "topic": "Shelter rents and extraordinary maintenance",
+   "what_was_recorded": "Shelter rents were a little below due to a few vacancies; nothing was budgeted for extraordinary maintenance.",
+   "quote": "five months in, shelter rents a little below due to a few vacancies.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Appliance replacement to reduce reserves",
+   "what_was_recorded": "Discussion of the age of appliances and replacing them on a rotating basis to help bring down reserves; no amount stated.",
+   "quote": "discussion on age of appliances and whether to replace on rotating basis to help bring down reserves.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Resident Service Coordinator grant",
+   "what_was_recorded": "A grant was received under the PHN 2021-02 NOFA as a regional award for Lunenburg, Sterling and W. Boylston; hours are to be added to the Leominster RSC. No dollar amount printed.",
+   "quote": "we submitted an application and received grant for lunenburg, sterling and w. boylston (regional award).",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Hiring Resident Service Coordinator through RSC funding",
+   "what_was_recorded": "Resolution 2021-9 approves hiring a Resident Service Coordinator funded through RSC funding; no dollar amount printed.",
+   "quote": "resolution 2021-9 approval to hire resident service coordinator through rsc funding.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "quorum declared; meeting opened 3:02 p.m.",
+   "quote": "the chair declared a quorum present and opened the meeting at 3:02 p.m.",
+   "tags": [
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Election of officers",
+   "resolution": "Jon Hogue elected Chair and Deborah Christen Vice Chair, 3 to 0",
+   "quote": "the chair turned the meeting over to the executive director for nomination of officers.",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Approval of May 20, 2021 minutes",
+   "resolution": "approved",
+   "quote": "jon hogue made a motion to accept and approve the minutes of the may 20, 2021 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no one called in",
+   "quote": "for the record there were no individuals calling in.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "reported; no action recorded",
+   "quote": "welcome cathy clark, our newest board member.",
+   "tags": [
+    "staffing",
+    "COVID",
+    "RSC grant",
+    "NAHRO",
+    "meeting time"
+   ]
+  },
+  {
+   "topic": "Financial report, May 2021",
+   "resolution": "accepted and approved",
+   "quote": "reserves are at 99.78%, we should not let this go to 100% or we lose subsidy.",
+   "tags": [
+    "finance",
+    "reserves",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Modernization, work orders and state-aided housing",
+   "resolution": "reported; no action recorded",
+   "quote": "we received 7 standard applications in may; all elderly.",
+   "tags": [
+    "maintenance",
+    "work orders",
+    "occupancy",
+    "waiting list"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none",
+   "tags": []
+  },
+  {
+   "topic": "New business: Resolutions 2021-8 and 2021-9",
+   "resolution": "both approved 3 to 0",
+   "quote": "motion made by catherine clark to approve resolution 2021-8; jon hogue seconded.",
+   "tags": [
+    "resolutions",
+    "fire alarm",
+    "resident services"
+   ]
+  },
+  {
+   "topic": "Other correspondence: DHCD Public Housing Notices",
+   "resolution": "reviewed",
+   "quote": "dhcd public housing notices were reviewed:",
+   "tags": [
+    "DHCD",
+    "notices"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "resident participation - none requested",
+   "tags": [
+    "residents"
+   ]
+  },
+  {
+   "topic": "Board commissioners’ comments",
+   "resolution": "none",
+   "quote": "board commissioners' comments - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 3:39 p.m.; no July meeting",
+   "quote": "catherine clark made a motion to adjourn the meeting at 3:39 p.m.; jon hogue seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2021-01 – Changes Pertaining to Town Appointed Tenant Board Members",
+   "where": "list",
+   "quote": "phn 2021-01 - changes pertaining to town appointed tenant board members"
+  },
+  {
+   "name": "PHN 2021-09 – Juneteenth Independence Day Guidance",
+   "where": "list",
+   "quote": "phn 2021-09 - juneteenth independence day guidance"
+  },
+  {
+   "name": "PHN 2021-10 – Air Conditioner Installation Policies",
+   "where": "list",
+   "quote": "phn 2021-10 - air conditioner installation policies"
+  },
+  {
+   "name": "Resident Service Coordinator Initiative Funding Award Letter (PHN 2021-02 NOFA)",
+   "where": "text",
+   "quote": "resident service coordinator initiative funding award letter"
+  },
+  {
+   "name": "Financial Report – May 2021",
+   "where": "text",
+   "quote": "financial report - may 2021"
+  },
+  {
+   "name": "Modernization/Work Order Report",
+   "where": "text",
+   "quote": "modernization/work order report - adam gautie:"
+  },
+  {
+   "name": "State-Aided Housing Report",
+   "where": "text",
+   "quote": "state-aided housing report - ben gold:"
+  },
+  {
+   "name": "By-laws",
+   "where": "text",
+   "quote": "by-laws will have to be amended; we are reviewing for any other changes needed."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "annual meeting",
+  "officer election",
+  "financial report",
+  "reserves",
+  "resident services",
+  "DHCD notices",
+  "resolutions",
+  "work orders",
+  "public housing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dhcd public housing notices were reviewed:"
+ },
+ "dropped_unquoted_by_field": {}
 }

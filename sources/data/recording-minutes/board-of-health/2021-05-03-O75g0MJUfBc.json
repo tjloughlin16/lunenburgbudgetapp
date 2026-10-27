@@ -1,0 +1,386 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-health",
+ "board": "Board of Health",
+ "video_title": "Board of Health",
+ "meeting_date": "2021-05-03",
+ "video_id": "O75g0MJUfBc",
+ "video_url": "https://www.youtube.com/watch?v=O75g0MJUfBc",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-health/2021-05-03-O75g0MJUfBc.json",
+  "sha256": "8c2754ab5c7ea732f3359d7f2cea3801721877caefddc345c8f0980f94631437",
+  "caption_lines": 85,
+  "segments": 756
+ },
+ "recording": {
+  "duration_s": 1778,
+  "duration": "0:29",
+  "spoken_chars": 21445,
+  "words_approx": 3574
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05032021-1050",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-05-03-agenda-1050.txt",
+   "path": "sources/meetings/board-of-health/2021-05-03-agenda-1050.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05032021-1050",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-05-03-minutes-1050.txt",
+   "path": "sources/meetings/board-of-health/2021-05-03-minutes-1050.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-26T09:24:27Z",
+  "cost_usd": 0.470174
+ },
+ "minutes": {
+  "headline": "Board of Health voted to grant two septic variances for a Baltwell Street house and a Gilchrist Street pool site.",
+  "summary": "The Board of Health met remotely and heard two septic variance requests, one near wetlands and one reducing groundwater separation. Both were approved by roll call. The agent reported on COVID-19 trends and the governor's reopening schedule, and the board adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "George Eamon",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Perry Jewel",
+    "role": "vice chairman",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Evan Waters",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Andrea Schnepp",
+    "role": "administrative assistant",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Jim Gorefy",
+    "role": "agent",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Doug Smith",
+    "role": "presenter",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Chris McKenzie",
+    "role": "presenter",
+    "remote": true
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "legal",
+   "planning-and-zoning",
+   "public-safety"
+  ],
+  "votes": [
+   {
+    "t": 730,
+    "motion": "Grant the requested variances for the Baltwell Street septic system (reduced distances to well and wetlands).",
+    "moved_by": "Perry Jewell",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1211,
+    "motion": "Accept the requested variances and local upgrade approvals for 30 Gilchrist Street septic system as presented.",
+    "moved_by": "Perry Jewell",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 1733,
+    "motion": "Adjourn the meeting.",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 752,
+    "decision": "Variances for the Baltwell Street property approved; applicant to return to Conservation Commission."
+   },
+   {
+    "t": 1253,
+    "decision": "Two bedroom-count matters (Lancaster Ave and Holman Street) reported resolved and signed off by the agent, pending upload of a revised plan."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 300,
+    "topic": "Opening, roll call, and remote meeting procedures",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 300,
+    "t_end": 772,
+    "topic": "Septic variance request, Baltwell Street (distance to well and wetlands)",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 772,
+    "t_end": 1253,
+    "topic": "Variances and upgrade approvals for septic system at 30 Gilchrist Street",
+    "resolution": "voted",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 1253,
+    "t_end": 1356,
+    "topic": "Agent update on bedroom-count matters",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1356,
+    "t_end": 1733,
+    "topic": "COVID-19 case data and state reopening schedule",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 1733,
+    "t_end": 1756,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Roll-call count for the adjournment vote is not in the captions.",
+   "Street name and house number of the first property are garbled (heard as nine paul wall street / Baltwell Street).",
+   "Some of the variance letter's regulatory citations are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 605,
+    "kind": "safety",
+    "about": "A member asked whether the Conservation Commission had reviewed the septic system placed within the 50-foot wetland setback.",
+    "who": "a member",
+    "words_as_heard": "dropping you know below not just the 100 feet but the 50-foot"
+   },
+   {
+    "t": 1148,
+    "kind": "safety",
+    "about": "The Gilchrist Street site has an existing septic system of unknown condition that must be upgraded as part of a land division.",
+    "who": "the presenter",
+    "words_as_heard": "all the systems that are in failure be brought up to code"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 313,
+    "name_as_heard": "letter requesting variances for Baltwell Street",
+    "kind": "letter or email",
+    "words_as_heard": "i have a letter to the board of health please accept this letter of my request",
+    "shown": false
+   },
+   {
+    "t": 793,
+    "name_as_heard": "Gilchrist Street variance request letter",
+    "kind": "letter or email",
+    "words_as_heard": "respectfully well impressed requests the following local upgrade approvals and local regulation variances",
+    "shown": false
+   },
+   {
+    "t": 896,
+    "name_as_heard": "the plan for 30 Gilchrist Street",
+    "kind": "plan or drawing",
+    "words_as_heard": "if you want to take a look at the plan if you want to let me share my screen",
+    "shown": true
+   },
+   {
+    "t": 1294,
+    "name_as_heard": "revised plans dated 28 April for Holman Street",
+    "kind": "plan or drawing",
+    "words_as_heard": "a set of plans in the office there that were revised as of the 28th of april",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Health voted to grant the requested variances for a Baltwell Street septic system, covering reduced distances to a well and to wetlands.",
+    "t": 730
+   },
+   {
+    "line": "The board then accepted the variances and local upgrade approvals for the 30 Gilchrist Street septic system as presented; the vote passed.",
+    "t": 1211
+   },
+   {
+    "line": "The Baltwell Street applicant is to return to the Conservation Commission after the variances were approved.",
+    "t": 752
+   },
+   {
+    "line": "The agent reported two bedroom-count matters resolved and signed off, pending upload of a revised plan, then gave COVID-19 case data and the state reopening schedule.",
+    "t": 1253
+   }
+  ],
+  "why_it_matters": [
+   "Septic variances decide how close a system may sit to a well or wetlands on a given lot, which bears on groundwater protection and on what owners may build or repair."
+  ],
+  "watch_next": [
+   "The Baltwell Street applicant's return to the Conservation Commission.",
+   "Upload of the revised plan for the Lancaster Ave and Holman Street bedroom-count matters."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-26T09:24:35Z",
+   "cost_usd": 0.36658199999999996
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05032021-1050",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-05-03-minutes-1050.txt",
+   "path": "sources/meetings/board-of-health/2021-05-03-minutes-1050.pdf"
+  },
+  "official_sha256": "ab4d394e66564696c2846cfc86f12250869e59eb711650224b5c0b674934289b",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both substantive votes (the variances for the Boutwell/'Baltwell' Street and 30 Gilchrest Street septic systems passed), and the differences are mostly misheard names. The one thing to know is that ours has the bedroom-count matters, the Conservation Commission follow-up, and a 'chair' label for George Emond, none of which are in the official minutes.",
+  "counts": {
+   "agree": 2,
+   "caption_error": 6,
+   "discrepancy": 0,
+   "only_in_ours": 3,
+   "only_in_official": 1
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Baltwell Street variance vote (property name)",
+    "ours": "Grant the requested variances for the Baltwell Street septic system (reduced distances to well and wetlands). — passed",
+    "official": "on motion by jewell and second by watters, the board voted unanimously to approve the variances by roll call vote.",
+    "official_reading": "9 Boutwell Street",
+    "note": "Same vote, same outcome (passed); captions misheard the street name Boutwell as Baltwell.",
+    "t": 730
+   },
+   {
+    "kind": "agree",
+    "about": "30 Gilchrist/Gilchrest Street variance vote",
+    "ours": "Accept the requested variances and local upgrade approvals for 30 Gilchrist Street septic system as presented. — passed",
+    "official": "on motion by jewell and second by watters the board voted unanimously to approve the requested variances by roll call vote.",
+    "note": "Same item and outcome; the spelling of the street differs only by caption rendering. Check whether the 'local upgrade approvals' in ours were also voted, since the official lists only the groundwater offset variance.",
+    "t": 1211
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Roll call / unanimous voting",
+    "ours": "",
+    "official": "all voting by roll call votes.",
+    "note": "Official minutes record that votes were unanimous roll calls; ours does not mention the voting method."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Applicant to return to Conservation Commission",
+    "ours": "Variances for the Baltwell Street property approved; applicant to return to Conservation Commission.",
+    "official": "",
+    "note": "Follow-up instruction appears only in our recording-based minutes.",
+    "t": 752
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Lancaster Ave and Holman Street bedroom-count matters",
+    "ours": "Two bedroom-count matters (Lancaster Ave and Holman Street) reported resolved and signed off by the agent, pending upload of a revised plan.",
+    "official": "",
+    "note": "Official minutes do not mention these matters; not a vote, so recorded as an omission.",
+    "t": 1253
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair George Eamon",
+    "ours": "George Eamon (chair)",
+    "official": "perry jewell, george emond and evan watters.",
+    "official_reading": "George Emond",
+    "note": "Name misheard; also ours calls him chair while official lists Perry Jewell as Vice-Chairman conducting the roll call and George Emond only as a board member."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Perry Jewel",
+    "ours": "Perry Jewel (vice chairman)",
+    "official": "roll call conducted by vice-chairman, perry jewell:",
+    "official_reading": "Perry Jewell",
+    "note": "Spelling variant of the same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Evan Waters",
+    "ours": "Evan Waters (member)",
+    "official": "perry jewell, george emond and evan watters.",
+    "official_reading": "Evan Watters",
+    "note": "Spelling variant of the same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: agent Jim Gorefy",
+    "ours": "Jim Gorefy (agent)",
+    "official": "agent, jim garreffi, was also present.",
+    "official_reading": "Jim Garreffi",
+    "note": "Name misheard by captions."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Doug Smith",
+    "ours": "Doug Smith (presenter)",
+    "official": "doug smith met with the board on behalf of the owner.",
+    "note": "Same person present."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chris McKenzie",
+    "ours": "Chris McKenzie (presenter)",
+    "official": "chris mackenzie met with the board on behalf of the owner.",
+    "official_reading": "Chris MacKenzie",
+    "note": "Spelling variant of the same person."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Andrea Schnepp, administrative assistant",
+    "ours": "Andrea Schnepp (administrative assistant)",
+    "official": "",
+    "note": "Official attendee list does not include the administrative assistant."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-26T09:25:21Z",
+   "cost_usd": 0.380772
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-08-23",
  "docid": "4105",
@@ -12,39 +12,204 @@
  },
  "votes": [
   {
-   "motion": "Approve all minutes listed",
+   "motion": "Approve the minutes of 07/26/2021, 07/26/2021 for 101 Pleasant Street, and 07/26/2021 for 360 Flat Hill Road.",
    "moved_by": "M. Allison",
    "seconded_by": "M. Brenner",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "m. allison made motion to approve all minutes listed below, m. brenner seconded, all aye."
   },
   {
-   "motion": "Adopt Standard Conditions for Stormwater, Subdivision, Site Plan Approval and Special Permit",
+   "motion": "Adopt the Standard Conditions for Stormwater, Subdivision, Site Plan Approval and Special Permit.",
    "moved_by": "M. Allison",
    "seconded_by": "M. Brenner",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "m. allison made motion to adopt the standard conditions for stormwater, subdivision, site plan approval and special permit, m. brenner seconded, all aye."
   },
   {
-   "motion": "Finalize letter regarding Pond View Commons, LLC for Board Chair signature",
+   "motion": "Finalize the letter to Pond View Commons, LLC for Board Chair signature.",
    "moved_by": "M. Allison",
    "seconded_by": "M. Brenner",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": false,
    "quote": "m. allison made motion for letter to be finalized for board chair signature, m. brenner seconded, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Allison",
    "seconded_by": "M. Brenner",
-   "outcome": "passed",
+   "outcome": "passed (all aye)",
    "procedural": true,
    "quote": "m. allison made motion to adjourn, m. brenner seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0950515
+ "note": "Extracted text of the minutes; the public hearings are in separate minutes not included here, so their outcomes are not recorded in this text. Three motions are recorded with counts printed only as 'all aye'. No dollar figures, transfers or public comment appear in the text. Erik Torgersen's name is split across a line break on page 1 and is read as Torgersen from the Absent line.",
+ "cost_usd": 0.01606389,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "due to illness, p. bertram participate remotely under section 2.02 remote participation"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Documents from the standards discussion would be circulated, posted on the Town's website, and furnished to local engineers.",
+   "quote": "documents would be circulated, posted on the town's website, and furnished to local engineers."
+  },
+  {
+   "decision": "The Town Manager would compile all review comments received on Pond View Commons and furnish them to MassHousing.",
+   "quote": "the town manager would be compiling all the review comments she had received and then furnish those comments to masshousing."
+  },
+  {
+   "decision": "Meetings resumed at Town Hall in a hybrid model, in-person and via Zoom, with the next meetings listed as September 13 and September 27.",
+   "quote": "meetings resumed at town hall with a hybrid model; both in-person and via zoom."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearings (101 Pleasant Street; 711 Massachusetts Avenue; 97 Cross Street and others; 1263 Reservoir Road; 360 Flat Hill Road)",
+   "resolution": "held separately; see separate minutes",
+   "quote": "public hearings: 101 pleasant street- see separate minutes."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved, all aye",
+   "quote": "m. allison made motion to approve all minutes listed below, m. brenner seconded, all aye."
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no report from any committee",
+   "quote": "tcp building design committee- no report"
+  },
+  {
+   "topic": "Workshop: standard conditions",
+   "resolution": "standard conditions adopted",
+   "quote": "discussion of stan dards conditions - minor edits would be made to the three documents listed below."
+  },
+  {
+   "topic": "Director's items: Pond View Commons letter",
+   "resolution": "letter to be finalized for Board Chair signature",
+   "quote": "pond view commons, llc - board members reviewed the draft letter."
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted; hybrid meetings resumed",
+   "quote": "meetings resumed at town hall with a hybrid model; both in-person and via zoom."
+  },
+  {
+   "topic": "Ongoing items: Pond View Commons",
+   "resolution": "Town Manager to compile comments for MassHousing",
+   "quote": "the town manager would be compiling all the review comments she had received"
+  },
+  {
+   "topic": "Board comment: cannabis host agreement and BrightFarms withdrawal",
+   "resolution": "discussed; no action",
+   "quote": "after viewing a select board appointment with a potential marijuana retailer, t. cole was left with the understanding"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 10:08 p.m.",
+   "quote": "m. allison made motion to adjourn, m. brenner seconded, all aye."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes 07/26/2021",
+   "where": "list",
+   "quote": "documents used at meeting: minutes 07/26/2021 07/26/2021, 101 pleasant street 07/26/2021, 360 flat hill road"
+  },
+  {
+   "name": "Minutes 07/26/2021, 101 Pleasant Street",
+   "where": "list",
+   "quote": "07/26/2021, 101 pleasant street 07/26/2021, 360 flat hill road"
+  },
+  {
+   "name": "Minutes 07/26/2021, 360 Flat Hill Road",
+   "where": "list",
+   "quote": "07/26/2021, 360 flat hill road draft conditions site plan approval and special permit"
+  },
+  {
+   "name": "DRAFT Conditions: Site Plan Approval and Special Permit",
+   "where": "list",
+   "quote": "draft conditions site plan approval and special permit stormwater management permit subdivision"
+  },
+  {
+   "name": "DRAFT Conditions: Stormwater Management Permit",
+   "where": "list",
+   "quote": "site plan approval and special permit stormwater management permit subdivision"
+  },
+  {
+   "name": "DRAFT Conditions: Subdivision",
+   "where": "list",
+   "quote": "stormwater management permit subdivision board comment letter, pond view commons, llc"
+  },
+  {
+   "name": "Board Comment Letter, Pond View Commons, LLC",
+   "where": "list",
+   "quote": "board comment letter, pond view commons, llc"
+  },
+  {
+   "name": "Water Aquifer map (from the Water District)",
+   "where": "text",
+   "quote": "the water district had submitted a new water aquifer map to a. burney."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "site plan approval",
+  "stormwater",
+  "subdivision",
+  "special permit",
+  "standard conditions",
+  "Pond View Commons",
+  "cannabis",
+  "BrightFarms",
+  "remote participation",
+  "hybrid meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-08-25",
  "docid": "3079",
@@ -12,23 +12,139 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes of the June 16, 2021 meeting",
+   "motion": "Approve the minutes of the June 16, 2021 meeting.",
    "moved_by": "Dave Passion",
    "seconded_by": "Dave Blatt",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dave passion motions to approve minutes for the june 16, 2021 meeting. dave blatt seconds roll call: dave blatt aye, matthew allison, aye brian lehtinen aye, dave passios aye, greg roy aye motion approved."
+   "quote": "dave passion motions to approve minutes for the june 16, 2021 meeting. dave blatt seconds roll call: dave blatt aye"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Greg Roy",
    "seconded_by": "Matthew Allison",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "greg roy motions to adjourn meeting, seconded by matthew allison. dave blatt aye, matthew allison, aye brian lehtinen aye, dave passios aye, greg roy aye."
+   "quote": "greg roy motions to adjourn meeting, seconded by matthew allison. dave blatt aye, matthew allison, aye brian lehtinen aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes record two votes, both procedural. Note: The first vote's \"moved_by\" name appears in the minutes as \"Dave Passion\" (in the motion line) but is likely a typo for \"Dave Passios\" (member listed on roster and shown in the roll call as \"Dave Passios Aye\").",
- "cost_usd": 0.09768349999999999
+ "note": "Two-page text, no scan problems. Motion mover is printed as \"Dave Passion\" in the minutes, apparently for David Passios; recorded as printed. Minutes also print \"Dave Passios\" and \"Greg Roy\" for the same members. The Lunenburg Ledger appears as a community guest and is not recorded as an attendee because it is an outlet, not a person. The minutes approval roll call names five members as aye, and the text says \"Motion approved\" without a printed count. The adjournment vote is also recorded without a printed count; the minutes say \"Meeting adjourned 6:23PM\". No public comment was made; the only comment was from Dave Passios, a board member.",
+ "cost_usd": 0.01470979,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Roy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, brian lehtinen, david passios, matthew allison,"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, brian lehtinen, david passios, matthew allison,"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, brian lehtinen, david passios, matthew allison,"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, brian lehtinen, david passios, matthew allison,"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, david blatt, brian lehtinen, david passios, matthew allison,"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michael-ray jeffreys, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: michael-ray jeffreys, kristina masaitis"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Future meetings set for 9/8/21 and 9/22/21.",
+   "quote": "future meeting schedule: 9/8/21, 9/22/21 greg roy motions to adjourn meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost of renovations and the funding warrant article",
+   "what_was_recorded": "The board discussed a proposed update article and a second article that would be a funding article on the cost of renovations. No dollar figure is printed.",
+   "quote": "the second would be a funding article to talk about cost of renovations",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Review scope of work and contract from DiGiorgio",
+   "resolution": "discussed; no action recorded",
+   "quote": "heather lemieux has been working with digiorgio to add in additional items that were talked about last week."
+  },
+  {
+   "topic": "Planning for future study efforts (parking, noise, building layout)",
+   "resolution": "discussed; no action recorded",
+   "quote": "greg roy asked about parking and how that can be maximized."
+  },
+  {
+   "topic": "Proposed warrant articles",
+   "resolution": "discussed; warrant open until September 28",
+   "quote": "warrant opened this past tuesday and closes september 28th"
+  },
+  {
+   "topic": "Review and approve minutes of 6/16/21",
+   "resolution": "approved",
+   "quote": "dave passion motions to approve minutes for the june 16, 2021 meeting."
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "listed as 9/8/21 and 9/22/21",
+   "quote": "future meeting schedule: 9/8/21, 9/22/21"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scope of Work/Contract from DiGiorgio",
+   "where": "text",
+   "quote": "review scope of work/contract from digiorgio:"
+  },
+  {
+   "name": "Proposed Warrant Articles",
+   "where": "text",
+   "quote": "discussion of proposed warrant articles:"
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "town hall",
+  "building design",
+  "warrant articles",
+  "special town meeting",
+  "parking",
+  "DiGiorgio contract",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

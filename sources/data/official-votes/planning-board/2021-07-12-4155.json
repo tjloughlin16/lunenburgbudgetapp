@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-07-12",
  "docid": "4155",
@@ -12,15 +12,113 @@
  },
  "votes": [
   {
-   "motion": "continue the hearing to July 26, 6:30 p.m.",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Continue the public hearing on 360 Flat Hill Road to July 26, 2021 at 6:30 p.m.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
    "quote": "p. bertram made motion to continue the hearing to july 26 th, 6:30 p.m., m. allison seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded: motion to continue the hearing, passed unanimously.",
- "cost_usd": 0.0919795
+ "note": "Public hearing minutes with one recorded vote, a motion to continue the hearing (procedural). The minutes record the hearing recessed at 7:02 p.m. No dollar figures, no transfers, and no public comment section are printed. The Tree Warden's question is recorded under Also Present but is not a separate public comment entry.",
+ "cost_usd": 0.01446279,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "Tree Warden",
+   "status": "present",
+   "quote": "also present: tree warden rob oliva"
+  },
+  {
+   "name": "Ken Matson",
+   "role": "applicant (Matson Homes II Inc.)",
+   "status": "present",
+   "quote": "ken matson, matson homes ii inc. noted two (2) trees, and possibly a third"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "K. Matson would tag the trees identified for removal, and the Board members would do a site visit on July 22nd, 6 p.m.",
+   "quote": "k. matson would tag the trees identified for removal and the board members would do a site visit"
+  },
+  {
+   "decision": "Where stone wall portions must be removed for the driveways, K. Matson would incorporate those stones back into the wall.",
+   "quote": "k. matson would incorporate those stones back into the wall."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: 360 Flat Hill Road, scenic road and public shade tree cutting",
+   "resolution": "continued to July 26, 2021, 6:30 p.m.",
+   "quote": "the hearing was to hear and review a request under m.g.l. ch. 40, section 15c, scenic road designations",
+   "tags": [
+    "scenic road",
+    "tree cutting",
+    "driveway",
+    "public hearing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scenic Road Application, dtd 06.16.2021",
+   "where": "list",
+   "quote": "documents used at meeting: scenic road application, dtd 06.16.2021"
+  }
+ ],
+ "tags": [
+  "scenic road",
+  "public shade trees",
+  "driveways",
+  "360 Flat Hill Road",
+  "public hearing",
+  "continued hearing"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

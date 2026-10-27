@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-06-14",
  "docid": "4153",
@@ -12,15 +12,107 @@
  },
  "votes": [
   {
-   "motion": "close the hearing",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Close the public hearing on the stormwater management permit for 150 Holman Street.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "p. bertram made motion to close the hearing, m. allison seconded, roll call vote - m. allison, aye; p. bertram, aye; e. torgersen, aye; t. cole, aye. vote passed 4-0."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08486389999999999
+ "note": "Only one motion is recorded: to close the hearing. The minutes record no vote on the permit itself, and no decision, so none is entered. A request that maintenance logs go to the Planning Board is recorded as a question raised by P. Bertram, not as a decision. The minutes cite a GEI review letter dated May 24, 2021 in the text, while the documents list has one dated 06.14.2021; both are recorded as printed. No dollar figures appear.",
+ "cost_usd": 0.01369859,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole , present; matthew allison , present; paula bertram, present; erik torgersen, present."
+  },
+  {
+   "name": "Matthew Allison",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole , present; matthew allison , present; paula bertram, present; erik torgersen, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole , present; matthew allison , present; paula bertram, present; erik torgersen, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole , present; matthew allison , present; paula bertram, present; erik torgersen, present."
+  },
+  {
+   "name": "Matthew Brenner",
+   "status": "absent",
+   "quote": "absent: matthew brenner"
+  },
+  {
+   "name": "Adam Burney",
+   "status": "not stated",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole , present"
+  },
+  {
+   "name": "Brian Marchetti",
+   "status": "present",
+   "quote": "the owner/applicant was represented by brian marchetti, mccarty engineering, inc."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Stormwater management permit, 150 Holman Street (continued public hearing)",
+   "resolution": "hearing closed; no decision recorded in these minutes",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "permit",
+    "150 Holman Street",
+    "Chapter 204"
+   ],
+   "quote": "the hearing continuation, via zoom video conference, was to hear and review an application for a sto rmwater management permit under chapter 204 of the code of the town of lunenburg"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stormwater Management Plan Revised June 14, 2021",
+   "where": "list",
+   "quote": "documents used at meeting: stormwater management plan revised june 14, 2021"
+  },
+  {
+   "name": "Graves Engineering, Inc. Review Letter dated 06.14.2021",
+   "where": "list",
+   "quote": "graves engineering, inc. review letter dated 06.14.2021"
+  },
+  {
+   "name": "Graves Engineering, Inc. review letter dated May 24, 2021",
+   "where": "text",
+   "quote": "in response to jeff walsh, p.e., graves engineering, inc. hereinafter \"gei\" , review letter dated may 24, 2021"
+  },
+  {
+   "name": "Operation and Maintenance Plan (O&M Plan)",
+   "where": "text",
+   "quote": "th is form was contained in the operation and maintenance plan (o&m plan) and would be submitted annually to the conservation commission."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "public hearing",
+  "150 Holman Street",
+  "Chapter 204",
+  "maintenance logs",
+  "Zoom"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

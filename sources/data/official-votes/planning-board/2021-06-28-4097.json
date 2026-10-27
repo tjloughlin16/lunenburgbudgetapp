@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-06-28",
  "docid": "4097",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve ANR Plan for Fire Road 16",
+   "motion": "Approve the ANR Plan for Fire Road 16.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -20,7 +20,15 @@
    "quote": "p. bertram made motion to approve the anr plan for fire road 16, m. allison seconded, all aye."
   },
   {
-   "motion": "Approve ANR Plan for 260 Falulah Road",
+   "motion": "Approve the ANR Plan for Old Shirley Road/Leominster Shirley Road.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "E. Torgersen",
+   "outcome": "passed 4-1",
+   "procedural": false,
+   "quote": "e. torgersen, aye; m. brenner, aye; p. bertram, aye; m. allison, nay; t. cole, aye."
+  },
+  {
+   "motion": "Approve the ANR Plan for 260 Falulah Road.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed",
@@ -28,15 +36,7 @@
    "quote": "p. bertram made motion to approve the anr plan for 260 falulah road, m. brenner seconded, all aye."
   },
   {
-   "motion": "Approve ANR Plan for Old Shirley Road/Leominster Shirley Road",
-   "moved_by": "M. Brenner",
-   "seconded_by": "E. Torgersen",
-   "outcome": "passed 4-1",
-   "procedural": false,
-   "quote": "m. brenner made motion to approve the anr plan for old shirley road/leo minster shirley road, e. torgersen seconded, roll call vote- e. torgersen, aye; m. brenner, aye; p. bertram, aye; m. allison, nay; t. cole, aye. vote passed 4 -1."
-  },
-  {
-   "motion": "Approve minutes from 06/14/2021",
+   "motion": "Approve the minutes of 06/14/2021 (three sets as listed).",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -44,23 +44,23 @@
    "quote": "p. bertram made motion to approve minutes noted below, m. allison seconded, all aye."
   },
   {
-   "motion": "Appoint Eric Hinds to the Open Space Ad Hoc Committee",
+   "motion": "Appoint Eric Hinds to the Open Space Committee.",
    "moved_by": "M. Allison",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "m. allison made motion to appoint eric hinds to the open space committee, p. bertram seconded, all aye."
   },
   {
-   "motion": "Accept the resignation of Lynne Man from the Open Space Ad Hoc Committee",
+   "motion": "Accept the resignation of Lynne Man from the Open Space Committee.",
    "moved_by": "M. Allison",
    "seconded_by": "P. Bertram",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "m. allison made motion to accept the resignation of lynne man, p. bertram seconded, all aye."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
    "outcome": "passed",
@@ -68,7 +68,326 @@
    "quote": "p. bertram made motion to adjourn, m. allison seconded, all aye."
   }
  ],
- "dropped_unquoted": 0,
- "note": "All votes recorded in minutes are legible. The 830 Massachusetts Avenue item discusses an ANR Plan but was carried forward without a vote; no motion was voted on at this meeting for that property.",
- "cost_usd": 0.0976615
+ "dropped_unquoted": 1,
+ "note": "Minutes are text-extracted and readable; no scan. The header splits the name 'Erik Torgers en'; the body prints 'Erik Torgersen' and that spelling is used. The 830 Massachusetts Avenue ANR had no motion (carried forward). Public comment is recorded only as 'Numerous residents' with no named speaker. The minutes print no dollar figures, so budget_items and transfers are empty. Peter Knox and Corinne Scouten are named as applicants or representatives but are not recorded as speaking, so their status is 'not stated'.",
+ "cost_usd": 0.020136590000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Peter Knox",
+   "role": "representing the applicant (J & A Realty Trust)",
+   "status": "not stated",
+   "quote": "the applicant, j & a realty trust, was represented by peter knox."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant (Dillis & Roy)",
+   "status": "present",
+   "quote": "g. roy responded it was pre -existing, non-conforming."
+  },
+  {
+   "name": "Corinne Scouten",
+   "role": "Applicant (830 Massachusetts Avenue)",
+   "status": "not stated",
+   "quote": "the applicant, corinne scouten, was represented by greg roy, dillis & roy."
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "representing the applicant (Hannigan Engineering)",
+   "status": "present",
+   "quote": "b. hannigan stated he would speak with his client regarding the board"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to seek input from the Building Commissioner before endorsing the 830 Massachusetts Avenue ANR Plan; A. Burney and G. Roy to consult the Building Commissioner.",
+   "quote": "board consensus was to seek input from the building commissioner prior to endorsing the anr plan."
+  },
+  {
+   "decision": "830 Massachusetts Avenue ANR Plan carried forward to the July 12 Board meeting.",
+   "quote": "the plan would be carried forward to the july 12th board meeting."
+  },
+  {
+   "decision": "Decisions for 150 Holman Street and 757 Chase Road reviewed and to be finalized for Board signature.",
+   "quote": "both decisions were reviewed and would be finalized for board signature."
+  },
+  {
+   "decision": "A. Burney to speak to the DPW Director about sight distance raised at the site plan stage (Old Shirley Road).",
+   "quote": "a. burney would speak to the dpw director regarding this issue."
+  },
+  {
+   "decision": "P. Bertram to forward documents from other communities to A. Burney for the stormwater workshop.",
+   "quote": "p. bertram would forward some documents from other communities to a. burney."
+  },
+  {
+   "decision": "T. Cole requested a joint meeting with the Conservation Commission on synchronizing the stormwater process.",
+   "quote": "t. cole requested a joint meeting with the conservation commission to discuss possible synchronization of the process."
+  },
+  {
+   "decision": "Board felt a 40B workshop with Town Counsel in attendance would be beneficial (Howard Street).",
+   "quote": "the board felt it would be beneficial to have a 40b workshop with town counsel in attendance."
+  },
+  {
+   "decision": "Meetings resumed at Town Hall in a hybrid model, in-person and via Zoom; July 12 and July 26 agenda set.",
+   "quote": "meetings resumed at town hall with a hybrid model; both in-person and via zoom."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Lake Shirley public access (reported by Open Space Ad Hoc Committee)",
+   "speaker": "Numerous residents",
+   "stated_role": "residents who attended the Open Space Ad Hoc Committee meeting",
+   "quote": "numerous residents attended the meeting voicing opposition to the pursuing of public access to lake shirley."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Board comments",
+   "resolution": "noted",
+   "quote": "she would no longer be able to participate in the economic development",
+   "tags": [
+    "membership"
+   ]
+  },
+  {
+   "topic": "ANR plan, Fire Road 16",
+   "resolution": "approved",
+   "quote": "fire road 16- the applicant, j & a realty trust, was represented by peter knox.",
+   "tags": [
+    "ANR",
+    "lot line"
+   ]
+  },
+  {
+   "topic": "ANR plan, 260 Falulah Road",
+   "resolution": "approved",
+   "quote": "p. bertram made motion to approve the anr plan for 260 falulah road, m. brenner seconded, all aye.",
+   "tags": [
+    "ANR",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "ANR plan, 830 Massachusetts Avenue",
+   "resolution": "continued to July 12",
+   "quote": "the plan would be carried forward to the july 12th board meeting.",
+   "tags": [
+    "ANR",
+    "zoning",
+    "nonconforming"
+   ]
+  },
+  {
+   "topic": "ANR plan, Old Shirley Road/Leominster Shirley Road",
+   "resolution": "approved 4-1",
+   "quote": "e. torgersen, aye; m. brenner, aye; p. bertram, aye; m. allison, nay; t. cole, aye.",
+   "tags": [
+    "ANR",
+    "site plan",
+    "sight distance"
+   ]
+  },
+  {
+   "topic": "Public hearings, 101 Pleasant Street and 711 Massachusetts Avenue",
+   "resolution": "referred to separate minutes",
+   "quote": "711 massachusetts avenue- see separate minutes.",
+   "tags": [
+    "hearing"
+   ]
+  },
+  {
+   "topic": "Decisions, 150 Holman Street and 757 Chase Road",
+   "resolution": "reviewed; to be finalized for signature",
+   "quote": "both decisions were reviewed and would be finalized for board signature.",
+   "tags": [
+    "decision"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 06/14/2021",
+   "resolution": "approved",
+   "quote": "p. bertram made motion to approve minutes noted below, m. allison seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; reports noted",
+   "quote": "the committee worked on a draft survey.",
+   "tags": [
+    "open space",
+    "Lake Shirley",
+    "economic development",
+    "agriculture"
+   ]
+  },
+  {
+   "topic": "Workshop, stormwater reporting and permit process",
+   "resolution": "discussed; joint meeting requested",
+   "quote": "t. cole requested a joint meeting with the conservation commission to discuss possible synchronization of the process.",
+   "tags": [
+    "stormwater",
+    "MS4",
+    "conditions"
+   ]
+  },
+  {
+   "topic": "Workshop, standard conditions for Board decisions",
+   "resolution": "discussed",
+   "quote": "the board was in receipt of draft standard conditions to discuss for incorporation into board decisions.",
+   "tags": [
+    "conditions"
+   ]
+  },
+  {
+   "topic": "Director's items, Open Space Committee membership",
+   "resolution": "Eric Hinds appointed; Lynne Man resignation accepted",
+   "quote": "m. allison made motion to appoint eric hinds to the open space committee, p. bertram seconded, all aye.",
+   "tags": [
+    "appointment",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Director's items, potential 40B development, Howard Street",
+   "resolution": "workshop with Town Counsel proposed",
+   "quote": "a. burney received the site suitability request from the prospective applicant.",
+   "tags": [
+    "40B",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted",
+   "quote": "meetings resumed at town hall with a hybrid model; both in-person and via zoom.",
+   "tags": [
+    "hybrid meeting",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:02 p.m.",
+   "quote": "p. bertram made motion to adjourn, m. allison seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, Old Shirley Road/Leominster Shirley Road",
+   "where": "list",
+   "quote": "documents used at meeting: anr plans: old shirley road/leominster shirley road 260 falulah road 830 massachusetts avenue fire road 16"
+  },
+  {
+   "name": "ANR Plan, 260 Falulah Road",
+   "where": "list",
+   "quote": "documents used at meeting: anr plans: old shirley road/leominster shirley road 260 falulah road 830 massachusetts avenue fire road 16"
+  },
+  {
+   "name": "ANR Plan, 830 Massachusetts Avenue",
+   "where": "list",
+   "quote": "documents used at meeting: anr plans: old shirley road/leominster shirley road 260 falulah road 830 massachusetts avenue fire road 16"
+  },
+  {
+   "name": "ANR Plan, Fire Road 16",
+   "where": "list",
+   "quote": "documents used at meeting: anr plans: old shirley road/leominster shirley road 260 falulah road 830 massachusetts avenue fire road 16"
+  },
+  {
+   "name": "Minutes of 06/14/2021",
+   "where": "list",
+   "quote": "minutes: 06/14/2021 06/14/2021, 757 chase road 06/14/2021, 150 holman street"
+  },
+  {
+   "name": "Minutes of 06/14/2021, 757 Chase Road",
+   "where": "list",
+   "quote": "minutes: 06/14/2021 06/14/2021, 757 chase road 06/14/2021, 150 holman street"
+  },
+  {
+   "name": "Minutes of 06/14/2021, 150 Holman Street",
+   "where": "list",
+   "quote": "minutes: 06/14/2021 06/14/2021, 757 chase road 06/14/2021, 150 holman street"
+  },
+  {
+   "name": "Standard Conditions, Draft",
+   "where": "list",
+   "quote": "standard conditions, draft"
+  },
+  {
+   "name": "Talent Bank Form for Eric Hinds, 727 West Street",
+   "where": "text",
+   "quote": "the board was in receipt of a talent bank form for eric hinds, 727 west street, as a potential member."
+  },
+  {
+   "name": "Site suitability request, Howard Street potential 40B",
+   "where": "text",
+   "quote": "a. burney received the site suitability request from the prospective applicant."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plans",
+  "lot creation",
+  "zoning",
+  "nonconforming lot",
+  "site plan",
+  "stormwater",
+  "MS4",
+  "open space",
+  "Lake Shirley",
+  "40B",
+  "housing",
+  "hybrid meeting",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

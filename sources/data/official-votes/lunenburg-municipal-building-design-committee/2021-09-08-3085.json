@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-09-08",
  "docid": "3085",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Request a joint meeting with the Selectboard on September 14, 2021, and authorize the chair to represent the committee if there is no quorum",
+   "motion": "Request and post a joint meeting with the Selectboard on September 14, 2021; if there is no quorum, authorize the chair to represent the committee.",
    "moved_by": "Dave Passios",
    "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by dave passios to request and post a joint meeting with the selectboard on september 14, 2021 and if there is no quorum authorize chair to represent the committee. second by brian"
+   "quote": "motion by dave passios to request and post a joint meeting with the selectboard on september 14, 2021 and if there is no quorum authorize chair to represent the committee."
   },
   {
-   "motion": "Adjourn the meeting at 6:57 PM",
+   "motion": "Adjourn the meeting at 6:57PM.",
    "moved_by": "Dave Passios",
    "seconded_by": "Brian Lehtinen",
    "outcome": "passed",
@@ -29,6 +29,139 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1217375
+ "note": "Minutes are two pages of extracted text, no scan issues. Only two votes are recorded, both with ayes listed but no numeric count printed, so outcome is 'passed'. The Call to Order time is 5:34. Roster header names seven members (Roy, Blatt, Jeffreys, Lehtinen, Passios, Allison, Masaitis); the minutes record only four as present and do not mark the others absent, so they are not listed as attendees. The text calls the seconder's colleague 'Dave Passios' and the roster 'David Passios'. No dollar figures appear; the escalation rate is discussed without a number. Minutes name 'John Zychowicz' as the new architect without recording him as present, so he is not listed.",
+ "cost_usd": 0.01468069,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Gregory Roy",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: gregory roy, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: gregory roy, brian lehtinen, david passios, kristina masaitis"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Employees",
+   "status": "present",
+   "quote": "town employees: heather lemieux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed the architect should determine where programs, parking and other elements are placed, rather than the committee deciding the layout.",
+   "quote": "dave passios thinks it would be a better idea if the architects tell us where the best place to put everything is. brian and greg both agree."
+  },
+  {
+   "decision": "Greg Roy will send a draft warrant article to the Town Manager, after confirming the escalation rate with DiGiorgio.",
+   "quote": "greg roy will send out a draft article to town manager for the proposed article."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Escalation rate in the DiGiorgio contract, ahead of the draft warrant article",
+   "what_was_recorded": "The chair wants to confirm the escalation rate with DiGiorgio before the draft warrant article is sent; the minutes print no figure.",
+   "figures_as_printed": [],
+   "quote": "wants to confirm with digiorgio about the escalation rate before sending this."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Input to/Update from DiGiorgio (architect contract and layout)",
+   "resolution": "discussed; committee wants architect to advise on layout",
+   "quote": "contract is finalized with digiorgio. john zychowicz is the new architect. time frame of contract is 60 days.",
+   "tags": [
+    "architect",
+    "layout",
+    "parking",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Discussion of proposed warrant articles",
+   "resolution": "discussed; joint meeting with Selectboard requested",
+   "quote": "reached out to the selectboard to talk about the three proposed warrant articles.",
+   "tags": [
+    "warrant articles",
+    "Selectboard",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Correspondence to and from the Committee",
+   "resolution": "noted concern about time before Town Meeting",
+   "quote": "concern with pressed time till the town meeting.",
+   "tags": [
+    "town meeting",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "dates listed: 9/22/21, 10/13/21, 10/20/21, 10/27/21",
+   "quote": "future meeting schedule: 9/22/21 10/13/21 10/20/21 10/27/21",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:57PM",
+   "quote": "motion by dave passios to adjourn meeting at 6:57pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft warrant article for the proposed article (to be sent to Town Manager; not yet drafted)",
+   "where": "text",
+   "quote": "greg roy will send out a draft article to town manager for the proposed article."
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "design committee",
+  "architect",
+  "DiGiorgio",
+  "layout and parking",
+  "warrant articles",
+  "Selectboard",
+  "town meeting",
+  "schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

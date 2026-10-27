@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2021-06-07",
  "docid": "4715",
@@ -12,15 +12,158 @@
  },
  "votes": [
   {
-   "motion": "to adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:06pm.",
    "moved_by": "Pete",
    "seconded_by": "Jeff",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion pete, seconded jeff - passed"
+   "quote": "meeting adjourned at 7:06pm. (motion pete, seconded jeff - passed)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0880269
+ "note": "Only one vote is recorded (adjournment, procedural). Minutes approval was tabled with no vote. The section headed \"Public Comments\" lists committee items and names no speaker, so public_comment is empty. The minutes print no documents list and no exhibits. Jo McLaughlin's attendance is listed only under \"Non-members\", so status is not stated. The minutes are signed by Jeff Bajko.",
+ "cost_usd": 0.01386189,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC Board Member (signed the minutes)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, and, steve archambault."
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, and, steve archambault."
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC member (\"Pete\" in the vote)",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, and, steve archambault."
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, and, steve archambault."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "not stated",
+   "quote": "non-members: jo mclaughlin"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Approval of the meeting minutes was tabled to the next meeting (no vote recorded).",
+   "quote": "review and approve meeting minutes. 1. tabled for next meeting"
+  },
+  {
+   "decision": "The next meeting was set for July 15th.",
+   "quote": "next meeting is july 15th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cash balance at end of May",
+   "what_was_recorded": "The manager reported the end-of-May balance.",
+   "figures_as_printed": [
+    "$864,696.70"
+   ],
+   "quote": "end of may: $864,696.70"
+  },
+  {
+   "topic": "Comcast payment received",
+   "what_was_recorded": "The manager reported a Comcast payment received in May.",
+   "figures_as_printed": [
+    "$48,000"
+   ],
+   "quote": "comcast payment was received in may: $48,000"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and call to order",
+   "resolution": "no action",
+   "tags": [
+    "quorum",
+    "attendance"
+   ],
+   "quote": "meeting called to order at 6:07pm."
+  },
+  {
+   "topic": "Public comments (committee items listed under this heading)",
+   "resolution": "no action recorded",
+   "tags": [
+    "equipment",
+    "programming",
+    "studio space",
+    "summer concert"
+   ],
+   "quote": "a committee member wants a second tri-caster and an editor."
+  },
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "tabled to next meeting",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "review and approve meeting minutes. 1. tabled for next meeting"
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received, no action recorded",
+   "tags": [
+    "staffing",
+    "streaming",
+    "schedule",
+    "subscribers",
+    "budget"
+   ],
+   "quote": "channel 9 programming: 9% local, 71% shared."
+  },
+  {
+   "topic": "Owl Labs hybrid meetings",
+   "resolution": "continued, committee looking into it",
+   "tags": [
+    "hybrid meetings",
+    "equipment"
+   ],
+   "quote": "looking into a new way of having hybrid meetings. the committee is looking into it."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:06pm",
+   "tags": [
+    "adjournment",
+    "next meeting"
+   ],
+   "quote": "next meeting is july 15th."
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access television",
+  "cable committee",
+  "Lunenburg",
+  "live streaming",
+  "hybrid meetings",
+  "staffing",
+  "cash balance",
+  "Comcast payment",
+  "school graduations",
+  "summer concert series",
+  "Channel 9"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

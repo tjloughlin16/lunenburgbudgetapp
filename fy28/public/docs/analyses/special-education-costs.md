@@ -8,9 +8,9 @@
 
 **In the worst of 17 years, special education needed $223,774 more than its voted budget.** That was FY2013; the median year needed $39,766. General fund: what exceeded the circuit breaker account too.
 
-**Out-of-district tuition is the swing: over its voted budget in 7 of 17 years.** The worst, FY2019, was $204,015 over. In-district spending never ran more than 2.6% over.
+**Out-of-district tuition is the swing: over its voted budget in 8 of 17 years.** The worst, FY2019, was $204,015 over. In-district spending never ran more than 2.6% over.
 
-**Measured after the circuit breaker account, no year in 17 needed more than $300,000.** Counting that account’s routine tuition as surprise, 3 of 4 recent years did; $500,000 covers 3 of 4.
+**Measured after the circuit breaker account, no year in 17 needed more than $300,000.** Counting that account’s routine tuition as surprise, 4 of 4 recent years did; $500,000 covers 3 of 4.
 
 **The circuit breaker account pays tuition every year, not only when the budget runs over.** It paid $333,495 to $494,968 of tuition a year, FY2023 to FY2026. At 30 June 2026 it held $281,806.
 
@@ -28,7 +28,7 @@
 |---|---:|---:|---:|---|
 | FY2023 | $0 | $309,798 | $494,968 | yes |
 | FY2024 | $152,724 | $619,020 | $466,296 | yes |
-| FY2025 | $0 | $41,124 | $473,650 | no |
+| FY2025 | $20,054 | $493,704 | $473,650 | yes |
 | FY2026 | $140,743 | $385,716 | $333,495 | yes |
 
 *FY2023 to FY2026, the four closed years the year-end reports print in full; every special education line, overruns added without netting (our rule).* On basis (a), across all 17 years since FY2010, no year passed $300,000; the worst was $223,774, in FY2013.
@@ -73,7 +73,7 @@ Every figure on this page is a NET result at the close of a year: children who a
 
 ### In plain terms
 
-Before each year begins the town votes a budget for special education. At the close of the year the accounting system records what was spent. The difference is the surprise. Across 17 years, the out-of-district tuition line ran over in 7 and under in the rest; transportation ran over in 6; the in-district lines ran over in 5, and never by more than 2.6%.
+Before each year begins the town votes a budget for special education. At the close of the year the accounting system records what was spent. The difference is the surprise. Across 17 years, the out-of-district tuition line ran over in 8 and under in the rest; transportation ran over in 6; the in-district lines ran over in 5, and never by more than 2.6%.
 
 ### The evidence
 
@@ -94,14 +94,14 @@ Before each year begins the town votes a budget for special education. At the cl
 | FY2022 | $818,716 | $397,233 | -$421,483 | $3,625,656 | $3,718,535 | +$92,879 | $297,843 | $241,390 | -$56,453 | $92,879 | FinCom history |
 | FY2023 | $489,918 | $304,748 | -$185,170 | $3,843,015 | $3,783,794 | -$59,221 | $329,360 | $320,244 | -$9,116 | $0 | MUNIS year-end |
 | FY2024 | $501,239 | $588,508 | +$87,269 | $3,978,308 | $3,786,492 | -$191,816 | $335,947 | $401,402 | +$65,455 | $152,724 | MUNIS year-end |
-| FY2025 | $1,164,824 | $732,298 | -$432,526 | $4,394,535 | $4,078,902 | -$315,633 | $445,328 | $434,922 | -$10,406 | $0 | MUNIS year-end |
+| FY2025 | $712,244 | $732,298 | +$20,054 | $4,394,535 | $4,078,902 | -$315,633 | $445,328 | $434,922 | -$10,406 | $20,054 | MUNIS year-end |
 | FY2026 | $1,291,293 | $1,202,771 | -$88,522 | $4,352,400 | $4,425,586 | +$73,186 | $565,734 | $633,291 | +$67,557 | $140,743 | MUNIS year-end |
 
 *FY2010 to FY2026, 17 years.* **voted** is the ORIGINAL general fund budget — what Town Meeting appropriated before the year began. **spent** is expended plus encumbered at the close (only FY2026 carries an encumbrance). **overruns, added** is every line’s overrun summed without netting any line’s underspend against it: the amount a reserve would have had to supply if nothing else in the school budget were moved. **That rule is ours.** Netting the three lines instead, the worst year is FY2013, +$200,862.
 
 **Comparing a budget to an actual is allowed here, and only here.** Rule 1 of this project forbids mixing the two in a growth rate or a projection, because the step between them contaminates the rate. In this section the step between them is the thing being measured. Nothing below grows a budget from an actual.
 
-**Is this FY2025 again?** FY2025 is the year the schools finished with money unspent. Its three special education lines together came in $758,565 under the budget voted for them, $432,526 of it on tuition. In FY2026, the latest closed year, they came in $52,221 over.
+**Is this FY2025 again?** FY2025 is the year the schools finished with money unspent. Its three special education lines together came in $305,985 under the budget voted for them, while tuition alone ran $20,054 over. In FY2026, the latest closed year, they came in $52,221 over.
 
 **What was said in the overrun years.** Statements, not measurements.
 
@@ -193,7 +193,7 @@ The district’s own account, as minuted in March 2024, of the circuit breaker b
 |---|---:|---:|---:|---:|---:|---:|---:|---:|
 | FY2023 | $489,918 | $304,748 | $494,968 | $799,716 | +$309,798 | +63.2% | $415,750 | $415,750 |
 | FY2024 | $501,239 | $588,508 | $466,296 | $1,054,804 | +$553,565 | +110.4% | $301,589 | $401,966 |
-| FY2025 | $1,164,824 | $732,298 | $473,650 | $1,205,948 | +$41,124 | +3.5% | $608,818 | $508,441 |
+| FY2025 | $712,244 | $732,298 | $473,650 | $1,205,948 | +$493,704 | +69.3% | $608,818 | $508,441 |
 | FY2026 | $1,291,293 | $1,202,771 | $333,495 | $1,536,266 | +$244,973 | +19.0% | $325,970 | $579,142 |
 
 *FY2023 to FY2026, MUNIS year-end reports for the school general fund and the school special funds.* The account also paid $28,806 in these years for things other than tuition.

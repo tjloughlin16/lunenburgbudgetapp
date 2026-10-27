@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2021-04-15",
  "docid": "497",
@@ -12,15 +12,157 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Stober",
    "seconded_by": "J. Marzuca",
    "outcome": "passed",
    "procedural": true,
-   "quote": "r. stober moved to adjourn, j. marzuca 2nd. rollcall, all aye."
+   "quote": "r. stober moved to adjourn, j. marzuca 2nd. rollcall, all aye. adjourned at 7:57pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08823249999999999
+ "note": "Single-page minutes, Zoom meeting, 15 April 2021. No dollar figures, transfers, or public comment section appear, so those lists are empty. Only one recorded vote (adjournment, roll call 'all aye', no count printed). The reappointment item is a consensus ('all the members agreed'), recorded as a decision, not a vote. The 'Present' roll omits J. Marzuca, who seconded the adjournment and is discussed as a member, so his status is 'not stated'. Farmers Market Managers Yanina Fusaro and Mike Fontaine appear only in the signature block and are not shown taking part, so they are not listed as attendees. The minutes have no documents heading; the flyer, realty ad and bylaw reference are mentioned in the discussion only.",
+ "cost_usd": 0.01493755,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair (Matthew Allison)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Vice-Chair (Ryan Stober)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "G. Burns",
+   "role": "Clerk (Greg Burns)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "M. Holman",
+   "role": "Member (Maryrae Holman)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "K. McClellan",
+   "role": "Alternate (Kira McClellan)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "S. Schofield",
+   "role": "Alternate (Stephanie Schofield)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "J. Marzuca",
+   "role": "Member (Jorge Marzuca)",
+   "status": "not stated",
+   "quote": "r. stober moved to adjourn, j. marzuca 2nd."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The members agreed to support continuing J. Marzuca's appointment (reappointment), by consensus and without a recorded vote.",
+   "quote": "j. marzuca expressed interest in being reappointed, and all the members agreed that we would like him to continue."
+  },
+  {
+   "decision": "The next meeting was set for May 20, 2021.",
+   "quote": "next meeting set for may 20, 2021."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "General discussion: horse-farm realty ad, farm complaints, chickens and landowners association, APR properties",
+   "resolution": "discussed; no action recorded",
+   "quote": "m. holman began by asking about a previously discussed property marketed as a horse farm.",
+   "tags": [
+    "farm complaints",
+    "right to farm",
+    "APR",
+    "livestock"
+   ]
+  },
+  {
+   "topic": "Reappointment of J. Marzuca",
+   "resolution": "members agreed to support continuing him",
+   "quote": "j. marzuca expressed interest in being reappointed, and all the members agreed that we would like him to continue.",
+   "tags": [
+    "reappointment",
+    "membership"
+   ]
+  },
+  {
+   "topic": "AgCom flyer",
+   "resolution": "update given; format discussed",
+   "quote": "flyer: m. holman gave an update on the status of the flyer for agcom.",
+   "tags": [
+    "flyer",
+    "outreach",
+    "farms"
+   ]
+  },
+  {
+   "topic": "Bylaw reference to farm size (ongoing business)",
+   "resolution": "review held; no action recorded",
+   "quote": "m. holman questioned an item in our ongoing business and a review of the",
+   "tags": [
+    "bylaw",
+    "farm size",
+    "ongoing business"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed",
+   "quote": "r. stober moved to adjourn, j. marzuca 2nd. rollcall, all aye. adjourned at 7:57pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "AgCom flyer",
+   "where": "text",
+   "quote": "flyer: m. holman gave an update on the status of the flyer for agcom."
+  },
+  {
+   "name": "Realty ad for a property marketed as a horse farm",
+   "where": "text",
+   "quote": "s. schofield responded the realty ad had been changed."
+  },
+  {
+   "name": "Bylaw reference to farm size",
+   "where": "text",
+   "quote": "m. holman questioned an item in our ongoing business and a review of the"
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "farm complaints",
+  "right to farm",
+  "APR",
+  "reappointment",
+  "AgCom flyer",
+  "bylaw farm size",
+  "Zoom meeting",
+  "no dollar figures"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

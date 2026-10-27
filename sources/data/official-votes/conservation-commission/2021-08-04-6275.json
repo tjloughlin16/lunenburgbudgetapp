@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-08-04",
  "docid": "6275",
@@ -12,88 +12,369 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from July 21, 2021 as amended",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Approve the minutes of July 21, 2021, as amended.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed (unanimous, roll call)",
    "procedural": true,
    "quote": "jv moved to approve the minutes as amended cc seconded and the commission vote unanimously to approve by roll call vote"
   },
   {
-   "motion": "Approve six mountain laurel as within 10 feet of water's edge on the northern side at 16 Ruth Street",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Patricia Adams",
+   "motion": "Approve six mountain laurel as within 10 feet of water’s edge on the northern side (16 Ruth Street field change).",
+   "moved_by": "JV",
+   "seconded_by": "PA",
    "outcome": "passed 5-1",
    "procedural": false,
-   "quote": "jv moved to approve six mountain laurel as within 10 feet of water's edge on the northern side. pa seconded. jr asked for an amended motion to add four trees to the north side. jv declined the amendment to the motion. jr converted to a formal motion. there was no second and the motion was dropped. the original motion by jv was approved by a yes vote of bp, pa, jv, cc and ml and a no by jr."
+   "quote": "the original motion by jv was approved by a yes vote of bp, pa, jv, cc and ml and a no by jr."
   },
   {
-   "motion": "Continue the public hearing on Jose Vasquez request at 52 West Street to August 18, 2021",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the meeting was continued to august 18, 2021 by a motion of jv and a second of cc and a unanimous vote of the commission by roll call vote to approve. (pa and ml abstained)"
+   "motion": "Continue the 52 West Street (Jose Vasquez) Request for Determination hearing to August 18, 2021.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed (unanimous, PA and ML abstained)",
+   "procedural": true,
+   "quote": "the meeting was continued to august 18, 2021 by a motion of jv and a second of cc and a unanimous vote of the commission by roll call vote to approve."
   },
   {
-   "motion": "Continue the public hearing on Greg and Tina Kroll request at 398 Sunset Lane to August 18, 2021",
-   "moved_by": "Patricia Adams",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the meeting was continued to august 18, 2021 by a motion of pa and a second of jv and a unanimous vote of the commission by roll call vote to approve."
+   "motion": "Continue the 398 Sunset Lane (Greg and Tina Kroll) Request for Determination hearing to August 18, 2021.",
+   "moved_by": "PA",
+   "seconded_by": "JV",
+   "outcome": "passed (unanimous)",
+   "procedural": true,
+   "quote": "the meeting was continued to august 18, 2021 by a motion of pa and a second of jv and a"
   },
   {
-   "motion": "Continue the public hearing on MA Pleasant LLC request at 101 Pleasant Street to August 18, 2021",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Patricia Adams",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the meeting was continued to august 18, 2021 by a motion of jv and a second of pa and a unanimous vote of the commission by roll call vote to approve."
+   "motion": "Continue the 101 Pleasant Street (MA Pleasant LLC) Notice of Intent hearing to August 18, 2021.",
+   "moved_by": "JV",
+   "seconded_by": "PA",
+   "outcome": "passed (unanimous)",
+   "procedural": true,
+   "quote": "the meeting was continued to august 18, 2021 by a motion of jv and a second of pa"
   },
   {
-   "motion": "Continue the public hearing on Christopher and Suzanne DeGeorge request at 48 Pearl Street to August 18, 2021",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the meeting was continued to august 18, 2021 by a motion of jv and a second of cc and a unanimous vote of the commission by roll call vote to approve. (pa and ml abstained)"
+   "motion": "Continue the 48 Pearl Street (Christopher and Suzanne DeGeorge) Notice of Intent hearing to August 18, 2021.",
+   "moved_by": "JV",
+   "seconded_by": "CC",
+   "outcome": "passed (unanimous, PA and ML abstained)",
+   "procedural": true,
+   "quote": "the meeting was continued to august 18, 2021 by a motion of jv and a second of cc and a"
   },
   {
-   "motion": "Continue the public hearing on Cynthia Ritchie request at 137 Flynn Road to September 1, 2021",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "the meeting was continued to sept 1, 2021 by a motion of jr and a second of cc and a unanimous vote of the commission by roll call vote to approve. this was moved based ",
-   "quote_taken_from_text": true
+   "motion": "Continue the 137 Flynn Road (Cynthia Ritchie) Notice of Intent hearing to September 1, 2021.",
+   "moved_by": "JR",
+   "seconded_by": "CC",
+   "outcome": "passed (unanimous, PA and ML abstained)",
+   "procedural": true,
+   "quote": "the meeting was continued to sept 1, 2021 by a motion of jr and a second of cc"
   },
   {
-   "motion": "Pursue a long term lease agreement for haying on the Pleasant Street property",
-   "moved_by": "Michael Larouche",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Pursue a long term lease for the haying of the Pleasant Street property.",
+   "moved_by": "ML",
+   "seconded_by": "JV",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "ml moved to pursue a long term lease, jv seconded and the commission unanimously approved."
   },
   {
-   "motion": "Accept the administrator's determination regarding Tom Bertram at 312 Townsend Harbor Road",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Michael Larouche",
-   "outcome": "passed unanimously",
+   "motion": "Accept the administrator’s determination for Tom Bertram, 312 Townsend Harbor Road (1 tree).",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed (unanimous)",
    "procedural": false,
    "quote": "jv moved to accept it. ml seconded and the commission unanimously approved the motion."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Patricia Adams",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Approve the administrator’s determination for John Gallagher, 376 Sunset (1 pine; no replacement required).",
+   "moved_by": "JV",
+   "seconded_by": "ML",
+   "outcome": "passed (unanimous)",
+   "procedural": false,
+   "quote": "moved to approve the determination. ml seconded and the commission voted to unanimously approve."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "PA",
+   "seconded_by": "JV",
+   "outcome": "passed (unanimous, roll call)",
    "procedural": true,
    "quote": "the meeting was adjourned at 9:23 pm by a motion of pa and a second of jv and a unanimous roll call vote by the commission"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Text is clearly readable; no OCR issues. All votes recorded with clear motions, movers, and outcomes.",
- "cost_usd": 0.1053405
+ "dropped_unquoted": 0,
+ "note": "Plain-text extraction with no roll-call attendance list; members are listed as present from their votes and remarks, Richard Bursch is named only in the header, and Matthew S. Marro is absent by inference from the vacation remark. The applicant's name is spelled Kholstom, Kohlstrom and Kholstom in the text; the first printed form is used. The Ruth Street vote is recorded as 5-1. Several continuance motions carry abstentions (PA and ML). The minutes print no dollar figures. The 'documents' list is not a headed list; the printed set comes from a sentence about pictures submitted by the applicant.",
+ "cost_usd": 0.02331999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "bob pease, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "not stated",
+   "quote": "richard bursch, vice chair 960 massachusetts ave."
+  },
+  {
+   "name": "Patricia Adams",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "the original motion by jv was approved by a yes vote of bp, pa, jv, cc and ml and a no by jr."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "the original motion by jv was approved by a yes vote of bp, pa, jv, cc and ml and a no by jr."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "the original motion by jv was approved by a yes vote of bp, pa, jv, cc and ml and a no by jr."
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "jv moved to approve the minutes as amended cc seconded and the commission vote unanimously to approve by roll call vote"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Commission member",
+   "status": "present",
+   "quote": "the original motion by jv was approved by a yes vote of bp, pa, jv, cc and ml and a no by jr."
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "absent",
+   "quote": "bp noted that mm will examine it when he returns from vacation."
+  },
+  {
+   "name": "Kenneth Kholstom",
+   "role": "applicant, Field change request 16 Ruth Street",
+   "status": "present",
+   "quote": "kenneth kholstom reviewed the requirement for 6 trees to be planted from a prior determination."
+  },
+  {
+   "name": "Andrea Adams",
+   "role": "public commenter",
+   "status": "present",
+   "quote": "andrea adams expressed concerns with the bridge replaced on pleasant street."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The 4 August hearing on updating the land use management plans (Lane property and Table Rock) was continued to the next meeting because of the advertisement, which had scheduled it for 18 August.",
+   "quote": "this was continued until next meeting due to the advertisement noting it was scheduled to the 18 th of august."
+  },
+  {
+   "decision": "The tree definition question was to be taken up again at a later meeting with a light agenda, and a redline of the wetland regulations was suggested.",
+   "quote": "bp suggested taking the issue back up during a meeting with another light agenda and suggested doing a redline on the wetland regulations."
+  },
+  {
+   "decision": "The chair will review the encroachment situation with Adam Costa at the next upcoming meeting; the chair felt owners should not be invited to meet at this stage.",
+   "quote": "bp will review the situation with adam costa at the next upcoming meeting."
+  },
+  {
+   "decision": "Matthew S. Marro (Conservation Administrator) will examine the Pleasant Street bridge when he returns from vacation.",
+   "quote": "bp noted that mm will examine it when he returns from vacation."
+  },
+  {
+   "decision": "Members with concerns about conservation jurisdiction on the proposed 40B development were asked to send their comments in individually.",
+   "quote": "bp noted to the commission if individual members have concerns that relate to conservation jurisdiction, please send in comment."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Andrea Adams",
+   "topic": "concerns about the bridge replaced on Pleasant Street",
+   "quote": "andrea adams expressed concerns with the bridge replaced on pleasant street."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Announcements: proposed 40B development",
+   "resolution": "discussed; no action",
+   "tags": [
+    "40B",
+    "Howard Street",
+    "housing"
+   ],
+   "quote": "jr noted he attended a meeting with adam costa regarding the proposed 40 b development."
+  },
+  {
+   "topic": "Minutes of July 21, 2021",
+   "resolution": "approved as amended",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of previous meetings -july 21, 2021 jv moved to approve the minutes as amended"
+  },
+  {
+   "topic": "Field change request, 16 Ruth Street",
+   "resolution": "approved six mountain laurel, 5-1",
+   "tags": [
+    "tree replacement",
+    "wetlands",
+    "Ruth Street",
+    "vegetative buffer"
+   ],
+   "quote": "jv moved to approve six mountain laurel as within 10 feet of water's edge on the northern side."
+  },
+  {
+   "topic": "Continued public hearings (wetlands)",
+   "resolution": "continued: four to August 18, one to September 1",
+   "tags": [
+    "public hearing",
+    "wetlands",
+    "Notice of Intent",
+    "Request for Determination"
+   ],
+   "quote": "the meeting was continued to sept 1, 2021 by a motion of jr and a second of cc"
+  },
+  {
+   "topic": "Land use management plan hearing (Lane property, Table Rock)",
+   "resolution": "continued to next meeting",
+   "tags": [
+    "land use management",
+    "hearing"
+   ],
+   "quote": "this was continued until next meeting due to the advertisement noting it was scheduled to the 18 th of august."
+  },
+  {
+   "topic": "Tree standards: definition of a tree",
+   "resolution": "discussed; no action, to return later",
+   "tags": [
+    "tree standards",
+    "wetland regulations",
+    "definition"
+   ],
+   "quote": "jr noted that one of the continual problems experienced is what"
+  },
+  {
+   "topic": "Authorization for license to hay Pleasant Street",
+   "resolution": "approved pursuing a long term lease",
+   "tags": [
+    "Pleasant Street",
+    "haying",
+    "lease",
+    "land use management"
+   ],
+   "quote": "ml moved to pursue a long term lease, jv seconded and the commission unanimously approved."
+  },
+  {
+   "topic": "Old business: encroachments on conservation properties",
+   "resolution": "discussed; friendly letters proposed; chair to review with counsel",
+   "tags": [
+    "encroachment",
+    "conservation land",
+    "letters"
+   ],
+   "quote": "ml suggested that we should send a friendly letter showing our evidence and make the owner aware of it and see if it stops."
+  },
+  {
+   "topic": "Enforcement: violations",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "enforcement",
+    "illegal dumping",
+    "violations"
+   ],
+   "quote": "leominster road- illegal dumping activity"
+  },
+  {
+   "topic": "Administrator's determinations",
+   "resolution": "two accepted (Townsend Harbor Road, Sunset)",
+   "tags": [
+    "tree removal",
+    "determination"
+   ],
+   "quote": "tom bertram 312 townsend harbor road- 1 tree- bp noted it was a retroactive"
+  },
+  {
+   "topic": "Open space and trail use",
+   "resolution": "chair to arrange state meeting on Hunting Hill",
+   "tags": [
+    "open space",
+    "trails",
+    "Hunting Hill",
+    "Fish and Wildlife"
+   ],
+   "quote": "bp noted that he spoke to pat huckery from fish and wildlife and will be arranging a meeting"
+  },
+  {
+   "topic": "Communications: 40B response (Howard Street)",
+   "resolution": "discussed; members to send jurisdictional comments",
+   "tags": [
+    "40B",
+    "Howard Street",
+    "comments"
+   ],
+   "quote": "jr felt the town should have a response to the 40 b proposal on howard street"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:23 PM",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "the meeting was adjourned at 9:23 pm by a motion of pa and a second of jv and a unanimous roll call vote by the commission"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Pictures submitted by the applicant (16 Ruth Street)",
+   "where": "list",
+   "quote": "the commission reviewed pictures submitted by the applicant."
+  },
+  {
+   "name": "Application materials for the proposed 40B development",
+   "where": "text",
+   "quote": "bp noted that he had reviewed the application materials and reviewed his opinion with the"
+  },
+  {
+   "name": "Letter sent out for the updated land use management plan",
+   "where": "text",
+   "quote": "bp noted that a letter was sent out for the updated of the land use management plan."
+  },
+  {
+   "name": "Land use management plans, Lane property and Table Rock",
+   "where": "text",
+   "quote": "updating land use management plans for the lane property"
+  },
+  {
+   "name": "Tree replacement regulation",
+   "where": "text",
+   "quote": "bp also reviewed the tree replacement regulation."
+  },
+  {
+   "name": "Wetland regulations",
+   "where": "text",
+   "quote": "and suggested doing a redline on the wetland regulations."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "tree replacement",
+  "40B",
+  "land use management",
+  "enforcement",
+  "encroachment",
+  "Pleasant Street",
+  "public hearings",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the commission reviewed pictures submitted by the applicant"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-05-26",
  "docid": "3328",
@@ -10,8 +10,264 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05262021-3328",
   "doc_url": "/docs/meetings/parks-commission/2021-05-26-minutes-3328.pdf"
  },
- "votes": [],
- "dropped_unquoted": 8,
- "note": "Clean, well-formatted minutes with all votes clearly recorded. Eight votes total, all with outcomes stated.",
- "cost_usd": 0.0702734
+ "votes": [
+  {
+   "motion": "Rescind the original and approve the February 12th minutes.",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "D. Passios",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "mo0on to rescind the original and approve february 12th minutes, c. sullivan made mo0on, d. passios seconded."
+  },
+  {
+   "motion": "Accept the gifts.",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "D. Passios",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "c. sullivan mo0oned to accept the giys, d. passios seconded. the vote was unanimous."
+  },
+  {
+   "motion": "Appoint C. Sullivan in the role of Vice Chair.",
+   "moved_by": "K. Menard",
+   "seconded_by": "D. Passios",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "k. menard mo0oned to appoint c. sullivan in role of vice chair, d. passios seconded."
+  },
+  {
+   "motion": "Elect K. Menard as Board chair.",
+   "moved_by": "A. Lockwood",
+   "seconded_by": "S. Jewell",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mo0on made by a. lockwood to elect k. menard as board chair, s. jewell seconded."
+  },
+  {
+   "motion": "Put S. Jewell in the position of secretary.",
+   "moved_by": "C. Sullivan",
+   "seconded_by": "K. Menard",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "mo0on by c. sullivan to put s. jewell in posi0on of secretary, k. menard seconded."
+  },
+  {
+   "motion": "Ask the DPW to investigate ways to remove the light post at Marshall Pond.",
+   "moved_by": "A. Lockwood",
+   "seconded_by": "C. Sullivan",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "a. lockwood made a mo0on to ask the dpw to inves0gate ways to remove the light post. seconded by c. sullivan. the vote was unanimous."
+  },
+  {
+   "motion": "Communicate to the open space committee that the Parks Commission is interested in ownership of the Pleasant St property.",
+   "moved_by": "A. Lockwood",
+   "seconded_by": "C. Sullivan",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "a. lockwood made mo0on to communicate to the open space commi6ee that the parks commission is interested in having ownership of pleasant st property."
+  }
+ ],
+ "dropped_unquoted": 2,
+ "note": "Text is OCR-style: ligatures are mis-rendered (e.g. 'mee0ng' = meeting, 'mo0on' = motion, 'ﬁ' and 'ﬂ' kept as printed). Quotes copied as printed. Meeting was held via Zoom; the minutes record all five members as in attendance, with no remote/in-person distinction. Votes on the motions are recorded as roll calls with five yes votes or as unanimous; no 'no' votes appear. Dawn Pavone signed the minutes; her attendance is not stated. No dollar figures are printed.",
+ "cost_usd": 0.017171890000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "in a6endance were karin menard, susanna jewell, chris sullivan, dave passios, and ana lockwood"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "in a6endance were karin menard, susanna jewell, chris sullivan, dave passios, and ana lockwood"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "in a6endance were karin menard, susanna jewell, chris sullivan, dave passios, and ana lockwood"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "in a6endance were karin menard, susanna jewell, chris sullivan, dave passios, and ana lockwood"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "in a6endance were karin menard, susanna jewell, chris sullivan, dave passios, and ana lockwood"
+  },
+  {
+   "name": "Dawn Pavone",
+   "role": "minutes secretary",
+   "status": "not stated",
+   "quote": "respecjully submi6ed dawn pavone, minutes secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Sam from DPW takes Kayla's place while she is on maternity leave; K. Menard will watch for emails.",
+   "quote": "sam from dpw is taking her place."
+  },
+  {
+   "decision": "Marshall Park parking: a consultant will look at the parking flow, and police are to be made aware of any illegal parking.",
+   "quote": "k. menard stated the parking ﬂow needs to be improved. consultant will have to look at."
+  },
+  {
+   "decision": "K. Menard to research wording for a policy allowing leashed dogs on Commission properties except maintained fields.",
+   "quote": "will hold to research wording."
+  },
+  {
+   "decision": "K. Menard to have a discussion with Anthony Caiozzo to finalize the Marshall Park plan and give a timeline of what the Commission is thinking.",
+   "quote": "caiozzo to ﬁnalize with them and give them a 0meline of what the commission is thinking."
+  },
+  {
+   "decision": "Chris Sullivan to get an okay to proceed with the soccer inquiry.",
+   "quote": "he'll get an okay to go ahead with it."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Marshall Park renovation funding",
+   "what_was_recorded": "The money for the Marshall Park work was approved as a capital item, and work is to start as money becomes available in July.",
+   "quote": "the money has been approved as a capital item."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and public comment",
+   "resolution": "no action (no public comments)",
+   "quote": "no board or public comments.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Minutes of February 12 approved",
+   "resolution": "approved",
+   "quote": "mo0on to rescind the original and approve february 12th minutes",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Staff updates, maintenance and gifts",
+   "resolution": "gifts accepted; updates received",
+   "quote": "c. sullivan mo0oned to accept the giys, d. passios seconded. the vote was unanimous.",
+   "tags": [
+    "maintenance",
+    "gifts",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Reconfiguration of Commission officers",
+   "resolution": "Vice Chair, Chair and Secretary elected or appointed",
+   "quote": "reconﬁgura0on of commission.",
+   "tags": [
+    "officers",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Marshall Park parking issues",
+   "resolution": "referred to consultant and police; no vote",
+   "quote": "marshall park parking issues.",
+   "tags": [
+    "parking",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Marshall Pond health and light post",
+   "resolution": "DPW asked to investigate light post removal",
+   "quote": "marshall pond discussion.",
+   "tags": [
+    "Marshall Pond",
+    "invasive species"
+   ]
+  },
+  {
+   "topic": "General Municipal Properties at 223 Pleasant St and 671 West St",
+   "resolution": "open space committee to be told of interest in Pleasant St",
+   "quote": "discussion of general municipal proper0es, 223 pleasant st and 671 west st.",
+   "tags": [
+    "property",
+    "Pleasant St"
+   ]
+  },
+  {
+   "topic": "Dog policy at parks",
+   "resolution": "continued; wording to be researched",
+   "quote": "dog policy at parks discussion.",
+   "tags": [
+    "dogs",
+    "policy",
+    "town attorney"
+   ]
+  },
+  {
+   "topic": "Marshall Park planning and survey",
+   "resolution": "discussion; no vote",
+   "quote": "marshall park planning and survey discussion.",
+   "tags": [
+    "Marshall Park",
+    "survey",
+    "planning"
+   ]
+  },
+  {
+   "topic": "Maintenance of Marshall Park",
+   "resolution": "discussion only",
+   "quote": "discussion on maintenance of marshal park",
+   "tags": [
+    "maintenance",
+    "Marshall Park"
+   ]
+  },
+  {
+   "topic": "Other business (soccer)",
+   "resolution": "Chris Sullivan to get an okay for soccer",
+   "quote": "other business. chris got and email looking for info on soccer .",
+   "tags": [
+    "soccer"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Online survey on Marshall Park (responses reported by C. Sullivan)",
+   "where": "text",
+   "quote": "c. sullivan gave his report on the responses on the online survey."
+  }
+ ],
+ "tags": [
+  "parks",
+  "Marshall Park",
+  "Marshall Pond",
+  "dog policy",
+  "parking",
+  "capital funding",
+  "officers",
+  "Pleasant St property",
+  "soccer",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "votes": 1,
+  "topics": 1
+ }
 }

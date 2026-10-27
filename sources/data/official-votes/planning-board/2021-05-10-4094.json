@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-05-10",
  "docid": "4094",
@@ -12,31 +12,270 @@
  },
  "votes": [
   {
-   "motion": "Approve waiver for site plan approval for 84 Lakefront Avenue, Embers Pizzeria, with deed restriction limiting seats to 92",
+   "motion": "Approve the requested waiver for site plan approval for 84 Lakefront Avenue, Embers Pizzeria, with a deed restriction limiting seats to ninety-two (92).",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made a motion to approve the requested waiver for site plan approval for 84 lakefront avenue, embers pizzeria, with the stipulation that a deed restriction be put in place limiting the number of seats to ninety-two (92), m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4 -0."
+   "quote": "p. bertram made a motion to approve the requested waiver for site plan approval for 84 lakefront avenue, embers pizzeria"
   },
   {
-   "motion": "Approve minutes of April 26, 2021 and April 26, 2021 for 101 Pleasant Street",
+   "motion": "Approve the minutes of 4/26/2021 and 4/26/2021, 101 Pleasant Street.",
    "moved_by": "M. Brenner",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "m. brenner made motion to approve minutes of 4/26/2021 and 4/26/2021, 101 pleasant street , p. bertram seconded, roll call vote- m. brenner, aye; p. bertram, aye; t. cole, aye; m. allison, aye. vote passed 4 -0."
+   "quote": "m. brenner made motion to approve minutes of 4/26/2021 and 4/26/2021, 101 pleasant street"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- p. bertram, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- p. bertram, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.018993000000000003
+ "note": "Text is readable and complete for the agenda, but the public hearings (101 Pleasant Street, North End Subaru, 711 Massachusetts Avenue) are 'see separate minutes' and are not in this text. The Embers waiver discussion has a discrepancy: the applicant offered a deed restriction at 98 persons, while the approved motion sets ninety-two (92) seats. Minutes approval line repeats the date 4/26/2021 twice as printed. Marjorie J. Boggio appears only in the letterhead, not as a participant, so she is omitted from attendees.",
+ "cost_usd": 0.00640797,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director"
+  },
+  {
+   "name": "James Xarras",
+   "role": "Property owner",
+   "status": "present",
+   "quote": "james xarras noted he received a special permit for dimensional variation from the zoning board of appeals"
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "Public commenter, 32 Sandy Cove Road",
+   "status": "present",
+   "quote": "he had some procedural questions regarding the 101 pleasant street hearing and would like to be recognized at the appropriate time."
+  },
+  {
+   "name": "Dave Maki",
+   "role": "Public commenter, 384 Townsend Harbor Road",
+   "status": "present",
+   "quote": "inquired if there would be an opportunity during agenda item viii. b. town meeting - follow-up for him to discuss the proposal"
+  },
+  {
+   "name": "Andrea Adams",
+   "role": "Public commenter",
+   "status": "present",
+   "quote": "andrea adams noted she had been involved in the writing of master plans in other communities"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The draft letter to the subject Board member is to be sent by both regular and certified mail.",
+   "quote": "the board viewed the draft letter, which would be sent to the subject board member, by both regular and certified mail."
+  },
+  {
+   "decision": "D. Maki was requested to formalize his two-family dwelling proposal for the Board.",
+   "quote": "d. maki was requested to formalize his proposal for the board."
+  },
+  {
+   "decision": "A. Burney will consult with the DPW Director about the Library Detention Basin.",
+   "quote": "a. burney would also be consulting with the dpw director."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan RFP procurement method",
+   "what_was_recorded": "The Assistant Town Manager advised that a contract under $50,000 would be an Invitation For Bid, requiring the Town to accept the lowest qualified bid.",
+   "figures_as_printed": [
+    "$50,000"
+   ],
+   "quote": "as the contract would be under $50,000, this would be an invitation for bid (if b), requiring the town to accept the lowest qualified bid."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Gregory Bittner",
+   "stated_role": "32 Sandy Cove Road",
+   "topic": "procedure for 101 Pleasant Street hearing",
+   "quote": "he had some procedural questions regarding the 101 pleasant street hearing and would like to be recognized at the appropriate time."
+  },
+  {
+   "speaker": "Dave Maki",
+   "stated_role": "384 Townsend Harbor Road",
+   "topic": "Town Meeting follow-up, Article 28 proposal",
+   "quote": "inquired if there would be an opportunity during agenda item viii. b. town meeting - follow-up for him to discuss the proposal"
+  },
+  {
+   "speaker": "Andrea Adams",
+   "stated_role": "",
+   "topic": "master plan public input",
+   "quote": "andrea adams noted she had been involved in the writing of master plans in other communities and opined that public hearings/open workshops would be beneficial"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "no action; procedural question and Article 28 follow-up referred to later agenda items",
+   "quote": "he had some procedural questions regarding the 101 pleasant street hearing and would like to be recognized at the appropriate time.",
+   "tags": [
+    "public comment",
+    "101 Pleasant Street",
+    "Article 28"
+   ]
+  },
+  {
+   "topic": "84 Lakefront Avenue, Embers Pizzeria waiver",
+   "resolution": "approved 4-0 with deed restriction on seats",
+   "quote": "appointment: 84 lakefront avenue, embers pizzeria - request for waiver for site plan approval",
+   "tags": [
+    "site plan",
+    "waiver",
+    "restaurant",
+    "parking",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "Public hearings",
+   "resolution": "referred to separate minutes",
+   "quote": "public hearings: 101 pleasant street- see separate minutes",
+   "tags": [
+    "public hearing",
+    "101 Pleasant Street",
+    "North End Subaru",
+    "711 Massachusetts Avenue"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 4-0",
+   "quote": "m. brenner made motion to approve minutes of 4/26/2021 and 4/26/2021, 101 pleasant street",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; MRPC reported offices reopening and conservation land mapping edits",
+   "quote": "storm water task force- no report",
+   "tags": [
+    "committee reports",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "Master Plan RFP workshop",
+   "resolution": "discussed, no action; procurement and deliverables questions raised",
+   "quote": "p. bertram questioned why, in iv. deliverables, the town/planning board would be looking for a draft of initial findings.",
+   "tags": [
+    "master plan",
+    "RFP",
+    "procurement",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Director's items",
+   "resolution": "discussed; no vote recorded",
+   "quote": "the board viewed the draft letter, which would be sent to the subject board member, by both regular and certified mail.",
+   "tags": [
+    "town meeting",
+    "two-family dwellings",
+    "stormwater",
+    "zoning bylaw"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "no action",
+   "quote": "june 28- 101 pleasant street, public hearing 711 massachusetts avenue, public hearing",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 4-0 at 10:12 p.m.",
+   "quote": "adjournment: p. bertram made motion to adjourn",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Embers Pizzeria, Request for Waiver",
+   "where": "list",
+   "quote": "documents used at meeting: embers pizzeria, request for waiver minutes 4/26/2021 4/26/2021, 101 pleasant street master plan, draft rfp"
+  },
+  {
+   "name": "Minutes 4/26/2021",
+   "where": "list",
+   "quote": "documents used at meeting: embers pizzeria, request for waiver minutes 4/26/2021 4/26/2021, 101 pleasant street master plan, draft rfp"
+  },
+  {
+   "name": "Minutes 4/26/2021, 101 Pleasant Street",
+   "where": "list",
+   "quote": "documents used at meeting: embers pizzeria, request for waiver minutes 4/26/2021 4/26/2021, 101 pleasant street master plan, draft rfp"
+  },
+  {
+   "name": "Master Plan, Draft RFP",
+   "where": "list",
+   "quote": "documents used at meeting: embers pizzeria, request for waiver minutes 4/26/2021 4/26/2021, 101 pleasant street master plan, draft rfp"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "zoning",
+  "site plan waiver",
+  "restaurant",
+  "two-family dwellings",
+  "master plan",
+  "RFP",
+  "town meeting",
+  "remote meeting",
+  "COVID-19",
+  "public hearings"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

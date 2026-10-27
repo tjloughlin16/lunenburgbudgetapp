@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2021-09-03",
  "docid": "1413",
@@ -12,6 +12,61 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes recorded. The minutes describe the meeting being called to order, a discussion of an upcoming dedication ceremony, and adjournment, but do not record any motions or votes.",
- "cost_usd": 0.0744225
+ "note": "Short minutes with no recorded motions or votes, including none to approve prior minutes or adjourn; adjournment at 4:00 PM is stated without a motion. Public comment is recorded as none. Clerk David Dorren's attendance is not stated. The minutes name no documents, exhibits or dollar figures.",
+ "cost_usd": 0.012693590000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "meeting was called to order at 3:00 pm by chairman tyler, present were"
+  },
+  {
+   "name": "Nancy Foss-Yasko",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "present were commissioner yasko and invited guest cathy clark from the republican town committee."
+  },
+  {
+   "name": "David Dorren",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "william tyler, chairman nancy foss-yasko, vice-chairman david dorren, clerk"
+  },
+  {
+   "name": "Cathy Clark",
+   "role": "invited guest, Republican Town Committee",
+   "status": "present",
+   "quote": "present were commissioner yasko and invited guest cathy clark from the republican town committee."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Dedication ceremony planning",
+   "resolution": "discussed, no action recorded",
+   "quote": "discussion and planning took place concerning the upcoming dedication ceremony on september 11, 2021",
+   "tags": [
+    "dedication ceremony",
+    "planning"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "cemetery",
+  "dedication ceremony",
+  "planning",
+  "North Cemetery"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

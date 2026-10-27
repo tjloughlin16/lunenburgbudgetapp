@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2021-05-20",
  "docid": "498",
@@ -12,15 +12,161 @@
  },
  "votes": [
   {
-   "motion": "Adjourn",
+   "motion": "To adjourn the meeting.",
    "moved_by": "R. Stober",
    "seconded_by": "M. Holman",
    "outcome": "passed",
    "procedural": true,
-   "quote": "r. stober moved to adjourn, m. holman 2nd. rollcall, all aye."
+   "quote": "r. stober moved to adjourn, m. holman 2nd. rollcall, all aye. adjourned at 8:05pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0763549
+ "note": "Zoom meeting per the header, but the minutes print attendance as 'Present' and do not mark anyone remote. Only one vote recorded (adjournment, roll call 'all aye', no count printed, so outcome is 'passed'). No public comment section and no dollar figures. Stephanie Schofield and the two Farmers Market Managers (Yanina Fusaro, Mike Fontaine) appear only in the footer, not as taking part, so only Schofield is listed (status not stated). Roles come from the signature block, not from the attendance line.",
+ "cost_usd": 0.014754050000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair (per the minutes' signature block: Matthew Allison, Chair)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, j. marzuca, m. holman, k. mcclellan"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Vice-Chair (per signature block: Ryan Stober, Vice-Chair)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, j. marzuca, m. holman, k. mcclellan"
+  },
+  {
+   "name": "G. Burns",
+   "role": "Clerk (per signature block: Greg Burns, Clerk)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, j. marzuca, m. holman, k. mcclellan"
+  },
+  {
+   "name": "J. Marzuca",
+   "role": "Member (per signature block: Jorge Marzuca, Member)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, j. marzuca, m. holman, k. mcclellan"
+  },
+  {
+   "name": "M. Holman",
+   "role": "Member (per signature block: Maryrae Holman, Member)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, j. marzuca, m. holman, k. mcclellan"
+  },
+  {
+   "name": "K. McClellan",
+   "role": "Alternate (per signature block: Kira McClellan, Alternate)",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, j. marzuca, m. holman, k. mcclellan"
+  },
+  {
+   "name": "Stephanie Schofield",
+   "role": "Alternate (per signature block)",
+   "status": "not stated",
+   "quote": "stephanie schofield, alternate"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Reorganization was tabled because the Select Board had not yet made appointments.",
+   "quote": "reorganization was tabled as appointments had not been made by the select board."
+  },
+  {
+   "decision": "The next meeting was set for June 17, 2021.",
+   "quote": "next meeting set for june 17, 2021."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "General discussion: farm complaints letter and farm regulations",
+   "resolution": "no action",
+   "quote": "m. allison stated that he had finally sent the letter on farm complaints out.",
+   "tags": [
+    "farm complaints",
+    "regulations"
+   ]
+  },
+  {
+   "topic": "New MGL requiring BOH to consult AgCom",
+   "resolution": "discussed, no action",
+   "quote": "a new mgl was discussed that requires boh to discuss any new regulations affecting agriculture with the agcom.",
+   "tags": [
+    "state law",
+    "board of health"
+   ]
+  },
+  {
+   "topic": "Farmers Market update",
+   "resolution": "presented",
+   "quote": "m. holman read the market update.",
+   "tags": [
+    "farmers market"
+   ]
+  },
+  {
+   "topic": "Reorganization",
+   "resolution": "tabled",
+   "quote": "reorganization was tabled as appointments had not been made by the select board.",
+   "tags": [
+    "appointments",
+    "reorganization"
+   ]
+  },
+  {
+   "topic": "Flyer to advertise farming in Lunenburg",
+   "resolution": "progress presented",
+   "quote": "m. holman gave a detailed presentation on her progress with the flyer to advertise farming in lunenburg.",
+   "tags": [
+    "promotion",
+    "flyer"
+   ]
+  },
+  {
+   "topic": "Composting program",
+   "resolution": "raised, no action",
+   "quote": "j. marzuca asked about setting up a composting program.",
+   "tags": [
+    "composting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "letter on farm complaints",
+   "where": "text",
+   "quote": "m. allison stated that he had finally sent the letter on farm complaints out."
+  },
+  {
+   "name": "Market Update",
+   "where": "text",
+   "quote": "m. holman read the market update."
+  },
+  {
+   "name": "flyer to advertise farming in Lunenburg",
+   "where": "text",
+   "quote": "m. holman gave a detailed presentation on her progress with the flyer to advertise farming in lunenburg."
+  }
+ ],
+ "tags": [
+  "agriculture",
+  "farm complaints",
+  "farmers market",
+  "reorganization",
+  "appointments",
+  "state law MGL",
+  "flyer promotion",
+  "composting",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

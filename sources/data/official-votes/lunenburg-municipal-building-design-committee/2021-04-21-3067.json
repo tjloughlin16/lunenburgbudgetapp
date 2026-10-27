@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-04-21",
  "docid": "3067",
@@ -12,23 +12,305 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes for April 7th",
+   "motion": "Approve the minutes of April 7 (as amended to clarify the description of MSBA).",
    "moved_by": "Michael-Ray Jeffries",
    "seconded_by": "Dave Passios",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "michael-ray jeffries motioned to approve the minutes for april 7th, seconded by dave passios. dave passios, aye, brian lehtinen, aye, michael-ray jeffreys, aye, david blatt, aye."
+   "quote": "michael-ray jeffries motioned to approve the minutes for april 7th, seconded by dave passios."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Michael Ray Jeffries",
    "seconded_by": "Brian Lehtinen",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "michael ray jeffries made a motion to adjourn, brian lehtinen seconded at 6:41pm. roll call vote: dave passios, aye, brian lehtinen, aye, michael-ray jeffreys, aye, david blatt, aye."
+   "quote": "michael ray jeffries made a motion to adjourn, brian lehtinen seconded at 6:41pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes are readable and legible. The document shows two votes, both procedural: approval of prior minutes and adjournment. Both passed unanimously 4-0. Note: the name \"Michael-Ray Jeffries/Jeffreys\" appears with variable spelling in the document itself.",
- "cost_usd": 0.0837395
+ "note": "Name spellings vary within the minutes: Michael-Ray Jeffreys and Michael-Ray Jeffries; David Passios and Dave Passios. Attendee names are taken from the attendance lines. Community guests are listed without an explicit present/absent marking; they are recorded as present. The minutes print no vote counts, so outcomes are 'passed' rather than a count. The minutes record no architect or town employee attendance. The minutes contain no reference to documents used as a formal list; the documents_list entry is based on a sentence that names materials citizens would have.",
+ "cost_usd": 0.01738785,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Passios",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member (listed under Members absent)",
+   "status": "absent",
+   "quote": "members absent: matthew allison, greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member (listed under Members absent)",
+   "status": "absent",
+   "quote": "members absent: matthew allison, greg roy"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: katey adams"
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "rhonda lisio had questions for the committee."
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Community Guest",
+   "status": "present",
+   "quote": "community guests: katey adams"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Add a slide at the end of the Town Meeting presentation covering major renovation categories and costs; David Blatt to send out a new copy.",
+   "quote": "it was decided to add a slide at the end that would include major renovation categories and costs."
+  },
+  {
+   "decision": "No dates for the next meeting have been determined; Finance and Select board to wait until Town Meeting before making a recommendation.",
+   "quote": "finance and select board will have to wait until town meeting to make a recommendation."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Best and final construction cost estimate",
+   "what_was_recorded": "The final slide shows the revised best and final cost estimate, stated as a total and per square foot.",
+   "quote": "final slide was revisions of the final estimate, with best and final cost estimate at $18,376,939 and $334.12 per square foot.",
+   "figures_as_printed": [
+    "$18,376,939",
+    "$334.12 per square foot"
+   ]
+  },
+  {
+   "topic": "Cost per square foot and new-build comparison",
+   "what_was_recorded": "The committee cited a rounded per-square-foot figure as the reason to get a realistic new-build number.",
+   "quote": "with the $340 per square foot, the committee recognized it was prudent to get a realistic number for what it would cost to be built new.",
+   "figures_as_printed": [
+    "$340 per square foot"
+   ]
+  },
+  {
+   "topic": "Cost of building the existing school",
+   "what_was_recorded": "A public comment recalled the town's cost to build the school.",
+   "quote": "the town spent $1.2-1.3 million to build the school.",
+   "figures_as_printed": [
+    "$1.2-1.3 million"
+   ]
+  },
+  {
+   "topic": "Renovation cost compared with new build",
+   "what_was_recorded": "Renovation cost was described as higher than expected, which prompted looking at a new build; no figure printed.",
+   "quote": "michael-ray jeffries stated the renovation cost is higher than expected and that is what triggered looking into the price of a new build.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Level 3 trigger and aging building systems",
+   "what_was_recorded": "The committee said the monies needed for aging systems and the level 3 trigger should be discussed; no figure printed.",
+   "quote": "michael-ray jeffries stated it would be important to talk ===page 2=== about level 3 trigger and where the monies are going due to a",
+   "figures_as_printed": [],
+   "quote_taken_from_text": true
+  },
+  {
+   "topic": "Extended day program funding",
+   "what_was_recorded": "A public comment said the extended day program is self-funded; no figure printed.",
+   "quote": "rhonda lisio stated the extended day program is self funded and we should not be giving them a renovated space.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Dollar per square foot request",
+   "what_was_recorded": "A resident asked for the dollar amount per square foot and total square footage by category; no figure printed.",
+   "quote": "she was looking for the dollar amount per square foot and total number of square footage for each category.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Community Guests",
+   "topic": "questions on floor plan numbers",
+   "quote": "rhonda lisio had questions for the committee. she looked at the floor plans from the architect presentation and the numbers were difficult to read."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Community Guests",
+   "topic": "opposes project on cost and need for space",
+   "quote": "rhonda lisio wanted to thank the committee for their work"
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Community Guests",
+   "topic": "extended day program should not get renovated space",
+   "quote": "rhonda lisio stated the extended day program is self funded and we should not be giving them a renovated space."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "public comment: rhonda lisio had questions for the committee.",
+   "tags": [
+    "public comment",
+    "floor plans"
+   ]
+  },
+  {
+   "topic": "Update from architect",
+   "resolution": "no action; still waiting on architect numbers",
+   "quote": "david blatt stated we are still waiting for numbers from the architect on the new article.",
+   "tags": [
+    "architect",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Prepare for Town Meeting",
+   "resolution": "slides reviewed; add a major renovation slide",
+   "quote": "the slides were then reviewed together: scope of work by committee and architects",
+   "tags": [
+    "town meeting",
+    "presentation",
+    "slides"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved April 7 minutes",
+   "quote": "michael-ray jeffries motioned to approve the minutes for april 7th, seconded by dave passios.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action; none",
+   "quote": "correspondence to and from the committee: none.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "no action; no dates set",
+   "quote": "future meeting schedule: no dates have been determined.",
+   "tags": [
+    "schedule",
+    "finance committee",
+    "select board"
+   ]
+  },
+  {
+   "topic": "Public comment (later)",
+   "resolution": "discussion; no action",
+   "quote": "rhonda lisio wanted to thank the committee for their work and she doesn't agree with the project due to the numbers.",
+   "tags": [
+    "public comment",
+    "opposition",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Brooks House history and community need",
+   "resolution": "discussion; no action",
+   "quote": "dave passios thanked the fitchburg sentinel on their story of the history of the brooks house.",
+   "tags": [
+    "brooks house",
+    "history",
+    "community space"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:41pm",
+   "quote": "michael ray jeffries made a motion to adjourn, brian lehtinen seconded at 6:41pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Presentation slides for Town Meeting",
+   "where": "text",
+   "quote": "david blatt sent out an idea for the presentation and speaker notes explaining each step and slide."
+  },
+  {
+   "name": "Speaker notes",
+   "where": "text",
+   "quote": "david blatt stated the speaker notes, along with final floor plan, and cost analysis."
+  },
+  {
+   "name": "Final floor plan",
+   "where": "text",
+   "quote": "david blatt stated the speaker notes, along with final floor plan, and cost analysis."
+  },
+  {
+   "name": "Cost analysis",
+   "where": "text",
+   "quote": "david blatt stated the speaker notes, along with final floor plan, and cost analysis."
+  },
+  {
+   "name": "Floor plans from the architect presentation",
+   "where": "text",
+   "quote": "she looked at the floor plans from the architect presentation and the numbers were difficult to read."
+  },
+  {
+   "name": "Documents on the presentation on the town website",
+   "where": "text",
+   "quote": "michael-ray jeffreys directed the public to the documents on the presentation on the town website."
+  },
+  {
+   "name": "300 square foot per space bylaw",
+   "where": "text",
+   "quote": "dave passios 300 square foot per space bylaw because of the center district and we need to double check the 150 parking"
+  },
+  {
+   "name": "Fitchburg Sentinel story on the history of the Brooks House",
+   "where": "text",
+   "quote": "dave passios thanked the fitchburg sentinel on their story of the history of the brooks house."
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "renovation vs new build",
+  "cost per square foot",
+  "Town Meeting",
+  "school building",
+  "Brooks House",
+  "public comment",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "brian lehtinen asked what the citizens would have in front of them during the meeting."
+ },
+ "dropped_unquoted_by_field": {}
 }

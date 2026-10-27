@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2021-05-18",
  "docid": "3200",
@@ -12,31 +12,241 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of March 16, 2021",
+   "motion": "Approve the minutes of March 16, 2021.",
    "moved_by": "Bob Pease",
    "seconded_by": "Lynne Man",
-   "outcome": "passed",
+   "outcome": "passed unanimously by roll call vote",
    "procedural": true,
    "quote": "bob pease made a motion to approve the minutes of march 16, 2021, lynne man seconded. motion passed unanimously by roll call vote."
   },
   {
-   "motion": "reach out to the Board of Selectmen through the Town Manager, the Planning Director and the various committees represented on the open space committee to consider these 2 parcels for open space and recreation",
+   "motion": "Reach out to the Board of Selectmen through the Town Manager, the Planning Director and the various committees represented on the open space committee, to consider the 671 West Street and 225 Pleasant Street parcels for open space and recreation; members to report back at the next meeting.",
    "moved_by": "Paula Bertram",
    "seconded_by": "Bob Pease",
-   "outcome": "passed",
+   "outcome": "passed unanimously by roll call vote",
    "procedural": false,
-   "quote": "paula bertram made a motion to reach out to the board of selectmen through the town manager, the planning director and the various committees represented on the open space committee to consider these 2 parcels for open space and recreation, committee members will report back to the open space committee at the next meeting. seconded by bob pease. passed unanimously by roll call vote."
+   "quote": "paula bertram made a motion to reach out to the board of selectmen through the town manager, the planning director and the various committees represented on the open space committee"
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting at 8:34 p.m.",
    "moved_by": "Paula",
    "seconded_by": "Lynne",
-   "outcome": "passed",
+   "outcome": "passed unanimously by roll call vote",
    "procedural": true,
    "quote": "paula made a motion to adjourn at 8:34 p.m., seconded by lynne motion passed unanimously by roll call vote."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0975355
+ "note": "Plain-text extraction, no scan. No dollar figures appear in the minutes. No public comment section is printed; the Whalom residents spoke under agenda item 3. The presenter's surname is printed as both Prokowiew and Prokwiew; recorded here as Prokowiew, the spelling in his full name. The Chairman is not named, so no chair is recorded.",
+ "cost_usd": 0.024732800000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, paula bertram, bob pease, mike toohill, lynne man and ana flavia lockwood."
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, paula bertram, bob pease, mike toohill, lynne man and ana flavia lockwood."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, paula bertram, bob pease, mike toohill, lynne man and ana flavia lockwood."
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, paula bertram, bob pease, mike toohill, lynne man and ana flavia lockwood."
+  },
+  {
+   "name": "Mike Toohill",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, paula bertram, bob pease, mike toohill, lynne man and ana flavia lockwood."
+  },
+  {
+   "name": "Lynne Man",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, paula bertram, bob pease, mike toohill, lynne man and ana flavia lockwood."
+  },
+  {
+   "name": "Ana Flavia Lockwood",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present: sarah cammer, brandon kibbe, paula bertram, bob pease, mike toohill, lynne man and ana flavia lockwood."
+  },
+  {
+   "name": "David Prokowiew",
+   "role": "Whalom residents",
+   "status": "present",
+   "quote": "david prokowiew and eric hinds presented a powerpoint presentation to the committee which is attached and made part of these minutes."
+  },
+  {
+   "name": "Eric Hinds",
+   "role": "Whalom residents",
+   "status": "present",
+   "quote": "david prokowiew and eric hinds presented a powerpoint presentation to the committee which is attached and made part of these minutes."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Paula Bertram will do further research on town-owned land on Lake Shirley and report back to the Committee.",
+   "quote": "paula will do further research and report back to the committee."
+  },
+  {
+   "decision": "Bob Pease will meet with the Town Clerk to research Town Meeting actions on parcels listed as general municipal land.",
+   "quote": "he will be meeting with the town clerk to research town meeting actions on parcels listed as general municipal land."
+  },
+  {
+   "decision": "Bob Pease is asked to look for the actual town meeting vote on the Woodruff parcel and the Town Meeting actions for 225 Pleasant Street.",
+   "quote": "brandon requested that bob look for the actual town meeting vote on the woodruff parcel and the town meeting actions for"
+  },
+  {
+   "decision": "Committee will continue the process of reviewing and prioritizing parcels; Bob Pease will meet with the Assessor on parcels identified as owner unknown.",
+   "quote": "the committee will continue the process of reviewing and prioritizing parcels."
+  },
+  {
+   "decision": "Lynne Man will attend MassGIS training; members with specific questions are asked to email them to her.",
+   "quote": "lynne man has signed up for the massgis training session and requested that any member has specific questions that they would like to ask"
+  },
+  {
+   "decision": "The Committee would welcome Eric Hinds's input as a non-voting member, following his talent bank submission.",
+   "quote": "bob noted that the committee would welcome eric's input as a non-voting member."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened; pandemic notice read",
+   "quote": "chairman opened the meeting at 6:33 p.m. and read the pandemic notice as posted on the agenda.",
+   "tags": [
+    "meeting procedure"
+   ]
+  },
+  {
+   "topic": "Minutes review and approval, 03/16/2021",
+   "resolution": "approved",
+   "quote": "bob pease made a motion to approve the minutes of march 16, 2021, lynne man seconded. motion passed unanimously by roll call vote.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Presentation from Whalom residents on 671 West Street and 225 Pleasant Street",
+   "resolution": "Committee to reach out to Selectmen and departments; members to report back",
+   "quote": "presentation from whalom residents regarding conservation of general municipal lands at 671 west street and 225 pleasant street",
+   "tags": [
+    "general municipal land",
+    "West Street",
+    "Pleasant Street",
+    "trails",
+    "recreation"
+   ]
+  },
+  {
+   "topic": "Update on general municipal lands at 860 Reservoir Road, 725 Goodrich Street and 0 Shirley Reservoir Road",
+   "resolution": "no action; research continues",
+   "quote": "paula will do further research and report back to the committee.",
+   "tags": [
+    "Lake Shirley",
+    "tax title",
+    "general municipal land"
+   ]
+  },
+  {
+   "topic": "Revision of land use plans for Lane and Table Rock properties",
+   "resolution": "no action; Conservation Commission to revise policy later",
+   "quote": "the commission will seek to revise this policy in the future which will require a public hearing.",
+   "tags": [
+    "bow hunting",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Questions for Town Clerk about minutes and Town Meeting actions",
+   "resolution": "assigned to Bob Pease",
+   "quote": "he will be meeting with the town clerk to research town meeting actions on parcels listed as general municipal land.",
+   "tags": [
+    "Town Meeting",
+    "town clerk"
+   ]
+  },
+  {
+   "topic": "Future meeting with Assessor",
+   "resolution": "parcel review continues; Bob Pease to meet Assessor",
+   "quote": "bob noted that several of the parcels currently identified as owner unknown could be taken as land of low value",
+   "tags": [
+    "assessor",
+    "owner unknown"
+   ]
+  },
+  {
+   "topic": "MassGIS training",
+   "resolution": "no action; members to email questions to Lynne Man",
+   "quote": "lynne man has signed up for the massgis training session and requested that any member has specific questions",
+   "tags": [
+    "training",
+    "GIS"
+   ]
+  },
+  {
+   "topic": "Committee administration (terms, membership)",
+   "resolution": "discussed; no action recorded",
+   "quote": "bob noted that the committee would welcome eric's input as a non-voting member.",
+   "tags": [
+    "membership",
+    "terms",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:34 p.m.",
+   "quote": "paula made a motion to adjourn at 8:34 p.m., seconded by lynne motion passed unanimously by roll call vote.",
+   "tags": [
+    "meeting procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PowerPoint presentation by Whalom residents on 671 West Street and 225 Pleasant Street (undated; attached to the minutes)",
+   "where": "list",
+   "quote": "david prokowiew and eric hinds presented a powerpoint presentation to the committee which is attached and made part of these minutes."
+  },
+  {
+   "name": "Open Space plan",
+   "where": "text",
+   "quote": "the open space plan identifies the need for equity of access to recreational open space in all areas of the town."
+  }
+ ],
+ "tags": [
+  "open space",
+  "general municipal land",
+  "conservation",
+  "West Street",
+  "Pleasant Street",
+  "Lake Shirley",
+  "bow hunting",
+  "Town Meeting",
+  "Zoom meeting",
+  "committee membership"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "david prokowiew and eric hinds presented a powerpoint presentation"
+ },
+ "dropped_unquoted_by_field": {}
 }

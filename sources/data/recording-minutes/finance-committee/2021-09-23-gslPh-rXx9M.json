@@ -1,0 +1,563 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "finance-committee",
+ "board": "Finance Committee",
+ "video_title": "Finance Committee",
+ "meeting_date": "2021-09-23",
+ "video_id": "gslPh-rXx9M",
+ "video_url": "https://www.youtube.com/watch?v=gslPh-rXx9M",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2021-09-23-gslPh-rXx9M.json",
+  "sha256": "7e977faebe842f5426e2d43f8dcf5a358e4a90799e4a1db50d3c53ec9921223d",
+  "caption_lines": 409,
+  "segments": 3767
+ },
+ "recording": {
+  "duration_s": 8519,
+  "duration": "2:21",
+  "spoken_chars": 96597,
+  "words_approx": 16099
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09232021-2094",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2021-09-23-agenda-2094.txt",
+   "path": "sources/meetings/finance-committee/2021-09-23-agenda-2094.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232021-2094",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2021-09-23-minutes-2094.txt",
+   "path": "sources/meetings/finance-committee/2021-09-23-minutes-2094.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-25T13:10:19Z",
+  "cost_usd": 0.5373981
+ },
+ "minutes": {
+  "headline": "Finance Committee heard schools and town manager on FY23 needs and set an Oct 7 review of special town meeting articles.",
+  "summary": "The committee held its informal pre-budget talk with the superintendent and school business director, covering Test and Stay, ESSER-funded positions, staffing, busing and IT. The town manager then reviewed FY23 general government needs, capital projects and draft special town meeting articles. The committee agreed to add a meeting on October 7 and voted only to adjourn.",
+  "attendees": [
+   {
+    "name_as_heard": "Peter Beardmore",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Chris Menard",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Jay Simeone",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Dave Pacios",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Evan Waters",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dr. Burnham",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "Mr. Cassidy",
+    "role": "business director"
+   },
+   {
+    "name_as_heard": "Heather",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "budget",
+   "capital",
+   "esser",
+   "free-cash",
+   "grants",
+   "hiring",
+   "staffing",
+   "superintendent-report",
+   "technology",
+   "town-departments",
+   "town-meeting",
+   "transportation",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 8480,
+    "motion": "Adjourn the meeting, by roll call",
+    "moved_by": "Chris Menard",
+    "outcome": "passed; roll call all in favor",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 770,
+    "topic": "Test and Stay program",
+    "what_was_said": "The state pays for test materials; staffing reimbursement is unknown. Local funds cover clerical support at first, possibly shifting to ESSER later.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1948,
+    "topic": "ESSER-funded positions",
+    "what_was_said": "A member noted much of the new hiring is temporary grant money and asked for clear visibility of which positions are grant-funded versus tax-funded.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2969,
+    "topic": "Bus contract fourth-year option",
+    "what_was_said": "The fourth-year option came in far above earlier years, so the district will not exercise it and will rebid in January.",
+    "figures_as_heard": [
+     "nine and a half percent"
+    ]
+   },
+   {
+    "t": 6534,
+    "topic": "New growth",
+    "what_was_said": "The assessor submitted new growth above the town meeting estimate, which would eliminate a deficit from school choice and charter assessments.",
+    "figures_as_heard": [
+     "430 thousand two hundred and fifty four dollars",
+     "a hundred and forty nine thousand six hundred and sixty four dollars"
+    ]
+   },
+   {
+    "t": 6636,
+    "topic": "Free cash",
+    "what_was_said": "Free cash is still expected near the earlier estimate and should be certified before special town meeting.",
+    "figures_as_heard": [
+     "2.6 million dollar figure"
+    ]
+   },
+   {
+    "t": 6967,
+    "topic": "Elderly exemption",
+    "what_was_said": "A special town meeting article would raise the elderly exemption abatement.",
+    "figures_as_heard": [
+     "seven hundred and fifty dollars",
+     "a thousand dollars"
+    ]
+   },
+   {
+    "t": 7442,
+    "topic": "TCP tear down rebuild study",
+    "what_was_said": "Additional design work will produce a planning number for tear down and rebuild.",
+    "figures_as_heard": [
+     "fifty four thousand dollars"
+    ]
+   },
+   {
+    "t": 7876,
+    "topic": "Marshall Park master plan RFQ",
+    "what_was_said": "The RFQ was reduced to one task given available funds.",
+    "figures_as_heard": [
+     "fifty thousand dollars"
+    ]
+   },
+   {
+    "t": 8232,
+    "topic": "Dana Street pump station",
+    "what_was_said": "Sewer commission plans pump overhaul at the station.",
+    "figures_as_heard": [
+     "10 000"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 5013,
+    "description": "Possible transfer of funds at special town meeting to convert a principal accounting clerk to assistant accountant",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 7545,
+    "decision": "Committee will add a meeting on October 7 to review special town meeting articles, with the public hearing on October 14."
+   },
+   {
+    "t": 8396,
+    "decision": "Earmarks will be an agenda item for the October 7 meeting; joint meeting with School Committee on Chapter 70 set for October 28."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 234,
+    "topic": "Call to order and procedural notices",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 234,
+    "t_end": 1704,
+    "topic": "Superintendent: Test and Stay and COVID",
+    "resolution": "informational",
+    "tags": [
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 1704,
+    "t_end": 2260,
+    "topic": "Hiring, ESSER positions and tracking",
+    "resolution": "informational",
+    "tags": [
+     "esser",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 2260,
+    "t_end": 2930,
+    "topic": "Facilities director, principal and math specialist",
+    "resolution": "informational",
+    "tags": [
+     "staffing",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 2930,
+    "t_end": 3614,
+    "topic": "School busing and bid",
+    "resolution": "informational",
+    "tags": [
+     "transportation"
+    ]
+   },
+   {
+    "t_start": 3614,
+    "t_end": 4330,
+    "topic": "Budget calendar, capital plan and IT assessment",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "technology",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4453,
+    "t_end": 6824,
+    "topic": "Town manager report: IT, staffing, records, capital, new growth, free cash, ARPA",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "capital",
+     "free-cash"
+    ]
+   },
+   {
+    "t_start": 6824,
+    "t_end": 7587,
+    "topic": "Special town meeting draft articles",
+    "resolution": "Oct 7 meeting added",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 7587,
+    "t_end": 8396,
+    "topic": "Minutes and committee reports",
+    "resolution": "minutes postponed",
+    "tags": []
+   },
+   {
+    "t_start": 8396,
+    "t_end": 8500,
+    "topic": "Future meetings and adjournment",
+    "resolution": "adjourned",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Some figures and speaker attributions in the cross-talk are unreliable",
+   "Vote on postponing the 9/9 minutes was by consensus; no count"
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1415,
+    "about": "A member pressed on parent anxiety about COVID testing while the superintendent urged people to ask staff directly.",
+    "sides": "a member against the superintendent",
+    "words_as_heard": "with all due respect that's what we're asking the questions right",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 6867,
+    "kind": "condition",
+    "about": "Member wants the Select Board to weigh in before the committee meets on the articles.",
+    "who": "a member",
+    "words_as_heard": "i don't see the point of having of us having a meeting on the 30th without the select board weighing in"
+   },
+   {
+    "t": 5333,
+    "kind": "condition",
+    "about": "Member skeptical of a facilities department without consensus among town leaders.",
+    "who": "a member",
+    "words_as_heard": "there isn't that consensus that that i would be looking for"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 6927,
+    "name_as_heard": "draft special town meeting articles",
+    "kind": "warrant article",
+    "words_as_heard": "i've i forwarded a draft"
+   },
+   {
+    "t": 3634,
+    "name_as_heard": "school budget timeline",
+    "kind": "other",
+    "words_as_heard": "approved a timeline for the budget so i'll forward it to the committee"
+   },
+   {
+    "t": 1828,
+    "name_as_heard": "human capital plan",
+    "kind": "report",
+    "words_as_heard": "creating that capital human capital plan as we call it"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "esser-grant-spending",
+    "title": "ESSER grant spending",
+    "question": "Which school positions are paid by ESSER versus recurring revenue, and what happens when it ends?",
+    "t": 1948,
+    "words_as_heard": "what are the positions that are funded under under esser or some other you know grant",
+    "data_in_play": [
+     "ESSER",
+     "Chapter 70",
+     "Title 1"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "school-bus-contract",
+    "title": "School bus contract",
+    "question": "What did the bus contract option cost and what would universal busing add?",
+    "t": 2969,
+    "words_as_heard": "the fourth year of that contract came in at nine and a half percent",
+    "data_in_play": [
+     "nine and a half percent"
+    ],
+    "existing": "thread:dee-bus-contract"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Finance Committee added a meeting on October 7 to review draft special town meeting articles, with the public hearing set for October 14.",
+    "t": 7545
+   },
+   {
+    "line": "The town manager said the assessor's new growth came in above the town meeting estimate, which would eliminate a deficit from school choice and charter assessments.",
+    "t": 6534
+   },
+   {
+    "line": "The district will not exercise the bus contract's fourth-year option because it came in far above earlier years, and will rebid in January.",
+    "t": 2969
+   },
+   {
+    "line": "A member asked for clear visibility of which new positions are temporary ESSER grant-funded and which are tax-funded.",
+    "t": 1948
+   },
+   {
+    "line": "Earmarks were added to the October 7 agenda and a joint meeting with the School Committee on Chapter 70 was set for October 28; the only vote was to adjourn.",
+    "t": 8396
+   }
+  ],
+  "why_it_matters": [
+   "Whether school positions are paid by temporary ESSER grants or by taxes decides what lands on the tax bill when the grant money ends.",
+   "The new growth figure, the bus rebid and the special town meeting articles (including a higher elderly exemption abatement) all bear on what the town has to raise from taxes for FY23."
+  ],
+  "watch_next": [
+   "October 7 Finance Committee meeting on special town meeting articles, then the public hearing on October 14.",
+   "October 28 joint meeting with the School Committee on Chapter 70."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-25T13:10:29Z",
+   "cost_usd": 0.2376598
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09232021-2094",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/finance-committee/2021-09-23-minutes-2094.txt",
+   "path": "sources/meetings/finance-committee/2021-09-23-minutes-2094.pdf"
+  },
+  "official_sha256": "8ea91d724e1f3ba9460b26c0d0720013a82f3b04be36d886ea62e52c37871adb",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on no votes, free cash of about $2.6 million, the new growth figures and the added October 7 meeting before the October 14 hearing. They differ mainly in what each records: ours has several figures and items (bus option, TCP study, Marshall Park, Dana Street, the October 28 joint meeting) that the official minutes omit, and the official minutes have Test and Stay funding and a fuller attendee list. The one substantive difference to check is earmarks: ours says they are set for the October 7 agenda, while the official minutes record only a suggestion to bring ideas for a future agenda.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 6,
+   "discrepancy": 1,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote; the official minutes record approval of minutes as tabled, not voted."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Possible transfer to convert principal accounting clerk to assistant accountant",
+    "ours": "Possible transfer of funds at special town meeting to convert a principal accounting clerk to assistant accountant — not stated (discussed only)",
+    "official": "",
+    "note": "Official minutes list no transfers and do not mention this discussion; it was only discussed, not decided, in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "New growth receipts",
+    "ours": "New growth: 430 thousand two hundred and fifty four dollars, a hundred and forty nine thousand six hundred and sixty four dollars",
+    "official": "the principal assessor submitted receipts for $430,254 in new growth for the town, which came in $149,664 higher than what was estimated at annual town meeting",
+    "official_reading": "$430,254 new growth, $149,664 above estimate",
+    "note": "Same two figures; ours spells them out but does not state that the second is the excess over estimate."
+   },
+   {
+    "kind": "agree",
+    "about": "Free cash",
+    "ours": "Free cash: 2.6 million dollar figure",
+    "official": "it looks like there will be $2.6 million for the town to spend.",
+    "note": "Both give about $2.6 million."
+   },
+   {
+    "kind": "agree",
+    "about": "Additional October 7 meeting and October 14 public hearing",
+    "ours": "Committee will add a meeting on October 7 to review special town meeting articles, with the public hearing on October 14.",
+    "official": "the committee decided to hold an additional meeting on october 7, 2021 to discuss the articles on the warrant before the public hearing on october 14, 2021.",
+    "note": "Same decision and dates."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Joint meeting with School Committee on Chapter 70, October 28",
+    "ours": "Earmarks will be an agenda item for the October 7 meeting; joint meeting with School Committee on Chapter 70 set for October 28.",
+    "official": "",
+    "note": "The official minutes do not mention the October 28 joint meeting or Chapter 70."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Earmarks agenda timing",
+    "ours": "Earmarks will be an agenda item for the October 7 meeting",
+    "official": "mr. beardmore suggested if any committee members had any thoughts on earmarks to bring them up at the next meeting in order to be put on a future agenda.",
+    "note": "Ours says earmarks are set for the October 7 agenda; official says only a suggestion to bring ideas for a future agenda. Check the recording near t=8396."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Bus contract fourth-year option",
+    "ours": "Bus contract fourth-year option: nine and a half percent",
+    "official": "",
+    "note": "Not in the official minutes; check the recording near t=2969."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TCP tear down rebuild study, Marshall Park master plan RFQ, Dana Street pump station",
+    "ours": "TCP tear down rebuild study: fifty four thousand dollars; Marshall Park master plan RFQ: fifty thousand dollars; Dana Street pump station: 10 000",
+    "official": "",
+    "note": "Figures heard in the recording that the official minutes do not record."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Elderly exemption figures",
+    "ours": "Elderly exemption: seven hundred and fifty dollars, a thousand dollars",
+    "official": "",
+    "note": "Not in the official minutes."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Test and Stay program funding",
+    "ours": "",
+    "official": "currently the schools are using local funds for the program, which should be reimbursed with the elementary and secondary schools emergency relief (esser) formula grant funds.",
+    "note": "Our minutes do not record this item."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Minutes tabled",
+    "ours": "",
+    "official": "10. minutes: tabled 11. committee reports: committee members updated each other on their respective committees.",
+    "note": "Tabling of the prior minutes is not in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Dave Pacios",
+    "ours": "Dave Pacios (member)",
+    "official": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters via zoom,",
+    "official_reading": "Dave Passios",
+    "note": "Misspelled name."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee Evan Waters",
+    "ours": "Evan Waters (member)",
+    "official": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters via zoom,",
+    "official_reading": "Evan Watters (via Zoom)",
+    "note": "Spelling differs; official also notes he attended by Zoom."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Business/HR director name and title",
+    "ours": "Mr. Cassidy (business director)",
+    "official": "public schools kate burnham, hr director michael cassidy, school committee chairperson carol",
+    "official_reading": "Michael Cassidy, HR Director",
+    "note": "Same person; title differs."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Superintendent",
+    "ours": "Dr. Burnham (superintendent)",
+    "official": "public schools kate burnham, hr director michael cassidy, school committee chairperson carol",
+    "official_reading": "Kate Burnham",
+    "note": "Same person."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Town manager",
+    "ours": "Heather (town manager)",
+    "official": "guests: town manager heather lemieux, finance director karen brochu,",
+    "official_reading": "Heather Lemieux",
+    "note": "Same person; ours lacks the surname."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent members, Finance Director, School Committee chair",
+    "ours": "",
+    "official": "absent: tom balish, tom gray",
+    "note": "Official lists Tom Balish and Tom Gray absent, plus Karen Brochu and Carol Archambault present; ours lists none of these."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-25T13:11:21Z",
+   "cost_usd": 0.2589038
+  }
+ }
+}

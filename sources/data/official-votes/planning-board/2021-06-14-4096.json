@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-06-14",
  "docid": "4096",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve site plan approval and stormwater permit for Chase Road with conditions",
+   "motion": "Approve the site plan approval and stormwater permit for 757 Chase Road, with the listed site plan and stormwater conditions.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the site plan approval and stormwater permit for chase road with the following conditions: site plan approval conditions:  all vehicle loading and unloading shall be done on the property and off of chase road .  confirmatory soil testing shall be done when construction equipme",
-   "quote_taken_from_text": true
+   "quote": "m. allison seconded, roll call vote- m. allison, aye; p. bertram, aye; t. cole, aye. vote passed 3-0."
   },
   {
-   "motion": "Approve ANR Plan for 150 Holman Street",
+   "motion": "Approve the ANR Plan for 150 Holman Street.",
    "moved_by": "M. Allison",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
@@ -29,23 +28,23 @@
    "quote": "m. allison made motion to approve the anr plan for 150 holman street, p. bertram seconded, roll call vote- m. allison, aye; p. bertram, aye; e. torgersen, aye; t. cole, aye. vote passed 4-0."
   },
   {
-   "motion": "Approve stormwater permit for 150 Holman Street with conditions",
+   "motion": "Approve the stormwater permit for 150 Holman Street with the conditions outlined.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made motion to approve the stormwater permit with conditions outlined above, m. allison seconded, roll call vote- m. allison, aye; p. bertram, aye; e. torgersen, aye; t. cole, aye. vote passed 4-0."
+   "quote": "m. allison seconded, roll call vote- m. allison, aye; p. bertram, aye; e. torgersen, aye; t. cole, aye. vote passed 4-0."
   },
   {
-   "motion": "Approve prior minutes from 05/24/2021",
+   "motion": "Approve the minutes of 05/24/2021 and 05/24/2021, 150 Holman Street.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4 -0",
    "procedural": true,
    "quote": "p. bertram made motion to approve minutes noted below, m. allison seconded, roll call vote - m. allison, p. bertram, aye; e. torgersen, aye; t. cole, aye. vote passed 4 -0."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Allison",
    "outcome": "passed 5-0",
@@ -54,6 +53,218 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded. Chase Road motion includes two approvals (site plan and stormwater permit) under one motion. M. Brenner was absent for the first three substantive votes; E. Torgersen was unable to vote on Chase Road per minutes notation.",
- "cost_usd": 0.14241689999999999
+ "note": "Remote meeting held under the Governor's COVID-19 order. The 757 Chase Road vote recorded E. Torgersen as unable to vote (he had missed more than one hearing), so it is 3-0 of four members. M. Brenner arrived 7:50 p.m., but the minutes print adjournment at 7:45 p.m. and list him voting on it; the two times conflict. Minutes print no dollar figures and record no public comment, though the preamble says the meeting would feature public comment. The Chase Road and 150 Holman Street motions are printed in the minutes' separate hearing minutes and not in this text; quotes are from the vote lines.",
+ "cost_usd": 0.01808459,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "tanner cole, present; matthew allison, present;"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "tanner cole, present; matthew allison, present;"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, (arrived 7:50 p.m.)"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, (arrived 7:50 p.m.)"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "erik torgersen, present."
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director:"
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing the applicant, McCarty Engineering, Inc.",
+   "status": "present",
+   "quote": "b. marchetti noted there is one tree on northfield road (a scenic road)"
+  },
+  {
+   "name": "Steven Powell",
+   "role": "applicant, PSG Realty 225 -259 LLC",
+   "status": "not stated",
+   "quote": "(steven powell) was represented by"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "General consensus was for the Planning Board to serve as the Master Plan Committee, rather than a separate committee being created.",
+   "quote": "general consensus was for the planning board to serve as the master plan committee."
+  },
+  {
+   "decision": "Board members asked that the Stormwater reporting/permitting process be added to the next agenda.",
+   "quote": "board members would like the stormwater reporting/permitting process added to the next agenda."
+  },
+  {
+   "decision": "T. Cole wanted the applicant for 711 Massachusetts Avenue made aware that the site may be in the Watershed Protection District.",
+   "quote": "t. cole believed the site was located in the watershed protection district and wanted the applicant made aware."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public hearing: 757 Chase Road site plan and stormwater permit",
+   "resolution": "approved with conditions, 3-0",
+   "quote": "conditions would be placed on the redevelopment project",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "Chase Road"
+   ]
+  },
+  {
+   "topic": "ANR plan: 150 Holman Street",
+   "resolution": "approved, 4-0",
+   "quote": "m. allison made motion to approve the anr plan for 150 holman street",
+   "tags": [
+    "ANR",
+    "Holman Street",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Public hearing: 150 Holman Street stormwater permit",
+   "resolution": "approved with conditions, 4-0",
+   "quote": "that the stormwater maintenance reports be provided to the board annually, by july 1st.",
+   "tags": [
+    "stormwater",
+    "Holman Street"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved, 4 -0",
+   "quote": "p. bertram made motion to approve minutes noted below",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action",
+   "quote": "tcp building design committee- meeting scheduled for june 16th, ritter memorial building.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Workshop: Master Plan (IFB)",
+   "resolution": "discussed; Planning Board to serve as Master Plan Committee",
+   "quote": "general consensus was for the planning board to serve as the master plan committee.",
+   "tags": [
+    "master plan",
+    "consultant"
+   ]
+  },
+  {
+   "topic": "Director's items: 101 Pleasant Street timeclock",
+   "resolution": "informational, no action",
+   "quote": "board members were furnished with the timeclock for the 101 pleasant street proposed residential subdivision.",
+   "tags": [
+    "Pleasant Street",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Meeting schedule and upcoming hearings",
+   "resolution": "informational, no action",
+   "quote": "meetings would be resuming at town hall with a hybrid model; both in-person and via zoom.",
+   "tags": [
+    "meeting schedule",
+    "hybrid meetings"
+   ]
+  },
+  {
+   "topic": "Board comments and concerns",
+   "resolution": "stormwater process added to next agenda",
+   "quote": "board members would like the stormwater reporting/permitting process added to the next agenda.",
+   "tags": [
+    "stormwater",
+    "40B",
+    "housing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned, 5-0",
+   "quote": "p. bertram made motion to adjourn, m. allison seconded",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 150 Holman",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 150 holman"
+  },
+  {
+   "name": "Minutes: 05/24/2021",
+   "where": "list",
+   "quote": "minutes: 05/24/2021 05/24/2021, 150 holman street"
+  },
+  {
+   "name": "Minutes: 05/24/2021, 150 Holman Street",
+   "where": "list",
+   "quote": "minutes: 05/24/2021 05/24/2021, 150 holman street"
+  },
+  {
+   "name": "Draft Master Plan IFB",
+   "where": "list",
+   "quote": "draft master plan ifb"
+  },
+  {
+   "name": "Operations and Maintenance Plan (150 Holman Street)",
+   "where": "text",
+   "quote": "the operations and maintenance plan would be included in the board's decision as appendix a."
+  },
+  {
+   "name": "Timeclock for 101 Pleasant Street proposed residential subdivision",
+   "where": "text",
+   "quote": "board members were furnished with the timeclock for the 101 pleasant street proposed residential subdivision."
+  }
+ ],
+ "tags": [
+  "Planning Board",
+  "site plan approval",
+  "stormwater permit",
+  "ANR plan",
+  "Master Plan",
+  "remote meeting",
+  "COVID-19",
+  "Chase Road",
+  "Holman Street",
+  "Pleasant Street",
+  "40B housing",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2021-05-20",
  "docid": "3009",
@@ -12,50 +12,305 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the February 18, 2021 meeting",
+   "motion": "Approve the minutes of the February 18, 2021 meeting.",
    "moved_by": "Jon Hogue",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "jon hogue made a motion to accept and approve t he minutes of the february 18, 2021 meeting. deborah christen seconded and all were in favor with a roll call vote of jon hogue -aye, deborah christen-aye, linda mcdonald-ay",
-   "quote_taken_from_text": true
+   "quote": "jon hogue made a motion to accept and approve t he minutes of the february 18, 2021"
   },
   {
-   "motion": "Approve the March and April 2021 financial reports",
-   "moved_by": "Jon Hogue",
-   "seconded_by": "Deborah Christen",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion to approve the march and april 2021 financial reports made by jon hogue; deborah christen seconded. jon hogue-aye, deborah christen-aye, linda mcdonald-aye and financials were accepted and approved."
-  },
-  {
-   "motion": "Approve Resolution 2021-6, DHCD Revised Income Limits for Admission FMRs for Continued Occupancy Effective April 1, 2021",
-   "moved_by": "Jon Hogue",
-   "seconded_by": "Deborah Christen",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion made by jon hogue to approve resolution 2021-6; deborah christen seconded. jon hogue- aye, deborah christen-aye, linda mcdonald-aye and motion passed with a 3 to 0 vote",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve Resolution 2021-7, Certificate of Substantial Completion for 667-1 Underground Fire Alarm Wiring Replacement, DHCD Fish #162030",
+   "motion": "Approve the minutes of the March 18, 2021 meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Jon Hogue",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion made by deborah christen to approve resolution 2021-7; jon hogue seconded. deborah christen -aye, jon hogue-aye, linda mcdonald- aye and motion passed with a 3 to 0 vot",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "deborah christen made a m otion to accept and approve the minutes of the march 18, 2021"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Approve the March and April 2021 financial reports.",
+   "moved_by": "Jon Hogue",
+   "seconded_by": "Deborah Christen",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion to approve the march and april 2021 financial reports made by jon hogue; deborah christen seconded."
+  },
+  {
+   "motion": "Approve Resolution 2021-6, DHCD revised income limits for admission and continued occupancy effective April 1, 2021.",
+   "moved_by": "Jon Hogue",
+   "seconded_by": "Deborah Christen",
+   "outcome": "passed 3 to 0",
+   "procedural": false,
+   "quote": "motion made by jon hogue to approve resolution 2021-6; deborah christen seconded."
+  },
+  {
+   "motion": "Approve Resolution 2021-7, Certificate of Substantial Completion for 667-1 Underground Fire Alarm Wiring Replacement, DHCD Fish #162030.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Jon Hogue",
-   "outcome": "passed 3-0",
+   "outcome": "passed 3 to 0",
+   "procedural": false,
+   "quote": "motion made by deborah christen to approve resolution 2021-7; jon hogue seconded."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:05 p.m.",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Jon Hogue",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 7:05 p.m.; jon hogue seconded. jon hogue-aye, deborah christen-aye, linda mcdonald-aye with all in favor the meeting adjourned."
+   "quote": "jon hogue-aye, deborah christen-aye, linda mcdonald-aye with all in favor the meeting adjourned."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0931355
+ "dropped_unquoted": 0,
+ "note": "Clean extracted text, not a scan; all six motions read off the page with a recorded result. Irregular lettering in item 1 (a, b, dc, e, b) is left as printed. Denise Ivaldi is titled Recording Secretary in the header but Administrative Assistant in item 1a; both printed. The minutes say the meeting was held virtually and record no public speakers. The net metering line was said to possibly be moved; no transfer was recorded.",
+ "cost_usd": 0.02259745,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "chair linda mcdonald asked for a roll call of members present"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah christen-present, jon hogue-present, linda mcdonald -present."
+  },
+  {
+   "name": "Jon Hogue",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah christen-present, jon hogue-present, linda mcdonald -present."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "also present were benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Annual Meeting and Election of Officers was tabled until the June 2021 meeting.",
+   "quote": "annual meeting/election of officers tabled until the june meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Net metering credits (line 4392)",
+   "what_was_recorded": "Line item 4392 Net Metering Credits was showing a dollar figure; the Executive Director said credits exceed actual savings, so the line may be moved.",
+   "quote": "line item 4392 net metering credits showing $22,528",
+   "figures_as_printed": [
+    "$22,528"
+   ]
+  },
+  {
+   "topic": "Reserves and projects",
+   "what_was_recorded": "Reserves were described as healthy but high at 100%, and projects to use the money were under discussion, including the Community Room generator.",
+   "quote": "healthy reserves but they are high at 100%; we are discussing projects to use some of this",
+   "figures_as_printed": [
+    "100%"
+   ]
+  },
+  {
+   "topic": "Shelter rents and extraordinary maintenance",
+   "what_was_recorded": "Shelter rents (line 3110) were a little behind due to four vacancies; extraordinary maintenance was on budget and COVID expenses run through that line. No dollar figures printed.",
+   "quote": "extraordinary maintenance on budget, covid expenses go through this line item.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "DHCD budget approval letters",
+   "what_was_recorded": "DHCD budget approval letters for FYE 12/31/2020 Rev 1 and FYE 12/31/2021 were received. No dollar figures printed.",
+   "quote": "dhcd budget approval letters for fye 12/31/2020 rev 1 and fye 12/31/2021 were received.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, roll call and minutes",
+   "resolution": "minutes of February 18 and March 18, 2021 approved; election of officers tabled to June",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:30 p.m.",
+   "tags": [
+    "minutes",
+    "roll call",
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no public comment",
+   "quote": "for the record there were no individuals calling in.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "received, no action",
+   "quote": "mass nahro conference september 19-22 at the sea crest.",
+   "tags": [
+    "COVID-19",
+    "DHCD",
+    "staffing",
+    "conference"
+   ]
+  },
+  {
+   "topic": "Financial report, March and April 2021",
+   "resolution": "approved",
+   "quote": "motion to approve the march and april 2021 financial reports made by jon hogue; deborah christen seconded.",
+   "tags": [
+    "finance",
+    "reserves",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Modernization, work orders and state-aided housing",
+   "resolution": "received, no action",
+   "quote": "we received 7 standard applications in april; all elderly.",
+   "tags": [
+    "capital projects",
+    "work orders",
+    "waiting list"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "no action (none)",
+   "quote": "unfinished business - none",
+   "tags": [
+    "unfinished business"
+   ]
+  },
+  {
+   "topic": "New business: Resolutions 2021-6 and 2021-7",
+   "resolution": "both approved 3 to 0",
+   "quote": "dhcd revises every two years and the board is required to adopt.",
+   "tags": [
+    "resolutions",
+    "income limits",
+    "DHCD",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "Other correspondence: DHCD notices",
+   "resolution": "reviewed, no action",
+   "quote": "dhcd public housing notices were reviewed:",
+   "tags": [
+    "DHCD",
+    "public housing notices"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "resident participation - none requested",
+   "tags": [
+    "residents"
+   ]
+  },
+  {
+   "topic": "Board commissioners' comments",
+   "resolution": "none",
+   "quote": "board commissioners' comments - none",
+   "tags": [
+    "board"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:05 p.m.",
+   "quote": "jon hogue-aye, deborah christen-aye, linda mcdonald-aye with all in favor the meeting adjourned.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2021-04 – American Rescue Plan Guidance",
+   "where": "list",
+   "quote": "phn 2021-04 - american rescue plan guidance"
+  },
+  {
+   "name": "PHN 2021-05 – Data for Fair Housing in Tenant Selections",
+   "where": "list",
+   "quote": "phn 2021-05 - data for fair housing in tenant selections"
+  },
+  {
+   "name": "PHN 2021-06 – Revised Income Limits for Admission FMRs for Continued Occupancy",
+   "where": "list",
+   "quote": "phn 2021-06 - revised income limits for admission fmrs for continued occupancy"
+  },
+  {
+   "name": "PHN 2021-07 – Guidance and Best Practices for Housing Authorities Post-Covid-19 Vaccination",
+   "where": "list",
+   "quote": "phn 2021-07 - guidance and best practices for housing authorities post-covid-19"
+  },
+  {
+   "name": "PHN 2021-08 – Public Housing Innovations, Round II NOFA",
+   "where": "list",
+   "quote": "phn 2021-08 - public housing innovations, round ii nofa"
+  },
+  {
+   "name": "Financial Report, March and April 2021",
+   "where": "text",
+   "quote": "motion to approve the march and april 2021 financial reports"
+  },
+  {
+   "name": "Work Order Report",
+   "where": "text",
+   "quote": "work order report - 41 routine work orders received, 33 completed"
+  },
+  {
+   "name": "Resolution 2021-6, DHCD Revised Income Limits for Admission FMRs for Continued Occupancy",
+   "where": "text",
+   "quote": "resolution 2021-6 approval of dhcd revised income limits for admission fmrs for continued"
+  },
+  {
+   "name": "Certificate of Substantial Completion, 667-1 Underground Fire Alarm Wiring Replacement, DHCD Fish #162030",
+   "where": "text",
+   "quote": "underground fire alarm wiring replacement, dhcd fish #162030."
+  },
+  {
+   "name": "DHCD Budget Approval Letters for FYE 12/31/2020 Rev 1 and FYE 12/31/2021",
+   "where": "text",
+   "quote": "dhcd budget approval letters for fye 12/31/2020 rev 1 and fye 12/31/2021 were received."
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "COVID-19",
+  "financial reports",
+  "modernization",
+  "DHCD",
+  "resolutions",
+  "state-aided housing",
+  "waiting list",
+  "virtual meeting",
+  "public housing notices"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dhcd public housing notices were reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

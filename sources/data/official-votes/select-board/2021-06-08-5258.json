@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-06-08",
  "docid": "5258",
@@ -12,70 +12,424 @@
  },
  "votes": [
   {
-   "motion": "Appoint Mary Foyle to the By-law Review Committee",
+   "motion": "Appoint Mary Foyle to the By-law Review Committee.",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: j. marino 2nd: l. franco to appoint mary foyle to the by-law review committee vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "procedural": false,
+   "quote": "to appoint mary foyle to the by-law review committee vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Accept the Pride Month proclamation as submitted",
+   "motion": "Accept the proclamation honoring Pride Month as submitted.",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: j. marino 2n°: m. jeffreys to accept the proclamation as submitted vote: mr. marino-aye, mr. jeffreys- aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "to accept the proclamation as submitted vote: mr. marino-aye, mr. jeffreys- aye, mr. franco-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Accept the donation of the rainbow flag and hold a flag raising ceremony",
+   "motion": "Accept the donation of the rainbow flag and hold a flag raising ceremony.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "J. Marino",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys to accept the donation of the rainbow flag and hold a flag raising ceremony vote: mr. jeffreys-aye, mr. marino-aye, mr. franco-aye, mr. alonzo-aye 2nd: j. marino"
+   "quote": "motion: m. jeffreys to accept the donation of the rainbow flag and hold a flag raising ceremony vote: mr. jeffreys-aye, mr. marino-aye, mr. franco-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Accept the donation of bleachers for McNally Park",
+   "motion": "Accept the donation of bleachers for McNally Park (Park Commission acceptance).",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: j. marino 2n:m. jeffreys to accept the donation of bleachers for mcnally park vote: mr. franco-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to accept the donation of bleachers for mcnally park vote: mr. franco-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Ratify the Town Manager appointments as presented",
+   "motion": "Ratify the Town Manager's annual appointments as presented.",
    "moved_by": "M. Jeffreys",
+   "seconded_by": "",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: m. jeffreys to ratify the town manager appointments as presented vote: mr. franco-aye, mr. jeffreys-aye, mir. marino-aye, mr. alonzo-aye"
+   "procedural": false,
+   "quote": "to ratify the town manager appointments as presented vote: mr. franco-aye, mr. jeffreys-aye, mir. marino-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Ratify the Town Manager appointments of special police officers from Shirley and Townsend as presented",
+   "motion": "Ratify the Town Manager appointments of special officers from Shirley and Townsend as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: j. marino 2nd. m. jeffreys to ratify the town manager appointments of special officers from shirley and townsend as presented vote: mr. franco-aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo-aye"
+   "procedural": false,
+   "quote": "to ratify the town manager appointments of special officers from shirley and townsend as presented vote: mr. franco-aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Adopt the Massachusetts COVID-19 emergency paid sick leave policy as presented",
+   "motion": "Adopt the COVID-19 emergency paid sick leave policy as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: j. marino to adopt the policy as presented vote: mr. marino-aye, mr. jeffreys- aye, mr. franco-aye, mr. alonzo-aye 2nd: l. franco"
+   "quote": "to adopt the policy as presented vote: mr. marino-aye, mr. jeffreys- aye, mr. franco-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: l. franco to adjourn the meeting vote: mr. franco-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye 2nd: m. jeffreys"
+   "quote": "to adjourn the meeting vote: mr. franco-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-extracted minutes. Text is machine-readable; all votes recorded with outcomes.",
- "cost_usd": 0.1584185
+ "note": "OCR text with errors: 'Michael-kay Jettreys' and 'Mr. Jeffreys' are the same member; 'Mir. Marino', 'Upen', 'Urder' are typos in the printed text. Page 6 has a 'Motion: J. Marino / 2nd: L. Franco' for the Town Manager annual appointments with no motion wording or result printed, so it is not recorded as a vote; the later M. Jeffreys motion to ratify is. No vote is recorded on the TCP Building Design appointment. Pages 3-4 are out of sequence in the scan. Quotes were taken from the OCR text.",
+ "cost_usd": 0.12028145000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "tom alonzo, chair; michael-kay jettreys, vice chairman; jim marino, lou franco"
+  },
+  {
+   "name": "Michael-kay Jettreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "tom alonzo, chair; michael-kay jettreys, vice chairman; jim marino, lou franco"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "tom alonzo, chair; michael-kay jettreys, vice chairman; jim marino, lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "tom alonzo, chair; michael-kay jettreys, vice chairman; jim marino, lou franco"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Select Board Member",
+   "status": "absent",
+   "quote": "select board member not present: todd dwyer"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; mary foyle, kristina masaitis, brandon"
+  },
+  {
+   "name": "Mary Foyle",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; mary foyle, kristina masaitis, brandon"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; mary foyle, kristina masaitis, brandon"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "Open Space Committee Chairman",
+   "status": "present",
+   "quote": "brandon kibbe, open space committee chairman; ana lockwood, park commissioner, dave passios,"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "ana lockwood, park commissioner, dave passios, park commissioner"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Park Commissioner",
+   "status": "present",
+   "quote": "ana lockwood, park commissioner, dave passios, park commissioner"
+  },
+  {
+   "name": "Robyn Mayo",
+   "role": "Secretary of the Board of Directors, No WoCo Pride",
+   "status": "present",
+   "quote": "robyn mayo, 38 otis street, introduced herself to the select board, holding up a no woco pride"
+  },
+  {
+   "name": "Stephanie Trudel",
+   "role": "public",
+   "status": "present",
+   "quote": "stephanie trudel also voiced her support for the town flying the rainbow flag and was pleased"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Jeffreys asked for a thank-you letter to Monty Tech on behalf of the Board for its work on the garage; members concurred.",
+   "quote": "mr. jeffreys requested a thank you letter be sent to monty tech on behalf of the board for their work on the garage. the board members concurred."
+  },
+  {
+   "decision": "The date and time of the Pride flag raising were left to be determined; the chair said any ceremony would be held in town center.",
+   "quote": "mr. alonzo thanked her for her offer and stated whenever they do hold the ceremony it would be in town center."
+  },
+  {
+   "decision": "The Town Manager will bring a report and recommendation on the PAYT bag fee increase for FY 2022 to the next meeting, June 15.",
+   "quote": "i will have a report and recommendation to the select board at their next meeting on june 15th on the payt bag fee increase for fy 2022."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PAYT trash bags: bid and fee increase",
+   "what_was_recorded": "One bid was received for PAYT bags, from the current vendor WasteZero, and a report on the FY 2022 bag fee increase was deferred to June 15; a senior percentage discount was asked about but not answered that evening.",
+   "quote": "i will have a report and recommendation to the select board at their next meeting on june 15th on the payt bag fee increase for fy 2022.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Motor vehicle excise bills",
+   "what_was_recorded": "Motor Vehicle Excise tax bills were sent out in May in the stated amount.",
+   "quote": "motor vehicle excise tax bills in the amount of $364,000 went out in may.",
+   "figures_as_printed": [
+    "$364,000"
+   ]
+  },
+  {
+   "topic": "CARES funding reporting",
+   "what_was_recorded": "The Finance Director submits quarterly spending reports for CARES funding and is reconciling changing FEMA and CARES eligibility.",
+   "quote": "also, she submits quarterly spending reports for the cares funding, with the latest due on june 4th.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "FY21 purchase orders and encumbrances",
+   "what_was_recorded": "Departments were told final FY21 purchase orders and requisitions must be opened by June 10 and encumbrance requests submitted by July 15; no dollar figures were printed.",
+   "quote": "the finance director issued notice for departments that all final purchase orders and requisitions for fy21 must be opened by june 10th",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Chair",
+   "topic": "congratulating the Class of 2021",
+   "quote": "mr. alonzo congratulated the graduating lunenburg class of 2021 and their families. there was no other public comment."
+  },
+  {
+   "speaker": "Robyn Mayo",
+   "stated_role": "Secretary of the Board of Directors, No WoCo Pride",
+   "topic": "rainbow flag and Pride partnership",
+   "quote": "robyn mayo, 38 otis street, introduced herself to the select board, holding up a no woco pride"
+  },
+  {
+   "speaker": "Stephanie Trudel",
+   "stated_role": "public",
+   "topic": "support for rainbow flag",
+   "quote": "stephanie trudel also voiced her support for the town flying the rainbow flag and was pleased"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: class of 2021",
+   "resolution": "no action",
+   "quote": "mr. alonzo congratulated the graduating lunenburg class of 2021 and their families.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Smokestack Roasters weekday entertainment license",
+   "resolution": "withdrawn by applicant",
+   "quote": "mr. alonzo reported the office had received a late afternoon email from the applicant stating",
+   "tags": [
+    "licensing"
+   ]
+  },
+  {
+   "topic": "By-law Review Committee appointment (Mary Foyle)",
+   "resolution": "appointed",
+   "quote": "to appoint mary foyle to the by-law review committee",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "TCP Building Design Committee candidate (Kristina Masaitis)",
+   "resolution": "interviewed; no vote recorded",
+   "quote": "tcp building design committee (member at large) - kristina masaitis moved to town in",
+   "tags": [
+    "appointments",
+    "town buildings"
+   ]
+  },
+  {
+   "topic": "Open Space Committee presentation (West Street and Pleasant Street parcels)",
+   "resolution": "presented; Select Board to participate at a later date",
+   "quote": "mr. kibbe stated the upen space committee continues to work on various goals and objectives",
+   "tags": [
+    "open space",
+    "trails",
+    "Whalom greenway"
+   ]
+  },
+  {
+   "topic": "Pride Month proclamation and rainbow flag",
+   "resolution": "approved proclamation; accepted flag donation",
+   "quote": "mr. alonzo noted that there have been requests for observance of pride month and to raise a",
+   "tags": [
+    "pride month",
+    "proclamation"
+   ]
+  },
+  {
+   "topic": "McNally Park bleachers donation",
+   "resolution": "approved",
+   "quote": "ms. lemieux reported the mcnally family has donated a set of bleachers for mcnally park and",
+   "tags": [
+    "parks",
+    "donations"
+   ]
+  },
+  {
+   "topic": "Town Manager annual appointments ratification",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's annual appointments",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Special police officer appointments (Shirley and Townsend)",
+   "resolution": "ratified",
+   "quote": "ms. lemieux presented the special police officer appointments:",
+   "tags": [
+    "appointments",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Emergency paid sick leave policy",
+   "resolution": "adopted",
+   "quote": "ms. lemieux reported this is a new emergency paid sick leave signed by governor baker.",
+   "tags": [
+    "personnel",
+    "covid-19"
+   ]
+  },
+  {
+   "topic": "Action items and committee reports",
+   "resolution": "no action",
+   "quote": "mr. alonzo thanked monty tech, the cemetery commission and the dp w for working on the",
+   "tags": [
+    "committees",
+    "cemetery",
+    "Monty Tech"
+   ]
+  },
+  {
+   "topic": "Town Manager COVID-19 update",
+   "resolution": "no action",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of",
+   "tags": [
+    "covid-19"
+   ]
+  },
+  {
+   "topic": "Open Meeting Law change and in-person meetings",
+   "resolution": "no action",
+   "quote": "beginning on june 15th, to comply with the open meeting law, all public bodies must meet in",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Department updates and bids (PAYT, Flat Hill Road, paving, departments)",
+   "resolution": "no action",
+   "quote": "bids were solicited for the manufacturing and supply of municipal pay as you throw trash bags and",
+   "tags": [
+    "trash bags PAYT",
+    "public works",
+    "finance",
+    "land use"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "no action",
+   "quote": "mr. alonzo reported their upcoming meetings are june 15 which will be a goals workshop and",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:58 p.m.",
+   "quote": "to adjourn the meeting vote: mr. franco-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Proclamation Honoring Pride Month (draft, dated 8th day of June 2021)",
+   "where": "list",
+   "quote": "proclamation honoring pride month in the town of lunenburg"
+  },
+  {
+   "name": "Open Space Committee PowerPoint presentation",
+   "where": "text",
+   "quote": "he moved on to his power point presentation:"
+  },
+  {
+   "name": "Emergency Paid Sick Leave Policy per Act providing for Massachusetts COVID-19 emergency paid sick leave",
+   "where": "text",
+   "quote": "3. new emergency paid sick leave policy per act providing for massachusetts"
+  },
+  {
+   "name": "Governor Baker's Executive Order suspending certain Open Meeting Law provisions",
+   "where": "text",
+   "quote": "governor baker's executive urder that suspended certain provisions of the upen meeting law,"
+  },
+  {
+   "name": "Governor Baker legislation filed May 25, 2021",
+   "where": "text",
+   "quote": "it is noteworthy to add that governor baker filed legislation on may 25, 2021 to extend certain"
+  },
+  {
+   "name": "Invitation for Bids, PAYT trash bags",
+   "where": "text",
+   "quote": "bids were solicited for the manufacturing and supply of municipal pay as you throw trash bags and"
+  },
+  {
+   "name": "House Bill 3813 (formerly House 3715), Jaxx Country Variety liquor license",
+   "where": "text",
+   "quote": "house bill 3813 (formerly house 3715) for the additional liquor license for jaxx country variety has now"
+  },
+  {
+   "name": "Town Manager COVID-19 Update, June 8, 2021",
+   "where": "text",
+   "quote": "town manager covid 19 update june 8, 2021"
+  },
+  {
+   "name": "Late afternoon email from Smokestack Roasters, LLC withdrawing its application",
+   "where": "text",
+   "quote": "mr. alonzo reported the office had received a late afternoon email from the applicant stating"
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "pride month",
+  "rainbow flag",
+  "open space",
+  "paid sick leave",
+  "covid-19",
+  "open meeting law",
+  "PAYT trash bags",
+  "Monty Tech",
+  "cemetery",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "he moved on to his power point presentation:"
+ },
+ "dropped_unquoted_by_field": {}
 }

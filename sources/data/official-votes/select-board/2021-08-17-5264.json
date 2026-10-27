@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-08-17",
  "docid": "5264",
@@ -12,71 +12,415 @@
  },
  "votes": [
   {
-   "motion": "Approve the request to hold a tollbooth fundraiser in the center of Town on September 25 from 10 am to 2 pm",
+   "motion": "Approve the tollbooth fundraiser request for the Lunenburg Skate Park in the center of Town on Sept. 25 from 10 am to 2 pm.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2nd: t. dwyer to approve the request to hold a tollbooth fundraiser in the center of town on sept. 25th from 10 am to 2 pm vote: all in favor"
+   "quote": "motion: j. marino 2nd: t. dwyer to approve the request to hold a tollbooth fundraiser in the center of town on sept. 25th"
   },
   {
-   "motion": "Approve the Bicycles Battling Cancer Ride for September 25",
+   "motion": "Approve the Bicycles Battling Cancer Ride for September 25.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino to approve the bicycles battling cancer ride for september 25th 2°0: t. dwyer vote: all in favor"
+   "quote": "motion: j. marino to approve the bicycles battling cancer ride for september 25th"
   },
   {
-   "motion": "Renew the six PJ Keating earth removal permits as listed until August 31, 2022",
+   "motion": "Renew the six PJ Keating and related earth removal permits as listed until August 31, 2022.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys to renew the six permits as listed until august 31, 2022 2n: t. dwyer vote: all in favor"
+   "quote": "motion: m. jeffreys to renew the six permits as listed until august 31, 2022"
   },
   {
-   "motion": "Appoint Kevin Fish as an Assessor until the next annual election",
+   "motion": "Appoint Kevin Fish as an Assessor until the next annual election (joint appointment with the Board of Assessors).",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2nd: m. jeffreys to appoint kevin fish as an assessor until the next annual election vote: mr. marino- aye, mr. dwyer-aye, mr. jeffreys- aye, mr. letarte-aye, mr. alonzo- aye"
+   "quote": "motion: j. marino 2nd: m. jeffreys to appoint kevin fish as an assessor until the next annual election"
   },
   {
-   "motion": "Sign the Town Manager contract effective July 1, 2021 through June 30, 2024",
+   "motion": "Sign the Town Manager contract effective July 1, 2021 through June 30, 2024.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2nd • t. dwyer to sign the contract for town manager effective july 1, 2021 through june 30, 2024 vote: all in favor"
+   "quote": "to sign the contract for town manager effective july 1, 2021 through june 30, 2024"
   },
   {
-   "motion": "Approve and sign the 1st Quarter Water Commitment of fiscal year 2022 in the amount of $9,311.09",
+   "motion": "Approve and sign the first quarter FY2022 water commitment in the amount of $9311.09.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd. t. dwyer to approve and sign the 1 quarter water commitment of fiscal year 2022 in the amount of $9311.09 vote: all in favor"
+   "quote": "to approve and sign the 1 quarter water commitment of fiscal year 2022 in the amount of $9311.09"
   },
   {
-   "motion": "Hold the Special Town Meeting on November 16, 2021 at 7:00 PM and open the warrant for submission of articles on August 24 and close it on September 28 at 5:00 PM",
+   "motion": "Hold the Special Town Meeting on November 16, 2021 at 7:00 PM and open the warrant for articles on August 24 and close it on September 28 at 5:00 PM.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: j. marino to hold the special town meeting on november 16, 2021 at 7:00 pm and open the warrant for submission of articles on august 24 and close it on september 28 at 5:00 pm vote: all in favor"
+   "quote": "to hold the special town meeting on november 16, 2021 at 7:00 pm and open the warrant"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: m. jeffreys to adjourn the meeting 2n: t.dwyer vote: all in favor"
+   "quote": "to adjourn the meeting 2n: t.dwyer"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan from macOS Vision; one OCR artifact in the Bicycles vote where \"2nd:\" is rendered as \"2°0:\". All votes recorded with sufficient clarity to extract.",
- "cost_usd": 0.0951665
+ "note": "Text is OCR (macOS Vision) of a scanned minutes file. Page 4 ends mid-sentence ('employee tot many years.') and page 5 begins mid-discussion of a bid (ADA restroom, bandstand) whose agenda heading is not in the text. The water commitment figure is printed as $9,311.02 in the heading and $9311.09 in the motion; both are recorded as printed. Vote tallies are printed as 'All in Favor' with no count, except the Assessor appointment roll call (five ayes named). Where the minutes give no count, outcome is 'passed'.",
+ "cost_usd": 0.022784290000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino"
+  },
+  {
+   "name": "Lou Franco",
+   "status": "absent",
+   "quote": "member not present: lou franco"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; anthony caiozzo, mark walter, casey"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "anthony caiozzo, 1091 massachusetts ave., presented for the request to be run in the center of"
+  },
+  {
+   "name": "Mark Walter",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "mr. walter thanked the board and exited the meeting."
+  },
+  {
+   "name": "Casey Burlingame",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "mr. burlingame reported he had conducted a site visit"
+  },
+  {
+   "name": "Dan Proctor",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "daniel proctor stated saturday would be only for site work such as setting up transits, grading"
+  },
+  {
+   "name": "Jean Proctor",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "ms. lemieux noted the owners of 1325 mass ave, dan and jean proctor, would like to change"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Assessor",
+   "status": "present",
+   "quote": "mr. letarte introduced kevin fish to the select board."
+  },
+  {
+   "name": "Kevin Fish",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "mr. letarte introduced kevin fish to the select board."
+  },
+  {
+   "name": "Valerio Romano",
+   "role": "Attorney",
+   "status": "present",
+   "quote": "attorney romano stated they have cleared up the zoning issue that was brought up the last time"
+  },
+  {
+   "name": "Pam Anzaldi",
+   "status": "remote",
+   "quote": "pam anzaldi and clifford smith sr., 70 townsend harbor road, via zoom, stated from a"
+  },
+  {
+   "name": "Clifford Smith Sr.",
+   "status": "remote",
+   "quote": "pam anzaldi and clifford smith sr., 70 townsend harbor road, via zoom, stated from a"
+  },
+  {
+   "name": "Ray Morin",
+   "role": "Abutter",
+   "status": "not stated",
+   "quote": "abutter ray morin questioned the survey conducted as he saw no evidence of one being performed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Abutters given one week to comment on the requested changes to the 1325 Mass Ave hours of operation; the discussion continued to the next week.",
+   "quote": "after some discussion it was decided to give abutters one week to provide comment on the requested changes to the hours of operation."
+  },
+  {
+   "decision": "Town Counsel to review the Host Community Agreement with the Town Manager.",
+   "quote": "mr. alonzo stated town counsel would be reviewing the agreement with ms. lemieux."
+  },
+  {
+   "decision": "Audience asked to send comments on the 40B application to the Town Manager's email by Monday, August 23.",
+   "quote": "mr. alonzo asked the audience to send their comments to ms. lemieux's email address if they"
+  },
+  {
+   "decision": "Cowdrey boundary survey to be placed on the August 24 agenda after the Conservation Chairman and Agent were notified.",
+   "quote": "i have notified the conservation chairman and agent and this will be an agenda topic for the august 24th meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cowdrey property boundary survey estimate",
+   "what_was_recorded": "The DPW Director obtained an estimate for a partial boundary survey of three possible encroachments, with an additional cost to stake the lines in the encroachment areas.",
+   "figures_as_printed": [
+    "$6,500",
+    "$1,500"
+   ],
+   "quote": "we received an estimate of $6,500 to perform a partial boundary survey of the three possible encroachments boundaries."
+  },
+  {
+   "topic": "First quarter FY22 water commitment",
+   "what_was_recorded": "The agenda heading gives the water commitment as $9,311.02 while the approving motion gives $9311.09; the minutes do not reconcile the two.",
+   "figures_as_printed": [
+    "$9,311.02",
+    "$9311.09"
+   ],
+   "quote": "1s quarter fy22 water commitment $9,311.02"
+  },
+  {
+   "topic": "Town Manager compensation increases FY22-FY24",
+   "what_was_recorded": "The contract sets annual compensation increases of 6% in FY22, then 5% in FY23 and 5% in FY24.",
+   "figures_as_printed": [
+    "6%",
+    "5%",
+    "5%"
+   ],
+   "quote": "for compensation we agreed on the following: an increase of 6% in year one"
+  },
+  {
+   "topic": "Town Manager deferred compensation and cellphone stipend",
+   "what_was_recorded": "The contract offers 4% of base salary toward a deferred compensation plan and raises the cellphone stipend from $60 to $85 per month.",
+   "figures_as_printed": [
+    "4%",
+    "$60",
+    "$85/month"
+   ],
+   "quote": "we have agreed to offer 4% of the base salary for a deferred compensation plan and we have increased her cellphone stipend from $60 to $85/month."
+  },
+  {
+   "topic": "Lunenburg Skate Park fundraising totals",
+   "what_was_recorded": "The skate park group reported about $83,000 raised, a target of $90,000 to reach another tier, and an additional promised donation of $25,000.",
+   "figures_as_printed": [
+    "$83,000",
+    "$90,000",
+    "$25,000"
+   ],
+   "quote": "they have raised around $83,000 and are pushing for $90,000 to get to another tier and an additional promised donation of $25,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mr. Alonzo",
+   "stated_role": "Chair",
+   "topic": "thanks for summer town band concerts",
+   "quote": "mr. alonzo thanked the town band for the summer concerts this year,"
+  },
+  {
+   "speaker": "Pam Anzaldi and Clifford Smith Sr.",
+   "stated_role": "70 Townsend Harbor Road, via Zoom",
+   "topic": "objection to earlier and Saturday work hours at 1325 Mass Ave",
+   "quote": "pam anzaldi and clifford smith sr., 70 townsend harbor road, via zoom, stated from a"
+  },
+  {
+   "speaker": "Ray Morin",
+   "stated_role": "Abutter",
+   "topic": "no evidence of survey for UMA Flowers site",
+   "quote": "abutter ray morin questioned the survey conducted as he saw no evidence of one being performed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Tollbooth request, Lunenburg Skate Park",
+   "resolution": "approved; skate park update received",
+   "quote": "to approve the request to hold a tollbooth fundraiser in the center of town on sept. 25th",
+   "tags": [
+    "skate park",
+    "fundraising",
+    "tollbooth"
+   ]
+  },
+  {
+   "topic": "Bicycles Battling Cancer Ride request",
+   "resolution": "approved",
+   "quote": "motion: j. marino to approve the bicycles battling cancer ride for september 25th",
+   "tags": [
+    "event permit"
+   ]
+  },
+  {
+   "topic": "Renewal of annual earth removal permits",
+   "resolution": "six permits renewed to August 31, 2022; 1325 Mass Ave hours change continued one week",
+   "quote": "to renew the six permits as listed until august 31, 2022",
+   "tags": [
+    "earth removal",
+    "permits",
+    "hours of operation"
+   ]
+  },
+  {
+   "topic": "Assessor vacancy: interview and joint appointment",
+   "resolution": "Kevin Fish appointed as Assessor until next annual election",
+   "quote": "to appoint kevin fish as an assessor until the next annual election",
+   "tags": [
+    "appointment",
+    "assessors"
+   ]
+  },
+  {
+   "topic": "UMA Flowers cannabis license: community meeting and Host Community Agreement",
+   "resolution": "discussed; Town Counsel to review agreement; no vote",
+   "quote": "attorney romano stated they have cleared up the zoning issue that was brought up the last time",
+   "tags": [
+    "cannabis",
+    "host community agreement"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, job openings, staff changes",
+   "resolution": "no action; informational",
+   "quote": "i was notified today by our principal assessor sue byrne that she will be moving up her retirement date",
+   "tags": [
+    "vacancies",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Cowdrey property boundary survey",
+   "resolution": "estimate reported; placed on August 24 agenda",
+   "quote": "we received an estimate of $6,500 to perform a partial boundary survey of the three possible encroachments boundaries.",
+   "tags": [
+    "conservation",
+    "boundary survey"
+   ]
+  },
+  {
+   "topic": "Town Manager contract FY22-FY24",
+   "resolution": "signed",
+   "quote": "to sign the contract for town manager effective july 1, 2021 through june 30, 2024",
+   "tags": [
+    "town manager contract"
+   ]
+  },
+  {
+   "topic": "First quarter FY22 water commitment",
+   "resolution": "approved and signed",
+   "quote": "to approve and sign the 1 quarter water commitment of fiscal year 2022 in the amount of $9311.09",
+   "tags": [
+    "water"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting date and warrant dates",
+   "resolution": "approved",
+   "quote": "to hold the special town meeting on november 16, 2021 at 7:00 pm and open the warrant",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "MassHousing 40B site approval application, Pond View Commons",
+   "resolution": "discussed; comments requested by August 23; no vote",
+   "quote": "ms. lemieux reported the board's meeting with town counsel is on august 24th.",
+   "tags": [
+    "40B",
+    "housing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Host Community Agreement template draft agreement (UMA Flowers)",
+   "where": "text",
+   "quote": "he has submitted a template draft agreement to the select board."
+  },
+  {
+   "name": "Notice from MassHousing on 40B Site Approval Application from Pond View Commons, LLC (Kevin O'Brien)",
+   "where": "text",
+   "quote": "discussion of notice from masshousing on 40b site approval application from pond view commons, llc (kevin o'brien)"
+  },
+  {
+   "name": "Template comment letter to MA Housing (40B)",
+   "where": "text",
+   "quote": "she has received a template comment letter to use when sending the town's concerns to ma housing."
+  },
+  {
+   "name": "Letter of support from Senator John Cronin for UMA Flowers",
+   "where": "text",
+   "quote": "attorney romano noted he had a letter of support from senator john cronin for uma flowers."
+  },
+  {
+   "name": "Cowdrey property survey cost estimate",
+   "where": "text",
+   "quote": "we received an estimate of $6,500 to perform a partial boundary survey of the three possible encroachments boundaries."
+  },
+  {
+   "name": "Town Manager Contract for FY22-FY24",
+   "where": "text",
+   "quote": "1. vote on town manager contract for fy22-fy24"
+  },
+  {
+   "name": "PJ Keating annual earth removal permits (Permits #15, #16, #17, #27, #57)",
+   "where": "text",
+   "quote": "mr. alonzo read the list of the pj keating permits:"
+  }
+ ],
+ "tags": [
+  "select board",
+  "skate park",
+  "earth removal",
+  "assessor appointment",
+  "cannabis host community agreement",
+  "40B housing",
+  "town manager contract",
+  "water commitment",
+  "special town meeting",
+  "boundary survey"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-09-14",
  "docid": "5686",
@@ -12,64 +12,420 @@
  },
  "votes": [
   {
-   "motion": "Approve $10,900 for repairs to the Dana Street pump station",
+   "motion": "Approve $10,900 for repairs to the Dana Street pump station (impeller, gasket and seals, CTE).",
    "moved_by": "Brett R.",
    "seconded_by": "Mike D.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: brett r. second: mike d. to approve the $10,900 for repairs to the dana street pump station. discussion: rob noted they will be repairing both pumps and this ",
-   "quote_taken_from_text": true
+   "quote": "to approve the $10,900 for repairs to the dana street pump station."
   },
   {
-   "motion": "Approve hiring an assistant for 24 hours per week with benefits",
+   "motion": "Approve the suggestion of Barb and Rob to hire an assistant to the Business Manager for 24 hours/week with benefits.",
    "moved_by": "Brett R.",
    "seconded_by": "John R.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: brett r. second: john r. to approve the suggestion of barb and rob to hire an assistant for 24hrs/week with benefits. roll call vote: mike d. aye, mike n.-aye, john r.-aye, brett-aye and dave-aye."
+   "quote": "to approve the suggestion of barb and rob to hire an assistant for 24hrs/week with benefits."
   },
   {
-   "motion": "Approve the articles for the Special Fall Town Meeting",
+   "motion": "Approve the articles for the Special Fall Town Meeting.",
    "moved_by": "Mike D.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: mike d. second: brett r. to approve the articles for the special fall town meeting. roll call vote: mike d.-aye, mike n.-aye, john r.-aye, brett-aye and dave-aye."
+   "quote": "to approve the articles for the special fall town meeting."
   },
   {
-   "motion": "Approve the Q1 FY22 Commitment of $250,422.07",
+   "motion": "Approve the Q1 FY22 Commitment of $250,422.07 (amount billed to sewer users).",
    "moved_by": "John R.",
    "seconded_by": "Mike N.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: john r. second: mike n. to approve the q1 fy22 commitment of $250,422.07. roll call vote: mike d.-aye, mike n.-aye, john r.-aye, brett-aye and dave-aye."
+   "quote": "to approve the q1 fy22 commitment of $250,422.07."
   },
   {
-   "motion": "Approve minutes of 7/27/21 meeting",
+   "motion": "Approve the minutes of the 7/27/21 meeting.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: john r. second: mike d. to approve minutes of 7/27/21 meeting. roll call vote: mike d.-aye, john r-aye, brett-aye and dave-aye."
+   "quote": "to approve minutes of 7/27/21 meeting. roll call vote: mike d.-aye, john r-aye, brett-aye and dave-aye."
   },
   {
-   "motion": "Approve minutes of 8/10/21 meeting",
-   "moved_by": "",
-   "seconded_by": "",
-   "outcome": "passed 3-0",
+   "motion": "Approve the minutes of the 8/10/21 meeting.",
+   "outcome": "passed",
    "procedural": true,
    "quote": "to approve the minutes of 8/10/21 meeting. roll call vote: mike n.-aye, john r.-aye, and dave-aye."
   },
   {
-   "motion": "Adjourn at 6:55 pm",
+   "motion": "Adjourn the meeting at 6:55pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike D.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: brett r. to adjourn at 6:55pm. second: mike d. roll call vote: mike d.-aye, mike n.-aye, john r.-aye, brett-aye and dave-aye."
+   "quote": "to adjourn at 6:55pm. second: mike d. roll call vote: mike d.-aye, mike n.-aye, john r.-aye, brett-aye and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-processed minutes. One vote (8/10/21 minutes) does not list who moved or seconded, though the vote outcome is recorded.",
- "cost_usd": 0.1251735
+ "note": "Text is macOS Vision OCR of a scanned page set, with typos carried from the source (\"Piedge\", \"sadiy\", \"rebulld\"). Page 2 begins mid-sentence; quotes that cross the page break were avoided. Meeting held via Zoom; all listed attendees recorded as remote because the header says the meeting was via Zoom, but per-person attendance mode is not stated. Votes are recorded as roll calls naming ayes; no vote tallies were printed, so outcomes read 'passed' without counts. John Reynolds does not appear in the roll call on the Dana Street motion (four names listed); on the 8/10/21 minutes roll call only three names are listed and no mover or seconder is printed. A second 'Public Comment - none' line appears later and is not recorded as a speaker. Heather (Town Manager) is mentioned but did not take part, so is not listed. Fine enforcement for grease dumping was discussed without a decision.",
+ "cost_usd": 0.02148949,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "Member",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Mike Nault",
+   "role": "Member",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Barb Lefebvre",
+   "role": "Business Manager",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  },
+  {
+   "name": "Jane Ranley",
+   "role": "Minutes Clerk",
+   "status": "remote",
+   "quote": "attendees: chair- dave macdonald, vice-chair- john reynolds, clerk- brett ramsden, members: mike deveikis and mike nault, dpw director- rob oliva, business manager-barb lefebvre, minutes clerk-jane ranley"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave gave the go-ahead to send late-filing grease trap permit holders letters with the first phase of fines, while preferring that establishments be called first.",
+   "quote": "dave gave the go ahead to send the letters with the first phase of fines but added that it was still his preference to call the establishments first."
+  },
+  {
+   "decision": "Commission agreed the assistant position's hours should be fixed rather than flexible.",
+   "quote": "dave suggested being flexible with the hours and the commission agreed the hours should be fixed."
+  },
+  {
+   "decision": "Chair asked Business Manager to resend the budget to Commissioners with the Fitchburg and Leominster increases noted.",
+   "quote": "dave asked barb to resend a copy of the budget to commissioners with the increases noted."
+  },
+  {
+   "decision": "DPW Director to ask CTE whether they use a megohmmeter to test the Dana Street pump motors.",
+   "quote": "mike d. asked if they use a megohmmeter to test the motors and rob replied he will talk to cte about it."
+  },
+  {
+   "decision": "DPW Director to report at the next meeting how much has been spent on the Maintenance Plan.",
+   "quote": "dave asked rob for how much has been spent on the maintenance plan and rob replied that he will have that for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dana Street pump station repair (CTE estimate)",
+   "what_was_recorded": "CTE estimated $10,900 to replace impeller, gasket and seals on the Dana St. pumps; over $10K, so Commission approval was sought and given.",
+   "figures_as_printed": [
+    "$10,900"
+   ],
+   "quote": "rob received an estimate from cte to replace the impeller, gasket & seals on the dana st. station pumps for a cost of $10,900."
+  },
+  {
+   "topic": "Mass 2 panel replacement (CTE)",
+   "what_was_recorded": "CTE would replace the Mass 2 station panel at about $5K, the same cost as the Electric Ave. panel; CTE will proceed.",
+   "figures_as_printed": [
+    "$5K"
+   ],
+   "quote": "cte would like to replace the panel at the mass 2 station and the cost will be about $5k- the same cost as the electric ave. panel"
+  },
+  {
+   "topic": "Assistant to the Business Manager, 24 hours/week with benefits",
+   "what_was_recorded": "Estimated FY22 cost for seven months: salary and benefits total, against the amount budgeted, leaving a shortfall to add to the budget.",
+   "figures_as_printed": [
+    "$14,400",
+    "$14,000",
+    "$28,400",
+    "$19,600",
+    "$8,640"
+   ],
+   "quote": "barb explained that the estimated cost for the 7 months of fy22 would be $14,400 (salary) and $14,000 (benefits)"
+  },
+  {
+   "topic": "Assistant position yearly cost",
+   "what_was_recorded": "Mike N. calculated the yearly cost of the 24-hour assistant position at about $49,000.",
+   "figures_as_printed": [
+    "$49,000"
+   ],
+   "quote": "mike n. calculated the yearly cost would be about $49,000."
+  },
+  {
+   "topic": "Special Town Meeting warrant article #1, FY22 appropriation increase",
+   "what_was_recorded": "Draft article would increase FY22 appropriations from Retained Earnings by $8,640 and include $14,000 from the general fund for indirect cost.",
+   "figures_as_printed": [
+    "$8,640",
+    "$14,000"
+   ],
+   "quote": "#1 article - to increase the current year (fy22) appropriations from retained earnings by $8,640, and further that"
+  },
+  {
+   "topic": "Special Town Meeting warrant article #2, Capital Reserve Stabilization Fund transfer",
+   "what_was_recorded": "Proposed transfer of the remaining $14,875.50 back into the Capital Reserve Stabilization Fund, after $5,121 was spent in FY21 of the $20,000 transferred.",
+   "figures_as_printed": [
+    "$14,875.50",
+    "$ 5,121",
+    "$20,000"
+   ],
+   "quote": "barb noted that they only spent $ 5,121 in fy21 on capital of the $20,000 transferred from the fund, and she proposes transferring the remaining $14,875.50 back"
+  },
+  {
+   "topic": "Grease trap late-filer penalties",
+   "what_was_recorded": "Late annual grease trap renewals carry a $50 invoice, with $25/day fines assessable if renewal is not received.",
+   "figures_as_printed": [
+    "$50",
+    "$25/day"
+   ],
+   "quote": "last year, they sent a letter to the late filers, with $50 invoice and notice that $25/day fines can be assessed if the renewal is not received."
+  },
+  {
+   "topic": "Q1 FY22 sewer commitment",
+   "what_was_recorded": "Commission gave verbal approval of the Q1 FY22 commitment, the amount billed to sewer users.",
+   "figures_as_printed": [
+    "$250,422.07"
+   ],
+   "quote": "q1 fy22 commitment $250,422.07 - barb asked for the commission's verbal approval for the commitment, which is the amount billed to sewer users."
+  },
+  {
+   "topic": "Invoices: Fitchburg, Leominster, Mead Talerman",
+   "what_was_recorded": "Invoices reported: Fitchburg usage, Leominster quarterly usage, and Mead, Talerman work on 419 Whalom Rd and the DEP and flow assessment contract.",
+   "figures_as_printed": [
+    "$17,714.24",
+    "$ 117,729.89",
+    "$394.06"
+   ],
+   "quote": "invoices- fitchburg usage- $17,714.24 (7/26-8/25), leominster usage- $ 117,729.89 (quarter) and mead, talerman -"
+  },
+  {
+   "topic": "Fitchburg and Leominster rate increases",
+   "what_was_recorded": "Fitchburg rate rose from 9.11 to 9.75 (stated as 7%); Leominster had a 6% increase; both already budgeted.",
+   "figures_as_printed": [
+    "9.11",
+    "9.75",
+    "7%",
+    "6%"
+   ],
+   "quote": "this year the rate went from 9.11 to 9.75 (7% increase). leominster also had a 6% increase."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Increase FY22 appropriations from Retained Earnings (proposed warrant article #1 for the Special Fall Town Meeting).",
+   "amount_as_printed": "$8,640",
+   "outcome": "Commission approved the articles for the Special Fall Town Meeting; Town Meeting has not voted.",
+   "quote": "#1 article - to increase the current year (fy22) appropriations from retained earnings by $8,640, and further that"
+  },
+  {
+   "description": "Transfer from available funds into the Capital Reserve Stabilization Fund (proposed warrant article #2).",
+   "amount_as_printed": "$14,875.50",
+   "outcome": "Commission approved the articles for the Special Fall Town Meeting; Town Meeting has not voted.",
+   "quote": "to see if the town will vote to transfer $14,875.50 from available funds into the capital reserve stabilization fund."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave MacDonald",
+   "stated_role": "Chair",
+   "topic": "Death of Peg Gorman, Hickory Hills",
+   "quote": "public comment- dave sadiy reported peg gorman of hickory hills passed away. she was a dear friend, a big supporter of the lion's club and loved watching the sewer commission meetings."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (memorial for Peg Gorman)",
+   "resolution": "noted; no action",
+   "quote": "public comment- dave sadiy reported peg gorman of hickory hills passed away.",
+   "tags": [
+    "memorial",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "discussed; grease fine enforcement raised, no decision",
+   "quote": "announcements - barb noted the town manager sent out an email regarding signing up for automatic notifications",
+   "tags": [
+    "grease",
+    "billing",
+    "notices",
+    "Zoom meeting"
+   ]
+  },
+  {
+   "topic": "Maintenance report",
+   "resolution": "Dana St pump repair approved; Mass 2 panel to proceed",
+   "quote": "maintenance report- dpw director, rob oliva reported clean basins has augured the line on mass ave.",
+   "tags": [
+    "pump station",
+    "maintenance",
+    "CTE",
+    "grease blockage"
+   ]
+  },
+  {
+   "topic": "ARPA funds",
+   "resolution": "no update",
+   "quote": "arpa funds - rob reported there has been no further discussion or updates.",
+   "tags": [
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Assistant to the Business Manager",
+   "resolution": "approved: 24 hours/week with benefits",
+   "quote": "assistant to the business manager - rob reported, in discussion with heather (town manager), the assistant position",
+   "tags": [
+    "staffing",
+    "budget amendment",
+    "hours"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting warrant articles",
+   "resolution": "approved for the Special Fall Town Meeting",
+   "quote": "special town meeting november 16, 2021- warrant articles- barb read the placeholders for the warrant articles that are",
+   "tags": [
+    "warrant articles",
+    "Town Meeting",
+    "capital reserve",
+    "retained earnings"
+   ]
+  },
+  {
+   "topic": "Grease trap annual permit renewals FY22",
+   "resolution": "discussed; Dave approved letters with first phase of fines",
+   "quote": "grease trap annual permit renewals fy22- barb reported the annual grease trap renewal requests went out august 1st.",
+   "tags": [
+    "grease",
+    "permits",
+    "fines"
+   ]
+  },
+  {
+   "topic": "Q1 FY22 commitment",
+   "resolution": "approved verbally",
+   "quote": "q1 fy22 commitment $250,422.07 - barb asked for the commission's verbal approval for the commitment, which is the",
+   "tags": [
+    "billing",
+    "commitment"
+   ]
+  },
+  {
+   "topic": "Minutes of 7/27/21 and 8/10/21",
+   "resolution": "approved",
+   "quote": "to approve minutes of 7/27/21 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report (Pond/Kimball, 419 Whalom Rd, Fitchburg, invoices)",
+   "resolution": "received; no action; budget resend requested",
+   "quote": "business manager report - pond/kimball extension request-barb reported the owner is passing on pursuing the",
+   "tags": [
+    "Fitchburg",
+    "Leominster",
+    "40B",
+    "connections",
+    "invoices",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "quote": "september 28, 2021 @ 6pm - regular meeting, remote participation",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:55pm",
+   "quote": "to adjourn at 6:55pm. second: mike d. roll call vote: mike d.-aye, mike n.-aye, john r.-aye, brett-aye and dave-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Draft placeholders for Special Town Meeting warrant articles (due 9/28)",
+   "where": "text",
+   "quote": "barb read the placeholders for the warrant articles that are due on 9/28 and had sent out the draft for the commission review."
+  },
+  {
+   "name": "Town Manager email on automatic notifications for minutes and agendas",
+   "where": "text",
+   "quote": "barb noted the town manager sent out an email regarding signing up for automatic notifications"
+  },
+  {
+   "name": "CTE estimate to replace impeller, gasket & seals on Dana St. pumps",
+   "where": "text",
+   "quote": "rob received an estimate from cte to replace the impeller, gasket & seals on the dana st. station pumps for a cost of $10,900."
+  },
+  {
+   "name": "Annual Grease Trap Renewal requests (sent August 1)",
+   "where": "text",
+   "quote": "barb reported the annual grease trap renewal requests went out august 1st."
+  },
+  {
+   "name": "Sewer budget (copy for Commissioners)",
+   "where": "text",
+   "quote": "dave asked barb to resend a copy of the budget to commissioners with the increases noted."
+  },
+  {
+   "name": "Invoices: Fitchburg usage, Leominster usage, Mead Talerman",
+   "where": "text",
+   "quote": "invoices- fitchburg usage- $17,714.24 (7/26-8/25), leominster usage- $ 117,729.89 (quarter) and mead, talerman -"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "pump stations",
+  "grease traps",
+  "budget amendment",
+  "warrant articles",
+  "staffing",
+  "Fitchburg",
+  "Leominster",
+  "sewer commitment",
+  "Zoom meeting",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb read the placeholders for the warrant articles"
+ },
+ "dropped_unquoted_by_field": {}
 }

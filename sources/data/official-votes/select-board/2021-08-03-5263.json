@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-08-03",
  "docid": "5263",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting",
+   "motion": "To adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
@@ -21,6 +21,194 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan via macOS Vision",
- "cost_usd": 0.0995085
+ "note": "Text is macOS Vision OCR of a scanned minutes document with visible garbling (e.g. \"Under Chapter 40B3, the 7B3,A has auchority\", \"Unce the comprehensive permit\", \"athlemiex@\"). Quotes were copied from the OCR text as printed. Only one recorded vote (adjournment, \"All in Favor\", no count printed). No vote on the project itself. The minutes print no dollar figures; budget items are based on discussion of costs and printed percentages. The minutes give the call to order at 7:01 p.m. and adjournment at 9:12 PM.",
+ "cost_usd": 0.01623219,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; adam burney, land use director; dave blatt, peter beardmore, dave rodgers"
+  },
+  {
+   "name": "Adam Costa",
+   "role": "Town Counsel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; adam burney, land use director; dave blatt, peter beardmore, dave rodgers"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; adam burney, land use director; dave blatt, peter beardmore, dave rodgers"
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; adam burney, land use director; dave blatt, peter beardmore, dave rodgers"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; adam burney, land use director; dave blatt, peter beardmore, dave rodgers"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "not stated",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; adam costa, town counsel; adam burney, land use director; dave blatt, peter beardmore, dave rodgers"
+  },
+  {
+   "name": "Mary Alatalo",
+   "role": "244 Howard Street",
+   "status": "present",
+   "quote": "mary alatalo, 244 howard street, talked about the farming history in the area"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Select Board will continue to collect public comments concerning the project, to be sent to the Town Manager.",
+   "quote": "the select board will continue to collect public comments concerning the project."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Peer review costs for the project",
+   "what_was_recorded": "The developer is responsible for reasonable monetary costs of any peer review needed, and not for reviews on issues unrelated to the project.",
+   "quote": "there is the potential for peer review needed to evaluate the above issues and the developer is responsible for reasonable monetary costs for them.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Financial costs to the town if an appeal occurs",
+   "what_was_recorded": "Questions were asked about indirect and direct financial costs to the town in the event of an appeal; no figures were given.",
+   "quote": "other questions concerned indirect and direct financial costs to the town in the event of an appeal",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Reasonable return for a for-sale 40B development",
+   "what_was_recorded": "The workshop stated the reasonable-return threshold for a for-sale development as a percentage of total development cost.",
+   "quote": "for sale development: return no less than 15% of total development cost",
+   "figures_as_printed": [
+    "15%",
+    "450 basis points"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Farming history, rural character and impact on abutters",
+   "speaker": "Mary Alatalo",
+   "stated_role": "244 Howard Street",
+   "quote": "mary alatalo, 244 howard street, talked about the farming history in the area, the rural character of the area and the impact on the abutters and their properties."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and Pledge of Allegiance",
+   "resolution": "no action; no public comment at this time",
+   "quote": "chairman alonzo called the meeting to order at 7:01 p.m. and asked everyone to rise for the pledge of allegiance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chapter 40B workshop",
+   "resolution": "presented by Town Counsel; followed by questions; no action",
+   "quote": "mr. alonzo stated attorney adam costa would be conducting the 40b workshop and it would be followed by a question and answer period.",
+   "tags": [
+    "Chapter 40B",
+    "affordable housing",
+    "Zoning Board of Appeals",
+    "comprehensive permit",
+    "workshop"
+   ]
+  },
+  {
+   "topic": "Public comment on the proposed project",
+   "resolution": "comments received; Select Board to keep collecting comments",
+   "quote": "mary alatalo, 244 howard street, talked about the farming history in the area",
+   "tags": [
+    "public comment",
+    "abutters",
+    "rural character"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "passed",
+   "quote": "motion: l. franco to adjourn the meeting 2nd . m. jeffreys vote: all in favor",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Attorney Costa's syllabus (undated)",
+   "where": "list",
+   "quote": "attorney costa stated he would be referring to his syllabus and the chapter 40b handbook"
+  },
+  {
+   "name": "Chapter 40B Handbook for Zoning Boards of Appeals (2017), issued by the Massachusetts Housing Partnership",
+   "where": "list",
+   "quote": "the chapter 40b handbook for zoning boards of appeals (2017) issued by the massachusetts housing partnership"
+  },
+  {
+   "name": "Mass Housing Development handbook (40B hearing protocol)",
+   "where": "text",
+   "quote": "mr. costa referred to the 40b hearing protocol listed in the mass housing development handbook"
+  }
+ ],
+ "tags": [
+  "Chapter 40B",
+  "affordable housing",
+  "comprehensive permit",
+  "Zoning Board of Appeals",
+  "workshop",
+  "public comment",
+  "abutters",
+  "water district",
+  "peer review",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attorney costa stated he would be referring to his syllabus"
+ },
+ "dropped_unquoted_by_field": {}
 }

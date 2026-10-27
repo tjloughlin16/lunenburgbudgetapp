@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2021-09-20",
  "docid": "3486",
@@ -12,39 +12,166 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of the August 31, 2021 meeting",
+   "motion": "Approve the minutes of the August 31, 2021 meeting as presented.",
    "moved_by": "D. MacDonald",
    "seconded_by": "D. Fortune",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. macdonald to accept and approve the minutes as presented second: d. fortune roll call vote: s. andrews abstained as she had not been present at that meeting, all other members voted in favor of acceptance."
+   "quote": "motion by d. macdonald to accept and approve the minutes as presented"
   },
   {
-   "motion": "Accept recommendation from the HR Director to hire at Grade 3, step 6",
+   "motion": "Accept the HR Director's recommendation to hire a new employee at Grade 3, step 6.",
    "moved_by": "S. Andrews",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by s. andrews to accept recommendation from the hr director to hire at grade 3, step 6. second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by s. andrews to accept recommendation from the hr director to hire at grade 3, step 6."
   },
   {
-   "motion": "Accept the Article as presented for the Special Town Meeting",
+   "motion": "Accept the Special Town Meeting article as presented, for the November 16, 2021 special town meeting.",
    "moved_by": "D. MacDonald",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by d. macdonald to accept the article as presented second: d. fortune roll call vote: all in favor"
+   "quote": "motion by d. macdonald to accept the article as presented"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:19 pm.",
    "moved_by": "D. MacDonald",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": true,
-   "quote": "d. macdonald made a motion to adjourn the meeting at 5:19 second: j. bilotta roll call vote: all in favor"
+   "quote": "d. macdonald made a motion to adjourn the meeting at 5:19"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0846875
+ "dropped_unquoted": 1,
+ "note": "Short minutes. The minutes-approval roll call records one abstention (S. Andrews) and says all other members voted in favor, without a printed count. Two other motions say 'All in Favor' with no count. No public comment is recorded. The new-hire budget item carries no dollar figure.",
+ "cost_usd": 0.01485309,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "dave macdonald, joanna bilotta, donna fortune, susan andrews, eric arnold"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "status": "present",
+   "quote": "dave macdonald, joanna bilotta, donna fortune, susan andrews, eric arnold"
+  },
+  {
+   "name": "Donna Fortune",
+   "status": "present",
+   "quote": "dave macdonald, joanna bilotta, donna fortune, susan andrews, eric arnold"
+  },
+  {
+   "name": "Susan Andrews",
+   "status": "present",
+   "quote": "dave macdonald, joanna bilotta, donna fortune, susan andrews, eric arnold"
+  },
+  {
+   "name": "Eric Arnold",
+   "role": "Committee Chair",
+   "status": "present",
+   "quote": "meeting began at 5:05 pm with all attendees present, e. arnold committee chair presiding"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director; heather lemieux, town manager"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director; heather lemieux, town manager"
+  },
+  {
+   "name": "Robert Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "robert oliva, dpw director, jo mclaughlin, pacc director, barbara lefebvre, sewer business manager, nancy forest, payroll/benefits coordinator"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "PACC Director",
+   "status": "present",
+   "quote": "j. belliveau and j. mclaughlin presented a new hire recommendation"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "robert oliva, dpw director, jo mclaughlin, pacc director, barbara lefebvre, sewer business manager, nancy forest, payroll/benefits coordinator"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll/Benefits Coordinator",
+   "status": "present",
+   "quote": "robert oliva, dpw director, jo mclaughlin, pacc director, barbara lefebvre, sewer business manager, nancy forest, payroll/benefits coordinator"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "New hire placement at Grade 3, step 6",
+   "what_was_recorded": "The new hire was recommended at Grade 3, step 6 because of the candidate's experience; the minutes print no dollar figure for it.",
+   "figures_as_printed": [],
+   "quote": "bring the candidate in at grade 3, step 6 as the candidate has extensive experience in the field"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved (Aug 31, 2021 minutes); S. Andrews abstained",
+   "quote": "minutes of the august 31, 2021 meeting reviewed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New hire form",
+   "resolution": "approved hire at Grade 3, step 6",
+   "quote": "j. belliveau and j. mclaughlin presented a new hire recommendation",
+   "tags": [
+    "hiring",
+    "pay grade"
+   ]
+  },
+  {
+   "topic": "Special Town Meeting article",
+   "resolution": "accepted for the November 16, 2021 special town meeting",
+   "quote": "j. belliveau presented the outline of the article to be presented at the town's special meeting",
+   "tags": [
+    "special town meeting",
+    "SAP"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Special Town Meeting article (outline), for the November 16, 2021 special town meeting",
+   "where": "text",
+   "quote": "j. belliveau presented the outline of the article to be presented at the town's special meeting"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "hiring",
+  "special town meeting",
+  "SAP",
+  "minutes approval",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-10-05",
  "docid": "5269",
@@ -12,32 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Sign the Bond Anticipation Note as presented by the Finance Director",
+   "motion": "Sign the Bond Anticipation Note (BAN) renewal as presented by the Finance Director.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: t. dwyer to sign the ban as presented by the finance director 2\"d; l. franco vote: all in favor"
   },
   {
-   "motion": "Add Article J to the Special Town Meeting warrant",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "L. Franco",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys to add article j to the special town meeting warrant 2\"d: l. franco vote: all in favor"
-  },
-  {
-   "motion": "Add Articles K and L to the Special Town Meeting warrant with the ability to amend either article",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-1",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2''l, t. dwyer to add articles k and l to the special town meeting warrant with the ability to amend either discussion ensued about amending the",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve the billing hardship request of $350",
+   "motion": "Approve the billing hardship request of $350.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
@@ -45,7 +28,15 @@
    "quote": "motion: l. franco to approve the billing hardship request of $350 2\"d.t.dwyer vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of September 21, 2021 as presented",
+   "motion": "Approve the minutes of September 14, 2021 as presented.",
+   "moved_by": "L. Franco",
+   "seconded_by": "J. Marino",
+   "outcome": "passed 4-0-1",
+   "procedural": true,
+   "quote": "vlotion: l. france 2n: j. marino to approve the minutes of september 14, 2021 as presenter vote: 4 in favor, 1 abstention (dwyer)"
+  },
+  {
+   "motion": "Approve the minutes of September 21, 2021 as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed 4-0-1",
@@ -53,7 +44,23 @@
    "quote": "motion: j. marino 2\"d: l. franco to approve the minutes of september 21, 2021 as presented vote: 4 in favor, 1 abstention (jeffreys)"
   },
   {
-   "motion": "Approve the amended Senior Work Off Program Committee and Policy as presented",
+   "motion": "Add Article J to the Special Town Meeting warrant.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "L. Franco",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: m. jeffreys to add article j to the special town meeting warrant 2\"d: l. franco vote: all in favor"
+  },
+  {
+   "motion": "Add Articles K and L to the Special Town Meeting warrant, with the ability to amend either.",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 4-1",
+   "procedural": false,
+   "quote": "to add articles k and l to the special town meeting warrant with the ability to amend either discussion ensued about amending the wording at a future meeting. vote: 4 in favor, 1 opposed (alonzo)"
+  },
+  {
+   "motion": "Approve the amended Senior Work Off Program Committee and Policy as presented.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -61,16 +68,541 @@
    "quote": "motion: m. jeffreys 2''d; l. franco to approve the amended senior work off program committee and policy as presented vote: all in favor"
   },
   {
-   "motion": "Enter into Executive Session to discuss collective bargaining strategy and then adjourn",
+   "motion": "Enter Executive Session to discuss collective bargaining strategy (Municipal Employees Union, Fire Union) and adjourn after exiting.",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: l. franco 2\"d: m. jeffreys to enter into executive session and to adjourn after exiting executive session to discuss strategy with respect to collective bargaining ifan open mee",
-   "quote_taken_from_text": true
+   "quote": "motion: l. franco 2\"d: m. jeffreys to enter into executive session and to adjourn after exiting executive session to discuss strategy with respect to collective bargaining"
   }
  ],
- "dropped_unquoted": 1,
- "note": "OCR text with minor errors (e.g., \"France\" for \"Franco\", \"presenter\" for \"presented\", \"2n\" and \"2\"d\" for \"2nd\"). All votes clearly recorded.",
- "cost_usd": 0.1699095
+ "dropped_unquoted": 0,
+ "note": "OCR text (macOS Vision) with visible misreads: 'Vlotion: L. France' is printed as L. Franco elsewhere and was recorded as L. Franco; 'Mi. Jeffreys' and 'Mr. Jettreys' were read as Jeffreys; '2nd' appears as '2\\\"d' or '2n'. Votes marked 'All in Favor' have no count. The adjournment at 8:55 p.m. is part of the executive-session motion and no separate adjournment vote is printed. Article K's motion was withdrawn and is not recorded as a vote. Minutes are marked APPROVED OCTOBER 12, 2021. Executive session minutes are separate and not in this text. Peter Beardmore's status is 'remote' because he spoke via Zoom, though he is also listed under 'Also Present'.",
+ "cost_usd": 0.14044795000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director;"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director;"
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Vice Chair, TCP Building Design Committee",
+   "status": "present",
+   "quote": "dave blatt, dave passios, tcp building design committee members"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "TCP Building Design Committee member",
+   "status": "present",
+   "quote": "dave blatt, dave passios, tcp building design committee members"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee Chairman (as listed); Finance Committee member (in discussion)",
+   "status": "remote",
+   "quote": "peter beardmore, finance committee member, via zoom, stated there is a lot of complexity"
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Fire Chief (as printed: Chief Sullivan)",
+   "status": "not stated",
+   "quote": "chief sullivan reported the applicant meets hud criteria."
+  },
+  {
+   "name": "Nate Ayles",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Cayden Chow",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Ethan Dionne",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Mackinley Dumais",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Jordan Sammet",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Conor Speck",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Ryan Whitney",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Gabriel Wright",
+   "role": "Little League player",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Michael Wright",
+   "role": "Manager (Little League)",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "James McWalter",
+   "role": "Coach (Little League)",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Stephen Chow",
+   "role": "Coach/League President (Little League)",
+   "status": "present",
+   "quote": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+   "quote_taken_from_text": true
+  },
+  {
+   "name": "Lugh Dumais",
+   "role": "Little League player (recognized)",
+   "status": "absent",
+   "quote": "not present, but also recognized were lugh dumais, simon garcia, jacob melvin, and cameron mcwalter."
+  },
+  {
+   "name": "Simon Garcia",
+   "role": "Little League player (recognized)",
+   "status": "absent",
+   "quote": "not present, but also recognized were lugh dumais, simon garcia, jacob melvin, and cameron mcwalter."
+  },
+  {
+   "name": "Jacob Melvin",
+   "role": "Little League player (recognized)",
+   "status": "absent",
+   "quote": "not present, but also recognized were lugh dumais, simon garcia, jacob melvin, and cameron mcwalter."
+  },
+  {
+   "name": "Cameron McWalter",
+   "role": "Little League player (recognized)",
+   "status": "absent",
+   "quote": "not present, but also recognized were lugh dumais, simon garcia, jacob melvin, and cameron mcwalter."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board concurred with moving forward on the demolition request for the old Primary School; it was placed on the next week's agenda.",
+   "quote": "the board concurred. this will be placed on next week's agenda."
+  },
+  {
+   "decision": "Mr. Alonzo will contact the Architectural Preservation District Commission to request an official decision before the board proceeds further on the old Primary School.",
+   "quote": "mr. alonzo will reach out and request an official decision before proceeding further."
+  },
+  {
+   "decision": "Ms. Lemieux will research whether updated certificates of occupancy were issued for the Ritter Building and the TCP Building.",
+   "quote": "ms. lemieux will research that."
+  },
+  {
+   "decision": "Mr. Jeffreys will reach out to Lisa LeBlanc, Grade 8 Civics teacher, about the civics curriculum.",
+   "quote": "mr. jeffreys will reach out to ms. leblanc."
+  },
+  {
+   "decision": "Ms. Lemieux will send a thank you letter to Dave MacDonald on his resignation from the Personnel Committee.",
+   "quote": "a thank you letter will be sent."
+  },
+  {
+   "decision": "Mr. Jeffreys withdrew his motion to add Article K to the Special Town Meeting warrant.",
+   "quote": "mr. jeffreys withdrew his motion."
+  },
+  {
+   "decision": "The Historical Commission's amended warrant article was deferred to the next meeting.",
+   "quote": "this will be discussed at the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Bond Anticipation Note (BAN) renewal",
+   "what_was_recorded": "The outstanding BAN is renewed on October 14 with a $152,499 paydown and $457,497.00 renewed, split between the Saliba property and a ladder truck, at 0.4% interest, due next October.",
+   "figures_as_printed": [
+    "$609,996",
+    "$225,600",
+    "$384,396",
+    "$152,499",
+    "$457,497.00",
+    "$169,200",
+    "$288,297"
+   ],
+   "quote": "ban in the amount of $609,996. this was for the purchase of the saliba property ($225,600) and a ladder truck ($384,396)."
+  },
+  {
+   "topic": "Ambulance billing hardship request",
+   "what_was_recorded": "An ambulance invoice of $811.46, with $461.46 paid by insurance, leaves a $350.00 balance, for which a hardship request was approved.",
+   "figures_as_printed": [
+    "$811.46",
+    "$461.46",
+    "$350.00"
+   ],
+   "quote": "incurred an invoice in the amount of $811.46. after payment of $461.46 by insurance company, a balance of $350.00 remains."
+  },
+  {
+   "topic": "FY22 budget: New Growth and surplus",
+   "what_was_recorded": "New Growth was certified at a figure and the town estimates a surplus of about $39,000 in FY22.",
+   "figures_as_printed": [
+    "$430,254",
+    "$39,000"
+   ],
+   "quote": "new growth was certified at $430,254. we currently estimate a surplus of approximately $39,000."
+  },
+  {
+   "topic": "FY22 budget amendment for Assistant Accountant",
+   "what_was_recorded": "A FY22 budget amendment will seek a transfer of funds to add hours to an Assistant Accountant position; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "one of the ft22 budget amendments will be to ask for a transfer of funds to support this position with additional hours"
+  },
+  {
+   "topic": "FY22 IT budget amendment",
+   "what_was_recorded": "A FY22 budget amendment transfer is planned for network equipment and security needs, with a backup plan if the Community Compact IT Grant is not received; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "this transfer will also address a backup plan in the event we do not get the community compact it grant."
+  },
+  {
+   "topic": "Road salt cost increase",
+   "what_was_recorded": "Consortium bids for road salt rose about 38%, affecting the FY22 Snow and Ice budget, which may be deficit spent; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "the consortium bids for road salt were received and increased approximately 38%."
+  },
+  {
+   "topic": "Council on Aging grant",
+   "what_was_recorded": "Lunenburg Council on Aging was awarded a grant of $7,500 for the Outdoor Recreation Area, against a $20,000 application.",
+   "figures_as_printed": [
+    "$20,000",
+    "$7,500"
+   ],
+   "quote": "awarded lunenburg council on aging a grant of $7,500 for the outdoor recreation area behind the senior center"
+  },
+  {
+   "topic": "Library Trustees funding request",
+   "what_was_recorded": "The Library Trustees are requesting about $35,000 annually in additional funding and Friday openings, and asked for it on the Special Town Meeting.",
+   "figures_as_printed": [
+    "$35,000"
+   ],
+   "quote": "they are requesting more funding in the amount of about $35,000 annually and want to be open on fridays."
+  },
+  {
+   "topic": "TCP Building funding source for construction documents",
+   "what_was_recorded": "Mr. Jeffreys proposed funding construction document costs for a new Town Hall and Community Center with free cash; no dollar amount is printed.",
+   "figures_as_printed": [],
+   "quote": "mr. jeffreys proposed funding construction document costs with free cash."
+  },
+  {
+   "topic": "TCP Building warrant articles cost estimates",
+   "what_was_recorded": "Members noted it would be hard to decide between the renovation and new-building articles without dollar amounts; the committee said it would publish estimates before Town Meeting. No figure is printed.",
+   "figures_as_printed": [],
+   "quote": "it was noted it would be hard to make any decisions without dollar amounts for either option."
+  }
+ ],
+ "transfers": [
+  {
+   "description": "FY22 budget amendment to transfer funds to add hours to an Assistant Accountant position in the Town Accountant office.",
+   "outcome": "proposed for a FY22 budget amendment; no transfer voted at this meeting",
+   "amount_as_printed": "not printed",
+   "quote": "one of the ft22 budget amendments will be to ask for a transfer of funds to support this position with additional hours"
+  },
+  {
+   "description": "FY22 budget amendment transfer for IT network equipment and security needs.",
+   "outcome": "proposed for a FY22 budget amendment; no transfer voted at this meeting",
+   "amount_as_printed": "not printed",
+   "quote": "this transfer will also address a backup plan in the event we do not get the community compact it grant."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Mi. Jeffreys",
+   "stated_role": "",
+   "topic": "veterans outreach before Veterans Day",
+   "quote": "mi. jeffreys encouraged all to reach out to veterans, in anticipation of veterans day on november 11"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Parks Commission and old Primary School property",
+   "quote": "dave passios, 56 whiting street, speaking in regards to parks and a previous comment this evening about the old primary school property"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; veterans outreach encouraged",
+   "quote": "mi. jeffreys encouraged all to reach out to veterans, in anticipation of veterans day on november 11",
+   "tags": [
+    "veterans",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointments: Little League District 3 Champions",
+   "resolution": "certificate of appreciation presented",
+   "quote": "mr. alonzo introduced the lunenburg little league district 3 champions team in order to",
+   "tags": [
+    "little league",
+    "recognition"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted; Finance Committee hearing and food pantry move announced",
+   "quote": "ms. lemieux reported the finance committee will hold their public hearing on the special town meeting warrant articles",
+   "tags": [
+    "special town meeting",
+    "food pantry",
+    "halloween"
+   ]
+  },
+  {
+   "topic": "Meeting with Finance Director: BAN renewal",
+   "resolution": "approved; Board signed the BAN",
+   "quote": "ms. brochu reported the ban will renew on october 14",
+   "tags": [
+    "bond anticipation note",
+    "borrowing",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Resignations",
+   "resolution": "noted",
+   "quote": "ms. lemieux announced dave macdonald has resigned from the personnel committee.",
+   "tags": [
+    "personnel committee",
+    "resignation",
+    "reserve police"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received; vacancies, jobs, FY22 budget, grants and COVID update reported",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "vacancies",
+    "budget amendments",
+    "grants",
+    "covid-19"
+   ]
+  },
+  {
+   "topic": "Meeting with TCP Building Design Committee on Special Town Meeting articles",
+   "resolution": "Articles J, K and L added to the Special Town Meeting warrant",
+   "quote": "dave blatt, vice chair, stated the committee had wanted to further discuss the three warrant articles",
+   "tags": [
+    "tcp building",
+    "warrant articles",
+    "town hall"
+   ]
+  },
+  {
+   "topic": "Current business 1: old Primary School property",
+   "resolution": "demolition request placed on next week's agenda",
+   "quote": "mr. jeffreys suggested meeting with the parks commission to discuss the board's plans",
+   "tags": [
+    "old primary school",
+    "parks",
+    "demolition",
+    "architectural preservation"
+   ]
+  },
+  {
+   "topic": "Current business 2: ambulance billing hardship",
+   "resolution": "approved $350 hardship request",
+   "quote": "ms. lemieux reported this was forwarded by the fire chief on behalf of a person",
+   "tags": [
+    "ambulance billing",
+    "hardship"
+   ]
+  },
+  {
+   "topic": "Current business 3: approval of minutes",
+   "resolution": "approved minutes of September 14 and September 21, 2021",
+   "quote": "approval of minutes of september 14 and september 21, 2021",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Board member requests (civics, Agricultural Commission, certificates of occupancy)",
+   "resolution": "follow-ups assigned; no vote",
+   "quote": "mr. jeffreys requested business cards and name tags for the board members.",
+   "tags": [
+    "civics curriculum",
+    "agricultural commission",
+    "certificates of occupancy"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "mr. jeffreys reported tcp building design committee continues to meet weekly",
+   "tags": [
+    "committee reports",
+    "library trustees",
+    "finance committee"
+   ]
+  },
+  {
+   "topic": "Old business 1: November 16, 2021 Special Town Meeting warrant articles",
+   "resolution": "reviewed; Historical Commission article deferred to next meeting",
+   "quote": "ms. lemieux reviewed some changes to the stm warrant since the last meeting.",
+   "tags": [
+    "special town meeting",
+    "warrant articles",
+    "easement",
+    "zoning bylaw",
+    "water supply protection",
+    "sewer service",
+    "conservation"
+   ]
+  },
+  {
+   "topic": "Old business 2: Senior Work Off Program policy",
+   "resolution": "approved as amended",
+   "quote": "ms. lemieux had presented a draft policy for the program at the last meeting.",
+   "tags": [
+    "senior work off program",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and public comment",
+   "resolution": "noted; next meetings on the 12th and 19th",
+   "quote": "this board meets again on the 12\" and the 19.",
+   "tags": [
+    "public comment",
+    "old primary school"
+   ]
+  },
+  {
+   "topic": "Executive session: collective bargaining",
+   "resolution": "entered executive session; adjourned at 8:55 p.m.",
+   "quote": "mr. alonzo reported they would be entering executive session.",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "union"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Temporary Construction Access Plan of Land in Lunenburg, Massachusetts (prepared by VHB, Inc., dated May 2021)",
+   "where": "text",
+   "quote": "entitled \"temporary construction access plan of land in lunenburg, massachusetts,\" prepared for the town of lunenburg"
+  },
+  {
+   "name": "Revised Protective Bylaw Map of the Town of Lunenburg, Massachusetts (dated May 3, 2008)",
+   "where": "text",
+   "quote": "a map entitled \"revised protective bylaw map of the town of lunenburg, massachusetts,\""
+  },
+  {
+   "name": "Water Protection District Map 1, Lunenburg Water District Aquifer Protection Zones (revised October 2009, dated July 2021)",
+   "where": "text",
+   "quote": "according to map 1, entitled \"water protection district, revised october, 2009 lunenburg water district aquifer protection zones, dated july 2021.\""
+  },
+  {
+   "name": "Senior Work Off Program Committee and Policy (draft policy)",
+   "where": "text",
+   "quote": "ms. lemieux had presented a draft policy for the program at the last meeting."
+  },
+  {
+   "name": "Certificate of appreciation from the Select Board to the Little League District 3 Champions",
+   "where": "text",
+   "quote": "present a certificate of appreciation to them from the select board."
+  },
+  {
+   "name": "Special Town Meeting warrant, November 16, 2021",
+   "where": "text",
+   "quote": "ms. lemieux reviewed some changes to the stm warrant since the last meeting."
+  }
+ ],
+ "tags": [
+  "select board",
+  "special town meeting",
+  "warrant articles",
+  "bond anticipation note",
+  "budget amendments",
+  "little league",
+  "old primary school",
+  "tcp building",
+  "ambulance billing",
+  "zoning bylaw",
+  "water supply protection",
+  "executive session",
+  "collective bargaining",
+  "minutes approval",
+  "senior work off program"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

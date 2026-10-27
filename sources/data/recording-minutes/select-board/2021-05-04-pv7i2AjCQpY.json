@@ -1,0 +1,631 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board Meeting",
+ "meeting_date": "2021-05-04",
+ "video_id": "pv7i2AjCQpY",
+ "video_url": "https://www.youtube.com/watch?v=pv7i2AjCQpY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-05-04-pv7i2AjCQpY.json",
+  "sha256": "97320a959afdc907b059e21d98126a55ae5f1c2a9a29cbe15b32ee52a4ef88e2",
+  "caption_lines": 345,
+  "segments": 3195
+ },
+ "recording": {
+  "duration_s": 7169,
+  "duration": "1:59",
+  "spoken_chars": 93374,
+  "words_approx": 15562
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_05042021-5254",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-05-04-agenda-5254.txt",
+   "path": "sources/meetings/select-board/2021-05-04-agenda-5254.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05042021-5254",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-05-04-minutes-5254.txt",
+   "path": "sources/meetings/select-board/2021-05-04-minutes-5254.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-26T07:52:15Z",
+  "cost_usd": 0.5100618
+ },
+ "minutes": {
+  "headline": "Select Board appointed Ruth Anderson to the Board of Registrars and approved a transfer of the Yatean Central Convenience liquor license.",
+  "summary": "The meeting opened with public comment and board remarks condemning personal attacks on volunteers at Town Meeting, with some disagreement among members over when to intervene. The board interviewed three Republican nominees and appointed one to the Board of Registrars, held a license hearing, and ratified beach staff. It reviewed the Town Manager's and its own FY2021 goals, vacancies, and the Town Manager's report. Members discussed returning to in-person meetings and chose to stay on Zoom for now.",
+  "attendees": [
+   {
+    "name_as_heard": "Tom Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Ms. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jefferies",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Town Manager (Heather)",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 194,
+    "speaker_as_heard": "mark bursch",
+    "stated_role": "resident, call firefighter, water commissioner",
+    "topic": "Objected to personal attacks on public volunteers and business owners at Town Meeting and the lack of response to his point of order."
+   }
+  ],
+  "tags": [
+   "economic-development",
+   "elections",
+   "facilities",
+   "personnel",
+   "primary-school",
+   "public-comment",
+   "superintendent-report",
+   "town-departments",
+   "town-meeting"
+  ],
+  "votes": [
+   {
+    "motion": "Appoint Ruth Anderson to the Board of Registrars from the Republican Town Committee list",
+    "moved_by": "Mr. Dwyer",
+    "outcome": "passed 4-0 by roll call (all four voting members and the chair said aye)",
+    "procedural": false,
+    "t": 1598
+   },
+   {
+    "motion": "Grant transfer of the common victualler license at 451 Mass Ave to Yatean Central Convenience Luneburg LLC",
+    "outcome": "passed by roll call, all aye",
+    "procedural": false,
+    "t": 1993
+   },
+   {
+    "motion": "Ratify the Town Manager's appointments of the beach director and seasonal lifeguards as read",
+    "outcome": "passed by roll call, all aye",
+    "procedural": false,
+    "t": 2117
+   },
+   {
+    "motion": "Adjourn",
+    "outcome": "passed by roll call, all aye",
+    "procedural": true,
+    "t": 7129
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 5872,
+    "topic": "Primary school fire alarm upgrade",
+    "what_was_said": "A statewide-contract proposal came in well below the original estimate. The superintendent recommends proceeding this fiscal year using an earmark plus anticipated FY21 school surplus.",
+    "figures_as_heard": [
+     "127 000",
+     "62 000",
+     "25 000"
+    ]
+   },
+   {
+    "t": 3235,
+    "topic": "Maintenance management software (eMate)",
+    "what_was_said": "The DPW director selected the software; the first year's cost is covered by a grant from the town's insurance carrier.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6288,
+    "topic": "CARES Act / FEMA reimbursement",
+    "what_was_said": "Eligibility percentages for FEMA reimbursement keep changing, requiring repeated reports and rework by the finance director.",
+    "figures_as_heard": [
+     "75 percent",
+     "25 percent",
+     "100 eligible"
+    ]
+   },
+   {
+    "t": 3318,
+    "topic": "Continuity of operations plan",
+    "what_was_said": "Funded by a Community Compact grant with UMass Collins Center; a draft is expected soon.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 5065,
+    "topic": "Warrants signed",
+    "what_was_said": "Chair read accounts payable and payroll warrants signed the prior week.",
+    "figures_as_heard": [
+     "480 612.81",
+     "negative eleven hundred dollars",
+     "three thousand eighty eight dollars and twenty six cents",
+     "eight hundred fourteen thousand six hundred eighteen dollars and thirty cents",
+     "two hundred sixty seven thousand nine hundred fifty four dollars and seventy cents"
+    ]
+   },
+   {
+    "t": 6412,
+    "topic": "Lockbox company change",
+    "what_was_said": "The treasurer/collector will change lockbox companies in FY22 to save on lockbox fees.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2780,
+    "topic": "925 Mass Ave cleanup funding",
+    "what_was_said": "The town manager learned DEP LUST program funding might remove the tanks directly with the owner, a preferable alternative to competitive MassDevelopment brownfield funding.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 7064,
+    "decision": "The May 18 meeting will remain on Zoom while the chair and town manager work with PAC on technical requirements for hybrid meetings; updates will be given at each meeting."
+   },
+   {
+    "t": 5147,
+    "decision": "Town manager to follow up with PAC on whether meetings will be streamed live on YouTube again."
+   },
+   {
+    "t": 3790,
+    "decision": "The Town Manager composite evaluation will be reviewed and discussed next week; members send suggested changes only to the chair."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 7,
+    "t_end": 190,
+    "topic": "Call to order, roll call, pledge",
+    "resolution": "procedural",
+    "tags": []
+   },
+   {
+    "t_start": 194,
+    "t_end": 850,
+    "topic": "Public comment and board remarks on personal attacks at Town Meeting",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 868,
+    "t_end": 1887,
+    "topic": "Board of Registrars appointment: interviews of three nominees",
+    "resolution": "voted",
+    "tags": [
+     "elections",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1887,
+    "t_end": 2070,
+    "topic": "Common victualler license transfer, 451 Mass Ave",
+    "resolution": "voted",
+    "tags": [
+     "legal"
+    ]
+   },
+   {
+    "t_start": 2075,
+    "t_end": 2175,
+    "topic": "Ratification of beach director and lifeguard appointments",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 2180,
+    "t_end": 2740,
+    "topic": "Review of annual Town Meeting articles and conduct discussion",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 2719,
+    "t_end": 3580,
+    "topic": "FY2021 Town Manager goals report",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "facilities",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 3586,
+    "t_end": 3830,
+    "topic": "Town Manager composite performance evaluation",
+    "resolution": "referred to next week",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3833,
+    "t_end": 4600,
+    "topic": "FY2021 Select Board goals report",
+    "resolution": "informational",
+    "tags": [
+     "policy",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 4600,
+    "t_end": 5060,
+    "topic": "Appointment vacancies and reappointments",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 5065,
+    "t_end": 5110,
+    "topic": "Warrants",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 5106,
+    "t_end": 5700,
+    "topic": "Meeting format and returning to in-person meetings",
+    "resolution": "no resolution; remain on Zoom",
+    "tags": [
+     "policy"
+    ]
+   },
+   {
+    "t_start": 5688,
+    "t_end": 5850,
+    "topic": "Planning Board committee report",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 5852,
+    "t_end": 7060,
+    "topic": "Town Manager report and COVID-19 updates",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "facilities",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 7064,
+    "t_end": 7160,
+    "topic": "Upcoming meetings, public comment, adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Exact wording of some town clerk electronic voting discussion is partly garbled.",
+   "Speaker identities are not marked in captions; speaker attribution is inferred from how members are addressed.",
+   "The negative payroll warrant amount may be misheard."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2303,
+    "about": "Members disagreed over whether a board should step in when speech at a meeting becomes uncomfortable or personal, with one remark about irony in prior comments.",
+    "sides": "One member said elected officials have no right to comfort that supersedes public speech and that the executive board should not interrupt a legislative session; another member said personal attacks have no room and cited earlier comments by the first member.",
+    "words_as_heard": "there's a great deal of irony here for me",
+    "kind": "members disagree"
+   },
+   {
+    "t": 214,
+    "about": "A resident criticised a Town Meeting speaker for personal attacks on volunteers and business owners, and said his point of order was dismissed.",
+    "sides": "A resident against an individual's comments at Town Meeting and the lack of response by the moderator and board.",
+    "words_as_heard": "personally attacking public volunteers and small business owners",
+    "kind": "public criticism"
+   },
+   {
+    "t": 316,
+    "about": "The chair condemned accusations of ill motives made against board and commission members at Town Meeting.",
+    "sides": "The chair and other members against unnamed Town Meeting speakers.",
+    "words_as_heard": "seem to be slanderous at least in the general public sense",
+    "kind": "charged language"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 3052,
+    "kind": "liability or legal",
+    "about": "The 925 Mass Ave property carries environmental and liability issues from hazardous petroleum products.",
+    "who": "a member",
+    "words_as_heard": "because of the dangerous and hazardous materials that were stored there with gasoline and petroleum products and the the possibility of of you know contamination and all the liability that comes with that"
+   },
+   {
+    "t": 5934,
+    "kind": "safety",
+    "about": "The top of the Town Hall chimney collapsed in a wind event.",
+    "who": "the town manager",
+    "words_as_heard": "the top portion of the town hall chimney on the side closest to the village building collapsed"
+   },
+   {
+    "t": 5626,
+    "kind": "condition",
+    "about": "A member would not support returning to meeting in person until it resembles pre-pandemic meetings.",
+    "who": "a member",
+    "words_as_heard": "until we're at that point i'm probably not going to be in favor of us meeting up"
+   },
+   {
+    "t": 5356,
+    "kind": "condition",
+    "about": "A member wanted in-person meetings only if the public could attend.",
+    "who": "a member",
+    "words_as_heard": "i would hope that we can find a way to have an audience"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2741,
+    "name_as_heard": "FY2021 town manager goals document",
+    "kind": "report",
+    "words_as_heard": "we have seen this document we used it as a way to formulate some of our own account manager evaluations",
+    "shown": true
+   },
+   {
+    "t": 3586,
+    "name_as_heard": "composite town manager performance evaluation",
+    "kind": "report",
+    "words_as_heard": "the introduction of this composite document so that now it is public record",
+    "shown": true
+   },
+   {
+    "t": 3833,
+    "name_as_heard": "FY2021 select board goals",
+    "kind": "report",
+    "words_as_heard": "that is also in our uh also in our google drive",
+    "shown": true
+   },
+   {
+    "t": 1036,
+    "name_as_heard": "Ms. Anderson's statement letter",
+    "kind": "letter or email",
+    "words_as_heard": "the statement that she provided us is in our google drive",
+    "shown": true
+   },
+   {
+    "t": 6372,
+    "name_as_heard": "town manager's report",
+    "kind": "report",
+    "words_as_heard": "there were also in your report or a picture showing the panels",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "primary-school-fire-alarm",
+    "title": "Primary fire alarm",
+    "question": "How was the primary school fire alarm upgrade cost reduced and how will it be funded?",
+    "t": 5872,
+    "words_as_heard": "the original estimate for this project was 127 000 and this proposal came in at approximately 62 000",
+    "data_in_play": [
+     "127 000",
+     "62 000",
+     "25 000 year mark"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "cares-fema-reimbursement",
+    "title": "CARES FEMA reimbursement",
+    "question": "How do shifting FEMA and CARES Act eligibility rules affect town reimbursements?",
+    "t": 6288,
+    "words_as_heard": "expenses that we submitted for karazak funding that were only say 75 percent attributed to fema",
+    "data_in_play": [
+     "75 percent",
+     "25 percent",
+     "100 eligible"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 4-0 by roll call to appoint Ruth Anderson to the Board of Registrars from the Republican Town Committee list, after interviewing three nominees.",
+    "t": 1598
+   },
+   {
+    "line": "The board approved by roll call the transfer of the common victualler license at 451 Mass Ave to Yatean Central Convenience Luneburg LLC.",
+    "t": 1993
+   },
+   {
+    "line": "The board ratified, by roll call, the Town Manager's appointments of the beach director and seasonal lifeguards.",
+    "t": 2117
+   },
+   {
+    "line": "The May 18 meeting will stay on Zoom while the chair and town manager work with PAC on the technical needs for hybrid meetings.",
+    "t": 7064
+   },
+   {
+    "line": "The Town Manager's composite evaluation was put off to next week, and the primary school fire alarm upgrade came in well below the original estimate.",
+    "t": 3790
+   }
+  ],
+  "why_it_matters": [
+   "Residents who want to attend Select Board meetings in person cannot yet, and whether meetings are streamed live on YouTube is still being worked out with PAC.",
+   "The fire alarm upgrade is planned to be paid for this fiscal year from an earmark plus an anticipated school surplus, so it touches how school money is carried over and used."
+  ],
+  "watch_next": [
+   "The Town Manager's composite evaluation, to be reviewed and discussed at next week's meeting.",
+   "The May 18 meeting, where the chair and town manager are to update the board on hybrid meeting requirements."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-26T07:52:26Z",
+   "cost_usd": 0.2406124
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05042021-5254",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-05-04-minutes-5254.txt",
+   "path": "sources/meetings/select-board/2021-05-04-minutes-5254.pdf"
+  },
+  "official_sha256": "b357660c6f245b85f460eb96b1e4387ffdf1a627d6c0e279bebb25bea6cf9e1e",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The records agree on the Ruth Anderson appointment, the license approval, the fire alarm figures, the warrants and the evaluation deferral; the differences are mostly misheard names. The thing to check is the lifeguard ratification vote, which only our minutes record, and the May meeting format, which ours calls a decision to stay on Zoom while the official minutes leave it open.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 3,
+   "discrepancy": 2,
+   "only_in_ours": 1,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: appoint Ruth Anderson to Board of Registrars (Republican)",
+    "ours": "Appoint Ruth Anderson to the Board of Registrars from the Republican Town Committee list — passed 4-0 by roll call",
+    "official": "motion: t. dwyer 2nd: j. marino to appoint ruth anderson to the board of registrars (republican)",
+    "note": "Same appointment and outcome (passed); the official text prints no tally, and ours says 4-0 although five members were present, so the count is worth a glance.",
+    "t": 1598
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vote: common victualler license at 451 Mass Ave, applicant name",
+    "ours": "Grant transfer of the common victualler license at 451 Mass Ave to Yatean Central Convenience Luneburg LLC — passed by roll call, all aye",
+    "official": "motion: m. jeffreys 2nd: t. dwyer to approve the common victualler license for yatim central convenience lunenburg, llc located at 451 massachusetts avenue",
+    "official_reading": "Yatim Central Convenience Lunenburg, LLC",
+    "note": "Same license and outcome (passed); the captions misheard the applicant's name and the town name.",
+    "t": 1993
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: ratify Town Manager's beach director and seasonal lifeguard appointments",
+    "ours": "Ratify the Town Manager's appointments of the beach director and seasonal lifeguards as read — passed by roll call, all aye",
+    "official": "",
+    "note": "Our minutes record a roll-call vote on this; the official minutes structured here show no such vote, so check the official minutes and the recording near t=2117.",
+    "t": 2117
+   },
+   {
+    "kind": "agree",
+    "about": "Primary School fire alarm upgrade figures",
+    "ours": "Primary school fire alarm upgrade: 127 000, 62 000, 25 000",
+    "official": "the original estimate for this project was for $127,000 and this proposal came in at approximately $62,000.",
+    "note": "$127,000, $62,000 and $25,000 match in both records.",
+    "t": 5872
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants signed",
+    "ours": "Warrants signed: 480 612.81, negative eleven hundred dollars, three thousand eighty eight dollars and twenty six cents, eight hundred fourteen thousand six hundred eighteen dollars and thirty cents, two hundred sixty seven thousand nine hundred fifty four dollars and seventy cents",
+    "official": "mr. alonzo announced he signed the following warrants last week:",
+    "note": "All five amounts match the official list ($480,612.81, ($1,100.00), $3,088.26, $814,618.03, $267,954.70).",
+    "t": 5065
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "CARES Act / FEMA reimbursement percentages",
+    "ours": "CARES Act / FEMA reimbursement: 75 percent, 25 percent, 100 eligible",
+    "official": "",
+    "note": "The official minutes discuss CARES/FEMA reporting but print no percentages.",
+    "t": 6288
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Decision: format of the May 18 / last May meeting",
+    "ours": "The May 18 meeting will remain on Zoom while the chair and town manager work with PAC on technical requirements for hybrid meetings; updates will be given at each meeting.",
+    "official": "mr. alonzo will work with the town manager but advised they must follow the safety guidelines from the board of health and the state.",
+    "note": "Ours states a decision to stay on Zoom; the official describes an open question about meeting in person at Town Hall, to be revisited. Check the recording near t=7064.",
+    "t": 7064
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: follow up with PAC on live broadcast/streaming",
+    "ours": "Town manager to follow up with PAC on whether meetings will be streamed live on YouTube again.",
+    "official": "they would have to check with pac because there was a technical problem with the live feeds. ms. lemieux will follow up on this.",
+    "note": "Same follow-up by the Town Manager (Ms. Lemieux) with PAC on live feeds.",
+    "t": 5147
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Town Manager composite evaluation deferred",
+    "ours": "The Town Manager composite evaluation will be reviewed and discussed next week; members send suggested changes only to the chair.",
+    "official": "this is what is presented during the meeting. it will be reviewed at the next meeting",
+    "note": "Both defer review to the next meeting; the instruction to send changes only to the chair appears only in ours.",
+    "t": 3790
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Mourinho",
+    "ours": "Mr. Mourinho (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "official_reading": "Jim Marino",
+    "note": "Misheard name; the fifth member is Jim Marino."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Jefferies",
+    "ours": "Mr. Jefferies (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "official_reading": "Michael-Ray Jeffreys",
+    "note": "Spelling differs; this is the vice chairman."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Alonzo, Adams, Dwyer, Town Manager",
+    "ours": "Tom Alonzo (chair); Ms. Adams; Mr. Dwyer; Town Manager (Heather)",
+    "official": "also present: heather lemieux, town manager",
+    "note": "These members and the Town Manager appear in both records."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public and applicants present (Bursch, Anderson, Rudd, Kelly, Yatim)",
+    "ours": "",
+    "official": "mark bursch, 20 buttonwood place, stated at town meeting this past saturday comments were made by an individual personally attacking public volunteers and small business owners,",
+    "note": "The official minutes list a public commenter and registrar candidates and the license applicant; our attendee list has only board members and the manager."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "925 Mass Ave $250,000 Brownfields application",
+    "ours": "",
+    "official": "i also applied for $250,000 in funding through massdevelopment brownfields redevelopment fund in september of 2020 but received notification that we were",
+    "note": "A $250,000 figure appears in the official minutes but not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-26T07:54:00Z",
+   "cost_usd": 0.2736784
+  }
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-04-27",
  "docid": "5253",
@@ -12,23 +12,491 @@
  },
  "votes": [
   {
-   "motion": "appoint Karen Kemp to the Board of Registrars",
+   "motion": "Appoint Karen Kemp to the Board of Registrars (reappointment).",
    "moved_by": "J., Marino",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: j., marino to appoint karen kemp to the board of registrars vote: mr. marino-aye, ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to appoint karen kemp to the board of registrars vote: mr. marino-aye, ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "approve Article 26 with $54,000 coming from Free Cash",
+   "motion": "Approve the minutes of March 16, March 30, April 1, April 6 and April 13, 2021.",
+   "moved_by": "K. Adams",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "to approve the minutes of march 16, march 30, april 1, april 6 and april 13, 2021 vote: ms. adams-aye, mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "motion": "Recommend approval of Article 3 amended to $645.",
    "moved_by": "M. Jeffreys",
-   "seconded_by": "",
-   "outcome": "failed",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: m. jeffreys to approve article 26 with $54,000 coming from free cash there was no second."
+   "quote": "to recommend approval of article 3 amended to $645 vote: ms. adams-aye, mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "motion": "Motion whose wording is not legible in the extracted text; a figure of $39,864,898.81 is printed beside it (the article it concerns is not identified).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "$39, 864,898.81 alonzo-aye vote: ms. adams-aye, mr. marino-aye, mr. dwyer-aye, mir. jeffreys-aye, mr."
+  },
+  {
+   "motion": "Enter executive session to discuss strategy with respect to collective bargaining (Municipal Employees Union, DPW Union, Fire Union) and adjourn after exiting executive session.",
+   "moved_by": "K. Adams",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed 5-0",
+   "procedural": true,
+   "quote": "to enter into executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position"
   }
  ],
- "dropped_unquoted": 4,
- "note": "OCR text. All votes recorded with full member lists showing individual ayes; no nays recorded.",
- "cost_usd": 0.16575050000000002
+ "dropped_unquoted": 0,
+ "note": "Scanned minutes read by macOS Vision OCR; several passages are garbled or out of order. The table on page 2 has its columns separated from their labels, so figures are attached by position and not verified against the printed table. The mover and seconder of the Kemp vote are printed as \"J., Marino\" and \"2n°: M. Jeffreys\". The motion wording behind the $39,864,898.81 vote (page 5) is not legible, so it is recorded with the motion unidentified. The Article 26 motion had no second and no vote. The meeting was held remotely; the minutes print a \"Members present\" list and do not say how each member joined. Subtotal and percentage figures on the page 2 table were not reconciled.",
+ "cost_usd": 0.13002075000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karen brochu, finance director; lorraine rudd"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Finance Director",
+   "status": "present",
+   "quote": "karen brochu, finance director, presented her report."
+  },
+  {
+   "name": "Lorraine Rudd",
+   "role": "Republican Party Nominees (1 position)",
+   "status": "present",
+   "quote": "ms. rudd was the only nominee present this evening as ms. kelly was running late at another appointment."
+  },
+  {
+   "name": "Ethen Rossi",
+   "role": "Northfield Road",
+   "status": "present",
+   "quote": "ethen rossi, northfield road, thanked everyone who has supported his black belt community service project"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee member but speaking as a citizen",
+   "status": "present",
+   "quote": "finance committee member but speaking as a citizen, believed the article awarding $54,000 had been added late"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board deferred any recommendation on Article 26 ($54,000 from Free Cash) until the TCP Building Design Committee presents at town meeting; the motion to approve it got no second.",
+   "quote": "it was decided to defer any recommendation until the presentation by the tcp building design committee at town meeting."
+  },
+  {
+   "decision": "Articles 18 and 19 passed over (negotiations continue with the Fire and clerical bargaining units) and added to the Consent Calendar.",
+   "quote": "ms. lemieux reported that articles 18 and 19 have been added to the consent calendar because they will be passed over."
+  },
+  {
+   "decision": "Article 30 (sewer district extension) kept off the Consent Calendar because the petitioner is withdrawing it at town meeting.",
+   "quote": "the petitioner will have to do that at town meeting so it will not be included in the consent calendar."
+  },
+  {
+   "decision": "Board to interview the other Republican registrar nominee at its next meeting.",
+   "quote": "the board thanked her for coming forward and they will interview the other person next week."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 total revenue collections",
+   "what_was_recorded": "Total collections to date against FY21 estimates through March 31, 2021.",
+   "figures_as_printed": [
+    "$34,340,102.63",
+    "79%"
+   ],
+   "quote": "total collections to date are $34,340,102.63, or 79% of fy21 estimates through march 31, 2021."
+  },
+  {
+   "topic": "FY21 local receipts estimate",
+   "what_was_recorded": "The FY21 local receipt estimate, with collections against it through 3/31/2021 printed in the presentation.",
+   "figures_as_printed": [
+    "$3,065,990.50",
+    "$2,788,925.18",
+    "91%"
+   ],
+   "quote": "the local receipt estimate for fy21 is $3,065,990.50."
+  },
+  {
+   "topic": "FY21 tax levy and tax liens",
+   "what_was_recorded": "Tax levy net of overlay, amount collected to date, and tax lien revenue received.",
+   "figures_as_printed": [
+    "$28,776,249.82",
+    "$21,927,667.16 (76%)",
+    "$186,180.73"
+   ],
+   "quote": "the total tax levy for fy21, net of the overlay, is $28,776,249.82."
+  },
+  {
+   "topic": "FY21 state aid estimate",
+   "what_was_recorded": "Total state aid estimate per the FY2021 Cherry Sheet.",
+   "figures_as_printed": [
+    "$9,109,747.00"
+   ],
+   "quote": "the total state aid estimate per the fy2021 cherry sheet is $9,109,747.00"
+  },
+  {
+   "topic": "FY21 budgeted expenditures",
+   "what_was_recorded": "Total FY21 budgeted expenditures and the amount expended or encumbered as of 3/31/21.",
+   "figures_as_printed": [
+    "$43,316,403.41",
+    "$30,252,404.35 (70%)"
+   ],
+   "quote": "the total budgeted expenditures for fy21 are $43,316,403.41."
+  },
+  {
+   "topic": "Reserve Fund",
+   "what_was_recorded": "No draw on the Reserve Fund to date; budgeted amount stated.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "reserve fund - to date there has been no draw on the reserve fund. the budgeted amount is $75,000."
+  },
+  {
+   "topic": "Injury Leave deficit",
+   "what_was_recorded": "Deficit in the injury leave account from injuries to two on-call firefighters, partly reimbursed by the insurer; remainder may be cleared by approved transfers under MGL Chapter 44, Section 33B.",
+   "figures_as_printed": [
+    "$6,256.02"
+   ],
+   "quote": "as of 3/31/21 there is a deficit of $6,256.02 in this account due to injuries of two on call firefighters."
+  },
+  {
+   "topic": "Snow removal deficit",
+   "what_was_recorded": "Current snow removal deficit based on expenditures to date; may be cleared by approved transfers under MGL Chapter 44, Section 33B.",
+   "figures_as_printed": [
+    "$40,083.90"
+   ],
+   "quote": "the current deficit in snow removal based on actual expenditures to date is $40,083.90."
+  },
+  {
+   "topic": "Health insurance surplus",
+   "what_was_recorded": "Projected year-end surplus in health insurance, usable to offset other omnibus deficits; remainder falls to free cash.",
+   "figures_as_printed": [
+    "roughly $275k"
+   ],
+   "quote": "there will be a surplus of roughly $275k in this account at year end."
+  },
+  {
+   "topic": "Article 3 prior-year bill",
+   "what_was_recorded": "Additional prior-year bill raises Article 3 to $645, taken from free cash.",
+   "figures_as_printed": [
+    "$500",
+    "$645.00"
+   ],
+   "quote": "there was an additional prior year bill of $500, bring the total to $645.00 for article 3."
+  },
+  {
+   "topic": "Solid waste and recycling bid",
+   "what_was_recorded": "Bid received for solid waste and recycling requires an additional amount in the omnibus budget.",
+   "figures_as_printed": [
+    "$105,100"
+   ],
+   "quote": "requiring an additional $105,100."
+  },
+  {
+   "topic": "TCP building additional design services",
+   "what_was_recorded": "Cost estimate for TCP building additional design services, to come from free cash (Article 26).",
+   "figures_as_printed": [
+    "$54,000"
+   ],
+   "quote": "the cost estimate for the tcp building additional design services will be $54,000, to be taken from free cash"
+  },
+  {
+   "topic": "Old Primary School landscape design",
+   "what_was_recorded": "Cost of landscape design for the old Primary School.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "the old primary school landscape design will be $30,000."
+  },
+  {
+   "topic": "TCP new building design estimate (committee report)",
+   "what_was_recorded": "Cost estimate for design of a new TCP building instead of renovations, to be presented to Finance Committee.",
+   "figures_as_printed": [
+    "$54,000"
+   ],
+   "quote": "they did get a cost estimate of $54,000 for the design of a new building instead of renovations."
+  },
+  {
+   "topic": "Article 26 motion with no second",
+   "what_was_recorded": "Motion to approve Article 26 with $54,000 from Free Cash; no second, so no vote.",
+   "figures_as_printed": [
+    "$54,000"
+   ],
+   "quote": "to approve article 26 with $54,000 coming from free cash"
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "Accounts payable and payroll warrants the Chair signed the previous week.",
+   "figures_as_printed": [
+    "$1,131,778.51",
+    "$2,540.97",
+    "$567,545.31",
+    "$831,881.46"
+   ],
+   "quote": "accounts payable warrant #47 21, dated 4/13/2021, in the amount of $1,131,778.51"
+  },
+  {
+   "topic": "Public comment on Article 26 timing",
+   "what_was_recorded": "Chris Menard said the $54,000 article was added late and suggested it be pulled and postponed.",
+   "figures_as_printed": [
+    "$54,000"
+   ],
+   "quote": "believed the article awarding $54,000 had been added late and failure to provide public comment could"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Karing4Kids care bags donation drive",
+   "speaker": "Ethen Rossi",
+   "stated_role": "Northfield Road",
+   "quote": "ethen rossi, northfield road, thanked everyone who has supported his black belt community service project, karing4kids to provide care bags for in the hospital."
+  },
+  {
+   "topic": "Article 26 added late and postponement",
+   "speaker": "Chris Menard",
+   "stated_role": "672 Page St., Finance Committee member but speaking as a citizen",
+   "quote": "finance committee member but speaking as a citizen, believed the article awarding $54,000 had been added late"
+  },
+  {
+   "topic": "Civility toward board members",
+   "speaker": "Mr. Jeffreys",
+   "stated_role": "Vice Chairman",
+   "quote": "mr. jeffreys speaking to the public stated being a selectmen is not an easy job."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "ethen rossi, northfield road, thanked everyone who has supported his black belt community service project",
+   "tags": [
+    "public comment",
+    "community"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "announced; no action",
+   "quote": "mr. alonzo announced the annual town meeting will be this saturday at 9:00 a.m. at the middle/high school.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "FY21 3rd quarter financial report",
+   "resolution": "presented",
+   "quote": "karen brochu, finance director, presented her report.",
+   "tags": [
+    "finance",
+    "FY21",
+    "revenue",
+    "expenditures"
+   ]
+  },
+  {
+   "topic": "Board of Registrars appointments",
+   "resolution": "Karen Kemp reappointed 5-0; second Republican nominee to be interviewed",
+   "quote": "to appoint karen kemp to the board of registrars vote: mr. marino-aye, ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye",
+   "tags": [
+    "appointments",
+    "registrars",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved 5-0",
+   "quote": "to approve the minutes of march 16, march 30, april 1, april 6 and april 13, 2021 vote: ms. adams-aye",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "reported signed",
+   "quote": "mr. alonzo reported he had signed the following warrants last week:",
+   "tags": [
+    "warrants",
+    "payables"
+   ]
+  },
+  {
+   "topic": "Action items (turn arrow, trash sticker program)",
+   "resolution": "reported; police chief contacting MassDOT",
+   "quote": "ms. adams reported a citizen had requested a right turn arrow (westbound)",
+   "tags": [
+    "traffic",
+    "trash"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported",
+   "quote": "mr. jeffreys reported planning for a memorial day observance is ongoing.",
+   "tags": [
+    "committees",
+    "TCP building"
+   ]
+  },
+  {
+   "topic": "FY2022 budget, capital plan, forecast and Annual Town Meeting articles",
+   "resolution": "Article 3 recommended as amended to $645; Article 26 recommendation deferred; Articles 18 and 19 passed over",
+   "quote": "ms. lemieux presented adjustments from the preliminary budget to the recommended budget.",
+   "tags": [
+    "FY22 budget",
+    "capital plan",
+    "town meeting",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Consent Calendar for town meeting articles",
+   "resolution": "Articles 18 and 19 added to consent calendar",
+   "quote": "ms. lemieux reported that articles 18 and 19 have been added to the consent calendar",
+   "tags": [
+    "town meeting",
+    "consent calendar"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies and projects",
+   "resolution": "reported; no action",
+   "quote": "the following is a list of vacancies on the following committees:",
+   "tags": [
+    "vacancies",
+    "DPW",
+    "police",
+    "software"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "reported; no action",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of covid-19 cases",
+   "tags": [
+    "COVID-19",
+    "public health"
+   ]
+  },
+  {
+   "topic": "Public comment (before executive session)",
+   "resolution": "no action",
+   "quote": "mr. jeffreys speaking to the public stated being a selectmen is not an easy job.",
+   "tags": [
+    "public comment",
+    "civility"
+   ]
+  },
+  {
+   "topic": "Executive session (collective bargaining)",
+   "resolution": "entered executive session; adjourned at 9:00 p.m.",
+   "quote": "to enter into executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position",
+   "tags": [
+    "executive session",
+    "collective bargaining"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY21 3rd Quarter Financial Report (Karen Brochu, Finance Director)",
+   "where": "text",
+   "quote": "karen brochu, finance director, presented her report."
+  },
+  {
+   "name": "Chart of revenues (FY21)",
+   "where": "text",
+   "quote": "she reviewed the following chart of revenues with the select board:"
+  },
+  {
+   "name": "FY2021 Cherry Sheet",
+   "where": "text",
+   "quote": "the total state aid estimate per the fy2021 cherry sheet is $9,109,747.00"
+  },
+  {
+   "name": "Annual Town Meeting Warrant articles (FY2022 budget, capital plan, financial forecast)",
+   "where": "text",
+   "quote": "discussion on fiscal year 2022 budget, capital plan, financial forecast and"
+  },
+  {
+   "name": "Accounts Payable Warrant #47 21 (dated 4/13/2021) and related warrants",
+   "where": "text",
+   "quote": "accounts payable warrant #47 21, dated 4/13/2021, in the amount of $1,131,778.51"
+  },
+  {
+   "name": "Home Rule Petitions HD244 and HD 246 (Jaxx Country Variety liquor license; library trust fund investment)",
+   "where": "text",
+   "quote": "these were refiled this session and have been assigned new bill numbers, hd244 and hd 246 respectively"
+  },
+  {
+   "name": "Board of Health weekly COVID-19 update",
+   "where": "text",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of covid-19 cases"
+  },
+  {
+   "name": "Baker-Polito Administration Announces Plans for Continued Reopening",
+   "where": "text",
+   "quote": "baker-polito administration announces plans for continued reopening"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "FY2022 budget",
+  "FY21 third quarter",
+  "free cash",
+  "Annual Town Meeting",
+  "Board of Registrars",
+  "COVID-19",
+  "collective bargaining",
+  "executive session",
+  "TCP building",
+  "consent calendar"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

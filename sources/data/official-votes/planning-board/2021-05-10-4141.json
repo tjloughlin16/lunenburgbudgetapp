@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-05-10",
  "docid": "4141",
@@ -12,12 +12,12 @@
  },
  "votes": [
   {
-   "motion": "Deny the requested waiver from Section 325-4.2.E.(1) of the Code of the Town of Lunenburg",
+   "motion": "Deny the requested waiver from Code of the Town of Lunenburg Section 325-4.2.E.(1) (dead-end street maximum length).",
    "moved_by": "P. Bertram",
    "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made motion to deny the requested waiver from the code of the town of lunenburg, section 325-4.2.e.(1), t. cole seconded, roll call vote- p. bertram, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4 -0."
+   "quote": "p. bertram made motion to deny the requested waiver from the code of the town of lunenburg, section 325-4.2.e.(1), t. cole seconded, roll call vote- p. bertram, aye; m. brenner, aye"
   },
   {
    "motion": "Continue the hearing to June 28, 2021, 6:35 p.m.",
@@ -25,10 +25,164 @@
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "t. cole made motion to continue the hearing to june 28, 2021, 6:35 p.m., m. brenner seconded, roll call vote - p. bertram, aye; m. brenner, aye; t. cole, aye; m. allison. vote passed 4-0."
+   "quote": "t. cole made motion to continue the hearing to june 28, 2021, 6:35 p.m., m. brenner seconded, roll call vote - p. bertram, aye; m. brenner, aye; t. cole, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0997755
+ "note": "Continuation hearing; the minutes print no dollar figures, so budget_items and transfers are empty. Votes are recorded as printed (4-0 each); the continuance roll call lists M. Allison without an explicit 'aye', and the count printed is 4-0. The decision to review subdivision regulations is a staff undertaking rather than a board decision. The DPW memorandum and the site plan are referenced but not named as used at the meeting.",
+ "cost_usd": 0.016299550000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director:"
+  },
+  {
+   "name": "Paul Grasewicz, P.E.",
+   "role": "representing the applicant (GRAZ Engineering, LLC)",
+   "status": "present",
+   "quote": "the applicant was represented by paul grasewicz, p.e., graz engineering, llc, and david plunkett, esq."
+  },
+  {
+   "name": "David Plunkett, Esq.",
+   "role": "Attorney representing the applicant",
+   "status": "present",
+   "quote": "the applicant was represented by paul grasewicz, p.e., graz engineering, llc, and david plunkett, esq."
+  },
+  {
+   "name": "Andrea Adams",
+   "role": "118 Green Street, Woburn, MA (public, on behalf of her mother at 39 Pleasant Street)",
+   "status": "present",
+   "quote": "andrea adams, 118 green street, woburn, ma - she spoke on behalf of her mother who resided at 39 pleasant street."
+  },
+  {
+   "name": "Gregory Bittner",
+   "role": "32 Sandy Cove Road (public)",
+   "status": "present",
+   "quote": "gregory bittner, 32 sandy cove road - echoed a. adams' comment that the applicant wanted to maximize the financial benefit"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Land Use Director would send the applicant the continuance paperwork to sign and return.",
+   "quote": "a. burney would send him the appropriate paperwork to sign and return."
+  },
+  {
+   "decision": "The Land Use Director would review the subdivision regulations for whether a public benefit must result from granting a waiver.",
+   "quote": "and would review the subdivision regulations for same."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Road length waiver and financial benefit to applicant",
+   "speaker": "Andrea Adams",
+   "stated_role": "on behalf of her mother who resided at 39 Pleasant Street",
+   "quote": "she went on to opine that the reason for the road length was to maximize the financial benefit to the applicant."
+  },
+  {
+   "topic": "Road length waiver and public interest",
+   "speaker": "Gregory Bittner",
+   "stated_role": "32 Sandy Cove Road",
+   "quote": "echoed a. adams' comment that the applicant wanted to maximize the financial benefit and that the project would not be in the interest of lunenburg."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Pleasant Street six-lot duplex subdivision: waivers and continued hearing",
+   "resolution": "dead-end road waiver denied 4-0; hearing continued to June 28, 2021",
+   "quote": "the continuation this evening was specifically for review of the applicant's requested waivers and a discussion of the parking setback.",
+   "tags": [
+    "subdivision",
+    "public hearing",
+    "waiver",
+    "Pleasant Street",
+    "housing",
+    "wetlands",
+    "stormwater"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter, GRAZ Engineering, LLC, Waiver Requests, dated May 5, 2021",
+   "where": "list",
+   "quote": "letter, graz engineering, llc, waiver requests, dated may 5, 2021"
+  },
+  {
+   "name": "Site plan cover page listing three waivers",
+   "where": "text",
+   "quote": "three waivers were listed on the cover page of the site plan"
+  },
+  {
+   "name": "Chapter 325, Subdivision Regulations",
+   "where": "text",
+   "quote": "chapter 325, subdivision regulations, have a maximum dead -end road length of 650 feet"
+  },
+  {
+   "name": "Chapter 250, Zoning Bylaw",
+   "where": "text",
+   "quote": "under chapter 250, zoning bylaw , 10% of the units would have to be affordable."
+  },
+  {
+   "name": "Board Rules and Regulations for Site Plan Approval & Special Permits",
+   "where": "text",
+   "quote": "the board rules and regula tions for site plan approval & special permits contained such"
+  },
+  {
+   "name": "DPW memorandum discussed at the April 26 Hearing",
+   "where": "text",
+   "quote": "the dpw memorandum that was discussed at the april 26 th hearing"
+  }
+ ],
+ "tags": [
+  "subdivision",
+  "public hearing",
+  "waiver",
+  "Pleasant Street",
+  "duplex housing",
+  "wetlands",
+  "stormwater",
+  "dead-end road",
+  "continuance"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

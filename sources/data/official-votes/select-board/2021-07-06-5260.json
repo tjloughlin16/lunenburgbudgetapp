@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-07-06",
  "docid": "5260",
@@ -12,31 +12,283 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of seasonal lifeguards Ean Laundree and Mason Bowser",
+   "motion": "Ratify the Town Manager's appointment of seasonal lifeguards Ean Laundree and Mason Bowser.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2n°: t. dwyer to ratify the town manager appointment of seasonal lifeguard to ean laundree and mason bowser vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the town manager appointment of seasonal lifeguard to ean laundree and mason bowser vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of June 15, 2021 as presented",
+   "motion": "Approve the Minutes of June 15, 2021 as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j. marino to approve the minutes of june 15, 2021 as presented vote: all in favor 2nd: t. dwyer"
+   "quote": "motion: j. marino to approve the minutes of june 15, 2021 as presented vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of June 22, 2021 as presented",
+   "motion": "Approve the Minutes of Jun 22, 2021 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0-1",
+   "outcome": "passed 4 in favor, 1 abstention (Alonzo)",
    "procedural": true,
-   "quote": "motion: l. franco to approve the minutes of jun 22, 2021 as presented vote: 4 in favor, 1 abstention (alonzo) 2°: t. dwyer"
+   "quote": "motion: l. franco to approve the minutes of jun 22, 2021 as presented vote: 4 in favor, 1 abstention (alonzo)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extract from macOS Vision. Three votes recorded: appointment ratification and two prior-minutes approvals. Executive session motion and adjournment announcement are noted but no formal vote text is recorded.",
- "cost_usd": 0.11714290000000001
+ "note": "Scanned minutes read by macOS Vision OCR; some text is garbled. The PAYT FY22 estimate table is scrambled in the OCR, so its figures are listed only where clearly printed, and '($15.107.20)' is as OCR gives it. The board-goals section begins mid-list on page 4, so the first goal is not in the text. The 'Mr. Jeffreys' / 'Michael-Kay Jetfreys' spellings are as printed. No motion or vote is recorded for entering executive session or for adjournment, so none is listed. The minutes state 'public comment-there was none this evening'; the chair's opening remarks are not recorded as public comment. Executive session minutes are separate and not in this text. Votes are recorded only where the minutes print a motion and vote.",
+ "cost_usd": 0.021092490000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Michael-Kay Jetfreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chairman; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "absent",
+   "quote": "not present: heather lemieux, town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board thought the landscape A&E RFP scope for 30 School Street was accurate; questions to be directed to the Town Manager.",
+   "quote": "in general the board thought the scope was accurate. any questions should be directed to the town manager."
+  },
+  {
+   "decision": "Board agreed the PAYT bag program is a pilot that could change, to be discussed further at the next meeting.",
+   "quote": "the board agreed it should be noted that this is a pilot program and it could change."
+  },
+  {
+   "decision": "Chair asked seniors watching to tell the COA Director their typical PAYT bag usage, to calculate the benefit of the program.",
+   "quote": "mr. alonzo requested any seniors watching to inform the coa director what their typical usage of payt bags is in order"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 and FY22 warrants signed the previous week",
+   "what_was_recorded": "Chair and Vice Chair reported signing FY21 accounts payable, payroll and deduction warrants, and the first FY22 accounts payable warrant, each with a printed amount.",
+   "figures_as_printed": [
+    "$452,078.54",
+    "$971,042.08",
+    "$48,131.46",
+    "$247,947",
+    "$23,883.66",
+    "$202,252.62",
+    "$1,650,317.81"
+   ],
+   "quote": "fiscal year 2021 accounts payable warrant #60 21, dated 6/22/2021, in the amount of $452,078.54;"
+  },
+  {
+   "topic": "Warrants presented for signatures",
+   "what_was_recorded": "Two warrants were presented for signature, a payroll warrant and a payroll deductions warrant, each with a printed amount.",
+   "figures_as_printed": [
+    "$725,102.11",
+    "$25,419.61"
+   ],
+   "quote": "payroll warrant in the amount of $725,102.11"
+  },
+  {
+   "topic": "Pay As You Throw bag fee, proposed 15% increase and FY22 surplus or deficit",
+   "what_was_recorded": "Town Manager email, read into the record, says a 15% bag price increase would still leave an FY22 deficit, covered by FY21 surplus; the estimate table prints revenue, pickup and disposal, and a projected surplus or deficit. The OCR of the table is scrambled, so only clearly printed figures are listed; the printed deficit figure is '($15.107.20)' as OCR gives it, and the minutes as printed may be reading ($15,107.20).",
+   "figures_as_printed": [
+    "$322.00",
+    "$655.50",
+    "$1,002.80",
+    "$164,220.00",
+    "$285,798.00",
+    "$11,030.80",
+    "$21,802.50",
+    "$33,354.00",
+    "$1,149.50",
+    "$142,417.50",
+    "$419,850.00",
+    "($15.107.20)"
+   ],
+   "quote": "a 15% increase would still be a deficit in fy22 but we would be utilizing the surplus of funds that we will be closing out due to increased sales in fy21 to cover the deficit."
+  },
+  {
+   "topic": "Landscape A&E RFP scope for 30 School Street",
+   "what_was_recorded": "A member said the scope was too broad for the approved budget for the work; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "believed the scope from schematic design, design development to construction documents was too broad considering the approved budget for the work."
+  },
+  {
+   "topic": "Capital Planning Committee project criteria change",
+   "what_was_recorded": "CPC's policy change involves a dollar amount change; the new dollar figure is not printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "cpc will be meeting to finalize and adopt the new policy which involves a dollar amount change."
+  },
+  {
+   "topic": "Pond View Commons 40B: Chapter 40B technical assistance grant for the ZBA",
+   "what_was_recorded": "MHP grants to municipalities for consultants to assist the ZBA with a Chapter 40B review, as described in the MassHousing letter.",
+   "figures_as_printed": [
+    "$15,000"
+   ],
+   "quote": "for up to $15,000 to engage qualified third-party consultants to work with the town's zba in reviewing"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and chair's remarks",
+   "resolution": "noted; no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m."
+  },
+  {
+   "topic": "Ratification of seasonal lifeguard appointments",
+   "resolution": "approved",
+   "quote": "ratification of the town manager's appointments of seasonal lifeguards ean laundree and mason bowser"
+  },
+  {
+   "topic": "Draft RFP, landscape A&E services, 30 School Street",
+   "resolution": "reviewed; no vote, scope accepted, questions to Town Manager",
+   "quote": "review of draft request for proposals for landscape architectural & engineering services for 30 school street"
+  },
+  {
+   "topic": "Notice of trespass letters",
+   "resolution": "reported for the record; no action",
+   "quote": "mr. alonzo reported for the public record two letters sent by town counsel to property owners"
+  },
+  {
+   "topic": "Pond View Commons 40B site approval (Howard Street)",
+   "resolution": "discussed; no action recorded",
+   "quote": "site approval submitted by pond view commons, llc (the applicant)."
+  },
+  {
+   "topic": "Approval of minutes, June 15 and June 22, 2021",
+   "resolution": "approved",
+   "quote": "to approve the minutes of june 15, 2021 as presented"
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed; reported",
+   "quote": "mr. alonzo and mr. jeffreys reported they signed the following warrants the previous week:"
+  },
+  {
+   "topic": "Action items",
+   "resolution": "none",
+   "quote": "action items: there were none"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported; no action",
+   "quote": "mr. franco reported the economic development committee met june 24."
+  },
+  {
+   "topic": "Board goals",
+   "resolution": "discussed; members asked for comments",
+   "quote": "the third goal was changing their previous year's goal regarding volunteerism to a policy."
+  },
+  {
+   "topic": "Pay As You Throw bag fee and proposed increase",
+   "resolution": "discussed; continued to next meeting",
+   "quote": "this will be discussed further at the next meeting."
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "noted",
+   "quote": "mr. alonzo noted the board's next meetings were on july 13, july 20, august 3."
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "none",
+   "quote": "public comment-there was none this evening"
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "announced; adjourned at 7:54 p.m. (no motion recorded)",
+   "quote": "mr. alonzo announced the board would be entering executive session and adjourning afterwards."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager email on PAYT bags (undated in minutes)",
+   "where": "list",
+   "quote": "mr. alonzo referred to an email sent by town manager:"
+  },
+  {
+   "name": "FY 22 Estimate - 15%/Roll Increase table (PAYT bags)",
+   "where": "list",
+   "quote": "below is the data for a 15% increase if the board decides not to offer the bag relief for seniors."
+  },
+  {
+   "name": "Warrants signed the previous week (FY21 and FY22)",
+   "where": "list",
+   "quote": "mr. alonzo and mr. jeffreys reported they signed the following warrants the previous week:"
+  },
+  {
+   "name": "Draft Request for Proposals for Landscape Architectural & Engineering Services for 30 School Street",
+   "where": "text",
+   "quote": "review of draft request for proposals for landscape architectural & engineering services for 30 school street"
+  },
+  {
+   "name": "Two letters sent by Town Counsel to property owners (notice of trespass)",
+   "where": "text",
+   "quote": "mr. alonzo reported for the public record two letters sent by town counsel to property owners"
+  },
+  {
+   "name": "MassHousing site approval letter, Pond View Commons (Michael Busby, Relationship Manager)",
+   "where": "text",
+   "quote": "site approval submitted by pond view commons, llc (the applicant)."
+  },
+  {
+   "name": "Pond View Commons application and site plans",
+   "where": "text",
+   "quote": "the town has received a copy of the application and site plans for pond view commons."
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "appointments",
+  "lifeguards",
+  "landscape RFP",
+  "30 School Street",
+  "40B",
+  "Pond View Commons",
+  "Howard Street",
+  "water district",
+  "PAYT bags",
+  "trash fees",
+  "warrants",
+  "minutes approval",
+  "board goals",
+  "trespass notices",
+  "committee reports"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. alonzo referred to an email sent by town manager"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-08-26",
  "docid": "2092",
@@ -12,31 +12,263 @@
  },
  "votes": [
   {
-   "motion": "Approve the Finance Committee procedures and goals document as amended",
-   "moved_by": "Mr. Menard",
-   "seconded_by": "Mr. Watters",
+   "motion": "Approve the Finance Committee procedures and goals document as amended.",
+   "moved_by": "Chris Menard",
+   "seconded_by": "Evan Watters",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "mr. menard motioned to approve the procedures and goals document as amended, mr. watters seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Approve the minutes from the August 12, 2021 meeting with corrections",
-   "moved_by": "Mr. Passios",
-   "seconded_by": "Mr. Menard",
+   "motion": "Approve the minutes with corrections from the August 12, 2021 meeting.",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Chris Menard",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. passios motioned to approve the minutes with corrections from the august 12, 2021 meeting, mr. menard seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Mr. Watters",
-   "seconded_by": "Mr. Passios",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Evan Watters",
+   "seconded_by": "Dave Passios",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "mr. watters motioned to adjourn; mr. passios seconded. on vote, motion carried unanimously."
+   "quote": "at 8:40 p.m. mr. watters motioned to adjourn; mr. passios seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.106839
+ "note": "Text is clean and complete (one page-break mid-sentence, rejoined). Votes are recorded only as \"motion carried unanimously\", with no tally, so outcomes are \"passed unanimously\". No documents are set out in a list; the procedures document and the Warrant are mentioned in the text only. Public comment was \"None\" at both points.",
+ "cost_usd": 0.01608989,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "Town Accountant",
+   "status": "present",
+   "quote": "guests: town accountant karen brochu, fire department chief patrick sullivan, council on aging director susan doherty"
+  },
+  {
+   "name": "Patrick Sullivan",
+   "role": "Fire Department Chief",
+   "status": "present",
+   "quote": "guests: town accountant karen brochu, fire department chief patrick sullivan, council on aging director susan doherty"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "Council on Aging Director",
+   "status": "present",
+   "quote": "guests: town accountant karen brochu, fire department chief patrick sullivan, council on aging director susan doherty"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee set a public hearing on the Warrant for November 14, 2021, and Special Town Meeting for November 16, 2021.",
+   "quote": "the committee will hold a public hearing on the warrant on november 14, 2021. special town meeting will be held on november 16, 2021."
+  },
+  {
+   "decision": "Next committee meetings set for September 9 and September 23, 2021.",
+   "quote": "next meetings: september 9, september 23"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Town revenue versus expectations (FY21 year end)",
+   "what_was_recorded": "The Town Accountant reported revenues exceeded expectations by 2.2 percent for the year.",
+   "quote": "said the town had a very good year with revenues exceeding expectations by 2.2 percent.",
+   "figures_as_printed": [
+    "2.2 percent"
+   ]
+  },
+  {
+   "topic": "Unused levy capacity in prior years",
+   "what_was_recorded": "The Town Accountant said there were years the town did not levy to capacity, and that changes can be made at Annual Town Meeting.",
+   "quote": "ms. brochu added that there were a number of years when the town didn't levy to capacity",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA funds timing",
+   "what_was_recorded": "A member asked when decisions would be made on ARPA funds; the Town Accountant said projects must be checked against U.S. Treasury guidelines.",
+   "quote": "mr. menard asked when decisions would be made pertaining to arpa funds.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fire department staffing and vehicle",
+   "what_was_recorded": "The Fire Chief plans to hire another full-time staff person next year, will not request a new truck until 2027, and suggested using ARPA funds to replace an aging rescue vehicle.",
+   "quote": "has suggested using arpa funds to replace an aging rescue vehicle",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Public safety building repair cost",
+   "what_was_recorded": "The Fire Chief said the public safety building has mold and drafty-window problems and that the cost of fixing them is unknown.",
+   "quote": "mr. sullivan said he doesn't know what the cost would be to fix the issues.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Council on Aging outdoor area grant",
+   "what_was_recorded": "The COA Director is looking into a grant to start work on the back outdoor area of the senior center.",
+   "quote": "she is looking into a $20,000 grant to get started",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "Cares Act and Formula Grant funds at senior center",
+   "what_was_recorded": "The COA Director used carried-over Formula Grant funds, donations and fundraising rather than Cares Act funds, and used existing funds for a projector and sound system.",
+   "quote": "ms. doherty answered that since she was able to carry over formula grant funds this year",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and Announcements",
+   "resolution": "no action",
+   "quote": "peter beardmore called the meeting to order at 7:01 p.m. and read a statement",
+   "tags": [
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Finance Director Report",
+   "resolution": "discussed, no action",
+   "quote": "ms. brochu updated the committee on fourth quarter revenues and expenditures",
+   "tags": [
+    "revenue",
+    "town finances"
+   ]
+  },
+  {
+   "topic": "Discussion with Fire Chief",
+   "resolution": "discussed, no action",
+   "quote": "mr. sullivan informed the committee that he will be looking to hire another full-time staff person next year",
+   "tags": [
+    "fire department",
+    "public safety building",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Discussion with COA Director",
+   "resolution": "discussed, no action",
+   "quote": "ms. doherty informed the committee that the senior center is getting back to normal",
+   "tags": [
+    "council on aging",
+    "senior center"
+   ]
+  },
+  {
+   "topic": "Old Business: procedures and goals document",
+   "resolution": "approved as amended",
+   "quote": "mr. balish edited the portion of the document concerning off budget spending",
+   "tags": [
+    "committee procedures"
+   ]
+  },
+  {
+   "topic": "Old Business: Special Town Meeting timeline",
+   "resolution": "dates set",
+   "quote": "the committee will hold a public hearing on the warrant on november 14, 2021.",
+   "tags": [
+    "special town meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "mr. passios motioned to approve the minutes with corrections from the august 12, 2021 meeting",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "committee members updated each other on their respective assignments",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Next Meetings and Adjournment",
+   "resolution": "adjourned at 8:40 p.m.",
+   "quote": "at 8:40 p.m. mr. watters motioned to adjourn",
+   "tags": [
+    "scheduling"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Finance Committee procedures and goals document",
+   "where": "text",
+   "quote": "mr. balish edited the portion of the document concerning off budget spending"
+  },
+  {
+   "name": "Warrant for Special Town Meeting",
+   "where": "text",
+   "quote": "the committee will hold a public hearing on the warrant on november 14, 2021."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "town finances",
+  "ARPA funds",
+  "fire department",
+  "council on aging",
+  "public safety building",
+  "special town meeting",
+  "warrant",
+  "revenue",
+  "senior center"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-08-12",
  "docid": "2091",
@@ -12,31 +12,407 @@
  },
  "votes": [
   {
-   "motion": "to adopt the wording of the Finance Committee Resolution as presented",
+   "motion": "Adopt the wording of the Finance Committee Resolution as presented.",
    "moved_by": "Mr. Passios",
    "seconded_by": "Mr. Menard",
    "outcome": "failed",
    "procedural": false,
-   "quote": "mr. passios moved to adopt the wording of the finance committee resolution as presented. mr. menard seconded. on vote, mr. beardmore: aye, mr. simeone: abstain, mr. watters: nay, mr. balish: nay, mr. gray: nay. motion does not pass."
+   "quote": "mr. passios moved to adopt the wording of the finance committee resolution as presented. mr. menard seconded. on vote, mr. beardmore: aye, mr. simeone: abstain, mr. watters: nay, mr. balish: nay,"
   },
   {
-   "motion": "to approve the July 22, 2021 meeting minutes as amended",
+   "motion": "Approve the July 22, 2021 meeting minutes as amended.",
    "moved_by": "Mr. Simeone",
    "seconded_by": "Mr. Menard",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. simeone motioned to approve the july 22, 2021 meeting minutes as amended. mr. menard seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Mr. Watters",
    "seconded_by": "Mr. Passios",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. watters motioned to adjourn. mr. passios seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0998375
+ "note": "Plain-text extraction of the minutes; no attachments are included. Only three motions are recorded and each carries a printed result: the resolution motion is printed \"Motion does not pass\" (individual votes: Beardmore aye, Simeone abstain, Watters, Balish and Gray nay), so it is recorded as failed. Member roles are not printed except the guests' roles. The minutes print \"about $526,000 to $270,000\" for the Pavement Management Plan as written. The $614,000 municipal and $2,279,580 county ARPA figures are printed side by side and the minutes do not reconcile them. Carol Archambault is listed as a guest but no statement by her is recorded. The APR $66,500 is recorded as becoming free cash, not as a transfer by the committee, so transfers are left empty.",
+ "cost_usd": 0.023598890000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Evan Watters",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Tom Gray",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Tom Balish",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray, tom balish"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg police chief thomas gammel, dpw director rob oliva, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Thomas Gammel",
+   "role": "Lunenburg Police Chief",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg police chief thomas gammel, dpw director rob oliva, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, lunenburg police chief thomas gammel, dpw director rob oliva, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "not stated",
+   "quote": "guests: town manager heather lemieux, lunenburg police chief thomas gammel, dpw director rob oliva, school committee chairperson carol archambault."
+  },
+  {
+   "name": "Amanda Koeck",
+   "role": "recording secretary",
+   "status": "not stated",
+   "quote": "mr. beardmore introduced new recording secretary amanda koeck to the committee."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Watters volunteered to serve as the committee's liaison to the Planning Board, checking in with the Land Use Director periodically.",
+   "quote": "mr. watters volunteered to serve as liaison to the planning board"
+  },
+  {
+   "decision": "The procedures and goals document was left in the shared drive for review, and the topic was carried to the next meeting.",
+   "quote": "mr. beardmore stated he would leave the document in the shared drive for review, and the topic can be discussed at the next meeting."
+  },
+  {
+   "decision": "A joint meeting of the school committee and finance committee is set for November 3, 2021 to learn about Chapter 70 funds.",
+   "quote": "on november 3, 2021 a joint meeting of the school committee and finance committee will take place to learn about chapter 70 funds"
+  },
+  {
+   "decision": "The next meetings are set for August 26, 2021 and September 9, 2021 at 7 p.m. at Town Hall.",
+   "quote": "august 26, 2021, and september 9, 2021 at 7 p.m. at town hall"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA municipal funds received",
+   "what_was_recorded": "The town received 50 percent of its American Rescue Plan Act funds, printed as $614,000 in municipal funds.",
+   "figures_as_printed": [
+    "$614,000"
+   ],
+   "quote": "the town has received 50 percent of funds from the american rescue plan act, which was $614,000 in municipal funds."
+  },
+  {
+   "topic": "ARPA county allocation",
+   "what_was_recorded": "The county allocation was determined to be $2,279,580, with 50 percent to be paid directly to the town by about August 16, 2021; printed alongside the $614,000 figure without reconciliation.",
+   "figures_as_printed": [
+    "$2,279,580"
+   ],
+   "quote": "there was a determination that the county allocation comes out to $2,279,580, 50 percent of which will be paid directly to the town by or around august 16, 2021 with no request process."
+  },
+  {
+   "topic": "Chapter 90 funds and Pavement Management Plan",
+   "what_was_recorded": "The DPW reported $628,000 in Chapter 90 funds still to be spent and gave the Pavement Management Plan as about $526,000 to $270,000, including the drainage portion for debt exclusion, as printed.",
+   "figures_as_printed": [
+    "$628,000",
+    "$526,000",
+    "$270,000"
+   ],
+   "quote": "mr. oliva informed the committee there are $628,000 in chapter 90 funds still to be spent, and the pavement management plan is at about $526,000 to $270,000 including the drainage portion for debt exclusion."
+  },
+  {
+   "topic": "DPW large tractor with rotary mower",
+   "what_was_recorded": "The DPW said it needs a large tractor with a rotary mower for roadside vegetation, which will probably cost more than $160,000.",
+   "figures_as_printed": [
+    "$160,000"
+   ],
+   "quote": "mr. oliva stated the dpw needs a large tractor with a rotary mower to efficiently handle roadside vegetation, and will probably cost more than $160,000."
+  },
+  {
+   "topic": "Flail mower upgrade cost",
+   "what_was_recorded": "An upgrade to the flail mower would cost $30,000 but would not be the right tool for the job.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "mr. oliva replied that one would cost $30,000, but would not be the right tool for the job."
+  },
+  {
+   "topic": "Worcester ARPA spending on parks",
+   "what_was_recorded": "A committee member said the city of Worcester received ARPA funds and is spending a sum on its parks; figures are about another municipality.",
+   "figures_as_printed": [
+    "$110 million",
+    "$10 million"
+   ],
+   "quote": "the city of worcester received $110 million in arpa funds, and is spending $10 million on their parks."
+  },
+  {
+   "topic": "Off-budget spending threshold",
+   "what_was_recorded": "The committee's proposed procedure covers off-budget spending in excess of $20,000.",
+   "figures_as_printed": [
+    "$20,000"
+   ],
+   "quote": "proposed procedure on off budget spending in excess of $20,000."
+  },
+  {
+   "topic": "APR withdrawn, article rescinded",
+   "what_was_recorded": "Because the applicants withdrew, the article passed at the last Town Meeting will be rescinded and $66,500 becomes free cash to be appropriated by the Town Manager.",
+   "figures_as_printed": [
+    "$66,500"
+   ],
+   "quote": "the article passed at the last town meeting will be rescinded and the $66,500 will become free cash to be appropriated by the town manager."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action; Open Meeting Law statement read",
+   "quote": "peter beardmore called the meeting to order at 7:01 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational; joint meeting with school committee to be scheduled",
+   "quote": "mr. beardmore informed the committee there would be an upcoming joint meeting",
+   "tags": [
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "quote": "3. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager/Finance Director Report",
+   "resolution": "informational",
+   "quote": "ms. lemieux shared updates from the latest select board meeting",
+   "tags": [
+    "School Street",
+    "Flat Hill Road",
+    "food pantry",
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Discussion with DPW Director",
+   "resolution": "discussion, no action",
+   "quote": "mr. beardmore explained that all department heads have been invited to finance committee meetings",
+   "tags": [
+    "DPW",
+    "Chapter 90",
+    "equipment",
+    "parks"
+   ]
+  },
+  {
+   "topic": "Discussion with Police Chief",
+   "resolution": "discussion, no action",
+   "quote": "mr. gammel informed the committee that his department is sticking to their 10-year plan",
+   "tags": [
+    "police",
+    "staffing",
+    "training"
+   ]
+  },
+  {
+   "topic": "Old Business: ARPA Planning",
+   "resolution": "no action; estimates still being gathered",
+   "quote": "ms. lemieux pointed out that plans for any projects would have to be completed so the money could be spent by 2024.",
+   "tags": [
+    "ARPA"
+   ]
+  },
+  {
+   "topic": "Old Business: 40B commentary",
+   "resolution": "informational",
+   "quote": "ms. lemieux stated the public comment period for the latest 40b project has been extended to september 2",
+   "tags": [
+    "40B"
+   ]
+  },
+  {
+   "topic": "Old Business: Finance Committee procedures and goals document",
+   "resolution": "motion failed; document left for review and carried to next meeting",
+   "quote": "mr. passios moved to adopt the wording of the finance committee resolution as presented.",
+   "tags": [
+    "off-budget spending",
+    "procedures"
+   ]
+  },
+  {
+   "topic": "Old Business: Committee assignments",
+   "resolution": "Watters volunteered as Planning Board liaison",
+   "quote": "mr. watters volunteered to serve as liaison to the planning board",
+   "tags": [
+    "assignments"
+   ]
+  },
+  {
+   "topic": "New Business: Special Town Meeting Timeline",
+   "resolution": "informational; warrant discussion to start in September",
+   "quote": "finance committee recommendations on the warrant are due by october 14, 2021, which will be advertised as a public hearing.",
+   "tags": [
+    "Special Town Meeting",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "New Business: Senior Citizen Tax Exemption",
+   "resolution": "discussion, no action",
+   "quote": "ms. lemieux and the select board have been discussing ways to incorporate a senior citizen discount program into real estate taxes",
+   "tags": [
+    "senior exemption",
+    "tax"
+   ]
+  },
+  {
+   "topic": "New Business: APR",
+   "resolution": "informational; article to be rescinded",
+   "quote": "ms. lemieux informed the board that the town was notified by department of agricultural resources",
+   "tags": [
+    "APR",
+    "free cash"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved as amended",
+   "quote": "mr. simeone motioned to approve the july 22, 2021 meeting minutes as amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action; members updated each other",
+   "quote": "committee members updated each other on their respective assignments",
+   "tags": [
+    "assignments"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "none",
+   "quote": "11. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "joint meeting set for November 3, 2021",
+   "quote": "on november 3, 2021 a joint meeting of the school committee and finance committee will take place to learn about chapter 70 funds",
+   "tags": [
+    "Chapter 70"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "set for August 26 and September 9, 2021",
+   "quote": "august 26, 2021, and september 9, 2021 at 7 p.m. at town hall",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned, unanimous",
+   "quote": "mr. watters motioned to adjourn.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Finance Committee Resolution (wording as presented, August 12, 2021)",
+   "where": "text",
+   "quote": "mr. beardmore defined the topic at hand as a resolution of the finance committee that will be shared with any interested party."
+  },
+  {
+   "name": "Finance Committee procedures and goals document",
+   "where": "text",
+   "quote": "but the procedure and goals document aims to create a formal discussion on off budget spending."
+  },
+  {
+   "name": "Town Charter",
+   "where": "text",
+   "quote": "contradictory to the roles and responsibilities of the finance committee and the town manager in the town charter."
+  },
+  {
+   "name": "Pavement Management Plan",
+   "where": "text",
+   "quote": "mr. beardmore asked for an update on the pavement management plan."
+  },
+  {
+   "name": "Town audit",
+   "where": "text",
+   "quote": "mr. beardmore said the finance committee does have access to the audit"
+  },
+  {
+   "name": "Quarterly reports",
+   "where": "text",
+   "quote": "mr. balish asked if quarterly reports are discussed amongst the finance committee."
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "ARPA",
+  "Chapter 90",
+  "DPW",
+  "police staffing",
+  "Special Town Meeting",
+  "off-budget spending",
+  "Finance Committee procedures",
+  "senior tax exemption",
+  "APR",
+  "parks and fields scheduling",
+  "Chapter 70",
+  "minutes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

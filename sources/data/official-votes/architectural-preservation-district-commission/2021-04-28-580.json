@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2021-04-28",
  "docid": "580",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes from the March 24th meeting",
+   "motion": "Accept the March 24th meeting minutes as read.",
    "moved_by": "Dwyer",
    "seconded_by": "Nicastro",
    "outcome": "passed",
@@ -21,6 +21,188 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The discussion of Article 24 (opposing warrant article 24) is described as \"it was agreed\" but contains no formal motion language, so it is not counted as a vote per the rule against inferring votes from discussions. The adjournment is noted without a recorded motion to adjourn.",
- "cost_usd": 0.0882785
+ "note": "Minutes list three members in attendance at call to order; Brian Corcoran is marked absent by inference from that line, not by an explicit statement. The one motion records \"carried\" with no tally. The APDC's Article 24 opposition was agreed without a recorded vote. The adjournment has no recorded motion. No dollar figures appear. The meeting was held remotely.",
+ "cost_usd": 0.01589755,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order: at 7:04pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "call to order: at 7:04pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Tony Nicastro",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order: at 7:04pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "call to order: at 7:04pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "status": "present",
+   "quote": "at the end of the meeting, rhonda lisio joined to verbally express her objection to article 24."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The APDC agreed to oppose Warrant Article 24.",
+   "quote": "it was agreed that the apdc would oppose it."
+  },
+  {
+   "decision": "Dwyer agreed to review the recorded meeting and prepare a statement opposing Article 24, covering the salient points discussed.",
+   "quote": "dwyer agreed to review the recorded meeting and prepare a statement that included the salient points"
+  },
+  {
+   "decision": "The chair notified the DPW that the missing APD sign on the west end of Massachusetts Avenue needs to be replaced.",
+   "quote": "that it needs to be replaced."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Objection to Article 24",
+   "speaker": "Rhonda Lisio",
+   "quote": "at the end of the meeting, rhonda lisio joined to verbally express her objection to article 24."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Review of Minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes from the march 24th meeting were read, dwyer motioned to accept them as read and nicastro seconded the motion"
+  },
+  {
+   "topic": "CTA Applications",
+   "resolution": "no action",
+   "tags": [
+    "CTA applications"
+   ],
+   "quote": "cta applications: none"
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "tags": [
+    "correspondence",
+    "Article 24",
+    "Old Primary School"
+   ],
+   "quote": "mcgrath wrote to matt alison of the planning board regarding the next steps to be taken with regard to the brooks house"
+  },
+  {
+   "topic": "APD signs",
+   "resolution": "DPW to replace missing sign",
+   "tags": [
+    "signage",
+    "DPW"
+   ],
+   "quote": "as requested, the dpw moved the apd sign on oak avenue to the correct location, and replaced the missing sign"
+  },
+  {
+   "topic": "Old Primary School",
+   "resolution": "no action; Form B in progress",
+   "tags": [
+    "Old Primary School",
+    "demolition",
+    "historic register"
+   ],
+   "quote": "dwyer has been completing a form b to submit to the mass historical commission for recognition"
+  },
+  {
+   "topic": "Article 24",
+   "resolution": "APDC to oppose; Dwyer to prepare statement",
+   "tags": [
+    "Article 24",
+    "town meeting",
+    "appeals"
+   ],
+   "quote": "it was agreed that the apdc would oppose it."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "tags": [
+    "public comment",
+    "Article 24"
+   ],
+   "quote": "at the end of the meeting, rhonda lisio joined to verbally express her objection to article 24."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter from McGrath to Matt Alison of the planning board, on the Brooks house and Article 24",
+   "where": "list",
+   "quote": "mcgrath wrote to matt alison of the planning board regarding the next steps to be taken with regard to the brooks house"
+  },
+  {
+   "name": "Two letters from Rhonda Lisio (one objecting to Article 24, one criticizing the Select Board on the Old Primary School)",
+   "where": "list",
+   "quote": "the apdc received two letters from rhonda lisio which were read: one objecting to warrant article 24"
+  },
+  {
+   "name": "Letter from Selectmen Jeffries on the Old Primary School and Article 24",
+   "where": "list",
+   "quote": "selectmen jeffries submitted a long, clear and thoughtful letter offering perspective on the situation"
+  },
+  {
+   "name": "Letter from James LaVeck objecting to Article 24",
+   "where": "list",
+   "quote": "james laveck submitted a letter objecting to article 24."
+  },
+  {
+   "name": "Letter from Secretary Brian Corcoran giving notice that his term ends in June 2021",
+   "where": "list",
+   "quote": "secretary brian corcoran submitted a letter notifying the apdc that his term will end in june this year"
+  },
+  {
+   "name": "Form B for the Old Primary School (Mass Historical Commission recognition)",
+   "where": "text",
+   "quote": "dwyer has been completing a form b to submit to the mass historical commission for recognition"
+  },
+  {
+   "name": "Article 24, original version as printed on the warrant",
+   "where": "text",
+   "quote": "it appears that the original version was printed on the warrant."
+  },
+  {
+   "name": "Article 24, revised version forwarded by Elaine Peterson",
+   "where": "text",
+   "quote": "the revised version opened that process to the owner of any building in the apd."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "Old Primary School",
+  "demolition",
+  "Article 24",
+  "town meeting",
+  "APD signs",
+  "DPW",
+  "correspondence",
+  "remote meeting",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence:"
+ },
+ "dropped_unquoted_by_field": {}
 }

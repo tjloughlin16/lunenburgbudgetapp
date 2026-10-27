@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-09-14",
  "docid": "6340",
@@ -12,15 +12,126 @@
  },
  "votes": [
   {
-   "motion": "To adjourn from Executive Session",
+   "motion": "To adjourn from Executive Session.",
    "moved_by": "J. Marino",
-   "seconded_by": "L. Franco",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: j. marino to adjourn from executive session vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye 2nd: l. franco"
+   "quote": "motion: j. marino to adjourn from executive session vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye",
+   "seconded_by": "L. Franco"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision; one procedural vote recorded at end of meeting.",
- "cost_usd": 0.0799955
+ "note": "Only page 1 of the minutes was supplied; the start of the meeting and any entry into executive session are not in this text. The text says 'The meeting commenced at 9:25 p.m.' but does not show the Board entering executive session. Text is macOS Vision OCR; the signature line is garbled in OCR ('Elaine m. Peters on') and was read as 'Elaine M. Peterson' from the clean line below it. The chair is not named in this page. Members' presence is inferred from the vote record ('Vote: Mr. Marino-aye, Mr. Franco-aye, Mr. Jeffreys-aye, Mr. Alonzo-aye'), not from an attendance roll. The seconder is printed as 'L. Franco' and the mover as 'J. Marino'; I have kept those as printed and listed the member as 'Mr. Franco'. The resident Dave MacDonald is named but did not take part in the meeting, so he is not listed as an attendee.",
+ "cost_usd": 0.01464899,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: town manager heather lemieux"
+  },
+  {
+   "name": "Mr. Marino",
+   "role": "Select Board member (as printed, 'Mr. Marino'; 'J. Marino' moved)",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Franco",
+   "role": "Select Board member (as printed, 'Mr. Franco'; 'L. Franco' seconded)",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Jeffreys",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Mr. Alonzo",
+   "role": "Select Board member",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus that the resident's offer to buy 665 Massachusetts Avenue and sell it to the Town did not fit the Town's needs.",
+   "quote": "the board's consensus was that mr. macdonald's offer did not fit what the town needed."
+  },
+  {
+   "decision": "Mr. Marino will reach out to the owner of the lot directly in front of the Public Safety Building to revisit a purchase.",
+   "quote": "mr. marino will reach out to the other property owner discussed above."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Resident's offer to buy and resell 665 Massachusetts Avenue",
+   "what_was_recorded": "A resident offered to buy the property and sell it to the Town for a price the minutes print; the Town Manager was unsure of the advertised purchase price.",
+   "quote": "offered to purchase this property and sell it to the town for $400,000.",
+   "figures_as_printed": [
+    "$400,000"
+   ]
+  },
+  {
+   "topic": "Assessed value of 665 Massachusetts Avenue",
+   "what_was_recorded": "The Town Manager reported the property's assessed value.",
+   "quote": "the assessed value is $265,000.",
+   "figures_as_printed": [
+    "$265,000"
+   ]
+  },
+  {
+   "topic": "Resident's profit margin on the offer",
+   "what_was_recorded": "A question was asked about the resident's profit margin on the sale; no figure was printed.",
+   "quote": "question asked was what would be mr. macdonald's profit margin.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Advertised purchase price of 665 Massachusetts Avenue",
+   "what_was_recorded": "The Town Manager was not sure what the advertised purchase price is; no figure was printed.",
+   "quote": "she was not sure what the advertised purchase price is.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "665 Massachusetts Avenue property offer and Public Safety Building lot",
+   "resolution": "discussed; Board consensus the offer did not fit; no vote recorded; Mr. Marino to contact the adjacent owner",
+   "quote": "ms. lemieux reported on the property located at 665 massachusetts avenue.",
+   "tags": [
+    "property acquisition",
+    "665 Massachusetts Avenue",
+    "Public Safety Building",
+    "animal control",
+    "egress"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "executive session",
+  "property acquisition",
+  "665 Massachusetts Avenue",
+  "Public Safety Building",
+  "animal control facility",
+  "egress",
+  "assessed value"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

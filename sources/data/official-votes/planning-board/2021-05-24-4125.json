@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-05-24",
  "docid": "4125",
@@ -12,15 +12,112 @@
  },
  "votes": [
   {
-   "motion": "To continue the hearing for 150 Holman Street to June 14, 2021 at 6:35 p.m.",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Brenner",
+   "motion": "Continue the public hearing for 150 Holman Street to June 14, 2021, 6:35 p.m.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to continue the hearing for 150 holman street to june 14, 2021, 6:35 p.m., m. brenner seconded, roll call vote- m. allison, aye; p. bertram, aye; m. brenner, aye; t. cole, aye. vote passed 4 -0."
+   "quote": "p. bertram made motion to continue the hearing for 150 holman street to june 14, 2021, 6:35 p.m., m. brenner seconded, roll call vote- m. allison, aye; p. bertram, aye; m. brenner, aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0913295
+ "note": "Extracted text, not a scan. The minutes record one hearing, which was continued and recessed at 7:44 p.m. It was not closed. No public comment is recorded, so public_comment is empty. No dollar figures appear. The source spacing is irregular (for example 'manage ment'), and quotes copy it as printed.",
+ "cost_usd": 0.01551955,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole, present; matthew allison , present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole, present; matthew allison , present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole, present; matthew allison , present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director: tanner cole, present; matthew allison , present; paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "a. burney responded that the board would be unable to approve the stormwater permit until the anr plan was presented."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "representing the applicant (McCarty Engineering, Inc.)",
+   "status": "present",
+   "quote": "the owner/applicant was represented by brian marchetti, mccarty engineering, inc."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board would be unable to approve the stormwater permit until the ANR Plan was presented (stated by the Land Use Director; no vote recorded).",
+   "quote": "a. burney responded that the board would be unable to approve the stormwater permit until the anr plan was presented."
+  },
+  {
+   "decision": "P. Bertram requested that the applicant provide the Board with a SWPPP, and stressed that maintenance reports should begin to be required (a request; no vote recorded).",
+   "quote": "p. bertram requested the applicant provide the board with a swppp (stormwater pollution prevention plan)"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Stormwater management permit, 150 Holman Street (public hearing)",
+   "resolution": "continued to June 14, 2021",
+   "quote": "the hearing , via zoom video conference, was to hear and review an application for a stormwater manage ment permit under",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "ANR lots",
+    "150 Holman Street"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stormwater Permit Application",
+   "where": "list",
+   "quote": "documents used at meeting: stormwater permit application graves engineering, inc. review letter dated 05.24.2021"
+  },
+  {
+   "name": "Graves Engineering, Inc. Review Letter dated 05.24.2021",
+   "where": "list",
+   "quote": "graves engineering, inc. review letter dated 05.24.2021"
+  }
+ ],
+ "tags": [
+  "stormwater permit",
+  "public hearing",
+  "ANR subdivision",
+  "continued hearing",
+  "150 Holman Street",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

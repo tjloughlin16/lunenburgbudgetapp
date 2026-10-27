@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-09-13",
  "docid": "4158",
@@ -12,23 +12,233 @@
  },
  "votes": [
   {
-   "motion": "require a peer review of the project's Traffic Study",
+   "motion": "Require a peer review of the project's Traffic Study.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": false,
-   "quote": "p. bertram made motion to require a peer review of the project's traffic study, m. brenner seconded, all aye."
+   "quote": "require a peer review of the project's traffic study, m. brenner seconded, all aye."
   },
   {
-   "motion": "continue the hearing for 1263 Reservoir Road and 435 Leominster-Shirley Road to September 27, 2021, 6:35 p.m.",
+   "motion": "Continue the hearing for 1263 Reservoir Road and 435 Leominster-Shirley Road to September 27, 2021, 6:35 p.m.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
-   "outcome": "passed",
+   "outcome": "passed, all aye",
    "procedural": true,
-   "quote": "p. bertram made motion to continue the hearing for 1263 reservoir road and 435 leominster -shirley road to september 27, 2021, 6:35 p.m., m. brenner seconded, all aye."
+   "quote": "to september 27, 2021, 6:35 p.m., m. brenner seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08504550000000001
+ "note": "Minutes are an extracted text of a continued public hearing. No adjournment is recorded; the hearing was recessed at 8:32 p.m. and continued by vote. Two votes are recorded, both 'all aye' with no numeric count printed. The presenter Eric Reese appears as 'Eric Riese' on the page 1 attendance line. The minutes name the Aug 23 hearing and a Conservation Commission Order of Conditions but do not include them. No dollar figures appear in the text.",
+ "cost_usd": 0.01912969,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram, matthew brenner, erik torgersen, adam r. burney"
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "project engineer, Hannigan Engineering",
+   "status": "present",
+   "quote": "chris anderson and bill hannigan, hannigan engineering"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "project engineer, Hannigan Engineering",
+   "status": "present",
+   "quote": "w. hannigan added clarification that the truck driver personnel were included in the employee count."
+  },
+  {
+   "name": "Eric Reese",
+   "role": "Greenman-Pedersen, Inc. (presenter of signage plan and traffic study summary; spelled Riese on the attendance line)",
+   "status": "present",
+   "quote": "eric reese, greenman-pedersen, inc., reviewed the signage plan submitted to the board"
+  },
+  {
+   "name": "Peter Mahoney",
+   "role": "representative, John M. Corcoran & Co.",
+   "status": "present",
+   "quote": "and peter mahoney, john m. corcoran & co."
+  },
+  {
+   "name": "Mary Perkins",
+   "role": "public, 62 Ruth Street",
+   "status": "present",
+   "quote": "concerned with the back -up beeping and would like to see a cement noise barrier erected"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "public, Robbs Hill Road",
+   "status": "present",
+   "quote": "she had concerns with individuals cutting through robbs hill to get to route 2"
+  },
+  {
+   "name": "Steve Bean",
+   "role": "public, 27 Fire Road 15",
+   "status": "present",
+   "quote": "reiterated above public concerns with noise and traffic."
+  },
+  {
+   "name": "David Rodgers",
+   "role": "public, 82 Highland Street",
+   "status": "present",
+   "quote": "he noted his support of increasing the tax base in lunenburg"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Applicant's costs for road and intersection work",
+   "what_was_recorded": "The chair suggested earthwork at the Reservoir Road intersection might avoid the applicant's costly repaving, lights and grading; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "it could possibly negate the costly need to the applicant for repaving, lights, grading, etc."
+  },
+  {
+   "topic": "Tax base from the project",
+   "what_was_recorded": "A public speaker supported the project for increasing the tax base; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "he noted his support of increasing the tax base in lunenburg"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mary Perkins",
+   "stated_role": "62 Ruth Street",
+   "topic": "back-up beeping and a cement noise barrier",
+   "quote": "concerned with the back -up beeping and would like to see a cement noise barrier erected"
+  },
+  {
+   "speaker": "Laura Boussom",
+   "stated_role": "Robbs Hill Road",
+   "topic": "machinery noise and cut-through traffic",
+   "quote": "she had concerns with individuals cutting through robbs hill to get to route 2"
+  },
+  {
+   "speaker": "Steve Bean",
+   "stated_role": "27 Fire Road 15",
+   "topic": "noise and traffic",
+   "quote": "reiterated above public concerns with noise and traffic."
+  },
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "hours, employees, high-bay use and ownership",
+   "quote": "he noted his support of increasing the tax base in lunenburg, but was concerned with the lack of specificity"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Site plan and stormwater hearing, 1263 Reservoir Road and 435 Leominster-Shirley Road",
+   "resolution": "continued to September 27, 2021",
+   "quote": "for construction of a 372,000 square foot warehouse and distribution building off leominster -shirley road",
+   "tags": [
+    "site plan approval",
+    "stormwater",
+    "warehouse",
+    "public hearing",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Traffic study and signage plan",
+   "resolution": "peer review of traffic study required",
+   "quote": "eric reese, greenman-pedersen, inc., reviewed the signage plan submitted to the board",
+   "tags": [
+    "traffic study",
+    "signage",
+    "peer review"
+   ]
+  },
+  {
+   "topic": "Noise, lighting and hours of operation",
+   "resolution": "no action; hours cannot be restricted under bylaw, quiet hours may be conditioned",
+   "quote": "a. burney could not find anything in the bylaw that allowed the board to restrict hours",
+   "tags": [
+    "noise",
+    "lighting",
+    "hours of operation",
+    "abutters"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Applications for Site Plan Approval and Stormwater Management Permit",
+   "where": "list",
+   "quote": "applications for site plan approval and stormwater management permit"
+  },
+  {
+   "name": "Site Development Plan revised through August 15, 2021",
+   "where": "list",
+   "quote": "site development plan revised through august 15, 2021"
+  },
+  {
+   "name": "Proposed Traffic Sign Upgrades dtd 8/31/2021",
+   "where": "list",
+   "quote": "proposed traffic sign upgrades dtd 8/31/2021"
+  },
+  {
+   "name": "Traffic Study",
+   "where": "text",
+   "quote": "t. cole requested a peer review of the traffic study."
+  },
+  {
+   "name": "Order of Conditions (Conservation Commission, work within buffer zones)",
+   "where": "text",
+   "quote": "the conservation commission granted an order of conditions for"
+  }
+ ],
+ "tags": [
+  "warehouse",
+  "site plan approval",
+  "stormwater permit",
+  "traffic study",
+  "noise",
+  "lighting",
+  "abutter concerns",
+  "public hearing",
+  "Reservoir Road",
+  "zoning",
+  "Planning Board"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

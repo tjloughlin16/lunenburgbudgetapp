@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-08-10",
  "docid": "5684",
@@ -12,15 +12,246 @@
  },
  "votes": [
   {
-   "motion": "to adjourn at 6:53pm",
+   "motion": "To adjourn the meeting at 6:53pm.",
    "moved_by": "John R.",
    "seconded_by": "Mike D.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: john r. to adjourn at 6:53pm. second: mike d. roll call vote: mike n.- aye, john-aye and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0929785
+ "note": "OCR text (macOS Vision). Page 1 opens mid-item ('food establishments ... contact Barb.') and ends mid-sentence in the Whalom Rd item; page 2 opens mid-sentence on I/I readings ('noted the readings were done through the end of July'), so the Whalom Rd outcome and the I/I item heading are missing from the text. No attendance list is printed; attendance is inferred from participation, and roles are not printed. Only one motion (adjournment) is recorded; the discussion items record no votes. The roll call names Mike N., John and Dave, while Mike D. seconded the motion but is not in the roll call. Clerk signature is garbled by OCR ('Lane & Conley', 'jane L. Kanle'). The 'documents list' is inferred from sentences naming handouts, a video, and a screen-shared list; there is no printed documents heading.",
+ "cost_usd": 0.017550990000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave reported he represented the sewer commission at the site visit"
+  },
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barb sent the commissioners the handouts from the site visit and also the link"
+  },
+  {
+   "name": "Rob",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob reported mr. esposito submitted an acceptable as-built for this property."
+  },
+  {
+   "name": "Mike N.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mike n. noted the developer will probably want to include the future development of 120 other houses."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "john asked if leominster or fitchburg are aware of this project"
+  },
+  {
+   "name": "Mike D.",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "to adjourn at 6:53pm. second: mike d."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Nashoba Board of Health",
+   "status": "not stated",
+   "quote": "he also asked jim garreffi (nashoba board of health) if there are any properties in need of sewer"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commissioners asked to send any additional comments on the Pond View Commons 40B project to Barb.",
+   "quote": "dave asked the commissioners to send any additional comments to barb."
+  },
+  {
+   "decision": "Commission agreed that Rob can send the 384 Mass Ave as-built plan to the state DEP.",
+   "quote": "the commission discussed and agreed rob can send the plan to the dep."
+  },
+  {
+   "decision": "Barb to check with Town Counsel on the easement question for the 384 Mass Ave connection.",
+   "quote": "barb said she will check with town counsel."
+  },
+  {
+   "decision": "Rob asked Commissioners to send him other suggestions for use of the ARPA funds.",
+   "quote": "rob asked commissioners to send him other suggestions"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "ARPA funds for town infrastructure",
+   "what_was_recorded": "About $600K in ARPA money is coming to the town for infrastructure; suggested uses were pump station rehab, I/I projects, and feasibility studies.",
+   "quote": "there will be about $600k coming to the town for use on infrastructure.",
+   "figures_as_printed": [
+    "$600K"
+   ]
+  },
+  {
+   "topic": "Second ARPA tranche",
+   "what_was_recorded": "Rob said another ARPA payment is expected in a year or two, and noted the money will be shared by the Town.",
+   "quote": "said another $600k will be coming in another year or 2",
+   "figures_as_printed": [
+    "$600K"
+   ]
+  },
+  {
+   "topic": "Pond View Commons 40B sewer maintenance costs and flow contracts",
+   "what_was_recorded": "Discussed who pays for pump station upkeep and whether the town bears extra cost; no dollar figures printed, and the flow to Leominster was described as cheaper.",
+   "quote": "the town should not be on the hook for extra cost.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Pancake breakfast announcement",
+   "speaker": "Dave",
+   "quote": "public comment- dave announced pancake breakfast at senior center on 8/11."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Pond View Commons, LLC 40B discussion",
+   "resolution": "discussed; comments to be sent to Barb, due to Select Board by 8/23",
+   "quote": "pond view commons, llc 40b discussion- dave reported he represented the sewer commission at the site visit",
+   "tags": [
+    "40B",
+    "Pond View Commons",
+    "IMA",
+    "pump stations"
+   ]
+  },
+  {
+   "topic": "384 Mass Ave plan",
+   "resolution": "agreed Rob can send the as-built plan to DEP; easement question to Town Counsel",
+   "quote": "384 mass ave plan discussion- rob reported mr. esposito submitted an acceptable as-built for this property.",
+   "tags": [
+    "384 Mass Ave",
+    "easement",
+    "DEP"
+   ]
+  },
+  {
+   "topic": "ARPA monies",
+   "resolution": "discussed; Commissioners to send Rob suggestions",
+   "quote": "arpa monies (american rescue plan/coronavirus local fiscal recovery fund) - rob reported there will be about",
+   "tags": [
+    "ARPA",
+    "infrastructure",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "419 Whalom Rd sewer connection request",
+   "resolution": "discussed; text cut off at page break, outcome not recorded",
+   "quote": "419 whalom rd requested sewer connection- barb reported they are working with adam burney (planning board)",
+   "tags": [
+    "Whalom Rd",
+    "sewer connection",
+    "Unitil"
+   ]
+  },
+  {
+   "topic": "Sewer system maintenance and I/I readings (heading not printed)",
+   "resolution": "reported; no action recorded",
+   "quote": "rob reported that they have jetted and camera'd on mass ave. in the area of the large bend",
+   "tags": [
+    "maintenance",
+    "Mass Ave",
+    "grease",
+    "I/I"
+   ]
+  },
+  {
+   "topic": "Elizabeth St",
+   "resolution": "reported; waiting on contractor",
+   "quote": "elizabeth st- rob is still waiting for the contractor to fit the job into their schedule.",
+   "tags": [
+    "Elizabeth St",
+    "contractor"
+   ]
+  },
+  {
+   "topic": "Hollis Rd/Kimball St. extension",
+   "resolution": "reported; Board of Health ok with Kimball Street",
+   "quote": "hollis rd/kimball st. extension- rob met with the engineer and looked at it.",
+   "tags": [
+    "Hollis Rd",
+    "Kimball St",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs and counsel hours",
+   "resolution": "none",
+   "quote": "member agenda inputs for future meetings/counsel hours - none",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment and assistant position",
+   "resolution": "announcement and staff report; no action",
+   "quote": "barb reported there have been no new candidates for the assistant position.",
+   "tags": [
+    "public comment",
+    "staffing"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Handouts from the site visit",
+   "where": "list",
+   "quote": "barb sent the commissioners the handouts from the site visit and also the link"
+  },
+  {
+   "name": "Video recording of the 40B workshop held by Town Counsel",
+   "where": "list",
+   "quote": "and also the link to the video recording of the workshop."
+  },
+  {
+   "name": "List of comments Barb put together with Rob (Pond View Commons 40B)",
+   "where": "list",
+   "quote": "barb screen shared a list of comments she put together with rob."
+  },
+  {
+   "name": "384 Mass Ave as-built drawing",
+   "where": "text",
+   "quote": "mr. esposito submitted an acceptable as-built for this property."
+  },
+  {
+   "name": "Engineered drawings for Pond View Commons (not yet produced)",
+   "where": "text",
+   "quote": "there are no engineered drawings as of yet."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "40B housing",
+  "Pond View Commons",
+  "ARPA",
+  "inflow and infiltration",
+  "easements",
+  "384 Mass Ave",
+  "Whalom Rd",
+  "Leominster IMA",
+  "pump stations",
+  "Sewer Commission"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "barb sent the commissioners the handouts from the site visit"
+ },
+ "dropped_unquoted_by_field": {}
 }

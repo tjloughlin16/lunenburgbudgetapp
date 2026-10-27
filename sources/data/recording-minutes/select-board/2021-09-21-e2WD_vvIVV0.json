@@ -1,0 +1,648 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2021-09-21",
+ "video_id": "e2WD_vvIVV0",
+ "video_url": "https://www.youtube.com/watch?v=e2WD_vvIVV0",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-09-21-e2WD_vvIVV0.json",
+  "sha256": "be4a8903236b8c3a3fde46b5d66deccf0815163928e09659cf12fb127ad32293",
+  "caption_lines": 236,
+  "segments": 2202
+ },
+ "recording": {
+  "duration_s": 4903,
+  "duration": "1:21",
+  "spoken_chars": 61243,
+  "words_approx": 10207
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09212021-5267",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-09-21-agenda-5267.txt",
+   "path": "sources/meetings/select-board/2021-09-21-agenda-5267.pdf"
+  },
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_09212021-6341",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-09-21-agenda-6341.txt",
+   "path": "sources/meetings/select-board/2021-09-21-agenda-6341.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09212021-5267",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-09-21-minutes-5267.txt",
+   "path": "sources/meetings/select-board/2021-09-21-minutes-5267.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09212021-6341",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-09-21-minutes-6341.txt",
+   "path": "sources/meetings/select-board/2021-09-21-minutes-6341.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-25T13:17:51Z",
+  "cost_usd": 0.3841191
+ },
+ "minutes": {
+  "headline": "Select Board heard a proposed demolition delay bylaw amendment, with members objecting to the $300 daily fine, and set an October 11 deadline for revisions.",
+  "summary": "The board ratified a full-time police officer and two seasonal/part-time appointments and appointed a bylaw review committee member. The main item was the Historical Commission's proposed demolition delay amendments for the special town meeting; members objected to the fine and some owner requirements and no vote was taken. The town manager gave her FY2023 budget priorities and presented a senior work-off policy for a later vote. The board then went to executive session.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Chair",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Town Manager (Heather)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Chief Gamel",
+    "role": "police chief"
+   },
+   {
+    "name_as_heard": "Mr. McGrath",
+    "role": "presenter, chairman of the historical commission"
+   },
+   {
+    "name_as_heard": "Mr. Laxo",
+    "role": "presenter, vice chairman of the historical commission"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 3346,
+    "topic": "A resident reported that other towns list $300 fines in demolition delay bylaws and said resetting the clock instead of fining would impact owners most.",
+    "speaker_as_heard": "Pacios, 56 Whiting Street",
+    "stated_role": "resident"
+   }
+  ],
+  "tags": [
+   "budget-fy28",
+   "capital",
+   "executive-session",
+   "facilities",
+   "hiring",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety",
+   "seniors",
+   "superintendent-report",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 975,
+    "motion": "Ratify town manager's appointment of Matthew Pinchatore as full-time police officer effective December 5, 2021",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 3551,
+    "motion": "Appoint Deb Kristen to the bylaw review committee",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 3720,
+    "motion": "Ratify appointments of Alexis Diamond as seasonal cemetery laborer and Madeleine Ross as public access videographer",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 4844,
+    "motion": "Enter executive session under c.30A s.21 reason 5 on the North County Land Trust forestry legacy application, then adjourn",
+    "outcome": "roll call: Mourinho, Dwyer, Franco and chair all aye",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2000,
+    "topic": "Demolition delay fine",
+    "what_was_said": "Proposed bylaw fine of $300 per day was questioned; collection would require court action and cost; the chapter 40 maximum was cited.",
+    "figures_as_heard": [
+     "three hundred dollars",
+     "300 a day"
+    ]
+   },
+   {
+    "t": 3824,
+    "topic": "Sewer business manager assistant position",
+    "what_was_said": "A budget amendment will be sought at the special town meeting to make the part-time position benefited.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3844,
+    "topic": "Trash and recycling coordinator",
+    "what_was_said": "Position for FY22 funded through a grant as a temporary part-time non-benefited job.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4136,
+    "topic": "FY2023 budget priorities",
+    "what_was_said": "Town manager listed police and fire staffing plans, splitting facilities from DPW, IT help, and building maintenance for Brooks House, public safety building and town hall.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 4701,
+    "topic": "Sewer capital reserve stabilization transfer",
+    "what_was_said": "Sewer commission article would transfer funds to the sewer capital reserve stabilization fund as done each fall.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3945,
+    "topic": "IT consultant in place of IT director",
+    "what_was_said": "Consultant used instead of an IT director for the rest of FY22 on a trial basis.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 4701,
+    "description": "Transfer of funds to the sewer capital reserve stabilization fund (special town meeting article)",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 3201,
+    "decision": "Board will not decide on the demolition delay article until the Historical Commission reviews it; revisions requested by about the 11th, with a decision on the 12th at the earliest and warrant signing on the 19th."
+   },
+   {
+    "t": 4512,
+    "decision": "Senior work-off policy to be placed on the October 5th agenda for a vote."
+   },
+   {
+    "t": 395,
+    "decision": "Little League team to be invited to a future meeting, October 5th or 12th."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 415,
+    "topic": "Pledge, public comment, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 416,
+    "t_end": 1016,
+    "topic": "Ratification of full-time police officer appointment",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "public-safety",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1017,
+    "t_end": 3405,
+    "topic": "Historical Commission demolition delay bylaw amendments for special town meeting",
+    "resolution": "no vote; revisions requested",
+    "tags": [
+     "warrant-article",
+     "planning-and-zoning",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3406,
+    "t_end": 3591,
+    "topic": "Appointment to bylaw review committee",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3592,
+    "t_end": 3740,
+    "topic": "Seasonal cemetery laborer and videographer appointments",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3741,
+    "t_end": 4092,
+    "topic": "Town manager report: vacancies, 925 Mass Ave, IT, COVID",
+    "resolution": "informational",
+    "tags": [
+     "personnel",
+     "economic-development",
+     "technology"
+    ]
+   },
+   {
+    "t_start": 4093,
+    "t_end": 4344,
+    "topic": "FY2023 budget priorities",
+    "resolution": "informational",
+    "tags": [
+     "budget-fy28",
+     "capital",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 4345,
+    "t_end": 4532,
+    "topic": "Senior work-off program committee and policy",
+    "resolution": "referred to Oct 5",
+    "tags": [
+     "seniors",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4533,
+    "t_end": 4843,
+    "topic": "Committee reports, special town meeting articles, upcoming meetings",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4844,
+    "t_end": 4900,
+    "topic": "Executive session and adjournment",
+    "resolution": "voted",
+    "tags": [
+     "executive-session"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Chair's first reading of the demolition delay presenter was partly inaudible to members (hearing difficulty).",
+   "Some captions of the police officer's surname and names of appointees are garbled."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1949,
+    "about": "Members challenged the proposed $300-a-day demolition delay fine as unenforceable and arbitrary.",
+    "sides": "Members (and chair) against the fine; Historical Commission representatives defending it as a rarely used backstop",
+    "words_as_heard": "it's a paper tiger and not used at all",
+    "kind": "members disagree"
+   },
+   {
+    "t": 2221,
+    "about": "A member said he could not support the amendments as written, citing property rights and vagueness.",
+    "sides": "A member against; Historical Commission defending",
+    "words_as_heard": "i'm also a proponent of liberty and i'm having some trouble uh with some of the provisions here",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2327,
+    "kind": "liability or legal",
+    "about": "Enforcement discretion in the bylaw could be unconstitutionally vague.",
+    "who": "a member",
+    "words_as_heard": "that could be unconstitutionally vague how that's how that's enforced"
+   },
+   {
+    "t": 2453,
+    "kind": "condition",
+    "about": "Member will not support the amendment as written but would back a more reasonable version.",
+    "who": "a member",
+    "words_as_heard": "i cannot support or endorse this in its current form but i appreciate the spirit"
+   },
+   {
+    "t": 3161,
+    "kind": "condition",
+    "about": "Chair could support the bylaw only with changes such as dropping fines and stopping the clock.",
+    "who": "the chair",
+    "words_as_heard": "as it's written i wouldn't support it but with changes in some of the recommendations"
+   },
+   {
+    "t": 2977,
+    "kind": "liability or legal",
+    "about": "Concern that forcing owners to repair property raises property-rights issues.",
+    "who": "the chair",
+    "words_as_heard": "people have property rights"
+   },
+   {
+    "t": 1431,
+    "kind": "safety",
+    "about": "A building at 400 Howard Street left exposed to elements and unlawful entry.",
+    "who": "Historical Commission vice chairman",
+    "words_as_heard": "the building had no protections at all it was still totally exposed to the elements and unlawful entry"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1184,
+    "name_as_heard": "proposed demolition delay warrant article language",
+    "kind": "warrant article",
+    "words_as_heard": "has everybody received this and read the",
+    "shown": true
+   },
+   {
+    "t": 4345,
+    "name_as_heard": "draft senior work-off policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "there's a draft policy in your drive",
+    "shown": true
+   },
+   {
+    "t": 4512,
+    "name_as_heard": "prior minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "we have minutes they were modified at the request of mr franco",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "special-town-meeting-articles",
+    "title": "Special town meeting articles",
+    "question": "What articles are going on the fall special town meeting warrant and what do they cost?",
+    "t": 4660,
+    "words_as_heard": "the sewer commission submitted two articles",
+    "data_in_play": [],
+    "existing": ""
+   },
+   {
+    "slug": "town-facilities-director",
+    "title": "Town facilities director",
+    "question": "What would splitting facilities from DPW cost and which building repairs are pending?",
+    "t": 4157,
+    "words_as_heard": "split out the facilities from the department of public works",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board heard the Historical Commission's proposed demolition delay bylaw amendments for the special town meeting; no vote was taken.",
+    "t": 1017
+   },
+   {
+    "line": "Members questioned the proposed daily fine, noting collection would require court action and cost, and the board asked for revisions by about the 11th.",
+    "t": 2000
+   },
+   {
+    "line": "The board will not decide on the article until the Historical Commission reviews it; a decision on the 12th at the earliest, with warrant signing on the 19th.",
+    "t": 3201
+   },
+   {
+    "line": "The board ratified a full-time police officer appointment, appointed a bylaw review committee member, and ratified two seasonal or part-time appointments, all without opposition.",
+    "t": 975
+   },
+   {
+    "line": "The town manager listed FY2023 budget priorities and presented a senior work-off policy, which goes on the October 5 agenda for a vote.",
+    "t": 4136
+   }
+  ],
+  "why_it_matters": [
+   "The demolition delay amendment would set what owners of older buildings face if they want to tear one down, and it may come to a vote at the special town meeting, where residents would be asked to act on it.",
+   "The FY2023 priorities, such as public safety staffing and building maintenance, point to where the next town budget is likely to ask for money."
+  ],
+  "watch_next": [
+   "October 5 Select Board agenda: a vote on the senior work-off policy.",
+   "Revisions to the demolition delay article due about October 11, a board decision on the 12th at the earliest, and warrant signing on the 19th."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-25T13:18:04Z",
+   "cost_usd": 0.2387938
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_09212021-5267",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-09-21-minutes-5267.txt",
+   "path": "sources/meetings/select-board/2021-09-21-minutes-5267.pdf"
+  },
+  "official_sha256": "73ff39cd2129541fd6035d4f2b8d2ae451cce6ee837ce3c3380915003b585cbd",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on all three appointment votes, the $300 demolition delay fine and the October 5 Senior Work-Off vote. The differences are caption misspellings of names, plus decisions and attendees that appear in only one record. The main one is that our minutes name a deferral of the demolition delay article, which the official minutes quoted here do not record.",
+  "counts": {
+   "agree": 4,
+   "caption_error": 8,
+   "discrepancy": 0,
+   "only_in_ours": 4,
+   "only_in_official": 5
+  },
+  "findings": [
+   {
+    "kind": "caption_error",
+    "about": "Police officer appointment vote (name)",
+    "ours": "Ratify town manager's appointment of Matthew Pinchatore as full-time police officer effective December 5, 2021 — passed",
+    "official": "to ratify the town manager's appointment of matthew pingitore as full-time police officer effective december 5, 2021 vote: all in favor",
+    "official_reading": "Matthew Pingitore",
+    "note": "Same vote, same date and outcome; the captions misheard the surname.",
+    "t": 975
+   },
+   {
+    "kind": "caption_error",
+    "about": "Bylaw review committee appointment (name)",
+    "ours": "Appoint Deb Kristen to the bylaw review committee — passed",
+    "official": "to appoint deborah christen to the by-law review committee vote: all in favor",
+    "official_reading": "Deborah Christen",
+    "note": "Same vote and outcome; the captions misheard the name.",
+    "t": 3551
+   },
+   {
+    "kind": "caption_error",
+    "about": "Seasonal cemetery and videographer appointments (names)",
+    "ours": "Ratify appointments of Alexis Diamond as seasonal cemetery laborer and Madeleine Ross as public access videographer — passed",
+    "official": "to ratify the town manager appointments of alexis dimond to seasonal cemetery worker and madeline ross as public access videographer vote: all in favor",
+    "official_reading": "Alexis Dimond; Madeline Ross",
+    "note": "Same vote and outcome; the surname and first name were misspelled, and the job title differs slightly (laborer vs worker).",
+    "t": 3720
+   },
+   {
+    "kind": "agree",
+    "about": "Demolition delay fine amount",
+    "ours": "Demolition delay fine: three hundred dollars, 300 a day",
+    "official": "shall be subject to a fine or penalty in the amount of three hundred dollars ($300.00,)",
+    "note": "Both give $300. Ours adds 'a day', while the official text says per violation; check the article wording.",
+    "t": 2000
+   },
+   {
+    "kind": "agree",
+    "about": "Senior work-off policy on October 5 agenda",
+    "ours": "Senior work-off policy to be placed on the October 5th agenda for a vote.",
+    "official": "the board will read it and vote on it at their october 5",
+    "note": "Both say the Board will vote on the policy on October 5.",
+    "t": 4512
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Demolition delay article deferred pending Historical Commission review",
+    "ours": "Board will not decide on the demolition delay article until the Historical Commission reviews it; revisions requested by about the 11th, with a decision on the 12th at the earliest and warrant signing on the 19th.",
+    "official": "",
+    "note": "The official minutes as structured give the fine and the Chair's objection but no deferral or timeline. Check the full official minutes for this decision.",
+    "t": 3201
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Little League team invited to a future meeting",
+    "ours": "Little League team to be invited to a future meeting, October 5th or 12th.",
+    "official": "",
+    "note": "The official minutes as given do not mention this invitation.",
+    "t": 395
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Sewer capital reserve stabilization fund transfer discussed",
+    "ours": "Transfer of funds to the sewer capital reserve stabilization fund (special town meeting article) — not stated (discussed only)",
+    "official": "",
+    "note": "The official minutes list no transfers. Ours records it only as discussed with no vote, so there is no conflict, but check whether the article appears in the full minutes.",
+    "t": 4701
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Franco (Lou Franco)",
+    "ours": "Mr. Franco (member)",
+    "official": "members present: tom alonzo, chair; lou franco, clerk; todd dwyer, jim marino",
+    "official_reading": "Lou Franco",
+    "note": "Same person; the official minutes give his role as clerk.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mr. Dwyer",
+    "ours": "Mr. Dwyer (member)",
+    "official": "members present: tom alonzo, chair; lou franco, clerk; todd dwyer, jim marino",
+    "note": "Todd Dwyer is present in both.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Mourinho (Jim Marino)",
+    "ours": "Mr. Mourinho (member)",
+    "official": "members present: tom alonzo, chair; lou franco, clerk; todd dwyer, jim marino",
+    "official_reading": "Jim Marino",
+    "note": "Likely a misheard rendering of Marino, the only other member present; check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Town Manager Heather",
+    "ours": "Town Manager (Heather) (town manager)",
+    "official": "also present: heather lemieux, town manager; tom gammel, police chief, matthew",
+    "official_reading": "Heather Lemieux",
+    "note": "Ours gave only the first name; the official minutes give the full name.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Chief Gamel",
+    "ours": "Chief Gamel (police chief)",
+    "official": "also present: heather lemieux, town manager; tom gammel, police chief, matthew",
+    "official_reading": "Tom Gammel",
+    "note": "The captions misspelled the surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Laxo (historical commission vice chairman)",
+    "ours": "Mr. Laxo (presenter, vice chairman of the historical commission)",
+    "official": "vice chairman laakso had drafted the article and they would be willing to answer any questions.",
+    "official_reading": "Bill Laakso",
+    "note": "The captions misspelled the surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mr. McGrath, Historical Commission chair",
+    "ours": "Mr. McGrath (presenter, chairman of the historical commission)",
+    "official": "mr. mcgrath, chair of the historical commission, stated during his 22 years on the historical",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Chair identified only by title",
+    "ours": "Chair (chair)",
+    "official": "",
+    "note": "Ours gives no name. The official minutes name the chair as Tom Alonzo, so this is likely the same person.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Michael-Ray Jeffreys",
+    "ours": "",
+    "official": "member not present: michael-ray jeffreys, vice chairman",
+    "note": "Our minutes do not record the absent member.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Remote participant Deborah Christen",
+    "ours": "",
+    "official": "ms. christen was paiticipating via zoom this evening.",
+    "note": "Our attendee list omits her; ours records her only as the appointee.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Senior Tax Work-Off figures ($1,500 cap, $50,000/$75,000 income limits, 7.5% OBRA)",
+    "ours": "",
+    "official": "the maximum amount each participant can earn is fixed at $1,500 for the senior tax work-off program",
+    "note": "Our minutes list none of the Senior Tax Work-Off dollar figures or the 7.5% withholding; check whether the recording states them.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment by Dave Passios on demolition delay fine in Norton and Mendon",
+    "ours": "",
+    "official": "dave passios, 56 whiting street, researched online and found the towns of norton and mendon had the $300 fine in their demolition delay bylaws. he believed resetting the clock would impact people more.",
+    "note": "Our minutes do not record this public comment.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Town Manager's budget priorities, capital planning forms, Chapter 70 workshop and 925 Mass Ave update",
+    "ours": "",
+    "official": "the finance committee will be cohosting a workshop with the school committee on chapter 70 funding",
+    "note": "The official minutes record these announcements and updates; ours has no matching items.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-25T13:20:42Z",
+   "cost_usd": 0.2677518
+  }
+ }
+}

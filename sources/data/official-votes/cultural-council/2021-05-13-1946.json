@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cultural-council",
  "meeting_date": "2021-05-13",
  "docid": "1946",
@@ -10,8 +10,275 @@
   "minutes_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_05132021-1946",
   "doc_url": "/docs/meetings/cultural-council/2021-05-13-minutes-1946.pdf"
  },
- "votes": [],
- "dropped_unquoted": 11,
- "note": "OCR text with spaces removed and reconstructed. Note: in the final motion (Roger Tinknell extension), the minutes print only \"Daniel\" as the seconder, not \"Daniel Burns\".",
- "cost_usd": 0.1528295
+ "votes": [
+  {
+   "motion": "Approve the minutes of January 16, 2020 as read.",
+   "moved_by": "Peter McCarron",
+   "seconded_by": "Donna Saiia",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "motionmadebypetermccarrontoacceptminutesfromjanuary16,2020asread.donnasaiiasecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Elect Daniel Burns as chair of the Lunenburg Cultural Council.",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Peter McCarron",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motionmadebydanielburnstonominatehimselfaschairofthelunenburgculturalcouncil.petermccarronsecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Elect Elise Wiley as secretary of the Lunenburg Cultural Council.",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Peter McCarron",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motionmadebydanielburnstonominateelisewileyassecretaryofthelunenburgculturalcouncil.petermccarronsecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Elect Donna Saiia as treasurer of the Lunenburg Cultural Council.",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Peter McCarron",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motionmadebydanielburnstonominatedonnasaiiaastreasurerofthelunenburgculturalcouncil.petermccarronsecondedthemotion.motionpassedunanimouslybyrollcallvote",
+   "quote_taken_from_text": true
+  },
+  {
+   "motion": "Approve grant applications as a whole, to be amended after discussion concludes.",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Elise Wiley",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "danielburnsmadeamotiontoapproveapplicationsasawholeandamendafterdiscussionconcludes.elisewileysecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Partially fund the Winchendon Music Festival in the amount of $500.",
+   "moved_by": "Elise Wiley",
+   "seconded_by": "Daniel Burns",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "elisewileymadeamotiontopartiallyfundthewinchendonmusicfestivalintheamountof$500.danielburnssecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Not fund the application from Kirk Whipple.",
+   "moved_by": "Elise Wiley",
+   "seconded_by": "Daniel Burns",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "elisewileymadeamotiontonotfundkirkwhipple.danielburnssecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Fund the applications as amended.",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Karen Kemp",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "danielburnsmadeamotiontofundtheapplicationsasamended.karenkempsecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Pay the outstanding invoice to TC Passios in the amount of $109.29 for the 2019 Arts Festival.",
+   "moved_by": "Peter McCarron",
+   "seconded_by": "Daniel Burns",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "petermccarronmadeamotiontopaytheinvoicetotcpassiosintheamountof$109.29.danielburnssecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Grant Roger Tinknell's request to extend the 2020 application #32835 to 2021, in the amount of $500.",
+   "moved_by": "Peter McCarron",
+   "seconded_by": "Daniel",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "petermccarronmadeamotiontograntrogertinknell'srequestforanextensionofthe2020application,#32835,to2021intheamountof$500.danielsecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  },
+  {
+   "motion": "Adjourn the meeting at 8:29 PM.",
+   "moved_by": "Daniel Burns",
+   "seconded_by": "Elise Wiley",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "danielburnsmotionedtoadjournat8:29pm.elisewileysecondedthemotion.motionpassedunanimouslybyrollcallvote."
+  }
+ ],
+ "dropped_unquoted": 0,
+ "note": "Text is extracted with words run together and line breaks removed, so quotes are copied as they appear, without added spaces. Public comment (section V) has no entries. No decisions were recorded without a vote. The minutes contain two drafting notes in parentheses (\"Not sure if the Council's reasoning needs to be included\") that are not recorded as decisions. Section numbering repeats \"IV.\" for two headings. Header says the meeting was held via Zoom; the six members are listed as Present, with no separate remote status. Roles are not printed for attendees except that Daniel Burns called the meeting to order. Vote outcomes are recorded as \"passed\" because the minutes say \"passed unanimously by roll call vote\" without a count.",
+ "cost_usd": 0.01696615,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter McCarron",
+   "status": "present",
+   "quote": "present:petermccarron,ashlyfaherty, danielburns,karenkemp,donnasaiia,andelisewiley",
+   "role": ""
+  },
+  {
+   "name": "Ashly Faherty",
+   "status": "present",
+   "quote": "present:petermccarron,ashlyfaherty, danielburns,karenkemp,donnasaiia,andelisewiley",
+   "role": ""
+  },
+  {
+   "name": "Daniel Burns",
+   "status": "present",
+   "quote": "i.calltoordermeetingcalledtoorderbydanielburnsat7:12pm",
+   "role": ""
+  },
+  {
+   "name": "Karen Kemp",
+   "status": "present",
+   "quote": "present:petermccarron,ashlyfaherty, danielburns,karenkemp,donnasaiia,andelisewiley",
+   "role": ""
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "present:petermccarron,ashlyfaherty, danielburns,karenkemp,donnasaiia,andelisewiley",
+   "role": ""
+  },
+  {
+   "name": "Elise Wiley",
+   "status": "present",
+   "quote": "present:petermccarron,ashlyfaherty, danielburns,karenkemp,donnasaiia,andelisewiley",
+   "role": ""
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Available grant funds",
+   "what_was_recorded": "The treasurer reported the amount available to grant.",
+   "figures_as_printed": [
+    "$14,626"
+   ],
+   "quote": "petermccarrongaveatreasurer'sreportandinformedthecouncilthattheamountof$14,626isavailabletogrant."
+  },
+  {
+   "topic": "Winchendon Music Festival grant",
+   "what_was_recorded": "A partial grant of $500 was approved for the Winchendon Music Festival.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "elisewileymadeamotiontopartiallyfundthewinchendonmusicfestivalintheamountof$500."
+  },
+  {
+   "topic": "Outstanding invoice, 2019 Arts Festival",
+   "what_was_recorded": "Payment of an outstanding invoice to TC Passios was approved.",
+   "figures_as_printed": [
+    "$109.29"
+   ],
+   "quote": "petermccarronmadeamotiontopaytheinvoicetotcpassiosintheamountof$109.29."
+  },
+  {
+   "topic": "Roger Tinknell application extension",
+   "what_was_recorded": "An extension of the 2020 application #32835 to 2021 was granted at $500.",
+   "figures_as_printed": [
+    "$500"
+   ],
+   "quote": "petermccarronmadeamotiontograntrogertinknell'srequestforanextensionofthe2020application,#32835,to2021intheamountof$500."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "called to order at 7:12 PM",
+   "quote": "i.calltoordermeetingcalledtoorderbydanielburnsat7:12pm",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved",
+   "quote": "motionmadebypetermccarrontoacceptminutesfromjanuary16,2020asread.donnasaiiasecondedthemotion.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Officers election",
+   "resolution": "approved: Daniel Burns chair, Elise Wiley secretary, Donna Saiia treasurer",
+   "quote": "motionmadebydanielburnstonominatehimselfaschairofthelunenburgculturalcouncil.petermccarronsecondedthemotion.",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Vote on grant proposals",
+   "resolution": "approved as amended; Winchendon partially funded, Kirk Whipple not funded",
+   "quote": "lunenburgculturalcouncilusedthe2021panelbookofapplicationssubmittedpetermccarrongaveatreasurer'sreport",
+   "tags": [
+    "grants",
+    "arts"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comments recorded",
+   "quote": "v. publiccomment vi.oldbusinessa. outstandinginvoicefor2019artsfestival",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Old business: invoice and extension",
+   "resolution": "approved",
+   "quote": "a. outstandinginvoicefor2019artsfestivalpetermccarronmadeamotiontopaytheinvoicetotcpassiosintheamountof$109.29.",
+   "tags": [
+    "invoices",
+    "extensions"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "no announcements recorded",
+   "quote": "vii.announcements viii.adjournmentdanielburnsmotionedtoadjournat8:29pm.",
+   "tags": [
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:29 PM",
+   "quote": "danielburnsmotionedtoadjournat8:29pm.elisewileysecondedthemotion.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "2021 Panel Book of applications submitted",
+   "where": "list",
+   "quote": "lunenburgculturalcouncilusedthe2021panelbookofapplicationssubmittedpetermccarrongaveatreasurer'sreport"
+  },
+  {
+   "name": "Minutes of January 16, 2020",
+   "where": "text",
+   "quote": "motionmadebypetermccarrontoacceptminutesfromjanuary16,2020asread.donnasaiiasecondedthemotion."
+  },
+  {
+   "name": "2020 application #32835 (Roger Tinknell)",
+   "where": "text",
+   "quote": "petermccarronmadeamotiontograntrogertinknell'srequestforanextensionofthe2020application,#32835,to2021"
+  }
+ ],
+ "tags": [
+  "cultural council",
+  "grant proposals",
+  "arts funding",
+  "officers election",
+  "minutes approval",
+  "Zoom meeting",
+  "budget"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "lunenburgculturalcouncilusedthe2021panelbookofapplicationssubmitted"
+ },
+ "dropped_unquoted_by_field": {}
 }

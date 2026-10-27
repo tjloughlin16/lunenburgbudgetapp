@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-07-27",
  "docid": "5262",
@@ -12,48 +12,353 @@
  },
  "votes": [
   {
-   "motion": "Appoint the following election officers: Warden-Glen Reinhardt (R); Deputy Warden-Ann Shattuck (R); Clerk-Darlene Steele (D); Clerk-Judy Haley (D); Inspector-Susan Andrews (D); Deputy Inspector-Joanne Bergeron (D); Inspector-Kathleen Pliska (R); Deputy Inspector Jane Ranley (R)",
+   "motion": "Appoint the listed election officers (wardens, clerks, inspectors and deputies, as reappointments).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "not stated",
-   "procedural": true,
-   "quote": "motion: m. jeffreys 2nd: l. franco to appoint the following election officers: warden-glen reinhardt(r); deputy warden- ann shattuck (r); clerk-darlene steele (d); clerk-judy haley (d); inspector-susan ===page 2=== motion: m. jeffreys to ratify the town manager appointments of megan lordan, amanda koeck and kriste",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "to appoint the following election officers: warden-glen reinhardt(r)"
   },
   {
-   "motion": "Ratify the Town Manager Appointments of Megan Lordan, Amanda Koeck and Kristen Levine",
+   "motion": "Ratify the Town Manager appointments of Megan Lordan, Amanda Koeck and Kristen Levine.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: m. jeffreys to ratify the town manager appointments of megan lordan, amanda koeck and kristen levine 2nd: l. franco vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the town manager appointments of megan lordan, amanda koeck and kristen levine"
   },
   {
-   "motion": "Accept the FY22 Select Board goals",
+   "motion": "Accept the FY22 Select Board goals.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: m. jeffreys to accept the fy22 select board goals vote: all in favor"
+   "quote": "to accept the fy22 select board goals vote: all in favor"
   },
   {
-   "motion": "Approve the minutes of July 13, 2021 as presented",
+   "motion": "Approve the minutes of July 13, 2021 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco to approve the minutes of july 13, 2021 as presented 2n°: t. dwyer vote: all in favor"
+   "quote": "to approve the minutes of july 13, 2021 as presented"
   },
   {
-   "motion": "Enter into Executive Session and adjourn after exiting Executive Session pursuant to M.G.L. c. 30, Section 21, Paragraph 2, to conduct strategy sessions in preparation for negotiations with non-union personnel or contract negotiations with non-union personnel (Town Manager)",
+   "motion": "Enter into Executive Session under M.G.L. c. 30, Section 21, Paragraph 2 (Town Manager negotiations, non-union personnel) and adjourn after exiting Executive Session.",
    "moved_by": "T. Dwyer",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "motion: t. dwyer 2nd: m. jeffreys to enter into executive session and to adjourn after exiting executive session pursuant to m.g.l. c. 30, section 21, paragraph 2, to conduct strategy sessions in preparation for negotiations with non-union personnel or contract negotiations with non-union personnel (town manager) vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys- aye, mr. alonzo-aye"
+   "quote": "to enter into executive session and to adjourn after exiting executive session pursuant to m.g.l. c. 30, section 21, paragraph 2"
   }
  ],
  "dropped_unquoted": 0,
- "note": "First election officers motion outcome missing from OCR; text breaks across page boundary. All other votes recorded clearly.",
- "cost_usd": 0.11021349999999999
+ "note": "Text is macOS Vision OCR with misreads (e.g. 'Jetfreys', 'Pricipal', 'Peteison'); quotes were checked against the OCR text as printed. The election officer motion has no recorded vote result: the text breaks at the page break before any 'Vote' line, so outcome is 'not stated'. The FY22 state aid deficit figure is cut off at a page break. Page 3 begins mid-item and the heading of New Business item 1 (the senior exemption discussion) is not in the text. The opening 'PUBLIC COMMENT:' heading holds Board and Town Manager announcements, not public speakers; the only public speaker recorded is John Morreale Sr. The Executive Session vote is recorded as 'Vote: Mr. Marino-aye, Mr. Dwyer-aye, Mr. Franco-aye, Mr. Jeffreys- aye, Mr. Alonzo-aye' (5-0). Elaine M. Peterson is the minutes' author and not recorded as attending, so she is omitted from attendees.",
+ "cost_usd": 0.02185599,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Michael-Kay Jetfreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-kay jetfreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager, john morreale sr."
+  },
+  {
+   "name": "John Morreale Sr.",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "john morreale sr.,9 sequoia drive, stated he was not opposed to the project, but to the tactics"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board signed the employment contract with the Director of Municipal Finance, which it had ratified at its last Executive Session.",
+   "quote": "the board signed the contract."
+  },
+  {
+   "decision": "A future workshop on the senior citizen property tax proposal will be held, with the Finance Director and Principal Assessor present.",
+   "quote": "there will be a future workshop on this and the finance director and pricipal assessor should be present."
+  },
+  {
+   "decision": "Public comment on the 40B project is to be submitted to the Select Board office by August 9th, to compile for the August 16 deadline.",
+   "quote": "all public comment should be submitted to the select board office by august 9th in order to compile all of them for the august 16 deadline."
+  },
+  {
+   "decision": "The Chair requested that staff find out the criteria for a 40B project of this kind.",
+   "quote": "mr. alonzo requested finding out what the criteria for such a project is, as he could find none."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library Friday staffing request",
+   "what_was_recorded": "The Library is seeking additional funding to staff Friday hours, reported at around $50,000.",
+   "quote": "the library is working on a request for additional funding to increase staffing in order to be open on fridays in the amount of around $50,000.",
+   "figures_as_printed": [
+    "$50,000"
+   ]
+  },
+  {
+   "topic": "Warrants signed by the Board",
+   "what_was_recorded": "The Chair reported five warrants signed the prior week, with the amount of each.",
+   "quote": "accounts payable warrant #2 wp 21, dated 6/30/21, in the amount of $20,857.01;",
+   "figures_as_printed": [
+    "$20,857.01",
+    "$86,451.22",
+    "$699,814.48",
+    "$660,859.98",
+    "$168,131.25"
+   ]
+  },
+  {
+   "topic": "Director of Municipal Finance employment contract",
+   "what_was_recorded": "The ratified five-year contract sets the first-year and second-year compensation; later years are to be negotiated.",
+   "quote": "the first year in the amount of $104,900 and the second year in the amount of $108,050 (effective 7/1/22)",
+   "figures_as_printed": [
+    "$104,900",
+    "$108,050"
+   ]
+  },
+  {
+   "topic": "PAYT bag price increase",
+   "what_was_recorded": "The bag vendor's price for PAYT bags rises 15% from August 16.",
+   "quote": "bag prices will be increasing 15% and they have sent out a letter to all retailers that carry payt bags.",
+   "figures_as_printed": [
+    "15%"
+   ]
+  },
+  {
+   "topic": "FY22 state budget aid impact",
+   "what_was_recorded": "The Town Manager reported a final overall state aid deficit for Lunenburg; the figure is cut off at a page break.",
+   "quote": "the final overall impact to lunenburg is a deficit of",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "ARPA funds",
+   "what_was_recorded": "Coronavirus Local Fiscal Recovery Funds are to be allocated; no dollar amount was printed, and a plan is to come by late September or early October.",
+   "quote": "i have asked the finance committee for their input and am asking the select board for any input before i",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "925 Mass Ave cleanup funding",
+   "what_was_recorded": "Availability of MassDEP LUST funds for cleanup of the property is uncertain; the funds were tied up with the federal infrastructure bill.",
+   "quote": "the lust funds were tied up with the federal infrastructure bill",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "40B site approval application from Pond View Commons",
+   "speaker": "John Morreale Sr.",
+   "stated_role": "9 Sequoia Drive",
+   "quote": "john morreale sr.,9 sequoia drive, stated he was not opposed to the project, but to the tactics and manner in which it is being presented."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and opening announcements",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:01 p.m. and asked everyone to rise for the",
+   "tags": [
+    "opening"
+   ]
+  },
+  {
+   "topic": "Election officer appointments",
+   "resolution": "motion recorded, no result printed",
+   "quote": "ms. lemieux noted these are reappointments and the memo from executive assistant peterson",
+   "tags": [
+    "elections",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Ratify Town Manager appointments",
+   "resolution": "approved",
+   "quote": "to ratify the town manager appointments of megan lordan, amanda koeck and kristen levine",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "received, no action",
+   "quote": "announcement on existing vacancies:",
+   "tags": [
+    "vacancies",
+    "assessor retirement",
+    "PAYT",
+    "state aid",
+    "ARPA",
+    "925 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "no action",
+   "quote": "meetings, events and other announcements:",
+   "tags": [
+    "events"
+   ]
+  },
+  {
+   "topic": "FY22 Select Board goals",
+   "resolution": "accepted",
+   "quote": "1. review and vote on select board goals for fy 2022",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "40B site approval notice, Pond View Commons",
+   "resolution": "discussed, no action",
+   "quote": "2. discussion of notice from masshousing on 40b site approval application from",
+   "tags": [
+    "40B housing",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Senior citizen property tax exemption or abatement",
+   "resolution": "discussed; future workshop",
+   "quote": "ms. lemieux noted any proposal would have to go to to annual town meeting for approval",
+   "tags": [
+    "senior tax exemption",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Fall Special Town Meeting timeline",
+   "resolution": "presented, no action",
+   "quote": "ms. lemieux presented a proposed timeline for a november 16",
+   "tags": [
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Approval of minutes of July 13, 2021",
+   "resolution": "approved",
+   "quote": "to approve the minutes of july 13, 2021 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "noted as signed",
+   "quote": "mr. alonzo reported the following warrants were signed by the board last week:",
+   "tags": [
+    "warrants",
+    "payments"
+   ]
+  },
+  {
+   "topic": "Action items: finance director contract",
+   "resolution": "reported; contract signed",
+   "quote": "mr. alonzo reported the board at their last executive session had ratified the employment",
+   "tags": [
+    "contract",
+    "finance director"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "mr. jeffreys reported the friend of the lunenburg public library met",
+   "tags": [
+    "library",
+    "economic development",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and public comment",
+   "resolution": "no public comment",
+   "quote": "upcoming meeting/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memo from Executive Assistant Peterson regarding the procedure guided by MGL c. 54 (election officers)",
+   "where": "list",
+   "quote": "the memo from executive assistant peterson regarding the procedure guided by mgl c. 54 was in the board's packet"
+  },
+  {
+   "name": "FY2022 Lunenburg Select Board Goals",
+   "where": "text",
+   "quote": "fy2022 lunenburg select board goals"
+  },
+  {
+   "name": "Proposed timeline for a November 16 Special Town Meeting",
+   "where": "text",
+   "quote": "ms. lemieux presented a proposed timeline for a november 16"
+  },
+  {
+   "name": "DLS final State Aid figures",
+   "where": "text",
+   "quote": "dls released the final state aid figures."
+  },
+  {
+   "name": "Bag vendor letter to retailers on PAYT bag price increase",
+   "where": "text",
+   "quote": "they have sent out a letter to all retailers that carry payt bags."
+  },
+  {
+   "name": "Plans for the 40B project on the Town website",
+   "where": "text",
+   "quote": "it was pointed out that the plans are on the front page of the town website."
+  }
+ ],
+ "tags": [
+  "select board",
+  "election officers",
+  "town manager report",
+  "40B housing",
+  "ARPA funds",
+  "senior tax exemption",
+  "warrants",
+  "executive session",
+  "fall special town meeting",
+  "state aid",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the memo from executive assistant peterson"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2021-09-13",
  "docid": "4706",
@@ -12,6 +12,169 @@
  },
  "votes": [],
  "dropped_unquoted": 0,
- "note": "No votes with clear voting language recorded. Minutes describe discussions and decisions but do not contain formal vote records with motion, seconded, outcome, or voting language.",
- "cost_usd": 0.0789525
+ "note": "The minutes are brief and record no motions, votes or vote tallies; the votes list is empty for that reason. The minutes-approval item was deferred rather than voted, and adjournment at 6:44pm has no recorded motion. Public comment speakers are unnamed in the text. No documents are named or listed. The ending balance is the only printed dollar figure.",
+ "cost_usd": 0.01438609,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were steve walker, peter lincoln, and jeff bajko, faith beal - via zoom."
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were steve walker, peter lincoln, and jeff bajko, faith beal - via zoom."
+  },
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC Board Member",
+   "status": "present",
+   "quote": "pacc members present were steve walker, peter lincoln, and jeff bajko, faith beal - via zoom."
+  },
+  {
+   "name": "Faith Beal",
+   "role": "PACC member",
+   "status": "remote",
+   "quote": "pacc members present were steve walker, peter lincoln, and jeff bajko, faith beal - via zoom."
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members: jo mclaughlin"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "absent",
+   "quote": "excused absence: steve archambault"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Jeff Bajko accepted the nomination of recorder (no vote recorded).",
+   "quote": "jeff bajko accepted the nomination of recorder."
+  },
+  {
+   "decision": "Communications to be added to the agenda.",
+   "quote": "communications will be added to the agenda."
+  },
+  {
+   "decision": "Minutes for July and August deferred to the next meeting for review and approval.",
+   "quote": "next meeting july's and aug will be reviewed and approved."
+  },
+  {
+   "decision": "Manager reports Jo received the ok to hire three new videographers (no vote recorded).",
+   "quote": "jo received the ok to hire three new ones."
+  },
+  {
+   "decision": "Studio space item carried to the next meeting for discussion.",
+   "quote": "studio space: discuss next meeting"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "PAC ending balance",
+   "what_was_recorded": "The manager reported the ending balance.",
+   "quote": "ending balance is $807,114.20",
+   "figures_as_printed": [
+    "$807,114.20"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Comcast service trouble",
+   "speaker": "A Comcast customer",
+   "stated_role": "Comcast customer",
+   "quote": "a comcast customer reached out to pacc for help with trouble with his service."
+  },
+  {
+   "topic": "Comcast sound issues",
+   "speaker": "A Comcast customer",
+   "stated_role": "Comcast customer",
+   "quote": "a comcast customer reached out about sound issues."
+  },
+  {
+   "topic": "New studio space",
+   "speaker": "A community member",
+   "stated_role": "Community member",
+   "quote": "a community member reached out to give insight on a new studio space."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Roll call",
+   "resolution": "called to order at 6:10pm; no action",
+   "quote": "meeting called to order at 6:10pm.",
+   "tags": [
+    "roll call"
+   ]
+  },
+  {
+   "topic": "Public comments",
+   "resolution": "noted; communications added to agenda",
+   "quote": "communications will be added to the agenda.",
+   "tags": [
+    "public comment",
+    "Comcast"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "deferred to next meeting",
+   "quote": "next meeting july's and aug will be reviewed and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received; hiring of three videographers approved per manager",
+   "quote": "jo received the ok to hire three new ones.",
+   "tags": [
+    "staffing",
+    "Castus",
+    "programming",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Studio space",
+   "resolution": "continued to next meeting",
+   "quote": "studio space: discuss next meeting",
+   "tags": [
+    "studio space"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:44pm; no motion recorded",
+   "quote": "meeting adjourned at 6:44pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access TV",
+  "cable committee",
+  "Comcast",
+  "Castus",
+  "studio space",
+  "videographer staffing",
+  "minutes approval",
+  "PAC ending balance"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-06-02",
  "docid": "6297",
@@ -12,201 +12,653 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of May 19, 2021",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed 4-0 with 2 abstentions",
+   "motion": "Approve the minutes of May 19, 2021.",
+   "moved_by": "JV",
+   "seconded_by": "KJ",
+   "outcome": "passed; JV, KJ, CC and BP in favor; JR and RB abstained",
    "procedural": true,
-   "quote": "jv moved to approve the minutes kj seconded and the commission voted in favor by a vote of jv, kj,cc and bp. jr and rb abstained."
+   "quote": "jv moved to approve the minutes kj seconded and the commission voted in favor by a vote of jv, kj,cc and bp."
   },
   {
-   "motion": "issue a negative determination for a gate and dock at 239 Prospect Street",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue a negative determination for Timothy Beauchmin's request at 239 Prospect Street.",
+   "moved_by": "KJ",
+   "seconded_by": "JR",
+   "outcome": "passed; RB abstaining",
    "procedural": false,
-   "quote": "kj moved to issue a negative determination jr seconded . the commission approved the motion with rb abstaining."
+   "quote": "kj moved to issue a negative determination jr seconded"
   },
   {
-   "motion": "continue the hearing on removal of a partial section of a deck and an addition at 46 Pine Grove Road to June 16, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Catie Childs",
+   "motion": "Continue the Daniel Corey Notice of Intent at 46 Pine Grove Road to June 16, 2021.",
+   "moved_by": "RB",
+   "seconded_by": "CC",
    "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "continue to june 16, 2021 at 7 pm by a motion of rb and a second by cc with a unanimous vote to approve the motion."
+   "procedural": true,
+   "quote": "the applicant agreed to continue to june 16, 2021 at 7 pm by a motion of rb and a second by cc"
   },
   {
-   "motion": "issue a negative determination for a garage at 313 Leominster Road",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Issue a negative determination for Michael Shank's request at 313 Leominster Road.",
+   "moved_by": "RB",
+   "seconded_by": "JR",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "rb moved for a negative determination. jr seconded and the commission voted unanimously to approve the motion."
   },
   {
-   "motion": "issue a negative determination for a garage at 45 Cove Road",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
+   "motion": "Issue a negative determination for Eric Martineau's request at 45 Cove Road.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
    "outcome": "passed unanimously",
    "procedural": false,
    "quote": "rb moved for a negative determination jv seconded and the commission voted unanimously to approve the motion,"
   },
   {
-   "motion": "continue the hearing on a swimming pool, landscaping and tree removal at 326 Holman Street to June 16, 2021",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "by a motion of kj and a second of jv and a unanimous vote of the commission by roll call vote."
+   "motion": "Continue the Steve Fenner Notice of Intent at 326 Holman Street to June 16th.",
+   "moved_by": "KJ",
+   "seconded_by": "JV",
+   "outcome": "passed unanimously by roll call vote (RB recused)",
+   "procedural": true,
+   "quote": "the commission continued to the meeting of june 16th by a motion of kj and a second of jv and a unanimous vote of the commission by roll call vote."
   },
   {
-   "motion": "continue the hearing on a bridge replacement at Flatt Hill Road to June 16, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Continue the Town of Lunenburg Flatt Hill Road bridge Notice of Intent to June 16th.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
    "quote": "a motion to continue to june 16th was made by rb and seconded by kj with a unanimous vote to approve the motion by roll call vote."
   },
   {
-   "motion": "continue the hearing on a single family home at 41 Country Road to June 16, 2021",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Richard Bursch",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of cc and a second by rb with a unanimous roll call vote to approve the motion."
+   "motion": "Continue the Kevin Hill Notice of Intent at 41 Country Road to June 16.",
+   "moved_by": "CC",
+   "seconded_by": "RB",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of cc and a second by rb"
   },
   {
-   "motion": "issue an Order with perpetual rain garden maintenance for Lot 1 at 150 Holman Street",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue an Order of Conditions for PSG Realty Lot 1 (150 Holman St) with a perpetual rain garden maintenance condition.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously; CL abstaining",
    "procedural": false,
-   "quote": "rb moved to issue an order with the additional co ndition of the rain garden maintenance being perpetual. kj seconded and the commission approved unanimously with cl as an abstention",
-   "quote_taken_from_text": true
+   "quote": "kj seconded and the commission approved unanimously with cl as an abstention."
   },
   {
-   "motion": "issue an Order with perpetual rain garden maintenance and buffer zone demarcation for Lot 2 at 150 Holman Street",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue an Order of Conditions for PSG Realty Lot 2 (150 Holman St) with a perpetual rain garden maintenance condition and buffer zone demarcation on the deed.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously; CL abstaining",
    "procedural": false,
-   "quote": "rb moved to issue an order with the additional condition of the rain garden maintenance being perpetual and the inclusion of the buffer zone demarcation. kj seconded and the commission approved unanimously with cl as an abstention."
+   "quote": "kj seconded and the commission approved unanimously with cl as an abstention."
   },
   {
-   "motion": "issue an Order with perpetual rain garden maintenance and buffer zone demarcation for Lot 3 at 150 Holman Street",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue an Order of Conditions for PSG Realty Lot 3 (150 Holman St) with a perpetual rain garden maintenance condition and buffer zone demarcation on the deed.",
+   "moved_by": "KJ",
+   "seconded_by": "JV",
+   "outcome": "passed unanimously; CL abstaining",
    "procedural": false,
-   "quote": "kj moved to issue an order with the additional condition of the rain garden maintenance being perpetual and the inclusion of the buffer zone demarcation. jv seconded and the commission approved unanimously with cl as an abstention."
+   "quote": "jv seconded and the commission approved unanimously with cl as an abstention."
   },
   {
-   "motion": "issue an Order with perpetual rain garden maintenance and buffer zone demarcation for Lot 4 at 150 Holman Street",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue an Order of Conditions for PSG Realty Lot 4 (150 Holman St) with a perpetual rain garden maintenance condition and buffer zone demarcation on the deed.",
+   "moved_by": "RB",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously; CL abstaining",
    "procedural": false,
-   "quote": "rb moved to issue an order with the additional co ndition of the rain garden maintenance being perpetual. kj seconded and the commission approved unanimously with cl as an abstention. by roll call vote. lot 2. changes were reviewed",
-   "quote_taken_from_text": true
+   "quote": "jr seconded and the commission approved unanimously with cl as an abstention."
   },
   {
-   "motion": "issue an Order with perpetual rain garden maintenance and buffer zone demarcation for Lot 5 at 150 Holman Street",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue an Order of Conditions for PSG Realty Lot 5 (150 Holman St) with a perpetual rain garden maintenance condition and buffer zone demarcation on the deed.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously; CL abstaining",
    "procedural": false,
-   "quote": "rb moved to issue an order with the additional condition of the rain garden maintenance being perpetual and the inclusion of the buffer zone demarcation. kj seconded and the commission approved unanimously with cl as an abstention."
+   "quote": "kj seconded and the commission approved unanimously with cl as an abstention."
   },
   {
-   "motion": "issue an Order with perpetual rain garden maintenance and buffer zone demarcation for Lot 6 at 150 Holman Street",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue an Order of Conditions for PSG Realty Lot 6 (150 Holman St) with a perpetual rain garden maintenance condition and buffer zone demarcation on the deed.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously; CL abstaining",
    "procedural": false,
-   "quote": "rb moved to issue an order with the additional condition of the rain garden maintenance being perpetual and the inclusion of the buffer zone demarcation. kj seconded and the commission approved unanimously with cl as an abstention."
+   "quote": "kj seconded and the commission approved unanimously with cl as an abstention."
   },
   {
-   "motion": "issue an Order with perpetual rain garden maintenance and buffer zone demarcation for Lot 7 at 150 Holman Street",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed with 1 abstention",
+   "motion": "Issue an Order of Conditions for PSG Realty Lot 7 (150 Holman St) with a perpetual rain garden maintenance condition and buffer zone demarcation on the deed.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously; CL abstaining",
    "procedural": false,
-   "quote": "rb moved to issue an order with the additional condition of the rain garden maintenance being perpetual and the inclusion of the buffer zone demarcation. kj seconded and the commission approved unanimously with cl as an abstention by roll call vote."
+   "quote": "kj seconded and the commission approved unanimously with cl as an abstention by roll call vote."
   },
   {
-   "motion": "continue the hearing on beach raking at 90 Ruth Street to June 16, 2021",
-   "moved_by": "Jeffrey Viviano",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Continue the Brian Dalmasso request for beach raking at 90 Ruth Street to June 16th.",
+   "moved_by": "JV",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
    "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of jv and a second by kj with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "continue the hearing on restoration of a parking area to a naturalized state at Fire Road 12 to June 16, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Continue the Town of Lunenburg, Thomas WU and Scott Benjamin Notice of Intent at Fire Road 12 to June 16th.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
    "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb and a second by kj with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "continue the hearing on improvement of access to Lake Shirley at 48 Pearl Street to June 16, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Continue the Christopher and Suzanne DeGeorge Notice of Intent at 48 Pearl Street to June 16th.",
+   "moved_by": "RB",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
    "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb and a second by jr with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "continue the hearing on a natural stone wall at 137 Flynn Road to June 16, 2021",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Richard Bursch",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Continue the Cynthia Ritchie Notice of Intent at 137 Flynn Road to June 16th.",
+   "moved_by": "KJ",
+   "seconded_by": "RB",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
    "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of kj and a second by rb with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "continue the hearing on demolition and reconstruction of a commercial building at 757 Chase Road to June 16, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
-   "procedural": false,
-   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb and a second by jr with a unanimous roll call vote to approve the motion."
+   "motion": "Continue the Empire Management Corp Notice of Intent at 757 Chase Road to June 16th.",
+   "moved_by": "RB",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb"
   },
   {
-   "motion": "continue the hearing on a six-lot subdivision at 101 Pleasant Street to June 16, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
-   "procedural": false,
+   "motion": "Continue the MA Pleasant LLC Notice of Intent at 101 Pleasant Street to June 16th.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
+   "outcome": "passed unanimously by roll call vote",
+   "procedural": true,
    "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb and a second by jv with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "issue an order of conditions with a condition that abutter Carl Luck be notified of any modifications for work at 386 Sunset Lane",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Kenneth Jones",
+   "motion": "Issue an order of conditions for Richard Tremblay at 386 Sunset Lane, with the condition that abutter Carl Luck be notified of any modifications proposed in the field.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "jr motioned to issue an order of conditions with the condition that abutter carl luck be notified of any modifications proposed in the field. kj seconded and the commission voted unanimously."
+   "quote": "jr motioned to issue an order of conditions with the condition that abutter carl luck be notified of any modifications proposed in the field."
   },
   {
-   "motion": "reimburse Kenneth Jones $30 for the purchase of a lawnmower",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously with 1 abstention",
+   "motion": "Reimburse KJ 30 dollars for a lawnmower purchase for the Hollis Road property.",
+   "moved_by": "JR",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously; KJ abstaining",
    "procedural": false,
    "quote": "jr moved to reimburse kj the 30 dollars for the purchase. cc seconded and the commission voted unanimously with kj abstaining."
   },
   {
-   "motion": "adjourn the meeting",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
+   "motion": "Adjourn the meeting at 10:20 PM.",
+   "moved_by": "RB",
+   "seconded_by": "JR",
    "outcome": "passed unanimously",
    "procedural": true,
    "quote": "the meeting was adjourned by a motion of rb and a second by jr and there was a unanimous vote of the commission."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.17274489999999998
+ "note": "Text extraction, not a scan. Votes are recorded as unanimous or as named votes; no roll-call tallies are printed, so outcomes use the printed words. Initials (JV, KJ, CC, BP, JR, RB, CL, MM) are used throughout and are mapped to members from the letterhead and the minutes; Richard Bursch (RB) is not Mark Bursch, who represented an applicant. Call to order is printed as 7 AM although the meeting is 7 PM. \"All in attendance with CL appearing at 9 PM\" is printed as is and may mean Carl Luck arrived at 9 PM. The mower figure is printed as 300 dollars and the reimbursement as 30 dollars; these are not reconciled. Michael Larouche appears only in the letterhead. The Daniel Murphy hearing sits under the \"Hearings Continued to June 16, 2021\" heading but is worded as noticed; no motion is recorded. Carl Luck is both a member and a speaking abutter; the public comment entry reflects his abutter statement. The minutes contain no documents list; documents below are named in passing.",
+ "cost_usd": 0.15405695,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "all in attendance with cl appearing at 9 pm"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Vice-Chair (appears as KJ in the minutes)",
+   "status": "present",
+   "quote": "all in attendance with cl appearing at 9 pm"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Member (appears as RB; recused on the Steve Fenner NOI)",
+   "status": "present",
+   "quote": "all in attendance with cl appearing at 9 pm"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Member (appears as CC)",
+   "status": "present",
+   "quote": "all in attendance with cl appearing at 9 pm"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Member (appears as CL; appeared at 9 PM; also spoke as an abutter)",
+   "status": "present",
+   "quote": "all in attendance with cl appearing at 9 pm"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member (appears as JR)",
+   "status": "present",
+   "quote": "all in attendance with cl appearing at 9 pm"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Member (appears as JV)",
+   "status": "present",
+   "quote": "all in attendance with cl appearing at 9 pm"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator (appears as MM)",
+   "status": "present",
+   "quote": "mm noted that he could help coordinate with the shirly conservation commission"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Associate",
+   "status": "not stated",
+   "quote": "michael larouche, associate"
+  },
+  {
+   "name": "Wendy Gendron",
+   "role": "Presenter, LSIC update",
+   "status": "present",
+   "quote": "wendy gendron and joanna bilotta updated the conservation commission."
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Presenter, LSIC update; also asked questions on the Flatt Hill Road bridge hearing",
+   "status": "present",
+   "quote": "wendy gendron and joanna bilotta updated the conservation commission."
+  },
+  {
+   "name": "Timothy Beauchmin",
+   "role": "Applicant, represented himself",
+   "status": "present",
+   "quote": "he oriented the commission to the details of the project and"
+  },
+  {
+   "name": "Ryan Proctor",
+   "role": "Representing the applicant (Dillis and Roy), Daniel Corey hearing",
+   "status": "present",
+   "quote": "ryan proctor from dillis and roy was present from the applicant."
+  },
+  {
+   "name": "Michael Shank",
+   "role": "Applicant, represented himself",
+   "status": "present",
+   "quote": "mr shank was present to represent himself."
+  },
+  {
+   "name": "Eric Martineau",
+   "role": "Applicant, represented himself",
+   "status": "present",
+   "quote": "eric martineau was present to represent himself."
+  },
+  {
+   "name": "Mark Bursch",
+   "role": "Representing the applicant, Steve Fenner NOI (not the same as Richard Bursch, RB, as printed)",
+   "status": "present",
+   "quote": "mark bursch represented the applicant."
+  },
+  {
+   "name": "Emily Martin",
+   "role": "Representing the applicant, Flatt Hill Road bridge",
+   "status": "present",
+   "quote": "emily martin, dave cloutier and olivia richards and rob oliva represented the applicant."
+  },
+  {
+   "name": "Dave Cloutier",
+   "role": "VHB (engineer for the applicant)",
+   "status": "present",
+   "quote": "dave cloutier from vhb noted"
+  },
+  {
+   "name": "Olivia Richards",
+   "role": "Representing the applicant, Flatt Hill Road bridge",
+   "status": "present",
+   "quote": "olivia richards outlined the work, the current conditions of the site"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "Representing the applicant, Flatt Hill Road bridge",
+   "status": "present",
+   "quote": "emily martin, dave cloutier and olivia richards and rob oliva represented the applicant."
+  },
+  {
+   "name": "Brian Marchetti",
+   "role": "Appeared for the applicant, PSG Realty 150 Holman St lots",
+   "status": "present",
+   "quote": "brian marchetti appeared before the commission."
+  },
+  {
+   "name": "Ryan Vickers",
+   "role": "Representing the applicant, Richard Tremblay NOI",
+   "status": "present",
+   "quote": "ryan vickers was present to represent the applicant."
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Applicant, 386 Sunset Lane",
+   "status": "present",
+   "quote": "richard tremblay noted that there would only be one piece of equipment on his property"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Town to file a Notice of Intent on the Leominster Road illegal dumping; MM to tell the town (no vote recorded; KJ, JR and BP expressed agreement).",
+   "quote": "mm will tell the town to file a notice of intent."
+  },
+  {
+   "decision": "Commission requested an advertisement be placed for the benefit of the public, regarding Rayno/Hollis road for the June 16, 2021 meeting.",
+   "quote": "the commission requested an advertisement be placed for the benefit of the public."
+  },
+  {
+   "decision": "Commission agreed to a site walk on the 12th of June for the Steve Fenner NOI at 326 Holman Street.",
+   "quote": "they agreed to a site walk on the 12th of june."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Hollis Road mower replacement and reimbursement to KJ",
+   "what_was_recorded": "KJ bought a new lawnmower for the Hollis Road property; the minutes print the cost as 300 dollars, and the commission then voted to reimburse KJ 30 dollars. The two figures are not reconciled in the minutes.",
+   "figures_as_printed": [
+    "300 dollars",
+    "30 dollars"
+   ],
+   "quote": "kj noted that the mower for the hollis road property needs replacement, and he purchased a new lawnmower. the cost was 300 dollars."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Carl Luck",
+   "stated_role": "speaking as an abutter",
+   "topic": "Richard Tremblay, 386 Sunset Lane wall and fence work",
+   "quote": "carl luck speaking as an abutter noted that there was some excellent solutions"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Minutes of May 19, 2021",
+   "resolution": "approved (JV, KJ, CC, BP in favor; JR, RB abstained)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "jv moved to approve the minutes kj seconded and the commission voted in favor by a vote of jv, kj,cc and bp."
+  },
+  {
+   "topic": "LSIC lake monitoring update",
+   "resolution": "no action; commission thanked the LSIC",
+   "tags": [
+    "lake management",
+    "monitoring",
+    "herbicide"
+   ],
+   "quote": "the commission thanked the lsic as there was no further comment or question from the commission or the public."
+  },
+  {
+   "topic": "RFD, Timothy Beauchmin, 239 Prospect Street (gate and dock, Lake Whalom)",
+   "resolution": "negative determination issued",
+   "tags": [
+    "request for determination",
+    "lake",
+    "parking"
+   ],
+   "quote": "kj moved to issue a negative determination jr seconded"
+  },
+  {
+   "topic": "NOI, Daniel Corey, 46 Pine Grove Road (deck and addition)",
+   "resolution": "continued to June 16, 2021",
+   "tags": [
+    "notice of intent",
+    "deck",
+    "DEP file number"
+   ],
+   "quote": "the applicant agreed to continue to june 16, 2021 at 7 pm by a motion of rb and a second by cc"
+  },
+  {
+   "topic": "RFD, Michael Shank, 313 Leominster Road (garage slab in riverfront)",
+   "resolution": "negative determination issued",
+   "tags": [
+    "request for determination",
+    "riverfront",
+    "enforcement history"
+   ],
+   "quote": "rb moved for a negative determination. jr seconded and the commission voted unanimously to approve the motion."
+  },
+  {
+   "topic": "RFD, Eric Martineau, 45 Cove Road (garage)",
+   "resolution": "negative determination issued",
+   "tags": [
+    "request for determination",
+    "garage",
+    "variance"
+   ],
+   "quote": "rb moved for a negative determination jv seconded and the commission voted unanimously to approve the motion,"
+  },
+  {
+   "topic": "NOI, Steve Fenner, 326 Holman Street (pool, landscaping, tree removal in buffer zone)",
+   "resolution": "continued to June 16; site walk set for June 12",
+   "tags": [
+    "notice of intent",
+    "buffer zone",
+    "waiver",
+    "tree removal"
+   ],
+   "quote": "the commission continued to the meeting of june 16th by a motion of kj and a second of jv and a unanimous vote of the commission by roll call vote."
+  },
+  {
+   "topic": "NOI, Town of Lunenburg, Flatt Hill Road bridge replacement",
+   "resolution": "continued to June 16",
+   "tags": [
+    "bridge",
+    "culvert",
+    "brook",
+    "drawdown"
+   ],
+   "quote": "a motion to continue to june 16th was made by rb and seconded by kj with a unanimous vote to approve the motion by roll call vote."
+  },
+  {
+   "topic": "NOI, Kevin Hill, 41 Country Road (single family home, driveway, septic)",
+   "resolution": "continued to June 16 at the applicant's request",
+   "tags": [
+    "notice of intent",
+    "single family home",
+    "septic"
+   ],
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of cc and a second by rb"
+  },
+  {
+   "topic": "NOI, PSG Realty, 150 Holman St, lots 1 to 7 (seven-lot subdivision)",
+   "resolution": "Orders of conditions issued for lots 1 to 7 with perpetual rain garden maintenance and buffer demarcation conditions; CL abstaining on each",
+   "tags": [
+    "subdivision",
+    "rain garden",
+    "deed restriction",
+    "buffer zone"
+   ],
+   "quote": "kj moved to issue an order with the additional condition of"
+  },
+  {
+   "topic": "RFD, Brian Dalmasso, 90 Ruth Street (beach raking)",
+   "resolution": "continued to June 16 at the applicant's request",
+   "tags": [
+    "request for determination",
+    "beach raking"
+   ],
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of jv and a second by kj with a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Town of Lunenburg, Thomas WU and Scott Benjamin, Fire Road 12 (parking area restoration)",
+   "resolution": "continued to June 16 at the applicant's request",
+   "tags": [
+    "notice of intent",
+    "town property",
+    "restoration"
+   ],
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb and a second by kj with a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Christopher and Suzanne DeGeorge, 48 Pearl Street (Lake Shirley access and erosion)",
+   "resolution": "continued to June 16 at the applicant's request",
+   "tags": [
+    "notice of intent",
+    "erosion",
+    "lake access"
+   ],
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb and a second by jr with a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Cynthia Ritchie, 137 Flynn Road (natural stone wall on waterfront)",
+   "resolution": "continued to June 16 at the applicant's request",
+   "tags": [
+    "notice of intent",
+    "stone wall",
+    "erosion",
+    "waterfront"
+   ],
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of kj and a second by rb with a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Empire Management Corp, 757 Chase Road (commercial building demolition and rebuild)",
+   "resolution": "continued to June 16 at the applicant's request",
+   "tags": [
+    "notice of intent",
+    "commercial building",
+    "grading",
+    "parking"
+   ],
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb"
+  },
+  {
+   "topic": "NOI, MA Pleasant LLC, 101 Pleasant Street (six-lot subdivision, wetland crossing)",
+   "resolution": "continued to June 16 at the applicant's request",
+   "tags": [
+    "subdivision",
+    "wetland crossing",
+    "roadway"
+   ],
+   "quote": "this meeting was continued by request of the applicant to the june 16 th meeting by a motion of rb and a second by jv with a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Richard Tremblay, 386 Sunset Lane (retaining walls, sheet piles, patios, driveway)",
+   "resolution": "order of conditions issued with abutter notification condition for Carl Luck",
+   "tags": [
+    "notice of intent",
+    "retaining wall",
+    "abutter",
+    "sheet piles"
+   ],
+   "quote": "jr motioned to issue an order of conditions with the condition that abutter carl luck be notified of any modifications proposed in the field."
+  },
+  {
+   "topic": "RFD, Daniel Murphy, 73 Peninsula Drive (tree removal in buffer zone)",
+   "resolution": "hearing noticed under the continued-hearings heading; no action recorded",
+   "tags": [
+    "request for determination",
+    "tree removal",
+    "buffer zone"
+   ],
+   "quote": "request for a determination of applicability for work at 73 peninsula drive by daniel murphy will be held."
+  },
+  {
+   "topic": "Enforcement: Leominster Road illegal dumping and open enforcement files",
+   "resolution": "town to file a Notice of Intent for Leominster Road; other files reported with no action recorded",
+   "tags": [
+    "enforcement",
+    "illegal dumping",
+    "encroachment"
+   ],
+   "quote": "mm will tell the town to file a notice of intent."
+  },
+  {
+   "topic": "Hollis Road mower reimbursement and open space items",
+   "resolution": "reimbursement to KJ approved, 30 dollars (KJ abstaining); advertisement requested for Rayno/Hollis road",
+   "tags": [
+    "budget",
+    "open space",
+    "trails",
+    "Hollis Road"
+   ],
+   "quote": "jr moved to reimburse kj the 30 dollars for the purchase. cc seconded and the commission voted unanimously with kj abstaining."
+  },
+  {
+   "topic": "Administrator's reports and open space items",
+   "resolution": "no action recorded beyond the advertisement request",
+   "tags": [
+    "administrator",
+    "forestry",
+    "open space"
+   ],
+   "quote": "54 pine acres drive removal of three trees"
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 10:20 PM; next meeting June 16, 2021",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "the meeting was adjourned by a motion of rb and a second by jr and there was a unanimous vote of the commission."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "File plans (plan showing area 4, above ground pool, Holman Street)",
+   "where": "text",
+   "quote": "area noted as 4 on the file plans was for an above ground pool."
+  },
+  {
+   "name": "USGS map (Catacunemug brook)",
+   "where": "text",
+   "quote": "and it is noted on the usgs map."
+  },
+  {
+   "name": "Planning board reviewing engineer comments",
+   "where": "text",
+   "quote": "the comments from the planning board reviewing engineer were reviewed by the applicant"
+  },
+  {
+   "name": "NOI handout",
+   "where": "text",
+   "quote": "the noi handout should require colored lines"
+  },
+  {
+   "name": "O&M Plans (rain garden maintenance)",
+   "where": "text",
+   "quote": "noting that they have an o&m plans"
+  },
+  {
+   "name": "Waiver request form",
+   "where": "text",
+   "quote": "for a waiver request and asked that he issue it"
+  },
+  {
+   "name": "LSIC order of conditions in Shirley",
+   "where": "text",
+   "quote": "required by the lsic's order of conditions in shirley"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "notice of intent",
+  "requests for determination",
+  "orders of conditions",
+  "enforcement",
+  "lake management",
+  "abutters",
+  "continuances",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

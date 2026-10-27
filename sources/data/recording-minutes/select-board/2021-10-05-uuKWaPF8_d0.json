@@ -1,0 +1,977 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2021-10-05",
+ "video_id": "uuKWaPF8_d0",
+ "video_url": "https://www.youtube.com/watch?v=uuKWaPF8_d0",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-10-05-uuKWaPF8_d0.json",
+  "sha256": "86809abaedd56b06b084e2f384f7fc9b399517ec49fdceebeda16654df60e9de",
+  "caption_lines": 329,
+  "segments": 3119
+ },
+ "recording": {
+  "duration_s": 6880,
+  "duration": "1:54",
+  "spoken_chars": 92667,
+  "words_approx": 15444
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10052021-5269",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-10-05-agenda-5269.txt",
+   "path": "sources/meetings/select-board/2021-10-05-agenda-5269.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10052021-5269",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-10-05-minutes-5269.txt",
+   "path": "sources/meetings/select-board/2021-10-05-minutes-5269.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-25T12:44:28Z",
+  "cost_usd": 0.5494504
+ },
+ "minutes": {
+  "headline": "Select Board voted 4-1 to put TC Passios rehab and new-build design-funding articles on the special town meeting warrant.",
+  "summary": "The board spent most of the meeting debating the TC Passios reuse committee's proposed warrant articles for the November 16 special town meeting. It approved articles J, K and L, with one member opposed, and renewed a bond anticipation note. It also discussed the old primary school demolition, which was tabled a week, plus FY22 budget updates and a hardship ambulance bill.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Alonso",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "the town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "the finance director",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Dave Blatt",
+    "role": "TC Pacio's design committee assistant chair"
+   },
+   {
+    "name_as_heard": "Dave Pacios",
+    "role": "TC Pacios committee member"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 40,
+    "topic": "No public comment at the opening."
+   },
+   {
+    "t": 3580,
+    "topic": "A resident on Zoom said the TC Passios project grew from about 10-14 million to 23 million, warned of debt capacity issues with Turkey Hill, and urged slowing down on the articles.",
+    "speaker_as_heard": "Beardmore, 282 Pleasant Street"
+   },
+   {
+    "t": 6772,
+    "topic": "Cautioned the board about making commitments for the old primary property that the Parks Commission has not agreed to, speaking as an individual.",
+    "speaker_as_heard": "Dave Pacios, 56 Whiting Street"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "debt",
+   "executive-session",
+   "facilities",
+   "free-cash",
+   "grants",
+   "library",
+   "public-comment",
+   "town-departments",
+   "town-meeting",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "motion": "Approve signing the bond anticipation note renewal as presented by the finance director",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 723
+   },
+   {
+    "motion": "Add article J (report of the TCP building design committee) to the special town meeting warrant",
+    "outcome": "passed unanimously",
+    "procedural": false,
+    "t": 4281
+   },
+   {
+    "motion": "Add articles K and L to the special town meeting warrant, subject to amending L",
+    "outcome": "passed 4-1, one opposed",
+    "procedural": false,
+    "t": 4347
+   },
+   {
+    "motion": "Approve the ambulance billing hardship request",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 5668
+   },
+   {
+    "motion": "Approve minutes of September 14",
+    "outcome": "passed with one abstention",
+    "procedural": true,
+    "t": 5708
+   },
+   {
+    "motion": "Approve minutes of September 21",
+    "outcome": "passed with one abstention",
+    "procedural": true,
+    "t": 5729
+   },
+   {
+    "motion": "Approve the updated senior property tax work-off program policy",
+    "outcome": "passed",
+    "procedural": false,
+    "t": 6690
+   },
+   {
+    "motion": "Enter executive session on collective bargaining (municipal employees union and fire union), adjourning afterward; roll call",
+    "outcome": "roll call ayes heard from the members; tally not stated",
+    "procedural": true,
+    "t": 6816
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 618,
+    "topic": "Bond anticipation note renewal",
+    "what_was_said": "The outstanding note is paid down by an annual amount and the remainder renewed for the Saliva property and the ladder truck, at a low interest rate coming due next October.",
+    "figures_as_heard": [
+     "six hundred and nine thousand nine hundred and ninety six dollars",
+     "two hundred and twenty five thousand six hundred dollars",
+     "three hundred and eighty four thousand three hundred ninety six dollars",
+     "a hundred and fifty two thousand four hundred and ninety nine dollars",
+     "four hundred and fifty seven thousand four hundred and ninety seven dollars",
+     "0.4 percent"
+    ]
+   },
+   {
+    "t": 942,
+    "topic": "FY22 new growth and surplus",
+    "what_was_said": "New growth was certified and a surplus is estimated from a retiring accounting clerk position that will be refilled as an assistant accountant.",
+    "figures_as_heard": [
+     "430 254",
+     "approximately 39 000"
+    ]
+   },
+   {
+    "t": 983,
+    "topic": "Assistant accountant hours",
+    "what_was_said": "A budget amendment would increase the assistant accountant position from 24 to 32 hours if town meeting approves.",
+    "figures_as_heard": [
+     "24 hours a week",
+     "32 hours a week"
+    ]
+   },
+   {
+    "t": 1003,
+    "topic": "IT budget amendment",
+    "what_was_said": "An FY22 amendment is planned for network equipment and security needs, and a backup plan if the Community Compact IT grant is not received.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 1026,
+    "topic": "Road salt prices",
+    "what_was_said": "Consortium bids rose, affecting the FY22 snow and ice budget, which may deficit spend; salt reserves are good.",
+    "figures_as_heard": [
+     "38 percent"
+    ]
+   },
+   {
+    "t": 1047,
+    "topic": "Council on Aging community enrichment grant",
+    "what_was_said": "The council applied for a larger grant and was awarded a smaller amount for an ADA-compliant outdoor area behind the senior center.",
+    "figures_as_heard": [
+     "20 000",
+     "7500"
+    ]
+   },
+   {
+    "t": 2023,
+    "topic": "TCP design committee spending and cost",
+    "what_was_said": "Earlier funding was meant to provide a new-build comparison against a rehab estimate; the rehab figure was cited.",
+    "figures_as_heard": [
+     "54 thousand dollars",
+     "23 million dollars"
+    ]
+   },
+   {
+    "t": 2477,
+    "topic": "Cost escalation of delay",
+    "what_was_said": "A member argued construction escalation makes each six-month delay cost about half a million dollars.",
+    "figures_as_heard": [
+     "four percent a year",
+     "almost a million dollars a year",
+     "half a million dollars"
+    ]
+   },
+   {
+    "t": 3240,
+    "topic": "TCP study funds exhausted",
+    "what_was_said": "A committee member said funds appropriated for the study are spent by the end of October.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 3322,
+    "topic": "Funding for design documents",
+    "what_was_said": "The design-documents cost was put near a quarter million, and the town manager said it would need a transfer from stabilization or reserve; free cash was discussed as a source.",
+    "figures_as_heard": [
+     "250 000",
+     "2.6 million"
+    ]
+   },
+   {
+    "t": 3493,
+    "topic": "Unappropriated Pierce property money",
+    "what_was_said": "A member asked about unappropriated money; an amount from the Pierce property was noted as needing rescission and reappropriation.",
+    "figures_as_heard": [
+     "60 some odd thousand"
+    ]
+   },
+   {
+    "t": 3640,
+    "topic": "TCP project cost growth and debt capacity",
+    "what_was_said": "A resident said the project grew from an initial estimate to its current cost, and that borrowing here plus Turkey Hill could strain debt capacity.",
+    "figures_as_heard": [
+     "10 to 12 million dollars",
+     "14 million dollars",
+     "23"
+    ]
+   },
+   {
+    "t": 5645,
+    "topic": "Ambulance hardship forgiveness",
+    "what_was_said": "The board considered forgiving an ambulance bill for a hardship patient.",
+    "figures_as_heard": [
+     "396 dollars",
+     "350 dollars"
+    ]
+   },
+   {
+    "t": 6268,
+    "topic": "Library Friday hours funding request",
+    "what_was_said": "Library trustees want funding to add staffing hours and open Fridays, asked for at the special town meeting.",
+    "figures_as_heard": [
+     "thirty four thousand thirty five thousand thirty four and nine hundred bucks",
+     "thirty five thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 983,
+    "description": "FY22 budget amendment transfer to fund assistant accountant additional hours",
+    "amount_as_heard": "not stated",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 3342,
+    "description": "Possible transfer from stabilization or reserve account to fund design documents",
+    "amount_as_heard": "250 000",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1482,
+    "decision": "Board agreed without objection to put article J (committee report) on the warrant."
+   },
+   {
+    "t": 4533,
+    "decision": "Members agreed on the record that if K fails and L passes they would vote to expand the TCP committee's charge."
+   },
+   {
+    "t": 5323,
+    "decision": "Old primary school demolition discussion tabled to next week; the town manager to ask the APDC chair whether its position against a pavilion is official."
+   },
+   {
+    "t": 5895,
+    "decision": "Board agreed informally to order business cards, and for name tags, for members who want them."
+   },
+   {
+    "t": 6000,
+    "decision": "Board agreed to invite a school committee member to discuss the civics curriculum and to reach out to the agricultural commission."
+   },
+   {
+    "t": 6083,
+    "decision": "The town manager to find out whether new certificates of occupancy were obtained for TCP and Ritter."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 40,
+    "t_end": 500,
+    "topic": "Little League U12 recognition",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 512,
+    "t_end": 553,
+    "topic": "Announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 575,
+    "t_end": 777,
+    "topic": "Bond anticipation note renewal",
+    "resolution": "voted",
+    "tags": [
+     "debt",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 798,
+    "t_end": 839,
+    "topic": "Resignations",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 859,
+    "t_end": 1255,
+    "topic": "Town manager report: vacancies, FY22 budget, grants, COVID",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "town-departments",
+     "grants"
+    ]
+   },
+   {
+    "t_start": 1255,
+    "t_end": 4960,
+    "topic": "TC Passios warrant articles J, K, L",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 4960,
+    "t_end": 5604,
+    "topic": "Old primary school demolition timeline",
+    "resolution": "tabled",
+    "tags": [
+     "facilities",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5604,
+    "t_end": 5688,
+    "topic": "Ambulance hardship request",
+    "resolution": "voted",
+    "tags": [
+     "public-safety",
+     "fees"
+    ]
+   },
+   {
+    "t_start": 5688,
+    "t_end": 5769,
+    "topic": "Minutes approval",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 5769,
+    "t_end": 6104,
+    "topic": "Action items",
+    "resolution": "informational",
+    "tags": [
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 6104,
+    "t_end": 6392,
+    "topic": "Committee reports including library funding request",
+    "resolution": "informational",
+    "tags": [
+     "library",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 6393,
+    "t_end": 6667,
+    "topic": "Special town meeting warrant updates",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 6667,
+    "t_end": 6732,
+    "topic": "Senior work-off program policy",
+    "resolution": "voted",
+    "tags": [
+     "seniors",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 6732,
+    "t_end": 6878,
+    "topic": "Public comment and executive session",
+    "resolution": "voted",
+    "tags": [
+     "public-comment",
+     "executive-session",
+     "contracts-and-unions"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Exact roll call tally for executive session was not stated, only ayes heard.",
+   "Some figures and speaker identities in the TC Passios discussion are uncertain from the captions.",
+   "Whether the 350 or 396 dollar figure is the hardship amount is unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 2209,
+    "about": "Members disagreed on whether to put the rehab and new-build articles on the November warrant or wait until spring.",
+    "sides": "One member and the chair opposed putting K and L on now; another member and committee members wanted all three on now.",
+    "words_as_heard": "i will not be for okay",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3743,
+    "about": "A resident on Zoom disagreed with a board member's view and warned of risks to the ballot vote.",
+    "sides": "A resident against a board member's strategy.",
+    "words_as_heard": "i think mr jeffries is taking this way too far",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2230,
+    "kind": "condition",
+    "about": "A member would not support the articles without enough comparison information.",
+    "who": "a member",
+    "words_as_heard": "anything that jeopardizes anything not happening to the building i will not be for okay"
+   },
+   {
+    "t": 3702,
+    "kind": "liability or legal",
+    "about": "Combined borrowing for the TCP building and Turkey Hill could breach the town's debt capacity and financial policies.",
+    "who": "a resident",
+    "words_as_heard": "violating our own financial policies"
+   },
+   {
+    "t": 3885,
+    "kind": "safety",
+    "about": "Town employees work in buildings with poor conditions, including bulging floors and water coming in.",
+    "who": "a member",
+    "words_as_heard": "you can smell dead rats in the walls every now and again you have floors in the finance office downstairs that are bulging"
+   },
+   {
+    "t": 4596,
+    "kind": "condition",
+    "about": "A member would support the articles if the consultant's numbers arrive, and otherwise pass over them.",
+    "who": "a member",
+    "words_as_heard": "if the numbers come in from the consultant uh as we've been promised"
+   },
+   {
+    "t": 5010,
+    "kind": "condition",
+    "about": "A member supported the articles hesitantly, relying on the option to pass over if the numbers are lacking.",
+    "who": "a member",
+    "words_as_heard": "the idea that we could also pass over the question if the numbers that we see in advance that that is an escape hatch"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 595,
+    "name_as_heard": "the note",
+    "kind": "contract or agreement",
+    "words_as_heard": "you have the note that needs to be signed in order for us to submit it to dor",
+    "shown": true
+   },
+   {
+    "t": 6415,
+    "name_as_heard": "the October fifth warrant draft",
+    "kind": "warrant article",
+    "words_as_heard": "there's two copies of this in your google drive just if you hover it's the october fifth one",
+    "shown": true
+   },
+   {
+    "t": 5624,
+    "name_as_heard": "hardship request email",
+    "kind": "letter or email",
+    "words_as_heard": "it was sent as an email",
+    "shown": true
+   },
+   {
+    "t": 6187,
+    "name_as_heard": "library strategic plan",
+    "kind": "report",
+    "words_as_heard": "it's a 41-page document",
+    "shown": false
+   },
+   {
+    "t": 6690,
+    "name_as_heard": "senior work-off program policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "the senior property tax work off program policy",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "town-building-concepts",
+    "title": "Town building concepts",
+    "question": "What would rehabbing TC Passios versus building new cost, and how would each be funded?",
+    "t": 1338,
+    "words_as_heard": "review of both the original proposal which would be to rehab the building and then a like-kind review of what it would be if we built a fresh building",
+    "data_in_play": [
+     "23 million dollars",
+     "250 000",
+     "four percent a year"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "debt-capacity",
+    "title": "Debt capacity",
+    "question": "Could borrowing for the town hall and Turkey Hill exceed the town's debt capacity?",
+    "t": 3682,
+    "words_as_heard": "we could very well find ourselves bumping up on a debt capacity issue and violating our own financial policies",
+    "data_in_play": [
+     "23 million dollars"
+    ],
+    "existing": "thread:turkey-hill-rebuild"
+   },
+   {
+    "slug": "free-cash-balance",
+    "title": "Free cash balance",
+    "question": "Could free cash fund the design documents in the fall?",
+    "t": 3426,
+    "words_as_heard": "the estimate is 2.6 million",
+    "data_in_play": [
+     "2.6 million",
+     "250 000"
+    ],
+    "existing": "topic:free-cash-balance"
+   },
+   {
+    "slug": "library-hours-funding",
+    "title": "Library Friday hours",
+    "question": "What would opening the library on Fridays cost and how would it be funded mid-year?",
+    "t": 6268,
+    "words_as_heard": "they're looking for an additional thirty five thousand dollars",
+    "data_in_play": [
+     "thirty five thousand dollars"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted 4-1 to put articles K and L, the TC Passios rehab and new-build design-funding items, on the special town meeting warrant, subject to amending L.",
+    "t": 4347
+   },
+   {
+    "line": "The board unanimously added article J, the TC Passios building design committee's report, to the warrant.",
+    "t": 4281
+   },
+   {
+    "line": "Members said on the record that if K fails and L passes, they would vote to expand the TC Passios committee's charge.",
+    "t": 4533
+   },
+   {
+    "line": "The board approved signing the renewal of a bond anticipation note for the Saliva property and the ladder truck.",
+    "t": 723
+   },
+   {
+    "line": "Discussion of demolishing the old primary school was tabled a week; the town manager is to ask whether the APDC chair's position against a pavilion is official.",
+    "t": 5323
+   }
+  ],
+  "why_it_matters": [
+   "Articles K and L would ask voters at the November 16 special town meeting to fund design work on the TC Passios building, a debt-financed project whose borrowing a resident said could strain the town's debt capacity alongside Turkey Hill.",
+   "The design-documents funding, discussed as needing a transfer from stabilization or reserve, with free cash also raised as a source, would draw on town savings rather than a new tax line."
+  ],
+  "watch_next": [
+   "The November 16 special town meeting vote on articles J, K and L, including the amendment to L.",
+   "Next week's Select Board return to the old primary school demolition, after the town manager asks the APDC chair about its pavilion position."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-25T12:44:37Z",
+   "cost_usd": 0.2409958
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_10052021-5269",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-10-05-minutes-5269.txt",
+   "path": "sources/meetings/select-board/2021-10-05-minutes-5269.pdf"
+  },
+  "official_sha256": "4a0ce0c69fd4db377f4b890448121803a72846ba48465f0e9935c082bd3993d7",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the BAN renewal, Article J, the senior work-off policy and most budget figures. They differ on the K/L vote's terms, the ambulance hardship amount, and who was assigned to contact the APDC and who to contact about civics. The thing to know is that the K/L vote tally matches (4-1), but ours says only L could be amended, the official minutes say either could, and the official minutes add that Jeffreys withdrew his K motion, which ours never mentions.",
+  "counts": {
+   "agree": 14,
+   "caption_error": 3,
+   "discrepancy": 5,
+   "only_in_ours": 9,
+   "only_in_official": 6
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: sign BAN renewal as presented by finance director",
+    "ours": "Approve signing the bond anticipation note renewal as presented by the finance director — passed",
+    "official": "motion: t. dwyer to sign the ban as presented by the finance director 2\"d; l. franco vote: all in favor",
+    "note": "Same motion and outcome in both records.",
+    "t": 723
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: add Article J to the warrant",
+    "ours": "Add article J (report of the TCP building design committee) to the special town meeting warrant — passed unanimously",
+    "official": "motion: m. jeffreys to add article j to the special town meeting warrant 2\"d: l. franco vote: all in favor",
+    "note": "Same motion, passed unanimously.",
+    "t": 4281
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: add Articles K and L, and the amendment condition",
+    "ours": "Add articles K and L to the special town meeting warrant, subject to amending L — passed 4-1, one opposed",
+    "official": "to add articles k and l to the special town meeting warrant with the ability to amend either discussion ensued about amending the wording at a future meeting. vote: 4 in favor, 1 opposed (alonzo)",
+    "note": "The tally agrees (4-1). Ours says only L may be amended; the official minutes say either may be. The official minutes also say Mr. Jeffreys withdrew his motion to add Article K. Check the recording to see what was actually moved and whether K was withdrawn.",
+    "t": 4347
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: ambulance billing hardship amount",
+    "ours": "Approve the ambulance billing hardship request — passed",
+    "official": "motion: l. franco to approve the billing hardship request of $350 2\"d.t.dwyer vote: all in favor",
+    "note": "The vote agrees. Ours says $396 and $350 were heard in the hardship discussion. The official minutes give an $811.46 invoice, $461.46 paid by insurance, and a $350.00 balance. Check what $396 was.",
+    "t": 5668
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: senior work-off program policy",
+    "ours": "Approve the updated senior property tax work-off program policy — passed",
+    "official": "motion: m. jeffreys 2''d; l. franco to approve the amended senior work off program committee and policy as presented vote: all in favor",
+    "note": "Same item and outcome. The official wording adds 'committee'.",
+    "t": 6690
+   },
+   {
+    "kind": "agree",
+    "about": "Transfer: FY22 amendment for assistant accountant hours",
+    "ours": "FY22 budget amendment transfer to fund assistant accountant additional hours — not stated (discussed only)",
+    "official": "one of the ft22 budget amendments will be to ask for a transfer of funds to support this position with additional hours",
+    "note": "Both say a transfer was proposed with no amount and no vote.",
+    "t": 983
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Transfer: FY22 amendment for IT network equipment and security",
+    "ours": "",
+    "official": "this transfer will also address a backup plan in the event we do not get the community compact it grant.",
+    "note": "Our minutes do not mention this proposed IT transfer. No amount or vote in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Possible transfer from stabilization or reserve for design documents",
+    "ours": "Possible transfer from stabilization or reserve account to fund design documents — 250 000 (discussed only)",
+    "official": "mr. jeffreys proposed funding construction document costs with free cash.",
+    "note": "The official minutes record only a free cash funding proposal with no amount. The $250,000 and the stabilization/reserve source appear only in ours. Check which source was discussed.",
+    "t": 3342
+   },
+   {
+    "kind": "agree",
+    "about": "BAN renewal figures",
+    "ours": "six hundred and nine thousand nine hundred and ninety six dollars, two hundred and twenty five thousand six hundred dollars, three hundred and eighty four thousand three hundred ninety six dollars, a hundred and fifty two thousand four hundred and ninety nine dollars, four hundred and fifty seven thousand four hundred and ninety seven dollars, 0.4 percent",
+    "official": "ban in the amount of $609,996. this was for the purchase of the saliba property ($225,600) and a ladder truck ($384,396).",
+    "note": "Every figure matches. The $152,499 paydown and $457,497 renewed are also in the official budget item.",
+    "t": 618
+   },
+   {
+    "kind": "agree",
+    "about": "FY22 new growth and surplus",
+    "ours": "430 254, approximately 39 000",
+    "official": "new growth was certified at $430,254. we currently estimate a surplus of approximately $39,000.",
+    "note": "Same figures.",
+    "t": 942
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Assistant accountant hours (24 and 32 per week)",
+    "ours": "24 hours a week, 32 hours a week",
+    "official": "",
+    "note": "The official minutes give no hours figures for this position.",
+    "t": 983
+   },
+   {
+    "kind": "agree",
+    "about": "Road salt price increase",
+    "ours": "38 percent",
+    "official": "the consortium bids for road salt were received and increased approximately 38%.",
+    "note": "Same figure.",
+    "t": 1026
+   },
+   {
+    "kind": "agree",
+    "about": "Council on Aging grant",
+    "ours": "20 000, 7500",
+    "official": "awarded lunenburg council on aging a grant of $7,500 for the outdoor recreation area behind the senior center",
+    "note": "The $7,500 award and $20,000 application match.",
+    "t": 1047
+   },
+   {
+    "kind": "agree",
+    "about": "Library Friday hours funding request",
+    "ours": "thirty four thousand thirty five thousand thirty four and nine hundred bucks, thirty five thousand dollars",
+    "official": "they are requesting more funding in the amount of about $35,000 annually and want to be open on fridays.",
+    "note": "About $35,000 in both. The caption is garbled but resolves to the same request.",
+    "t": 6268
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TCP design committee spending and cost figures",
+    "ours": "54 thousand dollars, 23 million dollars",
+    "official": "",
+    "note": "The official minutes give no TCP cost figures and say members noted it would be hard to decide without dollar amounts. Check the recording for these figures.",
+    "t": 2023
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cost escalation of delay",
+    "ours": "four percent a year, almost a million dollars a year, half a million dollars",
+    "official": "",
+    "note": "No escalation figures in the official minutes.",
+    "t": 2477
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Design documents funding 250,000 / 2.6 million",
+    "ours": "250 000, 2.6 million",
+    "official": "",
+    "note": "Neither figure appears in the official minutes.",
+    "t": 3322
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Unappropriated Pierce property money",
+    "ours": "60 some odd thousand",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3493
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "TCP project cost growth and debt capacity",
+    "ours": "10 to 12 million dollars, 14 million dollars, 23",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 3640
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Old Primary School demolition",
+    "ours": "Old primary school demolition discussion tabled to next week; the town manager to ask the APDC chair whether its position against a pavilion is official.",
+    "official": "mr. alonzo will reach out and request an official decision before proceeding further.",
+    "note": "Both put it on next week's agenda. Ours has the town manager contacting the APDC chair; the official minutes have Mr. Alonzo contacting the commission. The official minutes also say the board concurred on moving forward. Check who was assigned.",
+    "t": 5323
+   },
+   {
+    "kind": "agree",
+    "about": "Certificates of occupancy for TCP and Ritter",
+    "ours": "The town manager to find out whether new certificates of occupancy were obtained for TCP and Ritter.",
+    "official": "ms. lemieux will research that.",
+    "note": "Same task, assigned to the town manager (Ms. Lemieux).",
+    "t": 6083
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Civics curriculum outreach",
+    "ours": "Board agreed to invite a school committee member to discuss the civics curriculum and to reach out to the agricultural commission.",
+    "official": "mr. jeffreys will reach out to ms. leblanc.",
+    "note": "Ours has a school committee member invited and the agricultural commission contacted. The official minutes have Mr. Jeffreys contacting Lisa LeBlanc, a Grade 8 civics teacher. Check the recording.",
+    "t": 6000
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Business cards and name tags",
+    "ours": "Board agreed informally to order business cards, and for name tags, for members who want them.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 5895
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Agreement on expanding TCP committee charge if K fails and L passes",
+    "ours": "Members agreed on the record that if K fails and L passes they would vote to expand the TCP committee's charge.",
+    "official": "",
+    "note": "Not in the official minutes. Compare with the K/L vote.",
+    "t": 4533
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Thank-you letter to Dave MacDonald",
+    "ours": "",
+    "official": "a thank you letter will be sent.",
+    "note": "Ms. Lemieux is to send it after his resignation from the Personnel Committee. Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Historical Commission amended warrant article deferred",
+    "ours": "",
+    "official": "this will be discussed at the next meeting.",
+    "note": "Not in our minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Mr. Jeffreys withdrew his motion on Article K",
+    "ours": "",
+    "official": "mr. jeffreys withdrew his motion.",
+    "note": "Our minutes have no withdrawal. They record K and L added together. This bears on the K/L vote above.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Alonso (chair)",
+    "ours": "Mr. Alonso (chair)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,",
+    "note": "Misspelling of Alonzo.",
+    "official_reading": "Tom Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,",
+    "note": "Spelling variant of Jeffreys.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mr. Franco",
+    "ours": "Mr. Franco (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,",
+    "note": "Lou Franco is present in both.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Mr. Dwyer",
+    "ours": "Mr. Dwyer (member)",
+    "official": "clerk; todd dwyer, jim marino",
+    "note": "Todd Dwyer is present in both.",
+    "t": 0
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Attendee: Mr. Mourinho vs Jim Marino",
+    "ours": "Mr. Mourinho (member)",
+    "official": "clerk; todd dwyer, jim marino",
+    "note": "Probably a mishearing of Marino, but it is a different name and I did not confirm it. Check the recording.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: town manager and finance director",
+    "ours": "the town manager (town manager); the finance director (finance director)",
+    "official": "also present: heather lemieux, town manager; karen brochu, finance director;",
+    "note": "Same roles. The official minutes name Heather Lemieux and Karen Brochu.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Dave Pacios",
+    "ours": "Dave Pacios (TC Pacios committee member)",
+    "official": "dave blatt, dave passios, tcp building design committee members",
+    "note": "Name and committee name misheard.",
+    "official_reading": "Dave Passios",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee: Dave Blatt",
+    "ours": "Dave Blatt (TC Pacio's design committee assistant chair)",
+    "official": "dave blatt, dave passios, tcp building design committee members",
+    "note": "Same person. The committee name is garbled in ours, and the official minutes call him Vice Chair elsewhere.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Peter Beardmore and Chief Sullivan",
+    "ours": "",
+    "official": "peter beardmore, finance committee member, via zoom, stated there is a lot of complexity",
+    "note": "Our attendee list omits them; Chief Sullivan also appears in the official minutes.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Attendees: Little League team recognized",
+    "ours": "",
+    "official": "present were nate ayles, cayden chow, ethan dionne, mackinley dumais, jordan sammet, conor speck, ryan whitney, gabriel wright, michael wright-manager, james mcwalter- coach and stephen chow-coach/league president",
+    "note": "The recognition of the Little League team is not in our minutes.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-25T12:46:59Z",
+   "cost_usd": 0.4427337
+  }
+ }
+}

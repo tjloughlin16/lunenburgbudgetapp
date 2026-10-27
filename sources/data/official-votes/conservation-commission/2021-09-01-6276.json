@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-09-01",
  "docid": "6276",
@@ -12,72 +12,413 @@
  },
  "votes": [
   {
-   "motion": "Issue a standard Order of Conditions for the demolition and reconstruction of a single family home and septic system at 40 Brookview Terrace",
+   "motion": "Approve a negative determination for 91 Maple Parkway (Cole and Rebekah Maclean, above-ground pool within buffer zone).",
+   "moved_by": "ML",
+   "seconded_by": "PA",
+   "outcome": "passed unanimously",
+   "procedural": false,
+   "quote": "ml moved for a negati ve determination, pa seconded and the commission unanimously approved the motion by roll call vote."
+  },
+  {
+   "motion": "Issue a standard Order of Conditions for 40 Brookview Terrace (Athan N Diskes, demolition and reconstruction of home and septic).",
    "moved_by": "CC",
    "seconded_by": "PA",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "a motion was made for a standard order of conditions by cc and a second by pa with a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Issue a negative determination for the removal of pine trees within the buffer zone at 190 Peninsula Drive",
+   "motion": "Issue a negative (3) determination for the removal of pine trees within the buffer zone at 190 Peninsula Drive (Harry and Helen Semerjian).",
    "moved_by": "CC",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "a motion was made for a negative (3) determination by cc with a second by ml with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue the hearing on the installation of an in-ground pool and pavilion at 10 Butterfly Lane to September 15th",
+   "motion": "Continue the 10 Butterfly Lane (David Janvarin) hearing to the Sept 15th meeting.",
    "moved_by": "CC",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "there was a motion to continue to the sept 15th meeting by cc and a second by ml with a unanimous roll call vote to approve."
   },
   {
-   "motion": "Issue a standard order of conditions for the construction of a 372,000 square foot warehouse facility at 535 Leominster Shirley Road",
+   "motion": "Issue a standard order of conditions for the 535 Leominster Shirley Road Notice of Intent (JMC/TBG Lunenburg LLC, 372,000 square foot warehouse).",
    "moved_by": "BP",
    "seconded_by": "CC",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bp moved to issue an order of conditions ( standard ). cc seconded and the commission voted unanimously to approve the motio",
-   "quote_taken_from_text": true
+   "quote": "bp moved to issue an order of conditions ( standard ). cc seconded and the commission voted unanimously to approve the motion"
   },
   {
-   "motion": "Continue the hearing on the construction of a natural stone wall along the waterfront at 137 Flynn Road to September 15, 2021",
+   "motion": "Continue the 137 Flynn Road Notice of Intent hearing (Cynthia Ritchie) to September 15, 2021.",
    "moved_by": "CC",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "this was continued to the september 15, 2021 meeting by a motion of cc, a second by ml and a unanimous roll call vote to approve the motion."
   },
   {
-   "motion": "Continue the hearing on the construction of a six lot subdivision, roadway, utilities and wetland crossing at 101 Pleasant Street to September 15, 2021",
+   "motion": "Continue the 101 Pleasant Street Notice of Intent hearing (MA Pleasant LLC) to September 15, 2021.",
    "moved_by": "CC",
    "seconded_by": "ML",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "this was continued to the september 15, 2021 meeting by a motion of cc, a second by ml and a unanimous roll call vote to approve the motion."
+   "quote": "this was continued to the september 15, 2021 meeting by a motion of cc, a second by ml and a unanimous rol l call vote"
   },
   {
-   "motion": "Issue a Certificate of Compliance for 55 Pine Acres Drive",
+   "motion": "Issue a Certificate of Compliance for 55 Pine Acres Drive.",
    "moved_by": "ML",
    "seconded_by": "PA",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "ml moved to issue a coc. pa seconded and the commission voted unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:25 PM.",
    "moved_by": "CC",
    "seconded_by": "PA",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "adjourn : the meeting adjourned at 8:25 pm with a motion by cc and a second by pa and a unanimous roll call vote to adjourn"
+   "quote": "with a motion by cc and a second by pa and a unanimous roll call vote to adjourn"
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes of previous meetings (Aug 18, 2021) listed on agenda but no vote recorded on approval.",
- "cost_usd": 0.0881305
+ "dropped_unquoted": 0,
+ "note": "Text is OCR-style with split words and stray spaces; quotes are copied as printed (e.g. 'negati ve', 'rol l'). The attendance line lists only BP, ML, PA, CC; full names for these members come from the letterhead, so mapping initials to names is an inference. MM appears throughout and is identified in the letterhead as Matthew S. Marro, Conservation Administrator, but he is not in the attendance line, so his status is not stated. No vote is recorded on the Aug 18 2021 minutes. The line 'Continued to Oct 6' follows the 101 Pleasant Street entry and its subject is ambiguous; no vote is recorded for it. Vote outcomes are given as 'passed unanimously' because no count is printed. Applicants Athan N Diskes, Cynthia Ritchie and Christopher and Suzanne DeGeorge are named but no attendance is recorded for them.",
+ "cost_usd": 0.02041779,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "meeting was called to order at 7 pm by chairman pease"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "member (listed on letterhead; attendance line gives initials ML)",
+   "status": "present",
+   "quote": "in attendance: bp, ml, pa, cc"
+  },
+  {
+   "name": "Patricia Adams",
+   "role": "member (listed on letterhead; attendance line gives initials PA)",
+   "status": "present",
+   "quote": "in attendance: bp, ml, pa, cc"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member (listed on letterhead; attendance line gives initials CC)",
+   "status": "present",
+   "quote": "in attendance: bp, ml, pa, cc"
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Vice Chair",
+   "status": "not stated",
+   "quote": "richard bursch, vice chair"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member (letterhead)",
+   "status": "not stated",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "member (letterhead)",
+   "status": "not stated",
+   "quote": "jeffrey viviano conservation administrator"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "not stated",
+   "quote": "jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Cole Maclean",
+   "role": "applicant, representing himself",
+   "status": "present",
+   "quote": "cole maclean was present to represent himself."
+  },
+  {
+   "name": "Chris Anderson",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "chris anderson appeared representing the applicant and outlined the project for the commission."
+  },
+  {
+   "name": "Mr. Semerjian",
+   "role": "applicant, representing himself",
+   "status": "present",
+   "quote": "mr. semerjian came to the meeting to represent himself."
+  },
+  {
+   "name": "David Janvarin",
+   "role": "applicant",
+   "status": "present",
+   "quote": "david janvarin appeared before the commission for the construction of an in -ground pool"
+  },
+  {
+   "name": "Paul Grasewicz",
+   "role": "presenter (role not printed)",
+   "status": "not stated",
+   "quote": "paul grasewicz noted that the plan was revised to show a revised grading"
+  },
+  {
+   "name": "Ken Russel",
+   "role": "Abutter",
+   "status": "not stated",
+   "quote": "abutter ken russel asked the commission if traffic impacts were considered."
+  },
+  {
+   "name": "William Hannigan",
+   "role": "role not printed (public)",
+   "status": "not stated",
+   "quote": "william hannigan wanted to ensure there was enough members to vote."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Commission requested that the Janvarin applicant continue the 10 Butterfly Lane hearing to add more specific dimensions for the accessory structure, including a fence; applicant agreed.",
+   "quote": "after examination, the commission requested that the applicant continue the meeting to add more specific dimensions"
+  },
+  {
+   "decision": "At 190 Peninsula Drive, the commission recommended planting a flowering dogwood; the applicant agreed.",
+   "quote": "they recommended as the remainder of shoreline trees are undisturbed that perhaps planting a flower ing dogwood is appropriate and the applicant agreed."
+  },
+  {
+   "decision": "For 101 Pleasant Street, MM recommended a site visit given further DEP review and a potential vernal pool; MM and BP agreed.",
+   "quote": "mm and bp agreed due to the potential changes."
+  },
+  {
+   "decision": "Commission asked MM to obtain a Zoom access code so the next meeting can be held by Zoom, eliminating the need for a meeting room.",
+   "quote": "based on commission discussion that the next meeting with be zoom and asked mm to obtain an access code to eliminate the need for a meeting room"
+  },
+  {
+   "decision": "MM to meet with DPW regarding the 23 Cove Road enforcement (NON).",
+   "quote": "non 23 cove road - mm to meet with dpw"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Boundary survey for conservation land encroachment review (Old Business)",
+   "what_was_recorded": "The Board of Selectmen approved a survey from the Cowdery Boundary to the edge of Woodland Road; the minutes print its cost as 8,000 dollars total with boundary staking.",
+   "figures_as_printed": [
+    "8,000 dollars"
+   ],
+   "quote": "the cost was 8,000 dollars total with boundary staking"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Traffic impacts of the 535 Leominster Shirley Road warehouse",
+   "speaker": "Ken Russel",
+   "stated_role": "Abutter",
+   "quote": "abutter ken russel asked the commission if traffic impacts were considered."
+  },
+  {
+   "topic": "Whether enough members were present to vote; thanks to MM",
+   "speaker": "William Hannigan",
+   "stated_role": "not stated",
+   "quote": "william hannigan wanted to ensure there was enough members to vote."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and announcements",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "meeting was called to order at 7 pm by chairman pease"
+  },
+  {
+   "topic": "Minutes of previous meeting, Aug 18 2021",
+   "resolution": "listed on agenda; no approval vote recorded",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of previous meetings -aug 18 2021"
+  },
+  {
+   "topic": "91 Maple Parkway pool, request for determination",
+   "resolution": "negative determination approved",
+   "tags": [
+    "wetlands",
+    "buffer zone",
+    "pool",
+    "hearing"
+   ],
+   "quote": "ml moved for a negati ve determination, pa seconded and the commission unanimously approved the motion by roll call vote."
+  },
+  {
+   "topic": "40 Brookview Terrace demolition and rebuild, Notice of Intent",
+   "resolution": "standard Order of Conditions approved",
+   "tags": [
+    "wetlands",
+    "buffer zone",
+    "single family home",
+    "hearing"
+   ],
+   "quote": "a motion was made for a standard order of conditions by cc and a second by pa with a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "190 Peninsula Drive pine tree removal, request for determination",
+   "resolution": "negative (3) determination approved",
+   "tags": [
+    "wetlands",
+    "trees",
+    "shoreline",
+    "hearing"
+   ],
+   "quote": "a motion was made for a negative (3) determination by cc with a second by ml with a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "10 Butterfly Lane in-ground pool and pavilion, request for determination",
+   "resolution": "continued to Sept 15 meeting",
+   "tags": [
+    "wetlands",
+    "pool",
+    "river front",
+    "hearing"
+   ],
+   "quote": "there was a motion to continue to the sept 15th meeting by cc and a second by ml with a unanimous roll call vote to approve."
+  },
+  {
+   "topic": "535 Leominster Shirley Road warehouse, continued Notice of Intent",
+   "resolution": "standard order of conditions issued",
+   "tags": [
+    "warehouse",
+    "storm water",
+    "traffic",
+    "hearing"
+   ],
+   "quote": "bp moved to issue an order of conditions ( standard ). cc seconded and the commission voted unanimously to approve the motion"
+  },
+  {
+   "topic": "137 Flynn Road stone wall, Notice of Intent",
+   "resolution": "continued to Sept 15, 2021",
+   "tags": [
+    "erosion",
+    "waterfront",
+    "hearing"
+   ],
+   "quote": "this was continued to the september 15, 2021 meeting by a motion of cc, a second by ml and a unanimous roll call vote to approve the motion."
+  },
+  {
+   "topic": "101 Pleasant Street six-lot subdivision, continued Notice of Intent",
+   "resolution": "continued to Sept 15, 2021",
+   "tags": [
+    "subdivision",
+    "wetland crossing",
+    "vernal pool",
+    "hearing"
+   ],
+   "quote": "this was continued to the september 15, 2021 meeting by a motion of cc, a second by ml and a unanimous rol l call vote"
+  },
+  {
+   "topic": "48 Pearl Street lake access and erosion, Notice of Intent",
+   "resolution": "hearing noticed; no action recorded",
+   "tags": [
+    "erosion",
+    "lake",
+    "hearing"
+   ],
+   "quote": "christopher and suzanne degeorge will be held. work proposed is improvement of access to lake shirle y"
+  },
+  {
+   "topic": "Old business: encroachment onto conservation properties",
+   "resolution": "discussed; survey cost noted; no action recorded",
+   "tags": [
+    "encroachment",
+    "survey",
+    "town counsel",
+    "conservation land"
+   ],
+   "quote": "bp noted his visit with town counsel regarding the encroachment issues."
+  },
+  {
+   "topic": "Enforcement actions and administrative hearings",
+   "resolution": "status discussed; one assignment to MM",
+   "tags": [
+    "enforcement",
+    "illegal dumping"
+   ],
+   "quote": "non 48 oak ridge - mm noted no response."
+  },
+  {
+   "topic": "Certificate of Compliance, 55 Pine Acres Drive",
+   "resolution": "certificate issued",
+   "tags": [
+    "certificate of compliance",
+    "driveway"
+   ],
+   "quote": "ml moved to issue a coc. pa seconded and the commission voted unanimously."
+  },
+  {
+   "topic": "Trails grant, committee and administrator reports, open space and trail strategies, communications",
+   "resolution": "no action recorded beyond Zoom access code request",
+   "tags": [
+    "trails",
+    "open space",
+    "zoom"
+   ],
+   "quote": "based on commission discussion that the next meeting with be zoom and asked mm"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:25 PM",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "with a motion by cc and a second by pa and a unanimous roll call vote to adjourn"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Photos MM took of the site (55 Pine Acres Drive)",
+   "where": "list",
+   "quote": "mm reviewed the photos he took of the site and is letter to the file as there was no as built requirement of a driveway crossing."
+  },
+  {
+   "name": "Plans enclosed with the 91 Maple Parkway request",
+   "where": "list",
+   "quote": "mm noted the plans enclosed show the work well out of the 50 foot no touch zone."
+  },
+  {
+   "name": "Valid Waiver request submitted for 40 Brookview Terrace",
+   "where": "text",
+   "quote": "mm noted the valid waiver request submitted which did not the reduction in the 30 and 50 foot"
+  },
+  {
+   "name": "Revised plan showing revised grading (101 Pleasant Street)",
+   "where": "text",
+   "quote": "the plan was revised to show a revised grading as the planning board would not allow for a retainin g"
+  },
+  {
+   "name": "Tree inventory (101 Pleasant Street)",
+   "where": "text",
+   "quote": "the tree inventory was also submit ted"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "wetlands",
+  "public hearings",
+  "orders of conditions",
+  "enforcement",
+  "certificates of compliance",
+  "zoom meeting",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mm reviewed the photos he took of the site"
+ },
+ "dropped_unquoted_by_field": {}
 }

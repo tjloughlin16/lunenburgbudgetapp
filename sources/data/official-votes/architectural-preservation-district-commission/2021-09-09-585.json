@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2021-09-09",
  "docid": "585",
@@ -12,13 +12,168 @@
  },
  "votes": [
   {
-   "motion": "to approve the minutes from the August 5th meeting",
-   "outcome": "approved",
+   "motion": "Approve the minutes of the August 5th meeting.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "minutes from the august 5th meeting were reviewed and approved."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Only one formal vote recorded in these minutes. The approval of prior minutes is the sole procedurally recorded vote. Other items described as \"agreed upon\" (Facebook page, Brooks House approach) lack explicit motion language and appear to be discussion-based consensus rather than formal recorded votes.",
- "cost_usd": 0.0931555
+ "note": "Text is a typed minutes extract, not a scan. No motion or vote count is recorded for any action. The prior-minutes approval is recorded only as 'reviewed and approved', with no mover or seconder, so it is entered as a procedural vote with the outcome 'passed'. The Facebook launch and Brooks House items are consensus ('All agreed', 'The Commission agreed') rather than recorded votes. The header lists a 7:30PM start while the call to order is 7:40PM; both are as printed.",
+ "cost_usd": 0.014577290000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chair",
+   "status": "present",
+   "quote": "call to order: at 7:40pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "call to order: at 7:40pm with mcgrath, dwyer and nicastro in attendance."
+  },
+  {
+   "name": "Tony Nicastro",
+   "role": "member",
+   "status": "present",
+   "quote": "call to order: at 7:40pm with mcgrath, dwyer and nicastro in attendance."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dwyer agreed to work on a brief glossy brochure, which he suggested as better than sending guidelines to all in the district.",
+   "quote": "dwyer suggested a brief glossy brochure might be better, and agreed to work on it."
+  },
+  {
+   "decision": "Launch the commission's Facebook page; all agreed.",
+   "quote": "dwyer suggested we launch the page. all agreed."
+  },
+  {
+   "decision": "To revive the Brooks House topic, ask the Planning Board to invite the Commission to one of its meetings to discuss the matter.",
+   "quote": "the commission agreed that the best way to revive the topic would be to ask the planning board to invite us to one of their meetings to discuss the matter."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Old Primary School property park and green space design RFP",
+   "what_was_recorded": "The select board reportedly sent out a request for proposals of $30K to design a new park and green space on the OPS property, and apparently received no offers.",
+   "figures_as_printed": [
+    "$30K"
+   ],
+   "quote": "the select board reportedly sent out an rfp for $30k to design a new park and green space on the ops property."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "minutes from the august 5th meeting were reviewed and approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action",
+   "quote": "emily hutchings: assistant planning director, city of beverly wrote, asking for guidance on creating an architectural preservation district for their town.",
+   "tags": [
+    "correspondence",
+    "district creation"
+   ]
+  },
+  {
+   "topic": "New Business: guidelines brochure",
+   "resolution": "Dwyer to work on a brochure",
+   "quote": "mcgrath suggested sending guidelines to all in district.",
+   "tags": [
+    "outreach",
+    "brochure"
+   ]
+  },
+  {
+   "topic": "WWII bronze plaque damage",
+   "resolution": "noted; repair planned for fall",
+   "quote": "richard plans to repair this fall. asked for help.",
+   "tags": [
+    "plaque",
+    "repair"
+   ]
+  },
+  {
+   "topic": "Old Primary School Building",
+   "resolution": "noted",
+   "quote": "national registry application has been submitted.",
+   "tags": [
+    "Old Primary School",
+    "National Register"
+   ]
+  },
+  {
+   "topic": "Facebook page for town boards",
+   "resolution": "approved by consensus: launch the page",
+   "quote": "dwyer suggested we launch the page. all agreed.",
+   "tags": [
+    "social media"
+   ]
+  },
+  {
+   "topic": "Brooks House",
+   "resolution": "Planning Board invitation to be requested",
+   "quote": "the commission agreed that the best way to revive the topic would be to ask the planning board to invite us to one of their meetings to discuss the matter.",
+   "tags": [
+    "Brooks House",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "Other Business: property interest and purchase",
+   "resolution": "noted",
+   "quote": "richard latarte on lancaster ave. has expressed interest in buying pound keepers house.",
+   "tags": [
+    "property",
+    "pound keeper's house",
+    "bylaw"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "National Registry application (Old Primary School Building)",
+   "where": "text",
+   "quote": "national registry application has been submitted."
+  },
+  {
+   "name": "Request for proposals (RFP) for $30K to design a park and green space on the OPS property (select board)",
+   "where": "text",
+   "quote": "the select board reportedly sent out an rfp for $30k to design a new park and green space on the ops property."
+  },
+  {
+   "name": "APD bylaw",
+   "where": "text",
+   "quote": "he wanted to be informed of how the apd bylaw would effect him as a property owner."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "Old Primary School",
+  "Brooks House",
+  "Facebook",
+  "brochure",
+  "WWII plaque",
+  "property purchase"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

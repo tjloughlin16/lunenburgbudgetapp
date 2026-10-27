@@ -1,0 +1,552 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2021-06-22",
+ "video_id": "9-rbJ7rQdlA",
+ "video_url": "https://www.youtube.com/watch?v=9-rbJ7rQdlA",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-06-22-9-rbJ7rQdlA.json",
+  "sha256": "4544f870edc390ea74dd5ae527ee9d6783472eec95925c57c59fd863ad524d7a",
+  "caption_lines": 178,
+  "segments": 1819
+ },
+ "recording": {
+  "duration_s": 3697,
+  "duration": "1:01",
+  "spoken_chars": 54036,
+  "words_approx": 9006
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06222021-5279",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-06-22-agenda-5279.txt",
+   "path": "sources/meetings/select-board/2021-06-22-agenda-5279.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06222021-5279",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-06-22-minutes-5279.txt",
+   "path": "sources/meetings/select-board/2021-06-22-minutes-5279.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-25T20:31:41Z",
+  "cost_usd": 0.558698
+ },
+ "minutes": {
+  "headline": "Select Board heard a cannabis dispensary pitch, deferred the trash-bag fee vote, and extended two contracts.",
+  "summary": "The board appointed a new assessor, then heard a cannabis retail pitch for 43 Summer Street that stalled on a dispute over whether a neighboring house is a residential use. The town manager reported that public safety carport bids and the Flat Hill culvert estimate came in well above plan. The board extended two contracts, deferred the pay-as-you-throw bag fee vote to the next meeting, and went into executive session.",
+  "attendees": [
+   {
+    "name_as_heard": "mr la tart",
+    "role": "board of assessors member (joint appointment)"
+   },
+   {
+    "name_as_heard": "mr mourinho",
+    "role": "member (retired police chief)"
+   },
+   {
+    "name_as_heard": "mr dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr franco",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "town manager",
+    "role": "town manager"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 1302,
+    "topic": "Owner of 48 Young's Road said the property is a mixed residential and commercial lot with furnished interior, disputing the claim that no one lives there."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "economic-development",
+   "executive-session",
+   "fees",
+   "grants",
+   "legal",
+   "personnel",
+   "planning-and-zoning",
+   "public-safety",
+   "roads-and-dpw",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 192,
+    "motion": "Appoint Christine Cosgrove to the board of assessors until the next annual town election (joint with assessors member)",
+    "outcome": "passed (voice vote, no opposed)",
+    "procedural": false
+   },
+   {
+    "t": 2927,
+    "motion": "Extend the town manager and director of municipal finance contract terms until July 31, 2021",
+    "outcome": "passed (no opposed)",
+    "procedural": false
+   },
+   {
+    "t": 2968,
+    "motion": "Approve June 8, 2021 minutes",
+    "outcome": "passed with one abstention",
+    "procedural": true
+   },
+   {
+    "t": 3598,
+    "motion": "Enter executive session under c.30A s.21 paragraph 3 on litigation strategy and approve executive session minutes, then adjourn",
+    "outcome": "passed by roll call (members said aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 2657,
+    "topic": "Public safety carport bids",
+    "what_was_said": "Two bids were received and the low bid exceeded the capital appropriation by roughly the stated amount. Staff recommended not moving forward.",
+    "figures_as_heard": [
+     "two hundred ninety eight thousand seven hundred and fifty dollars",
+     "164 000"
+    ]
+   },
+   {
+    "t": 2697,
+    "topic": "Flat Hill culvert estimate increase",
+    "what_was_said": "Revised estimate rose due to material prices, longer wing walls and temporary support at abutters, and contingency rose. Staff will seek a small bridge grant.",
+    "figures_as_heard": [
+     "67 000",
+     "209 000",
+     "26 000",
+     "10 contingency"
+    ]
+   },
+   {
+    "t": 3010,
+    "topic": "Pay as you throw bag fee increase FY22",
+    "what_was_said": "Program cost rose with a new contractor, driving a proposed bag price increase of about a third. Revenue estimate based on FY20 bag sales.",
+    "figures_as_heard": [
+     "32 percent",
+     "30",
+     "14 to 18 dollars and 20 cents",
+     "14.25 cents to 18.53",
+     "twenty one dollars and eighty cents to twenty eight dollars and thirty four cents"
+    ]
+   },
+   {
+    "t": 3136,
+    "topic": "Senior bag pilot",
+    "what_was_said": "A one-year pilot would give eligible households a roll of bags, with collection cost from enterprise surplus and bag cost from recycling dividend funds.",
+    "figures_as_heard": [
+     "2 200 households",
+     "forty thousand dollars",
+     "five thousand"
+    ]
+   },
+   {
+    "t": 2411,
+    "topic": "Cannabis host community revenue",
+    "what_was_said": "Applicant's counsel said a portion of sales goes to the town and towns typically use it for one-time items.",
+    "figures_as_heard": [
+     "six points",
+     "eight hundred thousand dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 3536,
+    "decision": "Vote on the pay-as-you-throw bag fee increase and senior bag pilot delayed until the next meeting."
+   },
+   {
+    "t": 2554,
+    "decision": "Applicant to send a draft host community agreement to the town manager for consideration."
+   },
+   {
+    "t": 2595,
+    "decision": "Town manager recommended not proceeding with the public safety carport project at the bid price."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 65,
+    "topic": "Call to order, pledge, public comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 65,
+    "t_end": 273,
+    "topic": "Appointment of Christine Cosgrove to assessors",
+    "resolution": "voted",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 273,
+    "t_end": 2574,
+    "topic": "Uma Flowers adult-use cannabis dispensary presentation, 43 Summer Street",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 2574,
+    "t_end": 2906,
+    "topic": "Town manager report: vacancies, carport bids, Flat Hill culvert, events",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "roads-and-dpw",
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 2906,
+    "t_end": 3010,
+    "topic": "Contract extensions and minutes",
+    "resolution": "voted",
+    "tags": [
+     "contracts-and-unions",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3010,
+    "t_end": 3577,
+    "topic": "Pay as you throw bag fee increase and senior pilot",
+    "resolution": "deferred to next meeting",
+    "tags": [
+     "fees",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 3577,
+    "t_end": 3678,
+    "topic": "Public comment, executive session motion",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "legal"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Some speakers are not identified; the chair was absent for part of the old business item.",
+   "Figures in the carport, culvert and bag-fee discussion are caption-rendered and may be wrong."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 1488,
+    "about": "Dispute over whether the neighboring property at 48 Young's Road is a residential use, which determines the cannabis setback.",
+    "sides": "Applicant's attorney said no one lives there; the property owner said it is a furnished residence; a member said the argument is unlikely to succeed.",
+    "words_as_heard": "i think you're going to have a hard time arguing residential use when the person who owns the property says it's being used for residential purposes",
+    "kind": "public criticism"
+   },
+   {
+    "t": 2228,
+    "about": "A member said he would not support adult-use cannabis, rejecting the applicant's studies.",
+    "sides": "A member against; applicant's attorney respectful disagreement.",
+    "words_as_heard": "i will have a hard time hitching my horses to your wagons",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 2514,
+    "kind": "condition",
+    "about": "A host community agreement will be hard to negotiate if the applicant and building commissioner disagree on residential use.",
+    "who": "the chair",
+    "words_as_heard": "we need to negotiate some form of a community host agreement and that will be really difficult um if we have a statement from the building commissioner and and you at odds"
+   },
+   {
+    "t": 1097,
+    "kind": "liability or legal",
+    "about": "The neighboring property could revert to residential use if sold, affecting the setback.",
+    "who": "a member",
+    "words_as_heard": "unless you secure the property and mr moore and happen to sell it uh if if he's the the current current owner then it could revert to a residential use"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 294,
+    "name_as_heard": "the powerpoint deck",
+    "kind": "presentation",
+    "words_as_heard": "we prepare to go through this powerpoint",
+    "shown": true
+   },
+   {
+    "t": 1033,
+    "name_as_heard": "sworn statement for mr donnelly",
+    "kind": "letter or email",
+    "words_as_heard": "i've included in the package a sworn statement for mr donnelly",
+    "shown": true
+   },
+   {
+    "t": 3243,
+    "name_as_heard": "town manager memorandum on bag costs",
+    "kind": "memo",
+    "words_as_heard": "i provided the board in my memorandum breakdown of the estimated revenues and cost of disposal",
+    "shown": true
+   },
+   {
+    "t": 2968,
+    "name_as_heard": "June 8th 2021 minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "approval for the june 8th 2021 minutes",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "solid-waste-enterprise",
+    "title": "Pay-as-you-throw bag fees",
+    "question": "What does the proposed bag price increase and senior bag pilot cost, and how are they funded?",
+    "t": 3010,
+    "words_as_heard": "the pay as you throw bag fee and proposed increase for fiscal year 22",
+    "data_in_play": [
+     "32 percent",
+     "forty thousand dollars",
+     "2 200 households"
+    ],
+    "existing": "thread:solid-waste-enterprise"
+   },
+   {
+    "slug": "flat-hill-drainage",
+    "title": "Flat Hill culvert cost",
+    "question": "Why did the Flat Hill culvert estimate rise and how will it be paid?",
+    "t": 2697,
+    "words_as_heard": "update on the flat hill culvert project",
+    "data_in_play": [
+     "67 000",
+     "209 000",
+     "26 000"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "public-safety-carport-bids",
+    "title": "Public safety carport bids",
+    "question": "How far over the capital appropriation did the carport bids come in?",
+    "t": 2657,
+    "words_as_heard": "approximately 164 000 more than the appropriated amount",
+    "data_in_play": [
+     "two hundred ninety eight thousand seven hundred and fifty dollars",
+     "164 000"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The board voted to extend the town manager and director of municipal finance contract terms to July 31, 2021, with no one opposed.",
+    "t": 2927
+   },
+   {
+    "line": "The board put off the vote on the pay-as-you-throw bag fee increase and a senior bag pilot until its next meeting.",
+    "t": 3536
+   },
+   {
+    "line": "The town manager recommended against building the public safety carport at the bid price, and reported a higher revised estimate for the Flat Hill culvert.",
+    "t": 2595
+   },
+   {
+    "line": "An applicant presented an adult-use cannabis dispensary for 43 Summer Street; it was told to send a draft host community agreement to the town manager.",
+    "t": 2554
+   },
+   {
+    "line": "The board appointed Christine Cosgrove to the board of assessors until the next annual town election, by voice vote with no one opposed.",
+    "t": 192
+   }
+  ],
+  "why_it_matters": [
+   "The bag fee vote and the senior bag pilot bear on what households pay to throw out trash, and the vote is still ahead.",
+   "The carport and culvert estimates rose past plan, so those projects may need new funding decisions or be dropped.",
+   "A cannabis host community agreement would decide whether the town takes in sales revenue, and where a retail store sits next to homes."
+  ],
+  "watch_next": [
+   "The next Select Board meeting, where the pay-as-you-throw bag fee increase and senior bag pilot are due for a vote.",
+   "The draft host community agreement for 43 Summer Street, which the applicant is to send to the town manager."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-25T20:31:50Z",
+   "cost_usd": 0.2380118
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06222021-5279",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-06-22-minutes-5279.txt",
+   "path": "sources/meetings/select-board/2021-06-22-minutes-5279.pdf"
+  },
+  "official_sha256": "3805fa3e067dadf6740e8c9b1db965f855cbc64dd23c5d7caf03f41e0e13804f",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on both votes, the carport, culvert and senior-bag figures, and the delayed bag-fee vote. They differ on the bag-fee percentage, two misheard attendee names, and a few items only one record has.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote to appoint Christine Cosgrove (Higdon) as assessor",
+    "ours": "Appoint Christine Cosgrove to the board of assessors until the next annual town election (joint with assessors member) — passed (voice vote, no opposed)",
+    "official": "to appoint ms. cosgrove higdon as assessor until the next annual town election vote: all in favor",
+    "note": "Same appointment, same term, passed unanimously in both records.",
+    "t": 192
+   },
+   {
+    "kind": "agree",
+    "about": "Vote to extend town manager and finance director agreements to July 31, 2021",
+    "ours": "Extend the town manager and director of municipal finance contract terms until July 31, 2021 — passed (no opposed)",
+    "official": "to extend both agreements until july 31, 2021 vote: all in favor",
+    "note": "Same extension and date, passed unanimously in both.",
+    "t": 2927
+   },
+   {
+    "kind": "agree",
+    "about": "Public safety carport low bid",
+    "ours": "Public safety carport bids: two hundred ninety eight thousand seven hundred and fifty dollars, 164 000",
+    "official": "the low bidder was elite construction and design of fitchburg for a total cost of the project of $298,750",
+    "note": "Same $298,750 bid and $164,000 overage; the digits are rendered in words in ours.",
+    "t": 2657
+   },
+   {
+    "kind": "agree",
+    "about": "Flat Hill culvert estimate increase",
+    "ours": "Flat Hill culvert estimate increase: 67 000, 209 000, 26 000, 10 contingency",
+    "official": "this added approximately $67,000 to the estimated costs.",
+    "note": "The $67,000, $209,000 and $26,000 figures and the 10% contingency match.",
+    "t": 2697
+   },
+   {
+    "kind": "discrepancy",
+    "about": "PAYT bag fee percentage increase",
+    "ours": "Pay as you throw bag fee increase FY22: 32 percent, 30, 14 to 18 dollars and 20 cents, 14.25 cents to 18.53, twenty one dollars and eighty cents to twenty eight dollars and thirty four cents",
+    "official": "$429,542.10 $419,850.00 $9,692.10",
+    "note": "Ours says 32 percent and also 30, while the official minutes give a 30% per-roll increase; the per-bag prices in ours do not appear in the official text. Check the memo and the recording to confirm the percentage and prices.",
+    "t": 3010
+   },
+   {
+    "kind": "only_in_official",
+    "about": "PAYT projected revenue and surplus figures",
+    "ours": "",
+    "official": "$429,542.10 $419,850.00 $9,692.10",
+    "note": "The official minutes print projected final revenue and surplus figures that our minutes do not capture.",
+    "t": 3010
+   },
+   {
+    "kind": "agree",
+    "about": "Senior free bag pilot cost",
+    "ours": "Senior bag pilot: 2 200 households, forty thousand dollars, five thousand",
+    "official": "the overall projected cost of this provided an estimated 2,200 affected households would be approximately $40,000 for collection and disposal costs and approximately $5,000",
+    "note": "2,200 households, $40,000 and $5,000 match.",
+    "t": 3136
+   },
+   {
+    "kind": "agree",
+    "about": "Bag fee increase vote delayed",
+    "ours": "Vote on the pay-as-you-throw bag fee increase and senior bag pilot delayed until the next meeting.",
+    "official": "the board delayed voting until mr. alonzo returns for the next meeting.",
+    "note": "Both record the vote delayed to the next meeting; the official adds the reason (the chair's absence).",
+    "t": 3536
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Cannabis host community revenue figures and draft host agreement",
+    "ours": "Cannabis host community revenue: six points, eight hundred thousand dollars",
+    "official": "",
+    "note": "The official minutes as structured hold no revenue figure or draft host community agreement decision for the Uma Flowers item, though that applicant attended. Check the official text.",
+    "t": 2411
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Applicant to send draft host community agreement",
+    "ours": "Applicant to send a draft host community agreement to the town manager for consideration.",
+    "official": "",
+    "note": "Decision recorded in our minutes but not in the official structured extract.",
+    "t": 2554
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assessor attendee name",
+    "ours": "mr la tart (board of assessors member (joint appointment))",
+    "official": "also present: heather lemieux, town manager; richard letarte, assessor; christine cosgrove",
+    "official_reading": "Richard Letarte",
+    "note": "The captions misheard Letarte as 'la tart'; the official minutes list Richard Letarte as Assessor.",
+    "t": 192
+   },
+   {
+    "kind": "caption_error",
+    "about": "Select Board member name",
+    "ours": "mr mourinho (member (retired police chief))",
+    "official": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou",
+    "official_reading": "Jim Marino",
+    "note": "'Mourinho' is most likely a mishearing of Marino, the only unmatched member in the official attendance. The 'retired police chief' tag is ours and was not checked against the official record."
+   },
+   {
+    "kind": "agree",
+    "about": "Members Dwyer and Franco present",
+    "ours": "mr dwyer (member); mr franco (member)",
+    "official": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou",
+    "note": "Dwyer and Franco are both listed as present in the official minutes."
+   },
+   {
+    "kind": "agree",
+    "about": "Town manager present",
+    "ours": "town manager (town manager)",
+    "official": "also present: heather lemieux, town manager; richard letarte, assessor; christine cosgrove",
+    "note": "Town manager Heather Lemieux is present in both."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Vice Chairman Jeffreys and absent chair Alonzo",
+    "ours": "",
+    "official": "member not present: tom alonzo, chair",
+    "note": "Our attendee list omits Vice Chairman Michael-Ray Jeffreys and does not note the chair's absence."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Uma Flowers applicant team and Ray Morin",
+    "ours": "",
+    "official": "attorney valerio romano, vgr law firm for uma flowers, introduced priyanka patel, yash patel, and davis patel to the board.",
+    "note": "Applicant attorney and team, and Ray Morin of 48 Youngs Road, are in the official attendees but not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-25T20:33:26Z",
+   "cost_usd": 0.2688898
+  }
+ }
+}

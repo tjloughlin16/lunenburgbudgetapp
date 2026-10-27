@@ -1,0 +1,731 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2021-06-15",
+ "video_id": "yOGqTfgw3TY",
+ "video_url": "https://www.youtube.com/watch?v=yOGqTfgw3TY",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-06-15-yOGqTfgw3TY.json",
+  "sha256": "86bb21a3a73e96e1d616921164c25cc267f03c83d012bb5b2c786255aafdfdec",
+  "caption_lines": 356,
+  "segments": 3533
+ },
+ "recording": {
+  "duration_s": 7409,
+  "duration": "2:03",
+  "spoken_chars": 102901,
+  "words_approx": 17150
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_06152021-5259",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-06-15-agenda-5259.txt",
+   "path": "sources/meetings/select-board/2021-06-15-agenda-5259.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06152021-5259",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-06-15-minutes-5259.txt",
+   "path": "sources/meetings/select-board/2021-06-15-minutes-5259.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-25T20:39:40Z",
+  "cost_usd": 0.5238423000000001
+ },
+ "minutes": {
+  "headline": "Select Board kept old primary school and senior tax relief as FY22 goals; granted entertainment license and ratified hires.",
+  "summary": "First in-person meeting in about 14 months. The board approved a weekday entertainment license for Smokestack Roasters, ratified a police officer and a senior videographer, and heard the Council on Aging report. A long goals workshop kept the old primary school and a senior property tax exemption by home rule petition, and added a volunteer-recruitment policy. The board discussed pay-as-you-throw bags for seniors, ARPA funds and a much higher Flat Hill culvert estimate, then went into executive session on the town manager's contract.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Alonzo (chair)",
+    "role": "chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "vice chair",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Mr. Franco",
+    "role": "member",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Heather (town manager)",
+    "role": "town manager",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Sue Dougherty",
+    "role": "presenter, Council on Aging director",
+    "remote": false
+   },
+   {
+    "name_as_heard": "Lieutenant Jeffrey Thibodeau",
+    "role": "presenter, police lieutenant",
+    "remote": false
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 233,
+    "topic": "Chair invited public comment at the start; none offered."
+   },
+   {
+    "t": 7200,
+    "topic": "A resident said the board is dancing around the old primary school and should request its demolition and focus on rehabbing town hall and the Ritter building.",
+    "speaker_as_heard": "dave pascal",
+    "stated_role": "taxpayer"
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "executive-session",
+   "facilities",
+   "fees",
+   "grants",
+   "hiring",
+   "housing",
+   "personnel",
+   "planning-and-zoning",
+   "public-comment",
+   "public-safety",
+   "roads-and-dpw",
+   "seniors",
+   "superintendent-report",
+   "tax-rate",
+   "town-departments",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 1408,
+    "motion": "Approve weekday entertainment license for Smokestack Roasters LLC, 39 Mass Ave",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 1868,
+    "motion": "Ratify town manager's appointment of full-time police officer Robert Decosta",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1949,
+    "motion": "Ratify appointment of senior videographer Daniel Cementori",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": false
+   },
+   {
+    "t": 2536,
+    "motion": "Approve minutes of June 1, 2021",
+    "outcome": "passed (aye, none opposed)",
+    "procedural": true
+   },
+   {
+    "t": 7304,
+    "motion": "Enter executive session (town manager contract negotiation strategy), adjourning after",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1990,
+    "topic": "Pay-as-you-throw bags, enterprise account",
+    "what_was_said": "Bag sales exceeded estimates, producing an expected enterprise surplus, while collection cost rises.",
+    "figures_as_heard": [
+     "38",
+     "20 in large bags",
+     "200 percent",
+     "between 40 and 50 000",
+     "318 000",
+     "419",
+     "119 000"
+    ]
+   },
+   {
+    "t": 2178,
+    "topic": "Senior bag relief funded by recycling dividends grant",
+    "what_was_said": "Recycling dividend grant funds could buy bags for seniors, with collection and disposal supplemented from the enterprise surplus.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 2558,
+    "topic": "Warrants signed",
+    "what_was_said": "Chair listed accounts payable, Medicare Part B, and payroll warrants signed.",
+    "figures_as_heard": [
+     "579 thousand five hundred fifty four dollars and ninety three cents",
+     "one hundred twelve thousand two hundred fifty two dollars and thirty three cents",
+     "five hundred eighty three thousand five hundred seventeen dollars and fifty seven cents",
+     "882 663 dollars and 58 cents"
+    ]
+   },
+   {
+    "t": 2723,
+    "topic": "American Rescue Plan Act funds",
+    "what_was_said": "Town requested first half of its allotment; eligible uses discussed and a stakeholder committee to be formed.",
+    "figures_as_heard": [
+     "3.4 billion dollars",
+     "614 1995 dollars"
+    ]
+   },
+   {
+    "t": 2928,
+    "topic": "Public safety carport project",
+    "what_was_said": "Low roofing sub-bid received; total expected to exceed the capital article and be covered from the facilities account.",
+    "figures_as_heard": [
+     "23 750",
+     "135 000"
+    ]
+   },
+   {
+    "t": 2970,
+    "topic": "Flat Hill culvert estimate",
+    "what_was_said": "Engineer's construction estimate rose sharply from the original; town will seek a small bridge grant.",
+    "figures_as_heard": [
+     "750 thousand dollars",
+     "428 500",
+     "325 thousand dollars"
+    ]
+   },
+   {
+    "t": 6634,
+    "topic": "Senior property tax exemption goal",
+    "what_was_said": "Means-tested exemption via home rule petition, requiring town meeting approval.",
+    "figures_as_heard": []
+   },
+   {
+    "t": 6738,
+    "topic": "925 Mass Ave remediation",
+    "what_was_said": "Seeking MassDEP and other outside funding for hazardous material cleanup before foreclosure.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 1282,
+    "decision": "Chair withdrew his proposal to limit hours to 9am; license approved on the understanding of quiet, mostly acoustic mornings and annual renewal."
+   },
+   {
+    "t": 2494,
+    "decision": "Seniors bag relief to return as a future agenda item once data is gathered."
+   },
+   {
+    "t": 3647,
+    "decision": "Old primary school goal kept, reworded for FY22; request a workshop with the architectural preservation district in July."
+   },
+   {
+    "t": 3919,
+    "decision": "Appointment process goal dropped; volunteer recruitment goal kept and turned into a policy."
+   },
+   {
+    "t": 4770,
+    "decision": "Senior property tax relief via home rule petition added as a top FY22 goal."
+   },
+   {
+    "t": 6489,
+    "decision": "Building reuse for town hall and Ritter building not made a goal; to be handled through agenda discussions and a later workshop."
+   },
+   {
+    "t": 6738,
+    "decision": "Town manager goals: senior tax exemption, 925 Mass Ave reuse, and independent facilities department."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 340,
+    "topic": "Pledge, return to in-person meetings, announcements",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 356,
+    "t_end": 944,
+    "topic": "Council on Aging end of year report",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "superintendent-report"
+    ]
+   },
+   {
+    "t_start": 944,
+    "t_end": 1455,
+    "topic": "Weekday entertainment license, Smokestack Roasters",
+    "resolution": "voted",
+    "tags": [
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1455,
+    "t_end": 1990,
+    "topic": "Appointments: police officer and senior videographer",
+    "resolution": "voted",
+    "tags": [
+     "hiring",
+     "public-safety",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1990,
+    "t_end": 2515,
+    "topic": "Pay-as-you-throw bag fees and senior relief",
+    "resolution": "informational",
+    "tags": [
+     "fees",
+     "seniors",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 2515,
+    "t_end": 2660,
+    "topic": "Minutes, warrants, committee reports",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 2663,
+    "t_end": 3514,
+    "topic": "Town manager report: vacancies, ARPA, carport, Flat Hill culvert",
+    "resolution": "informational",
+    "tags": [
+     "grants",
+     "capital",
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 3514,
+    "t_end": 4720,
+    "topic": "FY21 goals review: old primary school, appointments, volunteers",
+    "resolution": "no resolution",
+    "tags": [
+     "facilities",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 4725,
+    "t_end": 6620,
+    "topic": "New select board goals: senior tax relief, building reuse",
+    "resolution": "no resolution",
+    "tags": [
+     "seniors",
+     "facilities",
+     "tax-rate"
+    ]
+   },
+   {
+    "t_start": 6634,
+    "t_end": 7130,
+    "topic": "Town manager goals",
+    "resolution": "informational",
+    "tags": [
+     "seniors",
+     "housing",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 7138,
+    "t_end": 7300,
+    "topic": "Upcoming meetings and public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 7304,
+    "t_end": 7392,
+    "topic": "Executive session, town manager contract",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "personnel"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call result and adjournment vote for executive session are not fully captured.",
+   "Name of the chair is uncertain in captions.",
+   "Exact ARPA amount garbled.",
+   "Whether the 9am license hours change was formally moved is unclear."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3138,
+    "about": "Board members questioned why the Flat Hill culvert estimate nearly doubled when engineers should have foreseen conditions.",
+    "sides": "members against the engineer's estimate; town manager explaining permitting changes",
+    "words_as_heard": "that raises my mouth and raises both eyebrows when it goes up that much",
+    "kind": "members disagree"
+   },
+   {
+    "t": 5033,
+    "about": "Members disagreed whether reuse of town hall and Ritter building should be an FY22 goal.",
+    "sides": "one or two members for a goal versus chair and others calling it premature",
+    "words_as_heard": "i think it's premature",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1218,
+    "kind": "condition",
+    "about": "Member worried about precedent of allowing early-morning music.",
+    "who": "a member",
+    "words_as_heard": "what concerns me is not so much your setup as much as a precedent for us as a community"
+   },
+   {
+    "t": 2301,
+    "kind": "condition",
+    "about": "Senior bag program must cost less to run than it saves.",
+    "who": "the chair",
+    "words_as_heard": "i also don't want to get caught in a place where the logistics of doing it cost more than the savings"
+   },
+   {
+    "t": 5792,
+    "kind": "safety",
+    "about": "Vacant town buildings could deteriorate.",
+    "who": "a member",
+    "words_as_heard": "allow two empty shells to just rot and then like be neglected to the point that it's like demolition by neglect"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 397,
+    "name_as_heard": "powerpoint presentation",
+    "kind": "presentation",
+    "words_as_heard": "i have a powerpoint presentation",
+    "shown": true
+   },
+   {
+    "t": 1478,
+    "name_as_heard": "letter from chief",
+    "kind": "letter or email",
+    "words_as_heard": "i set forth the following letter from chief gamble",
+    "shown": false
+   },
+   {
+    "t": 2515,
+    "name_as_heard": "minutes of june 1st 2021",
+    "kind": "prior minutes",
+    "words_as_heard": "approval of minutes of june 1st 2021",
+    "shown": true
+   },
+   {
+    "t": 3540,
+    "name_as_heard": "FY21 select board goals",
+    "kind": "other",
+    "words_as_heard": "review the fy21 select board goals",
+    "shown": true
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "flat-hill-drainage",
+    "title": "Flat Hill culvert costs",
+    "question": "Why did the Flat Hill culvert estimate rise so far above the capital article amount?",
+    "t": 2970,
+    "words_as_heard": "the estimated construction costs for this project are now 750 thousand dollars",
+    "data_in_play": [
+     "750 thousand dollars",
+     "428 500",
+     "325 thousand dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "solid-waste-enterprise-surplus",
+    "title": "Trash bag enterprise surplus",
+    "question": "How do bag sales, collection cost and a possible senior bag program affect the solid waste enterprise fund?",
+    "t": 1990,
+    "words_as_heard": "a surplus of between 40 and 50 000 at the close of this year",
+    "data_in_play": [
+     "between 40 and 50 000",
+     "318 000",
+     "419"
+    ],
+    "existing": "thread:solid-waste-enterprise"
+   },
+   {
+    "slug": "arpa-fund-uses",
+    "title": "ARPA fund uses",
+    "question": "What can the town's American Rescue Plan allocation be spent on?",
+    "t": 2723,
+    "words_as_heard": "types of eligible uses include public health spending",
+    "data_in_play": [
+     "614 1995 dollars"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "senior-tax-relief",
+    "title": "Senior tax relief",
+    "question": "How would a means-tested senior property tax exemption by home rule petition work and what would it cost others?",
+    "t": 4745,
+    "words_as_heard": "means-tested senior citizen property tax exemption",
+    "data_in_play": [],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board kept the old primary school as a FY22 goal, reworded, and asked for a July workshop with the architectural preservation district.",
+    "t": 3647
+   },
+   {
+    "line": "The board added senior property tax relief, by home rule petition, as a top FY22 goal; it would need town meeting approval.",
+    "t": 4770
+   },
+   {
+    "line": "The board approved a weekday entertainment license for Smokestack Roasters after the chair withdrew his proposal to limit hours.",
+    "t": 1408
+   },
+   {
+    "line": "The board ratified the town manager's appointments of a full-time police officer and a senior videographer.",
+    "t": 1868
+   },
+   {
+    "line": "The board heard that pay-as-you-throw bag sales ran ahead of estimates and that senior bag relief will return as an agenda item.",
+    "t": 2494
+   }
+  ],
+  "why_it_matters": [
+   "A senior property tax exemption by home rule petition would be a vote at town meeting, and it changes who carries the tax levy.",
+   "The old primary school and the reuse of town hall and the Ritter building stay unresolved, so the town still carries them as open building and cost questions."
+  ],
+  "watch_next": [
+   "A July workshop with the architectural preservation district on the old primary school.",
+   "Senior pay-as-you-throw bag relief, to return as an agenda item once data is gathered."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-25T20:39:48Z",
+   "cost_usd": 0.2393538
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_06152021-5259",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-06-15-minutes-5259.txt",
+   "path": "sources/meetings/select-board/2021-06-15-minutes-5259.pdf"
+  },
+  "official_sha256": "5922ad1355aed22d93d8858f98474455c687a7597693ac5cd940525242c091e1",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The records agree on all three votes (license and two appointments) and have no transfers; most remaining differences are caption misspellings of names and garbled figures. The main thing to check is the set of decisions only our recording-based minutes have (senior tax relief, building reuse, town manager goals), plus the Flat Hill culvert figures and the Smokestack hours rationale where the two accounts differ.",
+  "counts": {
+   "agree": 6,
+   "caption_error": 6,
+   "discrepancy": 3,
+   "only_in_ours": 3,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Smokestack Roasters weekday entertainment license vote",
+    "ours": "Approve weekday entertainment license for Smokestack Roasters LLC, 39 Mass Ave — passed (aye, none opposed)",
+    "official": "motion: j. marino 2nd: m. jeffreys to approve the weekday entertainment license to smokestack roasters, llc vote: all in favor",
+    "note": "Both record the license as approved with no opposition.",
+    "t": 1408
+   },
+   {
+    "kind": "caption_error",
+    "about": "Officer Robert Decosta appointment",
+    "ours": "Ratify town manager's appointment of full-time police officer Robert Decosta — passed unanimously",
+    "official": "motion: j. marino 2n: m. jeffreys to ratify the town manager appointment of full-time officer robert dacosta effective july 27, 2021 vote: all in favor",
+    "note": "Same vote and outcome; the surname spelling differs (Decosta vs DaCosta), and the official adds the July 27, 2021 effective date.",
+    "official_reading": "Robert DaCosta",
+    "t": 1868
+   },
+   {
+    "kind": "caption_error",
+    "about": "Senior videographer appointment",
+    "ours": "Ratify appointment of senior videographer Daniel Cementori — passed (aye, none opposed)",
+    "official": "motion: l. franco 2\": t. dwyer to ratify the town manager's appointment of daniel seminatore to senior videographer vote: all in favor",
+    "note": "Same vote and outcome; the captions misheard the surname.",
+    "official_reading": "Daniel Seminatore",
+    "t": 1949
+   },
+   {
+    "kind": "agree",
+    "about": "Transfers",
+    "ours": "",
+    "official": "none",
+    "note": "Neither record has any transfers.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "PAYT bag cost increase and enterprise surplus range",
+    "ours": "Pay-as-you-throw bags, enterprise account: 38, 20 in large bags, 200 percent, between 40 and 50 000, 318 000, 419, 119 000",
+    "official": "estimated to increase from $318,014.00 to $419,850.00 and the costs of manufacturing and supplying the bags is also increasing",
+    "note": "The captions garble the figures, but the $318,000 to ~$419,000 increase and the $40,000-$50,000 surplus match the official figures; the caption's '119 000' and '38, 20' are unreliable.",
+    "t": 1990
+   },
+   {
+    "kind": "caption_error",
+    "about": "Warrant totals",
+    "ours": "Warrants signed: 579 thousand five hundred fifty four dollars and ninety three cents, one hundred twelve thousand two hundred fifty two dollars and thirty three cents, five hundred eighty three thousand five hundred seventeen dollars and fifty seven cents, 882 663 dollars and 58 cents",
+    "official": "accounts payable warrant #59 21, dated 6/8/21, in the amount of $112,252.33",
+    "note": "Three of the four amounts match the official ($112,252.33, $583,517.57, $882,663.58); the official does not list the $579,554.93 figure, so check whether a fourth warrant was read aloud.",
+    "official_reading": "$112,252.33, $583,517.57, $882,663.58",
+    "t": 2558
+   },
+   {
+    "kind": "caption_error",
+    "about": "ARPA funds figure",
+    "ours": "American Rescue Plan Act funds: 3.4 billion dollars, 614 1995 dollars",
+    "official": "includes $3.4 b in funding through the coronavirus local fiscal recovery fund (clfrf) for massachusetts local governments.",
+    "note": "The $3.4 billion matches; '614 1995 dollars' is a caption garble with no official counterpart.",
+    "official_reading": "$3.4 B",
+    "t": 2723
+   },
+   {
+    "kind": "agree",
+    "about": "Public safety carport figures",
+    "ours": "Public safety carport project: 23 750, 135 000",
+    "official": "the low bidder was rockwell roofing of leominster for $23,750.",
+    "note": "The $23,750 roofing sub-bid and the $135,000 capital article amount both appear in the official minutes.",
+    "t": 2928
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Flat Hill culvert estimate",
+    "ours": "Flat Hill culvert estimate: 750 thousand dollars, 428 500, 325 thousand dollars",
+    "official": "the estimated construction costs for this project are now $750,000.",
+    "note": "$750,000 matches, but the official has no $428,500 or $325,000; check the recording to see whether these are breakdown or grant figures the official omitted, or caption errors.",
+    "t": 2970
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Smokestack Roasters hours decision",
+    "ours": "Chair withdrew his proposal to limit hours to 9am; license approved on the understanding of quiet, mostly acoustic mornings and annual renewal.",
+    "official": "it was determined that if there were complaints between now and renewal time in december, the hours would be modified then.",
+    "note": "Both leave the hours for renewal, but ours says the chair withdrew a 9am limit while the official says hours would be modified only if complaints arise before the December renewal; check the recording.",
+    "t": 1282
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Seniors bag relief / PAYT price",
+    "ours": "Seniors bag relief to return as a future agenda item once data is gathered.",
+    "official": "this will be a recommendation made at a future meeting.",
+    "note": "Both defer the matter, but the official covers the PAYT price increase as well and says a recommendation will be made; confirm what was deferred.",
+    "t": 2494
+   },
+   {
+    "kind": "agree",
+    "about": "Old primary school goal in FY22 goals",
+    "ours": "Old primary school goal kept, reworded for FY22; request a workshop with the architectural preservation district in July.",
+    "official": "we should incorporate this goal into our 2022 goals. the board concurred",
+    "note": "Both keep the goal in FY22; the July workshop with the preservation district is not in the official minutes.",
+    "t": 3647
+   },
+   {
+    "kind": "agree",
+    "about": "Appointment process goal dropped; volunteer policy",
+    "ours": "Appointment process goal dropped; volunteer recruitment goal kept and turned into a policy.",
+    "official": "mr. jeffreys thought the process went well and did not think it needed to be modified so was in favor of dropping this goal. the board concurred",
+    "note": "Both drop the appointment process goal, and the official has Mr. Alonzo drafting a volunteer policy.",
+    "t": 3919
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Senior property tax relief home rule petition goal",
+    "ours": "Senior property tax relief via home rule petition added as a top FY22 goal.",
+    "official": "",
+    "note": "The official minutes record no decision adding senior tax relief by home rule petition as a goal.",
+    "t": 4770
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town hall and Ritter building reuse not made a goal",
+    "ours": "Building reuse for town hall and Ritter building not made a goal; to be handled through agenda discussions and a later workshop.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 6489
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town manager goals",
+    "ours": "Town manager goals: senior tax exemption, 925 Mass Ave reuse, and independent facilities department.",
+    "official": "",
+    "note": "The official minutes do not record these town manager goals.",
+    "t": 6738
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Salvage note and demolition public comment",
+    "ours": "",
+    "official": "mr. alonzo requested he send a written note to him regarding this via email so he could incorporate it in the goal.",
+    "note": "The official records a request for Mr. Jeffreys to email a salvage note, plus Dave Passios's public comment urging demolition of the old Primary School; neither is in ours.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Landscape architect funding and other unvoted budget items",
+    "ours": "",
+    "official": "mr. alonzo stated we brought this to town meeting to get the funding for the landscape architect,",
+    "note": "The official also records the landscape architect funding, outside funding efforts and free-bag funding sources, which ours lacks.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendees: board members",
+    "ours": "Mr. Alonzo (chair); Mr. Jeffries (vice chair); Mr. Mourinho (member); Mr. Dwyer (member); Mr. Franco (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer,",
+    "note": "Jeffries is Jeffreys and Mourinho is Jim Marino, who made the motions; Alonzo, Dwyer and Franco match.",
+    "official_reading": "Michael-Ray Jeffreys; Jim Marino",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendees: staff and presenters",
+    "ours": "Heather (town manager); Sue Dougherty (presenter, Council on Aging director); Lieutenant Jeffrey Thibodeau (presenter, police lieutenant)",
+    "official": "also present: heather lemieux, town manager; sue doherty, coa director; jaclynn nicoll;",
+    "note": "Dougherty is Doherty; Heather is Heather Lemieux; Thibodeau matches. Officer DaCosta, Seminatore, Jaclynn Nicoll and Dave Passios appear only in the official list.",
+    "official_reading": "Sue Doherty",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-25T20:41:35Z",
+   "cost_usd": 0.2760518
+  }
+ }
+}

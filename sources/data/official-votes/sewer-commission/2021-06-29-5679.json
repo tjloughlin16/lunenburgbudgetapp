@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-06-29",
  "docid": "5679",
@@ -12,23 +12,259 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes for 6/8/21",
+   "motion": "Accept the minutes of 6/8/21.",
    "moved_by": "Mike Nault",
    "seconded_by": "Brett R.",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: mike nault to accept the minutes for 6/8/21. second: brett r. vote: brett-aye, mike n.-aye and dave-aye."
   },
   {
-   "motion": "Adjourn at 6:40pm",
+   "motion": "Adjourn the meeting at 6:40pm.",
    "moved_by": "Mike D.",
    "seconded_by": "Brett R.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: mike d. to adjourn at 6:40pm. second: brett r. vote: brett-aye, john-aye, mike d.-aye, mike n.-aye and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes, readable. The CTE O&M Contract extension is noted as signed but no formal vote is recorded. Budget review and other agenda items are discussed but no formal motions or votes are recorded.",
- "cost_usd": 0.0854475
+ "note": "OCR text (macOS Vision) of a scanned minutes document; quotes were taken from the OCR text with line breaks collapsed to spaces. No roll call is printed; attendance is inferred from participation and vote lines. The Business Manager's identity is not printed. 'Rob' appears in the appointment and later items; 'Rob Oliva' is named once in the appointment, and the minutes do not say whether they are the same person. No public comment from the public is recorded. The minutes approval and adjournment vote lines list ayes but print no count, so outcome is recorded as 'passed'. Handouts list is printed as 'Handouts:'.",
+ "cost_usd": 0.016717589999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "dave noted this was the first live meeting in 1½ years."
+  },
+  {
+   "name": "Rob",
+   "role": "not stated in minutes (may be Rob Oliva; not confirmed)",
+   "status": "present",
+   "quote": "rob reported cte installed the electrical panel for electric ave., and it is running great."
+  },
+  {
+   "name": "Brett R.",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "motion: mike nault to accept the minutes for 6/8/21. second: brett r."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "mike nault agreed he would also like to see it go by more properties"
+  },
+  {
+   "name": "Mike Deveikis",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "mike deveikis asked if they looked at going down hollis rd?"
+  },
+  {
+   "name": "John",
+   "role": "not stated in minutes",
+   "status": "present",
+   "quote": "john asked if it would be privately funded and wes replied yes"
+  },
+  {
+   "name": "Wes Flis",
+   "role": "representing the applicant (Whitman & Bingham)",
+   "status": "present",
+   "quote": "wes flis (whitman & bingham) and don dobeck -re. 410 hollis rd. sewer extension request"
+  },
+  {
+   "name": "Don Dobeck",
+   "role": "applicant (410 Hollis Rd. sewer extension request)",
+   "status": "present",
+   "quote": "don dobeck noted they could move the manhole up at the corner of pond and kimball"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed the FY21 budget looks good.",
+   "quote": "fy21 td budget review- commission discussed the fy21 budget and agreed it looks good."
+  },
+  {
+   "decision": "The Sewer Commission signed the CTE O&M contract extension for Year 2, after CTE submitted it.",
+   "quote": "rob reported cte has submitted the contract and the sewer commission signed it."
+  },
+  {
+   "decision": "The Commission will send the letters to residents about the Pond St./Kimball St. sewer extension, with a short response time.",
+   "quote": "john suggested sending letters out to residents and dave said the commission would take care of sending those letters out."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Invoices paid or presented, Business Manager report",
+   "what_was_recorded": "Two invoices are listed in the Business Manager report: Fitchburg Usage and Mead Talerman.",
+   "figures_as_printed": [
+    "$17,586.68",
+    "$1,470.67"
+   ],
+   "quote": "invoices: fitchburg usage - $17,586.68 and mead talerman - $1,470.67."
+  },
+  {
+   "topic": "FY21 TD budget review",
+   "what_was_recorded": "The Commission reviewed the FY21 budget and agreed it looks good; Rob noted revenues are up. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "fy21 td budget review- commission discussed the fy21 budget and agreed it looks good."
+  },
+  {
+   "topic": "410 Hollis Rd. sewer extension cost",
+   "what_was_recorded": "The sewer extension (approximately 939 feet) would be privately funded by the applicant, who would install it; discussion said abutters were not willing to connect now to share the cost. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "john asked if it would be privately funded and wes replied yes - they would install it themselves, with the 8\" main going to the town."
+  },
+  {
+   "topic": "Cost of paving for the sewer route",
+   "what_was_recorded": "Discussion said that running the sewer down the center of Pond St. would require re-paving the whole road, which would be cost prohibitive for the developer. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "wes replied if they ran down the center of the road, the developer would need to re-pave the whole road, which would be cost prohibitive."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Announcements",
+   "resolution": "noted: meeting schedule through April 2022",
+   "quote": "dave noted this was the first live meeting in 1½ years.",
+   "tags": [
+    "meetings",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action; none recorded",
+   "quote": "public comment- none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Appointment: 410 Hollis Rd. sewer extension request",
+   "resolution": "discussed; no vote recorded; Commission to send letters to residents",
+   "quote": "wes flis (whitman & bingham) and don dobeck -re. 410 hollis rd. sewer extension request",
+   "tags": [
+    "sewer extension",
+    "410 Hollis Rd",
+    "private developer",
+    "Pond St",
+    "Kimball St"
+   ]
+  },
+  {
+   "topic": "CTE O&M contract extension, Year 2",
+   "resolution": "contract signed by the Commission",
+   "quote": "cte o&m contract extension for year 2- rob reported cte has submitted the contract and the sewer commission signed it.",
+   "tags": [
+    "CTE",
+    "contract",
+    "O&M"
+   ]
+  },
+  {
+   "topic": "Bright Farms status",
+   "resolution": "no update; Dave requested an update from the Planning Board",
+   "quote": "bright farms status - rob said he has not had any updates",
+   "tags": [
+    "Bright Farms",
+    "Planning Board"
+   ]
+  },
+  {
+   "topic": "FY21 TD budget review",
+   "resolution": "agreed it looks good",
+   "quote": "fy21 td budget review- commission discussed the fy21 budget and agreed it looks good.",
+   "tags": [
+    "budget",
+    "FY21"
+   ]
+  },
+  {
+   "topic": "Minutes of 6/8/21",
+   "resolution": "approved",
+   "quote": "motion: mike nault to accept the minutes for 6/8/21.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "received; invoices listed; no vote recorded",
+   "quote": "business manager report - rob reported cte installed the electrical panel for electric ave., and it is running great.",
+   "tags": [
+    "electrical panel",
+    "invoices",
+    "Howard St. 40B",
+    "solar"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs and counsel hours",
+   "resolution": "noted; look at the Maintenance Program",
+   "quote": "member agenda inputs for future meetings/counsel hours - look at the maintenance program.",
+   "tags": [
+    "town counsel",
+    "maintenance program"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "no action; Rob noted more items for the Commissioners to sign",
+   "quote": "public comment - rob noted he had more items for the commissioners to sign.",
+   "tags": [
+    "signatures"
+   ]
+  },
+  {
+   "topic": "Upcoming activities and adjournment",
+   "resolution": "adjourned at 6:40pm",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "adjournment",
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Plan by Whitman & Bingham for 410 Sewer Extension",
+   "where": "list",
+   "quote": "handouts: plan by whitman & bingham for 410 sewer extension thank you note from carl and phyllis luck"
+  },
+  {
+   "name": "Thank you note from Carl and Phyllis Luck",
+   "where": "list",
+   "quote": "thank you note from carl and phyllis luck"
+  },
+  {
+   "name": "5 Chestnut St. response from Town Counsel",
+   "where": "text",
+   "quote": "5 chestnut st. response from town counsel was sent to mrs. bertram."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "sewer extension",
+  "410 Hollis Rd",
+  "CTE contract",
+  "FY21 budget",
+  "minutes approval",
+  "Bright Farms",
+  "electrical panel",
+  "town counsel",
+  "zoom meeting",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

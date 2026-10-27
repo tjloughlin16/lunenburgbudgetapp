@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-09-14",
  "docid": "5266",
@@ -12,41 +12,443 @@
  },
  "votes": [
   {
-   "motion": "approve blocking off Memorial Drive October 23rd from 6:30 to 9:30 p.m.",
+   "motion": "Approve blocking off Memorial Drive on October 23 from 6:30-9:30 p.m. for the Boys & Girls Club event",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 in favor, 1 abstention (Jeffreys)",
    "procedural": false,
-   "quote": "motion: j. marino 2nd: l. franco to approve blocking off memorial drive on october 23\"d from 6:30-9:30 p.m. discussion: mr. jeffreys stated he does ",
-   "quote_taken_from_text": true
+   "quote": "motion: j. marino 2nd: l. franco to approve blocking off memorial drive on october 23\"d from 6:30-9:30 p.m."
   },
   {
-   "motion": "approve the September 7, 2021 minutes as presented",
+   "motion": "Approve the September 7, 2021 minutes as presented",
    "moved_by": "L. Franco",
    "seconded_by": "J. Marino",
-   "outcome": "passed 4-0",
+   "outcome": "passed, all in favor",
    "procedural": true,
-   "quote": "motion: l. franco to approve the september 7, 2021 minutes as presented * 2nd. j. marino vote: all in fav",
-   "quote_taken_from_text": true
+   "quote": "motion: l. franco to approve the september 7, 2021 minutes as presented * 2nd. j. marino vote: all in favor"
   },
   {
-   "motion": "authorize the Town Manager to advertise parcel 7 as part of the disposition of 671 West Street",
+   "motion": "Authorize the Town Manager to advertise parcel 7 as part of the disposition of 671 West Street",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
-   "outcome": "passed 4-0",
+   "outcome": "passed, all in favor",
    "procedural": false,
    "quote": "motion: m. jeffreys 2nd. l. franco to authorize the town manager to advertise parcel 7 as part of the disposition of 671 west street vote: all in favor"
   },
   {
-   "motion": "enter into Executive Session pursuant to M.G.L. c. 30A, section 21, Reason #6, and to adjourn the meeting",
+   "motion": "Enter Executive Session under M.G.L. c. 30A, § 21, Reason #6 (real property) and adjourn the meeting after exiting Executive Session",
    "moved_by": "L. Franco",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: l. franco 2'd: m. jeffreys to enter into executive session pursuant to m.g.l. c. 30a, § 21, reason #6, to consider the purchase, exchange, taking, lease, or value of real property if such a discussion may have a detrimental effect on the negotiating position of the governmental body and to adjourn the meeting after exiting executive session (665 mass ave) vote: mr. marino-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to enter into executive session pursuant to m.g.l. c. 30a, § 21, reason #6, to consider"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All four votes clearly recorded. Vote 1 had one abstention (M. Jeffreys abstained from the Halloween event vote); votes 2-4 passed unanimously with all four board members voting aye. The minutes discuss TCP building design committee warrant articles and a Historical Commission demolition delay bylaw article, but no votes were taken on these items at this meeting.\"",
- "cost_usd": 0.1786937
+ "note": "OCR text (macOS Vision) with errors; quotes were copied from the OCR and may carry its noise. Committee is named both CP and TCP (TCP Building Design Committee) in the text; attendee 'Christine Kuma' is in the header and 'Christine Kumar' in the body. Four motions with recorded results; the Historical Commission article was discussed with no motion or vote recorded. The minutes show 'The meeting adjourned at 9:20 p.m.' with no adjournment motion printed. The approval-of-minutes header ('Approved October 5, 2021') is not a vote in this meeting. Public-comment entries omit board members who spoke in that section.",
+ "cost_usd": 0.12918745,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; lou franco,"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "absent",
+   "quote": "member not present: todd dwyer"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "present: heather lemieux, town manager; brent debraga, sue byrne, christine kuma"
+  },
+  {
+   "name": "Sue Byrne",
+   "role": "Principal Assessor",
+   "status": "present",
+   "quote": "present: heather lemieux, town manager; brent debraga, sue byrne, christine kuma"
+  },
+  {
+   "name": "Brent DeBraga",
+   "role": "Program Director, Boys and Girls Club (representing the applicant)",
+   "status": "present",
+   "quote": "brent debraga, program director for the boys and girls club, was present for the request to"
+  },
+  {
+   "name": "Christine Kuma",
+   "role": "to replace Ms. Byrne upon her retirement",
+   "status": "present",
+   "quote": "introduced christine kumar, who will replacing ms. byrne upon"
+  },
+  {
+   "name": "Grey Roy",
+   "role": "Chair, CP Building Design Committee",
+   "status": "present",
+   "quote": "cp building design committee members present: grey roy, chair; dave passios, dav"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "CP Building Design Committee member",
+   "status": "present",
+   "quote": "cp building design committee members present: grey roy, chair; dave passios, dav"
+  },
+  {
+   "name": "Dav Blatt",
+   "role": "CP Building Design Committee member",
+   "status": "present",
+   "quote": "blatt, brian lehtinen"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "CP Building Design Committee member",
+   "status": "present",
+   "quote": "blatt, brian lehtinen"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Finance Committee Chairman",
+   "status": "present",
+   "quote": "peter beardmore, 282 pleasant street, finance committee chairman, extended an invitation to"
+  },
+  {
+   "name": "Rhonda Lizio",
+   "role": "public, 181 Reservoir Road",
+   "status": "remote",
+   "quote": "rhonda lizio, 181 reservoir road, via zoom, wanted to reiterate she is against the tcp project,"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Historical Commission is to attend the next meeting to discuss the demolition-delay warrant article, with further discussion scheduled then.",
+   "quote": "more discussion will occur next week when the historical commission comes in to discuss this article."
+  },
+  {
+   "decision": "The Board thanked the Principal Assessor's office for the information on the Elderly Exemption warrant article; no position was taken.",
+   "quote": "the board thanked them for the information."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "TCP building design study cost",
+   "what_was_recorded": "The committee said the cost analysis for a new-versus-renovation study it is starting now is $54,000.",
+   "quote": "presenting the cost analysis for this $54,000 study that we are embarking on now",
+   "figures_as_printed": [
+    "$54,000"
+   ]
+  },
+  {
+   "topic": "TCP renovation borrowing article",
+   "what_was_recorded": "The proposed Special Town Meeting article would appropriate by borrowing for renovation of the TC Passios Building.",
+   "quote": "to appropriate by borrowing $23,570,000.00 and to meet this appropriation the select board and town",
+   "figures_as_printed": [
+    "$23,570,000.00"
+   ]
+  },
+  {
+   "topic": "Accounts payable and payroll warrants signed",
+   "what_was_recorded": "The board signed an Accounts Payable warrant, a Payroll warrant and a Payroll Deductions warrant.",
+   "quote": "the board members signed an accounts payable warrant in the amount of 615,004.23",
+   "figures_as_printed": [
+    "615,004.23",
+    "$888,578.11",
+    "$588,815.66"
+   ]
+  },
+  {
+   "topic": "Elderly exemption income and asset limits",
+   "what_was_recorded": "The proposed warrant article would set new single and married income and asset limits for the Elderly Exemption and raise the exemption amount.",
+   "quote": "single person income limit $31,500, asset limit $52,700, married persons income",
+   "figures_as_printed": [
+    "$31,500",
+    "$52,700",
+    "$39,600",
+    "$72,700",
+    "$1,000"
+   ]
+  },
+  {
+   "topic": "Elderly exemption amount increase",
+   "what_was_recorded": "The Principal Assessor said the exemption amount rises from the previous policy amount; the exemption is raised through taxation and partly reimbursed by the state.",
+   "quote": "increase the exemption amount from the previous policy from $750 to $1000",
+   "figures_as_printed": [
+    "$750",
+    "$1000"
+   ]
+  },
+  {
+   "topic": "New Growth figure",
+   "what_was_recorded": "The New Growth figure submitted to the Department of Revenue exceeded the ATM estimate by a stated amount.",
+   "quote": "the new growth figure submitted was $430,254, which is $149,664 more than",
+   "figures_as_printed": [
+    "$430,254",
+    "$149,664"
+   ]
+  },
+  {
+   "topic": "State aid deficit offset",
+   "what_was_recorded": "New Growth is said to eliminate a deficit caused by final State Aid figures, which rose with School Choice and Charter Assessments.",
+   "quote": "this will eliminate the deficit of $126,551 that was due to the",
+   "figures_as_printed": [
+    "$126,551"
+   ]
+  },
+  {
+   "topic": "State budget surplus and ARPA funding",
+   "what_was_recorded": "The town administrators association reported the state's FY21 surplus and the ARPA allocation as described by the MMA.",
+   "quote": "the state closed out the fy21 state budget with a $4b surplus, largely due to actual",
+   "figures_as_printed": [
+    "$4B",
+    "$5.3B",
+    "$2.9B",
+    "$200M"
+   ]
+  },
+  {
+   "topic": "Demolition delay bylaw fine",
+   "what_was_recorded": "Members objected to the proposed $300 per day fine, which they calculated as $9,000 per month.",
+   "quote": "a $300 a day fine is equal to $9,000/month.",
+   "figures_as_printed": [
+    "$300",
+    "$9,000/month",
+    "$300.00"
+   ]
+  },
+  {
+   "topic": "Records management assessment cost",
+   "what_was_recorded": "The Town Manager said a cost estimate for the records management assessment would be ready for the FY23 capital planning process.",
+   "quote": "we should have a cost estimate for this in time for the fy23 capital planning process.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cost of a special election",
+   "what_was_recorded": "If the TCP articles pass, an election within 90 days would be needed at an additional cost; no amount was given.",
+   "quote": "we need to hold an election within 90 days of them passing",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Total spent on TCP project",
+   "what_was_recorded": "A member asked how much money has already been spent on the TCP project; no figure was recorded.",
+   "quote": "asking how much money have we spent already?",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Chapter 70 funding joint meeting",
+   "what_was_recorded": "The Finance Committee invited the Board to a joint meeting with the School Committee on Chapter 70 funding.",
+   "quote": "on october 28 about chapter 70 funding",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "TCP extended-day program funding",
+   "what_was_recorded": "A public commenter said the extended day program was supposed to be self-funded and objected to funding its renovation space.",
+   "quote": "we are not mandated to run this program and it was supposed to be self-funded.",
+   "figures_as_printed": [
+    "5000 square feet"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "Finance Committee Chairman",
+   "topic": "Chapter 70 joint meeting; TCP timing",
+   "quote": "peter beardmore, 282 pleasant street, finance committee chairman, extended an invitation to"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "Traffic sight line at Main Street and Lancaster Avenue",
+   "quote": "dave passios, 56 whiting street, noted that the line of sight for traffic coming down main street"
+  },
+  {
+   "speaker": "Rhonda Lizio",
+   "stated_role": "181 Reservoir Road, via Zoom",
+   "topic": "Opposes TCP renovation funding",
+   "quote": "rhonda lizio, 181 reservoir road, via zoom, wanted to reiterate she is against the tcp project,"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening)",
+   "resolution": "no action",
+   "quote": "mr. jeffreys stated he was unable to attend the lance may cemetery garage building dedication.",
+   "tags": [
+    "public comment",
+    "9/11 anniversary"
+   ]
+  },
+  {
+   "topic": "Boys & Girls Club: Memorial Drive closure",
+   "resolution": "approved 3-0-1 (Jeffreys abstaining)",
+   "quote": "brent debraga, program director for the boys and girls club, was present for the request to",
+   "tags": [
+    "road closure",
+    "Halloween event"
+   ]
+  },
+  {
+   "topic": "Principal Assessor: elderly exemption warrant article",
+   "resolution": "no vote; board thanked presenters",
+   "quote": "the board thanked them for the information.",
+   "tags": [
+    "elderly exemption",
+    "tax",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Current business: minutes, warrants, committee reports",
+   "resolution": "minutes approved; warrants signed",
+   "quote": "the board members signed an accounts payable warrant in the amount of 615,004.23",
+   "tags": [
+    "warrants",
+    "minutes",
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "TCP Building Design Committee: Special Town Meeting articles",
+   "resolution": "discussed; committee to meet again; no vote",
+   "quote": "further discussion ensued about strategy and whether or not to present all or some of the",
+   "tags": [
+    "TCP building",
+    "town hall",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "quote": "i have engaged a consultant to come in to assess the status of our records management.",
+   "tags": [
+    "DPW",
+    "IT",
+    "records management",
+    "state budget",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "Disposition of parcel 7, 671 West Street",
+   "resolution": "authorized advertising",
+   "quote": "to authorize the town manager to advertise parcel 7 as part of the disposition of 671 west street",
+   "tags": [
+    "property disposition",
+    "open space"
+   ]
+  },
+  {
+   "topic": "Demolition delay bylaw warrant article (Historical Commission)",
+   "resolution": "discussed; continued to next week",
+   "quote": "more discussion will occur next week when the historical commission comes in to discuss this article.",
+   "tags": [
+    "demolition delay",
+    "historic preservation",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and public comment",
+   "resolution": "no action",
+   "quote": "mr. alonzo noted the board meets again on september 21st.",
+   "tags": [
+    "traffic safety",
+    "TCP building",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; adjourned at 9:20 p.m.",
+   "quote": "mr. alonzo reported they would be entering executive session.",
+   "tags": [
+    "executive session",
+    "real property"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Historical Commission warrant article: proposed amendments to Chapter 134-4-D (1), (2), (3) and 134-5 (demolition delay)",
+   "where": "list",
+   "quote": "the board discussed the recent submission on a warrant article from the historical commission:"
+  },
+  {
+   "name": "Board of Assessors warrant article: Elderly Exemption, MGL ch. 59 § 5 cl. 41C (Nov. 16 Special Town Meeting)",
+   "where": "list",
+   "quote": "ms. byrne reported the board of assessors voted to place a warrant article on the upcoming november"
+  },
+  {
+   "name": "TCP Building Design Committee warrant articles (three), Special Town Meeting",
+   "where": "list",
+   "quote": "the committee is presenting three possible warrant articles for special town meeting."
+  },
+  {
+   "name": "DEMOLITION DELAY BI-MONTHLY REPORT form",
+   "where": "text",
+   "quote": "submitting the document entitled, \"demolition delay bi-monthly report\" on"
+  },
+  {
+   "name": "King Information Systems records management assessment",
+   "where": "text",
+   "quote": "this company, king information systems, has been in business since 1972"
+  },
+  {
+   "name": "Home Rule Petition: Library Trust Funds bill",
+   "where": "text",
+   "quote": "the bill to authorize the library board of trustees to invest the library trust funds has moved to the third reading"
+  },
+  {
+   "name": "New Growth certification forms to the Department of Revenue",
+   "where": "text",
+   "quote": "the assessors' office has submitted the required forms to the department of revenue to certify"
+  },
+  {
+   "name": "Lunenburg Crossing easement article",
+   "where": "text",
+   "quote": "there is an easement article concerning the lunenburg crossing"
+  }
+ ],
+ "tags": [
+  "special town meeting",
+  "TCP building renovation",
+  "demolition delay bylaw",
+  "elderly exemption",
+  "parcel disposition",
+  "Boys & Girls Club",
+  "town manager report",
+  "executive session",
+  "state aid",
+  "new growth",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board discussed the recent submission on a warrant article from the historical commission"
+ },
+ "dropped_unquoted_by_field": {}
 }

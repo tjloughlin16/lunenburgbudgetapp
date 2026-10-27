@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-08-23",
  "docid": "4138",
@@ -12,15 +12,145 @@
  },
  "votes": [
   {
-   "motion": "Continue the public hearing to September 13, 2021 at 6:35 p.m.",
+   "motion": "Continue the public hearing on the stormwater permit for 360 Flat Hill Road to September 13, 2021, 6:35 p.m.",
    "moved_by": "M. Brenner",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "m. brenner made motion to continue the hearing to september 13, 2021, 6:35 p.m., p. bertram seconded, roll call vote - m. brenner, aye; m. allison, aye; p. bertram, aye; t. cole, aye. vote p assed 4-0."
+   "quote": "m. brenner made motion to continue the hearing to september 13, 2021, 6:35 p.m., p. bertram seconded, roll call vote"
   }
  ],
  "dropped_unquoted": 0,
- "note": "This is a public hearing on a stormwater permit. The only recorded vote is the motion to continue the hearing to a later date; the remainder of the minutes documents discussion of the permit application by the board and comments from abutters.",
- "cost_usd": 0.0919515
+ "note": "Two text pages, both read in full; no scan issues. Only one motion was recorded (continuance, 4-0). No dollar figures appear. The page 2 running header reads \"306 Flat Hill Road\" while the hearing concerns 360 Flat Hill Road; the minutes' body consistently says 360, so it is recorded as 360. The minutes do not record approval of prior minutes or adjournment.",
+ "cost_usd": 0.01531809,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "due to illness, p. bertram participate remotely under section 2.02 remote pa rticipation"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Ken Matson",
+   "role": "applicant/owner",
+   "status": "present",
+   "quote": "the applicant/owner, ken matson, represented himself along with mark elbag, m.a. elbag engineering."
+  },
+  {
+   "name": "Mark Elbag",
+   "role": "representing the applicant, M.A. Elbag Engineering",
+   "status": "present",
+   "quote": "the applicant/owner, ken matson, represented himself along with mark elbag, m.a. elbag engineering."
+  },
+  {
+   "name": "Glen Logan",
+   "role": "resident, 5 Watt Street",
+   "status": "present",
+   "quote": "glen logan, 5 watt street- voiced concern that if individual homeowners did not maintain stormwater maintenance, runoff would"
+  },
+  {
+   "name": "Susan Whalen",
+   "role": "resident, Flat Hill Road",
+   "status": "present",
+   "quote": "susan whalen, flat hill road - had concerns that the property was previously an apple orchard."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Land Use Director A. Burney to confirm the stormwater design with the reviewing engineer, Jeffrey Walsh of Graves Engineering, Inc.",
+   "quote": "a. burney would confirm with reviewing engineer, jeffrey walsh, graves e ngineering, inc."
+  },
+  {
+   "decision": "The hearing was recessed at 9:25 p.m.",
+   "quote": "hearing recessed 9:25 p.m."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "runoff from homes if stormwater maintenance is not kept up",
+   "speaker": "Glen Logan",
+   "stated_role": "5 Watt Street",
+   "quote": "glen logan, 5 watt street- voiced concern that if individual homeowners did not maintain stormwater maintenance, runoff would"
+  },
+  {
+   "topic": "prior apple orchard, pesticides, soil testing, snow plowed onto rain gardens",
+   "speaker": "Susan Whalen",
+   "stated_role": "Flat Hill Road",
+   "quote": "susan whalen, flat hill road - had concerns that the property was previously an apple orchard."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public hearing: stormwater permit, 360 Flat Hill Road",
+   "resolution": "continued to September 13, 2021",
+   "quote": "the hearing was to hear and review a stormwater management permit under chapter 204",
+   "tags": [
+    "stormwater",
+    "public hearing",
+    "Flat Hill Road",
+    "residential lots",
+    "continued"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Stormwater Report revised 8/17/2021",
+   "where": "list",
+   "quote": "stormwater report revised 8/17/2021"
+  },
+  {
+   "name": "Stormwater Management & Erosion Control Plan dtd 6/1/2021",
+   "where": "list",
+   "quote": "stormwater management & erosion control plan dtd 6/1/2021"
+  }
+ ],
+ "tags": [
+  "stormwater permit",
+  "public hearing",
+  "360 Flat Hill Road",
+  "eight-lot residential filing",
+  "private wells and septic",
+  "remote participation",
+  "hearing continued"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2021-08-31",
  "docid": "3490",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes of the July 22, 2021 meeting",
+   "motion": "Approve the minutes of the July 22, 2021 meeting as presented.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. MacDonald",
    "outcome": "passed",
@@ -20,31 +20,148 @@
    "quote": "motion by j. bilotta to accept and approve the minutes as presented second: d. macdonald all in favor"
   },
   {
-   "motion": "approve the temporary Recreation Director at Grade 9, Step 4",
+   "motion": "Approve the new hire of the Temporary Recreation Director at Grade 9, Step 4, per the recommendation of the HR Director and DPW Director.",
    "moved_by": "D. MacDonald",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by d. macdonald to accept recommendation from the hr director and dpw director to approve the new hire at a grade 9, step 4. second: j. bilotta all in favor"
+   "quote": "motion by d. macdonald to accept recommendation from the hr director and dpw director to approve the new hire at a grade 9, step 4."
   },
   {
-   "motion": "accept the use of the Subscription Service and meeting invites when agenda topics pertain to particular persons or groups",
+   "motion": "Accept the use of the Subscription Service and meeting invites when related, for notifying SAP employees about Personnel Committee meetings.",
+   "moved_by": "J. Bilotta",
+   "seconded_by": "D. MacDonald",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "j. bilotta made a motion to accept the use of the subscription service and meeting invites when related."
+  },
+  {
+   "motion": "Adjourn the meeting at 5:48 p.m.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. MacDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "j. bilotta made a motion to accept the use of the subscription service and meeting invites when related. second d. macdonald all in favor"
-  },
-  {
-   "motion": "adjourn the meeting",
-   "moved_by": "J. Bilotta",
-   "seconded_by": "D. MacDonald",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion by j. bilotta to adjourn the meeting at 5:48 p.m. second: d. macdonald all in favor"
+   "quote": "motion by j. bilotta to adjourn the meeting at 5:48 p.m."
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0841105
+ "dropped_unquoted": 1,
+ "note": "Minutes are a plain text extraction with no scan issues. Three motions carry the printed result \"All in favor\" or \"All in Favor\"; no vote count is printed, so outcome is recorded as passed. No dollar figures appear in the text, so budget_items is empty; the new hire is at Grade 9, Step 4 with no salary printed. No public comment section is printed; the two SAP employees who took part in the discussion are unnamed and are not recorded as speakers. The recommendation by E. Arnold to email everyone about the Subscription Service is not recorded as a decision on its own; the later motion adopts it. No document list is printed.",
+ "cost_usd": 0.01452619,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "dave macdonald, donna fortune, erik arnold, joanna bilotta by phone"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "dave macdonald, donna fortune, erik arnold, joanna bilotta by phone"
+  },
+  {
+   "name": "Erik Arnold",
+   "role": "Committee member (listed under Attendees)",
+   "status": "present",
+   "quote": "dave macdonald, donna fortune, erik arnold, joanna bilotta by phone"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member (listed under Attendees), by phone",
+   "status": "remote",
+   "quote": "dave macdonald, donna fortune, erik arnold, joanna bilotta by phone"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member (Missing Member)",
+   "status": "absent",
+   "quote": "missing member: susan andrews"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, heather lemieux, town manager"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: julie belliveau, asst. town manager/hr director, heather lemieux, town manager"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barbara lefebvre, nancy forest"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "not stated",
+   "status": "present",
+   "quote": "barbara lefebvre, nancy forest"
+  },
+  {
+   "name": "Robert Oliva",
+   "role": "DPW Director",
+   "status": "remote",
+   "quote": "nancy forest, robert oliva, dpw director by phone"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes, July 22, 2021",
+   "resolution": "approved",
+   "quote": "minutes of the july 22, 2021 meeting reviewed",
+   "tags": [
+    "minutes",
+    "approval"
+   ]
+  },
+  {
+   "topic": "New hire form: Temporary Recreation Director",
+   "resolution": "approved at Grade 9, Step 4",
+   "quote": "the temporary recreation director was presented to the committee by j. belliveau",
+   "tags": [
+    "hiring",
+    "recreation department",
+    "temporary position"
+   ]
+  },
+  {
+   "topic": "HR Director update: communication with SAP employees",
+   "resolution": "approved use of Subscription Service and meeting invites when related",
+   "quote": "hr director update - communication with sap employees",
+   "tags": [
+    "notification",
+    "SAP employees",
+    "subscription service",
+    "meeting notice"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "personnel",
+  "temporary hire",
+  "recreation department",
+  "meeting notification",
+  "SAP employees",
+  "subscription service",
+  "town hall"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

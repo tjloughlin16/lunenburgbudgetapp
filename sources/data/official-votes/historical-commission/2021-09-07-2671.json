@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2021-09-07",
  "docid": "2671",
@@ -12,15 +12,230 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of the June 23, 2021 meeting as amended",
+   "motion": "To approve the minutes of the June 23, 2021 meeting as amended.",
    "outcome": "passed unanimously",
    "procedural": true,
-   "moved_by": "not stated",
-   "seconded_by": "not stated",
    "quote": "on motion regularly made and seconded, it was unanimously voted: to approve the minutes as amended."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote recorded. The minutes discuss various business items (Pond View 40B project, APDC update, demolition delay bylaws, cemetery work, etc.) but none are recorded as motions voted on.",
- "cost_usd": 0.0758915
+ "note": "Single-page plain-text extraction of the minutes. The one recorded motion (approval of June 23, 2021 minutes) gives no mover or seconder names. Other commission members are not named, so the attendance list is partial. No dollar figures appear. Several assignments and the Pond View response are recorded without a vote. The minutes print no documents list; the documents entries are items named in the text only.",
+ "cost_usd": 0.01575959,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "chairman richard mcgrath opened the monthly meeting at the ritter memorial building at 7:01 p.m. with a quorum present."
+  },
+  {
+   "name": "Mr. Lakso",
+   "role": "not stated",
+   "status": "present",
+   "quote": "mr. lakso reported that articles for the \"historically speaking\" are completed and ready for publishing, ending in january 2022."
+  },
+  {
+   "name": "Jennifer Sanderson",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jennifer sanderson and megan lordan were asked to research the residency if african americans in town."
+  },
+  {
+   "name": "Megan Lordan",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "jennifer sanderson and megan lordan were asked to research the residency if african americans in town."
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "kevin boussom is invited to be present to video record the installation."
+  },
+  {
+   "name": "Kevin O’Brien",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "the pond view 40b project of mr. kevin o'brien was introduced by mr. mcgrath and discussed."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Lakso was asked to formulate a response to the town manager on the Pond View 40B project, citing the commission's experience with Mr. O'Brien and the unsecured Howard Street house and demolition delay non-response.",
+   "quote": "mr. lakso was requested for formulate a response to the town manager, citing the commission's experience in working with mr. o'brien"
+  },
+  {
+   "decision": "Jennifer Sanderson and Megan Lordan were asked to research the residency of African Americans in town; the Fitchburg Historical Society was suggested as a source.",
+   "quote": "jennifer sanderson and megan lordan were asked to research the residency if african americans in town."
+  },
+  {
+   "decision": "Mr. Lakso was asked to follow up with the town manager on the current status of the Demolition Delay Bylaw amendments.",
+   "quote": "he was asked to follow up to determine the current status."
+  },
+  {
+   "decision": "Kevin Boussom was invited to be present to video record the Arnold-Litch memorial stone and plaque installation.",
+   "quote": "kevin boussom is invited to be present to video record the installation."
+  },
+  {
+   "decision": "Brush removal needed for Goodrich family burial ground restoration is to be accomplished by the DPW.",
+   "quote": "additional restoration work on the goodrich family burial ground requires the removal of brush, to be accomplished by the dpw."
+  },
+  {
+   "decision": "The next commission meeting was set for October 5, 2021 at 7:00 p.m.",
+   "quote": "the next meeting of the commission was established as october 5, 2021 at 7:00 p.m."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of June 23, 2021 meeting",
+   "resolution": "approved as amended",
+   "quote": "minutes of the june 23, 2021 meeting we read and amended.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action; none introduced",
+   "quote": "no correspondence was introduced.",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no public comment; no public present",
+   "quote": "public comment was passed by, there being no public present.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Pond View 40B project and APDC update",
+   "resolution": "response to town manager assigned to Mr. Lakso",
+   "quote": "the pond view 40b project of mr. kevin o'brien was introduced by mr. mcgrath and discussed.",
+   "tags": [
+    "Pond View 40B",
+    "affordable housing",
+    "demolition delay",
+    "Howard Street"
+   ]
+  },
+  {
+   "topic": "African American residency research",
+   "resolution": "research assigned to Sanderson and Lordan",
+   "quote": "jennifer sanderson and megan lordan were asked to research the residency if african americans in town.",
+   "tags": [
+    "African American history",
+    "research"
+   ]
+  },
+  {
+   "topic": "Demolition Delay Bylaw amendments",
+   "resolution": "status follow-up assigned to Mr. Lakso",
+   "quote": "demolition delay bylaw amendments were sent to the town manager march 30 by mr. lakso.",
+   "tags": [
+    "demolition delay",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Arnold-Litch burial ground memorial stone",
+   "resolution": "reported; installation tentatively September 20",
+   "quote": "mr. mcgrath reported the memorial stone and plaque for the arnold-litch burial ground are ready for installation, tentatively on september 20.",
+   "tags": [
+    "burial grounds",
+    "memorial"
+   ]
+  },
+  {
+   "topic": "Goodrich family burial ground restoration",
+   "resolution": "reported; brush removal by DPW; headstone to be recreated",
+   "quote": "additional restoration work on the goodrich family burial ground requires the removal of brush, to be accomplished by the dpw.",
+   "tags": [
+    "burial grounds",
+    "restoration",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "North Cemetery town tomb Form E",
+   "resolution": "reported; in preparation for Massachusetts Historical Commission",
+   "quote": "the cemetery commission, with the assistance of mr. mcgrath, is working on preparing a form e for the town tomb at north cemetery, which will be submitted to the massachusetts historical commission.",
+   "tags": [
+    "cemetery",
+    "Form E",
+    "state filing"
+   ]
+  },
+  {
+   "topic": "Historically Speaking articles",
+   "resolution": "reported complete, publishing through January 2022",
+   "quote": "mr. lakso reported that articles for the \"historically speaking\" are completed and ready for publishing, ending in january 2022.",
+   "tags": [
+    "publications"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for October 5, 2021",
+   "quote": "the next meeting of the commission was established as october 5, 2021 at 7:00 p.m.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:55 p.m.",
+   "quote": "with no further business at hand, the meeting was adjourned at 7:55 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Delay Bylaw amendments (sent to the town manager March 30 by Mr. Lakso)",
+   "where": "text",
+   "quote": "demolition delay bylaw amendments were sent to the town manager march 30 by mr. lakso."
+  },
+  {
+   "name": "Chapter 134-4 of town bylaws (demolition delay requirements)",
+   "where": "text",
+   "quote": "demolition delay requirements of chapter 134-4 of town bylaws will be included in the response."
+  },
+  {
+   "name": "Form E (town tomb at North Cemetery, to the Massachusetts Historical Commission)",
+   "where": "text",
+   "quote": "the cemetery commission, with the assistance of mr. mcgrath, is working on preparing a form e for the town tomb at north cemetery"
+  },
+  {
+   "name": "“Historically Speaking” articles (ending January 2022)",
+   "where": "text",
+   "quote": "mr. lakso reported that articles for the \"historically speaking\" are completed and ready for publishing, ending in january 2022."
+  }
+ ],
+ "tags": [
+  "historical commission",
+  "Pond View 40B",
+  "affordable housing",
+  "demolition delay",
+  "burial grounds",
+  "cemetery",
+  "African American history",
+  "Historically Speaking",
+  "Arnold-Litch",
+  "Goodrich",
+  "North Cemetery"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

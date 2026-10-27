@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-05-11",
  "docid": "5701",
@@ -12,15 +12,297 @@
  },
  "votes": [
   {
-   "motion": "Adjourn the meeting at 5:53 pm",
-   "outcome": "passed 4-0",
-   "procedural": true,
+   "motion": "To adjourn the meeting at 5:53 pm.",
    "moved_by": "Brett R.",
    "seconded_by": "John R.",
+   "outcome": "passed 4-0",
+   "procedural": true,
    "quote": "motion: brett r. to adjourn at 5:53 pm second: john r. roll call vote: mike d.-aye, john-aye, brett-aye and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from macOS Vision. One procedural vote (adjournment) recorded with a roll call showing four ayes. No other votes formally recorded, though the minutes mention agreement on several items (CTE contract changes, meeting time change) without formal motions.",
- "cost_usd": 0.0849635
+ "note": "OCR text (macOS Vision), not the signed minutes. Page 1 ends mid-item (Elizabeth St I/I) and page 2 begins mid-sentence (\"will be on 5/20...\"), so text between the pages is missing; the Bertram/capacity discussion is only partly visible. No call to order, attendance roll, or approval of prior minutes appears in the text. The only recorded vote is the adjournment roll call. The signature block is garbled (\"Your h fame\"). Barb's and Rob's surnames and roles, and the Commission's chair, are not printed. Public comment heading is followed by a Commissioner's (Brett) item, not a member of the public.",
+ "cost_usd": 0.01773825,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Barb",
+   "role": "not stated",
+   "status": "present",
+   "quote": "fitchburg chapter 147 revisions - barb reported she has not received an update from town counsel."
+  },
+  {
+   "name": "Rob",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob noted empey sent over wiring diagrams for the electrical panels."
+  },
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: mike d.-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: mike d.-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Brett",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: mike d.-aye, john-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Mike D.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: mike d.-aye, john-aye, brett-aye and dave-aye."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commission agreed to move regular meetings from 5pm to 5:30pm, with the change to go on the next agenda for a full Commission to discuss.",
+   "quote": "john, brett, mike, dave and rob all agreed to 5:30pm but dave wanted to put it on the next agenda when they have a full commission to discuss it."
+  },
+  {
+   "decision": "The Commission agreed to add the jetting to the CTE contract under Hourly Services (section E).",
+   "quote": "the commission discussed adding the jetting to the contract and agreed to put it under hourly services (section e)."
+  },
+  {
+   "decision": "Dave asked Barb to send an official response to Paula Bertram, copied to Adam Burney and the Town Manager, on her capacity questions.",
+   "quote": "dave asked barb to send an official response to ms. bertram, with co to adam burney and the town manager."
+  },
+  {
+   "decision": "Dave asked the Commissioners to start a list of other policy and business items for discussion.",
+   "quote": "dave added there are alot of other items to look at and asked the commissioners to start making a list for discussion."
+  },
+  {
+   "decision": "If the CTE contract changes are acceptable to Empey, the draft will go to Town Counsel for review.",
+   "quote": "if the changes are ok with empey, they will have it reviewed by town counsel."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Invoice from Mead, Talerman",
+   "what_was_recorded": "An invoice from Mead, Talerman for bylaw review and opinion on 5 Chestnut St. was listed; no vote is recorded on it.",
+   "figures_as_printed": [
+    "$551.32"
+   ],
+   "quote": "invoices- mead, talerman - $551.32 (for bylaw review and opinion on 5 chestnut st.)"
+  },
+  {
+   "topic": "Fitchburg sewer usage invoice",
+   "what_was_recorded": "A Fitchburg usage invoice for usage through the end of April was listed; no vote is recorded on it.",
+   "figures_as_printed": [
+    "$ 16,478.38"
+   ],
+   "quote": "and fitchburg usage- $ 16,478.38 (usage through end of april)."
+  },
+  {
+   "topic": "Budget status",
+   "what_was_recorded": "Dave asked how the budget looks and Barb replied it is doing well; no figure was given.",
+   "figures_as_printed": [],
+   "quote": "dave asked barb how the budget looks, and she replied the budget is doing well."
+  },
+  {
+   "topic": "Rate increases and Town Meeting budget",
+   "what_was_recorded": "Carl Luck is credited with holding rate increases for 7 years and with presenting a balanced budget at Town Meeting; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "he also fought to present a balanced budget at town meeting and held rate increases for 7 years."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Brett",
+   "stated_role": "not stated",
+   "topic": "moving meetings from 5pm to 5:30pm",
+   "quote": "public comment- brett asked if they could discuss moving meetings from 5pm to 5:30pm."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Carl Luck resignation",
+   "resolution": "no action; tribute to Carl Luck recorded",
+   "tags": [
+    "personnel",
+    "tribute"
+   ],
+   "quote": "barb noted this is the first sewer commission meeting without carl as a member."
+  },
+  {
+   "topic": "Fitchburg Chapter 147 revisions",
+   "resolution": "no action; extension request to be sought from Town Counsel",
+   "tags": [
+    "Fitchburg",
+    "bylaw",
+    "regulation"
+   ],
+   "quote": "barb reported she has not received an update from town counsel."
+  },
+  {
+   "topic": "Electric Ave pump station control panel (Empey)",
+   "resolution": "discussed; Rob to proceed if the Commission agrees",
+   "tags": [
+    "pump station",
+    "electrical",
+    "contractor"
+   ],
+   "quote": "he added if the commission is ok with it, they will go ahead to replace the panel at electric ave."
+  },
+  {
+   "topic": "CTE Year 2 contract",
+   "resolution": "edits discussed; jetting added under Hourly Services; Town Counsel review if Empey agrees",
+   "tags": [
+    "contract",
+    "O&M",
+    "jetting",
+    "maintenance"
+   ],
+   "quote": "the commission discussed adding the jetting to the contract and agreed to put it under hourly services (section e)."
+  },
+  {
+   "topic": "Elizabeth St inflow and infiltration",
+   "resolution": "no action; quotes still being gathered",
+   "tags": [
+    "I/I",
+    "inflow and infiltration",
+    "pipe"
+   ],
+   "quote": "rob reported he is still trying to get quotes from 3 or 4 contractors"
+  },
+  {
+   "topic": "Development capacity and reviews",
+   "resolution": "discussed; official response to Ms. Bertram requested",
+   "tags": [
+    "capacity",
+    "development",
+    "Bright Farms",
+    "711 Mass Ave"
+   ],
+   "quote": "dave asked barb to send an official response to ms. bertram, with co to adam burney and the town manager."
+  },
+  {
+   "topic": "Invoices and budget",
+   "resolution": "reported; no vote recorded",
+   "tags": [
+    "invoices",
+    "budget"
+   ],
+   "quote": "invoices- mead, talerman - $551.32 (for bylaw review and opinion on 5 chestnut st.)"
+  },
+  {
+   "topic": "Website update",
+   "resolution": "reported; no action",
+   "tags": [
+    "website",
+    "public information"
+   ],
+   "quote": "barb noted that she'd recently updated the website with new office hours"
+  },
+  {
+   "topic": "Policy update work",
+   "resolution": "Commissioners asked to list items for discussion",
+   "tags": [
+    "policy",
+    "bylaw",
+    "public hearing"
+   ],
+   "quote": "policy update work - barb said when they get the fitchburg revisions back, there are a few other policies to discuss and update"
+  },
+  {
+   "topic": "Meeting time (5pm to 5:30pm)",
+   "resolution": "agreed to 5:30pm; next agenda with full Commission",
+   "tags": [
+    "meeting time",
+    "governance"
+   ],
+   "quote": "john, brett, mike, dave and rob all agreed to 5:30pm but dave wanted to put it on the next agenda when they have a full commission to discuss it."
+  },
+  {
+   "topic": "Upcoming scheduled activities",
+   "resolution": "noted",
+   "tags": [
+    "schedule",
+    "town election"
+   ],
+   "quote": "may 25, 2021 @ 5pm - regular meeting, remote participation"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 5:53 pm, passed 4-0",
+   "tags": [
+    "procedural"
+   ],
+   "quote": "motion: brett r. to adjourn at 5:53 pm"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Wiring diagrams for the electrical panels (from Empey)",
+   "where": "text",
+   "quote": "rob noted empey sent over wiring diagrams for the electrical panels."
+  },
+  {
+   "name": "CTE contract Exhibit A",
+   "where": "text",
+   "quote": "she said there are a couple edits, including 1 for the exhibit a, adding reference to response to a sso (sanitary sewer overflow)"
+  },
+  {
+   "name": "Maintenance Plan",
+   "where": "text",
+   "quote": "rob noted the jetting is in the maintenance plan and he would want al to coordinate getting the jetting setup and done."
+  },
+  {
+   "name": "Comprehensive Wastewater Management Plan (2010, updated 2016)",
+   "where": "text",
+   "quote": "the commission had the comprehensive wastewater management plan completed in"
+  },
+  {
+   "name": "Sewer district bylaw",
+   "where": "text",
+   "quote": "through that process, the sewer district bylaw was created, and the sewer service area"
+  },
+  {
+   "name": "Fitchburg Chapter 147 revisions",
+   "where": "text",
+   "quote": "fitchburg chapter 147 revisions - barb reported she has not received an update from town counsel."
+  },
+  {
+   "name": "Fitchburg IMA and Highfield Village Allocation agreement",
+   "where": "text",
+   "quote": "carl helped to negotiate the latest fitchburg ima and highfield village allocation agreement, along with many"
+  },
+  {
+   "name": "Bright Farms Peer Review (Graves Engineering)",
+   "where": "text",
+   "quote": "barb reported the bright farms peer review was done by graves engineering and there were no issues regarding sewer."
+  },
+  {
+   "name": "Regulations (330 gal/day starting allowance)",
+   "where": "text",
+   "quote": "rob noted the regulations start with 330"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "Fitchburg IMA",
+  "Chapter 147",
+  "CTE contract",
+  "inflow and infiltration",
+  "Electric Ave pump station",
+  "meeting time",
+  "Carl Luck resignation",
+  "invoices",
+  "policy update"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,169 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "school-committee",
+ "board": "School Committee",
+ "video_title": "School Committee Special Meeting",
+ "meeting_date": "2021-09-25",
+ "video_id": "EdRVG7k40jk",
+ "video_url": "https://www.youtube.com/watch?v=EdRVG7k40jk",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/school-committee/2021-09-25-EdRVG7k40jk.json",
+  "sha256": "1e6668756c5f42b3495b58945649c2e202595eb04a437b290cc7efcf7ad92b42",
+  "caption_lines": 15,
+  "segments": 127
+ },
+ "recording": {
+  "duration_s": 311,
+  "duration": "0:05",
+  "spoken_chars": 3239,
+  "words_approx": 539
+ },
+ "town_published": [],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-25T13:02:09Z",
+  "cost_usd": 0.28757910000000003
+ },
+ "minutes": {
+  "headline": "School Committee voted by roll call to post LPN nurse positions at each school to handle COVID cases.",
+  "summary": "A short special meeting where the superintendent asked permission to post licensed practical nurse positions in each school to support the RNs with COVID case work and contact tracing. The committee voted by roll call to allow the posting and then adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "dr burnham",
+    "role": "superintendent"
+   },
+   {
+    "name_as_heard": "ms shapiro",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mrs kelly",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mrs archambault",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr kelly",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "mr leighton",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "brian",
+    "role": "staff (helped with technology)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "hiring",
+   "policy",
+   "public-safety",
+   "staffing"
+  ],
+  "votes": [
+   {
+    "t": 217,
+    "motion": "Permission to post additional nursing (LPN) positions at each of the schools",
+    "moved_by": "not audible",
+    "outcome": "passed (roll call: all five members yes)",
+    "procedural": false
+   },
+   {
+    "t": 260,
+    "motion": "Adjourn at 2:41 p.m.",
+    "moved_by": "ms shapiro",
+    "outcome": "passed (roll call: all five members yes)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 238,
+    "decision": "Administration may post LPN nurse positions for each school."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 111,
+    "topic": "Call to order, open meeting law statement, public comment",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 111,
+    "t_end": 260,
+    "topic": "Request to post LPN nursing positions for COVID support",
+    "resolution": "voted",
+    "tags": [
+     "staffing",
+     "hiring"
+    ]
+   },
+   {
+    "t_start": 260,
+    "t_end": 305,
+    "topic": "Public comment and adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Who made the motion to post nurse positions is unclear.",
+   "No salary or cost for the positions was stated."
+  ],
+  "confidence": "high",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 151,
+    "kind": "safety",
+    "about": "Rising COVID case counts in schools are straining nursing staff.",
+    "who": "the superintendent",
+    "words_as_heard": "the first week of school in just those three days that first week we had five cases the next week nine another week nine and this week we jump to twenty"
+   }
+  ],
+  "documents_mentioned": [],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The School Committee voted by roll call, all five members in favor, to let administration post licensed practical nurse (LPN) positions at each school.",
+    "t": 217
+   },
+   {
+    "line": "The superintendent asked for permission to add LPNs to support the school nurses (RNs) with COVID case work and contact tracing.",
+    "t": 111
+   },
+   {
+    "line": "The decision allows administration to post the LPN positions for each school; the minutes record no budget figure or funding source.",
+    "t": 238
+   },
+   {
+    "line": "The special meeting then took public comment and adjourned.",
+    "t": 260
+   }
+  ],
+  "why_it_matters": [
+   "This touches school health staffing: each school could gain a nursing position for COVID response, and the minutes do not say what it costs or which fund pays for it."
+  ],
+  "watch_next": [
+   "Whether a later meeting shows the LPN positions filled and how they are funded; the minutes name no date or document for either."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-25T13:02:18Z",
+   "cost_usd": 0.2330658
+  }
+ }
+}

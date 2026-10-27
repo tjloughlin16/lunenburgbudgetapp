@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-09-21",
  "docid": "5267",
@@ -12,39 +12,378 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Matthew Pingitore as Full-time police officer effective December 5, 2021",
+   "motion": "To ratify the Town Manager's appointment of Matthew Pingitore as full-time police officer effective December 5, 2021.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2\"': t. dwyer to ratify the town manager's appointment of matthew pingitore as full-time police officer effective december 5, 2021 vote: all in favor"
+   "quote": "to ratify the town manager's appointment of matthew pingitore as full-time police officer effective december 5, 2021 vote: all in favor"
   },
   {
-   "motion": "Appoint Deborah Christen to the By-law Review Committee",
+   "motion": "To appoint Deborah Christen to the By-law Review Committee.",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2n: l. franco to appoint deborah christen to the by-law review committee vote: all in favor"
+   "quote": "to appoint deborah christen to the by-law review committee vote: all in favor"
   },
   {
-   "motion": "Ratify the Town Manager appointments of Alexis Dimond to seasonal cemetery worker and Madeline Ross as public access videographer",
+   "motion": "To ratify the Town Manager's appointments of Alexis Dimond as seasonal cemetery worker and Madeline Ross as public access videographer.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2\"i: l. franco to ratify the town manager appointments of alexis dimond to seasonal cemetery worker and madeline ross as public access videographer vote: all in favor"
+   "quote": "to ratify the town manager appointments of alexis dimond to seasonal cemetery worker and madeline ross as public access videographer vote: all in favor"
   },
   {
-   "motion": "Enter into Executive Session Pursuant to M.G.L. c. 30A, § 21, Reason #5, to consider the purchase, exchange, taking, lease, or value of real property if such a discussion may have a detrimental effect on the negotiating position of the governmental body and to adjourn the meeting after exiting Executive Session",
+   "motion": "To enter Executive Session under M.G.L. c. 30A, § 21, Reason #5 (real property, North County Land Trust Forestry Legacy Application) and to adjourn the meeting after exiting Executive Session.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco 2°: t. dwyer to enter into executive session pursuant to m.g.l. c. 30a, § 21, reason #5, to consider the purchase, exchange, taking, lease, or value of real property if such a discussion may have a detrimental effect on the negotiating position of the governmental body and to adjourn the meeting after exiting executive session (north county land trust forestry legacy application) vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "to enter into executive session pursuant to m.g.l. c. 30a, § 21, reason #5, to consider the purchase, exchange, taking, lease, or value of real property"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR quality: minor artifacts in seconding notation (2\\\"', 2n:, 2\\\"i:, 2° instead of 2nd:) preserved verbatim. Four votes recorded total: three appointments and one procedural (executive session). One discussion (Historical Commission demolition delay bylaw amendments) was noted for future action but no vote was taken that evening.",
- "cost_usd": 0.1452345
+ "note": "Scanned minutes read by macOS Vision OCR; quotes are verbatim against that OCR text, which contains transcription errors (e.g. \"statting\", \"paiticipating\"). Minutes are marked \"Approved October 5, 2021\". Three of the four votes are recorded only as \"All in Favor\" or by name, with no count printed; the executive session vote lists four ayes by name, so its count is not printed as a tally. No vote is recorded on the demolition delay article, the Senior Work-Off policy or the budget items. Executive Session minutes are separate and not in this text. Committee and budget dates are as printed in the OCR.",
+ "cost_usd": 0.13273745,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; lou franco, clerk; todd dwyer, jim marino",
+   "role": "Chair"
+  },
+  {
+   "name": "Lou Franco",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; lou franco, clerk; todd dwyer, jim marino",
+   "role": "Clerk"
+  },
+  {
+   "name": "Todd Dwyer",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; lou franco, clerk; todd dwyer, jim marino",
+   "role": "Member"
+  },
+  {
+   "name": "Jim Marino",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; lou franco, clerk; todd dwyer, jim marino",
+   "role": "Member"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "absent",
+   "quote": "member not present: michael-ray jeffreys, vice chairman",
+   "role": "Vice Chairman"
+  },
+  {
+   "name": "Heather Lemieux",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; tom gammel, police chief, matthew",
+   "role": "Town Manager"
+  },
+  {
+   "name": "Tom Gammel",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; tom gammel, police chief, matthew",
+   "role": "Police Chief"
+  },
+  {
+   "name": "Matthew Pingitore",
+   "status": "present",
+   "quote": "mr. pingitore thanked the chief for his comments and the opportunity to be here tonight to",
+   "role": ""
+  },
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "mr. mcgrath, chair of the historical commission, stated during his 22 years on the historical",
+   "role": "Chair of the Historical Commission"
+  },
+  {
+   "name": "Bill Laakso",
+   "status": "present",
+   "quote": "vice chairman laakso had drafted the article and they would be willing to answer any questions.",
+   "role": "Vice Chairman"
+  },
+  {
+   "name": "Deborah Christen",
+   "status": "remote",
+   "quote": "ms. christen was paiticipating via zoom this evening.",
+   "role": ""
+  },
+  {
+   "name": "Dave Passios",
+   "status": "not stated",
+   "quote": "dave passios, 56 whiting street, researched online and found the towns of norton and mendon had the $300 fine",
+   "role": "56 Whiting Street"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Senior Work-Off Program policy draft is to be read by the Board and voted on at its October 5 meeting.",
+   "quote": "the board will read it and vote on it at their october 5"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY 2023 budget priorities",
+   "what_was_recorded": "The Town Manager read a memo on FY 2023 budget priorities, including continued police and Fire/EMS staffing plans and building maintenance needs; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "my budget recommendation will continue to include the 10 year statting plan for the police department"
+  },
+  {
+   "topic": "Capital Planning request forms",
+   "what_was_recorded": "Capital Planning request forms go to departments, due in October; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "we will be sending out the request forms to the departments and they will need to be submitted by october 14"
+  },
+  {
+   "topic": "Chapter 70 funding workshop",
+   "what_was_recorded": "A Finance Committee and School Committee workshop on Chapter 70 school funding was scheduled; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "the finance committee will be cohosting a workshop with the school committee on chapter 70 funding"
+  },
+  {
+   "topic": "925 Mass Ave remediation funding",
+   "what_was_recorded": "MassDEP reported no additional LUST funds for site-specific work for now; MassDevelopment funding not available until next year; no dollar figures printed.",
+   "figures_as_printed": [],
+   "quote": "unfortunately for now it does not appear additional funds will be available for site specific activities"
+  },
+  {
+   "topic": "Demolition delay bylaw fine",
+   "what_was_recorded": "The proposed demolition delay article sets a fine of three hundred dollars per violation; a resident cited the same $300 fine in Norton and Mendon bylaws; the Chair opposed a money fine.",
+   "figures_as_printed": [
+    "$300.00",
+    "$300"
+   ],
+   "quote": "shall be subject to a fine or penalty in the amount of three hundred dollars ($300.00,)"
+  },
+  {
+   "topic": "Demolition delay cost to applicant",
+   "what_was_recorded": "Chair Alonzo objected that the article would require applicants to spend money on a building they wish to tear down; no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "you are telling them to spend money on a building that they are requesting to tear down."
+  },
+  {
+   "topic": "Senior Tax Work-Off Program cap",
+   "what_was_recorded": "The policy fixes the maximum amount each participant can earn at $1,500 under the statute.",
+   "figures_as_printed": [
+    "$1,500"
+   ],
+   "quote": "the maximum amount each participant can earn is fixed at $1,500 for the senior tax work-off program"
+  },
+  {
+   "topic": "Senior Tax Work-Off income guidelines",
+   "what_was_recorded": "The policy sets gross household income limits of $50,000 for a single person and $75,000 for a married person.",
+   "figures_as_printed": [
+    "$50,000",
+    "$75,000"
+   ],
+   "quote": "gross household income not exceeding $50,000 for a single person or $75,000 for married person"
+  },
+  {
+   "topic": "Senior Tax Work-Off withholdings",
+   "what_was_recorded": "Participant earnings are subject to OBRA withholding of 7.5% if not receiving a qualifying pension.",
+   "figures_as_printed": [
+    "7.5%"
+   ],
+   "quote": "are also subject to obra (7.5%) of earnings, if the participant is not receiving a pension"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "56 Whiting Street",
+   "topic": "demolition delay fine comparison",
+   "quote": "dave passios, 56 whiting street, researched online and found the towns of norton and mendon had the $300 fine in their demolition delay bylaws. he believed resetting the clock would impact people more."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening): Board member correction and remarks",
+   "resolution": "no action",
+   "quote": "mr. marino corrected a word he had used at last week's meeting during a discussion about the",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Ratify police officer appointment (Matthew Pingitore)",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of full time police officer",
+   "tags": [
+    "appointments",
+    "police"
+   ]
+  },
+  {
+   "topic": "Historical Commission on demolition delay bylaw article",
+   "resolution": "no action; Chair suggested returning to the commission",
+   "quote": "meeting with historical commission regarding special town meeting warrant article",
+   "tags": [
+    "demolition delay",
+    "historical commission",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Appoint Deborah Christen to Bylaw Review Committee",
+   "resolution": "appointed",
+   "quote": "interview and appointment of regular member to bylaw review committee- deborah christen, 100 boucher road",
+   "tags": [
+    "appointments",
+    "bylaw review"
+   ]
+  },
+  {
+   "topic": "Ratify seasonal cemetery laborer and videographer appointments",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of seasonal cemetery",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Town Manager report: vacancies, jobs, 925 Mass Ave, IT, COVID, events",
+   "resolution": "informational; no action",
+   "quote": "announcement on existing vacancies:",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "environmental site",
+    "IT",
+    "COVID-19"
+   ]
+  },
+  {
+   "topic": "FY 2023 budget priorities",
+   "resolution": "update received; no action",
+   "quote": "ms. lemieux stated annually she provides an update to the board as far as budget priorities.",
+   "tags": [
+    "FY2023 budget",
+    "budget priorities"
+   ]
+  },
+  {
+   "topic": "Senior Work-Off Program Committee and policy",
+   "resolution": "draft presented; vote deferred to October 5",
+   "quote": "ms. lemieux presented a draft policy for the program.",
+   "tags": [
+    "senior tax work-off",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Minutes, warrants and action items",
+   "resolution": "none this evening",
+   "quote": "minutes/warrants/action items- there were none this evening.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports (Economic Development, Capital Planning)",
+   "resolution": "informational",
+   "quote": "mr. franco reported the economic development committee has rescheduled for september 23rd",
+   "tags": [
+    "committees",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "November 16, 2021 Special Town Meeting warrant articles",
+   "resolution": "discussed; no action",
+   "quote": "ms. lemieux reported the sewer commission submitted two warrant articles.",
+   "tags": [
+    "town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "informational",
+   "quote": "regular board meetings will on october 12 and october 19.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "none",
+   "quote": "public comment- there was none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session (North County Land Trust Forestry Legacy) and adjournment",
+   "resolution": "entered executive session; adjourned 9:22 p.m.",
+   "quote": "mr. alonzo reported they would be entering executive session.",
+   "tags": [
+    "executive session",
+    "land trust"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town of Lunenburg Senior Property Tax Work-Off Program Policy (draft)",
+   "where": "list",
+   "quote": "town of lunenburg senior property tax work-off program policy"
+  },
+  {
+   "name": "Proposed Special Town Meeting article amending Code of Lunenburg Chapter 134-4-D and 134-5 (demolition delay)",
+   "where": "text",
+   "quote": "to see if the town will vote to amend the code of lunenburg as it applies to"
+  },
+  {
+   "name": "Demolition Delay Bi-monthly Report",
+   "where": "text",
+   "quote": "demolition delay bi-monthly report"
+  },
+  {
+   "name": "Town Manager's FY 2023 budget priorities memo",
+   "where": "text",
+   "quote": "although the fy 2023 budget process is not fully underway, i have had preliminary meetings"
+  },
+  {
+   "name": "Chief Gammel's letter of recommendation (Matthew Pingitore)",
+   "where": "text",
+   "quote": "chief gammel read from his letter of recommendation:"
+  },
+  {
+   "name": "Personnel Committee article amending Salary Administration Plan, Schedule A",
+   "where": "text",
+   "quote": "the personnel committee has submitted an article for amendments to the salary administration plan, schedule a."
+  },
+  {
+   "name": "North County Land Trust Forestry Legacy Application",
+   "where": "text",
+   "quote": "north county land trust forestry legacy application"
+  }
+ ],
+ "tags": [
+  "appointments",
+  "police hiring",
+  "demolition delay bylaw",
+  "historical commission",
+  "bylaw review committee",
+  "senior tax work-off",
+  "FY2023 budget",
+  "town meeting warrant",
+  "executive session",
+  "land trust",
+  "Lunenburg 2021"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ms. lemieux presented a draft policy for the program."
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -923,6 +923,25 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'town-report-2000', 'origin': 'town',
+        'title': 'The 2000 Town Report, from the Chair of the Select Board',
+        'blurb': 'A scanned copy of the town’s 2000 annual report, sent to this project by the '
+                 'Chair of the Select Board on 27 October 2026, before the town’s own upload. '
+                 'Published whole, including the births, marriages and deaths the town printed.',
+        'items': [
+            ('correspondence/2026-10-27-2000-annual-town-report-select-board-chair.pdf',
+             'Lunenburg Town Report 2000', 1,
+             'All 134 pages, scanned from a personal copy: departments, the town’s accounts, '
+             'debt, trust funds, wages, town meeting minutes and vital records. The financial '
+             'statements are fiscal year 2000 (year ended June 30, 2000); the department '
+             'narratives cover calendar 2000. Text read by Amazon Textract.'),
+            ('correspondence/2026-10-27-2000-annual-town-report.md',
+             'How this reached us', 3,
+             'Who sent it, the filename and sha256 as received, why it is held, and what '
+             'happens when the town publishes its own copy.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'business', 'origin': 'town',
         'title': 'Business registrations',
         'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '

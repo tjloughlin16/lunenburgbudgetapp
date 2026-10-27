@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-10-07",
  "docid": "2095",
@@ -12,23 +12,278 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from September 9 and September 23, 2021 meetings",
+   "motion": "Approve the minutes of the September 9 and September 23, 2021 meetings.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Simeone",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. menard motioned to approve the minutes from the september 9 and september 23, 2021 meetings. mr. simeone seconded. on vote, motion carried unanimously."
   },
   {
-   "motion": "Adjourn at 8:25 p.m.",
+   "motion": "Adjourn the meeting at 8:25 p.m.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Simeone",
-   "outcome": "passed",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "mr. menard motioned to adjourn at 8:25 p.m. mr. simeone seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.08922649999999999
+ "note": "Text is complete (two pages, no scan). Only two motions were recorded, both procedural (minutes approval and adjournment), both carried unanimously with no tally printed. No substantive vote was taken. Attendance is by name only; the minutes print no role for the four committee members, and the 'committee member' label is an inference from the board. Public comment is recorded as 'None' twice, so no speakers. No documents list is printed.",
+ "cost_usd": 0.0223176,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "committee member (chair role not printed)",
+   "status": "present",
+   "quote": "peter beardmore called the meeting to order at 7:01 p.m."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "committee member",
+   "status": "remote",
+   "quote": "present: peter beardmore, dave passios via zoom, jay simeone, chris menard"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios via zoom, jay simeone, chris menard"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "committee member",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios via zoom, jay simeone, chris menard"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "committee member",
+   "status": "absent",
+   "quote": "absent: tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "committee member",
+   "status": "absent",
+   "quote": "absent: tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "committee member",
+   "status": "absent",
+   "quote": "absent: tom balish, tom gray, evan watters"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, school committee chairperson carol archambault via zoom, select board chairman tom alonzo via zoom."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "remote",
+   "quote": "guests: town manager heather lemieux, school committee chairperson carol archambault via zoom, select board chairman tom alonzo via zoom."
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Select Board Chairman",
+   "status": "remote",
+   "quote": "select board chairman tom alonzo via zoom."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that a public hearing will most likely be held on November 4, 2021 regarding outstanding warrant articles (stated as likely, not fixed).",
+   "quote": "the committee agreed that a public hearing will most likely be held on november 4, 2021 regarding outstanding warrant articles."
+  },
+  {
+   "decision": "Joint meeting with the School Committee on Chapter 70 funds scheduled for October 28, 2021.",
+   "quote": "the joint meeting with the school committee regarding chapter 70 funds will be held october 28, 2021."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 free cash certification",
+   "what_was_recorded": "The Town Manager reported that the Finance Director submitted the FY21 balance sheet and that the free cash amount is to be certified.",
+   "figures_as_printed": [
+    "$2,665,798"
+   ],
+   "quote": "$2,665,798 in free cash is to be certified."
+  },
+  {
+   "topic": "Salt price increase affecting snow and ice budget",
+   "what_was_recorded": "The DPW director informed the Town Manager of a price increase for salt that will affect the snow and ice budget.",
+   "figures_as_printed": [
+    "38 percent"
+   ],
+   "quote": "there's been a 38 percent increase for salt which will affect the snow and ice budget."
+  },
+  {
+   "topic": "ARPA funds",
+   "what_was_recorded": "A committee member asked about ARPA funds; the Town Manager explained hesitation on spending them because some projects may be funded from other sources. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "mr. beardmore inquired about arpa funds."
+  },
+  {
+   "topic": "Chapter 70 funds",
+   "what_was_recorded": "A joint meeting with the School Committee is scheduled on Chapter 70 funds. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "the joint meeting with the school committee regarding chapter 70 funds will be held october 28, 2021."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:01 p.m.",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "peter beardmore called the meeting to order at 7:01 p.m."
+  },
+  {
+   "topic": "Pledge of Allegiance",
+   "resolution": "no action",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "2. pledge of allegiance"
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "informational, no action",
+   "tags": [
+    "association events"
+   ],
+   "quote": "mr. beardmore informed committee members of the massachusetts municipal association trade show to take place in january 2022."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "4. public comment: none"
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported; no action",
+   "tags": [
+    "free cash",
+    "balance sheet",
+    "snow and ice"
+   ],
+   "quote": "ms. lemieux reported that the finance director has submitted the fy21 balance sheet to the department of revenue."
+  },
+  {
+   "topic": "Old Business: Special Town Meeting articles",
+   "resolution": "reviewed; public hearing set for October 14, 2021",
+   "tags": [
+    "warrant articles",
+    "special town meeting"
+   ],
+   "quote": "review special town meeting articles: ms. lemieux detailed the warrant articles to be heard at a public hearing scheduled for october 14, 2021."
+  },
+  {
+   "topic": "Old Business: department head takeaways and ARPA",
+   "resolution": "discussed; no action",
+   "tags": [
+    "ARPA",
+    "budget priorities"
+   ],
+   "quote": "open discussion on takeaways from department head discussions, possible earmark and budget priorities"
+  },
+  {
+   "topic": "New Business",
+   "resolution": "none",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "7. new business: none"
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved unanimously (Sept 9 and Sept 23, 2021)",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "mr. menard motioned to approve the minutes from the september 9 and september 23, 2021 meetings."
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported; no action",
+   "tags": [
+    "committee reports"
+   ],
+   "quote": "committee members updated each other on their respective committees."
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "10. public comment: none"
+  },
+  {
+   "topic": "Items for Future Meetings",
+   "resolution": "joint School Committee meeting on Chapter 70 set for October 28, 2021; hearing on warrant articles likely November 4, 2021",
+   "tags": [
+    "chapter 70",
+    "warrant articles",
+    "school committee"
+   ],
+   "quote": "the joint meeting with the school committee regarding chapter 70 funds will be held october 28, 2021."
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next meetings: october 14, 2021 (public hearing regarding warrant articles), and october 28, 2021."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 8:25 p.m., unanimous",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "mr. menard motioned to adjourn at 8:25 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY21 balance sheet",
+   "where": "text",
+   "quote": "the finance director has submitted the fy21 balance sheet to the department of revenue."
+  },
+  {
+   "name": "Special Town Meeting warrant articles",
+   "where": "text",
+   "quote": "review special town meeting articles: ms. lemieux detailed the warrant articles to be heard at a public hearing scheduled for october 14, 2021."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "free cash",
+  "warrant articles",
+  "special town meeting",
+  "ARPA",
+  "chapter 70",
+  "snow and ice",
+  "school committee",
+  "minutes approval",
+  "zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

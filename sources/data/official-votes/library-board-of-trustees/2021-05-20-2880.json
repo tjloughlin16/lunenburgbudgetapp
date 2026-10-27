@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2021-05-20",
  "docid": "2880",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Accept the current slate of officers",
+   "motion": "Accept the current slate of officers.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "dick made a motion to accept the current slate of officers, seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Accept the subcommittees as amended",
+   "motion": "Accept the subcommittees as amended.",
    "moved_by": "Dick",
    "seconded_by": "Donna",
    "outcome": "passed unanimously",
-   "procedural": true,
+   "procedural": false,
    "quote": "dick made a motion to accept the subcommittees as amended, seconded by donna. the motion passed unanimously."
   },
   {
-   "motion": "Accept the minutes of April 15, 2021 as amended",
+   "motion": "Accept the minutes of April 15, 2021 as amended.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
    "outcome": "passed unanimously",
@@ -36,7 +36,7 @@
    "quote": "dick made a motion to accept the minutes of april 15, 2021 as amended, seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Implement fine-free policy starting July 1, 2021",
+   "motion": "Go fine free starting July 1st.",
    "moved_by": "Dick",
    "seconded_by": "Maia",
    "outcome": "passed unanimously",
@@ -44,15 +44,315 @@
    "quote": "dick made a motion to go fine free starting july 1st seconded by maia. motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Maia",
-   "outcome": "passed unanimously",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick seconded by maia. meeting was adjourned at 9:16 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0794375
+ "note": "Remote meeting; the minutes say all votes were by roll call, but the votes are recorded only as 'passed unanimously' with no roll-call tally. The adjournment motion has no stated result. Attendance mode (remote or in person) is not stated for each person; all listed under 'Attending'. Pages 4 to 11 are blank in the extracted text.",
+ "cost_usd": 0.01809185,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Bob Conroy",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 6:45 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Donna Saiia",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Laura Boussom",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Maia Wentrup",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Muir will look at expanding browsing hours based on the board's discussion that night.",
+   "quote": "muir said he will look at expanding browsing hours based on the discussion tonight."
+  },
+  {
+   "decision": "Muir to check in with the Town Manager about whether staff are part of the clerical union (suggested by Michael-Ray Jeffreys).",
+   "quote": "he suggested muir check in with the town manager regarding this."
+  },
+  {
+   "decision": "Barbara will prepare the strategic plan for the next BOT meeting.",
+   "quote": "barbara will be working on preparing the plan. it should be available for the next bot meeting."
+  },
+  {
+   "decision": "The vacant staff position will be posted, internally first because it is a union position.",
+   "quote": "the vacant staff position will be posted. muir is waiting to hear from town counsel"
+  },
+  {
+   "decision": "The next meeting in June will be held in person.",
+   "quote": "next meeting in june will be in person."
+  },
+  {
+   "decision": "The library will be closed during the carpet renovation, scheduled June 10 to the 29th.",
+   "quote": "the carpet project will be going on between june 10 to the 29th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 budget spending position",
+   "what_was_recorded": "The FY21 budget was 71% expended in the 11th month of the fiscal year, with large expenses still to come.",
+   "figures_as_printed": [
+    "71%"
+   ],
+   "quote": "for the fy21 budget we are in the 11th month of the fiscal year, near the end. the budget is 71% expended."
+  },
+  {
+   "topic": "Library materials and programs spending",
+   "what_was_recorded": "Library materials and programs were at small percentages expended, and the director said they would be spent before year end.",
+   "figures_as_printed": [
+    "41%",
+    "22%"
+   ],
+   "quote": "library materials and programs will be expended even though they are currently at small percentages: 41% and 22% respectively."
+  },
+  {
+   "topic": "FY22 budget",
+   "what_was_recorded": "The FY22 budget approved at annual town meeting, stated as the amount it will be.",
+   "figures_as_printed": [
+    "$439,541"
+   ],
+   "quote": "the fy22 budget was approved at annual town meeting. it will be $439,541."
+  },
+  {
+   "topic": "Contract services one-time increase",
+   "what_was_recorded": "The contract services line received a one-time increase to be used for the strategic plan.",
+   "figures_as_printed": [
+    "$3000"
+   ],
+   "quote": "the contract services budget line item received a one time $3000 increase to be used for the strategic plan."
+  },
+  {
+   "topic": "Mileage reimbursement",
+   "what_was_recorded": "A trustee asked whether mileage reimbursement could be rolled into other budget items; the director said that would need Town Manager approval. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "kate asked about the mileage reimbursement - can it be rolled into other budget items if needed."
+  },
+  {
+   "topic": "Friends of LPL pop-up book sale revenue",
+   "what_was_recorded": "The pop-up book sale had generated money so far, described as more than the usual semi-annual book sale.",
+   "figures_as_printed": [
+    "$2400"
+   ],
+   "quote": "the pop-up book sale has generated $2400 so far which is more than the usual semi-annual book sale."
+  },
+  {
+   "topic": "Fines revenue statistics",
+   "what_was_recorded": "The director presented statistics on fines generated over the past five fiscal years; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "muir presented some statistics on circulation and items returned late or never returned and how much money in fines was generated to the past 5 fiscal years."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no action; no public comment",
+   "quote": "no public comment. o harry did a roll call for attendance.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "BOT Reorganization of Officers",
+   "resolution": "approved: officers slate and subcommittees accepted",
+   "quote": "dick asked if anyone wanted to move to another subcommittee. laura expressed an interest in joining the budget subcommittee.",
+   "tags": [
+    "governance",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended (April 15, 2021)",
+   "quote": "dick made a motion to accept the minutes of april 15, 2021 as amended, seconded by kate. the motion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "discussed; staff and hours items noted, no action recorded",
+   "quote": "for the fy21 budget we are in the 11th month of the fiscal year, near the end. the budget is 71% expended.",
+   "tags": [
+    "budget",
+    "staffing",
+    "reopening",
+    "carpet project",
+    "summer reading"
+   ]
+  },
+  {
+   "topic": "Strategic Plan Subcommittee Update",
+   "resolution": "discussed; plan due at next BOT meeting",
+   "quote": "the survey went very well. 350 responses were received.",
+   "tags": [
+    "strategic plan",
+    "survey"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "discussed; Chapter Three covered",
+   "quote": "we covered chapter three: legal responsibilities.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Trust Fund Update",
+   "resolution": "noted; home rule petition bill in committee",
+   "quote": "house bill number 3727 has been assigned to the home rule petition so we can check on the progress of the bill.",
+   "tags": [
+    "trust fund",
+    "legislation"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "noted; miniature golf fundraiser tabled until fall",
+   "quote": "the pop-up book sale has generated $2400 so far which is more than the usual semi-annual book sale.",
+   "tags": [
+    "friends group",
+    "fundraising"
+   ]
+  },
+  {
+   "topic": "Fine-free discussion",
+   "resolution": "approved: go fine free starting July 1",
+   "quote": "muir presented some statistics on circulation and items returned late or never returned and how much money in fines was generated to the past 5 fiscal years.",
+   "tags": [
+    "fines",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Update On Future Meetings",
+   "resolution": "noted; June meeting in person",
+   "quote": "next meeting in june will be in person.",
+   "tags": [
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "dick expressed his pleasure at being a member of the board.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned 9:16 p.m.",
+   "quote": "motion to adjourn by dick seconded by maia. meeting was adjourned at 9:16 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Board of Trustees member list",
+   "where": "list",
+   "quote": "o board of trustees member list"
+  },
+  {
+   "name": "May 20, 2021 Agenda",
+   "where": "list",
+   "quote": "o may 20, 2021 agenda"
+  },
+  {
+   "name": "May 2021 Director’s Report",
+   "where": "list",
+   "quote": "o may 2021 director's report"
+  },
+  {
+   "name": "May 2021 Youth Services Report",
+   "where": "list",
+   "quote": "o may 2021 youth services report"
+  },
+  {
+   "name": "May 2021 Teen Services Report",
+   "where": "list",
+   "quote": "o may 2021 teen services report"
+  },
+  {
+   "name": "House bill number 3727 (home rule petition)",
+   "where": "text",
+   "quote": "house bill number 3727 has been assigned to the home rule petition so we can check on the progress of the bill."
+  },
+  {
+   "name": "Trustee Handbook, Chapter Three: Legal Responsibilities",
+   "where": "text",
+   "quote": "we covered chapter three: legal responsibilities."
+  },
+  {
+   "name": "Strategic plan survey summary results",
+   "where": "text",
+   "quote": "muir briefly reviewed the survey summary results."
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "remote meeting",
+  "FY21 budget",
+  "fine-free",
+  "carpet renovation",
+  "strategic plan",
+  "staffing",
+  "library hours",
+  "officers"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

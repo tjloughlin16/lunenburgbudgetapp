@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-07-14",
  "docid": "3335",
@@ -12,31 +12,253 @@
  },
  "votes": [
   {
-   "motion": "Approve the portable toilet policy as written titled Parks Commission Sanitation Facilities Policy",
+   "motion": "Approve the portable toilet policy as written, titled Parks Commission Sanitation Facilities Policy.",
    "moved_by": "A Lockwood",
    "seconded_by": "D Passios",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a lockwood made a motion to approve the portable toilet policy as written titled parks commission sanitation facilities policy, d passios seconded, vote was unanimous"
   },
   {
-   "motion": "Accept the dumpster policy as written titled Lunenburg Park Commission Dumpster policy",
+   "motion": "Accept the dumpster policy as written, titled Lunenburg Park Commission Dumpster policy.",
    "moved_by": "Chris Sullivan",
    "seconded_by": "D Passios",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "chris sullivan made the motion to accept policy as written titled lunenburg park commission dumpster policy, d passios seconded. vote was unanimous."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 9:12.",
    "moved_by": "C Sullivan",
    "seconded_by": "A Lockwood",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "c sullivan made a motion to adjourn at 9:12, a lockwood seconded, the vote was unanimous."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0645984
+ "note": "Plain-text extraction with no roll-call votes; the two policy votes and the adjournment are recorded only as unanimous, so no counts exist. Public and board comment and minutes approval are recorded as \"none\". The minutes name H Lemieux and J Belliveau only as people others would work with, not as participants, so they are not listed as attendees. No transfers or reserve fund items.",
+ "cost_usd": 0.01633739,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance was dave passios, chris sullivan, karin menard and ana lockwood."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance was dave passios, chris sullivan, karin menard and ana lockwood."
+  },
+  {
+   "name": "Karin Menard",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance was dave passios, chris sullivan, karin menard and ana lockwood."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance was dave passios, chris sullivan, karin menard and ana lockwood."
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School committee chair",
+   "status": "present",
+   "quote": "school committee chair carol archambault and superintendent burnham joined the meeting."
+  },
+  {
+   "name": "Burnham",
+   "role": "Superintendent",
+   "status": "present",
+   "quote": "school committee chair carol archambault and superintendent burnham joined the meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "K Menard will talk with J Belliveau to get the Marshall Park master planning process going.",
+   "quote": "k menard will talk with j belliveau to get to process going."
+  },
+  {
+   "decision": "A School Board meeting will be scheduled to address waiving the fees and setting new policy for use of park fields.",
+   "quote": "a school board meeting will be scheduled to address waiving the fees and setting new policy."
+  },
+  {
+   "decision": "The invasive plants and poison ivy item passes to the next meeting, with the question of posting chemical applications to be clarified.",
+   "quote": "chemical applications need to be posted when used is a question to be clarified. will pass to next meeting."
+  },
+  {
+   "decision": "Next meeting set for July 28 with agenda items Dog Policy, Poison Ivy at Marshall Park, and Invasive Species.",
+   "quote": "next meeting date/agenda july 28th with dog policy, poison ivy at marshall park, invasive species."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Camp refunds",
+   "what_was_recorded": "Refunds were issued to all registrants for cancelled camps; no amount is printed.",
+   "figures_as_printed": [],
+   "quote": "refunds have been issued to all registrants for camps that have been cancelled."
+  },
+  {
+   "topic": "Portable toilet quotes",
+   "what_was_recorded": "One company quoted a monthly price for a standard portable toilet unit and one for a handicapped unit, including weekly pumping, cleaning and restocking.",
+   "figures_as_printed": [
+    "$100",
+    "$140"
+   ],
+   "quote": "one company quoted $100 a month for a standard unit and $140 for a handicapped unit."
+  },
+  {
+   "topic": "Portable toilet winter fee",
+   "what_was_recorded": "A winter fee from November to March is an additional amount for salting.",
+   "figures_as_printed": [
+    "$10"
+   ],
+   "quote": "a winter fee from november to march is an additional $10 for salting."
+  },
+  {
+   "topic": "Portable toilet price range",
+   "what_was_recorded": "A monthly price range was quoted depending on how many units are needed.",
+   "figures_as_printed": [
+    "$4-$500"
+   ],
+   "quote": "k menard quoted the price of $4-$500 a month depending on how many units are needed."
+  },
+  {
+   "topic": "School field use fee",
+   "what_was_recorded": "A request for field use was rejected because the vendor was for-profit and would be charged a fee; the camp was cancelled because the fee could not be afforded.",
+   "figures_as_printed": [
+    "$50"
+   ],
+   "quote": "a request from the rec director got kicked back saying that because the vendor was a for-profit group, they would be charged a $50 fee."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "DPW Director: summer programming status and free summer programs",
+   "resolution": "reported; no action",
+   "tags": [
+    "summer programs",
+    "camps",
+    "refunds"
+   ],
+   "quote": "k menard presented that the ninja warrior camp is currently running this week at tc passios and another session is running next week."
+  },
+  {
+   "topic": "Marshall Park master planning, steps for defining IFB and scope",
+   "resolution": "discussed; K Menard to start the process",
+   "tags": [
+    "Marshall Park",
+    "master plan",
+    "RFP"
+   ],
+   "quote": "k menard had circulated an email she received about the marshall park priorities list."
+  },
+  {
+   "topic": "Portable toilet and dumpster policies",
+   "resolution": "both policies approved",
+   "tags": [
+    "portable toilets",
+    "dumpsters",
+    "policy"
+   ],
+   "quote": "select board would like a policy in place for the parks."
+  },
+  {
+   "topic": "Reciprocal agreement with Lunenburg Public Schools for park fields",
+   "resolution": "referred to a School Board meeting on fee waiver and policy",
+   "tags": [
+    "school fields",
+    "fees",
+    "reciprocal agreement"
+   ],
+   "quote": "a school board meeting will be scheduled to address waiving the fees and setting new policy."
+  },
+  {
+   "topic": "Invasive plants and poison ivy at park properties",
+   "resolution": "passed to next meeting",
+   "tags": [
+    "invasive plants",
+    "poison ivy",
+    "landscaper"
+   ],
+   "quote": "chemical applications need to be posted when used is a question to be clarified. will pass to next meeting."
+  },
+  {
+   "topic": "Open space and municipal property",
+   "resolution": "reported; no action",
+   "tags": [
+    "open space",
+    "Stump Cove"
+   ],
+   "quote": "a lockwood reported that the title or status of stump cove has not been defined yet."
+  },
+  {
+   "topic": "Other business: correspondence and announcements",
+   "resolution": "reported; no action",
+   "tags": [
+    "easement",
+    "shed"
+   ],
+   "quote": "k menard updated that the shed on the easement land has been removed."
+  },
+  {
+   "topic": "Next meeting date and agenda",
+   "resolution": "set for July 28",
+   "tags": [
+    "next meeting",
+    "dog policy",
+    "poison ivy"
+   ],
+   "quote": "next meeting date/agenda july 28th with dog policy, poison ivy at marshall park, invasive species."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:12",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "c sullivan made a motion to adjourn at 9:12, a lockwood seconded, the vote was unanimous."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Parks Commission Sanitation Facilities Policy (portable toilets)",
+   "where": "text",
+   "quote": "a lockwood made a motion to approve the portable toilet policy as written titled parks commission sanitation facilities policy, d passios seconded, vote was unanimous"
+  },
+  {
+   "name": "Lunenburg Park Commission Dumpster policy",
+   "where": "text",
+   "quote": "chris sullivan made the motion to accept policy as written titled lunenburg park commission dumpster policy, d passios seconded."
+  },
+  {
+   "name": "Marshall Park priorities list (circulated by email)",
+   "where": "text",
+   "quote": "k menard had circulated an email she received about the marshall park priorities list."
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "summer programs",
+  "portable toilets",
+  "dumpsters",
+  "Marshall Park",
+  "school field use",
+  "invasive plants",
+  "open space",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

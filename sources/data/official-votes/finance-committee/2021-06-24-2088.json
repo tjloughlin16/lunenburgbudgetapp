@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-06-24",
  "docid": "2088",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "To approve the minutes of 2/25/21, 3/4/21, 3/18/21, and 3/25/21",
+   "motion": "Approve the minutes of 2/25/21, 3/4/21, 3/18/21 and 3/25/21.",
    "moved_by": "C. Menard",
    "seconded_by": "P. Beardmore",
-   "outcome": "passed unanimously",
+   "outcome": "passed unanimously, Tom Balish not voting",
    "procedural": true,
-   "quote": "c. menard motioned to approve the minutes of 2/25/21, 3/4/21, 3/18/21 and 3/25/21. p. beardmore seconded, carried unanimously with tom balish not voting."
+   "quote": "c. menard motioned to approve the minutes of 2/25/21, 3/4/21, 3/18/21 and"
   },
   {
-   "motion": "To adjourn",
+   "motion": "Adjourn the meeting at 7:15 PM.",
    "moved_by": "C. Menard",
    "seconded_by": "J. Simeone",
    "outcome": "passed unanimously",
@@ -29,6 +29,123 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0826255
+ "note": "The minutes are a short record: no discussion, no figures, and no public speakers are recorded. The Public Comment heading contains only the introduction of a new member, so no public_comment entries are listed. The minutes set out no documents list; the only documents named are the prior meeting minutes approved in the vote.",
+ "cost_usd": 0.01429179,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm."
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, jay simeone, chris menard,"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, jay simeone, chris menard,"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, jay simeone, chris menard,"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "new Committee member",
+   "status": "present",
+   "quote": "tom balish was introduced as one of the 2 new committee members."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: dave passios, heather sroka, evan watters"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "absent: dave passios, heather sroka, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Committee member",
+   "status": "absent",
+   "quote": "absent: dave passios, heather sroka, evan watters"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting is set for July 8, at which the Committee will reorganize.",
+   "quote": "next meeting july 8, the committee will reorganize."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 PM",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm.",
+   "tags": [
+    "call to order"
+   ]
+  },
+  {
+   "topic": "Public Comment / introduction of new member",
+   "resolution": "Tom Balish introduced as one of two new members; no public speakers recorded",
+   "quote": "tom balish was introduced as one of the 2 new committee members.",
+   "tags": [
+    "membership",
+    "new member"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "approved minutes of 2/25/21, 3/4/21, 3/18/21 and 3/25/21",
+   "quote": "c. menard motioned to approve the minutes of 2/25/21, 3/4/21, 3/18/21 and",
+   "tags": [
+    "minutes approval"
+   ]
+  },
+  {
+   "topic": "Motion to Adjourn",
+   "resolution": "adjourned at 7:15; next meeting July 8 for reorganization",
+   "quote": "c. menard motioned to adjourn at 7:15. j. simeone seconded, carried unanimously.",
+   "tags": [
+    "adjournment",
+    "reorganization"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of 2/25/21, 3/4/21, 3/18/21 and 3/25/21",
+   "where": "text",
+   "quote": "c. menard motioned to approve the minutes of 2/25/21, 3/4/21, 3/18/21 and"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "minutes approval",
+  "adjournment",
+  "committee membership",
+  "new member",
+  "reorganization"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

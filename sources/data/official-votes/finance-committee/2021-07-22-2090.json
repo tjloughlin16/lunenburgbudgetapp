@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-07-22",
  "docid": "2090",
@@ -12,21 +12,202 @@
  },
  "votes": [
   {
-   "motion": "approve minutes for July 8th",
-   "outcome": "unanimously approved",
+   "motion": "Approve the minutes of July 8th.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion was made to approve minutes for july 8th was seconded and was unanimously approved."
   },
   {
-   "motion": "adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Chris",
    "seconded_by": "Jay",
-   "outcome": "unanimous",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion was made by chris and seconded by jay, unanimous 8:50 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1008115
+ "note": "Minutes are three pages of text. The minutes record no motion for approving the liaison assignments (only 'the committee approved'), so it is a decision, not a vote. The mover and seconder of the July 8th minutes approval are not named. Agenda items 3 (Announcements), 4 (Public Comment), and 9 (Committee Reports) read 'None' and are not listed as topics; public comment is empty. The minutes print the absent member as 'Evan Waters' and the header as 'Evan Watters'; the attendance line is used. No vote tallies beyond 'unanimous' are printed. The minutes contain no document list.",
+ "cost_usd": 0.022743600000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios via zoom , jay simeone, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Committee member (header: David Passios)",
+   "status": "remote",
+   "quote": "present: peter beardmore, dave passios via zoom , jay simeone, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios via zoom , jay simeone, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Vice-Chair (header: Christopher Menard, Vice-Chair)",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios via zoom , jay simeone, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "Co-Secretary",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios via zoom , jay simeone, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "Co-Secretary (header: Thomas Balish, Co-Secretary)",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios via zoom , jay simeone, chris menard, tom gray, tom balish"
+  },
+  {
+   "name": "Evan Waters",
+   "role": "Committee member (header: Evan Watters)",
+   "status": "absent",
+   "quote": "tom balish absent: evan waters"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee approved the listed members as committee liaisons: David (Capital Planning and Parks), Tom Gray (Land Acquisition and Open space), Tom Balish (Fire, Police and Library), Peter (School, Association of Town Finance Committee and MMA), Chris (Council on Ageing). Recorded as approved without a stated motion.",
+   "quote": "the committee approved the following members to be liaisons for the committee."
+  },
+  {
+   "decision": "Other liaison assignments held for future discussion.",
+   "quote": "other liaison assignments wes placed on hold for future discussions."
+  },
+  {
+   "decision": "Committee agreed it does not have enough information at this time to comment on the 40B project.",
+   "quote": "the committee agreed that we don't have enough information at this time to comment"
+  },
+  {
+   "decision": "Chair to reword the goals draft areas flagged by the committee and bring the revision to the next meeting.",
+   "quote": "peter stated he would reword these areas for next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library LED lighting grant",
+   "what_was_recorded": "The LED lighting at the library was granted at a stated cost.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "the led lighting at the library for $40,000 was granted."
+  },
+  {
+   "topic": "Garbage bag cost increase",
+   "what_was_recorded": "The Town Manager reported a 15% increase in garbage bags, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "there will be a 15% increase in garbage bags."
+  },
+  {
+   "topic": "ARPA funds project list",
+   "what_was_recorded": "A list of possible projects for the ARPA funds is being prepared for committee review, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "a list of possible projects for the arpa funds are being prepared for review."
+  },
+  {
+   "topic": "State fiscal 2021 budget",
+   "what_was_recorded": "The Town Manager reported that the governor signed the fiscal 2021 budget, with no dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the town manager informed the committee the governor signed the fiscal 2021 budget."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order",
+   "resolution": "meeting opened at 7:00 PM",
+   "quote": "peter beardmore called the meeting to order at 7:00 pm and read the zoom meeting advisory statement.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Chair report",
+   "resolution": "informational",
+   "quote": "peter informed the committee of the 40b workshop on august 3rd and the gulf ribbon cutting.",
+   "tags": [
+    "40B",
+    "chair"
+   ]
+  },
+  {
+   "topic": "Town Manager / Finance Director report",
+   "resolution": "informational; ARPA project list being prepared",
+   "quote": "the town manager informed the committee the governor signed the fiscal 2021 budget.",
+   "tags": [
+    "town manager",
+    "ARPA",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Procedures and goals: liaisons and 40B",
+   "resolution": "liaisons approved; no comment on 40B; other liaison assignments on hold",
+   "quote": "the committee approved the following members to be liaisons for the committee.",
+   "tags": [
+    "liaisons",
+    "40B"
+   ]
+  },
+  {
+   "topic": "Discussion of draft goals for next year",
+   "resolution": "continued; chair to reword",
+   "quote": "peter stated he would reword these areas for next meeting.",
+   "tags": [
+    "goals"
+   ]
+  },
+  {
+   "topic": "Minutes of July 8th",
+   "resolution": "approved unanimously",
+   "quote": "motion was made to approve minutes for july 8th was seconded and was unanimously approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:50 p.m., unanimous",
+   "quote": "motion was made by chris and seconded by jay, unanimous 8:50 p.m.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Peter's draft of goals for the next year (undated draft by Peter)",
+   "where": "text",
+   "quote": "discuss peter's draft of goals for the next year"
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "goals",
+  "liaisons",
+  "40B",
+  "LED lighting",
+  "ARPA",
+  "garbage bags",
+  "minutes",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

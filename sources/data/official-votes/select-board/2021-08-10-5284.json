@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-08-10",
  "docid": "5284",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the pole petition for 38 & 40 Gilchrist Street as presented",
+   "motion": "Approve the Unitil pole petition for a mid-span pole on Gilchrist Street, as presented.",
    "moved_by": "J. Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed",
@@ -20,40 +20,326 @@
    "quote": "motion: j. marino 2nd: l. franco to approve the pole petition as presented vote: all in favor"
   },
   {
-   "motion": "Ratify the appointment of Daniel Dumford as seasonal cemetery laborer",
+   "motion": "Ratify the Town Manager's appointment of Daniel Dumford as seasonal cemetery laborer.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: t. dwyer 2\"°: l. franco to ratify the appointment of daniel dumford as season cemetery laborer vote: all in favor"
+   "procedural": false,
+   "quote": "to ratify the appointment of daniel dumford as season cemetery laborer vote: all in favor"
   },
   {
-   "motion": "Appoint Dave Blatt to a term of 3 years, Liz Murphy to a term of 2 years, Dave Passios to a term of 2 years and Matt Snyder to a term of 1 year ending on June 30th respectively",
+   "motion": "Appoint Dave Blatt (3-year term), Liz Murphy (2-year term), Dave Passios (2-year term) and Matt Snyder (1-year term ending June 30) to the Green Communities Task Force.",
    "moved_by": "J. Marino",
-   "seconded_by": "T. Dwyer",
+   "seconded_by": "T.Dwyer",
    "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: j. marino 2nd: t.dwyer to appoint dave blatt to a term of 3 years, liz murphy to a term of 2 years, dave passios to a term of 2 years and matt snyder to a term of 1 year ending on june 30th respectively vote: all in favor"
+   "procedural": false,
+   "quote": "to appoint dave blatt to a term of 3 years, liz murphy to a term of 2 years, dave passios to a term of 2 years"
   },
   {
-   "motion": "Approve the minutes of July 27, 2021 as presented",
-   "moved_by": "J. Marino",
+   "motion": "Approve the minutes of July 27, 2021 as presented.",
+   "moved_by": "J.Marino",
    "seconded_by": "L. Franco",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j.marino to approve the minutes of july 27, 2021 as presented 2nd: l. franco vote: all in favor"
+   "quote": "to approve the minutes of july 27, 2021 as presented 2nd: l. franco vote: all in favor"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco to adjourn the meeting the meeting adjourned at 7:41 p.",
-   "quote_taken_from_text": true
+   "quote": "motion: l. franco to adjourn the meeting the meeting adjourned at 7:41 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR'd from macOS Vision; one minor OCR artifact noted in the cemetery laborer vote (\"2\\\"°\" for \"2nd\") but quote preserved verbatim from source.",
- "cost_usd": 0.09085950000000001
+ "note": "OCR text (macOS Vision) with misread characters (e.g. \"2na\", \"2n°\", \"2\"°\", \"beeligible\"). Page breaks truncate several items mid-sentence: the pole hearing notice (p1), the Woodruff Property item (p3-4), the Green Communities header and the appointment list order (p4-5), and the 40B discussion (p5-6, ends at \"He thanked Mr.\"). No vote is recorded on the 40B discussion. Votes show \"All in Favor\" with no count. The Town Manager's Flat Hill and Lions Club items record no board vote. The Dumford ratification and Blatt/Murphy/Passios/Snyder appointments are recorded with motions. Signature line reads \"Elaire I. Peterson\" then \"Elaine M. Peterson\" in the OCR.",
+ "cost_usd": 0.02072499,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "member not present: tom alonzo, chair"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director; dave blatt, liz murphy, matt snyder, dave passios"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director; dave blatt, liz murphy, matt snyder, dave passios"
+  },
+  {
+   "name": "Dave Blatt",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director; dave blatt, liz murphy, matt snyder, dave passios"
+  },
+  {
+   "name": "Liz Murphy",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director; dave blatt, liz murphy, matt snyder, dave passios"
+  },
+  {
+   "name": "Matt Snyder",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director; dave blatt, liz murphy, matt snyder, dave passios"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director; dave blatt, liz murphy, matt snyder, dave passios"
+  },
+  {
+   "name": "James Dee",
+   "role": "of Unitil",
+   "status": "present",
+   "quote": "james dee of unitil was present for the hearing."
+  },
+  {
+   "name": "Andrea Laford",
+   "role": "Pleasant Street",
+   "status": "present",
+   "quote": "andrea laford, pleasant street, stated she was not officially representing the garden club but that"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board members agreed to the modifications to the Main Street Complete Streets plan: the sidewalk moved to the other side of an overhanging tree, with garden club plantings to be relocated or saved.",
+   "quote": "the board members were in agreement with the modifications to the plan."
+  },
+  {
+   "decision": "Board signed an Accounts Payable warrant dated August 4, 2021.",
+   "quote": "the board signed an accounts payable warrant dated august 4, 2021."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Flat Hill Road culvert reconstruction cost",
+   "what_was_recorded": "The engineer reported a 2019 similar culvert project cost $550k and current similar projects are around $850k; the town plans to secure Small Bridge Grant funding.",
+   "figures_as_printed": [
+    "$550k",
+    "$850k"
+   ],
+   "quote": "our engineer did a similar culvert project in 2019 that cost $550k and today's similar projects are around $850k."
+  },
+  {
+   "topic": "Flat Hill Road culvert funding source",
+   "what_was_recorded": "The plan is to secure funding through the Small Bridge Grant program; no grant amount is printed.",
+   "figures_as_printed": [],
+   "quote": "secure funding through the small bridge grant program and put it out to bid for a construction season"
+  },
+  {
+   "topic": "ARPA / CLFRF county reallocation to Lunenburg",
+   "what_was_recorded": "Lunenburg's County Reallocation is printed as $2,279,580, with 50% ($1,139,790) expected on or about August 16th in two tranches.",
+   "figures_as_printed": [
+    "$2,279,580",
+    "$1,139,790"
+   ],
+   "quote": "lunenburg's county reallocation is $2,279,580. we will beeligible to receive 50% of this allocation ($1,139,790) on or about august 16th."
+  },
+  {
+   "topic": "Lions Club food pantry relocation operating costs",
+   "what_was_recorded": "Relocating the food pantry to the TC Passios raises additional operating costs, which were discussed without a figure.",
+   "figures_as_printed": [],
+   "quote": "additional operating costs, the need for a food permit, access, and security of the building."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Andrea Laford",
+   "stated_role": "Pleasant Street",
+   "topic": "Main Street sidewalk layout and garden club plantings",
+   "quote": "andrea laford, pleasant street, stated she was not officially representing the garden club but that they understood if the tree had to go, it had to go."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Pole petition, 38 & 40 Gilchrist Street (Unitil)",
+   "resolution": "approved",
+   "tags": [
+    "pole petition",
+    "Unitil",
+    "Gilchrist Street",
+    "hearing"
+   ],
+   "quote": "mr. dee stated we would like to install one pole on gilchrist street between poles #1 and #2 as a"
+  },
+  {
+   "topic": "Complete Streets project update, Main Street",
+   "resolution": "board agreed to plan change, no vote",
+   "tags": [
+    "Complete Streets",
+    "sidewalk",
+    "DPW",
+    "garden club"
+   ],
+   "quote": "mr. oliva reported the project is well underway. so far the majority of the work has been on"
+  },
+  {
+   "topic": "Ratification of seasonal cemetery laborer",
+   "resolution": "ratified",
+   "tags": [
+    "appointments",
+    "cemetery"
+   ],
+   "quote": "to ratify the appointment of daniel dumford as season cemetery laborer"
+  },
+  {
+   "topic": "Town Manager report: culvert, bridges, Woodruff, Lions Club, ARPA, announcements",
+   "resolution": "noted, no action",
+   "tags": [
+    "Flat Hill Road culvert",
+    "Pleasant Street bridge",
+    "Mass Ave bridge",
+    "Woodruff property",
+    "Lions Club",
+    "ARPA CLFRF",
+    "vacancies"
+   ],
+   "quote": "the engineer for the flat hill road culvert reconstruction project provided the dpw director and me"
+  },
+  {
+   "topic": "Green Communities Task Force appointments",
+   "resolution": "appointed",
+   "tags": [
+    "appointments",
+    "Green Communities"
+   ],
+   "quote": "to appoint dave blatt to a term of 3 years, liz murphy to a term of 2 years, dave passios to a term of 2 years"
+  },
+  {
+   "topic": "Minutes approval, July 27, 2021",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes of july 27, 2021 as presented"
+  },
+  {
+   "topic": "Accounts Payable warrant",
+   "resolution": "signed",
+   "tags": [
+    "warrants"
+   ],
+   "quote": "the board signed an accounts payable warrant dated august 4, 2021."
+  },
+  {
+   "topic": "Pond View Commons 40B site approval (MassHousing)",
+   "resolution": "discussed, no action recorded",
+   "tags": [
+    "40B",
+    "Pond View Commons",
+    "Conservation Commission",
+    "MassHousing"
+   ],
+   "quote": "mr. jeffreys reported conservation commissioner jack rabbitt has found out two facts about"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 7:41 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "motion: l. franco to adjourn the meeting the meeting adjourned at 7:41 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Public hearing notice, pole petition by Unitil Fitchburg Gas and Electric (Gilchrist Street)",
+   "where": "text",
+   "quote": "mr. franco read the hearing notice aloud:"
+  },
+  {
+   "name": "Plan No. 968-L dated 7/6/2021 (Gilchrist Street pole location)",
+   "where": "text",
+   "quote": "as shown on map as plan no. 968-l dated 7/6/2021"
+  },
+  {
+   "name": "Comment letter to MA Housing on proposed c. 40B project on Howard Street",
+   "where": "text",
+   "quote": "the comment letter to ma housing concerning the proposed c. 40b project on howard street"
+  },
+  {
+   "name": "30 School Street Landscape Design RFP",
+   "where": "text",
+   "quote": "the optional site briefing for the 30 school street landscape design rfp was held on tuesday,"
+  },
+  {
+   "name": "Division of Local Services memorandum on County Reallocation of CLFRF funds",
+   "where": "text",
+   "quote": "division of local services issued a memorandum yesterday regarding the county reallocation"
+  },
+  {
+   "name": "Notice from MassHousing on 40B Site Approval Application from Pond View Commons, LLC (Kevin O'Brien)",
+   "where": "text",
+   "quote": "discussion on notice from masshousing on 40b site approval application from pond view commons, llc (kevin o'brien)"
+  },
+  {
+   "name": "Accounts Payable warrant dated August 4, 2021",
+   "where": "text",
+   "quote": "the board signed an accounts payable warrant dated august 4, 2021."
+  },
+  {
+   "name": "Minutes of July 27, 2021",
+   "where": "text",
+   "quote": "to approve the minutes of july 27, 2021 as presented"
+  }
+ ],
+ "tags": [
+  "select board",
+  "pole petition",
+  "Unitil",
+  "Complete Streets",
+  "sidewalk",
+  "Main Street",
+  "appointments",
+  "cemetery",
+  "Green Communities Task Force",
+  "Flat Hill Road culvert",
+  "bridges",
+  "Woodruff property",
+  "Lions Club food pantry",
+  "ARPA CLFRF",
+  "40B",
+  "Pond View Commons",
+  "minutes",
+  "warrants"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

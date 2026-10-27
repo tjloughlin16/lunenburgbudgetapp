@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-08-23",
  "docid": "4136",
@@ -12,15 +12,115 @@
  },
  "votes": [
   {
-   "motion": "Close the hearing for 711 Massachusetts Avenue",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Close the public hearing for 711 Massachusetts Avenue.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed 4-0",
    "procedural": true,
    "quote": "p. bertram made motion to close the hearing for 711 massachusetts avenue, m. allison seconded, roll call vote - m. brenner, aye; m. allison, aye; p. bertram, aye; t. cole, aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0773505
+ "note": "Single-page extract of a continued public hearing. Votes: one procedural roll call (closing the hearing) is recorded; no vote on the applications themselves appears in this text, and the minutes record no decision or conditions beyond a remark that soil testing would be conditioned as part of the Board's Decision, which is discussion, not a decision. Extraction has broken words (e.g. 'Whitm an', 'M ember'), which were left as printed. No dollar figures appear. No public comment is recorded. The Chair's 'Tel' and 'Fax' lines are letterhead, not attendance.",
+ "cost_usd": 0.01470869,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "remote",
+   "quote": "due to illness, p. bertram participate remotely under section 2.02 remote participation"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: tanner cole, matthew allison, paula bertram, matthew brenner, adam r. burney"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "adam r. burney land use director"
+  },
+  {
+   "name": "Wesley Flis",
+   "role": "representing the applicant (Whitman & Bingham Associates, W&B)",
+   "status": "present",
+   "quote": "the owner/applicant was represented by wesley flis"
+  },
+  {
+   "name": "Eric Fowler",
+   "role": "representing the applicant (EF Realty, LLC)",
+   "status": "present",
+   "quote": "and eric fowler, ef realty, llc."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Site plan approval and stormwater permit, 711 Massachusetts Avenue (four 2-unit townhouse buildings, eight units)",
+   "resolution": "hearing continued and closed; no decision recorded in these minutes",
+   "quote": "the hearing continuation was to hear and review applications for site plan approval and stormwater management permit",
+   "tags": [
+    "site plan",
+    "stormwater",
+    "townhouses",
+    "public hearing",
+    "Massachusetts Avenue",
+    "Water Supply Protection District"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GEI Review letter dtd 8/20/2021",
+   "where": "list",
+   "quote": "documents used at meeting: gei review letter dtd 8/20/2021 site plan revised to 7/26/2021"
+  },
+  {
+   "name": "Site Plan Revised to 7/26/2021",
+   "where": "list",
+   "quote": "documents used at meeting: gei review letter dtd 8/20/2021 site plan revised to 7/26/2021"
+  }
+ ],
+ "tags": [
+  "site plan approval",
+  "stormwater permit",
+  "townhouses",
+  "public hearing",
+  "711 Massachusetts Avenue",
+  "Water Supply Protection District",
+  "remote participation",
+  "sewer",
+  "sight line",
+  "tree waiver"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

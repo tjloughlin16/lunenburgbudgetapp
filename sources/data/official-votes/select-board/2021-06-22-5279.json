@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-06-22",
  "docid": "5279",
@@ -12,39 +12,310 @@
  },
  "votes": [
   {
-   "motion": "Appoint Ms. Cosgrove Higdon as Assessor until the next annual town election",
+   "motion": "To appoint Christine Cosgrove Higdon as Assessor until the next annual town election.",
    "moved_by": "T. Dwyer",
    "seconded_by": "L. Franco",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: t. dwyer 2nd: l. franco to appoint ms. cosgrove higdon as assessor until the next annual town election vote: all in favor"
+   "quote": "to appoint ms. cosgrove higdon as assessor until the next annual town election vote: all in favor"
   },
   {
-   "motion": "Extend both agreements until July 31, 2021",
+   "motion": "To extend the agreements between the Town Manager and the Select Board and the Director of Municipal Finance and the Select Board until July 31, 2021.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed",
+   "outcome": "passed, all in favor",
    "procedural": false,
-   "quote": "motion: j. marino 2n°: t. dwyer to extend both agreements until july 31, 2021 vote: all in favor"
+   "quote": "to extend both agreements until july 31, 2021 vote: all in favor"
   },
   {
-   "motion": "Approve Minutes of June 8, 2021 as presented",
+   "motion": "To approve the minutes of June 8, 2021 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "J. Marino",
-   "outcome": "passed 3-0-1",
+   "outcome": "passed, 3 in favor, 1 abstention (Mr. Dwyer)",
    "procedural": true,
-   "quote": "motion: l. franco 2nd: j. marino to approve minutes of june 8, 2021 as presented vote: 3 in favor, 1 abstention (mr. dwyer)"
+   "quote": "to approve minutes of june 8, 2021 as presented vote: 3 in favor, 1 abstention (mr. dwyer)"
   },
   {
-   "motion": "Enter into Executive Session and adjourn after exiting to discuss litigation strategy",
+   "motion": "To enter into Executive Session under M.G.L. c. 30, Section 21, Paragraph 3 to discuss litigation strategy, and to adjourn after exiting Executive Session.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
    "procedural": true,
-   "quote": "motion: l. franco 2nd: t. dwyer to enter into executive session and to adjourn after exiting executive session"
+   "quote": "to enter into executive session and to adjourn after exiting executive session: pursuant to mi.g.l. c. 30, section 21, paragraph 3"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scanned minutes. One item (Pay As You Throw Bag Fee) had discussion but the Board deliberately delayed voting: The Board delayed voting until Mr. Alonzo returns for the next meeting.\"",
- "cost_usd": 0.1157819
+ "note": "OCR of scanned minutes (macOS Vision), so some text is garbled. The attendance line is cut off after 'Lou', so the member L. Franco's full name is not printed. A reference to 'Mr. Franco, former Assessor' is ambiguous and is not recorded as a separate attendee. The executive-session motion has no printed vote result, so its outcome is 'not stated'. The adjournment at 8:02 p.m. is stated but no separate motion is printed. The PAYT table is scrambled in the OCR and its figures are transcribed as they appear. Page 4 starts mid-list, so the heading of the committee-vacancy list is missing. Ray Morin spoke during the cannabis presentation, not in public comment, and public comment is recorded as 'none'. No dollar transfers were recorded.",
+ "cost_usd": 0.02216519,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou"
+  },
+  {
+   "name": "L. Franco",
+   "role": "Member (printed as 'Lou' on the attendance line, 'L. Franco' in motions; full name not printed)",
+   "status": "present",
+   "quote": "members present: michael-ray jeffreys, vice chairman; todd dwyer, jim marino, lou"
+  },
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "member not present: tom alonzo, chair"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; richard letarte, assessor; christine cosgrove"
+  },
+  {
+   "name": "Richard Letarte",
+   "role": "Assessor",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; richard letarte, assessor; christine cosgrove"
+  },
+  {
+   "name": "Christine Cosgrove Higdon",
+   "role": "Applicant for Assessor appointment",
+   "status": "present",
+   "quote": "ms. cosgrove higdon stated she and her husband have lived here for over 40 years."
+  },
+  {
+   "name": "Valerio Romano",
+   "role": "Attorney, VGR Law Firm for Uma Flowers, LLC",
+   "status": "present",
+   "quote": "attorney valerio romano, vgr law firm for uma flowers, introduced priyanka patel, yash patel, and davis patel to the board."
+  },
+  {
+   "name": "Priyanka Patel",
+   "role": "Founder, Uma Flowers (as printed: 'one of the founders')",
+   "status": "present",
+   "quote": "attorney valerio romano, vgr law firm for uma flowers, introduced priyanka patel, yash patel, and davis patel to the board."
+  },
+  {
+   "name": "Yash Patel",
+   "role": "Team member, Uma Flowers",
+   "status": "present",
+   "quote": "attorney valerio romano, vgr law firm for uma flowers, introduced priyanka patel, yash patel, and davis patel to the board."
+  },
+  {
+   "name": "Davis Patel",
+   "role": "Team member, Uma Flowers",
+   "status": "present",
+   "quote": "attorney valerio romano, vgr law firm for uma flowers, introduced priyanka patel, yash patel, and davis patel to the board."
+  },
+  {
+   "name": "Ray Morin",
+   "role": "Owner of 48 Youngs Road",
+   "status": "present",
+   "quote": "ray morin, owner of 48 youngs road, stated the property has been a mixed use"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board delayed its vote on the Pay As You Throw bag fee increase for FY22 until Mr. Alonzo returns, at the next meeting.",
+   "quote": "the board delayed voting until mr. alonzo returns for the next meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public Safety Carport bid",
+   "what_was_recorded": "Two bids were received; the low bid was $298,750, about $164,000 over the appropriated capital amount, and staff recommended not moving forward.",
+   "quote": "the low bidder was elite construction and design of fitchburg for a total cost of the project of $298,750",
+   "figures_as_printed": [
+    "$298,750",
+    "$164,000"
+   ]
+  },
+  {
+   "topic": "Flat Hill Culvert revised cost estimate",
+   "what_was_recorded": "The revised estimate added about $67,000 for materials and contractor costs, about $209,000 for wingwalls and temporary support of excavation, and about $26,000 to the 10% contingency.",
+   "quote": "this added approximately $67,000 to the estimated costs.",
+   "figures_as_printed": [
+    "$67,000",
+    "$209,000",
+    "$26,000"
+   ]
+  },
+  {
+   "topic": "PAYT bag FY22 pricing and projected surplus/deficit",
+   "what_was_recorded": "The memo's FY22 table projects final revenue and a projected surplus/deficit for PAYT bags under a 30% per-roll increase; the printed final figures are as shown.",
+   "quote": "$429,542.10 $419,850.00 $9,692.10",
+   "figures_as_printed": [
+    "$429,542.10",
+    "$419,850.00",
+    "$9,692.10"
+   ]
+  },
+  {
+   "topic": "Free bags for senior citizens, FY22",
+   "what_was_recorded": "Estimated cost for about 2,200 senior households: about $40,000 for collection and disposal, covered by the projected FY2021 surplus, and about $5,000 for bags, which could be paid from the Recycling Dividends Grant funds.",
+   "quote": "the overall projected cost of this provided an estimated 2,200 affected households would be approximately $40,000 for collection and disposal costs and approximately $5,000",
+   "figures_as_printed": [
+    "$40,000",
+    "$5,000"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment of Assessor, Christine Cosgrove Higdon",
+   "resolution": "appointed until the next annual town election",
+   "quote": "mr. jeffreys invited assessor letarte and ms. cosgrove higdon to the front of the meeting room.",
+   "tags": [
+    "appointment",
+    "assessor"
+   ]
+  },
+  {
+   "topic": "Adult-use retail cannabis license presentation, 43 Summer Street",
+   "resolution": "presentation; no action; host community agreement to follow if permitting succeeds",
+   "quote": "attorney romano noted they had to go before the planning board for a special permit and site plan approval.",
+   "tags": [
+    "cannabis",
+    "license",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "Committee vacancies notice",
+   "resolution": "no action; applications invited",
+   "quote": "interested persons can find application forms on the town website and completed forms can be sent to",
+   "tags": [
+    "vacancies",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Public Safety Carport invitation for bids",
+   "resolution": "staff recommended not moving forward; no vote recorded",
+   "quote": "at this time are recommending not to move forward with this project as this would impact the fy21 and fy22",
+   "tags": [
+    "capital",
+    "bids",
+    "public safety"
+   ]
+  },
+  {
+   "topic": "Flat Hill Culvert cost update",
+   "resolution": "informational; Small Bridge Grant application to follow when MassDOT accepts applications",
+   "quote": "the other big factor is the final design includes longer and taller wingwalls to avoid increased fill",
+   "tags": [
+    "culvert",
+    "DPW",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Extension of Town Manager and Director of Municipal Finance contract terms",
+   "resolution": "extended to July 31, 2021",
+   "quote": "mr. jeffreys reported a request to extend the agreements between the town manager and the",
+   "tags": [
+    "contracts",
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Approval of June 8, 2021 minutes",
+   "resolution": "approved 3 in favor, 1 abstention",
+   "quote": "to approve minutes of june 8, 2021 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants and committee reports",
+   "resolution": "no action; none this evening",
+   "quote": "warrants/ action items: there were none this evening",
+   "tags": [
+    "warrants",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Pay As You Throw bag fee increase for FY22",
+   "resolution": "continued to the next meeting when Mr. Alonzo returns",
+   "quote": "the board delayed voting until mr. alonzo returns for the next meeting.",
+   "tags": [
+    "solid waste",
+    "PAYT",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Executive session on litigation",
+   "resolution": "entered executive session; adjournment to follow; vote result not recorded",
+   "quote": "mr. jeffreys announced the board would be entering executive session and adjourning",
+   "tags": [
+    "executive session",
+    "litigation"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Manager memorandum to the Board on PAYT bag fees (FY22)",
+   "where": "text",
+   "quote": "ms. lemieux reported from her memorandum:"
+  },
+  {
+   "name": "PAYT bag price comparison and recommended cost increase for FY 2022 (FY22 Estimate - 30%/Roll Increase table)",
+   "where": "text",
+   "quote": "a comparison of the current bag prices and the recommended cost increase for payt bags"
+  },
+  {
+   "name": "Flat Hill Culvert original preliminary and revised construction cost estimate comparison",
+   "where": "text",
+   "quote": "a comparison of the original preliminary construction cost"
+  },
+  {
+   "name": "Uma Flowers presentation (interior design, security, and operations)",
+   "where": "text",
+   "quote": "the presentation moved on to the security of the facility."
+  },
+  {
+   "name": "Marijuana research and studies on property values, crime and opioid use (presented by Attorney Valerio)",
+   "where": "text",
+   "quote": "attorney valerio presented data from marijuana research and studies on property values,"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "assessor appointment",
+  "adult-use cannabis license",
+  "43 Summer Street",
+  "public safety carport",
+  "Flat Hill culvert",
+  "PAYT bags",
+  "solid waste fees",
+  "Town Manager contract",
+  "executive session",
+  "litigation",
+  "FY22 budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

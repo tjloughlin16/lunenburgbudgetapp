@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-05-11",
  "docid": "5255",
@@ -12,23 +12,265 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of April 27 and May 4, 2021",
+   "motion": "Approve the minutes of April 27 and May 4, 2021.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: k. adams 2°: t. dwyer to approve the minutes of april 27 and may 4, 2021 vote: mr. dwyer-aye, mr. marino-aye, ms. adams- aye, mr. jeffreys- aye, mr. alonzo- aye"
+   "quote": "to approve the minutes of april 27 and may 4, 2021 vote: mr. dwyer-aye, mr. marino-aye, ms. adams- aye"
   },
   {
    "motion": "Adjourn the meeting at 8:04 p.m.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: k. adams 2nd.t. dwyer to adjourn the meeting at 8:04 p.m. vote: mr. dwyer, mr. marino-aye, ms. adams- aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "motion: k. adams 2nd.t. dwyer to adjourn the meeting at 8:04 p.m. vote: mr. dwyer, mr. marino-aye, ms. adams- aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1347265
+ "note": "OCR text from scanned pages with garbled passages (e.g., 'lown Clockwinders', broken headers on page 6, mangled line-end characters). The adjournment vote line reads 'Mr. Dwyer,' with the 'aye' missing, so the outcome is recorded as passed without a printed count. The minutes do not print a count for either vote. The composite Town Manager performance evaluation was discussed and read through, but no motion to approve it is recorded. The minutes do not print the meeting date beyond the agenda reference; the date 2021-05-11 is taken from the request. Attendee status for Elaine M. Peterson is not stated (she signed the minutes as recorder).",
+ "cost_usd": 0.09834525,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, elaine m. peterson"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair to sign the FY21 4th Quarter Water Commitment warrant as presented.",
+   "quote": "mr. alonzo reported he would be signing this water department warrant as presented."
+  },
+  {
+   "decision": "Town Manager directed to contact the management company about the overflowing Walmart parking lot donation bins and ask them to stay on top of it.",
+   "quote": "he requested the town manager contact the management company be contacted and requested they stay on top of the situation."
+  },
+  {
+   "decision": "Purchased pay-as-you-throw bags will be honored, per the Town Manager.",
+   "quote": "ms. adams asked if the bags that have already been purchased would be honored. ms. lemieux stated they would."
+  },
+  {
+   "decision": "Chairs of committees with expiring member terms directed to interview talent bank applicants if not already done; comments to the Select Board office by May 15 for June 1 appointments.",
+   "quote": "the chairs of those committees should be interviewing them if they haven't already."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library re-carpeting low bid",
+   "what_was_recorded": "The low bid for Library re-carpeting, from seven bids, was Liberty Floor Covering at $46,335; the Assistant Town Manager is soliciting bids for the moving portion.",
+   "quote": "bidderwas liberty floor covering from lincoln, rhodeisland with a bid of$46,335.",
+   "figures_as_printed": [
+    "$46,335"
+   ]
+  },
+  {
+   "topic": "Water Commitment warrant",
+   "what_was_recorded": "A FY21 4th Quarter Water Commitment warrant of $7,560.78 was presented for signature.",
+   "quote": "warrants: fy21 4th quarter water commitment $7,560.78",
+   "figures_as_printed": [
+    "$7,560.78"
+   ]
+  },
+  {
+   "topic": "Pay as you throw bag cost",
+   "what_was_recorded": "The cost of pay-as-you-throw bags will rise under a new contract; the Town will solicit bag vendor bids, which bears on the cost of operating the trash program. No dollar figure printed.",
+   "quote": "the cost of the pay as you throw bags will increase due to the new contract.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Municipal aggregation electricity rate",
+   "what_was_recorded": "The three-year Constellation contract for the Community Choice Power Supply program expires in November at a current rate printed as $.10998; Colonial Power issued an RFP with price proposals due May 17.",
+   "quote": "contract with constellation expires in november (current rate of$.10998).",
+   "figures_as_printed": [
+    "$.10998"
+   ]
+  },
+  {
+   "topic": "Recycling banners and signs",
+   "what_was_recorded": "Student banners and foldable signs on recycling education at the three schools are to be funded by recycling dividends grant funding. No dollar figure printed.",
+   "quote": "this will be funded by our recycling dividends grant funding.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and remote meeting notice",
+   "resolution": "opened",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "procedure",
+    "open meeting law",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Announcements",
+   "resolution": "noted",
+   "quote": "mr. alonzo reminded everyone that the annual town election is this saturday, may 15th.",
+   "tags": [
+    "election",
+    "vaccines",
+    "talent bank"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "received; no action",
+   "quote": "town manager report and covid-19 update",
+   "tags": [
+    "town manager",
+    "COVID-19",
+    "vacancies",
+    "home rule petitions",
+    "dispatch",
+    "aggregation",
+    "bids",
+    "925 Mass Ave"
+   ]
+  },
+  {
+   "topic": "Approve minutes of April 27 and May 4, 2021",
+   "resolution": "approved",
+   "quote": "to approve the minutes of april 27 and may 4, 2021 vote: mr. dwyer-aye, mr. marino-aye, ms. adams- aye",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrant: FY21 4th Quarter Water Commitment",
+   "resolution": "Chair to sign as presented",
+   "quote": "mr. alonzo reported he would be signing this water department warrant as presented.",
+   "tags": [
+    "water",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Action items: donation bins",
+   "resolution": "Town Manager directed to contact management company",
+   "quote": "he requested the town manager contact the management company be contacted and requested they stay on top of the situation.",
+   "tags": [
+    "solid waste",
+    "donation bins"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no reports",
+   "quote": "there were none tonight.",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Composite Town Manager Performance Evaluation",
+   "resolution": "discussed; no vote recorded",
+   "quote": "discuss and approve composite town manager performance evaluation",
+   "tags": [
+    "performance evaluation",
+    "personnel",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and adjournment",
+   "resolution": "adjourned 8:04 p.m.",
+   "quote": "to adjourn the meeting at 8:04 p.m.",
+   "tags": [
+    "schedule",
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Emma Henry civics class slide presentation on plastic pollution and recycling (PDF posted on the DPW page)",
+   "where": "text",
+   "quote": "a slide presentation on plastic pollution and the need for recycling as part of her civics class."
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G. L. c. 30A, § 20",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting law, g. l. c. 30a, §"
+  },
+  {
+   "name": "Home Rule Petition for additional all-alcoholic-beverages license, Jaxx Country Variety (House Bill 3715)",
+   "where": "text",
+   "quote": "the home rule petition for granting an additional license for the sale of all alcoholic beverages for jaxx country variety"
+  },
+  {
+   "name": "Home Rule Petition authorizing the Library Board of Trustees to invest the Library Trust Funds (House Bill 3727)",
+   "where": "text",
+   "quote": "the home rule petition for authorizing the library board of trusteesto invest the library trustfunds"
+  },
+  {
+   "name": "Composite Town Manager Performance Evaluation (final version in the Board's packet)",
+   "where": "text",
+   "quote": "mr. alonzo reported he made one modification to one word and the final version is in the board's packet."
+  }
+ ],
+ "tags": [
+  "town manager report",
+  "COVID-19",
+  "vaccine clinic",
+  "annual town election",
+  "home rule petitions",
+  "Nashoba Valley dispatch",
+  "municipal aggregation",
+  "library carpet bid",
+  "water warrant",
+  "pay as you throw",
+  "recycling",
+  "committee vacancies",
+  "performance evaluation",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

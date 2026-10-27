@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-06-16",
  "docid": "3065",
@@ -12,24 +12,234 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes for May 26th",
-   "moved_by": "Dave Passios",
-   "seconded_by": "Michael-Ray Jeffreys",
-   "outcome": "passed 7-0",
-   "procedural": true,
-   "quote": "dave passios motioned to approve the minutes for may 26th, seconded by michael-ray jeffreys. matthew allison, aye, dave passios, aye, kristina masaitis, aye, brian lehtinen, aye, david blatt, aye, michael-ray jeffreys, aye, greg roy, aye."
-  },
-  {
-   "motion": "Adjourn",
+   "motion": "Approve the minutes of May 26th.",
    "moved_by": "Dave Passios",
    "seconded_by": "Michael-Ray Jeffreys",
    "outcome": "passed",
    "procedural": true,
-   "quote": "dave passios made a motion to adjourn, michael-ray jeffreys seconded at 6:39pm. roll call vote: matthew allison, aye, dave passios, aye, brian lehtinen, aye, kristina masaitis, aye, david blatt, michael- ray jeffreys, aye, greg roy, aye",
-   "quote_taken_from_text": true
+   "quote": "dave passios motioned to approve the minutes for may 26th, seconded by michael-ray jeffreys. matthew allison, aye, dave passios, aye, kristina masaitis, aye"
+  },
+  {
+   "motion": "Adjourn the meeting (at 6:39pm).",
+   "moved_by": "Dave Passios",
+   "seconded_by": "Michael-Ray Jeffreys",
+   "outcome": "not stated",
+   "procedural": true,
+   "quote": "dave passios made a motion to adjourn, michael-ray jeffreys seconded at 6:39pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "One vote (adjournment) shows David Blatt listed without an explicit \"aye\" — formatting suggests it is likely present but OCR/transcription may have dropped it; all other recorded votes were in favor.",
- "cost_usd": 0.0975485
+ "note": "Two motions recorded, both procedural; neither has a printed result phrase. The adjournment roll call lists six ayes and David Blatt is printed with no vote, so its outcome is 'not stated'. The minutes name no Chair, and the header gives 5:30pm while the body says called to order at 5:35pm. No dollar figures are printed. Ed DiSalvo and Tom Lamm are mentioned but not present, so they are not listed as attendees. Greg Roy's and the town manager's remarks sit under a 'Public comment' label but are members and officials, so they are recorded as public comment only because the minutes label them so. No documents list is printed; the DiGiorgio scope/contract is the only document named.",
+ "cost_usd": 0.01661429,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "David Passios",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, michael-ray jeffreys, kristina masaitis, matthew allison, david blatt, greg roy"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, michael-ray jeffreys, kristina masaitis, matthew allison, david blatt, greg roy"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, michael-ray jeffreys, kristina masaitis, matthew allison, david blatt, greg roy"
+  },
+  {
+   "name": "Kristina Masaitis",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, michael-ray jeffreys, kristina masaitis, matthew allison, david blatt, greg roy"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, michael-ray jeffreys, kristina masaitis, matthew allison, david blatt, greg roy"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, michael-ray jeffreys, kristina masaitis, matthew allison, david blatt, greg roy"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Member (listed under Members Present)",
+   "status": "present",
+   "quote": "members present: david passios, brian lehtinen, michael-ray jeffreys, kristina masaitis, matthew allison, david blatt, greg roy"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Employees",
+   "status": "present",
+   "quote": "town employees: heather lemieux"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Scope of work to exclude a garage; the committee seeks a like-kind estimate of a new building of the same uses.",
+   "quote": "the scope of the work would not include a garage as the committee is looking for a like kind estimate of a new building"
+  },
+  {
+   "decision": "Aim for the November town meeting, given the 60-day timeline and minimal scope.",
+   "quote": "discussion took place on the 60 day timeline and the minimal scope of work and we would push for november town meeting."
+  },
+  {
+   "decision": "Greg Roy and the town manager to communicate with the architects in person, with renderings, materials sent 48 hours in advance, and the 60-day timeline.",
+   "quote": "greg roy and the town manager would communicate with the architects 1) in person, 2) rendering outside, 3) materials provided 48 hours in advance, 4) 60 day timeline."
+  },
+  {
+   "decision": "Committee plans to meet in person; the town manager noted each committee decides and public access is required, so a hybrid is possible.",
+   "quote": "greg roy stated we would plan to meet in person."
+  },
+  {
+   "decision": "Future meetings set for July 7th and July 28th at 5:30pm.",
+   "quote": "future meeting schedule: july 7th and july 28th at 5:30pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "DiGiorgio contract and scope of work",
+   "what_was_recorded": "The contract with DiGiorgio will be executed July 1; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "the contract will be executed july 1."
+  },
+  {
+   "topic": "Funding article for renovation",
+   "what_was_recorded": "Greg Roy said the town is owed a funding article for renovation; discussion of whether to add articles on funding a rebuild. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "greg roy stated we owe the town a funding article for renovation."
+  },
+  {
+   "topic": "Select Board funding article for old primary lot",
+   "what_was_recorded": "The Select Board would have a funding article for the old primary lot by November, with a request to demolish and create a park. No amount printed.",
+   "figures_as_printed": [],
+   "quote": "the select board would have a funding article for the old primary lot by november, request to demolish"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Chair",
+   "stated_role": "Chair",
+   "topic": "introduction of newest member",
+   "quote": "chair introduced newest member kristina masaitis"
+  },
+  {
+   "speaker": "Greg Roy",
+   "stated_role": "",
+   "topic": "meeting format (in person)",
+   "quote": "public comment: greg roy stated we would plan to meet in person."
+  },
+  {
+   "speaker": "town manager",
+   "stated_role": "town manager",
+   "topic": "hybrid meetings and public access",
+   "quote": "the town manager stated it was up to each committee and requires public access and you could do a hybrid."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Scope of Work and contract from DiGiorgio",
+   "resolution": "discussed; garage excluded from scope; contract executes July 1",
+   "quote": "greg roy stated he wanted to talk through the scope of work.",
+   "tags": [
+    "scope of work",
+    "contract",
+    "architect"
+   ]
+  },
+  {
+   "topic": "Building height and number of floors",
+   "resolution": "discussed; 38-foot maximum height verified by town manager",
+   "quote": "discussion took place on whether the building would be 2 or 3 floors and that 38 feet was the general maximum height.",
+   "tags": [
+    "building height",
+    "floors",
+    "design"
+   ]
+  },
+  {
+   "topic": "Funding articles and November town meeting timeline",
+   "resolution": "discussed; push for November town meeting; order of articles discussed",
+   "quote": "greg roy stated we owe the town a funding article for renovation.",
+   "tags": [
+    "town meeting",
+    "funding article",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Communication with architects",
+   "resolution": "agreed approach: in person, renderings, materials 48 hours ahead, 60-day timeline",
+   "quote": "greg roy and the town manager would communicate with the architects 1) in person, 2) rendering outside, 3) materials provided 48 hours in advance, 4) 60 day timeline.",
+   "tags": [
+    "architects",
+    "communication"
+   ]
+  },
+  {
+   "topic": "Approval of May 26 minutes",
+   "resolution": "approved",
+   "quote": "dave passios motioned to approve the minutes for may 26th, seconded by michael-ray jeffreys.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence",
+   "resolution": "no action; none received",
+   "quote": "correspondence to and from the committee: none",
+   "tags": [
+    "correspondence"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "set July 7th and July 28th at 5:30pm",
+   "quote": "future meeting schedule: july 7th and july 28th at 5:30pm",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:39pm by roll call; one member's vote not printed",
+   "quote": "dave passios made a motion to adjourn, michael-ray jeffreys seconded at 6:39pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Scope of Work/Contract from DiGiorgio",
+   "where": "text",
+   "quote": "review scope of work/contract from digiorgio:"
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "design committee",
+  "architect contract",
+  "DiGiorgio",
+  "building height",
+  "town meeting articles",
+  "funding articles",
+  "minutes approval",
+  "adjournment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "correspondence to and from the committee"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2021-07-22",
  "docid": "3484",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve minutes from June 14, 2021",
+   "motion": "Approve the minutes of the June 14, 2021 meeting as presented.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
@@ -20,7 +20,7 @@
    "quote": "motion by d. macdonald to accept and approve the minutes as presented"
   },
   {
-   "motion": "Expand current Council on Aging employee's role to include Board Clerk/Secretary for Finance Committee",
+   "motion": "Accept the HR Director's recommendation to expand a current town employee's role to include Board Clerk/Secretary duties for the Finance Committee.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
@@ -28,7 +28,7 @@
    "quote": "motion by s. andrews to accept recommendation from the hr director to expand this current employees role to include these new responsibilities."
   },
   {
-   "motion": "Hire new Board Clerk/Secretary for Capital Planning Board, Parks, Stormwater Task Force at Step 2 Grade 6",
+   "motion": "Accept the HR Director's recommendation to make the new Board Clerk/Secretary hire for Capital Planning Board, Parks, Stormwater Task Force at the recommended SAP rate.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
@@ -36,7 +36,7 @@
    "quote": "motion by d. macdonald to accept recommendation from the hr director to make this hire at this recommended sap rate."
   },
   {
-   "motion": "Accept nomination of Eric Arnold as Personnel Committee Chairman",
+   "motion": "Accept the nomination of E. Arnold as Personnel Committee Chairman.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. MacDonald",
    "outcome": "passed",
@@ -44,15 +44,15 @@
    "quote": "j. bilotta made a motion to accept the nomination of e. arnold as the personnel committee chairman."
   },
   {
-   "motion": "Accept nomination of Joanna Bilotta as Personnel Committee Vice Chairman",
+   "motion": "Accept the nomination of J. Bilotta as Personnel Committee Vice Chairman.",
    "moved_by": "D. MacDonald",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": false,
-   "quote": "d. macdonald made a motion to accept the nomination of j. bilotta as the personnel committee vice chairman:"
+   "quote": "d. macdonald made a motion to accept the nomination of j. bilotta as the personnel committee"
   },
   {
-   "motion": "Accept nomination of Susan Andrews as Personnel Committee Clerk",
+   "motion": "Accept the nomination of S. Andrews as Personnel Committee Clerk.",
    "moved_by": "D. MacDonald",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
@@ -60,7 +60,7 @@
    "quote": "d. macdonald made a motion to accept the nomination of s. andrews as the personnel committee clerk."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:19 pm.",
    "moved_by": "D. MacDonald",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
@@ -69,6 +69,132 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned minutes in clear format. Seven votes recorded, all passed by voice/roll call vote with no dissent noted (all marked \"All in Favor\" or \"All in favor\").",
- "cost_usd": 0.08318550000000001
+ "note": "Roll-call results are recorded only as 'All in favor' or 'All in Favor'; no counts are printed, so outcomes are recorded as passed. The minutes print no public comment section. Pay is given as step and grade with no dollar figures. Eric Arnold is named as nominee for Chairman but is not listed as an attendee, so attendance is not stated. Member roles are not printed except Vice-Chair for J. Bilotta.",
+ "cost_usd": 0.015592890000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "status": "present",
+   "quote": "dave macdonald, joanna bilotta, donna fortune, susan andrews",
+   "role": "Committee member"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "status": "present",
+   "quote": "meeting began at 5:03 pm with all attendees present, j. bilotta, committee vice-chair presiding",
+   "role": "Committee Vice-Chair presiding"
+  },
+  {
+   "name": "Donna Fortune",
+   "status": "present",
+   "quote": "dave macdonald, joanna bilotta, donna fortune, susan andrews",
+   "role": "Committee member"
+  },
+  {
+   "name": "Susan Andrews",
+   "status": "present",
+   "quote": "dave macdonald, joanna bilotta, donna fortune, susan andrews",
+   "role": "Committee member"
+  },
+  {
+   "name": "Julie Belliveau",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director",
+   "role": "Asst. Town Manager/HR Director"
+  },
+  {
+   "name": "Eric Arnold",
+   "status": "not stated",
+   "quote": "j. bilotta made a motion to accept the nomination of e. arnold as the personnel committee chairman.",
+   "role": "nominated Chairman"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee asked that at the next meeting the HR Director provide an update on communication with town employees about Personnel Committee meetings and the topics that affect them.",
+   "quote": "d. macdonald asked that at the next meeting the hr director provide and update on communication with town employees about personnel committee meetings and what topics impact them."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Board Clerk/Secretary assignments, funding basis",
+   "what_was_recorded": "The clerk roles were previously approved by the Select Board and their budgets authorized; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "these roles were previously approved by the select board and budgets authorized."
+  },
+  {
+   "topic": "Finance Committee clerk, current employee pay placement",
+   "what_was_recorded": "The current Council on Aging employee taking on the Finance Committee clerk role is at a stated step and grade; no dollar figure is printed.",
+   "figures_as_printed": [
+    "Step 3 Grade 6"
+   ],
+   "quote": "employee is currently at step 3 grade 6."
+  },
+  {
+   "topic": "Capital Planning/Parks/Stormwater clerk, new hire pay placement",
+   "what_was_recorded": "A new hire was approved at a stated step and grade, at the recommended SAP rate; no dollar figure is printed.",
+   "figures_as_printed": [
+    "Step 2 Grade 6"
+   ],
+   "quote": "the experience of this person warranted the role being approved at step 2 grade 6"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "quote": "minutes of the june 14, 2021 meeting reviewed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "New hire forms: Board Clerk/Secretary assignments",
+   "resolution": "approved (three motions)",
+   "quote": "a variety of board clerk/secretary assignments were presented and discussed by committee.",
+   "tags": [
+    "hiring",
+    "board clerks",
+    "pay step"
+   ]
+  },
+  {
+   "topic": "Reorganization of Personnel Committee",
+   "resolution": "officers nominated and accepted by motion: Chairman, Vice Chairman, Clerk",
+   "quote": "reorganization of personnel committee: the committee examined the current organization to identify how it might need to be reorganized in the upcoming year.",
+   "tags": [
+    "committee organization",
+    "officers"
+   ]
+  },
+  {
+   "topic": "Other business: HR communication with employees",
+   "resolution": "requested update at next meeting",
+   "quote": "d. macdonald asked that at the next meeting the hr director provide and update on communication with town employees about personnel committee meetings and what topics impact them.",
+   "tags": [
+    "HR",
+    "communication",
+    "employees"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "personnel",
+  "board clerks",
+  "hiring",
+  "pay step",
+  "committee officers",
+  "HR",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

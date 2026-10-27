@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-04-13",
  "docid": "5700",
@@ -12,30 +12,396 @@
  },
  "votes": [
   {
-   "motion": "Defer decision to 4/29 pending Town Counsel consultation regarding SSA expansion for 5 Chestnut Street",
+   "motion": "Approve the new Control Panel, contingent on Mike and Rob's approval based on what they see.",
+   "moved_by": "",
+   "seconded_by": "",
+   "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "to approve the new control panel, contingent on mike and rob's approval based on what they see, to get this moved forward and more dependable."
+  },
+  {
+   "motion": "Approve the minutes of the 3/30/21 meeting.",
+   "moved_by": "Carl L.",
+   "seconded_by": "Brett R.",
+   "outcome": "passed 4-0",
+   "procedural": true,
+   "quote": "to approve the minutes from the 3/30/21 meeting. roll call vote: mike-aye, brett-aye, carl-aye and dave-aye."
+  },
+  {
+   "motion": "Defer decision on the 5 Chestnut Street Sewer Service Area request to 4/29, until Town Counsel has had an opportunity to be consulted (as amended from 4/27).",
    "moved_by": "John R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 4-1",
    "procedural": false,
    "quote": "amended motion: to defer decision to 4/29, until town counsel has had an opportunity to be consulted. roll call vote: mike-aye, john-aye, brett-aye, carl-aye and dave-no."
-  },
-  {
-   "motion": "Approve the new Control Panel contingent on Mike and Rob's approval based on what they see, to get it moved forward and more dependable",
-   "outcome": "passed 4-0",
-   "procedural": false,
-   "quote": "to approve the new control panel, contingent on mike and rob's approval based on what they see, to get this moved forward and more dependable. discussion: carl noted that there is obsolete equipment and",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Approve the minutes from the 3/30/21 meeting",
-   "moved_by": "Carl L.",
-   "seconded_by": "Brett R.",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: carl l. second: brett r. to approve the minutes from the 3/30/21 meeting. roll call vote: mike-aye, brett-aye, carl-aye and dave-aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR text from scans; votes are all clearly recorded. One motion (by Carl L. to defer recommendation on 5 Chestnut St.) was not seconded and therefore not voted on.",
- "cost_usd": 0.1425095
+ "note": "OCR of a scanned minutes packet (macOS Vision); some words and punctuation are garbled (e.g. 'Jane he faul', '5. 18/100 CF', 'May 10m'). Page 6 is blank. The mover of the Control Panel motion is not printed (the motion heading falls at a page break). The Carl L. motion to defer 'until town meeting' was not seconded and is not recorded as a vote. The 4/27 and 4/29 dates both appear; the minutes say the meeting moved to 4/29. Chair is not named. Votes: 4-0, 4-0 and 4-1 as printed by roll call.",
+ "cost_usd": 0.023769150000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "status": "present",
+   "role": "Commissioner",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye, carl-aye and dave-no."
+  },
+  {
+   "name": "Carl",
+   "status": "present",
+   "role": "Commissioner",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye, carl-aye and dave-no."
+  },
+  {
+   "name": "John",
+   "status": "present",
+   "role": "Commissioner",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye, carl-aye and dave-no."
+  },
+  {
+   "name": "Brett",
+   "status": "present",
+   "role": "Commissioner",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye, carl-aye and dave-no."
+  },
+  {
+   "name": "Mike",
+   "status": "present",
+   "role": "Commissioner",
+   "quote": "roll call vote: mike-aye, john-aye, brett-aye, carl-aye and dave-no."
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "role": "not stated",
+   "quote": "business manager report - fy21 ytd budget- barb had sent out the year-to-date budget which looks good."
+  },
+  {
+   "name": "Jamie Rheault",
+   "status": "present",
+   "role": "not stated",
+   "quote": "jamie rheault reported that he met with rob oliva who said there is plenty of capacity"
+  },
+  {
+   "name": "Rob Oliva",
+   "status": "absent",
+   "role": "DPW Director",
+   "quote": "dave suggested putting this on the back burner until rob can attend."
+  },
+  {
+   "name": "Paula Bertram",
+   "status": "present",
+   "role": "public comment",
+   "quote": "paula bertram said she understands the commission cannot control development, but their bylaws clearly state"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "role": "Park Commission",
+   "quote": "dave passios (park commission) reported that earth day week is coming up and the lions club"
+  },
+  {
+   "name": "Jane L. Ranle",
+   "status": "not stated",
+   "role": "Minutes Clerk",
+   "quote": "/ jane l. ranle minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Well policy review placed on the back burner until Rob Oliva can attend.",
+   "quote": "dave suggested putting this on the back burner until rob can attend."
+  },
+  {
+   "decision": "Barb to take the Elizabeth St. I/l remediation 'nasty gram' letter question to Town Counsel for current recommendation.",
+   "quote": "barb will bring it up to counsel for his current recommendation."
+  },
+  {
+   "decision": "Fitchburg Chapter 147 sewer use ordinance changes to go to Town Counsel before being sent to Fitchburg; Barb to send a copy after legal review.",
+   "quote": "barb said that the changes will go to town counsel next, and she will send out a copy after legal reviews it."
+  },
+  {
+   "decision": "The 4/27 meeting moved to 4/29, with only 5 Chestnut St. on the agenda.",
+   "quote": "the 4/27 meeting will be moved to 4/29, with just 5 chestnut st. on the agenda."
+  },
+  {
+   "decision": "All Commissioners to review the sewer policy before 4/29 so they can have an answer.",
+   "quote": "suggested all commissioners review the sewer policy so they can have an answer on 4/29."
+  },
+  {
+   "decision": "Barb to copy Heather (Town Manager) on the meeting package email.",
+   "quote": "dave asked barb to cc heather (town manager) on the meeting package email."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Control panel redesign proposal (Empey)",
+   "what_was_recorded": "Invoices listed for an Empey proposal of $5K for the control panel.",
+   "quote": "invoices-empey proposal of $5k for control panel and the new meadowwoods flygt pump for $17,012.39.",
+   "figures_as_printed": [
+    "$5K"
+   ]
+  },
+  {
+   "topic": "Meadowwoods Flygt pump invoice",
+   "what_was_recorded": "Invoice listed for a new Meadowwoods Flygt pump.",
+   "quote": "invoices-empey proposal of $5k for control panel and the new meadowwoods flygt pump for $17,012.39.",
+   "figures_as_printed": [
+    "$17,012.39"
+   ]
+  },
+  {
+   "topic": "FY21 YTD budget expenses and Leominster usage",
+   "what_was_recorded": "Expenses look high because they include full-year Leominster usage amounts and indirect costs; no dollar figures printed.",
+   "quote": "the expenses look high, but includes the full-year leominster usage amounts and indirect costs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fitchburg costs in FY21 budget",
+   "what_was_recorded": "Fitchburg costs confirmed at a share of the full-year figure after a formula correction.",
+   "quote": "confirmed that the fitchburg costs are 83% of full year.",
+   "figures_as_printed": [
+    "83%"
+   ]
+  },
+  {
+   "topic": "Elizabeth St. service I/l charges",
+   "what_was_recorded": "Estimated annual I/l charges to Lunenburg from the problem service, at Leominster's sewer rate.",
+   "quote": "at $5. 18/100 cf for leominster's sewer rate that totals $1,813/yr in charges to lunenburg.",
+   "figures_as_printed": [
+    "$5. 18/100 CF",
+    "$1,813/yr"
+   ]
+  },
+  {
+   "topic": "Elizabeth St. service lining cost",
+   "what_was_recorded": "W&S report estimated the cost to line the service, with a payback period.",
+   "quote": "the w&s report estimated the cost to line the service to be $15,000 to $18,000 which would result in a 8 to 10 year return on",
+   "figures_as_printed": [
+    "$15,000 to $18,000",
+    "8 to 10 year"
+   ]
+  },
+  {
+   "topic": "Privilege fees for expanded use",
+   "what_was_recorded": "Regulation text read noting expanded use may be subject to privilege fees assessed by the Commission; no amount printed.",
+   "quote": "subject to available capacity and subject to the assessment of privilege fees by the sewer commission.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Paula Bertram",
+   "topic": "5 Chestnut St. SSA expansion opposition",
+   "quote": "paula said she has questions about total capacity under agreement with leominster, total utilized and reserved"
+  },
+  {
+   "speaker": "Paula Bertram",
+   "topic": "Whether the Commission can enable development",
+   "quote": "paula bertram said she disagrees that the sewer commission does not have the ability to enable development, which is what this proposal does."
+  },
+  {
+   "speaker": "Dave Passios",
+   "topic": "Earth Day week clean-ups",
+   "quote": "dave passios (park commission) reported that earth day week is coming up and the lions club"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "5 Chestnut Street SSA expansion request",
+   "resolution": "recommendation deferred to 4/29 (4-1 vote), pending Town Counsel",
+   "quote": "5 chestnut street- request to expand sewer service area (ssa)- jamie rheault reported that he met with rob",
+   "tags": [
+    "sewer service area",
+    "development",
+    "I/l",
+    "capacity",
+    "Leominster",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Well policy review",
+   "resolution": "placed on back burner until Rob Oliva can attend",
+   "quote": "well policy review- barb read comments from rob oliva regarding revising the well policy.",
+   "tags": [
+    "well water",
+    "metering",
+    "billing"
+   ]
+  },
+  {
+   "topic": "Control panel redesign",
+   "resolution": "approved, contingent on Mike and Rob's approval (4-0)",
+   "quote": "to approve the new control panel, contingent on mike and rob's approval based on what they see, to get this moved forward and more dependable.",
+   "tags": [
+    "pump station",
+    "control panel",
+    "Empey"
+   ]
+  },
+  {
+   "topic": "Elizabeth St. I/l issue remediation",
+   "resolution": "no vote; Barb to take the letter question to Town Counsel",
+   "quote": "elizabeth st. i/l issue remediation- barb noted that carl had sent out a copy of a 2018 letter from town counsel",
+   "tags": [
+    "I/l",
+    "enforcement",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Maintenance plan",
+   "resolution": "no update",
+   "quote": "maintenance plan- no update.",
+   "tags": [
+    "maintenance"
+   ]
+  },
+  {
+   "topic": "Federal aid programs and capital expenditures",
+   "resolution": "no action; Barb to talk with Leominster on I/l funding sources",
+   "quote": "federal aid programs- capital expenditures - barb talked to rob, who said there is not alot on the",
+   "tags": [
+    "grants",
+    "I/l",
+    "Leominster"
+   ]
+  },
+  {
+   "topic": "Fitchburg Chapter 147 sewer use ordinance",
+   "resolution": "changes to go to Town Counsel before Fitchburg",
+   "quote": "barb said that the commission should have received a tracked and a clean copy of the proposed changes to the",
+   "tags": [
+    "regulations",
+    "sewer use ordinance",
+    "building permits"
+   ]
+  },
+  {
+   "topic": "Billing algorithm",
+   "resolution": "no action; numbers not yet entered",
+   "quote": "billing algorithm- barb reported that she has the numbers but has not had time to put them into",
+   "tags": [
+    "billing"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/30/21 meeting",
+   "resolution": "approved 4-0",
+   "quote": "to approve the minutes from the 3/30/21 meeting. roll call vote: mike-aye, brett-aye, carl-aye and dave-aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business manager report, FY21 YTD budget",
+   "resolution": "received; formula corrected",
+   "quote": "business manager report - fy21 ytd budget- barb had sent out the year-to-date budget which looks good.",
+   "tags": [
+    "budget",
+    "Leominster",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs",
+   "resolution": "Barb to copy Town Manager on meeting package",
+   "quote": "member agenda inputs for future meetings - dave asked barb to cc heather (town manager) on the meeting",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment (Earth Day)",
+   "resolution": "no action",
+   "quote": "public comment- dave passios (park commission) reported that earth day week is coming up",
+   "tags": [
+    "public comment",
+    "Earth Day"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Comments from Rob Oliva re. 5 Chestnut St.",
+   "where": "list",
+   "quote": "handouts: comments from rob oliva re. 5 chestnut st. well policy"
+  },
+  {
+   "name": "Well Policy handout",
+   "where": "list",
+   "quote": "we have a total of 9 well customers."
+  },
+  {
+   "name": "Email from Barbara Lefebvre to Rob Oliva, 12 April 2021",
+   "where": "text",
+   "quote": "sent: monday, april 12, 2021 9:38 am"
+  },
+  {
+   "name": "Comprehensive Wastewater Master Plan",
+   "where": "text",
+   "quote": "the comprehensive wastewater master plan aim was to develop a sewer service plan based on capacity, development and density."
+  },
+  {
+   "name": "Leominster intermunicipal agreement (IMA)",
+   "where": "text",
+   "quote": "barb stated that the leominster ima allows for 500,000gpd and in the last year"
+  },
+  {
+   "name": "Test pit data submitted for 5 Chestnut St.",
+   "where": "text",
+   "quote": "jamie had submitted the test pit data and out of the 9 test pits done, none met title 5."
+  },
+  {
+   "name": "2018 letter from Town Counsel to the Commissioners",
+   "where": "text",
+   "quote": "carl had sent out a copy of a 2018 letter from town counsel to"
+  },
+  {
+   "name": "W&S I/l Report (Elizabeth St.)",
+   "where": "text",
+   "quote": "the w&s report estimated the cost to line the service to be $15,000 to $18,000"
+  },
+  {
+   "name": "Empey control panel proposal",
+   "where": "text",
+   "quote": "invoices-empey proposal of $5k for control panel and the new meadowwoods flygt pump"
+  },
+  {
+   "name": "Sewer regulations (Allocation of capacity for change or expansion of use)",
+   "where": "text",
+   "quote": "barb read from the regulations under allocation of capacity for change or expansion of use"
+  },
+  {
+   "name": "Fitchburg Chapter 147 Sewer Use Ordinance (tracked and clean copies of proposed changes)",
+   "where": "text",
+   "quote": "barb said that the commission should have received a tracked and a clean copy of the proposed changes to the"
+  },
+  {
+   "name": "Town bylaws (150 ft frontage)",
+   "where": "text",
+   "quote": "their bylaws clearly state the 150 frontage would support 3 units - not 40."
+  }
+ ],
+ "tags": [
+  "sewer",
+  "sewer service area",
+  "5 Chestnut Street",
+  "inflow and infiltration",
+  "Leominster intermunicipal agreement",
+  "well policy",
+  "control panel",
+  "billing",
+  "Town Meeting",
+  "regulations"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts"
+ },
+ "dropped_unquoted_by_field": {}
 }

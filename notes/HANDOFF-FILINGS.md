@@ -121,3 +121,31 @@ AG no earlier than **4 Nov**, no later than **30 Dec**. #2 is still unsent.
 
 Add a row to `notes/reference/records-requests.csv` for each — not done yet, because
 neither has a sent date.
+
+## #1 ANSWERED 26 October 2026 -- AG REFILING WINDOW: 4 NOVEMBER TO 30 DECEMBER 2026
+
+**DECISION OPEN, TJ's.** Refile with the AG's Division of Open Government
+(`openmeeting@state.ma.us`) **no earlier than 4 November** (30 days after filing on 5 Oct)
+and **no later than 30 December 2026** (90 days after the 1 Oct violation date on the form).
+After 30 December the Division will not review it. The Committee's cc of its response to
+the Division is NOT a filing by TJ.
+
+The response: a letter from Matthew P. Milward, VDH Boston, for the Committee, dated
+26 Oct 2026, authorised at its 7 Oct executive session. On time: 26 Oct was day 14 of the
+14 business days.
+
+- **Concedes:** the 8 Sep request was not answered within 10 days (§22(c)).
+- **Remedy offered:** the minutes "as expeditiously as possible", **with no date**; OML
+  refresher training for members by 31 Dec 2026.
+- **Rejects, correctly:** the OML does not require minutes to be posted online; and
+  2022-23 were never requested (the 8 Sep email covered 2024-26 only).
+- **Does not address:** whether minutes for the 2022-23 meetings exist (§22(a));
+  remedies 1-3 (approved vs not, meetings with no minutes, a catch-up schedule); timeliness
+  of approval.
+
+**What decides it, by 4 Nov:** have the 35 arrived? If not, the missing date is the
+strongest ground. A §22(c) request for the 59 meetings of 2022-23 (25 + 34) is the cheap
+fix for their second objection -- not yet sent; TJ said not yet on 26 Oct.
+
+The letter itself is not yet in `sources/correspondence/`; it carries TJ's email address,
+so it goes through the redaction gate if filed.

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-09-27",
  "docid": "4107",
@@ -12,57 +12,315 @@
  },
  "votes": [
   {
-   "motion": "Accept the ANR Plan for 1263 Reservoir Road & 435 Leominster-Shirley Road",
-   "moved_by": "Matthew Allison",
-   "seconded_by": "Paula Bertram",
+   "motion": "Accept the ANR Plan for 1263 Reservoir Road & 435 Leominster-Shirley Road.",
+   "moved_by": "M. Allison",
+   "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "m. allison made motion to accept the anr plan, p. bertram seconded, all aye. vote passed 4-0."
+   "quote": "m. allison made motion to accept the anr plan, p. bertram seconded, all aye."
   },
   {
-   "motion": "Accept the withdrawal of 97 Cross Street, 125 Cross Street, 430 Mulpus Road & 440 Mulpus Road without prejudice",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Accept the withdrawal without prejudice of the applications for 97 Cross Street, 125 Cross Street, 430 Mulpus Road & 440 Mulpus Road.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "p. bertram made motion to accept the withdrawal of 97 cross street, 125 cross street, 430 mulpus road & 440 mulpus road without prejudice, m. allison seconded, all aye. vote passed 3-0."
+   "quote": "p. bertram made motion to accept the withdrawal of 97 cross street, 125 cross street, 430 mulpus road & 440 mulpus road without prejudice, m. allison seconded, all aye."
   },
   {
-   "motion": "Approve prior meeting minutes from 09/13/2021 and 08/23/2021",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Approve the minutes listed (09/13/2021, and 09/13/2021 for 1263 Reservoir Road & 435 Leominster-Shirley Road).",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed",
    "procedural": true,
    "quote": "p. bertram made motion to approve minutes listed below, m. allison seconded, all aye."
   },
   {
-   "motion": "Submit four warrant articles for inclusion in the warrant for November 16, 2021",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Submit the four warrant articles for inclusion in the warrant for November 16, 2021.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "p. bertram made motion to submit the four warrant articles for inclusion in the warrant for nove mber 16, 2021, m. allison seconded, all aye. vote passed 3-0",
-   "quote_taken_from_text": true
+   "quote": "p. bertram made motion to submit the four warrant articles for inclusion in the warrant for nove mber 16, 2021"
   },
   {
-   "motion": "Submit a request for $110,000 for Master Plan update to Capital Planning",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Submit a request for $110,000 for Master Plan update to Capital Planning.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "p. bertram made motion that the board submits a request for $110,000 for master plan update to capital planning, m. allison seconded, all aye. vote passed 3-0."
+   "quote": "p. bertram made motion that the board submits a request for $110,000 for master plan update to capital planning"
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Allison",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Allison",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. allison seconded, all aye. vote passed 3 -0",
-   "quote_taken_from_text": true
+   "quote": "p. bertram made motion to adjourn, m. allison seconded, all aye."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The 4-0 vote on the ANR Plan had Erik Torgersen participating remotely. Subsequent votes show 3-0, indicating he departed at approximately 8:00 p.m. as stated in the minutes.",
- "cost_usd": 0.0976645
+ "note": "Vote 4-0 on the ANR Plan is printed, but only three members are listed as present in person and one (Torgersen) as remote; the minutes do not reconcile the count. Minutes approval records 'all aye' with no count printed. The minutes contain no public comment section. Only the Building Commissioner letter and Hannigan's presentation appear; the applicant's attorney is discussed but not named. Three hearings are referred to separate minutes, not recorded here.",
+ "cost_usd": 0.01894449,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tanner Cole",
+   "role": "Chair",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "tanner cole, matthew allison, paula bertram"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "absent",
+   "quote": "matthew brenner, erik torgersen"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "remote",
+   "quote": "due to geographic distance, erik torgersen participated remotely under section 2.02 remote participation"
+  },
+  {
+   "name": "A. Burney",
+   "role": "Land Use Director",
+   "status": "remote",
+   "quote": "due to family illness, a. burney"
+  },
+  {
+   "name": "Bill Hannigan",
+   "role": "Hannigan Engineering",
+   "status": "present",
+   "quote": "bill hannigan, hannigan engineering noted that at the previous board meeting, the board expressed"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "101 Pleasant Street was passed over at the decisions item.",
+   "quote": "101 pleasant street- passed over."
+  },
+  {
+   "decision": "Board members asked that the Leominster-Shirley Road and Fort Pond Road traffic counts be supplied to the peer traffic review for the 1263 Reservoir Road and 435 Leominster-Shirley Road project.",
+   "quote": "board members would like those counts supplied to the peer traffic review"
+  },
+  {
+   "decision": "A. Burney would contact MRPC about possible traffic counts for West Townsend Road at Howard Street, and for Howard Street.",
+   "quote": "a. burney would contact mrpc regarding possible counts for west townsend road at howard street"
+  },
+  {
+   "decision": "The Board would submit both a warrant article for the May town meeting and a capital request for the Master Plan update, hoping one or the other is approved.",
+   "quote": "the board would submit both a warrant article for may town meeting and also a capital request"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan update cost estimate",
+   "what_was_recorded": "A. Burney reported planners' typical cost for a full master plan update and suggested a total Master Plan budget of $150,000, against roughly $40,000 available.",
+   "figures_as_printed": [
+    "$135,000 – $200,000",
+    "$150,000",
+    "~$40,000"
+   ],
+   "quote": "feedback on the typical cost for updating a full master plan"
+  },
+  {
+   "topic": "Master Plan update capital request",
+   "what_was_recorded": "The Board voted to request $110,000 from Capital Planning for the Master Plan update.",
+   "figures_as_printed": [
+    "$110,000"
+   ],
+   "quote": "p. bertram made motion that the board submits a request for $110,000 for master plan update to capital planning"
+  },
+  {
+   "topic": "Capital Planning funding shortfall for Master Plan elements",
+   "what_was_recorded": "The Capital Planning Committee was told the Board lacked enough funds for two Elements of the Master Plan and might seek Capital Planning funding; no figure printed.",
+   "figures_as_printed": [],
+   "quote": "the committee was made aware that the board did not have enough funds available for two elements of the master plan"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "1263 Reservoir Road & 435 Leominster-Shirley Road ANR Plan",
+   "resolution": "approved 4-0 after revised easement",
+   "quote": "m. allison made motion to accept the anr plan, p. bertram seconded, all aye.",
+   "tags": [
+    "ANR plan",
+    "frontage",
+    "easements"
+   ]
+  },
+  {
+   "topic": "360 Flat Hill Road, Scenic Road",
+   "resolution": "referred to separate minutes",
+   "quote": "360 flat hill road, scenic road- see separate minutes.",
+   "tags": [
+    "scenic road"
+   ]
+  },
+  {
+   "topic": "360 Flat Hill Road, Stormwater Management Permit",
+   "resolution": "referred to separate minutes",
+   "quote": "360 flat hill road, stormwater management permit- see separate minutes.",
+   "tags": [
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "97/125 Cross Street, 430/440 Mulpus Road hearing",
+   "resolution": "withdrawn without prejudice 3-0",
+   "quote": "p. bertram made motion to accept the withdrawal of 97 cross street, 125 cross street, 430 mulpus road & 440 mulpus road without prejudice",
+   "tags": [
+    "stormwater",
+    "withdrawal",
+    "engineering firm"
+   ]
+  },
+  {
+   "topic": "101 Pleasant Street",
+   "resolution": "passed over",
+   "quote": "101 pleasant street- passed over.",
+   "tags": [
+    "decision"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved, all aye",
+   "quote": "p. bertram made motion to approve minutes listed below, m. allison seconded, all aye.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "quote": "finalizing three articles for special town meeting.",
+   "tags": [
+    "committees",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Warrant articles for November 16, 2021 Special Town Meeting",
+   "resolution": "four articles submitted 3-0",
+   "quote": "p. bertram made motion to submit the four warrant articles for inclusion in the warrant for nove mber 16, 2021",
+   "tags": [
+    "warrant articles",
+    "zoning bylaw",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Traffic counts, Leominster-Shirley Road and Howard Street",
+   "resolution": "directed: counts to peer review; MRPC contact",
+   "quote": "board members would like those counts supplied to the peer traffic review",
+   "tags": [
+    "traffic",
+    "MRPC"
+   ]
+  },
+  {
+   "topic": "UMA Flowers community outreach meeting",
+   "resolution": "noted",
+   "quote": "the meeting would be held september 28, 7:00 p.m., town hall.",
+   "tags": [
+    "community outreach"
+   ]
+  },
+  {
+   "topic": "Master Plan update funding",
+   "resolution": "$110,000 request submitted to Capital Planning 3-0",
+   "quote": "p. bertram made motion that the board submits a request for $110,000 for master plan update to capital planning",
+   "tags": [
+    "master plan",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "noted: hybrid model resumed",
+   "quote": "meetings resumed at town hall with a hybrid model; both in-person and via zoom.",
+   "tags": [
+    "hybrid meeting",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Pond View Commons, LLC",
+   "resolution": "noted; ongoing",
+   "quote": "pond view commons, llc",
+   "tags": [
+    "MassHousing",
+    "ongoing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:40 p.m., 3-0",
+   "quote": "p. bertram made motion to adjourn, m. allison seconded, all aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 1263 Reservoir Road & 435 Leominster-Shirley Road",
+   "where": "list",
+   "quote": "anr plan, 1263 reservoir road & 435 leominster-shirley road"
+  },
+  {
+   "name": "Minutes 09/13/2021",
+   "where": "list",
+   "quote": "minutes 09/13/2021- 08/23/2021, 1263 reservoir road & 435 leominster-shirley road-"
+  },
+  {
+   "name": "Minutes 08/23/2021, 1263 Reservoir Road & 435 Leominster-Shirley Road",
+   "where": "list",
+   "quote": "08/23/2021, 1263 reservoir road & 435 leominster-shirley road-"
+  },
+  {
+   "name": "Draft Warrant Articles",
+   "where": "list",
+   "quote": "draft warrant articles"
+  },
+  {
+   "name": "Building Commissioner letter (re: frontage, 1263 Reservoir Road & 435 Leominster-Shirley Road)",
+   "where": "text",
+   "quote": "the building commissioner issued a letter stating"
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "zoning bylaw",
+  "warrant articles",
+  "master plan",
+  "stormwater",
+  "remote participation",
+  "traffic",
+  "capital planning"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

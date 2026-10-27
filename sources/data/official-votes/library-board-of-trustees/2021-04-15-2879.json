@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2021-04-15",
  "docid": "2879",
@@ -12,23 +12,288 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes of March 25, 2021 as amended",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Kate McCarron",
-   "outcome": "passed unanimously",
+   "motion": "Accept the minutes of March 25th 2021, as amended.",
+   "moved_by": "Harry",
+   "seconded_by": "Kate",
+   "outcome": "passed",
    "procedural": true,
    "quote": "harry made a motion to accept minutes of march 25th 2021 as amended, seconded by kate. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Harry Kubetz",
-   "seconded_by": "Donna Saiia",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Harry",
+   "seconded_by": "Donna",
    "outcome": "passed",
    "procedural": true,
    "quote": "motion to adjourn by harry seconded by donna. meeting was adjourned at 8:07 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07348350000000001
+ "note": "Pages 3-9 are blank. Roll call is stated for all votes but no tallies are printed. Only two motions are recorded (approval of minutes, adjournment). The adjournment result is inferred from 'Meeting was adjourned at 8:07 p.m.' rather than a printed outcome. Dick's fine-free suggestion is recorded as a suggestion, not a decision. Maya is named as asking a question but is not in the attendance list; her status is not stated.",
+ "cost_usd": 0.01741085,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "remote",
+   "quote": "the lplbt meeting was called to order at 6:46 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "not stated",
+   "status": "remote",
+   "quote": "laura boussom, maia wentrup, michael-ray jeffreys"
+  },
+  {
+   "name": "Maya",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "maya asked about program costs, whether we would use the money budgeted for programs."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "FY21 budget expenditure to date",
+   "what_was_recorded": "The FY21 budget was 65% expended in April, the tenth month of the fiscal year, and the director said it is on track.",
+   "figures_as_printed": [
+    "65%"
+   ],
+   "quote": "for the fy21 budget, april is the 10th month of the fiscal year. the budget is 65% expended."
+  },
+  {
+   "topic": "Electric bill",
+   "what_was_recorded": "A large electric bill came in the past month; the director said there are no major issues and the budget is on track.",
+   "figures_as_printed": [],
+   "quote": "we had a large electric bill the past month but there are no major issues and the budget is on track."
+  },
+  {
+   "topic": "Library materials costs",
+   "what_was_recorded": "Library materials costs are lower until spring, when some annual renewals come up.",
+   "figures_as_printed": [],
+   "quote": "the costs for library materials are lower until the springtime when some annual renewals will come up."
+  },
+  {
+   "topic": "FY22 town budget",
+   "what_was_recorded": "The May 1st annual town meeting will finalize the FY22 budget, and the preliminary town budget is almost exactly what the library requested.",
+   "figures_as_printed": [],
+   "quote": "the may 1st annual town meeting will finalize the fy22 budget. the preliminary town budget is almost exactly what we requested."
+  },
+  {
+   "topic": "Programming budget",
+   "what_was_recorded": "The programming budget was 13% expended; the director said staff were finalizing program plans so the budget would be used.",
+   "figures_as_printed": [
+    "13%"
+   ],
+   "quote": "it's currently only 13% expended."
+  },
+  {
+   "topic": "Paper cutter replacement",
+   "what_was_recorded": "The paper cutter was replaced; it is needed for craft preparation and saves costs in getting crafts together.",
+   "figures_as_printed": [],
+   "quote": "we replaced the paper cutter. it's needed for the craft preparation and saves costs in getting crafts together."
+  },
+  {
+   "topic": "Poetry month program funding",
+   "what_was_recorded": "Poetry month programs are funded by the Mary Ellen and Richard Letarte Poetry fund.",
+   "figures_as_printed": [],
+   "quote": "programs are funded by the mary ellen and richard letarte poetry fund."
+  },
+  {
+   "topic": "Carpet replacement bids",
+   "what_was_recorded": "Bids for the carpet replacement will be opened on May 4th.",
+   "figures_as_printed": [],
+   "quote": "on may 4th we will have the bids for the carpet replacement."
+  },
+  {
+   "topic": "Friends of LPL book sales",
+   "what_was_recorded": "The Friends reported March book sales of around $400 and are thinning stock before accepting donations.",
+   "figures_as_printed": [
+    "$400"
+   ],
+   "quote": "in their latest meeting the friends discussed book sales. march sales were around $400."
+  },
+  {
+   "topic": "Lunenburg Cultural Council grants",
+   "what_was_recorded": "LCC grants will move forward; the board had been operating below quorum.",
+   "figures_as_printed": [],
+   "quote": "muir noted that the lcc (lunenburg cultural council) grants will be moving forward."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "public comment • no public comment.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "quote": "harry made a motion to accept minutes of march 25th 2021 as amended, seconded by kate. the motion passed unanimously.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "no action",
+   "quote": "the may 1st annual town meeting will finalize the fy22 budget. the preliminary town budget is almost exactly what we requested.",
+   "tags": [
+    "budget",
+    "programs",
+    "staffing",
+    "building hours"
+   ]
+  },
+  {
+   "topic": "Strategic Plan Subcommittee Update",
+   "resolution": "no action",
+   "quote": "the subcommittee met on wednesday and finalized the survey, which is the last major part of the strategic plan.",
+   "tags": [
+    "strategic plan"
+   ]
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "discussed, no action",
+   "quote": "we covered chapter two: bylaws. our town charter takes the place of bylaws and this covers most of the responsibilities listed in the trustee handbook.",
+   "tags": [
+    "trustee handbook",
+    "self-evaluation",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "no action",
+   "quote": "in their latest meeting the friends discussed book sales.",
+   "tags": [
+    "friends group",
+    "book sales"
+   ]
+  },
+  {
+   "topic": "Update On Future Meetings",
+   "resolution": "discussed, no action",
+   "quote": "the bos did not meet on april 6th in person. all town boards are still meeting remotely.",
+   "tags": [
+    "remote meetings",
+    "pandemic"
+   ]
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "discussed, no action",
+   "quote": "dick noted that the bpl is going fine free.",
+   "tags": [
+    "fine free",
+    "grants",
+    "garden"
+   ]
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:07 p.m.",
+   "quote": "meeting was adjourned at 8:07 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "April 15th 2021 Agenda",
+   "where": "list",
+   "quote": "o april 15th 2021 agenda"
+  },
+  {
+   "name": "April 2021 Director’s Report",
+   "where": "list",
+   "quote": "o april 2021 director's report"
+  },
+  {
+   "name": "April Adult Services Report",
+   "where": "list",
+   "quote": "o april adult services report"
+  },
+  {
+   "name": "April 2021 Youth Services Report",
+   "where": "list",
+   "quote": "o april 2021 youth services report"
+  },
+  {
+   "name": "April 2021 Teen Services Report",
+   "where": "list",
+   "quote": "o april 2021 teen services report"
+  }
+ ],
+ "tags": [
+  "library",
+  "trustees",
+  "remote meeting",
+  "budget",
+  "FY21 budget",
+  "FY22 budget",
+  "trustee handbook",
+  "strategic plan",
+  "friends of LPL",
+  "fine free",
+  "pandemic",
+  "programs",
+  "grants"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

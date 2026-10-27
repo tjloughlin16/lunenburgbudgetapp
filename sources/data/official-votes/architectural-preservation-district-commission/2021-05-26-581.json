@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2021-05-26",
  "docid": "581",
@@ -12,15 +12,172 @@
  },
  "votes": [
   {
-   "motion": "approve minutes from April 21, 2021",
-   "outcome": "passed unanimously",
-   "procedural": true,
+   "motion": "Approve the minutes of 4/21/21.",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed (unanimous; minutes say 'unanimously accepted', no count printed)",
+   "procedural": true,
    "quote": "minutes from 4/21/21 were reviewed and unanimously accepted."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Scanned image; text extracted. Only one vote is recorded in the minutes. The meeting included substantial discussion of historic preservation matters (the primary school, Article 22 funding, the Brooks house, contributing properties) but no votes were taken on these items—they were discussed or assigned to individuals for further action.",
- "cost_usd": 0.07870690000000001
+ "note": "Text is OCR-garbled in places (e.g. 'MeeIng', 'NaIonal', 'Le<er', 'draYed', 'Members in a<endance'); quotes are copied as printed. Only one vote is recorded (approval of 4/21/21 minutes); no motion for adjournment is recorded, and no movers or seconders are printed. No public comment section, no documents list, and no chair is named. Amery Phelps and Tony are mentioned but not recorded as attending.",
+ "cost_usd": 0.021446299999999998,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "role": "not stated",
+   "status": "present",
+   "quote": "richard mcgrath cullen dwyer brian corcoran"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "not stated",
+   "status": "present",
+   "quote": "richard mcgrath cullen dwyer brian corcoran"
+  },
+  {
+   "name": "Brian Corcoran",
+   "role": "not stated",
+   "status": "present",
+   "quote": "richard mcgrath cullen dwyer brian corcoran"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Cullen to draft a letter to the owner of the old church on Main St requesting repair of the steeple.",
+   "quote": "le<er to be drayed by cullen to owner of property with request to repair steeple."
+  },
+  {
+   "decision": "Next APDC meeting set for June 23, 2021.",
+   "quote": "next apdc meeing june 23, 2021."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Article 22 funds for green space at the Primary Building",
+   "what_was_recorded": "The minutes say approximately 30k in funds is available under Article 22, alongside review of green space at the Primary Building. No dollar sign is printed.",
+   "quote": "there are approximately 30k funds available and reviewed green space at primary building.",
+   "figures_as_printed": [
+    "30k"
+   ]
+  },
+  {
+   "topic": "Future preservation assistance funding",
+   "what_was_recorded": "The minutes say Tony is looking for funds for future preservation assistance. No figure is printed.",
+   "quote": "in addiion, tony is looking for funds for future preservaion assistance.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes of 4/21/21",
+   "resolution": "approved unanimously",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes from 4/21/21 were reviewed and unanimously accepted."
+  },
+  {
+   "topic": "Correspondence and new business",
+   "resolution": "no action; none discussed",
+   "tags": [
+    "correspondence"
+   ],
+   "quote": "no correspondence or new business was discussed."
+  },
+  {
+   "topic": "Old primary school National Historic Register",
+   "resolution": "discussed; town approval would be needed",
+   "tags": [
+    "national register",
+    "historic designation"
+   ],
+   "quote": "we discussed adding the old primary school to the naional historic register ."
+  },
+  {
+   "topic": "Town Meeting decision on APDC override",
+   "resolution": "reviewed; homeowners still bound by APDC rules",
+   "tags": [
+    "town meeting",
+    "APDC authority"
+   ],
+   "quote": "reviewed the town meeing decision to have the ability to override apdc, but homeowners must sill abide by apdc rules."
+  },
+  {
+   "topic": "Article 22 and green space at Primary Building",
+   "resolution": "discussed; whether APDC can be involved in the green space plan raised",
+   "tags": [
+    "article 22",
+    "green space",
+    "primary building"
+   ],
+   "quote": "the topic of aricle 22 was discussed."
+  },
+  {
+   "topic": "Brooks house",
+   "resolution": "discussed; another group meeting suggested to discuss plans",
+   "tags": [
+    "brooks house"
+   ],
+   "quote": "the brooks house was discussed and suggested that another group meeing be scheduled to discuss plans."
+  },
+  {
+   "topic": "Endangered contributing properties",
+   "resolution": "letter to be drafted to the owner of the old church on Main St about the steeple",
+   "tags": [
+    "contributing properties",
+    "neglect",
+    "old church"
+   ],
+   "quote": "discussion ensued about other contribuing properies endangered of damage/neglect."
+  },
+  {
+   "topic": "Property sale in the district",
+   "resolution": "noted",
+   "tags": [
+    "property sale"
+   ],
+   "quote": "amery phelps sold her home in the district."
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting June 23, 2021; adjourned 7:50 pm",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "next apdc meeing june 23, 2021."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Article 22 (Town Meeting warrant article)",
+   "where": "text",
+   "quote": "the topic of aricle 22 was discussed."
+  },
+  {
+   "name": "Letter to the owner of the old church on Main St (to be drafted by Cullen Dwyer)",
+   "where": "text",
+   "quote": "le<er to be drayed by cullen to owner of property with request to repair steeple."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "national register",
+  "article 22",
+  "green space",
+  "contributing properties",
+  "Brooks house",
+  "town meeting override"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

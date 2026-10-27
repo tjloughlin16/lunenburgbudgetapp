@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-05-18",
  "docid": "5256",
@@ -12,58 +12,484 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Leander Ferebee to Heavy Equipment Operator, effective May 24, 2021",
+   "motion": "Ratify the Town Manager's appointment of Leander Ferebee to Heavy Equipment Operator, effective May 24th.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "to ratify the town manager appointment of leander ferebee to heavy equipment operator effective may 24th vote: mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "to ratify the town manager appointment of leander ferebee to heavy equipment operator effective may 24th"
   },
   {
-   "motion": "Elect Tom Alonzo as Chairman of the Select Board",
-   "moved_by": "M. Jeffreys",
-   "seconded_by": "L. Franco",
+   "motion": "Elect Tom Alonzo as Chairman.",
+   "moved_by": "Mr. Jeffreys",
+   "seconded_by": "Mr. Franco",
    "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "mr. jeffreys nominated mr. alonzo for chairman; mr. franco seconded it. there were no other nominations for chairman. vote: mr. marino-aye, mr. dwyer-aye, mr. jeffr",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "mr. jeffreys nominated mr. alonzo for chairman; mr. franco seconded it."
   },
   {
-   "motion": "Elect Michael-Ray Jeffreys as Vice Chairman of the Select Board",
-   "moved_by": "J. Marino",
-   "seconded_by": "T. Dwyer",
+   "motion": "Elect Michael-Ray Jeffreys as Vice Chairman.",
+   "moved_by": "Mr. Marino",
+   "seconded_by": "Mr. Dwyer",
    "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "mr. marino nominated mr. jeffreys; mr. dwyer seconded it. there were no other nominations for vice chairman. vote: mr. marino-aye, mr. dwyer-aye, mr. ",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "mr. marino nominated mr. jeffreys; mr. dwyer seconded it."
   },
   {
-   "motion": "Elect Lou Franco as Clerk of the Select Board",
-   "moved_by": "J. Marino",
-   "seconded_by": "T. Alonzo",
+   "motion": "Elect Lou Franco as Clerk.",
+   "moved_by": "Mr. Marino",
+   "seconded_by": "Mr. Alonzo",
    "outcome": "passed 4-0-1",
-   "procedural": true,
-   "quote": "mr. marino nominated mr. franco for clerk and mr. alonzo seconded it. there were no other nominations for clerk. after some hesitation from mr. franco on accepti",
-   "quote_taken_from_text": true
+   "procedural": false,
+   "quote": "mr. marino nominated mr. franco for clerk and mr. alonzo seconded it."
   },
   {
-   "motion": "Approve the minutes of May 11, 2021",
+   "motion": "Approve the minutes of May 11, 2021.",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "to approve the minutes of may 11, 2021 vote: mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye, mr. franco- abstained"
+   "quote": "to approve the minutes of may 11, 2021"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "L. Franco",
    "outcome": "passed 5-0",
    "procedural": true,
-   "quote": "to adjourn the meeting at vote: mr. jeffreys- aye, mr. dwyer-aye, mr. marino-aye, mr. franco-aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2nd: l. franco to adjourn the meeting at"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-scanned minutes; six votes recorded, all passed. Two votes had abstentions (Chairman and Clerk elections, Vice Chairman election, and minutes approval); the first two and last have complete vote counts matching five members.",
- "cost_usd": 0.14209449999999998
+ "note": "OCR of a scanned minutes document (===OCR macOS Vision===). Some text is garbled or joined (e.g. 'ned with the Pledee of Allegiance', 'June 1$', 'Claim. Peterson'). Page 2 begins mid-sentence and page 5 begins mid-item, so the start of the Monty Tech and Town Manager sections is not fully visible. The adjournment motion gives no time. The Chair's and Vice Chair's abstentions are recorded; the vote lines for those were not quoted verbatim because the OCR breaks them across lines, so the nomination sentences are quoted instead. Roll-call result is not recorded.",
+ "cost_usd": 0.13993075,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer,"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer,"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "Member",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; todd dwyer,"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "Member",
+   "status": "present",
+   "quote": "todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Lou Franco",
+   "role": "Member",
+   "status": "present",
+   "quote": "todd dwyer, jim marino, lou franco"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; rob oliva, dpw director"
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "elaine m. peterson executive assistant to the town manager"
+  },
+  {
+   "name": "Dave Rodgers",
+   "role": "public comment, 82 Highland Street",
+   "status": "present",
+   "quote": "dave rodgers, 82 highland street, welcomed mr. franco to the select board, adding he was"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board requested that the Town Manager express its thanks to Monty Tech for its drawings of the old Primary property site.",
+   "quote": "the board requested ms. lemieux express thanks to monty tech for their drawings of the site."
+  },
+  {
+   "decision": "Chair suggested waiting two weeks for public comment on the Green Communities Committee text before adopting and ratifying it.",
+   "quote": "mr. alonzo suggested waiting two weeks for any public comment before adopting and ratifying."
+  },
+  {
+   "decision": "Chair requested a future agenda item on campaign signs adjacent to the polling place on Election Day, which the town sign bylaw does not address.",
+   "quote": "mr. alonzo requested for a future agenda item that the town sign bylaw did not address"
+  },
+  {
+   "decision": "Chair suggested waiting for the Conservation Commission's report before asking whether covering the Woodruff debris with soil and a barrier would be legal.",
+   "quote": "mr. alonzo suggested waiting for the conservation commission's report and asking the question."
+  },
+  {
+   "decision": "Vice Chairman requested periodic updates on the DPW work to divert storm water runoff on Flat Hill Road in the Town Manager reports; the Town Manager said she would add them with the caveat that only new information is added.",
+   "quote": "mr. jeffreys requested periodic updates on the dpw work to divert storm water runoff on flat hill road in ms. lemieux's town manager reports."
+  },
+  {
+   "decision": "Town Manager said she will ask for more leeway on the state's remote-meeting rules; a future announcement will be made.",
+   "quote": "she will ask for some more leeway as this information was just received yesterday."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Warrants signed by the Chair",
+   "what_was_recorded": "Chair reported signing four warrants the previous week, each with its printed amount.",
+   "figures_as_printed": [
+    "$1,763,055.82",
+    "$588,962.00",
+    "$425.82",
+    "$988,006.88"
+   ],
+   "quote": "accounts payable warrant #53 21 dated 5/11/21, in the amount of $1,763,055.82"
+  },
+  {
+   "topic": "Municipal aggregation electricity rates",
+   "what_was_recorded": "Current supplier contract rate, the new supplier rate from November 1, 2021, and the Unitil basic service rate were reported.",
+   "figures_as_printed": [
+    "$0.10998",
+    "$0.11210",
+    "$0.09554"
+   ],
+   "quote": "as of november 1, 2021 the electricity supply agreement will be with first point for a rate of $0.11210 for 36 months."
+  },
+  {
+   "topic": "Senate FY22 state budget proposal effect on local aid",
+   "what_was_recorded": "The Senate proposal's effect on local aid compared with the Governor's proposal was reported as an increase, with receipts and assessments figures.",
+   "figures_as_printed": [
+    "$7,118",
+    "$2,621",
+    "$4,497"
+   ],
+   "quote": "the senate's proposal included an additional $2,621 in estimated receipts and $4,497 less in assessments/charges."
+  },
+  {
+   "topic": "Woodruff property debris clean-up cost",
+   "what_was_recorded": "The environmental consultant prepared a preliminary cost estimate for clean-up and stabilization; no figure is printed in the minutes.",
+   "figures_as_printed": [],
+   "quote": "as well as a preliminary cost estimate for conducting clean-up and stabilization of the site."
+  },
+  {
+   "topic": "Ground penetrating radar cost",
+   "what_was_recorded": "A suggestion to use ground penetrating radar at the Woodruff site was noted as very expensive; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "but it was noted it is very expensive to use."
+  },
+  {
+   "topic": "Complete Streets construction bids",
+   "what_was_recorded": "Bids were expected to come in above the original estimate because of rising construction costs; no figure is printed.",
+   "figures_as_printed": [],
+   "quote": "due to rising construction costs, we anticipate that bids will come in higher than our original estimate."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "welcome to new member; old Primary building demolition permit; TCP Building Design",
+   "quote": "dave rodgers, 82 highland street, welcomed mr. franco to the select board, adding he was"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Opening remarks and welcome of new member Lou Franco",
+   "resolution": "no action",
+   "quote": "mr. alonzo thanked everyone who came out to vote in the annual election last saturday.",
+   "tags": [
+    "welcome",
+    "election"
+   ]
+  },
+  {
+   "topic": "Ratification of Heavy Equipment Operator appointment (Leander Ferebee)",
+   "resolution": "approved 5-0",
+   "quote": "to ratify the town manager appointment of leander ferebee to heavy equipment operator effective may 24th",
+   "tags": [
+    "appointments",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Reorganization of the Board",
+   "resolution": "Chair, Vice Chairman and Clerk elected",
+   "quote": "mr. alonzo called for nominations for the position of chairman.",
+   "tags": [
+    "governance"
+   ]
+  },
+  {
+   "topic": "Select Board designees to committees and liaison assignments",
+   "resolution": "discussed; members to review list",
+   "quote": "he asked the members to look over the list and decide what they want to keep or take on.",
+   "tags": [
+    "appointments",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Green Communities Committee charter text (draft)",
+   "resolution": "public comment to be taken for two weeks before adoption",
+   "quote": "mr. alonzo suggested waiting two weeks for any public comment before adopting and ratifying.",
+   "tags": [
+    "Green Communities",
+    "charter"
+   ]
+  },
+  {
+   "topic": "ACO 2021 1st Quarter Report",
+   "resolution": "received; no action",
+   "quote": "there were no questions or comments regarding the report, other than the amount of loose dogs in town.",
+   "tags": [
+    "animal control"
+   ]
+  },
+  {
+   "topic": "Approve minutes of May 11, 2021",
+   "resolution": "approved 4-0-1",
+   "quote": "to approve the minutes of may 11, 2021",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed; reported",
+   "quote": "mr. alonzo reported he signed the following warrants last week:",
+   "tags": [
+    "warrants",
+    "finance"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "future agenda item requested",
+   "quote": "mr. alonzo requested for a future agenda item that the town sign bylaw did not address",
+   "tags": [
+    "signs",
+    "elections"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "quote": "committee reports- there were none this evening",
+   "tags": [
+    "committees"
+   ]
+  },
+  {
+   "topic": "Monty Tech concept site plan and CAD illustrations, Old Primary Property (30 School Street)",
+   "resolution": "discussed; Board thanked Monty Tech",
+   "quote": "the board requested ms. lemieux express thanks to monty tech for their drawings of the site.",
+   "tags": [
+    "Monty Tech",
+    "old Primary school",
+    "site plan"
+   ]
+  },
+  {
+   "topic": "Town Manager report: committee vacancies and expiring terms",
+   "resolution": "reported; applications to Select Board office",
+   "quote": "the following is a list of current vacancies on the following committees:",
+   "tags": [
+    "appointments",
+    "vacancies"
+   ]
+  },
+  {
+   "topic": "Municipal aggregation electricity supply",
+   "resolution": "reported; no action",
+   "quote": "municipal aggregation-electricity supply:",
+   "tags": [
+    "municipal aggregation",
+    "electricity"
+   ]
+  },
+  {
+   "topic": "Senate FY22 state budget proposal",
+   "resolution": "reported; no action",
+   "quote": "senate releases fy22 state budget proposal:",
+   "tags": [
+    "state budget",
+    "local aid"
+   ]
+  },
+  {
+   "topic": "Complete Streets construction",
+   "resolution": "reported; construction to start May 24th",
+   "quote": "complete streets construction:",
+   "tags": [
+    "Complete Streets",
+    "construction"
+   ]
+  },
+  {
+   "topic": "Woodruff property debris, 104 Fairview Road",
+   "resolution": "reported; Board asked questions; Conservation Commission report awaited",
+   "quote": "update on debris found on woodruff property (104 fairview road):",
+   "tags": [
+    "Woodruff property",
+    "environment",
+    "illegal dumping"
+   ]
+  },
+  {
+   "topic": "Meetings, events and announcements",
+   "resolution": "reported; Flat Hill Road updates requested",
+   "quote": "meetings, events and other announcements:",
+   "tags": [
+    "DPW",
+    "events"
+   ]
+  },
+  {
+   "topic": "COVID-19 update and state reopening",
+   "resolution": "reported; remote-meeting leeway to be sought",
+   "quote": "covid-19 update may 18, 2021",
+   "tags": [
+    "COVID-19",
+    "remote meetings"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings schedule",
+   "resolution": "announced",
+   "quote": "mr. alonzo announced their next meetings are tuesday, june 1, june 8, and june 15.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (Dave Rodgers)",
+   "resolution": "no action",
+   "quote": "dave rodgers, 82 highland street, welcomed mr. franco to the select board, adding he was",
+   "tags": [
+    "public comment",
+    "old Primary school",
+    "TCP Building"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:53 p.m.",
+   "quote": "the meeting adjourned at 8:53 p.m.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Accounts Payable Warrant #53 21, dated 5/11/21, $1,763,055.82",
+   "where": "list",
+   "quote": "accounts payable warrant #53 21 dated 5/11/21, in the amount of $1,763,055.82"
+  },
+  {
+   "name": "Payroll Deduction Warrant #54 21, dated 5/12/2021, $588,962.00",
+   "where": "list",
+   "quote": "payroll deduction warrant #54 21, dated 5/12/2021, in the amount of $588,962.00"
+  },
+  {
+   "name": "Payroll Warrant #23P21X, dated 5/3/2021, $425.82",
+   "where": "list",
+   "quote": "payroll warrant #23p21x dated 5/3/2021, in the amount of $425.82"
+  },
+  {
+   "name": "Payroll Warrant #23P21, dated 5/13/2021, $988,006.88",
+   "where": "list",
+   "quote": "payroll warrant #23p21, dated 5/13/2021, in the amount of $988,006.88"
+  },
+  {
+   "name": "Monty Tech Concept Site Plan and CAD illustrations for Old Primary Property (30 School Street)",
+   "where": "text",
+   "quote": "discussion about monty tech concept site plan and cad illustrations for old"
+  },
+  {
+   "name": "ACO 2021 1st Quarter Report",
+   "where": "text",
+   "quote": "there were no questions or comments regarding the report, other than the amount of loose dogs in town."
+  },
+  {
+   "name": "Minutes of May 11, 2021",
+   "where": "text",
+   "quote": "to approve the minutes of may 11, 2021"
+  },
+  {
+   "name": "Town sign bylaw",
+   "where": "text",
+   "quote": "requested for a future agenda item that the town sign bylaw did not address campaign signs adjacent to the polling place on election day."
+  },
+  {
+   "name": "Lunenburg Green Communities Committee draft text (Sections 1-3, 8-10)",
+   "where": "text",
+   "quote": "the lunenburg green communities committee will work with the massachusetts department"
+  },
+  {
+   "name": "Senate FY22 State Budget Proposal, Senate Ways and Means Committee, May 11",
+   "where": "text",
+   "quote": "senate releases fy22 state budget proposal:"
+  },
+  {
+   "name": "Environmental Site Assessment report (Woodruff property), received May 13",
+   "where": "text",
+   "quote": "on may 13th i received the environmental site assessmentreport from the environmental consultant we"
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G. L. c. 30A, § 20",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting law"
+  },
+  {
+   "name": "Request for Proposals (RFP) for electricity prices, Community Choice Power Supply",
+   "where": "text",
+   "quote": "request for proposals (rfp) forelectricity prices forthe town's community choice power supply program."
+  },
+  {
+   "name": "State of Emergency Order",
+   "where": "text",
+   "quote": "governor baker will end the state of emergency june 15, and the administration will work with"
+  },
+  {
+   "name": "COVID-19 Update May 18, 2021 (Board of Health weekly update)",
+   "where": "text",
+   "quote": "covid-19 update may 18, 2021"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "reorganization",
+  "appointments",
+  "DPW",
+  "municipal aggregation",
+  "COVID-19",
+  "Monty Tech",
+  "old Primary school",
+  "Woodruff property debris",
+  "state budget",
+  "warrants",
+  "Green Communities",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "mr. alonzo reported he signed the following warrants last week:"
+ },
+ "dropped_unquoted_by_field": {}
 }

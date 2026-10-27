@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "public-access-cable-committee-pacc",
  "meeting_date": "2021-05-03",
  "docid": "4714",
@@ -12,15 +12,152 @@
  },
  "votes": [
   {
-   "motion": "To adjourn",
+   "motion": "Approve the minutes of the previous meeting.",
    "outcome": "passed",
+   "procedural": true,
+   "quote": "minutes have been reviewed and approved"
+  },
+  {
+   "motion": "Re-appoint Peter Lincoln, Faith Beal, and Steve Archambault.",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "the committee approved to re appoint peter lincoln, faith beal, and steve archambault."
+  },
+  {
+   "motion": "Adjourn the meeting.",
    "moved_by": "Pete",
    "seconded_by": "Jeff",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion pete, seconded jeff - passed"
+   "quote": "(motion pete, seconded jeff - passed)"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two items presented as formal actions (\"Review and approve meeting minutes\" and \"Re-appointing reviews\") lack explicit voting language (motion, seconded, vote count, or passed/carried). Only the adjournment vote is recorded with explicit motion and outcome language.",
- "cost_usd": 0.0978195
+ "note": "Minutes are a summary. No vote counts are printed for any motion. The minutes approval and the re-appointments are recorded as approved with no mover or second printed, so they are listed as votes without a moved_by or seconded_by. The minutes do not name the manager. Public comment is recorded only as \"None\". No documents, attachments or exhibits are listed.",
+ "cost_usd": 0.014270850000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Jeff Bajko",
+   "role": "PACC Board Member",
+   "status": "present",
+   "quote": "respectfully submitted, jeff bajko, pacc board member"
+  },
+  {
+   "name": "Steve Walker",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, steve archambault, faith beal"
+  },
+  {
+   "name": "Peter Lincoln",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, steve archambault, faith beal"
+  },
+  {
+   "name": "Steve Archambault",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, steve archambault, faith beal"
+  },
+  {
+   "name": "Faith Beal",
+   "role": "PACC member",
+   "status": "present",
+   "quote": "pacc members present were jeff bajko, steve walker, peter lincoln, steve archambault, faith beal"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Non-member",
+   "status": "present",
+   "quote": "non-members: jo mclaughlin"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Fund ending balance",
+   "what_was_recorded": "The manager reported the ending balance as of the meeting.",
+   "figures_as_printed": [
+    "$796,059.00"
+   ],
+   "quote": "ending balance:$796,059.00"
+  },
+  {
+   "topic": "April expenses",
+   "what_was_recorded": "The manager reported April expenses were salaries only, with HDMI cables to be purchased and to come out in June.",
+   "figures_as_printed": [],
+   "quote": "april expenses: salaries only."
+  },
+  {
+   "topic": "March interest",
+   "what_was_recorded": "The manager reported that interest was added in March.",
+   "figures_as_printed": [],
+   "quote": "march: interest was added"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Roll call and public comment",
+   "resolution": "no action; public comment none",
+   "quote": "public comments: 1. none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Review and approve meeting minutes",
+   "resolution": "approved",
+   "quote": "minutes have been reviewed and approved",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Manager's update",
+   "resolution": "received, no action",
+   "quote": "taylor is digging for stories for the news",
+   "tags": [
+    "manager update",
+    "programming",
+    "staffing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Re-appointing reviews",
+   "resolution": "approved re-appointments of Peter Lincoln, Faith Beal, and Steve Archambault",
+   "quote": "the committee approved to re appoint peter lincoln, faith beal, and steve archambault.",
+   "tags": [
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:54pm; next meeting June 7th",
+   "quote": "(motion pete, seconded jeff - passed)",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [],
+ "tags": [
+  "public access television",
+  "cable committee",
+  "manager update",
+  "budget balance",
+  "appointments",
+  "videographers",
+  "town meeting recording"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

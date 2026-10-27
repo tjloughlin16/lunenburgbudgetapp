@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-09-09",
  "docid": "2093",
@@ -12,15 +12,266 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes as amended from the August 26, 2021 meeting",
+   "motion": "Approve the minutes of the August 26, 2021 meeting as amended.",
    "moved_by": "Mr. Menard",
    "seconded_by": "Mr. Passios",
-   "outcome": "carried unanimously",
+   "outcome": "passed",
    "procedural": true,
    "quote": "mr. menard motioned to approve the minutes as amended from the august 26, 2021 meeting. mr. passios seconded. on vote, motion carried unanimously."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0800835
+ "note": "Plain text extraction of two pages, not a scan. One motion recorded (approval of minutes); no adjournment vote or closing time recorded. No dollar figures appear in the text; budget items are recorded for the money discussed without amounts. No public comment speakers recorded.",
+ "cost_usd": 0.01650849,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray"
+  },
+  {
+   "name": "Tom Gray",
+   "role": "",
+   "status": "present",
+   "quote": "present: peter beardmore, dave passios, jay simeone, chris menard, evan watters, tom gray"
+  },
+  {
+   "name": "Tom Balish",
+   "role": "",
+   "status": "absent",
+   "quote": "absent: tom balish guests: town manager heather lemieux, library director muir haman, land use director adam burney,"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, library director muir haman, land use director adam burney,"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, library director muir haman, land use director adam burney,"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "guests: town manager heather lemieux, library director muir haman, land use director adam burney,"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "School Committee Chairperson",
+   "status": "present",
+   "quote": "land use director adam burney, school committee chairperson carol archambault."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Scheduled the next meetings for September 23 (Superintendent, Town Manager) and October 14 (Special Town Meeting public hearing).",
+   "quote": "next meetings: september 23 (superintendent, town manager) october 14 (special town meeting public hearing)"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Library funding for electronic materials and staffing",
+   "what_was_recorded": "The Library Director said he will look for funds for electronic material licenses and more staffing; no amount is stated.",
+   "figures_as_printed": [],
+   "quote": "mr. haman will be looking for funds to cover the cost of licenses for electronic materials"
+  },
+  {
+   "topic": "Library HVAC capital request",
+   "what_was_recorded": "The Library Director said he may request funds for the HVAC system as a future capital planning item; no amount is stated.",
+   "figures_as_printed": [],
+   "quote": "he may be requesting funds to address the hvac system as a future capital planning item"
+  },
+  {
+   "topic": "Library carpeting project under the capital plan",
+   "what_was_recorded": "The Library Director reported the carpeting project covered by the capital plan is complete; no amount is stated.",
+   "figures_as_printed": [],
+   "quote": "the carpeting project covered by the capital plan is complete"
+  },
+  {
+   "topic": "Joint meeting on Chapter 70 school funds",
+   "what_was_recorded": "An announced joint Finance Committee and School Committee meeting on October 28, 2021 was to discuss Chapter 70 funds; no amount is stated.",
+   "figures_as_printed": [],
+   "quote": "to talk about chapter 70 funds."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order and Open Meeting Law statement",
+   "resolution": "no action",
+   "quote": "peter beardmore called the meeting to order at 7:01 p.m. and read a statement concerning the open meeting law",
+   "tags": [
+    "open meeting law",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Announcements: joint meeting on Chapter 70",
+   "resolution": "no action",
+   "quote": "october 28, 2021 at 7 p.m. at town hall there will be a joint meeting of the finance committee and school committee",
+   "tags": [
+    "chapter 70",
+    "school committee",
+    "joint meeting"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "4. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "no action",
+   "quote": "ms. lemieux briefed the committee on what happened at the select board meeting on september 7, 2021.",
+   "tags": [
+    "select board",
+    "town manager"
+   ]
+  },
+  {
+   "topic": "Discussion with Library Director",
+   "resolution": "no action",
+   "quote": "mr. haman informed the committee that the carpeting project covered by the capital plan is complete.",
+   "tags": [
+    "library",
+    "capital plan",
+    "staffing",
+    "hvac",
+    "strategic plan"
+   ]
+  },
+  {
+   "topic": "Discussion with Land Use Director",
+   "resolution": "no action",
+   "quote": "mr. burney informed the committee that his department looks stable for fy22.",
+   "tags": [
+    "land use",
+    "master plan",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Old Business: Special Town Meeting update",
+   "resolution": "no change to timeline",
+   "quote": "special town meeting update and time line: no change",
+   "tags": [
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "New Business: technology planning and cybersecurity",
+   "resolution": "discussed; no action",
+   "quote": "mr. beardmore expressed concern over how the town will handle its technology moving forward",
+   "tags": [
+    "technology",
+    "cybersecurity",
+    "information technology"
+   ]
+  },
+  {
+   "topic": "Minutes of August 26, 2021",
+   "resolution": "approved as amended",
+   "quote": "mr. menard motioned to approve the minutes as amended from the august 26, 2021 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "no action",
+   "quote": "committee members updated each other on their respective committee assignments.",
+   "tags": [
+    "committee reports"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "no action",
+   "quote": "12. public comment: none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Items for future meetings",
+   "resolution": "no action",
+   "quote": "meeting on september 30 possible, but not likely.",
+   "tags": [
+    "future meetings"
+   ]
+  },
+  {
+   "topic": "Next meetings",
+   "resolution": "scheduled",
+   "quote": "next meetings: september 23 (superintendent, town manager) october 14 (special town meeting public hearing)",
+   "tags": [
+    "schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "10-year strategic plan (Board of Library Trustees), undated draft",
+   "where": "text",
+   "quote": "the 10-year strategic plan being developed by the board of library trustees is almost finished."
+  },
+  {
+   "name": "Master Plan Request for Proposals (Land Use), undated",
+   "where": "text",
+   "quote": "there has been a request for proposals, but no response has been received."
+  }
+ ],
+ "tags": [
+  "library",
+  "land use",
+  "technology",
+  "cybersecurity",
+  "chapter 70",
+  "special town meeting",
+  "capital plan",
+  "minutes approval",
+  "school committee",
+  "staffing"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

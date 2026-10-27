@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-04-29",
  "docid": "2085",
@@ -12,47 +12,402 @@
  },
  "votes": [
   {
-   "motion": "recommend warrant article 3 for payment of prior year bills (transfer $645,000 from free cash) as recommended by Town Manager",
+   "motion": "Recommend Article 3 (Payment of Prior Year Bills) as recommended by the Town Manager.",
    "moved_by": "Evan",
    "seconded_by": "Chris",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "motion to recommend warrant article as recommended by town manager evan motioned, chris seconded, all in favor."
   },
   {
-   "motion": "recommend warrant article 5 (capital plan with revised figures and revenue sources) with Town Manager revisions",
+   "motion": "Recommend Article 5 (Capital Plan) with the Town Manager's revisions.",
    "moved_by": "Peter",
    "seconded_by": "Evan",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "motion to recommend the article with town manager revisions peter motioned, evan seconded, all in favor."
   },
   {
-   "motion": "recommend warrant article 6 (omnibus budget with $105,100 additional for recycling program) as recommended by Town Manager",
+   "motion": "Recommend Article 6 (Omnibus Budget) as recommended by the Town Manager.",
    "moved_by": "Peter",
    "seconded_by": "Dave",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "motion to recommend article 6 as recommended by the town manager peter motioned, dave seconded, all in favor."
   },
   {
-   "motion": "recommend approval of warrant article 17 (DPW Collective Bargaining Agreement, 3-year contract, July 1, 2021 – June 30, 2024) as recommended by Town Manager",
+   "motion": "Recommend approval of Article 17 (DPW Collective Bargaining Agreement) as recommended by the Town Manager.",
    "moved_by": "Peter",
    "seconded_by": "Chris",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": false,
    "quote": "motion to recommend approval as recommended by town manager peter motioned, chris seconded, all in favor"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave",
    "seconded_by": "Peter",
-   "outcome": "passed",
+   "outcome": "passed (all in favor)",
    "procedural": true,
-   "quote": "motion to adjourn dave seconded by peter all in favor"
+   "quote": "seconded by peter all in favor"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10574149999999999
+ "dropped_unquoted": 1,
+ "note": "Extracted text, not a scan. Four warrant-article votes are recorded as \"all in favor\" with no printed count. No vote was recorded on the TCP $54,000 request, the policy item, or the reports. \"Heather L.\" presents the warrant changes and appears under the Town Manager Report, but the minutes never say she is the Town Manager; she may not be Heather Sroka, the Secretary. Thomas Alonzo and Carol Archambault have no stated role. The minutes say \"Absent: None\". Dave Passios appears as a member and as a public speaker. The quote for item 3 is collapsed across a line break.",
+ "cost_usd": 0.020809550000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, jay simeone"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "member",
+   "status": "present",
+   "quote": "jay simeone, dave passios chris menard, evan watters"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "member",
+   "status": "present",
+   "quote": "jay simeone, dave passios chris menard, evan watters"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "member",
+   "status": "present",
+   "quote": "jay simeone, dave passios chris menard, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "member",
+   "status": "present",
+   "quote": "jay simeone, dave passios chris menard, evan watters"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "heather sroka, michael ray jeffreys, thomas"
+  },
+  {
+   "name": "Michael Ray Jeffreys",
+   "role": "Chair of the TCP Building Committee",
+   "status": "present",
+   "quote": "michael ray jeffreys - chair of the tcp building committee"
+  },
+  {
+   "name": "Thomas Alonzo",
+   "role": "not stated",
+   "status": "present",
+   "quote": "alonzo, carol archambault"
+  },
+  {
+   "name": "Carol Archambault",
+   "role": "not stated",
+   "status": "present",
+   "quote": "alonzo, carol archambault"
+  },
+  {
+   "name": "Heather L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "heather l. presenting some changes in the figures for the town meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Procedural policy document to be worked out and implemented after Town Town Meeting, with meeting documents in the Drive 48 hours before a meeting. Stated by Chris; no vote recorded.",
+   "quote": "there should be a document with procedural items in it and this"
+  },
+  {
+   "decision": "All committee documents to be placed in the Drive at least 48 hours before a meeting (stated by Chris; no vote recorded).",
+   "quote": "all documents should be in the drive at least 48 hours prior to a meeting."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "TCP building remodel cost estimate",
+   "what_was_recorded": "The remodel estimate came in far above the expected range, at $21M against an expected $10-15M.",
+   "quote": "expected a figure on in the range of $10-15m actual was $21m",
+   "figures_as_printed": [
+    "$10-15M",
+    "$21M"
+   ]
+  },
+  {
+   "topic": "TCP building cost to keep running",
+   "what_was_recorded": "Cost to keep the building running in its current state and use, covering roof, plumbing, electrical and earthquake proofing.",
+   "quote": "$8m to keep the building running",
+   "figures_as_printed": [
+    "$8M"
+   ]
+  },
+  {
+   "topic": "TCP new-build cost comparison",
+   "what_was_recorded": "A new build was estimated at a rate per square foot over a stated floor area.",
+   "quote": "approximately $275 per square foot - 55,000 square feet.",
+   "figures_as_printed": [
+    "$275 per square foot",
+    "55,000 square feet"
+   ]
+  },
+  {
+   "topic": "TCP new-build cost analysis request",
+   "what_was_recorded": "The TCP Building Committee asked for funds to cost a rebuild, to compare apples to apples.",
+   "quote": "asking for $54,000 to possibly save millions of $$.",
+   "figures_as_printed": [
+    "$54,000"
+   ]
+  },
+  {
+   "topic": "Article 3, prior year bills",
+   "what_was_recorded": "Transfer from free cash for an outstanding EMT recertification invoice.",
+   "quote": "to transfer $645,000 from free cash.",
+   "figures_as_printed": [
+    "$645,000"
+   ]
+  },
+  {
+   "topic": "Article 5, capital plan",
+   "what_was_recorded": "Revised capital plan figures: an amount raised and appropriated, with free cash as a revenue source.",
+   "quote": "raise and appropriate $682,502.42",
+   "figures_as_printed": [
+    "$682,502.42",
+    "$804,041.00"
+   ]
+  },
+  {
+   "topic": "Article 6, omnibus budget recycling program",
+   "what_was_recorded": "An additional amount for the recycling program, against the only bid received, a 3 year contract.",
+   "quote": "additional $105,100 regarding the recycling program.",
+   "figures_as_printed": [
+    "$105,100"
+   ]
+  },
+  {
+   "topic": "Article 17, DPW collective bargaining agreement",
+   "what_was_recorded": "Funds transferred from Salary Reserve Year one for a 3 year contract.",
+   "quote": "transfer funds from salary reserve year one - $32,697.42",
+   "figures_as_printed": [
+    "$32,697.42"
+   ]
+  },
+  {
+   "topic": "LMHS project rescission",
+   "what_was_recorded": "Unused authorization being rescinded, $4.8M of a $72M project total.",
+   "quote": "total amount being rescinded is $4.8m the total cost of the project was $72m.",
+   "figures_as_printed": [
+    "$4.8M",
+    "$72M"
+   ]
+  },
+  {
+   "topic": "LMHS feasibility study funds",
+   "what_was_recorded": "The $750,000 feasibility study amount was included in the rescinded total.",
+   "quote": "$750,000 which was initially included in the amount and authorization for the school project.",
+   "figures_as_printed": [
+    "$750,000"
+   ]
+  },
+  {
+   "topic": "School capital planning",
+   "what_was_recorded": "Capital planning money earmarked this year was used for fire alarms and will go to other capital projects.",
+   "quote": "there is $25,000 earmarked for capital planning this year.",
+   "figures_as_printed": [
+    "$25,000"
+   ]
+  },
+  {
+   "topic": "Capital planning policy change",
+   "what_was_recorded": "A document proposing a policy change to the $20,000 requirement for a capital project.",
+   "quote": "document to the committee for a policy change of $20,000",
+   "figures_as_printed": [
+    "$20,000"
+   ]
+  },
+  {
+   "topic": "ACE program at TCP cost",
+   "what_was_recorded": "A resident asked for the direct cost of the ACE program at TCP; no figure was given in the minutes.",
+   "quote": "what is the direct cost?",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Transfer from free cash to pay a prior year invoice (EMT recertifications), Article 3",
+   "amount_as_printed": "$645,000",
+   "outcome": "recommended to Town Meeting",
+   "quote": "to transfer $645,000 from free cash."
+  },
+  {
+   "description": "Transfer from Salary Reserve Year one for the DPW collective bargaining agreement, Article 17",
+   "amount_as_printed": "$32,697.42",
+   "outcome": "recommended to Town Meeting",
+   "quote": "transfer funds from salary reserve year one - $32,697.42"
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Dave Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "ACE program at TCP: state mandate, alternate site, direct cost",
+   "quote": "is the ace program at tcp a state mandated program?"
+  },
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "Whiting Street",
+   "topic": "Acknowledging the passing of Dwight Wentworth",
+   "quote": "acknowledging the passing of dwight wentworth at 93 years."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order at 7:00 PM; no action",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "reported; no action",
+   "quote": "there will be 2 seats open for fincom - please fill out a talent bank form",
+   "tags": [
+    "appointments",
+    "public hearing"
+   ]
+  },
+  {
+   "topic": "Policy Discussion",
+   "resolution": "discussed; to be worked on after Town Meeting",
+   "quote": "procedural policies must be worked out and implemented by the finance committee.",
+   "tags": [
+    "policy",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "TCP Discussion",
+   "resolution": "presented; no vote recorded",
+   "quote": "asking for $54,000 to possibly save millions of $$.",
+   "tags": [
+    "TCP building",
+    "town hall",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Warrant Articles",
+   "resolution": "Articles 3, 5, 6 and 17 recommended; LMHS rescission discussed",
+   "quote": "heather l. presenting some changes in the figures for the town meeting warrant.",
+   "tags": [
+    "warrant",
+    "town meeting",
+    "free cash",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Reports",
+   "resolution": "reports received; no action",
+   "quote": "there is $25,000 earmarked for capital planning this year.",
+   "tags": [
+    "school committee",
+    "parks",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reported; no action",
+   "quote": "the flat hill road culvert project will not be done until late fy22.",
+   "tags": [
+    "roads",
+    "beach",
+    "meetings"
+   ]
+  },
+  {
+   "topic": "Public Comment (second)",
+   "resolution": "two speakers; no action",
+   "quote": "is the ace program at tcp a state mandated program?",
+   "tags": [
+    "public comment",
+    "ACE program"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:49",
+   "quote": "seconded by peter all in favor",
+   "tags": [
+    "procedure",
+    "town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Town Meeting Warrant (2021)",
+   "where": "text",
+   "quote": "in the figures for the town meeting warrant."
+  },
+  {
+   "name": "Article 3 – Payment of Prior Year Bills",
+   "where": "text",
+   "quote": "article 3 - payment of prior year bills"
+  },
+  {
+   "name": "Article 5 – Capital Plan",
+   "where": "text",
+   "quote": "article 5 - capital plan"
+  },
+  {
+   "name": "Article 6 – Omnibus Budget",
+   "where": "text",
+   "quote": "article 6 - omnibus budget"
+  },
+  {
+   "name": "Article 17 – DPW Collective Bargaining Agreement",
+   "where": "text",
+   "quote": "article 17 - dpw collective bargaining agreement"
+  },
+  {
+   "name": "Talent Bank form",
+   "where": "text",
+   "quote": "please fill out a talent bank form"
+  }
+ ],
+ "tags": [
+  "Finance Committee",
+  "Town Meeting warrant",
+  "TCP building",
+  "town hall",
+  "capital plan",
+  "free cash",
+  "Zoom meeting",
+  "public comment",
+  "school capital",
+  "rescission"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "topics": 1
+ }
 }

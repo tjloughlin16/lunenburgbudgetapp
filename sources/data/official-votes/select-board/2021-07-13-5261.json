@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-07-13",
  "docid": "5261",
@@ -12,47 +12,419 @@
  },
  "votes": [
   {
-   "motion": "Ratify Town Manager's reappointment of John Godek to Constable, term expires June 30, 2022",
+   "motion": "To ratify the Town Manager's reappointment of John Godek as Constable, term to expire June 30, 2022.",
+   "moved_by": "L. Franco",
+   "seconded_by": "T. Dwyer",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to ratify the town manager's reappointment of john godek to constable- term to expire june 30, 2022."
+  },
+  {
+   "motion": "To approve the minutes of July 6, 2021 as presented.",
    "moved_by": "L. Franco",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: l. franco to ratify the town manager's reappointment of john godek to constable- term to expire june 30, 2022. 2°: t. dwyer vote: all in favor"
+   "quote": "to approve the minutes of july 6, 2021 as presented"
   },
   {
-   "motion": "Approve minutes of July 6, 2021 as presented",
-   "moved_by": "L. Franco",
-   "seconded_by": "T. Dwyer",
-   "outcome": "passed",
-   "procedural": true,
-   "quote": "motion: l. franco to approve the minutes of july 6, 2021 as presented 2°: t. dwyer vote: all in favor"
-  },
-  {
-   "motion": "Increase cost of PAYT bags by 15% for FY22",
+   "motion": "To increase the cost of PAYT bags to 15% for FY22.",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2': t. dwyer to increase the cost of payt bags to 15% for fy22 vote: all in favor"
+   "quote": "to increase the cost of payt bags to 15% for fy22 vote: all in favor"
   },
   {
-   "motion": "Approve RFP for old Primary School landscaping architectural services with modifications including hourly rate schedules and repurposing language",
+   "motion": "To approve the RFP for the old Primary School as discussed and modified that evening, with the wording stated by the Town Manager and the repurposing language for potential use of part of the building.",
    "moved_by": "T. Dwyer",
    "seconded_by": "J. Marino",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: t. dwyer 2\"d: j. marino to approve the rfp as discussed and modified this evening with the wording stated by the town manager and the repurposing language for potential use of part of the building vote: all in favor"
+   "quote": "to approve the rfp as discussed and modified this evening with the wording stated by the town manager and the repurposing language"
   },
   {
-   "motion": "Enter Executive Session pursuant to M.G.L. c. 30, Section 21, Paragraph 2, to conduct strategy sessions for negotiations with non-union personnel (Town Manager and Finance Director)",
+   "motion": "To enter into Executive Session and to adjourn after exiting Executive Session pursuant to M.G.L. c. 30, Section 21, Paragraph 2, to conduct strategy sessions in preparation for negotiations with non-union personnel or contract negotiations with non-union personnel (Town Manager and Finance Director).",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: j. marino 2'd: m. jeffreys to enter into executive session and to adjourn after exiting executive session pursuant to m.g.l. c. 30, section 21, paragraph 2, to conduct strategy sessions in preparation for negotiations with non-union personnel or contract negotiations with non-union personnel (town manager and finance director) vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR extracted from scanned image via macOS Vision. Five votes recorded. Note: page 4 lists \"Discussion and vote\" on updating Section 3.02 Capital Budget Policy but no formal vote result is recorded in the minutes.",
- "cost_usd": 0.11431450000000001
+ "note": "OCR text, with garbled passages. The header is truncated and OCR-garbled (\"Veribe Lopresent\", \"Michact-Ray Jeftieys\"); \"Jim\" appears alone, so Franco's and Marino's presence rests on the roll-call line, and their first names are not printed in full. Pages 1-2, 3-4, 5 and 6-7 break mid-item, so some discussion is missing. No vote on the Capital Budget policy (Section 3.02) is printed, so none is recorded. The \"5,000\" figure and the \"$t020,000\" threshold are OCR-garbled and are recorded as printed. The executive session minutes are separate and not in this text. The minutes say the meeting adjourned at 9:41 p.m. but print no separate adjournment motion. Outcomes \"All in Favor\" and the roll-call ayes are recorded as \"passed\" because no numeric count is printed.",
+ "cost_usd": 0.0302765,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "tom alonzo, chair, michact-ray jeftieys, vice chairman; todd dwyer, jim"
+  },
+  {
+   "name": "Jeffreys",
+   "role": "Vice Chairman (printed as \"Michact-Ray Jeftieys, Vice Chairman\" in the header; \"Mr. Jeffreys\" in the body)",
+   "status": "present",
+   "quote": "michact-ray jeftieys, vice chairman"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Franco",
+   "role": "",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Marino",
+   "role": "",
+   "status": "present",
+   "quote": "vote: mr. marino-aye, mr. dwyer-aye, mr. franco-aye, mr. jeffreys-aye, mr. alonzo-aye"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karin menard, parks commissioner;"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Parks Commissioner",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; karin menard, parks commissioner;"
+  },
+  {
+   "name": "Richard McGrath",
+   "role": "APDC Chairman",
+   "status": "present",
+   "quote": "apdc chairman mcgrath called their meeting to order at 7:22 p.m."
+  },
+  {
+   "name": "Cullen Dwyer",
+   "role": "APDC Vice Chair",
+   "status": "present",
+   "quote": "apdc vice chair cullen dwyer reiterated it is the opinion of the apdc that the old primary"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "",
+   "status": "present",
+   "quote": "peter beardmore, 282 pleasant street, was concerned about over-regulating before the board of health addresses this topic."
+  },
+  {
+   "name": "Elaine M. Peterson",
+   "role": "Executive Assistant to the Town Manager",
+   "status": "not stated",
+   "quote": "respectfully submitted, claure m. petervor elaine m. peterson executive assistant to the town manager"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Alonzo will send out all the finalized Select Board goals before the next meeting.",
+   "quote": "mr. alonzo will send out all the finalized select board goals before the next meeting."
+  },
+  {
+   "decision": "The Review and Vote on Select Board Goals for FY22 was tabled until another meeting.",
+   "quote": "this was tabled until another meeting."
+  },
+  {
+   "decision": "Chair suggested engaging the Board of Health about the uniform policy on placing sanitation equipment on town property.",
+   "quote": "mr. alonzo thanked everyone for their input and suggested engaging the board of health about this."
+  },
+  {
+   "decision": "The Assistant Town Manager/HR Director will post the Veterans Agent vacancy and contact other local Veterans Agents.",
+   "quote": "the assistant town manager/hr director will be posting this position this week and reaching out to other local"
+  },
+  {
+   "decision": "A 40B workshop is being coordinated with the Land Use Director at the Planning Board's request; the Town Manager will ask the school to reserve the auditorium for it.",
+   "quote": "a 40b workshop is being coordinated with the land use director upon the planning board's request."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Capital budget policy thresholds (Section 3.02)",
+   "what_was_recorded": "The amended Capital Budget policy sets capital item thresholds at $210,000 for individual items and for groups of like items; the printed text shows the individual-item figure garbled.",
+   "figures_as_printed": [
+    "$t020,000",
+    "$210,000"
+   ],
+   "quote": "individual items that cost at least $t020,000 and groups of items of the same purpose that cost at least $210,000 are both capital items."
+  },
+  {
+   "topic": "PAYT bag price increase",
+   "what_was_recorded": "The town manager reported the PAYT bag price would rise at least 15% due to the solid waste contract change; a pilot giving free bags to seniors would add another 15%; the Board approved the 15% increase rather than 30%.",
+   "figures_as_printed": [
+    "15%",
+    "30%"
+   ],
+   "quote": "the price increase for the payt bags would be at least 15% more due to changes in the solid waste removal contract."
+  },
+  {
+   "topic": "Accounts payable warrants signed",
+   "what_was_recorded": "The Board signed an FY22 Accounts Payable warrant and a FY21 Accounts Payable warrant.",
+   "figures_as_printed": [
+    "$1,064,639.61",
+    "$930,890.42"
+   ],
+   "quote": "the board signed an fy22 accounts payable warrant in the amount of $1,064,639.61 and a fy21"
+  },
+  {
+   "topic": "American Rescue Plan Act disbursement",
+   "what_was_recorded": "The town received its 50% disbursement of American Rescue Plan Act funds on June 22nd.",
+   "figures_as_printed": [
+    "$614,195"
+   ],
+   "quote": "we received our 50% disbursement of american rescue plan act funds (aka coronavirus local fiscal recovery funds) totaling $614,195 on june 22nd."
+  },
+  {
+   "topic": "State budget: LED lights at the Library",
+   "what_was_recorded": "A $40,000 item for LED lights at the Library was reported to have passed the Senate and House Conference Committee into the FY22 state budget report, which awaited the Governor's signoff.",
+   "figures_as_printed": [
+    "$40,000"
+   ],
+   "quote": "$40,000 for led lights at the library made it through the senate and house conference committee"
+  },
+  {
+   "topic": "State aid reduction (FY22)",
+   "what_was_recorded": "DLS's preliminary State Aid figures put the impact to Lunenburg at approximately $100,000 less than the FY 2022 budget estimate.",
+   "figures_as_printed": [
+    "$100,000"
+   ],
+   "quote": "the overall impact to lunenburg would be approximately $100,000 less in state aid than the estimate in the fy 2022 budget."
+  },
+  {
+   "topic": "Old Primary School renovation cost",
+   "what_was_recorded": "The chair said in his opinion a renovation would be cost prohibitive for the town to fund; no figure was printed.",
+   "figures_as_printed": [],
+   "quote": "a renovation to the building would be cost prohibitive to the town to fund it."
+  },
+  {
+   "topic": "Old Primary School restoration funding sources",
+   "what_was_recorded": "Smaller organizations would contribute $5,000 to $20,000, not the millions needed to restore the school building.",
+   "figures_as_printed": [
+    "$5,000 - $20,000"
+   ],
+   "quote": "there are smaller organizations that would contribute $5,000 - $20,000, but not the milions needed to restore the school building."
+  },
+  {
+   "topic": "Small Bridge Grant application",
+   "what_was_recorded": "The DPW Director and Town Manager will work with the engineering firm to submit a Small Bridge Grant application when MassDOT opens applications; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "submit a small bridge grant application as soon as massdot announces they are accepting applications."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "",
+   "topic": "porta-potty placement and uniform policy",
+   "quote": "peter beardmore, 282 pleasant street, was concerned about over-regulating before the board of health addresses this topic."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment (opening): band concert announcement",
+   "resolution": "announcement only, no action",
+   "tags": [
+    "public comment",
+    "band concerts"
+   ],
+   "quote": "mr. alonzo announced that yesterday was the first of the monday night band concerts held at the"
+  },
+  {
+   "topic": "Workshop: Select Board goal for FY 2022",
+   "resolution": "discussed; goals to be sent out before next meeting",
+   "tags": [
+    "Select Board goals"
+   ],
+   "quote": "1. discussion on select board goal for fy 2022"
+  },
+  {
+   "topic": "Workshop: Meeting with APDC on old Primary School",
+   "resolution": "discussion, no action",
+   "tags": [
+    "old Primary School",
+    "APDC",
+    "demolition by neglect"
+   ],
+   "quote": "mr: alonzo stated this meeting is to continue a dialogue with the apdc concerning the old"
+  },
+  {
+   "topic": "Ratify Constable reappointment (John Godek)",
+   "resolution": "ratified",
+   "tags": [
+    "appointments"
+   ],
+   "quote": "to ratify the town manager's reappointment of john godek to constable- term to expire june 30, 2022."
+  },
+  {
+   "topic": "Uniform policy on sanitation equipment on town property",
+   "resolution": "discussed; Board of Health to be engaged",
+   "tags": [
+    "porta-potties",
+    "Marshall Park",
+    "Board of Health"
+   ],
+   "quote": "1. discussion on creating uniform policy on placing sanitation equipment on town owned"
+  },
+  {
+   "topic": "Capital Budget policy Section 3.02",
+   "resolution": "discussion and vote listed; vote not recorded in the text",
+   "tags": [
+    "capital budget",
+    "policy"
+   ],
+   "quote": "2. discussion and vote on updating section 3.02 \"capital budget\" policy"
+  },
+  {
+   "topic": "Approval of July 6, 2021 minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "to approve the minutes of july 6, 2021 as presented"
+  },
+  {
+   "topic": "Warrants signed",
+   "resolution": "signed (FY22 and FY21 accounts payable)",
+   "tags": [
+    "warrants",
+    "accounts payable"
+   ],
+   "quote": "the board signed an fy22 accounts payable warrant in the amount of $1,064,639.61"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "none",
+   "tags": [],
+   "quote": "5. committee reports- there were none this evening."
+  },
+  {
+   "topic": "Old business: Select Board goals FY22 review and vote",
+   "resolution": "tabled",
+   "tags": [
+    "Select Board goals"
+   ],
+   "quote": "this was tabled until another meeting."
+  },
+  {
+   "topic": "Pay As You Throw fee increase FY2022",
+   "resolution": "approved 15% increase; senior bag pilot not adopted",
+   "tags": [
+    "PAYT bags",
+    "solid waste",
+    "seniors"
+   ],
+   "quote": "to increase the cost of payt bags to 15% for fy22"
+  },
+  {
+   "topic": "RFP for old Primary School landscape architectural engineering",
+   "resolution": "approved as modified",
+   "tags": [
+    "old Primary School",
+    "RFP"
+   ],
+   "quote": "to approve the rfp as discussed and modified this evening"
+  },
+  {
+   "topic": "MassHousing 40B notice, Pond View Commons",
+   "resolution": "discussed; 40B workshop and comment deadlines noted",
+   "tags": [
+    "40B housing",
+    "Howard Street",
+    "Pond View Commons"
+   ],
+   "quote": "discussion of notice from masshousing on 40b site approval application from pond view commons, llc"
+  },
+  {
+   "topic": "Upcoming meetings",
+   "resolution": "reported",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "mr. alonzo reported the board's next meeting will be on july 20"
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "reported; no action",
+   "tags": [
+    "town manager",
+    "vacancies",
+    "curbside collection",
+    "state aid",
+    "ARPA funds"
+   ],
+   "quote": "announcement on existing vacancies:"
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "none",
+   "tags": [
+    "public comment"
+   ],
+   "quote": "public comment-there was none."
+  },
+  {
+   "topic": "Executive session and adjournment",
+   "resolution": "entered executive session; adjourned 9:41 p.m.",
+   "tags": [
+    "executive session",
+    "non-union negotiations"
+   ],
+   "quote": "mr. alonzo noted the board would be entering executive session."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised draft Request for Proposals (RFP) for Landscape Architectural Engineering Services, old Primary School, 30 School Street",
+   "where": "text",
+   "quote": "mr. alonzo pointed out a revised draft for the request for proposals (rfp) for landscape"
+  },
+  {
+   "name": "Section 3.02 Capital Budget policy (Amended 09/02/2014)",
+   "where": "text",
+   "quote": "section 3.02 capital budget (amended 09/02/2014)"
+  },
+  {
+   "name": "Town Manager memo on PAYT bag price increase",
+   "where": "text",
+   "quote": "ms. lemieux had presented a memo previously that the price increase for the payt bags would be"
+  },
+  {
+   "name": "MassHousing Notice on 40B Site Approval Application from Pond View Commons, LLC (Kevin O'Brien)",
+   "where": "text",
+   "quote": "discussion of notice from masshousing on 40b site approval application from pond view commons, llc (kevin o'brien)"
+  },
+  {
+   "name": "FY22 and FY21 Accounts Payable warrants",
+   "where": "text",
+   "quote": "the board signed an fy22 accounts payable warrant in the amount of $1,064,639.61 and a fy21"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "old Primary School",
+  "APDC",
+  "PAYT bags",
+  "porta-potties",
+  "capital budget policy",
+  "40B housing",
+  "ARPA funds",
+  "state aid",
+  "executive session",
+  "Town Manager report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

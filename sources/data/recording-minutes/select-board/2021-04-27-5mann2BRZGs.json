@@ -1,0 +1,909 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board",
+ "meeting_date": "2021-04-27",
+ "video_id": "5mann2BRZGs",
+ "video_url": "https://www.youtube.com/watch?v=5mann2BRZGs",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-04-27-5mann2BRZGs.json",
+  "sha256": "86c146851e2f9ae7abeb5e73601a6fcf7ba19643d369e7b164a652617a5ee8a7",
+  "caption_lines": 344,
+  "segments": 3157
+ },
+ "recording": {
+  "duration_s": 7213,
+  "duration": "2:00",
+  "spoken_chars": 90407,
+  "words_approx": 15067
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_04272021-5253",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-04-27-agenda-5253.txt",
+   "path": "sources/meetings/select-board/2021-04-27-agenda-5253.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04272021-5253",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-04-27-minutes-5253.txt",
+   "path": "sources/meetings/select-board/2021-04-27-minutes-5253.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-26T09:33:50Z",
+  "cost_usd": 0.5353364
+ },
+ "minutes": {
+  "headline": "Select Board revised FY22 budget and capital articles for Town Meeting, but deferred a position on the $54,000 TCP design article.",
+  "summary": "The finance director gave the third-quarter FY21 revenue and expense report, then the town manager walked through revised warrant articles ahead of Saturday's Town Meeting. The board recommended the revised prior-year expense, capital plan and omnibus budget articles, argued at length over the new TCP design article and deferred it, interviewed a registrar candidate, and approved minutes. It ended by entering executive session on collective bargaining.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Alonso",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Ms. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Moreno",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Town manager",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Karen Brochu",
+    "role": "finance director"
+   },
+   {
+    "name_as_heard": "Ms. Rudd",
+    "role": "presenter"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 255,
+    "speaker_as_heard": "Ethan Rossi",
+    "stated_role": "resident",
+    "topic": "Update on his Caring for Kids community service project donating items for children in the hospital."
+   },
+   {
+    "t": 6620,
+    "speaker_as_heard": "Chris Merritt",
+    "stated_role": "resident and finance committee member speaking for himself",
+    "topic": "Objected to the process for the TCP design article, saying no public hearing was held on the money and urging it be pulled for the fall town meeting."
+   }
+  ],
+  "tags": [
+   "budget",
+   "capital",
+   "contracts-and-unions",
+   "elections",
+   "executive-session",
+   "facilities",
+   "free-cash",
+   "health-insurance",
+   "public-comment",
+   "state-aid",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1880,
+    "motion": "Appoint Karen Kemp to the Board of Registrars (Democratic seat)",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2004,
+    "motion": "Approve minutes of March 16, March 30, April 1, April 6 and April 13",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3630,
+    "motion": "Recommend approval of revised Article 3, prior year expenses",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3731,
+    "motion": "Recommend approval of revised capital plan article with changed funding sources",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 3834,
+    "motion": "Recommend approval of the revised omnibus budget",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 5412,
+    "motion": "Recommend approval of Article 26, TCP design fees (no second; deferred)",
+    "outcome": "failed",
+    "procedural": false
+   },
+   {
+    "t": 7161,
+    "motion": "Enter executive session on collective bargaining and adjourn afterward",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 485,
+    "topic": "FY21 revenue collected through March",
+    "what_was_said": "The finance director reported total revenue collected to date against FY21 estimates.",
+    "figures_as_heard": [
+     "34 million 340 thousand 103 dollars",
+     "79 percent"
+    ]
+   },
+   {
+    "t": 506,
+    "topic": "Local receipts",
+    "what_was_said": "Local receipts were well collected against estimate; she expected to exceed the estimate.",
+    "figures_as_heard": [
+     "three million sixty five thousand nine hundred and ninety one dollars",
+     "91",
+     "about 500 000"
+    ]
+   },
+   {
+    "t": 675,
+    "topic": "Investment income",
+    "what_was_said": "Interest income is running below estimate because rates fell during the pandemic.",
+    "figures_as_heard": [
+     "sixty two thousand nine thirty five",
+     "twenty six thousand two thirty one"
+    ]
+   },
+   {
+    "t": 902,
+    "topic": "Property tax collections",
+    "what_was_said": "Tax collections were reported against the budgeted amount, plus unbudgeted tax lien revenue.",
+    "figures_as_heard": [
+     "28 million 77 776 249 dollars",
+     "76",
+     "186 181 dollars"
+    ]
+   },
+   {
+    "t": 944,
+    "topic": "State aid",
+    "what_was_said": "State aid estimate net of school choice and library aid, with most received.",
+    "figures_as_heard": [
+     "9109 747 dollars",
+     "78"
+    ]
+   },
+   {
+    "t": 964,
+    "topic": "FY21 expenditures",
+    "what_was_said": "Expenditures and encumbrances through March were reported against the budget.",
+    "figures_as_heard": [
+     "43 million 316 403",
+     "30 million 250 to 405",
+     "70"
+    ]
+   },
+   {
+    "t": 987,
+    "topic": "Reserve fund and deficits",
+    "what_was_said": "No draw on the reserve fund; small deficits in injury leave and snow removal can be covered by year-end transfers.",
+    "figures_as_heard": [
+     "75 000",
+     "40 083 dollars"
+    ]
+   },
+   {
+    "t": 1069,
+    "topic": "Health insurance surplus",
+    "what_was_said": "A surplus in the health insurance appropriation is expected, which would fall into free cash.",
+    "figures_as_heard": [
+     "275 000"
+    ]
+   },
+   {
+    "t": 2048,
+    "topic": "Warrants signed",
+    "what_was_said": "The chair listed accounts payable and payroll warrants signed last week.",
+    "figures_as_heard": [
+     "one million one hundred thirty one thousand seven hundred seventy eight dollars and fifty one cents",
+     "567 545.31",
+     "831 881 and 46 cents"
+    ]
+   },
+   {
+    "t": 2691,
+    "topic": "TCP design estimate",
+    "what_was_said": "A cost estimate for the design article came in and will go to the finance committee.",
+    "figures_as_heard": [
+     "54 000"
+    ]
+   },
+   {
+    "t": 2956,
+    "topic": "Article 3 prior year expenses",
+    "what_was_said": "An additional prior-year expense raises the total, funded from free cash.",
+    "figures_as_heard": [
+     "500",
+     "645 dollars"
+    ]
+   },
+   {
+    "t": 3022,
+    "topic": "Solid waste bid",
+    "what_was_said": "The trash bid came in higher than estimated, requiring additional operating funds, covered by shifting capital funding sources.",
+    "figures_as_heard": [
+     "105",
+     "15 estimate",
+     "39 000",
+     "34 increase",
+     "66 higher",
+     "65 000 216"
+    ]
+   },
+   {
+    "t": 3711,
+    "topic": "Revised capital plan sources",
+    "what_was_said": "Capital plan sources were revised among raise and appropriate, free cash and another capital source.",
+    "figures_as_heard": [
+     "682 502",
+     "forty 804 dollars",
+     "one hundred and eleven thousand two hundred and eighty two dollars"
+    ]
+   },
+   {
+    "t": 3771,
+    "topic": "FY22 omnibus budget total",
+    "what_was_said": "With the added solid waste cost the omnibus total was read out.",
+    "figures_as_heard": [
+     "39 million 864 898.81"
+    ]
+   },
+   {
+    "t": 3814,
+    "topic": "Free cash balance after articles",
+    "what_was_said": "Unappropriated free cash remains after funding the TCP article.",
+    "figures_as_heard": [
+     "318 000"
+    ]
+   },
+   {
+    "t": 5686,
+    "topic": "Flat Hill culvert",
+    "what_was_said": "State small bridge grant round delayed, so the culvert will go to bid after town meeting.",
+    "figures_as_heard": []
+   }
+  ],
+  "transfers": [
+   {
+    "t": 1027,
+    "description": "Possible year-end transfers under c.44 s.33B to cover injury leave and snow removal deficits",
+    "amount_as_heard": "40 083 dollars",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 3087,
+    "description": "Shift capital plan funding: more free cash, less raise and appropriate, to free money for solid waste cost",
+    "amount_as_heard": "65 000 216",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1795,
+    "decision": "Board will invite the second Republican registrar nominee to interview next week; appointments deferred."
+   },
+   {
+    "t": 1900,
+    "decision": "One member will tell a non-listed applicant the board is bound to the party's nominee list."
+   },
+   {
+    "t": 2382,
+    "decision": "Board agreed to reinvestigate a sticker program for trash at least for discussion."
+   },
+   {
+    "t": 5473,
+    "decision": "Board deferred its recommendation on Article 26 until after the Article 25 presentation at Town Meeting."
+   },
+   {
+    "t": 5518,
+    "decision": "Articles 18, 19 and 30 will be passed over and added to the consent calendar as applicable."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 235,
+    "topic": "Meeting opening and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 235,
+    "t_end": 356,
+    "topic": "Public comment on Caring for Kids project",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 356,
+    "t_end": 443,
+    "topic": "Announcements on Town Meeting",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 443,
+    "t_end": 1275,
+    "topic": "FY21 third quarter financial report",
+    "resolution": "informational",
+    "tags": [
+     "budget",
+     "free-cash",
+     "state-aid"
+    ]
+   },
+   {
+    "t_start": 1275,
+    "t_end": 1921,
+    "topic": "Board of Registrars appointments",
+    "resolution": "voted",
+    "tags": [
+     "elections",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 1921,
+    "t_end": 2110,
+    "topic": "Minutes and warrants",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 2111,
+    "t_end": 2560,
+    "topic": "Action items: road arrows, trash stickers, cleanups",
+    "resolution": "informational",
+    "tags": [
+     "roads-and-dpw"
+    ]
+   },
+   {
+    "t_start": 2560,
+    "t_end": 2879,
+    "topic": "Committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "library"
+    ]
+   },
+   {
+    "t_start": 2879,
+    "t_end": 5518,
+    "topic": "Budget and warrant article updates, TCP design article",
+    "resolution": "voted",
+    "tags": [
+     "warrant-article",
+     "budget",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 5518,
+    "t_end": 5583,
+    "topic": "Consent calendar",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 5583,
+    "t_end": 5873,
+    "topic": "Town manager report",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 5873,
+    "t_end": 6578,
+    "topic": "COVID-19 update",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 6578,
+    "t_end": 6870,
+    "topic": "Meeting schedule and public comment on TCP process",
+    "resolution": "informational",
+    "tags": [
+     "public-comment",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 6870,
+    "t_end": 7141,
+    "topic": "Board comments on civility and Town Meeting",
+    "resolution": "informational",
+    "tags": [
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 7141,
+    "t_end": 7204,
+    "topic": "Executive session on collective bargaining",
+    "resolution": "voted",
+    "tags": [
+     "executive-session",
+     "contracts-and-unions"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Several revised figures were garbled by the captions, including the capital plan sources and the trash cost increase.",
+   "Exact vote counts were not spoken for the omnibus and capital votes beyond roll-call ayes.",
+   "The 'Mr. Moreno' roll-call name may be misrendered (also heard as Mourinho)."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3940,
+    "about": "A member opposed the TCP design article, arguing the site is wrong and the committee exceeded its charge, while other members defended it.",
+    "sides": "One member against; three members and chair in favor",
+    "words_as_heard": "applying more money to studying a bad idea is a waste of everyone's money",
+    "kind": "members disagree"
+   },
+   {
+    "t": 5249,
+    "about": "Dispute over whether the TCP design committee is operating outside its charge.",
+    "sides": "One member said committee acts outside its charge; other members said it is only offering alternatives",
+    "words_as_heard": "it is operating in a rogue way",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6620,
+    "about": "A resident and finance committee member criticized the process of introducing the TCP article days before Town Meeting without a public hearing.",
+    "sides": "A resident against the board's process",
+    "words_as_heard": "I think this is bad precedent",
+    "kind": "public criticism"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 3256,
+    "kind": "condition",
+    "about": "Chair supports the appropriation but wants the scope of the design proposal refined.",
+    "who": "the chair",
+    "words_as_heard": "i think that the definition of what's included in there needs to be really refined and gone over"
+   },
+   {
+    "t": 4277,
+    "kind": "safety",
+    "about": "A member said the Turkey Hill school has a critical building problem needing attention before town hall.",
+    "who": "a member",
+    "words_as_heard": "we have a critical problem with the turkey hill school"
+   },
+   {
+    "t": 6788,
+    "kind": "condition",
+    "about": "A resident urged pulling the article and setting a budget for the project.",
+    "who": "a resident",
+    "words_as_heard": "I would urge that we do take the time between that we do not that we pull this article on the floor"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 2934,
+    "name_as_heard": "adjustment worksheet",
+    "kind": "spreadsheet",
+    "words_as_heard": "this is um the adjustment worksheet just shows the breakdown of the changes to the budget",
+    "shown": true
+   },
+   {
+    "t": 378,
+    "name_as_heard": "the warrant",
+    "kind": "warrant article",
+    "words_as_heard": "that should all be in your warrant that got mailed to everybody every taxpayer's home",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "tc-passios-building-costs",
+    "title": "TC Passios building costs",
+    "question": "What do rehab versus new-build options for the TC Passios site cost, and what is the $54,000 design request for?",
+    "t": 2691,
+    "words_as_heard": "a cost estimate for what the warn article about coming up with that design will be so that number came in at 54 000",
+    "data_in_play": [
+     "54 000",
+     "50 000 square foot",
+     "18 to 20 million"
+    ],
+    "existing": "thread:tc-passios-site"
+   },
+   {
+    "slug": "solid-waste-contract-cost",
+    "title": "Solid waste contract cost",
+    "question": "How much did the new trash and recycling bid raise operating costs and how was it funded?",
+    "t": 3022,
+    "words_as_heard": "the bid we receive for trash our solid waste and recycling program cost",
+    "data_in_play": [
+     "105",
+     "66 higher",
+     "65 000 216"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "free-cash-use-fy22",
+    "title": "Free cash use FY22",
+    "question": "How much free cash was used across articles and what remains unappropriated?",
+    "t": 3814,
+    "words_as_heard": "it still leaves um an unappropriated balance of free cash of about 318 000",
+    "data_in_play": [
+     "318 000",
+     "54 000",
+     "30 000"
+    ],
+    "existing": "topic:free-cash-balance"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Select Board voted to recommend the revised prior-year expense article, the revised capital plan article with changed funding sources, and the revised omnibus budget.",
+    "t": 3630
+   },
+   {
+    "line": "A motion to recommend Article 26, the TCP design fees, failed for lack of a second, and the board deferred its position until after the Article 25 presentation at Town Meeting.",
+    "t": 5412
+   },
+   {
+    "line": "The finance director gave the third-quarter FY21 report: local receipts ahead of estimate, interest income below it, no reserve fund draw, and a health insurance surplus expected.",
+    "t": 485
+   },
+   {
+    "line": "The trash bid came in above estimate, so additional operating funds are covered by shifting capital funding sources.",
+    "t": 3022
+   },
+   {
+    "line": "The board appointed Karen Kemp to the Board of Registrars and will interview a second Republican nominee next week.",
+    "t": 1880
+   }
+  ],
+  "why_it_matters": [
+   "The revised budget and capital articles are what residents will be asked to vote on at Saturday's Town Meeting, and the board's recommendations on them are now on the record.",
+   "Article 26 goes to Town Meeting without a Select Board recommendation, and a resident objected during public comment that no public hearing was held on the money."
+  ],
+  "watch_next": [
+   "Town Meeting on Saturday, where the Article 25 presentation comes before the board gives its position on Article 26.",
+   "The board's interview of the second Republican registrar nominee next week."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-26T09:34:01Z",
+   "cost_usd": 0.24065040000000001
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_04272021-5253",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-04-27-minutes-5253.txt",
+   "path": "sources/meetings/select-board/2021-04-27-minutes-5253.pdf"
+  },
+  "official_sha256": "4982073166cb4f063cb7304b5a1b293dd66224eb55f58ed1a8f7e39e7345e050",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the registrar appointment, Article 3, the omnibus total, the main budget figures and the Article 26 deferral. They differ on two things: our minutes record a capital plan vote that the official minutes do not, and they record Article 26 as a failed vote where the official minutes say the motion got no second and there was no vote. They also differ on whether Article 30 went on the consent calendar.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 8,
+   "discrepancy": 3,
+   "only_in_ours": 4,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Vote: appoint Karen Kemp to Board of Registrars",
+    "ours": "Appoint Karen Kemp to the Board of Registrars (Democratic seat) — passed",
+    "official": "to appoint karen kemp to the board of registrars vote: mr. marino-aye, ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "Both record the appointment as passed; the official minutes give 5-0 and call it a reappointment, and do not mention the Democratic seat.",
+    "t": 1880
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: Article 3 prior year expenses",
+    "ours": "Recommend approval of revised Article 3, prior year expenses — passed",
+    "official": "to recommend approval of article 3 amended to $645 vote: ms. adams-aye, mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye",
+    "note": "Same vote, passed in both; the official minutes give the amended amount of $645 and a 5-0 count.",
+    "t": 3630
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Vote: revised capital plan article with changed funding sources",
+    "ours": "Recommend approval of revised capital plan article with changed funding sources — passed",
+    "official": "",
+    "note": "Our minutes record a passed vote on the capital plan funding shift (more free cash, less raise and appropriate); the official minutes record no such vote. Check the recording near t=3731 and the official motion list.",
+    "t": 3731
+   },
+   {
+    "kind": "agree",
+    "about": "Vote: revised omnibus budget, FY22 total",
+    "ours": "Recommend approval of the revised omnibus budget — passed",
+    "official": "$39, 864,898.81 alonzo-aye vote: ms. adams-aye, mr. marino-aye, mr. dwyer-aye, mir. jeffreys-aye, mr.",
+    "note": "The official wording is illegible but the $39,864,898.81 figure matches our FY22 omnibus total, and both show it passing; the official minutes give 5-0.",
+    "t": 3834
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article 26 (TCP design fees, $54,000): vote or no vote",
+    "ours": "Recommend approval of Article 26, TCP design fees (no second; deferred) — failed",
+    "official": "to approve article 26 with $54,000 coming from free cash",
+    "note": "Our minutes list this as a failed vote. The official minutes say the motion got no second, so there was no vote. Check the recording to see whether any vote was taken.",
+    "t": 5412
+   },
+   {
+    "kind": "caption_error",
+    "about": "Snow removal deficit under c.44 s.33B",
+    "ours": "Possible year-end transfers under c.44 s.33B to cover injury leave and snow removal deficits — 40 083 dollars (discussed only)",
+    "official": "the current deficit in snow removal based on actual expenditures to date is $40,083.90.",
+    "note": "40,083 is the snow removal deficit of $40,083.90; the official minutes list the injury leave deficit ($6,256.02) separately. No transfer is recorded in the official minutes.",
+    "official_reading": "$40,083.90",
+    "t": 1027
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Injury leave deficit",
+    "ours": "",
+    "official": "as of 3/31/21 there is a deficit of $6,256.02 in this account due to injuries of two on call firefighters.",
+    "note": "Our minutes give no separate figure for the injury leave deficit."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Capital plan funding shift for solid waste cost",
+    "ours": "Shift capital plan funding: more free cash, less raise and appropriate, to free money for solid waste cost — 65 000 216 (discussed only)",
+    "official": "",
+    "note": "The official minutes do not describe the shift in capital plan sources or the 65,000/216 figure.",
+    "t": 3087
+   },
+   {
+    "kind": "caption_error",
+    "about": "Solid waste bid additional amount",
+    "ours": "Solid waste bid: 105, 15 estimate, 39 000, 34 increase, 66 higher, 65 000 216",
+    "official": "requiring an additional $105,100.",
+    "note": "The leading 105 is probably the $105,100 additional cost; the rest of the garbled string cannot be matched to the official text.",
+    "official_reading": "$105,100",
+    "t": 3022
+   },
+   {
+    "kind": "agree",
+    "about": "FY21 revenue collected through March",
+    "ours": "34 million 340 thousand 103 dollars, 79 percent",
+    "official": "total collections to date are $34,340,102.63, or 79% of fy21 estimates through march 31, 2021.",
+    "note": "Same figure, rounded.",
+    "t": 485
+   },
+   {
+    "kind": "agree",
+    "about": "Local receipts estimate",
+    "ours": "three million sixty five thousand nine hundred and ninety one dollars, 91",
+    "official": "the local receipt estimate for fy21 is $3,065,990.50.",
+    "note": "Same figure, rounded; 91% also appears in the official figures.",
+    "t": 506
+   },
+   {
+    "kind": "caption_error",
+    "about": "Property tax levy net of overlay",
+    "ours": "Property tax collections: 28 million 77 776 249 dollars, 76, 186 181 dollars",
+    "official": "the total tax levy for fy21, net of the overlay, is $28,776,249.82.",
+    "note": "The captions garbled the digits of $28,776,249.82. 76% and the $186,180.73 tax lien figure match.",
+    "official_reading": "$28,776,249.82",
+    "t": 902
+   },
+   {
+    "kind": "caption_error",
+    "about": "State aid estimate",
+    "ours": "State aid: 9109 747 dollars, 78",
+    "official": "the total state aid estimate per the fy2021 cherry sheet is $9,109,747.00",
+    "note": "Digit grouping error in the captions; the stray 78 has no counterpart in the official minutes.",
+    "official_reading": "$9,109,747.00",
+    "t": 944
+   },
+   {
+    "kind": "caption_error",
+    "about": "FY21 expenditures",
+    "ours": "FY21 expenditures: 43 million 316 403, 30 million 250 to 405, 70",
+    "official": "the total budgeted expenditures for fy21 are $43,316,403.41.",
+    "note": "43,316,403 matches. The expended or encumbered figure heard as 30 million 250 to 405 is $30,252,404.35 in the official figures (70%).",
+    "official_reading": "$30,252,404.35",
+    "t": 964
+   },
+   {
+    "kind": "agree",
+    "about": "Reserve fund",
+    "ours": "Reserve fund and deficits: 75 000, 40 083 dollars",
+    "official": "reserve fund - to date there has been no draw on the reserve fund. the budgeted amount is $75,000.",
+    "note": "The $75,000 budgeted amount matches.",
+    "t": 987
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance surplus",
+    "ours": "Health insurance surplus: 275 000",
+    "official": "there will be a surplus of roughly $275k in this account at year end.",
+    "note": "Same figure.",
+    "t": 1069
+   },
+   {
+    "kind": "agree",
+    "about": "Warrants signed",
+    "ours": "one million one hundred thirty one thousand seven hundred seventy eight dollars and fifty one cents, 567 545.31, 831 881 and 46 cents",
+    "official": "accounts payable warrant #47 21, dated 4/13/2021, in the amount of $1,131,778.51",
+    "note": "Three of the four warrant amounts match. The official minutes also list a $2,540.97 warrant that we do not have.",
+    "t": 2048
+   },
+   {
+    "kind": "agree",
+    "about": "TCP design estimate",
+    "ours": "TCP design estimate: 54 000",
+    "official": "the cost estimate for the tcp building additional design services will be $54,000, to be taken from free cash",
+    "note": "Same figure.",
+    "t": 2691
+   },
+   {
+    "kind": "agree",
+    "about": "Article 3 amount",
+    "ours": "Article 3 prior year expenses: 500, 645 dollars",
+    "official": "there was an additional prior year bill of $500, bring the total to $645.00 for article 3.",
+    "note": "Same figures.",
+    "t": 2956
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Investment income and free cash figures",
+    "ours": "Investment income: sixty two thousand nine thirty five, twenty six thousand two thirty one",
+    "official": "",
+    "note": "The investment income, revised capital plan sources and 318,000 free cash balance figures do not appear in the official minutes.",
+    "t": 675
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Old Primary School landscape design",
+    "ours": "",
+    "official": "the old primary school landscape design will be $30,000.",
+    "note": "Our minutes have no landscape design figure."
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: other Republican registrar nominee interviewed next week",
+    "ours": "Board will invite the second Republican registrar nominee to interview next week; appointments deferred.",
+    "official": "the board thanked her for coming forward and they will interview the other person next week.",
+    "note": "Same decision.",
+    "t": 1795
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Reply to non-listed registrar applicant",
+    "ours": "One member will tell a non-listed applicant the board is bound to the party's nominee list.",
+    "official": "",
+    "note": "The official minutes do not record this.",
+    "t": 1900
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Trash sticker program",
+    "ours": "Board agreed to reinvestigate a sticker program for trash at least for discussion.",
+    "official": "",
+    "note": "The official minutes do not record this decision.",
+    "t": 2382
+   },
+   {
+    "kind": "agree",
+    "about": "Decision: Article 26 recommendation deferred",
+    "ours": "Board deferred its recommendation on Article 26 until after the Article 25 presentation at Town Meeting.",
+    "official": "it was decided to defer any recommendation until the presentation by the tcp building design committee at town meeting.",
+    "note": "Both defer the recommendation. We name the Article 25 presentation and the official minutes name the TCP Building Design Committee, which may be the same presentation.",
+    "t": 5473
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Articles 18, 19 and 30 and the consent calendar",
+    "ours": "Articles 18, 19 and 30 will be passed over and added to the consent calendar as applicable.",
+    "official": "the petitioner will have to do that at town meeting so it will not be included in the consent calendar.",
+    "note": "The official minutes put only Articles 18 and 19 on the consent calendar. They keep Article 30 off it because the petitioner is withdrawing it at town meeting. Check the recording at t=5518.",
+    "t": 5518
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: chair",
+    "ours": "Mr. Alonso (chair)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "note": "Misspelled name in the captions.",
+    "official_reading": "Tom Alonzo",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Moreno",
+    "ours": "Mr. Moreno (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "note": "Misheard name; the official roster has Jim Marino.",
+    "official_reading": "Jim Marino",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Attendee: Mr. Jeffries",
+    "ours": "Mr. Jeffries (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "note": "Spelling differs. The official minutes list him as Vice Chairman.",
+    "official_reading": "Michael-Ray Jeffreys",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Adams, Dwyer, town manager, finance director, Rudd",
+    "ours": "Ms. Adams (member); Mr. Dwyer (member); Town manager; Karen Brochu (finance director); Ms. Rudd (presenter)",
+    "official": "also present: heather lemieux, town manager; karen brochu, finance director; lorraine rudd",
+    "note": "All present in both. The official minutes name the town manager as Heather Lemieux.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment: Ethen Rossi and Chris Menard",
+    "ours": "",
+    "official": "finance committee member but speaking as a citizen, believed the article awarding $54,000 had been added late",
+    "note": "The official minutes record public comment from Ethen Rossi (care bags project) and Chris Menard (Article 26 added late). Our minutes have neither."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-26T09:36:17Z",
+   "cost_usd": 0.3038044
+  }
+ }
+}

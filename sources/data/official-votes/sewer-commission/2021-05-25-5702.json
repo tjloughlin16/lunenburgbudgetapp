@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-05-25",
  "docid": "5702",
@@ -12,58 +12,423 @@
  },
  "votes": [
   {
-   "motion": "Elect Dave MacDonald as Chair",
+   "motion": "Elect Dave MacDonald as Chair.",
    "moved_by": "Brett R.",
-   "seconded_by": "Mike Nault",
-   "outcome": "passed 4-0",
-   "procedural": true,
-   "quote": "motion: brett r. to elect dave macdonald as chair. motion: dave m. second: mike nault roll call vote: john-aye, mike n.-aye, brett-aye, and mike d.-aye."
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: brett r. to elect dave macdonald as chair.",
+   "seconded_by": ""
   },
   {
-   "motion": "Elect John Reynolds as Vice-Chair",
-   "moved_by": "Dave M.",
-   "seconded_by": "Mike Nault",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "second: mike nault to elect john reynolds as vice-chair. discussion: john said he would accept but may not be at all meetings. roll call vote: mike n.-aye, brett-aye, mike d.-aye, dave-aye and john-aye."
+   "motion": "Elect John Reynolds as Vice-Chair.",
+   "moved_by": "",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "to elect john reynolds as vice-chair. discussion: john said he would accept but may not be at all meetings."
   },
   {
-   "motion": "Elect Brett Ramsden as Clerk",
+   "motion": "Elect Brett Ramsden as Clerk.",
    "moved_by": "Mike Nault",
-   "seconded_by": "John Reynolds",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: mike nault second: john reynolds to elect brett ramsden as clerk. roll call vote: john-aye, mike n.-aye, mike d.-aye, brett- aye and dave-aye",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: mike nault second: john reynolds to elect brett ramsden as clerk.",
+   "seconded_by": "John Reynolds"
   },
   {
-   "motion": "Continue all further meetings to begin at 6pm",
+   "motion": "Continue all further meetings to begin at 6pm.",
+   "moved_by": "Brett",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "brett modified his motion: to continue all further meetings to begin at 6pm.",
+   "seconded_by": "John R."
+  },
+  {
+   "motion": "Approve the minutes for 5/11/21.",
    "moved_by": "Brett R.",
-   "seconded_by": "John R.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "brett modified his motion: to continue all further meetings to begin at 6pm. second: john r. (brett withdrew his previous motion.) roll call vote: john-aye, mike n.-aye, brett-aye, mike d.-aye, and dave-aye."
+   "quote": "to approve the minutes for 5/11/21.",
+   "seconded_by": "John R."
   },
   {
-   "motion": "Approve the minutes for 5/11/21",
-   "moved_by": "Brett R.",
-   "seconded_by": "John R.",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: brett r. second: john r. to approve the minutes for 5/11/21. roll call vote: john-aye, mike n.-aye, brett- aye, mike d.-aye, and dave-aye",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 6:35pm.",
    "moved_by": "John R.",
-   "seconded_by": "Mike D.",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: john r. to adjourn: 6:35pm second: mike d. roll call vote: john-aye, mike n.-aye, mike d.-aye, brett- aye and dave-aye",
-   "quote_taken_from_text": true
+   "quote": "motion: john r. to adjourn: 6:35pm second: mike d.",
+   "seconded_by": "Mike D."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Minutes were OCR'd from scanned pages. Minor formatting irregularities in the Election of Officers section (text order appears scrambled by OCR), but all votes are clearly readable.",
- "cost_usd": 0.19578049999999997
+ "note": "Text is macOS Vision OCR of scanned minutes, not a verified original; quotes are copied from the OCR text. Ambiguities: the seconder of the Chair election is not clearly printed (OCR reads 'Motion: Dave M.' then 'Second: Mike Nault'), so seconded_by is left blank; the Vice-Chair motion's mover is not printed; the easement discussion is cut off at a page break ('Brett and Mike D.'); the 40B proposal and the Water District suggestion are discussion or suggestions, not decisions. Votes are recorded as roll-call lists of ayes with no numeric count printed, so outcomes read 'passed'. Adam (Town Counsel), Heather (Town Manager), Fran, Chad Tempey and Carl Luck are mentioned but did not take part, so they are not listed as attendees. No transfers are recorded.",
+ "cost_usd": 0.02314255,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave MacDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "to elect dave macdonald as chair."
+  },
+  {
+   "name": "John Reynolds",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "to elect john reynolds as vice-chair."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "to elect brett ramsden as clerk."
+  },
+  {
+   "name": "Mike Nault",
+   "role": "not stated (appears on roll call)",
+   "status": "present",
+   "quote": "motion: mike nault second: john reynolds to elect brett ramsden as clerk."
+  },
+  {
+   "name": "Mike D.",
+   "role": "not stated (appears on roll call)",
+   "status": "present",
+   "quote": "roll call vote: john-aye, mike n.-aye, brett-aye, mike d.-aye, and dave-aye."
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager Report (per report heading)",
+   "status": "present",
+   "quote": "business manager report - barb noted adam (town counsel) will attend the meeting on 6/8"
+  },
+  {
+   "name": "Rob",
+   "role": "not stated",
+   "status": "present",
+   "quote": "rob reported he received 2 quotes - national water main cleaning was"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Rob directed to review the Fitchburg sewer use ordinance changes and report back.",
+   "quote": "dave asked rob to review it and he thanked brett and john for their work."
+  },
+  {
+   "decision": "Barb directed to email the Fitchburg Sewer Commission with an update.",
+   "quote": "dave also asked barb to email fitchburg sewer commission with an update."
+  },
+  {
+   "decision": "Commission agreed to monthly prorating for property ownership changes; Barb to draft the proposed policy.",
+   "quote": "the commission discussed the policy and agreed to monthly prorating. barb will work on the proposed policy for the commission's review."
+  },
+  {
+   "decision": "Commission agreed to clearer wording on SSA expansion in the regulations.",
+   "quote": "the commission discussed the wording and agreed to it would make it clearer."
+  },
+  {
+   "decision": "Commission agreed to Barb's recommended changes to the CTE O&M contract.",
+   "quote": "the commission discussed barb's changes, and all agreed."
+  },
+  {
+   "decision": "Rob to proceed with Green Mountain for the Elizabeth St. I/I work.",
+   "quote": "he will be going ahead with green mountain, who said they can do the work fairly soon."
+  },
+  {
+   "decision": "Before contacting the resident at 33 Elizabeth St., staff will see whether the contractor finds something there; Commission agreed.",
+   "quote": "barb added they will see if the contractor finds something at 33 elizabeth st. before they proceed in contacting the resident, and the commission agreed."
+  },
+  {
+   "decision": "Howard Street 40B proposal added to the agenda for discussion.",
+   "quote": "dave asked to add it to the agenda for discussion"
+  },
+  {
+   "decision": "Barb to confirm Town Counsel can still attend the 6/8 meeting now that it is at 6pm.",
+   "quote": "she will confirm he can still attend now that it's at 6pm"
+  },
+  {
+   "decision": "Barb to send the Town Counsel response on 5 Chestnut to Paula Bertram when received.",
+   "quote": "will send the response to paula when she receives it from counsel"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Sewer pro-rations on change of ownership",
+   "what_was_recorded": "New owners are billed the full minimum quarterly charge under the 2010 no-prorating policy; the Commission agreed to move to monthly prorating.",
+   "figures_as_printed": [
+    "$107"
+   ],
+   "quote": "all new owners are billed the minimum charge of $107 at the minimum for the quarter when they took ownership"
+  },
+  {
+   "topic": "Well-owner flat rate",
+   "what_was_recorded": "The current flat rate for well owners was stated as the figure printed.",
+   "figures_as_printed": [
+    "$231.87"
+   ],
+   "quote": "barb noted the current flat rate for well owners is $231.87/quarter 1833cf)."
+  },
+  {
+   "topic": "Cost of installing a well meter",
+   "what_was_recorded": "Barb estimated the total cost to install a meter on a well.",
+   "figures_as_printed": [
+    "$1,000"
+   ],
+   "quote": "barb noted the total cost to install a meter would be about $1,000."
+  },
+  {
+   "topic": "Fitchburg and Leominster invoices",
+   "what_was_recorded": "Two flow-meter-based invoices were reported for the sewer costs.",
+   "figures_as_printed": [
+    "$20,046.87",
+    "$116,591.55"
+   ],
+   "quote": "invoices -fitchburg for $20,046.87 (3/26-4/25/21) and leominster for $116,591.55 (12/26/20-3/25/21)"
+  },
+  {
+   "topic": "Leominster costs compared with last year",
+   "what_was_recorded": "Leominster costs at the same point in the year were reported for last year and this year.",
+   "figures_as_printed": [
+    "$309K",
+    "$362K"
+   ],
+   "quote": "barb replied that at this same time, last year's costs were $309k and this year $362k, with 3 quarters of flow meter readings."
+  },
+  {
+   "topic": "FY21 budget status",
+   "what_was_recorded": "Barb reported the FY21 budget looks good, with revenues up and expenses within range.",
+   "figures_as_printed": [
+    "$927, 133",
+    "$909K"
+   ],
+   "quote": "barb reported the fy21 budget looks good, with revenues up ($927, 133) and expenses within range ($909k)."
+  },
+  {
+   "topic": "Elizabeth St. I/I quotes",
+   "what_was_recorded": "Two inflow/infiltration quotes were received; Green Mountain was selected at a lower cost than the other quote.",
+   "figures_as_printed": [
+    "around $18K",
+    "$6,500",
+    "under $10K"
+   ],
+   "quote": "national water main cleaning was around $18k and green mountain quoted $6,500 for labor plus grout cost per gallon for under $10k"
+  },
+  {
+   "topic": "Elizabeth St. I/I funding source",
+   "what_was_recorded": "Rob said the work cost would come out of the I/I expense line.",
+   "figures_as_printed": [],
+   "quote": "rob said the cost will come out of i/l expense line."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Mike N.",
+   "stated_role": "",
+   "topic": "returning to the Commission",
+   "quote": "public comment- mike n. said it is good to be back again."
+  },
+  {
+   "speaker": "Brett",
+   "stated_role": "",
+   "topic": "welcoming Mike N. back; thanks to Dave",
+   "quote": "brett agreed it was good to have mike n. back and thanked dave for re-upping for 3 years."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "thanks to Carl Luck for 15 years of service",
+   "quote": "dave said he is looking forward to working with all and thanked carl luck for his 15 years of service"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Election of officers",
+   "resolution": "approved: Dave MacDonald Chair, John Reynolds Vice-Chair, Brett Ramsden Clerk",
+   "quote": "to elect dave macdonald as chair.",
+   "tags": [
+    "officers",
+    "election"
+   ]
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance",
+   "resolution": "continued; counsel comments to be reviewed and Fitchburg to be updated",
+   "quote": "fitchburg sewer use ordinance-barb reported that she'd received a reply from town counsel regarding changes",
+   "tags": [
+    "regulations",
+    "Fitchburg",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Policy change discussion",
+   "resolution": "monthly prorating agreed; Barb to draft policy; well meter and easement options discussed",
+   "quote": "policy change discussion - barb suggested looking at several policies to update while doing the public hearing",
+   "tags": [
+    "policy",
+    "pro-rations",
+    "wells",
+    "easements"
+   ]
+  },
+  {
+   "topic": "Expansion of sewer area (SSA) wording",
+   "resolution": "clearer wording agreed; changes to go to Town Meeting",
+   "quote": "expansion of sewer area (ssa)- barb noted that requests for expansion come to the commission, prior to the",
+   "tags": [
+    "sewer service area",
+    "regulations",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "Howard Street 40B proposal",
+   "resolution": "added to agenda for discussion; no action taken",
+   "quote": "howard street 40b proposal- barb reported she received a heads-up from adam burney (planning board)",
+   "tags": [
+    "40B",
+    "sewer service area",
+    "development"
+   ]
+  },
+  {
+   "topic": "CTE O&M contract",
+   "resolution": "Barb's recommended changes agreed; Year 2 begins 7/1/21",
+   "quote": "cte o& m contract - barb reported that chad tempey is coming up to year 2 of the contract",
+   "tags": [
+    "contract",
+    "O&M",
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Elizabeth St. inflow/infiltration work",
+   "resolution": "Green Mountain selected; contractor to check 33 Elizabeth St. before resident is contacted",
+   "quote": "elizabeth st. i/i (inflow/infiltration) - rob reported he received 2 quotes",
+   "tags": [
+    "inflow/infiltration",
+    "contract",
+    "cost"
+   ]
+  },
+  {
+   "topic": "Meeting time",
+   "resolution": "approved: all further meetings begin at 6pm",
+   "quote": "brett modified his motion: to continue all further meetings to begin at 6pm.",
+   "tags": [
+    "meetings",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Minutes of May 11, 2021",
+   "resolution": "approved",
+   "quote": "to approve the minutes for 5/11/21.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "noted; FY21 budget, invoices, Town Counsel hours reported; no action",
+   "quote": "business manager report - barb noted adam (town counsel) will attend the meeting on 6/8",
+   "tags": [
+    "budget",
+    "invoices",
+    "Town Counsel"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no action",
+   "quote": "public comment- mike n. said it is good to be back again.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Upcoming Commission activities",
+   "resolution": "noted: June 8 and June 29 meetings",
+   "quote": "upcoming scheduled sewer commission activities:",
+   "tags": [
+    "meetings",
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 6:35pm",
+   "quote": "motion: john r. to adjourn: 6:35pm second: mike d.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Fitchburg Sewer Use Ordinance",
+   "where": "text",
+   "quote": "fitchburg sewer use ordinance-barb reported that she'd received a reply from town counsel regarding changes"
+  },
+  {
+   "name": "Town Counsel's comments on the sewer regulations",
+   "where": "text",
+   "quote": "barb suggested the commission review counsel's comments, ask for any clarifications needed, and we could send it right to fitchburg."
+  },
+  {
+   "name": "Sewer regulations",
+   "where": "text",
+   "quote": "regarding changes to the sewer regulations today"
+  },
+  {
+   "name": "By-Laws",
+   "where": "text",
+   "quote": "the changes for the sewer easement and ssa expansion wording would need to go to the town meeting, as they are in the by-laws."
+  },
+  {
+   "name": "CTE O&M contract",
+   "where": "text",
+   "quote": "cte o& m contract - barb reported that chad tempey is coming up to year 2 of the contract"
+  },
+  {
+   "name": "Maintenance Plan",
+   "where": "text",
+   "quote": "make the contract consistent with the maintenance plan"
+  },
+  {
+   "name": "RFP for the Year 1 contract",
+   "where": "text",
+   "quote": "the rfp reference what is asked for in the maintenance plan."
+  },
+  {
+   "name": "Invoices from Fitchburg and Leominster",
+   "where": "text",
+   "quote": "invoices -fitchburg for $20,046.87 (3/26-4/25/21) and leominster for $116,591.55 (12/26/20-3/25/21)"
+  },
+  {
+   "name": "FY21 Budget",
+   "where": "text",
+   "quote": "barb reported the fy21 budget looks good, with revenues up ($927, 133) and expenses within range ($909k)."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "officer elections",
+  "sewer regulations",
+  "pro-rating policy",
+  "well sewer rate",
+  "easements",
+  "sewer service area",
+  "40B Howard Street",
+  "CTE O&M contract",
+  "inflow/infiltration",
+  "Fitchburg and Leominster invoices",
+  "FY21 budget",
+  "meeting schedule"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }
