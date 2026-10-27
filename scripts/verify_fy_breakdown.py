@@ -15,7 +15,9 @@ which is what makes a category here the category on the published surplus pages.
   2. each year's four totals sum to that year's surplus on the same footing;
   3. every line's four parts equal the ones recomputed here, to the cent;
   4. the two worked cases in notes/HANDOFF-FY-BREAKDOWN.md, exactly;
-  5. every figure the payload prints, if it has been written (`--no-payload` skips it).
+  5. every figure the payload prints, if it has been written (`--no-payload` skips it);
+  6. the line files: every line's school-budget rows sum to what the CSV says it spent, and
+     the weekly chart's bars to those rows.
 """
 import argparse
 import csv
@@ -281,18 +283,22 @@ def payload_checks(m):
     check('$%s' % format(round(left26), ',d') in p['finding']['text'],
           'the finding does not carry FY2026 left, recomputed %s' % left26)
     check(abs(left26 - yr[2026]) < 1, 'FY2026 left: model %s, recomputed %s' % (yr[2026], left26))
-    data = next(b for b in p['blocks'] if b.get('component') == 'fy-alluvial')['data']
-    for col in data['years']:
+    # the weekly chart: each year's bars, summed, are the line files' rows, re-charges apart
+    weeks = next(b for b in p['blocks'] if b.get('component') == 'fy-year-weeks')['data']
+    for col in weeks['years']:
         y = int(col['fy'][2:])
-        flows = sum((v for (yy, _, _), v in m['flows'].items() if yy == y), D0)
-        segs = sum((s['value'] for b in col['blocks'] for s in b['segs']), 0.0)
-        check(abs(Decimal(str(col['total'])) - flows) < 1 and abs(segs - float(flows)) < 1,
-              'alluvial %s total %s, flows %s, drawn %s' % (col['fy'], col['total'], flows, segs))
-        # what the alluvial draws is every school expense dollar of the year, all funds, on the
-        # footing used: recomputed straight off the CSV
-        allf = all_funds(y)
-        check(abs(Decimal(str(col['total'])) - allf) < 1,
-              'alluvial %s draws %s; every fund, recomputed, %s' % (col['fy'], col['total'], allf))
+        f = json.load(open(os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown',
+                                        'lines-%d.json' % y), encoding='utf-8'))
+        school = f['funds'].index('School budget')
+        rech = {i for i, k in enumerate(f['kinds']) if k.startswith('Re-charged')}
+        spend = sum((Decimal(str(x[8])) for L in f['lines'].values() for x in L['r'] if x[2] not in rech), Decimal(0))
+        off = sum((Decimal(str(x[8])) for L in f['lines'].values() for x in L['r']
+                   if x[2] in rech and x[6] == school and x[8] < 0), Decimal(0))
+        drawn = sum((Decimal(str(v)) for w in col['weeks'] for _, v in w['f']), Decimal(0))
+        drawn_rc = sum((Decimal(str(w['rc'])) for w in col['weeks']), Decimal(0))
+        check(abs(drawn - spend) < 1 and abs(drawn_rc - off) < 1,
+              'weekly %s draws %s and %s re-charged; the line files hold %s and %s'
+              % (col['fy'], drawn, drawn_rc, spend, off))
 
 
 def line_file_checks():
@@ -318,23 +324,6 @@ def line_file_checks():
                       Decimal(0))
             check(abs(got - v) < CENT, 'FY%d %s: the line file lists %s for the school budget; the '
                   'CSV gives %s' % (y, k[1], got, v))
-
-
-def all_funds(y):
-    """Every school expense dollar of year y: spent (orders owed counted), less the general
-    fund's payments on orders carried in from the year before and next year's invoices paid
-    early -- each of those belongs to another year's column."""
-    out, _ = recompute()
-    acc, rows = raw()
-    SPENT = {'API', 'APM', 'PRJ', 'PRH', 'GEN', 'GRV', 'CRP', 'POE', 'POL', 'POM', 'SOY', 'GEL'}
-    tot = sum((r['v'] for r in rows if r['y'] == y and r['source'] in SPENT
-               and acc[r['account']]['object'].startswith('5')), D0)
-    other = sum((v['another_year'] for k, v in out.items() if k[0] == y), D0)
-    cf = sum((r['v'] for r in rows if r['y'] == y and in_scope(r['account']) and r['source'] == 'BUA'
-              and r['description'].startswith('ENCUMBRANCE CARRY FORWARD')), D0)
-    # another_year = carried budget - what the carried orders paid - next year's bills, so the
-    # general fund's spending on other years is carried budget less another_year
-    return tot - (cf - other)
 
 
 if __name__ == '__main__':

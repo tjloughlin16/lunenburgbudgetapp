@@ -458,7 +458,7 @@ def model():
                          carried_unpaid=sum((r['carried_unpaid'] for r in rs), D0),
                          carried_budget=sum((r['carried_budget'] for r in rs), D0))
     return dict(rows=rows, years=years, moves=moves, placed_rows=dict(placed_rows), prepaid=prepaid, transfers=transfers(),
-                tie=tie_special(), flows=flows(rows, unmatched))
+                tie=tie_special())
 
 
 def transfers():
@@ -485,21 +485,6 @@ def transfers():
                         moved=sum((r['amt'] for r in rs if r['amt'] > 0), D0),
                         outside=sum((r['amt'] for r in rs), D0)))
     return out
-
-
-def flows(rows, unmatched):
-    """The alluvial's data: (fy, category, payer) -> all-funds cost of this year's work. The
-    general fund's own part per category, every placed other-fund dollar on the category of the
-    line it was placed on, and the unmatched money in one grey block per year."""
-    out = defaultdict(Decimal)
-    for r in rows:
-        if r['account']:
-            out[(r['fy'], r['category'], 'General fund')] += r['gf_cost']
-        for (_, py), v in r['payers'].items():
-            out[(r['fy'], r['category'], py)] += v
-    for (fy, py, _), v in unmatched.items():
-        out[(fy, 'unmatched', py)] += v
-    return dict(out)
 
 
 def main():

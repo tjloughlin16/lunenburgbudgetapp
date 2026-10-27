@@ -50,23 +50,7 @@ Y0, Y1 = 2025, 2026
 D0 = Decimal(0)
 PRIVATE = '0100-3-300-9300-51-1-06-2-535019'
 
-# THE ALLUVIAL'S BLOCKS: the surplus pages' eighteen categories in seven, because seven stacked
-# blocks can be read and eighteen cannot. Ours; every category lands in exactly one.
-GROUPS = [
-    ('teaching', 'Teachers and counselors', ('teachers', 'counselors')),
-    ('paras', 'Paraprofessionals', ('paras',)),
-    ('staff', 'Other staff', ('admin', 'custodians', 'athletics_staff', 'other_staff')),
-    ('tuition', 'Out-of-district tuition', ('tuition',)),
-    ('benefits', 'Health insurance and benefits', ('benefits',)),
-    ('buildings', 'Buildings and utilities', ('buildings', 'utilities')),
-    ('rest', 'Services, buses, supplies, the rest',
-     ('sped_services', 'transport', 'equipment', 'athletics', 'prof_dev', 'legal', 'supplies')),
-]
-UNMATCHED = ('unmatched', 'Other funds, not matched to a line')
-GROUP_OF = {c: g for g, _, cs in GROUPS for c in cs}
-if sorted(GROUP_OF) != sorted(c[0] for c in S.CATEGORIES):
-    raise SystemExit('build_fy_breakdown: GROUPS must hold every surplus category once')
-# Who paid, in six: a chart holds five hues and a grey. IDEA is named apart from the other
+# Who paid, in six, on the weekly chart: a chart holds five hues and a grey. IDEA is named apart from the other
 # grants because it is the grant this question turned on.
 PAYERS = [('gf', 'School general fund'), ('idea', 'IDEA grants'), ('grants', 'Other grants'),
           ('cb', 'Circuit breaker'), ('fees', 'Fees, revolving funds and lunch'),
@@ -99,44 +83,6 @@ def F(y):
     return figure(y, C.fy(y), 'fiscal year')
 
 
-def alluvial_data(m):
-    cells = defaultdict(Decimal)          # (fy, group, payer group)
-    for (fy, cat, py), v in m['flows'].items():
-        g = UNMATCHED[0] if cat == 'unmatched' else GROUP_OF[cat]
-        cells[(fy, g, payer_group(py))] += v
-    groups = [(g, l) for g, l, _ in GROUPS] + [UNMATCHED]
-    years = []
-    for fy in J.YEARS:
-        blocks = []
-        for g, _ in groups:
-            segs = [dict(payer=p, value=round(fl(cells[(fy, g, p)]), 2),
-                         text=C.usd(fl(cells[(fy, g, p)])))
-                    for p, _ in PAYERS if round(cells[(fy, g, p)]) != 0]
-            tot = sum((cells[(fy, g, p)] for p, _ in PAYERS), D0)
-            blocks.append(dict(group=g, total=round(fl(tot), 2), text=C.usd(fl(tot)), segs=segs))
-        tot = sum((cells[(fy, g, p)] for g, _ in groups for p, _ in PAYERS), D0)
-        years.append(dict(fy=C.fy(fy), total=round(fl(tot), 2), text=C.usd(fl(tot)),
-                          blocks=blocks))
-    # A negative cell is real -- a fund whose spending on a block netted below zero in the year,
-    # a refund or a charge reversed -- and a stack cannot draw it. It is listed under the
-    # diagram, never dropped and never netted into another cell.
-    negatives = [dict(fy=y['fy'], group=b['group'], payer=s['payer'], text=s['text'])
-                 for y in years for b in y['blocks'] for s in b['segs'] if s['value'] < 0]
-    for y in years:
-        for b in y['blocks']:
-            b['segs'] = [s for s in b['segs'] if s['value'] > 0]
-    return dict(years=years, negatives=negatives,
-                groups=[dict(id=g, label=l) for g, l in groups],
-                payers=[dict(id=p, label=l) for p, l in PAYERS],
-                text=dict(all='Every block', one='One block, at full height',
-                          total='All funds', pick='Pick a block',
-                          negatives='Netted below zero, not drawn:'),
-                note='What each block cost from every fund, by who paid. School general fund '
-                     'lines, department 300, with other funds’ spending placed on them by the '
-                     'match rules below; grey is what no rule places. Orders still owed are '
-                     'counted.')
-
-
 MONTHS = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'August',
           'September', 'October', 'November', 'December')
 
@@ -144,12 +90,6 @@ MONTHS = ('January', 'February', 'March', 'April', 'May', 'June', 'July', 'Augus
 def long_date(iso):
     y, mo, d = iso.split('-')
     return '%d %s %s' % (int(d), MONTHS[int(mo) - 1], y)
-
-
-def fy_day(iso, fy):
-    """Days since 1 July of the fiscal year's first calendar year."""
-    import datetime
-    return (datetime.date.fromisoformat(iso) - datetime.date(fy - 1, 7, 1)).days
 
 
 class Texts:
@@ -394,123 +334,82 @@ def lines_data(m, T):
                     'those orders.'))
 
 
-def pool_data(m, T):
-    """Under lines pour into one pool; over lines draw from it; what is left is the net."""
+KINDS = [('payroll', 'Payroll'), ('invoice', 'Invoices'), ('order', 'Orders still owed at year end'),
+         ('journal', 'Journal entries'), ('receipt', 'Receipts and refunds')]
+
+
+def kind_group(k):
+    if k == 'Payroll':
+        return 'payroll'
+    if k.startswith('Invoice'):
+        return 'invoice'
+    if k.startswith('Order'):
+        return 'order'
+    if k == 'Receipt':
+        return 'receipt'
+    return 'journal'
+
+
+def year_weeks(m, T):
+    """THE WHOLE YEAR, BY WEEK (TJ, 27 October 2026: "the SAME chart, but across the whole year,
+    across every spend, for every line"). Every row of every line, summed Monday to Sunday:
+    by who paid (the alluvial's six payer groups) or by kind of posting; bills re-charged off
+    the school budget below the line, their mirror under the receiving fund not counted twice.
+    Each week keeps its largest entries, so a spike can be read where it is."""
+    names = {line_key(r): (line_name(r) if r['account'] else 'Same kind of work, other funds')
+             for r in m['rows']}
+    monday = lambda d: d - timedelta(days=d.weekday())
     years = []
-    for fy in J.YEARS:
-        gin, gout = defaultdict(Decimal), defaultdict(Decimal)
-        nin, nout = defaultdict(int), defaultdict(int)
-        for r in m['rows']:
-            if r['fy'] != fy or r['account'] is None or r['left'] == 0:
-                continue
-            if r['left'] > 0:
-                gin[r['category']] += r['left']
-                nin[r['category']] += 1
-            else:
-                gout[r['category']] -= r['left']
-                nout[r['category']] += 1
-        under, over = sum(gin.values(), D0), sum(gout.values(), D0)
-        if under - over != m['years'][fy]['left']:
-            raise SystemExit('build_fy_breakdown: the pool of FY%d does not net to what was left' % fy)
-        tr = [t for t in m['transfers'] if t['fy'] == fy]
-        side = lambda g, n: [dict(cat=S.CAT_LABEL[c], value=round(fl(v), 2), text=T.usd(v),
-                                  lines=T.lit('%s %s' % (C.num(n[c]), 'line' if n[c] == 1 else 'lines')))
-                             for c, v in sorted(g.items(), key=lambda kv: -kv[1])]
-        years.append(dict(fy=T.fy(fy), under=round(fl(under), 2), over=round(fl(over), 2),
-                          t_under=T.usd(under), t_over=T.usd(over), t_left=T.usd(under - over),
-                          left=round(fl(under - over), 2),
-                          into=side(gin, nin), out=side(gout, nout),
-                          transfers=T.usd(sum((t['moved'] for t in tr), D0)),
-                          n_transfers=T.lit('%d dated entries' % len(tr))))
-    return dict(years=years, text=dict(
-        under='Lines that ended under', over='Lines that ran over', pool='One pool',
-        left='Left at year end', lines='lines',
-        transfers='Moved between lines by transfer, both ends named (on the timeline):',
-        read='Nothing in the books says which leftover paid for which overrun: inside one '
-             'appropriation the money is a pool. So no line is drawn from one to another.'))
-
-
-def timeline_data(m, T):
-    """Every recorded move, dated: transfers between lines, cost moved between funds, and
-    money that crossed from one year to another."""
-    lanes = [dict(id='transfer', label='Budget moved between lines (transfers)'),
-             dict(id='moved', label='Cost moved between funds (journal entries)'),
-             dict(id='year', label='Money crossing years')]
-    years = []
-    for fy in J.YEARS:
-        ev = []
-        for t in (t for t in m['transfers'] if t['fy'] == fy):
-            def names(side):
-                by = defaultdict(Decimal)
-                for x in side:
-                    by[S.CAT_LABEL[x['category']]] += abs(x['amount'])
-                top = sorted(by, key=lambda c: -by[c])
-                if not top:
-                    return 'outside the school budget'
-                more = len(top) - 2
-                return ' and '.join(top[:2]) + (' (and %s more)' % C.num(more) if more > 0 else '')
-            ev.append(dict(lane='transfer', day=fy_day(t['date'], fy), date=T.lit(long_date(t['date'])),
-                           value=round(fl(t['moved']), 2), text=T.usd(t['moved']),
-                           title=T.lit(t['description'] or 'No memo'),
-                           detail=T.lit('From %s to %s' % (names(t['gave']), names(t['got'])))
-                           + (' · %s from outside the school budget' % T.usd(t['outside'])
-                              if t['outside'] > 0 else
-                              ' · %s sent outside the school budget' % T.usd(-t['outside'])
-                              if t['outside'] < 0 else '')))
-        for mv in (x for x in m['moves'] if x['fy'] == fy):
-            pay = ', '.join('%s %s' % (T.lit(p), T.usd(v)) for p, v in
-                            sorted(mv['by_payer'].items(), key=lambda kv: -abs(kv[1])) if round(v))
-            ev.append(dict(lane='moved', day=fy_day(mv['date'], fy), date=T.lit(long_date(mv['date'])),
-                           value=round(fl(mv['off'] + mv['onto']), 2),
-                           text='%s off the school budget, %s back onto it' % (T.usd(mv['off']), T.usd(mv['onto'])),
-                           title=T.lit(mv['description'] or 'No memo'),
-                           detail='Other funds: %s' % pay if pay else ''))
-        y = m['years'][fy]
-        if y['carried_budget']:
-            ev.append(dict(lane='year', day=0, date=T.lit(long_date('%d-07-01' % (fy - 1))),
-                           value=round(fl(y['carried_budget']), 2), text=T.usd(y['carried_budget']),
-                           title='Orders carried in from %s' % T.fy(fy - 1),
-                           detail='%s of them were never paid, and came back to this year'
-                                  % T.usd(y['carried_unpaid'])))
-        pre = [r for r in m['prepaid'] if r['fy'] == fy]
-        if pre:
-            ev.append(dict(lane='year', day=fy_day(pre[0]['effective_date'], fy),
-                           date=T.lit(long_date(pre[0]['effective_date'])),
-                           value=round(fl(y['prepaid']), 2), text=T.usd(y['prepaid']),
-                           title='%s tuition paid from this year' % T.fy(fy + 1),
-                           detail=T.lit('%d invoices numbered for the next school year' % len(pre))))
-        ev.sort(key=lambda e: (e['day'], e['lane'], -e['value']))
-        years.append(dict(fy=T.fy(fy), events=ev,
-                          months=[T.lit(MONTHS[(6 + i) % 12][:3]) for i in range(12)]))
-    return dict(years=years, lanes=lanes, text=dict(
-        list='Every entry, in order', biggest='Largest first', order='In date order',
-        none='Nothing recorded in this lane.'))
-
-
-def table(m):
-    """The four parts, by category, one view per year."""
-    views = []
-    for fy in J.YEARS:
-        acc = defaultdict(lambda: defaultdict(Decimal))
-        for r in m['rows']:
-            if r['fy'] == fy:
-                for t in FB.TERMS + ('left',):
-                    acc[r['category']][t] += r[t]
-        cats = sorted(acc, key=lambda c: -acc[c]['left'])
-        rows = [dict(label=S.CAT_LABEL[c], cells=[C.usd(fl(acc[c][t])) for t in
-                                                ('left',) + FB.TERMS]) for c in cats]
-        y = m['years'][fy]
-        rows.append(dict(label='All lines', cells=[C.usd(fl(y['left']))]
-                         + [C.usd(fl(y['terms'][t])) for t in FB.TERMS]))
-        views.append(dict(key=str(fy), label=C.fy(fy), total_col=None,
-                          kinds=['ledger', 'estimate', 'ledger', 'estimate', 'ledger'],
-                          columns=['Left', 'Voted above cost', 'Transfers', 'Other funds',
-                                   'Another year'],
-                          rows=rows,
-                          note='Left = the four parts that follow, to the cent. Negative '
-                               '“voted above cost” is a vote below what the lines cost from '
-                               'every fund. Orders still owed are counted as spent.'))
-    return dict(caption='The four parts, by category', views=views)
+    for fy, lines in sorted(line_files(m).items()):
+        byf = defaultdict(lambda: defaultdict(Decimal))
+        byk = defaultdict(lambda: defaultdict(Decimal))
+        rc, rb = defaultdict(Decimal), defaultdict(Decimal)   # re-charged off, and back on
+        top = defaultdict(list)
+        for key, rs in lines.items():
+            for x in rs:
+                if not x['d']:
+                    continue
+                w = monday(date.fromisoformat(x['d']))
+                if x['k'].startswith(RECHARGE):
+                    if x['f'] == SCHOOL:
+                        (rc if x['v'] < 0 else rb)[w] += x['v']
+                        top[w].append((key, x))
+                    continue
+                byf[w][payer_group('General fund' if x['f'] == SCHOOL else x['f'])] += x['v']
+                byk[w][kind_group(x['k'])] += x['v']
+                top[w].append((key, x))
+        weeks = []
+        for w in sorted(set(byf) | set(rc) | set(rb)):
+            spend = sum(byf[w].values(), D0)
+            big = sorted(top[w], key=lambda kx: -abs(kx[1]['v']))[:6]
+            weeks.append(dict(
+                w=T.lit(w.isoformat()), label=T.lit('Week of %s' % long_date(w.isoformat())),
+                f=[[g, round(fl(v), 2)] for g, v in sorted(byf[w].items()) if v],
+                k=[[g, round(fl(v), 2)] for g, v in sorted(byk[w].items()) if v],
+                rc=round(fl(rc[w]), 2), rb=round(fl(rb[w]), 2), t=T.usd(spend),
+                t_rc=T.usd(-rc[w]) if rc[w] else '', t_rb=T.usd(rb[w]) if rb[w] else '',
+                top=[dict(line=T.lit(names[key]), what=T.lit(x['k']), payee=T.lit(x['p']),
+                          fund=T.lit(x['f']), text=T.usd(x['v'])) for key, x in big]))
+        tot = sum((sum(v.values(), D0) for v in byf.values()), D0)
+        years.append(dict(fy=T.fy(fy), a0=T.lit(monday(date(fy - 1, 7, 1)).isoformat()),
+                          a1=T.lit(date(fy, 6, 30).isoformat()), weeks=weeks, total=T.usd(tot),
+                          recharged=T.usd(-sum(rc.values(), D0)) if rc else '',
+                          back=T.usd(sum(rb.values(), D0)) if rb else ''))
+    return dict(years=years, payers=[dict(id=p, label=l) for p, l in PAYERS],
+                kinds=[dict(id=k, label=l) for k, l in KINDS],
+                text=dict(by_fund='By who paid', by_kind='By kind', recharge='Re-charged off the '
+                          'school budget', back='Re-charged back onto it',
+                          spent='spent or owed, every line', recharged='re-charged off the school '
+                          'budget', back_total='re-charged back onto it',
+                          biggest='Largest entries that week',
+                          pick='Hover or tap a week for its largest entries.',
+                          note='Every row of every school line and what other funds paid toward '
+                               'them, summed Monday to Sunday: payroll runs, invoices, orders '
+                               'still owed at year end and journal entries. Grey below the line '
+                               'is bills re-charged off the school budget to another fund; grey '
+                               'above a bar, bills re-charged back onto it. '
+                               'Other funds’ spending our matching places on no line is not '
+                               'here.'))
 
 
 def page(m):
@@ -587,33 +486,23 @@ def page(m):
                 'footing.' % (C.fy(Y1), C.usd(fl(without)), C.fy(Y0)),
                 {'y': F(Y1), 'w': U(without), 'z': F(Y0)}, ())),
     ]
-    late = '%d-05-26' % Y1          # the last five weeks of the year
-    gross = [(t['date'], t['moved']) for t in m['transfers'] if t['fy'] == Y1] + \
-        [(mv['date'], mv['off'] + mv['onto']) for mv in m['moves'] if mv['fy'] == Y1]
-    if not 2 * sum((v for dt, v in gross if dt >= late), D0) > sum((v for _, v in gross), D0):
-        raise SystemExit('build_fy_breakdown: the timeline says most of FY%d’s moved money moved '
-                         'after %s' % (Y1, late))
-    data = alluvial_data(m)
     T = Texts()
-    pool, timeline, lines = pool_data(m, T), timeline_data(m, T), lines_data(m, T)
-    figs = {s for y in data['years'] for s in [y['text'], y['fy']]
-            + [b['text'] for b in y['blocks']] + [x['text'] for b in y['blocks'] for x in b['segs']]}
-    figs |= {n['text'] for n in data['negatives']} | {n['fy'] for n in data['negatives']}
+    lines = lines_data(m, T)
+    weeks = year_weeks(m, T)
+    if {mv['date'][5:7] for mv in m['moves'] if mv['fy'] == Y1} != {'06'}:
+        fail('the weekly chart says every %d re-charge was in June' % Y1)
     return TP.page(
         ID,
         '%s’s lines left %s; other funds paid %s of their cost, %s more than in %s.'
         % (C.fy(Y1), C.usd(fl(y1['left'])), C.usd(fl(t1['other_funds'])), C.usd(fl(more)),
            C.fy(Y0)),
         facts, conclusions,
-        chart=TP.bridge(
-            'From the vote to what was left', ('Voted above cost, all funds', fl(t1['voted_above_cost'])),
-            [('Paid by other funds', fl(t1['other_funds'])),
-             ('Transfers, net', fl(t1['transfers'])),
-             ('Another year’s money', fl(t1['another_year']))],
-            ('Left', fl(y1['left'])), '$', basis='estimate',
-            note='The first two steps are our placing of other funds’ spending; their sum is '
-                 'measured. The last two are postings. School general fund, department 300.',
-            note_allow=('300',)),
+        chart=TP.series(
+            'What the school lines left, by year', [C.fy(y) for y in J.YEARS],
+            [TP.track('Left, orders still owed counted', [fl(m['years'][y]['left']) for y in J.YEARS],
+                      'published', 'bar')], '$', kind='bar',
+            note='School general fund, department 300. Every line’s Left in the table above, '
+                 'summed.', note_allow=('300',)),
         blocks=[
             TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
@@ -625,47 +514,16 @@ def page(m):
                       so=('A line can end under because its bills were re-charged to another '
                           'fund after the school budget paid them. Sorted by category, lines '
                           'that cancel each other out sit side by side.', None, ())),
-            TB.custom('fy-alluvial', 'Who paid for what, year by year', data, place='lead',
-                      figures=sorted(figs, key=len, reverse=True), allow=('300',),
-                      basis=('reading', 'Our placing of other funds’ spending on the lines'),
-                      alt='Alluvial diagram, four fiscal years: what the school budget’s lines '
-                          'cost from every fund, in seven blocks, each split by who paid, with '
-                          'bands joining each block and payer from year to year',
-                      so=('Follow a band: one that keeps its height and changes colour is a cost '
-                          'that held while its payer changed, the move a voted budget cannot show.',
-                          None, ())),
-            TB.custom('fy-pool', 'One pool, not pairs', pool, place='body',
+            TB.custom('fy-year-weeks', 'Every week of the year', weeks, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
-                      basis=('record', 'What each line had left, as the journal records it'),
-                      alt='Flow diagram, one year at a time: every category whose lines ended under '
-                          'budget flows into one pool on the left; the pool flows out to every '
-                          'category whose lines ran over, and what remains is what was left',
-                      so=('The overruns were paid from leftovers in general, not from any one of '
-                          'them. A claim that one line covered another is a reading, not a record.',
-                          None, ())),
-            TB.custom('fy-moves-timeline', 'Every recorded move, dated', timeline, place='body',
-                      figures=sorted(T.figures), allow=sorted(T.literals),
-                      basis=('record', 'Journal entries, with the Town’s own memo for each'),
-                      alt='Timeline of the fiscal year, July to June, in three lanes: budget '
-                          'transfers between lines, costs moved between funds by journal entry, '
-                          'and money crossing from one year to another; each mark sized by amount',
-                      so=('When a move was made shows whether it was planned or a year-end '
-                          'adjustment. In %s most of the money moved in the last five weeks.'
-                          % C.fy(Y1), {'y': F(Y1)}, ())),
-            TB.explain('How the four parts are counted', [
-                '**Voted above cost** is the vote, less what the line cost from every fund. '
-                '**Paid by other funds** is what grants, the circuit breaker, fees and revolving '
-                'funds paid toward the line. **Transfers** moved budget between lines. '
-                '**Another year’s money** is orders carried in from last year, less what they '
-                'paid, less next year’s bills paid early.',
-                'Which other-fund dollar counts toward which line is our reading, in order: a '
-                'journal entry naming both ends, then the same payee, then the same function '
-                'code (placed on a category, never a line). What none of them places is shown '
-                'apart, never counted as voted above cost. Capital articles are matched only by '
-                'a journal entry.'],
-                place='body', tone='define'),
+                      basis=('record', 'Every posting on the school lines, by week'),
+                      alt='Bar chart, one fiscal year at a time: every week from July to June, '
+                          'what every school line spent or still owed that week, stacked by who '
+                          'paid or by kind of posting, with bills re-charged to other funds below '
+                          'the line',
+                      so=('In %s every bill re-charged off the school budget was re-charged in '
+                          'June.' % C.fy(Y1), {'y': F(Y1)}, ())),
         ],
-        tables=[table(m)],
         sources=[
             dict(label='Lunenburg Budget Project — munis-school-journal.csv (every school '
                        'journal line, every fund, FY2023–FY2026, our redacted reading of the '

@@ -1,5 +1,16 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
+## REBUILT AROUND THE LINE TABLE, 27 October 2026. Still hidden (draft), not deployed
+
+TJ cut everything below the table ("those charts dont help"): the alluvial, the pool, the moves
+timeline and the category table are gone, components and generator code with them. The page is
+now: the line table (two sums; re-charges apart from money other funds paid from the start;
+each line opens a popup -- Summary, Expenses with every row and who paid, Analysis by week,
+payee and memo, from /data/fy-breakdown/lines-<year>.json), then `fy-year-weeks`, every week of
+the year across every line. Companion page: /fy2026-closeout/fy2026-circuit-breaker (registered,
+on the shelf). Vocabulary settled with TJ: "re-charged", never "moved" (a re-charge sends the
+BILL to another fund; no money goes into it).
+
 ## SHELVED, 26 October 2026 (late). HIDDEN, NOT RELEASED. TJ is taking a different approach
 
 TJ, after reading it: *"im struggling to undersand this ... and how it helps undersand the
