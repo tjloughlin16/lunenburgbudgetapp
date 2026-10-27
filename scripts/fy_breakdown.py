@@ -336,7 +336,7 @@ def model():
         py = fund_payer[f]
         placed[(fy, acct)]['payee'] -= n
         by_payer[(fy, acct, 'payee', py)] -= n
-        how[(fy, acct)][('payee', py, 'less what a journal entry moved back onto this line')] -= n
+        how[(fy, acct)][('payee', py, 'less bills re-charged back to the school budget')] -= n
         unmatched[(fy, py, 'moved between funds by journal entry')] += n
         if unmatched[(fy, py, 'moved between funds by journal entry')] == 0:
             del unmatched[(fy, py, 'moved between funds by journal entry')]

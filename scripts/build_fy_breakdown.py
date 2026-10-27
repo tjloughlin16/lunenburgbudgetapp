@@ -176,7 +176,7 @@ def line_name(r):
 def how_rows(T, how):
     """Who else paid toward a line, and HOW each was matched: the payee, the journal entry, or
     the function code."""
-    lab = {'payee': 'paid the same payee', 'moved': 'journal entry moved it',
+    lab = {'payee': 'paid the same payee', 'moved': 're-charged to it by journal entry',
            'function': 'same kind of work'}
     out = []
     for (rule, py, h), v in sorted(how.items(), key=lambda kv: -abs(kv[1])):
@@ -277,58 +277,60 @@ def lines_data(m, T):
                   'one line to another. No bill moves.',
         carried='Last year’s unpaid orders, carried in with the budget to pay them.',
         budget='What the line was allowed to spend: voted, plus transfers, plus carried.',
-        before='What the school budget paid or still owed on this line, before any journal '
-               'entry moved cost to or from another fund. Orders still owed at year end count.',
-        off='THE SCHOOL BUDGET’S SIDE. Cost already spent on this line, re-booked by journal '
-            'entry onto a grant or another fund (a reclass). Here it LEAVES the school budget: '
-            'what the school budget spent goes down by this much, so Left goes up by this much. '
-            'The same amount appears again under What the line cost, because the bills still '
-            'cost the same.',
-        on='Cost a grant or another fund had paid, re-booked onto this line by journal entry. The '
-           'school budget’s spending goes up, so Left goes down.',
-        left='The budget, less what the school budget spent after the moves: this line’s part of '
-             'the surplus, or of what ran over.',
-        spent='What the school budget spent on this line, after the moves.',
-        off_cost='WHAT THE LINE COST. The same amount the school budget moved off this line, '
-                 'counted back in here because it is still this line’s cost: the other fund paid '
-                 'it instead. Left out, the total would be short by exactly what moved. It does '
-                 'not change Left; that happened on the school budget’s side.',
-        direct='What grants and other funds paid toward this line in the first place. Left does '
-               'not change. Which spending counts toward which line is our match, by payee or by '
-               'kind of work.',
+        before='What the school budget paid or still owed on this line, before any bill was '
+               're-charged to or from another fund. Orders still owed at year end count.',
+        off='THE SCHOOL BUDGET’S SIDE. Bills the school budget had already paid on this line, '
+            're-charged by journal entry to a grant or another fund (a reclass): that fund’s money '
+            'pays them instead. No money goes into the other fund; the bills go to it. So the '
+            'school budget’s spending goes down by this much, and Left goes up by this much. The '
+            'same amount appears again under What the line cost, because the bills cost the same.',
+        on='THE SCHOOL BUDGET’S SIDE. Bills a grant or another fund had paid, re-charged by '
+           'journal entry to this line: the school budget pays them instead. Its spending goes up '
+           'by this much, so Left goes down.',
+        left='The budget, less what the school budget spent after the re-charges: this line’s part '
+             'of the surplus, or of what ran over.',
+        spent='What the school budget spent on this line, after the re-charges.',
+        off_cost='WHAT THE LINE COST. The same bills the school budget re-charged to another fund, '
+                 'counted here because they are still this line’s cost: the other fund paid them, '
+                 'after the school budget had. Left out, the total would be short by exactly that '
+                 'much. It does not change Left; that happened on the school budget’s side.',
+        direct='WHAT THE LINE COST. Bills a grant or another fund paid toward this line from the '
+               'start; the school budget never paid them, so Left does not change. Which '
+               'spending counts toward which line is our match, by payee or by kind of work.',
         total='What the line cost, from every fund.')
     col = lambda id_, key, label, op, group: dict(id=id_, key=key, label=label, op=op, group=group,
                                                   means=means[id_])
     return dict(years=years, cats=sorted({S.CAT_LABEL[c[0]] for c in S.CATEGORIES}),
-                # TWO SUMS, side by side. "Moved to other funds" is in both: it leaves the school
-                # budget's sum (raising Left) and stays in what the line cost.
+                # TWO SUMS, side by side. A re-charge to another fund is in both: it leaves the
+                # school budget's sum (raising Left) and stays in what the line cost. TJ, on
+                # "moved to": it read as money going INTO the fund, when the BILL went to it.
                 groups=[dict(id='budget', label='The school budget'),
                         dict(id='cost', label='What the line cost, every fund')],
                 columns=[col('voted', 'voted', 'Voted', '', 'budget'),
                          col('transfers', 'transfers', 'Transfers in or out', '+', 'budget'),
                          col('carried', 'carried', 'Carried from last year', '+', 'budget'),
                          col('budget', 'budget', 'Budget', '=', 'budget'),
-                         col('before', 'before', 'Spent before moves', '−', 'budget'),
-                         col('off', 'off', 'Moved to other funds, off the school budget', '+', 'budget'),
-                         col('on', 'on', 'Moved back from other funds', '−', 'budget'),
+                         col('before', 'before', 'Spent before re-charges', '−', 'budget'),
+                         col('off', 'off', 'Re-charged to other funds', '+', 'budget'),
+                         col('on', 'on', 'Re-charged from other funds', '−', 'budget'),
                          col('left', 'left', 'Left', '=', 'budget'),
                          col('spent', 'spent', 'Spent by the school budget', '', 'cost'),
-                         col('off_cost', 'off', 'Moved to other funds, still this line’s cost', '+', 'cost'),
-                         col('direct', 'direct', 'Paid directly by other funds', '+', 'cost'),
+                         col('off_cost', 'off', 'Paid by other funds, re-charged later', '+', 'cost'),
+                         col('direct', 'direct', 'Paid by other funds, from the start', '+', 'cost'),
                          col('total', 'total', 'Total spent, all funds', '=', 'cost')],
                 text=dict(
-                    read='Other funds can lower a line’s cost to the school budget in two ways, '
-                         'and only one of them changes Left. A journal entry can MOVE cost already '
-                         'spent off the line onto a grant or another fund (or back): that raises '
-                         'or lowers Left, and the line cost the same. Or another fund can PAY '
-                         'DIRECTLY: Left is untouched and the total cost is higher than the '
+                    read='Other funds can pay a line’s bills in two ways, and only one of them '
+                         'changes Left. The school budget can pay first and a journal entry RE-CHARGE '
+                         'the bills to a grant or another fund later: the school budget’s spending '
+                         'falls and Left rises, and the line cost the same. Or the other fund can '
+                         'pay FROM THE START: Left is untouched, and the line cost more than the '
                          'school budget shows. Hover or tap a circled amount to see each entry.',
                     other_funds='Other funds: grants, the circuit breaker, fees and revolving '
-                                'funds, and capital articles. Moves are the Town’s own entries; '
-                                'which spending counts as paid directly toward a line is our '
+                                'funds, and capital articles. Re-charges are the Town’s own entries; '
+                                'which spending counts as paid from the start toward a line is our '
                                 'match, by payee or by kind of work.',
-                    chip_off='Moved off this line, onto', chip_on='Moved back onto this line, from',
-                    chip_direct='Paid directly by other funds',
+                    chip_off='Re-charged from this line to', chip_on='Re-charged to this line from',
+                    chip_direct='Paid by other funds, from the start',
                     cost_sum='What the line cost, every fund',
                     all_cats='Every category', show='Show every line', fewer='Show only both ends',
                     between='the lines in between: show every line',
@@ -572,9 +574,9 @@ def page(m):
                           'as two sums: the school budget to what was left, with cost moved to '
                           'other funds by journal entry apart from what it spent; and what the '
                           'line cost from every fund. Sortable by category and by every column',
-                      so=('A line can end under because other funds took its cost, and a move '
-                          'does that after the spending. Sorted by category, lines that '
-                          'cancel each other out sit side by side.', None, ())),
+                      so=('A line can end under because its bills were re-charged to another '
+                          'fund after the school budget paid them. Sorted by category, lines '
+                          'that cancel each other out sit side by side.', None, ())),
             TB.custom('fy-alluvial', 'Who paid for what, year by year', data, place='lead',
                       figures=sorted(figs, key=len, reverse=True), allow=('300',),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
