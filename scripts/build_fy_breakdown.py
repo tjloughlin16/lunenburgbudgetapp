@@ -321,6 +321,9 @@ def lines_data(m, T):
                     no_recharges='No bills re-charged to or from another fund.',
                     ex_date='Date', ex_kind='What', ex_payee='Payee', ex_memo='Memo',
                     ex_ref='Reference', ex_fund='Paid by', ex_amount='Amount', ex_rows='rows',
+                    any_payee='Every payee', any_memo='Every memo', clear_filters='Clear',
+                    an_click='Click a bar to see its rows on the Expenses tab.',
+                    for_what='for', paid_to='paid to',
                     ex_note='One row per invoice, payroll warrant or journal entry. A purchase '
                             'order shows only what it still owed at year end; one fully paid '
                             'shows as its invoices. Payroll rows are whole pay runs, with no '
@@ -678,19 +681,32 @@ def analysis(fy, rs, fi):
     funds and pays nobody, so it is left out of the payee and memo bars and drawn on the weekly
     chart apart, below the line (its mirror under the receiving fund is not drawn twice)."""
     spend = [x for x in rs if not x['k'].startswith(RECHARGE)]
-    def bars(label):
+    payee_of = lambda x: x['p'] or x['k']
+    memo_of = lambda x: memo_key(x['m'])
+    rows_text = lambda n: '%s %s' % (C.num(n), 'row' if n == 1 else 'rows')
+
+    def bars(label, other):
+        """Bars by `label`, each [name, rows, [[fund, amount]], total, filter key, what it was
+        for]: under a payee, its memos; under a memo, its payees (TJ: "what are we paying FLLAC
+        for?!" and "who are we paying to do THAT MEMO")."""
         tot = defaultdict(lambda: defaultdict(Decimal))
         cnt = defaultdict(int)
+        sub = defaultdict(lambda: defaultdict(Decimal))
+        subn = defaultdict(lambda: defaultdict(int))
         for x in spend:
             k = label(x)
             if k:
                 tot[k][x['f']] += x['v']
                 cnt[k] += 1
+                o = other(x) or '(no memo)'
+                sub[k][o] += x['v']
+                subn[k][o] += 1
         order = sorted(tot, key=lambda k: -sum(tot[k].values()))
         top, rest = order[:TOP], order[TOP:]
-        rows_text = lambda n: '%s %s' % (C.num(n), 'row' if n == 1 else 'rows')
         out = [[k, rows_text(cnt[k]), [[fi[f], round(fl(v), 2)] for f, v in sorted(tot[k].items())],
-                money(sum(tot[k].values(), D0))] for k in top]
+                money(sum(tot[k].values(), D0)), k,
+                [[o, rows_text(subn[k][o]), money(v)] for o, v in
+                 sorted(sub[k].items(), key=lambda kv: -abs(kv[1]))[:4]]] for k in top]
         if rest:
             agg = defaultdict(Decimal)
             for k in rest:
@@ -698,10 +714,10 @@ def analysis(fy, rs, fi):
                     agg[f] += v
             out.append(['%s more' % C.num(len(rest)), rows_text(sum(cnt[k] for k in rest)),
                         [[fi[f], round(fl(v), 2)] for f, v in sorted(agg.items())],
-                        money(sum(agg.values(), D0))])
+                        money(sum(agg.values(), D0)), '', []])
         return out, cnt
-    payees, _ = bars(lambda x: x['p'] or x['k'])
-    memos, mc = bars(lambda x: memo_key(x['m']))
+    payees, _ = bars(payee_of, memo_of)
+    memos, mc = bars(memo_of, payee_of)
     # memos are charted only where they group: at least two memos shared by two rows or more
     if sum(1 for n in mc.values() if n >= 2) < 2:
         memos = []
@@ -747,7 +763,7 @@ def line_texts(m):
                 cnt[g] += 1
             body[key] = dict(analysis(fy, rs, fi),
                 r=[[x['d'], long_date(x['d']) if x['d'] else '', ki[x['k']], x['p'], x['m'], x['n'],
-                    fi[x['f']], money(x['v']), round(fl(x['v']), 2)]
+                    fi[x['f']], money(x['v']), round(fl(x['v']), 2), memo_key(x['m'])]
                    for x in sorted(rs, key=lambda x: (x['d'] or '9', -abs(x['v'])))],
                 t=[[fi[f], money(v), round(fl(v), 2)] for f, v in
                    sorted(tot.items(), key=lambda kv: (kv[0] != SCHOOL, -abs(kv[1])))],

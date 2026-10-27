@@ -32,7 +32,7 @@ type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomo
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'tab_summary' | 'tab_expenses' | 'close'
   | 'who_paid' | 'every_row' | 'by_payee' | 'every_fund' | 'loading' | 'failed' | 'recharges' | 'no_recharges'
   | 'tab_analysis' | 'an_payee' | 'an_memo' | 'an_week' | 'an_note' | 'an_week_note' | 'an_recharge'
-  | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
+  | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'any_payee' | 'any_memo' | 'clear_filters' | 'an_click' | 'for_what' | 'paid_to' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
 type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
@@ -195,8 +195,10 @@ function HeadTip({ label, means, children }: { label: string; means: string; chi
  *  re-charges, what other funds paid from the start, the transfers. Expenses: every row, from
  *  /data/fy-breakdown/lines-<year>.json, fetched when a line opens; who paid at the top, each
  *  fund a filter; every row, or grouped by payee. */
-type ExRow = [string, string, number, string, string, string, number, string, number]
-type Bar = [string, string, [number, number][], string]
+type ExRow = [string, string, number, string, string, string, number, string, number, string]
+/** What the Expenses tab is narrowed to: a payee, a memo (as grouped), or neither. */
+type Filter = { payee?: string; memo?: string }
+type Bar = [string, string, [number, number][], string, string, [string, string, string][]]
 type Wk = [string, string, [number, number][], string, string]
 type ExLine = { r: ExRow[]; t: [number, string, number][]; g: [string, number, number, string, number][]
   ap: Bar[]; am: Bar[]; aw: Wk[]; a0: string; a1: string }
@@ -222,7 +224,7 @@ function ItemList({ title, items, empty }: { title: string; items: Item[]; empty
     </div>)
 }
 
-function Expenses({ r, fy, t }: { r: Row; fy: string; t: T }) {
+function Expenses({ r, fy, t, filter, setFilter }: { r: Row; fy: string; t: T; filter: Filter; setFilter: (f: Filter) => void }) {
   const [file, setFile] = useState<ExFile | null>(null)
   const [err, setErr] = useState(false)
   const [fund, setFund] = useState<number | null>(null)
@@ -232,8 +234,14 @@ function Expenses({ r, fy, t }: { r: Row; fy: string; t: T }) {
   if (!file) return <p className="text-[13px]" style={muted}>{t.loading}</p>
   const L = file.lines[r.key]
   if (!L) return <p className="text-[13px]" style={muted}>{t.none}</p>
-  const rows = L.r.filter(x => fund === null || x[6] === fund)
-  const groups = L.g.filter(x => fund === null || x[1] === fund)
+  const payeeOf = (x: ExRow) => x[3] || file.kinds[x[2]]
+  const rows = L.r.filter(x => (fund === null || x[6] === fund) && (!filter.payee || payeeOf(x) === filter.payee)
+    && (!filter.memo || x[9] === filter.memo))
+  const groups = L.g.filter(x => (fund === null || x[1] === fund) && (!filter.payee || x[0] === filter.payee))
+  const payees = Array.from(new Set(L.r.map(payeeOf))).sort()
+  const memos = Array.from(new Set(L.r.map(x => x[9]).filter(Boolean))).sort()
+  const sel = 'px-2 py-1 rounded border text-[12.5px] max-w-[16rem]'
+  const selStyle = { borderColor: 'var(--grid)', background: 'var(--surface-1)', color: 'var(--text-primary)' }
   const th = 'px-2 py-1.5 text-left font-semibold align-bottom'
   return (
     <div className="text-[13px]">
@@ -247,10 +255,24 @@ function Expenses({ r, fy, t }: { r: Row; fy: string; t: T }) {
       <div className="flex gap-1.5 mt-3">
         <Chip on={!grouped} onClick={() => setGrouped(false)}>{t.every_row}</Chip>
         <Chip on={grouped} onClick={() => setGrouped(true)}>{t.by_payee}</Chip>
+        <select value={filter.payee ?? ''} onChange={e => setFilter({ ...filter, payee: e.target.value || undefined })}
+          className={`${sel} ml-2`} style={selStyle} aria-label={t.ex_payee}>
+          <option value="">{t.any_payee}</option>
+          {payees.map(p => <option key={p} value={p}>{p}</option>)}
+        </select>
+        <select value={filter.memo ?? ''} onChange={e => setFilter({ ...filter, memo: e.target.value || undefined })}
+          className={sel} style={selStyle} aria-label={t.ex_memo}>
+          <option value="">{t.any_memo}</option>
+          {memos.map(m => <option key={m} value={m}>{m}</option>)}
+        </select>
+        {filter.payee || filter.memo ? (
+          <button type="button" className="text-[12.5px] px-2 py-0.5 rounded border" style={{ borderColor: 'var(--grid)' }}
+            onClick={() => setFilter({})}>{t.clear_filters} ✕</button>) : null}
       </div>
       <div className="mt-2 overflow-x-auto">
         {/* divs would lose the column alignment; the site's download links on a table are fine here */}
-        {grouped ? (
+        {/* the by-payee totals are per payee and fund only; with a memo picked, the rows */}
+        {grouped && !filter.memo ? (
           <table className="w-full tabular-nums border-collapse">
             <thead><tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
               <th className={th}>{t.ex_payee}</th><th className={th}>{t.ex_fund}</th>
@@ -294,23 +316,38 @@ function useFile(fy: string) {
 }
 
 /** Bars by payee or memo, each split by the fund that paid; one scale for the chart. */
-function Bars({ title, bars, file }: { title: string; bars: Bar[]; file: ExFile }) {
+function Bars({ title, bars, file, t, sub, onPick }: { title: string; bars: Bar[]; file: ExFile; t: T; sub: string; onPick: (k: string) => void }) {
   const max = Math.max(1, ...bars.map(b => b[2].reduce((a, [, v]) => a + Math.max(0, v), 0)))
   const used = Array.from(new Set(bars.flatMap(b => b[2].map(([f]) => f)))).sort((a, b) => a - b)
   return (
     <div>
       <p className="font-semibold mb-1.5">{title}</p>
       <Legend used={used} file={file} />
-      <div className="grid grid-cols-[minmax(8rem,14rem)_1fr_auto] gap-x-3 gap-y-1.5 items-center">
-        {bars.map((b, i) => [
-          <span key={`${i}l`} className="text-[12.5px] leading-tight">{b[0]}<span className="block text-[11px]" style={muted}>{b[1]}</span></span>,
-          <span key={`${i}b`} className="flex h-3.5 rounded-sm overflow-hidden" style={{ background: 'var(--surface-2)' }}>
-            {b[2].filter(([, v]) => v > 0).map(([f, v]) => (
-              <span key={f} title={`${file.funds[f]}`} style={{ width: `${(100 * v) / max}%`, background: fundColour(f) }} />))}
-          </span>,
-          <span key={`${i}v`} className="tabular-nums text-right text-[12.5px] font-semibold whitespace-nowrap">{b[3]}</span>,
-        ])}
+      <div className="divide-y" style={{ borderColor: 'var(--grid)' }}>
+        {bars.map((b, i) => {
+          const body = (
+            <span className="grid grid-cols-[minmax(8rem,14rem)_1fr_auto] gap-x-3 items-start w-full text-left">
+              <span className="text-[12.5px] leading-tight">{b[0]}<span className="block text-[11px]" style={muted}>{b[1]}</span></span>
+              <span className="flex flex-col gap-1 pt-0.5">
+                <span className="flex h-3.5 rounded-sm overflow-hidden" style={{ background: 'var(--surface-2)' }}>
+                  {b[2].filter(([, v]) => v > 0).map(([f, v]) => (
+                    <span key={f} title={file.funds[f]} style={{ width: `${(100 * v) / max}%`, background: fundColour(f) }} />))}
+                </span>
+                {b[5].length ? (
+                  <span className="text-[11.5px] leading-snug" style={secondary}>
+                    {b[5].map(([o, n, v], j) => (
+                      <span key={j} className="block">{sub} <span style={{ color: 'var(--text-primary)' }}>{o}</span> · {n} · <span className="tabular-nums">{v}</span></span>))}
+                  </span>) : null}
+              </span>
+              <span className="tabular-nums text-right text-[12.5px] font-semibold whitespace-nowrap">{b[3]}</span>
+            </span>)
+          return b[4] ? (
+            <button key={i} type="button" onClick={() => onPick(b[4])} className="block w-full py-1.5 rounded hover:bg-[var(--surface-2)]"
+              style={{ borderColor: 'var(--grid)' }}>{body}</button>
+          ) : <div key={i} className="py-1.5" style={{ borderColor: 'var(--grid)' }}>{body}</div>
+        })}
       </div>
+      <p className="text-[11.5px] mt-1" style={muted}>{t.an_click}</p>
     </div>)
 }
 
@@ -385,7 +422,7 @@ function Weeks({ L, file, t }: { L: ExLine; file: ExFile; t: T }) {
     </div>)
 }
 
-function Analysis({ r, fy, t }: { r: Row; fy: string; t: T }) {
+function Analysis({ r, fy, t, pick }: { r: Row; fy: string; t: T; pick: (f: Filter) => void }) {
   const { file, err } = useFile(fy)
   if (err) return <p className="text-[13px]" style={muted}>{t.failed}</p>
   if (!file) return <p className="text-[13px]" style={muted}>{t.loading}</p>
@@ -394,14 +431,15 @@ function Analysis({ r, fy, t }: { r: Row; fy: string; t: T }) {
   return (
     <div className="text-[13px] space-y-7">
       {L.aw.length ? <Weeks L={L} file={file} t={t} /> : null}
-      <Bars title={t.an_payee} bars={L.ap} file={file} />
-      {L.am.length ? <Bars title={t.an_memo} bars={L.am} file={file} /> : null}
+      <Bars title={t.an_payee} bars={L.ap} file={file} t={t} sub={t.for_what} onPick={k => pick({ payee: k })} />
+      {L.am.length ? <Bars title={t.an_memo} bars={L.am} file={file} t={t} sub={t.paid_to} onPick={k => pick({ memo: k })} /> : null}
       <p className="text-[12px] max-w-3xl" style={muted}>{t.an_note}</p>
     </div>)
 }
 
 function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose: () => void }) {
   const [tab, setTab] = useState<'summary' | 'expenses' | 'analysis'>('summary')
+  const [filter, setFilter] = useState<Filter>({})
   const box = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const key = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
@@ -445,7 +483,8 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
                 <ItemList title={t.chip_direct} items={r.chips.direct} empty={t.none} />
                 {r.line ? <Moves r={r} t={t} /> : null}
               </div>
-            </div>) : tab === 'expenses' ? <Expenses r={r} fy={fy} t={t} /> : <Analysis r={r} fy={fy} t={t} />}
+            </div>) : tab === 'expenses' ? <Expenses r={r} fy={fy} t={t} filter={filter} setFilter={setFilter} />
+              : <Analysis r={r} fy={fy} t={t} pick={f => { setFilter(f); setTab('expenses'); box.current?.scrollTo({ top: 0 }) }} />}
         </div>
       </div>
     </div>, document.body)
