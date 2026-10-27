@@ -186,6 +186,59 @@ def chip_counts(T, r):
     return out
 
 
+def school_entries():
+    """(fy, journal) -> the school lines' postings in every journal entry (GEN/GRV), for the
+    entries that re-book spending between school lines rather than to another fund."""
+    A = J.accounts()
+    out = defaultdict(list)
+    for r in J.lines():
+        if r['source'] in ('GEN', 'GRV') and J.is_expense(A[r['account']]):
+            out[(r['fy'], r['journal'])].append(r)
+    return out
+
+
+def entry_rows(T, r, entries, names):
+    """A line's journal entries that are not re-charges to or from another fund: spending
+    re-booked between school lines, a correction, an accrual. Each: date, memo, what this line
+    gained or lost, and the other school lines in the entry -- or that the other side is
+    outside the school's books."""
+    if not r['account']:
+        return []
+    rech = {mv['journal'] for mv in r['fund_moves']}
+    A = J.accounts()
+    out = []
+    mine = defaultdict(Decimal)
+    for (fy, j), rs in entries.items():
+        if fy != r['fy'] or j in rech:
+            continue
+        v = sum((x['amt'] for x in rs if x['account'] == r['account']), D0)
+        if v:
+            mine[j] = v
+    for j, v in sorted(mine.items(), key=lambda kv: min(x['effective_date'] for x in entries[(r['fy'], kv[0])])):
+        rs = entries[(r['fy'], j)]
+        others = defaultdict(Decimal)
+        for x in rs:
+            if x['account'] != r['account'] and J.in_surplus_scope(A[x['account']]):
+                others[x['account']] += x['amt']
+        funds = defaultdict(Decimal)
+        for x in rs:
+            if not J.in_surplus_scope(A[x['account']]):
+                funds[FB.payer(A[x['account']])] += x['amt']
+        missing = -sum((x['amt'] for x in rs), D0)        # what the school's journal lacks
+        side = [dict(name=T.lit(names.get(a, A[a]['account_description'].strip().title())),
+                     text=T.usd(abs(w))) for a, w in sorted(others.items(), key=lambda kv: -abs(kv[1])) if w][:6]
+        side += [dict(name=T.lit(f), text=T.usd(abs(w))) for f, w in funds.items() if w]
+        if missing:
+            # the entry does not balance inside the school's journal: its other side is posted
+            # somewhere this journal does not hold
+            side.append(dict(name='the Town’s books, outside the school’s journal',
+                             text=T.usd(abs(missing))))
+        out.append(dict(date=T.lit(long_date(min(x['effective_date'] for x in rs))),
+                        memo=T.lit(sorted({x['description'].strip() for x in rs if x['account'] == r['account']})[0] or 'no memo'),
+                        journal=T.lit(j), dir='in' if v > 0 else 'out', text=T.usd(abs(v)), others=side))
+    return out
+
+
 def lines_data(m, T):
     """Every line, every year, as two sums. The school budget's own, to what was left, with
     cost moved by journal entry shown apart from what it spent; and what the line cost from
@@ -193,6 +246,7 @@ def lines_data(m, T):
     October 2026: "money added from other funds REDUCES the general fund... depends how its
     done doesnt it?" It does: a move changes Left, paying directly does not."""
     names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
+    entries = school_entries()
     years = []
     for fy in J.YEARS:
         rows = []
@@ -229,7 +283,8 @@ def lines_data(m, T):
                 # the sources like '3 sources'")
                 chip_n=chip_counts(T, r),
                 payers=how_rows(T, r['how']),
-                moves=move_rows(T, r['moves_in'], names))
+                moves=move_rows(T, r['moves_in'], names),
+                jes=entry_rows(T, r, entries, names))
             if round(r['other_year_spent']):
                 row['spent_note'] = 'of which %s paid for another year' % T.usd(r['other_year_spent'])
             rows.append(row)
@@ -304,6 +359,20 @@ def lines_data(m, T):
                            'say which line’s money went to which. The other side, all together:',
                     into='from', outof='to', in_='In', out='Out',
                     tab_summary='Summary', tab_expenses='Expenses', tab_analysis='Analysis',
+                    tab_moves='Transfers and re-charges',
+                    mv_transfers='Budget transfers',
+                    mv_transfers_def='Permission to spend, moved between lines by a vote or an '
+                                     'approved transfer. No bill moves; the budget does.',
+                    mv_recharges='Re-charges to and from other funds',
+                    mv_recharges_def='Bills the school budget had already paid, re-booked to a '
+                                     'grant or another fund (or back). The budget does not move; '
+                                     'who paid the bill does.',
+                    mv_entries='Journal entries between school lines',
+                    mv_entries_def='Bills re-booked from one school line to another, or a '
+                                   'correction. The budget does not move; which line carries '
+                                   'the bill does.',
+                    mv_none='None this year.', mv_with='with', mv_in='Onto this line',
+                    mv_out='Off this line',
                     close='Close',
                     an_payee='By payee', an_memo='By memo', an_week='By week',
                     an_note='Bars are what each payee or memo was paid this year, split by the fund '

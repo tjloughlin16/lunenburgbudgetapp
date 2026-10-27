@@ -25,14 +25,16 @@ import type { CustomProps } from './index'
 type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' | 'left' | 'spent' | 'direct' | 'total'
 type Item = { title: string; sub: string; text: string }
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
-type Row = { name: string; account: string; key: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
+type Entry = { date: string; memo: string; journal: string; dir: 'in' | 'out'; text: string; others: { name: string; text: string }[] }
+type Row = { name: string; account: string; key: string; cat: string; jes: Entry[]; line: boolean; n: Record<K, number>; t: Record<K, string>
   spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'tab_summary' | 'tab_expenses' | 'close'
   | 'who_paid' | 'every_row' | 'by_payee' | 'every_fund' | 'loading' | 'failed' | 'recharges' | 'no_recharges'
   | 'tab_analysis' | 'an_payee' | 'an_memo' | 'an_week' | 'an_note' | 'an_week_note' | 'an_recharge'
-  | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'any_payee' | 'any_memo' | 'clear_filters' | 'an_click' | 'for_what' | 'paid_to' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
+  | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'tab_moves' | 'mv_transfers' | 'mv_transfers_def' | 'mv_recharges' | 'mv_recharges_def'
+  | 'mv_entries' | 'mv_entries_def' | 'mv_none' | 'mv_with' | 'mv_in' | 'mv_out' | 'any_payee' | 'any_memo' | 'clear_filters' | 'an_click' | 'for_what' | 'paid_to' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
 type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
@@ -79,29 +81,6 @@ function Receipt({ r, d }: { r: Row; d: Data }) {
   return (
     <div className="text-[13px]">
       {d.groups.map(g => <Sum key={g.id} r={r} title={g.label} cols={d.columns.filter(c => c.group === g.id)} />)}
-    </div>)
-}
-
-function Moves({ r, t }: { r: Row; t: T }) {
-  return (
-    <div className="text-[13px]">
-      <p className="font-semibold mb-1">{t.moves}</p>
-      {r.moves.length ? (
-        <ul className="space-y-2">
-          {r.moves.map((m, i) => (
-            <li key={i}>
-              <p className="flex justify-between gap-3">
-                <span><span className="font-semibold" style={{ color: m.dir === 'in' ? GOOD : BAD }}>{m.dir === 'in' ? t.in_ : t.out}</span>
-                  <span style={muted}> · {m.date} · “{m.memo}”</span></span>
-                <span className="tabular-nums font-semibold" style={{ color: m.dir === 'in' ? GOOD : BAD }}>{m.dir === 'in' ? '+' : '−'}{m.text}</span></p>
-              {!m.paired ? <p className="text-[12px] mt-0.5 pl-3" style={muted}>{t.shared}</p> : null}
-              <ul className="mt-0.5 pl-3 border-l text-[12.5px]" style={{ borderColor: 'var(--grid)' }}>
-                {m.others.map((o, j) => (
-                  <li key={j} className="flex justify-between gap-3"><span style={secondary}>{m.paired ? (m.dir === 'in' ? t.into : t.outof) + ' ' : ''}{o.name}</span>
-                    <span className="tabular-nums" style={secondary}>{o.text}</span></li>))}
-              </ul>
-            </li>))}
-        </ul>) : <p style={muted}>{t.nomoves}</p>}
     </div>)
 }
 
@@ -437,8 +416,58 @@ function Analysis({ r, fy, t, pick }: { r: Row; fy: string; t: T; pick: (f: Filt
     </div>)
 }
 
+/** TRANSFERS AND RE-CHARGES (TJ, 27 October 2026: "lets also make this SUPER clear... a new
+ *  tab for transfers, moves, recharges"). Three kinds of entry that look alike in a ledger and
+ *  do different things, each under its own one-line definition: a transfer moves BUDGET; a
+ *  re-charge moves a BILL to another fund; a journal entry between school lines moves a bill
+ *  to another line. */
+function Section({ title, def, children }: { title: string; def: string; children: React.ReactNode }) {
+  return (
+    <section className="text-[13px]">
+      <h4 className="text-[15px] font-semibold">{title}</h4>
+      <p className="text-[12.5px] mt-0.5 mb-2 max-w-2xl" style={secondary}>{def}</p>
+      {children}
+    </section>)
+}
+
+function EntryList({ items, t }: { items: { dir: 'in' | 'out'; head: string; text: string; note?: string; others: { name: string; text: string }[] }[]; t: T }) {
+  if (!items.length) return <p style={muted}>{t.mv_none}</p>
+  return (
+    <ul className="space-y-2.5">
+      {items.map((m, i) => (
+        <li key={i} className="pl-3 border-l-2" style={{ borderColor: m.dir === 'in' ? GOOD : BAD }}>
+          <p className="flex justify-between gap-3">
+            <span><span className="font-semibold" style={{ color: m.dir === 'in' ? GOOD : BAD }}>{m.dir === 'in' ? t.mv_in : t.mv_out}</span>
+              <span style={secondary}> · {m.head}</span></span>
+            <span className="tabular-nums font-semibold whitespace-nowrap" style={{ color: m.dir === 'in' ? GOOD : BAD }}>{m.dir === 'in' ? '+' : '−'}{m.text}</span></p>
+          {m.note ? <p className="text-[12px] mt-0.5" style={muted}>{m.note}</p> : null}
+          {m.others.length ? (
+            <ul className="mt-0.5 text-[12.5px]">
+              {m.others.map((o, j) => (
+                <li key={j} className="flex justify-between gap-3"><span style={secondary}>{t.mv_with} {o.name}</span>
+                  <span className="tabular-nums" style={secondary}>{o.text}</span></li>))}
+            </ul>) : null}
+        </li>))}
+    </ul>)
+}
+
+function MovesTab({ r, t }: { r: Row; t: T }) {
+  const transfers = r.moves.map(m => ({ dir: m.dir, head: `${m.date} · “${m.memo}”`, text: m.text,
+    note: m.paired ? undefined : t.shared, others: m.others }))
+  const recharges = [
+    ...r.chips.off.map(x => ({ dir: 'out' as const, head: x.sub, text: x.text, others: [{ name: x.title, text: x.text }] })),
+    ...r.chips.on.map(x => ({ dir: 'in' as const, head: x.sub, text: x.text, others: [{ name: x.title, text: x.text }] }))]
+  const entries = r.jes.map(e => ({ dir: e.dir, head: `${e.date} · “${e.memo}” · ${e.journal}`, text: e.text, others: e.others }))
+  return (
+    <div className="grid gap-7 max-w-4xl">
+      <Section title={t.mv_transfers} def={t.mv_transfers_def}><EntryList items={transfers} t={t} /></Section>
+      <Section title={t.mv_recharges} def={t.mv_recharges_def}><EntryList items={recharges} t={t} /></Section>
+      <Section title={t.mv_entries} def={t.mv_entries_def}><EntryList items={entries} t={t} /></Section>
+    </div>)
+}
+
 function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose: () => void }) {
-  const [tab, setTab] = useState<'summary' | 'expenses' | 'analysis'>('summary')
+  const [tab, setTab] = useState<'summary' | 'moves' | 'expenses' | 'analysis'>('summary')
   const [filter, setFilter] = useState<Filter>({})
   const box = useRef<HTMLDivElement>(null)
   useEffect(() => {
@@ -468,6 +497,7 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
           </div>
           <div className="flex gap-1.5 mt-3">
             <Chip on={tab === 'summary'} onClick={() => setTab('summary')}>{t.tab_summary}</Chip>
+            {r.line ? <Chip on={tab === 'moves'} onClick={() => setTab('moves')}>{t.tab_moves}</Chip> : null}
             <Chip on={tab === 'expenses'} onClick={() => setTab('expenses')}>{t.tab_expenses}</Chip>
             <Chip on={tab === 'analysis'} onClick={() => setTab('analysis')}>{t.tab_analysis}</Chip>
           </div>
@@ -477,13 +507,9 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
             <div className="grid gap-6 md:grid-cols-2">
               {r.line ? <Receipt r={r} d={d} /> : null}
               <div className="space-y-5">
-                {r.line ? <ItemList title={t.recharges} empty={t.no_recharges} items={[
-                  ...r.chips.off.map(x => ({ ...x, title: `${t.chip_off} ${x.title}` })),
-                  ...r.chips.on.map(x => ({ ...x, title: `${t.chip_on} ${x.title}` }))]} /> : null}
                 <ItemList title={t.chip_direct} items={r.chips.direct} empty={t.none} />
-                {r.line ? <Moves r={r} t={t} /> : null}
               </div>
-            </div>) : tab === 'expenses' ? <Expenses r={r} fy={fy} t={t} filter={filter} setFilter={setFilter} />
+            </div>) : tab === 'moves' ? <MovesTab r={r} t={t} /> : tab === 'expenses' ? <Expenses r={r} fy={fy} t={t} filter={filter} setFilter={setFilter} />
               : <Analysis r={r} fy={fy} t={t} pick={f => { setFilter(f); setTab('expenses'); box.current?.scrollTo({ top: 0 }) }} />}
         </div>
       </div>

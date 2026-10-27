@@ -386,6 +386,7 @@ def custom(component, title, data, place='body', figures=(), allow=(), basis=Non
     if not re.fullmatch(r'[a-z][a-z0-9-]*', component):
         raise ConclusionError('%s: a component id is lowercase words and hyphens' % name)
     ok = sorted(set(figures) | set(allow), key=len, reverse=True)
+    quoted = set(allow)
     bad = []
     for s in _strings(data):
         r = s
@@ -395,7 +396,9 @@ def custom(component, title, data, place='body', figures=(), allow=(), basis=Non
         if left:
             bad.append('%s: %r carries %s, not a registered figure or declared literal'
                        % (name, s[:80], ', '.join(left)))
-        if PRESCRIPTIVE.search(s):
+        # A declared literal is the record quoted (a memo, an account name): "3RD QTR DEMAND
+        # POSTAGE" is the Town's words, not ours telling a reader what to do.
+        if PRESCRIPTIVE.search(s) and s not in quoted:
             bad.append('%s: %r tells the reader what to do' % (name, s[:80]))
     if bad:
         raise ConclusionError('\n  '.join(bad))
