@@ -257,7 +257,7 @@ def payload_checks(m):
     check('$%s' % format(round(left26), ',d') in p['finding']['text'],
           'the finding does not carry FY2026 left, recomputed %s' % left26)
     check(abs(left26 - yr[2026]) < 1, 'FY2026 left: model %s, recomputed %s' % (yr[2026], left26))
-    data = next(b for b in p['blocks'] if b['block'] == 'custom')['data']
+    data = next(b for b in p['blocks'] if b.get('component') == 'fy-alluvial')['data']
     for col in data['years']:
         y = int(col['fy'][2:])
         flows = sum((v for (yy, _, _), v in m['flows'].items() if yy == y), D0)

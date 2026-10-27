@@ -535,6 +535,16 @@ def page(m):
                  'measured. The last two are postings. School general fund, department 300.',
             note_allow=('300',)),
         blocks=[
+            TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('reading', 'Our placing of other funds’ spending on the lines'),
+                      alt='Table of every school general fund line, one fiscal year at a time, '
+                          'as two sums: the school budget to what was left, with cost moved to '
+                          'other funds by journal entry apart from what it spent; and what the '
+                          'line cost from every fund. Sortable by category and by every column',
+                      so=('A line can end under because other funds took its cost, and a move '
+                          'does that after the spending. Sorted by category, lines that '
+                          'cancel each other out sit side by side.', None, ())),
             TB.custom('fy-alluvial', 'Who paid for what, year by year', data, place='lead',
                       figures=sorted(figs, key=len, reverse=True), allow=('300',),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
@@ -574,15 +584,6 @@ def page(m):
                 'apart, never counted as voted above cost. Capital articles are matched only by '
                 'a journal entry.'],
                 place='body', tone='define'),
-            TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='end',
-                      figures=sorted(T.figures), allow=sorted(T.literals),
-                      basis=('reading', 'Our placing of other funds’ spending on the lines'),
-                      alt='Table of every school general fund line, one fiscal year at a time, '
-                          'sortable by what was left and by each of the four parts; each line '
-                          'opens on its own waterfall and the other funds that paid toward it',
-                      so=('Every line’s left is its budget less what it spent; the detail shows '
-                          'which lines its budget came from or went to, and who else paid.',
-                          None, ())),
         ],
         tables=[table(m)],
         sources=[

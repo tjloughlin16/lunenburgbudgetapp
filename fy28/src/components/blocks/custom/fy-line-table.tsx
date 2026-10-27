@@ -18,6 +18,7 @@
  *  `?line=<account>` in the address opens that line (latest year).
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
 import { useEffect, useMemo, useRef, useState } from 'react'
+import { createPortal } from 'react-dom'
 import type { CustomProps } from './index'
 
 type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' | 'left' | 'spent' | 'direct' | 'total'
@@ -111,41 +112,53 @@ function Payers({ r, t }: { r: Row; t: T }) {
 }
 
 /** An amount as a chip: hover, focus or tap it for what is behind it (TJ, 26 October 2026: "i
- *  need to be able to see WHAT paid it and how much then"). A tap does not open the row. */
+ *  need to be able to see WHAT paid it and how much then"). A tap does not open the row.
+ *
+ *  The popover is PORTALLED to <body>. The wide table is moved out of the reading column with a
+ *  transform, and a transformed ancestor becomes the containing block of anything `fixed` inside
+ *  it -- so a popover placed in window coordinates landed inside the table's scroll box, clipped,
+ *  and with only a few rows showing it was clipped away entirely. Leaving the chip closes it
+ *  after a short delay, cancelled if the pointer reaches the popover, so it can be read. */
 function ListChip({ text, title, items }: { text: string; title: string; items: Item[] }) {
   const [hover, setHover] = useState(false)
   const [held, setHeld] = useState(false)
-  const [at, setAt] = useState<{ top: number; right: number } | null>(null)
+  const [at, setAt] = useState<{ top: number; left: number } | null>(null)
   const btn = useRef<HTMLButtonElement>(null)
+  const timer = useRef<number | undefined>(undefined)
   const on = hover || held
-  // FIXED to the window, not absolute: the table scrolls sideways in its own box, which would
-  // clip a popover under the last rows. Placed from the button when it opens; a scroll closes it.
+  const enter = () => { window.clearTimeout(timer.current); setHover(true) }
+  const leave = () => { window.clearTimeout(timer.current); timer.current = window.setTimeout(() => setHover(false), 180) }
+  useEffect(() => () => window.clearTimeout(timer.current), [])
   useEffect(() => {
     if (!on || !btn.current) return
     const b = btn.current.getBoundingClientRect()
-    setAt({ top: b.bottom + 4, right: Math.max(8, window.innerWidth - b.right) })
+    const w = Math.min(320, window.innerWidth - 16)
+    const below = window.innerHeight - b.bottom > 220 || b.top < 220
+    setAt({ top: below ? b.bottom + 4 : Math.max(8, b.top - 4), left: Math.max(8, Math.min(b.right - w, window.innerWidth - w - 8)) })
     const close = () => { setHover(false); setHeld(false) }
     window.addEventListener('scroll', close, { passive: true, capture: true })
     return () => window.removeEventListener('scroll', close, { capture: true } as EventListenerOptions)
   }, [on])
+  const above = at && btn.current ? at.top < btn.current.getBoundingClientRect().top : false
   return (
-    <span className="relative inline-block" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+    <span className="inline-block" onMouseEnter={enter} onMouseLeave={leave}>
       <button ref={btn} type="button" aria-expanded={on}
         onClick={e => { e.stopPropagation(); setHeld(h => !h) }}
-        onFocus={() => setHover(true)} onBlur={() => { setHover(false); setHeld(false) }}
+        onFocus={enter} onBlur={() => { setHover(false); setHeld(false) }}
         className="px-2 py-0.5 rounded-full border tabular-nums leading-tight"
         style={{ borderColor: 'var(--text-muted)', background: on ? 'var(--surface-2)' : 'transparent', cursor: 'pointer' }}>
         {text}</button>
-      {on && at ? (
-        <span role="tooltip" onClick={e => e.stopPropagation()}
-          className="fixed z-50 w-[320px] max-w-[80vw] px-2.5 py-2 rounded text-left text-[12.5px] leading-snug shadow whitespace-normal"
-          style={{ top: at.top, right: at.right, background: 'var(--surface-1)', border: '1px solid var(--grid)', color: 'var(--text-primary)', fontWeight: 400 }}>
+      {on && at ? createPortal(
+        <span role="tooltip" onClick={e => e.stopPropagation()} onMouseEnter={enter} onMouseLeave={leave}
+          className="fixed z-50 w-[320px] max-w-[calc(100vw-16px)] px-2.5 py-2 rounded text-left text-[12.5px] leading-snug shadow whitespace-normal"
+          style={{ top: at.top, left: at.left, transform: above ? 'translateY(-100%)' : undefined,
+            background: 'var(--surface-1)', border: '1px solid var(--grid)', color: 'var(--text-primary)', fontWeight: 400 }}>
           <span className="block font-semibold mb-1">{title}</span>
           {items.map((p, i) => (
             <span key={i} className="flex justify-between gap-3 py-0.5">
               <span>{p.title}<span className="block text-[12px]" style={muted}>{p.sub}</span></span>
               <span className="tabular-nums font-semibold">{p.text}</span></span>))}
-        </span>) : null}
+        </span>, document.body) : null}
     </span>)
 }
 
