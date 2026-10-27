@@ -14,7 +14,7 @@
  *  pair many-to-many; and every other fund that paid toward it, with how it was matched.
  *  `?line=<account>` in the address opens that line (latest year).
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
-import { useMemo, useState } from 'react'
+import { useEffect, useMemo, useRef, useState } from 'react'
 import type { CustomProps } from './index'
 
 type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'spent' | 'left' | 'other'
@@ -99,6 +99,46 @@ function Payers({ r, t }: { r: Row; t: T }) {
     </div>)
 }
 
+/** The other-funds amount as a chip: hover, focus or tap it for WHAT paid and how much (TJ,
+ *  26 October 2026: "i need to be able to see WHAT paid it and how much then"). A tap does not
+ *  open the row. */
+function OtherChip({ r, t }: { r: Row; t: T }) {
+  const [hover, setHover] = useState(false)
+  const [held, setHeld] = useState(false)
+  const [at, setAt] = useState<{ top: number; right: number } | null>(null)
+  const btn = useRef<HTMLButtonElement>(null)
+  const on = hover || held
+  // FIXED to the window, not absolute: the table scrolls sideways in its own box, which would
+  // clip a popover under the last rows. Placed from the button when it opens; a scroll closes it.
+  useEffect(() => {
+    if (!on || !btn.current) return
+    const b = btn.current.getBoundingClientRect()
+    setAt({ top: b.bottom + 4, right: Math.max(8, window.innerWidth - b.right) })
+    const close = () => { setHover(false); setHeld(false) }
+    window.addEventListener('scroll', close, { passive: true, capture: true })
+    return () => window.removeEventListener('scroll', close, { capture: true } as EventListenerOptions)
+  }, [on])
+  return (
+    <span className="relative inline-block" onMouseEnter={() => setHover(true)} onMouseLeave={() => setHover(false)}>
+      <button ref={btn} type="button" aria-expanded={on}
+        onClick={e => { e.stopPropagation(); setHeld(h => !h) }}
+        onFocus={() => setHover(true)} onBlur={() => { setHover(false); setHeld(false) }}
+        className="px-2 py-0.5 rounded-full border tabular-nums leading-tight"
+        style={{ borderColor: 'var(--text-muted)', background: on ? 'var(--surface-2)' : 'transparent', cursor: 'pointer' }}>
+        {r.t.other}</button>
+      {on && at ? (
+        <span role="tooltip" onClick={e => e.stopPropagation()}
+          className="fixed z-50 w-[300px] max-w-[80vw] px-2.5 py-2 rounded text-left text-[12.5px] leading-snug shadow whitespace-normal"
+          style={{ top: at.top, right: at.right, background: 'var(--surface-1)', border: '1px solid var(--grid)', color: 'var(--text-primary)', fontWeight: 400 }}>
+          <span className="block font-semibold mb-1">{t.payers}</span>
+          {r.payers.map((p, i) => (
+            <span key={i} className="flex justify-between gap-3 py-0.5">
+              <span>{p.payer}<span className="block text-[12px]" style={muted}>{p.rule}: {p.how}</span></span>
+              <span className="tabular-nums font-semibold">{p.text}</span></span>))}
+        </span>) : null}
+    </span>)
+}
+
 export default function FyLineTable({ data, alt }: CustomProps) {
   const d = data as Data
   const [yi, setYi] = useState(d.years.length - 1)
@@ -151,7 +191,8 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                     <td key={c.id} className={`px-2 py-1.5 text-right whitespace-nowrap ${i === d.columns.length - 1 ? 'border-l' : ''}`}
                       style={{ borderColor: 'var(--grid)', color: c.id === 'left' ? tone(r.n.left) : c.id === 'transfers' && r.n.transfers ? tone(r.n.transfers) : undefined,
                         fontWeight: c.id === 'left' || c.id === 'budget' ? 600 : 400 }}>
-                      {r.line || c.id === 'other' ? r.t[c.id] : '—'}</td>))}
+                      {c.id === 'other' && r.payers.length ? <OtherChip r={r} t={d.text} />
+                        : r.line || c.id === 'other' ? r.t[c.id] : '—'}</td>))}
                 </tr>,
                 isOpen ? (
                   <tr key={`${key}-x`} className="border-b" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
