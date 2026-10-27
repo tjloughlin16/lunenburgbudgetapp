@@ -22,7 +22,9 @@ full height -- at the scale of the whole budget a $287,108 grant payment is a ha
 import argparse
 import json
 import os
+import re
 import sys
+from datetime import date, timedelta
 from collections import defaultdict
 from decimal import Decimal
 
@@ -362,7 +364,17 @@ def lines_data(m, T):
                     shared='Many lines gave and many got in this one entry, and the books do not '
                            'say which line’s money went to which. The other side, all together:',
                     into='from', outof='to', in_='In', out='Out',
-                    tab_summary='Summary', tab_expenses='Expenses', close='Close',
+                    tab_summary='Summary', tab_expenses='Expenses', tab_analysis='Analysis',
+                    close='Close',
+                    an_payee='By payee', an_memo='By memo', an_week='By week',
+                    an_note='Bars are what each payee or memo was paid this year, split by the fund '
+                            'that paid. Re-charges are left out: they move bills between funds and '
+                            'pay nobody.',
+                    an_week_note='Each bar is one week, Monday to Sunday, everything paid or still '
+                                 'owed that week, by fund. A bar below the line is a week bills were '
+                                 're-charged off the school budget. The shaded span is the fiscal '
+                                 'year; anything to its left was posted before it began.',
+                    an_recharge='Re-charged off the school budget',
                     who_paid='Who paid', every_row='Every row', by_payee='By payee',
                     every_fund='Every fund', loading='Loading every row…',
                     failed='The rows could not be loaded.', recharges='Re-charges',
@@ -784,6 +796,72 @@ def line_files(m):
     return out
 
 
+RECHARGE = 'Re-charged'
+TOP = 12                       # payees and memos charted by name; the rest summed into one bar
+
+
+def memo_key(m_):
+    """A memo, for grouping: case and spacing folded, a trailing year or number dropped, since
+    MUNIS appends the fiscal year to an order's lines ('DIBELS 8TH EDITION        2026')."""
+    return re.sub(r'\s*\d{2,4}$', '', ' '.join(m_.upper().split())).strip()
+
+
+def analysis(fy, rs, fi):
+    """The Analysis tab, for one line: spending by payee and by memo, each split by the fund that
+    paid, and by week from the line's first posting to 30 June. A re-charge moves bills between
+    funds and pays nobody, so it is left out of the payee and memo bars and drawn on the weekly
+    chart apart, below the line (its mirror under the receiving fund is not drawn twice)."""
+    spend = [x for x in rs if not x['k'].startswith(RECHARGE)]
+    def bars(label):
+        tot = defaultdict(lambda: defaultdict(Decimal))
+        cnt = defaultdict(int)
+        for x in spend:
+            k = label(x)
+            if k:
+                tot[k][x['f']] += x['v']
+                cnt[k] += 1
+        order = sorted(tot, key=lambda k: -sum(tot[k].values()))
+        top, rest = order[:TOP], order[TOP:]
+        rows_text = lambda n: '%s %s' % (C.num(n), 'row' if n == 1 else 'rows')
+        out = [[k, rows_text(cnt[k]), [[fi[f], round(fl(v), 2)] for f, v in sorted(tot[k].items())],
+                money(sum(tot[k].values(), D0))] for k in top]
+        if rest:
+            agg = defaultdict(Decimal)
+            for k in rest:
+                for f, v in tot[k].items():
+                    agg[f] += v
+            out.append(['%s more' % C.num(len(rest)), rows_text(sum(cnt[k] for k in rest)),
+                        [[fi[f], round(fl(v), 2)] for f, v in sorted(agg.items())],
+                        money(sum(agg.values(), D0))])
+        return out, cnt
+    payees, _ = bars(lambda x: x['p'] or x['k'])
+    memos, mc = bars(lambda x: memo_key(x['m']))
+    # memos are charted only where they group: at least two memos shared by two rows or more
+    if sum(1 for n in mc.values() if n >= 2) < 2:
+        memos = []
+    # by week, Monday to Sunday, from the line's first posting (orders can open before July)
+    start = date(fy - 1, 7, 1)
+    first = min([date.fromisoformat(x['d']) for x in rs if x['d']] + [start])
+    monday = lambda d: d - timedelta(days=d.weekday())
+    wk = defaultdict(lambda: defaultdict(Decimal))
+    for x in rs:
+        if not x['d']:
+            continue
+        if x['k'].startswith(RECHARGE):
+            if x['f'] != SCHOOL:
+                continue                       # the mirror of the school budget's own row
+            wk[monday(date.fromisoformat(x['d']))][-1] += x['v']
+        else:
+            wk[monday(date.fromisoformat(x['d']))][fi[x['f']]] += x['v']
+    weeks = [[w.isoformat(), 'Week of %s' % long_date(w.isoformat()),
+              [[f, round(fl(v), 2)] for f, v in sorted(vs.items()) if v],
+              money(sum((v for f, v in vs.items() if f >= 0), D0)),
+              money(vs.get(-1, D0)) if vs.get(-1) else '']
+             for w, vs in sorted(wk.items()) if any(vs.values())]
+    return dict(ap=payees, am=memos, aw=weeks, a0=monday(first).isoformat(),
+                a1=date(fy, 6, 30).isoformat())
+
+
 def line_texts(m):
     """The files, compact. Funds and kinds are indexed. Per line: `r`, each row [iso date, date,
     kind, payee, memo, reference, fund, amount as text, amount]; `t`, what each fund paid in
@@ -801,7 +879,7 @@ def line_texts(m):
                 g = (x['p'] or x['k'], x['f'])
                 grp[g] += x['v']
                 cnt[g] += 1
-            body[key] = dict(
+            body[key] = dict(analysis(fy, rs, fi),
                 r=[[x['d'], long_date(x['d']) if x['d'] else '', ki[x['k']], x['p'], x['m'], x['n'],
                     fi[x['f']], money(x['v']), round(fl(x['v']), 2)]
                    for x in sorted(rs, key=lambda x: (x['d'] or '9', -abs(x['v'])))],

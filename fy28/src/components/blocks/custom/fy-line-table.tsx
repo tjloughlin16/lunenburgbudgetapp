@@ -30,6 +30,7 @@ type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; 
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'tab_summary' | 'tab_expenses' | 'close'
   | 'who_paid' | 'every_row' | 'by_payee' | 'every_fund' | 'loading' | 'failed' | 'recharges' | 'no_recharges'
+  | 'tab_analysis' | 'an_payee' | 'an_memo' | 'an_week' | 'an_note' | 'an_week_note' | 'an_recharge'
   | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
 type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
@@ -194,7 +195,10 @@ function HeadTip({ label, means, children }: { label: string; means: string; chi
  *  /data/fy-breakdown/lines-<year>.json, fetched when a line opens; who paid at the top, each
  *  fund a filter; every row, or grouped by payee. */
 type ExRow = [string, string, number, string, string, string, number, string, number]
-type ExLine = { r: ExRow[]; t: [number, string, number][]; g: [string, number, number, string, number][] }
+type Bar = [string, string, [number, number][], string]
+type Wk = [string, string, [number, number][], string, string]
+type ExLine = { r: ExRow[]; t: [number, string, number][]; g: [string, number, number, string, number][]
+  ap: Bar[]; am: Bar[]; aw: Wk[]; a0: string; a1: string }
 type ExFile = { fy: string; funds: string[]; kinds: string[]; lines: Record<string, ExLine> }
 const FILES = new Map<string, Promise<ExFile>>()
 const load = (fy: string) => {
@@ -277,8 +281,124 @@ function Expenses({ r, fy, t }: { r: Row; fy: string; t: T }) {
     </div>)
 }
 
+/** A fund's colour: the school budget first, then the series palette in the file's order. */
+const FUND = ['var(--thread-1)', 'var(--thread-2)', 'var(--thread-5)', 'var(--thread-4)', 'var(--thread-3)', 'var(--thread-6, var(--thread-2))']
+const fundColour = (f: number) => (f < 0 ? 'var(--text-muted)' : FUND[f % FUND.length])
+
+function useFile(fy: string) {
+  const [file, setFile] = useState<ExFile | null>(null)
+  const [err, setErr] = useState(false)
+  useEffect(() => { let live = true; load(fy).then(f => { if (live) setFile(f) }, () => { if (live) setErr(true) }); return () => { live = false } }, [fy])
+  return { file, err }
+}
+
+/** Bars by payee or memo, each split by the fund that paid; one scale for the chart. */
+function Bars({ title, bars, file }: { title: string; bars: Bar[]; file: ExFile }) {
+  const max = Math.max(1, ...bars.map(b => b[2].reduce((a, [, v]) => a + Math.max(0, v), 0)))
+  const used = Array.from(new Set(bars.flatMap(b => b[2].map(([f]) => f)))).sort((a, b) => a - b)
+  return (
+    <div>
+      <p className="font-semibold mb-1.5">{title}</p>
+      <Legend used={used} file={file} />
+      <div className="grid grid-cols-[minmax(8rem,14rem)_1fr_auto] gap-x-3 gap-y-1.5 items-center">
+        {bars.map((b, i) => [
+          <span key={`${i}l`} className="text-[12.5px] leading-tight">{b[0]}<span className="block text-[11px]" style={muted}>{b[1]}</span></span>,
+          <span key={`${i}b`} className="flex h-3.5 rounded-sm overflow-hidden" style={{ background: 'var(--surface-2)' }}>
+            {b[2].filter(([, v]) => v > 0).map(([f, v]) => (
+              <span key={f} title={`${file.funds[f]}`} style={{ width: `${(100 * v) / max}%`, background: fundColour(f) }} />))}
+          </span>,
+          <span key={`${i}v`} className="tabular-nums text-right text-[12.5px] font-semibold whitespace-nowrap">{b[3]}</span>,
+        ])}
+      </div>
+    </div>)
+}
+
+function Legend({ used, file, recharge }: { used: number[]; file: ExFile; recharge?: string }) {
+  return (
+    <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] mb-1.5" style={secondary}>
+      {used.map(f => (
+        <span key={f} className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: fundColour(f) }} />
+          {f < 0 ? recharge : file.funds[f]}</span>))}
+    </div>)
+}
+
+const MONTH = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec']
+
+/** Every week, Monday to Sunday, from the line's first posting to 30 June: spending stacked by
+ *  fund above the line, bills re-charged off the school budget below it. */
+function Weeks({ L, file, t }: { L: ExLine; file: ExFile; t: T }) {
+  const [hot, setHot] = useState<number | null>(null)
+  const W = 900, H = 220, PAD = 8, AX = 18
+  const day = (iso: string) => Date.parse(iso + 'T00:00:00Z') / 864e5
+  const d0 = day(L.a0), d1 = day(L.a1) + 1
+  const x = (iso: string) => PAD + ((day(iso) - d0) / (d1 - d0)) * (W - 2 * PAD)
+  // above the line every positive amount; below it every negative one, re-charges and refunds
+  const up = Math.max(1, ...L.aw.map(w => w[2].reduce((a, [f, v]) => a + (f >= 0 && v > 0 ? v : 0), 0)))
+  const down = Math.max(0, ...L.aw.map(w => w[2].reduce((a, [f, v]) => a + (f < 0 || v < 0 ? Math.abs(v) : 0), 0)))
+  const k = (H - AX - 2 * PAD) / (up + down)
+  const zero = PAD + up * k
+  const bw = Math.max(2, (7 / (d1 - d0)) * (W - 2 * PAD) - 1.5)
+  const fyStart = x(`${Number(L.a1.slice(0, 4)) - 1}-07-01`)
+  const months: string[] = []
+  for (let m = new Date(L.a0 + 'T00:00:00Z'); m <= new Date(L.a1 + 'T00:00:00Z'); m.setUTCMonth(m.getUTCMonth() + 1, 1)) {
+    months.push(new Date(Date.UTC(m.getUTCFullYear(), m.getUTCMonth(), 1)).toISOString().slice(0, 10))
+  }
+  const used = Array.from(new Set(L.aw.flatMap(w => w[2].map(([f]) => f)))).sort((a, b) => a - b)
+  const w = hot === null ? null : L.aw[hot]
+  return (
+    <div>
+      <p className="font-semibold mb-1.5">{t.an_week}</p>
+      <Legend used={used} file={file} recharge={t.an_recharge} />
+      <div className="relative">
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block" onMouseLeave={() => setHot(null)}>
+          <rect x={fyStart} y={PAD} width={W - PAD - fyStart} height={H - AX - 2 * PAD} fill="var(--surface-2)" opacity={0.5} />
+          <line x1={PAD} x2={W - PAD} y1={zero} y2={zero} stroke="var(--grid)" />
+          {months.filter(m => m >= L.a0).map(m => (
+            <text key={m} x={x(m) + 2} y={H - 4} fontSize={11} fill="var(--text-muted)">{MONTH[Number(m.slice(5, 7)) - 1]}</text>))}
+          {L.aw.map((wk, i) => {
+            let top = zero, bot = zero
+            return (
+              <g key={wk[0]} opacity={hot === null || hot === i ? 1 : 0.35} style={{ cursor: 'pointer' }}
+                onMouseEnter={() => setHot(i)} onClick={() => setHot(h => (h === i ? null : i))}>
+                <rect x={x(wk[0])} y={PAD} width={bw} height={H - AX - 2 * PAD} fill="transparent" />
+                {wk[2].map(([f, v]) => {
+                  const h = Math.abs(v) * k
+                  if (f < 0 || v < 0) { const y0 = bot; bot += h; return <rect key={f} x={x(wk[0])} y={y0} width={bw} height={h} fill={fundColour(f)} /> }
+                  top -= h
+                  return <rect key={f} x={x(wk[0])} y={top} width={bw} height={h} fill={fundColour(f)} />
+                })}
+              </g>)
+          })}
+        </svg>
+        {w ? (
+          <div role="status" className="mt-2 sm:absolute sm:right-0 sm:top-0 sm:w-[260px] px-2.5 py-2 rounded text-[12.5px] leading-snug shadow"
+            style={{ background: 'var(--surface-1)', border: '1px solid var(--grid)' }}>
+            <p className="font-semibold">{w[1]}</p>
+            <p className="tabular-nums font-semibold mt-0.5">{w[3]}</p>
+            {w[4] ? <p className="tabular-nums" style={secondary}>{t.an_recharge}: {w[4]}</p> : null}
+          </div>) : null}
+      </div>
+      <p className="text-[12px] mt-1.5" style={muted}>{t.an_week_note}</p>
+    </div>)
+}
+
+function Analysis({ r, fy, t }: { r: Row; fy: string; t: T }) {
+  const { file, err } = useFile(fy)
+  if (err) return <p className="text-[13px]" style={muted}>{t.failed}</p>
+  if (!file) return <p className="text-[13px]" style={muted}>{t.loading}</p>
+  const L = file.lines[r.key]
+  if (!L) return <p className="text-[13px]" style={muted}>{t.none}</p>
+  return (
+    <div className="text-[13px] space-y-7">
+      {L.aw.length ? <Weeks L={L} file={file} t={t} /> : null}
+      <Bars title={t.an_payee} bars={L.ap} file={file} />
+      {L.am.length ? <Bars title={t.an_memo} bars={L.am} file={file} /> : null}
+      <p className="text-[12px] max-w-3xl" style={muted}>{t.an_note}</p>
+    </div>)
+}
+
 function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose: () => void }) {
-  const [tab, setTab] = useState<'summary' | 'expenses'>('summary')
+  const [tab, setTab] = useState<'summary' | 'expenses' | 'analysis'>('summary')
   const box = useRef<HTMLDivElement>(null)
   useEffect(() => {
     const key = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
@@ -308,6 +428,7 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
           <div className="flex gap-1.5 mt-3">
             <Chip on={tab === 'summary'} onClick={() => setTab('summary')}>{t.tab_summary}</Chip>
             <Chip on={tab === 'expenses'} onClick={() => setTab('expenses')}>{t.tab_expenses}</Chip>
+            <Chip on={tab === 'analysis'} onClick={() => setTab('analysis')}>{t.tab_analysis}</Chip>
           </div>
         </div>
         <div className="px-4 sm:px-6 py-4">
@@ -321,7 +442,7 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
                 <ItemList title={t.chip_direct} items={r.chips.direct} empty={t.none} />
                 {r.line ? <Moves r={r} t={t} /> : null}
               </div>
-            </div>) : <Expenses r={r} fy={fy} t={t} />}
+            </div>) : tab === 'expenses' ? <Expenses r={r} fy={fy} t={t} /> : <Analysis r={r} fy={fy} t={t} />}
         </div>
       </div>
     </div>, document.body)
