@@ -279,24 +279,19 @@ def lines_data(m, T):
         budget='What the line was allowed to spend: voted, plus transfers, plus carried.',
         before='What the school budget paid or still owed on this line, before any bill was '
                're-charged to or from another fund. Orders still owed at year end count.',
-        off='THE SCHOOL BUDGET’S SIDE. Bills the school budget had already paid on this line, '
-            're-charged by journal entry to a grant or another fund (a reclass): that fund’s money '
-            'pays them instead. No money goes into the other fund; the bills go to it. So the '
-            'school budget’s spending goes down by this much, and Left goes up by this much. The '
-            'same amount appears again under What the line cost, because the bills cost the same.',
-        on='THE SCHOOL BUDGET’S SIDE. Bills a grant or another fund had paid, re-charged by '
-           'journal entry to this line: the school budget pays them instead. Its spending goes up '
-           'by this much, so Left goes down.',
+        off='The school budget paid these bills first. Later another fund paid it back the '
+            'same amount. So the school budget spent less, and Left goes up.',
+        on='Another fund paid these bills first. Later the school budget paid it back. So the '
+           'school budget spent more, and Left goes down.',
         left='The budget, less what the school budget spent after the re-charges: this line’s part '
              'of the surplus, or of what ran over.',
         spent='What the school budget spent on this line, after the re-charges.',
-        off_cost='WHAT THE LINE COST. The same bills the school budget re-charged to another fund, '
-                 'counted here because they are still this line’s cost: the other fund paid them, '
-                 'after the school budget had. Left out, the total would be short by exactly that '
-                 'much. It does not change Left; that happened on the school budget’s side.',
-        direct='WHAT THE LINE COST. Bills a grant or another fund paid toward this line from the '
-               'start; the school budget never paid them, so Left does not change. Which '
-               'spending counts toward which line is our match, by payee or by kind of work.',
+        off_cost='The same bills as Re-charged to other funds: the school budget paid first, '
+                 'and another fund paid it back. They still count here, because they are still '
+                 'part of what this line cost.',
+        direct='Another fund paid these bills itself; the school budget never did, so Left does '
+               'not change. Which bills count toward this line is our match, by payee or by kind '
+               'of work.',
         total='What the line cost, from every fund.')
     col = lambda id_, key, label, op, group: dict(id=id_, key=key, label=label, op=op, group=group,
                                                   means=means[id_])
