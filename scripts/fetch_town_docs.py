@@ -16,6 +16,7 @@ Idempotent. Re-run it when the town posts something new.
 """
 import argparse
 import csv
+import glob
 import hashlib
 import os
 import re
@@ -37,7 +38,10 @@ BASE = 'https://www.lunenburgma.gov'
 # report looked missing, was downloaded again, and landed back in town-budget/ -- undoing
 # the split on every run, four times, manifest as well as files.
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
-from town_document_home import FOLDERS, home  # noqa: E402
+from town_document_home import ANNUAL, FOLDERS, home  # noqa: E402
+from report_year import four  # noqa: E402
+import archive_storage as A  # noqa: E402
+import ingest  # noqa: E402
 
 def folder(name):
     return os.path.join(ROOT, 'sources', name)
@@ -88,7 +92,9 @@ WANTED = re.compile(
     # `fy\d\d` does not match `FY 2025` or `FY-2025`, which is how the annual town
     # reports are titled -- so all sixteen were filtered out by a pattern meant to
     # catch them. The archive held none of them until this was noticed.
-    r'annual.?town.?report|fy.\d{4}', re.I)
+    r'annual.?town.?report|fy.\d{4}|'
+    # The reports before the town titled them by fiscal year: `Town Report 1985`.
+    r'town.?reports?', re.I)
 
 def get(url, tries=3):
     for i in range(tries):
@@ -111,12 +117,13 @@ def dedupe_key(label):
     archive ends up with 487MB of duplicate PDFs under two ids.
 
     So the year is normalised to four digits and the format suffix dropped, which is all
-    that separates them.
+    that separates them. Two digits go through `report_year.four()` and its stated pivot:
+    this used to prefix `20` to every pair, so `FY85` became `fy2085`.
     """
     k = label.lower()
     k = re.sub(r'\((?:pdf|xlsx?|docx?|pptx?)\)', ' ', k)
     k = re.sub(r'\bfy\s*(\d{4})\b', r'fy\1', k)
-    k = re.sub(r'\bfy\s*(\d{2})\b(?!\d)', lambda m: 'fy20' + m.group(1), k)
+    k = re.sub(r'\bfy\s*(\d{2})\b(?!\d)', lambda m: 'fy%d' % four(m.group(1)), k)
     return re.sub(r'[^a-z0-9]', '', k)
 
 
@@ -199,6 +206,10 @@ def discover():
         if 'html' not in ctype:
             continue
         html = body.decode('utf8', 'ignore')
+        # THE PAGE IS THE SHELF. `/838/Annual-Town-Reports` says what everything it links
+        # is, more reliably than the label the town typed on each link.
+        shelf = re.search(r'/\d+/([^/?#]+)$', url.split('?')[0])
+        shelf = shelf.group(1).replace('-', ' ') if shelf else ''
         for m in re.finditer(r'href="([^"]+)"[^>]*>(.*?)</a>', html, re.S | re.I):
             href, label = m.group(1), re.sub(r'<[^>]+>', '', m.group(2))
             label = re.sub(r'\s+', ' ', label).strip()
@@ -210,9 +221,13 @@ def discover():
                 did = doc.group(1)
                 name = label or (doc.group(2) or '').replace('-', ' ')
                 seen_links += 1
-                if did not in found and WANTED.search(name + ' ' + full):
+                # The shelf widens the filter for the annual reports' page only: every
+                # page is a shelf, and `/163/Finance-Committee` would pass all it links.
+                if did not in found and (WANTED.search(name + ' ' + full)
+                                         or ANNUAL.search(shelf)):
                     found[did] = dict(id=did, label=name or f'document {did}',
-                                      url=f'{BASE}/DocumentCenter/View/{did}')
+                                      url=f'{BASE}/DocumentCenter/View/{did}',
+                                      category=shelf)
                 elif did not in found:
                     rejected.setdefault(did, name or full)
             if doc:
@@ -351,10 +366,11 @@ def main():
     if a.limit:
         items = items[:a.limit]
 
-    rows = []
+    held = HeldDocuments()
+    rows, staged = [], []
     for n, it in enumerate(items, 1):
         base = f'{it["id"]}-{slug(it["label"])}'
-        want = home(it['label'])
+        want = home(it['label'], it.get('category', ''))
         # Look in ALL THREE mirrors before deciding we do not have it. A document already
         # filed as supplementary is not missing just because it is not in town-budget/.
         have = None
@@ -366,6 +382,18 @@ def main():
             if hit:
                 have = (f, os.path.join(d, hit[0]))
                 break
+        # AN ADDRESS ALREADY RECORDED AGAINST ANOTHER COPY is that copy, and is not fetched
+        # again. That is what makes a same-bytes alias stick: without it, every daily crawl
+        # would download the file to discover what the last one already knew.
+        if not have and it['url'] in held.urls:
+            key = held.urls[it['url']]
+            print(f'  [{n:>3}] {"held":<11}{"":<6}{"":>9} second address of {key}')
+            # A row of one of THESE mirrors is carried as it was, so a copy this tree has
+            # not pulled is not dropped from a catalogue the run is about to rewrite.
+            old = held.town_rows.get(key)
+            if old:
+                rows.append(dict(old))
+            continue
         try:
             if have:
                 found_in, path = have
@@ -377,29 +405,47 @@ def main():
                 if ext in ('.html', '.bin'):
                     print(f'  [{n:>3}] skipped (not a document)  {it["label"][:48]}')
                     continue
-                os.makedirs(docs_dir(want), exist_ok=True)
-                path = os.path.join(docs_dir(want), base + ext)
-                open(path, 'wb').write(body)
-                note = 'downloaded'
                 time.sleep(0.4)
         except Exception as e:
             print(f'  [{n:>3}] FAILED {type(e).__name__}  {it["label"][:48]}')
             continue
-        # The text sits beside whichever copy we actually have, not beside where a new
-        # one would have gone.
-        here = have[0] if have else want
-        os.makedirs(text_dir(here), exist_ok=True)
-        txt = os.path.join(text_dir(here), base + '.txt')
-        how = 'had it' if os.path.exists(txt) and os.path.getsize(txt) > 0 \
-            else extract(path, txt)
-        also = aliases.get(it['id'], [])
-        rows.append(dict(_home=here, label=it['label'],
-                         upstream=' '.join([it['url']] + also),
-                         local=os.path.relpath(path, ROOT),
-                         text=os.path.relpath(txt, ROOT) if os.path.exists(txt) else '',
-                         bytes=len(body), sha256=hashlib.sha256(body).hexdigest(), read=how))
-        print(f'  [{n:>3}] {note:<11}{os.path.splitext(path)[1]:<6}{len(body)/1000:>7.0f}KB '
-              f'{how:<16}{it["label"][:42]}')
+        if not have:
+            # SAME BYTES, NEW ADDRESS. TJ, 27 October 2026: a file whose sha256 the archive
+            # already holds is NOT a new document, whatever it is called and wherever it was
+            # posted. The address is appended to the copy we hold, and nothing else happens:
+            # no file, no row, no object, nothing for a reader to process twice. The first
+            # case is the 2000 report, landed from a copy the Select Board chair sent before
+            # the town uploaded it.
+            sha = hashlib.sha256(body).hexdigest()
+            if sha in held.sha:
+                where = held.add_address(sha, it['url'])
+                print(f'  [{n:>3}] {"same bytes":<11}{ext:<6}{len(body)/1000:>7.0f}KB '
+                      f'as {held.sha[sha]}: {where}')
+                continue
+            # NOTHING IS DOWNLOADED WITHOUT BEING SAVED. A new document goes through the one
+            # door -- staged, pushed, read back -- and reaches sources/ only after that.
+            key = f'{want}/docs/{base}{ext}'
+            ok, why = ingest.stage(key, body, upstream=it['url'])
+            if not ok:
+                print(f'  [{n:>3}] REFUSED {it["label"][:48]}: {why}')
+                continue
+            held.sha[sha] = key
+            staged.append((n, it, key, want, base, body))
+            print(f'  [{n:>3}] {"downloaded":<11}{ext:<6}{len(body)/1000:>7.0f}KB '
+                  f'staged {it["label"][:42]}')
+            continue
+        rows.append(catalogue(n, it, have[0], base, path, body, note, aliases))
+
+    if staged:
+        ingest.secure()
+    for n, it, key, here, base, body in staged:
+        path = A.local_path(key)
+        if not os.path.exists(path):
+            # Still in flight. The catalogue only ever names what is held; tomorrow's run
+            # finds it staged and `ingest --secure` finishes it.
+            print(f'  [{n:>3}] IN FLIGHT, not catalogued: {key}')
+            continue
+        rows.append(catalogue(n, it, here, base, path, body, 'downloaded', aliases))
 
     # A PARTIAL RUN MUST NOT WRITE A MANIFEST. Each write replaces the whole file, so
     # `--limit 40` would leave three index.csv files describing forty documents and
@@ -414,9 +460,45 @@ def main():
     # index.csv is how the split came undone in the manifest as well as on disk.
     fields = ['label', 'upstream', 'local', 'text', 'bytes', 'sha256', 'read']
     for name in FOLDERS:
-        mine = [r for r in rows if r['_home'] == name]
+        mine = []
+        for r in rows:                       # one row per document, its addresses merged
+            if r['_home'] != name:
+                continue
+            twin = next((m for m in mine if m['local'] == r['local']), None)
+            if twin:
+                twin['upstream'] = ' '.join(merge(twin['upstream'].split(), r['upstream'].split()))
+            else:
+                mine.append(r)
         if not mine and not os.path.exists(manifest_of(name)):
             continue
+        # AN ADDRESS IS NEVER DROPPED BY A REWRITE. Every row is rebuilt from today's
+        # listing, so an address recorded on an earlier run -- a same-bytes alias, or a
+        # link the town has since taken down -- survives only if it is carried over here.
+        before = {r.get('local', ''): r.get('upstream', '').split()
+                  for r in read_index(manifest_of(name))}
+        for r in mine:
+            r['upstream'] = ' '.join(merge(r['upstream'].split(), before.get(r['local'], []),
+                                           held.extra.get(r['local'], [])))
+        # AND NO ROW IS DROPPED EITHER. The listing is not the catalogue: town-supplementary's
+        # index also holds the staff-directory snapshots another fetcher writes, and the town
+        # unlinks documents we still hold. Measured 27 October 2026, one crawl dropped 133
+        # rows -- caught only because watch_documents.py restores a catalogue that SHRANK,
+        # which a day dropping three and adding three would pass.
+        # In the catalogue's own order, so a crawl that found nothing new writes the file
+        # it read.
+        fresh = {r['local']: r for r in mine}
+        kept = []
+        for r in read_index(manifest_of(name)):
+            if not r.get('local') or r['local'] in {k['local'] for k in kept}:
+                continue
+            if r['local'] in fresh:
+                kept.append(fresh.pop(r['local']))
+                continue
+            more = held.extra.get(r['local'], [])
+            if more:
+                r['upstream'] = ' '.join(merge(r.get('upstream', '').split(), more))
+            kept.append(dict(r, _home=name))
+        mine = kept + [r for r in mine if r['local'] in fresh]
         os.makedirs(folder(name), exist_ok=True)
         with open(manifest_of(name), 'w', newline='') as fh:
             w = csv.DictWriter(fh, fieldnames=fields, extrasaction='ignore')
@@ -427,6 +509,122 @@ def main():
     if aliases:
         print(f'{len(aliases)} of them carry a second published address in `upstream`')
 
+
+def catalogue(n, it, here, base, path, body, note, aliases):
+    """The index row for a document we hold, with its text beside it."""
+    # The text sits beside whichever copy we actually have, not beside where a new one
+    # would have gone.
+    os.makedirs(text_dir(here), exist_ok=True)
+    txt = os.path.join(text_dir(here), base + '.txt')
+    how = 'had it' if os.path.exists(txt) and os.path.getsize(txt) > 0 \
+        else extract(path, txt)
+    also = aliases.get(it['id'], [])
+    print(f'  [{n:>3}] {note:<11}{os.path.splitext(path)[1]:<6}{len(body)/1000:>7.0f}KB '
+          f'{how:<16}{it["label"][:42]}')
+    return dict(_home=here, label=it['label'],
+                upstream=' '.join([it['url']] + also),
+                local=os.path.relpath(path, ROOT),
+                text=os.path.relpath(txt, ROOT) if os.path.exists(txt) else '',
+                bytes=len(body), sha256=hashlib.sha256(body).hexdigest(), read=how)
+
+
+def merge(*lists):
+    """Concatenated, first occurrence kept, order kept."""
+    out = []
+    for xs in lists:
+        out += [x for x in xs if x not in out]
+    return out
+
+
+def read_index(path):
+    if not os.path.exists(path):
+        return []
+    with open(path, newline='', encoding='utf-8', errors='replace') as fh:
+        return list(csv.DictReader(fh))
+
+
+class HeldDocuments:
+    """What the whole archive already holds: every address, and every published sha256.
+
+    Read across EVERY `sources/*/index.csv`, never one folder -- a report sent to us by hand
+    is catalogued under correspondence/, and is still the document the town later posts.
+    """
+
+    def __init__(self, src=None, manifest=None):
+        self.src = src or os.path.join(ROOT, 'sources')
+        self.urls, self.rows = {}, {}            # url -> key; key -> (index path, column)
+        self.town_rows = {}                      # key -> row, for the mirrors this run writes
+        for idx in sorted(glob.glob(os.path.join(self.src, '*', 'index.csv'))):
+            top = os.path.basename(os.path.dirname(idx))
+            for r in read_index(idx):
+                col = 'upstream' if 'upstream' in r else 'url'
+                key = self._key(top, r.get('local') or r.get('path') or '')
+                if not key:
+                    continue
+                self.rows.setdefault(key, (idx, col))
+                if top in FOLDERS:
+                    self.town_rows.setdefault(key, dict(r, _home=top))
+                for u in (r.get(col) or '').split():
+                    self.urls.setdefault(u, key)
+        # The manifest is what the BUCKET holds, so a document landed today and not yet
+        # catalogued still counts as held. Only published documents: our own renderings
+        # change, and matching one would be an accident.
+        self.sha = {r['sha256']: k for k, r in A.read_manifest(manifest or A.MANIFEST).items()
+                    if r.get('sha256') and A.frozen(k)}
+        self.extra = {}                          # local -> addresses for our own rows
+
+    @staticmethod
+    def _key(top, local):
+        local = local.strip()
+        if not local:
+            return ''
+        if local.startswith('sources/'):
+            return local[len('sources/'):]
+        return local if local.startswith(top + '/') else f'{top}/{local}'
+
+    def add_address(self, sha, url):
+        """Record `url` against the held copy with these bytes. Returns where it went."""
+        key = self.sha[sha]
+        self.urls[url] = key
+        idx, col = self.rows.get(key, (None, None))
+        if idx is None:
+            # Held in the bucket and named by no index. There is no durable row to write the
+            # address into -- the manifest is rebuilt FROM the indexes -- so it is said, and
+            # the next crawl, finding it again, records it once the copy is catalogued.
+            return 'NOT RECORDED: no index.csv catalogues it yet -- catalogue it, and the ' \
+                   'next crawl records this address'
+        top = os.path.basename(os.path.dirname(idx))
+        if top in FOLDERS:
+            # One of the town mirrors this run is about to rewrite: carried into its row.
+            self.extra.setdefault('sources/' + key, []).append(url)
+            return f'address recorded in {os.path.relpath(idx, ROOT)}'
+        append_address(idx, col, key, url)
+        return f'address appended to {os.path.relpath(idx, ROOT)}'
+
+
+def append_address(idx, col, key, url):
+    """Append one address to one row of somebody else's index, and change nothing else.
+
+    Read immediately before writing, the newline convention kept, written to a temporary
+    file and renamed -- several things write these catalogues.
+    """
+    raw = open(idx, 'rb').read()
+    eol = '\r\n' if b'\r\n' in raw.split(b'\n', 1)[0] + b'\n' else '\n'
+    with open(idx, newline='', encoding='utf-8') as fh:
+        rd = csv.DictReader(fh)
+        fields, rows = rd.fieldnames, list(rd)
+    top = os.path.basename(os.path.dirname(idx))
+    for r in rows:
+        if HeldDocuments._key(top, r.get('local') or r.get('path') or '') == key:
+            have = (r.get(col) or '').split()
+            if url not in have:
+                r[col] = ' '.join(have + [url])
+    tmp = idx + '.tmp'
+    with open(tmp, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=fields, lineterminator=eol)
+        w.writeheader()
+        w.writerows(rows)
+    os.replace(tmp, idx)
 
 if __name__ == '__main__':
     main()

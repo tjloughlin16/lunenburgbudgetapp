@@ -53,6 +53,10 @@ CHECKS = [
     # cheap and offline, which is why they come first.
     ('check_refresh_safe.py', ['--selftest']),
     ('test_refresh_git.py', []),
+    # Finding and fetching annual town reports: the year parser on real labels, the shelf
+    # rule, and a sandboxed crawl -- an older report filed, the same bytes at a new address
+    # recorded and not stored twice. Offline, under build/.
+    ('test_annual_report_fetch.py', []),
     # THE TAKEDOWN REGISTER, compiled into the 410 module the site serves. Offline and
     # instant. Fails if fy28/functions/docs/_takedowns.js no longer matches
     # sources/data/takedowns.csv, or if any tree holds a taken-down document in sources/.

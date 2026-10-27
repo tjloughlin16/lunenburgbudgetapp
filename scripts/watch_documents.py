@@ -37,7 +37,11 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 SRC = os.path.join(ROOT, 'sources')
 EVENTS = os.path.join(ROOT, 'sources', 'data', 'document-watch-events.csv')
 EVENT_COLS = ['first_seen', 'folder', 'label', 'upstream', 'local', 'bytes']
-FOLDERS = ['district-budget', 'town-budget', 'town-supplementary', 'state-dese', 'state-dls']
+# `town-annual-reports` is written by fetch_town_docs.py like the other two town mirrors and
+# was missing here until 27 October 2026, so a new report raised no NEW event and its
+# catalogue was the one a short crawl could shrink unchallenged.
+FOLDERS = ['district-budget', 'town-budget', 'town-supplementary', 'town-annual-reports',
+           'state-dese', 'state-dls']
 CRAWLERS = [['fetch_school_budget_docs.py'], ['fetch_town_docs.py']]
 
 

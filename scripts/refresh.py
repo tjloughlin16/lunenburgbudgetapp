@@ -216,13 +216,15 @@ BY_HAND = {
 # check_archive_backed_up.py, which do not stand between the town and the morning fetch.
 # `meetings` and `data` are counted from the event logs above, not from here.
 #
-# The other classes in ARRIVES (annual reports, ledgers, contracts, correspondence, peer
-# district documents) only ever arrive by hand, so a refresh reports 0 for them by
-# construction. The columns stay, because refresh-runs.csv is read by its header.
+# The other classes in ARRIVES (ledgers, contracts, correspondence, peer district
+# documents) only ever arrive by hand, so a refresh reports 0 for them by construction.
+# Annual reports used to be in that list; since 27 October 2026 the town crawl files them.
+# The columns stay, because refresh-runs.csv is read by its header.
 REFRESH_WRITES = {
     'district-budget': 'budget documents', 'town-budget': 'budget documents',
     'state-dls': 'state documents', 'state-dese': 'state documents',
     'town-supplementary': 'other town documents',
+    'town-annual-reports': 'annual reports',     # fetch_town_docs.py, since 27 October 2026
     # The Attorney General's Open Meeting Law determinations, fetched WEEKLY by this run
     # since 9 October 2026 (see oml_due). The statute and the guide in the same folder
     # arrived by hand, and arrive no more often than the legislature acts.
@@ -620,7 +622,7 @@ def adopt_new_meeting_documents(as_of):
 WHERE_PAGE = {'sc-meetings': 'School Committee meeting documents', 'budget': 'budget page'}
 WHERE_FOLDER = {'district-budget': 'district site', 'town-budget': 'town site, budget and finance pages',
                 'town-supplementary': 'town site, other pages', 'state-dls': 'state, Division of Local Services',
-                'state-dese': 'state, DESE',
+                'state-dese': 'state, DESE', 'town-annual-reports': 'town site, Annual Town Reports',
                 'state-law': 'state, Attorney General (Open Meeting Law determinations)'}
 DOC_INFO = {}
 

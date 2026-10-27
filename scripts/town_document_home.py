@@ -19,9 +19,17 @@ fetch time — the bytes have not been read yet and often cannot be.
 """
 import re
 
+from report_year import report_year
+
 FOLDERS = ('town-budget', 'town-supplementary', 'town-annual-reports')
 
+# WIDENED 27 October 2026, for the reports back to the 1980s the Select Board chair is
+# uploading. The town titled those by YEAR -- `Town Report 1985`, `Town Report 2000` -- and
+# the old pattern wanted the words `annual town report`, so they would have been filed as
+# supplementary. `town report` is enough when the label also names one year; on its own it
+# is too loose to trust. (`Town Manager Report` does not match: the words are not adjacent.)
 ANNUAL = re.compile(r'annual town report', re.I)
+TOWN_REPORT = re.compile(r'\btown reports?\b', re.I)
 
 # Widened 5 September after the ArchiveCenter crawl, which is where the town's RETIRED
 # budget material lives -- FY12 to FY25. Fifteen documents classified as supplementary that
@@ -42,9 +50,22 @@ NOT_BUDGET = re.compile(
     r'snow and ice|resource officer|reserve officer', re.I)
 
 
-def home(label):
+def is_annual_report(label, category=''):
+    """True for the annual town report, by its label or by where the town filed it.
+
+    `category` is the shelf the document came off: the ArchiveCenter category, or the
+    DocumentCenter page that linked it. The town's own `Annual Town Reports` shelf is a
+    stronger statement than any label it writes, so a report it files there is a report
+    whatever it is called.
+    """
+    if ANNUAL.search(label) or ANNUAL.search(category or ''):
+        return True
+    return bool(TOWN_REPORT.search(label) and report_year(label))
+
+
+def home(label, category=''):
     """The folder a document with this label belongs in."""
-    if ANNUAL.search(label):
+    if is_annual_report(label, category):
         return 'town-annual-reports'
     if BUDGET.search(label) and not NOT_BUDGET.search(label):
         return 'town-budget'
