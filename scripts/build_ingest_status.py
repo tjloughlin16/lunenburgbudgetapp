@@ -2642,6 +2642,52 @@ def reader_questions():
                 oldest_open=min((r.get('asked_at') or '' for r in open_), default=''))
 
 
+def reader_searches():
+    """What people searched for on the site, from build/search-log.csv (scripts/pull_searches.py).
+
+    TJ, 27 October 2026: *"do we have logging on the search bar? We should have logging, and it
+    should feed into the backlog dashboard just like the questions do."* Kept fresh the way the
+    questions are: pulled again when the last check is over an hour old. The words are shown
+    -- they are the point -- and the file is gitignored, never committed or published.
+    """
+    def stamp(tree):
+        try:
+            return open(os.path.join(tree, 'build', 'search-log-checked.txt')).read().strip()
+        except OSError:
+            return ''
+    best = max((ROOT, TREE), key=stamp)
+    checked = stamp(best)
+    try:
+        when = dt.datetime.fromisoformat(checked) if checked else None
+        age = (dt.datetime.now(dt.timezone.utc) - when).total_seconds() if when else None
+    except ValueError:
+        age = None
+    if age is None or age > QUESTIONS_STALE_S:
+        try:
+            subprocess.run([sys.executable, os.path.join(ROOT, 'scripts', 'pull_searches.py')],
+                           cwd=ROOT, capture_output=True, timeout=120)
+        except Exception:
+            pass
+        if stamp(ROOT) > checked:
+            best, checked = ROOT, stamp(ROOT)
+    f = os.path.join(best, 'build', 'search-log.csv')
+    if not os.path.exists(f):
+        return dict(rows=[], checked=checked, missing=True)
+    rs = list(csv.DictReader(open(f, encoding='utf-8')))
+    now = dt.datetime.now(dt.timezone.utc)
+
+    def within(r, hours):
+        try:
+            return (now - dt.datetime.fromisoformat(r['at'].replace('Z', '+00:00'))).total_seconds() <= hours * 3600
+        except ValueError:
+            return False
+    zero = [r for r in rs if r.get('hits') == '0' and not r.get('error')]
+    return dict(rows=rs, checked=checked, missing=False,
+                day=sum(1 for r in rs if within(r, 24)), week=sum(1 for r in rs if within(r, 24 * 7)),
+                zero_day=sum(1 for r in zero if within(r, 24)), zero=zero,
+                errors=[r for r in rs if r.get('error')])
+
+
 # WHAT GOT DONE TODAY, BY CATEGORY. TJ, 19 September 2026: "the 'finished recently' is the
 # individual jobs, but that's too detailed for me to draw insights from it, and it doesnt
 # give me overall COUNTS of what was done and the category (Youtube found X videos. Built
@@ -3066,7 +3112,8 @@ def tabs(sel, q=None):
     items = [('index.html', 'Running'), ('backlog.html', 'Backlog'),
              ('review.html', 'Review' + (' (%d)' % nr if nr else '')),
              ('suggested.html', 'Suggested reports'), ('sources.html', 'Documents'),
-             ('questions.html', 'Questions' + (' (%d)' % n if n else ''))]
+             ('questions.html', 'Questions' + (' (%d)' % n if n else '')),
+             ('searches.html', 'Searches')]
     return '<div class="tabs">%s</div>' % ''.join(
         '<a%s href="%s">%s</a>' % (' class="sel"' if href == sel else '', href, label)
         for href, label in items)
@@ -3329,6 +3376,57 @@ def page_questions(st):
                     '' if st_ == 'answered' else 'warn', html.escape(st_ or 'open'),
                     html.escape(r.get('topic') or '\u2014'), html.escape(r.get('body_chars') or ''),
                     'yes' if r.get('has_email') == '1' else 'no', html.escape(r.get('country') or '')))
+    h.append('</table></div></div>')
+    return ''.join(h)
+
+
+def page_searches(st):
+    """Every search, on its own tab, beside Questions: how many, which found nothing, which
+    failed, and each one. The words are the record of what readers wanted and did not find."""
+    s = st.get('searches') or {}
+    h = ['<div class="wrap"><div class="row"><div class="grow"><h1>Searches</h1>'
+         '<p class="sub">%s</p></div>%s</div>' % (st['generated'], tabs('searches.html', st.get('questions')))]
+    if s.get('missing'):
+        h.append('<div class="card idle">No search log yet &mdash; run '
+                 '<code>python3 scripts/pull_searches.py</code>. Searches are logged only once the '
+                 'table exists (<code>fy28/sql/search-log.sql</code>) and the search function is deployed.'
+                 '</div></div>')
+        return ''.join(h)
+    checked = s.get('checked') or ''
+    h.append('<div class="card"><div class="row"><b class="grow">%d in the last day &middot; %d in the '
+             'last week</b><span class="pill %s">%d found nothing today</span></div>'
+             '<div class="tiny" style="margin-top:6px">Last checked <b>%s</b>%s &middot; checked again '
+             'whenever the last check is over an hour old, and by every daily refresh</div></div>'
+             % (s['day'], s['week'], 'warn' if s['zero_day'] else '', s['zero_day'],
+                html.escape(checked.replace('T', ' ')[:16]) if checked else 'never',
+                (' (%s)' % ago(checked)) if checked else ''))
+    # FOUND NOTHING, grouped by the words, most asked first: each is a gap or a misspelling
+    by = collections.defaultdict(list)
+    for r in s['zero']:
+        by[r['q'].strip().lower()].append(r)
+    h.append('<h2>Found nothing</h2><p class="sub" style="margin:-4px 0 10px">Each is either a word '
+             'the archive does not hold or a word it holds differently. Both are worth a look.</p>'
+             '<div class="card"><table><tr><th>words</th><th class="r">times</th><th>last</th><th>from</th></tr>')
+    for q, rs in sorted(by.items(), key=lambda kv: (-len(kv[1]), kv[0]))[:200]:
+        h.append('<tr><td>%s</td><td class="r num">%d</td><td class="mono tiny">%s</td><td class="tiny">%s</td></tr>'
+                 % (html.escape(q), len(rs), html.escape(max(r['at'] for r in rs).replace('T', ' ')[:16]),
+                    html.escape(', '.join(sorted({r.get('via') or '' for r in rs})))))
+    h.append('</table></div>')
+    if s['errors']:
+        h.append('<h2>Failed</h2><div class="card"><table><tr><th>when</th><th>words</th><th>why</th></tr>')
+        for r in s['errors'][:100]:
+            h.append('<tr><td class="mono tiny">%s</td><td>%s</td><td class="tiny">%s</td></tr>'
+                     % (html.escape(r['at'].replace('T', ' ')[:16]), html.escape(r['q']), html.escape(r['error'])))
+        h.append('</table></div>')
+    h.append('<h2>Every search</h2><div class="card"><table><tr><th>when</th><th>words</th><th>from</th>'
+             '<th class="r">hits</th><th class="r">ms</th><th class="r">rows read</th><th>cache</th><th>country</th></tr>')
+    for r in s['rows'][:300]:
+        h.append('<tr><td class="mono tiny">%s</td><td>%s</td><td class="tiny">%s</td><td class="r num">%s</td>'
+                 '<td class="r num">%s</td><td class="r num">%s</td><td class="tiny">%s</td><td class="tiny">%s</td></tr>'
+                 % (html.escape(r['at'].replace('T', ' ')[:19]), html.escape(r['q']), html.escape(r.get('via') or ''),
+                    html.escape(r.get('hits') or ''), html.escape(r.get('ms') or ''),
+                    html.escape(r.get('rows_read') or ''), 'hit' if r.get('cache') == '1' else '',
+                    html.escape(r.get('country') or '')))
     h.append('</table></div></div>')
     return ''.join(h)
 
@@ -4167,7 +4265,7 @@ def write(open_it=False):
     st = dict(generated=dt.datetime.now().strftime('%a %d %b, %H:%M:%S'),
               running=running(), streams=streams(), refresh=refresh(), queued=queued(),
               alerts=alert(), finished=finished(), done=done_today(),
-              questions=reader_questions())
+              questions=reader_questions(), searches=reader_searches())
     docs = sources()
     shell = ('<!doctype html><meta charset=utf-8><meta name=viewport '
              'content="width=device-width,initial-scale=1"><title>%s</title>'
@@ -4208,6 +4306,10 @@ def write(open_it=False):
                            page_questions(st)) + '<script>' + KEEP + '</script>')
     with open(os.path.join(OUT, 'questions.html'), 'w', encoding='utf-8') as fh:
         fh.write(_questions)
+    _searches = (shell % ('Searches', '<meta http-equiv="refresh" content="60">', CSS,
+                          page_searches(st)) + '<script>' + KEEP + '</script>')
+    with open(os.path.join(OUT, 'searches.html'), 'w', encoding='utf-8') as fh:
+        fh.write(_searches)
     with open(os.path.join(OUT, 'sources.html'), 'w', encoding='utf-8') as fh:
         counts = collections.Counter(d[5] for d in docs)
         counts[''] = len(docs)

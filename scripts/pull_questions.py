@@ -38,7 +38,7 @@ CHECKED = os.path.join(ROOT, 'build', 'reader-questions-checked.txt')
 FIELDS = ['id', 'asked_at', 'status', 'topic', 'body_chars', 'has_email', 'country']
 
 
-def query(sql):
+def query(sql, db=DB):
     """One read against the questions database, through wrangler.
 
     Node 22 is required by wrangler and the system node is 20, so the nvm shim is sourced
@@ -47,13 +47,26 @@ def query(sql):
     """
     cmd = ('source ~/.nvm/nvm.sh >/dev/null 2>&1; nvm use 22 >/dev/null 2>&1; '
            'npx wrangler d1 execute %s --remote --json --command %s'
-           % (DB, json.dumps(sql)))
+           % (db, json.dumps(sql)))
     r = subprocess.run(['bash', '-lc', cmd], cwd=os.path.join(ROOT, 'fy28'),
                        capture_output=True, text=True)
-    m = re.search(r'\[\s*\{.*\}\s*\]', r.stdout, re.S)
-    if not m:
-        raise SystemExit('could not read %s: %s' % (DB, (r.stderr or r.stdout)[-300:]))
-    return json.loads(m.group())[0].get('results', [])
+    # THE WHOLE OUTPUT, PARSED, AND AN ERROR IS AN ERROR. This used to regex out the first
+    # `[{...}]` it could find -- and a failed query prints {"error": {..., "notes": [{...}]}},
+    # whose notes list matched, so `no such table` came back as an empty result and the
+    # dashboard said nothing was there (27 October 2026, found by pull_searches.py).
+    out = r.stdout
+    start = min([i for i in (out.find('['), out.find('{')) if i >= 0], default=-1)
+    try:
+        got = json.loads(out[start:]) if start >= 0 else None
+    except ValueError:
+        got = None
+    if isinstance(got, dict) and got.get('error'):
+        e = got['error']
+        raise SystemExit('could not read %s: %s' % (db, '; '.join(
+            [e.get('text', '')] + [n.get('text', '') for n in e.get('notes') or []])))
+    if not isinstance(got, list) or not got or not got[0].get('success', False):
+        raise SystemExit('could not read %s: %s' % (db, (r.stderr or out)[-300:]))
+    return got[0].get('results', [])
 
 
 def main():

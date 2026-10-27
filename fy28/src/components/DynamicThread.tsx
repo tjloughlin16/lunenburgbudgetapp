@@ -59,7 +59,7 @@ export function DynamicThread({ term }: { term: string }) {
   useEffect(() => {
     let live = true
     setP(null); setErr('')
-    fetch(`/api/search?q=${encodeURIComponent(term)}&corpus=${KINDS.join(',')}&sort=newest&per=${PER}&match=together`)
+    fetch(`/api/search?q=${encodeURIComponent(term)}&corpus=${KINDS.join(',')}&sort=newest&per=${PER}&match=together&via=thread`)
       .then(r => r.json()).then((j: Payload) => {
         if (!live) return
         if (j.error) setErr(j.message || j.error); else setP(j)

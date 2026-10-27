@@ -230,6 +230,31 @@ export function ftsExpression(q, { together = false } = {}) {
   return `"${words.join(' ')}" OR NEAR(${all}, 3) OR (${all})`
 }
 
+// EVERY SEARCH, LOGGED (TJ, 27 October 2026: "do we have logging on the search bar? We should
+// have logging, and it should feed into the backlog dashboard just like the questions do").
+// One row per search into the QUESTIONS database -- kept apart from the site's data for the
+// same reason the questions are -- written AFTER the response with waitUntil, so a search is
+// never slower for it and a failed write never fails a search. Recorded: the words as typed,
+// the filters, where the call came from (the search page sends via=page, a thread via=thread,
+// anything else is an API caller), how many hits, how long, how many rows read, whether the
+// edge cache answered, any error, and the country Cloudflare attaches. No IP address, no user
+// agent, no identifier: two searches cannot be joined to one person. The table is
+// fy28/sql/search-log.sql; scripts/pull_searches.py brings it to the dashboard's Searches tab.
+function logSearch(context, row) {
+  const qdb = context.env.QUESTIONS
+  if (!qdb || !row.q) return
+  const url = new URL(context.request.url)
+  const via = (url.searchParams.get('via') || '').trim()
+  context.waitUntil(qdb.prepare(
+    'INSERT INTO search_log (at, q, board, since, sort, via, hits, ms, rows_read, cache, error, country) '
+    + 'VALUES (?1, ?2, ?3, ?4, ?5, ?6, ?7, ?8, ?9, ?10, ?11, ?12)').bind(
+    new Date().toISOString(), row.q.slice(0, 200), row.board || '', row.since || '', row.sort || '',
+    via === 'page' || via === 'thread' ? via : 'api', row.hits ?? null, row.ms ?? null,
+    row.rowsRead ?? null, row.cache ? 1 : 0, (row.error || '').slice(0, 200),
+    context.request.cf?.country || '').run().catch(() => {}))
+}
+const hitsOf = counts => Object.values(counts || {}).reduce((n, c) => n + (c && c.hits || 0), 0)
+
 export async function onRequest(context) {
   const { request, env } = context
   if (request.method === 'OPTIONS') return new Response(null, { status: 204, headers: HEADERS })
@@ -282,13 +307,20 @@ export async function onRequest(context) {
       + 'be one person).',
   }
 
-  if (!expr) return json({ resource: 'search', q, expression: '', index, results: {}, counts: {} })
+  if (!expr) {
+    logSearch(context, { q, board, since, sort, hits: 0, error: 'no searchable words' })
+    return json({ resource: 'search', q, expression: '', index, results: {}, counts: {} })
+  }
 
   const cache = caches.default
   const cacheKey = new Request(`https://search.invalid/${encodeURIComponent(expr)}|${corpora.join(',')}|${board}|${since}|${sort}|${per}`, { method: 'GET' })
   const hit = await cache.match(cacheKey)
   if (hit) {
-    return new Response(await hit.text(), { headers: { ...HEADERS, 'cache-control': `public, max-age=${CACHE_SECONDS}`, 'x-query-cache': 'hit' } })
+    const text = await hit.text()
+    let hits = null
+    try { hits = hitsOf(JSON.parse(text).counts) } catch { /* logged without a count */ }
+    logSearch(context, { q, board, since, sort, hits, cache: true })
+    return new Response(text, { headers: { ...HEADERS, 'cache-control': `public, max-age=${CACHE_SECONDS}`, 'x-query-cache': 'hit' } })
   }
 
   const started = Date.now()
@@ -412,6 +444,8 @@ export async function onRequest(context) {
       if (byTopic.length) counts[c].hits += byTopic.filter(t => !(r.results || []).some(x => x.cite_url === t.cite_url)).length
     }))
   } catch (e) {
+    logSearch(context, { q, board, since, sort, ms: Date.now() - started, rowsRead,
+      error: String(e && e.message ? e.message : e) })
     return json({
       error: 'query_failed',
       message: String(e && e.message ? e.message : e),
@@ -442,6 +476,7 @@ export async function onRequest(context) {
     ms: Date.now() - started,
     cite: 'A transcript hit locates a moment in a recording. Cite the video at its timestamp, never as a document, and never quote a figure from a caption as the record.',
   }
+  logSearch(context, { q, board, since, sort, hits: hitsOf(counts), ms: payload.ms, rowsRead })
   const res = json(payload, 200, { 'cache-control': `public, max-age=${CACHE_SECONDS}`, 'x-query-cache': 'miss' })
   context.waitUntil(cache.put(cacheKey, res.clone()))
   return res

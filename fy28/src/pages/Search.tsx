@@ -447,7 +447,8 @@ export default function Search() {
     // chips need a count for every kind in order to say "4 of these are documents", and
     // asking for one kind would return one count. So the kind filter is applied to what is
     // RENDERED, which makes it instant and costs no further rows read against D1.
-    const params = new URLSearchParams({ q: asked })
+    // `via=page`: the search log (functions/api/search.js) tells this page from API callers
+    const params = new URLSearchParams({ q: asked, via: 'page' })
     if (board) params.set('board', board)
     if (since) params.set('since', since)
     // The order is the API's business, not this page's: it returns the twelve BEST-RANKED
@@ -536,13 +537,24 @@ export default function Search() {
           aria-label="Search"
           className="px-3 py-2 text-base rounded border flex-1 sm:flex-none sm:w-[26rem] min-w-0"
           style={{ background: 'var(--surface-2)', borderColor: 'var(--grid)', color: 'var(--text-primary)' }} />
-        <button type="submit" disabled={busy} aria-busy={busy}
-          className="px-4 py-2 text-sm font-semibold rounded shrink-0 inline-flex items-center gap-2 disabled:opacity-80"
+        {/* NEVER DISABLED. A disabled default button makes Enter do NOTHING (the HTML standard's
+            implicit submission), so a word corrected while a search was running was silently
+            not searched, and the old word's results arrived under the new one -- TJ, 27 October
+            2026, typed "gima", fixed it to "gina" and was shown nothing for her. A new search
+            simply replaces the running one; the effect below discards the older answer. */}
+        <button type="submit" aria-busy={busy}
+          className="px-4 py-2 text-sm font-semibold rounded shrink-0 inline-flex items-center gap-2"
           style={{ background: 'var(--series-cost)', color: '#fff' }}>
           {busy && <Spinner size={14} color="#fff" track="rgba(255,255,255,0.35)" />}
           {busy ? 'Searching' : 'Search'}
         </button>
       </form>
+      {/* THE BOX AND THE RESULTS DISAGREE: say which word the results are for. */}
+      {asked && q.trim() && q.trim() !== asked && (
+        <p className="mt-1.5 text-[13px]" style={{ color: 'var(--status-warning)' }}>
+          Showing results for <strong>{asked}</strong>. Press Enter to search for <strong>{q.trim()}</strong>.
+        </p>
+      )}
 
       {/* SEARCHING, AND IMPOSSIBLE TO MISS. TJ, 10 October 2026: *"search is SLOW with partial.
           can you update the 'searching' indicator with a spinner to make it super clear and

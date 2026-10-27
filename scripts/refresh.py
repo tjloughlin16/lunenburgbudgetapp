@@ -1455,6 +1455,9 @@ def run(a, notes, ctx):
         # no bodies, no email addresses. check=False because a courtesy must not fail the
         # night's ingestion.
         py('pull_questions.py', check=False)
+        # AND WHAT THEY SEARCHED FOR (pull_searches.py): every search, its words, its hits.
+        # Gitignored, never committed -- a search can be a person's name.
+        py('pull_searches.py', check=False)
         py('build_agentic_backlog.py', check=False)     # where every machine-reading stream stands, notes/generated/AGENTIC-BACKLOG.md
         # AND HOW DEEP IT IS, by the MEETING's own date rather than by when we found it.
         # Runs after the streams above have done their work, so the figure on the
