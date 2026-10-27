@@ -27,7 +27,7 @@ type Row = { name: string; account: string; cat: string; line: boolean; n: Recor
   spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
-  | 'payers' | 'none' | 'unmatched' | 'lines' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
+  | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
 type Col = { id: string; key: K; label: string; op: string; group: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
@@ -163,7 +163,13 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   })
   const y = d.years[yi]
   const rows = useMemo(() => y.rows.filter(r => !cat || r.cat === cat)
-    .sort((a, b) => { const k = d.columns.find(c => c.id === sort.k)?.key ?? 'left'; return sort.dir * (a.n[k] - b.n[k]) || a.name.localeCompare(b.name) }), [y, cat, sort, d.columns])
+    .sort((a, b) => {
+      // by category: alphabetical, and within one category the line's Left, largest first, so
+      // a category's biggest lines sit together
+      if (sort.k === 'cat') return sort.dir * b.cat.localeCompare(a.cat) || b.n.left - a.n.left || a.name.localeCompare(b.name)
+      const k = d.columns.find(c => c.id === sort.k)?.key ?? 'left'
+      return sort.dir * (a.n[k] - b.n[k]) || a.name.localeCompare(b.name)
+    }), [y, cat, sort, d.columns])
   const shown = all ? rows : rows.filter((r, i) => i < FIRST || `${r.account}|${r.name}|${r.cat}` === open)
   const chipTitle = { off: d.text.chip_off, on: d.text.chip_on, direct: d.text.chip_direct }
   const cell = (r: Row, c: Col) => {
@@ -194,18 +200,24 @@ export default function FyLineTable({ data, alt }: CustomProps) {
           {d.cats.map(c => <option key={c} value={c}>{c}</option>)}
         </select>
       </div>
-      <div className="mt-3 overflow-x-auto">
+      {/* WIDE (TJ, 26 October 2026: "make this a wide table"): out of the page's reading column
+          to the window, less a gutter each side, centred on it -- the column is centred too */}
+      <div className="mt-3 overflow-x-auto relative left-1/2 -translate-x-1/2 w-[calc(100vw-32px)] sm:w-[calc(100vw-64px)] max-w-[1800px]">
         <table className="w-full text-[13px] tabular-nums border-collapse">
           <thead>
             <tr>
-              <th />
+              <th colSpan={2} />
               {d.groups.map((g, gi) => (
                 <th key={g.id} colSpan={d.columns.filter(c => c.group === g.id).length}
                   className={`px-2 pt-1 text-center text-[12px] font-semibold uppercase tracking-wide border-b ${gi ? 'border-l' : ''}`}
                   style={{ ...muted, borderColor: 'var(--grid)' }}>{g.label}</th>))}
             </tr>
             <tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
-              <th className="px-2 py-1.5 text-left align-bottom font-semibold">{d.text.lines}</th>{d.columns.map(head)}</tr></thead>
+              <th className="px-2 py-1.5 text-left align-bottom font-semibold">{d.text.lines}</th>
+              <th className="px-2 py-1.5 text-left align-bottom font-semibold cursor-pointer select-none"
+                onClick={() => setSort(s => ({ k: 'cat', dir: s.k === 'cat' ? (-s.dir as 1 | -1) : -1 }))}
+                aria-sort={sort.k === 'cat' ? (sort.dir < 0 ? 'ascending' : 'descending') : 'none'}>
+                {d.text.category}{sort.k === 'cat' ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>{d.columns.map(head)}</tr></thead>
           <tbody>
             {shown.map(r => {
               const key = `${r.account}|${r.name}|${r.cat}`
@@ -213,8 +225,9 @@ export default function FyLineTable({ data, alt }: CustomProps) {
               return [
                 <tr key={key} className="border-b cursor-pointer hover:bg-[var(--surface-2)]" style={{ borderColor: 'var(--grid)' }}
                   onClick={() => setOpen(o => (o === key ? null : key))} aria-expanded={isOpen}>
-                  <td className="px-2 py-1.5 text-left min-w-[14rem]"><span className="mr-1" style={muted}>{isOpen ? '▾' : '▸'}</span>
-                    {r.name}<span className="block text-[11.5px]" style={muted}>{r.cat}</span></td>
+                  <td className="px-2 py-1.5 text-left min-w-[13rem]"><span className="mr-1" style={muted}>{isOpen ? '▾' : '▸'}</span>
+                    {r.name}</td>
+                  <td className="px-2 py-1.5 text-left min-w-[9rem]" style={secondary}>{r.cat}</td>
                   {d.columns.map((c, i) => (
                     <td key={c.id} className={`px-2 py-1.5 text-right whitespace-nowrap ${i === firstCost ? 'border-l' : ''}`}
                       style={{ borderColor: 'var(--grid)', color: c.key === 'left' ? tone(r.n.left) : c.key === 'transfers' && r.n.transfers ? tone(r.n.transfers) : undefined,
@@ -223,7 +236,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                 </tr>,
                 isOpen ? (
                   <tr key={`${key}-x`} className="border-b" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
-                    <td colSpan={d.columns.length + 1} className="px-3 py-3">
+                    <td colSpan={d.columns.length + 2} className="px-3 py-3">
                       <div className="grid gap-5 lg:grid-cols-3 max-w-5xl">
                         {r.line ? <Receipt r={r} d={d} /> : null}
                         {r.line ? <Moves r={r} t={d.text} /> : null}

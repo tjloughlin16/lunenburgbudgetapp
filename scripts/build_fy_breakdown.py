@@ -309,7 +309,7 @@ def lines_data(m, T):
                     payers='Other funds that paid toward this line',
                     none='No other fund paid toward this line.',
                     unmatched='Other funds’ spending not matched to any line',
-                    lines='Line', footing='Spent counts orders still owed at year end, so for '
+                    lines='Line', category='Category', footing='Spent counts orders still owed at year end, so for '
                     'FY2025 and earlier Left can differ from the Town’s printed report by '
                     'those orders.'))
 
