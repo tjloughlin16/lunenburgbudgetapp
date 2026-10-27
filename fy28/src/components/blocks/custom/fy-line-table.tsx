@@ -506,7 +506,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       </div>
       {/* WIDE (TJ, 26 October 2026: "make this a wide table"): out of the page's reading column
           to the window, less a gutter each side, centred on it -- the column is centred too */}
-      <div className="mt-3 overflow-x-auto relative left-1/2 -translate-x-1/2 w-[calc(100vw-32px)] sm:w-[calc(100vw-64px)] max-w-[1800px]">
+      <div className="mt-3 overflow-x-auto relative left-1/2 -translate-x-1/2 w-[calc(100vw-32px)] sm:w-[calc(100vw-96px)] lg:w-[calc(100vw-160px)] max-w-[1600px]">
         <table className="w-full text-[13px] tabular-nums border-collapse">
           <thead>
             <tr>
