@@ -1,0 +1,798 @@
+{
+ "also": [
+  {
+   "basis": "published",
+   "decimals": null,
+   "end": {
+    "label": "Left",
+    "text": "-$434,108",
+    "value": -434107.56
+   },
+   "note": {
+    "figures": {
+     "y": {
+      "text": "FY2026",
+      "unit": "fiscal year",
+      "value": 2026
+     }
+    },
+    "literals": [
+     "9400",
+     "535023",
+     "2026/12/000692"
+    ],
+    "text": "FY2026. School general fund account 9400 535023; the charge is journal 2026/12/000692."
+   },
+   "start": {
+    "label": "Voted, net of the circuit breaker",
+    "text": "$302,663",
+    "value": 302662.56
+   },
+   "steps": [
+    {
+     "after": "-$578,326",
+     "label": "This year’s bills, paid by the school budget",
+     "text": "-$880,988",
+     "value": -880988.26
+    },
+    {
+     "after": "-$767,602",
+     "label": "Next year’s first quarter, paid early",
+     "text": "-$189,277",
+     "value": -189276.75
+    },
+    {
+     "after": "-$434,108",
+     "label": "Charged to the circuit breaker, 29 June",
+     "text": "+$333,495",
+     "value": 333494.89
+    }
+   ],
+   "title": "Collaborative tuition, vote to left",
+   "type": "bridge",
+   "unit": "$"
+  }
+ ],
+ "blocks": [
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {
+      "g": {
+       "text": "$782,867",
+       "unit": "",
+       "value": 782867.0
+      },
+      "p": {
+       "text": "$480,204",
+       "unit": "",
+       "value": 480204.0
+      },
+      "v": {
+       "text": "$302,663",
+       "unit": "",
+       "value": 302662.56
+      }
+     },
+     "literals": [],
+     "text": "The budget book prints collaborative tuition twice: **$782,867** for the tuition, and a **Circuit Breaker** line of **−$480,204** beneath it. Town Meeting votes the difference, **$302,663**. So the line is voted on the assumption that the state’s reimbursement will pay part of the bills."
+    },
+    {
+     "figures": {},
+     "literals": [],
+     "text": "The reimbursement does not arrive in the line. It sits in its own fund, and pays a bill only when a bill is charged to that fund. Until then the school budget pays, and the line shows as over budget. A charge to the fund afterwards lowers what the school budget spent, so it raises what was left."
+    },
+    {
+     "figures": {},
+     "literals": [],
+     "text": "What the school budget leaves unspent returns to the town as free cash. What the circuit breaker fund leaves stays in the fund, to be spent within a year of arriving (DESE)."
+    }
+   ],
+   "place": "lead",
+   "title": "A line voted net of the circuit breaker",
+   "tone": "define"
+  },
+  {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Collaborative tuition, gross (book)",
+       "tone": null,
+       "value": "$460,952"
+      },
+      {
+       "label": "Circuit breaker counted on (book)",
+       "tone": null,
+       "value": "$452,580"
+      },
+      {
+       "label": "Collaborative tuition, voted",
+       "tone": null,
+       "value": "$8,372"
+      },
+      {
+       "label": "Circuit breaker charged to tuition",
+       "tone": null,
+       "value": "$473,650"
+      },
+      {
+       "label": "of it, July to May",
+       "tone": "good",
+       "value": "$445,631"
+      },
+      {
+       "label": "of it, in June",
+       "tone": null,
+       "value": "$52,820"
+      }
+     ],
+     "title": "The year before"
+    },
+    {
+     "rows": [
+      {
+       "label": "Collaborative tuition, gross (book)",
+       "tone": null,
+       "value": "$782,867"
+      },
+      {
+       "label": "Circuit breaker counted on (book)",
+       "tone": null,
+       "value": "$480,204"
+      },
+      {
+       "label": "Collaborative tuition, voted",
+       "tone": null,
+       "value": "$302,663"
+      },
+      {
+       "label": "Circuit breaker charged to tuition",
+       "tone": null,
+       "value": "$333,495"
+      },
+      {
+       "label": "of it, July to May",
+       "tone": "bad",
+       "value": "$4,005"
+      },
+      {
+       "label": "of it, in June",
+       "tone": null,
+       "value": "$333,495"
+      }
+     ],
+     "title": "The year of this surplus"
+    }
+   ],
+   "note": {
+    "figures": {},
+    "literals": [],
+    "text": "The budget book’s figures, and the journal’s. The year before, the vote was set by a July entry that took the circuit breaker off the line."
+   },
+   "place": "body",
+   "so": {
+    "figures": {},
+    "literals": [
+     "29 June"
+    ],
+    "text": "One year drew the fund as bills came in and charged more than the vote counted on; the next charged less, all of it on 29 June."
+   },
+   "title": "Counted on, and charged"
+  },
+  {
+   "block": "panels",
+   "cards": [
+    {
+     "rows": [
+      {
+       "label": "Held at the start of the year",
+       "tone": null,
+       "value": "$293,335"
+      },
+      {
+       "label": "Received from the state",
+       "tone": "good",
+       "value": "$325,970"
+      },
+      {
+       "label": "Spent, July to March",
+       "tone": null,
+       "value": "$4,005"
+      },
+      {
+       "label": "Held at the end of March",
+       "tone": null,
+       "value": "$615,301"
+      }
+     ],
+     "title": "As the Town printed it"
+    },
+    {
+     "rows": [
+      {
+       "label": "Tuition charged to it in June",
+       "tone": null,
+       "value": "$333,495"
+      },
+      {
+       "label": "Held at year end",
+       "tone": null,
+       "value": "$281,806"
+      }
+     ],
+     "title": "At year end (our sum)"
+    }
+   ],
+   "note": {
+    "figures": {},
+    "literals": [],
+    "text": "The Town’s special-revenue report at the end of March, then the school journal; nothing else posted to the fund from April to June."
+   },
+   "place": "body",
+   "so": {
+    "figures": {
+     "h": {
+      "text": "$615,301",
+      "unit": "",
+      "value": 615300.66
+     }
+    },
+    "literals": [],
+    "text": "While the collaborative line ran over, the fund that was counted on to pay part of it held more than $615,301."
+   },
+   "title": "The circuit breaker fund, through the year"
+  },
+  {
+   "block": "explain",
+   "paragraphs": [
+    {
+     "figures": {
+      "a": {
+       "text": "FY2023",
+       "unit": "fiscal year",
+       "value": 2023
+      },
+      "b": {
+       "text": "FY2024",
+       "unit": "fiscal year",
+       "value": 2024
+      },
+      "c": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
+      },
+      "d": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      },
+      "e": {
+       "text": "$4,005",
+       "unit": "",
+       "value": 4004.52
+      },
+      "i": {
+       "text": "$287,108",
+       "unit": "",
+       "value": 287107.65
+      },
+      "r": {
+       "text": "$325,970",
+       "unit": "",
+       "value": 325970.0
+      }
+     },
+     "literals": [
+      "31 December 2025"
+     ],
+     "text": "**Shows.** The circuit breaker paid tuition bills as they came in FY2023, FY2024 and FY2025. In FY2026 it paid $4,005 before June, while the state’s $325,970 for the year was in the fund by 31 December 2025. The IDEA grant paid $287,108 toward private tuition that year, by our match on the payee."
+    },
+    {
+     "figures": {},
+     "literals": [
+      "29 June"
+     ],
+     "text": "**Does not show.** Why the fund was left untouched until 29 June: a late claim, a choice to keep the money for later, or an ordinary year-end clean-up all fit the same postings. Nothing held says which."
+    },
+    {
+     "figures": {},
+     "literals": [],
+     "text": "**Would settle it.** The district’s year-end close memo for the school budget, and the circuit breaker claim with the state’s payment schedule. Both are on What we cannot answer."
+    }
+   ],
+   "place": "end",
+   "title": "What the record shows, and does not",
+   "tone": "plain"
+  }
+ ],
+ "category": "fy2026-closeout",
+ "chart": {
+  "decimals": null,
+  "from_zero": true,
+  "kind": "bar",
+  "note": {
+   "figures": {},
+   "literals": [
+    "2640"
+   ],
+   "text": "Private and collaborative tuition together, every fund. The circuit breaker is what fund 2640 charged to tuition accounts. Orders still owed are counted."
+  },
+  "reference": null,
+  "series": [
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "School general fund, this year’s tuition",
+    "texts": [
+     "$304,748",
+     "$588,508",
+     "$732,298",
+     "$1,013,494"
+    ],
+    "values": [
+     304747.5,
+     588508.04,
+     732298.26,
+     1013494.19
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Circuit breaker",
+    "texts": [
+     "$494,969",
+     "$466,296",
+     "$473,650",
+     "$333,495"
+    ],
+    "values": [
+     494969.38,
+     466295.98,
+     473650.35,
+     333494.89
+    ]
+   },
+   {
+    "basis": "estimate",
+    "mark": "bar",
+    "name": "IDEA grant (our match, by payee)",
+    "texts": [
+     "$0",
+     "$0",
+     "$0",
+     "$287,108"
+    ],
+    "values": [
+     0.0,
+     0.0,
+     0.0,
+     287107.65
+    ]
+   },
+   {
+    "basis": "published",
+    "mark": "bar",
+    "name": "Next year’s tuition, paid early",
+    "texts": [
+     "$0",
+     "$0",
+     "$0",
+     "$189,277"
+    ],
+    "values": [
+     0.0,
+     0.0,
+     0.0,
+     189276.75
+    ]
+   }
+  ],
+  "stacked": true,
+  "title": "Out-of-district tuition, by who paid",
+  "type": "series",
+  "unit": "$",
+  "x": [
+   "FY2023",
+   "FY2024",
+   "FY2025",
+   "FY2026"
+  ]
+ },
+ "conclusions": [
+  {
+   "figures": {
+    "a": {
+     "text": "$480,204",
+     "unit": "",
+     "value": 480204.0
+    },
+    "b": {
+     "text": "$333,495",
+     "unit": "",
+     "value": 333494.89
+    }
+   },
+   "literals": [
+    "29 June"
+   ],
+   "rests_on": [
+    "plan",
+    "charged",
+    "short"
+   ],
+   "so": {
+    "figures": {
+     "e": {
+      "text": "$281,806",
+      "unit": "",
+      "value": 281805.77
+     }
+    },
+    "literals": [],
+    "text": "Collaborative tuition is voted net of it, so the line ran over until then. The fund still held $281,806 afterwards."
+   },
+   "text": "The vote counted on $480,204 of circuit breaker; $333,495 was charged, on 29 June."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$445,631",
+     "unit": "",
+     "value": 445631.2
+    },
+    "b": {
+     "text": "$4,005",
+     "unit": "",
+     "value": 4004.52
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    },
+    "z": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "early0",
+    "early1",
+    "mar"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [
+     "31 December 2025",
+     "29 June"
+    ],
+    "text": "The state’s money was in by 31 December 2025; until 29 June the school budget carried the whole tuition bill."
+   },
+   "text": "July to May the fund paid $445,631 of tuition in FY2025 and $4,005 in FY2026."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$148,623",
+     "unit": "",
+     "value": 148623.18
+    },
+    "b": {
+     "text": "$482,118",
+     "unit": "",
+     "value": 482118.07
+    },
+    "y": {
+     "text": "FY2026",
+     "unit": "fiscal year",
+     "value": 2026
+    }
+   },
+   "literals": [
+    "29 June"
+   ],
+   "rests_on": [
+    "without",
+    "left",
+    "charged"
+   ],
+   "so": {
+    "figures": {
+     "p": {
+      "text": "69%",
+      "unit": "",
+      "value": 69.17286672121624
+     }
+    },
+    "literals": [],
+    "text": "69% of the surplus is that one entry, which changed which fund paid, not what anything cost."
+   },
+   "text": "Without the 29 June charge FY2026 would have left $148,623; with it, $482,118."
+  },
+  {
+   "figures": {
+    "a": {
+     "text": "$189,277",
+     "unit": "",
+     "value": 189276.75
+    },
+    "y": {
+     "text": "FY2027",
+     "unit": "fiscal year",
+     "value": 2027
+    }
+   },
+   "literals": [],
+   "rests_on": [
+    "prepaid"
+   ],
+   "so": {
+    "figures": {},
+    "literals": [
+     "22 October"
+    ],
+    "text": "At the Finance Committee on 22 October the circuit breaker was named as the account allowed to prepay a first quarter."
+   },
+   "text": "The general fund, not the circuit breaker, paid $189,277 of FY2027 tuition early."
+  }
+ ],
+ "facts": [
+  {
+   "id": "plan",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "FY2026"
+    ],
+    "text": "circuit breaker the FY2026 vote counted on, collaborative"
+   },
+   "value": {
+    "text": "$480,204",
+    "unit": "",
+    "value": 480204.0
+   }
+  },
+  {
+   "id": "charged",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "29 June 2026"
+    ],
+    "text": "charged to it, in one entry on 29 June 2026"
+   },
+   "value": {
+    "text": "$333,495",
+    "unit": "",
+    "value": 333494.89
+   }
+  },
+  {
+   "id": "short",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [],
+    "text": "counted on, never charged"
+   },
+   "value": {
+    "text": "$146,709",
+    "unit": "",
+    "value": 146709.11
+   }
+  },
+  {
+   "id": "early0",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2025"
+    ],
+    "text": "drawn from the fund July to May, FY2025"
+   },
+   "value": {
+    "text": "$445,631",
+    "unit": "",
+    "value": 445631.2
+   }
+  },
+  {
+   "id": "early1",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2026"
+    ],
+    "text": "drawn from the fund July to May, FY2026"
+   },
+   "value": {
+    "text": "$4,005",
+    "unit": "",
+    "value": 4004.52
+   }
+  },
+  {
+   "id": "mar",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "31 March 2026"
+    ],
+    "text": "held in the fund at 31 March 2026"
+   },
+   "value": {
+    "text": "$615,301",
+    "unit": "",
+    "value": 615300.66
+   }
+  },
+  {
+   "id": "end",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "29 June"
+    ],
+    "text": "held after the 29 June charge"
+   },
+   "value": {
+    "text": "$281,806",
+    "unit": "",
+    "value": 281805.77
+   }
+  },
+  {
+   "id": "idea",
+   "kind": "estimate",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2026"
+    ],
+    "text": "IDEA grant paid toward private tuition, FY2026"
+   },
+   "value": {
+    "text": "$287,108",
+    "unit": "",
+    "value": 287107.65
+   }
+  },
+  {
+   "id": "prepaid",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2027"
+    ],
+    "text": "FY2027 tuition paid early, from the general fund"
+   },
+   "value": {
+    "text": "$189,277",
+    "unit": "",
+    "value": 189276.75
+   }
+  },
+  {
+   "id": "without",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2026",
+     "29 June"
+    ],
+    "text": "left in FY2026 without the 29 June charge"
+   },
+   "value": {
+    "text": "$148,623",
+    "unit": "",
+    "value": 148623.18
+   }
+  },
+  {
+   "id": "left",
+   "kind": "published",
+   "label": {
+    "figures": {},
+    "literals": [
+     "2026"
+    ],
+    "text": "left in FY2026, orders owed counted"
+   },
+   "value": {
+    "text": "$482,118",
+    "unit": "",
+    "value": 482118.07
+   }
+  }
+ ],
+ "finding": {
+  "figures": {
+   "a": {
+    "text": "$480,204",
+    "unit": "",
+    "value": 480204.0
+   },
+   "b": {
+    "text": "$333,495",
+    "unit": "",
+    "value": 333494.89
+   }
+  },
+  "literals": [
+   "FY2026",
+   "29 June"
+  ],
+  "text": "FY2026’s vote counted on $480,204 of circuit breaker for collaborative tuition; $333,495 came, on 29 June."
+ },
+ "full_report": {
+  "href": "",
+  "label": ""
+ },
+ "id": "fy2026-circuit-breaker",
+ "kind": "topic",
+ "not_established": [
+  "Why the circuit breaker was not drawn from July to May in FY2026.",
+  "Whether the 29 June charge and the 30 June early payment were decided together.",
+  "Whether the IDEA grant paying private tuition was planned in the FY2026 budget."
+ ],
+ "path": "/fy2026-closeout/fy2026-circuit-breaker",
+ "said": [
+  {
+   "board": "Finance Committee",
+   "date": "2026-10-22",
+   "href": "https://www.youtube.com/watch?v=wQWhIwYOc9o&t=6585s",
+   "label": "Finance Committee recording (machine captions)",
+   "quote": "We are allowed to prepay the 1st quarter of out of district tuition from circuit Breaker accounts."
+  }
+ ],
+ "shelves": [
+  "fy2026-closeout"
+ ],
+ "sources": [
+  {
+   "href": "/docs/data/munis-school-journal.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal.csv (every school journal line, FY2023–FY2026, our redacted reading of the Town’s Report 1)"
+  },
+  {
+   "href": "/docs/data/munis-school-journal-accounts.csv",
+   "label": "Lunenburg Budget Project — munis-school-journal-accounts.csv (every school account, with the FY2026 figures the report prints)"
+  },
+  {
+   "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
+   "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  },
+  {
+   "href": "/docs/district-budget/docs/3-12-25-town-manager-39-s-budget.pdf",
+   "label": "Lunenburg Public Schools — FY2026 budget, 3-12-25 Town Manager’s budget (collaborative tuition and its circuit breaker line)"
+  },
+  {
+   "href": "/docs/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx",
+   "label": "Town of Lunenburg — special-revenue-fy2026-p09.xlsx (fund balances, 31 March 2026)"
+  },
+  {
+   "href": "https://www.doe.mass.edu/finance/circuitbreaker/faq.html",
+   "label": "DESE — circuit breaker FAQ (spending within a year of receipt)"
+  },
+  {
+   "href": "https://www.youtube.com/watch?v=wQWhIwYOc9o&t=6585s",
+   "label": "Finance Committee recording, 22 October 2026"
+  }
+ ],
+ "table": null,
+ "title": "Circuit breaker and surplus"
+}

@@ -137,6 +137,8 @@ CHECKS = [
     # recomputed off the raw CSVs and tied to the period-13 report, owed footing.
     ('build_fy_breakdown.py', ['--check']),
     ('verify_fy_breakdown.py', []),
+    ('build_circuit_breaker_surplus.py', ['--check']),
+    ('verify_circuit_breaker_surplus.py', []),
     # ORDERS CARRIED FROM ONE SCHOOL YEAR INTO THE NEXT: the topic page, which refuses unless
     # every close's YEC equals the next year's SOY and carry-forward, account by account; and
     # its figures recomputed in SQL off the database copy of the journal.
