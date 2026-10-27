@@ -57,9 +57,11 @@ other fund then put the same amount back.
 - What the page is FOR when it is released: it is a general analysis of any year, so where does it
   live, and what is its finding? The current finding is year-neutral ("left $32,022 in FY2023 and
   $482,118 in FY2026; pick a year").
-- Payload weight: fy-breakdown.json is ~2 MB (the per-entry `jes` data); moving it into the per-year
-  line files would cut first load.
-- The wide table has no cue that it scrolls sideways on narrow screens.
+- DONE 27 Oct (afternoon): payload weight. Each line's transfers and journal entries (`moves`,
+  `jes`) now live in the line files under `mv`, read when the Transfers tab opens; the unused
+  `payers` field is gone. fy-breakdown.json 2.04 MB -> 0.93 MB (gzip 202 KB -> 135 KB).
+- DONE 27 Oct (afternoon): the wide table shows a "More columns: scroll the table sideways" line
+  and an edge shadow on whichever side hides columns, only while it overflows.
 - The $303,499 Town-side entry (above).
 - The hover-chip and modal code is all in `fy-line-table.tsx` (large); split it if it grows again.
 

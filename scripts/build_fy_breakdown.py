@@ -245,8 +245,6 @@ def lines_data(m, T):
     every fund, where a move and a grant paying directly are two different terms. TJ, 26
     October 2026: "money added from other funds REDUCES the general fund... depends how its
     done doesnt it?" It does: a move changes Left, paying directly does not."""
-    names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
-    entries = school_entries()
     years = []
     for fy in J.YEARS:
         rows = []
@@ -281,10 +279,7 @@ def lines_data(m, T):
                 chips=chip_rows(T, r),
                 # under each chip, how many entries its hover lists (TJ: "a small text count of
                 # the sources like '3 sources'")
-                chip_n=chip_counts(T, r),
-                payers=how_rows(T, r['how']),
-                moves=move_rows(T, r['moves_in'], names),
-                jes=entry_rows(T, r, entries, names))
+                chip_n=chip_counts(T, r))
             if round(r['other_year_spent']):
                 row['spent_note'] = 'of which %s paid for another year' % T.usd(r['other_year_spent'])
             rows.append(row)
@@ -354,6 +349,7 @@ def lines_data(m, T):
                     cost_sum='What the line cost, every fund',
                     all_cats='Every category', show='Show every line', fewer='Show only both ends',
                     between='the lines in between: show every line',
+                    scroll='More columns: scroll the table sideways',
                     sum='The sum', moves='Transfers in or out', nomoves='No budget transferred.',
                     shared='Many lines gave and many got in this one entry, and the books do not '
                            'say which line’s money went to which. The other side, all together:',
@@ -860,11 +856,30 @@ def analysis(fy, rs, fi):
                 a1=date(fy, 6, 30).isoformat())
 
 
+def popup_moves(m):
+    """fy -> line key -> what the popup's Transfers and re-charges tab lists that the table does
+    not show: `m`, the budget transfers with their other sides; `j`, journal entries re-booking
+    spending between school lines. In the line files rather than the page payload, where they
+    were half of its two megabytes and read only when a line is opened."""
+    T = Texts()                 # a line file is data, like its expense rows; not digit-checked
+    names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
+    entries = school_entries()
+    out = defaultdict(dict)
+    for r in m['rows']:
+        if not r['account']:
+            continue
+        mv, j = move_rows(T, r['moves_in'], names), entry_rows(T, r, entries, names)
+        if mv or j:
+            out[r['fy']][line_key(r)] = dict(m=mv, j=j)
+    return out
+
+
 def line_texts(m):
     """The files, compact. Funds and kinds are indexed. Per line: `r`, each row [iso date, date,
     kind, payee, memo, reference, fund, amount as text, amount]; `t`, what each fund paid in
     all, [fund, text, amount]; `g`, by payee and fund, [payee, fund, rows, text, amount]."""
     files = {}
+    moves = popup_moves(m)
     for fy, lines in sorted(line_files(m).items()):
         funds = sorted({x['f'] for rs in lines.values() for x in rs}, key=lambda f: (f != SCHOOL, f))
         kinds = sorted({x['k'] for rs in lines.values() for x in rs})
@@ -886,7 +901,7 @@ def line_texts(m):
                 g=[[p_, fi[f], cnt[(p_, f)], money(v), round(fl(v), 2)] for (p_, f), v in
                    sorted(grp.items(), key=lambda kv: -abs(kv[1]))])
         files[os.path.join(LINES_DIR, 'lines-%d.json' % fy)] = json.dumps(
-            dict(fy=C.fy(fy), funds=funds, kinds=kinds, lines=body), ensure_ascii=False,
+            dict(fy=C.fy(fy), funds=funds, kinds=kinds, lines=body, mv=moves.get(fy, {})), ensure_ascii=False,
             sort_keys=True, separators=(',', ':')) + '\n'
     return files
 

@@ -26,15 +26,15 @@ type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' 
 type Item = { title: string; sub: string; text: string }
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
 type Entry = { date: string; memo: string; journal: string; dir: 'in' | 'out'; text: string; others: { name: string; text: string }[] }
-type Row = { name: string; account: string; key: string; cat: string; jes: Entry[]; line: boolean; n: Record<K, number>; t: Record<K, string>
-  spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
+type Row = { name: string; account: string; key: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
+  spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>> }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'tab_summary' | 'tab_expenses' | 'close'
   | 'who_paid' | 'every_row' | 'by_payee' | 'every_fund' | 'loading' | 'failed' | 'recharges' | 'no_recharges'
   | 'tab_analysis' | 'an_payee' | 'an_memo' | 'an_week' | 'an_note' | 'an_week_note' | 'an_recharge'
   | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'tab_moves' | 'mv_transfers' | 'mv_transfers_def' | 'mv_recharges' | 'mv_recharges_def'
-  | 'mv_entries' | 'mv_entries_def' | 'mv_none' | 'mv_with' | 'mv_in' | 'mv_out' | 'any_payee' | 'any_memo' | 'clear_filters' | 'an_click' | 'for_what' | 'paid_to' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
+  | 'mv_entries' | 'mv_entries_def' | 'mv_none' | 'mv_with' | 'mv_in' | 'mv_out' | 'any_payee' | 'any_memo' | 'clear_filters' | 'an_click' | 'for_what' | 'paid_to' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct' | 'scroll', string>
 type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
@@ -181,7 +181,9 @@ type Bar = [string, string, [number, number][], string, string, [string, string,
 type Wk = [string, string, [number, number][], string, string]
 type ExLine = { r: ExRow[]; t: [number, string, number][]; g: [string, number, number, string, number][]
   ap: Bar[]; am: Bar[]; aw: Wk[]; a0: string; a1: string }
-type ExFile = { fy: string; funds: string[]; kinds: string[]; lines: Record<string, ExLine> }
+// `mv`: a line's budget transfers (`m`) and the journal entries re-booking it between school
+// lines (`j`), for the Transfers tab -- here rather than in the page payload, which they doubled
+type ExFile = { fy: string; funds: string[]; kinds: string[]; lines: Record<string, ExLine>; mv: Record<string, { m: Move[]; j: Entry[] }> }
 const FILES = new Map<string, Promise<ExFile>>()
 const load = (fy: string) => {
   if (!FILES.has(fy)) FILES.set(fy, fetch(`/data/fy-breakdown/lines-${fy.replace(/\D/g, '')}.json`)
@@ -451,13 +453,19 @@ function EntryList({ items, t }: { items: { dir: 'in' | 'out'; head: string; tex
     </ul>)
 }
 
-function MovesTab({ r, t }: { r: Row; t: T }) {
-  const transfers = r.moves.map(m => ({ dir: m.dir, head: `${m.date} · “${m.memo}”`, text: m.text,
+function MovesTab({ r, fy, t }: { r: Row; fy: string; t: T }) {
+  const [file, setFile] = useState<ExFile | null>(null)
+  const [err, setErr] = useState(false)
+  useEffect(() => { let live = true; load(fy).then(f => { if (live) setFile(f) }, () => { if (live) setErr(true) }); return () => { live = false } }, [fy])
+  if (err) return <p className="text-[13px]" style={muted}>{t.failed}</p>
+  if (!file) return <p className="text-[13px]" style={muted}>{t.loading}</p>
+  const mv = file.mv[r.key] ?? { m: [], j: [] }
+  const transfers = mv.m.map(m => ({ dir: m.dir, head: `${m.date} · “${m.memo}”`, text: m.text,
     note: m.paired ? undefined : t.shared, others: m.others }))
   const recharges = [
     ...r.chips.off.map(x => ({ dir: 'out' as const, head: x.sub, text: x.text, others: [{ name: x.title, text: x.text }] })),
     ...r.chips.on.map(x => ({ dir: 'in' as const, head: x.sub, text: x.text, others: [{ name: x.title, text: x.text }] }))]
-  const entries = r.jes.map(e => ({ dir: e.dir, head: `${e.date} · “${e.memo}” · ${e.journal}`, text: e.text, others: e.others }))
+  const entries = mv.j.map(e => ({ dir: e.dir, head: `${e.date} · “${e.memo}” · ${e.journal}`, text: e.text, others: e.others }))
   return (
     <div className="grid gap-7 max-w-4xl">
       <Section title={t.mv_transfers} def={t.mv_transfers_def}><EntryList items={transfers} t={t} /></Section>
@@ -509,7 +517,7 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
               <div className="space-y-5">
                 <ItemList title={t.chip_direct} items={r.chips.direct} empty={t.none} />
               </div>
-            </div>) : tab === 'moves' ? <MovesTab r={r} t={t} /> : tab === 'expenses' ? <Expenses r={r} fy={fy} t={t} filter={filter} setFilter={setFilter} />
+            </div>) : tab === 'moves' ? <MovesTab r={r} fy={fy} t={t} /> : tab === 'expenses' ? <Expenses r={r} fy={fy} t={t} filter={filter} setFilter={setFilter} />
               : <Analysis r={r} fy={fy} t={t} pick={f => { setFilter(f); setTab('expenses'); box.current?.scrollTo({ top: 0 }) }} />}
         </div>
       </div>
@@ -546,6 +554,28 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   const pos = new Map(rows.map((r, i) => [r, i]))
   const gapBefore = (ri: number) => cut && ri > 0 && pos.get(shown[ri])! !== pos.get(shown[ri - 1])! + 1
   const chipTitle = { off: d.text.chip_off, on: d.text.chip_on, direct: d.text.chip_direct }
+  // SCROLL CUE: on a narrow screen the table is wider than the window and nothing said so. A
+  // shadow on whichever edge hides columns, and a line saying more are to the right, both only
+  // while there is somewhere to scroll.
+  const scroller = useRef<HTMLDivElement>(null)
+  const [edge, setEdge] = useState({ left: false, right: false })
+  useEffect(() => {
+    const el = scroller.current
+    if (!el) return
+    const upd = () => setEdge(e => {
+      const left = el.scrollLeft > 2, right = el.scrollLeft + el.clientWidth < el.scrollWidth - 2
+      return e.left === left && e.right === right ? e : { left, right }
+    })
+    upd()
+    el.addEventListener('scroll', upd, { passive: true })
+    const ro = new ResizeObserver(upd)
+    ro.observe(el)
+    if (el.firstElementChild) ro.observe(el.firstElementChild)
+    return () => { el.removeEventListener('scroll', upd); ro.disconnect() }
+  }, [])
+  const shade = (side: 'left' | 'right', on: boolean) => (
+    <div aria-hidden className={`pointer-events-none absolute inset-y-0 ${side}-0 w-4 transition-opacity`}
+      style={{ opacity: on ? 1 : 0, background: `linear-gradient(to ${side === 'left' ? 'right' : 'left'}, rgba(0,0,0,0.16), transparent)` }} />)
   const cell = (r: Row, c: Col) => {
     const k = c.key
     if (!r.line && k !== 'direct' && k !== 'total') return '—'
@@ -575,7 +605,13 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       </div>
       {/* WIDE (TJ, 26 October 2026: "make this a wide table"): out of the page's reading column
           to the window, less a gutter each side, centred on it -- the column is centred too */}
-      <div className="mt-3 overflow-x-auto relative left-1/2 -translate-x-1/2 w-[calc(100vw-32px)] sm:w-[calc(100vw-96px)] lg:w-[calc(100vw-160px)] max-w-[1600px]">
+      <div className="mt-3 relative left-1/2 -translate-x-1/2 w-[calc(100vw-32px)] sm:w-[calc(100vw-96px)] lg:w-[calc(100vw-160px)] max-w-[1600px]">
+        {edge.right || edge.left ? (
+          <button type="button" className="mb-1 text-[12.5px]" style={muted}
+            onClick={() => scroller.current?.scrollBy({ left: (edge.right ? 1 : -1) * scroller.current.clientWidth * 0.8, behavior: 'smooth' })}>
+            {edge.right ? `${d.text.scroll} →` : `← ${d.text.scroll}`}</button>) : null}
+        <div className="relative">
+        <div ref={scroller} className="overflow-x-auto">
         <table className="w-full text-[13px] tabular-nums border-collapse">
           <thead>
             <tr>
@@ -616,6 +652,9 @@ export default function FyLineTable({ data, alt }: CustomProps) {
             })}
           </tbody>
         </table>
+        </div>
+        {shade('left', edge.left)}{shade('right', edge.right)}
+        </div>
       </div>
       {all && rows.length > HEAD + TAIL ? (
         <button type="button" className="mt-2 text-[13px] underline" style={{ color: 'var(--link, var(--thread-2))' }}
