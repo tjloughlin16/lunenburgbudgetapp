@@ -272,19 +272,20 @@ def lines_data(m, T):
     # What each column means, on hover (TJ, 26 October 2026: "can you put those definitions in a
     # hover tooltip on the column"). A transfer moves BUDGET; a move re-books SPENDING.
     means = dict(
-        voted='What Town Meeting voted for this line in the school budget.',
-        transfers='Budget moved between lines during the year: permission to spend moves from '
-                  'one line to another. No bill moves.',
-        carried='Last year’s unpaid orders, carried in with the budget to pay them.',
-        budget='What the line was allowed to spend: voted, plus transfers, plus carried.',
-        before='What the school budget paid or still owed on this line, before any bill was '
-               're-charged to or from another fund. Orders still owed at year end count.',
+        voted='What Town Meeting voted for this line.',
+        transfers='Budget shifted to or from other lines during the year. Only the permission to '
+                  'spend moves; no bills do.',
+        carried='Orders from last year that were still unpaid, carried in along with the money to '
+                'pay them.',
+        budget='What this line was allowed to spend: voted, plus transfers, plus carried.',
+        before='What the school budget spent on this line, before any bills were re-charged. '
+               'Bills still owed at year end count.',
         off='The school budget paid these bills first. Later another fund paid it back the '
             'same amount. So the school budget spent less, and Left goes up.',
         on='Another fund paid these bills first. Later the school budget paid it back. So the '
            'school budget spent more, and Left goes down.',
-        left='The budget, less what the school budget spent after the re-charges: this line’s part '
-             'of the surplus, or of what ran over.',
+        left='What this line had left at year end. Above zero, it added to the surplus; below '
+             'zero, other lines covered it.',
         spent='What the school budget spent on this line, after the re-charges.',
         off_cost='The same bills as Re-charged to other funds: the school budget paid first, '
                  'and another fund paid it back. They still count here, because they are still '
@@ -292,7 +293,7 @@ def lines_data(m, T):
         direct='Another fund paid these bills itself; the school budget never did, so Left does '
                'not change. Which bills count toward this line is our match, by payee or by kind '
                'of work.',
-        total='What the line cost, from every fund.')
+        total='Everything this line cost, whoever paid.')
     col = lambda id_, key, label, op, group: dict(id=id_, key=key, label=label, op=op, group=group,
                                                   means=means[id_])
     return dict(years=years, cats=sorted({S.CAT_LABEL[c[0]] for c in S.CATEGORIES}),
