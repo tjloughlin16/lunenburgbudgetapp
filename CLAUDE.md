@@ -1726,6 +1726,10 @@ immediately before writing, and preserve the file's existing newline convention.
     python3 scripts/build_app_metrics.py                  # what the project holds, counted, for sharing
     python3 scripts/build_no_captions_report.py           # which meeting recordings have captions disabled, with links
     python3 scripts/build_app_metrics.py --check          # ...and fail if it has drifted
+    python3 scripts/textract_pages.py FILE --pages N-M --dry-run   # AMAZON TEXTRACT: page tables with row/col, BILLED IN
+                                                #   DOLLARS through a meter with a latching cut-off; drop --dry-run to send
+    python3 scripts/textract_spend.py --status  # ...its spend: 24 hours, month vs the $50 cap, AWS's own figure, the latch.
+                                                #   Setup, and redoing it on another machine: notes/process/TEXTRACT-SETUP.md
     python3 scripts/generate_report.py --status # AUTO-GENERATION TRIALS: every suggested report an agent drafted, its
                                                 #   status, cost and verdict. Started by the dashboard's Generate button;
                                                 #   the process and what would let it run alone: notes/process/AUTO-GENERATING-REPORTS.md

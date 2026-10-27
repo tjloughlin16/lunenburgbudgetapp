@@ -2878,6 +2878,61 @@ def _pacing_state(pid, catch_at):
                                              'The log ends without a stop reason: it may have been killed.'))
 
 
+def _textract_card():
+    """AMAZON TEXTRACT: is a run going, and what has it cost. TJ, 27 October 2026: "an observable
+    piece ... to show its running aws process and the current spend". Real money, not the plan
+    allowance, so it is drawn whenever the meter has ever been used -- idle included, because
+    "nothing is spending" is the answer worth seeing at a glance. Read from disk only
+    (textract_spend.dashboard()); AWS's own figure is the one the last run fetched, with its age."""
+    try:
+        import textract_spend as TX
+        d = TX.dashboard()
+    except Exception as e:                                  # noqa: BLE001
+        return ('<div class="card warnbox"><b>Textract</b> <span class="tiny">meter unreadable: %s</span></div>'
+                % html.escape(str(e)[:200]))
+    if not (d['used'] or d['running'] or d['latch'] or d['configured']):
+        return ''
+    if d['latch']:
+        tone, pill = 'alert', '<span class="pill no">TEXTRACT CUT OFF</span>'
+    elif d['running']:
+        tone, pill = 'runbox', '<span class="pill go">TEXTRACT RUNNING</span>'
+    else:
+        tone, pill = '', '<span class="pill">TEXTRACT IDLE</span>'
+    out = ['<div class="card %s"><div class="row">%s<b class="grow">Amazon Textract &mdash; billed '
+           'in dollars, not the plan allowance</b></div>' % (tone, pill)]
+    c = d['current']
+    if c:
+        out.append('<div class="tiny" style="margin-top:6px"><code>%s</code>: %d of %d page(s) %s '
+                   '&middot; this run <b style="color:#c09cf5">$%.2f</b> of its $%.2f ceiling</div>'
+                   % (html.escape(c['doc']), c['done'], c['planned'],
+                      bar(c['done'], max(0, c['planned'] - c['done'])), c['spent'], c['ceiling']))
+    if d['stale_current']:
+        out.append('<div class="tiny" style="margin-top:4px;color:#d29922">A run left its progress file '
+                   'behind and no longer holds the lock: it was killed, not finished.</div>')
+    used = min(1.0, d['month'] / d['cap']) if d['cap'] else 0
+    out.append('<div class="tiny" style="margin-top:6px">Last 24 hours <b style="color:#c09cf5">$%.2f</b> '
+               '(%d page(s)%s) &middot; this month <b style="color:#c09cf5">$%.2f</b> of the $%.2f cap %s</div>'
+               % (d['day'], d['pages_day'],
+                  (', <span style="color:#f85149">%d failed, counted as spent</span>' % d['failed_day'])
+                  if d['failed_day'] else '',
+                  d['month'], d['cap'], bar(round(used * 100), round((1 - used) * 100))))
+    a = d['aws']
+    if a and a.get('actual') is not None:
+        gap = a['actual'] - a['ledger']
+        out.append('<div class="tiny" style="margin-top:4px">AWS&rsquo;s own figure: $%.2f this month, '
+                   'read %s against our $%.2f%s. It lags by hours; it is the backstop.</div>'
+                   % (a['actual'], ago(a['at']), a['ledger'],
+                      ' &mdash; <b style="color:#f85149">AWS HAS BILLED MORE THAN WE RECORDED</b>'
+                      if gap > TX.AWS_TOLERANCE_USD else ''))
+    elif a:
+        out.append('<div class="tiny" style="margin-top:4px;color:#d29922">AWS budget not readable at the '
+                   'last check (%s): our ledger is the only meter.</div>' % html.escape(a.get('error') or ''))
+    if d['latch']:
+        out.append('<div class="tiny" style="margin-top:4px;color:#f85149">%s</div>' % html.escape(d['latch']))
+    out.append('<div class="mono tiny" style="margin-top:4px;color:#586069">python3 scripts/textract_spend.py --status</div></div>')
+    return ''.join(out)
+
+
 def _week_pacing_card():
     try:
         sys.path.insert(0, os.path.join(ROOT, 'scripts'))
@@ -3012,6 +3067,7 @@ def page_live(st):
                     'finish.</div>'))
 
     h.append(_week_pacing_card())
+    h.append(_textract_card())
 
     h.append('<h2>Running now</h2>'
              '<p class="sub" style="margin:-4px 0 10px">'
