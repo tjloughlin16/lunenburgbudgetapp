@@ -221,6 +221,25 @@ def chip_rows(T, r):
     return dict(off=entries(-1), on=entries(1), direct=direct)
 
 
+def chip_counts(T, r):
+    """What each chip's count says (TJ, 27 October 2026, on "3 sources": "'journal entries'?").
+    A re-charge is a journal entry, so its chips count entries; money paid from the start is
+    invoices and payroll, so that chip counts payments."""
+    # Where more than one fund paid, the funds come first: who paid, then how many bills.
+    n = lambda k, one, many: '%s %s' % (C.num(k), one if k == 1 else many)
+    chips = chip_rows(T, r)
+    funds = lambda k: len({i['title'] for i in chips[k]})
+    lead = lambda k: n(funds(k), 'fund', 'funds') + ' · ' if funds(k) > 1 else ''
+    out = {}
+    for k, neg in (('off', True), ('on', False)):
+        js = {mv['journal'] for mv in r['fund_moves'] if (mv['amount'] < 0) == neg and mv['amount']}
+        if js and chips[k]:
+            out[k] = T.lit(lead(k) + n(len(js), 'journal entry', 'journal entries'))
+    if r['payments'] and chips['direct']:
+        out['direct'] = T.lit(lead('direct') + n(r['payments'], 'payment', 'payments'))
+    return out
+
+
 def lines_data(m, T):
     """Every line, every year, as two sums. The school budget's own, to what was left, with
     cost moved by journal entry shown apart from what it spent; and what the line cost from
@@ -261,8 +280,7 @@ def lines_data(m, T):
                 chips=chip_rows(T, r),
                 # under each chip, how many entries its hover lists (TJ: "a small text count of
                 # the sources like '3 sources'")
-                chip_n={k: T.lit('%d %s' % (len(v), 'source' if len(v) == 1 else 'sources'))
-                        for k, v in chip_rows(T, r).items() if v},
+                chip_n=chip_counts(T, r),
                 payers=how_rows(T, r['how']),
                 moves=move_rows(T, r['moves_in'], names))
             if round(r['other_year_spent']):

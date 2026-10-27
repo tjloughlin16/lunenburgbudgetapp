@@ -103,6 +103,9 @@ RULES = ('moved', 'payee', 'function')
 RULE_LABEL = {'moved': 'moved by journal entry', 'payee': 'same payee',
               'function': 'same function code', 'unmatched': 'not matched to any line'}
 FUNC_ROW = 'same function, other funds'
+# A PAYMENT, counted under a chip: an invoice paid or a payroll line. Orders, their liquidations
+# and journal entries are not payments; a re-charge is counted as a journal entry instead.
+PAYMENT = ('API', 'APM', 'PRJ', 'PRH')
 
 # NEXT YEAR'S INVOICES PAID EARLY. FLLAC numbers its invoices by the school year they bill
 # (`25L2KEY..` FY2025, `26..`, `27..`), each prefix with its own quarterly rate -- our reading
@@ -278,7 +281,7 @@ def model():
             k = (fy, s['account'])
             line[k]['moved_off' if s['amt'] < 0 else 'moved_on'] += abs(s['amt'])
             split = share(abs(s['amt']), gain if s['amt'] < 0 else lose)
-            fund_moves[k].append(dict(date=s['effective_date'], memo=memo(s),
+            fund_moves[k].append(dict(date=s['effective_date'], memo=memo(s), journal=j,
                                       amount=s['amt'], payers=split))
             if s['amt'] > 0:
                 if flose:
@@ -302,6 +305,7 @@ def model():
 
     # rule b: same payee
     paid_from = defaultdict(Decimal)                      # (fy, account, fund) -> placed by payee
+    payments = defaultdict(int)                           # (fy, account or category) -> how many
     paid = defaultdict(lambda: defaultdict(Decimal))      # payee -> scope account -> invoices
     for r in exp:
         if scope(r) and r['source'] in ('API', 'APM'):
@@ -321,6 +325,8 @@ def model():
         paid_from[(r['fy'], acct, r['fund'])] += r['amt']
         by_payer[(r['fy'], acct, 'payee', payer(A[r['account']]))] += r['amt']
         how[(r['fy'], acct)][('payee', payer(A[r['account']]), p)] += r['amt']
+        if r['source'] in PAYMENT:
+            payments[(r['fy'], acct)] += 1
         done.add(id(r))
 
     # A cost a fund paid directly toward a line, then moved back onto that line by journal entry
@@ -350,6 +356,8 @@ def model():
             unmatched[(r['fy'], payer(a), 'a capital article')] += r['amt']
         elif J.function_class(f) == 'line':
             func_cat[(r['fy'], cat_of(r['account']), payer(a))] += r['amt']
+            if r['source'] in PAYMENT:
+                payments[(r['fy'], cat_of(r['account']), payer(a))] += 1
             func_codes[(r['fy'], cat_of(r['account']), payer(a))].add(f)
         else:
             why = {'heading': 'booked to a heading', 'none': 'booked to no function',
@@ -398,6 +406,7 @@ def model():
                          other_year_spent=p['prepaid'] + p['carried_paid'] + p['carried_enc'],
                          how=dict(how[(fy, acct)]), moves_in=line_transfers.get((fy, acct), []),
                          moved_off=p['moved_off'], moved_on=p['moved_on'],
+                         payments=payments[(fy, acct)],
                          fund_moves=fund_moves.get((fy, acct), []),
                          description=A[acct]['account_description'].strip(),
                          org=A[acct]['org_name'].strip(), voted=p['voted'],
@@ -414,6 +423,7 @@ def model():
                          voted=D0, gf_cost=D0, all_funds_cost=v, left=D0, printed_left=D0,
                          gf_spent=D0, other_year_spent=D0, moves_in=[],
                          moved_off=D0, moved_on=D0, fund_moves=[],
+                         payments=payments[(fy, cat, py)],
                          how={('function', py, 'function code %s' % '/'.join(
                              sorted(func_codes[(fy, cat, py)]))): v},
                          prepaid=D0, carried_budget=D0, carried_unpaid=D0,
