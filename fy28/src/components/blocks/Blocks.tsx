@@ -375,6 +375,9 @@ function Panels({ b }: { b: Extract<Block, { block: 'panels' }> }) {
 function Custom({ b }: { b: Extract<Block, { block: 'custom' }> }) {
   const C = CUSTOM_BLOCKS[b.component]
   if (!C) return null
+  // A control, not a chart (the FY breakdown's year picker): drawn without the block's heading
+  // and its "what it means" line, which a control has nothing to put in.
+  if ((b.data as { bare?: boolean } | null)?.bare) return <section className="mt-6"><C data={b.data} alt={b.alt} /></section>
   return (
     <section className="mt-8">
       <Head title={b.title} />

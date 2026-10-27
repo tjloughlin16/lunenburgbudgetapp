@@ -504,9 +504,11 @@ def page(m):
             note='School general fund, department 300. Every line’s Left in the table above, '
                  'summed.', note_allow=('300',)),
         blocks=[
-            TB.custom('fy-year-picker', 'Fiscal year', dict(years=[C.fy(y) for y in J.YEARS],
-                                                            label='Fiscal year'), place='top',
-                      figures=[C.fy(y) for y in J.YEARS],
+            TB.custom('fy-year-picker', 'Fiscal year', dict(
+                bare=True, years=[C.fy(y) for y in J.YEARS], label='Change year',
+                spans={C.fy(y): '1 July %d to 30 June %d' % (y - 1, y) for y in J.YEARS}),
+                      place='top', figures=[C.fy(y) for y in J.YEARS],
+                      allow=['1 July %d to 30 June %d' % (y - 1, y) for y in J.YEARS],
                       alt='The fiscal year every chart on this page shows',
                       so=('Every chart below shows the year picked here, and a line opened from '
                           'the table opens in that year.', None, ())),
