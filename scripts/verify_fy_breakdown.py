@@ -123,6 +123,8 @@ def recompute():
     O = defaultdict(Decimal)          # (y, account) -> other funds placed
     F = defaultdict(Decimal)          # (y, category) -> rule c
     used = set()
+    back = defaultdict(Decimal)       # (y, account, fund) -> cost moved back onto the line
+    paidf = defaultdict(Decimal)      # (y, account, fund) -> placed by payee
     js = defaultdict(list)
     for i, r in enumerate(ex):
         if r['source'] in ('GEN', 'GRV'):
@@ -136,12 +138,25 @@ def recompute():
             continue
         # measured on the school side: each school line's own posting in the entry; a cost
         # taken OFF a line (negative) is that line's cost now paid by another fund
+        lose = defaultdict(Decimal)
+        for i, r in ir:
+            if not in_scope(r['account']):
+                lose[r['fund']] += r['v']
+        lose = {f: -v for f, v in lose.items() if v < 0}
+        # each school account's net in the entry: one line can be debited and credited at once
+        net = defaultdict(Decimal)
         for i, r in ir:
             if in_scope(r['account']):
-                if r['v'] < 0:
-                    O[(r['y'], r['account'])] -= r['v']
+                net[(r['y'], r['account'])] += r['v']
             else:
                 used.add(i)
+        for (y_, a_), v in net.items():
+            if v < 0:
+                O[(y_, a_)] -= v
+            elif v > 0 and lose:
+                # moved BACK onto the line: from the funds that gave, in proportion
+                for f, w in lose.items():
+                    back[(y_, a_, f)] += v * w / sum(lose.values())
     paid = defaultdict(lambda: defaultdict(Decimal))
     for r in ex:
         if in_scope(r['account']) and r['source'] in ('API', 'APM') and key(r):
@@ -155,9 +170,15 @@ def recompute():
             cand = [a for a in g if fn(a) == fn(r['account'])] or list(g)
             best = max(cand, key=lambda a: (g[a], a))
             O[(r['y'], best)] += r['v']
+            paidf[(r['y'], best, r['fund'])] += r['v']
         elif not capital(r['fund']) and is_line(fn(r['account'])):
             F[(r['y'], cat(r['account']))] += r['v']
 
+    # a fund's direct payment moved back onto the same line is the school budget's cost
+    for (y, a_, f), b in back.items():
+        n = min(b, paidf[(y, a_, f)])
+        if n > 0:
+            O[(y, a_)] -= n
     out = {}
     for k in list(O):
         pieces[k]
@@ -201,7 +222,9 @@ def main(argv=None):
             continue
         for t in T:
             d = abs(g[t] - me[t])
-            check(d == 0,
+            # a move back shared over several funds: its cents fall where the generator's
+            # largest remainder puts them
+            check(d < Decimal('0.05') if t in ('other_funds', 'voted_above_cost') else d == 0,
                   'FY%d %s %s: generator %s, recomputed %s' % (k[0], k[1], t, g[t], me[t]))
         target = av.get(k, D0) - (owed.get(k, D0) if k[0] != OPEN else D0)
         check(sum(g[t] for t in T) == target,

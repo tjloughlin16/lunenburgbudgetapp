@@ -240,6 +240,7 @@ def model():
             jr[(r['fy'], r['journal'])].append(r)
     moves = []
     fund_moves = defaultdict(list)                        # (fy, account) -> journal moves on it
+    backs = defaultdict(Decimal)                          # (fy, account, fund) -> moved back
     for (fy, j), rs in sorted(jr.items()):
         if len({r['fund'] for r in rs}) < 2 or abs(sum(r['amt'] for r in rs)) > 1:
             continue
@@ -249,13 +250,28 @@ def model():
         off = -sum((s['amt'] for s in sc if s['amt'] < 0), D0)
         onto = sum((s['amt'] for s in sc if s['amt'] > 0), D0)
         net = defaultdict(Decimal)                        # payer -> what this entry put on it
+        fnet = defaultdict(Decimal)                       # fund -> the same
         for o in ot:
             net[payer(A[o['account']])] += o['amt']
+            fnet[o['fund']] += o['amt']
             done.add(id(o))
+        flose = {f: -v for f, v in fnet.items() if v < 0}
         gain = {py: v for py, v in net.items() if v > 0} or {py: abs(v) for py, v in net.items()}
         lose = {py: -v for py, v in net.items() if v < 0} or {py: abs(v) for py, v in net.items()}
         memo = lambda s: s['description'].strip() or 'no memo'
         put = defaultdict(Decimal)
+        # ONE posting per school account per entry: an entry can post both a debit and a credit
+        # to the same line (30 June 2026, MOVE HEALTH INS FY26: -$99,017 and +$42,398 on health
+        # insurance, the other side $56,619 to the revolving funds). The line's move is the net.
+        acc = defaultdict(Decimal)
+        for x in sc:
+            acc[x['account']] += x['amt']
+        sc = [dict(account=a_, amt=v, effective_date=min(x['effective_date'] for x in sc
+                                                          if x['account'] == a_),
+                   description=sorted({x['description'].strip() for x in sc
+                                       if x['account'] == a_})[0]) for a_, v in sorted(acc.items())]
+        off = -sum((x['amt'] for x in sc if x['amt'] < 0), D0)
+        onto = sum((x['amt'] for x in sc if x['amt'] > 0), D0)
         for s in sc:
             if s['amt'] == 0:
                 continue
@@ -265,6 +281,9 @@ def model():
             fund_moves[k].append(dict(date=s['effective_date'], memo=memo(s),
                                       amount=s['amt'], payers=split))
             if s['amt'] > 0:
+                if flose:
+                    for f, amt in share(s['amt'], flose).items():
+                        backs[(fy, s['account'], f)] += amt
                 continue
             for py, amt in split.items():
                 placed[k]['moved'] += amt
@@ -282,6 +301,7 @@ def model():
                           description=sorted({r['description'].strip() for r in rs})[0]))
 
     # rule b: same payee
+    paid_from = defaultdict(Decimal)                      # (fy, account, fund) -> placed by payee
     paid = defaultdict(lambda: defaultdict(Decimal))      # payee -> scope account -> invoices
     for r in exp:
         if scope(r) and r['source'] in ('API', 'APM'):
@@ -298,9 +318,28 @@ def model():
         same = [a for a in g if J.function(a) == J.function(r['account'])]
         acct = max(same or g, key=lambda a: (g[a], a))
         placed[(r['fy'], acct)]['payee'] += r['amt']
+        paid_from[(r['fy'], acct, r['fund'])] += r['amt']
         by_payer[(r['fy'], acct, 'payee', payer(A[r['account']]))] += r['amt']
         how[(r['fy'], acct)][('payee', payer(A[r['account']]), p)] += r['amt']
         done.add(id(r))
+
+    # A cost a fund paid directly toward a line, then moved back onto that line by journal entry
+    # (30 June 2026, MOVE HEALTH INS FY26: revolving funds' MIIA premiums), is the school
+    # budget's cost, not the fund's: netted off what the fund paid directly, up to what it paid,
+    # and out of the move's unmatched remainder. Without this it is counted twice in what the
+    # line cost, once in what the school budget spent and once as paid directly.
+    fund_payer = {a['fund']: payer(a) for a in A.values()}
+    for (fy, acct, f), b in sorted(backs.items()):
+        n = min(b, paid_from[(fy, acct, f)])
+        if n <= 0:
+            continue
+        py = fund_payer[f]
+        placed[(fy, acct)]['payee'] -= n
+        by_payer[(fy, acct, 'payee', py)] -= n
+        how[(fy, acct)][('payee', py, 'less what a journal entry moved back onto this line')] -= n
+        unmatched[(fy, py, 'moved between funds by journal entry')] += n
+        if unmatched[(fy, py, 'moved between funds by journal entry')] == 0:
+            del unmatched[(fy, py, 'moved between funds by journal entry')]
 
     # rule c: same function code, on a category; the rest unmatched
     for r in exp:

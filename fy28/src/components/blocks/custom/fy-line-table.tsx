@@ -28,11 +28,15 @@ type Row = { name: string; account: string; cat: string; line: boolean; n: Recor
   spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
-  | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
+  | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
 type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
-const FIRST = 25
+// HEAD AND TAIL (TJ, 26 October 2026: "is there a way to show the TOP left and the BOTTOM left,
+// on both ends of it on the same table?"). Sorted by any column, the table shows both ends --
+// the largest and the smallest, which for Left is most under and most over -- and one row
+// between them opens the middle.
+const HEAD = 15, TAIL = 15
 const GOOD = 'var(--status-good, var(--thread-5))', BAD = 'var(--status-bad, var(--thread-1))'
 const tone = (v: number) => (v > 0.5 ? GOOD : v < -0.5 ? BAD : 'var(--text-muted)')
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
@@ -215,7 +219,10 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       const k = d.columns.find(c => c.id === sort.k)?.key ?? 'left'
       return sort.dir * (a.n[k] - b.n[k]) || a.name.localeCompare(b.name)
     }), [y, cat, sort, d.columns])
-  const shown = all ? rows : rows.filter((r, i) => i < FIRST || `${r.account}|${r.name}|${r.cat}` === open)
+  const cut = !all && rows.length > HEAD + TAIL
+  const shown = cut ? rows.filter((r, i) => i < HEAD || i >= rows.length - TAIL || `${r.account}|${r.name}|${r.cat}` === open) : rows
+  const pos = new Map(rows.map((r, i) => [r, i]))
+  const gapBefore = (ri: number) => cut && ri > 0 && pos.get(shown[ri])! !== pos.get(shown[ri - 1])! + 1
   const chipTitle = { off: d.text.chip_off, on: d.text.chip_on, direct: d.text.chip_direct }
   const cell = (r: Row, c: Col) => {
     const k = c.key
@@ -264,10 +271,16 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                 aria-sort={sort.k === 'cat' ? (sort.dir < 0 ? 'ascending' : 'descending') : 'none'}>
                 {d.text.category}{sort.k === 'cat' ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>{d.columns.map(head)}</tr></thead>
           <tbody>
-            {shown.map(r => {
+            {shown.map((r, ri) => {
               const key = `${r.account}|${r.name}|${r.cat}`
               const isOpen = open === key
               return [
+                gapBefore(ri) ? (
+                  <tr key={`gap-${ri}`} className="border-b" style={{ borderColor: 'var(--grid)' }}>
+                    <td colSpan={d.columns.length + 2} className="px-2 py-2 text-center">
+                      <button type="button" className="text-[13px] underline" style={{ color: 'var(--link, var(--thread-2))' }}
+                        onClick={() => setAll(true)}>⋯ {d.text.between} ⋯</button></td>
+                  </tr>) : null,
                 <tr key={key} className="border-b cursor-pointer hover:bg-[var(--surface-2)]" style={{ borderColor: 'var(--grid)' }}
                   onClick={() => setOpen(o => (o === key ? null : key))} aria-expanded={isOpen}>
                   <td className="px-2 py-1.5 text-left min-w-[13rem]"><span className="mr-1" style={muted}>{isOpen ? '▾' : '▸'}</span>
@@ -295,9 +308,9 @@ export default function FyLineTable({ data, alt }: CustomProps) {
           </tbody>
         </table>
       </div>
-      {rows.length > FIRST ? (
+      {all && rows.length > HEAD + TAIL ? (
         <button type="button" className="mt-2 text-[13px] underline" style={{ color: 'var(--link, var(--thread-2))' }}
-          onClick={() => setAll(a => !a)}>{all ? d.text.fewer : d.text.show}</button>) : null}
+          onClick={() => setAll(false)}>{d.text.fewer}</button>) : null}
       <p className="text-[12.5px] mt-2" style={muted}>{d.text.footing}</p>
       <details className="mt-4">
         <summary className="cursor-pointer text-[13.5px] font-semibold">{d.text.unmatched} · <span className="tabular-nums">{y.unmatched_total}</span></summary>

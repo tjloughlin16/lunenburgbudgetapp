@@ -326,7 +326,8 @@ def lines_data(m, T):
                     chip_off='Moved off this line, onto', chip_on='Moved back onto this line, from',
                     chip_direct='Paid directly by other funds',
                     cost_sum='What the line cost, every fund',
-                    all_cats='Every category', show='Show every line', fewer='Show fewer',
+                    all_cats='Every category', show='Show every line', fewer='Show only both ends',
+                    between='the lines in between: show every line',
                     sum='The sum', moves='Transfers in or out', nomoves='No budget transferred.',
                     shared='Many lines gave and many got in this one entry, and the books do not '
                            'say which line’s money went to which. The other side, all together:',
