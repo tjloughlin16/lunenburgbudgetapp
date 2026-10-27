@@ -221,7 +221,8 @@ def lines_data(m, T):
                 raise SystemExit('build_fy_breakdown: FY%d %s does not read budget - spent = left'
                                  % (fy, r['account']))
             nums = dict(voted=r['voted'], transfers=r['transfers'], carried=r['carried_budget'],
-                        budget=budget, spent=r['gf_spent'], left=r['left'], other=r['other_funds'])
+                        budget=budget, spent=r['gf_spent'], left=r['left'], other=r['other_funds'],
+                        total=r['gf_spent'] + r['other_funds'])
             if all(round(v) == 0 for v in nums.values()):
                 continue        # an account with nothing voted, spent or placed on it
             row = dict(
@@ -241,25 +242,35 @@ def lines_data(m, T):
                                      for (py, why), v in un if round(v) != 0],
                           unmatched_total=T.usd(sum((v for _, v in un), D0))))
     return dict(years=years, cats=sorted({S.CAT_LABEL[c[0]] for c in S.CATEGORIES}),
-                columns=[dict(id='voted', label='Voted', op=''),
-                         dict(id='transfers', label='Moved in or out', op='+'),
-                         dict(id='carried', label='Carried from last year', op='+'),
-                         dict(id='budget', label='Budget', op='='),
-                         dict(id='spent', label='Spent', op='−'),
-                         dict(id='left', label='Left', op='='),
-                         dict(id='other', label='Other funds also paid', op='')],
+                # TWO SUMS, side by side (TJ, 26 October 2026: the other-funds column "doesnt seem
+                # ADDITIVE ... '+ (new title)' = 'Total Expense'"). The school budget's own sum to
+                # what was left; then what the line cost, all funds -- which repeats Spent so it
+                # reads as a sum of its own.
+                groups=[dict(id='budget', label='The school budget'),
+                        dict(id='cost', label='What the line cost, every fund')],
+                columns=[dict(id='voted', key='voted', label='Voted', op='', group='budget'),
+                         dict(id='transfers', key='transfers', label='Moved in or out', op='+', group='budget'),
+                         dict(id='carried', key='carried', label='Carried from last year', op='+', group='budget'),
+                         dict(id='budget', key='budget', label='Budget', op='=', group='budget'),
+                         dict(id='spent', key='spent', label='Spent', op='−', group='budget'),
+                         dict(id='left', key='left', label='Left', op='=', group='budget'),
+                         dict(id='spent_again', key='spent', label='Spent by the school budget', op='', group='cost'),
+                         dict(id='other', key='other', label='Paid by grants and other funds', op='+', group='cost'),
+                         dict(id='total', key='total', label='Total spent, all funds', op='=', group='cost')],
                 text=dict(
-                    read='Each row is one sum, left to right: what was voted, plus budget moved in '
-                         'or out, plus orders carried from last year, makes the budget. Take away '
-                         'what the school budget spent, and what remains is left. The last column '
-                         'is outside that sum: what grants and other funds paid toward the same '
-                         'line. Click a line to see where its money came from and went.',
+                    read='Each row holds two sums. The school budget: what was voted, plus budget '
+                         'moved in or out, plus orders carried from last year, makes the budget; '
+                         'take away what it spent and what remains is left. What the line cost: '
+                         'what the school budget spent, plus what grants and other funds paid '
+                         'toward the same line, is the total spent from every fund. Click a line '
+                         'to see where its money came from and went.',
+                    cost_sum='What the line cost, every fund',
                     all_cats='Every category', show='Show every line', fewer='Show fewer',
                     sum='The sum', moves='Budget moved in or out', nomoves='No budget moved.',
                     shared='Many lines gave and many got in this one entry, and the books do not '
                            'say which line’s money went to which. The other side, all together:',
                     into='from', outof='to', in_='In', out='Out',
-                    payers='Other funds that also paid toward this line',
+                    payers='Grants and other funds that paid toward this line',
                     none='No other fund paid toward this line.',
                     unmatched='Other funds’ spending not matched to any line',
                     lines='Line', footing='Spent counts orders still owed at year end, so for '
@@ -527,7 +538,7 @@ def page(m):
                 'apart, never counted as voted above cost. Capital articles are matched only by '
                 'a journal entry.'],
                 place='body', tone='define'),
-            TB.custom('fy-line-table', 'Every line, budget to left', lines, place='end',
+            TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='end',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
                       alt='Table of every school general fund line, one fiscal year at a time, '

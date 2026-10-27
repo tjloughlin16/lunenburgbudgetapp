@@ -3,7 +3,9 @@
  *
  *      Voted  +  Moved in or out  +  Carried from last year  =  Budget  −  Spent  =  Left
  *
- *  -- with one column outside it: what other funds also paid toward the same line. TJ, 26
+ *  -- and beside it a second sum, what the line cost from every fund: Spent by the school
+ *  budget + Paid by grants and other funds = Total spent, all funds (TJ: the other-funds column
+ *  "doesnt seem ADDITIVE", so it now adds into something). TJ, 26
  *  October 2026, on the first version: "the column labels are just confusing and i dont know
  *  how the math works out across columns". So the operators sit in the header, and every
  *  column is a posting the Town made, not a part of our own identity.
@@ -17,14 +19,15 @@
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { CustomProps } from './index'
 
-type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'spent' | 'left' | 'other'
+type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'spent' | 'left' | 'other' | 'total'
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
 type Row = { name: string; account: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
   spent_note?: string; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
-  | 'payers' | 'none' | 'unmatched' | 'lines' | 'footing', string>
-type Data = { years: Year[]; cats: string[]; columns: { id: K; label: string; op: string }[]; text: T }
+  | 'payers' | 'none' | 'unmatched' | 'lines' | 'footing' | 'cost_sum', string>
+type Col = { id: string; key: K; label: string; op: string; group: string }
+type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
 const FIRST = 25
 const GOOD = 'var(--status-good, var(--thread-5))', BAD = 'var(--status-bad, var(--thread-1))'
@@ -40,25 +43,31 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
 }
 
 /** The row's sum, written out as a receipt. */
-function Receipt({ r, cols, t }: { r: Row; cols: Data['columns']; t: T }) {
-  const show: K[] = ['voted', 'transfers', 'carried', 'budget', 'spent', 'left']
+function Sum({ r, cols, title }: { r: Row; cols: Col[]; title: string }) {
   return (
-    <div className="text-[13px]">
-      <p className="font-semibold mb-1">{t.sum}</p>
+    <div className="mb-3">
+      <p className="font-semibold mb-1">{title}</p>
       {/* divs, not a table: the site adds download links to every <table> */}
       <div className="grid grid-cols-[1rem_auto_auto] gap-x-2 tabular-nums w-fit">
-        {show.map(k => {
-          const c = cols.find(x => x.id === k)!
-          const total = k === 'budget' || k === 'left'
+        {cols.map(c => {
+          const total = c.op === '='
           const line = total ? { borderTop: '1px solid var(--grid)', paddingTop: 2 } : undefined
           return [
-            <span key={`${k}o`} className="text-center" style={{ ...muted, ...line }}>{c.op}</span>,
-            <span key={`${k}l`} style={{ fontWeight: total ? 600 : 400, ...line }}>{c.label}
-              {k === 'spent' && r.spent_note ? <span className="block text-[12px]" style={muted}>{r.spent_note}</span> : null}</span>,
-            <span key={`${k}v`} className="text-right" style={{ fontWeight: total ? 600 : 400, color: k === 'left' ? tone(r.n.left) : undefined, ...line }}>{r.t[k]}</span>,
+            <span key={`${c.id}o`} className="text-center" style={{ ...muted, ...line }}>{c.op}</span>,
+            <span key={`${c.id}l`} style={{ fontWeight: total ? 600 : 400, ...line }}>{c.label}
+              {c.key === 'spent' && r.spent_note ? <span className="block text-[12px]" style={muted}>{r.spent_note}</span> : null}</span>,
+            <span key={`${c.id}v`} className="text-right" style={{ fontWeight: total ? 600 : 400, color: c.key === 'left' ? tone(r.n.left) : undefined, ...line }}>{r.t[c.key]}</span>,
           ]
         })}
       </div>
+    </div>)
+}
+
+/** The row's two sums, written out as receipts. */
+function Receipt({ r, d }: { r: Row; d: Data }) {
+  return (
+    <div className="text-[13px]">
+      {d.groups.map(g => <Sum key={g.id} r={r} title={g.label} cols={d.columns.filter(c => c.group === g.id)} />)}
     </div>)
 }
 
@@ -143,7 +152,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   const d = data as Data
   const [yi, setYi] = useState(d.years.length - 1)
   const [cat, setCat] = useState<string>('')
-  const [sort, setSort] = useState<{ k: K; dir: 1 | -1 }>({ k: 'left', dir: -1 })
+  const [sort, setSort] = useState<{ k: string; dir: 1 | -1 }>({ k: 'left', dir: -1 })
   const [all, setAll] = useState(false)
   // `?line=<account>` opens that line, so one line can be linked to.
   const [open, setOpen] = useState<string | null>(() => {
@@ -153,10 +162,11 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   })
   const y = d.years[yi]
   const rows = useMemo(() => y.rows.filter(r => !cat || r.cat === cat)
-    .sort((a, b) => sort.dir * (a.n[sort.k] - b.n[sort.k]) || a.name.localeCompare(b.name)), [y, cat, sort])
+    .sort((a, b) => { const k = d.columns.find(c => c.id === sort.k)?.key ?? 'left'; return sort.dir * (a.n[k] - b.n[k]) || a.name.localeCompare(b.name) }), [y, cat, sort, d.columns])
   const shown = all ? rows : rows.filter((r, i) => i < FIRST || `${r.account}|${r.name}|${r.cat}` === open)
-  const head = (c: Data['columns'][number], i: number) => (
-    <th key={c.id} className={`px-2 py-1.5 text-right align-bottom cursor-pointer select-none ${i === d.columns.length - 1 ? 'border-l' : ''}`}
+  const firstCost = d.columns.findIndex(c => c.group !== d.columns[0].group)
+  const head = (c: Col, i: number) => (
+    <th key={c.id} className={`px-2 py-1.5 text-right align-bottom cursor-pointer select-none ${i === firstCost ? 'border-l' : ''}`}
       style={{ borderColor: 'var(--grid)' }}
       onClick={() => setSort(s => ({ k: c.id, dir: s.k === c.id ? (-s.dir as 1 | -1) : -1 }))}
       aria-sort={sort.k === c.id ? (sort.dir < 0 ? 'descending' : 'ascending') : 'none'}>
@@ -176,8 +186,16 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       </div>
       <div className="mt-3 overflow-x-auto">
         <table className="w-full text-[13px] tabular-nums border-collapse">
-          <thead><tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
-            <th className="px-2 py-1.5 text-left align-bottom font-semibold">{d.text.lines}</th>{d.columns.map(head)}</tr></thead>
+          <thead>
+            <tr>
+              <th />
+              {d.groups.map((g, gi) => (
+                <th key={g.id} colSpan={d.columns.filter(c => c.group === g.id).length}
+                  className={`px-2 pt-1 text-center text-[12px] font-semibold uppercase tracking-wide border-b ${gi ? 'border-l' : ''}`}
+                  style={{ ...muted, borderColor: 'var(--grid)' }}>{g.label}</th>))}
+            </tr>
+            <tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
+              <th className="px-2 py-1.5 text-left align-bottom font-semibold">{d.text.lines}</th>{d.columns.map(head)}</tr></thead>
           <tbody>
             {shown.map(r => {
               const key = `${r.account}|${r.name}|${r.cat}`
@@ -188,17 +206,17 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                   <td className="px-2 py-1.5 text-left min-w-[14rem]"><span className="mr-1" style={muted}>{isOpen ? '▾' : '▸'}</span>
                     {r.name}<span className="block text-[11.5px]" style={muted}>{r.cat}</span></td>
                   {d.columns.map((c, i) => (
-                    <td key={c.id} className={`px-2 py-1.5 text-right whitespace-nowrap ${i === d.columns.length - 1 ? 'border-l' : ''}`}
-                      style={{ borderColor: 'var(--grid)', color: c.id === 'left' ? tone(r.n.left) : c.id === 'transfers' && r.n.transfers ? tone(r.n.transfers) : undefined,
-                        fontWeight: c.id === 'left' || c.id === 'budget' ? 600 : 400 }}>
-                      {c.id === 'other' && r.payers.length ? <OtherChip r={r} t={d.text} />
-                        : r.line || c.id === 'other' ? r.t[c.id] : '—'}</td>))}
+                    <td key={c.id} className={`px-2 py-1.5 text-right whitespace-nowrap ${i === firstCost ? 'border-l' : ''}`}
+                      style={{ borderColor: 'var(--grid)', color: c.key === 'left' ? tone(r.n.left) : c.key === 'transfers' && r.n.transfers ? tone(r.n.transfers) : undefined,
+                        fontWeight: c.op === '=' ? 600 : 400 }}>
+                      {c.key === 'other' && r.payers.length ? <OtherChip r={r} t={d.text} />
+                        : r.line || c.key === 'other' || c.key === 'total' ? r.t[c.key] : '—'}</td>))}
                 </tr>,
                 isOpen ? (
                   <tr key={`${key}-x`} className="border-b" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
                     <td colSpan={d.columns.length + 1} className="px-3 py-3">
                       <div className="grid gap-5 lg:grid-cols-3 max-w-5xl">
-                        {r.line ? <Receipt r={r} cols={d.columns} t={d.text} /> : null}
+                        {r.line ? <Receipt r={r} d={d} /> : null}
                         {r.line ? <Moves r={r} t={d.text} /> : null}
                         <Payers r={r} t={d.text} />
                       </div>
