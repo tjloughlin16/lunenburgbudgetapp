@@ -259,6 +259,10 @@ def lines_data(m, T):
                 n={k: round(fl(v), 2) for k, v in nums.items()},
                 t={k: T.usd(v) for k, v in nums.items()},
                 chips=chip_rows(T, r),
+                # under each chip, how many entries its hover lists (TJ: "a small text count of
+                # the sources like '3 sources'")
+                chip_n={k: T.lit('%d %s' % (len(v), 'source' if len(v) == 1 else 'sources'))
+                        for k, v in chip_rows(T, r).items() if v},
                 payers=how_rows(T, r['how']),
                 moves=move_rows(T, r['moves_in'], names))
             if round(r['other_year_spent']):

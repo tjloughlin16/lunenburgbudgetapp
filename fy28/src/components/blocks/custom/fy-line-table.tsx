@@ -25,7 +25,7 @@ type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' 
 type Item = { title: string; sub: string; text: string }
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
 type Row = { name: string; account: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
-  spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
+  spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
@@ -123,7 +123,7 @@ function Payers({ r, t }: { r: Row; t: T }) {
  *  it -- so a popover placed in window coordinates landed inside the table's scroll box, clipped,
  *  and with only a few rows showing it was clipped away entirely. Leaving the chip closes it
  *  after a short delay, cancelled if the pointer reaches the popover, so it can be read. */
-function ListChip({ text, title, items }: { text: string; title: string; items: Item[] }) {
+function ListChip({ text, title, items, count }: { text: string; title: string; items: Item[]; count?: string }) {
   const [hover, setHover] = useState(false)
   const [held, setHeld] = useState(false)
   const [at, setAt] = useState<{ top: number; left: number } | null>(null)
@@ -152,6 +152,7 @@ function ListChip({ text, title, items }: { text: string; title: string; items: 
         className="px-2 py-0.5 rounded-full border tabular-nums leading-tight"
         style={{ borderColor: 'var(--text-muted)', background: on ? 'var(--surface-2)' : 'transparent', cursor: 'pointer' }}>
         {text}</button>
+      {count ? <span className="block text-[11px] leading-tight mt-0.5 text-right" style={muted}>{count}</span> : null}
       {on && at ? createPortal(
         <span role="tooltip" onClick={e => e.stopPropagation()} onMouseEnter={enter} onMouseLeave={leave}
           className="fixed z-50 w-[320px] max-w-[calc(100vw-16px)] px-2.5 py-2 rounded text-left text-[12.5px] leading-snug shadow whitespace-normal"
@@ -228,7 +229,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
     const k = c.key
     if (!r.line && k !== 'direct' && k !== 'total') return '—'
     if ((k === 'off' || k === 'on' || k === 'direct') && r.chips[k].length && Math.abs(r.n[k]) >= 0.5)
-      return <ListChip text={r.t[k]} title={chipTitle[k]} items={r.chips[k]} />
+      return <ListChip text={r.t[k]} title={chipTitle[k]} items={r.chips[k]} count={r.chip_n[k]} />
     return Math.abs(r.n[k]) < 0.5 && (k === 'off' || k === 'on' || k === 'direct') ? <span style={muted}>·</span> : r.t[k]
   }
   const firstCost = d.columns.findIndex(c => c.group !== d.columns[0].group)
