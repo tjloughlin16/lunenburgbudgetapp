@@ -1,31 +1,33 @@
-/** EVERY LINE, BUDGET TO LEFT (fy2026-breakdown): the school general fund's lines, one fiscal
- *  year at a time, as ONE SUM read left to right --
+/** EVERY LINE, BUDGET AND COST (fy2026-breakdown): the school general fund's lines, one fiscal
+ *  year at a time, as TWO SUMS read left to right --
  *
- *      Voted  +  Moved in or out  +  Carried from last year  =  Budget  −  Spent  =  Left
+ *      the school budget:  Voted + Transfers + Carried = Budget
+ *                          − Spent before moves + Moved to other funds − Moved back = Left
+ *      what the line cost: Spent by the school budget + Moved to other funds
+ *                          + Paid directly by other funds = Total spent, all funds
  *
- *  -- and beside it a second sum, what the line cost from every fund: Spent by the school
- *  budget + Paid by grants and other funds = Total spent, all funds (TJ: the other-funds column
- *  "doesnt seem ADDITIVE", so it now adds into something). TJ, 26
- *  October 2026, on the first version: "the column labels are just confusing and i dont know
- *  how the math works out across columns". So the operators sit in the header, and every
- *  column is a posting the Town made, not a part of our own identity.
+ *  TJ, 26 October 2026, on what other funds do to Left: "money added from other funds REDUCES
+ *  the general fund... depends how its done doesnt it?" It does, so the two ways are two
+ *  columns. A journal entry MOVING cost onto a grant raises Left and is in both sums; a grant
+ *  PAYING DIRECTLY leaves Left alone and is only in the second. Every circled amount opens, on
+ *  hover, focus or tap, what is behind it: each entry, which fund, how much.
  *
- *  Click a line: the same sum written out; every transfer in or out, with the lines on the
- *  other side (TJ: "which funds transferred into each line ... or how much each transferred
- *  OUT to another") -- exact where one side is a single line, flagged where the books do not
- *  pair many-to-many; and every other fund that paid toward it, with how it was matched.
+ *  Click a line: both sums written out; every transfer in or out, with the lines on the other
+ *  side -- exact where one side is a single line, flagged where the books do not pair
+ *  many-to-many; and every other fund that paid toward it, with how it was matched.
  *  `?line=<account>` in the address opens that line (latest year).
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
 import { useEffect, useMemo, useRef, useState } from 'react'
 import type { CustomProps } from './index'
 
-type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'spent' | 'left' | 'other' | 'total'
+type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' | 'left' | 'spent' | 'direct' | 'total'
+type Item = { title: string; sub: string; text: string }
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
 type Row = { name: string; account: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
-  spent_note?: string; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
+  spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
-  | 'payers' | 'none' | 'unmatched' | 'lines' | 'footing' | 'cost_sum', string>
+  | 'payers' | 'none' | 'unmatched' | 'lines' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
 type Col = { id: string; key: K; label: string; op: string; group: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
@@ -55,7 +57,7 @@ function Sum({ r, cols, title }: { r: Row; cols: Col[]; title: string }) {
           return [
             <span key={`${c.id}o`} className="text-center" style={{ ...muted, ...line }}>{c.op}</span>,
             <span key={`${c.id}l`} style={{ fontWeight: total ? 600 : 400, ...line }}>{c.label}
-              {c.key === 'spent' && r.spent_note ? <span className="block text-[12px]" style={muted}>{r.spent_note}</span> : null}</span>,
+              {(c.key === 'spent' || c.key === 'before') && r.spent_note ? <span className="block text-[12px]" style={muted}>{r.spent_note}</span> : null}</span>,
             <span key={`${c.id}v`} className="text-right" style={{ fontWeight: total ? 600 : 400, color: c.key === 'left' ? tone(r.n.left) : undefined, ...line }}>{r.t[c.key]}</span>,
           ]
         })}
@@ -108,10 +110,9 @@ function Payers({ r, t }: { r: Row; t: T }) {
     </div>)
 }
 
-/** The other-funds amount as a chip: hover, focus or tap it for WHAT paid and how much (TJ,
- *  26 October 2026: "i need to be able to see WHAT paid it and how much then"). A tap does not
- *  open the row. */
-function OtherChip({ r, t }: { r: Row; t: T }) {
+/** An amount as a chip: hover, focus or tap it for what is behind it (TJ, 26 October 2026: "i
+ *  need to be able to see WHAT paid it and how much then"). A tap does not open the row. */
+function ListChip({ text, title, items }: { text: string; title: string; items: Item[] }) {
   const [hover, setHover] = useState(false)
   const [held, setHeld] = useState(false)
   const [at, setAt] = useState<{ top: number; right: number } | null>(null)
@@ -134,15 +135,15 @@ function OtherChip({ r, t }: { r: Row; t: T }) {
         onFocus={() => setHover(true)} onBlur={() => { setHover(false); setHeld(false) }}
         className="px-2 py-0.5 rounded-full border tabular-nums leading-tight"
         style={{ borderColor: 'var(--text-muted)', background: on ? 'var(--surface-2)' : 'transparent', cursor: 'pointer' }}>
-        {r.t.other}</button>
+        {text}</button>
       {on && at ? (
         <span role="tooltip" onClick={e => e.stopPropagation()}
-          className="fixed z-50 w-[300px] max-w-[80vw] px-2.5 py-2 rounded text-left text-[12.5px] leading-snug shadow whitespace-normal"
+          className="fixed z-50 w-[320px] max-w-[80vw] px-2.5 py-2 rounded text-left text-[12.5px] leading-snug shadow whitespace-normal"
           style={{ top: at.top, right: at.right, background: 'var(--surface-1)', border: '1px solid var(--grid)', color: 'var(--text-primary)', fontWeight: 400 }}>
-          <span className="block font-semibold mb-1">{t.payers}</span>
-          {r.payers.map((p, i) => (
+          <span className="block font-semibold mb-1">{title}</span>
+          {items.map((p, i) => (
             <span key={i} className="flex justify-between gap-3 py-0.5">
-              <span>{p.payer}<span className="block text-[12px]" style={muted}>{p.rule}: {p.how}</span></span>
+              <span>{p.title}<span className="block text-[12px]" style={muted}>{p.sub}</span></span>
               <span className="tabular-nums font-semibold">{p.text}</span></span>))}
         </span>) : null}
     </span>)
@@ -164,6 +165,14 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   const rows = useMemo(() => y.rows.filter(r => !cat || r.cat === cat)
     .sort((a, b) => { const k = d.columns.find(c => c.id === sort.k)?.key ?? 'left'; return sort.dir * (a.n[k] - b.n[k]) || a.name.localeCompare(b.name) }), [y, cat, sort, d.columns])
   const shown = all ? rows : rows.filter((r, i) => i < FIRST || `${r.account}|${r.name}|${r.cat}` === open)
+  const chipTitle = { off: d.text.chip_off, on: d.text.chip_on, direct: d.text.chip_direct }
+  const cell = (r: Row, c: Col) => {
+    const k = c.key
+    if (!r.line && k !== 'direct' && k !== 'total') return '—'
+    if ((k === 'off' || k === 'on' || k === 'direct') && r.chips[k].length && Math.abs(r.n[k]) >= 0.5)
+      return <ListChip text={r.t[k]} title={chipTitle[k]} items={r.chips[k]} />
+    return Math.abs(r.n[k]) < 0.5 && (k === 'off' || k === 'on' || k === 'direct') ? <span style={muted}>·</span> : r.t[k]
+  }
   const firstCost = d.columns.findIndex(c => c.group !== d.columns[0].group)
   const head = (c: Col, i: number) => (
     <th key={c.id} className={`px-2 py-1.5 text-right align-bottom cursor-pointer select-none ${i === firstCost ? 'border-l' : ''}`}
@@ -176,6 +185,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
   return (
     <figure aria-label={alt}>
       <p className="text-[14px] leading-snug max-w-3xl" style={secondary}>{d.text.read}</p>
+      <p className="text-[12.5px] leading-snug max-w-3xl mt-1" style={muted}>{d.text.other_funds}</p>
       <div className="flex flex-wrap gap-1.5 items-center mt-3">
         {d.years.map((v, i) => <Chip key={v.fy} on={i === yi} onClick={() => { setYi(i); setOpen(null) }}>{v.fy}</Chip>)}
         <select value={cat} onChange={e => { setCat(e.target.value); setOpen(null) }}
@@ -209,8 +219,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                     <td key={c.id} className={`px-2 py-1.5 text-right whitespace-nowrap ${i === firstCost ? 'border-l' : ''}`}
                       style={{ borderColor: 'var(--grid)', color: c.key === 'left' ? tone(r.n.left) : c.key === 'transfers' && r.n.transfers ? tone(r.n.transfers) : undefined,
                         fontWeight: c.op === '=' ? 600 : 400 }}>
-                      {c.key === 'other' && r.payers.length ? <OtherChip r={r} t={d.text} />
-                        : r.line || c.key === 'other' || c.key === 'total' ? r.t[c.key] : '—'}</td>))}
+                      {cell(r, c)}</td>))}
                 </tr>,
                 isOpen ? (
                   <tr key={`${key}-x`} className="border-b" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>

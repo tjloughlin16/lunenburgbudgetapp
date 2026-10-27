@@ -41,15 +41,18 @@ that applies, and only once:
 
   a. MOVED BY JOURNAL ENTRY. A `GEN`/`GRV` journal whose expense lines touch the surplus scope
      and another fund and net to zero (within a dollar). The books name both ends, so this is
-     the one rule that is not a reading: the other fund's line is the general fund line's cost
-     moved. Paired with the scope lines of opposite sign, same function code first, shared in
-     proportion to their size. Only cost moved ONTO another fund is placed this way. A cost
-     moved back onto the general fund was first booked by the other fund, and is left with that
-     account, where it nets against the booking it reverses: the IDEA grant's aide payroll
-     (fund 2813, function 0000, unmatched) moved onto the general fund's aide lines in June
-     2026 is $205,645 out of that account's unmatched pay, not a negative on the aide lines. This generalises build_pay_by_fund_topics' pay moves to every
-     expense (the 29 June 2026 reclass of collaborative tuition onto the circuit breaker is not
-     pay).
+     the one rule that is not a reading. It is measured on the SCHOOL side, line by line: a
+     school line's own negative posting in the entry is cost taken off it, now paid by another
+     fund (placed on that line, `moved_off`); a positive one is cost moved back onto it
+     (`moved_on`, already in what it spent). Which fund took it is shared over the funds the
+     entry put money on, in proportion -- the payer split, not the amount, is the sharing. The
+     other funds' lines are not read again: what each fund gave or took beyond the cost it
+     took off a school line -- a move back, or cost passed between two grants in the same entry
+     (on 19 June 2026 Title I took $77,777 of kindergarten pay off the school budget and, in
+     the same entry, $87,302 of pay off the Student Opportunity Act grant) -- is left with that
+     fund as unmatched, where it nets against the booking it reverses. This generalises
+     build_pay_by_fund_topics' pay moves to every expense (the 29 June 2026 reclass of
+     collaborative tuition onto the circuit breaker is not pay).
   b. SAME PAYEE. A shown payee (`journal.payee`) the general fund paid by invoice from a scope
      line in any year of the run. Placed on that payee's scope line of the same function code
      if there is one, else on the scope line that paid it most over the four years. This is
@@ -236,36 +239,46 @@ def model():
         if r['source'] in ('GEN', 'GRV'):
             jr[(r['fy'], r['journal'])].append(r)
     moves = []
+    fund_moves = defaultdict(list)                        # (fy, account) -> journal moves on it
     for (fy, j), rs in sorted(jr.items()):
         if len({r['fund'] for r in rs}) < 2 or abs(sum(r['amt'] for r in rs)) > 1:
             continue
         sc, ot = [r for r in rs if scope(r)], [r for r in rs if not scope(r)]
         if not sc or not ot:
             continue
-        off = sum((o['amt'] for o in ot if o['amt'] > 0), D0)
-        onto = sum((o['amt'] for o in ot if o['amt'] < 0), D0)
+        off = -sum((s['amt'] for s in sc if s['amt'] < 0), D0)
+        onto = sum((s['amt'] for s in sc if s['amt'] > 0), D0)
+        net = defaultdict(Decimal)                        # payer -> what this entry put on it
         for o in ot:
-            if o['amt'] <= 0:
-                continue        # a cost taken back: placed with its own account (docstring, a)
-            opp = [s for s in sc if s['amt'] < 0]
-            same = [s for s in opp if J.function(s['account']) == J.function(o['account'])]
-            pool = same or opp
-            if not pool or o['amt'] == 0:
-                continue
-            w = defaultdict(Decimal)
-            for s in pool:
-                w[s['account']] += abs(s['amt'])
-            for acct, amt in share(o['amt'], w).items():
-                placed[(fy, acct)]['moved'] += amt
-                by_payer[(fy, acct, 'moved', payer(A[o['account']]))] += amt
-                how[(fy, acct)][('moved', payer(A[o['account']]), '%s · %s' % (
-                    o['effective_date'], o['description'].strip() or 'no memo'))] += amt
+            net[payer(A[o['account']])] += o['amt']
             done.add(id(o))
-        by = defaultdict(Decimal)
-        for o in ot:
-            by[payer(A[o['account']])] += o['amt']
+        gain = {py: v for py, v in net.items() if v > 0} or {py: abs(v) for py, v in net.items()}
+        lose = {py: -v for py, v in net.items() if v < 0} or {py: abs(v) for py, v in net.items()}
+        memo = lambda s: s['description'].strip() or 'no memo'
+        put = defaultdict(Decimal)
+        for s in sc:
+            if s['amt'] == 0:
+                continue
+            k = (fy, s['account'])
+            line[k]['moved_off' if s['amt'] < 0 else 'moved_on'] += abs(s['amt'])
+            split = share(abs(s['amt']), gain if s['amt'] < 0 else lose)
+            fund_moves[k].append(dict(date=s['effective_date'], memo=memo(s),
+                                      amount=s['amt'], payers=split))
+            if s['amt'] > 0:
+                continue
+            for py, amt in split.items():
+                placed[k]['moved'] += amt
+                by_payer[(fy, s['account'], 'moved', py)] += amt
+                how[k][('moved', py, '%s · %s' % (s['effective_date'], memo(s)))] += amt
+                put[py] += amt
+        # What each fund gave or took in the entry beyond the cost it took off a school line:
+        # cost moved BACK onto the school budget, and cost passed between two other funds. Left
+        # with the fund, where it nets against the booking it reverses (docstring, rule a).
+        for py, v in net.items():
+            if v - put[py] != 0:
+                unmatched[(fy, py, 'moved between funds by journal entry')] += v - put[py]
         moves.append(dict(fy=fy, journal=j, date=rs[0]['effective_date'], off=off, onto=onto,
-                          by_payer=dict(by), categories=sorted({cat_of(r['account']) for r in sc}),
+                          by_payer=dict(net), categories=sorted({cat_of(r['account']) for r in sc}),
                           description=sorted({r['description'].strip() for r in rs})[0]))
 
     # rule b: same payee
@@ -345,6 +358,8 @@ def model():
                          gf_spent=p['gf_spent'],
                          other_year_spent=p['prepaid'] + p['carried_paid'] + p['carried_enc'],
                          how=dict(how[(fy, acct)]), moves_in=line_transfers.get((fy, acct), []),
+                         moved_off=p['moved_off'], moved_on=p['moved_on'],
+                         fund_moves=fund_moves.get((fy, acct), []),
                          description=A[acct]['account_description'].strip(),
                          org=A[acct]['org_name'].strip(), voted=p['voted'],
                          gf_cost=cost_gf, all_funds_cost=cost_gf + o, left=left,
@@ -359,6 +374,7 @@ def model():
         rows.append(dict(fy=fy, account=None, category=cat, description=FUNC_ROW, org='',
                          voted=D0, gf_cost=D0, all_funds_cost=v, left=D0, printed_left=D0,
                          gf_spent=D0, other_year_spent=D0, moves_in=[],
+                         moved_off=D0, moved_on=D0, fund_moves=[],
                          how={('function', py, 'function code %s' % '/'.join(
                              sorted(func_codes[(fy, cat, py)]))): v},
                          prepaid=D0, carried_budget=D0, carried_unpaid=D0,

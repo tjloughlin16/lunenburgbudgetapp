@@ -134,21 +134,14 @@ def recompute():
         sc = [r for r in rs if in_scope(r['account'])]
         if not sc or len(sc) == len(rs):
             continue
-        for i, o in ir:
-            if in_scope(o['account']) or o['v'] <= 0:
-                continue        # a cost taken back stays with its own account
-            opp = [s for s in sc if s['v'] < 0]
-            pool = [s for s in opp if fn(s['account']) == fn(o['account'])] or opp
-            if not pool:
-                continue
-            w = defaultdict(Decimal)
-            for s in pool:
-                w[s['account']] += abs(s['v'])
-            # the cents of a shared move are not checked one by one; the journal's total is
-            tot = sum(w.values())
-            for a_, wt in w.items():
-                O[(o['y'], a_)] += o['v'] * wt / tot
-            used.add(i)
+        # measured on the school side: each school line's own posting in the entry; a cost
+        # taken OFF a line (negative) is that line's cost now paid by another fund
+        for i, r in ir:
+            if in_scope(r['account']):
+                if r['v'] < 0:
+                    O[(r['y'], r['account'])] -= r['v']
+            else:
+                used.add(i)
     paid = defaultdict(lambda: defaultdict(Decimal))
     for r in ex:
         if in_scope(r['account']) and r['source'] in ('API', 'APM') and key(r):
@@ -208,8 +201,7 @@ def main(argv=None):
             continue
         for t in T:
             d = abs(g[t] - me[t])
-            # a shared move's cents fall where the generator's largest remainder puts them
-            check(d < Decimal('0.05') if t in ('other_funds', 'voted_above_cost') else d == 0,
+            check(d == 0,
                   'FY%d %s %s: generator %s, recomputed %s' % (k[0], k[1], t, g[t], me[t]))
         target = av.get(k, D0) - (owed.get(k, D0) if k[0] != OPEN else D0)
         check(sum(g[t] for t in T) == target,

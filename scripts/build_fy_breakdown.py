@@ -203,9 +203,30 @@ def move_rows(T, moves, names):
     return out
 
 
+def chip_rows(T, r):
+    """What sits behind each amount drawn as a chip: the journal entries that moved cost off a
+    line or back onto it, and what other funds paid directly, each with who and how much."""
+    def entries(sign):
+        out = []
+        for mv in sorted(r['fund_moves'], key=lambda x: (x['date'], -abs(x['amount']))):
+            if (mv['amount'] < 0) != (sign < 0):
+                continue
+            for py, v in sorted(mv['payers'].items(), key=lambda kv: -kv[1]):
+                if round(v) != 0:
+                    out.append(dict(title=T.lit(py), text=T.usd(v), sub=T.lit(
+                        '%s, “%s”' % (long_date(mv['date']), mv['memo']))))
+        return out
+    direct = [dict(title=p['payer'], sub='%s: %s' % (p['rule'], p['how']), text=p['text'])
+              for p in how_rows(T, {k: v for k, v in r['how'].items() if k[0] != 'moved'})]
+    return dict(off=entries(-1), on=entries(1), direct=direct)
+
+
 def lines_data(m, T):
-    """Every line, every year: the plain sum (voted + moved + carried = budget; budget - spent =
-    left), and behind each line its transfers and the other funds that paid toward it."""
+    """Every line, every year, as two sums. The school budget's own, to what was left, with
+    cost moved by journal entry shown apart from what it spent; and what the line cost from
+    every fund, where a move and a grant paying directly are two different terms. TJ, 26
+    October 2026: "money added from other funds REDUCES the general fund... depends how its
+    done doesnt it?" It does: a move changes Left, paying directly does not."""
     names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
     years = []
     for fy in J.YEARS:
@@ -214,14 +235,20 @@ def lines_data(m, T):
             if r['fy'] != fy:
                 continue
             budget = r['voted'] + r['transfers'] + r['carried_budget']
+            before = r['gf_spent'] + r['moved_off'] - r['moved_on']
+            direct = r['other_funds'] - r['by_rule'].get('moved', D0)
             if r['account'] and sum((mv['amount'] for mv in r['moves_in']), D0) != r['transfers']:
                 raise SystemExit('build_fy_breakdown: FY%d %s: its listed transfers do not sum to '
                                  'its moved in or out' % (fy, r['account']))
-            if r['account'] and budget - r['gf_spent'] != r['left']:
-                raise SystemExit('build_fy_breakdown: FY%d %s does not read budget - spent = left'
-                                 % (fy, r['account']))
+            if r['account'] and budget - before + r['moved_off'] - r['moved_on'] != r['left']:
+                raise SystemExit('build_fy_breakdown: FY%d %s does not read budget - spent before '
+                                 'moves + moved off - moved on = left' % (fy, r['account']))
+            if r['by_rule'].get('moved', D0) != r['moved_off']:
+                raise SystemExit('build_fy_breakdown: FY%d %s: the cost moved off it is not what '
+                                 'the other funds carry for it' % (fy, r['account']))
             nums = dict(voted=r['voted'], transfers=r['transfers'], carried=r['carried_budget'],
-                        budget=budget, spent=r['gf_spent'], left=r['left'], other=r['other_funds'],
+                        budget=budget, before=before, off=r['moved_off'], on=r['moved_on'],
+                        left=r['left'], spent=r['gf_spent'], direct=direct,
                         total=r['gf_spent'] + r['other_funds'])
             if all(round(v) == 0 for v in nums.values()):
                 continue        # an account with nothing voted, spent or placed on it
@@ -231,6 +258,7 @@ def lines_data(m, T):
                 cat=S.CAT_LABEL[r['category']], line=bool(r['account']),
                 n={k: round(fl(v), 2) for k, v in nums.items()},
                 t={k: T.usd(v) for k, v in nums.items()},
+                chips=chip_rows(T, r),
                 payers=how_rows(T, r['how']),
                 moves=move_rows(T, r['moves_in'], names))
             if round(r['other_year_spent']):
@@ -241,36 +269,44 @@ def lines_data(m, T):
                           unmatched=[dict(payer=T.lit(py), why=why, text=T.usd(v))
                                      for (py, why), v in un if round(v) != 0],
                           unmatched_total=T.usd(sum((v for _, v in un), D0))))
+    col = lambda id_, key, label, op, group: dict(id=id_, key=key, label=label, op=op, group=group)
     return dict(years=years, cats=sorted({S.CAT_LABEL[c[0]] for c in S.CATEGORIES}),
-                # TWO SUMS, side by side (TJ, 26 October 2026: the other-funds column "doesnt seem
-                # ADDITIVE ... '+ (new title)' = 'Total Expense'"). The school budget's own sum to
-                # what was left; then what the line cost, all funds -- which repeats Spent so it
-                # reads as a sum of its own.
+                # TWO SUMS, side by side. "Moved to other funds" is in both: it leaves the school
+                # budget's sum (raising Left) and stays in what the line cost.
                 groups=[dict(id='budget', label='The school budget'),
                         dict(id='cost', label='What the line cost, every fund')],
-                columns=[dict(id='voted', key='voted', label='Voted', op='', group='budget'),
-                         dict(id='transfers', key='transfers', label='Moved in or out', op='+', group='budget'),
-                         dict(id='carried', key='carried', label='Carried from last year', op='+', group='budget'),
-                         dict(id='budget', key='budget', label='Budget', op='=', group='budget'),
-                         dict(id='spent', key='spent', label='Spent', op='−', group='budget'),
-                         dict(id='left', key='left', label='Left', op='=', group='budget'),
-                         dict(id='spent_again', key='spent', label='Spent by the school budget', op='', group='cost'),
-                         dict(id='other', key='other', label='Paid by grants and other funds', op='+', group='cost'),
-                         dict(id='total', key='total', label='Total spent, all funds', op='=', group='cost')],
+                columns=[col('voted', 'voted', 'Voted', '', 'budget'),
+                         col('transfers', 'transfers', 'Transfers in or out', '+', 'budget'),
+                         col('carried', 'carried', 'Carried from last year', '+', 'budget'),
+                         col('budget', 'budget', 'Budget', '=', 'budget'),
+                         col('before', 'before', 'Spent before moves', '−', 'budget'),
+                         col('off', 'off', 'Moved to other funds', '+', 'budget'),
+                         col('on', 'on', 'Moved back from other funds', '−', 'budget'),
+                         col('left', 'left', 'Left', '=', 'budget'),
+                         col('spent', 'spent', 'Spent by the school budget', '', 'cost'),
+                         col('off_cost', 'off', 'Moved to other funds', '+', 'cost'),
+                         col('direct', 'direct', 'Paid directly by other funds', '+', 'cost'),
+                         col('total', 'total', 'Total spent, all funds', '=', 'cost')],
                 text=dict(
-                    read='Each row holds two sums. The school budget: what was voted, plus budget '
-                         'moved in or out, plus orders carried from last year, makes the budget; '
-                         'take away what it spent and what remains is left. What the line cost: '
-                         'what the school budget spent, plus what grants and other funds paid '
-                         'toward the same line, is the total spent from every fund. Click a line '
-                         'to see where its money came from and went.',
+                    read='Other funds can lower a line’s cost to the school budget in two ways, '
+                         'and only one of them changes Left. A journal entry can MOVE cost already '
+                         'spent off the line onto a grant or another fund (or back): that raises '
+                         'or lowers Left, and the line cost the same. Or another fund can PAY '
+                         'DIRECTLY: Left is untouched and the total cost is higher than the '
+                         'school budget shows. Hover or tap a circled amount to see each entry.',
+                    other_funds='Other funds: grants, the circuit breaker, fees and revolving '
+                                'funds, and capital articles. Moves are the Town’s own entries; '
+                                'which spending counts as paid directly toward a line is our '
+                                'match, by payee or by kind of work.',
+                    chip_off='Moved off this line, onto', chip_on='Moved back onto this line, from',
+                    chip_direct='Paid directly by other funds',
                     cost_sum='What the line cost, every fund',
                     all_cats='Every category', show='Show every line', fewer='Show fewer',
-                    sum='The sum', moves='Budget moved in or out', nomoves='No budget moved.',
+                    sum='The sum', moves='Transfers in or out', nomoves='No budget transferred.',
                     shared='Many lines gave and many got in this one entry, and the books do not '
                            'say which line’s money went to which. The other side, all together:',
                     into='from', outof='to', in_='In', out='Out',
-                    payers='Grants and other funds that paid toward this line',
+                    payers='Other funds that paid toward this line',
                     none='No other fund paid toward this line.',
                     unmatched='Other funds’ spending not matched to any line',
                     lines='Line', footing='Spent counts orders still owed at year end, so for '
@@ -345,8 +381,8 @@ def timeline_data(m, T):
             pay = ', '.join('%s %s' % (T.lit(p), T.usd(v)) for p, v in
                             sorted(mv['by_payer'].items(), key=lambda kv: -abs(kv[1])) if round(v))
             ev.append(dict(lane='moved', day=fy_day(mv['date'], fy), date=T.lit(long_date(mv['date'])),
-                           value=round(fl(mv['off'] - mv['onto']), 2),
-                           text='%s onto other funds, %s back' % (T.usd(mv['off']), T.usd(-mv['onto'])),
+                           value=round(fl(mv['off'] + mv['onto']), 2),
+                           text='%s off the school budget, %s back onto it' % (T.usd(mv['off']), T.usd(mv['onto'])),
                            title=T.lit(mv['description'] or 'No memo'),
                            detail='Other funds: %s' % pay if pay else ''))
         y = m['years'][fy]
@@ -406,9 +442,9 @@ def page(m):
     if priv['other_funds'] != idea_tuition:
         raise SystemExit('build_fy_breakdown: the page says the IDEA grant is all of private '
                          'tuition’s other-fund money in FY%d' % Y1)
-    # Journal moves, measured: each move journal nets to zero, so the other funds' net is the
-    # general fund's change with the sign turned.
-    net = lambda y: sum((mv['off'] + mv['onto'] for mv in m['moves'] if mv['fy'] == y), D0)
+    # Journal moves, measured on the school budget's side: cost taken off its lines, less cost
+    # moved back on.
+    net = lambda y: sum((mv['off'] - mv['onto'] for mv in m['moves'] if mv['fy'] == y), D0)
     mv0, mv1 = net(Y0), net(Y1)
     moves = [mv for mv in m['moves'] if mv['fy'] == Y1]
     idea_back = -sum((v for mv in moves for p, v in mv['by_payer'].items() if p.startswith('IDEA')), D0)
@@ -473,7 +509,7 @@ def page(m):
     ]
     late = '%d-05-26' % Y1          # the last five weeks of the year
     gross = [(t['date'], t['moved']) for t in m['transfers'] if t['fy'] == Y1] + \
-        [(mv['date'], mv['off'] - mv['onto']) for mv in m['moves'] if mv['fy'] == Y1]
+        [(mv['date'], mv['off'] + mv['onto']) for mv in m['moves'] if mv['fy'] == Y1]
     if not 2 * sum((v for dt, v in gross if dt >= late), D0) > sum((v for _, v in gross), D0):
         raise SystemExit('build_fy_breakdown: the timeline says most of FY%d’s moved money moved '
                          'after %s' % (Y1, late))
