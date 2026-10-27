@@ -504,6 +504,15 @@ def page(m):
             note='School general fund, department 300. Every line’s Left in the table above, '
                  'summed.', note_allow=('300',)),
         blocks=[
+            TB.custom('fy-year-weeks', 'Every week of the year', weeks, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Every posting on the school lines, by week'),
+                      alt='Bar chart, one fiscal year at a time: every week from July to June, '
+                          'what every school line spent or still owed that week, stacked by who '
+                          'paid or by kind of posting, with bills re-charged to other funds below '
+                          'the line',
+                      so=('In %s every bill re-charged off the school budget was re-charged in '
+                          'June.' % C.fy(Y1), {'y': F(Y1)}, ())),
             TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
@@ -514,15 +523,6 @@ def page(m):
                       so=('A line can end under because its bills were re-charged to another '
                           'fund after the school budget paid them. Sorted by category, lines '
                           'that cancel each other out sit side by side.', None, ())),
-            TB.custom('fy-year-weeks', 'Every week of the year', weeks, place='top',
-                      figures=sorted(T.figures), allow=sorted(T.literals),
-                      basis=('record', 'Every posting on the school lines, by week'),
-                      alt='Bar chart, one fiscal year at a time: every week from July to June, '
-                          'what every school line spent or still owed that week, stacked by who '
-                          'paid or by kind of posting, with bills re-charged to other funds below '
-                          'the line',
-                      so=('In %s every bill re-charged off the school budget was re-charged in '
-                          'June.' % C.fy(Y1), {'y': F(Y1)}, ())),
         ],
         sources=[
             dict(label='Lunenburg Budget Project — munis-school-journal.csv (every school '
