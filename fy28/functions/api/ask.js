@@ -132,6 +132,15 @@ export async function onRequestPost({ request, env }) {
   if (!TOPICS.has(topic)) {
     return json({ ok: false, error: 'Unknown topic.' }, 400);
   }
+  // THE PAGE IT WAS ASKED FROM, when the reader followed "Ask about this page". Kept as the
+  // first line of the stored question rather than a column, so the inbox needs no migration
+  // and a reader of the row sees it without a join. Only a path on this site is accepted.
+  const page = String(body.page ?? '').trim().slice(0, 300);
+  const pageTitle = String(body.page_title ?? '').replace(/\s+/g, ' ').trim().slice(0, 160);
+  const fromPage = /^\/(?!\/)/.test(page) ? page : '';
+  const stored = fromPage
+    ? `[Asked from ${pageTitle ? pageTitle + ' — ' : ''}${fromPage}]\n\n${question}`
+    : question;
 
   // GATE 3 -- Turnstile. Nothing is written without it.
   const ip = request.headers.get('cf-connecting-ip') || '';
@@ -183,7 +192,7 @@ export async function onRequestPost({ request, env }) {
   await db.prepare(
     'INSERT INTO question (id, asked_at, body, email, topic, source_hash, country, status) '
     + "VALUES (?, ?, ?, ?, ?, ?, ?, 'new')")
-    .bind(id, now.toISOString(), question, email || null, topic || null, source,
+    .bind(id, now.toISOString(), stored, email || null, topic || null, source,
           request.cf?.country || null)
     .run();
 

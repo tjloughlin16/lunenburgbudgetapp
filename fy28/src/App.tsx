@@ -97,6 +97,7 @@ import { SpecialRevenue } from './pages/SpecialRevenue'
 import { Database } from './pages/Database'
 import { Analysis } from './pages/Analysis'
 import { SiteMenu } from './components/SiteMenu'
+import { AskAboutPage } from './components/AskAboutPage'
 import { BOARDS, LABEL, PARENT, crumbLabel, REFERENCE, ROOT, TOOLS, pathFor, tabFromPath, isUnknownPath, boardFinanceSlugFromPath, boardRecordsSlugFromPath, boardTransfersSlugFromPath, omlSlugFromPath, topicIdFromPath, type Tab, AREA_HOME, AREA_LABEL, AREA_TABS, areaOf, assertNoDuplicateNav } from './routes'
 import { Go, NavProvider, plainClick } from './lib/nav'
 import { followTitleForShare, pageTitle, setShareMeta, shareFromPage } from './lib/title'
@@ -789,7 +790,11 @@ function Breadcrumb({ tab, goUp }: { tab: Tab; goUp: (t: Tab) => void }) {
         <li aria-current="page" className="hidden sm:block" style={{ color: 'var(--text-secondary)' }}>{sub ?? crumbLabel(tab)}</li>
         </>)}
       </ol>
-      <ReadingTime tab={tab} reference={REFERENCE.has(tab)} tool={TOOLS.has(tab)} />
+      <div className="flex items-center gap-3 shrink-0">
+        <ReadingTime tab={tab} reference={REFERENCE.has(tab)} tool={TOOLS.has(tab)} />
+        {/* Every page but the question page itself: asking about the form is the form. */}
+        {tab !== 'askus' && <AskAboutPage title={topic && topic.crumbs.length > 2 ? topic.current : null} />}
+      </div>
       </div>
     </nav>
   )
