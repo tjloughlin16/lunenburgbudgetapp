@@ -2934,9 +2934,15 @@ def _textract_card():
 
 
 def _week_pacing_card():
+    """THREE NUMBERS AND WHEN IT LOOKS AGAIN. TJ, 27 October 2026: *"its hard to read because
+    theres so much text. i want to know: current weekly, current target (pace), and when (what
+    time,date) it will kick in to try and recheck ... the chart has 2 lines and i dont know what
+    those differentiate."* So: used, target, next reading and when it starts again, as figures;
+    the two marks on the bar labelled where they stand; the explanation folded away."""
     try:
         sys.path.insert(0, os.path.join(ROOT, 'scripts'))
         import usage_governor as G
+        import process_meeting as PM
         hist = G.readings()
         wr = G.week_reset()
     except Exception:
@@ -2952,20 +2958,19 @@ def _week_pacing_card():
     ps = subprocess.run(['pgrep', '-fl', '[p]rocess_meeting.py --until-usage'], capture_output=True, text=True).stdout
     m = re.search(r'--week-line\s+([\d.]+)', ps)
     pid = int(ps.split()[0]) if m else None
-    live = bool(m)
     if m:
         goal = float(m.group(1))
-    line = G.week_line(goal, wr, now)
-    # EVEN PACE: 100% spread over the week, the "pace" mark on TJ's status line
-    # (~/.claude/statusline-usage.sh). TJ, 25 October 2026: "youa re saying the pace is 36%, so
-    # we have 2 differnet ways to calculate pace". Both are right and both are shown, named:
-    # the run's line aims for `goal` and keeps the rest for interactive work.
-    even = 100.0 * min(1.0, max(0.0, 1.0 - (wr - now) / G.WEEK_S))
+    line = G.week_line(goal, wr, now)   # the run's own test; shown only as the mark below
+    # ONE PACE, THE STATUS LINE'S. TJ, 27 October 2026: *"we need those numbers to be EXACtLY the
+    # same. and even if we're targeting 90%, it should just show 'at the 90% mark'"*. So the card
+    # quotes G.even_pace -- the status line's own formula -- and states the run's target as a
+    # share OF that pace (G.pace_terms), never as a second percentage of the week.
     u7 = last['u7']
+    pt = G.pace_terms(u7, goal, wr, now)
     gap = u7 - line
-    catch = ''
+    resume = None
     if gap > 0:
-        # when the line reaches today's bar, if nothing else is spent
+        # when the target reaches today's bar, if nothing else is spent
         lo, hi = now, wr
         for _ in range(40):
             mid = (lo + hi) / 2
@@ -2973,24 +2978,80 @@ def _week_pacing_card():
                 lo = mid
             else:
                 hi = mid
-        catch = ' &middot; the line reaches %g%% around <b>%s</b>' % (u7, dt.datetime.fromtimestamp(hi).strftime('%a %H:%M'))
-    kind, chip, why = _pacing_state(pid, dt.datetime.fromtimestamp(hi).strftime('%a %H:%M') if gap > 0 else '')
+        resume = hi
+    kind, chip, why = _pacing_state(pid, '')
+    holding = 'AHEAD' in chip         # the run's own log says it is waiting on the weekly line
+    # THE NEXT READING: the run reads the bars every FETCH_WAITING_S while holding and every
+    # FETCH_RUNNING_S while writing; it decides every 30 s on the newest reading.
+    every = PM.FETCH_WAITING_S if holding else PM.FETCH_RUNNING_S
+    nxt = last['t'] + every
+    when = lambda t: dt.datetime.fromtimestamp(t).strftime('%a %-d %b, %-I:%M %p')
+    clock = lambda t: dt.datetime.fromtimestamp(t).strftime('%-I:%M %p')
+    # IN POINTS, the way TJ reads it: *"i think the diff (63 - 58) is how i think about it"*
+    # (27 October 2026). `under` is pace minus weekly; the run writes only while the week is
+    # at least `need` points under pace -- `need` is the 10% of pace it leaves for interactive
+    # work, so it grows through the week. Same test as the run's, said as a subtraction.
+    # Both to the tenth they are printed at, so the card never shows "6.1 of 6.1" as short.
+    under = round(pt['pace'] - u7, 1)
+    need = round(pt['pace'] - line, 1)
+    say = lambda d: ('%g points under pace' % d) if d > 0 else ('%g points over pace' % -d) if d < 0 else 'on pace'
+    # TWO PAUSES, NAMED BY WHICH SIDE OF THE RUN'S PACE THE WEEK IS ON (TJ, 27 October 2026):
+    # AHEAD -- spent past the run's share, it waits for pace to catch up; BEHIND -- the room is
+    # there and the run has not seen it yet, so the next reading starts it.
+    behind_now = under >= need
+    if holding and not behind_now:
+        chip = 'PAUSED &middot; AHEAD'
+        why = 'Starts again around <b>%s</b>, if nothing else is spent.' % when(resume)
+    elif holding:
+        kind, chip = 'go', 'PAUSED &middot; BEHIND'
+        why = ('<b>It will start at the next reading, %s.</b> The room is there; the run has not '
+               'read it yet.' % (clock(nxt) if nxt > now else 'due now'))
+
     state = '<span class="state %s"><span class="dot"></span>%s</span>' % (kind, chip)
+
+    def fig(label, value, sub):
+        return ('<div style="flex:1;min-width:150px"><div class="tiny" style="color:#8b949e">%s</div>'
+                '<div style="font-size:24px;font-weight:700;line-height:1.2">%s</div>'
+                '<div class="tiny" style="color:#8b949e">%s</div></div>' % (label, value, sub))
+    figs = ''.join([
+        fig('Weekly', '%g%%' % u7, 'read %s' % clock(last['t'])),
+        # The reset to the minute, as the status line prints it (22:59:59 there is 11:00pm).
+        fig('Pace', '%d%%' % pt['pace'], 'as on your status line; resets %s' % when(round(wr / 60) * 60)),
+        fig('Under pace', ('%g' % under if under >= 0 else '&minus;%g' % -under)
+            + '<span style="font-size:14px;color:#8b949e;font-weight:400"> of %.1f pts</span>' % need,
+            # how far to the run's line: a meter, filled by how much of the needed room is there
+            '<div style="height:5px;background:#21262d;border-radius:3px;margin:3px 0 2px;width:100%%">'
+            '<div style="height:5px;width:%.0f%%;background:%s;border-radius:3px"></div></div>'
+            '%s' % (max(0, min(100, 100 * under / need)) if need > 0 else 100,
+                    '#3fb950' if under >= need else '#d29922',
+                    'the run writes at %.1f or more' % need if under < need else 'enough room: the run writes')),
+        fig('Next reading', clock(nxt) if nxt > now else 'due now', 'then every %d min' % (every // 60)),
+        fig('Starts again', clock(resume) if resume else 'now',
+            when(resume).split(',')[0] if resume else 'enough under pace'),
+    ])
+    # THE WEEK'S OWN SCALE, 0 to 100: the fill is the weekly bar, the one line is pace, and the
+    # shaded stretch just under pace is the room the run leaves for interactive work.
     pct = lambda v: max(0.0, min(100.0, v))
-    bar = ('<div style="position:relative;height:10px;background:#21262d;border-radius:5px;margin:8px 0 2px">'
-           '<div style="position:absolute;left:0;top:0;bottom:0;width:%.1f%%;background:#d29922;border-radius:5px"></div>'
-           '<div title="the minutes run\u2019s line" style="position:absolute;top:-3px;bottom:-3px;left:%.1f%%;width:2px;background:#e6edf3"></div>'
-           '<div title="even pace" style="position:absolute;top:-3px;bottom:-3px;left:%.1f%%;width:2px;background:#8b949e"></div>'
-           '</div>' % (pct(u7), pct(line), pct(even)))
+    bar = ('<div style="position:relative;height:10px;background:#21262d;border-radius:5px;margin:26px 0 8px">'
+           '<div title="kept for interactive work" style="position:absolute;top:0;bottom:0;left:%.1f%%;width:%.1f%%;'
+           'background:repeating-linear-gradient(135deg,#30363d 0 3px,transparent 3px 6px)"></div>'
+           '<div style="position:absolute;left:0;top:0;bottom:0;width:%.1f%%;background:#d29922;border-radius:5px;opacity:.9"></div>'
+           '<div style="position:absolute;top:-4px;bottom:-4px;left:%.1f%%;width:2px;background:#e6edf3"></div>'
+           '<div class="tiny" style="position:absolute;top:-18px;left:%.1f%%;transform:translateX(-50%%);white-space:nowrap">pace %d%%</div>'
+           '<div class="tiny" style="position:absolute;top:-18px;left:%.1f%%;transform:translateX(-100%%);white-space:nowrap;color:#d29922">weekly %g%%&nbsp;</div>'
+           '</div><div class="tiny" style="color:#8b949e;margin-bottom:6px">shaded: the %.1f points kept for interactive work</div>'
+           % (pct(line), pct(pt['pace']) - pct(line), pct(u7), pct(pt['pace']), pct(pt['pace']), pt['pace'],
+              pct(u7), u7, need))
+    more = ('<details class="tiny" style="color:#8b949e"><summary>Why it keeps room under pace</summary>'
+            '<p>The run spends up to %g%% of pace and leaves the rest for interactive work, '
+            'in this project and every other. Over the last day that room shrinks to nothing so the week '
+            'is not left unspent.</p>'
+            '<p>The weekly bar counts every session on the account and reports whole percents, so the run '
+            'only sees a change when a reading moves by a point.</p></details>' % goal)
     return ('<div class="card"><div class="row"><b class="grow">Weekly pacing</b>%s</div>'
-            '<div class="why %s">%s</div>%s'
-            '<div class="tiny">Weekly bar <b>%g%%</b> &middot; <span style="color:#e6edf3">&#9474;</span> the minutes run\u2019s line <b>%.1f%%</b> (%s %.1f points; '
-            'it aims for %g%% and keeps the rest for interactive work, climbing to 100%% over the last day) &middot; '
-            '<span style="color:#8b949e">&#9474;</span> even pace <b>%.0f%%</b>, the pace on your status line &middot; resets %s%s</div>'
-            '<div class="tiny" style="color:#8b949e;margin-top:2px">The bar counts every session on the account, so a heavy '
-            'interactive day raises it and the minutes run starts less; reading %s.</div></div>'
-            % (state, kind, why, bar, u7, line, 'over it by' if gap >= 0 else 'under it by', abs(gap), goal, even,
-               dt.datetime.fromtimestamp(wr).strftime('%a %d %b %H:%M'), catch, ago(dt.datetime.fromtimestamp(last['t'], dt.timezone.utc).isoformat())))
+            '<div class="why %s">%s</div>'
+            '<div class="row" style="gap:12px;margin-top:8px">%s</div>%s%s</div>'
+            % (state, kind, why, figs, bar, more))
 
 
 def tabs(sel, q=None):
@@ -4168,8 +4229,31 @@ def main():
         subprocess.run(['open', p])
     if a.watch:
         print('watching; ctrl-c to stop')
+        # A WATCHER RUNS THE CODE IT STARTED WITH. TJ, 27 October 2026: a watcher started two
+        # days earlier kept rewriting the old weekly-pacing card over the new one every 20 s,
+        # while the minute job wrote the new one -- the page flipped between them. So the watcher
+        # restarts itself when this file, or any module of ours it has loaded, changes on disk.
+        # It compiles them first: a half-saved edit keeps the running copy rather than killing it.
+        mine = lambda m: os.path.abspath(getattr(m, '__file__', None) or '/')
+        ours = lambda: {f: os.path.getmtime(f) for f in map(mine, list(sys.modules.values()))
+                        if f.startswith(os.path.join(ROOT, 'scripts', '')) and os.path.exists(f)}
+        seen = ours()
         while True:
             time.sleep(20)
+            now = ours()
+            changed = [f for f in now if now[f] != seen.get(f)]
+            if changed:
+                import py_compile
+                try:
+                    for f in changed:
+                        py_compile.compile(f, doraise=True)
+                except py_compile.PyCompileError as e:
+                    print('  (changed code does not compile; still running the old: %s)' % e.msg.strip()[:200])
+                    seen = now
+                else:
+                    print('  code changed (%s); restarting on it' % ', '.join(os.path.basename(f) for f in changed))
+                    sys.stdout.flush()
+                    os.execv(sys.executable, [sys.executable] + sys.argv)
             try:
                 write()
             except Exception as e:

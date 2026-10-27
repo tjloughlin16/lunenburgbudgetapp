@@ -240,6 +240,26 @@ def week_reset(now=None):
     return r
 
 
+def even_pace(reset, now):
+    """THE PACE, exactly as TJ's status line prints it (~/.claude/statusline-usage.sh): the share
+    of the 7 days ending at the reset already gone, a whole percent, rounded half up. TJ, 27
+    October 2026: *"we need those numbers to be EXACtLY the same"* -- the card and the run's
+    notices quote this, never a second definition."""
+    secs = int(now) - (int(reset) - WEEK_S)
+    return max(0, min(100, (secs * 100 + WEEK_S // 2) // WEEK_S))
+
+
+def pace_terms(u7, goal, reset, now):
+    """The run's target said in the status line's own terms: `pace` is the status line's
+    figure, `of_pace` is how much of it the week has used, and `mark` is the share of pace
+    the run holds at -- its `goal` until the last day, then climbing to 100. The dashboard
+    card says it in points under pace (pace minus weekly) beside the points the run needs."""
+    pace = even_pace(reset, now)
+    frac = min(1.0, max(0.0, 1.0 - (reset - now) / WEEK_S))
+    mark = 100.0 * week_line(goal, reset, now) / (100.0 * frac) if frac else goal
+    return {'pace': pace, 'of_pace': (100.0 * u7 / pace) if pace else None, 'mark': mark}
+
+
 def week_line(goal, reset, now):
     """Where the weekly bar SHOULD be now: `goal` x the fraction of the week elapsed, then,
     over the final day, a straight climb from wherever that left it to 100% at the reset --

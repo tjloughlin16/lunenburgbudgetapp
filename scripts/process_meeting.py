@@ -897,9 +897,11 @@ class Notifier:
         line = self.G.week_line(plan.week_goal, wr, now) if (wr and plan.week_goal) else None
         why = ''
         if last and line is not None:
-            gap = last['u7'] - line
-            side = 'ahead of' if gap > self.G.BAND else 'behind' if gap < -self.G.BAND else 'on'
-            why = 'Week at %g%%, %s its %.0f%% pace line' % (last['u7'], side, line)
+            # In points under the status line's pace, as the dashboard card says it -- TJ, 27
+            # October 2026: "the diff (63 - 58) is how i think about it".
+            pace = self.G.even_pace(wr, now)
+            why = 'Week at %g%%, pace %d%%: %.1f points under, the run needs %.1f' % (
+                last['u7'], pace, pace - last['u7'], pace - line)
         if mode == 'starting' and self.mode not in (None, 'starting'):
             self.send('Paced minutes: starting', '%s -- starting meetings to use the spare room.' % why)
             self.last_t = now
