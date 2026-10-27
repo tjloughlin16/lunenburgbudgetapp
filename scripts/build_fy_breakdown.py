@@ -39,6 +39,11 @@ import fy_breakdown as FB  # noqa: E402
 
 ID = 'fy2026-breakdown'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % ID)
+# Every row behind every line, one file a year, fetched when a line is opened (TJ, 27 October
+# 2026: "show all the journal entry rows for the line in 'expenses' tab ... what the out of
+# district tuition spend was spent on, line by line, and what source paid it").
+LINES_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown')
+SCHOOL = 'School budget'
 Y0, Y1 = 2025, 2026
 D0 = Decimal(0)
 PRIVATE = '0100-3-300-9300-51-1-06-2-535019'
@@ -660,6 +665,125 @@ def page(m):
         draft=dict(title='Surplus in four parts', home='fy2026-closeout'))
 
 
+def line_key(r):
+    """The key a line's rows are filed under: its account, or for a same-kind-of-work row its
+    category and payer."""
+    return r['account'] or 'kind|%s|%s' % (r['category'], next(iter(r['payers']))[1])
+
+
+def money(v):
+    return ('-$%s' if v < 0 else '$%s') % format(abs(v).quantize(Decimal('0.01')), ',.2f')
+
+
+KIND = {'API': 'Invoice', 'APM': 'Invoice', 'PRJ': 'Payroll', 'PRH': 'Payroll',
+        'GEN': 'Journal entry', 'GRV': 'Journal entry', 'CRP': 'Receipt'}
+ORDERS = ('POE', 'POL', 'POM', 'SOY', 'GEL')
+
+
+def expense_rows(rows, paid_by, recharge=None, carried=frozenset()):
+    """One fund's postings on one line, as a reader would list them: payments and journal
+    entries one by one; a purchase order's postings netted into one row -- what it still owed at
+    year end -- and left out where it nets to nothing; a re-charge entry as one row naming the
+    fund on the other side. `recharge`: journal -> (verb, funds)."""
+    out, orders = [], defaultdict(list)
+    for r in rows:
+        if r['source'] in ORDERS:
+            orders[r['doc_no']].append(r)
+            continue
+        if recharge and r['journal'] in recharge:
+            continue
+        kind = KIND[r['source']]
+        if FB.is_prepaid(r):
+            kind = 'Invoice, next year’s tuition paid early'
+        out.append(dict(d=r['effective_date'], k=kind, p=r['vendor'].strip(),
+                        m=r['description'].strip(), n=r['doc_no'].strip(), f=paid_by, v=r['amt']))
+    for doc, rs in orders.items():
+        v = sum((r['amt'] for r in rs), D0)
+        if v == 0:
+            continue
+        last = max(rs, key=lambda r: r['effective_date'])
+        out.append(dict(d=last['effective_date'],
+                        k='Order carried from last year, still owed' if doc in carried
+                        else 'Order, still owed at year end',
+                        p=last['vendor'].strip(), m=last['description'].strip(), n=doc, f=paid_by, v=v))
+    for j, (verb, funds, v, d, memo) in (recharge or {}).items():
+        out.append(dict(d=d, k='%s %s' % (verb, funds), p='', m=memo, n=j, f=paid_by, v=v))
+    return out
+
+
+def line_files(m):
+    """{fy: {key: [rows]}}, each line's rows summing to what its sums say: the school budget's
+    to what it spent, the other funds' to what they paid toward it."""
+    A = J.accounts()
+    by_line = defaultdict(list)
+    for r in J.lines():
+        a = A[r['account']]
+        if (J.is_expense(a) and J.in_surplus_scope(a) and r['source'] not in ('BUC', 'BUA', 'YEC')):
+            by_line[(r['fy'], r['account'])].append(r)
+    out = defaultdict(dict)
+    for r in m['rows']:
+        fy, key = r['fy'], line_key(r)
+        rows = []
+        if r['account']:
+            mine = by_line.get((fy, r['account']), [])
+            recharge = {}
+            for mv in r['fund_moves']:
+                funds = ', '.join(sorted(p for p, v in mv['payers'].items() if round(v)))
+                verb = 'Re-charged to' if mv['amount'] < 0 else 'Re-charged from'
+                recharge[mv['journal']] = (verb, funds, mv['amount'], mv['date'], mv['memo'])
+            carried = {x['doc_no'] for x in mine if x['source'] == 'SOY'}
+            rows = expense_rows(mine, SCHOOL, recharge, carried)
+            if sum((x['v'] for x in rows), D0) != r['gf_spent']:
+                fail('FY%d %s: its rows do not sum to what the school budget spent' % (fy, key))
+            if r['fund_moves'] and not recharge:
+                fail('FY%d %s: a re-charge with no entry' % (fy, key))
+            # a re-charge to another fund is that fund's money too: listed under it as well
+            for mv in r['fund_moves']:
+                if mv['amount'] < 0:
+                    for py, v in mv['payers'].items():
+                        rows.append(dict(d=mv['date'], k='Re-charged from the school budget', p='',
+                                         m=mv['memo'], n=mv['journal'], f=py, v=v))
+            placed = m['placed_rows'].get((fy, r['account']), [])
+            for py in sorted({FB.payer(A[x['account']]) for x in placed}):
+                rows += expense_rows([x for x in placed if FB.payer(A[x['account']]) == py], py)
+            for (rule, py, h), v in r['how'].items():
+                if rule == 'payee' and v < 0 and h.startswith('less bills'):
+                    rows.append(dict(d='', k='Re-charged back to the school budget', p='', m='',
+                                     n='', f=py, v=v))
+        else:
+            py = next(iter(r['payers']))[1]
+            rows = expense_rows(m['placed_rows'].get((fy, r['category'], py), []), py)
+        other = sum((x['v'] for x in rows if x['f'] != SCHOOL), D0)
+        if other != r['other_funds']:
+            fail('FY%d %s: the other funds’ rows %s do not sum to what they paid, %s'
+                 % (fy, key, other, r['other_funds']))
+        if rows:
+            out[fy][key] = rows
+    return out
+
+
+def line_texts(m):
+    """The files, compact: a fund and a kind are indexed, each row [date, kind, payee, memo,
+    reference, fund, amount as text, amount]."""
+    files = {}
+    for fy, lines in sorted(line_files(m).items()):
+        funds = sorted({x['f'] for rs in lines.values() for x in rs}, key=lambda f: (f != SCHOOL, f))
+        kinds = sorted({x['k'] for rs in lines.values() for x in rs})
+        fi, ki = {f: i for i, f in enumerate(funds)}, {k: i for i, k in enumerate(kinds)}
+        body = {key: [[x['d'], ki[x['k']], x['p'], x['m'], x['n'], fi[x['f']], money(x['v']),
+                       round(fl(x['v']), 2)]
+                      for x in sorted(rs, key=lambda x: (x['d'] or '9', -abs(x['v'])))]
+                for key, rs in sorted(lines.items())}
+        files[os.path.join(LINES_DIR, 'lines-%d.json' % fy)] = json.dumps(
+            dict(fy=C.fy(fy), funds=funds, kinds=kinds, lines=body), ensure_ascii=False,
+            sort_keys=True, separators=(',', ':')) + '\n'
+    return files
+
+
+def fail(msg):
+    raise SystemExit('build_fy_breakdown: ' + msg)
+
+
 def render(m=None):
     p = page(m or FB.model())
     p['not_established'] = [
@@ -679,18 +803,23 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
-    text = render()
+    m = FB.model()
+    outs = {OUT: render(m), **line_texts(m)}
     if a.check:
-        if not os.path.exists(OUT) or open(OUT, encoding='utf-8').read() != text:
-            print('STALE %s' % os.path.relpath(OUT, ROOT), file=sys.stderr)
+        stale = [os.path.relpath(p, ROOT) for p, text in outs.items()
+                 if not os.path.exists(p) or open(p, encoding='utf-8').read() != text]
+        if stale:
+            print('STALE %s' % ', '.join(stale), file=sys.stderr)
             return 1
         print('fy breakdown: current')
         return 0
-    tmp = OUT + '.tmp'
-    with open(tmp, 'w', encoding='utf-8', newline='\n') as fh:
-        fh.write(text)
-    os.replace(tmp, OUT)
-    print('wrote %s' % os.path.relpath(OUT, ROOT))
+    os.makedirs(LINES_DIR, exist_ok=True)
+    for p, text in outs.items():
+        tmp = p + '.tmp'
+        with open(tmp, 'w', encoding='utf-8', newline='\n') as fh:
+            fh.write(text)
+        os.replace(tmp, p)
+        print('wrote %s' % os.path.relpath(p, ROOT))
     return 0
 
 
