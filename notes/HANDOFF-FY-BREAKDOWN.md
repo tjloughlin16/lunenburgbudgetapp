@@ -1,5 +1,72 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
+## START HERE -- state at the end of the 27 October 2026 session
+
+TJ wants to keep thinking about this page in a fresh session. Nothing is half-done; everything below
+is committed (latest page commits 69294bb2e, 5ddc37962) and DEPLOYED, but still a DRAFT: the address
+works, it is on no shelf, not in topics.json, not in the sitemap. Load the `building-a-page` skill,
+then read this section. The older sections below are history -- several of their sentences are
+superseded (the alluvial, pool, timeline and four-part table are gone; facts DO switch with the year).
+
+**Address:** /school-all-funds/fy-breakdown (`?fy=FY2025` picks the year; old /fy2026-closeout/
+fy2026-breakdown maps here via `TOPIC_MERGED`). Title "FY breakdown". Companion, registered and
+public: /fy2026-closeout/fy2026-circuit-breaker ("Circuit breaker and surplus").
+
+**The page, top to bottom (blocks, in `build_fy_breakdown.py` `page()`):**
+1. `fy-year-picker` -- one global year for the page (`fy-year.ts`: `?fy=` + window event
+   `fy-breakdown-year`). Big year + "1 July X to 30 June Y", pops on change, a compact copy pins
+   under the header once scrolled past (IntersectionObserver; CSS sticky could not work in a block).
+2. `fy-year-weeks` -- every week of the year across every line, bars by fund/kind, re-charges off
+   and back split, top entries per week on hover. Click to pin; clear by background click, Clear, Esc.
+3. `fy-line-table` -- THE table TJ likes. Wide breakout, Category column, head and tail (15 + 15)
+   with a gap row, chips per cell with counts ("3 journal entries", "2 funds"). Two sums per line:
+   - Budget - Spent before re-charges + Re-charged to other funds - Re-charged from other funds = Left
+   - Spent by school budget + Paid by other funds, re-charged later + Paid by other funds, from the start = Total
+   Column headers carry plain-English hover definitions saying which side of the sum they sit on.
+   Clicking a row opens a POPUP (`LineView`), tabs: Summary / Transfers and re-charges / Expenses
+   (every journal row, who paid, filters by fund, payee, memo) / Analysis (weekly bars, payee bars
+   showing their memos, memo bars showing their payees; clicking a bar filters Expenses).
+   Line rows load lazily from /data/fy-breakdown/lines-<year>.json (~1 MB each).
+4. `fy-year-facts` -- facts and conclusions per year, switching with the picker.
+
+**Vocabulary settled with TJ -- keep it:** "re-charged", never "moved" (a re-charge sends the BILL
+to another fund after the school budget paid; no money goes INTO that fund). "Journal entries" and
+"payments", never "sources". "Paid by other funds, re-charged later" = general fund paid first, the
+other fund then put the same amount back.
+
+**The model (`scripts/fy_breakdown.py`), the parts that took the longest to get right:**
+- Scope 0100 / dept 300; owed footing (spent = payments + owed, memory `spent-means-payments-plus-owed`).
+- Rule a (re-charges) is measured on the SCHOOL side, each account NETTED WITHIN EACH JOURNAL ENTRY
+  before classifying off/on -- one entry debiting and crediting Health Insurance had produced a fake
+  "moved back".
+- A move back nets against the fund's direct (payee-rule) placement on the same line (`backs`), or
+  Total double-counts (8 FY2025 lines did).
+- Whatever other-fund money cannot be placed goes to unmatched, why "moved between funds by journal entry".
+- `verify_fy_breakdown.py` recomputes it by its own route; both are in `check_generated.py`.
+  27 Oct: "1066 lines in 4 years, every part recomputed and tied to the period-13 report".
+
+**Findings TJ reacted to (re-run before quoting -- rule 2):**
+- Private tuition and collaborative tuition are large counter-acting numbers in the same category.
+- Collaborative tuition: the vote counted on circuit breaker reimbursement it did not receive until a
+  single 29 June 2026 charge -- the whole circuit breaker page grew out of this.
+- A Town-side journal entry of $303,499 landed on Unemployment on 12 June 2026 ("move to correct
+  acct") and was reclassed to Health Insurance on 30 June; health premiums arrive by monthly journal
+  entries from the Town's books, outside the school's journal. Not chased further.
+
+**Open threads, none promised -- TJ's call which to pick up:**
+- What the page is FOR when it is released: it is a general analysis of any year, so where does it
+  live, and what is its finding? The current finding is year-neutral ("left $32,022 in FY2023 and
+  $482,118 in FY2026; pick a year").
+- Payload weight: fy-breakdown.json is ~2 MB (the per-entry `jes` data); moving it into the per-year
+  line files would cut first load.
+- The wide table has no cue that it scrolls sideways on narrow screens.
+- The $303,499 Town-side entry (above).
+- The hover-chip and modal code is all in `fy-line-table.tsx` (large); split it if it grows again.
+
+**Checks before shipping anything here:** `python3 scripts/build_fy_breakdown.py --check`,
+`python3 scripts/verify_fy_breakdown.py`, `bash scripts/check_phone_width.sh school-all-funds/fy-breakdown`.
+Deploy only when TJ asks (`bash scripts/deploy_site.sh`; the upload can drop with EPIPE -- retry).
+
 ## RENAMED: FY breakdown, /school-all-funds/fy-breakdown (27 October 2026). Still hidden
 
 TJ: "lets call this FY breakdown, unrelated to 2026 ... it shouldnt go in fy2026 closeout. this
