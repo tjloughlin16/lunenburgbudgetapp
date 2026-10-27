@@ -397,12 +397,12 @@ def year_weeks(m, T):
                           back=T.usd(sum(rb.values(), D0)) if rb else ''))
     return dict(years=years, payers=[dict(id=p, label=l) for p, l in PAYERS],
                 kinds=[dict(id=k, label=l) for k, l in KINDS],
-                text=dict(by_fund='By who paid', by_kind='By kind', recharge='Re-charged off the '
+                text=dict(by_fund='By who paid', by_kind='By kind', clear='Clear', recharge='Re-charged off the '
                           'school budget', back='Re-charged back onto it',
                           spent='spent or owed, every line', recharged='re-charged off the school '
                           'budget', back_total='re-charged back onto it',
                           biggest='Largest entries that week',
-                          pick='Hover or tap a week for its largest entries.',
+                          pick='Hover or tap a week for its largest entries; tap again, or press Escape, to clear.',
                           note='Every row of every school line and what other funds paid toward '
                                'them, summed Monday to Sunday: payroll runs, invoices, orders '
                                'still owed at year end and journal entries. Grey below the line '

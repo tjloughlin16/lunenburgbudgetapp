@@ -6,14 +6,14 @@
  *  (payroll runs every other week would otherwise hide every other spike); bills re-charged off
  *  the school budget below the line. Hover or tap a week for its largest entries.
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import type { CustomProps } from './index'
 
 type Top = { line: string; what: string; payee: string; fund: string; text: string }
 type Week = { w: string; label: string; f: [string, number][]; k: [string, number][]; rc: number; rb: number; t: string; t_rc: string; t_rb: string; top: Top[] }
 type Year = { fy: string; a0: string; a1: string; weeks: Week[]; total: string; recharged: string; back: string }
 type Data = { years: Year[]; payers: { id: string; label: string }[]; kinds: { id: string; label: string }[]
-  text: Record<'by_fund' | 'by_kind' | 'recharge' | 'back' | 'spent' | 'recharged' | 'back_total' | 'biggest' | 'pick' | 'note', string> }
+  text: Record<'by_fund' | 'by_kind' | 'clear' | 'recharge' | 'back' | 'spent' | 'recharged' | 'back_total' | 'biggest' | 'pick' | 'note', string> }
 
 const COLOURS = ['var(--thread-1)', 'var(--thread-2)', 'var(--thread-5)', 'var(--thread-4)', 'var(--thread-3)', 'var(--thread-6, var(--text-secondary))']
 const RC = 'var(--text-muted)', RB = 'var(--grid)'
@@ -52,6 +52,14 @@ export default function FyYearWeeks({ data, alt }: CustomProps) {
   for (let m = new Date(y.a0 + 'T00:00:00Z'); m <= new Date(y.a1 + 'T00:00:00Z'); m.setUTCMonth(m.getUTCMonth() + 1, 1)) {
     months.push(new Date(Date.UTC(m.getUTCFullYear(), m.getUTCMonth(), 1)).toISOString().slice(0, 10))
   }
+  // Hover previews a week; a click or tap pins it. A pin clears by clicking the bar again, the
+  // chart's empty space, the Clear button or Escape (TJ: "i dont know how to unhover the
+  // timeline"). Touch never hovers: a tap is a pin, so nothing sticks without a way out.
+  useEffect(() => {
+    const key = (e: KeyboardEvent) => { if (e.key === 'Escape') { setHeld(null); setHot(null) } }
+    window.addEventListener('keydown', key)
+    return () => window.removeEventListener('keydown', key)
+  }, [])
   const tip = hot ?? held
   const wk = tip === null ? null : y.weeks[tip]
   return (
@@ -72,7 +80,8 @@ export default function FyYearWeeks({ data, alt }: CustomProps) {
         {y.weeks.some(w => w.rb) ? <span className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: RB, outline: `0.5px solid ${RC}` }} />{d.text.back}</span> : null}
       </div>
       <div className="relative mt-1">
-        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block" role="img" aria-label={alt} onMouseLeave={() => setHot(null)}>
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block" role="img" aria-label={alt} onPointerLeave={() => setHot(null)}>
+          <rect x={0} y={0} width={W} height={H} fill="transparent" onClick={() => { setHeld(null); setHot(null) }} />
           <line x1={PAD} x2={W - PAD} y1={zero} y2={zero} stroke="var(--grid)" />
           {months.filter(m => m >= y.a0).map(m => (
             <text key={m} x={x(m) + 2} y={H - 4} fontSize={12} fill="var(--text-muted)">{MONTH[Number(m.slice(5, 7)) - 1]}</text>))}
@@ -81,7 +90,8 @@ export default function FyYearWeeks({ data, alt }: CustomProps) {
             const segs = groups.map(g => parts(w).find(([id]) => id === g.id)).filter(Boolean) as [string, number][]
             return (
               <g key={w.w} opacity={tip === null || tip === i ? 1 : 0.35} style={{ cursor: 'pointer' }}
-                onMouseEnter={() => setHot(i)} onClick={() => setHeld(h => (h === i ? null : i))}>
+                onPointerEnter={e => { if (e.pointerType === 'mouse') setHot(i) }}
+                onClick={() => { setHot(null); setHeld(h => (h === i ? null : i)) }}>
                 <rect x={x(w.w)} y={PAD} width={bw} height={H - AX - 2 * PAD} fill="transparent" />
                 {segs.map(([id, v]) => {
                   const h = Math.abs(v) * k
@@ -98,9 +108,11 @@ export default function FyYearWeeks({ data, alt }: CustomProps) {
       <div className="mt-2 text-[13px] min-h-[3rem]">
         {wk ? (
           <div className="max-w-3xl">
-            <p><span className="font-semibold">{wk.label}</span> · <span className="tabular-nums font-semibold">{wk.t}</span>
+            <p className="flex justify-between gap-3 items-baseline"><span><span className="font-semibold">{wk.label}</span> · <span className="tabular-nums font-semibold">{wk.t}</span>
               {wk.t_rc ? <span style={secondary}> · {d.text.recharge} <span className="tabular-nums">{wk.t_rc}</span></span> : null}
-              {wk.t_rb ? <span style={secondary}> · {d.text.back} <span className="tabular-nums">{wk.t_rb}</span></span> : null}</p>
+              {wk.t_rb ? <span style={secondary}> · {d.text.back} <span className="tabular-nums">{wk.t_rb}</span></span> : null}</span>
+              {held !== null ? <button type="button" className="text-[12.5px] px-2 py-0.5 rounded border shrink-0" style={{ borderColor: 'var(--grid)' }}
+                onClick={() => { setHeld(null); setHot(null) }}>{d.text.clear} ✕</button> : null}</p>
             <p className="text-[12px] mt-1" style={muted}>{d.text.biggest}</p>
             <ul className="mt-0.5">
               {wk.top.map((e, j) => (

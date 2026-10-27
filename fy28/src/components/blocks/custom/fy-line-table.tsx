@@ -350,7 +350,8 @@ function Weeks({ L, file, t }: { L: ExLine; file: ExFile; t: T }) {
       <p className="font-semibold mb-1.5">{t.an_week}</p>
       <Legend used={used} file={file} recharge={t.an_recharge} />
       <div className="relative">
-        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block" onMouseLeave={() => setHot(null)}>
+        <svg viewBox={`0 0 ${W} ${H}`} className="w-full h-auto block" onPointerLeave={() => setHot(null)}>
+          <rect x={0} y={0} width={W} height={H} fill="transparent" onClick={() => setHot(null)} />
           <rect x={fyStart} y={PAD} width={W - PAD - fyStart} height={H - AX - 2 * PAD} fill="var(--surface-2)" opacity={0.5} />
           <line x1={PAD} x2={W - PAD} y1={zero} y2={zero} stroke="var(--grid)" />
           {months.filter(m => m >= L.a0).map(m => (
@@ -359,7 +360,8 @@ function Weeks({ L, file, t }: { L: ExLine; file: ExFile; t: T }) {
             let top = zero, bot = zero
             return (
               <g key={wk[0]} opacity={hot === null || hot === i ? 1 : 0.35} style={{ cursor: 'pointer' }}
-                onMouseEnter={() => setHot(i)} onClick={() => setHot(h => (h === i ? null : i))}>
+                onPointerEnter={e => { if (e.pointerType === 'mouse') setHot(i) }}
+                onClick={() => setHot(h => (h === i ? null : i))}>
                 <rect x={x(wk[0])} y={PAD} width={bw} height={H - AX - 2 * PAD} fill="transparent" />
                 {wk[2].map(([f, v]) => {
                   const h = Math.abs(v) * k
