@@ -3,7 +3,7 @@
 cost, what transfers moved, what other funds paid, and what belonged to another year. One topic
 page on the FY2026 closeout shelf, from `fy_breakdown.py`.
 
-    python3 scripts/build_fy_breakdown.py           # write fy28/public/data/topics/fy2026-breakdown.json
+    python3 scripts/build_fy_breakdown.py           # write fy28/public/data/topics/fy-breakdown.json
     python3 scripts/build_fy_breakdown.py --check   # fail if it would change
     python3 scripts/verify_fy_breakdown.py          # every figure, by a second route
 
@@ -39,7 +39,7 @@ import journal as J  # noqa: E402
 import build_school_surplus as S  # noqa: E402
 import fy_breakdown as FB  # noqa: E402
 
-ID = 'fy2026-breakdown'
+ID = 'fy-breakdown'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % ID)
 # Every row behind every line, one file a year, fetched when a line is opened (TJ, 27 October
 # 2026: "show all the journal entry rows for the line in 'expenses' tab ... what the out of
@@ -504,6 +504,12 @@ def page(m):
             note='School general fund, department 300. Every line’s Left in the table above, '
                  'summed.', note_allow=('300',)),
         blocks=[
+            TB.custom('fy-year-picker', 'Fiscal year', dict(years=[C.fy(y) for y in J.YEARS],
+                                                            label='Fiscal year'), place='top',
+                      figures=[C.fy(y) for y in J.YEARS],
+                      alt='The fiscal year every chart on this page shows',
+                      so=('Every chart below shows the year picked here, and a line opened from '
+                          'the table opens in that year.', None, ())),
             TB.custom('fy-year-weeks', 'Every week of the year', weeks, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('record', 'Every posting on the school lines, by week'),
@@ -545,7 +551,7 @@ def page(m):
         # we wont release it"). Built as a draft: outside the shelf registry, so it is on no
         # shelf, in no topics.json, not in the sitemap and not prerendered. The address still
         # opens for anybody given it.
-        draft=dict(title='Surplus in four parts', home='fy2026-closeout'))
+        draft=dict(title='FY breakdown', home='school-all-funds'))
 
 
 def line_key(r):

@@ -1,12 +1,13 @@
-/** EVERY WEEK OF THE YEAR (fy2026-breakdown): the line popup's weekly chart, for every school line
+/** EVERY WEEK OF THE YEAR (fy-breakdown): the line popup's weekly chart, for every school line
  *  at once. TJ, 27 October 2026: "the SAME chart, but across the whole year, across every spend,
  *  for every line? Maybe it will show the recharges and big weeks of the year".
  *
- *  One fiscal year at a time, Monday-to-Sunday bars, stacked by who paid or by kind of posting
+ *  The page's fiscal year (fy-year.ts), Monday-to-Sunday bars, stacked by who paid or by kind of posting
  *  (payroll runs every other week would otherwise hide every other spike); bills re-charged off
  *  the school budget below the line. Hover or tap a week for its largest entries.
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
-import { useEffect, useState } from 'react'
+import { useEffect, useMemo, useState } from 'react'
+import { useFyYear } from './fy-year'
 import type { CustomProps } from './index'
 
 type Top = { line: string; what: string; payee: string; fund: string; text: string }
@@ -30,7 +31,9 @@ function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; chi
 
 export default function FyYearWeeks({ data, alt }: CustomProps) {
   const d = data as Data
-  const [yi, setYi] = useState(d.years.length - 1)
+  const fys = useMemo(() => d.years.map(v => v.fy), [d])
+  const [fy] = useFyYear(fys)                     // the page's year (fy-year.ts)
+  const yi = Math.max(0, fys.indexOf(fy))
   const [kind, setKind] = useState(false)
   const [hot, setHot] = useState<number | null>(null)
   const [held, setHeld] = useState<number | null>(null)
@@ -60,13 +63,12 @@ export default function FyYearWeeks({ data, alt }: CustomProps) {
     window.addEventListener('keydown', key)
     return () => window.removeEventListener('keydown', key)
   }, [])
+  useEffect(() => { setHeld(null); setHot(null) }, [fy])
   const tip = hot ?? held
   const wk = tip === null ? null : y.weeks[tip]
   return (
     <figure aria-label={alt}>
       <div className="flex flex-wrap gap-1.5 items-center">
-        {d.years.map((v, i) => <Chip key={v.fy} on={i === yi} onClick={() => { setYi(i); setHeld(null) }}>{v.fy}</Chip>)}
-        <span className="mx-1" />
         <Chip on={!kind} onClick={() => setKind(false)}>{d.text.by_fund}</Chip>
         <Chip on={kind} onClick={() => setKind(true)}>{d.text.by_kind}</Chip>
       </div>

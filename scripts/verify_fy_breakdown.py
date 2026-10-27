@@ -38,7 +38,7 @@ YEARS = (2023, 2024, 2025, 2026)
 OPEN = 2026
 PRIVATE = '0100-3-300-9300-51-1-06-2-535019'
 COLLAB = '0100-3-300-9400-51-1-06-2-535023'
-PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy2026-breakdown.json')
+PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy-breakdown.json')
 bad = []
 
 

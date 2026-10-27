@@ -1048,6 +1048,9 @@ export function topicIdFromPath(pathname: string): string | null {
  *  fetched by the new id and Topic.tsx moves the address bar to its path, so a shared link
  *  to the old page lands on what replaced it. */
 export const TOPIC_MERGED: Record<string, string> = {
+  // TJ, 27 October 2026: "lets call this FY breakdown, unrelated to 2026" -- off the FY2026
+  // closeout shelf onto the whole school budget's, at a year-neutral address.
+  'fy2026-breakdown': 'fy-breakdown',
   // TJ, 26 October 2026: "maybe we merge and only have one called 'circuit breaker'" --
   // the five steps from a placement to the bill, published for one day under SERF.
   'surprises-and-state-aid': 'circuit-breaker',

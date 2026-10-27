@@ -1,5 +1,13 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
+## RENAMED: FY breakdown, /school-all-funds/fy-breakdown (27 October 2026). Still hidden
+
+TJ: "lets call this FY breakdown, unrelated to 2026 ... it shouldnt go in fy2026 closeout. this
+is a general analysis of the FY". Draft home is school-all-funds; the old id maps there
+(routes.ts TOPIC_MERGED). One year picker for the page (`fy-year-picker`, `fy-year.ts`,
+`?fy=FY2025`), pinned under the header once scrolled past; no chart has its own. The finding,
+facts and conclusions are still written about FY2026 -- the next thing to make year-neutral.
+
 ## REBUILT AROUND THE LINE TABLE, 27 October 2026. Still hidden (draft), not deployed
 
 TJ cut everything below the table ("those charts dont help"): the alluvial, the pool, the moves

@@ -1,4 +1,4 @@
-/** EVERY LINE, BUDGET AND COST (fy2026-breakdown): the school general fund's lines, one fiscal
+/** EVERY LINE, BUDGET AND COST (fy-breakdown): the school general fund's lines, one fiscal
  *  year at a time, as TWO SUMS read left to right --
  *
  *      the school budget:  Voted + Transfers + Carried = Budget
@@ -15,10 +15,11 @@
  *  Click a line: both sums written out; every transfer in or out, with the lines on the other
  *  side -- exact where one side is a single line, flagged where the books do not pair
  *  many-to-many; and every other fund that paid toward it, with how it was matched.
- *  `?line=<account>` in the address opens that line (latest year).
+ *  `?line=<account>` in the address opens that line, in the page's year (`?fy=`).
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
+import { useFyYear } from './fy-year'
 import type { CustomProps } from './index'
 
 type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' | 'left' | 'spent' | 'direct' | 'total'
@@ -452,14 +453,16 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
 
 export default function FyLineTable({ data, alt }: CustomProps) {
   const d = data as Data
-  const [yi, setYi] = useState(d.years.length - 1)
+  const fys = useMemo(() => d.years.map(v => v.fy), [d])
+  const [fy] = useFyYear(fys)                     // the page's year (fy-year.ts)
+  const yi = Math.max(0, fys.indexOf(fy))
   const [cat, setCat] = useState<string>('')
   const [sort, setSort] = useState<{ k: string; dir: 1 | -1 }>({ k: 'left', dir: -1 })
   const [all, setAll] = useState(false)
   // `?line=<account>` opens that line, so one line can be linked to.
   const [open, setOpen] = useState<string | null>(() => {
     const a = typeof window === 'undefined' ? null : new URLSearchParams(window.location.search).get('line')
-    const r = a ? d.years[d.years.length - 1].rows.find(x => x.account === a) : undefined
+    const r = a ? d.years[yi].rows.find(x => x.account === a) : undefined
     return r ? `${r.account}|${r.name}|${r.cat}` : null
   })
   const y = d.years[yi]
@@ -499,7 +502,6 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       <p className="text-[14px] leading-snug max-w-3xl" style={secondary}>{d.text.read}</p>
       <p className="text-[12.5px] leading-snug max-w-3xl mt-1" style={muted}>{d.text.other_funds}</p>
       <div className="flex flex-wrap gap-1.5 items-center mt-3">
-        {d.years.map((v, i) => <Chip key={v.fy} on={i === yi} onClick={() => { setYi(i); setOpen(null) }}>{v.fy}</Chip>)}
         <select value={cat} onChange={e => { setCat(e.target.value); setOpen(null) }}
           className="ml-1 px-2 py-1 rounded border text-[12.5px]" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)', color: 'var(--text-primary)' }}>
           <option value="">{d.text.all_cats}</option>
