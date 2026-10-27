@@ -225,6 +225,8 @@ def model():
     placed = defaultdict(lambda: defaultdict(Decimal))    # (fy, account) -> rule -> amount
     by_payer = defaultdict(Decimal)                       # (fy, account, rule, payer)
     func_cat = defaultdict(Decimal)                       # (fy, category, payer)
+    how = defaultdict(lambda: defaultdict(Decimal))       # (fy, account) -> (rule, payer, how)
+    func_codes = defaultdict(set)
     unmatched = defaultdict(Decimal)                      # (fy, category or '', payer, why)
     done = set()
 
@@ -256,6 +258,8 @@ def model():
             for acct, amt in share(o['amt'], w).items():
                 placed[(fy, acct)]['moved'] += amt
                 by_payer[(fy, acct, 'moved', payer(A[o['account']]))] += amt
+                how[(fy, acct)][('moved', payer(A[o['account']]), '%s · %s' % (
+                    o['effective_date'], o['description'].strip() or 'no memo'))] += amt
             done.add(id(o))
         by = defaultdict(Decimal)
         for o in ot:
@@ -282,6 +286,7 @@ def model():
         acct = max(same or g, key=lambda a: (g[a], a))
         placed[(r['fy'], acct)]['payee'] += r['amt']
         by_payer[(r['fy'], acct, 'payee', payer(A[r['account']]))] += r['amt']
+        how[(r['fy'], acct)][('payee', payer(A[r['account']]), p)] += r['amt']
         done.add(id(r))
 
     # rule c: same function code, on a category; the rest unmatched
@@ -293,10 +298,33 @@ def model():
             unmatched[(r['fy'], payer(a), 'a capital article')] += r['amt']
         elif J.function_class(f) == 'line':
             func_cat[(r['fy'], cat_of(r['account']), payer(a))] += r['amt']
+            func_codes[(r['fy'], cat_of(r['account']), payer(a))].add(f)
         else:
             why = {'heading': 'booked to a heading', 'none': 'booked to no function',
                    'other': 'a function the general fund has no line for'}[J.function_class(f)]
             unmatched[(r['fy'], payer(a), why)] += r['amt']
+
+    # ---------------------------------------------------- transfers, line by line
+    # For each line, every transfer journal it was in: the amount it gave or got, and the lines
+    # on the other side. Where either side is ONE line the pairing is exact; where many gave and
+    # many got in one entry, the books do not say which giver funded which receiver, and
+    # `paired` is False.
+    line_transfers = defaultdict(list)
+    for t in transfers():
+        for mine, other in ((t['gave'], t['got']), (t['got'], t['gave'])):
+            for x in mine:
+                cps = [dict(account=o['account'], description=o['description'],
+                            amount=o['amount']) for o in other]
+                if t['outside'] and (x['amount'] > 0) == (t['outside'] > 0):
+                    cps.append(dict(account=None, description='outside the school budget',
+                                    amount=-t['outside']))
+                exact = len(cps) == 1 or len(mine) == 1
+                if len(cps) == 1:
+                    # one line on the other side: this line's own amount is what passed between them
+                    cps[0]['amount'] = -x['amount']
+                line_transfers[(t['fy'], x['account'])].append(dict(
+                    date=t['date'], memo=t['description'], amount=x['amount'],
+                    paired=exact, others=cps))
 
     # ---------------------------------------------------- the identity, line by line
     # A payee's line may have no postings of its own in the year; it still carries what was
@@ -314,6 +342,9 @@ def model():
         if sum(t.values()) != left:
             fail('FY%d %s: the four parts do not sum to what was left' % (fy, acct))
         rows.append(dict(fy=fy, account=acct, category=cat_of(acct),
+                         gf_spent=p['gf_spent'],
+                         other_year_spent=p['prepaid'] + p['carried_paid'] + p['carried_enc'],
+                         how=dict(how[(fy, acct)]), moves_in=line_transfers.get((fy, acct), []),
                          description=A[acct]['account_description'].strip(),
                          org=A[acct]['org_name'].strip(), voted=p['voted'],
                          gf_cost=cost_gf, all_funds_cost=cost_gf + o, left=left,
@@ -327,6 +358,9 @@ def model():
     for (fy, cat, py), v in sorted(func_cat.items()):
         rows.append(dict(fy=fy, account=None, category=cat, description=FUNC_ROW, org='',
                          voted=D0, gf_cost=D0, all_funds_cost=v, left=D0, printed_left=D0,
+                         gf_spent=D0, other_year_spent=D0, moves_in=[],
+                         how={('function', py, 'function code %s' % '/'.join(
+                             sorted(func_codes[(fy, cat, py)]))): v},
                          prepaid=D0, carried_budget=D0, carried_unpaid=D0,
                          by_rule={'function': v}, payers={('function', py): v},
                          voted_above_cost=-v, transfers=D0, other_funds=v, another_year=D0))

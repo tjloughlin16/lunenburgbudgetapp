@@ -173,56 +173,98 @@ def line_name(r):
     return d if not org or org.lower() == d.lower() else '%s · %s' % (d, org)
 
 
-def payer_rows(T, payers):
-    out = defaultdict(Decimal)
-    for (rule, py), v in payers.items():
-        out[(py, rule)] += v
-    return [dict(payer=T.lit(py), rule=FB.RULE_LABEL[rule], text=T.usd(v))
-            for (py, rule), v in sorted(out.items(), key=lambda kv: -abs(kv[1])) if round(v) != 0]
+def how_rows(T, how):
+    """Who else paid toward a line, and HOW each was matched: the payee, the journal entry, or
+    the function code."""
+    lab = {'payee': 'paid the same payee', 'moved': 'journal entry moved it',
+           'function': 'same kind of work'}
+    out = []
+    for (rule, py, h), v in sorted(how.items(), key=lambda kv: -abs(kv[1])):
+        if round(v) == 0:
+            continue
+        if rule == 'moved':
+            d, memo = h.split(' · ', 1)
+            h = '%s, “%s”' % (long_date(d), memo)
+        out.append(dict(payer=T.lit(py), rule=lab[rule], how=T.lit(h), text=T.usd(v)))
+    return out
+
+
+def move_rows(T, moves, names):
+    out = []
+    for mv in sorted(moves, key=lambda x: x['date']):
+        others = sorted(mv['others'], key=lambda o: -abs(o['amount']))
+        out.append(dict(
+            dir='in' if mv['amount'] > 0 else 'out', date=T.lit(long_date(mv['date'])),
+            memo=T.lit(mv['memo'] or 'no memo'), text=T.usd(abs(mv['amount'])),
+            paired=mv['paired'],
+            others=[dict(name=T.lit(names.get(o['account'], o['description'].title())
+                                    if o['account'] else o['description']),
+                         text=T.usd(abs(o['amount']))) for o in others]))
+    return out
 
 
 def lines_data(m, T):
-    """Every line, every year, for the sortable table and each line's own waterfall."""
+    """Every line, every year: the plain sum (voted + moved + carried = budget; budget - spent =
+    left), and behind each line its transfers and the other funds that paid toward it."""
+    names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
     years = []
     for fy in J.YEARS:
         rows = []
         for r in m['rows']:
             if r['fy'] != fy:
                 continue
-            if r['account'] is None and round(r['other_funds']) == 0:
-                continue
-            nums = dict(voted=r['voted'], cost=r['all_funds_cost'], gf=r['gf_cost'],
-                        above=r['voted_above_cost'], transfers=r['transfers'],
-                        other=r['other_funds'], another=r['another_year'], left=r['left'])
+            budget = r['voted'] + r['transfers'] + r['carried_budget']
+            if r['account'] and sum((mv['amount'] for mv in r['moves_in']), D0) != r['transfers']:
+                raise SystemExit('build_fy_breakdown: FY%d %s: its listed transfers do not sum to '
+                                 'its moved in or out' % (fy, r['account']))
+            if r['account'] and budget - r['gf_spent'] != r['left']:
+                raise SystemExit('build_fy_breakdown: FY%d %s does not read budget - spent = left'
+                                 % (fy, r['account']))
+            nums = dict(voted=r['voted'], transfers=r['transfers'], carried=r['carried_budget'],
+                        budget=budget, spent=r['gf_spent'], left=r['left'], other=r['other_funds'])
             if all(round(v) == 0 for v in nums.values()):
                 continue        # an account with nothing voted, spent or placed on it
-            rows.append(dict(
-                name=T.lit(line_name(r)) if r['account'] else 'Same function, other funds',
+            row = dict(
+                name=T.lit(line_name(r)) if r['account'] else 'Same kind of work, other funds',
                 account=T.lit(r['account']) if r['account'] else '',
-                cat=S.CAT_LABEL[r['category']], group=GROUP_OF[r['category']],
+                cat=S.CAT_LABEL[r['category']], line=bool(r['account']),
                 n={k: round(fl(v), 2) for k, v in nums.items()},
                 t={k: T.usd(v) for k, v in nums.items()},
-                payers=payer_rows(T, r['payers'])))
+                payers=how_rows(T, r['how']),
+                moves=move_rows(T, r['moves_in'], names))
+            if round(r['other_year_spent']):
+                row['spent_note'] = 'of which %s paid for another year' % T.usd(r['other_year_spent'])
+            rows.append(row)
         un = sorted(m['years'][fy]['unmatched'].items(), key=lambda kv: -kv[1])
         years.append(dict(fy=T.fy(fy), rows=rows,
                           unmatched=[dict(payer=T.lit(py), why=why, text=T.usd(v))
                                      for (py, why), v in un if round(v) != 0],
                           unmatched_total=T.usd(sum((v for _, v in un), D0))))
     return dict(years=years, cats=sorted({S.CAT_LABEL[c[0]] for c in S.CATEGORIES}),
-                columns=[dict(id='left', label='Left'), dict(id='voted', label='Voted'),
-                         dict(id='cost', label='Cost, all funds'),
-                         dict(id='above', label='Voted above cost'),
-                         dict(id='transfers', label='Transfers'),
-                         dict(id='other', label='Other funds'),
-                         dict(id='another', label='Another year')],
-                steps=dict(voted='Voted', cost='Less what it cost, all funds',
-                           other='Plus what other funds paid', transfers='Plus transfers, net',
-                           another='Plus another year’s money', left='Left'),
-                text=dict(all_cats='Every category', show='Show every line', fewer='Show fewer',
-                          payers='Who else paid, and how it was matched',
-                          none='No other fund matched to this line.',
-                          unmatched='Other funds’ spending not matched to any line',
-                          lines='lines'))
+                columns=[dict(id='voted', label='Voted', op=''),
+                         dict(id='transfers', label='Moved in or out', op='+'),
+                         dict(id='carried', label='Carried from last year', op='+'),
+                         dict(id='budget', label='Budget', op='='),
+                         dict(id='spent', label='Spent', op='−'),
+                         dict(id='left', label='Left', op='='),
+                         dict(id='other', label='Other funds also paid', op='')],
+                text=dict(
+                    read='Each row is one sum, left to right: what was voted, plus budget moved in '
+                         'or out, plus orders carried from last year, makes the budget. Take away '
+                         'what the school budget spent, and what remains is left. The last column '
+                         'is outside that sum: what grants and other funds paid toward the same '
+                         'line. Click a line to see where its money came from and went.',
+                    all_cats='Every category', show='Show every line', fewer='Show fewer',
+                    sum='The sum', moves='Budget moved in or out', nomoves='No budget moved.',
+                    shared='Many lines gave and many got in this one entry, and the books do not '
+                           'say which line’s money went to which. The other side, all together:',
+                    into='from', outof='to', in_='In', out='Out',
+                    payers='Other funds that also paid toward this line',
+                    none='No other fund paid toward this line.',
+                    unmatched='Other funds’ spending not matched to any line',
+                    lines='Line', footing='Spent counts orders still owed at year end, so for '
+                    'FY2025 and earlier Left can differ from the Town’s printed report by '
+                    'those orders.'))
 
 
 def pool_data(m, T):
@@ -485,14 +527,14 @@ def page(m):
                 'apart, never counted as voted above cost. Capital articles are matched only by '
                 'a journal entry.'],
                 place='body', tone='define'),
-            TB.custom('fy-line-table', 'Every line, in four parts', lines, place='end',
+            TB.custom('fy-line-table', 'Every line, budget to left', lines, place='end',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
                       alt='Table of every school general fund line, one fiscal year at a time, '
                           'sortable by what was left and by each of the four parts; each line '
                           'opens on its own waterfall and the other funds that paid toward it',
-                      so=('Open any line to see why it ended where it did, and which fund '
-                          'paid what toward it, with the rule that matched each payment.',
+                      so=('Every line’s left is its budget less what it spent; the detail shows '
+                          'which lines its budget came from or went to, and who else paid.',
                           None, ())),
         ],
         tables=[table(m)],
