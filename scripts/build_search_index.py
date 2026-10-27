@@ -549,22 +549,24 @@ def _fy_span(fys):
 
 
 def person_rows(entry):
-    from build_people import slug_for
+    from build_people import person_slug, clean_name, _identity
+    titles = {slug: title for slug, title in _identity().values()}
     rows = json.load(open(entry['file'], encoding='utf-8'))['rows']
     people = {}
     for r in rows:
         name = ' '.join((r.get('person') or '').split())
-        if r.get('status') != 'filled' or not name or not slug_for(name):
+        key = person_slug(name) if r.get('status') == 'filled' and name else ''
+        if not key:
             continue
         # THE PERSON PAGE'S IDENTITY, so a result and the page it opens agree on who a
-        # name is. Keyed on the lowercased name, `Scott Barry-Grove` and `Scott Barry
-        # Grove` were two rows with ONE doc_key.
-        people.setdefault(slug_for(name), {'names': [], 'rows': []})
-        people[slug_for(name)]['names'].append(name)
-        people[slug_for(name)]['rows'].append(r)
+        # name is: `A dam Burney` and `Adam Burney, Land Use Directo` are one row, and an
+        # entry that names nobody (`PRIMARY OFFICE`) is no row.
+        people.setdefault(key, {'names': [], 'rows': []})
+        people[key]['names'].append(clean_name(name))
+        people[key]['rows'].append(r)
     out = []
     for key, p in sorted(people.items()):
-        name = max(set(p['names']), key=p['names'].count)
+        name = titles.get(key) or max(set(p['names']), key=p['names'].count)
         held = {}
         for r in p['rows']:
             where = r['unit'] + (' — ' + r['subunit'] if r.get('subunit') else '')
@@ -602,7 +604,7 @@ CORPORA = ('post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'tr
 # fingerprint, so the index re-reads the file and sync_search_d1.py re-sends it -- both
 # decide on that field alone, and a reader change with unchanged bytes reached neither.
 # person 2: keyed on the person page's slug and linking it (26 October 2026).
-READER_VERSION = {'person': '2'}
+READER_VERSION = {'person': '3'}
 
 READERS = {
     'job': job_rows,

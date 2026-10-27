@@ -70,17 +70,118 @@ RECENT_MENTIONS = 15
 
 
 def slug_for(name):
-    """THE identity. build_search_index.py imports this, so a search result and the page
-    it opens can never disagree about who a name is."""
+    """A printed name as an address. `personSlug` in Person.tsx is the same function, and
+    the org chart links every name by it; person_slug() below says which page that address
+    belongs to, and an address that is not a page's own is written as an alias of it."""
     return re.sub(r'[^a-z0-9]+', '-', ' '.join(name.split()).lower()).strip('-')
 
 
 def _tokens(name):
-    t = [x.strip('.,').lower() for x in name.split()]
+    t = [x.strip('.,').lower() for x in clean_name(name).split()]
     return [x for x in t if x and x not in SUFFIX]
 
 
 SUFFIX = {'jr', 'sr', 'ii', 'iii', 'iv'}
+
+# A NAME AS THE ROSTER PRINTS IT IS NOT ALWAYS A NAME. TJ, 27 October 2026, on a live page
+# for "A dam Burney". The rosters are read off scans and typeset lists, and five shapes came
+# through as names: an OCR split (`A dam Burney`), surname first (`Stevenson, Warren`), a
+# post glued on (`Myleen Mallari- Treasurer/Collector`, `Adam Burney, Land Use Directo`), a
+# footnote mark (`Jeff Dionne*`), and entries that are no person at all (`PRIMARY OFFICE`,
+# `KP Law, P.C`). Each became its own page, splitting one person's record across several.
+#
+# clean_name() undoes the last four; the OCR split is caught by grouping on the LETTERS
+# alone, so `A dam Burney`, `Adam Burney` and `ADAM BURNEY` are one person printed three
+# ways. The printed forms stay on the page as its spellings, and every old address answers
+# as an alias of the page it now belongs to.
+POST_WORDS = {'treasurer', 'collector', 'moderator', 'superintendent', 'director', 'directo',
+              'clerk', 'clerl', 'resident', 'dpwr', 'town', 'school', 'assistant', 'tax'}
+NOT_A_PERSON = re.compile(r'&|\b(office|committee|heroes|llc|ll|p\.?c|law|tern)\b', re.I)
+SURNAME_PARTICLES = {'st', 'st.', 'de', 'la', 'le', 'mac', 'mc', 'van', 'von', 'di', 'da', 'du'}
+
+
+def _is_post(part):
+    words = re.findall(r'[A-Za-z]+', part.lower())
+    return (not words or len(part.strip()) <= 1 or bool(re.search(r'\d|/', part))
+            or any(w in POST_WORDS for w in words))
+
+
+def clean_name(name):
+    """The person's name out of what the roster printed, or '' if it names no person."""
+    n = ' '.join((name or '').split())
+    n = re.sub(r'\s*\*+$', '', n)                         # a footnote mark
+    n = re.sub(r'\s*\([^)]*$', '', n)                     # a bracket the scan cut off
+    n = re.sub(r'\s*\([^)]*\)$', '', n)                   # a trailing note: grades, employer
+    if not n or NOT_A_PERSON.search(n):
+        return ''
+    # Several people in one cell, each with a term year (`Kevin Boussom-2023 C. William
+    # Lakso-2023 Megan Lordan`): no one of them is the row's person. The chart's reading
+    # of that page is what needs fixing, not this name.
+    if re.search(r'\d{4}\W*\s+[A-Za-z]', n):
+        return ''
+    # A space the typesetting lost: `KimberlyPoli-Monsin`, `Jillian_Lundstrom`. Only where
+    # the cell is otherwise one word, so `LoriAnn Tessier` keeps her spelling.
+    n = n.replace('_', ' ')
+    if len(n.split()) == 1:
+        n = re.sub(r'^([A-Z][a-z]{3,})([A-Z][a-z])', r'\1 \2', n)
+    if ',' in n:
+        left, right = (x.strip(' .') if i else x.strip() for i, x in enumerate(n.split(',', 1)))
+        if right.strip('.').lower() in SUFFIX:
+            n = '%s %s' % (left, right)
+        elif _is_post(right) or (len(left.split()) > 1
+                                 and left.split()[0].lower() not in SURNAME_PARTICLES):
+            n = left                                      # a post or a descriptor after the name
+        else:
+            n = '%s %s' % (right, left)                   # surname first
+    # A post glued on with a hyphen, either side; a hyphenated surname is kept.
+    parts = [p for p in re.split(r'\s*-\s*', n)]
+    while len(parts) > 1 and _is_post(parts[-1]):
+        parts.pop()
+    while len(parts) > 1 and _is_post(parts[0]):
+        parts.pop(0)
+    n = '-'.join(parts).strip(' -,')
+    return n if len(n.split()) >= 2 and not re.search(r'\d', n) else ''
+
+
+def _letters(name):
+    return re.sub(r'[^a-z]', '', name.lower())
+
+
+def _best_spelling(counts):
+    """The form a page is titled with: not shouted, every word capitalised, then the most
+    printed, then the one keeping an internal capital (`DiPerri` over `Diperri`)."""
+    return max(counts, key=lambda n: (not n.isupper(),
+                                      all(w[:1].isupper() for w in n.split()),
+                                      counts[n], sum(c.isupper() for c in n), n))
+
+
+_IDENTITY = None
+
+
+def _identity():
+    """{letters: (slug, title)} over every name the org charts print."""
+    global _IDENTITY
+    if _IDENTITY is None:
+        spell = collections.defaultdict(collections.Counter)
+        for r in json.load(open(ORG, encoding='utf-8'))['rows']:
+            c = clean_name(r.get('person') or '') if r.get('status') == 'filled' else ''
+            if c:
+                spell[_letters(c)][c] += 1
+        _IDENTITY = {}
+        for k, counts in spell.items():
+            title = _best_spelling(counts)
+            _IDENTITY[k] = (slug_for(title), title)
+    return _IDENTITY
+
+
+def person_slug(name):
+    """THE identity of a printed name: its page's slug, or '' if it names no person.
+    build_search_index.py imports this, so a result and the page it opens agree."""
+    c = clean_name(name)
+    if not c:
+        return ''
+    hit = _identity().get(_letters(c))
+    return hit[0] if hit else slug_for(c)
 TITLES = {'mr', 'mrs', 'ms', 'miss', 'dr', 'chair', 'chairman', 'chairwoman', 'chairperson',
           'vice', 'member', 'members', 'clerk', 'selectman', 'selectwoman', 'commissioner',
           'trustee', 'secretary', 'treasurer', 'atty', 'attorney', 'rep', 'councilor'}
@@ -100,7 +201,7 @@ def load_people(org):
         name = ' '.join((r.get('person') or '').split())
         if r.get('status') != 'filled' or not name:
             continue
-        s = slug_for(name)
+        s = person_slug(name)
         if not s:
             continue
         people[s]['names'][name] += 1
@@ -117,7 +218,7 @@ def seats_by_slug():
     out = collections.defaultdict(list)
     for r in read_csv('town-personnel.csv'):
         if (r.get('person') or '').strip():
-            out[slug_for(r['person'])].append({
+            out[person_slug(r['person'])].append({
                 'fy': r['fy'], 'post': r['post'], 'kind': r['kind'], 'section': r['section'],
                 'term_expires': r['term_expires'], 'note': r.get('note') or '', 'page': r['page']})
     return out
@@ -127,7 +228,7 @@ def chairs_by_slug():
     out = collections.defaultdict(list)
     for r in read_csv('board-chairs.csv'):
         if (r.get('person') or '').strip():
-            out[slug_for(r['person'])].append({'fy': r['fy'], 'body': r['department'],
+            out[person_slug(r['person'])].append({'fy': r['fy'], 'body': r['department'],
                                                'title': r['title'], 'page': r['page']})
     return out
 
@@ -138,7 +239,7 @@ def contact_by_slug():
     out = {}
     for r in read_csv('school-staff-directory.csv'):
         if r.get('email') and r.get('person'):
-            out.setdefault(slug_for(r['person']), {
+            out.setdefault(person_slug(r['person']), {
                 'email': r['email'], 'title': r['title'], 'school': r['school'],
                 'fetched': r['fetched'], 'publisher': 'Lunenburg Public Schools staff directory',
                 'source_url': r['source']})
@@ -251,8 +352,9 @@ def mentions(people):
     db = sqlite3.connect('file:%s?mode=ro' % FTS, uri=True)
     total = db.execute("SELECT COUNT(*) FROM doc WHERE corpus='document'").fetchone()[0]
     out = {}
+    titles = {slug: title for slug, title in _identity().values()}
     for s, p in people.items():
-        name = p['names'].most_common(1)[0][0]
+        name = titles.get(s) or p['names'].most_common(1)[0][0]
         toks = [t for t in re.split(r'[^A-Za-z0-9]+', name) if t]
         if len(toks) < 2:
             continue
@@ -317,8 +419,9 @@ def build():
                 by_key[('*', t[-1], t[0])].add(s)
 
     index, pages = [], {}
+    titles = {slug: title for slug, title in _identity().values()}
     for s, p in sorted(people.items()):
-        name = p['names'].most_common(1)[0][0]
+        name = titles.get(s) or p['names'].most_common(1)[0][0]
         rows = sorted(p['rows'], key=lambda r: (r['fy'], r['unit']))
         kinds = sorted({r['unit_kind'] for r in rows})
         latest = max(rows, key=lambda r: (r['fy'], -int(r.get('tier') or 0)))
@@ -350,8 +453,10 @@ def build():
                 'rosters_inside': len(inside),
                 'before_archive': first == published[0],
                 'on_latest': last == published[-1],
+                # The name as THAT chart prints it, which is what the chart marks.
                 'chart_url': '/org-charts?unit=%s&fy=%s&person=%s' % (
-                    _q(u), last, _q(name))})
+                    _q(u), last, _q(next(r['person'] for r in rows
+                                         if r['unit'] == u and r['fy'] == last)))})
         service.sort(key=lambda x: x['last'], reverse=True)
 
         # Where they sit: the latest body's chart that year, inside their building if a school.
@@ -359,7 +464,7 @@ def build():
                  if (latest.get('subunit') or '') == (r.get('subunit') or '')]
         if len(scope) > 30:
             shown = [r for r in scope if r['tier'] in ('0', '1', '2')
-                     or slug_for(r['person'] or '') == s]
+                     or person_slug(r['person'] or '') == s]
         else:
             shown = scope
         sit = {
@@ -367,11 +472,11 @@ def build():
             'total': len(scope),
             'rows': [{'person': ' '.join((r['person'] or '').split()), 'role': r['role'],
                       'tier': r['tier'], 'status': r['status'],
-                      'slug': slug_for(r['person']) if r['person'] and r['status'] == 'filled' else '',
-                      'me': slug_for(r['person'] or '') == s}
+                      'slug': person_slug(r['person']) if r['person'] and r['status'] == 'filled' else '',
+                      'me': person_slug(r['person'] or '') == s}
                      for r in sorted(shown, key=lambda r: (r['tier'], r['role'] or '', r['person'] or ''))],
             'others_by_tier': dict(collections.Counter(r['tier'] for r in scope if r not in shown)),
-            'chart_url': '/org-charts?unit=%s&fy=%s&person=%s' % (_q(latest['unit']), latest['fy'], _q(name)),
+            'chart_url': '/org-charts?unit=%s&fy=%s&person=%s' % (_q(latest['unit']), latest['fy'], _q(latest['person'])),
         }
 
         v = sorted(votes.get(s, []), key=lambda x: x['date'], reverse=True)
@@ -449,14 +554,31 @@ def build():
             sv['printed_as_other'] = dict(sorted(other.items()))
         page['possibly_same'] = [{'slug': a, 'name': names[a]} for a in page['possibly_same']]
 
+    # EVERY ADDRESS THE CHART LINKS, answered. A printed form that is not its page's own
+    # slug (`a-dam-burney`, `stevenson-warren`) is an alias of the page; one that names no
+    # person (`primary-office`) says so rather than 404.
+    aliases = {}
+    for r in org['rows']:
+        raw = ' '.join((r.get('person') or '').split())
+        if r.get('status') != 'filled' or not raw or not slug_for(raw) or slug_for(raw) in pages:
+            continue
+        to = person_slug(raw)
+        aliases[slug_for(raw)] = ({'generated_by': 'scripts/build_people.py', 'printed': raw,
+                                   'alias_of': to, 'name': names[to]} if to in names else
+                                  {'generated_by': 'scripts/build_people.py', 'printed': raw,
+                                   'not_a_person': True,
+                                   'chart_url': '/org-charts?unit=%s&fy=%s' % (_q(r['unit']), r['fy'])})
+
     idx = {'generated_by': 'scripts/build_people.py',
            'about': 'One page per name the org charts hold. `indexed` is false for employees: '
                     'their pages carry noindex and are not in the sitemap.',
            'counts': {'people': len(index), 'indexed': sum(x['indexed'] for x in index),
                       'votes_named': vstats['named'], 'votes_attributed': vstats['attributed'],
-                      'documents_searched': corpus},
+                      'documents_searched': corpus,
+                      'aliases': sum(1 for a in aliases.values() if 'alias_of' in a),
+                      'not_a_person': sum(1 for a in aliases.values() if 'not_a_person' in a)},
            'people': index}
-    return idx, pages, vstats
+    return idx, pages, aliases, vstats
 
 
 def _q(s):
@@ -472,10 +594,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     args = ap.parse_args()
-    idx, pages, vstats = build()
+    idx, pages, aliases, vstats = build()
 
     want = {OUT_INDEX: dump(idx)}
     want.update({os.path.join(OUT_DIR, s + '.json'): dump(p) for s, p in pages.items()})
+    want.update({os.path.join(OUT_DIR, s + '.json'): dump(a) for s, a in aliases.items()})
     have = set(glob.glob(os.path.join(OUT_DIR, '*.json')))
     if args.check:
         stale = [k for k, v in want.items()
@@ -500,6 +623,8 @@ def main():
     c = idx['counts']
     print('build_people: %d pages, %d indexed (public office), %d noindex (employees).'
           % (c['people'], c['indexed'], c['people'] - c['indexed']))
+    print('  %d printed forms answer as an alias of their page; %d entries name no person.'
+          % (c['aliases'], c['not_a_person']))
     print('  votes: %d movers and seconders named in the minutes, %d attributed to one member '
           '(%.0f%%)' % (vstats['named'], vstats['attributed'],
                         100.0 * vstats['attributed'] / max(1, vstats['named'])))

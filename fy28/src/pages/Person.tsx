@@ -30,6 +30,8 @@ type Vote = {
   date: string; board: string; board_slug: string; role: 'moved' | 'seconded'
   as_printed: string; motion: string; outcome: string; procedural: boolean; url: string | null
 }
+/** A printed form that is not a page's own address. */
+type Alias = { printed: string; alias_of?: string; name?: string; not_a_person?: boolean; chart_url?: string }
 type SitRow = { person: string; role: string; tier: string; status: string; slug: string; me: boolean }
 type Page = {
   slug: string; name: string; spellings: string[]; indexed: boolean; kinds: string[]
@@ -57,7 +59,9 @@ export function personSlugFromPath(pathname: string): string | null {
   return m ? m[1] : null
 }
 
-/** The same identity build_people.py's slug_for() computes. Keep the two identical. */
+/** The address of a name as printed: build_people.py's slug_for(). Keep the two identical.
+ *  A printed form that is not its page's own address (`A dam Burney`, `Stevenson, Warren`)
+ *  has an alias file there, which this page follows. */
 export const personSlug = (name: string) =>
   name.split(/\s+/).filter(Boolean).join(' ').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/^-+|-+$/g, '')
 
@@ -123,16 +127,35 @@ function Strip({ s }: { s: Service }) {
 }
 
 export function Person() {
-  const slug = personSlugFromPath(window.location.pathname)
+  const [slug, setSlug] = useState(() => personSlugFromPath(window.location.pathname))
   const [p, setP] = useState<Page | null>(null)
+  const [stray, setStray] = useState<Alias | null>(null)
   const [err, setErr] = useState<string | null>(null)
   useEffect(() => {
     if (!slug) return
     fetch(`/data/people/${slug}.json`)
       .then(r => { if (!r.ok) throw new Error(`no page for /people/${slug}`); return r.json() })
-      .then(setP).catch(e => setErr(String(e.message || e)))
+      .then((j: Page & Alias) => {
+        // Another printing of somebody's name: go to their page, and say so there.
+        if (j.alias_of) {
+          window.history.replaceState(null, '', `/people/${j.alias_of}`)
+          setStray(j)
+          setSlug(j.alias_of)
+        } else if (j.not_a_person) setStray(j)
+        else setP(j)
+      })
+      .catch(e => setErr(String(e.message || e)))
   }, [slug])
-  useNoIndex(Boolean(p && !p.indexed))
+  useNoIndex(Boolean((p && !p.indexed) || stray?.not_a_person))
+
+  if (stray?.not_a_person) {
+    return (
+      <ReportShell title="Not a person" noPrint>
+        <Body>The org chart prints &ldquo;{stray.printed}&rdquo; where a name goes. It names no person, or holds
+          several, so it has no page. <a className="underline" style={link} href={stray.chart_url}>The chart it is printed in</a>.</Body>
+      </ReportShell>
+    )
+  }
 
   if (err || !slug) {
     return (
