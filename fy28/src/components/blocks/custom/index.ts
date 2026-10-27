@@ -12,6 +12,10 @@ import type { ComponentType } from 'react'
 import FyLineTable from './fy-line-table'
 import FyYearFacts from './fy-year-facts'
 import FyYearPicker from './fy-year-picker'
+import FyOverlap from './fy-overlap'
+import FyYearLine from './fy-year-line'
+import FyPlan from './fy-plan'
+import FySourceTable from './fy-source-table'
 import FyYearWeeks from './fy-year-weeks'
 import GrantAwardsStack from './grant-awards-stack'
 import MeetingTrail from './meeting-trail'
@@ -24,6 +28,10 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-line-table': FyLineTable,
   'fy-year-facts': FyYearFacts,
   'fy-year-picker': FyYearPicker,
+  'fy-overlap': FyOverlap,
+  'fy-year-line': FyYearLine,
+  'fy-plan': FyPlan,
+  'fy-source-table': FySourceTable,
   'fy-year-weeks': FyYearWeeks,
   'grant-awards-stack': GrantAwardsStack,
   'meeting-trail': MeetingTrail,

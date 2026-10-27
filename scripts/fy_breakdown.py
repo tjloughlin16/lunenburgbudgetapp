@@ -235,6 +235,13 @@ def model():
     func_codes = defaultdict(set)
     unmatched = defaultdict(Decimal)                      # (fy, category or '', payer, why)
     done = set()
+    # THE SAME MONEY, BY SOURCE (TJ, 27 October 2026: "what the non-general fund paid for ... per
+    # source"). Every placement below is also kept by FUND, so one fund's spending can be read
+    # whole: (fy, fund) -> (kind, where) -> amount, kind one of later (re-charged off a school
+    # line onto it), back (re-charged from it back onto one), between (the rest of a journal
+    # entry), payee, function, capital, none. And each fund's postings, with where each went.
+    src = defaultdict(lambda: defaultdict(Decimal))
+    src_rows = defaultdict(list)                          # (fy, fund) -> [(row, kind, where)]
 
     # rule a: moved by journal entry
     jr = defaultdict(list)
@@ -299,6 +306,23 @@ def model():
         for py, v in net.items():
             if v - put[py] != 0:
                 unmatched[(fy, py, 'moved between funds by journal entry')] += v - put[py]
+        # by fund: the same entry, split the same way across the funds that gained or lost
+        fgain = {f: v for f, v in fnet.items() if v > 0} or {f: abs(v) for f, v in fnet.items()}
+        fput = defaultdict(Decimal)
+        for x in sc:
+            if x['amt'] < 0:
+                for f, amt in share(-x['amt'], fgain).items():
+                    src[(fy, f)][('later', x['account'])] += amt
+                    fput[f] += amt
+            elif x['amt'] > 0 and flose:
+                for f, amt in share(x['amt'], flose).items():
+                    src[(fy, f)][('back', x['account'])] -= amt
+                    fput[f] -= amt
+        for f, v in fnet.items():
+            if v - fput[f] != 0:
+                src[(fy, f)][('between', None)] += v - fput[f]
+        for o in ot:
+            src_rows[(fy, o['fund'])].append((o, 'journal', j))
         moves.append(dict(fy=fy, journal=j, date=rs[0]['effective_date'], off=off, onto=onto,
                           by_payer=dict(net), categories=sorted({cat_of(r['account']) for r in sc}),
                           description=sorted({r['description'].strip() for r in rs})[0]))
@@ -329,6 +353,8 @@ def model():
         if r['source'] in PAYMENT:
             payments[(r['fy'], acct)] += 1
         placed_rows[(r['fy'], acct)].append(r)
+        src[(r['fy'], r['fund'])][('payee', acct)] += r['amt']
+        src_rows[(r['fy'], r['fund'])].append((r, 'payee', acct))
         done.add(id(r))
 
     # A cost a fund paid directly toward a line, then moved back onto that line by journal entry
@@ -345,6 +371,8 @@ def model():
         placed[(fy, acct)]['payee'] -= n
         by_payer[(fy, acct, 'payee', py)] -= n
         how[(fy, acct)][('payee', py, 'less bills re-charged back to the school budget')] -= n
+        src[(fy, f)][('payee', acct)] -= n          # by fund: the move back nets the payment
+        src[(fy, f)][('back', acct)] += n
         unmatched[(fy, py, 'moved between funds by journal entry')] += n
         if unmatched[(fy, py, 'moved between funds by journal entry')] == 0:
             del unmatched[(fy, py, 'moved between funds by journal entry')]
@@ -356,7 +384,11 @@ def model():
         a, f = A[r['account']], J.function(r['account'])
         if is_capital(a):
             unmatched[(r['fy'], payer(a), 'a capital article')] += r['amt']
+            src[(r['fy'], r['fund'])][('capital', None)] += r['amt']
+            src_rows[(r['fy'], r['fund'])].append((r, 'capital', None))
         elif J.function_class(f) == 'line':
+            src[(r['fy'], r['fund'])][('function', cat_of(r['account']))] += r['amt']
+            src_rows[(r['fy'], r['fund'])].append((r, 'function', cat_of(r['account'])))
             func_cat[(r['fy'], cat_of(r['account']), payer(a))] += r['amt']
             if r['source'] in PAYMENT:
                 payments[(r['fy'], cat_of(r['account']), payer(a))] += 1
@@ -366,6 +398,8 @@ def model():
             why = {'heading': 'booked to a heading', 'none': 'booked to no function',
                    'other': 'a function the general fund has no line for'}[J.function_class(f)]
             unmatched[(r['fy'], payer(a), why)] += r['amt']
+            src[(r['fy'], r['fund'])][('none', why)] += r['amt']
+            src_rows[(r['fy'], r['fund'])].append((r, 'none', why))
 
     # ---------------------------------------------------- transfers, line by line
     # For each line, every transfer journal it was in: the amount it gave or got, and the lines
@@ -457,7 +491,16 @@ def model():
                          prepaid=sum((r['prepaid'] for r in rs), D0),
                          carried_unpaid=sum((r['carried_unpaid'] for r in rs), D0),
                          carried_budget=sum((r['carried_budget'] for r in rs), D0))
-    return dict(rows=rows, years=years, moves=moves, placed_rows=dict(placed_rows), prepaid=prepaid, transfers=transfers(),
+    # every fund's spending, read whole, is what the placements above put somewhere
+    spent = defaultdict(Decimal)
+    for (fy, f), rs_ in src_rows.items():
+        spent[(fy, f)] = sum((r['amt'] for r, _, _ in rs_), D0)
+    for k in set(spent) | set(src):
+        if sum(src[k].values(), D0) != spent[k]:
+            fail('FY%d fund %s: its postings come to %s; the placements by source to %s'
+                 % (k[0], k[1], spent[k], sum(src[k].values(), D0)))
+    return dict(rows=rows, years=years, moves=moves, src={k: dict(v) for k, v in src.items()},
+                src_rows=dict(src_rows), placed_rows=dict(placed_rows), prepaid=prepaid, transfers=transfers(),
                 tie=tie_special())
 
 

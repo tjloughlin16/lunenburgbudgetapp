@@ -257,6 +257,9 @@ def main(argv=None):
     if not args.no_payload:
         payload_checks(m)
         line_file_checks()
+        plan_checks()
+        source_checks()
+        overlap_checks()
     if bad:
         print('verify_fy_breakdown: %d FAILED' % len(bad))
         for b in bad[:40]:
@@ -299,6 +302,123 @@ def payload_checks(m):
         check(abs(drawn - spend) < 1 and abs(drawn_rc - off) < 1,
               'weekly %s draws %s and %s re-charged; the line files hold %s and %s'
               % (col['fy'], drawn, drawn_rc, spend, off))
+
+
+def plan_checks():
+    """Level 1, the plan against what happened, by routes of its own:
+      - the circuit breaker each book counted on, re-read here by splitting the printed line into
+        tokens, and tied to collaborative tuition's voted figure summed off the raw CSV;
+      - each year's Left against this file's own recomputation;
+      - every circuit breaker dollar (fund 2640, payments plus what was still owed at year end)
+        lands once: on collaborative tuition, on another line, or matched to no line."""
+    p = json.load(open(PAYLOAD, encoding='utf-8'))
+    blk = next((b for b in p['blocks'] if b.get('component') == 'fy-plan'), None)
+    if blk is None:
+        check(False, 'no fy-plan block in the payload')
+        return
+    d = blk['data']
+    acc, rows = raw()
+    mine, _ = recompute()
+    vote = defaultdict(Decimal)
+    for r in rows:
+        # voted, as recompute() reads it: the original budget, and the one FY2025 adjustment
+        # that was the vote itself
+        if r['fund'] == '0100' and r['account'].endswith('-535023') and (
+                r['source'] == 'BUC' or (r['source'] == 'BUA' and r['journal'] == '2025/01/000564'
+                                         and r['y'] == 2025)):
+            vote[r['y']] += r['v']
+    cb = defaultdict(Decimal)
+    for r in rows:
+        if r['fund'] == '2640' and r['object'].startswith('5'):
+            if r['posts_to'] == 'actual':
+                cb[('paid', r['y'])] += r['v']
+            elif r['posts_to'] == 'encumbrance':
+                cb[('open', r['y'])] += r['v']
+                if r['source'] == 'SOY':
+                    cb[('soy', r['y'])] += r['v']
+    tok = lambda s: [Decimal(t.strip('-$()').replace(',', '')) * (-1 if t.startswith(('(', '-')) else 1)
+                     for t in s.replace('$', ' $').split() if re.fullmatch(r'-?\(?\$?[\d,]+(\.\d+)?\)?\$?', t)]
+    for y in d['years']:
+        fy = int(y['fy'][2:])
+        book = os.path.join(ROOT, 'sources', 'district-budget', 'text',
+                            os.path.basename(y['book'])[:-4] + '.txt')
+        text = open(book, encoding='utf-8').read().split('\n')
+        i = int(y['book_line']) - 1
+        check(text[i].startswith('Collaborative Tuitions'), '%s: line %s is not collaborative tuition'
+              % (y['fy'], y['book_line']))
+        nxt = text[i + 1]
+        if nxt.startswith('Circuit Breaker'):
+            gross = [t for t in tok(text[i]) if t > 0]
+            offs = [-t for t in tok(nxt.split(')', 2)[-1]) if t < 0]
+            ok = [o for o in offs for g in gross if abs(g - o - vote[fy]) < Decimal('0.5')]
+            check(y['cb']['plan'] is not None and ok and abs(Decimal(str(y['cb']['plan'])) - ok[0]) < CENT,
+                  '%s: the book counts on %s of circuit breaker; the page says %s'
+                  % (y['fy'], ok, y['cb']['plan']))
+        else:
+            check(y['cb']['plan'] is None, '%s: the book prints no circuit breaker line; the page '
+                  'says it counted on %s' % (y['fy'], y['cb']['plan']))
+        left = sum((mine[k]['voted_above_cost'] + mine[k]['transfers'] + mine[k]['other_funds']
+                    + mine[k]['another_year'] for k in mine if k[0] == fy), D0)
+        check(abs(Decimal(str(y['gf']['left'])) - left) < 1,
+              '%s: Left %s, recomputed %s' % (y['fy'], y['gf']['left'], left))
+        check(abs(Decimal(str(y['gf']['budget'] - y['gf']['spent'] - y['gf']['left']))) < CENT,
+              '%s: budget less spent is not left' % y['fy'])
+        # owed at year end: next year's SOY where the journal has next year, else what is open
+        owed = cb[('soy', fy + 1)] if fy + 1 in YEARS else cb[('open', fy)]
+        o = next(x for x in y['others'] if x['id'] == 'cb')
+        drawn = sum((Decimal(str(v)) for v in (y['cb']['paid'], o['start'], o['later'], o['unmatched'])), D0)
+        check(abs(drawn - cb[('paid', fy)] - owed) < CENT,
+              '%s: circuit breaker drawn %s; fund 2640 paid %s and owed %s'
+              % (y['fy'], drawn, cb[('paid', fy)], owed))
+
+
+def source_checks():
+    """The table of other funds: each fund's total recomputed straight off the CSV -- every
+    expense posting outside the school budget's lines, payments and orders, the year-end closing
+    entries left out (the owed footing) -- and every fund that spent anything is in the table."""
+    p = json.load(open(PAYLOAD, encoding='utf-8'))
+    blk = next((b for b in p['blocks'] if b.get('component') == 'fy-source-table'), None)
+    if blk is None:
+        check(False, 'no fy-source-table block in the payload')
+        return
+    acc, rows = raw()
+    want = defaultdict(Decimal)
+    for r in rows:
+        if (not in_scope(r['account']) and acc[r['account']]['object'].startswith('5')
+                and r['posts_to'] in ('actual', 'encumbrance') and r['source'] != 'YEC'):
+            want[(r['y'], r['fund'])] += r['v']
+    for y in blk['data']['years']:
+        fy = int(y['fy'][2:])
+        got = {r['key']: Decimal(str(r['n']['total'])) for r in y['rows']}
+        for (yy, f), v in want.items():
+            if yy != fy or abs(v) < Decimal('0.5'):
+                continue
+            check(f in got and abs(got[f] - v) < CENT,
+                  '%s fund %s: the table says %s, the CSV gives %s' % (y['fy'], f, got.get(f), v))
+        check(not set(got) - {f for (yy, f) in want if yy == fy},
+              '%s: the table lists funds the CSV has no spending for' % y['fy'])
+
+
+def overlap_checks():
+    """The overlap bands hold exactly the dollars the table of funds holds, year by year; and the
+    money on overlapping lines is the same bills and the same payees -- a function code places on
+    a category, not a line."""
+    p = json.load(open(PAYLOAD, encoding='utf-8'))
+    blk = {b.get('component'): b['data'] for b in p['blocks'] if b.get('component')}
+    if 'fy-overlap' not in blk:
+        check(False, 'no fy-overlap block in the payload')
+        return
+    for oy, sy in zip(blk['fy-overlap']['years'], blk['fy-source-table']['years']):
+        bands = sum((Decimal(str(v)) for v in oy['all']['n'].values()), D0)
+        table = sum((Decimal(str(r['n']['total'])) for r in sy['rows']), D0)
+        check(abs(bands - table) < Decimal('0.05'), '%s: bands %s, table of funds %s' % (oy['fy'], bands, table))
+        n = oy['all']['n']
+        # a bill sent back ends as the school budget's own spending, so it is on no line as
+        # other funds' money: the lines hold exactly the same bills and the same payees
+        check(abs(Decimal(str(oy['lines']['other_v'])) - Decimal(str(n['bills'])) - Decimal(str(n['payee'])))
+              < Decimal('0.05'),
+              '%s: other funds on overlapping lines %s; the same bills and payees %s'
+              % (oy['fy'], oy['lines']['other_v'], n['bills'] + n['payee']))
 
 
 def line_file_checks():
