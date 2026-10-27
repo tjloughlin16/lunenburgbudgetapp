@@ -2,21 +2,21 @@
  "about": "Agenda items matched to threads by each thread’s own patterns. An agenda lists what MAY be discussed; a match says a thread’s words are on the agenda, never what will be decided.",
  "generated_by": "scripts/build_agenda_threads.py",
  "method": "deterministic: threads.csv `match` + `qualify` - `exclude` on each agenda line (by: words), or the meeting is of a board the thread names (by: board). No model.",
- "as_of": "2026-10-26",
+ "as_of": "2026-10-27",
  "window": {
-  "from": "2026-10-12",
-  "to": "2026-11-23"
+  "from": "2026-10-13",
+  "to": "2026-11-24"
  },
  "counts": {
-  "agendas": 41,
+  "agendas": 44,
   "agendas_upcoming": 11,
   "agendas_unreadable": 3,
-  "items": 490,
-  "business_items": 284,
+  "items": 504,
+  "business_items": 292,
   "matched_items": 21,
   "upcoming_business_items": 40,
-  "upcoming_matched_items": 2,
-  "threads_on_an_upcoming_agenda": 3
+  "upcoming_matched_items": 1,
+  "threads_on_an_upcoming_agenda": 1
  },
  "unreadable": [
   {
@@ -3487,7 +3487,7 @@
    "date": "2026-10-26",
    "file_id": "8090",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10262026-8090",
    "agenda_doc": "/docs/meetings/lunenburg-300th-anniversary-committee/2026-10-26-agenda-8090.pdf",
    "items": [
@@ -3577,7 +3577,7 @@
    "date": "2026-10-26",
    "file_id": "8092",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10262026-8092",
    "agenda_doc": "/docs/meetings/lunenburg-municipal-building-design-committee/2026-10-26-agenda-8092.pdf",
    "items": [
@@ -3611,7 +3611,7 @@
    "date": "2026-10-26",
    "file_id": "8098",
    "body_as_printed": "",
-   "upcoming": true,
+   "upcoming": false,
    "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10262026-8098",
    "agenda_doc": "/docs/meetings/school-advisory-councils-committees/2026-10-26-agenda-8098.pdf",
    "items": [],
@@ -3953,6 +3953,143 @@
      "parent": "",
      "n": 10,
      "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Cemetery Commission",
+   "board_slug": "cemetery-commission",
+   "date": "2026-10-28",
+   "file_id": "8100",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10282026-8100",
+   "agenda_doc": "/docs/meetings/cemetery-commission/2026-10-28-agenda-8100.pdf",
+   "items": [
+    {
+     "line": "Pledge of Allegiance.",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Review and Approve Minutes.",
+     "parent": "",
+     "n": 2,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Public Comment.",
+     "parent": "",
+     "n": 3,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "DPW Director & Superintendents reports.",
+     "parent": "",
+     "n": 4,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "North Cemetery Backlot Expansion - Invitation for bids.",
+     "parent": "",
+     "n": 5,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Budget, Expenditures & Invoices Due review.",
+     "parent": "",
+     "n": 6,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Rules versus Bylaws - update plan.",
+     "parent": "",
+     "n": 7,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Ongoing discussion – Grants & Natural Burials.",
+     "parent": "",
+     "n": 8,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Next meeting times – Wednesday, Nov 19th. Dec 17th,",
+     "parent": "",
+     "n": 9,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "Adjourn.",
+     "parent": "",
+     "n": 10,
+     "procedural": true,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Zoning Board of Appeals",
+   "board_slug": "zoning-board-of-appeals",
+   "date": "2026-10-28",
+   "file_id": "8102",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10282026-8102",
+   "agenda_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-28-agenda-8102.pdf",
+   "items": [
+    {
+     "line": "Alfred Gravelle, Chairman Patrick Callahan, Vice Chair David Blatt, Member Anthony Nicastro, Member Karin Menard, Member Donald Gurney, Associate Member Ritter Memorial Building960 Massachusetts AvenueLunenburg, MA 01462P:978-582-4146 F:978-582-4353 Notice of Public Hearing Town of Lunenburg Zoning Board of Appeals Notice is hereby given that the Zoning Board of Appeals will hold a public hearing onOctober 28, 2026 at 7:00pm. at the Lunenburg Town Hall, 2nd Floor, Joseph F.",
+     "parent": "",
+     "n": 1,
+     "procedural": false,
+     "threads": []
+    }
+   ],
+   "threads": []
+  },
+  {
+   "board": "Zoning Board of Appeals",
+   "board_slug": "zoning-board-of-appeals",
+   "date": "2026-10-28",
+   "file_id": "8103",
+   "body_as_printed": "",
+   "upcoming": true,
+   "agenda_url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_10282026-8103",
+   "agenda_doc": "/docs/meetings/zoning-board-of-appeals/2026-10-28-agenda-8103.pdf",
+   "items": [
+    {
+     "line": "P.M.-Town Hall, 2nd Floor October 28, 2026 Call to order:",
+     "parent": "",
+     "n": 1,
+     "procedural": true,
+     "threads": []
+    },
+    {
+     "line": "7:00PM: 440 Howard St., ZBA-26-13, Prendergast, Special Permit for Dimensional Variation relative to Side Setbacks; 250-5.2 E (2)(A), for the addition of an attached",
+     "parent": "",
+     "n": 2,
+     "procedural": false,
+     "threads": []
+    },
+    {
+     "line": "Discussion and vote on the approval of meeting minutes Adjournment",
+     "parent": "",
+     "n": 3,
+     "procedural": false,
      "threads": []
     }
    ],
@@ -4419,7 +4556,7 @@
     "board_slug": "lunenburg-municipal-building-design-committee",
     "date": "2026-10-26",
     "body_as_printed": "",
-    "upcoming": true,
+    "upcoming": false,
     "line": "- Call to Order Approve Minutes Comments from Board and Public",
     "parent": "",
     "by": "board",
@@ -4433,7 +4570,7 @@
     "board_slug": "lunenburg-municipal-building-design-committee",
     "date": "2026-10-26",
     "body_as_printed": "",
-    "upcoming": true,
+    "upcoming": false,
     "line": "- Call to Order Approve Minutes Comments from Board and Public",
     "parent": "",
     "by": "board",

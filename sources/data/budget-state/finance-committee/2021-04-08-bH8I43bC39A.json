@@ -1,0 +1,56 @@
+{
+ "board": "Finance Committee",
+ "board_slug": "finance-committee",
+ "meeting_date": "2021-04-08",
+ "source": {
+  "sha256": "6a8b1b3872c848365a00c1db6f09486a8160c676f3af4772731b58f80aadd0cf",
+  "transcript": "sources/data/youtube-transcripts/finance-committee/2021-04-08-bH8I43bC39A.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": "283 000",
+    "fiscal_year": 2022,
+    "kind": "other",
+    "scope": "school",
+    "statement": "A member said the schools have a salary reserve for next year only, with a 2% raise falling within it.",
+    "status": "announced",
+    "t": 1509,
+    "who": "a member"
+   },
+   {
+    "amount_as_heard": "145 dollars",
+    "fiscal_year": 2021,
+    "kind": "free_cash",
+    "scope": "town",
+    "statement": "Prior year expense article paid from free cash.",
+    "status": "proposed",
+    "t": 384,
+    "who": "the town manager"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "school salary reserve and contract settlements",
+    "condition": "if the reserve is not enough to absorb the agreements in the first year",
+    "fiscal_year": 2022,
+    "prediction": "The school salary reserve may not be enough to absorb all pending collective bargaining agreements, leaving a shortfall.",
+    "scope": "school",
+    "t": 1589,
+    "who": "a member"
+   }
+  ]
+ },
+ "video_id": "bH8I43bC39A",
+ "video_url": "https://www.youtube.com/watch?v=bH8I43bC39A",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-27T12:03:10Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

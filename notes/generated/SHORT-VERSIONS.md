@@ -78,7 +78,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Level service cost](/crisis/level-service-cost) | page | — / 6.9 min | *(none declared)* |
 | [Long-run balance rate](/crisis/long-run-balance-rate) | page | — / 6.8 min | *(none declared)* |
 | [Projected school gap](/crisis/projected-gap) | page | — / 6.8 min | *(none declared)* |
-| [Town departments](/department-budgets) | page | — / 8.8 min | *(none declared)* |
+| [Town departments](/department-budgets) | page | — / 8.7 min | *(none declared)* |
 | [Growth above the cap](/department-budgets/town-budget-growth) | page | — / 7.2 min | *(none declared)* |
 | [Budget by department](/department-budgets/town-budget-shares) | page | — / 6.9 min | *(none declared)* |
 | [Debt service](/department-budgets/town-debt-service) | page | — / 6.7 min | *(none declared)* |
@@ -94,7 +94,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Trash and recycling](/department-budgets/town-solid-waste) | page | — / 6.4 min | *(none declared)* |
 | [Town staff counts](/department-budgets/town-staff-counts) | page | — / 7.2 min | *(none declared)* |
 | [Voted budget total](/department-budgets/town-voted-total) | page | — / 7.5 min | *(none declared)* |
-| [Students and schools](/enrolment) | page | — / 9.3 min | *(none declared)* |
+| [Students and schools](/enrolment) | page | — / 9.0 min | *(none declared)* |
 | [Children schooled elsewhere](/enrolment/children-schooled-elsewhere) | page | — / 7.3 min | *(none declared)* |
 | [Departure scenario](/enrolment/departure-scenario) | page | — / 6.7 min | *(none declared)* |
 | [Enrolment by grade band](/enrolment/enrolment-by-grade-band) | page | — / 6.9 min | *(none declared)* |
@@ -105,9 +105,6 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [High school enrolment](/enrolment/high-school-enrolment) | page | — / 7.6 min | *(none declared)* |
 | [High school spending](/enrolment/high-school-spending) | page | — / 7.1 min | *(none declared)* |
 | [Leaving and arriving](/enrolment/leaving-and-arriving) | page | — / 6.5 min | *(none declared)* |
-| [Monty Tech assessment](/enrolment/monty-tech-assessment) | page | — / 7.4 min | *(none declared)* |
-| [Monty Tech enrolment](/enrolment/monty-tech-enrolment) | page | — / 7.4 min | *(none declared)* |
-| [Monty Tech funding](/enrolment/monty-tech-funding) | page | — / 8.1 min | *(none declared)* |
 | [Nearby district enrolment](/enrolment/nearby-district-enrolment) | page | — / 6.2 min | *(none declared)* |
 | [School choice flows](/enrolment/school-choice-flows) | page | — / 7.2 min | *(none declared)* |
 | [Free cash](/free-cash) | page | — / 7.5 min | *(none declared)* |
@@ -117,23 +114,20 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Free cash guideline](/free-cash/free-cash-guideline) | page | — / 7.5 min | *(none declared)* |
 | [Free cash for schools](/free-cash/free-cash-redirect) | page | — / 7.0 min | *(none declared)* |
 | [Free cash sources](/free-cash/free-cash-sources) | page | — / 7.3 min | *(none declared)* |
-| [FY2026 year end](/fy2026-closeout) | page | — / 8.9 min | *(none declared)* |
-| [Budget burndown](/fy2026-closeout/budget-burndown) | page | — / 7.9 min | *(none declared)* |
-| [FY2025 school surplus](/fy2026-closeout/fy2025-school-surplus) | page | — / 6.6 min | *(none declared)* |
-| [Lines over budget](/fy2026-closeout/fy2026-lines-over-budget) | page | — / 7.0 min | *(none declared)* |
-| [Paraprofessional overrun](/fy2026-closeout/fy2026-paraprofessional-overrun) | page | — / 7.2 min | *(none declared)* |
-| [Psychologist line](/fy2026-closeout/fy2026-psychologist-line) | page | — / 6.8 min | *(none declared)* |
-| [School retiree insurance](/fy2026-closeout/fy2026-school-retiree-insurance) | page | — / 6.9 min | *(none declared)* |
-| [FY2026 school surplus](/fy2026-closeout/fy2026-school-surplus) | page | — / 7.2 min | *(none declared)* |
-| [Year-end transfers](/fy2026-closeout/fy2026-school-transfers) | page | — / 7.3 min | *(none declared)* |
-| [Snow and Reserve Fund](/fy2026-closeout/fy2026-snow-and-reserve-fund) | page | — / 6.8 min | *(none declared)* |
-| [Surplus and FY2027 budget](/fy2026-closeout/fy2026-surplus-and-fy2027) | page | — / 6.6 min | *(none declared)* |
-| [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 7.2 min | *(none declared)* |
-| [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 7.0 min | *(none declared)* |
-| [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 6.8 min | *(none declared)* |
-| [Surplus, step by step](/fy2026-closeout/surplus-bridge) | page | — / 8.2 min | *(none declared)* |
-| [Under budget twice](/fy2026-closeout/surplus-repeat-lines) | page | — / 8.7 min | *(none declared)* |
-| [Surplus suggestions](/fy2026-closeout/surplus-suggestions) | page | — / 10.5 min | *(none declared)* |
+| [FY2026 year end](/fy2026-closeout) | page | — / 11.4 min | *(none declared)* |
+| [Budget burndown](/fy2026-closeout/budget-burndown) | page | — / 8.4 min | *(none declared)* |
+| [Paraprofessional overrun](/fy2026-closeout/fy2026-paraprofessional-overrun) | page | — / 7.6 min | *(none declared)* |
+| [Psychologist line](/fy2026-closeout/fy2026-psychologist-line) | page | — / 7.1 min | *(none declared)* |
+| [School retiree insurance](/fy2026-closeout/fy2026-school-retiree-insurance) | page | — / 7.2 min | *(none declared)* |
+| [Year-end transfers](/fy2026-closeout/fy2026-school-transfers) | page | — / 7.8 min | *(none declared)* |
+| [Snow and Reserve Fund](/fy2026-closeout/fy2026-snow-and-reserve-fund) | page | — / 7.1 min | *(none declared)* |
+| [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 8.9 min | *(none declared)* |
+| [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 7.4 min | *(none declared)* |
+| [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 7.3 min | *(none declared)* |
+| [Year-end tuition payment](/fy2026-closeout/fy2026-tuition-paid-early) | page | — / 13.1 min | *(none declared)* |
+| [Surplus by year](/fy2026-closeout/surplus-bridge) | page | — / 9.4 min | *(none declared)* |
+| [Repeat underspending](/fy2026-closeout/surplus-repeat-lines) | page | — / 9.1 min | *(none declared)* |
+| [Surplus suggestions](/fy2026-closeout/surplus-suggestions) | page | — / 10.9 min | *(none declared)* |
 | [Health insurance costs](/health-insurance) | page | — / 8.3 min | *(none declared)* |
 | [District health line](/health-insurance/district-health-line) | page | — / 6.7 min | *(none declared)* |
 | [Growth over time](/health-insurance/health-growth-over-time) | page | — / 6.9 min | *(none declared)* |
@@ -145,7 +139,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [PEC agreement](/health-insurance/pec-agreement) | page | — / 6.8 min | *(none declared)* |
 | [Retiree health accounts](/health-insurance/retiree-health-accounts) | page | — / 7.0 min | *(none declared)* |
 | [School health insurance](/health-insurance/school-health-insurance) | page | — / 6.7 min | *(none declared)* |
-| [Homes, taxes, growth](/homes-and-taxes) | page | — / 9.3 min | *(none declared)* |
+| [Homes, taxes, growth](/homes-and-taxes) | page | — / 9.4 min | *(none declared)* |
 | [Average tax bill](/homes-and-taxes/average-tax-bill) | page | — / 7.1 min | *(none declared)* |
 | [Bill by deed year](/homes-and-taxes/bill-by-deed-year) | page | — / 6.8 min | *(none declared)* |
 | [Business building pace](/homes-and-taxes/business-building-pace) | page | — / 6.4 min | *(none declared)* |
@@ -159,13 +153,17 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Owners and renters](/homes-and-taxes/owners-and-renters) | page | — / 6.3 min | *(none declared)* |
 | [Regional school share](/homes-and-taxes/regional-school-share) | page | — / 7.9 min | *(none declared)* |
 | [Residents by age](/homes-and-taxes/residents-by-age) | page | — / 6.9 min | *(none declared)* |
+| [Senior tax work-off](/homes-and-taxes/senior-tax-work-off) | page | — / 14.3 min | *(none declared)* |
 | [Bill against neighbours](/homes-and-taxes/tax-bill-neighbours) | page | — / 6.8 min | *(none declared)* |
 | [Population and households](/homes-and-taxes/town-population) | page | — / 7.4 min | *(none declared)* |
 | [Years in the home](/homes-and-taxes/years-in-the-home) | page | — / 6.7 min | *(none declared)* |
 | [If students leave — what school choice would cost](/if-students-leave) | page | 4.0 / 47.5 min | 1. If 78 high school students transferred out, $401,700 would leave the town in year one.<br>2. Lunenburg’s state aid changes by $150 if one pupil leaves.<br>3. 58 Lunenburg residents left under school choice in the latest year counted. |
 | [The money outside the budget](/money-outside-the-budget) | page | 2.3 / 27.4 min | 1. The town’s funds outside the budget took in more than they spent in 12 of 13 years, and what they hold multiplied 3.6×.<br>2. 34% of what those funds hold is pandemic-era money, and this series ends before we can see whether it has gone.<br>3. Most of the money held outside the budget is not school money — a large part is water, sewer and trash.<br>4. FY23 was the first year since FY17 that the school funds spent more than they took in. |
-| [Monty Tech finances](/monty-tech) | page | — / 7.7 min | *(none declared)* |
+| [Monty Tech finances](/monty-tech) | page | — / 7.6 min | *(none declared)* |
 | [Monty Tech rate scenario](/monty-tech/lunenburg-at-monty-tech-rate) | page | — / 7.6 min | *(none declared)* |
+| [Monty Tech assessment](/monty-tech/monty-tech-assessment) | page | — / 7.3 min | *(none declared)* |
+| [Monty Tech enrolment](/monty-tech/monty-tech-enrolment) | page | — / 7.4 min | *(none declared)* |
+| [Monty Tech funding](/monty-tech/monty-tech-funding) | page | — / 8.1 min | *(none declared)* |
 | [Monty Tech per-pupil breakdown](/monty-tech/monty-tech-line-by-line) | page | — / 8.0 min | *(none declared)* |
 | [Monty Tech per pupil](/monty-tech/monty-tech-per-pupil) | page | — / 7.9 min | *(none declared)* |
 | [Funding sources compared](/monty-tech/monty-tech-revenue) | page | — / 10.0 min | *(none declared)* |
@@ -181,17 +179,17 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [School facilities fund](/parks/school-facilities-fund) | page | — / 7.1 min | *(none declared)* |
 | [School field upkeep](/parks/school-field-upkeep) | page | — / 6.3 min | *(none declared)* |
 | [Youth league payments](/parks/youth-league-payments) | page | — / 6.5 min | *(none declared)* |
-| [The whole school budget](/school-all-funds) | page | — / 8.4 min | *(none declared)* |
+| [The whole school budget](/school-all-funds) | page | — / 9.1 min | *(none declared)* |
 | [Budget lines, all funds](/school-all-funds/budget-lines-all-funds) | page | — / 8.0 min | *(none declared)* |
 | [Carried-over orders](/school-all-funds/carried-over-orders) | page | — / 10.5 min | *(none declared)* |
-| [Grant allocations compared](/school-all-funds/grant-allocations-compared) | page | — / 9.3 min | *(none declared)* |
+| [Grant allocations compared](/school-all-funds/grant-allocations-compared) | page | — / 9.4 min | *(none declared)* |
 | [Grant spending by line](/school-all-funds/grant-coding) | page | — / 7.4 min | *(none declared)* |
-| [Grants other districts get](/school-all-funds/grants-others-receive) | page | — / 24.1 min | *(none declared)* |
-| [Paid outside the general fund](/school-all-funds/outside-the-general-fund) | page | — / 8.0 min | *(none declared)* |
+| [Grants other districts get](/school-all-funds/grants-others-receive) | page | — / 25.5 min | *(none declared)* |
+| [Paid outside the general fund](/school-all-funds/outside-the-general-fund) | page | — / 7.9 min | *(none declared)* |
 | [Pay from grants and fees](/school-all-funds/pay-from-grants-and-fees) | page | — / 8.1 min | *(none declared)* |
 | [Pay moved between funds](/school-all-funds/pay-moved-between-funds) | page | — / 7.9 min | *(none declared)* |
 | [Positions and their funds](/school-all-funds/positions-and-their-funds) | page | — / 7.5 min | *(none declared)* |
-| [School money in](/school-all-funds/school-money-in) | page | — / 7.2 min | *(none declared)* |
+| [School grants and aid](/school-all-funds/school-money-in) | page | — / 12.7 min | *(none declared)* |
 | [Unspent money by fund](/school-all-funds/unspent-by-fund) | page | — / 7.8 min | *(none declared)* |
 | [Programs and cuts](/school-programs) | page | — / 8.6 min | *(none declared)* |
 | [Announced cuts](/school-programs/announced-cuts) | page | — / 7.9 min | *(none declared)* |
@@ -207,7 +205,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Outside money share](/school-programs/outside-money-share) | page | — / 7.1 min | *(none declared)* |
 | [Override cut lists](/school-programs/override-cut-lists) | page | — / 7.4 min | *(none declared)* |
 | [World languages](/school-programs/world-languages) | page | — / 7.5 min | *(none declared)* |
-| [Spending compared](/school-spending) | page | — / 10.1 min | *(none declared)* |
+| [Spending compared](/school-spending) | page | — / 9.8 min | *(none declared)* |
 | [School spending history](/school-spending-history) | page | — / 9.7 min | *(none declared)* |
 | [FY2011 teacher reading](/school-spending-history/fy2011-teacher-reading) | page | — / 7.4 min | *(none declared)* |
 | [Growth by spending type](/school-spending-history/growth-by-spending-type) | page | — / 8.0 min | *(none declared)* |
@@ -251,34 +249,33 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Teachers by school](/school-staffing/teachers-by-school) | page | — / 7.6 min | *(none declared)* |
 | [Teachers by subject](/school-staffing/teachers-by-subject) | page | — / 8.0 min | *(none declared)* |
 | [Teachers per pupil](/school-staffing/teachers-per-pupil) | page | — / 7.6 min | *(none declared)* |
-| [Special education costs](/special-education) | page | — / 8.9 min | *(none declared)* |
-| [Special education reserve fund](/special-education-reserve) | page | — / 12.5 min | *(none declared)* |
+| [Special education costs](/special-education) | page | — / 9.6 min | *(none declared)* |
+| [Special education reserve fund](/special-education-reserve) | page | — / 12.6 min | *(none declared)* |
 | [Move-ins](/special-education-reserve/arrivals-and-the-budget) | page | — / 11.4 min | *(none declared)* |
-| [Out-of-district tuition payments](/special-education-reserve/how-tuition-is-paid) | page | — / 8.6 min | *(none declared)* |
-| [Reserve options](/special-education-reserve/reserve-options) | page | — / 10.5 min | *(none declared)* |
+| [Tuition after repayment](/special-education-reserve/how-tuition-is-paid) | page | — / 7.9 min | *(none declared)* |
+| [Reserve options](/special-education-reserve/reserve-options) | page | — / 11.8 min | *(none declared)* |
 | [Reserve or budget](/special-education-reserve/reserve-or-budget) | page | — / 8.6 min | *(none declared)* |
-| [Draw rules](/special-education-reserve/reserve-size) | page | — / 8.4 min | *(none declared)* |
-| [Special education grants](/special-education-reserve/special-education-grants) | page | — / 7.9 min | *(none declared)* |
+| [Grants for surprises](/special-education-reserve/special-education-grants) | page | — / 8.4 min | *(none declared)* |
 | [Surprise costs](/special-education-reserve/surprise-costs) | page | — / 17.7 min | *(none declared)* |
-| [Surprises and state aid](/special-education-reserve/surprises-and-state-aid) | page | — / 9.8 min | *(none declared)* |
-| [Circuit breaker](/special-education/circuit-breaker) | page | — / 8.2 min | *(none declared)* |
+| [Circuit breaker](/special-education/circuit-breaker) | page | — / 12.3 min | *(none declared)* |
 | [Circuit breaker account](/special-education/circuit-breaker-account) | page | — / 8.9 min | *(none declared)* |
 | [Class size limits](/special-education/class-size-limits) | page | — / 7.7 min | *(none declared)* |
 | [Cost per placement](/special-education/cost-per-placement) | page | — / 6.7 min | *(none declared)* |
 | [Hiring versus placing](/special-education/hiring-versus-placing) | page | — / 6.7 min | *(none declared)* |
 | [In-district special education](/special-education/in-district-special-education) | page | — / 7.6 min | *(none declared)* |
 | [Out-of-district placements](/special-education/out-of-district-placements) | page | — / 7.9 min | *(none declared)* |
-| [Out-of-district tuition](/special-education/out-of-district-tuition) | page | — / 7.5 min | *(none declared)* |
+| [Out-of-district tuition](/special-education/out-of-district-tuition) | page | — / 7.6 min | *(none declared)* |
 | [Special education overruns](/special-education/special-education-overruns) | page | — / 13.9 min | *(none declared)* |
-| [Special education, all funds](/special-education/sped-all-funds) | page | — / 7.7 min | *(none declared)* |
-| [Special education burndown](/special-education/sped-burndown) | page | — / 7.7 min | *(none declared)* |
+| [Special education, all funds](/special-education/sped-all-funds) | page | — / 7.8 min | *(none declared)* |
+| [Special education burndown](/special-education/sped-burndown) | page | — / 8.3 min | *(none declared)* |
 | [Special education definition](/special-education/sped-definition) | page | — / 10.0 min | *(none declared)* |
+| [Special education grants](/special-education/sped-grants) | page | — / 12.2 min | *(none declared)* |
 | [Special education providers](/special-education/sped-providers) | page | — / 8.3 min | *(none declared)* |
 | [Students with an IEP](/special-education/students-with-an-iep) | page | — / 7.0 min | *(none declared)* |
 | [Tuition budget](/special-education/tuition-budget) | page | — / 7.1 min | *(none declared)* |
 | [Chapter 70 aid](/state-aid) | page | — / 8.7 min | *(none declared)* |
 | [Aid per pupil](/state-aid/aid-per-pupil) | page | — / 6.6 min | *(none declared)* |
-| [Chapter 70 by year](/state-aid/chapter-70-by-year) | page | — / 7.3 min | *(none declared)* |
+| [Chapter 70 by year](/state-aid/chapter-70-by-year) | page | — / 7.4 min | *(none declared)* |
 | [Share of the school budget](/state-aid/chapter-70-school-budget-share) | page | — / 6.5 min | *(none declared)* |
 | [Cherry sheet assessments](/state-aid/cherry-sheet-assessments) | page | — / 7.1 min | *(none declared)* |
 | [Cherry sheet variance](/state-aid/cherry-sheet-variance) | page | — / 6.7 min | *(none declared)* |
@@ -2316,13 +2313,486 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals, August 26, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro) | reference | — / 10.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-14-aW3D8mIw_yw) | reference | — / 10.9 min | *(none declared)* |
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
+| [A dam Burney](/people/a-dam-burney) | reference | — / 7.0 min | *(none declared)* |
+| [Adam Burney](/people/adam-burney) | reference | — / 10.3 min | *(none declared)* |
+| [Adam Burney, Land Use Directo](/people/adam-burney-land-use-directo) | reference | — / 6.8 min | *(none declared)* |
+| [Alfred Gravelle](/people/alfred-gravelle) | reference | — / 8.9 min | *(none declared)* |
+| [Allan Wilson](/people/allan-wilson) | reference | — / 7.0 min | *(none declared)* |
+| [Amanda Moore](/people/amanda-moore) | reference | — / 10.0 min | *(none declared)* |
+| [Amanda Reid](/people/amanda-reid) | reference | — / 10.7 min | *(none declared)* |
+| [Amory Phelps](/people/amory-phelps) | reference | — / 7.4 min | *(none declared)* |
+| [Ana Lockwood](/people/ana-lockwood) | reference | — / 10.8 min | *(none declared)* |
+| [Andrea Burnap](/people/andrea-burnap) | reference | — / 8.4 min | *(none declared)* |
+| [Andrea Schnepf](/people/andrea-schnepf) | reference | — / 7.3 min | *(none declared)* |
+| [Anita Scheipers](/people/anita-scheipers) | reference | — / 8.3 min | *(none declared)* |
+| [Anthony Nicastro](/people/anthony-nicastro) | reference | — / 9.1 min | *(none declared)* |
+| [Anthony Sculimbrene](/people/anthony-sculimbrene) | reference | — / 9.8 min | *(none declared)* |
+| [Anthony Senesi](/people/anthony-senesi) | reference | — / 7.3 min | *(none declared)* |
+| [Arthur Katis](/people/arthur-katis) | reference | — / 9.4 min | *(none declared)* |
+| [Arthur Snow](/people/arthur-snow) | reference | — / 8.7 min | *(none declared)* |
+| [Ashley York-Aronovich](/people/ashley-york-aronovich) | reference | — / 7.4 min | *(none declared)* |
+| [Ashly Faherty](/people/ashly-faherty) | reference | — / 7.1 min | *(none declared)* |
+| [atthew Allison](/people/atthew-allison) | reference | — / 6.8 min | *(none declared)* |
+| [Barbar ingras Miner at aise](/people/barbar-ingras-miner-at-aise) | reference | — / 6.9 min | *(none declared)* |
+| [Barbara Brown](/people/barbara-brown) | reference | — / 8.3 min | *(none declared)* |
+| [Barbara Reynolds](/people/barbara-reynolds) | reference | — / 8.1 min | *(none declared)* |
+| [Bill Lakso](/people/bill-lakso) | reference | — / 7.3 min | *(none declared)* |
+| [Bob Pease](/people/bob-pease) | reference | — / 11.0 min | *(none declared)* |
+| [Brandie O&#x27;Toole](/people/brandie-o-toole) | reference | — / 7.0 min | *(none declared)* |
+| [Brandon Kibbe](/people/brandon-kibbe) | reference | — / 8.0 min | *(none declared)* |
+| [Brandon Kibbe-Open Space](/people/brandon-kibbe-open-space) | reference | — / 7.3 min | *(none declared)* |
+| [Brent Benson](/people/brent-benson) | reference | — / 7.4 min | *(none declared)* |
+| [Brett Kamsden](/people/brett-kamsden) | reference | — / 6.8 min | *(none declared)* |
+| [Brett Ramsden](/people/brett-ramsden) | reference | — / 10.0 min | *(none declared)* |
+| [Brian Corcoran](/people/brian-corcoran) | reference | — / 9.4 min | *(none declared)* |
+| [Brian Fernandes](/people/brian-fernandes) | reference | — / 7.0 min | *(none declared)* |
+| [Brian Frank](/people/brian-frank) | reference | — / 7.5 min | *(none declared)* |
+| [Brian Gingras](/people/brian-gingras) | reference | — / 8.0 min | *(none declared)* |
+| [Brian Guenard](/people/brian-guenard) | reference | — / 8.7 min | *(none declared)* |
+| [Brian Laffond](/people/brian-laffond) | reference | — / 10.1 min | *(none declared)* |
+| [Brian Lafond](/people/brian-lafond) | reference | — / 6.8 min | *(none declared)* |
+| [Brian Lehtinen](/people/brian-lehtinen) | reference | — / 11.4 min | *(none declared)* |
+| [Brian Marple](/people/brian-marple) | reference | — / 9.7 min | *(none declared)* |
+| [Brian Vienneau](/people/brian-vienneau) | reference | — / 7.5 min | *(none declared)* |
+| [C. William Lakso](/people/c-william-lakso) | reference | — / 7.8 min | *(none declared)* |
+| [Caesar Nuzzolo](/people/caesar-nuzzolo) | reference | — / 11.6 min | *(none declared)* |
+| [Caesar Nuzzolo-select Boara Kepresentative](/people/caesar-nuzzolo-select-boara-kepresentative) | reference | — / 6.7 min | *(none declared)* |
+| [Cara Olejarz](/people/cara-olejarz) | reference | — / 7.2 min | *(none declared)* |
+| [Carl Luck](/people/carl-luck) | reference | — / 10.9 min | *(none declared)* |
+| [Carol Archambault](/people/carol-archambault) | reference | — / 9.9 min | *(none declared)* |
+| [Carol Archambeault](/people/carol-archambeault) | reference | — / 6.9 min | *(none declared)* |
+| [Carol Hatch](/people/carol-hatch) | reference | — / 6.9 min | *(none declared)* |
+| [Caroline Fortin](/people/caroline-fortin) | reference | — / 10.1 min | *(none declared)* |
+| [Caroline Griffis](/people/caroline-griffis) | reference | — / 7.4 min | *(none declared)* |
+| [Carolyn Rossi](/people/carolyn-rossi) | reference | — / 7.0 min | *(none declared)* |
+| [Casey Burlingame](/people/casey-burlingame) | reference | — / 7.7 min | *(none declared)* |
+| [Catherine J. Clark](/people/catherine-j-clark) | reference | — / 9.2 min | *(none declared)* |
+| [Cathy Beale](/people/cathy-beale) | reference | — / 9.0 min | *(none declared)* |
+| [Cathy Clark](/people/cathy-clark) | reference | — / 8.1 min | *(none declared)* |
+| [Cathy Hennessey](/people/cathy-hennessey) | reference | — / 6.9 min | *(none declared)* |
+| [Cathy Hennessy](/people/cathy-hennessy) | reference | — / 7.4 min | *(none declared)* |
+| [Catie Childs](/people/catie-childs) | reference | — / 10.1 min | *(none declared)* |
+| [Cheryl Moisan](/people/cheryl-moisan) | reference | — / 8.6 min | *(none declared)* |
+| [Cheryl Valera](/people/cheryl-valera) | reference | — / 7.9 min | *(none declared)* |
+| [Chris Holden](/people/chris-holden) | reference | — / 7.5 min | *(none declared)* |
+| [Chris Menard](/people/chris-menard) | reference | — / 8.8 min | *(none declared)* |
+| [Chris Ruth-Town Facility Manager](/people/chris-ruth-town-facility-manager) | reference | — / 6.9 min | *(none declared)* |
+| [Chris St. Germain](/people/chris-st-germain) | reference | — / 10.5 min | *(none declared)* |
+| [Chris Sullivan](/people/chris-sullivan) | reference | — / 7.5 min | *(none declared)* |
+| [Christine Cosgrove Higdon](/people/christine-cosgrove-higdon) | reference | — / 7.7 min | *(none declared)* |
+| [Christopher Letarte](/people/christopher-letarte) | reference | — / 7.0 min | *(none declared)* |
+| [Christopher Menard](/people/christopher-menard) | reference | — / 9.8 min | *(none declared)* |
+| [Christopher Sullivan](/people/christopher-sullivan) | reference | — / 10.0 min | *(none declared)* |
+| [Chriztine Foltz](/people/chriztine-foltz) | reference | — / 7.2 min | *(none declared)* |
+| [Chuck Venezia](/people/chuck-venezia) | reference | — / 7.4 min | *(none declared)* |
+| [Cindy Testa](/people/cindy-testa) | reference | — / 7.4 min | *(none declared)* |
+| [Citizens&#x27; Representative](/people/citizens-representative) | reference | — / 7.0 min | *(none declared)* |
+| [Colleen Shapiro](/people/colleen-shapiro) | reference | — / 10.5 min | *(none declared)* |
+| [Corrine C. Scouten](/people/corrine-c-scouten) | reference | — / 6.9 min | *(none declared)* |
+| [Cullen Dwyer](/people/cullen-dwyer) | reference | — / 9.7 min | *(none declared)* |
+| [Dale Proulx](/people/dale-proulx) | reference | — / 7.4 min | *(none declared)* |
+| [Damon J. McQuaid](/people/damon-j-mcquaid) | reference | — / 9.5 min | *(none declared)* |
+| [Damon McQuaid](/people/damon-mcquaid) | reference | — / 11.3 min | *(none declared)* |
+| [Dan Proctor](/people/dan-proctor) | reference | — / 9.2 min | *(none declared)* |
+| [Daniel Burns](/people/daniel-burns) | reference | — / 8.7 min | *(none declared)* |
+| [Daniel Seminatore](/people/daniel-seminatore) | reference | — / 6.9 min | *(none declared)* |
+| [Dave Blatt](/people/dave-blatt) | reference | — / 7.6 min | *(none declared)* |
+| [Dave Gallagher](/people/dave-gallagher) | reference | — / 6.9 min | *(none declared)* |
+| [Dave MacDonald](/people/dave-macdonald) | reference | — / 10.3 min | *(none declared)* |
+| [Dave Passes](/people/dave-passes) | reference | — / 6.9 min | *(none declared)* |
+| [Dave Passions](/people/dave-passions) | reference | — / 7.0 min | *(none declared)* |
+| [Dave Passios](/people/dave-passios) | reference | — / 9.0 min | *(none declared)* |
+| [David Blatt](/people/david-blatt) | reference | — / 11.2 min | *(none declared)* |
+| [David Dorren](/people/david-dorren) | reference | — / 9.8 min | *(none declared)* |
+| [David M. Passios](/people/david-m-passios) | reference | — / 10.0 min | *(none declared)* |
+| [David MacDonald](/people/david-macdonald) | reference | — / 10.4 min | *(none declared)* |
+| [David MacDonald, Resident](/people/david-macdonald-resident) | reference | — / 6.9 min | *(none declared)* |
+| [David Niose](/people/david-niose) | reference | — / 7.5 min | *(none declared)* |
+| [David Passios](/people/david-passios) | reference | — / 11.1 min | *(none declared)* |
+| [David Prokowiew](/people/david-prokowiew) | reference | — / 10.0 min | *(none declared)* |
+| [David Reif](/people/david-reif) | reference | — / 6.9 min | *(none declared)* |
+| [David V. MacDonald](/people/david-v-macdonald) | reference | — / 7.2 min | *(none declared)* |
+| [Dawn-Marie Ayles](/people/dawn-marie-ayles) | reference | — / 7.3 min | *(none declared)* |
+| [Deb Lincoln](/people/deb-lincoln) | reference | — / 7.7 min | *(none declared)* |
+| [Debbie Lincoln](/people/debbie-lincoln) | reference | — / 9.1 min | *(none declared)* |
+| [Deborah A. H. Christen](/people/deborah-a-h-christen) | reference | — / 10.0 min | *(none declared)* |
+| [Deborah Christen](/people/deborah-christen) | reference | — / 8.4 min | *(none declared)* |
+| [Deborah Lincoln](/people/deborah-lincoln) | reference | — / 9.0 min | *(none declared)* |
+| [Debra Goodsell](/people/debra-goodsell) | reference | — / 7.6 min | *(none declared)* |
+| [Dennis Mannone](/people/dennis-mannone) | reference | — / 10.0 min | *(none declared)* |
+| [Diane Beaudoin](/people/diane-beaudoin) | reference | — / 7.6 min | *(none declared)* |
+| [Diane Nowd](/people/diane-nowd) | reference | — / 9.0 min | *(none declared)* |
+| [Donald Bowen](/people/donald-bowen) | reference | — / 7.7 min | *(none declared)* |
+| [Donald F. Bowen](/people/donald-f-bowen) | reference | — / 8.3 min | *(none declared)* |
+| [Donald Gurney](/people/donald-gurney) | reference | — / 7.6 min | *(none declared)* |
+| [Donna Fortune](/people/donna-fortune) | reference | — / 9.9 min | *(none declared)* |
+| [Donna Landry](/people/donna-landry) | reference | — / 9.4 min | *(none declared)* |
+| [Donna Saiia](/people/donna-saiia) | reference | — / 8.6 min | *(none declared)* |
+| [Donna Saila](/people/donna-saila) | reference | — / 7.2 min | *(none declared)* |
+| [Douglas MacMillan](/people/douglas-macmillan) | reference | — / 7.9 min | *(none declared)* |
+| [Dr. Robin Chandler](/people/dr-robin-chandler) | reference | — / 7.2 min | *(none declared)* |
+| [Ean Laundree](/people/ean-laundree) | reference | — / 7.1 min | *(none declared)* |
+| [Elaina Corcoran](/people/elaina-corcoran) | reference | — / 6.9 min | *(none declared)* |
+| [Elena Christopher](/people/elena-christopher) | reference | — / 7.6 min | *(none declared)* |
+| [Elise Wiley](/people/elise-wiley) | reference | — / 8.2 min | *(none declared)* |
+| [Elizabeth (Betty) DiGiacomo](/people/elizabeth-betty-digiacomo) | reference | — / 9.3 min | *(none declared)* |
+| [Elizabeth Murphy](/people/elizabeth-murphy) | reference | — / 8.0 min | *(none declared)* |
+| [Elizabeth Simeone](/people/elizabeth-simeone) | reference | — / 7.3 min | *(none declared)* |
+| [Emily Young](/people/emily-young) | reference | — / 9.3 min | *(none declared)* |
+| [Eric Hinds](/people/eric-hinds) | reference | — / 7.4 min | *(none declared)* |
+| [Erik Arnold](/people/erik-arnold) | reference | — / 10.8 min | *(none declared)* |
+| [Erik Torgersen](/people/erik-torgersen) | reference | — / 10.3 min | *(none declared)* |
+| [Erin Mahoney](/people/erin-mahoney) | reference | — / 6.9 min | *(none declared)* |
+| [eter Beardmore-School Committer](/people/eter-beardmore-school-committer) | reference | — / 6.8 min | *(none declared)* |
+| [Ethan Gengler](/people/ethan-gengler) | reference | — / 7.3 min | *(none declared)* |
+| [Evan Watters](/people/evan-watters) | reference | — / 10.7 min | *(none declared)* |
+| [Faith Beall](/people/faith-beall) | reference | — / 8.3 min | *(none declared)* |
+| [G. Stephen Schaff](/people/g-stephen-schaff) | reference | — / 8.6 min | *(none declared)* |
+| [Gare Thompson](/people/gare-thompson) | reference | — / 7.6 min | *(none declared)* |
+| [Garrett Stillman](/people/garrett-stillman) | reference | — / 6.9 min | *(none declared)* |
+| [George Emond](/people/george-emond) | reference | — / 7.8 min | *(none declared)* |
+| [George Emond Ji:](/people/george-emond-ji) | reference | — / 7.0 min | *(none declared)* |
+| [George Emond Jr](/people/george-emond-jr) | reference | — / 10.3 min | *(none declared)* |
+| [George Martin](/people/george-martin) | reference | — / 9.0 min | *(none declared)* |
+| [Glenn McLeod](/people/glenn-mcleod) | reference | — / 10.7 min | *(none declared)* |
+| [Governor Appointee](/people/governor-appointee) | reference | — / 6.7 min | *(none declared)* |
+| [Greg Bittner](/people/greg-bittner) | reference | — / 8.1 min | *(none declared)* |
+| [Greg Burns](/people/greg-burns) | reference | — / 9.1 min | *(none declared)* |
+| [Greg Roy](/people/greg-roy) | reference | — / 9.2 min | *(none declared)* |
+| [Gregory Berthiaume](/people/gregory-berthiaume) | reference | — / 7.4 min | *(none declared)* |
+| [Gregory Bittner](/people/gregory-bittner) | reference | — / 10.1 min | *(none declared)* |
+| [Gregory P. Bittner](/people/gregory-p-bittner) | reference | — / 9.3 min | *(none declared)* |
+| [Gregory Roy](/people/gregory-roy) | reference | — / 7.5 min | *(none declared)* |
+| [Hannah Anderson](/people/hannah-anderson) | reference | — / 8.5 min | *(none declared)* |
+| [Hans Wentrup](/people/hans-wentrup) | reference | — / 7.8 min | *(none declared)* |
+| [Harry Kubetz](/people/harry-kubetz) | reference | — / 7.7 min | *(none declared)* |
+| [Harry Kubitz](/people/harry-kubitz) | reference | — / 6.9 min | *(none declared)* |
+| [Heather Gleason](/people/heather-gleason) | reference | — / 6.9 min | *(none declared)* |
+| [Heather Lemieux](/people/heather-lemieux) | reference | — / 8.6 min | *(none declared)* |
+| [Heather Sroka](/people/heather-sroka) | reference | — / 11.6 min | *(none declared)* |
+| [Helen Balcom](/people/helen-balcom) | reference | — / 8.1 min | *(none declared)* |
+| [Herlin Jaime](/people/herlin-jaime) | reference | — / 7.2 min | *(none declared)* |
+| [hn Rabbitt](/people/hn-rabbitt) | reference | — / 6.7 min | *(none declared)* |
+| [Holly Carr](/people/holly-carr) | reference | — / 7.1 min | *(none declared)* |
+| [Ishley York-Aronovich](/people/ishley-york-aronovich) | reference | — / 6.8 min | *(none declared)* |
+| [Jack Rabbit](/people/jack-rabbit) | reference | — / 7.5 min | *(none declared)* |
+| [Jack Rabbitt](/people/jack-rabbitt) | reference | — / 7.5 min | *(none declared)* |
+| [Jack Rodriquenz](/people/jack-rodriquenz) | reference | — / 8.0 min | *(none declared)* |
+| [Jaclynn Nicoll](/people/jaclynn-nicoll) | reference | — / 7.1 min | *(none declared)* |
+| [Jacqueline Chabot](/people/jacqueline-chabot) | reference | — / 7.3 min | *(none declared)* |
+| [Jacqueline Dwyer](/people/jacqueline-dwyer) | reference | — / 8.0 min | *(none declared)* |
+| [Jacquelyn Dwyer](/people/jacquelyn-dwyer) | reference | — / 10.0 min | *(none declared)* |
+| [James Besarkarski](/people/james-besarkarski) | reference | — / 9.3 min | *(none declared)* |
+| [James Breault](/people/james-breault) | reference | — / 7.4 min | *(none declared)* |
+| [James Breault, DPWR](/people/james-breault-dpwr) | reference | — / 6.9 min | *(none declared)* |
+| [James E. Toale](/people/james-e-toale) | reference | — / 9.3 min | *(none declared)* |
+| [James J. Auge](/people/james-j-auge) | reference | — / 8.1 min | *(none declared)* |
+| [James La Veck II](/people/james-la-veck-ii) | reference | — / 6.8 min | *(none declared)* |
+| [James LaVeck II](/people/james-laveck-ii) | reference | — / 6.8 min | *(none declared)* |
+| [James Marino](/people/james-marino) | reference | — / 11.0 min | *(none declared)* |
+| [James Marino-S](/people/james-marino-s) | reference | — / 6.6 min | *(none declared)* |
+| [James McGuigan](/people/james-mcguigan) | reference | — / 7.8 min | *(none declared)* |
+| [James Toale](/people/james-toale) | reference | — / 7.9 min | *(none declared)* |
+| [James Versoi](/people/james-versoi) | reference | — / 7.0 min | *(none declared)* |
+| [Jamie Merrill Blood](/people/jamie-merrill-blood) | reference | — / 7.1 min | *(none declared)* |
+| [Jamie Toale](/people/jamie-toale) | reference | — / 9.0 min | *(none declared)* |
+| [Janalee Germaine Balish](/people/janalee-germaine-balish) | reference | — / 6.9 min | *(none declared)* |
+| [Jane Paszko](/people/jane-paszko) | reference | — / 7.0 min | *(none declared)* |
+| [Jane Rabbitt](/people/jane-rabbitt) | reference | — / 8.6 min | *(none declared)* |
+| [Janet Robbins](/people/janet-robbins) | reference | — / 6.9 min | *(none declared)* |
+| [Jay Simeone](/people/jay-simeone) | reference | — / 9.6 min | *(none declared)* |
+| [Jean Hobbs](/people/jean-hobbs) | reference | — / 7.0 min | *(none declared)* |
+| [Jean Larkin](/people/jean-larkin) | reference | — / 8.3 min | *(none declared)* |
+| [Jean Russell](/people/jean-russell) | reference | — / 9.5 min | *(none declared)* |
+| [Jeanne Dupre](/people/jeanne-dupre) | reference | — / 8.5 min | *(none declared)* |
+| [Jeanne Russell](/people/jeanne-russell) | reference | — / 8.2 min | *(none declared)* |
+| [Jeffrey Bajko](/people/jeffrey-bajko) | reference | — / 7.9 min | *(none declared)* |
+| [Jeffrey L. Mendoza](/people/jeffrey-l-mendoza) | reference | — / 7.0 min | *(none declared)* |
+| [Jeffrey Mendoza](/people/jeffrey-mendoza) | reference | — / 7.2 min | *(none declared)* |
+| [Jeffrey Viviano](/people/jeffrey-viviano) | reference | — / 10.3 min | *(none declared)* |
+| [Jennifer Duffy](/people/jennifer-duffy) | reference | — / 7.9 min | *(none declared)* |
+| [Jennifer Sanderson](/people/jennifer-sanderson) | reference | — / 8.9 min | *(none declared)* |
+| [Jenny Pewtherer](/people/jenny-pewtherer) | reference | — / 10.0 min | *(none declared)* |
+| [Jetfrey Viviano](/people/jetfrey-viviano) | reference | — / 7.0 min | *(none declared)* |
+| [Jim Auge](/people/jim-auge) | reference | — / 7.5 min | *(none declared)* |
+| [Jim LaVeck](/people/jim-laveck) | reference | — / 9.7 min | *(none declared)* |
+| [Jo Toale](/people/jo-toale) | reference | — / 7.5 min | *(none declared)* |
+| [Joan Pease](/people/joan-pease) | reference | — / 10.1 min | *(none declared)* |
+| [Joanna Bilotta-Simeone](/people/joanna-bilotta-simeone) | reference | — / 7.7 min | *(none declared)* |
+| [Joanna L. Bilotta-Simeone](/people/joanna-l-bilotta-simeone) | reference | — / 9.6 min | *(none declared)* |
+| [Joe Anderson](/people/joe-anderson) | reference | — / 9.6 min | *(none declared)* |
+| [Joeci Gilchrest](/people/joeci-gilchrest) | reference | — / 8.4 min | *(none declared)* |
+| [John Beale](/people/john-beale) | reference | — / 7.4 min | *(none declared)* |
+| [John Bowen](/people/john-bowen) | reference | — / 10.2 min | *(none declared)* |
+| [John Henshaw](/people/john-henshaw) | reference | — / 9.9 min | *(none declared)* |
+| [John Keynolds](/people/john-keynolds) | reference | — / 6.8 min | *(none declared)* |
+| [John Londa](/people/john-londa) | reference | — / 7.9 min | *(none declared)* |
+| [John Lynch](/people/john-lynch) | reference | — / 7.7 min | *(none declared)* |
+| [John Palumbo](/people/john-palumbo) | reference | — / 8.6 min | *(none declared)* |
+| [John Pesent](/people/john-pesent) | reference | — / 7.0 min | *(none declared)* |
+| [John Pesenti](/people/john-pesenti) | reference | — / 8.2 min | *(none declared)* |
+| [John Rabbitt](/people/john-rabbitt) | reference | — / 11.2 min | *(none declared)* |
+| [John Reynolds](/people/john-reynolds) | reference | — / 10.1 min | *(none declared)* |
+| [John T. Rabbitt](/people/john-t-rabbitt) | reference | — / 9.4 min | *(none declared)* |
+| [Jon D. Hogue](/people/jon-d-hogue) | reference | — / 9.5 min | *(none declared)* |
+| [Jon Hogue](/people/jon-hogue) | reference | — / 7.5 min | *(none declared)* |
+| [Jorge Marzuca](/people/jorge-marzuca) | reference | — / 8.4 min | *(none declared)* |
+| [Joseph (AI) Dettenrieder](/people/joseph-ai-dettenrieder) | reference | — / 7.2 min | *(none declared)* |
+| [Joseph &quot;Al&quot; Dettenrieder](/people/joseph-al-dettenrieder) | reference | — / 7.3 min | *(none declared)* |
+| [Joseph Anderson](/people/joseph-anderson) | reference | — / 7.4 min | *(none declared)* |
+| [Joseph Hurley](/people/joseph-hurley) | reference | — / 7.2 min | *(none declared)* |
+| [Judit Ernst](/people/judit-ernst) | reference | — / 7.6 min | *(none declared)* |
+| [Judith Tarbell](/people/judith-tarbell) | reference | — / 8.3 min | *(none declared)* |
+| [Judy Dragoslis](/people/judy-dragoslis) | reference | — / 7.5 min | *(none declared)* |
+| [Julie Belliveau](/people/julie-belliveau) | reference | — / 7.9 min | *(none declared)* |
+| [Karen Kemp](/people/karen-kemp) | reference | — / 8.8 min | *(none declared)* |
+| [Karen Ullo](/people/karen-ullo) | reference | — / 7.1 min | *(none declared)* |
+| [Karin Menard](/people/karin-menard) | reference | — / 11.3 min | *(none declared)* |
+| [Katey Adams](/people/katey-adams) | reference | — / 10.4 min | *(none declared)* |
+| [Kathleen M. Comeau Kathleen M. Comeau](/people/kathleen-m-comeau-kathleen-m-comeau) | reference | — / 7.0 min | *(none declared)* |
+| [Kathleen McCarron](/people/kathleen-mccarron) | reference | — / 7.0 min | *(none declared)* |
+| [Kathryn Herrick](/people/kathryn-herrick) | reference | — / 7.8 min | *(none declared)* |
+| [Kathy Dugan](/people/kathy-dugan) | reference | — / 8.5 min | *(none declared)* |
+| [Kathy Herrick](/people/kathy-herrick) | reference | — / 7.5 min | *(none declared)* |
+| [Kathyrn Adams](/people/kathyrn-adams) | reference | — / 7.5 min | *(none declared)* |
+| [Kathyrn M. Herrick](/people/kathyrn-m-herrick) | reference | — / 7.3 min | *(none declared)* |
+| [Kayla Reffitt](/people/kayla-reffitt) | reference | — / 6.9 min | *(none declared)* |
+| [Ken Jones](/people/ken-jones) | reference | — / 8.8 min | *(none declared)* |
+| [Kenee Emkey](/people/kenee-emkey) | reference | — / 6.7 min | *(none declared)* |
+| [Kenneth Chenis](/people/kenneth-chenis) | reference | — / 9.8 min | *(none declared)* |
+| [Kenneth Jones](/people/kenneth-jones) | reference | — / 11.4 min | *(none declared)* |
+| [Kerry A. Lafleur](/people/kerry-a-lafleur) | reference | — / 7.5 min | *(none declared)* |
+| [Kerry Ann Kimball](/people/kerry-ann-kimball) | reference | — / 7.1 min | *(none declared)* |
+| [Kevin Boussom](/people/kevin-boussom) | reference | — / 7.4 min | *(none declared)* |
+| [Kevin Boussom-2023 C. William Lakso-2023 Megan Lordan](/people/kevin-boussom-2023-c-william-lakso-2023-megan-lordan) | reference | — / 7.1 min | *(none declared)* |
+| [Kevin Boussom-2026 C. William Lakso-2024 Megan Lordan](/people/kevin-boussom-2026-c-william-lakso-2024-megan-lordan) | reference | — / 7.5 min | *(none declared)* |
+| [Kevin Fish](/people/kevin-fish) | reference | — / 9.7 min | *(none declared)* |
+| [Kevin McNally](/people/kevin-mcnally) | reference | — / 8.4 min | *(none declared)* |
+| [Kiirja Paananen](/people/kiirja-paananen) | reference | — / 7.6 min | *(none declared)* |
+| [Kim Duffy](/people/kim-duffy) | reference | — / 7.9 min | *(none declared)* |
+| [Kimberly Moore](/people/kimberly-moore) | reference | — / 7.2 min | *(none declared)* |
+| [Kira MčClellan](/people/kira-m-clellan) | reference | — / 6.8 min | *(none declared)* |
+| [Kirsten Snape](/people/kirsten-snape) | reference | — / 8.0 min | *(none declared)* |
+| [Krista Deveau](/people/krista-deveau) | reference | — / 7.2 min | *(none declared)* |
+| [Kristina Masaitis](/people/kristina-masaitis) | reference | — / 8.2 min | *(none declared)* |
+| [La Veck](/people/la-veck) | reference | — / 7.4 min | *(none declared)* |
+| [Lance D. May](/people/lance-d-may) | reference | — / 9.5 min | *(none declared)* |
+| [Lars H. Widstrand](/people/lars-h-widstrand) | reference | — / 7.1 min | *(none declared)* |
+| [Latey Adams](/people/latey-adams) | reference | — / 6.8 min | *(none declared)* |
+| [Laura Boussom](/people/laura-boussom) | reference | — / 7.8 min | *(none declared)* |
+| [Laura Brozozski](/people/laura-brozozski) | reference | — / 7.0 min | *(none declared)* |
+| [Laura Brzozoski](/people/laura-brzozoski) | reference | — / 8.1 min | *(none declared)* |
+| [Laura Brzozski](/people/laura-brzozski) | reference | — / 7.6 min | *(none declared)* |
+| [Laura F. Kelly](/people/laura-f-kelly) | reference | — / 7.0 min | *(none declared)* |
+| [Laura Forde Kelly](/people/laura-forde-kelly) | reference | — / 7.1 min | *(none declared)* |
+| [Leigh Bain](/people/leigh-bain) | reference | — / 7.6 min | *(none declared)* |
+| [lichard McGrath](/people/lichard-mcgrath) | reference | — / 6.8 min | *(none declared)* |
+| [Linda M. McDonald](/people/linda-m-mcdonald) | reference | — / 9.8 min | *(none declared)* |
+| [Linda Vickery](/people/linda-vickery) | reference | — / 7.7 min | *(none declared)* |
+| [Lisa Normandin](/people/lisa-normandin) | reference | — / 11.2 min | *(none declared)* |
+| [Lisa Normandin R](/people/lisa-normandin-r) | reference | — / 6.9 min | *(none declared)* |
+| [Lois Leis](/people/lois-leis) | reference | — / 6.7 min | *(none declared)* |
+| [LoriAnn Tessier](/people/loriann-tessier) | reference | — / 6.8 min | *(none declared)* |
+| [Lorraine Mendoza](/people/lorraine-mendoza) | reference | — / 10.2 min | *(none declared)* |
+| [Lorraine Rudd](/people/lorraine-rudd) | reference | — / 10.0 min | *(none declared)* |
+| [Lou Franco](/people/lou-franco) | reference | — / 9.4 min | *(none declared)* |
+| [Louis Franco](/people/louis-franco) | reference | — / 8.4 min | *(none declared)* |
+| [Louis J. Franco](/people/louis-j-franco) | reference | — / 11.1 min | *(none declared)* |
+| [Loxi Jo Calmes- School Superintendent](/people/loxi-jo-calmes-school-superintendent) | reference | — / 7.3 min | *(none declared)* |
+| [Lynne Man](/people/lynne-man) | reference | — / 7.6 min | *(none declared)* |
+| [Maia Wentrup](/people/maia-wentrup) | reference | — / 7.9 min | *(none declared)* |
+| [Mandy Gilman](/people/mandy-gilman) | reference | — / 9.3 min | *(none declared)* |
+| [Marc Luescher](/people/marc-luescher) | reference | — / 8.2 min | *(none declared)* |
+| [Marianne Mascari](/people/marianne-mascari) | reference | — / 7.8 min | *(none declared)* |
+| [Marissa Thompson](/people/marissa-thompson) | reference | — / 8.2 min | *(none declared)* |
+| [Mark Erickson](/people/mark-erickson) | reference | — / 10.5 min | *(none declared)* |
+| [Mark Muzzi](/people/mark-muzzi) | reference | — / 6.9 min | *(none declared)* |
+| [Mark Riccardi](/people/mark-riccardi) | reference | — / 7.0 min | *(none declared)* |
+| [Mary Ellen Letarte](/people/mary-ellen-letarte) | reference | — / 7.1 min | *(none declared)* |
+| [Mary Lynn Conrad](/people/mary-lynn-conrad) | reference | — / 7.5 min | *(none declared)* |
+| [Mary Wilson](/people/mary-wilson) | reference | — / 10.6 min | *(none declared)* |
+| [Maryrae Holman](/people/maryrae-holman) | reference | — / 10.0 min | *(none declared)* |
+| [Mason Bowser](/people/mason-bowser) | reference | — / 7.3 min | *(none declared)* |
+| [Mather Benner](/people/mather-benner) | reference | — / 6.7 min | *(none declared)* |
+| [Matt Allison](/people/matt-allison) | reference | — / 10.4 min | *(none declared)* |
+| [Matt Brenner](/people/matt-brenner) | reference | — / 10.0 min | *(none declared)* |
+| [Matt Proctor](/people/matt-proctor) | reference | — / 9.8 min | *(none declared)* |
+| [Matt Proctor II](/people/matt-proctor-ii) | reference | — / 6.9 min | *(none declared)* |
+| [Matt Snyder](/people/matt-snyder) | reference | — / 8.5 min | *(none declared)* |
+| [Matthew Allison](/people/matthew-allison) | reference | — / 12.1 min | *(none declared)* |
+| [Matthew Brenner](/people/matthew-brenner) | reference | — / 10.6 min | *(none declared)* |
+| [Matthew Kehrer](/people/matthew-kehrer) | reference | — / 7.6 min | *(none declared)* |
+| [Matthew Procter](/people/matthew-procter) | reference | — / 6.8 min | *(none declared)* |
+| [Matthew Snyder](/people/matthew-snyder) | reference | — / 6.9 min | *(none declared)* |
+| [Maureen Dupuis](/people/maureen-dupuis) | reference | — / 8.5 min | *(none declared)* |
+| [Megan Lordan](/people/megan-lordan) | reference | — / 7.3 min | *(none declared)* |
+| [Meredith Weiss](/people/meredith-weiss) | reference | — / 8.6 min | *(none declared)* |
+| [Michael Clark](/people/michael-clark) | reference | — / 8.0 min | *(none declared)* |
+| [Michael Conway](/people/michael-conway) | reference | — / 7.4 min | *(none declared)* |
+| [Michael D. Gale](/people/michael-d-gale) | reference | — / 7.0 min | *(none declared)* |
+| [Michael Deveikis](/people/michael-deveikis) | reference | — / 6.9 min | *(none declared)* |
+| [Michael Fiorentino, Jr](/people/michael-fiorentino-jr) | reference | — / 8.0 min | *(none declared)* |
+| [Michael Kidney](/people/michael-kidney) | reference | — / 7.4 min | *(none declared)* |
+| [Michael Mackin](/people/michael-mackin) | reference | — / 8.5 min | *(none declared)* |
+| [Michael Ray](/people/michael-ray) | reference | — / 7.5 min | *(none declared)* |
+| [Michael-Ray Jeffreys](/people/michael-ray-jeffreys) | reference | — / 12.6 min | *(none declared)* |
+| [Michael-Ray Jeffreys- S](/people/michael-ray-jeffreys-s) | reference | — / 6.8 min | *(none declared)* |
+| [Michael Toohill](/people/michael-toohill) | reference | — / 8.1 min | *(none declared)* |
+| [Michele Beauvais](/people/michele-beauvais) | reference | — / 7.6 min | *(none declared)* |
+| [Michelle Smith](/people/michelle-smith) | reference | — / 7.1 min | *(none declared)* |
+| [Michelle Walton](/people/michelle-walton) | reference | — / 8.1 min | *(none declared)* |
+| [Mike Barney](/people/mike-barney) | reference | — / 7.5 min | *(none declared)* |
+| [Mike Larouche](/people/mike-larouche) | reference | — / 9.8 min | *(none declared)* |
+| [Mike Mackin](/people/mike-mackin) | reference | — / 10.3 min | *(none declared)* |
+| [Mike Nault](/people/mike-nault) | reference | — / 10.3 min | *(none declared)* |
+| [Mike Rupp](/people/mike-rupp) | reference | — / 8.0 min | *(none declared)* |
+| [Mike Toohill](/people/mike-toohill) | reference | — / 7.8 min | *(none declared)* |
+| [Minna Scholten](/people/minna-scholten) | reference | — / 7.6 min | *(none declared)* |
+| [Moderator - 3 year tern](/people/moderator-3-year-tern) | reference | — / 7.0 min | *(none declared)* |
+| [MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION-Subregion](/people/montachusett-metropolitan-planning-organization-subregion) | reference | — / 7.0 min | *(none declared)* |
+| [Myleen Mallari](/people/myleen-mallari) | reference | — / 7.9 min | *(none declared)* |
+| [Myleen Mallari- Treasurer/Collector](/people/myleen-mallari-treasurer-collector) | reference | — / 7.4 min | *(none declared)* |
+| [Nancy Forest](/people/nancy-forest) | reference | — / 8.6 min | *(none declared)* |
+| [Nancy Foss Yasko](/people/nancy-foss-yasko) | reference | — / 9.1 min | *(none declared)* |
+| [Nancy Gray](/people/nancy-gray) | reference | — / 8.2 min | *(none declared)* |
+| [Nancy Heald](/people/nancy-heald) | reference | — / 7.1 min | *(none declared)* |
+| [Nancy Peterson](/people/nancy-peterson) | reference | — / 7.0 min | *(none declared)* |
+| [Nathan J. Lockwood](/people/nathan-j-lockwood) | reference | — / 9.9 min | *(none declared)* |
+| [Nathan Lockwood](/people/nathan-lockwood) | reference | — / 10.1 min | *(none declared)* |
+| [Neal Sullivan](/people/neal-sullivan) | reference | — / 7.7 min | *(none declared)* |
+| [Nicholas Coronella](/people/nicholas-coronella) | reference | — / 7.1 min | *(none declared)* |
+| [Nicholas Pirro](/people/nicholas-pirro) | reference | — / 9.7 min | *(none declared)* |
+| [Nicole Waters](/people/nicole-waters) | reference | — / 8.1 min | *(none declared)* |
+| [ohn Londa](/people/ohn-londa) | reference | — / 6.9 min | *(none declared)* |
+| [ois Lewis](/people/ois-lewis) | reference | — / 6.8 min | *(none declared)* |
+| [OPEN SPACE ADVISORY COMMITTEE (ad hoc)](/people/open-space-advisory-committee-ad-hoc) | reference | — / 7.0 min | *(none declared)* |
+| [Paige Gengler](/people/paige-gengler) | reference | — / 7.3 min | *(none declared)* |
+| [Patricia Adams](/people/patricia-adams) | reference | — / 10.5 min | *(none declared)* |
+| [Patrick Callahan](/people/patrick-callahan) | reference | — / 7.8 min | *(none declared)* |
+| [Patrick Hakey](/people/patrick-hakey) | reference | — / 8.6 min | *(none declared)* |
+| [Paul Bertram](/people/paul-bertram) | reference | — / 7.0 min | *(none declared)* |
+| [Paul Doherty](/people/paul-doherty) | reference | — / 8.6 min | *(none declared)* |
+| [Paul J. Doherty](/people/paul-j-doherty) | reference | — / 9.9 min | *(none declared)* |
+| [Paul J. Fortin](/people/paul-j-fortin) | reference | — / 10.0 min | *(none declared)* |
+| [Paul Sarapsas](/people/paul-sarapsas) | reference | — / 7.1 min | *(none declared)* |
+| [Paula Bertra](/people/paula-bertra) | reference | — / 6.9 min | *(none declared)* |
+| [Paula Bertram](/people/paula-bertram) | reference | — / 11.8 min | *(none declared)* |
+| [Paula J. Bertram](/people/paula-j-bertram) | reference | — / 10.1 min | *(none declared)* |
+| [Perry R. Jewell](/people/perry-r-jewell) | reference | — / 10.2 min | *(none declared)* |
+| [Pete Lincoln](/people/pete-lincoln) | reference | — / 9.2 min | *(none declared)* |
+| [Pete McCarron](/people/pete-mccarron) | reference | — / 7.2 min | *(none declared)* |
+| [Pete McCauliff](/people/pete-mccauliff) | reference | — / 9.5 min | *(none declared)* |
+| [Peter Beardmore](/people/peter-beardmore) | reference | — / 10.6 min | *(none declared)* |
+| [Peter Lincoln](/people/peter-lincoln) | reference | — / 9.1 min | *(none declared)* |
+| [Peter Schmidt](/people/peter-schmidt) | reference | — / 6.9 min | *(none declared)* |
+| [Peter Stella](/people/peter-stella) | reference | — / 7.4 min | *(none declared)* |
+| [Phyllis Luck](/people/phyllis-luck) | reference | — / 9.2 min | *(none declared)* |
+| [Phyllis M. Luck](/people/phyllis-m-luck) | reference | — / 10.0 min | *(none declared)* |
+| [Planning Director](/people/planning-director) | reference | — / 7.3 min | *(none declared)* |
+| [Raymond Beal](/people/raymond-beal) | reference | — / 8.4 min | *(none declared)* |
+| [Raymond E. Beal](/people/raymond-e-beal) | reference | — / 7.7 min | *(none declared)* |
+| [Rebecca Lantry](/people/rebecca-lantry) | reference | — / 8.4 min | *(none declared)* |
+| [Rena Swezey](/people/rena-swezey) | reference | — / 8.4 min | *(none declared)* |
+| [Renee Emkey](/people/renee-emkey) | reference | — / 10.7 min | *(none declared)* |
+| [Renee Trakimas](/people/renee-trakimas) | reference | — / 7.1 min | *(none declared)* |
+| [Rhonda Lisio](/people/rhonda-lisio) | reference | — / 8.6 min | *(none declared)* |
+| [Richard Bursch](/people/richard-bursch) | reference | — / 11.1 min | *(none declared)* |
+| [Richard H. Letarte](/people/richard-h-letarte) | reference | — / 9.2 min | *(none declared)* |
+| [Richard Howard](/people/richard-howard) | reference | — / 10.4 min | *(none declared)* |
+| [Richard L McGrath](/people/richard-l-mcgrath) | reference | — / 6.9 min | *(none declared)* |
+| [Richard Letarte](/people/richard-letarte) | reference | — / 8.3 min | *(none declared)* |
+| [Richard McGrath](/people/richard-mcgrath) | reference | — / 11.0 min | *(none declared)* |
+| [Richard McGrath-2024 Jennifer Sanderson](/people/richard-mcgrath-2024-jennifer-sanderson) | reference | — / 6.8 min | *(none declared)* |
+| [Richard N. Mailloux](/people/richard-n-mailloux) | reference | — / 7.3 min | *(none declared)* |
+| [Richard St. Cyr](/people/richard-st-cyr) | reference | — / 7.1 min | *(none declared)* |
+| [Richard Tremblay](/people/richard-tremblay) | reference | — / 10.2 min | *(none declared)* |
+| [Rob Oliva](/people/rob-oliva) | reference | — / 7.6 min | *(none declared)* |
+| [Robert Bowen](/people/robert-bowen) | reference | — / 8.0 min | *(none declared)* |
+| [Robert Cadle](/people/robert-cadle) | reference | — / 7.2 min | *(none declared)* |
+| [Robert Conroy](/people/robert-conroy) | reference | — / 7.1 min | *(none declared)* |
+| [Robert Ebersole](/people/robert-ebersole) | reference | — / 7.5 min | *(none declared)* |
+| [Robert Hamel](/people/robert-hamel) | reference | — / 7.1 min | *(none declared)* |
+| [Robert Herrick](/people/robert-herrick) | reference | — / 7.4 min | *(none declared)* |
+| [Robert J. Ebersole](/people/robert-j-ebersole) | reference | — / 9.9 min | *(none declared)* |
+| [Robert Robuccio](/people/robert-robuccio) | reference | — / 7.3 min | *(none declared)* |
+| [Robin Nano](/people/robin-nano) | reference | — / 7.3 min | *(none declared)* |
+| [Robin Venezia](/people/robin-venezia) | reference | — / 7.5 min | *(none declared)* |
+| [Ronald Albert](/people/ronald-albert) | reference | — / 7.8 min | *(none declared)* |
+| [Ruth Anderson](/people/ruth-anderson) | reference | — / 7.7 min | *(none declared)* |
+| [Ryan Stober](/people/ryan-stober) | reference | — / 9.7 min | *(none declared)* |
+| [Sarah Camme](/people/sarah-camme) | reference | — / 6.9 min | *(none declared)* |
+| [Sarah Cammer](/people/sarah-cammer) | reference | — / 10.7 min | *(none declared)* |
+| [Sarah Coon](/people/sarah-coon) | reference | — / 7.1 min | *(none declared)* |
+| [Sarah Grant](/people/sarah-grant) | reference | — / 9.6 min | *(none declared)* |
+| [Sarah Grant-2023•](/people/sarah-grant-2023) | reference | — / 7.0 min | *(none declared)* |
+| [Scott Chase](/people/scott-chase) | reference | — / 8.9 min | *(none declared)* |
+| [Scott Dall](/people/scott-dall) | reference | — / 9.4 min | *(none declared)* |
+| [Seamus Kelly](/people/seamus-kelly) | reference | — / 7.1 min | *(none declared)* |
+| [Sheila Craigen](/people/sheila-craigen) | reference | — / 7.4 min | *(none declared)* |
+| [Sheila Lumi](/people/sheila-lumi) | reference | — / 7.6 min | *(none declared)* |
+| [Shirley McBride](/people/shirley-mcbride) | reference | — / 7.6 min | *(none declared)* |
+| [Sophie Shapiro](/people/sophie-shapiro) | reference | — / 7.4 min | *(none declared)* |
+| [Stanley Barney](/people/stanley-barney) | reference | — / 7.0 min | *(none declared)* |
+| [State Appointee](/people/state-appointee) | reference | — / 6.9 min | *(none declared)* |
+| [Stephanie Karlson](/people/stephanie-karlson) | reference | — / 7.1 min | *(none declared)* |
+| [Stephanie Scofield](/people/stephanie-scofield) | reference | — / 7.0 min | *(none declared)* |
+| [Stephanie Trudel](/people/stephanie-trudel) | reference | — / 7.5 min | *(none declared)* |
+| [Stephen Walker](/people/stephen-walker) | reference | — / 7.2 min | *(none declared)* |
+| [Stephen Wallace](/people/stephen-wallace) | reference | — / 7.3 min | *(none declared)* |
+| [Steve Archambault](/people/steve-archambault) | reference | — / 8.1 min | *(none declared)* |
+| [Steve Dubois](/people/steve-dubois) | reference | — / 7.6 min | *(none declared)* |
+| [Steve Walker](/people/steve-walker) | reference | — / 9.4 min | *(none declared)* |
+| [Steven Archambault](/people/steven-archambault) | reference | — / 8.7 min | *(none declared)* |
+| [Steven Walker](/people/steven-walker) | reference | — / 7.4 min | *(none declared)* |
+| [Susan Andrews](/people/susan-andrews) | reference | — / 10.1 min | *(none declared)* |
+| [Susan Bunish](/people/susan-bunish) | reference | — / 7.4 min | *(none declared)* |
+| [Susan Doherty](/people/susan-doherty) | reference | — / 8.3 min | *(none declared)* |
+| [Susan Murchie](/people/susan-murchie) | reference | — / 7.2 min | *(none declared)* |
+| [Susan O&#x27;Sullivan](/people/susan-o-sullivan) | reference | — / 9.3 min | *(none declared)* |
+| [Susan Visser](/people/susan-visser) | reference | — / 7.6 min | *(none declared)* |
+| [Susanna Jewell](/people/susanna-jewell) | reference | — / 9.3 min | *(none declared)* |
+| [Tanner Cole](/people/tanner-cole) | reference | — / 10.8 min | *(none declared)* |
+| [Tanya Dall](/people/tanya-dall) | reference | — / 9.6 min | *(none declared)* |
+| [Teddy Doucet](/people/teddy-doucet) | reference | — / 6.9 min | *(none declared)* |
+| [Terese Burchfield](/people/terese-burchfield) | reference | — / 8.4 min | *(none declared)* |
+| [Terri Burchfield](/people/terri-burchfield) | reference | — / 9.5 min | *(none declared)* |
+| [Thia St. Martin](/people/thia-st-martin) | reference | — / 7.1 min | *(none declared)* |
+| [Thomas A. Alonzo](/people/thomas-a-alonzo) | reference | — / 9.9 min | *(none declared)* |
+| [Thomas Alonzo](/people/thomas-alonzo) | reference | — / 10.5 min | *(none declared)* |
+| [Thomas Balish](/people/thomas-balish) | reference | — / 8.9 min | *(none declared)* |
+| [Thomas Gray](/people/thomas-gray) | reference | — / 9.7 min | *(none declared)* |
+| [Tiffany Warren](/people/tiffany-warren) | reference | — / 7.1 min | *(none declared)* |
+| [Tim Lawless](/people/tim-lawless) | reference | — / 8.1 min | *(none declared)* |
+| [Tim Murphy- Town Moderator](/people/tim-murphy-town-moderator) | reference | — / 7.5 min | *(none declared)* |
+| [Timothy Foster](/people/timothy-foster) | reference | — / 6.9 min | *(none declared)* |
+| [Timothy Russell Willsmer](/people/timothy-russell-willsmer) | reference | — / 9.4 min | *(none declared)* |
+| [Timothy W. Murphy](/people/timothy-w-murphy) | reference | — / 7.3 min | *(none declared)* |
+| [Timothy Willsmer](/people/timothy-willsmer) | reference | — / 7.5 min | *(none declared)* |
+| [Todd Dwyer](/people/todd-dwyer) | reference | — / 10.8 min | *(none declared)* |
+| [Todd Holman](/people/todd-holman) | reference | — / 7.2 min | *(none declared)* |
+| [Tom Alonzo](/people/tom-alonzo) | reference | — / 10.1 min | *(none declared)* |
+| [Tom Bertram](/people/tom-bertram) | reference | — / 10.4 min | *(none declared)* |
+| [Tom Gray](/people/tom-gray) | reference | — / 8.5 min | *(none declared)* |
+| [Tont Reynolds](/people/tont-reynolds) | reference | — / 6.8 min | *(none declared)* |
+| [Troy Daniels](/people/troy-daniels) | reference | — / 10.0 min | *(none declared)* |
+| [Two Alternate Vacancies](/people/two-alternate-vacancies) | reference | — / 6.8 min | *(none declared)* |
+| [Tyler Hathaway](/people/tyler-hathaway) | reference | — / 7.1 min | *(none declared)* |
+| [Victoria Leger](/people/victoria-leger) | reference | — / 8.0 min | *(none declared)* |
+| [Walter Mayhew Jr](/people/walter-mayhew-jr) | reference | — / 9.6 min | *(none declared)* |
+| [Wayne Caron](/people/wayne-caron) | reference | — / 7.4 min | *(none declared)* |
+| [Wayne Comeau](/people/wayne-comeau) | reference | — / 6.8 min | *(none declared)* |
+| [Wendy Bertrand](/people/wendy-bertrand) | reference | — / 10.6 min | *(none declared)* |
+| [William Lakso](/people/william-lakso) | reference | — / 7.9 min | *(none declared)* |
+| [William Lloyd](/people/william-lloyd) | reference | — / 10.3 min | *(none declared)* |
+| [William Tyler](/people/william-tyler) | reference | — / 10.4 min | *(none declared)* |
+| [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.5 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 54.3 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 55.5 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.4 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 19.3 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.5 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.7 min | *(none declared)* |
 | [What the town is deciding now](/threads) | reference | — / 15.5 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 472.4 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
-| [What we cannot answer](/what-we-cannot-answer) | reference | — / 219.4 min | *(none declared)* |
+| [What we cannot answer](/what-we-cannot-answer) | reference | — / 219.9 min | *(none declared)* |

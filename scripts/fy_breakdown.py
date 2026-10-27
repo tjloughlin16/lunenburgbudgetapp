@@ -306,6 +306,7 @@ def model():
     # rule b: same payee
     paid_from = defaultdict(Decimal)                      # (fy, account, fund) -> placed by payee
     payments = defaultdict(int)                           # (fy, account or category) -> how many
+    placed_rows = defaultdict(list)                       # (fy, account or (category, payer)) -> rows
     paid = defaultdict(lambda: defaultdict(Decimal))      # payee -> scope account -> invoices
     for r in exp:
         if scope(r) and r['source'] in ('API', 'APM'):
@@ -327,6 +328,7 @@ def model():
         how[(r['fy'], acct)][('payee', payer(A[r['account']]), p)] += r['amt']
         if r['source'] in PAYMENT:
             payments[(r['fy'], acct)] += 1
+        placed_rows[(r['fy'], acct)].append(r)
         done.add(id(r))
 
     # A cost a fund paid directly toward a line, then moved back onto that line by journal entry
@@ -358,6 +360,7 @@ def model():
             func_cat[(r['fy'], cat_of(r['account']), payer(a))] += r['amt']
             if r['source'] in PAYMENT:
                 payments[(r['fy'], cat_of(r['account']), payer(a))] += 1
+            placed_rows[(r['fy'], cat_of(r['account']), payer(a))].append(r)
             func_codes[(r['fy'], cat_of(r['account']), payer(a))].add(f)
         else:
             why = {'heading': 'booked to a heading', 'none': 'booked to no function',
@@ -454,7 +457,7 @@ def model():
                          prepaid=sum((r['prepaid'] for r in rs), D0),
                          carried_unpaid=sum((r['carried_unpaid'] for r in rs), D0),
                          carried_budget=sum((r['carried_budget'] for r in rs), D0))
-    return dict(rows=rows, years=years, moves=moves, prepaid=prepaid, transfers=transfers(),
+    return dict(rows=rows, years=years, moves=moves, placed_rows=dict(placed_rows), prepaid=prepaid, transfers=transfers(),
                 tie=tie_special(), flows=flows(rows, unmatched))
 
 

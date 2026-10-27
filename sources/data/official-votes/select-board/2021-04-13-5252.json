@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-04-13",
  "docid": "5252",
@@ -12,48 +12,361 @@
  },
  "votes": [
   {
-   "motion": "Appoint Elise Wiley to the Cultural Council with a term to expire June 30, 2024",
+   "motion": "Appoint Elise Wiley to the Cultural Council, term to expire June 30, 2024.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: k. adams 2°: t. dwyer to appoint elise wiley to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to appoint elise wiley to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Appoint Karen Kemp to the Cultural Council with a term to expire June 30, 2024",
+   "motion": "Appoint Karen Kemp to the Cultural Council, term to expire June 30, 2024.",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: j. marino to appoint karen kemp to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mir. alonzo-aye"
+   "quote": "to appoint karen kemp to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mir. alonzo-aye"
   },
   {
-   "motion": "Appoint Matt Snyder to the Green Community Task Force",
+   "motion": "Appoint Matt Snyder to the Green Community Task Force.",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
    "outcome": "passed 5-0",
    "procedural": false,
-   "quote": "motion: k. adams 2nd: m. jeffreys to appoint matt snyder to the green community task force vote: ms. adams- aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to appoint matt snyder to the green community task force vote: ms. adams- aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo-aye"
   },
   {
-   "motion": "Approve the Minutes of March 9, 2021 as presented",
+   "motion": "Approve the Minutes of March 9, 2021 as presented.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 4-0",
+   "outcome": "passed 4-0-1",
    "procedural": true,
-   "quote": "motion: k. adams 2n°: t. dwyer to approve the minutes of march 9, 2021 as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo- abstai",
-   "quote_taken_from_text": true
+   "quote": "to approve the minutes of march 9, 2021 as presented vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo- abstain"
   },
   {
-   "motion": "Enter Executive Session to discuss collective bargaining strategy and adjourn immediately after",
+   "motion": "Enter Executive Session to discuss strategy on collective bargaining (Municipal Employees Union and DPW Union) and adjourn immediately after exiting.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion: k. adams 2nd: t. dwyer to enter into executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position of the public body and the chairso declares. (municipal employees union and dpw union) and adjourn immediately after exiting vote: ms. adams-aye, mr. dwyer-aye, mr. marino, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "to enter into executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1427115
+ "note": "OCR text (macOS Vision). Page 1 roll-call line is garbled: the names \"McG Path\", \"nicastro\", \"Else viley\", \"Matt Si, land Use Director\" and \"Richard\" cannot be read reliably, so only the clearly printed members are listed. \"Chairman McGrath\" is printed as McGrath; the chair's first name is not printed. Ms. Lemieux's title is not printed in this text. Mr. Burney is named once with no role and is not listed. Chief Gammel and Cullen Dwyer are referenced in statements but did not take part. Executive session vote: Mr. Marino's vote is not marked in the text (it reads \"Mr. Marino, Mr. Jeffreys-aye\"), so the outcome is recorded as \"passed\" without a count. The first public comment reads \"There was none at this time.\" The Personnel Committee article is cut at the page 3 to 4 break, so only its grade figures are visible. No dollar figure appears for Article 26. The text contains no vote on the APD bylaw, the National Register question, or the Monty Tech drawing.",
+ "cost_usd": 0.028244800000000004,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Ms. Lemieux",
+   "role": "",
+   "status": "present",
+   "quote": "ms. lemieux read a memorandum sent to her from lunenburg police chief gammel."
+  },
+  {
+   "name": "McGrath",
+   "role": "Chairman, Architectural Preservation District Commission (spoke on behalf of the commission)",
+   "status": "present",
+   "quote": "chairman mcgrath did not have a quorum but spoke on behalf of the commission."
+  },
+  {
+   "name": "Anthony Nicastro",
+   "role": "APDC member",
+   "status": "present",
+   "quote": "apdc member anthony nicastro was also present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Ms. Lemieux to contact the Monty Tech instructor and students and request an amendment to the drawing, without the building on it, in time for Town Meeting.",
+   "quote": "ms. lemieux will reach out to the monty tech instructor and students and request an amendment be made to the drawing without the building on it in time for town meeting."
+  },
+  {
+   "decision": "The drawing is to reflect what was discussed at the Board's October 31 site visit (a front park, middle parking, no school building, and a farmers' market).",
+   "quote": "mr. alonzo requested the drawing reflect what was discussed at the board's october 31\" site visit."
+  },
+  {
+   "decision": "Adjourn immediately after the executive session.",
+   "quote": "mr. alonzo stated the board would be entering executive session and adjourning immediately after."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "TCP building design and engineering funding (Article 26)",
+   "what_was_recorded": "No dollar amount is yet available; the price is under negotiation and a number is expected by April 21.",
+   "quote": "ms. lemieux reported there is no monetary amount available yet.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "State grants for historic buildings",
+   "what_was_recorded": "The Architectural Preservation District Commission member reported the state issued grants last year, with applications due in March.",
+   "quote": "mr. nicastro reported the state issued over $800,000 in grants last year.",
+   "figures_as_printed": [
+    "$800,000"
+   ]
+  },
+  {
+   "topic": "Fiscal Year 2022 budget, capital plan and financial forecast",
+   "what_was_recorded": "Listed on the agenda as old business; the minutes record no discussion of these items.",
+   "quote": "discussion on fiscal year 2022 budget, capital plan, financial forecast and",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Personnel Committee position grades",
+   "what_was_recorded": "Article to add positions at assigned pay grades (Operator Grade 9, Reserve Officer Grade 10, Network Administrator Grade 13); pulled from the consent calendar.",
+   "quote": "the position of network administrator be added and assigned to grade 13; or take any other",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "",
+   "topic": "thanks to school and public safety staff",
+   "quote": "ms. adams thanked school and public safety personnel as school opened last week."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order and remote meeting notice",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "open meeting law",
+    "remote meeting"
+   ]
+  },
+  {
+   "topic": "Public comment and announcements",
+   "resolution": "no speakers; Lions Club gazebo cleanup announced",
+   "quote": "there was none at this time.",
+   "tags": [
+    "public comment",
+    "announcements"
+   ]
+  },
+  {
+   "topic": "Police memo on use of force and training",
+   "resolution": "read into the record; no action",
+   "quote": "ms. lemieux read a memorandum sent to her from lunenburg police chief gammel.",
+   "tags": [
+    "police",
+    "use of force",
+    "training"
+   ]
+  },
+  {
+   "topic": "Cultural Council and Green Community Task Force appointments",
+   "resolution": "approved (three appointments)",
+   "quote": "to appoint matt snyder to the green community task force",
+   "tags": [
+    "appointments",
+    "cultural council",
+    "green community"
+   ]
+  },
+  {
+   "topic": "Architectural Preservation District Commission: National Register and APD bylaw (Article 24)",
+   "resolution": "discussed; no vote; Board has not yet discussed National Register listing",
+   "quote": "chairman mcgrath did not have a quorum but spoke on behalf of the commission.",
+   "tags": [
+    "historic preservation",
+    "national register",
+    "APD bylaw",
+    "Article 24"
+   ]
+  },
+  {
+   "topic": "Monty Tech concept drawing for the TCP building",
+   "resolution": "directed amendment to the drawing before Town Meeting",
+   "quote": "the board expressed gratitude to monty tech for their efforts.",
+   "tags": [
+    "Monty Tech",
+    "TCP building",
+    "Town Meeting"
+   ]
+  },
+  {
+   "topic": "TCP design committee funding (Article 26)",
+   "resolution": "no amount available; continued",
+   "quote": "ms. lemieux reported there is no monetary amount available yet.",
+   "tags": [
+    "TCP building",
+    "Article 26",
+    "design funding"
+   ]
+  },
+  {
+   "topic": "Approval of March 9, 2021 minutes",
+   "resolution": "approved 4-0-1",
+   "quote": "to approve the minutes of march 9, 2021 as presented",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Action items and committee reports",
+   "resolution": "none this evening",
+   "quote": "action items- there were none this evening",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Fiscal Year 2022 budget and warrant articles (old business)",
+   "resolution": "no discussion",
+   "quote": "there was no discussion on these items.",
+   "tags": [
+    "budget",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Personnel Committee position grades (consent calendar)",
+   "resolution": "removed from consent calendar",
+   "quote": "ms. lemieux is recommending it be removed from the consent calendar.",
+   "tags": [
+    "personnel",
+    "consent calendar"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "informational; no action",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed",
+   "tags": [
+    "COVID-19",
+    "vaccination",
+    "Board of Health"
+   ]
+  },
+  {
+   "topic": "Upcoming meetings and events",
+   "resolution": "announced",
+   "quote": "mr. alonzo reported the board's next meeting will be april 27 and then on may 4, 11, and 18;",
+   "tags": [
+    "schedule",
+    "Town Meeting",
+    "Town Election"
+   ]
+  },
+  {
+   "topic": "Public comment (second)",
+   "resolution": "thanks to school and public safety staff",
+   "quote": "ms. adams thanked school and public safety personnel as school opened last week.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive session: collective bargaining",
+   "resolution": "entered executive session and adjourned",
+   "quote": "to enter into executive session to discuss strategy with respect to collective bargaining if an open meeting may have a detrimental effect on the bargaining position",
+   "tags": [
+    "executive session",
+    "collective bargaining",
+    "union"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Memorandum from Lunenburg Police Chief Gammel on use-of-force training (read by Ms. Lemieux)",
+   "where": "text",
+   "quote": "ms. lemieux read a memorandum sent to her from lunenburg police chief gammel."
+  },
+  {
+   "name": "ARTICLE 26 (TCP building design and engineering funding, submitted by the TCP Building Design Committee)",
+   "where": "text",
+   "quote": "article 26. to see if the town will vote to raise and appropriate or transfer from available funds a"
+  },
+  {
+   "name": "Annual Town Meeting Article 24, Amendment to APD Bylaw",
+   "where": "text",
+   "quote": "annual town meeting article 24 on amendment to apd bylaw"
+  },
+  {
+   "name": "Draft amendment to the APD bylaw (final wording)",
+   "where": "text",
+   "quote": "discussion about the wording of the draft amendment to the apd bylaw ensued."
+  },
+  {
+   "name": "Statement from member Cullen Dwyer regarding the appeal process",
+   "where": "text",
+   "quote": "mr. mcgrath read a statement from member cullen dwyer regarding the appeal process."
+  },
+  {
+   "name": "Monty Tech sketch/drawing of the TCP building",
+   "where": "text",
+   "quote": "mr. dwyer stated the sketch could be helpful for town meeting as a basis that we can mark up to"
+  },
+  {
+   "name": "Personnel Committee article (add Operator Grade 9, Reserve Officer Grade 10, Network Administrator Grade 13)",
+   "where": "text",
+   "quote": "operator be added and assigned to grade 9; the position of reserve officer to be added and assigned to"
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G. L. c. 30A, § 20",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting law, g. l. c. 30a, §"
+  },
+  {
+   "name": "Board of Health weekly COVID-19 update",
+   "where": "text",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed"
+  }
+ ],
+ "tags": [
+  "Select Board",
+  "Town Meeting 2021",
+  "appointments",
+  "Cultural Council",
+  "Green Community",
+  "historic preservation",
+  "APD bylaw",
+  "TCP building",
+  "Monty Tech",
+  "COVID-19",
+  "police use of force",
+  "personnel positions",
+  "executive session",
+  "collective bargaining"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

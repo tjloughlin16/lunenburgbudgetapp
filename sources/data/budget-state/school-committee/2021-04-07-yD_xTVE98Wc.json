@@ -1,0 +1,56 @@
+{
+ "board": "School Committee",
+ "board_slug": "school-committee",
+ "meeting_date": "2021-04-07",
+ "source": {
+  "sha256": "dd7367f00f61cd2397053d0b565c4b480d5cbc7b5b0edd978cb3549088f9a1d6",
+  "transcript": "sources/data/youtube-transcripts/school-committee/2021-04-07-yD_xTVE98Wc.json"
+ },
+ "state": {
+  "cuts": [],
+  "nothing_on_the_budget": false,
+  "statements": [
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2022,
+    "kind": "other",
+    "scope": "school",
+    "statement": "The FY22 school budget as set cannot fund a new virtual school locally, so it would need ESSER or grant money.",
+    "status": "announced",
+    "t": 7482,
+    "who": "the superintendent"
+   },
+   {
+    "amount_as_heard": null,
+    "fiscal_year": 2022,
+    "kind": "other",
+    "scope": "school",
+    "statement": "The approved budget already contains money for this summer's academic program.",
+    "status": "announced",
+    "t": 5376,
+    "who": "the superintendent"
+   }
+  ],
+  "warnings": [
+   {
+    "about": "a single district virtual school",
+    "condition": "if the district creates a virtual school with ESSER funding",
+    "fiscal_year": null,
+    "prediction": "ESSER funds are not indefinite, and a virtual school's operating costs would eventually have to be absorbed into the local budget.",
+    "scope": "school",
+    "t": 7548,
+    "who": "the superintendent"
+   }
+  ]
+ },
+ "video_id": "yD_xTVE98Wc",
+ "video_url": "https://www.youtube.com/watch?v=yD_xTVE98Wc",
+ "warning": "EXTRACTED BY A LANGUAGE MODEL FROM MACHINE CAPTIONS. Every figure is as heard and may be misheard; every line carries the second in the video, which is the record.",
+ "written": {
+  "at": "2026-10-27T12:06:15Z",
+  "by": "scripts/write_recording_minutes.py (one read with the minutes)",
+  "cost_usd": null,
+  "model": "sonnet",
+  "schema": 2
+ }
+}

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-04-12",
  "docid": "4131",
@@ -12,39 +12,293 @@
  },
  "votes": [
   {
-   "motion": "Continue the ANR Plan for 360 Flat Hill Road to the April 26 meeting",
+   "motion": "Continue the ANR Plan for 360 Flat Hill Road to the Board's April 26 meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "p. bertram made motion to continue the anr plan to the board's next meeting of april 26 th, m. brenner se conded, roll call vote - p. bertram, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to continue the anr plan to the board's next meeting"
   },
   {
-   "motion": "Recommend favorably on Zoning Warrant Articles and on Article 29 add calculation for Restaurant Carry-Out of 1 space per 3 seats provided (indoor or outdoor)",
+   "motion": "Recommend favorably on both zoning warrant articles, and on Article 29 with the added restaurant carry-out parking calculation of 1 space per 3 seats provided.",
    "moved_by": "M. Brenner",
    "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "m. brenner made motion that the planning board recommend favorably on both artic les and additionally on article 29 the added calculation under restaurant carry -out of 1 space per 3 seats provided (indoor or outdoor). article 29 would read- 1 space per 300 square feet of net floor area plus 1 space per 3 seats provided (indoor or outd oor) plus 1 space per employee on the largest shift, p. bertram seconded, roll call vote- p. bertram, aye; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 4 -0."
+   "quote": "m. brenner made motion that the planning board recommend favorably on both"
   },
   {
-   "motion": "Approve the minutes of 03/22/2021 and 03/22/2021, North End Subaru",
+   "motion": "Approve the minutes of 03/22/2021 and 03/22/2021, North End Subaru.",
    "moved_by": "M. Brenner",
    "seconded_by": "T. Cole",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "m. brenner made motion to approve the minutes of 03/22/2021 and 03/22/2021, north end subaru, t. cole seconded, roll call vote - p. bertram, abstain; m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
+   "quote": "m. brenner made motion to approve the minutes of 03/22/2021 and 03/22/2021, north end subaru, t. cole seconded"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "P. Bertram",
    "seconded_by": "M. Brenner",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- m. brenner, aye; p. bertram, aye; t. cole, aye; m. allison, aye."
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- m. brenner, aye;"
   }
  ],
  "dropped_unquoted": 0,
- "note": "All votes recorded in these minutes. Discussions at 319 Highland Street (subdivision waiver) and 1079 Massachusetts Avenue (Brooks House reuse) recorded positions but no formal motions or votes.",
- "cost_usd": 0.122109
+ "note": "Meeting conducted remotely by Zoom under the Governor's COVID-19 order; the minutes record roll-call attendance as 'present' without distinguishing remote participation. Minutes approval line prints '03/22/2021 and 03/22/2021, North End Subaru' and does not say whether these are two sets of minutes. The zoning public hearing refers to separate minutes that were not supplied. The adjournment vote is recorded by roll call (four ayes) with no printed count. Public comment section contains a board member's remark, recorded as printed.",
+ "cost_usd": 0.01963966,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "paula bertram, present; matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam R. Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director:"
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham Associates, presented on behalf of the applicant",
+   "status": "present",
+   "quote": "jamie rheault, whitman & bingham associates presented on behalf of his client kevin hill."
+  },
+  {
+   "name": "Kevin Hill",
+   "role": "applicant (client of presenter)",
+   "status": "not stated",
+   "quote": "jamie rheault, whitman & bingham associates presented on behalf of his client kevin hill."
+  },
+  {
+   "name": "David Passios",
+   "role": "Committee member",
+   "status": "not stated",
+   "quote": "committee member david passios provided an update due to m. allison's absence from the committee meeting."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Discussion of 925 Massachusetts Avenue disposal options would continue at future Board meetings.",
+   "quote": "discussions would continue at future board meetings."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Master Plan consultant contract (MRPC)",
+   "what_was_recorded": "A. Burney reported he was working on a contract based on a $36,000 quote from MRPC for two Elements of the Master Plan.",
+   "figures_as_printed": [
+    "$36,000"
+   ],
+   "quote": "noted he was working on a contract based on a $36,000 quote he received from mrpc for two elements of lunenburg's master plan."
+  },
+  {
+   "topic": "Capital plan amount",
+   "what_was_recorded": "The Capital Planning Committee would recommend to the Finance Committee that the amount considered for the capital plan be raised from $10,000 to $25,000.",
+   "figures_as_printed": [
+    "$10,000",
+    "$25,000"
+   ],
+   "quote": "the amount to be considered for the capital plan be raised from $10,000 to $25,000."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "P. Bertram",
+   "stated_role": "Clerk",
+   "topic": "detention basin maintenance",
+   "quote": "p. bertram observed that no maintenance appeared to have taken place in the detention basin between the brooks house and the library."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "319 Highland Street subdivision radius waiver (appointment)",
+   "resolution": "no action; members not in favor of waiver",
+   "tags": [
+    "subdivision",
+    "waiver",
+    "Highland Street"
+   ],
+   "quote": "neither m. brenner nor p. bertram was in favor of granting a waiver."
+  },
+  {
+   "topic": "360 Flat Hill Road ANR Plan",
+   "resolution": "continued to April 26",
+   "tags": [
+    "ANR",
+    "subdivision",
+    "Flat Hill Road"
+   ],
+   "quote": "the plan was received and filed with the town clerk on 04.05.2021"
+  },
+  {
+   "topic": "Zoning warrant articles public hearing",
+   "resolution": "recommended favorably, 4-0",
+   "tags": [
+    "zoning",
+    "warrant articles",
+    "parking"
+   ],
+   "quote": "m. brenner made motion that the planning board recommend favorably on both"
+  },
+  {
+   "topic": "BrightFarms Phase 1 Land Development Plan",
+   "resolution": "no action; awaiting engineering review",
+   "tags": [
+    "BrightFarms",
+    "land development"
+   ],
+   "quote": "board awaiting review from graves engineering, inc."
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved 3-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "m. brenner made motion to approve the minutes of 03/22/2021 and 03/22/2021, north end subaru, t. cole seconded"
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received; no action",
+   "tags": [
+    "committees",
+    "capital plan",
+    "open space",
+    "economic development"
+   ],
+   "quote": "storm water task force- no report"
+  },
+  {
+   "topic": "925 Massachusetts Avenue disposal",
+   "resolution": "continued to future meetings",
+   "tags": [
+    "town property",
+    "disposal"
+   ],
+   "quote": "discussions would continue at future board meetings."
+  },
+  {
+   "topic": "1079 Massachusetts Avenue Brooks House use",
+   "resolution": "discussed; no action",
+   "tags": [
+    "Brooks House",
+    "APDC",
+    "historic district"
+   ],
+   "quote": "t. cole recalled a warrant article in 2019 that allowed the select board to sell the brooks house"
+  },
+  {
+   "topic": "Master Plan consultant contract",
+   "resolution": "reported; no action",
+   "tags": [
+    "master plan",
+    "MRPC"
+   ],
+   "quote": "noted he was working on a contract based on a $36,000 quote he received from mrpc"
+  },
+  {
+   "topic": "Meeting schedule",
+   "resolution": "informational",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "north end subaru, chase road- hearing continuation"
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "one comment; no action",
+   "tags": [
+    "detention basin",
+    "maintenance"
+   ],
+   "quote": "p. bertram observed that no maintenance appeared to have taken place in the detention basin"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:37 p.m.",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- m. brenner, aye;"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "319 Highland Street, Assessor's Map",
+   "where": "list",
+   "quote": "documents used at meeting: 319 highland street, assessor's map 360 flat hill road, anr plan"
+  },
+  {
+   "name": "360 Flat Hill Road, ANR Plan",
+   "where": "list",
+   "quote": "documents used at meeting: 319 highland street, assessor's map 360 flat hill road, anr plan"
+  },
+  {
+   "name": "Minutes 3/22/2021",
+   "where": "list",
+   "quote": "minutes 3/22/2021 3/22/2021, north end subaru"
+  },
+  {
+   "name": "Minutes 3/22/2021, North End Subaru",
+   "where": "list",
+   "quote": "minutes 3/22/2021 3/22/2021, north end subaru"
+  },
+  {
+   "name": "Zoning Warrant Articles (see separate minutes)",
+   "where": "text",
+   "quote": "zoning warrant articles - see separate minutes"
+  },
+  {
+   "name": "2019 warrant article allowing the Select Board to sell the Brooks House",
+   "where": "text",
+   "quote": "t. cole recalled a warrant article in 2019 that allowed the select board to sell the brooks house, but keep the land."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "subdivision",
+  "ANR",
+  "zoning",
+  "warrant articles",
+  "master plan",
+  "capital plan",
+  "Brooks House",
+  "remote meeting",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }
