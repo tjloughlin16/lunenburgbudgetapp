@@ -572,7 +572,9 @@ def render(m=None):
         'Spending outside the school’s ledger: benefits charged on the town side, student '
         'activity accounts.',
     ]
-    return json.dumps(p, indent=1, ensure_ascii=False, sort_keys=True) + '\n'
+    # Compact, unlike the other topic payloads: every line carries its transfers' other sides,
+    # and indentation alone was most of two megabytes.
+    return json.dumps(p, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + '\n'
 
 
 def main():
