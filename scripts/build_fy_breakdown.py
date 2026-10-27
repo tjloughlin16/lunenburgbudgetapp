@@ -269,7 +269,32 @@ def lines_data(m, T):
                           unmatched=[dict(payer=T.lit(py), why=why, text=T.usd(v))
                                      for (py, why), v in un if round(v) != 0],
                           unmatched_total=T.usd(sum((v for _, v in un), D0))))
-    col = lambda id_, key, label, op, group: dict(id=id_, key=key, label=label, op=op, group=group)
+    # What each column means, on hover (TJ, 26 October 2026: "can you put those definitions in a
+    # hover tooltip on the column"). A transfer moves BUDGET; a move re-books SPENDING.
+    means = dict(
+        voted='What Town Meeting voted for this line in the school budget.',
+        transfers='Budget moved between lines during the year: permission to spend moves from '
+                  'one line to another. No bill moves.',
+        carried='Last year’s unpaid orders, carried in with the budget to pay them.',
+        budget='What the line was allowed to spend: voted, plus transfers, plus carried.',
+        before='What the school budget paid or still owed on this line, before any journal '
+               'entry moved cost to or from another fund. Orders still owed at year end count.',
+        off='Cost already spent on this line, re-booked by journal entry onto a grant or another '
+            'fund (a reclass). The school budget’s spending goes down, so Left goes up. The bills '
+            'cost the same.',
+        on='Cost a grant or another fund had paid, re-booked onto this line by journal entry. The '
+           'school budget’s spending goes up, so Left goes down.',
+        left='The budget, less what the school budget spent after the moves: this line’s part of '
+             'the surplus, or of what ran over.',
+        spent='What the school budget spent on this line, after the moves.',
+        off_cost='The same moved cost, counted back in: it is still this line’s cost, paid by '
+                 'another fund.',
+        direct='What grants and other funds paid toward this line in the first place. Left does '
+               'not change. Which spending counts toward which line is our match, by payee or by '
+               'kind of work.',
+        total='What the line cost, from every fund.')
+    col = lambda id_, key, label, op, group: dict(id=id_, key=key, label=label, op=op, group=group,
+                                                  means=means[id_])
     return dict(years=years, cats=sorted({S.CAT_LABEL[c[0]] for c in S.CATEGORIES}),
                 # TWO SUMS, side by side. "Moved to other funds" is in both: it leaves the school
                 # budget's sum (raising Left) and stays in what the line cost.

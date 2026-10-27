@@ -29,7 +29,7 @@ type Row = { name: string; account: string; cat: string; line: boolean; n: Recor
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
-type Col = { id: string; key: K; label: string; op: string; group: string }
+type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
 const FIRST = 25
@@ -162,6 +162,38 @@ function ListChip({ text, title, items }: { text: string; title: string; items: 
     </span>)
 }
 
+/** A column's definition, on hover or focus of its header, or a tap on the (i). Portalled for
+ *  the same reason as ListChip. */
+function HeadTip({ label, means, children }: { label: string; means: string; children: React.ReactNode }) {
+  const [on, setOn] = useState(false)
+  const [at, setAt] = useState<{ top: number; left: number } | null>(null)
+  const el = useRef<HTMLSpanElement>(null)
+  const timer = useRef<number | undefined>(undefined)
+  const enter = () => { window.clearTimeout(timer.current); setOn(true) }
+  const leave = () => { window.clearTimeout(timer.current); timer.current = window.setTimeout(() => setOn(false), 150) }
+  useEffect(() => () => window.clearTimeout(timer.current), [])
+  useEffect(() => {
+    if (!on || !el.current) return
+    const b = el.current.getBoundingClientRect()
+    const w = Math.min(280, window.innerWidth - 16)
+    setAt({ top: b.bottom + 6, left: Math.max(8, Math.min(b.right - w, window.innerWidth - w - 8)) })
+    const close = () => setOn(false)
+    window.addEventListener('scroll', close, { passive: true, capture: true })
+    return () => window.removeEventListener('scroll', close, { capture: true } as EventListenerOptions)
+  }, [on])
+  return (
+    <span ref={el} className="inline" onMouseEnter={enter} onMouseLeave={leave}>
+      {children}
+      <button type="button" aria-label={label} aria-expanded={on} className="ml-1 align-baseline text-[11px]" style={muted}
+        onClick={e => { e.stopPropagation(); setOn(o => !o) }} onFocus={enter} onBlur={() => setOn(false)}>ⓘ</button>
+      {on && at ? createPortal(
+        <span role="tooltip" onMouseEnter={enter} onMouseLeave={leave}
+          className="fixed z-50 w-[280px] max-w-[calc(100vw-16px)] px-2.5 py-2 rounded text-left text-[12.5px] leading-snug shadow whitespace-normal"
+          style={{ top: at.top, left: at.left, background: 'var(--surface-1)', border: '1px solid var(--grid)', color: 'var(--text-primary)', fontWeight: 400 }}>
+          <span className="block font-semibold mb-0.5">{label}</span>{means}</span>, document.body) : null}
+    </span>)
+}
+
 export default function FyLineTable({ data, alt }: CustomProps) {
   const d = data as Data
   const [yi, setYi] = useState(d.years.length - 1)
@@ -199,7 +231,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       onClick={() => setSort(s => ({ k: c.id, dir: s.k === c.id ? (-s.dir as 1 | -1) : -1 }))}
       aria-sort={sort.k === c.id ? (sort.dir < 0 ? 'descending' : 'ascending') : 'none'}>
       <span className="block text-[15px] leading-none mb-1" style={muted}>{c.op || ' '}</span>
-      <span className="font-semibold">{c.label}{sort.k === c.id ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</span></th>)
+      <HeadTip label={c.label} means={c.means}><span className="font-semibold">{c.label}{sort.k === c.id ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</span></HeadTip></th>)
 
   return (
     <figure aria-label={alt}>
