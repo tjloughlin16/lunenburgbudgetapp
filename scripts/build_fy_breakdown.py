@@ -688,6 +688,15 @@ def money(v):
     return ('-$%s' if v < 0 else '$%s') % format(abs(v).quantize(Decimal('0.01')), ',.2f')
 
 
+def payee(r):
+    """The payee as our redacted journal prints it; a name our redaction masked (a family, under
+    the recipients-not-providers rule) says so rather than reading as no payee."""
+    v = r['vendor'].strip()
+    if not v and 'vendor' in r['masked']:
+        return 'Name withheld (redacted)'
+    return v
+
+
 KIND = {'API': 'Invoice', 'APM': 'Invoice', 'PRJ': 'Payroll', 'PRH': 'Payroll',
         'GEN': 'Journal entry', 'GRV': 'Journal entry', 'CRP': 'Receipt'}
 ORDERS = ('POE', 'POL', 'POM', 'SOY', 'GEL')
@@ -708,7 +717,7 @@ def expense_rows(rows, paid_by, recharge=None, carried=frozenset()):
         kind = KIND[r['source']]
         if FB.is_prepaid(r):
             kind = 'Invoice, next year’s tuition paid early'
-        out.append(dict(d=r['effective_date'], k=kind, p=r['vendor'].strip(),
+        out.append(dict(d=r['effective_date'], k=kind, p=payee(r),
                         m=r['description'].strip(), n=r['doc_no'].strip(), f=paid_by, v=r['amt']))
     for doc, rs in orders.items():
         v = sum((r['amt'] for r in rs), D0)
@@ -718,7 +727,7 @@ def expense_rows(rows, paid_by, recharge=None, carried=frozenset()):
         out.append(dict(d=last['effective_date'],
                         k='Order carried from last year, still owed' if doc in carried
                         else 'Order, still owed at year end',
-                        p=last['vendor'].strip(), m=last['description'].strip(), n=doc, f=paid_by, v=v))
+                        p=payee(last), m=last['description'].strip(), n=doc, f=paid_by, v=v))
     for j, (verb, funds, v, d, memo) in (recharge or {}).items():
         out.append(dict(d=d, k='%s %s' % (verb, funds), p='', m=memo, n=j, f=paid_by, v=v))
     return out
