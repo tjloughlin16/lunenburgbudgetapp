@@ -254,6 +254,7 @@ def main(argv=None):
           'collaborative tuition FY2026: reclass 333,494.89 / prepaid 189,276.75 / left -434,107.56')
     if not args.no_payload:
         payload_checks(m)
+        line_file_checks()
     if bad:
         print('verify_fy_breakdown: %d FAILED' % len(bad))
         for b in bad[:40]:
@@ -292,6 +293,31 @@ def payload_checks(m):
         allf = all_funds(y)
         check(abs(Decimal(str(col['total'])) - allf) < 1,
               'alluvial %s draws %s; every fund, recomputed, %s' % (col['fy'], col['total'], allf))
+
+
+def line_file_checks():
+    """Every line's rows in /data/fy-breakdown/lines-<year>.json: the school budget's rows sum to
+    what the line spent, recomputed here straight off the CSV."""
+    acc, rows = raw()
+    SPENT = {'API', 'APM', 'PRJ', 'PRH', 'GEN', 'GRV', 'CRP', 'POE', 'POL', 'POM', 'SOY', 'GEL'}
+    spent = defaultdict(Decimal)
+    for r in rows:
+        if in_scope(r['account']) and acc[r['account']]['object'].startswith('5') and r['source'] in SPENT:
+            spent[(r['y'], r['account'])] += r['v']
+    for y in YEARS:
+        path = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown', 'lines-%d.json' % y)
+        if not os.path.exists(path):
+            check(False, 'no line file %s' % path)
+            continue
+        f = json.load(open(path, encoding='utf-8'))
+        school = f['funds'].index('School budget')
+        for k, v in spent.items():
+            if k[0] != y or v == 0:
+                continue
+            got = sum((Decimal(str(x[8])) for x in f['lines'].get(k[1], {}).get('r', []) if x[6] == school),
+                      Decimal(0))
+            check(abs(got - v) < CENT, 'FY%d %s: the line file lists %s for the school budget; the '
+                  'CSV gives %s' % (y, k[1], got, v))
 
 
 def all_funds(y):

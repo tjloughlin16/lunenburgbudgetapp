@@ -279,6 +279,7 @@ def lines_data(m, T):
             row = dict(
                 name=T.lit(line_name(r)) if r['account'] else 'Same kind of work, other funds',
                 account=T.lit(r['account']) if r['account'] else '',
+                key=T.lit(line_key(r)),
                 cat=S.CAT_LABEL[r['category']], line=bool(r['account']),
                 n={k: round(fl(v), 2) for k, v in nums.items()},
                 t={k: T.usd(v) for k, v in nums.items()},
@@ -361,6 +362,18 @@ def lines_data(m, T):
                     shared='Many lines gave and many got in this one entry, and the books do not '
                            'say which line’s money went to which. The other side, all together:',
                     into='from', outof='to', in_='In', out='Out',
+                    tab_summary='Summary', tab_expenses='Expenses', close='Close',
+                    who_paid='Who paid', every_row='Every row', by_payee='By payee',
+                    every_fund='Every fund', loading='Loading every row…',
+                    failed='The rows could not be loaded.', recharges='Re-charges',
+                    no_recharges='No bills re-charged to or from another fund.',
+                    ex_date='Date', ex_kind='What', ex_payee='Payee', ex_memo='Memo',
+                    ex_ref='Reference', ex_fund='Paid by', ex_amount='Amount', ex_rows='rows',
+                    ex_note='One row per invoice, payroll warrant or journal entry. A purchase '
+                            'order shows only what it still owed at year end; one fully paid '
+                            'shows as its invoices. Payroll rows are whole pay runs, with no '
+                            'names. A bill re-charged to another fund is listed twice: taken '
+                            'off the school budget, and under the fund that paid it.',
                     payers='Other funds that paid toward this line',
                     none='No other fund paid toward this line.',
                     unmatched='Other funds’ spending not matched to any line',
@@ -763,17 +776,30 @@ def line_files(m):
 
 
 def line_texts(m):
-    """The files, compact: a fund and a kind are indexed, each row [date, kind, payee, memo,
-    reference, fund, amount as text, amount]."""
+    """The files, compact. Funds and kinds are indexed. Per line: `r`, each row [iso date, date,
+    kind, payee, memo, reference, fund, amount as text, amount]; `t`, what each fund paid in
+    all, [fund, text, amount]; `g`, by payee and fund, [payee, fund, rows, text, amount]."""
     files = {}
     for fy, lines in sorted(line_files(m).items()):
         funds = sorted({x['f'] for rs in lines.values() for x in rs}, key=lambda f: (f != SCHOOL, f))
         kinds = sorted({x['k'] for rs in lines.values() for x in rs})
         fi, ki = {f: i for i, f in enumerate(funds)}, {k: i for i, k in enumerate(kinds)}
-        body = {key: [[x['d'], ki[x['k']], x['p'], x['m'], x['n'], fi[x['f']], money(x['v']),
-                       round(fl(x['v']), 2)]
-                      for x in sorted(rs, key=lambda x: (x['d'] or '9', -abs(x['v'])))]
-                for key, rs in sorted(lines.items())}
+        body = {}
+        for key, rs in sorted(lines.items()):
+            tot, grp, cnt = defaultdict(Decimal), defaultdict(Decimal), defaultdict(int)
+            for x in rs:
+                tot[x['f']] += x['v']
+                g = (x['p'] or x['k'], x['f'])
+                grp[g] += x['v']
+                cnt[g] += 1
+            body[key] = dict(
+                r=[[x['d'], long_date(x['d']) if x['d'] else '', ki[x['k']], x['p'], x['m'], x['n'],
+                    fi[x['f']], money(x['v']), round(fl(x['v']), 2)]
+                   for x in sorted(rs, key=lambda x: (x['d'] or '9', -abs(x['v'])))],
+                t=[[fi[f], money(v), round(fl(v), 2)] for f, v in
+                   sorted(tot.items(), key=lambda kv: (kv[0] != SCHOOL, -abs(kv[1])))],
+                g=[[p_, fi[f], cnt[(p_, f)], money(v), round(fl(v), 2)] for (p_, f), v in
+                   sorted(grp.items(), key=lambda kv: -abs(kv[1]))])
         files[os.path.join(LINES_DIR, 'lines-%d.json' % fy)] = json.dumps(
             dict(fy=C.fy(fy), funds=funds, kinds=kinds, lines=body), ensure_ascii=False,
             sort_keys=True, separators=(',', ':')) + '\n'

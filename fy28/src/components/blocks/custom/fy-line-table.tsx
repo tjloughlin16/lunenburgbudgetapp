@@ -17,18 +17,20 @@
  *  many-to-many; and every other fund that paid toward it, with how it was matched.
  *  `?line=<account>` in the address opens that line (latest year).
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
-import { useEffect, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import type { CustomProps } from './index'
 
 type K = 'voted' | 'transfers' | 'carried' | 'budget' | 'before' | 'off' | 'on' | 'left' | 'spent' | 'direct' | 'total'
 type Item = { title: string; sub: string; text: string }
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
-type Row = { name: string; account: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
+type Row = { name: string; account: string; key: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
   spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>>; payers: { payer: string; rule: string; how: string; text: string }[]; moves: Move[] }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
-  | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
+  | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'tab_summary' | 'tab_expenses' | 'close'
+  | 'who_paid' | 'every_row' | 'by_payee' | 'every_fund' | 'loading' | 'failed' | 'recharges' | 'no_recharges'
+  | 'ex_date' | 'ex_kind' | 'ex_payee' | 'ex_memo' | 'ex_ref' | 'ex_fund' | 'ex_amount' | 'ex_rows' | 'ex_note' | 'footing' | 'cost_sum' | 'other_funds' | 'chip_off' | 'chip_on' | 'chip_direct', string>
 type Col = { id: string; key: K; label: string; op: string; group: string; means: string }
 type Data = { years: Year[]; cats: string[]; groups: { id: string; label: string }[]; columns: Col[]; text: T }
 
@@ -101,20 +103,6 @@ function Moves({ r, t }: { r: Row; t: T }) {
     </div>)
 }
 
-function Payers({ r, t }: { r: Row; t: T }) {
-  return (
-    <div className="text-[13px]">
-      <p className="font-semibold mb-1">{t.payers}</p>
-      {r.payers.length ? (
-        <ul className="space-y-1">
-          {r.payers.map((p, i) => (
-            <li key={i} className="flex justify-between gap-3">
-              <span>{p.payer}<span className="block text-[12px]" style={muted}>{p.rule}: {p.how}</span></span>
-              <span className="tabular-nums">{p.text}</span></li>))}
-        </ul>) : <p style={muted}>{t.none}</p>}
-    </div>)
-}
-
 /** An amount as a chip: hover, focus or tap it for what is behind it (TJ, 26 October 2026: "i
  *  need to be able to see WHAT paid it and how much then"). A tap does not open the row.
  *
@@ -147,7 +135,7 @@ function ListChip({ text, title, items, count }: { text: string; title: string; 
   return (
     <span className="inline-block" onMouseEnter={enter} onMouseLeave={leave}>
       <button ref={btn} type="button" aria-expanded={on}
-        onClick={e => { e.stopPropagation(); setHeld(h => !h) }}
+        onClick={() => { setHover(false); setHeld(false) }}
         onFocus={enter} onBlur={() => { setHover(false); setHeld(false) }}
         className="px-2 py-0.5 rounded-full border tabular-nums leading-tight"
         style={{ borderColor: 'var(--text-muted)', background: on ? 'var(--surface-2)' : 'transparent', cursor: 'pointer' }}>
@@ -199,6 +187,146 @@ function HeadTip({ label, means, children }: { label: string; means: string; chi
     </span>)
 }
 
+/** ONE LINE, OPENED (TJ, 27 October 2026: "instead of hovering over the chips, or clicking a row
+ *  and it expands, i want a popup that brings that line into a full drill in view ... and show
+ *  all the journal entry rows for the line in 'expenses' tab"). Summary: both sums, the
+ *  re-charges, what other funds paid from the start, the transfers. Expenses: every row, from
+ *  /data/fy-breakdown/lines-<year>.json, fetched when a line opens; who paid at the top, each
+ *  fund a filter; every row, or grouped by payee. */
+type ExRow = [string, string, number, string, string, string, number, string, number]
+type ExLine = { r: ExRow[]; t: [number, string, number][]; g: [string, number, number, string, number][] }
+type ExFile = { fy: string; funds: string[]; kinds: string[]; lines: Record<string, ExLine> }
+const FILES = new Map<string, Promise<ExFile>>()
+const load = (fy: string) => {
+  if (!FILES.has(fy)) FILES.set(fy, fetch(`/data/fy-breakdown/lines-${fy.replace(/\D/g, '')}.json`)
+    .then(r => { if (!r.ok) throw new Error(String(r.status)); return r.json() }))
+  return FILES.get(fy)!
+}
+
+function ItemList({ title, items, empty }: { title: string; items: Item[]; empty?: string }) {
+  return (
+    <div className="text-[13px]">
+      <p className="font-semibold mb-1">{title}</p>
+      {items.length ? (
+        <ul className="space-y-1">
+          {items.map((p, i) => (
+            <li key={i} className="flex justify-between gap-3">
+              <span>{p.title}<span className="block text-[12px]" style={muted}>{p.sub}</span></span>
+              <span className="tabular-nums font-semibold">{p.text}</span></li>))}
+        </ul>) : <p style={muted}>{empty}</p>}
+    </div>)
+}
+
+function Expenses({ r, fy, t }: { r: Row; fy: string; t: T }) {
+  const [file, setFile] = useState<ExFile | null>(null)
+  const [err, setErr] = useState(false)
+  const [fund, setFund] = useState<number | null>(null)
+  const [grouped, setGrouped] = useState(false)
+  useEffect(() => { let live = true; load(fy).then(f => { if (live) setFile(f) }, () => { if (live) setErr(true) }); return () => { live = false } }, [fy])
+  if (err) return <p className="text-[13px]" style={muted}>{t.failed}</p>
+  if (!file) return <p className="text-[13px]" style={muted}>{t.loading}</p>
+  const L = file.lines[r.key]
+  if (!L) return <p className="text-[13px]" style={muted}>{t.none}</p>
+  const rows = L.r.filter(x => fund === null || x[6] === fund)
+  const groups = L.g.filter(x => fund === null || x[1] === fund)
+  const th = 'px-2 py-1.5 text-left font-semibold align-bottom'
+  return (
+    <div className="text-[13px]">
+      <p className="font-semibold mb-1.5">{t.who_paid}</p>
+      <div className="flex flex-wrap gap-1.5">
+        <Chip on={fund === null} onClick={() => setFund(null)}>{t.every_fund}</Chip>
+        {L.t.map(([f, text]) => (
+          <Chip key={f} on={fund === f} onClick={() => setFund(v => (v === f ? null : f))}>
+            {file.funds[f]} <span className="tabular-nums font-semibold">{text}</span></Chip>))}
+      </div>
+      <div className="flex gap-1.5 mt-3">
+        <Chip on={!grouped} onClick={() => setGrouped(false)}>{t.every_row}</Chip>
+        <Chip on={grouped} onClick={() => setGrouped(true)}>{t.by_payee}</Chip>
+      </div>
+      <div className="mt-2 overflow-x-auto">
+        {/* divs would lose the column alignment; the site's download links on a table are fine here */}
+        {grouped ? (
+          <table className="w-full tabular-nums border-collapse">
+            <thead><tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
+              <th className={th}>{t.ex_payee}</th><th className={th}>{t.ex_fund}</th>
+              <th className={`${th} text-right`}>{t.ex_rows}</th><th className={`${th} text-right`}>{t.ex_amount}</th></tr></thead>
+            <tbody>{groups.map((g, i) => (
+              <tr key={i} className="border-b" style={{ borderColor: 'var(--grid)' }}>
+                <td className="px-2 py-1">{g[0]}</td><td className="px-2 py-1" style={secondary}>{file.funds[g[1]]}</td>
+                <td className="px-2 py-1 text-right" style={muted}>{g[2]}</td>
+                <td className="px-2 py-1 text-right font-semibold whitespace-nowrap">{g[3]}</td></tr>))}</tbody>
+          </table>
+        ) : (
+          <table className="w-full tabular-nums border-collapse">
+            <thead><tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
+              <th className={th}>{t.ex_date}</th><th className={th}>{t.ex_kind}</th><th className={th}>{t.ex_payee}</th>
+              <th className={th}>{t.ex_memo}</th><th className={th}>{t.ex_ref}</th><th className={th}>{t.ex_fund}</th>
+              <th className={`${th} text-right`}>{t.ex_amount}</th></tr></thead>
+            <tbody>{rows.map((x, i) => (
+              <tr key={i} className="border-b align-top" style={{ borderColor: 'var(--grid)' }}>
+                <td className="px-2 py-1 whitespace-nowrap" style={secondary}>{x[1]}</td>
+                <td className="px-2 py-1">{file.kinds[x[2]]}</td>
+                <td className="px-2 py-1 min-w-[11rem]">{x[3]}</td>
+                <td className="px-2 py-1" style={secondary}>{x[4]}</td>
+                <td className="px-2 py-1 font-mono text-[11.5px]" style={muted}>{x[5]}</td>
+                <td className="px-2 py-1 whitespace-nowrap" style={secondary}>{file.funds[x[6]]}</td>
+                <td className="px-2 py-1 text-right whitespace-nowrap font-semibold" style={{ color: x[8] < 0 ? BAD : undefined }}>{x[7]}</td></tr>))}</tbody>
+          </table>)}
+      </div>
+      <p className="text-[12px] mt-2 max-w-3xl" style={muted}>{t.ex_note}</p>
+    </div>)
+}
+
+function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose: () => void }) {
+  const [tab, setTab] = useState<'summary' | 'expenses'>('summary')
+  const box = useRef<HTMLDivElement>(null)
+  useEffect(() => {
+    const key = (e: KeyboardEvent) => { if (e.key === 'Escape') onClose() }
+    window.addEventListener('keydown', key)
+    const prev = document.body.style.overflow
+    document.body.style.overflow = 'hidden'
+    box.current?.focus()
+    return () => { window.removeEventListener('keydown', key); document.body.style.overflow = prev }
+  }, [onClose])
+  const t = d.text
+  return createPortal(
+    <div className="fixed inset-0 z-50 flex items-start justify-center p-2 sm:p-6" style={{ background: 'rgba(0,0,0,0.45)' }}
+      onClick={onClose}>
+      <div ref={box} tabIndex={-1} role="dialog" aria-modal="true" aria-label={r.name}
+        className="w-full max-w-6xl max-h-full overflow-y-auto rounded-lg shadow-xl outline-none"
+        style={{ background: 'var(--surface-1, var(--bg))', border: '1px solid var(--grid)' }}
+        onClick={e => e.stopPropagation()}>
+        <div className="sticky top-0 z-10 px-4 sm:px-6 pt-4 pb-3 border-b" style={{ background: 'var(--surface-1, var(--bg))', borderColor: 'var(--grid)' }}>
+          <div className="flex justify-between gap-4 items-start">
+            <div>
+              <p className="text-[12px] uppercase tracking-wide" style={muted}>{fy} · {r.cat}</p>
+              <h3 className="text-[19px] font-semibold leading-snug">{r.name}</h3>
+              {r.account ? <p className="font-mono text-[11.5px] mt-0.5" style={muted}>{r.account}</p> : null}
+            </div>
+            <button type="button" onClick={onClose} className="px-2.5 py-1 rounded border text-[13px]" style={{ borderColor: 'var(--grid)' }}>{t.close} ✕</button>
+          </div>
+          <div className="flex gap-1.5 mt-3">
+            <Chip on={tab === 'summary'} onClick={() => setTab('summary')}>{t.tab_summary}</Chip>
+            <Chip on={tab === 'expenses'} onClick={() => setTab('expenses')}>{t.tab_expenses}</Chip>
+          </div>
+        </div>
+        <div className="px-4 sm:px-6 py-4">
+          {tab === 'summary' ? (
+            <div className="grid gap-6 md:grid-cols-2">
+              {r.line ? <Receipt r={r} d={d} /> : null}
+              <div className="space-y-5">
+                {r.line ? <ItemList title={t.recharges} empty={t.no_recharges} items={[
+                  ...r.chips.off.map(x => ({ ...x, title: `${t.chip_off} ${x.title}` })),
+                  ...r.chips.on.map(x => ({ ...x, title: `${t.chip_on} ${x.title}` }))]} /> : null}
+                <ItemList title={t.chip_direct} items={r.chips.direct} empty={t.none} />
+                {r.line ? <Moves r={r} t={t} /> : null}
+              </div>
+            </div>) : <Expenses r={r} fy={fy} t={t} />}
+        </div>
+      </div>
+    </div>, document.body)
+}
+
 export default function FyLineTable({ data, alt }: CustomProps) {
   const d = data as Data
   const [yi, setYi] = useState(d.years.length - 1)
@@ -212,6 +340,8 @@ export default function FyLineTable({ data, alt }: CustomProps) {
     return r ? `${r.account}|${r.name}|${r.cat}` : null
   })
   const y = d.years[yi]
+  const openRow = open ? y.rows.find(r => `${r.account}|${r.name}|${r.cat}` === open) ?? null : null
+  const close = useCallback(() => setOpen(null), [])
   const rows = useMemo(() => y.rows.filter(r => !cat || r.cat === cat)
     .sort((a, b) => {
       // by category: alphabetical, and within one category the line's Left, largest first, so
@@ -274,7 +404,6 @@ export default function FyLineTable({ data, alt }: CustomProps) {
           <tbody>
             {shown.map((r, ri) => {
               const key = `${r.account}|${r.name}|${r.cat}`
-              const isOpen = open === key
               return [
                 gapBefore(ri) ? (
                   <tr key={`gap-${ri}`} className="border-b" style={{ borderColor: 'var(--grid)' }}>
@@ -283,8 +412,8 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                         onClick={() => setAll(true)}>⋯ {d.text.between} ⋯</button></td>
                   </tr>) : null,
                 <tr key={key} className="border-b cursor-pointer hover:bg-[var(--surface-2)]" style={{ borderColor: 'var(--grid)' }}
-                  onClick={() => setOpen(o => (o === key ? null : key))} aria-expanded={isOpen}>
-                  <td className="px-2 py-1.5 text-left min-w-[13rem]"><span className="mr-1" style={muted}>{isOpen ? '▾' : '▸'}</span>
+                  onClick={() => setOpen(key)} aria-haspopup="dialog">
+                  <td className="px-2 py-1.5 text-left min-w-[13rem]"><span className="mr-1" style={muted}>↗</span>
                     {r.name}</td>
                   <td className="px-2 py-1.5 text-left min-w-[9rem]" style={secondary}>{r.cat}</td>
                   {d.columns.map((c, i) => (
@@ -293,17 +422,6 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                         fontWeight: c.op === '=' ? 600 : 400 }}>
                       {cell(r, c)}</td>))}
                 </tr>,
-                isOpen ? (
-                  <tr key={`${key}-x`} className="border-b" style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)' }}>
-                    <td colSpan={d.columns.length + 2} className="px-3 py-3">
-                      <div className="grid gap-5 lg:grid-cols-3 max-w-5xl">
-                        {r.line ? <Receipt r={r} d={d} /> : null}
-                        {r.line ? <Moves r={r} t={d.text} /> : null}
-                        <Payers r={r} t={d.text} />
-                      </div>
-                      {r.account ? <p className="mt-3 font-mono text-[11.5px]" style={muted}>{r.account}</p> : null}
-                    </td>
-                  </tr>) : null,
               ]
             })}
           </tbody>
@@ -313,6 +431,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
         <button type="button" className="mt-2 text-[13px] underline" style={{ color: 'var(--link, var(--thread-2))' }}
           onClick={() => setAll(false)}>{d.text.fewer}</button>) : null}
       <p className="text-[12.5px] mt-2" style={muted}>{d.text.footing}</p>
+      {openRow ? <LineView r={openRow} d={d} fy={y.fy} onClose={close} /> : null}
       <details className="mt-4">
         <summary className="cursor-pointer text-[13.5px] font-semibold">{d.text.unmatched} · <span className="tabular-nums">{y.unmatched_total}</span></summary>
         <ul className="mt-2 text-[13px] max-w-2xl">
