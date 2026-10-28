@@ -249,25 +249,33 @@ def even_pace(reset, now):
     return max(0, min(100, (secs * 100 + WEEK_S // 2) // WEEK_S))
 
 
-def pace_terms(u7, goal, reset, now):
+def pace_terms(u7, goal, reset, now, margin=None):
     """The run's target said in the status line's own terms: `pace` is the status line's
     figure, `of_pace` is how much of it the week has used, and `mark` is the share of pace
     the run holds at -- its `goal` until the last day, then climbing to 100. The dashboard
     card says it in points under pace (pace minus weekly) beside the points the run needs."""
     pace = even_pace(reset, now)
     frac = min(1.0, max(0.0, 1.0 - (reset - now) / WEEK_S))
-    mark = 100.0 * week_line(goal, reset, now) / (100.0 * frac) if frac else goal
+    mark = 100.0 * week_line(goal, reset, now, margin) / (100.0 * frac) if frac else goal
     return {'pace': pace, 'of_pace': (100.0 * u7 / pace) if pace else None, 'mark': mark}
 
 
-def week_line(goal, reset, now):
-    """Where the weekly bar SHOULD be now: `goal` x the fraction of the week elapsed, then,
-    over the final day, a straight climb from wherever that left it to 100% at the reset --
-    so a reserve is kept for a heavy interactive day and is never left unspent."""
+def week_line(goal, reset, now, margin=None):
+    """Where the weekly bar SHOULD be now: `goal` x the fraction of the week elapsed, less
+    `margin` points, then, over the final day, a straight climb from wherever that left it to
+    100% at the reset -- so a reserve is kept for a heavy interactive day and is never left
+    unspent.
+
+    THE MARGIN IS A FIXED BUFFER. TJ, 27 October 2026, of a 90% goal: *"waiting for 6.7 pts is
+    too much for normal pacing"*. A goal below 100 keeps a SHARE of pace back, so the reserve
+    grows all week -- 1 point on day one, 9 by day six. `--week-margin 3` is pace (goal 100)
+    less 3 points, the same wait on Monday as on Saturday; 3 because the bar reports whole
+    percents and BAND already treats 2 as noise."""
     frac = min(1.0, max(0.0, 1.0 - (reset - now) / WEEK_S))
+    m = margin or 0.0
     if frac <= WEEK_LAST_DAY:
-        return goal * frac
-    held = goal * WEEK_LAST_DAY
+        return max(0.0, goal * frac - m)
+    held = max(0.0, goal * WEEK_LAST_DAY - m)
     return held + (100.0 - held) * (frac - WEEK_LAST_DAY) / (1 - WEEK_LAST_DAY)
 
 
@@ -275,7 +283,7 @@ class Plan:
     """What the run is aiming at, and what it has decided so far."""
 
     def __init__(self, session_cap=95.0, week_cap=90.0, by=None, max_jobs=3, ramp=RAMP_S, caps=None,
-                 week_goal=None):
+                 week_goal=None, week_margin=None):
         # ONE CAP PER WINDOW. TJ, 7 October 2026: "Run the session to 100% for the first
         # session, then up to 80% for the second." `caps` is that list; the last one repeats.
         self.caps = list(caps) if caps else [session_cap]
@@ -284,6 +292,7 @@ class Plan:
         self.session_cap, self.week_cap, self.by, self.max_jobs = session_cap, week_cap, by, max_jobs
         self.ramp = ramp                         # seconds between added workers
         self.week_goal = week_goal               # the weekly line's goal, or None for no line
+        self.week_margin = week_margin           # points kept under it, all week (week_line)
         self.t0 = self.u0 = self.window = None   # the line's start, re-anchored each window
         self.jobs = 1
         self.last_change = 0.0
@@ -348,7 +357,7 @@ def decide(plan, hist, now, in_flight=0):
     if plan.week_goal:
         wr = week_reset(now)
         if wr:
-            line = week_line(plan.week_goal, wr, now)
+            line = week_line(plan.week_goal, wr, now, getattr(plan, 'week_margin', None))
             if u7 + in_flight * WEEK_PER_MEETING >= line:
                 return dict(jobs=0, start=False, stop=None, wait_reset=False, target=None,
                             note='weekly line: %g%% used against %.1f%% -- waiting for it' % (u7, line))
@@ -426,8 +435,9 @@ def describe(plan, hist, now):
     s = '5h %g%%  7d %g%%  (reading %ds old%s)' % (last['u5'], last['u7'], age, ', STALE' if age > STALE_S else '')
     wr = week_reset(now) if plan.week_goal else None
     if wr:
-        s += '  week line %.1f%% (goal %g%%, resets %s)' % (
-            week_line(plan.week_goal, wr, now), plan.week_goal,
+        s += '  week line %.1f%% (goal %g%%%s, resets %s)' % (
+            week_line(plan.week_goal, wr, now, plan.week_margin), plan.week_goal,
+            (' less %g points' % plan.week_margin) if plan.week_margin else '',
             dt.datetime.fromtimestamp(wr).strftime('%a %H:%M'))
     if dl and dl > now:
         need = (plan.session_cap - last['u5']) / ((dl - now) / 3600)
@@ -522,6 +532,10 @@ def _test():
         case('line: 90% goal, 3 of 7 days gone -> 38.6%', abs(week_line(90, wr, now) - 90 * 3 / 7) < 0.01)
         case('line: holds at 90% x 6/7 until the last day', abs(week_line(90, now + 86400, now) - 90 * 6 / 7) < 0.01)
         case('line: reaches 100% at the reset', abs(week_line(90, now, now) - 100) < 0.01)
+        case('margin: pace less 3, 3 of 7 days gone -> 39.9%', abs(week_line(100, wr, now, 3) - (300 / 7 - 3)) < 0.01)
+        case('margin: the same 3 points on day six', abs(week_line(100, now + 86400, now, 3) - (600 / 7 - 3)) < 0.01)
+        case('margin: never below zero on day one', week_line(100, now + 7 * 86400 - 3600, now, 3) == 0.0)
+        case('margin: still reaches 100% at the reset', abs(week_line(100, now, now, 3) - 100) < 0.01)
         WR = lambda t, u7: dict(t=t, u5=10, u7=u7, reset=reset)
         p = Plan(session_cap=80, week_cap=101, week_goal=90)
         d = decide(p, [WR(now - 60, 45)], now)

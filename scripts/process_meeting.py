@@ -323,6 +323,8 @@ def main():
     ap.add_argument('--week-cap', type=float, default=None, help='governor: stop at this %% of the week (default 90; 101 with --week-line)')
     ap.add_argument('--week-line', type=float, metavar='GOAL', help='governor: pace to a straight line across the week -- GOAL%% x the week elapsed, '
                     'climbing to 100%% over the last day -- waiting (never stopping) whenever the weekly bar is at or over it')
+    ap.add_argument('--week-margin', type=float, metavar='POINTS', help='governor: with no --week-line, pace to the status '
+                    'line\'s own pace less POINTS, a fixed buffer all week (with --week-line, GOAL%% less POINTS)')
     ap.add_argument('--by', help='governor: reach the session cap by +1h, +30m, 16:30 or "thu 23:00" (default: the reset)')
     ap.add_argument('--ramp', type=float, default=300, help='governor: seconds between adding workers (the brake on a fast fill)')
     ap.add_argument('--notify', action='store_true', help='governor: macOS notifications -- whether the batch is on pace '
@@ -332,6 +334,8 @@ def main():
     # WITH A LINE, THE LINE IS IN CHARGE. A fixed weekly cap STOPS the run; the line only
     # makes it wait. Left at 90 it would end a week-long run the moment the last day's climb
     # passed 90 -- so with --week-line the cap sits above 100, out of the way, unless given.
+    if a.week_margin is not None and a.week_line is None:
+        a.week_line = 100.0                  # pace itself, less the margin (usage_governor.week_line)
     if a.week_cap is None:
         a.week_cap = 101.0 if a.week_line else 90.0
 
@@ -383,7 +387,7 @@ def main():
         import usage_governor as G
         G.fetch(force=True)
         print('  ... (%d in all)\n[gov] %s' % (len(plan), G.describe(
-            G.Plan(a.session_cap, a.week_cap, parse_by(a.by), a.max_jobs, week_goal=a.week_line), G.readings(), time.time())), flush=True)
+            G.Plan(a.session_cap, a.week_cap, parse_by(a.by), a.max_jobs, week_goal=a.week_line, week_margin=a.week_margin), G.readings(), time.time())), flush=True)
     if a.dry_run:
         return 0
     # THE PACED RUN is the open-ended governor. `--until-usage --next N` is a BATCH that happens
@@ -625,7 +629,7 @@ def run_governed(plan, a, S, ceiling):
     by = parse_by(a.by)
     caps = [float(c) for c in a.session_caps.split(',')] if a.session_caps else None
     gp = G.Plan(session_cap=a.session_cap, week_cap=a.week_cap, by=by, max_jobs=a.max_jobs, ramp=a.ramp, caps=caps,
-                week_goal=a.week_line)
+                week_goal=a.week_line, week_margin=a.week_margin)
     global NOTE
     NOTE = Notifier(G) if a.notify else None
     G.fetch(force=True)
@@ -875,7 +879,7 @@ class Notifier:
             return None
         t = now
         while t < wr:
-            if self.G.week_line(plan.week_goal, wr, t) >= u7:
+            if self.G.week_line(plan.week_goal, wr, t, plan.week_margin) >= u7:
                 return t
             t += 600
         return None
@@ -894,7 +898,7 @@ class Notifier:
             else:
                 mode = 'paused'
         wr = self.G.week_reset(now)
-        line = self.G.week_line(plan.week_goal, wr, now) if (wr and plan.week_goal) else None
+        line = self.G.week_line(plan.week_goal, wr, now, plan.week_margin) if (wr and plan.week_goal) else None
         why = ''
         if last and line is not None:
             # In points under the status line's pace, as the dashboard card says it -- TJ, 27

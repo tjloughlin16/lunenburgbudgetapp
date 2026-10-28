@@ -4,7 +4,7 @@
 # runs a missed interval once when the machine wakes from sleep.
 #
 # TJ, 9 October 2026: "make it resilient to a reboot ... and sleeps". So this starts
-# `process_meeting.py --until-usage --week-line 90` whenever it is not running -- after a
+# `process_meeting.py --until-usage --week-margin 3` whenever it is not running -- after a
 # reboot, a crash, or a long sleep -- and is a no-op otherwise. It does NOT restart a run
 # that STOPPED on purpose: the run writes build/minutes-pacing.STOPPED with the reason (the
 # ceiling, the output guard, the emergency brake, three failures), and that file, like the
@@ -29,5 +29,5 @@ if pgrep -f "[p]rocess_meeting.py --until-usage" >/dev/null; then
 fi
 say "not running -- starting the paced run (log: $LOG)"
 echo "=== WEEKLY PACED RUN, started by minutes_pacing.sh $(date)" >> "$LOG"
-nohup "$PY" scripts/process_meeting.py --until-usage --week-line 90 --session-cap 80 --max-jobs 1 --notify \
+nohup "$PY" scripts/process_meeting.py --until-usage --week-margin 3 --session-cap 80 --max-jobs 1 --notify \
   >> "$LOG" 2>&1 < /dev/null &

@@ -3006,13 +3006,17 @@ def _week_pacing_card():
     pid = int(ps.split()[0]) if m else None
     if m:
         goal = float(m.group(1))
-    line = G.week_line(goal, wr, now)   # the run's own test; shown only as the mark below
+    mm = re.search(r'--week-margin\s+([\d.]+)', ps)
+    margin = float(mm.group(1)) if mm else None
+    if mm and not m:
+        goal, pid = 100.0, int(ps.split()[0])   # pace less the margin, as process_meeting reads it
+    line = G.week_line(goal, wr, now, margin)   # the run's own test; shown only as the mark below
     # ONE PACE, THE STATUS LINE'S. TJ, 27 October 2026: *"we need those numbers to be EXACtLY the
     # same. and even if we're targeting 90%, it should just show 'at the 90% mark'"*. So the card
     # quotes G.even_pace -- the status line's own formula -- and states the run's target as a
     # share OF that pace (G.pace_terms), never as a second percentage of the week.
     u7 = last['u7']
-    pt = G.pace_terms(u7, goal, wr, now)
+    pt = G.pace_terms(u7, goal, wr, now, margin)
     gap = u7 - line
     resume = None
     if gap > 0:
@@ -3020,7 +3024,7 @@ def _week_pacing_card():
         lo, hi = now, wr
         for _ in range(40):
             mid = (lo + hi) / 2
-            if G.week_line(goal, wr, mid) < u7:
+            if G.week_line(goal, wr, mid, margin) < u7:
                 lo = mid
             else:
                 hi = mid
@@ -3035,8 +3039,9 @@ def _week_pacing_card():
     clock = lambda t: dt.datetime.fromtimestamp(t).strftime('%-I:%M %p')
     # IN POINTS, the way TJ reads it: *"i think the diff (63 - 58) is how i think about it"*
     # (27 October 2026). `under` is pace minus weekly; the run writes only while the week is
-    # at least `need` points under pace -- `need` is the 10% of pace it leaves for interactive
-    # work, so it grows through the week. Same test as the run's, said as a subtraction.
+    # at least `need` points under pace -- with --week-margin, that margin, the same all week;
+    # with a goal below 100, the share of pace it leaves, which grows through the week. Same
+    # test as the run's, said as a subtraction.
     # Both to the tenth they are printed at, so the card never shows "6.1 of 6.1" as short.
     under = round(pt['pace'] - u7, 1)
     need = round(pt['pace'] - line, 1)
@@ -3089,11 +3094,13 @@ def _week_pacing_card():
            % (pct(line), pct(pt['pace']) - pct(line), pct(u7), pct(pt['pace']), pct(pt['pace']), pt['pace'],
               pct(u7), u7, need))
     more = ('<details class="tiny" style="color:#8b949e"><summary>Why it keeps room under pace</summary>'
-            '<p>The run spends up to %g%% of pace and leaves the rest for interactive work, '
+            '<p>The run spends up to %s and leaves the rest for interactive work, '
             'in this project and every other. Over the last day that room shrinks to nothing so the week '
             'is not left unspent.</p>'
             '<p>The weekly bar counts every session on the account and reports whole percents, so the run '
-            'only sees a change when a reading moves by a point.</p></details>' % goal)
+            'only sees a change when a reading moves by a point.</p></details>'
+            % (('%g points under pace, all week' % margin) if margin and goal == 100 else
+               ('%g%% of pace' % goal) + ((' less %g points' % margin) if margin else '')))
     return ('<div class="card"><div class="row"><b class="grow">Weekly pacing</b>%s</div>'
             '<div class="why %s">%s</div>'
             '<div class="row" style="gap:12px;margin-top:8px">%s</div>%s%s</div>'
