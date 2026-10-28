@@ -303,8 +303,16 @@ def slow_sources(a, notes):
     for r in SC.runnable():
         if not SC.due(r['id'], a.as_of):
             continue
-        looked(r['id'], a, py(*SC.argv(r), check=False), notes,
-               'run python3 scripts/%s' % r['command'])
+        # A `NOTICE:` LINE IS A DECISION FOR A PERSON, from a job that otherwise worked: a new
+        # Census release the pages are not pinned to, a new fiscal year's parcels. It exits 0,
+        # so without this it would be said only into the log. Captured, echoed to the log as
+        # before, and carried into the run's notes.
+        res = py(*SC.argv(r), check=False, quiet=True)
+        sys.stdout.write((res.stdout or '') + (res.stderr or ''))
+        for line in (res.stdout or '').splitlines():
+            if line.startswith('NOTICE:'):
+                notes.append('%s: %s' % (r['id'], line[len('NOTICE:'):].strip()))
+        looked(r['id'], a, res, notes, 'run python3 scripts/%s' % r['command'])
     found = SC.changes(on=a.as_of)
     for kind, said in (('changed', 'CHANGED AT THE PUBLISHER, found today'),
                        ('ours', 'defects in our archive the source checks exposed today')):

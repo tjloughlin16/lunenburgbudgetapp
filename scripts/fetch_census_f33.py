@@ -2,7 +2,8 @@
 """The Census Bureau's own definitions of its school-finance items: the FY2024 form F-33 and
 the FY2024 technical documentation, landed through `ingest` and read to text.
 
-    python3 scripts/fetch_census_f33.py           # fetch, land, extract text
+    python3 scripts/fetch_census_f33.py           # fetch, land what changed, extract text
+                                                  #   (the refresh runs exactly this)
     python3 scripts/fetch_census_f33.py --check   # every held file: sha256, text present
 
 WHY. `/monty-tech/monty-tech-revenue` carried one row, "Other local: tuition, fees, interest,
@@ -20,14 +21,31 @@ both rather than a label typed from memory:
     - FROM LOCAL SOURCES", page 8 of the FY2024 F-33.
 
 Both are census.gov's own files for survey year 2024, the year `census-elsec24.xlsx` reports.
-The documentation was already held; landing it again is a no-op if the bytes match, and is
-REFUSED if they do not, which is the check that our copy is still census.gov's.
+The documentation was already held; fetching it again lands nothing if the bytes match, and
+lands a VERSION if they do not (below) -- so a run that changes something is also the news
+that our copy is no longer census.gov's current one.
+
+RUN UNATTENDED, ON A CADENCE. Both files are byte-stable between requests (28 October 2026:
+the PDF and the .docx each fetched again, sha256 identical to our copies; census.gov's
+Last-Modified is 26 September 2025 and 7 May 2026). So the bytes ARE the test here:
+identical bytes land nothing and the text is not re-extracted. Different bytes at the same
+address are census.gov replacing its own file in place -- an erratum, a re-issue -- and are
+landed as a version with `ingest.land_version()`, rather than refused, so the refresh keeps
+the new copy and the bucket keeps the old one under the plain name.
+
+A NEW SURVEY YEAR IS REPORTED, NOT FETCHED. Census publishes the next year's form and
+documentation under new addresses (`.../questionnaires/2025/f33_2025_508.pdf`). The run asks
+whether they exist yet and says so, exiting 0 because it looked. It does not land them:
+census_revenue.py reads the 2024 files by name, the data file `census-elsec24.xlsx` is
+survey-year 2024 too, and build_source_index.py catalogues each file by name -- so a new
+year is a change to the pages and belongs to a person.
 """
 import argparse
 import hashlib
 import os
 import re
 import sys
+import urllib.error
 import urllib.request
 import zipfile
 
@@ -84,16 +102,62 @@ def extract(key, txt):
     return 'docx paragraphs'
 
 
+UA = {'User-Agent': 'Mozilla/5.0 (lunenburgbudgetproject.org)'}
+
+
+def get(url):
+    """The file at `url`, or fail() -- which exits non-zero, the refresh's could-not-look."""
+    try:
+        return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120).read()
+    except (urllib.error.URLError, TimeoutError) as e:
+        fail('%s: %s' % (url, e))
+
+
+def exists(url):
+    """Does census.gov answer for this address yet? A 404 is an answer (no); anything
+    else that is not a 200 means we could not tell, and fails the run."""
+    try:
+        urllib.request.urlopen(urllib.request.Request(url, headers=UA, method='HEAD'), timeout=60)
+        return True
+    except urllib.error.HTTPError as e:
+        if e.code == 404:
+            return False
+        fail('%s: HTTP %s' % (url, e.code))
+    except (urllib.error.URLError, TimeoutError) as e:
+        fail('%s: %s' % (url, e))
+
+
+def newer_survey_years():
+    """Survey years after 2024 whose form census.gov now publishes. The form for year Y
+    appears during Y+1 at the earliest, so the candidates stop at last year."""
+    import datetime
+    return [y for y in range(2025, datetime.date.today().year)
+            if exists(W2 + 'technical-documentation/questionnaires/%d/f33_%d_508.pdf' % (y, y))]
+
+
 def run():
     import ingest
     for key, url, txt in DOCS:
-        req = urllib.request.Request(url, headers={'User-Agent': 'Mozilla/5.0 (lunenburgbudgetproject.org)'})
-        blob = urllib.request.urlopen(req, timeout=120).read()
-        ok, why = ingest.land(key, blob, url)
-        if not ok:
-            fail('%s: %s' % (key, why))
-        print('%-44s %s  %s' % (key, hashlib.sha256(blob).hexdigest()[:12], why or 'landed'))
-        print('  text: %s (%s)' % (os.path.join('sources/state-census/text', txt), extract(key, txt)))
+        blob = get(url)
+        local = os.path.join(SRC, key)
+        sha = hashlib.sha256(blob).hexdigest()
+        if os.path.exists(local) and open(local, 'rb').read() == blob:
+            why = 'unchanged'
+        else:
+            # Not held: a first landing. Held with other bytes: census.gov replaced it in
+            # place, and land_version keeps both rather than refusing the new one.
+            land = ingest.land if not os.path.exists(local) else ingest.land_version
+            ok, why = land(key, blob, url)
+            if not ok:
+                fail('%s: %s' % (key, why))
+            why = why or 'landed'
+        print('%-44s %s  %s' % (key, sha[:12], why))
+        t = os.path.join(TEXT, txt)
+        if why != 'unchanged' or not os.path.exists(t):
+            print('  text: %s (%s)' % (os.path.join('sources/state-census/text', txt), extract(key, txt)))
+    for y in newer_survey_years():
+        print('NOTICE: census.gov now publishes the F-33 for survey year %d; this project '
+              'reads 2024. Moving to it is a decision about the pages -- see the docstring.' % y)
 
 
 def check():
@@ -108,7 +172,12 @@ def check():
         if not os.path.exists(p):
             bad.append('%s not on disk; sync_archive.py --pull' % key)
             continue
-        if man.get(key) != A.hash_file(p)[0]:
+        have = A.hash_file(p)[0]
+        # After census.gov replaces a file, the plain name is a working copy holding the
+        # newest version, and the manifest row that matches it is the dated one.
+        versions = {s for k, s in man.items()
+                    if re.fullmatch(r'state-census/\d{4}-\d{2}-\d{2}/' + re.escape(os.path.basename(key)), k)}
+        if man.get(key) != have and not (key in A.working_copies() and have in versions):
             bad.append('%s does not match its manifest row' % key)
         t = os.path.join(TEXT, txt)
         if not os.path.exists(t) or os.path.getsize(t) < 1000:

@@ -2,7 +2,9 @@
 """THE COST INDEXES: one price index per kind of school spending, from the Bureau of Labor
 Statistics, saved as the API returned it and landed through ingest.land().
 
-    python3 scripts/fetch_bls_cost_indexes.py               # fetch and land what is missing
+    python3 scripts/fetch_bls_cost_indexes.py               # fetch, land what is missing or
+                                                            #   has new values (the refresh
+                                                            #   runs exactly this)
     python3 scripts/fetch_bls_cost_indexes.py --saved DIR   # land responses already fetched
                                                             #   today into DIR, by filename
     python3 scripts/fetch_bls_cost_indexes.py --check       # every file held, every one a
@@ -30,8 +32,33 @@ A RESPONSE IS CHECKED BEFORE IT IS KEPT. The unregistered API answers a daily-li
 with ordinary JSON (`REQUEST_NOT_PROCESSED`), which the ingest sniff cannot tell from data;
 so a response is landed only if its status is REQUEST_SUCCEEDED and it holds the series
 asked for, with at least one value.
+
+RUN UNATTENDED, ON A CADENCE (sources/data/source-cadence.csv), AND WHAT THAT CHANGES.
+The 2018-2026 request is an OPEN window: BLS adds a month (a quarter, for the ECI) to the
+same request address after every release, so the same address answers with more values
+next month. That is a publisher overwriting a document in place, and it is landed the way
+every such document here is, through `ingest.land_version()` -- each distinct answer kept
+under `federal-bls/<date>/`, and the plain name a working copy holding the latest. A window
+that closed more than a year ago is not asked for again once it is held.
+
+THE BYTES ARE NOT THE TEST. Every answer carries `responseTime`, the milliseconds BLS took
+to produce it, so two requests a second apart differ in bytes with the data identical
+(checked 28 October 2026: two fetches of CUURS11ASAF11 2018-2026, different sha256, the
+same 105 values as our copy). Comparing bytes would land a new "version" on every run. So
+the SERIES is compared -- the values and their footnotes -- and an answer whose series is
+the one already held lands nothing.
+
+A NEW TEN-YEAR WINDOW IS NOT ADDED UNATTENDED. From January 2027 the 2027 values need a
+request this script does not make (the unregistered API answers ten years at most, so
+2018-2026 cannot simply be widened past 2027). Adding one is a new key, and two readers
+name the windows -- build_source_index.py catalogues each file by name and fails on one it
+does not know, and build_inflation_topic.py expects exactly two answers per series -- so a
+window added by the refresh would fail the next morning's build. The script says so on
+every run once it is due, exits 0 because it looked, and leaves the change to a person:
+add the window to RANGES and the two readers together.
 """
 import argparse
+import datetime
 import json
 import os
 import sys
@@ -77,11 +104,26 @@ def good(series, blob):
     return None
 
 
+def series_of(blob):
+    """What the answer SAYS, without what it says about the request: `responseTime` and
+    `message` are about this call, and differ between two calls with the same data."""
+    s, = json.loads(blob)['Results']['series']
+    return json.dumps(s, sort_keys=True)
+
+
+def is_open(y1, today):
+    """A window still being added to. One ending last year stays open through this year,
+    because December's values are released in January and the fourth quarter's ECI in
+    late January."""
+    return y1 >= today.year - 1
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--saved', help='land responses already fetched into this directory')
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
+    today = datetime.date.today()
     bad = 0
     for s in SERIES:
         for y0, y1 in RANGES:
@@ -92,8 +134,9 @@ def main():
                 print(('ok    ' if not why else 'FAIL  ') + k + ('' if not why else ': ' + why))
                 bad += bool(why)
                 continue
-            if os.path.exists(here):
-                print('held  %s' % k)
+            held = os.path.exists(here)
+            if held and not is_open(y1, today):
+                print('held  %s (closed window)' % k)
                 continue
             url = API % (s, y0, y1)
             if a.saved:
@@ -109,9 +152,25 @@ def main():
                 print('REFUSED %s: %s' % (k, why))
                 bad += 1
                 continue
-            ok, why = ingest.land(k, blob, upstream=url)
-            print(('landed %s' % k) if ok else ('FAILED %s: %s' % (k, why)))
+            if not held:
+                ok, why = ingest.land(k, blob, upstream=url)
+                print(('landed %s' % k) if ok else ('FAILED %s: %s' % (k, why)))
+                bad += not ok
+                continue
+            if series_of(blob) == series_of(open(here, 'rb').read()):
+                print('same  %s (no new values)' % k)
+                continue
+            # New values in an open window. The first version landed this way is the
+            # SECOND one we hold: the original stays in the bucket under the plain name,
+            # which land_version() then registers as a working copy and rewrites.
+            ok, why = ingest.land_version(k, blob, upstream=url)
+            print(('new values, landed a version of %s' % k) if ok
+                  else ('FAILED %s: %s' % (k, why)))
             bad += not ok
+    if not a.check and today.year > max(y1 for _y0, y1 in RANGES):
+        print('NOTICE: no window asks for %d. Add one to RANGES -- with its entries in '
+              'build_source_index.py and the count in build_inflation_topic.py -- by hand.'
+              % today.year)
     return 1 if bad else 0
 
 

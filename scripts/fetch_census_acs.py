@@ -1,8 +1,9 @@
 """Who lives in Lunenburg — age, households, income by age, and tenure, from the Census.
 
     export CENSUS_API_KEY=...          # or put it in .census-key, which is gitignored
-    python3 scripts/fetch_census_acs.py
-    python3 scripts/fetch_census_acs.py --check
+    python3 scripts/fetch_census_acs.py          # fetch, land what changed, rewrite the CSV
+                                                 #   (the refresh runs exactly this)
+    python3 scripts/fetch_census_acs.py --check  # re-fetch and compare; writes nothing
 
 Writes `sources/data/census-acs.csv`, one row per table per variable per vintage, with the
 ESTIMATE AND ITS MARGIN OF ERROR side by side. Catalogues each raw API response in
@@ -61,16 +62,43 @@ It cannot say which households have children IN THE LUNENBURG SCHOOLS. B11005 co
 households with a child under 18 -- which includes children at Monty Tech, at a private
 school, at a charter, and not yet of school age. That distinction is exactly the one the
 "30%" claim elides, and this table bounds it rather than settling it.
+
+RUN UNATTENDED, ON A CADENCE, AND WHAT THAT CHANGES
+
+Every raw response goes through `ingest`: a response not yet held is landed with
+`ingest.land()`, pushed and read back before it is filed. A response that is held is
+compared by its DATA -- the header and the values, parsed -- not by its bytes, because the
+check below records that the sha256 has moved when Census re-served the same figures. Same
+data lands nothing, and the CSV row keeps the sha256 of the copy we hold, so an unchanged
+run leaves census-acs.csv byte-identical. Different data for a vintage already published is
+Census revising it in place, and is landed as a version with `ingest.land_version()`, which
+keeps the original in the bucket and the latest at the plain name.
+
+A NEWER RELEASE IS REPORTED, NOT FETCHED. Census adds one five-year release a year, as a
+new address (`/data/<year>/acs/acs5`). Which release is newest is computed from today by
+asking that address, and when it is newer than VINTAGES the run says so and exits 0 -- it
+looked. It does not land the new vintage, because three things are written against these
+two by name and would fail the next build if one appeared unattended: build_source_index.py
+catalogues every raw response here by filename, and build_property_owners.py and
+build_homes_and_taxes_topics.py read 2023 and 2018 and refuse anything else ("re-read every
+label here"). Moving to a new vintage is a decision about the pages, so it is a person's.
+
+ONE FIXED COMMAND, BOUNDED. 14 requests (seven per vintage), each with a timeout, and the
+whole run stops -- non-zero, as could-not-look -- once DEADLINE seconds have gone.
 """
 import argparse
 import csv
+import datetime
 import hashlib
 import io
 import json
 import os
 import sys
+import time
 import urllib.error
 import urllib.request
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 RAW = os.path.join(ROOT, 'sources', 'state-census')
@@ -89,6 +117,11 @@ BASE = 'https://api.census.gov/data/%d/acs/acs5'
 # knowing that consecutive 5-year releases OVERLAP by four years and are therefore not
 # independent samples. A difference between them is not a trend and the CSV says so.
 VINTAGES = (2023, 2018)
+# The refresh runs this unattended, so a slow API must not hold the run for hours: three
+# tries at 180 seconds each, over 14 requests, was a worst case of two hours.
+DEADLINE = 600
+TIMEOUT = 90
+_START = time.monotonic()
 
 # The four tables that close the gap. Group queries (`group(B01001)`) return every
 # variable in the table, estimates and margins together, which is why they are fetched
@@ -130,26 +163,33 @@ def api_key():
     return k
 
 
-def fetch(vintage, table, key):
-    """One table, one vintage, as the API returns it. Returns (rows, raw_bytes)."""
-    url = ('%s?get=group(%s)&for=county%%20subdivision:%s&in=state:%s%%20county:%s&key=%s'
-           % (BASE % vintage, table, COUSUB, STATE, COUNTY, key))
+def get(url, key, what):
+    """The body at `url` with the key appended, or SystemExit -- which the refresh reads as
+    could-not-look. The key is added HERE and nowhere else, so the address that is printed,
+    recorded as `upstream` and published never carries it."""
     last = None
     for attempt in range(3):
+        left = DEADLINE - (time.monotonic() - _START)
+        if left < 5:
+            raise SystemExit('%s: the run passed its %d-second deadline' % (what, DEADLINE))
         try:
-            with urllib.request.urlopen(url, timeout=180) as r:
-                raw = r.read()
-            break
-        except TimeoutError as e:            # the API is slow under load, not broken
+            with urllib.request.urlopen(url + '&key=' + key, timeout=min(TIMEOUT, left)) as r:
+                return r.read()
+        except urllib.error.HTTPError as e:
+            raise SystemExit('%s: HTTP %s\n%s' % (what, e.code,
+                                                   e.read()[:300].decode('utf-8', 'replace')))
+        except (TimeoutError, urllib.error.URLError) as e:   # slow under load, not broken
             last = e
-            print('  %s %s: timed out, retrying (%d of 3)' % (table, vintage, attempt + 1))
-    else:
-        raise SystemExit('%s %s: timed out three times — %s' % (table, vintage, last))
-    try:
-        pass
-    except urllib.error.HTTPError as e:
-        raise SystemExit('%s %s: HTTP %s\n%s' % (table, vintage, e.code,
-                                                 e.read()[:300].decode('utf-8', 'replace')))
+            print('  %s: %s, retrying (%d of 3)' % (what, type(e).__name__, attempt + 1))
+    raise SystemExit('%s: failed three times — %s' % (what, last))
+
+
+def fetch(vintage, table, key):
+    """One table, one vintage, as the API returns it. Returns (rows, raw_bytes, url) --
+    the url WITHOUT the key."""
+    url = ('%s?get=group(%s)&for=county%%20subdivision:%s&in=state:%s%%20county:%s'
+           % (BASE % vintage, table, COUSUB, STATE, COUNTY))
+    raw = get(url, key, '%s %s' % (table, vintage))
     if not raw.strip():
         raise SystemExit(
             '%s %s: the API returned an EMPTY BODY. That is what a wrong GEOGRAPHY looks\n'
@@ -174,16 +214,58 @@ def fetch(vintage, table, key):
     if len(rows) < 2:
         raise SystemExit('%s %s: no data rows. Lunenburg is a COUNTY SUBDIVISION '
                          '(%s/%s/%s), not a place.' % (table, vintage, STATE, COUNTY, COUSUB))
-    return rows, raw
+    return rows, raw, url
 
 
-def save_raw(vintage, table, raw):
-    os.makedirs(RAW, exist_ok=True)
+def same_data(a, b):
+    """Two API answers hold the same figures: the same header and the same rows, in any
+    order. Parsed, because the bytes are not promised to be stable between two serves."""
+    pa, pb = json.loads(a), json.loads(b)
+    canon = lambda rs: (rs[0], sorted(json.dumps(dict(zip(rs[0], r)), sort_keys=True)
+                                      for r in rs[1:]))
+    return canon(pa) == canon(pb)
+
+
+def keep_raw(vintage, table, raw, url, land):
+    """The response as we hold it: (filename, sha256, bytes). With `land`, a response not
+    held, or holding different figures, goes through ingest first; without it (--check),
+    nothing is written and the answer is reported as fetched."""
     name = 'acs5-%d-%s-lunenburg.json' % (vintage, table)
+    key = 'state-census/' + name
     path = os.path.join(RAW, name)
-    with open(path, 'wb') as fh:
-        fh.write(raw)
-    return name, hashlib.sha256(raw).hexdigest()
+    held = open(path, 'rb').read() if os.path.exists(path) else None
+    if held is not None and same_data(held, raw):
+        return name, hashlib.sha256(held).hexdigest(), held
+    if land:
+        import ingest
+        if held is None:
+            ok, why = ingest.land(key, raw, upstream=url)
+        else:
+            print('  %s: Census has revised the figures; landing a version' % key)
+            ok, why = ingest.land_version(key, raw, upstream=url)
+        if not ok:
+            raise SystemExit('%s: %s' % (key, why))
+    return name, hashlib.sha256(raw).hexdigest(), raw
+
+
+def newest_release():
+    """The newest five-year release Census answers for, asked rather than assumed. A
+    release for year Y comes out in the December of Y+1 -- the 2020-2024 release was
+    there by 28 October 2026, 2021-2025 was not -- so the candidates are the last three
+    years. The metadata address needs no key. None if none answers, which only a network
+    failure explains, and the caller treats it as could-not-look."""
+    y = datetime.date.today().year
+    for v in range(y - 1, y - 4, -1):
+        try:
+            with urllib.request.urlopen(BASE % v + '.json', timeout=30) as r:
+                if r.status == 200:
+                    return v
+        except urllib.error.HTTPError as e:
+            if e.code != 404:
+                raise SystemExit('newest release: HTTP %s from %s' % (e.code, BASE % v))
+        except (TimeoutError, urllib.error.URLError) as e:
+            raise SystemExit('newest release: %s' % e)
+    return None
 
 
 def pivot(rows):
@@ -192,24 +274,16 @@ def pivot(rows):
     return dict(zip(head, data))
 
 
-def collect_statewide(key, vintage):
+def collect_statewide(key, vintage, land):
     """Median household income for every county subdivision in Massachusetts."""
     var = sorted(STATEWIDE)[0]
-    url = ('%s?get=NAME,%s,%s&for=county%%20subdivision:*&in=state:%s&key=%s'
-           % (BASE % vintage, var, var[:-1] + 'M', STATE, key))
-    for attempt in range(3):
-        try:
-            with urllib.request.urlopen(url, timeout=180) as r:
-                raw = r.read()
-            break
-        except TimeoutError:
-            print('  statewide %s: timed out, retrying (%d of 3)' % (vintage, attempt + 1))
-    else:
-        raise SystemExit('statewide %s: timed out three times' % vintage)
+    url = ('%s?get=NAME,%s,%s&for=county%%20subdivision:*&in=state:%s'
+           % (BASE % vintage, var, var[:-1] + 'M', STATE))
+    raw = get(url, key, 'statewide %s' % vintage)
     if not raw.lstrip().startswith(b'['):
         raise SystemExit('statewide %s: %s' % (vintage, raw[:200].decode('utf-8', 'replace')))
+    name, digest, raw = keep_raw(vintage, 'B19013-massachusetts', raw, url, land)
     rows = json.loads(raw.decode('utf-8'))
-    name, digest = save_raw(vintage, 'B19013-massachusetts', raw)
     head, out = rows[0], []
     for r in rows[1:]:
         d = dict(zip(head, r))
@@ -228,13 +302,14 @@ def collect_statewide(key, vintage):
     return out
 
 
-def collect(key):
+def collect(key, land):
+    """Every figure, from the responses AS HELD once `land` has brought them in."""
     out = []
     for vintage in VINTAGES:
         for table, about in sorted(TABLES.items()):
-            rows, raw = fetch(vintage, table, key)
-            name, digest = save_raw(vintage, table, raw)
-            rec = pivot(rows)
+            _rows, raw, url = fetch(vintage, table, key)
+            name, digest, raw = keep_raw(vintage, table, raw, url, land)
+            rec = pivot(json.loads(raw.decode('utf-8')))
             # Pair every estimate with its margin. `_EA`/`_MA` are annotation flags and
             # carry no figure; `NAME` and the geography columns are not variables.
             ests = sorted(v for v in rec if v.endswith('E') and not v.endswith('EA')
@@ -252,7 +327,7 @@ def collect(key):
                     geography=rec.get('NAME', ''), about=about,
                     source_file=name, sha256=digest))
     for vintage in VINTAGES:
-        out.extend(collect_statewide(key, vintage))
+        out.extend(collect_statewide(key, vintage, land))
     if not out:
         raise SystemExit('nothing collected — refusing to write an empty census file')
     return out
@@ -263,11 +338,19 @@ COLS = ['vintage', 'table', 'variable', 'estimate', 'moe', 'moe_note', 'geograph
 
 
 def write(rows):
-    with io.open(OUT, 'w', encoding='utf-8', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=COLS, lineterminator='\n')
-        w.writeheader()
-        for r in rows:
-            w.writerow({c: r.get(c, '') for c in COLS})
+    """Beside the target and renamed onto it, and not at all when nothing changed -- so an
+    unchanged run leaves the file, its mtime and git untouched."""
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=COLS, lineterminator='\n')
+    w.writeheader()
+    for r in rows:
+        w.writerow({c: r.get(c, '') for c in COLS})
+    if os.path.exists(OUT) and io.open(OUT, encoding='utf-8', newline='').read() == buf.getvalue():
+        return False
+    with io.open(OUT + '.tmp', 'w', encoding='utf-8', newline='') as fh:
+        fh.write(buf.getvalue())
+    os.replace(OUT + '.tmp', OUT)
+    return True
 
 
 def main():
@@ -276,7 +359,14 @@ def main():
                     help='re-fetch and fail if the published figures have changed')
     args = ap.parse_args()
 
-    rows = collect(api_key())
+    rows = collect(api_key(), land=not args.check)
+    newest = newest_release()
+    if newest is None:
+        raise SystemExit('could not reach %s for any recent year' % (BASE % 0).replace('/0/', '/<year>/'))
+    if newest > max(VINTAGES):
+        print('NOTICE: Census has released the %d-%d five-year estimates; this project '
+              'publishes %s. Moving to it is a decision about the pages -- see the docstring.'
+              % (newest - 4, newest, ' and '.join(map(str, VINTAGES))))
 
     if args.check:
         if not os.path.exists(OUT):
@@ -303,7 +393,10 @@ def main():
               % (len(have), len(TABLES), len(VINTAGES)))
         return 0
 
-    write(rows)
+    if not write(rows):
+        print('unchanged: %s — %d figures, the API still answers what we hold'
+              % (os.path.relpath(OUT, ROOT), len(rows)))
+        return 0
     print('wrote %s' % os.path.relpath(OUT, ROOT))
     print('  %d figures — %d tables x %d vintages, every estimate with its margin'
           % (len(rows), len(TABLES), len(VINTAGES)))
