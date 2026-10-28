@@ -122,7 +122,7 @@ def line_name(r):
 def how_rows(T, how):
     """Who else paid toward a line, and HOW each was matched: the payee, the journal entry, or
     the function code."""
-    lab = {'payee': 'paid the same payee', 'moved': 're-charged to it by journal entry',
+    lab = {'payee': 'paid the same vendor', 'moved': 're-charged to it by journal entry',
            'function': 'same kind of work'}
     out = []
     for (rule, py, h), v in sorted(how.items(), key=lambda kv: -abs(kv[1])):
@@ -1055,7 +1055,7 @@ def page(m):
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our matching of other funds’ spending to school lines'),
                       alt='Bar chart, one fiscal year: other funds’ spending in bands from the '
-                          'strongest overlap with the school budget (the same bills, the same payee, '
+                          'strongest overlap with the school budget (the same bills, the same vendor, '
                           'the same function code) to none (cannot tell, separate), in all and by '
                           'who paid; and on the school lines other funds paid toward, the share '
                           'they paid',
@@ -1326,7 +1326,7 @@ def plan_data(m, T):
 # Named for the EVIDENCE, not for what the money was for (TJ: "i dont know how thats different
 # than 'same kind of work'"): a payee match places a bill on one line; a function code only on
 # a category -- payroll has no payee, so a fund's staff can only ever match this way.
-SRC_COLS = [('payee', 'Same payee as a school line',
+SRC_COLS = [('payee', 'Same vendor as a school line',
              'Bills this fund paid itself, to a payee the school budget also paid from a line -- '
              'May Institute, say, paid from IDEA and from private tuition. Placed on that line. '
              'Our match, by payee.'),
@@ -1343,7 +1343,7 @@ SRC_COLS = [('payee', 'Same payee as a school line',
              'School spending the books give no school line for: a function the school budget has '
              'no line for, a general heading, no function at all, or the rest of a journal entry.'),
             ('total', 'Total', 'Everything this fund spent in the year, orders still owed counted.')]
-KIND_WHERE = {'payee': 'same payee as', 'function': 'same function code as', 'later': 're-charged from',
+KIND_WHERE = {'payee': 'same vendor as', 'function': 'same function code as', 'later': 're-charged from',
               'back': 're-charged back to', 'capital': 'capital article', 'none': 'on no school line',
               'between': 'on no school line'}
 
@@ -1372,6 +1372,12 @@ def fund_names():
     for r in J.lines():
         out.setdefault(r['fund'], r['fund_name'].strip())
     return out
+
+
+# Why a dollar is on no school line, in words a reader can use, beside its function code
+NO_LINE = {'booked to a heading': 'a general heading',
+           'booked to no function': 'no function code',
+           'a function the general fund has no line for': 'no school line for this function'}
 
 
 def where_text(kind, dest, names):
@@ -1420,6 +1426,9 @@ def funds_data(m, T):
                     'Every fund other than the school budget that spent money on the schools this '
                     'year, and where each dollar went. Open a fund for what it paid for.'),
                     tab_where='Where it went', tab_what='What it bought', tab_rows='Every posting',
+                    c_memo='Memo', c_to='Paid to', c_where='Where it went', c_amount='Amount', c_date='Date',
+                    c_kind='Kind', c_account='Its account', all_kinds='Every kind of posting',
+                    bought_note='Each payment once, under the fullest memo it carries; payroll by the account it paid.',
                     by_payee='Paid to', by_account='By its own account', went='Went to',
                     close='Close', loading='Loading…', failed='Could not load this year’s postings.',
                     none='None.', sum='Every fund', all_rows='postings shown',
@@ -1437,11 +1446,46 @@ HOW_PLACED = [('later', 'Re-charged from the school budget',
                'The school budget paid the bills; a journal entry later put them on this fund. In the journal.'),
               ('back', 'Re-charged back to the school budget',
                'This fund paid first; a journal entry later put the bills on the school budget. Negative here.'),
-              ('payee', 'Same payee as the line',
-               'The fund paid a payee this line also pays. Our match.'),
+              ('payee', 'Same vendor as the line',
+               'The fund paid a vendor this line also pays. It may have bought something different '
+               '-- read the memos and what the fund booked it as. Our match.'),
               ('function', 'Same function code, category only',
                'Spending with no payee to match -- payroll mostly -- under a function code of this '
                'category. Our match, and it cannot say which line.')]
+
+
+def evidence(rows, T, n=6):
+    """What a fund's postings on one line SAY: each payment once, under the fullest memo it has.
+    MUNIS posts a purchase as three -- the order (POE, its memo whole), the invoice (API, the memo
+    cut short) and, in the invoice's own journal entry, the order released (POL) -- so an invoice
+    takes its order's memo through the release beside it: same journal, same vendor, same amount.
+    An order still open at year end is listed as owed. -> [dict(memo, v, d)] largest first."""
+    po = {}
+    for r in rows:
+        if r['source'] == 'POE':
+            po.setdefault(r['doc_no'], r['description'].strip())
+    rel = {}
+    for r in rows:
+        if r['source'] == 'POL':
+            rel[(r['journal'], r['vendor'], -r['amt'])] = r['doc_no']
+    by, when = defaultdict(Decimal), {}
+    net = defaultdict(Decimal)
+    for r in rows:
+        if r['source'] in ORDERS:
+            net[r['doc_no']] += r['amt']
+            continue
+        doc = rel.get((r['journal'], r['vendor'], r['amt']))
+        memo = po.get(doc) or r['description'].strip() or 'no memo'
+        by[memo] += r['amt']
+        when[memo] = min(when.get(memo, r['effective_date']), r['effective_date'])
+    for doc, v in net.items():
+        if v:
+            memo = '%s (still owed)' % (po.get(doc) or 'order')
+            by[memo] += v
+            when.setdefault(memo, '')
+    out = sorted(((k, v) for k, v in by.items() if abs(v) >= Decimal('0.5')), key=lambda kv: -abs(kv[1]))
+    return [dict(memo=T.lit(k), v=signed(T, v) if v < 0 else T.usd(v),
+                 d=T.lit(long_date(when[k])) if when.get(k) else '') for k, v in out[:n]], max(0, len(out) - n)
 
 
 def line_funds_data(m, T):
@@ -1451,6 +1495,11 @@ def line_funds_data(m, T):
     years = []
     for fy in YEARS():
         rows, check = [], defaultdict(Decimal)
+        posted = defaultdict(list)                     # (fund, kind, where) -> its postings
+        for (y, f), rs_ in m['src_rows'].items():
+            if y == fy:
+                for r, k, w in rs_:
+                    posted[(f, k, w)].append(r)
         for (y, f), d in sorted(m['src'].items()):
             if y != fy:
                 continue
@@ -1468,7 +1517,16 @@ def line_funds_data(m, T):
                     cat, name = r['category'], T.lit(line_name(r))
                     budget = r['voted'] + r['transfers'] + r['carried_budget']
                     cost = r['all_funds_cost']
+                ev, more = evidence(posted[(f, kind, where)], T)
+                # what the FUND booked it as: its own accounts, largest first -- beside the school
+                # line it was matched to, the plainest sign of a match that bought something else
+                own = defaultdict(Decimal)
+                for r in posted[(f, kind, where)]:
+                    own['%s · %s' % (A[r['account']]['org_name'].strip().title(),
+                                     A[r['account']]['account_description'].strip().title())] += r['amt']
                 rows.append(dict(
+                    memos=ev, more=more,
+                    booked=[T.lit(k) for k, v in sorted(own.items(), key=lambda kv: -kv[1]) if v][:2],
                     cat=T.lit(S.CAT_LABEL[cat]), line=name, acct=T.lit(where if kind != 'function' else ''),
                     fund=T.lit(fund_label(f, A)), printed=T.lit(fname[f]), group=g, how=kind,
                     n=round(fl(v), 2), t=T.usd(v),
@@ -1541,19 +1599,20 @@ def line_funds_data(m, T):
                           all_kinds='Every kind', filter='Filter by line, category or fund',
                           scroll='More columns: scroll the table sideways', sum='Every row',
                           lines='school lines', funds='funds', fund_one='fund', close='Close',
+                          booked='The fund booked it as:', more='more payments',
                           open='Open a line for the funds that paid toward it'))
 
 
 # OVERLAP (TJ, 27 October 2026: "these other sources of funds are complimenting or supplementing
 # some aspects of the school budget and we can tell by the overlap ... calculate the supplement.
 # which is a separate concept than the 'on no school line'"). Other funds' money in bands, from
-# the strongest overlap with the school budget to none: the same bills, the same payee, the same
+# the strongest overlap with the school budget to none: the same bills, the same vendor, the same
 # function code, cannot tell, and separate. Bills re-charged BACK are drawn apart, negative.
 # Overlap is all the books can show. Whether it SUPPLEMENTED the school budget (paid for more)
 # or SUPPLANTED it (paid what it would have paid) is what would have happened otherwise, which
 # no ledger records -- the block says so, and never calls a dollar either.
 BANDS = [('bills', 'The same bills', 'The school budget paid them; a journal entry put them on this fund.'),
-         ('payee', 'The same payee', 'Paid to a payee the school budget also paid from a line.'),
+         ('payee', 'The same vendor', 'Paid to a vendor the school budget also paid from a line; possibly for something else.'),
          ('code', 'The same function code', 'No payee to match, booked under a school line’s function code.'),
          ('unknown', 'Cannot tell', 'Booked to a general heading or to no function at all.'),
          ('separate', 'Separate', 'A function the school budget has no line for, or a capital article.')]
@@ -1639,14 +1698,46 @@ def fund_texts(m):
         for (y, f), d in sorted(m['src'].items()):
             if y != fy:
                 continue
-            w = [[KIND_WHERE[k], where_text(k, dest, names), money(v), round(fl(v), 2)]
+            # WHERE, IN PLAIN WORDS (TJ, 27 October 2026, of "booked to a heading": "a mistake in
+            # the app" -- it said nothing): a school line by name, or "No school line" with the
+            # function code the fund booked it under
+            codes = defaultdict(set)
+            for r, kind, dest in m['src_rows'].get((fy, f), []):
+                codes[(kind, dest)].add(r['account'].split('-')[3])
+            plain = lambda k, dest: (
+                'No school line · function %s, %s' % ('/'.join(sorted(codes[(k, dest)])), NO_LINE[dest])
+                if k == 'none' else where_text(k, dest, names))
+            w = [[KIND_WHERE[k] if k != 'none' else '', plain(k, dest), money(v), round(fl(v), 2)]
                  for (k, dest), v in sorted(d.items(), key=lambda kv: -abs(kv[1])) if round(v, 2)]
+            # WHAT IT BOUGHT: each payment once under its fullest memo (an invoice takes its
+            # order's memo through the release in the same journal entry), who it was paid to,
+            # and where it went
+            rows_ = m['src_rows'].get((fy, f), [])
+            po = {r['doc_no']: r['description'].strip() for r, _, _ in rows_ if r['source'] == 'POE'}
+            rel = {(r['journal'], r['vendor'], -r['amt']): r['doc_no'] for r, _, _ in rows_ if r['source'] == 'POL'}
+            bought = defaultdict(Decimal)
+            for r, kind, dest in rows_:
+                if r['source'] in ORDERS:
+                    continue
+                # payroll's memo is a warrant number; the account it paid says what it was
+                memo = ('Payroll · %s' % r['org_name'].strip().title() if r['source'] in ('PRJ', 'PRH')
+                        else po.get(rel.get((r['journal'], r['vendor'], r['amt']))) or r['description'].strip() or 'no memo')
+                bought[(memo, payee(r) or KIND.get(r['source'], r['source']), plain(kind, dest))] += r['amt']
+            owed = defaultdict(Decimal)
+            for r, kind, dest in rows_:
+                if r['source'] in ORDERS:
+                    owed[(r['doc_no'], payee(r), plain(kind, dest))] += r['amt']
+            for (doc, who, where), v in owed.items():
+                if v:
+                    bought[('%s (still owed)' % po.get(doc, 'order'), who or 'Order', where)] += v
+            b = [[k[0], k[1], k[2], money(v), round(fl(v), 2)]
+                 for k, v in sorted(bought.items(), key=lambda kv: -abs(kv[1])) if round(v, 2)]
             acct, pay = defaultdict(Decimal), defaultdict(Decimal)
             rs = []
             for r, kind, dest in m['src_rows'].get((fy, f), []):
                 acct[r['account_description'].strip().title()] += r['amt']
                 pay[payee(r) or KIND.get(r['source'], r['source'])] += r['amt']
-                went = ('journal entry %s' % dest) if kind == 'journal' else '%s %s' % (
+                went = ('journal entry %s' % dest) if kind == 'journal' else plain(kind, dest) if kind == 'none' else '%s %s' % (
                     KIND_WHERE[kind], where_text(kind, dest, names))
                 rs.append([r['effective_date'], long_date(r['effective_date']),
                            KIND.get(r['source'], 'Order' if r['source'] in ORDERS else r['source']),
@@ -1654,7 +1745,7 @@ def fund_texts(m):
                            went, money(r['amt']), round(fl(r['amt']), 2)])
             rs.sort(key=lambda x: (x[0], -abs(x[8])))
             srt = lambda dd: [[k, money(v), round(fl(v), 2)] for k, v in sorted(dd.items(), key=lambda kv: -abs(kv[1])) if round(v, 2)]
-            body[f] = dict(w=w, a=srt(acct), p=srt(pay), r=rs)
+            body[f] = dict(w=w, b=b, a=srt(acct), p=srt(pay), r=rs)
         files[os.path.join(LINES_DIR, 'funds-%d.json' % fy)] = json.dumps(
             dict(fy=C.fy(fy), funds=body), ensure_ascii=False, sort_keys=True,
             separators=(',', ':')) + '\n'

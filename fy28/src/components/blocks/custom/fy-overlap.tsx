@@ -3,7 +3,7 @@
  *  the overlap ... a chart or some viz that shows how much overlap there is".
  *
  *  The page's year. Other funds' money in bands, strongest overlap first -- the same bills, the
- *  same payee, the same function code -- then cannot tell, then separate; bills re-charged BACK
+ *  same vendor, the same function code -- then cannot tell, then separate; bills re-charged BACK
  *  to the school budget drawn left of zero. In all, then by who paid, on one scale. Then, on the
  *  school lines other funds paid toward, the share of what those lines cost that they paid.
  *  Overlap only: whether a dollar supplemented the school budget or supplanted it is not in any

@@ -89,3 +89,58 @@ export function Row({ label, sub, children }: { label: string; sub?: string; chi
       {children}
     </div>)
 }
+
+/** A popup's table: column headers that sort (click again to reverse), a text filter over every
+ *  column, and an optional filter by one column's values. TJ, 27 October 2026: "every posting
+ *  needs column headers, filters, and sorting". Cells are display text; `sort` holds what a column
+ *  sorts by when that is not its text (a date's ISO form, an amount's number). */
+export type STCol = { key: string; label: string; right?: boolean; wide?: boolean }
+export type STRow = { cells: Record<string, React.ReactNode>; text: string; sort: Record<string, string | number> }
+export function SortTable({ cols, rows, filter, count, pick, pickAll, first }: {
+  cols: STCol[]; rows: STRow[]; filter: string; count: string
+  pick?: { key: string; values: string[] }; pickAll?: string; first?: { key: string; dir: 1 | -1 } }) {
+  const [q, setQ] = useState('')
+  const [only, setOnly] = useState('')
+  const [sort, setSort] = useState<{ key: string; dir: 1 | -1 } | null>(first ?? null)
+  const shown = (() => {
+    const ql = q.trim().toLowerCase()
+    const out = rows.filter(r => (!ql || r.text.toLowerCase().includes(ql)) && (!only || !pick || r.sort[pick.key] === only))
+    if (!sort) return out
+    return [...out].sort((a, b) => {
+      const x = a.sort[sort.key], y = b.sort[sort.key]
+      return sort.dir * (typeof x === 'number' && typeof y === 'number' ? x - y : String(x).localeCompare(String(y)))
+    })
+  })()
+  const sel = { borderColor: 'var(--grid)', background: 'var(--surface-1)', color: 'var(--text-primary)' }
+  return (
+    <div>
+      <div className="flex flex-wrap gap-2 mb-2">
+        <input value={q} onChange={e => setQ(e.target.value)} placeholder={filter} aria-label={filter}
+          className="w-full max-w-sm px-2 py-1 rounded border text-[13px]" style={sel} />
+        {pick && pick.values.length > 1 ? (
+          <select value={only} onChange={e => setOnly(e.target.value)} className="px-2 py-1 rounded border text-[13px]" style={sel} aria-label={pickAll}>
+            <option value="">{pickAll}</option>
+            {pick.values.map(v => <option key={v} value={v}>{v}</option>)}
+          </select>) : null}
+      </div>
+      <p className="text-[12px] mb-1" style={muted}>{shown.length} · {count}</p>
+      <div className="overflow-x-auto">
+        <table className="w-full text-[12.5px] tabular-nums border-collapse">
+          <thead>
+            <tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
+              {cols.map(c => (
+                <th key={c.key} className={`px-1.5 py-1 font-semibold whitespace-nowrap cursor-pointer select-none ${c.right ? 'text-right' : 'text-left'}`}
+                  onClick={() => setSort(s => ({ key: c.key, dir: s?.key === c.key ? (s.dir === 1 ? -1 : 1) : (c.right ? -1 : 1) }))}>
+                  {c.label}{sort?.key === c.key ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>))}
+            </tr>
+          </thead>
+          <tbody>
+            {shown.map((r, i) => (
+              <tr key={i} className="border-b align-top" style={{ borderColor: 'var(--grid)' }}>
+                {cols.map(c => <td key={c.key} className={`px-1.5 py-1 ${c.right ? 'text-right whitespace-nowrap font-semibold' : ''} ${c.wide ? 'min-w-[12rem]' : ''}`}>{r.cells[c.key]}</td>)}
+              </tr>))}
+          </tbody>
+        </table>
+      </div>
+    </div>)
+}

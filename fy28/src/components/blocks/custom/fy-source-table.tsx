@@ -11,7 +11,7 @@
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { useFyYear } from './fy-year'
-import { HeadTip, WideScroll } from './fy-shared'
+import { HeadTip, SortTable, WideScroll } from './fy-shared'
 import type { CustomProps } from './index'
 
 type K = 'payee' | 'function' | 'later' | 'back' | 'capital' | 'none' | 'total'
@@ -19,11 +19,12 @@ type Row = { key: string; name: string; printed: string; program: string; cat: s
 type Year = { fy: string; rows: Row[]; total: string }
 type Col = { id: K; label: string; means: string }
 type T = Record<'source' | 'category' | 'read' | 'tab_where' | 'tab_what' | 'tab_rows' | 'by_payee' | 'by_account' | 'went'
-  | 'close' | 'loading' | 'failed' | 'none' | 'sum' | 'all_rows' | 'all_cats' | 'scroll' | 'filter', string>
+  | 'close' | 'loading' | 'failed' | 'none' | 'sum' | 'all_rows' | 'all_cats' | 'scroll' | 'filter'
+  | 'c_memo' | 'c_to' | 'c_where' | 'c_amount' | 'c_date' | 'c_kind' | 'c_account' | 'all_kinds' | 'bought_note', string>
 type Data = { years: Year[]; columns: Col[]; groups: { id: string; label: string }[]; text: T }
 type Pair = [string, string, number]
 type Posting = [string, string, string, string, string, string, string, string, number]
-type Fund = { w: [string, string, string, number][]; a: Pair[]; p: Pair[]; r: Posting[] }
+type Fund = { w: [string, string, string, number][]; b: [string, string, string, string, number][]; a: Pair[]; p: Pair[]; r: Posting[] }
 type File = { fy: string; funds: Record<string, Fund> }
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
@@ -66,7 +67,6 @@ function FundView({ r, fy, t, onClose }: { r: Row; fy: string; t: T; onClose: ()
   const [tab, setTab] = useState<'where' | 'what' | 'rows'>('where')
   const [file, setFile] = useState<File | null>(null)
   const [err, setErr] = useState(false)
-  const [q, setQ] = useState('')
   const box = useRef<HTMLDivElement>(null)
   useEffect(() => { let live = true; load(fy).then(f => { if (live) setFile(f) }, () => { if (live) setErr(true) }); return () => { live = false } }, [fy])
   useEffect(() => {
@@ -78,11 +78,6 @@ function FundView({ r, fy, t, onClose }: { r: Row; fy: string; t: T; onClose: ()
     return () => { window.removeEventListener('keydown', key); document.body.style.overflow = prev }
   }, [onClose])
   const F = file?.funds[r.key]
-  const rows = useMemo(() => {
-    if (!F) return []
-    const s = q.trim().toLowerCase()
-    return s ? F.r.filter(x => [x[2], x[3], x[4], x[5], x[6]].some(v => v.toLowerCase().includes(s))) : F.r
-  }, [F, q])
   return createPortal(
     <div className="fixed inset-0 z-50 flex items-start justify-center p-2 sm:p-6" style={{ background: 'rgba(0,0,0,0.45)' }} onClick={onClose}>
       <div ref={box} tabIndex={-1} role="dialog" aria-modal="true" aria-label={r.name}
@@ -109,31 +104,32 @@ function FundView({ r, fy, t, onClose }: { r: Row; fy: string; t: T; onClose: ()
             : tab === 'where' ? (
               <div className="max-w-3xl"><Bars title={t.tab_where} items={F.w.map(([k, w, tx, v]) => ({ sub: k, label: w, text: tx, v }))} /></div>
             ) : tab === 'what' ? (
-              <div className="grid gap-6 md:grid-cols-2">
-                <Bars title={t.by_account} items={F.a.map(([l, tx, v]) => ({ label: l, text: tx, v }))} />
-                <Bars title={t.by_payee} items={F.p.map(([l, tx, v]) => ({ label: l, text: tx, v }))} />
+              <div className="space-y-6">
+                {/* what it bought, in its own words: memo, who it was paid to, where it went */}
+                <div>
+                  <p className="text-[12px] mb-1" style={muted}>{t.bought_note}</p>
+                  <SortTable filter={t.filter} count={t.all_rows} first={{ key: 'v', dir: -1 }}
+                    cols={[{ key: 'memo', label: t.c_memo, wide: true }, { key: 'to', label: t.c_to }, { key: 'where', label: t.c_where, wide: true }, { key: 'v', label: t.c_amount, right: true }]}
+                    rows={F.b.map(([memo, to, where, tx, v]) => ({ text: `${memo} ${to} ${where}`,
+                      cells: { memo, to, where: <span style={where.startsWith('No school line') ? muted : secondary}>{where}</span>, v: tx },
+                      sort: { memo, to, where, v } }))} />
+                </div>
+                <div className="grid gap-6 md:grid-cols-2">
+                  <Bars title={t.by_account} items={F.a.map(([l, tx, v]) => ({ label: l, text: tx, v }))} />
+                  <Bars title={t.by_payee} items={F.p.map(([l, tx, v]) => ({ label: l, text: tx, v }))} />
+                </div>
               </div>
             ) : (
-              <div>
-                <input value={q} onChange={e => setQ(e.target.value)} placeholder={t.filter}
-                  className="mb-2 w-full max-w-sm px-2 py-1 rounded border text-[13px]"
-                  style={{ borderColor: 'var(--grid)', background: 'var(--surface-1)', color: 'var(--text-primary)' }} />
-                <p className="text-[12px] mb-1" style={muted}>{rows.length} · {t.all_rows}</p>
-                <div className="overflow-x-auto">
-                  <table className="w-full text-[12.5px] tabular-nums border-collapse">
-                    <tbody>
-                      {rows.map((x, i) => (
-                        <tr key={i} className="border-b align-top" style={{ borderColor: 'var(--grid)' }}>
-                          <td className="px-1.5 py-1 whitespace-nowrap" style={secondary}>{x[1]}</td>
-                          <td className="px-1.5 py-1 whitespace-nowrap" style={muted}>{x[2]}</td>
-                          <td className="px-1.5 py-1">{x[3] || <span style={muted}>—</span>}<span className="block text-[11.5px]" style={muted}>{x[4]}</span></td>
-                          <td className="px-1.5 py-1" style={secondary}>{x[5]}<span className="block text-[11.5px]" style={muted}>{t.went}: {x[6]}</span></td>
-                          <td className="px-1.5 py-1 text-right whitespace-nowrap font-semibold">{x[7]}</td>
-                        </tr>))}
-                    </tbody>
-                  </table>
-                </div>
-              </div>)}
+              <SortTable filter={t.filter} count={t.all_rows} first={{ key: 'date', dir: 1 }}
+                pick={{ key: 'kind', values: [...new Set(F.r.map(x => x[2]))].sort() }} pickAll={t.all_kinds}
+                cols={[{ key: 'date', label: t.c_date }, { key: 'kind', label: t.c_kind }, { key: 'to', label: t.c_to },
+                  { key: 'memo', label: t.c_memo, wide: true }, { key: 'account', label: t.c_account }, { key: 'where', label: t.c_where, wide: true },
+                  { key: 'v', label: t.c_amount, right: true }]}
+                rows={F.r.map(x => ({ text: `${x[2]} ${x[3]} ${x[4]} ${x[5]} ${x[6]}`,
+                  cells: { date: <span className="whitespace-nowrap" style={secondary}>{x[1]}</span>, kind: <span className="whitespace-nowrap" style={muted}>{x[2]}</span>,
+                    to: x[3] || <span style={muted}>—</span>, memo: <span style={secondary}>{x[4]}</span>, account: <span style={secondary}>{x[5]}</span>,
+                    where: <span style={secondary}>{x[6]}</span>, v: x[7] },
+                  sort: { date: x[0], kind: x[2], to: x[3], memo: x[4], account: x[5], where: x[6], v: x[8] } }))} />)}
         </div>
       </div>
     </div>, document.body)

@@ -16,7 +16,7 @@ import { useFyYear } from './fy-year'
 import { HeadTip, PAYER, WideScroll } from './fy-shared'
 import type { CustomProps } from './index'
 
-type Fund = { fund: string; printed: string; group: string; how: string; n: number; t: string; share: string }
+type Fund = { fund: string; printed: string; booked: string[]; memos: { memo: string; v: string; d: string }[]; more: number; group: string; how: string; n: number; t: string; share: string }
 type Line = { cat: string; line: string; acct: string; n: number; t: string; budget: string; share: string; pb: number | null; pb_t: string; pv: number | null; pv_t: string
   bw: { walk: string; adj: number; adj_t: string; adj_pct: string; flag: boolean } | null
   groups: string[]; funds: Fund[] }
@@ -80,6 +80,15 @@ function LineView({ l, fy, t, kind, how, onClose }: { l: Line; fy: string; t: Re
               </div>
               <div className="h-2 mt-1 rounded-sm" style={{ width: `${(Math.abs(f.n) / max) * 100}%`, background: PAYER[f.group], opacity: f.n < 0 ? 0.4 : 1 }} />
               <p className="text-[12px] mt-1 leading-snug" style={secondary}><span className="font-semibold">{how[f.how].label}.</span> {how[f.how].means}</p>
+              {/* the fund's own words: what it booked this as, and each payment's memo */}
+              {f.booked.length ? <p className="text-[12px] mt-1" style={secondary}><span style={muted}>{t.booked}</span> {f.booked.join('; ')}</p> : null}
+              {f.memos.length ? (
+                <ul className="mt-1 text-[12px] space-y-0.5">
+                  {f.memos.map((x, k) => (
+                    <li key={k} className="flex justify-between gap-3"><span style={secondary}>“{x.memo}”{x.d ? <span style={muted}> · {x.d}</span> : null}</span>
+                      <span className="tabular-nums whitespace-nowrap" style={secondary}>{x.v}</span></li>))}
+                  {f.more ? <li style={muted}>+ {f.more} {t.more}</li> : null}
+                </ul>) : null}
             </li>))}
         </ul>
       </div>
