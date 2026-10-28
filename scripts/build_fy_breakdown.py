@@ -981,19 +981,43 @@ def plan_data(m, T):
         if abs(happened - tot(lambda r: r['gf_spent'] + r['other_funds'])
                - sum((r['other_funds'] for r in rs if not r['account']), D0)) > Decimal('0.01'):
             fail('FY%d: what happened %s is not what every fund paid toward the lines' % (fy, happened))
+        # THE BRIDGE (TJ, 27 October 2026, of the difference chart it replaces: "the hardest to
+        # understand"). From the plan to what happened in four steps, each one reason, summing
+        # exactly: what the general fund left unspent, the circuit breaker against what the book
+        # counted on, and what other funds paid -- toward school lines, then on none.
+        other_on = sum(start.values(), D0) + sum(later.values(), D0)
+        unm = sum(un.values(), D0)
+        cb_step = cb_collab - (offset or D0)
+        steps = [('gf', -left, 'General fund left unspent' if left >= 0 else 'General fund spent past its budget',
+                  'Its budget less what it spent, after bills were re-charged to and from other funds.'),
+                 ('cb', cb_step, ('Circuit breaker, counted on and not charged' if cb_step < 0
+                                  else 'Circuit breaker, charged beyond what was counted on')
+                  if offset is not None else 'Circuit breaker, which the book did not count on',
+                  'Charged to collaborative tuition, against the offset the year’s book printed.'
+                  if offset is not None else 'This year’s book printed no offset, so all of it is beyond the plan.'),
+                 ('other', other_on, 'Other funds, toward school lines',
+                  T.lit('Grants, fees and other funds, on the same lines the budget pays for; %s of it '
+                        're-charged from the school budget after it paid.' % T.usd(sum(later.values(), D0)))),
+                 ('none', unm, 'Other funds, on no school line',
+                  'School spending the books give no school line for: we cannot say which line it paid toward.')]
+        if planned + sum((v for _, v, _, _ in steps), D0) != happened + unm:
+            fail('FY%d: the bridge does not land on what happened' % fy)
+        bridge = [dict(id=i, n=fl(v), v=('+' if v > 0 else '−' if v < 0 else '') + T.usd(abs(v)),
+                       label=l, means=w) for i, v, l, w in steps]
         years.append(dict(
+            bridge=bridge,
             fy=T.fy(fy), book=T.lit('/docs/district-budget/docs/%s.pdf' % pl['book']),
             book_line=T.lit(str(pl['line'])), raw=[T.lit(x) for x in pl['raw']],
             gf=dict(budget=fl(budget), before=fl(before), off=fl(off), on=fl(on), spent=fl(spent),
                     left=fl(left), early=fl(early), unspent=fl(gf_un),
-                    t=dict(early=T.usd(early), own=T.usd(spent - early), unspent=T.usd(gf_un), budget=T.usd(budget), before=T.usd(before), off=T.usd(off),
+                    t=dict(early=T.usd(early), own=T.usd(spent - early), unspent=T.usd(gf_un), used=T.usd(budget - gf_un), budget=T.usd(budget), before=T.usd(before), off=T.usd(off),
                            on=T.usd(on), spent=T.usd(spent), left=T.usd(left),
                            under=T.usd(budget - before), voted=T.usd(tot(lambda r: r['voted'])),
                            transfers=T.usd(tot(lambda r: r['transfers'])),
                            carried=T.usd(tot(lambda r: r['carried_budget'])))),
             cb=dict(plan=None if offset is None else fl(offset), paid=fl(cb_collab), unspent=fl(cb_un),
                     t=dict(plan=None if offset is None else T.usd(offset), paid=T.usd(cb_collab),
-                           unspent=T.usd(cb_un),
+                           unspent=T.usd(cb_un), used=None if offset is None else T.usd(offset - cb_un),
                            gross=T.usd(pl['gross']),
                            net=T.usd(pl['gross'] - (offset or D0)),
                            diff=None if offset is None else T.usd(abs(cb_collab - offset)))),
@@ -1037,7 +1061,7 @@ def plan_data(m, T):
         beyond_row='Beyond the plan',
         unmatched_row='Other funds, on no school line',
         printed='The lines as the year’s book prints them',
-        h_abs='In dollars', h_diff='Against the plan: the difference only',
+        h_abs='In dollars', h_diff='From the plan to what happened', bridge_cut='The two totals are cut short at the left, so the steps between them show.',
         a_plan='The plan', a_plan_sub='Budget, and the circuit breaker the book counted on',
         a_happened='What happened', a_happened_sub='Every school dollar spent, by who paid',
         a_beyond='beyond the plan', on_no_line='on no school line',
@@ -1045,7 +1069,8 @@ def plan_data(m, T):
         a_gf_budget='School general fund budget', a_gf_spent='School general fund, after re-charges',
         a_gf_early='School general fund, next year’s tuition paid early',
         a_gf_unspent='School general fund, unspent', a_cb_unspent='Circuit breaker, counted on, not charged',
-        a_unspent='unspent', a_unspent_sub='Outlined: allocated to the year and not spent',
+        a_gf_used='School general fund budget, spent', a_cb_used='Circuit breaker, counted on and charged',
+        a_unspent='unspent', a_unspent_sub='Outlined at the end: planned and not spent',
         a_unspent_note=('Unspent is shown for the school general fund and the circuit breaker the book '
                         'counted on, the two with an allocation for the year. Most grants and '
                         'revolving funds print no budget for the year, so theirs is not drawn.'),

@@ -25,11 +25,11 @@ import type { CustomProps } from './index'
 type Other = { id: string; start: number; later: number; unmatched: number; t: Record<'start' | 'later' | 'paid' | 'unmatched' | 'all', string> }
 type Year = { fy: string; book: string; book_line: string; raw: string[]
   gf: { budget: number; before: number; off: number; on: number; spent: number; left: number; early: number; unspent: number
-    t: Record<'budget' | 'before' | 'off' | 'on' | 'spent' | 'left' | 'under' | 'voted' | 'transfers' | 'carried' | 'early' | 'own' | 'unspent', string> }
-  cb: { plan: number | null; paid: number; unspent: number; t: { plan: string | null; paid: string; unspent: string; gross: string; net: string; diff: string | null } }
+    t: Record<'budget' | 'before' | 'off' | 'on' | 'spent' | 'left' | 'under' | 'voted' | 'transfers' | 'carried' | 'early' | 'own' | 'unspent' | 'used', string> }
+  cb: { plan: number | null; paid: number; unspent: number; t: { plan: string | null; paid: string; unspent: string; used: string | null; gross: string; net: string; diff: string | null } }
   others: Other[]; others_t: Record<'start' | 'later' | 'paid' | 'unmatched' | 'all', string>
   totals: { plan: number; happened: number; unmatched: number; unspent: number; t: { plan: string; happened: string; beyond: string; unspent: string } } }
-type Data = { years: Year[]; groups: { id: string; label: string }[]; text: Record<string, string> }
+type Data = { years: (Year & { bridge: { id: string; n: number; v: string; label: string; means: string }[] })[]; groups: { id: string; label: string }[]; text: Record<string, string> }
 
 // the weekly chart's colours, by payer, so a fund is one colour across the page
 const PAYER = { gf: 'var(--thread-1)', idea: 'var(--thread-2)', grants: 'var(--thread-5)', cb: 'var(--thread-4)',
@@ -136,25 +136,25 @@ export default function FyPlan({ data, alt }: CustomProps) {
     <figure aria-label={alt}>
       <p className="text-[13px] font-semibold mt-3 mb-1">{t.h_abs}</p>
       {(() => {
-        const max = Math.max(y.totals.plan, y.totals.happened + y.totals.unspent)
+        const max = Math.max(y.totals.plan, y.totals.happened)
         const cbFill = y.cb.plan === null ? hatch(PAYER.cb) : PAYER.cb
         return (
           <div className="space-y-1.5">
-            <Row label={t.a_plan} sub={t.a_plan_sub}>
+            {/* UNSPENT AT THE END OF THE PLAN, always (TJ, 27 October 2026): it is the part of
+                the plan that was not used, so the plan bar is what was used, then what was not */}
+            <Row label={t.a_plan} sub={`${t.a_plan_sub}${y.totals.unspent > 0.5 ? ` · ${t.a_unspent_sub}` : ''}`}>
               <Absolute max={max} total={y.totals.t.plan} parts={[
-                { name: t.a_gf_budget, value: g.budget, text: g.t.budget, fill: 'color-mix(in srgb, var(--thread-1) 55%, transparent)' },
-                ...(y.cb.plan !== null && y.cb.t.plan ? [{ name: t.a_cb_plan, value: y.cb.plan, text: y.cb.t.plan,
-                  fill: 'color-mix(in srgb, var(--thread-4) 55%, transparent)' }] : [])]} />
+                { name: t.a_gf_used, value: g.budget - g.unspent, text: g.t.used, fill: 'color-mix(in srgb, var(--thread-1) 55%, transparent)' },
+                ...(y.cb.plan !== null && y.cb.t.plan ? [{ name: t.a_cb_used, value: y.cb.plan - y.cb.unspent, text: y.cb.t.used,
+                  fill: 'color-mix(in srgb, var(--thread-4) 55%, transparent)' }] : []),
+                { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true },
+                { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true }]} />
             </Row>
-            <Row label={t.a_happened} sub={`${t.a_happened_sub} · ${y.totals.t.beyond} ${t.a_beyond}${y.totals.unspent > 0.5 ? ` · ${t.a_unspent_sub}` : ''}`}>
-              {/* the general fund's spent and unspent first, then the circuit breaker's, so each
-                  ends where its part of the plan above ends */}
+            <Row label={t.a_happened} sub={`${t.a_happened_sub} · ${y.totals.t.beyond} ${t.a_beyond}`}>
               <Absolute max={max} total={y.totals.t.happened} parts={[
                 { name: t.a_gf_spent, value: g.spent - g.early, text: g.t.own, fill: PAYER.gf },
                 { name: t.a_gf_early, value: g.early, text: g.t.early, fill: hatch(PAYER.gf) },
-                { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true },
                 { name: t.a_cb_paid, value: y.cb.paid, text: y.cb.t.paid, fill: cbFill },
-                { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true },
                 ...y.others.flatMap(o => [
                   { name: label[o.id], value: o.start + o.later, text: o.t.paid, fill: o.id === 'cb' ? hatch(PAYER.cb) : PAYER[o.id] },
                   { name: `${label[o.id]}, ${t.on_no_line}`, value: o.unmatched, text: o.t.unmatched, fill: hatch(PAYER[o.id]) }])]} />
@@ -162,40 +162,46 @@ export default function FyPlan({ data, alt }: CustomProps) {
             <p className="text-[11.5px] sm:pl-[14.75rem]" style={muted}>{t.a_unspent_note}</p>
           </div>)
       })()}
+      {/* THE BRIDGE (TJ, 27 October 2026, of the chart it replaced -- a waterfall per source,
+          each on its own baseline -- "the hardest to understand"): from the plan to what
+          happened, one reason a step. The totals run off the left edge so the steps, a few
+          percent of them, are wide enough to read. */}
       <p className="text-[13px] font-semibold mt-5 mb-1">{t.h_diff}</p>
-      <div className="flex flex-wrap gap-x-4 gap-y-1 text-[12px] mb-2" style={secondary}>
-        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-[2px]" style={{ background: PAYER.gf }} />{t.lg_gf}</span>
-        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-[2px]" style={{ background: hatch(RC) }} />{t.lg_off}</span>
-        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-[2px]" style={{ background: BACK }} />{t.lg_on}</span>
-        <span className="inline-flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-[2px]" style={{ background: PAYER.cb }} />{t.lg_cb}</span>
-        {d.groups.map(g => (
-          <span key={g.id} className="inline-flex items-center gap-1.5"><span className="inline-block w-3 h-3 rounded-[2px]"
-            style={{ background: g.id === 'cb' ? hatch(PAYER.cb) : PAYER[g.id] }} />{g.label}</span>))}
-      </div>
-      <div className="flex text-[11.5px] sm:pl-[14.75rem]" style={muted}>
-        <span className="flex-1">← {t.less}</span><span>{t.more} →</span>
-      </div>
-      <div className="mt-1">
-        {/* what was left goes in the caption: inside the track it sat on the steps */}
-        <Row label={t.r_gf} sub={`${t.budget} ${g.t.budget} · ${g.left >= 0 ? `${t.left} ${g.t.left}` : `${t.over} ${g.t.left.replace('-', '')}`}`}>
-          <Track lo={lo} hi={hi} lanes={3} end={c}
-            segs={[
-              { from: 0, to: a, fill: PAYER.gf, lane: 0, title: `${t.before}: ${g.t.before} (${t.budget} ${g.t.budget})` },
-              { from: a, to: b, fill: hatch(RC), lane: 1, title: `${t.lg_off}: ${g.t.off}` },
-              { from: b, to: c, fill: BACK, lane: 2, title: `${t.lg_on}: ${g.t.on}` }]} />
-        </Row>
-        <Row label={t.r_cb} sub={y.cb.t.plan ? `${t.counted} ${y.cb.t.plan}` : t.none_printed}>
-          <Track lo={lo} hi={hi} end={cbv}
-            endText={y.cb.t.plan === null ? `${t.charged} ${y.cb.t.paid}` : `${y.cb.t.paid} ${t.charged_of} ${y.cb.t.plan}`}
-            segs={[{ from: 0, to: cbv, fill: y.cb.plan === null ? hatch(PAYER.cb) : PAYER.cb,
-              title: y.cb.t.plan === null ? `${t.none_printed}; ${t.charged} ${y.cb.t.paid}`
-                : `${t.counted} ${y.cb.t.plan}; ${t.charged} ${y.cb.t.paid}` }]} />
-        </Row>
-        <Row label={t.r_other} sub={t.not_printed}>
-          <Track lo={lo} hi={hi} end={x} endText={y.others_t.all} segs={others} />
-        </Row>
-        <p className="text-[11.5px] sm:pl-[14.75rem] mt-0.5" style={muted}>{t.unmatched_note.replace('{v}', y.others_t.unmatched)}</p>
-      </div>
+      {(() => {
+        let run = y.totals.plan
+        const rows = y.bridge.map(s => { const from = run; run += s.n; return { ...s, from, to: run } })
+        const ends = [y.totals.plan, ...rows.map(r => r.to)]
+        const span = Math.max(...ends) - Math.min(...ends)
+        const lo = Math.min(...ends) - span * 0.35, hi = Math.max(...ends) + span * 0.04
+        const pc = (v: number) => ((v - lo) / (hi - lo)) * 100
+        const total = (label: string, v: number, text: string) => (
+          <Row label={label}>
+            <div className="relative h-6 w-full sm:flex-1 min-w-0 shrink-0">
+              <div className="absolute top-0.5 bottom-0.5 left-0" title={`${label}: ${text}`}
+                style={{ width: `${pc(v)}%`, background: 'linear-gradient(to right, transparent, var(--text-secondary) 18%)' }} />
+              <span className="absolute top-1/2 -translate-y-1/2 text-[12.5px] tabular-nums font-semibold whitespace-nowrap"
+                style={pc(v) > 70 ? { right: `${100 - pc(v)}%`, marginRight: 4, color: 'var(--surface-1, #fff)' } : { left: `${pc(v)}%`, marginLeft: 4 }}>{text}</span>
+            </div>
+          </Row>)
+        const FILL: Record<string, string> = { gf: PAYER.gf, cb: PAYER.cb, other: 'var(--text-secondary)', none: hatch('var(--text-secondary)') }
+        return (
+          <div>
+            {total(t.a_plan, y.totals.plan, y.totals.t.plan)}
+            {rows.map(r => (
+              <Row key={r.id} label={r.label} sub={r.means}>
+                <div className="relative h-6 w-full sm:flex-1 min-w-0 shrink-0">
+                  <div className="absolute inset-y-0 w-px" style={{ left: `${pc(r.from)}%`, background: 'var(--grid)' }} />
+                  {Math.abs(r.n) > 0.5 ? <div className="absolute top-0.5 bottom-0.5 rounded-[2px]" title={`${r.label}: ${r.v}`}
+                    style={{ left: `${pc(Math.min(r.from, r.to))}%`, width: `max(2px, ${Math.abs(pc(r.to) - pc(r.from))}%)`,
+                      ...(r.n < 0 ? { border: `1.5px dashed ${r.id === 'cb' ? PAYER.cb : PAYER.gf}` } : { background: FILL[r.id] }) }} /> : null}
+                  <span className="absolute top-1/2 -translate-y-1/2 text-[12.5px] tabular-nums font-semibold whitespace-nowrap px-1"
+                    style={pc(Math.max(r.from, r.to)) > 75 ? { right: `${100 - pc(Math.min(r.from, r.to))}%`, marginRight: 2 } : { left: `${pc(Math.max(r.from, r.to))}%`, marginLeft: 2 }}>{r.v}</span>
+                </div>
+              </Row>))}
+            {total(t.a_happened, y.totals.happened, y.totals.t.happened)}
+            <p className="text-[11.5px] sm:pl-[14.75rem] mt-0.5" style={muted}>{t.bridge_cut}</p>
+          </div>)
+      })()}
 
       {/* THE TABLE UNDER IT (TJ: "as a chart, with a supplementary table at the bottom") */}
       <div className="mt-5 overflow-x-auto">
