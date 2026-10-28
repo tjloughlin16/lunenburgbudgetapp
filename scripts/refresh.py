@@ -285,8 +285,8 @@ RAN = set()
 # same test here (a stamp file for the OML letters, two `checked.csv` reads for the
 # directories and DESE). It is catch-up scheduling: a missed morning is made up the next
 # one rather than waiting a whole cycle, and a look is recorded only when the fetch exits 0,
-# so a failure is retried tomorrow rather than skipped. notes/generated/SOURCE-CADENCE.md is
-# the table.
+# so a failure is retried tomorrow rather than skipped. notes/reference/SOURCE-CADENCE.md is
+# the table; `python3 scripts/source_cadence.py` is its live state.
 import source_cadence as SC  # noqa: E402
 
 
@@ -310,9 +310,8 @@ def slow_sources(a, notes):
                        ('ours', 'defects in our archive the source checks exposed today')):
         new = [c['what'] for c in found if c['kind'] == kind]
         if new:
-            notes.append('%s: %d -- %s%s. See notes/generated/SOURCE-CADENCE.md'
+            notes.append('%s: %d -- %s%s. Run python3 scripts/source_cadence.py'
                          % (said, len(new), '; '.join(new[:4]), ' ...' if len(new) > 4 else ''))
-    py('source_cadence.py', '--write', check=False)
 
 
 def oml_years(as_of):
@@ -1235,7 +1234,7 @@ def run(a, notes, ctx):
     # whose own last check is oldest, so 4,000 documents on a 30-to-90-day cycle cost a
     # hundred-odd requests a morning, not all of them on one. CHECKS ONLY: plain HTTPS and a
     # hash, no model call, nothing landed in the archive -- what moved is reported below and
-    # in notes/generated/SOURCE-CADENCE.md, for a person to take in.
+    # by `python3 scripts/source_cadence.py`, for a person to take in.
     if not a.dry_run:
         slow_sources(a, notes)
 

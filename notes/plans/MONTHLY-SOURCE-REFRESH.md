@@ -10,7 +10,9 @@ in the daily refresh script. but the 'cadence' of each source is known, checked 
 and if the either next scheduled run is hit or past, it fetches those sources too. a separate
 script feels like too much duplicate work."*
 
-**BUILT 28 October 2026.** The table of every source is `notes/generated/SOURCE-CADENCE.md`.
+**BUILT 28 October 2026.** The reference table of every source is
+`notes/reference/SOURCE-CADENCE.md`; its live state -- last look, next due, what changed -- is
+`python3 scripts/source_cadence.py`.
 
 ## Why: it found something on its first, manual, run
 
@@ -37,8 +39,7 @@ to a process that never looks again.
   it). The refresh's three hand-written copies of that test -- the OML stamp file and two
   `checked.csv` reads -- now call it, and their history was seeded into the log.
 - **refresh.py step 3j, `slow_sources()`** -- runs every `job` and `slice` row that is due,
-  records the look, names in the run's notes what the checks found that day, and rewrites the
-  README. About 3.5 minutes on its first run; no model calls.
+  records the look, and names in the run's notes what the checks found that day. About 3.5 minutes on its first run; no model calls.
 - **`scripts/check_socrata_sources.py`** -- DESE's portal datasets. Asks the portal for
   `rowsUpdatedAt` and compares it with the commit that first recorded our copy's sha256. A
   Socrata export is generated per download, so hashing a fresh one says nothing.
@@ -49,8 +50,8 @@ to a process that never looks again.
 
 ## A change is a finding, not a silent update
 
-The checks never land a new copy. They record what moved; the refresh names it; the README
-lists it in two tables kept apart on purpose:
+The checks never land a new copy. They record what moved; the refresh names it; running
+`python3 scripts/source_cadence.py` lists it. Two kinds are kept apart on purpose:
 
 - **Changed at the publisher** -- a document whose content differs, a dataset whose rows moved.
   A person lands the new copy through that source's fetcher (via `ingest`) and re-runs every

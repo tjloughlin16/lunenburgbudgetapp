@@ -4429,7 +4429,7 @@ GROUPS = [
              'the daily refresh fetches it, checks it against the publisher, leaves it to a '
              'person, or never sees it because it arrives only when somebody asks for it. '
              'The daily refresh reads this to decide what is due. Kept by hand; the table '
-             'it produces is notes/generated/SOURCE-CADENCE.md, from '
+             'it produces is notes/reference/SOURCE-CADENCE.md, from '
              'scripts/source_cadence.py.'),
             ('data/source-checks.csv',
              'Every time the refresh looked at a slow source', 2,
