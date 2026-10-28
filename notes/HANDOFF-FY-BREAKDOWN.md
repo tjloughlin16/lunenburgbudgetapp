@@ -1,6 +1,20 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
-## START HERE -- 27 October 2026, night. Pushed (7e2c8b8cc), NOT deployed, still hidden
+## START HERE -- 28 October 2026, early. DEPLOYED (c9c3750fa), still hidden
+
+Since the section below: unspent sits at the end of What happened (TJ chose it); the budget walk
+(voted -> transfers -> carried -> final) on every line, a Budget changes after the vote table
+with the transfers behind each change, a flag for lines moved by half or more and $5,000
+(thresholds ours); School lines other funds paid sorts by amount, opens a popup, measures
+against the vote and the final budget, and shows what each fund booked the money as plus its
+memos; "Same payee" is now "Same vendor" (a bus company is not proof of the same purchase);
+fund popups say "No school line · function 2000" in place of "booked to a heading" and have
+sortable, filterable tables. Categories: "Nurses & other staff" split into Nurses (3200),
+Salary reserve (0300), Special details (3600); no salary catch-all remains. Search logging is
+LIVE (a test row landed). Offered, not built: a separate "Vendor matches to check" section.
+check_generated.py was not rerun after the category split -- run it first next session.
+
+## 27 October 2026, night. Pushed (7e2c8b8cc), not deployed then
 
 The page grew from one table into a year's money relationships. Blocks, in order, every one a
 single FY switched by the picker, every figure from `build_fy_breakdown.py`:
