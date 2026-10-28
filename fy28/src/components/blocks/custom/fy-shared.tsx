@@ -74,3 +74,18 @@ export function HeadTip({ label, means, children }: { label: string; means: stri
           <span className="block font-semibold mb-0.5">{label}</span>{means}</span>, document.body) : null}
     </span>)
 }
+
+// the weekly chart's colours, by payer, so a fund is one colour across the page
+export const PAYER = { gf: 'var(--thread-1)', idea: 'var(--thread-2)', grants: 'var(--thread-5)', cb: 'var(--thread-4)',
+  fees: 'var(--thread-3)', other: 'var(--thread-6, var(--text-secondary))' } as Record<string, string>
+export const hatch = (c: string) => `repeating-linear-gradient(135deg, ${c} 0 3px, transparent 3px 6px)`
+
+/** A chart row: its label and a line under it on the left, the chart beside it (stacked on a phone). */
+export function Row({ label, sub, children }: { label: string; sub?: string; children: React.ReactNode }) {
+  return (
+    <div className="flex flex-col sm:flex-row sm:items-center gap-x-3 py-1">
+      <div className="sm:w-56 shrink-0 text-[13px] leading-tight">{label}
+        {sub ? <span className="block text-[11.5px]" style={muted}>{sub}</span> : null}</div>
+      {children}
+    </div>)
+}

@@ -21,6 +21,7 @@
 import { useMemo } from 'react'
 import { useFyYear } from './fy-year'
 import type { CustomProps } from './index'
+import { PAYER, hatch, Row } from './fy-shared'
 
 type Other = { id: string; start: number; later: number; unmatched: number; t: Record<'start' | 'later' | 'paid' | 'unmatched' | 'all', string> }
 type Year = { fy: string; book: string | null; book_line: string | null; raw: string[]; unread: boolean
@@ -29,13 +30,9 @@ type Year = { fy: string; book: string | null; book_line: string | null; raw: st
   cb: { plan: number | null; paid: number; unspent: number; t: { plan: string | null; paid: string; unspent: string; used: string | null; gross: string; net: string; diff: string | null } }
   others: Other[]; others_t: Record<'start' | 'later' | 'paid' | 'unmatched' | 'all', string>
   totals: { plan: number; happened: number; unmatched: number; unspent: number; t: { plan: string; happened: string; beyond: string; unspent: string } } }
-type Data = { years: (Year & { bridge: { id: string; n: number; v: string; label: string; means: string }[] })[]; groups: { id: string; label: string }[]; text: Record<string, string> }
+type Data = { years: Year[]; groups: { id: string; label: string }[]; text: Record<string, string> }
 
-// the weekly chart's colours, by payer, so a fund is one colour across the page
-const PAYER = { gf: 'var(--thread-1)', idea: 'var(--thread-2)', grants: 'var(--thread-5)', cb: 'var(--thread-4)',
-  fees: 'var(--thread-3)', other: 'var(--thread-6, var(--text-secondary))' } as Record<string, string>
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
-const hatch = (c: string) => `repeating-linear-gradient(135deg, ${c} 0 3px, transparent 3px 6px)`
 
 /** A bar from zero: its parts side by side, and under it each part's name and value, since a
  *  small part is too thin to carry its own label. */
@@ -63,15 +60,6 @@ function Absolute({ parts, max, total }: { parts: Part[]; max: number; total: st
         {shown.map((p, i) => <span key={i} className="inline-flex items-center gap-1 mr-3 whitespace-nowrap">
           <span className="inline-block w-2 h-2 rounded-[1px]" style={p.outline ? outlined(p.fill) : { background: p.fill }} />{p.name} <span className="tabular-nums">{p.text}</span></span>)}
       </p>
-    </div>)
-}
-
-function Row({ label, sub, children }: { label: string; sub?: string; children: React.ReactNode }) {
-  return (
-    <div className="flex flex-col sm:flex-row sm:items-center gap-x-3 py-1">
-      <div className="sm:w-56 shrink-0 text-[13px] leading-tight">{label}
-        {sub ? <span className="block text-[11.5px]" style={muted}>{sub}</span> : null}</div>
-      {children}
     </div>)
 }
 
@@ -116,46 +104,6 @@ export default function FyPlan({ data, alt }: CustomProps) {
             <p className="text-[11.5px] sm:pl-[14.75rem]" style={muted}>{t.a_unspent_note}</p>
           </div>)
       })()}
-      {/* THE BRIDGE (TJ, 27 October 2026, of the chart it replaced -- a waterfall per source,
-          each on its own baseline -- "the hardest to understand"): from the plan to what
-          happened, one reason a step, every bar on one scale from zero. */}
-      <p className="text-[13px] font-semibold mt-5 mb-1">{t.h_diff}</p>
-      {(() => {
-        let run = y.totals.plan
-        const rows = y.bridge.map(s => { const from = run; run += s.n; return { ...s, from, to: run } })
-        const ends = [y.totals.plan, ...rows.map(r => r.to)]
-        // FROM ZERO (TJ: "i dont know how $3m is longer than $26m"): a bar's length is its
-        // value, so the totals start at zero and the steps are drawn to the same scale
-        const lo = 0, hi = Math.max(...ends) * 1.02
-        const pc = (v: number) => ((v - lo) / (hi - lo)) * 100
-        const total = (label: string, v: number, text: string) => (
-          <Row label={label}>
-            <div className="relative h-6 w-full sm:flex-1 min-w-0 shrink-0">
-              <div className="absolute top-0.5 bottom-0.5 left-0 rounded-[2px]" title={`${label}: ${text}`}
-                style={{ width: `${pc(v)}%`, background: 'var(--text-secondary)' }} />
-              <span className="absolute top-1/2 -translate-y-1/2 text-[12.5px] tabular-nums font-semibold whitespace-nowrap"
-                style={pc(v) > 70 ? { right: `${100 - pc(v)}%`, marginRight: 4, color: 'var(--surface-1, #fff)' } : { left: `${pc(v)}%`, marginLeft: 4 }}>{text}</span>
-            </div>
-          </Row>)
-        const FILL: Record<string, string> = { gf: PAYER.gf, cb: PAYER.cb, other: 'var(--text-secondary)', none: hatch('var(--text-secondary)') }
-        return (
-          <div>
-            {total(t.a_plan, y.totals.plan, y.totals.t.plan)}
-            {rows.map(r => (
-              <Row key={r.id} label={r.label} sub={r.means}>
-                <div className="relative h-6 w-full sm:flex-1 min-w-0 shrink-0">
-                  <div className="absolute inset-y-0 w-px" style={{ left: `${pc(r.from)}%`, background: 'var(--grid)' }} />
-                  {Math.abs(r.n) > 0.5 ? <div className="absolute top-0.5 bottom-0.5 rounded-[2px]" title={`${r.label}: ${r.v}`}
-                    style={{ left: `${pc(Math.min(r.from, r.to))}%`, width: `max(2px, ${Math.abs(pc(r.to) - pc(r.from))}%)`,
-                      ...(r.n < 0 ? { border: `1.5px dashed ${r.id === 'cb' ? PAYER.cb : PAYER.gf}` } : { background: FILL[r.id] }) }} /> : null}
-                  <span className="absolute top-1/2 -translate-y-1/2 text-[12.5px] tabular-nums font-semibold whitespace-nowrap px-1"
-                    style={pc(Math.max(r.from, r.to)) > 75 ? { right: `${100 - pc(Math.min(r.from, r.to))}%`, marginRight: 2 } : { left: `${pc(Math.max(r.from, r.to))}%`, marginLeft: 2 }}>{r.v}</span>
-                </div>
-              </Row>))}
-            {total(t.a_happened, y.totals.happened, y.totals.t.happened)}
-          </div>)
-      })()}
-
       {/* THE TABLE UNDER IT (TJ: "as a chart, with a supplementary table at the bottom") */}
       <div className="mt-5 overflow-x-auto">
         <table className="w-full max-w-2xl text-[13px] tabular-nums border-collapse">

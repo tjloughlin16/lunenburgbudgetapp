@@ -863,6 +863,13 @@ def page(m):
             fail('%s: a general fund row in the table of other funds' % sy['fy'])
     weeks = year_weeks(m, T)
     ready = readiness_data(T)
+    # the bridge block's sentence, held to every year it is shown with: other funds are most of
+    # the gap between the plan and what happened, and more than half of them on no school line
+    for y in plan['years']:
+        st = {b['id']: b['n'] for b in y['bridge']}
+        gap = y['totals']['happened'] - y['totals']['plan']
+        if not (st['other'] + st['none'] > gap / 2 and st['none'] > st['other']):
+            fail('%s: the bridge says the gap is mostly other funds, most on no line; it is not' % y['fy'])
     return TP.page(
         ID,
         'The school lines left %s in %s and %s in %s; pick a year to see what moved in it.'
@@ -894,6 +901,21 @@ def page(m):
                           're-charged to other funds after it paid them, not spending it avoided; '
                           'the circuit breaker row shows whether the money the book counted on '
                           'came.', None, ())),
+            TB.custom('fy-bridge', 'From the plan to what happened', dict(
+                years=[dict(fy=y['fy'], bridge=y['bridge'],
+                            totals=dict(plan=y['totals']['plan'], happened=y['totals']['happened'],
+                                        t=dict(plan=y['totals']['t']['plan'], happened=y['totals']['t']['happened'])))
+                       for y in plan['years']],
+                text=dict(a_plan=plan['text']['a_plan'], a_happened=plan['text']['a_happened'])),
+                      place='top', figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('reading', 'Our placing of other funds’ spending on the lines'),
+                      alt='Bridge chart, one fiscal year: the plan, then a step for each reason '
+                          'what happened differs from it -- what the general fund left unspent, '
+                          'the circuit breaker against what the book counted on, other funds '
+                          'toward school lines and on none -- ending at what happened; every bar '
+                          'on one scale from zero',
+                      so=('The gap between the plan and what happened is mostly money no budget '
+                          'book plans for: other funds, much of it on no school line.', None, ())),
             TB.custom('fy-year-line', 'Across the year line', yline, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('record', 'Every posting on the school lines; each crossing tied to the other year'),
@@ -1184,7 +1206,7 @@ def plan_data(m, T):
         beyond_row='Beyond the plan',
         unmatched_row='Other funds, on no school line',
         printed='The lines as the year’s book prints them',
-        h_abs='In dollars', h_diff='From the plan to what happened',
+        h_abs='In dollars',
         a_plan='The plan', a_plan_sub='Budget, and the circuit breaker the book counted on',
         a_happened='What happened', a_happened_sub='Every school dollar spent, by who paid',
         a_beyond='beyond the plan', on_no_line='on no school line',
