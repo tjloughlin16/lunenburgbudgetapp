@@ -15,6 +15,7 @@ Slow on purpose -- one request per document, no concurrency, a real user agent. 
 occasionally, not in the build; the build reads the CSV this writes.
 
     python3 scripts/check_source_links.py
+    python3 scripts/check_source_links.py --due-days 30 --max 200   # what the daily refresh runs
 """
 import os, sys, csv, json, subprocess, datetime
 
@@ -36,29 +37,52 @@ def status(url):
 
 
 def main():
+    import argparse
+    ap = argparse.ArgumentParser()
+    # THE DAILY SLICE (source-cadence.csv), the same shape as verify_source_copies.py: only
+    # links whose last check is at least this many days old, never-checked first, at most
+    # --max of them. Rows not checked this run are kept, so a slice never shrinks the file
+    # the sources page counts from.
+    ap.add_argument('--due-days', type=int)
+    ap.add_argument('--max', type=int)
+    args = ap.parse_args()
     doc = json.load(open(INDEX))
     items = [(g['section'], i['path'], i.get('stars', 0), i['title'], i['upstream'])
              for g in doc['groups'] for i in g['items'] if i.get('upstream')]
+    prev = {}
+    if os.path.exists(OUT):
+        with open(OUT, newline='') as fh:
+            prev = {(r['path'], r['url']): r for r in csv.DictReader(fh)}
+    if args.due_days is not None:
+        cut = (datetime.date.today() - datetime.timedelta(days=args.due_days)).isoformat()
+        seen = lambda it: prev.get((it[1], it[4]), {}).get('checked', '')
+        items = sorted((it for it in items if seen(it) <= cut), key=seen)
+        if args.max:
+            items = items[:args.max]
     print(f'checking {len(items)} upstream links, one at a time\n')
+    today = datetime.date.today().isoformat()
     rows, bad = [], 0
     for n, (sec, path, stars, title, url) in enumerate(items, 1):
         code = status(url)
         ok = code.startswith('2')
         bad += not ok
         rows.append(dict(path=path, section=sec, stars=stars, url=url, code=code,
-                         public=int(ok)))
+                         public=int(ok), checked=today))
         if not ok:
             print(f'  {code}  {title[:56]}')
         if n % 25 == 0:
             print(f'  ... {n}/{len(items)}')
-    today = datetime.date.today().isoformat()
-    with open(OUT, 'w', newline='') as fh:
+    done = {(r['path'], r['url']) for r in rows}
+    keep = [r for k, r in prev.items() if k not in done]
+    fields = ['path', 'section', 'stars', 'url', 'code', 'public', 'checked']
+    with open(OUT + '.tmp', 'w', newline='') as fh:
         w = csv.writer(fh)
-        w.writerow(['path', 'section', 'stars', 'url', 'code', 'public', 'checked'])
-        for r in rows:
-            w.writerow([r['path'], r['section'], r['stars'], r['url'], r['code'],
-                        r['public'], today])
-    print(f'\n{len(rows) - bad} of {len(rows)} still open to the public')
+        w.writerow(fields)
+        for r in sorted(rows + keep, key=lambda r: (r['path'], r['url'])):
+            w.writerow([r[f] for f in fields])
+    os.replace(OUT + '.tmp', OUT)
+    print(f'\n{len(rows) - bad} of {len(rows)} checked this run still open to the public'
+          + (f' ({len(keep)} rows from earlier runs left in place)' if keep else ''))
     hosts = {}
     for r in rows:
         h = r['url'].split('/')[2]

@@ -248,20 +248,90 @@ def _how(r):
                                                     else 'when we ask')
 
 
-def _state(r, as_of, checks, copies):
-    """(last looked, next due / coverage)."""
-    if r['runs'] == 'step':
-        runs = _rows(RUNS)
-        return (runs[-1]['as_of'] if runs else 'never'), 'every morning'
-    if r['runs'] == 'slice':
-        n, of = coverage(r, as_of, copies)
-        return '\u2014', '%d of %d checked in the last %d days' % (n, of, cadence(r))
-    if r['runs'] in ('gated', 'job'):
-        last = last_ok(r['id'], checks)
-        nd = next_due(r, checks)
-        return last or 'never', ('**now** (never checked)' if nd is None else
-                                 ('**now** (due %s)' % nd if nd <= as_of else nd))
-    return '\u2014', 'not scheduled' if r['mode'] == 'manual' else 'arrives when requested'
+REFRESH_PLIST = os.path.expanduser(
+    '~/Library/LaunchAgents/org.lunenburgbudgetproject.refresh.plist')
+
+
+def refresh_time():
+    """(hour, minute) the daily refresh is scheduled for, read off its launchd job -- the one
+    place the schedule actually lives -- or None where there is no such job (another machine)."""
+    import plistlib
+    try:
+        with open(REFRESH_PLIST, 'rb') as fh:
+            when = plistlib.load(fh).get('StartCalendarInterval') or {}
+        return int(when['Hour']), int(when.get('Minute', 0))
+    except (OSError, KeyError, ValueError, TypeError):
+        return None
+
+
+def next_refresh(now=None):
+    """The next morning the refresh will run: today if today's has not run yet, else
+    tomorrow. Read off refresh-runs.csv, so a run that has not happened is not assumed."""
+    now = now or dt.datetime.now()
+    runs = _rows(RUNS)
+    ran_today = bool(runs) and runs[-1].get('as_of') == now.date().isoformat()
+    day = now.date() + dt.timedelta(days=1 if ran_today else 0)
+    hm = refresh_time() or (0, 0)
+    return dt.datetime.combine(day, dt.time(*hm))
+
+
+def status_rows(now=None):
+    """-> one dict per scheduled source: when it was last fetched, when it will next be, and
+    whether anything is wrong. THE ONE COPY of this logic: the dashboard's Sources card and
+    `python3 scripts/source_cadence.py` both read it, so they cannot disagree.
+
+      last_ok    the day of the last SUCCESSFUL look, from source-checks.csv, or None
+      last_fail  the day of a failed look AFTER that, or None
+      next       the refresh morning it will next be fetched on (a datetime), or None
+      state      ok | due (overdue, will be retried) | failed | never | unscheduled
+      detail     for a slice, how much of its set was checked within the cadence
+    """
+    now = now or dt.datetime.now()
+    nxt = next_refresh(now)
+    checks, copies = _rows(CHECKS), _rows(COPIES)
+    out = []
+    for r in register():
+        if r['mode'] == 'never':
+            continue
+        mine = [c for c in checks if c['id'] == r['id']]
+        ok = max((c['checked'] for c in mine if c['ok'] == '1'), default=None)
+        bad = max((c['checked'] for c in mine if c['ok'] != '1'), default=None)
+        fail = bad if bad and (ok is None or bad > ok) else None
+        row = dict(id=r['id'], source=r['source'], cadence=cadence(r), runs=r['runs'],
+                   last_ok=ok, last_fail=fail, next=None, detail='')
+        if not r['runs']:
+            row['state'] = 'unscheduled'
+        else:
+            due_day = next_due(r, checks) if r['runs'] in ('gated', 'job') else ''
+            if due_day and due_day > nxt.date().isoformat():
+                row['next'] = dt.datetime.combine(dt.date.fromisoformat(due_day), nxt.time())
+            else:
+                row['next'] = nxt
+            if r['runs'] == 'slice':
+                n, of = coverage(r, now.date().isoformat(), copies)
+                row['detail'] = '%d of %d checked in the last %d days' % (n, of, cadence(r))
+            if fail:
+                row['state'] = 'failed'
+            elif ok is None:
+                row['state'] = 'never'
+            elif (dt.date.fromisoformat(ok) + dt.timedelta(days=cadence(r))
+                  < nxt.date()) and r['runs'] in ('gated', 'job', 'step'):
+                row['state'] = 'due'
+            else:
+                row['state'] = 'ok'
+        out.append(row)
+    return out
+
+
+def _state(row):
+    """(last fetched, next) as table cells for the live terminal view."""
+    last = row['last_ok'] or 'never'
+    if row['last_fail']:
+        last += ' (failed %s)' % row['last_fail']
+    if row['state'] == 'unscheduled':
+        return last, 'NOT SCHEDULED'
+    nxt = row['next'].strftime('%a %d %b %H:%M') if row['next'] else '\u2014'
+    return last, nxt + ('; ' + row['detail'] if row['detail'] else '')
 
 
 def _cell(s):
@@ -305,7 +375,7 @@ def render(live=False):
                              'its coverage counts would understate the archive. Run python3 '
                              'scripts/sync_archive.py --pull' % (len(gone), gone[0]))
         as_of = as_of_date()
-        checks, copies = _rows(CHECKS), _rows(COPIES)
+        status = {x['id']: x for x in status_rows()}
         pub = [c for c in changes() if c['kind'] == 'changed']
         L += ['## Changed at the publisher (as of %s)' % as_of, '']
         if pub:
@@ -319,7 +389,7 @@ def render(live=False):
         rs = [r for r in regs if cadence(r) == days and r['mode'] != 'never']
         if not rs:
             continue
-        head = ['source', 'publisher', 'does', 'how'] + (['last looked', 'next'] if live else [])
+        head = ['source', 'publisher', 'does', 'how'] + (['last fetched', 'next fetch'] if live else [])
         L += ['## %s' % name, '', '| %s |' % ' | '.join(head),
               '|%s' % ('---|' * len(head))]
         for r in rs:
@@ -327,7 +397,8 @@ def render(live=False):
                      'checks' if r['mode'] == 'check' or r['command'].startswith(('check_', 'verify_'))
                      else 'fetches', _how(r)]
             if live:
-                cells += list(_state(r, as_of, checks, copies))
+                cells += list(_state(status[r['id']]) if r['id'] in status
+                              else ('\u2014', '\u2014'))
             L.append('| %s |' % ' | '.join(_cell(x) for x in cells))
         L.append('')
     rest = [r for r in regs if cadence(r) is None]

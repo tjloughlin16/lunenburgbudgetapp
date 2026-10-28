@@ -1085,7 +1085,11 @@ def run(a, notes, ctx):
         py('sync_archive.py', '--pull', check=False)
 
     # 1-3. The town's documents.
-    py('watch_meetings.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
+    r = py('watch_meetings.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
+    # EVERY SOURCE'S LOOKS ARE LOGGED, the daily ones too, so the dashboard's `last fetched`
+    # is a record rather than an inference from the run having happened (source-cadence.csv).
+    if not a.dry_run:
+        looked('meetings', a, r)
     if not a.dry_run:
         # THE WATCHER'S LISTING IS THE FETCHER'S LIST. The fetcher used to re-list all 51
         # boards a minute after the watcher had -- the same requests twice. Now the
@@ -1106,7 +1110,9 @@ def run(a, notes, ctx):
     # the listing pages the archive was built from, re-walked; a shrunken index is
     # refused. TJ: "look for new documents posted from the school committee (budget
     # related), as well as on the town pages from the areas we've found."
-    py('watch_documents.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
+    r = py('watch_documents.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
+    if not a.dry_run:
+        looked('documents', a, r)
     if not a.dry_run and not a.no_push:
         back_up_documents(notes, 'after the document watcher')
     # 4a. A NEW BUDGET DOCUMENT IS READ THE MORNING IT APPEARS. TJ, 16 September 2026:
@@ -1161,12 +1167,14 @@ def run(a, notes, ctx):
     # through `ingest`, so no separate backup step is needed here.
     if not a.dry_run:
         r = py('fetch_school_job_postings.py', '--if-changed', check=False)
+        looked('job-postings-district', a, r)
         schoolspring_alert(r.returncode, notes)
         py('extract_school_job_postings.py', check=False)
         # THE TOWN'S OWN JOB BOARD, daily for the same reason. A page whose parse no longer
         # ties to its own printed count exits 3 and records nothing, so a redesign can never
         # mark every open town job as taken down; it says so here instead.
         r = py('fetch_town_job_postings.py', '--if-changed', check=False)
+        looked('job-postings-town', a, r)
         if r.returncode:
             notes.append('!!! TOWN JOB BOARD exit %d -- town postings NOT read today, none marked '
                          'taken down. Run: python3 scripts/fetch_town_job_postings.py --dry-run'
@@ -1177,7 +1185,9 @@ def run(a, notes, ctx):
 
     # 3c. The town's and the community's feeds -- news, alerts, registrations. Linked and
     # attributed, never republished (QUEUE 13, 14).
-    py('watch_feeds.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
+    r = py('watch_feeds.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
+    if not a.dry_run:
+        looked('feeds', a, r)
 
     # 3g. The Attorney General's Open Meeting Law determinations, weekly -- gated by
     # source-cadence.csv; `--all --year` skips every letter already held, so a quiet week
@@ -1239,7 +1249,9 @@ def run(a, notes, ctx):
         slow_sources(a, notes)
 
     # 4-6. The town's recordings.
-    py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
+    r = py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
+    if not a.dry_run:
+        looked('youtube', a, r)
     if not a.dry_run:
         py('build_youtube_classification.py')
         if backfill_running():

@@ -2722,12 +2722,16 @@ def done_today():
     live = {r['name'] for r in running() if not r.get('idle')}
     out = []
 
-    def card(name, unit, n, last='', what=None):
+    # `by` SAYS WHOSE WORK IT IS. The refresh's own steps and its watchers' finds are drawn on
+    # the Refresh tab; everything else -- the paced minutes run, OCR, captions, which other
+    # processes also feed -- stays on Running (TJ, 28 October 2026: move anything the refresh
+    # is doing into its tab).
+    def card(name, unit, n, last='', what=None, by='other'):
         if n:
             out.append(dict(name=name, unit=unit, n=n, still_running=name in live,
                             last=ago(last) if last else '', at=clock(last),
                             what=what if what is not None else WHAT.get(name, ''),
-                            costs=name in AGENTIC))
+                            costs=name in AGENTIC, by=by))
 
     def from_registry(f, col):
         ts = [r.get(col, '') for r in rows(f) if (r.get(col) or '').startswith(today)]
@@ -2771,9 +2775,9 @@ def done_today():
                      ('notices', 'town notices')):
         card('Found on the town’s site', label + ' spotted', seen.get(k, 0), what=
              'New since the last look — the watcher reports it, then the fetcher '
-             'downloads it.')
+             'downloads it.', by='refresh')
     card('Found on the channel', 'recordings spotted', seen.get('videos', 0), what=
-         'New uploads on the town’s YouTube channel.')
+         'New uploads on the town’s YouTube channel.', by='refresh')
 
     # AND EVERY OTHER STEP THAT FINISHED TODAY. The four above are the ones that keep a
     # registry and can say how MANY; the rest of the run is real work too, and leaving it
@@ -2804,7 +2808,7 @@ def done_today():
         mins = secs[stem] / 60
         out.append(dict(name=name, unit=('run' if n == 1 else 'runs') +
                         (', %.0f min' % mins if mins >= 1 else ''),
-                        n=n, still_running=False, last='', what=what,
+                        n=n, still_running=False, last='', what=what, by='refresh',
                         costs=stem.startswith('write_') or stem.startswith('extract_official')))
     return sorted(out, key=lambda r: -r['n'])
 
@@ -3107,6 +3111,11 @@ def _week_pacing_card():
             % (state, kind, why, figs, bar, more))
 
 
+# Set once per write() from refresh_state(), so every page's tab bar can say the refresh is
+# running or has failed without each page recomputing it.
+REFRESH_FLAG = {}
+
+
 def tabs(sel, q=None):
     """The tab bar. `Questions (N)` carries the count of OPEN questions, so somebody waiting
     on an answer is visible from every page, not only from the Questions tab."""
@@ -3116,7 +3125,10 @@ def tabs(sel, q=None):
         nr = len({r['key'] for r in RQ.open_rows()})
     except Exception:                                   # noqa: BLE001 -- a tab label must never break a page
         nr = 0
-    items = [('index.html', 'Running'), ('backlog.html', 'Backlog'),
+    rs = REFRESH_FLAG.get('state')
+    items = [('index.html', 'Running'),
+             ('refresh.html', 'Refresh' + (' (%s)' % rs[1].lower() if rs else '')),
+             ('backlog.html', 'Backlog'),
              ('review.html', 'Review' + (' (%d)' % nr if nr else '')),
              ('suggested.html', 'Suggested reports'), ('sources.html', 'Documents'),
              ('questions.html', 'Questions' + (' (%d)' % n if n else '')),
@@ -3136,50 +3148,17 @@ def page_live(st):
              '<p class="sub">%s &middot; refreshes itself every 20s</p></div>'
              '%s</div>' % (st['generated'], tabs('index.html', st.get('questions'))))
 
-    # ONE MESSAGE ABOUT TODAY. A failed run being re-run was an amber banner AND a running
-    # card AND the day's card -- three boxes for one fact (TJ, 14 October 2026: "showing 2
-    # separate messages is disorienting"). While a run is going, the running card carries
-    # the day's story and the amber banner is not drawn; red and overdue still are.
-    _days = refresh_days(F['history'])
-    _now = next((d for d in _days if d['day'] == F['today']), None)
-    _live_refresh = any(x['name'] == 'Daily refresh' for x in R)
-    for a in st['alerts']:
-        if a['kind'] == 'recovering' and _live_refresh:
-            continue
-        tone = {'failed': ('alert', 'no', 'REFRESH FAILED'),
-                'recovering': ('warnbox', 'warn', 'FAILED — RERUNNING'),
-                'overdue': ('alert', 'no', 'NO RUN TODAY')}[a['kind']]
+    # THE REFRESH HAS ITS OWN TAB. TJ, 28 October 2026: *"lets actually add a new tab for the
+    # REFRESH in the ingestion dash. its doing a lot of work now. and move anything its doing
+    # into that tab and out of other tabs like running."* What stays here is ONE line, and only
+    # while it is running or has gone wrong, so this page never says nothing about a refresh
+    # that is in trouble.
+    rs = refresh_state(st)
+    if rs:
+        cls, pill, text = rs
         h.append('<div class="card %s"><div class="row"><span class="pill %s">%s</span>'
-                 '<b class="grow">%s</b></div>'
-                 '<div class="tiny" style="margin-top:4px">%s</div></div>'
-                 % (tone[0], tone[1], tone[2],
-                    html.escape(a['head']), html.escape(a['text'])))
-
-    live = [x for x in R if x['name'] == 'Daily refresh']
-    if live:
-        r = live[0]
-        found = ' &middot; '.join('<b>%d</b> %s' % (f['n'], f['label']) for f in F['found'])
-        recovering = bool(_now and _now['status'] == 'recovering')
-        pill = ('warn', 'TODAY: FAILED &middot; RE-RUNNING') if recovering else ('go', 'DAILY REFRESH RUNNING')
-        story = ('<div class="tiny" style="margin-top:6px">%s</div>' % ''.join(
-            '<div>&bull; %s</div>' % html.escape(run_line(x)) for x in _now['runs'])) if recovering else ''
-        h.append('<div class="card runbox"><div class="row">'
-                 '<span class="pill %s">%s</span>'
-                 '<b class="grow">%s</b><span class="tiny num">up %s</span></div>'
-                 '%s%s%s%s</div>'
-                 % (pill[0], pill[1],
-                    ('now running <code>%s</code>' % html.escape(F['phase']['step']))
-                    if F['phase']['step'] else 'between steps',
-                    html.escape(r['elapsed']),
-                    story,
-                    ('<div class="tiny" style="margin-top:8px">Found so far: %s</div>' % found)
-                    if found else '',
-                    ('<div class="tiny" style="margin-top:4px">Spent <b style="color:#c09cf5">'
-                     '$%.2f</b> today — about %.1f%% of the week, all of it in the writing '
-                     'phase.</div>' % (F['spent'], F['spent'] / 5)) if F['spent'] else '',
-                    '<div class="tiny" style="margin-top:4px">Its individual steps appear '
-                    'below, under Running now as they go and Done today when they '
-                    'finish.</div>'))
+                 '<b class="grow">%s</b><a href="refresh.html">Refresh tab &rarr;</a></div></div>'
+                 % ({'go': 'runbox', 'warn': 'warnbox', 'no': 'alert'}[cls], cls, pill, text))
 
     h.append(_week_pacing_card())
     h.append(_textract_card())
@@ -3225,40 +3204,108 @@ def page_live(st):
     # WHAT JUST FINISHED, in the same shape as what is running. Without this, "nothing is
     # running" cannot be told apart from "nothing ever started", and the first is fine
     # while the second is an outage.
-    if st['done']:
+    mine = [d for d in st['done'] if d.get('by') != 'refresh']
+    if mine:
         h.append('<h2>Done today</h2>')
-        for d in st['done']:
-            h.append('<div class="card done"><div class="row" style="flex-wrap:nowrap">'
-                     '<b class="grow" style="min-width:0">%s%s</b>'
-                     '<span class="metric">%s</span>'
-                     '<span class="unit">%s</span>'
-                     '<span class="when"><span class="pill %s">%s</span></span></div>'
-                     '<div class="tiny" style="margin-top:4px">%s</div></div>'
-                     % (html.escape(d['name']),
-                        ' <span class="tag agentic">agentic</span>' if d['costs'] else '',
-                        '{:,}'.format(d['n']), html.escape(d['unit']),
-                        'go' if d['still_running'] else '',
-                        'still going' if d['still_running']
-                        else ('%s &middot; %s' % (d['at'], d['last'])
-                              if d.get('at') and d['last']
-                              else ('last %s' % d['last'] if d['last'] else 'no time recorded')),
-                        html.escape(d['what'])))
+        h.extend(_done_cards(mine))
 
-    # The step-by-step trace stays, folded: it is what you read when something went wrong,
-    # not what you open the page for.
-    if st['finished']:
-        h.append('<details data-k="trace" class="card"><summary class="tiny" '
-                 'style="cursor:pointer;color:#6cb6ff">every step that finished, with '
-                 'its duration</summary><table style="margin-top:8px">')
-        for x in st['finished']:
-            h.append('<tr><td class="mono">%s</td><td class="tiny">%s</td>'
-                     '<td class="r num tiny">%s</td><td class="r">%s</td></tr>'
-                     % (html.escape(x['step']), x['day'],
-                        ('%.0fs' % x['seconds']) if x['seconds'] < 90
-                        else '%.0fm' % (x['seconds'] / 60),
-                        '<span class="pill go">done</span>' if x['exit'] == 0
-                        else '<span class="pill no">exit %d</span>' % x['exit']))
-        h.append('</table></details>')
+
+    h.append('</div>')
+    return ''.join(h)
+
+def _done_cards(done):
+    """One card per kind of thing done today -- drawn on Running and on Refresh."""
+    out = []
+    for d in done:
+        out.append('<div class="card done"><div class="row" style="flex-wrap:nowrap">'
+                   '<b class="grow" style="min-width:0">%s%s</b>'
+                   '<span class="metric">%s</span>'
+                   '<span class="unit">%s</span>'
+                   '<span class="when"><span class="pill %s">%s</span></span></div>'
+                   '<div class="tiny" style="margin-top:4px">%s</div></div>'
+                   % (html.escape(d['name']),
+                      ' <span class="tag agentic">agentic</span>' if d['costs'] else '',
+                      '{:,}'.format(d['n']), html.escape(d['unit']),
+                      'go' if d['still_running'] else '',
+                      'still going' if d['still_running']
+                      else ('%s &middot; %s' % (d['at'], d['last'])
+                          if d.get('at') and d['last']
+                          else ('last %s' % d['last'] if d['last'] else 'no time recorded')),
+                      html.escape(d['what'])))
+    return out
+
+
+def refresh_state(st):
+    """-> (pill class, pill text, one line) when the daily refresh is running or in trouble,
+    else None. Read by the Running page's pointer line and the tab label, from the same
+    alerts the Refresh tab draws in full."""
+    if any(x['name'] == 'Daily refresh' for x in st['running']):
+        return 'go', 'RUNNING', 'The daily refresh is running'
+    worst = {'failed': ('no', 'FAILED'), 'overdue': ('no', 'NO RUN TODAY'),
+             'recovering': ('warn', 'RE-RUNNING')}
+    for kind in ('failed', 'overdue', 'recovering'):
+        for a in st['alerts']:
+            if a['kind'] == kind:
+                return worst[kind] + (a['head'],)
+    return None
+
+
+def page_refresh(st):
+    """EVERYTHING THE DAILY REFRESH DOES, on one tab: whether it is running, what it found,
+    where it looked, every step it finished, every source it fetches and when it will next,
+    and the runs before today. Moved here from Running and Backlog on 28 October 2026 -- see
+    the pointer in page_live."""
+    R, F = st['running'], st['refresh']
+    h = []
+    h.append('<div class="wrap"><div class="row"><div class="grow"><h1>Daily refresh</h1>'
+             '<p class="sub">%s &middot; refreshes itself every 20s</p></div>'
+             '%s</div>' % (st['generated'], tabs('refresh.html', st.get('questions'))))
+    # ONE MESSAGE ABOUT TODAY. A failed run being re-run was an amber banner AND a running
+    # card AND the day's card -- three boxes for one fact (TJ, 14 October 2026: "showing 2
+    # separate messages is disorienting"). While a run is going, the running card carries
+    # the day's story and the amber banner is not drawn; red and overdue still are.
+    _days = refresh_days(F['history'])
+    _now = next((d for d in _days if d['day'] == F['today']), None)
+    _live_refresh = any(x['name'] == 'Daily refresh' for x in R)
+    for a in st['alerts']:
+        if a['kind'] == 'recovering' and _live_refresh:
+            continue
+        tone = {'failed': ('alert', 'no', 'REFRESH FAILED'),
+                'recovering': ('warnbox', 'warn', 'FAILED — RERUNNING'),
+                'overdue': ('alert', 'no', 'NO RUN TODAY')}[a['kind']]
+        h.append('<div class="card %s"><div class="row"><span class="pill %s">%s</span>'
+                 '<b class="grow">%s</b></div>'
+                 '<div class="tiny" style="margin-top:4px">%s</div></div>'
+                 % (tone[0], tone[1], tone[2],
+                    html.escape(a['head']), html.escape(a['text'])))
+
+    live = [x for x in R if x['name'] == 'Daily refresh']
+    if live:
+        r = live[0]
+        found = ' &middot; '.join('<b>%d</b> %s' % (f['n'], f['label']) for f in F['found'])
+        recovering = bool(_now and _now['status'] == 'recovering')
+        pill = ('warn', 'TODAY: FAILED &middot; RE-RUNNING') if recovering else ('go', 'DAILY REFRESH RUNNING')
+        story = ('<div class="tiny" style="margin-top:6px">%s</div>' % ''.join(
+            '<div>&bull; %s</div>' % html.escape(run_line(x)) for x in _now['runs'])) if recovering else ''
+        h.append('<div class="card runbox"><div class="row">'
+                 '<span class="pill %s">%s</span>'
+                 '<b class="grow">%s</b><span class="tiny num">up %s</span></div>'
+                 '%s%s%s%s</div>'
+                 % (pill[0], pill[1],
+                    ('now running <code>%s</code>' % html.escape(F['phase']['step']))
+                    if F['phase']['step'] else 'between steps',
+                    html.escape(r['elapsed']),
+                    story,
+                    ('<div class="tiny" style="margin-top:8px">Found so far: %s</div>' % found)
+                    if found else '',
+                    ('<div class="tiny" style="margin-top:4px">Spent <b style="color:#c09cf5">'
+                     '$%.2f</b> today — about %.1f%% of the week, all of it in the writing '
+                     'phase.</div>' % (F['spent'], F['spent'] / 5)) if F['spent'] else '',
+                    '<div class="tiny" style="margin-top:4px">Its steps appear on the '
+                    'Running tab as they go, and in the step list below when they '
+                    'finish.</div>'))
+
+
 
     h.append('<h2>The daily refresh</h2>')
     _today = next((d for d in refresh_days(F['history']) if d['day'] == F['today']), None)
@@ -3289,6 +3336,10 @@ def page_live(st):
                  % (F['spent'], F['spent_n'], F['spent'] / 5))
     h.append('</div>')
 
+    # THE THING FIRST (rule 7a): whether today's run worked, then the schedule it keeps,
+    # then the detail of what it found and where.
+    h.append(_sources_card())
+
     h.append(_found_card(F['today']))
 
     h.append('<div class="card"><div class="tiny" style="margin-bottom:6px"><b>Where it looked today.</b> '
@@ -3306,6 +3357,27 @@ def page_live(st):
                     ('<span class="pill go">%.0fs</span>' % w['seconds']) if w['ran']
                     else '<span class="pill">did not run</span>'))
     h.append('</table></div>')
+
+    # The step-by-step trace stays, folded: it is what you read when something went wrong,
+    # not what you open the page for.
+    if st['finished']:
+        h.append('<details data-k="trace" class="card"><summary class="tiny" '
+                 'style="cursor:pointer;color:#6cb6ff">every step that finished, with '
+                 'its duration</summary><table style="margin-top:8px">')
+        for x in st['finished']:
+            h.append('<tr><td class="mono">%s</td><td class="tiny">%s</td>'
+                     '<td class="r num tiny">%s</td><td class="r">%s</td></tr>'
+                     % (html.escape(x['step']), x['day'],
+                        ('%.0fs' % x['seconds']) if x['seconds'] < 90
+                        else '%.0fm' % (x['seconds'] / 60),
+                        '<span class="pill go">done</span>' if x['exit'] == 0
+                        else '<span class="pill no">exit %d</span>' % x['exit']))
+        h.append('</table></details>')
+
+    theirs = [d for d in st['done'] if d.get('by') == 'refresh']
+    if theirs:
+        h.append('<h2>Done today by the refresh</h2>')
+        h.extend(_done_cards(theirs))
 
     if F['jobs']:
         h.append('<div class="card"><div class="tiny" style="margin-bottom:6px">'
@@ -3345,6 +3417,7 @@ def page_live(st):
                     subs, html.escape(note[:120])))
     h.append('</table></div></div>')
     return ''.join(h)
+
 
 def page_questions(st):
     """What readers have asked, on its own tab. TJ, 9 October 2026: *"Questions from Readers
@@ -3931,6 +4004,57 @@ setInterval(function(){
 """
 
 
+# EVERY SOURCE: WHEN IT WAS LAST FETCHED AND WHEN IT WILL BE NEXT. TJ, 28 October 2026: *"these
+# are intended to be automated fetches on a cadence that is confirmable and id like the backlog
+# dash to show the next time each source will be fetched and the last time they WERE
+# fetched."* Read off source_cadence.status_rows() -- the same function the terminal view
+# prints -- so the card and `python3 scripts/source_cadence.py` cannot disagree. `last
+# fetched` is a logged, successful look in source-checks.csv, never inferred from the run
+# having happened; a source with none says `never`.
+SOURCE_PILL = {'ok': ('go', 'on schedule'), 'due': ('warn', 'overdue'),
+               'failed': ('no', 'last try failed'), 'never': ('warn', 'no logged fetch yet'),
+               'unscheduled': ('no', 'not scheduled')}
+
+
+def _sources_card():
+    try:
+        sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+        import source_cadence as SC
+        rows = SC.status_rows()
+        when = SC.refresh_time()
+    except Exception as e:                                  # noqa: BLE001
+        return ('<div class="card warnbox"><b>Sources</b> <span class="tiny">schedule '
+                'unreadable: %s</span></div>' % html.escape(str(e)[:200]))
+    every = lambda n: ('\u2014' if n is None else
+                       {1: 'daily', 7: 'weekly', 30: 'monthly', 90: 'every 90 days',
+                        365: 'yearly'}.get(n, 'every %d days' % n))
+    day = lambda d: dt.date.fromisoformat(d).strftime('%a %-d %b') if d else 'never'
+    bad = sum(1 for r in rows if r['state'] in ('failed', 'unscheduled', 'due'))
+    out = ['<h2>Sources</h2><div class="card"><div class="row"><b class="grow">'
+           'Every source: last fetched, next fetch</b><span class="pill %s">%s</span></div>'
+           % (('no', '%d need attention' % bad) if bad else ('go', 'all on schedule')),
+           '<div class="tiny" style="margin:2px 0 8px">The daily refresh fetches each source '
+           'when its cadence comes round%s. <code>python3 scripts/source_cadence.py</code> prints '
+           'the same table; notes/reference/SOURCE-CADENCE.md says what each one is.</div>'
+           % (' (it runs at %d:%02d)' % when if when else ''),
+           '<table><tr><th>source</th><th>every</th><th>last fetched</th><th>next fetch</th>'
+           '<th></th></tr>']
+    order = {'failed': 0, 'unscheduled': 1, 'due': 2, 'never': 3, 'ok': 4}
+    for r in sorted(rows, key=lambda r: (order[r['state']], r['cadence'] or 9999, r['id'])):
+        cls, word = SOURCE_PILL[r['state']]
+        last = day(r['last_ok'])
+        if r['last_fail']:
+            last += ' <span class="tiny" style="color:#f85149">(failed %s)</span>' % day(r['last_fail'])
+        nxt = r['next'].strftime('%a %-d %b') if r['next'] else '—'
+        out.append('<tr><td>%s<div class="tiny mono" style="color:#8b949e">%s%s</div></td>'
+                   '<td>%s</td><td>%s</td><td>%s</td><td><span class="pill %s">%s</span></td></tr>'
+                   % (html.escape(r['source']), html.escape(r['id']),
+                      (' &middot; ' + html.escape(r['detail'])) if r['detail'] else '',
+                      every(r['cadence']), last, nxt, cls, word))
+    out.append('</table></div>')
+    return ''.join(out)
+
+
 def page_backlog(st):
     """What is still owed: every stream's remainder, and anything waiting in the inbox.
 
@@ -4273,6 +4397,7 @@ def write(open_it=False):
               running=running(), streams=streams(), refresh=refresh(), queued=queued(),
               alerts=alert(), finished=finished(), done=done_today(),
               questions=reader_questions(), searches=reader_searches())
+    REFRESH_FLAG['state'] = refresh_state(st)
     docs = sources()
     shell = ('<!doctype html><meta charset=utf-8><meta name=viewport '
              'content="width=device-width,initial-scale=1"><title>%s</title>'
@@ -4280,6 +4405,11 @@ def write(open_it=False):
     with open(os.path.join(OUT, 'index.html'), 'w', encoding='utf-8') as fh:
         fh.write(shell % ('Ingestion', '<meta http-equiv="refresh" content="20">', CSS,
                           page_live(st)) + '<script>' + KEEP + '</script>')
+    # Composed before the file is opened, for the reason given at backlog.html below.
+    _refresh = (shell % ('Daily refresh', '<meta http-equiv="refresh" content="20">', CSS,
+                         page_refresh(st)) + '<script>' + KEEP + '</script>')
+    with open(os.path.join(OUT, 'refresh.html'), 'w', encoding='utf-8') as fh:
+        fh.write(_refresh)
     # The document list is written as a <script>, not JSON: a browser will not fetch() a
     # local file but will happily <script src> one.
     with open(os.path.join(OUT, 'docs.js'), 'w', encoding='utf-8') as fh:
