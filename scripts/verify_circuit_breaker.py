@@ -29,7 +29,8 @@ def main():
     rows = db.execute("SELECT fy, eligible_students_claimed, total_eligible_expenses, threshold_amount, total_net_claim, "
                       "total_quarterly_payment, reimb_transport FROM dese_circuit_breaker WHERE level='district' AND district='Lunenburg' ORDER BY fy").fetchall()
     last = rows[-1]
-    most = max(rows, key=lambda r: r[1])
+    # Over the years DESE printed a count for: FY2023's is withheld (fewer than six) and is NULL.
+    most = max((r for r in rows if r[1] is not None), key=lambda r: r[1])
     check(f('fewer-children-each-far-more-expensive', 'kids_now') == last[1] and f('fewer-children-each-far-more-expensive', 'kids_peak') == most[1], 'children')
     check(abs(f('fewer-children-each-far-more-expensive', 'per_child_now') - last[2] / last[1]) < 1e-6, 'per child now')
     check(abs(f('fewer-children-each-far-more-expensive', 'per_child_then') - most[2] / most[1]) < 1e-6, 'per child then')
