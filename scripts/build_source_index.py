@@ -4405,6 +4405,28 @@ GROUPS = [
              're-zipped on every export, and a PDF can be re-saved with a heading\u2019s '
              'line-break in a new place. Only one of those is a change. Rebuild with '
              'scripts/verify_source_copies.py.'),
+            ('data/source-cadence.csv',
+             'Every source, and how often it is looked at again', 2,
+             'One row per source the archive draws on: how many days between looks, whether '
+             'the daily refresh fetches it, checks it against the publisher, leaves it to a '
+             'person, or never sees it because it arrives only when somebody asks for it. '
+             'The daily refresh reads this to decide what is due. Kept by hand; the table '
+             'it produces is notes/generated/SOURCE-CADENCE.md, from '
+             'scripts/source_cadence.py.'),
+            ('data/source-checks.csv',
+             'Every time the refresh looked at a slow source', 2,
+             'Appended by the daily refresh, one row per look: the source, the day, and '
+             'whether the look succeeded. A source is due again when its cadence has passed '
+             'since its last successful look, so a failed one is retried the next morning. '
+             'Written by scripts/refresh.py through scripts/source_cadence.py.'),
+            ('data/socrata-status.csv',
+             'Whether DESE has changed a dataset since our copy', 2,
+             'For each DESE dataset on the state’s open data portal, when the portal says '
+             'its rows last changed against when we took our copy. The portal generates a '
+             'fresh export on every download, so comparing bytes would say nothing; this '
+             'asks the portal instead. Our copy’s date is when its sha256 was first '
+             'committed, which can be later than the download. Rebuild with '
+             'scripts/check_socrata_sources.py.'),
             ('data/variance-by-group.csv',
              'Budget against actual, every group and year', 3,
              'The whole-budget sweep behind analyses/budget-vs-actual.md \u00a72b: every '
@@ -4809,8 +4831,12 @@ def copy_status():
     # Best state per path. A document with two published addresses is verified if either
     # of them served it -- the question is whether our copy is the publisher's copy, and
     # one matching address answers that. The CSV keeps every row.
-    rank = ['identical', 'resaved', 'reflowed', 'repackaged', 'differs', 'restricted',
-            'unreachable']
+    # `rerendered` (a web page, whose bytes never match twice) and `page, not file` (our
+    # address is the listing page) say the comparison could not be made -- see
+    # verify_source_copies.classify -- so neither counts as verified, and either loses to
+    # any answer that was actually a comparison.
+    rank = ['identical', 'resaved', 'reflowed', 'repackaged', 'differs', 'rerendered',
+            'page, not file', 'restricted', 'unreachable']
     best = {}
     with open(path, newline='') as fh:
         for r in csv.DictReader(fh):

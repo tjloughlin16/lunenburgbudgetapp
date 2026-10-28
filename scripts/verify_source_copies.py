@@ -27,6 +27,10 @@ publisher, not only recorded at download time.
                      purely whitespace, and that is the entire cost of it -- which is why
                      it gets its own word instead of being folded into `resaved`.
   * `differs`     -- content actually differs. This is the one to look at.
+  * `rerendered`  -- a web page we hold as a web page, whose bytes differ because pages
+                     re-render on every request. Says nothing about its content.
+  * `page, not file` -- HTML came back where we hold a file, from a host that is not
+                     Google: our recorded address is the page listing the file. Ours to fix.
   * `restricted`  -- the host answered 2xx and returned HTML. That is what a Google
                      sign-in wall looks like: the request succeeded, and what succeeded
                      was being shown a login page. Nothing can be compared, and our copy
@@ -42,6 +46,10 @@ Slow on purpose: one request at a time, no concurrency, the same honest user age
 crawlers use. Run it occasionally, never in the build.
 
     python3 scripts/verify_source_copies.py [--only SUBSTRING] [--limit N]
+    python3 scripts/verify_source_copies.py --prefix district-budget/ --due-days 30 --max 40
+
+The second form is what the daily refresh runs, one slice per document set, on the cadence
+in sources/data/source-cadence.csv -- so "occasionally" is now a schedule.
 
 Writes sources/data/copy-status.csv.
 """
@@ -77,6 +85,50 @@ UA = ('Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; '
 # instrument's answer presented as the publisher's, which is the failure rule 13 names.
 NO_FILE = re.compile(r'dls-gw\.dor\.state\.ma\.us|profiles\.doe\.mass\.edu/statereport/'
                      r'selectedpopulations|data\.mass\.gov/d/[\w-]+$')
+
+# CHECKED BY SOMETHING ELSE, so not here. A dated snapshot folder holds every version a
+# weekly fetcher landed, and only the newest can match the live page -- the rest would be
+# reported as `differs` every time, which is the publisher's history read as an edit. Those
+# folders are re-checked by their own fetchers on the cadence in source-cadence.csv. And a
+# Socrata export is generated per download, so its bytes never match twice; whether the
+# DATA changed is asked of the portal by check_socrata_sources.py instead.
+SNAPSHOTS = ('state-dese/entitlements/', 'state-dese/grants/', 'state-dese/awards/')
+SNAPSHOT_PARTS = ('/staff-directory/', '/job-postings/')
+REGISTRY = os.path.join(ROOT, 'sources/data/dese-source-registry.csv')
+
+
+def socrata_locals():
+    with open(REGISTRY, newline='', encoding='utf-8') as fh:
+        return {r['local'][len('sources/'):] for r in csv.DictReader(fh)
+                if r['source_kind'] == 'socrata' and r['local'].startswith('sources/')}
+
+
+def eligible(prefixes=()):
+    """-> [(path, upstream)]: every held document with a per-file address that THIS script is
+    the check for. source_cadence.py counts its coverage off the same list, so the two
+    cannot disagree about what there is to check."""
+    doc = json.load(open(INDEX))
+    # A path can appear twice with two different addresses -- the district's budget page
+    # links the same FY26 presentation under two Drive ids, and both are real addresses for
+    # the same document. Both are checked and both are written out; collapsing them here
+    # would throw away the fact that the page publishes it twice.
+    items = [(i['path'], i['upstream']) for g in doc['groups'] for i in g['items']
+             if i.get('upstream') and not NO_FILE.search(i['upstream'])]
+    skip = socrata_locals()
+    return [(p, u) for p, u in items
+            if os.path.isfile(os.path.join(SRC, p))
+            and not p.startswith(SNAPSHOTS)
+            and not any(s in p for s in SNAPSHOT_PARTS)
+            and p not in skip
+            and (not prefixes or p.startswith(tuple(prefixes)))]
+
+
+def last_checked():
+    """-> {(path, url): 'YYYY-MM-DD'} from the last run of every row."""
+    if not os.path.exists(OUT):
+        return {}
+    with open(OUT, newline='') as fh:
+        return {(r['path'], r['url']): r['checked'] for r in csv.DictReader(fh)}
 
 
 def sha(path):
@@ -131,15 +183,33 @@ def pdf_text(path):
         return None
 
 
-def classify(remote, local, code):
+HTML = ('.html', '.htm')
+
+
+def classify(remote, local, code, url=''):
     # The status code first. HTML behind a 2xx is a sign-in wall; HTML behind anything
     # else is a host that did not serve the file, which says nothing about who may read it.
     if not code.startswith('2'):
         return 'unreachable'
     if sha(remote) == sha(local):
         return 'identical'
-    head = open(remote, 'rb').read(4)
+    # Leading whitespace before the first tag is common, and missing it sent DESE's
+    # chapter70 index page down to `differs` -- an HTML page compared byte for byte with a
+    # workbook. (28 October 2026, the first scheduled run.)
+    head = open(remote, 'rb').read(512).lstrip()[:4]
     if head[:1] == b'<':
+        # A WEB PAGE WE HOLD AS A WEB PAGE re-renders on every request -- navigation, a
+        # token, a date -- so its bytes never match twice. Nineteen town board pages and
+        # DESE regulation pages came back `differs` on that run with nothing edited. A byte
+        # check cannot say whether such a page's CONTENT moved; the fetcher that mirrors it
+        # can, and this says which it is rather than raising a finding.
+        if local.lower().endswith(HTML):
+            return 'rerendered'
+        # HTML where we hold a FILE, from a host that is not Google: the recorded address is
+        # a page that lists the file, not the file. A defect in our address (rule 12), not a
+        # sign-in wall and not a change.
+        if url and not re.search(r'google\.com', url):
+            return 'page, not file'
         return 'restricted'
     if head == b'PK\x03\x04' and zip_members_equal(remote, local):
         return 'repackaged'
@@ -168,7 +238,7 @@ def check(url, local_path, tmp, tries=2):
         if not os.path.exists(tmp) or not os.path.getsize(tmp):
             state = 'unreachable'
         else:
-            state = classify(tmp, local_path, code)
+            state = classify(tmp, local_path, code, url)
         if state != 'unreachable' or attempt == tries - 1:
             break
         time.sleep(5)
@@ -179,18 +249,24 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--only', help='check only paths containing this substring')
     ap.add_argument('--limit', type=int)
+    ap.add_argument('--prefix', action='append', default=[],
+                    help='check only paths starting with this (repeatable)')
+    # THE DAILY SLICE (source-cadence.csv). Only documents whose last check is at least this
+    # many days old, never-checked first and then oldest, at most --max of them -- so a set
+    # of 900 on a thirty-day cadence costs about thirty requests a morning instead of 900
+    # on one of them.
+    ap.add_argument('--due-days', type=int)
+    ap.add_argument('--max', type=int)
     args = ap.parse_args()
 
-    doc = json.load(open(INDEX))
-    # A path can appear twice with two different addresses -- the district's budget page
-    # links the same FY26 presentation under two Drive ids, and both are real addresses for
-    # the same document. Both are checked and both are written out; collapsing them here
-    # would throw away the fact that the page publishes it twice.
-    items = [(i['path'], i['upstream']) for g in doc['groups'] for i in g['items']
-             if i.get('upstream') and not NO_FILE.search(i['upstream'])]
-    items = [(p, u) for p, u in items
-             if os.path.isfile(os.path.join(SRC, p))
-             and (not args.only or args.only in p)]
+    items = [(p, u) for p, u in eligible(args.prefix) if not args.only or args.only in p]
+    if args.due_days is not None:
+        seen = last_checked()
+        cut = (datetime.date.today() - datetime.timedelta(days=args.due_days)).isoformat()
+        items = sorted((it for it in items if seen.get(it, '') <= cut),
+                       key=lambda it: seen.get(it, ''))
+        if args.max:
+            items = items[:args.max]
     if args.limit:
         items = items[:args.limit]
 
@@ -238,6 +314,11 @@ def main():
         print(f'  {counts[state]:>4} {state}')
     print(f'\nwrote {OUT}')
     # A document that differs is a claim on the sources page that has stopped being true.
+    # Under --due-days the run is a scheduled check and a difference is its FINDING, not its
+    # failure: exit 0, so the refresh records the check as done and the finding is read off
+    # copy-status.csv -- otherwise a found change would be retried, and re-found, every day.
+    if args.due_days is not None:
+        return 0
     return 1 if counts.get('differs') else 0
 
 

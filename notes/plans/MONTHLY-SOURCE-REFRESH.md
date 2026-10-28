@@ -1,9 +1,16 @@
-# A monthly refresh for the slow sources
+# The slow sources: one register, inside the daily refresh
 
 TJ, 26 October 2026: *"we need to build a similar process for the daily refresh, but ... a
 monthly refresh to start, which goes through sort of the longer term things like DESE and tries
 to see if any information on all of those sources have changed as well. And any other sources
 that we don't refresh ever probably needs to go into that slower refresh rate."*
+
+TJ, 28 October 2026, on the shape: *"we dont make a separate script, and that we just put it all
+in the daily refresh script. but the 'cadence' of each source is known, checked against daily,
+and if the either next scheduled run is hit or past, it fetches those sources too. a separate
+script feels like too much duplicate work."*
+
+**BUILT 28 October 2026.** The table of every source is `notes/generated/SOURCE-CADENCE.md`.
 
 ## Why: it found something on its first, manual, run
 
@@ -16,27 +23,65 @@ withholds (build_circuit_breaker.py, build_serf_topics.py, build_special_educati
 build_sped_costs.py and their verifiers read it). A source that changes in place is invisible
 to a process that never looks again.
 
-## The shape (proposed, not built)
+## What was built
 
-- **One register of every source and how often it is re-checked**: daily (the town's
-  AgendaCenter, the YouTube feed -- refresh.py already does these), weekly (the two staff
-  directories, already), monthly (everything else that can be fetched: DESE datasets, DLS, the
-  district's and the town's document pages), never (records-request deliveries -- they change
-  only when we ask again).
-- **The check is a hash, then a diff.** Fetch, sha256, compare with the manifest. Unchanged:
-  record the date checked. Changed: never overwrite in place (the bucket refuses it anyway) --
-  land the new copy under a new key through `ingest.stage()`/`secure()`, then report WHAT
-  changed in the rows we use (the FY2023 suppression above is the model: one row, one field,
-  old value, new value).
-- **A change is a finding, not a silent update.** It lands in a generated report for a person
-  to read, and every generator reading that source is re-run (`rerun-everything-downstream`).
-  Privacy changes (a suppression) are applied at once; a revised figure is shown beside the old.
-- **Cost:** fetching and hashing is free -- no `claude -p` in the loop. Only reading a changed
-  document would cost anything, and that waits for a person.
+- **`sources/data/source-cadence.csv`** -- the register, hand-kept. One row per source: its
+  cadence in days, whether the refresh fetches it, checks it, leaves it to a person, or never
+  sees it (records requests), and how the refresh runs it (`step`, `gated`, `job`, `slice`).
+  `source_cadence.py --check` fails if any `scripts/fetch_*.py` has no row, so a new fetcher
+  cannot be written and then never re-run -- the staff-directory gap.
+- **`sources/data/source-checks.csv`** -- every look the refresh took, appended. `ok=1` only
+  when the job exited 0, so a failure is retried the next morning rather than skipped.
+- **`scripts/source_cadence.py`** -- `due(id, as_of)`: due when the cadence has elapsed since
+  the last successful look, on the day or any day after (catch-up scheduling, as anacron does
+  it). The refresh's three hand-written copies of that test -- the OML stamp file and two
+  `checked.csv` reads -- now call it, and their history was seeded into the log.
+- **refresh.py step 3j, `slow_sources()`** -- runs every `job` and `slice` row that is due,
+  records the look, names in the run's notes what the checks found that day, and rewrites the
+  README. About 3.5 minutes on its first run; no model calls.
+- **`scripts/check_socrata_sources.py`** -- DESE's portal datasets. Asks the portal for
+  `rowsUpdatedAt` and compares it with the commit that first recorded our copy's sha256. A
+  Socrata export is generated per download, so hashing a fresh one says nothing.
+- **`verify_source_copies.py --prefix --due-days --max`** -- the per-document check, which
+  had last run on 5 September, as a daily SLICE: each morning checks the documents whose own
+  last check is oldest, a few dozen per set, so 4,000 documents on a 30-to-90-day cycle never
+  land on one morning (staggering, by construction).
 
-## First tasks
+## A change is a finding, not a silent update
 
-1. Inventory every source with a fetchable address and no scheduled re-check (the
-   `sources/*/index.csv` files and `dese-source-registry.csv` name them).
-2. Apply DESE's FY2023 suppression: refresh the circuit breaker copy, carry "fewer than 6"
-   through the five builders, re-run their verifiers.
+The checks never land a new copy. They record what moved; the refresh names it; the README
+lists it in two tables kept apart on purpose:
+
+- **Changed at the publisher** -- a document whose content differs, a dataset whose rows moved.
+  A person lands the new copy through that source's fetcher (via `ingest`) and re-runs every
+  generator reading it (`rerun-everything-downstream`).
+- **Defects in our archive the checks exposed** -- the same check finding OUR filing error.
+  The first run's eight district `differs` were all this: the district publishes some action
+  plans twice under near-identical titles ("CC & C.1", "CC & C 1"), the crawler slugged both to
+  one filename, and the archive holds one of two different documents. And two DESE workbooks
+  whose recorded address is the page listing them, not the file.
+
+**The first scheduled run's instrument errors, now states of their own** -- each would have
+been reported as a change:
+
+| looked like | was | now |
+|---|---|---|
+| 20 town board pages and DESE regulation pages `differs` | web pages re-render on every request | `rerendered` |
+| a workbook `differs` from DESE's chapter70 page | HTML compared with an xlsx; the address is an index page | `page, not file` |
+| 8 district PDFs `differs` | two documents filed under one name | reported as ours |
+
+## Not yet done
+
+1. **Wire the `manual` rows one at a time.** DLS (cherry sheet, property, tax bills, tax
+   rates), BLS, Census, board pages and the Open Meeting Law each have a target cadence and no
+   schedule. Each fetcher has to be read for whether it lands through `ingest` or writes in
+   place before it runs unattended; DLS's and BLS's files carry no publisher address, so no
+   copy check sees them meanwhile.
+2. **Apply DESE's FY2023 suppression**: refresh the circuit breaker copy, carry "fewer than 6"
+   through the five builders, re-run their verifiers. A privacy change, so it goes first.
+3. **Take in the enrollment dataset** (`dese-enrollment-by-grade.xlsx`): rows updated
+   23 October 2026, after our copy of 8 September. Found by the first run; not yet read.
+4. **The slug collision**: 35 district paths carry more than one address. Some are one
+   document linked twice (legitimate); the action plans are two documents. The crawler needs
+   to give a different document a different name, and the missing versions need fetching.
+5. **The two `page, not file` addresses** need the file's own link (rule 12).

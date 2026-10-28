@@ -85,6 +85,10 @@ CHECKS = [
     # rediscovering where any of it came from. Fails if a registered file is absent:
     # a registry pointing at nothing reads as coverage, which is worse than none.
     ('build_dese_registry.py', ['--check']),
+    # EVERY SOURCE AND HOW OFTEN IT IS LOOKED AT AGAIN: the register is whole (every fetcher
+    # has a row and a cadence), every command it names exists, and SOURCE-CADENCE.md
+    # reproduces from the register and the check logs.
+    ('source_cadence.py', ['--check']),
     # Every money parser against every printed shape of a negative. A dropped sign
     # does not zero a figure, it reflects it -- the paraprofessional line came out
     # $315,772 wrong, twice the line, and that line feeds a published projection.

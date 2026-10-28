@@ -226,7 +226,7 @@ REFRESH_WRITES = {
     'town-supplementary': 'other town documents',
     'town-annual-reports': 'annual reports',     # fetch_town_docs.py, since 27 October 2026
     # The Attorney General's Open Meeting Law determinations, fetched WEEKLY by this run
-    # since 9 October 2026 (see oml_due). The statute and the guide in the same folder
+    # since 9 October 2026 (see source-cadence.csv). The statute and the guide in the same folder
     # arrived by hand, and arrive no more often than the legislature acts.
     'state-law': 'state documents',
     'analyses': 'analyses',                      # ours
@@ -278,58 +278,41 @@ RAN = set()
 
 
 
-DIRECTORY_EVERY_DAYS = 7
-TOWN_DIRECTORY = os.path.join(ROOT, 'sources', 'town-supplementary', 'docs',
-                              'staff-directory')
-SCHOOL_DIRECTORY = os.path.join(ROOT, 'sources', 'district-budget', 'docs', 'personnel',
-                                'staff-directory')
-# DESE's current-grants list and its program pages; `checked.csv` here gates the weekly look.
-DESE_GRANTS = os.path.join(ROOT, 'sources', 'state-dese', 'grants')
-# DESE's entitlement allocations, every district and fund code; `checked.csv` gates the look.
-DESE_ENTITLEMENTS = os.path.join(ROOT, 'sources', 'state-dese', 'entitlements')
+# WHEN EACH SOURCE IS LOOKED AT AGAIN is one register, sources/data/source-cadence.csv, and
+# one due-check, source_cadence.due(). TJ, 28 October 2026: no separate weekly or monthly
+# script -- the daily run knows each source's cadence and fetches whatever has come due, or is
+# past due, since its last successful look. That replaced three hand-written copies of the
+# same test here (a stamp file for the OML letters, two `checked.csv` reads for the
+# directories and DESE). It is catch-up scheduling: a missed morning is made up the next
+# one rather than waiting a whole cycle, and a look is recorded only when the fetch exits 0,
+# so a failure is retried tomorrow rather than skipped. notes/generated/SOURCE-CADENCE.md is
+# the table.
+import source_cadence as SC  # noqa: E402
 
 
-def directory_due(root, as_of):
-    """Has it been a week since anybody looked at this directory?
-
-    READ OFF `checked.csv`, WHICH RECORDS EVERY LOOK -- not off the newest snapshot folder,
-    which records only the looks that found a change. Using the snapshot would re-fetch
-    every single day the moment a directory went a week without being edited, which is most
-    weeks, and would be worse the better behaved the publisher was.
-    """
-    p = os.path.join(root, 'checked.csv')
-    if not os.path.exists(p):
-        return True
-    days = [r['checked'] for r in csv.DictReader(open(p, encoding='utf-8'))
-            if r.get('checked')]
-    if not days:
-        return True
-    gap = dt.date.fromisoformat(as_of) - dt.date.fromisoformat(max(days))
-    return gap.days >= DIRECTORY_EVERY_DAYS
+def looked(source_id, a, r, notes=None, what=None):
+    """Record one look at a source from its exit code; on failure, say so in the run's notes."""
+    SC.record(source_id, a.as_of, r.returncode == 0,
+              '' if r.returncode == 0 else 'exit %d' % r.returncode)
+    if r.returncode and notes is not None and what:
+        notes.append('%s: exit %d -- retried tomorrow; %s' % (source_id, r.returncode, what))
 
 
-# THE ATTORNEY GENERAL'S OPEN MEETING LAW DETERMINATIONS, WEEKLY. The archive's copy of the
-# AG's determination letters was walked by hand with `--all` on 8-9 October 2026, and
-# nothing was arranged to fetch the next one, which is the staff-directory gap again
-# (see directory_due): a corpus that silently stops at the day somebody last ran it.
-#
-# WEEKLY, AND GATED ON A STAMP RATHER THAN ON THE WEEKDAY, for the reason the directories
-# give: a run missed on its day would otherwise wait a full week. The stamp is written only
-# when the fetch EXITS 0, so a failed week is retried the next morning rather than skipped.
-# Network only -- plain HTTPS to the AG's portal, no model call -- and `--all --year` skips
-# every letter already held without asking the portal for it, so a quiet week costs the
-# walk past the last held number and no more.
-OML_EVERY_DAYS = 7
-OML_STAMP = os.path.join(ROOT, 'build', 'oml-determinations-last-fetch.txt')
-
-
-def oml_due(as_of):
-    try:
-        last = open(OML_STAMP, encoding='utf-8').read().strip()
-        gap = dt.date.fromisoformat(as_of) - dt.date.fromisoformat(last)
-    except (OSError, ValueError):
-        return True
-    return gap.days >= OML_EVERY_DAYS
+def slow_sources(a, notes):
+    """Run every `job` and `slice` row that is due, record each look, name what changed."""
+    for r in SC.runnable():
+        if not SC.due(r['id'], a.as_of):
+            continue
+        looked(r['id'], a, py(*SC.argv(r), check=False), notes,
+               'run python3 scripts/%s' % r['command'])
+    found = SC.changes(on=a.as_of)
+    for kind, said in (('changed', 'CHANGED AT THE PUBLISHER, found today'),
+                       ('ours', 'defects in our archive the source checks exposed today')):
+        new = [c['what'] for c in found if c['kind'] == kind]
+        if new:
+            notes.append('%s: %d -- %s%s. See notes/generated/SOURCE-CADENCE.md'
+                         % (said, len(new), '; '.join(new[:4]), ' ...' if len(new) > 4 else ''))
+    py('source_cadence.py', '--write', check=False)
 
 
 def oml_years(as_of):
@@ -343,19 +326,17 @@ def fetch_oml(a, notes):
     """-> whether it ran. Its failure is a NOTE, never fatal: the determinations are
     reference material and have nothing to do with whether this morning's meetings reach
     the site."""
-    if not oml_due(a.as_of):
+    if not SC.due('oml-determinations', a.as_of):
         return False
     bad = [y for y in oml_years(a.as_of)
            if py('fetch_oml_determinations.py', '--all', '--year', str(y),
                  check=False).returncode != 0]
+    SC.record('oml-determinations', a.as_of, not bad,
+              'failed for %s' % ', '.join(map(str, bad)) if bad else '')
     if bad:
         notes.append('OML determinations: the weekly fetch failed for %s -- retried tomorrow; '
                      'run fetch_oml_determinations.py --all --year %s'
                      % (', '.join(map(str, bad)), bad[-1]))
-        return True
-    os.makedirs(os.path.dirname(OML_STAMP), exist_ok=True)
-    with open(OML_STAMP, 'w', encoding='utf-8') as fh:
-        fh.write(a.as_of + '\n')
     return True
 
 
@@ -1158,10 +1139,10 @@ def run(a, notes, ctx):
     # wait a full week, and this project has had a scheduled job hand back its own window
     # once already.
     if not a.dry_run:
-        for script, root in (('fetch_staff_directory.py', TOWN_DIRECTORY),
-                             ('fetch_school_staff_directory.py', SCHOOL_DIRECTORY)):
-            if directory_due(root, a.as_of):
-                py(script, '--if-changed', check=False)
+        for script, source in (('fetch_staff_directory.py', 'staff-directory-town'),
+                               ('fetch_school_staff_directory.py', 'staff-directory-district')):
+            if SC.due(source, a.as_of):
+                looked(source, a, py(script, '--if-changed', check=False))
         py('extract_staff_directory.py', check=False)
         py('extract_school_staff_directory.py', check=False)
 
@@ -1199,34 +1180,31 @@ def run(a, notes, ctx):
     # attributed, never republished (QUEUE 13, 14).
     py('watch_feeds.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []), check=False)
 
-    # 3g. The Attorney General's Open Meeting Law determinations, weekly -- see oml_due.
+    # 3g. The Attorney General's Open Meeting Law determinations, weekly -- gated by
+    # source-cadence.csv; `--all --year` skips every letter already held, so a quiet week
+    # costs the walk past the last held number and no more.
     if not a.dry_run:
         if fetch_oml(a, notes) and not a.no_push:
             back_up_documents(notes, 'after the OML determinations')
 
     # 3h. DESE'S CURRENT GRANT OPPORTUNITIES, WEEKLY, for /grants-open-to-lunenburg. DESE
     # publishes only the current list and overwrites it in place, so these copies are the only
-    # history of it. Gated on the fetcher's own checked.csv like the directories (a missed day
+    # history of it. Gated by source-cadence.csv like the directories (a missed day
     # does not wait a week); a page lands only when its bytes changed, through `ingest`, so no
     # separate backup step. Network only, about 75 requests at one a second -- no model call.
     if not a.dry_run:
-        grants_due = directory_due(DESE_GRANTS, a.as_of)
-        if grants_due:
-            r = py('fetch_dese_grants.py', '--if-changed', check=False)
-            if r.returncode:
-                notes.append('DESE grants: the weekly fetch exited %d -- retried tomorrow; run '
-                             'python3 scripts/fetch_dese_grants.py --dry-run' % r.returncode)
+        if SC.due('dese-grants', a.as_of):
+            looked('dese-grants', a, py('fetch_dese_grants.py', '--if-changed', check=False),
+                   notes, 'run python3 scripts/fetch_dese_grants.py --dry-run')
         py('extract_dese_grants.py', check=False)
         py('build_grants_open.py', check=False)
         # 3h'. DESE'S COMPETITIVE AWARD LISTS -- who WON each grant -- on the same weekly beat.
         # DESE keeps only the current and previous year's lists up: FY2025's link already
         # answers with its error page, so a list we have not saved before it goes is gone
         # (23 October 2026). land_version never lands the same bytes twice.
-        if grants_due:
-            r = py('fetch_dese_awards.py', check=False)
-            if r.returncode:
-                notes.append('DESE awards: the weekly fetch exited %d -- run '
-                             'python3 scripts/fetch_dese_awards.py --dry-run' % r.returncode)
+        if SC.due('dese-awards', a.as_of):
+            looked('dese-awards', a, py('fetch_dese_awards.py', check=False),
+                   notes, 'run python3 scripts/fetch_dese_awards.py --dry-run')
             py('extract_dese_awards.py', check=False)
         # 3h''. WHAT IS NEW FROM DESE, for the home page's notification line: a grant newly
         # open to districts, an award list naming Lunenburg or a comparison district. Read off
@@ -1240,17 +1218,26 @@ def run(a, notes, ctx):
     # 3i. DESE'S ENTITLEMENT ALLOCATIONS, WEEKLY: every district, every fund code, FY2017 to
     # the coming year. DESE revises these pages in place (each carries `Last Updated`), so the
     # dated snapshots are the only record of an allocation before it was revised. Gated on
-    # the fetcher's own checked.csv like 3h; a page lands only when its bytes differ from the
+    # source-cadence.csv like 3h; a page lands only when its bytes differ from the
     # newest snapshot, through `ingest`, and a year whose by-district pages do not reconcile
     # with its fund-code pages lands nothing. Network only, ~265 requests at one a second.
     # extract runs after it so dese-fund-codes.csv picks up a list 3h just refreshed.
     if not a.dry_run:
-        if directory_due(DESE_ENTITLEMENTS, a.as_of):
-            r = py('fetch_dese_entitlements.py', '--if-changed', check=False)
-            if r.returncode:
-                notes.append('DESE entitlements: the weekly fetch exited %d -- retried tomorrow; '
-                             'run python3 scripts/fetch_dese_entitlements.py --dry-run' % r.returncode)
+        if SC.due('dese-entitlements', a.as_of):
+            looked('dese-entitlements', a,
+                   py('fetch_dese_entitlements.py', '--if-changed', check=False),
+                   notes, 'run python3 scripts/fetch_dese_entitlements.py --dry-run')
         py('extract_dese_entitlements.py', check=False)
+
+    # 3j. THE SLOW SOURCES: everything in source-cadence.csv the refresh runs generically --
+    # the monthly and quarterly checks. A `job` runs when its cadence has elapsed since its
+    # last successful look; a `slice` runs every morning and itself picks the few documents
+    # whose own last check is oldest, so 4,000 documents on a 30-to-90-day cycle cost a
+    # hundred-odd requests a morning, not all of them on one. CHECKS ONLY: plain HTTPS and a
+    # hash, no model call, nothing landed in the archive -- what moved is reported below and
+    # in notes/generated/SOURCE-CADENCE.md, for a person to take in.
+    if not a.dry_run:
+        slow_sources(a, notes)
 
     # 4-6. The town's recordings.
     py('watch_youtube.py', '--as-of', a.as_of, *(['--dry-run'] if a.dry_run else []))
