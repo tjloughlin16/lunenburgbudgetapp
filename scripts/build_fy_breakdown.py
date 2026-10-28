@@ -267,6 +267,48 @@ def budget_walk(r, T):
         flag=bool(flag))
 
 
+def budget_changes_data(m, T):
+    """BUDGET CHANGES AFTER THE VOTE (TJ, 27 October 2026: "it needs to be more visible ... a
+    different table specifically for adjusted budget, showing top X expandable"). Every line whose
+    final budget is not what was voted, largest change first, each with the transfers that made
+    the change -- date, memo, and the lines on the other side -- and the orders carried in."""
+    names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
+    years = []
+    for fy in YEARS():
+        rows = []
+        for r in m['rows']:
+            if r['fy'] != fy or not r['account']:
+                continue
+            bw = budget_walk(r, T)
+            if not bw['adj']:
+                continue
+            if sum((x['amount'] for x in r['moves_in']), D0) != r['transfers']:
+                fail('FY%d %s: its transfers do not sum to the change they make' % (fy, r['account']))
+            final = r['voted'] + r['transfers'] + r['carried_budget']
+            rows.append(dict(
+                cat=S.CAT_LABEL[r['category']], line=T.lit(names[r['account']]), acct=T.lit(r['account']),
+                voted=T.usd(r['voted']), transfers=signed(T, r['transfers']) if r['transfers'] else '',
+                carried=T.usd(r['carried_budget']) if r['carried_budget'] else '', final=T.usd(final),
+                n_voted=round(fl(r['voted']), 2), n_final=round(fl(final), 2), **bw,
+                moves=[dict(date=T.lit(long_date(x['date'])), memo=T.lit(x['memo'].strip() or 'no memo'),
+                            v=signed(T, x['amount']), n=round(fl(x['amount']), 2),
+                            others=[dict(line=T.lit(names.get(o['account'], o['description'].strip().title())),
+                                         v=signed(T, o['amount'])) for o in x.get('others', [])])
+                       for x in sorted(r['moves_in'], key=lambda x: x['date'])]))
+        rows.sort(key=lambda r: -abs(r['adj']))
+        years.append(dict(fy=T.fy(fy), rows=rows, n_flag=sum(1 for r in rows if r['flag']),
+                          n=len(rows)))
+    return dict(years=years, show=10, text=dict(
+        cat='Category', line='School line', voted='Voted', transfers='Transfers', carried='Carried in',
+        final='Final budget', change='Change', show_all='Show all', show_fewer='Show the largest',
+        lines='lines changed after the vote', flagged='flagged', close='Close',
+        open='Open a line for the transfers that changed it',
+        moves='Transfers', no_moves='No transfers: the change is last year’s orders carried in.',
+        other_side='The other side of the entry', carried_note='Last year’s orders, carried in with their budget:',
+        flag_means=T.lit('Flagged: the final budget is half again or half less than the vote, by at '
+                         'least %s, or the line was not voted. Thresholds of ours.' % T.usd(ADJ_MIN))))
+
+
 def lines_data(m, T):
     """Every line, every year, as two sums. The school budget's own, to what was left, with
     cost moved by journal entry shown apart from what it spent; and what the line cost from
@@ -894,6 +936,7 @@ def page(m):
     weeks = year_weeks(m, T)
     ready = readiness_data(T)
     by_line = line_funds_data(m, T)
+    changes = budget_changes_data(m, T)
     # the bridge block's sentence, held to every year it is shown with: other funds are most of
     # the gap between the plan and what happened, and more than half of them on no school line
     for y in plan['years']:
@@ -968,6 +1011,16 @@ def page(m):
                       so=('Re-charges are journal entries, so they land when the books are '
                           'adjusted, not when the bills were paid. The line under the totals says '
                           'how much of the year’s landed in June.', None, ())),
+            TB.custom('fy-budget-changes', 'Budget changes after the vote', changes, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Every budget transfer in the journal'),
+                      alt='Table, one fiscal year: every school line whose final budget differs from '
+                          'the vote, largest change first -- voted, transfers, orders carried in, '
+                          'final, and the change -- with the largest shown and the rest behind a '
+                          'button; a line opens the transfers that changed it',
+                      so=('A line’s final budget can be far from what Town Meeting voted. Compare '
+                          'spending to the final budget and the line can look on target when the '
+                          'vote was not.', None, ())),
             TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
