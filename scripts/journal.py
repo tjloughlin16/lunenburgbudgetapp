@@ -122,8 +122,35 @@ ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
 JOURNAL_CSV = os.path.join(DATA, 'munis-school-journal.csv')
 ACCOUNTS_CSV = os.path.join(DATA, 'munis-school-journal-accounts.csv')
-YEARS = (2023, 2024, 2025, 2026)
-OPEN_FY = 2026          # the year whose close is not posted in this run
+# THE YEARS ARE READ OFF THE JOURNAL, NOT TYPED (TJ, 27 October 2026: "these pages shouldnt be
+# specific to each year. it should auto-create for the FY based on the data"). YEARS is every
+# fiscal year the journal holds; OPEN_FY is the one whose close (`YEC`) is not posted yet -- at
+# most one, and the latest. Computed on first use (PEP 562), so a script that never asks pays
+# nothing, and a delivery that adds a year adds it to every page built from this module.
+def _years():
+    if 'years' not in _CACHE:
+        seen, closed = set(), set()
+        for r in csv.DictReader(open(JOURNAL_CSV, encoding='utf-8', newline='')):
+            seen.add(int(r['fiscal_year']))
+            if r['source'] == 'YEC':
+                closed.add(int(r['fiscal_year']))
+        years = tuple(sorted(seen))
+        if not years or years != tuple(range(years[0], years[-1] + 1)):
+            raise SystemExit('journal.py: the journal\'s years are not a run: %s' % (years,))
+        open_ = [y for y in years if y not in closed]
+        if len(open_) > 1 or (open_ and open_[0] != years[-1]):
+            raise SystemExit('journal.py: years without a close, %s; only the latest may be open' % open_)
+        _CACHE['years'] = (years, open_[0] if open_ else None)
+    return _CACHE['years']
+
+
+def __getattr__(name):
+    if name == 'YEARS':
+        return _years()[0]
+    if name == 'OPEN_FY':
+        return _years()[1]
+    raise AttributeError(name)
+
 
 # The public addresses of the data, for a page's sources.
 PUBLIC = {'journal': '/docs/data/munis-school-journal.csv',

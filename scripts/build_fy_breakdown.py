@@ -20,6 +20,7 @@ band keeping its height and changing colour. A reader can pick one block and see
 full height -- at the scale of the whole budget a $287,108 grant payment is a hairline.
 """
 import argparse
+import csv
 import json
 import os
 import re
@@ -46,7 +47,6 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % ID)
 # district tuition spend was spent on, line by line, and what source paid it").
 LINES_DIR = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown')
 SCHOOL = 'School budget'
-Y0, Y1 = 2025, 2026
 D0 = Decimal(0)
 
 # Who paid, in six, on the weekly chart: a chart holds five hues and a grey. IDEA is named apart from the other
@@ -246,7 +246,7 @@ def lines_data(m, T):
     October 2026: "money added from other funds REDUCES the general fund... depends how its
     done doesnt it?" It does: a move changes Left, paying directly does not."""
     years = []
-    for fy in J.YEARS:
+    for fy in YEARS():
         rows = []
         for r in m['rows']:
             if r['fy'] != fy:
@@ -397,8 +397,8 @@ def lines_data(m, T):
                     none='No other fund paid toward this line.',
                     unmatched='Other funds’ spending not matched to any line',
                     lines='Line', category='Category', footing='Spent counts orders still owed at year end, so for '
-                    'FY2025 and earlier Left can differ from the Town’s printed report by '
-                    'those orders.'))
+                    '%s and earlier Left can differ from the Town’s printed report by '
+                    'those orders.' % C.fy(max(y for y in YEARS() if y != J.OPEN_FY))))
 
 
 KINDS = [('payroll', 'Payroll'), ('invoice', 'Invoices'), ('order', 'Orders still owed at year end'),
@@ -458,7 +458,11 @@ def year_weeks(m, T):
                 top=[dict(line=T.lit(names[key]), what=T.lit(x['k']), payee=T.lit(x['p']),
                           fund=T.lit(x['f']), text=T.usd(x['v'])) for key, x in big]))
         tot = sum((sum(v.values(), D0) for v in byf.values()), D0)
-        years.append(dict(fy=T.fy(fy), a0=T.lit(monday(date(fy - 1, 7, 1)).isoformat()),
+        off_all = sum((x['off'] for x in m['moves'] if x['fy'] == fy), D0)
+        off_june = sum((x['off'] for x in m['moves'] if x['fy'] == fy and x['date'][5:7] == '06'), D0)
+        june = T.lit('%s of the %s re-charged off the school budget in %s was re-charged in June.'
+                     % (T.usd(off_june), T.usd(off_all), C.fy(fy))) if off_all else ''
+        years.append(dict(fy=T.fy(fy), june=june, a0=T.lit(monday(date(fy - 1, 7, 1)).isoformat()),
                           a1=T.lit(date(fy, 6, 30).isoformat()), weeks=weeks, total=T.usd(tot),
                           recharged=T.usd(-sum(rc.values(), D0)) if rc else '',
                           back=T.usd(sum(rb.values(), D0)) if rb else ''))
@@ -487,7 +491,7 @@ def year_facts(m, T):
     monday = lambda d: d - timedelta(days=d.weekday())
     files = line_files(m)
     out = []
-    for fy in J.YEARS:
+    for fy in YEARS():
         y = m['years'][fy]
         rs = [r for r in m['rows'] if r['fy'] == fy and r['account']]
         under = sum((r['left'] for r in rs if r['left'] > 0), D0)
@@ -613,7 +617,7 @@ def year_line_data(m, T):
     top = lambda pairs, n=5: [dict(what=T.lit(names[a]), v=T.usd(v)) for a, v in
                               sorted(pairs, key=lambda p: -p[1])[:n] if v]
     years = []
-    for fy in J.YEARS:
+    for fy in YEARS():
         rs = [r for r in m['rows'] if r['fy'] == fy and r['account']]
         tot = lambda k: sum((r[k] for r in rs), D0)
         end, prev, nxt = date(fy, 6, 30), fy - 1, fy + 1
@@ -623,11 +627,11 @@ def year_line_data(m, T):
             fail('FY%d: carried in %s is not paid %s plus never paid %s'
                  % (fy, carried, carried_spent, unpaid))
         out_owed = sum((v for (y, _), v in owed.items() if y == fy), D0)
-        if nxt in J.YEARS:
+        if nxt in YEARS():
             want = sum((r['carried_budget'] for r in m['rows'] if r['fy'] == nxt and r['account']), D0)
             if out_owed != want:
                 fail('FY%d: owed on 30 June %s, carried into FY%d %s' % (fy, out_owed, nxt, want))
-        if prev in J.YEARS:
+        if prev in YEARS():
             ahead = sum((r['prepaid'] for r in m['rows'] if r['fy'] == prev and r['account']), D0)
         late = []
         for x in m['moves']:
@@ -652,7 +656,7 @@ def year_line_data(m, T):
                           'did not leave it.'),
                     items=top([(r['account'], r['carried_unpaid']) for r in rs]),
                     items_h='Never paid, largest lines')]
-        if prev in J.YEARS:
+        if prev in YEARS():
             inn.append(dict(id='ahead', label=T.lit('This year’s bills, paid ahead by %s' % C.fy(prev)),
                             v=T.usd(ahead), n=fl(ahead), parts=[], items=[], items_h='',
                             means='Bills for this year paid from last year’s budget. This year spends '
@@ -666,7 +670,7 @@ def year_line_data(m, T):
                     v=T.usd(out_owed), n=fl(out_owed), parts=[], items_h='Largest lines',
                     items=top([(a, v) for (y, a), v in owed.items() if y == fy]),
                     means='Counted as spent this year, paid next year. Next year carries in the '
-                          'budget for them.' + ('' if nxt in J.YEARS else T.lit(
+                          'budget for them.' + ('' if nxt in YEARS() else T.lit(
                               ' %s’s books are not in the journal yet, so the other side cannot '
                               'be checked.' % C.fy(nxt)))),
                dict(id='early', label=T.lit('%s’s bills, paid early' % C.fy(nxt)), v=T.usd(early),
@@ -692,47 +696,149 @@ def year_line_data(m, T):
                                    'we hold, so its count may still grow.' % C.fy(fy))))]
         years.append(dict(fy=T.fy(fy), prev=T.fy(prev), next=T.fy(nxt), inn=inn, out=out,
                           span=T.lit('1 July %d to 30 June %d' % (fy - 1, fy))))
-    y26 = next(y for y in years if y['fy'] == C.fy(2026))
-    if next(o for o in y26['out'] if o['id'] == 'early')['n'] < 189000:
+    # a fact the page was built to show; checked while FY2026 is on the page
+    y26 = next((y for y in years if y['fy'] == C.fy(2026)), None)
+    if y26 and next(o for o in y26['out'] if o['id'] == 'early')['n'] < 189000:
         fail('the FY2026 tuition paid early is no longer on the year line')
     return dict(years=years, text=dict(h_in=T.lit('Came in across 1 July'), h_out=T.lit('Went out across 30 June'),
                                        from_='from', to='to', unread='cannot be read'))
 
 
+# WHICH YEARS THE PAGE CAN SHOW, read off the data (TJ, 27 October 2026: "as soon as we ingest
+# the same data from munis.. the FY should auto-unlock and be available in the breakout.. or we
+# need some hook that knows when a breakout can be built based on the data or what data to ask
+# for"). A year is READY when every input the page cannot do without is held; it then appears
+# on the page with no edit. The year after the last one held is listed with what it is missing,
+# each missing input worded as the records request that would close it -- the same report, with
+# the same options, the Town produced last time
+# (town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md).
+JOURNAL_ASK = ('MUNIS YEAR-TO-DATE BUDGET REPORT (glytdbud) with journal detail, %s period 0 to '
+               'period 13: Print journal detail Y, Include budget entries Y, Incl encumb/liq entries '
+               'Y; school accounts in fund 0100 and every school special fund. In Excel if MUNIS '
+               'can export it.')
+P13_ASK = ('MUNIS YEAR-TO-DATE BUDGET REPORT (glytdbud) at period 13 for %s, %s, Print totals '
+           'only N, Suppress zero balance accounts N, as an Excel export.')
+
+
+def readiness():
+    """[dict(fy, ready, inputs=[dict(id, label, held, required, ask)])] for every year the journal
+    holds and the one after it."""
+    if '_ready' in _MEMO:
+        return _MEMO['_ready']
+    ytd = defaultdict(set)
+    for r in csv.DictReader(open(os.path.join(ROOT, 'sources', 'data', 'munis-school-ytd.csv'),
+                                 encoding='utf-8')):
+        if r['period'] == '13':
+            ytd[int(r['fiscal_year'])].add(r['report'])
+    out = []
+    for fy in list(J.YEARS) + [J.YEARS[-1] + 1]:
+        name = C.fy(fy)
+        inputs = [
+            dict(id='journal', label='The school journal, every posting', held=fy in J.YEARS,
+                 required=True, ask=JOURNAL_ASK % name),
+            dict(id='gf13', label='The period-13 report, school general fund',
+                 held='gf-school' in ytd[fy], required=True,
+                 ask=P13_ASK % (name, 'the school department’s general fund accounts')),
+            dict(id='sp13', label='The period-13 report, school special funds',
+                 held='special-school' in ytd[fy], required=True,
+                 ask=P13_ASK % (name, 'every school special fund')),
+            dict(id='close', label='The year’s close, posted in the journal',
+                 held=fy in J.YEARS and fy != J.OPEN_FY, required=False,
+                 ask='The same journal report again once the Town has closed %s, so the year-end '
+                     'entries are in it.' % name),
+            dict(id='book', label='The year’s approved school budget, read', held=fy in PLAN_BOOKS,
+                 required=False, ask=None)]
+        # a period-13 report and a close exist only once the year has ended, so every ask for a
+        # year the journal does not hold yet says when it can be answered
+        if fy not in J.YEARS:
+            for i in inputs:
+                if i['ask']:
+                    i['ask'] = 'After %s ends on 30 June %d: %s' % (name, fy, i['ask'])
+        out.append(dict(fy=fy, inputs=inputs,
+                        ready=all(i['held'] for i in inputs if i['required'])))
+    _MEMO['_ready'] = out
+    return out
+
+
+def YEARS():
+    """The years every block on the page shows: the ready ones."""
+    ys = tuple(r['fy'] for r in readiness() if r['ready'])
+    if not ys:
+        fail('no year has every input the page needs')
+    return ys
+
+
+def readiness_data(T):
+    """The block at the foot of the page: what each year holds, and what the next would need."""
+    rows = []
+    for r in readiness():
+        if r['ready'] and all(i['held'] for i in r['inputs']):
+            continue                      # nothing to say about a year with everything
+        rows.append(dict(fy=T.fy(r['fy']), ready=r['ready'], inputs=[
+            dict(label=T.lit(i['label']), held=i['held'], required=i['required'],
+                 ask=T.lit(i['ask']) if i['ask'] and not i['held'] else None) for i in r['inputs']]))
+    return dict(years=rows, text=dict(
+        ready='On this page', waiting='Not on this page yet: it appears when the required inputs are held',
+        held='held', missing='missing', optional='optional', ask='To ask the Town for',
+        how='Every year the journal holds and the one after it, checked against the data each '
+            'time the page is built.'))
+
+
+_MEMO = {}
+
+
+def ledger_doc(fy, scope):
+    """The period-13 report for a year, by the archive's naming rule -- and refused if we do not
+    hold it, rather than linking an address that does not open."""
+    rel = 'town-ledgers/expenses/glytdbud-expense-fy%d-p13-%s.xlsx' % (fy, scope)
+    if not any(r['key'].endswith(rel) for r in csv.DictReader(
+            open(os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv'), encoding='utf-8'))):
+        fail('no period-13 %s report for FY%d in the archive manifest' % (scope, fy))
+    return '/docs/' + rel
+
+
 def page(m):
-    mv = lambda y:sum((x['off'] - x['onto'] for x in m['moves'] if x['fy'] == y), D0)
-    mv0, mv1 = mv(Y0), mv(Y1)
-    if not mv0 < 0 < mv1:
-        fail('the page says re-charges ran onto the school budget in FY%d and off it in FY%d'
-             % (Y0, Y1))
+    # EVERY YEAR THE JOURNAL HOLDS, none named (TJ, 27 October 2026: "these pages shouldnt be
+    # specific to each year. it should auto-create for the FY based on the data"). The page's
+    # own facts and conclusions compare the years by RULE -- the least and most left, the most
+    # re-charged off and onto -- so a year added to the journal takes its place without an edit.
+    mv = {y: sum((x['off'] - x['onto'] for x in m['moves'] if x['fy'] == y), D0) for y in YEARS()}
     f = LD.fact
-    left = {y: m['years'][y]['left'] for y in J.YEARS}
+    left = {y: m['years'][y]['left'] for y in YEARS()}
+    first, last = YEARS()[0], YEARS()[-1]
 
     def con(text, rests, figs, so):
         return TP.conclusion(text, rests, figs, so=so[0], so_figures=so[1], so_allow=so[2])
-    # The page's own facts and conclusions compare the years, so they hold whichever year the
-    # picker shows; each year's own are in the block it switches (year_facts).
     facts = [f('left%d' % y, U(left[y]), 'left on the school lines, %s' % C.fy(y), 'published',
-               label_figures={'y': F(y)}) for y in J.YEARS] + [
-        f('moved1', U(mv1), 'taken off the school budget by re-charges, %s, net' % C.fy(Y1),
-          'published', label_figures={'y': F(Y1)}),
-        f('moved0', U(-mv0), 'added to it by re-charges, %s, net' % C.fy(Y0), 'published',
-          label_figures={'y': F(Y0)})]
+               label_figures={'y': F(y)}) for y in YEARS()] + [
+        f('moved%d' % y, U(abs(mv[y])), ('taken off the school budget by re-charges, %s, net' if mv[y] >= 0
+                                          else 'added to it by re-charges, %s, net') % C.fy(y),
+          'published', label_figures={'y': F(y)}) for y in YEARS()]
+    lo, hi = min(YEARS(), key=lambda y: left[y]), max(YEARS(), key=lambda y: left[y])
     conclusions = [
-        con('The school lines left %s and %s in %s and %s, then %s and %s.'
-            % (C.usd(fl(left[2023])), C.usd(fl(left[2024])), C.fy(2023), C.fy(2024),
-               C.usd(fl(left[2025])), C.usd(fl(left[2026]))),
-            ['left2023', 'left2024', 'left2025', 'left2026'],
-            {'a': U(left[2023]), 'b': U(left[2024]), 'x': F(2023), 'z': F(2024),
-             'c': U(left[2025]), 'd': U(left[2026])},
-            so=('Two years near nothing, then two near half a million. Each year’s own figures, '
-                'above, show what moved in it.', None, ())),
-        con('Re-charges added %s to the school budget’s spending in %s and took %s off in %s.'
-            % (C.usd(fl(-mv0)), C.fy(Y0), C.usd(fl(mv1)), C.fy(Y1)), ['moved0', 'moved1'],
-            {'a': U(-mv0), 'y': F(Y0), 'b': U(mv1), 'z': F(Y1)},
+        con('The school lines left as little as %s in %s and as much as %s in %s.'
+            % (C.usd(fl(left[lo])), C.fy(lo), C.usd(fl(left[hi])), C.fy(hi)),
+            ['left%d' % y for y in YEARS()],
+            {'a': U(left[lo]), 'x': F(lo), 'b': U(left[hi]), 'y': F(hi)},
+            so=('The same budget process, years apart by that much. Each year’s own figures, '
+                'below, show what moved in it.', None, ()))]
+    off_y, on_y = max(YEARS(), key=lambda y: mv[y]), min(YEARS(), key=lambda y: mv[y])
+    if mv[off_y] > 0 and mv[on_y] < 0:
+        conclusions.append(con(
+            'Re-charges took %s off the school budget in %s and added %s to it in %s.'
+            % (C.usd(fl(mv[off_y])), C.fy(off_y), C.usd(fl(-mv[on_y])), C.fy(on_y)),
+            ['moved%d' % off_y, 'moved%d' % on_y],
+            {'a': U(mv[off_y]), 'y': F(off_y), 'b': U(-mv[on_y]), 'z': F(on_y)},
             so=('A swing of %s between two years, made by entries after the spending; the bills '
-                'cost the same either way.' % C.usd(fl(mv1 - mv0)), {'s': U(mv1 - mv0)}, ())),
-    ]
+                'cost the same either way.' % C.usd(fl(mv[off_y] - mv[on_y])),
+                {'s': U(mv[off_y] - mv[on_y])}, ())))
+    else:
+        w = off_y if mv[off_y] > 0 else on_y
+        conclusions.append(con(
+            'Re-charges moved the most in %s: %s, net, %s the school budget.'
+            % (C.fy(w), C.usd(fl(abs(mv[w]))), 'off' if mv[w] > 0 else 'onto'),
+            ['moved%d' % y for y in YEARS()], {'y': F(w), 'a': U(abs(mv[w]))},
+            so=('Made by entries after the spending; the bills cost the same either way.', None, ())))
     T = Texts()
     lines = lines_data(m, T)
     figures = year_facts(m, T)
@@ -756,25 +862,24 @@ def page(m):
         if any(r['group'] == 'gf' for r in sy['rows']):
             fail('%s: a general fund row in the table of other funds' % sy['fy'])
     weeks = year_weeks(m, T)
-    if {mv['date'][5:7] for mv in m['moves'] if mv['fy'] == Y1} != {'06'}:
-        fail('the weekly chart says every %d re-charge was in June' % Y1)
+    ready = readiness_data(T)
     return TP.page(
         ID,
         'The school lines left %s in %s and %s in %s; pick a year to see what moved in it.'
-        % (C.usd(fl(left[2023])), C.fy(2023), C.usd(fl(left[Y1])), C.fy(Y1)),
+        % (C.usd(fl(left[first])), C.fy(first), C.usd(fl(left[last])), C.fy(last)),
         facts, conclusions,
         chart=TP.series(
-            'What the school lines left, by year', [C.fy(y) for y in J.YEARS],
-            [TP.track('Left, orders still owed counted', [fl(m['years'][y]['left']) for y in J.YEARS],
+            'What the school lines left, by year', [C.fy(y) for y in YEARS()],
+            [TP.track('Left, orders still owed counted', [fl(m['years'][y]['left']) for y in YEARS()],
                       'published', 'bar')], '$', kind='bar',
             note='School general fund, department 300. Every line’s Left in the table above, '
                  'summed.', note_allow=('300',)),
         blocks=[
             TB.custom('fy-year-picker', 'Fiscal year', dict(
-                bare=True, years=[C.fy(y) for y in J.YEARS], label='Change year',
-                spans={C.fy(y): '1 July %d to 30 June %d' % (y - 1, y) for y in J.YEARS}),
-                      place='top', figures=[C.fy(y) for y in J.YEARS],
-                      allow=['1 July %d to 30 June %d' % (y - 1, y) for y in J.YEARS],
+                bare=True, years=[C.fy(y) for y in YEARS()], label='Change year',
+                spans={C.fy(y): '1 July %d to 30 June %d' % (y - 1, y) for y in YEARS()}),
+                      place='top', figures=[C.fy(y) for y in YEARS()],
+                      allow=['1 July %d to 30 June %d' % (y - 1, y) for y in YEARS()],
                       alt='The fiscal year every chart on this page shows',
                       so=('Every chart below shows the year picked here, and a line opened from '
                           'the table opens in that year.', None, ())),
@@ -807,8 +912,9 @@ def page(m):
                           'what every school line spent or still owed that week, stacked by who '
                           'paid or by kind of posting, with bills re-charged to other funds below '
                           'the line',
-                      so=('In %s every bill re-charged off the school budget was re-charged in '
-                          'June.' % C.fy(Y1), {'y': F(Y1)}, ())),
+                      so=('Re-charges are journal entries, so they land when the books are '
+                          'adjusted, not when the bills were paid. The line under the totals says '
+                          'how much of the year’s landed in June.', None, ())),
             TB.custom('fy-line-table', 'Every line, budget and cost', lines, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
@@ -846,23 +952,31 @@ def page(m):
                       alt='The picked year’s figures and what they show',
                       so=('Each figure is the year picked at the top; pick another and they '
                           'change with it.', None, ())),
+            TB.custom('fy-readiness', 'Years and what they need', ready, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'What the archive holds, checked when the page is built'),
+                      alt='List of fiscal years: for each year the page does not show in full, '
+                          'which inputs are held and which are missing, with the records request '
+                          'that would close each missing one',
+                      so=('A year joins this page the day its data is held. What is missing for '
+                          'the next one is a records request, worded here.', None, ())),
         ],
         sources=[
             dict(label='Lunenburg Budget Project — munis-school-journal.csv (every school '
-                       'journal line, every fund, FY2023–FY2026, our redacted reading of the '
-                       'Town’s Report 1)', href=J.PUBLIC['journal']),
+                       'journal line, every fund, %s–%s, our redacted reading of the '
+                       'Town’s Report 1)' % (C.fy(first), C.fy(last)), href=J.PUBLIC['journal']),
             dict(label='Lunenburg Budget Project — munis-school-journal-accounts.csv',
                  href=J.PUBLIC['accounts']),
-            dict(label='Town of Lunenburg — school general fund period-13 reports, FY2023–FY2026 '
-                       '(each line tied to the cent)',
-                 href='/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-gf-school.xlsx'),
+            dict(label='Town of Lunenburg — school general fund period-13 reports, %s–%s '
+                       '(each line tied to the cent)' % (C.fy(first), C.fy(last)),
+                 href=ledger_doc(last, 'gf-school')),
             dict(label='Town of Lunenburg — school special funds period-13 reports (every fund '
                        'they print tied to the cent)',
-                 href='/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx'),
+                 href=ledger_doc(last, 'special-school')),
             dict(label='Town of Lunenburg — how the journal reached us, and what was redacted',
                  href='/docs/town-ledgers/account-details/'
                       'PROVENANCE-fy2023-fy2026-p13-school-journal.md')],
-        finding_figures={'a': U(left[2023]), 'x': F(2023), 'b': U(left[Y1]), 'y': F(Y1)},
+        finding_figures={'a': U(left[first]), 'x': F(first), 'b': U(left[last]), 'y': F(last)},
         # HIDDEN, NOT RELEASED (TJ, 26 October 2026: "put this page into a hidden section where
         # we wont release it"). Built as a draft: outside the shelf registry, so it is on no
         # shelf, in no topics.json, not in the sitemap and not prerendered. The address still
@@ -896,7 +1010,14 @@ def printed_plan(m):
     and the circuit breaker line under it, in that year's approved book, tied to the ledger."""
     voted = {r['fy']: r['voted'] for r in m['rows'] if (r['account'] or '').endswith('-' + COLLAB)}
     out = {}
-    for fy, book in PLAN_BOOKS.items():
+    for fy in YEARS():
+        book = PLAN_BOOKS.get(fy)
+        # A YEAR WHOSE BOOK IS NOT MAPPED YET still gets its page: the plan is the ledger's vote,
+        # and the circuit breaker offset is marked UNREAD -- never "printed none", which is a
+        # statement about a book nobody opened (rule 13c). Mapping it is one line above.
+        if book is None:
+            out[fy] = dict(gross=voted[fy], offset=None, line=None, raw=[], book=None)
+            continue
         path = os.path.join(ROOT, 'sources', 'district-budget', 'text', book + '.txt')
         lines = open(path, encoding='utf-8').read().split('\n')
         at = [i for i, t in enumerate(lines) if t.startswith('Collaborative Tuitions ')]
@@ -933,7 +1054,7 @@ def plan_data(m, T):
     plan = printed_plan(m)
     groups = [g for g in PAYERS if g[0] != 'gf']
     years = []
-    for fy in J.YEARS:
+    for fy in YEARS():
         rs = [r for r in m['rows'] if r['fy'] == fy]
         ln = [r for r in rs if r['account']]
         tot = lambda f: sum((f(r) for r in ln), D0)
@@ -992,9 +1113,11 @@ def plan_data(m, T):
                   'Its budget less what it spent, after bills were re-charged to and from other funds.'),
                  ('cb', cb_step, ('Circuit breaker, counted on and not charged' if cb_step < 0
                                   else 'Circuit breaker, charged beyond what was counted on')
-                  if offset is not None else 'Circuit breaker, which the book did not count on',
+                  if offset is not None else 'Circuit breaker, which the book did not count on'
+                  if pl['book'] else 'Circuit breaker, against a book not read yet',
                   'Charged to collaborative tuition, against the offset the year’s book printed.'
-                  if offset is not None else 'This year’s book printed no offset, so all of it is beyond the plan.'),
+                  if offset is not None else 'This year’s book printed no offset, so all of it is beyond the plan.'
+                  if pl['book'] else 'This year’s approved book is not mapped yet, so what it counted on is unknown.'),
                  ('other', other_on, 'Other funds, toward school lines',
                   T.lit('Grants, fees and other funds, on the same lines the budget pays for; %s of it '
                         're-charged from the school budget after it paid.' % T.usd(sum(later.values(), D0)))),
@@ -1005,9 +1128,9 @@ def plan_data(m, T):
         bridge = [dict(id=i, n=fl(v), v=('+' if v > 0 else '−' if v < 0 else '') + T.usd(abs(v)),
                        label=l, means=w) for i, v, l, w in steps]
         years.append(dict(
-            bridge=bridge,
-            fy=T.fy(fy), book=T.lit('/docs/district-budget/docs/%s.pdf' % pl['book']),
-            book_line=T.lit(str(pl['line'])), raw=[T.lit(x) for x in pl['raw']],
+            bridge=bridge, unread=pl['book'] is None,
+            fy=T.fy(fy), book=T.lit('/docs/district-budget/docs/%s.pdf' % pl['book']) if pl['book'] else None,
+            book_line=T.lit(str(pl['line'])) if pl['line'] else None, raw=[T.lit(x) for x in pl['raw']],
             gf=dict(budget=fl(budget), before=fl(before), off=fl(off), on=fl(on), spent=fl(spent),
                     left=fl(left), early=fl(early), unspent=fl(gf_un),
                     t=dict(early=T.usd(early), own=T.usd(spent - early), unspent=T.usd(gf_un), used=T.usd(budget - gf_un), budget=T.usd(budget), before=T.usd(before), off=T.usd(off),
@@ -1044,14 +1167,14 @@ def plan_data(m, T):
         r_gf='School general fund', budget='Budget', left='left', over='over by',
         before='Spent before re-charges',
         r_cb='Circuit breaker, collaborative tuition', counted='Counted on in the book',
-        none_printed='The book printed no offset', charged='charged', charged_of='charged of',
+        none_printed='The book printed no offset', unread='This year’s approved book is not read yet', charged='charged', charged_of='charged of',
         r_other='Other funds', not_printed='No book printed these as part of the plan',
         from_start='paid from the start', later='re-charged after the school budget paid',
         unmatched_note='Hatched: {v} of it is on no school line; we cannot say which line it paid toward.',
         h_plan='The plan', voted='Voted', transfers='Transfers in or out',
         carried='Last year’s orders carried in',
         collab_gross='Collaborative tuition, before the offset', collab_net='Collaborative tuition, voted',
-        none='none printed', h_gf='The school general fund',
+        none='none printed', not_read='book not read yet', h_gf='The school general fund',
         under='Budget less spent before re-charges', spent='Spent, after re-charges',
         left_row='Left', charged_row='Charged to the circuit breaker',
         cb_diff='Charged, against what was counted on',
@@ -1061,7 +1184,7 @@ def plan_data(m, T):
         beyond_row='Beyond the plan',
         unmatched_row='Other funds, on no school line',
         printed='The lines as the year’s book prints them',
-        h_abs='In dollars', h_diff='From the plan to what happened', bridge_cut='The two totals are cut short at the left, so the steps between them show.',
+        h_abs='In dollars', h_diff='From the plan to what happened',
         a_plan='The plan', a_plan_sub='Budget, and the circuit breaker the book counted on',
         a_happened='What happened', a_happened_sub='Every school dollar spent, by who paid',
         a_beyond='beyond the plan', on_no_line='on no school line',
@@ -1135,7 +1258,7 @@ def funds_data(m, T):
     fname = fund_names()
     names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
     years = []
-    for fy in J.YEARS:
+    for fy in YEARS():
         rows = []
         for (y, f), d in sorted(m['src'].items()):
             if y != fy:
@@ -1212,7 +1335,7 @@ def overlap_data(m, T):
     A = J.accounts()
     keys = [b for b, _, _ in BANDS] + ['back']
     years = []
-    for fy in J.YEARS:
+    for fy in YEARS():
         tot = defaultdict(Decimal)
         by = defaultdict(lambda: defaultdict(Decimal))
         for (y, f), d in m['src'].items():
@@ -1260,7 +1383,7 @@ def fund_texts(m):
     posting (`r`: [iso, date, kind, payee, memo, its account, went to, text, amount])."""
     names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
     files = {}
-    for fy in J.YEARS:
+    for fy in YEARS():
         body = {}
         for (y, f), d in sorted(m['src'].items()):
             if y != fy:

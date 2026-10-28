@@ -23,7 +23,7 @@ import { useFyYear } from './fy-year'
 import type { CustomProps } from './index'
 
 type Other = { id: string; start: number; later: number; unmatched: number; t: Record<'start' | 'later' | 'paid' | 'unmatched' | 'all', string> }
-type Year = { fy: string; book: string; book_line: string; raw: string[]
+type Year = { fy: string; book: string | null; book_line: string | null; raw: string[]; unread: boolean
   gf: { budget: number; before: number; off: number; on: number; spent: number; left: number; early: number; unspent: number
     t: Record<'budget' | 'before' | 'off' | 'on' | 'spent' | 'left' | 'under' | 'voted' | 'transfers' | 'carried' | 'early' | 'own' | 'unspent' | 'used', string> }
   cb: { plan: number | null; paid: number; unspent: number; t: { plan: string | null; paid: string; unspent: string; used: string | null; gross: string; net: string; diff: string | null } }
@@ -34,39 +34,8 @@ type Data = { years: (Year & { bridge: { id: string; n: number; v: string; label
 // the weekly chart's colours, by payer, so a fund is one colour across the page
 const PAYER = { gf: 'var(--thread-1)', idea: 'var(--thread-2)', grants: 'var(--thread-5)', cb: 'var(--thread-4)',
   fees: 'var(--thread-3)', other: 'var(--thread-6, var(--text-secondary))' } as Record<string, string>
-const RC = 'var(--text-muted)'
-// re-charged back: a pale solid, apart from capital's dark grey and the hatched step off
-const BACK = 'color-mix(in srgb, var(--text-muted) 45%, transparent)'
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 const hatch = (c: string) => `repeating-linear-gradient(135deg, ${c} 0 3px, transparent 3px 6px)`
-
-type Seg = { from: number; to: number; fill: string; title: string; border?: string; lane?: number }
-
-// `lanes`: a WATERFALL's steps each on their own lane, top to bottom, so a step back does not
-// paint over the step before it (the general fund: spent before re-charges, re-charged off,
-// re-charged back on)
-function Track({ segs, lo, hi, end, endText, lanes = 1 }: { segs: Seg[]; lo: number; hi: number; end?: number; endText?: string; lanes?: number }) {
-  const pc = (v: number) => ((v - lo) / (hi - lo)) * 100
-  const zero = pc(0)
-  const lane = (i = 0) => lanes === 1 ? { top: 4, bottom: 4 } : { top: `${4 + (i * 92) / lanes}%`, height: `${92 / lanes - 4}%` }
-  return (
-    // w-full, and flex-1 only beside the label: in the phone's column layout flex-1 would give
-    // the track a zero basis and no height
-    <div className={`relative ${lanes > 1 ? 'h-10' : 'h-6'} w-full sm:flex-1 min-w-0 shrink-0`}>
-      <div className="absolute inset-y-0 w-px" style={{ left: `${zero}%`, background: 'var(--text-secondary)' }} />
-      {segs.filter(s => Math.abs(s.to - s.from) > 0.5).map((s, i) => {
-        const a = pc(Math.min(s.from, s.to)), b = pc(Math.max(s.from, s.to))
-        return <div key={i} title={s.title} className="absolute rounded-[2px]"
-          style={{ ...lane(s.lane), left: `${a}%`, width: `max(2px, ${b - a}%)`, background: s.fill, border: s.border }} />
-      })}
-      {end !== undefined ? (
-        <div className="absolute top-0 bottom-0 w-0.5" style={{ left: `${pc(end)}%`, background: 'var(--text-primary)' }} />) : null}
-      {end !== undefined && endText ? (
-        // on whichever side of the marker has more room, so it never runs off a phone's edge
-        <span className="absolute top-1/2 -translate-y-1/2 text-[11.5px] tabular-nums font-semibold whitespace-nowrap px-1 rounded-sm"
-          style={{ background: 'var(--surface-1, var(--surface-2))', ...(pc(end) > 50 ? { right: `${100 - pc(end)}%`, marginRight: 3 } : { left: `${pc(end)}%`, marginLeft: 3 }) }}>{endText}</span>) : null}
-    </div>)
-}
 
 /** A bar from zero: its parts side by side, and under it each part's name and value, since a
  *  small part is too thin to carry its own label. */
@@ -115,22 +84,7 @@ export default function FyPlan({ data, alt }: CustomProps) {
   // single FY... we can add comparison page later"): the page's year, on its own scale
   const y = d.years[Math.max(0, fys.indexOf(fy))]
   const label = Object.fromEntries(d.groups.map(g => [g.id, g.label]))
-  const g = y.gf, a = g.before - g.budget, b = a - g.off, c = b + g.on
-  const cbv = y.cb.plan === null ? y.cb.paid : y.cb.paid - y.cb.plan
-  let x = 0
-  const others: Seg[] = []
-  for (const o of y.others) {
-    for (const [v, part, text] of [[o.start, t.from_start, o.t.start], [o.later, t.later, o.t.later], [o.unmatched, t.on_no_line, o.t.unmatched]] as const) {
-      if (v > 0.5) {
-        others.push({ from: x, to: x + v, fill: part === t.on_no_line || o.id === 'cb' ? hatch(PAYER[o.id]) : PAYER[o.id],
-          title: `${label[o.id]}, ${part}: ${text}` })
-        x += v
-      }
-    }
-  }
-  const lo0 = Math.min(0, a, b, c, cbv), hi0 = Math.max(0, a, b, c, cbv, x)
-  const pad = (hi0 - lo0) * 0.04
-  const lo = lo0 - pad, hi = hi0 + pad
+  const g = y.gf
 
   return (
     <figure aria-label={alt}>
@@ -145,7 +99,7 @@ export default function FyPlan({ data, alt }: CustomProps) {
             <Row label={t.a_plan} sub={`${t.a_plan_sub}${y.totals.unspent > 0.5 ? ` · ${t.a_unspent_sub}` : ''}`}>
               <Absolute max={max} total={y.totals.t.plan} parts={[
                 { name: t.a_gf_used, value: g.budget - g.unspent, text: g.t.used, fill: 'color-mix(in srgb, var(--thread-1) 55%, transparent)' },
-                ...(y.cb.plan !== null && y.cb.t.plan ? [{ name: t.a_cb_used, value: y.cb.plan - y.cb.unspent, text: y.cb.t.used,
+                ...(y.cb.plan !== null && y.cb.t.plan ? [{ name: t.a_cb_used, value: y.cb.plan - y.cb.unspent, text: y.cb.t.used ?? '',
                   fill: 'color-mix(in srgb, var(--thread-4) 55%, transparent)' }] : []),
                 { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true },
                 { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true }]} />
@@ -164,21 +118,21 @@ export default function FyPlan({ data, alt }: CustomProps) {
       })()}
       {/* THE BRIDGE (TJ, 27 October 2026, of the chart it replaced -- a waterfall per source,
           each on its own baseline -- "the hardest to understand"): from the plan to what
-          happened, one reason a step. The totals run off the left edge so the steps, a few
-          percent of them, are wide enough to read. */}
+          happened, one reason a step, every bar on one scale from zero. */}
       <p className="text-[13px] font-semibold mt-5 mb-1">{t.h_diff}</p>
       {(() => {
         let run = y.totals.plan
         const rows = y.bridge.map(s => { const from = run; run += s.n; return { ...s, from, to: run } })
         const ends = [y.totals.plan, ...rows.map(r => r.to)]
-        const span = Math.max(...ends) - Math.min(...ends)
-        const lo = Math.min(...ends) - span * 0.35, hi = Math.max(...ends) + span * 0.04
+        // FROM ZERO (TJ: "i dont know how $3m is longer than $26m"): a bar's length is its
+        // value, so the totals start at zero and the steps are drawn to the same scale
+        const lo = 0, hi = Math.max(...ends) * 1.02
         const pc = (v: number) => ((v - lo) / (hi - lo)) * 100
         const total = (label: string, v: number, text: string) => (
           <Row label={label}>
             <div className="relative h-6 w-full sm:flex-1 min-w-0 shrink-0">
-              <div className="absolute top-0.5 bottom-0.5 left-0" title={`${label}: ${text}`}
-                style={{ width: `${pc(v)}%`, background: 'linear-gradient(to right, transparent, var(--text-secondary) 18%)' }} />
+              <div className="absolute top-0.5 bottom-0.5 left-0 rounded-[2px]" title={`${label}: ${text}`}
+                style={{ width: `${pc(v)}%`, background: 'var(--text-secondary)' }} />
               <span className="absolute top-1/2 -translate-y-1/2 text-[12.5px] tabular-nums font-semibold whitespace-nowrap"
                 style={pc(v) > 70 ? { right: `${100 - pc(v)}%`, marginRight: 4, color: 'var(--surface-1, #fff)' } : { left: `${pc(v)}%`, marginLeft: 4 }}>{text}</span>
             </div>
@@ -199,7 +153,6 @@ export default function FyPlan({ data, alt }: CustomProps) {
                 </div>
               </Row>))}
             {total(t.a_happened, y.totals.happened, y.totals.t.happened)}
-            <p className="text-[11.5px] sm:pl-[14.75rem] mt-0.5" style={muted}>{t.bridge_cut}</p>
           </div>)
       })()}
 
@@ -220,7 +173,7 @@ export default function FyPlan({ data, alt }: CustomProps) {
               ['r', t.carried, (y: Year) => y.gf.t.carried],
               ['b', t.budget, (y: Year) => y.gf.t.budget],
               ['r', t.collab_gross, (y: Year) => y.cb.t.gross],
-              ['r', t.counted, (y: Year) => y.cb.t.plan ?? t.none],
+              ['r', t.counted, (y: Year) => y.cb.t.plan ?? (y.unread ? t.not_read : t.none)],
               ['r', t.collab_net, (y: Year) => y.cb.t.net],
               ['h', t.h_gf],
               ['r', t.before, (y: Year) => y.gf.t.before],
@@ -230,7 +183,7 @@ export default function FyPlan({ data, alt }: CustomProps) {
               ['r', t.spent, (y: Year) => y.gf.t.spent],
               ['b', t.left_row, (y: Year) => y.gf.t.left],
               ['h', t.r_cb],
-              ['r', t.counted, (y: Year) => y.cb.t.plan ?? t.none],
+              ['r', t.counted, (y: Year) => y.cb.t.plan ?? (y.unread ? t.not_read : t.none)],
               ['r', t.charged_row, (y: Year) => y.cb.t.paid],
               ['b', t.cb_diff, (y: Year) => y.cb.t.diff === null ? t.none : `${y.cb.paid < (y.cb.plan ?? 0) ? '−' : '+'}${y.cb.t.diff}`],
               ['h', t.r_other],
@@ -255,8 +208,8 @@ export default function FyPlan({ data, alt }: CustomProps) {
       </div>
       <details className="mt-3 text-[12.5px]">
         <summary className="cursor-pointer font-semibold">{t.printed}</summary>
-        <p className="mt-1"><a href={y.book} className="underline">{t.book}</a>
-          <span style={muted}>, {t.line} {y.book_line}</span></p>
+        {y.book ? <p className="mt-1"><a href={y.book} className="underline">{t.book}</a>
+          <span style={muted}>, {t.line} {y.book_line}</span></p> : <p className="mt-1" style={muted}>{t.unread}</p>}
         {y.raw.map((r, i) => <code key={i} className="block text-[11.5px] whitespace-pre-wrap" style={secondary}>{r}</code>)}
       </details>
     </figure>)

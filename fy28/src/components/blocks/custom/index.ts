@@ -14,6 +14,7 @@ import FyYearFacts from './fy-year-facts'
 import FyYearPicker from './fy-year-picker'
 import FyOverlap from './fy-overlap'
 import FyYearLine from './fy-year-line'
+import FyReadiness from './fy-readiness'
 import FyPlan from './fy-plan'
 import FySourceTable from './fy-source-table'
 import FyYearWeeks from './fy-year-weeks'
@@ -30,6 +31,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-year-picker': FyYearPicker,
   'fy-overlap': FyOverlap,
   'fy-year-line': FyYearLine,
+  'fy-readiness': FyReadiness,
   'fy-plan': FyPlan,
   'fy-source-table': FySourceTable,
   'fy-year-weeks': FyYearWeeks,

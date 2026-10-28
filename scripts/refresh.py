@@ -1410,6 +1410,11 @@ def run(a, notes, ctx):
                 py('build_threads.py', check=False)
         py('build_budget_feed.py', '--as-of', a.as_of)
         py('build_feeds.py')
+        # THE FY BREAKDOWN UNLOCKS A YEAR BY ITSELF (TJ, 27 October 2026: "as soon as we ingest the
+        # same data from munis.. the FY should auto-unlock"): it reads its years off the journal and
+        # shows each one whose inputs are held, so rebuilding it daily is the whole hook. ~12 s.
+        py('build_fy_breakdown.py', check=False)
+        py('verify_fy_breakdown.py', check=False)
         # AND THE DATABASE, AND EVERYTHING THE SITE SERVES OFF IT. See SITE_PAYLOADS:
         # this run has just changed the minutes, the transcripts and the meeting record,
         # and every payload built from them was being left at yesterday's figures and

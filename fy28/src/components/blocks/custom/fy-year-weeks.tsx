@@ -12,7 +12,7 @@ import type { CustomProps } from './index'
 
 type Top = { line: string; what: string; payee: string; fund: string; text: string }
 type Week = { w: string; label: string; f: [string, number][]; k: [string, number][]; rc: number; rb: number; t: string; t_rc: string; t_rb: string; top: Top[] }
-type Year = { fy: string; a0: string; a1: string; weeks: Week[]; total: string; recharged: string; back: string }
+type Year = { fy: string; a0: string; a1: string; weeks: Week[]; total: string; recharged: string; back: string; june: string }
 type Data = { years: Year[]; payers: { id: string; label: string }[]; kinds: { id: string; label: string }[]
   text: Record<'by_fund' | 'by_kind' | 'clear' | 'recharge' | 'back' | 'spent' | 'recharged' | 'back_total' | 'biggest' | 'pick' | 'note', string> }
 
@@ -75,6 +75,7 @@ export default function FyYearWeeks({ data, alt }: CustomProps) {
       <p className="mt-2 text-[13.5px]"><span className="tabular-nums font-semibold">{y.total}</span> <span style={secondary}>{d.text.spent}</span>
         {y.recharged ? <> · <span className="tabular-nums font-semibold">{y.recharged}</span> <span style={secondary}>{d.text.recharged}</span></> : null}
         {y.back ? <> · <span className="tabular-nums font-semibold">{y.back}</span> <span style={secondary}>{d.text.back_total}</span></> : null}</p>
+      {y.june ? <p className="text-[12.5px] mt-0.5" style={secondary}>{y.june}</p> : null}
       <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] mt-1.5" style={secondary}>
         {groups.filter(g => y.weeks.some(w => parts(w).some(([id]) => id === g.id))).map(g => (
           <span key={g.id} className="inline-flex items-center gap-1"><span className="inline-block w-2.5 h-2.5 rounded-sm" style={{ background: colour[g.id] }} />{g.label}</span>))}

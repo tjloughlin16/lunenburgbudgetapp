@@ -34,8 +34,23 @@ from build_school_surplus import category_of  # noqa: E402  (the one shared defi
 
 DATA = os.path.join(ROOT, 'sources', 'data')
 D0, CENT = Decimal(0), Decimal('0.01')
-YEARS = (2023, 2024, 2025, 2026)
-OPEN = 2026
+PAYLOAD_ = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy-breakdown.json')
+
+
+def _years():
+    """THE PAGE'S YEARS, off the page (the years picker), and the open one off the raw journal:
+    the year among them with no close (`YEC`). The page decides which years are ready
+    (build_fy_breakdown.readiness); this checks every one it chose."""
+    p = json.load(open(PAYLOAD_, encoding='utf-8'))
+    pick = next(b for b in p['blocks'] if b.get('component') == 'fy-year-picker')
+    ys = tuple(int(y[2:]) for y in pick['data']['years'])
+    closed = {int(r['fiscal_year']) for r in csv.DictReader(
+        open(os.path.join(DATA, 'munis-school-journal.csv'), encoding='utf-8')) if r['source'] == 'YEC'}
+    open_ = [y for y in ys if y not in closed]
+    return ys, (open_[0] if open_ else None)
+
+
+YEARS, OPEN = _years()
 PRIVATE = '0100-3-300-9300-51-1-06-2-535019'
 COLLAB = '0100-3-300-9400-51-1-06-2-535023'
 PAYLOAD = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', 'fy-breakdown.json')
