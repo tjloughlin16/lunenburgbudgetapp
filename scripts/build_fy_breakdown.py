@@ -1381,10 +1381,28 @@ def line_funds_data(m, T):
                 want = sum((v for (k, _), v in d.items() if k == kind), D0)
                 if want != check[(f, kind)]:
                     fail('FY%d fund %s %s: by line %s, by fund %s' % (fy, f, kind, check[(f, kind)], want))
-        rows.sort(key=lambda r: (r['cat'], r['line'], -r['n']))
-        years.append(dict(fy=T.fy(fy), rows=rows,
-                          total=T.usd(sum((v for v in check.values()), D0)),
-                          n_lines=len({r['line'] for r in rows})))
+        # ONE ROW PER LINE (TJ, 27 October 2026: "group lines together ... that are the same
+        # school line, aggregates, but listing the funds paying it, with details available by
+        # clicking"): the line's total from other funds, its share of the line's cost, and the
+        # fund rows under it
+        by = defaultdict(list)
+        for r in rows:
+            by[(r['cat'], r['line'], r['acct'])].append(r)
+        groups = []
+        for (cat, name, acct), rs in by.items():
+            v = sum((Decimal(str(r['n'])) for r in rs), D0)
+            lr = line.get((fy, acct)) if acct else None
+            cost = lr['all_funds_cost'] if lr else None
+            groups.append(dict(cat=cat, line=name, acct=acct, n=round(fl(v), 2), t=T.usd(v),
+                               budget=rs[0]['budget'],
+                               share=T.lit('%d%%' % round(100 * v / cost)) if cost and v > 0 else '',
+                               groups=sorted({r['group'] for r in rs}),
+                               funds=sorted(rs, key=lambda r: -r['n'])))
+        groups.sort(key=lambda g: (g['cat'], g['line']))
+        total = sum((v for v in check.values()), D0)
+        if abs(sum((Decimal(str(g['n'])) for g in groups), D0) - total) > Decimal('0.05'):
+            fail('FY%d: the lines do not sum to what other funds paid toward them' % fy)
+        years.append(dict(fy=T.fy(fy), lines=groups, total=T.usd(total), n_rows=len(rows)))
     return dict(years=years, how=[dict(id=k, label=l, means=w) for k, l, w in HOW_PLACED],
                 groups=[dict(id=g, label=l) for g, l in PAYERS if g != 'gf'],
                 text=dict(cat='Category', line='School line', fund='Fund', kind='Kind of fund',
@@ -1394,7 +1412,8 @@ def line_funds_data(m, T):
                           budget_means='The school budget for the line: voted, transfers, and orders carried in.',
                           all_kinds='Every kind', filter='Filter by line, category or fund',
                           scroll='More columns: scroll the table sideways', sum='Every row',
-                          lines='school lines'))
+                          lines='school lines', funds='funds', fund_one='fund', open='Show the funds',
+                          expand='Open every line', collapse='Close every line'))
 
 
 # OVERLAP (TJ, 27 October 2026: "these other sources of funds are complimenting or supplementing
