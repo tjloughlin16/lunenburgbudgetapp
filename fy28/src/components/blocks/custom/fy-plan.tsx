@@ -18,7 +18,7 @@
  *   - other funds, which no book printed as part of the plan, by who paid.
  *  One year, the page's, on its own scale.
  *  Every figure is formatted by scripts/build_fy_breakdown.py. */
-import { useMemo } from 'react'
+import { useLayoutEffect, useMemo, useRef, useState } from 'react'
 import { useFyYear } from './fy-year'
 import type { CustomProps } from './index'
 import { PAYER, hatch, Row } from './fy-shared'
@@ -34,32 +34,109 @@ type Data = { years: Year[]; groups: { id: string; label: string }[]; text: Reco
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 
-/** A bar from zero: its parts side by side, and under it each part's name and value, since a
- *  small part is too thin to carry its own label. */
-type Part = { name: string; value: number; text: string; fill: string; outline?: boolean }
+/** A bar from zero: its parts side by side, and UNDER IT A VERTICAL LABEL FOR EACH FUND (TJ, 28
+ *  October 2026: "show the 'what happened' chart without a huge long running legend, and instead
+ *  use vertical labels for the funds"). Each label hangs from its segment's middle on a leader
+ *  line, so the eye goes from the colour straight to the name. A fund's parts on and off a school
+ *  line share one label (`group`), its value the two added with the hatched part named. Labels
+ *  too close to fit are spread apart and their leaders bend, never overlap. */
+type Part = { name: string; value: number; text: string; fill: string; outline?: boolean; group?: string }
 // UNSPENT is OUTLINED, never filled: money allocated to the year and not spent is not spending,
 // and a filled bar would read as some
 const outlined = (c: string) => ({ background: 'transparent', border: `1.5px dashed ${c}` })
-function Absolute({ parts, max, total }: { parts: Part[]; max: number; total: string }) {
+type Label = { name: string; text: string; swatch: React.CSSProperties; title: string; mid: number; parts: Part[] }
+const GAP = 4, DROP = 18
+const usd = (v: number) => '$' + Math.round(v).toLocaleString('en-US')
+
+function labels(shown: Part[], max: number): Label[] {
+  const out: (Label & { from: number; to: number; parts: Part[] })[] = []
+  let at = 0
+  for (const p of shown) {
+    const last = out[out.length - 1]
+    if (p.group && last && last.parts[0].group === p.group) { last.parts.push(p); last.to = at + p.value }
+    else out.push({ name: p.group ?? p.name, text: '', title: '', mid: 0, from: at, to: at + p.value, parts: [p],
+      swatch: p.outline ? outlined(p.fill) : { background: p.fill } })
+    at += p.value
+  }
+  return out.map(l => ({ ...l, mid: ((l.from + l.to) / 2 / max) * 100,
+    // ONE LINE OF VALUE: the fund's total. The split on and off a school line is in the hover,
+    // and the key under the bar says what the hatching is
+    text: l.parts.length > 1 ? usd(l.parts.reduce((a, p) => a + p.value, 0)) : l.parts[0].text,
+    title: l.parts.map(p => `${p.name}: ${p.text}`).join('\n') }))
+}
+
+function Absolute({ parts, max, total, hatched }: { parts: Part[]; max: number; total: string; hatched?: string }) {
   const shown = parts.filter(p => p.value > 0.5)
+  const ls = labels(shown, max)
+  const box = useRef<HTMLDivElement>(null)
+  const refs = useRef<(HTMLDivElement | null)[]>([])
+  const [geo, setGeo] = useState<{ w: number; xs: number[]; h: number; fit: boolean } | null>(null)
+  // MEASURED, not guessed: the row's width and each label's own, then a left-to-right pass that
+  // keeps every label clear of the one before and a right-to-left pass that keeps the last ones
+  // inside the row
+  useLayoutEffect(() => {
+    const el = box.current
+    if (!el) return
+    const place = () => {
+      const w = el.clientWidth
+      const ws = ls.map((_, i) => refs.current[i]?.offsetWidth ?? 0)
+      const xs = ls.map((l, i) => (l.mid / 100) * w - ws[i] / 2)
+      for (let i = 0; i < xs.length; i++) xs[i] = Math.max(xs[i], i ? xs[i - 1] + ws[i - 1] + GAP : 0)
+      for (let i = xs.length - 1; i >= 0; i--) xs[i] = Math.min(xs[i], i < xs.length - 1 ? xs[i + 1] - ws[i] - GAP : w - ws[i])
+      for (let i = 0; i < xs.length; i++) xs[i] = Math.max(xs[i], i ? xs[i - 1] + ws[i - 1] + GAP : 0)
+      const h = Math.max(0, ...ls.map((_, i) => refs.current[i]?.offsetHeight ?? 0))
+      // A PHONE CANNOT HOLD THEM SIDE BY SIDE: past the row's width the labels become a wrapped
+      // list under the bar instead, the leaders dropped (a leader to a label off its segment
+      // would point nowhere)
+      const fit = ws.reduce((a, x) => a + x, 0) + GAP * (ws.length - 1) <= w
+      setGeo(g => g && g.w === w && g.h === h && g.fit === fit && g.xs.every((x, i) => Math.abs(x - xs[i]) < 0.5) && g.xs.length === xs.length ? g : { w, xs, h, fit })
+    }
+    place()
+    const ro = new ResizeObserver(place)
+    ro.observe(el)
+    return () => ro.disconnect()
+  })
   return (
     <div className="w-full sm:flex-1 min-w-0 shrink-0">
-      <div className="flex items-center gap-2">
-        <div className="relative h-6 flex-1 min-w-0">
-          {shown.reduce<{ at: number; el: React.ReactNode[] }>((acc, p, i) => {
-            acc.el.push(<div key={i} title={`${p.name}: ${p.text}`} className="absolute top-0.5 bottom-0.5"
-              style={{ left: `${(acc.at / max) * 100}%`, width: `max(2px, ${(p.value / max) * 100}%)`,
-                ...(p.outline ? outlined(p.fill) : { background: p.fill, borderRight: '1px solid var(--surface-1, #fff)' }) }} />)
-            acc.at += p.value
-            return acc
-          }, { at: 0, el: [] }).el}
+      <div className="flex items-start gap-2">
+        <div ref={box} className="relative flex-1 min-w-0">
+          <div className="relative h-6">
+            {shown.reduce<{ at: number; el: React.ReactNode[] }>((acc, p, i) => {
+              acc.el.push(<div key={i} title={`${p.name}: ${p.text}`} className="absolute top-0.5 bottom-0.5"
+                style={{ left: `${(acc.at / max) * 100}%`, width: `max(2px, ${(p.value / max) * 100}%)`,
+                  ...(p.outline ? outlined(p.fill) : { background: p.fill, borderRight: '1px solid var(--surface-1, #fff)' }) }} />)
+              acc.at += p.value
+              return acc
+            }, { at: 0, el: [] }).el}
+          </div>
+          <div className="relative overflow-hidden" style={{ height: geo ? (geo.fit ? DROP + geo.h : 0) : DROP + 120 }}>
+            {geo?.fit ? (
+              <svg aria-hidden className="absolute inset-x-0 top-0 overflow-visible" width={geo.w} height={DROP}>
+                {ls.map((l, i) => {
+                  const m = (l.mid / 100) * geo.w, c = geo.xs[i] + (refs.current[i]?.offsetWidth ?? 0) / 2
+                  return <path key={i} d={`M${m},0 V5 L${c},${DROP - 4} V${DROP}`} fill="none" stroke="var(--text-muted)" strokeWidth={1} />
+                })}
+              </svg>) : null}
+            {ls.map((l, i) => (
+              <div key={i} ref={e => { refs.current[i] = e }} title={l.title}
+                className="absolute flex flex-col items-start gap-x-0.5 text-[11.5px] leading-tight whitespace-nowrap"
+                style={{ top: DROP, left: geo ? geo.xs[i] : 0, visibility: geo?.fit ? 'visible' : 'hidden',
+                  writingMode: 'vertical-lr', color: 'var(--text-secondary)' }}>
+                <span className="inline-flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-[1px] shrink-0" style={l.swatch} />{l.name}</span>
+                <span className="tabular-nums font-semibold" style={{ color: 'var(--text-primary)' }}>{l.text}</span>
+              </div>))}
+          </div>
         </div>
-        <span className="text-[12.5px] tabular-nums font-semibold whitespace-nowrap">{total}</span>
+        <span className="text-[12.5px] tabular-nums font-semibold whitespace-nowrap leading-6">{total}</span>
       </div>
-      <p className="text-[11.5px] leading-snug mt-0.5" style={secondary}>
-        {shown.map((p, i) => <span key={i} className="inline-flex items-center gap-1 mr-3 whitespace-nowrap">
-          <span className="inline-block w-2 h-2 rounded-[1px]" style={p.outline ? outlined(p.fill) : { background: p.fill }} />{p.name} <span className="tabular-nums">{p.text}</span></span>)}
-      </p>
+      {geo && !geo.fit ? (
+        <p className="text-[11.5px] leading-snug mt-1" style={{ color: 'var(--text-secondary)' }}>
+          {ls.map((l, i) => <span key={i} title={l.title} className="inline-flex items-center gap-1 mr-3 whitespace-nowrap">
+            <span className="inline-block w-2 h-2 rounded-[1px]" style={l.swatch} />{l.name} <span className="tabular-nums">{l.text}</span></span>)}
+        </p>) : null}
+      {hatched && ls.some(l => l.parts.length > 1) ? (
+        <p className="text-[11.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
+          <span className="inline-block w-2.5 h-2.5 align-[-1px] mr-1 rounded-[1px]" style={{ background: hatch('var(--text-muted)') }} />{hatched}</p>) : null}
     </div>)
 }
 
@@ -91,13 +168,13 @@ export default function FyPlan({ data, alt }: CustomProps) {
             {/* UNSPENT AT THE END OF WHAT HAPPENED, outlined, after every dollar spent (TJ, 27
                 October 2026, picking this over the plan bar: "im not sure that makes sense") */}
             <Row label={t.a_happened} sub={`${t.a_happened_sub} · ${y.totals.t.beyond} ${t.a_beyond}${y.totals.unspent > 0.5 ? ` · ${t.a_unspent_sub}` : ''}`}>
-              <Absolute max={max} total={y.totals.t.happened} parts={[
+              <Absolute max={max} total={y.totals.t.happened} hatched={t.hatched_part} parts={[
                 { name: t.a_gf_spent, value: g.spent - g.early, text: g.t.own, fill: PAYER.gf },
                 { name: t.a_gf_early, value: g.early, text: g.t.early, fill: hatch(PAYER.gf) },
                 { name: t.a_cb_paid, value: y.cb.paid, text: y.cb.t.paid, fill: cbFill },
                 ...y.others.flatMap(o => [
-                  { name: label[o.id], value: o.start + o.later, text: o.t.paid, fill: o.id === 'cb' ? hatch(PAYER.cb) : PAYER[o.id] },
-                  { name: `${label[o.id]}, ${t.on_no_line}`, value: o.unmatched, text: o.t.unmatched, fill: hatch(PAYER[o.id]) }]),
+                  { name: label[o.id], value: o.start + o.later, text: o.t.paid, fill: o.id === 'cb' ? hatch(PAYER.cb) : PAYER[o.id], group: label[o.id] },
+                  { name: `${label[o.id]}, ${t.on_no_line}`, value: o.unmatched, text: o.t.unmatched, fill: hatch(PAYER[o.id]), group: label[o.id] }]),
                 { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true },
                 { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true }]} />
             </Row>

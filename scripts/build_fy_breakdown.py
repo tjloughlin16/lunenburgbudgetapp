@@ -39,6 +39,9 @@ import topic_blocks as TB  # noqa: E402
 import journal as J  # noqa: E402
 import build_school_surplus as S  # noqa: E402
 import fy_breakdown as FB  # noqa: E402
+import fy_payees as PY  # noqa: E402
+import fy_salaries as SAL  # noqa: E402
+import fy_web as WEB  # noqa: E402
 
 ID = 'fy-breakdown'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % ID)
@@ -289,7 +292,8 @@ def budget_changes_data(m, T):
                 cat=S.CAT_LABEL[r['category']], line=T.lit(names[r['account']]), acct=T.lit(r['account']),
                 voted=T.usd(r['voted']), transfers=signed(T, r['transfers']) if r['transfers'] else '',
                 carried=T.usd(r['carried_budget']) if r['carried_budget'] else '', final=T.usd(final),
-                n_voted=round(fl(r['voted']), 2), n_final=round(fl(final), 2), **bw,
+                n_voted=round(fl(r['voted']), 2), n_transfers=round(fl(r['transfers']), 2),
+                n_carried=round(fl(r['carried_budget']), 2), n_final=round(fl(final), 2), **bw,
                 moves=[dict(date=T.lit(long_date(x['date'])), memo=T.lit(x['memo'].strip() or 'no memo'),
                             v=signed(T, x['amount']), n=round(fl(x['amount']), 2),
                             others=[dict(line=T.lit(names.get(o['account'], o['description'].strip().title())),
@@ -300,7 +304,8 @@ def budget_changes_data(m, T):
                           n=len(rows)))
     return dict(years=years, show=10, text=dict(
         cat='Category', line='School line', voted='Voted', transfers='Transfers', carried='Carried in',
-        final='Final budget', change='Change', show_all='Show all', show_fewer='Show the largest',
+        final='Final budget', change='Change', show_all='Show all', show_fewer='Show the first',
+        sort='Click a heading to sort',
         lines='lines changed after the vote', flagged='flagged', close='Close',
         open='Open a line for the transfers that changed it',
         moves='Transfers', no_moves='No transfers: the change is last year’s orders carried in.',
@@ -937,6 +942,8 @@ def page(m):
     ready = readiness_data(T)
     by_line = line_funds_data(m, T)
     changes = budget_changes_data(m, T)
+    payees = payees_data(m, T)
+    salaries = salaries_data(m, T)
     # the bridge block's sentence, held to every year it is shown with: other funds are most of
     # the gap between the plan and what happened, and more than half of them on no school line
     for y in plan['years']:
@@ -1051,6 +1058,27 @@ def page(m):
                       so=('A fund’s money reaches the schools in different ways: some pays for the '
                           'same things a school line pays for, and much pays for things no school '
                           'line covers.', None, ())),
+            TB.custom('fy-payees', 'Who the schools paid', payees, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Every invoice in the journal, every school fund'),
+                      alt='Table, one fiscal year: every payee the schools paid by invoice from any '
+                          'fund, against the year before, with the change; payees new this year '
+                          'and payees not paid this year called out; a payee opens on what was '
+                          'bought from it, the lines and funds that paid it, and every payment',
+                      so=('Who was paid, and how that moved, is the plainest view of what the '
+                          'money bought. A payee new or gone is a change to ask about, not a '
+                          'finding by itself: a contract can be re-let, a vendor renamed.', None, ())),
+            TB.custom('fy-salaries', 'Salaries paid outside the general fund', salaries, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Every pay posting in the journal; moves name both ends'),
+                      alt='Two tables, one fiscal year: school salary lines whose pay a journal '
+                          'entry moved to or from another fund, with the share another fund carried '
+                          'in the end; and every other fund’s pay, by whether it was moved to or '
+                          'from a school line, booked to the same kind of work, or on no school line',
+                      so=('A salary line can end below the pay it ran because a grant took part of '
+                          'it at year end, or above because it took pay back. Most grant pay sits on '
+                          'no school line: the ledger names a kind of work, never a post.',
+                          None, ())),
             TB.custom('fy-overlap', 'Overlap with the school budget', overlap, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our matching of other funds’ spending to school lines'),
@@ -1076,6 +1104,36 @@ def page(m):
                           'that would close each missing one',
                       so=('A year joins this page the day its data is held. What is missing for '
                           'the next one is a records request, worded here.', None, ())),
+            # LAST (TJ, 28 October 2026: "move that to the bottom of the page. Its likely too detailed
+            # and will overwhelm people")
+            TB.custom('fy-web', 'How the funds and lines connect', web_data(T), place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('reading', 'Our placing of other funds’ spending on the lines'),
+                      alt='Network diagram, one fiscal year: every fund that spent on the schools '
+                          'as a block on the left and every school line as a block on the right, '
+                          'with an arrow for each way money connected them -- paid from the start, '
+                          're-charged later, moved back, the same kind of work, on no school line -- '
+                          'and budget transfers between lines as dashed arcs; a block opens the list '
+                          'of its arrows with their amounts',
+                      so=('The arrows are where the money met the lines: a line with several arrows '
+                          'into it was paid for by more than the school budget. No arrow runs from '
+                          'one line’s leftover to another’s overrun, because the books never record '
+                          'one.', None, ())),
+            # APPENDIX (TJ, 28 October 2026: "put this context on the breakout page as an appendix
+            # info section ... about how its difficult to match grant money"). No figure: the
+            # audit it summarises is ours and not yet in the model (notes/HANDOFF-FY-BREAKDOWN.md)
+            TB.explain('Why grant money is hard to match', [
+                '**Some money shown as on no school line pays for the same things a school line '
+                'does.** Grants and fee funds book their payroll to accounts named for a kind of work, '
+                'often with no function code, so no match rule here can tie it to a line, even when it '
+                'pays the same staff.',
+                'We read every such dollar, group by group. The largest part is grant pay for special '
+                'education aides, guidance counselors and teachers: the Town’s own year-end corrections '
+                'move that pay to and from those very lines, which shows where it belongs. Most of the '
+                'rest is the funds’ own programmes: lunch, extended day, trips and exam fees.',
+                'So this page understates what other funds pay toward the school lines. Placing that '
+                'money on the lines it supports is a further reading of ours, not yet made here.',
+            ], place='end', tone='define'),
         ],
         sources=[
             dict(label='Lunenburg Budget Project — munis-school-journal.csv (every school '
@@ -1303,7 +1361,7 @@ def plan_data(m, T):
         h_abs='In dollars',
         a_plan='The plan', a_plan_sub='Budget, and the circuit breaker the book counted on',
         a_happened='What happened', a_happened_sub='Every school dollar spent, by who paid',
-        a_beyond='beyond the plan', on_no_line='on no school line',
+        a_beyond='beyond the plan', on_no_line='on no school line', hatched_part='Hatched: spent on no school line',
         unmatched_row_note='hatched in the charts',
         a_gf_budget='School general fund budget', a_gf_spent='School general fund, after re-charges',
         a_gf_early='School general fund, next year’s tuition paid early',
@@ -2006,12 +2064,149 @@ def render(m=None):
     return json.dumps(p, ensure_ascii=False, sort_keys=True, separators=(',', ':')) + '\n'
 
 
+def web_files(m):
+    return WEB.files(m, line_name, fund_label, fund_group, payer_group, S.CAT_LABEL, money, LINES_DIR, fail)
+
+
+WEB_KINDS = [
+    ('paid', 'Paid from the start', 'The fund paid toward the line itself; our match, by the same payee'),
+    ('later', 'Re-charged later', 'The school budget paid, then the bill was re-charged to the fund by journal entry'),
+    ('back', 'Moved back', 'A bill the fund had paid was moved back onto the school budget'),
+    ('kind', 'Same kind of work', 'Our match by function code, to a category, never to one line'),
+    ('none', 'On no school line', 'Spending the books give no school line'),
+    ('capital', 'Capital articles', 'A capital article’s own project'),
+    ('between', 'Between funds', 'Moved from one fund to another by journal entry'),
+    ('transfer', 'Budget transfers', 'Budget moved from one line to another; budget, not spending'),
+    ('school', 'School budget’s own spending', 'What the school budget spent on each line, after re-charges'),
+]
+
+
+def web_data(T):
+    return dict(years=[T.fy(y) for y in YEARS()],
+                kinds=[dict(id=k, label=l, means=w) for k, l, w in WEB_KINDS],
+                text=dict(only_touched='Only lines other funds touched', gf_only='general fund only', zoom_in='Zoom in', zoom_out='Zoom out',
+                          fit='Fit', how='Drag to move · ctrl + scroll to zoom · a block to focus its arrows',
+                          loading='Loading…', failed='Could not load this year’s web.',
+                          col_funds='Funds', col_sinks='Not on a school line', a_fund='Fund',
+                          a_line='School line', a_sink='Not on a school line', clear='Clear',
+                          pick='Hover or tap a block to see every arrow in and out of it, with amounts.',
+                          rank='Order lines by', rank_size='Size', rank_sources='Most sources',
+                          rank_share='Most from other funds',
+                          key_many=T.lit('funds connected; filled at 3 or more (our threshold)'),
+                          key_big=T.lit('share paid by other funds; strong at 25% or more (our threshold)'),
+                          st_sources='funds other than the general fund',
+                          st_share='of its cost paid by other funds',
+                          find='Find a line or fund', found='found',
+                          only_gf='Paid by the general fund alone this year: no other fund touched it.'))
+
+
+def salaries_data(m, T):
+    return dict(years=SAL.data(m, T, line_name, fund_label, S.CAT_LABEL, long_date, fail),
+                links=[dict(href='/school-all-funds/pay-from-grants-and-fees', label='Pay from grants and fees'),
+                       dict(href='/school-all-funds/pay-moved-between-funds', label='Pay moved between funds')],
+                text=dict(
+        lead='of school pay ended on funds other than the general fund in', of_all='of all school pay',
+        how='How it got there:',
+        s_run='paid directly by those funds, never on the general fund',
+        s_took='paid by the general fund first, then re-charged off school salary lines to them',
+        s_gave='they paid first, then moved back onto the general fund’s salary lines',
+        s_between='moved between other funds, net',
+        s_adj='other entries, net',
+        tab_lines='School salary lines', tab_funds='By fund',
+        lines_read=('General fund salary lines where a year-end journal entry moved pay to or from another '
+                    'fund. A re-charge is not a payment back: the general fund paid, and the entry moved the '
+                    'cost onto the grant, so the grant covers it and the line goes down. Open a line for its entries.'),
+        funds_read=('Every other fund’s pay, by how it got there. Most was paid directly by the fund and '
+                    'never touched the general fund. Open a fund for the kinds of work it was booked to.'),
+        c_line='School line', c_cat='Category', c_before='General fund paid', c_off='Re-charged to other funds',
+        c_on='Moved back from other funds', c_kept='General fund kept', c_share='% kept',
+        m_before=('What the general fund paid on this line, before any year-end entry moved pay to or from '
+                  'another fund. The same measure as General fund paid in Who the schools paid.'),
+        m_off=('The general fund paid this pay, then a journal entry moved the cost to a grant or fee fund. '
+               'No money is paid back: the entry moves the expense, so the fund covers it and the line goes down.'),
+        m_on=('Another fund paid this pay directly, then a journal entry moved the cost onto this line, so '
+              'the general fund covers it.'),
+        m_kept='What the general fund carried on the line in the end: paid, less re-charged, plus moved back.',
+        m_share=('General fund kept over general fund paid, the same measure as % general fund kept in Who '
+                 'the schools paid. Under 100% is pay other funds took; over 100% is pay it took on from them.'),
+        carried='other funds took some', took_on='took on other funds’ pay',
+        entries='The entries', to='to', no_lines='No salary line had pay moved this year.',
+        c_fund='Fund', c_run='Paid directly by the fund', c_moved='Moved by journal entry, net',
+        c_adj='Other entries', c_total='Its pay in the end',
+        m_run=('Pay this fund paid directly. It was never on the general fund. Its accounts name a kind '
+               'of work, never a post, so it cannot be pinned to one school line.'),
+        m_moved=('Pay moved onto this fund by journal entry, less pay moved off it. The other side can be '
+                 'a general fund salary line (a re-charge, or a move back, in the other tab) or another '
+                 'fund. Below zero, it handed more back than it took.'),
+        m_adj='Entries on its pay accounts that are not moves between funds: accruals, reversals, an invoice.',
+        m_total='Paid directly, plus moved by journal entry, plus other entries.',
+        kinds='What it paid directly, by what it was booked to:',
+        tab_regular='Paid every pay period',
+        regular_read=T.lit('Accounts outside the general fund that pay a steady amount run after run: at least 8 '
+                           'pay runs within 25% of the account’s own typical run (our thresholds). That is what a '
+                           'post looks like in a payroll that never names people; season-end stipends show as '
+                           'lumps. Open one for every run and any entry that moved its pay onto a general fund line.'),
+        c_account='Fund and account', c_steady='Steady runs', c_typical='Typical run', c_steady_total='Steady pay',
+        c_rest='Other pay', c_total_pay='All its pay',
+        m_steady='Pay runs within 25% of the typical run: the steady part, a payment made every period.',
+        m_typical='The median of the runs it paid: what one period of the steady payment looks like.',
+        m_steady_total='The steady runs added up: a floor on what the regular payment cost this year, since part runs are left out.',
+        m_rest='Everything else on the account: season-end stipends, part runs, adjustments.',
+        has_moves='pay moved onto a general fund line',
+        runs_note='Every pay run, in order, by warrant:', moves_h='Pay moved onto general fund lines by journal entry',
+        no_moves_r='No journal entry moved its pay to or from a general fund line this year.', from_='from',
+        limit=T.lit('Pay is wages, object 51, less benefits; the same definition as'),
+        **{'from': 'from'}))
+
+
+def payee_files(m):
+    return PY.files(m, line_name, fund_label, money, long_date, LINES_DIR, fail)
+
+
+def payees_data(m, T):
+    """The block's own payload: per year, how many were paid, how many new and how many not paid
+    again. The rows are in /data/fy-breakdown/payees-<year>.json (fy_payees.py)."""
+    _, summary = payee_files(m)
+    years = [dict(fy=T.fy(s['fy']), prev=T.fy(s['prev']) if s['prev'] else None, n=s['n'], new=s['new'],
+                  dropped=s['dropped'], total=T.usd(s['total']), new_total=T.usd(s['new_total']),
+                  dropped_total=T.usd(s['dropped_total']), gf=T.usd(s['gf']),
+                  gf_share=T.lit('%d%%' % s['gf_share'].quantize(Decimal(1))),
+                  kept=T.usd(s['kept']), kept_share=T.lit('%d%%' % s['kept_share'].quantize(Decimal(1))),
+                  back=T.usd(s['back'])) for s in summary]
+    return dict(years=years, show=30, text=dict(
+        payee='Payee', payees='payees', change='Change', gf='General fund paid', gf_share='% general fund paid',
+        gf_of='paid by the general fund', kept='General fund kept', kept_share='% general fund kept',
+        kept_of='kept after re-charges', ours='our allocation',
+        kept_means=('Of what this payee was paid, the share the general fund still carried after re-charges. '
+                    'Re-charges are posted to a line, not an invoice, so each line’s re-charged share '
+                    'is applied to every payment on it: our allocation.'),
+        back_l='moved back onto the general fund from other funds, not spread over payees', payments='Payments', paid_in='payees paid in',
+        new='New this year', dropped='Not paid this year', new_l='new', dropped_l='not paid again',
+        every='Every payee', in_='in', filter='Filter by payee, memo or line', open='Open a payee for what was bought',
+        loading='Loading…', failed='Could not load this year’s payees.', close='Close', more_lines='more',
+        show_all='Show all', show_fewer='Show the first', rows_shown='rows shown',
+        no_prev='the journal starts this year, so there is no year before to compare',
+        tab_what='What was bought', tab_lines='Lines and funds', tab_rows='Every payment',
+        what_note='each payment under the fullest memo it carries, summed by memo and line',
+        lines_note='A school line is the school budget; any other is the fund’s own account, with the fund named.',
+        shown_before='Not paid this year. Shown: what it was paid in', school='School budget',
+        c_memo='Memo', c_line='Line or account', c_fund='Fund', c_amount='Amount', c_date='Date',
+        grain=('General fund is fund 0100: the school budget and the district’s curriculum accounts. '
+               'Kept is after re-charges, our allocation by line; budget transfers move budget, not '
+               'payments, so they do not change it. '
+               'Payments by invoice, in the year they were posted, from every school fund. Not pay, '
+               'not orders still owed, and not what the Town charges the schools by journal entry -- '
+               'health premiums among it -- so a payee whose bills moved to journal entries shows a '
+               'drop that is not a cut. New and not paid again compare with the year before only.'),
+        **{'in': 'in'}))
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
     a = ap.parse_args()
     m = FB.model()
-    outs = {OUT: render(m), **line_texts(m), **fund_texts(m)}
+    outs = {OUT: render(m), **line_texts(m), **fund_texts(m), **payee_files(m)[0], **web_files(m)}
     if a.check:
         stale = [os.path.relpath(p, ROOT) for p, text in outs.items()
                  if not os.path.exists(p) or open(p, encoding='utf-8').read() != text]

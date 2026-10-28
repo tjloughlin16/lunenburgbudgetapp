@@ -25,7 +25,7 @@ CATEGORY = dict(
         # TJ, 24 October 2026: "for all the grants.... have we broken down how that money is
         # spent? I want to have reports on that." Every post read alike; none singled out.
         ('Who grants and fees pay for', ['pay-from-grants-and-fees', 'pay-moved-between-funds',
-                                         'positions-and-their-funds']),
+                                         'positions-and-their-funds', 'activities-fund']),
     ])
 GENERATOR = 'build_school_all_funds.py'
 # DESE's allocations against the comparison districts (MASTER-PLAN item 10): a different source
@@ -37,7 +37,9 @@ TOPIC_GENERATORS = {'grant-allocations-compared': 'build_grant_comparison_topics
                     'carried-over-orders': 'build_carryover_topics.py',
                     'pay-from-grants-and-fees': 'build_pay_by_fund_topics.py',
                     'pay-moved-between-funds': 'build_pay_by_fund_topics.py',
-                    'positions-and-their-funds': 'build_pay_by_fund_topics.py'}
+                    'positions-and-their-funds': 'build_pay_by_fund_topics.py',
+                    # TJ, 28 October 2026: "people always ask me 'what is the activities fee for'"
+                    'activities-fund': 'build_activities_fund_topics.py'}
 TOPICS = {
     'school-money-in': 'School grants and aid',
     'budget-lines-all-funds': 'Budget lines, all funds',
@@ -50,4 +52,5 @@ TOPICS = {
     'pay-from-grants-and-fees': 'Pay from grants and fees',
     'pay-moved-between-funds': 'Pay moved between funds',
     'positions-and-their-funds': 'Positions and their funds',
+    'activities-fund': 'After-school activities fund',
 }

@@ -7,7 +7,8 @@ CATEGORY = dict(
     groups=[
         (None, ['total-athletics-cost', 'town-budget-and-fee-fund', 'cost-per-sport',
                 'spending-by-category', 'participation', 'athletic-fee',
-                'fee-fund-ledger', 'fy2026-athletics-underspend']),
+                'fee-fund-ledger', 'fee-fund-history', 'athletic-director',
+                'fy2026-athletics-underspend']),
         ('Athletic transportation', ['athletic-bus-funding', 'fy2027-athletic-bus-cut',
                                      'bus-cost-by-sport', 'away-trips-by-sport']),
 
@@ -19,7 +20,10 @@ CATEGORY = dict(
                ('/budget-options/extracurricular-cuts', 'Extracurricular cuts')])
 GENERATOR = 'build_athletics_topics.py'
 # The turf field's capital-plan history, written from sources/data/capital-plan-field-lines.csv.
-TOPIC_GENERATORS = {'turf-field-capital-plans': 'build_turf_plans_topic.py'}
+TOPIC_GENERATORS = {'turf-field-capital-plans': 'build_turf_plans_topic.py',
+                    # fund 1301 across every year held, and the athletic director post (28 Oct 2026)
+                    'fee-fund-history': 'build_fee_fund_history_topic.py',
+                    'athletic-director': 'build_athletic_director_topic.py'}
 TOPICS = {
     'total-athletics-cost': 'Total athletics cost',
     'town-budget-and-fee-fund': 'Town budget and fee fund',
@@ -28,6 +32,8 @@ TOPICS = {
     'participation': 'Participation',
     'athletic-fee': 'Athletic fee',
     'fee-fund-ledger': 'Fee fund ledger',
+    'fee-fund-history': 'Fee fund history',
+    'athletic-director': 'Athletic director',
     'fy2026-athletics-underspend': 'FY2026 athletics underspend',
     'turf-field-capital-plans': 'Turf field capital plans',
 }

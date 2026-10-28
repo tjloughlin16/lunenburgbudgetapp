@@ -18,7 +18,10 @@ import FyReadiness from './fy-readiness'
 import FyBridge from './fy-bridge'
 import FyLineFunds from './fy-line-funds'
 import FyBudgetChanges from './fy-budget-changes'
+import FyPayees from './fy-payees'
 import FyPlan from './fy-plan'
+import FySalaries from './fy-salaries'
+import FyWeb from './fy-web'
 import FySourceTable from './fy-source-table'
 import FyYearWeeks from './fy-year-weeks'
 import GrantAwardsStack from './grant-awards-stack'
@@ -38,7 +41,10 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-bridge': FyBridge,
   'fy-line-funds': FyLineFunds,
   'fy-budget-changes': FyBudgetChanges,
+  'fy-payees': FyPayees,
   'fy-plan': FyPlan,
+  'fy-salaries': FySalaries,
+  'fy-web': FyWeb,
   'fy-source-table': FySourceTable,
   'fy-year-weeks': FyYearWeeks,
   'grant-awards-stack': GrantAwardsStack,

@@ -15,12 +15,22 @@ import type { CustomProps } from './index'
 
 type Move = { date: string; memo: string; v: string; n: number; others: { line: string; v: string }[] }
 type Row = { cat: string; line: string; acct: string; voted: string; transfers: string; carried: string; final: string
+  n_voted: number; n_transfers: number; n_carried: number; n_final: number
   walk: string; adj: number; adj_t: string; adj_pct: string; flag: boolean; moves: Move[] }
 type Year = { fy: string; rows: Row[]; n: number; n_flag: number }
 type Data = { years: Year[]; show: number; text: Record<string, string> }
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 const FLAG = { color: 'var(--thread-3)', fontWeight: 600 }
+
+/** SORTABLE (TJ, 28 October 2026). Words sort A to Z first, money largest first; the change sorts
+ *  by size either way, as the table opens. "Show all" applies after the sort, so the first ten
+ *  are the first ten of whatever order was picked. */
+type Key = 'cat' | 'line' | 'voted' | 'transfers' | 'carried' | 'final' | 'change'
+const VALUE: Record<Key, (r: Row) => string | number> = {
+  cat: r => r.cat, line: r => r.line, voted: r => r.n_voted, transfers: r => r.n_transfers,
+  carried: r => r.n_carried, final: r => r.n_final, change: r => Math.abs(r.adj) }
+const WORDS: Key[] = ['cat', 'line']
 
 function MovesView({ r, fy, t, onClose }: { r: Row; fy: string; t: Record<string, string>; onClose: () => void }) {
   const box = useRef<HTMLDivElement>(null)
@@ -85,24 +95,29 @@ export default function FyBudgetChanges({ data, alt }: CustomProps) {
   const y = d.years[Math.max(0, fys.indexOf(fy))]
   const [all, setAll] = useState(false)
   const [view, setView] = useState<Row | null>(null)
-  const rows = all ? y.rows : y.rows.slice(0, d.show)
+  const [sort, setSort] = useState<{ key: Key; dir: 1 | -1 }>({ key: 'change', dir: -1 })
+  const sorted = useMemo(() => [...y.rows].sort((a, b) => {
+    const x = VALUE[sort.key](a), z = VALUE[sort.key](b)
+    return sort.dir * (typeof x === 'number' && typeof z === 'number' ? x - z : String(x).localeCompare(String(z)))
+  }), [y, sort])
+  const rows = all ? sorted : sorted.slice(0, d.show)
+  const head = (key: Key, label: string) => (
+    <th className={`px-2 py-1.5 font-semibold whitespace-nowrap cursor-pointer select-none ${WORDS.includes(key) ? 'text-left' : 'text-right'}`}
+      aria-sort={sort.key === key ? (sort.dir < 0 ? 'descending' : 'ascending') : 'none'}
+      onClick={() => setSort(s => ({ key, dir: s.key === key ? (s.dir === 1 ? -1 : 1) : (WORDS.includes(key) ? 1 : -1) }))}>
+      {label}{sort.key === key ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>)
   const num = 'px-2 py-1.5 text-right whitespace-nowrap tabular-nums'
   return (
     <figure aria-label={alt}>
       <p className="text-[13.5px]"><span className="font-semibold tabular-nums">{y.n}</span> <span style={secondary}>{t.lines}</span>
         {y.n_flag ? <> · <span style={FLAG}>⚑ {y.n_flag} {t.flagged}</span></> : null}
-        <span className="ml-3 text-[12.5px]" style={muted}>{t.open}</span></p>
+        <span className="ml-3 text-[12.5px]" style={muted}>{t.open} · {t.sort}</span></p>
       <WideScroll cue={t.lines}>
         <table className="w-full min-w-[900px] text-[13px] border-collapse">
           <thead>
             <tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
-              <th className="px-2 py-1.5 text-left font-semibold">{t.cat}</th>
-              <th className="px-2 py-1.5 text-left font-semibold">{t.line}</th>
-              <th className="px-2 py-1.5 text-right font-semibold">{t.voted}</th>
-              <th className="px-2 py-1.5 text-right font-semibold">{t.transfers}</th>
-              <th className="px-2 py-1.5 text-right font-semibold">{t.carried}</th>
-              <th className="px-2 py-1.5 text-right font-semibold">{t.final}</th>
-              <th className="px-2 py-1.5 text-right font-semibold">{t.change}</th>
+              {head('cat', t.cat)}{head('line', t.line)}{head('voted', t.voted)}{head('transfers', t.transfers)}
+              {head('carried', t.carried)}{head('final', t.final)}{head('change', t.change)}
             </tr>
           </thead>
           <tbody>

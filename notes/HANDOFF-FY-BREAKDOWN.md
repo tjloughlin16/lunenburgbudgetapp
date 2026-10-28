@@ -1,8 +1,196 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
-## START HERE -- 28 October 2026, early. DEPLOYED (c9c3750fa), still hidden
+## START HERE -- 28 October 2026. For a NEW SESSION. Deployed (c9c3750fa), still hidden
 
-Since the section below: unspent sits at the end of What happened (TJ chose it); the budget walk
+This section stands on its own. Everything below it is history; where they disagree, this wins.
+
+### NEXT SESSION STARTS HERE -- 28 October 2026, end of day. Nothing below is committed or deployed
+
+**Do first, not optional (TJ): fix the re-charge rule.** `fy_breakdown.py` rule a only counts a
+`GEN`/`GRV` entry as a re-charge if its expense lines net to zero within a dollar. An audit found
+**11 entries naming a school line on one side that the rule skips** because the amounts do not tie
+one-to-one -- e.g. "genetic syst turkey hill": a security system charged to Computers-Purchase &
+Lease, $40,867 moved against $40,000 onto grant #1192. Groups 125, 102, 300, 271, 363, 61, 164, 428,
+209, 95, 589 (and part of 21) in `build/audits-2026-10-28/noline/verdicts.csv`. Fix in the model AND
+in `verify_fy_breakdown.py` (its own route), then re-run every generator that reads the model
+(`build_fy_breakdown.py`, `check_generated.py` once at the end). Expect Left by line to shift; the
+period-13 tie must still hold.
+
+**Then ask TJ (explained to him in plain terms, not yet decided): a fourth match rule.** Grants and
+fee funds book payroll to accounts named for a KIND of work, often on function 0000/2000/2300, so
+it lands on "no school line" even when it pays the same staff. The Town's own year-end corrections
+keep moving that pay to and from specific school lines (e.g. "RECLASS SCHOOL MEMO 10/11/24-6"
+took $219,367 off IDEA #240 support salaries: $108,181 onto E.S. Sped Paraprofessionals, $111,186
+onto another IDEA year). Proposed rule d, OURS and labelled: place a grant/fee payroll account on
+the school line(s) the Town's entries moved pay between it and. The audit's reading of all 770
+no-school-line groups ($9,536,079, FY2023-26): same as a line ~$2.39M, possibly ~$2.36M (mostly
+ESSER), own programme ~$4.53M (lunch, extended day, trips), not a line cost ~$0.26M. Figures are
+the agent's, from `verdicts.csv` -- RE-DERIVE before any reaches a page (rule 2). The page already
+carries a figure-free appendix, "Why grant money is hard to match" (TJ asked for it).
+
+**`build/audits-2026-10-28/` is gitignored ON PURPOSE**: `noline/verdicts.csv` quotes memos, some
+naming students (scholarships). Never commit it; redact before anything from it ships.
+`fund1301/readings.csv`: the row-by-row read of every athletic fee fund posting FY2023-26.
+
+**Built today, uncommitted (TJ has not yet said commit):**
+- FY breakdown blocks: `fy-payees` (Who the schools paid: general fund paid / % / % kept after
+  re-charges, our allocation), `fy-salaries` (three tabs: school salary lines, by fund, **Paid every
+  pay period** -- steady pay outside the general fund, 8+ runs within 25% of the typical run, ours),
+  `fy-web` (last block; badges for sources and other-fund share, every line shown, find box),
+  `fy-plan` vertical labels, `fy-budget-changes` sortable, the appendix above. Files:
+  `scripts/fy_payees.py`, `fy_salaries.py`, `fy_web.py`, `build_fy_breakdown.py`,
+  `fy28/src/components/blocks/custom/fy-{payees,salaries,web,plan,budget-changes,shared,source-table}.tsx`, `index.ts`.
+- `/school-all-funds/activities-fund` (`scripts/build_activities_fund_topics.py`, registry
+  `school_all_funds.py`, in check_generated).
+- By an agent: `/athletics/fee-fund-history` (`scripts/build_fee_fund_history_topic.py`) and
+  `/athletics/athletic-director` (`scripts/build_athletic_director_topic.py`), registry
+  `athletics.py`, in check_generated; 5 money-gaps rows. `fee-fund-ledger` overlaps the new
+  fee fund page on FY2025 -- merging is TJ's call. money-gaps row 236 is partly stale (annual
+  reports print FY2021-23 balances; a district file prints 30 June 2026).
+- money-gaps: rows appended today (activities fund, AD gaps); `topics.json` regenerated.
+
+**The athletic director, settled as far as the records go** (for anyone who meets the question):
+the AD's own account was general fund only FY2023-26; no fee-fund row names or pays the AD. What
+TJ remembered is real: the FY2026 budget built the AD line NET of a planned $20,407 fee-fund
+offset (Town Manager target budget, `Athletic Director 92,455 94,813 94,813 74,406`; SC 16 Apr 2025
+video 9608s), which the books never carried out. The fee fund's regular per-run slice is HOURLY
+($23.77, then $24.72), most likely the part-time athletic secretary (hypothesis). FY2025's $13,692
+onto H.S. Principal/Asst Principal is that year's non-stipend fee-fund pay. Open: which line paid
+the AD FY2011-17 (budget printed $0; wages ~$97-112k). TJ: the AP/AD split was "a 1 year thing
+for 1 of the athletic directors. the paid from athletic fee fund goes beyond that" -- so the
+pre-FY2023 years are where to keep looking.
+
+### Added 28 October 2026 (later session). Not committed, not deployed
+
+- **`fy-web`, "How the funds and lines connect"** (TJ's BAG: "every school line is a block. every
+  fund / source of money is a block ... directional lines"). Hand-written SVG canvas, no library:
+  funds left, lines right by category, sinks (no line / capital / between funds) under them.
+  Arrows are `m['src']` placements, nothing new (`scripts/fy_web.py`, asserts each fund's arrows
+  carry its placements). Budget transfers dashed, only where one side is one line. The school
+  budget's own spending per line is OFF by default (it buries the rest). Drag, +/−/Fit,
+  ctrl+scroll; a block focuses its arrows and lists them. Data: `fy-breakdown/web-<year>.json`.
+  First pass: works, readable. Untested by TJ. Ideas not built: search a block, open the line
+  popup from the web, a force layout.
+- **`fy-payees`, "Who the schools paid"** (`scripts/fy_payees.py`): every payee paid by INVOICE
+  in the year, every school fund, against the year before, change, New / Not paid this year, a
+  popup (what was bought, lines and funds, every payment). `payees-<year>.json`, ~850 KB each.
+  Grain stated on the block: invoices only, so health premiums the Town charges by journal entry
+  are not in it (MIIA shows -$875,596 FY2026, which is NOT a cut). Payee identity is
+  `journal.vendor_key`; masked names are one row and never "new".
+- **`fy-payees` general fund columns**: General fund $ and % (fund 0100 paid the invoice), and
+  **% kept** after re-charges -- OUR ALLOCATION: each school line's re-charged share applied to every
+  payment on it (re-charges post to lines, not invoices). Budget transfers do not enter; moves back
+  are a summary total, not spread. FLLAC FY2026: 100% paid, 72% kept.
+- **`fy-salaries`, "Salaries paid outside the general fund"** (`scripts/fy_salaries.py`): by school
+  salary line (pay moved off/back by journal entry, both ends named; share moved) and by fund
+  (moved / same kind of work / no school line / other). Pay = `build_pay_by_fund_topics.is_pay`;
+  each year TIES to that page's model and FY2026 gives its published 6.4%. Grant payroll cannot be
+  pinned to a line (accounts name a kind of work). Links to the two pay pages. Every column has an
+  ⓘ definition. BY FUND is split by HOW pay got there (TJ: "unclear if these payments paid back the
+  general fund, or the salaries were not originally put onto the general fund"): own pay run /
+  moved by journal entry, net / other entries. Moves are ONE NET per fund on purpose: the model
+  shares a multi-fund entry over funds by all they received, so "came off the school budget" per
+  fund would be our sharing. The exact school-side totals (re-charged off / moved back onto school
+  salary lines) are in the summary. A re-charge is not a payment back: it moves the expense.
+- `fy-web` lines carry two marks (TJ: "draw attention to lines that have a lot of connections or BIG
+  connections"): a badge counting funds other than the general fund (filled at 3+) and a bar + % of
+  the line's cost other funds paid (strong at 25%+). Thresholds OURS, said in the key. "Order lines
+  by" size / sources / share. EVERY line shows by default, the general-fund-only ones tagged so
+  (TJ: "thats good info"); a find box shows and focuses any block; the panel lists ALL of a
+  block's arrows, drawn or not.
+- Vocabulary, one set across payees and salaries: General fund paid / General fund kept / % kept.
+- `fy-web` is now the LAST block and sized to the whole web (TJ: it was cut off; too detailed for
+  the middle of the page).
+- `fy-plan`: the legend became vertical labels under each segment (TJ asked), a fund's on/off-line
+  parts share one label, and it falls back to a wrapped list when they do not fit (phones).
+- `fy-budget-changes`: sortable headers (Show all applies after the sort).
+- `Chip` and `Bars` moved into `fy-shared.tsx`.
+- **Fund 1305 became its own page, not a callout here** (TJ): /school-all-funds/activities-fund,
+  "After-school activities fund", `scripts/build_activities_fund_topics.py`, in check_generated.
+  Named by the Town's name ON PURPOSE: the $70 student activity fee may not be deposited in 1305
+  at all (the district keeps student activity accounts off the Town's books). Ties both sides to
+  the period-13 report (interest is the only income difference). New money-gaps row.
+- Not verified by a second route: the payee and web files (the generator asserts their sums;
+  `verify_fy_breakdown.py` does not read them yet).
+- `check_generated.py` full pass, 28 Oct morning: the FY-breakdown family all passes; 24 other
+  checks stale, from other sessions' work (2021 meeting backlog, README, D1, money/town flow).
+
+**First, in order:** load the `building-a-page` skill; read this section; run
+`python3 scripts/check_generated.py` ONCE (the category split -- nurses/reserve/details -- was never
+followed by a full pass, so other generators such as `build_db`, `build_show_your_work` may be
+stale); re-run the model before quoting any figure (rule 2). On 28 Oct `build_fy_breakdown.py
+--check` printed "current" and `verify_fy_breakdown.py` "1066 lines in 4 years, every part
+recomputed and tied to the period-13 report".
+
+**What the page is.** /school-all-funds/fy-breakdown, `?fy=FY2025` picks a year (FY2023-FY2026).
+A hidden draft: the address works, on no shelf, not in topics.json or the sitemap. TJ's framing:
+*"watching the money cross boundaries is really what we're trying to represent here. This is a
+money relationship page more than anything."* Boundaries = fiscal years and funds. It is a
+TEMPLATE: a year unlocks itself from the data, never by hand.
+
+**Blocks, top to bottom** (`page()` in `scripts/build_fy_breakdown.py`, ~line 959; components in
+`fy28/src/components/blocks/custom/fy-*.tsx`, registered in `index.ts`):
+
+| block | what it shows |
+|---|---|
+| `fy-year-picker` | the year (in-flow only; the pinned floating copy was removed -- TJ: "awkward to see at all times") |
+| `fy-plan` | plan bar vs What happened bar, in dollars, FROM ZERO; unspent OUTLINED at the end of What happened (TJ chose that spot) |
+| `fy-bridge` | plan -> what happened as a bridge, its own section, same width as fy-plan, from zero |
+| `fy-year-line` | money across 1 July and 30 June; each crossing ties to the other year to the cent. FY2026 prepaid $189,276.75 of FY2027 collaborative tuition |
+| `fy-year-weeks` | every week, bars by fund/kind |
+| `fy-budget-changes` | lines whose final budget differs from the vote: voted, transfers, carried, final, change; top N + Show all; popup lists the transfers and the other side of each |
+| `fy-line-table` | THE big table TJ likes; popup per line (Summary / Transfers / Expenses / Analysis), flag and walk inside |
+| `fy-line-funds` | School lines other funds paid: one row per line, largest first, popup; against the vote, against the final budget, changed after the vote |
+| `fy-source-table` | What other funds paid for, by fund ("Kind of fund"); popup "What it bought" shows memo, paid to, and "No school line · function 2000" where it applies; every posting table sorts and filters (`SortTable` in `fy-shared.tsx`) |
+| `fy-overlap`, `fy-year-facts` | overlap with the school budget; the year in figures |
+| `fy-readiness` | which years are ready; the next year's missing inputs worded as a records request |
+
+**Rules and names settled with TJ -- keep them:**
+- "re-charged", never "moved". "Journal entries" and "payments", never "sources".
+- "Same vendor as the line", not "same payee": a bus company is not proof of the same purchase
+  (the after-school field-trip buses matched Regular Transportation via one vendor). Option 1,
+  matching by object code, was tried and rejected -- it dropped 82%, including real IDEA/CB tuition.
+- Budget walk: voted + transfers + carried in = final (ties to p13 on all 262 FY2026 lines).
+  Flag: |change| >= $5,000 AND >= 50% of the vote (`ADJ_MIN`, `ADJ_SHARE` -- OUR thresholds).
+  Flag counts 17/13/23/12, lines changed 109/73/202/82 (FY2023-26; re-run before quoting).
+- Fund names readable via `journal.grant_program()` ("Athletic fee fund (Chapter 658) · 1301"),
+  printed name underneath.
+- Categories by DESE function code (`build_school_surplus.py` CATEGORIES): Nurses 3200, Salary
+  reserve 0300 (a local code, not in DESE's list), Special details 3600, 5150 to benefits. No
+  salary catch-all.
+- Spent = payments + owed (memory `spent-means-payments-plus-owed`). Bars start at zero, always.
+
+**How a new year unlocks:** `readiness()` -- the journal plus the gf-school and special-school
+period-13 reports held. `journal.YEARS`/`OPEN_FY` are read lazily off the journal CSV.
+`refresh.py` rebuilds and verifies the page daily. By hand still: one `PLAN_BOOKS` line per year (an
+unmapped year builds with its offset "not read").
+
+**Open, none promised -- ask TJ which:**
+1. `check_generated.py` full pass (above). Do this one regardless.
+2. A separate "Vendor matches to check" section -- offered; TJ said the "What it bought" fix
+   "should resolve it". Ask before building.
+3. ~~Sortable columns on Budget changes after the vote~~ DONE 28 Oct.
+4. DONE 28 Oct as its own page (/school-all-funds/activities-fund), not a callout here (TJ).
+   Was: fund 1305 (after-school activities) put $178,540 under function 2000 with no school line --
+   payroll $66,554, Nature's Classroom $32,120, College Board AP $29,826, Chocksett Inn $14,780 and
+   more. TJ: *"WOAH"*. Shown, not yet called out as a finding; rule 7 (a fact, not a charge) and
+   rule 8 apply if it becomes one.
+5. Other funds' unspent money: a registered gap (money-gaps; needs period-13 fund balances).
+6. Release: where it lives and what its finding is (currently year-neutral). Level 2 categories.
+   The $303,499 Town-side Unemployment -> Health Insurance entry is TJ's.
+7. Offer to file the FY breakdown and search logging to NextLevel (#appdev #lunenburgbudgetapp).
+
+**Checks and gotchas:** `build_fy_breakdown.py --check`, `verify_fy_breakdown.py`,
+`cd fy28 && npx tsc -b` (stricter than `--noEmit`; it broke a build once),
+`bash scripts/check_phone_width.sh school-all-funds/fy-breakdown`. A digit in a block label needs
+`T.lit`. Dev server: one only, port 8811 (several at once confused which tab was current). Deploy
+only when asked: `bash scripts/deploy_site.sh` after a full site build (never a bare `vite build`).
+Do not commit other sessions' files (CLAUDE.md, money-gaps, document-defects, official-votes,
+budget-state, recording-minutes, agentic-spend, page_integrity/totals scripts).
+
+### What changed overnight, 27-28 October
+
+Unspent sits at the end of What happened (TJ chose it); the budget walk
 (voted -> transfers -> carried -> final) on every line, a Budget changes after the vote table
 with the transfers behind each change, a flag for lines moved by half or more and $5,000
 (thresholds ours); School lines other funds paid sorts by amount, opens a popup, measures

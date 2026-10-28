@@ -66,7 +66,8 @@
      "topics": [
       "pay-from-grants-and-fees",
       "pay-moved-between-funds",
-      "positions-and-their-funds"
+      "positions-and-their-funds",
+      "activities-fund"
      ]
     }
    ],
@@ -149,6 +150,8 @@
       "participation",
       "athletic-fee",
       "fee-fund-ledger",
+      "fee-fund-history",
+      "athletic-director",
       "fy2026-athletics-underspend"
      ]
     },
@@ -1389,6 +1392,20 @@
  ],
  "generated_by": "scripts/build_topics_index.py",
  "topics": {
+  "activities-fund": {
+   "finding": "The after-school activities fund spent $205,917 in FY2026. Trips were its largest use, then pay.",
+   "generator": "scripts/build_activities_fund_topics.py",
+   "home": "school-all-funds",
+   "id": "activities-fund",
+   "minutes": 3,
+   "path": "/school-all-funds/activities-fund",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "After-school activities fund"
+  },
   "aid-per-pupil": {
    "finding": "Chapter 70 averaged $5,757.59 a pupil in FY2026, yet one pupil more or fewer moved it by $150.00.",
    "generator": "scripts/build_state_aid_topics.py",
@@ -1530,6 +1547,20 @@
     "athletics"
    ],
    "title": "Athletic bus funding"
+  },
+  "athletic-director": {
+   "finding": "No record held pays the director from the fee fund. The FY2026 vote set his line $20,407 below level service.",
+   "generator": "scripts/build_athletic_director_topic.py",
+   "home": "athletics",
+   "id": "athletic-director",
+   "minutes": 2,
+   "path": "/athletics/athletic-director",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Athletic director"
   },
   "athletic-fee": {
    "finding": "The high school fee for a first child, a season, went from $250 in FY2025 to $325 in FY2026.",
@@ -2320,6 +2351,20 @@
     "budget-options"
    ],
    "title": "Family fees"
+  },
+  "fee-fund-history": {
+   "finding": "In FY2025 the town budget took $254,121 of the fee fund’s costs by journal entry, against $131,481 of fees.",
+   "generator": "scripts/build_fee_fund_history_topic.py",
+   "home": "athletics",
+   "id": "fee-fund-history",
+   "minutes": 3,
+   "path": "/athletics/fee-fund-history",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "athletics"
+   ],
+   "title": "Fee fund history"
   },
   "fee-fund-ledger": {
    "finding": "The fee fund’s cash fell $103,853 in FY2024; four journal entries then brought in $254,121 in FY2025.",
@@ -4907,7 +4952,7 @@
    "title": "Surplus by year"
   },
   "surplus-repeat-lines": {
-   "finding": "6 budget areas came in under every year from FY2023 to FY2026; 11 of 18 did in both FY2025 and FY2026.",
+   "finding": "6 budget areas came in under every year from FY2023 to FY2026; 11 of 20 did in both FY2025 and FY2026.",
    "generator": "scripts/build_journal_surplus_topics.py",
    "home": "fy2026-closeout",
    "id": "surplus-repeat-lines",

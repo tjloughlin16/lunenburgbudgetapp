@@ -151,6 +151,11 @@ CHECKS = [
     # every close's YEC equals the next year's SOY and carry-forward, account by account; and
     # its figures recomputed in SQL off the database copy of the journal.
     ('build_carryover_topics.py', ['--check']),
+    ('build_activities_fund_topics.py', ['--check']),
+    # THE ATHLETIC FEE FUND (1301) ACROSS EVERY YEAR HELD, AND THE ATHLETIC DIRECTOR POST: each
+    # refuses unless the journal ties to the period-13 report and every quoted line is still there.
+    ('build_fee_fund_history_topic.py', ['--check']),
+    ('build_athletic_director_topic.py', ['--check']),
     ('verify_carryover.py', []),
     # THE SPECIAL EDUCATION CROSSWALK: DESE's function codes and program column beside the
     # three definitions we use, and the topic page that shows the differences. Fails if a

@@ -144,3 +144,30 @@ export function SortTable({ cols, rows, filter, count, pick, pickAll, first }: {
       </div>
     </div>)
 }
+
+/** A tab or filter chip, shared by the fy-breakdown popups. */
+export function Chip({ on, onClick, children }: { on: boolean; onClick: () => void; children: React.ReactNode }) {
+  return (
+    <button type="button" onClick={onClick} aria-pressed={on}
+      className="px-2.5 py-1 rounded-full text-[12.5px] border leading-tight"
+      style={{ borderColor: on ? 'var(--text-secondary)' : 'var(--grid)', color: on ? 'var(--text-primary)' : 'var(--text-muted)',
+        background: on ? 'var(--surface-2)' : 'transparent', fontWeight: on ? 600 : 400 }}>{children}</button>)
+}
+
+/** Amounts as bars against the largest, so a list reads at a glance. */
+export function Bars({ title, items }: { title: string; items: { label: string; sub?: string; text: string; v: number }[] }) {
+  const max = Math.max(1, ...items.map(i => Math.abs(i.v)))
+  return (
+    <div className="text-[13px]">
+      <p className="font-semibold mb-1">{title}</p>
+      <ul className="space-y-1.5">
+        {items.map((i, k) => (
+          <li key={k}>
+            <div className="flex justify-between gap-3"><span>{i.sub ? <span style={muted}>{i.sub} </span> : null}{i.label}</span>
+              <span className="tabular-nums font-semibold whitespace-nowrap">{i.text}</span></div>
+            <span className="block h-1.5 rounded-sm mt-0.5" style={{ width: `${(Math.abs(i.v) / max) * 100}%`,
+              background: i.v < 0 ? 'var(--text-muted)' : 'var(--thread-2)' }} />
+          </li>))}
+      </ul>
+    </div>)
+}
