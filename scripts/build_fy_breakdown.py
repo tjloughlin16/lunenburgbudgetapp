@@ -239,6 +239,34 @@ def entry_rows(T, r, entries, names):
     return out
 
 
+# THE BUDGET WALK, original to final (TJ, 27 October 2026: "whats the best idea of how to reconcile
+# the 'initial' budget plus the adjusted budget?" -- then "Flagging which lines were most adjusted
+# from the initial budget to the final budget"). The shape governments report a budget in -- the
+# budgetary comparison schedule, original then final then actual (GASB 34) -- line by line: voted,
+# transfers, last year's orders carried in, final. A line is FLAGGED where its final budget is at
+# least half again or half less than the vote and the change is at least $5,000, or where the vote
+# was nothing and the line was funded anyway. Both thresholds are ours, and the page says so.
+ADJ_SHARE, ADJ_MIN = Decimal('0.5'), Decimal('5000')
+
+
+def signed(T, v):
+    return ('+' if v > 0 else '−' if v < 0 else '') + T.usd(abs(v))
+
+
+def budget_walk(r, T):
+    final = r['voted'] + r['transfers'] + r['carried_budget']
+    adj = final - r['voted']
+    pct = (adj / r['voted']) if r['voted'] else None
+    flag = abs(adj) >= ADJ_MIN and (pct is None or abs(pct) >= ADJ_SHARE)
+    return dict(
+        walk=T.lit('Voted %s · transfers %s · carried in %s · final %s'
+                   % (T.usd(r['voted']), signed(T, r['transfers']), T.usd(r['carried_budget']), T.usd(final))),
+        adj=round(fl(adj), 2), adj_t=signed(T, adj) if adj else '',
+        adj_pct=T.lit('%s%s%%' % ('+' if adj > 0 else '−', C.num(round(abs(100 * pct))))) if pct is not None and adj else
+                (T.lit('not voted') if adj and not r['voted'] else ''),
+        flag=bool(flag))
+
+
 def lines_data(m, T):
     """Every line, every year, as two sums. The school budget's own, to what was left, with
     cost moved by journal entry shown apart from what it spent; and what the line cost from
@@ -282,6 +310,8 @@ def lines_data(m, T):
                 chip_n=chip_counts(T, r))
             if round(r['other_year_spent']):
                 row['spent_note'] = 'of which %s paid for another year' % T.usd(r['other_year_spent'])
+            if r['account']:
+                row['bw'] = budget_walk(r, T)
             rows.append(row)
         un = sorted(m['years'][fy]['unmatched'].items(), key=lambda kv: -kv[1])
         years.append(dict(fy=T.fy(fy), rows=rows,
@@ -1417,8 +1447,14 @@ def line_funds_data(m, T):
             # as a share of what the school budget gave the line. Over 100% is more from other
             # funds than from the budget; a line budgeted at nothing has no share, and says so.
             pb = (v / bud) if bud and bud > 0 else None
+            pv = (v / lr['voted']) if lr and lr['voted'] > 0 else None
+            bw = budget_walk(lr, T) if lr else None
             groups.append(dict(cat=cat, line=name, acct=acct, n=round(fl(v), 2), t=T.usd(v),
                                budget=rs[0]['budget'], pb=round(fl(pb), 4) if pb is not None else None,
+                               pv=round(fl(pv), 4) if pv is not None else None,
+                               pv_t=T.lit('%s%%' % C.num(round(100 * pv))) if pv is not None
+                               else (T.lit('not voted') if lr else ''),
+                               bw=bw,
                                pb_t=T.lit('%s%%' % C.num(round(100 * pb))) if pb is not None
                                else (T.lit('no budget') if lr else ''),
                                share=T.lit('%d%%' % round(100 * v / cost)) if cost and v > 0 else '',
@@ -1432,15 +1468,23 @@ def line_funds_data(m, T):
     return dict(years=years, how=[dict(id=k, label=l, means=w) for k, l, w in HOW_PLACED],
                 groups=[dict(id=g, label=l) for g, l in PAYERS if g != 'gf'],
                 text=dict(cat='Category', line='School line', fund='Fund', kind='Kind of fund',
-                          how='How we know', paid='Paid toward it', budget='Line’s budget',
+                          how='How we know', paid='Paid toward it', budget='Final budget',
                           share='Share of the line’s cost',
-                          of_budget='Against the line’s budget',
-                          of_budget_means='What other funds paid toward the line, as a share of the '
-                                          'school budget for it. Over 100% means more came from other '
-                                          'funds than the budget gave the line. A line budgeted at '
-                                          'nothing shows no budget.',
+                          of_budget='Against the final budget',
+                          of_budget_means='What other funds paid toward the line, as a share of its '
+                                          'final budget: voted, plus transfers, plus orders carried in. '
+                                          'Over 100% means more came from other funds than the budget '
+                                          'gave the line.',
+                          of_voted='Against the vote',
+                          of_voted_means='What other funds paid toward the line, as a share of what '
+                                         'Town Meeting voted for it. Far above the final-budget share '
+                                         'means transfers topped the line up during the year.',
+                          changed='Changed after the vote',
+                          changed_means=T.lit('Final budget less the vote: transfers and orders carried '
+                                              'in. Flagged where it moved by half or more and by at '
+                                              'least %s -- thresholds of ours.' % T.usd(ADJ_MIN)),
                           share_means='What this fund paid, as a share of everything the line cost from every fund.',
-                          budget_means='The school budget for the line: voted, transfers, and orders carried in.',
+                          budget_means=T.lit('The line’s final budget: what was voted, plus or minus transfers, plus last year’s orders carried in. It ties to the Town’s period-13 report.'),
                           all_kinds='Every kind', filter='Filter by line, category or fund',
                           scroll='More columns: scroll the table sideways', sum='Every row',
                           lines='school lines', funds='funds', fund_one='fund', close='Close',

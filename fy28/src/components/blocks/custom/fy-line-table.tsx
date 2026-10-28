@@ -28,7 +28,8 @@ type Item = { title: string; sub: string; text: string }
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
 type Entry = { date: string; memo: string; journal: string; dir: 'in' | 'out'; text: string; others: { name: string; text: string }[] }
 type Row = { name: string; account: string; key: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
-  spent_note?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>> }
+  spent_note?: string; bw?: BW; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>> }
+type BW = { walk: string; adj: number; adj_t: string; adj_pct: string; flag: boolean }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
 type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'tab_summary' | 'tab_expenses' | 'close'
@@ -469,6 +470,7 @@ function LineView({ r, d, fy, onClose }: { r: Row; d: Data; fy: string; onClose:
               <p className="text-[12px] uppercase tracking-wide" style={muted}>{fy} · {r.cat}</p>
               <h3 className="text-[19px] font-semibold leading-snug">{r.name}</h3>
               {r.account ? <p className="font-mono text-[11.5px] mt-0.5" style={muted}>{r.account}</p> : null}
+              {r.bw ? <p className="text-[12.5px] mt-1 tabular-nums" style={r.bw.flag ? { color: 'var(--thread-3)', fontWeight: 600 } : secondary}>{r.bw.flag ? '⚑ ' : ''}{r.bw.walk}</p> : null}
             </div>
             <button type="button" onClick={onClose} className="px-2.5 py-1 rounded border text-[13px]" style={{ borderColor: 'var(--grid)' }}>{t.close} ✕</button>
           </div>
@@ -579,7 +581,10 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                 <tr key={key} className="border-b cursor-pointer hover:bg-[var(--surface-2)]" style={{ borderColor: 'var(--grid)' }}
                   onClick={() => setOpen(key)} aria-haspopup="dialog">
                   <td className="px-2 py-1.5 text-left min-w-[13rem]"><span className="mr-1" style={muted}>↗</span>
-                    {r.name}</td>
+                    {r.name}
+                    {/* the line's budget moved far from the vote (build_fy_breakdown.budget_walk) */}
+                    {r.bw?.flag ? <span title={r.bw.walk} className="block mt-0.5 text-[11.5px] font-semibold" style={{ color: 'var(--thread-3)' }}>
+                      ⚑ {r.bw.adj_t} {r.bw.adj_pct ? `(${r.bw.adj_pct})` : ''}</span> : null}</td>
                   <td className="px-2 py-1.5 text-left min-w-[9rem]" style={secondary}>{r.cat}</td>
                   {d.columns.map((c, i) => (
                     <td key={c.id} className={`px-2 py-1.5 text-right whitespace-nowrap ${i === firstCost ? 'border-l' : ''}`}
