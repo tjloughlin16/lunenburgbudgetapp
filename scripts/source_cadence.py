@@ -67,7 +67,9 @@ PART_OF = {'fetch_agendas.py': 'meetings', 'fetch_school_budget_docs.py': 'docum
            'fetch_town_docs.py': 'documents', 'fetch_youtube_index.py': 'youtube',
            'fetch_youtube_transcripts.py': 'youtube',
            # superseded by fetch_dese_socrata.py, whose --promote runs it for its three ids
-           'fetch_dese_finance.py': 'socrata-dese-fetch'}
+           'fetch_dese_finance.py': 'socrata-dese-fetch',
+           # the daily document watcher already lands every presentation on the FY27 hub
+           'fetch_budget_presentations.py': 'documents'}
 
 
 def _rows(path):

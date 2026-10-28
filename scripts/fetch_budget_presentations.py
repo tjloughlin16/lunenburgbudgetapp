@@ -27,6 +27,16 @@ presented 19 February 2026 -- does three things no annual report does:
 ONE DEPARTMENT IS NOT THE SET, and the rest arrive in about two weeks (A0b in the queue).
 This takes ids so the others slot in beside this one rather than being ingested a
 different way later.
+
+THE DAILY DOCUMENT WATCHER ALREADY TAKES THESE, and took them first. `watch_documents.py`
+runs `fetch_town_docs.py`, whose seed `/835/2026-Annual-Town-Meeting-FY27-Budget-Hub` links
+`/827/FY27-Budget-Presentations`, one level down -- so every FY27 department presentation,
+DocumentCenter 3580 to 3613 and 3781, was in `town-budget/` from 28 August 2026, a month
+before this script fetched 3584 again into `town-supplementary/` as a byte-identical second
+copy. So this is NOT a source of its own and is not scheduled: it is the hand tool for one
+id the watcher has not reached. An id any town catalogue already holds is now reported and
+skipped rather than filed a second time, and a new one goes through `ingest.land()` like
+every other document -- pushed and read back before it is in `sources/`.
 """
 import argparse
 import csv
@@ -68,6 +78,18 @@ def slug(s):
     return re.sub(r'-+', '-', re.sub(r'[^a-z0-9]+', '-', s.lower())).strip('-')
 
 
+def held_by_id(did):
+    """The local path of a town catalogue row for DocumentCenter `did`, or ''. Every town
+    folder is asked, because the watcher files presentations under town-budget/."""
+    import glob
+    want = VIEW % did
+    for idx in sorted(glob.glob(os.path.join(ROOT, 'sources', 'town-*', 'index.csv'))):
+        for r in csv.DictReader(open(idx, encoding='utf-8')):
+            if want in (r.get('upstream') or '').split():
+                return r.get('local', '')
+    return ''
+
+
 def catalogue(rows):
     """Append to the shared index. Re-read first; never rewrite what is already there."""
     raw = open(INDEX, 'rb').read()
@@ -81,7 +103,9 @@ def catalogue(rows):
     w = csv.DictWriter(out, fieldnames=FIELDS, lineterminator=nl)
     w.writeheader()
     w.writerows(have + added)
-    open(INDEX, 'wb').write(out.getvalue().encode('utf-8'))
+    tmp = INDEX + '.tmp'
+    open(tmp, 'wb').write(out.getvalue().encode('utf-8'))
+    os.replace(tmp, INDEX)
     return len(added)
 
 
@@ -110,17 +134,31 @@ def main():
         return 1 if bad else 0
 
     import fetch_town_docs as T
+    import ingest
     os.makedirs(DOCS, exist_ok=True)
     os.makedirs(TEXT, exist_ok=True)
-    rows = []
+    rows, failed = [], 0
     for did in a.ids:
+        have = held_by_id(did)
+        if have:
+            print('%s  already held at %s -- not filed twice' % (did, have))
+            continue
         blob, published = fetch(did)
         # THE PUBLISHER'S OWN FILENAME, kept in the name we save it under. Links die --
         # 57 of ours did in one day -- and when they do, asking the town for a document
         # BY THE NAME IT USES is the only route a resident has.
         base = '%s-%s' % (did, slug(os.path.splitext(published)[0] or 'document'))
-        path = os.path.join(DOCS, base + '.pdf')
-        open(path, 'wb').write(blob)
+        # The extension is the publisher's, not assumed: 3781, the 30 September 2025
+        # preliminary presentation, is a .pptx, and this used to file every id as `.pdf`.
+        ext = os.path.splitext(published)[1].lower() or '.pdf'
+        path = os.path.join(DOCS, base + ext)
+        # Through the one door: validated (an HTML error page is refused, not filed as a
+        # PDF), pushed, read back, and only then moved into sources/.
+        ok, why = ingest.land(os.path.relpath(path, os.path.join(ROOT, 'sources')), blob, VIEW % did)
+        if not ok:
+            print('  !! %s: %s' % (did, why))
+            failed += 1
+            continue
         txt = os.path.join(TEXT, base + '.txt')
         try:
             T.extract(path, txt)
@@ -134,9 +172,9 @@ def main():
             bytes=len(blob), sha256=hashlib.sha256(blob).hexdigest(), read=''))
         print('%s  %s  %d bytes  sha256 %s'
               % (did, published, len(blob), rows[-1]['sha256'][:16]))
-    n = catalogue(rows)
-    print('%d fetched, %d newly catalogued' % (len(rows), n))
-    return 0
+    n = catalogue(rows) if rows else 0
+    print('%d fetched, %d newly catalogued%s' % (len(rows), n, ', %d could not be secured' % failed if failed else ''))
+    return 1 if failed else 0
 
 
 if __name__ == '__main__':

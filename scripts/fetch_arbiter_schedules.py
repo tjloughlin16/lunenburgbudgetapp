@@ -2,6 +2,7 @@
 """THE DISTRICT'S ATHLETIC SCHEDULES, as its own scheduling platform publishes them.
 
     python3 scripts/fetch_arbiter_schedules.py                    # fetch into the HOLDING area
+    python3 scripts/fetch_arbiter_schedules.py --refresh          # look again; hold only what changed
     python3 scripts/fetch_arbiter_schedules.py --import-cache DIR # adopt an earlier fetch's cache
     python3 scripts/fetch_arbiter_schedules.py --redact DIR       # strip roster names from a cache
     python3 scripts/fetch_arbiter_schedules.py --check            # the held snapshot is whole
@@ -24,12 +25,13 @@ athletic office schedules on: `https://www.arbiterlive.com/Teams?entityId=13354`
 HOW IT FETCHES.
 
   1. ROBOTS. `https://www.arbiterlive.com/robots.txt` reads, in full,
-     `User-agent: *` / `Disallow: /` (Last-Modified 24 Sep 2026). The network fetch reads
-     it first and REFUSES while it disallows `/Teams`, and says so (exit 3). When it does
-     run, it makes at most one request every MIN_INTERVAL (2) seconds, serially, with a
-     User-Agent naming lunenburgbudgetproject.org. The snapshot held for 11 October 2026 was
-     taken by an earlier one-off run and is adopted with `--import-cache`, which makes no
-     request.
+     `User-agent: *` / `Disallow: /` (Last-Modified 24 Sep 2026). The full fetch reads it
+     first and REFUSES while it disallows `/Teams`, and says so (exit 3). `--refresh` reads
+     it too and prints what it says, and fetches the school's schedule pages regardless,
+     within the limits below. Either way it makes at most one request every MIN_INTERVAL (2)
+     seconds, serially, with a User-Agent naming lunenburgbudgetproject.org. The snapshot
+     held for 11 October 2026 was taken by an earlier one-off run and is adopted with
+     `--import-cache`, which makes no request.
   2. NO STUDENT NAME IS EVER WRITTEN. A schedule fragment carries the team's ROSTER tab
      when the coach has made it public -- jersey, name, class, position, height. Every
      response passes through `redact_rosters()` IN MEMORY, before anything touches disk:
@@ -39,9 +41,34 @@ HOW IT FETCHES.
      `fetch-log.csv` records the sha256 of the bytes WE HOLD, which for a redacted file
      are not the publisher's bytes, and its `note` says so.
 
+  3. ONLY WHAT CHANGED: `--refresh`, the command the daily refresh runs when this source
+     comes due. A full fetch is about 1,730 requests -- an hour at one every two seconds --
+     and nearly all of it re-reads school years that are over. `--refresh` reads the team
+     list, the CURRENT school year's schedule for every team (all six years for a team the
+     list did not have before), and a game page only where it is needed: an away game no
+     snapshot holds yet, an away game whose date, opponent or place moved, and away games
+     from a week ago to three weeks ahead, which is when the Transportation box gets filled
+     in. At most MAX_GAME_PAGES game pages a run, so a run is under ten minutes.
+
+     WHAT IS COMPARED IS WHAT IS READ OUT, never the bytes: a game page prints the id of
+     the server that answered it, so the same game differs on every request. A schedule is
+     compared by its rows, statuses, game types and roster COUNTS; a game page by the
+     address and the Transportation entry -- the two things `extract_arbiter_schedules.py`
+     takes from it. If nothing changed, nothing is written and the run exits 0. If something
+     did, a new complete snapshot `build/arbiter/<today>/` is written: the files that
+     changed as fetched today, every other file LINKED from the previous snapshot with its
+     own fetch-log row, so each file still says when it was really fetched.
+
+     A team that VANISHES from the list stops the run (exit 3) with nothing written: its
+     past seasons would otherwise drop out of every snapshot after this one, and that needs
+     a person. A run that cannot fetch every new game page in its budget keeps what it got
+     in `build/arbiter/.pending/` and exits 2, so the refresh resumes it the next morning.
+
 The destination is the gitignored holding area `build/arbiter/<YYYY-MM-DD>/`, with
 `fetch-log.csv` naming the publisher address of every file, and `--ingest` is the door
-into the archive. `extract_arbiter_schedules.py` reads the newest snapshot in `sources/` if
+into the archive. Neither a fetch nor a refresh ever writes under `sources/`: the facts
+published are what `extract_arbiter_schedules.py` reads out, and it should be run after a
+refresh that wrote a snapshot. `extract_arbiter_schedules.py` reads the newest snapshot in `sources/` if
 one exists, else the newest held one.
 """
 import argparse
@@ -80,6 +107,11 @@ YEARS = {'89': '2021-22', '51': '2022-23', '90': '2023-24', '91': '2024-25',
 UA = 'lunenburgbudgetproject.org (public records archive)'
 MIN_INTERVAL = 2.0     # seconds between the START of one request and the next
 LOCKED, TRANSIENT = 3, 2
+# --refresh: at most this many game pages a run (two seconds each, so five minutes), and the
+# window of away games whose pages are read again for a newly filled-in Transportation box.
+MAX_GAME_PAGES = 150
+WINDOW_BACK, WINDOW_AHEAD = 7, 21
+PENDING = os.path.join(HOLD, '.pending')
 
 
 def txt(s):
@@ -104,6 +136,73 @@ def away_game_ids(page):
         if len(tds) > 1 and txt(tds[1]) == '@':
             out.append(gid)
     return out
+
+
+def away_rows(page):
+    """{game id: (when, opponent, location)} for the `@` rows of a schedule fragment -- the
+    cells that, if they move, can move what the game's own page says."""
+    out = {}
+    for gid, body in re.findall(r'<tr\s+data-gameid="(\d+)"[^>]*>(.*?)</tr>', page, flags=re.S):
+        tds = re.findall(r'<td[^>]*>(.*?)</td>', body, flags=re.S)
+        if len(tds) > 3 and txt(tds[1]) == '@':
+            out[gid] = (txt(tds[0]), txt(tds[2]), txt(tds[3]))
+    return out
+
+
+def schedule_key(page):
+    """What a schedule fragment SAYS: its rows' text, each row's status and game type, and
+    the roster counts. Equal keys mean nothing an extract reads has moved."""
+    i, j = page.find('id="tabSchedule"'), page.find('id="tabPractice"')
+    block = page[i:j] if 0 <= i < j else page
+    return (txt(block), tuple(re.findall(r'gamestatus (\w+)', block)),
+            tuple(re.findall(r'<abbr title="([^"]+)"', block)), tuple(roster_counts(page)))
+
+
+def game_key(page):
+    """What a game page SAYS that we read: the directions address and the Transportation box.
+    The same two regexes as `extract_arbiter_schedules.game_page()`, which reads them out."""
+    m = re.search(r'id="directionsButton" href="[^"]*\?q=([^"]*)"', page)
+    addr = txt(urllib.parse.unquote_plus(html.unescape(m.group(1)))) if m else ''
+    tr = ''
+    i = page.find('alt="Transportation Icon"')
+    if i >= 0:
+        j = page.find('Icon_Location_reskin', i)
+        tr = ' | '.join(txt(b) for b in re.findall(
+            r'<div class="pickup-dropoff">(.*?)</div>\s*</div>\s*</div>', page[i:j], flags=re.S))
+    return addr, tr
+
+
+MONTHS = {m: n for n, m in enumerate(
+    'Jan Feb Mar Apr May Jun Jul Aug Sep Oct Nov Dec'.split(), 1)}
+
+
+def row_date(when, school_year):
+    """The date a schedule row prints (`Sat Oct 24 9:30 AM`) in its school year, or None.
+    Only for choosing which game pages to read again; the extract dates rows itself, and
+    checks the weekday, which this does not need to."""
+    m = re.search(r'(?:Mon|Tue|Wed|Thu|Fri|Sat|Sun) (\w{3}) (\d+)', when)
+    if not m or m.group(1) not in MONTHS:
+        return None
+    mon = MONTHS[m.group(1)]
+    year = int(school_year[:4]) if mon >= 7 else int(school_year[:4]) + 1
+    try:
+        return datetime.date(year, mon, int(m.group(2)))
+    except ValueError:
+        return None
+
+
+def current_year_id(today):
+    """(ArbiterLive id of the school year `today` falls in, note). Outside YEARS -- after
+    30 June 2027 -- the newest year in scope is refreshed and the note says why: widening
+    the scope is a decision, not something a scheduled run should take."""
+    y = today.year if today.month >= 7 else today.year - 1
+    sy = '%d-%02d' % (y, (y + 1) % 100)
+    for yid, name in YEARS.items():
+        if name == sy:
+            return yid, ''
+    newest = max(YEARS, key=lambda k: YEARS[k])
+    return newest, ('school year %s is not in YEARS; refreshing %s, the newest in scope. Add its '
+                    'ArbiterLive id to YEARS to take it in.' % (sy, YEARS[newest]))
 
 
 # --- roster tables: counted, never kept ------------------------------------------------
@@ -285,16 +384,11 @@ def robots_allows():
     return not blocked, body
 
 
-def fetch(day):
-    ok, body = robots_allows()
-    if not ok:
-        print('ARBITERLIVE REFUSED: robots.txt disallows /Teams for every user agent:\n%s\n'
-              'Nothing fetched.'
-              % body.strip(), file=sys.stderr)
-        return LOCKED
-    out = os.path.join(HOLD, day)
-    if os.path.isdir(out):
-        raise SystemExit('%s is already held; a held snapshot is never overwritten' % out)
+def _session():
+    """(get, files, log). `get(name, path, form)` makes one request -- paced, retried, and
+    REDACTED IN MEMORY before anything can reach a file -- and, given a name, records the
+    bytes in `files` and their address in `log`. One definition for the full fetch and the
+    refresh, so both make requests the same way and neither can skip the redaction."""
     cj = http.cookiejar.CookieJar()
     op = urllib.request.build_opener(urllib.request.HTTPCookieProcessor(cj))
     op.addheaders = [('User-Agent', UA)]
@@ -331,6 +425,20 @@ def fetch(day):
                         'note': redact_note(found)})
         return blob.decode('utf-8', 'replace')
 
+    return get, files, log
+
+
+def fetch(day):
+    ok, body = robots_allows()
+    if not ok:
+        print('ARBITERLIVE REFUSED: robots.txt disallows /Teams for every user agent:\n%s\n'
+              'Nothing fetched.'
+              % body.strip(), file=sys.stderr)
+        return LOCKED
+    out = os.path.join(HOLD, day)
+    if os.path.isdir(out):
+        raise SystemExit('%s is already held; a held snapshot is never overwritten' % out)
+    get, files, log = _session()
     get(None, '/Teams?entityId=' + ENTITY)           # opens the session on the school
     teams = parse_teams(get('teams.html', '/Teams', {'isAllTeam': 'true', 'isRedirect': 'true'}))
     if not teams:
@@ -359,6 +467,207 @@ def write_hold(out, files, log):
         w.writeheader()
         w.writerows(sorted(log, key=lambda r: r['file']))
     os.replace(tmp, out)
+
+
+# --- looking again: only what changed --------------------------------------------------
+
+def _read_pool():
+    """Game pages a previous refresh fetched and could not yet place in a whole snapshot:
+    ({name: bytes}, {name: log row})."""
+    p = os.path.join(PENDING, 'fetch-log.csv')
+    if not os.path.exists(p):
+        return {}, {}
+    log = {r['file']: r for r in csv.DictReader(open(p, encoding='utf-8'))}
+    files = {n: open(os.path.join(PENDING, n), 'rb').read() for n in log
+             if os.path.exists(os.path.join(PENDING, n))}
+    return files, {n: log[n] for n in files}
+
+
+def _write_pool(files, log):
+    """Keep fetched pages for the next run: written beside, renamed into place."""
+    tmp = PENDING + '.part'
+    shutil.rmtree(tmp, ignore_errors=True)
+    os.makedirs(tmp)
+    for n, blob in files.items():
+        open(os.path.join(tmp, n), 'wb').write(blob)
+    with open(os.path.join(tmp, 'fetch-log.csv'), 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=LOG_FIELDS, lineterminator='\n', extrasaction='ignore')
+        w.writeheader()
+        w.writerows(sorted(log.values(), key=lambda r: r['file']))
+    shutil.rmtree(PENDING, ignore_errors=True)
+    os.replace(tmp, PENDING)
+
+
+def refresh(day):
+    """Look again at ArbiterLive and hold a new snapshot only if what it says changed.
+    Returns the exit code: 0 looked (changed or not), 2 could not finish, 3 needs a person."""
+    today = datetime.date.fromisoformat(day)
+    allowed, body = robots_allows()
+    print('robots.txt: %s' % ('allows /Teams' if allowed else
+                              'disallows /Teams for every user agent (%s); fetching the school\'s '
+                              'schedule pages at one request every %g seconds'
+                              % (' / '.join(l.strip() for l in body.strip().splitlines()[:2]),
+                                 MIN_INTERVAL)))
+    prev = snapshot_dir()
+    if not prev:
+        print('no snapshot is held to look again from -- run a full fetch or --import-cache first',
+              file=sys.stderr)
+        return LOCKED
+    prev_log = read_log(prev)
+    out = os.path.join(HOLD, day)
+
+    def held(n):
+        p = os.path.join(prev, n)
+        return open(p, encoding='utf-8', errors='replace').read() if os.path.exists(p) else None
+
+    cur, note = current_year_id(today)
+    if note:
+        print('  note: ' + note)
+    get, files, log = _session()
+    get(None, '/Teams?entityId=' + ENTITY)           # opens the session on the school
+    teams = parse_teams(get('teams.html', '/Teams', {'isAllTeam': 'true', 'isRedirect': 'true'}))
+    if not teams:
+        print('the all-teams page listed no teams -- nothing written', file=sys.stderr)
+        return LOCKED
+    old_teams = parse_teams(held('teams.html') or '')
+    lost = sorted({t for *_x, t in old_teams} - {t for *_x, t in teams})
+    if lost:
+        print('REFUSED: %d team(s) held in %s are no longer on ArbiterLive\'s list (%s). Their past '
+              'seasons would drop out of every later snapshot; that needs a person. Nothing written.'
+              % (len(lost), os.path.relpath(prev, ROOT),
+                 ', '.join('%s %s' % (s, l) for s, l, t in old_teams if t in lost)), file=sys.stderr)
+        return LOCKED
+    old_tids = {t for *_x, t in old_teams}
+    changed = [] if teams == old_teams else ['teams.html']
+
+    # Schedules: the current year for every team, every year for a team that is new.
+    final = {}                                        # name -> 'new' (fetched) or 'held'
+    final['teams.html'] = 'new' if changed else 'held'
+    moved_rows = set()                                # away games whose row moved
+    for _s, _l, tid in teams:
+        for yid in YEARS:
+            n = 'schedule-%s-%s.html' % (tid, yid)
+            if tid in old_tids and yid != cur:
+                final[n] = 'held'
+                continue
+            page = get(n, '/Teams/ScheduleForSchoolYear', {'uniqueTeamId': tid, 'schoolYearId': yid})
+            was = held(n)
+            if was is not None and schedule_key(was) == schedule_key(page):
+                final[n] = 'held'
+                continue
+            final[n] = 'new'
+            changed.append(n)
+            before = away_rows(was or '')
+            moved_rows |= {g for g, row in away_rows(page).items() if before.get(g) != row}
+
+    def schedule(n):
+        return files[n].decode('utf-8', 'replace') if final[n] == 'new' else held(n)
+
+    # Game pages: every away game the snapshot will list, and the reason to read it again.
+    pool, pool_log = _read_pool()
+    need_new, need_moved, need_window, wanted = [], [], [], set()
+    for _s, _l, tid in teams:
+        for yid, sy in YEARS.items():
+            for gid, row in away_rows(schedule('schedule-%s-%s.html' % (tid, yid))).items():
+                g = 'game-%s.html' % gid
+                if g in wanted:
+                    continue
+                wanted.add(g)
+                if not os.path.exists(os.path.join(prev, g)):
+                    need_new.append((g, game_url(gid, tid, yid)))
+                elif gid in moved_rows:
+                    need_moved.append((g, game_url(gid, tid, yid)))
+                else:
+                    d = row_date(row[0], sy) if yid == cur else None
+                    if d and -WINDOW_BACK <= (d - today).days <= WINDOW_AHEAD:
+                        need_window.append((g, game_url(gid, tid, yid)))
+    # A new game page a previous run already fetched is not asked for again.
+    need_new = [(g, u) for g, u in need_new if g not in pool]
+    budget = MAX_GAME_PAGES
+    short = []
+    for kind, todo in (('new', need_new), ('moved', need_moved), ('window', need_window)):
+        for g, u in todo:
+            if budget <= 0:
+                if kind == 'new':
+                    short.append(g)
+                continue
+            budget -= 1
+            page = get(g, u[len(BASE):])
+            was = held(g)
+            if was is not None and game_key(was) == game_key(page):
+                continue
+            changed.append(g)
+    for g in wanted:
+        if g in files:
+            final[g] = 'new' if g in changed else 'held'
+        elif g in pool:
+            final[g] = 'pool'
+            changed.append(g)
+        elif os.path.exists(os.path.join(prev, g)):
+            final[g] = 'held'
+    if short:
+        keep = dict(pool, **{n: files[n] for n in files if n.startswith('game-') and n in changed})
+        keep_log = dict(pool_log, **{r['file']: r for r in log if r['file'] in keep})
+        _write_pool(keep, keep_log)
+        print('%d new game page(s) still to fetch after this run\'s %d; %d kept in %s for the next run. '
+              'Nothing else written.' % (len(short), MAX_GAME_PAGES, len(keep),
+                                         os.path.relpath(PENDING, ROOT)), file=sys.stderr)
+        return TRANSIENT
+    asked = len(log)
+    if not changed:
+        shutil.rmtree(PENDING, ignore_errors=True)
+        print('unchanged: %d request(s), nothing ArbiterLive says has moved since %s -- nothing written'
+              % (asked + 2, os.path.basename(prev)))
+        return 0
+    if os.path.isdir(out):
+        print('%s is already held and something has changed since; a held snapshot is never '
+              'overwritten, so the next run takes it' % os.path.relpath(out, ROOT), file=sys.stderr)
+        return TRANSIENT
+
+    # A WHOLE SNAPSHOT, written beside and renamed into place: what changed as fetched today,
+    # everything else linked from the previous snapshot with the fetch-log row it already had.
+    new_log = {r['file']: r for r in log}
+    tmp = out + '.part'
+    shutil.rmtree(tmp, ignore_errors=True)
+    os.makedirs(tmp)
+    rows = []
+    for n, how in sorted(final.items()):
+        dst = os.path.join(tmp, n)
+        if how == 'new':
+            open(dst, 'wb').write(files[n])
+            rows.append(new_log[n])
+        elif how == 'pool':
+            open(dst, 'wb').write(pool[n])
+            rows.append(pool_log[n])
+        else:
+            src = os.path.join(prev, n)
+            try:
+                os.link(src, dst)
+            except OSError:
+                shutil.copy2(src, dst)
+            r = dict(prev_log.get(n) or {})
+            r['file'] = n
+            # A snapshot already ingested keeps its addresses in the catalogue, which carries
+            # no size or fetch time; those are recomputed or left blank rather than invented.
+            blob = open(dst, 'rb').read()
+            r.setdefault('bytes', len(blob))
+            r.setdefault('sha256', hashlib.sha256(blob).hexdigest())
+            rows.append(r)
+    with open(os.path.join(tmp, 'fetch-log.csv'), 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=LOG_FIELDS, lineterminator='\n', extrasaction='ignore')
+        w.writeheader()
+        w.writerows(rows)
+    os.replace(tmp, out)
+    shutil.rmtree(PENDING, ignore_errors=True)
+    if check(day):
+        print('the new snapshot %s does not check -- see above' % os.path.relpath(out, ROOT),
+              file=sys.stderr)
+        return 1
+    print('held %s: %d file(s), %d changed since %s (%s), %d request(s). Run '
+          'extract_arbiter_schedules.py to read it out.'
+          % (os.path.relpath(out, ROOT), len(final), len(changed), os.path.basename(prev),
+             ', '.join(sorted({c.split('-')[0] for c in changed})), asked + 2))
+    return 0
 
 
 # --- adopting an earlier one-off fetch ---------------------------------------------------
@@ -531,6 +840,8 @@ def main():
     ap.add_argument('--import-cache', metavar='DIR')
     ap.add_argument('--ingest', metavar='DAY')
     ap.add_argument('--redact', metavar='DIR', help='strip roster names from a cache in place')
+    ap.add_argument('--refresh', action='store_true',
+                    help='look again; hold a new snapshot only if what ArbiterLive says changed')
     a = ap.parse_args()
     if a.redact:
         done = redact_dir(a.redact)
@@ -547,6 +858,8 @@ def main():
         raise SystemExit('--day must be YYYY-MM-DD')
     if a.import_cache:
         return import_cache(a.import_cache, day)
+    if a.refresh:
+        return refresh(day)
     return fetch(day)
 
 

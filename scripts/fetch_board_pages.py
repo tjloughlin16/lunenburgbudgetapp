@@ -2,8 +2,9 @@
 """Every board's own page on the town's site -- its charter text, its members, when it
 meets, and whether it has a Facebook page -- mirrored and extracted.
 
-    python3 scripts/fetch_board_pages.py          # fetch, mirror, extract
-    python3 scripts/fetch_board_pages.py --check  # the extract still reproduces from the mirror
+    python3 scripts/fetch_board_pages.py            # look again; keep a version only if it changed
+    python3 scripts/fetch_board_pages.py --check    # the extract still reproduces from the mirror
+    python3 scripts/fetch_board_pages.py --reparse  # re-extract the mirrored pages, no network
 
 TJ, 14 September 2026: "on the landing page for each board, can you put their charter and
 a link to their town page? we also need to see if these boards have facebook pages."
@@ -25,15 +26,41 @@ the TOWN's page (facebook.com/townoflunenburgma) from its footer; that is record
 `town`, not as the board's. A board-specific link is recorded only where the board's own
 page carries one -- the School Committee's group is the one found. Facebook itself cannot
 be searched by script, so "none on the board's page" is what is established, not "none".
+
+RUN UNATTENDED, ON A CADENCE. The daily refresh runs this as a `job` from
+sources/data/source-cadence.csv, so a plain run has to be safe to repeat with nobody
+watching:
+
+  * A VERSION IS KEPT ONLY WHEN WHAT THE PAGE SAYS CHANGED. The bytes are no test: the town's
+    CivicPlus template is re-issued under every page from time to time (a board page of
+    14 September and the same page on 28 October differ in 321 lines of markup and not one
+    word of text), and the district's Google Sites page carries a fresh script nonce on
+    every request, so two fetches a second apart never match. What is compared is what
+    this script extracts -- meetings, members, overview, charter, Facebook -- between the
+    page just fetched and the working copy held, both read by the SAME parser, so a parser
+    change can never pass itself off as the town changing its page.
+  * AN UNCHANGED PAGE WRITES NOTHING: not a version, not an index row, not a new
+    `fetched_at`. A run in which no board changed leaves git quiet. `fetched_at` is when the
+    version held was fetched; when we last LOOKED is the refresh's own record,
+    sources/data/source-checks.csv.
+  * EXIT 0 MEANS EVERY PAGE WAS READ, changed or not. Non-zero means some page could not be
+    read or a changed version could not be secured -- that board keeps its previous row and
+    the refresh tries again the next morning.
+  * A LISTING THAT SHRINKS SHARPLY IS REFUSED, not believed. If the town's list of boards
+    comes back with far fewer boards than we hold, the likeliest cause is a redesigned page
+    the link pattern no longer reads, and writing that out would delete most of the boards
+    from every page that reads board-pages.csv.
 """
 import argparse
 import csv
 import hashlib
 import html as H
+import io
 import json
 import os
 import re
 import sys
+import time
 import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -47,6 +74,13 @@ DIST_DOCS = os.path.join(ROOT, 'sources', 'district-budget', 'docs')
 DIST_INDEX = os.path.join(ROOT, 'sources', 'district-budget', 'index.csv')
 MEETINGS_INDEX = os.path.join(ROOT, 'sources', 'meetings', 'index.csv')
 UA = {'User-Agent': 'Mozilla/5.0 (lunenburgbudgetproject.org research)'}
+# One request a second at most, serially. About forty pages, so a full look is under two
+# minutes, and a small town's web host never sees a burst from us.
+MIN_INTERVAL = 1.0
+# The fields a version is judged by: what the parser reads off the page.
+CONTENT = ('meets', 'members', 'overview', 'charter_ref', 'facebook', 'facebook_scope')
+# Refuse a listing that lost more than this share of the boards we hold (see the docstring).
+MAX_LOST = 0.25
 COLS = ['slug', 'name', 'source', 'url', 'local', 'sha256', 'meets', 'members', 'overview',
         'charter_ref', 'facebook', 'facebook_scope', 'fetched_at']
 
@@ -66,6 +100,9 @@ def keep(local, blob, url):
     reached the bucket at all (found 9 October 2026). ingest.land_version() lands each
     distinct version under a dated folder -- pushed, read back, catalogued -- and keeps the
     fixed name as the working copy this script and its readers use.
+
+    Returns True when the version is secured. On False the working copy is left as it was,
+    so the next run compares against the old version again and retries the landing.
     """
     sys.path.insert(0, os.path.join(ROOT, 'scripts'))
     import ingest
@@ -73,6 +110,7 @@ def keep(local, blob, url):
     ok, why = ingest.land_version(key, blob, url)
     if not ok:
         print('  !! %s: %s -- working copy left as it was' % (key, why))
+    return ok
 
 
 def slugify(name):
@@ -89,8 +127,25 @@ def meeting_slugs():
     return out
 
 
-def fetch(url):
-    return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120).read()
+_last = [0.0]
+
+
+def fetch(url, tries=3):
+    """The page's bytes, at most one request per MIN_INTERVAL, with two retries.
+
+    Raises after the last try: a page we could not read is a failed look, never an empty
+    board."""
+    for i in range(tries):
+        wait = _last[0] + MIN_INTERVAL - time.monotonic()
+        if wait > 0:
+            time.sleep(wait)
+        _last[0] = time.monotonic()
+        try:
+            return urllib.request.urlopen(urllib.request.Request(url, headers=UA), timeout=120).read()
+        except Exception:                                        # noqa: BLE001
+            if i == tries - 1:
+                raise
+            time.sleep(5 * (i + 1))
 
 
 def text_of(html):
@@ -130,7 +185,17 @@ def parse_town(html):
     text = text_of(html)
     heads = ['Meetings', 'Agendas & Minutes', 'Members', 'Overview', 'Contact Us', 'Responsibilities', 'Mission', 'Purpose']
     meets = section(text, 'Meetings', heads[1:])
-    members = section(text, 'Members', ['Overview', 'Contact Us', 'Responsibilities', 'Mission', 'Purpose', 'Staff', 'Documents'])
+    member_ends = ['Overview', 'Contact Us', 'Responsibilities', 'Mission', 'Purpose', 'Staff', 'Documents',
+                   'Agendas & Minutes']
+    members = section(text, 'Members', member_ends)
+    if not members:
+        # A HEADING THAT NAMES THE BOARD IS STILL THE MEMBERS HEADING. The Board of Assessors
+        # retitled its block `Board of Assessors Members:` between 14 September and
+        # 28 October 2026, and the exact match above then read no members at all -- which
+        # an unattended run would have published as a board with nobody on it.
+        m = re.search(r'\n([^\n]{0,60}Members:?)\n', '\n' + text + '\n')
+        if m:
+            members = section(text, m.group(1), member_ends)
     overview = ''
     for h in ('Overview', 'Responsibilities', 'Mission', 'Purpose'):
         overview = section(text, h, CHROME)
@@ -182,15 +247,76 @@ def parse_district(html):
 
 
 def add_index_row(index_path, label, url, local, digest, size):
-    rows = list(csv.DictReader(open(index_path, encoding='utf-8')))
+    """Set this page's row in a SHARED catalogue -- re-read immediately before writing,
+    written only if the row actually changed, in the file's own newline convention, and
+    renamed into place. Other crawlers write these files too, and a rewrite that flipped
+    every line ending or dropped a row another writer had just added would be our damage."""
+    raw = open(index_path, 'rb').read()
+    nl = '\r\n' if b'\r\n' in raw[:4096] else '\n'
+    rows = list(csv.DictReader(io.StringIO(raw.decode('utf-8'))))
     cols = list(rows[0].keys())
     rel = os.path.relpath(local, ROOT)
-    rows = [r for r in rows if r['local'] != rel]
-    rows.append({c: '' for c in cols} | dict(label=label, upstream=url, local=rel, bytes=str(size), sha256=digest, read='html page'))
-    with open(index_path, 'w', newline='', encoding='utf-8') as fh:
-        w = csv.DictWriter(fh, fieldnames=cols)
-        w.writeheader()
-        w.writerows(rows)
+    new = {c: '' for c in cols} | dict(label=label, upstream=url, local=rel, bytes=str(size), sha256=digest, read='html page')
+    have = [r for r in rows if r['local'] == rel]
+    if len(have) == 1 and {c: have[0].get(c) or '' for c in cols} == new:
+        return
+    rows = [r for r in rows if r['local'] != rel] + [new]
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=cols, lineterminator=nl)
+    w.writeheader()
+    w.writerows(rows)
+    tmp = index_path + '.tmp'
+    open(tmp, 'w', newline='', encoding='utf-8').write(buf.getvalue())
+    os.replace(tmp, index_path)
+
+
+def held_content(row, parser):
+    """What the working copy says, read by the parser in use now -- or None if not on disk."""
+    p = os.path.join(ROOT, row['local']) if row else ''
+    if not p or not os.path.exists(p):
+        return None
+    got = parser(open(p, 'rb').read().decode('utf-8', 'replace'))
+    return {k: got.get(k, '') for k in CONTENT}
+
+
+def look(name, slug, source, url, local, index_path, label, parser, prev, now):
+    """Fetch one board's page and return (row, ok). Lands a version only if the extract changed.
+
+    `prev` is the board's row in board-pages.csv as held. An unchanged page returns that
+    row with its fetch-time fields untouched and its extracted fields re-read from the
+    working copy -- exactly what --reparse would write -- so nothing in the file moves."""
+    html = fetch(url)
+    p = parser(html.decode('utf-8', 'replace'))
+    if source == 'district':
+        # The district row's overview is written by us (see parse_district), not read off the
+        # page, so it is not part of what the page says.
+        p['overview'] = prev['overview'] if prev and prev.get('overview') else p['overview']
+    fresh = {k: p.get(k, '') for k in CONTENT}
+    held = held_content(prev, parser)
+    if held is not None and source == 'district':
+        held['overview'] = fresh['overview']
+    # The row must also still describe the bytes on disk: a run that secured a version and then
+    # died before writing the row would otherwise leave the two disagreeing for good, because
+    # every later run would find the content unchanged and never touch the row again.
+    # A retitled page (a new address for the same page id) is a change too: its title is part
+    # of what the page says, and the catalogue row must carry the address it now answers at.
+    if (prev and held is not None and held == fresh and prev.get('local') == os.path.relpath(local, ROOT)
+            and prev.get('url') == url and prev.get('sha256') == sha256(local)):
+        return dict(prev, slug=slug, name=name, **fresh), True
+    # A FIELD THAT EMPTIES IS NAMED, because it is more often the parser losing the page than
+    # the town emptying a board (rule 13c). The version is still kept -- it is what the town
+    # is serving -- and the line tells whoever reads the refresh notes where to look.
+    for k in ('meets', 'members', 'overview'):
+        if held and held.get(k) and not fresh.get(k):
+            print('  ?? %s: %s was %d line(s), now reads empty -- check the page and the parser'
+                  % (name, k, len(held[k].split('\n'))))
+    if not keep(local, html, url):
+        return prev, False
+    digest = sha256(local)
+    add_index_row(index_path, label, url, local, digest, len(html))
+    print('  changed  %-45s %s' % (name, ', '.join(k for k in CONTENT if not held or held.get(k) != fresh[k])))
+    return dict(slug=slug, name=name, source=source, url=url, local=os.path.relpath(local, ROOT),
+                sha256=digest, fetched_at=now, **p), True
 
 
 def reparse():
@@ -228,6 +354,8 @@ def main():
         return reparse()
     now = dt.datetime.now(dt.timezone.utc).strftime('%Y-%m-%dT%H:%M:%SZ')
     slugs = meeting_slugs()
+    prev_rows = list(csv.DictReader(open(OUT, encoding='utf-8'))) if os.path.exists(OUT) else []
+    prev = {r['url']: r for r in prev_rows}
     index = fetch(INDEX_URL).decode('utf-8', 'replace')
     links = []
     for u, t in re.findall(r'<a[^>]+href="(/\d+/[^"]+)"[^>]*>([^<]+)</a>', index):
@@ -237,38 +365,76 @@ def main():
             continue
         if (u, t) not in links:
             links.append((u, t))
-    rows = []
+    # A BOARD IS ITS PAGE ID, NOT ITS TITLE. The town retitled /772/Board-of-Assessors as
+    # /772/Assessors-Department in October 2026; keyed on the address, that read as one board
+    # gone and a new one arrived under a slug no meeting joins to. Keyed on the id, it is the
+    # same board under a new name, and it keeps the slug and the mirror filename it had.
+    pid_of = lambda url: url.split('lunenburgma.gov/', 1)[-1].split('/', 1)[0]
+    prev_town = {pid_of(r['url']): r for r in prev_rows if r['source'] == 'town'}
+    held_town = set(prev_town)
+    listed = {u.split('/')[1] for u, _ in links}
+    lost = sorted(held_town - listed)
+    if held_town and len(lost) > MAX_LOST * len(held_town):
+        print('REFUSED: the boards listing at %s shows %d board(s) and %d of the %d held are not on it. '
+              'That is a page the link pattern no longer reads, not %d boards dissolved. Nothing written.'
+              % (INDEX_URL, len(links), len(lost), len(held_town), len(lost)), file=sys.stderr)
+        return 1
+    for pid in lost:
+        print('  gone     %s is no longer on the boards listing; its row is dropped, its versions are kept'
+              % prev_town[pid]['url'])
+    rows, failed = [], []
     os.makedirs(TOWN_DOCS, exist_ok=True)
     for u, name in links:
         url = 'https://www.lunenburgma.gov' + u
-        html = fetch(url)
         pid = u.split('/')[1]
+        before = prev_town.get(pid)
         local = os.path.join(TOWN_DOCS, 'board-%s-%s.html' % (pid, slugify(name)))
-        keep(local, html, url)
-        digest = sha256(local)
-        add_index_row(TOWN_INDEX, name + ' (board page)', url, local, digest, len(html))
-        p = parse_town(html.decode('utf-8', 'replace'))
         # Where the town's page name and its AgendaCenter name differ, the meetings slug wins.
         slug = {'by-law-review-committee': 'by-law-committee'}.get(slugify(name)) or slugs.get(slugify(name), slugify(name))
-        rows.append(dict(slug=slug, name=name, source='town', url=url, local=os.path.relpath(local, ROOT), sha256=digest,
-                         fetched_at=now, **p))
-        print('  %-45s %s' % (name, 'charter: ' + p['charter_ref'] if p['charter_ref'] else ('overview %d chars' % len(p['overview']))))
-    html = fetch(SC_URL)
-    local = os.path.join(DIST_DOCS, 'school-committee-page.html')
-    keep(local, html, SC_URL)
-    digest = sha256(local)
-    add_index_row(DIST_INDEX, 'School Committee (district page)', SC_URL, local, digest, len(html))
-    p = parse_district(html.decode('utf-8', 'replace'))
-    rows.append(dict(slug='school-committee', name='School Committee', source='district', url=SC_URL,
-                     local=os.path.relpath(local, ROOT), sha256=digest, fetched_at=now, **p))
-    with open(OUT, 'w', newline='', encoding='utf-8') as fh:
-        w = csv.DictWriter(fh, fieldnames=COLS)
-        w.writeheader()
-        w.writerows(rows)
+        if before and before['name'] != name:
+            print('  renamed  %s -> %s (page %s); slug %s and its mirror are kept'
+                  % (before['name'], name, pid, before['slug']))
+        if before:
+            slug, local = before['slug'], os.path.join(ROOT, before['local'])
+        try:
+            row, ok = look(name, slug, 'town', url, local, TOWN_INDEX, name + ' (board page)', parse_town,
+                           before, now)
+        except Exception as e:                                   # noqa: BLE001
+            print('  !! %s: %s' % (url, e))
+            row, ok = before, False
+        if not ok:
+            failed.append(name)
+        if row:
+            rows.append(row)
+    try:
+        row, ok = look('School Committee', 'school-committee', 'district', SC_URL,
+                       os.path.join(DIST_DOCS, 'school-committee-page.html'), DIST_INDEX,
+                       'School Committee (district page)', parse_district, prev.get(SC_URL), now)
+    except Exception as e:                                       # noqa: BLE001
+        print('  !! %s: %s' % (SC_URL, e))
+        row, ok = prev.get(SC_URL), False
+    if not ok:
+        failed.append('School Committee')
+    if row:
+        rows.append(row)
+    # Written only if a row moved, so an unchanged run leaves the file byte for byte as it was.
+    norm = lambda rs: [{c: r.get(c) or '' for c in COLS} for r in rs]
+    if norm(rows) != norm(prev_rows):
+        tmp = OUT + '.tmp'
+        with open(tmp, 'w', newline='', encoding='utf-8') as fh:
+            w = csv.DictWriter(fh, fieldnames=COLS)
+            w.writeheader()
+            w.writerows(norm(rows))
+        os.replace(tmp, OUT)
     own = [r for r in rows if r['facebook_scope'] == 'board']
-    print('%s: %d boards; %d with a Facebook link of their own (%s); %d cite a charter section'
-          % (os.path.relpath(OUT, ROOT), len(rows), len(own), ', '.join(r['name'] for r in own),
+    moved = sum(1 for r in rows if r['fetched_at'] == now)
+    print('%s: %d boards, %d changed since last held; %d with a Facebook link of their own (%s); %d cite a charter section'
+          % (os.path.relpath(OUT, ROOT), len(rows), moved, len(own), ', '.join(r['name'] for r in own),
              sum(1 for r in rows if r['charter_ref'])))
+    if failed:
+        print('could not read or secure %d page(s): %s -- their previous rows are kept' % (len(failed), ', '.join(failed)),
+              file=sys.stderr)
+        return 1
     return 0
 
 
