@@ -942,6 +942,24 @@ GROUPS = [
         ],
     },
     {
+        'section': 'theirs', 'id': 'oml-response-2026-10-26', 'origin': 'school',
+        'title': 'The School Committee’s answer to an Open Meeting Law complaint',
+        'blurb': 'Its counsel’s letter of 26 October 2026, answering TJ Loughlin’s complaint of '
+                 '5 October that the Committee was not making its minutes available. Emailed to '
+                 'the complainant and copied to the Attorney General’s Division of Open Government.',
+        'items': [
+            ('correspondence/2026-10-26-oml-response-school-committee-counsel.pdf',
+             'Response to the OML complaint', 1,
+             'Two pages. It concedes a request for 35 meetings’ minutes went unanswered past ten '
+             'days, says the law does not require minutes on a website, and commits to providing '
+             'them and to member training by 31 December 2026.'),
+            ('correspondence/2026-10-26-oml-response-school-committee-counsel.md',
+             'How this reached us', 3,
+             'Who sent it and to whom, the filename and sha256 as received, why it was held and '
+             'who decided to publish it, and what it says.'),
+        ],
+    },
+    {
         'section': 'theirs', 'id': 'business', 'origin': 'town',
         'title': 'Business registrations',
         'blurb': 'Town Clerk business certificate records, cleaned and categorised, behind the '

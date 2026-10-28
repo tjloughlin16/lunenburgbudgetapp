@@ -143,9 +143,15 @@ The response: a letter from Matthew P. Milward, VDH Boston, for the Committee, d
   remedies 1-3 (approved vs not, meetings with no minutes, a catch-up schedule); timeliness
   of approval.
 
+**Arrived so far: 1 of the 35.** 15 July 2026 (#6 on the 8 Sep list), emailed by the
+Superintendent's office 27 Oct 2026, filed as delivered minutes:
+`sources/meetings/PROVENANCE-school-committee-2026-10-27.md`. Two more of the 35 (29 Jul,
+26 Aug 2026) have since appeared on the Agenda Center. Recount against the list before 4 Nov.
+
 **What decides it, by 4 Nov:** have the 35 arrived? If not, the missing date is the
 strongest ground. A §22(c) request for the 59 meetings of 2022-23 (25 + 34) is the cheap
 fix for their second objection -- not yet sent; TJ said not yet on 26 Oct.
 
-The letter itself is not yet in `sources/correspondence/`; it carries TJ's email address,
-so it goes through the redaction gate if filed.
+**The letter is filed, whole and public**, on TJ's decision (28 Oct: *"yo ucan include my name
+and all that, totally fine"*): `sources/correspondence/2026-10-26-oml-response-school-committee-counsel.pdf`,
+with its note beside it.

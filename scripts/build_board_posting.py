@@ -238,10 +238,13 @@ def build(as_of):
         ),
         conclusion(
             id='the-biggest-fall',
-            claim='The %s went from %s of meetings with minutes in FY%d to %s in FY%d.'
-                  % (fall_r['name'], C.pct(100 * fall_a['with_minutes'] / fall_a['meetings'], 0), fall_a['fy'],
-                     C.pct(100 * fall_z['with_minutes'] / fall_z['meetings'], 0), fall_z['fy']),
-            so_what='The largest fall of any board over the four years, %s points. A lifetime average would not show it.' % C.num(round(fall_pts)),
+            # The years live in `so_what`, not the claim: a 46-character board name (the
+            # Architectural Preservation District Commission) took the claim to 118 of 95.
+            claim='%s: from %s to %s of meetings with minutes.'
+                  % (fall_r['name'], C.pct(100 * fall_a['with_minutes'] / fall_a['meetings'], 0),
+                     C.pct(100 * fall_z['with_minutes'] / fall_z['meetings'], 0)),
+            so_what='FY%d to FY%d, the largest fall of any board: %s points. A lifetime average would not show it.'
+                    % (fall_a['fy'], fall_z['fy'], C.num(round(fall_pts))),
             figures={'fall': figure(fall_pts, C.num(round(fall_pts)), 'points, FY%d to FY%d' % (fall_a['fy'], fall_z['fy'])),
                      'a_share': figure(100 * fall_a['with_minutes'] / fall_a['meetings'], C.pct(100 * fall_a['with_minutes'] / fall_a['meetings'], 0)),
                      'z_share': figure(100 * fall_z['with_minutes'] / fall_z['meetings'], C.pct(100 * fall_z['with_minutes'] / fall_z['meetings'], 0)),

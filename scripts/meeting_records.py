@@ -232,7 +232,15 @@ def status(row, first_video, due=None, as_of=None):
         k, n = sub_body_recordings()
         v_status, likely_none = 'n/a', True
         v_reason = 'sub-committees and councils are rarely recorded (%d of %d)' % (k, n)
-    m_status, m_reason = ('posted', None) if _truthy(row.get('minutes')) else _absent(due, as_of)
+    # POSTED MEANS THE TOWN POSTED IT. A set the board emailed to a requester -- held, with
+    # no Agenda Center address -- is not posted to the public, and TJ, 28 October 2026: "we
+    # should not change the posting percent if they send to me. the point is for them to post
+    # to the public." So it keeps the status the window gives it, and the copy rides along
+    # as `delivered` for a page to link beside that status.
+    posted = _truthy(row.get('minutes')) and bool(row.get('minutes_url'))
+    delivered = row.get('minutes_delivered_path') or (
+        row.get('minutes_path') if _truthy(row.get('minutes')) and not posted else None) or None
+    m_status, m_reason = ('posted', None) if posted else _absent(due, as_of)
     if not has_video:
         t_status, t_reason = 'n/a', 'no recording'
     elif _truthy(row.get('transcript')):
@@ -253,7 +261,8 @@ def status(row, first_video, due=None, as_of=None):
         agenda=dict(posted=_truthy(row.get('agenda')), url=row.get('agenda_url') or None),
         video=dict(status=v_status, url=video_url if has_video else None, reason=v_reason,
                    likely_none=likely_none),
-        minutes=dict(status=m_status, url=row.get('minutes_url') or None, reason=m_reason),
+        minutes=dict(status=m_status, url=row.get('minutes_url') or None, reason=m_reason,
+                     delivered=delivered),
         transcript=dict(status=t_status, captions_disabled=_truthy(row.get('captions_disabled')), reason=t_reason),
     )
 

@@ -401,6 +401,13 @@ def build(as_of=None):
             continue
         slug = r['path'].split('/')[0]
         names.setdefault(slug, r['board'])
+        # A DELIVERED COPY (no Agenda Center url, file_id `rr<date>`) is kept as `delivered`
+        # and NEVER as `minutes`, so the scorecard and the counts measure what the town
+        # posted to the public. TJ, 28 October 2026: "we should not change the posting
+        # percent if they send to me." See meeting_records.status().
+        if r['kind'] == 'minutes' and not r.get('url'):
+            docs[slug][r['date']].setdefault('delivered', r)
+            continue
         docs[slug][r['date']][r['kind']] = r
     # NOTICES THE TOWN SENT SOME OTHER WAY -- the same register build_meeting_feed.py reads,
     # so a meeting announced only by email (the School Committee, 7 October 2026) is on its
@@ -537,6 +544,8 @@ def build(as_of=None):
                 captions_disabled='1' if _has_captions_disabled else '0',
                 agenda_url=(a and a['url']) or rg.get('agenda_url') or None,
                 minutes_url=(mn and mn['url']) or rg.get('minutes_url') or None,
+                minutes_delivered_path=(docs[slug][d].get('delivered') or {}).get('path')
+                                       or rg.get('minutes_delivered_path') or None,
                 video_url=_video_url, body_as_printed=rg.get('body_as_printed') or '')
             _st = MR.status(_status_row, first_video, due.get((slug, d)))
             _our_minutes = MR.our_minutes_status(o is not None, _st['video']['status'],

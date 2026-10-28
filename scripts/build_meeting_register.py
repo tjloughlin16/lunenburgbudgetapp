@@ -68,6 +68,7 @@ COLS = ['board', 'board_slug', 'date', 'agenda', 'minutes', 'searchable_docs',
         'body_as_printed',
         'agenda_path', 'agenda_url', 'agenda_first_seen',
         'minutes_path', 'minutes_url', 'minutes_first_seen', 'minutes_lag_upper_bound', 'minutes_ocr',
+        'minutes_delivered_path',
         'video_urls', 'video_uploaded', 'video_first_seen', 'captions_disabled',
         'transcript_paths', 'transcript_fetched',
         'our_minutes_path', 'our_minutes_url', 'our_minutes_written', 'our_minutes_headline', 'our_votes',
@@ -153,6 +154,18 @@ def load_documents():
             m = out.setdefault(key, {'agenda': 0, 'minutes': 0, 'ok': 0, 'bad': 0, 'paths': {}, 'urls': {}, 'ocr': 0})
             if r['kind'] in ('agenda', 'minutes'):
                 m[r['kind']] = 1
+                # A DELIVERED COPY IS HELD, NOT POSTED. Minutes a board emailed to a
+                # requester carry no Agenda Center address (file_id `rr<date>`). TJ,
+                # 28 October 2026: "we should not change the posting percent if they send
+                # to me. the point is for them to post to the public." So the town's own
+                # row wins `path` and `url` whichever order the index lists them in --
+                # first-come used to let a delivered copy hide the town's later posting --
+                # and a delivered copy is kept beside it, in its own column.
+                if r['kind'] == 'minutes' and not r.get('url'):
+                    m.setdefault('delivered', r['path'])
+                if r.get('url') and not m['urls'].get(r['kind']):
+                    m['paths'][r['kind']] = r['path']
+                    m['urls'][r['kind']] = r['url']
                 m['paths'].setdefault(r['kind'], r['path'])
                 if r.get('title'):
                     m.setdefault('titles', {}).setdefault(r['kind'], r['title'])
@@ -427,6 +440,7 @@ def build():
             'agenda_path': d['paths'].get('agenda', ''), 'agenda_url': d['urls'].get('agenda', ''), 'agenda_first_seen': ea.get('first_seen', ''),
             'minutes_path': d['paths'].get('minutes', ''), 'minutes_url': d['urls'].get('minutes', ''), 'minutes_first_seen': em.get('first_seen', ''),
             'minutes_lag_upper_bound': em.get('days_after_meeting_upper_bound', ''), 'minutes_ocr': d['ocr'],
+            'minutes_delivered_path': d.get('delivered', ''),
             'video_urls': ' '.join('https://www.youtube.com/watch?v=' + i for i in vs),
             'video_uploaded': ' '.join((vev.get(i) or vmeta.get(i) or {}).get('uploaded', '') or '-' for i in vs),
             'video_first_seen': ' '.join(vev.get(i, {}).get('first_seen', '') or '-' for i in vs),
