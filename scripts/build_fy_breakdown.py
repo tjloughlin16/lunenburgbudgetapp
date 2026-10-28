@@ -1412,8 +1412,8 @@ def line_funds_data(m, T):
                           budget_means='The school budget for the line: voted, transfers, and orders carried in.',
                           all_kinds='Every kind', filter='Filter by line, category or fund',
                           scroll='More columns: scroll the table sideways', sum='Every row',
-                          lines='school lines', funds='funds', fund_one='fund', open='Show the funds',
-                          expand='Open every line', collapse='Close every line'))
+                          lines='school lines', funds='funds', fund_one='fund', close='Close',
+                          open='Open a line for the funds that paid toward it'))
 
 
 # OVERLAP (TJ, 27 October 2026: "these other sources of funds are complimenting or supplementing
