@@ -307,12 +307,23 @@ def slow_sources(a, notes):
         # Census release the pages are not pinned to, a new fiscal year's parcels. It exits 0,
         # so without this it would be said only into the log. Captured, echoed to the log as
         # before, and carried into the run's notes.
+        before = SC.fingerprint(r)
         res = py(*SC.argv(r), check=False, quiet=True)
         sys.stdout.write((res.stdout or '') + (res.stderr or ''))
         for line in (res.stdout or '').splitlines():
             if line.startswith('NOTICE:'):
                 notes.append('%s: %s' % (r['id'], line[len('NOTICE:'):].strip()))
         looked(r['id'], a, res, notes, 'run python3 scripts/%s' % r['command'])
+        # WHAT READS IT IS NAMED, NOT RUN. The consumers are derived (source_cadence.downstream:
+        # every build_*.py naming a file this job writes), but most are not on SITE_PAYLOADS,
+        # and SITE_PAYLOADS is the list of builders vetted to run unattended -- three scripts
+        # destroyed data the one time that was not checked. So a changed fetch says which
+        # pages now lag their data; it does not rebuild them.
+        if res.returncode == 0 and SC.fingerprint(r) != before:
+            lag = [b for b in SC.downstream(r) if b not in SITE_PAYLOADS]
+            if lag:
+                notes.append('%s CHANGED; these read it and were not re-run: %s'
+                             % (r['id'], ', '.join(lag)))
     found = SC.changes(on=a.as_of)
     for kind, said in (('changed', 'CHANGED AT THE PUBLISHER, found today'),
                        ('ours', 'defects in our archive the source checks exposed today')):

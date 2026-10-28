@@ -2,7 +2,8 @@
 """THE CHERRY SHEET: every line of state aid and every state assessment, per town and per
 regional school district, from the Division of Local Services.
 
-    python3 scripts/fetch_dls_cherry_sheet.py            # fetch, ingest, extract
+    python3 scripts/fetch_dls_cherry_sheet.py            # fetch every year, ingest, extract
+    python3 scripts/fetch_dls_cherry_sheet.py --recent   # this FY, the two before, and newer: the refresh's
     python3 scripts/fetch_dls_cherry_sheet.py --check    # the extract still reproduces
 
 WHY THIS EXISTS. TJ, on the argument this town keeps having about regionalising: *"transportation
@@ -37,6 +38,7 @@ recorded as a year with no aid.
 """
 import argparse
 import csv
+import datetime
 import http.cookiejar
 import io
 import os
@@ -47,7 +49,7 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from fetch_dls_tax_bills import export_name, newest_export   # noqa: E402
+from fetch_dls_tax_bills import land_export, newest_export   # noqa: E402
 
 REPORT = 'CherrySheets.CherrySheet_detail'
 PAGE = 'https://dls-gw.dor.state.ma.us/reports/rdPage.aspx?rdReport=' + REPORT
@@ -65,6 +67,11 @@ UA = {'User-Agent': 'Mozilla/5.0 (lunenburgbudgetproject.org research)', 'Refere
 BUDGET = 'Final Budget'
 COLS = ['fy', 'population', 'flow', 'dor_code', 'name', 'line', 'amount']
 SRC_COLS = ['fy', 'population', 'flow', 'source_file', 'sha256', 'rows']
+POPULATIONS = ('Municipalities', 'Regional Schools')
+FLOWS = ('Receipts', 'Assessments')
+# Between requests. Each export already takes the Gateway about seven seconds to build
+# (measured 28 October 2026), so this is courtesy rather than throttling.
+PAUSE = 1.0
 
 
 def opener():
@@ -138,6 +145,8 @@ def read_sheet(blob, fy, population, flow):
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--check', action='store_true')
+    ap.add_argument('--recent', action='store_true',
+                    help='only the current fiscal year, the two before it and any newer: the scheduled run')
     a = ap.parse_args()
     if a.check:
         if not os.path.exists(OUT_CSV):
@@ -165,37 +174,79 @@ def main():
         return 0
 
     import hashlib
-    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-    import ingest
+    import time
 
     o = opener()
     ys = years(o)
-    all_rows, sources, got, empty = [], [], 0, []
-    for fy in ys:
-        for population in ('Municipalities', 'Regional Schools'):
-            for flow in ('Receipts', 'Assessments'):
+    # WHICH YEARS TO ASK FOR, FROM TODAY'S DATE. `--recent` is the refresh's command: a final
+    # cherry sheet for a year long closed does not move, and asking for all of them is 72
+    # requests at seven seconds each -- most of the ten minutes a scheduled job is allowed --
+    # to confirm that FY2010 is still FY2010. The window is the fiscal year we are in, the two
+    # before it (a final can still be corrected after its year closes) and anything newer the
+    # form offers. A bare run still asks for every year, as it always has.
+    if a.recent:
+        today = datetime.date.today()
+        fy_now = today.year + (1 if today.month >= 7 else 0)
+        ask = [y for y in ys if int(y) >= fy_now - 2]
+    else:
+        ask = ys
+    held = {(r['fy'], r['population'], r['flow']): r
+            for r in (csv.DictReader(open(SRC_CSV, encoding='utf-8')) if os.path.exists(SRC_CSV) else [])}
+    groups = {}
+    if os.path.exists(OUT_CSV):
+        for r in csv.DictReader(open(OUT_CSV, encoding='utf-8')):
+            groups.setdefault((r['fy'], r['population'], r['flow']), []).append(r)
+    sources = dict(held)
+    changed, refused, empty = [], [], []
+    for fy in ask:
+        for population in POPULATIONS:
+            for flow in FLOWS:
+                g = (fy, population, flow)
+                time.sleep(PAUSE)
                 blob = fetch_one(o, fy, population, flow)
-                if blob is None:
-                    empty.append('%s %s %s' % (fy, population, flow))
-                    continue
-                stem = 'CherrySheet-%s-%s-%s' % (
-                    fy, population.replace(' ', ''), flow)
-                name = export_name(stem, '.xlsx', blob)
-                key = 'state-dls/' + name
-                ok, why = ingest.land(key, blob, upstream=EXPORT)
-                if not ok:
-                    raise SystemExit('%s: %s' % (key, why))
-                digest = hashlib.sha256(blob).hexdigest()
-                rows_ = read_sheet(blob, fy, population, flow)
+                rows_ = read_sheet(blob, fy, population, flow) if blob is not None else []
+                # NOTHING BACK IS ONLY "NOT YET PUBLISHED" FOR A YEAR WE HAVE NEVER HELD. For
+                # a group the extract already carries, an error page or an empty sheet means
+                # this run could not see it, and the old code dropped its rows from the CSV
+                # without a word. Now it is refused, and the run exits non-zero so the refresh
+                # retries tomorrow instead of recording a look that did not happen.
                 if not rows_:
-                    empty.append('%s %s %s (no rows)' % (fy, population, flow))
+                    if g in held:
+                        refused.append('%s %s %s (%s)' % (fy, population, flow,
+                                       'not a workbook' if blob is None else 'no rows'))
+                    else:
+                        empty.append('%s %s %s' % g)
                     continue
-                all_rows.extend(rows_)
-                sources.append(dict(fy=int(fy), population=population, flow=flow,
-                                    source_file=name, sha256=digest, rows=len(rows_)))
-                got += 1
-    if not all_rows:
+                stem = 'CherrySheet-%s-%s-%s' % (fy, population.replace(' ', ''), flow)
+                current = (os.path.join(OUT_DIR, held[g]['source_file']) if g in held
+                           else newest_export(OUT_DIR, stem, '.xlsx'))
+                # An empty sheet is never landed (above), and an unchanged one is not landed
+                # twice: the Gateway re-zips every export with the request's time, so it is
+                # the CONTENT that is compared -- land_export in fetch_dls_tax_bills.py.
+                key, moved = land_export(stem, '.xlsx', blob, EXPORT, current=current)
+                if moved:
+                    changed.append(key)
+                name = os.path.basename(key)
+                with open(os.path.join(OUT_DIR, name), 'rb') as fh:
+                    digest = hashlib.sha256(fh.read()).hexdigest()
+                groups[g] = rows_
+                sources[g] = dict(fy=int(fy), population=population, flow=flow,
+                                  source_file=name, sha256=digest, rows=len(rows_))
+    if refused:
+        raise SystemExit('the cherry sheet form did not answer for %d group(s) the extract '
+                         'already holds; nothing rewritten: %s' % (len(refused), '; '.join(refused[:6])))
+    if not groups:
         raise SystemExit('nothing came back from the cherry sheet form')
+    if not changed and os.path.exists(OUT_CSV):
+        print('unchanged: %d workbook(s) asked for, FY%s-FY%s; every one says what its held copy '
+              'says. Nothing landed, nothing rewritten.'
+              % (len(ask) * len(POPULATIONS) * len(FLOWS) - len(empty), ask[0], ask[-1]))
+        if empty:
+            print('  no %s published for: %s' % (BUDGET, ', '.join(empty[:6])))
+        return 0
+    order = sorted(groups, key=lambda g: (int(g[0]), POPULATIONS.index(g[1]), FLOWS.index(g[2])))
+    all_rows = [r for g in order for r in groups[g]]
+    got = len(order)
     with open(OUT_CSV, 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, fieldnames=COLS)
         w.writeheader()
@@ -203,7 +254,8 @@ def main():
     with open(SRC_CSV, 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, fieldnames=SRC_COLS)
         w.writeheader()
-        w.writerows(sources)
+        w.writerows(sources[g] for g in order)
+    ys = sorted({g[0] for g in order}, key=int)
 
     rows_idx = [r for r in csv.DictReader(open(INDEX, encoding='utf-8'))
                 if not r['local'].startswith('state-dls/CherrySheet-')] \

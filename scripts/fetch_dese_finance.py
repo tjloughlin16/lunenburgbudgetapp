@@ -49,7 +49,9 @@ below is the one without it.
 """
 import argparse
 import csv
+import glob
 import hashlib
+import io
 import os
 import shutil
 import sys
@@ -153,6 +155,16 @@ def data_rows(path):
     return n
 
 
+def _promoted_from(d, digest):
+    """The day of the dated version (state-dese/<YYYY-MM-DD>/<local>) whose bytes the
+    working copy now holds, or None if it is still the original download."""
+    stem, ext = os.path.splitext(d['local'])
+    for p in sorted(glob.glob(os.path.join(DESE, '[0-9]' * 4 + '-*', stem + '*' + ext))):
+        if sha256(p) == digest:
+            return os.path.basename(os.path.dirname(p))
+    return None
+
+
 def read_registry():
     if not os.path.exists(REGISTRY):
         return {}
@@ -172,6 +184,15 @@ def build_registry(adopt_rows=None):
         if os.path.exists(path):
             row['bytes'] = str(os.path.getsize(path))
             row['sha256'] = sha256(path)
+            promoted = _promoted_from(d, row['sha256'])
+            if promoted:
+                # The working copy is a version fetch_dese_socrata.py landed and promoted, not
+                # the 8 September Export-button download: its date is the dated folder it was
+                # landed in, and its name at the publisher is the export route's, which names
+                # no file. The DATASETS values stay true of the original, which is still held.
+                row['downloaded'] = promoted
+                row['publisher_name'] = 'export.xlsx (%s/api/v3/views/%s/export.xlsx)' % (
+                    PORTAL, d['dataset_id'])
         else:
             row['bytes'] = row['sha256'] = ''
         if adopt_rows and d['dataset_id'] in adopt_rows:
@@ -183,7 +204,6 @@ def build_registry(adopt_rows=None):
 
 
 def render(rows):
-    import io
     buf = io.StringIO()
     w = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
     w.writeheader()
@@ -194,7 +214,12 @@ def render(rows):
 
 def catalogue(rows):
     """index.csv is the archive's own catalogue. A file not in it is not a source."""
-    have = list(csv.DictReader(open(INDEX, encoding='utf-8')))
+    # SHARED with every other DESE fetcher, and fetch_dese_socrata.py --promote runs this
+    # unprompted: re-read immediately before writing and keep the file's newline convention.
+    # csv's default \r\n would otherwise rewrite every line of a \n file on each run.
+    raw = open(INDEX, 'rb').read()
+    nl = '\r\n' if b'\r\n' in raw else '\n'
+    have = list(csv.DictReader(io.StringIO(raw.decode('utf-8'))))
     fields = list(have[0].keys())
     by_local = {r['local']: r for r in have}
     for d, r in zip(DATASETS, rows):
@@ -207,11 +232,13 @@ def catalogue(rows):
         else:
             have.append(row)
             by_local[r['local']] = row
-    with open(INDEX, 'w', newline='', encoding='utf-8') as fh:
-        w = csv.DictWriter(fh, fieldnames=fields)
+    tmp = INDEX + '.tmp'
+    with open(tmp, 'w', newline='', encoding='utf-8') as fh:
+        w = csv.DictWriter(fh, fieldnames=fields, lineterminator=nl)
         w.writeheader()
         for r in have:
             w.writerow({k: r.get(k, '') for k in fields})
+    os.replace(tmp, INDEX)
     return len(have)
 
 

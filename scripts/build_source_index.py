@@ -4570,6 +4570,17 @@ def is_edition(rel, catalogued):
     m = _EDITION_RE.match(rel)
     if m and (m.group('stem') + m.group('ext')) in catalogued:
         return True
+    # ...OR WHERE THE CATALOGUED ENTRY IS ITSELF AN EDITION. Tax rates was only ever fetched
+    # through ingest.land, so it has no undated working copy: the catalogue names its first
+    # edition, `taxratesbyclass-2026-10-15-7182dcc4901d.xlsx`, and the scheduled re-fetch of
+    # 28 October 2026 was reported uncatalogued. A sibling edition of a catalogued edition is
+    # the same document by the same reasoning.
+    if m:
+        stem = m.group('stem') + m.group('ext')
+        for c in catalogued:
+            cm = _EDITION_RE.match(c)
+            if cm and cm.group('stem') + cm.group('ext') == stem:
+                return True
     d = _DATED_DIR_RE.match(rel)
     return bool(d) and '%s/%s' % (d.group('dir'), d.group('name')) in catalogued
 

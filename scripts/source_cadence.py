@@ -65,7 +65,9 @@ TIERS = [(1, 'Daily'), (7, 'Weekly'), (30, 'Monthly'), (90, 'Quarterly'), (365, 
 # new fetcher cannot be written and silently never re-run -- the staff-directory gap.
 PART_OF = {'fetch_agendas.py': 'meetings', 'fetch_school_budget_docs.py': 'documents',
            'fetch_town_docs.py': 'documents', 'fetch_youtube_index.py': 'youtube',
-           'fetch_youtube_transcripts.py': 'youtube'}
+           'fetch_youtube_transcripts.py': 'youtube',
+           # superseded by fetch_dese_socrata.py, whose --promote runs it for its three ids
+           'fetch_dese_finance.py': 'socrata-dese-fetch'}
 
 
 def _rows(path):
@@ -134,6 +136,46 @@ def record(source_id, as_of, ok, note=''):
 def argv(r):
     """The refresh-runnable command of a job or slice row: [script, *args]."""
     return shlex.split(r['command'])
+
+
+def writes(r):
+    """The files a source's job writes that other scripts read, as declared in `writes`."""
+    return r.get('writes', '').split()
+
+
+def fingerprint(r):
+    """{path: sha256} of what a job writes, so the refresh can tell whether a run CHANGED
+    anything -- every fetcher exits 0 whether or not it did."""
+    import hashlib
+    out = {}
+    for w in writes(r):
+        full = os.path.join(ROOT, w)
+        paths = ([os.path.join(dp, f) for dp, _, fs in os.walk(full) for f in fs]
+                 if w.endswith('/') else [full])
+        for pth in paths:
+            if os.path.isfile(pth):
+                with open(pth, 'rb') as fh:
+                    out[pth] = hashlib.sha256(fh.read()).hexdigest()
+    return out
+
+
+def downstream(r):
+    """-> [script]: every scripts/build_*.py that names a file this source writes. DERIVED,
+    NOT LISTED: a hand-kept list of consumers is the stale-copy failure this repo keeps
+    hitting, and the day somebody adds a page reading dls-tax-rates.csv it joins this list
+    without anybody remembering to. A file is named by its basename, a folder by its own
+    name (`federal-bls`)."""
+    tokens = {os.path.basename(w.rstrip('/')) for w in writes(r)}
+    if not tokens:
+        return []
+    out = []
+    for f in sorted(os.listdir(SCRIPTS)):
+        if f.startswith('build_') and f.endswith('.py'):
+            with open(os.path.join(SCRIPTS, f), encoding='utf-8', errors='replace') as fh:
+                text = fh.read()
+            if any(t in text for t in tokens):
+                out.append(f)
+    return out
 
 
 def runnable():
@@ -226,6 +268,9 @@ def validate():
             named.add(s)
             if not os.path.exists(os.path.join(SCRIPTS, s)):
                 bad.append('%s: names %s, which does not exist' % (r['id'], s))
+        for w in writes(r):
+            if not os.path.exists(os.path.join(ROOT, w)):
+                bad.append('%s: writes %s, which does not exist' % (r['id'], w))
     for c in _rows(CHECKS):
         if c['id'] not in ids:
             bad.append('source-checks.csv names %s, which is not in the register' % c['id'])

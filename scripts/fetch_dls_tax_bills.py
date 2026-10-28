@@ -19,8 +19,10 @@ single-family tax bill, the bill as a share of value, DOR income per capita, the
 share of income, and the town's rank among the 351. FY1988 to the current year; the newest
 year is a blank row until the town's rate is set.
 
-Saved as the publisher's own export name under sources/state-dls/, hashed, and extracted
-to sources/data/dls-avg-tax-bill.csv with the columns as printed.
+Landed through ingest.land under sources/state-dls/, named by export_name, and extracted
+to sources/data/dls-avg-tax-bill.csv with the columns as printed. A fetch whose workbook
+says exactly what the extract's own source file says lands nothing and exits 0
+(land_export), so the refresh can run it on a cadence.
 """
 import argparse
 import csv
@@ -103,6 +105,96 @@ def newest_export(directory, stem, ext, legacy=None):
     return os.path.join(directory, legacy or (stem + ext))
 
 
+def export_content(src):
+    """A fingerprint of what a Gateway export SAYS, blind to when the Gateway generated it.
+
+    WHY NOT ITS SHA256. Measured 28 October 2026: the same cherry-sheet export fetched twice,
+    eight seconds apart, came back with two different hashes -- and every one of its ten zip
+    members byte-identical, to each other and to the copy fetched on 26 September. The only
+    difference was the timestamp the Gateway stamps on each member as it zips. So a byte
+    hash says every fetch is a new document, and a fetcher deduplicating on it would land
+    the same workbook again on every run, forever, into a bucket that cannot delete it.
+
+    What this hashes is each member's NAME and its UNCOMPRESSED BYTES, in name order. Any
+    change to a cell, a header, a style or a sheet changes it; the zip's clock does not.
+    `src` is a blob or a path."""
+    import io
+    import zipfile
+    z = zipfile.ZipFile(io.BytesIO(src) if isinstance(src, bytes) else src)
+    h = hashlib.sha256()
+    for name in sorted(z.namelist()):
+        h.update(name.encode('utf-8') + b'\0' + hashlib.sha256(z.read(name)).digest())
+    return h.hexdigest()
+
+
+def current_export(extract_csv, directory, fallback):
+    """The export the PUBLISHED extract was read from: what a new fetch is compared against.
+
+    Taken from the extract's own `source_file` column rather than from `newest_export`,
+    because modification time is not a record of anything -- a `sync_archive.py --pull`
+    into a fresh tree stamps every file with the moment it arrived, in whatever order -- and
+    the question a scheduled fetch asks is whether the figures on the site still match the
+    publisher, which is a question about the file those figures came from."""
+    if os.path.exists(extract_csv):
+        with open(extract_csv, newline='', encoding='utf-8') as fh:
+            first = next(csv.DictReader(fh), None)
+        if first and first.get('source_file'):
+            path = os.path.join(directory, first['source_file'])
+            if os.path.exists(path):
+                return path
+    return fallback
+
+
+def land_export(stem, ext, blob, upstream, current=None, check=None, directory=OUT_DIR):
+    """Land one Gateway export through ingest.land, unless what it says is already held.
+
+    Returns (key, changed), where `key` is the archive key holding this content.
+
+      changed=False  it says exactly what `current` says -- the file the published extract
+                     was read from. NOTHING is landed (not a second copy under today's
+                     date, which is what `export_name` alone would produce, since its name
+                     carries the day), and the caller leaves its extract as it is.
+      changed=True   the extract has to be rebuilt from `key`. Usually `key` is newly
+                     landed. But if some OTHER held export of this stem already says the
+                     same thing, `key` is that one and nothing is landed: a run that landed
+                     a change and then died before rewriting its extract must not land the
+                     same content again the next morning, and neither must a figure DLS
+                     moved and then moved back.
+
+    `check(path)` is the caller's extract, run against the blob in a scratch file BEFORE it
+    lands, so a workbook that does not reconcile is refused while that still costs nothing.
+    After the push it would be permanent -- and on a schedule the next run would see the
+    same change and try again. Refuses (SystemExit) if ingest does, because a document that
+    could not be secured is a run that could not finish."""
+    import glob
+    import ingest
+    import tempfile
+    import zipfile
+    mine = export_content(blob)
+    if current and os.path.exists(current) and export_content(current) == mine:
+        return 'state-dls/' + os.path.basename(current), False
+    for path in sorted(glob.glob(os.path.join(directory, '%s-*%s' % (stem, ext)))):
+        try:
+            same = export_content(path) == mine
+        except (zipfile.BadZipFile, OSError):
+            continue
+        if same:
+            print('  already held as %s; nothing landed' % os.path.basename(path))
+            return 'state-dls/' + os.path.basename(path), True
+    key = 'state-dls/' + export_name(stem, ext, blob)
+    if check is not None:
+        with tempfile.TemporaryDirectory() as tmp:
+            path = os.path.join(tmp, os.path.basename(key))
+            with open(path, 'wb') as fh:
+                fh.write(blob)
+            check(path)
+    ok, why = ingest.land(key, blob, upstream)
+    if not ok:
+        raise SystemExit('ingest.land refused %s: %s' % (key, why))
+    print('  landed %s (%d bytes)%s' % (key, len(blob), ' -- ' + why if why else ''))
+    return key, True
+
+
 def out_xlsx(blob=None, day=None):
     """This report's export path. See `export_name` for why the sha is in the name."""
     if blob is None:
@@ -157,17 +249,19 @@ def fetch():
     data = r.read()
     if not data.startswith(b'PK'):
         raise SystemExit('the export was not a workbook (%s, %d bytes)' % (r.headers.get('Content-Type'), len(data)))
-    os.makedirs(OUT_DIR, exist_ok=True)
-    path = out_xlsx(data)
-    with open(path, 'wb') as fh:
-        fh.write(data)
-    print('wrote %s (%d bytes)' % (os.path.relpath(path, ROOT), len(data)))
-    return years, offered
+    # THROUGH INGEST, NOT open(..., 'wb'). Until 28 October 2026 this wrote the export
+    # straight into sources/, so between the fetch and the day's `sync_archive.py --push`
+    # the only copy of it was a file in a git working tree -- the window ingest.py exists to
+    # close. It also made the fetch unsafe to schedule: every run wrote a new file whether
+    # or not DLS had changed a figure. See land_export for both halves of the fix.
+    key, changed = land_export('AvgSingleFamTaxBill', '.xlsx', data, EXPORT,
+                               current=current_export(OUT_CSV, OUT_DIR, newest_xlsx()), check=extract)
+    return years, offered, key, changed
 
 
-def extract():
+def extract(src=None):
     import openpyxl
-    src = newest_xlsx()
+    src = src or newest_xlsx()
     wb = openpyxl.load_workbook(src, read_only=True)
     ws = wb.worksheets[0]
     rows = list(ws.iter_rows(values_only=True))
@@ -202,11 +296,11 @@ def write_csv(rows):
         w.writerows(rows)
 
 
-def write_index(years, towns=None):
+def write_index(years, towns=None, src=None):
     # NAME THE FILE WE ACTUALLY WROTE. This said `AvgSingleFamTaxBill.xlsx` while the fetch
     # wrote a dated one, so the catalogue described a file nobody had fetched today and the
     # dated export was uncatalogued -- rule 12's first requirement, missed by a constant.
-    local = 'state-dls/' + os.path.basename(newest_xlsx())
+    local = 'state-dls/' + os.path.basename(src or newest_xlsx())
     rows = []
     if os.path.exists(INDEX):
         rows = [r for r in csv.DictReader(open(INDEX, encoding='utf-8')) if r['local'] != local]
@@ -232,10 +326,20 @@ def main():
         print('ok — %s reproduces from %s' % (os.path.relpath(OUT_CSV, ROOT), os.path.basename(newest_xlsx())) if same
               else 'STALE %s — run fetch_dls_tax_bills.py' % os.path.relpath(OUT_CSV, ROOT))
         return 0 if same else 1
-    years, offered = fetch()
-    rows = extract()
+    years, offered, key, changed = fetch()
+    if not changed:
+        # UNCHANGED IS SUCCESS. The extract and the catalogue already describe exactly
+        # this content, so nothing is rewritten and the run exits 0 -- which is what lets
+        # the refresh run this on a cadence without every run looking like a change.
+        print('unchanged: DLS still publishes what %s holds; nothing landed, nothing rewritten'
+              % os.path.basename(key))
+        return 0
+    # FROM THE KEY land_export NAMED, not the newest file by modification time: when the
+    # content was already held, the file holding it need not be the newest one.
+    src = os.path.join(ROOT, 'sources', key)
+    rows = extract(src)
     write_csv(rows)
-    write_index(years, offered)
+    write_index(years, offered, src)
     lun = [r for r in rows if r['municipality'] == 'Lunenburg' and r['avg_sf_bill']]
     print('%s: %d rows, %d towns, FY%s–FY%s; Lunenburg FY%s bill $%s on an average $%s home'
           % (os.path.relpath(OUT_CSV, ROOT), len(rows), len({r['municipality'] for r in rows}), years[0], years[-1],

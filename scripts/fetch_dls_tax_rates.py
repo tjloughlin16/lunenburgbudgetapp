@@ -25,6 +25,8 @@ often 0 where the class is empty); a classified town prints a lower residential 
 
 THE DOOR. The export lands through ingest.land -- staged, pushed to the bucket, read back, and
 only then filed under sources/state-dls/ -- named by export_name() so a re-fetch is a new key.
+An export whose CONTENT matches the file the extract was read from lands nothing and exits 0
+(fetch_dls_tax_bills.land_export), which is what makes it safe to run on a cadence.
 
 RECONCILED before anything is written: every rate row is either all blank (the uncertified
 year) or all numeric, and Lunenburg is DOR code 162.
@@ -40,7 +42,7 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from fetch_dls_tax_bills import INDEX, export_name, newest_export  # noqa: E402
+from fetch_dls_tax_bills import INDEX, current_export, land_export, newest_export  # noqa: E402
 
 PAGE = ('https://dlsgateway.dor.state.ma.us/reports/rdPage.aspx'
         '?rdReport=PropertyTaxInformation.taxratesbyclass.taxratesbyclass')
@@ -69,7 +71,6 @@ def newest():
 
 
 def fetch():
-    import ingest
     page = urllib.request.urlopen(urllib.request.Request(PAGE, headers=UA), timeout=120).read().decode('utf-8', 'replace')
     years = sorted(set(re.findall(r'name="iclYear"[^>]*value="(\d+)"', page)))
     munis = [m for m in re.findall(r'name="iclMuni"[^>]*value="([^"]*)"', page) if m]
@@ -85,17 +86,18 @@ def fetch():
     blob = resp.read()
     if not blob.startswith(b'PK'):
         raise SystemExit('the export was not a workbook (%s, %d bytes)' % (resp.headers.get('Content-Type'), len(blob)))
-    key = 'state-dls/' + export_name(STEM, '.xlsx', blob)
-    ok, why = ingest.land(key, blob, EXPORT)
-    if not ok:
-        raise SystemExit('ingest.land refused %s: %s' % (key, why))
-    print('landed %s (%d bytes)%s' % (key, len(blob), ' -- ' + why if why else ''))
-    return years, key
+    # COMPARED BY CONTENT, NOT BY BYTES, before anything lands. ingest.land already refuses
+    # to land identical bytes twice, but the Gateway re-zips every export with the time of
+    # the request, so no two fetches are ever byte-identical and every scheduled run would
+    # have landed a new copy of an unchanged file. land_export says why and how.
+    key, changed = land_export(STEM, '.xlsx', blob, EXPORT,
+                               current=current_export(OUT_CSV, DIR, newest()), check=extract, directory=DIR)
+    return years, key, changed
 
 
-def extract():
+def extract(src=None):
     import openpyxl
-    src = newest()
+    src = src or newest()
     rows = list(openpyxl.load_workbook(src, read_only=True).worksheets[0].iter_rows(values_only=True))
     head = [str(c or '').strip() for c in rows[0]]
     if head != HEAD:
@@ -126,8 +128,8 @@ def write_csv(rows):
         w.writerows(rows)
 
 
-def write_index(years):
-    local = 'state-dls/' + os.path.basename(newest())
+def write_index(years, src=None):
+    local = 'state-dls/' + os.path.basename(src or newest())
     rows = [r for r in csv.DictReader(open(INDEX, encoding='utf-8')) if r['local'] != local]
     rows.append(dict(local=local, url=EXPORT,
                      title='Tax Rates by Class, every municipality, FY%s–FY%s' % (years[0], years[-1]),
@@ -150,10 +152,16 @@ def main():
         print('ok — %s reproduces from %s' % (os.path.relpath(OUT_CSV, ROOT), os.path.basename(newest())) if same
               else 'STALE %s — run fetch_dls_tax_rates.py' % os.path.relpath(OUT_CSV, ROOT))
         return 0 if same else 1
-    years, _ = fetch()
-    rows = extract()
+    years, key, changed = fetch()
+    if not changed:
+        print('unchanged: DLS still publishes what %s holds; nothing landed, nothing rewritten'
+              % os.path.basename(key))
+        return 0
+    # From the key land_export named, which need not be the newest file by mtime.
+    src = os.path.join(ROOT, 'sources', key)
+    rows = extract(src)
     write_csv(rows)
-    write_index(years)
+    write_index(years, src)
     lun = [r for r in rows if r['municipality'] == 'Lunenburg' and r['residential'] != '']
     print('%s: %d rows; Lunenburg FY%s residential rate %s'
           % (os.path.relpath(OUT_CSV, ROOT), len(rows), lun[-1]['fy'], lun[-1]['residential']))

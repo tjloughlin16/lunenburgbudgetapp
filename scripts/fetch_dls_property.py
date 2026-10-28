@@ -34,6 +34,10 @@ WHAT EACH FILE HOLDS, per municipality per fiscal year, as the columns are print
                         new growth value and levy dollars; residential as a share; the
                         prior year's levy limit; the addition as a share of it.
 
+THE DOOR. Every export lands through ingest.land (fetch_dls_tax_bills.land_export), and one
+whose content matches the file its extract was read from lands nothing and exits 0 -- so the
+refresh can run this on a cadence.
+
 RECONCILED TO THE FILE'S OWN ARITHMETIC before anything is written (rule 13): the five
 classes foot to the total and the CIP share recomputes; residential new growth is no
 more than total, and the addition-as-share recomputes from the prior levy limit.
@@ -54,7 +58,8 @@ import urllib.request
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
-from fetch_dls_tax_bills import TOWNS, INDEX, export_name, newest_export   # noqa: E402
+from fetch_dls_tax_bills import (TOWNS, INDEX, current_export, export_name, land_export,  # noqa: E402
+                                 newest_export)
 
 UA = {'User-Agent': 'Mozilla/5.0 (lunenburgbudgetproject.org research)'}
 
@@ -166,7 +171,8 @@ def csv_path(r):
     return os.path.join(ROOT, 'sources', 'data', r['csv'])
 
 
-def fetch(r):
+def fetch(key):
+    r = REPORTS[key]
     page = urllib.request.urlopen(urllib.request.Request(page_url(r), headers=UA), timeout=120).read().decode('utf-8', 'replace')
     years = sorted(set(re.findall(r'name="iclYear"[^>]*value="(\d+)"', page)))
     if len(years) < r['min_years']:
@@ -211,18 +217,25 @@ def fetch(r):
     data = resp.read()
     if not data.startswith(b'PK'):
         raise SystemExit('%s: the export was not a workbook (%s, %d bytes)' % (r['report'], resp.headers.get('Content-Type'), len(data)))
-    path = xlsx_path(r, data)
-    with open(path, 'wb') as fh:
-        fh.write(data)
-    print('  wrote %s (%d bytes)' % (os.path.relpath(path, ROOT), len(data)))
-    return years
+    # THROUGH INGEST, AND ONLY IF SOMETHING CHANGED. Until 28 October 2026 this wrote each
+    # export straight into sources/ with open(..., 'wb'): the only copy until the day's push,
+    # in a git working tree, and a new file on every run whether DLS had moved a figure or
+    # not -- because the Gateway re-zips each export with the time of the request, no two
+    # fetches are byte-identical. land_export compares what the workbook SAYS with the file
+    # the published extract was read from, and lands only a real change.
+    stem, ext = os.path.splitext(r['file'])
+    dest, changed = land_export(stem, ext, data, export_url(r),
+                                current=current_export(csv_path(r), os.path.join(ROOT, 'sources', 'state-dls'),
+                                                       xlsx_path(r)),
+                                check=lambda path: extract(key, path))
+    return years, dest, changed
 
 
 def num(v):
     return None if v in (None, '') else float(v)
 
 
-def extract_wide(key):
+def extract_wide(key, src=None):
     """A report whose columns are YEARS, not fields: DOR code, municipality, FY…FY.
 
     The year columns move every autumn as a new one is certified, so the header is read
@@ -230,7 +243,8 @@ def extract_wide(key):
     Lunenburg's row is present."""
     import openpyxl
     r = REPORTS[key]
-    wb = openpyxl.load_workbook(xlsx_path(r), read_only=True)
+    src = src or xlsx_path(r)
+    wb = openpyxl.load_workbook(src, read_only=True)
     rows = list(wb.worksheets[0].iter_rows(values_only=True))
     head = [str(c or '').strip() for c in rows[0]]
     if head[:2] != ['DOR Code', 'Municipality']:
@@ -242,7 +256,7 @@ def extract_wide(key):
             years.append(int(m.group(1)))
     if len(years) < 10 or years != list(range(years[0], years[0] + len(years))):
         raise SystemExit('%s: the year columns are not consecutive: %s' % (r['file'], head[2:]))
-    digest = sha256(xlsx_path(r))
+    digest = sha256(src)
     out, towns = [], set()
     for row in rows[1:]:
         name = str(row[1] or '').strip()
@@ -255,7 +269,7 @@ def extract_wide(key):
                             # DLS prints 0 for a year whose Schedule A is not yet filed --
                             # an empty cell, not a town that spent nothing. Kept as blank.
                             expenditure='' if v in (None, '', 0) else v,
-                            source_file=os.path.basename(xlsx_path(r)), sha256=digest))
+                            source_file=os.path.basename(src), sha256=digest))
     if 'Lunenburg' not in towns:
         raise SystemExit('%s: no Lunenburg row' % r['file'])
     if len(towns) < 340:
@@ -263,23 +277,24 @@ def extract_wide(key):
     return out
 
 
-def extract(key):
+def extract(key, src=None):
     import openpyxl
     r = REPORTS[key]
     if r.get('head') is None:
-        return extract_wide(key)
-    wb = openpyxl.load_workbook(xlsx_path(r), read_only=True)
+        return extract_wide(key, src)
+    src = src or xlsx_path(r)
+    wb = openpyxl.load_workbook(src, read_only=True)
     rows = list(wb.worksheets[0].iter_rows(values_only=True))
     head = [str(c or '').strip() for c in rows[0]]
     if head != r['head']:
         raise SystemExit('%s: the workbook’s columns moved: %s' % (r['file'], head))
-    digest = sha256(xlsx_path(r))
+    digest = sha256(src)
     out = []
     for row in rows[1:]:
         if not row or row[1] is None:
             continue
         vals = ['' if v in (None, '') else v for v in row]
-        out.append(dict(zip(r['cols'] + ['source_file', 'sha256'], list(vals) + [os.path.basename(xlsx_path(r)), digest])))
+        out.append(dict(zip(r['cols'] + ['source_file', 'sha256'], list(vals) + [os.path.basename(src), digest])))
     if key == 'self-insured':
         if len({o['municipality'] for o in out}) < 340:
             raise SystemExit('%s: only %d municipalities' % (r['file'], len({o['municipality'] for o in out})))
@@ -321,12 +336,12 @@ def write_csv(key, rows):
         w.writerows(rows)
 
 
-def write_index(key, years):
+def write_index(key, years, src=None):
     r = REPORTS[key]
     # NAME THE FILE WE ACTUALLY READ. `r['file']` is the stem's legacy name; the export
     # on disk carries a date and a content hash, and a catalogue row for a name nobody
     # fetched is rule 12's first requirement missed by a constant.
-    local = 'state-dls/' + os.path.basename(xlsx_path(r))
+    local = 'state-dls/' + os.path.basename(src or xlsx_path(r))
     rows = [x for x in csv.DictReader(open(INDEX, encoding='utf-8'))] if os.path.exists(INDEX) else []
     rows = [x for x in rows if x['local'] != local]
     who = 'every municipality' if r.get('all_towns') else ', '.join(TOWNS)
@@ -353,10 +368,17 @@ def main():
             ok = ok and same
         return 0 if ok else 1
     for key, r in REPORTS.items():
-        years = fetch(r)
-        rows = extract(key)
+        years, dest, changed = fetch(key)
+        if not changed:
+            # Unchanged is success: the extract and the catalogue already describe this
+            # content, so neither is rewritten. The run still exits 0.
+            print('%s: unchanged at DLS; nothing landed, nothing rewritten' % os.path.relpath(csv_path(r), ROOT))
+            continue
+        # From the key land_export named, which need not be the newest file by mtime.
+        src = os.path.join(ROOT, 'sources', dest)
+        rows = extract(key, src)
         write_csv(key, rows)
-        write_index(key, years)
+        write_index(key, years, src)
         last = (r['cols'] or ['dor_code', 'municipality', 'fy', 'expenditure'])[-1]
         lun = [x for x in rows if x['municipality'] == 'Lunenburg' and x[last] != '']
         print('%s: %d rows, %d towns, FY%s–FY%s; Lunenburg through FY%s'

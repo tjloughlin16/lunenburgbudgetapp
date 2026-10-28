@@ -10,14 +10,31 @@ fetching a series means replaying the form: GET for the viewstate, POST per year
 that once and saving the result is the point -- nothing here should need the network to
 answer a question twice.
 
+    python3 scripts/fetch_dese.py                     # what the refresh runs
     python3 scripts/fetch_dese.py [--from 2019] [--to 2026]
 
-Writes sources/state-dese/selected-populations.csv and the raw HTML per year beside it.
+Lands the page for each year through `ingest.land()` as sources/state-dese/
+selected-populations-<year>.html, and writes OUR extract of Lunenburg's row,
+sources/state-dese/selected-populations.csv, beside them.
+
+RUN UNATTENDED. `--to` defaults to the newest year DESE's own year selector offers today, so
+the command never changes and a new school year is picked up the morning DESE adds it. A year
+already held is not fetched again -- each year is one document, landed once -- so an ordinary
+run is one GET and nothing lands. A new year whose page has no Lunenburg row yet is not
+landed and is tried again next run; an OLDER year without one means the page has changed
+shape, and that exits non-zero. Exit 0 whenever the form was read and every year is held or
+was landed.
+
+What this does NOT catch: DESE revising a year already held. That is copies-state-dese's
+question, not this script's.
 """
 import argparse
 import csv
+import hashlib
+import io
 import os
 import re
+import sys
 import time
 import urllib.parse
 import urllib.request
@@ -45,14 +62,20 @@ UA = {'User-Agent': ('Mozilla/5.0 (compatible; LunenburgBudgetProject/1.0; +http
 TOWN = 'Lunenburg'
 
 
-def get(url, data=None):
+def get_bytes(url, data=None):
+    """The response exactly as DESE sent it -- what is landed is the publisher's bytes, not
+    our decoding of them."""
     body = urllib.parse.urlencode(data).encode() if data else None
     h = dict(UA)
     if data:
         h['Content-Type'] = 'application/x-www-form-urlencoded'
     req = urllib.request.Request(url, data=body, headers=h)
     with urllib.request.urlopen(req, timeout=90) as r:
-        return r.read().decode('utf8', 'ignore')
+        return r.read()
+
+
+def get(url, data=None):
+    return get_bytes(url, data).decode('utf8', 'ignore')
 
 
 def hidden(html):
@@ -102,43 +125,109 @@ def headers(html):
     return cols
 
 
+def years_offered(html):
+    """The values of the year selector -- DESE's own list of what it publishes."""
+    m = re.search(r'<select[^>]+name="[^"]*[Yy]ear[^"]*"(.*?)</select>', html, re.S)
+    return sorted(int(v) for v in re.findall(r'<option[^>]*value="(\d{4})"', m.group(1))) \
+        if m else []
+
+
+def held(key):
+    """Is this year's page in the archive? On disk, or in the manifest -- a tree that has not
+    pulled every document must not refetch one and offer different bytes under its key,
+    which the bucket would refuse for ever."""
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    import archive_storage as A
+    return os.path.exists(os.path.join(ROOT, 'sources', key)) or key in A.read_manifest()
+
+
+def catalogue(entries):
+    """Add or refresh our rows of the SHARED index: re-read just before writing, newline
+    convention kept, replaced atomically."""
+    index = os.path.join(OUT, 'index.csv')
+    raw = open(index, 'rb').read()
+    nl = '\r\n' if b'\r\n' in raw else '\n'
+    rows = list(csv.DictReader(io.StringIO(raw.decode('utf-8'))))
+    fields = list(rows[0].keys())
+    by_local = {r['local']: r for r in rows}
+    for e in entries:
+        if e['local'] in by_local:
+            by_local[e['local']].update(e)
+        else:
+            rows.append(e)
+            by_local[e['local']] = e
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=fields, lineterminator=nl)
+    w.writeheader()
+    for r in rows:
+        w.writerow({k: r.get(k, '') for k in fields})
+    tmp = index + '.tmp'
+    open(tmp, 'wb').write(buf.getvalue().encode('utf-8'))
+    os.replace(tmp, index)
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--from', dest='lo', type=int, default=2019)
-    ap.add_argument('--to', dest='hi', type=int, default=2026)
+    ap.add_argument('--to', dest='hi', type=int, default=None,
+                    help='default: the newest year DESE offers today')
     a = ap.parse_args()
+    sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+    import ingest
     os.makedirs(OUT, exist_ok=True)
 
     first = get(URL)
     ctrl = year_control(first)
-    if not ctrl:
+    offered = years_offered(first)
+    if not ctrl or not offered:
         raise SystemExit('could not find the year control; the page has changed')
+    hi = a.hi or max(offered)
     cols = headers(first)
-    print(f'year control: {ctrl}')
+    print(f'year control: {ctrl}; DESE offers {min(offered)}-{max(offered)}')
 
-    rows = []
-    for y in range(a.lo, a.hi + 1):
-        raw = os.path.join(OUT, f'selected-populations-{y}.html')
-        if os.path.exists(raw) and os.path.getsize(raw) > 50_000:
+    rows, bad, new = [], 0, []
+    for y in range(a.lo, hi + 1):
+        key = f'state-dese/selected-populations-{y}.html'
+        raw = os.path.join(ROOT, 'sources', key)
+        if os.path.exists(raw):
             html = open(raw, encoding='utf8').read()
-            note = 'cached'
+            note = 'held'
+        elif held(key):
+            print(f'  {y}  in the archive but not on this disk: run sync_archive.py --pull')
+            bad += 1
+            continue
         else:
             state = hidden(first)
             state[ctrl] = str(y)
             state['__EVENTTARGET'] = ctrl
             state['__EVENTARGUMENT'] = ''
+            time.sleep(1.0)
             try:
-                html = get(URL, state)
+                blob = get_bytes(URL, state)
+                html = blob.decode('utf8', 'ignore')
             except Exception as e:
                 print(f'  {y}  FAILED {type(e).__name__}')
+                bad += 1
                 continue
-            open(raw, 'w', encoding='utf8').write(html)
             note = 'fetched'
-            time.sleep(1.0)
         r = row_for(html, TOWN)
         if not r:
-            print(f'  {y}  {note} — no {TOWN} row')
+            # The newest year can be offered before its figures are in: wait for it. Any
+            # older year without our row means the page no longer reads the way this does.
+            print(f'  {y}  {note} — no {TOWN} row' + ('; not landed, next run retries'
+                                                       if y == max(offered) else ''))
+            if y != max(offered):
+                bad += 1
             continue
+        if note == 'fetched':
+            ok, why = ingest.land(key, blob, URL)
+            if not ok:
+                print(f'  {y}  NOT LANDED: {why}')
+                bad += 1
+                continue
+            new.append(dict(label=f'DESE selected populations, state report, FY{y}', upstream=URL,
+                            local='sources/' + key, text='', bytes=str(len(blob)),
+                            sha256=hashlib.sha256(blob).hexdigest(), read='html'))
         rec = {'fy': y}
         rec.update(dict(zip(cols, r)))
         rows.append(rec)
@@ -146,17 +235,39 @@ def main():
               f"{rec.get('students_with_disabilities_n','?'):>4} "
               f"({rec.get('students_with_disabilities_pct','?')}%)")
 
+    if bad:
+        # A partial series is not written over a whole one.
+        print(f'\n{bad} year(s) could not be read; selected-populations.csv left as it was')
+        if new:
+            catalogue(new)
+        return 1
     if rows:
         keys = ['fy'] + cols
-        with open(os.path.join(OUT, 'selected-populations.csv'), 'w', newline='') as fh:
-            w = csv.DictWriter(fh, fieldnames=keys)
-            w.writeheader()
-            w.writerows(rows)
-        print(f'\nwrote {len(rows)} years to sources/state-dese/selected-populations.csv')
+        buf = io.StringIO()
+        w = csv.DictWriter(buf, fieldnames=keys)
+        w.writeheader()
+        w.writerows(rows)
+        text = buf.getvalue()
+        out = os.path.join(OUT, 'selected-populations.csv')
+        old = open(out, encoding='utf8', newline='').read() if os.path.exists(out) else None
+        if text != old:
+            with open(out, 'w', newline='') as fh:
+                fh.write(text)
+            blob = text.encode('utf8')
+            new.append(dict(label='Lunenburg selected populations, all years (CSV)', upstream=URL,
+                            local='sources/state-dese/selected-populations.csv', text='',
+                            bytes=str(len(blob)), sha256=hashlib.sha256(blob).hexdigest(),
+                            read='csv'))
+            print(f'\nwrote {len(rows)} years to sources/state-dese/selected-populations.csv')
+        else:
+            print(f'\n{len(rows)} years; selected-populations.csv unchanged')
+    if new:
+        catalogue(new)
+    return 0
 
 
 if __name__ == '__main__':
-    main()
+    sys.exit(main())
 
 
 # ---------------------------------------------------------------------------

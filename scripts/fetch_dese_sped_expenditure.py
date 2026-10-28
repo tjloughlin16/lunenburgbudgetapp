@@ -33,12 +33,27 @@ cell M1 and covers FY08-FY25). So the key carries the edition, and next year's e
 lands beside it under a new key rather than replacing it -- an R2 object cannot be
 corrected, only superseded. The publisher's own filename is recorded in the catalogue
 label, because that is what somebody asks DESE for when the link moves.
+
+RUN UNATTENDED, so every outcome of a look is one of three, and only a failure to look exits
+non-zero:
+
+  * the same bytes as the edition held -- nothing lands, exit 0;
+  * the same edition (same title) with different bytes -- DESE corrected it in place. The new
+    bytes are archived as a dated version beside it (`state-dese/<YYYY-MM-DD>/<name>`) and
+    the edition key, which the extractor reads, is left alone; exit 0, and said;
+  * a NEW edition (the title names a later FY span) -- landed under its own key, computed
+    from that title, and catalogued; extract_dese_sped_expenditure.py and the registry still
+    read the old one until a person repoints them; exit 0, and said every run until then.
+
+The file is byte-stable between requests (two fetches on 28 October 2026, sha256 c889a197...,
+identical to ours; Last-Modified 22 May 2026), so a byte comparison is the right one here.
 """
 import argparse
 import csv
 import hashlib
 import io
 import os
+import re
 import sys
 import urllib.request
 
@@ -71,8 +86,8 @@ def fetch():
 
 
 def validate(blob):
-    """It is a workbook, and it is the edition this key names. A sign-in page, or next
-    year's edition arriving at the same URL, must not be landed under this key."""
+    """It is a workbook with a `data` sheet; returns the edition title it prints. A sign-in
+    page must not be landed under any key."""
     if not blob.startswith(b'PK'):
         raise SystemExit('%s did not return a spreadsheet (%d bytes). Nothing landed.'
                          % (URL, len(blob)))
@@ -83,10 +98,32 @@ def validate(blob):
     row2 = next(wb['data'].iter_rows(min_row=2, max_row=2, values_only=True))
     title = next((v for v in row2 if v is not None), None)
     wb.close()
-    if title != EDITION_TITLE:
-        raise SystemExit('the workbook is titled %r, not %r. A new edition: give it a new '
-                         'KEY and EDITION_TITLE rather than landing it under this one.'
-                         % (title, EDITION_TITLE))
+    return title
+
+
+EDITION = re.compile(r'Direct Special Education Expenditures, FY(\d\d) to FY(\d\d)$')
+
+
+def key_for(title):
+    """The key an edition lands under, read off the title it prints -- the same shape as KEY,
+    so next year's `FY08 to FY26` becomes ...-fy2008-fy2026.xlsx without anybody typing it.
+    A title of any other shape is refused: the workbook has changed and a person looks."""
+    if title == EDITION_TITLE:
+        return KEY
+    m = EDITION.match(title or '')
+    if not m:
+        raise SystemExit('the workbook is titled %r, which is not the shape %r. Nothing '
+                         'landed; the workbook has changed shape.' % (title, EDITION_TITLE))
+    a, b = (2000 + int(x) for x in m.groups())
+    return 'state-dese/radar-sped-direct-expenditure-trends-fy%d-fy%d.xlsx' % (a, b)
+
+
+def held_sha(key):
+    path = os.path.join(SRC, key)
+    if os.path.exists(path):
+        return sha(open(path, 'rb').read())
+    import archive_storage as A
+    return A.read_manifest().get(key, {}).get('sha256')
 
 
 def catalogue(entry):
@@ -97,8 +134,10 @@ def catalogue(entry):
     nl = '\r\n' if b'\r\n' in raw else '\n'
     rows = list(csv.DictReader(open(INDEX, encoding='utf-8', newline='')))
     cols = list(rows[0].keys())
-    rows = [r for r in rows if r['local'] != entry['local']] + \
-        [{c: entry.get(c, '') for c in cols}]
+    mine = {c: str(entry.get(c, '')) for c in cols}
+    if mine in rows:
+        return            # already exactly so: a shared file is not rewritten for nothing
+    rows = [r for r in rows if r['local'] != entry['local']] + [mine]
     tmp = INDEX + '.tmp'
     with open(tmp, 'w', newline='', encoding='utf-8') as fh:
         w = csv.DictWriter(fh, fieldnames=cols, lineterminator=nl)
@@ -134,15 +173,41 @@ def main():
         return check()
     import ingest
     blob = fetch()
-    validate(blob)
-    ok, why = ingest.land(KEY, blob, URL)
+    title = validate(blob)
+    key = key_for(title)
+    have = held_sha(key)
+    if have == sha(blob):
+        print('%s: unchanged (sha256 %s)' % (key, have[:12]))
+        return 0
+    span = re.search(r'fy(\d{4})-fy(\d{4})\.xlsx$', key).groups()
+    label = LABEL.replace('FY2008-FY2025', 'FY%s-FY%s' % span)
+    if have:
+        # The same edition, revised in place. The edition key cannot take new bytes, so this
+        # version goes beside it, dated; the extractor goes on reading the key it was built
+        # against until a person decides the revision should replace it.
+        from fetch_dese_socrata import archive_version
+        ok, why, dated = archive_version(key, blob, URL)
+        if not ok:
+            print('  !! %s: %s' % (dated, why))
+            return 1
+        catalogue(dict(label=label + ' -- revised in place; fetched %s'
+                       % __import__('datetime').date.today().isoformat(),
+                       upstream=URL, local='sources/' + dated, text='', bytes=str(len(blob)),
+                       sha256=sha(blob), read='budget-workbooks'))
+        print('REVISED IN PLACE: %s differs from the %s held; archived as %s. The extractor '
+              'still reads the old bytes.' % (title, key, dated))
+        return 0
+    ok, why = ingest.land(key, blob, URL)
     if not ok:
-        print('  !! %s: %s' % (KEY, why))
+        print('  !! %s: %s' % (key, why))
         return 1
-    catalogue(dict(label=LABEL, upstream=URL, local='sources/' + KEY, text='',
+    catalogue(dict(label=label, upstream=URL, local='sources/' + key, text='',
                    bytes=str(len(blob)), sha256=sha(blob), read='budget-workbooks'))
-    print('landed %s  %d bytes  sha256 %s%s' % (KEY, len(blob), sha(blob),
+    print('landed %s  %d bytes  sha256 %s%s' % (key, len(blob), sha(blob),
                                                ('  (%s)' % why) if why else ''))
+    if key != KEY:
+        print('NEW EDITION: %r. extract_dese_sped_expenditure.py, build_dese_registry.py and '
+              'KEY here still name %s; repoint them to %s.' % (title, KEY, key))
     return 0
 
 
