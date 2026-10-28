@@ -863,6 +863,7 @@ def page(m):
             fail('%s: a general fund row in the table of other funds' % sy['fy'])
     weeks = year_weeks(m, T)
     ready = readiness_data(T)
+    by_line = line_funds_data(m, T)
     # the bridge block's sentence, held to every year it is shown with: other funds are most of
     # the gap between the plan and what happened, and more than half of them on no school line
     for y in plan['years']:
@@ -947,6 +948,16 @@ def page(m):
                       so=('A line can end under because its bills were re-charged to another '
                           'fund after the school budget paid them. Sorted by category, lines '
                           'that cancel each other out sit side by side.', None, ())),
+            TB.custom('fy-line-funds', 'School lines other funds paid', by_line, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('reading', 'Our placing of other funds’ spending on the lines'),
+                      alt='Table, one fiscal year: each school budget line other funds paid toward, '
+                          'with the fund, its kind, how the money was placed on the line, the '
+                          'amount, the line’s budget and the share of its cost; sortable and '
+                          'filterable by kind of fund',
+                      so=('Re-charged money is in the journal; the rest is our match by payee or '
+                          'function code. A line here is one the school budget did not pay for '
+                          'alone.', None, ())),
             TB.custom('fy-source-table', 'What other funds paid for', sources, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
@@ -1313,6 +1324,77 @@ def funds_data(m, T):
                     none='None.', sum='Every fund', all_rows='postings shown',
                     all_cats='Every kind', scroll='More columns: scroll the table sideways',
                     filter='Filter by payee, memo, account or where it went'))
+
+
+# WHICH SCHOOL LINES OTHER FUNDS PAID TOWARD (TJ, 27 October 2026: "which of the school budget
+# lines were paid by non general fund money ... athletics lines XYZ - paid by FUND X - an
+# amount"). The sister of the table of funds: the same placements, read by LINE. One row per
+# school line and fund, and how we know -- a re-charge is in the journal; a payee or a function
+# code is our match. A function-code match places money on a category, never on one line, and
+# says so.
+HOW_PLACED = [('later', 'Re-charged from the school budget',
+               'The school budget paid the bills; a journal entry later put them on this fund. In the journal.'),
+              ('back', 'Re-charged back to the school budget',
+               'This fund paid first; a journal entry later put the bills on the school budget. Negative here.'),
+              ('payee', 'Same payee as the line',
+               'The fund paid a payee this line also pays. Our match.'),
+              ('function', 'Same function code, category only',
+               'Spending with no payee to match -- payroll mostly -- under a function code of this '
+               'category. Our match, and it cannot say which line.')]
+
+
+def line_funds_data(m, T):
+    A = J.accounts()
+    fname = fund_names()
+    line = {(r['fy'], r['account']): r for r in m['rows'] if r['account']}
+    years = []
+    for fy in YEARS():
+        rows, check = [], defaultdict(Decimal)
+        for (y, f), d in sorted(m['src'].items()):
+            if y != fy:
+                continue
+            g = payer_group(fund_group(m, A, fy, f))
+            if g == 'gf':
+                continue
+            for (kind, where), v in d.items():
+                if kind not in ('later', 'back', 'payee', 'function') or not v:
+                    continue
+                check[(f, kind)] += v
+                if kind == 'function':
+                    cat, name, budget, cost = where, T.lit('%s, no single line' % S.CAT_LABEL[where]), None, None
+                else:
+                    r = line[(fy, where)]
+                    cat, name = r['category'], T.lit(line_name(r))
+                    budget = r['voted'] + r['transfers'] + r['carried_budget']
+                    cost = r['all_funds_cost']
+                rows.append(dict(
+                    cat=T.lit(S.CAT_LABEL[cat]), line=name, acct=T.lit(where if kind != 'function' else ''),
+                    fund=T.lit('%s · %s' % (fname[f].title(), f)), group=g, how=kind,
+                    n=round(fl(v), 2), t=T.usd(v),
+                    budget=T.usd(budget) if budget is not None else '',
+                    share=T.lit('%d%%' % round(100 * v / cost)) if cost and v > 0 else ''))
+        # the same money the table of funds shows, by fund and by kind, to the cent
+        for (y, f), d in m['src'].items():
+            if y != fy or payer_group(fund_group(m, A, fy, f)) == 'gf':
+                continue
+            for kind in ('later', 'back', 'payee', 'function'):
+                want = sum((v for (k, _), v in d.items() if k == kind), D0)
+                if want != check[(f, kind)]:
+                    fail('FY%d fund %s %s: by line %s, by fund %s' % (fy, f, kind, check[(f, kind)], want))
+        rows.sort(key=lambda r: (r['cat'], r['line'], -r['n']))
+        years.append(dict(fy=T.fy(fy), rows=rows,
+                          total=T.usd(sum((v for v in check.values()), D0)),
+                          n_lines=len({r['line'] for r in rows})))
+    return dict(years=years, how=[dict(id=k, label=l, means=w) for k, l, w in HOW_PLACED],
+                groups=[dict(id=g, label=l) for g, l in PAYERS if g != 'gf'],
+                text=dict(cat='Category', line='School line', fund='Fund', kind='Kind of fund',
+                          how='How we know', paid='Paid toward it', budget='Line’s budget',
+                          share='Share of the line’s cost',
+                          share_means='What this fund paid, as a share of everything the line cost from every fund.',
+                          budget_means='The school budget for the line: voted, transfers, and orders carried in.',
+                          all_kinds='Every kind', filter='Filter by line, category or fund',
+                          scroll='More columns: scroll the table sideways', sum='Every row',
+                          lines='school lines'))
 
 
 # OVERLAP (TJ, 27 October 2026: "these other sources of funds are complimenting or supplementing

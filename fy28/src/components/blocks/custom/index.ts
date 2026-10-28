@@ -16,6 +16,7 @@ import FyOverlap from './fy-overlap'
 import FyYearLine from './fy-year-line'
 import FyReadiness from './fy-readiness'
 import FyBridge from './fy-bridge'
+import FyLineFunds from './fy-line-funds'
 import FyPlan from './fy-plan'
 import FySourceTable from './fy-source-table'
 import FyYearWeeks from './fy-year-weeks'
@@ -34,6 +35,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-year-line': FyYearLine,
   'fy-readiness': FyReadiness,
   'fy-bridge': FyBridge,
+  'fy-line-funds': FyLineFunds,
   'fy-plan': FyPlan,
   'fy-source-table': FySourceTable,
   'fy-year-weeks': FyYearWeeks,
