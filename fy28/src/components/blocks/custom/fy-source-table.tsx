@@ -15,7 +15,7 @@ import { HeadTip, WideScroll } from './fy-shared'
 import type { CustomProps } from './index'
 
 type K = 'payee' | 'function' | 'later' | 'back' | 'capital' | 'none' | 'total'
-type Row = { key: string; name: string; program: string; cat: string; group: string; n: Record<K, number>; t: Record<K, string> }
+type Row = { key: string; name: string; printed: string; program: string; cat: string; group: string; n: Record<K, number>; t: Record<K, string> }
 type Year = { fy: string; rows: Row[]; total: string }
 type Col = { id: K; label: string; means: string }
 type T = Record<'source' | 'category' | 'read' | 'tab_where' | 'tab_what' | 'tab_rows' | 'by_payee' | 'by_account' | 'went'
@@ -93,6 +93,7 @@ function FundView({ r, fy, t, onClose }: { r: Row; fy: string; t: T; onClose: ()
             <div>
               <p className="text-[12px] uppercase tracking-wide" style={muted}>{fy} · {r.cat}</p>
               <h3 className="text-[19px] font-semibold leading-snug">{r.name}</h3>
+              <p className="text-[11.5px]" style={muted}>{r.printed}</p>
               <p className="text-[12.5px] mt-0.5" style={muted}>{r.program} · {r.t.total}</p>
             </div>
             <button type="button" onClick={onClose} className="px-2.5 py-1 rounded border text-[13px]" style={{ borderColor: 'var(--grid)' }}>{t.close} ✕</button>
@@ -183,7 +184,7 @@ export default function FySourceTable({ data, alt }: CustomProps) {
               <tr key={r.key} className="border-b cursor-pointer hover:bg-[var(--surface-2)]" style={{ borderColor: 'var(--grid)' }}
                 onClick={() => setOpen(r.key)} aria-haspopup="dialog">
                 <td className="px-2 py-1.5 text-left min-w-[14rem]"><span className="mr-1" style={muted}>↗</span>{r.name}
-                  <span className="block text-[11.5px]" style={muted}>{r.program}</span></td>
+                  <span className="block pl-4 text-[11px]" style={muted}>{r.printed}</span></td>
                 <td className="px-2 py-1.5 text-left min-w-[9rem]" style={secondary}>
                   <span className="inline-block w-2 h-2 rounded-[1px] mr-1.5 align-middle" style={{ background: PAYER[r.group] }} />{r.cat}</td>
                 {d.columns.map(c => (

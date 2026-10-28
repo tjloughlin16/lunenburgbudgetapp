@@ -16,7 +16,7 @@ import { useFyYear } from './fy-year'
 import { HeadTip, PAYER, WideScroll } from './fy-shared'
 import type { CustomProps } from './index'
 
-type Fund = { fund: string; group: string; how: string; n: number; t: string; share: string }
+type Fund = { fund: string; printed: string; group: string; how: string; n: number; t: string; share: string }
 type Line = { cat: string; line: string; acct: string; n: number; t: string; budget: string; share: string
   groups: string[]; funds: Fund[] }
 type Year = { fy: string; lines: Line[]; total: string; n_rows: number }
@@ -70,7 +70,8 @@ function LineView({ l, fy, t, kind, how, onClose }: { l: Line; fy: string; t: Re
             <li key={i}>
               <div className="flex justify-between gap-3 text-[13.5px]">
                 <span className="min-w-0"><span className="inline-block w-2.5 h-2.5 rounded-[1px] mr-1.5 align-middle" style={{ background: PAYER[f.group] }} />
-                  <span className="font-semibold">{f.fund}</span> <span className="text-[12px]" style={muted}>{kind[f.group]}</span></span>
+                  <span className="font-semibold">{f.fund}</span> <span className="text-[12px]" style={muted}>{kind[f.group]}</span>
+                  <span className="block pl-4 text-[11px]" style={muted}>{f.printed}</span></span>
                 <span className="tabular-nums font-semibold whitespace-nowrap">{f.t}{f.share ? <span className="font-normal text-[12px] ml-1.5" style={muted}>{f.share}</span> : null}</span>
               </div>
               <div className="h-2 mt-1 rounded-sm" style={{ width: `${(Math.abs(f.n) / max) * 100}%`, background: PAYER[f.group], opacity: f.n < 0 ? 0.4 : 1 }} />
@@ -99,7 +100,7 @@ export default function FyLineFunds({ data, alt }: CustomProps) {
     const ql = q.trim().toLowerCase()
     const out = y.lines
       .filter(l => !grp || l.groups.includes(grp))
-      .filter(l => !ql || `${l.line} ${l.cat} ${l.acct} ${l.funds.map(f => f.fund).join(' ')}`.toLowerCase().includes(ql))
+      .filter(l => !ql || `${l.line} ${l.cat} ${l.acct} ${l.funds.map(f => `${f.fund} ${f.printed}`).join(' ')}`.toLowerCase().includes(ql))
     return out.sort((a, b) => sort.k === 'n' ? sort.dir * (a.n - b.n)
       : sort.k === 'funds' ? sort.dir * (a.funds.length - b.funds.length) || b.n - a.n
       : sort.dir * a[sort.k].localeCompare(b[sort.k]) || b.n - a.n)

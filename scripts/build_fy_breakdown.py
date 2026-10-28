@@ -1265,6 +1265,24 @@ KIND_WHERE = {'payee': 'same payee as', 'function': 'same function code as', 'la
               'between': 'on no school line'}
 
 
+def fund_label(f, A=None):
+    """A fund's name for reading: the site's one map (journal.grant_program -- "Athletic fee fund
+    (Chapter 658)" for 1301, a DESE program for a grant), the year a grant or article names, and
+    its number. TJ, 27 October 2026, of `Chapter 658 Revolving Fund · 1301`: "is that the athletic
+    revolving account?" -- the printed name did not say, so it goes underneath, not first."""
+    A = A or J.accounts()
+    if f not in _FUND_ACCT:
+        for a in A.values():
+            _FUND_ACCT.setdefault(a['fund'], a)
+    a = _FUND_ACCT[f]
+    name = J.grant_program(a)
+    yy = re.match(r"\s*FY\s*'?(\d\d)", a['fund_name'])
+    return '%s%s · %s' % (name, ', %s' % C.fy(2000 + int(yy.group(1))) if yy else '', f)
+
+
+_FUND_ACCT = {}
+
+
 def fund_names():
     """fund -> its name as the journal prints it."""
     out = {}
@@ -1306,7 +1324,7 @@ def funds_data(m, T):
             # Town's other general fund accounts, and only the second reach this table
             py = fund_group(m, A, fy, f)
             rows.append(dict(
-                key=T.lit(f), name=T.lit('%s · %s' % (fname[f].title(), f)), program=T.lit(py),
+                key=T.lit(f), name=T.lit(fund_label(f, A)), printed=T.lit(fname[f]), program=T.lit(py),
                 cat=dict(PAYERS)[payer_group(py)] if payer_group(py) != 'gf' else 'General fund, outside the school budget',
                 group=payer_group(py),
                 n={k: round(fl(col[k]), 2) for k, _, _ in SRC_COLS},
@@ -1369,7 +1387,7 @@ def line_funds_data(m, T):
                     cost = r['all_funds_cost']
                 rows.append(dict(
                     cat=T.lit(S.CAT_LABEL[cat]), line=name, acct=T.lit(where if kind != 'function' else ''),
-                    fund=T.lit('%s · %s' % (fname[f].title(), f)), group=g, how=kind,
+                    fund=T.lit(fund_label(f, A)), printed=T.lit(fname[f]), group=g, how=kind,
                     n=round(fl(v), 2), t=T.usd(v),
                     budget=T.usd(budget) if budget is not None else '',
                     share=T.lit('%d%%' % round(100 * v / cost)) if cost and v > 0 else ''))
