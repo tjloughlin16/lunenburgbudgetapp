@@ -1304,14 +1304,14 @@ def funds_data(m, T):
                           total=T.usd(sum((sum(d.values(), D0) for (y, _), d in m['src'].items() if y == fy), D0))))
     return dict(years=years, columns=[dict(id=k, label=l, means=w) for k, l, w in SRC_COLS],
                 groups=[dict(id=g, label=l) for g, l in PAYERS if g != 'gf'],
-                text=dict(source='Fund', category='Who paid', read=(
+                text=dict(source='Fund', category='Kind of fund', read=(
                     'Every fund other than the school budget that spent money on the schools this '
                     'year, and where each dollar went. Open a fund for what it paid for.'),
                     tab_where='Where it went', tab_what='What it bought', tab_rows='Every posting',
                     by_payee='Paid to', by_account='By its own account', went='Went to',
                     close='Close', loading='Loading…', failed='Could not load this year’s postings.',
                     none='None.', sum='Every fund', all_rows='postings shown',
-                    all_cats='Every source', scroll='More columns: scroll the table sideways',
+                    all_cats='Every kind', scroll='More columns: scroll the table sideways',
                     filter='Filter by payee, memo, account or where it went'))
 
 
