@@ -161,6 +161,7 @@ import sys
 
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 from read_trust_table import MONEY, money, split_merged, skew   # noqa: E402
+from report_year import fiscal_editions  # noqa: E402
 
 # SOME OCR LINES ARE ENORMOUS -- a whole debt schedule returned as one observation runs
 # past Python's default 131,072-character field limit, and the reader dies on a page it
@@ -773,7 +774,7 @@ def collect():
     body, bad, report = [], [], []
     theirs = published_elsewhere()
     seen = set()
-    for path in sorted(glob.glob(os.path.join(OCR, '*annual-town-report*.tsv'))):
+    for path in sorted(fiscal_editions(glob.glob(os.path.join(OCR, '*annual-town-report*.tsv')))):
         m = re.search(r'fy-(\d{4})-', os.path.basename(path))
         if not m:
             continue

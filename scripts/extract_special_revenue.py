@@ -856,7 +856,8 @@ def write_provenance(ledger, rows):
 
 def glob_pdfs():
     import glob
-    return glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf'))
+    from report_year import fiscal_editions
+    return fiscal_editions(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf')))
 
 
 if __name__ == '__main__':

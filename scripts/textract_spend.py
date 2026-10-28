@@ -49,7 +49,12 @@ LOCK = STATE / 'lock'
 CACHE = STATE / 'cache'
 CURRENT = STATE / 'current.json'      # the run in progress, for the dashboard
 AWS_LAST = STATE / 'aws-last.json'    # the last time AWS's own figure was read, and what it said
-LATCH = Path(os.environ.get('TEXTRACT_LATCH') or ROOT / 'build' / 'STOP-TEXTRACT')
+# A SANDBOXED LEDGER GETS A SANDBOXED LATCH. Before 28 October 2026 a test that set TEXTRACT_STATE
+# and forgot TEXTRACT_LATCH tripped the REAL latch on a $0.40 test cap -- safe, but a test must
+# never be able to stop production.
+LATCH = Path(os.environ.get('TEXTRACT_LATCH')
+             or (Path(os.environ['TEXTRACT_STATE']) / 'STOP-TEXTRACT' if os.environ.get('TEXTRACT_STATE')
+                 else ROOT / 'build' / 'STOP-TEXTRACT'))
 METERED_STOP = ROOT / 'build' / 'STOP-METERED'
 
 # US East (N. Virginia) list price, first million pages a month, read off

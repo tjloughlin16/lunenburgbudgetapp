@@ -105,6 +105,9 @@ import re
 import statistics
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+from report_year import fiscal_editions  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 OUT_OUTSTANDING = os.path.join(ROOT, 'sources', 'data', 'outstanding-debt.csv')
@@ -1561,7 +1564,7 @@ def main():
     # THE ADDENDUM IS A REPORT. FY2016 was published in two volumes and the second holds
     # a debt repayment schedule of its own -- twelve proven year columns that a glob
     # ending `annual-town-report.tsv` walks straight past.
-    for path in sorted(glob.glob(os.path.join(OCR, '*annual-town-report*.tsv'))):
+    for path in sorted(fiscal_editions(glob.glob(os.path.join(OCR, '*annual-town-report*.tsv')))):
         fy = re.search(r'fy-(\d{4})', path).group(1)
         doc = os.path.basename(path)[:-4] + '.pdf'
         pages = load(path)

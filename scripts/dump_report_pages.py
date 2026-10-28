@@ -30,6 +30,7 @@ warnings.filterwarnings('ignore')
 
 import pypdf
 import pdf_tables as T
+from report_year import fiscal_editions  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
@@ -46,7 +47,7 @@ def main():
     args = ap.parse_args()
     os.makedirs(args.out, exist_ok=True)
 
-    for path in sorted(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf'))):
+    for path in sorted(fiscal_editions(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf')))):
         doc = os.path.basename(path)
         fy = re.search(r'fy-?(\d{4})', doc)
         fy = fy.group(1) if fy else '????'

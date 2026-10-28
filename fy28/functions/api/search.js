@@ -66,7 +66,15 @@
  */
 
 const SITE = 'https://lunenburgbudgetproject.org'
-const CORPORA = ['report', 'post', 'page', 'job', 'person', 'recorded', 'source', 'minutes', 'transcript']
+const CORPORA = ['report', 'post', 'page', 'job', 'person', 'recorded', 'annual', 'source', 'minutes', 'transcript']
+/** `annual` IS NOT IN THE INDEX EITHER. It is the `source` rows filed under the annual town
+ *  reports' folder, split out at query time the way `report` is split from `page`. TJ, 28
+ *  October 2026: *"They contain so much information that people want to search them only to
+ *  see what's in them."* Sixty-eight reports, 1959-2025, a page per row; as part of
+ *  `Documents` their hits were whatever of the twelve best-ranked documents happened to be
+ *  one. `source` then means every OTHER archive document. */
+const SPLIT_FROM_SOURCE = 'annual'
+const ANNUAL_FOLDER = 'town-annual-reports'
 /** `report` IS NOT IN THE INDEX. It is the `page` rows whose address is a report in
  *  /data/reports.json, split out at query time. TJ, 11 October 2026: *"Does search not
  *  have a REPORTS category? I'm looking for a particular report but it's buried under all
@@ -295,6 +303,9 @@ export async function onRequest(context) {
   const inReports = new Set(reports)
   const holds = Object.fromEntries(CORPORA.map(c => [c, Number(meta['rows:' + c] || 0)]))
   holds[SPLIT_FROM_PAGE] = reports.length   // reports, not rows: a long one is indexed in parts
+  // The push writes the annual reports' page count beside the corpus counts; `source` is the rest.
+  holds[SPLIT_FROM_SOURCE] = Number(meta['rows:annual'] || 0)
+  holds.source = Math.max(0, holds.source - holds[SPLIT_FROM_SOURCE])
   const index = {
     built: meta.built || null,
     holds,
@@ -345,7 +356,8 @@ export async function onRequest(context) {
        FROM affinity WHERE affinity MATCH ?1 ORDER BY bm25(affinity) LIMIT 8`).bind(expr).all()
     rowsRead += (a.meta && a.meta.rows_read) || 0
     for (const row of a.results || []) {
-      const c = row.corpus === 'page' && inReports.has(row.cite_url) ? SPLIT_FROM_PAGE : row.corpus
+      const c = row.corpus === 'page' && inReports.has(row.cite_url) ? SPLIT_FROM_PAGE
+        : row.corpus === 'source' && (row.doc_key || '').startsWith(ANNUAL_FOLDER + '/') ? SPLIT_FROM_SOURCE : row.corpus
       ;(pinned[c] ||= []).push(row)
     }
   } catch (e) {
@@ -381,9 +393,11 @@ export async function onRequest(context) {
           ? `(${titleTerms.map(w => `(instr(lower(title), '${w}') > 0)`).join(' + ')}) DESC, rank`
           : 'rank')
       // `report` and `page` both read the page rows; the address list decides which side.
-      const real = c === SPLIT_FROM_PAGE ? 'page' : c
+      const real = c === SPLIT_FROM_PAGE ? 'page' : c === SPLIT_FROM_SOURCE ? 'source' : c
       const split = c === SPLIT_FROM_PAGE ? ` AND cite_url IN (${sqlList(reports)})`
-        : c === 'page' ? ` AND cite_url NOT IN (${sqlList(reports)})` : ''
+        : c === 'page' ? ` AND cite_url NOT IN (${sqlList(reports)})`
+        : c === SPLIT_FROM_SOURCE ? ` AND board_slug = '${ANNUAL_FOLDER}'`
+        : c === 'source' ? ` AND board_slug != '${ANNUAL_FOLDER}'` : ''
       const sql = `
         SELECT * FROM (
           SELECT rowid AS id, corpus, doc_key, title, board, board_slug, date, kind, cite_url, source_url,

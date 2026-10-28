@@ -285,14 +285,14 @@ def sniff(body):
     return '.bin'
 
 
-def extract(path, out_txt):
+def extract(path, out_txt, ocr=True):
     ext = os.path.splitext(path)[1].lower()
     try:
         if ext == '.pdf':
             # Scan or digital is decided from what is ON each page, not from how many
             # characters an extractor returned. See `pdf_kind.py` for why.
             import pdf_kind
-            return pdf_kind.extract_text(path, out_txt)
+            return pdf_kind.extract_text(path, out_txt, ocr=ocr)
         # The macro-enabled variants are the same container with a VBA part added; the
         # cells and the slides read identically. First met in the Finance Committee's
         # files, October 2026 -- the town's own site has never served one.
@@ -334,6 +334,11 @@ def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--seeds-only', action='store_true')
     ap.add_argument('--limit', type=int)
+    # THE ANNUAL REPORTS ARE LOOKED FOR QUARTERLY, the rest daily. TJ, 28 October 2026: daily
+    # is too fast for a document the town publishes once a year. Both scopes walk the same
+    # pages; a scope only decides which documents are fetched and which manifests are written.
+    ap.add_argument('--scope', choices=('all', 'annual-reports', 'no-annual-reports'),
+                    default='all')
     a = ap.parse_args()
     for _f in FOLDERS:
         os.makedirs(docs_dir(_f), exist_ok=True)
@@ -358,6 +363,12 @@ def main():
         print(f'{dupes} item(s) are the same document at a second address — '
               f'fetched once, both addresses recorded')
     items = [it for it in items if by_key.get(dedupe_key(it['label'])) == it['id']]
+    annual = lambda it: home(it['label'], it.get('category', '')) == 'town-annual-reports'
+    if a.scope != 'all':
+        items = [it for it in items if annual(it) == (a.scope == 'annual-reports')]
+        print(f'{len(items)} in scope {a.scope}')
+    writing = [f for f in FOLDERS if a.scope == 'all'
+               or (f == 'town-annual-reports') == (a.scope == 'annual-reports')]
 
     if a.seeds_only:
         for i in items:
@@ -459,7 +470,7 @@ def main():
     # Each mirror's manifest gets ONLY its own rows. Writing them all to town-budget's
     # index.csv is how the split came undone in the manifest as well as on disk.
     fields = ['label', 'upstream', 'local', 'text', 'bytes', 'sha256', 'read']
-    for name in FOLDERS:
+    for name in writing:
         mine = []
         for r in rows:                       # one row per document, its addresses merged
             if r['_home'] != name:
@@ -505,7 +516,7 @@ def main():
             w.writeheader()
             w.writerows(mine)
         print(f'  {len(mine):>4} rows · {os.path.relpath(manifest_of(name), ROOT)}')
-    print(f'\n{len(rows)} retrieved across {len(FOLDERS)} mirrors')
+    print(f'\n{len(rows)} retrieved across {len(writing)} mirrors')
     if aliases:
         print(f'{len(aliases)} of them carry a second published address in `upstream`')
 
@@ -516,8 +527,11 @@ def catalogue(n, it, here, base, path, body, note, aliases):
     # would have gone.
     os.makedirs(text_dir(here), exist_ok=True)
     txt = os.path.join(text_dir(here), base + '.txt')
+    # NO LOCAL OCR FOR THE ANNUAL REPORTS. Textract reads every page of them, through the
+    # meter (notes/PLAN-ANNUAL-REPORT-PIPELINE.md); Vision here would be slower, worse, and
+    # thrown away. A 52-report crawl spent 40 minutes on the first one before this.
     how = 'had it' if os.path.exists(txt) and os.path.getsize(txt) > 0 \
-        else extract(path, txt)
+        else extract(path, txt, ocr=here != 'town-annual-reports')
     also = aliases.get(it['id'], [])
     print(f'  [{n:>3}] {note:<11}{os.path.splitext(path)[1]:<6}{len(body)/1000:>7.0f}KB '
           f'{how:<16}{it["label"][:42]}')

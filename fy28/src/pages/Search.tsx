@@ -139,7 +139,7 @@ type Hit = {
   /** 2 = the exact words, 1 = the words together in another form, 0 = anywhere (api/search.js). */
   together?: number
 }
-type Corpus = 'report' | 'post' | 'page' | 'job' | 'person' | 'recorded' | 'source' | 'minutes' | 'transcript'
+type Corpus = 'report' | 'post' | 'page' | 'job' | 'person' | 'recorded' | 'annual' | 'source' | 'minutes' | 'transcript'
 type Count = { hits: number; capped: boolean; holds: number }
 type Payload = {
   q: string
@@ -159,7 +159,7 @@ type Vocab = Record<string, { try: string[]; note: string }>
 /** DOCUMENTS AND MINUTES FIRST, RECORDINGS LAST. The order this page renders in, and the
  *  reason it changed: `post, page, recorded, source, minutes, transcript` put the
  *  archive's own documents FOURTH, under three sections of things we wrote. */
-const ORDER: Corpus[] = ['report', 'job', 'person', 'source', 'minutes', 'page', 'post', 'recorded', 'transcript']
+const ORDER: Corpus[] = ['report', 'job', 'person', 'annual', 'source', 'minutes', 'page', 'post', 'recorded', 'transcript']
 /* REPORTS GO FIRST OF ALL. TJ, 11 October 2026: *"Does search not have a REPORTS
  * category? I'm looking for a particular report but it's buried under all the minutes and
  * documents."* They were `page` rows, fifth, ranked against every board and meeting page.
@@ -193,8 +193,14 @@ const ORDER: Corpus[] = ['report', 'job', 'person', 'source', 'minutes', 'page',
 const GROUPS: { id: string; label: string; short: string; hint: string; corpora: Corpus[] }[] = [
   { id: 'reports', label: 'Reports', short: 'Reports', corpora: ['report'],
     hint: 'The analyses this project has written, school and town — every one listed on /reports.' },
+  // THE ANNUAL TOWN REPORTS, ON THEIR OWN. TJ, 28 October 2026: *"They contain so much
+  // information that people want to search them only to see what's in them."* Split out of
+  // Documents by the API (functions/api/search.js, SPLIT_FROM_SOURCE), so the chip's count
+  // and its twelve hits are the reports' own, not whatever of Documents' twelve were reports.
+  { id: 'annual-reports', label: 'Town annual reports', short: 'Annual reports', corpora: ['annual'],
+    hint: 'The Town of Lunenburg’s annual reports, every department and every year the archive holds, cited to the page.' },
   { id: 'documents', label: 'Documents', short: 'Documents', corpora: ['source'],
-    hint: 'Budgets, contracts, purchase orders, annual reports and state files, cited to the page. Not minutes.' },
+    hint: 'Budgets, contracts, purchase orders and state files, cited to the page. Not minutes; the annual reports have their own chip.' },
   // MEETINGS, NOT FILE TYPES. TJ, 26 October 2026: *"when i search and select 'meetings',
   // there's no MEETINGS filter. i can select minutes but its just blank text docs."* The
   // town's minutes and agendas and our notes from the recordings are all a meeting, and
@@ -270,6 +276,7 @@ const NAME: Record<Corpus, string> = {
   job: 'Job postings — the town and the schools',
   person: 'People on the org charts',
   recorded: 'What was said — our notes from the recordings',
+  annual: 'The town’s annual reports',
   source: 'Documents in the archive',
   minutes: 'Minutes and agendas the town published',
   transcript: 'Meeting recordings — machine captions',
@@ -281,6 +288,7 @@ const UNIT: Record<Corpus, [string, string]> = {
   job: ['posting', 'postings'],
   person: ['name', 'names'],
   recorded: ['meeting', 'meetings'],
+  annual: ['report page', 'report pages'],
   source: ['document page', 'document pages'],
   minutes: ['document', 'documents'],
   transcript: ['minute of recording', 'minutes of recording'],
@@ -306,7 +314,8 @@ const WHAT: Record<Corpus, string> = {
   job: 'The town’s and the school district’s postings. An open one links to the employer’s page, to apply; one no longer listed links to its history on /jobs. Leaving the listing is not the same as being filled.',
   person: 'A name as the org charts print it, with every role and year. The same name in two decades may be two people.',
   recorded: 'Our notes on recorded meetings, written from the captions: votes, transfers, topics. Each links to the video by the second.',
-  source: 'Budgets, contracts, annual reports and state files, cited to the page.',
+  annual: 'The Town’s annual reports, a page at a time. Each opens the report at that page.',
+  source: 'Budgets, contracts and state files, cited to the page. The annual reports are above.',
   minutes: 'What the town itself published. A record.',
   transcript: 'Machine captions of meeting videos — ours, not the town’s. They locate a moment; they do not settle what was said.',
 }
@@ -316,6 +325,7 @@ const WHAT: Record<Corpus, string> = {
 function badge(h: Hit): string {
   switch (h.corpus) {
     case 'source': return 'Document'
+    case 'annual': return 'Annual report'
     case 'minutes': return h.kind === 'agenda' ? 'Agenda' : 'Minutes'
     case 'transcript': return 'Machine transcript'
     case 'recorded': return 'Our notes from the video'
@@ -549,6 +559,17 @@ export default function Search() {
           {busy ? 'Searching' : 'Search'}
         </button>
       </form>
+      {/* A LINK CAN CARRY THE FILTER BEFORE ANY WORD. TJ, 28 October 2026: "so I can send
+          somebody a link to search just for town annual reports". `?type=annual-reports`
+          with no `q` lands here, and the chips only draw once there are results -- so the
+          filter would be on and invisible. Say it under the box. */}
+      {!asked && type && (
+        <p className="mt-1.5 text-[13px]" style={{ color: 'var(--text-secondary)' }}>
+          Searching only <strong>{GROUPS.find(g => g.id === type)!.label.toLowerCase()}</strong>.{' '}
+          <button type="button" onClick={() => setType('')} className="underline"
+            style={{ color: 'var(--series-cost)' }}>Search everything</button>
+        </p>
+      )}
       {/* THE BOX AND THE RESULTS DISAGREE: say which word the results are for. */}
       {asked && q.trim() && q.trim() !== asked && (
         <p className="mt-1.5 text-[13px]" style={{ color: 'var(--status-warning)' }}>
@@ -603,7 +624,7 @@ export default function Search() {
           that kind for this query, and it now costs no line at all. */}
       {asked && data && !err && (
         <div className="mt-3">
-          <div className="grid grid-cols-2 sm:grid-cols-3 gap-2" role="group" aria-label="What kind of thing">
+          <div className="grid grid-cols-2 sm:grid-cols-4 gap-2" role="group" aria-label="What kind of thing">
             {GROUPS.map(g => {
               const { hits, capped } = groupCount(g.id)
               const active = type === g.id
@@ -981,6 +1002,7 @@ function Result({ h }: { h: Hit }) {
     ? `${h.board || h.board_slug}, ${h.date} — at ${hms(h.start_s || 0)}`
     : h.corpus === 'minutes' ? `${h.board || h.board_slug || ''}${h.date ? ', ' + h.date : ''}`
     : h.corpus === 'source' ? (h.board || '')
+    : h.corpus === 'annual' ? ''
     : h.corpus === 'post' ? `published ${h.date}`
     : h.corpus === 'job' ? `${h.board || ''} · posted ${h.date} · ${h.kind}`
     : h.corpus === 'person' ? h.kind : ''
@@ -997,7 +1019,7 @@ function Result({ h }: { h: Hit }) {
             : { border: '1px solid var(--grid)', color: 'var(--text-muted)' }}>
           {badge(h)}
         </span>
-        <a className="font-semibold underline" href={meeting ?? h.cite_url} target={isT || h.corpus === 'source' || (h.corpus === 'job' && !h.cite_url.includes('lunenburgbudgetproject.org')) ? '_blank' : undefined} rel="noreferrer"
+        <a className="font-semibold underline" href={meeting ?? h.cite_url} target={isT || h.corpus === 'source' || h.corpus === 'annual' || (h.corpus === 'job' && !h.cite_url.includes('lunenburgbudgetproject.org')) ? '_blank' : undefined} rel="noreferrer"
           style={{ color: isT ? 'var(--series-revenue, #b5540f)' : 'var(--series-cost)' }}>
           {isT ? <><span aria-hidden="true">&#9654; </span>{h.title}</> : h.title}
         </a>

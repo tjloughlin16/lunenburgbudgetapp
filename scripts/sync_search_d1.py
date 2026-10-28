@@ -144,8 +144,14 @@ def remote_files():
 
 
 def remote_counts():
-    rows, _ = command('SELECT corpus, COUNT(*) n FROM search GROUP BY corpus')
-    return {r['corpus']: r['n'] for r in rows}
+    # The annual reports' share of `source` rides in the SAME scan: /api/search splits them out
+    # as their own kind (`annual`) and needs the denominator, and a second GROUP BY would read
+    # every row again.
+    rows, _ = command("SELECT corpus, COUNT(*) n, SUM(board_slug = 'town-annual-reports') a "
+                      'FROM search GROUP BY corpus')
+    out = {r['corpus']: r['n'] for r in rows}
+    out['annual'] = sum(r['a'] or 0 for r in rows if r['corpus'] == 'source')
+    return out
 
 
 # ------------------------------------------------------------------------------- the push
@@ -325,7 +331,7 @@ def record_counts(written):
     import datetime as dt
     rc = remote_counts()
     with tempfile.NamedTemporaryFile('w', suffix='.sql', delete=False) as fh:
-        for c in B.CORPORA:
+        for c in list(B.CORPORA) + ['annual']:
             fh.write("INSERT OR REPLACE INTO build_meta VALUES ('rows:%s', %s);\n" % (c, q(str(rc.get(c, 0)))))
         built = sqlite3.connect(B.DB, timeout=300).execute("SELECT v FROM build_meta WHERE k='built'").fetchone()
         fh.write("INSERT OR REPLACE INTO build_meta VALUES ('built', %s);\n" % q(built[0] if built else ''))

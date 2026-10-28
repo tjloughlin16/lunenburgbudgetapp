@@ -71,14 +71,51 @@ resources all say yes:
 Whether this is `process_meeting.py --until-usage` grown a second resource, or a new `digest.py`
 that runs both, is a build decision; the shared piece is the priority list and the two governors.
 
-## 4. The order of work -- NEEDS TJ'S AGREEMENT
+## 4. The order of work -- DECIDED 28 October 2026
 
-A default to argue with:
+TJ, 28 October 2026, when 52 reports (1959-2010) arrived in one crawl: *"annual reports
+processing from aws can happen at the same time as meetings. but agentic processing is shared.
+so realistically, it can be 'both', with agentic overlap spending landing on annual reports
+first. I want to get through the reports as soon as we can."*
 
-1. **New meetings** -- what residents read this week (as now, newest first).
-2. **Annual reports: read** (Textract, every page; AWS only). Cheap per report, and it unblocks search.
-3. **Annual reports: prove**, newest year first (plan).
-4. **Meeting backlog**, older years (plan), as now.
+So it is resource management, not one ordered list:
+
+- **AWS (reading) runs in parallel with everything.** It competes with nothing on the plan.
+  Order: **newest year first**, stopping hard at the monthly cap; the rest wait for the 1st.
+- **The Claude plan is the one shared resource.** Where both streams want it, **annual reports
+  first** (proving), then new meetings, then the meeting backlog.
+
+The default this replaced put new meetings ahead of everything.
+
+## 4a. The 1959-2010 reports: extract what is THERE, not what FY2011 had -- DECIDED 28 October 2026
+
+52 reports, calendar 1959 to 2010, fetched 28 October 2026 (the quarterly `annual-reports` source;
+`scripts/read_annual_reports.py` reads them). TJ, the same day:
+
+> *"if these reports are in any way different, meaning they have different data sets or unique
+> information, these go back to the 50s. So we need to be flexible and capture information from
+> tables and finances that may no longer exist ... processing the data as it's found in there,
+> mapping it to the tables we have, and then if they don't map ... we need to create the new
+> things to land them in the database to make them searchable."*
+
+So extraction runs from the PAGE outward, never from our dataset list inward:
+
+1. **Inventory first.** Every table on every page is catalogued with its PRINTED heading
+   (`annual-report-catalogue.csv`'s grain), before anything is mapped. What the report prints
+   is the list of things to land.
+2. **Map to an existing dataset only where it is the same quantity** -- same thing counted,
+   same stage (rule 1: budget vs actual), same grain. A similar heading is not a match.
+3. **What does not map gets a NEW dataset**, named for what the page prints, with the same
+   furniture as the others: `document`, `page`, `status` (`checked` / `check failed` /
+   `no check`), provenance, loaded into `lunenburg.db` and searchable. A 1960s table with no
+   modern counterpart is a finding, not a misfit.
+4. **What a modern dataset has and an old report does not print is a GAP**, registered in
+   `money-gaps.csv` (rule 7c) -- never filled, never inferred from an adjacent table.
+
+**The pilot is the ten newest, 2001-2010, taken to the finish line the FY reports reached**:
+pages proven or blocked, datasets, database, search, the app. Tables (Textract) on every page of
+those ten, so the financial-page finder has an answer key; then one report end to end (2010)
+to measure what the agentic part costs, quoted before the other nine.
 
 ## 5. Build phases
 

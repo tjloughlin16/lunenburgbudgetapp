@@ -49,6 +49,7 @@ warnings.filterwarnings('ignore')
 
 import pdf_tables as T
 import report_pages as RP
+from report_year import fiscal_editions  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
@@ -299,7 +300,7 @@ def main():
     args = ap.parse_args()
 
     rows, ledger = [], []
-    pdfs = sorted(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf')),
+    pdfs = sorted(fiscal_editions(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf'))),
                   key=lambda p: fiscal_year(os.path.basename(p)) or 0)
 
     for path in pdfs:

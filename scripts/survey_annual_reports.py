@@ -36,6 +36,7 @@ warnings.filterwarnings('ignore')
 
 import pypdf
 import pdf_tables as T
+from report_year import fiscal_editions  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
@@ -158,7 +159,7 @@ def main():
                     help="directory of ocr_pdf.swift --boxes TSVs")
     args = ap.parse_args()
 
-    pdfs = sorted(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf')),
+    pdfs = sorted(fiscal_editions(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf'))),
                   key=lambda p: (fiscal_year(os.path.basename(p)) or 0, p))
     # Without this, a stale DOCS path writes a survey of nothing over a survey of
     # sixteen reports and reports success. That is not hypothetical: this path pointed

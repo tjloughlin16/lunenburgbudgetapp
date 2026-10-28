@@ -4,6 +4,11 @@
     python3 scripts/watch_documents.py            # re-walk the listing pages; record what is NEW
     python3 scripts/watch_documents.py --check    # no network; the state holds together
     python3 scripts/watch_documents.py --dry-run  # walk and report; keep nothing
+    python3 scripts/watch_documents.py --annual-reports   # the annual town reports only
+
+The annual town reports are left out of the daily walk and looked for quarterly, as their
+own row in source-cadence.csv (`annual-reports`). TJ, 28 October 2026: daily is too fast
+for a document the town publishes once a year.
 
 TJ, 12 September 2026: *"the refresh needs to look for new documents posted from the
 school committee (budget related), as well as on the town pages from the areas we've
@@ -42,7 +47,6 @@ EVENT_COLS = ['first_seen', 'folder', 'label', 'upstream', 'local', 'bytes']
 # catalogue was the one a short crawl could shrink unchallenged.
 FOLDERS = ['district-budget', 'town-budget', 'town-supplementary', 'town-annual-reports',
            'state-dese', 'state-dls']
-CRAWLERS = [['fetch_school_budget_docs.py'], ['fetch_town_docs.py']]
 
 
 def read_csv(path):
@@ -74,9 +78,14 @@ def main():
     ap.add_argument('--check', action='store_true')
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--as-of', default=dt.date.today().isoformat())
+    ap.add_argument('--annual-reports', action='store_true')
     a = ap.parse_args()
     if a.check:
         return check()
+    if a.annual_reports:
+        crawlers = [['fetch_town_docs.py', '--scope', 'annual-reports']]
+    else:
+        crawlers = [['fetch_school_budget_docs.py'], ['fetch_town_docs.py', '--scope', 'no-annual-reports']]
 
     before = {f: read_csv(index_of(f)) for f in FOLDERS}
     snap = tempfile.mkdtemp(prefix='index-snap-')
@@ -85,8 +94,8 @@ def main():
             shutil.copy(index_of(f), os.path.join(snap, f + '.csv'))
 
     env = dict(os.environ)
-    for c in CRAWLERS:
-        args = [sys.executable, os.path.join(ROOT, 'scripts', *c)]
+    for c in crawlers:
+        args = [sys.executable, os.path.join(ROOT, 'scripts', c[0]), *c[1:]]
         print('$ ' + ' '.join(args[1:]), flush=True)
         r = subprocess.run(args, cwd=ROOT, env=env, capture_output=True, text=True, timeout=3600)
         tail = (r.stdout or '').strip().splitlines()[-3:]

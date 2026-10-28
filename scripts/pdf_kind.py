@@ -212,8 +212,12 @@ def _split_pages(text):
     return out
 
 
-def extract_text(path, out_txt):
+def extract_text(path, out_txt, ocr=True):
     """Write the text of a PDF, page-marked, and say how each part was read.
+
+    `ocr=False` keeps the text layer and leaves the pages that need OCR empty, for a
+    document Textract will read -- the annual town reports (TJ, 28 October 2026: Textract
+    reads every page; Vision only by explicit choice).
 
     A page whose text layer reads keeps it. Only the pages this module classifies as
     pictures, unreadable fonts or outlines are taken from OCR -- so a digital deck with a
@@ -227,6 +231,9 @@ def extract_text(path, out_txt):
     if not needs_ocr(k):
         open(out_txt, 'w').write(k['text'])
         return 'pdf text layer'
+    if not ocr:
+        open(out_txt, 'w').write(k['text'])
+        return f'{k["verdict"]}: not OCR\'d, awaits Textract'
     # OCR ONLY THE PAGES THAT NEED IT. They are copied into a temporary PDF and its page
     # numbers mapped back: a 50-page deck with three screenshot slides used to be OCR'd in
     # full, fifty pages of Vision to keep three.

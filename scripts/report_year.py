@@ -72,3 +72,40 @@ def report_year(label):
         y = years.pop()
         return Year(y, 'calendar', str(y))
     return None
+
+
+# THE FILENAME HALF. Two shapes of annual report are held under town-annual-reports/docs/:
+#
+#   4130-fy-2025-annual-town-report.pdf    FY2011-FY2025, read on Vision and proven
+#   4526-2000-annual-town-report.pdf       1959-2010, fetched 28 October 2026, read on Textract
+#
+# The leading number is the town's DocumentCenter id and is NOT a year -- `report_year()` on
+# the whole name would read `2003-2004-...` as the span FY2004 -- so it is stripped first.
+# `basis` is the label's claim, as above: a calendar edition's balance sheet may still be
+# for a fiscal year (the 2000 report's is "FOR THE YEAR ENDED JUNE 30, 2000"); check the page.
+Edition = collections.namedtuple('Edition', 'key year basis')
+FY_FILE = re.compile(r'fy-?(\d{4})')
+CALENDAR_FILE = re.compile(r'^\d+-((?:19|20)\d{2})-annual-town-report')
+
+
+def report_edition(name):
+    """Edition('FY2011', 2011, 'fiscal') | Edition('2000', 2000, 'calendar') | None, from a filename."""
+    import os
+    base = os.path.basename(name)
+    add = '-addendum' if 'addendum' in base else ''
+    m = FY_FILE.search(base)
+    if m:
+        return Edition('FY%s%s' % (m.group(1), add), int(m.group(1)), 'fiscal')
+    m = CALENDAR_FILE.match(base)
+    if m:
+        return Edition('%s%s' % (m.group(1), add), int(m.group(1)), 'calendar')
+    return None
+
+
+def fiscal_editions(paths):
+    """Only the FY-named reports. THE VISION-ERA EXTRACTORS READ THESE AND NOTHING ELSE: their
+    layouts, reprints and page reads are written per fiscal year, and a 1960s report handed to
+    them would produce `FYNone` rows or crash. A calendar edition reaches them only once it has
+    its own page map (notes/PLAN-ANNUAL-REPORT-PIPELINE.md, P4)."""
+    import os
+    return [p for p in paths if FY_FILE.search(os.path.basename(p))]

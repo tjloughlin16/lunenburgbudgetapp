@@ -28,6 +28,7 @@ sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 warnings.filterwarnings('ignore')
 
 import pdf_tables as T
+from report_year import fiscal_editions, report_edition  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 # The sixteen annual town reports moved out of town-budget/ on 5 September 2026.
@@ -42,8 +43,10 @@ HEADER = re.compile(r'^===PAGE (\d+)=== \(([^,]+), (\d+) lines\)')
 
 
 def edition_of(name):
-    fy = re.search(r'fy-?(\d{4})', name).group(1)
-    return f'FY{fy}' + ('-addendum' if 'addendum' in name else '')
+    e = report_edition(name)
+    if e is None:
+        raise ValueError('%s is not an annual report edition' % name)
+    return e.key
 
 
 def build(pdf, boxes_dir, out_dir):
@@ -153,7 +156,7 @@ def sources_for(edition):
     """The OCR TSV(s) this edition's cache is built from, and their digests."""
     out = {}
     for p in sorted(glob.glob(os.path.join(ROOT, 'sources', 'town-budget', 'ocr', '*.tsv'))):
-        if edition_of(os.path.basename(p)) == edition:
+        if report_edition(os.path.basename(p)) and edition_of(os.path.basename(p)) == edition:
             h = hashlib.sha256()
             with open(p, 'rb') as fh:
                 for chunk in iter(lambda: fh.read(1 << 20), b''):
@@ -245,7 +248,7 @@ def main():
         print(__doc__)
         return
     os.makedirs(args.out, exist_ok=True)
-    pdfs = sorted(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf')))
+    pdfs = sorted(fiscal_editions(glob.glob(os.path.join(DOCS, '*annual-town-report*.pdf'))))
     # A rebuild that finds no PDFs leaves the existing cache in place and says nothing,
     # so every extractor downstream keeps producing byte-identical rows off text that is
     # no longer traceable to a document. Loud is safe here; quiet is not.
