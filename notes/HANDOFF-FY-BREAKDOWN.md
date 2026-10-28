@@ -1,6 +1,34 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
-## START HERE -- state at the end of the 27 October 2026 session
+## START HERE -- 27 October 2026, night. Pushed (7e2c8b8cc), NOT deployed, still hidden
+
+The page grew from one table into a year's money relationships. Blocks, in order, every one a
+single FY switched by the picker, every figure from `build_fy_breakdown.py`:
+
+1. **The plan and what happened** (`fy-plan`): in dollars, plan bar (budget used, circuit breaker
+   charged, then UNSPENT outlined at the end -- TJ: "always") against what happened by payer.
+2. **From the plan to what happened** (`fy-bridge`): a bridge, FROM ZERO (a truncated axis made
+   $3M look longer than $26M). Its sentence is asserted every year.
+3. **Across the year line** (`fy-year-line`): in across 1 July / out across 30 June; each
+   crossing tied to the other year (owed 30 June = next year's carried in, to the cent). FY2026
+   paid $189,276.75 of FY2027 collaborative tuition early. TJ: "watching the money cross
+   boundaries ... this is a money relationship page".
+4. weeks, the big line table, then **School lines other funds paid** (`fy-line-funds`: one row per
+   line, largest first, popup per line) above **What other funds paid for** (by fund; column is
+   "Kind of fund", not "who paid"), overlap, the year in figures.
+5. **Years and what they need** (`fy-readiness`): a year UNLOCKS ITSELF when the journal and both
+   period-13 reports are held (`readiness()`); `journal.YEARS`/`OPEN_FY` are read off the journal.
+   The next year's missing inputs are worded as the records request. `refresh.py` rebuilds and
+   verifies the page daily, so a new MUNIS year needs no step once extracted. PLAN_BOOKS is still
+   one line per year by hand; an unmapped year builds with its offset "not read".
+
+**Open:** deploy (`bash scripts/deploy_site.sh`; the site build must be rerun first -- the last one
+predates the popup). Search logging is live in D1 (`search_log` created 27 Oct) but records only
+after that deploy. Other funds' unspent money is a registered gap (money-gaps: needs period-13
+fund balances). The weekly chart's per-year June line replaced a hardcoded FY2026 claim.
+The $303,499 Town-side entry is still TJ's. Next level (TJ, earlier): level 2, categories.
+
+## Earlier state, 27 October 2026 (afternoon)
 
 TJ wants to keep thinking about this page in a fresh session. Nothing is half-done; everything below
 is committed (latest page commits 69294bb2e, 5ddc37962) and DEPLOYED, but still a DRAFT: the address
