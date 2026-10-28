@@ -454,9 +454,22 @@ CATEGORIES = (
     ('athletics_staff', 'Coaches & activity advisors', 'circumstantial',
      'salary lines, functions 3510 and 3520 (athletic director, coaches, after-school '
      'advisors)', lambda f, s: s and f in (3510, 3520)),
-    ('other_staff', 'Nurses & other staff', 'circumstantial',
-     'every other salary line (nurses, special details, crossing guards, reserves)',
-     lambda f, s: s),
+    # NURSES AND THE SALARY RESERVE were one catch-all, "Nurses & other staff" -- every other
+    # salary line -- whose label named things it never held (no special details, no crossing
+    # guards in any year FY2023-FY2026) and put a reserve beside the nurses. TJ, 27 October 2026:
+    # "this is confusing to see that category". Each now by its own code, and NO CATCH-ALL: a
+    # salary line under a function no rule names fails category_of (supplies takes non-salary
+    # lines only), so it is placed by a decision, not by default.
+    ('nurses', 'Nurses', 'circumstantial',
+     'salary lines, function 3200 (Medical/Health Services in the district\'s End of Year '
+     'Financial Report to DESE)', lambda f, s: s and f == 3200),
+    ('reserve', 'Salary reserve', 'circumstantial',
+     'salary lines, function 0300: the ledger\'s SCHOOL SALARY RESERVE, voted unassigned and moved '
+     'to salary lines during the year (a local code; the End of Year Financial Report lists no 0300)',
+     lambda f, s: s and f == 300),
+    ('details', 'Special details', 'circumstantial',
+     'salary lines, function 3600 (School Security in the End of Year Financial Report): the '
+     'ledger\'s SPECIAL DETAILS', lambda f, s: s and f == 3600),
     ('tuition', 'Out-of-district tuition', 'circumstantial',
      'functions 9000 and up (private and collaborative special-education tuition)',
      lambda f, s: f >= 9000),
@@ -488,13 +501,13 @@ CATEGORIES = (
      lambda f, s: f == 1430),
     ('supplies', 'Supplies, services & everything else', 'discretionary',
      'every remaining non-salary line (classroom supplies, textbooks, dues, office and '
-     'contracted services)', lambda f, s: True),
+     'contracted services)', lambda f, s: not s),
 )
 CAT_LABEL = {c[0]: c[1] for c in CATEGORIES}
 # The same categories in two words, for a conclusion card's 95 characters.
 CAT_SHORT = {'teachers': 'teachers', 'counselors': 'counselors', 'paras': 'paraprofessionals',
              'admin': 'administration', 'custodians': 'custodians',
-             'athletics_staff': 'coaches and advisors', 'other_staff': 'other staff',
+             'athletics_staff': 'coaches and advisors', 'nurses': 'nurses', 'reserve': 'salary reserve', 'details': 'special details',
              'tuition': 'tuition', 'athletics': 'athletics', 'prof_dev': 'professional development',
              'legal': 'legal services',
              'sped_services': 'special-ed services', 'transport': 'transportation',
@@ -610,7 +623,7 @@ def special_overlap(fy, cats):
     totalled separately and said to be unmatchable rather than guessed at."""
     by_cat = {c['key']: set(c['functions']) for c in cats}
     sal_of = {c['key']: c['key'] in ('teachers', 'counselors', 'paras', 'admin',
-                                      'custodians', 'athletics_staff', 'other_staff') for c in cats}
+                                      'custodians', 'athletics_staff', 'nurses', 'reserve', 'details') for c in cats}
     matched, coarse = {}, 0.0
     for r in special_rows(fy):
         f, s = func_of(r), r['obj'].startswith('51')
@@ -765,8 +778,10 @@ HYPOTHESES = {
     'athletics_staff': ('stipends not paid for seasons or programs that did not run, or '
                         'coaches paid from the athletic fee fund instead',
                         'the coaching and advisor stipend payroll by season'),
-    'other_staff': ('a nurse post vacant for part of the year, or reserves not drawn',
-                    'the nursing payroll by month'),
+    'nurses': ('a nurse post vacant for part of the year', 'the nursing payroll by month'),
+    'reserve': ('reserve money not moved to a salary line by the end of the year',
+                'the transfers out of the reserve, which the journal lists'),
+    'details': ('fewer police details than budgeted', 'the details payroll by event'),
     'athletics': ('fewer games, trips or officials than budgeted, or costs paid from the '
                   'athletic fee fund instead', 'the athletics accounts\' journal detail and '
                   'the fee fund\'s spending by month'),
@@ -1025,7 +1040,7 @@ def why(fy, rows, t):
     disc_share = 100 * disc / total
     disc_enc = round(sum(c['encumbered'] for c in cats if c['kind'] == 'discretionary'), 2)
     sal = [c for c in cats if c['key'] in ('teachers', 'counselors', 'paras', 'admin',
-                                            'custodians', 'athletics_staff', 'other_staff')]
+                                            'custodians', 'athletics_staff', 'nurses', 'reserve', 'details')]
     sal_net = round(sum(c['unspent'] for c in sal), 2)
     top_u, top_o = top_accounts(rows)
     record = check_record(fy)

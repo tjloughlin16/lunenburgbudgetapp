@@ -748,8 +748,8 @@
    },
    {
     "committed_pct": 0.0,
-    "key": "other_staff",
-    "label": "Nurses & other staff",
+    "key": "nurses",
+    "label": "Nurses",
     "left_pct": 0,
     "over_pct": 2.4,
     "revised": 305257.0,
@@ -867,12 +867,14 @@
     "unspent": 167992.45
    },
    {
-    "accounts": 5,
+    "accounts": 8,
     "encumbered": 0.0,
     "expended": 3645254.65,
     "functions": [
      5100,
-     5200
+     5150,
+     5200,
+     5500
     ],
     "key": "benefits",
     "kind": "circumstantial",
@@ -1038,25 +1040,56 @@
     "unspent": 4086.57
    },
    {
-    "accounts": 11,
+    "accounts": 1,
+    "encumbered": 0.0,
+    "expended": 0.0,
+    "functions": [
+     300
+    ],
+    "key": "reserve",
+    "kind": "circumstantial",
+    "label": "Salary reserve",
+    "original": 90769.62,
+    "over": 0.0,
+    "pct_of_revised": null,
+    "revised": 0.0,
+    "transfers": -90769.62,
+    "under": 0.0,
+    "unspent": 0.0
+   },
+   {
+    "accounts": 1,
+    "encumbered": 0.0,
+    "expended": 0.0,
+    "functions": [
+     3600
+    ],
+    "key": "details",
+    "kind": "circumstantial",
+    "label": "Special details",
+    "original": 0.0,
+    "over": 0.0,
+    "pct_of_revised": null,
+    "revised": 0.0,
+    "transfers": 0.0,
+    "under": 0.0,
+    "unspent": 0.0
+   },
+   {
+    "accounts": 6,
     "encumbered": 0.0,
     "expended": 312577.56,
     "functions": [
-     300,
-     3200,
-     3600,
-     5150,
-     5200,
-     5500
+     3200
     ],
-    "key": "other_staff",
+    "key": "nurses",
     "kind": "circumstantial",
-    "label": "Nurses & other staff",
-    "original": 396026.62,
+    "label": "Nurses",
+    "original": 305257.0,
     "over": -8133.0,
     "pct_of_revised": -2.4,
     "revised": 305257.0,
-    "transfers": -90769.62,
+    "transfers": 0.0,
     "under": 812.44,
     "unspent": -7320.56
    },
@@ -1210,10 +1243,22 @@
     "rule": "salary lines, functions 3510 and 3520 (athletic director, coaches, after-school advisors)"
    },
    {
-    "key": "other_staff",
+    "key": "nurses",
     "kind": "circumstantial",
-    "label": "Nurses & other staff",
-    "rule": "every other salary line (nurses, special details, crossing guards, reserves)"
+    "label": "Nurses",
+    "rule": "salary lines, function 3200 (Medical/Health Services in the district's End of Year Financial Report to DESE)"
+   },
+   {
+    "key": "reserve",
+    "kind": "circumstantial",
+    "label": "Salary reserve",
+    "rule": "salary lines, function 0300: the ledger's SCHOOL SALARY RESERVE, voted unassigned and moved to salary lines during the year (a local code; the End of Year Financial Report lists no 0300)"
+   },
+   {
+    "key": "details",
+    "kind": "circumstantial",
+    "label": "Special details",
+    "rule": "salary lines, function 3600 (School Security in the End of Year Financial Report): the ledger's SPECIAL DETAILS"
    },
    {
     "key": "tuition",
@@ -1445,14 +1490,38 @@
     },
     {
      "by_year": [
+      0.0,
+      0.01,
+      0.0,
+      0.0
+     ],
+     "key": "reserve",
+     "kind": "circumstantial",
+     "label": "Salary reserve",
+     "years_under": 0
+    },
+    {
+     "by_year": [
+      0.0,
+      0.0,
+      0.0,
+      0.0
+     ],
+     "key": "details",
+     "kind": "circumstantial",
+     "label": "Special details",
+     "years_under": 0
+    },
+    {
+     "by_year": [
       -9362.52,
-      29212.29,
+      29212.28,
       2014.7,
       -7320.56
      ],
-     "key": "other_staff",
+     "key": "nurses",
      "kind": "circumstantial",
-     "label": "Nurses & other staff",
+     "label": "Nurses",
      "years_under": 2
     },
     {
@@ -1727,7 +1796,7 @@
     "name": "CHAPTER 658 REVOLVING FU"
    },
    {
-    "category": "other_staff",
+    "category": "nurses",
     "expended": 8330.6,
     "fund": "2681",
     "name": "COMP SCHOOL HEALTH SERV"

@@ -349,7 +349,7 @@ def why_left(cat, acct):
             early += D(r['amount'])
     c = lambda y, *ks: sum(cat[(y, k)] for k in ks)
     sal = c(Y1, 'teachers', 'counselors', 'paras', 'admin', 'custodians', 'athletics_staff',
-            'other_staff')
+            'nurses', 'reserve', 'details')
     aides = -sum(acct[(Y1, a)] for (y, a) in list(acct) if y == Y1 and acct[(y, a)] < 0
                  and a.split('-')[3] == '2330' and a.split('-')[-1].startswith('51'))
     want = [acct[(Y1, PRIV)], budget[PRIV], may[(2025, True)], may[(2026, False)],

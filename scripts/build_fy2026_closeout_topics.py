@@ -1184,7 +1184,7 @@ def build():
 # because no document does (rule 7). Category nets are build_school_surplus.py's own table,
 # so this block and Surplus by category cannot disagree.
 SALARY_CATS = ('teachers', 'counselors', 'paras', 'admin', 'custodians', 'athletics_staff',
-               'other_staff')
+               'nurses', 'reserve', 'details')
 OVER_CATS = ('sped_services', 'transport', 'utilities')
 GRANT_QUOTE = 'taking certain tuitions out of the grants'
 

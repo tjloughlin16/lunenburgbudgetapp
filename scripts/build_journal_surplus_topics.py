@@ -441,8 +441,10 @@ def build():
     if not (b0 < s0 and b1 > s1):
         fail('the first conclusion assumes the repeat categories left part of FY%d’s surplus '
              'and more than all of FY%d’s' % (Y0, Y1))
-    if not all(cl[(Y0, c)] > 0 for c in CATS):
-        fail('the first conclusion’s note assumes every category was under in FY%d' % Y0)
+    # "no category ran over", not "every category came in under": the salary reserve and special
+    # details end some years at exactly nothing, neither under nor over
+    if not all(cl[(Y0, c)] >= 0 for c in CATS):
+        fail('the first conclusion’s note assumes no category ran over in FY%d' % Y0)
     if not set(every) <= set(both):
         fail('a category under every year must be under in both')
     ncat = len(CATS)
@@ -492,7 +494,7 @@ def build():
              so='In %s the repeat underspends were larger than the whole surplus: overruns '
                 'elsewhere absorbed the rest, so the total hides slack.' % C.fy(Y1),
              so_figures={'y': F(Y1)},
-             notes=[step('The surplus as printed was %s, then %s. In %s every category came in under; '
+             notes=[step('The surplus as printed was %s, then %s. In %s no category ran over; '
                          'in %s, the categories that ran over used the difference.'
                          % (C.usd(fl(s0)), C.usd(fl(s1)), C.fy(Y0), C.fy(Y1)), 'measured',
                          {'a': U(s0), 'b': U(s1), 'y': F(Y0), 'z': F(Y1)})]),

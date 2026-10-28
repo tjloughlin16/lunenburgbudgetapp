@@ -169,7 +169,7 @@ def flat(text):
 # fails. Same order as the generator's table: first match wins.
 
 SALARY_KEYS = ('teachers', 'counselors', 'paras', 'admin', 'custodians', 'athletics_staff',
-               'other_staff')
+               'nurses', 'reserve', 'details')
 DISCRETIONARY = ('buildings', 'equipment', 'athletics', 'prof_dev', 'legal', 'supplies')
 
 
@@ -187,7 +187,14 @@ def cat_of(func, sal):
             return 'custodians'
         if func in (3510, 3520):
             return 'athletics_staff'
-        return 'other_staff'
+        if func == 3200:
+            return 'nurses'
+        if func == 300:
+            return 'reserve'
+        if func == 3600:
+            return 'details'
+        # no salary catch-all, as in the generator: a salary line under any other function falls
+        # to the rules below (5150, separation costs, is a fixed charge) and fails if none takes it
     if func >= 9000:
         return 'tuition'
     if func in (2310, 2320):
@@ -208,6 +215,8 @@ def cat_of(func, sal):
         return 'prof_dev'
     if func == 1430:
         return 'legal'
+    if sal:
+        raise SystemExit('verify_school_surplus: a salary line under function %d has no category' % func)
     return 'supplies'
 
 
