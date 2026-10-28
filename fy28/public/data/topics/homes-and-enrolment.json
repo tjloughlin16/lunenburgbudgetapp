@@ -7,15 +7,15 @@
   "note": {
    "figures": {
     "y": {
-     "text": "FY2002",
+     "text": "FY1994",
      "unit": "fiscal year",
-     "value": 2002
+     "value": 1994
     }
    },
    "literals": [
     "1 October"
    ],
-   "text": "DLS single-family parcels and DESE’s 1 October enrolment. Before FY2002 a year missing from either file is left out, so the axis is not evenly spaced there."
+   "text": "DLS single-family parcels and DESE’s 1 October enrolment. Before FY1994 a year missing from either file is left out, so the axis is not evenly spaced there."
   },
   "reference": null,
   "series": [
@@ -25,7 +25,13 @@
     "name": "Single-family homes",
     "texts": [
      "2,872",
+     "2,914",
+     "2,946",
+     "2,989",
+     "3,036",
      "3,072",
+     "3,103",
+     "3,174",
      "3,201",
      "3,249",
      "3,283",
@@ -54,7 +60,13 @@
     ],
     "values": [
      2872,
+     2914,
+     2946,
+     2989,
+     3036,
      3072,
+     3103,
+     3174,
      3201,
      3249,
      3283,
@@ -88,7 +100,13 @@
     "name": "Enrolled children",
     "texts": [
      "1,758",
+     "1,786",
+     "1,788",
+     "1,843",
+     "1,829",
      "1,830",
+     "1,861",
+     "1,889",
      "1,851",
      "1,887",
      "1,830",
@@ -117,7 +135,13 @@
     ],
     "values": [
      1758,
+     1786,
+     1788,
+     1843,
+     1829,
      1830,
+     1861,
+     1889,
      1851,
      1887,
      1830,
@@ -152,7 +176,13 @@
   "unit": "count",
   "x": [
    "FY1994",
+   "FY1995",
+   "FY1996",
+   "FY1997",
+   "FY1998",
    "FY1999",
+   "FY2000",
+   "FY2001",
    "FY2002",
    "FY2003",
    "FY2004",
@@ -184,9 +214,9 @@
   {
    "figures": {
     "y": {
-     "text": "FY2003",
+     "text": "FY2001",
      "unit": "fiscal year",
-     "value": 2003
+     "value": 2001
     }
    },
    "literals": [
@@ -205,7 +235,7 @@
     "pk",
     "st1"
    ],
-   "text": "Single-family homes never fell between two years the record holds; enrolment peaked in FY2003."
+   "text": "Single-family homes never fell between two years the record holds; enrolment peaked in FY2001."
   },
   {
    "figures": {
@@ -348,9 +378,9 @@
    "label": {
     "figures": {
      "y": {
-      "text": "FY2003",
+      "text": "FY2001",
       "unit": "fiscal year",
-      "value": 2003
+      "value": 2001
      }
     },
     "literals": [
@@ -363,12 +393,12 @@
      "45",
      "64"
     ],
-    "text": "enrolled, FY2003, the peak"
+    "text": "enrolled, FY2001, the peak"
    },
    "value": {
-    "text": "1,887",
+    "text": "1,889",
     "unit": "children",
-    "value": 1887
+    "value": 1889
    }
   },
   {
@@ -524,9 +554,9 @@
     "value": 773
    },
    "b": {
-    "text": "319",
+    "text": "321",
     "unit": "",
-    "value": 319
+    "value": 321
    },
    "y": {
     "text": "FY1994",
@@ -534,13 +564,13 @@
     "value": 1994
    },
    "z": {
-    "text": "FY2003",
+    "text": "FY2001",
     "unit": "fiscal year",
-    "value": 2003
+    "value": 2001
    }
   },
   "literals": [],
-  "text": "773 more single-family homes since FY1994; enrolment is 319 below its FY2003 peak."
+  "text": "773 more single-family homes since FY1994; enrolment is 321 below its FY2001 peak."
  },
  "full_report": {
   "href": "",
@@ -580,13 +610,13 @@
      "Enrolled children",
      "Students per 100 homes"
     ],
-    "key": "series",
+    "key": "series-2010",
     "kinds": [
      "ledger",
      "ledger",
      "stated"
     ],
-    "label": "FY1994 to FY2026",
+    "label": "FY2010 to FY2026",
     "note": "DLS single-family parcels and DESE’s 1 October enrolment. A year missing from the table is missing from one of the two files. The ratio is our arithmetic.",
     "rows": [
      {
@@ -724,7 +754,25 @@
        "49.8"
       ],
       "label": "FY2010"
-     },
+     }
+    ],
+    "total_col": -1
+   },
+   {
+    "columns": [
+     "Single-family homes",
+     "Enrolled children",
+     "Students per 100 homes"
+    ],
+    "key": "series-1994",
+    "kinds": [
+     "ledger",
+     "ledger",
+     "stated"
+    ],
+    "label": "FY1994 to FY2009",
+    "note": "DLS single-family parcels and DESE’s 1 October enrolment. A year missing from the table is missing from one of the two files. The ratio is our arithmetic.",
+    "rows": [
      {
       "cells": [
        "3,413",
@@ -791,11 +839,59 @@
      },
      {
       "cells": [
+       "3,174",
+       "1,889",
+       "59.5"
+      ],
+      "label": "FY2001"
+     },
+     {
+      "cells": [
+       "3,103",
+       "1,861",
+       "60.0"
+      ],
+      "label": "FY2000"
+     },
+     {
+      "cells": [
        "3,072",
        "1,830",
        "59.6"
       ],
       "label": "FY1999"
+     },
+     {
+      "cells": [
+       "3,036",
+       "1,829",
+       "60.2"
+      ],
+      "label": "FY1998"
+     },
+     {
+      "cells": [
+       "2,989",
+       "1,843",
+       "61.7"
+      ],
+      "label": "FY1997"
+     },
+     {
+      "cells": [
+       "2,946",
+       "1,788",
+       "60.7"
+      ],
+      "label": "FY1996"
+     },
+     {
+      "cells": [
+       "2,914",
+       "1,786",
+       "61.3"
+      ],
+      "label": "FY1995"
      },
      {
       "cells": [

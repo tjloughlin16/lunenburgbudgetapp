@@ -334,7 +334,8 @@ export function TuitionByFund({ spend }: { spend: Spend[] }) {
 }
 
 export type Breaker = {
-  fy: number; students: number; eligible: number; threshold: number; paid: number
+  // null where DESE withholds a count below six (FY2023, restated 7 October 2026) -- never 0
+  fy: number; students: number | null; eligible: number; threshold: number; paid: number
   reimb_tuition: number; reimb_transport: number; paid_share_of_eligible: number
 }
 
@@ -356,7 +357,8 @@ function BreakerTip({ active, payload }: {
       </div>
       <div className="flex justify-between gap-4 mt-1">
         <span style={{ color: 'var(--text-secondary)' }}>for</span>
-        <span className="tnum">{p.students} student{p.students === 1 ? '' : 's'}</span>
+        <span className="tnum">{p.students === null ? 'fewer than 6 students (withheld by DESE)'
+          : `${p.students} student${p.students === 1 ? '' : 's'}`}</span>
       </div>
     </div>
   )

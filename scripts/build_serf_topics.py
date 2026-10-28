@@ -239,7 +239,7 @@ def read_cb(ys):
                 + num(r['additional_supplemental_payment']),
                 quarterly=num(r['total_quarterly_payment']),
                 eligible=num(r['total_eligible_expenses']), net=num(r['total_net_claim']),
-                children=int(num(r['eligible_students_claimed'])),
+                children=int(num(r['eligible_students_claimed'])) if r['eligible_students_claimed'] else None,  # DESE withholds a count below six (FY2023, restated 7 October 2026): absent, never 0
                 threshold=num(r['threshold_amount']))
     if not set(ys) <= set(out):
         fail('dese-circuit-breaker.csv does not hold every year FY%d to FY%d' % (ys[0], ys[-1]))
@@ -1921,7 +1921,8 @@ def build():
     r4 = [y for y in sorted(cbr) if y > fy1 - 4]
     r_lo, r_hi = min(rate(y) for y in r4), max(rate(y) for y in r4)
     below75 = sum(1 for y in r4 if rate(y) < 74.95)
-    kpeak = max(CBP['series'], key=lambda r: r['children'])
+    # Over the years DESE printed a count for: a withheld year (FY2023) has none to compare.
+    kpeak = max((r for r in CBP['series'] if r['children'] is not None), key=lambda r: r['children'])
     # THE RATE THE BUDGET ASSUMES. The FY2026 approved budget prints the offset's label cut off
     # at the cell's edge: `Circuit Breaker (70% = $422,408) (75% = 45`. $422,408 is 70% of
     # $603,440 exactly, and 75% of that is the FY2025 offset to the dollar -- the "45" the cell
@@ -2107,7 +2108,11 @@ def build():
                  columns=['Children claimed', 'Threshold per child', 'Eligible costs',
                           'Claim above threshold', 'Paid', 'Share of claim paid'],
                  rows=[dict(label=C.fy(r['fy']), cells=[
-                     C.num(r['children']), C.usd(r['threshold_per_child']), C.usd(r['eligible']),
+                     # DESE withholds a count below six; the cell says so in DESE's words, and the
+                     # per-child threshold, which divides by it, is left blank rather than guessed.
+                     C.num(r['children']) if r['children'] is not None else 'less than 6, withheld by DESE',
+                     C.usd(r['threshold_per_child']) if r['threshold_per_child'] is not None else '\u2014',
+                     C.usd(r['eligible']),
                      C.usd(r['claim']), C.usd(r['paid']), C.pct(100 * r['paid_share_of_claim'])])
                      for r in sorted(CBP['series'], key=lambda r: -r['fy'])],
                  note='DESE’s reimbursement file. A payment reimburses the year before; '

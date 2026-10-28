@@ -75,7 +75,11 @@ def series(db):
         fail('only %d rows for %s' % (len(rows), DISTRICT))
     out = []
     for r in rows:
-        kids = r['eligible_students_claimed'] or 0
+        # A WITHHELD COUNT IS NOT ZERO. DESE suppresses a count below six -- it restated FY2023
+        # that way on 7 October 2026 -- and `or 0` published it as "0 children claimed", a
+        # figure DESE never printed. Absent stays absent, and DESE's own words say why.
+        kids = r['eligible_students_claimed']
+        withheld = (r['comments'] or '') if kids is None else ''
         elig = r['total_eligible_expenses'] or 0
         thr = r['threshold_amount'] or 0
         claim = r['total_net_claim'] or 0
@@ -83,7 +87,8 @@ def series(db):
         if r['reconciles'] == 'no':
             fail('FY%d does not reconcile' % r['fy'])
         out.append(dict(
-            fy=r['fy'], children=int(kids), eligible=elig, threshold=thr, claim=claim, paid=paid,
+            fy=r['fy'], children=int(kids) if kids is not None else None, children_withheld=withheld,
+            eligible=elig, threshold=thr, claim=claim, paid=paid,
             transport=r['reimb_transport'] or 0, extra=r['extra_relief_payment'] or 0,
             per_child=elig / kids if kids else None,
             threshold_per_child=thr / kids if kids else None,
@@ -106,8 +111,9 @@ def build():
         s = series(db)
         by = {r['fy']: r for r in s}
         first, last = s[0], s[-1]
-        most_kids = max(s, key=lambda r: r['children'])
-        fewest = min(s, key=lambda r: r['children'])
+        counted = [r for r in s if r['children'] is not None]
+        most_kids = max(counted, key=lambda r: r['children'])
+        fewest = min(counted, key=lambda r: r['children'])
         low_share = min((r for r in s if r['paid_share_of_claim']), key=lambda r: r['paid_share_of_claim'])
         high_share = max((r for r in s if r['paid_share_of_claim']), key=lambda r: r['paid_share_of_claim'])
         full_years = sum(1 for r in s if r['paid_share_of_claim'] and r['paid_share_of_claim'] >= 0.70)

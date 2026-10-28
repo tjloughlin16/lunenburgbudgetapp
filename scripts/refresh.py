@@ -298,6 +298,10 @@ def looked(source_id, a, r, notes=None, what=None):
         notes.append('%s: exit %d -- retried tomorrow; %s' % (source_id, r.returncode, what))
 
 
+# Builders a changed source queued for the end of step 8 (see slow_sources).
+DOWNSTREAM = []
+
+
 def slow_sources(a, notes):
     """Run every `job` and `slice` row that is due, record each look, name what changed."""
     for r in SC.runnable():
@@ -314,16 +318,25 @@ def slow_sources(a, notes):
             if line.startswith('NOTICE:'):
                 notes.append('%s: %s' % (r['id'], line[len('NOTICE:'):].strip()))
         looked(r['id'], a, res, notes, 'run python3 scripts/%s' % r['command'])
-        # WHAT READS IT IS NAMED, NOT RUN. The consumers are derived (source_cadence.downstream:
-        # every build_*.py naming a file this job writes), but most are not on SITE_PAYLOADS,
-        # and SITE_PAYLOADS is the list of builders vetted to run unattended -- three scripts
-        # destroyed data the one time that was not checked. So a changed fetch says which
-        # pages now lag their data; it does not rebuild them.
+        # WHAT READS IT IS RE-RUN -- IF IT HAS BEEN VETTED. TJ, 28 October 2026: the pages update
+        # to the latest version. The consumers are derived (source_cadence.chain: extractors
+        # naming a file this job wrote, then builders naming that file or the extractors'
+        # CSVs). The extractors run NOW, before step 8 rebuilds the database from their CSVs;
+        # the builders are queued for the end of step 8, after it. Only source_cadence.UNATTENDED
+        # members run -- the same test SITE_PAYLOADS applies, because three scripts destroyed
+        # data the one time it was skipped -- and the rest are named in the notes.
         if res.returncode == 0 and SC.fingerprint(r) != before:
-            lag = [b for b in SC.downstream(r) if b not in SITE_PAYLOADS]
+            ex, bu = SC.chain(r)
+            for e in ex:
+                if e in SC.UNATTENDED:
+                    if py(e, check=False).returncode:
+                        notes.append('%s CHANGED; %s failed on it -- the pages that read it '
+                                     'are behind' % (r['id'], e))
+            DOWNSTREAM.extend(b for b in bu if b in SC.UNATTENDED and b not in DOWNSTREAM)
+            lag = [x for x in ex + bu if x not in SC.UNATTENDED and x not in SITE_PAYLOADS]
             if lag:
-                notes.append('%s CHANGED; these read it and were not re-run: %s'
-                             % (r['id'], ', '.join(lag)))
+                notes.append('%s CHANGED; these read it, are not vetted to run unattended, and '
+                             'were not re-run: %s' % (r['id'], ', '.join(lag)))
     found = SC.changes(on=a.as_of)
     for kind, said in (('changed', 'CHANGED AT THE PUBLISHER, found today'),
                        ('ours', 'defects in our archive the source checks exposed today')):
@@ -1513,6 +1526,13 @@ def run(a, notes, ctx):
         if gaps.returncode:
             notes.append('the meeting watcher has missed days recently -- run '
                          'check_watch_gaps.py; `first seen` is no better than the gap')
+
+    # THE PAGES A CHANGED SOURCE FEEDS, after the database has been rebuilt from it. Skipped
+    # when this run already ran the builder for its own reasons.
+    if not a.dry_run:
+        for b in DOWNSTREAM:
+            if b not in RAN and py(b, check=False).returncode:
+                notes.append('%s failed after its source changed -- that page is behind its data' % b)
 
     after = inventory()
     # THE DOCUMENTS THEMSELVES, not the difference between two counts.

@@ -161,23 +161,58 @@ def fingerprint(r):
     return out
 
 
-def downstream(r):
-    """-> [script]: every scripts/build_*.py that names a file this source writes. DERIVED,
-    NOT LISTED: a hand-kept list of consumers is the stale-copy failure this repo keeps
-    hitting, and the day somebody adds a page reading dls-tax-rates.csv it joins this list
-    without anybody remembering to. A file is named by its basename, a folder by its own
-    name (`federal-bls`)."""
-    tokens = {os.path.basename(w.rstrip('/')) for w in writes(r)}
-    if not tokens:
-        return []
+# VETTED TO RUN UNATTENDED WHEN A SOURCE CHANGES. TJ, 28 October 2026: *"if we fetch new
+# dese data, we need to version it so WE can track changes over time. then the pages should
+# update based on the data relevant to the report with the latest version."* Every version
+# is kept (dated folders); the newest is promoted; and these then rebuild what reads it.
+#
+# A script joins this set only after it has been RUN against a changed input and its diff
+# read: it exits 0, reproduces under --check, and writes only its own outputs. That is the
+# test refresh.SITE_PAYLOADS applies, and it exists because three extractors destroyed data
+# the one time it was skipped (29 September 2026). The first set was vetted on the DESE
+# promotion of 28 October 2026 (circuit breaker, enrollment by grade), which is also what
+# found that a withheld count was being published as zero and six years of enrolment were
+# dropped by matching DESE's rows on a name that changes case.
+UNATTENDED = {
+    'extract_dese_state_aid.py', 'extract_dese_students.py',
+    'build_ap.py', 'build_attrition.py', 'build_circuit_breaker.py', 'build_course_offerings.py',
+    'build_enrollment.py', 'build_enrolment_topics.py', 'build_high_schools.py',
+    'build_homes_and_students.py', 'build_homes_and_taxes_topics.py', 'build_school_all_funds.py',
+    'build_school_programs_topics.py', 'build_school_staffing_topics.py', 'build_serf_topics.py',
+    'build_special_education.py', 'build_special_education_topics.py', 'build_sped_costs.py',
+    'build_spending_staff_students_topics.py', 'build_staffing_charts.py', 'build_transportation.py',
+    # vetted on this morning's DLS editions: town comparison (citations only), health options
+    # (three neighbours' FY2026, the statewide median)
+    'build_town_comparison.py', 'build_health_options.py',
+}
+_CSV = re.compile(r'[a-z0-9][a-z0-9_-]*\.csv')
+
+
+def _naming(prefix, tokens):
     out = []
     for f in sorted(os.listdir(SCRIPTS)):
-        if f.startswith('build_') and f.endswith('.py'):
+        if f.startswith(prefix) and f.endswith('.py'):
             with open(os.path.join(SCRIPTS, f), encoding='utf-8', errors='replace') as fh:
                 text = fh.read()
             if any(t in text for t in tokens):
                 out.append(f)
     return out
+
+
+def chain(r):
+    """-> (extractors, builders): what must re-run, in order, when this source's files change.
+    Extractors that name a file it writes; then builders that name that file or any CSV those
+    extractors name -- one step of transitivity, which is as far as a source file reaches here
+    before the database. DERIVED by name, never listed; only UNATTENDED members are run."""
+    tokens = {os.path.basename(w.rstrip('/')) for w in writes(r)}
+    if not tokens:
+        return [], []
+    ex = _naming('extract_', tokens)
+    more = set(tokens)
+    for e in ex:
+        with open(os.path.join(SCRIPTS, e), encoding='utf-8', errors='replace') as fh:
+            more |= set(_CSV.findall(fh.read()))
+    return ex, _naming('build_', more)
 
 
 def runnable():

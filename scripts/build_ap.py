@@ -38,6 +38,7 @@ DB = os.path.join(ROOT, 'sources', 'data', 'lunenburg.db')
 MANIFEST = os.path.join(ROOT, 'sources', 'data', 'archive-manifest.csv')
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'ap.json')
 DISTRICT = 'Lunenburg'
+ORG_CODE = '01620000'   # DESE's code for the district: stable where the printed name is not
 DOCS = [
     dict(key='state-dese/dese-ap-participation.xlsx',
          what='AP participation, every Massachusetts district and school, SY2007-SY2025: children who sat at least one exam and sittings, by subject and student group.',
@@ -83,7 +84,7 @@ def build():
                      "AND org_name=? AND stu_grp='All Students' AND subj='All Subjects' ORDER BY sy", DISTRICT)
         if len(part) < 10 or len(perf) < 10:
             fail('too few years: %d participation, %d performance' % (len(part), len(perf)))
-        en = {r['fy']: r['g1112'] for r in q(db, "SELECT fy, grade_11_cnt+grade_12_cnt g1112 FROM dese_enrollment WHERE org_level='district' AND org_name=?", DISTRICT)}
+        en = {r['fy']: r['g1112'] for r in q(db, "SELECT fy, grade_11_cnt+grade_12_cnt g1112 FROM dese_enrollment WHERE org_level='district' AND org_code=?", ORG_CODE)}
         years = []
         for p in part:
             pf = next((x for x in perf if x['sy'] == p['sy']), None)

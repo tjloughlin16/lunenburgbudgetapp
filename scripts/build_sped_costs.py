@@ -478,7 +478,7 @@ def load_state(db):
             "level='detail' AND func_code IN ('9300','9400')", (LEA,)):
         func.setdefault(fy, {})[code] = t or 0
     breaker = {fy: dict(paid=round(p or 0), tuition=round(t or 0), transport=round(tr or 0),
-                        students=int(s or 0))
+                        students=int(s) if s is not None else None)  # DESE withholds a count below six (FY2023, restated 7 October 2026): absent, never 0
                for fy, p, t, tr, s in db.execute(
                    "SELECT fy, total_quarterly_payment, reimb_instruction_tuition, "
                    "reimb_transport, eligible_students_claimed FROM dese_circuit_breaker "

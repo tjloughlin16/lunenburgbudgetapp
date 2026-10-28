@@ -792,15 +792,20 @@ def build():
                          closes='the assessors’ parcel counts by use code for every year, '
                                 'including condominiums and multi-family')])],
         chart=homes_chart,
+        # TWO VIEWS, NEWEST FIRST, because the series outgrew one table: matching DESE's rows by
+        # code rather than name (28 October 2026) restored six years and took it to 33 rows,
+        # past the 30 the build allows. Split at the halfway year, so neither view is a stub.
         table=dict(caption='Single-family homes and enrolled children, by year', views=[dict(
-            key='series', label='%s to %s' % (C.fy(s0['fy']), C.fy(s1['fy'])), total_col=-1,
+            key='series-%d' % part[0]['fy'], label='%s to %s' % (C.fy(part[0]['fy']), C.fy(part[-1]['fy'])),
+            total_col=-1,
             kinds=['ledger', 'ledger', 'stated'],
             columns=['Single-family homes', 'Enrolled children', 'Students per 100 homes'],
             rows=[dict(label=C.fy(r['fy']), cells=[C.num(r['homes']), C.num(r['students']),
                                                    '%.1f' % r['students_per_100_homes']])
-                  for r in reversed(ser)],
+                  for r in reversed(part)],
             note='DLS single-family parcels and DESE’s 1 October enrolment. A year missing from the '
-                 'table is missing from one of the two files. The ratio is our arithmetic.')]),
+                 'table is missing from one of the two files. The ratio is our arithmetic.')
+            for part in (ser[len(ser) // 2:], ser[:len(ser) // 2])]),
         said=[said(BN, 'both-halves')],
         sources=S('AvgSingleFamTaxBill.xlsx', 'dese-enrollment-by-grade.xlsx'),
         finding_figures={'a': N(s1['homes'] - s0['homes']), 'y': F(s0['fy']),

@@ -1049,7 +1049,8 @@ def build_cost(db, mf):
     breaker = []
     for (fy, students, elig, thresh, claim, rt, rtr, paid, relief, supp, note) in cb:
         breaker.append({
-            'fy': fy, 'students': int(students or 0), 'eligible': round(elig or 0),
+            'fy': fy, 'students': int(students) if students is not None else None,  # DESE withholds a count below six (FY2023, restated 7 October 2026): absent, never 0
+            'eligible': round(elig or 0),
             'threshold': round(thresh or 0), 'net_claim': round(claim or 0),
             'reimb_tuition': round(rt or 0), 'reimb_transport': round(rtr or 0),
             'paid': round(paid or 0), 'extra_relief': round(relief or 0),
@@ -1066,8 +1067,10 @@ def build_cost(db, mf):
     cb_first, cb_last = breaker[0], breaker[-1]
     cb_identity = [b['fy'] for b in breaker if b['claim_residual'] == 0]
     cb_identity_breaks = [b['fy'] for b in breaker if b['claim_residual'] != 0]
-    cb_peak_students = max(breaker, key=lambda b: b['students'])
-    cb_low_students = min(breaker, key=lambda b: b['students'])
+    # Over the years DESE printed a count for; a withheld year has none to rank.
+    counted = [b for b in breaker if b['students'] is not None]
+    cb_peak_students = max(counted, key=lambda b: b['students'])
+    cb_low_students = min(counted, key=lambda b: b['students'])
     transport_years = [b for b in breaker if b['reimb_transport']]
 
     # A COMPARISON THAT IS NOT AN ATTRIBUTION. The money outside the appropriation and the

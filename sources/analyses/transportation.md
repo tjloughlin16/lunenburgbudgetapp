@@ -685,7 +685,7 @@ The receipts begin in FY2025, the year the first fees fell due (by 1 June 2025, 
 | FY paid | transportation reimbursement | note |
 |---|---:|---|
 | FY2022 | $14,596 |  |
-| FY2023 | $52,671 |  |
+| FY2023 | $52,671 | Number of eligible students claimed is less than 6. |
 | FY2024 | $81,519 |  |
 | FY2025 | $111,560 | Supplemental payment increased transport reimbursement to 75%. |
 | FY2026 | $94,993 |  |

@@ -224,7 +224,8 @@ export function SpedCost() {
           'tuition reimbursed', 'transport reimbursed', 'paid', 'paid ÷ eligible',
           'eligible − threshold − claim']}
         rows={d.breaker.map(b => [
-          fy(b.fy), b.students, usd(b.eligible), usd(b.threshold),
+          fy(b.fy), b.students === null ? 'fewer than 6, withheld by DESE' : b.students,
+          usd(b.eligible), usd(b.threshold),
           b.threshold_per_student === null ? '—' : usd(b.threshold_per_student),
           usd(b.reimb_tuition),
           b.reimb_transport ? usd(b.reimb_transport) : '—', usd(b.paid),

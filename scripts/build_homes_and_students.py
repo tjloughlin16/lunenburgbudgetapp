@@ -49,6 +49,7 @@ OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'homes-and-students.json')
 DLS_KEY = 'state-dls/AvgSingleFamTaxBill.xlsx'
 DESE_KEY = 'state-dese/dese-enrollment-by-grade.xlsx'
 DISTRICT = 'Lunenburg'
+ORG_CODE = '01620000'   # DESE's code for the district: stable where the printed name is not
 
 
 def fail(msg):
@@ -69,8 +70,13 @@ def students():
     db = sqlite3.connect('file:%s?mode=ro' % DB, uri=True)
     try:
         db.row_factory = sqlite3.Row
-        rows = db.execute("SELECT fy, total_cnt AS total FROM dese_enrollment WHERE org_level='district' AND org_name=? "
-                          "AND total_cnt IS NOT NULL ORDER BY fy", (DISTRICT,)).fetchall()
+        # BY CODE, NEVER BY NAME. DESE printed this district as `LUNENBURG` in FY1995-FY1998,
+        # FY2000 and FY2001 and as `Lunenburg` in the rest, so matching the name dropped six
+        # years from this page without a word -- found 28 October 2026, when DESE restated
+        # the names and the series grew from 27 years to 33. The organisation code does not
+        # change with the spelling.
+        rows = db.execute("SELECT fy, total_cnt AS total FROM dese_enrollment WHERE org_level='district' AND org_code=? "
+                          "AND total_cnt IS NOT NULL ORDER BY fy", (ORG_CODE,)).fetchall()
         return [dict(fy=int(r['fy']), students=int(r['total'])) for r in rows]
     finally:
         db.close()
