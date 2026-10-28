@@ -114,14 +114,15 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Free cash guideline](/free-cash/free-cash-guideline) | page | — / 7.5 min | *(none declared)* |
 | [Free cash for schools](/free-cash/free-cash-redirect) | page | — / 7.0 min | *(none declared)* |
 | [Free cash sources](/free-cash/free-cash-sources) | page | — / 7.3 min | *(none declared)* |
-| [FY2026 year end](/fy2026-closeout) | page | — / 11.4 min | *(none declared)* |
+| [FY2026 year end](/fy2026-closeout) | page | — / 11.5 min | *(none declared)* |
 | [Budget burndown](/fy2026-closeout/budget-burndown) | page | — / 8.4 min | *(none declared)* |
+| [Circuit breaker and surplus](/fy2026-closeout/fy2026-circuit-breaker) | page | — / 10.4 min | *(none declared)* |
 | [Paraprofessional overrun](/fy2026-closeout/fy2026-paraprofessional-overrun) | page | — / 7.6 min | *(none declared)* |
 | [Psychologist line](/fy2026-closeout/fy2026-psychologist-line) | page | — / 7.1 min | *(none declared)* |
 | [School retiree insurance](/fy2026-closeout/fy2026-school-retiree-insurance) | page | — / 7.2 min | *(none declared)* |
 | [Year-end transfers](/fy2026-closeout/fy2026-school-transfers) | page | — / 7.8 min | *(none declared)* |
 | [Snow and Reserve Fund](/fy2026-closeout/fy2026-snow-and-reserve-fund) | page | — / 7.1 min | *(none declared)* |
-| [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 8.9 min | *(none declared)* |
+| [Surplus by category](/fy2026-closeout/fy2026-surplus-by-category) | page | — / 9.0 min | *(none declared)* |
 | [Town unspent balance](/fy2026-closeout/fy2026-town-unspent) | page | — / 7.4 min | *(none declared)* |
 | [Tuition at year end](/fy2026-closeout/fy2026-tuition-lines) | page | — / 7.3 min | *(none declared)* |
 | [Year-end tuition payment](/fy2026-closeout/fy2026-tuition-paid-early) | page | — / 13.1 min | *(none declared)* |
@@ -489,9 +490,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Library Board of Trustees — where the time goes](/boards/library-board-of-trustees/time) | reference | — / 5.9 min | *(none declared)* |
 | [Library Board of Trustees: transfers](/boards/library-board-of-trustees/transfers) | reference | — / 7.0 min | *(none declared)* |
 | [Library Board of Trustees — votes](/boards/library-board-of-trustees/votes) | reference | — / 33.7 min | *(none declared)* |
-| [Lunenburg 300th Anniversary Committee](/boards/lunenburg-300th-anniversary-committee) | reference | — / 7.1 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee](/boards/lunenburg-300th-anniversary-committee) | reference | — / 7.9 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — about](/boards/lunenburg-300th-anniversary-committee/about) | reference | — / 7.4 min | *(none declared)* |
-| [Lunenburg 300th Anniversary Committee — meetings](/boards/lunenburg-300th-anniversary-committee/meetings) | reference | — / 6.4 min | *(none declared)* |
+| [Lunenburg 300th Anniversary Committee — meetings](/boards/lunenburg-300th-anniversary-committee/meetings) | reference | — / 7.3 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — missing records](/boards/lunenburg-300th-anniversary-committee/records) | reference | — / 7.2 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — budget schedule](/boards/lunenburg-300th-anniversary-committee/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Lunenburg 300th Anniversary Committee — votes](/boards/lunenburg-300th-anniversary-committee/votes) | reference | — / 8.5 min | *(none declared)* |
@@ -504,9 +505,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Lunenburg Housing Authority — missing records](/boards/lunenburg-housing-authority/records) | reference | — / 8.4 min | *(none declared)* |
 | [Lunenburg Housing Authority — budget schedule](/boards/lunenburg-housing-authority/schedule) | reference | — / 5.9 min | *(none declared)* |
 | [Lunenburg Housing Authority — votes](/boards/lunenburg-housing-authority/votes) | reference | — / 41.7 min | *(none declared)* |
-| [Lunenburg Municipal Building Design Committee](/boards/lunenburg-municipal-building-design-committee) | reference | — / 8.2 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee](/boards/lunenburg-municipal-building-design-committee) | reference | — / 8.1 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — about](/boards/lunenburg-municipal-building-design-committee/about) | reference | — / 6.8 min | *(none declared)* |
-| [Lunenburg Municipal Building Design Committee — meetings](/boards/lunenburg-municipal-building-design-committee/meetings) | reference | — / 10.5 min | *(none declared)* |
+| [Lunenburg Municipal Building Design Committee — meetings](/boards/lunenburg-municipal-building-design-committee/meetings) | reference | — / 10.8 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — missing records](/boards/lunenburg-municipal-building-design-committee/records) | reference | — / 9.2 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — budget schedule](/boards/lunenburg-municipal-building-design-committee/schedule) | reference | — / 6.4 min | *(none declared)* |
 | [Lunenburg Municipal Building Design Committee — where the time goes](/boards/lunenburg-municipal-building-design-committee/time) | reference | — / 6.0 min | *(none declared)* |
@@ -582,7 +583,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Public Access Cable Committee (PACC): transfers](/boards/public-access-cable-committee-pacc/transfers) | reference | — / 6.9 min | *(none declared)* |
 | [Public Access Cable Committee (PACC) — votes](/boards/public-access-cable-committee-pacc/votes) | reference | — / 41.6 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees](/boards/school-advisory-councils-committees) | reference | — / 6.9 min | *(none declared)* |
-| [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.2 min | *(none declared)* |
+| [School Advisory Councils &amp; Committees — meetings](/boards/school-advisory-councils-committees/meetings) | reference | — / 7.5 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — missing records](/boards/school-advisory-councils-committees/records) | reference | — / 14.9 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — budget schedule](/boards/school-advisory-councils-committees/schedule) | reference | — / 6.1 min | *(none declared)* |
 | [School Advisory Councils &amp; Committees — votes](/boards/school-advisory-councils-committees/votes) | reference | — / 14.7 min | *(none declared)* |
@@ -2313,9 +2314,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zoning Board of Appeals, August 26, 2026](/meeting-minutes/zoning-board-of-appeals/2026-08-26-62qwUKHEBro) | reference | — / 10.1 min | *(none declared)* |
 | [Zoning Board of Appeals, October 14, 2026](/meeting-minutes/zoning-board-of-appeals/2026-10-14-aW3D8mIw_yw) | reference | — / 10.9 min | *(none declared)* |
 | [Town-wide org charts](/org-charts) | reference | — / 18.3 min | *(none declared)* |
-| [A dam Burney](/people/a-dam-burney) | reference | — / 7.0 min | *(none declared)* |
-| [Adam Burney](/people/adam-burney) | reference | — / 10.3 min | *(none declared)* |
-| [Adam Burney, Land Use Directo](/people/adam-burney-land-use-directo) | reference | — / 6.8 min | *(none declared)* |
+| [Adam Burney](/people/adam-burney) | reference | — / 10.5 min | *(none declared)* |
 | [Alfred Gravelle](/people/alfred-gravelle) | reference | — / 8.9 min | *(none declared)* |
 | [Allan Wilson](/people/allan-wilson) | reference | — / 7.0 min | *(none declared)* |
 | [Amanda Moore](/people/amanda-moore) | reference | — / 10.0 min | *(none declared)* |
@@ -2325,7 +2324,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Andrea Burnap](/people/andrea-burnap) | reference | — / 8.4 min | *(none declared)* |
 | [Andrea Schnepf](/people/andrea-schnepf) | reference | — / 7.3 min | *(none declared)* |
 | [Anita Scheipers](/people/anita-scheipers) | reference | — / 8.3 min | *(none declared)* |
-| [Anthony Nicastro](/people/anthony-nicastro) | reference | — / 9.1 min | *(none declared)* |
+| [Anthony Nicastro](/people/anthony-nicastro) | reference | — / 9.2 min | *(none declared)* |
 | [Anthony Sculimbrene](/people/anthony-sculimbrene) | reference | — / 9.8 min | *(none declared)* |
 | [Anthony Senesi](/people/anthony-senesi) | reference | — / 7.3 min | *(none declared)* |
 | [Arthur Katis](/people/arthur-katis) | reference | — / 9.4 min | *(none declared)* |
@@ -2339,7 +2338,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Bill Lakso](/people/bill-lakso) | reference | — / 7.3 min | *(none declared)* |
 | [Bob Pease](/people/bob-pease) | reference | — / 11.0 min | *(none declared)* |
 | [Brandie O&#x27;Toole](/people/brandie-o-toole) | reference | — / 7.0 min | *(none declared)* |
-| [Brandon Kibbe](/people/brandon-kibbe) | reference | — / 8.0 min | *(none declared)* |
+| [Brandon Kibbe](/people/brandon-kibbe) | reference | — / 8.1 min | *(none declared)* |
 | [Brandon Kibbe-Open Space](/people/brandon-kibbe-open-space) | reference | — / 7.3 min | *(none declared)* |
 | [Brent Benson](/people/brent-benson) | reference | — / 7.4 min | *(none declared)* |
 | [Brett Kamsden](/people/brett-kamsden) | reference | — / 6.8 min | *(none declared)* |
@@ -2361,7 +2360,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Carl Luck](/people/carl-luck) | reference | — / 10.9 min | *(none declared)* |
 | [Carol Archambault](/people/carol-archambault) | reference | — / 9.9 min | *(none declared)* |
 | [Carol Archambeault](/people/carol-archambeault) | reference | — / 6.9 min | *(none declared)* |
-| [Carol Hatch](/people/carol-hatch) | reference | — / 6.9 min | *(none declared)* |
+| [Carol Hatch](/people/carol-hatch) | reference | — / 7.0 min | *(none declared)* |
 | [Caroline Fortin](/people/caroline-fortin) | reference | — / 10.1 min | *(none declared)* |
 | [Caroline Griffis](/people/caroline-griffis) | reference | — / 7.4 min | *(none declared)* |
 | [Carolyn Rossi](/people/carolyn-rossi) | reference | — / 7.0 min | *(none declared)* |
@@ -2376,7 +2375,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Cheryl Valera](/people/cheryl-valera) | reference | — / 7.9 min | *(none declared)* |
 | [Chris Holden](/people/chris-holden) | reference | — / 7.5 min | *(none declared)* |
 | [Chris Menard](/people/chris-menard) | reference | — / 8.8 min | *(none declared)* |
-| [Chris Ruth-Town Facility Manager](/people/chris-ruth-town-facility-manager) | reference | — / 6.9 min | *(none declared)* |
+| [Chris Ruth](/people/chris-ruth) | reference | — / 7.7 min | *(none declared)* |
 | [Chris St. Germain](/people/chris-st-germain) | reference | — / 10.5 min | *(none declared)* |
 | [Chris Sullivan](/people/chris-sullivan) | reference | — / 7.5 min | *(none declared)* |
 | [Christine Cosgrove Higdon](/people/christine-cosgrove-higdon) | reference | — / 7.7 min | *(none declared)* |
@@ -2405,8 +2404,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [David Blatt](/people/david-blatt) | reference | — / 11.2 min | *(none declared)* |
 | [David Dorren](/people/david-dorren) | reference | — / 9.8 min | *(none declared)* |
 | [David M. Passios](/people/david-m-passios) | reference | — / 10.0 min | *(none declared)* |
-| [David MacDonald](/people/david-macdonald) | reference | — / 10.4 min | *(none declared)* |
-| [David MacDonald, Resident](/people/david-macdonald-resident) | reference | — / 6.9 min | *(none declared)* |
+| [David MacDonald](/people/david-macdonald) | reference | — / 10.7 min | *(none declared)* |
 | [David Niose](/people/david-niose) | reference | — / 7.5 min | *(none declared)* |
 | [David Passios](/people/david-passios) | reference | — / 11.1 min | *(none declared)* |
 | [David Prokowiew](/people/david-prokowiew) | reference | — / 10.0 min | *(none declared)* |
@@ -2443,7 +2441,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Erik Arnold](/people/erik-arnold) | reference | — / 10.8 min | *(none declared)* |
 | [Erik Torgersen](/people/erik-torgersen) | reference | — / 10.3 min | *(none declared)* |
 | [Erin Mahoney](/people/erin-mahoney) | reference | — / 6.9 min | *(none declared)* |
-| [eter Beardmore-School Committer](/people/eter-beardmore-school-committer) | reference | — / 6.8 min | *(none declared)* |
+| [eter Beardmore](/people/eter-beardmore) | reference | — / 6.9 min | *(none declared)* |
 | [Ethan Gengler](/people/ethan-gengler) | reference | — / 7.3 min | *(none declared)* |
 | [Evan Watters](/people/evan-watters) | reference | — / 10.7 min | *(none declared)* |
 | [Faith Beall](/people/faith-beall) | reference | — / 8.3 min | *(none declared)* |
@@ -2456,7 +2454,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [George Martin](/people/george-martin) | reference | — / 9.0 min | *(none declared)* |
 | [Glenn McLeod](/people/glenn-mcleod) | reference | — / 10.7 min | *(none declared)* |
 | [Governor Appointee](/people/governor-appointee) | reference | — / 6.7 min | *(none declared)* |
-| [Greg Bittner](/people/greg-bittner) | reference | — / 8.1 min | *(none declared)* |
+| [Greg Bittner](/people/greg-bittner) | reference | — / 8.2 min | *(none declared)* |
 | [Greg Burns](/people/greg-burns) | reference | — / 9.1 min | *(none declared)* |
 | [Greg Roy](/people/greg-roy) | reference | — / 9.2 min | *(none declared)* |
 | [Gregory Berthiaume](/people/gregory-berthiaume) | reference | — / 7.4 min | *(none declared)* |
@@ -2468,7 +2466,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Harry Kubetz](/people/harry-kubetz) | reference | — / 7.7 min | *(none declared)* |
 | [Harry Kubitz](/people/harry-kubitz) | reference | — / 6.9 min | *(none declared)* |
 | [Heather Gleason](/people/heather-gleason) | reference | — / 6.9 min | *(none declared)* |
-| [Heather Lemieux](/people/heather-lemieux) | reference | — / 8.6 min | *(none declared)* |
+| [Heather Lemieux](/people/heather-lemieux) | reference | — / 8.8 min | *(none declared)* |
 | [Heather Sroka](/people/heather-sroka) | reference | — / 11.6 min | *(none declared)* |
 | [Helen Balcom](/people/helen-balcom) | reference | — / 8.1 min | *(none declared)* |
 | [Herlin Jaime](/people/herlin-jaime) | reference | — / 7.2 min | *(none declared)* |
@@ -2477,25 +2475,22 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Ishley York-Aronovich](/people/ishley-york-aronovich) | reference | — / 6.8 min | *(none declared)* |
 | [Jack Rabbit](/people/jack-rabbit) | reference | — / 7.5 min | *(none declared)* |
 | [Jack Rabbitt](/people/jack-rabbitt) | reference | — / 7.5 min | *(none declared)* |
-| [Jack Rodriquenz](/people/jack-rodriquenz) | reference | — / 8.0 min | *(none declared)* |
+| [Jack Rodriquenz](/people/jack-rodriquenz) | reference | — / 8.1 min | *(none declared)* |
 | [Jaclynn Nicoll](/people/jaclynn-nicoll) | reference | — / 7.1 min | *(none declared)* |
 | [Jacqueline Chabot](/people/jacqueline-chabot) | reference | — / 7.3 min | *(none declared)* |
 | [Jacqueline Dwyer](/people/jacqueline-dwyer) | reference | — / 8.0 min | *(none declared)* |
 | [Jacquelyn Dwyer](/people/jacquelyn-dwyer) | reference | — / 10.0 min | *(none declared)* |
 | [James Besarkarski](/people/james-besarkarski) | reference | — / 9.3 min | *(none declared)* |
-| [James Breault](/people/james-breault) | reference | — / 7.4 min | *(none declared)* |
-| [James Breault, DPWR](/people/james-breault-dpwr) | reference | — / 6.9 min | *(none declared)* |
+| [James Breault](/people/james-breault) | reference | — / 7.6 min | *(none declared)* |
 | [James E. Toale](/people/james-e-toale) | reference | — / 9.3 min | *(none declared)* |
 | [James J. Auge](/people/james-j-auge) | reference | — / 8.1 min | *(none declared)* |
-| [James La Veck II](/people/james-la-veck-ii) | reference | — / 6.8 min | *(none declared)* |
-| [James LaVeck II](/people/james-laveck-ii) | reference | — / 6.8 min | *(none declared)* |
+| [James LaVeck II](/people/james-laveck-ii) | reference | — / 6.9 min | *(none declared)* |
 | [James Marino](/people/james-marino) | reference | — / 11.0 min | *(none declared)* |
-| [James Marino-S](/people/james-marino-s) | reference | — / 6.6 min | *(none declared)* |
 | [James McGuigan](/people/james-mcguigan) | reference | — / 7.8 min | *(none declared)* |
 | [James Toale](/people/james-toale) | reference | — / 7.9 min | *(none declared)* |
 | [James Versoi](/people/james-versoi) | reference | — / 7.0 min | *(none declared)* |
 | [Jamie Merrill Blood](/people/jamie-merrill-blood) | reference | — / 7.1 min | *(none declared)* |
-| [Jamie Toale](/people/jamie-toale) | reference | — / 9.0 min | *(none declared)* |
+| [Jamie Toale](/people/jamie-toale) | reference | — / 9.1 min | *(none declared)* |
 | [Janalee Germaine Balish](/people/janalee-germaine-balish) | reference | — / 6.9 min | *(none declared)* |
 | [Jane Paszko](/people/jane-paszko) | reference | — / 7.0 min | *(none declared)* |
 | [Jane Rabbitt](/people/jane-rabbitt) | reference | — / 8.6 min | *(none declared)* |
@@ -2536,15 +2531,15 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [John T. Rabbitt](/people/john-t-rabbitt) | reference | — / 9.4 min | *(none declared)* |
 | [Jon D. Hogue](/people/jon-d-hogue) | reference | — / 9.5 min | *(none declared)* |
 | [Jon Hogue](/people/jon-hogue) | reference | — / 7.5 min | *(none declared)* |
-| [Jorge Marzuca](/people/jorge-marzuca) | reference | — / 8.4 min | *(none declared)* |
+| [Jorge Marzuca](/people/jorge-marzuca) | reference | — / 8.5 min | *(none declared)* |
 | [Joseph (AI) Dettenrieder](/people/joseph-ai-dettenrieder) | reference | — / 7.2 min | *(none declared)* |
 | [Joseph &quot;Al&quot; Dettenrieder](/people/joseph-al-dettenrieder) | reference | — / 7.3 min | *(none declared)* |
-| [Joseph Anderson](/people/joseph-anderson) | reference | — / 7.4 min | *(none declared)* |
+| [Joseph Anderson](/people/joseph-anderson) | reference | — / 7.5 min | *(none declared)* |
 | [Joseph Hurley](/people/joseph-hurley) | reference | — / 7.2 min | *(none declared)* |
 | [Judit Ernst](/people/judit-ernst) | reference | — / 7.6 min | *(none declared)* |
 | [Judith Tarbell](/people/judith-tarbell) | reference | — / 8.3 min | *(none declared)* |
 | [Judy Dragoslis](/people/judy-dragoslis) | reference | — / 7.5 min | *(none declared)* |
-| [Julie Belliveau](/people/julie-belliveau) | reference | — / 7.9 min | *(none declared)* |
+| [Julie Belliveau](/people/julie-belliveau) | reference | — / 8.2 min | *(none declared)* |
 | [Karen Kemp](/people/karen-kemp) | reference | — / 8.8 min | *(none declared)* |
 | [Karen Ullo](/people/karen-ullo) | reference | — / 7.1 min | *(none declared)* |
 | [Karin Menard](/people/karin-menard) | reference | — / 11.3 min | *(none declared)* |
@@ -2553,9 +2548,9 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Kathleen McCarron](/people/kathleen-mccarron) | reference | — / 7.0 min | *(none declared)* |
 | [Kathryn Herrick](/people/kathryn-herrick) | reference | — / 7.8 min | *(none declared)* |
 | [Kathy Dugan](/people/kathy-dugan) | reference | — / 8.5 min | *(none declared)* |
-| [Kathy Herrick](/people/kathy-herrick) | reference | — / 7.5 min | *(none declared)* |
+| [Kathy Herrick](/people/kathy-herrick) | reference | — / 7.8 min | *(none declared)* |
 | [Kathyrn Adams](/people/kathyrn-adams) | reference | — / 7.5 min | *(none declared)* |
-| [Kathyrn M. Herrick](/people/kathyrn-m-herrick) | reference | — / 7.3 min | *(none declared)* |
+| [Kathyrn M. Herrick](/people/kathyrn-m-herrick) | reference | — / 7.5 min | *(none declared)* |
 | [Kayla Reffitt](/people/kayla-reffitt) | reference | — / 6.9 min | *(none declared)* |
 | [Ken Jones](/people/ken-jones) | reference | — / 8.8 min | *(none declared)* |
 | [Kenee Emkey](/people/kenee-emkey) | reference | — / 6.7 min | *(none declared)* |
@@ -2564,8 +2559,6 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Kerry A. Lafleur](/people/kerry-a-lafleur) | reference | — / 7.5 min | *(none declared)* |
 | [Kerry Ann Kimball](/people/kerry-ann-kimball) | reference | — / 7.1 min | *(none declared)* |
 | [Kevin Boussom](/people/kevin-boussom) | reference | — / 7.4 min | *(none declared)* |
-| [Kevin Boussom-2023 C. William Lakso-2023 Megan Lordan](/people/kevin-boussom-2023-c-william-lakso-2023-megan-lordan) | reference | — / 7.1 min | *(none declared)* |
-| [Kevin Boussom-2026 C. William Lakso-2024 Megan Lordan](/people/kevin-boussom-2026-c-william-lakso-2024-megan-lordan) | reference | — / 7.5 min | *(none declared)* |
 | [Kevin Fish](/people/kevin-fish) | reference | — / 9.7 min | *(none declared)* |
 | [Kevin McNally](/people/kevin-mcnally) | reference | — / 8.4 min | *(none declared)* |
 | [Kiirja Paananen](/people/kiirja-paananen) | reference | — / 7.6 min | *(none declared)* |
@@ -2598,7 +2591,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Lou Franco](/people/lou-franco) | reference | — / 9.4 min | *(none declared)* |
 | [Louis Franco](/people/louis-franco) | reference | — / 8.4 min | *(none declared)* |
 | [Louis J. Franco](/people/louis-j-franco) | reference | — / 11.1 min | *(none declared)* |
-| [Loxi Jo Calmes- School Superintendent](/people/loxi-jo-calmes-school-superintendent) | reference | — / 7.3 min | *(none declared)* |
+| [Loxi Jo Calmes](/people/loxi-jo-calmes) | reference | — / 8.3 min | *(none declared)* |
 | [Lynne Man](/people/lynne-man) | reference | — / 7.6 min | *(none declared)* |
 | [Maia Wentrup](/people/maia-wentrup) | reference | — / 7.9 min | *(none declared)* |
 | [Mandy Gilman](/people/mandy-gilman) | reference | — / 9.3 min | *(none declared)* |
@@ -2631,12 +2624,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Michael Conway](/people/michael-conway) | reference | — / 7.4 min | *(none declared)* |
 | [Michael D. Gale](/people/michael-d-gale) | reference | — / 7.0 min | *(none declared)* |
 | [Michael Deveikis](/people/michael-deveikis) | reference | — / 6.9 min | *(none declared)* |
-| [Michael Fiorentino, Jr](/people/michael-fiorentino-jr) | reference | — / 8.0 min | *(none declared)* |
+| [Michael Fiorentino Jr](/people/michael-fiorentino-jr) | reference | — / 8.0 min | *(none declared)* |
 | [Michael Kidney](/people/michael-kidney) | reference | — / 7.4 min | *(none declared)* |
 | [Michael Mackin](/people/michael-mackin) | reference | — / 8.5 min | *(none declared)* |
 | [Michael Ray](/people/michael-ray) | reference | — / 7.5 min | *(none declared)* |
-| [Michael-Ray Jeffreys](/people/michael-ray-jeffreys) | reference | — / 12.6 min | *(none declared)* |
-| [Michael-Ray Jeffreys- S](/people/michael-ray-jeffreys-s) | reference | — / 6.8 min | *(none declared)* |
+| [Michael-Ray Jeffreys](/people/michael-ray-jeffreys) | reference | — / 12.7 min | *(none declared)* |
 | [Michael Toohill](/people/michael-toohill) | reference | — / 8.1 min | *(none declared)* |
 | [Michele Beauvais](/people/michele-beauvais) | reference | — / 7.6 min | *(none declared)* |
 | [Michelle Smith](/people/michelle-smith) | reference | — / 7.1 min | *(none declared)* |
@@ -2648,12 +2640,10 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Mike Rupp](/people/mike-rupp) | reference | — / 8.0 min | *(none declared)* |
 | [Mike Toohill](/people/mike-toohill) | reference | — / 7.8 min | *(none declared)* |
 | [Minna Scholten](/people/minna-scholten) | reference | — / 7.6 min | *(none declared)* |
-| [Moderator - 3 year tern](/people/moderator-3-year-tern) | reference | — / 7.0 min | *(none declared)* |
 | [MONTACHUSETT METROPOLITAN PLANNING ORGANIZATION-Subregion](/people/montachusett-metropolitan-planning-organization-subregion) | reference | — / 7.0 min | *(none declared)* |
-| [Myleen Mallari](/people/myleen-mallari) | reference | — / 7.9 min | *(none declared)* |
-| [Myleen Mallari- Treasurer/Collector](/people/myleen-mallari-treasurer-collector) | reference | — / 7.4 min | *(none declared)* |
-| [Nancy Forest](/people/nancy-forest) | reference | — / 8.6 min | *(none declared)* |
-| [Nancy Foss Yasko](/people/nancy-foss-yasko) | reference | — / 9.1 min | *(none declared)* |
+| [Myleen Mallari](/people/myleen-mallari) | reference | — / 8.3 min | *(none declared)* |
+| [Nancy Forest](/people/nancy-forest) | reference | — / 8.8 min | *(none declared)* |
+| [Nancy Foss Yasko](/people/nancy-foss-yasko) | reference | — / 9.7 min | *(none declared)* |
 | [Nancy Gray](/people/nancy-gray) | reference | — / 8.2 min | *(none declared)* |
 | [Nancy Heald](/people/nancy-heald) | reference | — / 7.1 min | *(none declared)* |
 | [Nancy Peterson](/people/nancy-peterson) | reference | — / 7.0 min | *(none declared)* |
@@ -2665,7 +2655,6 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Nicole Waters](/people/nicole-waters) | reference | — / 8.1 min | *(none declared)* |
 | [ohn Londa](/people/ohn-londa) | reference | — / 6.9 min | *(none declared)* |
 | [ois Lewis](/people/ois-lewis) | reference | — / 6.8 min | *(none declared)* |
-| [OPEN SPACE ADVISORY COMMITTEE (ad hoc)](/people/open-space-advisory-committee-ad-hoc) | reference | — / 7.0 min | *(none declared)* |
 | [Paige Gengler](/people/paige-gengler) | reference | — / 7.3 min | *(none declared)* |
 | [Patricia Adams](/people/patricia-adams) | reference | — / 10.5 min | *(none declared)* |
 | [Patrick Callahan](/people/patrick-callahan) | reference | — / 7.8 min | *(none declared)* |
@@ -2695,25 +2684,24 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Rena Swezey](/people/rena-swezey) | reference | — / 8.4 min | *(none declared)* |
 | [Renee Emkey](/people/renee-emkey) | reference | — / 10.7 min | *(none declared)* |
 | [Renee Trakimas](/people/renee-trakimas) | reference | — / 7.1 min | *(none declared)* |
-| [Rhonda Lisio](/people/rhonda-lisio) | reference | — / 8.6 min | *(none declared)* |
+| [Rhonda Lisio](/people/rhonda-lisio) | reference | — / 8.7 min | *(none declared)* |
 | [Richard Bursch](/people/richard-bursch) | reference | — / 11.1 min | *(none declared)* |
 | [Richard H. Letarte](/people/richard-h-letarte) | reference | — / 9.2 min | *(none declared)* |
 | [Richard Howard](/people/richard-howard) | reference | — / 10.4 min | *(none declared)* |
 | [Richard L McGrath](/people/richard-l-mcgrath) | reference | — / 6.9 min | *(none declared)* |
 | [Richard Letarte](/people/richard-letarte) | reference | — / 8.3 min | *(none declared)* |
 | [Richard McGrath](/people/richard-mcgrath) | reference | — / 11.0 min | *(none declared)* |
-| [Richard McGrath-2024 Jennifer Sanderson](/people/richard-mcgrath-2024-jennifer-sanderson) | reference | — / 6.8 min | *(none declared)* |
 | [Richard N. Mailloux](/people/richard-n-mailloux) | reference | — / 7.3 min | *(none declared)* |
 | [Richard St. Cyr](/people/richard-st-cyr) | reference | — / 7.1 min | *(none declared)* |
 | [Richard Tremblay](/people/richard-tremblay) | reference | — / 10.2 min | *(none declared)* |
-| [Rob Oliva](/people/rob-oliva) | reference | — / 7.6 min | *(none declared)* |
+| [Rob Oliva](/people/rob-oliva) | reference | — / 7.7 min | *(none declared)* |
 | [Robert Bowen](/people/robert-bowen) | reference | — / 8.0 min | *(none declared)* |
 | [Robert Cadle](/people/robert-cadle) | reference | — / 7.2 min | *(none declared)* |
 | [Robert Conroy](/people/robert-conroy) | reference | — / 7.1 min | *(none declared)* |
 | [Robert Ebersole](/people/robert-ebersole) | reference | — / 7.5 min | *(none declared)* |
 | [Robert Hamel](/people/robert-hamel) | reference | — / 7.1 min | *(none declared)* |
 | [Robert Herrick](/people/robert-herrick) | reference | — / 7.4 min | *(none declared)* |
-| [Robert J. Ebersole](/people/robert-j-ebersole) | reference | — / 9.9 min | *(none declared)* |
+| [Robert J. Ebersole](/people/robert-j-ebersole) | reference | — / 10.0 min | *(none declared)* |
 | [Robert Robuccio](/people/robert-robuccio) | reference | — / 7.3 min | *(none declared)* |
 | [Robin Nano](/people/robin-nano) | reference | — / 7.3 min | *(none declared)* |
 | [Robin Venezia](/people/robin-venezia) | reference | — / 7.5 min | *(none declared)* |
@@ -2723,15 +2711,14 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Sarah Camme](/people/sarah-camme) | reference | — / 6.9 min | *(none declared)* |
 | [Sarah Cammer](/people/sarah-cammer) | reference | — / 10.7 min | *(none declared)* |
 | [Sarah Coon](/people/sarah-coon) | reference | — / 7.1 min | *(none declared)* |
-| [Sarah Grant](/people/sarah-grant) | reference | — / 9.6 min | *(none declared)* |
-| [Sarah Grant-2023•](/people/sarah-grant-2023) | reference | — / 7.0 min | *(none declared)* |
+| [Sarah Grant](/people/sarah-grant) | reference | — / 9.7 min | *(none declared)* |
 | [Scott Chase](/people/scott-chase) | reference | — / 8.9 min | *(none declared)* |
 | [Scott Dall](/people/scott-dall) | reference | — / 9.4 min | *(none declared)* |
 | [Seamus Kelly](/people/seamus-kelly) | reference | — / 7.1 min | *(none declared)* |
-| [Sheila Craigen](/people/sheila-craigen) | reference | — / 7.4 min | *(none declared)* |
+| [Sheila Craigen](/people/sheila-craigen) | reference | — / 7.7 min | *(none declared)* |
 | [Sheila Lumi](/people/sheila-lumi) | reference | — / 7.6 min | *(none declared)* |
 | [Shirley McBride](/people/shirley-mcbride) | reference | — / 7.6 min | *(none declared)* |
-| [Sophie Shapiro](/people/sophie-shapiro) | reference | — / 7.4 min | *(none declared)* |
+| [Sophie Shapiro](/people/sophie-shapiro) | reference | — / 7.5 min | *(none declared)* |
 | [Stanley Barney](/people/stanley-barney) | reference | — / 7.0 min | *(none declared)* |
 | [State Appointee](/people/state-appointee) | reference | — / 6.9 min | *(none declared)* |
 | [Stephanie Karlson](/people/stephanie-karlson) | reference | — / 7.1 min | *(none declared)* |
@@ -2742,12 +2729,12 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Steve Archambault](/people/steve-archambault) | reference | — / 8.1 min | *(none declared)* |
 | [Steve Dubois](/people/steve-dubois) | reference | — / 7.6 min | *(none declared)* |
 | [Steve Walker](/people/steve-walker) | reference | — / 9.4 min | *(none declared)* |
-| [Steven Archambault](/people/steven-archambault) | reference | — / 8.7 min | *(none declared)* |
+| [Steven Archambault](/people/steven-archambault) | reference | — / 8.8 min | *(none declared)* |
 | [Steven Walker](/people/steven-walker) | reference | — / 7.4 min | *(none declared)* |
 | [Susan Andrews](/people/susan-andrews) | reference | — / 10.1 min | *(none declared)* |
 | [Susan Bunish](/people/susan-bunish) | reference | — / 7.4 min | *(none declared)* |
-| [Susan Doherty](/people/susan-doherty) | reference | — / 8.3 min | *(none declared)* |
-| [Susan Murchie](/people/susan-murchie) | reference | — / 7.2 min | *(none declared)* |
+| [Susan Doherty](/people/susan-doherty) | reference | — / 8.4 min | *(none declared)* |
+| [Susan Murchie](/people/susan-murchie) | reference | — / 7.4 min | *(none declared)* |
 | [Susan O&#x27;Sullivan](/people/susan-o-sullivan) | reference | — / 9.3 min | *(none declared)* |
 | [Susan Visser](/people/susan-visser) | reference | — / 7.6 min | *(none declared)* |
 | [Susanna Jewell](/people/susanna-jewell) | reference | — / 9.3 min | *(none declared)* |
@@ -2763,7 +2750,7 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Thomas Gray](/people/thomas-gray) | reference | — / 9.7 min | *(none declared)* |
 | [Tiffany Warren](/people/tiffany-warren) | reference | — / 7.1 min | *(none declared)* |
 | [Tim Lawless](/people/tim-lawless) | reference | — / 8.1 min | *(none declared)* |
-| [Tim Murphy- Town Moderator](/people/tim-murphy-town-moderator) | reference | — / 7.5 min | *(none declared)* |
+| [Tim Murphy](/people/tim-murphy) | reference | — / 7.4 min | *(none declared)* |
 | [Timothy Foster](/people/timothy-foster) | reference | — / 6.9 min | *(none declared)* |
 | [Timothy Russell Willsmer](/people/timothy-russell-willsmer) | reference | — / 9.4 min | *(none declared)* |
 | [Timothy W. Murphy](/people/timothy-w-murphy) | reference | — / 7.3 min | *(none declared)* |
@@ -2788,11 +2775,11 @@ The spreadsheet form is `short-versions.csv` beside this file.
 | [Zachary Cutting](/people/zachary-cutting) | reference | — / 7.5 min | *(none declared)* |
 | [Priorities](/priorities) | tool | — / 13.3 min | *(none declared)* |
 | [Rates, fees and contracts — the register](/rate-register) | reference | — / 12.9 min | *(none declared)* |
-| [Analysis: Town and Schools](/reports) | reference | — / 55.5 min | *(none declared)* |
+| [Analysis: Town and Schools](/reports) | reference | — / 54.9 min | *(none declared)* |
 | [Search — everything this project holds](/search) | reference | — / 6.4 min | *(none declared)* |
 | [Sources](/sources) | reference | — / 19.3 min | *(none declared)* |
-| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.7 min | *(none declared)* |
-| [What the town is deciding now](/threads) | reference | — / 15.5 min | *(none declared)* |
+| [This week in town — meetings coming up, minutes and recordings just posted](/this-week) | reference | — / 16.6 min | *(none declared)* |
+| [What the town is deciding now](/threads) | reference | — / 15.4 min | *(none declared)* |
 | [Every Town Meeting vote](/town-meeting-votes) | reference | — / 472.4 min | *(none declared)* |
 | [Commercial growth scenarios](/try-growth) | tool | — / 21.5 min | *(none declared)* |
-| [What we cannot answer](/what-we-cannot-answer) | reference | — / 219.9 min | *(none declared)* |
+| [What we cannot answer](/what-we-cannot-answer) | reference | — / 227.0 min | *(none declared)* |

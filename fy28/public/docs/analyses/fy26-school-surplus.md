@@ -161,7 +161,7 @@ These are the categories of *Why there was money left over* below, measured agai
 
 ## Why there was money left over
 
-![Where the FY2026 school surplus was left, by category: Building & grounds upkeep $195,934; Counselors & psychologists $191,162; Teachers & substitutes $167,992; Health insurance & benefits $107,003; Out-of-district tuition $88,522; Supplies, services & everything else $71,861; Coaches & activity advisors $33,020; Athletics & activities expenses $18,885; Legal services $14,030; Custodians $11,352; Administrators & office staff $4,087; Nurses & other staff -$7,321; Equipment & technology -$8,305; Professional development -$8,413; Heat, electricity & utilities -$21,792; Transportation -$67,555; Special-ed contracted services -$100,262; Paraprofessionals -$208,082.](charts/fy26-school-surplus-causes.svg)
+![Where the FY2026 school surplus was left, by category: Building & grounds upkeep $195,934; Counselors & psychologists $191,162; Teachers & substitutes $167,992; Health insurance & benefits $107,003; Out-of-district tuition $88,522; Supplies, services & everything else $71,861; Coaches & activity advisors $33,020; Athletics & activities expenses $18,885; Legal services $14,030; Custodians $11,352; Administrators & office staff $4,087; Salary reserve $0; Special details $0; Nurses -$7,321; Equipment & technology -$8,305; Professional development -$8,413; Heat, electricity & utilities -$21,792; Transportation -$67,555; Special-ed contracted services -$100,262; Paraprofessionals -$208,082.](charts/fy26-school-surplus-causes.svg)
 
 **Where it came from. Three categories left the most:** building & grounds upkeep, $195,934 (28.4% of its budget); counselors & psychologists, $191,162 (18.1% of its budget); teachers & substitutes, $167,992 (1.5% of its budget). Accounts that ended over budget used $1,201,434 of what the rest left, led by paraprofessionals, $208,082 over and special-ed contracted services, $100,262 over.
 
@@ -184,7 +184,9 @@ Every one of the 415 accounts is put in exactly one category by its DESE functio
 | Legal services | $35,411 | $13,094 | $8,288 | **$14,030** | 39.6% | $14,030 | — |
 | Custodians | $778,560 | $767,208 | — | **$11,352** | 1.5% | $17,930 | -$6,577 |
 | Administrators & office staff | $2,194,387 | $2,190,300 | — | **$4,087** | 0.2% | $49,008 | -$44,921 |
-| Nurses & other staff | $305,257 | $312,578 | — | **-$7,321** | -2.4% | $812 | -$8,133 |
+| Salary reserve | $0 | $0 | — | **$0** | — | — | — |
+| Special details | $0 | $0 | — | **$0** | — | — | — |
+| Nurses | $305,257 | $312,578 | — | **-$7,321** | -2.4% | $812 | -$8,133 |
 | Equipment & technology | $493,854 | $496,723 | $5,437 | **-$8,305** | -1.7% | $29,293 | -$37,599 |
 | Professional development | $41,800 | $49,738 | $475 | **-$8,413** | -20.1% | $1,800 | -$10,213 |
 | Heat, electricity & utilities | $565,980 | $499,743 | $88,029 | **-$21,792** | -3.9% | $88,546 | -$110,338 |
@@ -308,7 +310,9 @@ A statement that the district was careful is evidence that it was said, not of w
 | Legal services | discretionary | $18,412 | -$7,018 | $2,514 | $14,030 | 3 of 4 |
 | Custodians | circumstantial | $14,716 | $155,826 | $113,829 | $11,352 | 4 of 4 |
 | Administrators & office staff | circumstantial | -$62,156 | -$40,674 | $9,502 | $4,087 | 2 of 4 |
-| Nurses & other staff | circumstantial | -$9,363 | $29,212 | $2,015 | -$7,321 | 2 of 4 |
+| Salary reserve | circumstantial | $0 | $0 | $0 | $0 | 0 of 4 |
+| Special details | circumstantial | $0 | $0 | $0 | $0 | 0 of 4 |
+| Nurses | circumstantial | -$9,363 | $29,212 | $2,015 | -$7,321 | 2 of 4 |
 | Equipment & technology | discretionary | -$106,662 | -$27,388 | $64,748 | -$8,305 | 1 of 4 |
 | Professional development | discretionary | $9,840 | -$1,495 | $2,075 | -$8,413 | 2 of 4 |
 | Heat, electricity & utilities | circumstantial | -$5,962 | -$30,918 | $63,570 | -$21,792 | 1 of 4 |
@@ -322,7 +326,7 @@ A statement that the district was careful is evidence that it was said, not of w
 
 | category | voted | moved during the year | revised |
 |---|---:|---:|---:|
-| Nurses & other staff | $396,027 | -$90,770 | $305,257 |
+| Salary reserve | $90,770 | -$90,770 | $0 |
 | Paraprofessionals | $1,344,373 | $73,077 | $1,417,449 |
 | Building & grounds upkeep | $652,033 | $38,950 | $690,983 |
 | Teachers & substitutes | $11,047,726 | -$38,323 | $11,009,404 |
@@ -344,7 +348,7 @@ A statement that the district was careful is evidence that it was said, not of w
 - Athletics & activities expenses: fund 1301 “CHAPTER 658 REVOLVING FU” spent $116,398.
 - Health insurance & benefits: fund 1312 “EXTENDED DAY REVOLVING F” spent $55,689.
 - Coaches & activity advisors: fund 1301 “CHAPTER 658 REVOLVING FU” spent $30,514.
-- Nurses & other staff: fund 2681 “COMP SCHOOL HEALTH SERV” spent $8,331.
+- Nurses: fund 2681 “COMP SCHOOL HEALTH SERV” spent $8,331.
 - Supplies, services & everything else: fund 2640 “SPECIAL ED CIRCUIT BREAK” spent $4,005.
 - Supplies, services & everything else: fund 2681 “COMP SCHOOL HEALTH SERV” spent $3,585.
 - Supplies, services & everything else: fund 1308 “SCHOOL CHOICE REVOLVING” spent $2,655.
@@ -491,7 +495,9 @@ One table in `scripts/build_school_surplus.py` (`CATEGORIES`), first match wins.
 | Administrators & office staff | circumstantial | salary lines, functions 1000–2299 (central office, directors, principals, secretaries) |
 | Custodians | circumstantial | salary lines, functions 4000–4999 |
 | Coaches & activity advisors | circumstantial | salary lines, functions 3510 and 3520 (athletic director, coaches, after-school advisors) |
-| Nurses & other staff | circumstantial | every other salary line (nurses, special details, crossing guards, reserves) |
+| Nurses | circumstantial | salary lines, function 3200 (Medical/Health Services in the district's End of Year Financial Report to DESE) |
+| Salary reserve | circumstantial | salary lines, function 0300: the ledger's SCHOOL SALARY RESERVE, voted unassigned and moved to salary lines during the year (a local code; the End of Year Financial Report lists no 0300) |
+| Special details | circumstantial | salary lines, function 3600 (School Security in the End of Year Financial Report): the ledger's SPECIAL DETAILS |
 | Out-of-district tuition | circumstantial | functions 9000 and up (private and collaborative special-education tuition) |
 | Special-ed contracted services | circumstantial | non-salary lines, functions 2310 and 2320 (contracted therapists, evaluations, tutoring) |
 | Transportation | circumstantial | non-salary lines, function 3300 (regular and special-education buses) |
