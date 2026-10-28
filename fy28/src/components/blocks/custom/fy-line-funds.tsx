@@ -17,12 +17,12 @@ import { HeadTip, PAYER, WideScroll } from './fy-shared'
 import type { CustomProps } from './index'
 
 type Fund = { fund: string; printed: string; group: string; how: string; n: number; t: string; share: string }
-type Line = { cat: string; line: string; acct: string; n: number; t: string; budget: string; share: string
+type Line = { cat: string; line: string; acct: string; n: number; t: string; budget: string; share: string; pb: number | null; pb_t: string
   groups: string[]; funds: Fund[] }
 type Year = { fy: string; lines: Line[]; total: string; n_rows: number }
 type Data = { years: Year[]; how: { id: string; label: string; means: string }[]
   groups: { id: string; label: string }[]; text: Record<string, string> }
-type Key = 'cat' | 'line' | 'n' | 'funds'
+type Key = 'cat' | 'line' | 'n' | 'funds' | 'pb'
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 
@@ -62,6 +62,7 @@ function LineView({ l, fy, t, kind, how, onClose }: { l: Line; fy: string; t: Re
           <div className="flex flex-wrap gap-x-6 gap-y-1 mt-2 text-[13px]">
             <span><span className="font-semibold tabular-nums">{l.t}</span> <span style={secondary}>{t.paid.toLowerCase()}</span></span>
             {l.budget ? <span><span className="font-semibold tabular-nums">{l.budget}</span> <span style={secondary}>{t.budget.toLowerCase()}</span></span> : null}
+            {l.pb_t ? <span><span className="font-semibold tabular-nums">{l.pb_t}</span> <span style={secondary}>{t.of_budget.toLowerCase()}</span></span> : null}
             {l.share ? <span><span className="font-semibold tabular-nums">{l.share}</span> <span style={secondary}>{t.share.toLowerCase()}</span></span> : null}
           </div>
         </div>
@@ -102,12 +103,13 @@ export default function FyLineFunds({ data, alt }: CustomProps) {
       .filter(l => !grp || l.groups.includes(grp))
       .filter(l => !ql || `${l.line} ${l.cat} ${l.acct} ${l.funds.map(f => `${f.fund} ${f.printed}`).join(' ')}`.toLowerCase().includes(ql))
     return out.sort((a, b) => sort.k === 'n' ? sort.dir * (a.n - b.n)
+      : sort.k === 'pb' ? sort.dir * ((a.pb ?? -1) - (b.pb ?? -1)) || b.n - a.n
       : sort.k === 'funds' ? sort.dir * (a.funds.length - b.funds.length) || b.n - a.n
       : sort.dir * a[sort.k].localeCompare(b[sort.k]) || b.n - a.n)
   }, [y, grp, q, sort])
   const head = (k: Key, label: string, right = false) => (
     <th className={`px-2 py-1.5 font-semibold whitespace-nowrap cursor-pointer select-none ${right ? 'text-right' : 'text-left'}`}
-      onClick={() => setSort(s => ({ k, dir: s.k === k ? (s.dir === 1 ? -1 : 1) : (k === 'n' || k === 'funds' ? -1 : 1) }))}>
+      onClick={() => setSort(s => ({ k, dir: s.k === k ? (s.dir === 1 ? -1 : 1) : (k === 'n' || k === 'funds' || k === 'pb' ? -1 : 1) }))}>
       {label}{sort.k === k ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>)
   return (
     <figure aria-label={alt}>
@@ -124,11 +126,14 @@ export default function FyLineFunds({ data, alt }: CustomProps) {
         <span className="text-[12.5px]" style={muted}>{t.open}</span>
       </div>
       <WideScroll cue={t.scroll}>
-        <table className="w-full min-w-[960px] text-[13px] tabular-nums border-collapse">
+        <table className="w-full min-w-[1080px] text-[13px] tabular-nums border-collapse">
           <thead>
             <tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
               {head('cat', t.cat)}{head('line', t.line)}{head('funds', t.fund)}{head('n', t.paid, true)}
               <th className="px-2 py-1.5 text-right font-semibold whitespace-nowrap"><HeadTip label={t.budget} means={t.budget_means}>{t.budget}</HeadTip></th>
+              <th className="px-2 py-1.5 text-right font-semibold whitespace-nowrap cursor-pointer select-none"
+                onClick={() => setSort(s => ({ k: 'pb', dir: s.k === 'pb' ? (s.dir === 1 ? -1 : 1) : -1 }))}>
+                <HeadTip label={t.of_budget} means={t.of_budget_means}>{t.of_budget}</HeadTip>{sort.k === 'pb' ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>
               <th className="px-2 py-1.5 text-right font-semibold whitespace-nowrap"><HeadTip label={t.share} means={t.share_means}>{t.share}</HeadTip></th>
             </tr>
           </thead>
@@ -147,6 +152,8 @@ export default function FyLineFunds({ data, alt }: CustomProps) {
                       <span style={secondary}>{funds.length} {funds.length === 1 ? t.fund_one : t.funds}</span></span></td>
                   <td className="px-2 py-1.5 text-right whitespace-nowrap font-semibold">{l.t}</td>
                   <td className="px-2 py-1.5 text-right whitespace-nowrap" style={secondary}>{l.budget}</td>
+                  <td className="px-2 py-1.5 text-right whitespace-nowrap"
+                    style={l.pb !== null && l.pb >= 1 ? { fontWeight: 600, color: 'var(--thread-3)' } : secondary}>{l.pb_t}</td>
                   <td className="px-2 py-1.5 text-right whitespace-nowrap" style={secondary}>{l.share}</td>
                 </tr>)
             })}
@@ -155,7 +162,7 @@ export default function FyLineFunds({ data, alt }: CustomProps) {
             <tr>
               <td className="px-2 py-1.5 font-semibold" colSpan={3}>{t.sum} · {lines.length} {t.lines}</td>
               <td className="px-2 py-1.5 text-right font-semibold whitespace-nowrap">{!grp && !q.trim() ? y.total : ''}</td>
-              <td colSpan={2} />
+              <td colSpan={3} />
             </tr>
           </tfoot>
         </table>

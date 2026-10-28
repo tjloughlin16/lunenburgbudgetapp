@@ -78,28 +78,28 @@ export default function FyPlan({ data, alt }: CustomProps) {
     <figure aria-label={alt}>
       <p className="text-[13px] font-semibold mt-3 mb-1">{t.h_abs}</p>
       {(() => {
-        const max = Math.max(y.totals.plan, y.totals.happened)
+        const max = Math.max(y.totals.plan, y.totals.happened + y.totals.unspent)
         const cbFill = y.cb.plan === null ? hatch(PAYER.cb) : PAYER.cb
         return (
           <div className="space-y-1.5">
-            {/* UNSPENT AT THE END OF THE PLAN, always (TJ, 27 October 2026): it is the part of
-                the plan that was not used, so the plan bar is what was used, then what was not */}
-            <Row label={t.a_plan} sub={`${t.a_plan_sub}${y.totals.unspent > 0.5 ? ` · ${t.a_unspent_sub}` : ''}`}>
+            <Row label={t.a_plan} sub={t.a_plan_sub}>
               <Absolute max={max} total={y.totals.t.plan} parts={[
-                { name: t.a_gf_used, value: g.budget - g.unspent, text: g.t.used, fill: 'color-mix(in srgb, var(--thread-1) 55%, transparent)' },
-                ...(y.cb.plan !== null && y.cb.t.plan ? [{ name: t.a_cb_used, value: y.cb.plan - y.cb.unspent, text: y.cb.t.used ?? '',
-                  fill: 'color-mix(in srgb, var(--thread-4) 55%, transparent)' }] : []),
-                { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true },
-                { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true }]} />
+                { name: t.a_gf_budget, value: g.budget, text: g.t.budget, fill: 'color-mix(in srgb, var(--thread-1) 55%, transparent)' },
+                ...(y.cb.plan !== null && y.cb.t.plan ? [{ name: t.a_cb_plan, value: y.cb.plan, text: y.cb.t.plan,
+                  fill: 'color-mix(in srgb, var(--thread-4) 55%, transparent)' }] : [])]} />
             </Row>
-            <Row label={t.a_happened} sub={`${t.a_happened_sub} · ${y.totals.t.beyond} ${t.a_beyond}`}>
+            {/* UNSPENT AT THE END OF WHAT HAPPENED, outlined, after every dollar spent (TJ, 27
+                October 2026, picking this over the plan bar: "im not sure that makes sense") */}
+            <Row label={t.a_happened} sub={`${t.a_happened_sub} · ${y.totals.t.beyond} ${t.a_beyond}${y.totals.unspent > 0.5 ? ` · ${t.a_unspent_sub}` : ''}`}>
               <Absolute max={max} total={y.totals.t.happened} parts={[
                 { name: t.a_gf_spent, value: g.spent - g.early, text: g.t.own, fill: PAYER.gf },
                 { name: t.a_gf_early, value: g.early, text: g.t.early, fill: hatch(PAYER.gf) },
                 { name: t.a_cb_paid, value: y.cb.paid, text: y.cb.t.paid, fill: cbFill },
                 ...y.others.flatMap(o => [
                   { name: label[o.id], value: o.start + o.later, text: o.t.paid, fill: o.id === 'cb' ? hatch(PAYER.cb) : PAYER[o.id] },
-                  { name: `${label[o.id]}, ${t.on_no_line}`, value: o.unmatched, text: o.t.unmatched, fill: hatch(PAYER[o.id]) }])]} />
+                  { name: `${label[o.id]}, ${t.on_no_line}`, value: o.unmatched, text: o.t.unmatched, fill: hatch(PAYER[o.id]) }]),
+                { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true },
+                { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true }]} />
             </Row>
             <p className="text-[11.5px] sm:pl-[14.75rem]" style={muted}>{t.a_unspent_note}</p>
           </div>)

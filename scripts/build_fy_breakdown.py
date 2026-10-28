@@ -1411,8 +1411,16 @@ def line_funds_data(m, T):
             v = sum((Decimal(str(r['n'])) for r in rs), D0)
             lr = line.get((fy, acct)) if acct else None
             cost = lr['all_funds_cost'] if lr else None
+            bud = (lr['voted'] + lr['transfers'] + lr['carried_budget']) if lr else None
+            # AGAINST THE BUDGET (TJ, 27 October 2026: "'Percent of the budgeted amount' ... this
+            # will highlight the lines that get subsidized by other sources"): other funds' money
+            # as a share of what the school budget gave the line. Over 100% is more from other
+            # funds than from the budget; a line budgeted at nothing has no share, and says so.
+            pb = (v / bud) if bud and bud > 0 else None
             groups.append(dict(cat=cat, line=name, acct=acct, n=round(fl(v), 2), t=T.usd(v),
-                               budget=rs[0]['budget'],
+                               budget=rs[0]['budget'], pb=round(fl(pb), 4) if pb is not None else None,
+                               pb_t=T.lit('%s%%' % C.num(round(100 * pb))) if pb is not None
+                               else (T.lit('no budget') if lr else ''),
                                share=T.lit('%d%%' % round(100 * v / cost)) if cost and v > 0 else '',
                                groups=sorted({r['group'] for r in rs}),
                                funds=sorted(rs, key=lambda r: -r['n'])))
@@ -1426,6 +1434,11 @@ def line_funds_data(m, T):
                 text=dict(cat='Category', line='School line', fund='Fund', kind='Kind of fund',
                           how='How we know', paid='Paid toward it', budget='Line’s budget',
                           share='Share of the line’s cost',
+                          of_budget='Against the line’s budget',
+                          of_budget_means='What other funds paid toward the line, as a share of the '
+                                          'school budget for it. Over 100% means more came from other '
+                                          'funds than the budget gave the line. A line budgeted at '
+                                          'nothing shows no budget.',
                           share_means='What this fund paid, as a share of everything the line cost from every fund.',
                           budget_means='The school budget for the line: voted, transfers, and orders carried in.',
                           all_kinds='Every kind', filter='Filter by line, category or fund',
