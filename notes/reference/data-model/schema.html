@@ -225,7 +225,7 @@ button.open:hover, #mrun:hover { border-color:var(--traced); color:var(--traced)
 <div class="metrics">
   <div class="metric"><div class="v">156</div><div class="l">tables</div></div>
   <div class="metric"><div class="v">16</div><div class="l">views</div></div>
-  <div class="metric"><div class="v">278,561</div><div class="l">rows</div></div>
+  <div class="metric"><div class="v">278,571</div><div class="l">rows</div></div>
   <div class="metric"><div class="v">2190</div><div class="l">columns</div></div>
   <div class="metric"><div class="v">69%</div><div class="l">columns described</div></div>
 </div>
@@ -3979,7 +3979,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 </details>
 </details>
-<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 11,971 rows</span></summary>
+<details class="scope"><summary class="scopehead"><b>About the archive itself</b><span>12 tables &middot; 11,981 rows</span></summary>
 <p class="cap">Which document a figure came from, what has been read, and what these tables mean.</p>
 <p class="tierhead"><b>Tier 2 · categories</b><span>whether a category — guidance, special education, transport — is over</span></p>
 <details class="t"><summary><span class="srow"><code>build_inputs</code> <span class="tag scope sarchive">archive</span> <span class="tag tier t2" title="whether a category — guidance, special education, transport — is over">Tier 2 · categories</span> <span class="tag">provenance</span> <span class="n">143 rows</span><button class="open" data-t="build_inputs" data-q="SELECT count(*) AS files FROM build_inputs">Query table</button></span><span class="gr">one row per CSV file this database was built from</span></summary>
@@ -4005,7 +4005,7 @@ to $325</td><td>quoted in source</td></tr>
 </table></div>
 <p class="cap sm">First 2 rows, in rowid order:</p>
 <div class="scroll"><table class="samp"><tr><th>key</th><th>value</th></tr>
-<tr><td>built_at</td><td>2026-10-29T05:30:49Z</td></tr>
+<tr><td>built_at</td><td>2026-10-29T11:28:38Z</td></tr>
 <tr><td>inputs</td><td>143</td></tr>
 </table></div>
 </details>
@@ -4125,7 +4125,7 @@ to $325</td><td>quoted in source</td></tr>
 <tr><td>report-dept-activity</td><td>FY2015</td><td>52</td><td>51,86,87</td><td>3</td><td>0</td><td>0</td><td>4121-fy-2015-annual-town-report.pdf</td><td>FY 2015 Annual Town Report</td><td>https://www.lunenburgma.gov/DocumentCenter/…</td><td>712afbb458b2a452a1c4b3ce618478c8f59a31d7f04…</td><td>7590404</td></tr>
 </table></div>
 </details>
-<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,336 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
+<details class="t"><summary><span class="srow"><code>document</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">5,346 rows</span><button class="open" data-t="document">Query table</button></span><span class="gr">one row per source document</span></summary>
 <p class="ans">One row per source document: its archive path, how it reached us, its publisher URL, whether that link still opens (<code>link_state</code>), whether our copy still matches the publisher&#x27;s (<code>copy_state</code>), and both checksums. Also which columns a workbook HIDES from a reader.</p>
 <p class="warn"><code>link_state</code> says whether the publisher&#x27;s copy still opens; <code>copy_state</code> whether it still matches ours.</p>
 <div class="scroll"><table class="cols"><tr><th>column</th><th>type</th><th>what it is</th></tr>
@@ -4145,7 +4145,7 @@ to $325</td><td>quoted in source</td></tr>
 <div class="scroll"><table class="samp"><tr><th>doc_id</th><th>path</th><th>source_type</th><th>basis</th><th>ledger_at</th><th>hidden_columns</th><th>url</th><th>link_state</th><th>copy_state</th><th>remote_sha256</th><th>local_sha256</th></tr>
 <tr><td>sources/budget-workbooks/finance-committee/…</td><td>sources/budget-workbooks/finance-committee/…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">empty</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>f5c807913c2342a2d8f619e927b53281443b20d53fc…</td></tr>
 <tr><td>sources/district-budget/docs/sc-meetings/20…</td><td>sources/district-budget/docs/sc-meetings/20…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://drive.google.com/file/d/10TME6PtPRe…</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>886d9f5e5281f9df10015310ff637eda18a4b9c3840…</td></tr>
-<tr><td>sources/peer-districts/ashburnham-annual-to…</td><td>sources/peer-districts/ashburnham-annual-to…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://ma-ashburnham.civicplus.com/Archive…</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>4d93ca08fc27bcdd65deb5eec986729c85f91f5d656…</td></tr>
+<tr><td>sources/peer-districts/ashburnham-annual-to…</td><td>sources/peer-districts/ashburnham-annual-to…</td><td>primary</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>https://ma-ashburnham.civicplus.com/Archive…</td><td>200</td><td><span class="nul">NULL</span></td><td><span class="nul">NULL</span></td><td>4d93ca08fc27bcdd65deb5eec986729c85f91f5d656…</td></tr>
 </table></div>
 </details>
 <details class="t"><summary><span class="srow"><code>extraction_plan</code> <span class="tag scope sarchive">archive</span> <span class="tag">provenance</span> <span class="n">555 rows</span> <span class="yr">2011–2025</span><button class="open" data-t="extraction_plan">Query table</button></span><span class="gr">one row per planned extract</span></summary>

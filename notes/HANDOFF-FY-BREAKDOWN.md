@@ -11,7 +11,86 @@ site build and deploy -- do NOT run `npm run build:site`; tell it when changes a
 deploy carries them. Do NOT run `build_db.py` until TJ gives the all-clear (that session is rebuilding
 `lunenburg.db` with 2001-2010 rows). Commit by explicit path only; three sessions' work is in the tree.
 
+**QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
+"What it connects to" (`fy28/src/components/blocks/custom/fy-ego-web.tsx`) draws the chart and then
+In / Out lists that repeat it block for block. TJ: *"i dont think we need the 'in' and 'out'
+areas"*, then *"or put it as a toggle: chart vs table view"*. Build the toggle: two chips (`Chip`
+from fy-shared, as the year picker), Chart default; Table = one table, groups In / Out (and the
+between-awards arcs as a third group), each row the other end (linked to its page), the kind of
+connection, the generator's amount text, in the chart's fixed order (kind, then name). Remember
+the choice in localStorage inside try/catch. The table is also the chart's only text version --
+the SVG is `role="img"` -- so the toggle is what keeps it reachable for screen readers. Strings in
+`scripts/fy_items.py` (the index text), never typed in the component.
+
+**QUICK CLEANUP, also first (TJ, 29 Oct) -- two more on the line pages (`fy-item-history.tsx`):**
+- **"What the bills were for" (`LineMemoCats`): stack, do not split.** The chart and "Largest
+  changes, by payee and kind of bill" sit side by side (`md:grid-cols-2`); the table is a long list
+  and the pair looks odd. Chart full width, the table under it.
+- **"Where its other payers went" (`PayerTraces`) is unreadable -- replace the bars.** TJ: *"VERY
+  hard to understand. i cant figure out what the bars are saying."* The current card draws each
+  year as one thin bar of the fund's school-line total, scaled per fund, darker where spent here.
+  Replace with, per payer fund, a stacked bar chart by year (recharts, as `GroupSplit` already does
+  on the group page -- reuse it): each bar is everything that fund spent on school lines that year,
+  split into THIS line, its top other lines, and the rest. THIS line called out in a big way: the
+  bottom segment, a strong colour, its amount labelled on the bar; the other lines muted shades,
+  the rest grey; the same line keeps the same colour every year. Keep the arrived/left sentences
+  above each chart and the top-other-lines links below. `trace_of` already emits `here`, `top`
+  and `total` per year; add per-line amounts for the top lines across all years (a fixed set, so
+  colours and order hold year to year -- object constancy, as the ego web).
+
+**QUICK CLEANUP, also first (TJ, 29 Oct) -- the bridge ("From the plan to what happened"):**
+TJ: *"'circuit breaker' shows up in various flavors. i dont know why. i think we should have 1
+circuit brekaer line"*, then *"putting them at a slant i think will be possible and better to
+visualize those sub labels"*. Cause: the bridge already has ONE circuit breaker step a year
+(`build_fy_breakdown.py` ~line 1311, `cb_step`), but its LABEL is chosen by that year's sign --
+"counted on and not charged" / "charged beyond what was counted on" / "which the book did not
+count on" / "against a book not read yet" -- so the same bar is renamed as the year changes. Fix:
+every step gets a constant short label ("Circuit breaker", "General fund", "Other funds, toward
+school lines", ...) plus a `sub` field carrying the year's qualifier ("counted on, not charged");
+`means` stays the tooltip. In the bridge component (fy28/src, `fy-bridge`), draw the label and the
+sub-label as angled axis ticks (about -30 degrees, sub smaller and muted) so the long ones fit.
+Same rule for the general fund step ("left unspent" / "spent past its budget" -> label constant,
+qualifier in `sub`).
+
 **QUEUED BY TJ -- build these next, in this order:**
+
+0. **TOP PRIORITY (TJ, 29 Oct: "thats the top priority TBH more than the others"): revenue that
+   went unspent, per fund and overall, and each fund's revenue against its spending over time.**
+   TJ: *"if the school received circuit breaker money, or idea grant money, or fee money, or
+   whatever, and didnt spend it, we need to show total revenue and total unspent revenue, overall
+   and on a per-fund basis. this will flag if the school isnt spending what they are earning. And
+   the year over year change of that will be importantt o call out too. and on the fund page ...
+   revenue and expense chanrts per fund, to show if the accounts are being consistently drained
+   and filed or if changes happen."*
+   - **The data exists:** the school journal (`journal.py`; `J.is_revenue(account)`) carries each
+     fund's receipts as credits to its revenue accounts, FY2023-FY2026. A first look (29 Oct, NOT
+     verified -- revenue rows were not filtered to `posts_to == 'actual'`, so estimated-revenue
+     budget postings may be mixed in) put the circuit breaker (2640) at receipts $415,750 /
+     $301,589 / $608,818 / $325,970 against spending $494,968 / $466,296 / $498,451 / $337,499.
+     Re-derive with the filter before any figure is used; reconcile to the MUNIS revenue reports
+     where held (`sources/town-ledgers/revenue/`, `school-special-revenue-fy26-q3.csv`).
+   - **Opening balances:** "unspent" across years needs each fund's balance at 1 July 2022.
+     Candidates: `sources/town-ledgers/fund-balances/special-revenue-fy2026-p09.xlsx` (one point,
+     FY26 p09 -- back-cast with the journal and check it ties), `fund-balances-fincom.csv`,
+     `PROVENANCE-special-revenue-funds.md`. MUNIS is held at the gate until verified safe (rule
+     13e / memory munis-stays-private) -- check `redactions.csv` before building against any of it.
+     If no opening balance exists, register the gap in `money-gaps.csv` (rule 7c).
+   - **A BALANCE AT 30 JUNE IS A FACT. The award period is context, not a correction.** An
+     earlier draft of this note called grant balances "falsely unspent" because an award (IDEA
+     2813: $846,872 received FY2025, spent into FY2026) runs past the fiscal year. TJ, 29 Oct:
+     *"'falsely unspent' is subjective. if the school is clamining the state isnt giving us enough
+     money, but not spending funds in CB or idea grant, it changes the interpretation."* So:
+     show received / spent / balance at 30 June BY FISCAL YEAR for every fund, grants included --
+     that is the measurement. Beside it, as context only, the award's spend-by date (how long the
+     money may still be spent) -- it explains time left; it never shrinks the balance. Rule 7: a
+     carry-forward being planned is the district's possible explanation, a hypothesis unless a
+     document says so. Rule 8: where the district says aid falls short, the unspent balance goes
+     beside that statement as two facts and a question for the budget -- never as a charge.
+   - **Shape:** on the FY breakdown page, a block "Money in, money out" -- per payer kind and per
+     fund: received, spent, the difference, the balance where known, and the change from last
+     year, ranked by dollars. On each fund page, a revenue-and-spending chart across the years with
+     the running balance, so filling and draining show. Rule 1: receipts and spending are both
+     actuals, so this is like for like -- but a budgeted revenue is never mixed in.
 
 1. **A "biggest changes" table on the FY breakdown page.** TJ, 29 Oct: *"the hockeystick spending
    curve in collaborative tuition fund year over year needs to be called out in some way on the FY
@@ -23,7 +102,27 @@ deploy carries them. Do NOT run `build_db.py` until TJ gives the all-clear (that
    it sorts. Rank by DOLLAR change with the % beside it (a % off a small base is noise: rule 6). The
    inputs already exist per line in `fy_items` (`line_hist`: voted, budget, spent, all_in, left).
    Emit from `build_fy_breakdown.py` as a block; strings in the generator; a prior year must exist.
-2. **"Where the non-general-fund money went" section.** TJ, 29 Oct: *"analyzes the non-general-fund
+2. **"Where the non-general-fund money went" -- NOW ONE CHART WITH ITEM 0's REVENUE (TJ, 29 Oct).**
+   TJ: *"a viz that shows every non general fund source of funding, and show what it paid for in
+   that year (the lines, funds, etc) as proportions, to show how each one of those sources was
+   distributed that year ... a non-timeline related bar chart with x axis just being the source of
+   spend and the y axis being stacked bars for each place it was spent, or a horizontal thing ...
+   it would be ideal if we could also show the revenue and amount unspent on the same chart."*
+   Recommended (agreed in principle, not yet seen by TJ): ONE HORIZONTAL STACKED BAR PER SOURCE,
+   for the selected year (it follows the page's year picker). Bar length = revenue received that
+   year (item 0's receipts). Segments = where it was spent: its largest school lines by name, then
+   the rest, then "on no school line"; then a HATCHED segment for received-and-not-spent. Where a
+   source spent MORE than it received (drawing down its balance), the bar runs past a tick at the
+   revenue mark -- never cropped. A toggle: dollars / proportions (proportions make every bar the
+   same length so distributions compare). A line keeps one colour across bars and years. Horizontal
+   because source names are long. Data: `fund_on` in `fy_items.files` for the spending side;
+   item 0's journal receipts for the revenue side; group by payer (`FB.payer`), with a way into
+   each programme's fund page. Grants: the bar is the fiscal year's receipts and spending, per
+   TJ's ruling under item 0 (a balance at 30 June is a fact; the award period is context).
+   Rule 7: a source's distribution shifting is a measurement; why is not.
+
+   The earlier text of this item, kept for its detail:
+   **"Where the non-general-fund money went" section.** TJ, 29 Oct: *"analyzes the non-general-fund
    money we know relate to school lines, and give an analsyis of where that money went (which school
    lines were funded the most) and is that different than the year(s) before it ... calls out if
    grant money or state money or fees had a diffference in how they were spent from the previous
@@ -34,6 +133,39 @@ deploy carries them. Do NOT run `build_db.py` until TJ gives the all-clear (that
    series supports it. The worked example is the circuit breaker: private tuitions $484k (FY23) ->
    $0 (FY26) while collaborative went $11k -> $333k, and IDEA arrived on private in FY26 ($287k).
    Rule 7 on every sentence: a payer moving between lines is a measurement; WHY is a hypothesis.
+
+3. **A WHOLE DIFFERENT REPORT, BOTTOM OF THE QUEUE: school budget vs actuals, line by line over
+   time (TJ, 29 Oct).** TJ: *"map over time the same info thats in the fy breakdowns, but focus
+   entirely on the school lines that are over or under budget. identify the things where the
+   lines had LEFTOVER. and we have to identify if adjustments were made midyear to reconcile, like
+   money pulled in to fix a GAP (flag this as 'underfunded') or the money moved elsewhere
+   ('overbudgeted'). we should also flag if a line had transfers and the budget was adjusted mid
+   year, but the next years budget started from the higher line again (or higher than previous
+   year spending). IOW, if a budget starts significantly higher than the previous year spending,
+   that should be flagged."*
+   - **READ FIRST: it partly exists.** `sources/analyses/budget-vs-actual.md` (Aug 2026, 735 lines,
+     payload `fy28/public/data/budget-vs-actual.json`; generators `build_variance_charts.py`,
+     `build_school_spending_topics.py`) is the older, document-level version. Decide with TJ
+     whether the new report replaces it or becomes its line-level companion -- never a third
+     version beside both (rule 7d: one renderer, many payloads).
+   - **The data is the FY breakdown's own line rows**, FY2023-FY2026: `voted`, `transfers`,
+     `carried`, `budget`, `before`, `off`/`on`, `spent` (payments plus owed), `left`, and
+     `budget_walk` (`bw`: walk text, adj, flag) -- per line per year, already tied to the journal.
+   - **Three flags, each a measured rule with its threshold printed (thresholds are OURS):**
+     - **Underfunded:** transfers IN during the year to cover spending past the vote (voted <
+       spent, transfers > 0). Report the gap and how much the transfers covered.
+     - **Overbudgeted:** budget moved OUT mid-year, or left at year end (voted > spent; transfers
+       < 0 or left > 0). Report what left the line and where it went where the journal says.
+     - **Restarted high:** next year's VOTE starts above last year's spending by more than the
+       threshold -- especially after a mid-year cut moved money off the line (the cut was not
+       carried into the next budget). Compare the vote to the prior year's spending AND to its
+       prior final budget; say which.
+   - **Rule 1 is not broken here** -- this is a budget-vs-actual ANALYSIS, which rule 1 allows; it
+     must never feed a projection. **Rule 7:** a flag is a measurement; why a line was over- or
+     under-budgeted is a hypothesis, and the report says so on every flag. **Rule 8:** findings as
+     what they mean for planning, never as what the district got wrong; credit lines that track.
+   - **Rule 6 caution:** a line that goes to zero and reappears renamed produces false "restarted
+     high" flags; check the year-by-year before flagging.
 
 **Done in this session (29 Oct, early) -- all uncommitted; `build_fy_breakdown.py --check` current, tsc clean:**
 - Popups: one header row (Open its page + Close); copy-link button and "its page" row links gone;
