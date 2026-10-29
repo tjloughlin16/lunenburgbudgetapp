@@ -10,19 +10,16 @@ conversation is not a source (rule 13): every state below names the command that
 
 - **1991-2000 batch: committed and pushed** (`d3ae65a54`), **in D1** (`sync_d1.py --check`: 140
   tables, 262,062 rows, matched). Tables read on financial pages only: 402 pages, $6.03.
-- **Deploy:** a hand build passed but `deploy_site.sh` refused -- the 07:00 daily refresh rewrote
-  three job/grant JSONs mid-build. The refresh itself builds and deploys `main` (refresh.py step
-  10, `deploy_allowed`), and `main` holds this batch plus the FY-breakdown session's `63f545fb0`.
-  **First thing: check whether the refresh deployed** (its run row / `wrangler pages deployment
-  list`); verify by hashing a document from production against the archive (CLAUDE.md rule 10).
-  If it did not deploy, `cd fy28 && npm run build:site` then `bash scripts/deploy_site.sh` --
-  TJ approved shipping both (29 Oct). The FY-breakdown session agreed to hold writes under fy28/
-  until the deploy is confirmed; tell it when it is (`ListAgents`, then `SendMessage`).
+- **Deploy: DONE, 29 Oct ~08:20 ET** -- deployment `8218e4dc`, built from `main` at `0e8861a9f`
+  (this batch, the FY-breakdown session's `63f545fb0`, the refresh's own commits). Verified: the
+  2000 report served from production hashes identical to the archive; `/api/query` answers
+  `report_tax_bill_breakdown`. Lesson: the daily refresh does NOT push or deploy while `main` holds
+  commits that are not its own -- push them, or the deploy stays owed.
 - **Textract:** October ledger $34.03 of $50; AWS's own budget caught up to $28.07 (= the ledger
   before this batch), so the text price is CONFIRMED. `build/STOP-METERED` is back in place.
 - **Usage:** TJ, 29 Oct: ~5% of the week left, resets 29 Oct 22:59 ET -- *"run it safely in case
   you hit the limit"*. Hence ONE unit at a time below, committed after each.
-- **Next:** unit 1 below (appropriations). Nothing of it has been started.
+- **Next: unit 1 below (appropriations).** Nothing of it has been started. Brief a FRESH agent with this section.
 - **Also fixed this session, so do not redo:** `find_financial_pages.py` + `--financial-only`;
   `write_out` lines from tables-else-text; worker brief addendum; town-personnel Schools series
   held at 2001 (`SCHOOLS_FROM_FY`); Chapter 70 growth window held at FY2001 (`GROWTH_FROM_FY`,
