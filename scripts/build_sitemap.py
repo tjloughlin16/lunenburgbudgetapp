@@ -186,6 +186,18 @@ def people_pages():
     return sorted('/people/' + x['slug'] for x in d.get('people', []) if x.get('indexed'))
 
 
+def fy_item_pages():
+    """One page per school line, fund programme and group (scripts/fy_items.py), off the index the
+    pages themselves read. Public since 29 October 2026 (TJ: "They don't need to be hidden anymore")."""
+    p = os.path.join(PUB, 'data', 'fy-breakdown', 'index.json')
+    if not os.path.exists(p):
+        return []
+    d = json.load(io.open(p, encoding='utf-8'))
+    return sorted(['/school-lines/' + x['slug'] for x in d.get('lines', [])]
+                  + ['/school-funds/' + x['slug'] for x in d.get('funds', [])]
+                  + ['/school-groups/' + x['slug'] for x in d.get('groups', [])])
+
+
 def topic_pages():
     """Every hub and topic page (scripts/topics.py) whose payload exists, off the index the
     shelves read. TOPICS_INDEX may point at a BUILD's own copy (dist/data/topics.json), so a
@@ -309,7 +321,7 @@ def reference():
 
 def render():
     seen, urls = set(), []
-    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + people_pages() + feed_pages() + topic_pages() + ENTRY + published_data()
+    for u in (routes() + analysis_pages() + blog_pages() + board_pages() + department_pages() + meeting_pages() + people_pages() + fy_item_pages() + feed_pages() + topic_pages() + ENTRY + published_data()
               + reference() + analyses() + feeds()):
         if u not in seen:
             seen.add(u)

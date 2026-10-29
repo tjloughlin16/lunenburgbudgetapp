@@ -17,9 +17,9 @@ import { FundHistory, GroupCompare, LineBills, LineMemoCats, RatesTable, GroupCo
  * (expenses, payee, etc)."* So the body IS the popup's view (LineBody, FundBody -- one component,
  * two hosts), led by the item's own web and followed by its history across the journal's years.
  *
- * VISIBILITY IS THE PARENT'S. The FY breakdown page is a hidden draft -- on no shelf, not in
- * topics.json, so neither prerendered nor in the sitemap. These pages are the same: client-
- * rendered only (no static twin), noindex while mounted, and linked only from that page.
+ * PUBLIC SINCE 29 OCTOBER 2026 (TJ: "They don't need to be hidden anymore"), as the FY breakdown
+ * page they belong to: indexed and in the sitemap (scripts/build_sitemap.py fy_item_pages).
+ * Client-rendered only -- no static twin, as /people/<slug> -- so the prerender stays as it was.
  *
  * Every figure is from /data/fy-breakdown/<line|fund>/<slug>.json, sliced by scripts/fy_items.py
  * from the files the breakdown page reads; every string from /data/fy-breakdown/index.json. */
@@ -32,17 +32,6 @@ type FundItem = { slug: string; name: string; cat: string; group: string; years:
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 const link = { color: 'var(--link, var(--thread-2))' }
-/** noindex for as long as the page is mounted (as the employee pages do, pages/Person.tsx). */
-function useNoIndex() {
-  useEffect(() => {
-    const m = document.createElement('meta')
-    m.name = 'robots'
-    m.content = 'noindex'
-    document.head.appendChild(m)
-    return () => { m.remove() }
-  }, [])
-}
-
 /** ITS AWARDS, YEAR BY YEAR, AND THE COST MOVED BETWEEN THEM (TJ, 28 October 2026: "we also need
  *  to show that grant money is moved across years too"). Each year's awards side by side with what
  *  they spent, then every entry that re-booked cost from one of its awards to another -- the
@@ -236,7 +225,6 @@ export function FyItem() {
   const [ix, setIx] = useState<ItemIndex | null>(null)
   const [item, setItem] = useState<LineItem | FundItem | GroupItem | null>(null)
   const [err, setErr] = useState(false)
-  useNoIndex()
   useEffect(() => {
     if (!at) return
     let live = true

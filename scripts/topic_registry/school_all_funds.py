@@ -12,10 +12,15 @@ Order 5 puts it first among the school shelves (Phase 4, item 16: "the complete 
 as a category at the TOP").
 """
 CATEGORY = dict(
-    start=['budget-lines-all-funds', 'grant-coding'],
+    start=['fy-breakdown', 'budget-lines-all-funds', 'grant-coding'],
     id='school-all-funds', shelf='School budget, all funds', title='The whole school budget',
     area='school', order=5,
     groups=[
+        # TJ, 29 October 2026: released from the hidden draft -- one year, every fund, broken down
+        ('One year, every fund', ['fy-breakdown']),
+        # TJ, 29 October 2026: every school line's vote against what it spent, across the years
+        # and one year at a time, with three flags (scripts/build_budget_against_actual.py).
+        ('School lines against budget', ['budget-against-actual']),
         ('Money in and out', ['school-money-in', 'budget-lines-all-funds',
                               'outside-the-general-fund']),
         ('Left unspent', ['unspent-by-fund', 'carried-over-orders']),
@@ -32,7 +37,9 @@ GENERATOR = 'build_school_all_funds.py'
 # from the journal, so its own generator.
 # Orders carried from one year into the next (TJ, 23 October 2026): the same journal, read for
 # one question the all-funds generator does not ask, so its own generator.
-TOPIC_GENERATORS = {'grant-allocations-compared': 'build_grant_comparison_topics.py',
+TOPIC_GENERATORS = {'budget-against-actual': 'build_budget_against_actual.py',
+                    'fy-breakdown': 'build_fy_breakdown.py',
+                    'grant-allocations-compared': 'build_grant_comparison_topics.py',
                     'grants-others-receive': 'build_grant_comparison_topics.py',
                     'carried-over-orders': 'build_carryover_topics.py',
                     'pay-from-grants-and-fees': 'build_pay_by_fund_topics.py',
@@ -41,6 +48,8 @@ TOPIC_GENERATORS = {'grant-allocations-compared': 'build_grant_comparison_topics
                     # TJ, 28 October 2026: "people always ask me 'what is the activities fee for'"
                     'activities-fund': 'build_activities_fund_topics.py'}
 TOPICS = {
+    'budget-against-actual': 'School lines against budget',
+    'fy-breakdown': 'FY breakdown',
     'school-money-in': 'School grants and aid',
     'budget-lines-all-funds': 'Budget lines, all funds',
     'outside-the-general-fund': 'Paid outside the general fund',

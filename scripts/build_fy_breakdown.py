@@ -1208,11 +1208,10 @@ def page(m):
                  href='/docs/town-ledgers/account-details/'
                       'PROVENANCE-fy2023-fy2026-p13-school-journal.md')],
         finding_figures={'a': U(left[first]), 'x': F(first), 'b': U(left[last]), 'y': F(last)},
-        # HIDDEN, NOT RELEASED (TJ, 26 October 2026: "put this page into a hidden section where
-        # we wont release it"). Built as a draft: outside the shelf registry, so it is on no
-        # shelf, in no topics.json, not in the sitemap and not prerendered. The address still
-        # opens for anybody given it.
-        draft=dict(title='FY breakdown', home='school-all-funds'))
+        # RELEASED 29 October 2026 (TJ: "They don't need to be hidden anymore"): on the school
+        # all-funds shelf (scripts/topic_registry/school_all_funds.py), so prerendered and in the
+        # sitemap like every other page there.
+        )
 
 
 # THE PLAN, AS PRINTED (TJ, 27 October 2026: "if collab tuition is voted net of circuit breaker,

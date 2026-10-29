@@ -52,7 +52,23 @@ years (`SOURCE_LINES`, ours; fixed colours), every other line, same kind of work
 DEFINITION SPLIT, stated on the block: its SPENT is the page's (payments + owed at 30 June, in the
 year ordered); Money in, money out is CASH. They differ by orders owed across a 30 June -- e.g.
 ARPA 2595, $75,000 ordered Jan 2025, paid Sep 2025 (other grants FY2025 +$75,000 here).
-**Next: item 3 (needs TJ: replace budget-vs-actual.md or sit beside it), then item 4 below.**
+**RELEASED, 29 Oct (TJ: "They don't need to be hidden anymore"):** fy-breakdown is on the
+school-all-funds shelf (registry, first group + start page); /school-lines, /school-funds,
+/school-groups lose noindex and are in the sitemap (`build_sitemap.fy_item_pages`), client-rendered,
+not prerendered. topics.json and sitemap.xml are regenerated at build -- not committed here, because
+the working tree's topics.json also carries another session's uncommitted athletics registry change.
+**ITEM 3 BUILT, 29 Oct (a subagent; reviewed):** /school-all-funds/budget-against-actual, "School
+lines against budget" (`build_budget_against_actual.py --check`; `bva-across.tsx`, `bva-year.tsx`).
+Across the years FY2018-FY2026 first (budget documents vs journal, never added), then the year
+picker; FY2023+ carries the three flags ($5,000 and 10%, ours); earlier years a banner. It asserts
+its document-years figures equal the August `budget-vs-actual.json`. NOT YET DONE, TJ's go needed:
+point /budget-vs-actual (`variance`) at it and put `budget-vs-actual` in UNLISTED; whether the
+older `school-budget-against-actual` and `line-level-misses` topics merge into it.
+**OPEN DECISION:** `gl-history.csv` (FinCom workbook from MUNIS exports, FY2010-FY2025) could give
+FY2018-FY2022 transfers and the flags. Measured against the journal: votes equal on every line
+(269/269 FY2023, 265/265 FY2024); TRANSFERS differ on 12 and 15 lines (workbook mostly $0 where the
+journal has a transfer). The agent reported "every line" equal -- that was wrong for transfers.
+**Next: item 4 below (the year's signatures), unless TJ takes the workbook decision first.**
 
 **QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
 "What it connects to" (`fy28/src/components/blocks/custom/fy-ego-web.tsx`) draws the chart and then
