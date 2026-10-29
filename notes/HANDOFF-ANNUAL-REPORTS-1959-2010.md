@@ -69,7 +69,7 @@ brief; the parent verifies and commits. Progress is recorded here after each uni
 | unit | state | proven / unproven / refused after |
 |---|---|---|
 | 1 appropriations | done 29 Oct: opt-in `unlabeled_subtotals` (1997-2010; 1991-1996 moved nothing). 514 rows -> checked; ZERO pages moved -- 96 still fail on misreads, cross-page departments, list totals | 412 / 189 / 4 |
-| 2 debt | not started | |
+| 2 debt | surveyed 29 Oct, NOTHING changed: no grouping opt-in moves a page. Most near-misses print GRAND TOTAL INTEREST $1 off the sum of their rows while every row ties (2001-2008, 1995-1999; same years off in 2005 and 2006) -- rounding is a HYPOTHESIS. 1993 p54 Textract `6,280` vs glyph `5,280`, and its TOTAL DEBT still does not close. 2009/2010 p65/66/72/73 need the dollar-glyph witness extended to debt pages. Decision owed to TJ: $1 pages -> blocked, or a tolerance | 412 / 189 / 4 |
 | 3 trust funds | not started | |
 | 4 the rest | not started | |
 | 5 residue to blocked | not started | |
