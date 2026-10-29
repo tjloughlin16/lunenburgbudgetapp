@@ -1,6 +1,6 @@
 {
  "choice_in": {
-  "arithmetic_checks": 19,
+  "arithmetic_checks": 27,
   "chain_breaks": [
    {
     "from": 2010,
@@ -11,7 +11,7 @@
     "to": 2017
    }
   ],
-  "chain_checks": 16,
+  "chain_checks": 24,
   "cherry_line": 2456,
   "cherry_sheet": [
    {
@@ -29,20 +29,132 @@
   ],
   "cherry_source": "sources/town-budget/text/3765-town-meeting-booklet-including-warrant.txt",
   "first": {
-   "carried": 600.46,
+   "carried": -6872.69,
    "derived": null,
-   "disbursements": 377506.6,
-   "edition": "2001",
-   "forward": 36121.06,
-   "fund": "p63-10  :: School Choice",
-   "fy": 2001,
-   "page": "63",
-   "receipts": 341986.0,
+   "disbursements": 253694.69,
+   "edition": "1993",
+   "forward": 0.0,
+   "fund": "p33-25  :: School Choice",
+   "fy": 1993,
+   "page": "33",
+   "receipts": 246822.0,
    "status": "checked",
    "usable": true,
    "why": null
   },
   "fund_series": [
+   {
+    "carried": -6872.69,
+    "derived": null,
+    "disbursements": 253694.69,
+    "edition": "1993",
+    "forward": 0.0,
+    "fund": "p33-25  :: School Choice",
+    "fy": 1993,
+    "page": "33",
+    "receipts": 246822.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
+   {
+    "carried": 10404.78,
+    "derived": null,
+    "disbursements": 288028.53,
+    "edition": "1994",
+    "forward": -6872.69,
+    "fund": "p38-16  :: School Choice",
+    "fy": 1994,
+    "page": "38",
+    "receipts": 305306.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
+   {
+    "carried": 5286.73,
+    "derived": null,
+    "disbursements": 330634.05,
+    "edition": "1995",
+    "forward": 10404.78,
+    "fund": "p58-19  :: School Choice",
+    "fy": 1995,
+    "page": "58",
+    "receipts": 325516.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
+   {
+    "carried": 0.79,
+    "derived": null,
+    "disbursements": 332224.94,
+    "edition": "1996",
+    "forward": 5286.73,
+    "fund": "p59-17  :: School Choice",
+    "fy": 1996,
+    "page": "59",
+    "receipts": 326939.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
+   {
+    "carried": 4910.51,
+    "derived": null,
+    "disbursements": 326937.28,
+    "edition": "1997",
+    "forward": 0.79,
+    "fund": "p59-05  :: School Choice",
+    "fy": 1997,
+    "page": "59",
+    "receipts": 331847.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
+   {
+    "carried": 26675.01,
+    "derived": null,
+    "disbursements": 298863.5,
+    "edition": "1998",
+    "forward": 4910.51,
+    "fund": "p55-26  :: School Choice",
+    "fy": 1998,
+    "page": "55",
+    "receipts": 320628.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
+   {
+    "carried": 86070.13,
+    "derived": null,
+    "disbursements": 342069.88,
+    "edition": "1999",
+    "forward": 26675.01,
+    "fund": "p69-23  :: School Choice",
+    "fy": 1999,
+    "page": "69",
+    "receipts": 401465.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
+   {
+    "carried": 36121.06,
+    "derived": null,
+    "disbursements": 434531.07,
+    "edition": "2000",
+    "forward": 86070.13,
+    "fund": "p79-15  :: School Choice",
+    "fy": 2000,
+    "page": "79",
+    "receipts": 384582.0,
+    "status": "checked",
+    "usable": true,
+    "why": null
+   },
    {
     "carried": 600.46,
     "derived": null,
@@ -425,8 +537,8 @@
    "usable": true,
    "why": null
   },
-  "receipts_change": -225010.0,
-  "receipts_pct": -0.658,
+  "receipts_change": -129846.0,
+  "receipts_pct": -0.5261,
   "status": [
    "check failed",
    "checked",
@@ -434,6 +546,14 @@
   ],
   "status_means": "Every one of these rows is `check failed`, and that status is about the PAGE: the schedule\u2019s columns do not foot to the totals the report prints. It is not a statement about this row. What IS established here is the row\u2019s own arithmetic and the chain between documents \u2014 both asserted by the generator, neither by the extract.",
   "usable_years": [
+   1993,
+   1994,
+   1995,
+   1996,
+   1997,
+   1998,
+   1999,
+   2000,
    2001,
    2002,
    2003,

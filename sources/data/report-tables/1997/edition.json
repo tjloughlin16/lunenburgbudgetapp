@@ -1,0 +1,87 @@
+{
+  "edition": "1997",
+  "fy": 1997,
+  "basis": "calendar",
+  "basis_source": "the label `1997 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `TOWNREPOR T / 1997`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4523-1997-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4523-1997-annual-town-report.pdf",
+  "label": "1997 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the 50 pages find_financial_pages.py picked (cells in build/textract/out/4523-1997-annual-town-report.cells.tsv)",
+  "periods": [
+    {
+      "what": "valuation, tax rate, levy, exemptions and abatements",
+      "period": "fiscal year 1997 (with fiscal 1996 beside it)",
+      "cited": "p44: `Property Tax Revenues, Abatements, and Exemptions / FISCAL YEAR 1997`; column heads `Fiscal 1996 | Fiscal 1997`"
+    },
+    {
+      "what": "combined balance sheet",
+      "period": "fiscal year ended June 30, 1997",
+      "cited": "p45: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 1997`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal year 1997",
+      "cited": "p46: `FY 1997 RECEIPTS JUNE 30, 1997`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "fiscal year 1997",
+      "cited": "p48: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 1997`; legend `fwd - forward from FY 1996`"
+    },
+    {
+      "what": "special revenue funds",
+      "period": "June 30, 1997 (columns as printed: `FORWARD 7/1/97` and `BALANCE FWD TO FY 98`)",
+      "cited": "p57: `SPECIAL REVENUE FUNDS / JUNE 30, 1997`; the forward column is printed `7/1/97`, not `7/1/96` -- quoted as printed, not corrected"
+    },
+    {
+      "what": "trust funds",
+      "period": "fiscal 1997: beginning balance 6/30/96 to book balance (closing date not printed on the table)",
+      "cited": "p62 column header `BEG BALANCE 6/30/96`"
+    },
+    {
+      "what": "treasurer's cash",
+      "period": "fiscal 1997, closing at the general ledger balance",
+      "cited": "p63: `RECONCILIATION of TREASURER'S CASH / BALANCE JUNE 30, 1996 / RECEIPTS 7/1/96 - 6/30/97 / DISBURSED 7/1/96 - 6/30/97 / GENERAL LEDGER BALANCE`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1998",
+      "cited": "p64 column headers: `DUE IN FISCAL 1998` / `TOTAL PAYMENTS THRU 1998`"
+    },
+    {
+      "what": "bonds authorized and unissued",
+      "period": "as of June 30, 1997",
+      "cited": "text p64: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 1997`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of June 30, 1997",
+      "cited": "p65: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30, 1997`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "NOT PRINTED",
+      "cited": "p66: heading `COLLECTION OF TAXES` only; the latest levy years in the TAX column are `1997 M.V.E.`, `1997 P.P.`, `1997 R.E.`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 1998, as VOTED (a budget, not an actual)",
+      "cited": "p73: `EXCERPTS FROM ANNUAL AND SPECIAL TOWN MEETING MAY 10, 1997`; p81 Article 34 `...expenses of the Town for Fiscal Year 1998... VOTED UNANIMOUSLY`; p82 `TOTAL BUDGET $ 13,533,489.00`"
+    },
+    {
+      "what": "wages",
+      "period": "NOT PRINTED",
+      "cited": "p90 `TOWN OF LUNENBURG / SCHOOL EMPLOYEES / REPORT OF WAGES PAID`, p97 `TOWN OF LUNENBURG / TOWN EMPLOYEES / REPORT OF WAGES PAID`: no year, calendar or fiscal, on either list"
+    },
+    {
+      "what": "fire department activity",
+      "period": "calendar 1997",
+      "cited": "p26: `RUN STATISTICS 1997`; text p26 `our run statistics for the calendar year 1997`"
+    },
+    {
+      "what": "dental health (Nashoba)",
+      "period": "NOT PRINTED beside the table; in the 1997 Board of Health report",
+      "cited": "p20: `Dental Health Department / (Nashoba Program (funded through Environmental Assessment)`"
+    }
+  ]
+}

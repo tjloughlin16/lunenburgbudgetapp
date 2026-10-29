@@ -164,6 +164,9 @@ def build():
 CAVEAT_OUT = os.path.join(ROOT, 'sources', 'data', 'role-classification-caveat.txt')
 
 
+NAMED_FAILURES = {'2015', '2024'}     # zeros whose cause was read off the page; see caveat()
+
+
 def caveat(rows, table):
     """The caveat, with its figures DERIVED rather than typed.
 
@@ -188,7 +191,19 @@ def caveat(rows, table):
             series[r['fy']] = series.get(r['fy'], 0) + 1
     years = sorted({r['fy'] for r in rows})
     counts = [series.get(y, 0) for y in years]
-    zeros = [y for y, n in zip(years, counts) if n == 0]
+    # A ZERO IN A YEAR THAT PRINTS NO KINDERGARTEN SECTION IS NOT A FAILURE. The 1990s
+    # editions print rosters for one to three schools and none prints a kindergarten
+    # section, so nothing was there to read; calling those zeros extraction failures, as
+    # this caveat did when the 1991-2000 rosters arrived, blamed the extractor for a page
+    # the town never printed. Read off the rows: does the year have ANY kindergarten row.
+    has_k = set()
+    for r in rows:
+        c = look.get(((r.get('role_raw') or '').strip(),
+                      (r.get('grade_or_dept') or '').strip()))
+        if c and c['role_grade'] == 'K':
+            has_k.add(r['fy'])
+    zeros = [y for y, n in zip(years, counts) if n == 0 and y in has_k]
+    absent = [y for y in years if y not in has_k]
     return (
         'POSITION IS A CLASSIFICATION AND THE PRINTING IT READS CHANGES. The town has '
         'called the same job Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para) '
@@ -197,15 +212,20 @@ def caveat(rows, table):
         'column does not, and undercounts wherever the house style moved.\n\n'
         'Counting paraprofessionals in the Kindergarten section by `role_category` gives '
         + ', '.join(f'FY{y} {n}' for y, n in zip(years, counts)) + '.\n\n'
-        'THE ZEROS ARE EXTRACTION FAILURES, NOT STAFFING'
-        + (f' ({", ".join("FY" + y for y in zeros)})' if zeros else '')
-        + '. FY2015 printed the page in two columns and the extractor collapsed it, '
-        'leaving five people with no title and their names shifted by one row against '
-        'their posts. FY2024 lists the Primary School paraprofessionals in one '
-        'undifferentiated column with no section at all, and FY2025 groups them by '
-        'programme rather than grade. A series run to FY2025 will read as a collapse in '
-        'kindergarten support that did not happen. Use `role_raw`, which is what the '
-        'report actually printed, before trusting any of it.')
+        'A ZERO HERE IS NOT A COUNT OF NOBODY.'
+        + (f' {", ".join("FY" + y for y in absent)} print no kindergarten section at all, so '
+           'their zero is nothing printed.' if absent else '')
+        + (f' {", ".join("FY" + y for y in zeros if y not in NAMED_FAILURES)} print a '
+           'kindergarten section that names no paraprofessional; whether none was employed, '
+           'or they were listed in another section, is not established by the rosters.'
+           if [y for y in zeros if y not in NAMED_FAILURES] else '')
+        + ' FY2015 and FY2024 are reading failures, established on the page: FY2015 printed '
+        'the page in two columns and the extractor collapsed it, leaving five people with no '
+        'title and their names shifted by one row against their posts; FY2024 lists the '
+        'Primary School paraprofessionals in one undifferentiated column with no section at '
+        'all, and FY2025 groups them by programme rather than grade. A series run to FY2025 '
+        'will read as a collapse in kindergarten support that did not happen. Use '
+        '`role_raw`, which is what the report actually printed, before trusting any of it.')
 
 
 def main():

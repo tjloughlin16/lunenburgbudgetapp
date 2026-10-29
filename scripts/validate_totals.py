@@ -262,13 +262,17 @@ def split_header(rows):
     return rows, []
 
 
-def streams(tables, read):
+def streams(tables, read, names_of=None):
     """Tables joined into the runs they print: a table with the same column count as the one
     before it, on the same page or the next, CONTINUES it when it has no header of its own or
     repeats the same header. Textract splits one long list into several tables on a page.
 
     `may_begin_earlier`: the run's first table has no header, or the page before it was not
-    read -- so its first block may hold rows we do not have."""
+    read -- so its first block may hold rows we do not have.
+
+    `names_of` {(page, table): {col: name}}: column names a caller has settled for a table
+    (read_report_tables.py: the running title dropped, or the header of the table the map says
+    this one continues). Absent -- as for every FY review -- the header rows name the columns."""
     out, last = [], None
     for (page, t), rows in tables.items():
         head, body = split_header(rows)
@@ -278,6 +282,9 @@ def streams(tables, read):
             for k, c in r.cells.items():
                 if c.text:
                     names[k] = (names.get(k, '') + ' ' + c.text).strip()
+        own = names
+        if names_of and (page, t) in names_of:
+            names = dict(names_of[(page, t)])
         adjacent = last and (page == last['page'] and t == last['table'] + 1
                              or page == last['page'] + 1 and t == 1)
         if adjacent and last['ncols'] == ncols and (not names or names == last['names']):
@@ -287,7 +294,9 @@ def streams(tables, read):
         else:
             last = {'page': page, 'pages': [page], 'table': t, 'ncols': ncols, 'rows': body,
                     'names': names,
-                    'may_begin_earlier': not names or (page > 1 and page - 1 not in read)}
+                    # whether the run may begin earlier is a fact about THIS table's printed
+                    # header: a continuation named from another table still prints none
+                    'may_begin_earlier': not own or (page > 1 and page - 1 not in read)}
             out.append(last)
     return out
 
@@ -352,11 +361,11 @@ def read_pages(stem):
         return {int(r['page']) for r in csv.DictReader(f, delimiter='\t')}
 
 
-def validate(stem, pages=None, tables=None):
+def validate(stem, pages=None, tables=None, names_of=None):
     """Every check in the report, and the runs of rows they were made on (TRIAGE re-checks a
     run with one change applied). `tables` is `load()`'s output with a caller's readings
     applied (read_report_tables.py's glyph witness); by default the cells as Textract read them."""
-    runs = streams(tables if tables is not None else load(stem, pages), read_pages(stem))
+    runs = streams(tables if tables is not None else load(stem, pages), read_pages(stem), names_of)
     checks = []
     for i, st in enumerate(runs):
         prev = runs[i - 1] if i else None

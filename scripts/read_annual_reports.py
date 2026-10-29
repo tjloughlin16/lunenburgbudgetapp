@@ -4,6 +4,8 @@
     python3 scripts/read_annual_reports.py --batch 10 --dry-run   # which reports, how many pages, the cost
     python3 scripts/read_annual_reports.py --batch 10             # send them, through the meter
     python3 scripts/read_annual_reports.py --status               # what each report has had read
+    python3 scripts/read_annual_reports.py --batch 10 --feature tables --financial-only --dry-run
+                                          # Tables on the pages find_financial_pages.py picks, no others
 
 TJ, 28 October 2026: *"run this as fast as possible, because with aws we can parallelize right?!
 but confirm costs along the way. batches of 10, then if costs map out, double to 20, etc"* -- and
@@ -55,21 +57,34 @@ def reports():
     return sorted(out, key=lambda t: (-t[0], t[1].name))
 
 
-def todo_of(path, feature):
+def todo_of(path, feature, financial=False):
+    """(sha, pages, unread). With `financial`, only the pages find_financial_pages.py picks count,
+    so a report is done when those are read -- TJ, 28 Oct 2026: Tables only on financial pages."""
     sha = T.sha256_of(path)
     n = T.page_count(path)
-    return sha, n, [p for p in range(1, n + 1) if not T.cache_path(sha, p, feature).exists()]
+    pages = range(1, n + 1)
+    if financial:
+        import find_financial_pages as F                  # imports this module; kept out of the top
+        pages = F.financial_pages(path)
+    return sha, n, [p for p in pages if not T.cache_path(sha, p, feature).exists()]
 
 
-def status(feature):
+def status(feature, financial=False):
     rows = reports()
     full = 0
     for year, path in rows:
-        sha, n, todo = todo_of(path, feature)
+        sha, n, todo = todo_of(path, feature, financial)
         full += not todo
-        print('  %d  %-40s %4d pages  %4d read  %s' % (year, path.name, n, n - len(todo),
-                                                     'done' if not todo else ''))
-    print('%d of %d reports fully read (%s)' % (full, len(rows), feature))
+        if financial:
+            import find_financial_pages as F
+            want = len(F.financial_pages(path))
+            print('  %d  %-40s %4d pages  %4d financial  %4d of them read  %s'
+                  % (year, path.name, n, want, want - len(todo), 'done' if not todo else ''))
+        else:
+            print('  %d  %-40s %4d pages  %4d read  %s' % (year, path.name, n, n - len(todo),
+                                                         'done' if not todo else ''))
+    print('%d of %d reports fully read (%s%s)' % (full, len(rows), feature,
+                                                 ', financial pages' if financial else ''))
 
 
 def main():
@@ -79,10 +94,12 @@ def main():
     ap.add_argument('--workers', type=int, default=8)
     ap.add_argument('--dry-run', action='store_true')
     ap.add_argument('--status', action='store_true')
+    ap.add_argument('--financial-only', action='store_true',
+                    help='only the pages find_financial_pages.py picks (run its --score first)')
     ap.add_argument('--no-aws-check', action='store_true', help='skip reading the AWS budget (tests)')
     a = ap.parse_args()
     if a.status:
-        return status(a.feature)
+        return status(a.feature, a.financial_only)
     if not a.batch:
         sys.exit('--batch N is required: say how many reports this run may read')
 
@@ -91,7 +108,7 @@ def main():
     for year, path in reports():
         if len(plan) == a.batch:
             break
-        sha, n, todo = todo_of(path, a.feature)
+        sha, n, todo = todo_of(path, a.feature, a.financial_only)
         if not todo:
             continue
         if not T.landed(sha):

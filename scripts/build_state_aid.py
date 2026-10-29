@@ -331,6 +331,9 @@ def ledger(c):
 
 # ----------------------------------------------------- Chapter 70 received, year by year
 
+GROWTH_FROM_FY = 2001         # the receipt growth window; see receipts()
+
+
 def receipts(c):
     rows = q(c, """SELECT fy, source, amount, status, document, page
                    FROM   annual_report_receipts
@@ -376,7 +379,14 @@ def receipts(c):
              'years hold figures that are visibly not dollars')
 
     assert_one_stage(checked, 'actual', 'the Chapter 70 receipt growth rate')
-    first, last = checked[0], checked[-1]
+    # THE GROWTH WINDOW OPENS AT FY2001; the series is published from its first checked year.
+    # The 1991-2000 reports added FY1992-FY2000, and that span holds the phase-in of the 1993
+    # Education Reform Act's formula -- the series steps +28%, +20%, +14% in FY1994-FY1996.
+    # A compound rate across a formula's phase-in measures the legislature, not a trend
+    # (CLAUDE.md rule 11), and opened there the flag beside the model's rate went from 1.7 to
+    # 3.2 points on those years alone. The choice of window is ours, and the page states it.
+    window = [r for r in checked if r['fy'] >= GROWTH_FROM_FY] or checked
+    first, last = window[0], window[-1]
     growth = dict(
         first_fy=first['fy'], last_fy=last['fy'],
         first=first['amount'], last=last['amount'],
@@ -735,7 +745,10 @@ def build():
              ours=f'The model grows total state aid at {asm["rate"] * 100:.1f}% a year. '
                   f'Chapter 70 RECEIPTS grew {asm["measured"] * 100:.2f}% a year across '
                   f'the {rec["growth"]["years"]} checked years FY{rec["growth"]["first_fy"]} '
-                  f'to FY{rec["growth"]["last_fy"]}',
+                  f'to FY{rec["growth"]["last_fy"]}'
+                  + (f', opened after the 1993 Education Reform Act phased in its formula; '
+                     f'the receipts from FY{rec["checked"][0]} are shown but not in the rate'
+                     if rec['checked'][0] < rec['growth']['first_fy'] else ''),
              why='These are not the same quantity over the same span, so this is not a '
                  'correction and no rate is changed here. It is the flag rule 6 asks for: '
                  'an assumption with no stated source, and a measured series that runs '

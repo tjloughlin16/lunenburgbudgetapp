@@ -1273,6 +1273,15 @@ REFERENCE = [
     # appropriation)
     'report-treasurers-cash-reconciliation', 'report-fee-schedule', 'report-special-education',
     'report-library-service-values', 'report-warrant-article-amounts',
+    # and from the 1991-2000 editions (integration pass of 29 October 2026,
+    # sources/data/report-tables/README.md): the Assessors' property tax exemptions by statutory
+    # clause (a rule, no amount granted); the Treasurer's "then and now" workload comparison;
+    # the Assessors' breakdown of the average residential tax bill (a BUDGET by town service,
+    # 1995 and 1996, with their own percent-of-levy and cost-per-taxpayer arithmetic); the
+    # Highway Superintendent's own appropriated / expended / balance by account (1995); and the
+    # highway vehicle inventory (1995, no money)
+    'report-property-tax-exemptions', 'report-treasurers-then-and-now', 'report-tax-bill-breakdown',
+    'report-highway-accounts', 'report-vehicle-inventory',
 
     # THE PROVEN READINGS, each tied to an identity its own table states. These are a
     # different kind of thing from the `report-*` extracts above and must not be read as

@@ -29,6 +29,7 @@ import csv
 import os
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
+SCHOOLS_FROM_FY = 2001      # the first edition whose rosters cover every school; see staff_counts
 
 SRC = os.path.join(ROOT, 'sources', 'data', 'town-personnel.csv')
 STAFFING = os.path.join(ROOT, 'sources', 'data', 'department-staffing.csv')
@@ -305,13 +306,20 @@ def load():
         # double its staff and halve it again. Looking a level down finds it where looking
         # at the total cannot, and this is the same lesson as reconciling on group totals
         # rather than a year-end residual.
-        fys = sorted(per_school)
+        fys = sorted(fy for fy in per_school if int(fy) >= SCHOOLS_FROM_FY)
         for a, b, c in zip(fys, fys[1:], fys[2:]):
             for sch, n in per_school[b].items():
                 before, after = per_school[a].get(sch, 0), per_school[c].get(sch, 0)
                 if before and after and n > before * 1.8 and n > after * 1.8:
                     school_bad.add(b)
+        # THE DISTRICT COUNT STARTS AT THE 2001 EDITION, though rosters are read back to 1991.
+        # The 1990s reports print rosters for one to three schools a year -- 1993 and 1995 the
+        # high school alone -- so a 1990s total is a count of the schools that edition chose to
+        # print, not of the district's staff, and "+115 since FY1991" measured that choice. The
+        # rosters stay in staff-roster-entries.csv and per school; they are not a headcount.
         for fy, n in per_year.items():
+            if int(fy) < SCHOOLS_FROM_FY:
+                continue
             staff_counts['Schools'][fy] = dict(people=n, kind='every member of staff, named')
     for f in fire_series:
         staff_counts['Fire Department'][f['fy']] = dict(

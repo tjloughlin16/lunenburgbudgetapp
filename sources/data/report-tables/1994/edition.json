@@ -1,0 +1,22 @@
+{
+  "edition": "1994",
+  "fy": 1994,
+  "basis": "calendar",
+  "basis_source": "the label `1994 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `1994`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4520-1994-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4520-1994-annual-town-report.pdf",
+  "label": "1994 Annual Town Report",
+  "read_by": "AWS Textract (text every page; tables ONLY on the pages find_financial_pages.py picked -- 27 of 70, of which 19 returned tables); cells in build/textract/out/4520-1994-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 1994", "cited": "p31: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 1994`"},
+    {"what": "receipts", "period": "fiscal 1994", "cited": "p32: `FISCAL 1994 RECEIPTS JUNE 30, 1994`"},
+    {"what": "general fund appropriations", "period": "fiscal year 1994", "cited": "p33: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 1994`"},
+    {"what": "special revenue funds", "period": "June 30, 1994", "cited": "p37: `SPECIAL REVENUE FUNDS / JUNE 30, 1994`"},
+    {"what": "omnibus budget", "period": "fiscal year 1995, as VOTED at the 14 May 1994 Annual Town Meeting (a budget, not an actual)", "cited": "p41: `EXCERPTS FROM ANNUAL AND SPECIAL TOWN MEETING MAY 14, 1994`; p42 Article 6: `the Town for Fiscal Year 1995` ... `THE BUDGET LINE ITEMS WERE DISCUSSED AND VOTED AS FOLLOWS:`"},
+    {"what": "treasurer's cash", "period": "fiscal 1994 (7/1/93 - 6/30/94)", "cited": "p64: `RECONCILIATION of TREASURER'S CASH / BALANCE JUNE 30, 1993 / RECEIPTS 7/1/93 - 6/30/94` ... `GENERAL LEDGER BALANCE`"},
+    {"what": "bonded indebtedness by issue", "period": "through fiscal 1995 -- a year later than the rest of the book", "cited": "p65: headers `PAID PREVIOUS YEARS`, `DUE IN FISCAL 1995`, `TOTAL PAYMENTS THRU 1995`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 1994", "cited": "p65: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 1994`"},
+    {"what": "trust funds", "period": "beginning balance 12/93; totals at June 30, 1994 -- the page prints both and does not reconcile the two dates", "cited": "p66 header `BEG BALANCE 12/93`; p67 `TOTAL TRUST & INVESTMENT ACCOUNTS JUNE 30, 1994`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED on the page (heading is `COLLECTION OF TAXES` only); the latest levy years printed are `1994 R.E.`, `1994 P.P.`, `1994 M.V.E.`", "cited": "p68: `COLLECTION OF TAXES`"}
+  ]
+}

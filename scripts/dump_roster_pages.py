@@ -25,6 +25,8 @@ only check this data has -- a roster prints no total.
 
 import argparse
 import csv
+import glob
+import json
 import os
 import re
 import sys
@@ -134,6 +136,15 @@ def main():
             continue
         for p in page_numbers(r['pages']):
             wanted.setdefault((r['edition'], r['document']), set()).add(p)
+    # THE ROSTER PAGES NO TABLE WAS READ ON. From 1991-2000 Textract read tables on FINANCIAL
+    # pages only, so a staff roster -- no money on it -- has no table, no map row and no
+    # catalogue row, and the loop above cannot see it. Each edition's worker listed them by eye
+    # in `report-tables/<edition>/rosters.csv` (page, printed heading); they are read from the
+    # Textract LINES like every other calendar roster.
+    for f in sorted(glob.glob(os.path.join(ROOT, 'sources', 'data', 'report-tables', '*', 'rosters.csv'))):
+        ed = json.load(open(os.path.join(os.path.dirname(f), 'edition.json'), encoding='utf-8'))
+        for r in csv.DictReader(open(f, newline='', encoding='utf-8')):
+            wanted.setdefault((ed['edition'], os.path.basename(ed['pdf'])), set()).add(int(r['page']))
 
     written, per_year, sparse = [], [], []
     for (edition, doc), pages in sorted(wanted.items()):

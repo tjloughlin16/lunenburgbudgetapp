@@ -1,0 +1,27 @@
+{
+  "edition": "1998",
+  "fy": 1998,
+  "basis": "calendar",
+  "basis_source": "the label `1998 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `LUNENBURG / TOWN REPORT`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4524-1998-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4524-1998-annual-town-report.pdf",
+  "label": "1998 Annual Town Report",
+  "read_by": "AWS Textract (text every page; tables on the 47 pages scripts/find_financial_pages.py picked); cells in build/textract/out/4524-1998-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "valuation", "period": "fiscal year 1998", "cited": "p41: `Assessments and Taxes Raised - Fiscal Year 1998`"},
+    {"what": "assessors' overlay and abatements", "period": "fiscal 1993-1997 (overlay); fiscal 1994-1998 (potential charges)", "cited": "p42: `History of Abatements and Exemptions / Description | FY1997 | FY1996 | FY 1995 | FY 1994 | FY 1993`"},
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 1998", "cited": "p43: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 1998`"},
+    {"what": "receipts", "period": "fiscal year 1998", "cited": "p44: `FY 1998 RECEIPTS JUNE 30, 1998`"},
+    {"what": "general fund appropriations", "period": "fiscal year 1998", "cited": "p46: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 1998`"},
+    {"what": "special revenue funds", "period": "fiscal year ending June 30, 1998", "cited": "p54: `SPECIAL REVENUE FUNDS / JUNE 30, 1998`; columns `FORWARD 7/1/98` (sic) and `BALANCE FWD TO FY 99`"},
+    {"what": "trust funds", "period": "fiscal 1998, closing at June 30, 1998", "cited": "p58 column header `BEG BALANCE 6/30/97`; p59: `TOTAL TRUST & INVESTMENT ACCOUNT JUNE 30, 1998`"},
+    {"what": "treasurer's cash", "period": "fiscal 1998, closing at June 30, 1998", "cited": "p60: `RECONCILIATION of TREASURER'S CASH / BALANCE JUNE 30, 1997 / RECEIPTS 7/1/97 - 6/30/98 / DISBURSED 7/1/97 6/30/98`"},
+    {"what": "debt repayment schedule", "period": "printed `AS OF JUNE 30, 1996`, with fiscal-year columns from 1999", "cited": "p61: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30, 1996` / `FISCAL YEAR | 1999 | 2000 ...` -- the date as printed; the columns begin at FY1999"},
+    {"what": "bonded indebtedness by issue", "period": "through fiscal 1999", "cited": "p62 column headers: `DUE IN FISCAL 1999` / `TOTAL PAYMENTS THRU 1999`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 1998", "cited": "p62: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 1998`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED", "cited": "p63: heading `COLLECTION OF TAXES` only"},
+    {"what": "omnibus budget", "period": "fiscal year 1999, as VOTED (a budget, not an actual)", "cited": "p79 Article 33: `...for Fiscal Year 1999...VOTED UNANIMOUSLY to appropriate from Free Cash $349,551.00 and raise by taxation and appropriate $13,714,975.00`; `TOTAL BUDGET VOTED $14,062,526`"},
+    {"what": "wages", "period": "NOT PRINTED", "cited": "p87 `SCHOOL EMPLOYEES / REPORT OF WAGES PAID`, p94 `TOWN EMPLOYEES / REPORT OF WAGES PAID`: no year or period on either list"},
+    {"what": "department activity", "period": "calendar 1998", "cited": "p26: `In 1998, the Lunenburg Police Department handled 4,217 incidents`"}
+  ]
+}

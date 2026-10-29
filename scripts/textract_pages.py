@@ -175,12 +175,22 @@ def call(tx, data, feature):
 
 def write_out(path, sha, feature):
     """The TSVs, from EVERY cached page of this document -- not just this run's, or a one-page
-    run would overwrite the other pages' cells. A page never returned is simply absent."""
+    run would overwrite the other pages' cells. A page never returned is simply absent.
+
+    WHATEVER THE RUN'S FEATURE, the same files: cells from every page read for tables, lines from
+    the tables read where a page has one and the text read where it has only that. The file names
+    do not carry the feature, so writing one feature's pages alone used to clobber the other: a
+    tables run on the financial pages rewrote lines.tsv with only those pages -- dropping every
+    roster page the text read supplied, which dump_roster_pages.py reads -- and a text run wrote an
+    empty cells.tsv. `feature` is kept for the callers; the output no longer depends on it."""
     OUT.mkdir(parents=True, exist_ok=True)
     stem = Path(path).stem
     cells, lines = [], []
-    for cp in sorted((M.CACHE / sha).glob('p*-%s.json' % feature)):
-        page = int(cp.stem.split('-')[0][1:])
+    best = {}
+    for f in ('text', 'tables'):                # tables written last, so it wins where both exist
+        for cp in (M.CACHE / sha).glob('p*-%s.json' % f):
+            best[int(cp.stem.split('-')[0][1:])] = cp
+    for page, cp in sorted(best.items()):
         blocks = json.loads(cp.read_text())['Blocks']
         by_id = {b['Id']: b for b in blocks}
 

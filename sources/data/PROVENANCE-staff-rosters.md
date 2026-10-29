@@ -20,10 +20,34 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**6237 of 6237 lines accounted for** across 151 pages, 5950 entries, 25 years.
+**7319 of 7319 lines accounted for** across 175 pages, 7025 entries, 34 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|
+| 1991-p065-high.json | 1991 | high | 46 | 46 | 0 | 13 | 0 |
+| 1991-p066-unknown.json | 1991 | high | 23 | 23 | 0 | 32 | 0 |
+| 1991-p060-passios.json | 1991 | passios | 40 | 40 | 0 | 42 | 0 |
+| 1991-p062-turkey-hill.json | 1991 | turkey-hill | 39 | 39 | 0 | 13 | 0 |
+| 1991-p063-unknown.json | 1991 | turkey-hill | 36 | 36 | 0 | 26 | 0 |
+| 1992-p022-unknown.json | 1992 | high | 74 | 74 | 0 | 99 | 0 |
+| 1992-p021-high.json | 1992 | turkey-hill | 52 | 52 | 0 | 19 | 0 |
+| 1993-p024-high.json | 1993 | high | 48 | 48 | 0 | 46 | 0 |
+| 1995-p040-high.json | 1995 | high | 52 | 52 | 0 | 52 | 0 |
+| 1996-p036-unknown.json | 1996 | high | 49 | 49 | 0 | 55 | 0 |
+| 1996-p040-passios.json | 1996 | passios | 52 | 52 | 0 | 52 | 0 |
+| 1996-p041-turkey-hill.json | 1996 | passios | 49 | 49 | 0 | 7 | 0 |
+| 1997-p035-high.json | 1997 | high | 38 | 38 | 0 | 51 | 0 |
+| 1997-p038-passios.json | 1997 | passios | 33 | 33 | 0 | 56 | 0 |
+| 1997-p040-turkey-hill.json | 1997 | turkey-hill | 49 | 49 | 0 | 65 | 0 |
+| 1998-p032-high.json | 1998 | high | 47 | 47 | 0 | 50 | 0 |
+| 1998-p039-middle.json | 1998 | turkey-hill | 55 | 55 | 0 | 40 | 0 |
+| 1998-p040-turkey-hill.json | 1998 | turkey-hill | 20 | 20 | 0 | 25 | 0 |
+| 1999-p040-unknown.json | 1999 | high | 52 | 52 | 0 | 58 | 0 |
+| 1999-p043-passios.json | 1999 | passios | 50 | 50 | 0 | 61 | 0 |
+| 2000-p043-unknown.json | 2000 | central-office | 25 | 25 | 0 | 13 | 0 |
+| 2000-p048-unknown.json | 2000 | high | 52 | 52 | 0 | 68 | 0 |
+| 2000-p053-passios.json | 2000 | passios | 48 | 48 | 0 | 62 | 0 |
+| 2000-p051-unknown.json | 2000 | turkey-hill | 53 | 53 | 0 | 70 | 0 |
 | 2001-p036-unknown.json | 2001 | central-office | 26 | 26 | 0 | 17 | 0 |
 | 2001-p040-unknown.json | 2001 | high | 54 | 54 | 0 | 71 | 0 |
 | 2001-p043-passios.json | 2001 | passios | 46 | 46 | 0 | 11 | 0 |
@@ -199,37 +223,39 @@ that the taxonomy is wrong.
 
 | times | printed as |
 |---:|---|
-| 896 | `` |
+| 1158 | `` |
 | 70 | `Teaching Assist.` |
 | 65 | `Dept. Liaison` |
+| 26 | `Chairperson` |
+| 25 | `Chair` |
 | 23 | `Parents` |
 | 19 | `COTA` |
+| 18 | `Manager` |
 | 18 | `Member` |
 | 17 | `General workers` |
-| 16 | `Manager` |
+| 15 | `(Pri.)` |
 | 15 | `Dept Liaison` |
-| 14 | `Chairperson` |
 | 13 | `Social Worker` |
-| 10 | `(Pri.)` |
 | 10 | `AD` |
 | 9 | `Teaching Assistant` |
 | 9 | `Café` |
 | 9 | `Café Manager` |
+| 8 | `Coordinator` |
+| 8 | `Health` |
+| 8 | `Greenhouse Mgr.` |
 | 8 | `Achieve Assistant` |
 | 8 | `Vice-Chairperson` |
 | 8 | `7th` |
-| 7 | `Greenhouse Mgr.` |
 | 7 | `Business Manager` |
 | 7 | `Greenhouse Asst.` |
-| 6 | `Health` |
+| 6 | `Asst. Prin.` |
+| 6 | `Clerk` |
 | 6 | `Phys. Ed.` |
 | 6 | `Occup. Therap.` |
 | 6 | `TLC` |
 | 6 | `Phys. Therap` |
 | 6 | `Parents:` |
 | 6 | `Cook/Managers` |
-| 5 | `Clerk` |
-| 5 | `Coordinator` |
 | 5 | `Foreign Language` |
 | 5 | `School Committee Rep` |
 | 5 | `STEP` |
@@ -243,6 +269,8 @@ that the taxonomy is wrong.
 | 5 | `Occup Therap.` |
 | 5 | `(Tech) MS` |
 | 5 | `STEM` |
+| 4 | `Senior Groundsperson` |
+| 4 | `Mgr.` |
 | 4 | `Administrative Assistant` |
 | 4 | `Coordinator of Special Services` |
 | 4 | `Personnel Manager` |
@@ -255,10 +283,6 @@ that the taxonomy is wrong.
 | 4 | `Technician` |
 | 4 | `2nd/grade` |
 | 4 | `ID` |
-| 4 | `(LMS Social Worker)` |
-| 4 | `Café Employee` |
-| 3 | `Senior Groundsperson` |
-| 3 | `Greenhouse Manager` |
 
 ## Two things a count here must not be read as
 

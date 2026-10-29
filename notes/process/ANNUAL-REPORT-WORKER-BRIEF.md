@@ -21,6 +21,30 @@ names for the Treasurer's reconciliation). Before a new batch, give the workers 
 new-dataset names already settled in `sources/data/report-tables/README.md`, and tell them to
 reuse one of those names when it is the same quantity.
 
+**Since 1991-2000 (29 October 2026): Tables are read on FINANCIAL PAGES ONLY**
+(`find_financial_pages.py`), so append the ADDENDUM below to the brief, verbatim, substituting
+`<ED>`. Ten workers ran with it; all ten reproduced, ~222k-283k tokens each, 9-15 minutes in
+parallel, and all ten reported FINDER MISSES: 0. Give each worker its OWN scratch subfolder
+(`<scratchpad>/w<ED>/`) -- two workers overwrote each other's helper script in a shared one.
+
+```
+ADDENDUM -- tables were read on financial pages only:
+- `python3 scripts/find_financial_pages.py --list <ED>` lists the pages sent for tables (3+ money
+  figures in the text read). cells.tsv holds only those; lines.tsv holds every page. A page with
+  no cells was NOT SENT -- never describe it as "a page with no table".
+- map.csv covers every table in cells.tsv; non-money tables on picked pages are mapped normally
+  with financial=no.
+- Non-money count tables on pages NOT sent (elections, enrollment, officials, vital records,
+  department activity) are OUT OF SCOPE: no rows from lines, and not gaps.
+- FINDER MISSES: a money table on a page with no cells is not read any other way; list it in
+  NEEDS.md under "FINDER MISSES" with page, heading and why it is financial. (A pie chart of
+  percentages with no dollar figures is not one.)
+- ROSTER PAGES: list every staff roster page in NEEDS.md under "ROSTER PAGES".
+- Work only in your own scratch subfolder, <scratchpad>/w<ED>/.
+- Quote every period; wage lists in this era often print none ("GROSS WAGES 1995") -- record
+  what is printed, never calendar or fiscal.
+```
+
 ---
 
 ```

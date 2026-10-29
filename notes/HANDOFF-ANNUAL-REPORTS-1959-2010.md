@@ -11,7 +11,7 @@ conversation is not a source (rule 13): every state below names the command that
 | fetched from the town, backed up in R2 | 52 of 52 (1959-2010) | `sources/town-annual-reports/index.csv` (68 rows = 16 FY + 52) |
 | Textract **text**, every page | 52 of 52, 6,246 pages | `python3 scripts/read_annual_reports.py --status` |
 | searchable on the live site | 52 of 52 (8,358 report pages incl. FY) | `/search?type=annual-reports&q=cemetery` |
-| Textract **tables** | **10 of 52** (2001-2010), every page | `python3 scripts/read_annual_reports.py --status --feature tables` |
+| Textract **tables** | **10 of 52** (2001-2010), every page; finder built for the rest (step 3) | `python3 scripts/read_annual_reports.py --status --feature tables` |
 | mapped by a worker (edition folder) | **10 of 52** (2001-2010) | `python3 scripts/read_report_tables.py <ed> --check` |
 | integrated: shared datasets, rosters, `lunenburg.db` | 2001-2010: **see "Integration pass" below** | `python3 scripts/merge_report_tables.py --check`; `annual_report_progress.py` |
 | pushed to D1, on the site | not yet for 2001-2010 | `sync_d1.py --check` |
@@ -73,12 +73,27 @@ commit 40240528f; fold it into read_annual_reports.py when P2 is built), then
 
 ### 3. Tables read (10 done; 42 to go) -- financial pages only
 
-`python3 scripts/read_annual_reports.py --batch N --feature tables --workers 16 --dry-run`, then
-without `--dry-run`. **It reads every page today.** For the 42, first build the financial-page
-finder (plan P4: from the Textract text, e.g. money-token density and headings), score it
-against the ten answer-key reports (every page with a Textract table full of figures), then add
-a `--pages-from <finder>` option and read only those. At ~29% financial, 42 reports is roughly
-1,500 pages, ~$22 at $0.015 -- **an estimate; measure on the first batch.**
+**The finder is built (28 Oct, second session): `scripts/find_financial_pages.py`.** A page is
+financial when its Textract TEXT read holds 3+ money figures; no headings, no keywords.
+`--score` runs it against the ten answer-key reports (each worker's `map.csv` `financial` column)
+and exits 1 on any miss -- it found 334 of 334 and picked 466 of 1,076 pages. `--list` prices the
+rest: 2,122 pages across the 42, ~$32. Read only those:
+
+    python3 scripts/find_financial_pages.py --score
+    python3 scripts/read_annual_reports.py --batch 10 --feature tables --financial-only --dry-run
+
+The first batch (1991-2000) dry-runs at 402 pages, $6.03, ceiling $6.64. **Not yet sent.**
+
+**What financial-only does NOT read for 1959-2000, by design:** count tables with no money --
+elections, enrollment/MCAS, vital records, officials, department activity. Workers built datasets
+from those in 2001-2010; for the older years their text is searchable and their tables are not.
+TJ was told on 28 Oct; reverse it by reading those pages too, not by changing the threshold.
+
+**A trap fixed with it:** `textract_pages.write_out` built `lines.tsv` from the run's feature
+only, so a financial-only tables run would have cut each report's `lines.tsv` down to the
+financial pages and dropped every roster page `dump_roster_pages.py` reads. Lines now come from
+the tables read where a page has one and the text read otherwise, whatever the run's feature;
+all 108 existing TSVs regenerate byte-identical.
 
 ### 4. Per-report workers (10 done; 42 to go)
 

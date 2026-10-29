@@ -26,11 +26,11 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 |---|---:|---|---|---|---|---|
 | `placement-counts.csv` | 15 | 2011–2025 | parts sum to the total; each year states its predecessor | yes | yes | yes |
 | `ballot-questions.csv` | 9 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
-| `annual-report-receipts.csv` | 2,106 | 2001–2023 | 1,377 checked / 181 failed / 548 no check | yes | yes | yes |
-| `special-revenue-funds.csv` | 3,798 | 2001–2025 | 2,280 checked / 1,370 failed / 148 no check | yes | yes | yes |
-| `staff-roster-entries.csv` | 5,950 | 2001–2025 | every line of every page accounted for | yes | — | yes |
-| `staff-roster-counts.csv` | 1,109 | 2001–2025 | derived from the above | yes | — | yes |
-| `staff-position-map.csv` | 672 | — | a hypothesis about which titles are the same job | yes | — | yes |
+| `annual-report-receipts.csv` | 3,192 | 1991–2023 | 2,340 checked / 304 failed / 548 no check | yes | yes | yes |
+| `special-revenue-funds.csv` | 4,532 | 1992–2025 | 3,016 checked / 1,370 failed / 146 no check | yes | yes | yes |
+| `staff-roster-entries.csv` | 7,025 | 1991–2025 | every line of every page accounted for | yes | — | yes |
+| `staff-roster-counts.csv` | 1,301 | 1991–2025 | derived from the above | yes | — | yes |
+| `staff-position-map.csv` | 719 | — | a hypothesis about which titles are the same job | yes | — | yes |
 
 ### Built by the generic extractor (`scripts/extract_tables.py`)
 
@@ -41,45 +41,50 @@ Read `column_meaning` before reading a value.
 |---|---:|---|---|---|---|---|
 | `report-appropriations-supplement-refused.csv` | 3 | — | — | **no** | shared | yes |
 | `report-appropriations-supplement.csv` | 32 | — | — | **no** | shared | yes |
-| `report-appropriations.csv` | 8,682 | 2001–2025 | 1,760 checked / 6,381 failed / 541 no check | yes | shared | yes |
-| `report-capital-projects.csv` | 1,192 | 2001–2025 | 612 checked / 551 failed / 29 no check | yes | shared | yes |
+| `report-appropriations.csv` | 11,708 | 1991–2025 | 3,044 checked / 6,965 failed / 1,699 no check | yes | shared | yes |
+| `report-capital-projects.csv` | 1,317 | 1999–2025 | 737 checked / 551 failed / 29 no check | yes | shared | yes |
 | `report-classification-plan.csv` | 54 | 2010–2010 | 0 checked / 0 failed / 54 no check | yes | shared | **no** |
-| `report-debt.csv` | 1,555 | 2001–2025 | 971 checked / 333 failed / 251 no check | yes | shared | yes |
-| `report-dept-activity.csv` | 1,097 | 2001–2025 | 0 checked / 0 failed / 1,097 no check | yes | shared | yes |
-| `report-elections.csv` | 3,428 | 2001–2025 | 1,664 checked / 1,725 failed / 39 no check | yes | shared | yes |
-| `report-enrollment-mcas.csv` | 706 | 2001–2025 | 0 checked / 0 failed / 706 no check | yes | shared | yes |
+| `report-debt.csv` | 2,254 | 1991–2025 | 1,515 checked / 502 failed / 237 no check | yes | shared | yes |
+| `report-dept-activity.csv` | 1,377 | 1991–2025 | 0 checked / 0 failed / 1,377 no check | yes | shared | yes |
+| `report-elections.csv` | 3,438 | 1992–2025 | 1,664 checked / 1,725 failed / 49 no check | yes | shared | yes |
+| `report-enrollment-mcas.csv` | 725 | 1991–2025 | 19 checked / 0 failed / 706 no check | yes | shared | yes |
 | `report-fee-schedule.csv` | 72 | 2003–2004 | 0 checked / 0 failed / 72 no check | yes | shared | **no** |
 | `report-filing.csv` | 119 | — | — | **no** | shared | yes |
-| `report-gross-wages.csv` | 8,676 | 2002–2025 | 4,930 checked / 199 failed / 3,547 no check | yes | shared | yes |
+| `report-gross-wages.csv` | 11,446 | 1995–2025 | 7,644 checked / 255 failed / 3,547 no check | yes | shared | yes |
+| `report-highway-accounts.csv` | 18 | 1995–1995 | 0 checked / 0 failed / 18 no check | yes | shared | **no** |
 | `report-index.csv` | 698 | 2011–2025 | — | **no** | shared | yes |
 | `report-library-service-values.csv` | 10 | 2004–2004 | 10 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-monty-tech.csv` | 70 | 2017–2017 | 0 checked / 0 failed / 70 no check | yes | shared | yes |
-| `report-officials.csv` | 1,710 | 2001–2024 | 0 checked / 0 failed / 1,710 no check | yes | shared | yes |
+| `report-officials.csv` | 1,741 | 1991–2024 | 0 checked / 0 failed / 1,741 no check | yes | shared | yes |
+| `report-property-tax-exemptions.csv` | 11 | 1991–1991 | 0 checked / 0 failed / 11 no check | yes | shared | **no** |
 | `report-signatures.csv` | 182 | 2013–2025 | — | **no** | shared | yes |
 | `report-special-education.csv` | 46 | 2008–2009 | 0 checked / 0 failed / 46 no check | yes | shared | **no** |
-| `report-treasurers-cash-reconciliation.csv` | 58 | 2001–2008 | 53 checked / 5 failed / 0 no check | yes | shared | **no** |
-| `report-trust-funds.csv` | 1,454 | 2001–2025 | 512 checked / 641 failed / 301 no check | yes | shared | yes |
-| `report-valuation.csv` | 715 | 2001–2019 | 98 checked / 86 failed / 531 no check | yes | shared | yes |
+| `report-tax-bill-breakdown.csv` | 135 | 1995–1996 | 135 checked / 0 failed / 0 no check | yes | shared | **no** |
+| `report-treasurers-cash-reconciliation.csv` | 129 | 1991–2008 | 124 checked / 5 failed / 0 no check | yes | shared | **no** |
+| `report-treasurers-then-and-now.csv` | 7 | 1991–1991 | 0 checked / 0 failed / 7 no check | yes | shared | **no** |
+| `report-trust-funds.csv` | 2,172 | 1991–2025 | 982 checked / 818 failed / 372 no check | yes | shared | yes |
+| `report-valuation.csv` | 891 | 1995–2019 | 186 checked / 100 failed / 605 no check | yes | shared | yes |
+| `report-vehicle-inventory.csv` | 32 | 1995–1995 | 0 checked / 0 failed / 32 no check | yes | shared | **no** |
 | `report-vital-records.csv` | 875 | 2001–2025 | 0 checked / 0 failed / 875 no check | yes | shared | yes |
-| `report-warrant-article-amounts.csv` | 9 | 2001–2001 | 9 checked / 0 failed / 0 no check | yes | shared | **no** |
+| `report-warrant-article-amounts.csv` | 34 | 1991–2001 | 34 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-weights-measures.csv` | 23 | 2010–2010 | 7 checked / 7 failed / 9 no check | yes | shared | **no** |
 
 ### About the documents rather than the town
 
 | dataset | rows | years | what it is |
 |---|---:|---|---|
-| `annual-report-catalogue.csv` | 1,388 | 2001–2025 | Every table in every report, with its PRINTED heading |
+| `annual-report-catalogue.csv` | 1,621 | 1991–2025 | Every table in every report, with its PRINTED heading |
 | `annual-report-contents.csv` | 199 | 2011–2025 | What each report contains, section by section |
 | `annual-report-survey.csv` | 2,751 | 2011–2025 | Every page, and which instrument recovers it |
 | `extraction-plan.csv` | 555 | 2011–2025 | Which pages each dataset is read from |
-| `dataset-provenance.csv` | 373 | 2001–2025 | Every dataset joined to the document it came from |
+| `dataset-provenance.csv` | 468 | 1991–2025 | Every dataset joined to the document it came from |
 | `report-anomalies.csv` | 521 | 2011–2025 | Where a reading is not credible, and where to look |
 
 ## What is NOT captured
 
-### 1. 799 of 1388 catalogued tables sit on pages no dataset reads
+### 1. 1032 of 1621 catalogued tables sit on pages no dataset reads
 
-About 34,150 rows by the catalogue's own estimate. Much of it is furniture — tables of
+About 48,121 rows by the catalogue's own estimate. Much of it is furniture — tables of
 contents, pie-chart labels, phone directories. These are the substantial ones, all marked
 `clean` in the catalogue:
 

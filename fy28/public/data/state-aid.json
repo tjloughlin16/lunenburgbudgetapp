@@ -563,6 +563,18 @@
    "side": "held",
    "what": "How much of each grant and revolving fund the schools left unspent at the end of each year",
    "why": "The school general fund's unspent money is its Left, and the circuit breaker's is what the budget book counted on less what was charged; both are drawn on /school-all-funds/fy-breakdown. No other school fund has an allocation for the year in the books we hold. The period-13 special funds report prints a revised budget for a handful of grants only (FY2026: a few hundred thousand dollars against millions spent from other funds), and money RECEIVED in a year is not an allocation either: IDEA is reimbursed after it is spent, so FY2026's IDEA receipts print as nothing. What a revolving fund or a grant had left at 30 June is a fund balance, and we hold special revenue balances only at period 9 of FY2026."
+  },
+  {
+   "closes": "the Town Accountant's fiscal 1991 special revenue fund ledger (or the Schedule A filed with the Department of Revenue for FY1991).",
+   "side": "money_out",
+   "what": "What did each special revenue fund take in, spend and carry forward in fiscal 1991?",
+   "why": "`special-revenue-funds` holds forward, receipts, disbursements and balance by fund from the 2001-2010 reports. The 1991 annual town report prints no special revenue schedule: the only special revenue figures are the balance sheet's SPECIAL REVENUE column, $89,233 of cash and the same amount designated (p23). The text was searched for special revenue, revolving and grant and returned department prose about grants (p6, p10, p13, p15, p21) and the trust accounts' GRANTS & GIFTS column (p36-p39) (sources/data/report-tables/1991/)."
+  },
+  {
+   "closes": "the Report of the Finance Committee to the May 13, 1995 Annual Town Meeting, or the Personnel Bylaw Article XV Classification & Salary Schedule effective July 1, 1995, from the Town Clerk.",
+   "side": "money_out",
+   "what": "What were the town's non-union salary grades and step rates in 1995?",
+   "why": "`salary-schedule` and `report-classification-plan` read Schedule A from the 2010 report and FY2011 onward. The 1995 annual town report does not print it: Article 6 of the May 13, 1995 Annual Town Meeting (PDF p77) substitutes `the Classification & Salary Schedule proposed by the Personnel Board and appearing in the Report of the Finance Committee`, effective July 1, 1995, and the schedule itself is not reproduced. The text was searched for salary schedule, classification, step and grade on every page with text (87 of 90) and returned only that article, a Council on Aging grant paying a part-time salary (p17), the appropriation schedule's salary lines (p51-52), the omnibus salary lines (p76) and Article 7's merit augmentation (p77) (sources/data/report-tables/1995/)."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",
@@ -1318,6 +1330,15 @@
  },
  "receipts": {
   "checked": [
+   1992,
+   1993,
+   1994,
+   1995,
+   1996,
+   1997,
+   1998,
+   1999,
+   2000,
    2001,
    2002,
    2003,
@@ -1395,6 +1416,96 @@
    }
   ],
   "series": [
+   {
+    "amount": 1408957.0,
+    "document": "4491-1992-annual-town-report.pdf",
+    "fy": 1992,
+    "page": "24",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 1367974.0,
+    "document": "4519-1993-annual-town-report.pdf",
+    "fy": 1993,
+    "page": "27",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 1755066.0,
+    "document": "4520-1994-annual-town-report.pdf",
+    "fy": 1994,
+    "page": "32",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 2102432.0,
+    "document": "4521-1995-annual-town-report.pdf",
+    "fy": 1995,
+    "page": "50",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 2401616.0,
+    "document": "4522-1996-annual-town-report.pdf",
+    "fy": 1996,
+    "page": "48",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 2366295.0,
+    "document": "4523-1997-annual-town-report.pdf",
+    "fy": 1997,
+    "page": "46",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 2580063.0,
+    "document": "4524-1998-annual-town-report.pdf",
+    "fy": 1998,
+    "page": "44",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 2675977.0,
+    "document": "4525-1999-annual-town-report.pdf",
+    "fy": 1999,
+    "page": "58",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 2886345.0,
+    "document": "4526-2000-annual-town-report.pdf",
+    "fy": 2000,
+    "page": "68",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
    {
     "amount": 3174045.0,
     "document": "4527-2001-annual-town-report.pdf",
@@ -1617,6 +1728,15 @@
    }
   ],
   "span": [
+   1992,
+   1993,
+   1994,
+   1995,
+   1996,
+   1997,
+   1998,
+   1999,
+   2000,
    2001,
    2002,
    2003,
@@ -1649,7 +1769,7 @@
    "why": "$11,404,917 is the Governor\u2019s FY27 figure for ALL state aid to Lunenburg, not Chapter 70 \u2014 it is the line the Town Manager\u2019s 17 April 2026 press release calls \"State aid\", and it includes Unrestricted General Government Aid and every other cherry sheet receipt. The two figures were folded together. The School Committee\u2019s own \"35%\" is the Chapter 70 share, and it is the one that recomputes."
   },
   {
-   "ours": "The model grows total state aid at 2.7% a year. Chapter 70 RECEIPTS grew 4.39% a year across the 21 checked years FY2001 to FY2022",
+   "ours": "The model grows total state aid at 2.7% a year. Chapter 70 RECEIPTS grew 4.39% a year across the 21 checked years FY2001 to FY2022, opened after the 1993 Education Reform Act phased in its formula; the receipts from FY1992 are shown but not in the rate",
    "what": "What the projection assumes state aid will do",
    "where": "show-your-work.md records the state aid growth rate as BARE \u2014 \"Nothing. No stated source and no derivation\"",
    "why": "These are not the same quantity over the same span, so this is not a correction and no rate is changed here. It is the flag rule 6 asks for: an assumption with no stated source, and a measured series that runs 1.7 points above it."

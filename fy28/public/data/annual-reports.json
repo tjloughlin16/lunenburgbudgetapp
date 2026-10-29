@@ -2,130 +2,146 @@
  "categories": [
   {
    "means": "what Town Meeting voted to spend, article by article",
-   "pages": 95,
-   "proven": 17,
+   "pages": 279,
+   "proven": 177,
    "refused": 1,
    "subject": "appropriations",
-   "unproven": 77
-  },
-  {
-   "means": "the funds that sit outside the budget — grants, gifts, revolving",
-   "pages": 68,
-   "proven": 53,
-   "refused": 0,
-   "subject": "special-revenue",
-   "unproven": 15
+   "unproven": 101
   },
   {
    "means": "what the town paid its people, name by name",
-   "pages": 65,
-   "proven": 5,
-   "refused": 1,
+   "pages": 207,
+   "proven": 197,
+   "refused": 0,
    "subject": "payroll",
-   "unproven": 59
+   "unproven": 10
+  },
+  {
+   "means": "the funds that sit outside the budget — grants, gifts, revolving",
+   "pages": 147,
+   "proven": 143,
+   "refused": 0,
+   "subject": "special-revenue",
+   "unproven": 4
   },
   {
    "means": "what the town owes and when it falls due",
-   "pages": 46,
-   "proven": 14,
+   "pages": 103,
+   "proven": 71,
    "refused": 1,
    "subject": "debt",
    "unproven": 31
   },
   {
    "means": "the reserves, and how much is in each",
-   "pages": 39,
-   "proven": 25,
-   "refused": 1,
+   "pages": 92,
+   "proven": 64,
+   "refused": 2,
    "subject": "trust-and-stabilization",
-   "unproven": 13
-  },
-  {
-   "means": "what is owed TO the town, account by account",
-   "pages": 28,
-   "proven": 18,
-   "refused": 3,
-   "subject": "receivables",
-   "unproven": 7
-  },
-  {
-   "means": "a financial table whose heading we could not classify",
-   "pages": 27,
-   "proven": 12,
-   "refused": 0,
-   "subject": "unknown",
-   "unproven": 15
+   "unproven": 26
   },
   {
    "means": "what was committed, collected and abated",
-   "pages": 21,
-   "proven": 9,
-   "refused": 1,
+   "pages": 60,
+   "proven": 56,
+   "refused": 0,
    "subject": "tax-collection",
-   "unproven": 11
+   "unproven": 2
   },
   {
-   "means": "the assessment from the regional school district",
-   "pages": 18,
-   "proven": 2,
-   "refused": 1,
-   "subject": "regional-school",
-   "unproven": 15
+   "means": "the capital projects and what they cost",
+   "pages": 38,
+   "proven": 33,
+   "refused": 0,
+   "subject": "capital",
+   "unproven": 5
   },
   {
    "means": "what the town held and owed at year end",
-   "pages": 17,
-   "proven": 16,
+   "pages": 37,
+   "proven": 37,
    "refused": 0,
    "subject": "balance-sheet",
-   "unproven": 1
+   "unproven": 0
   },
   {
    "means": "what the town is worth, by class of property",
-   "pages": 16,
-   "proven": 8,
+   "pages": 35,
+   "proven": 29,
    "refused": 0,
    "subject": "valuation",
-   "unproven": 8
+   "unproven": 6
   },
   {
    "means": "the cash the Treasurer held",
-   "pages": 15,
-   "proven": 14,
-   "refused": 1,
+   "pages": 35,
+   "proven": 35,
+   "refused": 0,
    "subject": "treasurers-cash",
    "unproven": 0
   },
   {
-   "means": "the capital projects and what they cost",
-   "pages": 13,
-   "proven": 10,
+   "means": "a financial table whose heading we could not classify",
+   "pages": 29,
+   "proven": 28,
    "refused": 0,
-   "subject": "capital",
-   "unproven": 3
+   "subject": "unknown",
+   "unproven": 1
+  },
+  {
+   "means": "what is owed TO the town, account by account",
+   "pages": 28,
+   "proven": 27,
+   "refused": 0,
+   "subject": "receivables",
+   "unproven": 0
+  },
+  {
+   "means": "the assessment from the regional school district",
+   "pages": 16,
+   "proven": 16,
+   "refused": 0,
+   "subject": "regional-school",
+   "unproven": 0
   },
   {
    "means": "how many children are in the schools",
    "pages": 6,
-   "proven": 4,
+   "proven": 6,
    "refused": 0,
    "subject": "enrollment",
-   "unproven": 2
+   "unproven": 0
   },
   {
    "means": "how the town voted",
    "pages": 2,
-   "proven": 1,
+   "proven": 2,
    "refused": 0,
    "subject": "elections",
-   "unproven": 1
+   "unproven": 0
   },
   {
    "means": "the grants the cultural council made",
+   "pages": 2,
+   "proven": 2,
+   "refused": 0,
+   "subject": "cultural-council",
+   "unproven": 0
+  },
+  {
+   "means": "",
+   "pages": 2,
+   "proven": 0,
+   "refused": 0,
+   "subject": "vital-records",
+   "unproven": 2
+  },
+  {
+   "means": "",
    "pages": 1,
    "proven": 0,
    "refused": 0,
-   "subject": "cultural-council",
+   "subject": "officials",
    "unproven": 1
   }
  ],
@@ -133,14 +149,14 @@
   {
    "basis": "`annual-report-pages.csv`, which is generated from what the extractors actually wrote and refuses to publish a count off a stale database.",
    "bearing": "sizes",
-   "claim": "All 477 pages holding a financial table have been read.",
-   "detail": "Sixteen documents, opened page by page. A page counted here is one that holds a financial table, not every page of the book.",
+   "claim": "All 1,119 pages holding a financial table have been read.",
+   "detail": "Every document, opened page by page. A page counted here is one that holds a financial table, not every page of the book.",
    "figure": "pages",
    "figures": {
     "pages": {
-     "text": "477",
+     "text": "1,119",
      "unit": "pages holding a financial table",
-     "value": 477
+     "value": 1119
     }
    },
    "id": "every-financial-page-has-been-read",
@@ -153,24 +169,24 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "208 of 477 pages tie to a total the page itself prints.",
+   "claim": "923 of 1,119 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
     "all": {
-     "text": "477",
+     "text": "1,119",
      "unit": "pages holding a financial table",
-     "value": 477
+     "value": 1119
     },
     "proven": {
-     "text": "208",
+     "text": "923",
      "unit": "pages tied to a printed total",
-     "value": 208
+     "value": 923
     },
     "rest": {
-     "text": "269",
+     "text": "193",
      "unit": "pages with no such check",
-     "value": 269
+     "value": 193
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -178,29 +194,29 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 269 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 193 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
    "bearing": "lever",
-   "claim": "Appropriations is the least checked: 77 of its 95 pages have no check at all.",
-   "detail": "These pages print what Town Meeting voted, article by article. 17 of them do tie to a printed total; the rest are read and unconfirmed.",
+   "claim": "Appropriations is the least checked: 101 of its 279 pages have no check at all.",
+   "detail": "These pages print what Town Meeting voted, article by article. 177 of them do tie to a printed total; the rest are read and unconfirmed.",
    "figure": "un",
    "figures": {
     "ok": {
-     "text": "17",
+     "text": "177",
      "unit": "pages tied to a printed total",
-     "value": 17
+     "value": 177
     },
     "tot": {
-     "text": "95",
+     "text": "279",
      "unit": "pages in this category",
-     "value": 95
+     "value": 279
     },
     "un": {
-     "text": "77",
+     "text": "101",
      "unit": "pages with no check",
-     "value": 77
+     "value": 101
     }
    },
    "id": "the-largest-unchecked-category-is-what-town-meeting-voted",
@@ -213,14 +229,14 @@
   {
    "basis": "the dataset inventory in `scripts/build_archive_guide.py`, read here rather than restated, so the two cannot disagree.",
    "bearing": "sizes",
-   "claim": "17 of the 24 datasets are read by a generic extractor that cannot name its columns.",
-   "detail": "The generic extractor records a column as `v1`, `v2`, `v3` -- an ORDINAL, the first column of THAT page that held figures. The ruler is rebuilt per page, so the same name means different columns on different pages.",
+   "claim": "29 of the 36 datasets are read by a generic extractor that cannot name its columns.",
+   "detail": "The generic extractor records a column as `v1`, `v2`, `v3` -- an ORDINAL, the first column of THAT page that held figures. The ruler is rebuilt per page, so the same name means different columns on different pages. The other 7 have a dedicated extractor that names its columns.",
    "figure": "gen",
    "figures": {
     "all": {
-     "text": "24",
+     "text": "36",
      "unit": "datasets from these reports",
-     "value": 24
+     "value": 36
     },
     "ded": {
      "text": "7",
@@ -228,9 +244,9 @@
      "value": 7
     },
     "gen": {
-     "text": "17",
+     "text": "29",
      "unit": "datasets read generically",
-     "value": 17
+     "value": 29
     }
    },
    "id": "two-extractors-read-these-tables-and-they-are-not-equal",
@@ -248,12 +264,21 @@
  "datasets": [
   {
    "built_by": "generic",
-   "checked": 311,
-   "failed": 5034,
+   "checked": 3044,
+   "failed": 6965,
    "name": "report-appropriations",
-   "nocheck": 0,
-   "rows": 5345,
-   "years": "2011–2025"
+   "nocheck": 1699,
+   "rows": 11708,
+   "years": "1991–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 7644,
+   "failed": 255,
+   "name": "report-gross-wages",
+   "nocheck": 3547,
+   "rows": 11446,
+   "years": "1995–2025"
   },
   {
    "built_by": "dedicated",
@@ -261,44 +286,80 @@
    "failed": 0,
    "name": "staff-roster-entries",
    "nocheck": 0,
-   "rows": 3751,
-   "years": "2011–2025"
+   "rows": 7025,
+   "years": "1991–2025"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 3016,
+   "failed": 1370,
+   "name": "special-revenue-funds",
+   "nocheck": 146,
+   "rows": 4532,
+   "years": "1992–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 1664,
+   "failed": 1725,
+   "name": "report-elections",
+   "nocheck": 49,
+   "rows": 3438,
+   "years": "1992–2025"
+  },
+  {
+   "built_by": "dedicated",
+   "checked": 2340,
+   "failed": 304,
+   "name": "annual-report-receipts",
+   "nocheck": 548,
+   "rows": 3192,
+   "years": "1991–2023"
+  },
+  {
+   "built_by": "generic",
+   "checked": 1515,
+   "failed": 502,
+   "name": "report-debt",
+   "nocheck": 237,
+   "rows": 2254,
+   "years": "1991–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 982,
+   "failed": 818,
+   "name": "report-trust-funds",
+   "nocheck": 372,
+   "rows": 2172,
+   "years": "1991–2025"
   },
   {
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
-   "name": "report-gross-wages",
-   "nocheck": 3547,
-   "rows": 3547,
-   "years": "2011–2025"
-  },
-  {
-   "built_by": "dedicated",
-   "checked": 172,
-   "failed": 2098,
-   "name": "special-revenue-funds",
-   "nocheck": 151,
-   "rows": 2422,
-   "years": "2011–2025"
+   "name": "report-officials",
+   "nocheck": 1741,
+   "rows": 1741,
+   "years": "1991–2024"
   },
   {
    "built_by": "generic",
-   "checked": 323,
-   "failed": 1688,
-   "name": "report-elections",
-   "nocheck": 1,
-   "rows": 2012,
-   "years": "2011–2025"
+   "checked": 0,
+   "failed": 0,
+   "name": "report-dept-activity",
+   "nocheck": 1377,
+   "rows": 1377,
+   "years": "1991–2025"
   },
   {
-   "built_by": "dedicated",
-   "checked": 504,
-   "failed": 85,
-   "name": "annual-report-receipts",
-   "nocheck": 548,
-   "rows": 1137,
-   "years": "2011–2023"
+   "built_by": "generic",
+   "checked": 737,
+   "failed": 551,
+   "name": "report-capital-projects",
+   "nocheck": 29,
+   "rows": 1317,
+   "years": "1999–2025"
   },
   {
    "built_by": "dedicated",
@@ -306,35 +367,35 @@
    "failed": 0,
    "name": "staff-roster-counts",
    "nocheck": 0,
-   "rows": 698,
-   "years": "2011–2025"
+   "rows": 1301,
+   "years": "1991–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 186,
+   "failed": 100,
+   "name": "report-valuation",
+   "nocheck": 605,
+   "rows": 891,
+   "years": "1995–2019"
   },
   {
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
-   "name": "report-index",
-   "nocheck": 0,
-   "rows": 652,
-   "years": "2011–2025"
+   "name": "report-vital-records",
+   "nocheck": 875,
+   "rows": 875,
+   "years": "2001–2025"
   },
   {
    "built_by": "generic",
-   "checked": 12,
-   "failed": 418,
-   "name": "report-trust-funds",
-   "nocheck": 214,
-   "rows": 644,
-   "years": "2011–2025"
-  },
-  {
-   "built_by": "generic",
-   "checked": 48,
-   "failed": 544,
-   "name": "report-capital-projects",
-   "nocheck": 26,
-   "rows": 618,
-   "years": "2011–2025"
+   "checked": 19,
+   "failed": 0,
+   "name": "report-enrollment-mcas",
+   "nocheck": 706,
+   "rows": 725,
+   "years": "1991–2025"
   },
   {
    "built_by": "dedicated",
@@ -342,53 +403,17 @@
    "failed": 0,
    "name": "staff-position-map",
    "nocheck": 0,
-   "rows": 525,
+   "rows": 719,
    "years": "—"
   },
   {
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
-   "name": "report-dept-activity",
-   "nocheck": 515,
-   "rows": 515,
+   "name": "report-index",
+   "nocheck": 0,
+   "rows": 698,
    "years": "2011–2025"
-  },
-  {
-   "built_by": "generic",
-   "checked": 75,
-   "failed": 99,
-   "name": "report-debt",
-   "nocheck": 192,
-   "rows": 366,
-   "years": "2011–2025"
-  },
-  {
-   "built_by": "generic",
-   "checked": 0,
-   "failed": 0,
-   "name": "report-enrollment-mcas",
-   "nocheck": 338,
-   "rows": 338,
-   "years": "2011–2025"
-  },
-  {
-   "built_by": "generic",
-   "checked": 0,
-   "failed": 0,
-   "name": "report-valuation",
-   "nocheck": 321,
-   "rows": 321,
-   "years": "2011–2019"
-  },
-  {
-   "built_by": "generic",
-   "checked": 0,
-   "failed": 0,
-   "name": "report-officials",
-   "nocheck": 237,
-   "rows": 237,
-   "years": "2011–2024"
   },
   {
    "built_by": "generic",
@@ -401,21 +426,39 @@
   },
   {
    "built_by": "generic",
+   "checked": 135,
+   "failed": 0,
+   "name": "report-tax-bill-breakdown",
+   "nocheck": 0,
+   "rows": 135,
+   "years": "1995–1996"
+  },
+  {
+   "built_by": "generic",
+   "checked": 124,
+   "failed": 5,
+   "name": "report-treasurers-cash-reconciliation",
+   "nocheck": 0,
+   "rows": 129,
+   "years": "1991–2008"
+  },
+  {
+   "built_by": "generic",
    "checked": 0,
    "failed": 0,
    "name": "report-filing",
    "nocheck": 0,
-   "rows": 104,
+   "rows": 119,
    "years": "—"
   },
   {
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
-   "name": "report-vital-records",
-   "nocheck": 96,
-   "rows": 96,
-   "years": "2011–2025"
+   "name": "report-fee-schedule",
+   "nocheck": 72,
+   "rows": 72,
+   "years": "2003–2004"
   },
   {
    "built_by": "generic",
@@ -430,10 +473,64 @@
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
+   "name": "report-classification-plan",
+   "nocheck": 54,
+   "rows": 54,
+   "years": "2010–2010"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-special-education",
+   "nocheck": 46,
+   "rows": 46,
+   "years": "2008–2009"
+  },
+  {
+   "built_by": "generic",
+   "checked": 34,
+   "failed": 0,
+   "name": "report-warrant-article-amounts",
+   "nocheck": 0,
+   "rows": 34,
+   "years": "1991–2001"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
    "name": "report-appropriations-supplement",
    "nocheck": 0,
    "rows": 32,
    "years": "—"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-vehicle-inventory",
+   "nocheck": 32,
+   "rows": 32,
+   "years": "1995–1995"
+  },
+  {
+   "built_by": "generic",
+   "checked": 7,
+   "failed": 7,
+   "name": "report-weights-measures",
+   "nocheck": 9,
+   "rows": 23,
+   "years": "2010–2010"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-highway-accounts",
+   "nocheck": 18,
+   "rows": 18,
+   "years": "1995–1995"
   },
   {
    "built_by": "dedicated",
@@ -443,6 +540,24 @@
    "nocheck": 0,
    "rows": 15,
    "years": "2011–2025"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
+   "name": "report-property-tax-exemptions",
+   "nocheck": 11,
+   "rows": 11,
+   "years": "1991–1991"
+  },
+  {
+   "built_by": "generic",
+   "checked": 10,
+   "failed": 0,
+   "name": "report-library-service-values",
+   "nocheck": 0,
+   "rows": 10,
+   "years": "2004–2004"
   },
   {
    "built_by": "dedicated",
@@ -457,6 +572,15 @@
    "built_by": "generic",
    "checked": 0,
    "failed": 0,
+   "name": "report-treasurers-then-and-now",
+   "nocheck": 7,
+   "rows": 7,
+   "years": "1991–1991"
+  },
+  {
+   "built_by": "generic",
+   "checked": 0,
+   "failed": 0,
    "name": "report-appropriations-supplement-refused",
    "nocheck": 0,
    "rows": 3,
@@ -464,6 +588,166 @@
   }
  ],
  "documents": [
+  {
+   "addendum": false,
+   "file": "4490-1991-annual-town-report.pdf",
+   "fy": "1991",
+   "sha256": "8ba40a642b20787d55dd57ac9fefe50e828158cdfd37e9f572538f40f5fb9e62",
+   "size": "2.7 MB",
+   "url": "/docs/town-annual-reports/docs/4490-1991-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4491-1992-annual-town-report.pdf",
+   "fy": "1992",
+   "sha256": "9c3691eba9be8fcdb95708f85e2b7050a514b343dd66a71565c587200fa0999d",
+   "size": "2.5 MB",
+   "url": "/docs/town-annual-reports/docs/4491-1992-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4519-1993-annual-town-report.pdf",
+   "fy": "1993",
+   "sha256": "bc727914bdd599ebfbc4b40ffa19439d970d38d88b30531ebd4f2394ca508ce4",
+   "size": "2.6 MB",
+   "url": "/docs/town-annual-reports/docs/4519-1993-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4520-1994-annual-town-report.pdf",
+   "fy": "1994",
+   "sha256": "5f04c35beaa011dc6c09b93cf2b67677e590aeb1f077cb19b1ff225362b1fad0",
+   "size": "3.3 MB",
+   "url": "/docs/town-annual-reports/docs/4520-1994-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4521-1995-annual-town-report.pdf",
+   "fy": "1995",
+   "sha256": "f31f009f90dd8e402c1e146938a586232085e4ab6ad156916bcb2a2d70bfcabf",
+   "size": "4.0 MB",
+   "url": "/docs/town-annual-reports/docs/4521-1995-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4522-1996-annual-town-report.pdf",
+   "fy": "1996",
+   "sha256": "77d133e7499f3749579dc594c9cbb477f1d4c688d1f2c48b642bc2a89fe4ab9b",
+   "size": "4.8 MB",
+   "url": "/docs/town-annual-reports/docs/4522-1996-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4523-1997-annual-town-report.pdf",
+   "fy": "1997",
+   "sha256": "ddef7192c8858956fa40f5d856d9c080d2d5778ce095ac1d360874e8000c35b4",
+   "size": "4.7 MB",
+   "url": "/docs/town-annual-reports/docs/4523-1997-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4524-1998-annual-town-report.pdf",
+   "fy": "1998",
+   "sha256": "48caa0bdd06da03cedc70116fd095113c2d1e08febaf719b91d34fc71fd5fab2",
+   "size": "5.5 MB",
+   "url": "/docs/town-annual-reports/docs/4524-1998-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4525-1999-annual-town-report.pdf",
+   "fy": "1999",
+   "sha256": "912bc582b45e043f12e7b396c905486f5db61758bd562b45df3b3fc4d300b7af",
+   "size": "5.4 MB",
+   "url": "/docs/town-annual-reports/docs/4525-1999-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4526-2000-annual-town-report.pdf",
+   "fy": "2000",
+   "sha256": "f19de9cdd9f9928eec898c0d3669f56b77ad9a92464f020ac44246e575450681",
+   "size": "5.2 MB",
+   "url": "/docs/town-annual-reports/docs/4526-2000-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4527-2001-annual-town-report.pdf",
+   "fy": "2001",
+   "sha256": "741339b0a25b8cc9b4f13302c5a0b0fc623264064a7eccda11f052b16761e161",
+   "size": "4.6 MB",
+   "url": "/docs/town-annual-reports/docs/4527-2001-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4528-2002-annual-town-report.pdf",
+   "fy": "2002",
+   "sha256": "71bdd5e062f85a07cbdc627e078a34f945c6ee27e20276bd5c6918c4922a728f",
+   "size": "5.2 MB",
+   "url": "/docs/town-annual-reports/docs/4528-2002-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4529-2003-annual-town-report.pdf",
+   "fy": "2003",
+   "sha256": "380875fbd1121db3ad1c59e76a891f0eb76553c5c736ed784035abd266d4f7cc",
+   "size": "5.4 MB",
+   "url": "/docs/town-annual-reports/docs/4529-2003-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4530-2004-annual-town-report.pdf",
+   "fy": "2004",
+   "sha256": "c3ba5cd8876ac306265b505f3f564810198ecf89e7c6e6c8b59c9e39b52111e0",
+   "size": "5.0 MB",
+   "url": "/docs/town-annual-reports/docs/4530-2004-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4513-2005-annual-town-report.pdf",
+   "fy": "2005",
+   "sha256": "9d459be744d836904d2cbb40b3a17c012d9c976cbce44c8de36a5169c4b42ccf",
+   "size": "4.9 MB",
+   "url": "/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4514-2006-annual-town-report.pdf",
+   "fy": "2006",
+   "sha256": "95a8fec178bcc2f8dd6d78e75b10a4d39beb3e610453eec231279eb8de1a82e8",
+   "size": "6.2 MB",
+   "url": "/docs/town-annual-reports/docs/4514-2006-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4515-2007-annual-town-report.pdf",
+   "fy": "2007",
+   "sha256": "d93c9ebb9419e1c2a2d6c5a4725237e390e7bb9460b1898e8d3c8eb06883ed4b",
+   "size": "5.4 MB",
+   "url": "/docs/town-annual-reports/docs/4515-2007-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4516-2008-annual-town-report.pdf",
+   "fy": "2008",
+   "sha256": "67d682a76defc4d2a06d711ca3cf3b2a8d87f21d76bb43740b706d5f3582364b",
+   "size": "5.1 MB",
+   "url": "/docs/town-annual-reports/docs/4516-2008-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4517-2009-annual-town-report.pdf",
+   "fy": "2009",
+   "sha256": "a9281e2cf95e9f9b700d999d2fe82b857f75214386c88ae215738f18e11fa22c",
+   "size": "5.3 MB",
+   "url": "/docs/town-annual-reports/docs/4517-2009-annual-town-report.pdf"
+  },
+  {
+   "addendum": false,
+   "file": "4518-2010-annual-town-report.pdf",
+   "fy": "2010",
+   "sha256": "4f235863ba7ae780fd1f94bcbcfcca973a8181a2064a859a61eed1d56822c69c",
+   "size": "3.9 MB",
+   "url": "/docs/town-annual-reports/docs/4518-2010-annual-town-report.pdf"
+  },
   {
    "addendum": false,
    "file": "4117-fy-2011-annual-town-report.pdf",
@@ -616,20 +900,20 @@
  ],
  "stats": [
   {
-   "label": "annual town reports, FY2011–FY2025",
-   "value": "16"
+   "label": "annual town reports, FY1991–FY2025",
+   "value": "36"
   },
   {
    "label": "pages holding a financial table",
-   "value": "477"
+   "value": "1,119"
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "208 of 477"
+   "value": "923 of 1,119"
   },
   {
    "label": "rows read out of them",
-   "value": "23,639"
+   "value": "56,412"
   }
  ],
  "title": "The annual town reports"

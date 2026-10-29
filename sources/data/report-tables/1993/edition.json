@@ -1,0 +1,30 @@
+{
+  "edition": "1993",
+  "fy": 1993,
+  "basis": "calendar",
+  "basis_source": "the label `1993 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `1993`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4519-1993-annual-town-report",
+  "validator_drop_titles": true,
+  "validator_drop_titles_why": "pp28-34 print the running title as header rows that differ page to page, so the column checks named APPROPRIATED three ways and broke the run at every page (1993 NEEDS 1, integration pass 29 October 2026); dropping it joins the run and the GRAND TOTALs close",
+  "pdf": "sources/town-annual-reports/docs/4519-1993-annual-town-report.pdf",
+  "label": "1993 Annual Town Report",
+  "read_by": "AWS Textract: text (lines) on every page; tables ONLY on the pages scripts/find_financial_pages.py picked (28 of 60 -- TJ's decision for the 1991-2000 batch); cells in build/textract/out/4519-1993-annual-town-report.cells.tsv. A page with no cells was not sent for tables",
+  "periods": [
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 1993", "cited": "p26: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 1993`"},
+    {"what": "receipts", "period": "fiscal year 1993", "cited": "p27: `FISCAL 1993 RECEIPTS JUNE 30, 1993`"},
+    {"what": "general fund appropriations", "period": "fiscal year 1993", "cited": "p28: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 1993`; p32 legend `fwd - forward from FY 1992`"},
+    {"what": "special revenue funds", "period": "fiscal year ending June 30, 1993", "cited": "p32 (second table): `SPECIAL REVENUE FUNDS / JUNE 30, 1993`; column `BALANCE FY 94`"},
+    {"what": "FY93 budget-line changes", "period": "fiscal year 1993 budget, amended at the April 10, 1993 Special Town Meeting (a BUDGET, not an actual)", "cited": "p36: `SPECIAL TOWN MEETING WARRANT / ARTICLE 1. To see if the Town will vote the following changes in the FY93 budget lines` ... `VOTED UNANIMOUSLY`"},
+    {"what": "omnibus budget", "period": "fiscal year 1994, as VOTED at the April 10, 1993 Annual Town Meeting (a budget, not an actual)", "cited": "p36: `EXERPTS FROM ANNUAL AND SPECIAL TOWN MEETING APRIL 10, 1993`; p37 Article 6 `...for Fiscal Year 1994...` and `TOTAL BUDGET VOTED 10,208,686.`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED", "cited": "p52: heading `COLLECTION OF TAXES` only; the latest levy years in the TAX column are `1993 M.V.E.`, `1993 P.P.`, `1993 R.E.`"},
+    {"what": "bonded indebtedness by issue", "period": "through fiscal 1994", "cited": "p53 column headers: `DUE IN FISCAL 1994` / `TOTAL PAYMENTS THRU 1994`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 1993", "cited": "p53: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 1993`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 1993", "cited": "p54: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30, 1993`"},
+    {"what": "treasurer's cash", "period": "fiscal 1993, closing at June 30, 1993", "cited": "p55: `RECONCILIATION of TREASURER'S CASH / BALANCE JUNE 30, 1992 / RECEIPTS 7/1/92 6/30/93 / DISBURSED 7/1/92 - 6/30/93 / GENERAL LEDGER BALANCE`"},
+    {"what": "trust and investment accounts", "period": "closing at June 30, 1993", "cited": "p58: `TOWN OF LUNENBURG TRUST & INVESTMENT ACCOUNTS / BALANCE JUNE 30, 1993 / SUMMARY OF FUNDS`; pp56-58 column headers `PRIOR YEAR BALANCE` ... `BALANCE`"},
+    {"what": "assessed valuation and tax rate (in About the Town)", "period": "the valuation's date NOT PRINTED; tax rate fiscal 1994", "cited": "p3: `ASSESSED VALUATION: $453,870,017 - Real Estate / $11,705,918 - Personal Prop.`; `TAX RATE: $15.19 (Fiscal 1994)`"},
+    {"what": "elections", "period": "calendar 1993", "cited": "p44: `ANNUAL TOWN ELECTION - SATURDAY APRIL 3,1993` (page not sent for tables; out of scope for this batch)"},
+    {"what": "enrollment", "period": "October 1, 1993", "cited": "p18: `OCTOBER 1, 1993 ENROLLMENT SUMMARY` (page not sent for tables; out of scope for this batch)"},
+    {"what": "plumbing and gas inspections", "period": "calendar 1993 (NOT PRINTED on the table; the report is for 1993)", "cited": "p17-18: the Inspector of Plumbing & Gas Fittings' report; p18 `As of January 1, 1994, Federal law...` (the year following)"}
+  ]
+}

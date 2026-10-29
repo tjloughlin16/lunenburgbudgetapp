@@ -87,8 +87,21 @@ IDENTITIES = {
     # blank-balance lines fail in offsetting pairs inside one department (Payroll +439.48,
     # Other Expenses -439.48), because the balance is struck per department, not per line. A
     # check that fails on correct figures is no better than one that cannot fail.
-    'accountant-schedule': [('BALANCE', [(1, 'AVAILABLE'), (-1, 'EXPENDED'), (-1, 'ENCUMBERED')])],
-    'special-revenue': [('BALANCE', [(1, 'FORWARD 7'), (1, 'RECEIPTS'), (-1, 'DISBURSEMENTS')])],
+    'accountant-schedule': [('BALANCE', [(1, 'AVAILABLE'), (-1, 'EXPENDED'), (-1, 'ENCUMBERED')]),
+                            # 1991: no ENCUMBERED column, and the balance split between the part
+                            # closed to revenue and the part carried to FY 92. Blank is zero HERE,
+                            # on a line that prints an AVAILABLE figure: it held line by line on
+                            # 78 of 78 such rows (1991 NEEDS 1c), where on 2010 it did not
+                            ('BALANCE REVENUE', [(1, 'AVAILABLE'), (-1, 'TOTAL EXPENDED'), (-1, 'BALANCE FY')],
+                             {'absent': ['ENCUMBERED'], 'blank_target': 'zero', 'needs': ['AVAILABLE']})],
+    'special-revenue': [('BALANCE', [(1, 'FORWARD 7'), (1, 'RECEIPTS'), (-1, 'DISBURSEMENTS')]),
+                        # 1992-1996 head the flows TOTAL REVENUE / TOTAL EXPENDED (1992 41 of
+                        # 41, 1993 59 of 59, 1994 69 of 69, 1995 76 of 76 by the workers)...
+                        ('BALANCE FY', [(1, 'FORWARD'), (1, 'TOTAL REVENUE'), (-1, 'TOTAL EXPENDED')],
+                         {'absent': ['TRANSFERRED', 'RECEIPTS']}),
+                        # ...and 1996 adds TRANSFERRED TO GENERAL FUND (79 of 79)
+                        ('BALANCE FY', [(1, 'FORWARD'), (1, 'TOTAL REVENUE'), (-1, 'TOTAL EXPENDED'),
+                                        (-1, 'TRANSFERRED')], {'absent': ['RECEIPTS']})],
     'capital-projects': [('^BALANCE', [(1, 'APPROPRIATED'), (-1, 'EXPENDED')])],
     'trust-funds': [
         # 2010: BEGINNING BALANCE PRINC. | ... EARNINGS | CONTRIB | NET EARNINGS | DISBURSE | TRANSFERS
@@ -110,7 +123,20 @@ IDENTITIES = {
     ],
     'collection-of-taxes': [('BALANCES', [(1, 'FORWARD'), (1, 'COMMIT'), (1, 'ADJUSTMENTS'),
                                           (1, 'REFUNDS'), (1, 'PAYMENTS'), (1, 'ABATEMENTS'),
-                                          (1, 'TAX TITLE')])],
+                                          (1, 'TAX TITLE')]),
+                            # 1991-1999 print NO adjustments column, and 1992 heads `REFUND`
+                            ('BALANCES', [(1, 'FORWARD'), (1, 'COMMIT'), (1, 'REFUND'), (1, 'PAYMENTS'),
+                                          (1, 'ABATEMENTS'), (1, 'TAX TITLE')], {'absent': ['ADJUSTMENTS']})],
+    # 1991-1993 `TRUST and INVESTMENT ACCOUNTS`: negatives in parentheses, so every term adds.
+    # 1993 heads two of the columns DEPOSITS RECEIPTS and WITHDRAWALS GRANTS & GIFTS
+    'trust-investment-accounts': [('^BALANCE$', [(1, 'PRIOR YEAR'), (1, 'PRIOR MONTH'),
+                                                 (1, 'CURRENT INTEREST'), (1, 'TRANSFERS'),
+                                                 (1, 'RECEIPTS'), (1, 'GRANTS')])],
+    # an amendment to voted budget lines: `Additional | May 11 Vote | New Approp` (1991, 1995),
+    # `Additional | Current Appropriation | New Appropriation` (1998). 2002's header prints
+    # `Additional` twice, so this does not apply there (a column must match exactly once)
+    'omnibus-amendment': [('^NEW', [(1, '^ADDITIONAL'), (1, 'VOTE|CURRENT APPROP')])],
+    'budget-amendment-proposed': [('^NEW', [(1, '^ADDITIONAL'), (1, 'VOTE|CURRENT APPROP')])],
     # precinct columns are headed `PREC A` in most years and `PRE A` in 2004's state primary
     'elections': [('^TOTAL', [(1, 'PRE\\w* A'), (1, 'PRE\\w* B'), (1, 'PRE\\w* C'), (1, 'PRE\\w* D')])],
     'debt-by-issue': [('^BALANCE', [(1, '^AMOUNT'), (-1, 'PAYMENTS PRINCIPAL')]),
@@ -118,7 +144,41 @@ IDENTITIES = {
                       # principal one is named `TOTAL PRINCIPAL` (10 of 10 issues close)
                       ('^BALANCE', [(1, '^AMOUNT'), (-1, '^TOTAL PRINCIPAL')])],
 }
-ID_TEXT = re.compile(r'^\d[\d\s\-/&]*$')          # `1518`, `2830-2838`, `2354/2355/23`
+# `1518`, `2830-2838`, `2354/2355/23`, and a sub-line `914.1` (one decimal digit: an omnibus line
+# number, 1993-2001 -- never a money figure, which prints two)
+ID_TEXT = re.compile(r'^\d[\d\s\-/&]*(?:\.\d)?$')
+ID_DOT = re.compile(r'^\d+\.\d$')
+
+# READINGS FOR THE CALENDAR EDITIONS ONLY, applied to the cells after they are loaded. Kept here
+# rather than in validate_totals.REPAIRS so that nothing the FY2011-FY2025 reviews parse can move:
+# each is a mark the 1991-2000 reports print and the FY reports were never checked against.
+# (name, pattern on the cell with spaces removed, value text)
+CALENDAR_REPAIRS = [
+    # `($135,987.00) *` `($203,501.00) #` `($124,718.00 )*`: a footnote mark after the figure (the
+    # note, `INVESTED MONIES NOT TRANSFERRED UNTIL CHECKS ARE ACTUALLY DISBURSED`, is on the page)
+    ('trailing footnote mark', re.compile(r'(\(?\$?\(?[\d,]+\.\d{2}\)?)[*#]'), lambda m: m.group(1)),
+    # `($1.76).` (1991 p39): a parenthesised negative followed by a full stop
+    ('full stop after a negative', re.compile(r'(\(\$?[\d,]+\.\d{2}\))\.'), lambda m: m.group(1)),
+    # `<$ 1,343>` (1995 p21): angle brackets for a negative
+    ('angle brackets for a negative', re.compile(r'<\$?([\d,]+(?:\.\d{2})?)>'), lambda m: '($%s)' % m.group(1)),
+    # `0,13452` `0,00060` (1997 p62, 1999 p83): a comma for the decimal point in a share below 1 --
+    # a leading zero then a comma and four or more digits cannot be a thousands separator
+    ('comma for a decimal point', re.compile(r'0,(\d{4,})'), lambda m: '0.' + m.group(1)),
+    # `$ 19,548,51` (1996 p62): a comma for the decimal point after a full thousands group
+    ('comma for a decimal point', re.compile(r'(\$?\d{1,3}(?:,\d{3})*),(\d{2})'), lambda m: '%s.%s' % m.groups()),
+    # `$105.636.70` (1992 p37): full stops for both separators
+    ('full stop for a thousands comma', re.compile(r'(\$?\d{1,3})\.(\d{3})\.(\d{2})'), lambda m: '%s,%s.%s' % m.groups()),
+    # `$330,000 1986-95` (1993 p53, 1994 p65, 1995 p65): the amount and the years payable in one
+    # cell; the amount is the figure, the years are text the AMOUNT column does not carry
+    ('amount and years payable in one cell', re.compile(r'(\$?[\d,]+)\d{4}-\d{2,4}'), lambda m: m.group(1)),
+]
+# `$330.000` `$13.390` (1992 pp33-36): a full stop for the thousands comma -- but only in a
+# column of WHOLE DOLLARS (no cents anywhere in it), where three digits after a stop cannot be
+# cents. `S390` in such a column is `$390` (the S-for-$ repair in REPAIRS wants cents).
+STOP_THOUSANDS = re.compile(r'\$\d{1,3}\.\d{3}')
+S_WHOLE = re.compile(r'S(\d{1,3}(?:,\d{3})*)')
+CENTS = re.compile(r'\.\d{2}\)?$')
+WHOLE_STOP = re.compile(r'\$?\d{1,3}(?:,\d{3})*\.')
 DATE_HEAD = re.compile(r'^\d{1,2}[-/]\d{1,2}[-/]\d{2,4}$')
 PERCENT = re.compile(r'^\(?-?(\d*\.?\d+)\s*%\)?$')
 
@@ -199,10 +259,33 @@ def inventory(stem, tables, lines):
 
 # ---- 2. checks: what each cell's printed identities said ---------------------------------------
 
-def cell_checks(stem, tables=None):
+AVERAGE = re.compile(r'\bAVERAGE\b|\bAVG\b', re.I)
+
+
+def without_averages(m_rows, tables):
+    """The tables the column checks see: an AVERAGE column is a quotient, never a sum, and
+    summing it down to a TOTALS row failed every row of the valuation abstract while the
+    Valuation and Accounts columns closed (1998 p41, 1999 p55; 2001's `Avg. Value` likewise).
+    Its cells are left out of the checks only; the rows still carry them."""
+    out = dict(tables)
+    for m in m_rows:
+        if not m['dataset']:
+            continue
+        k = (int(m['page']), int(m['table']))
+        head, _, names, _ = own_header(m, tables)
+        avg = {c for c, n in names.items() if AVERAGE.search(n)}
+        if not avg:
+            continue
+        hrows = {id(r) for r in head}
+        out[k] = [r if id(r) in hrows else V.Row(r.page, r.row, {c: x for c, x in r.cells.items() if c not in avg}, r.table)
+                  for r in tables[k]]
+    return out
+
+
+def cell_checks(stem, tables=None, names_of=None):
     """{(ref, col): [(status, Check, Triage|None)]} from P6 layers 1 and 2, on the cells as
     this edition reads them (the glyph witness applied)."""
-    checks, runs = V.validate(stem, tables=tables)
+    checks, runs = V.validate(stem, tables=tables, names_of=names_of)
     out = collections.defaultdict(list)
     for c in checks:
         t = triage_totals.triage(c, runs[c.stream]) if c.status == 'open' else None
@@ -242,12 +325,14 @@ def row_identity(family, names, cells):
             continue
         tc = cells.get(tk)
         blank = tc is None or (tc.value is None and not tc.unparsed and not tc.text.strip())
+        # `needs`: columns the row must PRINT a figure in for the identity to apply at all -- so a
+        # heading row, a carried-forward line, or a row whose figure Textract merged into its
+        # label (1991 p25: `$73887.00 Selectmen's Administration`) is not checked
+        need = [col(rx) for rx in opts.get('needs', ())]
+        if any(k is None or cells.get(k) is None or cells[k].value is None for k in need):
+            continue
         if blank and opts.get('blank_target') == 'zero':
-            # A PRINTED BLANK READ AS ZERO -- only on a row that prints the columns the
-            # identity rests on, so a heading row or a carried-forward line is not checked
-            need = [col(rx) for rx in opts.get('needs', ())]
-            if any(k is None or cells.get(k) is None or cells[k].value is None for k in need):
-                continue
+            # A PRINTED BLANK READ AS ZERO, on a row that prints the columns it rests on
             target_value = Decimal(0)
         elif tc is None or tc.value is None:
             continue
@@ -298,6 +383,67 @@ def apply_witness(d, tables):
                                    'figures, and its first glyph could not be decided between `$` (%s) and '
                                    '`%s` (%s) -- `%s` or `$%s`' % (c.text, sd, c.text[0], sx, c.text, c.text[1:]))
     return out
+
+
+def calendar_repair(text):
+    """(repair name, the text a CALENDAR_REPAIRS pattern reads a cell or a line as), or None."""
+    t0 = text.strip().replace(' ', '')
+    # one figure, not two side by side (`10.00 2.00` is two fees, never `10,002.00`): a space is
+    # allowed only after `$` or a parenthesis, or before the trailing mark or the years payable
+    one = not re.search(r'\d\s+[\d$(]', text.strip())
+    for name, rx, fix in CALENDAR_REPAIRS:
+        if name.startswith('amount and years'):
+            if not re.search(r'\d\s+\d{4}-\d{2,4}$', text.strip()):
+                continue
+        elif not one:
+            continue
+        hit = rx.fullmatch(t0)
+        if hit:
+            return name, fix(hit)
+    return None
+
+
+def apply_calendar_repairs(tables):
+    """CALENDAR_REPAIRS on every cell that did not parse, and the whole-dollar column rule
+    (`$330.000`, `S390`) on columns that print no cents. Each repaired cell keeps its printed
+    text and carries the repair's name, which `repaired_cells` and `reconciliation` report."""
+    def mark(c, name, text):
+        v, places, _ = V.parse(text)
+        if v is None:
+            return
+        c.value, c.places, c.unparsed = v, places, False
+        prior = getattr(c, 'repair', None)
+        c.repair = '%s%s: `%s` read as `%s`' % (prior + '; ' if prior else '', name, c.text, text)
+    for (p, t), rows in tables.items():
+        for r in rows:
+            for c in r.cells.values():
+                if c.value is not None or not c.text.strip():
+                    continue
+                hit = calendar_repair(c.text)
+                if hit:
+                    mark(c, *hit)
+        cols = collections.defaultdict(list)
+        for r in rows:
+            for k, c in r.cells.items():
+                if c.text.strip():
+                    cols[k].append(c)
+        for k, cs in cols.items():
+            texts = [c.text.strip().replace(' ', '') for c in cs]
+            if not any(CENTS.search(x) for x in texts) and \
+                    sum(1 for x in texts if WHOLE_STOP.fullmatch(x) and ',' in x) >= 2:
+                # A COLUMN OF WHOLE DOLLARS EACH ENDING IN A FULL STOP (1993 p37: `64,935.`):
+                # the ones under 1,000 print no comma (`150.`, `0.`) and REPAIRS, which wants a
+                # `$` or a comma so that a line number `12.` is never a figure, left them unread
+                for c, x in zip(cs, texts):
+                    if c.value is None and re.fullmatch(r'\d{1,3}\.', x):
+                        mark(c, 'whole dollars with a full stop, in a column of them', x[:-1])
+            if any(CENTS.search(x) for x in texts) or not any('$' in x for x in texts):
+                continue
+            for c, x in zip(cs, texts):
+                if STOP_THOUSANDS.fullmatch(x):
+                    mark(c, 'full stop for a thousands comma, in a column of whole dollars', x.replace('.', ','))
+                elif c.value is None and S_WHOLE.fullmatch(x):
+                    mark(c, 'S for $, in a column of whole dollars', '$' + x[1:])
 
 
 def apply_percents(tables):
@@ -406,7 +552,8 @@ def id_columns(body, figcols):
     the identities (2009 pp56-59)."""
     # only in a table of AMOUNTS (a `$` or cents) or of percents: in a table of counts --
     # an election, an officials list -- an integer column left of the names is data
-    if not any(('$' in c.text or re.search(r'\.\d\d\b', c.text) or getattr(c, 'percent', False))
+    # (1993 p37 prints its omnibus amounts with a comma and no `$`: `64,935`)
+    if not any(('$' in c.text or re.search(r'\.\d\d\b|\d,\d{3}\b', c.text) or getattr(c, 'percent', False))
                and c.value is not None for r in body for c in r.cells.values()):
         return set()
     n = collections.Counter(k for r in body for k, c in r.cells.items()
@@ -421,14 +568,15 @@ def id_columns(body, figcols):
         if k >= first_text:
             continue
         cells = [r.cells[k] for r in body if k in r.cells and r.cells[k].text.strip()]
-        if cells and not any(V.is_figure(c) or getattr(c, 'percent', False) for c in cells) \
+        if cells and not any((V.is_figure(c) and not ID_DOT.match(c.text.strip())) or getattr(c, 'percent', False)
+                             for c in cells) \
                 and all(ID_TEXT.match(c.text.strip()) for c in cells):
             out.add(k)
     return out
 
 
-def records(m, tables, checks, edition, prev_header):
-    """Generic records for one mapped table: dicts with the cells kept for the emitters."""
+def own_header(m, tables):
+    """(head, body, names, cite) of one mapped table from its OWN header rows."""
     p, t = int(m['page']), int(m['table'])
     rows = tables[(p, t)]
     ncols = max((max(r.cells) for r in rows), default=0)
@@ -440,6 +588,56 @@ def records(m, tables, checks, edition, prev_header):
         cite += '; the running title above it is not part of any name'
     if how:
         cite += '; %s' % how
+    return head, body, names, cite
+
+
+def _raw_names(head):
+    names = {}
+    for r in head:
+        for k, c in r.cells.items():
+            if c.text:
+                names[k] = (names.get(k, '') + ' ' + c.text).strip()
+    return names
+
+
+def validator_names(m_rows, tables, drop_titles=False):
+    """{(page, table): {col: name}} for validate_totals, IN ITS OWN FORMAT, only where it
+    differs from what the validator would name the columns itself:
+
+      - THE RUNNING TITLE IS NOT A COLUMN NAME there either -- WHERE THE EDITION SAYS SO
+        (`edition.json`: `"validator_drop_titles": true`, set by eye). On 1993 pp28-34 the title
+        differs page to page (`TOWN ... OF`, `... (CONT.)`), so APPROPRIATED was named three ways
+        and the run broke at every page: a GRAND TOTAL failed by exactly two pages' figures.
+        NOT the default, because joining the pages of an accountant schedule whose department
+        subtotals print unlabelled exposes the validator's grouping (block walk) instead: tried
+        on every edition, 2003 gained 68 false `check failed` rows, 1999 51, 2000 70
+      - A TABLE THE MAP SAYS CONTINUES ANOTHER (`header_from`) takes that table's names --
+        resolved after every table's own, so it may point FORWARD (1997 p61 continues p62)"""
+    raw, out = {}, {}
+    for k, rows in tables.items():
+        head, _ = V.split_header(rows)
+        raw[k] = _raw_names(head)
+        kept = drop_title(head, k[0])
+        if drop_titles and len(kept) < len(head):
+            out[k] = _raw_names(kept)
+    refs = {(int(m['page']), int(m['table'])): tuple(int(x) for x in m['header_from'].split('/'))
+            for m in m_rows if (m.get('header_from') or '').strip()}
+
+    def resolve(k, seen=()):
+        if k in refs and refs[k] in raw and refs[k] not in seen:
+            return resolve(refs[k], seen + (k,))
+        return out.get(k, raw.get(k, {}))
+    for k in refs:
+        out[k] = resolve(k)
+    return {k: v for k, v in out.items() if v != raw.get(k)}
+
+
+def records(m, tables, checks, edition, prev_header):
+    """Generic records for one mapped table: dicts with the cells kept for the emitters."""
+    p, t = int(m['page']), int(m['table'])
+    rows = tables[(p, t)]
+    ncols = max((max(r.cells) for r in rows), default=0)
+    head, body, names, cite = own_header(m, tables)
     if m.get('header_from'):
         # THE MAP NAMES THE TABLE THIS ONE CONTINUES, and that is a by-eye statement: it
         # wins over whatever Textract returned as a header here, which on a continuation page
@@ -454,6 +652,20 @@ def records(m, tables, checks, edition, prev_header):
     for span in spans:
         sub = [V.Row(rr.page, rr.row, {k: c for k, c in rr.cells.items() if k in span}, rr.table) for rr in body]
         fc = set(V.figure_cols(sub)) | {k for rr in sub for k, c in rr.cells.items() if getattr(c, 'ambiguous', None)}
+        if sum(1 for rr in sub if _nonempty(rr)) < 2:
+            # A ONE-ROW TABLE has no column with two figures, so figure_cols found none and the
+            # amount went into the label (1992 p52: `310 | Monty Tech Assessment | $8327.`). A
+            # column holding a `$` figure is a figure column, however few rows it has
+            fc |= {k for rr in sub for k, c in rr.cells.items() if c.value is not None and '$' in c.text}
+        if m.get('dataset') == 'report-gross-wages':
+            # A GRADE / DEGREE / STEP COLUMN IS NOT A WAGE (1995-2000 school lists: `M+75 MAX`,
+            # `B9`, `6`). Where the step is a bare integer it parsed, the column became a figure
+            # column and the wage moved to v2. On a wage list, a column that holds no
+            # figure-shaped cell (no `$`, comma or decimal point) -- or whose printed header says
+            # GRADE, DEGREE or STEP -- is part of the label
+            fc -= {k for k in fc
+                   if re.search(r'\b(?:GRADE|DEGREE|STEP)\b', names.get(k, ''), re.I)
+                   or not any(V.is_figure(rr.cells[k]) for rr in sub if k in rr.cells)}
         ids = id_columns(sub, fc)
         figcols_of.append(sorted(fc - ids))
         idcols_of.append(ids)
@@ -618,6 +830,7 @@ def emit_receipts(m, recs, ed):
 
 
 CASH_INVESTED = re.compile(r'CURRENT CASH INVESTED', re.I)
+TRAILING_MONEY = re.compile(r'\s(\$\s?\(?\d{1,3}(?:,\d{3})*\.\d{2}\)?)$')
 MONEY_TOKEN = re.compile(r'\(?\$?\s?\(?\d{1,3}(?:,\d{3})+(?:\.\d{2})?\)?|\(?\$?\s?\(?\d+\.\d{2}\)?')
 
 
@@ -651,10 +864,19 @@ def emit_treasurers_cash(m, recs, ed, raw):
     body = [r for r in recs if start is None or r['row'] > start]
     accts = [r for r in body if r['figs'] and not r['is_total']
              and not re.search(r'balance|^receipts|^disbursed', r['label'], re.I)]
+    # AN UNLABELLED LAST ROW HOLDING ONE FIGURE IS THE TOTAL, wherever its column (1991, 1993,
+    # 1994, 1998: it sits under the accounts, in their column, so it was summed as an account)
+    tail = accts[-1] if len(accts) > 1 else None
+    lone_tail = tail is not None and not tail['label'] and len(tail['figs']) == 1 and \
+        tail['row'] == max(r['row'] for r in body if r['figs'])
+    if lone_tail:
+        accts = accts[:-1]
     totals = [r for r in body if r['figs'] and (r['is_total'] or re.search(r'ledger balance', r['label'], re.I))]
     s = sum((r['figs'][0][1].value for r in accts), Decimal(0))
     if totals:
         printed, where = totals[-1]['figs'][0][1].value, 'the printed %s' % totals[-1]['label']
+    elif lone_tail:
+        printed, where = tail['figs'][0][1].value, 'the unlabelled figure printed as the last row (row %d)' % tail['row']
     else:
         last = [rr for rr in raw if rr.cells and any(c.text.strip() for c in rr.cells.values())][-1:]
         lone = [c for rr in last for c in rr.cells.values() if c.text.strip()]
@@ -675,7 +897,7 @@ def emit_treasurers_cash(m, recs, ed, raw):
 
 
 RECON = [('opening', r'^BALANCE\b'), ('receipts', r'^RECEIPTS'), ('investments', r'LESS INVESTMENTS'),
-         ('disbursed', r'^DISBURSED'), ('revenue_invested', r'LESS REVENUE CASH'),
+         ('disbursed', r'^DISBURSE'), ('revenue_invested', r'LESS REVENUE CASH'),
          ('ledger', r'GENERAL LEDGER BALANCE')]
 
 
@@ -824,7 +1046,7 @@ def emit_special_revenue(m, recs, ed):
                'fund': 'p%d-%02d %s :: %s' % (rec['page'], n[rec['page']], rec['group'], rec['label']),
                'page': rec['page'], 'is_subtotal': 'yes' if rec['is_total'] else '',
                'columns_as_printed': ' | '.join(rec['names'].get(k, '') for k, _ in rec['figs']),
-               'receipts': num(by_name(rec, 'RECEIPTS')) if by_name(rec, 'RECEIPTS') is not None else '',
+               'receipts': num(by_name(rec, 'RECEIPTS|TOTAL REVENUE')) if by_name(rec, 'RECEIPTS|TOTAL REVENUE') is not None else '',
                'read_by': 'textract (AWS), cells as returned', 'n_values': len(rec['figs']),
                'column_meaning': ' | '.join('v%d=%s' % (i + 1, rec['names'].get(k, 'not established'))
                                             for i, (k, _) in enumerate(rec['figs'])) + ' (%s)' % rec['cite'],
@@ -837,7 +1059,7 @@ def emit_special_revenue(m, recs, ed):
 
 def emit_tax_collection(m, recs, ed):
     cols = [('forward', 'FORWARD'), ('committed', 'COMMIT'), ('adjustments', 'ADJUSTMENTS'),
-            ('refunds', 'REFUNDS'), ('payments', 'PAYMENTS'), ('abatements', 'ABATEMENTS'),
+            ('refunds', 'REFUNDS?\\b'), ('payments', 'PAYMENTS'), ('abatements', 'ABATEMENTS'),
             ('transfer', 'TAX TITLE'), ('balance', 'BALANCES')]
     out = []
     for rec in recs:
@@ -886,6 +1108,102 @@ def emit_salary_schedule(m, recs, ed):
     return out
 
 
+# LISTS OF ITEMS A PRINTED TOTAL COVERS, where that total sits outside the table or spans
+# several tables, side-by-side groups or pages (an omnibus budget over two pages, bonds
+# authorized and unissued in two lists, a trust summary whose GRAND TOTAL Textract left out):
+# the map's `stated_total` names it, and every map row of one list (same dataset, name and
+# stated_total) is summed against it. Only for these families -- a list of items, one amount
+# each -- because elsewhere a stated total is a figure the rows do not add up to by design.
+LIST_FAMILIES = {'omnibus-budget', 'debt-authorized-unissued', 'trust-funds-summary',
+                 'budget-supplement-passed-over', 'master-capital-facilities-plan',
+                 'library-service-values'}
+TOTAL_LABEL = re.compile(r'(?:^|\s)T?OTAL\b', re.I)
+
+
+def stated_list_totals(m_rows, emitted):
+    """A row the column checks could not reach (`no check`) becomes `checked` when its list sums
+    to the printed total, and `check failed` when it does not; a row that already has a verdict
+    keeps it and carries the note. The amount is the row's LAST figure (an omnibus line prints a
+    line number, then the amount), never a percent."""
+    groups = collections.OrderedDict()
+    for m in m_rows:
+        k = (int(m['page']), int(m['table']))
+        if m.get('stated_total') and m.get('family') in LIST_FAMILIES and k in emitted:
+            groups.setdefault((m['dataset'], m['family'], m['stated_total']), []).append(k)
+    for (_, _, total), keys in groups.items():
+        total = Decimal(total)
+        rows = [r for k in keys for r in emitted[k]]
+
+        def amount(r):
+            vals = [r['v%d' % i] for i in range(1, MAX_V + 1) if r['v%d' % i] != '']
+            if not vals or '[percent]' in r['column_meaning'].split(' | ')[len(vals) - 1]:
+                return None
+            return Decimal(vals[-1])
+        # the printed total itself is not an item, whatever its label reads as (`OTAL | BUDGET
+        # VOTED`, 1992 p47: the T lost at the margin)
+        items = [r for r in rows if r['kind'] != 'total' and not TOTAL_LABEL.search(r['label'])
+                 and amount(r) is not None and amount(r) != total]
+        tot_rows = [r for r in rows if amount(r) == total]
+        s = sum((amount(r) for r in items), Decimal(0))
+        tie = s == total
+        # A TOTAL PRINTED IN WHOLE DOLLARS OVER ITEMS PRINTED WITH CENTS is the sum rounded
+        # (2002 p63: 13 authorizations sum 20,991,378.67, printed 20,991,379)
+        rounded = not tie and total == total.to_integral_value() and \
+            any(amount(r) != amount(r).to_integral_value() for r in items) and abs(s - total) < Decimal('0.5')
+        tie = tie or rounded
+        pages = sorted({int(r['page']) for r in rows})
+        note = ('LIST TOTAL: %d item rows on p%s sum to %s, %s the printed total %s (map stated_total)'
+                % (len(items), '-'.join(str(x) for x in (pages[0], pages[-1])) if len(pages) > 1 else pages[0],
+                   V.money(s), '=' if s == total else '~' if rounded else '!=', V.money(total))
+                + (' -- the total is the sum rounded to whole dollars' if rounded else '')
+                + ('' if tie else ' (off %s)' % V.money(total - s)))
+        for r in items + tot_rows:
+            if r['status'] == 'no check':
+                r['status'] = 'checked' if tie else 'check failed'
+                r['reconciliation'] = note + (' ; ' + r['reconciliation'] if r['reconciliation'] and
+                                              r['reconciliation'] != 'no total printed' else '')
+            else:
+                r['reconciliation'] = (r['reconciliation'] + ' ; ' if r['reconciliation'] else '') + note
+
+
+def category_blocks(rows):
+    """THE ASSESSORS' TAX BILL BREAKDOWN (1995 pp47-48, 1996 pp45-46) prints each CATEGORY above
+    its lines (`Town Administrative 561,672`, then 19 lines), and the categories sum to `TOTAL
+    COST OF TOWN SERVICES`. The column checks read the categories as items and failed every row
+    on figures that tie, so the map turns them off (`checks=none`); this is the identity the page
+    states instead. Walking down: a category's lines are summed until they equal it, and the
+    next row is the next category. Every row is `checked` only if EVERY block closes and the
+    categories sum to the printed total; otherwise nothing is claimed (our grouping, not the
+    town's arithmetic, would be what failed) and the rows stay `no check`, with the note."""
+    body = [r for r in rows if r['kind'] != 'total' and r['v1'] != '']
+    totals = [r for r in rows if r['kind'] == 'total' and r['v1'] != '']
+    if not body or len(totals) != 1:
+        return
+    blocks, i, ok = [], 0, True
+    while i < len(body):
+        cat, s, j = body[i], Decimal(0), i + 1
+        while j < len(body) and s < Decimal(cat['v1']):
+            s += Decimal(body[j]['v1'])
+            j += 1
+        if s != Decimal(cat['v1']) or j == i + 1:
+            ok = False
+            break
+        blocks.append((cat, j - i - 1))
+        i = j
+    cats = sum((Decimal(c['v1']) for c, _ in blocks), Decimal(0))
+    ok = ok and cats == Decimal(totals[0]['v1'])
+    note = ('CATEGORY BLOCKS: %s; the %d categories sum to %s, %s the printed %s'
+            % (', '.join('%s = its %d lines' % (c['label'][:30], n) for c, n in blocks), len(blocks), V.money(cats),
+               '=' if ok else '!=', V.money(Decimal(totals[0]['v1']))) if ok else
+            'CATEGORY BLOCKS: the walk down the page did not close every category on the lines below it '
+            '(stopped after %d), so nothing is claimed' % len(blocks))
+    for r in rows:
+        if ok and r['status'] == 'no check':
+            r['status'] = 'checked'
+        r['reconciliation'] = note + (' ; ' + r['reconciliation'] if r['reconciliation'] and
+                                      r['reconciliation'] != 'no total printed' else '')
+
+
 def coverage(rows, lines, witness, m_rows):
     """A WAGE LIST PRINTS NO TOTAL, so it is graded the way FY2011-FY2025's wage pages are
     (map_annual_report_pages.PROOF, `gross-wages`): every money figure the page prints is
@@ -902,12 +1220,29 @@ def coverage(rows, lines, witness, m_rows):
     by = collections.defaultdict(list)
     for r in rows:
         by[int(r['page'])].append(r)
-    stated = [Decimal(m['stated_total']) for m in m_rows
-              if m.get('dataset') == 'report-gross-wages' and m.get('stated_total')]
+    # ONE PRINTED TOTAL PER LIST. 1996-2000 print a town list and a school list, each with its own
+    # total and no combined one, so a total closes the run of wage tables from the one after the
+    # previous total through the table that carries it -- never every wage row of the edition
+    runs, cur = [], []
+    for m in m_rows:
+        if m.get('dataset') != 'report-gross-wages':
+            continue
+        cur.append((int(m['page']), int(m['table'])))
+        if m.get('stated_total'):
+            runs.append((set(cur), Decimal(m['stated_total'])))
+            cur = []
     for p, rs in by.items():
         printed, unread = collections.Counter(), 0
         for l in lines.get(p, []):
             t = V.repair(l['text'].strip())[0]       # the line read through the same marks as the cell
+            if V.parse(t)[0] is None:
+                t = (calendar_repair(t) or (None, t))[1]
+            tail = TRAILING_MONEY.search(t) if not M.MONEY.match(t) and re.search(r'[A-Za-z]{3}', t) \
+                and not V.TOTAL.search(t) else None
+            if tail:
+                # A FIGURE SHARING A LINE WITH ITS LABEL (`BUILDING INSPE $ 40,996.26`, 1996 p95) is
+                # still a figure the page prints
+                t = tail.group(1).strip()
             if M.MONEY.match(t):
                 w = witness.get((p, t.replace(' ', '')))
                 if w and w[0] == 'undecided':
@@ -917,6 +1252,13 @@ def coverage(rows, lines, witness, m_rows):
                 if v is not None:
                     printed[v] += 1
         got = collections.Counter(Decimal(r['v1']) for r in rs if r['v1'])
+        for keys, total in runs:
+            # the list's own printed total, where it sits OUTSIDE the table (1996 p95 prints it on
+            # a line of its own, `1,925,089.92`, under TOTAL TOWN GROSS WAGES), is not a wage the
+            # rows missed; where a total row holds it, it is captured like any figure
+            if any(kp == p for kp, _ in keys) and printed.get(total, 0) > got.get(total, 0):
+                printed[total] -= 1
+        printed += collections.Counter()
         named = all(r['label'] for r in rs if r['v1'])
         ok = got == printed and named
         missing = sum((printed - got).values())
@@ -932,20 +1274,39 @@ def coverage(rows, lines, witness, m_rows):
                 (' (%d figure(s) whose first glyph is undecided are counted out of both sides)' % unread if unread else '') + \
                 (r['reconciliation'][r['reconciliation'].index(' ; read through:'):]
                  if ' ; read through:' in r['reconciliation'] else '')
-    if stated and rows:
-        emp = [r for r in rows if r['kind'] != 'total' and r['v1']]
+    def tkey(r):
+        return int(r['page']), int(re.match(r't(\d+)', r['line_no']).group(1))
+    for keys, total in runs:
+        mine = [r for r in rows if tkey(r) in keys]
+        if not mine:
+            continue
+        emp = [r for r in mine if r['kind'] != 'total' and r['v1']]
         s = sum((Decimal(r['v1']) for r in emp), Decimal(0))
-        amb = sum(1 for r in rows if r['kind'] != 'total' and not r['v1'])
-        tie = s == stated[-1]
+        amb = sum(1 for r in mine if r['kind'] != 'total' and not r['v1'])
+        tie = s == total
         note = (' ; GRAND TOTAL: %d employee rows sum to %s, %s the printed %s%s'
-                % (len(emp), V.money(s), '=' if tie else '!=', V.money(stated[-1]),
-                   '' if tie else ' (short %s%s)' % (V.money(stated[-1] - s),
+                % (len(emp), V.money(s), '=' if tie else '!=', V.money(total),
+                   '' if tie else ' (short %s%s)' % (V.money(total - s),
                                                      ', with %d row(s) holding no reading' % amb if amb else '')))
-        for r in rows:
+        for r in mine:
             r['reconciliation'] += note
 
 
 # ---- 5. pages and the catalogue --------------------------------------------------------------
+
+# A page's subject when the map landed it in one of these (map_annual_report_pages.SUBJECTS).
+# Receipts have no subject of their own in that vocabulary, so they are left to the classifier.
+SUBJECT_OF_DATASET = {
+    'report-appropriations': 'appropriations', 'report-warrant-article-amounts': 'appropriations',
+    'report-tax-bill-breakdown': 'appropriations', 'capital-plans': 'capital',
+    'report-capital-projects': 'capital', 'report-trust-funds': 'trust-and-stabilization',
+    'report-debt': 'debt', 'special-revenue-funds': 'special-revenue', 'tax-collection': 'tax-collection',
+    'balance-sheet': 'balance-sheet', 'treasurers-cash': 'treasurers-cash',
+    'report-treasurers-cash-reconciliation': 'treasurers-cash', 'report-gross-wages': 'payroll',
+    'report-valuation': 'valuation', 'report-elections': 'elections', 'report-officials': 'officials',
+    'report-enrollment-mcas': 'enrollment', 'report-vital-records': 'vital-records',
+}
+
 
 def page_states(dataset_rows, ed, m_rows, lines, money_counts):
     """annual-report-pages rows, by the mapper's own PROOF registry and state order."""
@@ -978,6 +1339,13 @@ def page_states(dataset_rows, ed, m_rows, lines, money_counts):
         texts = [' '.join(l['text'].split()) for l in lines.get(p, [])]
         top = [t for t in texts[:10] if len(t) > 6 and not M.MONEY.match(t)]
         subj = M.subject_of(top, texts)
+        landed_subj = sorted({SUBJECT_OF_DATASET[m['dataset']] for m in m_rows
+                              if int(m['page']) == p and m.get('dataset') in SUBJECT_OF_DATASET})
+        if landed_subj and subj not in landed_subj:
+            # WHAT THE PAGE WAS READ INTO OUTRANKS A KEYWORD ON IT: 1998 p79, the omnibus budget,
+            # was `regional-school` for one line reading MONTY TECH; 1997 p82 `trust-and-
+            # stabilization` for an article's prose above the table
+            subj = landed_subj[0]
         pri, why = M.PRIORITY.get(subj, (99, ''))
         out.append({'fy': ed['fy'], 'page': p, 'subject': subj, 'priority': pri, 'state': state,
                     'read': 'yes' if hits else 'no', 'figures': money_counts.get(p, 0), 'figures_reversed': 0,
@@ -1044,12 +1412,22 @@ def build(edition, inventory_only=False):
     for p, ls in lines.items():
         TOP_LINES[p] = set(re.findall(r'[A-Za-z0-9&/\']+', ' '.join(l['text'] for l in ls[:4]).upper()))
     witness = apply_witness(d, tables)
-    checks, _ = cell_checks(stem, tables)
+    apply_calendar_repairs(tables)
+    checks, _ = cell_checks(stem, without_averages(m_rows, tables),
+                            validator_names(m_rows, tables, ed.get('validator_drop_titles') is True))
     apply_percents(tables)
     rep = page_integrity.check(page_integrity.OUT / f'{stem}.lines.tsv')
     folios = rep.folios
     dataset_rows = collections.defaultdict(list)
     notes, landed, prev_header = {}, collections.Counter(), {}
+    for m in m_rows:
+        # every table's own header first, so a `header_from` may point FORWARD (1997 p61 is
+        # printed before p62, whose header it continues)
+        if (int(m['page']), int(m['table'])) in tables:
+            _, _, n0, c0 = own_header(m, tables)
+            prev_header['%s/%s' % (m['page'], m['table'])] = (n0, c0)
+    receipts_pool = collections.OrderedDict()
+    emitted = {}
     for m in m_rows:
         if not m['dataset']:
             continue
@@ -1060,8 +1438,13 @@ def build(edition, inventory_only=False):
             rows = emit_cash_reconciliation(m, tables[k], ed)
         elif m['dataset'].startswith('report-'):
             rows = emit_generic(m, recs, ed)
+            emitted[k] = rows
         elif m['dataset'] == 'annual-report-receipts':
-            rows, notes[k] = emit_receipts(m, recs, ed)
+            # RECEIPTS SPLIT INTO SEVERAL TABLES ON ONE PAGE (1991, 1992: three printed columns,
+            # three Textract tables, one GRAND TOTAL in one of them) are pooled and checked
+            # against that total together, after every table of the page is read
+            receipts_pool.setdefault(int(m['page']), []).append((k, recs))
+            continue
         elif m['dataset'] == 'treasurers-cash':
             rows, notes[k], recon = emit_treasurers_cash(m, recs, ed, tables[k])
             dataset_rows['report-treasurers-cash-reconciliation.csv'] += recon
@@ -1080,6 +1463,17 @@ def build(edition, inventory_only=False):
             raise SystemExit('no emitter for dataset %r (p%s t%s)' % (m['dataset'], m['page'], m['table']))
         dataset_rows[target] += rows
         landed[k] += len(rows)
+    for p, parts in receipts_pool.items():
+        rows, note = emit_receipts(None, [r for _, recs in parts for r in recs], ed)
+        if len(parts) > 1:
+            note += ' (pooled across tables %s of p%d)' % (', '.join('%d' % k[1] for k, _ in parts), p)
+        notes[parts[0][0]] = note
+        dataset_rows['annual-report-receipts.csv'] += rows
+        for k, recs in parts:
+            landed[k] += sum(1 for r in recs if r['figs'] and not re.search(r'GRAND TOTAL', r['label'], re.I)
+                             and not re.search(r'SUMMARY OF RECEIPTS', r['group'], re.I))
+    stated_list_totals(m_rows, emitted)
+    category_blocks(dataset_rows.get('report-tax-bill-breakdown.csv', []))
     coverage(dataset_rows.get('report-gross-wages.csv', []), lines, witness, m_rows)
     # A DATASET A FOLDER NO LONGER PRODUCES (renamed, or its rows moved) must not linger in
     # rows/, where the merge would still fold it in

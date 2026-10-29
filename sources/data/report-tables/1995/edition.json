@@ -1,0 +1,29 @@
+{
+  "edition": "1995",
+  "fy": 1995,
+  "basis": "calendar",
+  "basis_source": "the label `1995 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `TOWN REPORT` / `1995`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4521-1995-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4521-1995-annual-town-report.pdf",
+  "label": "1995 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables ONLY on the 39 pages find_financial_pages.py picked (`--list 1995`); cells in build/textract/out/4521-1995-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "valuation, tax revenues, exemptions and abatements", "period": "fiscal 1995, with fiscal 1994 beside it", "cited": "p46: `Property Tax Revenues, Abatements, and Exemptions` / `Fiscal Year 1995`; columns `Fiscal 1994 | Fiscal 1995`"},
+    {"what": "breakdown of the average residential tax bill", "period": "fiscal year 1996, BUDGETED amounts (a budget, not an actual)", "cited": "p47: `Breakdown of the Average Residential Tax Bill` / `Fiscal Year 1996`; column `Budgeted Amount`"},
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 1995", "cited": "p49: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 1995`"},
+    {"what": "receipts", "period": "fiscal year 1995", "cited": "p50: `FISCAL 1995 RECEIPTS JUNE 30, 1995`"},
+    {"what": "general fund appropriations", "period": "fiscal year 1995", "cited": "p51: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 1995`"},
+    {"what": "highway department accounts", "period": "NOT PRINTED on the page; the figures are fiscal 1995's (Highway Labor `Appropriated $243,208`, p21, is `$243208.00` APPROPRIATED on the FISCAL YEAR 1995 schedule, p54 r50; Snow Removal `Expenditures $91,520`, p22, is `$91520.64` EXPENDED, p54 r73)", "cited": "p21: `HIGHWAY DEPARTMENT` / `LABOR` / `Appropriated` / `Expenditures` / `Balance`"},
+    {"what": "special revenue funds", "period": "June 30, 1995, balances carried to FY 96", "cited": "p57: `SPECIAL REVENUE FUNDS / JUNE 30, 1995`; columns `FORWARD | TOTAL REVENUE | TOTAL EXPENDED | BALANCE FY 96`"},
+    {"what": "trust funds", "period": "fiscal 1995, closing at June 30, 1995", "cited": "p61 column header `BEG BALANCE 6/30/94`; p62: `TOTAL TRUST & INVESTMENT ACCOUNT JUNE 30, 1995`"},
+    {"what": "treasurer's cash", "period": "fiscal 1995, closing at June 30, 1995", "cited": "p63: `RECONCILIATION of TREASURER'S CASH / BALANCE JUNE 30, 1994 / RECEIPTS 7/1/94 - 6/30/95 / DISBURSED 7/1/94 - 6/30/95 / GENERAL LEDGER BALANCE`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 1995", "cited": "p64: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30, 1995`"},
+    {"what": "bonded indebtedness by issue", "period": "through fiscal 1996", "cited": "p65 column headers: `DUE IN FISCAL 1996` / `TOTAL PAYMENTS THRU 1996`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 1995", "cited": "p65: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 1995`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED", "cited": "p66: heading `COLLECTION OF TAXES` only; the latest levy years in the TAX column are `1995 M.V.E.`, `1995 P.P.`, `1995 R.E.`"},
+    {"what": "FY1995 budget amendments", "period": "fiscal 1995 budget as voted May 14, 1994, amended February 7, 1995 (a budget, not an actual)", "cited": "p74: `EXCERPTS FROM SPECIAL TOWN MEETING / FEBRUARY 7, 1995` ... ARTICLE 1 `...amend the amounts voted for the Town's Budget, under Article 6 of the May 14, 1994 Annual Town Meeting`; columns `Additional | May 14 Vote | New Appropriation`"},
+    {"what": "omnibus budget", "period": "fiscal year 1996, as VOTED (a budget, not an actual)", "cited": "p76: ARTICLE 5 `...charges and expenses of the Town for Fiscal Year 1996 ... VOTED UNANIMOUSLY as follows`; p77 `TOTAL BUDGET VOTED $ 11,369,011`"},
+    {"what": "gross wages", "period": "1995, the page does not say calendar or fiscal", "cited": "p84: `LUNENBURG TOWN EMPLOYEES / GROSS WAGES 1995 / Including overtime`; p86: `LUNENBURG SCHOOL DEPARTMENT / EMPLOYEE GROSS WAGES 1995`"},
+    {"what": "highway vehicles and equipment", "period": "as of March 1996", "cited": "p22: `HIGHWAY DEPARTMENT VEHICLESIEQUIPMENT AS OF MARCH 1996`"}
+  ]
+}

@@ -24,7 +24,7 @@ which the reader keeps OUT of `checked`. The same comparison is run on the KNOWN
 negative control, and the run fails if any real digit is called a `$` -- so this witness has
 the power to fail, which the line output never had.
 
-WHICH CELLS. On a WAGE page (a map row of family `gross-wages`), a whole-line money figure with
+WHICH CELLS. On a WAGE page (a map row of family `gross-wages*`), a whole-line money figure with
 no `$` whose first character is a glyph Textract confuses with `$` (CONFUSABLE), where most of
 the page's money lines DO print `$`. A page that prints no `$` at all (2005 p100, half of
 2008's payroll) is not suspect: there the digit is simply the first digit. Wage pages only,
@@ -124,7 +124,9 @@ def build(edition):
     with open(LINES.format(stem=ed['stem']), newline='') as fh:
         lines = list(csv.DictReader(fh, delimiter='\t'))
     with open(os.path.join(d, 'map.csv'), newline='', encoding='utf-8') as fh:
-        wage_pages = {int(m['page']) for m in csv.DictReader(fh) if m['family'] == 'gross-wages'}
+        # every wage list, whatever its family: 1995-2000 print a town list and a school list
+        # (`gross-wages-town`, `gross-wages-school`; integration pass of 29 October 2026)
+        wage_pages = {int(m['page']) for m in csv.DictReader(fh) if m['family'].startswith('gross-wages')}
     pages = suspects(lines, wage_pages)
     if not pages:
         return [], 'no wage page has a suspect cell'

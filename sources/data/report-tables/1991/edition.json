@@ -1,0 +1,24 @@
+{
+  "edition": "1991",
+  "fy": 1991,
+  "basis": "calendar",
+  "basis_source": "the label `1991 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `LUNENBURG / ANNUAL / TOWN REPORT`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4490-1991-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4490-1991-annual-town-report.pdf",
+  "label": "1991 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4490-1991-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 1991", "cited": "p23: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 1991`"},
+    {"what": "receipts", "period": "fiscal year 1991", "cited": "p24: `FISCAL 1991 RECEIPTS JUNE 30, 1991`"},
+    {"what": "general fund appropriations", "period": "NOT PRINTED as a year; the balance-forward column is headed `FY 92`, so the schedule closes fiscal 1991", "cited": "p25: `TOWN OF LUNENBURG / GENERAL FUND APPROPRIATIONS / SUMMARY AND CLASSIFICATION OF ACCOUNTS`; column header `BALANCE FORWARD FY 92` (p25-p29)"},
+    {"what": "treasurer's cash", "period": "fiscal year 1991, opening at June 30, 1990", "cited": "p31: `Reconciliation of Treasurer's Cash / FISCAL YEAR 1991 / BALANCE JUNE 30, 1990`"},
+    {"what": "bonded indebtedness by issue", "period": "through fiscal 1992", "cited": "p32 column headers: `DUE IN FISCAL 1992` / `TOTAL PAYMENTS THRU 1992`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 1991", "cited": "p33: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30, 1991`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED", "cited": "p35: heading `Collection of Taxes` only; the latest levy years in the TAX column are `1991 M.V.E.`, `1991 P.P.`, `1991 R.E.`"},
+    {"what": "trust and investment accounts", "period": "fiscal 1991, closing at June 30, 1991", "cited": "p36: `Trust & Investment Accounts`, columns `PRIOR YEAR BALANCE` ... `CURRENT BALANCE`; p39: `BALANCE JUNE 30, 1991` ... `GRAND TOTAL TRUST $340,477.95`"},
+    {"what": "omnibus budget", "period": "fiscal year 1992, as VOTED (a budget, not an actual)", "cited": "p45: `EXCERPTS FROM TOWN MEETING WARRANTS MAY 11, 1991`; p46 Article 6: `...expenses of the Town for Fiscal Year 1992 ... The budget line items were discussed and voted as follows`; p47 `TOTAL BUDGET VOTED`"},
+    {"what": "omnibus budget amendments", "period": "fiscal year 1992, as amended at the Special Town Meeting of September 24, 1991", "cited": "p51: `EXCERPTS FROM SPECIAL TOWN MEETING SEPTEMBER 24, 1991`; p52 Article 4: `VOTED TO CHANGE LINE ITEMS VOTED AT THE ANNUAL TOWN MEETING AS FOLLOWS`"},
+    {"what": "elections", "period": "calendar 1991", "cited": "p53: `ANNUAL TOWN ELECTION Saturday May 4, 1991`"},
+    {"what": "treasurer's then-and-now comparison", "period": "thirty years before 1991, and 1991", "cited": "p30: `Thirty years ago, one of my predecessor ...`; columns `THEN | NOW`"}
+  ]
+}

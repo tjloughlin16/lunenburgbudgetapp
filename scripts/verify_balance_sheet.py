@@ -125,7 +125,9 @@ def check_edition(ed, rows, printed, special):
     fails = 0
     mine = [r for r in rows if r['edition'] == ed]
     tot = {(p['total_row'], p['fund']): p for p in printed if p['edition'] == ed}
-    pages = sorted({r['page_printed'] for r in mine}, key=int)
+    # 1991 and 1992 print no page numbers, so their page_printed is blank: name the PDF page.
+    pages = sorted({r['page_printed'] or 'pdf p%s' % r['page_pdf'] for r in mine},
+                   key=lambda p: int(p.split('p')[-1]))
     print(f'\n{ed} — {len(mine)} figures, printed page{"s" if len(pages) > 1 else ""} '
           f'{", ".join(pages)}')
 

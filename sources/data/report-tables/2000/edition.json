@@ -1,0 +1,87 @@
+{
+  "edition": "2000",
+  "fy": 2000,
+  "basis": "calendar",
+  "basis_source": "the label `2000 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION (p39: `during calendar year 2000`; p97 `DEATHS - 2000`), whose financial statements are for a fiscal year -- see periods",
+  "stem": "4526-2000-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4526-2000-annual-town-report.pdf",
+  "label": "2000 Annual Town Report",
+  "read_by": "AWS Textract: TABLES ONLY on the 51 pages scripts/find_financial_pages.py --list 2000 picked (cells on 39 of them; the other 12 returned no table), TEXT on every page; cells in build/textract/out/4526-2000-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "valuation",
+      "period": "fiscal 2000",
+      "cited": "p66: `Assessments and Revenues by Major Property Class (FY2000)`"
+    },
+    {
+      "what": "combined balance sheet",
+      "period": "fiscal year ended June 30, 2000",
+      "cited": "p67: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 2000`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal year 2000",
+      "cited": "p68: `FY 2000 RECEIPTS JUNE 30, 2000`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "fiscal year 2000",
+      "cited": "p70: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2000`; legend p76 `fwd . forward from FY 1999`"
+    },
+    {
+      "what": "special revenue funds",
+      "period": "fiscal year ending June 30, 2000",
+      "cited": "p78: `SPECIAL REVENUE FUNDS / JUNE 30, 2000`; columns `FORWARD 7/1/99` and `BALANCE FWD TO FY'01`"
+    },
+    {
+      "what": "capital project funds",
+      "period": "fiscal year 2000",
+      "cited": "p82: `CAPITAL PROJECT FUND FY 00`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 2001",
+      "cited": "p84 column headers: `DUE IN FISCAL 2001` / `TOTAL PAYMENTS THRU 2001`"
+    },
+    {
+      "what": "bonds authorized and unissued",
+      "period": "as of June 30, 2000",
+      "cited": "p84 text: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 2000`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "NOT PRINTED",
+      "cited": "p85: heading `COLLECTION OF TAXES` only; the latest levy years in the TAX column are `2000 R.E.`, `2000 P.P.`, `2000 M.V.E.`"
+    },
+    {
+      "what": "trust funds",
+      "period": "fiscal 2000, closing at June 30, 2000",
+      "cited": "p86 column header `BEG BALANCE 6/30/99`; p88: `TOTAL TRUST ACCTS JUNE 30, 2000`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of June 2000",
+      "cited": "p89: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 2000`"
+    },
+    {
+      "what": "treasurer's cash",
+      "period": "fiscal 2000, closing at June 30, 2000",
+      "cited": "p90: `RECONCILIATION of TREASURER'S CASH / BALANCE JUNE 30, 1999 / RECEIPTS 7/1/99 - 6/30/00 / DISBURSED 7/1/99 6/30/00 / GENERAL LEDGER BALANCE`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 2001, as APPROVED (a budget, not an actual)",
+      "cited": "p105: `ANNUAL TOWN MEETING May 13, 2000` ... `ARTICLE 4 ... for Fiscal Year 2001 ... VOTED to raise and appropriate the sum of $15,673,333.24, transfer ... the sum of $5,000. And appropriate from free cash the sum of $123,640.76`; column header `Approved 2001`; p106 `Total Omnibus $15,801,974.00`"
+    },
+    {
+      "what": "wages",
+      "period": "NOT PRINTED",
+      "cited": "p123: `TOWN OF LUNENBURG / PAYROLL REPORT / Name | Position | Department | Gross` (Textract reads `TOWN OF INENBURG / FAYROLL REPORT`), p126 `Total Town`; p127 `SCHOOL DEPARTMENT / Employee | Position | Degree | Step | Gross`. No year, calendar or fiscal, on p123-p134; the index (p3) lists `Wages 120-132`, no year"
+    },
+    {
+      "what": "police offences",
+      "period": "calendar 2000 (not printed beside the table)",
+      "cited": "p26: `The following is a break down of Crimes Against Persons and Property, which were investigated by this department`; the report is the calendar edition"
+    }
+  ]
+}

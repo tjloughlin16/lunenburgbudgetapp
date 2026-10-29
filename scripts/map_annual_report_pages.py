@@ -479,6 +479,17 @@ PROOF = {
     'special-education': ('status', VERDICT),
     'library-service-values': ('status', VERDICT),
     'warrant-article-amounts': ('status', VERDICT),
+    # and from the 1991-2000 editions (integration pass of 29 October 2026): the Assessors'
+    # exemptions by statutory clause (a rule, no money granted); the Treasurer's then-and-now
+    # workload comparison; the Assessors' breakdown of the average residential tax bill (a
+    # BUDGET by service, with their own percent and per-taxpayer arithmetic); the Highway
+    # Superintendent's own appropriated / expended / balance by account; and the highway
+    # vehicle inventory (no money)
+    'property-tax-exemptions': ('status', VERDICT),
+    'treasurers-then-and-now': ('status', VERDICT),
+    'tax-bill-breakdown': ('status', VERDICT),
+    'highway-accounts': ('status', VERDICT),
+    'vehicle-inventory': ('status', VERDICT),
     'peg-access-fund': ('status', VERDICT),
     'special-revenue-funds': ('status', VERDICT),
     'valuation-by-class': ('status', VERDICT),

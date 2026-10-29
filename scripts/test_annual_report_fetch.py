@@ -132,7 +132,7 @@ class Stand:
         F.ROOT, A.SRC, A.MANIFEST = SANDBOX, self.src, self.manifest
         F.discover = lambda: list(self.listing)
         F.get = self.get
-        F.extract = lambda path, out: 'test: not read'
+        F.extract = lambda path, out, ocr=True: 'test: not read'
         F.ingest.stage = self.stage
         F.ingest.secure = self.secure
         sys.argv = ['fetch_town_docs.py']
