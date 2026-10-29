@@ -282,6 +282,87 @@ def without_averages(m_rows, tables):
     return out
 
 
+def mark_unlabeled_subtotals(m_rows, tables):
+    """THE ACCOUNTANT SCHEDULE PRINTS A DEPARTMENT'S SUBTOTAL WITH NO LABEL (`edition.json`:
+    `"unlabeled_subtotals": true`, a per-edition opt-in; nothing else reads it). The validator
+    already reads an unlabeled row as a subtotal when every non-zero figure closes on TWO or more
+    entries, so a department printing ONE detail line and then the same amounts again was summed
+    into the department group above it, and the group's GRAND TOTAL failed by the subtotals.
+
+    A row with no label counts as a subtotal here only when the non-zero figures in the columns
+    that have detail lines above it EQUAL, to the cent as printed, the sum of those lines since the
+    last total (all of them, or at least two and a majority -- see the comment at the test). Nothing is adjusted: the row is given the label `Subtotal (unlabeled ...)` in the
+    copy the validator reads, and the emitted rows are untouched. A row that misses in any column
+    (a misread cell) stays a detail line and the page stays unproven."""
+    out = dict(tables)
+    stacks = {}
+    for m in m_rows:
+        if m.get('dataset') != 'report-appropriations':
+            continue
+        k = (int(m['page']), int(m['table']))
+        if k not in tables:
+            continue
+        rows = tables[k]
+        head, body = V.split_header(rows)
+        figs_cols = V.figure_cols(body)
+        # the validator starts a new run wherever the printed column names change, which a page
+        # break often does; a department's lines are only added up within ONE table, so a
+        # subtotal whose detail sits on the page before is left to the validator as it was
+        stacks = {}
+        new_rows, hid = [], {id(r) for r in head}
+        for r in rows:
+            if id(r) in hid:
+                new_rows.append(r)
+                continue
+            label = r.label(figs_cols)
+            figs = {c: x for c, x in r.cells.items() if c in figs_cols and x.value is not None}
+            if not figs:
+                new_rows.append(r)
+                continue
+            if V.TOTAL.search(label):
+                stacks = {}
+                new_rows.append(r)
+                continue
+            live = {c: x for c, x in figs.items() if x.value != 0}
+            above = {c: x for c, x in live.items() if stacks.get(c)}
+            # WHERE THE SUBTOTAL'S BLOCK STARTS, per column: the longest run of lines directly
+            # above that sums to the printed figure, to the cent (what the validator does too --
+            # a carried-forward line printed with no subtotal of its own sits above the block and
+            # is not part of it: 2009 p49 `Computer Training 13/95 fwd`). A column with nothing
+            # printed above it (a BALANCE printed on the subtotal alone) states no sum to test and
+            # is left out.
+            start = {}
+            for c, x in above.items():
+                run = Decimal(0)
+                for i in range(len(stacks[c]) - 1, -1, -1):
+                    run += stacks[c][i][1]
+                    if run == x.value:
+                        start[c] = stacks[c][i][0]
+            # The row is a subtotal when the columns that have lines above it TIE: every one of
+            # them, or at least two and more than half, and all on the SAME first line (a lone
+            # tying column beside live columns it cannot test is not enough: the validator
+            # locates a total's block only where two columns agree; 1995 p56 prints the lines
+            # under one column and the subtotal in three). A column that does NOT tie on such a
+            # row is still reported `check failed` against the lines above it: one misread cell
+            # then fails its own department, instead of leaving an unrecognised subtotal to be
+            # summed twice into every GRAND TOTAL that follows it on the page run.
+            first = collections.Counter(start.values()).most_common(1)
+            ties = [c for c in start if first and start[c] == first[0][0]]
+            if (not label and ties and (len(ties) == len(above) or (len(ties) >= 2 and len(ties) * 2 > len(above)))
+                    and (len(ties) >= 2 or len(above) == len(live))):
+                lab = min(c for c in range(0, 200) if c not in r.cells or (c not in figs_cols and not r.cells[c].text.strip()))
+                cells = dict(r.cells)
+                cells[lab] = V.Cell('Subtotal (unlabeled; ties to the detail lines above)', 100.0)
+                new_rows.append(V.Row(r.page, r.row, cells, r.table))
+                stacks = {c: [e for e in v if e[0] < first[0][0]] for c, v in stacks.items()}
+                continue
+            for c, x in live.items():
+                stacks.setdefault(c, []).append((r.row, x.value))
+            new_rows.append(r)
+        out[k] = new_rows
+    return out
+
+
 def cell_checks(stem, tables=None, names_of=None):
     """{(ref, col): [(status, Check, Triage|None)]} from P6 layers 1 and 2, on the cells as
     this edition reads them (the glyph witness applied)."""
@@ -1413,7 +1494,10 @@ def build(edition, inventory_only=False):
         TOP_LINES[p] = set(re.findall(r'[A-Za-z0-9&/\']+', ' '.join(l['text'] for l in ls[:4]).upper()))
     witness = apply_witness(d, tables)
     apply_calendar_repairs(tables)
-    checks, _ = cell_checks(stem, without_averages(m_rows, tables),
+    vt = without_averages(m_rows, tables)
+    if ed.get('unlabeled_subtotals') is True:
+        vt = mark_unlabeled_subtotals(m_rows, vt)
+    checks, _ = cell_checks(stem, vt,
                             validator_names(m_rows, tables, ed.get('validator_drop_titles') is True))
     apply_percents(tables)
     rep = page_integrity.check(page_integrity.OUT / f'{stem}.lines.tsv')

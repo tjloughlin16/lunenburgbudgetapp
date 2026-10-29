@@ -68,7 +68,7 @@ brief; the parent verifies and commits. Progress is recorded here after each uni
 
 | unit | state | proven / unproven / refused after |
 |---|---|---|
-| 1 appropriations | not started | |
+| 1 appropriations | done 29 Oct: opt-in `unlabeled_subtotals` (1997-2010; 1991-1996 moved nothing). 514 rows -> checked; ZERO pages moved -- 96 still fail on misreads, cross-page departments, list totals | 412 / 189 / 4 |
 | 2 debt | not started | |
 | 3 trust funds | not started | |
 | 4 the rest | not started | |
