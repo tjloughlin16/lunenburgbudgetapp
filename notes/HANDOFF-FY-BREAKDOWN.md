@@ -68,7 +68,19 @@ older `school-budget-against-actual` and `line-level-misses` topics merge into i
 FY2018-FY2022 transfers and the flags. Measured against the journal: votes equal on every line
 (269/269 FY2023, 265/265 FY2024); TRANSFERS differ on 12 and 15 lines (workbook mostly $0 where the
 journal has a transfer). The agent reported "every line" equal -- that was wrong for transfers.
-**Next: item 4 below (the year's signatures), unless TJ takes the workbook decision first.**
+**TJ DECIDED, 29 Oct (late) -- NOT YET DONE, do these next:**
+1. SWITCH: /budget-vs-actual (tab `variance`, `BudgetVsActual.tsx`, aliases routes.ts ~l.592) opens
+   /school-all-funds/budget-against-actual; `budget-vs-actual` into sources/analyses/UNLISTED.
+   `_redirects` is ignored by Cloudflare -- do it in the app routing.
+2. FY2018-FY2022 from gl-history.csv (FinCom workbook): YES, use it for transfers and the flags,
+   labelled (its transfers miss 12/269 and 15/265 lines against the journal in FY2023/FY2024).
+3. MERGE the older topics `school-budget-against-actual` and `line-level-misses` into the new
+   report if similar (TOPIC_MERGED in routes.ts).
+4. RESTRUCTURE, proposed and TJ leaning yes ("showing the misses per FY seems to be a good place
+   ... on the FY breakdown page"): per-year flags move to the FY breakdown (block + every-line
+   table filter); the report drops its year picker for a line x year grid FY2018-FY2026 linking
+   each FY2023+ column to that year's breakdown. Confirm with TJ before building.
+Then item 4 below (the year's signatures).
 
 **QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
 "What it connects to" (`fy28/src/components/blocks/custom/fy-ego-web.tsx`) draws the chart and then
