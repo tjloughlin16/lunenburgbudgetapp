@@ -1,0 +1,25 @@
+{
+  "edition": "2010",
+  "fy": 2010,
+  "basis": "calendar",
+  "basis_source": "the label `2010 Annual Town Report` (sources/town-annual-reports/index.csv) and report_year.report_edition(); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4518-2010-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4518-2010-annual-town-report.pdf",
+  "label": "2010 Annual Town Report",
+  "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4518-2010-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2010", "cited": "p55: `FOR THE YEAR ENDED JUNE 30, 2010`"},
+    {"what": "general fund appropriations", "period": "fiscal year 2010", "cited": "p58: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2010`"},
+    {"what": "special revenue funds", "period": "fiscal year ending June 30, 2010", "cited": "p64: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/10`"},
+    {"what": "capital project funds", "period": "fiscal year 2010", "cited": "p67: `CAPITAL PROJECT FUNDS FY 2010`"},
+    {"what": "treasurer's cash", "period": "as of June 30, 2010", "cited": "p68: `TREASURER'S CASH / as of June 30, 2010`"},
+    {"what": "trust funds", "period": "fiscal year 2010", "cited": "p69: column headers `BEGINNING BALANCE PRINC. FY 10` ... `ENDING MARKET VALUE FY 2010`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 2010", "cited": "text p72: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2010`"},
+    {"what": "collection of taxes", "period": "fiscal year 2010", "cited": "p74: `FY2010 COLLECTION OF TAXES`"},
+    {"what": "omnibus budget", "period": "fiscal year 2011, as VOTED (a budget, not an actual)", "cited": "p88: `FY 2011 Omnibus Budget` / `VOTED`"},
+    {"what": "salary schedule", "period": "the 2011 salary schedule, adopted under Article 5", "cited": "p85 `ARTICLE 5 ... Schedule A: Salary Schedule`; p86 `mapped to the 2011 Salary Schedule`"},
+    {"what": "wages", "period": "calendar 2010", "cited": "p94: `CALENDAR 2010 WAGES`"},
+    {"what": "elections", "period": "calendar 2010", "cited": "p75: `SPECIAL STATE ELECTION - JANUARY 19, 2010`"},
+    {"what": "valuation", "period": "fiscal 2010", "cited": "text p13: `Fiscal 2010 Assessments and Revenues by Major Property Class`"}
+  ]
+}

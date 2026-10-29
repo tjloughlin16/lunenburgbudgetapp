@@ -41,6 +41,7 @@ import json
 
 import db_freshness
 import io
+import merge_report_tables
 import os
 import re
 import sqlite3
@@ -462,6 +463,22 @@ PROOF = {
     # than in a sentence about how careful somebody was. A read by eye is a READING like any
     # other (rule 13a); what proves it is the arithmetic, and that is what this records.
     'pages-read': ('status', VERDICT),
+    # NEW in the calendar editions, read by read_report_tables.py, the report_* furniture:
+    # the Inspector of Weights & Measures' device counts and fees (2010 report pp24-25), and
+    # Schedule A's Classification Plan of class titles, point values and grades (p86)
+    'weights-measures': ('status', VERDICT),
+    'classification-plan': ('status', VERDICT),
+    # and from the 2001-2009 editions, the same furniture, unified by the integration pass of
+    # 28 October 2026 (sources/data/report-tables/README.md, "One name per quantity"): the
+    # Treasurer's cash roll-forward, checked down the page (`checked` only when the chain
+    # closes on the general ledger balance); fee schedules voted by town meeting; the Special
+    # Services statistics tables; the library's own estimate of its services' value; and the
+    # amounts printed inside a warrant article (2001's Master Capital Facilities Plan)
+    'treasurers-cash-reconciliation': ('status', VERDICT),
+    'fee-schedule': ('status', VERDICT),
+    'special-education': ('status', VERDICT),
+    'library-service-values': ('status', VERDICT),
+    'warrant-article-amounts': ('status', VERDICT),
     'peg-access-fund': ('status', VERDICT),
     'special-revenue-funds': ('status', VERDICT),
     'valuation-by-class': ('status', VERDICT),
@@ -971,7 +988,10 @@ def main():
     wr = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
     wr.writeheader()
     wr.writerows(rows)
-    text = buf.getvalue()
+    # THE CALENDAR EDITIONS (1959-2010, Textract) are not in this map's OCR glob: each one's
+    # pages come from its own folder under sources/data/report-tables/, appended after these
+    # rows. See merge_report_tables.py.
+    text = merge_report_tables.with_editions(OUT, buf.getvalue())
 
     # A DATASET MISSING FROM `PROOF` IS A DEFECT, NOT AN UNPROVEN PAGE. A new extractor
     # whose verdict column nothing knows about would put its pages in UNPROVEN and read as

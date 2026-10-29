@@ -1,0 +1,31 @@
+{
+  "edition": "2002",
+  "fy": 2002,
+  "basis": "calendar",
+  "basis_source": "the label `2002 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover, p1: `LUNENBURG / TOWNREPORT / 2002`; a calendar EDITION, whose financial statements are for a fiscal year -- see periods. NOTE several tables in this edition run one year AHEAD of the books: the omnibus budget is FY2003 and the bonded-indebtedness balances are after FY2003 payments",
+  "stem": "4528-2002-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4528-2002-annual-town-report.pdf",
+  "label": "2002 Annual Town Report",
+  "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4528-2002-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "valuation", "period": "fiscal 2002", "cited": "p45: `Fiscal 2002 Assessments and Revenues by Major Property Class`"},
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2002", "cited": "p46: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 2002`"},
+    {"what": "receipts", "period": "fiscal 2002", "cited": "p47: `FY 2002 RECEIPTS JUNE 30, 2002`"},
+    {"what": "general fund appropriations", "period": "fiscal year 2002", "cited": "p49: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2002`"},
+    {"what": "special revenue funds", "period": "fiscal year 2002 (7/1/01 to June 30, 2002)", "cited": "p56: `SPECIAL REVENUE FUNDS / JUNE 30, 2002`; column heads `FORWARD 7/1/01` ... `BALANCE FWD TO FY'03`"},
+    {"what": "capital project funds", "period": "fiscal year 2002", "cited": "p60: `CAPITAL PROJECT FUND FY 02`"},
+    {"what": "treasurer's cash reconciliation", "period": "7/1/01 to 6/30/02, balances at June 30, 2001 and the general ledger balance at year end", "cited": "p62: `RECONCILIATION of TREASURER'S CASH / BALANCE JUNE 30, 2001 / RECEIPTS 7/1/01 - 6/30/02 ... DISBURSED 7/1/01 - 6/30/02 ... GENERAL LEDGER BALANCE`"},
+    {"what": "bonded indebtedness by issue", "period": "payments through fiscal 2003 -- the BALANCE column is after the FY2003 payment, one year past the books", "cited": "p63 column heads: `PAID PREVIOUS YEARS` | `DUE IN FISCAL 2003` | `TOTAL PAYMENTS THRU 2003` | `BALANCE`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 2002", "cited": "text p63: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 2002`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 2002", "cited": "p64: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2002`; p65 `... AS OF JUNE 30, 2002`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED on the page; levy years in the rows run to 2002 (`2002 M.V.E.`), so fiscal 2002 is our reading", "cited": "p66: heading `COLLECTION OF TAXES`, no year; row `2002 M.V.E.`"},
+    {"what": "trust funds", "period": "fiscal 2002 (6/30/01 to June 30, 2002)", "cited": "p67 column head `BEG BAL 6/30/01`; p69 `TOTAL TRUST ACCTS JUNE 30, 2002`"},
+    {"what": "omnibus budget", "period": "fiscal year 2003, as APPROVED at the May 2002 annual town meeting (a budget, not an actual)", "cited": "p76: `ARTICLE 3 ... the Town for Fiscal Year 2003`; column head `Approved FY 2003`"},
+    {"what": "budget amendments", "period": "fiscal year 2003, amended at the October 1, 2002 special town meeting", "cited": "p85: `SPECIAL TOWN MEETING WARRANT / October 1, 2002 ... to amend the amounts voted for the Town's Budget, under Article 3 of the May, 4 2002 Annual Town Meeting`"},
+    {"what": "payroll", "period": "calendar 2002", "cited": "p99: `PAYROLL REPORT / Gross represents calander year`; p107: `GRAND TOTAL GROSS WAGES FOR 2002`"},
+    {"what": "elections", "period": "calendar 2002", "cited": "p89 `ANNUAL TOWN ELECTION / SATURDAY MAY 18, 2002`; p91 `STATE PRIMARY / SEPTEMBER 17, 2002`; p96 `STATE ELECTION / NOVEMBER 5, 2002`"},
+    {"what": "enrollment", "period": "October 1, 2000, 2001 and 2002", "cited": "p38: `ENROLLMENT--OCTOBER 1, 2002`; column heads `10-01-00 | 10-01-01 | 10-01-02`"},
+    {"what": "MCAS", "period": "spring 2002", "cited": "text p36: `The fifth administration of the Massachusetts Comprehensive Assessment System (MCAS) took place in the spring of 2002`"},
+    {"what": "appointments", "period": "fiscal 2002", "cited": "p7: `FY'02 APPOINTMENT LIST`"}
+  ]
+}

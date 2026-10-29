@@ -35,6 +35,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 import validate_totals as V  # noqa: E402
 
 CLEAN = 95.0        # a cell read at this confidence or better counts as read cleanly
+GROUPING_SHARE = Decimal('0.10')   # a miss past this share of the printed total is rows, not a digit
 
 
 @dataclass
@@ -196,7 +197,16 @@ def triage(check, run):
 
     if fixes:
         return Triage('misread', False, f'{len(fixes)} re-readings would close it', [f[:3] for f in fixes])
-    low = [c for ref, c in cells.items() if (ref in items or ref == check.ref) and c.confidence < CLEAN]
+    # A MISS THAT IS A LARGE SHARE OF THE TOTAL ITSELF IS WHOLE ROWS, NOT A DIGIT. No single
+    # digit change explains it (step 5 ran), so the block we summed is the wrong set of rows:
+    # a grouping failure of OURS, never a claim that the town's arithmetic is wrong.
+    # notes/HANDOFF-ANNUAL-REPORT-REVIEW.md: FY2011's debt schedules put 19 such misses in the
+    # register as printed_error suspects, every one on a page a person had proved.
+    printed = abs(Decimal(check.printed.replace(',', '')))
+    if printed and abs(diff) > printed * GROUPING_SHARE:
+        return Triage('grouping', False, f'the miss is {abs(diff) / printed:.0%} of the total itself: '
+                      'whole rows, not a digit -- the block summed is the wrong one', [])
+    low =[c for ref, c in cells.items() if (ref in items or ref == check.ref) and c.confidence < CLEAN]
     if check.unparsed or low:
         return Triage('cannot_tell', False, f'{len(low)} cells read below {CLEAN:.0f}% confidence'
                       + (f', {len(check.unparsed)} that did not parse' if check.unparsed else ''), [])

@@ -20,10 +20,61 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**3721 of 3721 lines accounted for** across 100 pages, 3751 entries, 15 years.
+**6237 of 6237 lines accounted for** across 151 pages, 5950 entries, 25 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|
+| 2001-p036-unknown.json | 2001 | central-office | 26 | 26 | 0 | 17 | 0 |
+| 2001-p040-unknown.json | 2001 | high | 54 | 54 | 0 | 71 | 0 |
+| 2001-p043-passios.json | 2001 | passios | 46 | 46 | 0 | 11 | 0 |
+| 2001-p044-passios.json | 2001 | passios | 39 | 39 | 0 | 63 | 0 |
+| 2001-p042-turkey-hill.json | 2001 | turkey-hill | 54 | 54 | 0 | 72 | 0 |
+| 2002-p035-central-office.json | 2002 | central-office | 51 | 51 | 0 | 14 | 0 |
+| 2002-p039-high.json | 2002 | high | 33 | 33 | 0 | 5 | 0 |
+| 2002-p043-unknown.json | 2002 | passios | 47 | 47 | 0 | 73 | 0 |
+| 2002-p041-turkey-hill.json | 2002 | turkey-hill | 54 | 54 | 0 | 44 | 0 |
+| 2002-p042-unknown.json | 2002 | turkey-hill | 51 | 51 | 0 | 26 | 0 |
+| 2003-p040-high.json | 2003 | high | 46 | 46 | 0 | 5 | 0 |
+| 2003-p041-unknown.json | 2003 | high | 53 | 53 | 0 | 69 | 0 |
+| 2003-p045-passios.json | 2003 | passios | 51 | 51 | 0 | 69 | 0 |
+| 2003-p043-unknown.json | 2003 | turkey-hill | 57 | 57 | 0 | 56 | 0 |
+| 2004-p038-central-office.json | 2004 | central-office | 46 | 46 | 0 | 13 | 0 |
+| 2004-p040-high.json | 2004 | high | 54 | 54 | 0 | 70 | 0 |
+| 2004-p046-passios.json | 2004 | passios | 54 | 54 | 0 | 90 | 0 |
+| 2004-p044-turkey-hill.json | 2004 | turkey-hill | 51 | 51 | 0 | 65 | 0 |
+| 2005-p036-unknown.json | 2005 | central-office | 37 | 37 | 0 | 14 | 0 |
+| 2005-p041-high.json | 2005 | high | 50 | 50 | 0 | 78 | 0 |
+| 2005-p044-passios.json | 2005 | passios | 38 | 38 | 0 | 0 | 0 |
+| 2005-p045-passios.json | 2005 | passios | 38 | 38 | 0 | 56 | 0 |
+| 2005-p046-primary.json | 2005 | primary | 47 | 47 | 0 | 0 | 0 |
+| 2005-p047-primary.json | 2005 | primary | 43 | 43 | 0 | 64 | 0 |
+| 2005-p043-turkey-hill.json | 2005 | turkey-hill | 46 | 46 | 0 | 58 | 0 |
+| 2006-p034-unknown.json | 2006 | central-office | 37 | 37 | 0 | 14 | 0 |
+| 2006-p038-unknown.json | 2006 | high | 56 | 56 | 0 | 77 | 0 |
+| 2006-p041-primary.json | 2006 | primary | 47 | 47 | 0 | 0 | 0 |
+| 2006-p042-primary.json | 2006 | primary | 47 | 47 | 0 | 65 | 0 |
+| 2007-p037-unknown.json | 2007 | central-office | 40 | 40 | 0 | 19 | 0 |
+| 2007-p042-high.json | 2007 | high | 53 | 53 | 0 | 83 | 0 |
+| 2007-p047-passios.json | 2007 | passios | 45 | 45 | 0 | 54 | 0 |
+| 2007-p048-primary.json | 2007 | primary | 46 | 46 | 0 | 0 | 0 |
+| 2007-p049-primary.json | 2007 | primary | 51 | 51 | 0 | 71 | 0 |
+| 2007-p045-turkey-hill.json | 2007 | turkey-hill | 40 | 40 | 0 | 54 | 0 |
+| 2008-p037-unknown.json | 2008 | central-office | 42 | 42 | 0 | 30 | 0 |
+| 2008-p055-high.json | 2008 | high | 52 | 52 | 0 | 83 | 0 |
+| 2008-p048-passios.json | 2008 | passios | 45 | 45 | 0 | 59 | 0 |
+| 2008-p045-primary.json | 2008 | primary | 48 | 48 | 0 | 62 | 0 |
+| 2009-p027-unknown.json | 2009 | central-office | 54 | 54 | 0 | 18 | 0 |
+| 2009-p039-high.json | 2009 | high | 60 | 60 | 0 | 61 | 0 |
+| 2009-p040-unknown.json | 2009 | high | 57 | 57 | 0 | 20 | 0 |
+| 2009-p034-passios.json | 2009 | passios | 71 | 71 | 0 | 57 | 0 |
+| 2009-p032-primary.json | 2009 | primary | 76 | 76 | 0 | 65 | 0 |
+| 2010-p032-unknown.json | 2010 | central-office | 48 | 48 | 0 | 16 | 0 |
+| 2010-p046-high.json | 2010 | high | 57 | 57 | 0 | 6 | 0 |
+| 2010-p047-unknown.json | 2010 | high | 50 | 50 | 0 | 70 | 0 |
+| 2010-p042-passios.json | 2010 | passios | 42 | 42 | 0 | 52 | 0 |
+| 2010-p038-passios.json | 2010 | primary | 56 | 56 | 0 | 38 | 0 |
+| 2010-p039-unknown.json | 2010 | primary | 66 | 66 | 0 | 25 | 0 |
+| 2010-p045-high.json | 2010 | turkey-hill | 64 | 64 | 0 | 8 | 0 |
 | FY2011-p032-unknown.json | 2011 | central-office | 31 | 31 | 0 | 22 | 0 |
 | FY2011-p043-high.json | 2011 | high | 40 | 40 | 0 | 0 | 0 |
 | FY2011-p044-high.json | 2011 | high | 37 | 37 | 0 | 10 | 0 |
@@ -132,7 +183,7 @@ claimed by the **right** line — a column read one row out of step accounts for
 every line perfectly and pairs every person with their neighbour. So every
 entry's name and role tokens are checked back against the printed line.
 
-**1 entries fail this check.** 28 more have a token on
+**1 entries fail this check.** 29 more have a token on
 an adjacent line, which is a title printed across a line break rather than an
 error — listed separately so the distinction rests on evidence.
 
@@ -148,25 +199,40 @@ that the taxonomy is wrong.
 
 | times | printed as |
 |---:|---|
-| 489 | `` |
-| 32 | `Dept. Liaison` |
+| 896 | `` |
+| 70 | `Teaching Assist.` |
+| 65 | `Dept. Liaison` |
+| 23 | `Parents` |
+| 19 | `COTA` |
+| 18 | `Member` |
 | 17 | `General workers` |
-| 14 | `COTA` |
+| 16 | `Manager` |
+| 15 | `Dept Liaison` |
+| 14 | `Chairperson` |
 | 13 | `Social Worker` |
-| 11 | `Parents` |
-| 9 | `Member` |
+| 10 | `(Pri.)` |
+| 10 | `AD` |
+| 9 | `Teaching Assistant` |
+| 9 | `Café` |
 | 9 | `Café Manager` |
+| 8 | `Achieve Assistant` |
+| 8 | `Vice-Chairperson` |
 | 8 | `7th` |
+| 7 | `Greenhouse Mgr.` |
+| 7 | `Business Manager` |
 | 7 | `Greenhouse Asst.` |
-| 7 | `AD` |
-| 6 | `Manager` |
-| 6 | `Dept Liaison` |
+| 6 | `Health` |
+| 6 | `Phys. Ed.` |
+| 6 | `Occup. Therap.` |
+| 6 | `TLC` |
 | 6 | `Phys. Therap` |
 | 6 | `Parents:` |
 | 6 | `Cook/Managers` |
-| 6 | `Café` |
-| 5 | `Chairperson` |
-| 5 | `Vice-Chairperson` |
+| 5 | `Clerk` |
+| 5 | `Coordinator` |
+| 5 | `Foreign Language` |
+| 5 | `School Committee Rep` |
+| 5 | `STEP` |
 | 5 | `Department Liaison` |
 | 5 | `School Psych.` |
 | 5 | `Grades 6 & 7` |
@@ -177,7 +243,11 @@ that the taxonomy is wrong.
 | 5 | `Occup Therap.` |
 | 5 | `(Tech) MS` |
 | 5 | `STEM` |
-| 4 | `Occup. Therap.` |
+| 4 | `Administrative Assistant` |
+| 4 | `Coordinator of Special Services` |
+| 4 | `Personnel Manager` |
+| 4 | `Dept. Lialson` |
+| 4 | `Special Services Coordinator` |
 | 4 | `Dean of Students` |
 | 4 | `Accounting/Data Reporting` |
 | 4 | `Lunenburg Primary School Café Manager` |
@@ -187,27 +257,8 @@ that the taxonomy is wrong.
 | 4 | `ID` |
 | 4 | `(LMS Social Worker)` |
 | 4 | `Café Employee` |
-| 3 | `Clerk` |
-| 3 | `Teaching Asst.` |
-| 3 | `Network Administrator` |
-| 3 | `Red` |
-| 3 | `1st Grade` |
-| 3 | `6th` |
-| 3 | `Wilson Reading` |
-| 3 | `202/White` |
-| 3 | `205/Red` |
-| 3 | `207/Red` |
-| 3 | `107/White` |
-| 3 | `102/Red` |
-| 3 | `Grades 7 & 8` |
-| 3 | `*` |
-| 3 | `Cafe` |
-| 2 | `School Committee Rep` |
-| 2 | `Teaching Assist.` |
-| 2 | `Coordinator` |
-| 2 | `Technician (part-time)` |
-| 2 | `Lunenburg High School Café Manager` |
-| 2 | `A` |
+| 3 | `Senior Groundsperson` |
+| 3 | `Greenhouse Manager` |
 
 ## Two things a count here must not be read as
 

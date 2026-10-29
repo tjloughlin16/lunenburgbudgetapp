@@ -1,0 +1,31 @@
+{
+  "edition": "2008",
+  "fy": 2008,
+  "basis": "calendar",
+  "basis_source": "the label `2008 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `TOWN REPORT` / `2008`); a calendar EDITION, whose financial statements are for fiscal 2008 -- see periods",
+  "stem": "4516-2008-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4516-2008-annual-town-report.pdf",
+  "label": "2008 Annual Town Report",
+  "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4516-2008-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "appointment list", "period": "fiscal 2008", "cited": "p7: `FY'2008 APPOINTMENT LIST`"},
+    {"what": "valuation", "period": "fiscal 2008", "cited": "p58: `Fiscal 2008 Assessments and Revenues by Major Property Class`"},
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2008", "cited": "p59: `FOR THE YEAR ENDED JUNE 30, 2008`"},
+    {"what": "receipts", "period": "fiscal 2008", "cited": "p60: `FY 2008 RECEIPTS - JUNE 2008`"},
+    {"what": "general fund revenue and expenditure shares (pie charts)", "period": "fiscal 2008", "cited": "p61: `GENERAL FUND REVENUES FY 08`; p69: `GENERAL FUND EXPENDITURES FY 08`"},
+    {"what": "general fund appropriations", "period": "fiscal year 2008", "cited": "p62: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2008`"},
+    {"what": "special revenue funds", "period": "fiscal year ending June 30, 2008", "cited": "p70: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/08`; columns `FORWARD 7/1/2007` ... `BALANCE FWD TO FY'09`"},
+    {"what": "capital project funds", "period": "fiscal 2008", "cited": "p75: `CAPITAL PROJECT FUNDS` / `FY 08`"},
+    {"what": "treasurer's cash", "period": "July 1, 2007 to June 30, 2008, and the balance at June 30, 2008", "cited": "p77: `RECONCILIATION OF TREASURER'S CASH` / `BALANCE JUNE 30, 2007` / `RECEIPTS 7/1/07 -6/30/08` / `GENERAL LEDGER BALANCE 6/30/08`"},
+    {"what": "bonded indebtedness by issue", "period": "fiscal 2008", "cited": "p78 column headers: `DUE IN FISCAL 2008` / `TOTAL PAYMENTS THRU 2008`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 2008", "cited": "text p78: `BONDS AUTHORIZED & UNISSUED AS OF JUNE 30,2008`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 2008", "cited": "text p79: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2008`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED", "cited": "text p81: `COLLECTIONS OF TAXES`, no year; the table's rows are levy years (`1990 MVE` ...)"},
+    {"what": "elections", "period": "calendar 2008", "cited": "p82: `PRESIDENTIAL PRIMARY ELECTION / TUESDAY FEBRUARY 5, 2008`; p85: `ANNUAL TOWN ELECTION / SATURDAY MAY 17, 2008`; p89: `STATE PRIMARY ELECTION / TUESDAY SEPTEMBER 16, 2008`; p87: `STATE ELECTION - NOVEMBER 4, 2008`"},
+    {"what": "vital records (counts)", "period": "calendar 2008", "cited": "text p86: `DURING 2008 THE TOWN CLERK RECORDED THE FOLLOWING: / BIRTHS - 82 DEATHS - 70 MARRIAGES - 38`"},
+    {"what": "enrollment", "period": "October 1, 2006, 2007 and 2008", "cited": "p39: `ENROLLMENT: OCTOBER 1, 2006 - OCTOBER 1, 2008`"},
+    {"what": "special education", "period": "Lunenburg 08/09 against state 06/07; Indicators 5 and 12 for 2007-08; Indicator 11 for 2005-06", "cited": "p41: `STATE DATA 06/07` / `LUNENBURG 08/09`; p42: `Indicator 5- ... (2007-08)`, `Indicator 11- Initial Evaluation Timelines` / `School Year reviewed 2005-06`, `Indicator 12 at Early Childhood Transition (2007-08)`"},
+    {"what": "MCAS (Turkey Hill)", "period": "spring 2008", "cited": "text p49: `M.C.A.S. Data Spring 2008`"},
+    {"what": "payroll (gross wages)", "period": "NOT PRINTED -- neither calendar nor fiscal", "cited": "p100-110 head `EMPLOYEE | DEPARTMENT | GROSS WAGES` with no year; index p4: `Payroll Report 98-108`"}
+  ]
+}

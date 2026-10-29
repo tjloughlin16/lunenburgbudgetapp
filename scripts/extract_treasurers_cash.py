@@ -45,6 +45,9 @@ import re
 import statistics
 import sys
 
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import merge_report_tables  # noqa: E402
+
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 OCR = os.path.join(ROOT, 'sources', 'town-budget', 'ocr')
 OUT = os.path.join(ROOT, 'sources', 'data', 'treasurers-cash.csv')
@@ -443,7 +446,8 @@ def main():
     wr = csv.DictWriter(buf, fieldnames=FIELDS, lineterminator='\n')
     wr.writeheader()
     wr.writerows(body)
-    text = buf.getvalue()
+    # the calendar editions' rows, from sources/data/report-tables/ (merge_report_tables.py)
+    text = merge_report_tables.with_editions(OUT, buf.getvalue())
 
     if a.check:
         cur = open(OUT, encoding='utf-8').read() if os.path.exists(OUT) else ''

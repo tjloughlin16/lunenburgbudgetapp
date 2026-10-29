@@ -353,6 +353,47 @@ SY2018 only. Every figure `dese_measure` also holds ties to it, or nothing is wr
 An AVERAGE is the scale times the seniority and credentials of whoever is employed; set it
 beside `teacher_salary_schedules`, never in place of it.
 
+## The calendar editions (1959-2010) in the `report_*` tables and their siblings
+
+From 28 October 2026 the older annual town reports are read from Textract, one edition at a time,
+into `sources/data/report-tables/<edition>/`, and `scripts/merge_report_tables.py` appends them to
+the same CSVs the FY2011-FY2025 reports fill. So the same tables now hold two kinds of edition:
+
+- `edition` is `FY2011`...`FY2025` for the fiscal editions and the bare printed year (`2010`) for a
+  calendar one. `fy` is the book's printed year in both. **A calendar book's statements may be for
+  a fiscal year** (2010's balance sheet is `FOR THE YEAR ENDED JUNE 30, 2010`) and its wages for the
+  calendar year (`CALENDAR 2010 WAGES`): the period of each table is quoted, with its page, in
+  that folder's `edition.json` and `map.csv`. Never compare a calendar wage list with a fiscal one.
+- Files without an `edition` column (`annual_report_receipts`, `tax_collection`, `salary_schedule`,
+  `treasurers_cash`) tell the two apart by `document`.
+- `report_appropriations` holds both the accountant's schedule (ACTUALS) and the omnibus budget as
+  VOTED (a BUDGET), told apart by `table_family` -- as FY2011 already did. Rule 1: split on it.
+- Seven tables are new with these editions, in the `report_*` furniture (generic columns:
+  `v1..v8` are ordinals named in `column_meaning`; split on `status`; see `table_semantics`).
+  One name per quantity, decided across the ten 2001-2010 editions on 28 October 2026
+  (`sources/data/report-tables/README.md`):
+
+  | table | what it is | grain | editions | do not |
+  |---|---|---|---|---|
+  | `report_weights_measures` | the Sealer's devices adjusted, sealed, condemned, and fees | one printed line | 2010 | |
+  | `report_classification_plan` | Schedule A: class title, point value, grade | one class | 2010 | |
+  | `report_treasurers_cash_reconciliation` | the Treasurer's cash ROLL-FORWARD: opening balance, receipts less investments transferred, disbursed less revenue cash invested, general ledger balance. `checked` = the chain closed DOWN the page | one printed line (family `cash-reconciliation`) | 2001-2008 | confuse it with `treasurers_cash`, the closing balances by account |
+  | `report_fee_schedule` | a fee rate set by town meeting vote: the Sealer's per device (2003), the Town Clerk's (2004) | one fee | 2003, 2004 | read a rate as money collected |
+  | `report_special_education` | the Special Services report's statistics: shares by disability type, state indicators; `table_family` names the table | one printed line | 2008, 2009 | sum a `[percent]` column with a count; treat it as DESE's own series (`dese_sped_indicator`) |
+  | `report_library_service_values` | the library's ESTIMATE of its services' value | one service | 2004 | call it spending |
+  | `report_warrant_article_amounts` | amounts inside a warrant article (2001 Article 8, PASSED OVER) | one project | 2001 | call it an appropriation |
+
+- `report_trust_funds` holds two layouts: the 2001-2005 BOOK (`table_family` `trust-funds-book`:
+  beginning balance, dividends, contributions, redemptions, book balance) and the 2006-2010
+  ending cash and market value (`trust-funds`). They print different quantities; never sum them.
+- A figure printed as a percent is `[percent]` in `column_meaning`. A row read through a repair
+  (`S` for `$`, a trailing `+`, the glyph witness on 2009's wages) says so in `reconciliation`
+  and counts it in `repaired_cells`; a wage whose first glyph could not be decided has no value
+  and is `check failed`, `AMBIGUOUS`.
+- `status` is `checked` only where an identity the page prints closed: a column total, or the
+  row's own identity across its printed columns. `reconciliation` says which, and by how much a
+  failed one is off.
+
 ## Adding a source
 
 1. Extract it to a CSV in `sources/data/` with a named `extract_*.py` that **reconciles to

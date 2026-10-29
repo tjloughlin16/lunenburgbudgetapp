@@ -35,6 +35,7 @@ rows are real; what is missing is the proof.
 import argparse
 import collections
 import csv
+import io
 import itertools
 import os
 import re
@@ -1880,11 +1881,15 @@ def main():
                'table_family', 'line_no', 'columns_as_printed'] + [f'v{i}' for i in range(1, 9)]
               + ['n_values', 'ruler_spanned', 'repaired_cells', 'unparsed_cells',
                  'column_meaning', 'status', 'reconciliation'])
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=fields, extrasaction='ignore')
+    w.writeheader()
+    for r in rows:
+        w.writerow({f: r.get(f, '') for f in fields})
+    # the calendar editions' rows, from sources/data/report-tables/ (merge_report_tables.py)
+    import merge_report_tables
     with open(out, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=fields, extrasaction='ignore')
-        w.writeheader()
-        for r in rows:
-            w.writerow({f: r.get(f, '') for f in fields})
+        fh.write(merge_report_tables.with_editions(out, buf.getvalue()))
 
     # PRINT THE DENOMINATOR. An edition that produced nothing prints nothing, and nothing
     # reads as "there was nothing there" -- which is how `monty_tech` came to hold one of

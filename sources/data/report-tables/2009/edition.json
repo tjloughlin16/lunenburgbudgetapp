@@ -1,0 +1,33 @@
+{
+  "edition": "2009",
+  "fy": 2009,
+  "basis": "calendar",
+  "basis_source": "the label `2009 Annual Town Report` (sources/town-annual-reports/index.csv) and report_year.report_edition(); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4517-2009-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4517-2009-annual-town-report.pdf",
+  "label": "2009 Annual Town Report",
+  "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4517-2009-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2009", "cited": "p46: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 2009`"},
+    {"what": "receipts", "period": "fiscal 2009, through June 2009", "cited": "p47: `FY 2009 RECEIPTS - JUNE 2009`"},
+    {"what": "general fund appropriations", "period": "fiscal year 2009", "cited": "p49: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2009`"},
+    {"what": "special revenue funds", "period": "fiscal year ending June 30, 2009", "cited": "p55: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/09`; column headers `FORWARD 7/1/2008` ... `BALANCE FWD TO FY'10`"},
+    {"what": "capital project funds", "period": "fiscal year 2009", "cited": "p60: `CAPITAL PROJECT FUNDS FY 09`"},
+    {"what": "treasurer's cash", "period": "as of June 30, 2009", "cited": "p61: `Treasurer's Cash / as of June 30, 2009`; `Total Cash per Treasurer 6/30/09`"},
+    {"what": "trust funds", "period": "fiscal year 2009", "cited": "p62: `TRUST FUNDS / FISCAL YEAR 2009 SUMMARY REPORT`; column `6/30/2009 MARKET VALUE`"},
+    {"what": "bonded indebtedness", "period": "as of June 30, 2009", "cited": "p64: `Bonded Indebtedness / as of June 30, 2009`; columns `DUE IN FISCAL 2009`, `TOTAL PAYMENTS THRU 2009`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 2009", "cited": "p64: `BONDS AUTHORIZED & UNISSUED AS OF JUNE 30, 2009`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 2009", "cited": "p65: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2009`"},
+    {"what": "collection of taxes", "period": "fiscal year 2009", "cited": "p67: `FY2009 COLLECTION OF TAXES`"},
+    {"what": "omnibus budget", "period": "fiscal year 2010, as VOTED (a budget, not an actual). THE PAGE DISAGREES WITH ITSELF: its title says FY 2009, its only figure column says VOTED FY 2010", "cited": "p73: title `FY 2009 Omnibus Budget`; column header `Line No. | Account | VOTED FY 2010`; voted at the Annual Town Meeting of May 2, 2009 (p72: `ANNUAL TOWN MEETING WARRANT MAY 2, 2009`)"},
+    {"what": "wages (payroll report)", "period": "NOT PRINTED. No heading on pages 84-89 names the year or whether it is calendar or fiscal; the index calls the section `Payroll Report` (p5). Not inferred -- see gaps.csv", "cited": "p84 top lines: `NAME | DEPT. | WAGES | NAME | DEPT. | WAGES`; p5 index: `Payroll Report 80 85`"},
+    {"what": "annual town election", "period": "May 16, 2009", "cited": "p68: `ANNUAL TOWN ELECTION / SATURDAY MAY 16, 2009`"},
+    {"what": "special state primary", "period": "December 1, 2009", "cited": "p70: `SPECIAL STATE PRIMARY ELECTION - DECEMBER 1, 2009`"},
+    {"what": "valuation", "period": "fiscal 2009", "cited": "text p13: `Fiscal 2009 Assessments and Revenues by Major Property Class`; p14: `Fiscal Year 2009 Abstract of Assessments`"},
+    {"what": "enrollment", "period": "October 1, 2007 to October 1, 2009", "cited": "text p28: `ENROLLMENT: OCTOBER 1, 2007 - OCTOBER 1, 2009`; column headers `10/01/07 | 10/01/08 | 10/01/09`"},
+    {"what": "special services: disability types", "period": "school year 2008-09", "cited": "p30: column headers `State Data 08/09 | LUNENBURG 08/09`"},
+    {"what": "special services: state indicators", "period": "2007-08", "cited": "p30: `Indicator 2 - Dropout Rate (2007-08)`; p31: `Indicator 12 - Early Childhood Transition (2007-08)`"},
+    {"what": "special services: out-of-district placements (prose, not a table)", "period": "the 2009/2010 school year", "cited": "p29-30: `nine students received services outside the district during the 2009/2010 school year`"},
+    {"what": "vital records counts (prose)", "period": "calendar 2009", "cited": "p69: `DURING 2009 THE TOWN CLERK RECORDED THE FOLLOWING: BIRTHS 81 DEATHS 64 MARRIAGES- 44`"}
+  ]
+}

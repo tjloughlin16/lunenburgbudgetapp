@@ -43,6 +43,10 @@ import csv
 import glob
 import os
 import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import report_year  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 DATA = os.path.join(ROOT, 'sources', 'data')
@@ -78,11 +82,12 @@ def documents():
                 local = r.get('local', '')
                 if 'annual-town-report' not in local:
                     continue
-                m = re.search(r'fy-?(\d{4})', local)
-                if not m:
+                # report_year.report_edition: `FY2011` for the fiscal editions, the bare printed
+                # year (`2010`) for the calendar ones read from Textract
+                e = report_year.report_edition(local)
+                if not e:
                     continue
-                key = f'FY{m.group(1)}' + ('-addendum' if 'addendum' in local else '')
-                out[key] = r
+                out[e.key] = r
     return out
 
 
@@ -104,9 +109,14 @@ def main():
         by = collections.defaultdict(lambda: {'rows': 0, 'pages': set(),
                                               'status': collections.Counter()})
         for r in data:
-            ed = r.get('edition') or (f"FY{r[yearcol]}" if r.get(yearcol) else '')
-            if not ed.startswith('FY'):
-                ed = f'FY{ed}' if ed else ''
+            ed = r.get('edition') or ''
+            if not ed and r.get('document'):
+                e = report_year.report_edition(r['document'])
+                ed = e.key if e else ''
+            if not ed:
+                ed = f"FY{r[yearcol]}" if r.get(yearcol) else ''
+            if ed and not ed.startswith('FY') and ed not in docs:
+                ed = f'FY{ed}'
             if not ed:
                 continue
             b = by[ed]

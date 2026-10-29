@@ -1,0 +1,103 @@
+page,table,dataset,family,name,grain,financial,layout,header_from,stated_total,period_fy,period,printed_heading,note
+1,1,,,Cover,,no,,,,,,LUNENBURG / JONES HOUSE,"NOT LANDED: the cover, a picture caption"
+4,1,,,Index of departments with page numbers,one report section,no,,,,,,INDEX / DEPARTMENTS / PAGES,"NOT LANDED: the report's own index. `report-index.csv` holds the FY-era indexes but is built by extract_report_index.py from Vision OCR and is not in the database; page integrity (P6 section 8) reads this index directly"
+5,1,,,About the town,one fact,no,,,,,,ABOUT THE TOWN,"NOT LANDED: town facts (settled, area, population, valuation, representatives); prose in two columns, no dataset holds it in any year"
+5,2,,,Town office hours,one office,no,,,,,,ABOUT THE TOWN,NOT LANDED: office hours
+6,1,,,Meeting schedule,one recurring meeting,no,,,,,,Annual Town Election / Annual Town Meeting,NOT LANDED: when boards meet
+7,1,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,TERM EXPIRES,
+7,2,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,EXPIRES / MODERATOR,
+8,1,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+8,2,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+8,3,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+8,4,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+8,5,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+8,6,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+8,7,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,1,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,2,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,3,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,4,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,5,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,6,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,7,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+9,8,report-officials,officials,Elected and appointed officials with term expiry,one office holder,no,,,,,calendar 2010,,
+13,1,report-valuation,valuation,Fiscal 2010 assessments and revenues by major property class,one property class,yes,,,,2010,fiscal 2010 (text p13),Fiscal 2010 Assessments and Revenues by Major Property Class,"Same quantity as FY2011's p12 table in report-valuation: levy share, valuation, rate and levy by class"
+13,2,report-valuation,valuation,Valuation and tax history,one fiscal year,yes,,,,2010,fiscal 2010 and prior years,Fiscal Year | Tax Rate | Total Valuation | Accounts | Tax Levy | Change(%),
+13,3,report-valuation,valuation,Fiscal Year 2010 Abstract of Assessments,one property class code,yes,,,,2010,fiscal 2010,Fiscal Year 2010 Abstract of Assessments,
+13,4,report-valuation,valuation,Assessor's account for exemptions and abatements (overlay),one overlay line across five fiscal years,yes,,,,2010,FY2006-FY2010,Description | FY2010 | FY2009 | FY2008 | FY2007 | FY2006,
+13,5,report-valuation,valuation,New growth: added valuation and new revenue,one fiscal year,yes,,,,2010,fiscal 2010 and prior years,Fiscal Year | Added Valuation | Tax Rate | New Revenues | Change(%),
+14,1,capital-plans,,Capital requests approved at the May 2010 Annual Town Meeting,one capital item,yes,,,317785,2011,"FY2011 plan, voted May 2010","CAPITAL PLANNING / At the Annual Town Meeting May 2010, $317,785.00 was approved for Capital Requests.","Same quantity as capital-plans (committee report copy): the items the ATM approved, with the total the page states in its own sentence"
+15,1,report-vital-records,vital-records,Veterans' graves decorated / burials by cemetery,one person,no,groups:2,,,,calendar 2010,NAME | AGE | CEMETERY,
+16,1,,,Council on Aging services,one service,no,,,,,,,NOT LANDED: a list of programme names; no figures
+16,2,,,Council on Aging programmes,one programme,no,,,,,,,NOT LANDED: a list of programme names; no figures
+18,1,,,Buildings maintained,one building,no,,,,,,,NOT LANDED: a list of buildings; FY-era catalogues it and no dataset reads it either
+20,1,report-dept-activity,dept-activity,Fire department incidents by type,one incident category,no,,,,,calendar 2010,Total | EMS | Inspections,
+20,2,report-dept-activity,dept-activity,Fire department incidents by type,one incident category,no,,,,,calendar 2010,,
+20,3,report-dept-activity,dept-activity,Fire department incidents by type,one incident category,no,,,,,calendar 2010,,
+21,1,report-officials,officials,Fire department roster,one firefighter/EMT,no,,,,,calendar 2010,,"FY2011 put its fire roster in officials too (extraction-plan, p22)"
+23,1,report-dept-activity,dept-activity,Nashoba Associated Boards of Health: services and visit counts,one service,no,,,,,calendar 2010,,"Prose in table cells; counts are inside sentences, so rows carry the text and no v-values"
+24,1,report-weights-measures,devices-sealed,"Inspector of Weights & Measures: devices adjusted, sealed, not sealed, condemned, and sealing fee per device",one device class,yes,,,,,calendar 2010,INSPECTOR WEIGHTS & MEASURES,"NEW DATASET. No FY2011-FY2025 dataset or catalogue entry holds the Sealer's device counts or fees; named for the printed heading"
+25,1,report-weights-measures,savings-impact,Consumer and merchant savings impact report (Chapter 295 of the Acts of 1998),one device category,yes,,,,,calendar 2010,Chapter 295 of the Acts of 1998 Consumer and Merchant Savings Impact Report,NEW DATASET (with p24)
+26,1,report-officials,officials,"Library trustees, Friends and staff",one person,no,,,,,calendar 2010,Trustees | Friends | Staff,
+32,1,report-officials,officials,School Committee membership,one member,no,,,,,calendar 2010,Lunenburg School Committee,
+32,2,report-officials,officials,Central Office personnel,one person,no,,,,,calendar 2010,Central Office Personnel,
+34,1,report-enrollment-mcas,enrollment,"Enrollment October 1, 2008 to October 1, 2010, by school and grade",one school-grade on one date,no,,,,,"October 1, 2008/2009/2010",ENROLLMENT: OCTOBER 1. 2008 . OCTOBER 1. 2010,
+38,1,,,Primary School council,one member,no,,,,,,,"NOT LANDED: a school roster. FY-era rosters are in staff-roster-entries, whose reader is bound to the FY OCR; queued, not read"
+38,2,,,Primary School staff roster,one position,no,,,,,,,"NOT LANDED: a school roster (staff-roster-entries); queued"
+38,3,,,Primary School staff roster,one position,no,,,,,,,"NOT LANDED: a school roster (staff-roster-entries); queued"
+39,1,,,Primary School staff roster,one position,no,,,,,,,"NOT LANDED: a school roster (staff-roster-entries); queued"
+39,2,,,Primary School staff roster,one position,no,,,,,,,"NOT LANDED: a school roster (staff-roster-entries); queued"
+42,1,,,Passios Elementary directory,one person,no,,,,,,2010-2011 DIRECTORY,"NOT LANDED: a school roster (staff-roster-entries); queued"
+42,2,,,Passios Elementary directory,one person,no,,,,,,THOMAS C. PASSIOS ELEMENTARY SCHOOL,"NOT LANDED: a school roster (staff-roster-entries); queued"
+43,1,report-enrollment-mcas,mcas,"Turkey Hill Middle School MCAS, percent advanced or proficient, school against state",one grade and subject,no,,,,,spring 2010,GRADE | SUBJECT | THMS | STATE,
+45,1,,,Turkey Hill custodial and cafeteria staff,one person,no,,,,,,,"NOT LANDED: a school roster (staff-roster-entries); queued"
+46,1,,,High School administration,one person,no,,,,,,,"NOT LANDED: a school roster (staff-roster-entries); queued"
+47,1,,,High School faculty by department,one person,no,,,,,,,"NOT LANDED: a school roster (staff-roster-entries); queued"
+49,1,report-enrollment-mcas,mcas,Monty Tech competency rate at graduation by class,one class year and subject,no,,,,,classes of 2005-2010,English/Language Arts | Mathematics,
+51,1,,,Monty Tech community service projects,one project,no,,,,,,,NOT LANDED: a list of projects; no figures
+55,1,balance-sheet,,"Combined balance sheet, all fund types and account groups",one balance line in one fund type,yes,,,,2010,"fiscal year ended June 30, 2010 (p55)","COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 2010",Same quantity as balance-sheet (a stock at 30 June by fund type); published per fund column only where the page's identities close
+56,1,annual-report-receipts,,Receipts and summary of receipts,one revenue account,yes,groups:3,,,2010,fiscal 2010,TAXES & EXCISES ... SUMMARY OF RECEIPTS ... GRAND TOTAL,"Same quantity as annual-report-receipts: actual receipts by account for the fiscal year"
+58,1,report-appropriations,accountant-schedule,"General fund appropriations, summary and classification of accounts",one appropriation line,yes,,,,2010,fiscal year 2010 (p58),GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2010,"Same table as FY2011 p60-65 (accountant-schedule): appropriated, available, expended, encumbered, balance -- actuals against the appropriation"
+59,1,report-appropriations,accountant-schedule,"General fund appropriations, summary and classification of accounts",one appropriation line,yes,,,,2010,fiscal year 2010,,"Textract merged the first data row into the header on this page (header cells carry figures); those figures are in columns_as_printed, not in v-values"
+60,1,report-appropriations,accountant-schedule,"General fund appropriations, summary and classification of accounts",one appropriation line,yes,,,,2010,fiscal year 2010,,
+61,1,report-appropriations,accountant-schedule,"General fund appropriations, summary and classification of accounts",one appropriation line,yes,,,,2010,fiscal year 2010,,
+62,1,report-appropriations,accountant-schedule,"General fund appropriations, summary and classification of accounts",one appropriation line,yes,,,,2010,fiscal year 2010,,
+64,1,special-revenue-funds,special-revenue,Special revenue funds,one special revenue fund,yes,,,,2010,fiscal year ending 6/30/10 (p64),SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/10,"Same quantity as special-revenue-funds: forward, receipts, disbursements, balance by fund"
+65,1,special-revenue-funds,special-revenue,Special revenue funds,one special revenue fund,yes,,,,2010,fiscal year ending 6/30/10,,
+66,1,special-revenue-funds,special-revenue,Special revenue funds,one special revenue fund,yes,,,,2010,fiscal year ending 6/30/10,,
+67,1,report-capital-projects,capital-projects,Capital project funds FY 2010,one capital article,yes,,,,2010,FY 2010 (p67),CAPITAL PROJECT FUNDS FY 2010,
+68,1,treasurers-cash,,Treasurer's cash as of June 30 2010,one bank account,yes,,,,2010,"as of June 30, 2010 (p68)",TREASURER'S CASH / as of June 30. 2010,"Same quantity as treasurers-cash: cash by account at 30 June; published only if the accounts sum to the printed balance"
+69,1,report-trust-funds,trust-funds,Trust funds,one trust fund,yes,,,,2010,FY 10 (column headers p69),FUND NAME | BEGINNING BALANCE PRINC. FY 10 ...,
+70,1,report-trust-funds,trust-funds,Trust funds,one trust fund,yes,,,,2010,FY 10,,
+71,1,report-debt,debt-by-issue,"Bonded indebtedness by issue: amount, fiscal 2010 payments, payments to date, balance",one bond issue,yes,,,,2010,fiscal 2010,DATE OF ISSUE | AMOUNT | DUE IN FISCAL 2010 | TOTAL PAYMENTS THRU 2010 | BALANCE,"Same family as FY2011's report-debt; the FY2011 five-year outstanding-debt summary is NOT printed here (a gap)"
+71,2,report-debt,debt-authorized-unissued,"Bonds authorized and unissued as of June 30, 2009",one authorisation,yes,,,,2009,"as of June 30, 2009 -- the page's own heading, a year earlier than the rest of the book",BONDS AUTHORIZED & UNISSUED AS OF JUNE 30. 2009,
+72,1,report-debt,debt-repayment-schedule,"Debt repayment schedule as of June 30 2010, by issue and fiscal year",one issue's principal/interest/total in one future fiscal year,yes,,,,2010,as of June 30 2010 (text p72),TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2010,"19 fiscal-year columns: v1-v8 are split into panels of eight, each panel's column_meaning naming its printed years"
+73,1,report-debt,debt-repayment-schedule,"Debt repayment schedule as of June 30 2010, by issue and fiscal year",one issue's principal/interest/total in one future fiscal year,yes,,,,2010,as of June 30 2010,,
+74,1,tax-collection,collection-of-taxes,FY2010 collection of taxes,one levy year of one tax,yes,,,,2010,fiscal 2010 (p74),FY2010 COLLECTION OF TAXES,"Same table as tax-collection (forward, commitments, adjustments, refunds, payments, abatements, tax title, balances); proof is written only where the row foots"
+75,1,report-elections,elections,"Special state election, January 19, 2010",one candidate or answer by precinct,no,,,,,calendar 2010,SPECIAL STATE ELECTION - JANUARY 19. 2010,
+75,2,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+76,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+76,2,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+77,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,75/1,,,calendar 2010,,
+77,2,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+78,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+79,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,78/1,,,calendar 2010,,
+79,2,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+80,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+81,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+81,2,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+81,3,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+82,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,,,,calendar 2010,,
+83,1,report-elections,elections,Elections 2010 by precinct,one candidate or answer by precinct,no,,82/1,,,calendar 2010,,
+85,1,salary-schedule,salary-schedule,"Schedule A: Salary Schedule (grade by step, hourly)",one grade and step,yes,,,,2011,"the 2011 salary schedule (p86 footnote), adopted under Article 5 (p85)",Schedule A: Salary Schedule,"Same quantity as salary-schedule: the town's non-union grade-and-step hourly rates"
+86,1,salary-schedule,salary-schedule,"Schedule A: Salary Schedule (grade by step, hourly)",one grade and step,yes,,85/1,,2011,the 2011 salary schedule,,"No header row on this page: continues p85's table, whose printed header names the steps"
+86,2,report-classification-plan,classification-plan,"Schedule A: Classification Plan (class title, point value, grade)",one class title,yes,groups:2,,,2011,"the classification plan mapped to the 2011 Salary Schedule (p86)",CLASS TITLE* | POINT VALUE | GRADE,"NEW DATASET. FY2011 prints the same plan (catalogue: Salary Administration Plan, p89) and no dataset reads it; the POINT VALUE column is the job evaluation score behind each grade"
+88,1,report-appropriations,omnibus-budget,FY 2011 omnibus budget as voted,one budget line,yes,,,,2011,"fiscal 2011, VOTED -- a budget column, not an actual (rule 1)",FY 2011 Omnibus Budget / Line No. | Account | VOTED FY 2011,"FY2011 put its own omnibus page in report-appropriations under table_family omnibus-budget; the same here. Split on table_family before any sum: this is a BUDGET, the accountant-schedule rows are ACTUALS"
+88,2,report-appropriations,omnibus-budget,FY 2011 omnibus budget as voted,one budget line,yes,,88/1,,2011,fiscal 2011 voted,,
+89,1,report-appropriations,omnibus-budget,FY 2011 omnibus budget as voted,one budget line,yes,,88/1,,2011,fiscal 2011 voted,,
+92,1,,,Town meeting warrant article text,one article,no,,,,,,ARTICLE 4,NOT LANDED: one cell of article prose; the votes are town meeting minutes
+94,1,report-gross-wages,gross-wages,Calendar 2010 wages by employee,one employee in one department,yes,groups:2,,,,calendar 2010 (p94),CALENDAR 2010 WAGES,"Same quantity as report-gross-wages, but CALENDAR 2010 earnings, where FY2011 onward print fiscal-year earnings. Never sum across the two"
+95,1,report-gross-wages,gross-wages,Calendar 2010 wages by employee,one employee in one department,yes,groups:2,,,,calendar 2010,,
+96,1,report-gross-wages,gross-wages,Calendar 2010 wages by employee,one employee in one department,yes,groups:2,,,,calendar 2010,,
+97,1,report-gross-wages,gross-wages,Calendar 2010 wages by employee,one employee in one department,yes,groups:2,,,,calendar 2010,,
+100,1,,,Telephone directory,one office,no,,,,,,FOR ANSWERS ON: CALL THE: NUMBER IS,NOT LANDED: a phone directory

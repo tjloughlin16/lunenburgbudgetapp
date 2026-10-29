@@ -84,6 +84,40 @@ def school_of(text):
     return 'unknown'
 
 
+# THE REPORTS READ ON AWS. TJ, 28 October 2026: the 1959-2010 reports were read by Textract,
+# not Vision, and this reader took its lines only from report_pages -- Vision's box files --
+# so their rosters could not be dumped at all. Textract's lines are one per text run, each
+# with its position; a roster is a column layout (`Name    Position`), so the runs that share
+# a row are put back together left to right with a gap, which is what the Vision rendering
+# preserves and what the reading step expects. Everything after this file is engine-blind.
+TEXTRACT_OUT = os.path.join(ROOT, 'build', 'textract', 'out')
+GAP = '    '
+
+
+def textract_lines(doc):
+    """{page: [line, ...]} rebuilt into rows from Textract's lines.tsv, or {} if none."""
+    path = os.path.join(TEXTRACT_OUT, os.path.splitext(doc)[0] + '.lines.tsv')
+    if not os.path.exists(path):
+        return {}
+    by_page = {}
+    for r in csv.DictReader(open(path, newline=''), delimiter='\t'):
+        by_page.setdefault(int(r['page']), []).append(
+            (float(r['top']), float(r['height']), float(r['left']), r['text']))
+    out = {}
+    for page, runs in by_page.items():
+        heights = sorted(h for _, h, _, _ in runs if h > 0)
+        band = (heights[len(heights) // 2] if heights else 0.01) * 0.5
+        rows = []
+        for top, h, left, text in sorted(runs, key=lambda t: t[0] + t[1] / 2):
+            mid = top + h / 2
+            if rows and abs(mid - rows[-1][0]) <= band:
+                rows[-1][1].append((left, text))
+            else:
+                rows.append([mid, [(left, text)]])
+        out[page] = [GAP.join(t for _, t in sorted(cells)) for _, cells in rows]
+    return out
+
+
 def main():
     ap = argparse.ArgumentParser()
     ap.add_argument('--boxes', default=os.path.join(ROOT, 'sources', 'town-budget', 'ocr'))
@@ -104,10 +138,18 @@ def main():
     written, per_year, sparse = [], [], []
     for (edition, doc), pages in sorted(wanted.items()):
         fy = re.search(r'(\d{4})', edition).group(1)
+        # A calendar edition (1959-2010) is labelled by its year alone, never as FY.
+        label = edition if not edition.startswith('FY') else f'FY{fy}'
         # Rosters are column layouts, so the rendering that preserves column POSITION is
         # the one to read. The text layer collapses `Name    Role` to single spaces.
-        text = RP.load(edition)
-        ocr = RP.load(edition, ocr=True)
+        # Calendar editions only: FY2011 has a 29-page Textract pilot, and its rosters stay
+        # on the Vision reading they were proven on.
+        tx = textract_lines(doc) if not edition.startswith('FY') else {}
+        if tx:
+            text, ocr = {}, tx
+        else:
+            text = RP.load(edition)
+            ocr = RP.load(edition, ocr=True)
         got = []
         for page in sorted(pages):
             lines = ocr.get(page) or text.get(page) or []
@@ -118,9 +160,10 @@ def main():
             if len(keep) < 8:
                 sparse.append((fy, page, len(keep)))
             school = school_of('\n'.join(keep[:12]))
-            name = f'FY{fy}-p{page:03d}-{school}.txt'
+            name = f'{label}-p{page:03d}-{school}.txt'
             with open(os.path.join(args.out, name), 'w') as fh:
-                fh.write(f'# {doc} page {page} -- FY{fy} -- school: {school}\n')
+                fh.write(f'# {doc} page {page} -- {label} -- school: {school}'
+                         f'{" -- read by Textract" if tx else ""}\n')
                 fh.write(f'# {len(keep)} non-blank lines. '
                          f'Every one must be accounted for.\n\n')
                 for i, l in enumerate(keep, 1):

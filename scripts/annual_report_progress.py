@@ -90,6 +90,16 @@ NEXT_ACTION = {
 }
 
 
+EDITIONS = os.path.join(ROOT, 'sources', 'data', 'report-tables')
+
+
+def label(fy):
+    """`FY2011`, or `2010 edition` for a calendar edition read from Textract: its `fy` is the
+    book's printed year, and calling it FY2010 would claim a fiscal basis the label does not
+    make. See sources/data/report-tables/README.md."""
+    return '%s edition' % fy if os.path.isdir(os.path.join(EDITIONS, str(fy))) else 'FY%s' % fy
+
+
 def load():
     if not os.path.exists(MAP):
         sys.exit('%s does not exist. Run: python3 scripts/map_annual_report_pages.py' % MAP)
@@ -222,17 +232,17 @@ def main():
         print('\nYES* -- closed, but NOT fully read. These pages cannot be read at all:')
         for fy in with_blocks:
             for r in sorted(reg.get(fy, []), key=lambda r: int(r.get('page') or 0)):
-                print('  FY%s p%-4s %s' % (fy, r.get('page', '?'), r.get('reason', 'blocked')))
+                print('  %s p%-4s %s' % (label(fy), r.get('page', '?'), r.get('reason', 'blocked')))
                 if r.get('closes'):
                     print('      closes: %s' % r['closes'])
             if not reg.get(fy):
-                print('  FY%s -- %d blocked page(s), NOT in %s. Register them.'
-                      % (fy, by[fy]['blocked'], BLOCKED_REGISTER))
+                print('  %s -- %d blocked page(s), NOT in %s. Register them.'
+                      % (label(fy), by[fy]['blocked'], BLOCKED_REGISTER))
     if nxt:
         c = by[nxt]
         left = c['pages'] - c[DONE_STATE]
         w = worst(c)
-        print('\nNEXT: FY%s -- %d of %d pages left (%s).' % (nxt, left, c['pages'], w))
+        print('\nNEXT: %s -- %d of %d pages left (%s).' % (label(nxt), left, c['pages'], w))
         print('  %s' % NEXT_ACTION.get(w, 'see notes/PLAN-ANNUAL-REPORTS-TO-ZERO.md'))
         print('  The plan: notes/PLAN-ANNUAL-REPORTS-TO-ZERO.md (phases, and the learning loop)')
         print('  The loop: notes/process/INGESTING-A-TABLE-FAMILY.md (score, map, refusals, ladder)')

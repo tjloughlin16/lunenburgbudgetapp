@@ -49,6 +49,7 @@ OUT = ROOT / 'build' / 'textract' / 'out'
 
 NUMBER = re.compile(r'^-?(?:\d{1,3}(?:,\d{3})+|\d+)(?:\.\d+)?$')
 DASH = {'-', '$-', '—', '–', '$—', '$–'}
+FWD = re.compile(r'^(\(?[\d,]+\.\d{2}\)?)[ftil1]wd\.?$', re.I)    # spaces already removed
 GRAND = re.compile(r'\bgrand\b', re.I)
 TOTAL = re.compile(r'\b(?:sub-?)?totals?\b', re.I)
 ASSETS = re.compile(r'\btotal\s+assets\b', re.I)
@@ -110,13 +111,49 @@ class Check:
     stream: int = 0                  # which run of rows (validate's second return value)
 
 
+# PRINTED MARKS A FIGURE CARRIES THAT ARE NOT PART OF ITS VALUE, each seen in a calendar
+# edition and each a pattern tight enough that a line number or a word cannot match it. The
+# repair is NAMED (`repair()`), so a reader can see which cells were read through one.
+REPAIRS = [
+    # `S38,212.37`: Textract's S for a dollar sign (2009 p89). Only before a money figure.
+    ('S for $', re.compile(r'S(\d{1,3}(?:,\d{3})*\.\d{2})'), lambda m: '$' + m.group(1)),
+    # `$ 2,500.00+` (2004 p14, capital plan): a trailing plus the page does not explain
+    ('trailing +', re.compile(r'(\$?\(?[\d,]+\.\d{2}\)?)\+'), lambda m: m.group(1)),
+    # `$6,920;527` (2004 p75): a semicolon where a thousands comma belongs
+    ('; for ,', re.compile(r'(\$?\d{1,3}(?:[,;]\d{3})+(?:\.\d{2})?)'),
+     lambda m: m.group(1).replace(';', ',') if ';' in m.group(1) else None),
+    # `$19,126.` `1,418.` (2002 p85): whole dollars with a full stop and no cents. Only with a
+    # `$` or a thousands comma, so a line number `12.` is never read as a figure
+    ('whole dollars with a full stop', re.compile(r'(\$\d[\d,]*|\d{1,3}(?:,\d{3})+)\.'), lambda m: m.group(1)),
+]
+
+
+def repair(text):
+    """(repaired text, [names of the repairs applied]). Whole-cell patterns only."""
+    t, done = text.strip(), []
+    for name, rx, fix in REPAIRS:
+        m = rx.fullmatch(t.replace(' ', ''))
+        u = fix(m) if m else None
+        if u is not None:
+            t, done = u, done + [name]
+    return t, done
+
+
 def parse(text):
     """'$ 1,234.56' -> (Decimal, places). '(86,070.12)' is negative. '$ -' is zero."""
+    text = repair(text)[0]
     t = text.replace(' ', '').replace('$', '', 1) if text.strip() not in DASH else '-'
     if t in ('-', '—', '–'):
         return Decimal(0), 0, False
     if not t:
         return None, 0, False
+    # THE ACCOUNTANT'S `fwd` MARK. A sum carried forward from a prior year is printed with
+    # `fwd` beside it (`$81,153.16 fwd`), and Textract puts the mark in the figure's cell, read
+    # as fwd, twd, 1wd or iwd. Fifty cells of the 2010 report; every one was unparseable, so the
+    # appropriated column of the capital projects page summed to a fraction of its GRAND TOTAL.
+    m = FWD.match(t)
+    if m:
+        t = m.group(1)
     neg = t.startswith('(') and t.endswith(')')
     t = t.strip('()')
     if NUMBER.match(t):
@@ -184,12 +221,40 @@ def is_figure(c):
     return c.value is not None and ('.' in c.text or '$' in c.text or ',' in c.text or c.text.strip() in DASH)
 
 
+YEAR = re.compile(r'^(?:19|20)\d\d$')
+
+
+def counts_row(r):
+    """A DATA row printed with counts and no money: a text label first, then two or more plain
+    numbers (`HILARY CLINTON | 254 | 283 | 250 | 217 | 1004`). A header row never looks like
+    this -- unless its numbers are years (`2007 | 2008 | 2009`) or precinct numbers
+    (`1 | 2 | 3 | 4`), which are column names, so those are excluded."""
+    cells = [(k, c) for k, c in sorted(r.cells.items()) if c.text.strip()]
+    if len(cells) < 3 or cells[0][1].value is not None:
+        return False
+    nums = [c for _, c in cells[1:]]
+    if not all(c.value is not None for c in nums):
+        return False
+    texts = [c.text.strip() for c in nums]
+    if all(YEAR.match(t) for t in texts):
+        return False
+    if [int(c.value) for c in nums if c.value == c.value.to_integral_value()] == list(range(1, len(nums) + 1)):
+        return False
+    return True
+
+
 def split_header(rows):
     """Rows before the first one holding a figure are the header -- less any rows just above
     it that carry only a row label (`MASS WATER POLLUTION`, `PRINCIPAL`): those are the first
-    rows of the body, and a figure Textract placed a row off belongs to one of them."""
+    rows of the body, and a figure Textract placed a row off belongs to one of them.
+
+    And THE HEADER STOPS AT THE FIRST ROW OF COUNTS. A vote count has no comma below 1,000, so
+    on an election page the first `figure` is often a TOTAL far down the table, and every
+    candidate above it was swallowed into the header (2008 p82: `columns_as_printed` read
+    `PREC A 7 254`, and two candidates were not rows)."""
     for i, r in enumerate(rows):
         if any(is_figure(c) for c in r.cells.values()):
+            i = next((n for n in range(i) if counts_row(rows[n])), i)
             first = min(min(r.cells) for r in rows)
             while i > 0 and not any(c.text for k, c in rows[i - 1].cells.items() if k != first):
                 i -= 1
@@ -287,10 +352,11 @@ def read_pages(stem):
         return {int(r['page']) for r in csv.DictReader(f, delimiter='\t')}
 
 
-def validate(stem, pages=None):
+def validate(stem, pages=None, tables=None):
     """Every check in the report, and the runs of rows they were made on (TRIAGE re-checks a
-    run with one change applied)."""
-    runs = streams(load(stem, pages), read_pages(stem))
+    run with one change applied). `tables` is `load()`'s output with a caller's readings
+    applied (read_report_tables.py's glyph witness); by default the cells as Textract read them."""
+    runs = streams(tables if tables is not None else load(stem, pages), read_pages(stem))
     checks = []
     for i, st in enumerate(runs):
         prev = runs[i - 1] if i else None

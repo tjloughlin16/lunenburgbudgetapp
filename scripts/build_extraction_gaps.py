@@ -127,6 +127,14 @@ REFUSED_FAMILY = {
         'the column ruler in the treasurer\u2019s-cash reader; the page prints the total '
         'the column must reach, and `sources/data/extraction-blocked.csv` records both '
         'figures'),
+    # the calendar editions (2001-2010): a page the map says is NOT LANDED, with its reason in
+    # sources/data/report-tables/<edition>/map.csv -- 2006's rotated debt page and its two-panel
+    # capital outlay lists, today
+    'read_report_tables': (
+        'What is on the calendar-edition pages that were read and deliberately not landed?',
+        'pages of the 2001-2010 reports read by eye and not landed',
+        'the reason in that edition\u2019s `map.csv` and the item in its `NEEDS.md`: a re-read '
+        'of a page printed rotated, or an emitter for a layout the reader cannot yet express'),
     'read-and-refused': (
         'What is on the pages a model read and returned no rows for?',
         'pages with no extractor of their own',

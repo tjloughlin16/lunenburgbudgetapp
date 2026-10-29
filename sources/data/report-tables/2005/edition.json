@@ -1,0 +1,31 @@
+{
+  "edition": "2005",
+  "fy": 2005,
+  "basis": "calendar",
+  "basis_source": "the label `2005 Annual Town Report` (sources/town-annual-reports/index.csv) and report_year.report_edition(); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4513-2005-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4513-2005-annual-town-report.pdf",
+  "label": "2005 Annual Town Report",
+  "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4513-2005-annual-town-report.cells.tsv",
+  "periods": [
+    {"what": "valuation", "period": "fiscal 2005", "cited": "p52: `BOARD OF ASSESSORS ANNUAL REPORT / Fiscal 2005 Assessments and Revenues by Major Property Class`"},
+    {"what": "overlay (exemptions and abatements)", "period": "FY2001-FY2004 only; no FY2005 column is printed", "cited": "p52 table 4 header: `Description | FY2004 | FY2003 | FY2002 | FY2001`"},
+    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2005", "cited": "p53: `FOR THE YEAR ENDED JUNE 30, 2005`"},
+    {"what": "receipts", "period": "fiscal 2005", "cited": "p54: `FY 2005 RECEIPTS - JUNE 2005`"},
+    {"what": "general fund appropriations", "period": "fiscal year 2005", "cited": "p55: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2005`"},
+    {"what": "special revenue funds", "period": "fiscal year ending June 30, 2005", "cited": "p62: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING JUNE 30, 2005`"},
+    {"what": "reconciliation of treasurer's cash", "period": "July 1, 2004 to June 30, 2005", "cited": "p67: `BALANCE JUNE 30, 2004` / `RECEIPTS 7/1/04 6/30/05` / `DISBURSED 7/1/04 6/30/05` / `GENERAL LEDGER BALANCE`"},
+    {"what": "trust funds", "period": "July 1, 2004 to June 30, 2005", "cited": "p68 column `BEG BAL 6/30/04`; p70: `TOTAL TRUST ACCTS JUNE 30, 2005`"},
+    {"what": "bonded indebtedness by issue", "period": "payments through fiscal 2006", "cited": "p71: `DUE IN FISCAL 2006` / `TOTAL PAYMENTS THRU 2006`"},
+    {"what": "bonds authorized and unissued", "period": "as of June 30, 2005", "cited": "p71: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 2005`"},
+    {"what": "debt repayment schedule", "period": "as of June 30, 2005", "cited": "p72: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2005`"},
+    {"what": "collection of taxes", "period": "NOT PRINTED", "cited": "p74 prints the heading `COLLECTION OF TAXES` and no year; the newest levy year listed is `2005 MVE`. Not inferred"},
+    {"what": "omnibus budget", "period": "fiscal year 2006, as VOTED (a budget, not an actual)", "cited": "p83: `FY 06 Omnibus Budget` / `Voted FY06`"},
+    {"what": "capital plan", "period": "fiscal year 2006, as voted under Article 5", "cited": "p85: `VOTED UNANIMOUSLY to appropriate from free cash the sum of $540,443.00 for the FY'06 Capital Plan`"},
+    {"what": "wages", "period": "calendar 2005", "cited": "p101: `GRAND TOTAL GROSS WAGES FOR CALENDAR YEAR 2005`"},
+    {"what": "police incident statistics", "period": "fiscal year 2005", "cited": "p26: `a brief summary of incident statistics for fiscal year 2005`"},
+    {"what": "elections", "period": "calendar 2005", "cited": "p81: `ANNUAL TOWN ELECTION / SATURDAY MAY 21, 2005`"},
+    {"what": "school enrollment", "period": "October 1, 2002 to October 1, 2005", "cited": "p37: `ENROLLMENT- October 1 2002-2005`"},
+    {"what": "MCAS", "period": "spring 2005", "cited": "p49: `The eighth administration of the Massachusetts Comprehensive Assessment System (MCAS) took place in the spring of 2005`"}
+  ]
+}

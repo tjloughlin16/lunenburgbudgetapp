@@ -104,6 +104,9 @@ CHECKS = [
     # WHERE THE TABLES ARE, before anything that reads one. A page that stops being
     # findable has to surface as itself rather than as a report quietly losing a row.
     # WHAT IS IN THE ANNUAL REPORTS AND WHAT HAS READ IT, before anything that reads one.
+    # THE CALENDAR EDITIONS (1959-2010) are folded into the shared annual-report datasets by
+    # one merge; a generator re-run that drops their rows fails HERE rather than silently.
+    ('merge_report_tables.py', ['--check']),
     ('map_annual_report_pages.py', ['--check']),
     # ADDED 27 September 2026, after it had already drifted and nothing said so. Where
     # every fiscal year stands in the annual-report pipeline, step by step -- a page map
@@ -816,6 +819,7 @@ PREREQ = {
     # `state` column: the plan to decide what is still worth a model read, the gap registry
     # to name the pages that were read and refused.
     'build_ingest_plan.py': ['map_annual_report_pages.py'],
+    'map_annual_report_pages.py': ['merge_report_tables.py'],
     'build_extraction_gaps.py': ['map_annual_report_pages.py'],
     'build_pipeline_state.py': ['map_annual_report_pages.py'],
     # A BOARD PAGE QUOTES THE FEEDS. Rebuilding the boards first leaves them quoting

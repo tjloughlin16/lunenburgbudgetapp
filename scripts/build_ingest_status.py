@@ -659,7 +659,10 @@ def annual_reports_whole():
         else:
             none += 1
             what = 'nothing proven yet, %d pages' % sum(c.values())
-        pending.append(('FY%s \u2014 %s' % (fy, what), '%s-06-30' % fy))
+        # a calendar edition (1959-2010, read from Textract) is labelled by its printed year,
+        # never `FY` -- sources/data/report-tables/README.md
+        cal = os.path.isdir(os.path.join(DATA, 'report-tables', str(fy)))
+        pending.append((('%s edition' if cal else 'FY%s') % fy + ' \u2014 %s' % what, '%s-06-30' % fy))
     out = group(pending)
     for g in out:
         g['dates'] = ['%s (%s)' % (d, '{:,}'.format(n))

@@ -1,0 +1,112 @@
+{
+  "edition": "2003",
+  "fy": 2003,
+  "basis": "calendar",
+  "basis_source": "the label `2003 Annual Town Report` (sources/town-annual-reports/index.csv) and report_year.report_edition(); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4529-2003-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4529-2003-annual-town-report.pdf",
+  "label": "2003 Annual Town Report",
+  "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4529-2003-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "combined balance sheet",
+      "period": "fiscal year ended June 30, 2003",
+      "cited": "p51: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 2003`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal year 2003, to June 30, 2003",
+      "cited": "p52: `FY 2003 RECEIPTS JUNE 30, 2003`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "fiscal year 2003",
+      "cited": "p54: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2003`"
+    },
+    {
+      "what": "special revenue funds",
+      "period": "July 1, 2002 to June 30, 2003",
+      "cited": "p61: `SPECIAL REVENUE FUNDS / JUNE 30, 2003`; columns `FORWARD 7/1/02` and `BALANCE FWD TO FY'04`"
+    },
+    {
+      "what": "capital project funds",
+      "period": "fiscal year 2003",
+      "cited": "p66: `CAPITAL PROJECT FUND FY 03`"
+    },
+    {
+      "what": "treasurer's cash",
+      "period": "July 1, 2002 to June 30, 2003; closing balance by account at June 30, 2003",
+      "cited": "p68: `RECONCILIATION of TREASURER'S CASH` / `BALANCE JUNE 30, 2002` / `RECEIPTS 7/1/02 6/30/03` / `DISBURSED 7/1/02- 6/30/03` / `GENERAL LEDGER BALANCE`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "balances AFTER the fiscal 2004 payments -- a year ahead of the other statements",
+      "cited": "p69: `DUE IN FISCAL 2004` / `TOTAL PAYMENTS THRU 2004` / `BALANCE`"
+    },
+    {
+      "what": "bonds authorized and unissued",
+      "period": "as of June 30, 2003",
+      "cited": "text p69: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 2003`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of June 30, 2003; fiscal years 2004-2023",
+      "cited": "text p70: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2003`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "NOT PRINTED on the page",
+      "cited": "p72 prints only `COLLECTION OF TAXES`; the newest levy row is `2003 R.E.`, and its `TAX LIENS` payments ($270,289.90) equal p52's `TAX LIENS REDEEMED` under `FY 2003 RECEIPTS` -- consistent with fiscal 2003, not stated"
+    },
+    {
+      "what": "trust funds",
+      "period": "June 30, 2002 to June 30, 2003",
+      "cited": "p73 column `BEG BAL 6/30/02`; p75 `TOTAL TRUST ACCTS JUNE 30, 2003`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 2004, as VOTED (a budget, not an actual)",
+      "cited": "p82: `FY 2004 Omnibus Budget as voted`; Article 3 `for Fiscal Year 2004`"
+    },
+    {
+      "what": "weights and measures fee schedule",
+      "period": "adopted at the Annual Town Meeting of May 3, 2003, Article 24",
+      "cited": "p81 `The Annual Town Meeting was called to order at 9:00 AM, May 3, 2003`; p89 `ARTICLE 24 ... VOTED UNANIMOUSLY as follows: FEE SCHEDULE`"
+    },
+    {
+      "what": "assessments",
+      "period": "fiscal 2003",
+      "cited": "p50: `Fiscal 2003 Assessments and Revenues by Major Property Class`"
+    },
+    {
+      "what": "payroll report",
+      "period": "`2003` -- calendar or fiscal NOT PRINTED",
+      "cited": "p96 `PAYROLL REPORT`; p103 `GRAND TOTAL GROSS WAGES FOR 2003`"
+    },
+    {
+      "what": "elections",
+      "period": "calendar 2003",
+      "cited": "p93 `ANNUAL TOWN ELECTION / SATURDAY MAY 17, 2003`; p95 `SPECIAL TOWN ELECTION / OCTOBER 18, 2003`"
+    },
+    {
+      "what": "vital records",
+      "period": "calendar 2003",
+      "cited": "p78 `MARRIAGES - 2003`; p80 `DEATHS - 2003`"
+    },
+    {
+      "what": "enrollment",
+      "period": "October 1, 2001, 2002 and 2003",
+      "cited": "p39 `ENROLLMENT--OCTOBER 1, 2003` / `School/Grade | 10-01-01 | 10-01-02 | 10-01-03`"
+    },
+    {
+      "what": "MCAS",
+      "period": "spring 2003",
+      "cited": "p47 `Competency Determination Results- Spring 2003`"
+    },
+    {
+      "what": "appointments",
+      "period": "fiscal 2003 appointment list",
+      "cited": "p7 `FY'03 APPOINTMENT LIST`"
+    }
+  ]
+}

@@ -25,9 +25,14 @@ hypothesis about which tables are the same table.
 import collections
 import csv
 import glob
+import io
 import json
 import os
 import re
+import sys
+
+sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+import merge_report_tables  # noqa: E402
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 INV = os.path.join(ROOT, 'sources', 'data', 'inventory')
@@ -74,10 +79,13 @@ def main():
             })
 
     os.makedirs(os.path.dirname(OUT_CSV), exist_ok=True)
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=list(rows[0].keys()))
+    w.writeheader()
+    w.writerows(rows)
+    # the calendar editions' tables, from sources/data/report-tables/ (merge_report_tables.py)
     with open(OUT_CSV, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=list(rows[0].keys()))
-        w.writeheader()
-        w.writerows(rows)
+        fh.write(merge_report_tables.with_editions(OUT_CSV, buf.getvalue()))
 
     write_md(rows)
     print(f'{len(rows)} table instances from {len(glob.glob(os.path.join(INV, "FY*.json")))} '

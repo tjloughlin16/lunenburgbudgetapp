@@ -119,6 +119,38 @@ def overlaps(a0, a1, b0, b1):
     return min(a1, b1) - max(a0, b0) > 0.5 * min(a1 - a0, b1 - b0)
 
 
+def _probe_lines(stem, n=3):
+    """[(page, first line text)] for a few pages of the output, to recognise its cache by."""
+    f = OUT / f'{stem}.lines.tsv'
+    out, seen = [], set()
+    if not f.exists():
+        return out
+    with open(f, newline='') as fh:
+        for r in csv.DictReader(fh, delimiter='\t'):
+            p = int(r['page'])
+            if p in seen or not r['text'].strip():
+                continue
+            seen.add(p)
+            out.append((p, r['text']))
+            if len(out) >= n:
+                break
+    return out
+
+
+def _matches(d, probe):
+    for p, text in probe:
+        f = next((g for g in (d / f'p{p:03d}-text.json', d / f'p{p:03d}-tables.json') if g.exists()), None)
+        if f is None:
+            return False
+        try:
+            blocks = json.loads(f.read_text())['Blocks']
+        except (OSError, ValueError, KeyError):
+            return False
+        if not any(b.get('BlockType') == 'LINE' and b.get('Text') == text for b in blocks):
+            return False
+    return True
+
+
 def document(stem, read):
     """The Textract cache this output came from, the pages SENT to Textract (a page sent and
     returning no text is blank, not unread), and the PDF's page count if we hold the file.
@@ -126,10 +158,35 @@ def document(stem, read):
     The output is named for the PDF it was read from, the cache for its sha256; the cache
     whose pages cover the output's is the one."""
     best = None
-    for d in CACHE.iterdir() if CACHE.exists() else ():
+    # THE PDF'S OWN SHA FIRST. "The cache whose pages cover the output's" is ambiguous the
+    # moment two reports have the same page count: 4518 (2010) and 4523 (1997) are both 100
+    # pages, and the first cache to cover was 1997's, so 2010's register rows were filed under
+    # the 1997 document. Found 28 October 2026. Cover-matching is now only the fallback.
+    for row in archive_storage.read_manifest().values():
+        if Path(row['key']).stem == stem and (CACHE / row['sha256']).is_dir():
+            d = CACHE / row['sha256']
+            sent = sorted({int(f.name[1:4]) for f in d.glob('p*-*.json')})
+            if read <= set(sent):
+                best = (d.name, sent)
+            break
+    # A FILE NOT IN THE ARCHIVE (the 2000 report is a test copy, kept out on purpose): the
+    # covering cache whose own LINE text matches the output's, page by page. Smallest-covering
+    # alone picked a 100-page report's cache for the 134-page 2000 report once 52 more caches
+    # arrived, and the confidence it then read was another document's.
+    probe = _probe_lines(stem)
+    for d in (sorted(CACHE.iterdir()) if CACHE.exists() and best is None else ()):
         sent = sorted({int(f.name[1:4]) for f in d.glob('p*-*.json')})
-        if read <= set(sent) and (best is None or len(sent) < len(best[1])):
-            best = (d.name, sent)
+        if not read <= set(sent):
+            continue
+        if probe and not _matches(d, probe):
+            continue
+        # the same bytes can be cached twice (the 2000 report: the town's upload, read for text
+        # only, and the copy TJ was sent, read for tables too) -- prefer the one with tables
+        tabled = sum(1 for _ in d.glob('p*-tables.json'))
+        if best is None or (tabled, -len(sent)) > (best[2], -len(best[1])):
+            best = (d.name, sent, tabled)
+    if best is not None:
+        best = best[:2]
     if best is None:
         return None, sorted(read), None
     sha, sent = best

@@ -40,6 +40,7 @@ import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
 sys.path.insert(0, os.path.join(ROOT, 'scripts'))
+import report_year  # noqa: E402
 
 DATA = os.path.join(ROOT, 'sources', 'data')
 PAGES = os.path.join(DATA, 'annual-report-pages.csv')
@@ -76,7 +77,8 @@ def pages():
 
 
 def documents():
-    """The sixteen reports, from the manifest, with the address a reader can fetch."""
+    """The reports the page map holds, from the manifest, with the address a reader can fetch."""
+    mapped = {r['fy'] for r in pages()}
     out = []
     with open(MANIFEST, encoding='utf-8') as fh:
         for r in csv.DictReader(fh):
@@ -84,9 +86,15 @@ def documents():
             if not k.startswith('town-annual-reports/docs/') or not k.endswith('.pdf'):
                 continue
             name = os.path.basename(k)
-            fy = ''.join(c for c in name.split('fy-')[-1][:4] if c.isdigit()) \
-                if 'fy-' in name else ''
-            out.append({'fy': fy, 'file': name, 'key': k,
+            # report_year.report_edition: `FY2011` for the fiscal editions, `2010` for the
+            # calendar ones. Only an edition the page map holds is a report this page is about;
+            # the rest of the 1959-2010 uploads are fetched and not yet read.
+            e = report_year.report_edition(name)
+            if not e or str(e.year) not in mapped:
+                continue
+            fy = str(e.year)
+            out.append({'fy': fy, 'file': name, 'key': k, 'label': e.key.replace('-addendum', '') if e.basis == 'fiscal'
+                        else '%s edition' % e.year,
                         'bytes': int(r['bytes']), 'sha256': r['sha256'],
                         'url': '/docs/' + k,
                         'addendum': 'addendum' in name})
@@ -182,7 +190,7 @@ def payload(f):
             figures={'pages': figure(total, C.num(total),
                                      'pages holding a financial table')},
             figure='pages', kind='measured', bearing='sizes',
-            detail='Sixteen documents, opened page by page. A page counted here is one '
+            detail='Every document, opened page by page. A page counted here is one '
                    'that holds a financial table, not every page of the book.',
             basis='`annual-report-pages.csv`, which is generated from what the extractors '
                   'actually wrote and refuses to publish a count off a stale database.',
@@ -241,10 +249,14 @@ def payload(f):
                      'all': figure(len(ds), C.num(len(ds)),
                                    'datasets from these reports')},
             figure='gen', kind='measured', bearing='sizes',
+            # `ded` IS PRINTED HERE, not only registered: it passed for weeks only because
+            # its digit happened to sit inside the generic count (7 inside 17), and failed the
+            # day two calendar-edition datasets moved that count.
             detail='The generic extractor records a column as `v1`, `v2`, `v3` -- an '
                    'ORDINAL, the first column of THAT page that held figures. The ruler '
                    'is rebuilt per page, so the same name means different columns on '
-                   'different pages.',
+                   'different pages. The other %s have a dedicated extractor that names '
+                   'its columns.' % C.num(len(dedicated)),
             basis='the dataset inventory in `scripts/build_archive_guide.py`, read here '
                   'rather than restated, so the two cannot disagree.',
             not_shown='Which printed column a given `v1` is on any particular page, '
@@ -306,8 +318,8 @@ def render(f, pay):
 
     w('# The annual town reports')
     w('')
-    w('Sixteen documents, %s pages of financial tables, %s rows read out of them.'
-      % (f'{total:,}', f'{f["dataset_rows"]:,}'))
+    w('%s documents, %s pages of financial tables, %s rows read out of them.'
+      % (len(f['docs']), f'{total:,}', f'{f["dataset_rows"]:,}'))
     w('')
     w('## The short version')
     w('')
@@ -319,7 +331,7 @@ def render(f, pay):
     w('- What is left is **code, not reading**.')
     w('')
 
-    w('## The sixteen reports')
+    w('## The reports')
     w('')
     w('Every one is downloadable, and every one carries the sha256 of the bytes we hold, '
       'so a figure can be traced to the page it came from and the page to the file.')
@@ -327,7 +339,7 @@ def render(f, pay):
     w('| fiscal year | document | size | download | sha256 |')
     w('|---|---|---:|---|---|')
     for d in f['docs']:
-        label = 'FY%s%s' % (d['fy'], ' addendum' if d['addendum'] else '')
+        label = '%s%s' % (d['label'], ' addendum' if d['addendum'] else '')
         w('| %s | `%s` | %s | [download](%s) | `%s…` |'
           % (label, d['file'], mb(d['bytes']), d['url'], d['sha256'][:16]))
     w('')
@@ -355,8 +367,9 @@ def render(f, pay):
     byf = by_fy(f['rows'])
     for fy in sorted(byf):
         c = byf[fy]
-        w('| FY%s | %d | %d | %d | %d |'
-          % (fy, sum(c.values()), c['proven'], c['unproven'], c['refused']))
+        cal = os.path.isdir(os.path.join(DATA, 'report-tables', str(fy)))
+        w('| %s | %d | %d | %d | %d |'
+          % (('%s edition' if cal else 'FY%s') % fy, sum(c.values()), c['proven'], c['unproven'], c['refused']))
     w('')
 
     w('## The datasets read out of them')

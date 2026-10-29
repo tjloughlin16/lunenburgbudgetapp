@@ -1257,6 +1257,22 @@ REFERENCE = [
     'report-capital-projects', 'report-valuation', 'report-elections',
     'report-officials', 'report-dept-activity', 'report-enrollment-mcas',
     'report-monty-tech', 'report-gross-wages', 'report-vital-records',
+    # NEW in the calendar editions (1959-2010, read from Textract by read_report_tables.py),
+    # with the same furniture: the Inspector of Weights & Measures' devices sealed and fees
+    # (2010 pp24-25), and Schedule A's Classification Plan -- class title, point value, grade
+    # (2010 p86). FY2011 prints the plan too and no dataset ever read it.
+    'report-weights-measures', 'report-classification-plan',
+    # and from the 2001-2009 editions (the names unified across editions on 28 October 2026;
+    # sources/data/report-tables/README.md): the Treasurer's cash ROLL-FORWARD -- opening
+    # balance, receipts and disbursements net of investment transfers, general ledger balance --
+    # which no FY2011-FY2025 report prints; Town Clerk and sealing FEE SCHEDULES as voted;
+    # the Special Services report's statistics tables (shares by disability, state indicators;
+    # percents marked `[percent]` in column_meaning, never summed with counts); the library's
+    # own ESTIMATE of its services' value (not a town expenditure); and per-project amounts
+    # printed inside a warrant article (2001's $41.19M plan, PASSED OVER: a proposal, never an
+    # appropriation)
+    'report-treasurers-cash-reconciliation', 'report-fee-schedule', 'report-special-education',
+    'report-library-service-values', 'report-warrant-article-amounts',
 
     # THE PROVEN READINGS, each tied to an identity its own table states. These are a
     # different kind of thing from the `report-*` extracts above and must not be read as
@@ -2480,8 +2496,19 @@ def load_money_model(db):
     cls = {r[0]: (r[1], r[2]) for r in db.execute(
         'SELECT "key", "group", label FROM money_classification WHERE kind=?',
         ('report_receipt',))}
-    src = db.execute("""SELECT fy, source, amount, document, page
+    # THE CALENDAR EDITIONS (2001-2010, read from Textract into report-tables/) ARE NOT IN THIS
+    # SERIES YET. Their receipts land in `annual_report_receipts` and are queryable there, but
+    # 230 of their account names have no row in money-classification.csv, and classifying a
+    # revenue account (levy, state, local, one-time, transfer) is a judgement, not a join --
+    # so they wait for it rather than falling into `local` by default. Integration pass,
+    # 28 October 2026; the gate below still refuses an unmatched row.
+    import glob as _glob
+    import json as _json
+    calendar = {_json.load(open(f, encoding='utf-8'))['stem'] for f in
+                _glob.glob(os.path.join(DATA, 'report-tables', '*', 'edition.json'))}
+    src = [r for r in db.execute("""SELECT fy, source, amount, document, page
                         FROM annual_report_receipts WHERE status='checked'""").fetchall()
+           if not any(stem in (r[3] or '') for stem in calendar)]
     db.execute('CREATE TABLE revenue_history (fy INTEGER, printed_name TEXT, '
                'source_key TEXT, class TEXT, label TEXT, amount REAL, '
                'document TEXT, page TEXT)')

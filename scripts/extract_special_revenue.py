@@ -45,6 +45,7 @@ import warnings
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 warnings.filterwarnings('ignore')
 
+import merge_report_tables
 import pdf_tables as T
 import report_pages as RP
 # ALIASED: this module already defines a FUNCTION `page_reads()`, so a bare
@@ -754,7 +755,8 @@ def main():
         w.writeheader()
         for r in rows:
             w.writerow({k: r.get(k, '') for k in fields})
-        fresh = buf.getvalue()
+        # the calendar editions' rows, from sources/data/report-tables/ (merge_report_tables.py)
+        fresh = merge_report_tables.with_editions(OUT, buf.getvalue())
         rel = os.path.relpath(OUT, ROOT)
         if not os.path.exists(OUT):
             raise SystemExit(f'{rel} does not exist. Run without --check.')
@@ -765,11 +767,13 @@ def main():
         print(f'ok: {rel} still reproduces — {len(rows):,} fund-years')
         return
 
+    buf = io.StringIO()
+    w = csv.DictWriter(buf, fieldnames=fields, extrasaction='ignore')
+    w.writeheader()
+    for r in rows:
+        w.writerow({f: r.get(f, '') for f in fields})
     with open(OUT, 'w', newline='') as fh:
-        w = csv.DictWriter(fh, fieldnames=fields, extrasaction='ignore')
-        w.writeheader()
-        for r in rows:
-            w.writerow({f: r.get(f, '') for f in fields})
+        fh.write(merge_report_tables.with_editions(OUT, buf.getvalue()))
 
     print(f'{"FY":<9}{"pages":>6}{"funds":>7}{"cols":>6}  status / per-column check')
     for led in sorted(ledger, key=lambda l: l['fy']):

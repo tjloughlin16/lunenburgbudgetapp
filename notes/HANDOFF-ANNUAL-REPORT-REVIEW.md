@@ -56,3 +56,18 @@ it buries any real error in the register under 20-odd fake ones.
 - Cross-column row identities (beginning + additions - deductions = ending) are not checked. On
   the 2000 Colonial trust funds they were what showed the printed total, not the rows, was wrong
   -- worth adding as a third witness.
+
+## 28 October 2026: the guard is in, and two instrument defects found on the 2010 report
+
+- **Guard (step 3 above) added** in `triage_totals.py`: a miss larger than `GROUPING_SHARE` (10%)
+  of the printed total, with no single-digit explanation, is `grouping`, never `printed_error`.
+  FY2011 PDF 76-77: 35 open, now 33 grouping, 1 misread, 1 printed_error (was 19 printed_error).
+  The block structure of the debt schedule (step 2) is still NOT taught to VALIDATE.
+- **`page_integrity.document()` picked the wrong cache** for any two reports with the same page
+  count (2010 and 1997, both 100 pages), so 2010's register rows were filed under the 1997 PDF and
+  `validate_totals.word_confidence()` read another document's confidences. It now looks the PDF's
+  own sha up in the manifest first, and for a file outside the archive matches the cache by its
+  LINE text. This is also what had broken `test_validate_totals.py`'s Colonial case once the 52
+  new caches arrived.
+- **`validate_totals.parse()` reads the accountant's `fwd` mark** (`$81,153.16 fwd`, read as
+  fwd/twd/1wd): fifty such cells in the 2010 report were unparseable.
