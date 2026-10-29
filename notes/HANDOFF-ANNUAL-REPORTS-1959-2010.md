@@ -186,14 +186,20 @@ validator (block walk, cross-page grand totals, unlabelled subtotals -- delibera
 because the FY reviews share that validator and nothing proved the change harmless there), plus
 Textract misreads the review register lists (`notes/generated/annual-report-discrepancies.csv`).
 
-**OPEN DECISION FOR TJ -- the new rows reach published model figures.** `check_generated.py`
-reports 29 stale generators after this merge. Regenerating `build_state_aid.py` moves a published
-figure: `gap_points` 1.75 -> 1.68, measured rate 0.044653 -> 0.043895, because
-`annual_report_receipts` now carries 2001-2010 Chapter 70 receipts and the series starts in 2001.
-`monty-tech.json` extends back to 2001 too. Rule 14: a model input moved. The three regenerated
-files were put back to the live copy (identical to HEAD) so the deploy did not ship the new figure
-unasked. TJ decides whether the older years enter the analyses; then regenerate all 29 and read
-the diffs (rule 1, rule 6: check that the old receipts are the same quantity and stage).
+**DECIDED, 28 October: the analyses use the older history** (TJ: "if thats your suggestion lets
+do it"). Commit a875eb8ab regenerated the 19 generators that read these datasets. State aid's
+measured Chapter 70 series now runs over 21 checked years, FY2001-FY2022, not 8 -- only rows
+checked against their page, same quantity every year; the flag beside the model's rate moved from
+1.75 to 1.68 points, and the model's rate itself is unchanged. **Do the same after every future
+batch**: merge, then run those generators and read each diff before it ships. Still stale and NOT
+this work's (other sessions' inputs): build_budget_feed, build_ch70_formula, build_decisions_doc,
+build_master_report, build_notices, build_reading_time, build_recording_minutes,
+build_short_versions, build_athletics_charts, sync_d1 (after their work).
+
+**DEPLOY STILL OWED for a875eb8ab and de02ffa27's pages** (the data is already live in D1). On 28
+October the deploy script refused because the FY-breakdown session was writing
+`fy28/public/data/fy-breakdown/*` mid-build; a build now would ship that session's work in
+progress. Deploy when that session says its work is ready, or with TJ's word to ship both.
 
 **Other unfinished items:** `money-classification` rows for the calendar receipts (they are kept
 out of `revenue_history` until classified -- a judgement, not a join); a reader for figures printed
