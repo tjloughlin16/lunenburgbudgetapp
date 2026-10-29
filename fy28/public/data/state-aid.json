@@ -5,11 +5,11 @@
   "ch70_share_of_base": 0.7872,
   "enacted_above_governor": 471121,
   "enacted_pct": 0.041309,
-  "gap_points": 1.75,
+  "gap_points": 1.68,
   "governor": 11404917,
-  "measured": 0.044653,
+  "measured": 0.043895,
   "measured_span": [
-   2014,
+   2001,
    2022
   ],
   "rate": 0.02711038866995208
@@ -478,7 +478,7 @@
    "closes": "the district's special education budget build for each year, with the circuit breaker and grant offsets it assumed.",
    "side": "money_out",
    "what": "Whether the school committee sets the special education budget expecting the circuit breaker and grants to pay the rest",
-   "why": "MEASURED (/special-education/sped-all-funds): on the accounts the ledger labels special education, the general fund came in under its voted budget in three of the four years FY2023-FY2026 and ran over in FY2026 (spent counting what was still owed at year end), and the circuit breaker and grants paid more on top -- so total special education spending passed the vote every year. Whether the vote was built net of those funds by design is intent, and no ledger records intent."
+   "why": "MEASURED (/special-education/sped-all-funds): on the accounts the ledger labels special education, the general fund came in under its voted budget in three of the four years FY2023-FY2026 and ran over in FY2026 (spent counting what was still owed at year end), and the circuit breaker and grants paid more on top -- so total special education spending passed the vote every year. SETTLED FOR ONE PART: the circuit breaker on collaborative tuition. The FY2025 and FY2026 approved books print a circuit breaker offset under that line, the voted figure is the line less the offset, and the FY2025 ledger loads the line gross and cuts it by the offset on 1 July (/school-all-funds/fy-breakdown, the plan against what happened). The FY2023 and FY2024 books print no offset. STILL OPEN: no book prints any grant offset, so whether the vote counted on grants, or on the circuit breaker for any other line, is intent no document held records."
   },
   {
    "closes": null,
@@ -545,6 +545,24 @@
    "side": "people",
    "what": "Which posts each grant and fee fund pays for, and how much of each post",
    "why": "The school journal posts payroll one line per account per pay run and records no person, and grant pay posts to accounts named for a kind of work (support salaries, instructional salaries), so a grant can be totalled but not tied to a post. Year-end entries also move pay between funds, mostly citing school memos not in this archive (/school-all-funds/pay-moved-between-funds)."
+  },
+  {
+   "closes": "the district's FY2026 IDEA (fund code 240) grant application and its DESE-approved budget, which name what the grant was planned to pay for.",
+   "side": "money_in",
+   "what": "Why did the federal special education grant pay a private placement in FY2026 that the general fund paid in FY2025, and did the FY2026 budget expect it?",
+   "why": "MEASURED in the school journal: May Institute was paid $333,614 in FY2025 ($318,255 from the general fund, $15,359 from the circuit breaker) and $345,856 in FY2026 -- $287,108 of it from the FY2026 IDEA grant (fund 2814, on a contracted services account) and $58,748 from the general fund. No IDEA grant fund paid any placement in FY2023-FY2025. The FY2026 private tuition line was voted at $988,630 and left $522,629, the largest leftover on any school account, and the grant payment is more than half of it. A payee is not a child: the journal cannot say how many students May Institute served or whether the service changed. On 16 September 2026 a speaker at the School Committee said the unexpended funds looked to be \"in our private school tuitions\" and spoke of \"taking certain tuitions out of the grants\" (machine captions, https://www.youtube.com/watch?v=XY8Ru12S9Xg&t=729s). Not established: whether the budget assumed the grant would pay (the budget book plans no grant offset on private tuition) or the switch was made during the year."
+  },
+  {
+   "closes": "the DESE-approved budget for each FY2026 grant, by line and position, and the district's End of Year Financial Report, which states every fund's spending by DESE function.",
+   "side": "money_out",
+   "what": "Which school general fund line does each grant, circuit breaker and fee dollar pay toward, and would the general fund have paid it otherwise?",
+   "why": "MEASURED in the school journal: other funds' spending can be placed on general fund lines only by match rules of our own -- a journal entry naming both ends, the same payee, or the same function code -- and much of it matches no line at all: grant payroll booked to no function, lunch, extended day, capital articles. The books record who paid, never what the payment replaced, so whether a grant paid for something the general fund would otherwise have bought cannot be read off them."
+  },
+  {
+   "closes": "the Town's special revenue fund balance report (or trial balance) at period 13 for each school fund, FY2023-FY2026, beside each grant's award letter for the award year.",
+   "side": "held",
+   "what": "How much of each grant and revolving fund the schools left unspent at the end of each year",
+   "why": "The school general fund's unspent money is its Left, and the circuit breaker's is what the budget book counted on less what was charged; both are drawn on /school-all-funds/fy-breakdown. No other school fund has an allocation for the year in the books we hold. The period-13 special funds report prints a revised budget for a handful of grants only (FY2026: a few hundred thousand dollars against millions spent from other funds), and money RECEIVED in a year is not an allocation either: IDEA is reimbursed after it is spent, so FY2026's IDEA receipts print as nothing. What a revolving fund or a grant had left at 30 June is a fund balance, and we hold special revenue balances only at period 9 of FY2026."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",
@@ -1300,6 +1318,15 @@
  },
  "receipts": {
   "checked": [
+   2001,
+   2002,
+   2003,
+   2004,
+   2005,
+   2006,
+   2007,
+   2008,
+   2009,
    2014,
    2015,
    2017,
@@ -1307,17 +1334,23 @@
    2022
   ],
   "growth": {
-   "cagr": 0.044653,
-   "change": 2307511.0,
-   "first": 5516107.0,
-   "first_fy": 2014,
+   "cagr": 0.043895,
+   "change": 4649573.0,
+   "first": 3174045.0,
+   "first_fy": 2001,
    "last": 7823618.0,
    "last_fy": 2022,
-   "pct": 0.418322,
+   "pct": 1.464873,
    "stage": "actual",
-   "years": 8
+   "years": 21
   },
   "not_checked": [
+   {
+    "fy": 2010,
+    "status": "check failed",
+    "unpublished_figure": 4558339.0,
+    "why": "the extract does not reconcile to the totals that page prints"
+   },
    {
     "fy": 2011,
     "status": "no check",
@@ -1362,6 +1395,106 @@
    }
   ],
   "series": [
+   {
+    "amount": 3174045.0,
+    "document": "4527-2001-annual-town-report.pdf",
+    "fy": 2001,
+    "page": "53",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 3650152.0,
+    "document": "4528-2002-annual-town-report.pdf",
+    "fy": 2002,
+    "page": "47",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 3650152.0,
+    "document": "4529-2003-annual-town-report.pdf",
+    "fy": 2003,
+    "page": "52",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 3647377.0,
+    "document": "4530-2004-annual-town-report.pdf",
+    "fy": 2004,
+    "page": "53",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 3753871.0,
+    "document": "4513-2005-annual-town-report.pdf",
+    "fy": 2005,
+    "page": "54",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 3766538.0,
+    "document": "4514-2006-annual-town-report.pdf",
+    "fy": 2006,
+    "page": "48",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 3967340.0,
+    "document": "4515-2007-annual-town-report.pdf",
+    "fy": 2007,
+    "page": "57",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 4337957.0,
+    "document": "4516-2008-annual-town-report.pdf",
+    "fy": 2008,
+    "page": "60",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": 4159948.0,
+    "document": "4517-2009-annual-town-report.pdf",
+    "fy": 2009,
+    "page": "47",
+    "stage": "actual",
+    "status": "checked",
+    "unpublished_figure": null,
+    "why": null
+   },
+   {
+    "amount": null,
+    "document": "4518-2010-annual-town-report.pdf",
+    "fy": 2010,
+    "page": "56",
+    "stage": "actual",
+    "status": "check failed",
+    "unpublished_figure": 4558339.0,
+    "why": "the extract does not reconcile to the totals that page prints"
+   },
    {
     "amount": null,
     "document": "4117-fy-2011-annual-town-report.pdf",
@@ -1484,6 +1617,16 @@
    }
   ],
   "span": [
+   2001,
+   2002,
+   2003,
+   2004,
+   2005,
+   2006,
+   2007,
+   2008,
+   2009,
+   2010,
    2011,
    2012,
    2013,
@@ -1506,10 +1649,10 @@
    "why": "$11,404,917 is the Governor\u2019s FY27 figure for ALL state aid to Lunenburg, not Chapter 70 \u2014 it is the line the Town Manager\u2019s 17 April 2026 press release calls \"State aid\", and it includes Unrestricted General Government Aid and every other cherry sheet receipt. The two figures were folded together. The School Committee\u2019s own \"35%\" is the Chapter 70 share, and it is the one that recomputes."
   },
   {
-   "ours": "The model grows total state aid at 2.7% a year. Chapter 70 RECEIPTS grew 4.47% a year across the 8 checked years FY2014 to FY2022",
+   "ours": "The model grows total state aid at 2.7% a year. Chapter 70 RECEIPTS grew 4.39% a year across the 21 checked years FY2001 to FY2022",
    "what": "What the projection assumes state aid will do",
    "where": "show-your-work.md records the state aid growth rate as BARE \u2014 \"Nothing. No stated source and no derivation\"",
-   "why": "These are not the same quantity over the same span, so this is not a correction and no rate is changed here. It is the flag rule 6 asks for: an assumption with no stated source, and a measured series that runs 1.8 points above it."
+   "why": "These are not the same quantity over the same span, so this is not a correction and no rate is changed here. It is the flag rule 6 asks for: an assumption with no stated source, and a measured series that runs 1.7 points above it."
   }
  ],
  "related": [

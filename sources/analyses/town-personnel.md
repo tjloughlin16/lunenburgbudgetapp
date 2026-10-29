@@ -12,7 +12,7 @@ How many people each part of the town employs, which are growing and which have 
 
 | part of the town | people | as of | first published | change | a year | what it counts |
 |---|---:|---|---:|---:|---:|---|
-| Schools | 232 | FY2025 | 200 in FY2011 | +32 | +2.3 | every member of staff, named |
+| Schools | 232 | FY2025 | 220 in FY2001 | +12 | +0.5 | every member of staff, named |
 | Fire Department | 40 | FY2025 | 36 in FY2011 | +4 | +0.3 | career staff plus the low end of the on-call range |
 | Police Department | 29 | FY2025 | 13 in FY2012 | +16 | +1.2 | every member of staff, named on its roster |
 | Department of Public Works | 14 | FY2025 | 14 in FY2023 | +0 | +0.0 | an establishment, post by post |
@@ -26,19 +26,19 @@ Department of Public Works and Board of Assessors report an ESTABLISHMENT rather
 
 These are not identical measures — a named roster, a career count plus the low end of an on-call range, and an establishment of posts — and they are answers to two different questions: how many people are there, and how many posts the department says it has. Where a department states a range the LOW end is used, so none is flattered by its own vagueness.
 
-**change** is measured over each department’s own record, and those records do not line up: the Schools record spans 14 years and the Board of Assessors’s 2, so +32 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2019, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
+**change** is measured over each department’s own record, and those records do not line up: the Schools record spans 24 years and the Board of Assessors’s 2, so +12 and +1 are not the same claim. No year is published by all 9 — the fullest is FY2019, with 6 of them — and standardising on that would drop the three that STOPPED publishing, which is the part worth seeing. **a year** is the change divided by the years it spans, and that column compares.
 
 A year whose count reads under half the year before it, or more than 40% above the years on both sides, is dropped as a misread rather than published as a cut or a hiring: Police Department FY2014, 26 between 17 and 14. The dropped year stays in the series, marked, and the change is measured between the years that remain.
 
 ## Headcount over time
 
-![Every department that publishes a headcount, drawn on one people axis from FY2011 to FY2025. The school line runs far above the rest; the Fire Department sits alone in the middle and seven departments share the floor. A break in a line is a year that department published no figure.](charts/town-personnel-all.svg)
+![Every department that publishes a headcount, drawn on one people axis from FY2001 to FY2025. The school line runs far above the rest; the Fire Department sits alone in the middle and seven departments share the floor. A break in a line is a year that department published no figure.](charts/town-personnel-all.svg)
 
 On one scale the relation is plain, and it is the one the panels below deliberately hide: every other department that publishes a headcount fits inside the schools several times over. The panels answer how each one is MOVING; this answers how big each one is.
 
 ![Eight small panels, one per part of the town that publishes a staff count, each showing headcount year by year on its own scale. A hollow point marks a year dropped as a misreading.](charts/town-personnel-counts.svg)
 
-Schools moves between 170 and 272 across 15 published years; Fire Department moves between 36 and 48 across 15 published years; Police Department moves between 13 and 33 across 13 published years. Library and Board of Assessors publish too few years to show a trend at all.
+Schools moves between 153 and 272 across 25 published years; Fire Department moves between 36 and 48 across 15 published years; Police Department moves between 13 and 33 across 13 published years. Library and Board of Assessors publish too few years to show a trend at all.
 
 ## The schools, in detail
 
