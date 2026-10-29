@@ -30,10 +30,12 @@ type Item = { title: string; sub: string; text: string }
 type Move = { dir: 'in' | 'out'; date: string; memo: string; text: string; paired: boolean; others: { name: string; text: string }[] }
 type Entry = { date: string; memo: string; journal: string; dir: 'in' | 'out'; text: string; others: { name: string; text: string }[] }
 export type Row = { name: string; account: string; key: string; cat: string; line: boolean; n: Record<K, number>; t: Record<K, string>
-  spent_note?: string; bw?: BW; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>> }
+  spent_note?: string; bw?: BW
+  /** what it cost from every fund, less last year; null in the first year the journal holds */
+  chg?: number | null; t_chg?: string; chips: Record<'off' | 'on' | 'direct', Item[]>; chip_n: Partial<Record<'off' | 'on' | 'direct', string>> }
 type BW = { walk: string; adj: number; adj_t: string; adj_pct: string; flag: boolean }
 type Year = { fy: string; rows: Row[]; unmatched: { payer: string; why: string; text: string }[]; unmatched_total: string }
-type T = Record<'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
+type T = Record<'line_chg' | 'line_chg_means' | 'read' | 'all_cats' | 'show' | 'fewer' | 'sum' | 'moves' | 'nomoves' | 'shared' | 'into' | 'outof' | 'in_' | 'out'
   | 'payers' | 'none' | 'unmatched' | 'lines' | 'category' | 'between' | 'tab_summary' | 'tab_expenses' | 'close'
   | 'who_paid' | 'every_row' | 'by_payee' | 'every_fund' | 'loading' | 'failed' | 'recharges' | 'no_recharges'
   | 'tab_analysis' | 'an_payee' | 'an_memo' | 'an_week' | 'an_note' | 'an_week_note' | 'an_recharge'
@@ -539,6 +541,9 @@ export default function FyLineTable({ data, alt }: CustomProps) {
       // by category: alphabetical, and within one category the line's Left, largest first, so
       // a category's biggest lines sit together
       if (sort.k === 'cat') return sort.dir * b.cat.localeCompare(a.cat) || b.n.left - a.n.left || a.name.localeCompare(b.name)
+      // THE CHANGE FROM LAST YEAR (TJ, 29 October 2026: "or putting another column into the 'every
+      // line' table"), so the table sorts by it; a row with none sorts last either way
+      if (sort.k === 'chg') return (a.chg == null ? 1 : 0) - (b.chg == null ? 1 : 0) || sort.dir * ((a.chg ?? 0) - (b.chg ?? 0)) || a.name.localeCompare(b.name)
       const k = d.columns.find(c => c.id === sort.k)?.key ?? 'left'
       return sort.dir * (a.n[k] - b.n[k]) || a.name.localeCompare(b.name)
     }), [y, cat, sort, d.columns])
@@ -555,6 +560,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
     return Math.abs(r.n[k]) < 0.5 && (k === 'off' || k === 'on' || k === 'direct') ? <span style={muted}>·</span> : r.t[k]
   }
   const firstCost = d.columns.findIndex(c => c.group !== d.columns[0].group)
+  const chg = y.rows.some(r => r.chg != null)
   const head = (c: Col, i: number) => (
     <th key={c.id} className={`px-2 py-1.5 text-right align-bottom cursor-pointer select-none ${i === firstCost ? 'border-l' : ''}`}
       style={{ borderColor: 'var(--grid)' }}
@@ -589,14 +595,19 @@ export default function FyLineTable({ data, alt }: CustomProps) {
               <th className="px-2 py-1.5 text-left align-bottom font-semibold cursor-pointer select-none"
                 onClick={() => setSort(s => ({ k: 'cat', dir: s.k === 'cat' ? (-s.dir as 1 | -1) : -1 }))}
                 aria-sort={sort.k === 'cat' ? (sort.dir < 0 ? 'ascending' : 'descending') : 'none'}>
-                {d.text.category}{sort.k === 'cat' ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>{d.columns.map(head)}</tr></thead>
+                {d.text.category}{sort.k === 'cat' ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</th>{d.columns.map(head)}
+                {chg ? <th className="px-2 py-1.5 text-right align-bottom cursor-pointer select-none border-l" style={{ borderColor: 'var(--grid)' }}
+                  onClick={() => setSort(s => ({ k: 'chg', dir: s.k === 'chg' ? (-s.dir as 1 | -1) : -1 }))}
+                  aria-sort={sort.k === 'chg' ? (sort.dir < 0 ? 'descending' : 'ascending') : 'none'}>
+                  <span className="block text-[15px] leading-none mb-1" style={muted}>{' '}</span>
+                  <HeadTip label={d.text.line_chg} means={d.text.line_chg_means}><span className="font-semibold">{d.text.line_chg}{sort.k === 'chg' ? (sort.dir < 0 ? ' ↓' : ' ↑') : ''}</span></HeadTip></th> : null}</tr></thead>
           <tbody>
             {shown.map((r, ri) => {
               const key = `${r.account}|${r.name}|${r.cat}`
               return [
                 gapBefore(ri) ? (
                   <tr key={`gap-${ri}`} className="border-b" style={{ borderColor: 'var(--grid)' }}>
-                    <td colSpan={d.columns.length + 2} className="px-2 py-2 text-center">
+                    <td colSpan={d.columns.length + 2 + (chg ? 1 : 0)} className="px-2 py-2 text-center">
                       <button type="button" className="text-[13px] underline" style={{ color: 'var(--link, var(--thread-2))' }}
                         onClick={() => setAll(true)}>⋯ {d.text.between} ⋯</button></td>
                   </tr>) : null,
@@ -613,6 +624,7 @@ export default function FyLineTable({ data, alt }: CustomProps) {
                       style={{ borderColor: 'var(--grid)', color: c.key === 'left' ? tone(r.n.left) : c.key === 'transfers' && r.n.transfers ? tone(r.n.transfers) : undefined,
                         fontWeight: c.op === '=' ? 600 : 400 }}>
                       {cell(r, c)}</td>))}
+                  {chg ? <td className="px-2 py-1.5 text-right whitespace-nowrap border-l" style={{ borderColor: 'var(--grid)' }}>{r.t_chg || '—'}</td> : null}
                 </tr>,
               ]
             })}

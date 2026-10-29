@@ -930,6 +930,8 @@ def page(m):
             so=('Made by entries after the spending; the bills cost the same either way.', None, ())))
     T = Texts()
     lines = lines_data(m, T)
+    bigch = big_changes(lines, T)
+    lines['text'].update(line_chg=bigch['text']['line_chg'], line_chg_means=bigch['text']['line_chg_means'])
     figures = year_facts(m, T)
     plan = plan_data(m, T)
     flows = flows_data(T)
@@ -1011,6 +1013,16 @@ def page(m):
                           'on one scale from zero',
                       so=('The gap between the plan and what happened is mostly money no budget '
                           'book plans for: other funds, much of it on no school line.', None, ())),
+            TB.custom('fy-big-changes', 'The biggest changes from last year', bigch, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Every school line, this year against the last, from the journal'),
+                      alt='Three ranked lists, one fiscal year against the one before: the school lines '
+                          'whose cost from every fund, final budget and money left changed the most in '
+                          'dollars, each with both years, the change and the percentage; a line opens on '
+                          'its page',
+                      so=('A big change is a place to look, not a finding: a line can move because the '
+                          'work grew, because a bill fell in a different year, or because the cost was '
+                          'booked to a different line.', None, ())),
             TB.custom('fy-fund-flows', 'Money in, money out', flows, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('record', 'Every receipt and payment in the journal, tied to the Town’s period-13 report'),
@@ -1254,6 +1266,65 @@ def printed_plan(m):
                  '%s the ledger says was voted, not one' % (book, len(hit), voted[fy]))
         out[fy] = dict(gross=hit[0][0], offset=hit[0][1], line=i + 1, raw=[lines[i], cb], book=book)
     return out
+
+
+CHANGE_TOP = 8                 # OURS: how many lines each list ranks
+CHANGE_PCT_FLOOR = Decimal('10000')   # OURS: no percentage off a prior year below this (rule 6)
+
+
+def big_changes(lines, T):
+    """THE BIGGEST CHANGES (TJ, 29 October 2026: "the hockeystick spending curve in collaborative
+    tuition fund year over year needs to be called out ... a specific table for 'big changes'").
+    Each year against the one before, every school line by its account: what it cost from every
+    fund, its final budget, and what was left. Ranked by DOLLARS, the percentage beside it and
+    only off a prior year of at least CHANGE_PCT_FLOOR, because a percentage off a small base is
+    noise (rule 6). A line new this year or gone is listed as such, never as a percentage. Also
+    writes each line-table row's change in what it cost, so that table sorts by it."""
+    MEASURES = (('total', 'What it cost, every fund'), ('budget', 'Final budget'), ('left', 'Left in the budget'))
+
+    def pct(prev, cur):
+        # never on Left: it crosses zero, and a percentage of a balance near zero means nothing
+        if prev < CHANGE_PCT_FLOOR or cur < 0:
+            return ''
+        v = round((cur - prev) / prev * 100)
+        t = ('+' if v > 0 else '−' if v < 0 else '') + '%d%%' % abs(v)
+        T.figures.add(t)
+        return t
+    out = []
+    prev_rows = None
+    for y in lines['years']:
+        rows = {r['account']: r for r in y['rows'] if r['line']}
+        for r in y['rows']:
+            p_ = (prev_rows or {}).get(r['account']) if r['line'] else None
+            if prev_rows is not None and r['line']:
+                cur, was = ITEMS.cents(r['n']['total']), ITEMS.cents(p_['n']['total']) if p_ else D0
+                r['chg'] = fl(cur - was)
+                r['t_chg'] = signed(T, cur - was) if cur != was else T.usd(D0)
+            else:
+                r['chg'], r['t_chg'] = None, ''
+        if prev_rows is not None:
+            lists = []
+            for k, label in MEASURES:
+                ch = []
+                for a in sorted(set(rows) | set(prev_rows)):
+                    cur = ITEMS.cents(rows[a]['n'][k]) if a in rows else D0
+                    was = ITEMS.cents(prev_rows[a]['n'][k]) if a in prev_rows else D0
+                    if cur == was:
+                        continue
+                    r = rows.get(a) or prev_rows[a]
+                    ch.append(dict(account=T.lit(a), name=T.lit(r['name']), cat=T.lit(r['cat']), n=fl(cur - was),
+                                   state='new' if a not in prev_rows else 'gone' if a not in rows else '',
+                                   t=dict(was=T.usd(was), now=T.usd(cur), chg=signed(T, cur - was),
+                                          pct=pct(was, cur) if k != 'left' and a in prev_rows and a in rows else '')))
+                ch.sort(key=lambda x: (-abs(x['n']), x['name']))
+                lists.append(dict(id=k, label=label, rows=ch[:CHANGE_TOP], n_changed=len(ch)))
+            out.append(dict(fy=y['fy'], prev=T.fy(int(y['fy'][2:]) - 1), lists=lists))
+        prev_rows = rows
+    return dict(years=out, text=dict(
+        was='Year before', now='This year', chg='Change', pct='%', of='of', changed='lines changed',
+        new='new this year', gone='not in this year', none='The journal starts here: no year before to compare.',
+        line_chg='Change in what it cost', line_chg_means='What the line cost from every fund this year, less '
+                                                          'last year. Blank in the first year the journal holds.'))
 
 
 def flows_data(T):

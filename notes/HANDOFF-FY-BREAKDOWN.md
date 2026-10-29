@@ -40,7 +40,12 @@ A three-step bridge (all CB vs offset) was built on a misread and reverted -- do
   not established why; (c) `finance.json` stale from another session's inputs and D1 `money_gaps`
   one row behind (`sync_d1.py`, when the deploying session runs); (d) money-gaps row 312 (CB
   balance) can now be partly answered from this data.
-**Next: item 1 (biggest changes), then item 2 (non-GF money chart, reusing these receipts).**
+**ITEM 1 BUILT, 29 Oct:** block `fy-big-changes` "The biggest changes from last year" (`big_changes`):
+three lists (cost every fund / final budget / left), top 8 by dollars, % only off a prior year of
+$10,000+ and never on Left (thresholds ours); line table gains a sortable "Change in what it cost"
+column (`chg`/`t_chg` on each row). Lines matched by account, so a RENAMED line reads as new + gone
+(rule 6) -- e.g. FY2026 "Kindergarten Aides/Regular" is "new this year"; not checked whether it is a rename.
+**Next: item 2 (non-GF money chart, reusing item 0's receipts), then item 3, then item 4 below.**
 
 **QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
 "What it connects to" (`fy28/src/components/blocks/custom/fy-ego-web.tsx`) draws the chart and then
@@ -164,6 +169,20 @@ qualifier in `sub`).
    series supports it. The worked example is the circuit breaker: private tuitions $484k (FY23) ->
    $0 (FY26) while collaborative went $11k -> $333k, and IDEA arrived on private in FY26 ($287k).
    Rule 7 on every sentence: a payer moving between lines is a measurement; WHY is a hypothesis.
+
+4. **LAST IN THE QUEUE (TJ, 29 Oct): each year's SIGNATURES, as an executive summary at the top of
+   the FY breakdown page.** TJ: *"There are some sort of signatures to every fiscal year that need to
+   be included ... the surplus for the year. So it gets announced. If there's a giant surplus, then
+   it becomes dramatic and everybody gets upset. And that, so we got to put that right at the top of
+   the page as sort of like executive summary call out ... but there's also a beginning ... whether
+   or not that year had a successful override, was funded by an override, how many cuts were
+   announced if there was a deficit, the deficit amount announced ... It's mostly needed to make
+   sure this page has all the context it needs for what a school's fiscal year did at the high
+   level."* The END: the surplus as ANNOUNCED (who said it, when, the figure, beside our measured
+   Left). The BEGINNING: the deficit announced, cuts announced (how many), override attempted /
+   passed / funding the year. Sources: School Committee and Finance Committee presentations and
+   minutes (`search_minutes.py`), the budget books, Town Meeting / election results. Rule 7: an
+   announced figure is what someone SAID -- cite it as theirs, beside ours, never merged.
 
 3. **A WHOLE DIFFERENT REPORT, BOTTOM OF THE QUEUE: school budget vs actuals, line by line over
    time (TJ, 29 Oct).** TJ: *"map over time the same info thats in the fy breakdowns, but focus

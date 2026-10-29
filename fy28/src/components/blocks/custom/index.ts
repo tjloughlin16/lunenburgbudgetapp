@@ -22,6 +22,7 @@ import FyFundMoves from './fy-fund-moves'
 import FyPayees from './fy-payees'
 import FyPlan from './fy-plan'
 import FyFundFlows from './fy-fund-flows'
+import FyBigChanges from './fy-big-changes'
 import FySalaries from './fy-salaries'
 import FyWeb from './fy-web'
 import FySourceTable from './fy-source-table'
@@ -47,6 +48,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-payees': FyPayees,
   'fy-plan': FyPlan,
   'fy-fund-flows': FyFundFlows,
+  'fy-big-changes': FyBigChanges,
   'fy-salaries': FySalaries,
   'fy-web': FyWeb,
   'fy-source-table': FySourceTable,
