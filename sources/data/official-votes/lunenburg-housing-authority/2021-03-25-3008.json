@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2021-03-25",
  "docid": "3008",
@@ -12,41 +12,277 @@
  },
  "votes": [
   {
-   "motion": "approve the January and February 2021 financial reports",
+   "motion": "Approve the January and February 2021 financial report.",
    "moved_by": "Jon Hogue",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "motion to approve the january and february 2021 financial report s made by jon hogue ; deborah christen seconded. jon hogue-aye, deborah christen-aye, linda mcdonald-aye and financials were accepted and approve",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion to approve the january and february 2021 financial report s made by jon hogue ; deborah christen seconded."
   },
   {
-   "motion": "approve Resolution 2021-4 for low bid from Glenn Hines of $163,00 for Septic System Replacement at White Street 705-1",
+   "motion": "Approve Resolution 2021-4, low bid of Glenn Hines of Leominster for the DHCD #162031 septic system replacement.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Jon Hogue",
-   "outcome": "passed with a 2 to 0 vote",
+   "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "motion made by deborah christen to approve resolution 2021-4; jon hogue seconded. deborah christen-aye, jon hogue -aye, linda mcdonald- aye and motion passed with a 2 to 0 vote",
-   "quote_taken_from_text": true
+   "quote": "motion made by deborah christen to approve resolution 2021-4; jon hogue seconded."
   },
   {
-   "motion": "approve Resolution 2021-5 for Accounting Services Contract for January to December 2021",
+   "motion": "Approve Resolution 2021-5, accounting services contract for January to December 2021.",
    "moved_by": "Jon Hogue",
    "seconded_by": "Deborah Christen",
-   "outcome": "passed with a 2 to 0 vote",
+   "outcome": "passed 2-0",
    "procedural": false,
-   "quote": "motion made by jon hogue to approve resolution 202 1-5; deborah christen seconded. jon hogue -aye, deborah christen-aye, linda mcdonald-aye and motion passed with a 2 to 0 vote."
+   "quote": "motion made by jon hogue to approve resolution 202 1-5; deborah christen seconded."
   },
   {
-   "motion": "adjourn the meeting at 6:00 p.m.",
+   "motion": "Adjourn the meeting at 6:00 p.m.",
    "moved_by": "Linda McDonald",
    "seconded_by": "Jon Hogue",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "linda mcdonald made a motion to adjourn the meeting at 6:00 p.m.; jon hogue seconded. jon hogue-aye, deborah christen-aye, linda mcdonald-aye with all in favor the meeting adjourned."
   }
  ],
  "dropped_unquoted": 0,
- "note": "The minutes for the February 18, 2021 meeting were tabled, not voted on. The outcome statements for Resolutions 2021-4 and 2021-5 state \"passed with a 2 to 0 vote\" but three members voted aye; outcomes recorded as written.",
- "cost_usd": 0.09153449999999999
+ "note": "Virtual meeting; the minutes state no remote status for individual members, so all three are recorded as present. Public comment: no callers, and resident participation: none requested, so no speakers are recorded. The septic bid is printed as \"$163,00\" and is recorded as printed. Denise Ivaldi's role is \"Recording Secretary\" in the header and \"Administrative Assistant\" in the body; the header is used. Votes are recorded from the printed roll calls and \"2 to 0\" counts; no other count is printed. Minutes are three pages; no attachments are listed.",
+ "cost_usd": 0.01915616,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "linda mcdonald, chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member"
+  },
+  {
+   "name": "Jon Hogue",
+   "role": "Member",
+   "status": "present",
+   "quote": "jon hogue -present, deborah christen-present, linda mcdonald -present."
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The minutes of the February 18, 2021 meeting were tabled until the next month's meeting.",
+   "quote": "the minutes of the february 18, 2021 meeting were tabled until next month."
+  },
+  {
+   "decision": "The Lunenburg smoking policy is to be updated (brief discussion; no vote recorded).",
+   "quote": "lunenburg smoking policy to be updated; brief discussion."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Financial report, January and February 2021",
+   "what_was_recorded": "Non-routine and extraordinary expenses are reported as $4700 to the good, with no concerns noted.",
+   "quote": "we are $4700 to the good; no concerns.",
+   "figures_as_printed": [
+    "$4700"
+   ]
+  },
+  {
+   "topic": "Materials and supplies budget",
+   "what_was_recorded": "Ordinary maintenance is reported as good, with materials and supplies at $200 of budget.",
+   "quote": "ordinary maintenance to the good; materials and supplies with $200 of budget.",
+   "figures_as_printed": [
+    "$200"
+   ]
+  },
+  {
+   "topic": "Septic system replacement low bid",
+   "what_was_recorded": "The low bid from Glenn Hines of Leominster is reported at $163,00 as printed, described as in line with the cost estimate.",
+   "quote": "low bid from glenn hines out of leominster for $163,00 which is in line with the cost estimate.",
+   "figures_as_printed": [
+    "$163,00"
+   ]
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and quorum; February minutes",
+   "resolution": "quorum declared; February 18 minutes tabled",
+   "quote": "the chair declared a quorum present and opened the meeting at 5:37 p.m.",
+   "tags": [
+    "call to order",
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "discussed; smoking policy to be updated",
+   "quote": "lunenburg smoking policy to be updated; brief discussion.",
+   "tags": [
+    "COVID-19",
+    "vaccine",
+    "NAHRO",
+    "smoking policy"
+   ]
+  },
+  {
+   "topic": "Financial report, January and February 2021",
+   "resolution": "approved",
+   "quote": "two months into the year, reserves are high at 98%; working on some projects to use some of this money.",
+   "tags": [
+    "finance",
+    "reserves",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "discussed; no action",
+   "quote": "discussion on whether there is air conditioning in the units.",
+   "tags": [
+    "maintenance",
+    "capital projects",
+    "septic"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "received, no action",
+   "quote": "there are 1,052 elderly and 2,660 families on the waiting list.",
+   "tags": [
+    "waiting list",
+    "occupancy",
+    "applications"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none.",
+   "tags": []
+  },
+  {
+   "topic": "Resolution 2021-4, septic system low bid",
+   "resolution": "approved, passed 2-0",
+   "quote": "the designer checked references and everything came back good.",
+   "tags": [
+    "procurement",
+    "septic",
+    "contract award"
+   ]
+  },
+  {
+   "topic": "Resolution 2021-5, accounting services contract",
+   "resolution": "approved, passed 2-0",
+   "quote": "resolution 2021-5 approval of accounting services contract for january to december 2021.",
+   "tags": [
+    "accounting",
+    "contract"
+   ]
+  },
+  {
+   "topic": "Other correspondence, DHCD public housing notices",
+   "resolution": "reviewed; no action recorded",
+   "quote": "phn 2021-03 - dhcd guidelines for local housing authority hiring of executive director.",
+   "tags": [
+    "DHCD",
+    "resident service coordinator",
+    "notices"
+   ]
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "resident participation - none requested",
+   "tags": []
+  },
+  {
+   "topic": "Board commissioners' comments",
+   "resolution": "none",
+   "quote": "board commissioners' comments - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:00 p.m.",
+   "quote": "linda mcdonald made a motion to adjourn the meeting at 6:00 p.m.; jon hogue seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "PHN 2021-02 – Notice of Funding Availability – Resident Service Coordinator",
+   "where": "list",
+   "quote": "phn 2021-02 - notice of funding availability - resident service coordinator."
+  },
+  {
+   "name": "PHN 2021-03 – DHCD Guidelines for Local Housing Authority Hiring of Executive Director",
+   "where": "list",
+   "quote": "phn 2021-03 - dhcd guidelines for local housing authority hiring of executive director."
+  },
+  {
+   "name": "Financial Report – January and February 2021",
+   "where": "text",
+   "quote": "financial report - january and february 2021"
+  },
+  {
+   "name": "Work Order Report",
+   "where": "text",
+   "quote": "work order report - 21 routine work orders received, 20 completed; 7 emergency work orders"
+  },
+  {
+   "name": "State-Aided Housing Report",
+   "where": "text",
+   "quote": "state-aided housing report - ben gold:"
+  },
+  {
+   "name": "Resolution 2021-4, Approval of Low Bid, DHCD #162031 Septic System Replacement at White Street 705-1",
+   "where": "text",
+   "quote": "approval of low bid, dhcd #162031 septic system replacement at white street 705-1."
+  },
+  {
+   "name": "Resolution 2021-5, Approval of Accounting Services Contract for January to December 2021",
+   "where": "text",
+   "quote": "resolution 2021-5 approval of accounting services contract for january to december 2021."
+  }
+ ],
+ "tags": [
+  "Lunenburg Housing Authority",
+  "public housing",
+  "virtual meeting",
+  "financial report",
+  "septic replacement",
+  "contract award",
+  "COVID-19 vaccine",
+  "DHCD notices",
+  "accounting services"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "other correspondence - dhcd public housing notices were reviewed"
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-02-23",
  "docid": "5698",
@@ -12,16 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Change the wording in the Sewer Commission's Access to Town Counsel Policy from notification to permission",
+   "motion": "Change the wording in the Sewer Commission's \"Access to Town Counsel\" Policy from notification to permission.",
    "moved_by": "Brett R.",
    "seconded_by": "Mike D.",
    "outcome": "passed 4-1",
    "procedural": false,
-   "quote": "motion: brett r. second: mike d. to change the wording in the sewer commission's \"access to town counsel\" policy from notification to permission. discussion: carl said he is not sure that the new commissioners under",
-   "quote_taken_from_text": true
+   "quote": "motion: brett r. second: mike d. to change the wording in the sewer commission's \"access to town counsel\" policy from notification to permission."
   },
   {
-   "motion": "Accept the minutes for 2/4/21 Meeting",
+   "motion": "Accept the minutes for the 2/4/21 meeting.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
@@ -29,15 +28,15 @@
    "quote": "motion: john r. to accept the minutes for 2/4/21 meeting. second: brett r. roll call vote: carl-aye, brett-aye, john-aye and dave-aye."
   },
   {
-   "motion": "Accept the minutes for 2/9/21 meeting",
+   "motion": "Accept the minutes for the 2/9/21 meeting.",
    "moved_by": "John R.",
    "seconded_by": "Brett R.",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: john r. to accept the minutes for 2/9/21 meeting. second: brett r. roll call vote: carl-aye, brett-aye, john-aye and dave-aye."
+   "quote": "to accept the minutes for 2/9/21 meeting. second: brett r. roll call vote: carl-aye, brett-aye, john-aye and dave-aye."
   },
   {
-   "motion": "Adjourn at 5:52pm",
+   "motion": "Adjourn at 5:52pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 4-0",
@@ -46,6 +45,262 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR transcription via macOS Vision. All four votes clearly recorded with roll call results.",
- "cost_usd": 0.1124145
+ "note": "OCR of two pages (macOS Vision). Page 1 begins mid-sentence, so the opening discussion of John and Carl is partial and earlier pages are not in the text. No attendance roll is printed; presence is inferred from roll-call votes and participation. Public comment names 'Dave M.' while the chair is 'Dave' in the text; not merged. The maintenance plan item is cut off at the page break ('Dave said he would like to look at section 2, 3&'), so Dave's intent there is not recorded. Roles are not printed for most people, so role fields are blank.",
+ "cost_usd": 0.017843360000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "status": "present",
+   "quote": "dave asked for a motion to change the wording in the policy from notification to permission.",
+   "role": ""
+  },
+  {
+   "name": "Barb",
+   "status": "present",
+   "quote": "barb reported that this is a proposal for a new development of 8 townhouses.",
+   "role": ""
+  },
+  {
+   "name": "Carl Luck",
+   "status": "present",
+   "quote": "carl played an excerpt from the presentation of mead talerman to the selectmen on 4/18/2017",
+   "role": ""
+  },
+  {
+   "name": "Brett R.",
+   "status": "present",
+   "quote": "brett agreed, but asked why it has to be on the agenda.",
+   "role": ""
+  },
+  {
+   "name": "Mike D.",
+   "status": "present",
+   "quote": "mike agreed that if we have a question, they can bring it up at a meeting.",
+   "role": ""
+  },
+  {
+   "name": "John R.",
+   "status": "present",
+   "quote": "john said no one has a problem with a commissioner going to town counsel, but it would be good to know if anyone has an issue.",
+   "role": ""
+  },
+  {
+   "name": "Rob",
+   "status": "present",
+   "quote": "rob reviewed the plan's latest version and has a list of general comments but needs to compile everyone's comments to send to all.",
+   "role": ""
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "dave passios (56 whiting st.) said he was disappointed with the vote on access to town counsel.",
+   "role": ""
+  },
+  {
+   "name": "Dave M.",
+   "status": "present",
+   "quote": "dave m. again thanked john for what he has done and offered any help if needed.",
+   "role": ""
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave will work with Brett and Barb on the updates to the Fitchburg Sewer Use Ordinance and Regulations.",
+   "quote": "dave will work with brett and barb on the updates."
+  },
+  {
+   "decision": "Barb to ask the Town Manager for the schedule of caucus and town election events and share it with the Commission if received.",
+   "quote": "dave requested barb ask the town manager to send out the schedule of events coming up regarding the caucus and town election, etc."
+  },
+  {
+   "decision": "Rob to compile the Commissioners' comments on the Maintenance Plan and send them to all.",
+   "quote": "needs to compile everyone's comments to send to all"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Fitchburg sewer usage invoice",
+   "what_was_recorded": "Invoice for Fitchburg usage, based on flow metering information the Commission sent; Barb said it is high but usually is at this time of year.",
+   "figures_as_printed": [
+    "$ 19,401.38"
+   ],
+   "quote": "invoices- fitchburg usage- $ 19,401.38 which is based on flow metering information that we sent to them."
+  },
+  {
+   "topic": "FY22 budget draft",
+   "what_was_recorded": "The FY22 budget draft went to the Town Manager; the next step is the FinCom presentation on March 11th. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the fy22 budget draft has gone to the town manager and the next step is the fincom presentation on march 11th."
+  },
+  {
+   "topic": "Litigation and the Enterprise Fund",
+   "what_was_recorded": "Carl said litigation is not included in the town fee and that for sewer, litigation would affect the Enterprise Fund. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "it helps protect the town because litigation is not included in the town fee. for sewer, litigation would affect the enterprise fund."
+  },
+  {
+   "topic": "711 Mass Ave betterments and privilege fees",
+   "what_was_recorded": "The parcel has been assessed betterments and the developer has been advised additional privilege fees will be due. No dollar figure printed.",
+   "figures_as_printed": [],
+   "quote": "the parcel has been assessed betterments and they have been advised that additional privilege fees will be due."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Dave Passios",
+   "stated_role": "",
+   "topic": "Access to Town Counsel vote",
+   "quote": "dave passios (56 whiting st.) said he was disappointed with the vote on access to town counsel."
+  },
+  {
+   "speaker": "Dave M.",
+   "stated_role": "",
+   "topic": "thanks to John and Carl",
+   "quote": "dave m. again thanked john for what he has done and offered any help if needed."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Member resignation and farewells",
+   "resolution": "no action; farewells to John and Carl",
+   "quote": "carl also noted that he sent his resignation letter to the select board chair, with his resignation from the sewer commission effective april 30th.",
+   "tags": [
+    "membership",
+    "resignation",
+    "town election"
+   ]
+  },
+  {
+   "topic": "711 Mass Ave ZBA proposal",
+   "resolution": "reported; no action",
+   "quote": "barb reported that this is a proposal for a new development of 8 townhouses.",
+   "tags": [
+    "development",
+    "ZBA",
+    "betterments"
+   ]
+  },
+  {
+   "topic": "Access to Town Counsel policy",
+   "resolution": "passed 4-1 (change from notification to permission)",
+   "quote": "to change the wording in the sewer commission's \"access to town counsel\" policy from notification to permission.",
+   "tags": [
+    "policy",
+    "town counsel"
+   ]
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance updates",
+   "resolution": "status reported; extension to May 28 approved by Fitchburg",
+   "quote": "barb reported she got a response back from fitchburg and they approved an extension to may 28'",
+   "tags": [
+    "sewer use ordinance",
+    "regulations",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Maintenance Plan review",
+   "resolution": "continued; Rob to compile comments",
+   "quote": "rob reviewed the plan's latest version and has a list of general comments",
+   "tags": [
+    "maintenance plan"
+   ]
+  },
+  {
+   "topic": "Approval of minutes 2/4/21 and 2/9/21",
+   "resolution": "approved 4-0 each",
+   "quote": "to accept the minutes for 2/4/21 meeting.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business manager report",
+   "resolution": "reported; no action",
+   "quote": "business manager report - barb reported that the fy22 budget draft has gone to the town manager",
+   "tags": [
+    "FY22 budget",
+    "Fitchburg invoice",
+    "grease trap",
+    "annual report"
+   ]
+  },
+  {
+   "topic": "Member agenda inputs wording",
+   "resolution": "wording change suggested; no vote recorded",
+   "quote": "member agenda inputs for future meetings- dave suggested changing the wording for this item",
+   "tags": [
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "heard",
+   "quote": "dave passios (56 whiting st.) said he was disappointed with the vote on access to town counsel.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 5:52pm, 4-0",
+   "quote": "motion: brett r. to adjourn at 5:52pm second: carl l.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Recording from a presentation to the Selectmen on 4/18/2017 regarding open legal office hours (supplied by Carl Luck)",
+   "where": "list",
+   "quote": "handouts: recording from a presentation to the selectmen on 4/18/2017 regarding open legal office hours"
+  },
+  {
+   "name": "Sewer Commission \"Access to Town Counsel\" Policy",
+   "where": "text",
+   "quote": "to change the wording in the sewer commission's \"access to town counsel\" policy from notification to permission."
+  },
+  {
+   "name": "Fitchburg Sewer Use Ordinance (and the Commission's Regulations)",
+   "where": "text",
+   "quote": "fitchburg sewer use ordinance updates status- barb reported she got a response back from fitchburg"
+  },
+  {
+   "name": "Maintenance Plan",
+   "where": "text",
+   "quote": "maintenance plan- review and discussion - rob reviewed the plan's latest version"
+  },
+  {
+   "name": "FY22 Budget draft",
+   "where": "text",
+   "quote": "the fy22 budget draft has gone to the town manager and the next step is the fincom presentation on march 11th."
+  },
+  {
+   "name": "Annual report (booklet for Town Meeting)",
+   "where": "text",
+   "quote": "the annual report has been submitted and will be included in booklet given out at town meeting."
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "town counsel access",
+  "sewer use ordinance",
+  "Fitchburg",
+  "maintenance plan",
+  "FY22 budget",
+  "711 Mass Ave",
+  "commission membership",
+  "enterprise fund",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

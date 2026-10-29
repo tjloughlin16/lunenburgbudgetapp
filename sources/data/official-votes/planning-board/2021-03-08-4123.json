@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-03-08",
  "docid": "4123",
@@ -12,39 +12,282 @@
  },
  "votes": [
   {
-   "motion": "Endorse the ANR Plan for 30 Gilchrest Street",
-   "moved_by": "Matthew Brenner",
-   "seconded_by": "Tanner Cole",
+   "motion": "Endorse the ANR Plan for 30 Gilchrest Street.",
+   "moved_by": "M. Brenner",
+   "seconded_by": "T. Cole",
    "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "m. brenner made motion to endorse the anr plan, t. cole seconded, roll call vote - p. bertram, aye; t. cole, aye; m. brenner, aye; m. allison, aye. vote passed 4-0."
+   "quote": "m. brenner made motion to endorse the anr plan, t. cole seconded, roll call vote"
   },
   {
-   "motion": "Continue the hearing on Rules and Regulations for Site Plan Approval & Special Permits to March 22 at 6:35 p.m.",
-   "moved_by": "Tanner Cole",
-   "seconded_by": "Paula Bertram",
-   "outcome": "passed 4-0",
+   "motion": "Continue the public hearing on Rules and Regulations for Site Plan Approval & Special Permits to March 22, 6:35 p.m.",
+   "moved_by": "T. Cole",
+   "seconded_by": "P. Bertram",
+   "outcome": "not stated",
    "procedural": true,
-   "quote": "t. cole made motion to continue the hearing to march 22, 6:35 p.m., p. bertram seconded, roll call vote- p. bertram, aye; t. cole, aye; m. brenner, aye; m. allison, aye."
+   "quote": "t. cole made motion to continue the hearing to march 22, 6:35 p.m., p. bertram seconded, roll call vote"
   },
   {
-   "motion": "Approve the minutes from February 22, 2021",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Brenner",
+   "motion": "Approve the minutes of 02/22/21.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
    "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "p. bertram made motion to approve, m. brenner seconded, roll call vote - p. bertram, aye; t. cole, aye; m. brenner aye; m. allison, aye. vote passed 4-0."
+   "quote": "p. bertram made motion to approve, m. brenner seconded, roll call vote"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Paula Bertram",
-   "seconded_by": "Matthew Brenner",
+   "motion": "Appoint Maryrae Holman to the Economic Development Committee (EDC).",
+   "moved_by": "M. Allison",
+   "seconded_by": "P. Bertram",
    "outcome": "passed 4-0",
+   "procedural": false,
+   "quote": "m. allison made motion to appoint mary rae holman to the edc, p. bertram seconded, roll call vote"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "P. Bertram",
+   "seconded_by": "M. Brenner",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote- p. bertram, aye; t. cole, aye; m. brenner, aye; m. allison, aye."
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote"
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.0940265
+ "dropped_unquoted": 0,
+ "note": "Text is an extracted minutes document with whitespace artifacts (e.g. 'Mary rae', '12 th', 'w ould'); quotes copy the printed spacing where needed. Continuation motion records a roll call of four ayes but no printed result word, so outcome is 'not stated'. The 'PUBLIC COMMENT' heading holds staff announcements only; no public speaker is named, so public_comment is empty. No dollar figures appear. Roll call and votes carry no times, except Bertram's absence 8:23-8:32 p.m. and hearing open 7:13 / recess 7:30 p.m.; meeting conducted remotely via Zoom.",
+ "cost_usd": 0.01797966,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "paula bertram (stepped away from meeting 8:23 p.m. - 8:32 p.m.), present"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present."
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director"
+  },
+  {
+   "name": "Gregory Roy",
+   "role": "representing the applicant (Dillis & Roy Civil Design Group, for property owners Northfield Associates)",
+   "status": "present",
+   "quote": "plan presented on behalf of property owners northfield associates by gregory roy, dillis & roy civil design group."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Board consensus to set the Subdivision Regulations (Chapter 325) aside and instead focus on master planning.",
+   "quote": "board consensus was to set subdivision regulations aside and instead focus on master planning."
+  },
+  {
+   "decision": "Zoning Section 250-6.1 (Off Street Parking) Draft 3 to be updated, finalized and submitted as a warrant article for annual town meeting; public hearing to be scheduled for April 12.",
+   "quote": "the draft would be updated, finalized, and submitted as a warrant article for annual town meeting."
+  },
+  {
+   "decision": "A warrant article to reinsert the 1.5-times lot-size requirement for two-family dwellings to be submitted for annual town meeting; public hearing to be scheduled for April 12.",
+   "quote": "submitted for annual town meeting reinserting the requirement."
+  },
+  {
+   "decision": "Changes to the Site Plan Approval and Special Permits rules to be made, with the hearing continued to March 22.",
+   "quote": "changes would be made; t. cole made motion to continue the hearing to march 22, 6:35 p.m."
+  },
+  {
+   "decision": "Determined that the rear yard setback for the fence around the tennis court on the ANR plan would be five (5) feet, as a detached accessory structure.",
+   "quote": "it was determined that the rear yard setback for the fence surrounding the tennis court would be five (5) feet"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment and announcements (Green Leaf Botanicals meeting; Town Caucus)",
+   "resolution": "announcements only, no action",
+   "quote": "a. burney noted that green leaf botanicals would be holding another community meeting",
+   "tags": [
+    "announcements",
+    "community meeting"
+   ]
+  },
+  {
+   "topic": "ANR Plan, 30 Gilchrest Street",
+   "resolution": "endorsed 4-0",
+   "quote": "m. brenner made motion to endorse the anr plan, t. cole seconded, roll call vote",
+   "tags": [
+    "ANR plan",
+    "wetlands",
+    "septic",
+    "setbacks"
+   ]
+  },
+  {
+   "topic": "Public hearing: Rules and Regulations for Site Plan Approval & Special Permits",
+   "resolution": "continued to March 22",
+   "quote": "hearing was to discuss revisions to the board rules and regulations for site plan approval and special permits",
+   "tags": [
+    "site plan",
+    "special permits",
+    "rules and regulations",
+    "COVID-19 remote"
+   ]
+  },
+  {
+   "topic": "Minutes approval, 02/22/21",
+   "resolution": "approved 4-0",
+   "quote": "02/22/21- p. bertram made motion to approve",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "no action; TCP Building Design Committee discussed its charge",
+   "quote": "storm water task force- no report",
+   "tags": [
+    "committees",
+    "TCP building design",
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Workshop: Chapter 325 Subdivision Regulations",
+   "resolution": "set aside in favour of master planning",
+   "quote": "board consensus was to set subdivision regulations aside and instead focus on master planning.",
+   "tags": [
+    "subdivision regulations",
+    "master planning"
+   ]
+  },
+  {
+   "topic": "Workshop: Chapter 250 Zoning, Section 250-6.1 Off Street Parking (Draft 3)",
+   "resolution": "to be finalized as warrant article; hearing April 12",
+   "quote": "the draft would be updated, finalized, and submitted as a warrant article for annual town meeting.",
+   "tags": [
+    "zoning",
+    "parking",
+    "marijuana",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Director's items: Section 250-4.1H(5) two-family dwelling definition",
+   "resolution": "warrant article to be submitted; hearing April 12",
+   "quote": "submitted for annual town meeting reinserting the requirement.",
+   "tags": [
+    "zoning",
+    "two-family dwelling",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Appointment: Maryrae Holman to the Economic Development Committee",
+   "resolution": "appointed 4-0",
+   "quote": "m. allison made motion to appoint mary rae holman to the edc, p. bertram seconded, roll call vote",
+   "tags": [
+    "appointments",
+    "economic development"
+   ]
+  },
+  {
+   "topic": "Meeting schedule for March 22",
+   "resolution": "no action",
+   "quote": "hearing, 757 chase road, north end subaru",
+   "tags": [
+    "schedule",
+    "site plan hearing"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 9:26 p.m.",
+   "quote": "p. bertram made motion to adjourn, m. brenner seconded, roll call vote",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "ANR Plan, 30 Gilchrest Street",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 30 gilchrest street minutes, 2/22/2021"
+  },
+  {
+   "name": "Minutes, 2/22/2021",
+   "where": "list",
+   "quote": "documents used at meeting: anr plan, 30 gilchrest street minutes, 2/22/2021"
+  },
+  {
+   "name": "Rules and Regulations for Site Plan Approval & Special Permits",
+   "where": "list",
+   "quote": "minutes, 2/22/2021 rules and regulations for site plan approval & special permits"
+  },
+  {
+   "name": "Chapter 325, Subdivision Regulations, Procedure for Submission and Review of Plans",
+   "where": "list",
+   "quote": "chapter 325, subdivision regulations, procedure for submission and review of plans"
+  },
+  {
+   "name": "Chapter 250, Zoning, Section 250-6.1. Off Street Parking and Loading Areas (Draft 3)",
+   "where": "list",
+   "quote": "chapter 250, zoning, section 250-6.1. off street parking and loading areas"
+  },
+  {
+   "name": "Board of Health Compliance form, signed by the Board of Health Agent",
+   "where": "text",
+   "quote": "the board of health compliance for m, signed by the board of health agent, stated that"
+  },
+  {
+   "name": "Warrant article reinserting the two-family dwelling lot-size requirement (Section 250-4.1H(5))",
+   "where": "text",
+   "quote": "submitted for annual town meeting reinserting the requirement."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "ANR plan",
+  "zoning",
+  "off-street parking",
+  "marijuana zoning",
+  "site plan rules",
+  "special permits",
+  "subdivision regulations",
+  "warrant article",
+  "two-family dwelling",
+  "appointments",
+  "remote meeting",
+  "COVID-19"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

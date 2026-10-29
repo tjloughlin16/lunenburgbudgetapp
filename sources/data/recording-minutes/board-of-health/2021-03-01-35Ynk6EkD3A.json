@@ -1,0 +1,485 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-health",
+ "board": "Board of Health",
+ "video_title": "Board of Health",
+ "meeting_date": "2021-03-01",
+ "video_id": "35Ynk6EkD3A",
+ "video_url": "https://www.youtube.com/watch?v=35Ynk6EkD3A",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-health/2021-03-01-35Ynk6EkD3A.json",
+  "sha256": "db9a6a33298a4e42ebd2ed09453c4415e1b8dabb4e072d7b31bc26e51874f51b",
+  "caption_lines": 205,
+  "segments": 1748
+ },
+ "recording": {
+  "duration_s": 4393,
+  "duration": "1:13",
+  "spoken_chars": 49180,
+  "words_approx": 8196
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03012021-1047",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-03-01-agenda-1047.txt",
+   "path": "sources/meetings/board-of-health/2021-03-01-agenda-1047.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03012021-1047",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-03-01-minutes-1047.txt",
+   "path": "sources/meetings/board-of-health/2021-03-01-minutes-1047.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-28T09:59:58Z",
+  "cost_usd": 0.3779649
+ },
+ "minutes": {
+  "headline": "Board of Health granted septic variances at three properties and continued the Woodland Road request to March 15 for well information.",
+  "summary": "The Board of Health, meeting remotely, heard Title 5 and local septic variance requests. It granted variances at 466 Mass Ave, 75 Roof Street and a Townsend Harbor Road property. It continued the Woodland Road request to March 15 so the well can be checked and the owner consulted. The agent also briefed the board on COVID-19 phase changes and vaccine clinics, and the board discussed moving the March 15 meeting earlier because of the town caucus.",
+  "attendees": [
+   {
+    "name_as_heard": "george eamon",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "perry jewell",
+    "role": "vice chair"
+   },
+   {
+    "name_as_heard": "paul fortin",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "evan waters",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "andrea schnepp",
+    "role": "administrative assistant"
+   },
+   {
+    "name_as_heard": "jim gorefy",
+    "role": "health agent"
+   },
+   {
+    "name_as_heard": "jack maloney",
+    "role": "presenter (engineer, Dillis and Roy)"
+   },
+   {
+    "name_as_heard": "dan proctor",
+    "role": "presenter"
+   },
+   {
+    "name_as_heard": "doug smith",
+    "role": "presenter (septic designer)"
+   }
+  ],
+  "public_comment": [],
+  "tags": [
+   "elections",
+   "public-safety",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 536,
+    "motion": "Grant local upgrade approval and Title 5 variance for 466 Massachusetts Avenue (reduced groundwater offset).",
+    "moved_by": "perry jewell",
+    "outcome": "passed unanimously",
+    "procedural": false
+   },
+   {
+    "t": 1058,
+    "motion": "Grant the Title 5 and local variances for 75 Roof Street, with a condition on the new well.",
+    "moved_by": "perry jewell",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 2362,
+    "motion": "Approve the January 4, 2021 minutes.",
+    "moved_by": "perry jewell",
+    "outcome": "passed",
+    "procedural": true
+   },
+   {
+    "t": 3841,
+    "motion": "Grant three variances (two Title 5, one Lunenburg) for the Townsend Harbor Road property.",
+    "moved_by": "perry jewell",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 4324,
+    "motion": "Adjourn.",
+    "outcome": "passed",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 2126,
+    "decision": "Woodland Road local upgrade request continued to 7:15 on March 15 so well information and a well test can be obtained and the owner consulted."
+   },
+   {
+    "t": 1037,
+    "decision": "The new-well requirement at 75 Roof Street will be written as a condition of the permit."
+   },
+   {
+    "t": 4010,
+    "decision": "If the caucus is on March 15, the board will meet earlier that evening and limit the agenda to the two items already scheduled."
+   },
+   {
+    "t": 4074,
+    "decision": "310 Sunny Hill Road withdrew its groundwater offset request and will use a fully compliant system."
+   },
+   {
+    "t": 4304,
+    "decision": "A site at 244 Pleasant Street must return for new variances because its system type changed; scheduled for the first April meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 6,
+    "t_end": 343,
+    "topic": "Roll call and remote meeting ground rules",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 343,
+    "t_end": 620,
+    "topic": "466 Massachusetts Avenue Title 5 variance (failed septic repair)",
+    "resolution": "voted, granted",
+    "tags": [
+     "public-safety",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 642,
+    "t_end": 1415,
+    "topic": "75 Roof Street variances (two to three bedrooms, near Lake Shirley)",
+    "resolution": "voted, granted with well condition",
+    "tags": [
+     "public-safety",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1415,
+    "t_end": 2151,
+    "topic": "Woodland Road septic variances and well setback",
+    "resolution": "continued to March 15",
+    "tags": [
+     "public-safety",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 2178,
+    "t_end": 2650,
+    "topic": "Caucus timing and January 4 minutes",
+    "resolution": "minutes approved",
+    "tags": [
+     "elections"
+    ]
+   },
+   {
+    "t_start": 2652,
+    "t_end": 3414,
+    "topic": "COVID-19 update and vaccine clinics",
+    "resolution": "informational",
+    "tags": [
+     "public-safety"
+    ]
+   },
+   {
+    "t_start": 3414,
+    "t_end": 3925,
+    "topic": "Townsend Harbor Road septic variances",
+    "resolution": "voted, granted",
+    "tags": [
+     "public-safety",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 3925,
+    "t_end": 4348,
+    "topic": "March 15 meeting time, Sunny Hill Road withdrawal, procedure question, adjournment",
+    "resolution": "informational",
+    "tags": [
+     "elections"
+    ]
+   }
+  ],
+  "not_audible": [
+   "The 75 Roof Street vote result is not stated in the captions.",
+   "The Townsend Harbor Road vote tally is not stated; only the outcome is evident.",
+   "Whether the caucus is on March 8 or March 15 was unresolved."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 3026,
+    "about": "Board members criticised the state's mass vaccination site approach and the loss of local clinics.",
+    "sides": "the chair and the health agent against state vaccine distribution policy",
+    "words_as_heard": "disenfranchised about a third of the population of commonwealth massachusetts just to be able to force people to drive ridiculous ways",
+    "kind": "charged language"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1630,
+    "kind": "safety",
+    "about": "The agent recommended against a variance placing a well under 100 feet from the septic system when town water is available.",
+    "who": "the health agent",
+    "words_as_heard": "when it comes to wells and less than 100 feet uh not a big fan of that particularly when there's municipal water in the street"
+   },
+   {
+    "t": 994,
+    "kind": "condition",
+    "about": "The chair wanted the new well at 75 Roof Street installed and tested, with it recorded on the permit.",
+    "who": "the chair",
+    "words_as_heard": "i just want to make sure that the paperwork and you know often if someone goes looking at this thing"
+   },
+   {
+    "t": 2013,
+    "kind": "condition",
+    "about": "A member wanted more information on the well and the owner's views before voting on Woodland Road.",
+    "who": "a member",
+    "words_as_heard": "perhaps to table this till the next meeting and maybe get some more information if we could on the well"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 686,
+    "name_as_heard": "the plan",
+    "kind": "plan or drawing",
+    "words_as_heard": "do you guys have the plan in front of you",
+    "shown": false
+   },
+   {
+    "t": 1161,
+    "name_as_heard": "copy of Title 5",
+    "kind": "other",
+    "words_as_heard": "i've got it on on on my computer one of my computers i'll email you copy",
+    "shown": false
+   },
+   {
+    "t": 2362,
+    "name_as_heard": "minutes from January 4th",
+    "kind": "prior minutes",
+    "words_as_heard": "i would make the motion that we approve them",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Health granted a Title 5 variance and local upgrade approval at 466 Massachusetts Avenue, voting unanimously.",
+    "t": 536
+   },
+   {
+    "line": "The board granted three variances, two Title 5 and one Lunenburg, for a Townsend Harbor Road property.",
+    "t": 3841
+   },
+   {
+    "line": "The board took up variances at 75 Roof Street, with the new well to be a permit condition; the minutes record the vote as not audible.",
+    "t": 1058
+   },
+   {
+    "line": "The Woodland Road local upgrade request was continued to 7:15 on March 15 so well information and a well test can be obtained.",
+    "t": 2126
+   },
+   {
+    "line": "310 Sunny Hill Road withdrew its groundwater offset request, and 244 Pleasant Street must return for new variances because its system type changed.",
+    "t": 4074
+   }
+  ],
+  "why_it_matters": [
+   "Septic variances decide whether a property owner can repair or replace a failing system on a tight lot, which touches groundwater and well protection near Lake Shirley and elsewhere in town.",
+   "The Woodland Road request is still open, so its outcome depends on a well test the board has not yet seen."
+  ],
+  "watch_next": [
+   "March 15 at 7:15: the Woodland Road request returns, and the board may meet earlier that evening if the town caucus falls that day.",
+   "The first April meeting: 244 Pleasant Street returns with new variance requests."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-28T10:00:08Z",
+   "cost_usd": 0.2030455
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03012021-1047",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-03-01-minutes-1047.txt",
+   "path": "sources/meetings/board-of-health/2021-03-01-minutes-1047.pdf"
+  },
+  "official_sha256": "3bf88f70418de28f0b31f552118cddc77f813d138a4d7d0d3d5f78d25d55d8b0",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The three votes and the Woodland continuance match in substance, and the attendee list matches apart from misheard names. The one thing to know is that our minutes could not hear the outcome of the 75 Ruth Street vote, which the official minutes record as passed with a well condition, and the official minutes omit three of our decisions.",
+  "counts": {
+   "agree": 8,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 4,
+   "only_in_official": 0
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "466 Massachusetts Avenue variances vote",
+    "ours": "Grant local upgrade approval and Title 5 variance for 466 Massachusetts Avenue (reduced groundwater offset). — passed unanimously",
+    "official": "on motion by jewell and second by fortin, the variances were unanimously approved by roll call vote.",
+    "note": "Both record unanimous approval; the official minutes add that the groundwater offset is to 4 feet.",
+    "t": 536
+   },
+   {
+    "kind": "discrepancy",
+    "about": "75 Ruth Street variance vote outcome and condition",
+    "ours": "Grant the Title 5 and local variances for 75 Roof Street, with a condition on the new well. — not audible",
+    "official": "the board voted to approve the variances with the condition that the well be installed and tested prior to the issuance of a certificate of compliance for the septic system.",
+    "note": "Our minutes could not hear the outcome, while the official minutes record approval; check the recording around t=1058 for the vote and the exact wording of the well condition (installed and tested before the Certificate of Compliance).",
+    "t": 1058
+   },
+   {
+    "kind": "agree",
+    "about": "224 Townsend Harbor Road septic variances vote",
+    "ours": "Grant three variances (two Title 5, one Lunenburg) for the Townsend Harbor Road property. — passed",
+    "official": "on motion by jewell and second by fortin, the septic variance was approved by unanimous roll call vote.",
+    "note": "Both record approval of three variances for this property; ours does not give the street number, and the official minutes do not describe the Title 5 versus local split.",
+    "t": 3841
+   },
+   {
+    "kind": "agree",
+    "about": "Woodland Road/Drive matter continued to March 15 at 7:15",
+    "ours": "Woodland Road local upgrade request continued to 7:15 on March 15 so well information and a well test can be obtained and the owner consulted.",
+    "official": "this matter was continued until march 15, 2021 at 7:15 pm by agreement of the parties.",
+    "note": "Same continuance date and time; the street is Road in ours and Drive in the official minutes, so confirm which, and the stated reasons are worded differently but compatible.",
+    "t": 2126
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Caucus on March 15 and shortened agenda",
+    "ours": "If the caucus is on March 15, the board will meet earlier that evening and limit the agenda to the two items already scheduled.",
+    "official": "",
+    "note": "The official minutes do not mention this scheduling decision.",
+    "t": 4010
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "310 Sunny Hill Road withdrawal",
+    "ours": "310 Sunny Hill Road withdrew its groundwater offset request and will use a fully compliant system.",
+    "official": "",
+    "note": "The official minutes do not mention this withdrawal.",
+    "t": 4074
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "244 Pleasant Street must return for new variances",
+    "ours": "A site at 244 Pleasant Street must return for new variances because its system type changed; scheduled for the first April meeting.",
+    "official": "",
+    "note": "The official minutes do not mention this item.",
+    "t": 4304
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "george eamon (chair)",
+    "official": "chairman george emond stated that the state allows a 50 foo t offset",
+    "official_reading": "George Emond",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Vice chair Perry Jewell",
+    "ours": "perry jewell (vice chair)",
+    "official": "roll call conducted by vice-chairman, perry jewell",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Member Paul Fortin",
+    "ours": "paul fortin (member)",
+    "official": "perry jewell, george emond, paul fortin and",
+    "note": "Same person; the official minutes give no title.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member Evan Watters",
+    "ours": "evan waters (member)",
+    "official": "member evan watters questioned the difference",
+    "official_reading": "Evan Watters",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "caption_error",
+    "about": "Health agent's name",
+    "ours": "jim gorefy (health agent)",
+    "official": "agent, jim garreffi, was also present.",
+    "official_reading": "Jim Garreffi",
+    "note": "Misheard surname.",
+    "t": 0
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Administrative assistant attendee",
+    "ours": "andrea schnepp (administrative assistant)",
+    "official": "",
+    "note": "The official minutes do not list her as present.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Jack Maloney presenter",
+    "ours": "jack maloney (presenter (engineer, Dillis and Roy))",
+    "official": "jack maloney met with the board on behalf of the owner.",
+    "note": "Same person present for an applicant.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Dan Proctor presenter",
+    "ours": "dan proctor (presenter)",
+    "official": "dan proctor was present to represent the owner.",
+    "note": "Same person and role.",
+    "t": 0
+   },
+   {
+    "kind": "agree",
+    "about": "Doug Smith presenter",
+    "ours": "doug smith (presenter (septic designer))",
+    "official": "doug smith met with the board on behalf of the owner.",
+    "note": "Same person and role.",
+    "t": 0
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-28T10:01:26Z",
+   "cost_usd": 0.27027450000000003
+  }
+ }
+}

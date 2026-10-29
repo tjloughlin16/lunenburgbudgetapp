@@ -1,0 +1,702 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "parks-commission",
+ "board": "Parks Commission",
+ "video_title": "Parks Commission",
+ "meeting_date": "2021-03-01",
+ "video_id": "wKH0w4CaWuw",
+ "video_url": "https://www.youtube.com/watch?v=wKH0w4CaWuw",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/parks-commission/2021-03-01-wKH0w4CaWuw.json",
+  "sha256": "7c004f12eb07c65542bfd107241dead6115a0eb95040191f9acb93cf9c6df6c8",
+  "caption_lines": 475,
+  "segments": 4461
+ },
+ "recording": {
+  "duration_s": 9913,
+  "duration": "2:45",
+  "spoken_chars": 127612,
+  "words_approx": 21268
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03012021-3333",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2021-03-01-agenda-3333.txt",
+   "path": "sources/meetings/parks-commission/2021-03-01-agenda-3333.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03012021-3333",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2021-03-01-minutes-3333.txt",
+   "path": "sources/meetings/parks-commission/2021-03-01-minutes-3333.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-28T09:57:10Z",
+  "cost_usd": 0.669511
+ },
+ "minutes": {
+  "headline": "Parks Commission set 2021 beach day-pass prices and a rental policy, and put off the revolving fund switch for a year.",
+  "summary": "The commission agreed to stay with the existing parks revolving account instead of converting it, after hearing conflicting legal views. It revised the town beach rental policy and voted a new day-pass structure for the 2021 season. It also discussed a proposed inspection and maintenance policy, Marshall Park ideas, and the open space committee's land review.",
+  "attendees": [
+   {
+    "name_as_heard": "Karen",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Dave",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Chris",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Anna",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Kayla",
+    "role": "recreation staff / parks coordinator",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Terry",
+    "role": "finance (town)",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 5912,
+    "topic": "Jared Bowser asked by message whether cash will be accepted at the beach this year."
+   },
+   {
+    "t": 4251,
+    "topic": "Jared sent a note that someone must be at the beach house even if renters only use the building, because only a deadlock keeps people from reaching the water."
+   }
+  ],
+  "tags": [
+   "budget",
+   "facilities",
+   "fees",
+   "legal",
+   "policy",
+   "public-comment",
+   "recreation",
+   "town-departments"
+  ],
+  "votes": [
+   {
+    "t": 101,
+    "motion": "Approve the January 25th minutes",
+    "outcome": "passed (roll call; one member abstained, having not read them)",
+    "procedural": true,
+    "moved_by": "Dave"
+   },
+   {
+    "t": 6640,
+    "motion": "Approve the new beach day-pass price structure as read, leaving season passes unchanged",
+    "outcome": "passed (roll call: Dave, Chris, Anna and the chair all aye)",
+    "procedural": false
+   },
+   {
+    "t": 9872,
+    "motion": "Adjourn",
+    "outcome": "passed (roll call, all aye)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 352,
+    "topic": "Parks revolving account (53D) balance and carryover",
+    "what_was_said": "A DOR attorney said a balance above the limit can be carried if reserved for a purpose, but that the existing balance cannot be moved to a different account type. The chair said the balance is currently over a figure in the thirty-thousands.",
+    "figures_as_heard": [
+     "ten thousand dollars",
+     "30 000"
+    ]
+   },
+   {
+    "t": 851,
+    "topic": "Interest on the revolving account",
+    "what_was_said": "Interest on a 53D account should return to the account, but none has apparently ever been credited. Accounting will look into it.",
+    "figures_as_heard": [
+     "seven dollars and fifty cents"
+    ]
+   },
+   {
+    "t": 1078,
+    "topic": "Parks lines in the DPW budget",
+    "what_was_said": "A member saw for the first time that the salary lines plus care of parks make up the parks total under DPW.",
+    "figures_as_heard": [
+     "90 some odd thousand dollars"
+    ]
+   },
+   {
+    "t": 4952,
+    "topic": "Town beach salary line",
+    "what_was_said": "The beach salary line has been overspent each year and is again over this year. Charging enough to recoup all lifeguard cost would price the town out of the market.",
+    "figures_as_heard": [
+     "twenty thousand dollars",
+     "eighteen hundred dollars"
+    ]
+   },
+   {
+    "t": 5054,
+    "topic": "Town beach revenue",
+    "what_was_said": "Beach revenue in 2019 did not cover the salaries. The town manager hopes swim lessons are self-funded.",
+    "figures_as_heard": [
+     "ten thousand five hundred"
+    ]
+   },
+   {
+    "t": 3187,
+    "topic": "Beach rental fees",
+    "what_was_said": "Members settled on an hourly rental fee with a two-hour minimum and a non-refundable deposit credited to the bill. Lifeguard cost was discussed as separate, with an extra lifeguard per group-size threshold.",
+    "figures_as_heard": [
+     "fifty dollars",
+     "fifty five dollars",
+     "25 dollars an hour",
+     "75 dollars per hour"
+    ]
+   },
+   {
+    "t": 6662,
+    "topic": "Beach day passes",
+    "what_was_said": "Voted day pass: a resident adult covers up to three children under fifteen, with a lower rate for seniors or extra children, and a higher non-resident rate.",
+    "figures_as_heard": [
+     "five dollars",
+     "two dollars",
+     "ten dollars",
+     "five dollars for seniors or additional child"
+    ]
+   },
+   {
+    "t": 4511,
+    "topic": "Season pass prices",
+    "what_was_said": "Season passes stay as proposed for residents and non-residents, with an add-on for extra dependents.",
+    "figures_as_heard": [
+     "sixty five dollars",
+     "eighty dollars",
+     "44",
+     "60",
+     "23",
+     "35",
+     "five dollars per person"
+    ]
+   },
+   {
+    "t": 6558,
+    "topic": "Facebook advertising",
+    "what_was_said": "A 20 percent add-on to vendor prices partly covers absorbed credit card fees and partly funds advertising.",
+    "figures_as_heard": [
+     "20"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 520,
+    "decision": "Hold off converting the 53D revolving account to a 53E½ account for now; revisit in about a year, and ask the accounting staff to join a future meeting."
+   },
+   {
+    "t": 1164,
+    "decision": "Seasonal beach employment was reported approved for the requested dates."
+   },
+   {
+    "t": 4187,
+    "decision": "Kayla and the chair will revise the beach rental policy and form for approval at the next meeting."
+   },
+   {
+    "t": 6849,
+    "decision": "Members will send Marshall Park idea lists to Kayla to compile; the item is deferred to the next meeting."
+   },
+   {
+    "t": 8531,
+    "decision": "Anna will draft an inspection and maintenance policy and work on it with Chris."
+   },
+   {
+    "t": 9849,
+    "decision": "Next meeting set tentatively for Monday the 29th at 6:30, with the beach, Marshall Park and a first policy review on the agenda."
+   },
+   {
+    "t": 6096,
+    "decision": "No cash at the beach this year; the issue can be revisited."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 0,
+    "t_end": 81,
+    "topic": "Open meeting law remote notice",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 81,
+    "t_end": 143,
+    "topic": "Approval of January minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 143,
+    "t_end": 307,
+    "topic": "Recreation updates: soccer, programs, concerts",
+    "resolution": "informational",
+    "tags": [
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 307,
+    "t_end": 1140,
+    "topic": "Revolving account 53D vs 53E½, oversight of parks budget lines",
+    "resolution": "deferred a year",
+    "tags": [
+     "legal",
+     "budget",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 1140,
+    "t_end": 4340,
+    "topic": "2021 beach rental policy and fees",
+    "resolution": "revisions agreed; final approval next meeting",
+    "tags": [
+     "fees",
+     "policy",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 4340,
+    "t_end": 6747,
+    "topic": "2021 beach season passes and day-pass pricing",
+    "resolution": "day pass voted",
+    "tags": [
+     "fees",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 6200,
+    "t_end": 6600,
+    "topic": "Beach staffing, swim lessons, advertising",
+    "resolution": "informational",
+    "tags": [
+     "recreation",
+     "staffing"
+    ]
+   },
+   {
+    "t_start": 6747,
+    "t_end": 6994,
+    "topic": "Marshall Park ideas list",
+    "resolution": "deferred",
+    "tags": [
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 6994,
+    "t_end": 8631,
+    "topic": "Parks inspection and maintenance policy",
+    "resolution": "Anna to draft",
+    "tags": [
+     "policy",
+     "facilities",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 8631,
+    "t_end": 9515,
+    "topic": "Open space committee properties and hockey equipment story",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "recreation"
+    ]
+   },
+   {
+    "t_start": 9515,
+    "t_end": 9892,
+    "topic": "Park cleanup, next meeting date, adjournment",
+    "resolution": "voted to adjourn",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Whether the numbering of agenda items matched the printed agenda.",
+   "Exact figures for the senior and non-resident pass structure were read out and partially confused in the captions.",
+   "The February minutes and the proposal competing for the Parmenter Ave land were not specified."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 8238,
+    "about": "Whether the commission's policy should set specific service frequencies, such as daily trash pickup, for staff and contractors.",
+    "sides": "one member against another over how far policy should reach into daily operations",
+    "words_as_heard": "no no no i'm gonna disagree with you because if the par if the trash needs to be picked up every day we can't have a policy",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 394,
+    "kind": "liability or legal",
+    "about": "Moving the existing revolving balance to a different account type might send it to the general fund.",
+    "who": "the chair",
+    "words_as_heard": "i don't want to risk losing that sort of money i believe it would then go back to the general fund"
+   },
+   {
+    "t": 1290,
+    "kind": "liability or legal",
+    "about": "Insurance cover for rentals of town property.",
+    "who": "a member",
+    "words_as_heard": "do we have a rental uh piece to it"
+   },
+   {
+    "t": 3271,
+    "kind": "liability or legal",
+    "about": "Refusing restroom access to beach-ground renters could be challenged legally.",
+    "who": "a member",
+    "words_as_heard": "i think it could be questioned legally in some manner at some point"
+   },
+   {
+    "t": 4273,
+    "kind": "safety",
+    "about": "Beach house renters could reach the water with no lifeguard.",
+    "who": "a member relaying a note",
+    "words_as_heard": "the only thing blocking people from going into the water is a deadlock on the door could be a safety issue"
+   },
+   {
+    "t": 7538,
+    "kind": "liability or legal",
+    "about": "A past water leak at Marshall Park produced a large water bill.",
+    "who": "a member",
+    "words_as_heard": "we got slammed with a massive water bill"
+   },
+   {
+    "t": 1950,
+    "kind": "safety",
+    "about": "A locked door as the only interior exit raises fire egress concern.",
+    "who": "a member",
+    "words_as_heard": "you gotta have two uh means of egress"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 101,
+    "name_as_heard": "January 25th minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "did either of you review the january 25th minutes",
+    "shown": false
+   },
+   {
+    "t": 1187,
+    "name_as_heard": "Lunenburg town beach rental policy",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "what the lunenburg town beach rental policy",
+    "shown": true
+   },
+   {
+    "t": 4296,
+    "name_as_heard": "beach rental form",
+    "kind": "application or permit",
+    "words_as_heard": "there was a form that was attached to that which was the speech rental form",
+    "shown": true
+   },
+   {
+    "t": 4340,
+    "name_as_heard": "2021 beach season proposal",
+    "kind": "memo",
+    "words_as_heard": "now on to the 2021 beach season",
+    "shown": true
+   },
+   {
+    "t": 7016,
+    "name_as_heard": "Parks properties and equipment inspection and remediation standards (Word document)",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "properties and equipment inspection and remediation standards",
+    "shown": true
+   },
+   {
+    "t": 6849,
+    "name_as_heard": "Marshall Park ideas list",
+    "kind": "other",
+    "words_as_heard": "the initial list from a little while ago",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "beach-fees-and-revenue",
+    "title": "Town beach fees",
+    "question": "What do beach passes bring in compared with beach salaries, and what would the new day-pass pricing change?",
+    "t": 4890,
+    "words_as_heard": "our town beach salary line is twenty thousand dollars in the past few years we've expended we've um exceeded that every year",
+    "data_in_play": [
+     "twenty thousand dollars",
+     "ten thousand five hundred",
+     "eighteen hundred dollars"
+    ],
+    "existing": "topic:park-revolving-fund"
+   },
+   {
+    "slug": "parks-revolving-fund-rules",
+    "title": "Parks revolving fund",
+    "question": "Can the 53D parks revolving fund carry its balance, and what could it pay for?",
+    "t": 307,
+    "words_as_heard": "whether or not this account could carry a balance over ten thousand dollars",
+    "data_in_play": [
+     "ten thousand dollars",
+     "30 000"
+    ],
+    "existing": "topic:park-revolving-fund"
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Parks Commission voted to approve a new beach day-pass price structure for the 2021 season, leaving season passes unchanged.",
+    "t": 6640
+   },
+   {
+    "line": "The commission agreed to hold off converting the parks revolving account from 53D to 53E½ for about a year and to ask accounting staff to join a future meeting.",
+    "t": 520
+   },
+   {
+    "line": "Members settled on an hourly beach rental fee with a two-hour minimum and a non-refundable deposit; Kayla and the chair will revise the policy and form for approval next meeting.",
+    "t": 4187
+   },
+   {
+    "line": "Members said the beach salary line has been overspent each year and is over again this year; no cash will be taken at the beach this year.",
+    "t": 4952
+   },
+   {
+    "line": "Anna will draft a parks inspection and maintenance policy with Chris, and Marshall Park ideas were deferred to the next meeting.",
+    "t": 8531
+   }
+  ],
+  "why_it_matters": [
+   "The day-pass structure voted here sets what residents and non-residents pay at the town beach in 2021, and the no-cash decision changes how they pay.",
+   "Beach revenue did not cover beach salaries in 2019 and the salary line is over budget again, so the part of lifeguard cost that fees do not cover falls to the town budget, which is mostly taxes.",
+   "Keeping the parks revolving account as it is means its balance and any uncredited interest stay open questions for another year."
+  ],
+  "watch_next": [
+   "Next meeting, tentatively Monday the 29th at 6:30, with final approval of the beach rental policy and form, Marshall Park ideas and a first policy review on the agenda.",
+   "Accounting's check on whether interest was ever credited to the parks revolving account."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-28T09:57:26Z",
+   "cost_usd": 0.340814
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03012021-3333",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/parks-commission/2021-03-01-minutes-3333.txt",
+   "path": "sources/meetings/parks-commission/2021-03-01-minutes-3333.pdf"
+  },
+  "official_sha256": "db35f18138f55f3a6bcc86c1834407f8f0add5beb13d653fdcdaf7ab9e0cde87",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "The two records agree on the main outcomes: the 4-0 fee-structure vote, staying with the 53D, the rental rates, the pass prices and the next steps. Ours adds several figures and items the official minutes lack. A reader should check the scope of the vote: ours says only day-pass prices changed and season passes were left alone, but the official minutes accept a fee structure that includes individual and family pass rates.",
+  "counts": {
+   "agree": 10,
+   "caption_error": 2,
+   "discrepancy": 1,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "discrepancy",
+    "about": "Beach fee vote: scope",
+    "ours": "Approve the new beach day-pass price structure as read, leaving season passes unchanged — passed (roll call: Dave, Chris, Anna and the chair all aye)",
+    "official": "chris motioned and ana seconded to accept the following fee structure:",
+    "note": "Both record a unanimous pass (4-0), but ours limits it to day passes with season passes unchanged, while the official fee structure includes individual and family pass rates; check the video and the fee table to see whether season pass prices were changed.",
+    "t": 6640
+   },
+   {
+    "kind": "agree",
+    "about": "Revolving account 53D: stay put",
+    "ours": "Hold off converting the 53D revolving account to a 53E½ account for now; revisit in about a year, and ask the accounting staff to join a future meeting.",
+    "official": "karin asked the group if anyone disagreed with waiting and see how it goes staying with a 53d. dave agreed",
+    "note": "Same outcome (stay with 53D, no formal vote); the one-year revisit and the accounting-staff invitation appear only in ours.",
+    "t": 520
+   },
+   {
+    "kind": "agree",
+    "about": "53D balance carryover figure",
+    "ours": "Parks revolving account (53D) balance and carryover: ten thousand dollars, 30 000",
+    "official": "as long as funds in excess of $10k were committed and reserved for a particular purpose that a balance over $10k can be carried forward.",
+    "note": "The $10k carryover threshold matches; the extra 30,000 heard in ours is not in the official minutes.",
+    "t": 352
+   },
+   {
+    "kind": "agree",
+    "about": "Town beach salary line",
+    "ours": "Town beach salary line: twenty thousand dollars, eighteen hundred dollars",
+    "official": "karin said that our town beach salary line is $20k and we have exceeded that the past few years.",
+    "note": "$20k matches; the 'eighteen hundred' in ours is not in the official minutes.",
+    "t": 4952
+   },
+   {
+    "kind": "agree",
+    "about": "Beach rental rates",
+    "ours": "Beach rental fees: fifty dollars, fifty five dollars, 25 dollars an hour, 75 dollars per hour",
+    "official": "the group settled on $50 per hour for the rental of the beach and beach house, $50 non refundable deposit and if lifeguards required an additional",
+    "note": "The settled $50 per hour, $50 deposit and $25 per lifeguard hour match; the $55 and $75 figures in ours are not in the official minutes (possibly earlier options).",
+    "t": 3187
+   },
+   {
+    "kind": "agree",
+    "about": "Pass prices",
+    "ours": "Season pass prices: sixty five dollars, eighty dollars, 44, 60, 23, 35, five dollars per person",
+    "official": "resident individual pass: $44.00 non-resident individual pass: $60.00",
+    "note": "The official lists $65, $80, $44, $60, $23, $35 and $5; day pass figures ($5, $2, $10, $5) also match.",
+    "t": 4511
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Beach rental security deposit",
+    "ours": "",
+    "official": "ana asked if the $25 security deposit was for damage to the property or if they cancelled.",
+    "note": "The $25 security deposit discussion is not in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Revolving account interest and DPW parks lines",
+    "ours": "Interest on the revolving account: seven dollars and fifty cents; Parks lines in the DPW budget: 90 some odd thousand dollars",
+    "official": "",
+    "note": "These figures are not in the official minutes.",
+    "t": 851
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Town beach revenue and Facebook advertising",
+    "ours": "Town beach revenue: ten thousand five hundred; Facebook advertising: 20",
+    "official": "",
+    "note": "Neither figure appears in the official minutes.",
+    "t": 5054
+   },
+   {
+    "kind": "agree",
+    "about": "Beach rental policy revision",
+    "ours": "Kayla and the chair will revise the beach rental policy and form for approval at the next meeting.",
+    "official": "karin said she would work with kayla to update the beach rental policy before the group considers it for approval.",
+    "note": "Same action.",
+    "t": 4187
+   },
+   {
+    "kind": "agree",
+    "about": "Marshall Park deferral",
+    "ours": "Members will send Marshall Park idea lists to Kayla to compile; the item is deferred to the next meeting.",
+    "official": "there was no further discussion and we will hold for the march 29th meeting.",
+    "note": "Both defer to the next meeting; the idea lists are only in ours.",
+    "t": 6849
+   },
+   {
+    "kind": "agree",
+    "about": "Maintenance policy",
+    "ours": "Anna will draft an inspection and maintenance policy and work on it with Chris.",
+    "official": "ana and chris said they would work together to fill in some of the document for the next meeting.",
+    "note": "Same assignment; ours says Anna drafts, the official says both fill it in.",
+    "t": 8531
+   },
+   {
+    "kind": "agree",
+    "about": "Next meeting date",
+    "ours": "Next meeting set tentatively for Monday the 29th at 6:30, with the beach, Marshall Park and a first policy review on the agenda.",
+    "official": "there was no further discussion and we will hold for the march 29th meeting.",
+    "note": "March 29 matches; the 6:30 time is only in ours.",
+    "t": 9849
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Seasonal beach employment",
+    "ours": "Seasonal beach employment was reported approved for the requested dates.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 1164
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "No cash at the beach",
+    "ours": "No cash at the beach this year; the issue can be revisited.",
+    "official": "",
+    "note": "Not in the official minutes.",
+    "t": 6096
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Parmenter Ave property",
+    "ours": "",
+    "official": "dave said he would like to have open space informed that we would like to be considered for that piece of property.",
+    "note": "Open Space / Parmenter Ave item is not in ours."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chair's name",
+    "ours": "Karen (chair)",
+    "official": "karin opened the meeting at 6:30pm. attendance: karin menard, dave passios, chris sullivan, ana lockwood (arrived at 6:45pm), recreation director kayla wright. absent: susanna jewell",
+    "note": "Misheard spelling of the chair's name.",
+    "official_reading": "Karin Menard"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Member name",
+    "ours": "Anna (member)",
+    "official": "ana lockwood (arrived at 6:45pm), recreation director kayla wright. absent: susanna jewell",
+    "note": "Misheard spelling; the official also notes she arrived at 6:45pm.",
+    "official_reading": "Ana Lockwood"
+   },
+   {
+    "kind": "agree",
+    "about": "Other attendees",
+    "ours": "Dave (member); Chris (member); Kayla (recreation staff / parks coordinator)",
+    "official": "attendance: karin menard, dave passios, chris sullivan, ana lockwood (arrived at 6:45pm), recreation director kayla wright.",
+    "note": "Dave Passios, Chris Sullivan and Kayla Wright match."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Terry (finance)",
+    "ours": "Terry (finance (town))",
+    "official": "",
+    "note": "Terry is not listed in the official attendance."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member",
+    "ours": "",
+    "official": "absent: susanna jewell",
+    "note": "Susanna Jewell's absence is not in ours."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-28T09:59:02Z",
+   "cost_usd": 0.43299889999999996
+  }
+ }
+}

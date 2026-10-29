@@ -10,13 +10,21 @@ On the Athletics shelf (scripts/topic_registry/athletics.py, through TOPIC_GENER
 28 October 2026, beside the athletic director page (build_athletic_director_topic.py), modelled
 on the after-school activities fund page (build_activities_fund_topics.py).
 
-WHY A PAGE BESIDE `fee-fund-ledger`. That page is the fund's CASH, FY2024-FY2026, read off the
-cashbook a records request produced, and the four expense-adjustment entries that carried it.
-This one is the fund's whole held history -- thirteen years the annual town reports print, the
-FY19 athletics document's itemised fee-fund side, and the school journal tied to the Town's
-period-13 report -- and both ends of every move onto the town budget. The two overlap on the
-FY2025 entries; folding `fee-fund-ledger` into this page is a consolidation for the shelf's
-owner to decide, and is not done here (that page's generator is another session's file).
+THE FEE FUND LEDGER PAGE IS FOLDED IN (28 October 2026, TJ approved). `fee-fund-ledger` was the
+fund's CASH, FY2024-FY2026, off the cashbook, and opened on the same FY2025 entries this page
+does. Its unique parts live here now: the cashbook's year-by-year cash (a second view of the
+years table), the fund's lowest cash, and the two minutes it quoted. TOPIC_MERGED in
+fy28/src/routes.ts sends the old address here.
+
+YEAR-END FIGURES ON THREE BASES, never blended into one series:
+  * FY2011-FY2023 and FY2024: the annual town reports (FY2024's Special Revenue Fund Balance
+    Detail, read in sources/data/page-reads/fy2024-p23-special-revenue.csv);
+  * FY2025: the FY2025 report's same schedule prints $131,239.09 -- the fund's CASH, which the
+    cashbook closes FY2025 at to the cent, $20,991.20 above the fund balance the district's
+    reconciliation opens FY2026 with (asserted below);
+  * FY2026: the district's own reconciliation, school-funds-fy26.xlsx -- a sheet the district
+    assembled (rule 13a: `stated`), though the chain /analysis/sitting-on-money proves from
+    the period-13 ledgers reaches the same figure.
 
 WHAT IS MEASURED, and refused if it stops being true:
   * FY2011-FY2023: the Town's special revenue schedule in each annual town report, as read
@@ -72,6 +80,12 @@ DATA = os.path.join(ROOT, 'sources', 'data')
 SR = os.path.join(DATA, 'special-revenue-read.csv')
 HIST = os.path.join(DATA, 'athletics-history.csv')
 YTD = os.path.join(DATA, 'munis-school-ytd.csv')
+CASH = os.path.join(DATA, 'fund-1301-cash-journal.csv')
+PR24 = os.path.join(DATA, 'page-reads', 'fy2024-p23-special-revenue.csv')
+AR25 = os.path.join(ROOT, 'sources', 'town-annual-reports', 'text', '4130-fy-2025-annual-town-report.txt')
+AR25_LINE = '1301 CHAPT 658  $      131,239.09'
+FUNDS26 = os.path.join(ROOT, 'sources', 'budget-workbooks', 'school-funds-fy26.xlsx')
+MINUTES = os.path.join(ROOT, 'sources', 'meetings', 'text')
 FY19_TXT = os.path.join(ROOT, 'sources', 'district-budget', 'text', 'fy19-proposed-athletics-budget.txt')
 SR_NAME = 'Chapter 658 School Athletics'
 PAY = '519999'
@@ -273,6 +287,73 @@ def tie(t, L, A):
         t[('town_out', y)] = p[(y, 'E')]
 
 
+# ------------------------------------------------------------------ the cashbook (from fee-fund-ledger)
+def cashbook():
+    """fy -> opening, money in, paid out, journal entries, closing, and the lowest running cash
+    (our arithmetic, postings in effective-date order) -- off our redacted extract of the
+    Town's MUNIS journal export for fund 1301. Each year's close must be the next one's
+    printed opening (SOY BAL), or the page refuses."""
+    rows = list(csv.DictReader(open(CASH, encoding='utf-8')))
+    out = {}
+    for fy in sorted({int(r['fy']) for r in rows}):
+        rs = sorted((r for r in rows if int(r['fy']) == fy), key=lambda r: (r['eff_date'], int(r['source_row'])))
+        soy = [r for r in rs if r['src'] == 'SOY']
+        if len(soy) != 1:
+            fail('FY%d: %d opening rows in the cashbook' % (fy, len(soy)))
+        op = Decimal(soy[0]['amount'])
+        mv = [Decimal(r['amount']) for r in rs if r['src'] != 'SOY']
+        bal, low, low_d = ZERO, None, None
+        for r in rs:
+            bal += Decimal(r['amount'])
+            if low is None or bal < low:
+                low, low_d = bal, r['eff_date']
+        out[fy] = dict(opening=op, receipts=sum((v for v in mv if v > 0), ZERO),
+                       payments=sum((v for v in mv if v < 0), ZERO),
+                       journals=sum((Decimal(r['amount']) for r in rs if r['src'] == 'GEN'), ZERO),
+                       closing=bal, low=low, low_date=low_d)
+    ys = sorted(out)
+    for a, b in zip(ys, ys[1:]):
+        if out[b]['opening'] != out[a]['closing']:
+            fail('the cashbook closes FY%d at %s and opens FY%d at %s' % (a, out[a]['closing'], b, out[b]['opening']))
+    return out
+
+
+def year_ends(cash):
+    """The printed year-end figures after FY2023, each from its own document, and the
+    assertions that say what basis each is on."""
+    r24 = [r for r in csv.DictReader(open(PR24, encoding='utf-8'))
+           if r['fund_number'] == FUND and r['column'] == 'fund_balance']
+    if len(r24) != 1:
+        fail('the FY2024 annual report read holds %d fund 1301 balances' % len(r24))
+    fb24 = Decimal(r24[0]['value'])
+    if AR25_LINE not in open(AR25, encoding='utf-8').read():
+        fail('the FY2025 annual report no longer prints %r' % AR25_LINE)
+    ar25 = Decimal(AR25_LINE.split('$')[1].strip().replace(',', ''))
+    if ar25 != cash[2025]['closing']:
+        fail('the FY2025 annual report’s 1301 figure is no longer the cashbook’s close')
+    import openpyxl
+    ws = openpyxl.load_workbook(FUNDS26, data_only=True)['Athletics Revolving']
+    if not (str(ws['A5'].value).startswith('Beginning Undesignated Fund Balance (7/1/25)')
+            and str(ws['A8'].value).startswith('Ending Fund Balance / Cash (6/30/26)')):
+        fail('school-funds-fy26.xlsx no longer labels C5 and C8 as before')
+    fb25 = Decimal(str(ws['C5'].value)).quantize(Decimal('0.01'))
+    fb26 = Decimal(str(ws['C8'].value)).quantize(Decimal('0.01'))
+    payable = ar25 - fb25
+    if '$%s' % format(payable, ',.2f') not in str(ws['A26'].value):
+        fail('the district file no longer names the cash-to-fund-balance gap in A26')
+    return dict(fb24=fb24, ar25=ar25, fb25=fb25, fb26=fb26, payable=payable)
+
+
+def said_file(rel, quote, board):
+    """A quotation asserted verbatim against our copy of the minutes."""
+    text = ' '.join(open(os.path.join(MINUTES, rel), encoding='utf-8').read().split())
+    if ' '.join(quote.split()) not in text:
+        fail('quote is not verbatim in %s: %r' % (rel, quote))
+    date = re.search(r'(\d{4}-\d{2}-\d{2})', rel).group(1)
+    return dict(quote=quote, board=board, date=date, href='/docs/minutes/text/' + rel,
+                label='%s minutes, %s' % (board, date))
+
+
 def sources():
     return [
         dict(label='Town of Lunenburg — annual town reports FY2011–FY2023, special revenue '
@@ -288,6 +369,18 @@ def sources():
              href='/docs/town-ledgers/expenses/glytdbud-expense-fy2026-p13-special-school.xlsx'),
         dict(label='Town of Lunenburg — how the journal reached us, and what was redacted',
              href='/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md'),
+        dict(label='Town of Lunenburg — FY2024 annual town report, Special Revenue Fund Balance Detail, '
+                   'page 23 (fund 1301 at 30 June 2024)',
+             href='/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf'),
+        dict(label='Town of Lunenburg — FY2025 annual town report, Special Revenue Fund Balance Detail '
+                   '(fund 1301 at 30 June 2025, unaudited)',
+             href='/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf'),
+        dict(label='Lunenburg Public Schools — school-funds-fy26.xlsx (the district’s FY2026 '
+                   'reconciliation of the athletics revolving fund)',
+             href='/docs/budget-workbooks/school-funds-fy26.xlsx'),
+        dict(label='Lunenburg Budget Project — fund-1301-cash-journal.csv (our redacted extract of the '
+                   'Town’s MUNIS journal exports for fund 1301, every posting; the originals are '
+                   'withheld: they name a family)', href='/docs/data/fund-1301-cash-journal.csv'),
     ]
 
 
@@ -295,6 +388,8 @@ def build():
     ar = annual()
     f19, sec_line = fy19()
     t, moves = journal()
+    cash = cashbook()
+    ye = year_ends(cash)
     U = lambda v: figure(float(v), C.usd(v))
     F = lambda v: figure(v, C.fy(v), 'fiscal year')
     f = LD.fact
@@ -441,17 +536,34 @@ def build():
             yr.append(dict(label=C.fy(y), cells=[usd2(ar[y]['receipts']), usd2(ar[y]['disb']), '—',
                                                 usd2(ar[y]['carried']), 'Annual report p%s' % ar[y]['page']]))
         else:
-            held = usd2(ar[y]['carried']) if y in ar else '—'
+            held, where = {
+                j0: (ar[j0]['carried'], '; year end, annual report p%s' % ar[j0]['page']),
+                2024: (ye['fb24'], '; year end, FY2024 annual report p23'),
+                2025: (ye['ar25'], '; year end, FY2025 annual report: the fund’s cash'),
+                2026: (ye['fb26'], '; year end, the district’s FY2026 reconciliation'),
+            }.get(y, (None, ''))
             yr.append(dict(label=C.fy(y), cells=[usd2(t[('in', y)]), usd2(t[('out', y)]),
                                                 usd2(-t[('moved', y)]) if t[('moved', y)] else '—',
-                                                held, 'School journal' + (
-                                                    '; year end, annual report p%s' % ar[y]['page']
-                                                    if y in ar else '')]))
+                                                usd2(held) if held is not None else '—',
+                                                'School journal' + where]))
+    cy = sorted(cash)
+    crow = [dict(label=C.fy(y), cells=[usd2(cash[y][k]) for k in ('opening', 'receipts', 'payments',
+                                                                 'journals', 'closing', 'low')])
+            for y in sorted(cy, reverse=True)]
     t_years = dict(caption='The fund, every year held', views=[dict(
         key='years', label='By year', kinds=['ledger', 'ledger', 'ledger', 'ledger', 'stated'],
         columns=cols, rows=yr,
-        note='No year-end figure is printed for FY2024 to FY2026 in anything tied here; the '
-             'cashbook’s cash is on the fee fund ledger page.')])
+        note='Year ends on three bases: fund balance (annual reports to FY2024), cash (the FY2025 '
+             'report, %s above the fund balance the district opens FY2026 with: unpaid bills), and '
+             'the district’s own FY2026 sheet.' % usd2(ye['payable']))])
+    t_cash = dict(caption='The fund’s cash, by year', views=[
+        dict(key='cash', label='Cash, the fund’s cashbook', total_col=4, kinds=['ledger'] * 6,
+             columns=['Opening cash', 'Money in', 'Paid out', 'Of money in: journal entries',
+                      'Closing cash', 'Lowest cash in the year (ours)'], rows=crow,
+             note='Our redacted reading of the Town’s MUNIS journal exports for fund 1301. Each year’s '
+                  'close is the next year’s printed opening. The latest year stops on %s. The lowest '
+                  'cash is our running total, in effective-date order.' % long_date(max(
+                      r['eff_date'] for r in csv.DictReader(open(CASH, encoding='utf-8')))))])
 
     # ---- table 3: who the fund paid, journal years, organisations only
     pcols = [C.fy(y) for y in Y] + ['Four years']
@@ -485,13 +597,21 @@ def build():
         TID,
         'In FY2025 the town budget took %s of the fee fund’s costs by journal entry, against %s of fees.'
         % (C.usd(mv25), C.usd(in25)),
-        list(px.values()), concl, chart=chart, also=also, tables=[t_moves, t_years, t_payees],
+        list(px.values()), concl, chart=chart, also=also, tables=[t_moves, t_years, t_cash, t_payees],
+        said=[said_file('school-committee/2025-09-03-minutes-7385.txt',
+                        'in the past 6 months or so there have been things that have come up, '
+                        'athletic revolving fund was running in a deficit, I was told over '
+                        '$100,000', 'School Committee'),
+              said_file('finance-committee/2025-07-08-minutes-7295.txt',
+                        'She emphasized the need for all revolving accounts to have a budget, '
+                        'even if they are not town meeting revolving accounts, to prevent '
+                        'negative balances from going unnoticed.', 'Finance Committee')],
         sources=sources(), finding_figures={'a': U(mv25), 'b': U(in25), 'y': F(2025)})
     page['not_established'] = [
         'What the fund paid for in FY2020 to FY2022. The annual reports print one total a year.',
         'Whose pay the fund’s payroll lines were. The journal records one line per account per pay run.',
         'Why each move was made. The entries cite memos the journal does not hold.',
-        'What the fund held at the end of FY2024 and FY2025 on the basis the annual reports use.',
+        'One basis for every year end: the FY2025 report prints the fund’s cash, the others a fund balance.',
     ]
     if [TID] != MINE:
         fail('the registry gives this script %s; it builds %s' % (MINE, [TID]))

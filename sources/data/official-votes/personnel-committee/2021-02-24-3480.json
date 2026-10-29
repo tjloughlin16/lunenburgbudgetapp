@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2021-02-24",
  "docid": "3480",
@@ -12,39 +12,240 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from January 27, 2020",
+   "motion": "Approve the minutes of January 27, 2020 as presented.",
    "moved_by": "D. MacDonald",
    "seconded_by": "E. Arnold",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by d. macdonald to accept the minutes presented; second: e. arnold vote: all in favor"
+   "quote": "motion by d. macdonald to accept the minutes presented; second: e. arnold"
   },
   {
-   "motion": "Approve Senior Videographer role as Grade 6 and submit for final approval at next appropriate Town Meeting",
+   "motion": "Approve the Senior Videographer (SR Videographer) role as submitted at Grade 6 and submit it for final approval at the next appropriate Town Meeting.",
    "moved_by": "D. MacDonald",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: d. macdonald: approve sr videographer role as submitted as a grade 6 and submit for final approval at next appropriate town meeting. 2nd: s. andrews vote: all in favor"
+   "quote": "approve sr videographer role as submitted as a grade 6 and submit for final approval at next appropriate town meeting."
   },
   {
-   "motion": "Approve new hire as Dietary Aide at Grade 2 step 5 to ensure above Massachusetts minimum wage",
+   "motion": "Approve the Dietary Aide new hire as a Grade 2 step 5 so the hire is above Massachusetts minimum wage.",
    "moved_by": "E. Arnold",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion: e. arnold: approve the new hire as a grade 2 step 5 in order to insure this hire would be above mass minimum wage. 2nd: s. andrews vote: all in favor"
+   "quote": "approve the new hire as a grade 2 step 5 in order to insure this hire would be above mass minimum wage."
   },
   {
-   "motion": "Adjourn meeting at 6:30pm",
+   "motion": "Adjourn the meeting at 6:30pm.",
    "moved_by": "S. Andrews",
    "seconded_by": "D. MacDonald",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion: s. andrews: adjourn meeting 6:30pm second: d. macdonald vote: all in favor"
+   "quote": "motion: s. andrews: adjourn meeting 6:30pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document header states \"February 24, 2020\" but user provided date is February 24, 2021; minutes internally reference 2020 dates (January 27, 2020 prior meeting; April 13, 2020 next meeting). All four votes passed unanimously.",
- "cost_usd": 0.0844695
+ "note": "The meeting date given to me is 2021-02-24, but the minutes print February 24, 2020 in the heading and the next-meeting target is Monday, April 13, 2020. I recorded the minutes as printed. Dollar figures: none are printed; the budget items are about wage floors and grades, not amounts. Public comment: none recorded. The minutes say 'All in Favor' without a count, so outcomes are recorded as 'passed'. 'LAT' is not expanded in the minutes beyond the Local Public Access role.",
+ "cost_usd": 0.01388286,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Scott Chase",
+   "role": "Chair",
+   "status": "present",
+   "quote": "scott chase (chair), sue andrews, dave macdonald, erik arnold"
+  },
+  {
+   "name": "Sue Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "scott chase (chair), sue andrews, dave macdonald, erik arnold"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "scott chase (chair), sue andrews, dave macdonald, erik arnold"
+  },
+  {
+   "name": "Erik Arnold",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "meeting began at 5:30pm with all attendee"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager, julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "heather lemieux, town manager, julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Jo McLaughlin",
+   "role": "Director, Local Public Access",
+   "status": "present",
+   "quote": "jo mclaughlin presented a revised job description for the lat, senior videographer"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Director, Council on Aging",
+   "status": "present",
+   "quote": "sue doherty, director, council on aging"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Principal Assessor role: no change to the SAP role at this time, because the role is being outsourced.",
+   "quote": "this role is now being outsourced and there is no need to change sap role at the present time."
+  },
+  {
+   "decision": "A job description for the Seasonal DPW Laborer/Truck Driver role will be prepared and presented at the next meeting to determine the SAP Grade level.",
+   "quote": "a job description will be prepared and presented at next meeting to determine sap grade level."
+  },
+  {
+   "decision": "The committee agreed that banding the current roles to reduce the SAP from 20 grade levels to 10 is a reasonable alternative to the longer grid; discussion continues as Julie Belliveau refines the work.",
+   "quote": "the committee agreed that it was a reasonable alternative to the current longer grid"
+  },
+  {
+   "decision": "Review of a formalized position rating guide continues at future meetings as the Asst. Town Manager explores options.",
+   "quote": "the committee will continue a review of this topic in future meetings as julie explores the options available"
+  },
+  {
+   "decision": "Next meeting target set for Monday, April 13, 2020 at 5:30pm.",
+   "quote": "next meeting target: monday, april 13, 2020 5:30pm"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Dietary Aide starting wage and step",
+   "what_was_recorded": "The Dietary Aide role is SAP Grade 2 and its initial steps sit below the Massachusetts minimum wage; the committee approved hiring at Grade 2 step 5 instead.",
+   "quote": "the initial steps are currently below the massachusetts minimum wage.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "State minimum wage and SAP grid alternatives",
+   "what_was_recorded": "The Asst. Town Manager presented salary grade alternatives so all starting wages meet the Massachusetts minimum wage, including reducing the SAP from 20 grade levels to 10.",
+   "quote": "she included additional alternatives to change the current sap which has 20 grade levels, down to only 10 grade levels.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Seasonal DPW Laborer/Truck Driver contracted work",
+   "what_was_recorded": "Temporary roles such as snow plowing, previously done by non-town employees with town equipment, are to become town employee roles because the state mandates town equipment be operated only by town employees.",
+   "quote": "the state mandates that utilizing town equipment can only be done by town employees.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Old business: minutes of January 27, 2020",
+   "resolution": "approved",
+   "quote": "minutes from january 27, 2020 reviewed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Job description review: Senior Videographer (LAT)",
+   "resolution": "approved as Grade 6 for Town Meeting",
+   "quote": "presented a revised job description for the lat, senior videographer",
+   "tags": [
+    "job description",
+    "LAT employees",
+    "grading"
+   ]
+  },
+  {
+   "topic": "Transition of LAT contract employees to town employee roles",
+   "resolution": "new hire forms completed and signed",
+   "quote": "new hire forms on each of these lat employees were completed and signed by the committee members.",
+   "tags": [
+    "LAT employees",
+    "town employees",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "New hire: Dietary Aide",
+   "resolution": "approved at Grade 2 step 5",
+   "quote": "approve the new hire as a grade 2 step 5 in order to insure this hire would be above mass minimum wage.",
+   "tags": [
+    "hiring",
+    "minimum wage",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Principal Assessor role",
+   "resolution": "no action; role outsourced",
+   "quote": "this role is now being outsourced and there is no need to change sap role at the present time.",
+   "tags": [
+    "outsourcing",
+    "SAP"
+   ]
+  },
+  {
+   "topic": "Seasonal DPW Laborer/Truck Driver",
+   "resolution": "job description to be presented next meeting",
+   "quote": "a job description will be prepared and presented at next meeting to determine sap grade level.",
+   "tags": [
+    "DPW",
+    "union",
+    "town employees"
+   ]
+  },
+  {
+   "topic": "State minimum wage and SAP grid alternatives",
+   "resolution": "continued",
+   "quote": "she included additional alternatives to change the current sap which has 20 grade levels, down to only 10 grade levels.",
+   "tags": [
+    "minimum wage",
+    "SAP",
+    "salary grid"
+   ]
+  },
+  {
+   "topic": "Position rating guide",
+   "resolution": "continued",
+   "quote": "the committee will continue a review of this topic in future meetings as julie explores the options available",
+   "tags": [
+    "position rating",
+    "classification"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Revised job description for the LAT, Senior Videographer",
+   "where": "text",
+   "quote": "presented a revised job description for the lat, senior videographer"
+  },
+  {
+   "name": "New Hire forms for each LAT employee",
+   "where": "text",
+   "quote": "new hire forms on each of these lat employees were completed and signed by the committee members."
+  }
+ ],
+ "tags": [
+  "personnel",
+  "salary grid (SAP)",
+  "minimum wage",
+  "job descriptions",
+  "LAT employees transition",
+  "new hire",
+  "DPW seasonal roles",
+  "position rating"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

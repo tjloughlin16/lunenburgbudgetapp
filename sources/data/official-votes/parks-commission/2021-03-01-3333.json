@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-03-01",
  "docid": "3333",
@@ -12,31 +12,273 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from the January 25, 2021 meeting.",
-   "outcome": "passed 3-0",
+   "motion": "Approve the minutes of January 25, 2021.",
    "moved_by": "Chris Sullivan",
    "seconded_by": "Dave Passios",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chris sullivan motioned and dave passios to approve of january 25, 2021. roll call vote dave passios - yes chris sullivan - yes karin menard - yes"
+   "quote": "chris sullivan motioned and dave passios to approve of january 25, 2021."
   },
   {
-   "motion": "Accept the 2021 beach fee structure including resident day pass $5 per adult (includes up to 3 children 15 and under free) / $2 senior/additional child, non-resident day pass $10 per adult (includes up to 3 children 15 and under free) / $5 senior/additional child, resident family pass $65.00, non-resident family pass $80.00, and individual and senior passes at the rates specified.",
-   "outcome": "passed 4-0",
+   "motion": "Accept the 2021 beach season fee structure: resident and non-resident rates, family and individual and senior passes, and the pass definitions.",
    "moved_by": "Chris",
    "seconded_by": "Ana",
+   "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "chris motioned and ana seconded to accept the following fee structure: resident rate $5 per adult includes up to 3 children 15 and under free."
+   "quote": "chris motioned and ana seconded to accept the following fee structure:"
   },
   {
-   "motion": "Adjourn the meeting.",
+   "motion": "Adjourn the meeting at 9:14pm.",
+   "moved_by": "Chris Sullivan",
+   "seconded_by": "Dave Passios",
    "outcome": "passed 4-0",
-   "moved_by": "Chris",
-   "seconded_by": "Dave",
    "procedural": true,
-   "quote": "chris motioned and dave seconded to adjourn at 9:14pm. roll call vote ana - yes dave - yes chris - yes karin - yes"
+   "quote": "chris motioned and dave seconded to adjourn at 9:14pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Ana Lockwood arrived at 6:45 p.m., after the meeting began at 6:30 p.m. Vote 1 was held before her arrival, thus three commissioners voted. Votes 2 and 3 occurred later with all four commissioners present. Item 7 mentions \"Maintenance policy discussion/vote\" in its heading but contains no recorded motion, vote, or outcome—only discussion; therefore it is not included as a vote.",
- "cost_usd": 0.1273714
+ "note": "The text is 5 pages with a title-only Attachment A (author A.Lockwood); its content is not in the text, so the maintenance draft cannot be read. Item numbering is irregular: item 9 is blank, item 10 appears twice, and item 12 is the adjournment. The January 25 roll call lists Dave, Chris and Karin only; Ana had not yet arrived at 6:45pm and is not in that tally. The revolving account and beach rental rates were settled without a recorded motion. No public comment is recorded. Page headers read 'page of 51' through 'page of 55', which is not a sequence of this document's pages.",
+ "cost_usd": 0.0243957,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "present",
+   "quote": "karin opened the meeting at 6:30pm. attendance: karin menard, dave passios, chris sullivan, ana lockwood (arrived at 6:45pm), recreation director kayla wright. absent: susanna jewell"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "attendance: karin menard, dave passios, chris sullivan, ana lockwood (arrived at 6:45pm), recreation director kayla wright."
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "attendance: karin menard, dave passios, chris sullivan, ana lockwood (arrived at 6:45pm), recreation director kayla wright."
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "ana lockwood (arrived at 6:45pm), recreation director kayla wright. absent: susanna jewell"
+  },
+  {
+   "name": "Kayla Wright",
+   "role": "Recreation Director",
+   "status": "present",
+   "quote": "recreation director kayla wright. absent: susanna jewell"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "absent: susanna jewell"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Consensus to wait and see how it goes staying with the 53D, not moving the revolving account to a 53E1/2 now. No vote recorded.",
+   "quote": "karin asked the group if anyone disagreed with waiting and see how it goes staying with a 53d. dave agreed"
+  },
+  {
+   "decision": "The group settled on beach rental rates: $50 per hour for the beach and beach house, a $50 non refundable deposit, and $25 per hour per lifeguard if required. No vote recorded.",
+   "quote": "the group settled on $50 per hour for the rental of the beach and beach house, $50 non refundable deposit and if lifeguards required an additional"
+  },
+  {
+   "decision": "Karin will work with Kayla to update the beach rental policy before the group considers it for approval.",
+   "quote": "karin said she would work with kayla to update the beach rental policy before the group considers it for approval."
+  },
+  {
+   "decision": "Marshall Park master planning held over to the March 29 meeting.",
+   "quote": "there was no further discussion and we will hold for the march 29th meeting."
+  },
+  {
+   "decision": "Ana and Chris will work together to fill in the maintenance policy document for the next meeting.",
+   "quote": "ana and chris said they would work together to fill in some of the document for the next meeting."
+  },
+  {
+   "decision": "Open Space to be told the Park Commission wants to be considered for the Parmenter Ave property abutting Lake Shirley.",
+   "quote": "dave said he would like to have open space informed that we would like to be considered for that piece of property."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Revolving account 53D balance",
+   "what_was_recorded": "Counsel's reading that a balance over $10k may be carried forward if committed and reserved; the 53D funds would stay put and not move to a 53E1/2.",
+   "figures_as_printed": [
+    "$10k"
+   ],
+   "quote": "as long as funds in excess of $10k were committed and reserved for a particular purpose that a balance over $10k can be carried forward."
+  },
+  {
+   "topic": "Beach rental security deposit",
+   "what_was_recorded": "Ana questioned whether the $25 security deposit is adequate; Kayla said it covers damage and cancellation.",
+   "figures_as_printed": [
+    "$25"
+   ],
+   "quote": "ana asked if the $25 security deposit was for damage to the property or if they cancelled."
+  },
+  {
+   "topic": "Beach rental rates",
+   "what_was_recorded": "Rental rates settled by the group: hourly rate for beach and beach house, non-refundable deposit, and per-hour lifeguard charge.",
+   "figures_as_printed": [
+    "$50 per hour",
+    "$50 non refundable deposit",
+    "$25 per hour per lifeguard"
+   ],
+   "quote": "the group settled on $50 per hour for the rental of the beach and beach house, $50 non refundable deposit and if lifeguards required an additional"
+  },
+  {
+   "topic": "Beach pass fee structure",
+   "what_was_recorded": "Fee structure accepted: resident and non-resident adult, child, senior and family/individual pass rates, and an add-on charge for additional dependents.",
+   "figures_as_printed": [
+    "$5",
+    "$2",
+    "$10",
+    "$5",
+    "$65.00",
+    "$80.00",
+    "$44.00",
+    "$60.00",
+    "$23.00",
+    "$35.00",
+    "$5.00"
+   ],
+   "quote": "resident individual pass: $44.00 non-resident individual pass: $60.00"
+  },
+  {
+   "topic": "Beach town salary line",
+   "what_was_recorded": "Karin reported the town beach salary line is $20k and has been exceeded in recent years; she said covering lifeguard cost through fees would price the beach out of the market.",
+   "figures_as_printed": [
+    "$20k"
+   ],
+   "quote": "karin said that our town beach salary line is $20k and we have exceeded that the past few years."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of January 25, 2021 minutes",
+   "resolution": "approved; February 12 minutes not ready",
+   "quote": "chris sullivan motioned and dave passios to approve of january 25, 2021.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Recreation and DPW director updates",
+   "resolution": "no action; indoor soccer program and summer band concerts discussed",
+   "quote": "recreation director / dpw director updates - kayla updated the commission that she added a 4 week indoor soccer",
+   "tags": [
+    "recreation",
+    "programs"
+   ]
+  },
+  {
+   "topic": "Revolving account 53D to 53E1/2",
+   "resolution": "continued; stays in 53D for now, no vote",
+   "quote": "revolving account - discussion and decision on moving from a 53d to a 53e1/2 revolving account",
+   "tags": [
+    "revolving account",
+    "budget"
+   ]
+  },
+  {
+   "topic": "2021 beach season fees and policies",
+   "resolution": "fee structure approved 4-0; rental rates settled; rental policy to be updated",
+   "quote": "2021 beach season discussion and decision on fees and policies",
+   "tags": [
+    "beach season",
+    "fees",
+    "policy"
+   ]
+  },
+  {
+   "topic": "Marshall Park master planning",
+   "resolution": "held to March 29 meeting",
+   "quote": "marshall park - master planning discussion including skate park",
+   "tags": [
+    "Marshall Park",
+    "skate park"
+   ]
+  },
+  {
+   "topic": "Maintenance policy",
+   "resolution": "discussed; Ana and Chris to draft for next meeting",
+   "quote": "maintenance policy discussion/vote - ana shared attachment a with the group.",
+   "tags": [
+    "maintenance",
+    "governance"
+   ]
+  },
+  {
+   "topic": "Open Space updates",
+   "resolution": "informational; Parmenter Ave property raised",
+   "quote": "open space updates - ana said they are still on the phase of investigating",
+   "tags": [
+    "open space",
+    "Lake Shirley"
+   ]
+  },
+  {
+   "topic": "Other business and Cleanup Day",
+   "resolution": "informational; Cleanup Day ideas being collected",
+   "quote": "chris said that he is working with kayla on cleanup day and is collecting ideas",
+   "tags": [
+    "cleanup day"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for Monday March 29, 2021 at 6pm",
+   "quote": "next meeting date/agenda - monday march 29, 2021 6pm.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 9:14pm, passed 4-0",
+   "quote": "chris motioned and dave seconded to adjourn at 9:14pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Attachment A (maintenance policy draft, A. Lockwood)",
+   "where": "list",
+   "quote": "attachment a a.lockwood"
+  },
+  {
+   "name": "Original list compiled by Kayla (Marshall Park)",
+   "where": "text",
+   "quote": "revisit the original list compiled by kayla"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "beach season",
+  "beach fees",
+  "beach rentals",
+  "revolving account",
+  "53D",
+  "Marshall Park",
+  "skate park",
+  "maintenance policy",
+  "open space",
+  "recreation programs",
+  "Cleanup Day"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "ana shared attachment a with the group."
+ },
+ "dropped_unquoted_by_field": {}
 }

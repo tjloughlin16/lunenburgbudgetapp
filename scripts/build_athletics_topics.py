@@ -761,83 +761,9 @@ def build():
         sources=[src['faq'], src['workbook'], src['funds26'], src['d-fees']],
         finding_figures={'a': U(hs25), 'y': F(2025), 'b': U(hs26), 'z': F(2026)})
 
-    # ---- Fee fund ledger
-    if abs(flow[2025]['without_journals'] - (flow[2025]['closing'] - memo25)) > 0.01:
-        fail('the FY2025 close without journals no longer equals close less the four entries')
-    jshare = pct1(memo25, flow[2025]['receipts'])
-    flow_rows = [dict(label=C.fy(fy), cells=[
-        C.usd(r['opening']), C.usd(r['receipts']), C.usd(r['payments']), C.usd(r['journals']),
-        C.usd(r['closing'])]) for fy, r in sorted(flow.items(), reverse=True)]
-    out['fee-fund-ledger'] = TP.page(
-        'fee-fund-ledger',
-        'The fee fund’s cash fell %s in %s; four journal entries then brought in %s in %s.'
-        % (C.usd(-flow[2024]['net']), C.fy(2024), C.usd(memo25), C.fy(2025)),
-        [f('open24', U(flow[2024]['opening']), 'cash at the start of %s' % C.fy(2024),
-           'published', {'y': F(2024)}),
-         f('net24', U(flow[2024]['net']), 'net change in cash, %s' % C.fy(2024), 'published',
-           {'y': F(2024)}),
-         f('close24', U(flow[2024]['closing']), 'cash at the end of %s' % C.fy(2024),
-           'published', {'y': F(2024)}),
-         f('receipts25', U(flow[2025]['receipts']), 'all money in, %s' % C.fy(2025),
-           'published', {'y': F(2025)}),
-         fx['memo25'],
-         f('jshare', P(jshare), 'of the money in, %s, from those entries' % C.fy(2025),
-           'published', {'y': F(2025)}),
-         f('without25', U(flow[2025]['without_journals']),
-           '%s close without them (our arithmetic)' % C.fy(2025), 'estimate', {'y': F(2025)}),
-         f('close26', U(flow[2026]['closing']), 'cash on the export’s last day, %s'
-           % C.fy(2026), 'published', {'y': F(2026)}),
-         f('memo-gap', None, 'what the journal entries moved, and from where', 'gap',
-           closes='the memos the ledger names beside each entry, from the Town Accountant')],
-        [con('The fund’s cash fell by %s in %s, to %s at the year’s end.'
-             % (C.usd(-flow[2024]['net']), C.fy(2024), C.usd(flow[2024]['closing'])),
-             ['open24', 'net24', 'close24'],
-             {'a': U(-flow[2024]['net']), 'y': F(2024), 'b': U(flow[2024]['closing'])}),
-         con('In %s, %s of the money into the fund came on %s entries labelled expense '
-             'adjustments.' % (C.fy(2025), C.pct(jshare), 'four'),
-             ['receipts25', 'memo25', 'jshare', 'memo-gap'], {'y': F(2025), 'p': P(jshare)},
-             notes=[step('An entry like this fits a charge moved to another fund, a transfer '
-                         'in, or a correction. The ledger cannot tell them apart.', 'gap',
-                         closes='the memos the ledger names beside each entry')]),
-         con('Take those entries away and the fund closes %s at %s, by our arithmetic.'
-             % (C.fy(2025), C.usd(flow[2025]['without_journals'])), ['without25', 'memo25'],
-             {'y': F(2025), 'a': U(flow[2025]['without_journals'])},
-             notes=[step('A resident told the School Committee the fund ran a deficit. These '
-                         'figures fit that account; nothing here tests it.', 'hypothesis')])],
-        # A STOCK, alone (HUB-AND-SPOKE: never a balance and its receipts on one axis). The
-        # first bar is the cash the earliest cashbook opens with; the dashed bar is ours.
-        chart=TP.series(
-            'Fee fund cash at the year’s end',
-            [C.fy(min(flow) - 1)] + [C.fy(y) for y in sorted(flow)],
-            [TP.track('Cash, the fund’s cashbook',
-                      [flow[min(flow)]['opening']] + [flow[y]['closing'] for y in sorted(flow)],
-                      'published', 'bar'),
-             TP.track('Without the four journal entries',
-                      [None] + [flow[y]['without_journals'] if y == 2025 else None
-                                for y in sorted(flow)], 'estimate', 'bar')],
-            '$', kind='bar',
-            note='%s is the cash the %s cashbook opens with. %s stops on the export’s last day.'
-                 % (C.fy(min(flow) - 1), C.fy(min(flow)), C.fy(max(flow))),
-            note_figures={'a': F(min(flow) - 1), 'b': F(min(flow)), 'c': F(max(flow))}),
-        table=dict(caption='The fee fund’s cash, by year', views=[dict(
-            key='cash', label='The fund’s cashbook', total_col=4, kinds=['ledger'] * 5,
-            columns=['Opening cash', 'Money in', 'Paid out', 'Of money in: journal entries',
-                     'Closing cash'],
-            rows=flow_rows,
-            note='Our redacted reading of the Town’s MUNIS journal exports for fund 1301 '
-                 '(the originals are withheld: they name a family). Each year’s close ties '
-                 'to the next year’s printed opening. The latest year stops on 12 June 2026.')]),
-        said=[said_file('school-committee/2025-09-03-minutes-7385.txt',
-                        'in the past 6 months or so there have been things that have come up, '
-                        'athletic revolving fund was running in a deficit, I was told over '
-                        '$100,000', 'School Committee'),
-              said_file('finance-committee/2025-07-08-minutes-7295.txt',
-                        'She emphasized the need for all revolving accounts to have a budget, '
-                        'even if they are not town meeting revolving accounts, to prevent '
-                        'negative balances from going unnoticed.', 'Finance Committee')],
-        sources=[src['funds26'], src['d-cash']],
-        finding_figures={'a': U(-flow[2024]['net']), 'y': F(2024), 'b': U(memo25),
-                         'z': F(2025)})
+    # ---- Fee fund ledger: RETIRED 28 October 2026, folded into /athletics/fee-fund-history
+    # (scripts/build_fee_fund_history_topic.py), which now carries the cashbook's cash, the low
+    # point, and the two minutes quoted here. TOPIC_MERGED in fy28/src/routes.ts maps the address.
 
     # ---- FY2026 athletics underspend
     t26 = town[2026]

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-03-17",
  "docid": "6284",
@@ -12,87 +12,579 @@
  },
  "votes": [
   {
-   "motion": "Approve a maximum of $1,000 for habitat purchased to come from the Hawes gift fund",
-   "moved_by": "Kenneth Jones",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Approve a maximum of 1000 dollars for the pollinator habitat purchases, from the Hawes gift fund.",
+   "moved_by": "KJ",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "kj moved to approve a maximum of 1000 dollars for the habitat purchased to come from the hawes gift fund. jr seconded and the commission voted unanimously to approve the motion."
   },
   {
-   "motion": "Continue Land Use policy hearing to April 21, 2021",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Issue a 1000 dollar fine for the 25 Pearl Street tank placement.",
+   "moved_by": "JR",
+   "seconded_by": "Cl",
+   "outcome": "failed unanimously",
+   "procedural": false,
+   "quote": "jr moved to issue such. cl seconded. kj asked if we even could assess that amount right at this time. rb stated no. cl state it would be more appropriate to discuss it at the amended hearing."
+  },
+  {
+   "motion": "Continue the Land Use policy item to April 21, 2021 at 7 PM.",
+   "moved_by": "CL",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "land use policy to be continued to the april 21, 2021 meeting at 7 pm by a motion of cl and a second by jr with a unanimous vote by the commission to approve the motion."
   },
   {
-   "motion": "Continue Notice of Intent hearing for Tom Wu and Scott Benjamin (Fire Road 12) to April 7, 2021",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Continue the Tom Wu and Scott Benjamin Notice of Intent hearing (Map 137 Parcel 12) to April 7, 2021 at 7 PM.",
+   "moved_by": "BP",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "to be continued to the april 07, 2021 meeting at 7 pm by a motion of bp and a second by cc with a unanimous vote by the commission to approve the motion."
   },
   {
-   "motion": "Continue Notice of Intent hearing for Proctor Masonry (203 Fire Road 16) to April 7, 2021",
-   "moved_by": "Bob Pease",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Continue the Proctor Masonry Notice of Intent hearing (203 Fire Road 16) to April 7, 2021 at 7 PM.",
+   "moved_by": "BP",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "to be continued to the april 07, 2021 meeting at 7 pm by a motion of bp and a second by cc with a unanimous vote by the commission to approve the motion."
   },
   {
-   "motion": "Continue Notice of Intent hearing for Cynthia Ritchie (137 Flynn Road) to April 21, 2021",
-   "moved_by": "Catie Childs",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed",
+   "motion": "Continue the Cynthia Ritchie Notice of Intent hearing (137 Flynn Road) to April 21, 2021, with the applicant's agreement.",
+   "moved_by": "Cl",
+   "seconded_by": "JR",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "cl moved to continue to april 21st. jr seconded, and the commission unanimously approved the motion to continue with agreement of the applicant."
   },
   {
-   "motion": "Continue Notice of Intent hearing for Joann Magurn (238 Fire Road 16) to April 7, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Continue the hearing to April 7, 2021 at 7 PM. The minutes say the meeting; the item is placed after the Joann Magurn hearing notice (238 Fire Road 16), which is an inference.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "rb moved to continue the meeting to april 7 at 7 pm. kj seconded and the commission voted unanimously."
   },
   {
-   "motion": "Continue Notice of Intent hearing for Richard Tremblay (386 Sunset Lane) to April 7, 2021",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Continue the Richard Tremblay Notice of Intent hearing (386 Sunset Lane) to April 7, 2021.",
+   "moved_by": "JR",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously; RB abstained",
    "procedural": true,
-   "quote": "a motion was made to continue to april 7, 2021 by jr with a second by kj and a unanimous vote of the commission to approve the motion."
+   "quote": "a motion was made to continue to april 7, 2021 by jr with a second by kj and a unanimous vote of the commission to approve the motion. rb abstained."
   },
   {
-   "motion": "Continue Notice of Intent hearing for Empire Management Corp (757 Chase Road) to April 7, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed",
+   "motion": "Continue the Empire Management Corp Notice of Intent hearing (757 Chase Road) to April 7, 2021.",
+   "moved_by": "RB",
+   "seconded_by": "CC",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "a motion was made to continue to april 7, 2021 by rb with a second by cc and a unanimous vote of the commission to approve the motion."
   },
   {
-   "motion": "Issue favorable recommendation for $66,500 APR (Agricultural Preservation Restriction) for Pierce Property at 780 Northfield Road",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Send a favorable recommendation on the Pierce Property agricultural preservation restriction (APR) on Chase Road, read as a proposed warrant.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "rb moved to a favorable recommendation kj seconded and the commission voted unanimously."
   },
   {
-   "motion": "Adjourn",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "rb moved to adjourn, kj seconded and the commission voted unanimously to approve the motion."
   }
  ],
- "dropped_unquoted": 1,
- "note": "Minutes of March 3 and March 10, 2021 are listed on agenda but no vote on approval is recorded in the text.",
- "cost_usd": 0.1102195
+ "dropped_unquoted": 0,
+ "note": "Text is a revised set (revised 3/11/21 and second revision 3/15/2021). Members are identified only by initials in the discussion (BP, KJ, RB, CL/Cl, CC, JR, MM, JV) and the header roster; the mapping to names is inferred from the roster and the initials. The minutes have no attendance roll: presence is inferred from participation, plus a remark that there were \"six members present\" and a remark about when \"all seven members are present\". \"Cl\" and \"CL\" are both read as Carl Luck, who is also the abutter \"Mr. Luck\" on 386 Sunset Lane (not confirmed as the same person by the minutes). Ritchie is also spelled Richie once. The Joann Magurn continuance motion says only \"the meeting\"; attributing it to the Magurn hearing is an inference from page order. Votes are recorded only where the minutes state a motion and a result. The old business workshop items are recorded as indications by the chair and members, not votes. Procedural flag is set on continuances, adjournment, and the minute-free continuance motions. The header states the meeting was remote (Zoom). The minutes contain no printed document list; documents are only referenced in the discussion. Page 11 is blank. Some sentences in the source are garbled, and quotes are copied as printed.",
+ "cost_usd": 0.02975866,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "bp recapped the commission points."
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "kj noted that the habitat that gini and her crew have worked so hard on has been an amazing effort."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "Member (initials RB in minutes)",
+   "status": "present",
+   "quote": "rb indicated he was in favor of the apr which is in the amount of 66,500 dollars."
+  },
+  {
+   "name": "Catie Childs",
+   "role": "Member (initials CC in minutes)",
+   "status": "present",
+   "quote": "cc excused herself from the meeting at 9:35 pm."
+  },
+  {
+   "name": "Carl Luck",
+   "role": "Member (initials CL/Cl in minutes); recused on 386 Sunset Lane as an abutter",
+   "status": "present",
+   "quote": "note: cl recused from this matter due to being an abutter."
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Member (initials JR in minutes)",
+   "status": "present",
+   "quote": "jr asked how the tank was installed."
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "Member (initials JV in minutes)",
+   "status": "not stated",
+   "quote": "bp asked if we could have cc and jv present and over that item at the next meeting."
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Associate",
+   "status": "not stated",
+   "quote": "michael larouche, associate"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator (initials MM in minutes)",
+   "status": "present",
+   "quote": "mm noted that the tree that has fallen should be removed."
+  },
+  {
+   "name": "Gini Albertson",
+   "role": "Appointment: pollinator habitat presenter",
+   "status": "present",
+   "quote": "gini albertson appeared before the commission."
+  },
+  {
+   "name": "Dan Wolfe",
+   "role": "Presenter on 25 Pearl Street item (no title printed)",
+   "status": "present",
+   "quote": "mr. wolfe outline an issue on construction regarding the 4000 gallon holding tank previously approved."
+  },
+  {
+   "name": "Cynthia Ritchie",
+   "role": "Representing the applicant (137 Flynn Road)",
+   "status": "present",
+   "quote": "cynthia ritchie and brett ramsden were present to represent the applicant."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "Representing the applicant (137 Flynn Road)",
+   "status": "present",
+   "quote": "cynthia ritchie and brett ramsden were present to represent the applicant."
+  },
+  {
+   "name": "Greg Roy",
+   "role": "Representing the applicant (386 Sunset Lane)",
+   "status": "present",
+   "quote": "greg roy appeared before the commission representing the applicant."
+  },
+  {
+   "name": "Richard Tremblay",
+   "role": "Applicant (386 Sunset Lane)",
+   "status": "present",
+   "quote": "mr. tremblay differentiated the different materials on the patios."
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Volunteer (no role printed)",
+   "status": "not stated",
+   "quote": "tanner cole volunteered to contribute some wood chips to the effort."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Hearing on the 25 Pearl Street tank was to be discussed at the amended hearing rather than through a fine now.",
+   "quote": "cl state it would be more appropriate to discuss it at the amended hearing."
+  },
+  {
+   "decision": "Chair noted commission sentiment favored amending the order of conditions rather than accepting the tank placement as a field change (sentiment, no vote).",
+   "quote": "bp noted to mr. wolfe that an amendment appeared to be the sentiment among the commissioners."
+  },
+  {
+   "decision": "The administrator would work with the 137 Flynn Road applicant; the commission agreed without a vote.",
+   "quote": "bp asked the commission if it was ok for mm to work with the applicant. the commission said yes."
+  },
+  {
+   "decision": "The administrator would find out the status of the DEP filing number for 137 Flynn Road.",
+   "quote": "he noted mm would find out what happened with the dep filing number."
+  },
+  {
+   "decision": "Enforcement actions were continued to the April 7, 2021 meeting.",
+   "quote": "enforcement: actions continued to the april 7, 2021 meeting"
+  },
+  {
+   "decision": "Land use regulations: the dog-control language as changed by CL is to be adopted as proposed (chair's indication, no vote).",
+   "quote": "bp indicated that cl's changes will be adopted as proposed."
+  },
+  {
+   "decision": "Land use regulations: the Hunting Hill regulations (Town Counsel's language) to be added as an appendix, with the current proposed language struck; chair to revise the draft.",
+   "quote": "that the hunting hill regulations be added as an appendix and that the current proposed language in the proposed regulations be struck."
+  },
+  {
+   "decision": "Land management plans for Lane and Table Rock are to be changed separately at a later date, not through the land use regulations.",
+   "quote": "bp assured cl that there will be a date set for that issue after the final regulations were enacted for the affected parcels."
+  },
+  {
+   "decision": "Overnight camping changes to be adopted as proposed (chair's indication, no vote).",
+   "quote": "bp indicated the proposed changes would be adopted."
+  },
+  {
+   "decision": "Permits for tree stands not adopted (stated by consensus of KJ, RB, BP and CL).",
+   "quote": "2.4 permits for tree stands was stated that they are not adopted as noted by kj, rb, bp and cl."
+  },
+  {
+   "decision": "Item 1.5 withdrawn by JR; the commission continues to forward the current proposed language.",
+   "quote": "1.5 jr withdrew and the commission will continue to forward the current proposed."
+  },
+  {
+   "decision": "Alcohol and quiet enjoyment sections deferred to the next meeting, with CC and JV present.",
+   "quote": "bp asked if we could have cc and jv present and over that item at the next meeting."
+  },
+  {
+   "decision": "Hunting, firearms and open-carry issues to be revisited when all seven members are present.",
+   "quote": "bp reiterated that the issue of hunting will be revisited when all seven members are present."
+  },
+  {
+   "decision": "Items not discussed in the workshop are to be taken up by the full board.",
+   "quote": "bp reiterated that the items that were not discussed would be taken up by the full board."
+  },
+  {
+   "decision": "Forestry planning and encroachment on town open space (draft plan), including the Rayno/Hollis update, deferred to the April 7, 2021 meeting.",
+   "quote": "to be taken up at the meeting of 4/7/2021"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Pollinator habitat funding (Gini Albertson)",
+   "what_was_recorded": "Commission approved a maximum of 1000 dollars for habitat materials from the Hawes gift fund, after the presenter said the total needed would be up to that amount.",
+   "figures_as_printed": [
+    "1000 dollars"
+   ],
+   "quote": "the total amount of funds need would be a maximum of 1000 dollars."
+  },
+  {
+   "topic": "Lakeview Nursery plant donation",
+   "what_was_recorded": "A donation of up to 300 dollars of plants from Lakeview Nursery was mentioned for the pollinator habitat; no vote on it.",
+   "figures_as_printed": [
+    "300 dollars"
+   ],
+   "quote": "rb noted that lakeview nursery would donate up to 300 dollars of plants."
+  },
+  {
+   "topic": "25 Pearl Street tank fine",
+   "what_was_recorded": "A proposed 1000 dollar fine was moved and failed unanimously; members questioned whether the commission could assess that amount at that time.",
+   "figures_as_printed": [
+    "1000 dollar"
+   ],
+   "quote": "jr proposed consideration of a 1000 dollar fine."
+  },
+  {
+   "topic": "137 Flynn Road engineering proposal",
+   "what_was_recorded": "The applicant said they currently had an engineering proposal for 5000 dollars; the commission debated whether an engineered plan was necessary, and no cost was approved.",
+   "figures_as_printed": [
+    "5000 dollars"
+   ],
+   "quote": "she noted that they currently have an engineering proposal for 5000 dollars."
+  },
+  {
+   "topic": "Pierce Property agricultural preservation restriction (APR), Chase Road",
+   "what_was_recorded": "The APR amount is 66,500 dollars, with 10 percent funding of the APR by the town as stated by the chair; the commission voted a favorable recommendation.",
+   "figures_as_printed": [
+    "66,500 dollars",
+    "10 percent"
+   ],
+   "quote": "rb indicated he was in favor of the apr which is in the amount of 66,500 dollars."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order, announcements, minutes of previous meetings (March 3 and March 10, 2021)",
+   "resolution": "no action recorded",
+   "quote": "minutes of previous meetings -march 3 and march 10 2021",
+   "tags": [
+    "minutes",
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Appointment: Gini Albertson, pollinator habitat",
+   "resolution": "approved up to 1000 dollars from the Hawes gift fund",
+   "quote": "1.0 appointment: gini albertson, pollinator habitat.",
+   "tags": [
+    "pollinator habitat",
+    "funding",
+    "appointment"
+   ]
+  },
+  {
+   "topic": "Appointment: septic system placement, 25 Pearl Street",
+   "resolution": "1000 dollar fine motion failed; amendment favored; discussion moved to amended hearing",
+   "quote": "2.0 appointment: discussion of septic system placement, 25 pearl street",
+   "tags": [
+    "septic",
+    "holding tank",
+    "order of conditions",
+    "enforcement",
+    "fine"
+   ]
+  },
+  {
+   "topic": "Land use regulations public hearing/forum",
+   "resolution": "continued to April 21, 2021; workshop held under old business",
+   "quote": "land use policy to be continued to the april 21, 2021 meeting at 7 pm",
+   "tags": [
+    "land use regulations",
+    "public hearing",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued NOI hearing: Tom Wu and Scott Benjamin, Map 137 Parcel 12",
+   "resolution": "continued to April 7, 2021",
+   "quote": "a notice of intent by tom wu and scott benjamin for work at map 137 parcel 12",
+   "tags": [
+    "notice of intent",
+    "buffer zone",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Continued NOI hearing: Proctor Masonry, 203 Fire Road 16",
+   "resolution": "continued to April 7, 2021",
+   "quote": "a notice of intent by proctor masonry for work at 203 fire road 16",
+   "tags": [
+    "notice of intent",
+    "retaining wall",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "NOI hearing: Cynthia Ritchie, 137 Flynn Road (stone wall, Lake Shirley)",
+   "resolution": "continued to April 21, 2021 with applicant's agreement",
+   "quote": "a notice of intent by cynthia ritchie for work at 137 flynn road",
+   "tags": [
+    "notice of intent",
+    "shoreline",
+    "stone wall",
+    "lake",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "NOI hearing: Joann Magurn, 238 Fire Road 16 (single family home, driveway crossing)",
+   "resolution": "continued to April 7, 2021 at applicant's request (placement inferred)",
+   "quote": "a notice of intent by joann magurn for work at 238 fire road 16",
+   "tags": [
+    "notice of intent",
+    "single family home",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "NOI hearing: Richard Tremblay, 386 Sunset Lane (walls, patios, driveway)",
+   "resolution": "continued to April 7, 2021; RB abstained; CL recused as abutter",
+   "quote": "a notice of intent by richard tremblay for work at 386 sunset lane",
+   "tags": [
+    "notice of intent",
+    "retaining wall",
+    "abutter",
+    "recusal",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "NOI hearing: Empire Management Corp, 757 Chase Road (commercial building)",
+   "resolution": "continued to April 7, 2021",
+   "quote": "a notice of intent by empire management corp for work at 757 chase road",
+   "tags": [
+    "notice of intent",
+    "commercial",
+    "continuance"
+   ]
+  },
+  {
+   "topic": "Enforcement actions",
+   "resolution": "continued to April 7, 2021 (site visits and NOI filings pending)",
+   "quote": "enforcement: actions continued to the april 7, 2021 meeting",
+   "tags": [
+    "enforcement",
+    "illegal dumping",
+    "violations"
+   ]
+  },
+  {
+   "topic": "New business: APR, Pierce Property, Chase Road (780 Northfield Road)",
+   "resolution": "favorable recommendation, 66,500 dollars",
+   "quote": "apr discussion and consideration for pierce property on chase road",
+   "tags": [
+    "agricultural preservation restriction",
+    "open space",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Old business: continued workshop on land use regulations",
+   "resolution": "no final votes; several items decided by indication; items not discussed deferred to full board",
+   "quote": "old business continued workshop for continued discussion of changes of the land use regulations",
+   "tags": [
+    "land use regulations",
+    "hunting",
+    "dogs",
+    "firearms",
+    "workshop",
+    "deferred"
+   ]
+  },
+  {
+   "topic": "Trails grant, certificates, extension permit, committee reports, administrator's reports",
+   "resolution": "listed on agenda; no action recorded",
+   "quote": "update on trails grant - status report, if any.",
+   "tags": [
+    "trails",
+    "agenda"
+   ]
+  },
+  {
+   "topic": "Forestry planning and encroachment on town open space (Rayno/Hollis)",
+   "resolution": "deferred to April 7, 2021",
+   "quote": "to be taken up at the meeting of 4/7/2021",
+   "tags": [
+    "forestry",
+    "open space",
+    "encroachment"
+   ]
+  },
+  {
+   "topic": "Communications and public comment",
+   "resolution": "no public comment",
+   "quote": "asked bp if there was any public comment. no one had comment",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 11:45 PM",
+   "quote": "the meeting was adjourned at 11:45 pm.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "WPA form 3 (137 Flynn Road application)",
+   "where": "text",
+   "quote": "received direction for the application process and noted confusion with wpa form 3."
+  },
+  {
+   "name": "Proposed warrant for Pierce Property APR",
+   "where": "text",
+   "quote": "he read the proposed warrant."
+  },
+  {
+   "name": "Draft proposed commission land use regulations",
+   "where": "text",
+   "quote": "incorporate that process into the proposed commission regulations"
+  },
+  {
+   "name": "Land management plans for Lane and Table Rock properties",
+   "where": "text",
+   "quote": "the land management plans on the lane and table rock properties"
+  },
+  {
+   "name": "Hunting Hill regulations (three-party board appendix)",
+   "where": "text",
+   "quote": "that the hunting hill regulations be added as an appendix"
+  },
+  {
+   "name": "Suggested Hunting Hills language from Adam Costa",
+   "where": "text",
+   "quote": "bp presented suggested language from adam costa regarding the hunting hills"
+  },
+  {
+   "name": "Email from Sharon Jordan on trail cutting",
+   "where": "text",
+   "quote": "according to an email from sharon jordan that the previous regulations were a result"
+  },
+  {
+   "name": "Email from the police chief on dog regulations",
+   "where": "text",
+   "quote": "the definition of restraint and the email from the police chief"
+  },
+  {
+   "name": "JR slide show on land use regulations",
+   "where": "text",
+   "quote": "jr presented a slide show."
+  },
+  {
+   "name": "JR decibel chart",
+   "where": "text",
+   "quote": "jr referred to his decibel chart."
+  },
+  {
+   "name": "Diagram for 137 Flynn Road NOI (first diagram received)",
+   "where": "text",
+   "quote": "bp noted the diagram was the very first diagram that was received"
+  },
+  {
+   "name": "Drawing with cross section, 137 Flynn Road NOI",
+   "where": "text",
+   "quote": "there was drawing that was submitted that shows a cross section"
+  },
+  {
+   "name": "Order of conditions, 25 Pearl Street",
+   "where": "text",
+   "quote": "the commission should have the order of conditions amended instead of approving it as a field change"
+  },
+  {
+   "name": "Engineering proposal, 137 Flynn Road (5000 dollars)",
+   "where": "text",
+   "quote": "they currently have an engineering proposal for 5000 dollars"
+  },
+  {
+   "name": "Notes from meeting with Town Counsel (on the cloud)",
+   "where": "text",
+   "quote": "the notes from the meeting were on the cloud"
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "notice of intent",
+  "wetlands",
+  "buffer zone",
+  "land use regulations",
+  "hunting",
+  "firearms",
+  "dogs",
+  "pollinator habitat",
+  "agricultural preservation restriction",
+  "septic holding tank",
+  "enforcement",
+  "continuances",
+  "fine",
+  "remote meeting Zoom",
+  "COVID-19",
+  "open space",
+  "lake Shirley"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

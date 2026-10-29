@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-housing-authority",
  "meeting_date": "2021-02-18",
  "docid": "3006",
@@ -12,49 +12,315 @@
  },
  "votes": [
   {
-   "motion": "approve the minutes from the December 15, 2020 meeting",
-   "moved_by": "Deborah Christen",
-   "seconded_by": "Jon Hogue",
-   "outcome": "passed 3-0",
-   "procedural": true,
-   "quote": "deborah christen made a motion to approve the minutes; jon hogue seconded. deborah christen-aye, jon hogue-aye, linda mcdonald-aye; all were in favor and minutes were accepted."
-  },
-  {
-   "motion": "approve resolution 2021-1 for DHCD FY2020 year-end certifications",
-   "moved_by": "Deborah Christen",
-   "seconded_by": "Linda McDonald",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion made by deborah christen to approve resolution 2021 -1; linda mcdonald seconded. deborah christen-aye, jon hogue-aye, linda mcdonald-aye and motion passed with a 3 to 0 vote",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "approve and submit to DHCD the Management Services Agreement between Lunenburg Housing Authority and Leominster Housing Authority for one year for annual Agreement Sum of $40,380",
-   "moved_by": "Jon Hogue",
-   "seconded_by": "Deborah A.H. Christen",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion made by jon hogue having reviewed the published performance management review and agreed upon procedures of the owner, the board approve and submit to dhcd for its approval the management services agreement between lunenburg housing authority and leominster housing authority for a term of one year for the annual agreement sum of $40,380. deborah a.h. christen seconded the motion which upon roll-call was passed by a vote of 3 to 0."
-  },
-  {
-   "motion": "approve resolution 2021-3 for DHCD CFA Amendment #10 for FY24 Formula Funding Award of $63,069 and Emergency Reserve Award for Septic System of $221,863.89",
-   "moved_by": "Deborah Christen",
-   "seconded_by": "Jon Hogue",
-   "outcome": "passed 3-0",
-   "procedural": false,
-   "quote": "motion made by deborah christen to approve resolution 2021 -1; linda mcdonald seconded. deborah christen-aye, jon hogue-aye, linda mcdonald-aye and motion passed with a 3 to 0",
-   "quote_taken_from_text": true
-  },
-  {
-   "motion": "adjourn the meeting",
+   "motion": "Approve the minutes of the December 15, 2020 meeting.",
    "moved_by": "Deborah Christen",
    "seconded_by": "Jon Hogue",
    "outcome": "passed",
    "procedural": true,
-   "quote": "deborah christen made a motion to adjourn the meeting at 7:03 p.m.; jon hogue seconded. deborah christen-aye, jon hogue linda mcdonald-aye with all in favor the meeting adjourned."
+   "quote": "deborah christen made a motion to approve the minutes; jon hogue seconded."
+  },
+  {
+   "motion": "Approve resolution 2021-1, approval and execution of DHCD FY2020 year-end certifications.",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Linda McDonald",
+   "outcome": "passed 3-0",
+   "procedural": false,
+   "quote": "motion made by deborah christen to approve resolution 2021 -1; linda mcdonald seconded."
+  },
+  {
+   "motion": "Approve and submit to DHCD the Management Services Agreement with Leominster Housing Authority for a one-year term at an annual Agreement Sum of $40,380.",
+   "moved_by": "Jon Hogue",
+   "seconded_by": "Deborah A.H. Christen",
+   "outcome": "passed 3-0",
+   "procedural": false,
+   "quote": "deborah a.h. christen seconded the motion which upon roll-call was passed by a vote of 3 to 0."
+  },
+  {
+   "motion": "Approve resolution 2021-3, DHCD CFA Amendment #10 (FY24 formula funding award of $63,069 and emergency reserve award for septic system of $221,863.89).",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Jon Hogue",
+   "outcome": "passed 3-0",
+   "procedural": false,
+   "quote": "motion made by deborah christen to approve resolution 2021 -3; jon hogue seconded."
+  },
+  {
+   "motion": "Adjourn the meeting at 7:03 p.m.",
+   "moved_by": "Deborah Christen",
+   "seconded_by": "Jon Hogue",
+   "outcome": "passed",
+   "procedural": true,
+   "quote": "deborah christen made a motion to adjourn the meeting at 7:03 p.m.; jon hogue seconded."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0969275
+ "note": "Text extract is spaced irregularly (e.g. '2021 -1', '202 1-1', 'Director of Finance' spacing) but quotes were copied as printed. Votes were recorded as roll-call 3-0 for resolutions and 'all in favor' for the minutes and adjournment; the minutes print no numeric count for those. Recording Secretary is titled 'Recording Secretary' in the header but 'Administrative Assistant' in item 1a. The minutes print no list of documents used. Public comment: no speakers named.",
+ "cost_usd": 0.01528546,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Linda McDonald",
+   "role": "Chair",
+   "status": "present",
+   "quote": "linda mcdonald, chair"
+  },
+  {
+   "name": "Deborah A.H. Christen",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member jon hogue, member"
+  },
+  {
+   "name": "Jon Hogue",
+   "role": "Member",
+   "status": "present",
+   "quote": "deborah a.h. christen, member jon hogue, member"
+  },
+  {
+   "name": "Benjamin Gold",
+   "role": "Executive Director",
+   "status": "present",
+   "quote": "benjamin gold, executive director"
+  },
+  {
+   "name": "Adam Gautie",
+   "role": "Assistant Executive Director",
+   "status": "present",
+   "quote": "adam gautie, assistant executive director"
+  },
+  {
+   "name": "Sue Honeycutt",
+   "role": "Fenton & Ewald",
+   "status": "present",
+   "quote": "sue honeycutt presented and reviewed the year-end financials with the board."
+  },
+  {
+   "name": "Denise Ivaldi",
+   "role": "Recording Secretary",
+   "status": "present",
+   "quote": "denise ivaldi, recording secretary"
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Year-end 12/31/2020 operating result",
+   "what_was_recorded": "Operating statement showed net income from operations, with maintenance under budget and extraordinary expenses slightly over.",
+   "figures_as_printed": [
+    "$32,785.00",
+    "$15,000"
+   ],
+   "quote": "line 2700 - $32,785.00 net income from operations."
+  },
+  {
+   "topic": "Unrestricted net assets and reserve level",
+   "what_was_recorded": "Unrestricted net assets are the reserve balance, stated as a percentage; DHCD reserve guidance was given.",
+   "figures_as_printed": [
+    "$150,155",
+    "90.62%",
+    "35%",
+    "65 -70%"
+   ],
+   "quote": "the $150,155 net assets unrestricted is the reserve balance (90.62%)."
+  },
+  {
+   "topic": "Reserve guidance from DHCD",
+   "what_was_recorded": "Reserves should not exceed 100% or DHCD will cut the subsidy; 35% is the stated minimum and 65-70% a good range.",
+   "figures_as_printed": [
+    "100%",
+    "35%",
+    "65 -70%"
+   ],
+   "quote": "35% is the minimum and 65 -70% is a good range to be in."
+  },
+  {
+   "topic": "Maintenance and non-routine spending",
+   "what_was_recorded": "Maintenance spending was under budget; non-routine expenditures included COVID money and the Authority received State funds.",
+   "figures_as_printed": [
+    "$15,000",
+    "$20,000",
+    "$17,615"
+   ],
+   "quote": "non-routine expenditures, $20,000 covid money included; we received $17,615 from the state."
+  },
+  {
+   "topic": "Generator discussion",
+   "what_was_recorded": "The board discussed using some reserve money for a generator; no amount was printed.",
+   "figures_as_printed": [],
+   "quote": "discussion on using some of the money for a generator."
+  },
+  {
+   "topic": "Leominster management services agreement",
+   "what_was_recorded": "Management fee increased 3% to match DHCD administrative salary increases; annual agreement sum set at $40,380.",
+   "figures_as_printed": [
+    "3%",
+    "$40,380"
+   ],
+   "quote": "the lunenburg management fee was increased by 3% which is in line with"
+  },
+  {
+   "topic": "DHCD CFA Amendment #10 funding",
+   "what_was_recorded": "FY24 formula funding award and an emergency reserve award for the septic system were approved.",
+   "figures_as_printed": [
+    "$63,069",
+    "$221,863.89"
+   ],
+   "quote": "emergency reserve award for septic system - $221,863.89."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "meeting opened at 6:30 p.m., quorum present",
+   "quote": "the chair declared a quorum present and opened the meeting at 6:30 p.m.",
+   "tags": [
+    "quorum"
+   ]
+  },
+  {
+   "topic": "Minutes of December 15, 2020",
+   "resolution": "approved",
+   "quote": "deborah christen made a motion to approve the minutes; jon hogue seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no individuals called in",
+   "quote": "for the record there were no individuals calling in.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Executive Director report",
+   "resolution": "reported, no action",
+   "quote": "the director of finance has resigned after six months.",
+   "tags": [
+    "COVID-19",
+    "staffing",
+    "vaccine"
+   ]
+  },
+  {
+   "topic": "Year-end financial report 12/31/2020",
+   "resolution": "presented, no action",
+   "quote": "sue honeycutt presented and reviewed the year-end financials with the board.",
+   "tags": [
+    "finance",
+    "reserves"
+   ]
+  },
+  {
+   "topic": "Modernization and work order report",
+   "resolution": "reported, no action",
+   "quote": "septic system replacement (fish #162031) - out to bid, bids due february 25 th.",
+   "tags": [
+    "septic",
+    "capital projects"
+   ]
+  },
+  {
+   "topic": "State-aided housing report",
+   "resolution": "reported, no action",
+   "quote": "we received seven (7) standard applications in january; five elderly/young disabled and two family.",
+   "tags": [
+    "waiting list",
+    "occupancy"
+   ]
+  },
+  {
+   "topic": "Unfinished business",
+   "resolution": "none",
+   "quote": "unfinished business - none.",
+   "tags": []
+  },
+  {
+   "topic": "New business: DHCD certifications and management agreement and funding",
+   "resolution": "three resolutions approved (2021-1, 2021-2, 2021-3)",
+   "quote": "approval and execution of dhcd fy2020 year-end certifications",
+   "tags": [
+    "DHCD",
+    "management agreement",
+    "funding"
+   ]
+  },
+  {
+   "topic": "Other correspondence",
+   "resolution": "none",
+   "quote": "other correspondence - none",
+   "tags": []
+  },
+  {
+   "topic": "Resident participation",
+   "resolution": "none requested",
+   "quote": "resident participation - none requested",
+   "tags": []
+  },
+  {
+   "topic": "Board commissioners comments",
+   "resolution": "none",
+   "quote": "board commissioners' comments - none",
+   "tags": []
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:03 p.m.",
+   "quote": "deborah christen made a motion to adjourn the meeting at 7:03 p.m.; jon hogue seconded.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY2020 year-end financials (12/31/2020)",
+   "where": "text",
+   "quote": "sue honeycutt presented and reviewed the year-end financials with the board."
+  },
+  {
+   "name": "DHCD FY2020 Year-End Certifications",
+   "where": "text",
+   "quote": "approval and execution of dhcd fy2020 year-end certifications"
+  },
+  {
+   "name": "Performance Management Review and Agreed Upon Procedures of the Owner",
+   "where": "text",
+   "quote": "having reviewed the published performance management review and agreed upon procedures of the owner"
+  },
+  {
+   "name": "DHCD PHN issued December 2020",
+   "where": "text",
+   "quote": "dhcd issued a new phn in december 2020 which superseded a previous phn."
+  },
+  {
+   "name": "Management Services Agreement between Lunenburg Housing Authority and Leominster Housing Authority",
+   "where": "text",
+   "quote": "the management services agreement between lunenburg housing authority and leominster housing authority"
+  },
+  {
+   "name": "DHCD CFA Amendment #10",
+   "where": "text",
+   "quote": "approval of dhcd cfa amendment #10"
+  }
+ ],
+ "tags": [
+  "housing authority",
+  "COVID-19 vaccine clinics",
+  "year-end financials",
+  "reserves",
+  "DHCD certifications",
+  "management services agreement",
+  "septic system",
+  "state funding",
+  "virtual meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

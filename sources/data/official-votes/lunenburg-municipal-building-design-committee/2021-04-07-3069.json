@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-04-07",
  "docid": "3069",
@@ -12,31 +12,239 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from March 9th as presented",
+   "motion": "Approve the minutes as presented for March 9th.",
    "moved_by": "Dave Passios",
    "seconded_by": "Michael-Ray Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dave passios motioned to approve the minutes as presented for march 9th, seconded by michael-ray jeffreys, dave passios, aye, brian lehtinen, aye, michael-ray jeffreys, aye, david blatt, aye, greg roy, aye."
+   "quote": "dave passios motioned to approve the minutes as presented for march 9th, seconded by michael-ray jeffreys"
   },
   {
-   "motion": "Approve the minutes from March 17th as presented",
+   "motion": "Approve the minutes as presented for March 17th.",
    "moved_by": "Dave Passios",
    "seconded_by": "Michael-Ray Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "dave passios motioned to approve the minutes as presented for march 17th, seconded by michael-ray jeffreys, dave passios, aye, brian lehtinen, aye, michael-ray jeffreys, aye, david blatt, aye, greg roy, aye."
+   "quote": "dave passios motioned to approve the minutes as presented for march 17th, seconded by michael-ray jeffreys"
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting (at 6:21pm).",
    "moved_by": "David Blatt",
    "seconded_by": "Brian Lehtinen",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "david blatt made a motion to adjourn, brian lehtinen seconded at 6:21pm. roll call vote: dave passios, aye, brian lehtinen, aye, michael-ray jeffreys, aye, david blatt, aye, greg roy, aye."
+   "quote": "david blatt made a motion to adjourn, brian lehtinen seconded at 6:21pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0826775
+ "note": "Text is a short extract (two pages). Votes on the March 9 and March 17 minutes and the adjournment are recorded as roll calls with five aye votes printed, but no numeric tally is printed, so outcomes are recorded as \"passed\". The minutes print \"David Passios\" in the attendance list and \"Dave Passios\" in the motions; both are recorded as printed. Greg Roy's role is not printed. The Lunenburg Ledger is listed as a community guest. No dollar figures appear in the text. Public comment is recorded as \"none\" twice, so no speakers are listed.",
+ "cost_usd": 0.024071500000000003,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Greg Roy",
+   "role": "Member, as listed under Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "David Passios",
+   "role": "Member (also printed as Dave Passios)",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Member, as listed under Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Vice-chair",
+   "status": "present",
+   "quote": "vice-chair david blatt would be able to run the meeting."
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Member, as listed under Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, brian lehtinen, david blatt, michael-ray jeffreys"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Member",
+   "status": "absent",
+   "quote": "members absent: matthew allison"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Employee",
+   "status": "present",
+   "quote": "town employees: heather lemieux"
+  },
+  {
+   "name": "Lunenburg Ledger",
+   "role": "Community Guest (listed as a guest; a newspaper, not a person)",
+   "status": "present",
+   "quote": "community guests: lunenburg ledger"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The presentation will be given by the committee alone, without the architects; the architects are saved for a future funding article.",
+   "quote": "it was decided the presentation would be just the committee, without the architects, saving the architects for a future funding article."
+  },
+  {
+   "decision": "David Blatt will create an initial slide show and send it out.",
+   "quote": "david blatt said he would create an initial slide show and send it out."
+  },
+  {
+   "decision": "Heather Lemieux will check with the finance director on whether cost comparisons from recent town buildings are available.",
+   "quote": "would check with the finance director to see if there are available cost comparisons from recent town buildings"
+  },
+  {
+   "decision": "The next meeting is scheduled for April 21st.",
+   "quote": "future meeting schedule: april 21st."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Cost estimate for a new building",
+   "what_was_recorded": "The committee and architects were still refining the scope of work needed to produce a cost estimate for a new building; the estimate was expected the following week, and the Finance Committee wants the numbers when available.",
+   "quote": "the architects and committee are still sharpening pencils on the scope of the work for an estimate for a new building.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Finance Committee numbers",
+   "what_was_recorded": "The Finance Committee wants the cost numbers once the estimate is available.",
+   "quote": "finance committee would to have the numbers when we have it.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "MSBA reimbursement for school-related areas",
+   "what_was_recorded": "Feedback from the superintendent and facilities director was that MSBA would not cover costs of these specific school-related areas in the TCP building or a future school building.",
+   "quote": "msba would not be cover costs of these specific school related areas in the tcp building or a future school building.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Cost comparisons from recent town buildings",
+   "what_was_recorded": "Town staff would check with the finance director for available cost comparisons from recent town buildings.",
+   "quote": "would check with the finance director to see if there are available cost comparisons from recent town buildings",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Funding article",
+   "what_was_recorded": "Discussion of an update article and a funding article, likely for fall town meeting or town meeting in 2022; no amount was stated.",
+   "quote": "discussion took place on having an update article and a funding article likely for fall town meeting or town meeting in 2022.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Final design firm report",
+   "resolution": "circulated; committee to discuss at next meeting, then post",
+   "quote": "final report has been circulated. it is approximately 500 pages.",
+   "tags": [
+    "design report",
+    "public posting"
+   ]
+  },
+  {
+   "topic": "Scope of work and new building cost estimate",
+   "resolution": "no action; estimate expected the following week",
+   "quote": "the architects and committee are still sharpening pencils on the scope of the work for an estimate for a new building.",
+   "tags": [
+    "scope of work",
+    "cost estimate",
+    "new building"
+   ]
+  },
+  {
+   "topic": "Update and funding articles",
+   "resolution": "discussed; likely for fall town meeting or town meeting in 2022",
+   "quote": "discussion took place on having an update article and a funding article likely for fall town meeting or town meeting in 2022.",
+   "tags": [
+    "town meeting",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Presentation content",
+   "resolution": "David Blatt to draft initial slide show; committee-only presentation",
+   "quote": "discussion took place on the presentation and areas to highlight in the presentation.",
+   "tags": [
+    "presentation"
+   ]
+  },
+  {
+   "topic": "MSBA funding feedback",
+   "resolution": "noted; MSBA will not cover these school-related areas",
+   "quote": "msba would not be cover costs of these specific school related areas in the tcp building or a future school building.",
+   "tags": [
+    "MSBA",
+    "school building",
+    "TCP building"
+   ]
+  },
+  {
+   "topic": "Review and approve minutes",
+   "resolution": "approved March 9th and March 17th minutes as presented",
+   "quote": "dave passios motioned to approve the minutes as presented for march 9th, seconded by michael-ray jeffreys",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "next meeting set for April 21st",
+   "quote": "future meeting schedule: april 21st.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:21pm",
+   "quote": "david blatt made a motion to adjourn, brian lehtinen seconded at 6:21pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Final design firm report (approximately 500 pages)",
+   "where": "text",
+   "quote": "final report has been circulated. it is approximately 500 pages."
+  },
+  {
+   "name": "Initial slide show (presentation) by David Blatt",
+   "where": "text",
+   "quote": "david blatt said he would create an initial slide show and send it out."
+  },
+  {
+   "name": "Update article and funding article (for fall town meeting or town meeting in 2022)",
+   "where": "text",
+   "quote": "discussion took place on having an update article and a funding article likely for fall town meeting or town meeting in 2022."
+  }
+ ],
+ "tags": [
+  "municipal building",
+  "new school building",
+  "design committee",
+  "scope of work",
+  "cost estimate",
+  "MSBA",
+  "town meeting articles",
+  "design firm report"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -888,10 +888,25 @@
   "What the fund paid for in FY2020 to FY2022. The annual reports print one total a year.",
   "Whose pay the fund’s payroll lines were. The journal records one line per account per pay run.",
   "Why each move was made. The entries cite memos the journal does not hold.",
-  "What the fund held at the end of FY2024 and FY2025 on the basis the annual reports use."
+  "One basis for every year end: the FY2025 report prints the fund’s cash, the others a fund balance."
  ],
  "path": "/athletics/fee-fund-history",
- "said": [],
+ "said": [
+  {
+   "board": "School Committee",
+   "date": "2025-09-03",
+   "href": "/docs/minutes/text/school-committee/2025-09-03-minutes-7385.txt",
+   "label": "School Committee minutes, 2025-09-03",
+   "quote": "in the past 6 months or so there have been things that have come up, athletic revolving fund was running in a deficit, I was told over $100,000"
+  },
+  {
+   "board": "Finance Committee",
+   "date": "2025-07-08",
+   "href": "/docs/minutes/text/finance-committee/2025-07-08-minutes-7295.txt",
+   "label": "Finance Committee minutes, 2025-07-08",
+   "quote": "She emphasized the need for all revolving accounts to have a budget, even if they are not town meeting revolving accounts, to prevent negative balances from going unnoticed."
+  }
+ ],
  "shelves": [
   "athletics"
  ],
@@ -915,6 +930,22 @@
   {
    "href": "/docs/town-ledgers/account-details/PROVENANCE-fy2023-fy2026-p13-school-journal.md",
    "label": "Town of Lunenburg — how the journal reached us, and what was redacted"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4132-fy-2024-annual-town-report.pdf",
+   "label": "Town of Lunenburg — FY2024 annual town report, Special Revenue Fund Balance Detail, page 23 (fund 1301 at 30 June 2024)"
+  },
+  {
+   "href": "/docs/town-annual-reports/docs/4130-fy-2025-annual-town-report.pdf",
+   "label": "Town of Lunenburg — FY2025 annual town report, Special Revenue Fund Balance Detail (fund 1301 at 30 June 2025, unaudited)"
+  },
+  {
+   "href": "/docs/budget-workbooks/school-funds-fy26.xlsx",
+   "label": "Lunenburg Public Schools — school-funds-fy26.xlsx (the district’s FY2026 reconciliation of the athletics revolving fund)"
+  },
+  {
+   "href": "/docs/data/fund-1301-cash-journal.csv",
+   "label": "Lunenburg Budget Project — fund-1301-cash-journal.csv (our redacted extract of the Town’s MUNIS journal exports for fund 1301, every posting; the originals are withheld: they name a family)"
   }
  ],
  "table": null,
@@ -1098,7 +1129,7 @@
       "stated"
      ],
      "label": "By year",
-     "note": "No year-end figure is printed for FY2024 to FY2026 in anything tied here; the cashbook’s cash is on the fee fund ledger page.",
+     "note": "Year ends on three bases: fund balance (annual reports to FY2024), cash (the FY2025 report, $20,991.20 above the fund balance the district opens FY2026 with: unpaid bills), and the district’s own FY2026 sheet.",
      "rows": [
       {
        "cells": [
@@ -1235,8 +1266,8 @@
         "$135,765.36",
         "$250,574.63",
         "$49,925.00",
-        "—",
-        "School journal"
+        "$11,562.99",
+        "School journal; year end, FY2024 annual report p23"
        ],
        "label": "FY2024"
       },
@@ -1245,8 +1276,8 @@
         "$131,481.37",
         "$32,796.47",
         "$254,121.18",
-        "—",
-        "School journal"
+        "$131,239.09",
+        "School journal; year end, FY2025 annual report: the fund’s cash"
        ],
        "label": "FY2025"
       },
@@ -1255,12 +1286,74 @@
         "$188,944.46",
         "$146,911.44",
         "—",
-        "—",
-        "School journal"
+        "$152,280.91",
+        "School journal; year end, the district’s FY2026 reconciliation"
        ],
        "label": "FY2026"
       }
      ]
+    }
+   ]
+  },
+  {
+   "caption": "The fund’s cash, by year",
+   "views": [
+    {
+     "columns": [
+      "Opening cash",
+      "Money in",
+      "Paid out",
+      "Of money in: journal entries",
+      "Closing cash",
+      "Lowest cash in the year (ours)"
+     ],
+     "key": "cash",
+     "kinds": [
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger",
+      "ledger"
+     ],
+     "label": "Cash, the fund’s cashbook",
+     "note": "Our redacted reading of the Town’s MUNIS journal exports for fund 1301. Each year’s close is the next year’s printed opening. The latest year stops on 12 June 2026. The lowest cash is our running total, in effective-date order.",
+     "rows": [
+      {
+       "cells": [
+        "$131,239.09",
+        "$171,247.62",
+        "-$171,153.77",
+        "$0.00",
+        "$131,332.94",
+        "$97,631.64"
+       ],
+       "label": "FY2026"
+      },
+      {
+       "cells": [
+        "$33,993.31",
+        "$390,299.87",
+        "-$293,054.09",
+        "$254,121.18",
+        "$131,239.09",
+        "-$117,947.62"
+       ],
+       "label": "FY2025"
+      },
+      {
+       "cells": [
+        "$137,845.84",
+        "$213,151.11",
+        "-$317,003.64",
+        "$49,925.00",
+        "$33,993.31",
+        "-$18,757.42"
+       ],
+       "label": "FY2024"
+      }
+     ],
+     "total_col": 4
     }
    ]
   },

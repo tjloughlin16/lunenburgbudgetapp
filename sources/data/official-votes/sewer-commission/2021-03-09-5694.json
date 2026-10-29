@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-03-09",
  "docid": "5694",
@@ -12,32 +12,271 @@
  },
  "votes": [
   {
-   "motion": "Accept the 3 Draft Town Meeting Articles for the Sewer",
-   "outcome": "passed 4-0",
+   "motion": "Accept the 3 Draft Town Meeting Articles for the Sewer.",
    "moved_by": "Mike D.",
    "seconded_by": "Brett R.",
+   "outcome": "passed 4-0",
    "procedural": false,
-   "quote": "motion: mike d. second: brett r. to accept the 3 draft town meeting articles for the sewer. roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+   "quote": "motion: mike d. second: brett r. to accept the 3 draft town meeting articles for the sewer."
   },
   {
-   "motion": "Accept the minutes of the 2/23/21 meeting",
-   "outcome": "passed 4-0",
+   "motion": "Accept the minutes of the 2/23/21 meeting.",
    "moved_by": "Brett R.",
    "seconded_by": "Carl L.",
+   "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: brett r. second: carl l. to accept the minutes of the 2/23/21 meeting. discussion: carl asked why the handout was noted as a recor",
-   "quote_taken_from_text": true
+   "quote": "motion: brett r. second: carl l. to accept the minutes of the 2/23/21 meeting."
   },
   {
-   "motion": "Adjourn at 6:01pm",
-   "outcome": "passed 4-0",
+   "motion": "Adjourn the meeting at 6:01pm.",
    "moved_by": "Carl L.",
    "seconded_by": "Brett R.",
+   "outcome": "passed 4-0",
    "procedural": true,
-   "quote": "motion: carl l. to adjourn at 6:01pm. second: brett r. roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+   "quote": "motion: carl l. to adjourn at 6:01pm. second: brett r."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1331425
+ "note": "Text is OCR (macOS Vision) of a scanned page set and may carry OCR errors (e.g. '23ra', 'I&l'). The first line begins mid-sentence, so earlier agenda items are missing. Formal Public Comment reads 'none'; the later 'Public Comment' heading carries commissioners' remarks, not recorded as public speakers. Attendance is not listed as a roll; members are inferred from the roll call votes. The Carl Luck resignation is received but no vote on it is recorded.",
+ "cost_usd": 0.017737660000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave",
+   "role": "not printed",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Mike D.",
+   "role": "not printed",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Carl L.",
+   "role": "not printed",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Brett R.",
+   "role": "not printed",
+   "status": "present",
+   "quote": "roll call vote: mike-aye, carl-aye, brett-aye and dave-aye."
+  },
+  {
+   "name": "Barb",
+   "role": "not printed",
+   "status": "present",
+   "quote": "barb screen-shared the retained earnings report, which included a projected retained earnings graph."
+  },
+  {
+   "name": "Rob",
+   "role": "not printed",
+   "status": "present",
+   "quote": "rob added that the presentation to fincom provides more detail"
+  },
+  {
+   "name": "Jane L. Ranley",
+   "role": "Minutes Clerk",
+   "status": "not stated",
+   "quote": "respectively submitted, jane h. /carly jane l. ranley minutes clerk"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Barb will update the Retained Earnings spreadsheet with the known transfers and send out an updated projection with the planned FinCom presentation.",
+   "quote": "barb will update the spreadsheet with the known transfers and send out an updated retained earnings projection, along with the planned fincom presentation."
+  },
+  {
+   "decision": "The Commission agreed it is important to have a clear picture of the financials.",
+   "quote": "the commission agreed that it is important to have a clear picture of the financials."
+  },
+  {
+   "decision": "Dave and Brett will finish the Fitchburg Sewer Use Ordinance update after the budget presentation.",
+   "quote": "dave and brett will finish working on it after the budget presentation is completed."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY22 Retained Earnings projection",
+   "what_was_recorded": "Barb estimated Retained Earnings would be around $1.4 million after a planned transfer, with FY21 year-end still estimated.",
+   "quote": "barb estimated that retained earnings would be around $1.4million after this transfer, but they still do not know how",
+   "figures_as_printed": [
+    "$1.4million"
+   ]
+  },
+  {
+   "topic": "Planned transfer out of Retained Earnings",
+   "what_was_recorded": "Carl asked for clarification of figures in light of a $300K transfer out in 2022.",
+   "quote": "carl asked to clarify the figures, in light of taking $300k out in 2022.",
+   "figures_as_printed": [
+    "$300K"
+   ]
+  },
+  {
+   "topic": "FY22 Enterprise Fund Budget",
+   "what_was_recorded": "The Commission discussed Barb's summary of the FY22 Enterprise Fund Budget; no dollar figures printed.",
+   "quote": "the commission discussed barb's summary of the fy22 enterprise fund budget.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Other Department Expenses and Leominster usage",
+   "what_was_recorded": "Rob noted the FinCom presentation gives more detail on Other Department Expenses; Dave said money for Leominster usage is increasing but may not all be used.",
+   "quote": "he added that we are increasing money for the leominster usage, but may not use all of it.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Proposed capital costs",
+   "what_was_recorded": "Carl noted day-to-day line items exist but proposed capital costs are not yet earmarked.",
+   "quote": "carl noted that we have line items for the day to day but the proposed capital costs are not earmarked yet.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Town Meeting budget articles",
+   "what_was_recorded": "The three standard budget articles include transfers to the Capital Reserve and OPEB; actual amounts to be set in the Town Meeting motion.",
+   "quote": "barb noted that the 3 articles need to be approved and are the standard budget articles with transfers to the capital reserve and opeb.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Inflow problem at Mass. Ave residence",
+   "what_was_recorded": "A known Inflow problem from a residence is potentially costing the sewer system per year.",
+   "quote": "a known inflow problem from a residence, potentially costing $3-5k per year.",
+   "figures_as_printed": [
+    "$3-5K per year"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Planned $300K transfer out of Retained Earnings in 2022, referenced in the Retained Earnings projection discussion.",
+   "outcome": "discussed; no vote recorded; Barb to update the projection with known transfers",
+   "quote": "carl asked to clarify the figures, in light of taking $300k out in 2022.",
+   "amount_as_printed": "$300K"
+  }
+ ],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY22 Budget - Retained Earnings projection",
+   "resolution": "discussed; Barb to update projection; FinCom presentation set for 3/11",
+   "tags": [
+    "FY22 budget",
+    "retained earnings",
+    "FinCom"
+   ],
+   "quote": "fy22 budget - retained earnings projection- dave thanked barb and rob for all their work on the fy22 budget."
+  },
+  {
+   "topic": "Town Meeting draft articles",
+   "resolution": "approved 4-0",
+   "tags": [
+    "town meeting",
+    "budget articles"
+   ],
+   "quote": "town meeting draft articles-barb noted that the 3 articles need to be approved and are the standard budget articles"
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance",
+   "resolution": "continued; Dave and Brett to finish",
+   "tags": [
+    "sewer use ordinance"
+   ],
+   "quote": "fitchburg sewer use ordinance-barb reported that john dropped off a folder with his work on the ordinance"
+  },
+  {
+   "topic": "Minutes of 2/23 meeting",
+   "resolution": "approved 4-0",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of 2/23 meeting-"
+  },
+  {
+   "topic": "Carl Luck resignation letter",
+   "resolution": "received; no vote recorded",
+   "tags": [
+    "resignation",
+    "commission membership"
+   ],
+   "quote": "carl luck's resignation letter dated 2/23/21, effective 4/30/21"
+  },
+  {
+   "topic": "Business Manager Report - 88 Mass Ave",
+   "resolution": "no action; Commission to decide on Inflow response",
+   "tags": [
+    "88 Mass Ave",
+    "inflow",
+    "marijuana hearing"
+   ],
+   "quote": "business manager report - 88 mass ave meeting- barb reported there will be a hearing on 3/10 at 7pm"
+  },
+  {
+   "topic": "Commissioners' closing remarks (Public Comment heading)",
+   "resolution": "no action",
+   "tags": [
+    "commissioners",
+    "Covid-19"
+   ],
+   "quote": "public comment - brett said he would like to learn more from carl before he leaves"
+  },
+  {
+   "topic": "Upcoming scheduled Sewer Commission activities",
+   "resolution": "no action",
+   "tags": [
+    "schedule"
+   ],
+   "quote": "upcoming scheduled sewer commission activities:"
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "FY22 Budget summary and Retained Earnings projection",
+   "where": "list",
+   "quote": "handouts: fy22 budget summary and retained earnings projection"
+  },
+  {
+   "name": "Carl Luck's resignation letter of 2/23/21",
+   "where": "list",
+   "quote": "carl luck's resignation letter of 2/23/21"
+  },
+  {
+   "name": "3 Draft Town Meeting Articles for the Sewer",
+   "where": "text",
+   "quote": "to accept the 3 draft town meeting articles for the sewer."
+  },
+  {
+   "name": "Fitchburg Sewer Use Ordinance (John's draft work folder)",
+   "where": "text",
+   "quote": "fitchburg sewer use ordinance-barb reported that john dropped off a folder with his work on the ordinance"
+  },
+  {
+   "name": "Minutes of the 2/23/21 meeting",
+   "where": "text",
+   "quote": "to accept the minutes of the 2/23/21 meeting."
+  },
+  {
+   "name": "FY22 Draft Budget Presentation to FinCom",
+   "where": "text",
+   "quote": "march 11, 2021 @ 7:30pm - fy22 draft budget presentation to fincom"
+  }
+ ],
+ "tags": [
+  "sewer commission",
+  "FY22 budget",
+  "retained earnings",
+  "town meeting articles",
+  "sewer use ordinance",
+  "commission resignation",
+  "inflow",
+  "88 Mass Ave",
+  "FinCom presentation"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

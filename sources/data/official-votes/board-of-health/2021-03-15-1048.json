@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2021-03-15",
  "docid": "1048",
@@ -12,23 +12,136 @@
  },
  "votes": [
   {
-   "motion": "Allow construction of an apartment in the lower level of 2 Smith Drive with an 8 room, 3 bedroom deed restriction placed on the property",
-   "moved_by": "Perry Jewell",
-   "seconded_by": "Paul Fortin",
-   "outcome": "passed 3-0-1",
+   "motion": "Allow construction of an apartment in the lower level of 2 Smith Drive in accordance with the submitted drawings, with the condition that an 8 room, 3 bedroom deed restriction be placed on the property (roll call: Emond yes, Jewell yes, Fortin yes, Watters abstain).",
+   "moved_by": "Jewell",
+   "seconded_by": "Fortin",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin, the board voted to allow the construction of an apartment in the lower level in accordance with the submitted drawings , with the condition that an 8 room, 3 bedroom deed restriction be placed on the property."
+   "quote": "on motion by jewell and second by fortin, the board voted to allow the construction"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "Evan Watters",
-   "seconded_by": "Perry Jewell",
+   "motion": "Adjourn the meeting at 6:20 pm.",
+   "moved_by": "Watters",
+   "seconded_by": "Jewell",
    "outcome": "passed",
    "procedural": true,
-   "quote": "on motion by watters and seconded by jewell, the meeting was adjourned at 6:20 pm. by roll call vote, all in favor."
+   "quote": "motion by watters and seconded by jewell, the meeting was adjourned at 6:20 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Two votes recorded. Vote 1 shows individual roll call: Emond Yes, Jewell Yes, Fortin Yes, Watters Abstain (3-0-1). Vote 2 indicates unanimous passage as \"all in favor\".",
- "cost_usd": 0.1154885
+ "note": "Meeting held remotely by Zoom and Facebook Live; the roll call does not say who was in a room versus remote. Page 2 begins mid-discussion with no heading. No public comment section is printed; Nancy Caron spoke as the applicant. No dollar figures appear. The minutes name 'submitted drawings' without a date or author. Sewer and septic remarks on page 2 were discussion, not votes.",
+ "cost_usd": 0.01388396,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "roll call conducted by vice-chairman, perry jewell:"
+  },
+  {
+   "name": "George Emond",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin and"
+  },
+  {
+   "name": "Paul Fortin",
+   "role": "not stated",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin and"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "not stated",
+   "status": "present",
+   "quote": "paul fortin and evan watters"
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent, jim garreffi, was also present."
+  },
+  {
+   "name": "Nancy Caron",
+   "role": "owner",
+   "status": "present",
+   "quote": "nancy caron, owner, met with the board."
+  },
+  {
+   "name": "Dave Passios",
+   "role": "not stated",
+   "status": "present",
+   "quote": "dave passios was also pre sent."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "All voting at this meeting is by roll call vote (ground rule stated by Vice-Chairman Perry Jewell).",
+   "quote": "all voting by roll call votes."
+  },
+  {
+   "decision": "No minutes were approved at this meeting.",
+   "quote": "no minutes were approved."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "2 Smith Drive apartment (Parcel No. 114-006-0000.0)",
+   "resolution": "approved apartment in lower level, with 8 room, 3 bedroom deed restriction",
+   "quote": "2 smith drive (parcel no. 114-006-0000.0)",
+   "tags": [
+    "apartment conversion",
+    "deed restriction",
+    "room count"
+   ]
+  },
+  {
+   "topic": "Meeting minutes",
+   "resolution": "no minutes approved",
+   "quote": "no minutes were approved.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:20 pm",
+   "quote": "having no further matters before the board",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Submitted drawings for the lower-level apartment at 2 Smith Drive (no date or author printed)",
+   "where": "text",
+   "quote": "in accordance with the submitted drawings"
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G.L.c.30A, Section 20",
+   "where": "text",
+   "quote": "certain provisions of the open meeting law, g.l.c.30a, section 20, all public meetings are being"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "apartment conversion",
+  "deed restriction",
+  "septic and sewer",
+  "remote meeting",
+  "COVID-19",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

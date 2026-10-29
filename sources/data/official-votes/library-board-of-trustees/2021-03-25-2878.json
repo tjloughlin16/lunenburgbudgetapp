@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "library-board-of-trustees",
  "meeting_date": "2021-03-25",
  "docid": "2878",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes of February 18, 2021 as amended",
+   "motion": "Approve the minutes of February 18, 2021, as amended.",
    "moved_by": "Dick",
    "seconded_by": "Laura",
    "outcome": "passed unanimously",
@@ -20,15 +20,197 @@
    "quote": "dick made a motion to accept minutes of february 18, 2021 as amended, seconded by laura. the motion passed unanimously."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dick",
    "seconded_by": "Kate",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion to adjourn by dick seconded by kate. meeting was adjourned at 8:19 p.m."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0766405
+ "note": "Minutes text is only pages 1-2; pages 3-9 carry no text. Meeting was remote (conference call and video link) and recorded; the header says all votes were by roll call, but no individual roll-call tallies are printed. The adjournment motion has no result recorded. Attached-document list reads 'March 25th 2020 Agenda', which is printed as is (year appears to be a typo of 2021, not corrected). No public comment was made.",
+ "cost_usd": 0.021266,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Kate McCarron",
+   "role": "not stated (listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Director LPL",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Bob Conroy",
+   "role": "not stated (listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Harry Kubetz",
+   "role": "Chairperson",
+   "status": "present",
+   "quote": "the lplbt meeting was called to order at 7:02 p.m. by chairperson harry kubetz."
+  },
+  {
+   "name": "Dick Mailloux",
+   "role": "not stated (listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Donna Saiia",
+   "role": "not stated (listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Laura Boussom",
+   "role": "not stated (listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup"
+  },
+  {
+   "name": "Maia Wentrup",
+   "role": "not stated (listed under Attending)",
+   "status": "present",
+   "quote": "attending: kate mccarron, muir haman - director lpl, bob conroy, harry kubetz, dick mailloux, donna saiia, laura boussom, maia wentrup"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The board agreed to look at chapter two of the Trustee Handbook at the April meeting and review any questions.",
+   "quote": "we will look at chapter two for the april meeting and review any questions."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY21 budget status and staffing",
+   "what_was_recorded": "The Director reported FY21 salaries on schedule with one staff vacancy still open; a Trustee asked about the vacancy and the Director said he would check with the Town Manager whether the budget allows filling it this fiscal year.",
+   "figures_as_printed": [],
+   "quote": "he said he will check with the town manager on whether the budget will allow filling the staffing vacancy this fiscal year."
+  },
+  {
+   "topic": "FY22 budget",
+   "what_was_recorded": "No FY22 budget update was given; the Town Manager was to make a preliminary budget presentation to the Finance Committee that evening.",
+   "figures_as_printed": [],
+   "quote": "fy22 budget - no update yet. the town manager is making a preliminary budget presentation tonight to the finance committee."
+  },
+  {
+   "topic": "Salaries and routine bills",
+   "what_was_recorded": "Salaries were reported on schedule; sewer and water bills were paid that day, and annual renewals were coming up.",
+   "figures_as_printed": [],
+   "quote": "the sewer and water bills were paid today."
+  },
+  {
+   "topic": "CWMARS membership fee for small libraries",
+   "what_was_recorded": "The CWMARS users council voted to increase the membership fee for small libraries under 10K population to 25% of the full membership fee; the amount was not printed.",
+   "figures_as_printed": [],
+   "quote": "increase the membership fee for small libraries with populations under 10k to 25% of the full membership fee"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and roll call",
+   "resolution": "no action",
+   "quote": "harry read the requirements for a remote meeting."
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no public comment",
+   "quote": "no public comment. o harry did a roll call for attendance."
+  },
+  {
+   "topic": "Approval of Minutes",
+   "resolution": "approved as amended",
+   "quote": "dick made a motion to accept minutes of february 18, 2021 as amended, seconded by laura. the motion passed unanimously."
+  },
+  {
+   "topic": "Director's Report",
+   "resolution": "received and discussed",
+   "quote": "for the fy21 budget, march is the 9th month of the fiscal year. we are three quarters through the year."
+  },
+  {
+   "topic": "Strategic Plan Subcommittee Update",
+   "resolution": "received",
+   "quote": "focus groups have been held. the committee is finalizing survey questions."
+  },
+  {
+   "topic": "Trustee Handbook Discussion",
+   "resolution": "continued to April meeting",
+   "quote": "muir reviewed the first chapter of the handbook focusing on the checklist for the new trustee."
+  },
+  {
+   "topic": "Friends of LPL Update",
+   "resolution": "received",
+   "quote": "the friends met with the skate park representatives to work on a joint fundraiser."
+  },
+  {
+   "topic": "Board Comments",
+   "resolution": "no action",
+   "quote": "dick offered kudos to lydia for the short film discussion group."
+  },
+  {
+   "topic": "Adjourn",
+   "resolution": "adjourned at 8:19 p.m.",
+   "quote": "meeting was adjourned at 8:19 p.m."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "March 25th 2020 Agenda",
+   "where": "list",
+   "quote": "o march 25th 2020 agenda"
+  },
+  {
+   "name": "March 2021 Director’s Report",
+   "where": "list",
+   "quote": "o march 2021 director's report"
+  },
+  {
+   "name": "March Adult Services Report",
+   "where": "list",
+   "quote": "o march adult services report"
+  },
+  {
+   "name": "March 2021 Youth Services Report",
+   "where": "list",
+   "quote": "o march 2021 youth services report"
+  },
+  {
+   "name": "March 2021 Teen Services Report",
+   "where": "list",
+   "quote": "o march 2021 teen services report"
+  },
+  {
+   "name": "Trustee Handbook",
+   "where": "text",
+   "quote": "muir reviewed the first chapter of the handbook focusing on the checklist for the new trustee."
+  }
+ ],
+ "tags": [
+  "library board",
+  "remote meeting",
+  "FY21 budget",
+  "staffing vacancy",
+  "reopening",
+  "curbside pickup",
+  "trustee handbook",
+  "strategic plan",
+  "Friends of LPL",
+  "CWMARS"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "attached documents"
+ },
+ "dropped_unquoted_by_field": {}
 }

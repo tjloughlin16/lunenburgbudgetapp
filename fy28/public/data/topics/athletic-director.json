@@ -1,6 +1,225 @@
 {
  "blocks": [
   {
+   "block": "chart",
+   "place": "lead",
+   "so": {
+    "figures": {
+     "a": {
+      "text": "FY2014",
+      "unit": "fiscal year",
+      "value": 2014
+     },
+     "b": {
+      "text": "FY2017",
+      "unit": "fiscal year",
+      "value": 2017
+     },
+     "c": {
+      "text": "$96,998",
+      "unit": "",
+      "value": 96998.3
+     },
+     "d": {
+      "text": "$112,209",
+      "unit": "",
+      "value": 112208.61
+     }
+    },
+    "literals": [
+     "0",
+     "2014",
+     "2017"
+    ],
+    "text": "FY2014 to FY2017 the general fund director line shows $0 actual, while the Town printed the director’s calendar 2014 to 2017 wages at $96,998 to $112,209: which account paid is not held."
+   },
+   "spec": {
+    "decimals": null,
+    "from_zero": true,
+    "kind": "line",
+    "note": {
+     "figures": {},
+     "literals": [
+      "2022",
+      "2023",
+      "2025"
+     ],
+     "text": "Actuals: later budget books to FY2022, the journal from FY2023. Wages: annual reports, calendar years, every fund, at the year of that number; 2025 left out."
+    },
+    "reference": null,
+    "series": [
+     {
+      "basis": "published",
+      "mark": "line",
+      "name": "Paid, general fund line (actual)",
+      "texts": [
+       "$0",
+       "$0",
+       "$0",
+       "$0",
+       "$51,275",
+       "$78,462",
+       "$90,000",
+       "$91,800",
+       "$103,752",
+       "$85,977",
+       "$90,200",
+       "$96,044",
+       "$74,406",
+       null
+      ],
+      "values": [
+       0.0,
+       0.0,
+       0.0,
+       0.0,
+       51275.0,
+       78462.0,
+       90000.0,
+       91800.0,
+       103752.0,
+       85977.0,
+       90200.0,
+       96044.06,
+       74406.0,
+       null
+      ]
+     },
+     {
+      "basis": "published",
+      "mark": "line",
+      "name": "Level service, before the fee offset",
+      "texts": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       "$94,813",
+       null
+      ],
+      "values": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       94813.0,
+       null
+      ]
+     },
+     {
+      "basis": "published",
+      "mark": "line",
+      "name": "Last draft, a proposal",
+      "texts": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       "$20,000"
+      ],
+      "values": [
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null,
+       20000.0
+      ]
+     },
+     {
+      "basis": "published",
+      "mark": "line",
+      "name": "Wages the Town printed (calendar year)",
+      "texts": [
+       "$98,669",
+       "$96,998",
+       null,
+       "$112,209",
+       null,
+       "$87,556",
+       "$90,364",
+       "$92,373",
+       null,
+       null,
+       null,
+       null,
+       null,
+       null
+      ],
+      "values": [
+       98669.28,
+       96998.3,
+       null,
+       112208.61,
+       null,
+       87556.42,
+       90364.24,
+       92372.84,
+       null,
+       null,
+       null,
+       null,
+       null,
+       null
+      ]
+     }
+    ],
+    "stacked": false,
+    "title": "The athletic director’s pay, by year",
+    "type": "series",
+    "unit": "$",
+    "x": [
+     "FY2014",
+     "FY2015",
+     "FY2016",
+     "FY2017",
+     "FY2018",
+     "FY2019",
+     "FY2020",
+     "FY2021",
+     "FY2022",
+     "FY2023",
+     "FY2024",
+     "FY2025",
+     "FY2026",
+     "FY2027"
+    ]
+   }
+  },
+  {
    "block": "timeline",
    "event_label": "the event",
    "groups": [
@@ -161,10 +380,10 @@
         null,
         null,
         null,
-        "none",
-        "none",
-        "none",
-        "none",
+        "absent",
+        "absent",
+        "absent",
+        "absent",
         "half",
         "full",
         "full",
@@ -185,7 +404,7 @@
        },
        "cut": false,
        "event": null,
-       "label": "Fee fund paid the director",
+       "label": "Director pay in the fee fund",
        "note": {
         "figures": {},
         "literals": [
@@ -198,25 +417,25 @@
          "20",
          "22"
         ],
-        "text": "No director in FY14–FY17 actuals, FY18–FY19 budgets or the FY23–FY26 journal. FY20–FY22: totals only."
+        "text": "Looked for, none found: no director on the fee side in FY14–FY17 actuals, FY18–FY19 budgets or the FY23–FY26 journal. FY20–FY22: totals only."
        },
        "states": [
         null,
         null,
         null,
-        "nodir",
-        "nodir",
-        "nodir",
-        "nodir",
-        "nodir",
-        "nodir",
+        "absent",
+        "absent",
+        "absent",
+        "absent",
+        "absent",
+        "absent",
         "totals",
         "totals",
         "totals",
-        "nodir",
-        "nodir",
-        "nodir",
-        "nodir",
+        "absent",
+        "absent",
+        "absent",
+        "absent",
         null
        ],
        "tags": []
@@ -283,7 +502,7 @@
        },
        "cut": false,
        "event": null,
-       "label": "Fee fund paid the secretary",
+       "label": "Secretary pay in the fee fund",
        "note": {
         "figures": {},
         "literals": [
@@ -326,38 +545,37 @@
     },
     {
      "key": "full",
-     "label": "A full-time director line",
-     "tone": "good"
-    },
-    {
-     "key": "half",
-     "label": "A half post",
-     "tone": "other"
-    },
-    {
-     "key": "net",
-     "label": "Voted net of a fee offset",
-     "tone": "bad"
-    },
-    {
-     "key": "none",
-     "label": "No director line printed",
+     "label": "Director line: full-time",
      "tone": "muted"
     },
     {
-     "key": "nodir",
-     "label": "Itemised: no director",
+     "key": "half",
+     "label": "Director line: a half post",
+     "pattern": "half",
+     "tone": "muted"
+    },
+    {
+     "key": "net",
+     "label": "Director line: voted net of a fee offset",
+     "pattern": "half",
      "tone": "good"
     },
     {
+     "key": "absent",
+     "label": "Looked for: none found",
+     "pattern": "empty",
+     "tone": "muted"
+    },
+    {
      "key": "totals",
-     "label": "Totals only: not itemised",
+     "label": "Fee fund totals only: not itemised",
+     "pattern": "outline",
      "tone": "muted"
     },
     {
      "key": "secfee",
-     "label": "Paid from the fee fund",
-     "tone": "bad"
+     "label": "Secretary paid from the fee fund",
+     "tone": "good"
     }
    ],
    "marker": {
@@ -406,112 +624,73 @@
   "from_zero": true,
   "kind": "bar",
   "note": {
-   "figures": {},
-   "literals": [
-    "2022",
-    "2023",
-    "2027",
-    "25",
-    "2026"
-   ],
-   "text": "Actuals: later budget books to FY2022, the school journal from FY2023. FY2027: the 25 March 2026 draft."
+   "figures": {
+    "a": {
+     "text": "$1,100",
+     "unit": "",
+     "value": 1100.0
+    },
+    "y": {
+     "text": "FY2025",
+     "unit": "fiscal year",
+     "value": 2025
+    }
+   },
+   "literals": [],
+   "text": "As pay runs charged it. A lump is a line over $1,100. In FY2025 a memo moved all of it to the general fund."
   },
   "reference": null,
   "series": [
    {
     "basis": "published",
     "mark": "bar",
-    "name": "Actual",
+    "name": "Season lumps",
     "texts": [
-     "$0",
-     "$0",
-     "$0",
-     "$0",
-     "$51,275",
-     "$78,462",
-     "$90,000",
-     "$91,800",
-     "$103,752",
-     "$85,977",
-     "$90,200",
-     "$96,044",
-     "$74,406",
-     null
+     "$45,603",
+     "$95,411",
+     "$104,355",
+     "$13,012"
     ],
     "values": [
-     0.0,
-     0.0,
-     0.0,
-     0.0,
-     51275.0,
-     78462.0,
-     90000.0,
-     91800.0,
-     103752.0,
-     85977.0,
-     90200.0,
-     96044.06,
-     74406.0,
-     null
+     45602.92,
+     95411.47,
+     104355.34,
+     13012.08
     ]
    },
    {
-    "basis": "stated",
+    "basis": "published",
     "mark": "bar",
-    "name": "Last draft held",
+    "name": "Small regular lines",
     "texts": [
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     "$20,000"
+     "$14,971",
+     "$12,256",
+     "$10,316",
+     "$18,441"
     ],
     "values": [
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     null,
-     20000.0
+     14971.46,
+     12256.35,
+     10316.19,
+     18441.12
     ]
    }
   ],
-  "stacked": false,
-  "title": "The town budget director line",
+  "stacked": true,
+  "title": "The fee fund’s high school pay, by kind",
+  "totals": [
+   "$60,574",
+   "$107,668",
+   "$114,672",
+   "$31,453"
+  ],
   "type": "series",
   "unit": "$",
   "x": [
-   "FY2014",
-   "FY2015",
-   "FY2016",
-   "FY2017",
-   "FY2018",
-   "FY2019",
-   "FY2020",
-   "FY2021",
-   "FY2022",
    "FY2023",
    "FY2024",
    "FY2025",
-   "FY2026",
-   "FY2027"
+   "FY2026"
   ]
  },
  "conclusions": [
@@ -567,7 +746,7 @@
       "2019",
       "2021"
      ],
-     "text": "For FY2020 to FY2022 the fund is only totals. James Bunnell’s calendar 2020 pay, $90,364, sits between the line’s FY2020 and FY2021 actuals, as 2019 and 2021 do: our arithmetic."
+     "text": "FY2020 to FY2022 the fund is totals only. Bunnell’s calendar 2020 pay, $90,364, sits between the line’s FY2020 and FY2021 actuals: our arithmetic."
     },
     {
      "figures": {
@@ -584,7 +763,7 @@
      },
      "kind": "measured",
      "literals": [],
-     "text": "The director was reimbursed $605.82 from the fund for expenses, in 2 payments; that is not pay."
+     "text": "Expense reimbursements to the director, $605.82 in 2 payments, are not pay."
     }
    ],
    "rests_on": [
@@ -766,32 +945,36 @@
     {
      "figures": {
       "a": {
+       "text": "$120,008.53",
+       "unit": "",
+       "value": 120008.53
+      },
+      "b": {
        "text": "$114,671.53",
        "unit": "",
        "value": 114671.53
       },
-      "b": {
-       "text": "$100,980.00",
-       "unit": "",
-       "value": 100980.0
+      "y": {
+       "text": "FY2025",
+       "unit": "fiscal year",
+       "value": 2025
       }
      },
-     "kind": "estimate",
+     "kind": "measured",
      "literals": [],
-     "text": "It is that year’s high school fee-fund pay, $114,671.53, less its whole-dollar part, $100,980.00: our arithmetic."
+     "text": "The entry took $120,008.53 from the fee fund’s high school pay account; FY2025 pay runs charged $114,671.53."
     },
     {
-     "closes": "the memo of 20 August 2025 behind journal entry 2025/12/001339",
-     "figures": {},
-     "kind": "gap",
-     "literals": [
-      "20",
-      "2025",
-      "2025",
-      "12",
-      "001339"
-     ],
-     "text": "The memo behind it is not held."
+     "figures": {
+      "y": {
+       "text": "FY2026",
+       "unit": "fiscal year",
+       "value": 2026
+      }
+     },
+     "kind": "hypothesis",
+     "literals": [],
+     "text": "Two readings fit: the hourly secretary, whose rate it matches, or the FY2026 assistant principal and director split."
     }
    ],
    "rests_on": [
@@ -800,14 +983,19 @@
    ],
    "so": {
     "figures": {
-     "y": {
-      "text": "FY2026",
-      "unit": "fiscal year",
-      "value": 2026
+     "h": {
+      "text": "576",
+      "unit": "hours",
+      "value": 576
+     },
+     "r": {
+      "text": "$23.77",
+      "unit": "",
+      "value": 23.77
      }
     },
     "literals": [],
-    "text": "Which post that was is in a memo we do not hold; no roster names an assistant principal as director before FY2026."
+    "text": "Our arithmetic: it is 576 hours at that year’s $23.77 hourly rate, to a cent."
    },
    "text": "In FY2025 the Town moved $13,691.53 of fee-fund pay onto the high school principal line."
   }

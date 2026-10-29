@@ -476,7 +476,16 @@ function Series({ c }: { c: SeriesChart }) {
                 </Bar>
               ) : (
                 <Line key={s.name} dataKey={`s${i}`} name={s.name} stroke={colourOf(s, i)} strokeWidth={2.25}
-                  strokeDasharray={est ? '6 4' : undefined} dot={c.x.length <= 12 ? { r: 2.5 } : false}
+                  strokeDasharray={est ? '6 4' : undefined}
+                  /* A LONE VALUE IS STILL A VALUE. With dots off past twelve years, a year whose
+                     neighbours are gaps drew nothing at all -- a printed figure that vanished. */
+                  dot={c.x.length <= 12 ? { r: 2.5 } : (p: { cx?: number; cy?: number; index?: number }) => {
+                    const k = p.index ?? -1, v = s.values
+                    const lone = v[k] != null && (k === 0 || v[k - 1] == null) && (k === v.length - 1 || v[k + 1] == null)
+                    return lone && p.cx != null && p.cy != null
+                      ? <circle key={k} cx={p.cx} cy={p.cy} r={3.5} fill={colourOf(s, i)} />
+                      : <g key={k} />
+                  }}
                   connectNulls={false} isAnimationActive={false} type="linear" />
               )
             })}

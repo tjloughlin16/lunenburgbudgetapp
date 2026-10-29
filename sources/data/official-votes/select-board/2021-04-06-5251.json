@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-04-06",
  "docid": "5251",
@@ -12,40 +12,419 @@
  },
  "votes": [
   {
-   "motion": "Appoint Daniel Burns to the Cultural Council with a term to expire June 30, 2024",
-   "outcome": "passed 5-0",
-   "procedural": false,
+   "motion": "Appoint Daniel Burns to the Cultural Council, term to expire June 30, 2024.",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
-   "quote": "motion: k. adams 2°°: j. marino to appoint daniel burns to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. marino-aye, mir. alonzo-aye"
-  },
-  {
-   "motion": "Appoint Donna Saiia to the Cultural Council with a term to expire June 30, 2024",
    "outcome": "passed 5-0",
    "procedural": false,
+   "quote": "to appoint daniel burns to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. marino-aye, mir. alonzo-aye"
+  },
+  {
+   "motion": "Appoint Donna Saiia to the Cultural Council, term to expire June 30, 2024.",
    "moved_by": "K. Adams",
    "seconded_by": "M. Jeffreys",
-   "quote": "motion: k. adams 2°: m. jeffreys to appoint donna saiia to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. marino-aye, mr. jeffreys-aye, mr. dwyer aye, mr. alonzo-aye"
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to appoint donna saiia to the cultural council with a term to expire june 30, 2024 vote: ms. adams-aye, mr. marino-aye, mr. jeffreys-aye, mr. dwyer aye, mr. alonzo-aye"
   },
   {
-   "motion": "Appoint Dave Passios to the Green Community Task Force",
-   "outcome": "passed 4-1",
-   "procedural": false,
+   "motion": "Appoint Dave Passios to the Green Community Task Force.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "quote": "motion: m. jeffreys 2nd: t. dwyer to appoint dave passios to the green community task force vote: ms. adams-aye, mr. marino-aye, mir. jeffreys-aye, mr. dwyer-aye, mr. alonzo-nay"
+   "outcome": "passed 4-1",
+   "procedural": false,
+   "quote": "to appoint dave passios to the green community task force vote: ms. adams-aye, mr. marino-aye, mir. jeffreys-aye, mr. dwyer-aye, mr. alonzo-nay"
   },
   {
-   "motion": "Approve the above recommended articles for the consent calendar",
-   "outcome": "passed 5-0",
-   "procedural": true,
+   "motion": "Approve the recommended Annual Town Meeting articles for the consent calendar.",
    "moved_by": "K. Adams",
    "seconded_by": "T. Dwyer",
-   "quote": "motion: k. adams 2nd: t. dwyer to approve the above recommended articles for the consent calendar vote: ms. adams- aye, mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "outcome": "passed 5-0",
+   "procedural": false,
+   "quote": "to approve the above recommended articles for the consent calendar"
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR-derived text with minor artifacts (e.g. \"Mir.\" for \"Mr.\", \"2°°:\" and \"2°:\" for \"2nd:\") but all votes are fully readable.",
- "cost_usd": 0.13754650000000002
+ "note": "Text is macOS Vision OCR of a scan. Garbled names: Caiozzo appears as Calozzo in the Also Present line; Saiia as Saila in that line; Jeffreys as Jettreys in one public comment; Alonzo as Mir. in some vote lines. The motion-result tallies are derived from the printed vote lines and no outcome word is printed. Dave Passios's appointment passed 4-1 (Alonzo nay). The Capital Planning Committee \"voted to recommend\" is a committee vote, not a Board motion, so it is not recorded as a vote. No motion is recorded for entering executive session or adjourning; the minutes say executive session minutes are separate. Page 3 starts mid-sentence in the appointment policy text. The $10,000 sentence is cut at the page 4 to 5 break. The consent calendar article list has no heading.",
+ "cost_usd": 0.12498129999999999,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; anthony calozzo, daniel burns, donna saila, dave passios, dave blatt"
+  },
+  {
+   "name": "Anthony Calozzo",
+   "role": "Also Present",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; anthony calozzo, daniel burns, donna saila, dave passios, dave blatt"
+  },
+  {
+   "name": "Daniel Burns",
+   "role": "Also Present (appointee, Cultural Council)",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; anthony calozzo, daniel burns, donna saila, dave passios, dave blatt"
+  },
+  {
+   "name": "Donna Saila",
+   "role": "Also Present (applicant, Cultural Council)",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; anthony calozzo, daniel burns, donna saila, dave passios, dave blatt"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Also Present (applicant, Green Community Task Force)",
+   "status": "present",
+   "quote": "dave passios, 56 whiting street, is interested in the green community task force."
+  },
+  {
+   "name": "Dave Blatt",
+   "role": "Chairman, Green Community Task Force",
+   "status": "present",
+   "quote": "dave blatt, chairman, reported the green community task force"
+  },
+  {
+   "name": "Anthony Caiozzo",
+   "role": "presenter, Lunenburg Skate Board Park Group",
+   "status": "present",
+   "quote": "anthony caiozzo reported the group's fundraising has been heavily affected by the pandemic."
+  },
+  {
+   "name": "Rhonda Lisio",
+   "role": "Reservoir Road",
+   "status": "present",
+   "quote": "rhonda lisio, reservoir road, stated this is in regards to the select board's town meeting"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Chair advised the new appointee to be sworn in by the Town Clerk, and reminded Mr. Passios to get sworn in.",
+   "quote": "mr. alonzo advised mr. burns to get sworn in by the town clerk."
+  },
+  {
+   "decision": "The Board would add to a future agenda the question of making the Green Community Task Force a committee.",
+   "quote": "mr. alonzo stated they would need to add this to a future agenda to discuss making this a task force a committee."
+  },
+  {
+   "decision": "The Board stated it will try to interview all applicants for a particular board at the same time.",
+   "quote": "mr. alonzo stated we are going to try to interview all the same applicants for a particular"
+  },
+  {
+   "decision": "Each member is to schedule an appointment with the Town Manager by the following Friday to go over a draft evaluation of the Town Manager.",
+   "quote": "by next friday each member should have scheduled an appointment with ms. lemieux to go over your draft evaluation of the town manager."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Complete Streets project low bid",
+   "what_was_recorded": "Six bids were received; the low bid was from Richard D'Ambrosia Inc. and a Notice of Award was issued.",
+   "figures_as_printed": [
+    "$198,314"
+   ],
+   "quote": "richard d'ambrosia inc. provided the low bid of $198,314 and has been issued a notice of award."
+  },
+  {
+   "topic": "Warrants signed",
+   "what_was_recorded": "The Chair reported signing three warrants: accounts payable, payroll deduction and payroll.",
+   "figures_as_printed": [
+    "$256,447.97",
+    "$49,640.00",
+    "$839,923.83"
+   ],
+   "quote": "mr. alonzo reported he signed the following warrants last week;"
+  },
+  {
+   "topic": "Capital Planning Committee base threshold",
+   "what_was_recorded": "The Capital Planning Committee voted to recommend changing the base threshold amount; the minutes print the current figure, and the sentence continues past the page break.",
+   "figures_as_printed": [
+    "$10,000"
+   ],
+   "quote": "voted to recommend to change the base threshold amount from $10,000"
+  },
+  {
+   "topic": "Lunenburg Skate Board Park fundraising",
+   "what_was_recorded": "The group reported it has reached a fundraising total in cash and donations.",
+   "figures_as_printed": [
+    "$75,000"
+   ],
+   "quote": "we just reached $75,000 in cash and donations."
+  },
+  {
+   "topic": "Primary School fire alarm upgrade earmark",
+   "what_was_recorded": "Formal requests were sent to the House and Senate Ways & Means Chairs to include the earmark in the end-of-year supplemental budget; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "formal requests to include the earmark for the primary school fire alarm upgrade in the end ofthe year supplemental budget"
+  },
+  {
+   "topic": "APDC appropriation request",
+   "what_was_recorded": "The APDC requested an appropriation in the FY 2022 budget for an expense line; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "a request for an appropriation in the fy 2022 budget for an expense line for the apdc"
+  },
+  {
+   "topic": "925 Mass Ave possible LUST funding",
+   "what_was_recorded": "MA DEP identified possible clean-up funding through the LUST program; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "ma dep identified possible funding through the lust (leaking underground"
+  },
+  {
+   "topic": "FY2022 state budget earmark",
+   "what_was_recorded": "Additional funding for the town was included in the legislators' district budget priorities; no dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "additional funding was included in our legislator's district budget priorities."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Ms. Adams",
+   "stated_role": "Clerk",
+   "topic": "students returning to school",
+   "quote": "ms. adams noted students are returning to school this week."
+  },
+  {
+   "speaker": "Rhonda Lisio",
+   "stated_role": "Reservoir Road",
+   "topic": "APDC bylaw warrant article, old Primary School demolition",
+   "quote": "rhonda lisio, reservoir road, stated this is in regards to the select board's town meeting"
+  },
+  {
+   "speaker": "Mr. Jettreys",
+   "stated_role": "",
+   "topic": "Memorial Day service coordination",
+   "quote": "mr. jettreys stated he would be coordinating the memorial day service this year."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Lunenburg Skate Board Park Group update",
+   "resolution": "received, no action",
+   "quote": "anthony caiozzo reported the group's fundraising has been heavily affected by the pandemic.",
+   "tags": [
+    "skate park",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Cultural Council appointments",
+   "resolution": "appointed Daniel Burns and Donna Saiia, each 5-0",
+   "quote": "to appoint daniel burns to the cultural council with a term to expire june 30, 2024",
+   "tags": [
+    "cultural council",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Green Community Task Force appointment",
+   "resolution": "appointed Dave Passios, 4-1",
+   "quote": "to appoint dave passios to the green community task force",
+   "tags": [
+    "green community task force",
+    "appointments"
+   ]
+  },
+  {
+   "topic": "Appointment policy and standing committees versus task forces",
+   "resolution": "discussed, no action",
+   "quote": "discussion about standing committees versus ad hoc or task forces ensued.",
+   "tags": [
+    "appointment policy",
+    "task forces"
+   ]
+  },
+  {
+   "topic": "FY2022 budget, capital plan, forecast and warrant articles",
+   "resolution": "no discussion",
+   "quote": "there was no discussion on this topic.",
+   "tags": [
+    "fy2022 budget",
+    "annual town meeting"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting consent calendar",
+   "resolution": "approved 5-0",
+   "quote": "to approve the above recommended articles for the consent calendar",
+   "tags": [
+    "annual town meeting",
+    "consent calendar"
+   ]
+  },
+  {
+   "topic": "Warrants",
+   "resolution": "signed, reported",
+   "quote": "mr. alonzo reported he signed the following warrants last week;",
+   "tags": [
+    "warrants"
+   ]
+  },
+  {
+   "topic": "Action items",
+   "resolution": "none",
+   "quote": "action items- there were none",
+   "tags": [
+    "action items"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "reported, no action",
+   "quote": "mr. alonzo reported the capital planning committee met and discussed potential",
+   "tags": [
+    "capital planning",
+    "apdc"
+   ]
+  },
+  {
+   "topic": "Town Manager report and COVID-19 update",
+   "resolution": "reported, no action",
+   "quote": "town manager report and covid-19 update",
+   "tags": [
+    "covid-19",
+    "town manager",
+    "mass ave bridge",
+    "925 mass ave",
+    "apdc"
+   ]
+  },
+  {
+   "topic": "Meetings, events and other announcements",
+   "resolution": "reported, no action",
+   "quote": "meetings, events and other announcements:",
+   "tags": [
+    "state budget",
+    "earmark",
+    "town manager evaluation"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted",
+   "quote": "upcoming meeting/events schedule",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment (closing)",
+   "resolution": "heard",
+   "quote": "mr. jettreys stated he would be coordinating the memorial day service this year.",
+   "tags": [
+    "memorial day",
+    "public comment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Minutes of January 12, 2021, joint meeting of the APDC and Select Board",
+   "where": "text",
+   "quote": "the minutes of january 12, 2021 that details the joint meeting of both boards"
+  },
+  {
+   "name": "Two letters from the APDC to the Select Board",
+   "where": "text",
+   "quote": "received two letters from the apdc to the select board"
+  },
+  {
+   "name": "2017 RFP to sell the Old Primary property",
+   "where": "text",
+   "quote": "a request for a copy of the 2017 rfp to sell the old primary property"
+  },
+  {
+   "name": "Phase II Environmental Site Assessment (BETA Group)",
+   "where": "text",
+   "quote": "our consultant that performed the phase ii environmental site assessment (beta group)"
+  },
+  {
+   "name": "Accounts Payable Warrant #45 21, dated 3/30/2021",
+   "where": "text",
+   "quote": "accounts payable warrant #45 21, dated 3/30/2021, in the amount of"
+  },
+  {
+   "name": "Payroll Deduction Warrant #46 21, dated 3/31/21",
+   "where": "text",
+   "quote": "payroll deduction warrant #46 21, dated 3/31/21, in the amount of $49,640.00;"
+  },
+  {
+   "name": "Payroll Warrant #20P21, dated 4/1/21",
+   "where": "text",
+   "quote": "payroll warrant #20p21, dated 4/1/21, in the amount of $839,923.83"
+  },
+  {
+   "name": "Consent calendar of Annual Town Meeting warrant articles",
+   "where": "text",
+   "quote": "article 7; regular stabilization fund"
+  },
+  {
+   "name": "Notice of Award to Richard D'Ambrosia Inc. (Complete Streets)",
+   "where": "text",
+   "quote": "has been issued a notice of award"
+  },
+  {
+   "name": "Select Board fiscal policy regarding capital planning",
+   "where": "text",
+   "quote": "recommendations of modifications to the select board's fiscal policy regarding capital planning"
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting law"
+  }
+ ],
+ "tags": [
+  "select board",
+  "appointments",
+  "cultural council",
+  "green community task force",
+  "annual town meeting",
+  "consent calendar",
+  "warrants",
+  "town manager report",
+  "covid-19",
+  "925 mass ave",
+  "APDC",
+  "skate park",
+  "primary school",
+  "public comment",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

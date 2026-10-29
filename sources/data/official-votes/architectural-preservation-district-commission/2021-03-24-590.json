@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "architectural-preservation-district-commission",
  "meeting_date": "2021-03-24",
  "docid": "590",
@@ -12,13 +12,214 @@
  },
  "votes": [
   {
-   "motion": "Accept minutes from February 24, 2021",
-   "outcome": "unanimously accepted",
+   "motion": "Accept the minutes of the 2/24/21 meeting.",
+   "moved_by": "",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "brian read minutes from 2/24/21. aoer reading the minutes with no comments, they were unanimously accepted."
+   "quote": "aoer reading the minutes with no comments, they were unanimously accepted."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes record one vote only. Other statements reflect committee agreement or discussion of actions (drafting letters, considering applications, etc.) but not formal motions or votes. Meeting adjournment is noted but not voted on.",
- "cost_usd": 0.1061415
+ "dropped_unquoted": 1,
+ "note": "Text is OCR-extracted with character and ligature errors (for example 'Commi<ee', 'draO', 'AOer', 'ﬁrst'); quotes copy the characters as printed. The attendance header is garbled ('Members in a<endance:') and lists four names with no absence notes; no roles are printed. Only one vote is recorded: approval of the 2/24/21 minutes. The 7:58 pm adjournment has no recorded motion, and the other actions are committee agreements or directions without votes. No dollar figures are printed. No public comment section appears.",
+ "cost_usd": 0.0221947,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Richard McGrath",
+   "status": "present",
+   "quote": "richard mcgrath cullen dwyer tony nicastro brian corcoran"
+  },
+  {
+   "name": "Cullen Dwyer",
+   "status": "present",
+   "quote": "richard mcgrath cullen dwyer tony nicastro brian corcoran"
+  },
+  {
+   "name": "Tony Nicastro",
+   "status": "present",
+   "quote": "richard mcgrath cullen dwyer tony nicastro brian corcoran"
+  },
+  {
+   "name": "Brian Corcoran",
+   "status": "present",
+   "quote": "richard mcgrath cullen dwyer tony nicastro brian corcoran"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Committee agreed to add an annual budget amount and reasons for the funding to the RFP and operating budget letter, and send it to Town Manager Heather Lemieux.",
+   "quote": "commi<ee agreed to add this informaion and send a le<er to the town manager, heather lemieux."
+  },
+  {
+   "decision": "Committee agreed the CTA process letter was acceptable; to send it to Town Manager Heather Lemieux and copy Building Inspector Casey Burlingame.",
+   "quote": "commi<ee members agreed it was acceptable and ok to send to town manager heather lemieux and copy building inspector casey burlingame."
+  },
+  {
+   "decision": "Committee agreed it might be a good idea to draft information for next year's Mass Historical grant submittal.",
+   "quote": "commi<ee agreed that it might be a good idea to drao informaion for next year's submi<al."
+  },
+  {
+   "decision": "Richard directed Brian to draft a new letter to TC Passios Building Committee chairman Greg Roy, notifying him that the APDC must be an advisory to all new construction within the APD.",
+   "quote": "richard requested brian to drao a new le<er to the tc passios building commi<ee chairman, greg roy."
+  },
+  {
+   "decision": "Cullen to draft information on the appeals process.",
+   "quote": "cullen to drao informaion on the appeals process."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "APDC annual operating budget (RFP letter)",
+   "what_was_recorded": "Suggestions were made to add an amount for the annual APDC budget and the reasons for needing that funding; the minutes print no dollar figure.",
+   "quote": "suggesions made to add an amount for the annual budget and reasons for the need for such funding.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Mass Historical grants",
+   "what_was_recorded": "Tony said the cutoff for this year's Mass Historical grants had passed; the committee discussed drafting information for next year's submittal. No dollar figure is printed.",
+   "quote": "tony discussed the mass historical grants and stated that the cutoﬀ for this year had already passed.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of 2/24/21 minutes",
+   "resolution": "approved unanimously",
+   "quote": "aoer reading the minutes with no comments, they were unanimously accepted.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Preservation awards idea (Cambridge)",
+   "resolution": "committee agreed it is a good idea; no motion",
+   "quote": "richard commented on being in cambridge, ma, and noiced the use of preservaion awards for buildings that had been restored.",
+   "tags": [
+    "awards",
+    "historic preservation"
+   ]
+  },
+  {
+   "topic": "Letter on RFP and operating budget",
+   "resolution": "letter to Town Manager to add budget amount",
+   "quote": "the ﬁrst le<er regarding the rfp and operaing budget was read.",
+   "tags": [
+    "budget",
+    "letters"
+   ]
+  },
+  {
+   "topic": "Letter on CTA process for contributing properties",
+   "resolution": "agreed acceptable; send to Town Manager, copy Building Inspector",
+   "quote": "the second le<er regarding the cta process for all contribuing properies was read",
+   "tags": [
+    "letters",
+    "CTA"
+   ]
+  },
+  {
+   "topic": "Mass Historical grants",
+   "resolution": "agreed to draft information for next year's submittal",
+   "quote": "tony discussed the mass historical grants and stated that the cutoﬀ for this year had already passed.",
+   "tags": [
+    "grants"
+   ]
+  },
+  {
+   "topic": "Old primary school national register eligibility",
+   "resolution": "noted; Cullen plans a Form B",
+   "quote": "cullen stated that the old primary school is not on the naional historic lising, but it is eligible.",
+   "tags": [
+    "old primary school",
+    "national register"
+   ]
+  },
+  {
+   "topic": "Old primary building and developer interest",
+   "resolution": "discussed; no action recorded",
+   "quote": "cullen talked with kaie adams about the old primary building.",
+   "tags": [
+    "old primary school",
+    "development"
+   ]
+  },
+  {
+   "topic": "TC Passios building",
+   "resolution": "Brian to draft letter to Greg Roy",
+   "quote": "richard read an aricle from the ledger regarding the tc passios building.",
+   "tags": [
+    "TC Passios",
+    "new construction"
+   ]
+  },
+  {
+   "topic": "Brooks House historical article",
+   "resolution": "noted; no action",
+   "quote": "bill lasko has wri<en a historical aricle about the brooks house.",
+   "tags": [
+    "Brooks House"
+   ]
+  },
+  {
+   "topic": "Email on Town vote to change APDC bylaw",
+   "resolution": "Cullen to draft appeals process information",
+   "quote": "the commi<ee discussed the email sent by elaine peterson regarding a town vote to change the apdc bylaw.",
+   "tags": [
+    "bylaw",
+    "appeals"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "First letter regarding the RFP and operating budget (to Town Manager Heather Lemieux)",
+   "where": "list",
+   "quote": "the ﬁrst le<er regarding the rfp and operaing budget was read."
+  },
+  {
+   "name": "Second letter regarding the CTA process for all contributing properties",
+   "where": "list",
+   "quote": "the second le<er regarding the cta process for all contribuing properies was read"
+  },
+  {
+   "name": "Ledger article regarding the TC Passios building",
+   "where": "list",
+   "quote": "richard read an aricle from the ledger regarding the tc passios building."
+  },
+  {
+   "name": "Form B (National Register registration for the old primary school)",
+   "where": "text",
+   "quote": "he plans to do a form b to get the building registered"
+  },
+  {
+   "name": "Email from Elaine Peterson regarding a Town vote to change the APDC bylaw",
+   "where": "text",
+   "quote": "the commi<ee discussed the email sent by elaine peterson regarding a town vote to change the apdc bylaw."
+  },
+  {
+   "name": "Historical article on the Brooks House by Bill Lasko",
+   "where": "text",
+   "quote": "bill lasko has wri<en a historical aricle about the brooks house."
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "architectural preservation district",
+  "old primary school",
+  "TC Passios building",
+  "Brooks House",
+  "APDC bylaw",
+  "Mass Historical grants",
+  "letters to Town Manager"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the ﬁrst le<er regarding the rfp and operaing budget was read."
+ },
+ "dropped_unquoted_by_field": {
+  "decisions": 1
+ }
 }

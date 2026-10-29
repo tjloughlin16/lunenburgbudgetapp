@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-03-18",
  "docid": "2083",
@@ -12,15 +12,311 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "To adjourn the meeting.",
    "moved_by": "Chris Menard",
    "seconded_by": "Evan Watters",
-   "outcome": "passed 6-0",
+   "outcome": "passed",
    "procedural": true,
    "quote": "motion: chris menard 2nd: evan watters in favor: chris, peter, dave, jay, evan, terri"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.09510249999999999
+ "note": "Minutes are extracted text of a Zoom meeting. Attendance comes from the Present and Absent lines; Dr. Burnham, Mr. Cassidy and Mrs. Lemieux have no roles printed in the minutes. The adjournment has an in-favor list of six but no printed count or result line; outcome is recorded as passed from that list. No other motions appear, and the Monied Articles section records discussion only. The school budget briefing refers to a linked PowerPoint and PDF, which are recorded as referenced but were not in the text.",
+ "cost_usd": 0.01860266,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Dave Passios",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Jay Simeone",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Chris Menard",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Evan Watters",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "absent: heather sroka"
+  },
+  {
+   "name": "Dr. Burnham",
+   "status": "present",
+   "quote": "dr. burnham and mr. cassidy briefed the school district budget request from the linked powerpoint"
+  },
+  {
+   "name": "Mr. Cassidy",
+   "status": "present",
+   "quote": "dr. burnham and mr. cassidy briefed the school district budget request from the linked powerpoint"
+  },
+  {
+   "name": "Mrs. Lemieux",
+   "status": "present",
+   "quote": "mrs. lemieux - confirmed earmark for fire alarm expires end of fy21."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting is set for March 25, for a public hearing and votes on committee recommendations on warrant articles.",
+   "quote": "march 25 - public hearing and votes on committee recommendations on warrant articles"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Chapter 70 share of school department funding",
+   "what_was_recorded": "Chapter 70 funding as a share of the school department was reported as declining.",
+   "quote": "ch 70 funding as a percentage of the school department has been declining - 35.9% in fy21.",
+   "figures_as_printed": [
+    "35.9%"
+   ]
+  },
+  {
+   "topic": "FY22 recommended school budget increase",
+   "what_was_recorded": "The FY22 recommended school budget was reported as a 2.5% increase, compared with 1.58% in FY21.",
+   "quote": "fy22 recommended budget reflects 2.5% increase, up from 1.58% in fy21.",
+   "figures_as_printed": [
+    "2.5%",
+    "1.58%"
+   ]
+  },
+  {
+   "topic": "Cares Act money for full return",
+   "what_was_recorded": "A committee member asked whether Cares Act money would fund the full return; no dollar figure was given.",
+   "quote": "do you anticipate use of cares act money to facilitate full return?",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Article K special purpose stabilization",
+   "what_was_recorded": "The current special purpose stabilization balance was reported, with a further amount needed to fund two large fire trucks.",
+   "quote": "current balance is $1,198,705. we'd need another $325k.",
+   "figures_as_printed": [
+    "$1,198,705",
+    "$325K"
+   ]
+  },
+  {
+   "topic": "Article I stabilization recommendation",
+   "what_was_recorded": "A $100K stabilization recommendation was reported as exceeding fiscal policy.",
+   "quote": "i - stabilization $100k recommendation exceeds fiscal policy",
+   "figures_as_printed": [
+    "$100K"
+   ]
+  },
+  {
+   "topic": "Article L OPEB funding",
+   "what_was_recorded": "OPEB figures were reported unchanged, to come from free cash and the sewer revolving account; no dollar figure was given.",
+   "quote": "l - opeb #'s haven't changed. will come from free cash and sewer revolving account.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Article M solid waste revenue",
+   "what_was_recorded": "Bag fees may need adjusting to make solid waste revenues exceed the current revenue figure.",
+   "quote": "solid waste, we'll need to adjust bag fees to cover cost of operations to make revenues greater than current $302k.",
+   "figures_as_printed": [
+    "$302K"
+   ]
+  },
+  {
+   "topic": "Article O health insurance stabilization",
+   "what_was_recorded": "A Health Insurance Stabilization Fund amount was reported, based on savings for FY22.",
+   "quote": "o - health insurance stabilization fund $369,334 based on savings for fy22",
+   "figures_as_printed": [
+    "$369,334"
+   ]
+  },
+  {
+   "topic": "Article P cemetery lot sale funds",
+   "what_was_recorded": "A $15,000 amount was reported for use of cemetery lot sale funds, in addition to the operating account.",
+   "quote": "p - $15,000 for use of sale of cemetery lots funds, in addition to operating account",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "Undercosted primary school building work",
+   "what_was_recorded": "A committee member said the primary school needs approximately $300,000 in spending and that nothing is being done.",
+   "quote": "the primary school, in need of approximately $300,000 in spending and we are doing nothing.",
+   "figures_as_printed": [
+    "$300,000"
+   ]
+  },
+  {
+   "topic": "Snow and ice deficit",
+   "what_was_recorded": "Work on a snow and ice deficit was reported, with uncertainty whether year-end funds would cover it; no dollar figure was given.",
+   "quote": "working on snow and ice deficit and whether there will be sufficient end of year funds to cover.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Fire alarm earmark",
+   "what_was_recorded": "The earmark for the fire alarm was confirmed to expire at the end of FY21; no dollar figure was given.",
+   "quote": "mrs. lemieux - confirmed earmark for fire alarm expires end of fy21.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "School district unemployment costs",
+   "what_was_recorded": "The school district said there is no financial impact from the eliminated or offset positions; no dollar figure was given.",
+   "quote": "mr. cassidy - there is no financial impact. we can do involuntary transfers.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter",
+   "stated_role": "",
+   "topic": "personnel compensation discussion",
+   "quote": "peter - there was quite a bit of content received for tonight's meeting."
+  },
+  {
+   "speaker": "Dave",
+   "stated_role": "",
+   "topic": "street lights and planning board articles",
+   "quote": "dave - 12 street lights have been identified that are missing or non-functional."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "opened the meeting",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement.",
+   "tags": [
+    "procedure"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "noted; suggested separate personnel compensation talk after town meeting",
+   "quote": "peter - there was quite a bit of content received for tonight's meeting.",
+   "tags": [
+    "personnel"
+   ]
+  },
+  {
+   "topic": "Lunenburg School District Budget Request",
+   "resolution": "briefed; questions taken",
+   "quote": "dr. burnham and mr. cassidy briefed the school district budget request from the linked powerpoint",
+   "tags": [
+    "school budget",
+    "FY22 budget",
+    "staffing"
+   ]
+  },
+  {
+   "topic": "Monied Articles",
+   "resolution": "reviewed lettered articles; no votes",
+   "quote": "c - currently no prior year expenses",
+   "tags": [
+    "warrant articles",
+    "stabilization",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Minutes",
+   "resolution": "no action (none submitted)",
+   "quote": "5. minutes none 6. committee reports",
+   "tags": []
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported",
+   "quote": "dave - tcp is working on town meeting reports and will come up with funding article number for their next meeting.",
+   "tags": [
+    "town meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager / Finance Director Report",
+   "resolution": "reported; no action",
+   "quote": "mrs. lemieux - confirmed earmark for fire alarm expires end of fy21.",
+   "tags": [
+    "fire alarm",
+    "capital plan"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "noted",
+   "quote": "dave - 12 street lights have been identified that are missing or non-functional.",
+   "tags": [
+    "street lights",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Next Meetings",
+   "resolution": "scheduled March 25 hearing and votes",
+   "quote": "march 25 - public hearing and votes on committee recommendations on warrant articles",
+   "tags": [
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "motion: chris menard 2nd: evan watters in favor: chris, peter, dave, jay, evan, terri",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "School district budget request PowerPoint (linked, 1drv.ms)",
+   "where": "text",
+   "quote": "dr. burnham and mr. cassidy briefed the school district budget request from the linked powerpoint"
+  },
+  {
+   "name": "School district budget request PDF (linked, 1drv.ms)",
+   "where": "text",
+   "quote": "and pdf: https://1drv.ms/b/s!arn1s_-fztiyhqtsa_nzk2qjcfha?e=whjsrn"
+  },
+  {
+   "name": "Town warrant (planning board articles)",
+   "where": "text",
+   "quote": "encouraged citizens to look at planning board articles in the warrant."
+  }
+ ],
+ "tags": [
+  "school budget",
+  "FY22 budget",
+  "warrant articles",
+  "capital plan",
+  "stabilization",
+  "Chapter 70",
+  "COVID-19 relief",
+  "fire alarm",
+  "solid waste",
+  "town meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "dr. burnham and mr. cassidy briefed the school district budget request from the linked powerpoint"
+ },
+ "dropped_unquoted_by_field": {}
 }

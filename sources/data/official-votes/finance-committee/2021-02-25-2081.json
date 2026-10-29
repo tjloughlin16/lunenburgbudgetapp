@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-02-25",
  "docid": "2081",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of 2/11/2021",
+   "motion": "Approve the minutes of 2/11/2021 (Burchfield abstained)",
    "moved_by": "Passios",
    "seconded_by": "Menard",
    "outcome": "passed 5-0",
@@ -20,7 +20,7 @@
    "quote": "motion to approve the minutes of 2/11/2021 passios, 2nd menard. passed 5-0 burchfield abstained."
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:45 PM",
    "moved_by": "P. Beardmore",
    "seconded_by": "C. Menard",
    "outcome": "passed unanimously",
@@ -28,7 +28,318 @@
    "quote": "p. beardmore motioned to adjourn at 8:45 c. menard seconded roll call vote was unanimous."
   }
  ],
- "dropped_unquoted": 0,
- "note": "Minutes are readable. Sections 3–8 contain presentations and discussion (OPEB, debt, departmental budgets, reports) but no recorded motions or votes beyond the two procedural ones.",
- "cost_usd": 0.09231750000000001
+ "dropped_unquoted": 2,
+ "note": "Only two votes recorded, both procedural (minutes approval, adjournment); no substantive vote. Evan Watters is listed as a member in the header but appears in neither the Present nor Absent line. Item 9 contains a stray line about a March 4 Monty Tech / DPW / Finance Committee letter and draft warrant articles, which reads as agenda carry-over. Heather Lemieux's role is taken from the agenda heading 'Town Manager Report'. Attendance for David Eisenthal is not stated.",
+ "cost_usd": 0.01641926,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore, dave passios, jay simeone, chris menard, heather sroka"
+  },
+  {
+   "name": "Parker Elmore",
+   "role": "representing Odyssey Advisors",
+   "status": "present",
+   "quote": "parker elmore and francis fraine were present from odyssey advisors to address the gasb 75 report"
+  },
+  {
+   "name": "Francis Fraine",
+   "role": "representing Odyssey Advisors",
+   "status": "present",
+   "quote": "parker elmore and francis fraine were present from odyssey advisors to address the gasb 75 report"
+  },
+  {
+   "name": "David Eisenthal",
+   "role": "presenter, Debt Service Projections",
+   "status": "not stated",
+   "quote": "4. david eisenthal, debt service projections"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager (heading: Town Manager Report)",
+   "status": "present",
+   "quote": "heather lemieux responded to mr. beardmore's remarks and requests."
+  },
+  {
+   "name": "Chief Sullivan",
+   "role": "Fire Department Chief",
+   "status": "present",
+   "quote": "fire department chief sullivan chief sullivan reviewed the department's structure, staffing and responsibilities."
+  },
+  {
+   "name": "Chief Gammel",
+   "role": "Police Department Chief",
+   "status": "present",
+   "quote": "chief gammel reviewed the police department organization chart and operations."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Member emails to the committee are information only, with no engagement among members.",
+   "quote": "announcement made regarding member emails, they should be information only and no engagement among members."
+  },
+  {
+   "decision": "Making the school and town personnel-cost information more transparent for Town Meeting attendees was set as a goal for this year.",
+   "quote": "having a way to make the information more transparent for folks attending town meeting should be a goal for this year."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "OPEB liability and trust fund",
+   "what_was_recorded": "GASB 75 report: total OPEB liability as of 6/30/2020, trust fund balance, and resulting unfunded liability.",
+   "figures_as_printed": [
+    "$56,141,225",
+    "$375,269",
+    "$55,765,956"
+   ],
+   "quote": "total opeb liability as of 6/30/2020 is $56,141,225 (mostly health benefits earned by current and retired staff)."
+  },
+  {
+   "topic": "OPEB service cost per active employee",
+   "what_was_recorded": "Service cost per eligible active employee, as presented by Odyssey Advisors.",
+   "figures_as_printed": [
+    "$6,330"
+   ],
+   "quote": "the service cost per eligible active employee is $6,330."
+  },
+  {
+   "topic": "OPEB investment return",
+   "what_was_recorded": "Long-term return on investment the Town is assessed, discussed in answer to a question on investment options.",
+   "figures_as_printed": [
+    "6.72%"
+   ],
+   "quote": "long term we are currently assessed 6.72% return on investment."
+  },
+  {
+   "topic": "Retiree Medicare move and active plan discount",
+   "what_was_recorded": "A move of retirees to Medicare was reported as a cost-reduction action, leading to a discount on active plan coverage.",
+   "figures_as_printed": [
+    "2%"
+   ],
+   "quote": "this led to a 2% discount for active plan coverage."
+  },
+  {
+   "topic": "Debt service projections for building and renovation",
+   "what_was_recorded": "Projected debt impact of a potential Passios building and Turkey Hill renovation, on bases of $21 million and $27 million.",
+   "figures_as_printed": [
+    "$21 million",
+    "$27 million"
+   ],
+   "quote": "the basis used was $21 million dollars, upped to $27 million for turkey hill based on when that is anticipated to start."
+  },
+  {
+   "topic": "Fire department CARES Act equipment",
+   "what_was_recorded": "Ambulance equipment that would otherwise have been earmarked was obtained through CARES Act funding.",
+   "figures_as_printed": [],
+   "quote": "some ambulance equipment that might have otherwise been earmarked but for covid has been obtained through cares act funding."
+  },
+  {
+   "topic": "Police reserve officer certification cost",
+   "what_was_recorded": "Estimated cost to train current reserve officers for certification over the next few years, from police reform requirements.",
+   "figures_as_printed": [
+    "$90,000"
+   ],
+   "quote": "the estimated cost to get the current reserve officers trained for certification over the next few years is around $90,000."
+  },
+  {
+   "topic": "Police salary line increases",
+   "what_was_recorded": "COLAs with steps expected to raise annual salary line increases in the near term because of many junior patrolmen.",
+   "figures_as_printed": [],
+   "quote": "colas with steps will lead to larger annual salary line increases in the near term."
+  },
+  {
+   "topic": "Health insurance adjustments",
+   "what_was_recorded": "Health Insurance adjustments (rate reduction and premium holiday) reviewed; reported to have significantly lowered costs for the year.",
+   "figures_as_printed": [],
+   "quote": "a second document reviewed the health insurance adjustments (rate reduction and month premium holiday) which significantly lowered costs for the year."
+  },
+  {
+   "topic": "Health insurance stabilization account",
+   "what_was_recorded": "Town Manager recommended a Health Insurance stabilization account to hold next year's savings for the anticipated 2023 cost spike.",
+   "figures_as_printed": [],
+   "quote": "she is recommending a health insurance stabilization account for holding next year's savings to support the anticipated spike in cost in 2023."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "Peter Beardmore",
+   "stated_role": "Vice-Chair",
+   "topic": "salary schedule information request",
+   "quote": "peter beardmore read an email regarding heather sroka's request for salary schedule information regarding all departments"
+  },
+  {
+   "speaker": "Heather Lemieux",
+   "topic": "response to salary schedule request",
+   "quote": "heather lemieux responded to mr. beardmore's remarks and requests."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "called to order 6:00 PM",
+   "quote": "terri burchfield, chair, called the meeting to order at 6:00 pm and read the covid-19 / zoom meeting advisory statement.",
+   "tags": [
+    "procedure",
+    "zoom"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "information requests noted; committee to review when compiled",
+   "quote": "committee looks forward to reviewing all the information when it is pulled together by both the town manager and school superintendent and related staff.",
+   "tags": [
+    "salary schedules",
+    "personnel costs",
+    "transparency"
+   ]
+  },
+  {
+   "topic": "OPEB (GASB 75 report)",
+   "resolution": "presented, questions answered",
+   "quote": "parker elmore and francis fraine were present from odyssey advisors to address the gasb 75 report",
+   "tags": [
+    "OPEB",
+    "health benefits",
+    "liability"
+   ]
+  },
+  {
+   "topic": "Debt Service Projections",
+   "resolution": "reviewed, no action",
+   "quote": "projected impact of potential passios building and turkey hill renovation debt was reviewed.",
+   "tags": [
+    "debt",
+    "capital",
+    "debt policy"
+   ]
+  },
+  {
+   "topic": "Department Budget Presentations",
+   "resolution": "Fire and Police presented, no action",
+   "quote": "chief gammel reviewed the police department organization chart and operations.",
+   "tags": [
+    "fire",
+    "police",
+    "staffing",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Town Manager Report",
+   "resolution": "reviewed, no action",
+   "quote": "h. lemieux reviewed a spreadsheet tracking the current adjustments that have been made since the budget was initially presented.",
+   "tags": [
+    "health insurance",
+    "budget adjustments",
+    "IT"
+   ]
+  },
+  {
+   "topic": "Minutes of 2/11/2021",
+   "resolution": "approved 5-0, Burchfield abstained",
+   "quote": "motion to approve the minutes of 2/11/2021 passios, 2nd menard. passed 5-0 burchfield abstained.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee Reports",
+   "resolution": "reported",
+   "quote": "p. beardmore reported on school committee meeting and the reopening of full time classes.",
+   "tags": [
+    "school committee",
+    "capital planning"
+   ]
+  },
+  {
+   "topic": "Motion to Adjourn",
+   "resolution": "adjourned 8:45, unanimous",
+   "quote": "p. beardmore motioned to adjourn at 8:45 c. menard seconded roll call vote was unanimous.",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "GASB 75 report on Other Post Employment Benefits (Odyssey Advisors)",
+   "where": "text",
+   "quote": "parker elmore and francis fraine were present from odyssey advisors to address the gasb 75 report on other post employment benefits"
+  },
+  {
+   "name": "Email regarding Heather Sroka’s request for salary schedule information",
+   "where": "text",
+   "quote": "peter beardmore read an email regarding heather sroka's request for salary schedule information regarding all departments"
+  },
+  {
+   "name": "Spreadsheet tracking budget adjustments since the initial presentation",
+   "where": "text",
+   "quote": "h. lemieux reviewed a spreadsheet tracking the current adjustments that have been made since the budget was initially presented."
+  },
+  {
+   "name": "Health Insurance adjustments document",
+   "where": "text",
+   "quote": "a second document reviewed the health insurance adjustments (rate reduction and month premium holiday)"
+  },
+  {
+   "name": "March 4 Monty Tech and DPW and Finance Committee letter and draft warrant articles",
+   "where": "text",
+   "quote": "march 4 monty tech and dpw and finance committee letter and draft warrant articles to date."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "OPEB",
+  "health insurance",
+  "debt service",
+  "fire department",
+  "police department",
+  "salary schedules",
+  "public comment",
+  "zoom meeting",
+  "FY22 budget"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1,
+  "budget_items": 1
+ }
 }

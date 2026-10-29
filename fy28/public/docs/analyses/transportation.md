@@ -205,7 +205,7 @@ The district’s FY2026 budget overview says the *“athletic revolving can not 
 
 **One thing not yet explained.** In FY2026 the town line paid $110,650 for athletic buses, and the fund’s high school purchase-of-service account — where buses used to be charged, with officials and ice time — spent $113,602.40, about what it spent in FY2024, $115,993.84, when it still carried most of them. Equally consistent with that: officials and ice time rose; some buses are still charged to the fund; reclassifications landed in a different year. Nothing published separates them (registered: *What the athletic fee fund’s high school purchase-of-service account paid for in FY2026*).
 
-**The balance is not known.** The last published is $98,376.41 at 30 June 2020, in the Finance Committee’s special revenue fund workbook (`budget-workbooks/finance-committee/fund-balances/fy20-srf.xlsx`, stated). Receipts and spending do not give a balance without a starting one, so whether the fund ran below zero in FY2024 cannot be said (registered: *What the athletic fee fund held at each 30 June, FY2021 to FY2026*).
+**The year-end balances are printed, on different bases.** Before them the last published was $98,376.41 at 30 June 2020, in the Finance Committee’s special revenue fund workbook (`budget-workbooks/finance-committee/fund-balances/fy20-srf.xlsx`, stated). Each later 30 June, and the cashbook’s running total within the year, is on [the fee fund’s own page](/athletics/fee-fund-history): by our running total of the cashbook the fund’s cash went below zero inside FY2024, our reading of the order of postings (registered: *What the athletic fee fund held at each 30 June, FY2021 to FY2026*).
 
 ### The FY2027 restoration: the plan against the sheet and the fund
 
@@ -685,7 +685,7 @@ The receipts begin in FY2025, the year the first fees fell due (by 1 June 2025, 
 | FY paid | transportation reimbursement | note |
 |---|---:|---|
 | FY2022 | $14,596 |  |
-| FY2023 | $52,671 |  |
+| FY2023 | $52,671 | Number of eligible students claimed is less than 6. |
 | FY2024 | $81,519 |  |
 | FY2025 | $111,560 | Supplemental payment increased transport reimbursement to 75%. |
 | FY2026 | $94,993 |  |

@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "finance-committee",
  "meeting_date": "2021-02-18",
  "docid": "2080",
@@ -12,15 +12,15 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes from December 10, January 14, and January 21 with correction",
+   "motion": "Approve the minutes of December 10, January 14 and January 21 with a correction.",
    "moved_by": "Peter",
    "seconded_by": "Chris",
-   "outcome": "passed 6-1",
+   "outcome": "passed 6-0-1",
    "procedural": true,
    "quote": "peter motion to approve with correction chris seconded. in favor terri, chris, peter, dave, evan, and heather abstain jay had not reviewed them."
   },
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting at 9:38 PM.",
    "moved_by": "Dave",
    "seconded_by": "Jay",
    "outcome": "passed",
@@ -29,6 +29,247 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.10367749999999999
+ "note": "Text is a clean extraction of a Zoom meeting. Two votes recorded, both procedural; no substantive motions appear. The adjournment vote records \"All in favor\" with no count. Karen Brochu's attendance mode is not stated; she answered questions. Adam Burney's attendance is not stated. Attendee roles for the members other than the Chair, Vice-Chair and Secretary are not printed.",
+ "cost_usd": 0.01407746,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Terri Burchfield",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Heather Sroka",
+   "role": "Secretary",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Chris Menard",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Dave Passios",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Jay Simeone",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Evan Watters",
+   "role": "Finance Committee member",
+   "status": "present",
+   "quote": "present: terri burchfield, peter beardmore dave passios, jay simeone, chris menard, evan watters, heather sroka"
+  },
+  {
+   "name": "Sue Doherty",
+   "role": "Eagle House Director",
+   "status": "present",
+   "quote": "counsel on the aging - sue doherty, eagle house director -"
+  },
+  {
+   "name": "Muir Haman",
+   "role": "Library Director",
+   "status": "present",
+   "quote": "library budget presentation - muir haman, library director"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "not stated",
+   "quote": "land use director - adam burney"
+  },
+  {
+   "name": "Karen Brochu",
+   "role": "not stated",
+   "status": "present",
+   "quote": "karen - received the opeb presentation and has been uploaded to the onedrive."
+  }
+ ],
+ "decisions": [],
+ "budget_items": [
+  {
+   "topic": "Counsel on the Aging operating and salary requests",
+   "what_was_recorded": "The Council on Aging made no increase request for operating costs and did request an increase for salaries; no dollar figures are printed.",
+   "quote": "no increase requests for operating costs. increase request for salaries.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "TCP Design proposal savings",
+   "what_was_recorded": "The TCP Design Committee reported an adjusted program with some savings that were not substantial, and the committee emailed asking why significant savings were not made; no dollar figures are printed.",
+   "quote": "an adjusted program was submitted with some savings, but not substantial.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Debt financing questions",
+   "what_was_recorded": "A committee member asked whether the consultant would bring information on the debt financing questions to the next week's discussion; no dollar figures are printed.",
+   "quote": "will they have the information regarding the debt financing questions.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "OPEB presentation and building project schedules",
+   "what_was_recorded": "The OPEB presentation was received and uploaded, and schedules for the building projects were prepared for the following week; no dollar figures are printed.",
+   "quote": "schedules have been put together for the building projects for next week.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to Order",
+   "resolution": "no action",
+   "quote": "terri burchfield, chair, called the meeting to order at 7:00 pm and read the covid-19 / zoom meeting advisory statement.",
+   "tags": [
+    "meeting procedure",
+    "Zoom"
+   ]
+  },
+  {
+   "topic": "Chair Report",
+   "resolution": "no action",
+   "quote": "tonight's meeting will be the coa, library and land use director budget reviews.",
+   "tags": [
+    "schedule",
+    "budget review"
+   ]
+  },
+  {
+   "topic": "Public Comment",
+   "resolution": "no action",
+   "quote": "3. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Counsel on the Aging budget presentation",
+   "resolution": "presented and questioned",
+   "quote": "no increase requests for operating costs. increase request for salaries.",
+   "tags": [
+    "COA",
+    "Eagle House",
+    "salaries",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Library budget presentation",
+   "resolution": "presented and questioned",
+   "quote": "5. library budget presentation - muir haman, library director",
+   "tags": [
+    "library",
+    "budget"
+   ]
+  },
+  {
+   "topic": "Land Use Director budget",
+   "resolution": "no presentation; questions taken",
+   "quote": "no presentation - their budget is incorporated in the town manager's budget recommendation.",
+   "tags": [
+    "land use",
+    "budget",
+    "permits"
+   ]
+  },
+  {
+   "topic": "Questions for Karen Brochu",
+   "resolution": "discussed",
+   "quote": "karen - received the opeb presentation and has been uploaded to the onedrive.",
+   "tags": [
+    "OPEB",
+    "debt",
+    "building projects"
+   ]
+  },
+  {
+   "topic": "Minutes approval",
+   "resolution": "approved with correction",
+   "quote": "peter motion to approve with correction chris seconded.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Reports",
+   "resolution": "no action",
+   "quote": "hunting on parks property. created and voted on a policy for that.",
+   "tags": [
+    "parks",
+    "TCP design",
+    "revolving account",
+    "Spring Town Meeting"
+   ]
+  },
+  {
+   "topic": "Public Comment (closing)",
+   "resolution": "no action",
+   "quote": "10. public comment none",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "quote": "motion - made by dave, jay seconded all in favor 9:38",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "COA presentation (Sue Doherty, Eagle House)",
+   "where": "text",
+   "quote": "see attached presentation."
+  },
+  {
+   "name": "Library Budget presentation (Muir Haman)",
+   "where": "text",
+   "quote": "see attached presentation"
+  },
+  {
+   "name": "OPEB presentation (uploaded to the OneDrive)",
+   "where": "text",
+   "quote": "karen - received the opeb presentation and has been uploaded to the onedrive."
+  },
+  {
+   "name": "Building projects schedules",
+   "where": "text",
+   "quote": "schedules have been put together for the building projects for next week."
+  }
+ ],
+ "tags": [
+  "finance committee",
+  "COA budget",
+  "library budget",
+  "land use budget",
+  "OPEB",
+  "debt financing",
+  "TCP design",
+  "minutes approval",
+  "parks",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -1,0 +1,975 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "select-board",
+ "board": "Select Board",
+ "video_title": "Select Board Meeting",
+ "meeting_date": "2021-03-16",
+ "video_id": "ik0fTEVC4xg",
+ "video_url": "https://www.youtube.com/watch?v=ik0fTEVC4xg",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/select-board/2021-03-16-ik0fTEVC4xg.json",
+  "sha256": "e27e9721bc3739ce9cf3b850a2fb4c76922a3beea916b292f463e758577abb12",
+  "caption_lines": 431,
+  "segments": 3821
+ },
+ "recording": {
+  "duration_s": 9080,
+  "duration": "2:31",
+  "spoken_chars": 108663,
+  "words_approx": 18110
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03162021-5278",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-03-16-agenda-5278.txt",
+   "path": "sources/meetings/select-board/2021-03-16-agenda-5278.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03162021-5278",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-03-16-minutes-5278.txt",
+   "path": "sources/meetings/select-board/2021-03-16-minutes-5278.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-28T06:21:41Z",
+  "cost_usd": 0.5507499
+ },
+ "minutes": {
+  "headline": "Select Board recommended most routine warrant articles, deferred money-less ones, and sent appointment process back for another week.",
+  "summary": "The board heard sponsors of several annual town meeting articles, including an agricultural preservation restriction, a Salary Administration Plan amendment, zoning changes and a cemetery transfer. It voted to convey land to the Conservation Commission and ratified a van driver, then spent a long, divided stretch on the reappointment procedure without resolving it. Near the end it voted recommendations on articles with known amounts and held off on those lacking numbers.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Dwyer",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Ms. Adams",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Mourinho",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Mr. Jeffries",
+    "role": "member"
+   },
+   {
+    "name_as_heard": "Tom Alonzo",
+    "role": "chair"
+   },
+   {
+    "name_as_heard": "Heather (town manager)",
+    "role": "town manager"
+   },
+   {
+    "name_as_heard": "Julie Bellevue/Beliveau",
+    "role": "assistant town manager and HR"
+   },
+   {
+    "name_as_heard": "Ms. Padula",
+    "role": "presenter (Mass. Dept. of Agricultural Resources)"
+   },
+   {
+    "name_as_heard": "Mr. Arnold",
+    "role": "presenter (personnel committee chair)"
+   },
+   {
+    "name_as_heard": "Mr. Bernie",
+    "role": "presenter (land use director)"
+   },
+   {
+    "name_as_heard": "Bill Tyler",
+    "role": "presenter (cemetery commission chair)"
+   },
+   {
+    "name_as_heard": "Mr. Pease",
+    "role": "conservation commission chair"
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 465,
+    "topic": "Cemetery commission chair thanked Lorraine Mendoza for six years of service on the commission.",
+    "stated_role": "cemetery commission chairman"
+   },
+   {
+    "t": 8760,
+    "topic": "Conservation commission chair recounted his own reappointment experience and urged the board to consider the volunteer's perspective in the reappointment process.",
+    "stated_role": "conservation commission member"
+   }
+  ],
+  "tags": [
+   "budget",
+   "free-cash",
+   "personnel",
+   "planning-and-zoning",
+   "policy",
+   "retirement",
+   "town-departments",
+   "town-meeting",
+   "transfers",
+   "warrant-article",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 2609,
+    "motion": "Ratify Peter Tomlinson as Council on Aging van driver",
+    "outcome": "passed",
+    "procedural": false
+   },
+   {
+    "t": 2717,
+    "motion": "Convey land at Mopus Road rear and NW Townsend Road rear to the Conservation Commission per Special Town Meeting articles 18 and 19",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 7669,
+    "motion": "Recommend approval of article A (accept reports)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 7711,
+    "motion": "Recommend approval of article B (revolving funds)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 7885,
+    "motion": "Recommend approval of article L combined with CC (OPEB trust deposits)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8071,
+    "motion": "Recommend approval of cemetery commission article",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8112,
+    "motion": "Recommend approval of article Q (transfer from previous borrowing articles)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8178,
+    "motion": "Recommend approval of article R (return unspent borrowing from middle/high school building)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8410,
+    "motion": "Recommend approval of article V (accept reports)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8434,
+    "motion": "Recommend approval of article X (two family dwelling)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8544,
+    "motion": "Recommend approval of article Z (APR for Pierce's Christmas tree farm)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8585,
+    "motion": "Recommend approval of article BB (deposit into sewer capital reserve stabilization fund)",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 8631,
+    "motion": "Recommend approval of health/water enterprise article",
+    "outcome": "not audible",
+    "procedural": false
+   },
+   {
+    "t": 9032,
+    "motion": "Adjourn",
+    "outcome": "not audible",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 791,
+    "topic": "Agricultural preservation restriction, Pierce's Christmas tree farm",
+    "what_was_said": "Article asks for the 10 percent local match with the state paying the rest; the APR is valued at the stated amount.",
+    "figures_as_heard": [
+     "66 500",
+     "665 000",
+     "598 thousand five hundred",
+     "10 percent",
+     "90 percent"
+    ]
+   },
+   {
+    "t": 981,
+    "topic": "APR local match percentage",
+    "what_was_said": "State normally asks a 20 percent municipal match but reduced it to 10 because the town has an agricultural commission and right to farm bylaw.",
+    "figures_as_heard": [
+     "20 percent",
+     "10"
+    ]
+   },
+   {
+    "t": 1171,
+    "topic": "APR savings",
+    "what_was_said": "A board member noted the reduced match saved the town money versus the usual match.",
+    "figures_as_heard": [
+     "sixty six thousand five",
+     "a hundred twenty something thousand"
+    ]
+   },
+   {
+    "t": 2064,
+    "topic": "Cemetery lot sales transfer",
+    "what_was_said": "Article transfers funds from the sale of cemetery lots for care and improvement, with annual expenses including website hosting.",
+    "figures_as_heard": [
+     "fifteen thousand",
+     "four thousand dollars",
+     "two thousand dollars"
+    ]
+   },
+   {
+    "t": 3477,
+    "topic": "Warrant article count",
+    "what_was_said": "The warrant closed with a set number of articles, two being citizen petitions.",
+    "figures_as_heard": [
+     "32"
+    ]
+   },
+   {
+    "t": 6816,
+    "topic": "Old primary school survey",
+    "what_was_said": "Existing conditions plan update can be covered under the FY21 facilities budget, avoiding inclusion in the town meeting design article; landscape design funding to come from free cash.",
+    "figures_as_heard": [
+     "750",
+     "three to five thousand dollars"
+    ]
+   },
+   {
+    "t": 6990,
+    "topic": "Primary school fire alarm earmark",
+    "what_was_said": "The state earmark must be spent by June 30, 2021 unless the legislature extends it, and the project needs full funding in place.",
+    "figures_as_heard": [
+     "twenty five thousand dollar",
+     "127 000"
+    ]
+   },
+   {
+    "t": 7799,
+    "topic": "OPEB trust deposits",
+    "what_was_said": "Town deposit follows financial policy of 10 percent of prior year's certified free cash; sewer commission deposit is a consistent amount.",
+    "figures_as_heard": [
+     "180 418",
+     "656 dollars",
+     "10"
+    ]
+   },
+   {
+    "t": 7947,
+    "topic": "Water enterprise fund",
+    "what_was_said": "Small separate area billed for water bought from Fitchburg; usual operating amount stated.",
+    "figures_as_heard": [
+     "25 000"
+    ]
+   },
+   {
+    "t": 8112,
+    "topic": "Transfer from previous borrowing articles",
+    "what_was_said": "Sending leftover borrowing, mainly from the high school feasibility study.",
+    "figures_as_heard": [
+     "seven hundred and fifty thousand dollars"
+    ]
+   },
+   {
+    "t": 8178,
+    "topic": "Unspent middle/high school building funds",
+    "what_was_said": "Returning unspent borrowing from the building project.",
+    "figures_as_heard": [
+     "38 million",
+     "414 779"
+    ]
+   },
+   {
+    "t": 8585,
+    "topic": "Sewer capital reserve stabilization deposit",
+    "what_was_said": "Deposit into sewer capital reserve stabilization fund.",
+    "figures_as_heard": [
+     "30 929 dollars and 43 cents"
+    ]
+   },
+   {
+    "t": 8631,
+    "topic": "Health article amount",
+    "what_was_said": "Amount equals the savings from the holiday premium.",
+    "figures_as_heard": [
+     "369 334 dollars"
+    ]
+   }
+  ],
+  "transfers": [
+   {
+    "t": 8112,
+    "description": "Transfer of unspent funds from previous borrowing articles, mainly the high school feasibility study",
+    "amount_as_heard": "seven hundred and fifty thousand dollars",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 8178,
+    "description": "Return of unspent building project funds from the middle/high school construction",
+    "amount_as_heard": "38 million 414 779",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 2064,
+    "description": "Transfer from cemetery lot sales account to be appropriated for cemetery care",
+    "amount_as_heard": "fifteen thousand",
+    "outcome": "discussed only"
+   },
+   {
+    "t": 8585,
+    "description": "Deposit into sewer capital reserve stabilization fund",
+    "amount_as_heard": "30 929 dollars and 43 cents",
+    "outcome": "discussed only"
+   }
+  ],
+  "decisions": [
+   {
+    "t": 1737,
+    "decision": "Personnel committee to meet before the 30th to vote on removing the longevity pay piece from the Salary Administration Plan article, leaving only the positions, and report back."
+   },
+   {
+    "t": 3789,
+    "decision": "By consensus, appointment procedure step four changed to first Friday in April, and the application deadline to the second Thursday in May."
+   },
+   {
+    "t": 6683,
+    "decision": "Chair closed the appointment procedure discussion for the night without resolution; members to reread policy section 2.07."
+   },
+   {
+    "t": 7754,
+    "decision": "Board will not recommend articles that lack a stated sum (budget, capital, transfers, solid waste, cable) until numbers are available, possibly on the 30th."
+   },
+   {
+    "t": 7885,
+    "decision": "Articles L and CC (OPEB deposits) will be consolidated into one article."
+   },
+   {
+    "t": 8522,
+    "decision": "Board deferred to town meeting on the off-street parking article without a recommendation."
+   },
+   {
+    "t": 9032,
+    "decision": "No meeting on March 23; next meeting March 30, when warrant articles will be approved for printing."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 4,
+    "t_end": 208,
+    "topic": "Call to order, remote meeting notice, roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 228,
+    "t_end": 500,
+    "topic": "Caucus results, nomination papers, public comment thanking commission member",
+    "resolution": "informational",
+    "tags": [
+     "elections",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 525,
+    "t_end": 700,
+    "topic": "Water district election and meeting announcement",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 705,
+    "t_end": 1300,
+    "topic": "APR article for Pierce's Christmas tree farm",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "capital"
+    ]
+   },
+   {
+    "t_start": 1300,
+    "t_end": 1800,
+    "topic": "Salary Administration Plan article and longevity pay",
+    "resolution": "referred to personnel committee",
+    "tags": [
+     "warrant-article",
+     "personnel",
+     "contracts-and-unions"
+    ]
+   },
+   {
+    "t_start": 1800,
+    "t_end": 2020,
+    "topic": "Planning board zoning articles",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article"
+    ]
+   },
+   {
+    "t_start": 2020,
+    "t_end": 2540,
+    "topic": "Cemetery commission article",
+    "resolution": "informational",
+    "tags": [
+     "warrant-article",
+     "town-departments"
+    ]
+   },
+   {
+    "t_start": 2549,
+    "t_end": 2860,
+    "topic": "Van driver ratification and land transfer to Conservation Commission",
+    "resolution": "voted",
+    "tags": [
+     "personnel",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 2864,
+    "t_end": 3150,
+    "topic": "Town manager evaluation timeline",
+    "resolution": "informational",
+    "tags": [
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 3155,
+    "t_end": 3460,
+    "topic": "Action items, trash bags, committee reports",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "library",
+     "seniors"
+    ]
+   },
+   {
+    "t_start": 3464,
+    "t_end": 3640,
+    "topic": "Warrant article overview",
+    "resolution": "deferred to later in meeting",
+    "tags": [
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 3641,
+    "t_end": 6680,
+    "topic": "Appointment and reappointment procedure review",
+    "resolution": "no resolution; tabled a week",
+    "tags": [
+     "policy",
+     "personnel"
+    ]
+   },
+   {
+    "t_start": 6683,
+    "t_end": 7600,
+    "topic": "Town manager report and COVID-19 update",
+    "resolution": "informational",
+    "tags": [
+     "town-departments",
+     "public-safety",
+     "facilities"
+    ]
+   },
+   {
+    "t_start": 7604,
+    "t_end": 8720,
+    "topic": "Warrant article recommendations",
+    "resolution": "voted recommendations on several articles",
+    "tags": [
+     "warrant-article",
+     "town-meeting",
+     "budget"
+    ]
+   },
+   {
+    "t_start": 8717,
+    "t_end": 9074,
+    "topic": "Public comment, closing comments, adjournment",
+    "resolution": "adjourned",
+    "tags": [
+     "public-comment"
+    ]
+   }
+  ],
+  "not_audible": [
+   "Roll call counts on most recommendation votes are partly captioned but no tallies are stated, so outcomes are not recorded as stated results.",
+   "Several article letters (C, D, F, W, X, BB and others) are partly garbled in captions.",
+   "The amount for solid waste and the cable budget were not stated.",
+   "Some speaker names are mangled (Padula, Bernie, Beliveau, Tomlinson/Tumlinson)."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 4851,
+    "about": "Whether incumbents on appointed boards should be reappointed through a separate round or compete concurrently with new applicants.",
+    "sides": "Two members favored treating reappointments separately and not discouraging volunteers; another member favored a concurrent open process.",
+    "words_as_heard": "i disagree with miss adam's point of view i i in it's nothing personal i just i just disagree with it",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6084,
+    "about": "Chair expressed frustration at reopening the appointment procedure in a third meeting, while another member said the procedure should be only dates.",
+    "sides": "The chair and one member against another member who wanted to reread the existing policy and go back to the drawing board.",
+    "words_as_heard": "i'm just not doing it so i mean if people think that this policy is fine and the policy all we need is dates i'm willing to do that but i'm not willing to just go around in circles",
+    "kind": "members disagree"
+   },
+   {
+    "t": 6314,
+    "about": "Disagreement over whether the reappointment procedure was a board goal and why there is so much disagreement over achieving it.",
+    "sides": "One member said the goal was voted by all; another noted two members had just joined when goals were set; another said going back is fine.",
+    "words_as_heard": "it is all very discouraging",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1470,
+    "kind": "condition",
+    "about": "Longevity pay in the Salary Administration Plan article may need to be removed unless department head definitions are clarified.",
+    "who": "personnel committee chair",
+    "words_as_heard": "if we can't clarify that you know before in this article then maybe longevity pays something that we should wait on until the fall meeting"
+   },
+   {
+    "t": 7010,
+    "kind": "liability or legal",
+    "about": "The fire alarm earmark must be spent by a deadline or extended by the legislature, and the project cannot proceed without full funding.",
+    "who": "town manager",
+    "words_as_heard": "these funds would have to be spent by june 30th 2021. the only way we can get an extension is through a vote of the legislature"
+   },
+   {
+    "t": 7754,
+    "kind": "condition",
+    "about": "Board will not recommend articles lacking a stated sum.",
+    "who": "chair",
+    "words_as_heard": "anything that says it's sum of money but doesn't tell us the sum of money we're not going to"
+   },
+   {
+    "t": 5185,
+    "kind": "liability or legal",
+    "about": "The new appointment procedure may contradict the existing appointment policy section 2.07.",
+    "who": "a member",
+    "words_as_heard": "whatever we this board decides to do with this reappointment policy we may have to make some change changes in section 2.07"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 770,
+    "name_as_heard": "the APR article",
+    "kind": "warrant article",
+    "words_as_heard": "so i can read the article itself so the public knows as well what the wording is"
+   },
+   {
+    "t": 1924,
+    "name_as_heard": "parking calculations table",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "that's the table you see in front of you"
+   },
+   {
+    "t": 2694,
+    "name_as_heard": "vote wording in the Google Drive",
+    "kind": "other",
+    "words_as_heard": "the vote that the board needs to take is in the google drive so the wording of the vote"
+   },
+   {
+    "t": 2885,
+    "name_as_heard": "town manager evaluation performance timeline",
+    "kind": "other",
+    "words_as_heard": "there should be a document with the performance timeline"
+   },
+   {
+    "t": 3705,
+    "name_as_heard": "Elaine's memo on appointment process",
+    "kind": "memo",
+    "words_as_heard": "did everybody read elaine's memo"
+   },
+   {
+    "t": 5227,
+    "name_as_heard": "selectmen's policies section 2.07",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "selectmen's policies section 2.07 on page 28"
+   },
+   {
+    "t": 7625,
+    "name_as_heard": "draft warrant articles in the Google Drive",
+    "kind": "warrant article",
+    "words_as_heard": "we're going to use the draft one that's in the google drive"
+   }
+  ],
+  "suggested_reports": [
+   {
+    "slug": "special-town-meeting-articles",
+    "title": "Annual town meeting articles",
+    "question": "What money is being asked for in the annual town meeting warrant articles and where does it come from?",
+    "t": 3464,
+    "words_as_heard": "that is the list for warrant articles it closed this afternoon",
+    "data_in_play": [
+     "32 articles",
+     "180 418",
+     "30 929 dollars and 43 cents",
+     "66 500"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "opeb-deposits",
+    "title": "OPEB trust deposits",
+    "question": "How are the annual town and sewer OPEB deposits set?",
+    "t": 7799,
+    "words_as_heard": "it follows our financial policy on deposits 10 of the previous years certified",
+    "data_in_play": [
+     "180 418",
+     "656 dollars",
+     "10 percent"
+    ],
+    "existing": ""
+   },
+   {
+    "slug": "agricultural-preservation-restriction",
+    "title": "Agricultural preservation restriction",
+    "question": "What does the town's local match for the Pierce farm APR cost and what does it save?",
+    "t": 791,
+    "words_as_heard": "this article is requesting the 10 match that's needed to move this to apr",
+    "data_in_play": [
+     "66 500",
+     "665 000",
+     "598 thousand five hundred"
+    ],
+    "existing": ""
+   }
+  ]
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The board spent a long, divided stretch on the appointment and reappointment procedure and closed it for the night without resolving it.",
+    "t": 6683
+   },
+   {
+    "line": "By consensus it moved step four of the appointment procedure to the first Friday in April and the application deadline to the second Thursday in May.",
+    "t": 3789
+   },
+   {
+    "line": "The board will not recommend articles that lack a stated sum, such as the budget, capital, transfers, solid waste and cable, until numbers are available.",
+    "t": 7754
+   },
+   {
+    "line": "It voted recommendations on routine articles, merged the two OPEB deposit articles into one, and deferred to town meeting on the off-street parking article.",
+    "t": 7885
+   },
+   {
+    "line": "The Salary Administration Plan article was referred to the personnel committee, which is to vote on removing the longevity pay piece before the 30th.",
+    "t": 1737
+   }
+  ],
+  "why_it_matters": [
+   "Articles with no stated sum, including the budget, are not yet recommended, so residents will not see the board's position on them until it votes again, possibly on the 30th.",
+   "The agricultural preservation restriction and the OPEB and sewer reserve deposits are items on the warrant that residents will be asked to vote on at town meeting.",
+   "How volunteers on town boards are reappointed is still undecided, and any change would apply to residents who serve on commissions."
+  ],
+  "watch_next": [
+   "March 30 meeting, when warrant articles are to be approved for printing and the board may take up articles that still lack numbers.",
+   "Personnel committee vote, due before the 30th, on removing the longevity pay piece from the Salary Administration Plan article."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-28T06:21:50Z",
+   "cost_usd": 0.2086295
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03162021-5278",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/select-board/2021-03-16-minutes-5278.txt",
+   "path": "sources/meetings/select-board/2021-03-16-minutes-5278.pdf"
+  },
+  "official_sha256": "6104e4ffdf33efa21781e0d038ccdbe0d43d888c6a82b5b66be00f3903712e91",
+  "against": "structured",
+  "coverage": "full",
+  "summary": "The two records agree on the main recommendation votes, the dollar figures and the March 30 meeting date, but our captions could not hear most vote outcomes, so those rest on the official minutes. The main differences are the OPEB article L/CC vote, which only we record; the Q and V article descriptions, which differ; and several board decisions (longevity pay, the stated-sum rule, the parking article) that only our recording has.",
+  "counts": {
+   "agree": 13,
+   "caption_error": 6,
+   "discrepancy": 5,
+   "only_in_ours": 2,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Ratify Peter Tomlinson as COA van driver",
+    "ours": "Ratify Peter Tomlinson as Council on Aging van driver — passed",
+    "official": "motion: m. jeffreys 2n: t. dwyer to ratify the town managers appointment to coa van driver of peter tomlinson",
+    "note": "Same appointment, same outcome (passed).",
+    "t": 2609
+   },
+   {
+    "kind": "caption_error",
+    "about": "Conveyance of Mopus/Mulpus Road land to Conservation Commission",
+    "ours": "Convey land at Mopus Road rear and NW Townsend Road rear to the Conservation Commission per Special Town Meeting articles 18 and 19 — not audible",
+    "official": "motion: t. alonzo 2n°: m. jeffreys vote to convey the property located at 111 mulpus road rear, parcel id 043-0025-00,",
+    "note": "Same vote; the captions misheard the road name as Mopus, and our record has no outcome while the official minutes say it passed. Only the road name is a caption error.",
+    "official_reading": "Mulpus Road",
+    "t": 2717
+   },
+   {
+    "kind": "agree",
+    "about": "Article A and Article B recommendations (reports, revolving funds)",
+    "ours": "Recommend approval of article A (accept reports) — not audible; Recommend approval of article B (revolving funds) — not audible",
+    "official": "motion: j. marino 2nd: m. jeffreys to recommend approval of article a",
+    "note": "Both records have these votes; the recording did not capture the outcome, so 'passed' comes from the official minutes alone.",
+    "t": 7669
+   },
+   {
+    "kind": "agree",
+    "about": "Cemetery article (Article P) recommendation and $15,000 transfer",
+    "ours": "Recommend approval of cemetery commission article — not audible; Transfer from cemetery lot sales account to be appropriated for cemetery care — fifteen thousand (discussed only)",
+    "official": "motion: m. jeffreys 2°: t. dwyer to recommend approval of article p.",
+    "note": "Same article and same $15,000; the recording did not capture the vote outcome.",
+    "t": 8071
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Article Q: rescind versus transfer of the $750,000",
+    "ours": "Recommend approval of article Q (transfer from previous borrowing articles) — not audible; Transfer of unspent funds from previous borrowing articles, mainly the high school feasibility study — seven hundred and fifty thousand dollars (discussed only)",
+    "official": "q. to see if the town will vote to rescind the sum of $750,000, the borrowing authorization,",
+    "note": "The amount matches, but ours calls it a transfer of unspent funds and the official text is a rescission of a borrowing authorization. Check the warrant article wording.",
+    "t": 8112
+   },
+   {
+    "kind": "caption_error",
+    "about": "Article R unspent middle/high school building funds figure",
+    "ours": "Return of unspent building project funds from the middle/high school construction — 38 million 414 779 (discussed only)",
+    "official": "r. to see if the town will vote to rescind the sum of $38,414,779.21, the remaining borrowing",
+    "note": "Same figure with the cents dropped in the captions. Ours also describes it as 'return unspent funds' where the official article rescinds the authorization, and the recording did not capture the vote outcome.",
+    "official_reading": "$38,414,779.21",
+    "t": 8178
+   },
+   {
+    "kind": "agree",
+    "about": "Article X (two-family dwelling) and Article Z (Pierce APR) recommendations",
+    "ours": "Recommend approval of article X (two family dwelling) — not audible; Recommend approval of article Z (APR for Pierce's Christmas tree farm) — not audible",
+    "official": "motion: m. jeffreys 2nd: k. adams to recommend approval of article x.",
+    "note": "Same articles voted on; outcomes (passed) come only from the official minutes.",
+    "t": 8434
+   },
+   {
+    "kind": "agree",
+    "about": "Article BB sewer capital reserve stabilization deposit",
+    "ours": "Recommend approval of article BB (deposit into sewer capital reserve stabilization fund) — not audible; Deposit into sewer capital reserve stabilization fund — 30 929 dollars and 43 cents (discussed only)",
+    "official": "bb. to see if the town will vote to transfer from available funds $30,929.43 into the sewer",
+    "note": "Same amount of $30,929.43 and same article; the vote outcome is only in the official minutes.",
+    "t": 8585
+   },
+   {
+    "kind": "agree",
+    "about": "Health insurance stabilization article amount ($369,334)",
+    "ours": "Recommend approval of health/water enterprise article — not audible; Health article amount: 369 334 dollars",
+    "official": "ms. lemieux reported the amount would be $369,334.",
+    "note": "The amount matches. Ours labels the article 'health/water enterprise', while the official minutes call it Article O, creating a Health Insurance Stabilization Fund.",
+    "t": 8631
+   },
+   {
+    "kind": "discrepancy",
+    "about": "OPEB trust deposit articles L and CC",
+    "ours": "Recommend approval of article L combined with CC (OPEB trust deposits) — not audible; Articles L and CC (OPEB deposits) will be consolidated into one article.",
+    "official": "",
+    "note": "Ours records a recommendation vote and a decision to consolidate L and CC. The official minutes have no OPEB article, vote or consolidation, so check the recording around t=7885 and the full minutes.",
+    "t": 7885
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Water enterprise fund figure",
+    "ours": "Water enterprise fund: 25 000",
+    "official": "",
+    "note": "The official minutes do not mention a $25,000 water enterprise figure; it may be a mishearing or an omission.",
+    "t": 7947
+   },
+   {
+    "kind": "agree",
+    "about": "APR contribution and appraisal figures",
+    "ours": "Agricultural preservation restriction, Pierce's Christmas tree farm: 66 500, 665 000, 598 thousand five hundred, 10 percent, 90 percent",
+    "official": "ms. lemieux noted the town contribution would be $66,500, if approved.",
+    "note": "The $66,500 contribution, $665,000 appraisal and 10% share match; the $598,500 figure is not in the official text but is consistent with 90% of $665,000.",
+    "t": 791
+   },
+   {
+    "kind": "agree",
+    "about": "Old Primary School survey cost",
+    "ours": "Old primary school survey: 750, three to five thousand dollars",
+    "official": "they can update the existing conditions plan for us for $750.",
+    "note": "The $750 matches; the 'three to five thousand dollars' in ours is not in the official minutes.",
+    "t": 6816
+   },
+   {
+    "kind": "agree",
+    "about": "Primary school fire alarm earmark",
+    "ours": "Primary school fire alarm earmark: twenty five thousand dollar, 127 000",
+    "official": "the $25,000 earmark we received for the primary school fire alarm upgrade",
+    "note": "Both give a $25,000 earmark and a $127,000 total cost.",
+    "t": 6990
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Warrant article count",
+    "ours": "Warrant article count: 32",
+    "official": "",
+    "note": "The official minutes give no total count of warrant articles.",
+    "t": 3477
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Personnel committee to vote on removing longevity pay from the Salary Administration Plan article",
+    "ours": "Personnel committee to meet before the 30th to vote on removing the longevity pay piece from the Salary Administration Plan article, leaving only the positions, and report back.",
+    "official": "annual bonus equal to $1,280 payable in the first pay period after the employee's anniversary date. at 15 years of continuous service-$1,920 and at 20 years of continuous service-$3,200.",
+    "note": "The official minutes describe the longevity article (DD) in detail but record no decision to send the longevity piece back to the personnel committee. Check the recording around t=1737.",
+    "t": 1737
+   },
+   {
+    "kind": "agree",
+    "about": "Appointment procedure left unresolved",
+    "ours": "Chair closed the appointment procedure discussion for the night without resolution; members to reread policy section 2.07.",
+    "official": "since there was lack of consensus on the process since the board began working on this goal, it will be discussed at a future meeting.",
+    "note": "Both say the broader appointment process was deferred. Ours also records changed dates (first Friday in April, second Thursday in May), where the official says only that the Board had no issues with the memo's timing suggestions.",
+    "t": 6683
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Policy that the Board will not recommend articles lacking a stated sum",
+    "ours": "Board will not recommend articles that lack a stated sum (budget, capital, transfers, solid waste, cable) until numbers are available, possibly on the 30th.",
+    "official": "",
+    "note": "Ours records this as a decision; the official minutes do not mention it. Check the recording at t=7754.",
+    "t": 7754
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Off-street parking article deferred to town meeting",
+    "ours": "Board deferred to town meeting on the off-street parking article without a recommendation.",
+    "official": "",
+    "note": "Ours records a decision to make no recommendation on the parking article; the official minutes have no parking article or deferral. Check the recording at t=8522.",
+    "t": 8522
+   },
+   {
+    "kind": "agree",
+    "about": "No meeting March 23; next meeting March 30",
+    "ours": "No meeting on March 23; next meeting March 30, when warrant articles will be approved for printing.",
+    "official": "mr. alonzo noted this board is not meeting on the 23d but will be meeting on march 30th.",
+    "note": "Same dates; the official minutes say the Board would finalize the warrant, which matches ours.",
+    "t": 9032
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Order of Annual Town Meeting articles",
+    "ours": "",
+    "official": "mr. alonzo will work with ms. lemieux on the order of them.",
+    "note": "The Chair and Town Manager will set the article order. Our minutes do not record it."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Article B revolving fund limits, Article DD longevity amounts, and the landscape design quote",
+    "ours": "",
+    "official": "fy22 spending limit $100,000 $10,000 $13,000",
+    "note": "The official minutes print the nine FY22 revolving fund limits, the Article DD longevity amounts and the old primary school landscape design item. Our minutes do not record these figures."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public comment items (caucus, thanks to commissioner, reappointment comment)",
+    "ours": "",
+    "official": "mr. alonzo noted the citizen party caucus was held last night and there are 19 positions up",
+    "note": "The official minutes record public comment from Alonzo, Tyler and Pease. Our minutes do not."
+   },
+   {
+    "kind": "agree",
+    "about": "Board members present (Alonzo, Adams, Dwyer) and Town Manager",
+    "ours": "Mr. Dwyer (member); Ms. Adams (member); Tom Alonzo (chair); Heather (town manager) (town manager)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "note": "Same people; ours gives only surnames or first names for some. The official lists Heather Lemieux as Town Manager."
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Jim Marino",
+    "ours": "Mr. Mourinho (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "note": "The captions misheard the fifth board member's name.",
+    "official_reading": "Jim Marino"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Board member Michael-Ray Jeffreys",
+    "ours": "Mr. Jeffries (member)",
+    "official": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino",
+    "note": "Spelling variant of the vice chairman's name.",
+    "official_reading": "Michael-Ray Jeffreys"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Land use director",
+    "ours": "Mr. Bernie (presenter (land use director))",
+    "official": "erik arnold, personnel committee chair; julie belliveau, human resources/asst. town manager; adam burney, land use director:",
+    "note": "The captions misheard the land use director's surname.",
+    "official_reading": "Adam Burney"
+   },
+   {
+    "kind": "caption_error",
+    "about": "Assistant town manager name",
+    "ours": "Julie Bellevue/Beliveau (assistant town manager and HR)",
+    "official": "erik arnold, personnel committee chair; julie belliveau, human resources/asst. town manager; adam burney, land use director:",
+    "note": "The captions rendered the surname inconsistently.",
+    "official_reading": "Julie Belliveau"
+   },
+   {
+    "kind": "agree",
+    "about": "Presenters Padula, Arnold, Tyler and Pease",
+    "ours": "Ms. Padula (presenter (Mass. Dept. of Agricultural Resources)); Bill Tyler (presenter (cemetery commission chair)); Mr. Pease (conservation commission chair)",
+    "official": "also present: heather lemieux, town manager; michele padula, apr acquisition planner:",
+    "note": "Same people. Ours calls Padula a Mass. Dept. of Agricultural Resources presenter, while the official minutes title her APR Acquisition Planner."
+   }
+  ],
+  "quotes_not_in_official_dropped": 1,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-28T06:24:49Z",
+   "cost_usd": 0.28784750000000003
+  }
+ }
+}

@@ -7,7 +7,7 @@ CATEGORY = dict(
     groups=[
         (None, ['total-athletics-cost', 'town-budget-and-fee-fund', 'cost-per-sport',
                 'spending-by-category', 'participation', 'athletic-fee',
-                'fee-fund-ledger', 'fee-fund-history', 'athletic-director',
+                'fee-fund-history', 'athletic-director',
                 'fy2026-athletics-underspend']),
         ('Athletic transportation', ['athletic-bus-funding', 'fy2027-athletic-bus-cut',
                                      'bus-cost-by-sport', 'away-trips-by-sport']),
@@ -31,7 +31,6 @@ TOPICS = {
     'spending-by-category': 'Spending by category',
     'participation': 'Participation',
     'athletic-fee': 'Athletic fee',
-    'fee-fund-ledger': 'Fee fund ledger',
     'fee-fund-history': 'Fee fund history',
     'athletic-director': 'Athletic director',
     'fy2026-athletics-underspend': 'FY2026 athletics underspend',

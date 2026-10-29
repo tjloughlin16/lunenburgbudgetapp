@@ -53,7 +53,7 @@ RELATED = [
     # Who grants and fees pay for (TJ, 24 October 2026): the athletic fee fund's pay, and the
     # posts the directory lists against the accounts that pay them.
     [('pay-moved-between-funds', 'Pay moved between the fee fund and the general fund'),
-     ('fee-fund-ledger', 'The athletic fee fund’s cash, year by year')],
+     ('fee-fund-history', 'The athletic fee fund, every year held')],
     [('positions-and-their-funds', 'Which fund pays each leadership post'),
      ('district-staff-directory', 'Who the district lists, by title')],
     # How grants are booked against the voted lines, and the total spent outside the vote.

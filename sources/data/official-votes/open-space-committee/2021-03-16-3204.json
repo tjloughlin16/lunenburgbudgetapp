@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "open-space-committee",
  "meeting_date": "2021-03-16",
  "docid": "3204",
@@ -12,24 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve the minutes of February 16, 2021",
+   "motion": "Approve the minutes of February 16, 2021.",
    "moved_by": "Sarah Cammer",
    "seconded_by": "Paula Bertram",
    "outcome": "passed unanimously",
    "procedural": true,
-   "quote": "sarah cammer made a motion to approve the minutes of february 16, 2021, paula bertram seconded. brandon kibbe requested that the spelling of mike toohill be corrected in item 3a. motion passed unanimously by roll call vote."
+   "quote": "sarah cammer made a motion to approve the minutes of february 16, 2021, paula bertram seconded."
   },
   {
-   "motion": "The Open Space Committee endorse the Agricultural Preservation Restriction article at Town Meeting for Pierce Tree Farm parcels on Chase Road and Northfield Road",
+   "motion": "That the Open Space Committee endorse the Agricultural Preservation Restriction article at Town Meeting.",
    "moved_by": "Bob Pease",
    "seconded_by": "Paula Bertram",
    "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "bob pease said that this is a great program and made a motion that the open space committee endo rse this article at town meeting, paula bertram seconded. motion passed unanimously by roll call vote",
-   "quote_taken_from_text": true
+   "quote": "made a motion that the open space committee endo rse this article at town meeting, paula bertram seconded. motion passed unanimously by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 7:20 p.m.",
    "moved_by": "Paula",
    "seconded_by": "Ana",
    "outcome": "passed unanimously",
@@ -38,6 +37,196 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.07620149999999999
+ "note": "Zoom meeting; the minutes name the presiding Chairman but not who that is, and Brandon Kibbe is not shown as chair. Item 3 was taken out of order. Ana is referred to only as \"Ana\" in the minutes; she is taken to be Ana Flavia Lockwood. Only Joanna Bilotta appeared from outside the Committee. Dave Prokowiew is named as wanting a future presentation, not as taking part, so is not listed. No document list is printed. The minutes print no document list, so documents_list is false. Votes were recorded by roll call and no tally counts are printed, only \"unanimously\".",
+ "cost_usd": 0.01496576,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Sarah Cammer",
+   "role": "member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present"
+  },
+  {
+   "name": "Brandon Kibbe",
+   "role": "member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present"
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present"
+  },
+  {
+   "name": "Ana Flavia Lockwood",
+   "role": "member",
+   "status": "present",
+   "quote": "the committee met via zoom as scheduled with the following members present"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "of the Lake Shirley Improvement Corporation (LSIC)",
+   "status": "present",
+   "quote": "joanna bilotta of the lake shirley improvement corporation (lsic) explained that the lsic is looking"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting, scheduled for April 20, 2021, was moved to April 13, 2021 because Brandon will be out of Town on April 20.",
+   "quote": "following discussion meeting was moved to april 13, 2021."
+  },
+  {
+   "decision": "Bob Pease will resend Paula the list of parcels owned by the Town on Lake Shirley.",
+   "quote": "bob pease will resend paula the list of parcels owned by the town on lake shirley."
+  },
+  {
+   "decision": "Bob will consult with Town Counsel about the process to clear title on the Oliver lot.",
+   "quote": "bob will consult with counsel about the process to clear title."
+  },
+  {
+   "decision": "Brandon will make sure a Zoom license is available for the April meeting.",
+   "quote": "brandon will make sure there is a zoom license available."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Lake Shirley lake treatment costs paid by LSIC",
+   "what_was_recorded": "Joanna Bilotta reported the LSIC pays a stated annual amount for lake treatments, printed as a range with a typographical error.",
+   "figures_as_printed": [
+    "$40,000 -50,0000"
+   ],
+   "quote": "currently the lsic is paying $40,000 -50,0000 a year on treatments to maintain the lake"
+  },
+  {
+   "topic": "Pierce Tree Farm APR parcel cost and Town match",
+   "what_was_recorded": "The parcel cost is printed as $665,000, and the Town would fund a 10% match under the APR program.",
+   "figures_as_printed": [
+    "$665,000",
+    "10%"
+   ],
+   "quote": "parcel is $665,000 and the town would be responsible for funding a 10% match."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Call to order and pandemic notice",
+   "resolution": "opened at 6:33 p.m.",
+   "quote": "chairman opened the meeting at 6:33 p.m.",
+   "tags": [
+    "procedure",
+    "meeting"
+   ]
+  },
+  {
+   "topic": "Minutes of 02/16/2021",
+   "resolution": "approved, spelling correction requested",
+   "quote": "sarah cammer made a motion to approve the minutes of february 16, 2021",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Lake Shirley Improvement Corporation request for Parmenter Road parcel (taken out of order)",
+   "resolution": "discussed, no action; no recommendation made",
+   "quote": "joanna bilotta of the lake shirley improvement corporation (lsic) explained that the lsic is looking",
+   "tags": [
+    "Parmenter Road",
+    "Lake Shirley",
+    "town-owned land",
+    "public access"
+   ]
+  },
+  {
+   "topic": "Chase Road and Northfield Road APR update",
+   "resolution": "endorsed for Town Meeting",
+   "quote": "brandon explained that pierce tree farm is looking to put an agricultural preservation restriction on this parcel at spring town meeting.",
+   "tags": [
+    "agricultural preservation restriction",
+    "Town Meeting",
+    "farmland"
+   ]
+  },
+  {
+   "topic": "Review of Lake Shirley parcels",
+   "resolution": "no review done; list to be resent",
+   "quote": "paula said she had not had a chance to do any additional review.",
+   "tags": [
+    "Lake Shirley",
+    "town-owned land"
+   ]
+  },
+  {
+   "topic": "Review of Oliver lot, 374 Page Street",
+   "resolution": "continued; Bob to consult Town Counsel",
+   "quote": "bob pease told the committee that this parcel shows up in the assessors database as conservation",
+   "tags": [
+    "title",
+    "Oliver lot",
+    "town-owned land"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "no comment",
+   "quote": "public comment - none.",
+   "tags": [
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "moved to April 13, 2021",
+   "quote": "next meeting date- april 20, 2021, 6:30 p.m.",
+   "tags": [
+    "scheduling"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 7:20 p.m.",
+   "quote": "paula made a motion to adjourn at 7:20 p.m., seconded by ana",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Open Space plan",
+   "where": "text",
+   "quote": "the open space plan talks about the importance of preserving agricultural land"
+  },
+  {
+   "name": "List of parcels owned by the Town on Lake Shirley",
+   "where": "text",
+   "quote": "bob pease will resend paula the list of parcels owned by the town on lake shirley."
+  }
+ ],
+ "tags": [
+  "open space",
+  "agricultural preservation restriction",
+  "Lake Shirley",
+  "Parmenter Road",
+  "Oliver lot",
+  "town-owned land",
+  "public access",
+  "Zoom meeting",
+  "Town Meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

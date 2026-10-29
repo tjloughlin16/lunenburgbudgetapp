@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "parks-commission",
  "meeting_date": "2021-03-29",
  "docid": "3329",
@@ -12,23 +12,226 @@
  },
  "votes": [
   {
-   "motion": "Accept the minutes of February 12, 2021 and March 1, 2021",
+   "motion": "Accept the minutes of February 12, 2021 and March 1, 2021.",
    "moved_by": "Chris",
    "seconded_by": "Ana",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chris motioned and ana seconded to accept the minutes of february 12, 2021 and march 1, 2021 roll call vote chris - yes ana - yes dave - yes"
+   "quote": "chris motioned and ana seconded to accept the minutes of february 12, 2021 and march 1, 2021"
   },
   {
-   "motion": "Adjourn",
+   "motion": "Adjourn the meeting at 8:04pm.",
    "moved_by": "Chris",
    "seconded_by": "Ana",
-   "outcome": "passed 3-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "chris motioned and ana seconded to adjourn at 8:04pm. roll call v ote chris - yes ana - yes dave - yes"
+   "quote": "chris motioned and ana seconded to adjourn at 8:04pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Item 4 explicitly states \"no discussion or vote as document had not been forwarded\" for the Beach Rental Policy. Item 6 records maintenance policy discussion but no vote.",
- "cost_usd": 0.0856094
+ "note": "Text is extracted from a scan-like PDF; page headers read 'page of 41' through 'page of 44', not page numbers. No vote counts are printed; the three votes show roll-call names only, so outcome is recorded as 'passed' without a count. No public comment was taken ('none'). Kayla's email and Karin's email were read into the record and are listed as documents.",
+ "cost_usd": 0.0247063,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Dave Passios",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "dave passios called the meeting to order at 6:36pm. present: dave passios, chris sullivan, ana lockwood absent:"
+  },
+  {
+   "name": "Chris Sullivan",
+   "role": "Member",
+   "status": "present",
+   "quote": "dave passios called the meeting to order at 6:36pm. present: dave passios, chris sullivan, ana lockwood absent:"
+  },
+  {
+   "name": "Ana Lockwood",
+   "role": "Member",
+   "status": "present",
+   "quote": "dave passios called the meeting to order at 6:36pm. present: dave passios, chris sullivan, ana lockwood absent:"
+  },
+  {
+   "name": "Karin Menard",
+   "role": "Chair",
+   "status": "absent",
+   "quote": "absent: karin menard, susanna jewell"
+  },
+  {
+   "name": "Susanna Jewell",
+   "role": "Secretary",
+   "status": "absent",
+   "quote": "absent: karin menard, susanna jewell"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Dave will invite the DPW director to one of the next meetings.",
+   "quote": "dave said he would make a point to invite the dpw director to one of our next meetings"
+  },
+  {
+   "decision": "Dave suggested Chris show the list of potential clean-up projects to Rob so Rob can approve it and arrange debris pick-up.",
+   "quote": "dave suggested that chris show the list of potential project be shown to rob so he can approve it all"
+  },
+  {
+   "decision": "Beach Rental Policy taken up with no discussion or vote, because the document had not been forwarded.",
+   "quote": "no discussion or vote as document had not been forwarded."
+  },
+  {
+   "decision": "Maintenance policy deferred: Chris and Ana to go back to DPW to set realistic expectations and tracking; Chris and Ana to hold a zoom meeting with Rob.",
+   "quote": "chris asked if he and ana could have a zoom meeting with rob and dave said they could."
+  },
+  {
+   "decision": "Chris offered to help Karin with a survey on the Marshall Park master plan.",
+   "quote": "chris offered to help karin out with a survey."
+  },
+  {
+   "decision": "Next meeting set for April 28, 2021.",
+   "quote": "set next meeting date - april 28, 2021"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Park maintenance contract",
+   "what_was_recorded": "Park maintenance was put out to bid with no known bid due date; the contract begins July 1.",
+   "quote": "park maintenance was put out to bid",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Adult field use fee",
+   "what_was_recorded": "A request for the field season is expected from the Phillis, and the Recreation Director wants to give them a fee (same as last year or a new structure).",
+   "quote": "the phillis will be submitting a request for this season",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Minutes approval (Feb 12 and Mar 1, 2021)",
+   "resolution": "approved",
+   "quote": "chris motioned and ana seconded to accept the minutes of february 12, 2021 and march 1, 2021",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Recreation and DPW Director updates",
+   "resolution": "discussed; DPW director to be invited",
+   "quote": "recreation director / dpw director updates - dave said he would make a point to invite the dpw director to one of",
+   "tags": [
+    "recreation",
+    "DPW",
+    "clean-up days",
+    "field policy",
+    "beach"
+   ]
+  },
+  {
+   "topic": "Beach Rental Policy",
+   "resolution": "no action (document not forwarded)",
+   "quote": "beach rental policy - discussion and vote - no discussion or vote as document had not been forwarded.",
+   "tags": [
+    "beach",
+    "rental policy"
+   ]
+  },
+  {
+   "topic": "Earth Day Clean Up",
+   "resolution": "discussed",
+   "quote": "earth day clean up - chris said that he sees this as a week long endeavor and people can help when they are available.",
+   "tags": [
+    "earth day",
+    "clean-up",
+    "volunteers"
+   ]
+  },
+  {
+   "topic": "Maintenance policy",
+   "resolution": "continued; zoom with Rob planned",
+   "quote": "maintenance policy discussion/vote - chris said that he and ana have some more discussion to do",
+   "tags": [
+    "maintenance",
+    "DPW"
+   ]
+  },
+  {
+   "topic": "Marshall Park master planning including Skate Park",
+   "resolution": "discussed; survey and walk-through considered",
+   "quote": "marshall park - master planning discussion including skate park - chris mentioned that karin had previously walked",
+   "tags": [
+    "Marshall Park",
+    "master plan",
+    "skate park",
+    "survey",
+    "parking",
+    "trails",
+    "fields"
+   ]
+  },
+  {
+   "topic": "Other business",
+   "resolution": "none",
+   "quote": "other business matters that may legally come before the board not known at the time of posting - none",
+   "tags": [
+    "other business"
+   ]
+  },
+  {
+   "topic": "Next meeting date",
+   "resolution": "set for April 28, 2021",
+   "quote": "set next meeting date - april 28, 2021",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:04pm",
+   "quote": "chris motioned and ana seconded to adjourn at 8:04pm.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Kayla's updates email (Spring & Summer brochure, clean-up tasks, park maintenance bid, Marshall Park list, field policy, beach update), received the day of the meeting",
+   "where": "list",
+   "quote": "the email is as follows: the spring & summer brochure is out."
+  },
+  {
+   "name": "Karin Menard's email to Dave Passios, sent prior to the meeting (Marshall Park goals and ideas)",
+   "where": "list",
+   "quote": "dave read the email that karin had sent to him prior to the meeting."
+  },
+  {
+   "name": "Beach Rental Policy (document not forwarded to the commission)",
+   "where": "text",
+   "quote": "no discussion or vote as document had not been forwarded."
+  },
+  {
+   "name": "Marshall Park master plan lists (original and updated lists from Chris, Susanna and Karin)",
+   "where": "text",
+   "quote": "i still only have updated lists from chris & susanna"
+  }
+ ],
+ "tags": [
+  "parks commission",
+  "Marshall Park master plan",
+  "skate park",
+  "Earth Day clean-up",
+  "beach operations",
+  "beach rental policy",
+  "maintenance policy",
+  "DPW coordination",
+  "field fees",
+  "minutes approval"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the email is as follows:"
+ },
+ "dropped_unquoted_by_field": {}
 }

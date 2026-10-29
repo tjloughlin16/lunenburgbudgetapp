@@ -1,0 +1,350 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "board-of-health",
+ "board": "Board of Health",
+ "video_title": "Board of Health",
+ "meeting_date": "2021-03-15",
+ "video_id": "X2msyanuRDM",
+ "video_url": "https://www.youtube.com/watch?v=X2msyanuRDM",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/board-of-health/2021-03-15-X2msyanuRDM.json",
+  "sha256": "e294e9064223bf58d473cdb3a5dda656bcc771eed321fc09ccf67f85d0a447db",
+  "caption_lines": 53,
+  "segments": 455
+ },
+ "recording": {
+  "duration_s": 1135,
+  "duration": "0:18",
+  "spoken_chars": 12492,
+  "words_approx": 2082
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_03152021-1048",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-03-15-agenda-1048.txt",
+   "path": "sources/meetings/board-of-health/2021-03-15-agenda-1048.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03152021-1048",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-03-15-minutes-1048.txt",
+   "path": "sources/meetings/board-of-health/2021-03-15-minutes-1048.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-28T06:26:53Z",
+  "cost_usd": 0.30923829999999997
+ },
+ "minutes": {
+  "headline": "Board of Health voted to approve a bedroom-expansion building permit on condition of a three-bedroom deed restriction.",
+  "summary": "A short remote meeting whose only substantive item was a property owner's request to convert a room into a larger bedroom while staying at three bedrooms. The board agreed to approve the building permit on condition of a deed restriction capping bedrooms. A second agenda item was postponed for missing paperwork, and the meeting adjourned.",
+  "attendees": [
+   {
+    "name_as_heard": "Mr. Emond (George Emon)",
+    "role": "chair",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Perry Jewel",
+    "role": "vice chairman",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Paul Fortin",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Evan Waters",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Andrea Schnepp",
+    "role": "administrative assistant",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 968,
+    "topic": "A former board member asked whether the property could tie into municipal sewer rather than build a compliant septic system, noting sewer is available at the street.",
+    "stated_role": "former board member"
+   }
+  ],
+  "tags": [
+   "housing",
+   "policy",
+   "water-sewer"
+  ],
+  "votes": [
+   {
+    "t": 736,
+    "motion": "Approve the building permit for the bedroom expansion on condition that a three-bedroom deed restriction is recorded on the property.",
+    "moved_by": "Perry Jewel",
+    "outcome": "passed, with Evan Waters abstaining",
+    "procedural": false
+   },
+   {
+    "t": 1106,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed by roll call, all members aye",
+    "procedural": true
+   }
+  ],
+  "budget_items": [],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 845,
+    "decision": "Administrative assistant will help the owner with the deed restriction form, to be signed, notarized and recorded before the permit is signed off."
+   },
+   {
+    "t": 926,
+    "decision": "The second agenda item was postponed because the applicant had not supplied the requested current water test; minutes to be approved at the next meeting."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 5,
+    "t_end": 303,
+    "topic": "Opening, roll call, remote-meeting statement and ground rules",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 303,
+    "t_end": 905,
+    "topic": "Bedroom expansion request at a Whalom Road-area property; deed restriction and vote",
+    "resolution": "voted; approved with deed restriction, one abstention",
+    "tags": [
+     "housing",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 905,
+    "t_end": 968,
+    "topic": "Postponed second agenda item and minutes timing",
+    "resolution": "postponed",
+    "tags": []
+   },
+   {
+    "t_start": 968,
+    "t_end": 1052,
+    "topic": "Comment on sewer availability versus septic for the property",
+    "resolution": "informational",
+    "tags": [
+     "water-sewer",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 1052,
+    "t_end": 1127,
+    "topic": "Informal chat and adjournment",
+    "resolution": "voted to adjourn",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "The second-agenda-item applicant was not named.",
+   "The individual roll call responses on the permit vote are garbled; only the abstention is clear.",
+   "The property address renders inconsistently (220 Smith / Whalom Road / Smith Drive)."
+  ],
+  "confidence": "moderate",
+  "contention": [],
+  "concerns_and_conditions": [
+   {
+    "t": 474,
+    "kind": "condition",
+    "about": "The chair's condition for his vote: a deed restriction preventing further bedroom expansion.",
+    "who": "the chair",
+    "words_as_heard": "we uh put a deed restriction on it this would prevent further expansion of the property anytime in the future"
+   },
+   {
+    "t": 1032,
+    "kind": "liability or legal",
+    "about": "A former member warned a fully compliant septic system may be hard to achieve on the lot, whereas sewer is available at the street.",
+    "who": "a visitor (former member)",
+    "words_as_heard": "it might be pretty tough getting a fully compliant system on that property whereas the sewer is available right there at the street"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 389,
+    "name_as_heard": "the plans for your house",
+    "kind": "plan or drawing",
+    "words_as_heard": "our agent looked at the plans for your house",
+    "shown": false
+   },
+   {
+    "t": 845,
+    "name_as_heard": "deed restriction form",
+    "kind": "application or permit",
+    "words_as_heard": "the form that needs to be filled out signed notarized and recorded",
+    "shown": false
+   },
+   {
+    "t": 926,
+    "name_as_heard": "the minutes",
+    "kind": "prior minutes",
+    "words_as_heard": "the minutes went out late um i sent them to george and perry just to check for typos",
+    "shown": false
+   }
+  ],
+  "suggested_reports": []
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Board of Health approved a building permit for a bedroom expansion on condition that a three-bedroom deed restriction is recorded; Evan Waters abstained.",
+    "t": 736
+   },
+   {
+    "line": "The owner will get help from the administrative assistant with the deed restriction form, which must be signed, notarized and recorded before the permit is signed off.",
+    "t": 845
+   },
+   {
+    "line": "A second agenda item was postponed because the applicant had not supplied the requested current water test; minutes are to be approved at the next meeting.",
+    "t": 926
+   },
+   {
+    "line": "A former board member asked in public comment whether the property could tie into municipal sewer, noting sewer is available at the street.",
+    "t": 968
+   }
+  ],
+  "why_it_matters": [
+   "Bedroom count is what a septic system is sized and permitted for, so a deed restriction at three bedrooms keeps a larger room from changing the wastewater capacity the property is approved for, and it stays with the property for later owners.",
+   "The sewer question was raised in comment and not decided; whether the property could connect to municipal sewer instead of a compliant septic system is open on this record."
+  ],
+  "watch_next": [
+   "Recording of the deed restriction on the property, which the minutes say must happen before the permit is signed off.",
+   "The postponed second agenda item, which waits on the applicant supplying a current water test, and the approval of these minutes at the next meeting."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-28T06:27:02Z",
+   "cost_usd": 0.2015435
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_03152021-1048",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/board-of-health/2021-03-15-minutes-1048.txt",
+   "path": "sources/meetings/board-of-health/2021-03-15-minutes-1048.pdf"
+  },
+  "official_sha256": "edbe495c7c8bb8c0129964f825b3bb0f57bab5cca1bcb967f7d4e876f13c7a7e",
+  "against": "structured",
+  "coverage": "partial",
+  "summary": "Both records agree that one vote passed with the deed-restriction condition and the one abstention, and that no minutes were approved. They differ on whether a second agenda item was postponed, which only ours records, and on the attendee list, where the official list is longer and the names are spelled differently.",
+  "counts": {
+   "agree": 3,
+   "caption_error": 3,
+   "discrepancy": 1,
+   "only_in_ours": 2,
+   "only_in_official": 2
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Main vote: permit for bedroom expansion / apartment with 3-bedroom deed restriction",
+    "ours": "Approve the building permit for the bedroom expansion on condition that a three-bedroom deed restriction is recorded on the property. — passed, with Evan Waters abstaining",
+    "official": "on motion by jewell and second by fortin, the board voted to allow the construction",
+    "note": "Same vote, same condition, same outcome (passed, one abstention); only the description of the project differs (bedroom expansion vs. lower-level apartment at 2 Smith Drive), and the official adds 'an 8 room' to the restriction.",
+    "t": 736
+   },
+   {
+    "kind": "caption_error",
+    "about": "Abstaining member's name",
+    "ours": "Evan Waters (member)",
+    "official": "paul fortin and evan watters",
+    "official_reading": "Evan Watters",
+    "note": "Same person, surname spelled differently by the captions.",
+    "t": 736
+   },
+   {
+    "kind": "caption_error",
+    "about": "Vice chairman's surname",
+    "ours": "Perry Jewel (vice chairman)",
+    "official": "roll call conducted by vice-chairman, perry jewell:",
+    "official_reading": "Perry Jewell",
+    "note": "Same person; captions dropped a letter.",
+    "t": 736
+   },
+   {
+    "kind": "caption_error",
+    "about": "Chairman's surname",
+    "ours": "Mr. Emond (George Emon) (chair)",
+    "official": "perry jewell, george emond, paul fortin and",
+    "official_reading": "George Emond",
+    "note": "Same person; ours has two spellings, official has Emond.",
+    "t": 736
+   },
+   {
+    "kind": "agree",
+    "about": "Attendee Paul Fortin",
+    "ours": "Paul Fortin (member)",
+    "official": "perry jewell, george emond, paul fortin and",
+    "note": "Same member present in both records."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Second agenda item postponed",
+    "ours": "The second agenda item was postponed because the applicant had not supplied the requested current water test; minutes to be approved at the next meeting.",
+    "official": "",
+    "note": "Official minutes record no postponement or water test; check the agenda and the recording near t=926 to see whether the item was postponed or acted on. The official minutes cover only one vote.",
+    "t": 926
+   },
+   {
+    "kind": "agree",
+    "about": "Minutes approval",
+    "ours": "minutes to be approved at the next meeting.",
+    "official": "no minutes were approved.",
+    "note": "Consistent: no minutes approved at this meeting, deferred in ours."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Administrative assistant helping with deed restriction form",
+    "ours": "Administrative assistant will help the owner with the deed restriction form, to be signed, notarized and recorded before the permit is signed off.",
+    "official": "",
+    "note": "Follow-up process step that the official minutes do not mention.",
+    "t": 845
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Attendee Andrea Schnepp, administrative assistant",
+    "ours": "Andrea Schnepp (administrative assistant)",
+    "official": "",
+    "note": "Official attendee list does not include her."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Other attendees: agent, owner, and Dave Passios",
+    "ours": "",
+    "official": "agent, jim garreffi, was also present.",
+    "note": "Official lists Jim Garreffi (agent), Nancy Caron (owner) and Dave Passios as present; ours lists none of them."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Roll call voting ground rule",
+    "ours": "",
+    "official": "all voting by roll call votes.",
+    "note": "Official records that all voting was by roll call; ours does not mention the method, though the vote itself matches."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-28T06:27:49Z",
+   "cost_usd": 0.2114955
+  }
+ }
+}

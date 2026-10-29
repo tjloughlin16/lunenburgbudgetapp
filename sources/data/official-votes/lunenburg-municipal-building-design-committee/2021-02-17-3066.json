@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "lunenburg-municipal-building-design-committee",
  "meeting_date": "2021-02-17",
  "docid": "3066",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "to adjourn",
+   "motion": "Adjourn the meeting.",
    "moved_by": "Dave Passios",
    "seconded_by": "Matthew Allison",
    "outcome": "passed 4-0",
@@ -21,6 +21,228 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0907785
+ "note": "Text is complete for three pages and ends with a roll-call adjournment. One motion (adjournment, 4-0 roll call) is recorded; no other votes. Review and Approve Minutes is printed as none. Spellings vary within the text: Michael-Ray Jeffreys/Jeffries and David/Dave Passios; names are recorded as printed in each place. No member's role or chair is printed beyond the headings. No dollar figures are recorded as decided. Page 1 ends mid-sentence and continues on page 2.",
+ "cost_usd": 0.01492226,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Greg Roy",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "David Passios",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "David Blatt",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Matthew Allison",
+   "role": "Members Present",
+   "status": "present",
+   "quote": "members present: greg roy, david passios, david blatt, michael-ray jeffreys, matthew allison"
+  },
+  {
+   "name": "Brian Lehtinen",
+   "role": "Members absent",
+   "status": "absent",
+   "quote": "members absent: brian lehtinen"
+  },
+  {
+   "name": "John Londa",
+   "role": "Town Employees",
+   "status": "present",
+   "quote": "town employees: john londa"
+  },
+  {
+   "name": "Peter Beardmore",
+   "role": "Community Guests",
+   "status": "present",
+   "quote": "community guests: peter beardmore"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Future meetings set for March 3rd and 17th (2021).",
+   "quote": "future meeting schedule: march 3rd and 17th"
+  },
+  {
+   "decision": "Greg Roy to reach out to the DPW about cost savings such as paving and curbing.",
+   "quote": "greg roy is planning to reach out to the dpw for costs savings such as paving and curbing."
+  },
+  {
+   "decision": "Dave Passios asked for a breakdown of the site work in a separate document.",
+   "quote": "dave passios would like a breakdown of the site work on a separate document."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Renovation of the existing 70-year-old building",
+   "what_was_recorded": "Discussion of an $18 million renovation of a 70-year-old building.",
+   "quote": "discussion took place on a $18 million renovation on a 70 year old building.",
+   "figures_as_printed": [
+    "$18 million"
+   ]
+  },
+  {
+   "topic": "Tear down and rebuild, back-of-the-napkin estimate",
+   "what_was_recorded": "A quick ballpark square-foot cost for a tear down and rebuild, with no design work, totalled $17.8 million or $357 per square foot.",
+   "quote": "with no design work for a total of $17.8 million or $357 per square foot.",
+   "figures_as_printed": [
+    "$17.8 million",
+    "$357 per square foot"
+   ]
+  },
+  {
+   "topic": "Design contingency",
+   "what_was_recorded": "The design contingency went from 20% to about 10%; a member asked whether there is a standard.",
+   "quote": "david blatt stated the contingency went from 20% to about 10%, is there a standard?",
+   "figures_as_printed": [
+    "20%",
+    "10%"
+   ]
+  },
+  {
+   "topic": "School project contingency",
+   "what_was_recorded": "The school project had $5 million in contingency, according to Matthew Allison.",
+   "quote": "matthew allison stated the school had $5 million.",
+   "figures_as_printed": [
+    "$5 million"
+   ]
+  },
+  {
+   "topic": "Spending to date on the project",
+   "what_was_recorded": "Approximately $265,000 has been spent so far, per public comment.",
+   "quote": "approximately $265,000 has been spent so far.",
+   "figures_as_printed": [
+    "$265,000"
+   ]
+  },
+  {
+   "topic": "Cost estimate and soft costs",
+   "what_was_recorded": "David Blatt shared the cost estimate and the decrease in soft costs; no figures printed in the minutes.",
+   "quote": "david blatt shared the cost estimate and decrease in soft costs.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Lumber and materials costs",
+   "what_was_recorded": "Concern raised about increases in lumber and material costs; no figures printed.",
+   "quote": "dave passios stated concerns over increase in lumber costs and materials.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Elevator costs",
+   "what_was_recorded": "Elevators could be less expensive with hydraulics instead of cables; no figures printed.",
+   "quote": "matthew allison stated elevators can be less expensive with hydraulics instead of cables.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Financing and debt",
+   "what_was_recorded": "The town manager had no concerns about financing or debt for the project if it started soon; no figures printed.",
+   "quote": "the town manager did not have concerns with the financing or debt in regards to this project if it started soon",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "topic": "Funding and alternatives for the project",
+   "speaker": "Peter Beardmore",
+   "stated_role": "Community Guests",
+   "quote": "public comment: peter beardmore wanted to discuss funding. approximately $265,000 has been spent so far."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Committee review of cost reducing alternatives",
+   "resolution": "discussed; no action recorded",
+   "quote": "committee review of cost reducing alternatives:",
+   "tags": [
+    "cost reduction",
+    "renovation",
+    "tear down",
+    "contingency",
+    "HVAC"
+   ]
+  },
+  {
+   "topic": "Review and Approve Minutes",
+   "resolution": "none",
+   "quote": "review and approve minutes: none",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Correspondence to and from the Committee",
+   "resolution": "discussed; no letter drafted; presentation to select board planned with final cost",
+   "quote": "correspondence to and from the committee: greg roy stated he had not drafted a letter to the select board",
+   "tags": [
+    "select board",
+    "town meeting",
+    "timeline"
+   ]
+  },
+  {
+   "topic": "Future meeting schedule",
+   "resolution": "dates set: March 3rd and 17th",
+   "quote": "future meeting schedule: march 3rd and 17th",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Public comment on funding",
+   "resolution": "heard; no action recorded",
+   "quote": "public comment: peter beardmore wanted to discuss funding.",
+   "tags": [
+    "funding",
+    "public comment",
+    "town meeting"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "cost comparison document",
+   "where": "text",
+   "quote": "discussion took place on the minimal cost savings that was done in the cost comparison document."
+  },
+  {
+   "name": "Tappe study",
+   "where": "text",
+   "quote": "in the tappe study there was an option to take the whole back wing out."
+  }
+ ],
+ "tags": [
+  "building renovation",
+  "tear down and rebuild",
+  "cost estimate",
+  "contingency",
+  "cost reduction",
+  "town hall",
+  "select board",
+  "town meeting",
+  "funding",
+  "public comment"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

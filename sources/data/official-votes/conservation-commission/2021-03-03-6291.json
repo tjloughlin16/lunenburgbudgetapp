@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "conservation-commission",
  "meeting_date": "2021-03-03",
  "docid": "6291",
@@ -12,95 +12,475 @@
  },
  "votes": [
   {
-   "motion": "Approve February 17, 2021 meeting minutes",
+   "motion": "Approve the minutes of the February 17, 2021 meeting.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed",
+   "outcome": "passed, with CL and JR abstaining",
    "procedural": true,
-   "quote": "minutes approved with cl and jr abstaining"
+   "quote": "minutes approved with cl and jr abstaining."
   },
   {
-   "motion": "Continue public hearing on Notice of Intent (Fire Road 12, Tom Wu and Scott Benjamin) to March 17, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Tom Wu and Scott Benjamin Notice of Intent hearing (Map 137 Parcel 12, Fire Road 12) to March 17, 2021.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous vote",
    "procedural": false,
-   "quote": "continued to march 17, 2021 by motion of rb and a second by jv with a unanimous vote to approve"
+   "quote": "continued to march 17, 2021 by motion of rb and a second by jv with a unanimous vote to approve."
   },
   {
-   "motion": "Continue public hearing on Notice of Intent (203 Fire Road 16, Proctor Masonry) to March 17, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Proctor Masonry Notice of Intent hearing (203 Fire Road 16) to March 17, 2021.",
+   "moved_by": "RB",
+   "seconded_by": "JR",
+   "outcome": "passed, unanimous vote",
    "procedural": false,
-   "quote": "continued to march 17, 2021 by motion of rb and a second by jr with a unanimous vote to approve"
+   "quote": "continued to march 17, 2021 by motion of rb and a second by jr with a unanimous vote to approve."
   },
   {
-   "motion": "Issue standard order of conditions for Lot 1, 30 Gilchrest Street (Northfield Associates)",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed",
+   "motion": "Issue a standard order of conditions for the Northfield Associates Notice of Intent, Lot 1, 30 Gilchrest Street.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
+   "outcome": "passed, by roll call vote (no count printed)",
    "procedural": false,
    "quote": "a motion was made by rb to issue a standard order of conditions. jv seconded and the commission approved the motion by roll call vote"
   },
   {
-   "motion": "Approve standard order of conditions for Lot 2, 30 Gilchrest Street (Northfield Associates)",
-   "moved_by": "Jack Rabbitt",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Approve a standard Order of Conditions for the Northfield Associates Notice of Intent, Lot 2, 30 Gilchrest Street.",
+   "moved_by": "JR",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous vote",
    "procedural": false,
-   "quote": "a motion was made to approve a standard order of conditions by a motion of jr and a second by jv with a unanimous vote to approve the motion"
+   "quote": "with no questions a motion was made to approve a standard order of conditions by a motion of jr and a second by jv with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue public hearing on Notice of Intent (137 Flynn Road, Cynthia Ritchie) to March 17 at 7 PM",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Catie Childs",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Cynthia Ritchie Notice of Intent hearing (137 Flynn Road) to March 17, 2021 at 7 PM.",
+   "moved_by": "RB",
+   "seconded_by": "CC",
+   "outcome": "passed, unanimous vote",
    "procedural": false,
-   "quote": "a motion was made to continue to march 17 at 7 pm by rb with a second by cc and a unanimous vote to approve the motion"
+   "quote": "a motion was made to continue to march 17 at 7 pm by rb with a second by cc and a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue public hearing on Notice of Intent (238 Fire Road 16, Joann Magurn) to March 17, 2021",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Joann Magurn Notice of Intent hearing (238 Fire Road 16) to March 17, 2021.",
+   "moved_by": "CL",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous vote",
    "procedural": false,
-   "quote": "the meeting was continued to march 17 by a motion of cl and a second by jv and a unanimous vote to approve the motion"
+   "quote": "the meeting was continued to march 17 by a motion of cl and a second by jv and a unanimous vote to approve the motion."
   },
   {
-   "motion": "Continue public hearing on Notice of Intent (386 Sunset Lane, Richard Tremblay) to March 17, 2021",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Jeffrey Viviano",
-   "outcome": "passed unanimously",
+   "motion": "Continue the Richard Tremblay Notice of Intent hearing (386 Sunset Lane) to March 17, 2021.",
+   "moved_by": "RB",
+   "seconded_by": "JV",
+   "outcome": "passed, unanimous vote (CL recused himself)",
    "procedural": false,
-   "quote": "continued march 17, 2021 by motion of rb and a second by jv with a unanimous vote to approve"
+   "quote": "continued march 17, 2021 by motion of rb and a second by jv with a unanimous vote to approve."
   },
   {
-   "motion": "Continue public hearing on Notice of Intent (757 Chase Road, Empire Management Corp) to April 7, 2021",
+   "motion": "Continue the Empire Management Corp Notice of Intent hearing (757 Chase Road) to April 7, 2021.",
    "moved_by": "RD",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "passed unanimously",
+   "seconded_by": "JR",
+   "outcome": "passed, unanimous vote",
    "procedural": false,
-   "quote": "a motion to continue to april 7, 2021 was made by rd and seconded by jr with a unanimous vote to approve the motion"
+   "quote": "a motion to continue to april 7, 2021 was made by rd and seconded by jr with a unanimous vote to approve the motion."
   },
   {
-   "motion": "Adjourn meeting",
-   "moved_by": "Carl Luck",
-   "seconded_by": "Jack Rabbitt",
-   "outcome": "failed",
+   "motion": "Motion to adjourn (made by CL, seconded by JR) during the land use regulations workshop.",
+   "moved_by": "CL",
+   "seconded_by": "JR",
+   "outcome": "failed, declined 4 votes (BP, KJ, JV, RB)",
    "procedural": true,
-   "quote": "cl asked for a motion to adjourn, jr seconded. during discussion kj asked what the chairman wanted to do. bp noted that he wanted to go through cl's suggestions as jr also has some lengthy presentation and wanted to give jr sufficient time for his presentation at the next meeting. the motion was declined by a vote of bp, kj, jv, rb to decline"
+   "quote": "the motion was declined by a vote of bp, kj, jv, rb to decline."
   },
   {
-   "motion": "Adjourn meeting",
-   "moved_by": "Richard Bursch",
-   "seconded_by": "Kenneth Jones",
-   "outcome": "passed unanimously",
+   "motion": "Change the notification language in the proposed land use regulations to reporting to the agent and the police as appropriate.",
+   "moved_by": "CL",
+   "seconded_by": "",
+   "outcome": "not stated",
+   "procedural": false,
+   "quote": "cl made a motion that the notification language be changed to reporting to the agent and the police as appropriate."
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "RB",
+   "seconded_by": "KJ",
+   "outcome": "passed, unanimous vote",
    "procedural": true,
-   "quote": "by a motion of rb and a second by kj with a unanimous vote to approve the motion"
+   "quote": "with no further public comment the meeting adjourned on march 4, 2017 at 12:05 am by a motion of rb and a second by kj with a unanimous vote to approve the motion."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Date discrepancy in minutes: final adjournment recorded as \"March 4, 2017\" but meeting was held March 3, 2021; appears to be data entry error. Also note: 'RD' in vote 9 (Empire Management Corp continuation) is unclear—name not listed in commission roster shown at top of minutes.",
- "cost_usd": 0.1551775
+ "note": "Typed minutes, not a scan. Members are recorded by initials (BP, KJ, RB, CL/Cl, CC, JR, JV, ML, MM, RD, KL) and the minutes do not print a key; the name mapping here is the reader's reading of the header, not printed text. Most motions carry no vote count, so outcomes are as printed (\"unanimous vote\", \"roll call vote\", or \"not stated\"). The adjournment line reads \"March 4, 2017\" for a meeting dated March 3, 2021; the date is recorded as printed. The record has no roll call of attendance; present status for members is inferred from their recorded participation. The \"RD\" in the Empire motion is printed that way. The Public Comment entry is JR's, who appears to be a member, not a member of the public. No dollar figures appear in the minutes.",
+ "cost_usd": 0.023899459999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Bob Pease",
+   "role": "Chair",
+   "status": "present",
+   "quote": "bob pease, chair tel: (978) 582-4146"
+  },
+  {
+   "name": "Kenneth Jones",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "kenneth jones, vice-chair 960 massachusetts ave."
+  },
+  {
+   "name": "Richard Bursch",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "richard bursch lunenburg, ma 01462"
+  },
+  {
+   "name": "Catie Childs",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "catie childs carl luck jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Carl Luck",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "catie childs carl luck jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "catie childs carl luck jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Jeffrey Viviano",
+   "role": "member (role not printed)",
+   "status": "present",
+   "quote": "jack rabbitt matthew s. marro, jeffrey viviano conservation administrator"
+  },
+  {
+   "name": "Michael Larouche",
+   "role": "Associate",
+   "status": "present",
+   "quote": "michael larouche, associate"
+  },
+  {
+   "name": "Matthew S. Marro",
+   "role": "Conservation Administrator",
+   "status": "present",
+   "quote": "catie childs carl luck jack rabbitt matthew s. marro,"
+  },
+  {
+   "name": "Greg Roy",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "lot 1 greg roy representing the applicant."
+  },
+  {
+   "name": "Brian Butler",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "brian butler, representing the applicant, reviewed the prior hearing history."
+  },
+  {
+   "name": "Butch Magurn",
+   "role": "not printed",
+   "status": "present",
+   "quote": "butch magurn noted it was a board of health permit."
+  },
+  {
+   "name": "Joann Magurn",
+   "role": "applicant (as printed in the hearing notice)",
+   "status": "not stated",
+   "quote": "he and joann magurn were open to a 12 foot driveway."
+  },
+  {
+   "name": "Brett Ramsden",
+   "role": "not printed",
+   "status": "present",
+   "quote": "brett ramsden came on later on in the meeting."
+  },
+  {
+   "name": "James Alamonte",
+   "role": "representing the applicant",
+   "status": "present",
+   "quote": "james alamonte represented the applicant."
+  },
+  {
+   "name": "Brian Lafferty",
+   "role": "not printed",
+   "status": "present",
+   "quote": "brian lafferty and brandon ducharme were also present."
+  },
+  {
+   "name": "Brandon Ducharme",
+   "role": "not printed",
+   "status": "present",
+   "quote": "brian lafferty and brandon ducharme were also present."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Chair to seek an opinion from town counsel on whether the Joann Magurn application is a back-door appeal of the unapproved gravel-driveway application.",
+   "quote": "the commission agreed the chair should seek a opinion from town counsel."
+  },
+  {
+   "decision": "Language of the CMR on passive recreation is left as is.",
+   "quote": "it was decided that the language of the cmr be left as is."
+  },
+  {
+   "decision": "The proposed 2/3 majority requirement is not to be adopted (agreed by KJ, JV and BP).",
+   "quote": "rb noted that the commission has no other requirements on any other business it does requiring a 2/3 vote and suggested that not be adopted."
+  },
+  {
+   "decision": "Action on the hunting/land management plan question deferred until the Commonwealth responds to follow-up questions.",
+   "quote": "bp noted that he wanted to defer action until such time as the commonwealth responded to the follow-up questions."
+  },
+  {
+   "decision": "Sections 2.1 and 2.11 consolidated: 2.1 deleted and 2.11 made 2.1 with refined language.",
+   "quote": "all members agreed with the suggested change"
+  },
+  {
+   "decision": "Tree stand removal wording inserted at the beginning of section 2.4 (removal by end of applicable hunting season).",
+   "quote": "members were in agreement with bp's suggestion."
+  },
+  {
+   "decision": "Empire Management applicant to develop a schedule of construction.",
+   "quote": "rb asked for a schedule of construction to be developed. the applicant agreed."
+  },
+  {
+   "decision": "Chair to ask CC about the alcoholic beverage and glass container issue at the next meeting.",
+   "quote": "bp noted he would like to ask cc about this issue at the next meeting."
+  },
+  {
+   "decision": "RB directed to write an answer for the Q & A on the hunting issues and the reasons for the proposed expansions.",
+   "quote": "he asked rb to write an answer for the q & a about the hunting issues and the reasons for the proposed expansions."
+  },
+  {
+   "decision": "JR to send MM the materials of his presentation for posting.",
+   "quote": "he would send mm the materials of his presentation for posting."
+  },
+  {
+   "decision": "CL to send the town by-law clarification on dogs to the commission for further review.",
+   "quote": "cl clarified the town by law and would send it to the commission for further review."
+  },
+  {
+   "decision": "Remaining agenda items tabled to the next meeting: trails grant update, certificates of compliance, extension permit, committee reports, administrator's determination, open space and trail use issues, communications and public comment.",
+   "quote": "all other items were tabled to the next meeting:"
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "JR",
+   "stated_role": "not printed (minutes print initials only; JR appears elsewhere as a commission member)",
+   "topic": "input on land use regulation revisions",
+   "quote": "jr: mentioned he had some input on the land use regulation revisions he will submit to mm for the inclusion into the website."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment",
+   "resolution": "noted, no action",
+   "tags": [
+    "public comment",
+    "land use regulations"
+   ],
+   "quote": "jr: mentioned he had some input on the land use regulation revisions he will submit to mm for the inclusion into the website."
+  },
+  {
+   "topic": "Minutes of February 17, 2021",
+   "resolution": "approved, CL and JR abstaining",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes approved with cl and jr abstaining."
+  },
+  {
+   "topic": "NOI, Tom Wu and Scott Benjamin, Map 137 Parcel 12, Fire Road 12 (buffer zone restoration)",
+   "resolution": "continued to March 17, 2021",
+   "tags": [
+    "notice of intent",
+    "buffer zone",
+    "continued hearing"
+   ],
+   "quote": "continued to march 17, 2021 by motion of rb and a second by jv with a unanimous vote to approve."
+  },
+  {
+   "topic": "NOI, Proctor Masonry, 203 Fire Road 16 (retaining walls, tree removal)",
+   "resolution": "continued to March 17, 2021",
+   "tags": [
+    "notice of intent",
+    "retaining wall",
+    "continued hearing"
+   ],
+   "quote": "continued to march 17, 2021 by motion of rb and a second by jr with a unanimous vote to approve."
+  },
+  {
+   "topic": "NOI, Northfield Associates, Lot 1, 30 Gilchrest Street (single family home)",
+   "resolution": "standard order of conditions issued",
+   "tags": [
+    "notice of intent",
+    "order of conditions",
+    "single family home"
+   ],
+   "quote": "a motion was made by rb to issue a standard order of conditions."
+  },
+  {
+   "topic": "NOI, Northfield Associates, Lot 2, 30 Gilchrest Street (single family home)",
+   "resolution": "standard order of conditions approved",
+   "tags": [
+    "notice of intent",
+    "order of conditions",
+    "single family home"
+   ],
+   "quote": "with no questions a motion was made to approve a standard order of conditions by a motion of jr and a second by jv with a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Cynthia Ritchie, 137 Flynn Road (stone wall along waterfront)",
+   "resolution": "continued to March 17, 2021",
+   "tags": [
+    "notice of intent",
+    "erosion",
+    "waterfront",
+    "continued hearing"
+   ],
+   "quote": "a motion was made to continue to march 17 at 7 pm by rb with a second by cc and a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Joann Magurn, 238 Fire Road 16 (single family home with driveway crossing)",
+   "resolution": "continued to March 17, 2021; chair to seek town counsel opinion",
+   "tags": [
+    "notice of intent",
+    "driveway",
+    "wetlands",
+    "appeal",
+    "continued hearing"
+   ],
+   "quote": "the meeting was continued to march 17 by a motion of cl and a second by jv and a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "NOI, Richard Tremblay, 386 Sunset Lane (retaining wall, kayak rack, patios, driveway)",
+   "resolution": "continued to March 17, 2021; CL recused",
+   "tags": [
+    "notice of intent",
+    "retaining wall",
+    "continued hearing"
+   ],
+   "quote": "continued march 17, 2021 by motion of rb and a second by jv with a unanimous vote to approve."
+  },
+  {
+   "topic": "NOI, Empire Management Corp, 757 Chase Road (commercial building demolition and reconstruction)",
+   "resolution": "continued to April 7, 2021",
+   "tags": [
+    "notice of intent",
+    "commercial building",
+    "stormwater",
+    "continued hearing"
+   ],
+   "quote": "a motion to continue to april 7, 2021 was made by rd and seconded by jr with a unanimous vote to approve the motion."
+  },
+  {
+   "topic": "Enforcement",
+   "resolution": "listed; no action recorded",
+   "tags": [
+    "enforcement",
+    "illegal dumping"
+   ],
+   "quote": "leominster road- illegal dumping activity (site visit to occur after snow has melted)"
+  },
+  {
+   "topic": "New business: tree definition",
+   "resolution": "not acted on",
+   "tags": [
+    "tree definition"
+   ],
+   "quote": "jack rabbit - tree definition - not acted on"
+  },
+  {
+   "topic": "Old business: land use regulations workshop",
+   "resolution": "continued; several wording decisions, two votes (adjournment declined, notification language motion)",
+   "tags": [
+    "land use regulations",
+    "hunting",
+    "firearms",
+    "dogs",
+    "alcohol",
+    "workshop"
+   ],
+   "quote": "continued workshop for continued discussion of changes of the land use regulations"
+  },
+  {
+   "topic": "Other tabled items",
+   "resolution": "tabled to the next meeting",
+   "tags": [
+    "tabled",
+    "trails grant",
+    "open space"
+   ],
+   "quote": "all other items were tabled to the next meeting:"
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned",
+   "tags": [
+    "adjournment"
+   ],
+   "quote": "with no further public comment the meeting adjourned on march 4, 2017 at 12:05 am by a motion of rb and a second by kj with a unanimous vote to approve the motion."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sharon Jordan document (historic information; title not printed)",
+   "where": "text",
+   "quote": "they should read the one by sharon jordan for the useful historic information it contains"
+  },
+  {
+   "name": "Land management plan (accepted)",
+   "where": "text",
+   "quote": "cl noted his concern was the land management plan that was accepted"
+  },
+  {
+   "name": "Draft land use regulations and public information document",
+   "where": "text",
+   "quote": "continued workshop for continued discussion of changes of the land use regulations"
+  },
+  {
+   "name": "Q & A document on land use regulations",
+   "where": "text",
+   "quote": "he wanted to work with the commission on the q & a document."
+  },
+  {
+   "name": "Local code section 205-10 (consumption of alcoholic beverages)",
+   "where": "text",
+   "quote": "rb reviewed section 205-10 of the local code for consumption of alcoholic beverages."
+  },
+  {
+   "name": "Appendix A and B (permitting forms; fishing and hunting guide excerpts)",
+   "where": "text",
+   "quote": "bp suggested adding appendix a and b for permitting forms and fishing and hunting guide excerpts."
+  },
+  {
+   "name": "Email correspondence from Elizabeth Newell of the Commonwealth (undated)",
+   "where": "text",
+   "quote": "was forwarding that correspondence to the commission for review."
+  }
+ ],
+ "tags": [
+  "conservation commission",
+  "notice of intent",
+  "wetlands",
+  "order of conditions",
+  "land use regulations",
+  "hunting",
+  "firearms",
+  "continued hearings",
+  "enforcement",
+  "remote meeting",
+  "Lunenburg"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

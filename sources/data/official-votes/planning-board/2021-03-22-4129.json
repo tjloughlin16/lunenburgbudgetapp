@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "planning-board",
  "meeting_date": "2021-03-22",
  "docid": "4129",
@@ -12,31 +12,335 @@
  },
  "votes": [
   {
-   "motion": "Approve site plan approval waiver for 305 Leominster Shirley Road with conditions to work with DPW on sight distance and adhere to specified Site Development Plan",
-   "moved_by": "T. Cole",
-   "seconded_by": "M. Brenner",
+   "motion": "Approve the site plan approval waiver for 305 Leominster Shirley Road, with two conditions (work with DPW on sight distance; adhere to the Site Development Plan dated March 8, 2021).",
+   "moved_by": "Tanner Cole",
+   "seconded_by": "Matthew Brenner",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "t. cole amended his motion to include the two mentioned conditions, m. brenner seconded, roll call vote- t. cole, aye; m. brenner, aye; m. allison, aye. vote passed 3-0."
+   "quote": "t. cole made motion to approve the site plan approval waiver for 305 leominster shirley road, m. brenner seconded."
   },
   {
-   "motion": "Close the public hearing and approve the Board Rules and Regulations for Site Plan Approval & Special Permits",
-   "moved_by": "M. Brenner",
-   "seconded_by": "T. Cole",
+   "motion": "Close the public hearing on the Rules and Regulations for Site Plan Approval & Special Permits and approve those Rules and Regulations.",
+   "moved_by": "Matthew Brenner",
+   "seconded_by": "Tanner Cole",
    "outcome": "passed 3-0",
    "procedural": false,
-   "quote": "m. brenner made motion close the public hearing and to approve the board rules and regulations for site plan approval & special permits, t. cole seconded, roll call vote - m. brenner, aye; t. cole, aye; m. allison, aye. vote passed 3-0."
+   "quote": "m. brenner made motion close the public hearing and to approve the board rules and regulations for site plan approval"
   },
   {
-   "motion": "Approve minutes from March 8, 2021",
-   "moved_by": "M. Brenner",
-   "seconded_by": "T. Cole",
+   "motion": "Approve the minutes of 03/08/21.",
+   "moved_by": "Matthew Brenner",
+   "seconded_by": "Tanner Cole",
    "outcome": "passed 3-0",
    "procedural": true,
-   "quote": "m. brenner made motion to approve, t. cole seconded, roll call vote- t. cole, aye; m. brenner aye; m. allison, aye. vote passed 3-0."
+   "quote": "m. brenner made motion to approve, t. cole seconded, roll call vote-"
+  },
+  {
+   "motion": "Adjourn the meeting.",
+   "moved_by": "Matthew Brenner",
+   "seconded_by": "Tanner Cole",
+   "outcome": "passed 3-0",
+   "procedural": true,
+   "quote": "m .brenner made motion to adjourn, t. cole seconded, roll call vote- t. cole, aye; m. brenner, aye; m. allison, aye."
   }
  ],
- "dropped_unquoted": 1,
- "note": "",
- "cost_usd": 0.1215315
+ "dropped_unquoted": 0,
+ "note": "Meeting held remotely by Zoom under the Governor's COVID order. Two of three absent members (Bertram, Torgersen) did not attend. The BrightFarms de minimis change and the Pierce's APR update have no recorded vote. The Town Manager's update has no name in the minutes. Text is a PDF extraction with spacing damage; quotes normalise whitespace.",
+ "cost_usd": 0.018366260000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Matthew Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Tanner Cole",
+   "role": "Vice Chair",
+   "status": "present",
+   "quote": "matthew allison, present; tanner cole, present"
+  },
+  {
+   "name": "Matthew Brenner",
+   "role": "Member",
+   "status": "present",
+   "quote": "matthew brenner, present."
+  },
+  {
+   "name": "Paula Bertram",
+   "role": "Clerk",
+   "status": "absent",
+   "quote": "absent: paula bertram, erik torgersen"
+  },
+  {
+   "name": "Erik Torgersen",
+   "role": "Member",
+   "status": "absent",
+   "quote": "absent: paula bertram, erik torgersen"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "roll call conducted by adam burney, land use director"
+  },
+  {
+   "name": "Christopher Anderson",
+   "role": "Hannigan Engineering, Inc.",
+   "status": "present",
+   "quote": "presentation given by christopher anderson, hannigan engineering, inc."
+  },
+  {
+   "name": "Chris Valenti",
+   "role": "305 Realty and GVC Construction",
+   "status": "present",
+   "quote": "chris valenti, 305 realty and gvc construction, noted it would not be able to move forward"
+  },
+  {
+   "name": "Town Manager",
+   "role": "Town Manager",
+   "status": "not stated",
+   "quote": "the town manager, in november 2019, submitted a brownfields site nomination and epa approval form"
+  },
+  {
+   "name": "David Rodgers",
+   "role": "82 Highland Street",
+   "status": "not stated",
+   "quote": "david rodgers, 82 highland street - he was looking for a better understanding of the parking calculation"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Adam Burney requested Graves Engineering, Inc. to review the BrightFarms Phase 1 Land Development Plan, which the applicant sought to treat as a de minimis change. No vote is recorded.",
+   "quote": "a. burney requested graves engineering, inc. to review the plan."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "925 Massachusetts Avenue brownfield Phase II grant",
+   "what_was_recorded": "The Brownfield Group approved a grant to the town of $30,000 toward the Phase II assessment.",
+   "figures_as_printed": [
+    "$30,000"
+   ],
+   "quote": "the brownfield group approved the town's grant in the amount of $30,000 towards the phase ii assessment."
+  },
+  {
+   "topic": "925 Massachusetts Avenue Phase III assessment funds",
+   "what_was_recorded": "The town received $6,000 for a Phase III assessment to identify the cost of cleanup.",
+   "figures_as_printed": [
+    "$6,000"
+   ],
+   "quote": "$6,000 was received for a phase iii assessment."
+  },
+  {
+   "topic": "Pierce's Christmas Tree Farm APR town share",
+   "what_was_recorded": "The town would be responsible for 10% of the purchase price of the Agricultural Preservation Restriction.",
+   "figures_as_printed": [
+    "10%"
+   ],
+   "quote": "the town would be responsible for 10% of the purchase price."
+  },
+  {
+   "topic": "DLTA technical assistance",
+   "what_was_recorded": "The DLTA Request for Service Delivery would be cost-free technical assistance provided by MRPC.",
+   "figures_as_printed": [],
+   "quote": "this would be cost-free technical assistance provided by mrpc."
+  },
+  {
+   "topic": "Farmers' market vendor fee",
+   "what_was_recorded": "The Agricultural Commission's 2021 farmers' market vendor fee would decrease. No dollar figure is printed.",
+   "figures_as_printed": [],
+   "quote": "vendor fee would decrease."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "David Rodgers",
+   "stated_role": "82 Highland Street",
+   "topic": "parking calculation warrant article",
+   "quote": "david rodgers, 82 highland street - he was looking for a better understanding of the parking calculation"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "925 Massachusetts Avenue reuse update",
+   "resolution": "no action; Town Manager asked whether the Board preferred auction or RFP",
+   "quote": "the town manager wanted to determine if the planning board felt the property should be auctioned or put out for an rfp for property reuse.",
+   "tags": [
+    "brownfields",
+    "tax title",
+    "redevelopment"
+   ]
+  },
+  {
+   "topic": "North End Subaru public hearing",
+   "resolution": "see separate minutes",
+   "quote": "north end subaru, 757 chase road-",
+   "tags": [
+    "public hearing",
+    "site plan"
+   ]
+  },
+  {
+   "topic": "305 Leominster Shirley Road site plan waiver and approval",
+   "resolution": "approved 3-0 with two conditions",
+   "quote": "t. cole made motion to approve the site plan approval waiver for 305 leominster shirley road, m. brenner seconded.",
+   "tags": [
+    "site plan approval",
+    "sight distance",
+    "contractor yard"
+   ]
+  },
+  {
+   "topic": "BrightFarms final site plan and Phase 1 land development plan",
+   "resolution": "final plan for signature; Phase 1 change referred to Graves Engineering for review",
+   "quote": "a. burney requested graves engineering, inc. to review the plan.",
+   "tags": [
+    "site plan",
+    "de minimis change",
+    "stormwater"
+   ]
+  },
+  {
+   "topic": "Rules and Regulations for Site Plan Approval and Special Permits hearing",
+   "resolution": "approved 3-0; hearing closed 8:30 p.m.",
+   "quote": "m. brenner made motion close the public hearing and to approve the board rules and regulations for site plan approval",
+   "tags": [
+    "public hearing",
+    "regulations",
+    "plan submittal"
+   ]
+  },
+  {
+   "topic": "Minutes of 03/08/21",
+   "resolution": "approved 3-0",
+   "quote": "m. brenner made motion to approve, t. cole seconded, roll call vote-",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "received",
+   "quote": "a meeting was scheduled for march 23 rd.",
+   "tags": [
+    "stormwater",
+    "agriculture",
+    "regional planning"
+   ]
+  },
+  {
+   "topic": "Director's items: DLTA and Pierce's APR",
+   "resolution": "received; APR to go on May town warrant",
+   "quote": "packet provided to board members.",
+   "tags": [
+    "technical assistance",
+    "agricultural preservation",
+    "warrant"
+   ]
+  },
+  {
+   "topic": "Ongoing items: subdivision and off-street parking regulations",
+   "resolution": "continued research; public hearing changes possible",
+   "quote": "the board had been looking for additional information regarding private camps and also take -out only services.",
+   "tags": [
+    "zoning",
+    "parking",
+    "subdivision"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "received",
+   "quote": "david rodgers, 82 highland street - he was looking for a better understanding of the parking calculation",
+   "tags": [
+    "parking",
+    "warrant article"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned 8:55 p.m., 3-0",
+   "quote": "m .brenner made motion to adjourn, t. cole seconded, roll call vote- t. cole, aye; m. brenner, aye; m. allison, aye.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "305 Leominster Shirley Road, Site Plan Approval Application",
+   "where": "list",
+   "quote": "documents used at meeting: 305 leominster shirley road, site plan approval application"
+  },
+  {
+   "name": "BrightFarms Final Site Plan",
+   "where": "list",
+   "quote": "final site plan phase 1 land development plan"
+  },
+  {
+   "name": "BrightFarms Phase 1 Land Development Plan",
+   "where": "list",
+   "quote": "final site plan phase 1 land development plan"
+  },
+  {
+   "name": "Minutes, 3/8/2021",
+   "where": "list",
+   "quote": "minutes, 3/8/2021 dlta rsd"
+  },
+  {
+   "name": "DLTA RSD",
+   "where": "list",
+   "quote": "dlta rsd chase and northfield road, apr update"
+  },
+  {
+   "name": "Chase and Northfield Road, APR Update",
+   "where": "list",
+   "quote": "chase and northfield road, apr update rules and regulations for site plan approval & special permits"
+  },
+  {
+   "name": "Rules and Regulations for Site Plan Approval & Special Permits",
+   "where": "list",
+   "quote": "rules and regulations for site plan approval & special permits"
+  },
+  {
+   "name": "Site Development Plan in Lunenburg, Massachusetts, Dated March 8, 2021",
+   "where": "text",
+   "quote": "adhere to the plan entitled site development plan in lunenburg, massachusetts, dated march 8, 2021."
+  },
+  {
+   "name": "Chapter 325, Subdivision Regulations, Procedure for Submission and Review of Plans",
+   "where": "text",
+   "quote": "chapter 325, subdivision regulations, procedure for submission and review of plans"
+  },
+  {
+   "name": "Chapter 250, Zoning, Section 250 -6.1. Off Street Parking and Loading Areas",
+   "where": "text",
+   "quote": "chapter 250, zoning, section 250 -6.1. off street parking and loading areas"
+  },
+  {
+   "name": "parking calculation warrant article",
+   "where": "text",
+   "quote": "he was looking for a better understanding of the parking calculation warrant article."
+  }
+ ],
+ "tags": [
+  "planning board",
+  "site plan approval",
+  "zoning",
+  "brownfields",
+  "public hearing",
+  "remote meeting",
+  "parking regulations",
+  "agricultural preservation",
+  "COVID remote meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "documents used at meeting:"
+ },
+ "dropped_unquoted_by_field": {}
 }

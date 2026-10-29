@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "stormwater-task-force",
  "meeting_date": "2021-03-23",
  "docid": "5800",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "approve the budget to allow CEI to locate stormwater outfalls",
+   "motion": "Approve the budget so CEI can use it to try to locate the outfalls that could not be accessed or located.",
    "moved_by": "J. Rabbitt",
    "seconded_by": "M. Allison",
    "outcome": "not stated",
@@ -20,24 +20,225 @@
    "quote": "j. rabbitt motions to approve the budget- seconded by m. allison."
   },
   {
-   "motion": "use the training budget money for outfall sampling instead of in-person training",
+   "motion": "Use the IDDE training money for outfall sampling instead of CEI's in-person training.",
    "moved_by": "M. Allison",
    "seconded_by": "T. Dwyer",
    "outcome": "not stated",
    "procedural": false,
-   "quote": "motion by m. allison to use that money for outfall sampling as opposed to in- person training, seconded by t. dwyer",
-   "quote_taken_from_text": true
+   "quote": "motion by m. allison to use that money for outfall sampling"
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:20PM.",
    "moved_by": "M. Allison",
    "seconded_by": "A. Burney",
-   "outcome": "passed",
+   "outcome": "not stated",
    "procedural": true,
    "quote": "motion by m. allison- seconded by a. burney to adjourn the meeting at 8:20pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "Document is clearly readable. Note: nominations for Chair, Vice-Chair and Clerk are recorded but no explicit vote is stated on their acceptance, only that they were nominated and seconded.",
- "cost_usd": 0.0891765
+ "note": "Extracted text, not a scan. No motion has a recorded vote count, so every outcome is recorded as not stated. Nominations for Chair, Vice-Chair and Clerk are recorded without votes. Attendance is as printed for a meeting held via ZOOM; per-person attendance mode is not stated, so all are marked present.",
+ "cost_usd": 0.01607866,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Todd Dwyer",
+   "role": "Select Board representative",
+   "status": "present",
+   "quote": "in attendance were todd dwyer (select board representative), jack rabbitt (conservation), adam burney (land use director), heather lemieux (town manager, nick cristoforia (cei representative), rob oliver (dpw), and matt allison"
+  },
+  {
+   "name": "Jack Rabbitt",
+   "role": "Conservation",
+   "status": "present",
+   "quote": "in attendance were todd dwyer (select board representative), jack rabbitt (conservation), adam burney (land use director), heather lemieux (town manager, nick cristoforia (cei representative), rob oliver (dpw), and matt allison"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "in attendance were todd dwyer (select board representative), jack rabbitt (conservation), adam burney (land use director), heather lemieux (town manager, nick cristoforia (cei representative), rob oliver (dpw), and matt allison"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "in attendance were todd dwyer (select board representative), jack rabbitt (conservation), adam burney (land use director), heather lemieux (town manager, nick cristoforia (cei representative), rob oliver (dpw), and matt allison"
+  },
+  {
+   "name": "Nick Cristoforia",
+   "role": "CEI representative",
+   "status": "present",
+   "quote": "in attendance were todd dwyer (select board representative), jack rabbitt (conservation), adam burney (land use director), heather lemieux (town manager, nick cristoforia (cei representative), rob oliver (dpw), and matt allison"
+  },
+  {
+   "name": "Rob Oliver",
+   "role": "DPW",
+   "status": "present",
+   "quote": "in attendance were todd dwyer (select board representative), jack rabbitt (conservation), adam burney (land use director), heather lemieux (town manager, nick cristoforia (cei representative), rob oliver (dpw), and matt allison"
+  },
+  {
+   "name": "Matt Allison",
+   "role": "not stated",
+   "status": "present",
+   "quote": "in attendance were todd dwyer (select board representative), jack rabbitt (conservation), adam burney (land use director), heather lemieux (town manager, nick cristoforia (cei representative), rob oliver (dpw), and matt allison"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee continues as a 3-member committee rather than expanding to 5 members (majority agreement, no vote recorded).",
+   "quote": "the majority of members agree to continue with a 3-member committee"
+  },
+  {
+   "decision": "The committee will meet monthly.",
+   "quote": "based on previous meetings this committee will be held monthly."
+  },
+  {
+   "decision": "The next meeting is set for April 21, 2021, at 7 PM.",
+   "quote": "the next meeting is scheduled for april 21, 2021, at 7 pm."
+  },
+  {
+   "decision": "The committee would like to hold a meeting before the annual town meeting in May.",
+   "quote": "committee would like to have meeting prior to the annual town meeting in may."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Outfall location budget (Task 5)",
+   "what_was_recorded": "CEI proposed using the budget to locate 57 of 369 known outfalls, and the money must be spent by this fiscal year; no dollar figure is printed.",
+   "quote": "due to input from h. lemieux -money needs to be spent by this fiscal year.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "IDDE training cost (Task 10)",
+   "what_was_recorded": "CEI's in-person IDDE training costs 2 thousand, or can be done free through an online video; the money was moved to outfall sampling by motion.",
+   "quote": "cei offers in-person training that costs 2 thousand or can be done free of charge via an online training video.",
+   "figures_as_printed": [
+    "2 thousand"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Redirect the IDDE in-person training money to outfall sampling instead.",
+   "outcome": "not stated",
+   "amount_as_printed": "2 thousand",
+   "quote": "motion by m. allison to use that money for outfall sampling"
+  }
+ ],
+ "public_comment": [
+  {
+   "topic": "general public comment: no comment offered",
+   "quote": "i. public comment - public no comment."
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment and committee size",
+   "resolution": "no public comment; committee continues as 3 members",
+   "quote": "jack proposes increasing the size of the committee from 3 to 5 members",
+   "tags": [
+    "committee size",
+    "public comment"
+   ]
+  },
+  {
+   "topic": "Reorganization of the committee",
+   "resolution": "nominations made for Chair, Vice-Chair and Clerk; no vote recorded",
+   "quote": "a new chair needs to be appointed since phyllis luck is no longer with the committee.",
+   "tags": [
+    "officers",
+    "chair"
+   ]
+  },
+  {
+   "topic": "MS4 Permit update with CEI",
+   "resolution": "updates received on Year 2 and Year 3 tasks; motions on outfall sampling and IDDE training money",
+   "quote": "7:05 pm meeting with cei to hear updates on tasks associated with the ms4 permit.",
+   "tags": [
+    "MS4 permit",
+    "CEI",
+    "outfalls",
+    "IDDE"
+   ]
+  },
+  {
+   "topic": "Upcoming meeting schedule",
+   "resolution": "noted; wants a meeting before the May town meeting",
+   "quote": "committee would like to have meeting prior to the annual town meeting in may.",
+   "tags": [
+    "schedule"
+   ]
+  },
+  {
+   "topic": "Next meeting and action items",
+   "resolution": "monthly meetings; next meeting April 21, 2021",
+   "quote": "the next meeting is scheduled for april 21, 2021, at 7 pm.",
+   "tags": [
+    "schedule",
+    "action items"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:20PM (motion, no result recorded)",
+   "quote": "motion by m. allison- seconded by a. burney to adjourn the meeting at 8:20pm.",
+   "tags": [
+    "procedural"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual stormwater report (submitted every September)",
+   "where": "text",
+   "quote": "task 1. the annual report is submitted every september."
+  },
+  {
+   "name": "Progress report to EPA for the IDDE plan (June)",
+   "where": "text",
+   "quote": "task 2. progress report to be submitted to epa for idde plan to track progress."
+  },
+  {
+   "name": "BAT tool (BMP assessment and tracking tool)",
+   "where": "text",
+   "quote": "the bat tool (bmp assessment and tracking tool) is being implemented."
+  },
+  {
+   "name": "Brief memorandum on annual stormwater BMP inspection",
+   "where": "text",
+   "quote": "a brief memorandum will be submitted."
+  },
+  {
+   "name": "Updated stormwater management plan and IDDE plan",
+   "where": "text",
+   "quote": "an updated stormwater management plan and idde plan."
+  },
+  {
+   "name": "Phosphorus source identification report for Nashua River",
+   "where": "text",
+   "quote": "phosphorus source identification report for nashua river"
+  },
+  {
+   "name": "Nicks' list (CEI list)",
+   "where": "text",
+   "quote": "update based on nicks' list."
+  }
+ ],
+ "tags": [
+  "stormwater",
+  "MS4 permit",
+  "IDDE",
+  "outfall sampling",
+  "committee reorganization",
+  "budget",
+  "EPA reporting",
+  "Nashua River phosphorus"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

@@ -71,9 +71,13 @@ const TONE: Record<Tone, string> = {
 }
 const HATCH = 'repeating-linear-gradient(135deg, var(--axis) 0 4px, var(--surface-3) 4px 7px)'
 /** A legend entry's swatch: its tone, or a pattern -- 'outline' (budgeted, not spent: an
- *  empty box in the tone) or 'half' (another town pays the base, the tone the increase). */
+ *  empty box in the tone), 'half' (another town pays the base, the tone the increase) or
+ *  'empty' (LOOKED FOR AND NOT FOUND: a dashed empty box, so a checked absence can never be
+ *  mistaken for a filled state -- a solid colour reads as "yes" whatever the legend says). */
 function fill(t: Tone | undefined, pattern?: string): React.CSSProperties {
   if (!t) return { background: 'var(--surface-3)' }
+  if (pattern === 'empty') return { background: 'transparent', outlineOffset: '-1.5px',
+    outline: `1.5px dashed ${t === 'muted' ? 'var(--text-muted)' : TONE[t]}` }
   if (pattern === 'outline') return { background: 'transparent', boxShadow: `inset 0 0 0 2px ${TONE[t]}` }
   if (pattern === 'half') return { background: `linear-gradient(to bottom, transparent 50%, ${TONE[t]} 50%), ${HATCH}` }
   if (t === 'other') return { background: HATCH }

@@ -28,6 +28,18 @@
    "elsewhere": [],
    "groups": [
     {
+     "title": "One year, every fund",
+     "topics": [
+      "fy-breakdown"
+     ]
+    },
+    {
+     "title": "School lines against budget",
+     "topics": [
+      "budget-against-actual"
+     ]
+    },
+    {
      "title": "Money in and out",
      "topics": [
       "school-money-in",
@@ -79,6 +91,7 @@
    "related": [],
    "shelf": "School budget, all funds",
    "start": [
+    "fy-breakdown",
     "budget-lines-all-funds",
     "grant-coding"
    ],
@@ -149,7 +162,6 @@
       "spending-by-category",
       "participation",
       "athletic-fee",
-      "fee-fund-ledger",
       "fee-fund-history",
       "athletic-director",
       "fy2026-athletics-underspend"
@@ -1746,6 +1758,20 @@
    ],
    "title": "Seats changing hands"
   },
+  "budget-against-actual": {
+   "finding": "School lines land near their vote in total every year, and far from it one by one, in both directions.",
+   "generator": "scripts/build_budget_against_actual.py",
+   "home": "school-all-funds",
+   "id": "budget-against-actual",
+   "minutes": 1,
+   "path": "/school-all-funds/budget-against-actual",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "School lines against budget"
+  },
   "budget-burndown": {
    "finding": "By the end of March FY2026 had 40.2% of its budget left, against 33.0% and 32.6% in FY2023 and FY2024.",
    "generator": "scripts/build_journal_surplus_topics.py",
@@ -2360,20 +2386,6 @@
    "minutes": 3,
    "path": "/athletics/fee-fund-history",
    "ready": true,
-   "related": [],
-   "shelves": [
-    "athletics"
-   ],
-   "title": "Fee fund history"
-  },
-  "fee-fund-ledger": {
-   "finding": "The fee fund’s cash fell $103,853 in FY2024; four journal entries then brought in $254,121 in FY2025.",
-   "generator": "scripts/build_athletics_topics.py",
-   "home": "athletics",
-   "id": "fee-fund-ledger",
-   "minutes": 2,
-   "path": "/athletics/fee-fund-ledger",
-   "ready": true,
    "related": [
     {
      "id": "pay-moved-between-funds",
@@ -2385,7 +2397,7 @@
    "shelves": [
     "athletics"
    ],
-   "title": "Fee fund ledger"
+   "title": "Fee fund history"
   },
   "foundation-budget": {
    "finding": "The state priced Lunenburg’s schools at $22,073,946 for FY2026; Chapter 70 equals 41.8% of that.",
@@ -2499,6 +2511,20 @@
     "free-cash"
    ],
    "title": "Free cash sources"
+  },
+  "fy-breakdown": {
+   "finding": "The school lines left $32,022 in FY2023 and $482,118 in FY2026; pick a year to see what moved in it.",
+   "generator": "scripts/build_fy_breakdown.py",
+   "home": "school-all-funds",
+   "id": "fy-breakdown",
+   "minutes": 1,
+   "path": "/school-all-funds/fy-breakdown",
+   "ready": true,
+   "related": [],
+   "shelves": [
+    "school-all-funds"
+   ],
+   "title": "FY breakdown"
   },
   "fy2011-teacher-reading": {
    "finding": "The state’s file reads 102.3 teacher FTE for FY2011: 18.1 below FY2010 and 12.1 below FY2012.",
@@ -3262,7 +3288,7 @@
    "title": "Home value and bill"
   },
   "homes-and-enrolment": {
-   "finding": "773 more single-family homes since FY1994; enrolment is 319 below its FY2003 peak.",
+   "finding": "773 more single-family homes since FY1994; enrolment is 321 below its FY2001 peak.",
    "generator": "scripts/build_homes_and_taxes_topics.py",
    "home": "homes-and-taxes",
    "id": "homes-and-enrolment",
@@ -3963,10 +3989,10 @@
    "ready": true,
    "related": [
     {
-     "id": "fee-fund-ledger",
-     "path": "/athletics/fee-fund-ledger",
-     "title": "Fee fund ledger",
-     "why": "The athletic fee fund’s cash, year by year"
+     "id": "fee-fund-history",
+     "path": "/athletics/fee-fund-history",
+     "title": "Fee fund history",
+     "why": "The athletic fee fund, every year held"
     }
    ],
    "shelves": [

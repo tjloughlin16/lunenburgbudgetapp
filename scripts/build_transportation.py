@@ -1832,10 +1832,12 @@ def build_conclusions(m):
         basis='MUNIS school special funds year-end reports, fund 1301, FY2023 to FY2026: '
               'revenue rows against expended plus encumbered; the general fund athletic '
               'transportation account’s FY2025 transfer; the FY2026 budget overview.',
-        not_shown='The fund’s balance at any 30 June since 2020 is not published, so whether it '
-                  'ran below zero is unknown. In FY2026 its purchase-of-service account spent '
-                  'about what it did in FY2024; what that bought is not itemised.',
-        see=[('/analysis/athletics-ledger', 'The athletics fee fund, line by line')],
+        not_shown='The fund’s year-end balances are printed on different bases (cash in one year, '
+                  'fund balance in another), so they are not one series. In FY2026 its '
+                  'purchase-of-service account spent about what it did in FY2024; what that bought '
+                  'is not itemised.',
+        see=[('/athletics/fee-fund-history', 'The athletic fee fund, year by year'),
+             ('/analysis/athletics-ledger', 'The athletics fee fund, line by line')],
     ))
 
     # 7. Locked-in growth: the contract against the model.
@@ -2860,10 +2862,12 @@ def render_audit(m, rows=()):
       % (C.fy(last), C.usd(L['athletic']['spent']), usd2(fb[2026]['hs_pos']), C.fy(2024),
          usd2(fb[2024]['hs_pos']), m['gaps']['fee-pos']))
     lb = ff['last_balance']
-    a('**The balance is not known.** The last published is %s at 30 June %s, in the Finance '
-      'Committee’s special revenue fund workbook (`%s`, stated). Receipts and spending do not '
-      'give a balance without a starting one, so whether the fund ran below zero in %s cannot '
-      'be said (registered: *%s*).\n\n'
+    a('**The year-end balances are printed, on different bases.** Before them the last published '
+      'was %s at 30 June %s, in the Finance Committee’s special revenue fund workbook (`%s`, '
+      'stated). Each later 30 June, and the cashbook’s running total within the year, is on '
+      '[the fee fund’s own page](/athletics/fee-fund-history): by our running total of the '
+      'cashbook the fund’s cash went below zero inside %s, our reading of the order of '
+      'postings (registered: *%s*).\n\n'
       % (usd2(lb['amount']), lb['as_of'][:4], lb['source'], C.fy(2024), m['gaps']['fee-balance']))
 
     # ---- the restoration

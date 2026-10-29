@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "select-board",
  "meeting_date": "2021-03-16",
  "docid": "5278",
@@ -12,89 +12,591 @@
  },
  "votes": [
   {
-   "motion": "Ratify the Town Manager's appointment of Peter Tomlinson as COA Van Driver",
+   "motion": "To ratify the Town Manager's appointment of Peter Tomlinson as COA Van Driver.",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "to ratify the town managers appointment to coa van driver of peter tomlinson vote: ms. adams-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. marino-aye, mr. alonzo-aye"
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: m. jeffreys 2n: t. dwyer to ratify the town managers appointment to coa van driver of peter tomlinson"
   },
   {
-   "motion": "Convey property at 111 Mulpus Road Rear and 970 NW Townsend Road Rear to the Conservation Commission for conservation and recreation purposes",
+   "motion": "To convey 111 Mulpus Road Rear and 970 NW Townsend Road Rear to the Conservation Commission for recreation purposes under MGL c. 40, §8C, and authorize the Chair to sign the transfer documents.",
    "moved_by": "T. Alonzo",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "vote to convey the property located at 111 mulpus road rear, parcel id 043-0025-00, and 970 nw townsend road rear, parcel id 04-0001-00, in the town of lunenburg ===page 7=== consideration, to the bunenburg conservation c",
-   "quote_taken_from_text": true
+   "quote": "motion: t. alonzo 2n°: m. jeffreys vote to convey the property located at 111 mulpus road rear, parcel id 043-0025-00,"
   },
   {
-   "motion": "Recommend approval of Article A to hear and accept regular written reports of town officers and committees",
+   "motion": "To recommend approval of Annual Town Meeting Article A (accept the regular written reports of Town officers and committees).",
    "moved_by": "J. Marino",
    "seconded_by": "M. Jeffreys",
-   "outcome": "passed 5-0",
-   "procedural": true,
-   "quote": "motion: j. marino 2nd: m. jeffreys to recommend approval of article a vote: ms. adams- aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys-aye, mr. alonzo- ay",
-   "quote_taken_from_text": true
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "motion: j. marino 2nd: m. jeffreys to recommend approval of article a"
   },
   {
-   "motion": "Recommend approval of Article B to authorize revolving funds for various departments for fiscal year 2022",
+   "motion": "To recommend approval of Annual Town Meeting Article B (revolving funds for FY2022).",
    "moved_by": "K. Adams",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: k. adams 2'°: j. marino to recommend approval of article b. vote: ms. adams-aye, mr. dwyer-aye, mr. marino-aye, mr. jeffreys- aye, mr. alonzo-aye"
+   "quote": "motion: k. adams 2'°: j. marino to recommend approval of article b."
   },
   {
-   "motion": "Recommend approval of Article P to appropriate $15,000 from cemetery lot sales for cemetery care and improvement",
+   "motion": "To recommend approval of Annual Town Meeting Article P (appropriate $15,000 from the Sale of Cemetery Lots account for cemetery care).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2°: t. dwyer to recommend approval of article p. vote: mr. jeffreys-aye, mr. marino-aye, mr. dwyer-aye, ms. adams-aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2°: t. dwyer to recommend approval of article p."
   },
   {
-   "motion": "Recommend approval of Article Q to rescind the $750,000 borrowing authorization from the May 5, 2012 Annual Town Meeting for high school feasibility study",
+   "motion": "To recommend approval of Annual Town Meeting Article Q (rescind the $750,000 borrowing authorization for a Lunenburg High School feasibility study).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "J. Marino",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: j. marino to recommend approval of article q. vote: mr. jeffreys-aye, mr. marino- aye, mr. dwyer-aye, ms. adams- aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2nd: j. marino to recommend approval of article q."
   },
   {
-   "motion": "Recommend approval of Article R to rescind the $38,414,779.21 borrowing authorization from January 7, 2014 Special Town Meeting for middle/high school construction",
+   "motion": "To recommend approval of Annual Town Meeting Article R (rescind the remaining $38,414,779.21 borrowing authorization for the Lunenburg Middle/High School).",
    "moved_by": "J. Marino",
    "seconded_by": "T. Dwyer",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: j. marino 2n°: t. dwyer to recommend approval of article r. vote: mr. marino-aye, mr. jeffreys- aye, ms. adams-aye, mr. dwyer- aye, mr. alonzo-"
+   "quote": "motion: j. marino 2n°: t. dwyer to recommend approval of article r."
   },
   {
-   "motion": "Recommend approval of Article V to hear an interim report from the TCP Building Design Committee",
+   "motion": "To recommend approval of Annual Town Meeting Article V (hear an interim report from the TCP Building Design Committee).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "outcome": "not stated",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2n: t. dwyer to recommend approval of article v. vote: mr. jeffreys-aye, ms. adams-aye, mr. marino, mr. dwyer-aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2n: t. dwyer to recommend approval of article v."
   },
   {
-   "motion": "Recommend approval of Article X to amend zoning code defining two-family dwellings requiring 1.5 times the lot size of the district",
+   "motion": "To recommend approval of Annual Town Meeting Article X (two-family dwelling definition, Code §250-4.1H(5)).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "K. Adams",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: k. adams to recommend approval of article x. vote: mr. jeffreys-aye, mr. dwyer-aye, ms. adams-aye, mr. marino-aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2nd: k. adams to recommend approval of article x."
   },
   {
-   "motion": "Recommend approval of Article O to create a Health Insurance Stabilization Fund with an initial appropriation of $369,334",
+   "motion": "To recommend approval of Annual Town Meeting Article Z (APR match, Pierce's Christmas Tree Farm).",
+   "moved_by": "K. Adams",
+   "seconded_by": "M. Jeffreys",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "vote: k. adams 2nd: m. jeffreys to recommend approval of article z."
+  },
+  {
+   "motion": "To recommend approval of Annual Town Meeting Article BB (transfer $30,929.43 into the Sewer Capital Reserve Stabilization Fund).",
+   "moved_by": "M. Jeffreys",
+   "seconded_by": "J. Marino",
+   "outcome": "passed",
+   "procedural": false,
+   "quote": "vote: m. jeffreys 2n°: j. marino to recommend approval of article bb."
+  },
+  {
+   "motion": "To recommend approval of Annual Town Meeting Article O (create a Health Insurance Stabilization Fund, amount $369,334).",
    "moved_by": "M. Jeffreys",
    "seconded_by": "T. Dwyer",
-   "outcome": "passed 5-0",
+   "outcome": "passed",
    "procedural": false,
-   "quote": "motion: m. jeffreys 2nd: t. dwyer to recommend approval of article o. vote: ms. adams-aye, mr. marino-aye, mr. dwyer-aye, mr. jeffreys-aye, mr. alonzo-aye"
+   "quote": "motion: m. jeffreys 2nd: t. dwyer to recommend approval of article o."
   }
  ],
- "dropped_unquoted": 2,
- "note": "These minutes are OCR-scanned (marked ===OCR macOS Vision===) with minor errors (e.g., 'bunenburg' for Lunenburg, 'Mir.' for Mr., '2n°' and '2'°' for '2nd'). Two votes have incomplete vote records: Article R shows Mr. Alonzo-[no explicit aye], and Article V shows Mr. Marino [no explicit -aye]—marked as 'not stated' per minute rules.",
- "cost_usd": 0.1733345
+ "dropped_unquoted": 0,
+ "note": "OCR scan of the minutes, with garbled passages on pages 3, 7, 8, 10 and 11, so some sentences are partly unreadable. Votes are recorded by name with \"aye\" and no printed count, so outcomes are recorded as \"passed\". The Article R vote line is truncated, and Article V's vote lists Mr. Marino without \"aye\". No motion is recorded for Article L (OPEB), Article DD (Salary Administration) or the parking zoning article. The cemetery article is labelled \"A.\" in the text but \"Article P\" in the vote. The conveyance heading gives 960 NW Townsend Rd. while the motion gives 970 NW Townsend Road Rear. The revolving fund figures are printed in a column separate from the fund names, so they are not matched to names. The Pierce property acreage is printed as \"110 or 110 acres\".",
+ "cost_usd": 0.029602459999999997,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Tom Alonzo",
+   "role": "Chair",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Michael-Ray Jeffreys",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Katey Adams",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Todd Dwyer",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Jim Marino",
+   "role": "",
+   "status": "present",
+   "quote": "members present: tom alonzo, chair; michael-ray jeffreys, vice chairman; katey adams, clerk; todd dwyer, jim marino"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; michele padula, apr acquisition planner:"
+  },
+  {
+   "name": "Michele Padula",
+   "role": "APR Acquisition Planner",
+   "status": "present",
+   "quote": "also present: heather lemieux, town manager; michele padula, apr acquisition planner:"
+  },
+  {
+   "name": "Bill Tyler",
+   "role": "Cemetery Commission Chair",
+   "status": "present",
+   "quote": "cemetery commission chair bill tyler thanked outgoing commissioner lorraine mendoza"
+  },
+  {
+   "name": "Erik Arnold",
+   "role": "Personnel Committee Chair",
+   "status": "present",
+   "quote": "erik arnold, personnel committee chair; julie belliveau, human resources/asst. town manager; adam burney, land use director:"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Human Resources/Asst. Town Manager",
+   "status": "present",
+   "quote": "erik arnold, personnel committee chair; julie belliveau, human resources/asst. town manager; adam burney, land use director:"
+  },
+  {
+   "name": "Adam Burney",
+   "role": "Land Use Director",
+   "status": "present",
+   "quote": "erik arnold, personnel committee chair; julie belliveau, human resources/asst. town manager; adam burney, land use director:"
+  },
+  {
+   "name": "Bob Pease",
+   "role": "Conservation Commission Chair",
+   "status": "present",
+   "quote": "bob pease, conservation commission chair"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Board agreed the appointment-process timing suggestions in the Executive Assistant's memo were acceptable.",
+   "quote": "the board had no issues with ms. peterson's suggestions."
+  },
+  {
+   "decision": "The appointment process question (reappointment form, ad hoc vs. standing committees) was deferred to a future meeting for lack of consensus.",
+   "quote": "since there was lack of consensus on the process since the board began working on this goal, it will be discussed at a future meeting."
+  },
+  {
+   "decision": "The Chair will work with the Town Manager on the order of the Annual Town Meeting articles.",
+   "quote": "mr. alonzo will work with ms. lemieux on the order of them."
+  },
+  {
+   "decision": "The Board will not meet on March 23 and will meet on March 30, when it would finalize the warrant.",
+   "quote": "mr. alonzo noted this board is not meeting on the 23d but will be meeting on march 30th."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "APR town contribution",
+   "what_was_recorded": "The Town contribution to the Agricultural Preservation Restriction would be $66,500 if approved; the contribution is reduced to 10% because of the Right to Farm bylaw and Agricultural Commission.",
+   "quote": "ms. lemieux noted the town contribution would be $66,500, if approved.",
+   "figures_as_printed": [
+    "$66,500"
+   ]
+  },
+  {
+   "topic": "APR appraisal value",
+   "what_was_recorded": "The 99-acre APR property was appraised at $665,000; the donor is gifting 10 acres.",
+   "quote": "we did appraise 99 acres with the value of $665,000, but mr. pierce will be gifting 10",
+   "figures_as_printed": [
+    "$665,000"
+   ]
+  },
+  {
+   "topic": "Cemetery care appropriation",
+   "what_was_recorded": "Article P would appropriate $15,000 from the Sale of Cemetery Lots account for cemetery care and improvement; no appropriation was made last year due to the pandemic.",
+   "quote": "a. to see if the town will vote to appropriate the sum of $15,000 from the sale of cemetery lots account",
+   "figures_as_printed": [
+    "$15,000"
+   ]
+  },
+  {
+   "topic": "FY22 revolving fund spending limits",
+   "what_was_recorded": "Article B set FY22 spending limits for nine revolving funds. The minutes print the nine figures in a column separate from the fund names, so the figures are not matched to names in the text.",
+   "quote": "fy22 spending limit $100,000 $10,000 $13,000",
+   "figures_as_printed": [
+    "$100,000",
+    "$10,000",
+    "$13,000",
+    "$5,000",
+    "$12,000",
+    "$45,000",
+    "$5,000",
+    "$46,000",
+    "$30,000"
+   ]
+  },
+  {
+   "topic": "Rescind feasibility study borrowing",
+   "what_was_recorded": "Article Q would rescind the $750,000 borrowing authorization from 2012 for a Lunenburg High School feasibility study.",
+   "quote": "q. to see if the town will vote to rescind the sum of $750,000, the borrowing authorization,",
+   "figures_as_printed": [
+    "$750,000"
+   ]
+  },
+  {
+   "topic": "Rescind school construction borrowing",
+   "what_was_recorded": "Article R would rescind the remaining $38,414,779.21 borrowing authorization for the Lunenburg Middle/High School construction.",
+   "quote": "r. to see if the town will vote to rescind the sum of $38,414,779.21, the remaining borrowing",
+   "figures_as_printed": [
+    "$38,414,779.21"
+   ]
+  },
+  {
+   "topic": "Old Primary School survey quote",
+   "what_was_recorded": "Dillis & Roy Civil Engineering Group offered to update the existing conditions plan for $750, to be covered under the FY21 Facilities budget rather than the Annual Town Meeting design article.",
+   "quote": "they can update the existing conditions plan for us for $750.",
+   "figures_as_printed": [
+    "$750"
+   ]
+  },
+  {
+   "topic": "Primary School fire alarm earmark",
+   "what_was_recorded": "A $25,000 state earmark for the Primary School Fire Alarm Upgrade must be spent by June 30, 2021, unless the legislature extends it; the School Facilities Director said the project cannot proceed without funding for its full $127,000 cost.",
+   "quote": "the $25,000 earmark we received for the primary school fire alarm upgrade",
+   "figures_as_printed": [
+    "$25,000",
+    "$127,000"
+   ]
+  },
+  {
+   "topic": "Old Primary School landscape design",
+   "what_was_recorded": "The DPW Director is securing quotes for a full landscape design; funding will be requested at Annual Town Meeting with a recommendation to take it from Free Cash. No dollar figure is printed.",
+   "quote": "the dpw director is also securing quotes for a full landscape design of the old primary school property.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Health Insurance Stabilization Fund amount",
+   "what_was_recorded": "Article O would create a Health Insurance Stabilization Fund and fund it with $369,334.",
+   "quote": "ms. lemieux reported the amount would be $369,334.",
+   "figures_as_printed": [
+    "$369,334"
+   ]
+  },
+  {
+   "topic": "Longevity pay for post-June 2021 hires",
+   "what_was_recorded": "Article DD's longevity bonus for employees hired after June 30, 2021 is set at $1,280 (department heads) and $850 (other positions) at 10 years, rising to $1,920 and $3,200 at 15 and 20 years. Employees hired before June 30, 2021 receive percentages of salary (2%, 2.5%, 3%) instead.",
+   "quote": "annual bonus equal to $1,280 payable in the first pay period after the employee's anniversary date. at 15 years of continuous service-$1,920 and at 20 years of continuous service-$3,200.",
+   "figures_as_printed": [
+    "$1,280",
+    "$1,920",
+    "$3,200",
+    "$850"
+   ]
+  }
+ ],
+ "transfers": [
+  {
+   "description": "Appropriate $15,000 from the Sale of Cemetery Lots account for cemetery care and improvement (Article P); Ms. Lemieux called it a transfer.",
+   "amount_as_printed": "$15,000",
+   "outcome": "Recommended for approval at Annual Town Meeting (passed 5-member vote to recommend)",
+   "quote": "ms. lemieux stated this is a transfer as stated in the article, for care, improvement and embellishment of the cemeteries."
+  },
+  {
+   "description": "Transfer from available funds into the Sewer Capital Reserve Stabilization Fund (Article BB).",
+   "amount_as_printed": "$30,929.43",
+   "outcome": "Recommended for approval at Annual Town Meeting",
+   "quote": "bb. to see if the town will vote to transfer from available funds $30,929.43 into the sewer"
+  },
+  {
+   "description": "Raise and appropriate or transfer from available funds into a new Health Insurance Stabilization Fund (Article O).",
+   "amount_as_printed": "$369,334",
+   "outcome": "Recommended for approval at Annual Town Meeting",
+   "quote": "ms. lemieux reported the amount would be $369,334."
+  }
+ ],
+ "public_comment": [
+  {
+   "speaker": "Tom Alonzo",
+   "stated_role": "Chair",
+   "topic": "Citizen Party caucus and open positions",
+   "quote": "mr. alonzo noted the citizen party caucus was held last night and there are 19 positions up"
+  },
+  {
+   "speaker": "Bill Tyler",
+   "stated_role": "Cemetery Commission Chair",
+   "topic": "Thanks to outgoing commissioner",
+   "quote": "cemetery commission chair bill tyler thanked outgoing commissioner lorraine mendoza"
+  },
+  {
+   "speaker": "Bob Pease",
+   "stated_role": "11 Wintergreen Court (Conservation Commission Chair)",
+   "topic": "Volunteer reappointment process",
+   "quote": "i just hope when reappointments come up you put yourself in the shoes of the volunteer who has spent a lot of"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Call to order, remote meeting notice, Pledge",
+   "resolution": "no action",
+   "quote": "chairman alonzo called the meeting to order at 7:00 p.m.",
+   "tags": [
+    "remote meeting",
+    "open meeting law"
+   ]
+  },
+  {
+   "topic": "Public comment",
+   "resolution": "noted (caucus results, thanks to outgoing commissioner)",
+   "quote": "mr. alonzo noted the citizen party caucus was held last night and there are 19 positions up",
+   "tags": [
+    "elections",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Announcements: Lunenburg Water District meeting",
+   "resolution": "noted",
+   "quote": "there is a non-binding article on their warrant to supply water to the potential development at howard street.",
+   "tags": [
+    "water district"
+   ]
+  },
+  {
+   "topic": "Appointments: meeting with sponsors of Annual Town Meeting articles",
+   "resolution": "sponsors presented articles (APR, Salary Administration, zoning, cemetery)",
+   "quote": "meeting with sponsors of annual town meeting articles, including:",
+   "tags": [
+    "annual town meeting",
+    "warrant articles",
+    "agricultural preservation restriction",
+    "salary administration",
+    "zoning",
+    "cemetery"
+   ]
+  },
+  {
+   "topic": "Ratify COA van driver appointment",
+   "resolution": "ratified",
+   "quote": "ratification of the town manager's appointment of coa van driver peter tomlinson",
+   "tags": [
+    "appointments",
+    "council on aging"
+   ]
+  },
+  {
+   "topic": "Convey land to Conservation Commission",
+   "resolution": "approved (conveyance vote)",
+   "quote": "vote to transfer land to conservation commission pursuant to of nov. 17, 2020 special",
+   "tags": [
+    "conservation land",
+    "special town meeting"
+   ]
+  },
+  {
+   "topic": "Town Manager evaluation process and timeline",
+   "resolution": "reviewed; schedule set out",
+   "quote": "review town manager evaluation process & timeline",
+   "tags": [
+    "town manager evaluation"
+   ]
+  },
+  {
+   "topic": "Minutes and warrants",
+   "resolution": "no minutes or warrants for signature",
+   "quote": "there were no minutes for approval this evening.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Committee reports",
+   "resolution": "noted",
+   "quote": "mr. jeffreys reported the library trustees continue working on their strategic five year plan.",
+   "tags": [
+    "library"
+   ]
+  },
+  {
+   "topic": "Fiscal Year 2022 budget, capital plan and Annual Town Meeting warrant articles",
+   "resolution": "recommendations voted on A, B, P, Q, R, V, X, Z, BB, O; no motion recorded on L, DD or the parking article",
+   "quote": "the warrant has closed and there are 32 articles for the annual town meeting.",
+   "tags": [
+    "budget",
+    "annual town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Appointment process procedure review",
+   "resolution": "continued to a future meeting",
+   "quote": "appointment process procedure review",
+   "tags": [
+    "appointments",
+    "committees"
+   ]
+  },
+  {
+   "topic": "Town Manager report",
+   "resolution": "noted (vacancies, Old Primary School, DPW, fire alarm earmark, hybrid meeting audio)",
+   "quote": "interested persons can find application forms on the town website and completed forms can be sent",
+   "tags": [
+    "vacancies",
+    "old primary school",
+    "fire alarm",
+    "public access"
+   ]
+  },
+  {
+   "topic": "COVID-19 update",
+   "resolution": "noted",
+   "quote": "the board of health issued their weekly update and the cumulative laboratory confirmed number of",
+   "tags": [
+    "covid-19",
+    "vaccination"
+   ]
+  },
+  {
+   "topic": "Annual Town Meeting warrant article recommendations",
+   "resolution": "recommended approval of A, B, P, Q, R, V, X, Z, BB, O",
+   "quote": "the board reviewed more annual town meeting warrant articles to make recommendations.",
+   "tags": [
+    "annual town meeting",
+    "warrant articles"
+   ]
+  },
+  {
+   "topic": "Public comment (volunteer reappointments)",
+   "resolution": "heard; board members responded",
+   "quote": "bob pease, 11 wintergreen court, stated five years ago he became interested in the work of the",
+   "tags": [
+    "reappointments",
+    "volunteers"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Annual Town Meeting Article A (accept written reports of Town officers and committees), Town Manager",
+   "where": "list",
+   "quote": "a. to see if the town will vote to hear and/or accept the regular written reports of the town"
+  },
+  {
+   "name": "Annual Town Meeting Article B (revolving funds, FY2022), Town Manager",
+   "where": "list",
+   "quote": "b. to see if the town will vote to authorize revolving funds for various departments, boards,"
+  },
+  {
+   "name": "Annual Town Meeting Article L (OPEB Trust Fund deposit), Town Manager",
+   "where": "list",
+   "quote": "l. to see if the town will vote to raise and appropriate or transfer from available funds, a sum"
+  },
+  {
+   "name": "Cemetery Commission article (text labelled A.; Article P in the vote), $15,000 from Sale of Cemetery Lots",
+   "where": "list",
+   "quote": "a. to see if the town will vote to appropriate the sum of $15,000 from the sale of cemetery lots account"
+  },
+  {
+   "name": "Annual Town Meeting Article Q (rescind $750,000 borrowing authorization), Finance Director",
+   "where": "list",
+   "quote": "q. to see if the town will vote to rescind the sum of $750,000, the borrowing authorization,"
+  },
+  {
+   "name": "Annual Town Meeting Article R (rescind $38,414,779.21 borrowing authorization), Finance Director",
+   "where": "list",
+   "quote": "r. to see if the town will vote to rescind the sum of $38,414,779.21, the remaining borrowing"
+  },
+  {
+   "name": "Annual Town Meeting Article V (interim report from TCP Building Design Committee), TCP Building Design Committee",
+   "where": "list",
+   "quote": "v. to see if the town will vote to hear an interim report from the tcp building design"
+  },
+  {
+   "name": "Annual Town Meeting Article X (two-family dwelling definition, Code §250-4.1H(5)), Planning Board",
+   "where": "list",
+   "quote": "x. to see if the town will vote to amend the code of lunenburg, §250-4.1h5, by inserting"
+  },
+  {
+   "name": "Annual Town Meeting Article Z (APR match, Pierce's Christmas Tree Farm), Select Board / APR sponsors",
+   "where": "list",
+   "quote": "z. to see if the town will vote to raise and appropriate or transfer from available funds the sum of"
+  },
+  {
+   "name": "Annual Town Meeting Article BB (transfer $30,929.43 to Sewer Capital Reserve Stabilization Fund), Sewer Commission",
+   "where": "list",
+   "quote": "bb. to see if the town will vote to transfer from available funds $30,929.43 into the sewer"
+  },
+  {
+   "name": "Annual Town Meeting Article O (Health Insurance Stabilization Fund), Town Manager",
+   "where": "list",
+   "quote": "o. to see if the town will vote to create a health insurance stabilization fund pursuant to"
+  },
+  {
+   "name": "Executive Assistant Peterson's memo on the appointment process timing and dates",
+   "where": "list",
+   "quote": "the board reviewed executive assistant peterson's memo regarding the timing and dates for the"
+  },
+  {
+   "name": "Annual Town Meeting Article DD (Salary Administration Plan, Chapter 70, longevity pay), Personnel Committee",
+   "where": "text",
+   "quote": "dd. to see if the town will vote to amend chapter 70 of the town's general bylaws, entitled \"salary administration plan\", schedule a as follows:"
+  },
+  {
+   "name": "Planning Board zoning article amending Code §250-6.1 (off-street parking), Planning Board",
+   "where": "text",
+   "quote": "a. to see if the town will vote to amend the code of lunenburg, §250-6.1, by deleting"
+  },
+  {
+   "name": "Town Manager Evaluation Process & Timeline",
+   "where": "text",
+   "quote": "review town manager evaluation process & timeline"
+  },
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G. L. c. 30A, § 20",
+   "where": "text",
+   "quote": "in accordance with the governor's order suspending certain provisions of the open meeting law, g. l. c. 30a, §"
+  },
+  {
+   "name": "DPH workplace safety standards for Indoor and Outdoor Events (Phase IV, Step 1)",
+   "where": "text",
+   "quote": "the dph issued the workplace safety standards for indoor and outdoor events, in advance of"
+  },
+  {
+   "name": "Lunenburg Water District warrant article (non-binding, Howard Street water supply)",
+   "where": "text",
+   "quote": "there is a non-binding article on their warrant to supply water to the potential development at howard street."
+  }
+ ],
+ "tags": [
+  "annual town meeting",
+  "warrant articles",
+  "agricultural preservation restriction",
+  "salary administration",
+  "zoning",
+  "parking",
+  "cemetery",
+  "conservation land",
+  "appointments",
+  "town manager evaluation",
+  "covid-19",
+  "school fire alarm",
+  "stabilization funds",
+  "budget",
+  "remote meeting"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "the board reviewed more annual town meeting warrant articles to make recommendations."
+ },
+ "dropped_unquoted_by_field": {}
 }

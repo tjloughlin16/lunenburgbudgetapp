@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2021-03-08",
  "docid": "3481",
@@ -12,39 +12,192 @@
  },
  "votes": [
   {
-   "motion": "accept and approve the minutes of the February 24, 2021 meeting",
+   "motion": "Approve the minutes of the February 24, 2021 meeting as presented.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta to accept and approve the minutes as presented second d. fortune roll call vote: all in favor"
+   "quote": "motion by j. bilotta to accept and approve the minutes as presented"
   },
   {
-   "motion": "grandfather current SAP employees in the existing longevity benefit and provide new employees with an amended benefit using Police/Fire rates for department heads and Clerical rates for other employees",
+   "motion": "Grandfather current SAP employees in the existing longevity benefit; new employees go into the amended benefit; SAP department heads use the Police/Fire longevity benefit and remaining SAP employees use the Clerical longevity benefit.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. MacDonald",
    "outcome": "passed 3-2",
    "procedural": false,
-   "quote": "motion by j. bilotta to grandfather current employees in existing sap longevity benefit, with any new employees participating in the amended benefit, and that the amended benefit utilize the police/fire longevity benefit for sap department heads and all remaining sap employees receive the clerical longevity benefit. second: d. macdonald roll call vote: three in favor of motion; two not in favor of motion motion passes"
+   "quote": "motion by j. bilotta to grandfather current employees in existing sap longevity benefit"
   },
   {
-   "motion": "amend the Town Meeting article to reflect the Personnel Committee's current recommendations regarding SAP positions and longevity pay amendments",
+   "motion": "Amend the Town Meeting article to reflect the Personnel Committee's current recommendations.",
    "moved_by": "J. Bilotta",
    "seconded_by": "",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by j. bilotta to amend the article to reflect the personnel committees current recommendations as noted above. roll call vote: all in favor of motion"
+   "quote": "motion by j. bilotta to amend the article to reflect the personnel committees current recommendations as noted above."
   },
   {
-   "motion": "adjourn the meeting",
+   "motion": "Adjourn the meeting at 6:00pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. Fortune",
    "outcome": "passed",
    "procedural": true,
-   "quote": "motion by j. bilotta to adjourn the meeting at 6:00pm second: d. fortune roll call vote: all in favor"
+   "quote": "motion by j. bilotta to adjourn the meeting at 6:00pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.11769450000000001
+ "note": "Zoom meeting per the header; the minutes do not say which attendees were remote, so status is recorded as present. Roll-call dissenters on the longevity motion are not named. Julie Belliveau appears as \"J. Belliveau\" in the discussion text and is recorded under the header spelling. The \"Also Present\" list is treated as present. The visiting attendees who opposed changing current employees' benefits are not named and are not labelled as public comment, so none is recorded. The minutes print no dollar figures; the article text is only partly reproduced.",
+ "cost_usd": 0.0212528,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Eric Arnold",
+   "role": "Committee Chair, presiding",
+   "status": "present",
+   "quote": "meeting began at 5:04 pm with all attendees present, eric arnold committee chair presiding"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, donna fortune, susan andrews"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, donna fortune, susan andrews"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, donna fortune, susan andrews"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, donna fortune, susan andrews"
+  },
+  {
+   "name": "Heather Lemieux",
+   "role": "Town Manager",
+   "status": "present",
+   "quote": "heather lemieux, town manager; julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "heather lemieux, town manager; julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Casey Burlingame",
+   "role": "Building Commissioner",
+   "status": "present",
+   "quote": "casey burlingame, building commissioner, susan doherty, coa director"
+  },
+  {
+   "name": "Susan Doherty",
+   "role": "COA Director",
+   "status": "present",
+   "quote": "casey burlingame, building commissioner, susan doherty, coa director"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "sewer business manager, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits/Risk Manager",
+   "status": "present",
+   "quote": "sewer business manager, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Treasurer/Tax Collector",
+   "status": "present",
+   "quote": "myleen mallari, treasurer/tax collector, rob oliva, dpw director"
+  },
+  {
+   "name": "Rob Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "myleen mallari, treasurer/tax collector, rob oliva, dpw director"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The committee agreed that the department heads should be more closely compared to the Police/Fire longevity amounts, which were approved at a higher benefit.",
+   "quote": "the committee agreed that the department heads should be more closely compared to the police/fire longevity amounts"
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP longevity benefit change from percent of salary to flat rate",
+   "what_was_recorded": "The minutes discuss the money effect of changing the SAP longevity benefit from a percent of salary to a flat rate and the prior flat-dollar changes in two union contracts, but print no dollar figures.",
+   "figures_as_printed": [],
+   "quote": "changed the longevity benefit from a percentage to a flat dollar amount during their last contract negotiations"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes",
+   "resolution": "approved",
+   "tags": [
+    "minutes"
+   ],
+   "quote": "minutes of the february 24, 2021 meeting reviewed"
+  },
+  {
+   "topic": "SAP Longevity Amendment",
+   "resolution": "approved 3-2 with grandfathering and department-head comparison to Police/Fire benefit",
+   "tags": [
+    "longevity",
+    "SAP",
+    "compensation"
+   ],
+   "quote": "motion by j. bilotta to grandfather current employees in existing sap longevity benefit"
+  },
+  {
+   "topic": "Town Meeting Article (SAP positions and Chapter 70 Section 26)",
+   "resolution": "amended to reflect committee recommendations; to May Town Meeting",
+   "tags": [
+    "town meeting",
+    "SAP",
+    "personnel classification"
+   ],
+   "quote": "this article will be presented at the may town meeting."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Spreadsheet on the impact of the SAP longevity amendment, prepared by J. Belliveau",
+   "where": "list",
+   "quote": "j. belliveau prepared a spreadsheet that represented the impact this amendment would have on town employees."
+  },
+  {
+   "name": "Town Meeting Article (SAP positions; Chapter 70 Section 26, Longevity Pay), for May Town Meeting",
+   "where": "text",
+   "quote": "the article incorporates the addition, into the sap, the following positions"
+  }
+ ],
+ "tags": [
+  "personnel committee",
+  "SAP longevity benefit",
+  "town meeting article",
+  "SAP position grades",
+  "Zoom meeting",
+  "2021"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "j. belliveau prepared a spreadsheet"
+ },
+ "dropped_unquoted_by_field": {}
 }

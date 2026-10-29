@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "cemetery-commission",
  "meeting_date": "2021-02-18",
  "docid": "1431",
@@ -12,23 +12,137 @@
  },
  "votes": [
   {
-   "motion": "Appropriate $15,000.00 from the Sale of Lots account for FY22 operating expenses",
-   "moved_by": "Nancy Foss - Yasko",
-   "seconded_by": "Lorraine Mendoza",
-   "outcome": "passed unanimously",
+   "motion": "Appropriate $15,000.00 from the Sale of Lots account at the Spring ATM for FY22 operating costs (proceed with the warrant article).",
+   "moved_by": "Commissioner Yasko",
+   "seconded_by": "Commissioner Mendoza",
+   "outcome": "passed",
    "procedural": false,
    "quote": "a motion was made by commissioner yasko to appropriate the sum of $15,000.00 from the sale of lots account at this spring's atm. it was duly seconded by commissioner mendoza, and a roll call vote was unanimous"
   },
   {
-   "motion": "Adjourn the meeting",
-   "moved_by": "",
-   "seconded_by": "",
+   "motion": "Adjourn the meeting.",
    "outcome": "passed",
    "procedural": true,
    "quote": "a motion was made to adjourn, duly seconded and by roll call vote was voted to adjourn at 4:50 pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1228525
+ "note": "Minutes are a single text page (PAGE 2 is empty); no scan issue. Meeting held via Zoom; the minutes say commissioners were present but do not separately mark remote attendance. The appropriation vote was roll call unanimous with no count printed, so outcome is recorded as passed. The adjournment motion names no mover or seconder. The parking lot approval is a decision without a recorded vote.",
+ "cost_usd": 0.01265316,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William Tyler",
+   "role": "Chairman",
+   "status": "present",
+   "quote": "called to order at 4:00 pm by chairman tyler"
+  },
+  {
+   "name": "Lorraine Mendoza",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "commissioners yasko and mendoza present along with dpw director oliva"
+  },
+  {
+   "name": "Nancy Foss - Yasko",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "commissioners yasko and mendoza present along with dpw director oliva"
+  },
+  {
+   "name": "Oliva",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "commissioners yasko and mendoza present along with dpw director oliva"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Commissioners agreed the North Cemetery parking lot plan looks fine and approved DPW Director Oliva going ahead with final plans (no recorded vote).",
+   "quote": "the commissioners all agreed that the plan looks fine and gave director oliva the approval to go ahead with final plans."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "FY22 operating appropriation",
+   "what_was_recorded": "Chairman Tyler recommended appropriating $15,000.00 to fund the Commission's operating costs for FY22, and the Commission voted to proceed with the warrant article for that amount.",
+   "figures_as_printed": [
+    "$15,000.00"
+   ],
+   "quote": "chairman tyler recommended appropriating the sum of $15,000.00 to fund our operating costs for fy22."
+  },
+  {
+   "topic": "Goodrich family burial yard fieldstone wall",
+   "what_was_recorded": "The fieldstones to continue the wall on two sides of the Goodrich burial yard were costed at approximately $5500.00; labor is donated and two granite posts and an iron gate are also part of the work.",
+   "figures_as_printed": [
+    "$5500.00"
+   ],
+   "quote": "the cost of these stones is approximately $5500.00."
+  },
+  {
+   "topic": "North Cemetery parking lot funding",
+   "what_was_recorded": "The parking lot project must be completed by the end of the fiscal year because of its funding source; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "this project, because of the funding source, needs to be completed by the end of the fiscal year"
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "FY22 appropriation for Town Meeting",
+   "resolution": "approved: $15,000.00 warrant article to proceed",
+   "quote": "first order of business was the discussion and vote on the commission's fy22 appropriation at this years town meeting.",
+   "tags": [
+    "appropriation",
+    "FY22",
+    "Town Meeting",
+    "Sale of Lots"
+   ]
+  },
+  {
+   "topic": "Monty Tech building site progress",
+   "resolution": "discussed; no action",
+   "quote": "a brief discussion ensued on the progress at the building site, and all agreed that monty tech is doing a great job",
+   "tags": [
+    "Monty Tech",
+    "building site"
+   ]
+  },
+  {
+   "topic": "North Cemetery parking lot expansion",
+   "resolution": "conceptual plans reviewed; approved to proceed with final plans",
+   "quote": "the north cemetery parking lot expansion was discussed, and the conceptual plans were reviewed.",
+   "tags": [
+    "North Cemetery",
+    "parking lot",
+    "bidding",
+    "DPW"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "North Cemetery parking lot conceptual plans",
+   "where": "text",
+   "quote": "the north cemetery parking lot expansion was discussed, and the conceptual plans were reviewed."
+  }
+ ],
+ "tags": [
+  "cemetery commission",
+  "FY22 appropriation",
+  "Sale of Lots account",
+  "Town Meeting",
+  "Goodrich burial yard",
+  "North Cemetery parking lot",
+  "Monty Tech",
+  "DPW",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

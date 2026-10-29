@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "board-of-health",
  "meeting_date": "2021-04-05",
  "docid": "1049",
@@ -12,55 +12,210 @@
  },
  "votes": [
   {
-   "motion": "Approve variances for 370 West Townsend Road including groundwater offset from four feet to two feet, sieve analysis, and well offset from 50 feet to 35 feet",
+   "motion": "Approve the requested variances for 370 West Townsend Road (groundwater offset, sieve analysis, well offset).",
    "moved_by": "Fortin",
    "seconded_by": "Jewell",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "on motion by fortin and second by jewell , the board voted unanimously to approve the variances by roll call vote."
+   "quote": "after discussion, on motion by fortin and second by jewell"
   },
   {
-   "motion": "Approve requested variances for 244 Pleasant Street for Geo Mat System including groundwater offset to 4 feet, inlet and outlet tees less than 12 inches, sieve analysis, and offset to wetlands from 100 feet to 35 feet",
+   "motion": "Approve the requested variances for 244 Pleasant Street (groundwater offset, tee sizes, sieve analysis, wetlands offset).",
    "moved_by": "Watters",
    "seconded_by": "Fortin",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "on motion by watters and second by fortin the board voted unanimously to approve the requested variances by roll call vote."
   },
   {
-   "motion": "Approve requested variances for 110 Sunset Lane including cellar wall offset from 10 feet to 3 feet and distance from common drive from 50 feet to 8 feet",
+   "motion": "Approve the requested variances for 110 Sunset Lane (cellar wall offset, common drive distance, well variance).",
    "moved_by": "Jewell",
    "seconded_by": "Watters",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": false,
    "quote": "on motion by jewell and second by watters the board voted unanimously to approve the requested variances by roll call vote."
   },
   {
-   "motion": "Re-grant the well variance for 809 Chase Road from 50 feet to property line to 40 feet",
+   "motion": "Re-grant the well variance for 809 Chase Road (well already installed, 40 feet to property line).",
    "moved_by": "Jewell",
    "seconded_by": "Fortin",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": false,
-   "quote": "on motion by jewell and second by fortin the board unanimously approved the re-granting of the well variance by roll call vote."
+   "quote": "the board unanimously approved the re-granting of the well variance by roll call vote."
   },
   {
-   "motion": "Approve meeting minutes for March 1, 2021 and March 15, 2021",
+   "motion": "Approve the minutes for March (3/1/2021 and 3/15/2021).",
    "moved_by": "Jewell",
    "seconded_by": "Emond",
-   "outcome": "passed 4-0",
+   "outcome": "passed unanimously",
    "procedural": true,
    "quote": "on motion by jewell and second by emond the minutes for march were unanimously approved by roll call vote."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 8:15 pm.",
    "moved_by": "Watters",
    "seconded_by": "Jewell",
-   "outcome": "passed 4-0",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "motion by watters and seconded by jewell, the meeting was adjourned at 8:15 pm by roll call vote, all in favor."
+   "quote": "motion by watters and seconded by jewell, the meeting was adjourned at 8:15 pm"
   }
  ],
  "dropped_unquoted": 0,
- "note": "Six votes recorded, all passed unanimously. Roll call showed four Board members present: Perry Jewell, George Emond, Paul Fortin, and Evan Watters.",
- "cost_usd": 0.09082849999999999
+ "note": "Extracted text with split words and spacing artifacts (for example 'publi c', 'remotel y', 'Cr owley'); quotes are normalised to single spaces and join words as printed. Votes are recorded as 'unanimously' or 'roll call'; no counts are printed, so outcomes read 'passed unanimously' or 'passed'. The minutes say the meeting 'will feature public comment', but no public comment is recorded. No dollar figures appear. No documents list is printed; the Governor's Order is named only in the opening statement.",
+ "cost_usd": 0.01636266,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Perry Jewell",
+   "role": "Vice-Chairman",
+   "status": "present",
+   "quote": "roll call conducted by vice-chairman, perry jewell:"
+  },
+  {
+   "name": "George Emond",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin and evan watters."
+  },
+  {
+   "name": "Paul Fortin",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin and evan watters."
+  },
+  {
+   "name": "Evan Watters",
+   "status": "present",
+   "quote": "perry jewell, george emond, paul fortin and evan watters."
+  },
+  {
+   "name": "Jim Garreffi",
+   "role": "Agent",
+   "status": "present",
+   "quote": "agent, jim garreffi, was also present."
+  },
+  {
+   "name": "Justin LeClair",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "justin leclair met with the board on behalf of the owner."
+  },
+  {
+   "name": "Doug Smith",
+   "role": "on behalf of the owner",
+   "status": "present",
+   "quote": "doug smith met with the board on behalf of the owner."
+  },
+  {
+   "name": "Chris Crowley",
+   "role": "new owner of this lot",
+   "status": "present",
+   "quote": "met with the board as the new owner of this lot."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Prom will not be held in Lunenburg, because nothing about prom incorporates social distancing (decided after discussion with the school nurse; no vote recorded).",
+   "quote": "it was decided that there is nothing about prom that incorporates social distancing so prom will not be held."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "370 West Townsend Road (Presby system, variances)",
+   "resolution": "approved variances",
+   "quote": "justin leclair met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variances",
+    "wells"
+   ]
+  },
+  {
+   "topic": "244 Pleasant Street (Geo Mat septic system, variances)",
+   "resolution": "approved variances",
+   "quote": "doug smith met with the board on behalf of the owner.",
+   "tags": [
+    "septic",
+    "variances"
+   ]
+  },
+  {
+   "topic": "110 Sunset Lane (septic, cellar wall and well variances)",
+   "resolution": "approved variances",
+   "quote": "this property has a steep slope and goes rapidly downhill.",
+   "tags": [
+    "septic",
+    "variances",
+    "wells"
+   ]
+  },
+  {
+   "topic": "60 Woodland Drive (public water)",
+   "resolution": "no action; board notified",
+   "quote": "board was notified that the owner has opted for public water.",
+   "tags": [
+    "public water"
+   ]
+  },
+  {
+   "topic": "809 Chase Road (well variance re-grant)",
+   "resolution": "re-granted well variance",
+   "quote": "as a part of the prior approval, a variance was approved for the well",
+   "tags": [
+    "wells",
+    "variances"
+   ]
+  },
+  {
+   "topic": "Meeting minutes, March 2021",
+   "resolution": "approved",
+   "quote": "on motion by jewell and second by emond the minutes for march were unanimously approved by roll call vote.",
+   "tags": [
+    "meeting minutes"
+   ]
+  },
+  {
+   "topic": "COVID-19 update and prom",
+   "resolution": "prom not held; information item",
+   "quote": "agent jim garreffi gave a covid update.",
+   "tags": [
+    "COVID-19",
+    "schools"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:15 pm",
+   "quote": "motion by watters and seconded by jewell, the meeting was adjourned at 8:15 pm",
+   "tags": [
+    "procedure"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Governor's Order Suspending Certain Provisions of the Open Meeting Law, G.L.c.30A, Section 20",
+   "where": "text",
+   "quote": "suspending certain provisions of the open meeting law, g.l.c.30a, section 20,"
+  }
+ ],
+ "tags": [
+  "Board of Health",
+  "variances",
+  "septic systems",
+  "private wells",
+  "public water",
+  "COVID-19 vaccine",
+  "prom",
+  "meeting minutes",
+  "remote meeting",
+  "roll call votes"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

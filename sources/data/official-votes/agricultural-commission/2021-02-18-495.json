@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2021-02-18",
  "docid": "495",
@@ -12,23 +12,193 @@
  },
  "votes": [
   {
-   "motion": "Recommend M. Holman for appointment to Economic Development Commission",
+   "motion": "Recommend M. Holman for appointment to the Economic Development Committee (EDC) as AgCom's appointee.",
    "moved_by": "R. Stober",
    "seconded_by": "G. Burns",
    "outcome": "passed",
-   "procedural": true,
+   "procedural": false,
    "quote": "r. stober moved the recommendation, g. burns 2nd. roll call, all aye."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting.",
    "moved_by": "R. Stober",
    "seconded_by": "M. Holman",
    "outcome": "passed",
    "procedural": true,
-   "quote": "r. stober moved to adjourn, m. holman 2nd. roll call, all aye."
+   "quote": "r. stober moved to adjourn, m. holman 2nd. roll call, all aye. adjourned at 8:13pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0788675
+ "note": "Plain-text extract of a Zoom meeting; the call to order and the start of each item are clear. Only two motions are recorded, both with roll call 'all aye' rather than a numeric count. The tabling of the EDC item is not a recorded vote. The 'Public Comment/Open Discussion' headings introduce board discussion; no member of the public is recorded as speaking, so public_comment is empty. Farmers Market Managers Yanina Fusaro and Mike Fontaine are listed in the signature area but are not recorded as taking part, so they are omitted. The Town Clerk and the guest speaker are referenced without names. The 'Matthew Allison' and 'Jorge Marzuca' names in the signature block are the only full names; Jorge Marzuca is not in the Present line. No documents list is printed. The court finding and MGL chapter 40 section 10 are referenced but not recorded as documents used.",
+ "cost_usd": 0.013743060000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "R. Stober",
+   "role": "Vice-Chair",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "G. Burns",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "M. Holman",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "K. McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "S. Schofield",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "present: m. allison, r. stober, g. burns, m. holman, k. mcclellan, s. schofield"
+  },
+  {
+   "name": "Jorge Marzuca",
+   "role": "Clerk",
+   "status": "not stated",
+   "quote": "jorge marzuca, clerk"
+  },
+  {
+   "name": "Chris Caswell",
+   "role": "graphic designer",
+   "status": "not stated",
+   "quote": "chris caswell, a graphic designer, offered help on the flyer."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The Economic Development Committee appointment item was tabled to welcome a guest speaker.",
+   "quote": "this discussion was tabled to welcome a guest speaker."
+  },
+  {
+   "decision": "The next meeting was set for March 18, 2021.",
+   "quote": "next meeting set for march 18, 2021."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Public market: bond bill for community kitchen",
+   "what_was_recorded": "M. Allison mentioned a bond bill with $350k for a community kitchen during the public market discussion.",
+   "figures_as_printed": [
+    "$350k"
+   ],
+   "quote": "m. allison mentioned the bond bill with $350k for a community kitchen."
+  },
+  {
+   "topic": "Public market: funding, management and oversight",
+   "what_was_recorded": "Discussion of a public market included questions about its funding, management and oversight; no dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "further discussion included questions about funding, management and oversight of such a market."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public comment / open discussion",
+   "resolution": "discussed, no action",
+   "tags": [
+    "open discussion"
+   ],
+   "quote": "public comment/open discussion: m. holman has invited a graphic designer to join the discussion on a flyer."
+  },
+  {
+   "topic": "Recent court finding on dog breeding as agriculture",
+   "resolution": "discussed, no action",
+   "tags": [
+    "dog breeding",
+    "court ruling",
+    "agriculture"
+   ],
+   "quote": "recent court finding, dog breeding is agriculture discussion."
+  },
+  {
+   "topic": "Economic Development Committee appointment",
+   "resolution": "tabled, then M. Holman recommended for appointment",
+   "tags": [
+    "appointment",
+    "economic development",
+    "planning board"
+   ],
+   "quote": "economic development comm. appointment update: m. allison repeated that planning board had officially changed"
+  },
+  {
+   "topic": "Draft flyer",
+   "resolution": "discussed, no action",
+   "tags": [
+    "flyer",
+    "graphic design"
+   ],
+   "quote": "draft flyer discussion: chris caswell, a graphic designer, offered help on the flyer."
+  },
+  {
+   "topic": "Public market update",
+   "resolution": "discussed, no action",
+   "tags": [
+    "public market",
+    "bond bill",
+    "community kitchen",
+    "voter signatures"
+   ],
+   "quote": "public market update: m. allison corrected himself again."
+  },
+  {
+   "topic": "Farmers market season",
+   "resolution": "discussed, no action",
+   "tags": [
+    "farmers market",
+    "management team"
+   ],
+   "quote": "m. allison stated that the farmers market season is fast approaching and we need to confirm and organize with the management team."
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 8:13pm",
+   "tags": [
+    "procedure"
+   ],
+   "quote": "r. stober moved to adjourn, m. holman 2nd. roll call, all aye. adjourned at 8:13pm."
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "bond bill (with $350k for a community kitchen)",
+   "where": "text",
+   "quote": "m. allison mentioned the bond bill with $350k for a community kitchen."
+  }
+ ],
+ "tags": [
+  "agricultural commission",
+  "zoom meeting",
+  "dog breeding",
+  "economic development appointment",
+  "public market",
+  "farmers market",
+  "flyer",
+  "community kitchen",
+  "bond bill"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

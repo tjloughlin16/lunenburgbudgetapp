@@ -227,8 +227,8 @@ RELATED = [
     ('/athletics/town-budget-and-fee-fund',
      'Both sides of the athletics money — what the fees bring in against what the town '
      'appropriates, and why an appropriation is not a cost'),
-    ('/athletics/fee-fund-ledger',
-     'The revolving fund the athletic fees are paid into, at transaction level'),
+    ('/athletics/fee-fund-history',
+     'The revolving fund the athletic fees are paid into, every year held'),
     ('connecting-the-budget',
      'Why a fee paid cannot be followed to anything it bought'),
 ]

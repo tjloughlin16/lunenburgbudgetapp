@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "agricultural-commission",
  "meeting_date": "2021-03-18",
  "docid": "496",
@@ -12,23 +12,171 @@
  },
  "votes": [
   {
-   "motion": "Approve the 2021 vendor application revisions",
-   "outcome": "passed",
+   "motion": "Approve the 2021 farmers market vendor application revisions (starting a week later, ending markets ½ hour earlier, fee reduction; entertainment sought with no compensation).",
    "moved_by": "",
    "seconded_by": "",
+   "outcome": "passed",
    "procedural": false,
    "quote": "all in favor of the 2021 application revisions by roll call, all aye."
   },
   {
-   "motion": "Adjourn",
-   "outcome": "passed",
+   "motion": "Adjourn the meeting.",
    "moved_by": "J. Marzuca",
    "seconded_by": "G. Burns",
+   "outcome": "passed",
    "procedural": true,
-   "quote": "j. marzuca moved to adjourn, g. burns 2nd. roll call, all aye."
+   "quote": "j. marzuca moved to adjourn, g. burns 2nd. roll call, all aye. adjourned at 7:32pm."
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.1055575
+ "note": "Clean digital text, no scan. One motion recorded (approval of 2021 application revisions, roll call all aye, mover and seconder not printed, no tally beyond 'all aye'). The 'Public Comment/Open Discussion' headings carry statements by board members and managers, not members of the public, so no public_comment entries were recorded. Ryan Stober appears only in the signature block, not in the Present line.",
+ "cost_usd": 0.020115400000000002,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "M. Allison",
+   "role": "Chair",
+   "status": "present",
+   "quote": "present: m. allison, j. marzuca, g. burns, m. holman, k. mcclellan, s. schofield, y. fusaro, m. fontaine"
+  },
+  {
+   "name": "J. Marzuca",
+   "role": "Clerk",
+   "status": "present",
+   "quote": "present: m. allison, j. marzuca, g. burns, m. holman, k. mcclellan, s. schofield, y. fusaro, m. fontaine"
+  },
+  {
+   "name": "G. Burns",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, j. marzuca, g. burns, m. holman, k. mcclellan, s. schofield, y. fusaro, m. fontaine"
+  },
+  {
+   "name": "M. Holman",
+   "role": "Member",
+   "status": "present",
+   "quote": "present: m. allison, j. marzuca, g. burns, m. holman, k. mcclellan, s. schofield, y. fusaro, m. fontaine"
+  },
+  {
+   "name": "K. McClellan",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "present: m. allison, j. marzuca, g. burns, m. holman, k. mcclellan, s. schofield, y. fusaro, m. fontaine"
+  },
+  {
+   "name": "S. Schofield",
+   "role": "Alternate",
+   "status": "present",
+   "quote": "present: m. allison, j. marzuca, g. burns, m. holman, k. mcclellan, s. schofield, y. fusaro, m. fontaine"
+  },
+  {
+   "name": "Y. Fusaro",
+   "role": "Farmers Market Manager",
+   "status": "present",
+   "quote": "managers m. fontaine and y. fusaro ran through the suggested changes that included starting a week later"
+  },
+  {
+   "name": "M. Fontaine",
+   "role": "Farmers Market Manager",
+   "status": "present",
+   "quote": "managers m. fontaine and y. fusaro ran through the suggested changes that included starting a week later"
+  },
+  {
+   "name": "Ryan Stober",
+   "role": "Vice-Chair",
+   "status": "not stated",
+   "quote": "ryan stober, vice-chair"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "The next meeting was set for April 15, 2021.",
+   "quote": "next meeting set for april 15, 2021."
+  },
+  {
+   "decision": "Entertainment for the 2021 farmers market will be sought, with no compensation provided.",
+   "quote": "entertainment will be sought, but no compensation provided."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Vendor application fee for 2021 season",
+   "what_was_recorded": "The managers' suggested 2021 application changes included a fee reduction, with no dollar figure printed.",
+   "quote": "starting a week later, ending markets ½ hour earlier, and fee reduction.",
+   "figures_as_printed": []
+  },
+  {
+   "topic": "Entertainment compensation",
+   "what_was_recorded": "Entertainment will be sought for the 2021 season, with no compensation provided; no dollar figure printed.",
+   "quote": "entertainment will be sought, but no compensation provided.",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Public Comment/Open Discussion: Cherry Hill Farm and farm complaints letter",
+   "resolution": "no action",
+   "quote": "g. burns updated us on cherry hill farm.",
+   "tags": [
+    "Cherry Hill Farm",
+    "farm complaints"
+   ]
+  },
+  {
+   "topic": "Update vendor application for 2021 season",
+   "resolution": "approved by roll call, all aye",
+   "quote": "all in favor of the 2021 application revisions by roll call, all aye.",
+   "tags": [
+    "vendor applications",
+    "2021 season",
+    "fees"
+   ]
+  },
+  {
+   "topic": "Farmers market season preparation",
+   "resolution": "no action",
+   "quote": "m. allison stated that the farmers market season is fast approaching and we need to confirm and organize with the management team.",
+   "tags": [
+    "farmers market",
+    "management team"
+   ]
+  },
+  {
+   "topic": "Next meeting and adjournment",
+   "resolution": "next meeting set for April 15, 2021; adjourned 7:32pm",
+   "quote": "next meeting set for april 15, 2021.",
+   "tags": [
+    "meeting schedule"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Letter about farm complaints",
+   "where": "text",
+   "quote": "s. schofield inquired about the letter about farm complaints."
+  },
+  {
+   "name": "Vendor application for 2021 season",
+   "where": "text",
+   "quote": "update vendor application for 2021 season: managers m. fontaine and y. fusaro ran through"
+  }
+ ],
+ "tags": [
+  "farmers market",
+  "vendor applications",
+  "2021 season",
+  "fees",
+  "Cherry Hill Farm",
+  "farm complaints",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

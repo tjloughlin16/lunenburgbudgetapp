@@ -1,20 +1,40 @@
 # The annual town reports
 
-Sixteen documents, 477 pages of financial tables, 23,639 rows read out of them.
+36 documents, 1,119 pages of financial tables, 56,412 rows read out of them.
 
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **208 of 477** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
-- **10 pages** an extractor reached and wrote nothing from. Each says why.
+- **923 of 1,119** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **4 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
-## The sixteen reports
+## The reports
 
 Every one is downloadable, and every one carries the sha256 of the bytes we hold, so a figure can be traced to the page it came from and the page to the file.
 
 | fiscal year | document | size | download | sha256 |
 |---|---|---:|---|---|
+| 1991 edition | `4490-1991-annual-town-report.pdf` | 2.7 MB | [download](/docs/town-annual-reports/docs/4490-1991-annual-town-report.pdf) | `8ba40a642b20787d…` |
+| 1992 edition | `4491-1992-annual-town-report.pdf` | 2.5 MB | [download](/docs/town-annual-reports/docs/4491-1992-annual-town-report.pdf) | `9c3691eba9be8fcd…` |
+| 1993 edition | `4519-1993-annual-town-report.pdf` | 2.6 MB | [download](/docs/town-annual-reports/docs/4519-1993-annual-town-report.pdf) | `bc727914bdd599eb…` |
+| 1994 edition | `4520-1994-annual-town-report.pdf` | 3.3 MB | [download](/docs/town-annual-reports/docs/4520-1994-annual-town-report.pdf) | `5f04c35beaa011dc…` |
+| 1995 edition | `4521-1995-annual-town-report.pdf` | 4.0 MB | [download](/docs/town-annual-reports/docs/4521-1995-annual-town-report.pdf) | `f31f009f90dd8e40…` |
+| 1996 edition | `4522-1996-annual-town-report.pdf` | 4.8 MB | [download](/docs/town-annual-reports/docs/4522-1996-annual-town-report.pdf) | `77d133e7499f3749…` |
+| 1997 edition | `4523-1997-annual-town-report.pdf` | 4.7 MB | [download](/docs/town-annual-reports/docs/4523-1997-annual-town-report.pdf) | `ddef7192c8858956…` |
+| 1998 edition | `4524-1998-annual-town-report.pdf` | 5.5 MB | [download](/docs/town-annual-reports/docs/4524-1998-annual-town-report.pdf) | `48caa0bdd06da03c…` |
+| 1999 edition | `4525-1999-annual-town-report.pdf` | 5.4 MB | [download](/docs/town-annual-reports/docs/4525-1999-annual-town-report.pdf) | `912bc582b45e043f…` |
+| 2000 edition | `4526-2000-annual-town-report.pdf` | 5.2 MB | [download](/docs/town-annual-reports/docs/4526-2000-annual-town-report.pdf) | `f19de9cdd9f9928e…` |
+| 2001 edition | `4527-2001-annual-town-report.pdf` | 4.6 MB | [download](/docs/town-annual-reports/docs/4527-2001-annual-town-report.pdf) | `741339b0a25b8cc9…` |
+| 2002 edition | `4528-2002-annual-town-report.pdf` | 5.2 MB | [download](/docs/town-annual-reports/docs/4528-2002-annual-town-report.pdf) | `71bdd5e062f85a07…` |
+| 2003 edition | `4529-2003-annual-town-report.pdf` | 5.4 MB | [download](/docs/town-annual-reports/docs/4529-2003-annual-town-report.pdf) | `380875fbd1121db3…` |
+| 2004 edition | `4530-2004-annual-town-report.pdf` | 5.0 MB | [download](/docs/town-annual-reports/docs/4530-2004-annual-town-report.pdf) | `c3ba5cd8876ac306…` |
+| 2005 edition | `4513-2005-annual-town-report.pdf` | 4.9 MB | [download](/docs/town-annual-reports/docs/4513-2005-annual-town-report.pdf) | `9d459be744d83690…` |
+| 2006 edition | `4514-2006-annual-town-report.pdf` | 6.2 MB | [download](/docs/town-annual-reports/docs/4514-2006-annual-town-report.pdf) | `95a8fec178bcc2f8…` |
+| 2007 edition | `4515-2007-annual-town-report.pdf` | 5.4 MB | [download](/docs/town-annual-reports/docs/4515-2007-annual-town-report.pdf) | `d93c9ebb9419e1c2…` |
+| 2008 edition | `4516-2008-annual-town-report.pdf` | 5.1 MB | [download](/docs/town-annual-reports/docs/4516-2008-annual-town-report.pdf) | `67d682a76defc4d2…` |
+| 2009 edition | `4517-2009-annual-town-report.pdf` | 5.3 MB | [download](/docs/town-annual-reports/docs/4517-2009-annual-town-report.pdf) | `a9281e2cf95e9f9b…` |
+| 2010 edition | `4518-2010-annual-town-report.pdf` | 3.9 MB | [download](/docs/town-annual-reports/docs/4518-2010-annual-town-report.pdf) | `4f235863ba7ae780…` |
 | FY2011 | `4117-fy-2011-annual-town-report.pdf` | 30.2 MB | [download](/docs/town-annual-reports/docs/4117-fy-2011-annual-town-report.pdf) | `551f9edd75d051ae…` |
 | FY2012 | `4118-fy-2012-annual-town-report.pdf` | 54.0 MB | [download](/docs/town-annual-reports/docs/4118-fy-2012-annual-town-report.pdf) | `75d645ee7055f68c…` |
 | FY2013 | `4119-fy-2013-annual-town-report.pdf` | 36.1 MB | [download](/docs/town-annual-reports/docs/4119-fy-2013-annual-town-report.pdf) | `00670845b7d32216…` |
@@ -38,42 +58,64 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 
 | category | what it answers | pages | proven | unproven | refused |
 |---|---|---:|---:|---:|---:|
-| appropriations | what Town Meeting voted to spend, article by article | 95 | 17 | 77 | 1 |
-| special revenue | the funds that sit outside the budget — grants, gifts, revolving | 68 | 53 | 15 | 0 |
-| payroll | what the town paid its people, name by name | 65 | 5 | 59 | 1 |
-| debt | what the town owes and when it falls due | 46 | 14 | 31 | 1 |
-| trust and stabilization | the reserves, and how much is in each | 39 | 25 | 13 | 1 |
-| receivables | what is owed TO the town, account by account | 28 | 18 | 7 | 3 |
-| unknown | a financial table whose heading we could not classify | 27 | 12 | 15 | 0 |
-| tax collection | what was committed, collected and abated | 21 | 9 | 11 | 1 |
-| regional school | the assessment from the regional school district | 18 | 2 | 15 | 1 |
-| balance sheet | what the town held and owed at year end | 17 | 16 | 1 | 0 |
-| valuation | what the town is worth, by class of property | 16 | 8 | 8 | 0 |
-| treasurers cash | the cash the Treasurer held | 15 | 14 | 0 | 1 |
-| capital | the capital projects and what they cost | 13 | 10 | 3 | 0 |
-| enrollment | how many children are in the schools | 6 | 4 | 2 | 0 |
-| elections | how the town voted | 2 | 1 | 1 | 0 |
-| cultural council | the grants the cultural council made | 1 | 0 | 1 | 0 |
-| **total** |  | **477** | **208** | **259** | **10** |
+| appropriations | what Town Meeting voted to spend, article by article | 279 | 177 | 101 | 1 |
+| payroll | what the town paid its people, name by name | 207 | 197 | 10 | 0 |
+| special revenue | the funds that sit outside the budget — grants, gifts, revolving | 147 | 143 | 4 | 0 |
+| debt | what the town owes and when it falls due | 103 | 71 | 31 | 1 |
+| trust and stabilization | the reserves, and how much is in each | 92 | 64 | 26 | 2 |
+| tax collection | what was committed, collected and abated | 60 | 56 | 2 | 0 |
+| capital | the capital projects and what they cost | 38 | 33 | 5 | 0 |
+| balance sheet | what the town held and owed at year end | 37 | 37 | 0 | 0 |
+| valuation | what the town is worth, by class of property | 35 | 29 | 6 | 0 |
+| treasurers cash | the cash the Treasurer held | 35 | 35 | 0 | 0 |
+| unknown | a financial table whose heading we could not classify | 29 | 28 | 1 | 0 |
+| receivables | what is owed TO the town, account by account | 28 | 27 | 0 | 0 |
+| regional school | the assessment from the regional school district | 16 | 16 | 0 | 0 |
+| enrollment | how many children are in the schools | 6 | 6 | 0 | 0 |
+| elections | how the town voted | 2 | 2 | 0 | 0 |
+| cultural council | the grants the cultural council made | 2 | 2 | 0 | 0 |
+| vital records |  | 2 | 0 | 2 | 0 |
+| officials |  | 1 | 0 | 1 | 0 |
+| **total** |  | **1119** | **923** | **189** | **4** |
 
 ## By report
 
 | fiscal year | pages | proven | unproven | refused |
 |---|---:|---:|---:|---:|
-| FY2011 | 28 | 10 | 17 | 1 |
-| FY2012 | 27 | 10 | 16 | 1 |
-| FY2013 | 29 | 8 | 20 | 1 |
-| FY2014 | 27 | 14 | 13 | 0 |
-| FY2015 | 31 | 13 | 18 | 0 |
-| FY2016 | 41 | 12 | 29 | 0 |
-| FY2017 | 33 | 14 | 16 | 3 |
-| FY2018 | 35 | 17 | 18 | 0 |
-| FY2019 | 38 | 11 | 26 | 1 |
-| FY2020 | 39 | 16 | 22 | 1 |
-| FY2021 | 37 | 16 | 21 | 0 |
-| FY2022 | 33 | 18 | 15 | 0 |
-| FY2023 | 34 | 15 | 17 | 2 |
-| FY2024 | 22 | 11 | 11 | 0 |
+| 1991 edition | 21 | 15 | 6 | 0 |
+| 1992 edition | 20 | 15 | 5 | 0 |
+| 1993 edition | 18 | 12 | 6 | 0 |
+| 1994 edition | 16 | 11 | 5 | 0 |
+| 1995 edition | 29 | 24 | 4 | 1 |
+| 1996 edition | 33 | 31 | 2 | 0 |
+| 1997 edition | 31 | 26 | 5 | 0 |
+| 1998 edition | 33 | 30 | 3 | 0 |
+| 1999 edition | 33 | 23 | 10 | 0 |
+| 2000 edition | 37 | 25 | 12 | 0 |
+| 2001 edition | 24 | 14 | 10 | 0 |
+| 2002 edition | 35 | 22 | 13 | 0 |
+| 2003 edition | 36 | 20 | 16 | 0 |
+| 2004 edition | 38 | 20 | 18 | 0 |
+| 2005 edition | 32 | 19 | 13 | 0 |
+| 2006 edition | 39 | 23 | 13 | 3 |
+| 2007 edition | 38 | 23 | 15 | 0 |
+| 2008 edition | 33 | 29 | 4 | 0 |
+| 2009 edition | 29 | 16 | 13 | 0 |
+| 2010 edition | 30 | 14 | 16 | 0 |
+| FY2011 | 29 | 29 | 0 | 0 |
+| FY2012 | 28 | 28 | 0 | 0 |
+| FY2013 | 31 | 31 | 0 | 0 |
+| FY2014 | 28 | 28 | 0 | 0 |
+| FY2015 | 33 | 33 | 0 | 0 |
+| FY2016 | 47 | 45 | 0 | 0 |
+| FY2017 | 32 | 32 | 0 | 0 |
+| FY2018 | 42 | 42 | 0 | 0 |
+| FY2019 | 39 | 39 | 0 | 0 |
+| FY2020 | 41 | 41 | 0 | 0 |
+| FY2021 | 37 | 37 | 0 | 0 |
+| FY2022 | 41 | 41 | 0 | 0 |
+| FY2023 | 35 | 34 | 0 | 0 |
+| FY2024 | 28 | 28 | 0 | 0 |
 | FY2025 | 23 | 23 | 0 | 0 |
 
 ## The datasets read out of them
@@ -82,29 +124,41 @@ A **dedicated** extractor knows what its table means and can check it against a 
 
 | dataset | rows | years | built by | checked | check failed | no check |
 |---|---:|---|---|---:|---:|---:|
-| `report-appropriations.csv` | 5,345 | 2011–2025 | generic | 311 | 5034 | 0 |
-| `staff-roster-entries.csv` | 3,751 | 2011–2025 | dedicated |  — | — | —  |
-| `report-gross-wages.csv` | 3,547 | 2011–2025 | generic | 0 | 0 | 3547 |
-| `special-revenue-funds.csv` | 2,422 | 2011–2025 | dedicated | 172 | 2098 | 151 |
-| `report-elections.csv` | 2,012 | 2011–2025 | generic | 323 | 1688 | 1 |
-| `annual-report-receipts.csv` | 1,137 | 2011–2023 | dedicated | 504 | 85 | 548 |
-| `staff-roster-counts.csv` | 698 | 2011–2025 | dedicated |  — | — | —  |
-| `report-index.csv` | 652 | 2011–2025 | generic |  — | — | —  |
-| `report-trust-funds.csv` | 644 | 2011–2025 | generic | 12 | 418 | 214 |
-| `report-capital-projects.csv` | 618 | 2011–2025 | generic | 48 | 544 | 26 |
-| `staff-position-map.csv` | 525 | — | dedicated |  — | — | —  |
-| `report-dept-activity.csv` | 515 | 2011–2025 | generic | 0 | 0 | 515 |
-| `report-debt.csv` | 366 | 2011–2025 | generic | 75 | 99 | 192 |
-| `report-enrollment-mcas.csv` | 338 | 2011–2025 | generic | 0 | 0 | 338 |
-| `report-valuation.csv` | 321 | 2011–2019 | generic | 0 | 0 | 321 |
-| `report-officials.csv` | 237 | 2011–2024 | generic | 0 | 0 | 237 |
+| `report-appropriations.csv` | 11,708 | 1991–2025 | generic | 3044 | 6965 | 1699 |
+| `report-gross-wages.csv` | 11,446 | 1995–2025 | generic | 7644 | 255 | 3547 |
+| `staff-roster-entries.csv` | 7,025 | 1991–2025 | dedicated |  — | — | —  |
+| `special-revenue-funds.csv` | 4,532 | 1992–2025 | dedicated | 3016 | 1370 | 146 |
+| `report-elections.csv` | 3,438 | 1992–2025 | generic | 1664 | 1725 | 49 |
+| `annual-report-receipts.csv` | 3,192 | 1991–2023 | dedicated | 2340 | 304 | 548 |
+| `report-debt.csv` | 2,254 | 1991–2025 | generic | 1515 | 502 | 237 |
+| `report-trust-funds.csv` | 2,172 | 1991–2025 | generic | 982 | 818 | 372 |
+| `report-officials.csv` | 1,741 | 1991–2024 | generic | 0 | 0 | 1741 |
+| `report-dept-activity.csv` | 1,377 | 1991–2025 | generic | 0 | 0 | 1377 |
+| `report-capital-projects.csv` | 1,317 | 1999–2025 | generic | 737 | 551 | 29 |
+| `staff-roster-counts.csv` | 1,301 | 1991–2025 | dedicated |  — | — | —  |
+| `report-valuation.csv` | 891 | 1995–2019 | generic | 186 | 100 | 605 |
+| `report-vital-records.csv` | 875 | 2001–2025 | generic | 0 | 0 | 875 |
+| `report-enrollment-mcas.csv` | 725 | 1991–2025 | generic | 19 | 0 | 706 |
+| `staff-position-map.csv` | 719 | — | dedicated |  — | — | —  |
+| `report-index.csv` | 698 | 2011–2025 | generic |  — | — | —  |
 | `report-signatures.csv` | 182 | 2013–2025 | generic |  — | — | —  |
-| `report-filing.csv` | 104 | — | generic |  — | — | —  |
-| `report-vital-records.csv` | 96 | 2011–2025 | generic | 0 | 0 | 96 |
+| `report-tax-bill-breakdown.csv` | 135 | 1995–1996 | generic | 135 | 0 | 0 |
+| `report-treasurers-cash-reconciliation.csv` | 129 | 1991–2008 | generic | 124 | 5 | 0 |
+| `report-filing.csv` | 119 | — | generic |  — | — | —  |
+| `report-fee-schedule.csv` | 72 | 2003–2004 | generic | 0 | 0 | 72 |
 | `report-monty-tech.csv` | 70 | 2017–2017 | generic | 0 | 0 | 70 |
+| `report-classification-plan.csv` | 54 | 2010–2010 | generic | 0 | 0 | 54 |
+| `report-special-education.csv` | 46 | 2008–2009 | generic | 0 | 0 | 46 |
+| `report-warrant-article-amounts.csv` | 34 | 1991–2001 | generic | 34 | 0 | 0 |
 | `report-appropriations-supplement.csv` | 32 | — | generic |  — | — | —  |
+| `report-vehicle-inventory.csv` | 32 | 1995–1995 | generic | 0 | 0 | 32 |
+| `report-weights-measures.csv` | 23 | 2010–2010 | generic | 7 | 7 | 9 |
+| `report-highway-accounts.csv` | 18 | 1995–1995 | generic | 0 | 0 | 18 |
 | `placement-counts.csv` | 15 | 2011–2025 | dedicated |  — | — | —  |
+| `report-property-tax-exemptions.csv` | 11 | 1991–1991 | generic | 0 | 0 | 11 |
+| `report-library-service-values.csv` | 10 | 2004–2004 | generic | 10 | 0 | 0 |
 | `ballot-questions.csv` | 9 | 2012–2025 | dedicated |  — | — | —  |
+| `report-treasurers-then-and-now.csv` | 7 | 1991–1991 | generic | 0 | 0 | 7 |
 | `report-appropriations-supplement-refused.csv` | 3 | — | generic |  — | — | —  |
 
 ## What this does not establish

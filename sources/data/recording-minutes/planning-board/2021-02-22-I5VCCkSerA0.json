@@ -1,0 +1,508 @@
+{
+ "warning": "OUR MINUTES OF A RECORDING, written by a language model from machine captions. Two derived layers stand between this file and the meeting. Cite the video at the timestamp, never this file. Figures are as heard and may be wrong; names may be wrong; where the town published minutes, those are the record.",
+ "board_slug": "planning-board",
+ "board": "Planning Board",
+ "video_title": "Planning Board",
+ "meeting_date": "2021-02-22",
+ "video_id": "I5VCCkSerA0",
+ "video_url": "https://www.youtube.com/watch?v=I5VCCkSerA0",
+ "cite": "the video at &t=<seconds>s; every t below is such a second",
+ "source": {
+  "transcript": "sources/data/youtube-transcripts/planning-board/2021-02-22-I5VCCkSerA0.json",
+  "sha256": "6e57a9046d306a943e824548e3f1b219b778a0be461c0fc5bfa14d2a072d4559",
+  "caption_lines": 246,
+  "segments": 2138
+ },
+ "recording": {
+  "duration_s": 5211,
+  "duration": "1:26",
+  "spoken_chars": 61074,
+  "words_approx": 10179
+ },
+ "town_published": [
+  {
+   "kind": "agenda",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Agenda/_02222021-4118",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2021-02-22-agenda-4118.txt",
+   "path": "sources/meetings/planning-board/2021-02-22-agenda-4118.pdf"
+  },
+  {
+   "kind": "minutes",
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02222021-4118",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2021-02-22-minutes-4118.txt",
+   "path": "sources/meetings/planning-board/2021-02-22-minutes-4118.pdf"
+  }
+ ],
+ "written": {
+  "by": "scripts/write_recording_minutes.py",
+  "model": "sonnet",
+  "at": "2026-10-28T10:25:12Z",
+  "cost_usd": 0.4077404
+ },
+ "minutes": {
+  "attendees": [
+   {
+    "name_as_heard": "Paula Bertram",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Matthew Brenner",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Tanner Cole",
+    "role": "member",
+    "remote": true
+   },
+   {
+    "name_as_heard": "Adam",
+    "role": "town planner (staff)",
+    "remote": true
+   },
+   {
+    "name_as_heard": "the chair",
+    "role": "chair",
+    "remote": true
+   }
+  ],
+  "public_comment": [
+   {
+    "t": 148,
+    "topic": "An architect (former board member) proposed a zoning change letting open-air front porches encroach 8 to 10 feet into the 40-foot front setback; board members were receptive and asked him to return at the next meeting.",
+    "stated_role": "resident, architect"
+   },
+   {
+    "t": 1173,
+    "topic": "A board member asked whether a change to the water supply for the O'Brien development would require modifying the planning board's permit; the planner said it would likely be a modification reopening the public hearing process.",
+    "stated_role": "board member speaking as public comment"
+   }
+  ],
+  "tags": [
+   "capital",
+   "economic-development",
+   "planning-and-zoning",
+   "public-comment",
+   "town-departments",
+   "warrant-article"
+  ],
+  "votes": [
+   {
+    "t": 1383,
+    "motion": "Approve the minutes of February 8th.",
+    "outcome": "passed (roll call; ayes heard from members, no count stated)",
+    "procedural": true
+   },
+   {
+    "t": 5168,
+    "motion": "Adjourn the meeting.",
+    "outcome": "passed (roll call ayes heard; adjourned at 7:58)",
+    "procedural": true
+   }
+  ],
+  "budget_items": [
+   {
+    "t": 1695,
+    "topic": "TCP (TC Passios) building design estimate",
+    "what_was_said": "The committee reported the engineers' renovation estimate was revised down after being questioned, and members doubted renovation would be accepted by Town Meeting given tear-down and rebuild costs are close.",
+    "figures_as_heard": [
+     "21 million",
+     "a little over 18 million",
+     "18 million dollars"
+    ]
+   }
+  ],
+  "transfers": [],
+  "decisions": [
+   {
+    "t": 478,
+    "decision": "The front porch setback proposal will be put on the next meeting's agenda for discussion with the architect."
+   },
+   {
+    "t": 4558,
+    "decision": "Parking table to be cleaned up and brought back at the next meeting for a final vote so it can go on the spring Town Meeting warrant, which closes in mid-March."
+   },
+   {
+    "t": 4383,
+    "decision": "Board preferred to pursue zoning articles at the spring Town Meeting rather than a special town meeting."
+   },
+   {
+    "t": 3940,
+    "decision": "Hotel/hospital/B&B parking to be changed back to one space per employee on the largest shift, like other uses; multifamily 1.5 spaces to be combined into two per unit."
+   },
+   {
+    "t": 3825,
+    "decision": "Child care parking to be one space per employee on the largest shift plus one per five children, dropping the lower rate over 20 children."
+   },
+   {
+    "t": 2777,
+    "decision": "Planner will resend the subdivision definitions as a PDF the next morning after a mismatched digital copy was found."
+   },
+   {
+    "t": 4978,
+    "decision": "Next meeting March 8 will hold the site plan approval rules hearing, followed by a North End Subaru hearing."
+   }
+  ],
+  "topics": [
+   {
+    "t_start": 1,
+    "t_end": 148,
+    "topic": "Open meeting law remote-meeting preamble and roll call",
+    "resolution": "informational",
+    "tags": []
+   },
+   {
+    "t_start": 148,
+    "t_end": 519,
+    "topic": "Public comment: front porch setback bylaw proposal",
+    "resolution": "referred to next agenda",
+    "tags": [
+     "planning-and-zoning",
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 519,
+    "t_end": 1153,
+    "topic": "Green Leaf Botanicals second community meeting and zoning/site plan questions",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "economic-development"
+    ]
+   },
+   {
+    "t_start": 1153,
+    "t_end": 1383,
+    "topic": "O'Brien development water supply and permit modification",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "water-sewer"
+    ]
+   },
+   {
+    "t_start": 1383,
+    "t_end": 1426,
+    "topic": "Approval of February 8 minutes",
+    "resolution": "voted",
+    "tags": []
+   },
+   {
+    "t_start": 1426,
+    "t_end": 1990,
+    "topic": "Committee reports (agricultural commission, TCP design committee, open space, MJTC)",
+    "resolution": "informational",
+    "tags": [
+     "capital",
+     "town-departments",
+     "planning-and-zoning"
+    ]
+   },
+   {
+    "t_start": 1990,
+    "t_end": 3117,
+    "topic": "Subdivision rules workshop: definitions, stormwater, subdivision types, trees",
+    "resolution": "no resolution; drafts to continue",
+    "tags": [
+     "planning-and-zoning",
+     "policy"
+    ]
+   },
+   {
+    "t_start": 3117,
+    "t_end": 4578,
+    "topic": "Parking table workshop and spring Town Meeting timing",
+    "resolution": "to return for final vote next meeting",
+    "tags": [
+     "planning-and-zoning",
+     "warrant-article",
+     "town-meeting"
+    ]
+   },
+   {
+    "t_start": 4601,
+    "t_end": 4978,
+    "topic": "Green Leaf update and board member public statements",
+    "resolution": "informational",
+    "tags": [
+     "planning-and-zoning",
+     "legal"
+    ]
+   },
+   {
+    "t_start": 4978,
+    "t_end": 5168,
+    "topic": "Meeting schedule and closing public comment",
+    "resolution": "informational",
+    "tags": [
+     "public-comment"
+    ]
+   },
+   {
+    "t_start": 5168,
+    "t_end": 5200,
+    "topic": "Adjournment",
+    "resolution": "voted",
+    "tags": []
+   }
+  ],
+  "not_audible": [
+   "Roll call vote counts were not stated beyond individual ayes.",
+   "Some speaker attributions are unclear because speakers are not identified in the captions.",
+   "The opening roll call is partly cut off at the start of the captions."
+  ],
+  "confidence": "moderate",
+  "contention": [
+   {
+    "t": 5065,
+    "about": "A member objected to the planner's caution that board members' public statements could create prejudice at future hearings.",
+    "sides": "one member against the planner's caution; the planner defending it as a general warning",
+    "words_as_heard": "i don't think it's appropriate to caution anybody or scare anybody into oh your votes can get negated because you said something",
+    "kind": "members disagree"
+   },
+   {
+    "t": 3484,
+    "about": "Members disagreed over whether child care parking should scale down above 20 children.",
+    "sides": "a member against the planner's tiered rate",
+    "words_as_heard": "it's not going to regulate itself you get people on a confined lot the lot doesn't get bigger as the people come",
+    "kind": "members disagree"
+   }
+  ],
+  "concerns_and_conditions": [
+   {
+    "t": 1068,
+    "kind": "liability or legal",
+    "about": "A member worried the applicant is being told it meets zoning before any site plan review, risking wasted money if the site fails the setback.",
+    "who": "a member",
+    "words_as_heard": "i'd feel awful if they came to us with a full package and you know got all their licenses and then get the rug pulled out from under them"
+   },
+   {
+    "t": 4894,
+    "kind": "liability or legal",
+    "about": "The planner cautioned that prejudicial comments by a board member could give a future applicant grounds to challenge a vote.",
+    "who": "the town planner",
+    "words_as_heard": "any prejudicial comments could open the the opportunity for a future proponent to raise an issue with an individual's vote"
+   },
+   {
+    "t": 4213,
+    "kind": "safety",
+    "about": "Concern that child care parking and queuing on shared driveways could disrupt neighbors.",
+    "who": "a member",
+    "words_as_heard": "excessive parking or queuing or people just leaving their vehicles in places could disrupt that second home off of that shared driveway"
+   },
+   {
+    "t": 417,
+    "kind": "condition",
+    "about": "A member would oppose the porch bylaw if porches become enclosed.",
+    "who": "a member",
+    "words_as_heard": "i would be opposed if those torches get enclosed"
+   }
+  ],
+  "documents_mentioned": [
+   {
+    "t": 1383,
+    "name_as_heard": "minutes of February 8th",
+    "kind": "prior minutes",
+    "words_as_heard": "approve the minutes of february 8th",
+    "shown": false
+   },
+   {
+    "t": 272,
+    "name_as_heard": "proposed change to the bylaw (front porch setback)",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "i had written my proposed change to the bylaw would just uh be an exception",
+    "shown": false
+   },
+   {
+    "t": 602,
+    "name_as_heard": "meeting notice for Green Leaf community meeting",
+    "kind": "other",
+    "words_as_heard": "this is the meeting notice it will be posted on the town website",
+    "shown": true
+   },
+   {
+    "t": 1990,
+    "name_as_heard": "parking table and subdivision definitions",
+    "kind": "draft policy or bylaw",
+    "words_as_heard": "the parking table and the definitions from the subdivision rules and regulations",
+    "shown": true
+   },
+   {
+    "t": 2460,
+    "name_as_heard": "February 8 meeting materials email",
+    "kind": "letter or email",
+    "words_as_heard": "the subject is eight feb meeting materials",
+    "shown": false
+   }
+  ],
+  "suggested_reports": [],
+  "headline": "Planning Board reworked subdivision and parking rules for the spring Town Meeting warrant; no substantive votes taken.",
+  "summary": "The board heard a proposal to let front porches extend into the front setback, got an update on a second Green Leaf Botanicals community meeting, and worked through subdivision definitions and parking requirements. It agreed to bring a cleaned-up parking table back for a final vote next meeting, aiming for the spring Town Meeting. Only minutes approval and adjournment were voted."
+ },
+ "digest": {
+  "what_happened": [
+   {
+    "line": "The Planning Board took no substantive votes; only the February 8 minutes and adjournment were voted.",
+    "t": 1383
+   },
+   {
+    "line": "The board agreed to bring a cleaned-up parking table back at the next meeting for a final vote, so it can go on the spring Town Meeting warrant.",
+    "t": 4558
+   },
+   {
+    "line": "Members preferred to pursue the zoning articles at the spring Town Meeting rather than a special town meeting.",
+    "t": 4383
+   },
+   {
+    "line": "Parking changes discussed included child care, hotel and multifamily rates; subdivision definitions will be resent as a PDF after a mismatched copy was found.",
+    "t": 3825
+   },
+   {
+    "line": "A former board member proposed letting open-air front porches extend into the front setback; it goes on the next agenda for discussion with the architect.",
+    "t": 478
+   }
+  ],
+  "why_it_matters": [
+   "The parking table and subdivision rules are zoning changes that could be put to voters as articles at spring Town Meeting, so what the board settles in March sets what residents are asked to vote on.",
+   "Porch setback, parking and subdivision changes affect what can be built on residential lots and how much parking developments must provide."
+  ],
+  "watch_next": [
+   "March 8 meeting: site plan approval rules hearing, then a North End Subaru hearing, with the parking table due back for a final vote.",
+   "The spring Town Meeting warrant, which closes in mid-March."
+  ],
+  "written": {
+   "by": "scripts/write_recording_minutes.py --digest",
+   "model": "sonnet",
+   "at": "2026-10-28T10:25:23Z",
+   "cost_usd": 0.2039535
+  }
+ },
+ "reconciliation": {
+  "what": "Our minutes against the minutes the town published. caption_error = the same fact the captions rendered badly, resolved by the official reading shown beside the as-heard one; discrepancy = a substantive difference, flagged and not resolved. Neither record is treated as the referee.",
+  "official": {
+   "url": "https://www.lunenburgma.gov/AgendaCenter/ViewFile/Minutes/_02222021-4118",
+   "text_url": "https://lunenburgbudgetproject.org/docs/minutes/text/planning-board/2021-02-22-minutes-4118.txt",
+   "path": "sources/meetings/planning-board/2021-02-22-minutes-4118.pdf"
+  },
+  "official_sha256": "3309e74a8398ef8061c320d7b16531a9042435364e30ff83577fa2c2e8fa2c7b",
+  "against": "structured",
+  "coverage": "official minutes are a summary only",
+  "summary": "The two records agree on the porch item, the March 8 date, the annual Town Meeting goal and the basic child care parking rule, and neither records a non-procedural vote. Our minutes hold many parking and scheduling decisions and one building figure that the official minutes omit, so check the recording at t=3825 on whether the child care rule changes above twenty children, and at t=4558 on the planned final vote.",
+  "counts": {
+   "agree": 5,
+   "caption_error": 0,
+   "discrepancy": 1,
+   "only_in_ours": 5,
+   "only_in_official": 3
+  },
+  "findings": [
+   {
+    "kind": "agree",
+    "about": "Non-procedural votes",
+    "ours": "VOTES (non-procedural): none",
+    "official": "",
+    "note": "Neither record has a non-procedural vote; the decisions in both are board consensus."
+   },
+   {
+    "kind": "agree",
+    "about": "Front porch setback discussion",
+    "ours": "The front porch setback proposal will be put on the next meeting's agenda for discussion with the architect.",
+    "official": "board consensus was to discuss at its march 8th meeting.",
+    "note": "Both put the porch proposal on the March 8 meeting; the architect is mentioned only in ours."
+   },
+   {
+    "kind": "discrepancy",
+    "about": "Child care parking rule above twenty children",
+    "ours": "Child care parking to be one space per employee on the largest shift plus one per five children, dropping the lower rate over 20 children.",
+    "official": "board consensus was one (1) space per employee on the largest shift plus one (1) space per five (5) children up to twenty (20)",
+    "note": "The base rule matches, but ours says a lower rate is dropped over 20 children and the official text only says 'up to twenty'. Check the recording near t=3825 to see what applies above twenty."
+   },
+   {
+    "kind": "agree",
+    "about": "Zoning articles aimed at annual/spring Town Meeting",
+    "ours": "Board preferred to pursue zoning articles at the spring Town Meeting rather than a special town meeting.",
+    "official": "discussion would continue. board consensus was to try for annual town meeting.",
+    "note": "Both say the board wants annual (spring) Town Meeting. The official text does not mention a special town meeting."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Parking table final vote next meeting",
+    "ours": "Parking table to be cleaned up and brought back at the next meeting for a final vote so it can go on the spring Town Meeting warrant, which closes in mid-March.",
+    "official": "",
+    "note": "The official minutes do not record the plan for a final vote or the warrant deadline. A final vote would be a decision, so a person should check the recording near t=4558."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Hotel/hospital/B&B and multifamily parking",
+    "ours": "Hotel/hospital/B&B parking to be changed back to one space per employee on the largest shift, like other uses; multifamily 1.5 spaces to be combined into two per unit.",
+    "official": "",
+    "note": "The official minutes have no hotel or multifamily parking decisions. They may be summarized away, so check the recording near t=3940."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Subdivision definitions PDF",
+    "ours": "Planner will resend the subdivision definitions as a PDF the next morning after a mismatched digital copy was found.",
+    "official": "",
+    "note": "This is a staff follow-up that the official minutes omit."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "March 8 agenda",
+    "ours": "Next meeting March 8 will hold the site plan approval rules hearing, followed by a North End Subaru hearing.",
+    "official": "",
+    "note": "The official minutes name March 8 only for the porch discussion. They do not list the hearings."
+   },
+   {
+    "kind": "only_in_ours",
+    "about": "Building design estimate figure",
+    "ours": "TCP (TC Passios) building design estimate: 21 million, a little over 18 million, 18 million dollars",
+    "official": "",
+    "note": "The official minutes have no budget figures. The captions give inconsistent amounts, so this needs checking against the recording near t=1695."
+   },
+   {
+    "kind": "agree",
+    "about": "Attendees: Bertram, Brenner, Cole",
+    "ours": "Paula Bertram (member); Matthew Brenner (member); Tanner Cole (member)",
+    "official": "paula bertram, present; matthew brenner, present.",
+    "note": "All three are present in both records. The official minutes also list Cole as present and give the officer titles."
+   },
+   {
+    "kind": "agree",
+    "about": "Town staff attendee",
+    "ours": "Adam (town planner (staff))",
+    "official": "roll call conducted by adam burney, land use director",
+    "note": "This is the same person. The official minutes give the full name and title as Land Use Director."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Chair Matthew Allison",
+    "ours": "the chair (chair)",
+    "official": "matthew allison, present; tanner cole, present",
+    "note": "Ours does not name the chair. The official minutes name Matthew Allison."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Absent member Erik Torgersen",
+    "ours": "",
+    "official": "absent: erik torgersen",
+    "note": "Ours does not record the absence."
+   },
+   {
+    "kind": "only_in_official",
+    "about": "Public commenter Damon McQuaid",
+    "ours": "",
+    "official": "damon mcquaid asked if the board would consider discussion of a zoning change allowing for open air front porches",
+    "note": "Ours does not name the commenter who raised the porch proposal."
+   }
+  ],
+  "quotes_not_in_official_dropped": 0,
+  "written": {
+   "by": "scripts/reconcile_minutes.py",
+   "model": "sonnet",
+   "at": "2026-10-28T10:26:19Z",
+   "cost_usd": 0.2243115
+  }
+ }
+}

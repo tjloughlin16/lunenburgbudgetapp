@@ -241,6 +241,8 @@ def fee_pay():
             if (rate * k / 2).quantize(Decimal('0.01'), rounding='ROUND_HALF_UP') != r['amt']:
                 fail('FY%d: %s is not a whole number of half-hours at %s' % (y, r['amt'], rate))
     dup = sum((r['amt'] for r in L if r['account'] == FEE_HS_PAY and r['source'] == 'GRV'), ZERO)
+    lumps = {y: sum((r['amt'] for r in pay if r['fy'] == y and r['amt'] >= REGULAR_MAX), ZERO) for y in J.YEARS}
+    regular = {y: sum((r['amt'] for r in reg[y]), ZERO) for y in J.YEARS}
     slice26 = sum((r['amt'] for r in reg[2026]), ZERO) + dup
     last25 = max(r['effective_date'] for r in pay if r['fy'] == 2025)
     # 3. the 20 August 2025 memo: both ends, and the arithmetic of the $13,691.53
@@ -252,12 +254,21 @@ def fee_pay():
     whole = hs25 - hsp
     if whole != whole.to_integral_value():
         fail('FY2025 high school fee-fund pay less the principal-line amount is not whole dollars')
+    # the same entry takes MORE out of the fee account than FY2025's pay runs charged it
+    out25 = -sum((r['amt'] for r in m if r['account'] == FEE_HS_PAY), ZERO)
+    if out25 <= hs25:
+        fail('the memo no longer moves more out of the fee account than FY2025 pay charged')
+    # THE $13,691.53 FITS THE HOURLY RATE: a whole number of hours at FY2025's rate, to a cent
+    # (our arithmetic; it does not say whose hours)
+    hrs = (hsp / RATES[2025]).to_integral_value()
+    if abs(hrs * RATES[2025] - hsp) > Decimal('0.01'):
+        fail('the principal-line amount is no longer a whole number of hours at %s' % RATES[2025])
     # 4. the AD's own reimbursements from the fund (not pay): read, declared
     reimb = [r for r in L if r['fund'] == '1301' and r['source'] == 'API'
              and r['vendor'].startswith('BIGELOW KEVIN')]
     reimb_t = sum((r['amt'] for r in reimb), ZERO)
     return dict(slice26=slice26, rate25=RATES[2025], rate26=RATES[2026], n26=len(reg[2026]),
-                last25=last25, hsp=hsp, hs25=hs25, whole=whole, reimb=reimb_t,
+                last25=last25, hsp=hsp, hs25=hs25, whole=whole, reimb=reimb_t, out25=out25, hrs=int(hrs), lumps=lumps, regular=regular,
                 reimb_n=len(reimb))
 
 
@@ -349,11 +360,11 @@ def build():
             notes=[step('The journal, %s to %s, holds no fee-fund line that names the director, and his '
                         'own line is the general fund’s.' % (C.fy(J.YEARS[0]), C.fy(J.YEARS[-1])), 'measured',
                         {'a': F(J.YEARS[0]), 'b': F(J.YEARS[-1])}),
-                   step('For %s to %s the fund is only totals. James Bunnell’s calendar 2020 pay, %s, sits '
-                        'between the line’s %s and %s actuals, as 2019 and 2021 do: our arithmetic.'
+                   step('%s to %s the fund is totals only. Bunnell’s calendar 2020 pay, %s, sits between the '
+                        'line’s %s and %s actuals: our arithmetic.'
                         % (C.fy(2020), C.fy(2022), C.usd(b20), C.fy(2020), C.fy(2021)), 'estimate',
                         {'a': F(2020), 'b': F(2022), 'c': U(b20), 'e': F(2021)}, allow=('2020', '2019', '2021')),
-                   step('The director was reimbursed %s from the fund for expenses, in %d payments; that is not pay.'
+                   step('Expense reimbursements to the director, %s in %d payments, are not pay.'
                         % (usd2(fp['reimb']), fp['reimb_n']), 'measured',
                         {'a': U2(fp['reimb']), 'n': figure(fp['reimb_n'], str(fp['reimb_n']), 'payments')})]),
         con('For FY2026 the director line was voted %s, %s below level service; meetings called it a fee offset.'
@@ -375,14 +386,18 @@ def build():
                         'measured', {'a': U2(fp['rate25']), 'y': F(2025)}, allow=D(long_date(fp['last25']))),
                    step('The FY26 proposal: “%s”.' % SUPT26_LINE, 'quote', allow=D('FY26', SUPT26_LINE)),
                    step('The journal names no one on a pay run.', 'gap', allow=D(WHO_CLOSES), closes=WHO_CLOSES)]),
+        # WHAT THE JOURNAL SHOWS vs OUR READING (rule 7). TJ recalls a one-year assistant
+        # principal / director split; the split on record is FY2026's, and this is FY2025 money.
         con('In FY2025 the Town moved %s of fee-fund pay onto the high school principal line.' % usd2(fp['hsp']),
             ['hsp', 'memo'], {'y': F(2025), 'a': U2(fp['hsp'])},
-            so='Which post that was is in a memo we do not hold; no roster names an assistant principal as director before FY2026.',
-            so_figures={'y': F(2026)},
-            notes=[step('It is that year’s high school fee-fund pay, %s, less its whole-dollar part, %s: our '
-                        'arithmetic.' % (usd2(fp['hs25']), usd2(fp['whole'])), 'estimate',
-                        {'a': U2(fp['hs25']), 'b': U2(fp['whole'])}),
-                   step('The memo behind it is not held.', 'gap', allow=D(MEMO_CLOSES), closes=MEMO_CLOSES)]),
+            so='Our arithmetic: it is %d hours at that year’s %s hourly rate, to a cent.'
+               % (fp['hrs'], usd2(fp['rate25'])),
+            so_figures={'h': figure(fp['hrs'], str(fp['hrs']), 'hours'), 'r': U2(fp['rate25'])},
+            notes=[step('The entry took %s from the fee fund’s high school pay account; FY2025 pay runs charged '
+                        '%s.' % (usd2(fp['out25']), usd2(fp['hs25'])), 'measured',
+                        {'a': U2(fp['out25']), 'b': U2(fp['hs25']), 'y': F(2025)}),
+                   step('Two readings fit: the hourly secretary, whose rate it matches, or the FY2026 assistant '
+                        'principal and director split.', 'hypothesis', {'y': F(2026)})]),
     ]
 
     # ---- the timeline: who, and which line paid, FY2011-FY2027
@@ -401,7 +416,7 @@ def build():
         if y < 2014:
             line_states.append(None)
         elif y <= 2017:
-            line_states.append('none')
+            line_states.append('absent')
         elif y in (2018,):
             line_states.append('half')
         elif y == 2026:
@@ -412,10 +427,12 @@ def build():
             line_states.append('full')
     fee_states = []
     for y in YEARS:
+        # LOOKED FOR AND NOT FOUND is drawn as an absence (a dashed empty box), never a fill:
+        # TJ, 28 October 2026, read a solid green here as "the AD is paid from fee funds".
         if 2014 <= y <= 2019:
-            fee_states.append('nodir')
+            fee_states.append('absent')
         elif 2023 <= y <= 2026:
-            fee_states.append('nodir')
+            fee_states.append('absent')
         elif 2020 <= y <= 2022:
             fee_states.append('totals')
         else:
@@ -429,36 +446,80 @@ def build():
                       note=('FY14–FY17 print no director line; FY18 a half post; full-time from FY19; FY26 voted '
                             'net of a fee offset; FY27 a half post.', None, D('FY14 FY17 FY18 FY19 FY26 FY27')),
                       basis=('budget', 'District budget books; the school journal')),
-             TB.track('Fee fund paid the director', fee_states,
-                      note=('No director in FY14–FY17 actuals, FY18–FY19 budgets or the FY23–FY26 journal. '
-                            'FY20–FY22: totals only.', None, D('FY14 FY17 FY18 FY19 FY23 FY26 FY20 FY22')),
+             TB.track('Director pay in the fee fund', fee_states,
+                      note=('Looked for, none found: no director on the fee side in FY14–FY17 actuals, FY18–FY19 '
+                            'budgets or the FY23–FY26 journal. FY20–FY22: totals only.', None,
+                            D('FY14 FY17 FY18 FY19 FY23 FY26 FY20 FY22')),
                       basis=('record', 'FY19 athletics document; annual reports; the school journal'))]),
          ('Athletic secretary', secs + [
-             TB.track('Fee fund paid the secretary', sec_fee,
+             TB.track('Secretary pay in the fee fund', sec_fee,
                       note=('FY15–FY19 itemised by the district; FY23–FY26 our reading of hourly pay runs.',
                             None, D('FY15 FY19 FY23 FY26')),
                       basis=('reading', 'FY19 athletics document; our reading of the journal'))])],
+        # Tones carry no verdict (rule 8): grey for a director line, green only where fee money
+        # touches a post, a dashed empty box for looked-for-and-absent.
         [('held', 'Named in that year’s record', 'neutral'),
-         ('full', 'A full-time director line', 'good'),
-         ('half', 'A half post', 'other'),
-         ('net', 'Voted net of a fee offset', 'bad'),
-         ('none', 'No director line printed', 'muted'),
-         ('nodir', 'Itemised: no director', 'good'),
-         ('totals', 'Totals only: not itemised', 'muted'),
-         ('secfee', 'Paid from the fee fund', 'bad')],
+         ('full', 'Director line: full-time', 'muted'),
+         ('half', 'Director line: a half post', 'muted', 'half'),
+         ('net', 'Director line: voted net of a fee offset', 'good', 'half'),
+         ('absent', 'Looked for: none found', 'muted', 'empty'),
+         ('totals', 'Fee fund totals only: not itemised', 'muted', 'outline'),
+         ('secfee', 'Secretary paid from the fee fund', 'good')],
         place='lead', marker=(ix[2025], ('The FY2026 offset is voted', None, ('FY2026',))),
         note=('Names are from the school rosters in each annual report and from agendas and minutes. The '
               'FY2025 report’s roster is written from a February 2026 vantage, and names the FY2026 director; '
               'it is not used for FY2025. Agendas name James Bunnell in June 2022 and Kevin Bigelow from August 2022.',
               None, D('FY2025 2026 FY2026 FY2025 2022 2022')))
 
-    # ---- the chart: the general fund line, every year
+    # ---- THE SIGNATURE: the director's pay as a LINE, every year a record carries (TJ, 28 October
+    # 2026: "a line chart showing the salary for the AD over time"). One track per basis, never
+    # mixed (rule 1): the general fund ACTUAL; the FY2026 LEVEL-SERVICE budget beside it, which
+    # marks the fee offset; the FY2027 PROPOSAL; and the WAGES the Town printed, which are
+    # calendar years and every fund. Calendar 2025 is left out of the wage line: two directors
+    # were paid that year, one of them also an assistant principal.
     cy = list(range(2014, 2027))
-    chart = TP.series('The town budget director line', [C.fy(y) for y in cy] + [C.fy(2027)], [
-        TP.track('Actual', [float(gf[y][0]) for y in cy] + [None], 'published'),
-        TP.track('Last draft held', [None] * len(cy) + [float(B['fy27_last'])], 'stated')], '$', kind='bar',
-        note='Actuals: later budget books to FY2022, the school journal from FY2023. FY2027: the 25 March '
-             '2026 draft.', note_allow=D('FY2022 FY2023 FY2027 25 2026'))
+    xs = list(range(2014, 2028))
+    wage_line = {}
+    for who_ in ('Peter McCauliff', 'James Bunnell'):
+        for y, (amt, _, _) in wages[who_].items():
+            if y in wage_line:
+                fail('calendar %d: two directors on the wage line' % y)
+            wage_line[y] = amt
+    if any(y >= 2022 for y in wage_line):
+        fail('the wage line now reaches calendar %d: decide how to draw it' % max(wage_line))
+    lone = [y for y in sorted(wages['Kevin Bigelow']) + sorted(wages['Yanina Burns'])]
+    if sorted(set(lone)) != [2025]:
+        fail('wages for Bigelow and Burns are no longer calendar 2025 only: %s' % lone)
+    mc_lo = min(mc[y][0] for y in mc if y <= 2017)
+    mc_hi = max(mc[y][0] for y in mc if y <= 2017)
+    line = TP.series('The athletic director’s pay, by year', [C.fy(y) for y in xs], [
+        TP.track('Paid, general fund line (actual)', [float(gf[y][0]) if y in gf else None for y in xs],
+                 'published'),
+        TP.track('Level service, before the fee offset', [float(B['lvl26']) if y == 2026 else None for y in xs],
+                 'published'),
+        TP.track('Last draft, a proposal', [float(B['fy27_last']) if y == 2027 else None for y in xs],
+                 'published'),
+        TP.track('Wages the Town printed (calendar year)', [float(wage_line[y]) if y in wage_line else None
+                                                            for y in xs], 'published')], '$', kind='line',
+        note='Actuals: later budget books to FY2022, the journal from FY2023. Wages: annual reports, calendar '
+             'years, every fund, at the year of that number; 2025 left out.',
+        note_allow=D('FY2022 FY2023 2025'))
+    line_block = TB.chart(line, place='lead', so=(
+        '%s to %s the general fund director line shows $0 actual, while the Town printed the director’s '
+        'calendar 2014 to 2017 wages at %s to %s: which account paid is not held.'
+        % (C.fy(2014), C.fy(2017), C.usd(mc_lo), C.usd(mc_hi)),
+        {'a': F(2014), 'b': F(2017), 'c': U(mc_lo), 'd': U(mc_hi)}, ('0', '2014', '2017')))
+
+    # ---- the main chart: what the fee fund's high school pay account was charged, by kind.
+    # A season lump is a pay-run line over REGULAR_MAX; the rest is the regular slice.
+    fy_ = list(J.YEARS)
+    chart = TP.series('The fee fund’s high school pay, by kind', [C.fy(y) for y in fy_], [
+        TP.track('Season lumps', [float(fp['lumps'][y]) for y in fy_], 'published'),
+        TP.track('Small regular lines', [float(fp['regular'][y]) for y in fy_], 'published')],
+        '$', kind='bar', stacked=True, totals=True,
+        note='As pay runs charged it. A lump is a line over %s. In FY2025 a memo moved all of it to the '
+             'general fund.' % C.usd(REGULAR_MAX),
+        note_figures={'a': U(REGULAR_MAX), 'y': F(2025)})
 
     # ---- tables
     gl = []
@@ -512,7 +573,8 @@ def build():
         TID,
         'No record held pays the director from the fee fund. The FY2026 vote set his line %s below level service.'
         % C.usd(B['lvl26'] - B['voted26']),
-        list(px.values()), concl, chart=chart, tables=[t_line, t_wages], sources=sources, blocks=[tl],
+        list(px.values()), concl, chart=chart, tables=[t_line, t_wages], sources=sources,
+        blocks=[line_block, tl],
         finding_figures={'a': U(B['lvl26'] - B['voted26']), 'y': F(2026)})
     page['not_established'] = [
         'Which line paid the director from FY2011 to FY2017, when no budget prints a director line.',

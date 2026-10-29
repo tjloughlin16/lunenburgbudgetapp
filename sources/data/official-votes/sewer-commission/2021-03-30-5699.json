@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "sewer-commission",
  "meeting_date": "2021-03-30",
  "docid": "5699",
@@ -12,23 +12,23 @@
  },
  "votes": [
   {
-   "motion": "Approve corrected numbers for Q1 FY21 Billing Commitment",
+   "motion": "Approve the corrected numbers for the Q1 FY21 Billing Commitment ($222,461.81).",
    "moved_by": "Brett R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 3-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: brett r. second: carl l. to approve the corrected numbers for the q1 fy21 billing commitment. roll call vote: brett-aye, carl-aye and dave-aye."
   },
   {
-   "motion": "Approve Q3 FY21 Quarterly Billing Commitment for $247,910.73",
+   "motion": "Approve the Q3 FY21 Quarterly Billing Commitment for $247,910.73.",
    "moved_by": "Carl L.",
    "seconded_by": "Brett R.",
    "outcome": "passed 3-0",
-   "procedural": true,
+   "procedural": false,
    "quote": "motion: carl l. second: brett r. to approve the q3 fy21 quarterly billing commitment. roll call vote: carl-aye, brett-aye and dave-aye."
   },
   {
-   "motion": "Approve minutes for 3/9/21",
+   "motion": "Approve the minutes for 3/9/21.",
    "moved_by": "Brett R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 3-0",
@@ -36,7 +36,7 @@
    "quote": "motion: brett r. second: carl l. to approve the minutes for 3/9/21. roll call vote: brett-aye, carl-aye and dave-aye."
   },
   {
-   "motion": "Adjourn at 6:37pm",
+   "motion": "Adjourn the meeting at 6:37pm.",
    "moved_by": "Brett R.",
    "seconded_by": "Carl L.",
    "outcome": "passed 3-0",
@@ -45,6 +45,301 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "OCR scan. The Blanchflower sewer service area expansion was discussed but no vote was recorded—the minutes state \"The Commission did not take a vote, and the discussion will be added to the agenda for 4/13.\" The well customer billing policy was discussed with agreement to revisit; it was added to the next agenda but no vote taken at this meeting.",
- "cost_usd": 0.1030825
+ "note": "OCR text (macOS Vision). Page 1 starts mid-meeting, so the opening (caucus and any earlier items) is not in the text. The 183 Whalom Rd discussion is cut off at the page break and no outcome is recorded. The Elizabeth St. discussion also breaks mid-sentence (\"Legal had identified a 5-step process and the Sewer\"). The minutes give the Elizabeth St. flow as 1,440 gpd in one sentence and 1,400gpd in another. No attendance roll is printed; attendance is inferred from the roll-call votes, the speakers, and \"John left the meeting.\" The minutes end with a signature line OCR-rendered as \"Your h. Pandey, Minutes Clerk\", which is not treated as an attendee. Public comment is recorded as \"none.\" Carl's direction to Barb appears under a Public Comment heading but is a board member's remark. No transfers are recorded.",
+ "cost_usd": 0.02117816,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Brett R.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: brett r. second: carl l. to approve the minutes for 3/9/21. roll call vote: brett-aye, carl-aye and dave-aye."
+  },
+  {
+   "name": "Carl L.",
+   "role": "not stated",
+   "status": "present",
+   "quote": "motion: carl l. second: brett r. to approve the q3 fy21 quarterly billing commitment."
+  },
+  {
+   "name": "Dave",
+   "role": "not stated",
+   "status": "present",
+   "quote": "roll call vote: brett-aye, carl-aye and dave-aye."
+  },
+  {
+   "name": "John",
+   "role": "not stated",
+   "status": "present",
+   "quote": "(john left the meeting.)"
+  },
+  {
+   "name": "Barb",
+   "role": "Business Manager",
+   "status": "present",
+   "quote": "business manager report -barb reported that the fy22 fincom budget presentation on 3/11 went smoothly and"
+  },
+  {
+   "name": "Rob",
+   "role": "DPW Director",
+   "status": "present",
+   "quote": "jamie said he will discuss the issue with rob (dpw director)."
+  },
+  {
+   "name": "Jamie Rheault",
+   "role": "Whitman & Bingham",
+   "status": "present",
+   "quote": "rick blanchflower, 5 chestnut st. to expand the sewer service area - jamie rheault (whitman & bingham) -"
+  },
+  {
+   "name": "Rick Blanchflower",
+   "role": "not stated",
+   "status": "not stated",
+   "quote": "rick blanchflower, 5 chestnut st. to expand the sewer service area"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "No vote on the Blanchflower sewer service area request; the discussion is placed on the 4/13 agenda.",
+   "quote": "the commission did not take a vote, and the discussion will be added to the agenda for 4/13."
+  },
+  {
+   "decision": "Commission agreed to discuss a new policy for the 19 Whalom Rd well-customer charge and add it to the next agenda.",
+   "quote": "the commission agreed to discuss a new policy and add it to the next agenda."
+  },
+  {
+   "decision": "Barb to update the 19 Whalom Rd customer and add the policy to the next agenda.",
+   "quote": "barb will update the customer and add the policy to the next agenda."
+  },
+  {
+   "decision": "Brett and Dave to meet with Barb on the Fitchburg Sewer Use Ordinance changes.",
+   "quote": "brett and dave will be meeting with barb to discuss the changes."
+  },
+  {
+   "decision": "Jamie Rheault to discuss the Blanchflower request with Rob (DPW Director).",
+   "quote": "jamie said he will discuss the issue with rob (dpw director)."
+  },
+  {
+   "decision": "Rob to contact contractors recommended by Pat Cotton to obtain quotes for the Elizabeth St. inflow and infiltration recommendations.",
+   "quote": "he will be reaching out to contractors that pat recommended, to get some quotes for following the recommendations"
+  },
+  {
+   "decision": "Barb to send out an updated Maintenance Plan for review.",
+   "quote": "barb will be sending out an updated version for review."
+  },
+  {
+   "decision": "Carl asked Barb to send the flows for the algorithm.",
+   "quote": "public comment - carl asked barb to send the flows for the algorithm."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "Blanchflower property: betterments and taxes",
+   "what_was_recorded": "Barb said the property was assessed one betterment and would face additional ones if expanded; Carl said a 40-unit condo complex would raise everyone's taxes. No dollar figure was printed.",
+   "figures_as_printed": [],
+   "quote": "barb replied they were assessed 1 betterment and if expanded, they would be assessed additional ones."
+  },
+  {
+   "topic": "183 Whalom Rd request for forgiveness on a large bill",
+   "what_was_recorded": "Residents asked for forgiveness on a large bill caused by a toilet leak; Barb said the flow had gone into the system and the town pays for it. No amount was printed.",
+   "figures_as_printed": [],
+   "quote": "barb received a request from the residents to get some forgiveness on the large bill, which was due to a toilet leak"
+  },
+  {
+   "topic": "19 Whalom Rd well-customer standard charge",
+   "what_was_recorded": "The standard quarterly charge for well customers is $231.87; the resident asked to pay the $107 minimum going forward.",
+   "figures_as_printed": [
+    "$ 231.87/quarter",
+    "$107"
+   ],
+   "quote": "the standard charge for well customers is $ 231.87/quarter."
+  },
+  {
+   "topic": "Cost of installing a well-customer water meter",
+   "what_was_recorded": "Barb estimated the cost of installing a meter for a well customer at at least $1000.",
+   "figures_as_printed": [
+    "$1000"
+   ],
+   "quote": "brett asked the cost for installing a meter and barb estimated that it is at least $1000."
+  },
+  {
+   "topic": "Q1 FY21 quarterly billing commitment correction",
+   "what_was_recorded": "The Q1 FY21 billing commitment submitted was corrected upward to the figure approved.",
+   "figures_as_printed": [
+    "$212,461.81",
+    "$222,461.81"
+   ],
+   "quote": "the amount submitted was $212,461.81 but the corrected figure is $222,461.81."
+  },
+  {
+   "topic": "Q3 FY21 quarterly billing commitment",
+   "what_was_recorded": "The Q3 FY21 quarterly billing commitment was approved at $247,910.73.",
+   "figures_as_printed": [
+    "$247,910.73"
+   ],
+   "quote": "q3 fy21 quarterly billing commitment for $247,910.73"
+  },
+  {
+   "topic": "Fitchburg invoice",
+   "what_was_recorded": "A Fitchburg invoice was reviewed.",
+   "figures_as_printed": [
+    "$17,708.48"
+   ],
+   "quote": "invoices- fitchburg-$17,708.48 was reviewed."
+  },
+  {
+   "topic": "Elizabeth St. inflow and infiltration cost",
+   "what_was_recorded": "Carl said the lateral's inflow costs $3-5K per year and the homeowner must fix it or disconnect it. The minutes give the flow as 1,440 gpd in one sentence and 1,400gpd in another.",
+   "figures_as_printed": [
+    "$3-5K per year"
+   ],
+   "quote": "the i/l inflow is 1,400gpd, costing $3-5k per year."
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Appointment: Rick Blanchflower, 5 Chestnut St., sewer service area expansion",
+   "resolution": "discussed; no vote; continued to 4/13 agenda",
+   "quote": "rick blanchflower, 5 chestnut st. to expand the sewer service area - jamie rheault (whitman & bingham) -",
+   "tags": [
+    "sewer service area",
+    "development",
+    "zoning"
+   ]
+  },
+  {
+   "topic": "183 Whalom Rd request for credit",
+   "resolution": "discussed; no decision recorded (text truncated at page break)",
+   "quote": "183 whalom rd request for credit - barb received a request from the residents to get some forgiveness on the",
+   "tags": [
+    "billing adjustment",
+    "hardship"
+   ]
+  },
+  {
+   "topic": "19 Whalom Rd request for credit (well customer)",
+   "resolution": "policy to be revisited; added to next agenda",
+   "quote": "19 whalom rd request for credit- barb reported that this is a well customer and the standard charge for well",
+   "tags": [
+    "well customers",
+    "billing policy"
+   ]
+  },
+  {
+   "topic": "Fitchburg Sewer Use Ordinance changes",
+   "resolution": "Brett and Dave to meet with Barb",
+   "quote": "fitchburg sewer use ordinance changes- brett and dave will be meeting with barb to discuss the changes.",
+   "tags": [
+    "ordinance",
+    "Fitchburg"
+   ]
+  },
+  {
+   "topic": "Commitment approvals",
+   "resolution": "Q1 FY21 correction and Q3 FY21 commitment approved, 3-0",
+   "quote": "commitment approvals- barb reported a correction for the amount of the q1 fy21 quarterly billing commitment.",
+   "tags": [
+    "billing",
+    "commitments"
+   ]
+  },
+  {
+   "topic": "Minutes of 3/9/21",
+   "resolution": "approved, 3-0",
+   "quote": "minutes for 3/9/21 motion: brett r. second: carl l. to approve the minutes for 3/9/21.",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "Business Manager report",
+   "resolution": "reported; FY22 FinCom presentation went smoothly; maintenance plan update; invoice reviewed",
+   "quote": "business manager report -barb reported that the fy22 fincom budget presentation on 3/11 went smoothly and",
+   "tags": [
+    "FY22 budget",
+    "FinCom",
+    "maintenance plan",
+    "invoices"
+   ]
+  },
+  {
+   "topic": "Elizabeth St. inflow and infiltration study",
+   "resolution": "no vote; Rob to seek contractor quotes",
+   "quote": "elizabeth st.- rob reported that he talked to pat cotton at weston & sampson regarding the l/l study they did and their recommendations.",
+   "tags": [
+    "inflow and infiltration",
+    "leaks",
+    "Elizabeth St"
+   ]
+  },
+  {
+   "topic": "Commission comments: flow data and meeting time",
+   "resolution": "Barb directed to send flows; 7pm suggestion recorded",
+   "quote": "public comment - carl asked barb to send the flows for the algorithm.",
+   "tags": [
+    "flow data",
+    "meeting time"
+   ]
+  },
+  {
+   "topic": "Adjournment",
+   "resolution": "adjourned at 6:37pm, 3-0",
+   "quote": "motion: brett r. to adjourn at 6:37pm. second: carl l. roll call vote: brett-aye, carl-aye and dave-aye.",
+   "tags": [
+    "adjournment"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Sewer Regulations Development Policy (Article II-2(I) of the Sewer Use Regulations)",
+   "where": "list",
+   "quote": "handouts: sewer regulations development policy(article ii-2(i) of the sewer use regulations"
+  },
+  {
+   "name": "Comprehensive Wastewater Master Plan",
+   "where": "text",
+   "quote": "the commission had a comprehensive wastewater master plan done to establish the"
+  },
+  {
+   "name": "Sewer Commission's Regulations on development",
+   "where": "text",
+   "quote": "carl read a section from the sewer commission's regulations on development."
+  },
+  {
+   "name": "Maintenance Plan (updated version)",
+   "where": "text",
+   "quote": "maintenance plan- barb and rob met with carl to discuss changes and barb will be sending"
+  },
+  {
+   "name": "Fitchburg Sewer Use Ordinance changes",
+   "where": "text",
+   "quote": "fitchburg sewer use ordinance changes- brett and dave will be meeting with barb to discuss the changes."
+  },
+  {
+   "name": "Weston & Sampson l/l study (inflow and infiltration study)",
+   "where": "text",
+   "quote": "rob reported that he talked to pat cotton at weston & sampson regarding the l/l study they did"
+  }
+ ],
+ "tags": [
+  "sewer",
+  "sewer service area",
+  "billing commitments",
+  "well customers",
+  "billing relief",
+  "inflow and infiltration",
+  "Whalom Road",
+  "Fitchburg",
+  "minutes",
+  "remote meetings"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "handouts:"
+ },
+ "dropped_unquoted_by_field": {}
 }

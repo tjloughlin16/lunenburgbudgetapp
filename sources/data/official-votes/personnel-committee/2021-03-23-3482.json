@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "personnel-committee",
  "meeting_date": "2021-03-23",
  "docid": "3482",
@@ -12,7 +12,7 @@
  },
  "votes": [
   {
-   "motion": "Accept and approve the minutes of March 8, 2021",
+   "motion": "Approve the minutes of the March 8, 2021 meeting as presented.",
    "moved_by": "J. Bilotta",
    "seconded_by": "D. MacDonald",
    "outcome": "passed",
@@ -20,15 +20,15 @@
    "quote": "motion by j. bilotta to accept and approve the minutes as presented second: d. macdonald roll call vote: all in favor"
   },
   {
-   "motion": "Grant J. Belliveau authority to request that the Select Board remove the longevity amendment from the Town Meeting Article",
+   "motion": "Grant J. Belliveau the authority to request that the Select Board remove the longevity amendment from the Town Meeting Article.",
    "moved_by": "D. MacDonald",
    "seconded_by": "J. Bilotta",
    "outcome": "passed",
    "procedural": false,
-   "quote": "motion by d. macdonald to grant j. belliveau the authority to request that the select board remove the longevity amendment from the town meeting article. second: j. bilotta roll call vote: all in favor"
+   "quote": "motion by d. macdonald to grant j. belliveau the authority to request that the select board remove the longevity amendment from the town meeting article."
   },
   {
-   "motion": "Adjourn the meeting",
+   "motion": "Adjourn the meeting at 5:18pm.",
    "moved_by": "J. Bilotta",
    "seconded_by": "S. Andrews",
    "outcome": "passed",
@@ -37,6 +37,122 @@
   }
  ],
  "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0963885
+ "note": "Minutes text is complete and readable: three motions, each with a roll-call line. Roll-call outcomes are printed as \"All in favor\" with no numeric count, so outcomes are recorded as \"passed\". No public comment section is printed. The only money discussed is the longevity amounts, with no dollar figures printed. Donna Fortune is listed under \"Missing Member\" and is recorded as absent.",
+ "cost_usd": 0.012920560000000001,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "Eric Arnold",
+   "role": "Committee Chair, presiding",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, susan andrews"
+  },
+  {
+   "name": "Dave MacDonald",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, susan andrews"
+  },
+  {
+   "name": "Joanna Bilotta",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, susan andrews"
+  },
+  {
+   "name": "Susan Andrews",
+   "role": "Committee member",
+   "status": "present",
+   "quote": "eric arnold, dave macdonald, joanna bilotta, susan andrews"
+  },
+  {
+   "name": "Donna Fortune",
+   "role": "Committee member",
+   "status": "absent",
+   "quote": "missing member: donna fortune"
+  },
+  {
+   "name": "Julie Belliveau",
+   "role": "Asst. Town Manager/HR Director",
+   "status": "present",
+   "quote": "julie belliveau, asst. town manager/hr director"
+  },
+  {
+   "name": "Barbara Lefebvre",
+   "role": "Sewer Business Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Nancy Forest",
+   "role": "Payroll & Benefits/Risk Manager",
+   "status": "present",
+   "quote": "barbara lefebvre, sewer business manager, nancy forest, payroll & benefits/risk manager"
+  },
+  {
+   "name": "Myleen Mallari",
+   "role": "Treasurer/Tax Collector",
+   "status": "present",
+   "quote": "myleen mallari, treasurer/tax collector"
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "E. Arnold agreed that the Personnel Committee's SAP grid modification process would take precedence over a grade-level longevity system, since reducing pay grades would change longevity rates.",
+   "quote": "e. arnold agreed that this process would take precedence."
+  }
+ ],
+ "budget_items": [
+  {
+   "topic": "SAP longevity amendment pay amounts",
+   "what_was_recorded": "The longevity amendment was drafted so department heads would get amounts mirroring Police and Fire Union amounts and other positions amounts mirroring Clerical Union amounts; no dollar figures are printed.",
+   "quote": "the article was written so that department heads would receive the amounts that mirror the police and fire union amounts",
+   "figures_as_printed": []
+  }
+ ],
+ "transfers": [],
+ "public_comment": [],
+ "topics": [
+  {
+   "topic": "Approval of minutes, March 8, 2021",
+   "resolution": "approved",
+   "quote": "minutes of the march 8, 2021 meeting reviewed",
+   "tags": [
+    "minutes"
+   ]
+  },
+  {
+   "topic": "SAP longevity amendment (Town Meeting article)",
+   "resolution": "authority granted to request removal of longevity amendment from the article; held until Fall Town Meeting",
+   "quote": "e. arnold opened the meeting by informing the committee that he attended the select board meeting on tuesday, march 16, 2021",
+   "tags": [
+    "longevity",
+    "SAP",
+    "Town Meeting",
+    "Select Board"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Personnel Committee Town Meeting Article (SAP longevity amendment)",
+   "where": "text",
+   "quote": "for the submission of the personnel committees town meeting article"
+  }
+ ],
+ "tags": [
+  "personnel",
+  "SAP longevity amendment",
+  "Town Meeting article",
+  "Select Board",
+  "Fall Town Meeting",
+  "pay grades",
+  "Zoom meeting"
+ ],
+ "documents_list": {
+  "printed": false,
+  "heading_as_printed": ""
+ },
+ "dropped_unquoted_by_field": {}
 }

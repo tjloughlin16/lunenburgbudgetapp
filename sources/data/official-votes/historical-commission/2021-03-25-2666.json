@@ -1,5 +1,5 @@
 {
- "warning": "VOTES AS THE TOWN’S MINUTES STATE THEM, read by a language model from the extracted text. The minutes are the record; each row carries its quote from them, checked verbatim.",
+ "warning": "THE TOWN’S MINUTES, STRUCTURED: who attended, votes, decisions, budget items, transfers, public comment and topics, read by a language model from the extracted text. The minutes are the record; every item carries its quote from them, checked verbatim.",
  "board_slug": "historical-commission",
  "meeting_date": "2021-03-25",
  "docid": "2666",
@@ -12,15 +12,156 @@
  },
  "votes": [
   {
-   "motion": "Demolition Delay bylaw amendments dated March 24, 2021 were approved",
+   "motion": "Approve the Demolition Delay bylaw amendments dated March 24, 2021, and the accompanying questionnaire.",
    "moved_by": "",
    "seconded_by": "",
-   "outcome": "passed unanimously",
+   "outcome": "passed",
    "procedural": false,
    "quote": "on motion made and seconded, the amendments were unanimously voted approved"
   }
  ],
- "dropped_unquoted": 0,
- "note": "",
- "cost_usd": 0.0886425
+ "dropped_unquoted": 2,
+ "note": "Text is OCR (macOS Vision) of a scanned page. Some names are OCR-garbled (\"Mir. McGrath\" for Mr. McGrath); the quotes here were taken as they read in the OCR text. The minutes print no roll call, so attendance is inferred from who reported or acted, not stated. One motion is recorded, with no mover or seconder named. The adjournment has no recorded vote. No dollar figures appear. The meeting is listed as 2021-03-25; the bylaw is dated March 24, 2021.",
+ "cost_usd": 0.01499988,
+ "schema": 3,
+ "model": "haiku",
+ "attendees": [
+  {
+   "name": "William E. Tyler",
+   "role": "guest, chairman of the Lunenburg Cemetery Commission",
+   "status": "present",
+   "quote": "public comment consisted of status reports by guest william e. tyler, chairman of the lunenburg cemetery commission"
+  },
+  {
+   "name": "Lakso",
+   "role": "Vice Chairman",
+   "status": "present",
+   "quote": "c. william lakso vice chairman"
+  },
+  {
+   "name": "Kevin Boussom",
+   "role": "member",
+   "status": "not stated",
+   "quote": "it was also noted that member kevin boussom will be videotaping work at the sites."
+  }
+ ],
+ "decisions": [
+  {
+   "decision": "Mr. Lakso and Mr. McGrath will meet separately to examine the binder of information located at the local historical society, to plan the town survey of K-houses.",
+   "quote": "mr. lakso and mr. mcgrath will meet separately to examine the information."
+  },
+  {
+   "decision": "Mr. McGrath will contact the owner of the residence at the corner of Whiting Street and Lancaster Avenue and offer to repair the falling shingles.",
+   "quote": "he will contact the owner and offer to repair the condition."
+  }
+ ],
+ "budget_items": [],
+ "transfers": [],
+ "public_comment": [
+  {
+   "speaker": "William E. Tyler",
+   "stated_role": "guest, chairman of the Lunenburg Cemetery Commission",
+   "topic": "status of work at the Goodrich and Arnold-Litch burial grounds",
+   "quote": "public comment consisted of status reports by guest william e. tyler, chairman of the lunenburg cemetery commission"
+  }
+ ],
+ "topics": [
+  {
+   "topic": "Public comment: cemetery work at the Goodrich and Arnold-Litch burial grounds",
+   "resolution": "noted; no action",
+   "quote": "tree work at the goodrich site was accomplished march 24 by flagg tree service.",
+   "tags": [
+    "cemeteries",
+    "Goodrich burial ground",
+    "Arnold-Litch burial ground"
+   ]
+  },
+  {
+   "topic": "Monthly historic houses articles in the Ledger",
+   "resolution": "reported; no action",
+   "quote": "mr. lakso reported that the ledger and the fitchburg sentinel-enterprise will be running articles on historic houses on a monthly basis",
+   "tags": [
+    "publicity",
+    "historic houses"
+   ]
+  },
+  {
+   "topic": "Town survey of K-houses for MHC inventory",
+   "resolution": "Lakso and McGrath to examine the binder separately",
+   "quote": "a binder with substantial information had been located at the local historical society and will prove to be a valuable aid",
+   "tags": [
+    "MHC survey",
+    "K-houses",
+    "inventory"
+   ]
+  },
+  {
+   "topic": "Demolition Delay bylaw amendments",
+   "resolution": "approved",
+   "quote": "on motion made and seconded, the amendments were unanimously voted approved",
+   "tags": [
+    "demolition delay",
+    "bylaw"
+   ]
+  },
+  {
+   "topic": "Residence at Whiting Street and Lancaster Avenue, falling shingles",
+   "resolution": "McGrath to contact owner and offer repair",
+   "quote": "he will contact the owner and offer to repair the condition.",
+   "tags": [
+    "Whiting Street",
+    "Lancaster Avenue",
+    "property condition"
+   ]
+  },
+  {
+   "topic": "Plaque recognizing a homeowner's restoration of a historic home",
+   "resolution": "suggested for consideration; no action",
+   "quote": "rendering an opinion that the commission might wish to consider doing the same locally",
+   "tags": [
+    "recognition",
+    "plaque"
+   ]
+  }
+ ],
+ "documents_and_exhibits": [
+  {
+   "name": "Demolition Delay bylaw amendments, dated March 24, 2021",
+   "where": "list",
+   "quote": "demolition delay bylaw amendments which have been proposed, dated march 24, 2021, and accompanying questionnaire of the same date were read by mr. mcgrath"
+  },
+  {
+   "name": "Demolition Delay questionnaire, dated March 24, 2021",
+   "where": "list",
+   "quote": "demolition delay bylaw amendments which have been proposed, dated march 24, 2021, and accompanying questionnaire of the same date were read by mr. mcgrath"
+  },
+  {
+   "name": "MHC forms B and E",
+   "where": "text",
+   "quote": "mr. tyler reported he is also executing mhc forms b and e in hopes of applying for national register"
+  },
+  {
+   "name": "Binder of survey information at the local historical society",
+   "where": "text",
+   "quote": "a binder with substantial information had been located at the local historical society and will prove to be a valuable aid"
+  }
+ ],
+ "tags": [
+  "historic preservation",
+  "cemeteries",
+  "demolition delay",
+  "MHC survey",
+  "National Register",
+  "historic houses",
+  "Whiting Street",
+  "Brooks House"
+ ],
+ "documents_list": {
+  "printed": true,
+  "heading_as_printed": "demolition delay bylaw amendments which have been proposed, dated march 24, 2021"
+ },
+ "dropped_unquoted_by_field": {
+  "attendees": 1,
+  "topics": 1
+ }
 }
