@@ -8,7 +8,7 @@ import { Chip } from '../components/blocks/custom/fy-shared'
 import { useFyYear } from '../components/blocks/custom/fy-year'
 import { GROUP_BASE, itemFromPath, loadIndex, type ItemIndex } from '../components/blocks/custom/fy-items'
 import type { WebKind } from '../components/blocks/custom/fy-web-parts'
-import { FundHistory, GroupCompare, LineBills, LineMemoCats, RatesTable, GroupCounts, GroupShifts, GroupSplit, LineHistory, PayerTraces, type BillKinds, type Counts, type FundHist, type LineMemos, type LinePayees, type PayeeRates, type GroupMember, type GroupShift, type LineHist, type PayerTrace } from '../components/blocks/custom/fy-item-history'
+import { FundHistory, GroupCompare, LineBills, LineMemoCats, RatesTable, GroupCounts, GroupShifts, GroupSplit, LineHistory, PayerTraces, FundFlows, type FundFlow, type BillKinds, type Counts, type FundHist, type LineMemos, type LinePayees, type PayeeRates, type GroupMember, type GroupShift, type LineHist, type PayerTrace } from '../components/blocks/custom/fy-item-history'
 
 /* ONE SCHOOL LINE OR ONE FUND, at its own address: /school-lines/<slug>, /school-funds/<slug>.
  *
@@ -28,7 +28,7 @@ type LineYear = { row: Row; funds: string[]; kinds: string[]; ex: ExLine | null;
 type LineItem = { slug: string; name: string; account: string; cat: string; years: Record<string, LineYear>; history: LineHist[]; payers: PayerTrace[]; payees: LinePayees; bill_kinds: BillKinds; memos?: LineMemos; rates?: PayeeRates[] }
 type FundYear = { awards: { row: FundRow; body: Fund }[]; web: Ego; moves: MoveGroup[] }
 type MovesFrame = { classes: { id: string; label: string }[]; text: Record<string, string> }
-type FundItem = { slug: string; name: string; cat: string; group: string; years: Record<string, FundYear>; history: FundHist[] }
+type FundItem = { slug: string; name: string; cat: string; group: string; years: Record<string, FundYear>; history: FundHist[]; flows?: FundFlow[] }
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 const link = { color: 'var(--link, var(--thread-2))' }
@@ -174,6 +174,7 @@ function FundPage({ item, ix }: { item: FundItem; ix: ItemIndex }) {
           <p className="text-[13px] mb-3 max-w-3xl" style={secondary}>{mv.text.what} {mv.text.open}.</p>
           <MoveGroups groups={y.moves} classes={mv.classes} text={mv.text} />
         </section>) : null}
+      <FundFlows f={item.flows} ix={ix} />
       <AwardMoves h={item.history} ix={ix} mv={mv} />
       <FundHistory h={item.history} ix={ix} cols={frame.columns} />
       <Sources ix={ix} />

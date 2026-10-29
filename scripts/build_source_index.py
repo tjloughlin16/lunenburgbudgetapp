@@ -3870,6 +3870,14 @@ GROUPS = [
              'encumbered and available. Parsed by scripts/extract_munis_school_ytd.py from the '
              'published spreadsheets only, and refused unless every account ties to its org, '
              'fund and grand total as the workbook prints them.'),
+            ('data/school-fund-flows.csv',
+             'Every school fund but the general fund: money in, money out, balance, FY2023 to FY2026', 3,
+             'Written by us. Per fund per year: received, moved between funds, spent (paid, and '
+             'paid plus owed), received less spent, and the balance at 1 July and 30 June where an '
+             'opening balance was established -- derived from the Town’s 31 March 2026 special '
+             'revenue ledger and the journal, or printed in the FY2023 annual town report. Built by '
+             'scripts/build_fund_flows.py from the school journal, which refuses to write unless '
+             'every fund the period-13 report prints ties to it.'),
             ('data/munis-trial-balance.csv',
              'Lost books and technology fund, FY2026 trial balance by account', 1,
              'Fund 1300: beginning balance, debits, credits and ending balance per account, '

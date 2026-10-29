@@ -932,6 +932,7 @@ def page(m):
     lines = lines_data(m, T)
     figures = year_facts(m, T)
     plan = plan_data(m, T)
+    flows = flows_data(T)
     yline = year_line_data(m, T)
     sources = funds_data(m, T)
     overlap = overlap_data(m, T)
@@ -1010,6 +1011,16 @@ def page(m):
                           'on one scale from zero',
                       so=('The gap between the plan and what happened is mostly money no budget '
                           'book plans for: other funds, much of it on no school line.', None, ())),
+            TB.custom('fy-fund-flows', 'Money in, money out', flows, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Every receipt and payment in the journal, tied to the Town’s period-13 report'),
+                      alt='Table, one fiscal year: every fund other than the school general fund, by who '
+                          'paid, with what it received, what it spent, the difference, its balance at '
+                          '30 June and the difference against the year before, largest difference first; '
+                          'a payer opens on its funds',
+                      so=('A plus means a fund took in more than it paid out that year; a minus means it '
+                          'drew on what it held. The figures say how much, not why: a grant paid after '
+                          'the money is spent shows a minus first and a plus later.', None, ())),
             TB.custom('fy-year-line', 'Across the year line', yline, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('record', 'Every posting on the school lines; each crossing tied to the other year'),
@@ -1243,6 +1254,79 @@ def printed_plan(m):
                  '%s the ledger says was voted, not one' % (book, len(hit), voted[fy]))
         out[fy] = dict(gross=hit[0][0], offset=hit[0][1], line=i + 1, raw=[lines[i], cb], book=book)
     return out
+
+
+def flows_data(T):
+    """MONEY IN, MONEY OUT (TJ, 29 October 2026, "the top priority"): every fund other than the
+    school general fund, each year -- what it received, what it spent, the difference, its balance
+    at 30 June, and the difference against the year before -- by payer and per fund, the largest
+    difference first. From sources/data/school-fund-flows.csv (scripts/build_fund_flows.py), which
+    ties each fund's money in and out to the Town's period-13 report where that report prints it.
+    A balance nobody established is shown as unknown, never as zero."""
+    # LEFT OUT: capital articles and the other appropriations. What Town Meeting votes them is not
+    # a receipt in the school journal (measured: $0 received by every capital article, every
+    # year), so received-less-spent would show their spending as a drawdown it is not.
+    rows = [r for r in ITEMS.fund_flows() if r['payer_group'] != 'other']
+    years_n = sorted({int(r['fiscal_year']) for r in rows})
+
+    def pack(xs, prev):
+        rec = sum((x['received'] for x in xs), D0)
+        mov = sum((x['moved'] for x in xs), D0)
+        sp = sum((x['spent_actual'] for x in xs), D0)
+        net = sum((x['net'] for x in xs), D0)
+        known = [x for x in xs if x['closing_balance'] is not None]
+        bal = sum((x['closing_balance'] for x in known), D0)
+        all_known = len(known) == len(xs)
+        ch = None if prev is None else net - prev
+        return dict(n=dict(received=fl(rec), moved=fl(mov), spent=fl(sp), net=fl(net),
+                           balance=fl(bal) if all_known else None, change=None if ch is None else fl(ch)),
+                    t=dict(received=T.usd(rec), moved=signed(T, mov) if mov else '', spent=T.usd(sp),
+                           net=signed(T, net), balance=T.usd(bal) if all_known else '',
+                           known=T.usd(bal) if known and not all_known else '',
+                           change='' if ch is None else signed(T, ch)),
+                    unknown=len(xs) - len(known))
+
+    def active(x):
+        return x['received'] or x['moved'] or x['spent_actual'] or (x['closing_balance'] or D0)
+
+    out = []
+    for i, fy in enumerate(years_n):
+        rs = [r for r in rows if int(r['fiscal_year']) == fy and active(r)]
+        before = [r for r in rows if int(r['fiscal_year']) == fy - 1]
+        prev_f = {r['fund']: r['net'] for r in before}
+        groups = []
+        for g in sorted({r['payer_group'] for r in rs}):
+            xs = [r for r in rs if r['payer_group'] == g]
+            pg = [r for r in before if r['payer_group'] == g]
+            funds = [dict(code=T.lit(x['fund']), name=T.lit(x['program']),
+                          **pack([x], prev_f.get(x['fund']))) for x in xs]
+            funds.sort(key=lambda f: (-abs(f['n']['net']), f['name'], f['code']))
+            groups.append(dict(id=g, label=T.lit(xs[0]['payer_label']),
+                               **pack(xs, sum((r['net'] for r in pg), D0) if pg else None), funds=funds))
+        groups.sort(key=lambda g: (-abs(g['n']['net']), g['label']))
+        out.append(dict(fy=T.fy(fy), open=any(r['year_open'] == 'yes' for r in rs),
+                        total=pack(rs, sum((r['net'] for r in before), D0) if before else None),
+                        groups=groups, n_funds=len(rs)))
+    return dict(years=out, text=dict(
+        h_group='Who paid', h_received='Received', h_moved='Moved between funds', h_spent='Spent',
+        h_net='Received less spent', h_balance=T.lit('Balance at 30 June'), h_change='Against the year before',
+        all='Every fund shown', funds='funds', fund='fund',
+        left_out=('Capital articles, scholarships and custodian details are left out: what Town Meeting '
+                  'votes a capital article is not recorded as received in the school journal, so only '
+                  'its spending would show.'), open=T.lit('Still open in the journal: received and spent to date.'),
+        unknown_bal='not known for', unknown_bal_tail='of its funds',
+        known_part='of the funds with a known balance',
+        means_received='Money in from outside the funds: state and federal grants, the state’s circuit '
+                       'breaker reimbursement, fees, gifts, interest.',
+        means_moved='Money moved in or out between funds by entry. Plus is in.',
+        means_spent='What the fund paid out: invoices, pay, entries. An order not yet paid has not left it.',
+        means_net='Plus: the fund took in more than it paid out that year and its balance grew. Minus: '
+                  'it paid out more and its balance fell.',
+        means_balance=T.lit('What the fund held at 30 June: the balance at 1 July 2022, from the Town’s own '
+                            'reports, plus every year’s received less spent since. Blank where no opening '
+                            'balance was found.'),
+        means_change='This year’s received-less-spent against last year’s.',
+        open_fund='Open its page'))
 
 
 def plan_data(m, T):

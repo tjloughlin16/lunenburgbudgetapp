@@ -247,6 +247,75 @@ export function PayerTraces({ p, ix, fy }: { p: PayerTrace[]; ix: ItemIndex; fy:
     </section>)
 }
 
+export type FundFlow = { fy: string; open: boolean
+  n: { received: number; moved: number; spent: number; net: number; balance: number | null }
+  t: { received: string; moved: string; spent: string; net: string; balance: string } }
+
+/** MONEY IN, MONEY OUT, ACROSS THE YEARS (TJ, 29 October 2026: "revenue and expense charts per
+ *  fund, to show if the accounts are being consistently drained and filed or if changes happen").
+ *  Each year what the fund received beside what it spent, and a line for what it held at 30 June
+ *  -- a gap in the line where no opening balance was found, never a zero. The table under it is
+ *  the same figures, and the chart's text version. scripts/fy_items.py (flows). */
+export function FundFlows({ f, ix }: { f: FundFlow[] | undefined; ix: ItemIndex }) {
+  const t = ix.text
+  if (!f || !f.length) return null
+  const by = new Map(f.map(y => [y.fy, y]))
+  const rows = f.map(y => ({ fy: y.fy, received: y.n.received, spent: y.n.spent, balance: y.n.balance }))
+  const series = [
+    { key: 'received', name: t.fl_received, colour: 'var(--thread-2)', text: (q: string) => by.get(q)?.t.received },
+    { key: 'spent', name: t.fl_spent, colour: 'var(--thread-1)', text: (q: string) => by.get(q)?.t.spent },
+    { key: 'net', name: t.fl_net, colour: 'transparent', text: (q: string) => by.get(q)?.t.net },
+    { key: 'balance', name: t.fl_balance, colour: 'var(--text-primary)', text: (q: string) => by.get(q)?.t.balance || t.fl_unknown },
+  ]
+  const moved = f.some(y => y.t.moved)
+  const open = f.filter(y => y.open).map(y => y.fy)
+  return (
+    <section className="mt-10">
+      <H2>{t.fl_h}</H2>
+      <p className="text-[13px] mb-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{t.fl_line}</p>
+      <div style={{ width: '100%', height: 280 }}>
+        <ResponsiveContainer>
+          <ComposedChart data={rows} margin={{ top: 10, right: 12, left: 4, bottom: 4 }}>
+            <CartesianGrid stroke="var(--grid)" vertical={false} />
+            <XAxis dataKey="fy" tick={tick} />
+            <YAxis tickFormatter={usdk} width={56} tick={tick} />
+            <ReferenceLine y={0} stroke="var(--grid)" />
+            <Tooltip content={(q: { active?: boolean; label?: string | number }) => (
+              <TextTip active={q.active} label={q.label === undefined ? undefined : String(q.label)} rows={series} />)} />
+            <Legend wrapperStyle={{ fontSize: 12 }} itemSorter={(e: { dataKey?: unknown }) => ['received', 'spent', 'balance'].indexOf(String(e.dataKey))} />
+            <Bar dataKey="received" name={t.fl_received} fill="var(--thread-2)" fillOpacity={0.8} isAnimationActive={false} />
+            <Bar dataKey="spent" name={t.fl_spent} fill="var(--thread-1)" fillOpacity={0.8} isAnimationActive={false} />
+            <Line dataKey="balance" name={t.fl_balance} stroke="var(--text-primary)" strokeWidth={2} dot={{ r: 3 }} connectNulls={false} isAnimationActive={false} />
+          </ComposedChart>
+        </ResponsiveContainer>
+      </div>
+      <div className="overflow-x-auto mt-2">
+        <table className="w-full max-w-2xl text-[12.5px] tabular-nums border-collapse">
+          <thead><tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
+            <th className="text-left px-1.5 py-1" />
+            <th className="text-right px-1.5 py-1 font-semibold">{t.fl_received}</th>
+            {moved ? <th className="text-right px-1.5 py-1 font-semibold">{t.fl_moved}</th> : null}
+            <th className="text-right px-1.5 py-1 font-semibold">{t.fl_spent}</th>
+            <th className="text-right px-1.5 py-1 font-semibold">{t.fl_net}</th>
+            <th className="text-right px-1.5 py-1 font-semibold">{t.fl_balance}</th></tr></thead>
+          <tbody>
+            {f.map(y => (
+              <tr key={y.fy} className="border-b" style={{ borderColor: 'var(--grid)' }}>
+                <td className="px-1.5 py-1 text-left font-semibold">{y.fy}{y.open ? <span className="font-normal" style={muted}> *</span> : null}</td>
+                <td className="px-1.5 py-1 text-right">{y.t.received}</td>
+                {moved ? <td className="px-1.5 py-1 text-right" style={muted}>{y.t.moved || '—'}</td> : null}
+                <td className="px-1.5 py-1 text-right">{y.t.spent}</td>
+                <td className="px-1.5 py-1 text-right font-semibold">{y.t.net}</td>
+                <td className="px-1.5 py-1 text-right">{y.t.balance || <span style={muted}>{t.fl_unknown}</span>}</td>
+              </tr>))}
+          </tbody>
+        </table>
+      </div>
+      {open.length ? <p className="mt-1 text-[12px]" style={muted}>* {t.fl_open}</p> : null}
+      {f.every(y => y.n.balance === null) ? <p className="mt-1 text-[12px]" style={muted}>{t.fl_no_balance}</p> : null}
+    </section>)
+}
+
 /** the group's lines take these in turn, in the order of their names; the rest is grey */
 const MEMBER_COLOURS = ['var(--thread-1)', 'var(--thread-2)', 'var(--thread-5)', 'var(--thread-3)']
 

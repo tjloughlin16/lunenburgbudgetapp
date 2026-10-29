@@ -24,7 +24,23 @@ rejected sub-labels: "i dont want the subbullets"), set on a 35-degree slant, ci
 part (`cb.lines`, wherever spent). The figures table under it has a title and is centred. The bridge
 kept its four steps; its labels are constant with the year's qualifier as `sub`, `means` the hover.
 A three-step bridge (all CB vs offset) was built on a misread and reverted -- do not redo it.
-**Next: item 0.**
+**ITEM 0 BUILT, 29 Oct (committed with this note; not deployed).**
+- Data: `scripts/build_fund_flows.py --check` -> `sources/data/school-fund-flows.csv` (written by a
+  subagent, spot-checked: CB receipts are `posts_to=='actual'` CRP rows; IDEA 2814 FY26 has only a
+  BUA budget posting, so $0 received is real; CB opening $426,893.23 equals the FY2022 annual
+  report's CARRIED 6/30/2022 in `special-revenue-read.csv`, an independent third source).
+- Page: block `fy-fund-flows` "Money in, money out" (`flows_data`), after the bridge: by payer,
+  expandable to funds linked to their pages; received / moved / spent (paid) / received less spent
+  / balance at 30 June / against the year before. Capital and other appropriations LEFT OUT (a
+  capital article's vote is not a receipt in the journal: $0 received every year), said under it.
+- Fund pages: `FundFlows` chart + table (`flows` in each fund file), balance a gap where unknown.
+- OPEN: (a) `special-revenue-read.csv` holds the CB and other balances back to FY2019 -- the fund
+  chart could reach back before FY2023; (b) the FY2025 annual report's balance column disagrees
+  with ours in 17 funds (CB printed $333,494.89 = exactly the FY26 reclass entry 2026/12/000692);
+  not established why; (c) `finance.json` stale from another session's inputs and D1 `money_gaps`
+  one row behind (`sync_d1.py`, when the deploying session runs); (d) money-gaps row 312 (CB
+  balance) can now be partly answered from this data.
+**Next: item 1 (biggest changes), then item 2 (non-GF money chart, reusing these receipts).**
 
 **QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
 "What it connects to" (`fy28/src/components/blocks/custom/fy-ego-web.tsx`) draws the chart and then

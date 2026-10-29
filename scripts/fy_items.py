@@ -96,6 +96,29 @@ def cents(v):
     return Decimal('%.2f' % v)
 
 
+FLOWS = os.path.join(os.path.dirname(os.path.dirname(os.path.abspath(__file__))), 'sources', 'data', 'school-fund-flows.csv')
+FLOW_AMOUNTS = ('received_outside', 'received_not_in_journal', 'transfers_in', 'transfers_out', 'spent_actual',
+                'spent_with_owed', 'net', 'opening_balance', 'closing_balance')
+
+
+def fund_flows():
+    """MONEY IN, MONEY OUT per fund per year: sources/data/school-fund-flows.csv, written and
+    --check'ed by scripts/build_fund_flows.py. Amounts as Decimal; a balance nobody established
+    is None, never zero."""
+    out = []
+    with open(FLOWS, newline='') as fh:
+        for r in csv.DictReader(fh):
+            for k in FLOW_AMOUNTS:
+                r[k] = Decimal(r[k]) if r[k] != '' else None
+            r['received'] = r['received_outside'] + r['received_not_in_journal']
+            r['moved'] = r['transfers_in'] - r['transfers_out']
+            if r['received'] + r['moved'] - r['spent_actual'] != r['net']:
+                raise SystemExit('school-fund-flows.csv %s %s: received, moved and spent do not make its net'
+                                 % (r['fiscal_year'], r['fund']))
+            out.append(r)
+    return out
+
+
 def unique_slugs(items, tries):
     """items: {key: obj}; tries: functions obj -> candidate slug, from the shortest to the most
     specific; the last must be unique on its own. An item takes the first candidate that no other
@@ -153,6 +176,7 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
         fund_acct.setdefault(a['fund'], a)
     program = {}                               # fund -> programme name
     fund_rows = defaultdict(lambda: defaultdict(list))   # programme -> fy -> [row]
+    flow_rows = fund_flows()
     for y in F['years']:
         for r in y['rows']:
             p = J.grant_program(fund_acct[r['key']])
@@ -480,8 +504,22 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
                              awards=[dict(fund=r['key'], name=r['name'], t=r['t']['total']) for r in rows],
                              moves=[g for g in moves if g['cls'] == 'award']))
         first = by[max(by)][0]
+        # MONEY IN, MONEY OUT, ACROSS THE YEARS (TJ, 29 October 2026: "revenue and expense charts
+        # per fund, to show if the accounts are being consistently drained and filled"): its awards
+        # added; a balance only where every award has one
+        flows = []
+        for fy_n in sorted({int(r['fiscal_year']) for r in flow_rows if r['program'] == p}):
+            xs = [r for r in flow_rows if r['program'] == p and int(r['fiscal_year']) == fy_n]
+            n = {k: sum((x[k] for x in xs), D0) for k in ('received', 'moved', 'spent_actual', 'net')}
+            bal = sum((x['closing_balance'] for x in xs), D0) if all(x['closing_balance'] is not None for x in xs) else None
+            flows.append(dict(fy='FY%d' % fy_n, open=any(x['year_open'] == 'yes' for x in xs),
+                              n=dict(received=float(n['received']), moved=float(n['moved']), spent=float(n['spent_actual']),
+                                     net=float(n['net']), balance=None if bal is None else float(bal)),
+                              t=dict(received=money(n['received']), moved=money(n['moved']) if n['moved'] else '',
+                                     spent=money(n['spent_actual']), net=money(n['net']),
+                                     balance='' if bal is None else money(bal))))
         out[os.path.join(out_dir, 'fund', slug + '.json')] = dump(dict(
-            slug=slug, name=p, cat=first['cat'], group=first['group'], years=ys, history=hist))
+            slug=slug, name=p, cat=first['cat'], group=first['group'], years=ys, history=hist, flows=flows))
         index['funds'].append(dict(slug=slug, name=p, cat=first['cat'], group=first['group'],
                                    funds=sorted({r['key'] for rs in by.values() for r in rs}),
                                    years=sorted(ys)))
@@ -535,6 +573,15 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
             left_note=('Left is the budget less what the school budget itself spent. Money another fund paid '
                        'counts toward the cost but not against the budget, so Left can be larger than the gap '
                        'between the budget line and the top of the bar.'),
+            fl_h='Money in, money out',
+            fl_line=('What the fund received each year beside what it spent, and what it held at 30 June. '
+                     'Where the bars are level the fund spent what it took in; where spending stands taller '
+                     'it drew on its balance.'),
+            fl_received='Received', fl_moved='Moved between funds', fl_spent='Spent',
+            fl_net='Received less spent', fl_balance='Held at 30 June', fl_unknown='not known',
+            fl_open='Still open in the journal: received and spent to date.',
+            fl_no_balance=('No opening balance was found for this fund, so what it held is not known; the '
+                           'received and spent figures stand on their own.'),
             payers_h='Where its other payers went',
             payers_line=('Each fund other than the school budget that paid toward this line in any year: '
                          'what it put here, and what it put on other school lines the same year. Each bar is '
