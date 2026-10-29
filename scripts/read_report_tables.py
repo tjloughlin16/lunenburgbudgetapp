@@ -363,10 +363,11 @@ def mark_unlabeled_subtotals(m_rows, tables):
     return out
 
 
-def cell_checks(stem, tables=None, names_of=None):
+def cell_checks(stem, tables=None, names_of=None, tol=0, tol_off_pages=()):
     """{(ref, col): [(status, Check, Triage|None)]} from P6 layers 1 and 2, on the cells as
     this edition reads them (the glyph witness applied)."""
-    checks, runs = V.validate(stem, tables=tables, names_of=names_of)
+    checks, runs = V.validate(stem, tables=tables, names_of=names_of, tol=tol,
+                              tol_off_pages=tol_off_pages)
     out = collections.defaultdict(list)
     for c in checks:
         t = triage_totals.triage(c, runs[c.stream]) if c.status == 'open' else None
@@ -375,7 +376,15 @@ def cell_checks(stem, tables=None, names_of=None):
     return out, checks
 
 
+def money_abs(d):
+    return '{:,.2f}'.format(abs(Decimal(d.replace(',', ''))))
+
+
 def describe(c, t):
+    if c.status == 'closed_tolerance':
+        # an edition's `rounding_tolerance_usd` (TJ, 29 Oct 2026): countable by this exact phrase
+        return '%s closes at %s `%s` %s (printed differs by $%s)' % (
+            c.column, c.ref, c.label[:40], V.TOLERANCE_PHRASE, money_abs(c.difference))
     if c.status.startswith('closed'):
         return '%s closes at %s `%s`' % (c.column, c.ref, c.label[:40])
     if c.status == 'incomplete':
@@ -464,6 +473,27 @@ def apply_witness(d, tables):
                                    'figures, and its first glyph could not be decided between `$` (%s) and '
                                    '`%s` (%s) -- `%s` or `$%s`' % (c.text, sd, c.text[0], sx, c.text, c.text[1:]))
     return out
+
+
+def apply_witnessed_cells(d, tables):
+    """THE CELL WITNESS (scripts/witness_cell_crops.py, notes/process/ANNUAL-REPORT-CELL-WITNESS.md):
+    a per-edition OPT-IN. If `witnessed-cells.csv` exists, each row names one cell whose Textract
+    text two printed identities proved wrong and an independent reader of the page confirmed
+    digit for digit. The cell keeps Textract's text and takes the corrected VALUE, and says so in
+    `repaired_cells`. No file, no change. A row whose `textract_text` is not what the cell reads
+    is an error, not a skip: the cache moved under the witness."""
+    path = os.path.join(d, 'witnessed-cells.csv')
+    if not os.path.exists(path):
+        return
+    for w in read_csv(path):
+        rows = tables.get((int(w['page']), int(w['table'])), [])
+        cell = next((r.cells.get(int(w['col'])) for r in rows if r.row == int(w['row'])), None)
+        if cell is None or cell.text != w['textract_text']:
+            raise SystemExit('witnessed-cells.csv: p%s t%s r%s c%s is not Textract `%s` any more'
+                             % (w['page'], w['table'], w['row'], w['col'], w['textract_text']))
+        cell.value, cell.places, cell.unparsed = V.parse(w['corrected_text'])
+        cell.repair = ('cell witness: Textract `%s`, corrected to `%s` -- %s' %
+                       (w['textract_text'], w['corrected_text'], w['witness']))
 
 
 def calendar_repair(text):
@@ -1494,11 +1524,14 @@ def build(edition, inventory_only=False):
         TOP_LINES[p] = set(re.findall(r'[A-Za-z0-9&/\']+', ' '.join(l['text'] for l in ls[:4]).upper()))
     witness = apply_witness(d, tables)
     apply_calendar_repairs(tables)
+    apply_witnessed_cells(d, tables)
     vt = without_averages(m_rows, tables)
     if ed.get('unlabeled_subtotals') is True:
         vt = mark_unlabeled_subtotals(m_rows, vt)
     checks, _ = cell_checks(stem, vt,
-                            validator_names(m_rows, tables, ed.get('validator_drop_titles') is True))
+                            validator_names(m_rows, tables, ed.get('validator_drop_titles') is True),
+                            tol=ed.get('rounding_tolerance_usd', 0),
+                            tol_off_pages={int(m['page']) for m in m_rows if m['dataset'] == 'report-elections'})
     apply_percents(tables)
     rep = page_integrity.check(page_integrity.OUT / f'{stem}.lines.tsv')
     folios = rep.folios

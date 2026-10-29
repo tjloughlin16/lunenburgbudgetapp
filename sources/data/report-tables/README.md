@@ -167,3 +167,5 @@ hidden by a larger missing one -- so its p94 rows are `checked` by coverage alon
 the witness exists to back up. Open.
 Why it exists: the coverage check's witness is Textract's own line output, which shares the
 misread, so it passed all 90 inflated wages as `checked`.
+
+**29 October 2026, TJ: a $1 rounding tolerance on the calendar editions' total checks.** Every 1991-2010 `edition.json` carries `"rounding_tolerance_usd": 1`: a printed total within $1.00 of the sum of its rows counts as closing (status `checked`), and the row's `reconciliation` says `within $1 rounding tolerance (printed differs by $N)` so it stays countable. It is a DOLLAR tolerance, off for percent and rate columns and for election pages. Rounding is the likely cause of the Unit 2 debt schedules ($1 off GRAND TOTAL INTEREST) but nothing here tests it; the Treasurer's bond schedule or the Accountant's debt ledger would. The annual-reports page carries this as a generated caveat.

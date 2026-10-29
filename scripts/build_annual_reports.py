@@ -153,6 +153,25 @@ def datasets():
     return out
 
 
+def tolerance(rows):
+    """Pages whose proof rests on an edition's `rounding_tolerance_usd` (TJ, 29 Oct 2026): a page in
+    the `proven` state holding a `checked` row whose reconciliation says it closed within the
+    tolerance. Counted from the per-edition row files, by the phrase `validate_totals` writes."""
+    import glob
+    import validate_totals as V
+    proven = {(r['fy'], r['page']) for r in rows if r['state'] == 'proven'}
+    hit, n_rows = set(), 0
+    for path in sorted(glob.glob(os.path.join(DATA, 'report-tables', '*', 'rows', '*.csv'))):
+        with open(path, encoding='utf-8', newline='') as fh:
+            for r in csv.DictReader(fh):
+                if r.get('status') == 'checked' and V.TOLERANCE_PHRASE in (r.get('reconciliation') or ''):
+                    if (r['edition'], r['page']) in proven:
+                        n_rows += 1
+                        hit.add((r['edition'], r['page']))
+    eds = sorted({e for e, _ in hit})
+    return {'pages': len(hit), 'rows': n_rows, 'editions': eds}
+
+
 def mb(n):
     return '%.1f MB' % (n / 1048576.0)
 
@@ -168,7 +187,17 @@ def facts():
     worst = max(subj.items(), key=lambda kv: kv[1]['unproven'])
     return {'rows': rows, 'docs': docs, 'datasets': ds, 'state': st, 'subject': subj,
             'ranked': ranked, 'worst': worst, 'fys': fys,
-            'total': len(rows), 'dataset_rows': sum(d['rows'] for d in ds)}
+            'tolerance': tolerance(rows), 'total': len(rows), 'dataset_rows': sum(d['rows'] for d in ds)}
+
+
+def tolerance_note(t):
+    if not t['pages']:
+        return []
+    ed = t['editions']
+    return ['%d pages in the %s-%s reports close only within $1: the printed total differs from the sum '
+            'of its rows by a dollar or less (%d rows). That is probably rounding, but nothing here '
+            'tests it. We will return to these pages against the Treasurer\'s bond schedule or the '
+            'Accountant\'s debt ledger.' % (t['pages'], ed[0], ed[-1], t['rows'])]
 
 
 def payload(f):
@@ -301,7 +330,7 @@ def payload(f):
             {'what': 'What a column means before you quote it',
              'where': 'sources/data/PROVENANCE-report-tables.md and `column_meaning`'},
         ],
-        'not_established': [
+        'not_established': tolerance_note(f['tolerance']) + [
             'That an UNPROVEN figure is wrong. Nothing has checked it.',
             'What a generic `v1` column is on any page where `column_meaning` says '
             '`not established`.',

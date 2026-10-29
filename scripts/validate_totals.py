@@ -315,10 +315,18 @@ def money(v):
     return f'{v:,.2f}' if v == v.quantize(Decimal('0.01')) else f'{v}'
 
 
-def close(stack, printed, places, n_min=1):
+# written into a row's `reconciliation` (read_report_tables.describe) and counted by build_annual_reports
+TOLERANCE_PHRASE = 'within $1 rounding tolerance'
+
+PERCENT_COL = re.compile(r'percent|%|\brate\b|\baccts?\b|accounts|votes|number|count|ratio|per\s*\$?1,?000|per cent', re.I)
+
+
+def close(stack, printed, places, n_min=1, tol=0):
     """The longest run of entries directly above that sums to `printed` (index into `stack`). Exactly, or within
-    half a unit per item when the items are printed finer than the total."""
-    s, best = Decimal(0), None
+    half a unit per item when the items are printed finer than the total. With `tol` (an edition's
+    `rounding_tolerance_usd`, TJ 29 Oct 2026), a run within `tol` dollars counts as `closed_tolerance` -- only
+    where no exact or rounded run exists, so the tolerance never displaces a real tie."""
+    s, best, tbest = Decimal(0), None, None
     for i in range(len(stack) - 1, -1, -1):
         s += stack[i].value
         n = len(stack) - i
@@ -329,16 +337,18 @@ def close(stack, printed, places, n_min=1):
             best = (i, 'closed')
         elif finer > places and abs(s - printed) <= n * Decimal(5) / Decimal(10) ** (finer + 1) and not best:
             best = (i, 'closed_rounded')
-    return best
+        elif tol and abs(s - printed) <= tol:
+            tbest = (i, 'closed_tolerance')
+    return best or tbest
 
 
-def first_close(stack, c):
+def first_close(stack, c, tol=0):
     """Where the block for a printed total starts in `stack`, (index, status), or None. The
     block since the last total when that closes; a longer run only adds zeros to it."""
     nat = natural(stack)
-    hit = close(stack, c.value, c.places)
-    if hit and hit[0] < nat and close(stack[nat:], c.value, c.places):
-        hit = (nat, close(stack[nat:], c.value, c.places)[1])
+    hit = close(stack, c.value, c.places, tol=tol)
+    if hit and hit[0] < nat and close(stack[nat:], c.value, c.places, tol=tol):
+        hit = (nat, close(stack[nat:], c.value, c.places, tol=tol)[1])
     return hit
 
 
@@ -361,13 +371,15 @@ def read_pages(stem):
         return {int(r['page']) for r in csv.DictReader(f, delimiter='\t')}
 
 
-def validate(stem, pages=None, tables=None, names_of=None):
+def validate(stem, pages=None, tables=None, names_of=None, tol=0, tol_off_pages=()):
     """Every check in the report, and the runs of rows they were made on (TRIAGE re-checks a
     run with one change applied). `tables` is `load()`'s output with a caller's readings
     applied (read_report_tables.py's glyph witness); by default the cells as Textract read them."""
     runs = streams(tables if tables is not None else load(stem, pages), read_pages(stem), names_of)
     checks = []
     for i, st in enumerate(runs):
+        # the tolerance is DOLLARS: off for the pages a caller says count something else (votes)
+        st['tol'] = Decimal(0) if set(st['pages']) & set(tol_off_pages) else Decimal(tol)
         prev = runs[i - 1] if i else None
         # what the table before left unsummed, column by HEADER (a page with an extra
         # annotation column shifts every position), if it is adjacent and shares two headers:
@@ -387,6 +399,12 @@ def check_stream(st):
     cols = figure_cols(rows)
     stacks = {k: [] for k in cols}
     carried = st.get('carry', {})
+    tol = st.get('tol', 0)
+
+    def tol_of(k):
+        # a DOLLAR tolerance: never on a column the header says is a percent or a rate, where $1 is a
+        # whole point (2005 p52 `Levy Percent`)
+        return 0 if PERCENT_COL.search(st['names'].get(k, '') or '') else tol
     carry = {k: list(carried.get(st['names'].get(k), [])) for k in cols}
     seen = {k: [] for k in cols}          # every data row, (label, Entry), summed or not
     unparsed = {k: [] for k in cols}
@@ -412,7 +430,7 @@ def check_stream(st):
                 seen[k].append((label, stacks[k][-1]))
             continue
         totals_by_label.append((label, r, figs))
-        found = {k: first_close(stacks[k], c) for k, c in figs.items()}
+        found = {k: first_close(stacks[k], c, tol_of(k)) for k, c in figs.items()}
         # a total row covers the same rows in every column: where two or more columns agree
         # where the block starts, that is the block for the rest of the row too
         starts = Counter(stacks[k][h[0]].ref for k, h in found.items() if h and h[0] < len(stacks[k]))
@@ -439,7 +457,7 @@ def check_stream(st):
             if not hit and carry.get(k):
                 # a total that runs back into the table before
                 joined = carry[k] + stack
-                h = close(joined, c.value, c.places)
+                h = close(joined, c.value, c.places, tol=tol_of(k))
                 if h and h[0] < len(carry[k]):
                     across, hit = joined[h[0]:], h
                     carry[k] = carry[k][:h[0]]

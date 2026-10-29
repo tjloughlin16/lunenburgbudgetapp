@@ -5,7 +5,7 @@
 ## The short version
 
 - Every financial page in every report has been read. **None is unread.**
-- **923 of 1,119** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
+- **933 of 1,119** tie to a total the page itself prints. The rest are real readings that no arithmetic has confirmed.
 - **4 pages** an extractor reached and wrote nothing from. Each says why.
 - What is left is **code, not reading**.
 
@@ -62,9 +62,9 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | payroll | what the town paid its people, name by name | 207 | 197 | 10 | 0 |
 | special revenue | the funds that sit outside the budget — grants, gifts, revolving | 147 | 143 | 4 | 0 |
 | debt | what the town owes and when it falls due | 103 | 71 | 31 | 1 |
-| trust and stabilization | the reserves, and how much is in each | 92 | 64 | 26 | 2 |
+| trust and stabilization | the reserves, and how much is in each | 92 | 73 | 17 | 2 |
 | tax collection | what was committed, collected and abated | 60 | 56 | 2 | 0 |
-| capital | the capital projects and what they cost | 38 | 33 | 5 | 0 |
+| capital | the capital projects and what they cost | 38 | 34 | 4 | 0 |
 | balance sheet | what the town held and owed at year end | 37 | 37 | 0 | 0 |
 | valuation | what the town is worth, by class of property | 35 | 29 | 6 | 0 |
 | treasurers cash | the cash the Treasurer held | 35 | 35 | 0 | 0 |
@@ -76,7 +76,7 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | cultural council | the grants the cultural council made | 2 | 2 | 0 | 0 |
 | vital records |  | 2 | 0 | 2 | 0 |
 | officials |  | 1 | 0 | 1 | 0 |
-| **total** |  | **1119** | **923** | **189** | **4** |
+| **total** |  | **1119** | **933** | **179** | **4** |
 
 ## By report
 
@@ -85,23 +85,23 @@ Every one is downloadable, and every one carries the sha256 of the bytes we hold
 | 1991 edition | 21 | 15 | 6 | 0 |
 | 1992 edition | 20 | 15 | 5 | 0 |
 | 1993 edition | 18 | 12 | 6 | 0 |
-| 1994 edition | 16 | 11 | 5 | 0 |
+| 1994 edition | 16 | 13 | 3 | 0 |
 | 1995 edition | 29 | 24 | 4 | 1 |
-| 1996 edition | 33 | 31 | 2 | 0 |
-| 1997 edition | 31 | 26 | 5 | 0 |
-| 1998 edition | 33 | 30 | 3 | 0 |
-| 1999 edition | 33 | 23 | 10 | 0 |
+| 1996 edition | 33 | 32 | 1 | 0 |
+| 1997 edition | 31 | 27 | 4 | 0 |
+| 1998 edition | 33 | 31 | 2 | 0 |
+| 1999 edition | 33 | 24 | 9 | 0 |
 | 2000 edition | 37 | 25 | 12 | 0 |
-| 2001 edition | 24 | 14 | 10 | 0 |
-| 2002 edition | 35 | 22 | 13 | 0 |
+| 2001 edition | 24 | 15 | 9 | 0 |
+| 2002 edition | 35 | 23 | 12 | 0 |
 | 2003 edition | 36 | 20 | 16 | 0 |
 | 2004 edition | 38 | 20 | 18 | 0 |
 | 2005 edition | 32 | 19 | 13 | 0 |
 | 2006 edition | 39 | 23 | 13 | 3 |
 | 2007 edition | 38 | 23 | 15 | 0 |
 | 2008 edition | 33 | 29 | 4 | 0 |
-| 2009 edition | 29 | 16 | 13 | 0 |
-| 2010 edition | 30 | 14 | 16 | 0 |
+| 2009 edition | 29 | 17 | 12 | 0 |
+| 2010 edition | 30 | 15 | 15 | 0 |
 | FY2011 | 29 | 29 | 0 | 0 |
 | FY2012 | 28 | 28 | 0 | 0 |
 | FY2013 | 31 | 31 | 0 | 0 |
@@ -124,17 +124,17 @@ A **dedicated** extractor knows what its table means and can check it against a 
 
 | dataset | rows | years | built by | checked | check failed | no check |
 |---|---:|---|---|---:|---:|---:|
-| `report-appropriations.csv` | 11,708 | 1991–2025 | generic | 3044 | 6965 | 1699 |
+| `report-appropriations.csv` | 11,708 | 1991–2025 | generic | 3602 | 6594 | 1512 |
 | `report-gross-wages.csv` | 11,446 | 1995–2025 | generic | 7644 | 255 | 3547 |
 | `staff-roster-entries.csv` | 7,025 | 1991–2025 | dedicated |  — | — | —  |
 | `special-revenue-funds.csv` | 4,532 | 1992–2025 | dedicated | 3016 | 1370 | 146 |
 | `report-elections.csv` | 3,438 | 1992–2025 | generic | 1664 | 1725 | 49 |
 | `annual-report-receipts.csv` | 3,192 | 1991–2023 | dedicated | 2340 | 304 | 548 |
-| `report-debt.csv` | 2,254 | 1991–2025 | generic | 1515 | 502 | 237 |
-| `report-trust-funds.csv` | 2,172 | 1991–2025 | generic | 982 | 818 | 372 |
+| `report-debt.csv` | 2,254 | 1991–2025 | generic | 1583 | 473 | 198 |
+| `report-trust-funds.csv` | 2,172 | 1991–2025 | generic | 1200 | 621 | 351 |
 | `report-officials.csv` | 1,741 | 1991–2024 | generic | 0 | 0 | 1741 |
 | `report-dept-activity.csv` | 1,377 | 1991–2025 | generic | 0 | 0 | 1377 |
-| `report-capital-projects.csv` | 1,317 | 1999–2025 | generic | 737 | 551 | 29 |
+| `report-capital-projects.csv` | 1,317 | 1999–2025 | generic | 738 | 550 | 29 |
 | `staff-roster-counts.csv` | 1,301 | 1991–2025 | dedicated |  — | — | —  |
 | `report-valuation.csv` | 891 | 1995–2019 | generic | 186 | 100 | 605 |
 | `report-vital-records.csv` | 875 | 2001–2025 | generic | 0 | 0 | 875 |
@@ -163,6 +163,7 @@ A **dedicated** extractor knows what its table means and can check it against a 
 
 ## What this does not establish
 
+- 11 pages in the 1994-2003 reports close only within $1: the printed total differs from the sum of its rows by a dollar or less (236 rows). That is probably rounding, but nothing here tests it. We will return to these pages against the Treasurer's bond schedule or the Accountant's debt ledger.
 - That an UNPROVEN figure is wrong. Nothing has checked it.
 - What a generic `v1` column is on any page where `column_meaning` says `not established`.
 - Whether a page we filed as `unknown` holds a table worth reading.

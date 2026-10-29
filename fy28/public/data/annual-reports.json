@@ -35,10 +35,10 @@
   {
    "means": "the reserves, and how much is in each",
    "pages": 92,
-   "proven": 64,
+   "proven": 73,
    "refused": 2,
    "subject": "trust-and-stabilization",
-   "unproven": 26
+   "unproven": 17
   },
   {
    "means": "what was committed, collected and abated",
@@ -51,10 +51,10 @@
   {
    "means": "the capital projects and what they cost",
    "pages": 38,
-   "proven": 33,
+   "proven": 34,
    "refused": 0,
    "subject": "capital",
-   "unproven": 5
+   "unproven": 4
   },
   {
    "means": "what the town held and owed at year end",
@@ -169,7 +169,7 @@
   {
    "basis": "the `state` column of `annual-report-pages.csv`, set from the proof each extractor recorded rather than from whether it produced rows.",
    "bearing": "sizes",
-   "claim": "923 of 1,119 pages tie to a total the page itself prints.",
+   "claim": "933 of 1,119 pages tie to a total the page itself prints.",
    "detail": "A page is PROVEN only where the table states an identity about itself -- parts summing to a printed total -- and the extract closes it. Most tables here print no total, so there is nothing to close.",
    "figure": "proven",
    "figures": {
@@ -179,14 +179,14 @@
      "value": 1119
     },
     "proven": {
-     "text": "923",
+     "text": "933",
      "unit": "pages tied to a printed total",
-     "value": 923
+     "value": 933
     },
     "rest": {
-     "text": "193",
+     "text": "183",
      "unit": "pages with no such check",
-     "value": 193
+     "value": 183
     }
    },
    "id": "a-third-of-the-pages-are-checked-against-the-page-itself",
@@ -194,7 +194,7 @@
    "literals": [],
    "not_shown": "That an UNPROVEN figure is wrong. It means nothing has checked it, which is a different claim and the reason the column exists.",
    "see": [],
-   "so_what": "The other 193 carry real figures that no arithmetic has confirmed."
+   "so_what": "The other 183 carry real figures that no arithmetic has confirmed."
   },
   {
    "basis": "`annual-report-pages.csv` grouped by subject and state.",
@@ -264,10 +264,10 @@
  "datasets": [
   {
    "built_by": "generic",
-   "checked": 3044,
-   "failed": 6965,
+   "checked": 3602,
+   "failed": 6594,
    "name": "report-appropriations",
-   "nocheck": 1699,
+   "nocheck": 1512,
    "rows": 11708,
    "years": "1991–2025"
   },
@@ -318,19 +318,19 @@
   },
   {
    "built_by": "generic",
-   "checked": 1515,
-   "failed": 502,
+   "checked": 1583,
+   "failed": 473,
    "name": "report-debt",
-   "nocheck": 237,
+   "nocheck": 198,
    "rows": 2254,
    "years": "1991–2025"
   },
   {
    "built_by": "generic",
-   "checked": 982,
-   "failed": 818,
+   "checked": 1200,
+   "failed": 621,
    "name": "report-trust-funds",
-   "nocheck": 372,
+   "nocheck": 351,
    "rows": 2172,
    "years": "1991–2025"
   },
@@ -354,8 +354,8 @@
   },
   {
    "built_by": "generic",
-   "checked": 737,
-   "failed": 551,
+   "checked": 738,
+   "failed": 550,
    "name": "report-capital-projects",
    "nocheck": 29,
    "rows": 1317,
@@ -880,6 +880,7 @@
  "grain": "One row per page of an annual town report that holds a financial table, and the datasets read out of those pages. A page is counted once per report; a figure is counted once per row.",
  "id": "annual-reports",
  "not_established": [
+  "11 pages in the 1994-2003 reports close only within $1: the printed total differs from the sum of its rows by a dollar or less (236 rows). That is probably rounding, but nothing here tests it. We will return to these pages against the Treasurer's bond schedule or the Accountant's debt ledger.",
   "That an UNPROVEN figure is wrong. Nothing has checked it.",
   "What a generic `v1` column is on any page where `column_meaning` says `not established`.",
   "Whether a page we filed as `unknown` holds a table worth reading."
@@ -909,7 +910,7 @@
   },
   {
    "label": "pages tied to a total the page prints",
-   "value": "923 of 1,119"
+   "value": "933 of 1,119"
   },
   {
    "label": "rows read out of them",
