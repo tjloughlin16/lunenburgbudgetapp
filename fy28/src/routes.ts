@@ -1016,6 +1016,10 @@ function resolvePath(pathname: string): Tab | null {
   // address wins over an older page that held the same slug -- that is the migration: the
   // hub replaces the report it was built from.
   if (TOPIC_CATEGORIES.includes(seg.split('/')[0])) return 'topic'
+  // ONE PAGE PER SCHOOL LINE AND PER FUND, /school-lines/<slug> and /school-funds/<slug>
+  // (pages/FyItem.tsx). They ride the topic tab, as /people/<slug> rides the org charts', so they
+  // are no SLUG of their own: unlisted like the FY breakdown page they belong to.
+  if (/^school-(lines|funds|groups)\/[a-z0-9-]+$/.test(seg)) return 'topic'
   if (TOPIC_ALIASES[seg]) return 'topic'
   // The second. Forty-eight posts share one page component; the slug is in the path.
   if (seg.startsWith('blog/')) return 'blog'

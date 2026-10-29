@@ -4,7 +4,111 @@
 
 This section stands on its own. Everything below it is history; where they disagree, this wins.
 
-### NEXT SESSION STARTS HERE -- 28 October 2026, end of day. Nothing below is committed or deployed
+### NEXT SESSION STARTS HERE -- 29 October 2026, early. Uncommitted, undeployed
+
+**Coordination, still binding until TJ lifts it:** another session (`lunenburgbudgets-e4`) owns the
+site build and deploy -- do NOT run `npm run build:site`; tell it when changes are ready and its
+deploy carries them. Do NOT run `build_db.py` until TJ gives the all-clear (that session is rebuilding
+`lunenburg.db` with 2001-2010 rows). Commit by explicit path only; three sessions' work is in the tree.
+
+**QUEUED BY TJ -- build these next, in this order:**
+
+1. **A "biggest changes" table on the FY breakdown page.** TJ, 29 Oct: *"the hockeystick spending
+   curve in collaborative tuition fund year over year needs to be called out in some way on the FY
+   breakdown chart as its a big change. Im thinking either a specific table for 'big changes' (both
+   biggest spend changes, biggest budget changes, or biggest unspent changes), or putting another
+   column into the 'every line' table."* Recommendation: a block of its own -- three short ranked
+   lists (all-funds cost, final budget, left), each line with its prior-year figure, this year's and
+   the change, linking to `/school-lines/<slug>` -- plus a change column in the every-line table so
+   it sorts. Rank by DOLLAR change with the % beside it (a % off a small base is noise: rule 6). The
+   inputs already exist per line in `fy_items` (`line_hist`: voted, budget, spent, all_in, left).
+   Emit from `build_fy_breakdown.py` as a block; strings in the generator; a prior year must exist.
+2. **"Where the non-general-fund money went" section.** TJ, 29 Oct: *"analyzes the non-general-fund
+   money we know relate to school lines, and give an analsyis of where that money went (which school
+   lines were funded the most) and is that different than the year(s) before it ... calls out if
+   grant money or state money or fees had a diffference in how they were spent from the previous
+   year or even the average (if there is a clear trend)."* The data is `fund_on` in `fy_items.files`
+   (fy -> payer label -> account -> amount, from the same expense rows every line page ties to).
+   Group by payer kind (`build_fy_breakdown.PAYERS`: IDEA, other grants, circuit breaker, fees...),
+   per year: top lines and their share; the change from last year; against the average where the
+   series supports it. The worked example is the circuit breaker: private tuitions $484k (FY23) ->
+   $0 (FY26) while collaborative went $11k -> $333k, and IDEA arrived on private in FY26 ($287k).
+   Rule 7 on every sentence: a payer moving between lines is a measurement; WHY is a hypothesis.
+
+**Done in this session (29 Oct, early) -- all uncommitted; `build_fy_breakdown.py --check` current, tsc clean:**
+- Popups: one header row (Open its page + Close); copy-link button and "its page" row links gone;
+  pointer cursor on every button site-wide (`fy28/src/index.css`, Tailwind 4 resets it).
+- "What it connects to" (`fy-ego-web.tsx`) ordered by kind then name, never by size.
+- History charts moved to `fy-item-history.tsx` (one component, page + fund popup tab "Across the
+  years"). Line history: per-payer spending lines + all-in; a budget-against-spending chart with a
+  "Left in the budget" row under it (left = budget less the SCHOOL BUDGET's own spending, so it can
+  exceed the gap to the all-funds bar -- private FY2026: $522,629 left vs $753,108 all-in).
+- **Collaborative tuition FY2025/26 votes are NET of the circuit breaker** (books print gross then
+  `Circuit Breaker ... -452,580`); `printed_plan` is passed into `fy_items` and the line draws the
+  book's gross beside the vote. FY2023/24 books print no offset anywhere (searched whole books).
+- Line pages: "Where its other payers went" cards (`trace_of`), "Who it paid / What kind of bill /
+  How many bills" (`payees_out`, `KIND_BUCKET`), "What the bills were for" (`MEMO_CATS`, a keyword
+  list, OURS, shown where it sorts >=50% of the money: 9 of 294 lines), "The published price"
+  (`PAYEE_RATES`, FLLAC -> Keystone Key Program).
+- **Group pages** `/school-groups/<slug>` (`GROUPS` in `fy_items.py`, route in `routes.ts`,
+  `fy-items.ts`, `GroupPage` in `FyItem.tsx`): out-of-district tuition = the district's own category
+  (private + collaborative). Small multiples per line (placements / budget+all-in / cost by payer),
+  placement counts (`placement-counts.csv`, FY2026 not held), which line each fund paid, other moves,
+  each-line table, both-added-together, payer cards. Member line pages and paying fund pages link to it.
+- **Keystone (formerly FLLAC) rate sheets FY24-FY27 INGESTED** by a subagent: `sources/peer-districts/
+  keystone-tuition-rate-sheet-*.pdf` (5, incl. an earlier FY24 upload), dataset
+  `sources/data/keystone-tuition-rates.csv` from `scripts/extract_keystone_tuition.py`. Every
+  Lunenburg FLLAC invoice FY25-27 is exactly 1/4 of the Key Program member school-year rate.
+  `build_source_index.py` exits 1 on 507 PRE-EXISTING uncatalogued files (1991-2000 report CSVs and
+  `search.db`), none from this ingest -- so `sources.json` was not regenerated. Fix separately.
+
+**What the collaborative spike is, as established (rule 7 -- measurements only):** all-in $487,249
+(FY25) -> $1,070,265 (FY26). Of the +$583,016: ~$160k more of NEXT year's tuition paid early
+($189,277 of FY2027 Q1 invoices `27L2KEY1x` dated 30 Jun 2026), $58,708 owed at year end, ~$365k
+FY26's own bills (+80%). Published price +4.2%; own-year tuition bills = ~9.6 years at the annual
+rate vs 5.6 (FY25) and 4.2 (FY24). NOT established: that ~9.6 tuition-years is ~9-10 children --
+the FY2026 annual town report (1 March 2026 count) settles it, and it is not yet held. FLLAC billed
+one bundled invoice a quarter through FY2024 and per-student from FY2025, so invoice COUNTS are not
+comparable across that boundary (an open idea: detect and mark "billed differently from here").
+
+### Earlier: 28 October 2026, evening. Uncommitted, undeployed (another agent commits)
+
+**Done this session (verify_fy_breakdown ties; build --check current; tsc clean):**
+- **Rule a fixed** (`fy_breakdown.entries`, and its own route in the verifier): a journal that does
+  not net is read one memo at a time; a memo is a move when its school and other sides go opposite
+  ways (an accrual moves neither). Eight re-charges added, $111,000 FY2023/25/26 (Turkey Hill,
+  fringe, stipends). Line files key a re-charge by (journal, memo). Audit groups 21 and 589 were NOT
+  misses (21: Curriculum Adoption is outside the school scope; 589: grant-to-grant).
+- **The web's between-funds arrows now point the true way** (`fy_web.py`): cost a fund gave away
+  points out of it. Its assertion is now strict.
+- **Payee and web files checked by a second route** (`verify_fy_breakdown.side_file_checks`).
+- **RULE D WAS BUILT AND REMOVED. DO NOT RE-ADD IT.** TJ, 28 Oct: a correction is explicit and is
+  followed (rule a), but *"we can't assume if it was done once, it is done always"* -- "we cannot
+  assume the 344k from the 2k". It placed a grant account's other pay on the line one correction
+  paired it with ($2,668 of evidence placed $343,772). Also double-counted pay later moved back.
+  The 'no school line' pile stays unmatched, explained by the appendix.
+- **Per-item pages**: `/school-lines/<slug>`, `/school-funds/<slug>` (`scripts/fy_items.py`, run by
+  build_fy_breakdown; `fy28/src/pages/FyItem.tsx`; popups and pages share `LineBody`/`FundBody`;
+  `fy-ego-web.tsx`). 294 lines, 45 funds; hidden like the parent (noindex, not prerendered, not in
+  sitemap). Open: no page for the school budget as a fund; line names keep `.title()`'s
+  "Superintendent'S"; Expenses/Analysis tabs on the page not clicked through.
+- **Athletics**: /athletics/athletic-director fixed (TJ read the fee-fund row as "the fee fund paid
+  the AD"; it now draws "looked for: none found" as an empty box) and leads with a salary line
+  chart; fee-fund-ledger merged into /athletics/fee-fund-history (TOPIC_MERGED); money-gaps row on
+  fee-fund balances rewritten; transportation.md's "balance is not known" corrected.
+- **Cost moved between funds, award to award** (`fund_moves_between`, block `fy-fund-moves`, web
+  kind `fund` drawn giver -> taker, a "Moved between funds" column and popup tab, programme pages
+  show awards side by side). Entries with no school line are now moves, not spending. 32 entries
+  FY2023-26; reversals marked.
+- **Rule a reads one MEMO at a time** (TJ: the whole-journal split "seems to create accounting
+  bugs"). Exception: in a journal that nets, memos that do NOT net alone are read together
+  (2025/10/000604: substitutes' pay off four lines under one memo, onto the school health grant
+  under another). A memo that nets alone is never pooled; nothing is shared by proportion across
+  memos. Moved FY2023 payer splits only (~$27k over 15 lines); line totals unchanged.
+- `check_generated.py`, 28 Oct evening: 36 stale, almost all from the database the 2021 backlog
+  and other sessions rebuilt (D1, recording minutes, README, money flow...). Not regenerated here.
+
+### Earlier: 28 October 2026, end of day
 
 **Do first, not optional (TJ): fix the re-charge rule.** `fy_breakdown.py` rule a only counts a
 `GEN`/`GRV` entry as a re-charge if its expense lines net to zero within a dollar. An audit found

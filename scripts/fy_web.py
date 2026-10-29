@@ -14,7 +14,14 @@ no reading of its own and its arrows sum to what each fund spent, to the cent (a
     kind      fund -> category  same kind of work, by function code (OUR match), never one line
     none      fund -> no line   spending the books give no school line
     capital   fund -> capital   a capital article's own project
-    between   fund -> between   moved from one fund to another by journal entry
+    fund      fund -> fund      cost re-booked from one fund to another by journal entry, where
+                                the books pair them (fy_breakdown.pair): drawn the way the cost
+                                moved, from the fund that gave it up to the fund that took it on
+                                (TJ, 28 October 2026: the arrows match the list of moves). One
+                                arrow per two funds, the year's net, so an entry and its reversal
+                                draw nothing
+    between   fund -> between   the rest of what the fund took on from other funds, unpaired;
+              between -> fund   drawn the other way where the fund gave the cost away
     school    school -> line    the school budget's own spending on the line, after re-charges
     transfer  line -> line      budget moved between two lines (BUA), where one side is one line,
                                 so the pairing is the books' and not ours. Budget, not spending.
@@ -59,6 +66,22 @@ def files(m, line_name, fund_label, fund_group, payer_group, cat_label, money, o
                                  sub='School general fund, department 300')
         for r in lines.values():
             edge('f:school', line(r['account']), 'school', r['gf_spent'] - r['other_year_spent'])
+        # COST RE-BOOKED BETWEEN TWO FUNDS, where the books pair them: netted per two funds over
+        # the year, so `paired[f]` is what the fund-to-fund arrows carry for fund f (+ took on)
+        pair_net = defaultdict(Decimal)                # (taker, giver), taker < giver by number
+        for mv in m['fund_moves_between']:
+            if mv['fy'] != fy:
+                continue
+            for p in mv['pairs']:
+                a, b = p['got'], p['gave']
+                if a < b:
+                    pair_net[(a, b)] += p['amount']
+                else:
+                    pair_net[(b, a)] -= p['amount']
+        paired = defaultdict(Decimal)
+        for (a, b), v in pair_net.items():
+            paired[a] += v
+            paired[b] -= v
         spent = defaultdict(Decimal)
         for (y, f), d in sorted(m['src'].items()):
             if y != fy:
@@ -66,7 +89,10 @@ def files(m, line_name, fund_label, fund_group, payer_group, cat_label, money, o
             fk = 'f:' + f
             nodes[fk] = dict(id=fk, kind='fund', label=fund_label(f, A),
                              group=payer_group(fund_group(m, A, fy, f)), sub=f)
-            for (kind, dest), v in d.items():
+            # a fund with a fund-to-fund arrow and no `between` of its own still owes the sink
+            # the difference, so its arrows sum to what it spent
+            extra = [(('between', None), D0)] if ('between', None) not in d and paired[f] else []
+            for (kind, dest), v in list(d.items()) + extra:
                 spent[fk] += v
                 if kind == 'payee':
                     edge(fk, line(dest), 'paid', v)
@@ -80,28 +106,52 @@ def files(m, line_name, fund_label, fund_group, payer_group, cat_label, money, o
                     nodes.setdefault(ck, dict(id=ck, kind='line', label='%s, same kind of work' % cat_label[dest],
                                               cat=cat_label[dest], cid=dest, sub='by function code'))
                     edge(fk, ck, 'kind', v)
-                elif kind in ('none', 'capital', 'between'):
+                elif kind == 'between':
+                    # the paired part is drawn fund to fund below; the rest goes to the sink
+                    v -= paired[f]
+                    sk = 'x:between'
+                    nodes.setdefault(sk, dict(id=sk, kind='sink', label=dict(SINKS)['between']))
+                    if v < 0:
+                        edge(sk, fk, 'between', -v)
+                    else:
+                        edge(fk, sk, 'between', v)
+                elif kind in ('none', 'capital'):
                     sk = 'x:' + kind
                     nodes.setdefault(sk, dict(id=sk, kind='sink', label=dict(SINKS)[kind]))
-                    # money moved between funds is in on one fund and out on another; the arrow
-                    # carries its size, the direction is in the fund's own popup
-                    edge(fk, sk, kind if kind != 'between' else 'between', abs(v) if kind == 'between' else v)
+                    # money moved between funds is in on one fund and out on another, and the
+                    # arrow says which: cost a fund TOOK ON points at it, cost it GAVE AWAY points
+                    # out of it (a reader takes an arrow's direction as a fact; it was once drawn
+                    # by size alone, so a grant that shed $89,375 read as one that paid it)
+                    if kind == 'between' and v < 0:
+                        edge(sk, fk, 'between', -v)
+                    else:
+                        edge(fk, sk, kind, v)
                 else:
                     fail('FY%d fund %s: a placement of kind %r the web does not draw' % (fy, f, kind))
-        # EVERY PLACEMENT IS AN ARROW, and only once: the drawn amounts (back reversed, between
-        # by size) are each fund's spending, to the cent
+        for (a, b), v in sorted(pair_net.items()):
+            if ('f:' + a) not in nodes or ('f:' + b) not in nodes:
+                fail('FY%d: cost re-booked between funds %s and %s, one of which spent nothing' % (fy, a, b))
+            # a took on v of b's cost: the arrow runs from b, which gave it up, to a
+            if v > 0:
+                edge('f:' + b, 'f:' + a, 'fund', v)
+            elif v < 0:
+                edge('f:' + a, 'f:' + b, 'fund', -v)
+        # EVERY PLACEMENT IS AN ARROW, and only once: what leaves a fund less what points back at
+        # it is the fund's spending, to the cent
         drawn = defaultdict(Decimal)
         for e in edges:
             if e['k'] == 'school':
                 continue
-            fk = e['b'] if e['k'] == 'back' else e['a']
-            drawn[fk] += Decimal(e['t'].replace('$', '').replace(',', '')) * (-1 if e['k'] == 'back' else 1)
+            if e['k'] == 'fund':
+                amt = Decimal(e['t'].replace('$', '').replace(',', ''))
+                drawn[e['b']] += amt          # the fund that took the cost on spent it
+                drawn[e['a']] -= amt
+                continue
+            back = e['b'].startswith('f:')
+            drawn[e['b'] if back else e['a']] += Decimal(e['t'].replace('$', '').replace(',', '')) * (-1 if back else 1)
         for fk, v in spent.items():
-            between = sum((dv for (kind, _), dv in m['src'][(fy, fk[2:])].items() if kind == 'between'), D0)
-            want = v - between + sum((abs(dv) for (kind, _), dv in m['src'][(fy, fk[2:])].items()
-                                      if kind == 'between' and round(dv, 2)), D0)
-            if abs(drawn[fk] - want) > Decimal('0.01') * len(m['src'][(fy, fk[2:])]):
-                fail('FY%d %s: its arrows carry %s, it placed %s' % (fy, fk, drawn[fk], want))
+            if abs(drawn[fk] - v) > Decimal('0.01') * len(m['src'][(fy, fk[2:])]):
+                fail('FY%d %s: its arrows carry %s, it placed %s' % (fy, fk, drawn[fk], v))
         # budget transfers with one line on a side: the pairing is the books'
         for t in m['transfers']:
             if t['fy'] != fy:

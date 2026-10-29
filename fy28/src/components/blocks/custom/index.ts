@@ -18,6 +18,7 @@ import FyReadiness from './fy-readiness'
 import FyBridge from './fy-bridge'
 import FyLineFunds from './fy-line-funds'
 import FyBudgetChanges from './fy-budget-changes'
+import FyFundMoves from './fy-fund-moves'
 import FyPayees from './fy-payees'
 import FyPlan from './fy-plan'
 import FySalaries from './fy-salaries'
@@ -41,6 +42,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-bridge': FyBridge,
   'fy-line-funds': FyLineFunds,
   'fy-budget-changes': FyBudgetChanges,
+  'fy-fund-moves': FyFundMoves,
   'fy-payees': FyPayees,
   'fy-plan': FyPlan,
   'fy-salaries': FySalaries,

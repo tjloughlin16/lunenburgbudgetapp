@@ -39,11 +39,11 @@ its period-13 report prints, and every year is on the footing FY2026's report al
 THE MATCH RULES for term 3, in order; a line of another fund's spending is placed by the first
 that applies, and only once:
 
-  a. MOVED BY JOURNAL ENTRY. A `GEN`/`GRV` journal whose expense lines touch the surplus scope
-     and another fund and net to zero (within a dollar). The books name both ends, so this is
-     the one rule that is not a reading. It is measured on the SCHOOL side, line by line: a
-     school line's own negative posting in the entry is cost taken off it, now paid by another
-     fund (placed on that line, `moved_off`); a positive one is cost moved back onto it
+  a. MOVED BY JOURNAL ENTRY. A `GEN`/`GRV` entry -- ONE MEMO of a journal (`entries()`) -- whose
+     expense lines touch the surplus scope and another fund, the two sides going opposite ways.
+     The books name both ends, so this is the one rule that is not a reading. It is measured on
+     the SCHOOL side, line by line: a school line's own negative posting in the entry is cost
+     taken off it, now paid by another fund (placed on that line, `moved_off`); a positive one is cost moved back onto it
      (`moved_on`, already in what it spent). Which fund took it is shared over the funds the
      entry put money on, in proportion -- the payer split, not the amount, is the sharing. The
      other funds' lines are not read again: what each fund gave or took beyond the cost it
@@ -62,6 +62,26 @@ that applies, and only once:
      by its own `category_of`), not a line: a function code names a kind of work, and spreading
      it over the accounts that share it would be an allocation we invented. So each category
      carries one extra row, `same function, other funds`, whose left is zero.
+  -. MOVED BETWEEN FUNDS, NO SCHOOL LINE (28 October 2026). A `GEN`/`GRV` entry outside the school
+     budget, one memo at a time as `entries()` reads --
+     where one fund's postings net below zero and another's above. A journal entry is a
+     RECLASSIFICATION: the cost was already paid, by payroll or a bill, and the entry changes
+     which fund carries it; no cash moves. Booked as `between` on each fund, its net, and not
+     matched to any line -- before this each half fell to rules b and c as ordinary spending, so
+     one grant award showed negative spending under a function code and the next award positive.
+     Line figures do not move (no school line is in it); funds' `function` and `none` give way to
+     `between`. Read off the entry, never inferred: nothing here extends a correction to money it
+     did not move (TJ, 28 October 2026; rule d was built and removed for doing that).
+     `fund_moves_between` lists every such entry, and every memo of a rule a entry in which cost
+     passed fund to fund beside the school side (the school lines read as one more party, so the
+     RECLASS SCHOOL MEMO 10/11/24-6 entry reads as $111,186.16 from IDEA's FY2023 award to its
+     FY2024 one): fy, journal, date, memos, what each fund gave and took, and the PAIRS -- exact
+     where one fund is on a side or two amounts match to the cent, else `paired` False, the books
+     not saying which giver's cost went to which receiver (the convention `transfers()` uses).
+     Each pair is classed (`move_class`): one grant programme from one year's award to another's
+     (`award`, to a `later` or `earlier` award, by the year the fund's name states), grant to
+     grant, grant and revolving or lunch fund, and so on. An entry that exactly undoes an earlier
+     one is marked on both (`reverses`, `reversed_by`).
   -. UNMATCHED. Everything else: lunch, extended day, spending booked to a heading (2000) or
      to no function (0000) with a payee the general fund never paid. Shown, never placed.
 
@@ -188,6 +208,183 @@ def tie_special():
     return tied, extra
 
 
+def entries(jr, scope):
+    """Rule a's entries: (fy, journal, rows) for each move between a school line and another fund.
+
+    AN ENTRY IS A MEMO (TJ, 28 October 2026, deciding it: "your recommendation is the only one
+    that makes sense... the other seems to create accounting bugs"). A journal with one memo is
+    one entry. A journal with several is read one memo at a time, whether or not it nets as a
+    whole: 2023/12/001312 nets, and holds three corrections under three memos -- school pay onto
+    the school choice fund, onto a FY2021 grant, and Title I moved between two awards -- and
+    reading it whole shared each school line's cost over every fund any memo touched, crediting a
+    fund with cost its own memo never moved. A memo is a move when its school side and its
+    other-fund side go opposite ways; that test is what keeps an accrual out (summer pay posted
+    positive on both sides moves nothing). A memo that does not net (the Turkey Hill security
+    system: $40,000 off a school line, $40,867 onto three grants) leaves its remainder with the
+    funds of THAT memo, as `moved between funds` -- never spread over another memo's funds.
+
+    THE ONE EXCEPTION: the halves of one correction keyed under two memos. 2025/10/000604 takes
+    $13,900 of substitutes' pay off school lines under "ADJ EXP TO FY25 CSHS" and puts it on the
+    school health grant under "ADJ EXP FR GF"; neither memo nets, the journal does. So in a
+    journal that nets, the memos that do NOT net on their own are read together as one entry
+    (`part` the tuple of their memos) -- they can only balance each other. A memo that nets on
+    its own is never pooled."""
+    for (fy, j), rs in sorted(jr.items()):
+        if len({r['fund'] for r in rs}) < 2:
+            continue
+        nets = abs(sum(r['amt'] for r in rs)) <= 1
+        if len({r['description'].strip() for r in rs}) == 1 and nets:
+            yield fy, j, rs, None
+            continue
+        memo = defaultdict(list)
+        for r in rs:
+            memo[r['description'].strip()].append(r)
+        groups = []
+        pool = []
+        for m_, g in sorted(memo.items()):
+            if nets and abs(sum(r['amt'] for r in g)) > 1:
+                pool.append((m_, g))
+            else:
+                groups.append((m_, g))
+        if len(pool) == 1:
+            groups += pool
+        elif pool:
+            groups.append((tuple(m_ for m_, _ in pool), [r for _, g in pool for r in g]))
+        for m_, g in sorted(groups, key=lambda mg: str(mg[0])):
+            s = sum((r['amt'] for r in g if scope(r)), D0)
+            o = sum((r['amt'] for r in g if not scope(r)), D0)
+            if s * o < 0:
+                yield fy, j, g, m_
+
+
+def award_year(a):
+    """The fiscal year a grant award's fund name states ('FY24 IDEA #240' -> 2024), else None."""
+    m = re.match(r"\s*FY\s*'?(\d\d)", a['fund_name'])
+    return 2000 + int(m.group(1)) if m else None
+
+
+_FUND_ACCT = {}
+
+
+def fund_acct(f):
+    if not _FUND_ACCT:
+        for a in J.accounts().values():
+            _FUND_ACCT.setdefault(a['fund'], a)
+    return _FUND_ACCT[f]
+
+
+MOVE_CLASSES = ('award', 'grant', 'grant-revolving', 'circuit-breaker', 'general-fund', 'other')
+
+
+def move_class(a, b):
+    """(class, direction) of cost moved from fund a to fund b. `award`: one grant programme, from
+    one year's award to another's -- direction `later`, `earlier`, or None where a name states no
+    year or both state the same one."""
+    fa, fb = fund_acct(a), fund_acct(b)
+    ga, gb = J.fund_group(fa), J.fund_group(fb)
+    if ga == gb == 'Grants':
+        if J.grant_program(fa) == J.grant_program(fb):
+            ya, yb = award_year(fa), award_year(fb)
+            return 'award', (None if ya is None or yb is None or ya == yb
+                             else 'later' if yb > ya else 'earlier')
+        return 'grant', None
+    gs = {ga, gb}
+    if 'Grants' in gs and 'Revolving funds and lunch' in gs:
+        return 'grant-revolving', None
+    if 'Circuit breaker' in gs:
+        return 'circuit-breaker', None
+    if 'General fund' in gs:
+        return 'general-fund', None
+    return 'other', None
+
+
+def pair(gave, got):
+    """Which giver's cost went to which receiver, where the books say: a giver and a receiver of
+    the same amount to the cent, or ONE fund on a side (its amounts are the other side's). Where
+    several gave and several took unequal amounts the books do not say, and what is left is
+    returned unpaired -- the convention `transfers()` uses for lines."""
+    g, r = dict(gave), dict(got)
+    pairs = []
+    for a in sorted(g):
+        for b in sorted(r):
+            if g[a] and g[a] == r[b]:
+                pairs.append((a, b, g[a]))
+                g[a] = r[b] = D0
+    g = {k: v for k, v in g.items() if v}
+    r = {k: v for k, v in r.items() if v}
+    if len(g) == 1 and r:
+        (a, va), = g.items()
+        if sum(r.values()) <= va:
+            for b, v in sorted(r.items()):
+                pairs.append((a, b, v))
+            g, r = ({a: va - sum(r.values())} if va != sum(r.values()) else {}), {}
+        elif len(r) == 1:
+            (b, vb), = r.items()
+            pairs.append((a, b, va))
+            g, r = {}, {b: vb - va}
+    elif len(r) == 1 and g:
+        (b, vb), = r.items()
+        if sum(g.values()) <= vb:
+            for a, v in sorted(g.items()):
+                pairs.append((a, b, v))
+            g, r = {}, ({b: vb - sum(g.values())} if vb != sum(g.values()) else {})
+    return pairs, g, r
+
+
+SCHOOL = 'school'           # the school budget's side of an entry, as one party in `pair()`
+
+
+def fund_move(fy, j, rows, amounts, with_school):
+    """One memo's move between funds: what each fund gave (cost taken off it) and took (cost put
+    on it), paired where the books say. `amounts` may carry SCHOOL, the memo's school lines net,
+    as one more party: its pairs are rule a's and are left out, so what remains is fund to fund.
+    None unless some fund gave cost to another fund."""
+    amounts = {f: v for f, v in amounts.items() if v}
+    gave = {f: -v for f, v in amounts.items() if v < 0}
+    got = {f: v for f, v in amounts.items() if v > 0}
+    pairs, g_left, r_left = pair(gave, got)
+    pairs = [p for p in pairs if SCHOOL not in p[:2]]
+    fg = {f: v for f, v in g_left.items() if f != SCHOOL}
+    fr = {f: v for f, v in r_left.items() if f != SCHOOL}
+    if not pairs and not (fg and fr):
+        return None
+    gave_f, got_f = defaultdict(Decimal), defaultdict(Decimal)
+    for a, b, v in pairs:
+        gave_f[a] += v
+        got_f[b] += v
+    for f, v in fg.items():
+        gave_f[f] += v
+    for f, v in fr.items():
+        got_f[f] += v
+    rs = [r for r in rows if r['fund'] in gave_f or r['fund'] in got_f]
+    out = []
+    for a, b, v in pairs:
+        cls, dir_ = move_class(a, b)
+        out.append(dict(gave=a, got=b, amount=v, cls=cls, dir=dir_))
+    return dict(fy=fy, journal=j, date=min(r['effective_date'] for r in rs),
+                memos=sorted({r['description'].strip() for r in rs} - {''}) or ['no memo'],
+                with_school=with_school, gave=dict(gave_f), got=dict(got_f), pairs=out,
+                paired=not g_left and not r_left, unpaired_gave=fg, unpaired_got=fr,
+                moved=sum((v for _, _, v in pairs), D0) + min(sum(fg.values(), D0), sum(fr.values(), D0)))
+
+
+def reversals(moves):
+    """An entry that exactly undoes an earlier one -- what one gave, the other took, fund by fund
+    and to the cent -- is marked on both, so a page shows the pair as cancelling."""
+    moves.sort(key=lambda m: (m['date'], m['journal'], m['memos']))
+    seen = defaultdict(int)
+    for m in moves:
+        seen[m['journal']] += 1
+        m['id'] = '%s#%d' % (m['journal'], seen[m['journal']])
+        m['reverses'] = m['reversed_by'] = None
+    for i, b in enumerate(moves):
+        for a in moves[:i]:
+            if a['reversed_by'] is None and a['reverses'] is None and a['gave'] == b['got'] \
+                    and a['got'] == b['gave']:
+                a['reversed_by'], b['reverses'] = b['id'], a['id']
+                break
+
+
 def model():
     A, L = J.accounts(), J.lines()
     exp = [r for r in L if J.is_expense(A[r['account']])]
@@ -251,9 +448,8 @@ def model():
     moves = []
     fund_moves = defaultdict(list)                        # (fy, account) -> journal moves on it
     backs = defaultdict(Decimal)                          # (fy, account, fund) -> moved back
-    for (fy, j), rs in sorted(jr.items()):
-        if len({r['fund'] for r in rs}) < 2 or abs(sum(r['amt'] for r in rs)) > 1:
-            continue
+    rem_entries = []                                      # rule a's entries, read again below
+    for fy, j, rs, part in entries(jr, scope):
         sc, ot = [r for r in rs if scope(r)], [r for r in rs if not scope(r)]
         if not sc or not ot:
             continue
@@ -288,8 +484,9 @@ def model():
             k = (fy, s['account'])
             line[k]['moved_off' if s['amt'] < 0 else 'moved_on'] += abs(s['amt'])
             split = share(abs(s['amt']), gain if s['amt'] < 0 else lose)
+            # `part`: the memo this move is, when it is one memo of a batch; None, the whole entry
             fund_moves[k].append(dict(date=s['effective_date'], memo=memo(s), journal=j,
-                                      amount=s['amt'], payers=split))
+                                      part=part, amount=s['amt'], payers=split))
             if s['amt'] > 0:
                 if flose:
                     for f, amt in share(s['amt'], flose).items():
@@ -321,9 +518,10 @@ def model():
         for f, v in fnet.items():
             if v - fput[f] != 0:
                 src[(fy, f)][('between', None)] += v - fput[f]
+        rem_entries.append(dict(fy=fy, journal=j, rows=rs, scope=scope))
         for o in ot:
             src_rows[(fy, o['fund'])].append((o, 'journal', j))
-        moves.append(dict(fy=fy, journal=j, date=rs[0]['effective_date'], off=off, onto=onto,
+        moves.append(dict(fy=fy, journal=j, part=part, date=rs[0]['effective_date'], off=off, onto=onto,
                           by_payer=dict(net), categories=sorted({cat_of(r['account']) for r in sc}),
                           description=sorted({r['description'].strip() for r in rs})[0]))
 
@@ -376,6 +574,63 @@ def model():
         unmatched[(fy, py, 'moved between funds by journal entry')] += n
         if unmatched[(fy, py, 'moved between funds by journal entry')] == 0:
             del unmatched[(fy, py, 'moved between funds by journal entry')]
+
+    # Rule a's entries, read for what passed between two funds: one memo at a time, the school
+    # lines as one party, so a memo that took pay off one grant award and put it partly on a
+    # school line and partly on the next award is read as the books print it (RECLASS SCHOOL
+    # MEMO 10/11/24-6). Rule a's own placements are untouched; this is the list, not the money.
+    between = []
+    for e in rem_entries:
+        by_memo = defaultdict(list)
+        for r in e['rows']:
+            by_memo[r['description'].strip()].append(r)
+        for _, g in sorted(by_memo.items()):
+            amt = defaultdict(Decimal)
+            for r in g:
+                amt[SCHOOL if e['scope'](r) else r['fund']] += r['amt']
+            mv = fund_move(e['fy'], e['journal'], [r for r in g if not e['scope'](r)], amt, True)
+            if mv:
+                between.append(mv)
+    # MOVED BETWEEN FUNDS, NO SCHOOL LINE (28 October 2026). An entry whose expense lines touch
+    # no school line, only two or more other funds, one giving cost up and another taking it on.
+    # Read the way `entries()` reads rule a: a journal that nets is one entry, else one memo at a
+    # time. Before this each half fell through to rules b and c as ordinary spending, so one award
+    # of a grant showed negative spending under a function code and the other positive.
+    cand = defaultdict(list)
+    for r in exp:
+        if r['source'] in ('GEN', 'GRV') and id(r) not in done and other_spent(r):
+            cand[(r['fy'], r['journal'])].append(r)
+    for (fy, j), rs in sorted(cand.items()):
+        if len({r['fund'] for r in rs}) < 2:
+            continue
+        # one memo at a time, as `entries()` reads rule a: what passed between two funds is what
+        # one memo moved, never a journal's net across unrelated memos
+        by_memo = defaultdict(list)
+        for r in rs:
+            by_memo[r['description'].strip()].append(r)
+        groups = [g for _, g in sorted(by_memo.items())]
+        for g in groups:
+            fnet = defaultdict(Decimal)
+            for r in g:
+                fnet[r['fund']] += r['amt']
+            fnet = {f: v for f, v in fnet.items() if v}
+            if not (any(v < 0 for v in fnet.values()) and any(v > 0 for v in fnet.values())):
+                continue
+            # a fund whose postings in the entry net to nothing moved nothing between funds; its
+            # rows (a reclass inside one fund) go on to rule c like any other
+            mine = [r for r in g if r['fund'] in fnet]
+            pnet = defaultdict(Decimal)
+            for r in mine:
+                done.add(id(r))
+                src_rows[(fy, r['fund'])].append((r, 'journal', j))
+                pnet[payer(A[r['account']])] += r['amt']
+            for f, v in fnet.items():
+                src[(fy, f)][('between', None)] += v
+            for py, v in pnet.items():
+                if v:
+                    unmatched[(fy, py, 'moved between funds by journal entry')] += v
+            between.append(fund_move(fy, j, mine, fnet, False))
+    reversals(between)
 
     # rule c: same function code, on a category; the rest unmatched
     for r in exp:
@@ -501,6 +756,7 @@ def model():
                  % (k[0], k[1], spent[k], sum(src[k].values(), D0)))
     return dict(rows=rows, years=years, moves=moves, src={k: dict(v) for k, v in src.items()},
                 src_rows=dict(src_rows), placed_rows=dict(placed_rows), prepaid=prepaid, transfers=transfers(),
+                fund_moves_between=between,
                 tie=tie_special())
 
 

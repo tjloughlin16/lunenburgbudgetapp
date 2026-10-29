@@ -846,6 +846,34 @@ GROUPS = [
              'position, SR, Munis and Total on pages 14-26, row for row. The period is not '
              'printed. Read by scripts/extract_peer_teacher_pay.py; only counts and '
              'distributions are published, never a name.'),
+            ('peer-districts/keystone-tuition-rate-sheet-fy27.pdf',
+             'Keystone Collaborative tuition rate sheet, 2026/2027', 2,
+             'Not a peer -- an educational collaborative (formerly FLLAC) running programmes '
+             'for students their districts place there; the publisher’s own one-page rate sheet '
+             '(publisher’s filename “FY27-Tuition-Rate-Sheet.pdf”). Member, '
+             'Nonmember and Out of State rates for the Key Program, Keystone Academy and '
+             'Keystone Educational Alternative: school year, day rate, extended year and the '
+             'initial 45-day rate. Read into data/keystone-tuition-rates.csv. These are '
+             'list prices; what Lunenburg paid for any placement is a different question.'),
+            ('peer-districts/keystone-tuition-rate-sheet-fy26.pdf',
+             'Keystone Collaborative tuition rate sheet, 2025/2026', 2,
+             'The same sheet a year earlier (publisher’s filename '
+             '“FY26-Tuition-Rate-Sheet-.pdf”).'),
+            ('peer-districts/keystone-tuition-rate-sheet-fy25.pdf',
+             'Keystone Collaborative tuition rate sheet, 2024/2025', 2,
+             'Publisher’s filename “FY25-Tuition-Rate-Sheet-.pdf”. A scan with '
+             'no text layer, so its figures were read by OCR and checked against the page '
+             'by eye.'),
+            ('peer-districts/keystone-tuition-rate-sheet-fy24-2023-07.pdf',
+             'Keystone Collaborative tuition rate sheet, 2023/2024 (July 2023 upload)', 2,
+             'Publisher’s filename “FY24-Tuition-Rate-Sheet-.pdf”. The later of '
+             'two 2023/2024 sheets the collaborative posted.'),
+            ('peer-districts/keystone-tuition-rate-sheet-fy24-2023-04.pdf',
+             'Keystone Collaborative tuition rate sheet, 2023/2024 (April 2023 upload)', 1,
+             'Publisher’s filename “FY24-Tuition-Rate-Sheet.pdf”, still served at '
+             'its own address. It differs from the July upload in one figure, the Keystone '
+             'Academy Member school-year rate; the July figure is the one that equals 180 '
+             'times the printed day rate. Kept because both are published.'),
         ],
     },
     {
@@ -3314,6 +3342,16 @@ GROUPS = [
              '\u2014 -666666666 for no estimate, -555555555 for an estimate controlled '
              'to a total \u2014 are kept verbatim rather than read as numbers. Rebuild '
              'with scripts/fetch_census_acs.py.'),
+            ('data/keystone-tuition-rates.csv',
+             'Keystone Collaborative tuition rates, as printed, FY2024\u2013FY2027', 2,
+             'One row per fiscal year, programme, tier (Member, Nonmember, Out of State) and '
+             'rate type, read off the collaborative\u2019s published rate sheets. Each row '
+             'carries the column heading and the amount exactly as printed, typos included, '
+             'the document, page and publisher URL. Both 2023/2024 uploads are kept, so that '
+             'year has two sets of rows. A check column compares each school-year rate to '
+             '180 times the printed day rate; 180 is our assumption, not the sheet\u2019s. '
+             'List prices, not what Lunenburg paid. Rebuild with '
+             'scripts/extract_keystone_tuition.py; --check proves it reproduces.'),
             ('data/lps-budget-lines.csv', 'Budget lines, tidy CSV', 3,
              '356 rows extracted from the district workbook — section, function group, '
              'line item, and one column per fiscal year and scenario. Line sums tie to the '
@@ -5128,6 +5166,18 @@ SOURCE_URLS = {
     # Wage Reports'; the latest it lists is 2022).
     'peer-districts/tyngsborough-gross-wage-report-2022.pdf':
         'https://www.tyngsboroughma.gov/Archive.aspx?ADID=88',
+    # Keystone Educational Collaborative's tuition rate sheets, fetched 29 October 2026.
+    # fllac.org now redirects to keystonecollaborative.org.
+    'peer-districts/keystone-tuition-rate-sheet-fy24-2023-04.pdf':
+        'https://keystonecollaborative.org/wp-content/uploads/2023/04/FY24-Tuition-Rate-Sheet.pdf',
+    'peer-districts/keystone-tuition-rate-sheet-fy24-2023-07.pdf':
+        'https://keystonecollaborative.org/wp-content/uploads/2023/07/FY24-Tuition-Rate-Sheet-.pdf',
+    'peer-districts/keystone-tuition-rate-sheet-fy25.pdf':
+        'https://keystonecollaborative.org/wp-content/uploads/2024/05/FY25-Tuition-Rate-Sheet-.pdf',
+    'peer-districts/keystone-tuition-rate-sheet-fy26.pdf':
+        'https://keystonecollaborative.org/wp-content/uploads/2025/05/FY26-Tuition-Rate-Sheet-.pdf',
+    'peer-districts/keystone-tuition-rate-sheet-fy27.pdf':
+        'https://keystonecollaborative.org/wp-content/uploads/2026/05/FY27-Tuition-Rate-Sheet.pdf',
 
     # Three Tyler MUNIS user guides published by OTHER governments, fetched 6 October 2026.
     # Held because Lunenburg runs MUNIS and publishes no guide to it; they are how a

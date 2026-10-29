@@ -1,5 +1,11 @@
 @import "tailwindcss";
 
+/* Tailwind 4's reset gives a button the arrow cursor; every button here is a control, so it gets
+   the hand (TJ, 28 October 2026: the year chips showed no pointer on hover). */
+@layer base {
+  button:not(:disabled), [role="button"]:not([aria-disabled="true"]) { cursor: pointer; }
+}
+
 :root {
   color-scheme: light;
   --surface-1: #fcfcfb;

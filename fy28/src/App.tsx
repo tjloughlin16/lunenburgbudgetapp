@@ -17,6 +17,8 @@ import { Solved } from './pages/Solved'
 import { GoDeeper } from './pages/GoDeeper'
 import { Sources } from './pages/Sources'
 import { Topic } from './pages/Topic'
+import { FyItem } from './pages/FyItem'
+import { itemFromPath } from './components/blocks/custom/fy-items'
 import { Rates } from './pages/Rates'
 import { DataFooter } from './components/DataFooter'
 import { AgentsIndex } from './components/AgentsIndex'
@@ -514,7 +516,8 @@ export default function App() {
       {tab === 'sources' && <Sources />}
       {/* /athletics is now the athletics HUB (scripts/topics.py); the both-sides page it
           showed became the `town-budget-and-fee-fund` topic. */}
-      {(tab === 'athletics' || tab === 'topic') && <Topic fallback={tab === 'athletics' ? 'athletics' : 'transportation'} />}
+      {(tab === 'athletics' || tab === 'topic') && (itemFromPath(window.location.pathname) ? <FyItem />
+        : <Topic fallback={tab === 'athletics' ? 'athletics' : 'transportation'} />)}
       {tab === 'rates' && <Rates />}
       {tab === 'freecash' && <FreeCash />}
       {tab === 'themoney' && <Money />}
@@ -701,6 +704,13 @@ function useTopicCrumbs(tab: Tab) {
   useEffect(() => {
     if (on && !ix) fetch('/data/topics.json').then(r => r.json()).then(setIx).catch(() => {})
   }, [on])
+  // A school line's or a fund's own page (pages/FyItem.tsx) sits under the FY breakdown page,
+  // which is on no shelf, so its trail is Home > Reports > FY breakdown, not a category's
+  if (on && itemFromPath(window.location.pathname)) return {
+    crumbs: [{ href: pathFor(ROOT), label: LABEL[ROOT], tab: ROOT as Tab | null },
+             { href: pathFor('reports'), label: crumbLabel('reports'), tab: 'reports' as Tab | null },
+             { href: '/school-all-funds/fy-breakdown', label: 'FY breakdown', tab: null as Tab | null }],
+    current: '' }
   if (!on || !ix) return null
   const id = topicIdFromPath(window.location.pathname) ?? (tab === 'athletics' ? 'athletics' : 'transportation')
   const t = ix.topics[id]

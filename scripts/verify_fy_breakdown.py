@@ -17,7 +17,10 @@ which is what makes a category here the category on the published surplus pages.
   4. the two worked cases in notes/HANDOFF-FY-BREAKDOWN.md, exactly;
   5. every figure the payload prints, if it has been written (`--no-payload` skips it);
   6. the line files: every line's school-budget rows sum to what the CSV says it spent, and
-     the weekly chart's bars to those rows.
+     the weekly chart's bars to those rows;
+  7. cost moved between two other funds by journal entry (`between_checks`): each fund's
+     `between`, the entries with no school line fund by fund, and what passed fund to fund in
+     each memo of an entry that also touched a school line.
 """
 import argparse
 import csv
@@ -100,6 +103,12 @@ def capital(fund):
     return fund[:2] in ('30', '31', '81', '90')
 
 
+BETWEEN = []          # recompute(): each move between two other funds that no school line is in
+REMAIN = defaultdict(Decimal)   # recompute(): (y, fund) -> what a rule a entry left with the fund
+REMAIN_N = defaultdict(int)     # ... and how many school lines' shares it carries the cents of
+MEMOS = []            # recompute(): each memo of a rule a entry, as (y, journal, fund nets, school)
+
+
 def recompute():
     acc, rows = raw()
     ex = [r for r in rows if acc[r['account']]['object'].startswith('5')]
@@ -146,10 +155,34 @@ def recompute():
     for i, r in enumerate(ex):
         if r['source'] in ('GEN', 'GRV'):
             js[(r['y'], r['journal'])].append((i, r))
-    for _, ir in js.items():
-        rs = [r for _, r in ir]
-        if len({r['fund'] for r in rs}) < 2 or abs(sum(r['v'] for r in rs)) > 1:
+    REMAIN.clear()
+    REMAIN_N.clear()
+    MEMOS.clear()
+    # an entry: a journal that nets across funds, or else one memo of a batch that does not,
+    # when its school side and its other side move opposite ways (an accrual moves neither)
+    # an entry is a MEMO: a journal of one memo whole, if it nets; otherwise each memo, except
+    # that in a journal netting as a whole the memos that do not net alone are one group (the
+    # halves of a correction filed under two memos)
+    ents = []
+    for ir in js.values():
+        if len({r['fund'] for _, r in ir}) < 2:
             continue
+        whole = abs(sum(r['v'] for _, r in ir)) <= 1
+        by = defaultdict(list)
+        for i, r in ir:
+            by[r['description'].strip()].append((i, r))
+        if len(by) == 1 and whole:
+            ents.append(ir)
+            continue
+        alone = [g for g in by.values() if not whole or abs(sum(r['v'] for _, r in g)) <= 1]
+        rest = [x for g in by.values() if whole and abs(sum(r['v'] for _, r in g)) > 1 for x in g]
+        for g in alone + ([rest] if rest else []):
+            s_ = sum(r['v'] for _, r in g if in_scope(r['account']))
+            o_ = sum(r['v'] for _, r in g if not in_scope(r['account']))
+            if (s_ < 0 < o_) or (o_ < 0 < s_):
+                ents.append(g)
+    for ir in ents:
+        rs = [r for _, r in ir]
         sc = [r for r in rs if in_scope(r['account'])]
         if not sc or len(sc) == len(rs):
             continue
@@ -167,6 +200,26 @@ def recompute():
                 net[(r['y'], r['account'])] += r['v']
             else:
                 used.add(i)
+        # what the entry left with each fund beyond the school side: its net, less the cost it took
+        # off school lines (shared over the funds that gained, in proportion), plus the cost moved
+        # back from it onto school lines (shared over the funds that lost)
+        fnet = defaultdict(Decimal)
+        for _, r in ir:
+            if not in_scope(r['account']):
+                fnet[r['fund']] += r['v']
+        gain = {f: v for f, v in fnet.items() if v > 0} or {f: abs(v) for f, v in fnet.items()}
+        off_ = -sum((v for v in net.values() if v < 0), D0)
+        on_ = sum((v for v in net.values() if v > 0), D0)
+        y0 = rs[0]['y']
+        for f, v in fnet.items():
+            REMAIN_N[(y0, f)] += len(net)
+            REMAIN[(y0, f)] += v - off_ * gain.get(f, D0) / sum(gain.values()) + (
+                on_ * lose[f] / sum(lose.values()) if f in lose else D0)
+        by = defaultdict(lambda: defaultdict(Decimal))
+        for _, r in ir:
+            by[r['description'].strip()]['school' if in_scope(r['account']) else r['fund']] += r['v']
+        for m_, d in by.items():
+            MEMOS.append((y0, rs[0]['journal'], m_, dict(d)))
         for (y_, a_), v in net.items():
             if v < 0:
                 O[(y_, a_)] -= v
@@ -178,6 +231,29 @@ def recompute():
     for r in ex:
         if in_scope(r['account']) and r['source'] in ('API', 'APM') and key(r):
             paid[key(r)][r['account']] += r['v']
+    # MOVED BETWEEN FUNDS with no school line: what rules a and b leave of a GEN/GRV journal
+    # outside the school budget -- the whole of it when it nets, else memo by memo -- where one
+    # fund's postings net below zero and another's above. Those funds' rows are the move.
+    BETWEEN.clear()
+    left = defaultdict(list)
+    for i, r in enumerate(ex):
+        if (r['source'] in ('GEN', 'GRV') and i not in used and not in_scope(r['account'])
+                and not (key(r) and key(r) in paid and not capital(r['fund']))):
+            left[(r['y'], r['journal'])].append((i, r))
+    for (y, j), ir in left.items():
+        by = defaultdict(list)
+        for i, r in ir:
+            by[r['description'].strip()].append((i, r))
+        gs = list(by.values())
+        for g in gs:
+            net = defaultdict(Decimal)
+            for _, r in g:
+                net[r['fund']] += r['v']
+            if min(net.values()) < 0 < max(net.values()):
+                for i, r in g:
+                    if net[r['fund']]:
+                        used.add(i)
+                BETWEEN.append(dict(y=y, journal=j, net={f: v for f, v in net.items() if v}))
     for i, r in enumerate(ex):
         if i in used or in_scope(r['account']) or r['source'] not in SPENT:
             continue
@@ -258,6 +334,7 @@ def main(argv=None):
         check(sum(tot['terms'].values()) == target == tot['left'],
               'FY%d: four totals %s, left %s, period-13 route %s'
               % (y, sum(tot['terms'].values()), tot['left'], target))
+    between_checks(m)
     # the worked cases
     p, c = gen[(2026, PRIVATE)], gen[(2026, COLLAB)]
     check(p['voted'] == Decimal('988630.00') and p['transfers'] == 0
@@ -274,6 +351,7 @@ def main(argv=None):
         line_file_checks()
         plan_checks()
         source_checks()
+        side_file_checks()
         overlap_checks()
     if bad:
         print('verify_fy_breakdown: %d FAILED' % len(bad))
@@ -283,6 +361,52 @@ def main(argv=None):
     print('verify_fy_breakdown: %d lines in %d years, every part recomputed and tied to the '
           'period-13 report' % (len(gen), len(YEARS)))
     return 0
+
+
+def between_checks(m):
+    """Cost moved between two other funds by journal entry, recomputed here (`recompute()` fills
+    BETWEEN, REMAIN and MEMOS): each fund's `between` total, to the cent per entry it was in;
+    the entries with no school line, fund by fund; and for each memo of an entry that also
+    moved cost on or off a school line, what passed fund to fund -- what the funds gave and
+    took, less the school side, halved -- wherever the model says the pairing is exact."""
+    want = defaultdict(Decimal)
+    n = defaultdict(int)
+    for k, v in REMAIN.items():
+        want[k] += v
+        n[k] += REMAIN_N[k]
+    for b in BETWEEN:
+        for f, v in b['net'].items():
+            want[(b['y'], f)] += v
+    got = defaultdict(Decimal)
+    for (y, f), d in m['src'].items():
+        got[(y, f)] = sum((v for (k, _), v in d.items() if k == 'between'), D0)
+    for k in set(want) | set(got):
+        check(abs(want[k] - got[k]) <= CENT * (n[k] + 1),
+              'FY%d fund %s: moved between funds %s, recomputed %s' % (k[0], k[1], got[k], want[k]))
+    lst = m['fund_moves_between']
+    mine = sorted((b['y'], b['journal'], sorted((f, -v) for f, v in b['net'].items() if v < 0),
+                   sorted((f, v) for f, v in b['net'].items() if v > 0)) for b in BETWEEN)
+    theirs = sorted((e['fy'], e['journal'], sorted(e['gave'].items()), sorted(e['got'].items()))
+                    for e in lst if not e['with_school'])
+    check(mine == theirs, 'the moves between funds with no school line: %d recomputed, %d in the '
+          'model, or their funds differ' % (len(mine), len(theirs)))
+    at = {(e['journal'], e['memos'][0]): e for e in lst if e['with_school']}
+    seen = set()
+    for y, j, memo, d in MEMOS:
+        G = sum((-v for f, v in d.items() if f != 'school' and v < 0), D0)
+        R = sum((v for f, v in d.items() if f != 'school' and v > 0), D0)
+        sch = abs(d.get('school', D0))
+        f2f = (G + R - sch) / 2
+        e = at.get((j, memo or 'no memo'))
+        if e is not None:
+            seen.add((j, memo or 'no memo'))
+            if e['paired'] and abs(sum(d.values())) < CENT:
+                check(e['moved'] == f2f, '%s %r: fund to fund %s, recomputed %s' % (j, memo, e['moved'], f2f))
+        else:
+            check(not (G and R and abs(sum(d.values())) < CENT and f2f > 0),
+                  '%s %r: %s passed fund to fund and the model lists no move' % (j, memo, f2f))
+    check(seen == set(at), 'the model lists moves in memos no rule a entry holds: %s'
+          % sorted(set(at) - seen)[:3])
 
 
 def payload_checks(m):
@@ -412,6 +536,64 @@ def source_checks():
                   '%s fund %s: the table says %s, the CSV gives %s' % (y['fy'], f, got.get(f), v))
         check(not set(got) - {f for (yy, f) in want if yy == fy},
               '%s: the table lists funds the CSV has no spending for' % y['fy'])
+
+
+def side_file_checks():
+    """The payee and web files, by a second route (until 28 October 2026 only their generators
+    checked them). PAYEES: every year's payees sum to the invoices the CSV holds on expense
+    accounts (API/APM), and their general fund column to fund 0100's; each payee's payments and
+    its lines each sum to its total. THE WEB: for every fund, what its arrows carry out less what
+    points back at it is what the CSV says it spent -- the same quantity `source_checks` uses."""
+    acc, rows = raw()
+    exp = lambda r: acc[r['account']]['object'].startswith('5')
+    spent = defaultdict(Decimal)
+    inv, inv_gf = defaultdict(Decimal), defaultdict(Decimal)
+    for r in rows:
+        if not exp(r):
+            continue
+        if (not in_scope(r['account']) and r['posts_to'] in ('actual', 'encumbrance')
+                and r['source'] != 'YEC'):
+            spent[(r['y'], r['fund'])] += r['v']
+        if r['source'] in ('API', 'APM'):
+            inv[r['y']] += r['v']
+            if r['fund'] == '0100':
+                inv_gf[r['y']] += r['v']
+    dec = lambda x: Decimal(str(x or 0))
+    for fy in _years()[0]:
+        base = os.path.join(ROOT, 'fy28', 'public', 'data', 'fy-breakdown')
+        p = json.load(open(os.path.join(base, 'payees-%d.json' % fy), encoding='utf-8'))
+        got = sum((dec(r['v']) for r in p['rows']), Decimal(0))
+        check(abs(got - inv[fy]) < CENT, 'FY%d payees sum to %s; the CSV\'s invoices %s' % (fy, got, inv[fy]))
+        got = sum((dec(r['g']) for r in p['rows']), Decimal(0))
+        check(abs(got - inv_gf[fy]) < CENT,
+              'FY%d payees\' general fund sums to %s; the CSV\'s fund 0100 invoices %s' % (fy, got, inv_gf[fy]))
+        for r in p['rows']:
+            # a payee not paid this year lists what it was paid the year before (its popup)
+            want = dec(r['v']) if r['v'] else dec(r['pv'])
+            for part, i in (('r', -1), ('l', 3)):
+                s_ = sum((dec(x[i]) for x in r[part]), Decimal(0))
+                check(abs(s_ - want) < CENT * max(1, len(r[part])),
+                      'FY%d payee %s: its %s sum to %s, its total %s' % (fy, r['n'], part, s_, want))
+        w = json.load(open(os.path.join(base, 'web-%d.json' % fy), encoding='utf-8'))
+        net = defaultdict(Decimal)
+        for e in w['edges']:
+            if e['k'] in ('school', 'transfer'):
+                continue
+            if e['k'] == 'fund':
+                # cost re-booked from one fund (a, which gave it up) onto another (b)
+                net[e['b'][2:]] += dec(e['v'])
+                net[e['a'][2:]] -= dec(e['v'])
+                continue
+            if e['b'].startswith('f:'):
+                net[e['b'][2:]] -= dec(e['v'])
+            elif e['a'].startswith('f:'):
+                net[e['a'][2:]] += dec(e['v'])
+        for f in set(net) | {f for (y, f) in spent if y == fy}:
+            want = spent[(fy, f)]
+            if abs(want) < Decimal('0.5') and abs(net[f]) < Decimal('0.5'):
+                continue
+            check(abs(net[f] - want) < CENT * 2,
+                  'FY%d fund %s: the web\'s arrows carry %s, the CSV gives %s' % (fy, f, net[f], want))
 
 
 def overlap_checks():

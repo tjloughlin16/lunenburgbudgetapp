@@ -12,20 +12,14 @@
  *  /data/fy-breakdown/web-<year>.json, written by scripts/fy_web.py. */
 import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { useFyYear } from './fy-year'
-import { Chip, PAYER } from './fy-shared'
+import { Chip } from './fy-shared'
+import { WEB_COLOUR as COLOUR, WebMarkers, curve, cut, edgeWidth, nodeFill, type WebEdge as Edge, type WebFile as File, type WebKind as Kind, type WebNode as Node } from './fy-web-parts'
+import { itemHrefs, useItemIndex, withYear } from './fy-items'
 import type { CustomProps } from './index'
 
-type Node = { id: string; kind: 'fund' | 'line' | 'sink'; label: string; group?: string; sub?: string; cat?: string; cid?: string }
-type Edge = { a: string; b: string; k: Kind; v: number; t: string; d?: string; m?: string }
-type Kind = 'school' | 'paid' | 'later' | 'back' | 'kind' | 'none' | 'capital' | 'between' | 'transfer'
-type File = { fy: number; nodes: Node[]; edges: Edge[] }
 type Data = { years: string[]; kinds: { id: Kind; label: string; means: string }[]; text: Record<string, string> }
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
-const COLOUR: Record<Kind, string> = {
-  school: 'var(--text-muted)', paid: 'var(--thread-2)', later: 'var(--thread-3)', back: 'var(--thread-1)',
-  kind: 'var(--thread-5)', none: 'var(--thread-4)', capital: 'var(--thread-4)', between: 'var(--thread-4)',
-  transfer: 'var(--thread-6, var(--text-secondary))' }
 const FUND_ORDER = ['gf', 'idea', 'grants', 'cb', 'fees', 'other']
 const FW = 270, LW = 300, GAPX = 520, RH = 24, RG = 4, HEAD = 26
 const FILES = new Map<string, Promise<File>>()
@@ -34,7 +28,6 @@ const load = (fy: string) => {
     .then(r => { if (!r.ok) throw new Error(String(r.status)); return r.json() }))
   return FILES.get(fy)!
 }
-const cut = (s: string, n: number) => (s.length > n ? s.slice(0, n - 1) + '…' : s)
 type Box = { x: number; y: number; w: number; n: Node }
 type Rank = 'size' | 'sources' | 'share'
 /** HOW MUCH OF A LINE OTHER FUNDS CARRIED, and how many (TJ, 28 October 2026: "draw attention to
@@ -126,10 +119,10 @@ export default function FyWeb({ data, alt }: CustomProps) {
 
   // ---- the view: a viewBox moved by dragging and scaled by the buttons or ctrl + scroll
   const svg = useRef<SVGSVGElement>(null)
-  const [vb, setVb] = useState({ x: -10, y: -10, w: W + 20, h: 900 })
+  const [vb, setVb] = useState({ x: -170, y: -10, w: W + 180, h: 900 })
   // FIT IS THE WHOLE WEB. The canvas takes the web's own shape (TJ, 28 October 2026: it was cut
   // off by a fixed height), so every block shows at once; zoom in to read, drag to move
-  const fit = useCallback(() => { if (L) setVb({ x: -10, y: -10, w: W + 20, h: L.h + 20 }) }, [L, W])
+  const fit = useCallback(() => { if (L) setVb({ x: -170, y: -10, w: W + 180, h: L.h + 20 }) }, [L, W])
   useEffect(() => { fit() }, [fit])
   const zoom = (k: number, cx?: number, cy?: number) => setVb(v => {
     const w = Math.min(Math.max(v.w * k, 200), W * 3), h = v.h * (w / v.w)
@@ -171,7 +164,7 @@ export default function FyWeb({ data, alt }: CustomProps) {
   }, [L, active])
   const maxV = useMemo(() => Math.max(1, ...(L?.edges.filter(e => e.k !== 'school').map(e => e.v) ?? [1])), [L])
   const maxS = useMemo(() => Math.max(1, ...(L?.edges.filter(e => e.k === 'school').map(e => e.v) ?? [1])), [L])
-  const width = (e: Edge) => (e.k === 'school' ? 0.6 + 5 * Math.sqrt(e.v / maxS) : 1 + 13 * Math.sqrt(e.v / maxV))
+  const width = (e: Edge) => (e.k === 'school' ? edgeWidth(e.v, maxS, true) : edgeWidth(e.v, maxV))
 
   const path = (e: Edge) => {
     const A = L!.boxes.get(e.a)!, B = L!.boxes.get(e.b)!
@@ -181,22 +174,27 @@ export default function FyWeb({ data, alt }: CustomProps) {
       const x = A.x + A.w, bulge = 40 + Math.min(120, Math.abs(by - ay) / 6)
       return `M${x},${ay} C${x + bulge},${ay} ${x + bulge},${by} ${x + 6},${by}`
     }
+    if (e.k === 'fund') {
+      // fund to fund, both in the left column: an arc out to the left
+      const x = A.x, bulge = 40 + Math.min(120, Math.abs(by - ay) / 6)
+      return `M${x},${ay} C${x - bulge},${ay} ${x - bulge},${by} ${x - 6},${by}`
+    }
     if (e.k === 'back') {
       // from the line back to the fund
-      const x1 = A.x, x2 = B.x + B.w + 6
-      return `M${x1},${ay} C${x1 - GAPX / 2},${ay} ${x2 + GAPX / 2},${by} ${x2},${by}`
+      return curve(A.x, ay, B.x + B.w + 6, by, -GAPX / 2)
     }
-    const x1 = A.x + A.w, x2 = B.x - 6
-    return `M${x1},${ay} C${x1 + GAPX / 2},${ay} ${x2 - GAPX / 2},${by} ${x2},${by}`
+    return curve(A.x + A.w, ay, B.x - 6, by, GAPX / 2)
   }
-  const nodeFill = (n: Node) => n.kind === 'fund' ? (PAYER[n.group ?? ''] ?? 'var(--text-secondary)')
-    : n.kind === 'sink' ? 'var(--text-muted)' : 'var(--surface-2)'
   const toggle = (k: Kind) => setKinds(s => { const n = new Set(s); if (n.has(k)) n.delete(k); else n.add(k); return n })
   const label = (id: string) => file?.nodes.find(n => n.id === id)
   // every arrow the block has this year, drawn or not: a line the general fund paid alone still says so
   const list = active && file ? file.edges.filter(e => e.a === active || e.b === active).sort((x, y) => y.v - x.v) : []
   const only = !!active && list.length > 0 && list.every(e => e.k === 'school')
   const kindLabel = Object.fromEntries(d.kinds.map(k => [k.id, k.label]))
+  // every line and fund has its own page (fy_items.py); the panel links to it
+  const ix = useItemIndex()
+  const hrefs = useMemo(() => itemHrefs(ix), [ix])
+  const page = active ? hrefs.node(active) : undefined
 
   return (
     <figure aria-label={alt}>
@@ -248,11 +246,7 @@ export default function FyWeb({ data, alt }: CustomProps) {
               drag.current = null
               if (g && !g.moved && (e.target as Element).tagName === 'svg') setPin(null)
             }}>
-            <defs>
-              {(Object.keys(COLOUR) as Kind[]).map(k => (
-                <marker key={k} id={`fyw-${k}`} viewBox="0 0 10 10" refX="8" refY="5" markerUnits="userSpaceOnUse" markerWidth="9" markerHeight="9" orient="auto-start-reverse">
-                  <path d="M0,0 L10,5 L0,10 z" fill={COLOUR[k]} /></marker>))}
-            </defs>
+            <WebMarkers prefix="fyw" />
             <text x={0} y={14} fontSize={12} fontWeight={600} fill="var(--text-secondary)">{t.col_funds}</text>
             {L.heads.map((h, i) => (
               <text key={i} x={FW + GAPX} y={h.y + 16} fontSize={12} fontWeight={600} fill="var(--text-secondary)">{h.label || t.col_sinks}</text>))}
@@ -308,6 +302,7 @@ export default function FyWeb({ data, alt }: CustomProps) {
                 <p className="text-[12px] uppercase tracking-wide" style={muted}>{label(active)?.kind === 'fund' ? t.a_fund : label(active)?.kind === 'sink' ? t.a_sink : t.a_line}</p>
                 <p className="font-semibold leading-snug">{label(active)?.label}</p>
                 {label(active)?.sub ? <p className="text-[11.5px]" style={muted}>{label(active)?.sub}</p> : null}
+                {page && ix ? <a href={withYear(page, fy)} className="inline-block mt-1 text-[12.5px] underline" style={{ color: 'var(--link, var(--thread-2))' }}>{ix.text.web_open} →</a> : null}
                 {label(active)?.kind === 'line' && stats.get(active) ? (
                   <p className="text-[12.5px] mt-1" style={secondary}>{stats.get(active)!.sources} {t.st_sources} · {Math.round(stats.get(active)!.share * 100)}% {t.st_share}</p>) : null}
                 {only ? <p className="text-[12.5px] mt-1 font-semibold">{t.only_gf}</p> : null}

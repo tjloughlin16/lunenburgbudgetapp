@@ -42,6 +42,7 @@ import fy_breakdown as FB  # noqa: E402
 import fy_payees as PY  # noqa: E402
 import fy_salaries as SAL  # noqa: E402
 import fy_web as WEB  # noqa: E402
+import fy_items as ITEMS  # noqa: E402
 
 ID = 'fy-breakdown'
 OUT = os.path.join(ROOT, 'fy28', 'public', 'data', 'topics', '%s.json' % ID)
@@ -200,6 +201,15 @@ def school_entries():
     return out
 
 
+def is_recharge(x, rech):
+    """A posting that belongs to one of a line's re-charges, `rech` a set of (journal, part):
+    the whole entry (part None), one memo of a journal that held others, or a tuple of memos --
+    the halves of one correction keyed under different memos (fy_breakdown.entries)."""
+    memo = x['description'].strip()
+    return ((x['journal'], None) in rech or (x['journal'], memo) in rech
+            or any(j == x['journal'] and isinstance(p, tuple) and memo in p for j, p in rech))
+
+
 def entry_rows(T, r, entries, names):
     """A line's journal entries that are not re-charges to or from another fund: spending
     re-booked between school lines, a correction, an accrual. Each: date, memo, what this line
@@ -207,18 +217,20 @@ def entry_rows(T, r, entries, names):
     outside the school's books."""
     if not r['account']:
         return []
-    rech = {mv['journal'] for mv in r['fund_moves']}
+    rech = {(mv['journal'], mv['part']) for mv in r['fund_moves']}
     A = J.accounts()
     out = []
-    mine = defaultdict(Decimal)
+    mine, kept = defaultdict(Decimal), {}
     for (fy, j), rs in entries.items():
-        if fy != r['fy'] or j in rech:
+        if fy != r['fy'] or (j, None) in rech:
             continue
+        # a batch: only the memos that were a re-charge leave; the rest of it is still an entry
+        rs = [x for x in rs if not is_recharge(x, rech)]
         v = sum((x['amt'] for x in rs if x['account'] == r['account']), D0)
         if v:
-            mine[j] = v
-    for j, v in sorted(mine.items(), key=lambda kv: min(x['effective_date'] for x in entries[(r['fy'], kv[0])])):
-        rs = entries[(r['fy'], j)]
+            mine[j], kept[j] = v, rs
+    for j, v in sorted(mine.items(), key=lambda kv: min(x['effective_date'] for x in kept[kv[0]])):
+        rs = kept[j]
         others = defaultdict(Decimal)
         for x in rs:
             if x['account'] != r['account'] and J.in_surplus_scope(A[x['account']]):
@@ -944,6 +956,7 @@ def page(m):
     changes = budget_changes_data(m, T)
     payees = payees_data(m, T)
     salaries = salaries_data(m, T)
+    fund_moves = moves_data(m, T)
     # the bridge block's sentence, held to every year it is shown with: other funds are most of
     # the gap between the plan and what happened, and more than half of them on no school line
     for y in plan['years']:
@@ -1078,6 +1091,16 @@ def page(m):
                       so=('A salary line can end below the pay it ran because a grant took part of '
                           'it at year end, or above because it took pay back. Most grant pay sits on '
                           'no school line: the ledger names a kind of work, never a post.',
+                          None, ())),
+            TB.custom('fy-fund-moves', 'Cost moved between funds', fund_moves, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'Every journal entry naming two funds; the pairing is the books’'),
+                      alt='List, one fiscal year: every pair of funds a journal entry re-booked cost '
+                          'between, grant awards of the same programme first, each with the fund it '
+                          'came from, the fund it went to, the net and how many entries; a row opens '
+                          'its entries with date, memo and journal number, reversals marked',
+                      so=('A grant’s costs can be re-booked from one year’s award to another’s after '
+                          'they are paid, so an award’s total is not what that year’s work cost.',
                           None, ())),
             TB.custom('fy-overlap', 'Overlap with the school budget', overlap, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
@@ -1397,13 +1420,16 @@ SRC_COLS = [('payee', 'Same vendor as a school line',
              'This fund paid first; a journal entry later put the bills back on the school budget.'),
             ('capital', 'Capital articles',
              'Spending from an article Town Meeting voted apart from the operating budget.'),
+            ('between', 'Moved between funds',
+             'Cost a journal entry re-booked onto this fund from another fund (or, below zero, off it '
+             'to another), with no school line in the move. No cash moves; the cost was already paid.'),
             ('none', 'On no school line',
              'School spending the books give no school line for: a function the school budget has '
-             'no line for, a general heading, no function at all, or the rest of a journal entry.'),
+             'no line for, a general heading, or no function at all.'),
             ('total', 'Total', 'Everything this fund spent in the year, orders still owed counted.')]
 KIND_WHERE = {'payee': 'same vendor as', 'function': 'same function code as', 'later': 're-charged from',
               'back': 're-charged back to', 'capital': 'capital article', 'none': 'on no school line',
-              'between': 'on no school line'}
+              'between': 're-booked'}
 
 
 def fund_label(f, A=None):
@@ -1446,7 +1472,7 @@ def where_text(kind, dest, names):
     if kind == 'none':
         return dest
     if kind == 'between':
-        return 'moved between funds by journal entry'
+        return 'between funds by journal entry'
     return 'a capital article'
 
 
@@ -1463,7 +1489,7 @@ def funds_data(m, T):
                 continue
             col = defaultdict(Decimal)
             for (kind, _), v in d.items():
-                col['none' if kind == 'between' else kind] += v
+                col[kind] += v
             col['total'] = sum(d.values(), D0)
             if all(round(v) == 0 for v in col.values()):
                 continue
@@ -1491,7 +1517,9 @@ def funds_data(m, T):
                     close='Close', loading='Loading…', failed='Could not load this year’s postings.',
                     none='None.', sum='Every fund', all_rows='postings shown',
                     all_cats='Every kind', scroll='More columns: scroll the table sideways',
-                    filter='Filter by payee, memo, account or where it went'))
+                    filter='Filter by payee, memo, account or where it went',
+                    tab_moves='Moved between funds', mv=MOVES_TEXT,
+                    mv_classes=[dict(id=k, label=v) for k, v in MOVE_CLASS.items()]))
 
 
 # WHICH SCHOOL LINES OTHER FUNDS PAID TOWARD (TJ, 27 October 2026: "which of the school budget
@@ -1750,6 +1778,7 @@ def fund_texts(m):
     text, amount]), what it bought by its own account (`a`) and by payee (`p`), and every
     posting (`r`: [iso, date, kind, payee, memo, its account, went to, text, amount])."""
     names = {r['account']: line_name(r) for r in m['rows'] if r['account']}
+    moved = {y['fy']: y['groups'] for y in moves_data(m, Texts())['years']}
     files = {}
     for fy in YEARS():
         body = {}
@@ -1804,6 +1833,10 @@ def fund_texts(m):
             rs.sort(key=lambda x: (x[0], -abs(x[8])))
             srt = lambda dd: [[k, money(v), round(fl(v), 2)] for k, v in sorted(dd.items(), key=lambda kv: -abs(kv[1])) if round(v, 2)]
             body[f] = dict(w=w, b=b, a=srt(acct), p=srt(pay), r=rs)
+            # the cost re-booked between this fund and another, as the page's block shows it
+            mv = [g for g in moved.get(C.fy(fy), []) if f in g['funds']]
+            if mv:
+                body[f]['mv'] = mv
         files[os.path.join(LINES_DIR, 'funds-%d.json' % fy)] = json.dumps(
             dict(fy=C.fy(fy), funds=body), ensure_ascii=False, sort_keys=True,
             separators=(',', ':')) + '\n'
@@ -1838,13 +1871,13 @@ def expense_rows(rows, paid_by, recharge=None, carried=frozenset()):
     """One fund's postings on one line, as a reader would list them: payments and journal
     entries one by one; a purchase order's postings netted into one row -- what it still owed at
     year end -- and left out where it nets to nothing; a re-charge entry as one row naming the
-    fund on the other side. `recharge`: journal -> (verb, funds)."""
+    fund on the other side. `recharge`: (journal, part) -> (verb, funds, ...), `is_recharge`."""
     out, orders = [], defaultdict(list)
     for r in rows:
         if r['source'] in ORDERS:
             orders[r['doc_no']].append(r)
             continue
-        if recharge and r['journal'] in recharge:
+        if recharge and is_recharge(r, recharge):
             continue
         kind = KIND[r['source']]
         if FB.is_prepaid(r):
@@ -1860,7 +1893,7 @@ def expense_rows(rows, paid_by, recharge=None, carried=frozenset()):
                         k='Order carried from last year, still owed' if doc in carried
                         else 'Order, still owed at year end',
                         p=payee(last), m=last['description'].strip(), n=doc, f=paid_by, v=v))
-    for j, (verb, funds, v, d, memo) in (recharge or {}).items():
+    for (j, _), (verb, funds, v, d, memo) in (recharge or {}).items():
         out.append(dict(d=d, k='%s %s' % (verb, funds), p='', m=memo, n=j, f=paid_by, v=v))
     return out
 
@@ -1884,7 +1917,7 @@ def line_files(m):
             for mv in r['fund_moves']:
                 funds = ', '.join(sorted(p for p, v in mv['payers'].items() if round(v)))
                 verb = 'Re-charged to' if mv['amount'] < 0 else 'Re-charged from'
-                recharge[mv['journal']] = (verb, funds, mv['amount'], mv['date'], mv['memo'])
+                recharge[(mv['journal'], mv['part'])] = (verb, funds, mv['amount'], mv['date'], mv['memo'])
             carried = {x['doc_no'] for x in mine if x['source'] == 'SOY'}
             rows = expense_rows(mine, SCHOOL, recharge, carried)
             if sum((x['v'] for x in rows), D0) != r['gf_spent']:
@@ -2075,7 +2108,11 @@ WEB_KINDS = [
     ('kind', 'Same kind of work', 'Our match by function code, to a category, never to one line'),
     ('none', 'On no school line', 'Spending the books give no school line'),
     ('capital', 'Capital articles', 'A capital article’s own project'),
-    ('between', 'Between funds', 'Moved from one fund to another by journal entry'),
+    ('fund', 'Cost re-booked to another fund', 'A journal entry re-booked a cost already paid from '
+             'one fund to another; the arrow runs the way the cost moved, from the fund that gave it '
+             'up to the fund that took it on'),
+    ('between', 'Between funds', 'The rest of what was moved from one fund to another by journal '
+                'entry, where the books do not pair the two'),
     ('transfer', 'Budget transfers', 'Budget moved from one line to another; budget, not spending'),
     ('school', 'School budget’s own spending', 'What the school budget spent on each line, after re-charges'),
 ]
@@ -2098,6 +2135,93 @@ def web_data(T):
                           st_share='of its cost paid by other funds',
                           find='Find a line or fund', found='found',
                           only_gf='Paid by the general fund alone this year: no other fund touched it.'))
+
+
+MOVE_CLASS = {'award': 'Same grant, another year’s award', 'grant': 'Grant to another grant',
+              'grant-revolving': 'Grant and a revolving or lunch fund', 'circuit-breaker': 'Circuit breaker',
+              'general-fund': 'General fund outside the school budget', 'other': 'Between other funds',
+              'unpaired': 'Not paired in the books'}
+
+
+MOVES_TEXT = dict(
+    lead='re-booked between funds by journal entry in', entries='entries', entry='entry',
+    award_lead='between awards of the same grant', undone_lead='in entries that undo each other',
+    what=('A journal entry re-books a cost already paid -- by payroll or a bill -- from one fund to '
+          'another. No cash moves; the books change which fund carries the cost.'),
+    cancels='Cancelled out: reversed in the same year',
+    later='to a later award', earlier='to an earlier award', c_journal='Journal entry',
+    school='The same entry also moved cost on or off a school line.',
+    unpaired=('Several funds gave and several took, in amounts that do not match: the books do not say '
+              'which cost went where.'),
+    none='No cost was re-booked between two funds this year.',
+    open='Open a row for its entries')
+
+
+def moves_data(m, T):
+    """COST RE-BOOKED BETWEEN FUNDS (TJ, 28 October 2026: "we also need to show that grant money is
+    moved across years too.... FY25 moving to FY26 grants"). Every entry in the model's
+    `fund_moves_between`, grouped by the two funds it moved cost between, so one grant's award-to-
+    award moves read as one row: from, to, net, how many entries; each entry beneath it with its
+    date, memo and journal, and a reversal marked on both ends. An entry the books do not pair
+    (several funds gave, several took) is its own group, named so."""
+    A = J.accounts()
+    # fund 0100 outside department 300 is the Town's side of the general fund, as the table of funds names it
+    name = lambda f: fund_label(f, A) if f != '0100' else 'General fund, outside the school budget · 0100'
+    years = []
+    for fy in YEARS():
+        mvs = [e for e in m['fund_moves_between'] if e['fy'] == fy]
+        date_of = {e['id']: long_date(e['date']) for e in m['fund_moves_between']}
+        groups = defaultdict(list)                 # key -> [(entry, gave, got, amount, cls, dir)]
+        for e in mvs:
+            for p in e['pairs']:
+                groups[tuple(sorted((p['gave'], p['got'])))].append((e, p['gave'], p['got'], p['amount'], p['cls'], p['dir']))
+            if not e['paired']:
+                groups[('unpaired', e['id'])].append((e, None, None, e['moved'], 'unpaired', None))
+        out = []
+        for k, items in groups.items():
+            cls = items[0][4]
+            if cls == 'unpaired':
+                e = items[0][0]
+                a = T.lit(' · '.join(name(f) for f in sorted(e['unpaired_gave'])))
+                b = T.lit(' · '.join(name(f) for f in sorted(e['unpaired_got'])))
+                net, x, y, dir_ = e['moved'], None, None, None
+            else:
+                x, y = k
+                net = sum((v if g == x else -v for _, g, _, v, _, _ in items), D0)
+                if net < 0 or (net == 0 and items[0][1] == y):
+                    x, y, net = y, x, -net
+                a, b = T.lit(name(x)), T.lit(name(y))
+                dir_ = move_class_dir(x, y)
+            rows = []
+            for e, g, r, v, _, _ in sorted(items, key=lambda it: (it[0]['date'], it[0]['id'])):
+                rev = (T.lit('reverses the entry of %s' % date_of[e['reverses']]) if e['reverses']
+                       else T.lit('reversed by the entry of %s' % date_of[e['reversed_by']]) if e['reversed_by'] else '')
+                rows.append(dict(
+                    d=T.lit(long_date(e['date'])), iso=T.lit(e['date']), memo=T.lit(' · '.join(e['memos'])),
+                    j=T.lit(e['journal']), rev=rev, school=e['with_school'],
+                    a=T.lit(name(g)) if g else a, b=T.lit(name(r)) if r else b,
+                    t=T.usd(v), n=round(fl(v), 2)))
+            prog = FB.payer(FB.fund_acct(x)) if cls == 'award' else ''
+            out.append(dict(cls=cls, prog=T.lit(prog), a=a, b=b, dir=dir_, t=T.usd(net), n=round(fl(net), 2),
+                            cancels=net == 0, count=len(rows),
+                            gross=T.usd(sum((v for _, _, _, v, _, _ in items), D0)), rows=rows,
+                            funds=sorted(k if cls != 'unpaired' else
+                                         set(items[0][0]['unpaired_gave']) | set(items[0][0]['unpaired_got']))))
+        order = list(MOVE_CLASS)
+        out.sort(key=lambda g: (order.index(g['cls']), g['prog'], -abs(g['n']), g['a']))
+        moved = sum((e['moved'] for e in mvs), D0)
+        award = sum((p['amount'] for e in mvs for p in e['pairs'] if p['cls'] == 'award'), D0)
+        if abs(sum((Decimal(str(r['n'])) for g in out for r in g['rows']), D0) - moved) > Decimal('0.01') * (len(mvs) + 1):
+            fail('FY%d: the moves between funds do not sum to what the entries moved' % fy)
+        undone = sum((e['moved'] for e in mvs if e['reverses'] or e['reversed_by']), D0)
+        years.append(dict(fy=T.fy(fy), groups=out, n=len(mvs), t=T.usd(moved), t_award=T.usd(award),
+                          t_undone=T.usd(undone) if undone else '',
+                          n_award=sum(1 for e in mvs if any(p['cls'] == 'award' for p in e['pairs']))))
+    return dict(years=years, classes=[dict(id=k, label=v) for k, v in MOVE_CLASS.items()], text=MOVES_TEXT)
+
+
+def move_class_dir(a, b):
+    return FB.move_class(a, b)[1]
 
 
 def salaries_data(m, T):
@@ -2207,16 +2331,23 @@ def main():
     a = ap.parse_args()
     m = FB.model()
     outs = {OUT: render(m), **line_texts(m), **fund_texts(m), **payee_files(m)[0], **web_files(m)}
+    # one page per school line and per fund, sliced from the outputs above (fy_items.py)
+    outs.update(ITEMS.files(m, outs, OUT, LINES_DIR, money, fail, plan={COLLAB: printed_plan(m)}))
+    gone = ITEMS.orphans(LINES_DIR, outs)
     if a.check:
         stale = [os.path.relpath(p, ROOT) for p, text in outs.items()
                  if not os.path.exists(p) or open(p, encoding='utf-8').read() != text]
+        stale += ['%s (no longer written)' % os.path.relpath(p, ROOT) for p in gone]
         if stale:
             print('STALE %s' % ', '.join(stale), file=sys.stderr)
             return 1
         print('fy breakdown: current')
         return 0
-    os.makedirs(LINES_DIR, exist_ok=True)
+    for p in gone:                     # a slug that no longer exists: its file goes too
+        os.remove(p)
+        print('removed %s' % os.path.relpath(p, ROOT))
     for p, text in outs.items():
+        os.makedirs(os.path.dirname(p), exist_ok=True)
         tmp = p + '.tmp'
         with open(tmp, 'w', encoding='utf-8', newline='\n') as fh:
             fh.write(text)
