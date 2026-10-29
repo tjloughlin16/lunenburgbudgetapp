@@ -6,6 +6,36 @@ conversation is not a source (rule 13): every state below names the command that
 
 ## NOW (29 October 2026): finishing 1991-2010 to the FY standard, BEFORE any new batch
 
+**PICK UP HERE (written 29 Oct ~07:30 ET, before a context clear).** State at that moment:
+
+- **1991-2000 batch: committed and pushed** (`d3ae65a54`), **in D1** (`sync_d1.py --check`: 140
+  tables, 262,062 rows, matched). Tables read on financial pages only: 402 pages, $6.03.
+- **Deploy:** a hand build passed but `deploy_site.sh` refused -- the 07:00 daily refresh rewrote
+  three job/grant JSONs mid-build. The refresh itself builds and deploys `main` (refresh.py step
+  10, `deploy_allowed`), and `main` holds this batch plus the FY-breakdown session's `63f545fb0`.
+  **First thing: check whether the refresh deployed** (its run row / `wrangler pages deployment
+  list`); verify by hashing a document from production against the archive (CLAUDE.md rule 10).
+  If it did not deploy, `cd fy28 && npm run build:site` then `bash scripts/deploy_site.sh` --
+  TJ approved shipping both (29 Oct). The FY-breakdown session agreed to hold writes under fy28/
+  until the deploy is confirmed; tell it when it is (`ListAgents`, then `SendMessage`).
+- **Textract:** October ledger $34.03 of $50; AWS's own budget caught up to $28.07 (= the ledger
+  before this batch), so the text price is CONFIRMED. `build/STOP-METERED` is back in place.
+- **Usage:** TJ, 29 Oct: ~5% of the week left, resets 29 Oct 22:59 ET -- *"run it safely in case
+  you hit the limit"*. Hence ONE unit at a time below, committed after each.
+- **Next:** unit 1 below (appropriations). Nothing of it has been started.
+- **Also fixed this session, so do not redo:** `find_financial_pages.py` + `--financial-only`;
+  `write_out` lines from tables-else-text; worker brief addendum; town-personnel Schools series
+  held at 2001 (`SCHOOLS_FROM_FY`); Chapter 70 growth window held at FY2001 (`GROWTH_FROM_FY`,
+  stated on the page); kindergarten caveat no longer calls an unexamined zero a failure;
+  `verify_balance_sheet.py` (blank printed page numbers) and `test_annual_report_fetch.py`.
+- **`check_generated.py` on 29 Oct** still fails on other sessions' outputs (budget feed, ch70
+  formula, decisions doc, master report, notices, reading time, short versions, recording
+  minutes, athletics, question bank, people, boards, finance, search index, agent manifest,
+  reports index, threads, suggested reports, vote lists) and on `build_staffing_charts` (it reads
+  no OCR text for the calendar editions -- pre-existing since 40240528f; it refuses honestly).
+  `verify_balance_sheet.py`: 16 failures in 32 editions; 14 predate this batch, +1994 ($1
+  rounding) and +1997 (general liabilities -$13,276.49, cause not established).
+
 TJ, 29 Oct: *"i want the 1991 - 2010 'fully done' before you move onto the other pages"* -- and
 *"run it safely in case you hit the limit"* (5% of the week left, resets 29 Oct 22:59 ET).
 
