@@ -45,7 +45,14 @@ three lists (cost every fund / final budget / left), top 8 by dollars, % only of
 $10,000+ and never on Left (thresholds ours); line table gains a sortable "Change in what it cost"
 column (`chg`/`t_chg` on each row). Lines matched by account, so a RENAMED line reads as new + gone
 (rule 6) -- e.g. FY2026 "Kindergarten Aides/Regular" is "new this year"; not checked whether it is a rename.
-**Next: item 2 (non-GF money chart, reusing item 0's receipts), then item 3, then item 4 below.**
+**ITEM 2 BUILT, 29 Oct:** block `fy-sources` "Where each source's money went" (`sources_data`):
+one horizontal bar per payer (capital left out), split by the 6 largest lines across all bars and
+years (`SOURCE_LINES`, ours; fixed colours), every other line, same kind of work, on no line
+(hatched); a tick at what it received (item 0's receipts) and the gap outlined; Dollars / Shares.
+DEFINITION SPLIT, stated on the block: its SPENT is the page's (payments + owed at 30 June, in the
+year ordered); Money in, money out is CASH. They differ by orders owed across a 30 June -- e.g.
+ARPA 2595, $75,000 ordered Jan 2025, paid Sep 2025 (other grants FY2025 +$75,000 here).
+**Next: item 3 (needs TJ: replace budget-vs-actual.md or sit beside it), then item 4 below.**
 
 **QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
 "What it connects to" (`fy28/src/components/blocks/custom/fy-ego-web.tsx`) draws the chart and then
