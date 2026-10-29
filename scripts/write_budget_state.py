@@ -46,6 +46,7 @@ import hashlib
 import json
 import os
 import subprocess
+import claude_lean
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -131,7 +132,7 @@ def write_one(t):
     prompt = ('Meeting: %s, %s. Recording: %s\n\nCaptions (%d lines, [seconds] text):\n\n%s'
               % (board, t['date'], doc.get('video_url'), len(lines), '\n'.join(lines)))
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
+    r = claude_lean.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
                         '--json-schema', json.dumps(SCHEMA), '--output-format', 'json', '--max-budget-usd', '1'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=900)
     if r.returncode != 0:

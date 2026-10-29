@@ -33,6 +33,7 @@ import json
 import os
 import re
 import subprocess
+import claude_lean
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -393,7 +394,7 @@ def extract_one(e, force=False, schema=1, model=None, out_dir=None):
         import reconcile_minutes as R
         system, sch = with_reconcile(system, sch)
         prompt += '\n\n=== OUR MINUTES (from the recording) ===\n' + R.ours_for_prompt(ours['minutes'])
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', model or MODEL, '--system-prompt', system,
+    r = claude_lean.run(['claude', '-p', '--tools', '', '--model', model or MODEL, '--system-prompt', system,
                         '--json-schema', json.dumps(sch), '--output-format', 'json', '--max-budget-usd', '1'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=TIMEOUT)
     if r.returncode != 0:

@@ -43,6 +43,7 @@ import json
 import os
 import re
 import subprocess
+import claude_lean
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -150,7 +151,7 @@ def write_one(doc, seen):
                  os.path.basename(doc['local']), len(text),
                  ', truncated to the first %d' % MAX_CHARS if len(text) > MAX_CHARS else '', body_text))
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
+    r = claude_lean.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
                         '--json-schema', json.dumps(SCHEMA), '--output-format', 'json', '--max-budget-usd', '1'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=900)
     if r.returncode != 0:

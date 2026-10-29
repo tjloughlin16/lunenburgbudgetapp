@@ -21,6 +21,7 @@ import json
 import os
 import re
 import subprocess
+import claude_lean
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -79,7 +80,7 @@ def main():
     for i in range(0, len(todo), BATCH):
         batch = todo[i:i + BATCH]
         prompt = '\n\n'.join('%d. LABEL: %s\nTEXT: %s' % (j, d['title'], first_page(d['file_key'])) for j, d in enumerate(batch))
-        r = subprocess.run(['claude', '-p', '--tools', '', '--model', 'sonnet', '--system-prompt', SYSTEM,
+        r = claude_lean.run(['claude', '-p', '--tools', '', '--model', 'sonnet', '--system-prompt', SYSTEM,
                             '--json-schema', json.dumps(SCHEMA), '--output-format', 'json', '--max-budget-usd', '1'],
                            input=prompt, capture_output=True, text=True, env=env, timeout=600)
         if r.returncode != 0:

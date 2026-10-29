@@ -28,6 +28,7 @@ import glob
 import json
 import os
 import subprocess
+import claude_lean
 import sys
 from decimal import Decimal
 
@@ -121,10 +122,10 @@ def read_with_claude(limit):
         prompt = ('Read the image %s. It is one cell cropped from a scanned page of a town report. '
                   'Transcribe the figure printed in it exactly as printed, with any $ sign, commas, '
                   'decimal point, minus sign or parentheses. Set legible false if you cannot read it.' % path)
-        p = subprocess.run(['claude', '-p', '--model', MODEL, '--tools', 'Read', '--allowedTools', 'Read',
+        p = claude_lean.run(['claude', '-p', '--model', MODEL, '--tools', 'Read', '--allowedTools', 'Read',
                             '--system-prompt', SYSTEM, '--json-schema', json.dumps(SCHEMA),
                             '--output-format', 'json', '--max-budget-usd', '0.5'],
-                           input=prompt, capture_output=True, text=True, timeout=300, cwd=ROOT,
+                           input=prompt, capture_output=True, text=True, timeout=300, add_dirs=[CROPS],
                            env={**os.environ, 'CLAUDE_CODE_ENTRYPOINT': 'witness_cell_crops'})
         if p.returncode != 0:
             raise SystemExit('claude failed on %s:\n%s' % (k, (p.stdout + p.stderr)[-1000:]))

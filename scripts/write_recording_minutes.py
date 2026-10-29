@@ -48,6 +48,7 @@ import json
 import os
 import re
 import subprocess
+import claude_lean
 import time
 import sys
 import datetime as dt
@@ -403,8 +404,8 @@ def claude_run(argv, prompt, timeout):
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
     for attempt in (1, 2):
         try:
-            return subprocess.run(argv, input=prompt, capture_output=True, text=True,
-                                  env=env, timeout=timeout)
+            return claude_lean.run(argv, input=prompt, capture_output=True, text=True,
+                                   env=env, timeout=timeout)
         except FileNotFoundError:
             if attempt == 2:
                 raise

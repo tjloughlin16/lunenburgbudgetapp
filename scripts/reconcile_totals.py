@@ -36,6 +36,7 @@ import math
 import os
 import statistics
 import subprocess
+import claude_lean
 import sys
 from decimal import Decimal
 from pathlib import Path
@@ -152,10 +153,10 @@ def ask(path, check, run, model):
               'figure exactly as printed, with its $ and commas and parentheses. A row with nothing '
               'printed in that column is an empty string. Set `legible` false if the image does not '
               'show those rows clearly.')
-    r = subprocess.run(['claude', '-p', '--model', model, '--tools', 'Read', '--allowedTools', 'Read',
+    r = claude_lean.run(['claude', '-p', '--model', model, '--tools', 'Read', '--allowedTools', 'Read',
                         '--system-prompt', SYSTEM, '--json-schema', json.dumps(SCHEMA),
                         '--output-format', 'json', '--max-budget-usd', '1'],
-                       input=prompt, capture_output=True, text=True, timeout=TIMEOUT, cwd=ROOT,
+                       input=prompt, capture_output=True, text=True, timeout=TIMEOUT, add_dirs=[CROPS],
                        env={**os.environ, 'CLAUDE_CODE_ENTRYPOINT': 'reconcile_totals'})
     if r.returncode != 0:
         raise SystemExit(f'claude failed on {check.ref}:\n{(r.stdout + r.stderr)[-1500:]}')
@@ -263,7 +264,7 @@ def main(argv=None):
         if sent >= args.limit or path is None:
             print(f'{line} {"crop " + str(path.relative_to(ROOT)) if path else "NO CROP: no cell boxes"}')
             continue
-        reading, cost = ask(path.relative_to(ROOT), c, run, args.model)
+        reading, cost = ask(path, c, run, args.model)
         sent += 1
         spent += cost or 0
         verdict, note, fixes = decide(c, run, reading)

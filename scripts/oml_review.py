@@ -52,6 +52,7 @@ import json
 import os
 import re
 import subprocess
+import claude_lean
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
@@ -499,7 +500,7 @@ def review(board, date, dry=False):
     if dry:
         return 0
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
+    r = claude_lean.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
                         '--json-schema', json.dumps(schema()), '--output-format', 'json',
                         '--max-budget-usd', '2'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=TIMEOUT)

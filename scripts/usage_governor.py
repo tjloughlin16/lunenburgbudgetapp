@@ -112,6 +112,7 @@ def _renew_token(now):
     to ERRORS as kind `renew`, so the log says whether renewing is happening at all."""
     import subprocess
     import tempfile
+    import claude_lean
     if os.path.exists(_RENEWED) and now - os.path.getmtime(_RENEWED) < RENEW_EVERY_S:
         return
     open(_RENEWED, 'w').write(str(now))
@@ -119,7 +120,7 @@ def _renew_token(now):
     for cmd in (['claude', 'auth', 'status'],
                 ['claude', '-p', '--model', 'haiku', '--tools', '', 'Reply with the single word: ok']):
         try:
-            subprocess.run(cmd, capture_output=True, text=True, timeout=120, cwd=tempfile.gettempdir())
+            (claude_lean.run if cmd[1] == '-p' else subprocess.run)(cmd, capture_output=True, text=True, timeout=120, **({} if cmd[1] == '-p' else {'cwd': tempfile.gettempdir()}))
         except Exception:                               # noqa: BLE001
             continue
         exp = _token_expires()

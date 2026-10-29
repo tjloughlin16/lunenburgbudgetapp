@@ -30,6 +30,7 @@ import glob
 import json
 import os
 import subprocess
+import claude_lean
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -117,7 +118,7 @@ def read_page(a):
 
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
     began = dt.datetime.now()
-    r = subprocess.run(
+    r = claude_lean.run(
         ['claude', '-p', '--tools', '', '--model', a.model, '--system-prompt', SYSTEM,
          '--json-schema', json.dumps(SCHEMA), '--output-format', 'json',
          '--max-budget-usd', '2'],

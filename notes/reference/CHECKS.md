@@ -282,3 +282,15 @@ load limit; `CLAUDE.md` keeps a pointer here and the handful every session needs
     python3 scripts/check_archive_storage.py     # manifest vs bucket, reconciled both ways
     python3 scripts/check_archive_urls.py --base URL  # every /docs/ address, hashed against the manifest
 
+
+## Scripted `claude -p` calls
+
+**Every scripted `claude` call goes through `scripts/claude_lean.py`** (`claude_lean.run(argv, add_dirs=[...], **subprocess_kwargs)`). It adds `--setting-sources ""`, `--strict-mcp-config` and `--no-session-persistence`, one `--add-dir` per directory the call must read, and runs in an empty directory under `build/`, so CLAUDE.md, memory, settings and MCP servers do not ride along in the first turn. Not `--bare`: it refuses OAuth, and this is a Max login. Settings no longer load, so pass permissions as flags (`--tools`, `--allowedTools`) and use absolute paths in prompts.
+
+Measured 29 October 2026, haiku, one-word prompt, `--tools Read`, cache-creation tokens:
+
+    from the repo, no other flags                          82,615 tokens   $0.0165
+    + --setting-sources "" --strict-mcp-config              5,134 tokens   $0.0010
+    + cwd = an empty directory                             ~1,700 tokens   $0.00014
+
+Not converted, because they need the repo's own context: `generate_report.py` (sandboxed, edits a worktree) and `triage_refresh.py` (`acceptEdits` on the repo).

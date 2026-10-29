@@ -32,6 +32,7 @@ import json
 import os
 import re
 import subprocess
+import claude_lean
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -141,7 +142,7 @@ def check(summary, allowed):
 
 def ask(body, n, meeting):
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
+    r = claude_lean.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
                         '--json-schema', json.dumps(SCHEMA), '--output-format', 'json',
                         '--max-budget-usd', '%.2f' % max(0.5, 0.05 * n)],
                        input=body, capture_output=True, text=True, env=env, timeout=1500)

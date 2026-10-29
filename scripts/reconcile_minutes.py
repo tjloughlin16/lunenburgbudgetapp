@@ -48,6 +48,7 @@ import json
 import os
 import re
 import subprocess
+import claude_lean
 import sys
 
 ROOT = os.path.dirname(os.path.dirname(os.path.abspath(__file__)))
@@ -364,7 +365,7 @@ def reconcile(path, force=False):
               % (m['board'], m['meeting_date'], ours_for_prompt(m['minutes']),
                  official_for_prompt(structured) if structured else official_text))
     env = dict(os.environ, PATH=NODE22 + os.pathsep + os.environ.get('PATH', ''))
-    r = subprocess.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
+    r = claude_lean.run(['claude', '-p', '--tools', '', '--model', MODEL, '--system-prompt', SYSTEM,
                         '--json-schema', json.dumps(SCHEMA), '--output-format', 'json',
                         '--max-budget-usd', '1.5'],
                        input=prompt, capture_output=True, text=True, env=env, timeout=900)
