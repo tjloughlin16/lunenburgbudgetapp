@@ -13,6 +13,9 @@ build_sitemap.py, the file that put them in the sitemap -- never listed here:
                 not render them; they are drawn in the browser. A KNOWN GAP, printed every
                 run so it is not mistaken for coverage -- not a reason to refuse a deploy,
                 because it is the same in every build.
+  fy_item_pages()  one page per school line, fund and group (/school-lines/<slug> ...), public
+                since 29 October 2026 and drawn in the browser like /people/<slug>. The same
+                known gap, for the same reason.
 """
 import os, re, sys
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
@@ -22,7 +25,7 @@ DIST = S.DIST
 sm = open(os.path.join(DIST, 'sitemap.xml'), encoding='utf-8').read()
 pages = [re.sub(r'^https?://[^/]+', '', u) for u in re.findall(r'<loc>([^<]+)</loc>', sm)]
 pages = [p for p in pages if not re.search(r'\.[a-z0-9]+$', p) and p not in S.ENTRY]
-browser_only = set(S.feed_pages()) - {'/budget-feed'}
+browser_only = (set(S.feed_pages()) - {'/budget-feed'}) | set(S.fy_item_pages())
 
 
 def held(p):
