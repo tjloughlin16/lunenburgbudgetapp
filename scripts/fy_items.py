@@ -215,6 +215,7 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
     def trace(a):
         return trace_of({a})
 
+    TRACE_LINES = 3    # OURS: how many of a payer's other lines get a colour of their own
     def trace_of(here_set):
         """For each fund that paid toward line `a` in any year: every year, what it put here, what
         it put on other school lines (the largest three, then the rest), and one sentence where it
@@ -248,7 +249,27 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
                         cur['fy'], cur['t']['here'],
                         ('; in %s its largest school line was %s, %s' % (prev['fy'], prev['top'][0]['name'], prev['top'][0]['t'])
                          if prev['top'] else '; in %s it paid no school line' % prev['fy'])))
-            out_.append(dict(fund=f, href=fund_path.get(f), years=ys_, notes=notes))
+            # THE SAME OTHER LINES EVERY YEAR (TJ, 29 October 2026: the per-year bars were unreadable).
+            # The fund's largest other school lines across all the years, a fixed set, so each keeps
+            # its colour and its place in the stack year to year; the rest is one segment.
+            span_ = defaultdict(Decimal)
+            for fy in years:
+                for acc, v in fund_on[fy].get(f, {}).items():
+                    if acc not in here_set and v:
+                        span_[acc] += v
+            fixed = [acc for acc, _ in sorted(span_.items(), key=lambda kv: (-kv[1], kv[0]))[:TRACE_LINES]]
+            for fy, y in zip(years, ys_):
+                on = fund_on[fy].get(f, {})
+                here = sum((on.get(x, D0) for x in here_set), D0)
+                by_ = [on.get(acc, D0) for acc in fixed]
+                others = sum(on.values(), D0) - here - sum(by_, D0)
+                if here + sum(by_, D0) + others != sum(on.values(), D0):
+                    fail('%s %s %s: the stack does not add to what it spent on school lines' % (fy, f, sorted(here_set)))
+                y['by'] = [dict(v=float(v), t=money(v) if v else '') for v in by_]
+                y['others'] = float(others)
+                y['t']['others'] = money(others) if others else ''
+            out_.append(dict(fund=f, href=fund_path.get(f), years=ys_, notes=notes,
+                             lines=[dict(name=name(acc), href=LINE_PATH + line_slug[acc]) for acc in fixed]))
         return out_
 
     # ---- school lines
@@ -501,6 +522,8 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
                        're-booked cost from one of its awards to another.'),
             mv_none_awards='No entry moved cost between its awards in these years.',
             web_from='In', web_to='Out', web_open='Open its page',
+            web_view='Show as', web_view_chart='Chart', web_view_table='Table',
+            web_th_other='The other end', web_none_row='None this year.', web_th_kind='Kind of connection', web_th_amount='Amount',
             web_ours='Paid from the start and same kind of work are our matches; re-charges and '
                      'moves are the Town’s own entries.',
             hist_h='Across the years', hist_span='The years the journal covers',
@@ -514,10 +537,15 @@ def files(m, outs, page_path, out_dir, money, fail, plan=None):
                        'between the budget line and the top of the bar.'),
             payers_h='Where its other payers went',
             payers_line=('Each fund other than the school budget that paid toward this line in any year: '
-                         'what it put here, and what it put on other school lines the same year. The bar is '
-                         'everything the fund spent on school lines that year, darker where it was spent here.'),
+                         'what it put here, and what it put on other school lines the same year. Each bar is '
+                         'everything the fund spent on school lines that year; the bottom of it, in colour, is this '
+                         'line.'),
             payers_group=('Each fund other than the school budget that paid toward any of these lines: what it '
-                          'put on them, and what it put on other school lines the same year.'),
+                          'put on them, and what it put on other school lines the same year. Each bar is '
+                          'everything the fund spent on school lines that year; the bottom of it, in colour, is '
+                          'these lines.'),
+            trace_here='This line', trace_here_group='These lines', trace_rest='Every other school line',
+            trace_lines='Its largest other school lines, all years:',
             k_group='Lines read together', with_group='Read with the others:', paid_group='It paid toward',
             split_h='Which line each fund paid',
             split_line=('One chart per fund other than the school budget: each year’s bar is everything it '

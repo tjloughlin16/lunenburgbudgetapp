@@ -7,7 +7,8 @@ import { useFyYear } from './fy-year'
 import type { CustomProps } from './index'
 import { PAYER, hatch, Row } from './fy-shared'
 
-type Step = { id: string; n: number; v: string; label: string; means: string }
+/** `label` is the same every year; `sub` is the year's qualifier; `means` is the hover */
+type Step = { id: string; n: number; v: string; label: string; sub: string; means: string }
 type Year = { fy: string; bridge: Step[]; totals: { plan: number; happened: number; t: { plan: string; happened: string } } }
 type Data = { years: Year[]; text: Record<string, string> }
 
@@ -44,10 +45,10 @@ export default function FyBridge({ data, alt }: CustomProps) {
           <div>
             {total(t.a_plan, y.totals.plan, y.totals.t.plan)}
             {rows.map(r => (
-              <Row key={r.id} label={r.label} sub={r.means}>
+              <Row key={r.id} label={r.label} sub={r.sub} title={r.means}>
                 <div className="relative h-6 w-full sm:flex-1 min-w-0 shrink-0">
                   <div className="absolute inset-y-0 w-px" style={{ left: `${pc(r.from)}%`, background: 'var(--grid)' }} />
-                  {Math.abs(r.n) > 0.5 ? <div className="absolute top-0.5 bottom-0.5 rounded-[2px]" title={`${r.label}: ${r.v}`}
+                  {Math.abs(r.n) > 0.5 ? <div className="absolute top-0.5 bottom-0.5 rounded-[2px]" title={`${r.label}, ${r.sub}: ${r.v}\n${r.means}`}
                     style={{ left: `${pc(Math.min(r.from, r.to))}%`, width: `max(2px, ${Math.abs(pc(r.to) - pc(r.from))}%)`,
                       ...(r.n < 0 ? { border: `1.5px dashed ${r.id === 'cb' ? PAYER.cb : PAYER.gf}` } : { background: FILL[r.id] }) }} /> : null}
                   <span className="absolute top-1/2 -translate-y-1/2 text-[12.5px] tabular-nums font-semibold whitespace-nowrap px-1"

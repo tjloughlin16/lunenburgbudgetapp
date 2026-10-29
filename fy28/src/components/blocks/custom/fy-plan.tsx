@@ -27,25 +27,32 @@ type Other = { id: string; start: number; later: number; unmatched: number; t: R
 type Year = { fy: string; book: string | null; book_line: string | null; raw: string[]; unread: boolean
   gf: { budget: number; before: number; off: number; on: number; spent: number; left: number; early: number; unspent: number
     t: Record<'budget' | 'before' | 'off' | 'on' | 'spent' | 'left' | 'under' | 'voted' | 'transfers' | 'carried' | 'early' | 'own' | 'unspent' | 'used', string> }
-  cb: { plan: number | null; paid: number; unspent: number; t: { plan: string | null; paid: string; unspent: string; used: string | null; gross: string; net: string; diff: string | null } }
+  cb: { plan: number | null; paid: number; unspent: number; lines: number; t: { plan: string | null; paid: string; lines: string; unspent: string; used: string | null; gross: string; net: string; diff: string | null } }
   others: Other[]; others_t: Record<'start' | 'later' | 'paid' | 'unmatched' | 'all', string>
   totals: { plan: number; happened: number; unmatched: number; unspent: number; t: { plan: string; happened: string; beyond: string; unspent: string } } }
 type Data = { years: Year[]; groups: { id: string; label: string }[]; text: Record<string, string> }
 
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 
-/** A bar from zero: its parts side by side, and UNDER IT A VERTICAL LABEL FOR EACH FUND (TJ, 28
- *  October 2026: "show the 'what happened' chart without a huge long running legend, and instead
- *  use vertical labels for the funds"). Each label hangs from its segment's middle on a leader
- *  line, so the eye goes from the colour straight to the name. A fund's parts on and off a school
- *  line share one label (`group`), its value the two added with the hatched part named. Labels
- *  too close to fit are spread apart and their leaders bend, never overlap. */
+/** A bar from zero: its parts side by side, and UNDER IT ONE LABEL PER FUND, hung from its
+ *  segment's middle on a leader line, so the eye goes from the colour straight to the name (TJ, 28
+ *  October 2026: "show the 'what happened' chart without a huge long running legend"). A fund with
+ *  several parts -- spent on a line and on none -- is ONE label, its total; the parts are in the
+ *  hover (TJ, 29 October 2026: "i think we should have 1 circuit brekaer line", and of sub-labels
+ *  under each, "i dont want the subbullets on these items").
+ *  The labels are SET ON A SLANT, reading up to their leader (TJ, the same day: "putting them at a
+ *  slant i think will be possible and better to visualize those sub labels"). Labels too close to
+ *  fit are spread apart and their leaders bend, never overlap; where the row is too narrow for
+ *  that they become a wrapped list under the bar. */
 type Part = { name: string; value: number; text: string; fill: string; outline?: boolean; group?: string }
 // UNSPENT is OUTLINED, never filled: money allocated to the year and not spent is not spending,
 // and a filled bar would read as some
 const outlined = (c: string) => ({ background: 'transparent', border: `1.5px dashed ${c}` })
+const swatchOf = (p: Part): React.CSSProperties => p.outline ? outlined(p.fill) : { background: p.fill }
 type Label = { name: string; text: string; swatch: React.CSSProperties; title: string; mid: number; parts: Part[] }
 const GAP = 4, DROP = 18
+// THE SLANT: 35 degrees up to the right, each label's top-right corner on its leader
+const ANGLE = 35, SIN = Math.sin(ANGLE * Math.PI / 180), COS = Math.cos(ANGLE * Math.PI / 180)
 const usd = (v: number) => '$' + Math.round(v).toLocaleString('en-US')
 
 function labels(shown: Part[], max: number): Label[] {
@@ -54,13 +61,11 @@ function labels(shown: Part[], max: number): Label[] {
   for (const p of shown) {
     const last = out[out.length - 1]
     if (p.group && last && last.parts[0].group === p.group) { last.parts.push(p); last.to = at + p.value }
-    else out.push({ name: p.group ?? p.name, text: '', title: '', mid: 0, from: at, to: at + p.value, parts: [p],
-      swatch: p.outline ? outlined(p.fill) : { background: p.fill } })
+    else out.push({ name: p.group ?? p.name, text: '', title: '', mid: 0, from: at, to: at + p.value, parts: [p], swatch: swatchOf(p) })
     at += p.value
   }
   return out.map(l => ({ ...l, mid: ((l.from + l.to) / 2 / max) * 100,
-    // ONE LINE OF VALUE: the fund's total. The split on and off a school line is in the hover,
-    // and the key under the bar says what the hatching is
+    // a group's swatch is its first part's; its value is the parts added
     text: l.parts.length > 1 ? usd(l.parts.reduce((a, p) => a + p.value, 0)) : l.parts[0].text,
     title: l.parts.map(p => `${p.name}: ${p.text}`).join('\n') }))
 }
@@ -71,31 +76,39 @@ function Absolute({ parts, max, total, hatched }: { parts: Part[]; max: number; 
   const box = useRef<HTMLDivElement>(null)
   const refs = useRef<(HTMLDivElement | null)[]>([])
   const [geo, setGeo] = useState<{ w: number; xs: number[]; h: number; fit: boolean } | null>(null)
-  // MEASURED, not guessed: the row's width and each label's own, then a left-to-right pass that
-  // keeps every label clear of the one before and a right-to-left pass that keeps the last ones
-  // inside the row
+  // MEASURED, not guessed. Each label is a slanted strip whose top-right corner sits at its
+  // anchor; two parallel strips clear each other when their anchors are (thickness + gap) / sin
+  // apart. A left-to-right pass spreads them, a right-to-left pass keeps the last inside the row,
+  // and the first must not run off the left of it.
   useLayoutEffect(() => {
     const el = box.current
     if (!el) return
     const place = () => {
       const w = el.clientWidth
       const ws = ls.map((_, i) => refs.current[i]?.offsetWidth ?? 0)
-      const xs = ls.map((l, i) => (l.mid / 100) * w - ws[i] / 2)
-      for (let i = 0; i < xs.length; i++) xs[i] = Math.max(xs[i], i ? xs[i - 1] + ws[i - 1] + GAP : 0)
-      for (let i = xs.length - 1; i >= 0; i--) xs[i] = Math.min(xs[i], i < xs.length - 1 ? xs[i + 1] - ws[i] - GAP : w - ws[i])
-      for (let i = 0; i < xs.length; i++) xs[i] = Math.max(xs[i], i ? xs[i - 1] + ws[i - 1] + GAP : 0)
-      const h = Math.max(0, ...ls.map((_, i) => refs.current[i]?.offsetHeight ?? 0))
-      // A PHONE CANNOT HOLD THEM SIDE BY SIDE: past the row's width the labels become a wrapped
-      // list under the bar instead, the leaders dropped (a leader to a label off its segment
-      // would point nowhere)
-      const fit = ws.reduce((a, x) => a + x, 0) + GAP * (ws.length - 1) <= w
-      setGeo(g => g && g.w === w && g.h === h && g.fit === fit && g.xs.every((x, i) => Math.abs(x - xs[i]) < 0.5) && g.xs.length === xs.length ? g : { w, xs, h, fit })
+      const hs = ls.map((_, i) => refs.current[i]?.offsetHeight ?? 0)
+      const lo = (i: number) => ws[i] * COS
+      const step = (i: number) => (hs[i] + GAP) / SIN
+      const hi = (i: number) => w - hs[i] * SIN
+      const xs = ls.map(l => (l.mid / 100) * w)
+      for (let i = 0; i < xs.length; i++) xs[i] = Math.max(xs[i], lo(i), i ? xs[i - 1] + step(i - 1) : 0)
+      for (let i = xs.length - 1; i >= 0; i--) xs[i] = Math.min(xs[i], i < xs.length - 1 ? xs[i + 1] - step(i) : hi(i))
+      // A PHONE CANNOT HOLD THEM: if the passes could not satisfy every constraint, the labels
+      // become a wrapped list under the bar instead, the leaders dropped (a leader to a label off
+      // its segment would point nowhere)
+      const fit = xs.every((x, i) => x >= lo(i) - 0.5 && x <= hi(i) + 0.5 && (!i || x >= xs[i - 1] + step(i - 1) - 0.5))
+      const h = Math.max(0, ...ls.map((_, i) => ws[i] * SIN + hs[i] * COS))
+      setGeo(g => g && g.w === w && Math.abs(g.h - h) < 0.5 && g.fit === fit && g.xs.length === xs.length && g.xs.every((x, i) => Math.abs(x - xs[i]) < 0.5) ? g : { w, xs, h, fit })
     }
     place()
     const ro = new ResizeObserver(place)
     ro.observe(el)
     return () => ro.disconnect()
   })
+  const body = (l: Label) => <>
+    <span className="inline-flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-[1px] shrink-0" style={l.swatch} />{l.name}
+      <span className="tabular-nums font-semibold ml-1" style={{ color: 'var(--text-primary)' }}>{l.text}</span></span>
+  </>
   return (
     <div className="w-full sm:flex-1 min-w-0 shrink-0">
       <div className="flex items-start gap-2">
@@ -109,31 +122,29 @@ function Absolute({ parts, max, total, hatched }: { parts: Part[]; max: number; 
               return acc
             }, { at: 0, el: [] }).el}
           </div>
-          <div className="relative overflow-hidden" style={{ height: geo ? (geo.fit ? DROP + geo.h : 0) : DROP + 120 }}>
+          <div className="relative overflow-hidden" style={{ height: geo ? (geo.fit ? DROP + geo.h + 4 : 0) : DROP + 160 }}>
             {geo?.fit ? (
               <svg aria-hidden className="absolute inset-x-0 top-0 overflow-visible" width={geo.w} height={DROP}>
                 {ls.map((l, i) => {
-                  const m = (l.mid / 100) * geo.w, c = geo.xs[i] + (refs.current[i]?.offsetWidth ?? 0) / 2
+                  const m = (l.mid / 100) * geo.w, c = geo.xs[i]
                   return <path key={i} d={`M${m},0 V5 L${c},${DROP - 4} V${DROP}`} fill="none" stroke="var(--text-muted)" strokeWidth={1} />
                 })}
               </svg>) : null}
             {ls.map((l, i) => (
               <div key={i} ref={e => { refs.current[i] = e }} title={l.title}
-                className="absolute flex flex-col items-start gap-x-0.5 text-[11.5px] leading-tight whitespace-nowrap"
-                style={{ top: DROP, left: geo ? geo.xs[i] : 0, visibility: geo?.fit ? 'visible' : 'hidden',
-                  writingMode: 'vertical-lr', color: 'var(--text-secondary)' }}>
-                <span className="inline-flex items-center gap-1"><span className="inline-block w-2 h-2 rounded-[1px] shrink-0" style={l.swatch} />{l.name}</span>
-                <span className="tabular-nums font-semibold" style={{ color: 'var(--text-primary)' }}>{l.text}</span>
+                className="absolute flex flex-col items-end text-[11.5px] leading-tight whitespace-nowrap text-right"
+                style={{ top: DROP, left: geo ? geo.xs[i] - (refs.current[i]?.offsetWidth ?? 0) : 0, visibility: geo?.fit ? 'visible' : 'hidden',
+                  transform: `rotate(-${ANGLE}deg)`, transformOrigin: 'top right', color: 'var(--text-secondary)' }}>
+                {body(l)}
               </div>))}
           </div>
         </div>
         <span className="text-[12.5px] tabular-nums font-semibold whitespace-nowrap leading-6">{total}</span>
       </div>
       {geo && !geo.fit ? (
-        <p className="text-[11.5px] leading-snug mt-1" style={{ color: 'var(--text-secondary)' }}>
-          {ls.map((l, i) => <span key={i} title={l.title} className="inline-flex items-center gap-1 mr-3 whitespace-nowrap">
-            <span className="inline-block w-2 h-2 rounded-[1px]" style={l.swatch} />{l.name} <span className="tabular-nums">{l.text}</span></span>)}
-        </p>) : null}
+        <div className="text-[11.5px] leading-snug mt-1 flex flex-wrap gap-x-4 gap-y-1.5" style={{ color: 'var(--text-secondary)' }}>
+          {ls.map((l, i) => <div key={i} title={l.title} className="flex flex-col">{body(l)}</div>)}
+        </div>) : null}
       {hatched && ls.some(l => l.parts.length > 1) ? (
         <p className="text-[11.5px] mt-1" style={{ color: 'var(--text-muted)' }}>
           <span className="inline-block w-2.5 h-2.5 align-[-1px] mr-1 rounded-[1px]" style={{ background: hatch('var(--text-muted)') }} />{hatched}</p>) : null}
@@ -166,24 +177,37 @@ export default function FyPlan({ data, alt }: CustomProps) {
                   fill: 'color-mix(in srgb, var(--thread-4) 55%, transparent)' }] : [])]} />
             </Row>
             {/* UNSPENT AT THE END OF WHAT HAPPENED, outlined, after every dollar spent (TJ, 27
-                October 2026, picking this over the plan bar: "im not sure that makes sense") */}
+                October 2026, picking this over the plan bar: "im not sure that makes sense"). Each
+                fund's parts sit together so it takes one label: the general fund, then the circuit
+                breaker, then the rest. */}
             <Row label={t.a_happened} sub={`${t.a_happened_sub} · ${y.totals.t.beyond} ${t.a_beyond}${y.totals.unspent > 0.5 ? ` · ${t.a_unspent_sub}` : ''}`}>
               <Absolute max={max} total={y.totals.t.happened} hatched={t.hatched_part} parts={[
-                { name: t.a_gf_spent, value: g.spent - g.early, text: g.t.own, fill: PAYER.gf },
-                { name: t.a_gf_early, value: g.early, text: g.t.early, fill: hatch(PAYER.gf) },
-                { name: t.a_cb_paid, value: y.cb.paid, text: y.cb.t.paid, fill: cbFill },
-                ...y.others.flatMap(o => [
-                  { name: label[o.id], value: o.start + o.later, text: o.t.paid, fill: o.id === 'cb' ? hatch(PAYER.cb) : PAYER[o.id], group: label[o.id] },
-                  { name: `${label[o.id]}, ${t.on_no_line}`, value: o.unmatched, text: o.t.unmatched, fill: hatch(PAYER[o.id]), group: label[o.id] }]),
-                { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true },
-                { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true }]} />
+                { name: t.a_gf_spent, value: g.spent - g.early, text: g.t.own, fill: PAYER.gf, group: t.g_gf },
+                { name: t.a_gf_early, value: g.early, text: g.t.early, fill: hatch(PAYER.gf), group: t.g_gf },
+                // THE CIRCUIT BREAKER IS ONE PART, wherever it was spent (TJ, 29 October 2026: "we dont
+                // NEED to know WHERE they were spent"); only its money on no school line is apart
+                { name: t.g_cb, value: y.cb.lines, text: y.cb.t.lines, fill: cbFill, group: t.g_cb },
+                ...[...y.others].sort((a, b) => Number(b.id === 'cb') - Number(a.id === 'cb')).flatMap(o => {
+                  const cb = o.id === 'cb', name = cb ? t.g_cb : label[o.id]
+                  return [
+                    ...(cb ? [] : [{ name: label[o.id], value: o.start + o.later, text: o.t.paid, fill: PAYER[o.id], group: name }]),
+                    { name: `${label[o.id]}, ${t.on_no_line}`, value: o.unmatched, text: o.t.unmatched,
+                      fill: hatch(PAYER[o.id]), group: name }]
+                }),
+                { name: t.a_gf_unspent, value: g.unspent, text: g.t.unspent, fill: PAYER.gf, outline: true, group: t.g_unspent },
+                { name: t.a_cb_unspent, value: y.cb.unspent, text: y.cb.t.unspent, fill: PAYER.cb, outline: true, group: t.g_unspent }]} />
             </Row>
             <p className="text-[11.5px] sm:pl-[14.75rem]" style={muted}>{t.a_unspent_note}</p>
           </div>)
       })()}
       {/* THE TABLE UNDER IT (TJ: "as a chart, with a supplementary table at the bottom") */}
-      <div className="mt-5 overflow-x-auto">
-        <table className="w-full max-w-2xl text-[13px] tabular-nums border-collapse">
+      {/* a title of its own, and centred in the page (TJ, 29 October 2026: "theres a lot of padding
+          to the left and right and it looks odd"); the text in it stays left-aligned */}
+      <div className="mt-8 max-w-2xl mx-auto">
+        <p className="text-[15px] font-semibold mb-1">{t.table_h}</p>
+      </div>
+      <div className="overflow-x-auto">
+        <table className="w-full max-w-2xl mx-auto text-[13px] tabular-nums border-collapse">
           <thead>
             <tr className="border-b" style={{ borderColor: 'var(--grid)' }}>
               <th className="px-2 py-1.5 text-left font-semibold" />
@@ -231,7 +255,7 @@ export default function FyPlan({ data, alt }: CustomProps) {
           </tbody>
         </table>
       </div>
-      <details className="mt-3 text-[12.5px]">
+      <details className="mt-3 text-[12.5px] max-w-2xl mx-auto">
         <summary className="cursor-pointer font-semibold">{t.printed}</summary>
         {y.book ? <p className="mt-1"><a href={y.book} className="underline">{t.book}</a>
           <span style={muted}>, {t.line} {y.book_line}</span></p> : <p className="mt-1" style={muted}>{t.unread}</p>}

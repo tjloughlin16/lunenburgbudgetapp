@@ -1306,24 +1306,26 @@ def plan_data(m, T):
         other_on = sum(start.values(), D0) + sum(later.values(), D0)
         unm = sum(un.values(), D0)
         cb_step = cb_collab - (offset or D0)
-        steps = [('gf', -left, 'General fund left unspent' if left >= 0 else 'General fund spent past its budget',
+        # ONE NAME A STEP, EVERY YEAR (TJ, 29 October 2026: "'circuit breaker' shows up in various
+        # flavors"): the label is constant and the year's qualifier is `sub`; `means` is the hover
+        steps = [('gf', -left, 'General fund', 'left unspent' if left >= 0 else 'spent past its budget',
                   'Its budget less what it spent, after bills were re-charged to and from other funds.'),
-                 ('cb', cb_step, ('Circuit breaker, counted on and not charged' if cb_step < 0
-                                  else 'Circuit breaker, charged beyond what was counted on')
-                  if offset is not None else 'Circuit breaker, which the book did not count on'
-                  if pl['book'] else 'Circuit breaker, against a book not read yet',
+                 ('cb', cb_step, 'Circuit breaker', ('counted on, not charged' if cb_step < 0
+                                                     else 'charged beyond what was counted on')
+                  if offset is not None else 'the book did not count on it'
+                  if pl['book'] else 'against a book not read yet',
                   'Charged to collaborative tuition, against the offset the year’s book printed.'
                   if offset is not None else 'This year’s book printed no offset, so all of it is beyond the plan.'
                   if pl['book'] else 'This year’s approved book is not mapped yet, so what it counted on is unknown.'),
-                 ('other', other_on, 'Other funds, toward school lines',
+                 ('other', other_on, 'Other funds', 'toward school lines',
                   T.lit('Grants, fees and other funds, on the same lines the budget pays for; %s of it '
                         're-charged from the school budget after it paid.' % T.usd(sum(later.values(), D0)))),
-                 ('none', unm, 'Other funds, on no school line',
+                 ('none', unm, 'Other funds', 'on no school line',
                   'School spending the books give no school line for: we cannot say which line it paid toward.')]
-        if planned + sum((v for _, v, _, _ in steps), D0) != happened + unm:
+        if planned + sum((v for _, v, _, _, _ in steps), D0) != happened + unm:
             fail('FY%d: the bridge does not land on what happened' % fy)
         bridge = [dict(id=i, n=fl(v), v=('+' if v > 0 else '−' if v < 0 else '') + T.usd(abs(v)),
-                       label=l, means=w) for i, v, l, w in steps]
+                       label=l, sub=q, means=w) for i, v, l, q, w in steps]
         years.append(dict(
             bridge=bridge, unread=pl['book'] is None,
             fy=T.fy(fy), book=T.lit('/docs/district-budget/docs/%s.pdf' % pl['book']) if pl['book'] else None,
@@ -1335,8 +1337,13 @@ def plan_data(m, T):
                            under=T.usd(budget - before), voted=T.usd(tot(lambda r: r['voted'])),
                            transfers=T.usd(tot(lambda r: r['transfers'])),
                            carried=T.usd(tot(lambda r: r['carried_budget'])))),
+            # `lines`: everything the circuit breaker spent on school lines, collaborative tuition or
+            # not -- the level-1 chart draws it as ONE part (TJ, 29 October 2026: "we dont NEED to know
+            # WHERE they were spent")
             cb=dict(plan=None if offset is None else fl(offset), paid=fl(cb_collab), unspent=fl(cb_un),
+                    lines=fl(cb_collab + start['cb'] + later['cb']),
                     t=dict(plan=None if offset is None else T.usd(offset), paid=T.usd(cb_collab),
+                           lines=T.usd(cb_collab + start['cb'] + later['cb']),
                            unspent=T.usd(cb_un), used=None if offset is None else T.usd(offset - cb_un),
                            gross=T.usd(pl['gross']),
                            net=T.usd(pl['gross'] - (offset or D0)),
@@ -1394,7 +1401,11 @@ def plan_data(m, T):
         a_unspent_note=('Unspent is shown for the school general fund and the circuit breaker the book '
                         'counted on, the two with an allocation for the year. Most grants and '
                         'revolving funds print no budget for the year, so theirs is not drawn.'),
-        a_cb_plan='Circuit breaker, counted on', a_cb_paid='Circuit breaker, collaborative tuition', book='Approved budget book', line='line')
+        a_cb_plan='Circuit breaker, counted on', a_cb_paid='Circuit breaker, collaborative tuition', book='Approved budget book', line='line',
+        # ONE LABEL PER FUND under the bars, its total, no parts (TJ, 29 October 2026: "'circuit
+        # breaker' shows up in various flavors", then "i dont want the subbullets on these items")
+        g_gf='School general fund', g_cb='Circuit breaker', g_unspent='Unspent',
+        table_h='The figures behind the chart')
     return dict(years=years, text=text,
                 groups=[dict(id=g, label=('Circuit breaker, other lines' if g == 'cb' else l))
                         for g, l in groups])

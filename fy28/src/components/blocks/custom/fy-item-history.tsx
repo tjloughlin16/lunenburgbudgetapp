@@ -4,7 +4,7 @@
  *  helpful to see trends" -- from the same /data/fy-breakdown/<line|fund>/<slug>.json, so the two
  *  cannot disagree. Every amount shown is the generator's own text (scripts/fy_items.py). */
 import {
-  Bar, CartesianGrid, ComposedChart, Legend, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis,
+  Bar, CartesianGrid, ComposedChart, LabelList, Legend, Line, LineChart, ReferenceLine, ResponsiveContainer, Tooltip, XAxis, YAxis,
 } from 'recharts'
 import { H2 } from '../../report'
 import type { MoveGroup } from './fy-fund-moves'
@@ -166,15 +166,23 @@ export function FundHistory({ h, ix, cols, bare = false }: { h: FundHist[]; ix: 
 /** A fund other than the school budget that paid toward a line, every year: what it put here,
  *  what it put on other school lines -- scripts/fy_items.py `trace` */
 export type PayerTrace = { fund: string; href?: string; notes: string[]
-  years: { fy: string; here: number; total: number; t: { here: string; total: string; rest: string; elsewhere: string }
+  /** its largest other school lines across all the years: one fixed set, so colours hold */
+  lines: { name: string; href: string }[]
+  years: { fy: string; here: number; total: number; others: number
+    t: { here: string; total: string; rest: string; elsewhere: string; others: string }
+    /** what it put on each of `lines` that year, in their order */
+    by: { v: number; t: string }[]
     top: { name: string; href: string; v: number; t: string }[]
     /** on a group: what it paid each member line */
     split?: { name: string; v: number; t: string }[] }[] }
 
 /** WHERE ITS PAYERS WENT (TJ, 28 October 2026: "previously paid by circuit breaker in FY25, but then
- *  in FY26 circuit breaker went to XYZ"). One card per fund, its years in a column; each bar is the
- *  fund's whole school-line spending that year, scaled to that fund's own largest year, with the
- *  part spent here drawn dark. The sentences are the generator's, where a fund arrived or left. */
+ *  in FY26 circuit breaker went to XYZ"). One chart per fund: each year a bar of everything it spent
+ *  on school lines, stacked -- THIS line at the bottom in a strong colour with its amount on it, then
+ *  the fund's largest other lines (one fixed set across the years, so each keeps its colour and its
+ *  place: object constancy), then every other line in grey. Redrawn 29 October 2026 after TJ found
+ *  the per-year thin bars "VERY hard to understand". The sentences are the generator's. */
+const TRACE_COLOURS = ['var(--thread-2)', 'var(--thread-5)', 'var(--thread-3)']
 export function PayerTraces({ p, ix, fy }: { p: PayerTrace[]; ix: ItemIndex; fy: string }) {
   const t = ix.text
   if (!p.length) return null
@@ -186,7 +194,23 @@ export function PayerTraces({ p, ix, fy }: { p: PayerTrace[]; ix: ItemIndex; fy:
       <p className="text-[13px] mb-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{t.payers_line}</p>
       <div className="grid gap-4 lg:grid-cols-2">
         {p.map(f => {
-          const max = Math.max(1, ...f.years.map(y => y.total))
+          const by = new Map(f.years.map(y => [y.fy, y]))
+          const rows = f.years.map(y => ({ fy: y.fy, here: y.here, others: y.others,
+            ...Object.fromEntries(y.by.map((x, i) => [`l${i}`, x.v])) }))
+          const series = [
+            { key: 'here', name: t.trace_here, colour: 'var(--thread-1)', opacity: 0.95, text: (q: string) => by.get(q)?.t.here },
+            ...f.lines.map((l, i) => ({ key: `l${i}`, name: l.name, colour: TRACE_COLOURS[i % TRACE_COLOURS.length], opacity: 0.4,
+              text: (q: string) => by.get(q)?.by[i]?.t || undefined })),
+            { key: 'others', name: t.trace_rest, colour: 'var(--text-muted)', opacity: 0.25, text: (q: string) => by.get(q)?.t.others || undefined }]
+          // the amount on this line's own segment: inside it where it fits, just above it where not
+          const hereLabel = (q: { x?: number | string; y?: number | string; width?: number | string; height?: number | string; index?: number }) => {
+            const y = f.years[q.index ?? -1]
+            if (!y || !y.here) return null
+            const [x, top, w, h] = [q.x, q.y, q.width, q.height].map(Number)
+            const fits = h >= 16
+            return <text x={x + w / 2} y={fits ? top + h / 2 + 4 : top - 4} textAnchor="middle" fontSize={11} fontWeight={600}
+              fill={fits ? 'var(--bg, #fff)' : 'var(--text-primary)'}>{y.t.here}</text>
+          }
           return (
             <div key={f.fund} className="rounded-lg border p-4 min-w-0" style={{ borderColor: 'var(--grid)' }}>
               <p className="font-semibold text-[15px]">{f.href ? <a href={go(f.href)} className="underline" style={link}>{f.fund}</a> : f.fund}</p>
@@ -194,27 +218,29 @@ export function PayerTraces({ p, ix, fy }: { p: PayerTrace[]; ix: ItemIndex; fy:
                 <ul className="mt-1 text-[12.5px] space-y-0.5" style={{ color: 'var(--text-secondary)' }}>
                   {f.notes.map(n => <li key={n}>{n}</li>)}
                 </ul>) : null}
-              <ul className="mt-3 space-y-3">
-                {f.years.map(y => (
-                  <li key={y.fy} className="text-[12.5px]">
-                    <div className="flex justify-between gap-3">
-                      <span className="font-semibold">{y.fy}</span>
-                      <span className="tabular-nums" style={muted}>{y.t.total} {t.on_lines}</span>
-                    </div>
-                    <div className="mt-1 h-2.5 rounded-sm overflow-hidden flex" style={{ background: 'var(--surface-3, var(--grid))' }}
-                      title={`${t.here}: ${y.t.here}`}>
-                      <span style={{ width: `${(y.here / max) * 100}%`, background: 'var(--thread-1)' }} />
-                      <span style={{ width: `${((y.total - y.here) / max) * 100}%`, background: 'var(--thread-1)', opacity: 0.3 }} />
-                    </div>
-                    <p className="mt-1"><span style={muted}>{t.here}</span> <span className="tabular-nums font-semibold">{y.t.here}</span></p>
-                    {y.top.length ? (
-                      <p className="mt-0.5" style={muted}>{t.elsewhere}: {y.top.map((x, i) => (
-                        <span key={x.href}>{i ? ' · ' : ''}<a href={go(x.href)} className="underline" style={link}>{x.name}</a>{' '}
-                          <span className="tabular-nums" style={{ color: 'var(--text-primary)' }}>{x.t}</span></span>))}
-                        {y.t.rest ? <span> · {t.rest} <span className="tabular-nums" style={{ color: 'var(--text-primary)' }}>{y.t.rest}</span></span> : null}
-                      </p>) : null}
-                  </li>))}
-              </ul>
+              <div className="mt-2" style={{ width: '100%', height: 240 }}>
+                <ResponsiveContainer>
+                  <ComposedChart data={rows} margin={{ top: 14, right: 8, left: 0, bottom: 4 }}>
+                    <CartesianGrid stroke="var(--grid)" vertical={false} />
+                    <XAxis dataKey="fy" tick={tick} />
+                    <YAxis tickFormatter={usdk} width={52} tick={tick} />
+                    <Tooltip content={(q: { active?: boolean; label?: string | number }) => (
+                      <TextTip active={q.active} label={q.label === undefined ? undefined : String(q.label)}
+                        rows={[...series, { name: t.on_lines, colour: 'transparent', text: (v: string) => by.get(v)?.t.total }]} />)} />
+                    {/* the legend in the stack's own order, this line first -- not recharts' default, by name */}
+                    <Legend wrapperStyle={{ fontSize: 12 }} itemSorter={(e: { dataKey?: unknown }) => series.findIndex(x => x.key === e.dataKey)} />
+                    {series.map(s => (
+                      <Bar key={s.key} dataKey={s.key} name={s.name} stackId="s" fill={s.colour} fillOpacity={s.opacity} isAnimationActive={false}>
+                        {s.key === 'here' ? <LabelList dataKey="here" content={hereLabel} /> : null}
+                      </Bar>))}
+                  </ComposedChart>
+                </ResponsiveContainer>
+              </div>
+              {f.lines.length ? (
+                <p className="mt-1 text-[12.5px]" style={muted}>{t.trace_lines} {f.lines.map((l, i) => (
+                  <span key={l.href}>{i ? ' · ' : ''}<span className="inline-block w-2 h-2 rounded-sm mr-1"
+                    style={{ background: TRACE_COLOURS[i % TRACE_COLOURS.length], opacity: 0.6 }} />
+                    <a href={go(l.href)} className="underline" style={link}>{l.name}</a></span>))}</p>) : null}
             </div>)
         })}
       </div>
@@ -551,7 +577,9 @@ export function LineMemoCats({ m, years, ix }: { m: LineMemos | undefined; years
     <section className="mt-10">
       <H2>{t.memos_h}</H2>
       <p className="text-[13px] mb-3 max-w-3xl" style={{ color: 'var(--text-secondary)' }}>{t.memos_line}</p>
-      <div className="grid gap-6 md:grid-cols-2 items-start">
+      {/* stacked, not side by side (TJ, 29 October 2026): the table is a long list, so the chart
+          takes the full width and the table sits under it */}
+      <div className="space-y-6">
         <div style={{ width: '100%', height: 260 }}>
           <ResponsiveContainer>
             <ComposedChart data={rows} stackOffset="sign" margin={{ top: 10, right: 12, left: 4, bottom: 4 }}>

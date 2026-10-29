@@ -11,6 +11,21 @@ site build and deploy -- do NOT run `npm run build:site`; tell it when changes a
 deploy carries them. Do NOT run `build_db.py` until TJ gives the all-clear (that session is rebuilding
 `lunenburg.db` with 2001-2010 rows). Commit by explicit path only; three sessions' work is in the tree.
 
+**DONE 29 Oct (later session), uncommitted: the ego-web toggle and both line-page cleanups below.**
+Toggle: `fy-ego-web.tsx`, chips Chart/Table, `localStorage['fy-ego-view']`, In/Out lists removed.
+Memo chart stacked over its table. `PayerTraces` redrawn as stacked bars per payer; `trace_of`
+emits `lines` (the payer's 3 largest other lines across ALL years, `TRACE_LINES`, ours) and per
+year `by` / `others`, and fails if here + lines + others does not equal the year's total.
+`build_fy_breakdown.py --check` current, verifier ties, tsc clean, rendered on a dev server.
+**The third cleanup is DONE too (TJ approved, 29 Oct) -- and it was about the LEVEL-1 chart, not
+the bridge.** TJ's "circuit breaker in various flavors" was the labels under "The plan and what
+happened" (`fy-plan.tsx`): now ONE label per fund (name + total; parts only in the hover -- TJ
+rejected sub-labels: "i dont want the subbullets"), set on a 35-degree slant, circuit breaker one
+part (`cb.lines`, wherever spent). The figures table under it has a title and is centred. The bridge
+kept its four steps; its labels are constant with the year's qualifier as `sub`, `means` the hover.
+A three-step bridge (all CB vs offset) was built on a misread and reverted -- do not redo it.
+**Next: item 0.**
+
 **QUICK CLEANUP FIRST (TJ, 29 Oct) -- small, do before item 0:** on every fund and line page,
 "What it connects to" (`fy28/src/components/blocks/custom/fy-ego-web.tsx`) draws the chart and then
 In / Out lists that repeat it block for block. TJ: *"i dont think we need the 'in' and 'out'

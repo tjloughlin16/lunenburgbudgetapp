@@ -7,7 +7,13 @@
  *  arrow of the year's web (scripts/fy_web.py, the model's placements), kept by fy_items.py
  *  because it touches the item; nothing is added. One block per arrow, so a fund that both paid
  *  toward a line and was re-charged its bills shows twice, once per way. A block with its own
- *  page links to it. Drawn with the big web's colours, arrowheads and curve (fy-web-parts). */
+ *  page links to it. Drawn with the big web's colours, arrowheads and curve (fy-web-parts).
+ *
+ *  CHART OR TABLE, never both (TJ, 29 October 2026: "put it as a toggle: chart vs table view"). The
+ *  In / Out lists under the chart repeated it block for block; the table now holds the same arrows
+ *  in the same order, and since the SVG is role="img" it is the chart's only text version. */
+import { useState, type ReactNode } from 'react'
+import { Chip } from './fy-shared'
 import { WEB_COLOUR, WebMarkers, curve, cut, edgeWidth, nodeFill, type WebEdge, type WebKind, type WebNode } from './fy-web-parts'
 
 export type Ego = { centre: string[]; nodes: WebNode[]; edges: WebEdge[] }
@@ -16,6 +22,11 @@ type Kinds = { id: WebKind; label: string; means: string }[]
 const muted = { color: 'var(--text-muted)' }, secondary = { color: 'var(--text-secondary)' }
 const SW = 250, CW = 230, GAP = 120, RH = 36, RG = 6, TOP = 26
 const link = { color: 'var(--link, var(--thread-2))' }
+const VIEW_KEY = 'fy-ego-view'
+type View = 'chart' | 'table'
+const readView = (): View => {
+  try { return window.localStorage.getItem(VIEW_KEY) === 'table' ? 'table' : 'chart' } catch { return 'chart' }
+}
 
 type Side = { e: WebEdge; n: WebNode; y: number; c: string }
 const KIND_ORDER = Object.keys(WEB_COLOUR) as WebKind[]
@@ -28,6 +39,11 @@ const centreName = (label: string): [string, string] => {
 }
 
 export function EgoWeb({ ego, kinds, text, fy }: { ego: Ego; kinds: Kinds; text: Record<string, string>; fy: string }) {
+  const [view, setViewState] = useState<View>(readView)
+  const setView = (v: View) => {
+    setViewState(v)
+    try { window.localStorage.setItem(VIEW_KEY, v) } catch { /* private window: the choice lasts this page */ }
+  }
   const nodes = new Map(ego.nodes.map(n => [n.id, n]))
   const centre = new Set(ego.centre)
   const kindLabel = Object.fromEntries(kinds.map(k => [k.id, k.label]))
@@ -70,22 +86,43 @@ export function EgoWeb({ ego, kinds, text, fy }: { ego: Ego; kinds: Kinds; text:
     return s.n.href ? <a key={`${s.e.a}${s.e.b}${s.e.k}${s.y}`} href={`${s.n.href}?fy=${encodeURIComponent(fy)}`}>{body}</a>
       : <g key={`${s.e.a}${s.e.b}${s.e.k}${s.y}`}>{body}</g>
   }
-  const list = (title: string, ss: Side[]) => (
-    <div className="min-w-0">
-      <p className="font-semibold mb-1">{title}</p>
-      {ss.length ? (
-        <ul className="space-y-1">
-          {ss.map((s, i) => (
-            <li key={i} className="flex justify-between gap-3">
-              <span className="min-w-0"><span className="inline-block w-2 h-2 rounded-sm mr-1.5" style={{ background: WEB_COLOUR[s.e.k] }} />
-                {s.n.href ? <a href={`${s.n.href}?fy=${encodeURIComponent(fy)}`} className="underline" style={link}>{s.n.label}</a> : s.n.label}
-                <span className="block text-[11.5px] pl-3.5" style={muted}>{kindLabel[s.e.k] ?? s.e.k}{s.e.d ? ` · ${s.e.d}` : ''}</span></span>
-              <span className="tabular-nums font-semibold whitespace-nowrap">{s.e.t}</span></li>))}
-        </ul>) : <p style={muted}>{text.web_none}</p>}
+  const href = (n: WebNode) => `${n.href}?fy=${encodeURIComponent(fy)}`
+  const name = (n?: WebNode) => !n ? null : n.href ? <a href={href(n)} className="underline" style={link}>{n.label}</a> : n.label
+  const kindCell = (e: WebEdge) => (
+    <span className="inline-flex items-start gap-1.5"><span className="inline-block w-2 h-2 rounded-sm mt-1.5 shrink-0" style={{ background: WEB_COLOUR[e.k] }} />
+      <span>{kindLabel[e.k] ?? e.k}{e.d ? <span className="block text-[11.5px]" style={muted}>{e.d}</span> : null}</span></span>)
+  const group = (title: string, rows: { key: string; other: ReactNode; e: WebEdge }[]) => (
+    <tbody key={title}>
+      <tr><th colSpan={3} scope="colgroup" className="text-left font-semibold pt-3 pb-1">{title}</th></tr>
+      {rows.length ? rows.map(r => (
+        <tr key={r.key} className="border-t" style={{ borderColor: 'var(--grid)' }}>
+          <td className="py-1.5 pr-3 align-top">{r.other}</td>
+          <td className="py-1.5 pr-3 align-top">{kindCell(r.e)}</td>
+          <td className="py-1.5 align-top text-right tabular-nums font-semibold whitespace-nowrap">{r.e.t}</td></tr>))
+        : <tr><td colSpan={3} className="py-1.5" style={muted}>{text.web_none_row}</td></tr>}
+    </tbody>)
+  const table = (
+    <div className="overflow-x-auto">
+      <table className="w-full text-[13px]">
+        <caption className="sr-only">{text.web_h}</caption>
+        <thead><tr style={secondary} className="text-[12px]">
+          <th scope="col" className="text-left font-normal pr-3">{text.web_th_other}</th>
+          <th scope="col" className="text-left font-normal pr-3">{text.web_th_kind}</th>
+          <th scope="col" className="text-right font-normal">{text.web_th_amount}</th></tr></thead>
+        {group(text.web_from, left.map((s, i) => ({ key: `l${i}`, other: name(s.n), e: s.e })))}
+        {group(text.web_to, right.map((s, i) => ({ key: `r${i}`, other: name(s.n), e: s.e })))}
+        {inner.length ? group(text.web_inner, inner.map((e, i) => ({ key: `i${i}`, e,
+          other: <>{nodes.get(e.a)?.label} <span style={muted}>{text.web_took}</span> {nodes.get(e.b)?.label}</> }))) : null}
+      </table>
     </div>)
 
   return (
     <figure>
+      <div className="flex gap-1.5 mb-2" role="group" aria-label={text.web_view}>
+        <Chip on={view === 'chart'} onClick={() => setView('chart')}>{text.web_view_chart}</Chip>
+        <Chip on={view === 'table'} onClick={() => setView('table')}>{text.web_view_table}</Chip>
+      </div>
+      {view === 'table' ? table : <>
       <div className="flex flex-wrap gap-x-3 gap-y-1 text-[12px] mb-1.5" style={secondary}>
         {used.map(k => (
           <span key={k} className="inline-flex items-center gap-1" title={kinds.find(x => x.id === k)?.means}>
@@ -127,21 +164,6 @@ export function EgoWeb({ ego, kinds, text, fy }: { ego: Ego; kinds: Kinds; text:
           {right.map(s => block(s, W - SW))}
         </svg>
       </div>
-      <div className="grid gap-5 sm:grid-cols-2 mt-3 text-[13px]">
-        {list(text.web_from, left)}
-        {list(text.web_to, right)}
-      </div>
-      {inner.length ? (
-        <div className="mt-4 text-[13px] max-w-xl">
-          <p className="font-semibold mb-1">{text.web_inner}</p>
-          <ul className="space-y-1">
-            {inner.map((e, i) => (
-              <li key={i} className="flex justify-between gap-3">
-                <span className="min-w-0"><span className="inline-block w-2 h-2 rounded-sm mr-1.5" style={{ background: WEB_COLOUR[e.k] }} />
-                  {nodes.get(e.a)?.label} <span style={muted}>{text.web_took}</span> {nodes.get(e.b)?.label}
-                  <span className="block text-[11.5px] pl-3.5" style={muted}>{kindLabel[e.k] ?? e.k}</span></span>
-                <span className="tabular-nums font-semibold whitespace-nowrap">{e.t}</span></li>))}
-          </ul>
-        </div>) : null}
+      </>}
     </figure>)
 }

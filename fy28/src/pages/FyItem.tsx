@@ -225,7 +225,7 @@ function GroupPage({ item, ix }: { item: GroupItem; ix: ItemIndex }) {
       </section>
       <section className="mt-10"><H2>{t.both_h}</H2></section>
       <LineHistory h={item.history} ix={ix} bare />
-      <PayerTraces p={item.payers} ix={{ ...ix, text: { ...t, payers_line: t.payers_group } }} fy={fy} />
+      <PayerTraces p={item.payers} ix={{ ...ix, text: { ...t, payers_line: t.payers_group, trace_here: t.trace_here_group } }} fy={fy} />
       <Sources ix={ix} />
     </ReportShell>)
 }
