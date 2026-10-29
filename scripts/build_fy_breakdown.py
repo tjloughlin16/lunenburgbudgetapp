@@ -935,6 +935,7 @@ def page(m):
     figures = year_facts(m, T)
     plan = plan_data(m, T)
     flows = flows_data(T)
+    sources_paid = sources_data(m, T)
     yline = year_line_data(m, T)
     sources = funds_data(m, T)
     overlap = overlap_data(m, T)
@@ -1033,6 +1034,16 @@ def page(m):
                       so=('A plus means a fund took in more than it paid out that year; a minus means it '
                           'drew on what it held. The figures say how much, not why: a grant paid after '
                           'the money is spent shows a minus first and a plus later.', None, ())),
+            TB.custom('fy-sources', 'Where each source’s money went', sources_paid, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('reading', 'Our placing of other funds’ spending on the lines'),
+                      alt='Horizontal stacked bars, one fiscal year, one per source other than the school '
+                          'budget: what it spent, split by the school lines it paid toward, the same kind '
+                          'of work with no single line, and spending on no school line, with a mark at '
+                          'what it received; in dollars or as shares',
+                      so=('A source whose bar stops short of its mark spent less than it received that '
+                          'year; one that runs past it drew on what it held. Which lines it paid moving '
+                          'from year to year is a measurement; why is not.', None, ())),
             TB.custom('fy-year-line', 'Across the year line', yline, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('record', 'Every posting on the school lines; each crossing tied to the other year'),
@@ -1325,6 +1336,76 @@ def big_changes(lines, T):
         new='new this year', gone='not in this year', none='The journal starts here: no year before to compare.',
         line_chg='Change in what it cost', line_chg_means='What the line cost from every fund this year, less '
                                                           'last year. Blank in the first year the journal holds.'))
+
+
+SOURCE_LINES = 6    # OURS: how many school lines get a colour of their own across every bar and year
+
+
+def sources_data(m, T):
+    """WHERE EACH SOURCE'S MONEY WENT (TJ, 29 October 2026: "a viz that shows every non general
+    fund source of funding, and show what it paid for in that year ... as proportions ... it
+    would be ideal if we could also show the revenue and amount unspent on the same chart"). One
+    bar per payer, the page's year: what it spent, split into the school lines it paid toward, the
+    same kind of work with no single line, and spending on no school line; and a mark at what it
+    received (sources/data/school-fund-flows.csv), so the gap between the two shows.
+
+    SPENT here is the page's own: payments plus orders still owed at 30 June, counted in the year
+    they were ordered -- the same spending every other block on this page places on lines. The
+    fund-flows file counts cash, for balances, so its received-less-spent can differ by the orders
+    owed across a 30 June. Capital articles are left out, as in Money in, money out.
+
+    The lines with a colour are the SOURCE_LINES largest across every bar and every year, so a line
+    keeps its colour and its place from bar to bar and year to year (object constancy)."""
+    GROUPS = [g for g in PAYERS if g[0] not in ('gf', 'other')]
+    received = defaultdict(Decimal)
+    for r in ITEMS.fund_flows():
+        received[(int(r['fiscal_year']), r['payer_group'])] += r['received']
+    on = defaultdict(lambda: defaultdict(Decimal))      # (fy, group) -> account -> amount
+    kind, none, names = defaultdict(Decimal), defaultdict(Decimal), {}
+    for r in m['rows']:
+        for (_, py, _), v in r['how'].items():
+            g = payer_group(py)
+            if g in ('gf', 'other'):
+                continue
+            if r['account']:
+                on[(r['fy'], g)][r['account']] += v
+                names[r['account']] = line_name(r)
+            else:
+                kind[(r['fy'], g)] += v
+    for fy in YEARS():
+        for (py, _), v in m['years'][fy]['unmatched'].items():
+            if payer_group(py) not in ('gf', 'other'):
+                none[(fy, payer_group(py))] += v
+    span = defaultdict(Decimal)
+    for by in on.values():
+        for a, v in by.items():
+            span[a] += v
+    fixed = [a for a, _ in sorted(span.items(), key=lambda kv: (-kv[1], kv[0]))[:SOURCE_LINES]]
+    years = []
+    for fy in YEARS():
+        bars = []
+        for g, label in GROUPS:
+            by = on[(fy, g)]
+            segs = [dict(id=a, v=fl(by.get(a, D0)), t=T.usd(by.get(a, D0))) for a in fixed]
+            rest = sum((v for a, v in by.items() if a not in fixed), D0)
+            segs += [dict(id='rest', v=fl(rest), t=T.usd(rest)),
+                     dict(id='kind', v=fl(kind[(fy, g)]), t=T.usd(kind[(fy, g)])),
+                     dict(id='none', v=fl(none[(fy, g)]), t=T.usd(none[(fy, g)]))]
+            spent = sum(by.values(), D0) + kind[(fy, g)] + none[(fy, g)]
+            if sum((ITEMS.cents(x['v']) for x in segs), D0) != spent:
+                fail('FY%d %s: the bar\'s parts do not add to what it spent' % (fy, g))
+            rec = received[(fy, g)]
+            top = sorted(((v, a) for a, v in by.items() if v), reverse=True)[:3]
+            bars.append(dict(id=g, label=T.lit(label), segs=segs, received=fl(rec), spent=fl(spent),
+                             t=dict(received=T.usd(rec), spent=T.usd(spent), gap=signed(T, rec - spent)),
+                             top=[dict(account=T.lit(a), name=T.lit(names[a]), t=T.usd(v)) for v, a in top]))
+        years.append(dict(fy=T.fy(fy), bars=bars))
+    return dict(years=years, lines=[dict(id=T.lit(a), name=T.lit(names[a])) for a in fixed], text=dict(
+        rest='Every other school line', kind='Same kind of work, no single line', none='On no school line',
+        received='Received', spent='Spent', gap='Received less spent', unspent='Received, not spent',
+        dollars='Dollars', shares='Shares', top='Largest lines this year',
+        note=T.lit('Spent counts orders still owed at 30 June in the year they were ordered, as every block on '
+                   'this page does; Money in, money out counts cash, so the two can differ by those orders.')))
 
 
 def flows_data(T):
