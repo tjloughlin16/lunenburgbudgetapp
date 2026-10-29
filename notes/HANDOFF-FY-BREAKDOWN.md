@@ -68,6 +68,14 @@ older `school-budget-against-actual` and `line-level-misses` topics merge into i
 FY2018-FY2022 transfers and the flags. Measured against the journal: votes equal on every line
 (269/269 FY2023, 265/265 FY2024); TRANSFERS differ on 12 and 15 lines (workbook mostly $0 where the
 journal has a transfer). The agent reported "every line" equal -- that was wrong for transfers.
+**DEPLOY NOT DONE, 29 Oct evening.** Everything is committed and pushed (main = origin/main at
+c2e10279a or later). `npm run build:site` PASSED (2,959 pages rendered) but `deploy_site.sh` failed
+three times at upload, ~10,500 of 12,328 files: wrangler `fetch failed`, `write EPIPE` /
+`ECONNRESET` (logs ~/.wrangler/logs/wrangler-2026-10-29_19-*). No file over 25 MB. dist holds
+24,506 files -- CLAUDE.md says the Pages limit is 20,000 files; NOT established whether that is the
+cause (wrangler did not say so). Verify the next deploy by hashing
+/data/topics/budget-against-actual.json from production against fy28/dist (404 on prod tonight).
+
 **TJ DECIDED, 29 Oct (late) -- NOT YET DONE, do these next:**
 1. SWITCH: /budget-vs-actual (tab `variance`, `BudgetVsActual.tsx`, aliases routes.ts ~l.592) opens
    /school-all-funds/budget-against-actual; `budget-vs-actual` into sources/analyses/UNLISTED.
