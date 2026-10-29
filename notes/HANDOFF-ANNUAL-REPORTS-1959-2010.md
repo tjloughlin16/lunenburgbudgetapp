@@ -4,6 +4,49 @@ Written 28 October 2026, to survive a context reset. **Read this first, then
 `notes/PLAN-ANNUAL-REPORT-PIPELINE.md` (sections 4, 4a), then CLAUDE.md.** A summary in a
 conversation is not a source (rule 13): every state below names the command that re-checks it.
 
+## NOW (29 October 2026): finishing 1991-2010 to the FY standard, BEFORE any new batch
+
+TJ, 29 Oct: *"i want the 1991 - 2010 'fully done' before you move onto the other pages"* -- and
+*"run it safely in case you hit the limit"* (5% of the week left, resets 29 Oct 22:59 ET).
+
+**Done means** what FY2011-FY2025 reached: every financial page `proven` or `blocked`, a blocked
+page registered in `sources/data/page-blocked.csv` with its reason and the ONE document that
+would settle it. At the start: **412 proven, 189 unproven, 4 refused** across the 20 editions.
+
+    python3 - <<'X'   # the count, re-derive it, never quote this file
+    import csv,collections; c=collections.Counter(r['state'] for r in csv.DictReader(open('sources/data/annual-report-pages.csv')) if int(r['fy'])<=2010); print(c)
+    X
+
+**Open pages by what fails them** (29 Oct): appropriations 93 + 9, debt 31 + 1, trust funds 25 + 3,
+payroll 10, valuation 6, capital 5, special revenue 4, receipts 2, vital records 2, other 2.
+
+**THE UNITS, in order, ONE AT A TIME** -- each ends with every `read_report_tables.py <ed> --check`,
+`merge_report_tables.py --check`, `build_db.py --check`, and a commit by explicit path. A unit cut
+off by the usage limit is simply re-run; nothing is committed until it passes.
+
+1. **Appropriations, unlabelled department subtotals** (the 93). The accountant schedule prints a
+   department's subtotal with no label; the validator sums it with its own detail lines. Fix as a
+   PER-EDITION OPT-IN in `edition.json` (as `validator_drop_titles` was), never a change to the
+   shared block walk -- so FY2011-FY2025 cannot move. Verify FY byte-identical anyway.
+2. **Debt** (repayment-schedule grouping, `$` read as `8`): grouping by opt-in; misreads witnessed
+   from the page's own glyphs or recorded in the discrepancy register, never silently corrected.
+3. **Trust funds** (books printed across pages and out of order, comma decimals).
+4. **The rest** (payroll, valuation, capital, special revenue, receipts).
+5. **Residue: what cannot be proven.** A page whose own arithmetic does not close (e.g. 1998 p62
+   leaves a $660,000 bond out of one column's total; 1994 p42 prints `$9.50`) is BLOCKED with the
+   reason and the document that would settle it -- never forced to close, never averaged.
+
+Each unit runs in a FRESH agent (CLAUDE.md 7g: not in a long session), with this section as its
+brief; the parent verifies and commits. Progress is recorded here after each unit.
+
+| unit | state | proven / unproven / refused after |
+|---|---|---|
+| 1 appropriations | not started | |
+| 2 debt | not started | |
+| 3 trust funds | not started | |
+| 4 the rest | not started | |
+| 5 residue to blocked | not started | |
+
 ## Where it stands
 
 | | reports | re-check |
