@@ -75,6 +75,36 @@ every retry restarted at 9,015. Fix that worked: split build/deploy-stage into 3
 `npx wrangler pages deploy <chunk> --branch upload-staging` each (all succeeded first try; a
 preview branch never touches production), then `deploy_site.sh` uploaded 0 files and succeeded.
 
+**TOP OF THE QUEUE (TJ, 29 Oct, late): PRESCHOOL TUITION -- a report, an FY breakdown section, and a
+Town general fund page.** TJ: *"let's do a preschool report and put it in the school page. But I also
+want the preschool money to go into the FY breakdown page ... it might have to be its own section to
+show the additional funds. And I think we probably need a fund page slug for the town general fund
+... it should work the same as the schools."*
+- ESTABLISHED: families' preschool tuition is a TOWN receipt, never a school one. Town general fund
+  0100, dept 01001, account 431900 "PRE-SCHOOL TUITION" (named so in `fincom-ledgers.csv`, FY2025
+  local receipts; printed "PS TUITION" in the MUNIS revenue report). The school journal has NO
+  preschool receipt in any fund, FY2023-FY2026, and none credited to an expense line (searched).
+  So the school budget carries the preschool at FULL cost; the tuition offsets nothing on the
+  school side (rule 11's trap inverted).
+- DATA: `annual-report-receipts.csv` source 'PRE-SCHOOL TUITION', FY1987-FY2022 (public; several
+  rows 'no check' -- read them by eye before quoting); `fincom-ledgers.csv` FY2025 (public FinCom
+  doc); FY2026 to 31 Mar: `sources/town-ledgers/revenue/glytdbud-revenue-fy2026-p09-gf-all.txt`
+  line 66 -- est $10,000, received $75,279.04 (752.8%). THAT FILE HAS NO ROW IN redactions.csv:
+  MUNIS, so verify it safe (read every text field for a person) and register `publish` BEFORE
+  building on it (rule 13e). FY2023-FY2024 receipts: look in the annual reports' receipts tables
+  (the dataset stops at FY2022 -- check whether the FY2023-FY2025 editions print the line).
+- The tuition RATE: School Committee votes it each year (e.g. FY2025: 2-day $1,897.11, 4-day
+  $3,548.58, minutes 2024-02-07; FY2027 increase on the 2026-01-21 agenda). search_minutes.py.
+- The COST side: the preschool's school lines (P.S./preschool sped, paras, the IDEA preschool
+  grants 262/'IDEA (preschool)') -- from the FY breakdown model. Never net tuition against them as
+  if the district did; show both, labelled (rule 11).
+- ESTIMATE vs RECEIVED: the Town budgets this receipt low (FY2026 $10,000 vs $75,279 by March);
+  the excess falls to free cash. Why it is estimated low is NOT established.
+- BUILD: (1) report on the schools shelf; (2) FY breakdown section "school money that goes to the
+  town" (preschool tuition first; look for others the same way); (3) a fund-page mechanism for the
+  Town general fund, same shape as /school-funds/<slug> (a slug, history, received/estimate by year).
+  Cost note: a full build ~1-2% of the week -- do it in a FRESH session.
+
 **TJ DECIDED, 29 Oct (late) -- NOT YET DONE, do these next:**
 1. SWITCH: /budget-vs-actual (tab `variance`, `BudgetVsActual.tsx`, aliases routes.ts ~l.592) opens
    /school-all-funds/budget-against-actual; `budget-vs-actual` into sources/analyses/UNLISTED.
