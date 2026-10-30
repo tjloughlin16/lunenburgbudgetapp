@@ -135,6 +135,7 @@ def roster_pay():
                 status.add(hit[0][2])
         out[int(fy)] = dict(posts=len(rs), matched=got, total=total,
                             teachers=sum(1 for r in rs if r['position'] == 'Classroom Teacher'),
+                            paras=sum(1 for r in rs if r['position'] == 'Paraprofessional'),
                             checked=status == {'checked'}, page=rs[0]['page'], doc=rs[0]['document'])
     return out
 
@@ -159,6 +160,8 @@ def page():
     est = {fy: tu[fy]['estimate'] for fy in years if tu[fy] and tu[fy]['estimate'] is not None}
     held = [fy for fy in years if tu[fy]]
     lastp = max(full)
+    if full[lastp]['teachers'] + full[lastp]['paras'] != full[lastp]['posts']:
+        fail('%s rosters a preschool post that is neither a teacher nor a para' % lastp)
     r25, e25 = tu[2025]['received'], tu[2025]['estimate']
     r19 = tu[2019]['received']
     same = [fy for fy, e in est.items() if e == int(r19)]
@@ -222,7 +225,7 @@ def page():
                      sub='A federal grant to the schools', so='Federal money, awarded to the district year by year.'),
             TB.panel('Rostered preschool staff', [
                 ('Pay, our match', C.usd(fl(full[lastp]['total'])), None),
-                ('Posts on the roster', C.num(full[lastp]['posts']), None)],
+                ('On the roster', '%d teachers, %d paras' % (full[lastp]['teachers'], full[lastp]['paras']), None)],
                      sub='Every fund; pay only, no benefits', so='The grant may pay part of this pay, so the two do not add.'),
         ], place='lead', note=('%s, from three different records and payers. None of them is what the preschool '
                                'costs.' % C.fy(2025), None, (C.fy(2025),))),
