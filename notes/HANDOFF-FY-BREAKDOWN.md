@@ -100,6 +100,18 @@ show the additional funds. And I think we probably need a fund page slug for the
   if the district did; show both, labelled (rule 11).
 - ESTIMATE vs RECEIVED: the Town budgets this receipt low (FY2026 $10,000 vs $75,279 by March);
   the excess falls to free cash. Why it is estimated low is NOT established.
+- QUEUED WITH IT (TJ, 30 Oct: "Sure. Yes."): FETCH DESE's Chart of Accounts for Massachusetts
+  school districts and the End of Year Financial Report instructions -- public; through
+  `ingest.land` (stage/secure, sha256, publisher filename, address: CLAUDE.md rule 12), in an
+  ISOLATED session or subagent (rule 7g). Settles: does DESE carry preschool / early childhood as a
+  program or function category, and must a district report preschool spending by program. Three
+  scripts already name the gap ("we do not hold it"): build_coding_questions.py,
+  check_function_crosswalk.py, build_ledger_structure.py -- update their wording once it is held.
+  Lunenburg's own End of Year Report is NOT held (TJ has asked for it); it would show whether the
+  district reports preschool spending to the state at all.
+- NOT ESTABLISHED, and do not write it: that the preschool has "no budget". No line is NAMED
+  preschool; its staff are most likely budgeted inside Primary School lines ("P.S." = Primary
+  School). The finding is that the budget does not SHOW what the preschool costs.
 - BUILD: (1) report on the schools shelf; (2) FY breakdown section "school money that goes to the
   town" (preschool tuition first; look for others the same way); (3) a fund-page mechanism for the
   Town general fund, same shape as /school-funds/<slug> (a slug, history, received/estimate by year).
