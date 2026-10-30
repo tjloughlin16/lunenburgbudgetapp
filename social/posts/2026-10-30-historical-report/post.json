@@ -39,10 +39,10 @@
     "sub": "{ros.span.text} years on the school rosters. One of the names in {ar.editions} Lunenburg town reports, {ar.first} to {ar.last}.",
     "tiles": [
       {
-        "eyebrow": "Tax rate, {rate.py.text}",
+        "eyebrow": "Tax rate, {rate.py.text} vs. today",
         "value": "{rate.peak.text}",
-        "label": "{rate.peak.unit}",
-        "text": "Then the town revalued, and the {after.edition} report prints {after.printed}. A rate only compares within one assessment."
+        "label": "{rate.peak.unit}. FY{ar.last}: {rate.last.text}",
+        "text": "Not comparable bills: the town revalued in {after.edition} (the rate fell to {after.printed}) and has since. A rate only compares within one assessment."
       },
       {
         "eyebrow": "Homes, {camp.a.text}",
@@ -65,21 +65,21 @@
     ],
     "path": "/analysis/historical-report",
     "as_of": "Annual town reports, Town of Lunenburg",
-    "conclusion": "Thank you to every board and town officer who wrote one.",
-    "conclusion_em": "Thank you",
-    "conclusion_size": 40,
+    "conclusion": "Each year’s report was written by the town’s own clerks, assessors, treasurers and boards. Thank you.",
+    "conclusion_em": "Thank you.",
+    "conclusion_size": 34,
     "emphasis_nowrap": true
   },
   "text": [
     "Lunenburg has written itself a report every single year since {ar.first}, and we've now gone through every one of them. 📚",
     "",
-    "{ar.editions} annual town reports, {ar.first} to {ar.last}: {ar.pages|n} pages in all. Each one is the town's own account of its year: the tax rate, the Assessors' counts, the Treasurer's books, the school rosters, the election results. Town officers, boards and committees wrote them, and the town printed them, year after year, for more than six decades. It is a gift to anyone who wants to know how we got here. Thank you to everyone who wrote one.",
+    "{ar.editions} annual town reports, {ar.first} to {ar.last}: {ar.pages|n} pages in all. Each one is the town's own account of its year: the tax rate, the Assessors' counts, the Treasurer's books, the school rosters, the election results. Every section was written by the people doing the work that year: the Town Clerk, the Assessors, the Treasurer, the school department, every board and committee. The town printed them year after year, for more than six decades, and they are a gift to anyone who wants to know how we got here. Thank you to everyone who wrote their part.",
     "",
     "Of those {ar.pages|n} pages, {fin.all.text} hold financial tables. We read every one of them, and {fin.proven.text} check out against totals the town itself printed on the page.",
     "",
     "A few things we found:",
     "",
-    "💸 The {rate.py.text} report prints a tax rate of {rate.peak.text} {rate.peak.unit}. Then: \"{reval.quote}\" The {after.edition} report prints {after.printed}. Same town, new assessment. A tax rate only compares within one assessment, so neither number tells you what a household paid.",
+    "💸 The {rate.py.text} report prints a tax rate of {rate.peak.text} {rate.peak.unit}. Today's, in the FY{ar.last} report, is {rate.last.text}. The two are not comparable: \"{reval.quote}\" The {after.edition} report prints {after.printed}, and the town has revalued since. A tax rate only compares within one assessment, so neither number tells you what a household paid.",
     "",
     "🏕️ In {camp.a.text} the Assessors counted {camp.c.text} camps beside {camp.h.text} dwelling houses: seasonal places, not lived in year-round, {camp.share.text} of all the homes they counted. In {camp.b.text} there were none.",
     "",
