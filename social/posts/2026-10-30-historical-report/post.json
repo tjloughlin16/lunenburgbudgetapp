@@ -13,7 +13,17 @@
     "lunch": "historical-report.json#then_and_now.lunch",
     "tm": "historical-report.json#conclusions[id=a-town-manager-took-thirty-three-years].figures",
     "pop": "historical-report.json#conclusions[id=the-town-nearly-doubled].figures",
-    "ros": "historical-report.json#conclusions[id=the-longest-run-on-the-school-rosters].figures"
+    "ros": "historical-report.json#conclusions[id=the-longest-run-on-the-school-rosters].figures",
+    "tie": "historical-report.json#conclusions[id=a-tie-for-selectman].figures",
+    "aide": "historical-report.json#first_aide.first",
+    "nass": "historical-report.json#roster_shared",
+    "gus": "historical-report.json#town_manager[edition=2000]",
+    "r0": "historical-report.json#roster_runs[0]",
+    "r1": "historical-report.json#roster_runs[1]",
+    "r2": "historical-report.json#roster_runs[2]",
+    "r3": "historical-report.json#roster_runs[3]",
+    "r4": "historical-report.json#roster_runs[4]",
+    "r5": "historical-report.json#roster_runs[5]"
   },
   "literal": [],
   "flare": {
@@ -47,10 +57,10 @@
         "text": "The {lunch.edition} report counts {lunch.total|n} school lunches sold at that price."
       },
       {
-        "eyebrow": "Town manager",
-        "value": "{tm.n.text} years",
-        "label": "from study to charter",
-        "text": "A {tm.a.text} study recommended one. The {tm.b.text} charter passed {tm.yes.text} to {tm.no.text}."
+        "eyebrow": "School rosters",
+        "value": "{ros.span.text} years",
+        "label": "{r0.name}",
+        "text": "Printed on the school rosters from {ros.a.text} to {ros.b.text}, starting as the boys’ phys. ed. instructor."
       }
     ],
     "path": "/analysis/historical-report",
@@ -76,11 +86,18 @@
     "",
     "🏛️ A study committee recommended a town manager in {tm.a.text}. The charter passed in {tm.b.text}, {tm.yes.text} to {tm.no.text}: {tm.n.text} years later.",
     "",
-    "👩‍🏫 One name appears on the school rosters for {ros.span.text} years, from {ros.a.text} to {ros.b.text}. Can you guess whose? It's on the page.",
+    "👋 Some names from the reports you might know:",
+    "",
+    "• {r0.name}: on the school rosters for {r0.span} years, {r0.first} to {r0.last}, starting as the boys' phys. ed. instructor.",
+    "• {r1.name} ({r1.span} years, from {r1.first}), {r2.name} ({r2.span}, from {r2.first}), {r3.name} ({r3.span}, from {r3.first}), {r4.name} ({r4.span}, from {r4.first}) and {r5.name} ({r5.span}, from {r5.first}): the next-longest runs on the school rosters.",
+    "• {aide.name}, {aide.edition}: the first teacher aide the rosters print, \"{aide.role}\".",
+    "• Howard A. Hamel and Eino O. Toko: tied for Selectman in {tie.y.text}, {tie.v.text} votes each on the first count. Hamel won the special election that May, {tie.a.text} to {tie.b.text}.",
+    "• William J. Gustus: hired in {gus.edition} to fill the town's new CAFO post, the job that later became Town Manager.",
+    "• {nass.name}: in the school cafeteria from {nass.a.first} to {nass.a.last}, then the same name is back on the rosters in {nass.b.first} under Phys. Ed. One person or two? The reports can't say. Maybe you can!",
     "",
     "🏡 The town's fact pages count {pop.a.text} residents in {pop.ay.text} and {pop.b.text} in {pop.by.text}.",
     "",
-    "Have a look, then tell us: what do you remember about Lunenburg in the Sixties, Seventies or Eighties? 👇",
+    "Did any of them teach you, coach you or serve you lunch? Tag someone who'd remember, and tell us what you remember about Lunenburg in the Sixties, Seventies or Eighties. 👇",
     "",
     "👉 https://lunenburgbudgetproject.org/analysis/historical-report"
   ]
