@@ -1,5 +1,65 @@
 # Handoff: one fiscal year, broken down -- why a surplus happened
 
+## NOW -- 30 October 2026, end of day. READ THIS FIRST; everything below is history
+
+**State.** Everything is committed on `main`, local, not pushed by this session. The site build and
+deploy belong to the annual-reports session (`lunenburgbudgets-e4`). It has the list of commits and
+will message before it builds. Do not run `npm run build:site`. A Vite dev server is running on
+:8811 (TJ uses it). Leave it running. Commit by explicit path; other sessions have uncommitted work
+in the tree.
+
+**Live already** (e4's deploy 7a7d0950): the FY breakdown and its item pages, School lines against
+budget (`/budget-vs-actual` points there), per-year flags, the preschool report, Town general fund.
+
+**Committed 30 Oct, waiting for e4's next deploy:**
+- `54eef74a4` and `85b879b78` -- **year signatures** at the top of the FY breakdown
+  (`fy-signatures.tsx`, `signatures_data()`, `sources/data/fy-signatures.csv`). For each year:
+  - **How it began:** the gap, the cuts and the override. FY2026 adds a free cash row: Article 12,
+    $500,000, on a condition. The books' original budget equals the omnibus plus the $500,000; the
+    generator computes that match and states it only when it holds.
+  - **How it ended:** the figure as announced, beside our Left.
+  - **Weak spots:**
+    - The FY2023 and FY2024 endings come from machine captions only (SC 3 Sep 2025, 1:35:42 and
+      1:36:18). Check them against the video.
+    - The FY2023 and FY2024 beginnings: nothing found (registered gaps).
+    - Override window: "the 12 months before 1 July" is our rule.
+- `84d8b6531` and `67ee6e57b` -- **preschool**:
+  - a "What kind of account this is" box. It says the tuition is a revenue line, not a revolving
+    fund; it closes to the general fund each year; and the amount above plan is part of free cash.
+    That last point is our reading of how free cash works; we have not seen the closing entry.
+  - wording: "planned on", not "budgeted"; the lead reads "4.2 times what the Town planned".
+- `c220bd8e4` -- **DESE chart of accounts and EOYR instructions** ingested
+  (`sources/state-dese/`).
+  - No preschool function or program code.
+  - p103: a municipality's tuition receipts reduce net school spending.
+  - Our working-copy EOYR FY2023 shows $43,058 on Schedule 1 line 30. Whether that is preschool
+    is not established.
+- `32db35ca5` -- `keystone-tuition-rates` added to `NOT_READINGS` in the annual-report map.
+- `cc57a39bd`, `cea97f22b` -- **records request drafted, NOT SENT**:
+  `notes/outbound/drafts/RECORDS-REQUEST-FY2026-CLOSE.md`. Ten items, one email:
+  - A (outstanding from 4 Sep): revenue Account Detail incl. preschool 0100-01001-431900, revenue
+    p13, transfer report, POs closed late, the journal's redaction log and spreadsheet.
+  - B (new): Town GF p13, special revenue balances at the FY2026 close and at 30 June 2025, trust
+    and agency, circuit breaker receipts Apr-Aug 2026, tax recap sheets FY2023-26.
+  - Register row `2026-10-30-town-fy2026-close-and-outstanding` ("to send") in
+    `notes/reference/records-requests.csv`. A Gmail-ready HTML copy was in the old session's
+    scratchpad; rebuild it from the .md if needed. When TJ sends it, set `sent` and `status`.
+
+**Withdrawn 30 Oct:** "no Town Meeting vote for the FY2026 $500,000". The vote is held
+(`town-meeting-votes.csv`, 2025 article 12).
+
+**TJ's decisions still open** (`notes/findings/FY-BREAKDOWN-AND-PRESCHOOL-2026-10-30.md` §7):
+1. MUNIS March 2026 reports print a Town user's login and first name. They are in the public
+   bucket. Take down or accept?
+2. A free cash section on the Town general fund page?
+3. The preschool card: "2 teachers, 4 paras" instead of "6 posts"?
+
+**Small queued fix:** `annual-report-receipts.csv` FY2021 PRE-SCHOOL TUITION reads 11.64; the
+page prints $11,648.82. This is an extractor defect.
+
+**TJ is sending review feedback next.** Take each item as it comes. Small edits go to the
+generator plus `--check`. Hand anything large to a subagent.
+
 ## START HERE -- 28 October 2026. For a NEW SESSION. Deployed (c9c3750fa), still hidden
 
 This section stands on its own. Everything below it is history; where they disagree, this wins.
