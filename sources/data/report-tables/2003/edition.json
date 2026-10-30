@@ -3,15 +3,45 @@
   "fy": 2003,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "declared_identities": [
+    {
+      "eq": "82/2/r8 = 83/2/r32 + 83/2/r37 + 82/2/r7",
+      "replaces": "the column walk summed Total Protection over nothing above it on its own table",
+      "why": "FY04 omnibus (ATM 2003 Article 3), p82: Total Protection = Subtotal Police (p83) + Subtotal Fire Dept. (p83) + Subtotal Other Protection"
+    },
+    {
+      "eq": "83/2/r23 = 82/1/r24-26 + 83/2/r2-22",
+      "replaces": "the column walk took only p83's lines 20-40; lines 17-19 are printed at the foot of p82's left column",
+      "why": "FY04 omnibus, Total General Government = lines 17-40, printed across p82 and p83"
+    },
+    {
+      "eq": "83/1/r8 = 82/2/r17-24 + 83/1/r2-7 + #20,000 + #10,000 + #3,000",
+      "replaces": "Textract's table on p82 stops at line 67 with no figure; lines 67-69 (Vehicle Mtc. Police $20,000.00, Fire $10,000.00, School $3,000.00) are in the page's text read (re-read 30 Oct 2026) and quoted",
+      "why": "FY04 omnibus, Total DPW = lines 60-75 across p82 and p83"
+    },
+    {
+      "eq": "83/1/r29 = 82/1/r6 + 82/1/r22 + 83/2/r23 + 83/2/r26 + 82/2/r8 + 82/2/r15 + 83/1/r8 + 83/1/r17 + 83/1/r22 + 83/1/r25",
+      "replaces": "the column walk summed Total Omnibus over nothing; it is the sum of the category totals (Total Recreation prints no figure)",
+      "why": "FY04 omnibus, Total Omnibus = the ten category totals the warrant prints"
+    }
+  ],
+  "rebuild_by_position": [
+    "71/1"
+  ],
+  "rebuild_by_position_why": "p71: Textract put figures of the debt schedule in the wrong rows; every figure word is placed by its printed position against the label rows and header columns (CLAUDE.md 13b), 30 October 2026",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
-  "debt_row_totals_skip": ["71/1"],
+  "debt_row_totals_skip": [
+    "71/1"
+  ],
   "debt_row_totals_skip_why": "p71 continues the previous page's schedule BY YEAR: its TOTAL column sums years printed on both pages, so the one-page row identity does not apply there",
   "debt_row_totals": true,
   "debt_row_totals_why": "the debt repayment schedule's TOTAL column is the sum of its fiscal-year columns on every row; the column walk sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
@@ -124,6 +154,128 @@
       "what": "appointments",
       "period": "fiscal 2003 appointment list",
       "cited": "p7 `FY'03 APPOINTMENT LIST`"
+    }
+  ],
+  "cell_readings": [
+    {
+      "cell": "102/1/33/4",
+      "textract": "$58,888.95 $19,248.00",
+      "read_as": "$58,888.95",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/34/4",
+      "textract": "",
+      "read_as": "$19,248.00",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/44/4",
+      "textract": "$5,845.54 $804.13",
+      "read_as": "$5,845.54",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/45/4",
+      "textract": "",
+      "read_as": "$804.13",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/51/4",
+      "textract": "$47,030.57 $60.00",
+      "read_as": "$47,030.57",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/52/4",
+      "textract": "",
+      "read_as": "$60.00",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/53/4",
+      "textract": "$13,029.98 $23,940.77",
+      "read_as": "$13,029.98",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/54/4",
+      "textract": "",
+      "read_as": "$23,940.77",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/61/4",
+      "textract": "$47,556.81 $54,740.92",
+      "read_as": "$47,556.81",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/62/4",
+      "textract": "$58,583.80",
+      "read_as": "$54,740.92",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/63/4",
+      "textract": "",
+      "read_as": "$58,583.80",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/66/4",
+      "textract": "$61,335.86 $30,173.36",
+      "read_as": "$61,335.86",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/67/4",
+      "textract": "",
+      "read_as": "$30,173.36",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/68/4",
+      "textract": "$14,099.75 $964.89",
+      "read_as": "$14,099.75",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/69/4",
+      "textract": "",
+      "read_as": "$964.89",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/72/4",
+      "textract": "$70.00 $68.86",
+      "read_as": "$70.00",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/73/4",
+      "textract": "",
+      "read_as": "$68.86",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/75/4",
+      "textract": "$911.07 $946.53",
+      "read_as": "$911.07",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/76/4",
+      "textract": "$33,271.09",
+      "read_as": "$946.53",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
+    },
+    {
+      "cell": "102/1/77/4",
+      "textract": "",
+      "read_as": "$33,271.09",
+      "why": "p102 payroll report: Textract stacked two employees' gross wages in one cell and left the next name's cell blank (or shifted it one row); Textract's LINES read prints each figure on its own line level with one name (figure top within 0.003 of the name's, rows 0.011 apart), and the figure is read into that name's row"
     }
   ]
 }

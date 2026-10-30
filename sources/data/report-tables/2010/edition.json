@@ -3,15 +3,19 @@
   "fy": 2010,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
-  "debt_row_totals_skip": ["73/1"],
+  "debt_row_totals_skip": [
+    "73/1"
+  ],
   "debt_row_totals_skip_why": "p73 continues the previous page's schedule BY YEAR: its TOTAL column sums years printed on both pages, so the one-page row identity does not apply there",
   "debt_row_totals": true,
   "debt_row_totals_why": "the debt repayment schedule's TOTAL column is the sum of its fiscal-year columns on every row; the column walk sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
@@ -23,18 +27,112 @@
   "label": "2010 Annual Town Report",
   "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4518-2010-annual-town-report.cells.tsv",
   "periods": [
-    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2010", "cited": "p55: `FOR THE YEAR ENDED JUNE 30, 2010`"},
-    {"what": "general fund appropriations", "period": "fiscal year 2010", "cited": "p58: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2010`"},
-    {"what": "special revenue funds", "period": "fiscal year ending June 30, 2010", "cited": "p64: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/10`"},
-    {"what": "capital project funds", "period": "fiscal year 2010", "cited": "p67: `CAPITAL PROJECT FUNDS FY 2010`"},
-    {"what": "treasurer's cash", "period": "as of June 30, 2010", "cited": "p68: `TREASURER'S CASH / as of June 30, 2010`"},
-    {"what": "trust funds", "period": "fiscal year 2010", "cited": "p69: column headers `BEGINNING BALANCE PRINC. FY 10` ... `ENDING MARKET VALUE FY 2010`"},
-    {"what": "debt repayment schedule", "period": "as of June 30, 2010", "cited": "text p72: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2010`"},
-    {"what": "collection of taxes", "period": "fiscal year 2010", "cited": "p74: `FY2010 COLLECTION OF TAXES`"},
-    {"what": "omnibus budget", "period": "fiscal year 2011, as VOTED (a budget, not an actual)", "cited": "p88: `FY 2011 Omnibus Budget` / `VOTED`"},
-    {"what": "salary schedule", "period": "the 2011 salary schedule, adopted under Article 5", "cited": "p85 `ARTICLE 5 ... Schedule A: Salary Schedule`; p86 `mapped to the 2011 Salary Schedule`"},
-    {"what": "wages", "period": "calendar 2010", "cited": "p94: `CALENDAR 2010 WAGES`"},
-    {"what": "elections", "period": "calendar 2010", "cited": "p75: `SPECIAL STATE ELECTION - JANUARY 19, 2010`"},
-    {"what": "valuation", "period": "fiscal 2010", "cited": "text p13: `Fiscal 2010 Assessments and Revenues by Major Property Class`"}
+    {
+      "what": "combined balance sheet",
+      "period": "fiscal year ended June 30, 2010",
+      "cited": "p55: `FOR THE YEAR ENDED JUNE 30, 2010`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "fiscal year 2010",
+      "cited": "p58: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2010`"
+    },
+    {
+      "what": "special revenue funds",
+      "period": "fiscal year ending June 30, 2010",
+      "cited": "p64: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/10`"
+    },
+    {
+      "what": "capital project funds",
+      "period": "fiscal year 2010",
+      "cited": "p67: `CAPITAL PROJECT FUNDS FY 2010`"
+    },
+    {
+      "what": "treasurer's cash",
+      "period": "as of June 30, 2010",
+      "cited": "p68: `TREASURER'S CASH / as of June 30, 2010`"
+    },
+    {
+      "what": "trust funds",
+      "period": "fiscal year 2010",
+      "cited": "p69: column headers `BEGINNING BALANCE PRINC. FY 10` ... `ENDING MARKET VALUE FY 2010`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of June 30, 2010",
+      "cited": "text p72: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2010`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "fiscal year 2010",
+      "cited": "p74: `FY2010 COLLECTION OF TAXES`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 2011, as VOTED (a budget, not an actual)",
+      "cited": "p88: `FY 2011 Omnibus Budget` / `VOTED`"
+    },
+    {
+      "what": "salary schedule",
+      "period": "the 2011 salary schedule, adopted under Article 5",
+      "cited": "p85 `ARTICLE 5 ... Schedule A: Salary Schedule`; p86 `mapped to the 2011 Salary Schedule`"
+    },
+    {
+      "what": "wages",
+      "period": "calendar 2010",
+      "cited": "p94: `CALENDAR 2010 WAGES`"
+    },
+    {
+      "what": "elections",
+      "period": "calendar 2010",
+      "cited": "p75: `SPECIAL STATE ELECTION - JANUARY 19, 2010`"
+    },
+    {
+      "what": "valuation",
+      "period": "fiscal 2010",
+      "cited": "text p13: `Fiscal 2010 Assessments and Revenues by Major Property Class`"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "88/2/r2.v1 = 88/1/r26-47.v2 + #45,589.00",
+      "replaces": "Textract's right-hand table returned line 39 (Conservation Commission $45,589.00) as an empty row; the figure is in the page's text read (p88, 100% confidence) and quoted",
+      "why": "FY11 omnibus (ATM 2010), p88: Total General Government $1,201,152.00 = the VOTED FY 2011 figures of lines 16-38 at the foot of the left column (v2; v1 is the line number) + line 39 Conservation Commission $45,589.00 at the head of the right column"
+    },
+    {
+      "eq": "67/1/r7.vL = 67/1/r6.v1 + 67/1/r7.v1 - 67/1/r7.v2",
+      "replaces": "the row identity read the second line alone ($25,000.00 - $21,529.90), without the $5,020.91 forward printed on the line above it for the same article",
+      "why": "p67, 08/02 ATM DEVELOPMENT OF CEMETERIES: the project prints two APPROPRIATED FORWARD lines ($5,020.91 fwd, then $25,000.00) and one EXPENDED ($21,529.90) and BALANCE ($8,491.01) beside the second; BALANCE = both appropriations less the expended"
+    },
+    {
+      "eq": "70/1/r8.c8 = 70/1/r8.c2 + 70/1/r8.c3 + 70/1/r8.c4 + 70/1/r8.c5 + 70/1/r8.c6 + 70/1/r8.c7",
+      "replaces": "the row identity SUBTRACTED the DISBURSE FROM PRINC. column, whose figures the page already prints negative in parentheses (e.g. TIMOTHY J STANLEY SCHOLARSHIP ($364.18)), so each disbursement was counted twice with the wrong sign",
+      "why": "p70 trust funds, row 8: FY 10 ENDING CASH VALUE = BEGINNING BALANCE PRINC. + BEGINNING BALANCE EARNINGS + CONTRIB TO PRINC. + FY 10 NET EARNINGS + DISBURSE FROM PRINC. + FY 10 TRANSFERS OF EARNINGS, the disbursement and transfer columns printed as signed figures in parentheses"
+    },
+    {
+      "eq": "70/1/r13.c8 = 70/1/r13.c2 + 70/1/r13.c3 + 70/1/r13.c4 + 70/1/r13.c5 + 70/1/r13.c6 + 70/1/r13.c7",
+      "replaces": "the row identity SUBTRACTED the DISBURSE FROM PRINC. column, whose figures the page already prints negative in parentheses (e.g. TIMOTHY J STANLEY SCHOLARSHIP ($364.18)), so each disbursement was counted twice with the wrong sign",
+      "why": "p70 trust funds, row 13: FY 10 ENDING CASH VALUE = BEGINNING BALANCE PRINC. + BEGINNING BALANCE EARNINGS + CONTRIB TO PRINC. + FY 10 NET EARNINGS + DISBURSE FROM PRINC. + FY 10 TRANSFERS OF EARNINGS, the disbursement and transfer columns printed as signed figures in parentheses"
+    },
+    {
+      "eq": "70/1/r25.c8 = 70/1/r25.c2 + 70/1/r25.c3 + 70/1/r25.c4 + 70/1/r25.c5 + 70/1/r25.c6 + 70/1/r25.c7",
+      "replaces": "the row identity SUBTRACTED the DISBURSE FROM PRINC. column, whose figures the page already prints negative in parentheses (e.g. TIMOTHY J STANLEY SCHOLARSHIP ($364.18)), so each disbursement was counted twice with the wrong sign",
+      "why": "p70 trust funds, row 25: FY 10 ENDING CASH VALUE = BEGINNING BALANCE PRINC. + BEGINNING BALANCE EARNINGS + CONTRIB TO PRINC. + FY 10 NET EARNINGS + DISBURSE FROM PRINC. + FY 10 TRANSFERS OF EARNINGS, the disbursement and transfer columns printed as signed figures in parentheses"
+    },
+    {
+      "eq": "70/1/r28.c8 = 70/1/r28.c2 + 70/1/r28.c3 + 70/1/r28.c4 + 70/1/r28.c5 + 70/1/r28.c6 + 70/1/r28.c7",
+      "replaces": "the row identity SUBTRACTED the DISBURSE FROM PRINC. column, whose figures the page already prints negative in parentheses (e.g. TIMOTHY J STANLEY SCHOLARSHIP ($364.18)), so each disbursement was counted twice with the wrong sign",
+      "why": "p70 trust funds, row 28: FY 10 ENDING CASH VALUE = BEGINNING BALANCE PRINC. + BEGINNING BALANCE EARNINGS + CONTRIB TO PRINC. + FY 10 NET EARNINGS + DISBURSE FROM PRINC. + FY 10 TRANSFERS OF EARNINGS, the disbursement and transfer columns printed as signed figures in parentheses"
+    },
+    {
+      "eq": "70/1/r31.c8 = 70/1/r31.c2 + 70/1/r31.c3 + 70/1/r31.c4 + 70/1/r31.c5 + 70/1/r31.c6 + 70/1/r31.c7",
+      "replaces": "the row identity SUBTRACTED the DISBURSE FROM PRINC. column, whose figures the page already prints negative in parentheses (e.g. TIMOTHY J STANLEY SCHOLARSHIP ($364.18)), so each disbursement was counted twice with the wrong sign",
+      "why": "p70 trust funds, row 31: FY 10 ENDING CASH VALUE = BEGINNING BALANCE PRINC. + BEGINNING BALANCE EARNINGS + CONTRIB TO PRINC. + FY 10 NET EARNINGS + DISBURSE FROM PRINC. + FY 10 TRANSFERS OF EARNINGS, the disbursement and transfer columns printed as signed figures in parentheses"
+    },
+    {
+      "eq": "70/1/r40.c8 = 70/1/r40.c2 + 70/1/r40.c3 + 70/1/r40.c4 + 70/1/r40.c5 + 70/1/r40.c6 + 70/1/r40.c7",
+      "replaces": "the row identity SUBTRACTED the DISBURSE FROM PRINC. column, whose figures the page already prints negative in parentheses (e.g. TIMOTHY J STANLEY SCHOLARSHIP ($364.18)), so each disbursement was counted twice with the wrong sign",
+      "why": "p70 trust funds, row 40: FY 10 ENDING CASH VALUE = BEGINNING BALANCE PRINC. + BEGINNING BALANCE EARNINGS + CONTRIB TO PRINC. + FY 10 NET EARNINGS + DISBURSE FROM PRINC. + FY 10 TRANSFERS OF EARNINGS, the disbursement and transfer columns printed as signed figures in parentheses"
+    }
   ]
 }

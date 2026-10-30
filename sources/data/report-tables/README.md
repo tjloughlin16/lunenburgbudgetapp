@@ -457,3 +457,58 @@ one-issue debt group whose subtotal repeats the issue (a validator grouping chan
 FY reviews); joining digit groups split one per cell (1963 p9: one page, `report-valuation`); a
 figure at the end of a label cell; figures Textract put in no cell (re-reads). The cell witness:
 `locate_cell_misreads.py 1959 ... 1970` finds 0 candidates, so nothing was read and nothing spent.
+
+## The 1959-1970 close-out (30 October 2026): opt-ins added to read every financial page to proven or blocked
+
+All per edition in `edition.json`; none is read by an edition that does not name it, so FY2011-FY2025 and 1971-2010 are untouched.
+
+- `expended_from_amounts`: a one-line account's only expenditure printed under `Amounts Expended` with `Total Expended` blank is its total expended (accountant-schedule row identity; not for a figure without cents).
+- `ed_mark`: `22.47 ED | 22.47` printed, read by Textract as `22.47 | ED 22.47` -- the mark is dropped from the next cell.
+- `stepped_subtotals_in: [dataset | "page/table"]`: a section's lines in an inner figure column close on the subtotal printed one column out (two levels read in one column, a section carried over from the column group to the left, a subtotal beside its heading); a run that closes none of these ways is `check failed`. Balance sheets, trust fund books, school roll-forwards.
+- `receipts_two_columns`: the statement of receipts read by its two columns -- every section closes on its outer subtotal AND the outer column sums to the grand total; the accounts are what the columns say (1964, 1967, 1968).
+- `school_statistics_totals`, `welfare_net_cost`, `collector_balance_identity` (family `collector-balances`, 1968 p25): row identities gated by the opt (IDENTITIES carries `opt`, `skip_label`, `skip_unparsed`).
+- `available_runs` (1966): TOTAL FUNDS AVAILABLE = appropriated + transferred in, summed over the lines of a multi-line account.
+- `letter_key_marks` (1966): `132.84 b`, `379.28 di`, `11,549.94 C` -- the note letter after a figure.
+- `dollar_sign_labels`: a total row whose only "label" is a lone `$` is the unlabelled total it is.
+- `not_totals: ["p/t/r"]`: a row whose label says Total and is not its column's total (`Total costs received by Tax Collector`); the validator's copy drops the word.
+- `row_identity_skip: ["p/t/r"]`: an account printed over two lines whose first line's identity reads the second's blanks as zeros; the pair is then a declared identity.
+- `line_rows`: a line the page prints that no table cell holds, appended to its table from Textract's own LINES (label and figure must each be a line of that page, exactly, or the build refuses) -- 1960 p19 County receipts, 1962 p65 Treasurer's lines.
+- `dollar_figure_tables: ["p/t"]`: a column holding a `$` figure is a figure column in a table of prose with one row of amounts (1970 p132).
+- `digit_group_tables: ["p/t"]`: the Commonwealth's recapitulation form, one box per digit group (`1 | 309 | 686 | 88`), joined into one amount (1963 p9, landed in `report-valuation`, family `tax-rate-recapitulation`).
+- Also used from other passes: `cell_readings`, `declared_identities` (scripts/declared_identities.py), `unlabeled_subtotals_in` (`report-debt` for 1963-1969), `roman_counts`, `signed_figures`, `colon_for_point`.
+
+## The 1991-2010 close-out (30 October 2026): opt-ins added to read every financial page to proven or blocked
+
+All per edition in `edition.json`, each with a `<key>_why`; none is read by an edition that does not name it, so FY2011-FY2025 are untouched. `locate_cell_misreads.setup()` applies the ones that change what the checks see, in `build()`'s order.
+
+- `row_identity_tolerance` (TJ-approved): the $1 `rounding_tolerance_usd` applies to a row's printed balance as to a column's printed total; such rows say `within $1 rounding tolerance`.
+- `debt_row_totals`: the debt repayment schedule's TOTAL column is the sum of its fiscal-year columns on every row (within the edition's tolerance).
+- `debt_row_totals_skip: ["p/t"]`: a schedule page continued BY YEAR from the page before, whose TOTAL sums years printed on both pages; the one-page row identity is not applied there.
+- `debt_label_columns`: the debt schedule's column totals are checked against the rows their printed labels name (issue total = its PRINCIPAL and INTEREST lines; GRAND TOTAL PRINCIPAL / INTEREST = every such line; TOTAL DEBT = the two), replacing the column walk.
+- `label_figure_split: ["p/t/c"]`: a figure Textract read into the label cell (`$73887.00 Selectmen's Administration`, 1991 p25) is split back out into its own column.
+- `unlabeled_subtotal_blocks`: the department block an unlabeled accountant-schedule subtotal tied to, to the cent, is recorded as that department's own closed check.
+- `unlabeled_subtotals_forward_lines`: a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block may start above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window.
+- `blank_balance_outside_subtotals`: a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank BALANCE there reads as zero; inside a closing subtotal it does not.
+- `forward_lines_identity`: an account's forward/transfer lines (rft, fwd, mrt) above it, plus its APPROPRIATED, equal its TOTAL FUNDS AVAILABLE -- tested as that run's identity. Set only where AVAILABLE prints on the account or department subtotal alone.
+- `forward_lines_skip_own`: with the above, a line whose AVAILABLE equals its own APPROPRIATED carries no forward line, so the pending forward lines belong to a later line of the group (1999 p66, 2000).
+- `rebuild_by_position: ["p/t"]`: on a page whose figures Textract dropped a row (sideways debt schedules), every figure word is placed by its printed position against the label rows and header columns (CLAUDE.md 13b).
+- `carry_date_down`: the Town Clerk's marriages print the date on the groom's row only; the bride's row lands with it carried down.
+- `witnessed_glyphs`: a wage cell the glyph witness (template scores) left undecided between `$` and `8` is decided by its `witnessed-cells.csv` reading -- the cell takes the value and the coverage check reads the matching LINE the same way (2009 pp84-88).
+- `wage_dash_zero`: a payroll zero printed `$ -`: the coverage check counts a LINES line `-` as that zero, and a cell the cell witness read as `$ -` (where both Textract passes read `1`) counts the same (2007 p118).
+- Also used from other passes, in this range: `declared_identities` (omnibus warrant category totals continued across pages; the accountant schedule's GRAND TOTAL as every line and forward line in its column, less the subtotals -- 2002 p54), `cell_readings` (2003 p102: payroll figures Textract stacked two to a cell, each placed level with its name from the LINES read), `dash_zero` (2001 p81: `$-0-`), `unlabeled_subtotals`.
+
+## The 1971-1990 close-out (30 October 2026): opt-ins added by the residue pass
+
+Same rules: per edition in `edition.json`, read only where named.
+
+- `stacked_pairs_wide`: a principal/interest pair stacked in one debt cell, printed or scanned less cleanly than `stacked_pairs` takes -- with cents (`$ 65,000.00 28,665.00`), a speck read as a stop after the `$` (`$.65,000`), a doubled stop (`2,945..`), or full stops for the thousands comma (`1.365.`) (1976 p78, 1983 p55, 1984 p52).
+- `stacked_rows: ["p/t/r" | {"row", "lines"}]`: one Textract row holding two printed lines in every cell; a two-token cell gives its first token to the upper line and its second to the lower, a one-token cell stays on the upper, and the table's rows are renumbered (N -> 2N, 2N+1). The dict form names each column's upper and lower text from Textract's LINES, which must join to exactly the cell's text (1976 p78, 1984 p42).
+- `accountant_marks_rcts`: an accountant mark after a figure -- `Rcts`, `TF`, `R`, `A`, `F`, `SR`, `RS`, `RF`, `TR` -- dropped, and cents printed with no leading zero (`.04 F`) read as `0.04` (1973 pp58-60, 1982 p134, 1985 p74).
+- `receipts_unlabelled_items`: a one-figure row with no label in a receipts section's item column is an account ONLY when the section subtotal printed on the next figure row, one column out, equals to the cent the labelled lines above it plus the unlabelled ones; the grand total plays no part (1983 p42).
+- `text_cells: ["p/t/r/c"]`: a code printed in its own column (`1000`, `2000`, the School Department's account series, 1984 p138) is read as text, not an amount; refuses if the cell holds no figure.
+- `label_trailing_figures: ["p/t/r/c"]`: a figure printed at the end of a label (`Local Aid Add. Assistance256,524.00`, 1985 p55) moves into the empty next cell; refuses unless the label ends in an amount beside an empty cell.
+- `line_rows` (extended): an entry's `fig` may be `null` -- ONE page line holding the label and its figure (`Board of Appeals Filing Fees 1,020.00`, 1985 p56), which must be a line of the page exactly and end in an amount; and `"repair": true` runs the table's own column repairs on the appended cells (1986 p71 `12.500.`).
+- `lines_tables: [{"page", "table", "box", "cols", "why"}]`: a side-by-side panel Textract's grid merged (1973 p62, 1975 p83, 1988 p44), rebuilt from Textract's own WORDS inside `box` (page fractions): words join a line by their centre, a money word goes to the figure column whose right edge (`cols`) is nearest. The synthetic table number must not collide with a real one. It is applied before the inventory, and `catalogue()` reads `tables.csv`, so a new entry needs `read_report_tables.py <ed> --inventory` and then a full run.
+- `collector_no_tax_title`: the Collector's balance identity without a TAX TITLE column (and no ADJUSTMENTS): BALANCES = FORWARD + COMMITMENTS + REFUNDS + PAYMENTS + ABATEMENTS as printed, payments and abatements in parentheses (1989 p41).
+- `debt_grand_spans_pages: ["p/t"]`: a debt schedule whose GRAND TOTAL lines cover another page's issues too; the one-table grand-total check is skipped there and the edition's declared identities check it over both pages (1990 pp30-31).
+- `declared_identities` and `cell_readings` live in `scripts/declared_identities.py`: an identity the page prints, named by eye as `page/table/rRow[-Row][:pPanel][.vN|.cN]` terms (`#figure` for one only the text read holds), with `replaces` when it re-decides a row the reader's own check failed on the wrong cells; and a cell Textract segmented wrong, read as printed (`cell`, `textract` -- which must still match -- `read_as`, `why`).

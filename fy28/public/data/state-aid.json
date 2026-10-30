@@ -575,6 +575,90 @@
    "side": "money_out",
    "what": "What were the town's non-union salary grades and step rates in 1995?",
    "why": "`salary-schedule` and `report-classification-plan` read Schedule A from the 2010 report and FY2011 onward. The 1995 annual town report does not print it: Article 6 of the May 13, 1995 Annual Town Meeting (PDF p77) substitutes `the Classification & Salary Schedule proposed by the Personnel Board and appearing in the Report of the Finance Committee`, effective July 1, 1995, and the schedule itself is not reproduced. The text was searched for salary schedule, classification, step and grade on every page with text (87 of 90) and returned only that article, a Council on Aging grant paying a part-time salary (p17), the appropriation schedule's salary lines (p51-52), the omnibus salary lines (p76) and Article 7's merit augmentation (p77) (sources/data/report-tables/1995/)."
+  },
+  {
+   "closes": "the Town Accountant's balance sheet by fund (MUNIS fund balance or trial balance) at 30 June 2022, for every fund that holds a school account.",
+   "side": "money_in",
+   "what": "What was the balance on 1 July 2022, and so on each 30 June since, of the 27 school funds that neither the FY2023 annual town report's special revenue schedule nor the Town's 31 March 2026 special revenue ledger lists?",
+   "why": "sources/data/school-fund-flows.csv carries what each of these funds received and spent in FY2023-FY2026, from the journal, but no opening balance, so no balance: the capital articles (3105, 3109, 3111, 3112, 3118, 3119, 3123), the 42xx FY2026 grants (4201-4206), the scholarships (8130, 8134), grants opened after FY2023 (2668, 2688, 2689, 2707, 2759, 2839, 2844, 2845, 2868, 2962), and two town-wide funds the school journal holds only part of (2583 Green Communities, 2595 ARPA). For a fund opened during the run the opening is probably zero, but nothing printed says so, and a capital article's balance sits outside the special revenue schedule altogether."
+  },
+  {
+   "closes": "the Town Accountant's fiscal 1987 special revenue fund ledger.",
+   "side": "money_out",
+   "what": "What did each special revenue fund take in, spend and carry forward in fiscal 1987?",
+   "why": "`special-revenue-funds` holds forward, receipts, disbursements and balance by fund from the 1992-2010 reports. The 1987 annual town report prints no special revenue schedule: the only special revenue figures are the balance sheet's SPECIAL REVENUE column, $327,269 of cash and $364,814 of assets (p38), and grant-funded items inside the general fund appropriations schedule (`rct`-tagged lines, pp33-35). The text was searched for special revenue, revolving, grant and gift and returned department prose (text lines 851, 1061-1065, 1194) and the trust funds (pp42-44) (sources/data/report-tables/1987/)."
+  },
+  {
+   "closes": "the Town Accountant's fiscal 1988 special revenue fund ledger.",
+   "side": "money_out",
+   "what": "What did each special revenue fund take in, spend and carry forward in fiscal 1988?",
+   "why": "`special-revenue-funds` holds forward, receipts, disbursements and balance by fund from the 2001-2010 reports. The 1988 annual town report prints no separate special revenue schedule: the balance sheet's SPECIAL REVENUE column carries $181,912 of cash (p39), and revolving and grant accounts (School Lunch, P.L. 874, P.L. 94-142, School Athletic, Driver Education, Park Dept. User Fees, Library Gifts) are printed as lines INSIDE the general fund appropriations schedule (p36-p37), where a `rct` mark is a receipt and `fwd` a carry-forward. The text was searched for special revenue and revolving and returned only those lines (sources/data/report-tables/1988/)."
+  },
+  {
+   "closes": "the Town Accountant's fiscal 1989 special revenue fund ledger.",
+   "side": "money_out",
+   "what": "What did each special revenue fund take in, spend and carry forward in fiscal 1989?",
+   "why": "`special-revenue-funds` holds forward, receipts, disbursements and balance by fund from the 2001-2010 reports. The 1989 annual town report prints no special revenue schedule: the only special revenue figures are the balance sheet's SPECIAL REVENUE column ($165,972 of cash and $164,705 total fund equity, p26). The text was searched for special revenue, revolving and grant and returned department prose and the trust accounts' GRANTS & GIFTS column (pp42-44); gift and grant articles appear as rows INSIDE the general fund schedule (e.g. `Town Record Gift Fund`, p30) (sources/data/report-tables/1989/)."
+  },
+  {
+   "closes": "the Town's calendar-1990 payroll register (W-2 totals by employee) from the Treasurer's office.",
+   "side": "money_out",
+   "what": "What did each Lunenburg town employee earn in 1990?",
+   "why": "`report-gross-wages` holds per-employee earnings from the 2010 report (calendar wages) and FY2011-FY2025 (fiscal). The 1990 annual town report (76 pages) prints no wage list: its whole text was searched for wage, gross and earning, and the only hits are prose (p13 the drug-officer grant `to pay for wages`, p27 the Treasurer on staff hours, p21 `ACCRUED WAGES PAYABLE` on the balance sheet) and a licence line (p14)."
+  },
+  {
+   "closes": "a program cost report from the district listing preschool staff by FTE and the fund that pays each post, with the program's non-salary spending",
+   "side": "money_out",
+   "what": "What does the preschool cost the school budget, and what of it is the general fund?",
+   "why": "No school budget line, account, organization or program code is named for the preschool: the account codes place it inside the whole Primary School, and it is integrated, so children on education plans and tuition-paying children share its staff. Only the IDEA preschool grants (DESE codes 262, 264, 298) are identifiable, and our match of the annual report's preschool roster to its wage list gives pay, not cost, across every fund. Meanwhile the tuition is a Town receipt (general fund 431900), so nothing offsets the cost on the school side."
+  },
+  {
+   "closes": "the Assessors' 1971 tax rate recapitulation (the Tax Recap sheet filed with the State).",
+   "side": "money_in",
+   "what": "What was Lunenburg's assessed valuation by property class, its levy, overlay and new growth for 1971?",
+   "why": "`report-valuation` holds the valuation and levy history from the 1987-2010 reports. The 1971 report prints the assessed valuation as two lines of the opening facts page (p2: real estate $49,009,830, personal property $2,169,120, tax rate $42.50), and the Assessors' prose on the tax rate rising from $33.00 to $42.50 (p7), and no recapitulation of the levy, the overlay or growth. The overlay appears only as a reserve and a funding source (p41, p69-70). Searched valuation, overlay, tax rate, levy and growth (sources/data/report-tables/1971/)."
+  },
+  {
+   "closes": "the Town Accountant's 1973 special revenue fund ledger.",
+   "side": "money_out",
+   "what": "What did each special revenue fund take in, spend and carry forward in 1973, town-wide?",
+   "why": "`special-revenue-funds` holds forward, receipts, disbursements and balance by fund from the 1995-2010 reports. The 1973 report prints the revolving funds' balances as three lines of the balance sheet (p43 `Revolving Funds`: School Lunch 9,343.69, School Athletics 3,597.98, Adult Education 12.31) and as lines of the accountant's schedule with their forward, receipts and expended columns (p59), mixed in with special articles and grants; no schedule that separates the funds. Searched revolving and special revenue (p43, p59 only) (sources/data/report-tables/1973/)."
+  },
+  {
+   "closes": "the Assessors' 1959 tax rate recapitulation filed with the State.",
+   "side": "money_in",
+   "what": "What was Lunenburg's assessed valuation by property class, its levy, overlay and new growth for 1959?",
+   "why": "`report-valuation` holds the valuation and levy history from the 1987-2010 reports. The 1959 report prints the assessed valuation as one line of the opening facts page (p4: $9,084,720.00 = real estate $8,690,820.00 + personal property $393,900.00; tax rate $68.80), the State valuation 1945-1959 in the School Committee statistics (p102: $2,703,772.00, a figure that does not match the Assessors' and is not explained), and the overlay only as a reserve (p17) and a funding source (p16, p59). No recapitulation of the levy or of growth; searched valuation, overlay, tax rate and `new growth` (sources/data/report-tables/1959/)."
+  },
+  {
+   "closes": "the Treasurer's or Accountant's fund-by-fund ledger for 1960",
+   "side": "money_out",
+   "what": "What did each special revenue fund take in, spend and carry forward in 1960, town-wide?",
+   "why": "`special-revenue-funds` holds forward, receipts, disbursements and balance by fund from the 1995-2010 reports. The 1960 report prints no such schedule: `revolving` appears nowhere in the text; the balance sheet (p16-17) shows federal grants ($12,516.64) and unexpended balances ($150,802.34) as liabilities, and the school lunch (p117) and athletic (p118) accounts are the School Department's own statements"
+  },
+  {
+   "closes": "the Town Accountant's calendar-1964 fund ledger.",
+   "side": "money_out",
+   "what": "What did each special revenue fund take in, spend and carry forward in 1964, town-wide?",
+   "why": "`special-revenue-funds` holds forward, receipts, disbursements and balance by fund from the 2010 report. In 1964 the statement of receipts and payments and the accountant's schedule (p26-37) carry individual accounts (`School Lunch Program` Chapter 417, athletic, adult education, federal grants) but no fund-by-fund statement of receipts, disbursements and balance; searched special revenue, revolving, school lunch and grants (sources/data/report-tables/1964/)."
+  },
+  {
+   "closes": "the Assessors' 1968 tax rate recapitulation (the Tax Recap sheet filed with the State).",
+   "side": "money_in",
+   "what": "What was Lunenburg's assessed valuation by property class, its levy, overlay and new growth for 1968?",
+   "why": "`report-valuation` holds the valuation and levy history from the 1987-2010 reports. The 1968 report prints the assessed valuation as lines of the opening facts page (p5: $11,701,850 real estate, $1,105,460 personal property, tax rate $115.50), the net amount raised by taxation at four dates (p11, landed), and the Assessors' prose on the tax rate (p11); no recapitulation of the levy, the overlay or growth. The overlay appears only as a reserve, a deficit and a funding source (p22-23, p46, p70-71). The tax rate of $115.50 on a $11.7 million valuation is as printed; this extract does not establish what proportion of full value the assessments were. Searched valuation, overlay, tax rate, levy and growth (sources/data/report-tables/1968/)."
+  },
+  {
+   "closes": "the Assessors' 1969 tax rate recapitulation (the Tax Recap sheet filed with the State).",
+   "side": "money_in",
+   "what": "What was Lunenburg's assessed valuation by property class, its levy, overlay and new growth for 1969?",
+   "why": "`report-valuation` holds the valuation and levy history from the 1987-2010 reports. The 1969 report prints the assessed valuation as two lines of the opening facts page (p3: real estate $12,036,520, personal property $1,195,130, tax rate $133.00, no year printed beside any of them), and prose that 1969 was the town's `Year of Revaluation` (p9), and no recapitulation of the levy, the overlay or growth. The overlay appears only as a reserve and a funding source (p20, p66). Searched valuation, overlay, tax rate, levy and growth (sources/data/report-tables/1969/)."
+  },
+  {
+   "closes": "the Assessors' 1970 tax rate recapitulation (the Tax Recap sheet filed with the State).",
+   "side": "money_in",
+   "what": "What was Lunenburg's assessed valuation by property class, its levy, overlay and new growth for 1970?",
+   "why": "`report-valuation` holds the valuation and levy history from the 1987-2010 reports. The 1970 report prints the assessed valuation as lines of the opening facts page (p3: real estate $48,359,830, personal property $1,195,950, tax rate $33.00), in the running text of the Assessors' page, and no recapitulation of the levy, the overlay or growth. The overlay appears only as a reserve and a funding source (p28-29, p69-70). Searched valuation, overlay, tax rate, levy and growth (sources/data/report-tables/1970/)."
   }
  ],
  "generated_by": "scripts/build_state_aid.py",

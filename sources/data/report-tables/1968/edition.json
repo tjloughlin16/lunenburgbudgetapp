@@ -109,5 +109,16 @@
     }
   ],
   "school_statistics_totals": true,
-  "dollar_sign_labels": true
+  "dollar_sign_labels": true,
+  "collector_balance_identity": true,
+  "declared_identities": [
+    {
+      "eq": "72/1/r15 = 72/2/r1-19 + 72/1/r1-14",
+      "why": "p72: the special articles raised by taxation and their unlabelled subtotal $96,419.01"
+    },
+    {
+      "eq": "#4,606.00 = 145/2/r1 + 145/2/r2",
+      "why": "p145: Title VI (ESEA) project, received less expenditures (printed negative) is the BALANCE ON HAND printed in the label cell (quoted)"
+    }
+  ]
 }

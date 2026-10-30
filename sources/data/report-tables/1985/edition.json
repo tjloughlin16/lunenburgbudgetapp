@@ -301,8 +301,8 @@
       "why": "p164: the column's total is salaries + expenses + capital outlay"
     },
     {
-      "eq": "164/1/r28.v3 = 164/1/r3.v3 + 164/1/r6.v3 + 164/1/r10.v3 + 164/1/r14.v3",
-      "why": "p164: salaries line of the summary is the four series' salaries"
+      "eq": "164/1/r28.v3 = 164/1/r3.v3 + 164/1/r6.v3 + 164/1/r10.v3 + 164/1/r14.v3 + #101,352.96",
+      "why": "p164: the FY-85 Expenditures salaries line `$3,559,109.26 #` is the four series' salaries plus the $101,352.96 placed in escrow for summer 1985 salaries, as its footnote prints (`(#Includes Excrow)`)"
     },
     {
       "eq": "164/1/r29.v3 = 164/1/r4.v3 + 164/1/r7.v3 + 164/1/r11.v3 + 164/1/r15.v3",
@@ -491,6 +491,83 @@
     {
       "eq": "166/1/r6.v2 = 166/1/r6.v3 + 166/1/r6.v4",
       "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns (the first figure on the line is the year's receipts, printed in the title)"
+    },
+    {
+      "eq": "72/1/r10.c2 = 72/1/r11.c5 + 72/1/r11.c7",
+      "why": "p72: Accept Pine Acres & Hickory Lane, printed over two lines: total funds available 11,500.00 = total expended 11,300.00 + balance to FY 85 200.00 (both on the second line)",
+      "replaces": "an account printed over two lines; the row identity read the first line's blanks as zeros"
+    },
+    {
+      "eq": "72/1/r11.c5 = 72/1/r10.c4 + 72/1/r11.c4",
+      "why": "p72: Accept Pine Acres & Hickory Lane: total expended 11,300.00 = the two amounts expended, `1,269.40 TR` and 10,030.60, one on each line"
+    },
+    {
+      "eq": "72/1/r13.c2 = 72/1/r14.c5 + 72/1/r14.c7",
+      "why": "p72: Accept Sandycove, Cove Road & Cove Terrace, printed over two lines: total funds available 34,971.65 = total expended 34,391.65 + balance to FY 85 580.00 (both on the second line)",
+      "replaces": "an account printed over two lines; the row identity read the first line's blanks as zeros"
+    },
+    {
+      "eq": "72/1/r14.c5 = 72/1/r13.c4 + 72/1/r14.c4",
+      "why": "p72: Accept Sandycove, Cove Road & Cove Terrace: total expended 34,391.65 = the two amounts expended, `1,872.65 TR` and 32,519.00, one on each line"
+    },
+    {
+      "eq": "75/1/r28.c2 = 75/1/r27.c5 + 75/1/r27.c6",
+      "why": "p75: School Department: total funds available 4,248,800.00 = total expended 4,246,993.50 + balance revenue 1,806.50; Textract set the line's label and expended figures on the row above its appropriation and total available",
+      "replaces": "one printed line split across two Textract rows; the row identity read each row's blanks as zeros"
+    },
+    {
+      "eq": "75/1/r28.c2 = 75/1/r27.c1 + 75/1/r28.c1",
+      "why": "p75: School Department: total funds available 4,248,800.00 = `11,300.00RF` + 4,237,500.00, the two figures printed in Appropriation Forward",
+      "replaces": "one printed line split across two Textract rows; the row identity read each row's blanks as zeros"
+    },
+    {
+      "eq": "51/1/r2.c3 = 0.05*51/1/r1.c2",
+      "tol": 1,
+      "why": "p51: `5% THEREOF (Debt Limit)` $12,954,140 = 5% of the equalized valuation $259,082,812 (12,954,140.60, printed in whole dollars)"
+    },
+    {
+      "eq": "51/1/r5.c2 = 51/1/r3.c2 - 51/1/r4.c2",
+      "why": "p51: town debt 766,863 less loans outside the debt limit (Turkey Hill Middle School, 130,000) = 636,863"
+    },
+    {
+      "eq": "51/1/r6.c3 = 51/1/r2.c3 - 51/1/r5.c3",
+      "why": "p51: BORROWING CAPACITY $12,317,277 = the debt limit $12,954,140 less the debt inside it 636,863"
+    },
+    {
+      "eq": "52/1/r4.c2 = 52/1/r1-3.c2",
+      "why": "p52: the levy-limit TOTAL $211,847 = allowable 2 1/2 increase 101,747 + allowable new growth 71,950 + fire truck debt exemption 38,150"
+    },
+    {
+      "eq": "57/1/r34.c2 = 57/1/r3-33.c2 + 57/1/r5.c1 + 57/1/r14.c1 + 57/1/r19.c1",
+      "why": "p57 statement of payments: General Government's printed subtotal 345,246.78 = its lines, three of them printed on a wrapped label's second line"
+    },
+    {
+      "eq": "57/1/r59.c2 = 57/1/r36-58.c2",
+      "why": "p57: Protection of Persons & Property's printed subtotal 739,850.21 = its lines (printed beside the Health heading)"
+    },
+    {
+      "eq": "57/1/r3.c5 = 57/1/r60-64.c2 + 57/1/r1-2.c4",
+      "why": "p57: Health's printed subtotal 115,504.26 = its lines, the last two (Member. Nashoba Health 22,877.00, Mental Health 11,600.00) at the head of the right-hand panel"
+    },
+    {
+      "eq": "57/1/r23.c5 = 57/1/r5-22.c4",
+      "why": "p57: Highways' printed subtotal 641,516.26 = its lines, Recoveries 49.16 among them"
+    },
+    {
+      "eq": "57/1/r27.c5 = 57/1/r25-26.c4",
+      "why": "p57: Veterans' Benefits' printed subtotal 7,667.63 = its two lines"
+    },
+    {
+      "eq": "57/1/r52.c5 = 57/1/r29-51.c4",
+      "why": "p57: Schools' printed subtotal 4,758,454.85 = its lines"
+    },
+    {
+      "eq": "57/1/r56.c5 = 57/1/r54-55.c4",
+      "why": "p57: Ritter Memorial Library's printed subtotal 86,079.30 = its two lines"
+    },
+    {
+      "eq": "57/1/r61.c5 = 57/1/r58-60.c4",
+      "why": "p57: Cemeteries' printed subtotal 21,010.62 = its three lines"
     }
   ],
   "cell_readings": [
@@ -619,6 +696,306 @@
       "textract": "494.96 funds of June 28, 1985)",
       "read_as": "494.96",
       "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "55/2/18/2",
+      "textract": "Insurance25,951.38",
+      "read_as": "25,951.38",
+      "why": "`Insurance` ends the label (`Teachers Assoc. Dues & Income Protection Insurance`), wrapped into the figure cell with the space lost; Textract's LINES read prints `Income Protection Insurance25,951.38`"
+    },
+    {
+      "cell": "56/1/50/2",
+      "textract": "761.95",
+      "read_as": "6,761.95",
+      "why": "the page prints `Elections,Registration,Census6,761.95` with no space between label and amount, and Textract put the amount's `6,` into the label cell (`Elections, Registration, Census6,`); the amount is 6,761.95, which with the other twelve Current Year Refunds makes the section's printed subtotal 16,002.55 ; WITNESSED 30 Oct 2026: a blind scripted reader (claude-p:sonnet via claude_lean, batched, neutral file names, shown neither Textract's text nor this reading) read the printed line's crop as `6,761.95`, which holds the reading here"
+    },
+    {
+      "cell": "57/1/47/4",
+      "textract": "Ch.31,000.00",
+      "read_as": "31,000.00",
+      "why": "`Ch.` ends the label (`Install Stairway Wheel Ch.`, the chair lift of Article 35), wrapped into the figure cell"
     }
+  ],
+  "stacked_pairs_wide": true,
+  "debt_label_columns": true,
+  "accountant_marks_rcts": true,
+  "colon_for_point": true,
+  "line_rows": [
+    {
+      "table": "56/1",
+      "col": 2,
+      "rows": [
+        [
+          "Cert. Copy Birth, Death, Marriage 676.00",
+          null
+        ],
+        [
+          "Short Form Birth Cert.",
+          "114.00"
+        ],
+        [
+          "Business Certificates",
+          "207.00"
+        ],
+        [
+          "Residency Certificates",
+          "80.00"
+        ],
+        [
+          "Dog Licenses",
+          "9,940.00"
+        ],
+        [
+          "Copier Fees Town Office",
+          "120.90"
+        ],
+        [
+          "Geneology Search",
+          "18.41"
+        ],
+        [
+          "Dog Tag Replacements",
+          "1.75"
+        ],
+        [
+          "Board of Appeals Filing Fees 1,020.00",
+          null
+        ],
+        [
+          "Wetlands Filing Fees",
+          "566.00"
+        ],
+        [
+          "Pole Locations",
+          "120.00"
+        ],
+        [
+          "Uniform Commercial Code",
+          "1,315.00"
+        ],
+        [
+          "Spec. Detail Admin. Fees",
+          "1,128.00"
+        ],
+        [
+          "Postage Reimbursement",
+          "8.03"
+        ],
+        [
+          "Cable T.V. Fees",
+          "378.50"
+        ],
+        [
+          "Dishonored Check Penalties",
+          "80.00"
+        ],
+        [
+          "Supply Reimbursement",
+          "24.25"
+        ],
+        [
+          "Physician Registration",
+          "10.00"
+        ],
+        [
+          "Declaration of Trust",
+          "10.00"
+        ],
+        [
+          "Fish & Game Fees",
+          "215.48"
+        ],
+        [
+          "Revenue Invested Short Term",
+          "12,578,430.32"
+        ],
+        [
+          "Proceeds Revenue Cash Invested",
+          "118,267.45"
+        ],
+        [
+          "Tax Title Possessions",
+          "1,500.00"
+        ],
+        [
+          "Tax Title Redemptions",
+          "25,508.59"
+        ],
+        [
+          [
+            "Added Interest & Costs",
+            "Tax Title"
+          ],
+          "4,087.14"
+        ],
+        [
+          "Court Fines",
+          "43,541.50"
+        ],
+        [
+          "Parking Fines",
+          "2,095.00"
+        ],
+        [
+          "Ammunition Dealers Permits",
+          "9.00"
+        ],
+        [
+          "Pistol Permits",
+          "1,320.00"
+        ],
+        [
+          "Copier Fees-Police",
+          "1,085.00"
+        ],
+        [
+          "Machine Gun Permit",
+          "20.00"
+        ],
+        [
+          "Firearms Dealers/Gunsmith",
+          "180.00"
+        ],
+        [
+          "Firearms Identification Cards",
+          "110.00"
+        ],
+        [
+          "Fire Chief's Permits",
+          "1,090.00"
+        ],
+        [
+          "Smoke Detector Inspections",
+          "1,700.00"
+        ],
+        [
+          "Woodstove Permits",
+          "550.00"
+        ],
+        [
+          "Copier Fees Fire",
+          "50.00"
+        ],
+        [
+          "Rescue Wagon",
+          "20,140.81"
+        ],
+        [
+          "Sealing Fees",
+          "575.00"
+        ],
+        [
+          "Animal Control Fees",
+          "9.00"
+        ],
+        [
+          "Public Building Inspections",
+          "480.00"
+        ],
+        [
+          "Building Permits",
+          "18,931.00"
+        ],
+        [
+          "Building Inspection Townsend14,185.00",
+          null
+        ],
+        [
+          "Town Forest Program",
+          "3,080.00"
+        ],
+        [
+          "Wiring Permits",
+          "4,120.00"
+        ],
+        [
+          "Plumbing Permits",
+          "3,062.00"
+        ],
+        [
+          "Gas Fitting Permits",
+          "1,345.00"
+        ],
+        [
+          "Sewer Rentals",
+          "4,300.00"
+        ],
+        [
+          "Interest Sewer Rentals",
+          "6.07"
+        ],
+        [
+          "Street Betterments",
+          "35,500.00"
+        ],
+        [
+          "Art.11 Fire Truck",
+          "140,000.00"
+        ],
+        [
+          "Art. Wheel Chair Lift",
+          "31,000.00"
+        ],
+        [
+          "Art. 35 School Roof Repair",
+          "70,000.00"
+        ]
+      ],
+      "why": "p56 LEFT column of the statement of receipts (the Town Clerk's fees continued from p55, the Treasurer, protection of persons and property, health and sanitation, street betterments and three articles) is in Textract's LINES and in no table cell, on the first read and on a re-read of the page as an image (30 Oct 2026); each account's label and amount are lines of the page (1985 NEEDS 1). Appended after the right column; the section subtotals of this column (26,887.55; 12,727,793.50; 109,151.31; 12,833.07) are not appended, and each equals its accounts here"
+    }
+  ],
+  "label_trailing_figures": [
+    "55/1/43/1",
+    "57/1/3/1",
+    "57/1/6/1",
+    "57/1/8/1",
+    "57/1/10/1",
+    "57/1/11/1",
+    "57/1/12/1",
+    "57/1/15/1",
+    "57/1/16/1",
+    "57/1/17/1",
+    "57/1/20/1",
+    "57/1/21/1",
+    "57/1/22/1",
+    "57/1/23/1",
+    "57/1/24/1",
+    "57/1/25/1",
+    "57/1/26/1",
+    "57/1/27/1",
+    "57/1/28/1",
+    "57/1/29/1",
+    "57/1/30/1",
+    "57/1/31/1",
+    "57/1/32/1",
+    "57/1/33/1",
+    "57/1/36/1",
+    "57/1/37/1",
+    "57/1/38/1",
+    "57/1/39/1",
+    "57/1/40/1",
+    "57/1/41/1",
+    "57/1/42/1",
+    "57/1/43/1",
+    "57/1/44/1",
+    "57/1/45/1",
+    "57/1/46/1",
+    "57/1/47/1",
+    "57/1/48/1",
+    "57/1/49/1",
+    "57/1/50/1",
+    "57/1/51/1",
+    "57/1/52/1",
+    "57/1/53/1",
+    "57/1/54/1",
+    "57/1/55/1",
+    "57/1/56/1",
+    "57/1/57/1",
+    "57/1/58/1",
+    "57/1/60/1",
+    "57/1/61/1",
+    "57/1/62/1",
+    "57/1/63/1",
+    "57/1/64/1"
   ]
 }

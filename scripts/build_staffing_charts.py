@@ -249,12 +249,19 @@ def rank_in_year(peers, fy, field, members=None):
 
 # --------------------------------------------------------------- the town's own rosters
 
+# THIS PAGE IS FY2011-FY2025. The 1959-2010 rosters landed 29-30 Oct 2026 are calendar-year
+# editions with other schools and other titles; they are read on /analysis/historical-report,
+# not folded into panels built for the fiscal-year reports.
+ROSTERS_FROM_FY = 2011
+
+
 def roster(db):
     ent = rows(db, 'SELECT e.fy, e.school, e.page, e.name, e.role_raw, e.grade_or_dept, '
                    '       c.role_category '
                    'FROM staff_roster_entries e '
                    'LEFT JOIN role_classification c '
-                   '  ON c.role_raw = e.role_raw AND c.grade_or_dept = e.grade_or_dept')
+                   '  ON c.role_raw = e.role_raw AND c.grade_or_dept = e.grade_or_dept '
+                   'WHERE e.fy >= ?', ROSTERS_FROM_FY)
     if not ent:
         sys.exit('staff_roster_entries is empty -- refusing to write.')
     unjoined = sum(1 for r in ent if r['role_category'] is None)
@@ -1287,8 +1294,8 @@ def composition(db, doubled_years=()):
     # print-practice caveat the roster section of this page already makes.
     support = []
     for r in rows(db, "SELECT role_category, fy, COUNT(*) n FROM v_staff_roster "
-                      "WHERE school NOT IN (?, ?) GROUP BY role_category, fy",
-                  NOT_OURS, INTERMITTENT):
+                      "WHERE school NOT IN (?, ?) AND fy >= ? GROUP BY role_category, fy",
+                  NOT_OURS, INTERMITTENT, ROSTERS_FROM_FY):
         support.append(dict(r))
     support_roles = ('counselor', 'psychologist', 'social_worker', 'nurse',
                      'speech_therapist', 'therapist', 'librarian')
@@ -1638,7 +1645,8 @@ def report_year_basis(db, enrol):
     conclusion asserted from it.
     """
     docs = {r['fy']: r['document'] for r in rows(
-        db, 'SELECT fy, document FROM staff_roster_entries GROUP BY fy')}
+        db, 'SELECT fy, document FROM staff_roster_entries WHERE fy >= ? GROUP BY fy',
+        ROSTERS_FROM_FY)}
     tsv = {os.path.basename(f)[:-4]: f
            for f in glob.glob(os.path.join(ROOT, 'sources/*/ocr/*.tsv'))}
     names = {}
@@ -1696,8 +1704,13 @@ def school_board(db, ros):
     function DETECTED rather than a second copy of the same fact computed here.
     """
     cats = {k: (lab, grp) for k, lab, grp in BOARD_CATEGORIES}
+    # The categories THESE ROSTERS use: the 1959-2010 rosters carry titles (a 1960s football
+    # coach) that no FY2011+ roster prints, and this page does not read them.
     seen = {r['role_category'] for r in rows(
-        db, 'SELECT DISTINCT role_category FROM role_classification')}
+        db, 'SELECT DISTINCT c.role_category FROM staff_roster_entries e '
+            'JOIN role_classification c '
+            '  ON c.role_raw = e.role_raw AND c.grade_or_dept = e.grade_or_dept '
+            'WHERE e.fy >= ?', ROSTERS_FROM_FY)}
     missing = sorted(seen - set(cats))
     if missing:
         sys.exit('role_classification holds categories these panels do not name: %s. A '
@@ -1708,8 +1721,8 @@ def school_board(db, ros):
                    'FROM staff_roster_entries e '
                    'LEFT JOIN role_classification c '
                    '  ON c.role_raw = e.role_raw AND c.grade_or_dept = e.grade_or_dept '
-                   'WHERE e.school IN (%s)' % ','.join('?' * len(SCHOOL_ORGS)),
-               *sorted(SCHOOL_ORGS))
+                   'WHERE e.fy >= ? AND e.school IN (%s)' % ','.join('?' * len(SCHOOL_ORGS)),
+               ROSTERS_FROM_FY, *sorted(SCHOOL_ORGS))
     if not ent:
         sys.exit('no roster entries for the school panels -- refusing to write.')
     if any(r['role_category'] is None for r in ent):

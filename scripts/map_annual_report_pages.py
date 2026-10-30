@@ -617,6 +617,7 @@ PROOF = {
     'peg-access': (None, NOTHING),
     'signatures': (None, NOTHING),
     'staff-roster-entries': (None, NOTHING),
+    'staff-roster-contractors': (None, NOTHING),   # bus contractors taken out of the rosters, 30 Oct 2026
     'stated-cuts': (None, NOTHING),
     'town-meeting-votes': (None, NOTHING),
     # PUBLISHED ONLY WHEN THE COLUMN FOOTS, so the row's existence IS the verdict --

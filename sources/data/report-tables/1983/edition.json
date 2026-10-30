@@ -380,6 +380,36 @@
     {
       "eq": "89/2/r1 = #1,113",
       "why": "p89 prints the 1984 tuition rates (Based on 1982-83 State Reports regarding Per Pupil Cost); p124 prints the 1982-83 NET COST PER PUPIL (Used for Tuition Rates): Kindergarten 1,113, printed on p124 as `$ 1,113,/Kdg.` in text no cell holds"
+    },
+    {
+      "eq": "59/1/r18.c2 = #21980.75 + #19.25",
+      "why": "p59: Purchase Fire Hose & other Equipment: funds available 22,000.00 = Total Expended printed as two stacked figures `21,980.75 19.25 TR` (spent, and the balance transferred)",
+      "replaces": "the Total Expended cell holds two stacked figures, which the row identity cannot read"
+    }
+  ],
+  "colon_heading_subtotals": true,
+  "stacked_pairs_wide": true,
+  "debt_label_columns": true,
+  "receipts_unlabelled_items": true,
+  "cell_readings": [
+    {
+      "cell": "45/2/15/2",
+      "textract": "Assessment 1,664.19",
+      "read_as": "1,664.19",
+      "why": "`Assessment` ends the label (`Montachusett Regional Planning District Assessment`), wrapped into the figure cell; the figure is the payment (1983 NEEDS 3b)"
+    }
+  ],
+  "line_rows": [
+    {
+      "table": "45/2",
+      "col": 3,
+      "rows": [
+        [
+          [],
+          "316,046.16"
+        ]
+      ],
+      "why": "p45 foot: the General Government subtotal `316,046.16` is a Textract LINE (line 89, top 0.9621, x 0.80, the statement's outer column) that no table cell holds; printed with no label under the section's last line, as every section subtotal of this statement is (1983 NEEDS 3a)"
     }
   ]
 }

@@ -3,12 +3,28 @@
   "fy": 1999,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "declared_identities": [
+    {
+      "eq": "82/1/r27.v1 = 83/1/r45-62.v1 + 82/1/r2-25.v1",
+      "why": "p82 TOTAL CENTURY sums the Century Bank accounts printed from p83 (the page before it in reading order, C DICKINSON LIB BOOKS on) through p82; checked on BEG BALANCE (first figure), DIVIDENDS (second) and BOOK BALANCE (last), the columns every one of these lines prints"
+    },
+    {
+      "eq": "82/1/r27.v2 = 83/1/r45-62.v2 + 82/1/r2-25.v2",
+      "why": "p82 TOTAL CENTURY sums the Century Bank accounts printed from p83 (the page before it in reading order, C DICKINSON LIB BOOKS on) through p82; checked on BEG BALANCE (first figure), DIVIDENDS (second) and BOOK BALANCE (last), the columns every one of these lines prints"
+    },
+    {
+      "eq": "82/1/r27.vL = 83/1/r45-62.vL + 82/1/r2-25.vL",
+      "why": "p82 TOTAL CENTURY sums the Century Bank accounts printed from p83 (the page before it in reading order, C DICKINSON LIB BOOKS on) through p82; checked on BEG BALANCE (first figure), DIVIDENDS (second) and BOOK BALANCE (last), the columns every one of these lines prints"
+    }
+  ],
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": false,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
   "debt_row_totals": true,
@@ -106,5 +122,9 @@
       "period": "calendar 1999",
       "cited": "p31: `In 1999, the Town of Lunenburg continued to see a decrease in the crime rate`"
     }
-  ]
+  ],
+  "forward_lines_identity": true,
+  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone above it, and the TOTAL FUNDS AVAILABLE of the account or department subtotal they fund is its appropriation plus them: tested as that run's identity (30 October 2026). Set where the layout puts AVAILABLE on the account or department subtotal only: measured on 1991-2010, on 2004-2010 a mark line belongs to one of several lines printing AVAILABLE; enabled for 1999 on p66 (Council on Aging fwd, Total Insurance fwd, Unemployment Comp rft), 30 October 2026",
+  "forward_lines_skip_own": true,
+  "forward_lines_skip_own_why": "a line whose AVAILABLE equals its own APPROPRIATED carries no forward line, so pending forward lines belong to a later line of the group (30 October 2026); 1999 p66: the $4,071.00 fwd above Health Insurance CH 32B funds the Total Insurance subtotal"
 }

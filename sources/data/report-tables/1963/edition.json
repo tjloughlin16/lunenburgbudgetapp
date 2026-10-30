@@ -144,5 +144,193 @@
   ],
   "school_statistics_totals": true,
   "dollar_sign_labels": true,
-  "welfare_net_cost": true
+  "welfare_net_cost": true,
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-debt"
+  ],
+  "not_totals": [
+    "34/1/31",
+    "34/1/35",
+    "34/1/38",
+    "34/1/42",
+    "38/1/12"
+  ],
+  "cell_readings": [
+    {
+      "cell": "32/1/29/7",
+      "textract": "4,748.86 /",
+      "read_as": "4,748.86",
+      "why": "a stroke printed after the balance carried to 1964 (an accountant's tick); the figure is the cell's only figure"
+    },
+    {
+      "cell": "9/3/6/3",
+      "textract": "I",
+      "read_as": "1",
+      "why": "the thousands box of item F.4 (Old Age Tax (Meals)), `I | 976 | 38`: a one read as the letter I; the box holds digits only"
+    },
+    {
+      "cell": "9/3/29/3",
+      "textract": "459",
+      "read_as": "",
+      "why": "the total estimated receipts, printed in the boxes `459 | 887 | 39` half a line below item 28 (`28. TOTAL ESTIMATED RECEIPTS`, Textract line top 0.671; the figure 0.676; item 29 0.680); Textract set it on item 29, whose own boxes are blank. Read on item 28; the 21 receipts above it sum to it to the cent"
+    },
+    {
+      "cell": "9/3/29/4",
+      "textract": "887",
+      "read_as": "",
+      "why": "the total estimated receipts, printed in the boxes `459 | 887 | 39` half a line below item 28 (`28. TOTAL ESTIMATED RECEIPTS`, Textract line top 0.671; the figure 0.676; item 29 0.680); Textract set it on item 29, whose own boxes are blank. Read on item 28; the 21 receipts above it sum to it to the cent"
+    },
+    {
+      "cell": "9/3/29/5",
+      "textract": "39",
+      "read_as": "",
+      "why": "the total estimated receipts, printed in the boxes `459 | 887 | 39` half a line below item 28 (`28. TOTAL ESTIMATED RECEIPTS`, Textract line top 0.671; the figure 0.676; item 29 0.680); Textract set it on item 29, whose own boxes are blank. Read on item 28; the 21 receipts above it sum to it to the cent"
+    },
+    {
+      "cell": "9/3/28/5",
+      "textract": "",
+      "read_as": "459,887.39",
+      "why": "the total estimated receipts, printed in the boxes `459 | 887 | 39` half a line below item 28 (`28. TOTAL ESTIMATED RECEIPTS`, Textract line top 0.671; the figure 0.676; item 29 0.680); Textract set it on item 29, whose own boxes are blank. Read on item 28; the 21 receipts above it sum to it to the cent"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "34/1/r31 = #9,065.17 + #747.05",
+      "why": "p34: Welfare relief by program -- each program's lines print their amounts at the end of the label, and the `Total` line its sum in Amounts Expended (figures quoted from the label cells)"
+    },
+    {
+      "eq": "34/1/r35 = #2,657.38 + #1,193.06 + #479.30",
+      "why": "p34: Welfare relief by program -- each program's lines print their amounts at the end of the label, and the `Total` line its sum in Amounts Expended (figures quoted from the label cells)"
+    },
+    {
+      "eq": "34/1/r38 = #8,632.99 + #1,574.73",
+      "why": "p34: Welfare relief by program -- each program's lines print their amounts at the end of the label, and the `Total` line its sum in Amounts Expended (figures quoted from the label cells)"
+    },
+    {
+      "eq": "34/1/r42 = #150.00 + #2,818.98 + #6,456.90",
+      "why": "p34: Welfare relief by program -- each program's lines print their amounts at the end of the label, and the `Total` line its sum in Amounts Expended (figures quoted from the label cells)"
+    },
+    {
+      "eq": "34/1/r43.v3 = 34/1/r31 + 34/1/r35 + 34/1/r38 + 34/1/r42",
+      "why": "p34: the relief account's Total Expended is the four programs' totals"
+    },
+    {
+      "eq": "38/1/r12 = #685.17 + #515.76 + #479.42 + #100.00 + #625.25 + #2,848.55 + #40.00",
+      "why": "p38: Park Department salaries and wages, amounts printed at the end of each label; `Total Salaries and Wages` their sum"
+    },
+    {
+      "eq": "38/1/r23.v3 = 38/1/r12-22",
+      "why": "p38: the Park Department's Total Expended is its salaries total and the expense lines below it"
+    },
+    {
+      "eq": "#19,455 - 87/1/r2 = #1,223",
+      "why": "p87: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "#1,782 - 87/1/r3 = #292",
+      "why": "p87: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "#574,594 - 87/2/r2 = #45,654",
+      "why": "p87: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "#40,079 - 87/2/r3 = #2,684",
+      "why": "p87: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "#1,770 - 88/1/r2 = #870",
+      "why": "p88: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "88/1/r3 - #125 = #25",
+      "why": "p88: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "88/2/r2.v2 - 88/2/r2.v1 = #11,415",
+      "why": "p88: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the difference is printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "#42,584 - 88/3/r2 = #1,070",
+      "why": "p88: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "88/3/r3 - #34,357 = #659",
+      "why": "p88: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "89/1/r2 - #4,267 = #733",
+      "why": "p89: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "#2,131 - 89/2/r3 = #671",
+      "why": "p89: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the request and difference figures are printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "89/3/r2.v1 - 89/3/r2.v2 = #5,079",
+      "why": "p89: the School Committee's REQUEST 1964 less AVAILABLE 1963 is the DIFFERENCE printed beside them (the difference is printed in the label cell and quoted from it)"
+    },
+    {
+      "eq": "90/1/r2.v2 - 90/1/r2.v1 = 90/1/r3.v2",
+      "why": "p90: the AMOUNT OF INCREASE is this year's gross budget less last year's"
+    },
+    {
+      "eq": "90/1/r2.v3 - 90/1/r2.v2 = 90/1/r3.v3",
+      "why": "p90: the AMOUNT OF INCREASE is this year's gross budget less last year's"
+    },
+    {
+      "eq": "105/1/r5.v3 = 105/1/r5.v1 - 105/1/r5.v2",
+      "why": "p105: Adult Education (George-Barden Funds), received less spent is the balance the page marks ** brought forward to 1964"
+    },
+    {
+      "eq": "106/1/r13 = 106/1/r1 - #160,413.27",
+      "why": "p106: NET COST OF DAY SCHOOLS FROM LOCAL TAXATION, the 1964 request less TOTAL EARNINGS (printed `$160,413.27 -`, quoted)"
+    },
+    {
+      "eq": "#160,413.27 = 106/1/r3-11",
+      "why": "p106: TOTAL EARNINGS during 1963, the nine sources above it"
+    },
+    {
+      "eq": "106/2/r5.v2 = 106/2/r3-4",
+      "why": "p106: vocational TOTAL EARNINGS, tuition and transportation"
+    },
+    {
+      "eq": "106/2/r6 = 106/2/r1 - 106/2/r5.v2",
+      "why": "p106: vocational NET COST FROM LOCAL TAXATION, the request less earnings"
+    },
+    {
+      "eq": "106/3/r3 = 106/3/r1 + 106/3/r2",
+      "why": "p106: adult education NET 1964 request, the request less George-Barden funds (printed negative)"
+    },
+    {
+      "eq": "9/2/r12 = 9/2/r3-4",
+      "why": "p9 (Recapitulation): B. State tax and assessments, the sum carried to the outside column"
+    },
+    {
+      "eq": "9/2/r17 = 9/2/r14-16",
+      "why": "p9 (Recapitulation): C. County tax and assessments, the sum carried to the outside column"
+    },
+    {
+      "eq": "9/3/r28 = 9/3/r3-26",
+      "why": "p9 (Recapitulation): F.28 TOTAL ESTIMATED RECEIPTS, items 1-24"
+    },
+    {
+      "eq": "9/3/r42 = 9/3/r31-32 + 9/3/r41",
+      "why": "p9 (Recapitulation): F.32 TOTAL AVAILABLE FUNDS, items 30(a), 30(b) and 31"
+    },
+    {
+      "eq": "9/3/r41 = #37,000.00 + #800.00 + #9,110.00 + #14,900.00 + #97,700.00 + #7,000.00 + #10,000.00 + #14,500.00",
+      "why": "p9 (Recapitulation): F.31, the amounts voted from available funds on 3/2/63, listed by source in the label cells (quoted)"
+    },
+    {
+      "eq": "9/1/r2 = 9/3/r41",
+      "why": "p9 (Recapitulation): A.2 appropriations voted from available funds is F.31 carried to the inside column"
+    }
+  ],
+  "digit_group_tables": [
+    "9/1",
+    "9/2",
+    "9/3"
+  ]
 }

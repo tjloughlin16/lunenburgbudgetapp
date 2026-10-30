@@ -856,5 +856,39 @@
       "eq": "47/1/r42:p2.v3 = 47/1/r6.v2 + 47/1/r10.v4 + 47/1/r14.v3 + 47/1/r18.v4 + 47/1/r22.v4 + 47/1/r26.v5 + 47/1/r30:p2.v2 + 47/1/r34.v5 + 47/1/r38:p2.v3",
       "why": "p47 GRAND TOTAL (total), TOTAL column: every issue's total (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
     }
+  ],
+  "line_rows": [
+    {
+      "table": "71/3",
+      "col": 2,
+      "repair": true,
+      "rows": [
+        [
+          "62 Veterans' Services Admin.",
+          "3,645."
+        ],
+        [
+          "63 Veterans' Benefits",
+          "12.500."
+        ],
+        [
+          "TOTAL VETERANS' BENEFITS",
+          "16.145."
+        ],
+        [
+          "64 School Department",
+          "5,040,000."
+        ],
+        [
+          "66 Mont. Reg. Voc. Tech.",
+          "53.800."
+        ],
+        [
+          "TOTAL SCHOOLS",
+          "5.093.800."
+        ]
+      ],
+      "why": "p71 right column under TOTAL HIGHWAYS: the Veterans' Benefits and Schools lines of the FY1987 omnibus budget (Article 8) are Textract LINES (lines 140-166) that no table cell holds; each label and amount is a line of the page (1986 NEEDS)"
+    }
   ]
 }

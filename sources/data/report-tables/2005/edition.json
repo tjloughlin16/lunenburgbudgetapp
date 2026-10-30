@@ -3,15 +3,19 @@
   "fy": 2005,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
-  "debt_row_totals_skip": ["73/1"],
+  "debt_row_totals_skip": [
+    "73/1"
+  ],
   "debt_row_totals_skip_why": "p73 continues the previous page's schedule BY YEAR: its TOTAL column sums years printed on both pages, so the one-page row identity does not apply there",
   "debt_row_totals": true,
   "debt_row_totals_why": "the debt repayment schedule's TOTAL column is the sum of its fiscal-year columns on every row; the column walk sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
@@ -25,24 +29,155 @@
   "label": "2005 Annual Town Report",
   "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4513-2005-annual-town-report.cells.tsv",
   "periods": [
-    {"what": "valuation", "period": "fiscal 2005", "cited": "p52: `BOARD OF ASSESSORS ANNUAL REPORT / Fiscal 2005 Assessments and Revenues by Major Property Class`"},
-    {"what": "overlay (exemptions and abatements)", "period": "FY2001-FY2004 only; no FY2005 column is printed", "cited": "p52 table 4 header: `Description | FY2004 | FY2003 | FY2002 | FY2001`"},
-    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2005", "cited": "p53: `FOR THE YEAR ENDED JUNE 30, 2005`"},
-    {"what": "receipts", "period": "fiscal 2005", "cited": "p54: `FY 2005 RECEIPTS - JUNE 2005`"},
-    {"what": "general fund appropriations", "period": "fiscal year 2005", "cited": "p55: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2005`"},
-    {"what": "special revenue funds", "period": "fiscal year ending June 30, 2005", "cited": "p62: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING JUNE 30, 2005`"},
-    {"what": "reconciliation of treasurer's cash", "period": "July 1, 2004 to June 30, 2005", "cited": "p67: `BALANCE JUNE 30, 2004` / `RECEIPTS 7/1/04 6/30/05` / `DISBURSED 7/1/04 6/30/05` / `GENERAL LEDGER BALANCE`"},
-    {"what": "trust funds", "period": "July 1, 2004 to June 30, 2005", "cited": "p68 column `BEG BAL 6/30/04`; p70: `TOTAL TRUST ACCTS JUNE 30, 2005`"},
-    {"what": "bonded indebtedness by issue", "period": "payments through fiscal 2006", "cited": "p71: `DUE IN FISCAL 2006` / `TOTAL PAYMENTS THRU 2006`"},
-    {"what": "bonds authorized and unissued", "period": "as of June 30, 2005", "cited": "p71: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 2005`"},
-    {"what": "debt repayment schedule", "period": "as of June 30, 2005", "cited": "p72: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2005`"},
-    {"what": "collection of taxes", "period": "NOT PRINTED", "cited": "p74 prints the heading `COLLECTION OF TAXES` and no year; the newest levy year listed is `2005 MVE`. Not inferred"},
-    {"what": "omnibus budget", "period": "fiscal year 2006, as VOTED (a budget, not an actual)", "cited": "p83: `FY 06 Omnibus Budget` / `Voted FY06`"},
-    {"what": "capital plan", "period": "fiscal year 2006, as voted under Article 5", "cited": "p85: `VOTED UNANIMOUSLY to appropriate from free cash the sum of $540,443.00 for the FY'06 Capital Plan`"},
-    {"what": "wages", "period": "calendar 2005", "cited": "p101: `GRAND TOTAL GROSS WAGES FOR CALENDAR YEAR 2005`"},
-    {"what": "police incident statistics", "period": "fiscal year 2005", "cited": "p26: `a brief summary of incident statistics for fiscal year 2005`"},
-    {"what": "elections", "period": "calendar 2005", "cited": "p81: `ANNUAL TOWN ELECTION / SATURDAY MAY 21, 2005`"},
-    {"what": "school enrollment", "period": "October 1, 2002 to October 1, 2005", "cited": "p37: `ENROLLMENT- October 1 2002-2005`"},
-    {"what": "MCAS", "period": "spring 2005", "cited": "p49: `The eighth administration of the Massachusetts Comprehensive Assessment System (MCAS) took place in the spring of 2005`"}
+    {
+      "what": "valuation",
+      "period": "fiscal 2005",
+      "cited": "p52: `BOARD OF ASSESSORS ANNUAL REPORT / Fiscal 2005 Assessments and Revenues by Major Property Class`"
+    },
+    {
+      "what": "overlay (exemptions and abatements)",
+      "period": "FY2001-FY2004 only; no FY2005 column is printed",
+      "cited": "p52 table 4 header: `Description | FY2004 | FY2003 | FY2002 | FY2001`"
+    },
+    {
+      "what": "combined balance sheet",
+      "period": "fiscal year ended June 30, 2005",
+      "cited": "p53: `FOR THE YEAR ENDED JUNE 30, 2005`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal 2005",
+      "cited": "p54: `FY 2005 RECEIPTS - JUNE 2005`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "fiscal year 2005",
+      "cited": "p55: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2005`"
+    },
+    {
+      "what": "special revenue funds",
+      "period": "fiscal year ending June 30, 2005",
+      "cited": "p62: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING JUNE 30, 2005`"
+    },
+    {
+      "what": "reconciliation of treasurer's cash",
+      "period": "July 1, 2004 to June 30, 2005",
+      "cited": "p67: `BALANCE JUNE 30, 2004` / `RECEIPTS 7/1/04 6/30/05` / `DISBURSED 7/1/04 6/30/05` / `GENERAL LEDGER BALANCE`"
+    },
+    {
+      "what": "trust funds",
+      "period": "July 1, 2004 to June 30, 2005",
+      "cited": "p68 column `BEG BAL 6/30/04`; p70: `TOTAL TRUST ACCTS JUNE 30, 2005`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "payments through fiscal 2006",
+      "cited": "p71: `DUE IN FISCAL 2006` / `TOTAL PAYMENTS THRU 2006`"
+    },
+    {
+      "what": "bonds authorized and unissued",
+      "period": "as of June 30, 2005",
+      "cited": "p71: `BONDS AUTHORIZED AND UNISSUED AS OF JUNE 30, 2005`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of June 30, 2005",
+      "cited": "p72: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2005`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "NOT PRINTED",
+      "cited": "p74 prints the heading `COLLECTION OF TAXES` and no year; the newest levy year listed is `2005 MVE`. Not inferred"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 2006, as VOTED (a budget, not an actual)",
+      "cited": "p83: `FY 06 Omnibus Budget` / `Voted FY06`"
+    },
+    {
+      "what": "capital plan",
+      "period": "fiscal year 2006, as voted under Article 5",
+      "cited": "p85: `VOTED UNANIMOUSLY to appropriate from free cash the sum of $540,443.00 for the FY'06 Capital Plan`"
+    },
+    {
+      "what": "wages",
+      "period": "calendar 2005",
+      "cited": "p101: `GRAND TOTAL GROSS WAGES FOR CALENDAR YEAR 2005`"
+    },
+    {
+      "what": "police incident statistics",
+      "period": "fiscal year 2005",
+      "cited": "p26: `a brief summary of incident statistics for fiscal year 2005`"
+    },
+    {
+      "what": "elections",
+      "period": "calendar 2005",
+      "cited": "p81: `ANNUAL TOWN ELECTION / SATURDAY MAY 21, 2005`"
+    },
+    {
+      "what": "school enrollment",
+      "period": "October 1, 2002 to October 1, 2005",
+      "cited": "p37: `ENROLLMENT- October 1 2002-2005`"
+    },
+    {
+      "what": "MCAS",
+      "period": "spring 2005",
+      "cited": "p49: `The eighth administration of the Massachusetts Comprehensive Assessment System (MCAS) took place in the spring of 2005`"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "83/1/r9:p2 = 83/1/r4-8:p2",
+      "replaces": "the column walk read the two side-by-side columns of p83 as one block",
+      "why": "FY06 omnibus (ATM May 7, 2005 Article 3), p83 right column: Subtotal Other Protection $159,818.00 = lines 51-55 (Civil Defense through Animal Control)"
+    },
+    {
+      "eq": "85/1/r3 = 84/1/r47-49 + 85/1/r1-2",
+      "replaces": "the column walk took only p85's lines 44-45; lines 41-43 are printed at the foot of p84",
+      "why": "FY06 omnibus: Subtotal Police $1,088,619.00 (p85) = lines 41-43 at the foot of p84's left column + lines 44-45 at the head of p85"
+    },
+    {
+      "eq": "84/2/r1 = 85/1/r3 + 85/1/r9 + 83/1/r9:p2",
+      "replaces": "the column walk summed Total Protection over nothing above it on its own table",
+      "why": "FY06 omnibus: Total Protection $1,821,828.00 (head of p84's right column) = Subtotal Police (p85) + Subtotal Fire Dept. (p85) + Subtotal Other Protection (p83)"
+    },
+    {
+      "eq": "85/2/r1 = 84/2/r42",
+      "replaces": "the column walk ran line 85 into the Subtotal Police block on p85",
+      "why": "FY06 omnibus: Total Library $243,822.00 (p85) = line 85 Ritter Memorial Library at the foot of p84"
+    },
+    {
+      "eq": "#21,542,505.48 + #245,394.00 + #6,728.52 + #10,872.00 + #20,000.00 + #516,460.00 = 83/1/r8:p1 + 84/1/r16 + 84/1/r42 + 84/1/r45 + 84/2/r1 + 84/2/r8 + 84/2/r23 + 84/2/r32 + 84/2/r40 + 85/2/r1 + 85/2/r4",
+      "why": "FY06 omnibus: the eleven category totals the budget prints (Maturing Debt, Gen Gov Unclassified, General Government, Central Purchasing, Protection, Health & Sanitation, DPW, Assistance, Schools, Library, Recreation) = the six sums Article 3's vote raises and transfers to fund it (p83 text: raise and appropriate $21,542,505.48, free cash $245,394.00, overlay surplus $6,728.52, septic receipts $10,872.00, sewer enterprise $20,000.00, sewer betterment fund $516,460.00)"
+    },
+    {
+      "eq": "85/2/r5 = #21,542,505.48 + #245,394.00 + #6,728.52 + #10,872.00 + #20,000.00 + #516,460.00",
+      "why": "FY06 omnibus, p85: Total Omnibus Budget $22,368,960.00 = the six sums Article 3's vote (p83 text) raises and transfers to fund the budget, which total $22,341,960.00 -- as do the eleven category totals the budget prints (the identity above)"
+    },
+    {
+      "eq": "60/1/r14.v3 = 60/1/r14.v1 - 60/1/r14.v2",
+      "replaces": "the row identity read the blank TOTAL FUNDS AVAILABLE as 0",
+      "why": "p60: the insurance lines print no TOTAL FUNDS AVAILABLE (blank on the page, not zero); BALANCE TO REVENUE = APPROPRIATED - TOTAL EXPENDED on the row, as every other row's balance is funds less expended"
+    },
+    {
+      "eq": "60/1/r15.v3 = 60/1/r15.v1 - 60/1/r15.v2",
+      "replaces": "the row identity read the blank TOTAL FUNDS AVAILABLE as 0",
+      "why": "p60: the insurance lines print no TOTAL FUNDS AVAILABLE (blank on the page, not zero); BALANCE TO REVENUE = APPROPRIATED - TOTAL EXPENDED on the row, as every other row's balance is funds less expended"
+    },
+    {
+      "eq": "60/1/r16.v3 = 60/1/r16.v1 - 60/1/r16.v2",
+      "replaces": "the row identity read the blank TOTAL FUNDS AVAILABLE as 0",
+      "why": "p60: the insurance lines print no TOTAL FUNDS AVAILABLE (blank on the page, not zero); BALANCE TO REVENUE = APPROPRIATED - TOTAL EXPENDED on the row, as every other row's balance is funds less expended"
+    },
+    {
+      "eq": "60/1/r24.v1 = 60/1/r22-23.v1",
+      "replaces": "the GRAND TOTAL column walk took these two lines, which the unlabeled subtotal under them closes",
+      "why": "p60: the unlabeled subtotal $142,747.91 = rft $2,415.91 + Liability Insurance $140,332.00 in APPROPRIATED FORWARD (the rft line prints in that column alone)"
+    },
+    {
+      "eq": "70/1/r23 = 68/1/r17 + 68/1/r38 + 68/1/r42 + 68/1/r45 + 68/1/r52 + 69/1/r7 + 69/1/r13 + 70/1/r18",
+      "replaces": "the column walk summed every account line and bank total above it on p70 together",
+      "why": "trust funds book, p70: GRAND TOTAL TRUST FUNDS $1,700,242.68 = the BOOK BALANCE of each bank's printed total (TOTAL COLUMBIA FUNDS, TOTAL FIRSTFED, the two TOTAL PBHG FUNDS, TOTAL MMDT on p68; TOTAL STOCK, TOTAL STABILIZATION on p69; TOTAL CENTURY on p70)"
+    }
   ]
 }

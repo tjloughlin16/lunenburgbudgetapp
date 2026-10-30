@@ -59,7 +59,10 @@ METERED_STOP = ROOT / 'build' / 'STOP-METERED'
 
 # US East (N. Virginia) list price, first million pages a month, read off
 # https://aws.amazon.com/textract/pricing/ on 27 October 2026. Re-read it if the region changes.
-PRICE_PER_PAGE = {'tables': 0.015, 'text': 0.0015}
+PRICE_PER_PAGE = {'tables': 0.015, 'text': 0.0015,
+                  # a SECOND tables read of a page whose grid came back wrong, sent as a rendered image
+                  # (the 1991-2010 close-out, 30 Oct 2026): the same AnalyzeDocument price
+                  'tables-reread': 0.015}
 
 MONTHLY_CAP_USD = 70.00          # ours. The AWS budget sits ABOVE it, at $75 (TJ raised it from the
                                  # $60 setup_textract.sh set, 30 Oct 2026, read back with describe-budget),

@@ -295,10 +295,10 @@ ABOUT = {
         'and the towns most like it across the whole state, on what a town is and what it '
         'does \u2014 with a map of every town in Massachusetts.',
     'annual-reports':
-        'The sixteen annual town reports, FY2011\u2013FY2025, every one downloadable with '
-        'the sha256 of the bytes we hold \u2014 and what we read out of them, by category. '
-        'Says plainly which pages tie to a total the page itself prints and which carry '
-        'figures nothing has ever checked, because those are not the same thing.',
+        'Every annual town report, 1959 to FY2025, each one downloadable with the sha256 '
+        'of the bytes we hold \u2014 and what we read out of them, by category. Says '
+        'plainly which pages tie to a total the page itself prints, and why the rest '
+        'cannot be checked from the page.',
     'historical-report':
         'Every annual town report this archive holds, read for what it says about the '
         'town across all of them: the tax rate and the revaluations beside its falls, the '

@@ -3,15 +3,19 @@
   "fy": 2007,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
-  "debt_row_totals_skip": ["78/1"],
+  "debt_row_totals_skip": [
+    "78/1"
+  ],
   "debt_row_totals_skip_why": "p78 continues the previous page's schedule BY YEAR: its TOTAL column sums years printed on both pages, so the one-page row identity does not apply there",
   "debt_row_totals": true,
   "debt_row_totals_why": "the debt repayment schedule's TOTAL column is the sum of its fiscal-year columns on every row; the column walk sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
@@ -115,5 +119,103 @@
       "period": "calendar 2007",
       "cited": "p25: `Department Statistics -2007`"
     }
-  ]
+  ],
+  "declared_identities": [
+    {
+      "eq": "90/2/r25 = 90/2/r10-23",
+      "replaces": "the column walk ran the Unclassified block into the General Government lines below it",
+      "why": "FY08 omnibus (ATM 2007), p90: Total Gen Gov Unclass $2,167,906.00 = lines 4-16 (Liability Insurance .. MacGregor Pension) printed above it"
+    },
+    {
+      "eq": "90/1/r1 = 90/2/r28-52",
+      "replaces": "the column walk summed Total General Gov over nothing; its lines are printed in the left column",
+      "why": "FY08 omnibus, p90: Total General Gov $1,203,679.00, printed at the head of the right column, = lines 17-39 at the foot of the left column (Finance Comm Expense .. Personnel Committee)"
+    },
+    {
+      "eq": "91/2/r10 = 91/2/r3-9 + #642,319.00",
+      "replaces": "the column walk summed it without line 81, whose figure did not parse",
+      "why": "FY08 omnibus, p91: Total Schools $14,847,559.00 = lines 79-84; line 81 Monty Tech Assessment prints `642,319..00` (a doubled point, seen on the page image), which no cell parses, so it is quoted"
+    },
+    {
+      "eq": "91/1/r22 = 91/1/r13 + 91/1/r20",
+      "why": "FY08 omnibus, p91: Total Assistance $93,801.00 = Subtotal C.O.A. + Subtotal Veterans, the two subtotals printed above it"
+    },
+    {
+      "eq": "91/2/r21 = 90/2/r8 + 90/2/r10-23 + 90/1/r1 + 90/1/r6 + 90/1/r34 + 90/1/r43 + 91/1/r8 + 91/1/r13 + 91/1/r20 + 91/2/r10 + 91/2/r15 + 91/2/r19",
+      "replaces": "the column walk summed Total Omnibus over nothing",
+      "why": "FY08 omnibus, p91: Total Omnibus $24,673,945.00 = every numbered line of the budget, lines 1-86 (Unclassified taken as its lines 4-16, Assistance as its two subtotals, every other category as its printed total)"
+    },
+    {
+      "eq": "91/1/r8 = 90/1/r46-53 + 91/1/r1 + 91/1/r3-4 + 91/1/r6",
+      "replaces": "the column walk took only p91's lines 69-73",
+      "why": "FY08 omnibus, p91: Total DPW $1,123,101.00 = lines 62-68A at the foot of p90's right column + lines 69-73 at the head of p91 (69A Capital - Park Department and 72 Solid Waste print no figure)"
+    },
+    {
+      "eq": "61/1/r32.v1 = 61/1/r24.v1 + #3,539.00 + #17,881.36 + 61/1/r27-31.v1",
+      "replaces": "the column walk summed the department without its three forward/transfer lines",
+      "why": "p61 Fire Department: APPROPRIATED FORWARD subtotal $465,022.65 = the $510.87 fwd, $3,539.00 mrt and $17,881.36 rft lines printed above the department (the last two in the page's text read, lines 94 and 96, which Textract's table did not hold) + the five department lines"
+    },
+    {
+      "eq": "61/1/r39.v1 = #4,019.51 + 61/1/r37-38.v1",
+      "replaces": "the column walk summed the department without its rft line",
+      "why": "p61 Comp. Radio Watch Personnel: APPROPRIATED FORWARD subtotal $177,945.51 = the $4,019.51 rft line printed above it (page text read; not in Textract's table) + Payroll + Other Expenses"
+    },
+    {
+      "eq": "61/1/r44.v1 = #313.67 + 61/1/r41-43.v1",
+      "replaces": "the column walk summed the department without its rft line",
+      "why": "p61 Animal Control Officer: APPROPRIATED FORWARD subtotal $24,130.67 = the $313.67 rft line printed above it (page text read; not in Textract's table) + Payroll + Care & Custody + Other Expenses"
+    },
+    {
+      "eq": "61/1/r50.v1 = #1,757.00 + 61/1/r46-49.v1",
+      "replaces": "the column walk summed the department without its mrt line",
+      "why": "p61 Building Inspector: APPROPRIATED FORWARD subtotal $103,054.00 = the $1,757.00 mrt line printed above it (page text read; not in Textract's table) + the four department lines"
+    },
+    {
+      "eq": "62/1/r42.v1 = #4,017.53 + #35,000.00 + 62/1/r41.v1",
+      "replaces": "Textract's table holds Snow Removal Payroll's $4,017.53 rft, $35,000.00 and $35,000.00 in one cell (only $38,743.65 parses), so the column walk and the blank-balance row check read the department without them",
+      "why": "p62 Snow Removal: APPROPRIATED FORWARD subtotal $167,764.76 = the $4,017.53 rft line + Payroll $35,000.00 + Other Expenses (the first two quoted from the page's text read)"
+    },
+    {
+      "eq": "62/1/r42.v2 = #35,000.00 + 62/1/r41.v2",
+      "replaces": "Textract's table holds Snow Removal Payroll's $4,017.53 rft, $35,000.00 and $35,000.00 in one cell (only $38,743.65 parses), so the column walk and the blank-balance row check read the department without them",
+      "why": "p62 Snow Removal: TOTAL FUNDS AVAILABLE subtotal $167,764.76 = Payroll $35,000.00 (quoted from the page's text read) + Other Expenses"
+    },
+    {
+      "eq": "62/1/r42.v3 = 62/1/r40.v1 + 62/1/r41.v3",
+      "replaces": "Textract's table holds Snow Removal Payroll's $4,017.53 rft, $35,000.00 and $35,000.00 in one cell (only $38,743.65 parses), so the column walk and the blank-balance row check read the department without them",
+      "why": "p62 Snow Removal: TOTAL EXPENDED subtotal $167,764.76 = Payroll $38,743.65 + Other Expenses $129,021.11; funds equal expended, so the blank BALANCE TO REVENUE is zero for the department"
+    },
+    {
+      "eq": "61/1/r32.v2 = 61/1/r27-31.v2",
+      "why": "p61 Fire Department: TOTAL FUNDS AVAILABLE subtotal $465,022.65 = the five department lines"
+    },
+    {
+      "eq": "61/1/r32.v3 = 61/1/r27-31.v3",
+      "why": "p61 Fire Department: TOTAL EXPENDED subtotal $464,522.65 = the five department lines"
+    },
+    {
+      "eq": "61/1/r50.v2 = 61/1/r46-49.v2",
+      "why": "p61 Building Inspector: TOTAL FUNDS AVAILABLE subtotal $103,054.00 = the four department lines"
+    },
+    {
+      "eq": "75/1/r31 = 75/1/r21.vL + 75/1/r23-29.vL - #4,331.81 - #157,869.84",
+      "replaces": "the column walk summed Adjusted Total over the funds without the GRAND TOTALS line and its two deductions",
+      "why": "p75: Adjusted Total $2,231,306.40 = GRAND TOTALS ending cash $2,393,508.05 (SUBTOTALS + the seven funds printed below it) less the two lines printed under it, FY07 SRF Arts Lottery ($4,331.81) and FY07 SRF Sale of Lots ($157,869.84), quoted from the page's text read"
+    },
+    {
+      "eq": "75/1/r21.vL = 75/1/r21.v1 + 75/1/r21.v2 + 75/1/r21.v3 + 75/1/r21.v5 + 75/1/r21.v6 + 75/1/r21.v7",
+      "why": "p75 SUBTOTALS (all the funds of p74-75): FY 07 ENDING CASH VALUE = BEGIN BAL PRINCIPAL + BEGIN BAL EARNINGS + CONTRIB TO PRINCIPAL + FY 07 NET EARNINGS + DISBURSEMENTS + TRANS. OF EARNINGS (REALIZED G/L is not added, as on every fund line that closes) -- the row identity, restated so the Adjusted Total identity cannot re-decide it"
+    }
+  ],
+  "row_identity_skip": [
+    "75/1/23",
+    "75/1/24",
+    "75/1/25",
+    "75/1/28",
+    "75/1/29",
+    "75/1/31"
+  ],
+  "row_identity_skip_why": "p75's closing block (STABILIZATION FUND, ARTS LOTTERY, PLAYGROUND TRUST, the two PBHG funds) prints no earnings columns, and `Adjusted Total` prints only an ending value, so the trust row identity cannot be read off these rows; their ending values are checked by the declared GRAND TOTALS / Adjusted Total identity instead (30 October 2026)",
+  "wage_dash_zero": true,
+  "wage_dash_zero_why": "p118: the payroll prints a zero wage as `$ -`; the LINES read prints the dash as a line `-` of its own, counted as that zero by the coverage check, and a witnessed `$ -` counts the same (30 October 2026)"
 }

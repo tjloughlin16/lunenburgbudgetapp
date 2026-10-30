@@ -487,6 +487,361 @@
     {
       "eq": "139/1/r5.v1 = #5979.66 + #9840.65 + #7084.50 + #3925.00 + #20.00",
       "why": "p139: Athletic Account, balance 7/1/83 + receipts printed in the description = 26,849.81"
+    },
+    {
+      "eq": "59/1/r26.c2 = #20000.00",
+      "why": "p59: Sanitary Landfill Loan: funds available 20,000.00 = total expended 20,000.00, Amount Expended and Total Expended printed side by side and read into one cell `20,000.00 20,000.00`; no balance printed",
+      "replaces": "the expended cell holds two figures (Amount Expended and Total Expended), which the row identity cannot read"
+    },
+    {
+      "eq": "59/1/r27.c2 = #8820.00",
+      "why": "p59: Interest Sanitary Landfill: funds available 8,820.00 = total expended 8,820.00, Amount Expended and Total Expended printed side by side and read into one cell `8,820.00 8,820.00`; no balance printed",
+      "replaces": "the expended cell holds two figures (Amount Expended and Total Expended), which the row identity cannot read"
+    },
+    {
+      "eq": "138/1/r4.c3 = 138/1/r6.c3 + 138/1/r7.c3",
+      "why": "p138 (FY-84 appropriation): the series total printed in parentheses, 1000 Administration, is its lines"
+    },
+    {
+      "eq": "138/1/r8.c3 = 138/1/r10.c3 + 138/1/r11.c3",
+      "why": "p138 (FY-84 appropriation): the series total printed in parentheses, 2000 Instruction, is its lines"
+    },
+    {
+      "eq": "138/1/r12.c3 = 138/1/r14.c3 + 138/1/r16.c3",
+      "why": "p138 (FY-84 appropriation): the series total printed in parentheses, 3000 Other school services, is its lines"
+    },
+    {
+      "eq": "138/1/r18.c3 = 138/1/r20.c3 + 138/1/r22.c3",
+      "why": "p138 (FY-84 appropriation): the series total printed in parentheses, 4000 Operation and maintenance, is its lines"
+    },
+    {
+      "eq": "138/1/r26.c3 = 138/1/r28.c3 + 138/1/r30.c3 + 138/1/r32.c3 + 138/1/r34.c3",
+      "why": "p138 (FY-84 appropriation): the series total printed in parentheses, 7000 Capital outlay, is its lines"
+    },
+    {
+      "eq": "138/1/r36.c3 = 138/1/r4.c3 + 138/1/r8.c3 + 138/1/r12.c3 + 138/1/r18.c3 + 138/1/r26.c3",
+      "why": "p138 (FY-84 appropriation): BUDGET REQUEST TO TOWN = the five series totals"
+    },
+    {
+      "eq": "138/1/r4.c4 = 138/1/r6.c4 + 138/1/r7.c4",
+      "why": "p138 (budget amendment): the series total printed in parentheses, 1000 Administration, is its lines"
+    },
+    {
+      "eq": "138/1/r8.c4 = 138/1/r10.c4 + 138/1/r11.c4",
+      "why": "p138 (budget amendment): the series total printed in parentheses, 2000 Instruction, is its lines"
+    },
+    {
+      "eq": "138/1/r12.c4 = 138/1/r14.c4 + 138/1/r16.c4",
+      "why": "p138 (budget amendment): the series total printed in parentheses, 3000 Other school services, is its lines"
+    },
+    {
+      "eq": "138/1/r18.c4 = 138/1/r20.c4 + 138/1/r22.c4",
+      "why": "p138 (budget amendment): the series total printed in parentheses, 4000 Operation and maintenance, is its lines"
+    },
+    {
+      "eq": "138/1/r26.c4 = 138/1/r28.c4 + 138/1/r30.c4 + 138/1/r32.c4 + 138/1/r34.c4",
+      "why": "p138 (budget amendment): the series total printed in parentheses, 7000 Capital outlay, is its lines"
+    },
+    {
+      "eq": "138/1/r36.c4 = 138/1/r4.c4 + 138/1/r8.c4 + 138/1/r12.c4 + 138/1/r18.c4 + 138/1/r26.c4",
+      "why": "p138 (budget amendment): BUDGET REQUEST TO TOWN = the five series totals"
+    },
+    {
+      "eq": "138/1/r4.c6 = 138/1/r6.c6 + 138/1/r7.c6",
+      "why": "p138 (FY-85 appropriation): the series total printed in parentheses, 1000 Administration, is its lines"
+    },
+    {
+      "eq": "138/1/r8.c6 = 138/1/r10.c6 + 138/1/r11.c6",
+      "why": "p138 (FY-85 appropriation): the series total printed in parentheses, 2000 Instruction, is its lines"
+    },
+    {
+      "eq": "138/1/r12.c6 = 138/1/r14.c6 + 138/1/r16.c6",
+      "why": "p138 (FY-85 appropriation): the series total printed in parentheses, 3000 Other school services, is its lines"
+    },
+    {
+      "eq": "138/1/r18.c6 = 138/1/r20.c6 + 138/1/r22.c6",
+      "why": "p138 (FY-85 appropriation): the series total printed in parentheses, 4000 Operation and maintenance, is its lines"
+    },
+    {
+      "eq": "138/1/r26.c6 = 138/1/r28.c6 + 138/1/r30.c6 + 138/1/r32.c6 + 138/1/r34.c6",
+      "why": "p138 (FY-85 appropriation): the series total printed in parentheses, 7000 Capital outlay, is its lines"
+    },
+    {
+      "eq": "138/1/r36.c6 = 138/1/r4.c6 + 138/1/r8.c6 + 138/1/r12.c6 + 138/1/r18.c6 + 138/1/r26.c6",
+      "why": "p138 (FY-85 appropriation): BUDGET REQUEST TO TOWN = the five series totals"
+    },
+    {
+      "eq": "138/1/r58.c3 = 138/1/r52.c3 + 138/1/r54.c3 + 138/1/r56.c3",
+      "why": "p138 (FY-84 appropriation): the breakdown by budget category, salaries + expenses + capital outlay = its printed total"
+    },
+    {
+      "eq": "138/1/r58.c4 = 138/1/r52.c4 + 138/1/r54.c4 + 138/1/r56.c4",
+      "why": "p138 (budget amendment): the breakdown by budget category, salaries + expenses + capital outlay = its printed total"
+    },
+    {
+      "eq": "138/1/r58.c6 = 138/1/r52.c6 + 138/1/r54.c6 + 138/1/r56.c6",
+      "why": "p138 (FY-85 appropriation): the breakdown by budget category, salaries + expenses + capital outlay = its printed total"
+    },
+    {
+      "eq": "138/1/r58.c5 = 138/1/r52.c5 + 138/1/r54.c5 + 138/1/r56.c5",
+      "why": "p138 (FY-84 expended): the breakdown by budget category, salaries + expenses + capital outlay = its printed total"
+    },
+    {
+      "eq": "138/1/r52.c3 = 138/1/r6.c3 + 138/1/r10.c3 + 138/1/r14.c3 + 138/1/r20.c3",
+      "why": "p138 (FY-84 appropriation): category Salaries = the four series salaries lines"
+    },
+    {
+      "eq": "138/1/r54.c3 = 138/1/r7.c3 + 138/1/r11.c3 + 138/1/r16.c3 + 138/1/r22.c3",
+      "why": "p138 (FY-84 appropriation): category Expenses = the four series expenses lines"
+    },
+    {
+      "eq": "138/1/r56.c3 = 138/1/r26.c3",
+      "why": "p138 (FY-84 appropriation): category Capital Outlay = the 7000 series total"
+    },
+    {
+      "eq": "138/1/r58.c3 = 138/1/r36.c3",
+      "why": "p138 (FY-84 appropriation): the categories total = BUDGET REQUEST TO TOWN"
+    },
+    {
+      "eq": "138/1/r52.c4 = 138/1/r6.c4 + 138/1/r10.c4 + 138/1/r14.c4 + 138/1/r20.c4",
+      "why": "p138 (budget amendment): category Salaries = the four series salaries lines"
+    },
+    {
+      "eq": "138/1/r54.c4 = 138/1/r7.c4 + 138/1/r11.c4 + 138/1/r16.c4 + 138/1/r22.c4",
+      "why": "p138 (budget amendment): category Expenses = the four series expenses lines"
+    },
+    {
+      "eq": "138/1/r56.c4 = 138/1/r26.c4",
+      "why": "p138 (budget amendment): category Capital Outlay = the 7000 series total"
+    },
+    {
+      "eq": "138/1/r58.c4 = 138/1/r36.c4",
+      "why": "p138 (budget amendment): the categories total = BUDGET REQUEST TO TOWN"
+    },
+    {
+      "eq": "138/1/r52.c6 = 138/1/r6.c6 + 138/1/r10.c6 + 138/1/r14.c6 + 138/1/r20.c6",
+      "why": "p138 (FY-85 appropriation): category Salaries = the four series salaries lines"
+    },
+    {
+      "eq": "138/1/r54.c6 = 138/1/r7.c6 + 138/1/r11.c6 + 138/1/r16.c6 + 138/1/r22.c6",
+      "why": "p138 (FY-85 appropriation): category Expenses = the four series expenses lines"
+    },
+    {
+      "eq": "138/1/r56.c6 = 138/1/r26.c6",
+      "why": "p138 (FY-85 appropriation): category Capital Outlay = the 7000 series total"
+    },
+    {
+      "eq": "138/1/r58.c6 = 138/1/r36.c6",
+      "why": "p138 (FY-85 appropriation): the categories total = BUDGET REQUEST TO TOWN"
+    },
+    {
+      "eq": "138/1/r52.c5 = 138/1/r6.c5 + 138/1/r10.c5 + 138/1/r14.c5 + 138/1/r20.c5 + #79,818.04",
+      "why": "p138 (FY-84 expended): category Salaries `$3,191,956.85*` = the four series salaries lines + the $79,818.04 placed in escrow for summer 1984 salaries, as its footnote prints (`*Includes Escrow`)"
+    },
+    {
+      "eq": "138/1/r54.c5 = 138/1/r7.c5 + 138/1/r11.c5 + 138/1/r16.c5 + 138/1/r22.c5",
+      "why": "p138 (FY-84 expended): category Expenses = the four series expenses lines"
+    },
+    {
+      "eq": "138/1/r56.c5 = 138/1/r28-34.c5",
+      "why": "p138 (FY-84 expended): category Capital Outlay = the four 7000-series lines"
+    },
+    {
+      "eq": "138/1/r42.c5 = 138/1/r38.c5 + #79,818.04",
+      "why": "p138 (FY-84 expended): expenditures 7/1/83-8/31/84 = expenditures 7/1/83-6/30/84 + `+ 79,818.04` placed in escrow"
+    },
+    {
+      "eq": "138/1/r58.c5 = 138/1/r42.c5",
+      "why": "p138 (FY-84 expended): the categories total = expenditures 7/1/83-8/31/84"
+    },
+    {
+      "eq": "138/1/r48.c3 = 138/1/r36.c3 + #12,146.63",
+      "why": "p138 (FY-84 appropriation): $3,969,646.63 = BUDGET REQUEST TO TOWN + `+ 12,146.63` OVERDRAFT/DEFICIT, FY-84 BUDGET"
+    },
+    {
+      "eq": "138/1/r48.c4 = 138/1/r36.c4 + #12,146.63",
+      "why": "p138 (budget amendment): $3,969,646.63 = BUDGET REQUEST TO TOWN + `+ 12,146.63` OVERDRAFT/DEFICIT, FY-84 BUDGET"
+    }
+  ],
+  "colon_heading_subtotals": true,
+  "stacked_pairs_wide": true,
+  "debt_label_columns": true,
+  "receipts_unlabelled_items": true,
+  "row_identity_tolerance": true,
+  "stacked_rows": [
+    {
+      "row": "42/1/12",
+      "lines": {
+        "1": [
+          "",
+          "Farm Animal, Machinery, Equipment"
+        ],
+        "3": [
+          "256,550.98",
+          ""
+        ]
+      }
+    },
+    {
+      "row": "42/1/28",
+      "lines": {
+        "1": [
+          "",
+          "Added Costs:"
+        ],
+        "3": [
+          "6,615.39",
+          ""
+        ],
+        "4": [
+          "Sidewalks and Grounds - Transfer",
+          "Wakefield Scholarship - Transfer"
+        ],
+        "5": [
+          "300.00",
+          "200.00"
+        ]
+      }
+    },
+    {
+      "row": "76/3/14",
+      "lines": {
+        "1": [
+          "Dutch Elm Nulsance Control",
+          "Tree Warden Administration"
+        ],
+        "2": [
+          "8,000.00",
+          "5,000.00"
+        ]
+      }
+    },
+    {
+      "row": "138/1/3",
+      "lines": {
+        "2": [
+          "Salaries",
+          "Expenses"
+        ]
+      }
+    },
+    {
+      "row": "138/1/5",
+      "lines": {
+        "2": [
+          "Salaries",
+          "Expenses"
+        ]
+      }
+    }
+  ],
+  "text_cells": [
+    "138/1/2/1",
+    "138/1/4/1",
+    "138/1/6/1",
+    "138/1/9/1",
+    "138/1/12/1",
+    "138/1/14/1",
+    "138/1/15/1",
+    "138/1/16/1",
+    "138/1/17/1"
+  ],
+  "cell_readings": [
+    {
+      "cell": "138/1/2/3",
+      "textract": "($108,346.)",
+      "read_as": "$108,346.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/2/4",
+      "textract": "($108,346.)",
+      "read_as": "$108,346.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/2/6",
+      "textract": "($126,330.)",
+      "read_as": "$126,330.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/4/3",
+      "textract": "($3,054,870.)",
+      "read_as": "$3,054,870.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/4/4",
+      "textract": "($3,056,374.)",
+      "read_as": "$3,056,374.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/4/6",
+      "textract": "($3,382,633.)",
+      "read_as": "$3,382,633.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/6/3",
+      "textract": "($267,039.)",
+      "read_as": "$267,039.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/6/4",
+      "textract": "($266,430.97)",
+      "read_as": "$266,430.97",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/6/6",
+      "textract": "($289,404.)",
+      "read_as": "$289,404.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/9/3",
+      "textract": "($518,370.)",
+      "read_as": "$518,370.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/9/4",
+      "textract": "($517,851.30)",
+      "read_as": "$517,851.30",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/9/6",
+      "textract": "($550,158.)",
+      "read_as": "$550,158.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/13/3",
+      "textract": "($ 8,875.)",
+      "read_as": "$8,875.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/13/4",
+      "textract": "($ 8,497.73)",
+      "read_as": "$8,497.73",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/13/6",
+      "textract": "($ 18,975.)",
+      "read_as": "$18,975.",
+      "why": "p138 prints each series total in parentheses above its lines; the figure is their sum (e.g. 1000 Administration 91,046 + 17,300 = 108,346), a positive total, not a negative"
+    },
+    {
+      "cell": "138/1/29/5",
+      "textract": "$3,969,646.63 (*Includes Escrow)",
+      "read_as": "$3,969,646.63",
+      "why": "the footnote `(*Includes Escrow)` prints right of the figure and Textract joined it into the cell; the figure is the first token"
     }
   ]
 }

@@ -48,8 +48,23 @@ def setup(edition):
     # the edition's opt-ins, exactly as read_report_tables.build() sets them
     R.OPTS.clear()
     R.OPTS.update(k for k, v in ed.items() if v is True)
+    # the 1991-2010 close-out's opt-ins that change what the checks see (30 October 2026): the
+    # row-identity tolerances, the debt pages exempt from the row total, figures re-placed by
+    # position, figures split out of a label cell, and cells read as printed -- in build()'s order
+    R.DEBT_ROW_TOL[0] = Decimal(str(ed.get('rounding_tolerance_usd', 0))) if 'debt_row_totals' in R.OPTS else Decimal(0)
+    R.ROW_TOL[0] = Decimal(str(ed.get('rounding_tolerance_usd', 0))) if 'row_identity_tolerance' in R.OPTS else Decimal(0)
+    R.DEBT_ROW_SKIP.clear()
+    R.DEBT_ROW_SKIP.update(ed.get('debt_row_totals_skip') or ())
     R.apply_calendar_repairs(tables)
+    if ed.get('rebuild_by_position'):
+        R.rebuild_by_position(stem, tables, ed['rebuild_by_position'])
+        R.apply_calendar_repairs(tables)
+    if ed.get('label_figure_split'):
+        R.split_label_figures(tables, ed['label_figure_split'])
     R.apply_witnessed_cells(d, tables)
+    if ed.get('cell_readings'):
+        import declared_identities
+        declared_identities.apply_cell_readings(ed['cell_readings'], tables, V.parse)
     if 'stacked_pairs' in R.OPTS:
         tables = R.split_stacked_pairs(m_rows, tables)
     R.split_list_total_cells(m_rows, tables)

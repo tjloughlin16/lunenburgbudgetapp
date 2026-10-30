@@ -187,7 +187,9 @@ def write_out(path, sha, feature):
     stem = Path(path).stem
     cells, lines = [], []
     best = {}
-    for f in ('text', 'tables'):                # tables written last, so it wins where both exist
+    # tables written last, so it wins where both exist; a `tables-reread` (a second request for a
+    # page whose grid came back wrong, sent as a rendered image) wins over both
+    for f in ('text', 'tables', 'tables-reread'):
         for cp in (M.CACHE / sha).glob('p*-%s.json' % f):
             best[int(cp.stem.split('-')[0][1:])] = cp
     for page, cp in sorted(best.items()):

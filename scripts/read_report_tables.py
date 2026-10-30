@@ -139,7 +139,13 @@ IDENTITIES = {
                                           (1, 'TAX TITLE')]),
                             # 1991-1999 print NO adjustments column, and 1992 heads `REFUND`
                             ('BALANCES', [(1, 'FORWARD'), (1, 'COMMIT'), (1, 'REFUND'), (1, 'PAYMENTS'),
-                                          (1, 'ABATEMENTS'), (1, 'TAX TITLE')], {'absent': ['ADJUSTMENTS']})],
+                                          (1, 'ABATEMENTS'), (1, 'TAX TITLE')], {'absent': ['ADJUSTMENTS']}),
+                            # 1989 p41 prints no tax title column either (`TAX | FORWARD | COMMITMENTS |
+                            # REFUNDS | PAYMENTS | ABATEMENTS | BALANCES`, payments and abatements in
+                            # parentheses). An edition opt-in (`"collector_no_tax_title": true`, 1971-1990 close-out)
+                            ('BALANCES', [(1, 'FORWARD'), (1, 'COMMIT'), (1, 'REFUND'), (1, 'PAYMENTS'),
+                                          (1, 'ABATEMENTS')], {'absent': ['ADJUSTMENTS', 'TAX TITLE'],
+                                                               'opt': 'collector_no_tax_title'})],
     # 1974-1980: the Tax Collector prints every column POSITIVE (`Commitments | Refunds | Payments |
     # Abatements | Tax Titles ... | Balances`), so payments, abatements and tax titles are taken
     # away. Applied only where a 1971-1980 map names this family (30 Oct 2026); no other edition
@@ -162,6 +168,11 @@ IDENTITIES = {
                           # of the target
                           ('^ADJUSTMENT$', [(1, 'POS:-1'), (-1, 'POS:-2')], {'absent': ['ADDITIONAL']})],
     'budget-amendment-proposed': [('^NEW', [(1, '^ADDITIONAL'), (1, 'VOTE|CURRENT APPROP')])],
+    # 1968 p25, the Tax Collector's table `Commitments | Refunds | TAXES Payments | Abatements | Tax
+    # Titles | Balance`: payments, abatements and tax titles printed POSITIVE, so they are taken
+    # off. An edition opt-in (`"collector_balance_identity": true`)
+    'collector-balances': [('^BALANCE$', [(1, 'COMMITMENTS'), (1, 'REFUNDS'), (-1, 'PAYMENTS'), (-1, 'ABATEMENTS'),
+                                          (-1, 'TAX TITLES')], {'opt': 'collector_balance_identity', 'needs': ['COMMITMENTS']})],
     # 1959-1967 Welfare Department table: `Expended 1965 | Reimbursements State, Federal, &
     # Recoveries | Net Cost To Town`, the net printed beside the two it is the difference of, on
     # every program's row and on the totals row (`* Families`). An edition opt-in
@@ -280,6 +291,12 @@ CALENDAR_REPAIRS = [
      lambda m: m.group(1), 'accountant_marks_before'),
     ('accountant mark after the figure (R, A, F, SR)', re.compile(r'(\$?\(?[\d,]+\.\d{2}\)?)(?i:r|a|f|sr|rs)\.?'),
      lambda m: m.group(1), 'accountant_marks_wide'),
+    # `18,418.24 Rcts` (receipts), `5,366.00TF` (transferred, 1982 p134, 1985 p74) and `.04 F` (cents with no leading zero, then the mark): 1973
+    # pp58-60, whose Funds Available column then sums to its printed TOTAL SPECIAL ARTICLES,
+    # $578,704.75, to the cent. An edition opt-in (`"accountant_marks_rcts": true`, 1971-1990 close-out)
+    ('accountant mark after the figure (Rcts, or cents with no leading zero)',
+     re.compile(r'(\$?\(?[\d,]*\.\d{2}\)?)(?i:rcts|r|a|f|sr|rs|rf|tr|tf)\.?'),
+     lambda m: re.sub(r'^(\$?\(?)\.', r'\g<1>0.', m.group(1)), 'accountant_marks_rcts'),
     # `19,982.83Cr` (1977 p61, Snow Removal Expense): a deficit marked `Cr`, read as a negative
     ('Cr for a negative', re.compile(r'\$?([\d,]+\.\d{2})(?i:cr)\.?'), lambda m: '(%s)' % m.group(1),
      'accountant_marks_wide'),
@@ -295,6 +312,10 @@ CALENDAR_REPAIRS = [
     # out), which Textract returns as `22.47 | ED 22.47`: the mark printed AFTER the Amounts
     # Expended figure lands at the head of the Total Expended cell. Seen on the render (1962 p28
     # r33, `Purchase of Police Cruiser - 1961`). An edition opt-in (`"ed_mark": true`)
+    # `132.84 b` `379.28 di` `249.91c` `1,140.84i` `11,549.94 C` (1966 pp29-32, Balance Forward /
+    # Transferred In): a letter after the figure keying it to the schedule's note on where the money
+    # came from. An edition opt-in (`"letter_key_marks": true`)
+    ('note letter after the figure', re.compile(r'(\$?\(?[\d,]*\.\d{2}\)?)(?:[a-fiC]|di)'), lambda m: m.group(1), 'letter_key_marks'),
     ('ED mark carried into the next cell', re.compile(r'(?:ED)(\$?[\d,]+\.\d{2})'), lambda m: m.group(1), 'ed_mark'),
     # `+ 3,113.54` `+$1,223.` `*$671.` `+$870.*` `*20,000.00` (1959 p59, 1962 p108, 1963 pp87-89,
     # 1966 pp112-117): a printed `+` or a footnote `*` BEFORE the figure (`"signed_figures": true`).
@@ -631,8 +652,99 @@ def debt_row_total(names, cells):
 ROW_LABEL = ['']              # the row's label while row_identity runs (records()), for `skip_label`
 DEBT_ROW_TOL = [Decimal(0)]   # set by build() from the edition's rounding_tolerance_usd, debt_row_totals only
 DEBT_ROW_SKIP = set()         # `debt_row_totals_skip`: page/table whose TOTAL spans another page's years
+DEBT_GRAND_ELSEWHERE = set()  # `debt_grand_spans_pages`: page/table whose GRAND TOTALs cover another page's issues
+ROW_TOL = [Decimal(0)]        # `row_identity_tolerance`: the edition's rounding_tolerance_usd for row identities
 ROW_CTX = ['']                # the page/table records() is reading, for the skip above
 SUBTOTAL_BLOCKS = []          # (page, table, row, col, block rows, value): `unlabeled_subtotal_blocks`
+
+
+DEBT_KIND = [('GP', re.compile(r'^GRAND TOTAL PRINC', re.I)), ('GI', re.compile(r'^GRAND TOTAL INTER', re.I)),
+             ('TD', re.compile(r'^(?:TOTAL DE[BS]T|GRAND TOTAL)\W*$', re.I)), ('T', re.compile(r'^TOTAL\b', re.I)),
+             ('P', re.compile(r'\bPRINCIPAL\b(?!.*\bINTEREST\b)', re.I)), ('I', re.compile(r'\bINTEREST\b(?!.*\bPRINCIPAL\b)', re.I))]
+
+
+def debt_label_columns(m_rows, tables, checks, tol):
+    """THE DEBT REPAYMENT SCHEDULE'S COLUMN TOTALS, GROUPED BY THEIR PRINTED LABELS (an opt-in,
+    `"debt_label_columns": true`, 30 October 2026). The schedule prints each issue as a PRINCIPAL
+    line, an INTEREST line and a `TOTAL <issue>` line, then `GRAND TOTAL PRINCIPAL`, `GRAND TOTAL
+    INTEREST` and `TOTAL DEBT`. The validator's block walk (shared with the FY reviews) groups the
+    rows by position and sums `GRAND TOTAL INTEREST` over nothing on every such page. Here each
+    total row is checked against the rows its LABEL names, column by column: an issue total
+    against the principal and interest lines since the previous total, the grand principal
+    against every PRINCIPAL line, the grand interest against every INTEREST line, TOTAL DEBT
+    against the two grand totals. A row whose label names none of these is left out, and a total
+    whose block holds such a row with a figure in that column is not tested. These checks
+    REPLACE the validator's for every cell of the table."""
+    for m in m_rows:
+        if m.get('family') != 'debt-repayment-schedule':
+            continue
+        k = (int(m['page']), int(m['table']))
+        rows = tables.get(k)
+        if not rows:
+            continue
+        head, body = V.split_header(rows)
+        fc = V.figure_cols(body)
+        kinds = []
+        for r in body:
+            lab = r.label(fc)
+            kind = next((kd for kd, rx in DEBT_KIND if rx.search(lab)), None)
+            if kind is None and any(c in r.cells and r.cells[c].value is not None for c in fc):
+                kind = '?'
+            kinds.append((r, kind))
+        if not any(kd not in (None, '?') for _, kd in kinds):
+            # no labels on this table (2005 p73: the right half of a schedule printed across two
+            # pages by year, its labels on the left page): the validator's checks stand
+            continue
+        refs = {r.ref for r in rows}
+        for key in [x for x in checks if x[0] in refs]:
+            del checks[key]
+        names = _raw_names(head)
+        for c in fc:
+            def val(r):
+                x = r.cells.get(c)
+                return x.value if x is not None and x.value is not None else None
+            block, allp, alli, gp, gi = [], [], [], None, None
+            for r, kind in kinds:
+                v = val(r)
+                if kind in ('P', 'I', '?'):
+                    block.append((r, kind))
+                    (allp if kind == 'P' else alli if kind == 'I' else []).append(r)
+                    if kind == '?' and v is not None:
+                        allp.append(None)
+                    continue
+                if kind not in ('T', 'GP', 'GI', 'TD') or v is None:
+                    if kind == 'T':
+                        block = []
+                    continue
+                if kind == 'T':
+                    items = block
+                    block = []
+                elif kind == 'GP':
+                    items, gp = [(x, 'P') for x in allp], r
+                elif kind == 'GI':
+                    items, gi = [(x, 'I') for x in alli], r
+                else:
+                    items = [(x, 'G') for x in (gp, gi) if x is not None]
+                    if gp is None or gi is None:
+                        continue
+                if kind in ('GP', 'GI') and '%d/%d' % k in DEBT_GRAND_ELSEWHERE:
+                    # A GRAND TOTAL COVERING ANOTHER PAGE'S ISSUES TOO (`edition.json`:
+                    # `"debt_grand_spans_pages": ["31/1"]`, by eye; 1990 pp30-31): checked by the
+                    # edition's declared identities over both pages, not against this table alone
+                    continue
+                if any(x is None or (kd == '?' and val(x) is not None) for x, kd in items):
+                    continue
+                items = [(x, kd) for x, kd in items if val(x) is not None]
+                if not items:
+                    continue
+                got = sum((val(x) for x, _ in items), Decimal(0))
+                diff = v - got
+                status = 'closed' if diff == 0 else 'closed_tolerance' if abs(diff) <= tol else 'open'
+                chk = V.Check(page=r.page, ref=r.ref, label=r.label(fc), column=names.get(c, 'col %d' % c),
+                              printed=V.money(v), computed=V.money(got), difference=V.money(diff), status=status,
+                              items=[x.ref for x, _ in items], grouping='label', col=c)
+                for x in [y for y, _ in items] + [r]:
+                    checks[(x.ref, c)].append((status, chk, None))
 
 
 def add_subtotal_block_checks(tables, checks):
@@ -737,6 +849,14 @@ def row_identity(family, names, cells):
         got = sum((s * (cells[k].value if cells.get(k) is not None and cells[k].value is not None
                         else Decimal(0)) for s, k in ks), Decimal(0))
         ok = got == target_value
+        if not ok and 'row_identity_tolerance' in OPTS and abs(got - target_value) <= ROW_TOL[0]:
+            # the edition's dollar rounding tolerance (TJ, 29 Oct 2026) applied to a ROW's printed
+            # balance as it is to a column's printed total -- an opt-in, and worded with the same
+            # countable phrase (30 October 2026; whether it should reach row identities is TJ's call)
+            out.append((True, '%s = %s %s (printed differs by $%s)' % (
+                names[tk], ' '.join(('+' if s > 0 else '-') + names[k][:18] for s, k in ks),
+                V.TOLERANCE_PHRASE, money_abs(str(got - target_value)))))
+            continue
         out.append((ok, '%s%s %s %s' % (names[tk], ' (blank, read as 0)' if blank else '', '=' if ok else '!=',
                                         ' '.join(('+' if s > 0 else '-') + names[k][:18] for s, k in ks)
                                         + ('' if ok else ' (%s vs %s)' % (V.money(target_value), V.money(got))))
@@ -759,6 +879,16 @@ def apply_witness(d, tables):
     for k, v in seen.items():
         decs = {x[0] for x in v}
         out[k] = (decs.pop(), next(iter(v))) if len(decs) == 1 else ('undecided', next(iter(v)))
+    if json.load(open(os.path.join(d, 'edition.json'), encoding='utf-8')).get('witnessed_glyphs') is True:
+        # A GLYPH THE TEMPLATE SCORES LEFT UNDECIDED, settled by the CELL WITNESS (an opt-in,
+        # `"witnessed_glyphs": true`, 1991-2010 close-out, 30 Oct 2026; 2009 pp84-88): where
+        # `witnessed-cells.csv` names a wage cell whose Textract text the glyph witness could not
+        # decide, the blind reading there decides it -- for the cell and for the LINE coverage reads
+        for w in read_csv(os.path.join(d, 'witnessed-cells.csv')):
+            k = (int(w['page']), w['textract_text'].replace(' ', ''))
+            if k in out and out[k][0] == 'undecided':
+                _, (_, _, sd, sx) = out[k]
+                out[k] = ('witnessed', ('witnessed', w['corrected_text'].replace(' ', ''), sd, sx))
     for (p, t), rows in tables.items():
         for r in rows:
             for c in r.cells.values():
@@ -766,7 +896,11 @@ def apply_witness(d, tables):
                 if not hit:
                     continue
                 dec, (_, reading, sd, sx) = hit
-                if dec == '$' or dec == 'digit':
+                if dec == 'witnessed':
+                    c.value, c.places, _ = V.parse(reading)
+                    c.repair = ('glyph witness undecided (`$` %s, `%s` %s); the cell witness read `%s` '
+                                '(witnessed-cells.csv)' % (sd, c.text[0], sx, reading))
+                elif dec == '$' or dec == 'digit':
                     c.value, c.places, _ = V.parse(reading)
                     if reading != c.text.replace(' ', ''):
                         c.repair = ('glyph witness: Textract `%s`; its first glyph matches this page\'s `$` '
@@ -777,6 +911,161 @@ def apply_witness(d, tables):
                                    'figures, and its first glyph could not be decided between `$` (%s) and '
                                    '`%s` (%s) -- `%s` or `$%s`' % (c.text, sd, c.text[0], sx, c.text, c.text[1:]))
     return out
+
+
+POS_FIGURE = re.compile(r'^[\$S(<]*\s?\(?\d[\d,.]*\d\)?[>*]?$|^\$?0$')
+
+
+def lines_table(stem, spec):
+    """A TABLE BUILT FROM TEXTRACT'S OWN WORDS WHERE ITS GRID MERGED PANELS (`edition.json`:
+    `"lines_tables": [{"page": 44, "table": 11, "box": [l, t, r, b], "cols": [0.316, 0.402, 0.489],
+    "why": ...}]`, by eye; 1971-1990 close-out). Side-by-side trust-fund ledgers (1973 p62, 1975 p83,
+    1988 p44) came back as one grid that put a donor's name beside another fund's figure, on the
+    first read and on a re-read. Here the panel is cut out by its BOX (fractions of the page, read
+    off the render), every WORD Textract returned inside it is placed in a printed line by its
+    centre (a word joins the line whose centre is within half the median word height), a money
+    word goes to the figure column whose RIGHT EDGE (`cols`, measured off the render) is nearest
+    its own, and the other words, left to right, are the line's label. Nothing is typed: every
+    figure and word is Textract's, only its row and column are ours, and each cell says so in
+    `repaired_cells`. The synthetic table number is the map's; it must not collide with a real one."""
+    import statistics
+    p = int(spec['page'])
+    sha = page_integrity.document(stem, {p})[0]
+    cache = page_integrity.CACHE / sha
+    src = next(f for f in ('tables-reread', 'tables', 'text') if (cache / ('p%03d-%s.json' % (p, f))).exists())
+    blocks = json.loads((cache / ('p%03d-%s.json' % (p, src))).read_text())['Blocks']
+    l, t, r, b = spec['box']
+    cols = list(spec['cols'])
+    words = []
+    for w in blocks:
+        if w['BlockType'] != 'WORD':
+            continue
+        g = w['Geometry']['BoundingBox']
+        cx, cy = g['Left'] + g['Width'] / 2, g['Top'] + g['Height'] / 2
+        if l <= cx <= r and t <= cy <= b:
+            words.append((cy, g['Left'], g['Left'] + g['Width'], g['Height'], w['Text'], w.get('Confidence', 0.0)))
+    if not words:
+        raise SystemExit('lines_tables: p%d box %s holds no word' % (p, spec['box']))
+    tol = statistics.median(x[3] for x in words) / 2
+    lines_ = []
+    for wd in sorted(words):
+        if lines_ and abs(wd[0] - statistics.mean(x[0] for x in lines_[-1])) <= tol:
+            lines_[-1].append(wd)
+        else:
+            lines_.append([wd])
+    money = re.compile(r'^\$?\(?(?:\d{1,3}(?:,?\d{3})*)?\.\d{2}\)?$')     # `.27`: cents, no leading zero
+    out = []
+    for n, ln in enumerate(lines_, 1):
+        cells = {}
+        lab = [x for x in sorted(ln, key=lambda x: x[1]) if not money.match(x[4])]
+        if lab:
+            cells[1] = V.Cell(' '.join(x[4] for x in lab), min(x[5] for x in lab))
+        for x in ln:
+            if not money.match(x[4]):
+                continue
+            c = 2 + min(range(len(cols)), key=lambda i: abs(x[2] - cols[i]))
+            if c in cells:
+                raise SystemExit('lines_tables: p%d two figures in one column on the line `%s`'
+                                 % (p, ' '.join(y[4] for y in ln)))
+            cell = V.Cell(x[4], x[5], *V.parse(re.sub(r'^(\$?\(?)\.', r'\g<1>0.', x[4]))[:3])
+            cell.repair = 'lines_tables: Textract word `%s` placed by its position (%s read of p%d): %s' % (
+                x[4], src, p, spec['why'])
+            cells[c] = cell
+        out.append(V.Row(p, n, cells, int(spec['table'])))
+    return out
+
+
+def rebuild_by_position(stem, tables, specs):
+    """FIGURES PLACED BY WHERE THEY ARE PRINTED, NOT BY TEXTRACT'S ROW INDEX (an opt-in,
+    `"rebuild_by_position": ["36/1"]`, page/table, by eye; 30 October 2026). On a page printed
+    sideways Textract can drop a whole column into the row below (1992 p36: every TOTAL one line
+    low, `TOTAL WELL SITES STUDY | ... | $458`, the INTEREST line's figure). CLAUDE.md 13b's
+    recipe, on Textract's own geometry: the label cells fix each ROW's position along the page,
+    the header cells fix each COLUMN's, and every figure WORD of the table is placed in the row
+    and column whose centres are nearest -- a word further than half the row pitch from every
+    label is left out. Labels and headers keep Textract's reading; every figure cell is replaced,
+    and says so in `repaired_cells`."""
+    import statistics
+    from reconcile_totals import cell_boxes, cache_blocks
+    for spec in specs:
+        p, t = (int(x) for x in spec.split('/'))
+        rows = tables.get((p, t))
+        if not rows:
+            continue
+        sha = page_integrity.document(stem, {p})[0]
+        blocks = cache_blocks(sha, p)
+        boxes = cell_boxes(blocks)
+        centre = {k: (b['Left'] + b['Width'] / 2, b['Top'] + b['Height'] / 2) for k, b in boxes.items() if k[0] == t}
+        head, body = V.split_header(rows)
+        fc = set(V.figure_cols(body))
+        labc = min(c for r in body for c in r.cells if c not in fc)
+        lab = {r.row: centre[(t, r.row, labc)] for r in body if r.cells.get(labc) and r.cells[labc].text.strip()
+               and (t, r.row, labc) in centre}
+        if len(lab) < 3:
+            continue
+        xs, ys = [v[0] for v in lab.values()], [v[1] for v in lab.values()]
+        ax = 0 if (max(xs) - min(xs)) > (max(ys) - min(ys)) else 1        # the axis rows run along
+        cols = {}
+        for c in fc:
+            vals = [centre[(t, r.row, c)][1 - ax] for r in body if (t, r.row, c) in centre
+                    and r.cells.get(c) and r.cells[c].text.strip()]
+            if vals:
+                cols[c] = statistics.median(vals)
+        order = sorted(lab.items(), key=lambda kv: kv[1][ax])
+        pitch = statistics.median(abs(order[i + 1][1][ax] - order[i][1][ax]) for i in range(len(order) - 1))
+        # the label column's right-hand edge along the row: a digit word nearer it than any figure
+        # column is part of a label
+        lv = [(boxes[(t, r.row, labc)]['Left'] + boxes[(t, r.row, labc)]['Width'], boxes[(t, r.row, labc)]['Top']
+               + boxes[(t, r.row, labc)]['Height'])[1 - ax] for r in body if (t, r.row, labc) in boxes]
+        labv = statistics.median(lv) if lv else None
+        # THE ROTATION, MEASURED (13b rule 1): each figure word's nearest neighbour further along
+        # the row, and the median slope between them; every position is then read as
+        # u - slope * v, in which a printed row shares one value however the scan was turned
+        figw = []
+        for w in blocks:
+            if w['BlockType'] == 'WORD' and POS_FIGURE.match(w['Text'].strip()):
+                g = w['Geometry']['BoundingBox']
+                figw.append(((g['Left'] + g['Width'] / 2, g['Top'] + g['Height'] / 2)[ax],
+                             (g['Left'] + g['Width'] / 2, g['Top'] + g['Height'] / 2)[1 - ax]))
+        slopes = []
+        for u, v in figw:
+            nb = [(v2 - v, u2 - u) for u2, v2 in figw if v2 - v > pitch and abs(u2 - u) < pitch / 2]
+            if nb:
+                dv, du = min(nb)
+                slopes.append(du / dv)
+        slope = statistics.median(slopes) if len(slopes) >= 10 else 0.0
+        lab = {rn: tuple(x - slope * (v[1 - ax]) if i == ax else x for i, x in enumerate(v)) for rn, v in lab.items()}
+        tb = next(b for i, b in enumerate(x for x in blocks if x['BlockType'] == 'TABLE') if i == t - 1)
+        tbox = tb['Geometry']['BoundingBox']
+        placed = collections.defaultdict(list)
+        for w in blocks:
+            if w['BlockType'] != 'WORD' or not POS_FIGURE.match(w['Text'].strip()):
+                continue
+            g = w['Geometry']['BoundingBox']
+            cx, cy = g['Left'] + g['Width'] / 2, g['Top'] + g['Height'] / 2
+            if not (tbox['Left'] <= cx <= tbox['Left'] + tbox['Width'] and tbox['Top'] <= cy <= tbox['Top'] + tbox['Height']):
+                continue
+            pos = (cx, cy)
+            pos = tuple(x - slope * pos[1 - ax] if i == ax else x for i, x in enumerate(pos))
+            row, d = min(((rn, abs(pos[ax] - v[ax])) for rn, v in lab.items()), key=lambda x: x[1])
+            if d > pitch / 2:
+                continue
+            col = min(cols, key=lambda c: abs(pos[1 - ax] - cols[c]))
+            if labv is not None and abs(pos[1 - ax] - labv) < abs(pos[1 - ax] - cols[col]):
+                continue                     # a year or number inside a LABEL (`STREET BETTERMENTS 1989`)
+            placed[(row, col)].append((pos[ax], w['Text'], w.get('Confidence', 0)))
+        for r in body:
+            for c in fc:
+                old = r.cells.get(c)
+                ws = sorted(placed.get((r.row, c), []))
+                text = ' '.join(x[1] for x in ws)
+                if (old.text if old else '') == text:
+                    continue
+                v, places, bad = V.parse(text)
+                cell = V.Cell(text, min((x[2] for x in ws), default=0.0), v, places, bad)
+                cell.repair = ('rebuild_by_position: Textract put `%s` in this cell; the words printed at this '
+                               'row and column read `%s`' % (old.text if old else '', text))
+                r.cells[c] = cell
 
 
 LEAD_FIGURE = re.compile(r'^(\$\s?\(?\d[\d,]*\.\d{2}\)?)\s+(\S.*)$')
@@ -810,6 +1099,9 @@ def split_label_figures(tables, specs):
             r.cells = cells
 
 
+WITNESSED_DASHES = collections.Counter()   # page: cells the cell witness read as a printed `$ -`
+
+
 def apply_witnessed_cells(d, tables):
     """THE CELL WITNESS (scripts/witness_cell_crops.py, notes/process/ANNUAL-REPORT-CELL-WITNESS.md):
     a per-edition OPT-IN. If `witnessed-cells.csv` exists, each row names one cell whose Textract
@@ -818,9 +1110,12 @@ def apply_witnessed_cells(d, tables):
     `repaired_cells`. No file, no change. A row whose `textract_text` is not what the cell reads
     is an error, not a skip: the cache moved under the witness."""
     path = os.path.join(d, 'witnessed-cells.csv')
+    WITNESSED_DASHES.clear()
     if not os.path.exists(path):
         return
     for w in read_csv(path):
+        if re.fullmatch(r'\$?\s*-', w['corrected_text'].strip()):
+            WITNESSED_DASHES[int(w['page'])] += 1     # read by coverage under `wage_dash_zero`
         rows = tables.get((int(w['page']), int(w['table'])), [])
         cell = next((r.cells.get(int(w['col'])) for r in rows if r.row == int(w['row'])), None)
         if cell is None or cell.text != w['textract_text']:
@@ -922,16 +1217,92 @@ def apply_calendar_repairs(tables):
 # column's dollar sign, not a third figure (integration pass, 30 Oct 2026)
 PAIR = re.compile(r'^(\$?\s?\(?\d{1,3}(?:,\d{3})*\.?\)?)\s+(\$?\(?\d{1,3}(?:,\d{3})*\.?\)?)$')
 PRIN_INT = re.compile(r'PRINCIPAL\W+INTEREST', re.I)
+PAIR_WIDE = re.compile(r'^(\$?\s?\.?\(?\d{1,3}(?:[,.]\d{3})*(?:\.\d{2})?\.{0,2}\)?)\s+(\$?\s?\(?\d{1,3}(?:[,.]\d{3})*(?:\.\d{2})?\.{0,2}\)?)$')
+
+
+def split_stacked_rows(tables, refs):
+    """A ROW PRINTING TWO LINES IN EVERY CELL (`edition.json`: `"stacked_rows": ["78/1/3"]`,
+    page/table/row, by eye; 1971-1990 close-out). 1976 p78 prints the Middle School's two bond
+    issues one above the other inside one ruled row -- `9-15-67 6-20-69 | 1,340,000 40,000 |
+    1968-87 1970-73 | 4.2% 4.9% ...` -- and Textract returns one row. Every cell holding exactly
+    two whitespace-separated tokens gives its first to the upper line and its second to the lower;
+    a cell of one token (the label) stays on the upper. The table's rows are renumbered (Textract
+    row N -> 2N, the lower line 2N+1) and each split cell says so in `repaired_cells`. Nothing is
+    added: each half is a token the page prints, in its printed order.
+
+    An entry may instead be `{"row": "42/1/28", "lines": {"4": ["Sidewalks and Grounds - Transfer",
+    "Wakefield Scholarship - Transfer"], "1": ["", "Added Costs:"]}}`: for each named column the
+    upper and lower line's text, read by eye from Textract's own LINES, which must join (with a
+    space) to exactly the cell's text, or this refuses. An empty half leaves that line's cell blank
+    (1984 p42: a section subtotal printed on a line of its own, which Textract set on the row of the
+    next section's heading)."""
+    want = collections.defaultdict(set)
+    named = {}
+    for ref in refs:
+        lines_ = None
+        if isinstance(ref, dict):
+            ref, lines_ = ref['row'], ref['lines']
+        p_, t_, r_ = (int(x) for x in ref.split('/'))
+        want[(p_, t_)].add(r_)
+        if lines_:
+            named[(p_, t_, r_)] = {int(c): v for c, v in lines_.items()}
+    out = dict(tables)
+    for k, rs in want.items():
+        new = []
+        for r in tables[k]:
+            if r.row not in rs:
+                new.append(V.Row(r.page, r.row * 2, r.cells, r.table))
+                continue
+            up, lo = {}, {}
+            for c, x in r.cells.items():
+                halves = named.get((k[0], k[1], r.row), {}).get(c)
+                if halves is not None:
+                    if ' '.join(h for h in halves if h) != ' '.join(x.text.split()):
+                        raise SystemExit('stacked_rows: p%d t%d r%d c%d is not `%s`' % (k[0], k[1], r.row, c, ' '.join(halves)))
+                    for i, (dst, tok) in enumerate(((up, halves[0]), (lo, halves[1]))):
+                        if not tok:
+                            continue
+                        cell = V.Cell(tok, x.confidence, *V.parse(tok)[:3])
+                        cell.repair = 'stacked_rows: Textract row %d `%s` -> %s line `%s`' % (
+                            r.row, x.text, ('upper', 'lower')[i], tok)
+                        dst[c] = cell
+                    continue
+                toks = x.text.split()
+                toks = [t for t in toks if t != '$'] if len(toks) == 3 and toks[0] == '$' else toks
+                if len(toks) == 2:
+                    for i, (dst, tok) in enumerate(((up, toks[0]), (lo, toks[1]))):
+                        cell = V.Cell(tok, x.confidence, *V.parse(tok)[:3])
+                        cell.repair = 'stacked_rows: Textract row %d `%s` -> %s line `%s`' % (
+                            r.row, x.text, ('upper', 'lower')[i], tok)
+                        dst[c] = cell
+                else:
+                    up[c] = x
+            if not lo:
+                raise SystemExit('stacked_rows: p%d t%d r%d has no cell of two tokens' % (k[0], k[1], r.row))
+            new.append(V.Row(r.page, r.row * 2, up, r.table))
+            new.append(V.Row(r.page, r.row * 2 + 1, lo, r.table))
+        out[k] = new
+    return out
 
 
 def _pair(text):
     """(principal, interest) Cells' values from `20,000 3,780` / `1,210,000. 615,655.`, or None."""
     m = PAIR.match(text.strip())
+    if not m and 'stacked_pairs_wide' in OPTS:
+        # `$ 65,000.00 28,665.00` (cents), `$.65,000 20,475` (a speck read as a stop after the `$`),
+        # `2,945.. 1,000` (a doubled stop): the same pair, printed or scanned less cleanly
+        # (1976 p78, 1983 p55; an edition opt-in, `"stacked_pairs_wide": true`, 1971-1990 close-out)
+        m = PAIR_WIDE.match(text.strip())
     if not m:
         return None
     out = []
     for part in m.groups():
-        v, places, _ = V.parse(part.rstrip('.').replace('(', '').replace(')', '').replace(' ', ''))
+        part_ = re.sub(r'^\$\s?\.', '$', part) if 'stacked_pairs_wide' in OPTS else part
+        if 'stacked_pairs_wide' in OPTS and re.fullmatch(r'\$?\s?\d{1,3}(?:\.\d{3})+\.?', part_.strip()):
+            part_ = re.sub(r'\.(?=\d{3})', ',', part_)      # `1.365.`: full stops for the thousands comma (1984 p52)
+        v, places, _ = V.parse(re.sub(r'\.+$', '', part_).replace('(', '').replace(')', '').replace(' ', '')
+                               if 'stacked_pairs_wide' in OPTS else
+                               part.rstrip('.').replace('(', '').replace(')', '').replace(' ', ''))
         if v is None:
             return None
         out.append((part, -v if '(' in part else v, places))
@@ -1291,6 +1662,12 @@ def forward_lines_identity(recs):
             # forward line and its subtotal: 2001 p58's Snow Removal, whose subtotal's
             # APPROPRIATED leaves the `rft` out and whose AVAILABLE puts it in
             continue
+        if (pending and ap is not None and av is not None and ap in figs and av in figs
+                and figs[av].value == figs[ap].value and 'forward_lines_skip_own' in OPTS):
+            # an account whose AVAILABLE is its own APPROPRIATED carries no forward line, so the
+            # pending ones belong to a later line of the same group (1999 p66: `fwd 4,071.00` above
+            # Health Insurance, whose AVAILABLE is its $1,195,000.00 appropriation)
+            continue
         if pending and ap is not None and av is not None and ap in figs and av in figs:
             got = figs[ap].value + sum(p['figs'][0][1].value for p in pending)
             ok = got == figs[av].value
@@ -1328,6 +1705,11 @@ def records(m, tables, checks, edition, prev_header):
             # every figure is a bare year, and which holds at least as many text cells, is a label
             # column. An edition opt-in (`"year_labels": true`, 1971-1980 integration pass)
             fc -= {k for k in fc if _year_label_col(sub, k)}
+        if '%d/%d' % (p, t) in (edition.get('dollar_figure_tables') or ()):
+            # A TABLE WHOSE ONLY AMOUNTS SIT ON ONE ROW among rows of prose (1970 p132, an account
+            # set as a paragraph): named by eye (`edition.json`: `dollar_figure_tables`, page/table),
+            # a column holding a `$` figure is a figure column, as for a one-row table below
+            fc |= {k for rr in sub for k, c in rr.cells.items() if c.value is not None and '$' in c.text}
         if sum(1 for rr in sub if _nonempty(rr)) < 2:
             # A ONE-ROW TABLE has no column with two figures, so figure_cols found none and the
             # amount went into the label (1992 p52: `310 | Monty Tech Assessment | $8327.`). A
@@ -1401,6 +1783,12 @@ def records(m, tables, checks, edition, prev_header):
             ROW_CTX[0] = '%d/%d' % (p, t)
             ROW_LABEL[0] = label
             ident = row_identity(m['family'], gnames, cells)
+            if '%d/%d/%d' % (p, t, r.row) in (edition.get('row_identity_skip') or ()):
+                # AN ACCOUNT PRINTED OVER TWO LINES, its available funds on the first and its totals on
+                # the second (1965 p34 r43-44, `Transfer`): the row identity of the FIRST line reads
+                # the second's blanks as zeros. Named by eye (`edition.json`: `row_identity_skip`,
+                # page/table/row); the two lines' identity is then a declared one
+                ident = []
             if (not ident and 'blank_balance_outside_subtotals' in OPTS and m['family'] == 'accountant-schedule'
                     and (any(s == 'open' for s, _, _ in stats)
                          and not any(s.startswith('closed') and not V.GRAND.search(ch.label) for s, ch, _ in stats)
@@ -1660,9 +2048,46 @@ def emit_receipts_span(recs, ed, stated):
     colon = 'colon_heading_subtotals' in OPTS
     past_grand = False
     prev_group = None
+    unlabelled_items = set()
+    if 'receipts_unlabelled_items' in OPTS:
+        # AN ITEM THE PAGE PRINTS WITH NO LABEL (1983 p42: under `Licenses and Permits:` the lines
+        # `45.00` and `11,131.45` print in the ITEM column with nothing beside them, then the
+        # section's `33,256.00` one column out). An edition opt-in (`"receipts_unlabelled_items":
+        # true`, 1971-1990 close-out). An unlabelled one-figure row in the item column is an
+        # account ONLY when the section's own subtotal, printed on the next figure row one column
+        # out, equals to the cent the labelled lines above it in that column (back to the heading)
+        # plus the unlabelled ones. The grand total plays no part in the decision
+        def one(rec):
+            f = money_cells(rec)
+            if len(f) != 1:
+                return None
+            return next(k for k, c in rec['figs'] if c is f[0]), f[0].value
+        i = 0
+        while i < len(recs):
+            r0, o0 = recs[i], one(recs[i])
+            if o0 is None or label_of(r0):
+                i += 1
+                continue
+            k = o0[0]
+            j = i
+            while j < len(recs) and not label_of(recs[j]) and one(recs[j]) and one(recs[j])[0] == k \
+                    and (recs[j]['page'], recs[j]['table']) == (r0['page'], r0['table']):
+                j += 1
+            back = i - 1
+            while back >= 0 and label_of(recs[back]) and one(recs[back]) and one(recs[back])[0] == k \
+                    and recs[back]['group'] == r0['group'] \
+                    and (recs[back]['page'], recs[back]['table']) == (r0['page'], r0['table']):
+                back -= 1
+            nxt = recs[j] if j < len(recs) else None
+            on = one(nxt) if nxt is not None else None
+            if (back < i - 1 and on is not None and not label_of(nxt) and on[0] > k
+                    and (nxt['page'], nxt['table']) == (r0['page'], r0['table'])
+                    and sum((one(recs[x])[1] for x in range(back + 1, j)), Decimal(0)) == on[1]):
+                unlabelled_items.update(id(recs[x]) for x in range(i, j))
+            i = max(j, i + 1)
     for rec in recs:
         figs = money_cells(rec)
-        rec = dict(rec, label=label_of(rec))
+        rec = dict(rec, label=label_of(rec) or ('(no label printed)' if id(rec) in unlabelled_items else ''))
         if rec['group'] != prev_group:
             # a heading-only row is not a record; it shows as the next record's new `group`
             starts.add(len(since))
@@ -2335,6 +2760,51 @@ def stepped_subtotals(m, recs, rows):
         leftover = {i: pending[c] for i, c in enumerate(cols)}
 
 
+def available_runs(m, recs, rows):
+    """TOTAL FUNDS AVAILABLE = APPROPRIATED + BALANCE FORWARD / TRANSFERRED IN, over the lines of
+    one account (`edition.json`: `"available_runs": true`, an opt-in; the 1966 accountant schedule,
+    pp29-32). An account printed over several lines lists each transfer in on a line of its own
+    and prints the funds available on the LAST; a row identity reads one line and fails the
+    others. Walking down the table, the appropriated and transferred-in figures since the last
+    line that printed an available figure are summed into the next available figure: equal to the
+    cent, every line of the account is `checked`; otherwise `check failed`, with both amounts. Only
+    a `no check` row changes."""
+    if len(recs) != len(rows):
+        return
+
+    def col(rec, rx):
+        hits = [k for k, n in rec['names'].items() if re.search(rx, n, re.I)]
+        return hits[0] if len(hits) == 1 else None
+    run, parts = [], Decimal(0)
+    for rec, row in zip(recs, rows):
+        ka, kf, kt = col(rec, '^APPROPRIATED'), col(rec, 'BALANCE FORWARD'), col(rec, 'TOTAL FUNDS AVAILABLE')
+        if None in (ka, kf, kt):
+            return
+        figs = {k: c for k, c in rec['figs']}
+        if any(getattr(rec['cells'].get(k), 'unparsed', False) for k in (ka, kf, kt)):
+            run, parts = [], Decimal(0)           # an amount we could not read: claim nothing
+            continue
+        parts += sum((figs[k].value for k in (ka, kf) if k in figs), Decimal(0))
+        run.append(row)
+        if kt in figs:
+            v = figs[kt].value
+            ok = parts == v
+            why = ('AVAILABLE: %d line(s) appropriated or transferred in sum to %s, %s the Total Funds Available printed %s (p%s r%s)'
+                   % (len(run), V.money(parts), '=' if ok else '!=', V.money(v), rec['page'], rec['row']))
+            for r_ in run:
+                if r_['status'] == 'no check':
+                    r_['status'] = 'checked' if ok else 'check failed'
+                    r_['reconciliation'] = why + (' ; ' + r_['reconciliation'] if r_['reconciliation'] and
+                                                  r_['reconciliation'] != 'no total printed' else '')
+                elif why not in r_['reconciliation']:
+                    r_['reconciliation'] = (r_['reconciliation'] + ' ; ' if r_['reconciliation'] else '') + why
+            run, parts = [], Decimal(0)
+        elif not any(k in figs for k in (ka, kf)):
+            # a line of expenditure under the account (its total and balance below): not part of
+            # what was made available
+            run.pop()
+
+
 def stated_list_totals(m_rows, emitted, tol=0):
     """A row the column checks could not reach (`no check`) becomes `checked` when its list sums
     to the printed total, and `check failed` when it does not; a row that already has a verdict
@@ -2455,7 +2925,16 @@ def coverage(rows, lines, witness, m_rows):
             cur = []
     for p, rs in by.items():
         printed, unread = collections.Counter(), 0
+        if 'wage_dash_zero' in OPTS:
+            # A WAGE PRINTED AS `$ -` (an opt-in, `"wage_dash_zero": true`, 1991-2010 close-out,
+            # 2007 p118): the cell `$ -` holds zero, and the LINES read prints the dash as a line
+            # `-` of its own, which is that zero; where the cell witness read a `$ -` that both
+            # Textract passes misread (`$ 1` / `1`), its reading is the printed zero
+            printed[Decimal(0)] += WITNESSED_DASHES.get(p, 0)
         for l in lines.get(p, []):
+            if 'wage_dash_zero' in OPTS and l['text'].strip() == '-':
+                printed[Decimal(0)] += 1
+                continue
             t = V.repair(l['text'].strip())[0]       # the line read through the same marks as the cell
             if V.parse(t)[0] is None:
                 t = (calendar_repair(t) or (None, t))[1]
@@ -2554,13 +3033,17 @@ def page_states(dataset_rows, ed, m_rows, lines, money_counts):
     # A PAGE READ AND DELIBERATELY NOT LANDED IS REFUSED, NOT UNREAD. `unread` means nobody has
     # looked; a map row saying `NOT LANDED` with its reason is somebody having looked
     mapped = {int(m['page']) for m in m_rows if m.get('dataset') or (m.get('note') or '').startswith('NOT LANDED')}
+    blocked = M.blocked_pages()
     out = []
     for p in financial:
         verd = by.get(p, {})
         proved = sorted(l for l, v in verd.items() if 'proven' in v and 'failed' not in v)
         failed = sorted(l for l, v in verd.items() if 'failed' in v)
         hits = cites.get(p, set())
-        state = 'proven' if proved else 'unproven' if hits else 'refused' if p in mapped else 'unread'
+        # THE MAPPER'S ORDER: proven outranks everything, then `page-blocked.csv` (CANNOT be read,
+        # as against not read yet). Before 30 Oct 2026 an edition page was never `blocked`.
+        state = ('proven' if proved else 'blocked' if (int(ed['fy']), p) in blocked
+                 else 'unproven' if hits else 'refused' if p in mapped else 'unread')
         texts = [' '.join(l['text'].split()) for l in lines.get(p, [])]
         top = [t for t in texts[:10] if len(t) > 6 and not M.MONEY.match(t)]
         subj = M.subject_of(top, texts)
@@ -2624,6 +3107,8 @@ def build(edition, inventory_only=False):
     ed = json.load(open(os.path.join(d, 'edition.json'), encoding='utf-8'))
     stem = ed['stem']
     tables = V.load(stem)
+    for spec in ed.get('lines_tables') or ():
+        tables[(int(spec['page']), int(spec['table']))] = lines_table(stem, spec)
     lines = lines_by_page(stem)
     out = [write(os.path.join(d, 'tables.csv'), inventory(stem, tables, lines, heading_masked(ed)))]
     if inventory_only:
@@ -2641,8 +3126,11 @@ def build(edition, inventory_only=False):
     OPTS.clear()
     OPTS.update(k for k, v in ed.items() if v is True)
     DEBT_ROW_TOL[0] = Decimal(str(ed.get('rounding_tolerance_usd', 0))) if 'debt_row_totals' in OPTS else Decimal(0)
+    ROW_TOL[0] = Decimal(str(ed.get('rounding_tolerance_usd', 0))) if 'row_identity_tolerance' in OPTS else Decimal(0)
     DEBT_ROW_SKIP.clear()
     DEBT_ROW_SKIP.update(ed.get('debt_row_totals_skip') or ())
+    DEBT_GRAND_ELSEWHERE.clear()
+    DEBT_GRAND_ELSEWHERE.update(ed.get('debt_grand_spans_pages') or ())
     apply_calendar_repairs(tables)
     if 'dollar_sign_labels' in OPTS:
         # A TOTAL ROW WHOSE ONLY "LABEL" IS THE DOLLAR SIGN (1959-1970 school budget summaries:
@@ -2654,6 +3142,9 @@ def build(edition, inventory_only=False):
                 c = r.cells.get(1)
                 if c is not None and c.value is None and c.text.strip() == '$' and len(r.cells) > 1:
                     c.printed_text, c.text = c.text, ''
+    if ed.get('rebuild_by_position'):
+        rebuild_by_position(stem, tables, ed['rebuild_by_position'])
+        apply_calendar_repairs(tables)
     if ed.get('label_figure_split'):
         split_label_figures(tables, ed['label_figure_split'])
     apply_witnessed_cells(d, tables)
@@ -2661,6 +3152,110 @@ def build(edition, inventory_only=False):
         # cells Textract SEGMENTED wrong, read as printed (an opt-in; scripts/declared_identities.py)
         import declared_identities
         declared_identities.apply_cell_readings(ed['cell_readings'], tables, V.parse)
+    for ref in ed.get('label_trailing_figures') or ():
+        # A FIGURE PRINTED AT THE END OF THE LABEL, read into the label cell with the figure cell
+        # beside it empty (`edition.json`: `"label_trailing_figures": ["55/1/43/1"]`, the label
+        # cell, by eye; 1985 p55 `Local Aid Add. Assistance256,524.00`, the space lost in the scan).
+        # The trailing amount moves into the next column; the label keeps the words before it.
+        # Refuses if the label cell does not end in an amount or the next cell holds anything
+        p_, t_, r_, c_ = (int(x) for x in ref.split('/'))
+        row_ = next((x for x in tables.get((p_, t_), []) if x.row == r_), None)
+        cell_ = row_.cells.get(c_) if row_ is not None else None
+        m_ = re.match(r'^(.*?\D)\s*(\$?\d{1,3}(?:,\d{3})*\.\d{2})$', cell_.text.strip()) if cell_ is not None else None
+        nxt = row_.cells.get(c_ + 1) if row_ is not None else None
+        if m_ is None or (nxt is not None and nxt.text.strip()):
+            raise SystemExit('label_trailing_figures: p%d t%d r%d c%d is not a label ending in a figure '
+                             'beside an empty cell' % (p_, t_, r_, c_))
+        fig = V.Cell(m_.group(2), cell_.confidence, *V.parse(m_.group(2))[:3])
+        fig.repair = 'label_trailing_figures: `%s` read out of the end of the label cell `%s`' % (m_.group(2), cell_.text)
+        row_.cells[c_ + 1] = fig
+        row_.cells[c_] = V.Cell(m_.group(1).strip(), cell_.confidence)
+    for ref in ed.get('text_cells') or ():
+        # A CODE, NOT AN AMOUNT (`edition.json`: `"text_cells": ["138/1/2/1"]`, page/table/row/col,
+        # by eye; 1971-1990 close-out): 1984 p138 prints the School Department's account series
+        # (`1000`, `2000` ...) in a column of its own, which parses as a figure and would land as
+        # an amount. The cell is read as text; it says so in `repaired_cells`
+        p_, t_, r_, c_ = (int(x) for x in ref.split('/'))
+        row_ = next((x for x in tables.get((p_, t_), []) if x.row == r_), None)
+        cell_ = row_.cells.get(c_) if row_ is not None else None
+        if cell_ is None or cell_.value is None:
+            raise SystemExit('text_cells: p%d t%d r%d c%d holds no figure' % (p_, t_, r_, c_))
+        cell_.value, cell_.places, cell_.unparsed = None, 0, False
+        cell_.repair = 'text_cells: `%s` is a code printed beside the label, read as text' % cell_.text
+    for spec in ed.get('digit_group_tables') or ():
+        # A FORM WITH A BOX PER DIGIT GROUP (`edition.json`: `digit_group_tables`, page/table, by eye;
+        # 1963 p9, the Commonwealth's tax-rate RECAPITULATION form): Textract returns each amount
+        # as one cell per printed box, `1 | 309 | 686 | 88` for $1,309,686.88. On a row, a run of
+        # adjacent cells reading 1-3 digits, then groups of exactly 3, then exactly 2 (the cents
+        # box) is one amount: it is read into the run's LAST cell, the boxes before it are emptied,
+        # and the cell says which boxes it was joined from. A run that does not end in a two-digit
+        # group is not joined
+        p_, t_ = (int(x) for x in spec.split('/'))
+        for r in tables.get((p_, t_), []):
+            ks = sorted(r.cells)
+
+            def tok(c):
+                x = c.text.strip()
+                return '1' if x == 'I' and c.value == 1 else x   # a box read `I`, witnessed as 1 (cell_readings)
+            i = 0
+            while i < len(ks):
+                j = i
+                while (j < len(ks) and ks[j] == ks[i] + (j - i) and re.fullmatch(r'\d{1,3}', tok(r.cells[ks[j]]) or 'x')
+                       and r.cells[ks[j]].value is not None):      # a box a cell reading emptied is not a digit group
+                    j += 1
+                run = ks[i:j]
+                texts = [tok(r.cells[k]) for k in run]
+                if (len(run) >= 2 and len(texts[-1]) == 2 and all(len(x) == 3 for x in texts[1:-1])):
+                    amount = '%s.%s' % (','.join(texts[:-1]), texts[-1])
+                    last = r.cells[run[-1]]
+                    v, places, bad = V.parse(amount)
+                    new = V.Cell(amount, last.confidence, v, places, bad)
+                    new.repair = 'digit_group_tables: the boxes `%s` read as one amount' % ' | '.join(texts)
+                    for k in run[:-1]:
+                        r.cells[k] = V.Cell('', r.cells[k].confidence)
+                    r.cells[run[-1]] = new
+                i = max(j, i + 1)
+    if ed.get('line_rows'):
+        # LINES THE PAGE PRINTS THAT NO TABLE CELL HOLDS (`edition.json`: `"line_rows"`, an opt-in,
+        # 1959-1970 close-out, 30 Oct 2026): Textract's table stopped short of the last lines of a
+        # column (1962 p65, the bottom of the left column; 1960 p19, the County receipts under the
+        # table). Each entry names the table it belongs to, the figure column, and the label and
+        # figure AS TEXTRACT'S OWN LINES READ THEM -- both must be a line of that page, exactly, or
+        # this refuses -- so nothing is typed: the reading is Textract's, only the cell is new.
+        # The row is appended to the table and says so in `repaired_cells`
+        page_lines = {}
+        for p_, ls in lines.items():
+            page_lines[p_] = [' '.join(l['text'].split()) for l in ls]
+        for w in ed['line_rows']:
+            p_, t_ = (int(x) for x in w['table'].split('/'))
+            for lab, fig in w['rows']:
+                if fig is None:
+                    # ONE LINE HOLDING THE LABEL AND ITS FIGURE (`Board of Appeals Filing Fees 1,020.00`,
+                    # `Building Inspection Townsend14,185.00`, 1985 p56): the line must be a line of the
+                    # page exactly, and the figure is its trailing amount (1971-1990 close-out)
+                    if lab not in page_lines.get(p_, []):
+                        raise SystemExit('line_rows: p%d has no line `%s`' % (p_, lab))
+                    m_ = re.match(r'^(.*?\D)\s*(\$?\d{1,3}(?:,\d{3})*\.\d{2})$', lab)
+                    if not m_:
+                        raise SystemExit('line_rows: `%s` does not end in a figure' % lab)
+                    lab, fig = m_.group(1).strip(), m_.group(2)
+                    page_lines[p_] = page_lines[p_] + [lab, fig]
+                parts = lab if isinstance(lab, list) else [lab]   # a label printed over several lines
+                if any(x not in page_lines.get(p_, []) for x in parts) or fig not in page_lines.get(p_, []):
+                    raise SystemExit('line_rows: p%d has no line `%s` and a line `%s`' % (p_, ' / '.join(parts), fig))
+                lab = ' '.join(parts)
+                rows_ = tables[(p_, t_)]
+                cell = V.Cell(fig, 100.0, *V.parse(fig)[:2])
+                cell.repair = 'line_rows: no table cell held this line; read from Textract LINES `%s` / `%s` -- %s' % (lab, fig, w['why'])
+                rows_.append(V.Row(p_, max(r.row for r in rows_) + 1, {1: V.Cell(lab, 100.0), int(w['col']): cell}, t_))
+            if w.get('repair'):
+                # the table's own column repairs on the appended cells too (`"repair": true`: 1986
+                # p71 prints `12.500.`, full stops for the comma in a column of whole dollars)
+                apply_calendar_repairs({(p_, t_): tables[(p_, t_)]})
+    if ed.get('stacked_rows'):
+        tables = split_stacked_rows(tables, ed['stacked_rows'])
+        apply_calendar_repairs({k: tables[k] for k in {tuple(int(x) for x in (s['row'] if isinstance(s, dict) else s).split('/')[:2])
+                                                       for s in ed['stacked_rows']}})
     if 'stacked_pairs' in OPTS:
         tables = split_stacked_pairs(m_rows, tables)
     split_list_total_cells(m_rows, tables)
@@ -2689,6 +3284,8 @@ def build(edition, inventory_only=False):
                             tol_off_pages={int(m['page']) for m in m_rows if m['dataset'] == 'report-elections'})
     if 'unlabeled_subtotal_blocks' in OPTS:
         add_subtotal_block_checks(tables, checks)
+    if 'debt_label_columns' in OPTS:
+        debt_label_columns(m_rows, vt, checks, DEBT_ROW_TOL[0] or Decimal(str(ed.get('rounding_tolerance_usd', 0))))
     apply_percents(tables)
     rep = page_integrity.check(page_integrity.OUT / f'{stem}.lines.tsv')
     folios = rep.folios
@@ -2729,6 +3326,8 @@ def build(edition, inventory_only=False):
                 # a whole dataset, or one table by `page/table` where the dataset also holds
                 # tables of another layout (the school accounts' APPROPRIATION | SPENT columns)
                 stepped_subtotals(m, recs, rows)
+            if 'available_runs' in OPTS and m['family'] == 'accountant-schedule':
+                available_runs(m, recs, rows)
         elif m['dataset'] == 'annual-report-receipts':
             # RECEIPTS SPLIT INTO SEVERAL TABLES ON ONE PAGE (1991, 1992: three printed columns,
             # three Textract tables, one GRAND TOTAL in one of them) are pooled and checked

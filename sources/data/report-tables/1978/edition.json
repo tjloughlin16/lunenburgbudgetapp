@@ -381,7 +381,64 @@
       "cell": "59/1/35/7",
       "textract": ",24",
       "read_as": "0.24",
-      "why": "a comma printed for the decimal point with no leading zero; the LINES read prints `,24` at x 0.82 on the line of `2,672.42`, in the Balance to Revenue column"
+      "why": "a comma printed for the decimal point with no leading zero; the LINES read prints `,24` at x 0.82 on the line of `2,672.42`, in the Balance to Revenue column ; WITNESSED 30 Oct 2026: a blind scripted reader (claude-p:sonnet via claude_lean, batched, neutral file names, shown neither Textract's text nor this reading) read the cell's crop as `,24` (marked not fully legible: the digits agree with Textract, the point is a comma in both)"
+    },
+    {
+      "cell": "38/1/12/2",
+      "textract": "",
+      "read_as": "1,678.06",
+      "why": "the motor vehicle excise block is printed with each amount half a line below its levy year and Textract set every amount one row low (r12 `1974` with no figure, r17 `198,244.46` with no label); the five levy years 1974-1978 take the five amounts in printed order, as the Tax Collector prints them on p66 (1974 Motor Vehicle Excise payments $1,678.06, 1975 $8,305.04, 1976 $26,650.73, 1977 $175,538.97, 1978 $198,244.46), and the five sum to the section subtotal 410,417.26 printed in the next column"
+    },
+    {
+      "cell": "38/1/13/2",
+      "textract": "1,678.06",
+      "read_as": "8,305.04",
+      "why": "the motor vehicle excise block is printed with each amount half a line below its levy year and Textract set every amount one row low (r12 `1974` with no figure, r17 `198,244.46` with no label); the five levy years 1974-1978 take the five amounts in printed order, as the Tax Collector prints them on p66 (1974 Motor Vehicle Excise payments $1,678.06, 1975 $8,305.04, 1976 $26,650.73, 1977 $175,538.97, 1978 $198,244.46), and the five sum to the section subtotal 410,417.26 printed in the next column"
+    },
+    {
+      "cell": "38/1/14/2",
+      "textract": "8,305.04",
+      "read_as": "26,650.73",
+      "why": "the motor vehicle excise block is printed with each amount half a line below its levy year and Textract set every amount one row low (r12 `1974` with no figure, r17 `198,244.46` with no label); the five levy years 1974-1978 take the five amounts in printed order, as the Tax Collector prints them on p66 (1974 Motor Vehicle Excise payments $1,678.06, 1975 $8,305.04, 1976 $26,650.73, 1977 $175,538.97, 1978 $198,244.46), and the five sum to the section subtotal 410,417.26 printed in the next column"
+    },
+    {
+      "cell": "38/1/15/2",
+      "textract": "26,650.73",
+      "read_as": "175,538.97",
+      "why": "the motor vehicle excise block is printed with each amount half a line below its levy year and Textract set every amount one row low (r12 `1974` with no figure, r17 `198,244.46` with no label); the five levy years 1974-1978 take the five amounts in printed order, as the Tax Collector prints them on p66 (1974 Motor Vehicle Excise payments $1,678.06, 1975 $8,305.04, 1976 $26,650.73, 1977 $175,538.97, 1978 $198,244.46), and the five sum to the section subtotal 410,417.26 printed in the next column"
+    },
+    {
+      "cell": "38/1/16/2",
+      "textract": "175,538.97",
+      "read_as": "198,244.46",
+      "why": "the motor vehicle excise block is printed with each amount half a line below its levy year and Textract set every amount one row low (r12 `1974` with no figure, r17 `198,244.46` with no label); the five levy years 1974-1978 take the five amounts in printed order, as the Tax Collector prints them on p66 (1974 Motor Vehicle Excise payments $1,678.06, 1975 $8,305.04, 1976 $26,650.73, 1977 $175,538.97, 1978 $198,244.46), and the five sum to the section subtotal 410,417.26 printed in the next column"
+    },
+    {
+      "cell": "38/1/17/2",
+      "textract": "198,244.46",
+      "read_as": "",
+      "why": "the motor vehicle excise block is printed with each amount half a line below its levy year and Textract set every amount one row low (r12 `1974` with no figure, r17 `198,244.46` with no label); the five levy years 1974-1978 take the five amounts in printed order, as the Tax Collector prints them on p66 (1974 Motor Vehicle Excise payments $1,678.06, 1975 $8,305.04, 1976 $26,650.73, 1977 $175,538.97, 1978 $198,244.46), and the five sum to the section subtotal 410,417.26 printed in the next column"
+    }
+  ],
+  "stacked_pairs_wide": true,
+  "debt_label_columns": true,
+  "stacked_rows": [
+    "53/1/3"
+  ],
+  "line_rows": [
+    {
+      "table": "41/1",
+      "col": 3,
+      "rows": [
+        [
+          [
+            "Library:",
+            "Fines"
+          ],
+          "1,252.64"
+        ]
+      ],
+      "why": "p41 foot: `Library:` / `Fines` and `1,252.64` are Textract LINES (top 0.8578-0.8728; the figure at x 0.80, the statement's outer column, as 124,735.99 above it) that no table cell holds; a one-line section, its amount in the subtotal column"
     }
   ]
 }

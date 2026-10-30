@@ -138,9 +138,234 @@
       "textract": "Relief 1,091.16",
       "read_as": "1,091.16",
       "why": "the last word of the label `Aid to Families w/ Dependent Children Federal Grant Relief` landed in the figure cell; Textract lines read the whole line as `... Federal Grant Relief 1,091.16`, the figure at its end in the refunds column"
+    },
+    {
+      "cell": "34/1/26/2",
+      "textract": "710 00",
+      "read_as": "710.00",
+      "why": "the decimal point of Total Funds Available is faint on the render (`710 00`); Approp. Forward on the same line prints 710.00"
+    },
+    {
+      "cell": "131/1/2/3",
+      "textract": "$ 233,409.41 (65% of Entitlement, $359,091.40)",
+      "read_as": "233,409.41",
+      "why": "the estimate is followed in the same cell by the Committee's note in brackets; the figure is the first one"
+    },
+    {
+      "cell": "131/1/3/3",
+      "textract": "80,080.00 ($16,080 due from 1967) ($64,000 due for 1968)",
+      "read_as": "80,080.00",
+      "why": "the estimate is followed in the same cell by the Committee's note in brackets; the figure is the first one"
+    },
+    {
+      "cell": "131/1/8/3",
+      "textract": "1,700.00 (We now have a year-round Program)",
+      "read_as": "1,700.00",
+      "why": "the estimate is followed in the same cell by the Committee's note in brackets; the figure is the first one"
     }
   ],
   "school_statistics_totals": true,
   "dollar_sign_labels": true,
-  "welfare_net_cost": true
+  "welfare_net_cost": true,
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-debt"
+  ],
+  "declared_identities": [
+    {
+      "eq": "129/1/r24.v1 = 129/1/r4-23.v1",
+      "why": "p129: the BUDGET APPROPR. 1967 column total, printed beside a lone $"
+    },
+    {
+      "eq": "129/1/r24.v2 = 129/1/r4-23.v2",
+      "why": "p129: the Spent column total, printed beside a lone $"
+    },
+    {
+      "eq": "129/1/r24.v3 = 129/1/r4-23.v3",
+      "why": "p129: the BUDGET APPROPR. 1968 column total, printed beside a lone $"
+    },
+    {
+      "eq": "129/1/r26.v1 = 129/1/r24.v1 + 129/1/r25.v1",
+      "why": "p129: the 1967 budget less the reduction from special accounts (printed negative)"
+    },
+    {
+      "eq": "129/1/r28.v1 = 129/1/r26.v1 + 129/1/r27.v1",
+      "why": "p129: NET BUDGET REQUEST TO TOWN, less the federal funds committed (printed negative)"
+    },
+    {
+      "eq": "43/1/r9.v1 = 43/1/r6.v1",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 7. Current year revenue is line 4 carried down"
+    },
+    {
+      "eq": "43/1/r16.v1 = 43/1/r14.v1 - 43/1/r15.v1",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 14. Balance 12/31 is the sub-total less appropriations"
+    },
+    {
+      "eq": "43/1/r18.v1 = 43/1/r16.v1 - 43/1/r17.v1",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 16. Free cash is the balance less uncollected taxes"
+    },
+    {
+      "eq": "43/1/r9.v2 = 43/1/r6.v2",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 7. Current year revenue is line 4 carried down"
+    },
+    {
+      "eq": "43/1/r16.v2 = 43/1/r14.v2 - 43/1/r15.v2",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 14. Balance 12/31 is the sub-total less appropriations"
+    },
+    {
+      "eq": "43/1/r18.v2 = 43/1/r16.v2 - 43/1/r17.v2",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 16. Free cash is the balance less uncollected taxes"
+    },
+    {
+      "eq": "43/1/r9.v3 = 43/1/r6.v3",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 7. Current year revenue is line 4 carried down"
+    },
+    {
+      "eq": "43/1/r16.v3 = 43/1/r14.v3 - 43/1/r15.v3",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 14. Balance 12/31 is the sub-total less appropriations"
+    },
+    {
+      "eq": "43/1/r18.v3 = 43/1/r16.v3 - 43/1/r17.v3",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 16. Free cash is the balance less uncollected taxes"
+    },
+    {
+      "eq": "43/1/r9.v4 = 43/1/r6.v4",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 7. Current year revenue is line 4 carried down"
+    },
+    {
+      "eq": "43/1/r16.v4 = 43/1/r14.v4 - 43/1/r15.v4",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 14. Balance 12/31 is the sub-total less appropriations"
+    },
+    {
+      "eq": "43/1/r18.v4 = 43/1/r16.v4 - 43/1/r17.v4",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 16. Free cash is the balance less uncollected taxes"
+    },
+    {
+      "eq": "43/1/r9.v5 = 43/1/r6.v5",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 7. Current year revenue is line 4 carried down"
+    },
+    {
+      "eq": "43/1/r16.v5 = 43/1/r14.v5 - 43/1/r15.v5",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 14. Balance 12/31 is the sub-total less appropriations"
+    },
+    {
+      "eq": "43/1/r18.v5 = 43/1/r16.v5 - 43/1/r17.v5",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 16. Free cash is the balance less uncollected taxes"
+    },
+    {
+      "eq": "43/1/r9.v6 = 43/1/r6.v6",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 7. Current year revenue is line 4 carried down"
+    },
+    {
+      "eq": "43/1/r16.v6 = 43/1/r14.v6 - 43/1/r15.v6",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 14. Balance 12/31 is the sub-total less appropriations"
+    },
+    {
+      "eq": "43/1/r18.v6 = 43/1/r16.v6 - 43/1/r17.v6",
+      "why": "p43: the Accountant's Analysis of Revenue Accounts, by year column -- 16. Free cash is the balance less uncollected taxes"
+    },
+    {
+      "eq": "29/1/r8.v2 = 29/1/r7.v2 + 29/1/r7.v3",
+      "why": "p29: the Inspector of Weights and Measures account -- its funds available, 699.00, are printed one line low, beside the next account heading; its Total Expended 684.36 and balance 14.64 are on the line above"
+    },
+    {
+      "eq": "130/1/r6.v3 = 130/1/r6.v1 - 130/1/r6.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "130/1/r7.v3 = 130/1/r7.v1 - 130/1/r7.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "130/1/r8.v3 = 130/1/r8.v1 - 130/1/r8.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "130/1/r10.v3 = 130/1/r10.v1 - 130/1/r10.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "130/1/r12.v3 = 130/1/r12.v1 - 130/1/r12.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "130/1/r13.v3 = 130/1/r13.v1 - 130/1/r13.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "130/1/r14.v3 = 130/1/r14.v1 - 130/1/r14.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "130/1/r15.v3 = 130/1/r15.v1 - 130/1/r15.v2",
+      "why": "p130: an account the page marks * carries its balance into 1968 -- the 1968 figure is the 1967 appropriation less what was spent"
+    },
+    {
+      "eq": "57/3/r4 = 57/3/r2-3",
+      "why": "p57: the Nashoba mental health clinic's cases and hours for Lunenburg -- total cases, new and continued"
+    },
+    {
+      "eq": "57/3/r9 = 57/3/r5-8",
+      "why": "p57: the Nashoba mental health clinic's cases and hours for Lunenburg -- interview, consultation and administrative hours, subtotal printed against the next heading"
+    },
+    {
+      "eq": "57/3/r14 = 57/3/r10-13",
+      "why": "p57: the Nashoba mental health clinic's cases and hours for Lunenburg -- the additional types of services"
+    },
+    {
+      "eq": "57/3/r15 = 57/3/r9 + 57/3/r14",
+      "why": "p57: the Nashoba mental health clinic's cases and hours for Lunenburg -- Total Number of Hours of Service"
+    },
+    {
+      "eq": "57/3/r16 = 17*57/3/r15",
+      "why": "p57: the Nashoba mental health clinic's cases and hours for Lunenburg -- Total Cost @ $17.00 per hour"
+    },
+    {
+      "eq": "136/2/r4.v1 = 136/2/r2-3.v1",
+      "why": "p136: the school census of minors, by age band -- boys and girls registered"
+    },
+    {
+      "eq": "136/2/r4.v2 = 136/2/r2-3.v2",
+      "why": "p136: the school census of minors, by age band -- boys and girls registered"
+    },
+    {
+      "eq": "136/2/r4.v3 = 136/2/r2-3.v3",
+      "why": "p136: the school census of minors, by age band -- boys and girls registered"
+    },
+    {
+      "eq": "136/2/r2.v3 = 136/2/r2.v1 + 136/2/r2.v2",
+      "why": "p136: the school census of minors, by age band -- TOTAL is the two age bands"
+    },
+    {
+      "eq": "136/2/r3.v3 = 136/2/r3.v1 + 136/2/r3.v2",
+      "why": "p136: the school census of minors, by age band -- TOTAL is the two age bands"
+    },
+    {
+      "eq": "136/2/r4.v3 = 136/2/r4.v1 + 136/2/r4.v2",
+      "why": "p136: the school census of minors, by age band -- TOTAL is the two age bands"
+    },
+    {
+      "eq": "136/2/r6.v3 = 136/2/r6.v1 + 136/2/r6.v2",
+      "why": "p136: the school census of minors, by age band -- TOTAL is the two age bands"
+    },
+    {
+      "eq": "136/2/r9.v3 = 136/2/r9.v1 + 136/2/r9.v2",
+      "why": "p136: the school census of minors, by age band -- TOTAL is the two age bands"
+    },
+    {
+      "eq": "136/2/r10.v3 = 136/2/r10.v1 + 136/2/r10.v2",
+      "why": "p136: the school census of minors, by age band -- TOTAL is the two age bands"
+    },
+    {
+      "eq": "136/2/r11.v3 = 136/2/r11.v1 + 136/2/r11.v2",
+      "why": "p136: the school census of minors, by age band -- TOTAL is the two age bands"
+    },
+    {
+      "eq": "136/2/r12.v3 = 136/2/r6-11.vL",
+      "why": "p136: the school census of minors, by age band -- the distribution of minors totals the registration"
+    }
+  ],
+  "row_identity_skip": [
+    "29/1/8"
+  ]
 }

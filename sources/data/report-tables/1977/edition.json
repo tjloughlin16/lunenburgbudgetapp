@@ -398,7 +398,12 @@
       "cell": "62/1/36/7",
       "textract": "2,094,13Cr",
       "read_as": "-2,094.13",
-      "why": "a comma printed for the decimal point and `Cr`, the accountant's mark for a deficit (credit) balance, glued to the figure: the balance to Fiscal 1978 is a deficit of 2,094.13 (1977 NEEDS 3 reads `Cr` as negative)"
+      "why": "`Cr`, the accountant's mark for a deficit (credit) balance, glued to the figure (Textract reads the point as a comma; the blind reader below sees a point): the balance to Fiscal 1978 is a deficit of 2,094.13 (1977 NEEDS 3 reads `Cr` as negative) ; WITNESSED 30 Oct 2026: a blind scripted reader (claude-p:sonnet via claude_lean, batched, neutral file names, shown neither Textract's text nor this reading) read the cell's crop as `2,094.13 Cr`, which holds the reading here"
     }
+  ],
+  "stacked_pairs_wide": true,
+  "debt_label_columns": true,
+  "stacked_rows": [
+    "54/1/3"
   ]
 }

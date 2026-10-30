@@ -310,6 +310,102 @@
     {
       "eq": "#91689.48 = 61/1/r1-4",
       "why": "p61: the Trust Fund Commission's summary, total `$91,689.48` printed beside the list (no cell holds it as a figure)"
+    },
+    {
+      "eq": "62/11/r11 = 62/11/r6-10",
+      "why": "p62 Worthy Poor: interest received, four savings-bank lines = 530.63"
+    },
+    {
+      "eq": "62/11/r12 = 62/11/r2 + 62/11/r11",
+      "why": "p62 Worthy Poor: balance December 31, 1972 + interest = $8,911.31"
+    },
+    {
+      "eq": "62/11/r12 = 62/11/r13 + 62/11/r14",
+      "why": "p62 Worthy Poor: grants and gifts 350.00 + balance December 31, 1973 8,561.31 = $8,911.31"
+    },
+    {
+      "eq": "62/11/r39 = 62/11/r20-38",
+      "why": "p62 Cemetery Perpetual Care: bequests received, one line per bequest = 1,650.00"
+    },
+    {
+      "eq": "62/11/r46 = 62/11/r42-45",
+      "why": "p62 Cemetery Perpetual Care: interest received from savings banks = 2,326.58"
+    },
+    {
+      "eq": "62/11/r56 = 62/11/r49-55",
+      "why": "p62 Cemetery Perpetual Care: dividends received from cooperative banks = 1,269.25"
+    },
+    {
+      "eq": "62/11/r59 = 62/11/r18 + 62/11/r39 + 62/11/r46 + 62/11/r56 + 62/11/r58",
+      "why": "p62 Cemetery Perpetual Care: balance December 31, 1972 + bequests + interest + dividends + headstone account interest = $67,702.85"
+    },
+    {
+      "eq": "62/11/r62 = 62/11/r60 + 62/11/r61",
+      "why": "p62 Cemetery Perpetual Care: transfer to the Cemetery Commission 3,366.62 + balance December 31, 1973 64,336.23 = $67,702.85"
+    },
+    {
+      "eq": "62/12/r7 = 62/12/r5-6",
+      "why": "p62 Sidewalks and Grounds: interest received = 349.83"
+    },
+    {
+      "eq": "62/12/r8 = 62/12/r3 + 62/12/r7",
+      "why": "p62 Sidewalks and Grounds: balance December 31, 1972 + interest = $5,737.39"
+    },
+    {
+      "eq": "62/12/r11 = 62/12/r9 + 62/12/r10",
+      "why": "p62 Sidewalks and Grounds: repair of Highland Street sidewalks 65.45 + balance December 31, 1973 5,671.94 = $5,737.39"
+    },
+    {
+      "eq": "62/12/r35 = 62/12/r20-34",
+      "why": "p62 Library: interest received from savings banks, by trust = 356.64"
+    },
+    {
+      "eq": "62/12/r45 = 62/12/r39-44",
+      "why": "p62 Library: dividends received from cooperative banks = 276.71"
+    },
+    {
+      "eq": "62/12/r46 = 62/12/r14 + 62/12/r16 + 62/12/r35 + 62/12/r45",
+      "why": "p62 Library: balance December 31, 1972 + bequest + interest + dividends = $13,753.35"
+    },
+    {
+      "eq": "62/12/r49 = 62/12/r47 + 62/12/r48",
+      "why": "p62 Library: transfer to the Library Trustees 633.35 + balance December 31, 1973 13,120.00 = $13,753.35"
+    }
+  ],
+  "accountant_marks_wide": true,
+  "accountant_marks_rcts": true,
+  "lines_tables": [
+    {
+      "page": 62,
+      "table": 11,
+      "box": [
+        0.07,
+        0.09,
+        0.505,
+        0.91
+      ],
+      "cols": [
+        0.335,
+        0.413,
+        0.501
+      ],
+      "why": "p62 left panel (Worthy Poor; Cemetery Perpetual Care): Textract merged the side-by-side ledgers into one grid, pairing donors with another fund's figures"
+    },
+    {
+      "page": 62,
+      "table": 12,
+      "box": [
+        0.505,
+        0.09,
+        0.95,
+        0.91
+      ],
+      "cols": [
+        0.702,
+        0.781,
+        0.88
+      ],
+      "why": "p62 right panel (Sidewalks and Grounds; Library): Textract merged the side-by-side ledgers into one grid, pairing donors with another fund's figures"
     }
   ]
 }

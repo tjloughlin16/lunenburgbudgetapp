@@ -114,5 +114,53 @@
     "127/1"
   ],
   "school_statistics_totals": true,
-  "dollar_sign_labels": true
+  "dollar_sign_labels": true,
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-debt"
+  ],
+  "cell_readings": [
+    {
+      "cell": "66/1/20/2",
+      "textract": "15,097.00**",
+      "read_as": "15,097.00",
+      "why": "two footnote marks after the voted amount; the page explains them (`**($5,000 less than original budget)`)"
+    },
+    {
+      "cell": "66/2/16/2",
+      "textract": "35,000.00(1)",
+      "read_as": "35,000.00",
+      "why": "a numbered footnote mark `(1)` after the Reserve Fund amount"
+    },
+    {
+      "cell": "67/2/1/2",
+      "textract": "820.00(2)",
+      "read_as": "820.00",
+      "why": "a numbered footnote mark `(2)` after the amount"
+    },
+    {
+      "cell": "67/2/2/2",
+      "textract": "271.00(3)",
+      "read_as": "271.00",
+      "why": "a numbered footnote mark `(3)` after the amount"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "67/1/r19 = 67/1/r1-18",
+      "why": "p67: the special articles raised by taxation and their unlabelled subtotal $81,444.59"
+    },
+    {
+      "eq": "67/2/r17 = 67/2/r1-16",
+      "why": "p67: the special articles transferred from available funds and their unlabelled subtotal $24,937.21"
+    },
+    {
+      "eq": "122/1/r18.v1 = 122/1/r16.v1 + 122/1/r17.v1",
+      "why": "p122: the 1969 budget plus additional federal funds committed"
+    },
+    {
+      "eq": "122/1/r20.v1 = 122/1/r18.v1 + 122/1/r19.v1",
+      "why": "p122: NET BUDGET REQUEST TO TOWN, less the federal funds committed (printed negative)"
+    }
+  ]
 }

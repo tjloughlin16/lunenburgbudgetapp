@@ -4,6 +4,33 @@ Written 28 October 2026, to survive a context reset. **Read this first, then
 `notes/PLAN-ANNUAL-REPORT-PIPELINE.md` (sections 4, 4a), then CLAUDE.md.** A summary in a
 conversation is not a source (rule 13): every state below names the command that re-checks it.
 
+## FINISHED (30 October 2026, afternoon): every page proven or blocked, nothing open
+
+All 52 editions: **1,647 pages proven, 171 blocked, 0 anything else** (re-derive from each
+`<ed>/pages.csv`; `read_report_tables.py <ed>` now writes `blocked` for a page in
+`page-blocked.csv`, which it never did before -- proven still outranks it, as in the mapper).
+FY2011-FY2025 rows of `annual-report-pages.csv` byte-identical. How it closed:
+- four range agents, then two residue agents; every new reader behaviour is an `edition.json`
+  opt-in, documented in `sources/data/report-tables/README.md` (1971-1990 and 1991-2010 sections),
+  incl. `declared_identities` / `cell_readings` (`scripts/declared_identities.py`): an identity the
+  PAGE prints, named by eye, the code does the arithmetic.
+- a block is a DOCUMENT reason only: the page's own arithmetic does not close (both figures, a
+  blind read confirming), a digit the scan does not settle, a chart, or no identity printed. A
+  page our reader could not carry was never blocked; 15 such blocks were withdrawn and proven.
+- witness audit: all 94 `witnessed-cells.csv` rows in 1991-2010 re-tested by removal; 6
+  withdrawn (unpinned, one contradicted). Scratchpad tool `bwapply.py` had kept readings no
+  identity tested -- do not reuse it without the pin test.
+- TJ, 30 Oct: the $1 tolerance extends to a row's own identity (`row_identity_tolerance`);
+  1987 p37 blocked with both readings. "Middle School" before FY2016 is Turkey Hill (TJ).
+- Known and accepted: 2005 p85 is `proven` (its capital plans close) while its printed Total
+  Omnibus Budget is $27,000 above its categories -- a page is proven when any dataset on it
+  closes cleanly, the FY rule; the failing row says `check failed`.
+- Rosters: bus contractors to `staff-roster-contractors.csv`; Brooks House -> central-office;
+  births 2001-2007, marriages 2001-2007 (`carry_date_down`), deaths 2005-2006 landed.
+- `/analysis/historical-report` (`build_historical_report.py`) proves the archive is read.
+- `build_staffing_charts.py` stays FY2011+ (`ROSTERS_FROM_FY`); the older rosters are on the
+  historical report.
+
 ## DONE (30 October 2026, ~05:45 ET): all 52 older reports read, integrated, deployed
 
 Every report 1959-2010 has Textract tables on its financial pages, a worker folder, and an

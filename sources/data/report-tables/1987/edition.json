@@ -90,5 +90,43 @@
   "id_column_words": true,
   "recon_net_on_transfer_line": true,
   "receipts_span": true,
-  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)"
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
+  "declared_identities": [
+    {
+      "eq": "27/1/r3.v3 = 27/1/r3.v2 - 27/1/r2.v2 / 27/1/r2.v2",
+      "scale": 100,
+      "places": 1,
+      "why": "p27: `% Increase` printed to one decimal = this fiscal year's levy over the year before's, less one, as a percent, rounded half up to the decimal the page prints"
+    },
+    {
+      "eq": "27/1/r4.v3 = 27/1/r4.v2 - 27/1/r3.v2 / 27/1/r3.v2",
+      "scale": 100,
+      "places": 1,
+      "why": "p27: `% Increase` printed to one decimal = this fiscal year's levy over the year before's, less one, as a percent, rounded half up to the decimal the page prints"
+    },
+    {
+      "eq": "27/1/r5.v3 = 27/1/r5.v2 - 27/1/r4.v2 / 27/1/r4.v2",
+      "scale": 100,
+      "places": 1,
+      "why": "p27: `% Increase` printed to one decimal = this fiscal year's levy over the year before's, less one, as a percent, rounded half up to the decimal the page prints"
+    },
+    {
+      "eq": "27/1/r6.v3 = 27/1/r6.v2 - 27/1/r5.v2 / 27/1/r5.v2",
+      "scale": 100,
+      "places": 1,
+      "why": "p27: `% Increase` printed to one decimal = this fiscal year's levy over the year before's, less one, as a percent, rounded half up to the decimal the page prints"
+    },
+    {
+      "eq": "27/1/r7.v3 = 27/1/r7.v2 - 27/1/r6.v2 / 27/1/r6.v2",
+      "scale": 100,
+      "places": 1,
+      "why": "p27: `% Increase` printed to one decimal = this fiscal year's levy over the year before's, less one, as a percent, rounded half up to the decimal the page prints"
+    },
+    {
+      "eq": "27/1/r8.v3 = 27/1/r8.v2 - 27/1/r7.v2 / 27/1/r7.v2",
+      "scale": 100,
+      "places": 1,
+      "why": "p27: `% Increase` printed to one decimal = this fiscal year's levy over the year before's, less one, as a percent, rounded half up to the decimal the page prints"
+    }
+  ]
 }

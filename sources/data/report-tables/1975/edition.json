@@ -348,6 +348,62 @@
     {
       "eq": "146/1/r23 = 146/1/r21 + #43997.81",
       "why": "p146: $2,573,377.00 = total spent + `+ 43,997.81` returned to the town"
+    },
+    {
+      "eq": "83/11/r28 = 83/11/r6-27",
+      "why": "p83 Library: interest received from savings banks, by trust = 764.81"
+    },
+    {
+      "eq": "83/11/r37 = 83/11/r32 + 83/11/r34 + 83/11/r36",
+      "why": "p83 Library: dividends received from cooperative banks = 111.40"
+    },
+    {
+      "eq": "83/11/r38 = 83/11/r2 + 83/11/r28 + 83/11/r37",
+      "why": "p83 Library: balance June 30, 1974 + interest + dividends = $13,996.21"
+    },
+    {
+      "eq": "83/11/r41 = 83/11/r39 + 83/11/r40",
+      "why": "p83 Library: payments by the Library Trustees 242.82 + balance June 30, 1975 13,753.39 = $13,996.21"
+    },
+    {
+      "eq": "83/12/r7 = 83/12/r5-6",
+      "why": "p83 Sidewalks and Grounds: interest received = 396.96"
+    },
+    {
+      "eq": "83/12/r8 = 83/12/r3 + 83/12/r7",
+      "why": "p83 Sidewalks and Grounds: balance June 30, 1974 + interest = $6,254.97"
+    },
+    {
+      "eq": "83/12/r9 = 83/12/r8",
+      "why": "p83 Sidewalks and Grounds: balance June 30, 1975 = the sum above it (nothing paid out)"
+    },
+    {
+      "eq": "83/12/r21 = 83/12/r16-20",
+      "why": "p83 School Prize: income received, Fitchburg Gas & Electric Light Co. and Fidelity Cooperative = 76.84"
+    },
+    {
+      "eq": "83/12/r22 = 83/12/r12 + 83/12/r21",
+      "why": "p83 School Prize: balance June 30, 1974 + income = $1,185.73"
+    },
+    {
+      "eq": "83/12/r28 = 83/12/r25 + 83/12/r27",
+      "why": "p83 School Prize: grants (two prizes of 35.00) = 70.00"
+    },
+    {
+      "eq": "83/12/r30 = 83/12/r28 + 83/12/r29",
+      "why": "p83 School Prize: grants 70.00 + balance June 30, 1975 1,115.73 = $1,185.73"
+    },
+    {
+      "eq": "83/12/r37 = 83/12/r35-36",
+      "why": "p83 Stabilization Fund: interest received = 950.14"
+    },
+    {
+      "eq": "83/12/r38 = 83/12/r33 + 83/12/r37",
+      "why": "p83 Stabilization Fund: balance June 30, 1974 + interest = $16,934.80"
+    },
+    {
+      "eq": "83/12/r39 = 83/12/r38",
+      "why": "p83 Stabilization Fund: balance June 30, 1975 = the sum above it"
     }
   ],
   "cell_readings": [
@@ -355,13 +411,47 @@
       "cell": "77/1/15/5",
       "textract": "TR 61.14 TR",
       "read_as": "61.14",
-      "why": "`TR` is the accountant's transfer mark (the schedule's key), printed here on both sides of the one figure in the Total Expended column; the LINES read of p77 prints the row's three figures 61.14"
+      "why": "`TR` is the accountant's transfer mark (the schedule's key), printed here on both sides of the one figure in the Total Expended column; the LINES read of p77 prints the row's three figures 61.14 ; WITNESSED 30 Oct 2026: a blind scripted reader (claude-p:sonnet via claude_lean, batched, neutral file names, shown neither Textract's text nor this reading) read the cell's crop as `61.14`, which holds the reading here"
     },
     {
       "cell": "43/2/29/3",
       "textract": "etc. 7,000.00",
       "read_as": "7,000.00",
-      "why": "`etc.` ends the article's wrapped label (`Article 42. Ch.90 Improvement-Leominster Road, Townsend Harbor Road, etc.`); the figure is the article's amount"
+      "why": "`etc.` ends the article's wrapped label (`Article 42. Ch.90 Improvement-Leominster Road, Townsend Harbor Road, etc.`); the figure is the article's amount ; WITNESSED 30 Oct 2026: a blind scripted reader (claude-p:sonnet via claude_lean, batched, neutral file names, shown neither Textract's text nor this reading) read the cell's crop as `7,000.00`, which holds the reading here"
+    }
+  ],
+  "lines_tables": [
+    {
+      "page": 83,
+      "table": 11,
+      "box": [
+        0.07,
+        0.09,
+        0.497,
+        0.775
+      ],
+      "cols": [
+        0.333,
+        0.412,
+        0.496
+      ],
+      "why": "p83 left panel (Library): Textract set this ledger and the three stacked on the right into one grid, so a label and its amount came from different funds"
+    },
+    {
+      "page": 83,
+      "table": 12,
+      "box": [
+        0.497,
+        0.07,
+        0.95,
+        0.775
+      ],
+      "cols": [
+        0.724,
+        0.811,
+        0.907
+      ],
+      "why": "p83 right panel (Sidewalks and Grounds, School Prize, Stabilization Fund, stacked): Textract set these ledgers and the Library on the left into one grid, so a label and its amount came from different funds"
     }
   ]
 }

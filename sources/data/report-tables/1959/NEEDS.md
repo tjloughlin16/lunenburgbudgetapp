@@ -125,3 +125,11 @@ than `MAX_V` 8, a one-issue debt group's repeated subtotal, a figure at the end 
 figure and words in one cell, `II`/`I`/`O` read as digits (built behind `roman_counts`, measured, not set), a leading
 or trailing `-`, digit groups split one per cell (1963 p9), text-valued town-facts rows, side-by-side trust panels,
 and every figure Textract put in no cell (re-read list). `locate_cell_misreads.py`: 0 candidates.
+
+## Close-out, 30 October 2026: every financial page proven or blocked
+
+Pages proven / unproven / refused: 24 / 6 / 1 before, 30 / 0 / 1 after; the 1 not proven are registered as blocked (scratchpad file for `page-blocked.csv`, appended by the parent).
+
+Readings and identities opted into in `edition.json` (each documented where it is defined in `scripts/read_report_tables.py`, or `scripts/declared_identities.py`): `expended_from_amounts`, `ed_mark`, `stepped_subtotals_in` (2), `school_statistics_totals`, `dollar_sign_labels`, `welfare_net_cost`, `cell_readings` (1), `declared_identities` (3), `roman_counts`, `signed_figures`.
+
+Blocked: p15 (chart, not a table).

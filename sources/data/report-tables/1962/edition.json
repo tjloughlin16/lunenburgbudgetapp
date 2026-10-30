@@ -128,5 +128,44 @@
   ],
   "school_statistics_totals": true,
   "dollar_sign_labels": true,
-  "welfare_net_cost": true
+  "welfare_net_cost": true,
+  "line_rows": [
+    {
+      "table": "65/4",
+      "col": 2,
+      "rows": [
+        [
+          "Salary",
+          "1,600.00"
+        ],
+        [
+          "Administration",
+          "4,900.00"
+        ]
+      ],
+      "why": "the Treasurer's salary and administration, the last two voted lines at the foot of the left column of p65 (under the heading `Treasurer`), outside every table Textract returned"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "109/2/r2.v3 = 109/2/r2.v1 + 109/2/r2.v2",
+      "why": "p109: an account series' TOTAL ACCOUNT APPROPRIATION is its salaries and expense appropriations added across"
+    },
+    {
+      "eq": "109/2/r3.v3 = 109/2/r3.v1 + 109/2/r3.v2",
+      "why": "p109: an account series' TOTAL ACCOUNT APPROPRIATION is its salaries and expense appropriations added across"
+    },
+    {
+      "eq": "109/2/r5.v3 = 109/2/r5.v1 + 109/2/r5.v2",
+      "why": "p109: an account series' TOTAL ACCOUNT APPROPRIATION is its salaries and expense appropriations added across"
+    },
+    {
+      "eq": "109/2/r7.v3 = 109/2/r7.v1 + 109/2/r7.v2",
+      "why": "p109: an account series' TOTAL ACCOUNT APPROPRIATION is its salaries and expense appropriations added across"
+    },
+    {
+      "eq": "109/2/r11.v3 = 109/2/r11.v1 + 109/2/r11.v2",
+      "why": "p109: an account series' TOTAL ACCOUNT APPROPRIATION is its salaries and expense appropriations added across"
+    }
+  ]
 }

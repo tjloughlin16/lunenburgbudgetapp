@@ -133,5 +133,85 @@
   ],
   "school_statistics_totals": true,
   "dollar_sign_labels": true,
-  "welfare_net_cost": true
+  "welfare_net_cost": true,
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-debt"
+  ],
+  "letter_key_marks": true,
+  "available_runs": true,
+  "declared_identities": [
+    {
+      "eq": "64/4/r3 = 64/4/r1-2",
+      "why": "p64: the articles transferred from surplus revenue and their unlabelled subtotal"
+    },
+    {
+      "eq": "65/2/r5 = 64/4/r4-7 + 65/2/r1-4",
+      "why": "pp64-65: the articles transferred from other available funds and their unlabelled subtotal"
+    },
+    {
+      "eq": "65/1/r14 = 65/2/r6-12 + 65/1/r1-13",
+      "why": "p65: the articles raised by taxation and their unlabelled subtotal"
+    },
+    {
+      "eq": "65/1/r15 = 64/4/r3 + 65/2/r5 + 65/1/r14",
+      "why": "p65: TOTAL SPECIAL ARTICLES VOTED $147,772.92, the three funding blocks"
+    },
+    {
+      "eq": "113/1/r7.v3 = 113/1/r7.v1 - 113/1/r7.v2",
+      "why": "p113: an account the page marks `*` carries its balance into 1967 -- the 1967 figure is the 1966 appropriation less what was spent"
+    },
+    {
+      "eq": "113/1/r8.v3 = 113/1/r8.v1 - 113/1/r8.v2",
+      "why": "p113: an account the page marks `*` carries its balance into 1967 -- the 1967 figure is the 1966 appropriation less what was spent"
+    },
+    {
+      "eq": "113/1/r9.v3 = 113/1/r9.v1 - 113/1/r9.v2",
+      "why": "p113: an account the page marks `*` carries its balance into 1967 -- the 1967 figure is the 1966 appropriation less what was spent"
+    },
+    {
+      "eq": "113/1/r10.v3 = 113/1/r10.v1 - 113/1/r10.v2",
+      "why": "p113: an account the page marks `*` carries its balance into 1967 -- the 1967 figure is the 1966 appropriation less what was spent"
+    },
+    {
+      "eq": "113/1/r12.v3 = 113/1/r12.v1 - 113/1/r12.v2",
+      "why": "p113: an account the page marks `*` carries its balance into 1967 -- the 1967 figure is the 1966 appropriation less what was spent"
+    },
+    {
+      "eq": "113/1/r16.v3 = 113/1/r16.v1 - 113/1/r16.v2",
+      "why": "p113: an account the page marks `*` carries its balance into 1967 -- the 1967 figure is the 1966 appropriation less what was spent"
+    },
+    {
+      "eq": "113/1/r17.v3 = 113/1/r17.v1 - 113/1/r17.v2",
+      "why": "p113: an account the page marks `*` carries its balance into 1967 -- the 1967 figure is the 1966 appropriation less what was spent"
+    },
+    {
+      "eq": "114/2/r3 = 114/2/r1-2",
+      "why": "p114: the P. L. 874 and P. L. 864 funds allotted toward 1967 and their sum"
+    },
+    {
+      "eq": "114/2/r4 = 114/1/r1-9 + 114/2/r3",
+      "why": "p114: GRAND TOTAL RECEIPTS, All Sources, the nine receipts and the federal funds"
+    },
+    {
+      "eq": "114/3/r3 = 114/3/r1-2",
+      "why": "p114: the day school request plus the articles because of schools"
+    },
+    {
+      "eq": "114/3/r5 = 114/3/r3 + 114/3/r4",
+      "why": "p114: NET COST OF DAY SCHOOLS FROM LOCAL TAXATION, the request less the grand total receipts (printed negative)"
+    },
+    {
+      "eq": "117/2/r1 = 117/1/r1 + 117/1/r3",
+      "why": "p117: NDEA Title III, balance January 1 less expenditures (printed negative) is the balance December 31"
+    },
+    {
+      "eq": "117/4/r1 = 117/3/r1 + 117/3/r3",
+      "why": "p117: NDEA Title V, balance January 1 plus receipts is the total available"
+    },
+    {
+      "eq": "117/4/r3 = 117/4/r1 + 117/4/r2",
+      "why": "p117: NDEA Title V, total available less expenditures (printed negative) is the balance December 31"
+    }
+  ]
 }

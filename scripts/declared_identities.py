@@ -72,7 +72,7 @@ def apply(specs, dataset_rows, tables=None):
         for r in rows:
             if 'line_no' not in r or 'status' not in r:
                 continue
-            m = re.match(r'^t(\d+)r(\d+)$', r.get('line_no') or '')
+            m = re.match(r'^t(\d+)r(\d+)$', str(r.get('line_no') or ''))
             if m:
                 index.setdefault((int(r['page']), int(m[1]), int(m[2])), []).append(r)
     for spec in specs:
@@ -123,9 +123,16 @@ def apply(specs, dataset_rows, tables=None):
             q = Decimal(1).scaleb(-int(spec.get('places', 2)))
             sides = [sides[0], (sides[1] / sides[2] * Decimal(str(spec.get('scale', 1)))).quantize(q, rounding='ROUND_DOWN' if spec.get('truncate') else 'ROUND_HALF_UP')]
         ok = sides[0] == sides[1]
+        # `tol`: the edition's dollar rounding tolerance (TJ, 29 Oct 2026), named per identity and
+        # worded with the same countable phrase as the column checks (1995 p21: whole-dollar
+        # highway accounts, a balance $1 off appropriated less expenditures)
+        rounded = (not ok and spec.get('tol') is not None
+                   and abs(sides[0] - sides[1]) <= Decimal(str(spec['tol'])))
+        ok = ok or rounded
         note = ('DECLARED IDENTITY (%s): %s -- %s %s %s%s'
                 % (spec['why'], spec['eq'], _money(sides[0]), '=' if ok else '!=', _money(sides[1]),
-                   '' if ok else ' (off %s)' % _money(sides[0] - sides[1])))
+                   ' within $1 rounding tolerance (printed differs by $%s)' % _money(abs(sides[0] - sides[1]))
+                   if rounded else '' if ok else ' (off %s)' % _money(sides[0] - sides[1])))
         for r in used:
             if spec.get('replaces') and r['status'] == 'check failed' and ok:
                 # THE READER'S OWN CHECK WAS APPLIED TO THE WRONG CELLS (a header Textract set one

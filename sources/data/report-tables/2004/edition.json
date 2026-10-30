@@ -3,15 +3,19 @@
   "fy": 2004,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
-  "debt_row_totals_skip": ["77/1"],
+  "debt_row_totals_skip": [
+    "77/1"
+  ],
   "debt_row_totals_skip_why": "p77 continues the previous page's schedule BY YEAR: its TOTAL column sums years printed on both pages, so the one-page row identity does not apply there",
   "debt_row_totals": true,
   "debt_row_totals_why": "the debt repayment schedule's TOTAL column is the sum of its fiscal-year columns on every row; the column walk sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
@@ -135,5 +139,61 @@
       "period": "calendar 2004",
       "cited": "p78 `BIRTHS - 2004`; p81 `DEATHS - 2004`; p82 `MARRIAGES - 2004`; p13 `persons who were buried this year`"
     }
-  ]
+  ],
+  "declared_identities": [
+    {
+      "eq": "55/1/r34.v2 = 55/1/r32-33.v1",
+      "replaces": "the column walk summed TOTAL FUNDS AVAILABLE over the one detail line that prints a figure there ($1,300.00); Other Expenses prints none in that column, as no detail line in the Technology Director block above does",
+      "why": "p55 Zoning Board of Appeals: the unlabeled subtotal prints TOTAL FUNDS AVAILABLE $3,228.00 beside APPROPRIATED $3,228.00; the block prints no forward or transfer line, so funds available are the two appropriations, Payroll-Clerical $1,300.00 + Other Expenses $1,928.00"
+    },
+    {
+      "eq": "57/1/r46.v2 = 57/1/r43-45.v1",
+      "replaces": "the column walk summed TOTAL FUNDS AVAILABLE over Fire Hydrant Expense above and the $3,507.90 the page prints on Other Expenses' line (which equals fwd $1,825.49 + that line's expended $1,682.41), not over the block's funds",
+      "why": "p57 Comp. Radio Watch Personnel: the unlabeled subtotal prints TOTAL FUNDS AVAILABLE $156,929.73 = the block's APPROPRIATED FORWARD lines, fwd $1,825.49 + Payroll $153,104.24 + Other Expenses $2,000.00 (the same subtotal prints APPROPRIATED $156,929.73)"
+    },
+    {
+      "eq": "58/1/r72.v2 = 58/1/r70-71.v1",
+      "replaces": "Cemetery-Payroll prints its expended figure, $39,293.80, in the TOTAL FUNDS AVAILABLE column (its subtotal prints $39,293.80 as TOTAL EXPENDED), so the column walk summed the wrong figure",
+      "why": "p58 Cemetery: the unlabeled subtotal prints TOTAL FUNDS AVAILABLE $39,294.60 = the block's APPROPRIATED FORWARD lines, mrt $566.00 + Cemetery-Payroll $38,728.60 (the subtotal prints APPROPRIATED $39,294.60 too)"
+    },
+    {
+      "eq": "58/1/r72.v3 = 58/1/r71.v2",
+      "replaces": "the column walk found no detail figure in TOTAL EXPENDED: the line's figure is printed one column left",
+      "why": "p58 Cemetery: the subtotal's TOTAL EXPENDED $39,293.80 is the one figure its only expense line prints, $39,293.80, set one column to the left (in TOTAL FUNDS AVAILABLE)"
+    },
+    {
+      "eq": "72/1/r12.vL = 72/2/r24",
+      "replaces": "the column walk summed every BOOK BALANCE line of pp70-72 including the TOTAL FIRSTFED line ($92,567.50) beside the TOTAL TEEN CENTER and TOTAL CONSERVATION lines it totals, counting them twice",
+      "why": "p72: the schedule's GRAND TOTAL TRUST FUNDS: BOOK BALANCE $1,708,858.22 is printed again as the GRAND TOTAL of the SUMMARY OF FUNDS below it, which foots its twenty fund lines to the cent"
+    },
+    {
+      "eq": "72/1/r12.vL = 70/1/r15.vL + 70/1/r33.vL + 70/1/r36.vL + 70/1/r38.vL + 70/1/r42.vL + 70/1/r46.vL + 71/1/r4.vL + 72/1/r10.vL",
+      "replaces": "the column walk summed every BOOK BALANCE line of pp70-72 including TOTAL FIRSTFED beside the TOTAL TEEN CENTER and TOTAL CONSERVATION lines it totals, counting $92,567.50 twice",
+      "why": "pp70-72 trust funds: GRAND TOTAL TRUST FUNDS BOOK BALANCE $1,708,858.22 = the eight bank totals the schedule prints, TOTAL COLUMBIA FUNDS, TOTAL FIRSTFED, the two TOTAL PBHG FUNDS, TOTAL MMDT, TOTAL STOCK, TOTAL STABILIZATION and TOTAL CENTURY"
+    },
+    {
+      "eq": "70/1/r15.c4 = 70/1/r3-14.c4",
+      "why": "p70 TOTAL COLUMBIA FUNDS: DIVIDENDS printed $8,358.14 against the twelve account lines' DIVIDENDS above it; recorded as the page prints it (the BOOK BALANCE total $233,033.81 agrees with the lines' dividends, $8,343.11, not with the printed total)"
+    },
+    {
+      "eq": "71/1/r4.c3 = 70/1/r51.c3 + 71/1/r2-3.c3",
+      "why": "p70-71 TOTAL STABILIZATION: BEG BAL 6/30/03 printed $678,962.17 against the three stabilization lines' BEG BAL (FIRSTFED $688.40, CD# 517005294 $678,273.77, CD# 517005302 $68,000.00); recorded as the page prints it"
+    },
+    {
+      "eq": "77/1/r12.vL = #90,000 + 77/1/r11.vL",
+      "replaces": "Textract read the two label lines PRINCIPAL (69% EXEMPT) and INTEREST as one cell, so the figures are placed against one row; PRINCIPAL $90,000 is quoted from the page's text read (line 41)",
+      "why": "p77 debt repayment schedule, TOTAL column: the second MUNICIPAL PURPOSE issue's TOTAL MUNICIPAL PURPOSE $94,635 = PRINCIPAL (69% EXEMPT) $90,000 + INTEREST $4,635 (p76 prints the same $90,000 and $4,635 in 2005, its only year)"
+    },
+    {
+      "eq": "77/1/r21.vL = #685,000 + #110,440",
+      "why": "p77 debt repayment schedule, TOTAL column: the third MUNICIPAL PURPOSE issue's TOTAL MUNICIPAL PURPOSE $795,440 = PRINCIPAL $685,000 + INTEREST $110,440, both quoted from the page's text read (lines 96, 98): Textract read the two label lines as one cell and placed neither figure"
+    }
+  ],
+  "colon_for_point": true,
+  "colon_for_point_why": "p72 PHILIP CROUSE SCHOL INT: Textract read the BEG BAL cell as `$ 42:63`, a colon for the decimal point (the scan prints `42.63`, and with it TOTAL CENTURY's BEG BAL foots); no cell in this edition holds a time of day in that form (p5's office hours are `8:00 AM - 4:00 PM`, not a lone figure) (30 October 2026)",
+  "rebuild_by_position": [
+    "76/1",
+    "77/1"
+  ],
+  "rebuild_by_position_why": "pp76-77: Textract put figures of the debt repayment schedule in the wrong rows (p76: the 2013 and 2014 figures of MASS WATER POOL 7; p77: the TOTAL column of the two MUNICIPAL PURPOSE blocks, one row high); every figure word is placed by its printed position against the label rows and header columns (CLAUDE.md 13b), 30 October 2026"
 }

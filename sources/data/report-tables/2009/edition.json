@@ -3,15 +3,19 @@
   "fy": 2009,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
-  "debt_row_totals_skip": ["66/1"],
+  "debt_row_totals_skip": [
+    "66/1"
+  ],
   "debt_row_totals_skip_why": "p66 continues the previous page's schedule BY YEAR: its TOTAL column sums years printed on both pages, so the one-page row identity does not apply there",
   "debt_row_totals": true,
   "debt_row_totals_why": "the debt repayment schedule's TOTAL column is the sum of its fiscal-year columns on every row; the column walk sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
@@ -23,26 +27,128 @@
   "label": "2009 Annual Town Report",
   "read_by": "AWS Textract (tables + text), every page; cells in build/textract/out/4517-2009-annual-town-report.cells.tsv",
   "periods": [
-    {"what": "combined balance sheet", "period": "fiscal year ended June 30, 2009", "cited": "p46: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 2009`"},
-    {"what": "receipts", "period": "fiscal 2009, through June 2009", "cited": "p47: `FY 2009 RECEIPTS - JUNE 2009`"},
-    {"what": "general fund appropriations", "period": "fiscal year 2009", "cited": "p49: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2009`"},
-    {"what": "special revenue funds", "period": "fiscal year ending June 30, 2009", "cited": "p55: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/09`; column headers `FORWARD 7/1/2008` ... `BALANCE FWD TO FY'10`"},
-    {"what": "capital project funds", "period": "fiscal year 2009", "cited": "p60: `CAPITAL PROJECT FUNDS FY 09`"},
-    {"what": "treasurer's cash", "period": "as of June 30, 2009", "cited": "p61: `Treasurer's Cash / as of June 30, 2009`; `Total Cash per Treasurer 6/30/09`"},
-    {"what": "trust funds", "period": "fiscal year 2009", "cited": "p62: `TRUST FUNDS / FISCAL YEAR 2009 SUMMARY REPORT`; column `6/30/2009 MARKET VALUE`"},
-    {"what": "bonded indebtedness", "period": "as of June 30, 2009", "cited": "p64: `Bonded Indebtedness / as of June 30, 2009`; columns `DUE IN FISCAL 2009`, `TOTAL PAYMENTS THRU 2009`"},
-    {"what": "bonds authorized and unissued", "period": "as of June 30, 2009", "cited": "p64: `BONDS AUTHORIZED & UNISSUED AS OF JUNE 30, 2009`"},
-    {"what": "debt repayment schedule", "period": "as of June 30, 2009", "cited": "p65: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2009`"},
-    {"what": "collection of taxes", "period": "fiscal year 2009", "cited": "p67: `FY2009 COLLECTION OF TAXES`"},
-    {"what": "omnibus budget", "period": "fiscal year 2010, as VOTED (a budget, not an actual). THE PAGE DISAGREES WITH ITSELF: its title says FY 2009, its only figure column says VOTED FY 2010", "cited": "p73: title `FY 2009 Omnibus Budget`; column header `Line No. | Account | VOTED FY 2010`; voted at the Annual Town Meeting of May 2, 2009 (p72: `ANNUAL TOWN MEETING WARRANT MAY 2, 2009`)"},
-    {"what": "wages (payroll report)", "period": "NOT PRINTED. No heading on pages 84-89 names the year or whether it is calendar or fiscal; the index calls the section `Payroll Report` (p5). Not inferred -- see gaps.csv", "cited": "p84 top lines: `NAME | DEPT. | WAGES | NAME | DEPT. | WAGES`; p5 index: `Payroll Report 80 85`"},
-    {"what": "annual town election", "period": "May 16, 2009", "cited": "p68: `ANNUAL TOWN ELECTION / SATURDAY MAY 16, 2009`"},
-    {"what": "special state primary", "period": "December 1, 2009", "cited": "p70: `SPECIAL STATE PRIMARY ELECTION - DECEMBER 1, 2009`"},
-    {"what": "valuation", "period": "fiscal 2009", "cited": "text p13: `Fiscal 2009 Assessments and Revenues by Major Property Class`; p14: `Fiscal Year 2009 Abstract of Assessments`"},
-    {"what": "enrollment", "period": "October 1, 2007 to October 1, 2009", "cited": "text p28: `ENROLLMENT: OCTOBER 1, 2007 - OCTOBER 1, 2009`; column headers `10/01/07 | 10/01/08 | 10/01/09`"},
-    {"what": "special services: disability types", "period": "school year 2008-09", "cited": "p30: column headers `State Data 08/09 | LUNENBURG 08/09`"},
-    {"what": "special services: state indicators", "period": "2007-08", "cited": "p30: `Indicator 2 - Dropout Rate (2007-08)`; p31: `Indicator 12 - Early Childhood Transition (2007-08)`"},
-    {"what": "special services: out-of-district placements (prose, not a table)", "period": "the 2009/2010 school year", "cited": "p29-30: `nine students received services outside the district during the 2009/2010 school year`"},
-    {"what": "vital records counts (prose)", "period": "calendar 2009", "cited": "p69: `DURING 2009 THE TOWN CLERK RECORDED THE FOLLOWING: BIRTHS 81 DEATHS 64 MARRIAGES- 44`"}
-  ]
+    {
+      "what": "combined balance sheet",
+      "period": "fiscal year ended June 30, 2009",
+      "cited": "p46: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 2009`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal 2009, through June 2009",
+      "cited": "p47: `FY 2009 RECEIPTS - JUNE 2009`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "fiscal year 2009",
+      "cited": "p49: `GENERAL FUND APPROPRIATIONS / SUMMARY & CLASSIFICATION OF ACCOUNTS / FISCAL YEAR 2009`"
+    },
+    {
+      "what": "special revenue funds",
+      "period": "fiscal year ending June 30, 2009",
+      "cited": "p55: `SPECIAL REVENUE FUNDS / FISCAL YEAR ENDING 6/30/09`; column headers `FORWARD 7/1/2008` ... `BALANCE FWD TO FY'10`"
+    },
+    {
+      "what": "capital project funds",
+      "period": "fiscal year 2009",
+      "cited": "p60: `CAPITAL PROJECT FUNDS FY 09`"
+    },
+    {
+      "what": "treasurer's cash",
+      "period": "as of June 30, 2009",
+      "cited": "p61: `Treasurer's Cash / as of June 30, 2009`; `Total Cash per Treasurer 6/30/09`"
+    },
+    {
+      "what": "trust funds",
+      "period": "fiscal year 2009",
+      "cited": "p62: `TRUST FUNDS / FISCAL YEAR 2009 SUMMARY REPORT`; column `6/30/2009 MARKET VALUE`"
+    },
+    {
+      "what": "bonded indebtedness",
+      "period": "as of June 30, 2009",
+      "cited": "p64: `Bonded Indebtedness / as of June 30, 2009`; columns `DUE IN FISCAL 2009`, `TOTAL PAYMENTS THRU 2009`"
+    },
+    {
+      "what": "bonds authorized and unissued",
+      "period": "as of June 30, 2009",
+      "cited": "p64: `BONDS AUTHORIZED & UNISSUED AS OF JUNE 30, 2009`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of June 30, 2009",
+      "cited": "p65: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30 2009`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "fiscal year 2009",
+      "cited": "p67: `FY2009 COLLECTION OF TAXES`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 2010, as VOTED (a budget, not an actual). THE PAGE DISAGREES WITH ITSELF: its title says FY 2009, its only figure column says VOTED FY 2010",
+      "cited": "p73: title `FY 2009 Omnibus Budget`; column header `Line No. | Account | VOTED FY 2010`; voted at the Annual Town Meeting of May 2, 2009 (p72: `ANNUAL TOWN MEETING WARRANT MAY 2, 2009`)"
+    },
+    {
+      "what": "wages (payroll report)",
+      "period": "NOT PRINTED. No heading on pages 84-89 names the year or whether it is calendar or fiscal; the index calls the section `Payroll Report` (p5). Not inferred -- see gaps.csv",
+      "cited": "p84 top lines: `NAME | DEPT. | WAGES | NAME | DEPT. | WAGES`; p5 index: `Payroll Report 80 85`"
+    },
+    {
+      "what": "annual town election",
+      "period": "May 16, 2009",
+      "cited": "p68: `ANNUAL TOWN ELECTION / SATURDAY MAY 16, 2009`"
+    },
+    {
+      "what": "special state primary",
+      "period": "December 1, 2009",
+      "cited": "p70: `SPECIAL STATE PRIMARY ELECTION - DECEMBER 1, 2009`"
+    },
+    {
+      "what": "valuation",
+      "period": "fiscal 2009",
+      "cited": "text p13: `Fiscal 2009 Assessments and Revenues by Major Property Class`; p14: `Fiscal Year 2009 Abstract of Assessments`"
+    },
+    {
+      "what": "enrollment",
+      "period": "October 1, 2007 to October 1, 2009",
+      "cited": "text p28: `ENROLLMENT: OCTOBER 1, 2007 - OCTOBER 1, 2009`; column headers `10/01/07 | 10/01/08 | 10/01/09`"
+    },
+    {
+      "what": "special services: disability types",
+      "period": "school year 2008-09",
+      "cited": "p30: column headers `State Data 08/09 | LUNENBURG 08/09`"
+    },
+    {
+      "what": "special services: state indicators",
+      "period": "2007-08",
+      "cited": "p30: `Indicator 2 - Dropout Rate (2007-08)`; p31: `Indicator 12 - Early Childhood Transition (2007-08)`"
+    },
+    {
+      "what": "special services: out-of-district placements (prose, not a table)",
+      "period": "the 2009/2010 school year",
+      "cited": "p29-30: `nine students received services outside the district during the 2009/2010 school year`"
+    },
+    {
+      "what": "vital records counts (prose)",
+      "period": "calendar 2009",
+      "cited": "p69: `DURING 2009 THE TOWN CLERK RECORDED THE FOLLOWING: BIRTHS 81 DEATHS 64 MARRIAGES- 44`"
+    }
+  ],
+  "rebuild_by_position": [
+    "65/1",
+    "66/1"
+  ],
+  "rebuild_by_position_why": "p65-66: the sideways debt repayment schedule; Textract split each printed row in two and shifted the later years' figures into the wrong cells, so every figure word is placed by its printed position against the label rows and header columns (CLAUDE.md 13b), 30 October 2026",
+  "declared_identities": [
+    {
+      "eq": "65/1/r36:p1.v1 = #14,873 + 65/1/r35:p1.v1",
+      "replaces": "the 2010 column check summed the total over the interest line alone; the principal's 2010 figure did not reach the grid",
+      "why": "p65 MASS WATER POOL 14*, fiscal 2010: TOTAL $20,252 = PRINCIPAL $14,873 (quoted from the page's text read, line 438; the rebuilt grid starts that row's figures at 2011) + INTEREST $5,379"
+    },
+    {
+      "eq": "65/1/r3 = #100,000 + #2,750",
+      "why": "p65 MUNICIPAL PURPOSE (82% EXEMPT), fiscal 2010: TOTAL $102,750 = PRINCIPAL $100,000 + INTEREST $2,750, both quoted from the page's text read (lines 24 and 26), which Textract read into the column header"
+    }
+  ],
+  "witnessed_glyphs": true,
+  "witnessed_glyphs_why": "pp84-88: five wage cells the glyph witness left undecided between `$` and `8` are decided by their cell-witness reading (witnessed-cells.csv), for the cell and for the coverage check's LINE (30 October 2026)"
 }

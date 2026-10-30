@@ -1078,7 +1078,8 @@ show up on re-reading your own work.
 
 ## The annual town reports
 
-**AND 52 OLDER ONES, 1959-2010, ARRIVED 28 OCTOBER 2026 -- IN PROGRESS. Start at
+**AND 52 OLDER ONES, 1959-2010, ARRIVED 28 OCTOBER 2026 -- FINISHED 30 OCTOBER 2026: every
+financial page `proven` or `blocked` (`page-blocked.csv`). Start at
 `notes/HANDOFF-ANNUAL-REPORTS-1959-2010.md`.** Read by Textract, not Vision; extracted by
 per-report workers into `sources/data/report-tables/<year>/` and merged. What follows about
 "finished" is about the FY2011-FY2025 set only.

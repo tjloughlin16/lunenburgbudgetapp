@@ -102,5 +102,59 @@
   "receipts_two_columns": true,
   "school_statistics_totals": true,
   "dollar_sign_labels": true,
-  "welfare_net_cost": true
+  "welfare_net_cost": true,
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-debt"
+  ],
+  "declared_identities": [
+    {
+      "eq": "64/2/r12 = 64/1/r1-15 + 64/2/r1-11",
+      "why": "p64: the special articles raised by taxation and their unlabelled subtotal $32,668.20"
+    },
+    {
+      "eq": "98/1/r2.v2 - 98/1/r2.v1 = 98/1/r2.v3",
+      "why": "p98: the DIFFERENCE column is the 1965 request less the 1964 budget"
+    },
+    {
+      "eq": "98/1/r3.v2 - 98/1/r3.v1 = 98/1/r3.v3",
+      "why": "p98: the DIFFERENCE column is the 1965 request less the 1964 budget"
+    },
+    {
+      "eq": "98/1/r5.v2 - 98/1/r5.v1 = 98/1/r5.v3",
+      "why": "p98: the DIFFERENCE column is the 1965 request less the 1964 budget"
+    },
+    {
+      "eq": "98/2/r2.v2 - 98/2/r2.v1 = 98/2/r3.v2",
+      "why": "p98: the AMOUNT OF INCREASE is the year's gross budget less the year before"
+    },
+    {
+      "eq": "98/2/r2.v3 - 98/2/r2.v2 = 98/2/r3.v3",
+      "why": "p98: the AMOUNT OF INCREASE is the year's gross budget less the year before"
+    },
+    {
+      "eq": "98/2/r2.v4 - 98/2/r2.v3 = 98/2/r3.v4",
+      "why": "p98: the AMOUNT OF INCREASE is the year's gross budget less the year before"
+    },
+    {
+      "eq": "98/2/r2.v3 = 98/1/r5.v1",
+      "why": "p98: the 1964 gross budget is printed in both tables"
+    },
+    {
+      "eq": "105/1/r6.v3 = 105/1/r6.v1 - 105/1/r6.v2",
+      "why": "p105: an account the page marks * carries its balance into 1965 -- the 1965 figure is the 1964 appropriation less what was spent"
+    },
+    {
+      "eq": "105/1/r7.v3 = 105/1/r7.v1 - 105/1/r7.v2",
+      "why": "p105: an account the page marks * carries its balance into 1965 -- the 1965 figure is the 1964 appropriation less what was spent"
+    },
+    {
+      "eq": "105/1/r8.v3 = 105/1/r8.v1 - 105/1/r8.v2",
+      "why": "p105: an account the page marks * carries its balance into 1965 -- the 1965 figure is the 1964 appropriation less what was spent"
+    },
+    {
+      "eq": "105/1/r9.v3 = 105/1/r9.v1 - 105/1/r9.v2",
+      "why": "p105: an account the page marks * carries its balance into 1965 -- the 1965 figure is the 1964 appropriation less what was spent"
+    }
+  ]
 }

@@ -3,12 +3,14 @@
   "fy": 2006,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
   "debt_row_totals": true,
@@ -118,5 +120,68 @@
       "period": "calendar 2006",
       "cited": "p77 `ANNUAL TOWN ELECTION / SATURDAY MAY 20, 2006`; p81 `STATE PRIMARY / SEPTEMBER 19, 2006`; p85 `STATE ELECTION / NOVEMBER 7, 2006`"
     }
-  ]
+  ],
+  "declared_identities": [
+    {
+      "eq": "90/1/r3 = 90/2/r4-5 + 90/1/r1",
+      "replaces": "the column walk summed only line 3 above it",
+      "why": "FY07 omnibus (ATM 2006 Article 14), p90: Total Maturing Debt $2,421,862.00 = lines 1-2 (left table) + line 3 (right table, above the total)"
+    },
+    {
+      "eq": "91/2/r13 = 90/1/r5-7 + 91/2/r1-10",
+      "replaces": "the column walk took only p91's lines",
+      "why": "FY07 omnibus: Total Gen Gov Unclass $2,062,089.00 (p91) = lines 4-6 at the foot of p90 + lines 7-15 on p91 (line 16 MacGregor Pension prints a dash)"
+    },
+    {
+      "eq": "91/1/r2 = 91/2/r50-54",
+      "replaces": "the column walk summed the subtotal over nothing above it in the right column",
+      "why": "FY07 omnibus, p91: Subtotal Police $1,176,126.00 (head of the right column) = lines 41-45 at the foot of the left column"
+    },
+    {
+      "eq": "92/1/r5 = 91/1/r54 + 92/1/r1-3",
+      "replaces": "the column walk took the whole of p91's right column",
+      "why": "FY07 omnibus: Subtotal Veterans $5,443.00 (p92) = line 76 Veterans' Benefits at the foot of p91 + lines 77-79 on p92"
+    },
+    {
+      "eq": "92/1/r7 = 91/1/r52 + 92/1/r5",
+      "why": "FY07 omnibus: Total Assistance $86,630.00 (p92) = Subtotal C.O.A. (p91) + Subtotal Veterans (p92)"
+    },
+    {
+      "eq": "92/2/r13 = 90/1/r3 + 91/2/r13 + 91/2/r42 + 91/2/r47 + 91/1/r21 + 91/1/r30 + 91/1/r47 + 92/1/r7 + 92/2/r3 + 92/2/r7 + 92/2/r10",
+      "replaces": "the column walk summed Total Omnibus over nothing",
+      "why": "FY07 omnibus, p92: Total Omnibus $23,337,905.00 = the category totals the warrant prints (Maturing Debt, Gen Gov Unclass, General Gov, Central Purchasing, Protection, Health & Sanitation, DPW, Assistance, Schools, Public Library) + line 87 Band Concerts (Total Recreation prints a dash)"
+    },
+    {
+      "eq": "92/2/r13 = #22,769,320.06 + #25,024.94 + #10,872.00 + #20,000.00 + #512,688.00",
+      "why": "FY07 omnibus, p92: Total Omnibus $23,337,905.00 = the five sums the vote printed beneath it raises and transfers (raise and appropriate $22,769,320.06, overlay surplus $25,024.94, septic receipts $10,872.00, sewer enterprise $20,000.00, sewer betterment fund $512,688.00)"
+    },
+    {
+      "eq": "66/1/r24.v5 = 66/1/r24.v1 + 66/1/r24.v2 + 66/1/r24.v3 + 66/1/r24.v4",
+      "replaces": "the row identity subtracted the disbursement the page already prints as negative",
+      "why": "trust funds, p66: ARTS LOTTERY ENDING CASH VALUE $1,845.33 = BEGIN BAL PRINCIPAL $3,046.32 + BEGIN BAL EARNINGS $84.01 + CONTRIB TO PRINCIPAL $2,500.00 + DISBURSEMENTS printed in parentheses ($3,785.00), an outflow already signed"
+    },
+    {
+      "eq": "55/1/r35.v2 = 55/1/r34.v1 + 55/1/r35.v1",
+      "replaces": "the GRAND TOTAL column walk took the fwd line, which its account's TOTAL FUNDS AVAILABLE accounts for",
+      "why": "accountant schedule, p55: Unemployment Comp TOTAL FUNDS AVAILABLE $7,924.80 = the fwd line $53.80 printed directly above it (APPROPRIATED FORWARD only) + its appropriation $7,871.00"
+    },
+    {
+      "eq": "88/1/r7:p2 = 88/1/r2-6:p2",
+      "replaces": "the column walk read the whole table row, so the left panel's `Sub Total` label made the School Department's third item a total, and the right panel's `Sub Total` closed the left panel's Canon copy machine",
+      "why": "Article 3 capital outlay (May 6, 2006 ATM), p88 right panel: the School Department Sub Total $97,266.00 = its five items (ES alarm/security system, HS white boards, ES cafeteria tables, school furniture, MS parking lot lighting)"
+    },
+    {
+      "eq": "89/1/r5:p2 = 88/1/r4:p1 + 88/1/r7:p1 + 89/1/r5:p1 + 89/1/r10:p1 + 89/1/r18:p1 + 88/1/r7:p2 + 89/1/r2:p2",
+      "replaces": "the column walk summed TOTAL over the right panel above it on p89 only",
+      "why": "Article 3 capital outlay, p89: TOTAL $346,798.00 (the amount the vote under it appropriates) = Assessors Sub Total ($-0-) + Council on Aging's one item + the DPW, Fire Department and Police Department Sub Totals (left panel) + the School Department Sub Total + Technology's one item (right panel), across pp88-89"
+    }
+  ],
+  "colon_for_point": true,
+  "colon_for_point_why": "the 2006 scan prints the decimal point of a few figures as a colon (`$1,552:29` p63, `$18:95` p65, `$931,594:26` p66; the blind reader saw the same mark); read as cents (30 October 2026)",
+  "debt_row_totals_skip": [
+    "69/1"
+  ],
+  "debt_row_totals_skip_why": "p69 continues p68's schedule BY YEAR (fiscal 2016-2025 and TOTAL): its TOTAL column sums years printed on both pages, so the one-page row identity does not apply there",
+  "dash_zero": true,
+  "dash_zero_why": "pp88-89: the Article 3 capital outlay list prints `$ -0-` for items voted nothing (map storage unit, plan storage, the Assessors' Sub Total, ambulance, Copier); read as a printed zero (30 October 2026)"
 }

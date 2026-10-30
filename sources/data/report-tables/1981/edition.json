@@ -426,6 +426,29 @@
     {
       "eq": "123/2/r9 = 123/2/r4-8",
       "why": "p123: conservation funds by bank account"
+    },
+    {
+      "eq": "113/1/r54.c2 = #5280.00 + #720.00",
+      "why": "p113: General Repairs to and Winterization of Town Hall: funds available 6,000.00 = Total Expended printed as two stacked figures `5,280.00 720.00TR` (spent, and the balance transferred)",
+      "replaces": "the Total Expended cell holds two stacked figures, which the row identity cannot read"
+    },
+    {
+      "eq": "115/1/r49.c2 = 115/1/r49.c5 + 115/1/r50.c5",
+      "why": "p115: Aquire Land M.R.D.A.: funds available 8,781.25 = total expended 3,566.75 + `5,214.50TR` printed on the next line in the Total Expended column",
+      "replaces": "the balance TRANSFERRED (TR) prints in the Total Expended column on its own line, which the row identity does not reach, so it read the balance as blank"
+    },
+    {
+      "eq": "120/1/r3.c2 = 120/1/r3.c5 + 120/1/r4.c5",
+      "why": "p120: Unemployment Compensation Antirecession Funds: funds available 1,170.00 = total expended 1,049.00 + `121.00TR` printed on the next line in the Total Expended column",
+      "replaces": "the balance TRANSFERRED (TR) prints in the Total Expended column on its own line, which the row identity does not reach, so it read the balance as blank"
+    }
+  ],
+  "cell_readings": [
+    {
+      "cell": "113/1/53/5",
+      "textract": "500,00TR",
+      "read_as": "500.00",
+      "why": "a comma for the decimal point, then the accountant's TR mark (transferred): Textract and a blind scripted reader of the crop (30 Oct 2026, `500,00`, see cell-witness-log.csv) both see the digits 500 00 with a comma; the account's funds available are 500.00 (`500.00Fwd`), all of it transferred"
     }
   ]
 }

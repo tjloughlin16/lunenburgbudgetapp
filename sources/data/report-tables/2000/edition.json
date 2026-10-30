@@ -3,12 +3,18 @@
   "fy": 2000,
   "basis": "calendar",
   "rounding_tolerance_usd": 1,
+  "row_identity_tolerance": true,
+  "row_identity_tolerance_why": "the $1 rounding tolerance (TJ, 29 Oct 2026) applied to a row's printed balance as to a column's printed total; rows say `within $1 rounding tolerance` (30 October 2026). TJ to confirm it should reach row identities",
+  "forward_lines_skip_own": true,
+  "forward_lines_skip_own_why": "a line whose AVAILABLE equals its own APPROPRIATED carries no forward line, so pending forward lines belong to a later line of the group (30 October 2026)",
+  "forward_lines_identity": true,
+  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone above it, and the TOTAL FUNDS AVAILABLE of the account or department subtotal they fund is its appropriation plus them: tested as that run's identity (30 October 2026). Set where the layout puts AVAILABLE on the account or department subtotal only: measured on 1991-2010, on 2004-2010 a mark line belongs to one of several lines printing AVAILABLE",
+  "debt_label_columns": true,
+  "debt_label_columns_why": "the debt repayment schedule's column totals are checked against the rows their printed labels name (issue total = its principal and interest lines; GRAND TOTAL PRINCIPAL = every PRINCIPAL line; GRAND TOTAL INTEREST = every INTEREST line; TOTAL DEBT = the two), replacing the column walk, which sums GRAND TOTAL INTEREST over nothing (30 October 2026)",
   "unlabeled_subtotal_blocks": true,
   "unlabeled_subtotal_blocks_why": "the department block an unlabeled subtotal tied to, to the cent, is recorded as that department's own closed check, so its lines are not left to the GRAND TOTAL pages away (30 October 2026)",
   "unlabeled_subtotals_forward_lines": true,
   "unlabeled_subtotals_forward_lines_why": "a department's rft/mrt/fwd lines print in APPROPRIATED alone, so that column's block starts above EXPENDED's; the unlabeled subtotal is recognised when one line lies in every tying column's window (30 October 2026)",
-  "forward_lines_identity": true,
-  "forward_lines_identity_why": "an account's rft/fwd/mrt lines print in APPROPRIATED alone directly above it, and its TOTAL FUNDS AVAILABLE is its appropriation plus them: tested as that run's identity (30 October 2026)",
   "blank_balance_outside_subtotals": true,
   "blank_balance_outside_subtotals_why": "a one-line account outside any closed department subtotal strikes its balance on its own line, so a blank balance there is zero; inside a closing department subtotal it is not (30 October 2026)",
   "debt_row_totals": true,
@@ -95,6 +101,23 @@
       "what": "police offences",
       "period": "calendar 2000 (not printed beside the table)",
       "cited": "p26: `The following is a break down of Crimes Against Persons and Property, which were investigated by this department`; the report is the calendar edition"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "105/2/r5 = 105/2/r3-4 + 106/2/r48-49",
+      "replaces": "the column walk summed only the two lines above it on p105; lines 48-49 are printed at the foot of p106's left column",
+      "why": "FY01 omnibus (p105-106): Subtotal Fire Dept. $444,686.00, printed at the head of p105's left column, = lines 48-49 at the foot of p106's left column (Fire Department, Fire Hydrant Expense) + lines 50-51 above it on p105 (Radio Equipment Mtc., Radio Watch)"
+    },
+    {
+      "eq": "106/1/r6 = 106/2/r47 + 105/2/r5 + 106/1/r5",
+      "replaces": "the column walk summed Total Protection over nothing above it on its own table",
+      "why": "FY01 omnibus, p106: Total Protection $1,397,707.00 = Subtotal Police + Subtotal Fire Dept. (p105) + Subtotal Other Protection"
+    },
+    {
+      "eq": "106/1/r49 = 105/1/r6 + 106/2/r15 + 106/2/r42 + 106/1/r6 + 106/1/r13 + 106/1/r26 + 106/1/r35 + 106/1/r40 + 106/1/r43 + 106/1/r46 + 106/1/r48",
+      "replaces": "the column walk summed Total Omnibus over nothing; it is the sum of the category totals",
+      "why": "FY01 omnibus, p106: Total Omnibus $15,801,974.00 = the eleven category totals the warrant prints (Maturing Debt on p105; Gen Gov Unclassified, General Gov., Protection, Health & Sanitation, Highway, Assistance, Schools, Library, Recreation, Cemetery on p106)"
     }
   ]
 }

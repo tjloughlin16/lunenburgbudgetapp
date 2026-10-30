@@ -26,11 +26,11 @@ prints no total. **Nothing here may be aggregated without splitting on `status` 
 |---|---:|---|---|---|---|---|
 | `placement-counts.csv` | 15 | 2011–2025 | parts sum to the total; each year states its predecessor | yes | yes | yes |
 | `ballot-questions.csv` | 9 | 2012–2025 | every tally against its own precinct figures | yes | — | yes |
-| `annual-report-receipts.csv` | 7,793 | 1959–2023 | 4,884 checked / 2,361 failed / 548 no check | yes | yes | yes |
-| `special-revenue-funds.csv` | 4,532 | 1992–2025 | 3,016 checked / 1,370 failed / 146 no check | yes | yes | yes |
-| `staff-roster-entries.csv` | 12,326 | 1959–2025 | every line of every page accounted for | yes | — | yes |
-| `staff-roster-counts.csv` | 2,287 | 1959–2025 | derived from the above | yes | — | yes |
-| `staff-position-map.csv` | 3,222 | — | a hypothesis about which titles are the same job | yes | — | yes |
+| `annual-report-receipts.csv` | 7,848 | 1959–2023 | 6,648 checked / 652 failed / 548 no check | yes | yes | yes |
+| `special-revenue-funds.csv` | 4,532 | 1992–2025 | 3,018 checked / 1,368 failed / 146 no check | yes | yes | yes |
+| `staff-roster-entries.csv` | 12,278 | 1959–2025 | every line of every page accounted for | yes | — | yes |
+| `staff-roster-counts.csv` | 2,290 | 1959–2025 | derived from the above | yes | — | yes |
+| `staff-position-map.csv` | 3,208 | — | a hypothesis about which titles are the same job | yes | — | yes |
 
 ### Built by the generic extractor (`scripts/extract_tables.py`)
 
@@ -42,84 +42,84 @@ Read `column_meaning` before reading a value.
 | `report-agency-funds.csv` | 26 | 1987–1987 | 0 checked / 0 failed / 26 no check | yes | shared | **no** |
 | `report-appropriations-supplement-refused.csv` | 3 | — | — | **no** | shared | yes |
 | `report-appropriations-supplement.csv` | 32 | — | — | **no** | shared | yes |
-| `report-appropriations.csv` | 27,764 | 1959–2025 | 9,482 checked / 7,453 failed / 10,829 no check | yes | shared | yes |
-| `report-auditors-cash-schedule.csv` | 168 | 1983–1988 | 126 checked / 0 failed / 42 no check | yes | shared | **no** |
+| `report-appropriations.csv` | 27,799 | 1959–2025 | 12,782 checked / 5,845 failed / 9,172 no check | yes | shared | yes |
+| `report-auditors-cash-schedule.csv` | 168 | 1983–1988 | 127 checked / 0 failed / 41 no check | yes | shared | **no** |
 | `report-capital-project-costs.csv` | 13 | 1961–1961 | 2 checked / 0 failed / 11 no check | yes | shared | **no** |
-| `report-capital-projects.csv` | 1,317 | 1999–2025 | 738 checked / 550 failed / 29 no check | yes | shared | yes |
-| `report-cash-management.csv` | 17 | 1981–1981 | 0 checked / 0 failed / 17 no check | yes | shared | **no** |
+| `report-capital-projects.csv` | 1,317 | 1999–2025 | 741 checked / 547 failed / 29 no check | yes | shared | yes |
+| `report-cash-management.csv` | 17 | 1981–1981 | 15 checked / 0 failed / 2 no check | yes | shared | **no** |
 | `report-classification-plan.csv` | 54 | 2010–2010 | 0 checked / 0 failed / 54 no check | yes | shared | **no** |
 | `report-committee-income-expenses.csv` | 22 | 1978–1978 | 22 checked / 0 failed / 0 no check | yes | shared | **no** |
-| `report-debt.csv` | 3,429 | 1959–2025 | 2,462 checked / 577 failed / 390 no check | yes | shared | yes |
-| `report-dept-activity.csv` | 2,264 | 1959–2025 | 0 checked / 0 failed / 2,264 no check | yes | shared | yes |
-| `report-elections.csv` | 3,863 | 1959–2025 | 1,664 checked / 1,725 failed / 474 no check | yes | shared | yes |
+| `report-debt.csv` | 3,533 | 1959–2025 | 2,876 checked / 315 failed / 342 no check | yes | shared | yes |
+| `report-dept-activity.csv` | 2,264 | 1959–2025 | 15 checked / 0 failed / 2,249 no check | yes | shared | yes |
+| `report-elections.csv` | 3,863 | 1959–2025 | 1,671 checked / 1,718 failed / 474 no check | yes | shared | yes |
 | `report-energy-use.csv` | 3 | 1976–1976 | 0 checked / 0 failed / 3 no check | yes | shared | **no** |
 | `report-enrollment-mcas.csv` | 747 | 1987–2025 | 36 checked / 4 failed / 707 no check | yes | shared | yes |
 | `report-expenditure-history.csv` | 10 | 1971–1971 | 8 checked / 0 failed / 2 no check | yes | shared | **no** |
 | `report-expenditure-shares.csv` | 104 | 1960–1983 | 0 checked / 0 failed / 104 no check | yes | shared | **no** |
-| `report-fee-schedule.csv` | 218 | 1964–2004 | 0 checked / 0 failed / 218 no check | yes | shared | **no** |
+| `report-fee-schedule.csv` | 218 | 1964–2004 | 8 checked / 0 failed / 210 no check | yes | shared | **no** |
 | `report-filing.csv` | 119 | — | — | **no** | shared | yes |
-| `report-financial-performance.csv` | 19 | 1979–1979 | 0 checked / 0 failed / 19 no check | yes | shared | **no** |
-| `report-fund-balance-sheets.csv` | 3,626 | 1959–1986 | 226 checked / 0 failed / 3,400 no check | yes | shared | **no** |
-| `report-gross-wages.csv` | 11,446 | 1995–2025 | 7,644 checked / 255 failed / 3,547 no check | yes | shared | yes |
-| `report-highway-accounts.csv` | 18 | 1995–1995 | 0 checked / 0 failed / 18 no check | yes | shared | **no** |
+| `report-financial-performance.csv` | 19 | 1979–1979 | 11 checked / 3 failed / 5 no check | yes | shared | **no** |
+| `report-fund-balance-sheets.csv` | 3,720 | 1959–1986 | 2,275 checked / 0 failed / 1,445 no check | yes | shared | **no** |
+| `report-gross-wages.csv` | 11,512 | 1995–2025 | 7,965 checked / 0 failed / 3,547 no check | yes | shared | yes |
+| `report-highway-accounts.csv` | 18 | 1995–1995 | 18 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-index.csv` | 698 | 2011–2025 | — | **no** | shared | yes |
 | `report-library-service-values.csv` | 10 | 2004–2004 | 10 checked / 0 failed / 0 no check | yes | shared | **no** |
-| `report-monty-tech.csv` | 79 | 1966–2017 | 0 checked / 0 failed / 79 no check | yes | shared | yes |
+| `report-monty-tech.csv` | 79 | 1966–2017 | 2 checked / 0 failed / 77 no check | yes | shared | yes |
 | `report-office-budget-cuts.csv` | 4 | 1983–1983 | 4 checked / 0 failed / 0 no check | yes | shared | **no** |
 | `report-officials.csv` | 1,838 | 1961–2024 | 0 checked / 0 failed / 1,838 no check | yes | shared | yes |
 | `report-per-capita-comparison.csv` | 3 | 1978–1978 | 0 checked / 0 failed / 3 no check | yes | shared | **no** |
 | `report-property-tax-exemptions.csv` | 179 | 1974–1991 | 0 checked / 0 failed / 179 no check | yes | shared | **no** |
 | `report-proposed-salary-schedule.csv` | 302 | 1966–1973 | 0 checked / 0 failed / 302 no check | yes | shared | **no** |
-| `report-revenue-cash-invested.csv` | 21 | 1974–1980 | 0 checked / 0 failed / 21 no check | yes | shared | **no** |
-| `report-revenue-sharing.csv` | 291 | 1973–1986 | 79 checked / 6 failed / 206 no check | yes | shared | **no** |
-| `report-school-budget-summary.csv` | 633 | 1959–1985 | 163 checked / 16 failed / 454 no check | yes | shared | **no** |
+| `report-revenue-cash-invested.csv` | 21 | 1974–1980 | 11 checked / 0 failed / 10 no check | yes | shared | **no** |
+| `report-revenue-sharing.csv` | 291 | 1973–1986 | 86 checked / 6 failed / 199 no check | yes | shared | **no** |
+| `report-school-budget-summary.csv` | 660 | 1959–1985 | 450 checked / 0 failed / 210 no check | yes | shared | **no** |
 | `report-school-building-approved-costs.csv` | 6 | 1959–1959 | 6 checked / 0 failed / 0 no check | yes | shared | **no** |
-| `report-school-census-minors.csv` | 10 | 1967–1967 | 0 checked / 0 failed / 10 no check | yes | shared | **no** |
-| `report-school-lunch.csv` | 668 | 1959–1979 | 268 checked / 62 failed / 338 no check | yes | shared | **no** |
-| `report-school-special-accounts.csv` | 909 | 1959–1986 | 13 checked / 0 failed / 896 no check | yes | shared | **no** |
+| `report-school-census-minors.csv` | 10 | 1967–1967 | 10 checked / 0 failed / 0 no check | yes | shared | **no** |
+| `report-school-lunch.csv` | 668 | 1959–1979 | 370 checked / 41 failed / 257 no check | yes | shared | **no** |
+| `report-school-special-accounts.csv` | 913 | 1959–1986 | 400 checked / 0 failed / 513 no check | yes | shared | **no** |
 | `report-school-spending-shares.csv` | 13 | 1971–1971 | 4 checked / 0 failed / 9 no check | yes | shared | **no** |
 | `report-school-staff-changes.csv` | 7 | 1977–1977 | 5 checked / 0 failed / 2 no check | yes | shared | **no** |
-| `report-school-staff-fte.csv` | 450 | 1959–1986 | 0 checked / 0 failed / 450 no check | yes | shared | **no** |
-| `report-school-state-aid.csv` | 378 | 1959–1986 | 118 checked / 14 failed / 246 no check | yes | shared | **no** |
+| `report-school-staff-fte.csv` | 450 | 1959–1986 | 186 checked / 0 failed / 264 no check | yes | shared | **no** |
+| `report-school-state-aid.csv` | 378 | 1959–1986 | 283 checked / 0 failed / 95 no check | yes | shared | **no** |
 | `report-signatures.csv` | 182 | 2013–2025 | — | **no** | shared | yes |
 | `report-special-education.csv` | 46 | 2008–2009 | 0 checked / 0 failed / 46 no check | yes | shared | **no** |
-| `report-statement-of-payments.csv` | 4,555 | 1959–1986 | 3,243 checked / 88 failed / 1,224 no check | yes | shared | **no** |
-| `report-surplus-free-cash.csv` | 58 | 1965–1980 | 0 checked / 0 failed / 58 no check | yes | shared | **no** |
+| `report-statement-of-payments.csv` | 4,670 | 1959–1986 | 4,095 checked / 0 failed / 575 no check | yes | shared | **no** |
+| `report-surplus-free-cash.csv` | 58 | 1965–1980 | 28 checked / 0 failed / 30 no check | yes | shared | **no** |
 | `report-tax-bill-breakdown.csv` | 135 | 1995–1996 | 135 checked / 0 failed / 0 no check | yes | shared | **no** |
-| `report-tax-collection-by-levy-year.csv` | 39 | 1961–1962 | 32 checked / 1 failed / 6 no check | yes | shared | **no** |
+| `report-tax-collection-by-levy-year.csv` | 39 | 1961–1962 | 32 checked / 0 failed / 7 no check | yes | shared | **no** |
 | `report-town-facts.csv` | 27 | 1959–1978 | 0 checked / 0 failed / 27 no check | yes | shared | **no** |
 | `report-transitional-receipts.csv` | 197 | 1974–1974 | 196 checked / 0 failed / 1 no check | yes | shared | **no** |
-| `report-treasurers-cash-calendar-year.csv` | 191 | 1978–1986 | 0 checked / 0 failed / 191 no check | yes | shared | **no** |
-| `report-treasurers-cash-reconciliation.csv` | 545 | 1959–2008 | 516 checked / 15 failed / 14 no check | yes | shared | **no** |
+| `report-treasurers-cash-calendar-year.csv` | 191 | 1978–1986 | 89 checked / 0 failed / 102 no check | yes | shared | **no** |
+| `report-treasurers-cash-reconciliation.csv` | 545 | 1959–2008 | 519 checked / 15 failed / 11 no check | yes | shared | **no** |
 | `report-treasurers-outlook.csv` | 14 | 1981–1981 | 6 checked / 0 failed / 8 no check | yes | shared | **no** |
 | `report-treasurers-then-and-now.csv` | 16 | 1961–1991 | 0 checked / 0 failed / 16 no check | yes | shared | **no** |
-| `report-trust-funds.csv` | 5,211 | 1959–2025 | 1,600 checked / 621 failed / 2,990 no check | yes | shared | yes |
-| `report-valuation.csv` | 987 | 1960–2019 | 204 checked / 100 failed / 683 no check | yes | shared | yes |
+| `report-trust-funds.csv` | 5,508 | 1959–2025 | 3,434 checked / 546 failed / 1,528 no check | yes | shared | yes |
+| `report-valuation.csv` | 1,029 | 1960–2019 | 265 checked / 100 failed / 664 no check | yes | shared | yes |
 | `report-vehicle-inventory.csv` | 32 | 1995–1995 | 0 checked / 0 failed / 32 no check | yes | shared | **no** |
 | `report-vendor-payments.csv` | 98 | 1986–1986 | 0 checked / 0 failed / 98 no check | yes | shared | **no** |
-| `report-veterans-services.csv` | 13 | 1964–1971 | 6 checked / 0 failed / 7 no check | yes | shared | **no** |
-| `report-vital-records.csv` | 988 | 1959–2025 | 0 checked / 0 failed / 988 no check | yes | shared | yes |
+| `report-veterans-services.csv` | 13 | 1964–1971 | 8 checked / 0 failed / 5 no check | yes | shared | **no** |
+| `report-vital-records.csv` | 2,311 | 1959–2025 | 0 checked / 0 failed / 2,311 no check | yes | shared | yes |
 | `report-voted-pay-rates.csv` | 12 | 1974–1976 | 0 checked / 0 failed / 12 no check | yes | shared | **no** |
-| `report-warrant-article-amounts.csv` | 143 | 1972–2001 | 102 checked / 0 failed / 41 no check | yes | shared | **no** |
+| `report-warrant-article-amounts.csv` | 178 | 1972–2006 | 148 checked / 0 failed / 30 no check | yes | shared | **no** |
 | `report-weights-measures.csv` | 23 | 2010–2010 | 7 checked / 7 failed / 9 no check | yes | shared | **no** |
-| `report-welfare-aid.csv` | 53 | 1959–1967 | 19 checked / 0 failed / 34 no check | yes | shared | **no** |
+| `report-welfare-aid.csv` | 53 | 1959–1967 | 49 checked / 0 failed / 4 no check | yes | shared | **no** |
 
 ### About the documents rather than the town
 
 | dataset | rows | years | what it is |
 |---|---:|---|---|
-| `annual-report-catalogue.csv` | 3,670 | 1959–2025 | Every table in every report, with its PRINTED heading |
+| `annual-report-catalogue.csv` | 3,676 | 1959–2025 | Every table in every report, with its PRINTED heading |
 | `annual-report-contents.csv` | 199 | 2011–2025 | What each report contains, section by section |
 | `annual-report-survey.csv` | 2,751 | 2011–2025 | Every page, and which instrument recovers it |
 | `extraction-plan.csv` | 555 | 2011–2025 | Which pages each dataset is read from |
-| `dataset-provenance.csv` | 616 | 1971–2025 | Every dataset joined to the document it came from |
+| `dataset-provenance.csv` | 711 | 1959–2025 | Every dataset joined to the document it came from |
 | `report-anomalies.csv` | 521 | 2011–2025 | Where a reading is not credible, and where to look |
 
 ## What is NOT captured
 
-### 1. 3081 of 3670 catalogued tables sit on pages no dataset reads
+### 1. 3087 of 3676 catalogued tables sit on pages no dataset reads
 
-About 98,508 rows by the catalogue's own estimate. Much of it is furniture — tables of
+About 98,823 rows by the catalogue's own estimate. Much of it is furniture — tables of
 contents, pie-chart labels, phone directories. These are the substantial ones, all marked
 `clean` in the catalogue:
 

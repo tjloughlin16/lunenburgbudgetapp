@@ -322,7 +322,7 @@ def payload(f):
                       'built_by': d['built_by'], 'checked': d['checked'],
                       'failed': d['failed'], 'nocheck': d['nocheck']} for d in ds],
         'sources': [
-            {'what': 'The sixteen reports themselves',
+            {'what': 'The reports themselves',
              'where': '/docs/town-annual-reports/docs/, each with its sha256 in '
                       '/data/archive-manifest.csv'},
             {'what': 'What is on each page and what proved it',

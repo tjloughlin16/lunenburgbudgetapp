@@ -340,7 +340,7 @@ Returns `dept`, `name`, `fy`, `period`, `pct_used` — for example: dept=None, n
 SELECT fy, role_category, COUNT(*) AS people FROM v_staff_roster WHERE role_category <> 'unknown' GROUP BY fy, role_category ORDER BY fy, people DESC
 ```
 
-Returns `fy`, `role_category`, `people` — for example: fy=1991, role_category=teacher, people=53
+Returns `fy`, `role_category`, `people` — for example: fy=1966, role_category=administrator, people=2
 
 > A count of names the town printed. It carries no FTE and no funding source, so it is not a staffing level.
 
@@ -350,7 +350,7 @@ Returns `fy`, `role_category`, `people` — for example: fy=1991, role_category=
 SELECT fy, school, COUNT(*) AS paras FROM v_staff_roster WHERE role_category='paraprofessional' GROUP BY fy, school ORDER BY fy, paras DESC
 ```
 
-Returns `fy`, `school`, `paras` — for example: fy=1999, school=high, paras=4
+Returns `fy`, `school`, `paras` — for example: fy=1991, school=turkey-hill, paras=4
 
 **How many paraprofessionals were tied to a named grade?**
 
@@ -366,7 +366,7 @@ Returns `fy`, `role_grade`, `paras` — for example: fy=2005, role_grade=1, para
 SELECT fy, role_raw, COUNT(*) AS rows FROM v_staff_roster WHERE role_category='paraprofessional' AND role_raw <> '' GROUP BY fy, role_raw ORDER BY fy, rows DESC
 ```
 
-Returns `fy`, `role_raw`, `rows` — for example: fy=1999, role_raw=Tutor, rows=3
+Returns `fy`, `role_raw`, `rows` — for example: fy=1991, role_raw=Horticulture Aide, rows=1
 
 > Tutor, Aide, Tutors/Aides, Paraprofessional, Para, (para), Sped Para. Five names for one job across fifteen years, which is why `role_category` exists.
 
@@ -376,7 +376,7 @@ Returns `fy`, `role_raw`, `rows` — for example: fy=1999, role_raw=Tutor, rows=
 SELECT role_raw, grade_or_dept, rows FROM role_classification WHERE role_category='unknown' ORDER BY rows DESC LIMIT 20
 ```
 
-Returns `role_raw`, `grade_or_dept`, `rows` — for example: role_raw=Member, grade_or_dept=Lunenburg School Committee, rows=9
+Returns `role_raw`, `grade_or_dept`, `rows` — for example: role_raw=, grade_or_dept=MATHEMATICS, rows=9
 
 > Left `unknown` rather than guessed. 8% of rows.
 
@@ -386,7 +386,7 @@ Returns `role_raw`, `grade_or_dept`, `rows` — for example: role_raw=Member, gr
 SELECT classified_by, role_category, SUM(rows) AS rows FROM role_classification GROUP BY classified_by, role_category ORDER BY rows DESC
 ```
 
-Returns `classified_by`, `role_category`, `rows` — for example: classified_by=heading-department, role_category=teacher, rows=1808
+Returns `classified_by`, `role_category`, `rows` — for example: classified_by=heading-department, role_category=teacher, rows=2366
 
 > A rule beginning `heading-` read the section heading rather than a printed title, which is weaker evidence.
 
@@ -412,7 +412,7 @@ Returns `fy`, `role_grade`, `teachers` — for example: fy=2025, role_grade=1, t
 SELECT school, COUNT(DISTINCT fy) AS years, MIN(fy) AS first, MAX(fy) AS last, COUNT(*) AS rows FROM staff_roster_entries GROUP BY school ORDER BY rows DESC
 ```
 
-Returns `school`, `years`, `first`, `last`, `rows` — for example: school=high, years=34, first=1991, last=2025, rows=2292
+Returns `school`, `years`, `first`, `last`, `rows` — for example: school=high, years=62, first=1959, last=2025, rows=4040
 
 **How many counselors, nurses, psychologists and social workers, by year?**
 
@@ -420,7 +420,7 @@ Returns `school`, `years`, `first`, `last`, `rows` — for example: school=high,
 SELECT fy, role_category, COUNT(*) AS people FROM v_staff_roster WHERE role_category IN ('counselor','nurse','psychologist','social_worker','speech_therapist') GROUP BY fy, role_category ORDER BY fy, role_category
 ```
 
-Returns `fy`, `role_category`, `people` — for example: fy=1991, role_category=counselor, people=1
+Returns `fy`, `role_category`, `people` — for example: fy=1988, role_category=counselor, people=4
 
 **How many people did the town print on a roster in total, by year?**
 
@@ -428,7 +428,7 @@ Returns `fy`, `role_category`, `people` — for example: fy=1991, role_category=
 SELECT fy, COUNT(*) AS names, COUNT(DISTINCT school) AS schools FROM v_staff_roster GROUP BY fy ORDER BY fy
 ```
 
-Returns `fy`, `names`, `schools` — for example: fy=1991, names=126, schools=3
+Returns `fy`, `names`, `schools` — for example: fy=1959, names=84, schools=4
 
 **Which names appear across the most years?**
 
@@ -436,7 +436,7 @@ Returns `fy`, `names`, `schools` — for example: fy=1991, names=126, schools=3
 SELECT name, COUNT(DISTINCT fy) AS years, MIN(fy) AS first, MAX(fy) AS last FROM staff_roster_entries WHERE name <> '' GROUP BY name ORDER BY years DESC, name LIMIT 20
 ```
 
-Returns `name`, `years`, `first`, `last` — for example: name=Alexis Pukaite, years=28, first=1996, last=2025
+Returns `name`, `years`, `first`, `last` — for example: name=James Besarkarski, years=30, first=1969, last=2005
 
 > A name printed in a public annual report. It is not a claim about employment, and a roster gives no FTE.
 
@@ -454,7 +454,7 @@ Returns `fy`, `school`, `admins` — for example: fy=2025, school=middle, admins
 SELECT role_grade, COUNT(*) AS rows FROM v_staff_roster WHERE role_grade <> '' GROUP BY role_grade ORDER BY rows DESC
 ```
 
-Returns `role_grade`, `rows` — for example: role_grade=K, rows=222
+Returns `role_grade`, `rows` — for example: role_grade=K, rows=236
 
 ## Athletics and fees
 
@@ -516,7 +516,7 @@ Returns `category`, `rates`, `with_a_document` — for example: category=athleti
 SELECT edition, status, COUNT(*) AS rows FROM report_appropriations GROUP BY edition, status ORDER BY edition, rows DESC
 ```
 
-Returns `edition`, `status`, `rows` — for example: edition=1991, status=checked, rows=81
+Returns `edition`, `status`, `rows` — for example: edition=1959, status=no check, rows=336
 
 > ALWAYS split on `status`. `checked`, `check failed` and `no check` are three different claims and nothing may be aggregated across them.
 
@@ -526,7 +526,7 @@ Returns `edition`, `status`, `rows` — for example: edition=1991, status=checke
 SELECT edition, status, COUNT(*) AS rows FROM report_gross_wages GROUP BY edition, status ORDER BY edition
 ```
 
-Returns `edition`, `status`, `rows` — for example: edition=1995, status=check failed, rows=56
+Returns `edition`, `status`, `rows` — for example: edition=1995, status=checked, rows=457
 
 **What debt has the town carried?**
 
@@ -534,7 +534,7 @@ Returns `edition`, `status`, `rows` — for example: edition=1995, status=check 
 SELECT edition, COUNT(*) AS rows, SUM(CASE WHEN status='checked' THEN 1 ELSE 0 END) AS checked FROM report_debt GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows`, `checked` — for example: edition=1991, rows=94, checked=91
+Returns `edition`, `rows`, `checked` — for example: edition=1959, rows=23, checked=21
 
 **What capital projects did the reports list?**
 
@@ -550,7 +550,7 @@ Returns `edition`, `label`, `status` — for example: edition=FY2025, label=3006
 SELECT edition, COUNT(*) AS rows FROM report_trust_funds GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows` — for example: edition=1991, rows=90
+Returns `edition`, `rows` — for example: edition=1959, rows=26
 
 **What did the town value its property at?**
 
@@ -566,7 +566,7 @@ Returns `edition`, `label`, `status` — for example: edition=FY2019, label=_Per
 SELECT edition, COUNT(*) AS rows FROM report_enrollment_mcas GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows` — for example: edition=1991, rows=19
+Returns `edition`, `rows` — for example: edition=1987, rows=22
 
 **What did the town assess for Monty Tech?**
 
@@ -606,7 +606,7 @@ Returns `edition`, `label` — for example: edition=FY2023, label=Unemployment
 SELECT edition, COUNT(*) AS rows FROM report_dept_activity GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows` — for example: edition=1991, rows=23
+Returns `edition`, `rows` — for example: edition=1959, rows=28
 
 **What receipts did the town record, and from what source?**
 
@@ -672,7 +672,7 @@ Returns `fy`, `group`, `rows` — for example: fy=2025, group=, rows=172
 SELECT edition, COUNT(*) AS rows, SUM(CASE WHEN status='checked' THEN 1 ELSE 0 END) AS checked FROM report_appropriations GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows`, `checked` — for example: edition=1991, rows=200, checked=81
+Returns `edition`, `rows`, `checked` — for example: edition=1959, rows=536, checked=200
 
 **Which report tables print a total we can reconcile to?**
 
@@ -798,7 +798,7 @@ Returns `date`, `question`, `total`, `registered`, `turnout_pct` — for example
 SELECT edition, COUNT(*) AS rows FROM report_elections GROUP BY edition ORDER BY edition
 ```
 
-Returns `edition`, `rows` — for example: edition=1992, rows=10
+Returns `edition`, `rows` — for example: edition=1959, rows=24
 
 ## Provenance, and what is not established
 
@@ -808,7 +808,7 @@ Returns `edition`, `rows` — for example: edition=1992, rows=10
 SELECT dataset, edition, document, publisher_label, sha256 FROM dataset_document ORDER BY dataset, edition LIMIT 20
 ```
 
-Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for example: dataset=annual-report-catalogue, edition=1991, document=4490-1991-annual-town-report.pdf, publisher_label=1991 Annual Town Report, sha256=8ba40a642b20787d55dd57ac9fefe50e828158cdfd37e9f572538f40f5fb9e62
+Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for example: dataset=annual-report-catalogue, edition=1959, document=4550-1959-annual-town-report.pdf, publisher_label=1959 Annual Town Report, sha256=ab3b0f25a702c46da27089c64b836b0b71748365b6597abab7dbc5992e5e3953
 
 > This is the join that gives an annual-report row an address. Use it in any query whose answer somebody might want to check.
 
@@ -818,7 +818,7 @@ Returns `dataset`, `edition`, `document`, `publisher_label`, `sha256` — for ex
 SELECT source_type, basis, COUNT(*) AS documents FROM document GROUP BY source_type, basis ORDER BY documents DESC
 ```
 
-Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5013
+Returns `source_type`, `basis`, `documents` — for example: source_type=primary, basis=None, documents=5047
 
 **Which documents no longer open at the publisher, or no longer match our copy?**
 
@@ -852,7 +852,7 @@ Returns `label`, `fy`, `stage`, `source`, `value`, `is_kept` — for example: la
 SELECT dataset, reconciled, partial, SUM(CAST(rows AS INTEGER)) AS rows FROM dataset_document GROUP BY dataset, reconciled, partial ORDER BY rows DESC LIMIT 20
 ```
 
-Returns `dataset`, `reconciled`, `partial`, `rows` — for example: dataset=report-appropriations, reconciled=0, partial=0, rows=11708
+Returns `dataset`, `reconciled`, `partial`, `rows` — for example: dataset=report-appropriations, reconciled=0, partial=0, rows=27764
 
 **Which figures has somebody stated publicly, and on what basis?**
 
@@ -888,7 +888,7 @@ Returns `edition`, `rows` — for example: edition=FY2021, rows=170
 SELECT 'appropriations' AS t, status, COUNT(*) AS rows FROM report_appropriations GROUP BY status UNION ALL SELECT 'gross_wages', status, COUNT(*) FROM report_gross_wages GROUP BY status ORDER BY t, rows DESC
 ```
 
-Returns `t`, `status`, `rows` — for example: t=appropriations, status=check failed, rows=6965
+Returns `t`, `status`, `rows` — for example: t=appropriations, status=checked, rows=12782
 
 **Which documents were obtained by records request rather than published?**
 
@@ -896,7 +896,7 @@ Returns `t`, `status`, `rows` — for example: t=appropriations, status=check fa
 SELECT source_type, COUNT(*) AS documents FROM document GROUP BY source_type ORDER BY documents DESC
 ```
 
-Returns `source_type`, `documents` — for example: source_type=primary, documents=5013
+Returns `source_type`, `documents` — for example: source_type=primary, documents=5047
 
 **What basis does each document have for the figures it prints?**
 
@@ -914,7 +914,7 @@ Returns `basis`, `documents` — for example: basis=budget, documents=173
 SELECT dataset, COUNT(*) AS editions, SUM(CASE WHEN document <> '' THEN 1 ELSE 0 END) AS with_a_document FROM dataset_document GROUP BY dataset ORDER BY editions DESC
 ```
 
-Returns `dataset`, `editions`, `with_a_document` — for example: dataset=annual-report-catalogue, editions=36, with_a_document=36
+Returns `dataset`, `editions`, `with_a_document` — for example: dataset=annual-report-catalogue, editions=68, with_a_document=68
 
 **How many rows of each dataset came off each page?**
 
@@ -922,7 +922,7 @@ Returns `dataset`, `editions`, `with_a_document` — for example: dataset=annual
 SELECT dataset, edition, pages, rows FROM dataset_document ORDER BY CAST(rows AS INTEGER) DESC LIMIT 20
 ```
 
-Returns `dataset`, `edition`, `pages`, `rows` — for example: dataset=report-gross-wages, edition=FY2025, pages=177,178,179,180,181,182, rows=607
+Returns `dataset`, `edition`, `pages`, `rows` — for example: dataset=report-appropriations, edition=1967, pages=27,28,29,30,31,32,33,34,35,36,37,38,71,72,73, rows=670
 
 ## Finding your way
 
@@ -940,7 +940,7 @@ Returns `name` — for example: name=account
 SELECT dataset, MIN(edition) AS first, MAX(edition) AS last, COUNT(*) AS editions FROM dataset_document GROUP BY dataset ORDER BY dataset
 ```
 
-Returns `dataset`, `first`, `last`, `editions` — for example: dataset=annual-report-catalogue, first=1991, last=FY2025, editions=36
+Returns `dataset`, `first`, `last`, `editions` — for example: dataset=annual-report-catalogue, first=1959, last=FY2025, editions=68
 
 **What does one fiscal period mean?**
 

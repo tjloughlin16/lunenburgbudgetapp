@@ -124,7 +124,56 @@
   "school_statistics_totals": true,
   "dollar_sign_labels": true,
   "not_totals": [
-    "29/2/16"
+    "29/2/16",
+    "112/2/4"
   ],
-  "roman_counts": true
+  "roman_counts": true,
+  "cell_readings": [
+    {
+      "cell": "35/1/33/4",
+      "textract": "Barn 626.89 ED",
+      "read_as": "626.89",
+      "why": "the last word of the label `Alterations and Repairs to Town Barn` and the accountant mark `ED` printed after the figure share the Amounts Expended cell; the render prints `Barn` in the account column and `626.89 ED` in Amounts Expended (Textract lines: `626.89 ED` at left 0.59)"
+    },
+    {
+      "cell": "73/1/19/2",
+      "textract": "and 6,000.00",
+      "read_as": "6,000.00",
+      "why": "the last word of the article title (`and`) wrapped into the amount cell; the amount column holds the figure alone on every other line"
+    },
+    {
+      "cell": "73/1/21/2",
+      "textract": "of 600.00",
+      "read_as": "600.00",
+      "why": "the last word of the article title (`of`) wrapped into the amount cell; the amount column holds the figure alone on every other line"
+    },
+    {
+      "cell": "73/1/22/2",
+      "textract": "Barden 450.00",
+      "read_as": "450.00",
+      "why": "the last word of the article title (`Barden`) wrapped into the amount cell; the amount column holds the figure alone on every other line"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "73/1/r3 = 72/3/r1-60 + 72/4/r1-60 + 73/2/r1-80 + 73/1/r1-2",
+      "why": "p73: TOTAL BUDGET VOTED $1,093,589.22, the voted budget lines of p72 (both column groups) and p73 above it"
+    },
+    {
+      "eq": "73/1/r9 = 73/1/r6-8",
+      "why": "p73: the articles transferred from surplus revenue and their unlabelled subtotal"
+    },
+    {
+      "eq": "73/1/r14 = 73/1/r10-13",
+      "why": "p73: the articles transferred from available funds and their unlabelled subtotal"
+    },
+    {
+      "eq": "74/2/r4 = 73/1/r16-60 + 74/1/r1-40 + 74/2/r1-3",
+      "why": "pp73-74: the articles raised by taxation and their unlabelled subtotal"
+    },
+    {
+      "eq": "74/2/r5 = 73/1/r9 + 73/1/r14 + 73/1/r15 + 74/2/r4",
+      "why": "p74: TOTAL SPECIAL ARTICLES VOTED $110,993.75, the three funding blocks and the borrowing article"
+    }
+  ]
 }

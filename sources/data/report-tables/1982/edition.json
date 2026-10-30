@@ -327,6 +327,93 @@
     {
       "eq": "#263,118.00 = 156/3/r1-15 + 156/4/r2-15",
       "why": "p156: TOTAL GENERAL GOVERNMENT, printed at the foot of the right-hand panel with no cell, over the items of both panels"
+    },
+    {
+      "eq": "134/1/r12.c2 = 134/1/r11.c6 + 134/1/r12.c6 + 134/1/r13.c6",
+      "why": "p134: Purchase Police Cruiser: funds available 12,500.00 = Total Expended printed as three stacked figures `5,634.00`, `5,366.00TF`, `1,500.00TF` (spent, and two transfers), each its own Textract row",
+      "replaces": "the Total Expended column prints three stacked figures for one account, which the row identity does not reach"
+    },
+    {
+      "eq": "135/1/r35.c2 = 135/1/r34.c5 + 135/1/r35.c5 + 135/1/r35.c7",
+      "why": "p135: Plan - Sewerage: funds available 60,922.00 = Total Expended printed as two stacked figures `42,680.00` (on the line above, beside Facility Study) and `10,987.00TF` + Balance to Fiscal 1983 7,255.00",
+      "replaces": "the Total Expended column prints two stacked figures for one account, which the row identity does not reach"
+    },
+    {
+      "eq": "157/1/r3.c3 = 157/1/r2.c2",
+      "why": "p157 FY1983 omnibus: Total Library = its line",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/1/r7.c3 = 157/1/r5.c2",
+      "why": "p157 FY1983 omnibus: Total Cemeteries = its line",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/1/r10.c3 = 157/1/r9.c2",
+      "why": "p157 FY1983 omnibus: Total Recreation = its line",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/1/r26.c3 = 157/1/r12-25.c2",
+      "why": "p157 FY1983 omnibus: Total Unclassified = its thirteen lines",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/1/r31.c3 = 157/1/r28-30.c2",
+      "why": "p157 FY1983 omnibus: Total Maturing Debt and Temporary Loans = its three lines",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/2/r23.c3 = 157/2/r2-22.c2",
+      "why": "p157 FY1983 omnibus: Total Protection of Persons and Property = its lines",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/2/r34.c3 = 157/2/r25-33.c2",
+      "why": "p157 FY1983 omnibus: Total Health = its lines",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/2/r48.c3 = 157/2/r36-46.c2",
+      "why": "p157 FY1983 omnibus: Total Highways = its lines",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/2/r52.c3 = 157/2/r50-51.c2",
+      "why": "p157 FY1983 omnibus: Total Veterans' Benefits = its two lines",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/2/r60.c3 = 157/2/r54-59.c2",
+      "why": "p157 FY1983 omnibus: Total Schools = its lines",
+      "replaces": "the section's lines print in the inner column and its total one column out; the column walk sums the total's own column"
+    },
+    {
+      "eq": "157/1/r32.c3 = 157/1/r33-36.c3",
+      "why": "p157: TOTAL BUDGET VOTED $5,999,348.00 = the four funding sources printed under it (unrestricted fund balance, revenue sharing, overlay surplus, raise by taxation)",
+      "replaces": "the column walk summed TOTAL BUDGET VOTED over nothing above it on its own table"
+    },
+    {
+      "eq": "158/1/r8.c2 = 157/1/r51-53.c3 + 158/1/r1-7.c2",
+      "why": "pp157-158: the special articles Raised by Taxation & Appropriated (Articles 18, 23, 24 on p157, 25-46 on p158) = their subtotal $131,332.15 printed on p158",
+      "replaces": "the column walk grouped the three p157 articles with the Protection section of the left-hand panel"
     }
-  ]
+  ],
+  "line_rows": [
+    {
+      "table": "115/1",
+      "col": 3,
+      "rows": [
+        [
+          "Meals Tax - School Lunch",
+          "324.65"
+        ]
+      ],
+      "why": "p115 foot: `Meals Tax - School Lunch` and `324.65` are Textract LINES (top 0.8946 and 0.8886; the figure's right edge at x 0.93, the statement's outer column, with 1,372,870.67 above it) that no table cell holds; a one-line section, its amount in the subtotal column (1982 NEEDS 2b)"
+    }
+  ],
+  "colon_heading_subtotals": true,
+  "debt_label_columns": true,
+  "stacked_pairs_wide": true,
+  "accountant_marks_rcts": true
 }
