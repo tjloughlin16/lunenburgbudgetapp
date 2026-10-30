@@ -46,3 +46,8 @@ p3 (town facts, office hours, meeting dates), p37, p38, p82 (empty table), p89 (
 
 ## 10. Inventory notes
 tax-collection (p67) lands through the legacy emitter exactly as 1981 p121 does: most `item` cells are blank and `proof` is empty (26 rows). The levy labels are in the cells; the legacy schema does not carry them.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED (`colon_heading_subtotals`: 6 receipts rows; receipts close to 9,642,100.24; payments via `statement_span`). 2 APPLIED for the chain (`checked`); the account list is not remapped. 3 APPLIED (`Cr` negative, `R` marks); `accountant_marks_before` NOT set (it cost a page). 4 NOT APPLIED (block walk). 5 p37/p38 re-read list. 6 APPLIED: `rosters.csv` written by the integration pass (it was missing) and p125-143 read. 7 APPLIED (names registered).

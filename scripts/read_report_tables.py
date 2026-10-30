@@ -157,10 +157,15 @@ IDENTITIES = {
     # 1974's 18-MONTH TRANSITIONAL YEAR (pp46-54): `Jan-Dec 1973 | Jan-Jun 1974 | 18 Month | Totals`.
     # An account prints its 18-month figure, a section subtotal its Totals; each is the two halves
     # (164 of 164 receipts rows and 153 of 154 payments rows by the worker, 1974 NEEDS 4)
-    'detailed-receipts-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')]),
-                                        ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')])],
-    'detailed-payments-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')]),
-                                        ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')])],
+    'detailed-receipts-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']}),
+                                        ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']})],
+    'detailed-payments-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']}),
+                                        ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']})],
+    # and the revenue sharing fund's own receipts and payments in the same three columns (p56)
+    'receipts-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']}),
+                               ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']})],
+    'payments-three-periods': [('18 MONTH', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']}),
+                               ('^TOTALS', [(1, 'JAN-DEC'), (1, 'JAN-JUN')], {'needs_any': ['JAN-DEC', 'JAN-JUN']})],
     'debt-by-issue': [('^BALANCE', [(1, '^AMOUNT'), (-1, 'PAYMENTS PRINCIPAL')]),
                       # 2007 prints `TOTAL PAYMENTS THRU 2007` over two sub-columns, and the
                       # principal one is named `TOTAL PRINCIPAL` (10 of 10 issues close)
@@ -178,9 +183,7 @@ ID_DOT = re.compile(r'^\d+\.\d$')
 CALENDAR_REPAIRS = [
     # `($135,987.00) *` `($203,501.00) #` `($124,718.00 )*`: a footnote mark after the figure (the
     # note, `INVESTED MONIES NOT TRANSFERRED UNTIL CHECKS ARE ACTUALLY DISBURSED`, is on the page)
-    # `120,000.00**` `40,000.00***` (1973 p67, 1974 p77, 1975 p42): two or three marks, each a
-    # different footnote -- `[*#]+` since the 1971-1980 integration pass (31 Oct 2026)
-    ('trailing footnote mark', re.compile(r'(\(?\$?\(?[\d,]+\.\d{2}\)?)[*#]+'), lambda m: m.group(1)),
+    ('trailing footnote mark', re.compile(r'(\(?\$?\(?[\d,]+\.\d{2}\)?)[*#]'), lambda m: m.group(1)),
     # `($1.76).` (1991 p39): a parenthesised negative followed by a full stop
     ('full stop after a negative', re.compile(r'(\(\$?[\d,]+\.\d{2}\))\.'), lambda m: m.group(1)),
     # `<$ 1,343>` (1995 p21): angle brackets for a negative
@@ -199,8 +202,7 @@ CALENDAR_REPAIRS = [
     # `($280,016)*` `($101,071) *` (1989 p38, 1990 p28): the footnote mark after a WHOLE-DOLLAR
     # negative -- the cents form above wants `.00`. A thousands comma is required, so a bare
     # `12*` is never read as a figure
-    # and `$ 3,560,880.*` `$1,718.*` (1979 pp152-154): whole dollars, a full stop, then the mark
-    ('trailing footnote mark', re.compile(r'(\(?\$?\(?\d{1,3}(?:,\d{3})+\)?)\.?[*#]+'), lambda m: m.group(1)),
+    ('trailing footnote mark', re.compile(r'(\(?\$?\(?\d{1,3}(?:,\d{3})+\)?)[*#]'), lambda m: m.group(1)),
     # `$2523.60 rct` `$5400.00 RF` `$10734.02 Ewd` (1987 pp31-36): the accountant's one-word mark
     # after an APPROPRIATED FORWARD figure, as `fwd` (validate_totals.FWD) already is -- `rct`,
     # `ret`, `RF`, `TR`, and `Ewd`, Textract's `fwd`. With them the column sums to its printed
@@ -226,19 +228,31 @@ CALENDAR_REPAIRS = [
     # edition opt-in (`"colon_for_point": true`), because a cell `10:30` may be a time of day
     ('colon for a decimal point', re.compile(r'(\$?\d{1,3}(?:,\d{3})*):(\d{2})[*#]?'),
      lambda m: '%s.%s' % m.groups(), 'colon_for_point'),
-    # Added by the 1971-1980 integration pass (31 October 2026).
+    # Added by the 1971-1980 integration pass (31 October 2026). An edition opt-in
+    # (`"marks_wide": true`) because each would read cells 1981-1985 and 2003 print and now publish
+    # unread (1981 p132 `$ 9,158.05**`, 1983 p125, 2003 p74 `$ 243.68 $`) -- a change for THEIR
+    # integration, not a silent one in this pass.
+    # `120,000.00**` `40,000.00***` (1973 p67, 1974 p77, 1975 p42): two or three marks
+    ('trailing footnote marks', re.compile(r'(\(?\$?\(?[\d,]+\.\d{2}\)?)[*#]{2,}'), lambda m: m.group(1),
+     'marks_wide'),
+    # `$ 3,560,880.*` `$1,718.*` (1979 pp152-154): whole dollars, a full stop, then the mark(s)
+    ('trailing footnote mark, whole dollars', re.compile(r'(\(?\$?\(?\d{1,3}(?:,\d{3})+\)?)\.?[*#]+'),
+     lambda m: m.group(1), 'marks_wide'),
     # `$ $75,245.06 $` (1978 p67), `$1,261.00$` (1979 p61): a `$` printed AFTER the figure
-    ('dollar sign after the figure', re.compile(r'\$*(\(?[\d,]+\.\d{2}\)?)\$'), lambda m: '$' + m.group(1)),
+    ('dollar sign after the figure', re.compile(r'\$*(\(?[\d,]+\.\d{2}\)?)\$'), lambda m: '$' + m.group(1),
+     'marks_wide'),
     # `-0-` `$ -0-` (1973 p47, 1974 pp46-54, 1979 pp40, 59, 73): a printed zero. An edition opt-in
     # (`"dash_zero": true`): elsewhere a `-0-` cell was text, and reading it as a figure moves the
     # ordinals of every value after it in the row
     ('-0- for zero', re.compile(r'\$?-0-\$?'), lambda m: '0.00', 'dash_zero'),
-    # `TR 610.00` `TR990.00` (1971 pp51-62, 1974 p67): the accountant's mark BEFORE the figure;
-    # and after it, the marks 1973-1980 print that `accountant_marks` does not take: `26,800.00 R`,
+    # `TR 610.00` `TR990.00` (1971 pp51-62, 1974 p67): the accountant's mark BEFORE the figure, an
+    # opt-in of its own (`"accountant_marks_before": true`) because on a department's unlabelled
+    # total line (1974 p66, 1976 p87, 1977 p63) `TR 15,189.65` sits in Balance to Revenue and is
+    # not the balance; and after it, the marks 1973-1980 print that `accountant_marks` does not take: `26,800.00 R`,
     # `A` (1979 pp64-71), `4.76R` (1980 p62), `9,000.01 F`, `5,000.00 SR` (1973 p58-59; the page's
     # KEY prints `RS`). An edition opt-in (`"accountant_marks_wide": true`)
     ('accountant mark before the figure', re.compile(r'(?i:tr|tf|rf|r)(\$?\(?[\d,]+\.\d{2}\)?)'),
-     lambda m: m.group(1), 'accountant_marks_wide'),
+     lambda m: m.group(1), 'accountant_marks_before'),
     ('accountant mark after the figure (R, A, F, SR)', re.compile(r'(\$?\(?[\d,]+\.\d{2}\)?)(?i:r|a|f|sr|rs)\.?'),
      lambda m: m.group(1), 'accountant_marks_wide'),
     # `19,982.83Cr` (1977 p61, Snow Removal Expense): a deficit marked `Cr`, read as a negative
@@ -260,7 +274,13 @@ NEW_GENERIC = {'report-auditors-cash-schedule.csv', 'report-statement-of-payment
                # and from the 1981-1985 batch (integration pass, 30 October 2026)
                'report-cash-management.csv', 'report-treasurers-outlook.csv',
                'report-school-budget-summary.csv', 'report-office-budget-cuts.csv',
-               'report-expenditure-shares.csv'}
+               'report-expenditure-shares.csv',
+               # and from the 1971-1980 batch (integration pass, 31 October 2026)
+               'report-school-lunch.csv', 'report-transitional-receipts.csv', 'report-revenue-cash-invested.csv',
+               'report-voted-pay-rates.csv', 'report-proposed-salary-schedule.csv', 'report-expenditure-history.csv',
+               'report-veterans-services.csv', 'report-school-spending-shares.csv', 'report-energy-use.csv',
+               'report-school-staff-changes.csv', 'report-town-facts.csv', 'report-per-capita-comparison.csv',
+               'report-committee-income-expenses.csv', 'report-financial-performance.csv', 'report-surplus-free-cash.csv'}
 
 # PER-EDITION OPT-INS, set by build() from `edition.json` (every key whose value is `true`). A
 # reading added for one batch of editions that would change what an earlier edition already
@@ -527,6 +547,11 @@ def row_identity(family, names, cells):
         need = [col(rx) for rx in opts.get('needs', ())]
         if any(k is None or cells.get(k) is None or cells[k].value is None for k in need):
             continue
+        # `needs_any`: at least one of these columns prints a figure (a grand total printed in the
+        # Totals column alone is not the sum of two blank halves)
+        anyk = [col(rx) for rx in opts.get('needs_any', ())]
+        if anyk and not any(k is not None and cells.get(k) is not None and cells[k].value is not None for k in anyk):
+            continue
         if blank and opts.get('blank_target') == 'zero':
             # A PRINTED BLANK READ AS ZERO, on a row that prints the columns it rests on
             target_value = Decimal(0)
@@ -607,7 +632,9 @@ def calendar_repair(text):
     t0 = text.strip().replace(' ', '')
     # one figure, not two side by side (`10.00 2.00` is two fees, never `10,002.00`): a space is
     # allowed only after `$` or a parenthesis, or before the trailing mark or the years payable
-    one = not re.search(r'\d\s+[\d$(]', text.strip())
+    # (a `$` printed AFTER the figure, `$ 942.58 $` (1974 p52), is not a second figure)
+    one = not re.search(r'\d\s+[\d$(]', re.sub(r'\s+\$$', '', text.strip()) if 'marks_wide' in OPTS
+                        else text.strip())
     for name, rx, fix, *opt in CALENDAR_REPAIRS:
         if opt and opt[0] not in OPTS:
             continue
@@ -1260,12 +1287,17 @@ def emit_receipts_span(recs, ed, stated):
     # equals, to the cent, the sum of two or more accounts directly above it that start at a
     # heading or a subtotal and cross no subtotal -- its own section. Never because the statement
     # then closes: the grand total plays no part in the decision
-    since, starts = [], {0}
+    since, starts, since_col = [], {0}, [0, None]
     colon = 'colon_heading_subtotals' in OPTS
     past_grand = False
+    prev_group = None
     for rec in recs:
         figs = money_cells(rec)
         rec = dict(rec, label=label_of(rec))
+        if rec['group'] != prev_group:
+            # a heading-only row is not a record; it shows as the next record's new `group`
+            starts.add(len(since))
+            prev_group = rec['group']
         if past_grand:
             # ROWS PRINTED AFTER THE GRAND TOTAL (1980 p43: `Less Payroll Deductions Receivable`,
             # `Total Receipts in FY 1980`) are a reconciliation of the total, not accounts. An
@@ -1296,6 +1328,12 @@ def emit_receipts_span(recs, ed, stated):
                 past_grand = True
             continue
         if not in_summary:
+            col = next(k for k, c in rec['figs'] if c is figs[0])
+            if since and col < since_col[0] and (rec['page'], rec['table']) == since_col[1]:
+                # an account printed in the SUBTOTAL column (1971 p43 `Taxes, Motor Vehicle Excise
+                # | | 3,804.63`) is a section of one: the detail lines after it start a new one
+                starts.add(len(since))
+            since_col[:] = [col, (rec['page'], rec['table'])]
             since.append(len(items))
         (summary if in_summary else items).append((rec, v))
     how = 'under a SUMMARY heading' if summary else ''
@@ -1667,6 +1705,10 @@ def emit_tax_collection(m, recs, ed):
     cols = [('forward', 'FORWARD'), ('committed', 'COMMIT'), ('adjustments', 'ADJUSTMENTS'),
             ('refunds', 'REFUNDS?\\b'), ('payments', 'PAYMENTS'), ('abatements', 'ABATEMENTS'),
             ('transfer', 'TAX TITLE'), ('balance', 'BALANCES')]
+    if 'year_labels' in OPTS:
+        # 1971-1980 head the column `Balance` (1971 p42): an opt-in with the year labels that
+        # give those rows their levy year
+        cols[-1] = ('balance', '^BALANCES?\\b(?!.*FORWARD)')
     out = []
     for rec in recs:
         if not rec['figs']:
@@ -1724,6 +1766,69 @@ LIST_FAMILIES = {'omnibus-budget', 'debt-authorized-unissued', 'trust-funds-summ
                  'budget-supplement-passed-over', 'master-capital-facilities-plan',
                  'library-service-values'}
 TOTAL_LABEL = re.compile(r'(?:^|\s)T?OTAL\b', re.I)
+
+
+SPAN_TOTAL = re.compile(r'^TOTAL PAYMENTS\b', re.I)
+
+
+def statement_span(parts):
+    """ONE STATEMENT PRINTED OVER SEVERAL PAGES IN TWO FIGURE COLUMNS (`edition.json`:
+    `"statement_span": ["report-statement-of-payments"]`, an opt-in; the 1971-1980 detailed
+    statements of payments). Detail lines print in the inner column, and each section's subtotal
+    -- or a line that is a section of its own -- in the OUTER column; one `Total Payments` closes
+    the outer column on the last page. The column validator reads a page at a time and one column
+    at a time, so it could not see either identity. Two are checked here, each printed:
+
+      - the OUTER column, every figure above the total, sums to the total printed (the map's
+        `stated_total`, else the row labelled `Total Payments`): those rows are `checked`;
+      - a run of detail lines sums EXACTLY to the outer figure that follows it (or, where the
+        page prints a subtotal beside its heading, the one that precedes it): those detail
+        lines are `checked`.
+    Only a `no check` row is upgraded; nothing is reclassified, and a row that closes on
+    neither stays `no check`."""
+    seq, stated = [], None
+    for m, recs, rows in parts:
+        if m.get('stated_total'):
+            stated = Decimal(m['stated_total'])
+        if len(recs) != len(rows):
+            return                                    # a row was split into chunks: not this layout
+        outer = max((max(r['figcols']) for r in recs if r['figcols']), default=None)
+        for rec, row in zip(recs, rows):
+            if rec['figs']:
+                seq.append((rec, row, rec['figs'][-1][0] == outer and len(rec['figs']) == 1))
+    tot_i = next((i for i, (rec, _, _) in enumerate(seq) if SPAN_TOTAL.search(rec['label'])), None)
+    total = stated if stated is not None else (seq[tot_i][0]['figs'][-1][1].value if tot_i is not None else None)
+    body = seq[:tot_i] if tot_i is not None else seq
+    if total is None or not body:
+        return
+    tops = [(i, rec, row) for i, (rec, row, top) in enumerate(body) if top]
+    s_top = sum((rec['figs'][-1][1].value for _, rec, _ in tops), Decimal(0))
+
+    def mark(row, why):
+        if row['status'] == 'no check':
+            row['status'] = 'checked'
+            row['reconciliation'] = (why + (' ; ' + row['reconciliation'] if row['reconciliation']
+                                            and row['reconciliation'] != 'no total printed' else ''))
+    if s_top == total:
+        for _, rec, row in tops:
+            mark(row, 'the outer column of the statement, %d figures over p%s-p%s, sums to the printed total %s'
+                 % (len(tops), body[0][0]['page'], body[-1][0]['page'], V.money(total)))
+    run, prev_top = [], None
+    for i, (rec, row, top) in enumerate(body):
+        if not top:
+            run.append((rec, row))
+            continue
+        v = rec['figs'][-1][1].value
+        got = sum((r['figs'][0][1].value for r, _ in run), Decimal(0))
+        if run and got == v:
+            for _, rw in run:
+                mark(rw, 'the %d detail lines sum to the section subtotal %s printed after them (p%s)'
+                     % (len(run), V.money(v), rec['page']))
+        elif run and prev_top is not None and got == prev_top[0]['figs'][-1][1].value:
+            for _, rw in run:
+                mark(rw, 'the %d detail lines sum to the section subtotal %s printed beside their heading (p%s)'
+                     % (len(run), V.money(got), prev_top[0]['page']))
+        run, prev_top = [], (rec, row)
 
 
 def stated_list_totals(m_rows, emitted):
@@ -2053,6 +2158,7 @@ def build(edition, inventory_only=False):
     receipts_stated = [None]
     held = set((ed.get('withheld_rows') or {}).get('rows', []))
     emitted = {}
+    spans = collections.OrderedDict()
     for m in m_rows:
         if not m['dataset']:
             continue
@@ -2070,6 +2176,8 @@ def build(edition, inventory_only=False):
         elif m['dataset'].startswith('report-'):
             rows = emit_generic(m, recs, ed)
             emitted[k] = rows
+            if m['dataset'] in (ed.get('statement_span') or ()):
+                spans.setdefault((m['dataset'], m['family']), []).append((m, recs, rows))
         elif m['dataset'] == 'annual-report-receipts':
             # RECEIPTS SPLIT INTO SEVERAL TABLES ON ONE PAGE (1991, 1992: three printed columns,
             # three Textract tables, one GRAND TOTAL in one of them) are pooled and checked
@@ -2113,6 +2221,8 @@ def build(edition, inventory_only=False):
             landed[k] += sum(1 for r in recs if r['figs'] and not re.search(r'GRAND TOTAL', r['label'], re.I)
                              and not re.search(r'SUMMARY OF RECEIPTS', r['group'], re.I))
     stated_list_totals(m_rows, emitted)
+    for (_, fam), parts in spans.items():
+        statement_span(parts)
     category_blocks(dataset_rows.get('report-tax-bill-breakdown.csv', []))
     coverage(dataset_rows.get('report-gross-wages.csv', []), lines, witness, m_rows)
     # A DATASET A FOLDER NO LONGER PRODUCES (renamed, or its rows moved) must not linger in

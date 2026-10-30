@@ -87,3 +87,8 @@ start date, no pay), p171 food services personnel. Not sent for tables.
 
 `withheld_rows` NOT used (TJ, 30 Oct 2026). Named pupils paid grants from the school prize funds (p69/1) and named
 perpetual-care bequest donors (p68/4) are landed as printed. p67 shows trust funds by named bequest.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+Figures in no cell (1-5): a re-read, not applied; the receipts stay `check failed` (short 199,497.10 as the worker said). Shared 1 NOT APPLIED (stacked cells). 2 NOT APPLIED (`amount/CODE`). 3 APPLIED (`marks_wide`, trailing `$`). 4, 5, 6 NOT APPLIED. Payments: `statement_span` (outer column closes on 15,272,040.25 without the three missing lines' section). Names: `report-school-lunch-program` -> `report-school-lunch`. Finder miss p180: re-read list.

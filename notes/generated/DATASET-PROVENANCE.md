@@ -21,10 +21,20 @@ kept where both exist, because when one dies the other may not. The
 publisher's own label is kept too, because when both die the only way a resident
 gets the document is to ask the town for it by name.
 
-## `annual-report-catalogue` — 2,136 rows across 46 report(s), **none reconciled**
+## `annual-report-catalogue` — 2,795 rows across 56 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1971 | 68 | 2,8,29,33,40,42,43,44,45,46,47,48,49,50,… | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 52 | 2,15,16,44,45,46,47,50,51,54,55,56,67,68… | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 61 | 3,10,17,42,43,44,45,46,47,48,49,50,51,52… | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 82 | 3,8,11,42,43,44,45,46,47,48,49,50,51,52,… | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 55 | 3,9,13,42,43,52,53,54,55,56,57,58,59,60,… | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 69 | 3,8,12,14,45,46,47,51,55,61,62,63,64,65,… | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 69 | 3,8,31,37,38,39,40,41,43,44,45,47,48,49,… | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 63 | 3,8,36,37,38,39,42,43,44,46,47,48,49,50,… | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 61 | 3,11,27,40,42,43,47,51,52,53,54,55,56,57… | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 79 | 9,11,21,29,34,37,38,39,40,41,42,43,44,45… | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 70 | 3,13,15,23,43,86,87,88,89,90,91,93,94,95… | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 65 | 3,8,12,24,44,46,101,102,103,104,108,113,… | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 63 | 3,7,8,11,20,37,38,40,41,42,43,44,45,46,4… | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -72,10 +82,19 @@ gets the document is to ask the town for it by name.
 | FY2024 | 44 | 2,3,6,7,9,10,15,21,22,23,26,27,28,29,30,… | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 69 | 3,4,9,10,11,12,13,18,25,26,29,30,31,33,3… | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `annual-report-receipts` — 4,705 rows across 44 report(s), **none reconciled**
+## `annual-report-receipts` — 6,176 rows across 53 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1971 | 142 | 43,44,45,46 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 152 | 47,48,49,50 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 161 | 48,49,50,51,52 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1975 | 168 | 56,57,58,59,60 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 174 | 64,65,66,67,68 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 166 | 40,41,42,43,44 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 166 | 38,39,40,41,42 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 170 | 43,44,45,46,47 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 172 | 39,40,41,42,43 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 176 | 96,97,98,99,100 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 172 | 114,115,116,117,118 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 174 | 41,42,43,44,45 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -151,10 +170,20 @@ gets the document is to ask the town for it by name.
 | FY2024 | 1 | 97 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 1 | 92 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-appropriations` — 15,058 rows across 45 report(s), **none reconciled**
+## `report-appropriations` — 20,768 rows across 55 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1971 | 635 | 51,52,53,54,55,56,57,58,59,60,61,62,69,7… | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 555 | 56,57,58,59,60,61,62,63,64,65,66,67,72,7… | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 316 | 57,58,59,60,66,67 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 591 | 58,59,60,61,62,63,64,65,66,67,68,69,76,7… | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 628 | 42,43,68,69,70,71,72,73,74,75,76,77,78,7… | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 603 | 45,46,47,79,80,81,82,83,84,85,86,87,88,8… | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 617 | 55,56,57,58,59,60,61,62,63,64,65,66,75,7… | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 599 | 54,55,56,57,58,59,60,61,62,63,64,65,77,7… | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 601 | 60,61,62,63,64,65,66,67,68,69,70,71,72,8… | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 565 | 56,57,58,59,60,61,62,63,64,65,66,79,80,8… | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 532 | 112,113,114,115,116,117,118,119,120,131,… | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 385 | 132,133,134,135,136,137,138,139,156,157,… | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 327 | 56,57,58,59,60,61,62,63,64,65,66,76,77 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -232,10 +261,20 @@ gets the document is to ask the town for it by name.
 | FY2024 | 26 | 27 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 14 | 30 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-debt` — 2,762 rows across 38 report(s), **none reconciled**
+## `report-debt` — 3,091 rows across 48 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1971 | 34 | 63 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 30 | 55 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 29 | 56 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 57 | 57 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 28 | 67 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 28 | 78 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 32 | 54 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 31 | 53 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 32 | 59 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 28 | 55 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 19 | 111 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 12 | 131 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 26 | 38,55 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -275,10 +314,12 @@ gets the document is to ask the town for it by name.
 | FY2024 | 51 | 37 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 75 | 37,39 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-dept-activity` — 1,991 rows across 42 report(s), **none reconciled**
+## `report-dept-activity` — 2,144 rows across 44 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1977 | 74 | 31 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1980 | 79 | 21,29 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 80 | 23 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 81 | 8,24 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 92 | 7,20 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -322,10 +363,13 @@ gets the document is to ask the town for it by name.
 | FY2024 | 51 | 43,84,85 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 24 | 45 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-elections` — 3,551 rows across 31 report(s), **none reconciled**
+## `report-elections` — 3,636 rows across 34 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1974 | 40 | 75,76 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1976 | 30 | 51 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1980 | 15 | 86 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 13 | 130 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 24 | 156 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 16 | 75 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -429,10 +473,11 @@ gets the document is to ask the town for it by name.
 |---|---:|---|---|---|---|
 | FY2017 | 70 | 142,143 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
 
-## `report-officials` — 1,751 rows across 27 report(s), **none reconciled**
+## `report-officials` — 1,763 rows across 28 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1974 | 12 | 90 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
 | 1987 | 10 | 14,17,66 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
 | 1991 | 5 | 56 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 13 | 9 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
@@ -461,10 +506,20 @@ gets the document is to ask the town for it by name.
 | FY2023 | 52 | 13,14,165,166,167 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
 | FY2024 | 3 | 13,15,79 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 
-## `report-trust-funds` — 3,371 rows across 42 report(s), **none reconciled**
+## `report-trust-funds` — 4,263 rows across 52 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1971 | 100 | 64,65,66 | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 93 | 68,69,70 | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 25 | 61,63 | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 94 | 71,72,73 | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 35 | 81,82 | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1976 | 89 | 91,92,93 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
+| 1977 | 121 | 83,84,85 | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 127 | 67,68,69 | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 111 | 74,75,76 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 97 | 68,69,70 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 74 | 122,123,124 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 159 | 141,142,143,144,145,146 | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 141 | 68,69,70 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -508,10 +563,12 @@ gets the document is to ask the town for it by name.
 | FY2024 | 45 | 29 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 58 | 30,31 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-valuation` — 916 rows across 28 report(s), **none reconciled**
+## `report-valuation` — 942 rows across 30 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1979 | 13 | 42 | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 13 | 38 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 9 | 104 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1987 | 7 | 27 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
 | 1988 | 9 | 30 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
@@ -541,10 +598,11 @@ gets the document is to ask the town for it by name.
 | FY2018 | 30 | 41 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
 | FY2019 | 26 | 43 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
 
-## `report-vital-records` — 941 rows across 27 report(s), **none reconciled**
+## `report-vital-records` — 956 rows across 28 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1976 | 15 | 61 | — | `4498-1976-annual-town-report.pdf` | `00ed6eb2eb14a52c…` |
 | 1981 | 17 | 15 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1986 | 22 | 62 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
 | 1988 | 27 | 16 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
@@ -613,10 +671,19 @@ gets the document is to ask the town for it by name.
 | FY2024 | 164 | 23,24,25,26 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 172 | 26,27,28,29 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `staff-roster-entries` — 8,377 rows across 42 report(s), **none reconciled**
+## `staff-roster-entries` — 10,567 rows across 51 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1971 | 205 | 101,102,103,104,105,106,107,108,109,110,… | — | `4493-1971-annual-town-report.pdf` | `cfac0e988ecd116d…` |
+| 1972 | 215 | 103,104,105,106,107,108,109,110,111,112,… | — | `4494-1972-annual-town-report.pdf` | `c9a7a052c20adc37…` |
+| 1973 | 231 | 99,100,101,102,103,104,105,106,107,108,1… | — | `4495-1973-annual-town-report.pdf` | `bf5529d390646f43…` |
+| 1974 | 255 | 127,128,129,130,131,132,133,134,135,136,… | — | `4496-1974-annual-town-report.pdf` | `45fa66964bd0d564…` |
+| 1975 | 258 | 126,127,128,129,130,131,132,133,134,135,… | — | `4497-1975-annual-town-report.pdf` | `da4a42caf19388d1…` |
+| 1977 | 233 | 125,126,127,128,129,130,131,132,133,134,… | — | `4499-1977-annual-town-report.pdf` | `b3a447550603d7be…` |
+| 1978 | 249 | 137,138,139,140,141,142,143,144,145,146,… | — | `4500-1978-annual-town-report.pdf` | `5b9584e4a3259734…` |
+| 1979 | 278 | 121,122,123,124,125,126,127,128,129,130,… | — | `4501-1979-annual-town-report.pdf` | `09fd3f7507e3ca14…` |
+| 1980 | 266 | 115,116,117,118,119,120,121 | — | `4502-1980-annual-town-report.pdf` | `a2e47cc46b6ee472…` |
 | 1981 | 202 | 69,70,71,72,73,74,75,76,77,78 | — | `4503-1981-annual-town-report.pdf` | `2c103a4d89e2ca1b…` |
 | 1982 | 225 | 75,76,77,78,79,80,81,82,83,84,85,86,87,8… | — | `4504-1982-annual-town-report.pdf` | `82b51a1ffb1ec5fa…` |
 | 1983 | 214 | 117,118,119,120,121,122 | — | `4483-1983-annual-town-report.pdf` | `5d7d5f2e3a16e6b2…` |
@@ -664,6 +731,16 @@ gets the document is to ask the town for it by name.
 
 | edition | publisher label | addresses | bytes | sha256 |
 |---|---|---|---:|---|
+| 1971 | 1971 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4493 | 12,114,477 | `cfac0e988ecd116db557207fc5a06c9368a31672e713b5d7fc8f1ac7f971d9e1` |
+| 1972 | 1972 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4494 | 11,411,914 | `c9a7a052c20adc373b3b7bb8e1e2a020735c1580181b599f638cd6072b00a6ca` |
+| 1973 | 1973 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4495 | 12,765,329 | `bf5529d390646f43338e53cf5ad1dd3d75d2366e2da4f043e498a4d7a3e82ea6` |
+| 1974 | 1974 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4496 | 12,301,536 | `45fa66964bd0d5642e28ca9205903bbdb0b3201d162d700f7d4f24f3d32b3086` |
+| 1975 | 1975 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4497 | 13,663,742 | `da4a42caf19388d1fa640cbac949d1fb9778696fa8c604ba122fb863b8960a22` |
+| 1976 | 1976 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4498 | 16,227,842 | `00ed6eb2eb14a52c8fdcfeec01fea0a5df67f715f43a885d9126b58f9f895ac6` |
+| 1977 | 1977 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4499 | 17,766,069 | `b3a447550603d7be45a036f65362ab43d4d449a38d24a1678dffaa0d157d5037` |
+| 1978 | 1978 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4500 | 20,990,948 | `5b9584e4a3259734f0437d9032963a38ad3ab442c2c2300f9064f2b54d24727e` |
+| 1979 | 1979 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4501 | 15,592,915 | `09fd3f7507e3ca142adfd173931e0c158db2f8d9cbcb9ec8bc09314234b4786e` |
+| 1980 | 1980 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4502 | 14,602,534 | `a2e47cc46b6ee4720bf35c7bbab094f8dcb5b52f09c1a4fef35bb19a7b63b58c` |
 | 1981 | 1981 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4503 | 14,042,723 | `2c103a4d89e2ca1bd66480fa349ddc4131d12345824427d2bcf6f17e2c4ca271` |
 | 1982 | 1982 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4504 | 15,878,605 | `82b51a1ffb1ec5fa8bad30b5ab04a528bceb759dad4709fbcee9b41580d3d14d` |
 | 1983 | 1983 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4483 | 13,587,600 | `5d7d5f2e3a16e6b23b36098e930d74d91b1dbacb806a838967f541dc3ba7fe09` |

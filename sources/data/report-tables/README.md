@@ -304,3 +304,96 @@ births page for tables.
 
 Named perpetual-care bequest donors are landed as in 1986: 1982 p143/2 (`Bequests Received`, 18
 donors).
+
+## One name per quantity -- the 1971-1980 batch, decided 31 October 2026 by the integration pass
+
+The 1959-1970 folders exist beside these while their own workers finish; `HELD` (one edition per
+line) keeps them out of every shared file until their integration pass removes the lines.
+`merge_report_tables.editions()` reads it, so the merge, `--check` and every hooked generator agree.
+
+| one name | was | what it is | grain | editions |
+|---|---|---|---|---|
+| `report-school-lunch` (NEW) | `report-school-lunch` (1971-1977, 1979), `report-school-lunch-program` (1978) | the School Lunch Program report: meals served by month (COUNTS) and the program's income, USDA reimbursements and expenditures by month (DOLLARS), with year summaries. One family per edition's layout (`lunches-served-monthly`, `lunch-finances-monthly`, `lunch-income-monthly` ...); counts and dollars are never summed together. `Valuation of Commodities` is donated food, not cash. Period: the SCHOOL year as printed | one month or one measure | 1971-1979 |
+| `report-revenue-cash-invested` (NEW) | `report-revenue-cash-invested` (1978-1980), `report-treasurers-interest` (1974) | the Treasurer's revenue cash invested and the interest it earned: by half-year with rates and the money BORROWED and its interest (1974, family `invested-borrowed-interest`), or as totals for the fiscal year, the calendar year and the next fiscal year's first six months with the interest reconciliation (1978-1980). Actuals; the periods overlap, so never summed across rows. The half-year detail by bank (1978 p70/1, 1979 p77/1, 1980 p71/1) is NOT LANDED: stacked-line cells | one period or line | 1974, 1978-1980 |
+| `report-voted-pay-rates` (NEW) | `report-voted-pay-rates` (1974), `report-pay-schedule` (1976) | police pay RATES by step, and hourly special-detail rates, VOTED at a special town meeting (1974 p83, 1976 p55). A rate, not a payroll | one position | 1974, 1976 |
+| `report-proposed-salary-schedule` (NEW) | (1972, 1973) | the Personnel Committee's PROPOSED classification and salary schedule. A different STAGE from the voted rates (rule 1), so a different dataset, never merged with `report-voted-pay-rates`. 1972's VOTED schedule (p71) printed no `$` or comma and was not sent for tables: a finder miss, gap 2 in 1972/gaps.csv | one position | 1972, 1973 |
+| `report-transitional-receipts` (NEW) | (1974 only) | the Treasurer's detailed statement of receipts for the 18-MONTH TRANSITIONAL YEAR, January 1, 1973 - June 30, 1974, in `Jan-Dec 1973 | Jan-Jun 1974 | 18 Month | Totals`. NOT `annual-report-receipts`: that file holds one fiscal-year `amount` per source, and an 18-month figure in that column beside 12-month ones would be read as a year. The payments in the same layout are `report-statement-of-payments` family `detailed-payments-three-periods`, and the revenue sharing fund's are `report-revenue-sharing` families `receipts-three-periods` / `payments-three-periods` (renamed from `receipts` / `payments` so they are never summed with a one-column layout) | one revenue account | 1974 |
+
+One-edition datasets, each its own quantity: `report-expenditure-history` (1971 p8: population,
+enrollment and town expenditures at five-year intervals 1950-1971), `report-veterans-services`
+(1971 p33), `report-school-spending-shares` (1971 p98: the SCHOOL dollar by category, dollars and
+percents -- NOT `report-expenditure-shares`, 1983's TOWN pie in percents only: a different
+quantity), `report-energy-use` (1976 p106: fuel oil and degree days, no money),
+`report-school-staff-changes` (1977 p95: PROPOSED staff cuts and additions in the FY-78 request),
+`report-town-facts` (1978 p3: one fact per row, mixed units), `report-per-capita-comparison` (1978
+p36: Census Bureau per capita figures for FY1976, Lunenburg against state and national averages)
+and `report-financial-performance` (1979 p40: the Treasurer's nineteen measures FY1975-FY1979, the
+town's own figures) -- NOT merged: different publisher, quantity and grain --
+`report-committee-income-expenses` (1978 p89, the 250th anniversary committee) and
+`report-surplus-free-cash` (1980 p37: surplus revenue and free cash FY1976-FY1980 actual and FY1981
+ESTIMATED, the estimate labelled in `column_meaning`).
+
+**Calendar-year statements (1971-1973).** Until the 18-month transition the town's financial year
+WAS the calendar year: 1971, 1972 and 1973 print one set of statements, for the year ended
+December 31, and no fiscal-year set beside it. So they stay in the ordinary datasets
+(`treasurers-cash`, `report-treasurers-cash-reconciliation`, `annual-report-receipts` ...) with
+`fy` = the edition's year and the period quoted in `edition.json` `periods` and in each map row.
+The `-calendar-year` dataset exists for a SECOND statement printed beside a fiscal one (1986), and
+that is where the 1978-1980 half-year and calendar-year reconciliations went (families
+`cash-reconciliation-calendar-year` and `cash-reconciliation-and-accounts-half-year`, the period in
+the family name), because 1978-1980 also print the fiscal-year one. **The 18-month year (1973-74)**
+is never put in a column beside 12-month figures: its statements are the three-period layout
+above; 1973's accountant schedule and voted budget are 18-month budgets in their own columns, and
+`Expended through 12/31/73` is 12 of them (1973 NEEDS).
+
+## What the reader does for the 1971-1980 batch (31 October 2026)
+
+Every new reading is an `edition.json` opt-in, set on 1971-1980 only; all 30 folders 1981-2010 were
+re-run and compared byte for byte with a snapshot taken before the first change (identical), and
+FY2011-FY2025 rows of every shared file are identical to HEAD. New opt-ins:
+
+- `colon_heading_subtotals` (receipts span): a section subtotal Textract printed on the NEXT
+  section's heading row (`Special Assessments: | | 658.00`). The row is dropped as an account ONLY
+  when its one figure equals, to the cent, the sum of two or more accounts directly above it that
+  start at a heading (a change of `group`, or an account printed in the subtotal column) and cross no
+  subtotal. The grand total plays no part in the decision. It found exactly the rows the workers
+  tied by hand (1973 8, 1975 4, 1976 6, 1977 6, 1971 5, 1979's `453.00`, 1980 2), and each is
+  listed in `notes.csv`.
+- `receipts_stop_at_grand`: rows printed after the grand total (1980's `Less Payroll Deductions
+  Receivable`, `Total Receipts in FY 1980`) are not accounts.
+- `statement_span` (`["report-statement-of-payments"]`): one statement of payments over several pages
+  in two figure columns. Two printed identities, each upgrading only a `no check` row: the OUTER
+  column above `Total Payments` sums to it (the map's `stated_total`, else that row); a run of
+  detail lines sums exactly to the outer figure after it (or the one beside its heading). Nothing is
+  reclassified.
+- `recon_no_transfers`: the roll-forward prints no `LESS INVESTMENTS` line, so the unlabelled line
+  under the receipts is opening + receipts, and the one under the closing cash is a footing. Always
+  on beside it (1981-2010 unmoved): the ledger line `Cash Balance ...` / `Cash Book Balance ...`, and
+  `Disbursements ... Cash Book Balance | 13,499,119.17 36,332.40` read as two lines.
+- `cash_book_list`: the bank list under a roll-forward opens at `Cash in Banks:` or `Balance ... per
+  cash book`, whichever is first, and the cash book balance is the list's total where nothing else
+  prints one.
+- `dash_zero`: `-0-` is zero (not 1974: there the zero cells moved the column walk of the revenue
+  sharing payments and the three-period identities already read a blank as zero).
+- `accountant_marks_wide`: `R`, `A`, `F`, `SR` after a figure and `19,982.83Cr` as a negative (not
+  1973, whose `Funds Available` prints several marked components in one column and fails the column
+  checks once they are read); `accountant_marks_before`: `TR 610.00` (not 1974 or 1977, where it sits
+  on a department's total line and is not its balance).
+- `marks_wide`: two or three footnote stars (`120,000.00**`), `$ 3,560,880.*`, and a `$` printed
+  after the figure (`$ 942.58 $`). Turning it on for 1981-1985 and 2003 would read cells those
+  editions publish unread today (1981 p132 `$ 9,158.05**`, 1983 p125 -- which would become proven --
+  2003 p74 `$ 243.68 $`): left for their next pass, not changed silently in this one.
+- `year_labels`: a column whose every figure is a bare year (`1973`, `(1974)`) and which holds as
+  many text cells is a label column (1974 p46/p70/p126); with it, `tax-collection` takes `Balance`
+  as well as `BALANCES`.
+
+Always on (no 1981-2010 output moved): the accountant identity's carried column may be headed by
+the bare year (`Balance to 1972`), and the 1974 three-period row identities (`18 Month` and
+`Totals` = the two halves, applied where a half prints a figure).
+
+Not applied, each recorded at the end of its NEEDS.md: two figures in one cell (1972 p49
+`17,416.75 5,022.00`, 1979 `4,250.00 750.00TR`, 1978 p66), `amount/CODE` cells (1978-1979 school
+lunch), stacked-line cells (1977 p37, 1978 p70/1, 1979 p77/1, 1980 p37 and p71/1), side-by-side
+trust panels, `Premium 507.30` sharing a label cell (1976), the 1972 two-column balance sheet, and
+every figure Textract put in no cell (a re-read). The cell witness: `locate_cell_misreads.py
+1971 ... 1980` finds 0 candidates, so nothing was read and nothing spent.

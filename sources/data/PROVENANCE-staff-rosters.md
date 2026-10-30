@@ -20,10 +20,159 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**11552 of 11552 lines accounted for** across 241 pages, 8377 entries, 42 years.
+**18686 of 18686 lines accounted for** across 390 pages, 10567 entries, 51 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|
+| 1971-p101-central-office.json | 1971 | central-office | 34 | 34 | 0 | 8 | 0 |
+| 1971-p103-middle.json | 1971 | high | 42 | 42 | 0 | 13 | 0 |
+| 1971-p104-unknown.json | 1971 | high | 48 | 48 | 0 | 13 | 0 |
+| 1971-p105-unknown.json | 1971 | high | 59 | 59 | 0 | 12 | 0 |
+| 1971-p106-unknown.json | 1971 | high | 61 | 61 | 0 | 11 | 0 |
+| 1971-p107-unknown.json | 1971 | high | 55 | 55 | 0 | 14 | 0 |
+| 1971-p110-unknown.json | 1971 | passios | 57 | 57 | 0 | 15 | 0 |
+| 1971-p111-unknown.json | 1971 | passios | 43 | 43 | 0 | 17 | 0 |
+| 1971-p112-unknown.json | 1971 | passios | 41 | 41 | 0 | 16 | 0 |
+| 1971-p114-unknown.json | 1971 | passios | 41 | 41 | 0 | 18 | 0 |
+| 1971-p102-middle.json | 1971 | turkey-hill | 49 | 49 | 0 | 13 | 0 |
+| 1971-p108-unknown.json | 1971 | turkey-hill | 60 | 60 | 0 | 15 | 0 |
+| 1971-p109-middle.json | 1971 | turkey-hill | 56 | 56 | 0 | 15 | 0 |
+| 1971-p113-middle.json | 1971 | turkey-hill | 40 | 40 | 0 | 25 | 0 |
+| 1972-p103-central-office.json | 1972 | central-office | 37 | 37 | 0 | 5 | 0 |
+| 1972-p117-unknown.json | 1972 | district-wide | 48 | 48 | 0 | 17 | 0 |
+| 1972-p104-high.json | 1972 | high | 30 | 30 | 0 | 6 | 0 |
+| 1972-p106-middle.json | 1972 | high | 61 | 61 | 0 | 14 | 0 |
+| 1972-p107-high.json | 1972 | high | 49 | 49 | 0 | 15 | 0 |
+| 1972-p108-unknown.json | 1972 | high | 50 | 50 | 0 | 14 | 0 |
+| 1972-p109-unknown.json | 1972 | high | 56 | 56 | 0 | 12 | 0 |
+| 1972-p115-middle.json | 1972 | high | 45 | 45 | 0 | 18 | 0 |
+| 1972-p105-passios.json | 1972 | passios | 35 | 35 | 0 | 9 | 0 |
+| 1972-p112-unknown.json | 1972 | passios | 42 | 42 | 0 | 15 | 0 |
+| 1972-p113-unknown.json | 1972 | passios | 57 | 57 | 0 | 17 | 0 |
+| 1972-p114-unknown.json | 1972 | passios | 42 | 42 | 0 | 14 | 0 |
+| 1972-p116-unknown.json | 1972 | passios | 53 | 53 | 0 | 30 | 0 |
+| 1972-p110-middle.json | 1972 | turkey-hill | 43 | 43 | 0 | 13 | 0 |
+| 1972-p111-unknown.json | 1972 | turkey-hill | 56 | 56 | 0 | 16 | 0 |
+| 1973-p099-central-office.json | 1973 | central-office | 38 | 38 | 0 | 7 | 0 |
+| 1973-p107-unknown.json | 1973 | district-wide | 51 | 51 | 0 | 13 | 0 |
+| 1973-p110-high.json | 1973 | district-wide | 55 | 55 | 0 | 19 | 0 |
+| 1973-p111-middle.json | 1973 | district-wide | 60 | 60 | 0 | 28 | 2 |
+| 1973-p112-middle.json | 1973 | district-wide | 61 | 61 | 0 | 26 | 0 |
+| 1973-p101-high.json | 1973 | high | 51 | 51 | 0 | 15 | 0 |
+| 1973-p102-unknown.json | 1973 | high | 55 | 55 | 0 | 16 | 0 |
+| 1973-p103-unknown.json | 1973 | high | 57 | 57 | 0 | 15 | 0 |
+| 1973-p104-high.json | 1973 | high | 55 | 55 | 0 | 16 | 0 |
+| 1973-p100-middle.json | 1973 | turkey-hill | 49 | 49 | 0 | 15 | 0 |
+| 1973-p105-unknown.json | 1973 | turkey-hill | 52 | 52 | 0 | 16 | 0 |
+| 1973-p106-unknown.json | 1973 | turkey-hill | 48 | 48 | 0 | 16 | 0 |
+| 1973-p108-unknown.json | 1973 | unknown | 48 | 48 | 0 | 16 | 0 |
+| 1973-p109-unknown.json | 1973 | unknown | 50 | 50 | 0 | 13 | 0 |
+| 1974-p127-central-office.json | 1974 | central-office | 41 | 41 | 0 | 5 | 0 |
+| 1974-p128-passios.json | 1974 | district-wide | 45 | 45 | 0 | 9 | 0 |
+| 1974-p129-high.json | 1974 | district-wide | 45 | 45 | 0 | 10 | 0 |
+| 1974-p141-turkey-hill.json | 1974 | district-wide | 47 | 47 | 0 | 17 | 0 |
+| 1974-p142-passios.json | 1974 | district-wide | 39 | 39 | 0 | 18 | 0 |
+| 1974-p144-unknown.json | 1974 | district-wide | 46 | 46 | 0 | 22 | 0 |
+| 1974-p130-high.json | 1974 | high | 47 | 47 | 0 | 13 | 0 |
+| 1974-p131-unknown.json | 1974 | high | 50 | 50 | 0 | 16 | 0 |
+| 1974-p132-unknown.json | 1974 | high | 51 | 51 | 0 | 16 | 1 |
+| 1974-p133-unknown.json | 1974 | high | 47 | 47 | 0 | 14 | 0 |
+| 1974-p137-unknown.json | 1974 | passios | 64 | 64 | 0 | 17 | 0 |
+| 1974-p138-unknown.json | 1974 | passios | 54 | 54 | 0 | 15 | 0 |
+| 1974-p139-unknown.json | 1974 | passios | 51 | 51 | 0 | 14 | 0 |
+| 1974-p140-passios.json | 1974 | passios | 51 | 51 | 0 | 13 | 0 |
+| 1974-p134-turkey-hill.json | 1974 | turkey-hill | 47 | 47 | 0 | 14 | 0 |
+| 1974-p135-unknown.json | 1974 | turkey-hill | 71 | 71 | 0 | 14 | 0 |
+| 1974-p136-middle.json | 1974 | turkey-hill | 52 | 52 | 0 | 14 | 0 |
+| 1974-p143-turkey-hill.json | 1974 | turkey-hill | 41 | 41 | 0 | 14 | 0 |
+| 1975-p126-high.json | 1975 | central-office | 35 | 35 | 0 | 9 | 0 |
+| 1975-p127-high.json | 1975 | central-office | 42 | 42 | 0 | 10 | 0 |
+| 1975-p128-middle.json | 1975 | district-wide | 51 | 51 | 0 | 13 | 0 |
+| 1975-p139-high.json | 1975 | district-wide | 41 | 41 | 0 | 12 | 0 |
+| 1975-p140-middle.json | 1975 | district-wide | 31 | 31 | 0 | 19 | 0 |
+| 1975-p141-middle.json | 1975 | district-wide | 28 | 28 | 0 | 20 | 0 |
+| 1975-p142-unknown.json | 1975 | district-wide | 38 | 38 | 0 | 33 | 0 |
+| 1975-p129-high.json | 1975 | high | 47 | 47 | 0 | 12 | 0 |
+| 1975-p130-unknown.json | 1975 | high | 50 | 50 | 0 | 15 | 0 |
+| 1975-p131-unknown.json | 1975 | high | 53 | 53 | 0 | 13 | 0 |
+| 1975-p132-unknown.json | 1975 | high | 52 | 52 | 0 | 15 | 0 |
+| 1975-p133-high.json | 1975 | high | 42 | 42 | 0 | 12 | 0 |
+| 1975-p136-unknown.json | 1975 | passios | 43 | 43 | 0 | 15 | 0 |
+| 1975-p137-unknown.json | 1975 | passios | 49 | 49 | 0 | 15 | 0 |
+| 1975-p138-unknown.json | 1975 | passios | 41 | 41 | 0 | 15 | 0 |
+| 1975-p134-unknown.json | 1975 | turkey-hill | 54 | 54 | 0 | 17 | 0 |
+| 1975-p135-unknown.json | 1975 | turkey-hill | 43 | 43 | 0 | 13 | 0 |
+| 1977-p125-central-office.json | 1977 | central-office | 38 | 38 | 0 | 8 | 0 |
+| 1977-p126-high.json | 1977 | district-wide | 41 | 41 | 0 | 11 | 0 |
+| 1977-p127-high.json | 1977 | district-wide | 50 | 50 | 0 | 11 | 0 |
+| 1977-p128-middle.json | 1977 | district-wide | 53 | 53 | 0 | 13 | 0 |
+| 1977-p137-unknown.json | 1977 | district-wide | 43 | 43 | 0 | 12 | 0 |
+| 1977-p141-unknown.json | 1977 | district-wide | 42 | 42 | 0 | 11 | 0 |
+| 1977-p142-middle.json | 1977 | district-wide | 39 | 39 | 0 | 13 | 0 |
+| 1977-p129-unknown.json | 1977 | high | 49 | 49 | 0 | 10 | 0 |
+| 1977-p130-unknown.json | 1977 | high | 50 | 50 | 0 | 13 | 0 |
+| 1977-p131-unknown.json | 1977 | high | 54 | 54 | 0 | 13 | 0 |
+| 1977-p132-unknown.json | 1977 | high | 52 | 52 | 0 | 14 | 0 |
+| 1977-p133-unknown.json | 1977 | high | 47 | 47 | 0 | 12 | 0 |
+| 1977-p140-high.json | 1977 | passios | 46 | 46 | 0 | 11 | 0 |
+| 1977-p134-unknown.json | 1977 | turkey-hill | 48 | 48 | 0 | 11 | 0 |
+| 1977-p135-unknown.json | 1977 | turkey-hill | 45 | 45 | 0 | 13 | 0 |
+| 1977-p136-unknown.json | 1977 | turkey-hill | 47 | 47 | 0 | 15 | 0 |
+| 1977-p138-unknown.json | 1977 | unknown | 46 | 46 | 0 | 15 | 0 |
+| 1977-p139-middle.json | 1977 | unknown | 41 | 41 | 0 | 15 | 0 |
+| 1977-p143-passios.json | 1977 | unknown | 44 | 44 | 0 | 12 | 0 |
+| 1978-p137-high.json | 1978 | central-office | 13 | 13 | 0 | 1 | 0 |
+| 1978-p138-middle.json | 1978 | central-office | 41 | 41 | 0 | 7 | 0 |
+| 1978-p140-middle.json | 1978 | district-wide | 50 | 50 | 0 | 9 | 0 |
+| 1978-p141-middle.json | 1978 | district-wide | 46 | 46 | 0 | 11 | 0 |
+| 1978-p156-unknown.json | 1978 | district-wide | 42 | 42 | 0 | 11 | 0 |
+| 1978-p158-unknown.json | 1978 | district-wide | 66 | 66 | 0 | 4 | 0 |
+| 1978-p171-high.json | 1978 | district-wide | 44 | 44 | 0 | 17 | 0 |
+| 1978-p143-unknown.json | 1978 | high | 47 | 47 | 0 | 9 | 0 |
+| 1978-p144-unknown.json | 1978 | high | 52 | 52 | 0 | 12 | 0 |
+| 1978-p145-unknown.json | 1978 | high | 54 | 54 | 0 | 12 | 0 |
+| 1978-p146-unknown.json | 1978 | high | 54 | 54 | 0 | 11 | 0 |
+| 1978-p147-unknown.json | 1978 | high | 51 | 51 | 0 | 12 | 0 |
+| 1978-p142-primary.json | 1978 | passios | 55 | 55 | 0 | 11 | 0 |
+| 1978-p151-passios.json | 1978 | passios | 46 | 46 | 0 | 12 | 0 |
+| 1978-p152-unknown.json | 1978 | passios | 54 | 54 | 0 | 13 | 0 |
+| 1978-p153-unknown.json | 1978 | passios | 49 | 49 | 0 | 12 | 0 |
+| 1978-p155-high.json | 1978 | passios | 42 | 42 | 0 | 11 | 0 |
+| 1978-p157-turkey-hill.json | 1978 | passios | 40 | 40 | 0 | 13 | 0 |
+| 1978-p154-primary.json | 1978 | primary | 42 | 42 | 0 | 12 | 0 |
+| 1978-p139-turkey-hill.json | 1978 | turkey-hill | 44 | 44 | 0 | 12 | 0 |
+| 1978-p148-turkey-hill.json | 1978 | turkey-hill | 56 | 56 | 0 | 11 | 0 |
+| 1978-p149-unknown.json | 1978 | turkey-hill | 49 | 49 | 0 | 12 | 0 |
+| 1978-p150-unknown.json | 1978 | turkey-hill | 68 | 68 | 0 | 14 | 0 |
+| 1979-p121-central-office.json | 1979 | central-office | 36 | 36 | 0 | 10 | 0 |
+| 1979-p123-unknown.json | 1979 | district-wide | 47 | 47 | 0 | 12 | 0 |
+| 1979-p124-unknown.json | 1979 | district-wide | 49 | 49 | 0 | 9 | 0 |
+| 1979-p138-unknown.json | 1979 | district-wide | 39 | 39 | 0 | 11 | 0 |
+| 1979-p126-high.json | 1979 | high | 47 | 47 | 0 | 12 | 0 |
+| 1979-p127-unknown.json | 1979 | high | 51 | 51 | 0 | 11 | 0 |
+| 1979-p128-unknown.json | 1979 | high | 51 | 51 | 0 | 12 | 0 |
+| 1979-p129-unknown.json | 1979 | high | 49 | 49 | 0 | 13 | 0 |
+| 1979-p130-unknown.json | 1979 | high | 39 | 39 | 0 | 9 | 0 |
+| 1979-p139-high.json | 1979 | high | 44 | 44 | 0 | 18 | 0 |
+| 1979-p141-high.json | 1979 | high | 38 | 38 | 0 | 13 | 0 |
+| 1979-p125-unknown.json | 1979 | passios | 49 | 49 | 0 | 12 | 0 |
+| 1979-p134-passios.json | 1979 | passios | 42 | 42 | 0 | 12 | 0 |
+| 1979-p135-unknown.json | 1979 | passios | 46 | 46 | 0 | 15 | 0 |
+| 1979-p136-primary.json | 1979 | passios | 44 | 44 | 0 | 12 | 0 |
+| 1979-p137-unknown.json | 1979 | primary | 45 | 45 | 0 | 13 | 0 |
+| 1979-p140-primary.json | 1979 | primary | 44 | 44 | 0 | 6 | 0 |
+| 1979-p122-turkey-hill.json | 1979 | turkey-hill | 37 | 37 | 0 | 11 | 0 |
+| 1979-p131-turkey-hill.json | 1979 | turkey-hill | 48 | 48 | 0 | 12 | 0 |
+| 1979-p132-unknown.json | 1979 | turkey-hill | 46 | 46 | 0 | 14 | 0 |
+| 1979-p133-unknown.json | 1979 | turkey-hill | 34 | 34 | 0 | 11 | 0 |
+| 1979-p142-turkey-hill.json | 1979 | turkey-hill | 45 | 45 | 0 | 30 | 0 |
+| 1980-p115-central-office.json | 1980 | central-office | 59 | 59 | 0 | 33 | 0 |
+| 1980-p116-unknown.json | 1980 | district-wide | 61 | 61 | 0 | 26 | 0 |
+| 1980-p120-primary.json | 1980 | district-wide | 63 | 63 | 0 | 44 | 0 |
+| 1980-p121-primary.json | 1980 | district-wide | 59 | 59 | 0 | 33 | 0 |
+| 1980-p117-high.json | 1980 | high | 73 | 73 | 0 | 39 | 0 |
+| 1980-p118-high.json | 1980 | high | 63 | 63 | 0 | 40 | 0 |
+| 1980-p119-middle.json | 1980 | turkey-hill | 57 | 57 | 0 | 51 | 0 |
 | 1981-p069-middle.json | 1981 | central-office | 63 | 63 | 0 | 18 | 0 |
 | 1981-p077-primary.json | 1981 | district-wide | 59 | 59 | 0 | 26 | 0 |
 | 1981-p072-high.json | 1981 | high | 69 | 69 | 0 | 18 | 0 |
@@ -273,12 +422,15 @@ claimed by the **right** line — a column read one row out of step accounts for
 every line perfectly and pairs every person with their neighbour. So every
 entry's name and role tokens are checked back against the printed line.
 
-**1 entries fail this check.** 29 more have a token on
+**4 entries fail this check.** 31 more have a token on
 an adjacent line, which is a title printed across a line break rather than an
 error — listed separately so the distinction rests on evidence.
 
 | page | line | field | token | entry | printed |
 |---|---:|---|---|---|---|
+| 1973-p111-middle.json | 26 | name | `Solovei` | Gertrude A. Solovei / Cook/Manager (7 hrs); resigned 12/7/73 | `Mrs. Gertrude A. Solovel COOK/MANAGER    1974, transferred from Elementary Schoo` |
+| 1973-p111-middle.json | 47 | name | `Gail` | Gail Ferguson / General Worker (3 hrs) | `Mrs. Gall Ferguson - GENERAL WORKER` |
+| 1974-p132-unknown.json | 19 | name | `Jean` | Jean H. Koykka / Mathematics | `Mrs. JBAN H. KOYKKA, Mathematics    Univ. of Mass. 1957    BS/Math` |
 | FY2023-p126-primary.json | 7 | name | `Bastien` | Tara Bastien / Teachers: | `Teachers:                                               Kirsten Snape, Kara Slat` |
 
 ## Titles the taxonomy does not recognise
@@ -292,27 +444,30 @@ that the taxonomy is wrong.
 | 1286 | `` |
 | 70 | `Teaching Assist.` |
 | 65 | `Dept. Liaison` |
-| 42 | `General Worker` |
+| 64 | `General Worker` |
+| 26 | `Business Education` |
 | 26 | `Chairperson` |
 | 25 | `Chair` |
 | 23 | `Parents` |
+| 21 | `Mathematics` |
+| 19 | `Cook/Manager` |
 | 19 | `COTA` |
 | 18 | `Manager` |
 | 18 | `Member` |
 | 17 | `General workers` |
+| 16 | `Industrial Arts` |
+| 16 | `Baker` |
 | 15 | `(Pri.)` |
 | 15 | `Dept Liaison` |
 | 14 | `Foreign Language` |
-| 13 | `Cook/Manager` |
 | 13 | `Social Worker` |
-| 11 | `Industrial Arts` |
-| 11 | `Baker` |
+| 10 | `Senior Clerk/Typist` |
 | 10 | `AD` |
+| 9 | `General Worker (5 hours)` |
 | 9 | `Teaching Assistant` |
 | 9 | `Café` |
 | 9 | `Café Manager` |
-| 8 | `Mathematics` |
-| 8 | `Business Education` |
+| 8 | `Foreign Languages` |
 | 8 | `Business Manager` |
 | 8 | `Coordinator` |
 | 8 | `Health` |
@@ -320,7 +475,15 @@ that the taxonomy is wrong.
 | 8 | `Achieve Assistant` |
 | 8 | `Vice-Chairperson` |
 | 8 | `7th` |
+| 7 | `Assistant` |
+| 7 | `Business Education Department Chairman` |
+| 7 | `Mathematics Department Chairman` |
 | 7 | `Greenhouse Asst.` |
+| 6 | `H. S. Mathematics` |
+| 6 | `Reading Specialist (Grades K-4)` |
+| 6 | `Grade V` |
+| 6 | `General Worker (5 hrs)` |
+| 6 | `Cook/Manager (7 hours)` |
 | 6 | `Administrative Coordinator` |
 | 6 | `Asst. Prin.` |
 | 6 | `Clerk` |
@@ -330,25 +493,14 @@ that the taxonomy is wrong.
 | 6 | `Phys. Therap` |
 | 6 | `Parents:` |
 | 6 | `Cook/Managers` |
+| 5 | `Homemaking Department Chairman` |
+| 5 | `School Physician` |
+| 5 | `Grade VII` |
+| 5 | `Grade VI` |
+| 5 | `Part-time Senior Clerk/Typist` |
+| 5 | `Administrative Assistant` |
 | 5 | `Attendance Clerk` |
 | 5 | `Special Needs Teaching Assistant (Elementary School)` |
-| 5 | `Foreign Languages` |
-| 5 | `*` |
-| 5 | `School Committee Rep` |
-| 5 | `STEP` |
-| 5 | `Department Liaison` |
-| 5 | `School Psych.` |
-| 5 | `Grades 6 & 7` |
-| 5 | `District-wide` |
-| 5 | `8th` |
-| 5 | `IT Dept.` |
-| 5 | `School Psych` |
-| 5 | `Occup Therap.` |
-| 5 | `(Tech) MS` |
-| 5 | `STEM` |
-| 4 | `Senior Clerk/Typist` |
-| 4 | `Team Leader` |
-| 4 | `Senior Groundsperson` |
 
 ## Two things a count here must not be read as
 

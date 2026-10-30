@@ -111,3 +111,8 @@ existing datasets: `report-school-state-aid` `school-federal-funds-offset` (p130
 (p131/1); `report-school-staff-fte` `school-cost-per-pupil-calendar-year` (p128/3, struck on the calendar year, not the
 school year of p128/1). If a sibling worker names the same quantity differently (a school lunch dataset in 1972-1980,
 a five-year expenditure table), reuse one name.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED: `cash_book_list` (the list opens at `Balance ... per cash book`), the `Disbursements ... Cash Balance` cell read as two lines, `recon_no_transfers`: treasurers-cash 7 accounts, reconciliation `checked`. 2 APPLIED: the identity takes `Balance to 1972` (always on) and `accountant_marks_before` reads `TR 610.00`. 3 APPLIED: `colon_heading_subtotals` finds the five subtotals by their own sections; the receipts close to 5,538,643.14, all `checked`. 4 PARTLY: `year_labels` gives tax-collection its levy year and item, and `Balance` is read; the collection identity (headed BALANCES) still does not apply. 5 NOT APPLIED: `LIST_FAMILIES` unchanged (no list total printed per family outside the hand sums). 6, 7, 8 NOT APPLIED: a figure sharing a label cell, an `E.` estimate, empty lunch cells -- re-reads, not reader rules. Payments: `statement_span`. Finder miss p41 (no cells): re-read list.

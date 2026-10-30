@@ -72,8 +72,11 @@ POSITIONS = [
     # Secretary`, 1985 p147 `Administrative Coordinator to Middle School Principal`). Tested
     # first, or `\bPRINCIPAL\b` makes each a second principal -- and the one-printing-per-
     # school rule then drops the whole page as a duplicate. No entry before 1981 carries one
+    # And `Administrative Assistant to Principal` (1974 p135, 1980 pp115/118; 1981 p69 and 1982 p76
+    # were counted as a second principal until 31 Oct 2026), which made the 1980 central-office
+    # page's Turkey Hill block look like a second printing and dropped it
     ('Administrative Staff',     r"SECRETARY TO .*PRINCIPAL|PRINCIPAL'?S? SECRETARY|"
-                                 r"COORDINATOR TO .*PRINCIPAL"),
+                                 r"COORDINATOR TO .*PRINCIPAL|ASSISTANT TO .*PRINCIPAL"),
     ('Assistant Principal',      r'ASSIST(ANT)?\.?\s*PRINCIPAL|ASST\.?\s*PRINCIPAL'),
     ('Principal',                r'\bPRINCIPAL\b'),
     ('Superintendent',           r'SUPERINTENDENT'),

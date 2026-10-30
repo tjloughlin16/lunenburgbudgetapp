@@ -94,3 +94,8 @@ for a different reason (item 6).
 `report-school-lunch` (p115: monthly meals and finances of the school lunch program). Families inside existing datasets:
 `report-appropriations` `accountant-schedule-revenue-sharing`; `report-fund-balance-sheets` `general-fund-balance-sheet`,
 `general-fund-liabilities-continued`; `report-trust-funds` `trust-funds-school-prizes`.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED: `colon_heading_subtotals` finds all 8 receipts subtotals; receipts close to 6,843,586.96. Payments: `statement_span` (detail runs close; the outer column does not tie as read). 2 APPLIED: `Cash Balance` as the ledger (always on), `-0-` as zero, `recon_no_transfers`: reconciliation `checked`. 3 NOT APPLIED: `accountant_marks_wide` was tried and REMOVED for this edition -- reading the marked components of Funds Available fails the column checks (46 rows checked -> failed); the row identity for the multi-figure layout is not built. 4 APPLIED (`marks_wide` reads `**`); the $70 difference stays open, as it should. 5, 6, 7 NOT APPLIED (labels, side-by-side panels, two figures in a cell). 8, 9 as mapped.

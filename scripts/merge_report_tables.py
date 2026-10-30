@@ -55,12 +55,31 @@ HOOKED = {
 csv.field_size_limit(10 ** 9)
 
 
+# EDITION FOLDERS NOT YET INTEGRATED. A batch of workers fills its folders while an integration
+# pass merges an earlier batch, so a folder existing is not a folder being ready: one line per
+# edition held out of every shared file until its own integration pass removes the line
+# (`sources/data/report-tables/HELD`, `<edition>  <why>`; `#` starts a comment)
+HELD = os.path.join(FOLDERS, 'HELD')
+
+
+def held():
+    """{edition key} the HELD register keeps out of the merge."""
+    if not os.path.exists(HELD):
+        return set()
+    with open(HELD, encoding='utf-8') as fh:
+        return {ln.split()[0] for ln in fh if ln.strip() and not ln.lstrip().startswith('#')}
+
+
 def editions():
-    """[(folder, edition.json)] in folder order -- the order rows are appended in."""
+    """[(folder, edition.json)] in folder order -- the order rows are appended in. A folder named
+    in HELD is left out."""
     out = []
     if not os.path.isdir(FOLDERS):
         return out
+    hold = held()
     for name in sorted(os.listdir(FOLDERS)):
+        if name in hold:
+            continue
         f = os.path.join(FOLDERS, name, 'edition.json')
         if os.path.exists(f):
             with open(f, encoding='utf-8') as fh:

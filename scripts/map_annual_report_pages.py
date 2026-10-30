@@ -489,6 +489,27 @@ PROOF = {
     'school-budget-summary': ('status', VERDICT),
     'office-budget-cuts': ('status', VERDICT),
     'expenditure-shares': ('status', VERDICT),
+    # NEW in the 1971-1980 editions (integration pass, 31 October 2026; names in
+    # sources/data/report-tables/README.md): the school lunch program, the 1974 transitional
+    # receipts in three period columns, revenue cash invested, voted and proposed pay scales,
+    # and the one-edition tables (expenditure history, veterans' services, the school dollar,
+    # school fuel oil, proposed school staff changes, town facts, per capita comparison, the
+    # anniversary committee, the Treasurer's financial performance, surplus and free cash)
+    'school-lunch': ('status', VERDICT),
+    'transitional-receipts': ('status', VERDICT),
+    'revenue-cash-invested': ('status', VERDICT),
+    'voted-pay-rates': ('status', VERDICT),
+    'proposed-salary-schedule': ('status', VERDICT),
+    'expenditure-history': ('status', VERDICT),
+    'veterans-services': ('status', VERDICT),
+    'school-spending-shares': ('status', VERDICT),
+    'energy-use': ('status', VERDICT),
+    'school-staff-changes': ('status', VERDICT),
+    'town-facts': ('status', VERDICT),
+    'per-capita-comparison': ('status', VERDICT),
+    'committee-income-expenses': ('status', VERDICT),
+    'financial-performance': ('status', VERDICT),
+    'surplus-free-cash': ('status', VERDICT),
     # and from the 2001-2009 editions, the same furniture, unified by the integration pass of
     # 28 October 2026 (sources/data/report-tables/README.md, "One name per quantity"): the
     # Treasurer's cash roll-forward, checked down the page (`checked` only when the chain

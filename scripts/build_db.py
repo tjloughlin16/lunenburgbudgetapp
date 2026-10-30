@@ -1302,6 +1302,17 @@ REFERENCE = [
     # FY84 (1983); and the FY1983 expenditure pie as percents (1983)
     'report-cash-management', 'report-treasurers-outlook', 'report-school-budget-summary',
     'report-office-budget-cuts', 'report-expenditure-shares',
+    # and from the 1971-1980 editions (integration pass of 31 October 2026, the same README): the
+    # school lunch program (counts and dollars, one family per layout); the 1974 receipts for the
+    # 18-month transitional year in three period columns; revenue cash invested and its interest;
+    # police pay rates VOTED and salary schedules PROPOSED (two stages, two tables); and one-edition
+    # tables -- expenditure history, veterans' services, the school dollar, school fuel oil,
+    # proposed school staff changes, town facts, per capita comparison, the 250th anniversary
+    # committee, the Treasurer's financial performance, surplus revenue and free cash (FY81 ESTIMATED)
+    'report-school-lunch', 'report-transitional-receipts', 'report-revenue-cash-invested', 'report-voted-pay-rates',
+    'report-proposed-salary-schedule', 'report-expenditure-history', 'report-veterans-services', 'report-school-spending-shares',
+    'report-energy-use', 'report-school-staff-changes', 'report-town-facts', 'report-per-capita-comparison',
+    'report-committee-income-expenses', 'report-financial-performance', 'report-surplus-free-cash',
 
     # THE PROVEN READINGS, each tied to an identity its own table states. These are a
     # different kind of thing from the `report-*` extracts above and must not be read as

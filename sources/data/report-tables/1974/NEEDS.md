@@ -165,3 +165,8 @@ Nothing here tests it; the School Department's worksheet would. Those 14 rows ar
 - p126/1 meals-by-month (counts, not dollars) and p125 (signed year-on-year changes) are landed as printed.
 - Elections (p75-76): 40 rows, the tables carry no date of their own; dated by their position beside the April 6, 1974
   Annual Town Meeting excerpt only.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED (`year_labels`). 2 NOT SET for 1974: `dash_zero` moved the revenue sharing payments' column walk, and the three-period identity reads a blank as zero anyway. 3 APPLIED (`marks_wide`): the omnibus budget closes. 4 APPLIED (always on, families `detailed-receipts-three-periods`, `detailed-payments-three-periods`, and the revenue sharing families renamed `receipts-three-periods` / `payments-three-periods`): p51 row 29 now FAILS its identity -- `- 1,658.14`, the stray hyphen, is a misread and is shown as one (p51 proven -> unproven). 5 APPLIED for payments (`statement_span`); receipts are closed by the identity. 6 APPLIED: names unified (`report-treasurers-interest` -> `report-revenue-cash-invested`). 7 APPLIED by `recon_no_transfers` on the reconciliation mapping (`checked`); the list is not remapped. 9 NOT SET (`accountant_marks_before` breaks p66's department total). 10, 11, 12 NOT APPLIED. p147's $8,624.88: a discrepancy, not adjusted. Finder miss p94: re-read list.

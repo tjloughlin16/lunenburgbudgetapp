@@ -135,3 +135,8 @@ CALENDAR year with a Tax Collector's report that nets 1968-1972 commitments (p46
 invested ($40,141.00, p45; the first appearance of the fund); the school lunch program with its meals and money by
 month (p123); an 18-month school budget request for the move to a July-June year (p125-129); and a historical
 note quoting the 1922-23 school budget ($27,912) inside a retirement tribute (p96, NOT LANDED).
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1, 3 APPLIED (`cash_book_list` with `Cash in Banks:`; `recon_no_transfers`): treasurers-cash 10 accounts, reconciliation `checked`. 2 APPLIED (always on). 4 NOT APPLIED: a cell holding a subtotal and the next item is a reading of two figures, so the receipts stay 5,022.00 short and `check failed`. 5 APPLIED for the payments only (`statement_span`: the outer column and each section close); the balance sheet's two-column ledger is not. 6 NOT APPLIED: misreads; the cell witness found no candidate pinned by two identities. 7 left as mapped. 8 APPLIED: names registered (README, 1971-1980). Calendar-year statements stay in the ordinary datasets (README). Finder miss p71: re-read list.

@@ -80,3 +80,8 @@ perpetual-care donors on p68-70 (trust fund pages, as 1981-1986).
 9. **Row identity for the p38/1 recapitulation** (`gross amount to be raised - total offsets = net raised by taxation`):
    FY1981: 7,104,185.90 - 2,730,389.48 = 4,373,796.42 (checked by hand; the other five years tie too). The reader
    checks only items 6-11 against the total offsets.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED (`colon_heading_subtotals` + `receipts_stop_at_grand`): `Licenses and Permits: 9,524.04` equals the seven accounts above it to the cent, so it is taken by the same rule; the receipts close. 2 PARTLY (`accountant_marks_wide` reads `R`; two-figure `TR` cells remain). 3 NOT APPLIED. 4 APPLIED for payments (`statement_span`). 5, 6, 8 NOT APPLIED (stacked lines, panels). 7 re-read. 9 NOT APPLIED.

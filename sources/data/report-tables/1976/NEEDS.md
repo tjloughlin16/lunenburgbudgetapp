@@ -77,3 +77,8 @@ None withheld (TJ, 30 Oct 2026: everything in the annual reports is public). Dea
 An older single-fund statement set (detailed statement of receipts and payments, general-fund balance sheet, revenue sharing fund, trust fund
 rollforwards), the school lunch program report, the Tax Collector's report by levy year, a police pay scale, school fuel-oil consumption, and the
 School Department budget request beside the spent figure (all as in 1981/1985 except the lunch, fuel and pay-scale tables).
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED (`colon_heading_subtotals`: 6 rows); the receipts stay 507.30 short because `Premium 507.30` shares the label cell (a re-read, not applied). 2 APPLIED via `statement_span` where detail runs close; the 14 column-check failures stay. 3 APPLIED (`Cash Book Balance` ledger, `checked`). 4 NOT APPLIED (no table split). 5 NOT APPLIED. 6, 7, 8 NOT APPLIED (stacked pairs, the escrow line, two-figure cells); `accountant_marks_before` makes p87's total line fail its identity honestly (a term does not parse). Names: `report-pay-schedule` -> `report-voted-pay-rates`.

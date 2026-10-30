@@ -103,3 +103,8 @@ Treasurer's reconciliation with the accounts (p72); the recapitulation of revenu
 earned by half-year (p77); the school lunch program's own monthly income, expenditure and statistics report (pp143-144);
 the debt accounts of the balance sheet and the General Revenue Sharing fund's receipts, payments and balance sheet
 (pp55, 57-58); FY1980 special articles by funding source (pp85-86), voted April 7, 1979.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED (`dash_zero`). 2 APPLIED: the `453.00` row is caught by `colon_heading_subtotals` on its own section (93.00 + 360.00), not because the total then closes; the receipts close. 3 NOT APPLIED (two figures in one cell). 4 NOT APPLIED. 5 APPLIED (`marks_wide`), spaced signs not. 6, 7 NOT APPLIED. 8 APPLIED for the general fund payments (`statement_span`); revenue sharing not. 9 APPLIED (registered; `report-financial-performance` kept apart from 1978's per capita table). 10 not changed. Finder miss p85: re-read list.

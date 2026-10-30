@@ -93,3 +93,8 @@ grant recipients are NOT LANDED for the layout reason in item 4, not for privacy
   (`Invested 1,245,987.53`, p52), not the revenue-cash account list of 1981.
 - Bonded indebtedness by issue with principal and interest in SEPARATE columns (p67), not stacked pairs.
 - Revenue sharing with a `Grants` line inside payments (p66/2), counted in the 227,747.71 total as printed.
+
+## Integration pass, 31 October 2026: what was done with each item
+
+Opt-ins and names are in `sources/data/report-tables/README.md` (1971-1980). By item number above:
+1 APPLIED (`marks_wide`); the three left-panel budget lines in no cell remain a re-read. 2 APPLIED (`colon_heading_subtotals`: 4 rows; receipts close to 13,413,744.46). 3 APPLIED for the general fund (`Disbursements ... Cash Book Balance` two lines; `checked`); p65/3 revenue sharing still cannot be followed (its receipts line prints two figures). 4, 5 NOT APPLIED (panels, fragments). 6 PARTLY (`accountant_marks_wide`, `accountant_marks_before`); two-figure cells remain. 7 APPLIED for payments (`statement_span`); balance sheet not. 8 APPLIED.

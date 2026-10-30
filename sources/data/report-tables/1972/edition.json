@@ -9,13 +9,18 @@
   "pdf": "sources/town-annual-reports/docs/4494-1972-annual-town-report.pdf",
   "label": "1972 Annual Town Report",
   "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked; cells in build/textract/out/4494-1972-annual-town-report.cells.tsv",
-  "dash_zero": true,
   "accountant_marks_wide": true,
   "year_labels": true,
   "colon_heading_subtotals": true,
   "receipts_stop_at_grand": true,
   "recon_no_transfers": true,
   "cash_book_list": true,
+  "accountant_marks_before": true,
+  "dash_zero": true,
+  "statement_span": [
+    "report-statement-of-payments"
+  ],
+  "marks_wide": true,
   "periods": [
     {
       "what": "Treasurer's statements of receipts and payments, cash, tax collection",

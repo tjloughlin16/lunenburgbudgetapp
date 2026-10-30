@@ -9,13 +9,18 @@
   "pdf": "sources/town-annual-reports/docs/4498-1976-annual-town-report.pdf",
   "label": "1976 Annual Town Report",
   "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4498-1976-annual-town-report.cells.tsv",
-  "dash_zero": true,
   "accountant_marks_wide": true,
   "year_labels": true,
   "colon_heading_subtotals": true,
   "receipts_stop_at_grand": true,
   "recon_no_transfers": true,
   "cash_book_list": true,
+  "dash_zero": true,
+  "statement_span": [
+    "report-statement-of-payments"
+  ],
+  "accountant_marks_before": true,
+  "marks_wide": true,
   "periods": [
     {
       "what": "Tax Collector's report",
