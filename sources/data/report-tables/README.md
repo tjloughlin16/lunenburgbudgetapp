@@ -169,3 +169,67 @@ Why it exists: the coverage check's witness is Textract's own line output, which
 misread, so it passed all 90 inflated wages as `checked`.
 
 **29 October 2026, TJ: a $1 rounding tolerance on the calendar editions' total checks.** Every 1991-2010 `edition.json` carries `"rounding_tolerance_usd": 1`: a printed total within $1.00 of the sum of its rows counts as closing (status `checked`), and the row's `reconciliation` says `within $1 rounding tolerance (printed differs by $N)` so it stays countable. It is a DOLLAR tolerance, off for percent and rate columns and for election pages. Rounding is the likely cause of the Unit 2 debt schedules ($1 off GRAND TOTAL INTEREST) but nothing here tests it; the Treasurer's bond schedule or the Accountant's debt ledger would. The annual-reports page carries this as a generated caveat.
+
+## One name per quantity -- the 1986-1990 batch, decided 29 October 2026 by the integration pass
+
+| one name | was | what it is | grain | editions |
+|---|---|---|---|---|
+| `report-auditors-cash-schedule` (NEW) | `report-auditors-cash-schedule` (1986), `report-auditor-cash-schedule` (1987, 1988) | the AUDITOR's own schedule of the Treasurer's cash and investments at the close: balances by fund, opening and closing, and their composition by bank account. A second printing, by another officer, of the stock `treasurers-cash` holds; never summed with it. Families by LAYOUT: `cash-by-fund` (1987 p9/1, 1988 p10/1: General and Revenue Sharing Fund cash at the two dates, then the cash composition), `investments-by-fund` (1987 p9/2, 1988 p10/2 -- 1988's was mislabelled `cash-by-fund`), `investments-composition` (1986 p11/3, 1988 p10/3, was `investment-accounts`), and 1986's own `cash-reconciliation-schedule` (a roll-forward: opening + receipts - disbursements), `cash-composition`, `investments-schedule` (opening + purchases - maturities), `trust-custody-composition` | one fund or one account | 1986-1988 |
+| `annual-report-receipts` (EXISTING) | `report-statement-of-receipts` (1986) | the Treasurer's DETAILED STATEMENT OF RECEIPTS, by source: the same quantity, stage and grain every edition 1987-2010 lands here. Read by the span emitter (`receipts_span`, below); 1986's unlabelled section subtotals are not accounts | one revenue account | 1986-2010 |
+| family `tax-levy-history` in `report-valuation` (EXISTING dataset) | `report-tax-levy-history` (1987), `tax-levy-history` in `report-valuation` (1988) | the property tax LEVY by fiscal year with its percent increase, as the Town Clerk (1987 p27) and the Treasurer (1988 p30) print it. 2000-2010 print the same quantity, with more columns, as `Valuation and tax history` in `report-valuation`, family `valuation`; the levy-only chart keeps its own family. 1988's FY1990 line prints `(est)`: an estimate in a column of actuals, labelled as printed | one fiscal year | 1987, 1988 |
+| family `cash-reconciliation-revenue-sharing` in `report-treasurers-cash-reconciliation` | 1986 p46/1 (`reconciliation` in `report-revenue-sharing`), 1987 p30/2 | the federal General Revenue Sharing fund's own cash roll-forward, read down the page by the same chain as the General Fund's. A SEPARATE family so its ledger balance is never summed with the General Fund's (the emitter used to write every table as `cash-reconciliation`; it now keeps the map's family) | one printed line | 1986, 1987 |
+| `report-revenue-sharing` (NEW) | (1986 only) | the revenue sharing fund's RECEIPTS by source and PAYMENTS by purpose (p46/2-3), each closing on its printed total | one source or purpose | 1986 |
+| `report-statement-of-payments` (NEW) | (1986 only) | the Treasurer's DETAILED STATEMENT OF PAYMENTS by department and object. An actual (rule 1); no other edition prints it | one printed line | 1986 |
+| `report-fund-balance-sheets` (NEW) | (1986 only) | one balance sheet PER FUND with a single amount column (general fund liabilities, assets, fund balance and long-term debt; trust funds in custody; revenue sharing). `balance-sheet` publishes per fund COLUMN of a combined sheet and cannot hold these | one printed line | 1986 |
+| `report-treasurers-cash-calendar-year` (NEW) | (1986 only) | a SECOND Treasurer's reconciliation for the CALENDAR year ended 31 December 1986, with its account list. The same kind of quantity as `report-treasurers-cash-reconciliation` but a different PERIOD in a file whose `fy` would read 1986 for both: kept apart so the two are never summed or compared as one year | one printed line | 1986 |
+| `report-vendor-payments` (NEW) | (1986 only) | payments over $4,000 to one payee in fiscal 1986 (MGL c.40 s.4G), name and address in one cell. Businesses are named (the redaction principle identifies providers); SIX payees printed `Surname, Given` with a street address are private individuals paid as persons and are HELD OUT (`edition.json` `withheld_rows`) until TJ decides | one payee | 1986 |
+| `report-school-staff-fte` (NEW) | (1986 only) | School Department staff in FTE by role and school -- a headcount-equivalent, not a roster and not a payroll | one role | 1986 |
+| `report-school-state-aid` (NEW) | (1986 only) | the School Committee's table of state aid by chapter against the school appropriation, FY-85 to FY-87: RECEIPTS for the past years, an estimate for the coming one, labelled per column | one chapter | 1986 |
+| `report-school-special-accounts` (NEW) | (1986 only) | the School Department's revolving, grant and article accounts (`Summary of Special Accounts FY 86`) | one account | 1986 |
+| `report-agency-funds` (NEW) | (1987 only) | money the Town held for others at the close (payroll withholdings, union dues, deposits) | one account | 1987 |
+
+Families added inside existing datasets, each a layout of its own and never summed with another:
+`report-trust-funds` `trust-fund-bank-accounts` and `trust-fund-rollforward` (1986), `trust-fund-accounts`
+and `trust-fund-rollforward` (1987), `trust-accounts-by-bank` (1988); `report-debt`
+`debt-by-issue-principal-interest` (1988), `debt-temporary-borrowing` (1988, was `temporary-borrowing`;
+1989) -- notes in anticipation of revenue, borrowed and not bonded; `report-fee-schedule`
+`school-tuition-rates` (1986: a per-pupil RATE set from the State's cost, not a fee collected).
+
+## What the reader does for the 1986-1990 batch (29 October 2026)
+
+Every new reading is a per-edition OPT-IN in `edition.json` wherever it would change what an
+earlier edition publishes -- proved by re-running all 25 folders with `--check` (1991-2010 reproduce
+byte for byte) and by splitting every shared dataset on `fy`: FY2011-FY2025 rows are byte-identical
+to HEAD and every shared file is a pure append. The opt-ins (`OPTS` in `read_report_tables.py`):
+
+- `accountant_marks`: `$2523.60 rct`, `RF`, `ret`, `TR`, `Ewd` (Textract's `fwd`) after an
+  APPROPRIATED FORWARD figure, as `fwd` already was. 1991 prints `RF` too, which is why it is an opt-in.
+- `stop_for_comma_without_dollar`: `54.587` in a column of whole dollars with commas elsewhere (1990).
+- `id_column_words`: a line-number column that also holds the first words of a series label
+  (`TOTAL GENERAL | GOVERNMENT - 100 SERIES`, 1987 p51).
+- `recon_net_on_transfer_line`: the net printed on the `LESS INVESTMENTS` line is the net, so the
+  unlabelled line under it is the running subtotal (1988 p32). 1991 prints its net there too.
+- `stacked_pairs`: PRINCIPAL and INTEREST printed in one cell (`20,000 3,780`), split where the PAGE
+  names both -- a column headed `... PRINCIPAL INTEREST` becomes two columns (1986 p48), a row labelled
+  `... : PRINCIPAL INTEREST` two rows (1986 p47; rows renumbered 2N / 2N+1, each split cell says so).
+- `receipts_span`: one statement of receipts over several tables and pages, pooled against ONE grand
+  total (the map's `stated_total`, else the last `GRAND TOTAL` / `TOTAL RECEIPTS` row); the SUMMARY is
+  the rows under a SUMMARY heading, or the run directly above the grand total that sums to it while the
+  accounts do too; an unlabelled row is a section subtotal; an account's amount is its first figure.
+- `withheld_rows`: rows held out of a dataset by page/table/row, with the reason (1986's six
+  individuals). Not a redaction: nothing is altered, the rows are simply not published yet.
+
+And, always on, proved not to move any 1991-2010 output: `CALENDAR_REPAIRS` for a whole-dollar
+negative with a footnote mark (`($280,016)*`), cents with no leading zero (`.12`), full stops for
+the thousands separator in whole dollars (`12.600.`, `7.939.779.`), `17,75$`; the treasurer's cash
+total labelled `TREASURER'S CASH JUNE 30, 19..`; a second `BALANCE ... PER CASH BOOK` line is not the
+opening balance; the revenue sharing fund's own ledger and `LESS REVENUE SHARING CASH` lines; the
+`ADJUSTMENT` = new - prior identity for `omnibus-amendment` (1990 p52, by column position, the
+headings being dates); the 1988 accountant identity BALANCE REVENUE = AVAILABLE - AMOUNT EXPENDED -
+BALANCE FY (no TOTAL EXPENDED column); and a cell printing a list item and the list's total together
+(`$22833.74 $281551.33`), read as the item where the second figure IS the map's `stated_total`.
+
+The cell witness ran over the batch (`locate_cell_misreads.py`, which now also names an unheaded
+debt schedule's columns by position -- the last is the row's TOTAL -- for its own row identity):
+three candidates, all 1987 p40, all accepted by the blind scripted reader ($0.009); see
+`1987/witnessed-cells.csv`.

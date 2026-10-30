@@ -1282,6 +1282,19 @@ REFERENCE = [
     # highway vehicle inventory (1995, no money)
     'report-property-tax-exemptions', 'report-treasurers-then-and-now', 'report-tax-bill-breakdown',
     'report-highway-accounts', 'report-vehicle-inventory',
+    # and from the 1986-1990 editions (integration pass of 29 October 2026, the same README): the
+    # Auditor's own schedule of cash and investments by fund and by account; the Treasurer's
+    # DETAILED STATEMENT OF PAYMENTS (an actual, by department and object, 1986); single-fund
+    # balance sheets with one amount column (1986); the federal Revenue Sharing fund's receipts
+    # and payments (1986; its roll-forward is in the cash reconciliation); a SECOND Treasurer's
+    # reconciliation for the CALENDAR year (1986), never summed with the fiscal one; payments to
+    # vendors over $4,000 (1986; six payees who are private individuals held back); the School
+    # Department's staff in FTE by role, its state aid against the appropriation, and its special
+    # accounts (1986); and agency funds the Town holds for others (1987)
+    'report-auditors-cash-schedule', 'report-statement-of-payments', 'report-fund-balance-sheets',
+    'report-revenue-sharing', 'report-treasurers-cash-calendar-year', 'report-vendor-payments',
+    'report-school-staff-fte', 'report-school-state-aid', 'report-school-special-accounts',
+    'report-agency-funds',
 
     # THE PROVEN READINGS, each tied to an identity its own table states. These are a
     # different kind of thing from the `report-*` extracts above and must not be read as

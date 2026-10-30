@@ -20,10 +20,19 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**7319 of 7319 lines accounted for** across 175 pages, 7025 entries, 34 years.
+**7752 of 7752 lines accounted for** across 184 pages, 7349 entries, 37 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|
+| 1988-p080-high.json | 1988 | high | 52 | 52 | 0 | 22 | 0 |
+| 1988-p081-high.json | 1988 | high | 69 | 69 | 0 | 20 | 0 |
+| 1988-p076-passios.json | 1988 | passios | 51 | 51 | 0 | 46 | 0 |
+| 1988-p078-passios.json | 1988 | turkey-hill | 53 | 53 | 0 | 35 | 0 |
+| 1989-p079-high.json | 1989 | high | 47 | 47 | 0 | 39 | 0 |
+| 1989-p076-passios.json | 1989 | passios | 42 | 42 | 0 | 46 | 0 |
+| 1989-p078-middle.json | 1989 | turkey-hill | 37 | 37 | 0 | 40 | 0 |
+| 1990-p065-passios.json | 1990 | passios | 43 | 43 | 0 | 40 | 0 |
+| 1990-p068-middle.json | 1990 | turkey-hill | 39 | 39 | 0 | 36 | 0 |
 | 1991-p065-high.json | 1991 | high | 46 | 46 | 0 | 13 | 0 |
 | 1991-p066-unknown.json | 1991 | high | 23 | 23 | 0 | 32 | 0 |
 | 1991-p060-passios.json | 1991 | passios | 40 | 40 | 0 | 42 | 0 |
@@ -223,7 +232,7 @@ that the taxonomy is wrong.
 
 | times | printed as |
 |---:|---|
-| 1158 | `` |
+| 1279 | `` |
 | 70 | `Teaching Assist.` |
 | 65 | `Dept. Liaison` |
 | 26 | `Chairperson` |
@@ -256,6 +265,7 @@ that the taxonomy is wrong.
 | 6 | `Phys. Therap` |
 | 6 | `Parents:` |
 | 6 | `Cook/Managers` |
+| 5 | `*` |
 | 5 | `Foreign Language` |
 | 5 | `School Committee Rep` |
 | 5 | `STEP` |
@@ -269,6 +279,8 @@ that the taxonomy is wrong.
 | 5 | `Occup Therap.` |
 | 5 | `(Tech) MS` |
 | 5 | `STEM` |
+| 4 | `Team Leader` |
+| 4 | `Industrial Arts` |
 | 4 | `Senior Groundsperson` |
 | 4 | `Mgr.` |
 | 4 | `Administrative Assistant` |
@@ -280,9 +292,6 @@ that the taxonomy is wrong.
 | 4 | `Accounting/Data Reporting` |
 | 4 | `Lunenburg Primary School Café Manager` |
 | 4 | `Grades 4 & 5` |
-| 4 | `Technician` |
-| 4 | `2nd/grade` |
-| 4 | `ID` |
 
 ## Two things a count here must not be read as
 

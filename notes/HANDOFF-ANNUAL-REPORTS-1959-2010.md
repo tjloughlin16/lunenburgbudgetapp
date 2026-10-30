@@ -72,6 +72,8 @@ brief; the parent verifies and commits. Progress is recorded here after each uni
 | 2 debt | surveyed 29 Oct, NOTHING changed: no grouping opt-in moves a page. Most near-misses print GRAND TOTAL INTEREST $1 off the sum of their rows while every row ties (2001-2008, 1995-1999; same years off in 2005 and 2006) -- rounding is a HYPOTHESIS. 1993 p54 Textract `6,280` vs glyph `5,280`, and its TOTAL DEBT still does not close. 2009/2010 p65/66/72/73 need the dollar-glyph witness extended to debt pages. Decision owed to TJ: $1 pages -> blocked, or a tolerance | 412 / 189 / 4 |
 | $1 tolerance (TJ, 29 Oct) | done: opt-in `rounding_tolerance_usd` on 1991-2010; rows say `within $1 rounding tolerance`; caveat on /analysis/annual-reports, computed | with the next row: 422 / 179 / 4 |
 | cell witness (TJ, 29 Oct) | built: `locate_cell_misreads.py` + `witness_cell_crops.py`, `notes/process/ANNUAL-REPORT-CELL-WITNESS.md`. Pilot 13 cells accepted, 12 disagreed. 24 of 25 pilot readings were NOT blind (agent saw the candidates) -- re-read the 13 with the scripted reader before calling them settled | |
+| 1986-1990 batch | Textract tables 29 Oct ($7.32, 488 pp); 5 Sonnet workers (210k-293k tokens each); Opus integration (448k). New datasets + opt-ins in the README. Six private payees withheld (`withheld_rows`, incl. `heading_pages`) pending TJ; births not landed | 1986-1990: 55 / 64 / 1 |
+| 1971-1980 tables | Textract read 29 Oct ($8.70, 580 pp); October now $50.05 of the $58 cap. 1959-1970 wait for November | |
 | 3 trust funds | not started | |
 | 4 the rest | not started | |
 | 5 residue to blocked | not started | |

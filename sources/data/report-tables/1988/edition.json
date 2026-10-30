@@ -1,0 +1,94 @@
+{
+  "edition": "1988",
+  "fy": 1988,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "basis_source": "the label `1988 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover (p1: `LUNENBURG / ANNUAL / TOWN REPORT`); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4487-1988-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4487-1988-annual-town-report.pdf",
+  "label": "1988 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4487-1988-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "auditor's cash schedule",
+      "period": "fiscal year July 1, 1987 thru June 30, 1988",
+      "cited": "p10: `for the fiscal year July 1, 1987 thru June 30, 1988` and `SCHEDULE OF RECONCILIATION OF TREASURER'S CASH / JUNE 30, 1988`"
+    },
+    {
+      "what": "trust and investment funds schedule",
+      "period": "June 30, 1988",
+      "cited": "p11: `SCHEDULE OF TRUST AND INVESTMENT FUNDS / JUNE 30, 1988`"
+    },
+    {
+      "what": "Treasurer's tax levy chart",
+      "period": "fiscal 1982-1990 as printed; 1990 is `5,586,000 (est)`",
+      "cited": "p30: `Fiscal year | Tax Levy | %Increase`"
+    },
+    {
+      "what": "treasurer's cash",
+      "period": "fiscal year 1988, opening at June 30, 1987",
+      "cited": "p32: `Reconciliation of Treasurer's Cash / FISCAL YEAR 1988 / BALANCE JUNE 30, 1987`; the receipts line prints `7/1/86-6/30/88`, disbursements `7/1/87-6/30/88`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal 1988",
+      "cited": "p33: `Detailed Statement of Receipts - June 30, 1988`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "NOT PRINTED as a year; the balance-forward column is headed `FY 1989`, so the schedule closes fiscal 1988",
+      "cited": "p34-p38: `Summary & Classification of Accounts`; column header `BALANCE FY 1989`"
+    },
+    {
+      "what": "combined balance sheet",
+      "period": "June 30, 1988",
+      "cited": "p39: `Town of Lunenburg / Balance Sheet - June 30, 1988`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1989",
+      "cited": "p40 column headers: `DUE IN FISCAL 1989` / `TOTAL PAYMENTS THRU 1989`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of December 31, 1988 (as printed, on a June 30 book)",
+      "cited": "p41: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF DECEMBER 31, 1988`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "NOT PRINTED",
+      "cited": "p42: heading `Collection of Taxes` only; latest levy years in the TAX column are `1988 MOTOR VEHICLE EXCISE`, `1988 PERSONAL PROPERTY`, `1988 REAL ESTATE`"
+    },
+    {
+      "what": "trust and investment accounts",
+      "period": "July 1, 1987 - July 1, 1988",
+      "cited": "p43: `Trust & Investment Accounts / July 1, 1987 - July 1, 1988`; p44 `Balance June 30, 1988`"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 1989, as VOTED (a budget, not an actual)",
+      "cited": "p49-p50: `ANNUAL TOWN MEETING WARRANT - MAY 14, 1988`; Article 8 `for Fiscal Year 1989 ... THE BUDGET LINE ITEMS WERE DISCUSSED AND VOTED AS FOLLOWS`; p51 `TOTAL BUDGET VOTED 9,072,266`"
+    },
+    {
+      "what": "Town Clerk fee schedule",
+      "period": "as proposed and voted under Article 61, May 14, 1988; fee year not printed",
+      "cited": "p61: `ARTICLE 61 ... deleting the current Town Clerk fee schedule and inserting a new schedule`"
+    },
+    {
+      "what": "police court cases",
+      "period": "calendar 1988",
+      "cited": "p17: `court cases handled by the Police Department in 1988`"
+    },
+    {
+      "what": "burials",
+      "period": "calendar 1988",
+      "cited": "p15: `a list of people buried in Lunenburg Cemeteries during 1988`"
+    }
+  ],
+  "unlabeled_subtotals": true,
+  "unlabeled_subtotals_why": "the accountant schedule and the trust and receipts lists print subtotals with no label; a row is read as one only when it equals, to the cent, the detail lines above it since the last total (29 October 2026)",
+  "accountant_marks": true,
+  "recon_net_on_transfer_line": true,
+  "receipts_span": true,
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)"
+}

@@ -468,6 +468,19 @@ PROOF = {
     # Schedule A's Classification Plan of class titles, point values and grades (p86)
     'weights-measures': ('status', VERDICT),
     'classification-plan': ('status', VERDICT),
+    # NEW in the 1986-1990 editions (integration pass, 29 October 2026): the Auditor's cash
+    # schedule, the Treasurer's nested payments and single-fund balance sheets, federal revenue
+    # sharing, a calendar-year cash reconciliation, vendors over $4,000, school tables, agency funds
+    'auditors-cash-schedule': ('status', VERDICT),
+    'statement-of-payments': ('status', VERDICT),
+    'fund-balance-sheets': ('status', VERDICT),
+    'revenue-sharing': ('status', VERDICT),
+    'treasurers-cash-calendar-year': ('status', VERDICT),
+    'vendor-payments': ('status', VERDICT),
+    'school-staff-fte': ('status', VERDICT),
+    'school-state-aid': ('status', VERDICT),
+    'school-special-accounts': ('status', VERDICT),
+    'agency-funds': ('status', VERDICT),
     # and from the 2001-2009 editions, the same furniture, unified by the integration pass of
     # 28 October 2026 (sources/data/report-tables/README.md, "One name per quantity"): the
     # Treasurer's cash roll-forward, checked down the page (`checked` only when the chain

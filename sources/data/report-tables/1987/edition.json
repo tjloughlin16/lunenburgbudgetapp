@@ -1,0 +1,94 @@
+{
+  "edition": "1987",
+  "fy": 1987,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "basis_source": "the label `1987 Annual Town Report` (sources/town-annual-reports/index.csv); a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4486-1987-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4486-1987-annual-town-report.pdf",
+  "label": "1987 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4486-1987-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "auditor's schedule of cash and investments",
+      "period": "balances at July 1, 1986 and June 30, 1987",
+      "cited": "p9: `for the fiscal year July 1, 1986 thru June 30, 1987`; `SCHEDULE OF RECONCILIATION OF TREASURER'S CASH / JUNE 30, 1987`; `SCHEDULE OF INVESTMENTS / JUNE 30, 1987`"
+    },
+    {
+      "what": "trust and investment funds schedule",
+      "period": "June 30, 1987",
+      "cited": "p10: `SCHEDULE OF TRUST AND INVESTMENT FUNDS JUNE 30, 1987`"
+    },
+    {
+      "what": "tax levy history",
+      "period": "fiscal years 1982 to 1988",
+      "cited": "p27: `Lunenburg has increased its tax burden since Proposition 2 1/2 as follows:`, column `Fiscal Year`"
+    },
+    {
+      "what": "treasurer's cash reconciliation (general fund)",
+      "period": "fiscal year 1987, opening at June 30, 1986",
+      "cited": "p28: `Reconciliation of Treasurer's Cash / FISCAL YEAR 1987 / BALANCE JUNE 30, 1986`; `RECEIPTS 7/1/86-6/30/87`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal 1987, to June 30, 1987",
+      "cited": "p29: `Detailed Statement of Receipts - June 30, 1987`"
+    },
+    {
+      "what": "revenue sharing reconciliation",
+      "period": "FY 1987",
+      "cited": "p30: `RECONCILIATION OF TREASURER'CASH / FY 1987`"
+    },
+    {
+      "what": "general fund appropriations (accountant schedule)",
+      "period": "NOT PRINTED as a year; the balance-forward column is headed `BALANCE FY 88`, so the schedule closes fiscal 1987",
+      "cited": "p31: `Summary and Classification of Accounts`; column `BALANCE FY 88` (p31-p36)"
+    },
+    {
+      "what": "agency funds",
+      "period": "NOT PRINTED; follows the balance sheet at June 30, 1987",
+      "cited": "p37: `AGENCY FUNDS`"
+    },
+    {
+      "what": "balance sheet",
+      "period": "June 30, 1987",
+      "cited": "p38: `Balance Sheet June 30, 1987`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1988",
+      "cited": "p39 column headers: `DUE IN FISCAL 1988` / `TOTAL PAYMENTS THRU 1988`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of December 31, 1987",
+      "cited": "p40: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF DECEMBER 31, 1987`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "NOT PRINTED as a year; the levy-year rows are `1985 MOTOR VEHICLE EXCISE`, `1986 MOTOR VEHICLE EXCISE`, `1987 PERSONAL PROPERTY`",
+      "cited": "p41: heading `Collection of Taxes`"
+    },
+    {
+      "what": "trust and investment accounts",
+      "period": "July 1, 1986 through June 30, 1987",
+      "cited": "p42: `TRUST AND INVESTMENT ACCOUNTS / July 1, 1986 through June 30, 1987`; rows `Balance July 1, 1986` ... `Balance June 30, 1987` (p43-p44)"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 1988, as VOTED (a budget, not an actual)",
+      "cited": "p50: `MAY 9, 1987 SPECIAL TOWN MEETING AND 1987 ANNUAL TOWN KEETING`; p51 Article 5: `...the charges and expenses of the Town for Fiscal Year 1988`; p52 `TOTAL BUDGET VOTED: $ 8,502,150.`"
+    },
+    {
+      "what": "school enrollment",
+      "period": "October 1, 1987, September 2, 1987 and October 1, 1986",
+      "cited": "p66: `SUMMARY - OCTOBER 1, 1987 ENROLLMENTS`"
+    }
+  ],
+  "accountant_marks": true,
+  "id_column_words": true,
+  "recon_net_on_transfer_line": true,
+  "receipts_span": true,
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)"
+}

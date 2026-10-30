@@ -21,10 +21,15 @@ kept where both exist, because when one dies the other may not. The
 publisher's own label is kept too, because when both die the only way a resident
 gets the document is to ask the town for it by name.
 
-## `annual-report-catalogue` — 1,621 rows across 36 report(s), **none reconciled**
+## `annual-report-catalogue` — 1,803 rows across 41 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1986 | 66 | 3,9,10,11,22,35,36,37,38,39,40,41,42,43,… | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 35 | 3,8,9,10,14,17,19,27,28,29,30,31,36,37,3… | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 31 | 5,10,11,12,16,17,30,32,33,34,38,39,40,41… | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 27 | 3,8,13,14,16,26,27,28,29,35,38,39,40,41,… | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 23 | 3,8,9,12,13,21,22,23,26,28,29,30,31,32,3… | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
 | 1991 | 25 | 3,8,9,17,23,24,25,29,30,31,32,33,34,35,3… | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 22 | 3,9,12,23,24,25,28,29,30,32,33,34,35,36,… | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1993 | 19 | 3,17,26,27,28,32,34,36,37,52,53,54,55,56… | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
@@ -62,10 +67,15 @@ gets the document is to ask the town for it by name.
 | FY2024 | 44 | 2,3,6,7,9,10,15,21,22,23,26,27,28,29,30,… | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 69 | 3,4,9,10,11,12,13,18,25,26,29,30,31,33,3… | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `annual-report-receipts` — 3,192 rows across 34 report(s), **none reconciled**
+## `annual-report-receipts` — 3,864 rows across 39 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1986 | 204 | 36,37 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 125 | 29,30 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 98 | 33 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 120 | 27,28 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 125 | 22 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
 | 1991 | 123 | 24 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 117 | 24 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1993 | 118 | 27 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
@@ -131,10 +141,15 @@ gets the document is to ask the town for it by name.
 | FY2024 | 1 | 97 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 1 | 92 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-appropriations` — 11,708 rows across 35 report(s), **none reconciled**
+## `report-appropriations` — 13,155 rows across 40 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1986 | 302 | 54,55,56,57,58,59,71,72,82 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 350 | 31,32,33,34,35,36,51,52 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 285 | 34,35,36,37,38,50,51 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 315 | 29,30,31,32,33,34,35,51,52,53,64 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 195 | 23,24,25,26,44,45,46,52 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
 | 1991 | 200 | 25,26,27,28,29,46,47,51,52 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 201 | 25,26,27,28,46,47,52 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1993 | 238 | 28,29,30,31,32,36,37 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
@@ -202,10 +217,15 @@ gets the document is to ask the town for it by name.
 | FY2024 | 26 | 27 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 14 | 30 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-debt` — 2,254 rows across 28 report(s), **none reconciled**
+## `report-debt` — 2,635 rows across 33 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1986 | 56 | 47,48 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 68 | 39,40 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 74 | 40,41 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 90 | 39,40 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 93 | 29,30,31 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
 | 1991 | 94 | 32,33,34 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 101 | 33,35,36 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1993 | 78 | 53,54 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
@@ -235,10 +255,15 @@ gets the document is to ask the town for it by name.
 | FY2024 | 51 | 37 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 75 | 37,39 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-dept-activity` — 1,377 rows across 32 report(s), **none reconciled**
+## `report-dept-activity` — 1,600 rows across 37 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1986 | 81 | 9,22 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 65 | 19 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 14 | 17 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 37 | 16 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 26 | 8,13 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
 | 1991 | 23 | 8,17 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 41 | 9,12 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1993 | 6 | 17 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
@@ -272,10 +297,11 @@ gets the document is to ask the town for it by name.
 | FY2024 | 51 | 43,84,85 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 24 | 45 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-elections` — 3,438 rows across 26 report(s), **none reconciled**
+## `report-elections` — 3,444 rows across 27 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1986 | 6 | 87 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
 | 1992 | 10 | 62,63 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 2001 | 37 | 90,91 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
 | 2002 | 252 | 89,90,91,92,93,94,95,96,97,98 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
@@ -303,10 +329,11 @@ gets the document is to ask the town for it by name.
 | FY2024 | 234 | 172,173,174,175,176,177,178,179,180,181,… | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 95 | 171,172,173,174,175 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-enrollment-mcas` — 725 rows across 26 report(s), **none reconciled**
+## `report-enrollment-mcas` — 747 rows across 27 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1987 | 22 | 66 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
 | 1991 | 19 | 56 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 2001 | 73 | 37,45,46,47,48 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
 | 2002 | 33 | 36,37,38 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
@@ -373,10 +400,11 @@ gets the document is to ask the town for it by name.
 |---|---:|---|---|---|---|
 | FY2017 | 70 | 142,143 | — | `4124-fy-2017-annual-town-report.pdf` | `4c6fbf70d0aff247…` |
 
-## `report-officials` — 1,741 rows across 26 report(s), **none reconciled**
+## `report-officials` — 1,751 rows across 27 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1987 | 10 | 14,17,66 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
 | 1991 | 5 | 56 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 13 | 9 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1997 | 13 | 27 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
@@ -404,10 +432,15 @@ gets the document is to ask the town for it by name.
 | FY2023 | 52 | 13,14,165,166,167 | — | `4131-fy-2023-annual-town-report.pdf` | `d273ebb71360e30d…` |
 | FY2024 | 3 | 13,15,79 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 
-## `report-trust-funds` — 2,172 rows across 32 report(s), **none reconciled**
+## `report-trust-funds` — 2,727 rows across 37 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1986 | 145 | 50,51,52 | — | `4549-1986-annual-town-report.pdf` | `ffe6e12b7fbb414e…` |
+| 1987 | 156 | 10,42,43,44 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 72 | 11,43 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 92 | 42,43,44 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 90 | 33,34,35,36 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
 | 1991 | 90 | 36,37,38,39 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 90 | 37,38,39,40 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1993 | 90 | 56,57,58 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
@@ -441,10 +474,12 @@ gets the document is to ask the town for it by name.
 | FY2024 | 45 | 29 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 58 | 30,31 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `report-valuation` — 891 rows across 25 report(s), **none reconciled**
+## `report-valuation` — 907 rows across 27 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1987 | 7 | 27 | — | `4486-1987-annual-town-report.pdf` | `e2f014913ef2845e…` |
+| 1988 | 9 | 30 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
 | 1995 | 22 | 46 | — | `4521-1995-annual-town-report.pdf` | `f31f009f90dd8e40…` |
 | 1996 | 24 | 44 | — | `4522-1996-annual-town-report.pdf` | `77d133e7499f3749…` |
 | 1997 | 24 | 44 | — | `4523-1997-annual-town-report.pdf` | `ddef7192c8858956…` |
@@ -471,10 +506,11 @@ gets the document is to ask the town for it by name.
 | FY2018 | 30 | 41 | — | `4125-fy-2018-annual-town-report.pdf` | `364a1138df754668…` |
 | FY2019 | 26 | 43 | — | `4126-fy-2019-annual-town-report.pdf` | `220f1c778148feb9…` |
 
-## `report-vital-records` — 875 rows across 24 report(s), **none reconciled**
+## `report-vital-records` — 902 rows across 25 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1988 | 27 | 16 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
 | 2001 | 103 | 13,79 | — | `4527-2001-annual-town-report.pdf` | `741339b0a25b8cc9…` |
 | 2002 | 91 | 10,74 | — | `4528-2002-annual-town-report.pdf` | `71bdd5e062f85a07…` |
 | 2003 | 121 | 11,80 | — | `4529-2003-annual-town-report.pdf` | `380875fbd1121db3…` |
@@ -540,10 +576,13 @@ gets the document is to ask the town for it by name.
 | FY2024 | 164 | 23,24,25,26 | — | `4132-fy-2024-annual-town-report.pdf` | `46f14ff8459ec81f…` |
 | FY2025 | 172 | 26,27,28,29 | — | `4130-fy-2025-annual-town-report.pdf` | `a9ee7b51154d94fd…` |
 
-## `staff-roster-entries` — 7,025 rows across 34 report(s), **none reconciled**
+## `staff-roster-entries` — 7,349 rows across 37 report(s), **none reconciled**
 
 | edition | rows | pages | checked | document | sha256 |
 |---|---:|---|---|---|---|
+| 1988 | 123 | 76,78,80,81 | — | `4487-1988-annual-town-report.pdf` | `773306d7b12785a7…` |
+| 1989 | 125 | 76,78,79 | — | `4488-1989-annual-town-report.pdf` | `245335ec4c6572fd…` |
+| 1990 | 76 | 65,68 | — | `4489-1990-annual-town-report.pdf` | `a979aeaa9d785dc7…` |
 | 1991 | 126 | 60,62,63,65,66 | — | `4490-1991-annual-town-report.pdf` | `8ba40a642b20787d…` |
 | 1992 | 118 | 21,22 | — | `4491-1992-annual-town-report.pdf` | `9c3691eba9be8fcd…` |
 | 1993 | 46 | 24 | — | `4519-1993-annual-town-report.pdf` | `bc727914bdd599eb…` |
@@ -583,6 +622,11 @@ gets the document is to ask the town for it by name.
 
 | edition | publisher label | addresses | bytes | sha256 |
 |---|---|---|---:|---|
+| 1986 | 1986 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4549 | 8,987,327 | `ffe6e12b7fbb414e58c4fa55caaf914e964ea522e319f542fe017cdde4f81c2f` |
+| 1987 | 1987 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4486 | 3,787,970 | `e2f014913ef2845e7653cff0cee4db8ce6c4f7719d947a1c19c5c2ae26654add` |
+| 1988 | 1988 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4487 | 4,111,580 | `773306d7b12785a7fdc00cd880ac1c373be508eee0bed414eaff08970c9d0c1a` |
+| 1989 | 1989 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4488 | 3,761,754 | `245335ec4c6572fd14682d5a6544b2d5d84a0a519b005b7832a634535b33084a` |
+| 1990 | 1990 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4489 | 3,044,923 | `a979aeaa9d785dc7f8812021180d88122d46f4e64c0c86e586627538dda47218` |
 | 1991 | 1991 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4490 | 2,778,777 | `8ba40a642b20787d55dd57ac9fefe50e828158cdfd37e9f572538f40f5fb9e62` |
 | 1992 | 1992 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4491 | 2,642,499 | `9c3691eba9be8fcdb95708f85e2b7050a514b343dd66a71565c587200fa0999d` |
 | 1993 | 1993 Annual Town Report | https://www.lunenburgma.gov/DocumentCenter/View/4519 | 2,692,179 | `bc727914bdd599ebfbc4b40ffa19439d970d38d88b30531ebd4f2394ca508ce4` |

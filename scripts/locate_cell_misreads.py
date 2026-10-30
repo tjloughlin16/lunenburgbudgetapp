@@ -2,7 +2,7 @@
 """LOCATE: cells that two independent printed identities pin to ONE value. No model, no network.
 
     python3 scripts/locate_cell_misreads.py 1993 1995        # candidates -> build/cell-witness/candidates-<ed>.csv
-    python3 scripts/locate_cell_misreads.py --all            # every edition 1991-2010
+    python3 scripts/locate_cell_misreads.py --all            # every edition 1986-2010
 
 notes/process/ANNUAL-REPORT-CELL-WITNESS.md is the process. This is step 1 of four.
 
@@ -45,20 +45,34 @@ def setup(edition):
     tables = V.load(stem)
     m_rows = R.read_csv(os.path.join(d, 'map.csv'))
     R.apply_witness(d, tables)
+    # the edition's opt-ins, exactly as read_report_tables.build() sets them
+    R.OPTS.clear()
+    R.OPTS.update(k for k, v in ed.items() if v is True)
     R.apply_calendar_repairs(tables)
     R.apply_witnessed_cells(d, tables)
+    if 'stacked_pairs' in R.OPTS:
+        tables = R.split_stacked_pairs(m_rows, tables)
+    R.split_list_total_cells(m_rows, tables)
     vt = R.without_averages(m_rows, tables)
     if ed.get('unlabeled_subtotals') is True:
-        vt = R.mark_unlabeled_subtotals(m_rows, vt)
-    checks, _ = R.cell_checks(stem, vt, R.validator_names(m_rows, tables, ed.get('validator_drop_titles') is True))
+        vt = R.mark_unlabeled_subtotals(m_rows, vt, tuple(ed.get('unlabeled_subtotals_in') or ('report-appropriations',)))
+    checks, _ = R.cell_checks(stem, vt, R.validator_names(m_rows, tables, ed.get('validator_drop_titles') is True),
+                              tol=ed.get('rounding_tolerance_usd', 0),
+                              tol_off_pages={int(m['page']) for m in m_rows if m['dataset'] == 'report-elections'})
     return d, ed, stem, tables, m_rows, checks
 
 
-def row_solutions(family, names, cells):
+def row_solutions(family, names, cells, figcols=()):
     """[(col, required value, text)] for every cell of this row an UNFAILING-but-for-it identity
     would pin, one entry per failing identity."""
     out = []
     idents = list(R.IDENTITIES.get(family, []))
+    if family == 'debt-repayment-schedule' and not names and len(figcols) >= 3:
+        # THE YEAR HEADER IS IN THE PAGE LINES, NOT THE CELLS (1987 p40, 1988 p41): the columns
+        # are unnamed, so they are named by POSITION for this identity only -- the last figure
+        # column is the row's TOTAL, the ones before it its fiscal years. Locator only: nothing
+        # read_report_tables grades moves
+        names = {k: ('TOTAL' if k == max(figcols) else '%04d' % k) for k in figcols}
     if family == 'debt-repayment-schedule':
         # LOCATOR-ONLY identity, printed on the page: a row's TOTAL column is the sum of its
         # fiscal-year columns (named by the year). Not added to IDENTITIES: it would move rows
@@ -134,7 +148,7 @@ def locate(edition):
         for rec in R.records(m, tables, checks, ed, prev_header):
             row_ref = rec['ref']
             cells = rec['cells']
-            sols = row_solutions(m['family'], rec['names'], cells)
+            sols = row_solutions(m['family'], rec['names'], cells, rec['figcols'])
             for k, required, rtext in sols:
                 if (row_ref, k) not in cell_of:
                     continue
@@ -178,7 +192,7 @@ def main(argv=None):
     ap.add_argument('editions', nargs='*')
     ap.add_argument('--all', action='store_true')
     a = ap.parse_args(argv)
-    eds = [str(y) for y in range(1991, 2011)] if a.all else a.editions
+    eds = [str(y) for y in range(1986, 2011)] if a.all else a.editions
     os.makedirs(OUTDIR, exist_ok=True)
     total = 0
     for ed in eds:

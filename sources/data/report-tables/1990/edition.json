@@ -1,0 +1,70 @@
+{
+  "edition": "1990",
+  "fy": 1990,
+  "basis": "calendar",
+  "rounding_tolerance_usd": 1,
+  "unlabeled_subtotals": true,
+  "unlabeled_subtotals_why": "the accountant schedule prints a department subtotal with no label; a row is read as one only when it equals, to the cent, the detail lines above it since the last total (29 October 2026)",
+  "basis_source": "the label `1990 Annual Town Report` (sources/town-annual-reports/index.csv) and the cover; a calendar EDITION, whose financial statements are for a fiscal year -- see periods",
+  "stem": "4489-1990-annual-town-report",
+  "pdf": "sources/town-annual-reports/docs/4489-1990-annual-town-report.pdf",
+  "label": "1990 Annual Town Report",
+  "read_by": "AWS Textract: text on every page; tables only on the pages find_financial_pages.py picked (3+ money figures); cells in build/textract/out/4489-1990-annual-town-report.cells.tsv",
+  "periods": [
+    {
+      "what": "combined balance sheet",
+      "period": "fiscal year ended June 30, 1990",
+      "cited": "p21: `COMBINED BALANCE SHEET / ALL FUND TYPES AND ACCOUNT GROUPS / FOR THE YEAR ENDED JUNE 30, 1990`"
+    },
+    {
+      "what": "receipts",
+      "period": "fiscal year 1990",
+      "cited": "p22: `FISCAL 1990 RECEIPTS JUNE 30, 1990`"
+    },
+    {
+      "what": "general fund appropriations",
+      "period": "NOT PRINTED as a year; the balance-forward column is headed `FY 91`, so the schedule closes fiscal 1990",
+      "cited": "p23-27: `TOWN OF LUNENBURG / GENERAL FUND APPROPRIATIONS / SUMMARY AND CLASSIFICATION OF ACCOUNTS`; column header `BALANCE FY 91`"
+    },
+    {
+      "what": "treasurer's cash",
+      "period": "fiscal year 1990, opening at June 30, 1989",
+      "cited": "p28: `Reconciliation of Treasurer's Cash / FISCAL YEAR 1990 / BALANCE JUNE 30, 1989 / RECEIPTS 7/1/89-6/30/90`"
+    },
+    {
+      "what": "bonded indebtedness by issue",
+      "period": "through fiscal 1991",
+      "cited": "p29 column headers: `DUE IN FISCAL ... 1991` / `TOTAL PAYMENTS THRU 1991`"
+    },
+    {
+      "what": "debt repayment schedule",
+      "period": "as of June 30, 1990",
+      "cited": "p31: `TOWN OF LUNENBURG DEBT REPAYMENT SCHEDULE AS OF JUNE 30. 1990 (CONT.)`"
+    },
+    {
+      "what": "collection of taxes",
+      "period": "NOT PRINTED",
+      "cited": "p32: heading `Collection of Taxes` only; the latest levy years in the TAX column are 1990 M.V.E., 1990 P.P., 1990 R.E."
+    },
+    {
+      "what": "trust and investment accounts",
+      "period": "fiscal 1990",
+      "cited": "p33-p36: `Trust & Investment Accounts`, columns `PRIOR YEAR BALANCE` ... `BALANCE`; no year printed on the table pages"
+    },
+    {
+      "what": "omnibus budget",
+      "period": "fiscal year 1991, as VOTED (a budget, not an actual)",
+      "cited": "p44 Article 7: `...Fiscal Year 1991 ... The budget line items were discussed and voted as follows`; ANNUAL TOWN MEETING WARRANT MAY 12, 1990; p46 `TOTAL BUDGET VOTED`"
+    },
+    {
+      "what": "omnibus budget amendments",
+      "period": "fiscal year 1991, as amended at the Special Town Meeting of September 25, 1990",
+      "cited": "p52 Article 2: `supplement the following line item amounts appropriated at the May 12, 1990 Annual Town Meeting`"
+    }
+  ],
+  "stop_for_comma_without_dollar": true,
+  "accountant_marks": true,
+  "recon_net_on_transfer_line": true,
+  "receipts_span": true,
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)"
+}
