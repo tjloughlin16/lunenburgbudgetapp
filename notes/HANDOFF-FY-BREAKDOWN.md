@@ -305,6 +305,34 @@ qualifier in `sub`).
    passed / funding the year. Sources: School Committee and Finance Committee presentations and
    minutes (`search_minutes.py`), the budget books, Town Meeting / election results. Rule 7: an
    announced figure is what someone SAID -- cite it as theirs, beside ours, never merged.
+   **BUILT 30 Oct (subagent), not deployed:** `fy-signatures` custom block ("Beginning and end"),
+   directly under the year picker; follows `useFyYear`. Generator `signatures_data()` in
+   `build_fy_breakdown.py`; component `fy28/src/components/blocks/custom/fy-signatures.tsx`. It
+   READS existing records rather than copying them: `stated-figures.csv` (FY2025 surplus),
+   `stated-cuts.csv` (cut lists, counted by row), `budget-seasons/fy26.csv` (FY2026 gap and
+   override), `dls-override-votes.csv` (a vote dated in the 12 months before 1 July -- OUR window).
+   What only this block needed is in the new `sources/data/fy-signatures.csv`, including
+   `searched` rows saying where we looked. Per year:
+   - FY2023: no gap, no cut list found (spring 2022 SC minutes not held, only agendas; captions,
+     FinCom minutes, the FY23 presentation searched); no override vote on the DLS register. END:
+     nothing announced at the close (SC/FinCom/SB minutes + captions, mid-June 2023 to Jan 2024).
+     The only figure is RETROSPECTIVE and CAPTIONS-ONLY: SC 3 Sep 2025, 1:35:42, "FY23 was
+     1068.2675", read by us as $106,826.75 (matches the period-13 unspent). Check the video.
+   - FY2024: same searches, nothing found at either end; captions SC 3 Sep 2025, 1:36:18, "FY24 was
+     21577628", read as $215,776.28. Check the video.
+   - FY2025: gap $1.5 million "made public at the November 15, 2023 School Committee meeting" (FY25
+     budget update p40 -- the minutes of that day do not print it); cuts 9 with the override / 23
+     without (override statement, April 2024); override PASSED 18 May 2024, $948,136, 753-664 (DLS).
+     END: $582,115.44 (3 Sep 2025, memo read by the SC chair), then $603,885.97 (17 Sep 2025).
+   - FY2026: gap $3,492,995 (Town Manager's target, 5 Feb 2025), restated $1,913,460 (12 Mar 2025);
+     39 cuts (approved list, 12 Mar 2025); override $2,099,337 voted by Town Meeting 3 May 2025,
+     never on the ballot. END: "approximately $470,000 to $600,000" unexpended, PRELIMINARY, the
+     Town Manager to the Select Board, 1 Sep 2026 (minutes pp6-7; the update itself not held);
+     and 29 Jul 2026 "well below" ~$600,000 (Business Manager). Update when the books close.
+   - Two gaps registered in money-gaps.csv (FY2023/24 turnback at the close; FY2023/24 season).
+   - NOT done: the $500,000 free cash for FY2026 (Article 12) -- the season file records only the
+     SC's contingent acceptance, so it is not shown. A real phone-width check
+     (`check_phone_width.sh` builds, so it was not run here).
 
 3. **A WHOLE DIFFERENT REPORT, BOTTOM OF THE QUEUE: school budget vs actuals, line by line over
    time (TJ, 29 Oct).** TJ: *"map over time the same info thats in the fy breakdowns, but focus

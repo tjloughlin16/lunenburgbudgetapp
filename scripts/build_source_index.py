@@ -3948,6 +3948,18 @@ GROUPS = [
              'the minutes it is quoted from and the line number. Recorded separately from '
              'everything we derive, because the town\u2019s closing figure is arrived at '
              'by closing its books and we cannot do that arithmetic from what we hold.'),
+            ('data/fy-signatures.csv',
+             'How each school fiscal year began and ended, as announced', 3,
+             'What officials SAID at the two ends of a school year, read for the FY breakdown '
+             'page’s opening callout: a gap announced as the budget season began, and a '
+             'surplus or turnback announced at the close, each with who said it, when, the '
+             'words as printed and where. `record` says what kind of source it is: minutes, a '
+             'document, or `captions` — our machine captions of a recording, a finding aid '
+             'whose digits we read and which must be checked against the video. Rows with '
+             'kind `searched` record where we LOOKED and found nothing, because a search that '
+             'finds nothing is a statement about the search (rule 13c). Read beside '
+             'stated-figures.csv, stated-cuts.csv, the budget-season files and the DLS '
+             'override register, which the page reads directly rather than copying here.'),
             ('data/dese-radar.csv',
              'DESE\u2019s own figures, every district, FY2009\u2013FY2025', 3,
              'The state\u2019s RADAR district comparison: enrollment, demographics, '

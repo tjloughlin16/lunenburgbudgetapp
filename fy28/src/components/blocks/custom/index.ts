@@ -32,6 +32,7 @@ import FyWeb from './fy-web'
 import FySourceTable from './fy-source-table'
 import FyYearWeeks from './fy-year-weeks'
 import FyTownReceipts from './fy-town-receipts'
+import FySignatures from './fy-signatures'
 import GrantAwardsStack from './grant-awards-stack'
 import MeetingTrail from './meeting-trail'
 import SerfMoneyStack from './serf-money-stack'
@@ -63,6 +64,7 @@ export const CUSTOM_BLOCKS: Record<string, ComponentType<CustomProps>> = {
   'fy-source-table': FySourceTable,
   'fy-year-weeks': FyYearWeeks,
   'fy-town-receipts': FyTownReceipts,
+  'fy-signatures': FySignatures,
   'grant-awards-stack': GrantAwardsStack,
   'meeting-trail': MeetingTrail,
   'serf-money-stack': SerfMoneyStack,

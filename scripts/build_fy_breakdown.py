@@ -877,6 +877,146 @@ def readiness_data(T):
 _MEMO = {}
 
 
+# THE YEAR'S SIGNATURES (TJ, 29 October 2026: "the surplus for the year. So it gets announced ...
+# right at the top of the page as sort of like executive summary call out ... but there's also a
+# beginning ... whether or not that year had a successful override ... how many cuts were
+# announced if there was a deficit, the deficit amount announced"). Everything here is what
+# somebody SAID, cited as theirs, and sits BESIDE the page's own Left -- never merged with it
+# (rule 7). Four records, each read where it already lives rather than copied:
+#   sources/data/fy-signatures.csv           what we read for this block, and what was searched
+#   sources/data/stated-figures.csv          the announced school surplus (FY2025)
+#   sources/data/stated-cuts.csv             the cut lists the district published
+#   sources/data/budget-seasons/fy<yy>.csv   a season already built for /budget-season
+#   sources/data/dls-override-votes.csv      the state's register of override votes
+SIG = os.path.join(ROOT, 'sources', 'data', 'fy-signatures.csv')
+DLS_OVERRIDES = os.path.join(ROOT, 'sources', 'data', 'dls-override-votes.csv')
+
+
+def signatures_data(m, T):
+    import build_budget_season as BS
+
+    def rows(name):
+        return list(csv.DictReader(open(os.path.join(ROOT, 'sources', 'data', name), encoding='utf-8')))
+    sig = list(csv.DictReader(open(SIG, encoding='utf-8')))
+    stated = [r for r in rows('stated-figures.csv') if r['metric'] == 'school_surplus']
+    cuts = rows('stated-cuts.csv')
+    votes = [r for r in csv.DictReader(open(DLS_OVERRIDES, encoding='utf-8')) if r['municipality'] == 'Lunenburg']
+
+    def said(v):
+        v = Decimal(v)
+        t = ('$%s' % format(v, ',.2f')) if v != v.to_integral() else C.usd(fl(v))
+        T.figures.add(t)
+        return t
+
+    def when(iso):
+        return T.lit(long_date(iso))
+
+    def cite(ev, ref=None, record=None):
+        r = BS.resolve(ev)
+        out = dict(href=T.lit(r['href']), label=T.lit(r['label'] if r['kind'] != 'meeting'
+                                               else '%s, %s' % (r['board'], long_date(r['date']))))
+        if ref:
+            out['ref'] = T.lit(ref)
+        if record == 'captions':
+            out['captions'] = True
+        return out
+
+    def count(n):
+        T.figures.add(str(n))
+        return str(n)
+    dls = dict(href=T.lit('/docs/data/dls-override-votes.csv'), label=T.lit('Division of Local Services, override and underride votes'))
+    years = []
+    for fy in YEARS():
+        mine = [r for r in sig if int(r['fy']) == fy]
+        searched = {p: [T.lit(r['note']) for r in mine if r['part'] == p and r['kind'] == 'searched'] for p in ('start', 'end')}
+        start = []
+        # THE GAP announced. A season file built for /budget-season outranks a row here.
+        season = os.path.join(ROOT, 'sources', 'data', 'budget-seasons', 'fy%02d.csv' % (fy % 100))
+        srows = list(csv.DictReader(open(season, encoding='utf-8'))) if os.path.exists(season) else []
+        gap = [r for r in srows if r['block'] == 'deficit' and r['scope'] == 'school' and r['status'] in ('started', 'corrected')]
+        if gap:
+            first = next(r for r in gap if r['status'] == 'started')
+            later = [r for r in gap if r['status'] == 'corrected']
+            v = Decimal(re.sub(r'[$,]', '', first['figure']))
+            start.append(dict(id='gap', label=T.lit('Gap announced'), v=said(v),
+                              sub=T.lit('%s, %s' % (first['who'], long_date(first['date']))),
+                              then=[T.lit('Restated as %s by %s, %s' % (later[-1]['figure'], later[-1]['who'], long_date(later[-1]['date'])))] if later else [],
+                              cite=cite(first['evidence'])))
+        else:
+            r = next((r for r in mine if r['part'] == 'start' and r['kind'] == 'deficit'), None)
+            if r:
+                start.append(dict(id='gap', label=T.lit('Gap announced'), v=said(r['figure']),
+                                  sub=T.lit('%s, %s' % (r['said_by'], long_date(r['said_on']))),
+                                  quote=T.lit(r['as_printed']), then=[T.lit(r['note'])] if r['note'] else [],
+                                  cite=cite(r['evidence'], r['ref'], r['record'])))
+            else:
+                start.append(dict(id='gap', label=T.lit('Gap announced'), v=T.lit('None found'), none=True,
+                                  sub=T.lit('No deficit figure in what was searched')))
+        # THE CUTS announced: the district's own lists, counted by row (a row is one item as the
+        # list prints it: a post, a part post, or a group of posts printed on one line)
+        fc = [r for r in cuts if int(r['fy']) == fy and r['direction'] == 'reduction']
+        cond = [r for r in fc if r['conditional_on']]
+        if cond:
+            yes = [r for r in cond if r['conditional_on'] == 'the override passing']
+            no = [r for r in cond if r['conditional_on'] == 'the override failing']
+            d0 = cond[0]
+            start.append(dict(id='cuts', label=T.lit('Cuts announced'),
+                              v=T.lit('%s or %s' % (count(len(yes)), count(len(no)))),
+                              sub=T.lit('items listed with the override, and without it'),
+                              then=[T.lit('%s, %s' % (d0['doc_title'], d0['doc_date'] if len(d0['doc_date']) > 7 else '%s %s' % (MONTHS[int(d0['doc_date'][5:]) - 1], d0['doc_date'][:4])))],
+                              cite=cite('doc:sources/' + d0['doc_pdf'], 'page %s' % d0['page'])))
+        elif fc:
+            last = max(r['doc_date'] for r in fc)
+            lr = [r for r in fc if r['doc_date'] == last]
+            start.append(dict(id='cuts', label=T.lit('Cuts announced'), v=count(len(lr)),
+                              sub=T.lit('items on the list %s, %s' % (lr[0]['stage'], long_date(last))),
+                              cite=cite('doc:sources/' + lr[0]['doc_pdf'])))
+        else:
+            start.append(dict(id='cuts', label=T.lit('Cuts announced'), v=T.lit('None found'), none=True,
+                              sub=T.lit('No list of reductions in what was searched')))
+        # THE OVERRIDE: a vote on the state's register in the twelve months before 1 July
+        lo, hi = date(fy - 2, 7, 1).isoformat(), date(fy - 1, 6, 30).isoformat()
+        vs = [r for r in votes if lo <= r['vote_date'] <= hi and r['vote_type'] == 'Override']
+        tm = [r for r in srows if r['block'] == 'override' and r['who'] == 'Annual Town Meeting']
+        if vs:
+            r = vs[0]
+            won = r['result'] == 'WIN'
+            start.append(dict(id='override', label=T.lit('Override'), v=said(r['amount']),
+                              sub=T.lit('%s at the ballot, %s, %s to %s' % ('passed' if won else 'failed', long_date(r['vote_date']), r['yes_votes'], r['no_votes'])),
+                              then=[T.lit('“%s”, as the state’s register describes it' % r['description'])], cite=dls))
+        elif tm:
+            r = tm[0]
+            start.append(dict(id='override', label=T.lit('Override'), v=said(re.sub(r'[$,]', '', r['figure'])),
+                              sub=T.lit('voted by Town Meeting, %s; never on the ballot' % long_date(r['date'])),
+                              then=[T.lit('No vote on the state’s register for the year')], cite=cite(r['evidence'])))
+        else:
+            start.append(dict(id='override', label=T.lit('Override'), v=T.lit('No vote'), none=True,
+                              sub=T.lit('none on the state’s register, %s to %s' % (long_date(lo), long_date(hi))), cite=dls))
+        # THE END: as announced, then ours
+        end = []
+        st = sorted((r for r in stated if int(r['fy']) == fy), key=lambda r: r['stated_on'])
+        for i, r in enumerate(st):
+            end.append(dict(v=said(r['amount']), who=T.lit(r['stated_by']), on=when(r['stated_on']),
+                            quote=T.lit(r['quote']), later=i > 0,
+                            cite=cite('doc:' + r['doc_id'], r['source_ref'])))
+        for r in (r for r in mine if r['part'] == 'end' and r['kind'] in ('turnback', 'said')):
+            v = (T.lit('%s to %s' % (said(r['figure']), said(r['figure_high']))) if r['figure_high']
+                 else said(r['figure']) if r['figure'] else None)
+            end.append(dict(v=v, who=T.lit(r['said_by']), on=when(r['said_on']), quote=T.lit(r['as_printed']),
+                            note=T.lit(r['note']) if r['note'] else None, captions=r['record'] == 'captions',
+                            cite=cite(r['evidence'], r['ref'], r['record'])))
+        end.sort(key=lambda e: (e['v'] is None,))
+        years.append(dict(fy=T.fy(fy), start=start, said=end, searched=searched,
+                          ours=T.usd(m['years'][fy]['left'])))
+    return dict(years=years, text=dict(
+        start='How it began', end='How it ended', said='As announced', ours='Left, as this page measures it',
+        ours_sub='Every school line’s Left, orders still owed counted as spent',
+        none_said='No figure announced at the close in what was searched',
+        captions='Machine captions, not a record',
+        searched='What was searched', source='Source', later='later',
+        apart='An announced figure is the speaker’s, and counts what they chose to count; ours is the journal’s.'))
+
+
 def ledger_doc(fy, scope):
     """The period-13 report for a year, by the archive's naming rule -- and refused if we do not
     hold it, rather than linking an address that does not open."""
@@ -969,6 +1109,7 @@ def page(m):
         if any(r['group'] == 'gf' for r in sy['rows']):
             fail('%s: a general fund row in the table of other funds' % sy['fy'])
     weeks = year_weeks(m, T)
+    sigs = signatures_data(m, T)
     ready = readiness_data(T)
     by_line = line_funds_data(m, T)
     changes = budget_changes_data(m, T)
@@ -1002,6 +1143,15 @@ def page(m):
                       alt='The fiscal year every chart on this page shows',
                       so=('Every chart below shows the year picked here, and a line opened from '
                           'the table opens in that year.', None, ())),
+            TB.custom('fy-signatures', 'Beginning and end', sigs, place='top',
+                      figures=sorted(T.figures), allow=sorted(T.literals),
+                      basis=('record', 'What officials said, cited as theirs, beside this page’s own Left'),
+                      alt='For the fiscal year picked: the gap, the cuts and the override announced '
+                          'as it began; the surplus announced as it ended, beside the Left this page '
+                          'measures from the journal',
+                      so=('The year as residents heard it, at both ends. An announced surplus and the '
+                          'Left this page measures count different things, so they are shown apart, never added.',
+                          None, ())),
             TB.custom('fy-plan', 'The plan and what happened', plan, place='top',
                       figures=sorted(T.figures), allow=sorted(T.literals),
                       basis=('reading', 'Our placing of other funds’ spending on the lines'),
