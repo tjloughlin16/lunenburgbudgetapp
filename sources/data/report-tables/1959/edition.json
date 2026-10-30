@@ -110,5 +110,38 @@
   ],
   "receipts_stop_at_grand": true,
   "collector_columns": true,
-  "credit_marks": true
+  "credit_marks": true,
+  "expended_from_amounts": true,
+  "ed_mark": true,
+  "stepped_subtotals_in": [
+    "report-fund-balance-sheets",
+    "report-trust-funds"
+  ],
+  "school_statistics_totals": true,
+  "dollar_sign_labels": true,
+  "welfare_net_cost": true,
+  "signed_figures": true,
+  "declared_identities": [
+    {
+      "eq": "59/1/r20 = 58/3/r1-60 + 58/4/r1-60 + 59/1/r1-19 + 59/2/r1-20",
+      "why": "p59: TOTAL BUDGET VOTED $978,966.64, the voted budget lines of p58 (both column groups) and p59 above it"
+    },
+    {
+      "eq": "113/1/r3 = 113/1/r1 - 113/1/r2",
+      "why": "p113: the athletic account balance on hand is income less expenditures"
+    },
+    {
+      "eq": "102/1/r10 = 102/1/r6 - 102/1/r9",
+      "why": "p102: net expenditures for schools from local taxation are expenditures from all sources less receipts accredited to schools"
+    }
+  ],
+  "roman_counts": true,
+  "cell_readings": [
+    {
+      "cell": "111/1/2/8",
+      "textract": "18*",
+      "read_as": "18",
+      "why": "a footnote mark after a count of days served; the page explains it below the table, `(*Elementary-- 17; High School--19)`"
+    }
+  ]
 }

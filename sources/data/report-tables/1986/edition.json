@@ -106,5 +106,755 @@
   "id_column_words": true,
   "recon_net_on_transfer_line": true,
   "receipts_span": true,
-  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)"
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
+  "statement_span": [
+    "report-statement-of-payments"
+  ],
+  "accountant_marks_before": true,
+  "declared_identities": [
+    {
+      "eq": "10/2/r2.v4 = 10/2/r2.v1 + 10/2/r2.v2 - 10/2/r2.v3",
+      "why": "p10: the Auditor's schedule prints Balance July 1, 1985 + Receipts - Disbursements = Balance June 30, 1986 across its one row"
+    },
+    {
+      "eq": "40/1/r10 = 40/1/r5-9",
+      "why": "p40: the Federal Grants subtotal, printed unlabelled under its five grants"
+    },
+    {
+      "eq": "40/1/r17 = 40/1/r12-16",
+      "why": "p40: the Due to Agency Funds subtotal under its five lines"
+    },
+    {
+      "eq": "40/1/r32 = 40/1/r22-31",
+      "why": "p40: the Other Revolving Fund subtotal under its ten funds"
+    },
+    {
+      "eq": "40/2/r7 = 40/2/r5-6",
+      "why": "p40: Motor Vehicle Excise, levies of 1985 and 1986, and their subtotal"
+    },
+    {
+      "eq": "40/2/r11 = 40/2/r9-10",
+      "why": "p40: Tax Liens and Tax Foreclosures, and their subtotal"
+    },
+    {
+      "eq": "40/2/r17 = 40/2/r13-16",
+      "why": "p40: Departmental receivables, four lines and their subtotal"
+    },
+    {
+      "eq": "41/1/r21 = 41/1/r19-20",
+      "why": "p41: Receipts Reserved for Appropriation, two lines and their subtotal"
+    },
+    {
+      "eq": "41/1/r30 = 41/1/r23-29",
+      "why": "p41: Appropriation for Capital Projects (articles), seven lines and their subtotal"
+    },
+    {
+      "eq": "41/1/r35 = 41/1/r32-34",
+      "why": "p41: Provisions for Abatements and Exemptions, levies 1984-1986, and their subtotal"
+    },
+    {
+      "eq": "41/1/r41 = 41/1/r37-40",
+      "why": "p41: Reserve for Uncollected Receivables, four lines and their subtotal"
+    },
+    {
+      "eq": "41/1/r37 = 40/2/r7",
+      "why": "p41's reserve for Motor Vehicle Excise equals the receivable subtotal printed on p40"
+    },
+    {
+      "eq": "41/1/r38 = 40/2/r11",
+      "why": "p41's reserve for tax liens and foreclosures equals the receivable subtotal printed on p40"
+    },
+    {
+      "eq": "41/1/r39 = 40/2/r17",
+      "why": "p41's reserve for departmental receivables equals the receivable subtotal printed on p40"
+    },
+    {
+      "eq": "42/1/r19 = 42/1/r13-18",
+      "why": "p42: the long term debt Inside Debt Limit, six issues and their subtotal 636,862.95"
+    },
+    {
+      "eq": "42/1/r20.v1 = 42/1/r11 + 42/1/r19",
+      "why": "p42: long term debt 766,862.95 = 130,000.00 outside the debt limit + 636,862.95 inside"
+    },
+    {
+      "eq": "42/1/r10 = 42/1/r20.v1",
+      "why": "p42: Amount to Be Provided for the Payment of debt equals the debt it provides for"
+    },
+    {
+      "eq": "42/1/r8.v1 = 42/1/r8.v2",
+      "why": "p42: the balance sheet's two sides, 9,700,665.44 each"
+    },
+    {
+      "eq": "43/1/r5 = 43/1/r3-4",
+      "why": "p43: Cemetery perpetual care bequests + income"
+    },
+    {
+      "eq": "43/1/r12 = 43/1/r8-11",
+      "why": "p43: Worthy Poor Funds, four lines and their subtotal"
+    },
+    {
+      "eq": "43/1/r16 = 43/1/r14-15",
+      "why": "p43: Sidewalks & Public Grounds, two lines and their subtotal"
+    },
+    {
+      "eq": "43/1/r27 = 43/1/r19-26",
+      "why": "p43: Library Book Account, eight bequests and their subtotal 8,900.00"
+    },
+    {
+      "eq": "43/1/r35 = 43/1/r30-34",
+      "why": "p43: Library All Purpose Account, five bequests and their subtotal 6,200.00"
+    },
+    {
+      "eq": "44/1/r7 = 44/1/r2-6",
+      "why": "p44: Conservation, five lines and their subtotal"
+    },
+    {
+      "eq": "44/1/r13 = 44/1/r11-12",
+      "why": "p44: School Prize Funds, two and their subtotal"
+    },
+    {
+      "eq": "44/1/r15 = 43/1/r5 + 43/1/r6 + 43/1/r12 + 43/1/r16 + 43/1/r27 + 43/1/r28 + 43/1/r35 + 43/1/r36 + 44/1/r7 + 44/1/r8 + 44/1/r9 + 44/1/r13 + 44/1/r14",
+      "why": "p44: the trust funds' total 384,822.83, printed unlabelled at the foot, is the sum of the fund lines and subtotals on p43-44"
+    },
+    {
+      "eq": "#384,822.83 = 50/1/r1-9",
+      "why": "p50: the trust funds summary by purpose sums to the unlabelled 384,822.83 printed beneath it"
+    },
+    {
+      "eq": "50/3/r25 = 50/3/r22-24",
+      "why": "p50: Mabel L. Allen school prize fund, stock + principal + income"
+    },
+    {
+      "eq": "50/3/r29 = 50/3/r26-28",
+      "why": "p50: Joseph A. Harwood school prize fund, stock + principal + income"
+    },
+    {
+      "eq": "50/3/r30 = 50/3/r25 + 50/3/r29",
+      "why": "p50: School Prize Fund total"
+    },
+    {
+      "eq": "51/1/r10 = 51/1/r2-9",
+      "why": "p51: Library book bequests, eight and their total"
+    },
+    {
+      "eq": "51/1/r21 = 51/1/r13-20",
+      "why": "p51: Library book income by donor, eight and their total"
+    },
+    {
+      "eq": "51/1/r29 = 51/1/r24-28",
+      "why": "p51: Library all purpose bequests, five and their total"
+    },
+    {
+      "eq": "51/2/r5 = 51/2/r3-4",
+      "why": "p51: Worthy Poor interest received, Fitchburg Savings"
+    },
+    {
+      "eq": "51/2/r9 = 51/2/r7-8",
+      "why": "p51: Worthy Poor interest received, Mass. Municipal"
+    },
+    {
+      "eq": "51/2/r13 = 51/2/r11-12",
+      "why": "p51: Worthy Poor interest received, Century Bank"
+    },
+    {
+      "eq": "51/2/r14 = 51/2/r1 + 51/2/r5 + 51/2/r9 + 51/2/r13",
+      "why": "p51: Worthy Poor roll-forward, balance July 1, 1985 + interest"
+    },
+    {
+      "eq": "51/2/r17 = 51/2/r15 + 51/2/r16",
+      "why": "p51: Worthy Poor, grants and gifts + balance June 30, 1986 foot to the same 13,439.53"
+    },
+    {
+      "eq": "51/2/r23 = 51/2/r20-22",
+      "why": "p51: Sidewalks and grounds interest received"
+    },
+    {
+      "eq": "51/2/r24 = 51/2/r19 + 51/2/r23",
+      "why": "p51: Sidewalks and grounds roll-forward"
+    },
+    {
+      "eq": "51/3/r14 = 51/3/r3-13",
+      "why": "p51: Cemetery perpetual care bequests received, eleven and their total"
+    },
+    {
+      "eq": "51/3/r29 = 51/3/r27 + 51/3/r28",
+      "why": "p51: Cemetery perpetual care, transfer + balance June 30, 1986"
+    },
+    {
+      "eq": "52/1/r4 = 52/1/r1-3",
+      "why": "p52: Stabilization, balance July 1, 1985 + interest"
+    },
+    {
+      "eq": "52/1/r16 = 52/1/r14 + 52/1/r15",
+      "why": "p52: Stabilization, transfer out + balance June 30, 1986"
+    },
+    {
+      "eq": "52/1/r21 = 52/1/r18-20",
+      "why": "p52: Arts Lottery, balance + grants + interest"
+    },
+    {
+      "eq": "52/1/r24 = 52/1/r22 + 52/1/r23",
+      "why": "p52: Arts Lottery, purchases + balance June 30, 1986"
+    },
+    {
+      "eq": "52/1/r29 = 52/1/r26-28",
+      "why": "p52: Wakefield scholarship, balance + interest"
+    },
+    {
+      "eq": "52/1/r32 = 52/1/r30 + 52/1/r31",
+      "why": "p52: Wakefield scholarship, grant + balance June 30, 1986"
+    },
+    {
+      "eq": "52/2/r7 = 52/2/r1-6",
+      "why": "p52: Library funds, balance + interest received"
+    },
+    {
+      "eq": "52/2/r13 = 52/2/r11 + 52/2/r12",
+      "why": "p52: Library funds, purchases + balance June 30, 1986"
+    },
+    {
+      "eq": "52/2/r18 = 52/2/r15-17",
+      "why": "p52: Conservation fund, balance + interest"
+    },
+    {
+      "eq": "52/2/r24 = 52/2/r21-23",
+      "why": "p52: School prize fund, balance + interest"
+    },
+    {
+      "eq": "53/1/r4 = 53/1/r1 + 53/1/r2.v1 + 53/1/r3.v1",
+      "why": "p53: balance January 1, 1986 + receipts - investments transferred = 12,873,640.98"
+    },
+    {
+      "eq": "53/1/r3.v2 = 53/1/r2.v1 + 53/1/r3.v1",
+      "why": "p53: net receipts 11,903,196.79"
+    },
+    {
+      "eq": "53/1/r6.v2 = 53/1/r5.v1 + 53/1/r6.v1",
+      "why": "p53: disbursements less revenue cash invested, 10,724,275.08"
+    },
+    {
+      "eq": "53/1/r7.v2 = 53/1/r6.v2 + 53/1/r7.v1",
+      "why": "p53: net disbursements + general ledger balance foot to 12,873,640.98"
+    },
+    {
+      "eq": "53/1/r8 = 53/1/r4 - 53/1/r6.v2",
+      "why": "p53: balance general ledger December 31, 1986"
+    },
+    {
+      "eq": "53/1/r8 = 53/2/r1-13",
+      "why": "p53: the eleven bank accounts and cash on hand sum to the general ledger balance (printed again, unlabelled, under them)"
+    },
+    {
+      "eq": "113/1/r2.v3 = 113/1/r2.v1 - 113/1/r2.v2",
+      "why": "p113 item 1: appropriation or balance less FY-86 expenditures = FY-87 balance"
+    },
+    {
+      "eq": "113/1/r3.v3 = 113/1/r3.v1 - 113/1/r3.v2",
+      "why": "p113 item 2"
+    },
+    {
+      "eq": "113/1/r4.v3 = 113/1/r4.v1 - 113/1/r4.v2",
+      "why": "p113 item 3"
+    },
+    {
+      "eq": "113/1/r5.v3 = 113/1/r5.v1 - 113/1/r5.v2",
+      "why": "p113 item 4 (and #36,183.27 + #75,371.05 = 111,554.32 in its label)"
+    },
+    {
+      "eq": "113/1/r6.v3 = 113/1/r6.v1 - 113/1/r6.v2",
+      "why": "p113 item 5"
+    },
+    {
+      "eq": "113/1/r7.v3 = 113/1/r7.v1 - 113/1/r7.v2",
+      "why": "p113 item 6"
+    },
+    {
+      "eq": "113/1/r8.v3 = 113/1/r8.v1 - 113/1/r8.v2",
+      "why": "p113 item 7"
+    },
+    {
+      "eq": "113/1/r9.v3 = 113/1/r9.v1 - 113/1/r9.v2",
+      "why": "p113 item 8"
+    },
+    {
+      "eq": "114/1/r3.v3 = 114/1/r3.v1 - 114/1/r3.v2",
+      "why": "p114: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "114/1/r4.v3 = 114/1/r4.v1 - 114/1/r4.v2",
+      "why": "p114: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "114/1/r5.v3 = 114/1/r5.v1 - 114/1/r5.v2",
+      "why": "p114: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "114/1/r6.v3 = 114/1/r6.v1 - 114/1/r6.v2",
+      "why": "p114: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "114/1/r7.v3 = 114/1/r7.v1 - 114/1/r7.v2",
+      "why": "p114: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "114/1/r8.v3 = 114/1/r8.v1 - 114/1/r8.v2",
+      "why": "p114: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "115/1/r4.v3 = 115/1/r4.v1 - 115/1/r4.v2",
+      "why": "p115: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "115/1/r5.v3 = 115/1/r5.v1 - 115/1/r5.v2",
+      "why": "p115: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "115/1/r6.v3 = 115/1/r6.v1 - 115/1/r6.v2",
+      "why": "p115: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "115/1/r7.v3 = 115/1/r7.v1 - 115/1/r7.v2",
+      "why": "p115: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "115/1/r8.v3 = 115/1/r8.v1 - 115/1/r8.v2",
+      "why": "p115: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "115/1/r9.v3 = 115/1/r9.v1 - 115/1/r9.v2",
+      "why": "p115: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "115/1/r10.v3 = 115/1/r10.v1 - 115/1/r10.v2",
+      "why": "p115: a special account's appropriation or balance less the other printed flow = the remaining balance"
+    },
+    {
+      "eq": "92/2/r1 = 0.5*92/2/r2",
+      "why": "p92: the Kindergarten rate is printed as `(1/2 of Elementary rate)`; 1986 rates"
+    },
+    {
+      "eq": "38/1/r36:p1 = 38/1/r3-35:p1",
+      "why": "p38 left panel: General Government lines and the section figure printed in the outer column"
+    },
+    {
+      "eq": "38/1/r61:p1 = 38/1/r38-60:p1",
+      "why": "p38 left panel: Protection of Persons and Property"
+    },
+    {
+      "eq": "38/1/r71:p1 = 38/1/r63-70:p1",
+      "why": "p38 left panel: Health"
+    },
+    {
+      "eq": "38/1/r16:p2 = 38/1/r2-15:p2",
+      "why": "p38 right panel: Highways"
+    },
+    {
+      "eq": "38/1/r20:p2 = 38/1/r18-19:p2",
+      "why": "p38 right panel: Veterans' Benefits"
+    },
+    {
+      "eq": "38/1/r43:p2 = 38/1/r22-42:p2",
+      "why": "p38 right panel: Schools"
+    },
+    {
+      "eq": "38/1/r53:p2 = 38/1/r51-52:p2",
+      "why": "p38 right panel: Conservation"
+    },
+    {
+      "eq": "38/1/r59:p2 = 38/1/r55-58:p2",
+      "why": "p38 right panel: Recreational"
+    },
+    {
+      "eq": "38/1/r63:p2 = 38/1/r61-62:p2",
+      "why": "p38 right panel: Special Detail Wages"
+    },
+    {
+      "eq": "39/1/r12 = 39/1/r2-11",
+      "why": "p39: Refunds, ten lines and the section figure 29,251.08"
+    },
+    {
+      "eq": "39/1/r18 = 39/1/r14-17",
+      "why": "p39: Trust & Investment Funds, four lines and the section figure 6,645.00"
+    },
+    {
+      "eq": "39/1/r25 = 39/1/r20-24",
+      "why": "p39: Assessments, five lines and the section figure 373,536.17"
+    },
+    {
+      "eq": "#475,271.67 = 38/1/r65-71:p2 + #1,472.00 + #616.00 + #184.83 + #29.99",
+      "why": "p38-39: Unclassified, seven lines at the foot of p38 and four at the top of p39 (Unemployment Compensation, Pension Allowance, Registrar Veterans' Graves, Historical Commission; Textract lines, in no cell) sum to the section figure printed on p39"
+    },
+    {
+      "eq": "39/1/r29 = 38/1/r36:p1 + 38/1/r61:p1 + 38/1/r71:p1 + 38/1/r16:p2 + 38/1/r20:p2 + 38/1/r43:p2 + 38/1/r45:p2 + 38/1/r48:p2 + 38/1/r53:p2 + 38/1/r59:p2 + 38/1/r63:p2 + #475,271.67 + 39/1/r12 + 39/1/r18 + 39/1/r25 + 39/1/r27 + 39/1/r28 + 39/2/r10 + 39/2/r11 + #1,859,934.85",
+      "why": "p38-39: TOTAL PAYMENTS 21,656,011.94 is the sum of every section figure of the statement across both pages (Unclassified 475,271.67 and Agency and Trust 1,859,934.85 are printed in Textract's lines, in no cell). Replaces the column check on 39/1 alone, which could not see p38 or the other two tables of p39"
+    },
+    {
+      "eq": "47/1/r6.v1 = 47/1/r4.v1 + 47/1/r5.v1",
+      "why": "p47 MIDDLE SCHOOL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r6.v2 = 47/1/r4.v2 + 47/1/r5.v2",
+      "why": "p47 MIDDLE SCHOOL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r10.v1 = 47/1/r8.v1 + 47/1/r9.v1",
+      "why": "p47 SANITARY LANDFILL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r10.v2 = 47/1/r8.v2 + 47/1/r9.v2",
+      "why": "p47 SANITARY LANDFILL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r10.v3 = 47/1/r8.v3 + 47/1/r9.v3",
+      "why": "p47 SANITARY LANDFILL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r10.v4 = 47/1/r8.v4 + 47/1/r9.v4",
+      "why": "p47 SANITARY LANDFILL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r14.v1 = 47/1/r12.v1 + 47/1/r13.v1",
+      "why": "p47 STREET BETTER. 83: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r14.v2 = 47/1/r12.v2 + 47/1/r13.v2",
+      "why": "p47 STREET BETTER. 83: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r14.v3 = 47/1/r12.v3 + 47/1/r13.v3",
+      "why": "p47 STREET BETTER. 83: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r18.v1 = 47/1/r16.v1 + 47/1/r17.v1",
+      "why": "p47 STREET BETTER. 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r18.v2 = 47/1/r16.v2 + 47/1/r17.v2",
+      "why": "p47 STREET BETTER. 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r18.v3 = 47/1/r16.v3 + 47/1/r17.v3",
+      "why": "p47 STREET BETTER. 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r18.v4 = 47/1/r16.v4 + 47/1/r17.v4",
+      "why": "p47 STREET BETTER. 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r22.v1 = 47/1/r20.v1 + 47/1/r21.v1",
+      "why": "p47 FIRE TRUCK 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r22.v2 = 47/1/r20.v2 + 47/1/r21.v2",
+      "why": "p47 FIRE TRUCK 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r22.v3 = 47/1/r20.v3 + 47/1/r21.v3",
+      "why": "p47 FIRE TRUCK 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r22.v4 = 47/1/r20.v4 + 47/1/r21.v4",
+      "why": "p47 FIRE TRUCK 84: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r26.v1 = 47/1/r24.v1 + 47/1/r25.v1",
+      "why": "p47 STREET BETTER. 85: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r26.v2 = 47/1/r24.v2 + 47/1/r25.v2",
+      "why": "p47 STREET BETTER. 85: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r26.v3 = 47/1/r24.v3 + 47/1/r25.v3",
+      "why": "p47 STREET BETTER. 85: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r26.v4 = 47/1/r24.v4 + 47/1/r25.v4",
+      "why": "p47 STREET BETTER. 85: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r26.v5 = 47/1/r24.v5 + 47/1/r25.v5",
+      "why": "p47 STREET BETTER. 85: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v1 = 47/1/r28:p1.v1 + 47/1/r29:p1.v1",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v2 = 47/1/r28:p1.v2 + 47/1/r29:p1.v2",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v3 = 47/1/r28:p1.v3 + 47/1/r29:p1.v3",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v4 = 47/1/r28:p1.v4 + 47/1/r29:p1.v4",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v5 = 47/1/r28:p1.v5 + 47/1/r29:p1.v5",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v6 = 47/1/r28:p1.v6 + 47/1/r29:p1.v6",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v7 = 47/1/r28:p1.v7 + 47/1/r29:p1.v7",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p1.v8 = 47/1/r28:p1.v8 + 47/1/r29:p1.v8",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p2.v1 = 47/1/r28:p2.v1 + 47/1/r29:p2.v1",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r30:p2.v2 = 47/1/r28:p2.v2 + 47/1/r29:p2.v2",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r34.v1 = 47/1/r32.v1 + 47/1/r33.v1",
+      "why": "p47 VOTING MACHINES: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r34.v2 = 47/1/r32.v2 + 47/1/r33.v2",
+      "why": "p47 VOTING MACHINES: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r34.v3 = 47/1/r32.v3 + 47/1/r33.v3",
+      "why": "p47 VOTING MACHINES: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r34.v4 = 47/1/r32.v4 + 47/1/r33.v4",
+      "why": "p47 VOTING MACHINES: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r34.v5 = 47/1/r32.v5 + 47/1/r33.v5",
+      "why": "p47 VOTING MACHINES: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v1 = 47/1/r36:p1.v1 + 47/1/r37:p1.v1",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v2 = 47/1/r36:p1.v2 + 47/1/r37:p1.v2",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v3 = 47/1/r36:p1.v3 + 47/1/r37:p1.v3",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v4 = 47/1/r36:p1.v4 + 47/1/r37:p1.v4",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v5 = 47/1/r36:p1.v5 + 47/1/r37:p1.v5",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v6 = 47/1/r36:p1.v6 + 47/1/r37:p1.v6",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v7 = 47/1/r36:p1.v7 + 47/1/r37:p1.v7",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p1.v8 = 47/1/r36:p1.v8 + 47/1/r37:p1.v8",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p2.v1 = 47/1/r36:p2.v1 + 47/1/r37:p2.v1",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p2.v2 = 47/1/r36:p2.v2 + 47/1/r37:p2.v2",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r38:p2.v3 = 47/1/r36:p2.v3 + 47/1/r37:p2.v3",
+      "why": "p47 ELEM. SCH. REMODEL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v1 = 47/1/r40:p1.v1 + 47/1/r41:p1.v1",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v2 = 47/1/r40:p1.v2 + 47/1/r41:p1.v2",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v3 = 47/1/r40:p1.v3 + 47/1/r41:p1.v3",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v4 = 47/1/r40:p1.v4 + 47/1/r41:p1.v4",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v5 = 47/1/r40:p1.v5 + 47/1/r41:p1.v5",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v6 = 47/1/r40:p1.v6 + 47/1/r41:p1.v6",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v7 = 47/1/r40:p1.v7 + 47/1/r41:p1.v7",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v8 = 47/1/r40:p1.v8 + 47/1/r41:p1.v8",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p2.v1 = 47/1/r40:p2.v1 + 47/1/r41:p2.v1",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p2.v2 = 47/1/r40:p2.v2 + 47/1/r41:p2.v2",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p2.v3 = 47/1/r40:p2.v3 + 47/1/r41:p2.v3",
+      "why": "p47 GRAND TOTAL: TOTAL = PRINCIPAL + INTEREST in the same column (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v1 = 47/1/r4.v1 + 47/1/r8.v1 + 47/1/r12.v1 + 47/1/r16.v1 + 47/1/r20.v1 + 47/1/r24.v1 + 47/1/r28:p1.v1 + 47/1/r32.v1 + 47/1/r36:p1.v1",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1988: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v2 = 47/1/r8.v2 + 47/1/r12.v2 + 47/1/r16.v2 + 47/1/r20.v2 + 47/1/r24.v2 + 47/1/r28:p1.v2 + 47/1/r32.v2 + 47/1/r36:p1.v2",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1989: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v3 = 47/1/r8.v3 + 47/1/r16.v3 + 47/1/r20.v3 + 47/1/r24.v3 + 47/1/r28:p1.v3 + 47/1/r32.v3 + 47/1/r36:p1.v3",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1990: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v4 = 47/1/r24.v4 + 47/1/r28:p1.v4 + 47/1/r32.v4 + 47/1/r36:p1.v4",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1991: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v5 = 47/1/r28:p1.v5 + 47/1/r36:p1.v5",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1992: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v6 = 47/1/r28:p1.v6 + 47/1/r36:p1.v6",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1993: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v7 = 47/1/r28:p1.v7 + 47/1/r36:p1.v7",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1994: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p1.v8 = 47/1/r28:p1.v8 + 47/1/r36:p1.v8",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1995: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p2.v1 = 47/1/r28:p2.v1 + 47/1/r36:p2.v1",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1996: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p2.v2 = 47/1/r36:p2.v2",
+      "why": "p47 GRAND TOTAL (principal), fiscal 1997: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r40:p2.v3 = 47/1/r4.v2 + 47/1/r8.v4 + 47/1/r12.v3 + 47/1/r16.v4 + 47/1/r20.v4 + 47/1/r24.v5 + 47/1/r28:p2.v2 + 47/1/r32.v5 + 47/1/r36:p2.v3",
+      "why": "p47 GRAND TOTAL (principal), TOTAL column: every issue's total (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v1 = 47/1/r5.v1 + 47/1/r9.v1 + 47/1/r13.v1 + 47/1/r17.v1 + 47/1/r21.v1 + 47/1/r25.v1 + 47/1/r29:p1.v1 + 47/1/r33.v1 + 47/1/r37:p1.v1",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1988: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v2 = 47/1/r9.v2 + 47/1/r13.v2 + 47/1/r17.v2 + 47/1/r21.v2 + 47/1/r25.v2 + 47/1/r29:p1.v2 + 47/1/r33.v2 + 47/1/r37:p1.v2",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1989: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v3 = 47/1/r9.v3 + 47/1/r17.v3 + 47/1/r21.v3 + 47/1/r25.v3 + 47/1/r29:p1.v3 + 47/1/r33.v3 + 47/1/r37:p1.v3",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1990: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v4 = 47/1/r25.v4 + 47/1/r29:p1.v4 + 47/1/r33.v4 + 47/1/r37:p1.v4",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1991: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v5 = 47/1/r29:p1.v5 + 47/1/r37:p1.v5",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1992: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v6 = 47/1/r29:p1.v6 + 47/1/r37:p1.v6",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1993: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v7 = 47/1/r29:p1.v7 + 47/1/r37:p1.v7",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1994: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p1.v8 = 47/1/r29:p1.v8 + 47/1/r37:p1.v8",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1995: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p2.v1 = 47/1/r29:p2.v1 + 47/1/r37:p2.v1",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1996: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p2.v2 = 47/1/r37:p2.v2",
+      "why": "p47 GRAND TOTAL (interest), fiscal 1997: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r41:p2.v3 = 47/1/r5.v2 + 47/1/r9.v4 + 47/1/r13.v3 + 47/1/r17.v4 + 47/1/r21.v4 + 47/1/r25.v5 + 47/1/r29:p2.v2 + 47/1/r33.v5 + 47/1/r37:p2.v3",
+      "why": "p47 GRAND TOTAL (interest), TOTAL column: every issue's total (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v1 = 47/1/r6.v1 + 47/1/r10.v1 + 47/1/r14.v1 + 47/1/r18.v1 + 47/1/r22.v1 + 47/1/r26.v1 + 47/1/r30:p1.v1 + 47/1/r34.v1 + 47/1/r38:p1.v1",
+      "why": "p47 GRAND TOTAL (total), fiscal 1988: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v2 = 47/1/r10.v2 + 47/1/r14.v2 + 47/1/r18.v2 + 47/1/r22.v2 + 47/1/r26.v2 + 47/1/r30:p1.v2 + 47/1/r34.v2 + 47/1/r38:p1.v2",
+      "why": "p47 GRAND TOTAL (total), fiscal 1989: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v3 = 47/1/r10.v3 + 47/1/r18.v3 + 47/1/r22.v3 + 47/1/r26.v3 + 47/1/r30:p1.v3 + 47/1/r34.v3 + 47/1/r38:p1.v3",
+      "why": "p47 GRAND TOTAL (total), fiscal 1990: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v4 = 47/1/r26.v4 + 47/1/r30:p1.v4 + 47/1/r34.v4 + 47/1/r38:p1.v4",
+      "why": "p47 GRAND TOTAL (total), fiscal 1991: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v5 = 47/1/r30:p1.v5 + 47/1/r38:p1.v5",
+      "why": "p47 GRAND TOTAL (total), fiscal 1992: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v6 = 47/1/r30:p1.v6 + 47/1/r38:p1.v6",
+      "why": "p47 GRAND TOTAL (total), fiscal 1993: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v7 = 47/1/r30:p1.v7 + 47/1/r38:p1.v7",
+      "why": "p47 GRAND TOTAL (total), fiscal 1994: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p1.v8 = 47/1/r30:p1.v8 + 47/1/r38:p1.v8",
+      "why": "p47 GRAND TOTAL (total), fiscal 1995: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p2.v1 = 47/1/r30:p2.v1 + 47/1/r38:p2.v1",
+      "why": "p47 GRAND TOTAL (total), fiscal 1996: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p2.v2 = 47/1/r38:p2.v2",
+      "why": "p47 GRAND TOTAL (total), fiscal 1997: the issues paying that year (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    },
+    {
+      "eq": "47/1/r42:p2.v3 = 47/1/r6.v2 + 47/1/r10.v4 + 47/1/r14.v3 + 47/1/r18.v4 + 47/1/r22.v4 + 47/1/r26.v5 + 47/1/r30:p2.v2 + 47/1/r34.v5 + 47/1/r38:p2.v3",
+      "why": "p47 GRAND TOTAL (total), TOTAL column: every issue's total (replaces the column validator on 47/1, whose by-kind grouping needs two rows of a kind and cannot reach 1997, where one issue pays)"
+    }
+  ]
 }

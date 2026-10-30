@@ -103,6 +103,10 @@ IDENTITIES = {
                             # 78 of 78 such rows (1991 NEEDS 1c), where on 2010 it did not
                             ('BALANCE (?:TO )?REVENUE', [(1, 'AVAILABLE'), (-1, 'TOTAL EXPENDED'), (-1, 'BALANCE (?:TO )?(?:FY|FISCAL|19\\d\\d)')],
                              {'absent': ['ENCUMBERED'], 'blank_target': 'zero', 'needs': ['AVAILABLE']})],
+    # used ONLY by the `blank_balance_outside_subtotals` opt-in (records()), never by family name:
+    # a one-line account whose innermost column check is open, its blank balance read as zero
+    'accountant-schedule-one-line': [('BALANCE', [(1, 'AVAILABLE'), (-1, 'EXPENDED'), (-1, 'ENCUMBERED')],
+                                      {'blank_target': 'zero', 'needs': ['AVAILABLE'], 'needs_any': ['EXPENDED', 'ENCUMBERED']})],
     'special-revenue': [('BALANCE', [(1, 'FORWARD 7'), (1, 'RECEIPTS'), (-1, 'DISBURSEMENTS')]),
                         # 1992-1996 head the flows TOTAL REVENUE / TOTAL EXPENDED (1992 41 of
                         # 41, 1993 59 of 59, 1994 69 of 69, 1995 76 of 76 by the workers)...
@@ -136,6 +140,12 @@ IDENTITIES = {
                             # 1991-1999 print NO adjustments column, and 1992 heads `REFUND`
                             ('BALANCES', [(1, 'FORWARD'), (1, 'COMMIT'), (1, 'REFUND'), (1, 'PAYMENTS'),
                                           (1, 'ABATEMENTS'), (1, 'TAX TITLE')], {'absent': ['ADJUSTMENTS']})],
+    # 1974-1980: the Tax Collector prints every column POSITIVE (`Commitments | Refunds | Payments |
+    # Abatements | Tax Titles ... | Balances`), so payments, abatements and tax titles are taken
+    # away. Applied only where a 1971-1980 map names this family (30 Oct 2026); no other edition
+    # uses the name, so nothing else moves. A balance printed `NONE` is blank and not checked
+    'collection-of-taxes-calendar': [('^BALANCES?\\b', [(1, 'COMMIT'), (1, 'REFUND'), (-1, 'PAYMENTS'),
+                                                       (-1, 'ABATEMENTS'), (-1, 'TAX TITLE')])],
     # 1991-1993 `TRUST and INVESTMENT ACCOUNTS`: negatives in parentheses, so every term adds.
     # 1993 heads two of the columns DEPOSITS RECEIPTS and WITHDRAWALS GRANTS & GIFTS
     'trust-investment-accounts': [('^BALANCE$', [(1, 'PRIOR YEAR'), (1, 'PRIOR MONTH'),
@@ -152,6 +162,21 @@ IDENTITIES = {
                           # of the target
                           ('^ADJUSTMENT$', [(1, 'POS:-1'), (-1, 'POS:-2')], {'absent': ['ADDITIONAL']})],
     'budget-amendment-proposed': [('^NEW', [(1, '^ADDITIONAL'), (1, 'VOTE|CURRENT APPROP')])],
+    # 1959-1967 Welfare Department table: `Expended 1965 | Reimbursements State, Federal, &
+    # Recoveries | Net Cost To Town`, the net printed beside the two it is the difference of, on
+    # every program's row and on the totals row (`* Families`). An edition opt-in
+    # (`"welfare_net_cost": true`)
+    'welfare-aid-by-category': [('NET COST', [(1, '^EXPENDED'), (-1, 'REIMBURSE')], {'opt': 'welfare_net_cost'})],
+    # 1959-1970 school `Statistics`: the TOTAL (Grades 1-12) column is the elementary and high
+    # school columns added across (1970: elementary, middle and high), on every row that counts
+    # pupils or staff -- never on a COST PER PUPIL row, an average. An edition opt-in
+    # (`"school_statistics_totals": true`): 1971 maps the same family and is not read by it
+    'school-statistics': [('TO ?TAL', [(1, 'POS:-1'), (1, 'POS:-2')],
+                           {'opt': 'school_statistics_totals', 'absent': ['MIDDLE'],
+                            'skip_label': r'COST|EXPENDITURE', 'skip_unparsed': True}),
+                          ('TO ?TAL', [(1, 'POS:-1'), (1, 'POS:-2'), (1, 'POS:-3')],
+                           {'opt': 'school_statistics_totals', 'needs_any': ['MIDDLE'],
+                            'skip_label': r'COST|EXPENDITURE', 'skip_unparsed': True})],
     # precinct columns are headed `PREC A` in most years and `PRE A` in 2004's state primary
     'elections': [('^TOTAL', [(1, 'PRE\\w* A'), (1, 'PRE\\w* B'), (1, 'PRE\\w* C'), (1, 'PRE\\w* D')])],
     # 1974's 18-MONTH TRANSITIONAL YEAR (pp46-54): `Jan-Dec 1973 | Jan-Jun 1974 | 18 Month | Totals`.
@@ -266,6 +291,11 @@ CALENDAR_REPAIRS = [
      'credit_marks'),
     ('parenthesised figure marked CR, a credit', re.compile(r'\(?\$?([\d,]+\.\d{2})\)(?i:cr)'),
      lambda m: '(%s)' % m.group(1), 'credit_marks'),
+    # `22.47 ED | 22.47` printed (1961-1965 accountant schedules, a carried-forward account spent
+    # out), which Textract returns as `22.47 | ED 22.47`: the mark printed AFTER the Amounts
+    # Expended figure lands at the head of the Total Expended cell. Seen on the render (1962 p28
+    # r33, `Purchase of Police Cruiser - 1961`). An edition opt-in (`"ed_mark": true`)
+    ('ED mark carried into the next cell', re.compile(r'(?:ED)(\$?[\d,]+\.\d{2})'), lambda m: m.group(1), 'ed_mark'),
     # `+ 3,113.54` `+$1,223.` `*$671.` `+$870.*` `*20,000.00` (1959 p59, 1962 p108, 1963 pp87-89,
     # 1966 pp112-117): a printed `+` or a footnote `*` BEFORE the figure (`"signed_figures": true`).
     # A leading `-` and a trailing `-` (`$ 510.91 -`, 1962 p110) are NOT read: nothing on those
@@ -439,6 +469,7 @@ def mark_unlabeled_subtotals(m_rows, tables, datasets=('report-appropriations',)
     (a misread cell) stays a detail line and the page stays unproven."""
     out = dict(tables)
     stacks = {}
+    SUBTOTAL_BLOCKS.clear()
     for m in m_rows:
         if m.get('dataset') not in datasets:
             continue
@@ -474,13 +505,14 @@ def mark_unlabeled_subtotals(m_rows, tables, datasets=('report-appropriations',)
             # is not part of it: 2009 p49 `Computer Training 13/95 fwd`). A column with nothing
             # printed above it (a BALANCE printed on the subtotal alone) states no sum to test and
             # is left out.
-            start = {}
+            start, lo = {}, {}
             for c, x in above.items():
                 run = Decimal(0)
                 for i in range(len(stacks[c]) - 1, -1, -1):
                     run += stacks[c][i][1]
                     if run == x.value:
                         start[c] = stacks[c][i][0]
+                        lo[c] = stacks[c][i - 1][0] if i else -1
             # The row is a subtotal when the columns that have lines above it TIE: every one of
             # them, or at least two and more than half, and all on the SAME first line (a lone
             # tying column beside live columns it cannot test is not enough: the validator
@@ -491,12 +523,36 @@ def mark_unlabeled_subtotals(m_rows, tables, datasets=('report-appropriations',)
             # summed twice into every GRAND TOTAL that follows it on the page run.
             first = collections.Counter(start.values()).most_common(1)
             ties = [c for c in start if first and start[c] == first[0][0]]
+            if 'unlabeled_subtotals_forward_lines' in OPTS and start:
+                # THE SAME BLOCK, SEEN FROM TWO COLUMNS (an opt-in, 30 October 2026): a department's
+                # `rft` / `mrt` / `fwd` lines print in APPROPRIATED alone, so that column's run starts
+                # two lines above EXPENDED's (2001 p57, the Fire Department). A column's block may
+                # start anywhere after its previous printed entry and at or before its own first
+                # line -- the lines between print nothing in it -- so the starts agree when one line
+                # lies in every tying column's window. Each column still ties to the cent
+                best = max(sorted(set(start.values())),
+                           key=lambda s: sum(1 for c in start if lo[c] < s <= start[c]))
+                alt = [c for c in start if lo[c] < best <= start[c]]
+                if len(alt) > len(ties):
+                    ties, first = alt, [(best, len(alt))]
+                # and a column with NOTHING printed inside that block (AVAILABLE and BALANCE above
+                # the Fire Department's lines belong to the one-line accounts before it, Injury
+                # Leave and Police Fire Medical) states no sum about it, so it is not counted
+                above = {c: x for c, x in above.items() if any(e[0] >= first[0][0] for e in stacks[c])}
             if (not label and ties and (len(ties) == len(above) or (len(ties) >= 2 and len(ties) * 2 > len(above)))
                     and (len(ties) >= 2 or len(above) == len(live))):
                 lab = min(c for c in range(0, 200) if c not in r.cells or (c not in figs_cols and not r.cells[c].text.strip()))
                 cells = dict(r.cells)
                 cells[lab] = V.Cell('Subtotal (unlabeled; ties to the detail lines above)', 100.0)
                 new_rows.append(V.Row(r.page, r.row, cells, r.table))
+                if 'unlabeled_subtotal_blocks' in OPTS:
+                    for c in ties:
+                        SUBTOTAL_BLOCKS.append((r.page, r.table, r.row, c,
+                                                [e[0] for e in stacks[c] if e[0] >= first[0][0]], live[c].value))
+                    for c in live:
+                        if c not in above:
+                            # nothing printed in this column inside the block: no sum to test
+                            SUBTOTAL_BLOCKS.append((r.page, r.table, r.row, c, None, None))
                 stacks = {c: [e for e in v if e[0] < first[0][0]] for c, v in stacks.items()}
                 continue
             for c, x in live.items():
@@ -540,12 +596,89 @@ def describe(c, t):
     return s
 
 
+def debt_row_total(names, cells):
+    """THE DEBT REPAYMENT SCHEDULE'S ROW IDENTITY, printed on every row: the TOTAL column is the
+    sum of the fiscal-year columns (a blank year is a year with nothing due). An edition opt-in
+    (`"debt_row_totals": true`, 1991-2010 close-out, 30 October 2026), because the column walk
+    groups these schedules wrongly -- `GRAND TOTAL INTEREST` summed nothing on every page that
+    prints principal and interest rows alternately -- and a row identity contains this row's
+    cells and no other row's, so a misread anywhere in the row breaks it. The locator
+    (locate_cell_misreads.py) already used this identity to propose cells; here it grades."""
+    tks = [k for k, n in names.items() if re.fullmatch(r'TOTALS?', n.strip(), re.I)]
+    years = [k for k, n in names.items() if re.fullmatch(r'(?:FY\s*)?(?:19|20)\d\d', n.strip(), re.I)]
+    if ROW_CTX[0] in DEBT_ROW_SKIP:
+        # a schedule printed across two pages BY YEAR: this page's TOTAL sums years printed on
+        # the other (`debt_row_totals_skip`, page/table, by eye)
+        return []
+    if len(tks) != 1 or len(years) < 2 or tks[0] in years:
+        return []
+    tc = cells.get(tks[0])
+    if tc is None or tc.value is None:
+        return []
+    if any(cells.get(k) is not None and cells[k].unparsed for k in years):
+        return [(False, 'TOTAL: a year did not parse')]
+    got = sum((cells[k].value for k in years if cells.get(k) is not None and cells[k].value is not None),
+              Decimal(0))
+    ok = got == tc.value
+    if not ok and abs(got - tc.value) <= DEBT_ROW_TOL[0]:
+        # the edition's `rounding_tolerance_usd` (TJ, 29 Oct 2026), countable by the same phrase
+        return [(True, 'TOTAL = the %d fiscal-year columns %s (printed differs by $%s)'
+                 % (len(years), V.TOLERANCE_PHRASE, money_abs(str(got - tc.value))))]
+    return [(ok, 'TOTAL %s the %d fiscal-year columns%s' % ('=' if ok else '!=', len(years),
+                                                         '' if ok else ' (%s vs %s)' % (V.money(tc.value), V.money(got))))]
+
+
+ROW_LABEL = ['']              # the row's label while row_identity runs (records()), for `skip_label`
+DEBT_ROW_TOL = [Decimal(0)]   # set by build() from the edition's rounding_tolerance_usd, debt_row_totals only
+DEBT_ROW_SKIP = set()         # `debt_row_totals_skip`: page/table whose TOTAL spans another page's years
+ROW_CTX = ['']                # the page/table records() is reading, for the skip above
+SUBTOTAL_BLOCKS = []          # (page, table, row, col, block rows, value): `unlabeled_subtotal_blocks`
+
+
+def add_subtotal_block_checks(tables, checks):
+    """THE DEPARTMENT BLOCK mark_unlabeled_subtotals FOUND, AS A CHECK OF ITS OWN (an opt-in,
+    `"unlabeled_subtotal_blocks": true`, 30 October 2026). That function recognises an unlabelled
+    subtotal only where its columns tie TO THE CENT to the lines above it; it then hands the row to
+    the validator, whose block walk (shared with the FY reviews, deliberately unchanged) may group
+    it differently -- the `rft` / `mrt` lines of 2001 p57 sit above EXPENDED's run -- and the lines
+    fall through to the GRAND TOTAL pages away. Here the tie that was measured is recorded as the
+    closed check it is, for exactly the lines and column it covered, so the innermost check of
+    each of those cells is its own department. Nothing is closed that did not tie."""
+    # A COLUMN WITH NOTHING PRINTED INSIDE THE BLOCK (AVAILABLE, BALANCE: the department's lines
+    # print only APPROPRIATED and EXPENDED) states no sum about it; the validator's block walk
+    # tested one anyway, over the one-line accounts above, and that open check is dropped
+    void = {(V.Row(p, row, {}, t).ref, c) for p, t, row, c, rows_in, _ in SUBTOTAL_BLOCKS if rows_in is None}
+    if void:
+        for k in list(checks):
+            checks[k] = [x for x in checks[k] if not (x[0] == 'open' and (x[1].ref, x[1].col) in void)]
+    for p, t, row, c, rows_in, val in SUBTOTAL_BLOCKS:
+        if rows_in is None:
+            continue
+        names = _raw_names(V.split_header(tables.get((p, t), []))[0])
+        ref = V.Row(p, row, {}, t).ref
+        items = [V.Row(p, x, {}, t).ref for x in rows_in]
+        chk = V.Check(page=p, ref=ref, label='Subtotal (unlabeled; ties to the detail lines above)',
+                      column=names.get(c, 'col %d' % c), printed=V.money(val), computed=V.money(val),
+                      difference='0.00', status='closed', items=items, grouping='run', col=c)
+        for it in items:
+            checks[(it, c)].append(('closed', chk, None))
+
+
 def row_identity(family, names, cells):
     """[(ok, text)] for each identity of this family whose columns the header prints."""
     out = []
+    if family == 'debt-repayment-schedule' and 'debt_row_totals' in OPTS:
+        out += debt_row_total(names, cells)
     for ident in IDENTITIES.get(family, []):
         target, terms = ident[0], ident[1]
         opts = ident[2] if len(ident) > 2 else {}
+        if opts.get('opt') and opts['opt'] not in OPTS:
+            continue                  # an identity only the editions that opt in read
+        if opts.get('skip_label') and re.search(opts['skip_label'], ROW_LABEL[0] or '', re.I):
+            continue                  # a row the identity does not describe (a per-pupil COST)
+        if opts.get('skip_unparsed') and any(c is not None and c.value is None and re.search(r'\d', c.text or '')
+                                             for k, c in cells.items() if k in names):
+            continue                  # `3-1/3`, `3 (Elem.)`: a count printed as words or a fraction
 
         def col(rx):
             hits = [k for k, n in names.items() if re.search(rx, n, re.I)]
@@ -563,6 +696,21 @@ def row_identity(family, names, cells):
         ks = [(s, term_col(rx)) for s, rx in terms]
         if tk is None or any(k is None for _, k in ks) or tk in [k for _, k in ks]:
             continue
+        amounts_used = ''
+        if 'expended_from_amounts' in OPTS and family == 'accountant-schedule':
+            # A ONE-LINE ACCOUNT PRINTS ITS ONLY EXPENDITURE UNDER `Amounts Expended` AND LEAVES
+            # `Total Expended` BLANK (1959-1970: `Purchase of Police Cruiser - 1961 | 22.47 | 22.47 |
+            # 22.47`, 1965 NEEDS 3). An opt-in (`"expended_from_amounts": true`): where the TOTAL
+            # EXPENDED term is blank and AMOUNTS EXPENDED prints a figure on the same row, that
+            # figure is the row's total expended. Said in the row's identity text; never applied to
+            # a row printing both, nor to a figure without cents (`1959`, a label's year in that column)
+            ae = col('AMOUNTS? EXPENDED')
+            for i, (s, k) in enumerate(ks):
+                if (re.search('TOTAL EXPENDED', names.get(k, ''), re.I) and ae is not None and ae != k
+                        and (cells.get(k) is None or (cells[k].value is None and not cells[k].text.strip()))
+                        and cells.get(ae) is not None and cells[ae].value is not None and cells[ae].places == 2):
+                    ks[i] = (s, ae)
+                    amounts_used = ' [Total Expended blank: Amounts Expended used]'
         tc = cells.get(tk)
         blank = tc is None or (tc.value is None and not tc.unparsed and not tc.text.strip())
         # `needs`: columns the row must PRINT a figure in for the identity to apply at all -- so a
@@ -591,7 +739,8 @@ def row_identity(family, names, cells):
         ok = got == target_value
         out.append((ok, '%s%s %s %s' % (names[tk], ' (blank, read as 0)' if blank else '', '=' if ok else '!=',
                                         ' '.join(('+' if s > 0 else '-') + names[k][:18] for s, k in ks)
-                                        + ('' if ok else ' (%s vs %s)' % (V.money(target_value), V.money(got))))))
+                                        + ('' if ok else ' (%s vs %s)' % (V.money(target_value), V.money(got))))
+                    + amounts_used))
     return out
 
 
@@ -628,6 +777,37 @@ def apply_witness(d, tables):
                                    'figures, and its first glyph could not be decided between `$` (%s) and '
                                    '`%s` (%s) -- `%s` or `$%s`' % (c.text, sd, c.text[0], sx, c.text, c.text[1:]))
     return out
+
+
+LEAD_FIGURE = re.compile(r'^(\$\s?\(?\d[\d,]*\.\d{2}\)?)\s+(\S.*)$')
+
+
+def split_label_figures(tables, specs):
+    """A FIGURE TEXTRACT MERGED INTO THE LABEL CELL beside it (1991 p25: `$73887.00 Selectmen's
+    Administration`, the TOTAL FUNDS AVAILABLE column read into PROGRAM NAME, header and all). An
+    edition opt-in (`"label_figure_split": ["25/1/2"]`, page/table/column, by eye): the column is
+    split in two, the leading `$` figure into a new column right of the label, every column after
+    it shifted one place, and the merged header cell divided at `PROGRAM NAME`. The cell keeps its
+    printed text in the label; the figure carries a repair note saying where it was read from."""
+    for spec in specs:
+        p, t, col = (int(x) for x in spec.split('/'))
+        for r in tables.get((p, t), []):
+            cells = {(k + 1 if k > col else k): c for k, c in r.cells.items()}
+            c = cells.get(col)
+            fig = V.Cell('', c.confidence if c else 0.0)
+            if c is not None and c.text:
+                m = LEAD_FIGURE.match(c.text.strip())
+                head = re.match(r'^(.*?)\s*PROGRAM NAME\s*(.*)$', c.text.strip(), re.I)
+                if m and c.value is None:
+                    v, places, bad = V.parse(m[1])
+                    fig = V.Cell(m[1], c.confidence, v, places, bad)
+                    fig.repair = 'label_figure_split: `%s` read out of the label cell `%s`' % (m[1], c.text)
+                    cells[col] = V.Cell(m[2], c.confidence)
+                elif head and (head[1] or head[2]):
+                    fig = V.Cell(' '.join(x for x in (head[1], head[2]) if x), c.confidence)
+                    cells[col] = V.Cell('PROGRAM NAME', c.confidence)
+            cells[col + 1] = fig
+            r.cells = cells
 
 
 def apply_witnessed_cells(d, tables):
@@ -1071,6 +1251,56 @@ def _year_label_col(rows, k):
     return bool(vals) and all(YEAR_CELL.fullmatch(c.text.strip()) for c in vals) and len(words) >= len(vals)
 
 
+FORWARD_MARK = re.compile(r'(?:^|\s)(?:rft|fwd|\(wd|mrt|met|mit|rit|rct|rf|ret|tr|srt|LC|sal(?:\.? adj\.?)?)\.?$', re.I)
+
+
+def forward_lines_identity(recs):
+    """AN ACCOUNT'S FORWARD AND TRANSFER LINES (an opt-in, `"forward_lines_identity": true`,
+    30 October 2026). The accountant schedule prints a reserve fund transfer (`rft`), a carried-
+    forward amount (`fwd`) or a transfer (`mrt`) as a line of its own, figure in APPROPRIATED only,
+    directly above the account it funds; that account's TOTAL FUNDS AVAILABLE is its appropriation
+    plus those lines (2001 p56: `rft 520.00` over `Finance Committee 500.00 | 1,020.00`). Printed
+    arithmetic, so each such run is tested and the result is the identity of every row in it. A
+    run that is followed by anything other than an account printing AVAILABLE is left alone."""
+    def col(rec, rx):
+        ks = [k for k, n in rec['names'].items() if re.search(rx, n, re.I)]
+        return ks[0] if len(ks) == 1 else None
+    pending, poisoned = [], False
+    for rec in recs:
+        ap, av = col(rec, 'APPROPRIATED'), col(rec, 'AVAILABLE')
+        figs = {k: c for k, c in rec['figs']}
+        inside = any(s.startswith('closed') and not V.GRAND.search(ch.label) for s, ch, _ in rec['stats'])
+        if (ap is not None and set(figs) == {ap} and not rec['ident'] and not inside and not poisoned
+                and FORWARD_MARK.search(rec['label'] or '')):
+            # a forward line NOT already inside a department block that tied (2001 p57's Fire
+            # Department sums its `rft` and `mrt` into the department's APPROPRIATED)
+            pending.append(rec)
+            continue
+        if ap is not None and set(figs) == {ap} and not rec['ident'] and not inside:
+            # a line printing APPROPRIATED alone that carries no mark this reader knows: what it
+            # adds to AVAILABLE is not established, so nothing is tested until the next account
+            pending, poisoned = [], True
+            continue
+        if poisoned:
+            if av is not None and av in figs:
+                poisoned = False
+            pending = []
+            continue
+        if pending and av is not None and av not in figs:
+            # the department's own lines (APPROPRIATED and EXPENDED, no AVAILABLE) between its
+            # forward line and its subtotal: 2001 p58's Snow Removal, whose subtotal's
+            # APPROPRIATED leaves the `rft` out and whose AVAILABLE puts it in
+            continue
+        if pending and ap is not None and av is not None and ap in figs and av in figs:
+            got = figs[ap].value + sum(p['figs'][0][1].value for p in pending)
+            ok = got == figs[av].value
+            text = ('AVAILABLE %s APPROPRIATED + the %d forward/transfer line(s) above%s'
+                    % ('=' if ok else '!=', len(pending), '' if ok else ' (%s vs %s)' % (V.money(figs[av].value), V.money(got))))
+            for x in pending + [rec]:
+                x['ident'] = x['ident'] + [(ok, text)]
+        pending = []
+
+
 def records(m, tables, checks, edition, prev_header):
     """Generic records for one mapped table: dicts with the cells kept for the emitters."""
     p, t = int(m['page']), int(m['table'])
@@ -1117,6 +1347,7 @@ def records(m, tables, checks, edition, prev_header):
         idcols_of.append(ids)
     no_checks = (m.get('checks') or '').strip() == 'none'
     out, group, pending = [], {}, {}
+    last_dated = {}   # carry_date_down: the date cell of the last dated row, per panel
     for r in body:
         for g, span in enumerate(spans):
             cells = {k: c for k, c in r.cells.items() if k in span}
@@ -1141,12 +1372,23 @@ def records(m, tables, checks, edition, prev_header):
                 if not label and words:
                     group[g] = ' '.join(words)[:80]
                     continue
-                if label and figcols:
+                # CARRY_DATE_DOWN (per-edition opt-in; 2001-2007 only): the Town Clerk prints a
+                # marriage as two rows, the date on the groom's only. A dateless row of the
+                # `marriages` family is the bride, not a heading, so she lands with her groom's
+                # date -- carried, not read. Her `v1` is therefore her groom's, and the label alone says it
+                # is a second row.
+                carry = ('carry_date_down' in OPTS and m.get('family') == 'marriages'
+                         and label and not words and g in last_dated)
+                if carry:
+                    figs = list(last_dated[g])
+                if label and figcols and not carry:
                     group[g] = label[:80]
                     pending[g] = (r, label)
                     continue
                 if not label:
                     continue
+            if 'carry_date_down' in OPTS and m.get('family') == 'marriages' and figs and not unparsed:
+                last_dated[g] = list(figs)
             stats = []
             for k, c in figs:
                 # THE INNERMOST CHECK ONLY: the smallest block this cell is summed in. A grand
@@ -1156,12 +1398,29 @@ def records(m, tables, checks, edition, prev_header):
                 if here:
                     least = min(len(ch.items) for _, ch, _ in here)
                     stats += [(s, ch, tr) for s, ch, tr in here if len(ch.items) == least]
+            ROW_CTX[0] = '%d/%d' % (p, t)
+            ROW_LABEL[0] = label
             ident = row_identity(m['family'], gnames, cells)
+            if (not ident and 'blank_balance_outside_subtotals' in OPTS and m['family'] == 'accountant-schedule'
+                    and (any(s == 'open' for s, _, _ in stats)
+                         and not any(s.startswith('closed') and not V.GRAND.search(ch.label) for s, ch, _ in stats)
+                         # a department SUBTOTAL that tied to its lines strikes the department's
+                         # balance on its own line too
+                         or (p, t, r.row) in {(b[0], b[1], b[2]) for b in SUBTOTAL_BLOCKS})):
+                # A ONE-LINE ACCOUNT OUTSIDE ANY CLOSED SUBTOTAL: its balance is struck on its own
+                # line, so a BLANK balance is zero (an opt-in, `"blank_balance_outside_subtotals":
+                # true`, 30 October 2026). NOT inside a department whose subtotal closes -- there the
+                # balance is struck per department and blank lines fail in offsetting pairs on
+                # correct figures (IDENTITIES, 2010) -- so only a row whose innermost column check is
+                # OPEN, which on these schedules is the GRAND TOTAL several pages away, takes it
+                ident = row_identity('accountant-schedule-one-line', gnames, cells)
             pending.pop(g, None)
             out.append({'page': p, 'table': t, 'row': r.row, 'ref': r.ref, 'panel': g + 1 if groups > 1 else '',
                         'group': group.get(g, ''), 'label': label, 'figs': figs, 'figcols': figcols,
                         'names': gnames, 'cite': cite, 'unparsed': unparsed, 'ambiguous': ambiguous,
                         'stats': stats, 'ident': ident, 'is_total': bool(V.TOTAL.search(label)), 'cells': cells})
+    if 'forward_lines_identity' in OPTS and m['family'] == 'accountant-schedule':
+        forward_lines_identity(out)
     # A LABEL-ONLY ROW THAT HEADS NOTHING (the last line of a table: `Students w/Disabilities
     # (n=8) Not calculated if n<10`) is a row of its own, not a group for rows that never come
     for g, (r, label) in sorted(pending.items()):
@@ -1280,6 +1539,75 @@ def emit_receipts(m, recs, ed):
 RECEIPTS_GRAND = re.compile(r'GRAND TOTAL|^TOTAL REC(?:EI|I)PTS:?$', re.I)
 
 
+def receipts_two_columns(recs, ed, grand, money_cells, label_of):
+    """THE STATEMENT OF RECEIPTS READ BY ITS TWO FIGURE COLUMNS (`edition.json`:
+    `"receipts_two_columns": true`, an opt-in; the 1959-1970 detailed statements, 30 October
+    2026). The accountant prints each section's lines in the INNER column and the section's sum in
+    the OUTER column -- on the last line, on an unlabelled line below, or on the next section's
+    heading row -- and a section of one line (`Interest: Taxes, Motor Vehicle Excise and
+    Betterments | | 1,880.48`) in the outer column alone. The outer column then sums to the
+    statement's total. Pooling every figure as an account (emit_receipts_span) counts some
+    sections twice and misses lone lines, so the accounts here are what the two columns SAY they
+    are:
+      - a figure in the inner column is an account;
+      - a figure in the outer column closes the inner lines printed since the last outer figure
+        of that table: when they sum to it EXACTLY it is their subtotal, not an account; when no
+        inner line is pending it is an account of its own;
+    and two identities the page prints are checked, both to the cent: every section closes on its
+    subtotal, and the outer column (accounts of one line and subtotals) sums to the grand total.
+    Every account is `checked` only if both hold; otherwise `check failed`, with the section that
+    did not close or the outer column's sum. Returns None, so the pooled reading stands, where a
+    table prints only one figure column (no inner/outer layout to read)."""
+    body = []
+    for rec in recs:
+        figs = [(k, c) for k, c in rec['figs'] if any(c is x for x in money_cells(rec))]
+        if RECEIPTS_GRAND.search(label_of(rec)) and figs and figs[-1][1].value == grand:
+            break
+        if figs:
+            body.append((rec, figs))
+    if not body:
+        return None
+    outer_of = {}
+    for rec, figs in body:
+        key = (rec['page'], rec['table'], rec['panel'])
+        outer_of[key] = max(outer_of.get(key, 0), max(k for k, _ in figs))
+    if any(len({k for r, figs in body if (r['page'], r['table'], r['panel']) == key for k, _ in figs}) < 2
+           for key in outer_of):
+        return None
+    items, run, bad, outer_sum, n_sec = [], [], [], Decimal(0), 0
+    for rec, figs in body:
+        key = (rec['page'], rec['table'], rec['panel'])
+        for k, c in sorted(figs, key=lambda x: x[0]):
+            if k < outer_of[key]:
+                run.append((rec, c.value))
+                items.append((rec, c.value))
+                continue
+            outer_sum += c.value
+            if not run:
+                items.append((rec, c.value))
+                continue
+            got = sum((v for _, v in run), Decimal(0))
+            n_sec += 1
+            if got != c.value:
+                bad.append('p%s row %s: %d line(s) sum %s, printed %s' % (rec['page'], rec['row'], len(run),
+                                                                      V.money(got), V.money(c.value)))
+            run = []
+    if run:
+        bad.append('%d line(s) after the last subtotal, %s, close on nothing printed'
+                   % (len(run), V.money(sum((v for _, v in run), Decimal(0)))))
+    s_items = sum((v for _, v in items), Decimal(0))
+    ok = not bad and outer_sum == grand and s_items == grand
+    pages = sorted({r['page'] for r, _ in body})
+    note = ('TWO COLUMNS: %d section(s) close on the subtotal printed one column out%s; the outer column sums to %s '
+            '%s the printed total %s; %d accounts sum %s (one statement over p%s-%s)'
+            % (n_sec, '' if not bad else ', NOT: ' + '; '.join(bad[:4]), V.money(outer_sum),
+               '=' if outer_sum == grand else '!=', V.money(grand), len(items), V.money(s_items), pages[0], pages[-1]))
+    out = [{'fy': ed['fy'], 'source': re.sub(r'^[A-Z &/]+:\s*', '', label_of(rec)) or label_of(rec),
+            'amount': num(v), 'status': 'checked' if ok else 'check failed',
+            'document': os.path.basename(ed['pdf']), 'page': rec['page']} for rec, v in items]
+    return out, note, {(rec['page'], rec['table'], rec['row'], rec['panel']) for rec, _ in items}
+
+
 def emit_receipts_span(recs, ed, stated):
     """annual-report-receipts for an edition whose statement of receipts is ONE statement over
     several tables, side-by-side panels and pages (`edition.json`: `"receipts_span": true`, an
@@ -1317,6 +1645,10 @@ def emit_receipts_span(recs, ed, stated):
         return lab
     grand_rows = [r for r in recs if money_cells(r) and RECEIPTS_GRAND.search(label_of(r))]
     grand = stated if stated is not None else (money_cells(grand_rows[-1])[-1].value if grand_rows else None)
+    if 'receipts_two_columns' in OPTS and grand is not None:
+        got = receipts_two_columns(recs, ed, grand, money_cells, label_of)
+        if got is not None:
+            return got
     summary, items, moved = [], [], []
     # A SECTION SUBTOTAL PRINTED ON THE NEXT SECTION'S HEADING ROW (1971-1980: `Special
     # Assessments: | | 658.00` is the farm animal excise above it, 102.50 + 555.50). An edition
@@ -1875,6 +2207,134 @@ def statement_span(parts):
         run, prev_top = [], (rec, row)
 
 
+def stepped_subtotals(m, recs, rows):
+    """A SUBTOTAL PRINTED ONE COLUMN TO THE RIGHT OF ITS LINES (`edition.json`:
+    `"stepped_subtotals_in": [<dataset>, ...]`, an opt-in; the 1959-1970 balance sheets, trust
+    fund books and school accounts, 30 October 2026). The town's accountant indents a section's
+    lines in an inner figure column and prints their sum in the next column out, on the last line
+    or on an unlabelled line below (`Old Age Assistance | 9,055.17` ... `| | 20,320.18`, 1959 p16);
+    an outer figure can itself be a line of the next column's sum. The column validator reads one
+    column at a time and cannot see it.
+
+    Walking down one table (one panel of it), each figure in column k closes the RUN of figures
+    printed in the nearest figure column to its LEFT since the last figure printed in column k or
+    further right. The run closes when:
+      - it, or a part of it ending at its last line, sums EXACTLY to the figure; or
+      - Textract returned two levels in one column (1961 p44/2: `6,038.79`, `93.75`, `6,132.54`):
+        an entry equal to the sum of the two or more entries directly above it (since the last
+        such entry) is their subtotal and replaces them, and what is left sums to the figure; or
+      - the figure printed one column out BEFORE the run, beside its heading, is the run's sum.
+    Closed: the lines and the figure are `checked`. A run of two or more lines that closes none of
+    these ways is `check failed`, with both amounts -- unless a cell in it did not parse (its
+    amount is unknown), or it reaches back to the first figure of the table with nothing printed
+    further out above it (it may begin on the page before): then nothing is claimed. A run of one
+    line states nothing either way (equal to the figure, it is one amount printed twice). Only a `no check` row changes; a row another check
+    decided keeps its verdict and carries the note."""
+    if len(recs) != len(rows):
+        return                                    # a row was split into chunks: not this layout
+    by_panel = collections.OrderedDict()
+    for rec, row in zip(recs, rows):
+        figcols = set(rec.get('figcols') or ())
+        figs = [(k, c.value) for k, c in rec['figs'] if not getattr(c, 'percent', False) and c.value is not None]
+        figs += [(k, None) for k, c in (rec.get('cells') or {}).items()
+                 if k in figcols and getattr(c, 'unparsed', False) and k not in {x for x, _ in figs}]
+        if figs:
+            by_panel.setdefault(rec['panel'], []).append((rec, row, figs))
+
+    def mark(row, ok, why):
+        if row['status'] == 'no check':
+            row['status'] = 'checked' if ok else 'check failed'
+            row['reconciliation'] = why + (' ; ' + row['reconciliation'] if row['reconciliation']
+                                           and row['reconciliation'] != 'no total printed' else '')
+        elif why not in row['reconciliation']:
+            row['reconciliation'] = (row['reconciliation'] + ' ; ' if row['reconciliation'] else '') + why
+
+    def two_levels(run):
+        stack = []                                # [(value, is_subtotal)]
+        for _, x in run:
+            s, n, hit = Decimal(0), 0, None
+            for i in range(len(stack) - 1, -1, -1):
+                if stack[i][1]:
+                    break
+                s += stack[i][0]
+                n += 1
+                if n >= 2 and s == x:
+                    hit = i
+            if hit is not None:
+                del stack[hit:]
+                stack.append((x, True))
+            else:
+                stack.append((x, False))
+        return sum((x for x, _ in stack), Decimal(0)), sum(1 for _, t in stack if t)
+    leftover = {}                                 # {rank of a column: the run the panel to the left ended on}
+    for seq in by_panel.values():
+        cols = sorted({k for _, _, figs in seq for k, _ in figs})
+        pending = {k: [] for k in cols}           # [(row, value)] since the last figure further out
+        before = {k: [] for k in cols}            # the previous figure printed in this column
+        outer_seen = set()                        # columns that have printed a figure so far
+        for rec, row, figs in seq:
+            for k, v in sorted(figs, key=lambda x: x[0]):
+                left = [j for j in cols if j < k]
+                inner = left[-1] if left else None
+                run = pending.get(inner, []) if inner is not None else []
+                where = 'p%s t%s r%s' % (rec['page'], rec['table'], rec['row'])
+                if run and v is not None and all(x is not None for _, x in run):
+                    s, hit = Decimal(0), None
+                    for i in range(len(run) - 1, -1, -1):
+                        s += run[i][1]
+                        # a ONE-line part equal to the figure is the same amount printed twice
+                        # (or, in an APPROPRIATION | SPENT table, an account spent out): it
+                        # proves nothing, so a part must hold two or more lines
+                        if s == v and len(run) - i >= 2:
+                            hit = i
+                    got = sum((x for _, x in run), Decimal(0))
+                    lv, nsub = two_levels(run) if len(run) >= 3 else (None, 0)
+                    prev = before.get(k) or []
+                    if hit is not None:
+                        part = run[hit:]
+                        why = ('STEPPED SUBTOTAL: %d line(s) in the inner column sum to %s printed one column out (%s)'
+                               % (len(part), V.money(v), where))
+                        for r_, _ in part:
+                            mark(r_, True, why)
+                        mark(row, True, why)
+                    elif len(run) >= 2 and nsub and lv == v:
+                        why = ('STEPPED SUBTOTAL: %d line(s) with %d subtotal(s) among them, read in one column, close on %s printed one column out (%s)'
+                               % (len(run), nsub, V.money(v), where))
+                        for r_, _ in run:
+                            mark(r_, True, why)
+                        mark(row, True, why)
+                    elif len(run) >= 2 and prev and prev[-1][1] is not None and prev[-1][1] in (got, lv):
+                        why = ('STEPPED SUBTOTAL: %d line(s) in the inner column close on %s printed one column out beside their heading (p%s)'
+                               % (len(run), V.money(prev[-1][1]), rec['page']))
+                        for r_, _ in run:
+                            mark(r_, True, why)
+                        mark(prev[-1][0], True, why)
+                    elif (len(run) >= 2 and (carry := leftover.get(cols.index(inner))) and run is pending[inner]
+                          and all(x is not None for _, x in carry)
+                          and sum((x for _, x in carry), Decimal(0)) + got == v):
+                        # A SECTION CARRIED OVER FROM THE COLUMN GROUP TO THE LEFT (1970 p28: the
+                        # Federal Grants lines start at the foot of the left group and end at the
+                        # top of the right, under one subtotal)
+                        why = ('STEPPED SUBTOTAL: %d line(s) at the foot of the column group to the left and %d here sum to %s printed one column out (%s)'
+                               % (len(carry), len(run), V.money(v), where))
+                        for r_, _ in carry + run:
+                            mark(r_, True, why)
+                        mark(row, True, why)
+                        leftover[cols.index(inner)] = []
+                    elif len(run) >= 2 and (outer_seen & {j for j in cols if j >= k} or run[0][0] is not seq[0][1]):
+                        why = ('STEPPED SUBTOTAL: %d line(s) in the inner column sum to %s; the figure printed one column out (%s) is %s (off %s)'
+                               % (len(run), V.money(got), where, V.money(v), V.money(v - got)))
+                        for r_, _ in run:
+                            mark(r_, False, why)
+                        mark(row, False, why)
+                for j in left:
+                    pending[j] = []
+                before[k] = [(row, v)]
+                pending[k].append((row, v))
+                outer_seen.add(k)
+        leftover = {i: pending[c] for i, c in enumerate(cols)}
+
+
 def stated_list_totals(m_rows, emitted, tol=0):
     """A row the column checks could not reach (`no check`) becomes `checked` when its list sums
     to the printed total, and `check failed` when it does not; a row that already has a verdict
@@ -2180,8 +2640,27 @@ def build(edition, inventory_only=False):
     witness = apply_witness(d, tables)
     OPTS.clear()
     OPTS.update(k for k, v in ed.items() if v is True)
+    DEBT_ROW_TOL[0] = Decimal(str(ed.get('rounding_tolerance_usd', 0))) if 'debt_row_totals' in OPTS else Decimal(0)
+    DEBT_ROW_SKIP.clear()
+    DEBT_ROW_SKIP.update(ed.get('debt_row_totals_skip') or ())
     apply_calendar_repairs(tables)
+    if 'dollar_sign_labels' in OPTS:
+        # A TOTAL ROW WHOSE ONLY "LABEL" IS THE DOLLAR SIGN (1959-1970 school budget summaries:
+        # `$ | 1,054,757.00 | $ 1,042,108.87 | $ 1,283,277.`, 1967 p129 r24): the `$` printed in
+        # the first column before the figures is not a label, so the row is read as the unlabelled
+        # total it is. An edition opt-in (`"dollar_sign_labels": true`); the cell keeps a note
+        for rows_ in tables.values():
+            for r in rows_:
+                c = r.cells.get(1)
+                if c is not None and c.value is None and c.text.strip() == '$' and len(r.cells) > 1:
+                    c.printed_text, c.text = c.text, ''
+    if ed.get('label_figure_split'):
+        split_label_figures(tables, ed['label_figure_split'])
     apply_witnessed_cells(d, tables)
+    if ed.get('cell_readings'):
+        # cells Textract SEGMENTED wrong, read as printed (an opt-in; scripts/declared_identities.py)
+        import declared_identities
+        declared_identities.apply_cell_readings(ed['cell_readings'], tables, V.parse)
     if 'stacked_pairs' in OPTS:
         tables = split_stacked_pairs(m_rows, tables)
     split_list_total_cells(m_rows, tables)
@@ -2190,10 +2669,26 @@ def build(edition, inventory_only=False):
         # `unlabeled_subtotals_in` widens it past the accountant schedule, per edition (1988's
         # trust accounts by bank print a subtotal under each fund's accounts with no label)
         vt = mark_unlabeled_subtotals(m_rows, vt, tuple(ed.get('unlabeled_subtotals_in') or ('report-appropriations',)))
+    if ed.get('not_totals'):
+        # A ROW WHOSE LABEL SAYS "TOTAL" AND IS NOT THE TOTAL OF ITS COLUMN (`edition.json`:
+        # `"not_totals": ["29/2/16"]`, page/table/row, by eye; 1961 p29 `Total costs received by Tax
+        # Collector $1,376.95`, a fact printed in the Collected column under the table's own
+        # `Totals:` row). The validator would test it as that column's total and fail every row
+        # above it; in ITS copy of the table the word is dropped, so the row is a line again. The
+        # emitted row keeps its printed label
+        vt = dict(vt)
+        for ref in ed['not_totals']:
+            p_, t_, r_ = (int(x) for x in ref.split('/'))
+            vt[(p_, t_)] = [V.Row(x.page, x.row, {k: (V.Cell(re.sub(r'(?i)\btotals?\b', '', c.text), c.confidence,
+                                                              c.value, c.places, c.unparsed)
+                                                       if c.value is None else c) for k, c in x.cells.items()}, x.table)
+                            if x.row == r_ else x for x in vt[(p_, t_)]]
     checks, _ = cell_checks(stem, vt,
                             validator_names(m_rows, tables, ed.get('validator_drop_titles') is True),
                             tol=ed.get('rounding_tolerance_usd', 0),
                             tol_off_pages={int(m['page']) for m in m_rows if m['dataset'] == 'report-elections'})
+    if 'unlabeled_subtotal_blocks' in OPTS:
+        add_subtotal_block_checks(tables, checks)
     apply_percents(tables)
     rep = page_integrity.check(page_integrity.OUT / f'{stem}.lines.tsv')
     folios = rep.folios
@@ -2229,6 +2724,11 @@ def build(edition, inventory_only=False):
             emitted[k] = rows
             if m['dataset'] in (ed.get('statement_span') or ()):
                 spans.setdefault((m['dataset'], m['family']), []).append((m, recs, rows))
+            if (m['dataset'] in (ed.get('stepped_subtotals_in') or ())
+                    or '%s/%s' % (m['page'], m['table']) in (ed.get('stepped_subtotals_in') or ())):
+                # a whole dataset, or one table by `page/table` where the dataset also holds
+                # tables of another layout (the school accounts' APPROPRIATION | SPENT columns)
+                stepped_subtotals(m, recs, rows)
         elif m['dataset'] == 'annual-report-receipts':
             # RECEIPTS SPLIT INTO SEVERAL TABLES ON ONE PAGE (1991, 1992: three printed columns,
             # three Textract tables, one GRAND TOTAL in one of them) are pooled and checked
@@ -2274,6 +2774,11 @@ def build(edition, inventory_only=False):
     stated_list_totals(m_rows, emitted, tol=ed.get('rounding_tolerance_usd', 0) if 'list_total_tolerance' in OPTS else 0)
     for (_, fam), parts in spans.items():
         statement_span(parts)
+    if ed.get('declared_identities'):
+        # identities a page prints that no generic check reaches, named by eye in edition.json
+        # and tested here (an opt-in; scripts/declared_identities.py, 1971-1980, 30 Oct 2026)
+        import declared_identities
+        declared_identities.apply(ed['declared_identities'], dataset_rows, tables)
     category_blocks(dataset_rows.get('report-tax-bill-breakdown.csv', []))
     coverage(dataset_rows.get('report-gross-wages.csv', []), lines, witness, m_rows)
     # A DATASET A FOLDER NO LONGER PRODUCES (renamed, or its rows moved) must not linger in

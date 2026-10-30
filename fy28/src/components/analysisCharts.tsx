@@ -16,6 +16,7 @@ import {
   TownBudgetsTrends, TownBudgetsTotal, TownBudgetsTown,
 } from './TownBudgetsCharts'
 import { DepartmentBudgetsIndex, DepartmentBudgetsPull } from './DepartmentBudgetsCharts'
+import { HistoricalTaxRate, HistoricalPopulation, HistoricalRosters } from './HistoricalCharts'
 import {
   SchoolSurplusWaterfall, SchoolSurplusCauses, SchoolSurplusBudgetVsSpent,
 } from './SchoolSurplusCharts'
@@ -83,6 +84,9 @@ const has = (...keys: string[]) => (d: Record<string, unknown>) =>
   keys.every(k => d?.[k] != null)
 
 export const ANALYSIS_CHARTS: Record<string, Entry> = {
+  'historical-tax-rate': { render: HistoricalTaxRate, needs: has('tax_rate','revaluations') },
+  'historical-population': { render: HistoricalPopulation, needs: has('population') },
+  'historical-rosters': { render: HistoricalRosters, needs: has('roster_names') },
   'department-budgets-index': { render: DepartmentBudgetsIndex, needs: has('index_series','index_keys') },
   'department-budgets-pull': { render: DepartmentBudgetsPull, needs: has('groups') },
   'fy25-school-surplus-waterfall': { render: SchoolSurplusWaterfall, needs: has('waterfall') },

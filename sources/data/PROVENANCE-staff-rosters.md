@@ -20,7 +20,7 @@ line on the page is claimed as an entry or a heading, and the leftovers are
 counted. A page where a third of the lines vanished looks exactly like a smaller
 school unless somebody counts.
 
-**23117 of 23117 lines accounted for** across 488 pages, 12326 entries, 63 years.
+**23117 of 23117 lines accounted for** across 488 pages, 12278 entries, 63 years.
 
 | page | FY | school | lines | claimed | unaccounted | entries | misattributed |
 |---|---|---|---:|---:|---:|---:|---:|
@@ -550,7 +550,6 @@ that the taxonomy is wrong.
 | 32 | `Baker` |
 | 26 | `Business Education` |
 | 26 | `Chairperson` |
-| 25 | `SCHOOL BUS CONTRACTORS` |
 | 25 | `Chair` |
 | 23 | `Cook/Manager` |
 | 23 | `Parents` |
@@ -567,7 +566,6 @@ that the taxonomy is wrong.
 | 13 | `School Physician` |
 | 13 | `Social Worker` |
 | 12 | `Elementary School` |
-| 11 | `School Bus Contractor` |
 | 10 | `Substitute` |
 | 10 | `Senior Clerk/Typist` |
 | 10 | `AD` |
@@ -602,6 +600,8 @@ that the taxonomy is wrong.
 | 6 | `Cook/Manager (7 hours)` |
 | 6 | `Administrative Coordinator` |
 | 6 | `Asst. Prin.` |
+| 6 | `Clerk` |
+| 6 | `Phys. Ed.` |
 
 ## Two things a count here must not be read as
 
@@ -619,6 +619,23 @@ deliberately and stated.
 And `monty-tech` is a seventh school value covering six administrators of the
 regional vocational school Lunenburg SENDS students to. They are not Lunenburg
 staff and must be excluded from any district headcount.
+
+## Which school is `middle`, `turkey-hill`, and what is not staff
+
+**Turkey Hill WAS the middle school** until the co-located middle/high school
+opened in August 2016 (TJ, 30 October 2026; the FY2015 report states the
+opening). Every roster headed `Middle School` or `Turkey Hill Middle School`
+before the FY2016 report is therefore filed under `turkey-hill` (1843 entries
+before FY2016). `middle` is a separate school only from FY2016 (the Lunenburg
+Middle School in the middle/high building), when Turkey Hill becomes an
+elementary school. The rule is `normalise_school` in the builder, not hand edits.
+
+**Brooks House** headings are filed under `central-office` wherever the page
+reading had not already established a school.
+
+**School bus contractors are not staff.** 48 lines in the 1965,
+1967, 1968 and 1969 reports list the town's bus contractors; they are in
+`staff-roster-contractors.csv` and excluded from the entries and counts.
 
 ## Names
 

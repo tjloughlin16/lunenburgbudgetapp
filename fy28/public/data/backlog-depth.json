@@ -58,11 +58,11 @@
   },
   {
    "board": "board-of-assessors",
-   "minutes": 8,
+   "minutes": 9,
    "official": 12,
    "official-v1": 112,
    "reconcile": 0,
-   "total": 132
+   "total": 133
   },
   {
    "board": "council-on-aging",
@@ -162,11 +162,11 @@
   },
   {
    "board": "cemetery-commission",
-   "minutes": 0,
+   "minutes": 1,
    "official": 0,
    "official-v1": 45,
    "reconcile": 0,
-   "total": 45
+   "total": 46
   },
   {
    "board": "charter-review-committee",
@@ -1925,9 +1925,9 @@
    {
     "captions_disabled": 0,
     "fy": "FY2027",
-    "meetings": 128,
-    "meetings_open": 10,
-    "minutes": 1,
+    "meetings": 130,
+    "meetings_open": 12,
+    "minutes": 3,
     "missing_boards": {
      "missing_minutes": {
       "agricultural-commission": 1,
@@ -1941,7 +1941,7 @@
       "lunenburg-municipal-building-design-committee": 1,
       "personnel-committee": 5,
       "school-committee": 2,
-      "select-board": 5,
+      "select-board": 6,
       "stormwater-task-force": 6,
       "trust-fund-commission": 2,
       "zoning-board-of-appeals": 2
@@ -1963,7 +1963,7 @@
       "trust-fund-commission": 1
      }
     },
-    "missing_minutes": 37,
+    "missing_minutes": 38,
     "missing_transcript": 0,
     "missing_video": 22,
     "needs_review": 0,
@@ -1971,10 +1971,12 @@
     "needs_review_meetings": [],
     "official": 9,
     "official-v1": 0,
-    "pct_open": 7.8,
+    "pct_open": 9.2,
     "reconcile": 0,
     "stream_boards": {
      "minutes": {
+      "board-of-assessors": 1,
+      "cemetery-commission": 1,
       "zoning-board-of-appeals": 1
      },
      "official": {
@@ -1982,7 +1984,7 @@
       "select-board": 4
      }
     },
-    "total": 10
+    "total": 12
    }
   ],
   "finance-committee": [
@@ -3506,13 +3508,13 @@
     "minutes": 0,
     "missing_boards": {
      "missing_minutes": {
-      "select-board": 5
+      "select-board": 6
      },
      "missing_video": {
       "select-board": 1
      }
     },
-    "missing_minutes": 5,
+    "missing_minutes": 6,
     "missing_transcript": 0,
     "missing_video": 1,
     "needs_review": 0,
@@ -4537,7 +4539,7 @@
   {
    "captions_disabled": 0,
    "fy": "FY2027",
-   "minutes": 1,
+   "minutes": 3,
    "missing_boards": {
     "missing_minutes": {
      "agricultural-commission": 1,
@@ -4551,7 +4553,7 @@
      "lunenburg-municipal-building-design-committee": 1,
      "personnel-committee": 5,
      "school-committee": 2,
-     "select-board": 5,
+     "select-board": 6,
      "stormwater-task-force": 6,
      "trust-fund-commission": 2,
      "zoning-board-of-appeals": 2
@@ -4573,13 +4575,13 @@
      "trust-fund-commission": 1
     }
    },
-   "missing_minutes": 37,
+   "missing_minutes": 38,
    "missing_transcript": 0,
    "missing_video": 22,
    "official": 9,
    "official-v1": 0,
    "reconcile": 0,
-   "total": 10
+   "total": 12
   }
  ],
  "by_month": [
@@ -5752,12 +5754,12 @@
    "total": 2
   },
   {
-   "minutes": 1,
+   "minutes": 3,
    "month": "2026-10",
    "official": 3,
    "official-v1": 0,
    "reconcile": 0,
-   "total": 4
+   "total": 6
   }
  ],
  "by_year": [
@@ -5866,15 +5868,15 @@
    "year": "2021"
   },
   {
-   "minutes": 1,
+   "minutes": 3,
    "official": 9,
    "official-v1": 0,
    "reconcile": 0,
-   "total": 10,
+   "total": 12,
    "year": "2026"
   }
  ],
- "estimated_usd": 459.46,
+ "estimated_usd": 460.27,
  "estimated_weeks": 0.92,
  "filter_boards": [
   {
@@ -5893,11 +5895,11 @@
  "grain": "One row per MEETING still to process (a board on a date), placed by the meeting’s own date — never the things inside it: one set of minutes may hold eight votes or none. Streams are counted separately and must not be added, being different pieces of work at different prices; the two official streams are one structured read of the town’s minutes, split by whether the minutes were ever read before (votes only) or never.",
  "id": "backlog-depth",
  "missing_captions_disabled": 185,
- "missing_meetings": 3430,
+ "missing_meetings": 3431,
  "missing_streams": [
   {
    "label": "no town minutes",
-   "meetings": 2380,
+   "meetings": 2381,
    "name": "missing_minutes"
   },
   {
@@ -5936,12 +5938,12 @@
    "unit_cost": 0.273
   },
   {
-   "estimated_usd": 363.99,
-   "jobs": 898,
+   "estimated_usd": 364.8,
+   "jobs": 900,
    "name": "minutes",
    "unit_cost": 0.405
   }
  ],
  "title": "How deep the backlog is",
- "total_jobs": 3623
+ "total_jobs": 3625
 }

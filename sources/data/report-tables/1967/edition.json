@@ -121,5 +121,26 @@
   "receipts_stop_at_grand": true,
   "collector_columns": true,
   "credit_marks": true,
-  "unit_rates": true
+  "unit_rates": true,
+  "expended_from_amounts": true,
+  "ed_mark": true,
+  "stepped_subtotals_in": [
+    "report-fund-balance-sheets",
+    "report-trust-funds",
+    "132/4",
+    "134/3",
+    "135/1"
+  ],
+  "receipts_two_columns": true,
+  "cell_readings": [
+    {
+      "cell": "22/1/45/2",
+      "textract": "Relief 1,091.16",
+      "read_as": "1,091.16",
+      "why": "the last word of the label `Aid to Families w/ Dependent Children Federal Grant Relief` landed in the figure cell; Textract lines read the whole line as `... Federal Grant Relief 1,091.16`, the figure at its end in the refunds column"
+    }
+  ],
+  "school_statistics_totals": true,
+  "dollar_sign_labels": true,
+  "welfare_net_cost": true
 }

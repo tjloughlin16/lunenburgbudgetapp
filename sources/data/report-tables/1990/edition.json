@@ -66,5 +66,291 @@
   "accountant_marks": true,
   "recon_net_on_transfer_line": true,
   "receipts_span": true,
-  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)"
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
+  "declared_identities": [
+    {
+      "eq": "#11464.00 = 24/1/r1.v3 + 24/1/r1.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$11464.00 Elections,Reg.Census`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#20000.00 = 24/1/r2.v3 + 24/1/r2.v4 + 24/1/r2.v5",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$20000.00 Town Counsel Salary`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#25000.00 = 24/1/r4.v3 + 24/1/r4.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$25000.00 Town Counsel Legal Exp.`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#2546.00 = 24/1/r5.v3 + 24/1/r5.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$2546.00 Zoning Mapping`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#24445.00 = 24/1/r6.v3 + 24/1/r6.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$24445.00 Planning Board`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#2000.00 = 24/1/r7.v3",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$2000.00 Planning Grant`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#1182.05 = 24/1/r8.v3 + 24/1/r8.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$1182.05 Growth Management`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#394.00 = 24/1/r9.v3 + 24/1/r9.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$394.00 Finance Committee`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#712.00 = 24/1/r10.v3 + 24/1/r10.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$712.00 Civil Defense`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#1837.00 = 24/1/r11.v3 + 24/1/r11.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$1837.00 Mont.Reg.Plan.Com.Assess.`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#150.00 = 24/1/r12.v3 + 24/1/r12.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$150.00 Cable Advisory Committee`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#17552.00 = 24/1/r13.v3 + 24/1/r13.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$17552.00 Public Buildings`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#750.00 = 24/1/r14.v3 + 24/1/r14.v4 + 24/1/r14.v5",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$750.00 Building Committee`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#5211.32 = 24/1/r15.v3",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$5211.32 Town Hall Plans Supplement`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#442522.00 = 24/1/r17.v3 + 24/1/r17.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$442522.00 Police Department`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#14440.00 = 24/1/r19.v3 + 24/1/r19.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$14440.00 Police Lock-Up`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#8240.14 = 24/1/r20.v3 + 24/1/r20.v4 + 24/1/r20.v5",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$8240.14 Police Lock Up #41`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#17665.00 = 24/1/r22.v3 + 24/1/r22.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$17665.00 Injury Leave`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#13900.00 = 24/1/r23.v3",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$13900.00 Purchase Police Cruiser`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#5000.00 = 24/1/r24.v3 + 24/1/r24.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$5000.00 Police Fire Medical Exp.`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#20800.00 = 24/1/r25.v3 + 24/1/r25.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$20800.00 Purchase Police Computers`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#157096.00 = 24/1/r26.v3 + 24/1/r26.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$157096.00 Fire Department`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#1146.76 = 24/1/r27.v3 + 24/1/r27.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$1146.76 Brush Truck/Fire Department`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#16500.00 = 24/1/r28.v3 + 24/1/r28.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$16500.00 Fire Hydrant Expense`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#97172.00 = 24/1/r29.v3 + 24/1/r29.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$97172.00 Comp.Radio Watch Personnel`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#2500.00 = 24/1/r30.v3 + 24/1/r30.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$2500.00 Mtc.Town Radio Eqt.`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#18000.00 = 24/1/r32.v3 + 24/1/r32.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$18000.00 Fire Alarms School`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#49216.52 = 24/1/r35.v3 + 24/1/r35.v4",
+      "why": "p24: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$49216.52 Building Inspector`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#5275.00 = 25/1/r1.v3 + 25/1/r1.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$5275.00 Compensation Wiring Inspector`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#1070.00 = 25/1/r2.v3 + 25/1/r2.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$1070.00 Inspector Weights & Measures`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#600.00 = 25/1/r4.v3",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$600.00 Inspector of Animals`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#5350.00 = 25/1/r5.v3 + 25/1/r5.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$5350.00 Comp. Plumbing Inspector`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#15901.00 = 25/1/r6.v3 + 25/1/r6.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$15901.00 General Health Expense`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#4900.00 = 25/1/r7.v3",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$4900.00 Sewer Connections`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#6943.00 = 25/1/r8.v3",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$6943.00 Nursing Service Nashoba`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#24655.00 = 25/1/r9.v3 + 25/1/r9.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$24655.00 Member.Nashoba Brd. of Health`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#15300.00 = 25/1/r10.v3",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$15300.00 Participation Mental Health`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#461568.00 = 25/1/r18.v1 + 25/1/r18.v2",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$461568.00 Total Highway`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#31820.16 = 25/1/r20.v3",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$31820.16 Highway Overtime`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#89327.00 = 25/1/r22.v3 + 25/1/r22.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$89327.00 Snow Removal`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#34000.00 = 25/1/r23.v3 + 25/1/r23.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$34000.00 Street Lights`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#18000.00 = 25/1/r24.v3 + 25/1/r24.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$18000.00 Highway Pick Up Truck`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#8800.00 = 25/1/r25.v3 + 25/1/r25.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$8800.00 Traffic Signs & Devices`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#226500.00 = 25/1/r26.v3 + 25/1/r26.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$226500.00 Street Betterments`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#4000.00 = 25/1/r27.v3",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$4000.00 Tree Removal`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#3604.50 = 25/1/r30.v3 + 25/1/r30.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$3604.50 Veteran's Benefits`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#5971422.01 = 25/1/r32.v3 + 25/1/r32.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$5971422.01 School Department`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#2511.94 = 25/1/r33.v3 + 25/1/r33.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$2511.94 Regional School Study`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#9500.00 = 25/1/r34.v3 + 25/1/r34.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$9500.00 Regional School Study`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#8000.00 = 25/1/r35.v3 + 25/1/r35.v4",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$8000.00 School Boiler Tank`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "#113854.00 = 25/1/r36.v3",
+      "why": "p25: TOTAL FUNDS AVAILABLE (printed in the program-name cell, `$113854.00 Reg.Voc.Tec.School Assessment`) = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91"
+    },
+    {
+      "eq": "26/1/r1.v2 = 26/1/r1.v4 + 26/1/r1.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r2.v2 = 26/1/r2.v4 + 26/1/r2.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r3.v2 = 26/1/r3.v4 + 26/1/r3.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r4.v2 = 26/1/r4.v4 + 26/1/r4.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r5.v2 = 26/1/r5.v4 + 26/1/r5.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r6.v2 = 26/1/r6.v4 + 26/1/r6.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r7.v2 = 26/1/r7.v4 + 26/1/r7.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r8.v2 = 26/1/r8.v4 + 26/1/r8.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r9.v2 = 26/1/r9.v4 + 26/1/r9.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r10.v2 = 26/1/r10.v4",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r11.v2 = 26/1/r11.v4",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r13.v2 = 26/1/r13.v4 + 26/1/r13.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r14.v2 = 26/1/r14.v4",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r17.v2 = 26/1/r17.v4 + 26/1/r17.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r18.v2 = 26/1/r18.v4 + 26/1/r18.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r20.v2 = 26/1/r20.v4 + 26/1/r20.v5",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE + BALANCE FY 91 (the header is p23's; the reader's identity needs a BALANCE FY 91 figure, which no line on this page prints)"
+    },
+    {
+      "eq": "26/1/r12.v1 = 26/1/r12.v3 + 26/1/r12.v4",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE (the APPROPRIATED FORWARD cell holds two figures and is not read, so the line's figures start at TOTAL FUNDS AVAILABLE)"
+    },
+    {
+      "eq": "26/1/r15.v1 = 26/1/r15.v3 + 26/1/r15.v4",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE (the APPROPRIATED FORWARD cell holds two figures and is not read, so the line's figures start at TOTAL FUNDS AVAILABLE)"
+    },
+    {
+      "eq": "26/1/r16.v1 = 26/1/r16.v3",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE (the APPROPRIATED FORWARD cell holds two figures and is not read, so the line's figures start at TOTAL FUNDS AVAILABLE)"
+    },
+    {
+      "eq": "26/1/r19.v1 = 26/1/r19.v3 + 26/1/r19.v4",
+      "why": "p26: TOTAL FUNDS AVAILABLE = TOTAL EXPENDED + BALANCE REVENUE (the APPROPRIATED FORWARD cell holds two figures and is not read, so the line's figures start at TOTAL FUNDS AVAILABLE)"
+    }
+  ]
 }

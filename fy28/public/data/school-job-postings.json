@@ -1,6 +1,20 @@
 {
  "active": [
   {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5976954?domainName=www.schoolspring.com",
+   "closes": "2026-12-28",
+   "displayed": "",
+   "first_seen": "2026-10-30",
+   "id": "5976954",
+   "job_type": "Full-time",
+   "page_url": "https://www.schoolspring.com/jobdetail?jobId=5976954",
+   "pay": "",
+   "positions": "1",
+   "posted": "2026-10-29",
+   "school": "Lunenburg Public Schools",
+   "title": "Paraprofessional (High School) w/great benefits & tuition payments"
+  },
+  {
    "api_url": "https://api.schoolspring.com/api/Jobs/5967080?domainName=www.schoolspring.com",
    "closes": "2026-11-20",
    "displayed": "",
@@ -96,7 +110,7 @@
    "positions": "1",
    "posted": "2026-10-06",
    "school": "Lunenburg Middle/High School (High School)",
-   "title": "High School Long-term SUBSTITUTE (Paternity Leave) November 30th - January 19th"
+   "title": "High School Long-term SUBSTITUTE (Paternity Leave) History/ELA TeacherNovember 30th - January 19th"
   },
   {
    "api_url": "https://api.schoolspring.com/api/Jobs/5937399?domainName=www.schoolspring.com",
@@ -225,9 +239,56 @@
    "title": "2026-2027 Substitute School Nurses - $200 daily rate"
   }
  ],
- "as_of": "2026-10-29",
+ "as_of": "2026-10-30",
  "grain": "Postings on SchoolSpring under the employer account “Lunenburg Public Schools” (SchoolSpring employer 11047), checked once a day. A posting is one advertisement, not one vacancy: “2026-2027 Substitutes, Teachers & Paraprofessionals at all schools” is a single posting listing 100 positions.",
  "history": [
+  {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5976954?domainName=www.schoolspring.com",
+   "date": "2026-10-30",
+   "event": "posted",
+   "id": "5976954",
+   "posted": "2026-10-29",
+   "prev_look": "2026-10-29",
+   "school": "Lunenburg Public Schools",
+   "source": "/docs/district-budget/docs/personnel/job-postings/2026-10-30/job-5976954.json",
+   "title": "Paraprofessional (High School) w/great benefits & tuition payments"
+  },
+  {
+   "after": "High School Long-term SUBSTITUTE (Paternity Leave) History/ELA TeacherNovember 30th - January 19th",
+   "api_url": "https://api.schoolspring.com/api/Jobs/5951924?domainName=www.schoolspring.com",
+   "before": "High School Long-term SUBSTITUTE (Paternity Leave) November 30th - January 19th",
+   "date": "2026-10-30",
+   "event": "edited",
+   "field": "title",
+   "id": "5951924",
+   "posted": "2026-10-06",
+   "prev_look": "2026-10-29",
+   "school": "Lunenburg Middle/High School (High School)",
+   "source": "/docs/district-budget/docs/personnel/job-postings/2026-10-30/job-5951924.json",
+   "title": "High School Long-term SUBSTITUTE (Paternity Leave) History/ELA TeacherNovember 30th - January 19th"
+  },
+  {
+   "api_url": "https://api.schoolspring.com/api/Jobs/5951924?domainName=www.schoolspring.com",
+   "date": "2026-10-30",
+   "diff": [
+    {
+     "op": "-",
+     "text": "There is a long term sub position at the Lunenburg Middle/High (High) School"
+    },
+    {
+     "op": "+",
+     "text": "There is a long term sub position for a History/ELA Teacher at the Lunenburg Middle/High (High) School"
+    }
+   ],
+   "event": "edited",
+   "field": "description",
+   "id": "5951924",
+   "posted": "2026-10-06",
+   "prev_look": "2026-10-29",
+   "school": "Lunenburg Middle/High School (High School)",
+   "source": "/docs/district-budget/docs/personnel/job-postings/2026-10-30/job-5951924.json",
+   "title": "High School Long-term SUBSTITUTE (Paternity Leave) History/ELA TeacherNovember 30th - January 19th"
+  },
   {
    "api_url": "https://api.schoolspring.com/api/Jobs/5947400?domainName=www.schoolspring.com",
    "date": "2026-10-27",
@@ -621,7 +682,7 @@
    "title": "Athletic Director (.5 Position)"
   }
  ],
- "looks": 23,
+ "looks": 24,
  "sources": [
   {
    "label": "SchoolSpring job search API, employer e-11047 (what is open)",
@@ -638,12 +699,12 @@
  ],
  "stats": [
   {
-   "label": "open postings under the district’s SchoolSpring account, at our last check (29 October 2026)",
-   "value": "16"
+   "label": "open postings under the district’s SchoolSpring account, at our last check (30 October 2026)",
+   "value": "17"
   },
   {
    "label": "postings seen in all since tracking began 5 October 2026",
-   "value": "22"
+   "value": "23"
   },
   {
    "label": "postings taken down since then",
@@ -651,7 +712,7 @@
   },
   {
    "label": "edits to an open posting seen since then",
-   "value": "6"
+   "value": "7"
   }
  ],
  "tracking_since": "2026-10-05",

@@ -77,5 +77,239 @@
   "id_column_words": true,
   "recon_net_on_transfer_line": true,
   "stacked_pairs": true,
-  "receipts_span": true
+  "receipts_span": true,
+  "declared_identities": [
+    {
+      "eq": "42/1/r6:p1 = 42/1/r4-5:p1",
+      "why": "p42: the subtotal 844,039.60 printed after the 2 lines above it"
+    },
+    {
+      "eq": "42/1/r23:p1 = 42/1/r9-22:p1",
+      "why": "p42: the subtotal 2,550.00 printed after the 14 lines above it"
+    },
+    {
+      "eq": "42/1/r32:p1 = 42/1/r28-31:p1",
+      "why": "p42: the subtotal 131,162.24 printed after the 3 lines above it"
+    },
+    {
+      "eq": "42/1/r16:p2 = 42/1/r12-15:p2",
+      "why": "p42: the subtotal 2,616.81 printed after the 4 lines above it"
+    },
+    {
+      "eq": "42/1/r30:p2 = 42/1/r26-29:p2",
+      "why": "p42: the subtotal 10,632.52 printed after the 4 lines above it"
+    },
+    {
+      "eq": "43/1/r4 = 43/1/r2-3",
+      "why": "p43: the subtotal 3,042.81 printed after the 2 lines above it"
+    },
+    {
+      "eq": "43/1/r8 = 43/1/r6-7",
+      "why": "p43: the subtotal 61,957.93 printed after the 2 lines above it"
+    },
+    {
+      "eq": "43/1/r17 = 43/1/r11-16",
+      "why": "p43: the subtotal 62,566.59 printed after the 6 lines above it"
+    },
+    {
+      "eq": "43/1/r22 = 43/1/r19-21",
+      "why": "p43: the subtotal 12,953.98 printed after the 3 lines above it"
+    },
+    {
+      "eq": "43/1/r27 = 43/1/r25-26",
+      "why": "p43: the subtotal 43,525.67 printed after the 2 lines above it"
+    },
+    {
+      "eq": "43/1/r35 = 43/1/r29-34",
+      "why": "p43: the subtotal 228,149.82 printed after the 6 lines above it"
+    },
+    {
+      "eq": "43/2/r4 = 43/2/r2-3",
+      "why": "p43: the subtotal 54,115.83 printed after the 2 lines above it"
+    },
+    {
+      "eq": "43/2/r8 = 43/2/r6-7",
+      "why": "p43: the subtotal 81.48 printed after the 2 lines above it"
+    },
+    {
+      "eq": "43/2/r13 = 43/2/r11-12",
+      "why": "p43: the subtotal 12,552.12 printed after the 2 lines above it"
+    },
+    {
+      "eq": "43/2/r18 = 43/2/r15-17",
+      "why": "p43: the subtotal 27,109.29 printed after the 3 lines above it"
+    },
+    {
+      "eq": "43/2/r25 = 43/2/r21-24",
+      "why": "p43: the subtotal 79,856.20 printed after the 3 lines above it"
+    },
+    {
+      "eq": "44/1/r8:p1 = 44/1/r6-7:p1",
+      "why": "p44: the subtotal 960,000.00 printed after the 2 lines above it"
+    },
+    {
+      "eq": "44/1/r8:p2 = 44/1/r6-7:p2",
+      "why": "p44: the subtotal 960,000.00 printed after the 2 lines above it"
+    },
+    {
+      "eq": "44/1/r15:p2 = 44/1/r12-14:p2",
+      "why": "p44: the subtotal 8,561.31 printed after the 3 lines above it"
+    },
+    {
+      "eq": "44/1/r31:p2 = 44/1/r18-30:p2",
+      "why": "p44: the subtotal 13,120.00 printed after the 13 lines above it"
+    },
+    {
+      "eq": "58/2/r2.v1 = 58/2/r2.v2 + 58/2/r2.v3",
+      "why": "p58: `Tax Title Foreclosures`: the first column is the other two"
+    },
+    {
+      "eq": "58/2/r6.v1 = 58/2/r6.v2 + 58/2/r6.v3",
+      "why": "p58: `Carpentry Work Town Hall Clock and Belfr`: the first column is the other two"
+    },
+    {
+      "eq": "58/2/r13.v1 = 58/2/r13.v2 + 58/2/r13.v3",
+      "why": "p58: `Dry Hydrant (1973)`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r4.v1 = 59/1/r4.v2 + 59/1/r4.v3",
+      "why": "p59: `Purchase Land of Marion Harris`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r6.v1 = 59/1/r6.v2 + 59/1/r6.v3",
+      "why": "p59: `Recycling Program`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r9.v1 = 59/1/r9.v2 + 59/1/r9.v3",
+      "why": "p59: `Construction Plans, Sewerage System`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r11.v1 = 59/1/r11.v2 + 59/1/r11.v3",
+      "why": "p59: `Chapter 90 Improvement Project 1973 (Con`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r14.v1 = 59/1/r14.v2 + 59/1/r14.v3",
+      "why": "p59: `Purchase and Install Street Signs`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r15.v1 = 59/1/r15.v2 + 59/1/r15.v3",
+      "why": "p59: `Repair Sidewalks, Highland Street`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r20.v1 = 59/1/r20.v2 + 59/1/r20.v3",
+      "why": "p59: `Poison Ivy and Brush Cutting`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r25.v1 = 59/1/r25.v2 + 59/1/r25.v3",
+      "why": "p59: `Land, or Interest in Land, Relocation/Al`: the first column is the other two"
+    },
+    {
+      "eq": "59/1/r27.v1 = 59/1/r27.v2 + 59/1/r27.v3",
+      "why": "p59: `Acceptance, Pleasant View Avenue`: the first column is the other two"
+    },
+    {
+      "eq": "60/1/r3.v1 = 60/1/r3.v2 + 60/1/r3.v3",
+      "why": "p60: `Oiling Road South Cemetery`: the first column is the other two"
+    },
+    {
+      "eq": "63/1/r4 = 63/1/r2-3",
+      "why": "p63: the subtotal 1,140.35 printed after the 2 lines above it"
+    },
+    {
+      "eq": "63/1/r9 = 63/1/r7-8",
+      "why": "p63: the subtotal 597.19 printed after the 2 lines above it"
+    },
+    {
+      "eq": "63/1/r12 = 63/1/r10-11",
+      "why": "p63: the subtotal 543.16 printed after the 2 lines above it"
+    },
+    {
+      "eq": "63/2/r6 = 63/2/r4-5",
+      "why": "p63: the subtotal 15,527.76 printed after the 2 lines above it"
+    },
+    {
+      "eq": "63/2/r12 = 63/2/r10-11",
+      "why": "p63: the subtotal 854.07 printed after the 2 lines above it"
+    },
+    {
+      "eq": "120/1/r2.v4 = 120/1/r2.v1 + 120/1/r2.v2 + 120/1/r2.v3",
+      "why": "p120: `Number of Pupils (including Special Clas`: the total column is the three before it"
+    },
+    {
+      "eq": "120/1/r3.v4 = 120/1/r3.v1 + 120/1/r3.v2 + 120/1/r3.v3",
+      "why": "p120: `Average Daily Attendance, 1972-73`: the total column is the three before it"
+    },
+    {
+      "eq": "120/1/r4.v4 = 120/1/r4.v1 + 120/1/r4.v2 + 120/1/r4.v3",
+      "why": "p120: `Average Membership, 1972-73`: the total column is the three before it"
+    },
+    {
+      "eq": "120/1/r5.v4 = 120/1/r5.v1 + 120/1/r5.v2 + 120/1/r5.v3",
+      "why": "p120: `Number of Full-time Teachers, 1972-73`: the total column is the three before it"
+    },
+    {
+      "eq": "120/1/r6.v4 = 120/1/r6.v1 + 120/1/r6.v2 + 120/1/r6.v3",
+      "why": "p120: `Number of Full-time Supervisors, 1972-73`: the total column is the three before it"
+    },
+    {
+      "eq": "120/1/r7.v4 = 120/1/r7.v1 + 120/1/r7.v2 + 120/1/r7.v3",
+      "why": "p120: `Number of Supervising Principals, 1972-7`: the total column is the three before it"
+    },
+    {
+      "eq": "120/1/r11.v4 = 120/1/r11.v1 + 120/1/r11.v2 + 120/1/r11.v3",
+      "why": "p120: `NET TOTAL EXPENDITURES FOR DAY SCHOOL SU`: the total column is the three before it"
+    },
+    {
+      "eq": "121/1/r17 = 121/1/r2-16",
+      "why": "p121: the subtotal 2,597,285.00 printed after the 12 lines above it"
+    },
+    {
+      "eq": "122/1/r2.v1 = 122/1/r2.v2 + 122/1/r2.v3",
+      "why": "p122: `P. L. 874 SPECIAL FEDERAL REIMBURSEMENT `: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r4.v1 = 122/1/r4.v2 + 122/1/r4.v3",
+      "why": "p122: `P. L. 89-10 (ESEA), Title 1, 1973-74 Pro`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r5.v1 = 122/1/r5.v2 + 122/1/r5.v3",
+      "why": "p122: `P. L. 89-10 (ESEA), Title 11, 1971-72 Pr`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r6.v1 = 122/1/r6.v2 + 122/1/r6.v3",
+      "why": "p122: `P. L. 89-10 (ESEA), Title 11, 1972-73 Pr`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r7.v1 = 122/1/r7.v2 + 122/1/r7.v3",
+      "why": "p122: `P. L. 89-10 (ESEA), Title 11, 1973-74 Pr`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r8.v1 = 122/1/r8.v2 + 122/1/r8.v3",
+      "why": "p122: `P. L. 89-10 (ESEA), Title 11, Special Pu`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r9.v1 = 122/1/r9.v2 + 122/1/r9.v3",
+      "why": "p122: `P. L. 864 (NDEA), Title III Bal. on Hand`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r10.v1 = 122/1/r10.v2 + 122/1/r10.v3",
+      "why": "p122: `P. L. 89-313, ESEA, Title VI-B (Amendmen`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r11.v1 = 122/1/r11.v2 + 122/1/r11.v3",
+      "why": "p122: `P. L. 90-576 (Vocational Education - Bus`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r12.v1 = 122/1/r12.v2 + 122/1/r12.v3",
+      "why": "p122: `P. L. 92-318 (Vocational Education - Ind`: the first column is the other two"
+    },
+    {
+      "eq": "122/1/r13.v1 = 122/1/r13.v2 + 122/1/r13.v3",
+      "why": "p122: `ATHLETIC ACCOUNT (Chapter 658 Funds) Bal`: the first column is the other two"
+    },
+    {
+      "eq": "#91689.48 = 61/1/r1-4",
+      "why": "p61: the Trust Fund Commission's summary, total `$91,689.48` printed beside the list (no cell holds it as a figure)"
+    }
+  ]
 }

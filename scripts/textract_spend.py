@@ -127,7 +127,10 @@ def check_ledger_intact():
 
 
 def latched():
-    for p in (LATCH, METERED_STOP):
+    # TEXTRACT_IGNORE_METERED=1 lets Textract alone run while STOP-METERED keeps the meeting backlog
+    # paused (30 Oct 2026, the annual-report re-reads). The latch, the caps and AWS's budget still bind.
+    stops = (LATCH,) if os.environ.get('TEXTRACT_IGNORE_METERED') == '1' else (LATCH, METERED_STOP)
+    for p in stops:
         if p.exists():
             return '%s exists: %s' % (p.name, p.read_text().strip() or '(no reason given)')
     return None

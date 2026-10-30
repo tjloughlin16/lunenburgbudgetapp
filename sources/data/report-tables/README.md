@@ -297,10 +297,14 @@ named pension allowances. Named births and burials are publishable too. The read
 takedown.
 
 Births landed so far: 1986 p62 tables 2-4 (22 rows, `report-vital-records`, family `births`; name,
-birthplace and parents in the label, the day as v1, as the burials land). **Births and marriages
-still NOT landed** (mapped with no dataset; a later pass): 2001 p75-78, 2002 p70-73, 2003 p76-78,
-2004 p78-83, 2005 p75-80 (and 2005 p80 deaths), 2006 p71-75, 2007 p80-83. 1981-1985 sent no
-births page for tables.
+birthplace and parents in the label, the day as v1, as the burials land). **Births 2001-2007 landed 30 October 2026** (`report-vital-records`, family `births`: 80, 77, 80, 84,
+82, 82, 68 rows, each equal to the name cells on the printed pages; the month is the `group`, or the
+header cell on a page that opens mid-month, e.g. 2006 p72 `MAY`), and the 2005 and 2006 Town Clerk
+deaths (78 rows each, family `deaths`). **Marriages 2001-2007 are NOT landed, and the reason is a
+reader limit, not a decision:** a marriage is two rows (groom, bride) with the date on the first only,
+and `read_report_tables.py` takes a dateless row for a heading, so it lands about half the people
+(2001: 43 of 83 name cells). Landing the half would publish a partial list as the list; it needs a
+reader opt-in that carries the date down. 1981-1985 sent no births page for tables.
 
 Named perpetual-care bequest donors are landed as in 1986: 1982 p143/2 (`Bequests Received`, 18
 donors).

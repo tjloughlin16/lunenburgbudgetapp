@@ -208,7 +208,10 @@ CATEGORIES = [
         # `annual-reports` leads this shelf because it is the DOCUMENTS themselves --
         # sixteen files, downloadable, each with its sha256 -- and the state of what we
         # read out of them. A reader checking a figure starts at the page it came from.
-        ('', ['annual-reports', 'connecting-the-budget', 'what-you-can-ask', 'questions']),
+        # `historical-report` sits beside the documents it proves were read, and says what
+        # they say about the town across all of them.
+        ('', ['annual-reports', 'historical-report', 'connecting-the-budget',
+              'what-you-can-ask', 'questions']),
     ]),
 ]
 
@@ -296,6 +299,11 @@ ABOUT = {
         'the sha256 of the bytes we hold \u2014 and what we read out of them, by category. '
         'Says plainly which pages tie to a total the page itself prints and which carry '
         'figures nothing has ever checked, because those are not the same thing.',
+    'historical-report':
+        'Every annual town report this archive holds, read for what it says about the '
+        'town across all of them: the tax rate and the revaluations beside its falls, the '
+        'population, the longest names on the school rosters, and the road from the first '
+        'study of a town manager to the charter. Each figure cites its edition and page.',
     'open-seats':
         'Which of the town’s boards and committees has a seat going spare, and when the '
         'filled ones come up. A list rather than a report: the one page here somebody '

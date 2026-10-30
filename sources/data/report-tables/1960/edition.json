@@ -80,5 +80,27 @@
   ],
   "receipts_stop_at_grand": true,
   "collector_columns": true,
-  "signed_figures": true
+  "signed_figures": true,
+  "expended_from_amounts": true,
+  "ed_mark": true,
+  "stepped_subtotals_in": [
+    "report-fund-balance-sheets",
+    "report-trust-funds"
+  ],
+  "school_statistics_totals": true,
+  "dollar_sign_labels": true,
+  "cell_readings": [
+    {
+      "cell": "117/1/2/9",
+      "textract": "14*",
+      "read_as": "14",
+      "why": "a footnote mark after a count of days served; the page explains it below the table, `(*Elementary, 13 days; Jr.-Sr. High School, 15 days)`"
+    }
+  ],
+  "declared_identities": [
+    {
+      "eq": "104/1/r15.v1 = 104/1/r2-14.v2",
+      "why": "p104: the 1960 Spent column, $554,319.80 printed on the P. L. 874 line, is the sum of the thirteen account lines above it"
+    }
+  ]
 }

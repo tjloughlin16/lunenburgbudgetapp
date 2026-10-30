@@ -106,5 +106,326 @@
   "id_column_words": true,
   "recon_net_on_transfer_line": true,
   "stacked_pairs": true,
-  "receipts_span": true
+  "receipts_span": true,
+  "statement_span": [
+    "report-statement-of-payments"
+  ],
+  "declared_identities": [
+    {
+      "eq": "43/4/r2 = 0.5*43/4/r3",
+      "why": "p43: the kindergarten rate is printed as `(1/2 X $2110.)`, January-December 1982 rates"
+    },
+    {
+      "eq": "86/1/r2.v4 = 86/1/r2.v1 + 86/1/r2.v2 + 86/1/r2.v3",
+      "why": "p86: number of pupils, the GRAND TOTAL (K-12) column is the three levels"
+    },
+    {
+      "eq": "86/1/r3.v4 = 86/1/r3.v1 + 86/1/r3.v2 + 86/1/r3.v3",
+      "why": "p86: average membership, GRAND TOTAL column"
+    },
+    {
+      "eq": "86/1/r19.v4 = 86/1/r19.v1 + 86/1/r19.v2 + 86/1/r19.v3",
+      "why": "p86: net total expenditures for day school, GRAND TOTAL column"
+    },
+    {
+      "eq": "86/1/r7.v5 = 86/1/r7.v1 + 86/1/r7.v2 + 86/1/r7.v3 + 86/1/r7.v4",
+      "why": "p86: cafeteria personnel FTE, GRAND TOTAL column"
+    },
+    {
+      "eq": "86/1/r9.v5 = 86/1/r9.v1 + 86/1/r9.v2 + 86/1/r9.v3 + 86/1/r9.v4",
+      "why": "p86: clerical personnel FTE, GRAND TOTAL column"
+    },
+    {
+      "eq": "86/1/r10.v5 = 86/1/r10.v1 + 86/1/r10.v2 + 86/1/r10.v3 + 86/1/r10.v4",
+      "why": "p86: custodial personnel FTE, GRAND TOTAL column"
+    },
+    {
+      "eq": "87/1/r10.v1 = 87/1/r2-9.v1",
+      "why": "p87: FY-81 actual receipts, items 1-8 sum to the printed $1,188,605 (items 9-10 are printed below it as `In addition`)"
+    },
+    {
+      "eq": "87/1/r10.v2 = 87/1/r2.v2 + #86375 + #12257 + 87/1/r4-9.v2",
+      "why": "p87: FY-82 estimated receipts, items 1-8 sum to the printed $1,187,341; transportation is printed as 86,375./Regular and 12,257./Spec. Needs"
+    },
+    {
+      "eq": "89/1/r5.v3 = 89/1/r5.v1 - 89/1/r5.v2",
+      "why": "p89: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "89/1/r6.v3 = 89/1/r6.v1 - 89/1/r6.v2",
+      "why": "p89: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "89/1/r7.v3 = 89/1/r7.v1 - 89/1/r7.v2",
+      "why": "p89: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "90/1/r2.v3 = 90/1/r2.v1 - 90/1/r2.v2",
+      "why": "p90: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "90/1/r3.v3 = 90/1/r3.v1 - 90/1/r3.v2",
+      "why": "p90: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "90/1/r4.v3 = 90/1/r4.v1 - 90/1/r4.v2",
+      "why": "p90: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "90/1/r6.v3 = 90/1/r6.v1 - 90/1/r6.v2",
+      "why": "p90: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "91/1/r3.v3 = 91/1/r3.v1 - 91/1/r3.v2",
+      "why": "p91: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "91/1/r5.v3 = 91/1/r5.v1 - 91/1/r5.v2",
+      "why": "p91: a starred figure is the `*Balance on Hand, 6/30/81` (footnote p91): FY-81 appropriation less FY-81 spent"
+    },
+    {
+      "eq": "#0.41 = 91/1/r7.v1 - 91/1/r7.v2",
+      "why": "p91: account 23 prints its balance `.41*` (`*Balance on Hand, 6/30/81`): 412.00 less 411.59"
+    },
+    {
+      "eq": "93/1/r25.v2 = 93/1/r5.v1 + 93/1/r6.v1 + 93/1/r7.v1 + 93/1/r10.v1 + 93/1/r11.v1 + 93/1/r12.v1 + 93/1/r15.v1 + 93/1/r16.v1 + 93/1/r17.v1 + 93/1/r20.v1 + 93/1/r21.v1 + 93/1/r22.v2",
+      "why": "p93: interest-bearing accounts, the twelve month-ends sum to TOTALS (June prints cash on hand first)"
+    },
+    {
+      "eq": "93/1/r25.v3 = 93/1/r5.v2 + 93/1/r6.v2 + 93/1/r7.v2 + 93/1/r10.v2 + 93/1/r11.v2 + 93/1/r12.v2 + 93/1/r15.v2 + 93/1/r16.v2 + 93/1/r17.v2 + 93/1/r20.v2 + 93/1/r21.v2 + 93/1/r22.v3",
+      "why": "p93: investments, the twelve month-ends sum to TOTALS"
+    },
+    {
+      "eq": "93/1/r25.v4 = 93/1/r5.v3 + 93/1/r6.v3 + 93/1/r7.v3 + 93/1/r10.v3 + 93/1/r11.v3 + 93/1/r12.v3 + 93/1/r15.v3 + 93/1/r16.v3 + 93/1/r17.v3 + 93/1/r20.v3 + 93/1/r21.v3 + 93/1/r22.v4",
+      "why": "p93: total all cash and investments, the twelve month-ends sum to TOTALS"
+    },
+    {
+      "eq": "93/1/r25.v5 = 93/1/r5.v4 + 93/1/r6.v4 + 93/1/r7.v4 + 93/1/r10.v4 + 93/1/r11.v4 + 93/1/r12.v4 + 93/1/r15.v4 + 93/1/r16.v4 + 93/1/r17.v4 + 93/1/r20.v4 + 93/1/r21.v4 + 93/1/r22.v5",
+      "why": "p93: cash exempt amount, the twelve month-ends sum to TOTALS"
+    },
+    {
+      "eq": "93/1/r29.v2 = 93/1/r25.v2 + 93/1/r27.v2",
+      "why": "p93: NET TOTALS = TOTALS less Total Exempt from Investment, interest-bearing column"
+    },
+    {
+      "eq": "93/1/r29.v4 = 93/1/r25.v4 - #1568730",
+      "why": "p93: NET TOTALS = TOTALS less Total Exempt from Investment, total column (the second (1,568,730) is printed under TOTAL ALL CASH)"
+    },
+    {
+      "eq": "108/1/r6 = 108/1/r2-5",
+      "why": "p108: worthy poor funds subtotal"
+    },
+    {
+      "eq": "108/1/r10 = 108/1/r8-9",
+      "why": "p108: sidewalks and grounds subtotal"
+    },
+    {
+      "eq": "108/1/r21 = 108/1/r13-20",
+      "why": "p108: library bequests subtotal"
+    },
+    {
+      "eq": "108/1/r29 = 108/1/r24-28",
+      "why": "p108: library bequests subtotal"
+    },
+    {
+      "eq": "108/1/r37 = 108/1/r32-36",
+      "why": "p108: conservation funds subtotal"
+    },
+    {
+      "eq": "108/1/r42 = 108/1/r40-41",
+      "why": "p108: school prize funds subtotal"
+    },
+    {
+      "eq": "108/1/r43 = 107/3/r6 + 107/3/r7 + 108/1/r6 + 108/1/r10 + 108/1/r21 + 108/1/r22 + 108/1/r29 + 108/1/r30 + 108/1/r37 + 108/1/r38 + 108/1/r42",
+      "why": "p107-108: trust funds in custody, the unlabelled total $193,335.35 is the cemetery funds (p107) and every subtotal and single fund on p108"
+    },
+    {
+      "eq": "111/2/r6.v1 = 111/2/r4.v1 + 111/2/r5.v1",
+      "why": "p111: Middle School TOTAL = principal + interest, column 1"
+    },
+    {
+      "eq": "111/2/r6.v2 = 111/2/r4.v2 + 111/2/r5.v2",
+      "why": "p111: Middle School TOTAL = principal + interest, column 2"
+    },
+    {
+      "eq": "111/2/r6.v3 = 111/2/r4.v3 + 111/2/r5.v3",
+      "why": "p111: Middle School TOTAL = principal + interest, column 3"
+    },
+    {
+      "eq": "111/2/r6.v4 = 111/2/r4.v4 + 111/2/r5.v4",
+      "why": "p111: Middle School TOTAL = principal + interest, column 4"
+    },
+    {
+      "eq": "111/2/r6.v5 = 111/2/r4.v5 + 111/2/r5.v5",
+      "why": "p111: Middle School TOTAL = principal + interest, column 5"
+    },
+    {
+      "eq": "111/2/r6.v6 = 111/2/r4.v6 + 111/2/r5.v6",
+      "why": "p111: Middle School TOTAL = principal + interest, column 6"
+    },
+    {
+      "eq": "111/2/r6.v7 = 111/2/r4.v7 + 111/2/r5.v7",
+      "why": "p111: Middle School TOTAL = principal + interest, column 7"
+    },
+    {
+      "eq": "111/2/r10:p1.v1 = 111/2/r8:p1.v1 + 111/2/r9:p1.v1",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v1 = 111/2/r12:p1.v1 + 111/2/r13:p1.v1",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p1.v2 = 111/2/r8:p1.v2 + 111/2/r9:p1.v2",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v2 = 111/2/r12:p1.v2 + 111/2/r13:p1.v2",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p1.v3 = 111/2/r8:p1.v3 + 111/2/r9:p1.v3",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v3 = 111/2/r12:p1.v3 + 111/2/r13:p1.v3",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p1.v4 = 111/2/r8:p1.v4 + 111/2/r9:p1.v4",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v4 = 111/2/r12:p1.v4 + 111/2/r13:p1.v4",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p1.v5 = 111/2/r8:p1.v5 + 111/2/r9:p1.v5",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v5 = 111/2/r12:p1.v5 + 111/2/r13:p1.v5",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p1.v6 = 111/2/r8:p1.v6 + 111/2/r9:p1.v6",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v6 = 111/2/r12:p1.v6 + 111/2/r13:p1.v6",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p1.v7 = 111/2/r8:p1.v7 + 111/2/r9:p1.v7",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v7 = 111/2/r12:p1.v7 + 111/2/r13:p1.v7",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p1.v8 = 111/2/r8:p1.v8 + 111/2/r9:p1.v8",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p1.v8 = 111/2/r12:p1.v8 + 111/2/r13:p1.v8",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r10:p2.v1 = 111/2/r8:p2.v1 + 111/2/r9:p2.v1",
+      "why": "p111: Sanitary Landfill TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r14:p2.v1 = 111/2/r12:p2.v1 + 111/2/r13:p2.v1",
+      "why": "p111: GRAND TOTAL = principal + interest"
+    },
+    {
+      "eq": "111/2/r12:p1.v1 = 111/2/r4.v1 + 111/2/r8:p1.v1",
+      "why": "p111: GRAND TOTAL PRINCIPAL = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r13:p1.v1 = 111/2/r5.v1 + 111/2/r9:p1.v1",
+      "why": "p111: GRAND TOTAL INTEREST = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r12:p1.v2 = 111/2/r4.v2 + 111/2/r8:p1.v2",
+      "why": "p111: GRAND TOTAL PRINCIPAL = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r13:p1.v2 = 111/2/r5.v2 + 111/2/r9:p1.v2",
+      "why": "p111: GRAND TOTAL INTEREST = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r12:p1.v3 = 111/2/r4.v3 + 111/2/r8:p1.v3",
+      "why": "p111: GRAND TOTAL PRINCIPAL = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r13:p1.v3 = 111/2/r5.v3 + 111/2/r9:p1.v3",
+      "why": "p111: GRAND TOTAL INTEREST = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r12:p1.v4 = 111/2/r4.v4 + 111/2/r8:p1.v4",
+      "why": "p111: GRAND TOTAL PRINCIPAL = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r13:p1.v4 = 111/2/r5.v4 + 111/2/r9:p1.v4",
+      "why": "p111: GRAND TOTAL INTEREST = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r12:p1.v5 = 111/2/r4.v5 + 111/2/r8:p1.v5",
+      "why": "p111: GRAND TOTAL PRINCIPAL = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r13:p1.v5 = 111/2/r5.v5 + 111/2/r9:p1.v5",
+      "why": "p111: GRAND TOTAL INTEREST = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r12:p1.v6 = 111/2/r4.v6 + 111/2/r8:p1.v6",
+      "why": "p111: GRAND TOTAL PRINCIPAL = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r13:p1.v6 = 111/2/r5.v6 + 111/2/r9:p1.v6",
+      "why": "p111: GRAND TOTAL INTEREST = Middle School + Sanitary Landfill"
+    },
+    {
+      "eq": "111/2/r12:p1.v7 = 111/2/r8:p1.v7",
+      "why": "p111: GRAND TOTAL PRINCIPAL, fiscal 1989-1990, the landfill alone"
+    },
+    {
+      "eq": "111/2/r13:p1.v7 = 111/2/r9:p1.v7",
+      "why": "p111: GRAND TOTAL INTEREST, fiscal 1989-1990, the landfill alone"
+    },
+    {
+      "eq": "111/2/r12:p1.v8 = 111/2/r8:p1.v8",
+      "why": "p111: GRAND TOTAL PRINCIPAL, fiscal 1989-1990, the landfill alone"
+    },
+    {
+      "eq": "111/2/r13:p1.v8 = 111/2/r9:p1.v8",
+      "why": "p111: GRAND TOTAL INTEREST, fiscal 1989-1990, the landfill alone"
+    },
+    {
+      "eq": "111/2/r12:p2.v1 = 111/2/r4.v7 + 111/2/r8:p2.v1",
+      "why": "p111: GRAND TOTAL PRINCIPAL, total column"
+    },
+    {
+      "eq": "111/2/r13:p2.v1 = 111/2/r5.v7 + 111/2/r9:p2.v1",
+      "why": "p111: GRAND TOTAL INTEREST, total column"
+    },
+    {
+      "eq": "123/1/r4 = 123/1/r2-3",
+      "why": "p123: Mabel L. Allen school prize fund, two holdings"
+    },
+    {
+      "eq": "123/1/r7 = 123/1/r5-6",
+      "why": "p123: Joseph A. Harwood school prize fund, two holdings"
+    },
+    {
+      "eq": "#1044.22 = 123/1/r4 + 123/1/r7",
+      "why": "p123: the two school prize funds, printed `$ 1,044.22`"
+    },
+    {
+      "eq": "123/2/r9 = 123/2/r4-8",
+      "why": "p123: conservation funds by bank account"
+    }
+  ]
 }

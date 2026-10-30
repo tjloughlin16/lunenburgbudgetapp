@@ -113,6 +113,52 @@ POSITIONS = [
 NOT_A_ROLE = re.compile(r'^(WHITE|BLUE|RED|GREEN|YELLOW|GOLD|SILVER|\*|[0-9]{1,4})$', re.I)
 
 
+# THE SCHOOL VALUE IS NORMALISED BY RULE, NOT BY HAND.
+#
+# 1. `middle` BEFORE FY2016 IS TURKEY HILL. TJ, 30 October 2026: "turkey hill WAS middle
+#    school until it transitioned into the new building that was built that combined
+#    middle and high". The reports agree: every roster from 1970 to the FY2015 report
+#    heads the page `Turkey Hill Middle School` (1969 p116, 1970 p110, 1989 p78, 1997
+#    p40, 2007 p45, FY2015 p108 ...), and the FY2015 report says the new co-located
+#    middle/high school opens in August 2016. From the FY2016 report the roster is headed
+#    `Lunenburg Middle School Faculty/Staff Roster` (FY2016 p116) and Turkey Hill is an
+#    elementary school (`Grades 6-12 will be in the new co-located middle/high school`,
+#    FY2015 report). So `middle` is a separate school only from FY2016. The page readings
+#    for 1968, 1969 and 1970 had labelled the Turkey Hill roster `middle`; 1971-1985 and
+#    1989-1998 had already been read as `turkey-hill`.
+MIDDLE_HIGH_FY = 2016
+
+# 2. BROOKS HOUSE IS THE CENTRAL OFFICE'S BUILDING. A block headed `Brooks House` (the
+#    administration, its clerical staff, the special class housed there) was read as
+#    `central-office` in 1962-65 and 1970-75 and as `unknown` in 1959-61 and 1966-67,
+#    because the dumper guessed from the page and the page names no school. Where the
+#    printed heading says Brooks House and no school was established, it is
+#    `central-office`. A school already established is never overridden.
+BROOKS = re.compile(r'\bBROOKS HOUSE\b', re.I)
+
+# 3. A SCHOOL BUS CONTRACTOR IS NOT STAFF. The 1965, 1967, 1968 and 1969 reports list the
+#    town's bus contractors (`SCHOOL BUS CONTRACTORS`, `School Bus Contractor (Buses 2
+#    and 1)`) in the roster pages: people the town paid by contract, not employees. They
+#    are written to `staff-roster-contractors.csv` and kept out of the staff entries and
+#    counts, so a staff headcount is not inflated by them and they are not lost.
+CONTRACTOR = re.compile(r'BUS CONTRACTOR', re.I)
+CONTRACTORS = os.path.join(DATA, 'staff-roster-contractors.csv')
+
+
+def normalise_school(school, fy, role_raw, grade_or_dept):
+    """The school for an entry after rules 1 and 2 above."""
+    school = school or 'unknown'
+    try:
+        year = int(str(fy).replace('FY', ''))
+    except ValueError:
+        year = None
+    if school == 'middle' and year is not None and year < MIDDLE_HIGH_FY:
+        return 'turkey-hill'
+    if school == 'unknown' and BROOKS.search('%s %s' % (role_raw or '', grade_or_dept or '')):
+        return 'central-office'
+    return school
+
+
 def canonical(raw, heading=None):
     """The standardised position for a printed title, or None if nothing matches.
 
@@ -286,6 +332,7 @@ def main():
         return
 
     entries, ledger, unmapped = [], [], collections.Counter()
+    contractors = []
     all_hard, all_wrapped, all_inherited = [], [], []
     for fname, page in pages:
         total, claimed, missing = line_accounting(page)
@@ -298,13 +345,25 @@ def main():
         for e in page.get('entries', []):
             printed = (e.get('role_raw') or '').strip()
             usable = printed and not NOT_A_ROLE.match(printed.upper())
+            if CONTRACTOR.search('%s %s' % (e.get('role_raw') or '',
+                                            e.get('grade_or_dept') or '')):
+                contractors.append({
+                    'fy': fy, 'page': page.get('page'),
+                    'name': (e.get('name') or '').strip(),
+                    'role_raw': (e.get('role_raw') or '').strip(),
+                    'grade_or_dept': (e.get('grade_or_dept') or '').strip(),
+                    'line': e.get('line'), 'document': page.get('document')})
+                continue
             pos = canonical(e.get('role_raw'), e.get('grade_or_dept'))
             if pos is None:
                 unmapped[re.sub(r'\s+', ' ', (e.get('role_raw') or '').strip())] += 1
             entries.append({
                 # an ENTRY may name its own school where one page prints two (1981 p73: the
                 # high school's staff, then Turkey Hill's); otherwise the page's
-                'fy': fy, 'school': e.get('school') or school, 'page': page.get('page'),
+                'fy': fy,
+                'school': normalise_school(e.get('school') or school, fy,
+                                           e.get('role_raw'), e.get('grade_or_dept')),
+                'page': page.get('page'),
                 'name': (e.get('name') or '').strip(),
                 'role_raw': (e.get('role_raw') or '').strip(),
                 'position': pos or '',
@@ -329,6 +388,12 @@ def main():
     # disagreed about FY2024 by 64 people, which is the exact shape of defect this repo
     # catalogues: two derived things from one source, and nothing comparing them.
     entries = _one_printing_per_school(entries)
+    with open(CONTRACTORS, 'w', newline='') as fh:
+        w = csv.DictWriter(fh, fieldnames=['fy', 'page', 'name', 'role_raw',
+                                           'grade_or_dept', 'line', 'document'])
+        w.writeheader()
+        w.writerows(sorted(contractors, key=lambda r: (str(r['fy']), r['page'] or 0,
+                                                       r['line'] or 0)))
     with open(ENTRIES, 'w', newline='') as fh:
         w = csv.DictWriter(fh, fieldnames=['fy', 'school', 'page', 'name', 'role_raw',
                                            'position', 'position_from', 'grade_or_dept',
@@ -409,12 +474,12 @@ def main():
         for raw, n in unmapped.most_common(25):
             print(f'  {n:>4}  {raw[:70]}')
 
-    write_provenance(ledger, entries, agg, unmapped, all_hard, all_wrapped)
-    for p in (ENTRIES, COUNTS, MAPFILE, PROV):
+    write_provenance(ledger, entries, agg, unmapped, all_hard, all_wrapped, contractors)
+    for p in (ENTRIES, CONTRACTORS, COUNTS, MAPFILE, PROV):
         print(f'wrote {os.path.relpath(p, ROOT)}')
 
 
-def write_provenance(ledger, entries, agg, unmapped, hard=(), wrapped=()):
+def write_provenance(ledger, entries, agg, unmapped, hard=(), wrapped=(), contractors=()):
     years = sorted({str(r['fy']) for r in ledger if r['fy']})
     L = ['# School staff rosters — what was read, and what a count means', '',
          '**Generated by `scripts/build_staff_rosters.py`. Do not edit.**', '',
@@ -489,6 +554,24 @@ def write_provenance(ledger, entries, agg, unmapped, hard=(), wrapped=()):
     L.append('And `monty-tech` is a seventh school value covering six administrators of the')
     L.append('regional vocational school Lunenburg SENDS students to. They are not Lunenburg')
     L.append('staff and must be excluded from any district headcount.')
+    L.append('')
+    nm = sum(1 for e in entries if e['school'] == 'turkey-hill' and int(str(e['fy'])) < MIDDLE_HIGH_FY)
+    L.append('## Which school is `middle`, `turkey-hill`, and what is not staff')
+    L.append('')
+    L.append('**Turkey Hill WAS the middle school** until the co-located middle/high school')
+    L.append('opened in August 2016 (TJ, 30 October 2026; the FY2015 report states the')
+    L.append('opening). Every roster headed `Middle School` or `Turkey Hill Middle School`')
+    L.append(f'before the FY2016 report is therefore filed under `turkey-hill` ({nm} entries')
+    L.append('before FY2016). `middle` is a separate school only from FY2016 (the Lunenburg')
+    L.append('Middle School in the middle/high building), when Turkey Hill becomes an')
+    L.append('elementary school. The rule is `normalise_school` in the builder, not hand edits.')
+    L.append('')
+    L.append('**Brooks House** headings are filed under `central-office` wherever the page')
+    L.append('reading had not already established a school.')
+    L.append('')
+    L.append(f'**School bus contractors are not staff.** {len(contractors)} lines in the 1965,')
+    L.append('1967, 1968 and 1969 reports list the town\'s bus contractors; they are in')
+    L.append('`staff-roster-contractors.csv` and excluded from the entries and counts.')
     L.append('')
     L.append('## Names')
     L.append('')

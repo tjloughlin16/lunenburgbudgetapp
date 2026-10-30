@@ -98,5 +98,254 @@
   "id_column_words": true,
   "recon_net_on_transfer_line": true,
   "stacked_pairs": true,
-  "receipts_span": true
+  "receipts_span": true,
+  "declared_identities": [
+    {
+      "eq": "47/1/r4 = 47/1/r1-3",
+      "why": "p47: the subtotal 4,600.00 printed after the 3 lines above it"
+    },
+    {
+      "eq": "47/2/r14 = 47/2/r2-13",
+      "why": "p47: the subtotal 45,699.75 printed after the 12 lines above it"
+    },
+    {
+      "eq": "72/1/r4 = 72/1/r2-3",
+      "why": "p72: the subtotal 1,277,376.89 printed after the 2 lines above it"
+    },
+    {
+      "eq": "72/1/r10 = 72/1/r8-9",
+      "why": "p72: the subtotal 86,005.21 printed after the 2 lines above it"
+    },
+    {
+      "eq": "72/1/r15 = 72/1/r11-14",
+      "why": "p72: the subtotal 118,333.69 printed after the 4 lines above it"
+    },
+    {
+      "eq": "72/1/r21 = 72/1/r19-20",
+      "why": "p72: the subtotal 101.00 printed after the 2 lines above it"
+    },
+    {
+      "eq": "72/1/r26 = 72/1/r24-25",
+      "why": "p72: the subtotal 34,306.12 printed after the 2 lines above it"
+    },
+    {
+      "eq": "72/1/r31 = 72/1/r28-30",
+      "why": "p72: the subtotal 32,587.24 printed after the 3 lines above it"
+    },
+    {
+      "eq": "72/2/r11 = 72/2/r8-10",
+      "why": "p72: the subtotal 4,723.94 printed after the 3 lines above it"
+    },
+    {
+      "eq": "72/2/r17 = 72/2/r15-16",
+      "why": "p72: the subtotal 4,993.51 printed after the 2 lines above it"
+    },
+    {
+      "eq": "72/2/r24 = 72/2/r21-23",
+      "why": "p72: the subtotal 35,064.35 printed after the 3 lines above it"
+    },
+    {
+      "eq": "73/1/r31 = 73/1/r25-30",
+      "why": "p73: the subtotal 29,920.75 printed after the 6 lines above it"
+    },
+    {
+      "eq": "74/1/r4 = 74/1/r2-3",
+      "why": "p74: the subtotal 24,633.52 printed after the 2 lines above it"
+    },
+    {
+      "eq": "74/1/r15 = 74/1/r9-14",
+      "why": "p74: the subtotal 208,491.25 printed after the 6 lines above it"
+    },
+    {
+      "eq": "77/1/r4 = 77/1/r2-3",
+      "why": "p77: the subtotal 3,369.98 printed after the 2 lines above it"
+    },
+    {
+      "eq": "77/1/r13 = 77/1/r8-12",
+      "why": "p77: the subtotal 62,786.66 printed after the 5 lines above it"
+    },
+    {
+      "eq": "77/2/r4 = 77/2/r2-3",
+      "why": "p77: the subtotal 56,165.43 printed after the 2 lines above it"
+    },
+    {
+      "eq": "77/3/r14 = 77/3/r3-13",
+      "why": "p77: the subtotal 6,820.02 printed after the 11 lines above it"
+    },
+    {
+      "eq": "83/1/r8 = 83/1/r6-7",
+      "why": "p83: the subtotal 21,750.00 printed after the 2 lines above it"
+    },
+    {
+      "eq": "83/1/r9.v1 = 83/1/r9.v2 + 83/1/r9.v3",
+      "why": "p83: ``: the first column is the other two"
+    },
+    {
+      "eq": "83/1/r23 = 83/1/r19-22",
+      "why": "p83: the subtotal 3,292.08 printed after the 4 lines above it"
+    },
+    {
+      "eq": "89/1/r18 = 89/1/r5-17",
+      "why": "p89: the subtotal 12,072.86 printed after the 13 lines above it"
+    },
+    {
+      "eq": "89/1/r43 = 89/1/r23-42",
+      "why": "p89: the subtotal 33,183.19 printed after the 20 lines above it"
+    },
+    {
+      "eq": "93/1/r12 = 93/1/r7-11",
+      "why": "p93: the subtotal 77.06 printed after the 4 lines above it"
+    },
+    {
+      "eq": "93/1/r17 = 93/1/r15-16",
+      "why": "p93: the subtotal 85.00 printed after the 2 lines above it"
+    },
+    {
+      "eq": "154/1/r2.v4 = 154/1/r2.v1 + 154/1/r2.v2 + 154/1/r2.v3",
+      "why": "p154: `1. NUMBER OF PUPILS (including Special C`: the total column is the three before it"
+    },
+    {
+      "eq": "154/1/r3.v4 = 154/1/r3.v1 + 154/1/r3.v2 + 154/1/r3.v3",
+      "why": "p154: `2. AVERAGE DAILY ATTENDANCE (including S`: the total column is the three before it"
+    },
+    {
+      "eq": "154/1/r4.v4 = 154/1/r4.v1 + 154/1/r4.v2 + 154/1/r4.v3",
+      "why": "p154: `3. AVERAGE MEMBERSHIP (including Special`: the total column is the three before it"
+    },
+    {
+      "eq": "154/1/r14 = 154/1/r12-13",
+      "why": "p154: the subtotal 6.00 printed after the 2 lines above it"
+    },
+    {
+      "eq": "154/1/r14.v4 = 154/1/r14.v1 + 154/1/r14.v2 + 154/1/r14.v3",
+      "why": "p154: `Principals`: the total column is the three before it"
+    },
+    {
+      "eq": "154/1/r16.v4 = 154/1/r16.v1 + 154/1/r16.v2 + 154/1/r16.v3",
+      "why": "p154: `Supervisors`: the total column is the three before it"
+    },
+    {
+      "eq": "155/1/r19 = 155/1/r3-18",
+      "why": "p155: the subtotal 3,114,303.00 printed after the 12 lines above it"
+    },
+    {
+      "eq": "157/1/r7.v1 = 157/1/r7.v2 + 157/1/r7.v3",
+      "why": "p157: ``: the first column is the other two"
+    },
+    {
+      "eq": "157/1/r12.v1 = 157/1/r12.v2 + 157/1/r12.v3",
+      "why": "p157: `8. PUBLIC LAW 89-313, ESEA, Title I, 197`: the first column is the other two"
+    },
+    {
+      "eq": "157/1/r13.v1 = 157/1/r13.v2 + 157/1/r13.v3",
+      "why": "p157: `9. PUBLIC LAW 89-10, ESEA, Title II, 197`: the first column is the other two"
+    },
+    {
+      "eq": "157/1/r14.v1 = 157/1/r14.v2 + 157/1/r14.v3",
+      "why": "p157: `10. PUBLIC LAW 89-10, ESEA, Title II, 19`: the first column is the other two"
+    },
+    {
+      "eq": "157/1/r15.v1 = 157/1/r15.v2 + 157/1/r15.v3",
+      "why": "p157: `11. PUBLIC LAW 89-10, ESEA, Title II, 19`: the first column is the other two"
+    },
+    {
+      "eq": "158/1/r2.v1 = 158/1/r2.v2 + 158/1/r2.v3",
+      "why": "p158: `12. PUBLIC LAW 89-10, ESEA, Title II, 19`: the first column is the other two"
+    },
+    {
+      "eq": "158/1/r3.v1 = 158/1/r3.v2 + 158/1/r3.v3",
+      "why": "p158: `13. PUBLIC LAW 89-10, ESEA, Title II, 19`: the first column is the other two"
+    },
+    {
+      "eq": "158/1/r5.v1 = 158/1/r5.v2 + 158/1/r5.v3",
+      "why": "p158: ``: the first column is the other two"
+    },
+    {
+      "eq": "158/1/r7.v1 = 158/1/r7.v2 + 158/1/r7.v3",
+      "why": "p158: `16. PUBLIC LAW 90-576, VOCATIONAL EDUCAT`: the first column is the other two"
+    },
+    {
+      "eq": "158/1/r10.v1 = 158/1/r10.v2 + 158/1/r10.v3",
+      "why": "p158: ``: the first column is the other two"
+    },
+    {
+      "eq": "158/1/r13.v1 = 158/1/r13.v2 + 158/1/r13.v3",
+      "why": "p158: ``: the first column is the other two"
+    },
+    {
+      "eq": "155/1/r19.v1 = 155/1/r3-4.v1 + 155/1/r6-7.v1 + 155/1/r9-10.v1 + 155/1/r12.v1 + #178826 + 155/1/r15-18.v1",
+      "why": "p155: the FY-76 appropriation column sums to $2,928,767 (4000 Expenses prints `178,826,`, a trailing comma no reading parses, so it is quoted)"
+    },
+    {
+      "eq": "155/1/r19.v2 = 155/1/r3-4.v2 + 155/1/r6-7.v2 + 155/1/r9-10.v2 + 155/1/r12.v2 + 155/1/r13.v1 + 155/1/r15-18.v2",
+      "why": "p155: the FY-76 spent column sums to $2,810,092.76"
+    },
+    {
+      "eq": "155/1/r19.v3 = 155/1/r3-4.v3 + 155/1/r6-7.v3 + 155/1/r9-10.v3 + 155/1/r12.v3 + 155/1/r13.v2 + 155/1/r15-18.v3",
+      "why": "p155: the FY-77 request column sums to $3,114,303"
+    },
+    {
+      "eq": "155/1/r21.v1 = 155/1/r19.v1 + 155/1/r20.v1",
+      "why": "p155: net budget request = total less federal funds (P.L. 874), FY-76 appropriation"
+    },
+    {
+      "eq": "155/1/r21.v2 = 155/1/r19.v2 - #50000",
+      "why": "p155: net spent = spent less `-50,000.00` federal funds"
+    },
+    {
+      "eq": "155/1/r23 = 155/1/r21.v2 + #111540.12",
+      "why": "p155: TOTAL SPENT FROM TOWN $2,871,632.88 = net spent + `+111,540.12` placed in escrow"
+    },
+    {
+      "eq": "155/1/r25 = 155/1/r23 + #7134.12",
+      "why": "p155: $2,878,767.00 = total spent + `+ 7,134.12` returned to the town"
+    },
+    {
+      "eq": "#139981.59 = 91/1/r1-7",
+      "why": "p91: the Trust Fund summary of funds, total `$139,981.59` printed beside the list (no cell holds it as a figure)"
+    },
+    {
+      "eq": "87/1/r38.v2 = #2760092.76 + #111540.12 + 87/1/r38.v3",
+      "why": "p87: School Department, funds available $2,878,767.00 = Total Expended printed as two stacked figures `2,760,092.76 111,540.12` (spent, and placed in escrow) + Balance to Revenue `TR 7,134.12`; p155 prints the same three",
+      "replaces": "the Total Expended cell holds two stacked figures, which the row identity cannot read"
+    },
+    {
+      "eq": "89/1/r18.v1 = 89/1/r18.v2 + #768.77",
+      "why": "p89: Cemeteries, funds available 12,841.63 = total expended 12,072.86 + balance to revenue `768.77` (read into the label cell)",
+      "replaces": "Textract set the header `Total Expended` over the column of TR marks, one column left of the figures (p89 r1), so the row identity read a mark as the expended figure"
+    },
+    {
+      "eq": "89/1/r19.v2 = 89/1/r19.v4",
+      "why": "p89: Oiling Roads at North Cemetery, funds available 173.27 = total expended 173.27 (TR), no balance",
+      "replaces": "Textract set the header `Total Expended` over the column of TR marks, one column left of the figures (p89 r1), so the row identity read a mark as the expended figure"
+    },
+    {
+      "eq": "89/1/r20.v2 = 89/1/r20.v4",
+      "why": "p89: Purchase Cemetery Truck, funds available 5,000.00 = total expended 5,000.00 (TR), no balance",
+      "replaces": "Textract set the header `Total Expended` over the column of TR marks, one column left of the figures (p89 r1), so the row identity read a mark as the expended figure"
+    },
+    {
+      "eq": "89/1/r43.v2 = 89/1/r43.v3",
+      "why": "p89: Park Department, funds available 33,183.19 = total expended 33,183.19, no balance",
+      "replaces": "Textract set the header `Total Expended` over the column of TR marks, one column left of the figures (p89 r1), so the row identity read a mark as the expended figure"
+    },
+    {
+      "eq": "89/1/r44.v2 = 89/1/r44.v4",
+      "why": "p89: Sealing & Color-Coating Wallis Park courts, funds available 225.00 = total expended 225.00 (TR)",
+      "replaces": "Textract set the header `Total Expended` over the column of TR marks, one column left of the figures (p89 r1), so the row identity read a mark as the expended figure"
+    },
+    {
+      "eq": "89/1/r45.v2 = 89/1/r45.v3",
+      "why": "p89: Purchase Tractor & Mower, funds available 2,500.00 = total expended 2,500.00 (TR; amounts expended `1,995.00 505.00` stacked in one cell)",
+      "replaces": "Textract set the header `Total Expended` over the column of TR marks, one column left of the figures (p89 r1), so the row identity read a mark as the expended figure"
+    }
+  ],
+  "cell_readings": [
+    {
+      "cell": "67/1/52/2",
+      "textract": "Premium 507.30",
+      "read_as": "507.30",
+      "why": "`Premium` ends the label (`Reimbursement by CETA - Workmen's Compensation Premium`), wrapped into the figure cell; the figure is the receipt (1976 NEEDS 1)"
+    }
+  ]
 }

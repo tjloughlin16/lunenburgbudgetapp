@@ -87,5 +87,129 @@
     "report-trust-funds",
     "report-school-budget-summary",
     "report-school-special-accounts"
+  ],
+  "declared_identities": [
+    {
+      "eq": "44/2/r27 = 44/1/r6 + 44/1/r12 + 44/1/r13 + 44/1/r17 + 44/1/r21 + 44/2/r7 + 44/2/r18 + 44/2/r24 + 44/2/r26",
+      "why": "p44: the asset total $603,636.24 is the sum of the section figures printed in the subtotal column of both groups"
+    },
+    {
+      "eq": "44/1/r6 = 44/1/r4-5",
+      "why": "p44: cash subtotal"
+    },
+    {
+      "eq": "44/1/r12 = 44/1/r9-11",
+      "why": "p44: property taxes subtotal"
+    },
+    {
+      "eq": "44/1/r17 = 44/1/r15-16",
+      "why": "p44: motor vehicle excise subtotal"
+    },
+    {
+      "eq": "44/1/r21 = 44/1/r19-20",
+      "why": "p44: tax titles and possessions subtotal"
+    },
+    {
+      "eq": "44/2/r7 = 44/2/r4-6",
+      "why": "p44: departmental subtotal"
+    },
+    {
+      "eq": "44/2/r18 = 44/2/r10-17",
+      "why": "p44: aid to highways subtotal"
+    },
+    {
+      "eq": "44/2/r24 = 44/2/r22-23",
+      "why": "p44: underestimates subtotal"
+    },
+    {
+      "eq": "44/4/r14 = 44/4/r10-13",
+      "why": "p44: federal school grants subtotal"
+    },
+    {
+      "eq": "44/4/r18 = 44/4/r16-17",
+      "why": "p44: revolving funds subtotal"
+    },
+    {
+      "eq": "124/1/r2.v4 = 124/1/r2.v1 + 124/1/r2.v2 + 124/1/r2.v3",
+      "why": "p124: number of pupils, total column = the three schools"
+    },
+    {
+      "eq": "124/1/r3.v4 = 124/1/r3.v1 + 124/1/r3.v2 + 124/1/r3.v3",
+      "why": "p124: average daily attendance, total column"
+    },
+    {
+      "eq": "124/1/r4.v4 = 124/1/r4.v1 + 124/1/r4.v2 + 124/1/r4.v3",
+      "why": "p124: average membership, total column"
+    },
+    {
+      "eq": "124/1/r6.v4 = 124/1/r6.v1 + 124/1/r6.v2 + 124/1/r6.v3",
+      "why": "p124: full-time supervisors, total column"
+    },
+    {
+      "eq": "124/1/r11.v4 = 124/1/r11.v1 + 124/1/r11.v2 + 124/1/r11.v3",
+      "why": "p124: net total expenditures for day schools, total column"
+    },
+    {
+      "eq": "126/1/r6.v1 = 126/1/r6.v2 + 126/1/r6.v3",
+      "why": "p126: insurance recovery, received = expended + balance"
+    },
+    {
+      "eq": "126/1/r7.v1 = 126/1/r7.v2 + 126/1/r7.v3",
+      "why": "p126: recovery from pupils, received = expended + balance"
+    },
+    {
+      "eq": "128/1/r18.v1 = 128/1/r15-17.v1",
+      "why": "p128: athletic account, balance + gate receipts + appropriation, first column"
+    },
+    {
+      "eq": "128/1/r18.v2 = 128/1/r15-17.v2",
+      "why": "p128: athletic account, second column"
+    },
+    {
+      "eq": "128/1/r23.v1 = 128/1/r23.v2 + 128/1/r23.v3",
+      "why": "p128: Public Law 874, available = expended + balance"
+    },
+    {
+      "eq": "129/1/r8.v1 = 129/1/r5.v1 + 129/1/r7.v1",
+      "why": "p129: Title I, balance and allotment + first payment"
+    },
+    {
+      "eq": "129/1/r8.v1 = 129/1/r8.v2 + 129/1/r8.v3",
+      "why": "p129: Title I, available = expended + balance"
+    },
+    {
+      "eq": "129/1/r13.v1 = 129/1/r13.v2 + 129/1/r13.v3",
+      "why": "p129: Title II, available = expended + balance"
+    },
+    {
+      "eq": "129/1/r14.v1 = 129/1/r10.v1 + 129/1/r13.v1",
+      "why": "p129: Title II, the two program years"
+    },
+    {
+      "eq": "129/1/r20.v1 = 129/1/r20.v2 + 129/1/r20.v3",
+      "why": "p129: Public Law 864, available = expended + balance"
+    },
+    {
+      "eq": "125/1/r20.v1 = 125/1/r3-13.v1 + #275 + 125/1/r17-19.v1",
+      "why": "p125: the 1972 budget column sums to its printed total $2,094,069; Improvement of Sites prints `275.`, which no reading parses, so it is quoted"
+    },
+    {
+      "eq": "125/1/r20.v2 = 125/1/r3-13.v2 + 125/1/r16.v1 + 125/1/r17-19.v2",
+      "why": "p125: the 1972 spent column sums to its printed total $2,037,780.48 (Improvement of Sites prints 2 figures, so its spent is its v1)"
+    }
+  ],
+  "cell_readings": [
+    {
+      "cell": "49/1/16/3",
+      "textract": "17,416.75 5,022.00",
+      "read_as": "5,022.00",
+      "why": "the cell holds two printed lines: 17,416.75 is the Licenses and Permits subtotal (8,487.50 + 6,330.00 + 2,255.00 + 157.00 + 121.75 + 5.50 + 60.00, the items above it, read in their own cells) and 5,022.00 is Trailer Park Assessments, the item on this row (1972 NEEDS 4)"
+    },
+    {
+      "cell": "126/2/4/2",
+      "textract": "76 8,183.45",
+      "read_as": "8,183.45",
+      "why": "`76` is the end of the label `Chapter 76`: Textract's LINES read prints `(3) TUITION & TRANSPORTATION of STATE WARDS, Chapter 76` on one line and `8,183.45` alone at x 0.55; p48 prints the same receipt, `Public Welfare - Tuition & Transportation 8,183.45` (1972 NEEDS 6a)"
+    }
   ]
 }

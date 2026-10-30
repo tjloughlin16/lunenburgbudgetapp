@@ -123,5 +123,245 @@
   "id_column_words": true,
   "recon_net_on_transfer_line": true,
   "stacked_pairs": true,
-  "receipts_span": true
+  "receipts_span": true,
+  "declared_identities": [
+    {
+      "eq": "52/1/r5 = 52/1/r3-4",
+      "why": "p52: the subtotal 1,282,319.93 printed after the 2 lines above it"
+    },
+    {
+      "eq": "52/1/r16 = 52/1/r9-15",
+      "why": "p52: the subtotal 92,686.49 printed after the 5 lines above it"
+    },
+    {
+      "eq": "52/1/r22 = 52/1/r18-21",
+      "why": "p52: the subtotal 72,859.80 printed after the 4 lines above it"
+    },
+    {
+      "eq": "52/1/r28 = 52/1/r24-27",
+      "why": "p52: the subtotal 488.90 printed after the 4 lines above it"
+    },
+    {
+      "eq": "52/1/r32 = 52/1/r30-31",
+      "why": "p52: the subtotal 64,367.57 printed after the 2 lines above it"
+    },
+    {
+      "eq": "52/2/r10 = 52/2/r6-9",
+      "why": "p52: the subtotal 446.86 printed after the 4 lines above it"
+    },
+    {
+      "eq": "52/2/r15 = 52/2/r12-14",
+      "why": "p52: the subtotal 5,265.64 printed after the 3 lines above it"
+    },
+    {
+      "eq": "52/2/r23 = 52/2/r20-22",
+      "why": "p52: the subtotal 5,338.45 printed after the 3 lines above it"
+    },
+    {
+      "eq": "52/2/r28 = 52/2/r26-27",
+      "why": "p52: the subtotal 1,317.00 printed after the 2 lines above it"
+    },
+    {
+      "eq": "53/1/r21 = 53/1/r2-20",
+      "why": "p53: the subtotal 121,670.36 printed after the 19 lines above it"
+    },
+    {
+      "eq": "53/1/r28 = 53/1/r23-27",
+      "why": "p53: the subtotal 45,672.28 printed after the 5 lines above it"
+    },
+    {
+      "eq": "53/1/r33 = 53/1/r30-32",
+      "why": "p53: the subtotal 24,696.53 printed after the 3 lines above it"
+    },
+    {
+      "eq": "53/2/r4 = 53/2/r2-3",
+      "why": "p53: the subtotal 29,903.44 printed after the 2 lines above it"
+    },
+    {
+      "eq": "53/2/r14 = 53/2/r7-13",
+      "why": "p53: the subtotal 67,766.00 printed after the 6 lines above it"
+    },
+    {
+      "eq": "54/1/r4 = 54/1/r2-3",
+      "why": "p54: the subtotal 37,084.58 printed after the 2 lines above it"
+    },
+    {
+      "eq": "54/1/r11 = 54/1/r6-10",
+      "why": "p54: the subtotal 235,385.71 printed after the 5 lines above it"
+    },
+    {
+      "eq": "65/1/r4 = 65/1/r2-3",
+      "why": "p65: the subtotal 51,872.05 printed after the 2 lines above it"
+    },
+    {
+      "eq": "65/2/r15 = 65/2/r3-14",
+      "why": "p65: the subtotal 17,118.55 printed after the 12 lines above it"
+    },
+    {
+      "eq": "74/1/r12.v1 = 74/1/r12.v2 + 74/1/r12.v3",
+      "why": "p74: ``: the first column is the other two"
+    },
+    {
+      "eq": "74/1/r34 = 74/1/r29-33",
+      "why": "p74: the subtotal 60,049.73 printed after the 5 lines above it"
+    },
+    {
+      "eq": "74/1/r53 = 74/1/r50-52",
+      "why": "p74: the subtotal 29,900.00 printed after the 3 lines above it"
+    },
+    {
+      "eq": "82/1/r5 = 82/1/r3-4",
+      "why": "p82: the subtotal 586.39 printed after the 2 lines above it"
+    },
+    {
+      "eq": "82/1/r9 = 82/1/r7-8",
+      "why": "p82: the subtotal 529.34 printed after the 2 lines above it"
+    },
+    {
+      "eq": "145/1/r2.v4 = 145/1/r2.v1 + 145/1/r2.v2 + 145/1/r2.v3",
+      "why": "p145: `1. Number of Pupils (including Special C`: the total column is the three before it"
+    },
+    {
+      "eq": "145/1/r3.v4 = 145/1/r3.v1 + 145/1/r3.v2 + 145/1/r3.v3",
+      "why": "p145: `2. Average Daily Attendance, 1974-75`: the total column is the three before it"
+    },
+    {
+      "eq": "145/1/r4.v4 = 145/1/r4.v1 + 145/1/r4.v2 + 145/1/r4.v3",
+      "why": "p145: `3. Average Membership, 1974-75`: the total column is the three before it"
+    },
+    {
+      "eq": "145/1/r13.v4 = 145/1/r13.v1 + 145/1/r13.v2 + 145/1/r13.v3",
+      "why": "p145: `Part-time Nurses`: the total column is the three before it"
+    },
+    {
+      "eq": "145/1/r14.v4 = 145/1/r14.v1 + 145/1/r14.v2 + 145/1/r14.v3",
+      "why": "p145: `Principals`: the total column is the three before it"
+    },
+    {
+      "eq": "145/1/r19.v4 = 145/1/r19.v1 + 145/1/r19.v2 + 145/1/r19.v3",
+      "why": "p145: `1974-75 and State Formula)`: the total column is the three before it"
+    },
+    {
+      "eq": "148/1/r5.v1 = 148/1/r5.v2 + 148/1/r5.v3",
+      "why": "p148: `ADULT EDUCATION ACCOUNT (Self-Supporting`: the first column is the other two"
+    },
+    {
+      "eq": "148/1/r6.v1 = 148/1/r6.v2 + 148/1/r6.v3",
+      "why": "p148: `PUBLIC LAW 874, SPECIAL FEDERAL REIMBURS`: the first column is the other two"
+    },
+    {
+      "eq": "148/1/r8.v1 = 148/1/r8.v2 + 148/1/r8.v3",
+      "why": "p148: `PUBLIC LAW 89-10, ESEA, Title I, 1974-75`: the first column is the other two"
+    },
+    {
+      "eq": "148/1/r9.v1 = 148/1/r9.v2 + 148/1/r9.v3",
+      "why": "p148: `PUBLIC LAW 89-10, ESEA, Title II, 1972-7`: the first column is the other two"
+    },
+    {
+      "eq": "148/1/r10.v1 = 148/1/r10.v2 + 148/1/r10.v3",
+      "why": "p148: `PUBLIC LAW 89-10, ESEA, Title II, 1973-7`: the first column is the other two"
+    },
+    {
+      "eq": "148/1/r11.v1 = 148/1/r11.v2 + 148/1/r11.v3",
+      "why": "p148: `PUBLIC LAW 89-10, ESEA, Title II, 1974-7`: the first column is the other two"
+    },
+    {
+      "eq": "148/1/r12.v1 = 148/1/r12.v2 + 148/1/r12.v3",
+      "why": "p148: `PUBLIC LAW 864, NDEA, Title III, Balance`: the first column is the other two"
+    },
+    {
+      "eq": "148/1/r16.v1 = 148/1/r16.v2 + 148/1/r16.v3",
+      "why": "p148: `PUBLIC LAW 90-576, VOCATIONAL EDUCATION `: the first column is the other two"
+    },
+    {
+      "eq": "149/1/r3.v1 = 149/1/r3.v2 + 149/1/r3.v3",
+      "why": "p149: `ATHLETIC ACCOUNT (Chapter 658 Funds) Bal`: the first column is the other two"
+    },
+    {
+      "eq": "149/1/r5.v1 = 149/1/r5.v2 + 149/1/r5.v3",
+      "why": "p149: `RECOVERY FROM PUPILS FOR SCHOOL BOOKS/ P`: the first column is the other two"
+    },
+    {
+      "eq": "149/1/r6.v1 = 149/1/r6.v2 + 149/1/r6.v3",
+      "why": "p149: `SPECIAL EDUCATION ACCOUNT - Chapter 766 `: the first column is the other two"
+    },
+    {
+      "eq": "149/1/r7.v1 = 149/1/r7.v2 + 149/1/r7.v3",
+      "why": "p149: `SPECIAL EDUCATION ACCOUNT... Chapter 766`: the first column is the other two"
+    },
+    {
+      "eq": "43/3/r22 = 42/1/r2-32 + 42/2/r1-42 + 43/3/r2-21 + #43341 + #9593 + #33038",
+      "why": "p42-43: the 81 voted lines sum to TOTAL BUDGET VOTED $4,192,790.00 with the three lines Textract put in no cell, quoted from the text read of p43: `Library by Taxation 43,341.00`, `Cemeteries 9,593.00`, `Park Department 33,038.00` (1975 NEEDS 1)"
+    },
+    {
+      "eq": "43/1/r8 = 43/4/r2-17 + 43/1/r1-7 + #10000 + #25605",
+      "why": "p43: `Transfers from:` the 24 balances transferred sum to $82,997.82, with the two Special Highway Grant lines printed stacked in one cell (`$ 10,000.00 25,605.00`)"
+    },
+    {
+      "eq": "43/2/r3 = 43/2/r2",
+      "why": "p43: special articles by transfer from E & D, one article"
+    },
+    {
+      "eq": "43/2/r17 = 43/2/r5-16",
+      "why": "p43: special articles raised and appropriated from revenue sharing, subtotal $72,161.00"
+    },
+    {
+      "eq": "43/2/r32 = 43/2/r19-31",
+      "why": "p43: special articles by transfer from other accounts, subtotal $72,997.82"
+    },
+    {
+      "eq": "43/2/r45 = 43/2/r34-44",
+      "why": "p43: special articles raised by taxation, subtotal $57,426.99"
+    },
+    {
+      "eq": "43/2/r48 = 43/2/r47",
+      "why": "p43: special articles by borrowing, one article"
+    },
+    {
+      "eq": "43/2/r49 = 43/2/r3 + 43/2/r17 + 43/2/r32 + 43/2/r45 + 43/2/r48",
+      "why": "p43: TOTAL SPECIAL ARTICLES VOTED $281,351.81 is the five funding subtotals"
+    },
+    {
+      "eq": "#114079.04 = 81/1/r1-6",
+      "why": "p81: the Trust Fund summary of funds, total `$114,079.04` printed beside the list (no cell holds it as a figure)"
+    },
+    {
+      "eq": "146/1/r16.v1 = #72397 + #12256 + 146/1/r3-15.v1",
+      "why": "p146: the FY-75 appropriation column sums to $2,597,285 (1000 Administration's salaries `72,397.` and expenses `12,256.` print stacked in one cell)"
+    },
+    {
+      "eq": "146/1/r16.v2 = #73450.35 + #12053.87 + 146/1/r3-15.v2",
+      "why": "p146: the FY-75 spent column sums to $2,464,579.29 (Administration's `73,450.35` and `12,053.87` stacked in one cell)"
+    },
+    {
+      "eq": "146/1/r16.v3 = #82319 + #13686 + 146/1/r3-15.v3",
+      "why": "p146: the FY-76 request column sums to $2,928,767 (Administration's `82,319.` and `13,686.` stacked in one cell)"
+    },
+    {
+      "eq": "146/1/r18.v1 = 146/1/r16.v1 + 146/1/r17.v1",
+      "why": "p146: budget request to town = total less federal funds, FY-75 appropriation"
+    },
+    {
+      "eq": "146/1/r21 = 146/1/r18.v2 + #88707.90",
+      "why": "p146: TOTAL SPENT FROM TOWN APPROPRIATION $2,529,379.19 = spent $2,440,671.29 + `+ 88,707.90` placed in escrow"
+    },
+    {
+      "eq": "146/1/r23 = 146/1/r21 + #43997.81",
+      "why": "p146: $2,573,377.00 = total spent + `+ 43,997.81` returned to the town"
+    }
+  ],
+  "cell_readings": [
+    {
+      "cell": "77/1/15/5",
+      "textract": "TR 61.14 TR",
+      "read_as": "61.14",
+      "why": "`TR` is the accountant's transfer mark (the schedule's key), printed here on both sides of the one figure in the Total Expended column; the LINES read of p77 prints the row's three figures 61.14"
+    },
+    {
+      "cell": "43/2/29/3",
+      "textract": "etc. 7,000.00",
+      "read_as": "7,000.00",
+      "why": "`etc.` ends the article's wrapped label (`Article 42. Ch.90 Improvement-Leominster Road, Townsend Harbor Road, etc.`); the figure is the article's amount"
+    }
+  ]
 }

@@ -109,5 +109,24 @@
     "report-statement-of-payments"
   ],
   "receipts_stop_at_grand": true,
-  "signed_figures": true
+  "signed_figures": true,
+  "expended_from_amounts": true,
+  "ed_mark": true,
+  "stepped_subtotals_in": [
+    "report-fund-balance-sheets",
+    "report-trust-funds",
+    "110/2",
+    "111/1"
+  ],
+  "cell_readings": [
+    {
+      "cell": "40/3/27/2",
+      "textract": "3rd 800.00",
+      "read_as": "800.00",
+      "why": "the end of the label `George R. Wallace, 3rd` landed in the figure cell; Textract lines print `George R. Wallace, 3rd` (left 0.09) and `800.00` (left 0.26) as two observations on one line, the figure in the bequests column"
+    }
+  ],
+  "school_statistics_totals": true,
+  "dollar_sign_labels": true,
+  "welfare_net_cost": true
 }

@@ -107,5 +107,386 @@
   "recon_net_on_transfer_line": true,
   "receipts_span": true,
   "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
-  "colon_for_point": true
+  "colon_for_point": true,
+  "statement_span": [
+    "report-statement-of-payments"
+  ],
+  "declared_identities": [
+    {
+      "eq": "45/1/r2-20:p1 = #1367241.29",
+      "why": "p45: Agency and Trust, 19 lines and the subtotal 1,367,241.29 printed in the outer column (Textract put it in a label cell)"
+    },
+    {
+      "eq": "45/1/r23-28:p1 = #18571.10",
+      "why": "p45: Refunds, six lines and the subtotal 18,571.10 printed beside `Payments Deferred from Fiscal 1983` (in a label cell)"
+    },
+    {
+      "eq": "45/1/r4-11:p2 = #4288.94",
+      "why": "p45: Trust & Investment Funds Transferred, six lines and their subtotal 4,288.94 in the outer column"
+    },
+    {
+      "eq": "45/1/r14-21:p2 = #373700.92",
+      "why": "p45: Assessments, seven lines and their subtotal 373,700.92 in the outer column"
+    },
+    {
+      "eq": "45/1/r25-26:p2 = #10205897.00",
+      "why": "p45: Investments, two lines and their subtotal 10,205,897.00 in the outer column"
+    },
+    {
+      "eq": "46/1/r5 = 46/1/r3-4",
+      "why": "p46: Cash: In Banks + Invested and the subtotal printed under them"
+    },
+    {
+      "eq": "46/1/r10 = 46/1/r8-9",
+      "why": "p46: Motor Vehicle Excise levies of 1983 and 1984 and the subtotal printed under them"
+    },
+    {
+      "eq": "46/1/r15 = 46/1/r13-14",
+      "why": "p46: Tax Liens and Tax Foreclosures and the subtotal printed under them"
+    },
+    {
+      "eq": "46/1/r21 = 46/1/r17-20",
+      "why": "p46: Departmental receivables, four lines and the subtotal printed under them"
+    },
+    {
+      "eq": "46/2/r8 = 46/2/r4-7",
+      "why": "p46: Federal Grants, four lines and the subtotal printed under them"
+    },
+    {
+      "eq": "46/2/r14 = 46/2/r10-13",
+      "why": "p46: Due to Agency Funds, four lines and the subtotal printed under them"
+    },
+    {
+      "eq": "46/2/r28 = 46/2/r19-27",
+      "why": "p46: Other Revolving Funds, nine lines and the subtotal printed under them"
+    },
+    {
+      "eq": "47/1/r10 = 46/2/r32-38 + #80.00 + 47/1/r1-9",
+      "why": "p46-47: Appropriation Balances (reserves for encumbrances), 16 lines and the subtotal 142,655.68 on p47; Accept Brookview & Cliffview Ter. 80.00 is printed on p46 in a cell read `Ter. 80.00`"
+    },
+    {
+      "eq": "47/1/r14 = 47/1/r12-13",
+      "why": "p47: Receipts Reserved for Appropriation, two lines and the subtotal printed under them"
+    },
+    {
+      "eq": "47/1/r24 = 47/1/r16-23",
+      "why": "p47: Appropriation for Capital Improvements, eight lines and the subtotal printed under them"
+    },
+    {
+      "eq": "47/1/r29 = 47/1/r26-28",
+      "why": "p47: Overestimate, three lines and the subtotal printed under them"
+    },
+    {
+      "eq": "47/1/r34 = 47/1/r31-33",
+      "why": "p47: Provision for Abatements and Exemptions, 1982-1984 and the subtotal printed under them"
+    },
+    {
+      "eq": "47/1/r41 = 47/1/r36-40",
+      "why": "p47: Reserve for Uncollected Accounts, five lines and the subtotal printed under them"
+    },
+    {
+      "eq": "48/1/r4 = 48/1/r2-3",
+      "why": "p48: Restricted fund balance, two lines and their subtotal 369,665.13"
+    },
+    {
+      "eq": "48/1/r7 = 46/1/r5 + 46/1/r10 + 46/1/r11 + 46/1/r15 + 46/1/r21 + 46/1/r22 + 46/1/r23 + 46/1/r26 + #6315390.83",
+      "why": "p46-48: TOTAL ASSETS $8,286,387.89 (p48) = the asset subtotals and lines of p46 + Revenue Fiscal 1985 6,315,390.83 printed on p48 in the asset column (no cell holds it)"
+    },
+    {
+      "eq": "48/1/r7 = 46/2/r2 + 46/2/r8 + 46/2/r14 + 46/2/r17 + 46/2/r28 + 47/1/r10 + 47/1/r14 + 47/1/r24 + 47/1/r29 + 47/1/r34 + 47/1/r41 + #2080.15 + #455.22 + 48/1/r4 + 48/1/r5 + 48/1/r6",
+      "why": "p46-48: TOTAL LIABILITIES, RESERVES AND FUND BALANCE $8,286,387.89 = every liability subtotal; Deferred Account 2,080.15 and Unclaimed checks 455.22 are printed at the top of p48 in no cell"
+    },
+    {
+      "eq": "48/2/r4.v1 = 48/2/r1",
+      "why": "p48: Statement of General Long Term Debt, Amount to be Provided $410,000.00 and its total"
+    },
+    {
+      "eq": "48/2/r4.v2 = 48/2/r2 + #120000.00 + #30000.00",
+      "why": "p48: General Long-Term Debt Payable: Middle School 260,000.00 + Sanitary Landfill 120,000.00 + Street Betterments FY85 30,000.00 (one cell) = $410,000.00"
+    },
+    {
+      "eq": "49/1/r6 = 49/1/r4-5",
+      "why": "p49: Cemetery: Perpetual Care Bequests + Income and the subtotal printed beside them"
+    },
+    {
+      "eq": "49/1/r13 = 49/1/r9-12",
+      "why": "p49: Worthy Poor Funds, four lines and the subtotal printed beside them"
+    },
+    {
+      "eq": "49/1/r17 = 49/1/r15-16",
+      "why": "p49: Sidewalks & Public Grounds, two lines and the subtotal printed beside them"
+    },
+    {
+      "eq": "49/1/r28 = 49/1/r20-27",
+      "why": "p49: Library Book Account, eight donors and the subtotal printed beside them"
+    },
+    {
+      "eq": "49/1/r36 = 49/1/r31-35",
+      "why": "p49: Library All Purpose Account, five donors and the subtotal printed beside them"
+    },
+    {
+      "eq": "62/1/r7 = 62/1/r2-6",
+      "why": "p62: Library All Purpose, five donors and 4,200.00"
+    },
+    {
+      "eq": "62/1/r8 = 61/3/r9 + 61/3/r10 + 61/3/r11 + 62/1/r7",
+      "why": "p62: LIBRARY total 24,270.76 = Books 8,900.00 + Interest Books 9,249.23 + Interest All Purpose 1,921.53 (p61) + All Purpose 4,200.00"
+    },
+    {
+      "eq": "62/1/r15 = 62/1/r10-14",
+      "why": "p62: Conservation Fund, five lines and 10,212.41"
+    },
+    {
+      "eq": "62/1/r17 = 62/1/r15 + 62/1/r16",
+      "why": "p62: CONSERVATION total 50,212.41"
+    },
+    {
+      "eq": "62/1/r26 = 62/1/r24-25",
+      "why": "p62: Harwood holdings 496.98"
+    },
+    {
+      "eq": "62/1/r27 = 62/1/r22 + 62/1/r26",
+      "why": "p62: SCHOOL PRIZE total 994.98"
+    },
+    {
+      "eq": "62/1/r44 = 62/1/r32-43",
+      "why": "p62: Bequests Received, twelve lines and 1,500.00"
+    },
+    {
+      "eq": "62/1/r48 = 62/1/r45-47",
+      "why": "p62: Income Received, three lines and 9,741.28"
+    },
+    {
+      "eq": "62/1/r51.v2 = 62/1/r29 + 62/1/r44 + 62/1/r48 + 62/1/r50",
+      "why": "p62: CEMETERY: Balance July 1 + bequests + income + headstone interest = 109,933.69"
+    },
+    {
+      "eq": "62/1/r53 = 62/1/r51.v1 + 62/1/r52",
+      "why": "p62: CEMETERY: Transfer to Cemetery Commission + Balance June 30 = 109,933.69"
+    },
+    {
+      "eq": "62/1/r57 = 62/1/r54-56",
+      "why": "p62: RETIREMENT FUND: balance + transfer + interest = 38,811.23"
+    },
+    {
+      "eq": "63/1/r5 = 63/1/r3-4",
+      "why": "p63: Worthy Poor interest, Fitchburg Savings 300.15"
+    },
+    {
+      "eq": "63/1/r8 = 63/1/r6-7",
+      "why": "p63: Worthy Poor interest, MMDT 728.94"
+    },
+    {
+      "eq": "63/1/r9.v2 = 63/1/r1 + 63/1/r5 + 63/1/r8",
+      "why": "p63: WORTHY POOR: balance + interest = 11,856.60"
+    },
+    {
+      "eq": "63/1/r11 = 63/1/r9.v1 + 63/1/r10",
+      "why": "p63: WORTHY POOR: grants 687.51 + Balance June 30 = 11,856.60"
+    },
+    {
+      "eq": "63/1/r16 = 63/1/r14-15",
+      "why": "p63: Sidewalks interest 1,168.24"
+    },
+    {
+      "eq": "63/1/r17 = 63/1/r12 + 63/1/r16",
+      "why": "p63: SIDEWALKS: balance + interest = 13,276.23"
+    },
+    {
+      "eq": "63/1/r20 = 63/1/r18 + 63/1/r19",
+      "why": "p63: SIDEWALKS: grants + Balance June 30 = 13,276.23"
+    },
+    {
+      "eq": "63/1/r33 = 63/1/r25-32",
+      "why": "p63: Library book interest, eight lines and 869.85"
+    },
+    {
+      "eq": "63/1/r41 = 63/1/r36-40",
+      "why": "p63: Library all purpose interest, five lines and 410.53"
+    },
+    {
+      "eq": "63/1/r43 = 63/1/r22 + 63/1/r33 + #829.19 + 63/1/r41 + 63/1/r42",
+      "why": "p63: LIBRARY: balance + interest = 26,144.33; the Interest Account 829.19 is printed (`'829.19`) in no cell"
+    },
+    {
+      "eq": "63/1/r46.v2 = 63/1/r45 + 63/1/r46.v1",
+      "why": "p63: Purchase of Library Items 1,873.57"
+    },
+    {
+      "eq": "63/1/r48.v2 = 63/1/r46.v2 + 63/1/r47",
+      "why": "p63: LIBRARY: purchases + Balance June 30 = 26,144.33"
+    },
+    {
+      "eq": "63/1/r56 = 63/1/r51-55",
+      "why": "p63: Conservation interest, five lines and 4,513.97"
+    },
+    {
+      "eq": "63/1/r57 = 63/1/r48.v1 + 63/1/r56",
+      "why": "p63: CONSERVATION: balance + interest = 50,212.41"
+    },
+    {
+      "eq": "64/1/r5 = 64/1/r3-4",
+      "why": "p64: Stabilization interest 21,032.31"
+    },
+    {
+      "eq": "64/1/r7 = 64/1/r1 + 64/1/r5 + 64/1/r6",
+      "why": "p64: STABILIZATION: balance + interest + transfer = 269,949.40"
+    },
+    {
+      "eq": "64/1/r10 = 64/1/r8-9",
+      "why": "p64: Transfer to Articles 57,000.00"
+    },
+    {
+      "eq": "64/1/r12 = 64/1/r10 + 64/1/r11",
+      "why": "p64: STABILIZATION: transfers + Balance June 30 = 269,949.40"
+    },
+    {
+      "eq": "64/1/r16.v2 = 64/1/r13 + 64/1/r14 + 64/1/r15",
+      "why": "p64: ARTS LOTTERY: balance + grant + interest = 2,544.13"
+    },
+    {
+      "eq": "64/1/r18 = 64/1/r16.v1 + 64/1/r17",
+      "why": "p64: ARTS LOTTERY: purchases + Balance June 30 = 2,544.13"
+    },
+    {
+      "eq": "64/1/r23 = 64/1/r21-22",
+      "why": "p64: School Prize dividends 130.00"
+    },
+    {
+      "eq": "64/1/r25 = 64/1/r19 + 64/1/r23 + 64/1/r24",
+      "why": "p64: SCHOOL PRIZE: balance + dividends + interest = 1,144.98"
+    },
+    {
+      "eq": "64/1/r29 = 64/1/r27-28",
+      "why": "p64: School Prize grants 150.00"
+    },
+    {
+      "eq": "64/1/r31 = 64/1/r29 + 64/1/r30",
+      "why": "p64: SCHOOL PRIZE: grants + Balance June 30 = 1,144.98"
+    },
+    {
+      "eq": "64/1/r34 = 64/1/r32 + 64/1/r33",
+      "why": "p64: WAKEFIELD: balance + interest = 20,203.32"
+    },
+    {
+      "eq": "64/1/r38 = 64/1/r36 + 64/1/r37",
+      "why": "p64: WAKEFIELD: grant + Balance June 30 = 20,203.32"
+    },
+    {
+      "eq": "65/1/r4 = 65/1/r1 + 65/1/r3",
+      "why": "p65: Balance January 1 + net receipts 9,261,671.03 = 10,764,667.00"
+    },
+    {
+      "eq": "65/1/r3 = #20070000.88 - #10808329.85",
+      "why": "p65: Receipts 20,070,000.88 less Investments transferred 10,808,329.85 (the two printed on a row Textract left valueless)"
+    },
+    {
+      "eq": "65/1/r7 = 65/1/r5 + 65/1/r6",
+      "why": "p65: Disbursements less Revenue Cash Invested = 9,185,115.84"
+    },
+    {
+      "eq": "65/1/r8.v2 = 65/1/r7 + 65/1/r8.v1",
+      "why": "p65: net disbursements + General Ledger Balance = 10,764,667.00"
+    },
+    {
+      "eq": "65/1/r21 = 65/1/r11-20",
+      "why": "p65: the ten bank accounts and cash on hand (Shawmut overdrawn) = 1,579,551.16"
+    },
+    {
+      "eq": "65/1/r9 = 65/1/r8.v1",
+      "why": "p65: Balance General Ledger December 31 = General Ledger Balance"
+    },
+    {
+      "eq": "86/8/r2-9 + 87/1/r1-9 = #11600",
+      "why": "p86-87: Article 2 of the November 1, 1984 Special Town Meeting, 17 additional appropriations and the prose `2/3 VOTE DECLARED TO TAKE $11,600. FROM FREE CASH`"
+    },
+    {
+      "eq": "87/2/r1-3 + 87/2/r6-7 = #19074",
+      "why": "p87: Article 3, the five items VOTED (17, 22, 26, 38, 40) and the prose `2/3 VOTE DECLARED TO TAKE $19,074.`; item 29 ($1,100) disapproved"
+    },
+    {
+      "eq": "136/1/r7.v5 = 136/1/r7.v1 + 136/1/r7.v2 + 136/1/r7.v3 + 136/1/r7.v4",
+      "why": "p136: Cafeteria Personnel, FTE by school level and the GRAND TOTAL column (counts, not dollars)"
+    },
+    {
+      "eq": "136/1/r8.v4 = 136/1/r8.v1 + 136/1/r8.v2 + 136/1/r8.v3",
+      "why": "p136: Classroom Teachers, FTE by school level and the GRAND TOTAL column (counts, not dollars)"
+    },
+    {
+      "eq": "136/1/r9.v5 = 136/1/r9.v1 + 136/1/r9.v2 + 136/1/r9.v3 + 136/1/r9.v4",
+      "why": "p136: Clerical Personnel, FTE by school level and the GRAND TOTAL column (counts, not dollars)"
+    },
+    {
+      "eq": "136/1/r10.v5 = 136/1/r10.v1 + 136/1/r10.v2 + 136/1/r10.v3 + 136/1/r10.v4",
+      "why": "p136: Custodial Personnel, FTE by school level and the GRAND TOTAL column (counts, not dollars)"
+    },
+    {
+      "eq": "136/1/r11.v4 = 136/1/r11.v1 + 136/1/r11.v2 + 136/1/r11.v3",
+      "why": "p136: Guidance Personnel, FTE by school level and the GRAND TOTAL column (counts, not dollars)"
+    },
+    {
+      "eq": "136/1/r14.v4 = 136/1/r14.v1 + 136/1/r14.v2 + 136/1/r14.v3",
+      "why": "p136: Principals/Assistants/Adm. Coord., FTE by school level and the GRAND TOTAL column (counts, not dollars)"
+    },
+    {
+      "eq": "136/1/r15.v5 = 136/1/r15.v1 + 136/1/r15.v2 + 136/1/r15.v3 + 136/1/r15.v4",
+      "why": "p136: Chapter 766 Specialists, FTE by school level and the GRAND TOTAL column (counts, not dollars)"
+    },
+    {
+      "eq": "136/1/r19.v3 = #180050 + #1338311 + 136/1/r19.v1 + 136/1/r19.v2",
+      "why": "p136: NET TOTAL EXPENDITURES 1983-84, Kdg $180,050 + Elem $1,338,311 (printed in the label cell) + Middle $1,085,181 + High $1,642,974 = System $4,246,516"
+    },
+    {
+      "eq": "137/1/r10.vL = 137/1/r2.vL + 137/1/r3.vL + 137/1/r4.vL + 137/1/r5.vL + 137/1/r6.vL + 137/1/r7.vL + 137/1/r8.vL + 137/1/r9.vL",
+      "why": "p137: FY-85 ESTIMATED RECEIPTS, eight lines and the total $1,740,756"
+    },
+    {
+      "eq": "139/1/r4.v3 = 139/1/r4.v1 - 139/1/r4.v2",
+      "why": "p139: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "139/1/r5.v3 = 139/1/r5.v1 - 139/1/r5.v2",
+      "why": "p139: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "140/1/r2.v3 = 140/1/r2.v1 - 140/1/r2.v2",
+      "why": "p140: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "140/1/r3.v3 = 140/1/r3.v1 - 140/1/r3.v2",
+      "why": "p140: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "140/1/r6.v3 = 140/1/r6.v1 - 140/1/r6.v2",
+      "why": "p140: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "141/1/r3.v3 = 141/1/r3.v1 - 141/1/r3.v2",
+      "why": "p141: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "141/1/r5.v3 = 141/1/r5.v1 - 141/1/r5.v2",
+      "why": "p141: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "141/1/r6.v3 = 141/1/r6.v1 - 141/1/r6.v2",
+      "why": "p141: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "141/1/r8.v3 = 141/1/r8.v1 - 141/1/r8.v2",
+      "why": "p141: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "142/1/r3.v3 = 142/1/r3.v1 - 142/1/r3.v2",
+      "why": "p142: a starred (`July 1st Balance*`) account: FY-84 appropriation or balance on hand less FY-84 expenditures"
+    },
+    {
+      "eq": "139/1/r4.v1 = #9627.80 + #4448.00 + #2574.00",
+      "why": "p139: Day School Tuition Account, the receipts printed in the account description sum to 16,649.80"
+    },
+    {
+      "eq": "139/1/r5.v1 = #5979.66 + #9840.65 + #7084.50 + #3925.00 + #20.00",
+      "why": "p139: Athletic Account, balance 7/1/83 + receipts printed in the description = 26,849.81"
+    }
+  ]
 }

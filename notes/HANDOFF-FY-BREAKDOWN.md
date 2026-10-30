@@ -305,6 +305,7 @@ qualifier in `sub`).
    passed / funding the year. Sources: School Committee and Finance Committee presentations and
    minutes (`search_minutes.py`), the budget books, Town Meeting / election results. Rule 7: an
    announced figure is what someone SAID -- cite it as theirs, beside ours, never merged.
+
    **BUILT 30 Oct (subagent), not deployed:** `fy-signatures` custom block ("Beginning and end"),
    directly under the year picker; follows `useFyYear`. Generator `signatures_data()` in
    `build_fy_breakdown.py`; component `fy28/src/components/blocks/custom/fy-signatures.tsx`. It

@@ -90,5 +90,139 @@
   "accountant_marks": true,
   "recon_net_on_transfer_line": true,
   "receipts_span": true,
-  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)"
+  "opt_ins_why": "set by the 1986-1990 integration pass, 29 October 2026: each is a reading in scripts/read_report_tables.py that would change what an earlier edition publishes, so it applies only where an edition asks (sources/data/report-tables/README.md)",
+  "declared_identities": [
+    {
+      "eq": "38/1/r3.v2 = 38/1/r3.v3 + 38/1/r3.v4",
+      "why": "p38 Worker's Compensation: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r4.v2 = 38/1/r4.v3 + 38/1/r4.v4",
+      "why": "p38 Insurance/Liability: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r6.v2 = 38/1/r6.v3 + 38/1/r6.v4",
+      "why": "p38 Health Insurance: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r7.v2 = 38/1/r7.v3",
+      "why": "p38 Worc. County Extension Service: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r8.v2 = 38/1/r8.v3 + 38/1/r8.v4",
+      "why": "p38 Registrar Veterans Graves: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r9.v2 = 38/1/r9.v3 + 38/1/r9.v4",
+      "why": "p38 Town Reports: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r10.v2 = 38/1/r10.v3 + 38/1/r10.v4",
+      "why": "p38 Historical Commission: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r12.v2 = 38/1/r12.v3",
+      "why": "p38 Unemployment Comp.: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r13.v2 = 38/1/r13.v3 + 38/1/r13.v4",
+      "why": "p38 Pension Allow. J. MacGregor: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r15.v2 = 38/1/r15.v3",
+      "why": "p38 Middle School Loan: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r16.v2 = 38/1/r16.v3",
+      "why": "p38 Interest Middle School: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r17.v2 = 38/1/r17.v3",
+      "why": "p38 Sanitary Landfill Loan: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r18.v2 = 38/1/r18.v3",
+      "why": "p38 Interest Sanitary Landfill: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r19.v2 = 38/1/r19.v3",
+      "why": "p38 Street Betterment Loan 83: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r20.v2 = 38/1/r20.v3",
+      "why": "p38 Interest Street Betterments: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r21.v2 = 38/1/r21.v3",
+      "why": "p38 Street Betterment Loan 84: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r22.v2 = 38/1/r22.v3",
+      "why": "p38 Interest Street Betterment 84: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r23.v2 = 38/1/r23.v3",
+      "why": "p38 Fire Truck Loan: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r24.v2 = 38/1/r24.v3",
+      "why": "p38 Interest Fire Truck Loan: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r25.v2 = 38/1/r25.v3 + 38/1/r25.v4",
+      "why": "p38 Interest Temp Loans: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r26.v2 = 38/1/r26.v3",
+      "why": "p38 Street Betterment 85: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r27.v2 = 38/1/r27.v3",
+      "why": "p38 Interest Street Betterment 85: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r28.v2 = 38/1/r28.v3",
+      "why": "p38 Elementary School Remodeling: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r29.v2 = 38/1/r29.v3",
+      "why": "p38 Interest Elementary School Rem: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r31.v2 = 38/1/r31.v3",
+      "why": "p38 Worc. County Retirement: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r32.v2 = 38/1/r32.v3 + 38/1/r32.v4",
+      "why": "p38 County Rax Assessment: TOTAL FUNDS AVAILABLE = AMOUNT EXPENDED + the balance, printed in BALANCE REVENUE or BALANCE FY 1989 (Textract merged those two columns into one, header cell `BALANCE BALANCE REVENUE FY 1989`)"
+    },
+    {
+      "eq": "38/1/r33.v2 = 38/1/r33.v3",
+      "why": "p38 Motor Vehicle Excise Tax Bills: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r34.v2 = 38/1/r34.v3",
+      "why": "p38 Mosquito Control: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r35.v2 = 38/1/r35.v3",
+      "why": "p38 Air Pollution Control: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r36.v2 = 38/1/r36.v3",
+      "why": "p38 Parking Surcharge: TOTAL FUNDS AVAILABLE fully expended, no balance printed"
+    },
+    {
+      "eq": "38/1/r3.v2 = 38/1/r2.v1 + 38/1/r3.v1",
+      "why": "p38 Worker's Compensation: $2799.00 RF + $75200.00 appropriated = $77999.00 available"
+    },
+    {
+      "eq": "38/1/r6.v2 = 38/1/r5.v1 + 38/1/r6.v1",
+      "why": "p38 Health Insurance: $9000.00 RF + $436874.00 = $445874.00 available"
+    },
+    {
+      "eq": "38/1/r12.v2 = 38/1/r11.v1 + 38/1/r12.v1",
+      "why": "p38 Unemployment Comp.: $5440.54 RF + $2000.00 = $7440.54 available"
+    }
+  ]
 }

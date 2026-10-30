@@ -89,5 +89,25 @@
     "report-statement-of-payments"
   ],
   "receipts_stop_at_grand": true,
-  "unit_rates": true
+  "unit_rates": true,
+  "expended_from_amounts": true,
+  "ed_mark": true,
+  "stepped_subtotals_in": [
+    "report-fund-balance-sheets",
+    "report-trust-funds",
+    "141/3",
+    "143/1",
+    "143/3"
+  ],
+  "receipts_two_columns": true,
+  "cell_readings": [
+    {
+      "cell": "26/1/41/2",
+      "textract": "",
+      "read_as": "5,113.85",
+      "why": "the cell came back empty on the last line of the page; Textract lines read `Old Age Assistance Relief` (top 0.877) and `5,113.85` (top 0.880, left 0.66, the inner column where `697.66` sits on the line above), one line"
+    }
+  ],
+  "school_statistics_totals": true,
+  "dollar_sign_labels": true
 }

@@ -101,5 +101,524 @@
       "period": "calendar 1985",
       "cited": "p32: `During 1985 we received 24,500 miscellaneous police calls`"
     }
+  ],
+  "statement_span": [
+    "report-statement-of-payments"
+  ],
+  "unlabeled_subtotals_in": [
+    "report-appropriations",
+    "report-fund-balance-sheets",
+    "report-trust-funds",
+    "report-treasurers-cash-calendar-year"
+  ],
+  "declared_identities": [
+    {
+      "eq": "59/2/r4 = 59/2/r2-3",
+      "why": "p59: cash subtotal $1,703,048.09 printed in the second column (in banks + invested)"
+    },
+    {
+      "eq": "59/2/r9 = 59/2/r7-8",
+      "why": "p59: motor vehicle excise subtotal $53,275.92 printed in the second column"
+    },
+    {
+      "eq": "59/2/r15 = 59/2/r13-14",
+      "why": "p59: tax liens and foreclosures subtotal $58,330.72 printed in the second column"
+    },
+    {
+      "eq": "59/3/r5.v2 = 59/3/r2-4 + 59/3/r5.v1",
+      "why": "p59: departmental receivables subtotal $67,579.82 printed in the second column on the Street Betterments line"
+    },
+    {
+      "eq": "59/1/r7 = 59/1/r3-6",
+      "why": "p59: federal grants subtotal $10,540.00 printed in the second column"
+    },
+    {
+      "eq": "59/1/r14 = 59/1/r9-13",
+      "why": "p59: due to agency funds subtotal $61,347.37 printed in the second column"
+    },
+    {
+      "eq": "59/1/r27.v2 = 59/1/r19-26 + 59/1/r27.v1",
+      "why": "p59: other revolving funds subtotal $51,598.27 printed in the second column on the Park Department line"
+    },
+    {
+      "eq": "71/1/r5 = 71/1/r2 + 71/1/r3 + 71/1/r4",
+      "why": "p71: receipts plus the retirement fund transfer less investments transferred, netted to $9,317,542.94 in the second column"
+    },
+    {
+      "eq": "71/1/r6 = 71/1/r1 + 71/1/r5",
+      "why": "p71: the January 1 balance plus the net receipts, $10,897,094.10"
+    },
+    {
+      "eq": "71/1/r8.v2 = 71/1/r7 + 71/1/r8.v1",
+      "why": "p71: disbursements plus the general ledger balance foot to the same $10,897,094.10"
+    },
+    {
+      "eq": "71/1/r9 = 71/1/r8.v1",
+      "why": "p71: Balance General Ledger December 31, 1985 repeats the general ledger balance"
+    },
+    {
+      "eq": "#970,444.19 = 71/2/r1-10",
+      "why": "p71: the bank accounts sum to the $970,444.19 printed under them (Textract put it in a label cell)"
+    },
+    {
+      "eq": "162/1/r2.v4 = 162/1/r2.v1 + 162/1/r2.v2 + 162/1/r2.v3",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r3.v4 = 162/1/r3.v1 + 162/1/r3.v2 + 162/1/r3.v3",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r7.v4 = 162/1/r7.v1 + 162/1/r7.v2 + 162/1/r7.v3",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r10.v4 = 162/1/r10.v1 + 162/1/r10.v2 + 162/1/r10.v3",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r13.v4 = 162/1/r13.v1 + 162/1/r13.v2 + 162/1/r13.v3",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r15.v4 = 162/1/r15.v1 + 162/1/r15.v2 + 162/1/r15.v3",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r6.v5 = 162/1/r6.v1 + 162/1/r6.v2 + 162/1/r6.v3 + 162/1/r6.v4",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r8.v5 = 162/1/r8.v1 + 162/1/r8.v2 + 162/1/r8.v3 + 162/1/r8.v4",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r9.v5 = 162/1/r9.v1 + 162/1/r9.v2 + 162/1/r9.v3 + 162/1/r9.v4",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r14.v5 = 162/1/r14.v1 + 162/1/r14.v2 + 162/1/r14.v3 + 162/1/r14.v4",
+      "why": "p162: the GRAND TOTAL (All Levels) column is the sum of the school columns on the line"
+    },
+    {
+      "eq": "162/1/r18.v2 = 162/1/r18.v1 + #1,165,039 + #216,315 + #1,515,949",
+      "why": "p162: net total expenditures, all levels $4,669,714 = high $1,772,411 + middle $1,165,039 + kindergarten $216,315 + elementary $1,515,949 (the last three printed outside the table's cells)"
+    },
+    {
+      "eq": "163/1/r3.v3 = 163/1/r3.v1 + 163/1/r3.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r4.v3 = 163/1/r4.v1 + 163/1/r4.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r6.v3 = 163/1/r6.v1 + 163/1/r6.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r7.v3 = 163/1/r7.v1 + 163/1/r7.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r8.v3 = 163/1/r8.v1 + 163/1/r8.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r14.v3 = 163/1/r14.v1 + 163/1/r14.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r15.v3 = 163/1/r15.v1 + 163/1/r15.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r16.v3 = 163/1/r16.v1 + 163/1/r16.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r18.v3 = 163/1/r18.v1 + 163/1/r18.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r19.v3 = 163/1/r19.v1 + 163/1/r19.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r20.v3 = 163/1/r20.v1 + 163/1/r20.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r21.v3 = 163/1/r21.v1 + 163/1/r21.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r22.v3 = 163/1/r22.v1 + 163/1/r22.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r28.v3 = 163/1/r28.v1 + 163/1/r28.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r29.v3 = 163/1/r29.v1 + 163/1/r29.v2",
+      "why": "p163: TOTAL FY-85 is the two half-year receipts on the line"
+    },
+    {
+      "eq": "163/1/r10 = 163/1/r11.v1 + 163/1/r11.v2 + 163/1/r12.v2 + 163/1/r13.v2",
+      "why": "p163: day school tuitions $43,119.00 printed beside the three sources' half-year receipts"
+    },
+    {
+      "eq": "163/1/r23.v2 = 163/1/r24.v1 + 163/1/r24.v2 + 163/1/r25.v1 + 163/1/r25.v2 + 163/1/r26.v1 + 163/1/r26.v2 + 163/1/r27.v1 + #54.00",
+      "why": "p163: Chapter 658 revolving account $21,997.35 printed beside its four sources' half-year receipts (Other Receipts 54.00 is printed outside the table's cells)"
+    },
+    {
+      "eq": "164/1/r31.v1 = 164/1/r28.v1 + 164/1/r29.v1 + 164/1/r30.v1",
+      "why": "p164: the column's total is salaries + expenses + capital outlay"
+    },
+    {
+      "eq": "164/1/r28.v1 = 164/1/r3.v1 + 164/1/r6.v1 + 164/1/r10.v1 + 164/1/r14.v1",
+      "why": "p164: salaries line of the summary is the four series' salaries"
+    },
+    {
+      "eq": "164/1/r29.v1 = 164/1/r4.v1 + 164/1/r7.v1 + 164/1/r11.v1 + 164/1/r15.v1",
+      "why": "p164: expenses line of the summary is the four series' expenses"
+    },
+    {
+      "eq": "164/1/r31.v2 = 164/1/r28.v2 + 164/1/r29.v2 + 164/1/r30.v2",
+      "why": "p164: the column's total is salaries + expenses + capital outlay"
+    },
+    {
+      "eq": "164/1/r28.v2 = 164/1/r3.v2 + 164/1/r6.v2 + 164/1/r10.v2 + 164/1/r14.v2",
+      "why": "p164: salaries line of the summary is the four series' salaries"
+    },
+    {
+      "eq": "164/1/r29.v2 = 164/1/r4.v2 + 164/1/r7.v2 + 164/1/r11.v2 + 164/1/r15.v2",
+      "why": "p164: expenses line of the summary is the four series' expenses"
+    },
+    {
+      "eq": "164/1/r31.v3 = 164/1/r28.v3 + 164/1/r29.v3 + 164/1/r30.v3",
+      "why": "p164: the column's total is salaries + expenses + capital outlay"
+    },
+    {
+      "eq": "164/1/r28.v3 = 164/1/r3.v3 + 164/1/r6.v3 + 164/1/r10.v3 + 164/1/r14.v3",
+      "why": "p164: salaries line of the summary is the four series' salaries"
+    },
+    {
+      "eq": "164/1/r29.v3 = 164/1/r4.v3 + 164/1/r7.v3 + 164/1/r11.v3 + 164/1/r15.v3",
+      "why": "p164: expenses line of the summary is the four series' expenses"
+    },
+    {
+      "eq": "164/1/r31.v4 = 164/1/r28.v4 + 164/1/r29.v4 + 164/1/r30.v4",
+      "why": "p164: the column's total is salaries + expenses + capital outlay"
+    },
+    {
+      "eq": "164/1/r28.v4 = 164/1/r3.v4 + 164/1/r6.v4 + 164/1/r10.v4 + 164/1/r14.v4",
+      "why": "p164: salaries line of the summary is the four series' salaries"
+    },
+    {
+      "eq": "164/1/r29.v4 = 164/1/r4.v4 + 164/1/r7.v4 + 164/1/r11.v4 + 164/1/r15.v4",
+      "why": "p164: expenses line of the summary is the four series' expenses"
+    },
+    {
+      "eq": "164/1/r30.v1 = 164/1/r17.v1 + 164/1/r18.v1 + #150 + 164/1/r20.v1",
+      "why": "p164: capital outlay, FY-85 appropriation (7340 $150. printed outside the cells)"
+    },
+    {
+      "eq": "164/1/r30.v2 = 164/1/r17.v2 + 164/1/r18.v2 + 164/1/r19.v1 + 164/1/r20.v2",
+      "why": "p164: capital outlay, budget amendment"
+    },
+    {
+      "eq": "164/1/r30.v3 = 164/1/r17.v3 + 164/1/r18.v3 + 164/1/r19.v2 + 164/1/r20.v3",
+      "why": "p164: capital outlay, FY-85 expenditures"
+    },
+    {
+      "eq": "164/1/r30.v4 = 164/1/r17.v4 + 164/1/r18.v4 + 164/1/r19.v3 + 164/1/r20.v4",
+      "why": "p164: capital outlay, FY-86 appropriation"
+    },
+    {
+      "eq": "-1*164/1/r2.v1 = 164/1/r3.v2 + 164/1/r4.v2",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r2.v2 = 164/1/r3.v3 + 164/1/r4.v3",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r5.v1 = 164/1/r6.v2 + 164/1/r7.v2",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r5.v2 = 164/1/r6.v3 + 164/1/r7.v3",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r8.v1 = 164/1/r10.v2 + 164/1/r11.v2",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r8.v2 = 164/1/r10.v3 + 164/1/r11.v3",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r13.v1 = 164/1/r14.v2 + 164/1/r15.v2",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r13.v2 = 164/1/r14.v3 + 164/1/r15.v3",
+      "why": "p164: the series subtotal printed in parentheses is salaries + expenses (budget amendment and expenditures columns)"
+    },
+    {
+      "eq": "-1*164/1/r16.v1 = 164/1/r17.v2 + 164/1/r18.v2 + 164/1/r19.v1 + 164/1/r20.v2",
+      "why": "p164: 7000 series subtotal in parentheses, budget amendment"
+    },
+    {
+      "eq": "-1*164/1/r16.v2 = 164/1/r17.v3 + 164/1/r18.v3 + 164/1/r19.v2 + 164/1/r20.v3",
+      "why": "p164: 7000 series subtotal in parentheses, expenditures"
+    },
+    {
+      "eq": "164/1/r24 = 164/1/r22 + #101,352.96",
+      "why": "p164: expenditures to June 30 plus the amount placed in escrow = expenditures to August 31"
+    },
+    {
+      "eq": "164/1/r26.v1 = 164/1/r21.v1 + #9,493.50",
+      "why": "p164: budget request plus the overdraft = $4,376,993.50"
+    },
+    {
+      "eq": "164/1/r26.v2 = 164/1/r21.v2 + #9,493.50",
+      "why": "p164: budget amendment plus the overdraft = $4,376,993.50"
+    },
+    {
+      "eq": "164/1/r26.v1 = 164/1/r24",
+      "why": "p164: the footed total equals expenditures July 1, 1984 - August 31, 1985"
+    },
+    {
+      "eq": "165/1/r2.v1 = 165/1/r2.v2 + 165/1/r2.v3",
+      "why": "p165: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "165/1/r3.v1 = 165/1/r3.v2 + 165/1/r3.v3",
+      "why": "p165: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "165/1/r4.v1 = 165/1/r4.v2 + 165/1/r4.v3",
+      "why": "p165: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "165/1/r5.v1 = 165/1/r5.v2 + 165/1/r5.v3",
+      "why": "p165: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "165/1/r6.v1 = 165/1/r6.v2 + 165/1/r6.v3",
+      "why": "p165: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "165/1/r7.v1 = 165/1/r7.v2 + 165/1/r7.v3",
+      "why": "p165: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "165/1/r8.v1 = 165/1/r8.v2 + 165/1/r8.v3",
+      "why": "p165: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "166/1/r2.v1 = 166/1/r2.v2 + 166/1/r2.v3",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "166/1/r3.v1 = 166/1/r3.v2 + 166/1/r3.v3",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "166/1/r5.v1 = 166/1/r5.v2 + 166/1/r5.v3",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "166/1/r7.v1 = 166/1/r7.v2 + 166/1/r7.v3",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "166/1/r8.v1 = 166/1/r8.v2 + 166/1/r8.v3",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "166/1/r9.v1 = 166/1/r9.v2 + 166/1/r9.v3",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "167/1/r2.v1 = 167/1/r2.v2 + 167/1/r2.v3",
+      "why": "p167: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "167/1/r3.v1 = 167/1/r3.v2 + 167/1/r3.v3",
+      "why": "p167: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "167/1/r4.v1 = 167/1/r4.v2 + 167/1/r4.v3",
+      "why": "p167: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "167/1/r5.v1 = 167/1/r5.v2 + 167/1/r5.v3",
+      "why": "p167: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "167/1/r6.v1 = 167/1/r6.v2 + 167/1/r6.v3",
+      "why": "p167: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "167/1/r7.v1 = 167/1/r7.v2 + 167/1/r7.v3",
+      "why": "p167: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "167/1/r8.v1 = 167/1/r8.v2 + 167/1/r8.v3",
+      "why": "p167: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "168/1/r2.v1 = 168/1/r2.v2 + 168/1/r2.v3",
+      "why": "p168: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "168/1/r3.v1 = 168/1/r3.v2 + 168/1/r3.v3",
+      "why": "p168: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "168/1/r4.v1 = 168/1/r4.v2 + 168/1/r4.v3",
+      "why": "p168: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns"
+    },
+    {
+      "eq": "166/1/r4.v2 = 166/1/r4.v3 + 166/1/r4.v4",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns (the first figure on the line is the year's receipts, printed in the title)"
+    },
+    {
+      "eq": "166/1/r6.v2 = 166/1/r6.v3 + 166/1/r6.v4",
+      "why": "p166: FY-85 appropriation or balance on hand = FY-85 expenditures + FY-86 appropriation or July 1st balance, the account's three printed columns (the first figure on the line is the year's receipts, printed in the title)"
+    }
+  ],
+  "cell_readings": [
+    {
+      "cell": "166/1/9/4",
+      "textract": "3,119.53 (*Includes",
+      "read_as": "3,119.53",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "166/1/9/5",
+      "textract": "3,119.53* $3,030.67 of unexpended",
+      "read_as": "3,119.53",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "166/1/9/6",
+      "textract": "0 funds returned",
+      "read_as": "0.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/2/2",
+      "textract": "$ 30,627.00 (*Includes $271.41 to",
+      "read_as": "30,627.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/2/3",
+      "textract": "$ 30,627.00* return of unexpended Comm. of Mass. on",
+      "read_as": "30,627.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/2/4",
+      "textract": "$ 0 funds of June 28, 1985)",
+      "read_as": "0.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/5/2",
+      "textract": "4,750.34 (*Includes $201.13 to",
+      "read_as": "4,750.34",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/5/3",
+      "textract": "4,750.34* return of unexpended Comm. of Mass. on",
+      "read_as": "4,750.34",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/5/4",
+      "textract": "0 funds of October 3, 1984)",
+      "read_as": "0.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/7/2",
+      "textract": "392.87 (*Includes $275.95 to",
+      "read_as": "392.87",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/7/3",
+      "textract": "392.87* return of unexpended Comm. of Mass.",
+      "read_as": "392.87",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/7/4",
+      "textract": "0 funds of on October 3, 1984)",
+      "read_as": "0.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/8/2",
+      "textract": "220.16. (*Return Mass. on",
+      "read_as": "220.16",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/8/3",
+      "textract": "220.16* of unexpended funds September 19, 1984)",
+      "read_as": "220.16",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "167/1/8/4",
+      "textract": "0 to Comm. of",
+      "read_as": "0.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "168/1/2/2",
+      "textract": "$ 8,454.00 (*Includes return $1.26 to Comm.",
+      "read_as": "8,454.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "168/1/2/3",
+      "textract": "$ 8,454.00* of unexpended of Mass. on June",
+      "read_as": "8,454.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "168/1/2/4",
+      "textract": "$ 0 funds of 28, 1985)",
+      "read_as": "0.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "168/1/3/2",
+      "textract": "2,861.00 (*Includes $17.44 to",
+      "read_as": "2,861.00",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "168/1/3/3",
+      "textract": "2,366.04* return of unexpended Comm. of Mass. on",
+      "read_as": "2,366.04",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    },
+    {
+      "cell": "168/1/3/4",
+      "textract": "494.96 funds of June 28, 1985)",
+      "read_as": "494.96",
+      "why": "the special-accounts footnote `(*Includes ... return of unexpended funds ...)` prints in the space right of the figures and Textract joined its words into the figure cells; the figure is the first token, as the page's three-column layout prints it"
+    }
   ]
 }
