@@ -59,6 +59,10 @@ one; a PDF is fine where you can't.
    each, September and December 2025), and I cannot find the remaining $294,138 in any school fund
    through 30 June 2026. It may have arrived as Town revenue or after the close; the receipts would
    show which.
+10. **The Tax Rate Recapitulation sheet as filed with the Division of Local Services, FY2023 to
+    FY2026**, with its list of free cash appropriations. Town Meeting's Article 12 of 3 May 2025
+    moved $500,000 of free cash to the FY2026 school budget on a condition; the school ledger
+    books it inside the original budget, so the recap sheet is where its source shows.
 
 If it is easier to send these in batches as they are run, that works well for me too.
 
@@ -75,6 +79,7 @@ Tj
   - 7, at 30 June 2025, settles the FY2025 annual report's balances (`document-defects.csv`).
   - 9 settles the money-gaps row "Where did the rest of the FY2026 circuit breaker payment go?"
   - 6 settles the money-gaps row "The period 13 ledger".
+  - 10 shows how much free cash each year's budget used, by article.
 - **Dropped from the 6 October "ask next" list:** the kindergarten paraprofessional journal
   (S2032121, S2032131). The 18 October journal covers every school account, so it is held.
 - **Redaction (rule 13e):** whatever arrives goes through `redact.gate()` and is held private until

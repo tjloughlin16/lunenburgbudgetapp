@@ -992,6 +992,25 @@ def signatures_data(m, T):
         else:
             start.append(dict(id='override', label=T.lit('Override'), v=T.lit('No vote'), none=True,
                               sub=T.lit('none on the state’s register, %s to %s' % (long_date(lo), long_date(hi))), cite=dls))
+        # FREE CASH voted into the year's school budget. The journal books it inside the original
+        # budget, not as a transfer, so the books' only trace is the original budget exceeding the
+        # omnibus by the amount -- stated when it does, to the dollar, and not otherwise.
+        omni = next((r for r in srows if r['block'] == 'final' and r['status'] == 'appropriated'
+                     and r['scope'] == 'school'), None)
+        for r in (r for r in mine if r['part'] == 'start' and r['kind'] == 'free_cash'):
+            v = Decimal(r['figure'])
+            then = [T.lit(r['note'])] if r['note'] else []
+            if omni:
+                o = Decimal(re.sub(r'[$,]', '', omni['figure']))
+                books = sum((x['amt'] for x in J.lines() if x['fy'] == fy and x['fund'] == '0100'
+                             and x['posts_to'] == 'original_budget'), D0)
+                if books - o == v:
+                    then.append(T.lit('The books open the year at %s: the omnibus %s plus this, to the dollar'
+                                      % (said(books), said(o))))
+            start.append(dict(id='freecash', label=T.lit('Free cash'), v=said(v),
+                              sub=T.lit('voted by %s, %s, on a condition' % (r['said_by'], long_date(r['said_on']))),
+                              quote=T.lit(r['as_printed']), then=then,
+                              cite=cite(r['evidence'], r['ref'], r['record'])))
         # THE END: as announced, then ours
         end = []
         st = sorted((r for r in stated if int(r['fy']) == fy), key=lambda r: r['stated_on'])

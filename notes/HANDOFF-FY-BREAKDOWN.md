@@ -338,8 +338,8 @@ qualifier in `sub`).
      2 1/2 override ... on or before November 15, 2025" (FY2025 town report p140). No Lunenburg
      override vote in the DLS register between 18 May 2024 and 16 May 2026. The school journal's
      FY2026 original budget is $26,287,474 = the $25,787,474 omnibus + $500,000 exactly -- so it
-     appears to have been transferred (an arithmetic match, not a posting that says so). Add it to
-     the FY2026 beginning, as Town Meeting's vote beside the books' figure. A real phone-width check
+     appears to have been transferred (an arithmetic match, not a posting that says so). ADDED 30 Oct:
+     a `free_cash` row in fy-signatures.csv; the generator states the books' match only when it holds. A real phone-width check
      (`check_phone_width.sh` builds, so it was not run here).
 
 3. **A WHOLE DIFFERENT REPORT, BOTTOM OF THE QUEUE: school budget vs actuals, line by line over
