@@ -33,10 +33,10 @@
   "image": {
     "layout": "grid",
     "size": "portrait",
-    "headline": "{ar.editions} town reports, {ar.first} to {ar.last}",
-    "emphasis": "{ar.first} to {ar.last}",
-    "headline_size": 64,
-    "sub": "{ar.pages|n} pages the town wrote and printed, one report every year. We went through every one. Some of what’s inside:",
+    "headline": "Remember {r0.name}?",
+    "emphasis": "{r0.name}",
+    "headline_size": 60,
+    "sub": "{ros.span.text} years on the school rosters. One of the names in {ar.editions} Lunenburg town reports, {ar.first} to {ar.last}.",
     "tiles": [
       {
         "eyebrow": "Tax rate, {rate.py.text}",
@@ -57,10 +57,10 @@
         "text": "The {lunch.edition} report counts {lunch.total|n} school lunches sold at that price."
       },
       {
-        "eyebrow": "School rosters",
-        "value": "{ros.span.text} years",
-        "label": "{r0.name}",
-        "text": "Printed on the school rosters from {ros.a.text} to {ros.b.text}, starting as the boys’ phys. ed. instructor."
+        "eyebrow": "Selectman, {tie.y.text}",
+        "value": "{tie.v.text}–{tie.v.text}",
+        "label": "a tie, on the first count",
+        "text": "Howard A. Hamel and Eino O. Toko. Hamel won the May special election, {tie.a.text} to {tie.b.text}."
       }
     ],
     "path": "/analysis/historical-report",
